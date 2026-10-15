@@ -1,0 +1,31 @@
+name: NFL scoring timeline extraction
+on:
+  push:
+    branches: [nfl-scoring-plays-and-leaderboards]
+    paths: 
+      - "nfl/scripts/build_scoring_plays.py"
+      - ".github/workflows/nfl-scoring-data.yml"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: nfl-scoring-plays-and-leaderboards
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Build and verify all scoring timelines
+        run: python nfl/scripts/build_scoring_plays.py
+      - name: Commit independently verified scoring chronology
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add nfl/data/scoring_plays.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Import validated NFL scoring events from source game snapshots"
+            git push origin HEAD:nfl-scoring-plays-and-leaderboards
+          fi

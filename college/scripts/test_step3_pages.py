@@ -96,14 +96,34 @@ def main():
     teams=json.loads((COLLEGE/"data/team_names.json").read_text(encoding="utf8"))
     check(len(games)==94 and len(players)==1825 and len(teams)==75,
           "94 games / 1,825 performances / 75 schools remain intact")
-    check(sum(bool(g["arena"]) for g in games)==60,"60 sourced game venues linked to exact attendance IDs")
-    check(len({g["arena"] for g in games if g["arena"]})==15,"15 distinct venue names verified")
-    check(sum(g["site_type"]=="neutral" for g in games)==5,"Five neutral games marked explicitly")
-    check(all(g["site_type"]=="" for g in games if not g["arena"]) and sum(not g["arena"] for g in games)==34,"34 unknown sites stay blank")
+    check(all(g["arena"] and g["site_type"] in ("home","neutral") for g in games),
+          "All 94 game locations have a sourced venue and explicit site classification")
+    check(len({g["arena"] for g in games})==19,"19 historically named venue labels in original games")
+    check(sum(g["site_type"]=="neutral" for g in games)==6,"Six tournament / neutral site games marked explicitly")
+    check(len({("Lenovo Center" if g["arena"]=="PNC Arena" else g["arena"]) for g in games})==18,
+          "18 distinct physical arenas after sourced naming-rights alias normalization")
+    venue_rows=list(csv.DictReader((COLLEGE/"data/verified_venues.csv").open(encoding="utf8",newline="")))
+    venue_by_id={r["attendance_id"]:r for r in venue_rows}
+    check(len(venue_rows)==len(venue_by_id)==len(games)==94,
+          "All 94 source-certified venue rows uniquely match attendance IDs")
+    check(all((v:=venue_by_id.get(g["id"])) is not None and
+              v["espn_event_id"]==g["espn_event_id"] and v["arena"]==g["arena"] and
+              v["site_type"]==g["site_type"] and v["source_url"].startswith("https://") and
+              bool(v["source_name"])
+              for g in games),
+          "Venue source URLs, attendance IDs, provider event IDs and site classifications reconcile")
     check(next(g for g in games if g["id"]=="60")["arena"]=="The Pavilion at JSerra","CSUN Tennessee State neutral-site venue sourced")
     check(next(g for g in games if g["id"]=="18")["arena"]=="Jenny Craig Pavilion","2018 Colorado at USD venue sourced")
     check(next(g for g in games if g["id"]=="54")["arena"]=="Jenny Craig Pavilion","2022 Gonzaga at USD venue sourced")
     check(next(g for g in games if g["id"]=="79")["arena"]=="PNC Arena","2024 historical PNC Arena label retained")
     check(next(g for g in games if g["id"]=="85")["arena"]=="Lenovo Center","2025 Lenovo Center label retained")
+    check(next(g for g in games if g["id"]=="76")["site_type"]=="neutral" and
+          next(g for g in games if g["id"]=="76")["arena"]=="The Pavilion at JSerra",
+          "2023 California SDSU SoCal Showcase correctly identified as off-campus neutral court")
+    check(next(g for g in games if g["id"]=="25")["arena"]=="Viejas Arena","2019 Nevada at SDSU in Viejas Arena")
+    check(next(g for g in games if g["id"]=="31")["arena"]=="Bren Events Center","2019 Eastern Michigan UCI venue")
+    check(next(g for g in games if g["id"]=="58")["arena"]=="LionTree Arena","2022 UCSD hosting Cal venue")
+    check(next(g for g in games if g["id"]=="64")["arena"]=="Pauley Pavilion","UCLA Denver venue")
+    check(next(g for g in games if g["id"]=="83")["arena"]=="Jenny Craig Pavilion","2025 USD Santa Clara venue")
     print("Static seven-page parity checks completed.")
 if __name__=="__main__":main()

@@ -1,94 +1,149 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Courtside Archive — NBA Attendance</title>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F2">
+<meta name="description" content="Courtside Archive: one home for games attended in the NBA and college basketball, with detailed historical box scores, players and insights.">
+<title>Courtside Archive — Your Sports History</title>
+<link rel="stylesheet" href="./assets/site.css?v=editorial-ivory-2">
 <style>
-:root{color-scheme:dark;font-family:Inter,ui-sans-serif,system-ui,-apple-system,sans-serif;background:#0a1020;color:#eef3ff}*{box-sizing:border-box}body{margin:0}main{max-width:1140px;padding:32px 20px 90px;margin:auto}header{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #29364e;padding-bottom:22px}.brand{font-size:20px;font-weight:850;letter-spacing:.02em}.brand span{color:#70b7ff}header small,.muted{color:#9cabc7}h1{font-size:clamp(35px,6vw,64px);letter-spacing:-.05em;margin:56px 0 12px}p{line-height:1.6;color:#aab9d3;max-width:750px}.eyebrow{color:#73b7ff;text-transform:uppercase;font-size:12px;letter-spacing:.18em;font-weight:800}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:40px 0}.stat,.panel{background:#141d30;border:1px solid #28354c;border-radius:16px;padding:22px}.stat strong{font-size:36px;display:block}.stat small{color:#aab9d3}.panel{margin-top:20px}h2{margin:0 0 18px;font-size:22px}.sub{margin:-6px 0 20px;font-size:13px}.charts{display:grid;grid-template-columns:1fr 1fr;gap:18px}.barrow{display:grid;grid-template-columns:100px 1fr 30px;gap:12px;align-items:center;margin:10px 0;font-size:13px;color:#bdcce4}.track{height:10px;background:#243049;border-radius:99px;overflow:hidden}.fill{height:100%;background:linear-gradient(90deg,#337bcc,#75c5f5);border-radius:99px}.filters{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:18px}input,select{background:#0d1627;border:1px solid #394861;border-radius:9px;padding:12px;color:white;font:inherit;min-width:180px}input{flex:1}table{width:100%;border-collapse:collapse;font-size:14px}th{text-align:left;color:#8e9fb9;font-size:11px;letter-spacing:.1em;text-transform:uppercase}td,th{padding:14px 10px;border-bottom:1px solid #27334a}tbody tr:hover{background:#1a2942}.badge{display:inline-block;border-radius:20px;padding:5px 10px;background:#183851;color:#8bd1ff;font-size:11px;font-weight:800}.caution{color:#ffc98e;background:#392e25}.table-scroll{overflow:auto}.foot{margin:26px 0;font-size:13px;color:#90a3c4}@media(max-width:740px){.stats{grid-template-columns:repeat(2,1fr)}.charts{grid-template-columns:1fr}.barrow{grid-template-columns:88px 1fr 25px}header small{display:none}}
-.insight-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.insight-card{background:#0e1a2e;border:1px solid #2d415e;border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:6px}.insight-card small{text-transform:uppercase;letter-spacing:.07em;color:#98adcb;font-size:11px}.insight-card strong{font-size:clamp(21px,2.5vw,29px)}.insight-card span{color:#98adcb;font-size:12px}@media(max-width:780px){.insight-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}</style><link rel="stylesheet" href="./assets/site.css?v=editorial-ivory-2"></head><body><main><header class="ca-header"><a class="ca-logo" href="./index.html" aria-label="Courtside Archive home"><span class="ca-mark"><svg viewBox="0 0 40 40" fill="none" stroke="#68b8ff" stroke-width="1.5"><rect x="3" y="3" width="34" height="34" rx="2"/><path d="M3 20h34M20 3v34M13 3v9h14V3M13 37v-9h14v9"/><circle cx="20" cy="20" r="6"/></svg></span><span class="ca-wordmark">COURTSIDE <span>ARCHIVE</span><small>EVERY GAME HAS A STORY</small></span></a><nav class="ca-nav" aria-label="Main navigation"><a href="./index.html" data-nav="index">Home</a><a href="./game.html" data-nav="game">Games</a><a href="./stats.html" data-nav="stats">Players</a><a href="./milestones.html" data-nav="milestones">Records</a><a href="./insights.html" data-nav="insights">Insights</a><details class="ca-more"><summary>More ▾</summary><div class="ca-menu"><a href="./records.html">Single-game records</a><a href="./milestones.html">Records & milestones</a><a href="./stats.html">Player leaderboards</a></div></details></nav></header>
-<div class="eyebrow" style="margin-top:42px">2006 — 2018 · Historical attendance</div><h1>Every game.<br><span style="color:#284D3C">Every memory.</span></h1><p>Your NBA attendance history, preserved in one place. Explore the matchups, players, seasons, and arenas you witnessed.</p>
-<div class="stats"><div class="stat"><strong id="gameCount">31</strong><small>Games attended</small></div><div class="stat"><strong id="yearCount">11</strong><small>Calendar years</small></div><div class="stat"><strong id="teamCount">18</strong><small>Teams encountered</small></div><div class="stat"><strong id="boxCoverage">30/31</strong><small>Full box scores imported</small></div></div>
-<section class="panel" id="insightsPreview"><h2>My NBA history at a glance</h2><p class="sub">Key attendance insights automatically updated from your game archive.</p><div class="insight-grid"><div class="insight-card"><small>Most-watched team</small><strong id="insightTeam">—</strong><span id="insightTeamDetail">From your attended games</span></div><div class="insight-card"><small>Home team win rate</small><strong id="insightHome">—</strong><span id="insightHomeDetail">Of games with final scores</span></div><div class="insight-card"><small>Close finishes</small><strong id="insightClose">—</strong><span>Decided by five points or fewer</span></div><div class="insight-card"><small>Average game points</small><strong id="insightPoints">—</strong><span>Combined score of both teams</span></div></div><p style="margin:18px 0 0"><a href="./insights.html" style="color:#8ad0ff;font-weight:800">Explore all Attendance Insights →</a></p></section>
-<section class="panel" id="signaturePerformances"><div class="eyebrow">The moments that stand out</div><h2 style="margin-top:12px">Signature performances</h2><p class="sub">Your greatest witnessed scoring, rebounding, and playmaking performances. Select one to open the game.</p><div class="ca-feature-grid" id="features"><div class="ca-feature">Loading record highlights…</div></div><a href="./milestones.html" style="font-weight:750">Explore Records & Milestones →</a></section>
-<div class="charts"><section class="panel"><h2>Most-watched teams</h2><div id="teams"></div></section><section class="panel"><h2>Attendance by year</h2><div id="years"></div></section></div>
-<section class="panel"><h2>My game history</h2><p class="sub">Based on your attendance sheet. Select a game to open its result and both team box scores.</p><div class="filters"><input id="search" type="search" placeholder="Search team, matchup, arena…"><select id="yearFilter"><option value="">All years</option></select><select id="sort"><option value="asc">Oldest first</option><option value="desc">Newest first</option></select></div><div class="table-scroll"><table><thead><tr><th>Date</th><th>Away</th><th>Home</th><th>Arena (recorded)</th><th>Details</th></tr></thead><tbody id="games"></tbody></table></div><div class="foot" id="showing"></div></section>
-<section class="panel"><h2>Player leaderboards <span class="badge">LIVE DATA</span></h2><p>Historical player box scores are available for the attended games in the archive. Explore player totals, per-game averages, shooting efficiency and game logs.</p><p><a href="./stats.html" style="color:#8ad0ff;font-weight:800">Explore complete player statistics →</a></p></section>
-<div class="foot">Courtside Archive · NBA game attendance archive · 31 games.</div></main>
+  *,*::before,*::after{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:#FAF8F2;color:#252A2B;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+  main{width:min(1140px,calc(100% - 44px));margin:auto;padding:0 0 90px}
+  .skip{position:absolute;left:-200vw;top:12px;padding:12px 18px;background:#284D3C;color:white!important;z-index:99}
+  .skip:focus{left:12px}
+  .portal-header{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 0;border-bottom:1px solid #DEDCD2}
+  .portal-brand{display:flex;align-items:center;gap:12px;color:#252A2B!important;text-decoration:none!important}
+  .portal-mark{display:grid;place-items:center;width:45px;height:45px;border-radius:13px;background:#E5EAE2;border:1px solid #C5D3C2}
+  .portal-mark svg{width:30px;height:30px}
+  .portal-wordmark{font-size:17px;font-weight:900;letter-spacing:.04em;line-height:1.05}
+  .portal-wordmark small{display:block;font-size:9px;font-weight:750;letter-spacing:.19em;color:#697A6B;margin-top:5px}
+  .portal-nav{display:flex;flex-wrap:wrap;gap:8px}
+  .portal-nav a{padding:10px 15px;font-size:13px;font-weight:750;color:#284D3C!important;border-radius:8px;text-decoration:none!important}
+  .portal-nav a:hover,.portal-nav a:focus-visible{background:#E5EAE2}
+  .portal-kicker{font-size:11px;letter-spacing:.23em;font-weight:850;text-transform:uppercase;color:#476951;margin-bottom:18px}
+  .portal-hero{padding:76px 0 66px;display:grid;grid-template-columns:minmax(0,1.45fr) minmax(250px,.8fr);gap:48px;align-items:center}
+  h1{font-size:clamp(44px,6vw,78px);line-height:1.03;letter-spacing:-.064em;max-width:700px;margin:0 0 22px;color:#252A2B}
+  h1 em{font-style:normal;color:#285340}
+  .hero-copy{font-size:18px;line-height:1.7;color:#667268;max-width:590px;margin:0}
+  .hero-annotation{display:flex;flex-wrap:wrap;gap:20px;margin-top:30px;font-size:12px;font-weight:750;color:#5A6B5F}
+  .hero-annotation span{display:flex;align-items:center;gap:8px}
+  .hero-annotation i{display:inline-block;width:7px;height:7px;background:#6D967C;border-radius:100%}
+  .hero-number{border-radius:24px;background:radial-gradient(circle at 20% 18%,#E7F0E4,#E5EAE2 54%,#D6E4D4);border:1px solid #CFDBCC;padding:30px;position:relative;overflow:hidden;min-height:250px;display:flex;flex-direction:column;justify-content:end}
+  .hero-number::before{content:"";position:absolute;width:230px;height:230px;border:2px solid #AEC7AE;border-radius:50%;right:-45px;top:-86px;box-shadow:0 0 0 18px #ffffff1f,0 0 0 39px #ffffff18}
+  .hero-number strong{font-size:clamp(70px,9vw,103px);letter-spacing:-.075em;line-height:1;color:#284D3C;font-variant-numeric:tabular-nums;position:relative}
+  .hero-number small{font-size:13px;color:#476951;font-weight:800;text-transform:uppercase;letter-spacing:.11em;margin-top:10px;position:relative}
+  .hero-number p{margin:15px 0 0;max-width:225px;color:#5A6B5F;font-size:13px;line-height:1.5;position:relative}
+  .section-top{display:flex;align-items:end;justify-content:space-between;gap:18px;border-top:1px solid #DEDCD2;padding-top:24px;margin-bottom:23px}
+  h2{font-size:clamp(26px,3.8vw,38px);letter-spacing:-.045em;color:#252A2B;margin:7px 0}
+  .section-top p{font-size:13px;color:#667268;margin:0 0 5px}
+  .sport-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+  .sport-card{border-radius:20px;overflow:hidden;border:1px solid #DCDDD2;background:#FFFEFB;display:flex;flex-direction:column;min-width:0}
+  .sport-graphic{height:190px;position:relative;overflow:hidden;background:#E4ECE1}
+  .sport-card.nba .sport-graphic{background:linear-gradient(135deg,#E9ECE5,#D9E4D8)}
+  .sport-card.college .sport-graphic{background:linear-gradient(135deg,#F0EBDF,#E7E4D9)}
+  .sport-graphic svg{position:absolute;inset:0;width:100%;height:100%}
+  .sport-graphic .type{position:absolute;left:26px;top:25px;font-weight:900;color:#284D3C;font-size:58px;letter-spacing:-.075em}
+  .sport-card.college .sport-graphic .type{font-size:45px;letter-spacing:-.055em}
+  .sport-graphic .serial{position:absolute;right:25px;bottom:22px;font-size:12px;font-weight:850;letter-spacing:.19em;color:#667C64}
+  .sport-body{padding:26px;display:flex;flex-direction:column;flex:1}
+  .sport-label{color:#59715F;font-size:11px;font-weight:850;letter-spacing:.16em;text-transform:uppercase}
+  h3{font-size:clamp(25px,3.2vw,33px);letter-spacing:-.042em;line-height:1.14;margin:11px 0;color:#252A2B}
+  .sport-body p{font-size:14px;line-height:1.7;color:#667268;max-width:440px;margin:0 0 20px}
+  .sport-metrics{display:flex;flex-wrap:wrap;gap:30px;margin:auto 0 23px}
+  .sport-metrics div{display:flex;flex-direction:column;gap:3px}
+  .sport-metrics strong{font-size:28px;letter-spacing:-.05em;color:#284D3C;font-variant-numeric:tabular-nums}
+  .sport-metrics small{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#6B796D;font-weight:750}
+  .sport-button{align-self:start;background:#284D3C!important;color:#fff!important;text-decoration:none!important;font-size:14px;font-weight:800;padding:13px 20px;border-radius:10px;display:inline-flex;gap:15px;align-items:center}
+  .sport-button:hover,.sport-button:focus-visible{background:#18392A!important}
+  .future{display:flex;align-items:center;justify-content:space-between;gap:22px;margin-top:20px;padding:24px 26px;border:1px dashed #C6D0C2;border-radius:16px;background:#F3F4EC}
+  .future small{display:block;letter-spacing:.13em;font-weight:850;color:#58705C;text-transform:uppercase;font-size:11px;margin-bottom:7px}
+  .future strong{font-size:20px;color:#334638;letter-spacing:-.02em}
+  .future p{color:#667268;font-size:13px;line-height:1.5;margin:6px 0 0}
+  .future .planned{font-size:12px;font-weight:850;color:#6C786B;background:#E8EBE3;border-radius:30px;padding:8px 13px;white-space:nowrap}
+  .portal-footer{margin-top:60px;padding:22px 0;border-top:1px solid #DEDCD2;display:flex;align-items:center;justify-content:space-between;gap:16px;color:#6D786D;font-size:12px}
+  .portal-footer a{color:#284D3C!important}
+  @media(max-width:760px){.portal-hero{grid-template-columns:1fr;gap:26px;padding:48px 0 54px}.hero-number{min-height:186px}.hero-number strong{font-size:66px}.sport-grid{grid-template-columns:1fr}.sport-graphic{height:164px}.section-top{align-items:start;flex-direction:column;gap:6px}}
+  @media(max-width:440px){main{width:calc(100% - 30px)}.portal-header{align-items:start;flex-direction:column;gap:12px;padding:17px 0}.portal-nav a{padding:7px 11px}.sport-body{padding:21px}.sport-metrics{gap:23px}.future{align-items:flex-start;flex-direction:column;padding:20px}.portal-footer{align-items:flex-start;flex-direction:column}h1{font-size:45px}}
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<a class="skip" href="#archives">Skip to archive selection</a>
+<main>
+<header class="portal-header">
+  <a class="portal-brand" href="./index.html" aria-label="Courtside Archive master homepage">
+    <span class="portal-mark" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="#284D3C" stroke-width="1.7"><rect x="3" y="3" width="34" height="34" rx="2"/><path d="M3 20h34M20 3v34M13 3v9h14V3M13 37v-9h14v9"/><circle cx="20" cy="20" r="6"/></svg></span>
+    <span class="portal-wordmark">COURTSIDE ARCHIVE<small>EVERY GAME HAS A STORY</small></span>
+  </a>
+  <nav class="portal-nav" aria-label="Choose a basketball archive">
+    <a href="./nba/index.html">NBA ↗</a>
+    <a href="./college/index.html">College ↗</a>
+  </nav>
+</header>
+<section class="portal-hero" aria-labelledby="site-title">
+  <div>
+    <div class="portal-kicker">The personal attendance collection</div>
+    <h1 id="site-title">Every game.<br><em>Every era.</em><br>One archive.</h1>
+    <p class="hero-copy">A personal history of basketball games attended—from NBA nights to college rivalries. Pick a league to explore the games, players, records and moments you saw in person.</p>
+    <div class="hero-annotation"><span><i></i> Built around games actually attended</span><span><i></i> Separate NBA & college statistics</span></div>
+  </div>
+  <aside class="hero-number" aria-label="Total games logged across both basketball archives">
+    <strong id="allGames">125</strong>
+    <small>Games in the archives</small>
+    <p>One collection, with league-specific data, leaderboards and history.</p>
+  </aside>
+</section>
+<section id="archives" aria-labelledby="choose-title">
+  <div class="section-top"><div><div class="portal-kicker" style="margin:0">Choose your court</div><h2 id="choose-title">Explore the archives</h2></div><p>Two distinct basketball collections. One shared home.</p></div>
+  <div class="sport-grid">
+    <article class="sport-card nba">
+      <div class="sport-graphic" aria-hidden="true">
+        <svg viewBox="0 0 580 210" preserveAspectRatio="xMidYMid slice"><g fill="none" stroke="#9BB39F" stroke-width="2" opacity=".54"><rect x="195" y="-55" width="315" height="315" rx="5"/><path d="M195 105h315 M350 -55v315 M195 20h130v170H195 M510 20H380v170h130"/><circle cx="350" cy="105" r="75"/><circle cx="350" cy="105" r="17"/><path d="M510 65h-67v80h67 M195 65h65v80h-65"/></g></svg>
+        <span class="type">NBA</span><span class="serial">01 / PROFESSIONAL</span>
+      </div>
+      <div class="sport-body">
+        <span class="sport-label">Professional basketball</span><h3>NBA Attendance</h3>
+        <p>The original archive. Go through professional matchups, player performances, game results and the expanding historical record.</p>
+        <div class="sport-metrics"><div><strong id="nbaGames">31</strong><small>Games logged</small></div><div><strong>2006–18</strong><small>Attendance years</small></div></div>
+        <a class="sport-button" href="./nba/index.html">Enter NBA archive <span aria-hidden="true">↗</span></a>
+      </div>
+    </article>
+    <article class="sport-card college">
+      <div class="sport-graphic" aria-hidden="true">
+        <svg viewBox="0 0 580 210" preserveAspectRatio="xMidYMid slice"><g fill="none" stroke="#B8B29B" stroke-width="2" opacity=".48"><rect x="195" y="-55" width="315" height="315" rx="5"/><path d="M195 105h315 M350 -55v315 M195 20h130v170H195 M510 20H380v170h130"/><circle cx="350" cy="105" r="75"/><circle cx="350" cy="105" r="17"/><path d="M510 65h-67v80h67 M195 65h65v80h-65"/></g></svg>
+        <span class="type">COLLEGE</span><span class="serial">02 / NCAA</span>
+      </div>
+      <div class="sport-body">
+        <span class="sport-label">College basketball</span><h3>The College Archive</h3>
+        <p>Explore witnessed college games through official box scores, athlete profiles, school histories, arenas and statistical milestones.</p>
+        <div class="sport-metrics"><div><strong id="collegeGames">94</strong><small>Games logged</small></div><div><strong>1,825</strong><small>Player appearances</small></div></div>
+        <a class="sport-button" href="./college/index.html">Enter college archive <span aria-hidden="true">↗</span></a>
+      </div>
+    </article>
+  </div>
+  <div class="future" aria-label="Future expansion">
+    <div><small>On the horizon</small><strong>MLB & more sports</strong><p>The site is organized to add new sport archives without mixing unrelated player statistics.</p></div>
+    <span class="planned">Future section</span>
+  </div>
+</section>
+<footer class="portal-footer"><span>Courtside Archive · A personal history of the games attended.</span><span>Different leagues. Connected by the experience.</span></footer>
+</main>
 <script>
-const raw=`2006-02-26|Boston|LA Lakers|Staples Center
-2006-04-16|Phoenix|LA Lakers|Staples Center
-2006-11-19|Chicago|LA Lakers|Staples Center
-2006-12-29|Sacramento|LA Clippers|Staples Center
-2006-12-31|New York|LA Clippers|Staples Center
-2007-02-26|Charlotte|LA Clippers|Staples Center
-2007-03-18|Minnesota|LA Lakers|Staples Center
-2007-04-08|Phoenix|LA Lakers|Staples Center
-2007-04-15|Sacramento|LA Clippers|Staples Center
-2007-11-23|LA Clippers|Phoenix|Talking Stick Resort Arena
-2008-01-06|San Antonio|LA Clippers|Staples Center
-2008-01-21|Utah|LA Clippers|Staples Center
-2008-01-27|Cleveland|LA Lakers|Staples Center
-2008-11-29|Miami|LA Clippers|Staples Center
-2008-12-06|Utah|Phoenix|Talking Stick Resort Arena
-2009-11-23|Minnesota|LA Clippers|Staples Center
-2010-01-20|Chicago|LA Clippers|Staples Center
-2010-03-19|Minnesota|LA Lakers|Staples Center
-2010-11-22|New Orleans|LA Clippers|Staples Center
-2011-04-02|Oklahoma City|LA Clippers|Staples Center
-2011-04-03|Denver|LA Lakers|Staples Center
-2012-04-14|Golden State|LA Clippers|Staples Center
-2012-11-11|Atlanta|LA Clippers|Staples Center
-2012-11-11|Sacramento|LA Lakers|Staples Center
-2013-04-03|Phoenix|LA Clippers|Staples Center
-2013-12-28|Utah|LA Clippers|Staples Center
-2014-12-31|New York|LA Clippers|Staples Center
-2016-01-03|Phoenix|LA Lakers|Staples Center
-2016-12-20|Denver|LA Clippers|Staples Center
-2018-01-13|Sacramento|LA Clippers|Staples Center
-2006-04-02|Houston|LA Lakers|Staples Center`;
-const items=raw.trim().split('\n').map((s,i)=>{const [date,away,home,arena]=s.split('|');return{id:i+1,date,away,home,arena,year:date.slice(0,4)}});
-const years=[...new Set(items.map(g=>g.year))].sort();document.querySelector('#yearCount').textContent=years.length;
-const teamCounts={};items.forEach(g=>[g.home,g.away].forEach(t=>teamCounts[t]=(teamCounts[t]||0)+1));document.querySelector('#teamCount').textContent=Object.keys(teamCounts).length;
-const chart=(id,entries)=>{const max=Math.max(...entries.map(x=>x[1]));document.getElementById(id).innerHTML=entries.map(([name,n])=>'<div class="barrow"><span>'+name+'</span><div class="track"><div class="fill" style="width:'+n/max*100+'%"></div></div><strong>'+n+'</strong></div>').join('')};
-chart('teams',Object.entries(teamCounts).sort((a,b)=>b[1]-a[1]).slice(0,6));
-chart('years',years.map(y=>[y,items.filter(g=>g.year===y).length]));
-document.querySelector('#yearFilter').innerHTML+=[...years].reverse().map(y=>'<option>'+y+'</option>').join('');
-function draw(){const q=document.querySelector('#search').value.toLowerCase(),y=document.querySelector('#yearFilter').value,sort=document.querySelector('#sort').value;const subset=items.filter(g=>(!y||g.year===y)&&[g.away,g.home,g.arena,g.date].join(' ').toLowerCase().includes(q)).sort((a,b)=>sort==='asc'?a.date.localeCompare(b.date):b.date.localeCompare(a.date));document.querySelector('#games').innerHTML=subset.map(g=>'<tr><td><a href="./game.html?id='+g.id+'" style="color:#87c9ff;font-weight:800">'+g.date+'</a></td><td>'+g.away+'</td><td><strong>'+g.home+'</strong></td><td>'+g.arena+'</td><td><a class="badge" href="./game.html?id='+g.id+'">View game →</a></td></tr>').join('');document.querySelector('#showing').textContent='Showing '+subset.length+' of '+items.length+' games.'}['search','yearFilter','sort'].forEach(id=>document.getElementById(id).addEventListener('input',draw));draw();
-fetch('./data/player_boxscores_espn.json').then(r=>r.json()).then(logs=>{
- const distinct=new Set(logs.map(p=>p.espn_event_id)).size;
- document.querySelector('#boxCoverage').textContent=distinct+'/'+items.length;
-}).catch(()=>{});
-
-const parseCSVInsights=text=>{const lines=text.trim().split(/\r?\n/),headers=lines.shift().split(',');return lines.map(line=>Object.fromEntries(headers.map((h,i)=>[h,line.split(',')[i]??''])))};
-const insightTeamIds={"Atlanta":"1","Boston":"2","Charlotte":"30","Chicago":"4","Cleveland":"5","Denver":"7","Golden State":"9","Houston":"10","LA Clippers":"12","LA Lakers":"13","Miami":"14","Minnesota":"16","New Orleans":"3","New York":"18","Oklahoma City":"25","Phoenix":"21","Sacramento":"23","San Antonio":"24","Utah":"26"};
-Promise.all([fetch('./data/games.csv?v=home-insights-1',{cache:'no-store'}).then(r=>r.text()),fetch('./data/player_boxscores_espn.json?v=home-insights-1',{cache:'no-store'}).then(r=>r.json())]).then(([csv,players])=>{
- const gs=parseCSVInsights(csv),teams={};gs.forEach(g=>{for(const t of [g.home,g.away])teams[t]=(teams[t]||0)+1});
- const leader=Object.entries(teams).sort((a,b)=>b[1]-a[1])[0];
- document.getElementById('insightTeam').textContent=leader?leader[0]:'—';
- document.getElementById('insightTeamDetail').textContent=leader?leader[1]+' games attended':'';
- document.getElementById('gameCount').textContent=gs.length;
- document.getElementById('teamCount').textContent=Object.keys(teams).length;
- document.getElementById('yearCount').textContent=new Set(gs.map(g=>g.date.slice(0,4))).size;
- const ev=new Map();players.forEach(p=>{const k=p.espn_event_id;if(!ev.has(k))ev.set(k,[]);ev.get(k).push(p)});
- const scored=gs.map(g=>{const rows=[...ev.values()].find(ps=>ps[0]?.date===g.date&&new Set(ps.map(p=>String(p.team_id))).has(insightTeamIds[g.away])&&new Set(ps.map(p=>String(p.team_id))).has(insightTeamIds[g.home]));
- const calc=t=>rows?rows.filter(p=>String(p.team_id)===insightTeamIds[t]).reduce((n,p)=>n+Number(p.pts||0),0):null;
- const away=g.away_score!==''?Number(g.away_score):calc(g.away),home=g.home_score!==''?Number(g.home_score):calc(g.home);
- return Number.isFinite(away)&&Number.isFinite(home)&&away!==null&&home!==null?{away,home}:null}).filter(Boolean);
- const homeWins=scored.filter(g=>g.home>g.away).length,close=scored.filter(g=>Math.abs(g.home-g.away)<=5).length;
- document.getElementById('insightHome').textContent=scored.length?(100*homeWins/scored.length).toFixed(1)+'%':'—';
- document.getElementById('insightHomeDetail').textContent=homeWins+' wins in '+scored.length+' games';
- document.getElementById('insightClose').textContent=close;
- document.getElementById('insightPoints').textContent=scored.length?(scored.reduce((n,g)=>n+g.away+g.home,0)/scored.length).toFixed(1):'—';
- document.getElementById('boxCoverage').textContent=ev.size+'/'+gs.length;
-}).catch(()=>{});
-
-fetch('./data/player_boxscores_espn.json?v=design-features-1',{cache:'no-store'}).then(r=>r.json()).then(logs=>{
-const metrics=[['Scoring record','pts','PTS'],['Rebounding record','reb','REB'],['Playmaking record','ast','AST']];
-const byGame=new Map();
-items.forEach(g=>byGame.set(g.date+'|'+g.away+'|'+g.home,g));
-const teamIds={"Atlanta":"1","Boston":"2","Charlotte":"30","Chicago":"4","Cleveland":"5","Denver":"7","Golden State":"9","Houston":"10","LA Clippers":"12","LA Lakers":"13","Miami":"14","Minnesota":"16","New Orleans":"3","New York":"18","Oklahoma City":"25","Phoenix":"21","Sacramento":"23","San Antonio":"24","Utah":"26"};
-const events=new Map();logs.forEach(p=>{const id=String(p.espn_event_id);if(!events.has(id))events.set(id,new Set());events.get(id).add(String(p.team_id))});
-document.getElementById('features').innerHTML=metrics.map(([title,metric,suffix])=>{const players=logs.filter(p=>p[metric]!=null).sort((a,b)=>Number(b[metric])-Number(a[metric])||a.date.localeCompare(b.date));const p=players[0];if(!p)return '';const ts=events.get(String(p.espn_event_id));const g=items.find(g=>g.date===p.date&&ts?.has(teamIds[g.away])&&ts?.has(teamIds[g.home]));
-const id=String(p.player_id).replace(/^espn:/,'');const validId=/^\d+$/.test(id);
-const initials=p.player.split(' ').map(t=>t[0]).slice(0,2).join('');
-return '<article class="ca-feature"><small>'+title+'</small><div style="display:flex;gap:12px;align-items:center;margin-top:8px"><div class="ca-fallback" style="width:65px;height:74px;flex:none;border-radius:9px;overflow:hidden"><img style="width:100%;height:100%;object-fit:cover" src="'+(validId?'https://a.espncdn.com/i/headshots/nba/players/full/'+id+'.png':'')+'" alt="" onerror="this.style.display=\'none\';this.parentElement.textContent=\''+initials+'\'"></div><div><strong>'+p[metric]+' '+suffix+'</strong><div class="ca-name">'+p.player+'</div><p>'+p.date+'</p></div></div><a href="'+(g?'./game.html?id='+g.id:'./player.html?id='+encodeURIComponent(p.player_id))+'">View performance →</a></article>'}).join('');
-}).catch(()=>{document.getElementById('features').innerHTML='<div class="ca-feature">Record highlights are unavailable right now. <a href="./milestones.html">See the Record Book →</a></div>'});
-</script><script src="./assets/site.js?v=design-1"></script></body></html>
+(async()=>{
+ try{
+  const count=async url=>{
+   const r=await fetch(url,{cache:"no-store"});if(!r.ok)throw Error("archive index unavailable");
+   return r.text().then(t=>Math.max(0,t.trim().split(/\r?\n/).length-1));
+  };
+  const [nba,college]=await Promise.all([count("./data/games.csv"),count("./college/data/games.csv")]);
+  document.getElementById("nbaGames").textContent=nba.toLocaleString();
+  document.getElementById("collegeGames").textContent=college.toLocaleString();
+  document.getElementById("allGames").textContent=(nba+college).toLocaleString();
+ }catch(err){ /* Keep documented fallback counts when serving offline. */ }
+})();
+</script>
+</body>
+</html>

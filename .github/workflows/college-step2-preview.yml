@@ -1,0 +1,42 @@
+name: College Step 2 review bundle
+on:
+  push:
+    branches: [college-import-pilot]
+    paths:
+      - ".github/workflows/college-step2-preview.yml"
+      - "college/stats.html"
+      - "college/player.html"
+      - "college/data/games.csv"
+      - "college/data/player_boxscores_espn.json"
+      - "college/data/team_names.json"
+      - "college/scripts/test_step2_pages.py"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check stats and profile templates against NBA and college data
+        run: python college/scripts/test_step2_pages.py
+      - name: Save isolated development review bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: college-step2-review-files
+          if-no-files-found: error
+          path: |
+            college/stats.html
+            college/player.html
+            college/data/games.csv
+            college/data/player_boxscores_espn.json
+            college/data/team_names.json
+            college/data/validation.json
+            assets/site.css
+            assets/site.js
+            stats.html
+            player.html

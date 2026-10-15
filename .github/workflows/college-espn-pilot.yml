@@ -1,0 +1,62 @@
+name: College ESPN historical pilot
+on:
+  push:
+    branches: [college-import-pilot]
+    paths:
+      - "college/**"
+      - ".github/workflows/college-espn-pilot.yml"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  pilot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Match all 94 attended games and fetch raw ESPN player boxscores
+        run: python college/scripts/import_espn.py --limit 94 --fetch-boxscores
+      - name: Normalize box scores and reconcile both teams against official final scores
+        run: python college/scripts/normalize_espn.py --expected-games 94
+      - name: Step 1 — build college data in existing NBA page contract and verify identities
+        run: python college/scripts/build_site_data.py --expected-games 94 --expected-players 1825
+      - name: Step 2 — verify statistical calculations, HTML markup and JavaScript syntax
+        run: python college/scripts/test_step2_pages.py
+      - name: Summarize import
+        if: always()
+        run: |
+          if [ -f college/output/summary.json ]; then cat college/output/summary.json; fi
+          if [ -f college/output/qa_report.json ]; then cat college/output/qa_report.json; fi
+          if [ -f college/data/validation.json ]; then cat college/data/validation.json; fi
+      - name: Save independently validated site-ready college data
+        uses: actions/upload-artifact@v4
+        with:
+          name: college-site-ready-data
+          path: |
+            college/data/games.csv
+            college/data/player_boxscores_espn.json
+            college/data/team_names.json
+            college/data/validation.json
+          if-no-files-found: error
+      - name: Commit Step 1 verified college data on development branch
+        if: github.ref == 'refs/heads/college-import-pilot'
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add college/data/games.csv college/data/player_boxscores_espn.json college/data/team_names.json college/data/validation.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Build verified college statistics fixture for private Step 2 site"
+            git push origin HEAD:college-import-pilot
+          else
+            echo "Validated site files unchanged"
+          fi
+      - name: Save pilot report as build artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: college-espn-full-94-report
+          path: college/output/
+          if-no-files-found: warn

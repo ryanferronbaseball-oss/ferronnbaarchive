@@ -1,0 +1,74 @@
+name: College Step 3 seven-page parity
+on:
+  push:
+    branches: [college-import-pilot, main]
+    paths:
+      - ".github/workflows/college-step3-parity.yml"
+      - "sports.html"
+      - "nba/**"
+      - "README.md"
+      - "assets/site.css"
+      - "index.html"
+      - "game.html"
+      - "stats.html"
+      - "player.html"
+      - "records.html"
+      - "milestones.html"
+      - "insights.html"
+      - "college/stats.html"
+      - "college/player.html"
+      - "college/scripts/test_master_portal.py"
+      - "college/index.html"
+      - "college/game.html"
+      - "college/records.html"
+      - "college/milestones.html"
+      - "college/insights.html"
+      - "college/data/games.csv"
+      - "college/data/verified_venues.csv"
+      - "college/scripts/build_site_data.py"
+      - "college/scripts/test_step3_pages.py"
+      - "college/scripts/test_step2_pages.py"
+      - "college/scripts/test_step2_browser.py"
+      - "college/scripts/test_official_spotchecks.py"
+      - "college/data/player_boxscores_espn.json"
+      - "college/data/official_boxscore_supplements.csv"
+      - "college/data/official_boxscore_overrides.csv"
+      - "college/scripts/test_step3_browser.py"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  seven-pages:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Verify 240 stat cells against three independently transcribed official box scores
+        run: python college/scripts/test_official_spotchecks.py
+      - name: Verify seven-page HTML structure and original NBA statistical styling
+        run: python college/scripts/test_step3_pages.py
+      - name: Verify original NBA statistical formulas and two-page structural parity
+        run: python college/scripts/test_step2_pages.py
+      - name: Install Chromium
+        run: |
+          python -m pip install playwright
+          python -m playwright install chromium --with-deps
+      - name: Exercise college home, games, records, milestones and insights over HTTP
+        run: python college/scripts/test_step3_browser.py
+      - name: Exercise college player statistics, school-transfer identities and profile pages
+        run: python college/scripts/test_step2_browser.py
+      - name: Exercise master sports hub, NBA and college deep links and mobile layout
+        run: python college/scripts/test_master_portal.py
+      - name: Save browser test report and review screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: college-step3-seven-page-review
+          path: |
+            college/output/step3-browser/
+            college/output/step2-browser/
+            college/output/master-portal/
+          if-no-files-found: warn

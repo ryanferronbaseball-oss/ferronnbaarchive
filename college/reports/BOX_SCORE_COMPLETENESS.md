@@ -83,7 +83,7 @@ Sources: [2017 San Diego vs Life Pacific official PDF](https://usdtoreros.com/do
 
 The PDF confirms Life Pacific's *Brummett* and *Saavedra* spellings, which differ from some third-party sources. The imported individual records and all player stat categories were checked against the corresponding official player tables. The official corrections are saved in `college/data/official_boxscore_supplements.csv` and `college/data/official_boxscore_overrides.csv` with source URLs. Original ESPN raw values are preserved in the audit archive.
 
-These six added individual lines have **22 points and 129 player-minutes in total**, but also include two zero-point players who would not be detected by scoring reconciliation alone. Where ESPN athlete IDs are not independently confirmed, restored players use qualified official-source identifiers rather than invented ESPN IDs.
+These six added individual lines have **22 points and 122 player-minutes in total**, but also include two zero-point players who would not be detected by scoring reconciliation alone. Where ESPN athlete IDs are not independently confirmed, restored players use qualified official-source identifiers rather than invented ESPN IDs.
 
 Full validation: [GitHub Actions run 38773910953](https://github.com/ryanferronbaseball-oss/ferronnbaarchive/actions/runs/38773910953). **Remaining attendance IDs: 31, 49, 64, 71.**
 

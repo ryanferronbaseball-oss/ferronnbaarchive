@@ -42,10 +42,10 @@ try:
     desktop=browser.new_page(viewport={"width":1440,"height":960},device_scale_factor=1)
     setup(desktop)
     navigate(desktop,"index.html")
-    desktop.wait_for_function("document.getElementById('allGames').textContent === '125'")
+    desktop.wait_for_function("document.getElementById('allGames').textContent === '128'")
     check(desktop.locator("#nbaGames").inner_text()=="31","Master reads 31 NBA game rows")
     check(desktop.locator("#collegeGames").inner_text()=="94","Master reads 94 separate college rows")
-    check(desktop.locator("#allGames").inner_text()=="125","Master shows 125 combined game visits")
+    check(desktop.locator("#allGames").inner_text()=="128","Master shows 128 combined game visits")
     check(desktop.get_by_role("link",name="Enter NBA archive").get_attribute("href")=="./nba/index.html",
           "Master routes NBA through a dedicated /nba/ path")
     check(desktop.get_by_role("link",name="Enter college archive").get_attribute("href")=="./college/index.html",
@@ -61,7 +61,7 @@ try:
           "NBA homepage returns to the master root")
     desktop.locator(".ca-hub-link").click()
     desktop.wait_for_url("**/index.html")
-    check(desktop.locator("#allGames").inner_text()=="125","NBA-to-master return works")
+    check(desktop.locator("#allGames").inner_text()=="128","NBA-to-master return works")
 
     desktop.get_by_role("link",name="Enter college archive").click()
     desktop.wait_for_url("**/college/index.html")
@@ -70,7 +70,7 @@ try:
           "College homepage returns to master root")
     desktop.locator(".ca-hub-link").click()
     desktop.wait_for_url("**/index.html")
-    check(desktop.locator("#allGames").inner_text()=="125","College-to-master return works")
+    check(desktop.locator("#allGames").inner_text()=="128","College-to-master return works")
 
     for sport in ("nba","college"):
       for filename in PAGES:
@@ -103,7 +103,7 @@ try:
     mobile=browser.new_page(viewport={"width":390,"height":844},device_scale_factor=1)
     setup(mobile)
     navigate(mobile,"index.html")
-    mobile.wait_for_function("document.getElementById('allGames').textContent === '125'")
+    mobile.wait_for_function("document.getElementById('allGames').textContent === '128'")
     check(mobile.evaluate("document.documentElement.scrollWidth <= innerWidth + 2"),
           "Master site does not overflow 390px viewport")
     check(mobile.get_by_role("link",name="Enter NBA archive").is_visible() and

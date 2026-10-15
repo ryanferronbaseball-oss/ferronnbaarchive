@@ -19,13 +19,25 @@ const categoryLabels={pts:"PTS",reb:"REB",ast:"AST",stl:"STL",blk:"BLK",fg3m:"3P
 const teamNames={"1":"Atlanta Hawks","2":"Boston Celtics","3":"New Orleans Hornets","4":"Chicago Bulls","5":"Cleveland Cavaliers","7":"Denver Nuggets","9":"Golden State Warriors","10":"Houston Rockets","12":"LA Clippers","13":"LA Lakers","14":"Miami Heat","16":"Minnesota Timberwolves","18":"New York Knicks","21":"Phoenix Suns","23":"Sacramento Kings","24":"San Antonio Spurs","25":"Oklahoma City Thunder","26":"Utah Jazz","30":"Charlotte Bobcats"};
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp","<":"&lt",">":"&gt",'"':"&quot;","'":"&#39;"}[c])+";");
 let logs=[],byEvent=new Map();
+let archiveGames=[];
+function parseArchiveGames(csv){const lines=csv.trim().split(/\r?\n/),keys=lines.shift().split(",");return lines.map(line=>{const values=line.split(",");return Object.fromEntries(keys.map((k,i)=>[k,values[i]??""]))});}
+function archiveGameId(p){
+ const exact=archiveGames.find(g=>g.nba_game_id&&String(g.nba_game_id)===String(p.game_id??""));
+ if(exact)return exact.id;
+ const sameDay=archiveGames.filter(g=>g.date===p.date);
+ if(sameDay.length===1)return sameDay[0].id;
+ const team=teamNames[String(p.team_id)],matches=sameDay.filter(g=>g.away===team||g.home===team);
+ return matches.length===1?matches[0].id:null;
+}
+function archiveGameAnchor(p,label){const id=archiveGameId(p);return id?'<a href="./game.html?id='+encodeURIComponent(id)+'">'+label+'</a>':'<span title="Archive game unavailable">'+label+'</span>';}
+
 function opponent(p){return teamNames[(byEvent.get(String(p.espn_event_id))||[]).find(x=>x!==String(p.team_id))]||"Unknown"}
-function row(p,k,i){return '<tr><td>'+(i+1)+'</td><td><strong>'+esc(p.player)+'</strong></td><td>'+esc(teamNames[String(p.team_id)]||"Unknown")+'</td><td>'+esc(opponent(p))+'</td><td>'+esc(p.date)+'</td><td><strong>'+p[k]+'</strong></td><td><a target="_blank" rel="noopener" href="https://www.espn.com/nba/boxscore/_/gameId/'+encodeURIComponent(p.espn_event_id)+'">View ↗</a></td></tr>'}
+function row(p,k,i){return '<tr><td>'+(i+1)+'</td><td><strong>'+esc(p.player)+'</strong></td><td>'+esc(teamNames[String(p.team_id)]||"Unknown")+'</td><td>'+esc(opponent(p))+'</td><td>'+archiveGameAnchor(p,esc(p.date))+'</td><td><strong>'+p[k]+'</strong></td><td>'+archiveGameAnchor(p,"View box score →")+'</td></tr>'}
 function sorted(k){return logs.filter(p=>p[k]!==null&&p[k]!==undefined).slice().sort((a,b)=>b[k]-a[k]||a.date.localeCompare(b.date)||a.player.localeCompare(b.player))}
 function draw(){const k=$("category").value,q=$("search").value.toLowerCase().trim(),limit=Number($("limit").value);
 const matches=sorted(k).filter(p=>[p.player,teamNames[String(p.team_id)],opponent(p),p.date].join(" ").toLowerCase().includes(q));
 $("valueHeader").textContent=categoryLabels[k];$("table").innerHTML=matches.slice(0,limit).map((p,i)=>row(p,k,i)).join("")||'<tr><td colspan="7">No matching performances.</td></tr>';$("status").textContent="Showing "+Math.min(matches.length,limit)+" of "+matches.length+" available performances."}
-function drawCards(){ $("cards").innerHTML=categories.map(([k,label,abbr])=>{const top=sorted(k)[0];if(!top)return"";return '<article class="card"><div class="category">'+esc(label)+'</div><strong>'+top[k]+' '+abbr+'</strong><div class="player">'+esc(top.player)+'</div><div class="detail">'+esc(teamNames[String(top.team_id)]||"Unknown")+' vs '+esc(opponent(top))+'</div><div class="detail">'+esc(top.date)+' · <a target="_blank" rel="noopener" href="https://www.espn.com/nba/boxscore/_/gameId/'+encodeURIComponent(top.espn_event_id)+'">Box score ↗</a></div></article>'}).join("")}
+function drawCards(){ $("cards").innerHTML=categories.map(([k,label,abbr])=>{const top=sorted(k)[0];if(!top)return"";return '<article class="card"><div class="category">'+esc(label)+'</div><strong>'+top[k]+' '+abbr+'</strong><div class="player">'+esc(top.player)+'</div><div class="detail">'+esc(teamNames[String(top.team_id)]||"Unknown")+' vs '+esc(opponent(top))+'</div><div class="detail">'+esc(top.date)+' · '+archiveGameAnchor(top,"Box score ↗")+'</div></article>'}).join("")}
 for(const id of ["category","search","limit"])$(id).addEventListener("input",draw);
-fetch("../data/player_boxscores_espn.json?v=31-import-verified",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("HTTP "+r.status);return r.json()}).then(data=>{logs=data.filter(p=>p.minutes!=null&&p.minutes!==""&&p.minutes!=="--");for(const p of logs){const key=String(p.espn_event_id);if(!byEvent.has(key))byEvent.set(key,new Set());byEvent.get(key).add(String(p.team_id))}for(const [k,v] of byEvent)byEvent.set(k,[...v]);drawCards();draw()}).catch(e=>{$("cards").innerHTML='<div class="card">Unable to load box-score data</div>';$("table").innerHTML='<tr><td colspan="7">'+esc(e.message)+'</td></tr>'});
+Promise.all([fetch("../data/player_boxscores_espn.json?v=31-import-verified",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("NBA records HTTP "+r.status);return r.json()}),fetch("../data/games.csv?v=archive-links-20261015",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("NBA games HTTP "+r.status);return r.text()})]).then(([data,csv])=>{archiveGames=parseArchiveGames(csv);logs=data.filter(p=>p.minutes!=null&&p.minutes!==""&&p.minutes!=="--");for(const p of logs){const key=String(p.espn_event_id);if(!byEvent.has(key))byEvent.set(key,new Set());byEvent.get(key).add(String(p.team_id))}for(const [k,v] of byEvent)byEvent.set(k,[...v]);drawCards();draw()}).catch(e=>{$("cards").innerHTML='<div class="card">Unable to load box-score data</div>';$("table").innerHTML='<tr><td colspan="7">'+esc(e.message)+'</td></tr>'});
 </script><script src="../assets/site.js?v=design-1"></script></body></html>

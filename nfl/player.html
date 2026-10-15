@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded",async()=>{
   const name=personal[0].player,teamNames=[...new Set(personal.map(x=>x.team))];
   const gameIDs=[...new Set(personal.map(x=>x.game_id))],seen=games.filter(g=>gameIDs.includes(g.id));
   el("playerName").textContent=name;document.title=name+" | NFL Courtside Archive";
-  const portrait=el("playerPortrait"),fallback=el("portraitFallback");fallback.textContent=name.split(/\\s+/).map(x=>x[0]).slice(0,2).join("").toUpperCase();portrait.onerror=()=>{portrait.style.display="none";fallback.style.display="grid"};if(/^\\d+$/.test(id)){portrait.onload=()=>{portrait.style.display="block";fallback.style.display="none"};portrait.alt="Portrait of "+name;portrait.src="https://a.espncdn.com/i/headshots/nfl/players/full/"+encodeURIComponent(id)+".png"}
+  const portrait=el("playerPortrait"),fallback=el("portraitFallback");fallback.textContent=name.split(/\s+/).map(x=>x[0]).slice(0,2).join("").toUpperCase();portrait.onerror=()=>{portrait.style.display="none";fallback.style.display="grid"};if(/^\d+$/.test(id)){portrait.onload=()=>{portrait.style.display="block";fallback.style.display="none"};portrait.alt="Portrait of "+name;portrait.src="https://a.espncdn.com/i/headshots/nfl/players/full/"+encodeURIComponent(id)+".png"}
   el("playerSummary").textContent=teamNames.join(" / ")+" · "+seen.length+" attended NFL game"+(seen.length===1?"":"s")+" with a recorded box-score category.";
   el("metrics").innerHTML='<div class="metric"><strong>'+seen.length+'</strong><small>Games you saw</small></div>'+
     '<div class="metric"><strong>'+teamNames.length+'</strong><small>NFL teams represented</small></div>'+

@@ -1,0 +1,40 @@
+name: College Step 3 seven-page parity
+on:
+  push:
+    branches: [college-import-pilot]
+    paths:
+      - ".github/workflows/college-step3-parity.yml"
+      - "college/index.html"
+      - "college/game.html"
+      - "college/records.html"
+      - "college/milestones.html"
+      - "college/insights.html"
+      - "college/scripts/test_step3_pages.py"
+      - "college/scripts/test_step3_browser.py"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  seven-pages:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Verify seven-page HTML structure and original NBA statistical styling
+        run: python college/scripts/test_step3_pages.py
+      - name: Install Chromium
+        run: |
+          python -m pip install playwright
+          python -m playwright install chromium --with-deps
+      - name: Exercise college home, games, records, milestones and insights over HTTP
+        run: python college/scripts/test_step3_browser.py
+      - name: Save browser test report and review screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: college-step3-seven-page-review
+          path: college/output/step3-browser/
+          if-no-files-found: warn

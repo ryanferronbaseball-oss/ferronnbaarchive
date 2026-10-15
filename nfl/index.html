@@ -17,21 +17,30 @@
 <section id="games" class="game-grid"><div class="empty">Loading your three historical NFL games…</div></section>
 <div class="section-heading"><h2>Your statistical leaders</h2><a class="action-link secondary" href="./stats.html">Full leaderboards ↗</a></div>
 <section class="feature" id="leaders"><div class="empty">Loading player leaderboards…</div></section>
+<section class="panel"><div class="section-heading"><h2 style="margin:0">Full-PPR impact games</h2><a class="action-link secondary" href="./milestones.html">PPR milestones ↗</a></div>
+  <p class="lead">Your fantasy-football equivalent of basketball Game Score: rank every offensive game by Full-PPR points and spotlight 30+ performances.</p>
+  <div class="metrics" style="grid-template-columns:repeat(2,minmax(0,1fr))"><div class="metric"><strong id="bestPpr">—</strong><small>Highest single-game PPR</small></div><div class="metric"><strong id="thirtyPpr">—</strong><small>30+ PPR games witnessed</small></div></div>
+  <div id="topPpr"><div class="empty">Loading fantasy milestones…</div></div>
+ </section>
 <div class="panel"><h3>Explore your NFL stats</h3>
 <p class="lead">The box score for each game includes a scoring-play timeline and separate Offense, Defense, and Special Teams tables. The leaderboard page uses the same categories to rank players across the games you attended.</p>
 <a class="action-link" href="./stats.html">Open all NFL leaderboards ↗</a></div>
 <footer class="footer">Courtside Archive · Independent NFL attendance statistics. Game scores and player box scores sourced from historical ESPN records.</footer>
 </main><script>
-document.getElementById("navigation").innerHTML='<header class="archive-header"><a class="archive-logo" href="./index.html">COURTSIDE ARCHIVE<small>EVERY GAME HAS A STORY · NFL</small></a><nav class="archive-nav" aria-label="NFL archive navigation"><a href="./index.html" aria-current="page">Overview</a><a href="./game.html">Games &amp; Box Scores</a><a href="./stats.html">Leaderboards</a></nav><a class="back-link" href="../index.html">All archives ↗</a></header>';
+document.getElementById("navigation").innerHTML='<header class="archive-header"><a class="archive-logo" href="./index.html">COURTSIDE ARCHIVE<small>EVERY GAME HAS A STORY · NFL</small></a><nav class="archive-nav" aria-label="NFL archive navigation"><a href="./index.html" aria-current="page">Overview</a><a href="./game.html">Games &amp; Box Scores</a><a href="./stats.html">Leaderboards</a><a href="./milestones.html">PPR Milestones</a></nav><a class="back-link" href="../index.html">All archives ↗</a></header>';
 document.addEventListener("DOMContentLoaded",async()=>{
  const A=window.NFLArchive;
  try{
-  const {games,rows,scoring}=await A.load();
+  const {games,rows,scoring,ppr}=await A.load();
   document.getElementById("gameCount").textContent=games.length;
   document.getElementById("playerCount").textContent=new Set(rows.map(r=>r.athlete_id)).size;
   document.getElementById("statCount").textContent=rows.length;
   document.getElementById("scoringCount").textContent=Object.values(scoring).reduce((n,g)=>n+g.plays.length,0);
   document.getElementById("games").innerHTML=games.map(A.gameCard).join("");
+  const top=ppr.performances[0],m=ppr.audit.milestones;
+  document.getElementById("bestPpr").textContent=Number(top.fantasy_ppr).toFixed(2);
+  document.getElementById("thirtyPpr").textContent=m["30"];
+  document.getElementById("topPpr").innerHTML='<strong style="font-size:18px;color:#284D3C">'+A.esc(top.player)+'</strong> · '+Number(top.fantasy_ppr).toFixed(2)+' PPR <span class="caption">('+A.esc(top.date)+')</span> · <a href="./game.html?id='+encodeURIComponent(top.game_id)+'">View game ↗</a>';
   const leaders=[["passing","Passing yards","YDS"],["rushing","Rushing yards","YDS"],["receiving","Receiving yards","YDS"]];
   document.getElementById("leaders").innerHTML=leaders.map(([cat,title,key])=>{
    const ranked=A.sortPlayers(A.group(rows,cat),cat);

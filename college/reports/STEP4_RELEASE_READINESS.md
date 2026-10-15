@@ -18,6 +18,8 @@
 
 ## Regression changes committed
 
+- A new independent 240-field official university box-score fixture guards against subtle errors masked by valid game totals. See `scripts/test_official_spotchecks.py`.
+
 - Structural seven-page checks now assert **94 venue joins**, **19 era-specific names**, **18 physical arena identities**, **six neutral games**, and source URLs aligned with each unique attendance ID and ESPN event ID.
 - Browser checks target historic Viejas/Jenny Craig locations, two different SoCal neutral-site games, aggregate venue leaderboards, 18 physical venue KPI, and mobile home/insights views.
 - Browser test report status now depends on completing **all assertions**, not merely absence of JavaScript errors.
@@ -29,7 +31,7 @@
 
 1. Confirm current GitHub Actions and complete end-to-end HTTP Chromium regression after the venue changes.
 2. Review 17 qualified provisional official-source player IDs against independent athlete identity evidence; never merge by name only.
-3. Perform selected independent official-source spot checks for secondary stat fields (rebounds, steals, assists, turnovers, shooting), in addition to already reconciled scores and minutes.
+3. **Continue** independent source audits beyond the 240 fields now checked in 15 player rows from three games. The spot checks found and repaired five Colorado individual-stat errors while preserving team scoring/minutes, so broader field-level review is still worthwhile. See `reports/OFFICIAL_STAT_SPOTCHECKS.md`.
 4. Desktop and small-screen visual parity, keyboard accessibility, contrast, labels, keyboard focus and screen-reader navigation.
 5. Explicit **user acceptance** before merging, publishing, or adding college navigation to the NBA production archive.
 

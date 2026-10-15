@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded",async()=>{
  let data={games:[],rows:[],ppr:{performances:[]}},group="offense",category="passing";
  function renderFantasy(){
   const id=el("gameFilter").value,all=id==="all";
-  let picks=data.ppr.performances.filter(x=>all||x.game_id===id);
+  let picks=data.ppr.performances.filter(x=>(all||x.game_id===id)&&(el("teamFilter").value==="all"||x.team===el("teamFilter").value)&&(el("seasonFilter").value==="all"||data.games.some(g=>g.id===x.game_id&&String(g.season)===el("seasonFilter").value)));
   const q=el("search").value.trim().toLowerCase();
   picks=picks.filter(x=>(x.player+" "+x.team).toLowerCase().includes(q));
   const esc=A.esc,points=n=>Number(n).toFixed(2),sort=el("sort").value;
@@ -50,11 +50,12 @@ document.addEventListener("DOMContentLoaded",async()=>{
     const key=sort==="name"?"name":sort==="avg"?"avg":sort==="best"?"best":sort==="games"?"games":"total";
     return key==="name"?a.player.localeCompare(b.player):b[key]-a[key]||a.player.localeCompare(b.player);
   });
+  const eligible=ranked.filter(x=>x.games>=Number(el("minGames").value));
   el("boardTitle").textContent="Fantasy · Full PPR"+(all?" · All attended games":" · Selected game");
-  el("entryCount").textContent=ranked.length+" players · "+picks.length+" player-games";
-  el("board").innerHTML=ranked.length?'<div class="table-wrap"><table><thead><tr><th>Player / team</th><th>Games</th>'+
+  el("entryCount").textContent=eligible.length+" players · "+picks.length+" player-games";
+  el("board").innerHTML=eligible.length?'<div class="table-wrap"><table><thead><tr><th>Player / team</th><th>Games</th>'+
   (all?'<th>Total PPR</th><th>Avg PPR</th><th>Best PPR</th>':'<th>PPR</th>')+
-  '<th>Details</th></tr></thead><tbody>'+ranked.map(x=>'<tr><td><a href="./player.html?id='+encodeURIComponent(x.id)+'">'+esc(x.player)+'</a><small>'+esc(x.team)+'</small></td>'+
+  '<th>Details</th></tr></thead><tbody>'+eligible.map(x=>'<tr><td><a href="./player.html?id='+encodeURIComponent(x.id)+'">'+esc(x.player)+'</a><small>'+esc(x.team)+'</small></td>'+
   '<td>'+x.games+'</td><td><strong>'+points(x.total)+'</strong></td>'+
   (all?'<td>'+points(x.avg)+'</td><td>'+points(x.best)+'</td>':'')+
   '<td><a href="'+(all?'./player.html?id='+encodeURIComponent(x.id):'./game.html?id='+encodeURIComponent(x.game_id))+'">'+(all?'Player games ↗':'Box score ↗')+'</a></td></tr>').join("")+'</tbody></table></div>':

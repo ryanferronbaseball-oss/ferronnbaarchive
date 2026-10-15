@@ -9,6 +9,9 @@ on:
       - "college/records.html"
       - "college/milestones.html"
       - "college/insights.html"
+      - "college/data/games.csv"
+      - "college/data/verified_venues.csv"
+      - "college/scripts/build_site_data.py"
       - "college/scripts/test_step3_pages.py"
       - "college/scripts/test_step3_browser.py"
   workflow_dispatch:

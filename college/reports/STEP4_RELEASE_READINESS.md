@@ -25,14 +25,14 @@
 - Browser test report status now depends on completing **all assertions**, not merely absence of JavaScript errors.
 - Search/filter accessible names were previously added on five college pages; full assistive-technology and keyboard testing is still required.
 
-**Important:** These updated tests are committed, but a passing run of the updated build has **not yet been independently verified**. Earlier 42 successful Chromium assertions belong to Step 3 *before* these changes.
+**Final integrated QA PASS (October 15, 2026):** [GitHub Actions run](https://github.com/ryanferronbaseball-oss/ferronnbaarchive/actions/runs/38788094542) executed all newly updated checks successfully, including **57 seven-page desktop/mobile assertions**, **22 player statistics/profile browser assertions**, the **240-cell official source regression** and structural parity checks, with zero unhandled JavaScript page errors. Mobile home, stats and insights did not overflow the device width. We also verified keyboard navigation between homepage search and date filtering. [Download the seven-page screenshot and browser-report preview](https://github.com/ryanferronbaseball-oss/ferronnbaarchive/actions/runs/38788094542/artifacts/11998103847).
 
 ## Outstanding launch blockers
 
-1. Confirm current GitHub Actions and complete end-to-end HTTP Chromium regression after the venue changes.
+1. **Complete:** Fresh combined browser and structural CI passed; see the linked Oct 15 Action run and screenshot artifact.
 2. Review 17 qualified provisional official-source player IDs against independent athlete identity evidence; never merge by name only.
 3. **Continue** independent source audits beyond the 240 fields now checked in 15 player rows from three games. The spot checks found and repaired five Colorado individual-stat errors while preserving team scoring/minutes, so broader field-level review is still worthwhile. See `reports/OFFICIAL_STAT_SPOTCHECKS.md`.
-4. Desktop and small-screen visual parity, keyboard accessibility, contrast, labels, keyboard focus and screen-reader navigation.
+4. Desktop/mobile browser layouts, named controls and a keyboard path passed automated smoke checks. **Still requires human visual acceptance, full keyboard/assistive-technology navigation and WCAG contrast audit.**
 5. Explicit **user acceptance** before merging, publishing, or adding college navigation to the NBA production archive.
 
-**Venue research: COMPLETE. Production launch: NOT APPROVED / NOT YET PUBLISHED.**
+**Venue research: COMPLETE. Integrated browser CI: PASS. Production launch: NOT APPROVED / NOT YET PUBLISHED.**

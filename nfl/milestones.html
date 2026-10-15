@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NFL Full-PPR Milestones | Courtside Archive</title>
+<meta name="description" content="Ranking every Full-PPR fantasy football performance personally witnessed, including 30-plus impact games and historic NFL moments.">
+<link rel="stylesheet" href="./assets/archive.css"><script src="./assets/archive.js" defer></script>
+<style>
+.milestone-top{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.impact-card{border:1px solid #CCD8C9;border-radius:15px;padding:20px;background:#EDF3E9}.impact-card .score{font-size:34px;color:#284D3C;line-height:1.2;letter-spacing:-.04em;font-weight:900;font-variant-numeric:tabular-nums}.impact-card strong{display:block;font-size:19px;margin:8px 0 4px}.impact-card .caption{font-size:12px}.impact-card a{display:inline-block;margin-top:10px;font-size:13px;font-weight:800;color:#284D3C}
+.rules-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.rule{padding:13px;background:#F5F7F2;border-radius:9px;font-size:13px}.rule b{display:block;color:#284D3C;font-size:16px;margin-bottom:4px}.rule small{color:#637468}
+.ppr-filter{flex-wrap:wrap}.ppr-filter button{border:1px solid #CBD8C9;border-radius:8px;padding:10px 13px;font-size:13px;font-weight:750;color:#284D3C;background:#E9EFE6}.ppr-filter button[aria-pressed=true]{color:#fff;background:#284D3C}
+.ppr-rank{display:inline-block;min-width:22px;font-weight:900;color:#284D3C}
+@media(max-width:720px){.milestone-top{grid-template-columns:1fr}.rules-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+</style></head><body><main>
+<div id="navigation"></div>
+<div class="eyebrow">NFL · Performance & Milestones</div>
+<h1>30-point club.</h1>
+<p class="lead">The biggest fantasy performances you personally witnessed. Full-PPR points are calculated from original NFL game box scores using the familiar fantasy scoring system—your personal equivalent of basketball Game Score.</p>
+<section class="metrics" aria-label="NFL PPR personal milestones">
+ <div class="metric"><strong id="maxScore">—</strong><small>Highest PPR game</small></div>
+ <div class="metric"><strong id="thirtyCount">—</strong><small>30+ PPR games</small></div>
+ <div class="metric"><strong id="twentyCount">—</strong><small>20+ PPR games</small></div>
+ <div class="metric"><strong id="playerGameCount">—</strong><small>Fantasy player-games scored</small></div>
+</section>
+<div class="section-heading"><h2>Signature performances</h2><span class="caption">Your highest witnessed Full-PPR games</span></div>
+<section class="milestone-top" id="topGames" aria-label="Top two personal NFL fantasy performances"><div class="empty">Loading landmark performances…</div></section>
+<div class="section-heading"><h2>Every fantasy performance</h2><span class="caption" id="countLabel"></span></div>
+<div class="tabbar ppr-filter" id="thresholds" aria-label="Filter performances by PPR milestone">
+ <button type="button" data-min="all" aria-pressed="true">All</button>
+ <button type="button" data-min="10" aria-pressed="false">10+</button>
+ <button type="button" data-min="20" aria-pressed="false">20+</button>
+ <button type="button" data-min="25" aria-pressed="false">25+</button>
+ <button type="button" data-min="30" aria-pressed="false">30+ impact</button>
+ <button type="button" data-min="40" aria-pressed="false">40+ elite</button>
+</div>
+<div class="toolbar">
+ <label for="gameFilter" class="filter-label">Game</label>
+ <select id="gameFilter" aria-label="Filter milestone performances by attended game"><option value="all">All three games</option></select>
+ <label for="sort" class="filter-label">Sort</label>
+ <select id="sort" aria-label="Sort Full-PPR milestones">
+  <option value="highest">Highest PPR first</option><option value="lowest">Lowest PPR first</option><option value="date">Most recent game</option><option value="name">Player A–Z</option>
+ </select>
+ <input id="search" type="search" placeholder="Search player or NFL team…" aria-label="Search milestone performances"/>
+</div>
+<div class="table-wrap" id="performanceTable" aria-live="polite"><div class="empty">Loading historical fantasy performance rankings…</div></div>
+<div class="section-heading"><h2>Best performance in each attended game</h2></div>
+<section class="game-grid" id="gameWinners"><div class="empty">Loading game-by-game leaders…</div></section>
+<section class="panel" aria-labelledby="rulesTitle">
+ <h2 id="rulesTitle" style="margin-top:0">How Full-PPR is calculated</h2>
+ <p class="lead">Traditional ESPN-style full-PPR offense: one point per catch, four for passing touchdowns and six for rushing or receiving touchdowns. No bonus categories or TE premium.</p>
+ <div class="rules-grid">
+ <div class="rule"><b>+0.04 per yard</b><small>Passing</small></div>
+ <div class="rule"><b>+4</b><small>Passing touchdown</small></div>
+ <div class="rule"><b>−2</b><small>Interception thrown</small></div>
+ <div class="rule"><b>+0.1 per yard</b><small>Rushing or receiving</small></div>
+ <div class="rule"><b>+6</b><small>Rushing or receiving TD</small></div>
+ <div class="rule"><b>+1</b><small>Each reception</small></div>
+ <div class="rule"><b>−2</b><small>Fumble lost</small></div>
+ <div class="rule"><b>+2</b><small>Successful offensive 2-point conversion</small></div>
+ <div class="rule"><b>+6</b><small>Individual kickoff/punt return TD</small></div>
+ </div>
+ <p class="note">These particular games had no successful offensive two-point conversions and no credited individual kickoff/punt return touchdowns in the imported category rows. Defensive two-point scores are not offensive PPR points. Kicker, D/ST and individual-defender fantasy scoring are separate systems and deliberately excluded; compare those players using the existing <a href="./stats.html">Defense</a> and Special Teams leaderboards.</p>
+ <p class="caption">Scoring conventions: <a href="https://support.espn.com/hc/en-us/articles/360003914032-Scoring-Formats" target="_blank" rel="noopener">ESPN Fantasy scoring formats ↗</a></p>
+</section>
+<footer class="footer">Courtside Archive · Full-PPR scores from the verified player statistics of three attended NFL games.</footer>
+</main><script>
+document.addEventListener("DOMContentLoaded",async()=>{
+ const A=window.NFLArchive,el=id=>document.getElementById(id);
+ el("navigation").innerHTML=A.nav("milestones");
+ let records=[],games=[],min=-Infinity;
+ function score(n){return Number(n).toFixed(2)}
+ function matchup(p){const g=games.find(x=>x.id===p.game_id);return g?g.away_abbr+" at "+g.home_abbr:"Game"}
+ function line(p){const a=p.stat_line,out=[];
+  if(a.passing_yards||a.passing_tds)out.push(a.passing_yards+" pass YDS, "+a.passing_tds+" pass TD");
+  if(a.rushing_yards||a.rushing_tds)out.push(a.rushing_yards+" rush YDS, "+a.rushing_tds+" rush TD");
+  if(a.receptions||a.receiving_yards||a.receiving_tds)out.push(a.receptions+" REC, "+a.receiving_yards+" rec YDS, "+a.receiving_tds+" rec TD");
+  if(a.interceptions_thrown)out.push(a.interceptions_thrown+" INT");if(a.fumbles_lost)out.push(a.fumbles_lost+" lost FUM");
+  return out.join(" · ")||"No offensive statistics";
+ }
+ function draw(){
+  const query=el("search").value.trim().toLowerCase(),game=el("gameFilter").value;
+  let rows=records.filter(p=>p.fantasy_ppr>=min&&(game==="all"||p.game_id===game)&&[p.player,p.team,matchup(p)].join(" ").toLowerCase().includes(query));
+  const sort=el("sort").value;
+  rows.sort((a,b)=>sort==="lowest"?a.fantasy_ppr-b.fantasy_ppr||a.player.localeCompare(b.player):
+    sort==="date"?b.date.localeCompare(a.date)||b.fantasy_ppr-a.fantasy_ppr:
+    sort==="name"?a.player.localeCompare(b.player)||b.fantasy_ppr-a.fantasy_ppr:
+    b.fantasy_ppr-a.fantasy_ppr||a.player.localeCompare(b.player));
+  el("countLabel").textContent=rows.length+" qualifying performances";
+  el("performanceTable").innerHTML=rows.length?'<table><thead><tr><th># / Player</th><th>Game</th><th>PPR</th><th>PASS YDS</th><th>PASS TD</th><th>RUSH YDS</th><th>RUSH TD</th><th>REC</th><th>REC YDS</th><th>REC TD</th><th>INT</th><th>FUM LOST</th></tr></thead><tbody>'+
+  rows.map((p,i)=>'<tr><td><span class="ppr-rank">'+(i+1)+'</span> <a href="./player.html?id='+encodeURIComponent(p.athlete_id)+'">'+A.esc(p.player)+'</a><small>'+A.esc(p.team)+'</small></td>'+
+  '<td><a href="./game.html?id='+encodeURIComponent(p.game_id)+'">'+A.esc(p.date)+'<small>'+A.esc(matchup(p))+'</small></a></td>'+
+  '<td><strong>'+score(p.fantasy_ppr)+'</strong></td>'+
+  ['passing_yards','passing_tds','rushing_yards','rushing_tds','receptions','receiving_yards','receiving_tds','interceptions_thrown','fumbles_lost'].map(x=>'<td>'+p.stat_line[x]+'</td>').join("")+'</tr>').join("")+'</tbody></table>':'<div class="empty">No performances meet the current filters.</div>';
+ }
+ try{
+  const data=await A.load();games=data.games;records=data.ppr.performances;
+  el("maxScore").textContent=score(records[0].fantasy_ppr);
+  el("thirtyCount").textContent=records.filter(x=>x.fantasy_ppr>=30).length;
+  el("twentyCount").textContent=records.filter(x=>x.fantasy_ppr>=20).length;
+  el("playerGameCount").textContent=records.length;
+  el("gameFilter").innerHTML='<option value="all">All three games</option>'+games.map(g=>'<option value="'+A.esc(g.id)+'">'+A.esc(g.date+' · '+g.away_abbr+' at '+g.home_abbr)+'</option>').join("");
+  el("topGames").innerHTML=records.slice(0,2).map((p,i)=>'<article class="impact-card"><div class="caption">'+(i===0?"Highest witnessed fantasy game":"Second-highest fantasy game")+'</div>'+
+   '<div class="score">'+score(p.fantasy_ppr)+' <span style="font-size:14px;letter-spacing:normal">PPR</span></div>'+
+   '<strong>'+A.esc(p.player)+'</strong><div class="caption">'+A.esc(p.date)+' · '+A.esc(matchup(p))+'</div>'+
+   '<div class="play-description" style="margin-top:12px">'+A.esc(line(p))+'</div>'+
+   '<a href="./game.html?id='+encodeURIComponent(p.game_id)+'">See witnessed game ↗</a></article>').join("");
+  el("gameWinners").innerHTML=games.map(g=>{const p=records.find(x=>x.game_id===g.id);return '<article class="game-card"><div class="caption">'+A.esc(A.date(g.date))+'</div>'+
+   '<h3>'+A.esc(g.away_abbr+' at '+g.home_abbr)+'</h3><div class="game-score">'+(p?score(p.fantasy_ppr):"—")+' <span>PPR</span></div>'+
+   '<div>'+A.esc(p?.player||"No player score")+'</div><a class="action-link secondary" href="./game.html?id='+encodeURIComponent(g.id)+'">Game details ↗</a></article>'}).join("");
+  el("thresholds").querySelectorAll("button").forEach(b=>b.addEventListener("click",()=>{min=b.dataset.min==="all"?-Infinity:Number(b.dataset.min);el("thresholds").querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));draw()}));
+  ["gameFilter","sort"].forEach(id=>el(id).addEventListener("change",draw));
+  el("search").addEventListener("input",draw);draw();
+ }catch(err){el("performanceTable").innerHTML='<div class="empty">Unable to load PPR milestones: '+A.esc(err.message)+'</div>';el("topGames").innerHTML=""}
+});
+</script></body></html>

@@ -90,7 +90,7 @@ function table(rows,category,{combined=false,empty="No players with recorded sta
    x.stat_values.map(s=>'<td>'+esc(s)+'</td>').join("")+'</tr>').join("")+'</tbody></table></div>';
 }
 function nav(active){
- const links=[["index.html","Overview","home"],["game.html","Games & Box Scores","game"],["stats.html","Leaderboards","stats"]];
+ const links=[["index.html","Overview","home"],["game.html","Games & Box Scores","game"],["stats.html","Leaderboards","stats"],["milestones.html","PPR Milestones","milestones"]];
  return '<header class="archive-header"><a class="archive-logo" href="./index.html">COURTSIDE ARCHIVE<small>EVERY GAME HAS A STORY · NFL</small></a>'+
    '<nav class="archive-nav" aria-label="NFL archive navigation">'+links.map(([href,title,name])=>'<a href="./'+href+'"'+(active===name?' aria-current="page"':'')+'>'+title+'</a>').join("")+
    '</nav><a class="back-link" href="../index.html">All archives ↗</a></header>';
@@ -122,9 +122,9 @@ function scoreboard(g){
  '<div class="table-wrap" style="margin-top:20px"><table class="quarters"><thead><tr><th>Team</th>'+head+'<th>Final</th></tr></thead><tbody>'+row(g.away_abbr,a,g.away_score)+row(g.home_abbr,h,g.home_score)+'</tbody></table></div></div>';
 }
 async function load(){
- const names=["games.json","player_stats.json","scoring_plays.json"];
+ const names=["games.json","player_stats.json","scoring_plays.json","fantasy_ppr.json"];
  const a=await Promise.all(names.map(async file=>{const r=await fetch(base+file,{cache:"no-store"});if(!r.ok)throw Error("Unable to load "+file+" ("+r.status+")");return r.json()}));
- return {games:a[0],rows:a[1],scoring:a[2]};
+ return {games:a[0],rows:a[1],scoring:a[2],ppr:a[3]};
 }
 window.NFLArchive={GROUPS,TITLES,esc,date,fmt,numeric,group,sortPlayers,defaultColumn,table,nav,gameTitle,gameCard,period,scoring,scoreboard,load};
 })();

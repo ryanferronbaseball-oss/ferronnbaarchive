@@ -10,7 +10,9 @@
 <section id="scoreboard" aria-label="Game score by quarter"><div class="empty">Loading game…</div></section>
 <div class="section-heading"><h2>Scoring plays</h2><span class="caption" id="scoringCount"></span></div>
 <section id="scoring" class="panel" aria-label="Scoring play chronology" aria-live="polite"><div class="empty">Loading scoring plays…</div></section>
-<div class="section-heading"><h2>Player box score</h2><span class="caption">Select statistical group</span></div>
+<div class="section-heading"><h2>Top fantasy performances</h2><a href="./milestones.html" class="action-link secondary">PPR milestones ↗</a></div>
+ <section id="pprLeaders" class="panel" aria-label="Top Full-PPR offensive scores in this game"><div class="empty">Loading PPR scores…</div></section>
+ <div class="section-heading"><h2>Player box score</h2><span class="caption">Select statistical group</span></div>
 <div class="tabbar" role="tablist" id="statTabs" aria-label="Game box-score statistics">
 <button type="button" role="tab" data-group="offense" aria-selected="true">Offense</button>
 <button type="button" role="tab" data-group="defense" aria-selected="false">Defense</button>
@@ -24,7 +26,7 @@
 document.addEventListener("DOMContentLoaded",async()=>{
  const A=window.NFLArchive,el=id=>document.getElementById(id),params=new URLSearchParams(location.search);
  el("navigation").innerHTML=A.nav("game");
- let games=[],rows=[],score={},group="offense",selected=null;
+ let games=[],rows=[],score={},ppr=[],group="offense",selected=null;
  const urlGame=params.get("id");
  function boxSection(category,title){
   const selectedRows=rows.filter(x=>x.game_id===selected.id&&x.category===category);
@@ -49,10 +51,12 @@ document.addEventListener("DOMContentLoaded",async()=>{
   el("scoring").innerHTML=A.scoring(event?.plays||[],selected);
   document.title=selected.away_abbr+" at "+selected.home_abbr+" · "+selected.date+" | NFL Courtside Archive";
   history.replaceState(null,"","./game.html?id="+encodeURIComponent(selected.id));
+  const ranks=ppr.filter(x=>x.game_id===selected.id).sort((a,b)=>b.fantasy_ppr-a.fantasy_ppr||a.player.localeCompare(b.player)).slice(0,5);
+  el("pprLeaders").innerHTML=ranks.length?'<div class="table-wrap"><table><thead><tr><th>Player</th><th>PPR points</th><th>Receiving</th><th>Rushing</th><th>Passing</th></tr></thead><tbody>'+ranks.map(x=>'<tr><td><a href="./player.html?id='+encodeURIComponent(x.athlete_id)+'">'+A.esc(x.player)+'</a><small>'+A.esc(x.team)+'</small></td><td><strong>'+Number(x.fantasy_ppr).toFixed(2)+'</strong></td><td>'+x.stat_line.receptions+' REC · '+x.stat_line.receiving_yards+' YDS</td><td>'+x.stat_line.rushing_yards+' YDS</td><td>'+x.stat_line.passing_yards+' YDS</td></tr>').join("")+'</tbody></table></div>':'<div class="empty">No offensive fantasy records available.</div>';
   renderTabs();
  }
  try{
-  const data=await A.load();games=data.games;rows=data.rows;score=data.scoring;
+  const data=await A.load();games=data.games;rows=data.rows;score=data.scoring;ppr=data.ppr.performances;
   el("gameSelect").innerHTML=games.map(g=>'<option value="'+A.esc(g.id)+'">'+A.esc(A.date(g.date))+' · '+A.esc(g.away_abbr)+' at '+A.esc(g.home_abbr)+'</option>').join("");
   el("gameSelect").addEventListener("change",e=>setGame(e.target.value));
   el("statTabs").querySelectorAll("button").forEach(btn=>btn.addEventListener("click",()=>{group=btn.dataset.group;renderTabs()}));

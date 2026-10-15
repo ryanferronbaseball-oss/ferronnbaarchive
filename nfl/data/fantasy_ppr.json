@@ -1,0 +1,2145 @@
+{
+  "rules": {
+    "name": "Traditional Full-PPR (ESPN-style)",
+    "passing_yards": 0.04,
+    "passing_touchdowns": 4,
+    "interceptions_thrown": -2,
+    "rushing_yards": 0.1,
+    "rushing_touchdowns": 6,
+    "receiving_yards": 0.1,
+    "receiving_touchdowns": 6,
+    "reception": 1,
+    "fumbles_lost": -2,
+    "successful_offensive_two_point_conversion": 2,
+    "individual_kick_or_punt_return_touchdown": 6,
+    "excluded": [
+      "K/DST scoring",
+      "IDP scoring",
+      "bonuses",
+      "TE premiums",
+      "yardage return points"
+    ]
+  },
+  "eligibility": "Players with source passing, rushing or receiving statistical rows",
+  "audit": {
+    "player_games": 59,
+    "games_covered": [
+      "nfl-2007-11-25-sf-ari",
+      "nfl-2008-12-07-stl-ari",
+      "nfl-2023-12-03-ind-ten"
+    ],
+    "verified_successful_offensive_two_point_conversions": 0,
+    "verified_kick_punt_return_touchdowns": 0,
+    "source_two_point_notes": [
+      {
+        "game_id": "nfl-2023-12-03-ind-ten",
+        "description": "Grant Stuard 18 Yd Return of Blocked Punt (Two-Point Pass Conversion Failed)"
+      },
+      {
+        "game_id": "nfl-2023-12-03-ind-ten",
+        "description": "TWO-POINT CONVERSION ATTEMPT. G.Minshew pass to Z.Moss is incomplete. ATTEMPT FAILS. DEFENSIVE TWO-POINT CONVERSION. A.Hooker intercepted the try attempt."
+      }
+    ],
+    "milestones": {
+      "10": 25,
+      "20": 5,
+      "25": 4,
+      "30": 2,
+      "40": 1
+    }
+  },
+  "performances": [
+    {
+      "game_id": "nfl-2007-11-25-sf-ari",
+      "date": "2007-11-25",
+      "athlete_id": "8479",
+      "player": "Frank Gore",
+      "team": "SF",
+      "opponent": "ARI",
+      "fantasy_ppr": 44.4,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": 116,
+        "rushing_tds": 2,
+        "receptions": 11,
+        "receiving_yards": 98,
+        "receiving_tds": 0,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": 23.6,
+        "receiving": 20.8,
+        "turnovers": -0.0,
+        "two_point": 0.0,
+        "returns": 0.0
+      },
+      "source_categories": [
+        "receiving",
+        "rushing"
+      ],
+      "source": "ESPN archived NFL player box score",
+      "score_type": "traditional_full_ppr"
+    },
+    {
+      "game_id": "nfl-2007-11-25-sf-ari",
+      "date": "2007-11-25",
+      "athlete_id": "5528",
+      "player": "Larry Fitzgerald",
+      "team": "ARI",
+      "opponent": "SF",
+      "fantasy_ppr": 36.6,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": 0,
+        "rushing_tds": 0,
+        "receptions": 9,
+        "receiving_yards": 156,
+        "receiving_tds": 2,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": 0.0,
+        "receiving": 36.6,
+        "turnovers": -0.0,
+        "two_point": 0.0,
+        "returns": 0.0
+      },
+      "source_categories": [
+        "receiving"
+      ],
+      "source": "ESPN archived NFL player box score",
+      "score_type": "traditional_full_ppr"
+    },
+    {
+      "game_id": "nfl-2023-12-03-ind-ten",
+      "date": "2023-12-03",
+      "athlete_id": "4035687",
+      "player": "Michael Pittman Jr.",
+      "team": "IND",
+      "opponent": "TEN",
+      "fantasy_ppr": 27.5,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": 0,
+        "rushing_tds": 0,
+        "receptions": 11,
+        "receiving_yards": 105,
+        "receiving_tds": 1,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": 0.0,
+        "receiving": 27.5,
+        "turnovers": -0.0,
+        "two_point": 0.0,
+        "returns": 0.0
+      },
+      "source_categories": [
+        "receiving"
+      ],
+      "source": "ESPN archived NFL player box score",
+      "score_type": "traditional_full_ppr"
+    },
+    {
+      "game_id": "nfl-2023-12-03-ind-ten",
+      "date": "2023-12-03",
+      "athlete_id": "3043078",
+      "player": "Derrick Henry",
+      "team": "TEN",
+      "opponent": "IND",
+      "fantasy_ppr": 25.0,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": 102,
+        "rushing_tds": 2,
+        "receptions": 1,
+        "receiving_yards": 18,
+        "receiving_tds": 0,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": 22.2,
+        "receiving": 2.8,
+        "turnovers": -0.0,
+        "two_point": 0.0,
+        "returns": 0.0
+      },
+      "source_categories": [
+        "receiving",
+        "rushing"
+      ],
+      "source": "ESPN archived NFL player box score",
+      "score_type": "traditional_full_ppr"
+    },
+    {
+      "game_id": "nfl-2007-11-25-sf-ari",
+      "date": "2007-11-25",
+      "athlete_id": "1682",
+      "player": "Kurt Warner",
+      "team": "ARI",
+      "opponent": "SF",
+      "fantasy_ppr": 21.36,
+      "stat_line": {
+        "passing_yards": 484,
+        "passing_tds": 2,
+        "interceptions_thrown": 2,
+        "rushing_yards": 0,
+        "rushing_tds": 0,
+        "receptions": 0,
+        "receiving_yards": 0,
+        "receiving_tds": 0,
+        "fumbles_lost": 1,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 23.36,
+        "rushing": 0.0,
+        "receiving": 0.0,
+        "turnovers": -2.0,
+        "two_point": 0.0,
+        "returns": 0.0
+      },
+      "source_categories": [
+        "fumbles",
+        "passing"
+      ],
+      "source": "ESPN archived NFL player box score",
+      "score_type": "traditional_full_ppr"
+    },
+    {
+      "game_id": "nfl-2008-12-07-stl-ari",
+      "date": "2008-12-07",
+      "athlete_id": "5528",
+      "player": "Larry Fitzgerald",
+      "team": "ARI",
+      "opponent": "STL",
+      "fantasy_ppr": 19.3,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": 0,
+        "rushing_tds": 0,
+        "receptions": 6,
+        "receiving_yards": 73,
+        "receiving_tds": 1,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": 0.0,
+        "receiving": 19.3,
+        "turnovers": -0.0,
+        "two_point": 0.0,
+        "returns": 0.0
+      },
+      "source_categories": [
+        "receiving"
+      ],
+      "source": "ESPN archived NFL player box score",
+      "score_type": "traditional_full_ppr"
+    },
+    {
+      "game_id": "nfl-2007-11-25-sf-ari",
+      "date": "2007-11-25",
+      "athlete_id": "649",
+      "player": "Trent Dilfer",
+      "team": "SF",
+      "opponent": "ARI",
+      "fantasy_ppr": 19.24,
+      "stat_line": {
+        "passing_yards": 256,
+        "passing_tds": 2,
+        "interceptions_thrown": 0,
+        "rushing_yards": 10,
+        "rushing_tds": 0,
+        "receptions": 0,
+        "receiving_yards": 0,
+        "receiving_tds": 0,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 18.24,
+        "rushing": 1.0,
+        "receiving": 0.0,
+        "turnovers": -0.0,
+        "two_point": 0.0,
+        "returns": 0.0
+      },
+      "source_categories": [
+        "passing",
+        "rushing"
+      ],
+      "source": "ESPN archived NFL player box score",
+      "score_type": "traditional_full_ppr"
+    },
+    {
+      "game_id": "nfl-2023-12-03-ind-ten",
+      "date": "2023-12-03",
+      "athlete_id": "4360078",
+      "player": "Alec Pierce",
+      "team": "IND",
+      "opponent": "TEN",
+      "fantasy_ppr": 19.0,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": 0,
+        "rushing_tds": 0,
+        "receptions": 3,
+        "receiving_yards": 100,
+        "receiving_tds": 1,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": 0.0,
+        "receiving": 19.0,
+        "turnovers": -0.0,
+        "two_point": 0.0,
+        "returns": 0.0
+      },
+      "source_categories": [
+        "receiving"
+      ],
+      "source": "ESPN archived NFL player box score",
+      "score_type": "traditional_full_ppr"
+    },
+    {
+      "game_id": "nfl-2023-12-03-ind-ten",
+      "date": "2023-12-03",
+      "athlete_id": "15795",
+      "player": "DeAndre Hopkins",
+      "team": "TEN",
+      "opponent": "IND",
+      "fantasy_ppr": 18.9,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": 4,
+        "rushing_tds": 0,
+        "receptions": 5,
+        "receiving_yards": 75,
+        "receiving_tds": 1,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": 0.4,
+        "receiving": 18.5,
+        "turnovers": -0.0,
+        "two_point": 0.0,
+        "returns": 0.0
+      },
+      "source_categories": [
+        "receiving",
+        "rushing"
+      ],
+      "source": "ESPN archived NFL player box score",
+      "score_type": "traditional_full_ppr"
+    },
+    {
+      "game_id": "nfl-2023-12-03-ind-ten",
+      "date": "2023-12-03",
+      "athlete_id": "4038524",
+      "player": "Gardner Minshew II",
+      "team": "IND",
+      "opponent": "TEN",
+      "fantasy_ppr": 18.68,
+      "stat_line": {
+        "passing_yards": 312,
+        "passing_tds": 2,
+        "interceptions_thrown": 0,
+        "rushing_yards": 2,
+        "rushing_tds": 0,
+        "receptions": 0,
+        "receiving_yards": 0,
+        "receiving_tds": 0,
+        "fumbles_lost": 1,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 20.48,
+        "rushing": 0.2,
+        "receiving": 0.0,
+        "turnovers": -2.0,
+        "two_point": 0.0,
+        "returns": 0.0
+      },
+      "source_categories": [
+        "fumbles",
+        "passing",
+        "rushing"
+      ],
+      "source": "ESPN archived NFL player box score",
+      "score_type": "traditional_full_ppr"
+    },
+    {
+      "game_id": "nfl-2007-11-25-sf-ari",
+      "date": "2007-11-25",
+      "athlete_id": "9592",
+      "player": "Vernon Davis",
+      "team": "SF",
+      "opponent": "ARI",
+      "fantasy_ppr": 16.5,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": 0,
+        "rushing_tds": 0,
+        "receptions": 6,
+        "receiving_yards": 45,
+        "receiving_tds": 1,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": 0.0,
+        "receiving": 16.5,
+        "turnovers": -0.0,
+        "two_point": 0.0,
+        "returns": 0.0
+      },
+      "source_categories": [
+        "receiving"
+      ],
+      "source": "ESPN archived NFL player box score",
+      "score_type": "traditional_full_ppr"
+    },
+    {
+      "game_id": "nfl-2008-12-07-stl-ari",
+      "date": "2008-12-07",
+      "athlete_id": "10585",
+      "player": "Steve Breaston",
+      "team": "ARI",
+      "opponent": "STL",
+      "fantasy_ppr": 16.0,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": 0,
+        "rushing_tds": 0,
+        "receptions": 7,
+        "receiving_yards": 90,
+        "receiving_tds": 0,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": 0.0,
+        "receiving": 16.0,
+        "turnovers": -0.0,
+        "two_point": 0.0,
+        "returns": 0.0
+      },
+      "source_categories": [
+        "receiving"
+      ],
+      "source": "ESPN archived NFL player box score",
+      "score_type": "traditional_full_ppr"
+    },
+    {
+      "game_id": "nfl-2007-11-25-sf-ari",
+      "date": "2007-11-25",
+      "athlete_id": "4475",
+      "player": "Bryant Johnson",
+      "team": "ARI",
+      "opponent": "SF",
+      "fantasy_ppr": 13.0,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": 0,
+        "rushing_tds": 0,
+        "receptions": 5,
+        "receiving_yards": 80,
+        "receiving_tds": 0,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": 0.0,
+        "receiving": 13.0,
+        "turnovers": -0.0,
+        "two_point": 0.0,
+        "returns": 0.0
+      },
+      "source_categories": [
+        "receiving"
+      ],
+      "source": "ESPN archived NFL player box score",
+      "score_type": "traditional_full_ppr"
+    },
+    {
+      "game_id": "nfl-2008-12-07-stl-ari",
+      "date": "2008-12-07",
+      "athlete_id": "1682",
+      "player": "Kurt Warner",
+      "team": "ARI",
+      "opponent": "STL",
+      "fantasy_ppr": 12.96,
+      "stat_line": {
+        "passing_yards": 279,
+        "passing_tds": 1,
+        "interceptions_thrown": 1,
+        "rushing_yards": -2,
+        "rushing_tds": 0,
+        "receptions": 0,
+        "receiving_yards": 0,
+        "receiving_tds": 0,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 13.16,
+        "rushing": -0.2,
+        "receiving": 0.0,
+        "turnovers": -0.0,
+        "two_point": 0.0,
+        "returns": 0.0
+      },
+      "source_categories": [
+        "passing",
+        "rushing"
+      ],
+      "source": "ESPN archived NFL player box score",
+      "score_type": "traditional_full_ppr"
+    },
+    {
+      "game_id": "nfl-2023-12-03-ind-ten",
+      "date": "2023-12-03",
+      "athlete_id": "4428557",
+      "player": "Tyjae Spears",
+      "team": "TEN",
+      "opponent": "IND",
+      "fantasy_ppr": 12.8,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": 75,
+        "rushing_tds": 0,
+        "receptions": 4,
+        "receiving_yards": 13,
+        "receiving_tds": 0,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": 7.5,
+        "receiving": 5.3,
+        "turnovers": -0.0,
+        "two_point": 0.0,
+        "returns": 0.0
+      },
+      "source_categories": [
+        "receiving",
+        "rushing"
+      ],
+      "source": "ESPN archived NFL player box score",
+      "score_type": "traditional_full_ppr"
+    },
+    {
+      "game_id": "nfl-2007-11-25-sf-ari",
+      "date": "2007-11-25",
+      "athlete_id": "4655",
+      "player": "Arnaz Battle",
+      "team": "SF",
+      "opponent": "ARI",
+      "fantasy_ppr": 12.7,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": 0,
+        "rushing_tds": 0,
+        "receptions": 1,
+        "receiving_yards": 57,
+        "receiving_tds": 1,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": 0.0,
+        "receiving": 12.7,
+        "turnovers": -0.0,
+        "two_point": 0.0,
+        "returns": 0.0
+      },
+      "source_categories": [
+        "receiving"
+      ],
+      "source": "ESPN archived NFL player box score",
+      "score_type": "traditional_full_ppr"
+    },
+    {
+      "game_id": "nfl-2008-12-07-stl-ari",
+      "date": "2008-12-07",
+      "athlete_id": "5549",
+      "player": "Steven Jackson",
+      "team": "STL",
+      "opponent": "ARI",
+      "fantasy_ppr": 12.6,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": 63,
+        "rushing_tds": 0,
+        "receptions": 4,
+        "receiving_yards": 3,
+        "receiving_tds": 1,
+        "fumbles_lost": 2,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": 6.3,
+        "receiving": 10.3,
+        "turnovers": -4.0,
+        "two_point": 0.0,
+        "returns": 0.0
+      },
+      "source_categories": [
+        "fumbles",
+        "receiving",
+        "rushing"
+      ],
+      "source": "ESPN archived NFL player box score",
+      "score_type": "traditional_full_ppr"
+    },
+    {
+      "game_id": "nfl-2007-11-25-sf-ari",
+      "date": "2007-11-25",
+      "athlete_id": "1994",
+      "player": "Sean Morey",
+      "team": "ARI",
+      "opponent": "SF",
+      "fantasy_ppr": 11.9,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": 0,
+        "rushing_tds": 0,
+        "receptions": 4,
+        "receiving_yards": 79,
+        "receiving_tds": 0,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": 0.0,
+        "receiving": 11.9,
+        "turnovers": -0.0,
+        "two_point": 0.0,
+        "returns": 0.0
+      },
+      "source_categories": [
+        "receiving"
+      ],
+      "source": "ESPN archived NFL player box score",
+      "score_type": "traditional_full_ppr"
+    },
+    {
+      "game_id": "nfl-2007-11-25-sf-ari",
+      "date": "2007-11-25",
+      "athlete_id": "4512",
+      "player": "Anquan Boldin",
+      "team": "ARI",
+      "opponent": "SF",
+      "fantasy_ppr": 11.6,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": 0,
+        "rushing_tds": 0,
+        "receptions": 6,
+        "receiving_yards": 76,
+        "receiving_tds": 0,
+        "fumbles_lost": 1,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": 0.0,
+        "receiving": 13.6,
+        "turnovers": -2.0,
+        "two_point": 0.0,
+        "returns": 0.0
+      },
+      "source_categories": [
+        "fumbles",
+        "receiving"
+      ],
+      "source": "ESPN archived NFL player box score",
+      "score_type": "traditional_full_ppr"
+    },
+    {
+      "game_id": "nfl-2023-12-03-ind-ten",
+      "date": "2023-12-03",
+      "athlete_id": "4361418",
+      "player": "Will Levis",
+      "team": "TEN",
+      "opponent": "IND",
+      "fantasy_ppr": 11.46,
+      "stat_line": {
+        "passing_yards": 224,
+        "passing_tds": 1,
+        "interceptions_thrown": 0,
+        "rushing_yards": 5,
+        "rushing_tds": 0,
+        "receptions": 0,
+        "receiving_yards": 0,
+        "receiving_tds": 0,
+        "fumbles_lost": 1,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 12.96,
+        "rushing": 0.5,
+        "receiving": 0.0,
+        "turnovers": -2.0,
+        "two_point": 0.0,
+        "returns": 0.0
+      },
+      "source_categories": [
+        "fumbles",
+        "passing",
+        "rushing"
+      ],
+      "source": "ESPN archived NFL player box score",
+      "score_type": "traditional_full_ppr"
+    },
+    {
+      "game_id": "nfl-2008-12-07-stl-ari",
+      "date": "2008-12-07",
+      "athlete_id": "4512",
+      "player": "Anquan Boldin",
+      "team": "ARI",
+      "opponent": "STL",
+      "fantasy_ppr": 11.2,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": 0,
+        "rushing_tds": 0,
+        "receptions": 5,
+        "receiving_yards": 62,
+        "receiving_tds": 0,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": 0.0,
+        "receiving": 11.2,
+        "turnovers": -0.0,
+        "two_point": 0.0,
+        "returns": 0.0
+      },
+      "source_categories": [
+        "receiving"
+      ],
+      "source": "ESPN archived NFL player box score",
+      "score_type": "traditional_full_ppr"
+    },
+    {
+      "game_id": "nfl-2008-12-07-stl-ari",
+      "date": "2008-12-07",
+      "athlete_id": "1757",
+      "player": "Torry Holt",
+      "team": "STL",
+      "opponent": "ARI",
+      "fantasy_ppr": 11.1,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": 0,
+        "rushing_tds": 0,
+        "receptions": 5,
+        "receiving_yards": 61,
+        "receiving_tds": 0,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": 0.0,
+        "receiving": 11.1,
+        "turnovers": -0.0,
+        "two_point": 0.0,
+        "returns": 0.0
+      },
+      "source_categories": [
+        "receiving"
+      ],
+      "source": "ESPN archived NFL player box score",
+      "score_type": "traditional_full_ppr"
+    },
+    {
+      "game_id": "nfl-2007-11-25-sf-ari",
+      "date": "2007-11-25",
+      "athlete_id": "1755",
+      "player": "Edgerrin James",
+      "team": "ARI",
+      "opponent": "SF",
+      "fantasy_ppr": 10.9,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": 78,
+        "rushing_tds": 0,
+        "receptions": 2,
+        "receiving_yards": 11,
+        "receiving_tds": 0,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": 7.8,
+        "receiving": 3.1,
+        "turnovers": -0.0,
+        "two_point": 0.0,
+        "returns": 0.0
+      },
+      "source_categories": [
+        "receiving",
+        "rushing"
+      ],
+      "source": "ESPN archived NFL player box score",
+      "score_type": "traditional_full_ppr"
+    },
+    {
+      "game_id": "nfl-2008-12-07-stl-ari",
+      "date": "2008-12-07",
+      "athlete_id": "2299",
+      "player": "Marc Bulger",
+      "team": "STL",
+      "opponent": "ARI",
+      "fantasy_ppr": 10.62,
+      "stat_line": {
+        "passing_yards": 228,
+        "passing_tds": 1,
+        "interceptions_thrown": 1,
+        "rushing_yards": -5,
+        "rushing_tds": 0,
+        "receptions": 0,
+        "receiving_yards": 0,
+        "receiving_tds": 0,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 11.12,
+        "rushing": -0.5,
+        "receiving": 0.0,
+        "turnovers": -0.0,
+        "two_point": 0.0,
+        "returns": 0.0
+      },
+      "source_categories": [
+        "passing",
+        "rushing"
+      ],
+      "source": "ESPN archived NFL player box score",
+      "score_type": "traditional_full_ppr"
+    },
+    {
+      "game_id": "nfl-2023-12-03-ind-ten",
+      "date": "2023-12-03",
+      "athlete_id": "4039160",
+      "player": "Kylen Granson",
+      "team": "IND",
+      "opponent": "TEN",
+      "fantasy_ppr": 10.4,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": 2,
+        "rushing_tds": 0,
+        "receptions": 3,
+        "receiving_yards": 72,
+        "receiving_tds": 0,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": 0.2,
+        "receiving": 10.2,
+        "turnovers": -0.0,
+        "two_point": 0.0,
+        "returns": 0.0
+      },
+      "source_categories": [
+        "receiving",
+        "rushing"
+      ],
+      "source": "ESPN archived NFL player box score",
+      "score_type": "traditional_full_ppr"
+    },
+    {
+      "game_id": "nfl-2007-11-25-sf-ari",
+      "date": "2007-11-25",
+      "athlete_id": "10658",
+      "player": "Ben Patrick",
+      "team": "ARI",
+      "opponent": "SF",
+      "fantasy_ppr": 9.9,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": 0,
+        "rushing_tds": 0,
+        "receptions": 2,
+        "receiving_yards": 19,
+        "receiving_tds": 1,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": 0.0,
+        "receiving": 9.9,
+        "turnovers": -0.0,
+        "two_point": 0.0,
+        "returns": 0.0
+      },
+      "source_categories": [
+        "receiving"
+      ],
+      "source": "ESPN archived NFL player box score",
+      "score_type": "traditional_full_ppr"
+    },
+    {
+      "game_id": "nfl-2023-12-03-ind-ten",
+      "date": "2023-12-03",
+      "athlete_id": "4360635",
+      "player": "Chig Okonkwo",
+      "team": "TEN",
+      "opponent": "IND",
+      "fantasy_ppr": 9.4,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": 2,
+        "rushing_tds": 0,
+        "receptions": 3,
+        "receiving_yards": 62,
+        "receiving_tds": 0,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": 0.2,
+        "receiving": 9.2,
+        "turnovers": -0.0,
+        "two_point": 0.0,
+        "returns": 0.0
+      },
+      "source_categories": [
+        "fumbles",
+        "receiving",
+        "rushing"
+      ],
+      "source": "ESPN archived NFL player box score",
+      "score_type": "traditional_full_ppr"
+    },
+    {
+      "game_id": "nfl-2007-11-25-sf-ari",
+      "date": "2007-11-25",
+      "athlete_id": "2211",
+      "player": "Darrell Jackson",
+      "team": "SF",
+      "opponent": "ARI",
+      "fantasy_ppr": 9.3,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": 0,
+        "rushing_tds": 0,
+        "receptions": 5,
+        "receiving_yards": 43,
+        "receiving_tds": 0,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": 0.0,
+        "receiving": 9.3,
+        "turnovers": -0.0,
+        "two_point": 0.0,
+        "returns": 0.0
+      },
+      "source_categories": [
+        "fumbles",
+        "receiving"
+      ],
+      "source": "ESPN archived NFL player box score",
+      "score_type": "traditional_full_ppr"
+    },
+    {
+      "game_id": "nfl-2008-12-07-stl-ari",
+      "date": "2008-12-07",
+      "athlete_id": "11383",
+      "player": "Tim Hightower",
+      "team": "ARI",
+      "opponent": "STL",
+      "fantasy_ppr": 9.2,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": 32,
+        "rushing_tds": 1,
+        "receptions": 0,
+        "receiving_yards": 0,
+        "receiving_tds": 0,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": 9.2,
+        "receiving": 0.0,
+        "turnovers": -0.0,
+        "two_point": 0.0,
+        "returns": 0.0
+      },
+      "source_categories": [
+        "rushing"
+      ],
+      "source": "ESPN archived NFL player box score",
+      "score_type": "traditional_full_ppr"
+    },
+    {
+      "game_id": "nfl-2008-12-07-stl-ari",
+      "date": "2008-12-07",
+      "athlete_id": "10551",
+      "player": "Antonio Pittman",
+      "team": "STL",
+      "opponent": "ARI",
+      "fantasy_ppr": 8.8,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": 27,
+        "rushing_tds": 0,
+        "receptions": 2,
+        "receiving_yards": 41,
+        "receiving_tds": 0,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": 2.7,
+        "receiving": 6.1,
+        "turnovers": -0.0,
+        "two_point": 0.0,
+        "returns": 0.0
+      },
+      "source_categories": [
+        "receiving",
+        "rushing"
+      ],
+      "source": "ESPN archived NFL player box score",
+      "score_type": "traditional_full_ppr"
+    },
+    {
+      "game_id": "nfl-2008-12-07-stl-ari",
+      "date": "2008-12-07",
+      "athlete_id": "8458",
+      "player": "J.J. Arrington",
+      "team": "ARI",
+      "opponent": "STL",
+      "fantasy_ppr": 8.2,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": 22,
+        "rushing_tds": 0,
+        "receptions": 3,
+        "receiving_yards": 30,
+        "receiving_tds": 0,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": 2.2,
+        "receiving": 6.0,
+        "turnovers": -0.0,
+        "two_point": 0.0,
+        "returns": 0.0
+      },
+      "source_categories": [
+        "receiving",
+        "rushing"
+      ],
+      "source": "ESPN archived NFL player box score",
+      "score_type": "traditional_full_ppr"
+    },
+    {
+      "game_id": "nfl-2007-11-25-sf-ari",
+      "date": "2007-11-25",
+      "athlete_id": "8458",
+      "player": "J.J. Arrington",
+      "team": "ARI",
+      "opponent": "SF",
+      "fantasy_ppr": 8.0,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": 4,
+        "rushing_tds": 0,
+        "receptions": 5,
+        "receiving_yards": 26,
+        "receiving_tds": 0,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": 0.4,
+        "receiving": 7.6,
+        "turnovers": -0.0,
+        "two_point": 0.0,
+        "returns": 0.0
+      },
+      "source_categories": [
+        "receiving",
+        "rushing"
+      ],
+      "source": "ESPN archived NFL player box score",
+      "score_type": "traditional_full_ppr"
+    },
+    {
+      "game_id": "nfl-2023-12-03-ind-ten",
+      "date": "2023-12-03",
+      "athlete_id": "4035676",
+      "player": "Zack Moss",
+      "team": "IND",
+      "opponent": "TEN",
+      "fantasy_ppr": 7.7,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": 51,
+        "rushing_tds": 0,
+        "receptions": 2,
+        "receiving_yards": 6,
+        "receiving_tds": 0,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": 5.1,
+        "receiving": 2.6,
+        "turnovers": -0.0,
+        "two_point": 0.0,
+        "returns": 0.0
+      },
+      "source_categories": [
+        "receiving",
+        "rushing"
+      ],
+      "source": "ESPN archived NFL player box score",
+      "score_type": "traditional_full_ppr"
+    },
+    {
+      "game_id": "nfl-2007-11-25-sf-ari",
+      "date": "2007-11-25",
+      "athlete_id": "2863",
+      "player": "Marcel Shipp",
+      "team": "ARI",
+      "opponent": "SF",
+      "fantasy_ppr": 7.4,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": 14,
+        "rushing_tds": 1,
+        "receptions": 0,
+        "receiving_yards": 0,
+        "receiving_tds": 0,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": 7.4,
+        "receiving": 0.0,
+        "turnovers": -0.0,
+        "two_point": 0.0,
+        "returns": 0.0
+      },
+      "source_categories": [
+        "rushing"
+      ],
+      "source": "ESPN archived NFL player box score",
+      "score_type": "traditional_full_ppr"
+    },
+    {
+      "game_id": "nfl-2007-11-25-sf-ari",
+      "date": "2007-11-25",
+      "athlete_id": "9658",
+      "player": "Leonard Pope",
+      "team": "ARI",
+      "opponent": "SF",
+      "fantasy_ppr": 5.9,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": 0,
+        "rushing_tds": 0,
+        "receptions": 2,
+        "receiving_yards": 39,
+        "receiving_tds": 0,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": 0.0,
+        "receiving": 5.9,
+        "turnovers": -0.0,
+        "two_point": 0.0,
+        "returns": 0.0
+      },
+      "source_categories": [
+        "receiving"
+      ],
+      "source": "ESPN archived NFL player box score",
+      "score_type": "traditional_full_ppr"
+    },
+    {
+      "game_id": "nfl-2008-12-07-stl-ari",
+      "date": "2008-12-07",
+      "athlete_id": "9632",
+      "player": "Joe Klopfenstein",
+      "team": "STL",
+      "opponent": "ARI",
+      "fantasy_ppr": 5.7,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": 0,
+        "rushing_tds": 0,
+        "receptions": 2,
+        "receiving_yards": 37,
+        "receiving_tds": 0,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": 0.0,
+        "receiving": 5.7,
+        "turnovers": -0.0,
+        "two_point": 0.0,
+        "returns": 0.0
+      },
+      "source_categories": [
+        "receiving"
+      ],
+      "source": "ESPN archived NFL player box score",
+      "score_type": "traditional_full_ppr"
+    },
+    {
+      "game_id": "nfl-2008-12-07-stl-ari",
+      "date": "2008-12-07",
+      "athlete_id": "2417",
+      "player": "Dane Looker",
+      "team": "STL",
+      "opponent": "ARI",
+      "fantasy_ppr": 4.7,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": 0,
+        "rushing_tds": 0,
+        "receptions": 2,
+        "receiving_yards": 27,
+        "receiving_tds": 0,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": 0.0,
+        "receiving": 4.7,
+        "turnovers": -0.0,
+        "two_point": 0.0,
+        "returns": 0.0
+      },
+      "source_categories": [
+        "passing",
+        "receiving"
+      ],
+      "source": "ESPN archived NFL player box score",
+      "score_type": "traditional_full_ppr"
+    },
+    {
+      "game_id": "nfl-2008-12-07-stl-ari",
+      "date": "2008-12-07",
+      "athlete_id": "10287",
+      "player": "Daniel Fells",
+      "team": "STL",
+      "opponent": "ARI",
+      "fantasy_ppr": 4.5,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": 0,
+        "rushing_tds": 0,
+        "receptions": 2,
+        "receiving_yards": 25,
+        "receiving_tds": 0,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": 0.0,
+        "receiving": 4.5,
+        "turnovers": -0.0,
+        "two_point": 0.0,
+        "returns": 0.0
+      },
+      "source_categories": [
+        "receiving"
+      ],
+      "source": "ESPN archived NFL player box score",
+      "score_type": "traditional_full_ppr"
+    },
+    {
+      "game_id": "nfl-2023-12-03-ind-ten",
+      "date": "2023-12-03",
+      "athlete_id": "4688813",
+      "player": "Josh Downs",
+      "team": "IND",
+      "opponent": "TEN",
+      "fantasy_ppr": 4.4,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": 0,
+        "rushing_tds": 0,
+        "receptions": 3,
+        "receiving_yards": 14,
+        "receiving_tds": 0,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": 0.0,
+        "receiving": 4.4,
+        "turnovers": -0.0,
+        "two_point": 0.0,
+        "returns": 0.0
+      },
+      "source_categories": [
+        "receiving"
+      ],
+      "source": "ESPN archived NFL player box score",
+      "score_type": "traditional_full_ppr"
+    },
+    {
+      "game_id": "nfl-2007-11-25-sf-ari",
+      "date": "2007-11-25",
+      "athlete_id": "2343",
+      "player": "Tim Rattay",
+      "team": "ARI",
+      "opponent": "SF",
+      "fantasy_ppr": 4.08,
+      "stat_line": {
+        "passing_yards": 2,
+        "passing_tds": 1,
+        "interceptions_thrown": 0,
+        "rushing_yards": 0,
+        "rushing_tds": 0,
+        "receptions": 0,
+        "receiving_yards": 0,
+        "receiving_tds": 0,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 4.08,
+        "rushing": 0.0,
+        "receiving": 0.0,
+        "turnovers": -0.0,
+        "two_point": 0.0,
+        "returns": 0.0
+      },
+      "source_categories": [
+        "passing"
+      ],
+      "source": "ESPN archived NFL player box score",
+      "score_type": "traditional_full_ppr"
+    },
+    {
+      "game_id": "nfl-2008-12-07-stl-ari",
+      "date": "2008-12-07",
+      "athlete_id": "11267",
+      "player": "Donnie Avery",
+      "team": "STL",
+      "opponent": "ARI",
+      "fantasy_ppr": 3.8,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": 0,
+        "rushing_tds": 0,
+        "receptions": 2,
+        "receiving_yards": 18,
+        "receiving_tds": 0,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": 0.0,
+        "receiving": 3.8,
+        "turnovers": -0.0,
+        "two_point": 0.0,
+        "returns": 0.0
+      },
+      "source_categories": [
+        "receiving"
+      ],
+      "source": "ESPN archived NFL player box score",
+      "score_type": "traditional_full_ppr"
+    },
+    {
+      "game_id": "nfl-2023-12-03-ind-ten",
+      "date": "2023-12-03",
+      "athlete_id": "3929785",
+      "player": "Nick Westbrook-Ikhine",
+      "team": "TEN",
+      "opponent": "IND",
+      "fantasy_ppr": 3.8,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": 0,
+        "rushing_tds": 0,
+        "receptions": 1,
+        "receiving_yards": 28,
+        "receiving_tds": 0,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": 0.0,
+        "receiving": 3.8,
+        "turnovers": -0.0,
+        "two_point": 0.0,
+        "returns": 0.0
+      },
+      "source_categories": [
+        "receiving"
+      ],
+      "source": "ESPN archived NFL player box score",
+      "score_type": "traditional_full_ppr"
+    },
+    {
+      "game_id": "nfl-2008-12-07-stl-ari",
+      "date": "2008-12-07",
+      "athlete_id": "9264",
+      "player": "Stephen Spach",
+      "team": "ARI",
+      "opponent": "STL",
+      "fantasy_ppr": 3.5,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": 0,
+        "rushing_tds": 0,
+        "receptions": 2,
+        "receiving_yards": 15,
+        "receiving_tds": 0,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": 0.0,
+        "receiving": 3.5,
+        "turnovers": -0.0,
+        "two_point": 0.0,
+        "returns": 0.0
+      },
+      "source_categories": [
+        "receiving"
+      ],
+      "source": "ESPN archived NFL player box score",
+      "score_type": "traditional_full_ppr"
+    },
+    {
+      "game_id": "nfl-2023-12-03-ind-ten",
+      "date": "2023-12-03",
+      "athlete_id": "4429676",
+      "player": "Tyler Goodson",
+      "team": "IND",
+      "opponent": "TEN",
+      "fantasy_ppr": 3.1,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": 0,
+        "rushing_tds": 0,
+        "receptions": 2,
+        "receiving_yards": 11,
+        "receiving_tds": 0,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": 0.0,
+        "receiving": 3.1,
+        "turnovers": -0.0,
+        "two_point": 0.0,
+        "returns": 0.0
+      },
+      "source_categories": [
+        "receiving"
+      ],
+      "source": "ESPN archived NFL player box score",
+      "score_type": "traditional_full_ppr"
+    },
+    {
+      "game_id": "nfl-2023-12-03-ind-ten",
+      "date": "2023-12-03",
+      "athlete_id": "4360086",
+      "player": "Josh Whyle",
+      "team": "TEN",
+      "opponent": "IND",
+      "fantasy_ppr": 2.6,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": 0,
+        "rushing_tds": 0,
+        "receptions": 1,
+        "receiving_yards": 16,
+        "receiving_tds": 0,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": 0.0,
+        "receiving": 2.6,
+        "turnovers": -0.0,
+        "two_point": 0.0,
+        "returns": 0.0
+      },
+      "source_categories": [
+        "receiving"
+      ],
+      "source": "ESPN archived NFL player box score",
+      "score_type": "traditional_full_ppr"
+    },
+    {
+      "game_id": "nfl-2023-12-03-ind-ten",
+      "date": "2023-12-03",
+      "athlete_id": "4362523",
+      "player": "Will Mallory",
+      "team": "IND",
+      "opponent": "TEN",
+      "fantasy_ppr": 2.4,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": 0,
+        "rushing_tds": 0,
+        "receptions": 2,
+        "receiving_yards": 4,
+        "receiving_tds": 0,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": 0.0,
+        "receiving": 2.4,
+        "turnovers": -0.0,
+        "two_point": 0.0,
+        "returns": 0.0
+      },
+      "source_categories": [
+        "receiving"
+      ],
+      "source": "ESPN archived NFL player box score",
+      "score_type": "traditional_full_ppr"
+    },
+    {
+      "game_id": "nfl-2007-11-25-sf-ari",
+      "date": "2007-11-25",
+      "athlete_id": "9686",
+      "player": "Michael Robinson",
+      "team": "SF",
+      "opponent": "ARI",
+      "fantasy_ppr": 2.2,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": 4,
+        "rushing_tds": 0,
+        "receptions": 1,
+        "receiving_yards": 8,
+        "receiving_tds": 0,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": 0.4,
+        "receiving": 1.8,
+        "turnovers": -0.0,
+        "two_point": 0.0,
+        "returns": 0.0
+      },
+      "source_categories": [
+        "receiving",
+        "rushing"
+      ],
+      "source": "ESPN archived NFL player box score",
+      "score_type": "traditional_full_ppr"
+    },
+    {
+      "game_id": "nfl-2023-12-03-ind-ten",
+      "date": "2023-12-03",
+      "athlete_id": "2576581",
+      "player": "Chris Moore",
+      "team": "TEN",
+      "opponent": "IND",
+      "fantasy_ppr": 2.2,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": 0,
+        "rushing_tds": 0,
+        "receptions": 1,
+        "receiving_yards": 12,
+        "receiving_tds": 0,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": 0.0,
+        "receiving": 2.2,
+        "turnovers": -0.0,
+        "two_point": 0.0,
+        "returns": 0.0
+      },
+      "source_categories": [
+        "receiving"
+      ],
+      "source": "ESPN archived NFL player box score",
+      "score_type": "traditional_full_ppr"
+    },
+    {
+      "game_id": "nfl-2008-12-07-stl-ari",
+      "date": "2008-12-07",
+      "athlete_id": "8423",
+      "player": "Antrel Rolle",
+      "team": "ARI",
+      "opponent": "STL",
+      "fantasy_ppr": 1.9,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": 0,
+        "rushing_tds": 0,
+        "receptions": 1,
+        "receiving_yards": 9,
+        "receiving_tds": 0,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": 0.0,
+        "receiving": 1.9,
+        "turnovers": -0.0,
+        "two_point": 0.0,
+        "returns": 0.0
+      },
+      "source_categories": [
+        "receiving"
+      ],
+      "source": "ESPN archived NFL player box score",
+      "score_type": "traditional_full_ppr"
+    },
+    {
+      "game_id": "nfl-2008-12-07-stl-ari",
+      "date": "2008-12-07",
+      "athlete_id": "10692",
+      "player": "Derek Stanley",
+      "team": "STL",
+      "opponent": "ARI",
+      "fantasy_ppr": 1.6,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": 0,
+        "rushing_tds": 0,
+        "receptions": 1,
+        "receiving_yards": 6,
+        "receiving_tds": 0,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": 0.0,
+        "receiving": 1.6,
+        "turnovers": -0.0,
+        "two_point": 0.0,
+        "returns": 0.0
+      },
+      "source_categories": [
+        "receiving"
+      ],
+      "source": "ESPN archived NFL player box score",
+      "score_type": "traditional_full_ppr"
+    },
+    {
+      "game_id": "nfl-2007-11-25-sf-ari",
+      "date": "2007-11-25",
+      "athlete_id": "9761",
+      "player": "Delanie Walker",
+      "team": "SF",
+      "opponent": "ARI",
+      "fantasy_ppr": 1.5,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": 0,
+        "rushing_tds": 0,
+        "receptions": 1,
+        "receiving_yards": 5,
+        "receiving_tds": 0,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": 0.0,
+        "receiving": 1.5,
+        "turnovers": -0.0,
+        "two_point": 0.0,
+        "returns": 0.0
+      },
+      "source_categories": [
+        "receiving"
+      ],
+      "source": "ESPN archived NFL player box score",
+      "score_type": "traditional_full_ppr"
+    },
+    {
+      "game_id": "nfl-2008-12-07-stl-ari",
+      "date": "2008-12-07",
+      "athlete_id": "2158",
+      "player": "Anthony Becht",
+      "team": "STL",
+      "opponent": "ARI",
+      "fantasy_ppr": 1.5,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": 0,
+        "rushing_tds": 0,
+        "receptions": 1,
+        "receiving_yards": 5,
+        "receiving_tds": 0,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": 0.0,
+        "receiving": 1.5,
+        "turnovers": -0.0,
+        "two_point": 0.0,
+        "returns": 0.0
+      },
+      "source_categories": [
+        "receiving"
+      ],
+      "source": "ESPN archived NFL player box score",
+      "score_type": "traditional_full_ppr"
+    },
+    {
+      "game_id": "nfl-2008-12-07-stl-ari",
+      "date": "2008-12-07",
+      "athlete_id": "11375",
+      "player": "Keenan Burton",
+      "team": "STL",
+      "opponent": "ARI",
+      "fantasy_ppr": 1.5,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": 0,
+        "rushing_tds": 0,
+        "receptions": 1,
+        "receiving_yards": 5,
+        "receiving_tds": 0,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": 0.0,
+        "receiving": 1.5,
+        "turnovers": -0.0,
+        "two_point": 0.0,
+        "returns": 0.0
+      },
+      "source_categories": [
+        "receiving"
+      ],
+      "source": "ESPN archived NFL player box score",
+      "score_type": "traditional_full_ppr"
+    },
+    {
+      "game_id": "nfl-2008-12-07-stl-ari",
+      "date": "2008-12-07",
+      "athlete_id": "1755",
+      "player": "Edgerrin James",
+      "team": "ARI",
+      "opponent": "STL",
+      "fantasy_ppr": 1.1,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": 11,
+        "rushing_tds": 0,
+        "receptions": 0,
+        "receiving_yards": 0,
+        "receiving_tds": 0,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": 1.1,
+        "receiving": 0.0,
+        "turnovers": -0.0,
+        "two_point": 0.0,
+        "returns": 0.0
+      },
+      "source_categories": [
+        "rushing"
+      ],
+      "source": "ESPN archived NFL player box score",
+      "score_type": "traditional_full_ppr"
+    },
+    {
+      "game_id": "nfl-2007-11-25-sf-ari",
+      "date": "2007-11-25",
+      "athlete_id": "4978",
+      "player": "Maurice Hicks",
+      "team": "SF",
+      "opponent": "ARI",
+      "fantasy_ppr": 0.7,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": 7,
+        "rushing_tds": 0,
+        "receptions": 0,
+        "receiving_yards": 0,
+        "receiving_tds": 0,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": 0.7,
+        "receiving": 0.0,
+        "turnovers": -0.0,
+        "two_point": 0.0,
+        "returns": 0.0
+      },
+      "source_categories": [
+        "rushing"
+      ],
+      "source": "ESPN archived NFL player box score",
+      "score_type": "traditional_full_ppr"
+    },
+    {
+      "game_id": "nfl-2023-12-03-ind-ten",
+      "date": "2023-12-03",
+      "athlete_id": "4722908",
+      "player": "Drew Ogletree",
+      "team": "IND",
+      "opponent": "TEN",
+      "fantasy_ppr": 0.0,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": 0,
+        "rushing_tds": 0,
+        "receptions": 0,
+        "receiving_yards": 0,
+        "receiving_tds": 0,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": 0.0,
+        "receiving": 0.0,
+        "turnovers": -0.0,
+        "two_point": 0.0,
+        "returns": 0.0
+      },
+      "source_categories": [
+        "receiving"
+      ],
+      "source": "ESPN archived NFL player box score",
+      "score_type": "traditional_full_ppr"
+    },
+    {
+      "game_id": "nfl-2023-12-03-ind-ten",
+      "date": "2023-12-03",
+      "athlete_id": "4039253",
+      "player": "Trevon Wesco",
+      "team": "TEN",
+      "opponent": "IND",
+      "fantasy_ppr": 0.0,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": 0,
+        "rushing_tds": 0,
+        "receptions": 0,
+        "receiving_yards": 0,
+        "receiving_tds": 0,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": 0.0,
+        "receiving": 0.0,
+        "turnovers": -0.0,
+        "two_point": 0.0,
+        "returns": 0.0
+      },
+      "source_categories": [
+        "receiving"
+      ],
+      "source": "ESPN archived NFL player box score",
+      "score_type": "traditional_full_ppr"
+    },
+    {
+      "game_id": "nfl-2023-12-03-ind-ten",
+      "date": "2023-12-03",
+      "athlete_id": "4241401",
+      "player": "Trey Sermon",
+      "team": "IND",
+      "opponent": "TEN",
+      "fantasy_ppr": 0.0,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": 0,
+        "rushing_tds": 0,
+        "receptions": 0,
+        "receiving_yards": 0,
+        "receiving_tds": 0,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": 0.0,
+        "receiving": 0.0,
+        "turnovers": -0.0,
+        "two_point": 0.0,
+        "returns": 0.0
+      },
+      "source_categories": [
+        "receiving"
+      ],
+      "source": "ESPN archived NFL player box score",
+      "score_type": "traditional_full_ppr"
+    },
+    {
+      "game_id": "nfl-2023-12-03-ind-ten",
+      "date": "2023-12-03",
+      "athlete_id": "4256051",
+      "player": "Ryan Stonehouse",
+      "team": "TEN",
+      "opponent": "IND",
+      "fantasy_ppr": -3.1,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": -11,
+        "rushing_tds": 0,
+        "receptions": 0,
+        "receiving_yards": 0,
+        "receiving_tds": 0,
+        "fumbles_lost": 1,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": -1.1,
+        "receiving": 0.0,
+        "turnovers": -2.0,
+        "two_point": 0.0,
+        "returns": 0.0
+      },
+      "source_categories": [
+        "fumbles",
+        "rushing"
+      ],
+      "source": "ESPN archived NFL player box score",
+      "score_type": "traditional_full_ppr"
+    }
+  ]
+}

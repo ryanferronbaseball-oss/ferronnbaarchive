@@ -9,6 +9,7 @@
 <div class="game-grid" id="games"></div>
 <h2>Statistics from these games</h2><p class="lead">Separate categories preserve the original football box score. Totals are limited to the games you personally witnessed.</p>
 <div id="careerStats"></div>
+<h2>Full-PPR fantasy performances</h2><div id="pprStats"><div class="empty">Loading fantasy game performance…</div></div>
 <h2>Individual game logs</h2><div id="gameLogs"></div>
 <footer class="footer">Courtside Archive · NFL player statistics sourced from historical ESPN game box scores.</footer>
 </main><script>
@@ -18,7 +19,7 @@ document.addEventListener("DOMContentLoaded",async()=>{
  const id=new URLSearchParams(location.search).get("id");
  const esc=A.esc;
  try{
-  const {games,rows}=await A.load();
+  const {games,rows,ppr}=await A.load();
   const personal=rows.filter(x=>String(x.athlete_id)===id);
   if(!id||!personal.length){el("playerName").textContent="Player not found";el("playerSummary").textContent="No game appearances match this player identifier.";return}
   const name=personal[0].player,teamNames=[...new Set(personal.map(x=>x.team))];
@@ -30,6 +31,11 @@ document.addEventListener("DOMContentLoaded",async()=>{
     '<div class="metric"><strong>'+new Set(personal.map(x=>x.category)).size+'</strong><small>Stat categories</small></div>'+
     '<div class="metric"><strong>'+personal.length+'</strong><small>Statistical records</small></div>';
   el("games").innerHTML=seen.map(A.gameCard).join("");
+  const relevant=ppr.performances.filter(p=>String(p.athlete_id)===id);
+  el("pprStats").innerHTML=relevant.length?'<div class="table-wrap"><table><thead><tr><th>Attended game</th><th>Fantasy PPR</th><th>Receptions</th><th>Rush YDS</th><th>REC YDS</th><th>PASS YDS</th></tr></thead><tbody>'+
+  relevant.slice().sort((a,b)=>b.fantasy_ppr-a.fantasy_ppr).map(p=>'<tr><td><a href="./game.html?id='+encodeURIComponent(p.game_id)+'">'+esc(p.date)+'</a></td><td><strong>'+Number(p.fantasy_ppr).toFixed(2)+'</strong></td><td>'+p.stat_line.receptions+'</td><td>'+p.stat_line.rushing_yards+'</td><td>'+p.stat_line.receiving_yards+'</td><td>'+p.stat_line.passing_yards+'</td></tr>').join("")+'</tbody></table></div>'+
+  '<p class="note">Personal PPR total: <strong>'+relevant.reduce((s,p)=>s+p.fantasy_ppr,0).toFixed(2)+'</strong> · Best game: <strong>'+Math.max(...relevant.map(p=>p.fantasy_ppr)).toFixed(2)+'</strong> · <a href="./milestones.html">Explore all milestones ↗</a></p>':
+  '<div class="empty">Traditional offensive PPR is not defined for this defensive or special-teams-only player. View their actual defensive/special teams statistical categories below.</div>';
   const groups=["offense","defense","special"];
   el("careerStats").innerHTML=groups.map(g=>{
    const cats=A.GROUPS[g].map(([cat,label])=>{

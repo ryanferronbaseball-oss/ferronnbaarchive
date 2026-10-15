@@ -48,7 +48,7 @@ def check(ok,label):
 
 def main():
     for file in PAGES:
-        original=(ROOT/file).read_text(encoding="utf8")
+        original=(ROOT/"nba"/file).read_text(encoding="utf8")
         rendered=(COLLEGE/file).read_text(encoding="utf8")
         a,b=read_structure(original),read_structure(rendered)
         for tag in ("header","nav","h1","h2","h3","table","select","footer"):

@@ -74,7 +74,9 @@ def match_event(event, row):
     return (left in team_labels(comps[0]) and right in team_labels(comps[1])) or (left in team_labels(comps[1]) and right in team_labels(comps[0]))
 
 def parse_scoreboard(data, date):
-    return [e for e in data.get("events", []) if (e.get("date") or "")[:10] == date]
+    # ESPN dates use UTC kickoff timestamps: west-coast late games may land
+    # on the following UTC day. Trust the requested scoreboard date window.
+    return data.get("events", [])
 
 def extract_boxscore(summary, row, event_id):
     box = summary.get("boxscore") or {}
@@ -118,12 +120,16 @@ def main():
     ap.add_argument("--output", default=str(ROOT / "output"))
     ap.add_argument("--limit", type=int, default=10)
     ap.add_argument("--fetch-boxscores", action="store_true")
+    ap.add_argument("--ids", default="", help="Comma-separated attendance IDs to test")
     args = ap.parse_args()
     out = Path(args.output)
     out.mkdir(parents=True, exist_ok=True)
     with open(args.input, newline="", encoding="utf-8-sig") as handle:
         rows = list(csv.DictReader(handle))
-    if args.limit > 0:
+    if args.ids:
+        selected = {x.strip() for x in args.ids.split(",")}
+        rows = [r for r in rows if r["attendance_id"] in selected]
+    elif args.limit > 0:
         rows = rows[:args.limit]
     date_cache = {}
     report, player_lines = [], []

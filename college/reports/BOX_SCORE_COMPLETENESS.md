@@ -1,8 +1,8 @@
 # College archive — ESPN box-score completeness audit
 
-Latest: [94-game import with official Utah State, Pepperdine and Cal State Fullerton repairs (October 15, 2026)](https://github.com/ryanferronbaseball-oss/ferronnbaarchive/actions/runs/38770568094).
+Latest: [94-game import after complete Jase Townsend 17-game audit (October 15, 2026)](https://github.com/ryanferronbaseball-oss/ferronnbaarchive/actions/runs/38772027677).
 
-**Attendance matching:** 94/94 games. **Point-score reconciliation:** 78/94. **Strict point-and-minute reconciliation:** 76/94. **Games requiring backfill:** 18 (16 missing points, 2 incomplete minutes with scoring complete). **Original ESPN rows:** 1,790. **Officially supplemented rows:** 13 (2 Wetzell, 6 Colorado, 5 across the three new repairs). **Corrected pre-existing ESPN rows:** 6. **Strictly certified rows:** 1,463.
+**Attendance matching:** 94/94 games. **Point-score reconciliation:** 88/94. **Strict point-and-minute reconciliation:** 86/94. **Games requiring backfill:** 8 (6 missing points, 2 minute-only). **Original ESPN rows:** 1,790. **Officially supplemented rows:** 24 (2 Wetzell, 6 Colorado, 5 from the three priority-game repairs, 11 further Townsend appearances). **Corrected pre-existing ESPN rows:** 6. **Strictly certified rows:** 1,662.
 
 A game is marked **complete only when both teams' player points match their final scores AND their player-minute totals match NCAA regulation or overtime expectations**. Partial games remain in the attendance history, but raw player rows from those games are excluded from certified leaderboard totals pending verification/backfill. Excluding a game is not a claim that its player performances are wrong; it is a conservative choice while ESPN's lineup appears incomplete.
 
@@ -38,6 +38,34 @@ Primary sources: [Cal State Fullerton official box score](https://fullertontitan
 
 The [completed full archive QA run](https://github.com/ryanferronbaseball-oss/ferronnbaarchive/actions/runs/38770568094) confirms all three games as `complete`, including overtime team-minute reconciliation in Utah State–San Diego.
 
+## Systematic Jase Townsend audit — all 17 attended USD games (2021–23)
+
+The original ESPN game-summary import had **zero** Jase Townsend appearances in these seasons, even though the University of San Diego's official box scores show him playing in **14 of the 17 games attended**. Before this audit we had restored three official lines (attendance #45, #59, #68). All **eleven remaining appearances** are now appended to the sourced supplement file, using the **same stable ID** `official:san-diego:jase-townsend` across seasons. No unverified ESPN athlete ID was manufactured.
+
+| Attendance ID | Date | Opponent | Townsend PTS | Townsend MIN | Official game box score |
+|---:|---|---|---:|---:|---|
+| 42 | 2021-11-09 | La Verne | 13 | 21 | [USD](https://usdtoreros.com/sports/mens-basketball/stats/2021-22/la-verne/boxscore/12401) |
+| 43 | 2021-11-17 | UC Riverside | 8 | 30 | [USD](https://usdtoreros.com/sports/mens-basketball/stats/2021-22/uc-riverside/boxscore/12405) |
+| 45 | 2021-11-19 | Cal State Fullerton | 14 | 32 | [USD](https://usdtoreros.com/sports/mens-basketball/stats/2021-22/cal-state-fullerton/boxscore/12406) |
+| 47 | 2021-11-28 | Cal State Northridge | 3 | 33 | [USD](https://usdtoreros.com/boxscore.aspx?id=12409&path=mbball) |
+| 48 | 2021-12-05 | Cal Poly | 7 | 20 | [USD](https://usdtoreros.com/sports/mens-basketball/stats/2021-22/cal-poly/boxscore/12411) |
+| 50 | 2021-12-11 | Cal Lutheran | DNP | — | [USD](https://usdtoreros.com/sports/mens-basketball/stats/2021-22/cal-lutheran/boxscore/12412) |
+| 52 | 2022-01-13 | Portland | DNP | — | [USD](https://usdtoreros.com/sports/mens-basketball/stats/2021-22/portland/boxscore/12253) |
+| 53 | 2022-01-15 | Loyola Marymount | DNP | — | [USD](https://usdtoreros.com/boxscore.aspx?id=12254&path=mbball) |
+| 54 | 2022-02-03 | Gonzaga | 13 | 25 | [USD](https://usdtoreros.com/sports/mens-basketball/stats/2021-22/gonzaga/boxscore/12249) |
+| 55 | 2022-02-05 | Santa Clara | 7 | 27 | [USD](https://usdtoreros.com/boxscore.aspx?id=12259&path=mbball) |
+| 56 | 2022-11-09 | Florida Gulf Coast | 11 | 25 | [USD](https://usdtoreros.com/boxscore.aspx?id=13875&path=mbball) |
+| 59 | 2022-11-17 | Utah State | 7 | 30 | [USD](https://usdtoreros.com/sports/mens-basketball/stats/2022-23/utah-state/boxscore/13877) |
+| 61 | 2022-11-28 | Longwood | 15 | 36 | [USD](https://usdtoreros.com/sports/mens-basketball/stats/2022-23/longwood/boxscore/13881) |
+| 63 | 2022-12-03 | UNLV | 14 | 31 | [USD](https://usdtoreros.com/sports/mens-basketball/stats/2022-23/unlv/boxscore/13883) |
+| 66 | 2023-01-05 | Pacific | 12 | 36 | [USD](https://usdtoreros.com/boxscore.aspx?id=13855&path=mbball) |
+| 68 | 2023-01-12 | Pepperdine | 25 | 38 | [USD](https://usdtoreros.com/sports/mens-basketball/stats/2022-23/pepperdine/boxscore/13857) |
+| 72 | 2023-01-28 | San Francisco | 21 | 33 | [USD](https://usdtoreros.com/sports/mens-basketball/stats/2022-23/san-francisco/boxscore/13861) |
+
+**Attended-game totals from these fourteen official player lines: 170 PTS, 417 MIN, 14 GP (12.1 PPG)**. This is not a full USD career total. The source comparison and 17-game HTML audit run are documented at [this GitHub workflow](https://github.com/ryanferronbaseball-oss/ferronnbaarchive/actions/runs/38771801039).
+
+Ten more games passed the strict game-level quality gate after restoring eleven Townsend appearances. **Cal Poly at San Diego on December 5, 2021 (#48) remains partial**, because Cal Poly's player totals are still short **two points and twenty minutes**; Townsend's San Diego statistics are now restored and USD's own team totals reconcile.
+
 ## Additional scoreless-player investigation
 
 Two games still reconcile every point yet fail the NCAA expected player-minute check, suggesting missing zero-point player appearances:
@@ -47,28 +75,18 @@ Two games still reconcile every point yet fail the NCAA expected player-minute c
 | 30 | 2019-11-27 | Hofstra @ San Diego | Hofstra 193 of 200 |
 | 64 | 2022-12-10 | Denver @ UCLA | Denver 197 of 200 |
 
-**The scoring backfill queue below contains 16 games.** These additional 2 minute-only cases bring the total open QA queue to 18.
+**The scoring backfill queue below contains 6 games.** These additional 2 minute-only cases bring the total open QA queue to 8.
 
-## Backfill queue (16 games with missing player points)
+## Backfill queue (6 games with missing player points)
 
 | Attendance ID | Date | Matchup | Missing from away player's summed PTS | Missing from home player's summed PTS |
 |---:|---|---|---:|---:|
 | 8 | 2017-12-22 | Life Pacific @ San Diego | 13 | 0 |
 | 31 | 2019-11-30 | Eastern Michigan @ UC Irvine | 1 | 0 |
 | 37 | 2020-01-25 | Santa Clara @ San Diego | 7 | 0 |
-| 42 | 2021-11-09 | La Verne @ San Diego | 0 | 13 |
-| 43 | 2021-11-17 | UC Riverside @ San Diego | 0 | 8 |
-| 47 | 2021-11-28 | Cal State Northridge @ San Diego | 0 | 3 |
-| 48 | 2021-12-05 | Cal Poly @ San Diego | 2 | 7 |
+| 48 | 2021-12-05 | Cal Poly @ San Diego | 2 | 0 |
 | 49 | 2021-12-08 | Cal State Fullerton @ San Diego State | 3 | 0 |
-| 54 | 2022-02-03 | Gonzaga @ San Diego | 0 | 13 |
-| 55 | 2022-02-05 | Santa Clara @ San Diego | 0 | 7 |
-| 56 | 2022-11-09 | Florida Gulf Coast @ San Diego | 0 | 11 |
-| 61 | 2022-11-28 | Longwood @ San Diego | 0 | 15 |
-| 63 | 2022-12-03 | UNLV @ San Diego | 0 | 14 |
-| 66 | 2023-01-05 | Pacific @ San Diego | 0 | 12 |
 | 71 | 2023-01-25 | Utah State @ San Diego State | 15 | 0 |
-| 72 | 2023-01-28 | San Francisco @ San Diego | 0 | 21 |
 
 **Quality gate before integrating college into live navigation:** resolve or explicitly document all partial games; validate player rows and aggregations, preserve the exact NBA design and seven page structures, test college school-transfer player profiles, and verify mobile/desktop navigation. No production merge while audit failures remain unresolved.
 

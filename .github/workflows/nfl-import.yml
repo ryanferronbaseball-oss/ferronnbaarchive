@@ -1,0 +1,54 @@
+name: NFL three-game historical box-score import
+on:
+  push:
+    branches: [nfl-three-game-import]
+    paths:
+      - "nfl/data/games.json"
+      - "nfl/scripts/import_boxscores.py"
+      - ".github/workflows/nfl-import.yml"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  import-and-verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: nfl-three-game-import
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Load complete ESPN NFL player box-score categories
+        run: python nfl/scripts/import_boxscores.py
+      - name: Validate verified game metadata and import report
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('nfl/data')
+          games=json.loads((p/'games.json').read_text())
+          report=json.loads((p/'import_report.json').read_text())
+          assert len(games)==3 and len(report['games'])==3
+          assert [(g['away_score'],g['home_score']) for g in games]==[(37,31),(10,34),(31,28)]
+          assert set(g['id'] for g in games)==set(row['game_id'] for row in report['games'])
+          print('Historical games verified; status:', [(x['game_id'],x['status'],x.get('player_stat_rows',0)) for x in report['games']])
+          PY
+      - name: Commit imported source snapshots, statistics and status
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add nfl/data
+          if ! git diff --cached --quiet; then
+            git commit -m "Import verifiable NFL box-score categories and record unresolved historical sources"
+            git push origin HEAD:nfl-three-game-import
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: nfl-boxscore-import-audit
+          path: |
+            nfl/data/import_report.json
+            nfl/data/player_stats.json
+          if-no-files-found: warn

@@ -1,0 +1,30 @@
+name: College ESPN historical pilot
+on:
+  push:
+    branches: [college-import-pilot]
+    paths:
+      - "college/**"
+      - ".github/workflows/college-espn-pilot.yml"
+  workflow_dispatch:
+jobs:
+  pilot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Match six attended games and fetch raw ESPN player boxscores
+        run: python college/scripts/import_espn.py --ids 1,2,12,80,90,94 --fetch-boxscores
+      - name: Summarize import
+        if: always()
+        run: |
+          if [ -f college/output/summary.json ]; then cat college/output/summary.json; fi
+      - name: Save pilot report as build artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: college-espn-pilot-report
+          path: college/output/
+          if-no-files-found: warn

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NFL Player Profile | Courtside Archive</title><meta name="description" content="A player's NFL game logs and statistics from the games you attended.">
+<link rel="stylesheet" href="./assets/archive.css"><script src="./assets/archive.js" defer></script></head>
+<body><main><div id="navigation"></div><div class="eyebrow">NFL · Player profile</div>
+<h1 id="playerName">Player profile</h1><p class="lead" id="playerSummary">Loading your personal player-game log…</p>
+<div class="metrics" id="metrics"></div>
+<div class="section-heading"><h2>Games you attended</h2><a class="action-link secondary" href="./stats.html">All leaderboards ↗</a></div>
+<div class="game-grid" id="games"></div>
+<h2>Statistics from these games</h2><p class="lead">Separate categories preserve the original football box score. Totals are limited to the games you personally witnessed.</p>
+<div id="careerStats"></div>
+<h2>Individual game logs</h2><div id="gameLogs"></div>
+<footer class="footer">Courtside Archive · NFL player statistics sourced from historical ESPN game box scores.</footer>
+</main><script>
+document.addEventListener("DOMContentLoaded",async()=>{
+ const A=window.NFLArchive,el=id=>document.getElementById(id);
+ el("navigation").innerHTML=A.nav("player");
+ const id=new URLSearchParams(location.search).get("id");
+ const esc=A.esc;
+ try{
+  const {games,rows}=await A.load();
+  const personal=rows.filter(x=>String(x.athlete_id)===id);
+  if(!id||!personal.length){el("playerName").textContent="Player not found";el("playerSummary").textContent="No game appearances match this player identifier.";return}
+  const name=personal[0].player,teamNames=[...new Set(personal.map(x=>x.team))];
+  const gameIDs=[...new Set(personal.map(x=>x.game_id))],seen=games.filter(g=>gameIDs.includes(g.id));
+  el("playerName").textContent=name;document.title=name+" | NFL Courtside Archive";
+  el("playerSummary").textContent=teamNames.join(" / ")+" · "+seen.length+" attended NFL game"+(seen.length===1?"":"s")+" with a recorded box-score category.";
+  el("metrics").innerHTML='<div class="metric"><strong>'+seen.length+'</strong><small>Games you saw</small></div>'+
+    '<div class="metric"><strong>'+teamNames.length+'</strong><small>NFL teams represented</small></div>'+
+    '<div class="metric"><strong>'+new Set(personal.map(x=>x.category)).size+'</strong><small>Stat categories</small></div>'+
+    '<div class="metric"><strong>'+personal.length+'</strong><small>Statistical records</small></div>';
+  el("games").innerHTML=seen.map(A.gameCard).join("");
+  const groups=["offense","defense","special"];
+  el("careerStats").innerHTML=groups.map(g=>{
+   const cats=A.GROUPS[g].map(([cat,label])=>{
+     if(!personal.some(x=>x.category===cat))return "";
+     return '<section class="panel"><h3>'+esc(label)+'</h3>'+A.table(A.group(personal,cat),cat,{combined:true})+'</section>';
+   }).join("");
+   return cats?'<h3 style="margin-top:20px">'+esc(A.TITLES[g])+'</h3>'+cats:"";
+  }).join("");
+  el("gameLogs").innerHTML=seen.map(g=>{
+   const entries=personal.filter(x=>x.game_id===g.id);
+   return '<section class="panel"><div class="section-heading"><h3>'+esc(A.date(g.date))+' · '+esc(g.away_abbr)+' at '+esc(g.home_abbr)+'</h3><a class="action-link secondary" href="./game.html?id='+encodeURIComponent(g.id)+'">Full game box score ↗</a></div>'+
+   entries.map(x=>'<h3 style="margin:20px 0 9px">'+esc(x.category.replace(/([A-Z])/g," $1").replace(/^./,v=>v.toUpperCase()))+'</h3>'+A.table([x],x.category)).join("")+
+   '</section>';
+  }).join("");
+ }catch(e){el("playerName").textContent="Player profile unavailable";el("playerSummary").textContent=e.message}
+});
+</script></body></html>

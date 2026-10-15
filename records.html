@@ -6,7 +6,7 @@
 </style></head><body><main>
 <header><div class="brand">COURTSIDE <span>ARCHIVE</span></div><nav class="links"><a href="./index.html">Attendance</a><a href="./stats.html">Player leaderboards</a><a href="./game.html">Game details</a></nav></header>
 <div class="eyebrow" style="margin-top:40px">Your NBA attendance · 2006–2018</div><h1>Single-game records.</h1>
-<p>The biggest individual performances you witnessed across all 30 attended NBA games. Each result comes from the same imported, validated box scores used by your player leaderboards.</p>
+<p>The biggest individual performances you witnessed across all attended NBA games. Each result comes from the same imported, validated box scores used by your player leaderboards.</p>
 <div id="cards" class="cards"><div class="card">Loading records…</div></div>
 <section class="panel"><h2>Explore individual performances</h2><p>Choose a category to rank every performance, or search by player or team. Ties remain visible as separate games.</p>
 <div class="filters"><select id="category"><option value="pts">Points</option><option value="reb">Rebounds</option><option value="ast">Assists</option><option value="stl">Steals</option><option value="blk">Blocks</option><option value="fg3m">Three-pointers made</option><option value="fgm">Field goals made</option><option value="ftm">Free throws made</option></select><input id="search" placeholder="Search player, team or opponent" type="search"><select id="limit"><option value="10">Top 10</option><option value="25">Top 25</option><option value="50">Top 50</option><option value="9999">All performances</option></select></div>
@@ -16,7 +16,7 @@
 const $=id=>document.getElementById(id);
 const categories=[["pts","Points","PTS"],["reb","Rebounds","REB"],["ast","Assists","AST"],["stl","Steals","STL"],["blk","Blocks","BLK"],["fg3m","Three-pointers","3PM"]];
 const categoryLabels={pts:"PTS",reb:"REB",ast:"AST",stl:"STL",blk:"BLK",fg3m:"3PM",fgm:"FGM",ftm:"FTM"};
-const teamNames={"1":"Atlanta Hawks","2":"Boston Celtics","3":"New Orleans Hornets","4":"Chicago Bulls","5":"Cleveland Cavaliers","7":"Denver Nuggets","9":"Golden State Warriors","12":"LA Clippers","13":"LA Lakers","14":"Miami Heat","16":"Minnesota Timberwolves","18":"New York Knicks","21":"Phoenix Suns","23":"Sacramento Kings","24":"San Antonio Spurs","25":"Oklahoma City Thunder","26":"Utah Jazz","30":"Charlotte Bobcats"};
+const teamNames={"1":"Atlanta Hawks","2":"Boston Celtics","3":"New Orleans Hornets","4":"Chicago Bulls","5":"Cleveland Cavaliers","7":"Denver Nuggets","9":"Golden State Warriors","10":"Houston Rockets","12":"LA Clippers","13":"LA Lakers","14":"Miami Heat","16":"Minnesota Timberwolves","18":"New York Knicks","21":"Phoenix Suns","23":"Sacramento Kings","24":"San Antonio Spurs","25":"Oklahoma City Thunder","26":"Utah Jazz","30":"Charlotte Bobcats"};
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp","<":"&lt",">":"&gt",'"':"&quot;","'":"&#39;"}[c])+";");
 let logs=[],byEvent=new Map();
 function opponent(p){return teamNames[(byEvent.get(String(p.espn_event_id))||[]).find(x=>x!==String(p.team_id))]||"Unknown"}

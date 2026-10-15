@@ -21,7 +21,7 @@ jobs:
               try:
                   with urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent":"Mozilla/5.0"}),timeout=18) as r:
                       data=json.load(r)
-                  print("URL",url,"KEYS",list(data),"ATHLETES_SAMPLE",str(data.get("athletes"))[:2300])
+                  print("URL",url,"KEYS",list(data),"ROSTER_NAMES",[(a.get("fullName"),a.get("id")) for a in data.get("athletes") or [] if isinstance(a,dict)])
                   def explore(node,depth=0):
                       if isinstance(node,dict):
                           if "id" in node and ("fullName" in node or "displayName" in node):

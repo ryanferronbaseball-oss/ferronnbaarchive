@@ -4,7 +4,7 @@
 <div class="eyebrow" style="margin-top:42px">94-game college archive · Personal history</div><h1>Attendance insights.</h1><p>Explore your college basketball history through team records, season-by-season attendance, arena visits, player appearances, and the competitiveness of games you witnessed.</p>
 <div class="metrics" id="metrics"><div class="tile">Loading archive…</div></div>
 <section class="panel"><h2>Attendance timeline</h2><p class="note">Switch between calendar year and college basketball season. Seasons are named by the year they begin.</p><div class="controls"><label class="control">Group by<select id="period" aria-label="Group attendance by season or year"><option value="season">College season</option><option value="calendar">Calendar year</option></select></label></div><div class="timeline" id="timeline"></div></section>
-<div class="twocol"><section class="panel"><h2>Teams you've watched most</h2><div id="watchedTeams"></div></section><section class="panel"><h2>Where you've watched</h2><div id="arenaBars"></div><p class="note">Only verified arena names are shown. Only source-verified game arenas are counted. Games with unknown arenas are excluded from venue rankings.</p></section></div>
+<div class="twocol"><section class="panel"><h2>Teams you've watched most</h2><div id="watchedTeams"></div></section><section class="panel"><h2>Where you've watched</h2><div id="arenaBars"></div><p class="note">Only verified arena names are shown. Only source-verified game arenas are counted. Games with unknown arenas are excluded. PNC Arena and Lenovo Center are one physical building, counted together under its present name.</p></section></div>
 <section class="panel"><h2>Team records when you attended</h2><p class="note">Win-loss records count both listed home and away appearances, even at neutral sites. Click a team's record to show the underlying games.</p><div class="controls"><label class="control">Sort teams by<select id="teamSort" aria-label="Sort team records"><option value="gp">Most games</option><option value="wpct">Win percentage</option><option value="ppg">Points per game</option><option value="margin">Average scoring margin</option></select></label></div><div class="scroll"><table><thead><tr><th>Team</th><th>GP</th><th>W–L</th><th>Win%</th><th>PPG</th><th>Opp PPG</th><th>Avg margin</th><th>Details</th></tr></thead><tbody id="teamTable"></tbody></table></div><div class="detail hide" id="teamDetail"></div></section>
 <div class="twocol"><section class="panel"><h2>Game experience</h2><div id="experience"></div><div class="controls"><label class="control">Show games<select id="experienceFilter" aria-label="Filter games by competitiveness"><option value="close">Decided by ≤5</option><option value="one">Decided by ≤3</option><option value="blowout">Decided by 20+</option><option value="high">170+ combined points</option></select></label></div><div class="scroll"><table><thead><tr><th>Date</th><th>Matchup</th><th>Final</th><th>Margin</th></tr></thead><tbody id="experienceRows"></tbody></table></div></section>
 <section class="panel"><h2>Arena history</h2><div class="scroll"><table><thead><tr><th>Arena</th><th>Games</th><th>First</th><th>Most recent</th></tr></thead><tbody id="arenaTable"></tbody></table></div><div class="detail hide" id="arenaDetail"></div></section></div>
@@ -17,7 +17,12 @@ const parseCSV=str=>{const lines=str.trim().split(/\r?\n/),h=lines.shift().split
 const fmt=(v,d=1)=>Number(v).toFixed(d), sum=(a,k)=>a.reduce((s,p)=>s+p[k],0);
 let games=[],logs=[],results=[];
 const collegeSeason=date=>{const [year,month]=date.split('-').map(Number);const y=month>=7?year:year-1;return y+'–'+String(y+1).slice(-2)};
-const arenaName=s=>String(s||'').trim();
+// One building may have multiple sponsorship names. Preserve each game's
+// historical arena label in games.csv and aggregate by sourced physical identity.
+const arenaName=s=>{
+ const name=String(s||'').trim();
+ return name==='PNC Arena' ? 'Lenovo Center' : name;
+};
 const gameLink=g=>'<a href="./game.html?id='+encodeURIComponent(g.id)+'">'+esc(g.date)+'</a>';
 function prepare(){
  const byGame=new Map();

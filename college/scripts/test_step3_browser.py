@@ -19,6 +19,7 @@ threading.Thread(target=server.serve_forever,daemon=True).start()
 url=f"http://127.0.0.1:{server.server_address[1]}/college/"
 checks=[]
 errors=[]
+completed=False
 
 def check(ok,label):
     if not ok:raise AssertionError(label)
@@ -44,8 +45,10 @@ try:
     check(page.locator("#teamCount").inner_text()=="75","Homepage counts 75 distinct school teams")
     check(page.locator("#boxCoverage").inner_text()=="94/94","Homepage reports 94 fully imported box scores")
     check(page.locator("#features .ca-feature").count()==3,"Homepage generates three verified signature performances")
-    check("Not yet verified" in page.locator("#games").inner_text(),
-          "Homepage does not invent missing arena names")
+    check("Not yet verified" not in page.locator("#games").inner_text(),
+          "Homepage displays sourced arena names for every attended game")
+    check("Viejas Arena" in page.locator("#games").inner_text(),
+          "Historical SDSU court names included in the all-game history")
     page.screenshot(path=str(OUTPUT/"college-home-desktop.png"),full_page=True)
     page.locator("#yearFilter").select_option("2022")
     check(0<page.locator("#games tr").count()<94,"Homepage filters by year")
@@ -74,14 +77,19 @@ try:
 
     navigate(page,"game.html?id=25")
     page.wait_for_function("document.querySelectorAll('#game .score').length === 2")
-    check("Venue not yet verified" in page.locator("#game").inner_text(),
-          "An unverified arena remains visibly unknown, not inferred from a home school")
+    check("Viejas Arena" in page.locator("#game").inner_text(),
+          "2019 Nevada at SDSU game displays sourced Viejas Arena")
     navigate(page,"game.html?id=82")
     page.wait_for_function("document.querySelectorAll('#game .score').length === 2")
     check("First Horizon Coliseum" in page.locator("#game").inner_text(),
           "Specific sourced neutral-site arena displayed on game page")
     check("Neutral site" in page.locator("#game").inner_text(),
           "Neutral venue badge differentiates designated home from true home")
+    navigate(page,"game.html?id=76")
+    page.wait_for_function("document.querySelectorAll('#game .score').length === 2")
+    check("The Pavilion at JSerra" in page.locator("#game").inner_text() and
+          "Neutral site" in page.locator("#game").inner_text(),
+          "2023 SoCal Showcase shown at its verified neutral-site venue")
     navigate(page,"records.html")
     page.wait_for_function("document.querySelectorAll('#cards .card').length === 6")
     check(page.locator("#cards .card").count()==6,
@@ -117,11 +125,13 @@ try:
     check("94" in page.locator("#metrics").inner_text(),"Attendance dashboard includes 94 attended games")
     check("Lenovo Center" in page.locator("#arenaTable").inner_text(),
           "Arena rankings combine PNC and Lenovo naming-rights eras")
-    check("34 games" in page.locator("#arenaBars").inner_text(),
-          "Venue warning correctly excludes 34 still-unverified locations")
-    check(any("Verified arenas" in tile.inner_text() and "14" in tile.inner_text()
+    check("unknown arenas are excluded" not in page.locator("#arenaBars").inner_text(),
+          "All 94 sourced games are included in physical venue counts")
+    check(any("Verified arenas" in tile.inner_text() and "18" in tile.inner_text()
               for tile in page.locator("#metrics .tile").all()),
-          "14 distinct physical arenas counted from 15 dated names")
+          "18 distinct physical arenas counted from 19 historical sponsor/name labels")
+    check("Jenny Craig Pavilion" in page.locator("#arenaTable").inner_text(),
+          "Fully backfilled San Diego arenas populate the historical venue leaderboard")
 
     page.locator("#period").select_option("calendar")
     check(page.locator("#timeline .timeline-item").count()>1,
@@ -145,9 +155,10 @@ try:
     mobile.screenshot(path=str(OUTPUT/"college-insights-mobile.png"))
     check(not errors,"No unhandled JavaScript errors in seven-page navigation")
     browser.close()
+    completed=True
 finally:
   server.shutdown()
-  report={"status":"PASS" if not errors else "ERROR","passed_checks":len(checks),
+  report={"status":"PASS" if completed and not errors else "FAIL","passed_checks":len(checks),
           "checks":checks,"page_errors":errors,
           "environment":"Playwright Chromium, real HTTP, checked-in NCAA data and original NBA shared assets"}
   (OUTPUT/"report.json").write_text(json.dumps(report,indent=2)+"\n",encoding="utf8")

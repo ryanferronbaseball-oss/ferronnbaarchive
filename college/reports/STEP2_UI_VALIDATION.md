@@ -18,20 +18,22 @@ The generated data contract reports **94/94 games; 1,825 player appearances; 1,0
 
 [Review-bundle build and static verification](https://github.com/ryanferronbaseball-oss/ferronnbaarchive/actions/runs/38777976542) contains the isolated HTML, current NBA templates for side-by-side review, canonical CSS/JS and published college data.
 
-## Browser DOM and visual checks
+## Chromium end-to-end browser QA — passed (real HTTP)
 
-The two checked-in HTML pages and canonical CSS/JS were rendered in Chromium with the real, checked-in college JSON data supplied through a local fetch shim. (Navigation was restricted in the testing sandbox, so the local test validated **rendering and controls**, not public URL hosting.) **19 browser assertions passed with zero JavaScript runtime errors:**
+The [Step 2 Chromium GitHub Actions run](https://github.com/ryanferronbaseball-oss/ferronnbaarchive/actions/runs/38778999442) installed a real Chromium browser and served the **actual checked-in HTML, shared canonical CSS/JS and college data files over local HTTP**, rather than replacing the site's fetch requests. The committed test is [`college/scripts/test_step2_browser.py`](../scripts/test_step2_browser.py). **21 full browser assertions passed, with zero unhandled JavaScript runtime errors**, including:
 
-1. Traditional leaderboard loaded 94 box scores / 1,825 appearances / 1,034 unique players; 1,034 player rows populated.
-2. Original **Advanced** and **Per 36** statistical tab panels opened properly.
-3. Searching for Jase Townsend returned one row with **14 GP / 170 PTS** under his canonical official identity.
-4. Jase's player page showed 14 attended games, the original layout, and 14 chronological game-log rows. A single-school profile correctly hides the transfer selector.
-5. NCAA ESPN box-score links were generated correctly from real event IDs.
-6. Hunter Sallis showed **4 attended games / 63 points** across **Gonzaga and Wake Forest**, without separate player identities. The all-school log showed four rows; the Gonzaga school filter showed one, and the Wake Forest filter showed three.
-7. Mobile-width player leaderboard loaded all 1,034 athletes.
-8. There were **no unhandled JavaScript page errors**. Browser inspection confirmed the same shared ivory background `rgb(250, 248, 242)` as the NBA editorial theme.
+1. The college leaderboard returns HTTP 200, loads exactly 94 verified games, 1,825 appearances and 1,034 players, and populates all 1,034 player rows.
+2. The page's computed background is `rgb(250, 248, 242)`, the editorial NBA archive's canonical ivory background.
+3. The **Traditional**, **Advanced** and **Per 36** view controls switch correctly and preserve the original NBA calculations.
+4. Searching for Jase Townsend isolates his verified row (14 attended games, 170 points). **Clicking the row actually navigates over HTTP to `college/player.html?id=official%3Asan-diego%3Ajase-townsend`**, displaying his single canonical profile.
+5. Townsend has fourteen chronological box-score rows, NCAA ESPN provider links, and no irrelevant school filter.
+6. Hunter Sallis loads into a single profile across **Gonzaga** and **Wake Forest**. His all-school log shows four games, Gonzaga one, Wake Forest three; all dropdown interactions work in the browser.
+7. A narrow **390px mobile browser** also loads the complete 1,034-player leaderboard.
+8. The browser reported **no page-level JS exceptions**.
 
-Screenshots of desktop stats, Jase profile, Hunter multi-school log, and 390-pixel mobile view were captured during browser testing; these are review artifacts in the ChatGPT conversation rather than committed binary images to the Git repository.
+The GitHub browser-test artifact `college-step2-chromium-check` contains the actual rendered desktop leaderboard, Jase profile, Sallis transfer-history log, mobile screenshot and machine-readable report. This is the recommended **visual review evidence**. The prior separate in-sandbox Chromium test (19 passing assertions using an in-memory local data shim) also passed; the new GitHub Action is stronger because it checks real HTTP fetches and in-site navigation.
+
+**This does not make the pages live/public or verify the unfinished five college pages.** The actual college stats/profile pages are development-branch files awaiting the human design-parity checkpoint.
 
 ## Remaining work and user review
 

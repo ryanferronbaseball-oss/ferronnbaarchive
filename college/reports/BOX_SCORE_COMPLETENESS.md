@@ -1,8 +1,8 @@
 # College archive — ESPN box-score completeness audit
 
-Latest: [94-game import with restored Colorado player performances and NCAA team-minute validation (October 15, 2026)](https://github.com/ryanferronbaseball-oss/ferronnbaarchive/actions/runs/38769452971).
+Latest: [94-game import with official Utah State, Pepperdine and Cal State Fullerton repairs (October 15, 2026)](https://github.com/ryanferronbaseball-oss/ferronnbaarchive/actions/runs/38770568094).
 
-**Attendance matching:** 94/94 games. **Point-score reconciliation:** 75/94. **Strict point-and-minute reconciliation:** 73/94. **Games requiring backfill:** 21 (19 missing points, 2 incomplete minutes with scoring complete). **Original ESPN rows:** 1,790. **Officially supplemented rows:** 8 (including two Wetzell rows and six Colorado rows). **Corrected pre-existing ESPN rows:** 2. **Strictly certified rows:** 1,409.
+**Attendance matching:** 94/94 games. **Point-score reconciliation:** 78/94. **Strict point-and-minute reconciliation:** 76/94. **Games requiring backfill:** 18 (16 missing points, 2 incomplete minutes with scoring complete). **Original ESPN rows:** 1,790. **Officially supplemented rows:** 13 (2 Wetzell, 6 Colorado, 5 across the three new repairs). **Corrected pre-existing ESPN rows:** 6. **Strictly certified rows:** 1,463.
 
 A game is marked **complete only when both teams' player points match their final scores AND their player-minute totals match NCAA regulation or overtime expectations**. Partial games remain in the attendance history, but raw player rows from those games are excluded from certified leaderboard totals pending verification/backfill. Excluding a game is not a claim that its player performances are wrong; it is a conservative choice while ESPN's lineup appears incomplete.
 
@@ -25,6 +25,19 @@ We also reconciled Shane Gatling's official turnover count (1, ESPN had 0) and N
 
 **Identity status:** Daylen Kountz's restored appearance uses his verified ESPN athlete ID `espn:4397060`. The other five restored appearances have distinct, provider-qualified official-source IDs (not falsely invented ESPN IDs), pending future corroboration against official player identity records.
 
+## Utah State, Pepperdine, and Cal State Fullerton repairs (October 15, 2026)
+
+Three official university box scores resolved three additional attended games, with each team matching both its official score and expected individual player minutes:
+
+| Attendance ID | Date | Matchup | Missing official player lines restored | Additional official corrections | Post-repair verification |
+|---:|---|---|---|---|---|
+
+Primary sources: [Cal State Fullerton official box score](https://fullertontitans.com/sports/mens-basketball/stats/2021-22/san-diego/boxscore/2198), [San Diego official Utah State box score](https://usdtoreros.com/sports/mens-basketball/stats/2022-23/utah-state/boxscore/13877), and [San Diego official Pepperdine box score](https://usdtoreros.com/sports/mens-basketball/stats/2022-23/pepperdine/boxscore/13857).
+
+**Identity handling:** The three restored Jase Townsend performances share a single stable `official:san-diego:jase-townsend` ID. Daniel Akin and Tory San Antonio also use distinct source-qualified provisional IDs. These are deliberately **not labeled ESPN IDs**; map them to independently verified ESPN IDs later if available. Existing ESPN lines retain their original ESPN identity. In `official_boxscore_overrides.csv`, player-level ESPN mistakes are corrected without altering the original raw import; `official_override_audit.json` records before and after for every override.
+
+The [completed full archive QA run](https://github.com/ryanferronbaseball-oss/ferronnbaarchive/actions/runs/38770568094) confirms all three games as `complete`, including overtime team-minute reconciliation in Utah State–San Diego.
+
 ## Additional scoreless-player investigation
 
 Two games still reconcile every point yet fail the NCAA expected player-minute check, suggesting missing zero-point player appearances:
@@ -34,9 +47,9 @@ Two games still reconcile every point yet fail the NCAA expected player-minute c
 | 30 | 2019-11-27 | Hofstra @ San Diego | Hofstra 193 of 200 |
 | 64 | 2022-12-10 | Denver @ UCLA | Denver 197 of 200 |
 
-**The scoring backfill queue below contains 19 games.** These additional 2 minute-only cases bring the total open QA queue to 21.
+**The scoring backfill queue below contains 16 games.** These additional 2 minute-only cases bring the total open QA queue to 18.
 
-## Backfill queue (19 games with missing player points)
+## Backfill queue (16 games with missing player points)
 
 | Attendance ID | Date | Matchup | Missing from away player's summed PTS | Missing from home player's summed PTS |
 |---:|---|---|---:|---:|

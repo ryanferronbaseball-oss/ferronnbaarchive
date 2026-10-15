@@ -46,7 +46,7 @@ def main():
         a,b=structure(nba),structure(college)
         assert a.tags.count("table")==b.tags.count("table"), "Table count drift "+filename
         assert a.tags.count("h2")==b.tags.count("h2"), "Section hierarchy drift "+filename
-        assert set(a.nav_links)==set(b.nav_links), "Navbar links changed "+filename
+        assert set(b.nav_links)==set(a.nav_links)|{"./nba-alumni.html"}, "College navigation should preserve NBA sections and add NBA career directory: "+filename
         assert a.ids.issubset(b.ids), "NBA DOM controls removed: "+str(a.ids-b.ids)
         assert '../assets/site.css?v=editorial-ivory-2' in college, "Not using same canonical stylesheet"
         assert '../assets/site.js?v=design-1' in college, "Not using existing nav logic"

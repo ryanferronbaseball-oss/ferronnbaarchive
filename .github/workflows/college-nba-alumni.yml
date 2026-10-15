@@ -1,0 +1,43 @@
+name: College NBA alumni QA
+on:
+  push:
+    branches: [college-nba-alumni, main]
+    paths:
+      - "college/nba-alumni.html"
+      - "college/data/nba_crosswalk.json"
+      - "college/data/player_boxscores_espn.json"
+      - "college/scripts/test_nba_alumni.py"
+      - "college/index.html"
+      - "college/stats.html"
+      - "college/scripts/test_step3_pages.py"
+      - "college/scripts/test_step2_pages.py"
+      - ".github/workflows/college-nba-alumni.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  nba-alumni:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Verify original college statistical and structural parity
+        run: |
+          python college/scripts/test_step3_pages.py
+          python college/scripts/test_step2_pages.py
+      - name: Install browser
+        run: |
+          python -m pip install playwright
+          python -m playwright install chromium --with-deps
+      - name: Verify NBA alumni directory and crosswalk in Chromium
+        run: python college/scripts/test_nba_alumni.py
+      - name: Upload desktop/mobile album previews
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: college-nba-alumni-review
+          path: college/output/nba-alumni/
+          if-no-files-found: warn

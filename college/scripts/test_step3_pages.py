@@ -57,7 +57,7 @@ def main():
             else:
                 check(a.counts.get(tag,0)==b.counts.get(tag,0),file+" has original NBA "+tag+" count")
         check(a.ids.issubset(b.ids),file+" preserves all NBA control IDs")
-        check(a.nav_links==b.nav_links,file+" preserves original NBA navigation")
+        check([x for x in b.nav_links if x!="./nba-alumni.html"]==a.nav_links and "./nba-alumni.html" in b.nav_links,file+" retains original NBA navigation plus the college career link")
         check(all((COLLEGE/ref.removeprefix("./")).is_file()
                   for ref in b.links if ref.startswith("./") and "?" not in ref and "#" not in ref),
               file+" links to existing college pages")
@@ -76,7 +76,7 @@ def main():
                 p=subprocess.run(["node","--check",tmp.name],capture_output=True,text=True)
                 check(p.returncode==0,file+" inline JavaScript syntax "+p.stderr.strip()[:160])
         if file in NEW:
-            check(not re.search(r"\bNBA\b|\bnba\b|2006-02-26|31-game archive",rendered),
+            check(not re.search(r"\bNBA\b|\bnba\b|2006-02-26|31-game archive",rendered.replace('<a href="./nba-alumni.html" data-nav="nba-alumni">To the NBA</a>', "")),
                   file+" has no inherited NBA-specific content")
     home=(COLLEGE/"index.html").read_text(encoding="utf8")
     check("2006-02-26" not in home and "parseCSV(csv)" in home,"Homepage uses imported data, not hardcoded NBA history")

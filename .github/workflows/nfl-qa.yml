@@ -1,7 +1,7 @@
 name: NFL archive browser QA
 on:
   push:
-    branches: [nfl-three-game-import, nfl-scoring-plays-and-leaderboards, main]
+    branches: [nfl-three-game-import, nfl-scoring-plays-and-leaderboards, nfl-fantasy-ppr-milestones, main]
     paths:
       - "nfl/**"
       - "index.html"
@@ -22,3 +22,10 @@ jobs:
           python -m pip install playwright
           python -m playwright install chromium --with-deps
       - run: python nfl/scripts/test_nfl.py
+      - name: Upload PPR milestone page screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nfl-fantasy-ppr-review
+          path: nfl/output/ppr/
+          if-no-files-found: ignore

@@ -149,7 +149,7 @@ def main():
             "attendance_id": row["attendance_id"],
             "date": date, "away": row["away"], "home": row["home"],
             "match_status": "pending", "espn_event_id": "",
-            "away_score": "", "home_score": "", "boxscore_status": "not_requested",
+            "away_score": "", "home_score": "", "away_team_id": "", "home_team_id": "", "boxscore_status": "not_requested",
             "player_lines": 0, "review_notes": ""
         }
         try:
@@ -186,6 +186,7 @@ def main():
                 for comp in competitors:
                     label = "away" if canonical(row["away"]) in team_labels(comp) else "home"
                     result[label+"_score"] = comp.get("score") or ""
+                    result[label+"_team_id"] = str((comp.get("team") or {}).get("id") or "")
                 if args.fetch_boxscores:
                     if not manual:
                         summary = get_json("/summary", {"event": event["id"]})

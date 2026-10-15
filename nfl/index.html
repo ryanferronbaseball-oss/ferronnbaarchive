@@ -1,57 +1,45 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>NFL Attendance Archive | Courtside Archive</title><link rel="stylesheet" href="../assets/site.css?v=editorial-ivory-2"><style>
-*{box-sizing:border-box}body{margin:0;background:#FAF8F2;color:#252A2B;font-family:Inter,ui-sans-serif,system-ui,sans-serif}main{max-width:1180px;margin:auto;padding:25px 20px 90px}
-header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:15px 0 22px;border-bottom:1px solid #D9DDD4}header a{color:#284D3C!important;text-decoration:none;font-weight:800}header small{color:#627167;font-weight:600;display:block}
-h1{font-size:clamp(37px,6vw,70px);letter-spacing:-.055em;line-height:1.05;margin:15px 0}.eyebrow{margin-top:42px;font-size:12px;color:#284D3C;text-transform:uppercase;font-weight:800;letter-spacing:.15em}
-.lead{font-size:16px;line-height:1.7;color:#637166;max-width:790px}
-.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin:28px 0}.metric{padding:19px;background:#FFFEFB;border:1px solid #DADFD5;border-radius:13px}.metric strong{font-size:30px;display:block;color:#284D3C}.metric small{font-size:12px;color:#68786B}
-h2{font-size:27px;letter-spacing:-.04em;margin-top:34px}.games{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.game{padding:19px;text-align:left;background:#FFFEFB;border-radius:14px;border:1px solid #DADFD5;cursor:pointer;color:inherit;font:inherit}.game[aria-pressed=true]{border:2px solid #284D3C;background:#EFF4EA;padding:18px}.game strong{display:block;font-size:20px;line-height:1.3;margin:10px 0}.game small{display:block;color:#69796D;line-height:1.55}.score{font-size:24px;font-weight:800;color:#284D3C;margin-top:10px}
-.controls{display:flex;flex-wrap:wrap;align-items:center;gap:9px;margin:19px 0}.controls select,.controls input{background:#fff;border:1px solid #BFCFC0;border-radius:9px;padding:11px 12px;font:inherit;color:#252A2B}.controls input{flex:1;min-width:160px}.controls select{max-width:100%}
-.tablewrap{overflow:auto;border:1px solid #DADFD5;background:white;border-radius:14px}table{width:100%;border-collapse:collapse;font-size:13px;white-space:nowrap}th,td{padding:13px 14px;border-bottom:1px solid #E8EBE5;text-align:right}th{text-align:right;color:#627166;background:#F5F6F1;position:sticky;top:0}th:first-child,td:first-child{text-align:left}tr:last-child td{border-bottom:none}td:first-child{font-weight:700}td small{display:block;font-weight:400;color:#748275;margin-top:3px}tr:hover td{background:#F8FAF5}
-.source{font-size:13px;color:#637166;line-height:1.7}.source a{color:#284D3C}.empty{padding:25px;background:#F3F6F0;border:1px dashed #BBCBBB;border-radius:14px;color:#627166}.tag{background:#E4ECE3;border-radius:15px;padding:3px 9px;color:#284D3C;font-size:11px;font-weight:800}
-@media(max-width:720px){.metrics{grid-template-columns:repeat(2,1fr)}.games{grid-template-columns:1fr}.game{min-height:0}h2{margin-top:28px}}@media(max-width:400px){main{padding:16px 12px 60px}.metric{padding:13px}header{flex-wrap:wrap}}
-</style></head><body><main><header><a href="../index.html"><span style="font-size:18px">COURTSIDE ARCHIVE</span><small>EVERY GAME HAS A STORY</small></a><a href="../index.html">← All archives</a></header>
-<div class="eyebrow">NFL · Personal attendance archive</div><h1>Every snap. Every stat.<br>Your NFL history.</h1><p class="lead">Three games attended, with complete available historical ESPN player box-score categories. Explore individual games or build your own cumulative leaderboards across the games you witnessed.</p>
-<section class="metrics" aria-label="NFL archive totals"><div class="metric"><strong id="gameCount">3</strong><small>Games witnessed</small></div><div class="metric"><strong id="playerCount">—</strong><small>Unique players with box-score stats</small></div><div class="metric"><strong>2</strong><small>Overtime games</small></div><div class="metric"><strong id="statCount">—</strong><small>Player-category statistical rows</small></div></section>
-<h2>Games witnessed</h2><div class="games" id="games"></div>
-<h2 id="statsTitle">Statistical leaderboards</h2><p class="source">Choose a game to examine its original box-score statistics or choose <b>All 3 games</b> for cumulative totals. Category columns reproduce the original ESPN statistics; totals aggregate numeric categories across the games you've attended.</p>
-<div class="controls"><select id="gameChoice" aria-label="Choose NFL game"><option value="all">All three games · combined totals</option></select><select id="category" aria-label="Select statistical category"></select><input id="search" type="search" placeholder="Search player or team…" aria-label="Search player or team"/></div>
-<div class="tablewrap"><table><thead id="thead"></thead><tbody id="tbody"><tr><td>Loading historical box scores…</td></tr></tbody></table></div>
-<p class="source" style="margin-top:25px">Source: ESPN historical NFL game summary/box score. Every player-stat category is preserved independently (passing, rushing, receiving, tackles, interceptions, fumbles, kicking and returns). The gamebook is useful for auditing discrepancies. <b>Statistical convention:</b> missing category rows are not interpreted as zero playing time; derived rate stats are omitted from additive all-game totals. The source can omit certain specialist fields for older seasons.</p><div id="sourceLinks" class="source"></div>
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NFL Attendance | Courtside Archive</title>
+<meta name="description" content="Explore every NFL game you attended, verified game box scores, scoring plays and player leaderboards.">
+<link rel="stylesheet" href="./assets/archive.css"><script src="./assets/archive.js" defer></script></head>
+<body><main><div id="navigation"></div>
+<div class="eyebrow">National Football League · Personal attendance</div>
+<h1>Your NFL history.</h1>
+<p class="lead">Three NFL games, two overtime thrillers, and every box-score performance you witnessed. Explore the games individually or follow player leaderboards across the years.</p>
+<section class="metrics" aria-label="NFL attendance metrics">
+ <div class="metric"><strong id="gameCount">3</strong><small>Games attended</small></div>
+ <div class="metric"><strong id="playerCount">—</strong><small>Players with recorded stats</small></div>
+ <div class="metric"><strong id="scoringCount">—</strong><small>Scoring plays witnessed</small></div>
+ <div class="metric"><strong id="statCount">—</strong><small>Box-score category rows</small></div>
+</section>
+<div class="section-heading"><h2>Games attended</h2><a class="action-link secondary" href="./game.html">All game box scores ↗</a></div>
+<section id="games" class="game-grid"><div class="empty">Loading your three historical NFL games…</div></section>
+<div class="section-heading"><h2>Your statistical leaders</h2><a class="action-link secondary" href="./stats.html">Full leaderboards ↗</a></div>
+<section class="feature" id="leaders"><div class="empty">Loading player leaderboards…</div></section>
+<div class="panel"><h3>Explore your NFL stats</h3>
+<p class="lead">The box score for each game includes a scoring-play timeline and separate Offense, Defense, and Special Teams tables. The leaderboard page uses the same categories to rank players across the games you attended.</p>
+<a class="action-link" href="./stats.html">Open all NFL leaderboards ↗</a></div>
+<footer class="footer">Courtside Archive · Independent NFL attendance statistics. Game scores and player box scores sourced from historical ESPN records.</footer>
 </main><script>
-const $=x=>document.getElementById(x),safe=x=>String(x??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])),n=x=>Number(String(x).replace(/,/g,""))||0;
-let games=[],rows=[];const selectCategories=["passing","rushing","receiving","defensive","interceptions","fumbles","kicking","punting","kickReturns","puntReturns"];
-const noSum=/AVG|PCT|RTG|QBR|LONG|LG|RATE|^C\/ATT$|^FG$|^XP$|^COMP\/ATT$/i;
-const catCounts=()=>Object.fromEntries(selectCategories.map(c=>[c,rows.filter(x=>x.category===c).length]));
-function groupRows(){
- let choice=$("gameChoice").value,category=$("category").value,q=$("search").value.toLowerCase();
- let picks=rows.filter(x=>x.category===category&&(choice==="all"||x.game_id===choice));
- if(choice==="all"){
-  let by=new Map();
-  for(const x of picks){const k=x.athlete_id+"|"+x.category;if(!by.has(k))by.set(k,{...x,stat_values:x.stat_values.slice(),games:1});else{const v=by.get(k);v.games++;v.stat_values=v.stat_values.map((val,i)=>{const label=x.stat_labels[i]||"";return noSum.test(label)||String(val).includes("/")?val:String(n(val)+n(x.stat_values[i]))})}}
-  picks=[...by.values()];
- }
- picks=picks.filter(x=>(x.player+" "+x.team).toLowerCase().includes(q));
- const yardIndex=picks[0]?.stat_labels.findIndex(x=>x==="YDS")??-1;
- const sortAt=yardIndex>=0?yardIndex:0;
- picks.sort((a,b)=>n(b.stat_values[sortAt])-n(a.stat_values[sortAt])||a.player.localeCompare(b.player));
- return picks;
-}
-function render(){
- const category=$("category").value,items=groupRows();const labels=rows.find(x=>x.category===category)?.stat_labels||[];
- $("thead").innerHTML="<tr><th>Player / team</th>"+($("gameChoice").value==="all"?"<th>Games</th>":"")+labels.map(s=>"<th>"+safe(s)+"</th>").join("")+"</tr>";
- $("tbody").innerHTML=items.length?items.map(x=>"<tr><td>"+safe(x.player)+"<small>"+safe(x.team)+"</small></td>"+($("gameChoice").value==="all"?"<td>"+(x.games||1)+"</td>":"")+x.stat_values.map((v,i)=>"<td>"+safe($("gameChoice").value==="all"&&noSum.test(labels[i])?"—":v)+"</td>").join("")+"</tr>").join(""):'<tr><td colspan="12">No matching player-stat records</td></tr>';
- $("statsTitle").textContent=$("gameChoice").value==="all"?"Statistics across your 3 NFL games":games.find(g=>g.id===$("gameChoice").value)?.away+" at "+games.find(g=>g.id===$("gameChoice").value)?.home+" · Box score";
- document.querySelectorAll(".game").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.id===$("gameChoice").value)));
-}
-function init(){
- $("gameCount").textContent=games.length;$("statCount").textContent=rows.length;$("playerCount").textContent=new Set(rows.map(x=>x.athlete_id)).size;
- $("games").innerHTML=games.map(g=>'<button class="game" type="button" data-id="'+safe(g.id)+'" aria-pressed="false"><small>'+safe(new Date(g.date+"T12:00:00").toLocaleDateString("en-US",{year:"numeric",month:"long",day:"numeric"}))+' · '+(g.overtime?'Overtime':'Regulation')+'</small><strong>'+safe(g.away)+" at "+safe(g.home)+'</strong><span class="score">'+g.away_score+' – '+g.home_score+'</span><small>'+safe(g.stadium)+' · '+safe(g.city)+', '+safe(g.state)+'</small></button>').join("");
- $("gameChoice").innerHTML='<option value="all">All three games · combined totals</option>'+games.map(g=>'<option value="'+safe(g.id)+'">'+g.date+' · '+safe(g.away_abbr)+' at '+safe(g.home_abbr)+'</option>').join("");
- $("category").innerHTML=selectCategories.filter(c=>rows.some(x=>x.category===c)).map(c=>'<option value="'+c+'">'+c.replace(/([A-Z])/g," $1").replace(/^./,x=>x.toUpperCase())+'</option>').join("");
- $("sourceLinks").innerHTML='<b>Game sources:</b> '+games.map(g=>'<a href="'+safe(g.boxscore_url)+'" target="_blank" rel="noopener">'+g.date+" "+safe(g.away_abbr)+"–"+safe(g.home_abbr)+'</a>').join(' · ');
- document.querySelectorAll(".game").forEach(el=>el.addEventListener("click",()=>{$("gameChoice").value=el.dataset.id;render();document.querySelector(".controls").scrollIntoView({behavior:"smooth",block:"start"})}));
- $("category").addEventListener("change",render);$("gameChoice").addEventListener("change",render);$("search").addEventListener("input",render);render()
-}
-Promise.all(["data/games.json","data/player_stats.json"].map(path=>fetch(path).then(r=>{if(!r.ok)throw Error(path+" HTTP "+r.status);return r.json()}))).then(([g,s])=>{games=g;rows=s;init()}).catch(err=>$("tbody").innerHTML='<tr><td>Unable to load: '+safe(err.message)+'</td></tr>');
+document.getElementById("navigation").innerHTML='<header class="archive-header"><a class="archive-logo" href="./index.html">COURTSIDE ARCHIVE<small>EVERY GAME HAS A STORY · NFL</small></a><nav class="archive-nav" aria-label="NFL archive navigation"><a href="./index.html" aria-current="page">Overview</a><a href="./game.html">Games &amp; Box Scores</a><a href="./stats.html">Leaderboards</a></nav><a class="back-link" href="../index.html">All archives ↗</a></header>';
+document.addEventListener("DOMContentLoaded",async()=>{
+ const A=window.NFLArchive;
+ try{
+  const {games,rows,scoring}=await A.load();
+  document.getElementById("gameCount").textContent=games.length;
+  document.getElementById("playerCount").textContent=new Set(rows.map(r=>r.athlete_id)).size;
+  document.getElementById("statCount").textContent=rows.length;
+  document.getElementById("scoringCount").textContent=Object.values(scoring).reduce((n,g)=>n+g.plays.length,0);
+  document.getElementById("games").innerHTML=games.map(A.gameCard).join("");
+  const leaders=[["passing","Passing yards","YDS"],["rushing","Rushing yards","YDS"],["receiving","Receiving yards","YDS"]];
+  document.getElementById("leaders").innerHTML=leaders.map(([cat,title,key])=>{
+   const ranked=A.sortPlayers(A.group(rows,cat),cat);
+   const lead=ranked[0],idx=lead?.labels.indexOf(key)??-1;
+   return '<article class="panel"><div class="caption">'+A.esc(title)+'</div><div class="number">'+(lead&&idx>=0?A.esc(lead.stat_values[idx]):"—")+'</div>'+
+    '<h3>'+(lead?'<a href="./player.html?id='+encodeURIComponent(lead.athlete_id)+'">'+A.esc(lead.player)+'</a>':"No data")+'</h3>'+
+    '<div class="caption">'+(lead?A.esc(lead.team)+" · "+lead.games+" game(s) seen":"")+'</div></article>'
+  }).join("");
+ }catch(err){document.getElementById("games").innerHTML='<div class="empty">Unable to load NFL game data: '+A.esc(err.message)+'</div>';document.getElementById("leaders").innerHTML=""}
+});
 </script></body></html>

@@ -1,10 +1,14 @@
 {
   "_meta": {
-    "description": "Reviewed career achievements of college basketball players appearing in Courtside Archive. Includes regular-season conference player of the year (conference officials/coaches, not conference tournament MVP) and Associated Press postseason All-American first/second/third teams. Honors may be outside attended seasons. No preseason, honorable mention, consensus-only, or coaches-only All-America selections.",
+    "description": "Reviewed career achievements of college basketball players appearing in Courtside Archive. Naismith Men's College Player of the Year, regular-season Conference Player of the Year, and Associated Press postseason All-American First/Second/Third Teams. Honors may be earned in seasons other than games attended.",
     "source_scope": "Initial positively verified set for players in archive; this is not a declaration that every nonlisted player has no awards.",
     "last_reviewed": "2026-10-15",
     "ap_all_america_source_2020s": "https://www.sports-reference.com/cbb/awards/men/ap-all-america-2020-2029.html",
-    "ap_all_america_source_2010s": "https://www.sports-reference.com/cbb/awards/men/ap-all-america-2010-2019.html"
+    "ap_all_america_source_2010s": "https://www.sports-reference.com/cbb/awards/men/ap-all-america-2010-2019.html",
+    "national_poy_standard": "Naismith Men's College Player of the Year, awarded by the Atlanta Tipoff Club; this is not an NCAA-administered award.",
+    "national_poy_winners_source": "https://naismithtrophy.com/winners/",
+    "national_poy_2025_source": "https://naismithtrophy.com/cooper-flagg-ryan-kalkbrenner-and-rick-pitino-earn-2025-naismith-honors/",
+    "national_poy_checked_through": 2026
   },
   "players": {
     "espn:3146557": {
@@ -237,6 +241,14 @@
           "season": "2024-25",
           "team": 1,
           "source": "https://apnews.com/article/881a4bca44508d878dc22b4ede7ad5d6"
+        }
+      ],
+      "naismith_national_poy": [
+        {
+          "season": "2024-25",
+          "year": 2025,
+          "award": "Naismith Men's College Player of the Year",
+          "source": "https://naismithtrophy.com/cooper-flagg-ryan-kalkbrenner-and-rick-pitino-earn-2025-naismith-honors/"
         }
       ]
     },

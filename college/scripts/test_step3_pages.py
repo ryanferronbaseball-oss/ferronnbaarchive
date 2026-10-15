@@ -88,18 +88,22 @@ def main():
           "String(p.game_id)===String(g.id)" in milestones,
           "Record game links use matched NCAA event IDs and attendance IDs")
     insights=(COLLEGE/"insights.html").read_text(encoding="utf8")
-    check("No arena names are verified yet" in insights and
+    check("PNC Arena" in insights and
           "results.filter(g=>g.arenaIdentity)" in insights,
-          "Unverified arena information cannot be counted as a real venue")
+          "Arena insights avoid invented venues and aggregate confirmed naming-rights aliases")
     games=list(csv.DictReader((COLLEGE/"data/games.csv").open(encoding="utf8",newline="")))
     players=json.loads((COLLEGE/"data/player_boxscores_espn.json").read_text(encoding="utf8"))
     teams=json.loads((COLLEGE/"data/team_names.json").read_text(encoding="utf8"))
     check(len(games)==94 and len(players)==1825 and len(teams)==75,
           "94 games / 1,825 performances / 75 schools remain intact")
-    check(sum(bool(g["arena"]) for g in games)==20,"20 sourced arenas linked to attended games")
+    check(sum(bool(g["arena"]) for g in games)==60,"60 sourced game venues linked to exact attendance IDs")
     check(len({g["arena"] for g in games if g["arena"]})==15,"15 distinct venue names verified")
     check(sum(g["site_type"]=="neutral" for g in games)==5,"Five neutral games marked explicitly")
-    check(all(g["site_type"]=="" for g in games if not g["arena"]),"74 unknown sites stay blank")
+    check(all(g["site_type"]=="" for g in games if not g["arena"]) and sum(not g["arena"] for g in games)==34,"34 unknown sites stay blank")
     check(next(g for g in games if g["id"]=="60")["arena"]=="The Pavilion at JSerra","CSUN Tennessee State neutral-site venue sourced")
+    check(next(g for g in games if g["id"]=="18")["arena"]=="Jenny Craig Pavilion","2018 Colorado at USD venue sourced")
+    check(next(g for g in games if g["id"]=="54")["arena"]=="Jenny Craig Pavilion","2022 Gonzaga at USD venue sourced")
+    check(next(g for g in games if g["id"]=="79")["arena"]=="PNC Arena","2024 historical PNC Arena label retained")
+    check(next(g for g in games if g["id"]=="85")["arena"]=="Lenovo Center","2025 Lenovo Center label retained")
     print("Static seven-page parity checks completed.")
 if __name__=="__main__":main()

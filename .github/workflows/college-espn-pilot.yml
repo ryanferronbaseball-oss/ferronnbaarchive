@@ -6,6 +6,8 @@ on:
       - "college/**"
       - ".github/workflows/college-espn-pilot.yml"
   workflow_dispatch:
+permissions:
+  contents: write
 jobs:
   pilot:
     runs-on: ubuntu-latest
@@ -21,6 +23,8 @@ jobs:
         run: python college/scripts/normalize_espn.py --expected-games 94
       - name: Step 1 — build college data in existing NBA page contract and verify identities
         run: python college/scripts/build_site_data.py --expected-games 94 --expected-players 1825
+      - name: Step 2 — verify statistical calculations, HTML markup and JavaScript syntax
+        run: python college/scripts/test_step2_pages.py
       - name: Summarize import
         if: always()
         run: |
@@ -37,6 +41,18 @@ jobs:
             college/data/team_names.json
             college/data/validation.json
           if-no-files-found: error
+      - name: Commit Step 1 verified college data on development branch
+        if: github.ref == 'refs/heads/college-import-pilot'
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add college/data/games.csv college/data/player_boxscores_espn.json college/data/team_names.json college/data/validation.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Build verified college statistics fixture for private Step 2 site"
+            git push origin HEAD:college-import-pilot
+          else
+            echo "Validated site files unchanged"
+          fi
       - name: Save pilot report as build artifact
         if: always()
         uses: actions/upload-artifact@v4

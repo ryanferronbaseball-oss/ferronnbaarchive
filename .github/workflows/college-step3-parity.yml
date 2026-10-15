@@ -1,10 +1,12 @@
 name: College Step 3 seven-page parity
 on:
   push:
-    branches: [college-import-pilot]
+    branches: [college-import-pilot, main]
     paths:
       - ".github/workflows/college-step3-parity.yml"
       - "sports.html"
+      - "nba/**"
+      - "README.md"
       - "assets/site.css"
       - "index.html"
       - "game.html"

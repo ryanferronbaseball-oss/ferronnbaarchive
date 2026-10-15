@@ -13,6 +13,10 @@ on:
       - "college/data/verified_venues.csv"
       - "college/scripts/build_site_data.py"
       - "college/scripts/test_step3_pages.py"
+      - "college/scripts/test_official_spotchecks.py"
+      - "college/data/player_boxscores_espn.json"
+      - "college/data/official_boxscore_supplements.csv"
+      - "college/data/official_boxscore_overrides.csv"
       - "college/scripts/test_step3_browser.py"
   workflow_dispatch:
 permissions:
@@ -26,6 +30,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Verify 240 stat cells against three independently transcribed official box scores
+        run: python college/scripts/test_official_spotchecks.py
       - name: Verify seven-page HTML structure and original NBA statistical styling
         run: python college/scripts/test_step3_pages.py
       - name: Install Chromium

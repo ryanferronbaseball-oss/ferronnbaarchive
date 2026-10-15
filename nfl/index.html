@@ -21,7 +21,7 @@ h2{font-size:27px;letter-spacing:-.04em;margin-top:34px}.games{display:grid;grid
 </main><script>
 const $=x=>document.getElementById(x),safe=x=>String(x??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])),n=x=>Number(String(x).replace(/,/g,""))||0;
 let games=[],rows=[];const selectCategories=["passing","rushing","receiving","defensive","interceptions","fumbles","kicking","punting","kickReturns","puntReturns"];
-const noSum=/AVG|PCT|RTG|QBR|LONG|LG|RATE|^C\/ATT$|^FG$|^XP$|SACKS|^COMP\/ATT$|RET AVG/i;
+const noSum=/AVG|PCT|RTG|QBR|LONG|LG|RATE|^C\/ATT$|^FG$|^XP$|^COMP\/ATT$/i;
 const catCounts=()=>Object.fromEntries(selectCategories.map(c=>[c,rows.filter(x=>x.category===c).length]));
 function groupRows(){
  let choice=$("gameChoice").value,category=$("category").value,q=$("search").value.toLowerCase();

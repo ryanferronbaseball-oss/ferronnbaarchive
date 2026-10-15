@@ -4,6 +4,18 @@ on:
     branches: [college-import-pilot]
     paths:
       - ".github/workflows/college-step3-parity.yml"
+      - "sports.html"
+      - "assets/site.css"
+      - "index.html"
+      - "game.html"
+      - "stats.html"
+      - "player.html"
+      - "records.html"
+      - "milestones.html"
+      - "insights.html"
+      - "college/stats.html"
+      - "college/player.html"
+      - "college/scripts/test_master_portal.py"
       - "college/index.html"
       - "college/game.html"
       - "college/records.html"
@@ -46,6 +58,8 @@ jobs:
         run: python college/scripts/test_step3_browser.py
       - name: Exercise college player statistics, school-transfer identities and profile pages
         run: python college/scripts/test_step2_browser.py
+      - name: Exercise master sports hub, NBA and college deep links and mobile layout
+        run: python college/scripts/test_master_portal.py
       - name: Save browser test report and review screenshots
         if: always()
         uses: actions/upload-artifact@v4
@@ -54,4 +68,5 @@ jobs:
           path: |
             college/output/step3-browser/
             college/output/step2-browser/
+            college/output/master-portal/
           if-no-files-found: warn

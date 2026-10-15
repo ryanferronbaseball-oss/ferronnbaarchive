@@ -74,6 +74,7 @@ def build_players(summary,event_id,game):
                 values=entry["stats"]
                 if len(values)!=len(labels): raise ValueError("Player stat columns do not match labels")
                 stats=dict(zip(labels,values))
+                if str(stats.get("MIN","")).strip() in {"", "--", "DNP", "DND"}: continue
                 for required in ["PTS","REB","AST","FG","3PT","FT"]:
                     if required not in stats: raise ValueError("Missing ESPN stat column "+required)
                 fg, fga=parse_made_attempted(stats["FG"])

@@ -17,10 +17,13 @@ jobs:
           python-version: "3.12"
       - name: Match all 94 attended games and fetch raw ESPN player boxscores
         run: python college/scripts/import_espn.py --limit 94 --fetch-boxscores
+      - name: Normalize box scores and reconcile both teams against official final scores
+        run: python college/scripts/normalize_espn.py --expected-games 94
       - name: Summarize import
         if: always()
         run: |
           if [ -f college/output/summary.json ]; then cat college/output/summary.json; fi
+          if [ -f college/output/qa_report.json ]; then cat college/output/qa_report.json; fi
       - name: Save pilot report as build artifact
         if: always()
         uses: actions/upload-artifact@v4

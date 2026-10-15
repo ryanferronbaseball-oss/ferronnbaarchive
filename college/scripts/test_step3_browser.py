@@ -152,9 +152,12 @@ try:
     check(mobile.locator('#search').get_attribute('aria-label') is not None and
           mobile.locator('#yearFilter').get_attribute('aria-label') is not None,
           "Homepage search and filter controls expose accessible names")
+    mobile.locator("#search").focus()
+    check(mobile.evaluate("document.activeElement?.id === 'search'"),
+          "Keyboard focus can reach the labeled homepage search field")
     mobile.keyboard.press("Tab")
-    check(mobile.evaluate("document.activeElement?.tagName in ['A','BUTTON','INPUT','SELECT','SUMMARY']"),
-          "First keyboard tab focuses a navigable control")
+    check(mobile.evaluate("document.activeElement?.id === 'yearFilter'"),
+          "Tab key advances from search to the next year-filter control")
     mobile.screenshot(path=str(OUTPUT/"college-home-mobile.png"))
     navigate(mobile,"insights.html")
     mobile.wait_for_function("document.querySelectorAll('#metrics .tile').length===8")

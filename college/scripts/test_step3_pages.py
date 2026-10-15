@@ -96,6 +96,10 @@ def main():
     teams=json.loads((COLLEGE/"data/team_names.json").read_text(encoding="utf8"))
     check(len(games)==94 and len(players)==1825 and len(teams)==75,
           "94 games / 1,825 performances / 75 schools remain intact")
-    check(all(g["arena"]=="" for g in games),"All unverified arenas remain blank")
+    check(sum(bool(g["arena"]) for g in games)==20,"20 sourced arenas linked to attended games")
+    check(len({g["arena"] for g in games if g["arena"]})==15,"15 distinct venue names verified")
+    check(sum(g["site_type"]=="neutral" for g in games)==5,"Five neutral games marked explicitly")
+    check(all(g["site_type"]=="" for g in games if not g["arena"]),"74 unknown sites stay blank")
+    check(next(g for g in games if g["id"]=="60")["arena"]=="The Pavilion at JSerra","CSUN Tennessee State neutral-site venue sourced")
     print("Static seven-page parity checks completed.")
 if __name__=="__main__":main()

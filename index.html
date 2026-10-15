@@ -50,4 +50,8 @@ chart('teams',Object.entries(teamCounts).sort((a,b)=>b[1]-a[1]).slice(0,6));
 chart('years',years.map(y=>[y,items.filter(g=>g.year===y).length]));
 document.querySelector('#yearFilter').innerHTML+=[...years].reverse().map(y=>'<option>'+y+'</option>').join('');
 function draw(){const q=document.querySelector('#search').value.toLowerCase(),y=document.querySelector('#yearFilter').value,sort=document.querySelector('#sort').value;const subset=items.filter(g=>(!y||g.year===y)&&[g.away,g.home,g.arena,g.date].join(' ').toLowerCase().includes(q)).sort((a,b)=>sort==='asc'?a.date.localeCompare(b.date):b.date.localeCompare(a.date));document.querySelector('#games').innerHTML=subset.map(g=>'<tr><td><a href="./game.html?id='+g.id+'" style="color:#87c9ff;font-weight:800">'+g.date+'</a></td><td>'+g.away+'</td><td><strong>'+g.home+'</strong></td><td>'+g.arena+'</td><td><a class="badge" href="./game.html?id='+g.id+'">View game →</a></td></tr>').join('');document.querySelector('#showing').textContent='Showing '+subset.length+' of '+items.length+' games.'}['search','yearFilter','sort'].forEach(id=>document.getElementById(id).addEventListener('input',draw));draw();
+fetch('./data/player_boxscores_espn.json').then(r=>r.json()).then(logs=>{
+ const distinct=new Set(logs.map(p=>p.espn_event_id)).size;
+ document.querySelector('#boxCoverage').textContent=distinct+'/'+items.length;
+}).catch(()=>{});
 </script></body></html>

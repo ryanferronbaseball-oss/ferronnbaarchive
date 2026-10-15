@@ -52,4 +52,13 @@ jobs:
                                   athletes.append((player.get("displayName"),player.get("id")))
                       print("GAME_ROSTER",date,event["id"],athletes)
               except Exception as e: print("ERROR_SCOREBOARD",date,str(e)[:200])
+          with urllib.request.urlopen(urllib.request.Request(f"{base}/summary?event=401087079",headers={"User-Agent":"Mozilla/5.0"}),timeout=20) as r:
+              detail=json.load(r)
+          for team in detail.get("boxscore",{}).get("players",[]):
+              if str(team.get("team",{}).get("id")) != "38": continue
+              for g in team.get("statistics",[]):
+                  for a in g.get("athletes",[]):
+                      if not (a.get("athlete") or {}).get("id"):
+                          print("UNKNOWN_ROW",str(a)[:900])
+          print("SUMMARY_LEADERS",json.dumps(detail.get("leaders"))[:4800])
           PY

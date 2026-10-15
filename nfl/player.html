@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded",async()=>{
  const A=window.NFLArchive,el=id=>document.getElementById(id);
  el("navigation").innerHTML=A.nav("player");
  const id=new URLSearchParams(location.search).get("id");
-const hallOfFameIds=new Set(["1682","1755","10455","668","1038"]);const hallBadge=document.getElementById("hofBadge");if(hallBadge&&id&&hallOfFameIds.has(String(id).replace(/^espn:/,"")))hallBadge.classList.add("visible");
+const hallOfFameIds=new Set(["1682","1755","10455","668"]);const hallBadge=document.getElementById("hofBadge");if(hallBadge&&id&&hallOfFameIds.has(String(id).replace(/^espn:/,"")))hallBadge.classList.add("visible");
 
  const esc=A.esc;
  try{

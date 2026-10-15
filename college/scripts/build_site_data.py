@@ -13,7 +13,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 GAME_FIELDS = ("id","date","away","home","arena","espn_event_id",
-               "away_score","home_score","away_team_id","home_team_id","boxscore_status")
+               "away_score","home_score","away_team_id","home_team_id","boxscore_status","site_type")
 CORE = ("game_id","espn_event_id","date","player_id","player","team_id","minutes",
         "pts","reb","ast","fgm","fga","fg3m","fg3a","ftm","fta","oreb",
         "dreb","stl","blk","tov","pf")
@@ -44,6 +44,27 @@ def build(source, destination, expected_games=94, expected_players=1825):
           "Unresolved games must not appear in all-time leaderboard data")
     check(len(players) == qa.get("certified_player_lines") == expected_players,
           "Player-game rows disagree with the certified source")
+    # Source-cited event-level venue overrides; never infer an arena from listed home school.
+    venue_path = ROOT / "data" / "verified_venues.csv"
+    venue_rows = list(csv.DictReader(venue_path.open(encoding="utf-8", newline=""))) if venue_path.exists() else []
+    by_id = {g["id"]:g for g in games}
+    seen_venues = set()
+    for v in venue_rows:
+        gid = v["attendance_id"]
+        check(gid not in seen_venues and gid in by_id, "Duplicate/unknown venue attendance ID " + gid)
+        seen_venues.add(gid)
+        g = by_id[gid]
+        check(v["espn_event_id"] == g["espn_event_id"], "Venue event ID mismatch " + gid)
+        check(bool(v["arena"]) and "," not in v["arena"], "Missing or CSV-unsafe arena " + gid)
+        check(v["site_type"] in ("home", "neutral"), "Bad neutral-site classification " + gid)
+        check(v["source_url"].startswith("https://") and bool(v["source_name"]), "Venue source missing " + gid)
+        check(not g["arena"] or g["arena"] == v["arena"], "Conflicting venue name " + gid)
+        g["arena"] = v["arena"]
+        g["site_type"] = v["site_type"]
+    for g in games:
+        g.setdefault("site_type", "")
+        check(bool(g["arena"]) == (g["id"] in seen_venues), "Unsourced venue not allowed " + g["id"])
+
     game_map, events, teams = {}, set(), {}
     for g in games:
         check(set(GAME_FIELDS).issubset(g), "Missing game CSV fields")
@@ -148,8 +169,11 @@ def build(source, destination, expected_games=94, expected_players=1825):
         "jase_townsend_games":14,"jase_townsend_attended_points":170,
         "hunter_sallis_unified_games":4,
         "arenas_unverified":sum(not g["arena"] for g in games),
+        "arenas_verified_games":len(venue_rows),
+        "unique_verified_arenas":len({v["arena"] for v in venue_rows}),
+        "neutral_site_games_verified":sum(v["site_type"]=="neutral" for v in venue_rows),
         "provisional_official_player_ids":sum(pid.startswith("official:") for pid in name_by_id),
-        "release_note":"This certifies the statistical data contract; seven-page and stadium accuracy reviews remain outstanding."
+        "release_note":"This certifies player-stat joins and sourced arenas; unverified venues and release checks remain."
     }
     (destination/"validation.json").write_text(json.dumps(report,indent=2)+"\n",encoding="utf-8")
     print(json.dumps(report,indent=2))

@@ -31,3 +31,13 @@ A GitHub Actions workflow executes the same six-game pilot on pushes to this bra
 ESPN's scoreboard/history endpoints are undocumented and can change or omit small-school or postseason events. Do not infer that an unmatched result means the attended game never happened. Scoreboard dates may be timestamped in UTC, so game matching uses the requested local-date scoreboard response rather than UTC event.date. Teams with ambiguous names may require human aliases.
 
 No API keys needed for the ESPN site endpoint. Do not store future provider keys in GitHub files.
+
+## Full-archive matching and scoring audit (2026-10-15)
+
+The 94-game ESPN discovery importer now matches **94 of 94** attended games. The confirmed Cal State Northridge–Tennessee State date is **November 21, 2022**, ESPN event ID **401486700**.
+
+The separate normalization step (\`scripts/normalize_espn.py\`) validates team IDs, deduplicates player-game records, decodes every shooting and traditional-stat field, checks each individual's PTS against shooting totals, and **compares each team's player-point sum to its final score**. This audit found **72 games with complete team point reconciliation and 22 incomplete ESPN player box scores**. It generated **1,790 raw lines, 1,389 certified lines, 1,015 distinct ESPN player IDs, and 14 athletes seen representing multiple colleges**. Refer to \`reports/BOX_SCORE_COMPLETENESS.md\` for the 22-game reconciliation/backfill queue.
+
+**Publication gate:** Do not expose aggregate player record rankings from all 94 games until the 22 partial ESPN box scores are repaired or appropriately excluded and clearly labeled. A successful GitHub Actions job means parsing and QA succeeded, *not* that all player statistics are verified complete.
+
+**Design gate:** \`DESIGN_PARITY.md\` requires direct reuse of the existing NBA archive's seven page structures, visual theme, sortable statistics, and single cumulative player profiles across school transfers. The live NBA archive and its default branch remain unchanged by this college development work.

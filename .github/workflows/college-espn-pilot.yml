@@ -9,14 +9,14 @@ on:
 jobs:
   pilot:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Match six attended games and fetch raw ESPN player boxscores
-        run: python college/scripts/import_espn.py --ids 1,2,12,80,90,94 --fetch-boxscores
+      - name: Match all 94 attended games and fetch raw ESPN player boxscores
+        run: python college/scripts/import_espn.py --limit 94 --fetch-boxscores
       - name: Summarize import
         if: always()
         run: |
@@ -25,6 +25,6 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: college-espn-pilot-report
+          name: college-espn-full-94-report
           path: college/output/
           if-no-files-found: warn

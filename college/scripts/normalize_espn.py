@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Transform ESPN college box scores into the NBA site's data contract, with QA.
 
-No player stat is certified until BOTH teams' summed player PTS match final scores.
+No player stat is certified until BOTH teams' PTS and minutes reconcile.
 Raw imported games with incomplete rosters stay in audit JSON, not leaderboards.
 Never alter data from the live NBA archive.
 """
@@ -32,6 +32,19 @@ def int_or_none(value):
     if value is None or str(value).strip() in ("", "-", "--", "DNP"):
         return None
     return int(str(value).strip())
+
+def minutes_number(value):
+    """Read team player-minute totals, including MM:SS when ESPN supplies it."""
+    if value is None or str(value).strip() in ("", "--", "DNP"):
+        return None
+    text = str(value).strip()
+    if re.fullmatch(r"\d+:\d{2}", text):
+        mm, ss = map(int, text.split(":"))
+        return mm + ss / 60
+    try:
+        return float(text)
+    except ValueError:
+        return None
 
 def split_shot(value):
     if value is None or not re.fullmatch(r"\d+-\d+", str(value)):
@@ -188,10 +201,26 @@ def main():
             totals[player["team_id"]] += player["pts"] or 0
             counts[player["team_id"]] += 1
         away_total, home_total = totals[away_id], totals[home_id]
-        certified = (
+        scoring_consistent = (
             bool(player_lines) and counts[away_id] > 0 and counts[home_id] > 0
             and away_total == scores["away"] and home_total == scores["home"]
         )
+        team_minutes = {}
+        all_minutes_known = True
+        for team_id in (away_id, home_id):
+            vals = [minutes_number(p["minutes"]) for p in player_lines if p["team_id"] == team_id]
+            if not vals or any(v is None for v in vals):
+                all_minutes_known = False
+            team_minutes[team_id] = sum(v or 0 for v in vals)
+        # NCAA regulation = 200 player minutes per team (five on court x 40).
+        # Each five-minute overtime adds 25 player minutes to each team.
+        valid_minute_totals = {200 + 25 * n for n in range(8)}
+        minutes_consistent = (
+            all_minutes_known and
+            any(abs(team_minutes[away_id] - n) <= .1 and
+                abs(team_minutes[home_id] - n) <= .1 for n in valid_minute_totals)
+        )
+        certified = scoring_consistent and minutes_consistent
         status = "complete" if certified else "partial"
         for p in player_lines:
             p["boxscore_complete"] = certified
@@ -214,6 +243,10 @@ def main():
             "home_score": scores["home"], "home_player_points": home_total,
             "home_points_missing": scores["home"] - home_total,
             "away_player_lines": counts[away_id], "home_player_lines": counts[home_id],
+            "away_player_minutes": round(team_minutes[away_id], 2),
+            "home_player_minutes": round(team_minutes[home_id], 2),
+            "points_reconciled": scoring_consistent,
+            "minutes_reconciled": minutes_consistent,
             "official_supplement_lines": sum(bool(p["supplemental_official_source"]) for p in player_lines),
             "boxscore_status": status,
         })
@@ -238,6 +271,10 @@ def main():
         by_player[player["player_id"]].add(player["team_id"])
     report = {
         "games_identified": len(games),
+        "games_points_reconciled": sum(r["points_reconciled"] for r in qa_rows),
+        "games_minutes_reconciled": sum(r["minutes_reconciled"] for r in qa_rows),
+        "minute_audit_attendance_ids": [int(r["attendance_id"]) for r in qa_rows
+            if r["points_reconciled"] and not r["minutes_reconciled"]],
         "games_complete": len(games) - len(incomplete),
         "games_partial": len(incomplete),
         "raw_player_lines": len(imported),
@@ -248,7 +285,7 @@ def main():
         "multi_school_players": sum(len(tids) > 1 for tids in by_player.values()),
         "incomplete_attendance_ids": [int(r["attendance_id"]) for r in incomplete],
         "safe_to_publish_all_game_leaderboards": not incomplete,
-        "policy": "Only both-teams-score-reconciled games appear in certified leaderboard data; incomplete games stay in audit data.",
+        "policy": "Only games matching both official final scores and expected NCAA team minutes enter certified leaderboards; raw and sourced records remain auditable.",
     }
     (out / "qa_report.json").write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(report, indent=2))

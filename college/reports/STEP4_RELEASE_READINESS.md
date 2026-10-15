@@ -1,28 +1,36 @@
-# Step 4: Release readiness and source-audited arenas
+# College Step 4 — sourced venue completion and release readiness
 
-**October 15, 2026 · Development branch `college-import-pilot` · Not published**
+**Updated October 15, 2026.** Branch: `college-import-pilot`; no merges to NBA `main`, production navigation or live site.
 
-## Sourced venue pilot
+## Verified venue completion
 
-- **94 attended games**, 1,825 certified player appearances, 1,034 distinct athlete identities retained.
-- **20 per-game venues verified** across **15 distinct recorded arena names**, leaving **74 games with unverified venues**. Nothing inferred from a listed host school.
-- **5 neutral-site games distinguished from designated home/away status**: attendance #60 (The Pavilion at JSerra, SoCal Challenge), #80 (Spectrum Center, 2024 NCAA tournament), #82 (First Horizon Coliseum, Michigan–Wake Forest), #90 and #91 (Spectrum Center, 2025 ACC tournament).
-- Name reflects its game-date form where sourced: e.g., PNC Arena in January 2024, Lenovo Center in 2025. A later canonical physical-building alias system requires separate verification.
-- Every entry in `data/verified_venues.csv` carries date-specific research provenance URL, attendance ID and source event ID. `scripts/build_site_data.py` reapplies records on future imports, rejects duplicates and mismatched IDs, and keeps unknown arenas blank.
-- College game detail and attendance insights explicitly label/exclude incomplete arena information. Home-team wins are identified as **listed** home-team wins, since neutral-site games have designated home teams.
+- **94 of 94** attended game locations have a dated source record in `college/data/verified_venues.csv`; zero missing venue fields.
+- **19 historical arena labels**, representing **18 physical basketball venues**. Raleigh's same arena was named PNC Arena in the January 2024 game and Lenovo Center in the 2025 games. The historical name is preserved in game detail while venue insights group the building under its newer name.
+- **Six verified neutral-site games:** attendance IDs **60, 76, 80, 82, 90 and 91**. The California at San Diego State 2023 SoCal Showcase (#76) was played at the Pavilion at JSerra in San Juan Capistrano, not Viejas Arena. Listed home/away teams are unchanged from the source.
+- Historical school and conference sources include university box scores (San Diego, UC Irvine, UC San Diego), UCLA and SDSU published schedules, West Coast Conference dated results and the ACC tournament venue declaration.
+- `verified_venues.csv` records attendance ID, ESPN event ID, date-specific arena label, neutral/home designation, public source URL and citation description for **every game**.
+- The deterministic site data adapter reapplies venue facts after regenerating ESPN data, checks provider event IDs and unique attendance IDs, and rejects unsourced venue insertions.
 
-## Automated regression additions
+## Dataset preserved
 
-- Seven-page static parity, exact 94/1,825/75 data contract and expected 20 verified game venues, 15 venue names, five neutral games.
-- HTTP-based Chromium checks for First Horizon Coliseum neutral-site detail and a sourced Spectrum Center venue leaderboard, including visible exclusion of the 74 unknown locations.
-- Workflow path triggers extended to venue data and adapter. Existing NBA main branch and production URL remain unchanged.
+- 94 matched games, 1,825 certified player appearances, 1,034 player identities, 75 distinct school IDs, and 14 players with appearances at multiple schools.
+- Every game's final score and team player-minute totals were previously reconciled. This does **not** establish independent field-by-field accuracy for all advanced metrics.
 
-## Launch blocks that still need resolution
+## Regression changes committed
 
-1. **Venue research:** individually corroborate the 74 remaining games against official dated event records; do not extrapolate home-school location.
-2. **Accessibility review:** manual keyboard navigation, focus state, explicit labels, screen-reader live updates, table headers, small-screen overflow and contrast across all seven pages. Current automated browser checks are not a WCAG certification.
-3. **Field-by-field sources:** scoring and team minutes reconcile for 94/94, but that alone does not independently certify each assists/turnovers/rebounds field.
-4. **Athlete aliases:** 17 provisional `official:` IDs should be audited against stable provider IDs, never merged by name alone.
-5. **End-to-end sign-off:** user to compare actual desktop/mobile college previews to NBA, and authorize a merge, navigation change, or GitHub Pages release explicitly. No publication is authorized by this venue pilot.
+- Structural seven-page checks now assert **94 venue joins**, **19 era-specific names**, **18 physical arena identities**, **six neutral games**, and source URLs aligned with each unique attendance ID and ESPN event ID.
+- Browser checks target historic Viejas/Jenny Craig locations, two different SoCal neutral-site games, aggregate venue leaderboards, 18 physical venue KPI, and mobile home/insights views.
+- Browser test report status now depends on completing **all assertions**, not merely absence of JavaScript errors.
+- Search/filter accessible names were previously added on five college pages; full assistive-technology and keyboard testing is still required.
 
-This is a partial Step 4 implementation, **not final launch approval**.
+**Important:** These updated tests are committed, but a passing run of the updated build has **not yet been independently verified**. Earlier 42 successful Chromium assertions belong to Step 3 *before* these changes.
+
+## Outstanding launch blockers
+
+1. Confirm current GitHub Actions and complete end-to-end HTTP Chromium regression after the venue changes.
+2. Review 17 qualified provisional official-source player IDs against independent athlete identity evidence; never merge by name only.
+3. Perform selected independent official-source spot checks for secondary stat fields (rebounds, steals, assists, turnovers, shooting), in addition to already reconciled scores and minutes.
+4. Desktop and small-screen visual parity, keyboard accessibility, contrast, labels, keyboard focus and screen-reader navigation.
+5. Explicit **user acceptance** before merging, publishing, or adding college navigation to the NBA production archive.
+
+**Venue research: COMPLETE. Production launch: NOT APPROVED / NOT YET PUBLISHED.**

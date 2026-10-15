@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded",async()=>{
   let items=combined?A.group(source,category):source;
   const query=el("search").value.trim().toLowerCase(),min=Number(el("minGames").value);
   items=items.filter(x=>(x.player+" "+x.team).toLowerCase().includes(query)&&(combined?x.games>=min:min<=1));
-  const r=data.rows.find(x=>x.category===category),labels=r?.stat_labels||[];const sort=el("sort"),previous=sort.value;if(sort.options[0]?.value!== "0"){sort.innerHTML=labels.map((label,i)=>'<option value="'+i+'">'+A.esc(label)+'</option>').join("");sort.value=String(A.defaultColumn(category,labels))}else if(previous)sort.value=previous;
+  const r=data.rows.find(x=>x.category===category),labels=r?.stat_labels||[];const sort=el("sort"),previous=sort.value;const expected=labels.map((_,i)=>String(i));if(sort.options.length!==expected.length||[...sort.options].some((o,i)=>o.value!==expected[i])){sort.innerHTML=labels.map((label,i)=>'<option value="'+i+'">'+A.esc(label)+'</option>').join("");sort.value=String(A.defaultColumn(category,labels))}else if(previous)sort.value=previous;
   items=A.sortPlayers(items,category,Number(sort.value));
   el("entryCount").textContent=items.length+" players"+(combined?" · all selected games":" · selected game");
   el("board").innerHTML=A.table(items,category,{combined});

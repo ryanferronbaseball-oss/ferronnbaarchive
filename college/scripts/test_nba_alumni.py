@@ -11,12 +11,12 @@ players=json.loads((ROOT/"college/data/player_boxscores_espn.json").read_text())
 cross=json.loads((ROOT/"college/data/nba_crosswalk.json").read_text())
 by={}
 for p in players:by.setdefault(p["player_id"],[]).append(p)
-assert len(cross)>=16 and len(set(x["player_id"] for x in cross))==len(cross)
+assert len(cross)>=19 and len(set(x["player_id"] for x in cross))==len(cross)
 assert all(x["player_id"] in by and x["source_url"].startswith("https://") for x in cross)
 assert all(x["category"] in ("nba","drafted_only") for x in cross)
 assert all(x["category"]=="nba" or (x["draft_year"] and x["draft_pick"]) for x in cross)
 assert all(x["category"]!="nba" or x["nba_debut"] or x["source_url"] for x in cross)
-assert sum(len(by[x["player_id"]]) for x in cross)>=25
+assert sum(len(by[x["player_id"]]) for x in cross)>=40
 html=(ROOT/"college/nba-alumni.html").read_text()
 script=re.search(r"<script>([\s\S]*?)</script>",html).group(1)
 with tempfile.NamedTemporaryFile(mode="w",suffix=".js") as f:
@@ -37,8 +37,8 @@ try:
   page.route("https://a.espncdn.com/**",lambda route:route.abort())
   response=page.goto(f"http://127.0.0.1:{server.server_address[1]}/college/nba-alumni.html",wait_until="domcontentloaded")
   ok(response.status==200,"Alumni page loads")
-  page.wait_for_function("document.getElementById('nbaCount').textContent === '16'")
-  ok(page.locator(".player").count()==16,"Sixteen verified career-to-college matches displayed")
+  page.wait_for_function("document.getElementById('nbaCount').textContent === '19'")
+  ok(page.locator(".player").count()==19,"Sixteen verified career-to-college matches displayed")
   ok(page.locator("#draftCount").inner_text()=="0","No unsupported drafted-only claims displayed")
   ok("Hunter Sallis" in page.locator("#cards").inner_text(),"Sallis college transfer profile exists")
   ok("Gonzaga / Wake Forest" in page.locator("#cards").inner_text(),"Both attended Sallis colleges are preserved")

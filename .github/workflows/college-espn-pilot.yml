@@ -19,11 +19,24 @@ jobs:
         run: python college/scripts/import_espn.py --limit 94 --fetch-boxscores
       - name: Normalize box scores and reconcile both teams against official final scores
         run: python college/scripts/normalize_espn.py --expected-games 94
+      - name: Step 1 — build college data in existing NBA page contract and verify identities
+        run: python college/scripts/build_site_data.py --expected-games 94 --expected-players 1825
       - name: Summarize import
         if: always()
         run: |
           if [ -f college/output/summary.json ]; then cat college/output/summary.json; fi
           if [ -f college/output/qa_report.json ]; then cat college/output/qa_report.json; fi
+          if [ -f college/data/validation.json ]; then cat college/data/validation.json; fi
+      - name: Save independently validated site-ready college data
+        uses: actions/upload-artifact@v4
+        with:
+          name: college-site-ready-data
+          path: |
+            college/data/games.csv
+            college/data/player_boxscores_espn.json
+            college/data/team_names.json
+            college/data/validation.json
+          if-no-files-found: error
       - name: Save pilot report as build artifact
         if: always()
         uses: actions/upload-artifact@v4

@@ -93,9 +93,12 @@ try:
       ("records.html","nba/records.html"),
       ("sports.html","index.html")
     ):
-      desktop.goto(base+oldroute,wait_until="domcontentloaded")
-      print("LEGACY ROUTE CHECK",oldroute,"current",desktop.url,flush=True)
-      check(desktop.url.endswith(newroute),"Legacy /"+oldroute+" redirects without losing query to /"+newroute)
+      legacy=browser.new_page(viewport={"width":1280,"height":900})
+      setup(legacy)
+      legacy.goto(base+oldroute,wait_until="domcontentloaded")
+      print("LEGACY ROUTE CHECK",oldroute,"current",legacy.url,flush=True)
+      check(legacy.url.endswith(newroute),"Legacy /"+oldroute+" redirects without losing query to /"+newroute)
+      legacy.close()
 
     mobile=browser.new_page(viewport={"width":390,"height":844},device_scale_factor=1)
     setup(mobile)

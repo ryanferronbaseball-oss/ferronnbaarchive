@@ -1,8 +1,8 @@
 # College archive — ESPN box-score completeness audit
 
-Latest: [94-game import after complete Jase Townsend 17-game audit (October 15, 2026)](https://github.com/ryanferronbaseball-oss/ferronnbaarchive/actions/runs/38772027677).
+Latest: [94-game validated ESPN import after four additional official box-score restorations (October 15, 2026)](https://github.com/ryanferronbaseball-oss/ferronnbaarchive/actions/runs/38773910953).
 
-**Attendance matching:** 94/94 games. **Point-score reconciliation:** 88/94. **Strict point-and-minute reconciliation:** 86/94. **Games requiring backfill:** 8 (6 missing points, 2 minute-only). **Original ESPN rows:** 1,790. **Officially supplemented rows:** 24 (2 Wetzell, 6 Colorado, 5 from the three priority-game repairs, 11 further Townsend appearances). **Corrected pre-existing ESPN rows:** 6. **Strictly certified rows:** 1,662.
+**Attendance matching:** 94/94 games. **Point-score reconciliation:** 91/94. **Strict point-and-minute reconciliation:** 90/94. **Games requiring backfill:** 4 (3 with missing player points, 1 with missing player minutes only). **Original ESPN rows:** 1,790. **Officially supplemented rows:** 30. **Existing ESPN rows corrected from official scores:** 9. **Total combined player lines:** 1,820. **Strictly certified player lines:** 1,742.
 
 A game is marked **complete only when both teams' player points match their final scores AND their player-minute totals match NCAA regulation or overtime expectations**. Partial games remain in the attendance history, but raw player rows from those games are excluded from certified leaderboard totals pending verification/backfill. Excluding a game is not a claim that its player performances are wrong; it is a conservative choice while ESPN's lineup appears incomplete.
 
@@ -68,25 +68,40 @@ The original ESPN game-summary import had **zero** Jase Townsend appearances in 
 
 Ten more games passed the strict game-level quality gate after restoring eleven Townsend appearances. **Cal Poly at San Diego on December 5, 2021 (#48) remains partial**, because Cal Poly's player totals are still short **two points and twenty minutes**; Townsend's San Diego statistics are now restored and USD's own team totals reconcile.
 
+## Life Pacific, Hofstra, Santa Clara and Cal Poly restorations — October 15, 2026
+
+Four user-supplied official San Diego box-score documents were compared player by player with the raw ESPN source. All four attended games now pass **both teams' final-score and full player-minute checks**.
+
+| Attendance ID | Date | Matchup | Official player lines missing from ESPN | Existing record corrections | Result |
+|---:|---|---|---|---|---|
+| 8 | 2017-12-22 | Life Pacific @ San Diego | Jacob Brummett (7 PTS, 25 MIN), Chez Lister (6 PTS, 28 MIN), Adam Saavedra (0 PTS, 16 MIN) | Jonathan Cortez 23→22 MIN; Trey Huckabay 26→27 MIN | Life Pacific 51/200 MIN; San Diego 94/200 MIN |
+| 30 | 2019-11-27 | Hofstra @ San Diego | Kevin Schutte (0 PTS, 7 MIN) | No incorrect player stat lines found; ESPN calls Eli Pemberton "Elijah Pemberton" | Hofstra 69/200 MIN; San Diego 79/200 MIN |
+| 37 | 2020-01-25 | Santa Clara @ San Diego | Trey Wertz (7 PTS, 25 MIN) | No additional changes | Santa Clara 65/200 MIN; San Diego 52/200 MIN |
+| 48 | 2021-12-05 | Cal Poly @ San Diego | Trevon Taylor (2 PTS, 21 MIN) | Tuukka Jaakkola 7→6 MIN | Cal Poly 51/200 MIN; San Diego 52/200 MIN |
+
+Sources: [2017 San Diego vs Life Pacific official PDF](https://usdtoreros.com/documents/2018/5/10/13853__m_baskbl_2017_18_misc_non_event__USDvsLPCbox.pdf), [2019 San Diego vs Hofstra official box](https://usdtoreros.com/sports/mens-basketball/stats/2019-20/hofstra/boxscore/9522), [2020 San Diego vs Santa Clara official box](https://usdtoreros.com/sports/mens-basketball/stats/2019-20/santa-clara/boxscore/9536), [2021 San Diego vs Cal Poly official box](https://usdtoreros.com/sports/mens-basketball/stats/2021-22/cal-poly/boxscore/12411).
+
+The PDF confirms Life Pacific's *Brummett* and *Saavedra* spellings, which differ from some third-party sources. The imported individual records and all player stat categories were checked against the corresponding official player tables. The official corrections are saved in `college/data/official_boxscore_supplements.csv` and `college/data/official_boxscore_overrides.csv` with source URLs. Original ESPN raw values are preserved in the audit archive.
+
+These six added individual lines have **22 points and 129 player-minutes in total**, but also include two zero-point players who would not be detected by scoring reconciliation alone. Where ESPN athlete IDs are not independently confirmed, restored players use qualified official-source identifiers rather than invented ESPN IDs.
+
+Full validation: [GitHub Actions run 38773910953](https://github.com/ryanferronbaseball-oss/ferronnbaarchive/actions/runs/38773910953). **Remaining attendance IDs: 31, 49, 64, 71.**
+
 ## Additional scoreless-player investigation
 
-Two games still reconcile every point yet fail the NCAA expected player-minute check, suggesting missing zero-point player appearances:
+One game still reconciles every point yet fails the NCAA expected player-minute check, suggesting a missing zero-point player appearance:
 
 | Attendance ID | Date | Matchup | Imported team minutes needing investigation |
 |---:|---|---|---|
-| 30 | 2019-11-27 | Hofstra @ San Diego | Hofstra 193 of 200 |
 | 64 | 2022-12-10 | Denver @ UCLA | Denver 197 of 200 |
 
-**The scoring backfill queue below contains 6 games.** These additional 2 minute-only cases bring the total open QA queue to 8.
+**The scoring backfill queue below contains 3 games.** The additional minute-only case brings the total open QA queue to 4.
 
-## Backfill queue (6 games with missing player points)
+## Backfill queue (3 games with missing player points)
 
 | Attendance ID | Date | Matchup | Missing from away player's summed PTS | Missing from home player's summed PTS |
 |---:|---|---|---:|---:|
-| 8 | 2017-12-22 | Life Pacific @ San Diego | 13 | 0 |
 | 31 | 2019-11-30 | Eastern Michigan @ UC Irvine | 1 | 0 |
-| 37 | 2020-01-25 | Santa Clara @ San Diego | 7 | 0 |
-| 48 | 2021-12-05 | Cal Poly @ San Diego | 2 | 0 |
 | 49 | 2021-12-08 | Cal State Fullerton @ San Diego State | 3 | 0 |
 | 71 | 2023-01-25 | Utah State @ San Diego State | 15 | 0 |
 

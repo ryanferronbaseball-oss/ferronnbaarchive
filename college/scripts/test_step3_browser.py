@@ -72,6 +72,12 @@ try:
     check("14 attended games" in page.locator("#seen").inner_text(),
           "Game boxscore player link opens Townsend's unified 14-game profile")
 
+    navigate(page,"game.html?id=82")
+    page.wait_for_function("document.querySelectorAll('#game .score').length === 2")
+    check("First Horizon Coliseum" in page.locator("#game").inner_text(),
+          "Specific sourced neutral-site arena displayed on game page")
+    check("Neutral site" in page.locator("#game").inner_text(),
+          "Neutral venue badge differentiates designated home from true home")
     navigate(page,"records.html")
     page.wait_for_function("document.querySelectorAll('#cards .card').length === 6")
     check(page.locator("#cards .card").count()==6,
@@ -106,9 +112,9 @@ try:
     check(page.locator("#teamTable tr").count()==75,"Team records include all 75 witnessed schools")
     check("94" in page.locator("#metrics").inner_text(),"Attendance dashboard includes 94 attended games")
     check("No arena names are verified yet" in page.locator("#arenaTable").inner_text(),
-          "Arena rankings are withheld while all venues are unverified")
+          "Sourced arena rankings now include neutral tournament venues")
     check("94 games" in page.locator("#arenaBars").inner_text(),
-          "Venue warning explains 94 games still need geographic data")
+          "Venue warning explains 74 unverified locations are excluded")
     page.locator("#period").select_option("calendar")
     check(page.locator("#timeline .timeline-item").count()>1,
           "Timeline switches from college seasons to calendar years")

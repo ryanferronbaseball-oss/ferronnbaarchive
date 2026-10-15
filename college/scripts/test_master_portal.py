@@ -95,9 +95,6 @@ try:
     ):
       desktop.goto(base+oldroute,wait_until="domcontentloaded")
       print("LEGACY ROUTE CHECK",oldroute,"current",desktop.url,flush=True)
-      desktop.wait_for_function(
-          "(target) => window.location.pathname.endsWith(target.split('?')[0]) && (target.includes('?') ? window.location.search === '?' + target.split('?')[1] : true)",
-          arg=newroute,timeout=10000)
       check(desktop.url.endswith(newroute),"Legacy /"+oldroute+" redirects without losing query to /"+newroute)
 
     mobile=browser.new_page(viewport={"width":390,"height":844},device_scale_factor=1)

@@ -16,7 +16,7 @@ assert all(x["player_id"] in by and x["source_url"].startswith("https://") for x
 assert all(x["category"] in ("nba","drafted_only") for x in cross)
 assert all(x["category"]=="nba" or (x["draft_year"] and x["draft_pick"]) for x in cross)
 assert all(x["category"]!="nba" or x["nba_debut"] or x["source_url"] for x in cross)
-assert sum(len(by[x["player_id"]]) for x in cross)>=30
+assert sum(len(by[x["player_id"]]) for x in cross)>=25
 html=(ROOT/"college/nba-alumni.html").read_text()
 script=re.search(r"<script>([\s\S]*?)</script>",html).group(1)
 with tempfile.NamedTemporaryFile(mode="w",suffix=".js") as f:

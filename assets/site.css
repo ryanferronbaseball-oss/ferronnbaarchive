@@ -81,3 +81,20 @@ tbody tr:hover,tbody tr:hover td{background:#E9EFE7!important}
 #insightsPreview .insight-card strong{color:#252A2B!important}
 #playerSummary{color:#667268!important}
 @media(max-width:650px){.ca-header{align-items:flex-start}.ca-nav{width:100%;justify-content:flex-start}.panel,.record,.card{border-radius:12px}}
+
+/* Legacy page-specific elements: remove remaining dark surfaces */
+.totals td,.lineup-divider td{background:#ECF0E9!important;color:#284D3C!important;border-color:#CBD7CC!important}
+.totals td{background:#E9EDE6!important;color:#252A2B!important}
+.pog{background:linear-gradient(140deg,#FFFEFB,#ECF1E9)!important;border:1px solid #C8D5C7!important}
+.pog-player,.pog-impact strong,.pog-stat strong{color:#252A2B!important}
+.pog-impact span,.pog-stat span,.pog-method{color:#667268!important}
+.pog-stat{background:#F8F9F4!important;border:1px solid #DDE1D7!important}
+.nextprev a{background:#FFFEFB!important;border:1px solid #D9DDD3!important;color:#284D3C!important}
+.highlight div,.scoreboard .sub{color:#667268!important}
+.hero .eyebrow{color:#284D3C!important}
+body:has(#portrait) .hero{background:linear-gradient(115deg,#EAF0E7,#FFFEFB 85%)!important;border:1px solid #D0DBCF!important}
+.feature small{color:#8A642A!important}
+#signature .feature{background:linear-gradient(115deg,#F0F2EB,#FFFEFB)!important}
+#signaturePerformances .ca-fallback img{background:#EDF0E9}
+#signaturePerformances .ca-feature strong{color:#252A2B!important}
+#profileAdvanced .profile-stat strong{color:#252A2B!important}

@@ -50,8 +50,9 @@ try:
           "Master routes NBA through a dedicated /nba/ path")
     check(desktop.get_by_role("link",name="Enter college archive").get_attribute("href")=="./college/index.html",
           "Master routes college through a dedicated /college/ path")
-    check(desktop.locator(".sport-card").count()==2 and desktop.locator(".future").count()==1,
-          "Two basketball archives are active; MLB stays future-only")
+    check(desktop.locator(".sport-card").count()==3 and desktop.locator(".future").count()==1,
+          "Three sports archives are active; MLB stays future-only")
+    check(desktop.get_by_role("link",name="Enter NFL archive").get_attribute("href")=="./nfl/index.html","Master routes NFL through its dedicated /nfl/ path")
     desktop.screenshot(path=str(OUTPUT/"courtside-master-desktop.png"),full_page=True)
 
     desktop.get_by_role("link",name="Enter NBA archive").click()
@@ -107,8 +108,9 @@ try:
     check(mobile.evaluate("document.documentElement.scrollWidth <= innerWidth + 2"),
           "Master site does not overflow 390px viewport")
     check(mobile.get_by_role("link",name="Enter NBA archive").is_visible() and
-          mobile.get_by_role("link",name="Enter college archive").is_visible(),
-          "Both league entrances are visible on mobile")
+          mobile.get_by_role("link",name="Enter college archive").is_visible() and
+          mobile.get_by_role("link",name="Enter NFL archive").is_visible(),
+          "All three sport entrances are visible on mobile")
     mobile.screenshot(path=str(OUTPUT/"courtside-master-mobile.png"),full_page=True)
     for route in ("nba/index.html","college/index.html"):
       navigate(mobile,route)

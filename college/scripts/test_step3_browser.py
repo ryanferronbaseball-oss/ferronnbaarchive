@@ -60,7 +60,7 @@ try:
           "Overtime Utah State at San Diego final score matches 91–89")
     check(page.locator("#game .team").count()==2,"Both NCAA opponent labels render")
     check(page.locator("#game .player-link").count()>15,"Complete NCAA player tables load")
-    check("Venue not yet verified" in page.locator("#game").inner_text(),
+    check("venue not yet verified" in page.locator("#game").inner_text().lower(),
           "Game page labels unverified arena without inventing a location")
     check(page.locator("#gameSelect option").count()==94,"All 94 games are selectable")
     check("mens-college-basketball" in page.locator("#game a[target='_blank']").first.get_attribute("href"),

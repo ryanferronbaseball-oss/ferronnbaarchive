@@ -52,7 +52,10 @@ def main():
         rendered=(COLLEGE/file).read_text(encoding="utf8")
         a,b=read_structure(original),read_structure(rendered)
         for tag in ("header","nav","h1","h2","h3","table","select","footer"):
-            check(a.counts.get(tag,0)==b.counts.get(tag,0),file+" has original NBA "+tag+" count")
+            if tag=="select" and file=="player.html":
+                check(b.counts.get(tag,0)==a.counts.get(tag,0)+1,file+" retains all NBA selectors plus optional school filter")
+            else:
+                check(a.counts.get(tag,0)==b.counts.get(tag,0),file+" has original NBA "+tag+" count")
         check(a.ids.issubset(b.ids),file+" preserves all NBA control IDs")
         check(a.nav_links==b.nav_links,file+" preserves original NBA navigation")
         check(all((COLLEGE/ref.removeprefix("./")).is_file()

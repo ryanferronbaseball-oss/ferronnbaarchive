@@ -55,10 +55,9 @@ jobs:
                   with urllib.request.urlopen(req,timeout=22) as response: html=response.read().decode("utf-8","replace")
                   soup=BeautifulSoup(html,"html.parser")
                   title=soup.title.get_text(" ",strip=True) if soup.title else ""
-                  m,d,y=date.split("-")
-                  stamp=f"{int(d)}/{int(y)}/{m}"  # replaced below with month/day/year
-                  stamp=f"{int(m)}/{int(d)}/{y}"
-                  alt=f"{int(m):02d}/{int(d):02d}/{y[2:]}"
+                  year,month,day=date.split("-")
+                  stamp=f"{int(month)}/{int(day)}/{year}"
+                  alt=f"{int(month):02d}/{int(day):02d}/{year[2:]}"
                   maintext=soup.get_text(" ",strip=True)[:9000]
                   if stamp not in title and alt not in maintext and stamp not in maintext:
                     print("CANDIDATE_UNVERIFIED",gid,candidate,title[:120],flush=True)

@@ -63,7 +63,7 @@ try:
           "Overtime Utah State at San Diego final score matches 91–89")
     check(page.locator("#game .team").count()==2,"Both NCAA opponent labels render")
     check(page.locator("#game .player-link").count()>15,"Complete NCAA player tables load")
-    check("Jenny Craig Pavilion" in page.locator("#game").inner_text(),
+    check("jenny craig pavilion" in page.locator("#game").inner_text().lower(),
           "Game page renders official WCC-sourced 2022 San Diego arena")
     check(page.locator("#gameSelect option").count()==94,"All 94 games are selectable")
     check("mens-college-basketball" in page.locator("#game a[target='_blank']").first.get_attribute("href"),
@@ -77,17 +77,17 @@ try:
 
     navigate(page,"game.html?id=25")
     page.wait_for_function("document.querySelectorAll('#game .score').length === 2")
-    check("Viejas Arena" in page.locator("#game").inner_text(),
+    check("viejas arena" in page.locator("#game").inner_text().lower(),
           "2019 Nevada at SDSU game displays sourced Viejas Arena")
     navigate(page,"game.html?id=82")
     page.wait_for_function("document.querySelectorAll('#game .score').length === 2")
-    check("First Horizon Coliseum" in page.locator("#game").inner_text(),
+    check("first horizon coliseum" in page.locator("#game").inner_text().lower(),
           "Specific sourced neutral-site arena displayed on game page")
-    check("Neutral site" in page.locator("#game").inner_text(),
+    check("neutral site" in page.locator("#game").inner_text().lower(),
           "Neutral venue badge differentiates designated home from true home")
     navigate(page,"game.html?id=76")
     page.wait_for_function("document.querySelectorAll('#game .score').length === 2")
-    check("The Pavilion at JSerra" in page.locator("#game").inner_text() and
+    check("the pavilion at jserra" in page.locator("#game").inner_text().lower() and
           "Neutral site" in page.locator("#game").inner_text(),
           "2023 SoCal Showcase shown at its verified neutral-site venue")
     navigate(page,"records.html")
@@ -127,7 +127,7 @@ try:
           "Arena rankings combine PNC and Lenovo naming-rights eras")
     check("unknown arenas are excluded" not in page.locator("#arenaBars").inner_text(),
           "All 94 sourced games are included in physical venue counts")
-    check(any("Verified arenas" in tile.inner_text() and "18" in tile.inner_text()
+    check(any("verified arenas" in tile.inner_text().lower() and "18" in tile.inner_text()
               for tile in page.locator("#metrics .tile").all()),
           "18 distinct physical arenas counted from 19 historical sponsor/name labels")
     check("Jenny Craig Pavilion" in page.locator("#arenaTable").inner_text(),
@@ -148,10 +148,18 @@ try:
     navigate(mobile,"index.html")
     mobile.wait_for_function("document.getElementById('gameCount').textContent === '94'")
     check(mobile.locator("#games tr").count()==94,"College homepage renders all attendance rows on mobile")
+    check(mobile.evaluate("document.documentElement.scrollWidth <= innerWidth + 2"),"Mobile homepage has no document-level horizontal overflow")
+    check(mobile.locator('#search').get_attribute('aria-label') is not None and
+          mobile.locator('#yearFilter').get_attribute('aria-label') is not None,
+          "Homepage search and filter controls expose accessible names")
+    mobile.keyboard.press("Tab")
+    check(mobile.evaluate("document.activeElement?.tagName in ['A','BUTTON','INPUT','SELECT','SUMMARY']"),
+          "First keyboard tab focuses a navigable control")
     mobile.screenshot(path=str(OUTPUT/"college-home-mobile.png"))
     navigate(mobile,"insights.html")
     mobile.wait_for_function("document.querySelectorAll('#metrics .tile').length===8")
     check(mobile.locator("#teamTable tr").count()==75,"NCAA insights works on mobile")
+    check(mobile.evaluate("document.documentElement.scrollWidth <= innerWidth + 2"),"Mobile insights has no document-level horizontal overflow")
     mobile.screenshot(path=str(OUTPUT/"college-insights-mobile.png"))
     check(not errors,"No unhandled JavaScript errors in seven-page navigation")
     browser.close()

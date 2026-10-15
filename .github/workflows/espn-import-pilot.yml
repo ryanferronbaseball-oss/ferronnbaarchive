@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - '.github/workflows/espn-import-pilot.yml'
+      - 'data/games.csv'
 permissions:
   contents: write
 concurrency:

@@ -24,7 +24,7 @@
 <section class="milestone-top" id="topGames" aria-label="Top two personal NFL fantasy performances"><div class="empty">Loading landmark performances…</div></section>
 <div class="section-heading"><h2>Every fantasy performance</h2><span class="caption" id="countLabel"></span></div>
 <div class="tabbar ppr-filter" id="thresholds" aria-label="Filter performances by PPR milestone">
- <button type="button" data-min="0" aria-pressed="true">All</button>
+ <button type="button" data-min="all" aria-pressed="true">All</button>
  <button type="button" data-min="10" aria-pressed="false">10+</button>
  <button type="button" data-min="20" aria-pressed="false">20+</button>
  <button type="button" data-min="25" aria-pressed="false">25+</button>
@@ -65,7 +65,7 @@
 document.addEventListener("DOMContentLoaded",async()=>{
  const A=window.NFLArchive,el=id=>document.getElementById(id);
  el("navigation").innerHTML=A.nav("milestones");
- let records=[],games=[],min=0;
+ let records=[],games=[],min=-Infinity;
  function score(n){return Number(n).toFixed(2)}
  function matchup(p){const g=games.find(x=>x.id===p.game_id);return g?g.away_abbr+" at "+g.home_abbr:"Game"}
  function line(p){const a=p.stat_line,out=[];
@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded",async()=>{
   el("gameWinners").innerHTML=games.map(g=>{const p=records.find(x=>x.game_id===g.id);return '<article class="game-card"><div class="caption">'+A.esc(A.date(g.date))+'</div>'+
    '<h3>'+A.esc(g.away_abbr+' at '+g.home_abbr)+'</h3><div class="game-score">'+(p?score(p.fantasy_ppr):"—")+' <span>PPR</span></div>'+
    '<div>'+A.esc(p?.player||"No player score")+'</div><a class="action-link secondary" href="./game.html?id='+encodeURIComponent(g.id)+'">Game details ↗</a></article>'}).join("");
-  el("thresholds").querySelectorAll("button").forEach(b=>b.addEventListener("click",()=>{min=Number(b.dataset.min);el("thresholds").querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));draw()}));
+  el("thresholds").querySelectorAll("button").forEach(b=>b.addEventListener("click",()=>{min=b.dataset.min==="all"?-Infinity:Number(b.dataset.min);el("thresholds").querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));draw()}));
   ["gameFilter","sort"].forEach(id=>el(id).addEventListener("change",draw));
   el("search").addEventListener("input",draw);draw();
  }catch(err){el("performanceTable").innerHTML='<div class="empty">Unable to load PPR milestones: '+A.esc(err.message)+'</div>';el("topGames").innerHTML=""}

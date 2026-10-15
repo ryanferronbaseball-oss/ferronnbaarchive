@@ -111,10 +111,18 @@ try:
     check(page.locator("#metrics .tile").count()==8,"Attendance insights original KPI grid loads")
     check(page.locator("#teamTable tr").count()==75,"Team records include all 75 witnessed schools")
     check("94" in page.locator("#metrics").inner_text(),"Attendance dashboard includes 94 attended games")
-    check("No arena names are verified yet" in page.locator("#arenaTable").inner_text(),
+    check("Lenovo Center" in page.locator("#arenaTable").inner_text(),
           "Sourced arena rankings now include neutral tournament venues")
-    check("94 games" in page.locator("#arenaBars").inner_text(),
-          "Venue warning explains 74 unverified locations are excluded")
+    check("34 games" in page.locator("#arenaBars").inner_text(),
+          "Venue warning correctly excludes 34 still-unverified locations")
+    check("15" not in page.locator("#metrics").inner_text() or
+          any("Verified arenas" in tile.inner_text() and "14" in tile.inner_text()
+              for tile in page.locator("#metrics .tile").all()),
+          "Sponsor-renamed buildings never increase the physical venue count")
+    check(any("Verified arenas" in tile.inner_text() and "14" in tile.inner_text()
+              for tile in page.locator("#metrics .tile").all()),
+          "14 distinct physical arenas counted from 15 dated names")
+
     page.locator("#period").select_option("calendar")
     check(page.locator("#timeline .timeline-item").count()>1,
           "Timeline switches from college seasons to calendar years")

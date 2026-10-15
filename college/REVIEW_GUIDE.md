@@ -4,7 +4,7 @@ This is the **unpublished development version**. Its pages are separate from the
 
 ## Preview without publishing
 
-Open [College seven-page browser QA](https://github.com/ryanferronbaseball-oss/ferronnbaarchive/actions/workflows/college-step3-parity.yml), select the newest passing **College Step 3 seven-page parity** run on `college-import-pilot`, and download the **college-step3-seven-page-review** artifact at the bottom of that run. It contains two screenshot/report directories, `step3-browser/` for home/game/records/milestones/insights and `step2-browser/` for the players and profile pages. Review these screenshot previews:
+Open the [verified passing October 15 integrated QA run](https://github.com/ryanferronbaseball-oss/ferronnbaarchive/actions/runs/38788094542) and its [review screenshot artifact](https://github.com/ryanferronbaseball-oss/ferronnbaarchive/actions/runs/38788094542/artifacts/11998103847), or open [College seven-page browser QA](https://github.com/ryanferronbaseball-oss/ferronnbaarchive/actions/workflows/college-step3-parity.yml) to select the newest passing **College Step 3 seven-page parity** run on `college-import-pilot`, and download the **college-step3-seven-page-review** artifact at the bottom of that run. It contains two screenshot/report directories, `step3-browser/` for home/game/records/milestones/insights and `step2-browser/` for the players and profile pages. Review these screenshot previews:
 
 - `college-home-desktop.png` — the full 94-game college attendance homepage.
 - `college-home-mobile.png` — the narrow-screen homepage.
@@ -15,7 +15,7 @@ Open [College seven-page browser QA](https://github.com/ryanferronbaseball-oss/f
 - `college-stats-desktop.png` and `college-stats-mobile.png` — player-leaderboard snapshots.
 - `townsend-profile-desktop.png` and `sallis-multi-school-gamelog.png` — cross-linked sourced player profiles and Gonzaga/Wake Forest school transfer filtering.
 
-The same workflow validates the 240-official-field fixture, original NBA-style seven-page HTML parity and HTTP Chromium functionality. **A recent passing run is required** before treating these screenshots as QA-approved.
+The same workflow validates the 240-official-field fixture, original NBA-style seven-page HTML parity and HTTP Chromium functionality. **PASS:** The October 15 combined CI run passed 57 seven-page UI browser checks, 22 player/profile browser checks, source-stat parity, and static/JavaScript checks. Human visual acceptance is still pending.
 
 ## Interactions to check in a local browser
 

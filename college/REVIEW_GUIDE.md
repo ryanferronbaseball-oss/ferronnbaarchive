@@ -4,7 +4,7 @@ This is the **unpublished development version**. Its pages are separate from the
 
 ## Preview without publishing
 
-Open [College seven-page browser QA](https://github.com/ryanferronbaseball-oss/ferronnbaarchive/actions/workflows/college-step3-parity.yml), select the newest passing **College Step 3 seven-page parity** run on `college-import-pilot`, and download the **college-step3-seven-page-review** artifact at the bottom of that run. It contains screenshot previews:
+Open [College seven-page browser QA](https://github.com/ryanferronbaseball-oss/ferronnbaarchive/actions/workflows/college-step3-parity.yml), select the newest passing **College Step 3 seven-page parity** run on `college-import-pilot`, and download the **college-step3-seven-page-review** artifact at the bottom of that run. It contains two screenshot/report directories, `step3-browser/` for home/game/records/milestones/insights and `step2-browser/` for the players and profile pages. Review these screenshot previews:
 
 - `college-home-desktop.png` — the full 94-game college attendance homepage.
 - `college-home-mobile.png` — the narrow-screen homepage.
@@ -12,6 +12,8 @@ Open [College seven-page browser QA](https://github.com/ryanferronbaseball-oss/f
 - `college-single-game-records.png` — single-game leaderboards.
 - `college-milestones.png` — milestones, records and team results.
 - `college-attendance-insights.png` and `college-insights-mobile.png` — team/arena/attendance analytics.
+- `college-stats-desktop.png` and `college-stats-mobile.png` — player-leaderboard snapshots.
+- `townsend-profile-desktop.png` and `sallis-multi-school-gamelog.png` — cross-linked sourced player profiles and Gonzaga/Wake Forest school transfer filtering.
 
 The same workflow validates the 240-official-field fixture, original NBA-style seven-page HTML parity and HTTP Chromium functionality. **A recent passing run is required** before treating these screenshots as QA-approved.
 

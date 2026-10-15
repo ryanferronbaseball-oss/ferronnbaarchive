@@ -60,8 +60,8 @@ try:
           "Overtime Utah State at San Diego final score matches 91–89")
     check(page.locator("#game .team").count()==2,"Both NCAA opponent labels render")
     check(page.locator("#game .player-link").count()>15,"Complete NCAA player tables load")
-    check("venue not yet verified" in page.locator("#game").inner_text().lower(),
-          "Game page labels unverified arena without inventing a location")
+    check("Jenny Craig Pavilion" in page.locator("#game").inner_text(),
+          "Game page renders official WCC-sourced 2022 San Diego arena")
     check(page.locator("#gameSelect option").count()==94,"All 94 games are selectable")
     check("mens-college-basketball" in page.locator("#game a[target='_blank']").first.get_attribute("href"),
           "Game's outbound boxscore link uses the NCAA endpoint")
@@ -72,6 +72,10 @@ try:
     check("14 attended games" in page.locator("#seen").inner_text(),
           "Game boxscore player link opens Townsend's unified 14-game profile")
 
+    navigate(page,"game.html?id=25")
+    page.wait_for_function("document.querySelectorAll('#game .score').length === 2")
+    check("Venue not yet verified" in page.locator("#game").inner_text(),
+          "An unverified arena remains visibly unknown, not inferred from a home school")
     navigate(page,"game.html?id=82")
     page.wait_for_function("document.querySelectorAll('#game .score').length === 2")
     check("First Horizon Coliseum" in page.locator("#game").inner_text(),
@@ -112,13 +116,9 @@ try:
     check(page.locator("#teamTable tr").count()==75,"Team records include all 75 witnessed schools")
     check("94" in page.locator("#metrics").inner_text(),"Attendance dashboard includes 94 attended games")
     check("Lenovo Center" in page.locator("#arenaTable").inner_text(),
-          "Sourced arena rankings now include neutral tournament venues")
+          "Arena rankings combine PNC and Lenovo naming-rights eras")
     check("34 games" in page.locator("#arenaBars").inner_text(),
           "Venue warning correctly excludes 34 still-unverified locations")
-    check("15" not in page.locator("#metrics").inner_text() or
-          any("Verified arenas" in tile.inner_text() and "14" in tile.inner_text()
-              for tile in page.locator("#metrics .tile").all()),
-          "Sponsor-renamed buildings never increase the physical venue count")
     check(any("Verified arenas" in tile.inner_text() and "14" in tile.inner_text()
               for tile in page.locator("#metrics .tile").all()),
           "14 distinct physical arenas counted from 15 dated names")

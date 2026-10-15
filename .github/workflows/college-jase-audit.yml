@@ -1,0 +1,81 @@
+name: College San Diego Townsend audit
+on:
+  push:
+    branches: [college-import-pilot]
+    paths: [".github/workflows/college-jase-audit.yml"]
+  workflow_dispatch:
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install HTML parser
+        run: pip install beautifulsoup4
+      - name: Audit official box scores for every attended Townsend-era USD game
+        run: |
+          python - <<'PY'
+          import json,re,time,urllib.request
+          from bs4 import BeautifulSoup
+          base="https://usdtoreros.com"
+          games=[
+            (42,"2021-11-09","La Verne","/sports/mens-basketball/stats/2021-22/la-verne/boxscore/12401"),
+            (43,"2021-11-17","UC Riverside","/sports/mens-basketball/stats/2021-22/uc-riverside/boxscore/12405"),
+            (45,"2021-11-19","Cal State Fullerton","/sports/mens-basketball/stats/2021-22/cal-state-fullerton/boxscore/12406"),
+            (47,"2021-11-28","Cal State Northridge","/boxscore.aspx?id=12409&path=mbball"),
+            (48,"2021-12-05","Cal Poly","/sports/mens-basketball/stats/2021-22/cal-poly/boxscore/12411"),
+            (50,"2021-12-11","Cal Lutheran","/sports/mens-basketball/stats/2021-22/cal-lutheran/boxscore/12412"),
+            (52,"2022-01-13","Portland","/sports/mens-basketball/stats/2021-22/portland/boxscore/12253"),
+            (53,"2022-01-15","Loyola Marymount","/boxscore.aspx?id=12254&path=mbball"),
+            (54,"2022-02-03","Gonzaga","/sports/mens-basketball/stats/2021-22/gonzaga/boxscore/12249"),
+            (55,"2022-02-05","Santa Clara","/boxscore.aspx?id=12259&path=mbball"),
+            (56,"2022-11-09","Florida Gulf Coast","/boxscore.aspx?id=13874&path=mbball"),
+            (59,"2022-11-17","Utah State","/sports/mens-basketball/stats/2022-23/utah-state/boxscore/13877"),
+            (61,"2022-11-28","Longwood","/sports/mens-basketball/stats/2022-23/longwood/boxscore/13881"),
+            (63,"2022-12-03","UNLV","/sports/mens-basketball/stats/2022-23/unlv/boxscore/13883"),
+            (66,"2023-01-05","Pacific","/boxscore.aspx?id=13855&path=mbball"),
+            (68,"2023-01-12","Pepperdine","/sports/mens-basketball/stats/2022-23/pepperdine/boxscore/13857"),
+            (72,"2023-01-28","San Francisco","/sports/mens-basketball/stats/2022-23/san-francisco/boxscore/13861")
+          ]
+          results=[]
+          for gid,date,opponent,path in games:
+              ids=[path]
+              if gid==47: ids += [f"/boxscore.aspx?id={i}&path=mbball" for i in (12408,12407,12410)]
+              if gid==53: ids += [f"/boxscore.aspx?id={i}&path=mbball" for i in (12255,12256,12257)]
+              if gid==56: ids += [f"/boxscore.aspx?id={i}&path=mbball" for i in (13875,13876,13873)]
+              if gid==66: ids += [f"/boxscore.aspx?id={i}&path=mbball" for i in (13856,13857,13854)]
+              record=dict(attendance_id=gid,date=date,opponent=opponent,rows=[],page="",title="",verified_date=False,error="")
+              for candidate in ids:
+                try:
+                  url=base+candidate
+                  req=urllib.request.Request(url,headers={"User-Agent":"Mozilla/5.0 (Courtside Archive historical research)"})
+                  with urllib.request.urlopen(req,timeout=22) as response: html=response.read().decode("utf-8","replace")
+                  soup=BeautifulSoup(html,"html.parser")
+                  title=soup.title.get_text(" ",strip=True) if soup.title else ""
+                  m,d,y=date.split("-")
+                  stamp=f"{int(d)}/{int(y)}/{m}"  # replaced below with month/day/year
+                  stamp=f"{int(m)}/{int(d)}/{y}"
+                  alt=f"{int(m):02d}/{int(d):02d}/{y[2:]}"
+                  maintext=soup.get_text(" ",strip=True)[:9000]
+                  if stamp not in title and alt not in maintext and stamp not in maintext:
+                    print("CANDIDATE_UNVERIFIED",gid,candidate,title[:120],flush=True)
+                    continue
+                  record["verified_date"]=True
+                  record["page"]=url
+                  record["title"]=title
+                  for tr in soup.select("tr"):
+                    cells=[td.get_text(" ",strip=True) for td in tr.select("th,td")]
+                    if any("townsend" in c.lower() for c in cells) and any("jase" in c.lower() for c in cells):
+                      if len(cells)>8 and any(re.fullmatch(r"\d+-\d+",cell) for cell in cells):
+                        record["rows"].append(cells)
+                  break
+                except Exception as e:
+                  record["error"]=type(e).__name__+": "+str(e)[:140]
+              results.append(record)
+              print("TOWNSEND_AUDIT",json.dumps(record,ensure_ascii=False),flush=True)
+              time.sleep(.16)
+          print("TOWNSEND_SUMMARY",json.dumps({"audited":len(results),"verified_dates":sum(x["verified_date"] for x in results),"games_with_townsend_rows":sum(bool(x["rows"]) for x in results),"unresolved": [x["attendance_id"] for x in results if not x["verified_date"]]},ensure_ascii=False),flush=True)
+          PY

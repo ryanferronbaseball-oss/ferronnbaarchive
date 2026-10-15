@@ -57,7 +57,7 @@ def main():
             else:
                 check(a.counts.get(tag,0)==b.counts.get(tag,0),file+" has original NBA "+tag+" count")
         check(a.ids.issubset(b.ids),file+" preserves all NBA control IDs")
-        check(b.nav_links==a.nav_links[:5]+["./nba-alumni.html"]+a.nav_links[5:] if False else [x for x in b.nav_links if x!="./nba-alumni.html"]==a.nav_links,file+" retains original NBA navigation plus the college career link")
+        check([x for x in b.nav_links if x!="./nba-alumni.html"]==a.nav_links and "./nba-alumni.html" in b.nav_links,file+" retains original NBA navigation plus the college career link")
         check(all((COLLEGE/ref.removeprefix("./")).is_file()
                   for ref in b.links if ref.startswith("./") and "?" not in ref and "#" not in ref),
               file+" links to existing college pages")

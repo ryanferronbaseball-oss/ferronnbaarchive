@@ -64,7 +64,10 @@ def get_json(path, params):
 
 def team_labels(comp):
     t = comp.get("team", {})
-    return {canonical(x) for x in (t.get("displayName"), t.get("shortDisplayName"), t.get("name"), t.get("abbreviation")) if x}
+    return {canonical(x) for x in (
+        t.get("location"), t.get("displayName"), t.get("shortDisplayName"),
+        t.get("name"), t.get("abbreviation")
+    ) if x}
 
 def match_event(event, row):
     comps = ((event.get("competitions") or [{}])[0]).get("competitors") or []
@@ -162,12 +165,16 @@ def main():
                 event = {"id": str(manual["espn_event_id"]), "competitions": [header_competition]}
                 candidates = [event] if match_event(event, row) else []
                 if not candidates:
-                    result["review_notes"] = "ESPN event summary does not confirm both attended schools"
+                    teams = [c.get("team") for c in header_competition.get("competitors") or []]
+                    print("DIAGNOSTIC manual", row["attendance_id"], "header_competitors:", json.dumps(teams, ensure_ascii=False)[:1000], flush=True)
             else:
                 if date not in date_cache:
                     date_cache[date] = parse_scoreboard(
-                        get_json("/scoreboard", {"dates": date.replace("-", ""), "limit": 500}), date)
+                        get_json("/scoreboard", {"dates": date.replace("-", ""), "groups": 50, "limit": 500}), date)
                 candidates = [e for e in date_cache[date] if match_event(e, row)]
+                if not candidates and (row["attendance_id"] in ("3","4","5","6","10","11","13","14","21","26","35","42","45","65","80","94")):
+                    sample = [e.get("competitions", [{}])[0].get("competitors", [{}])[0].get("team", {}).get("location") for e in date_cache[date][:3]]
+                    print("DIAGNOSTIC scoreboard", row["attendance_id"], "events:",len(date_cache[date]),"first_team_locations:",sample, flush=True)
             if len(candidates) != 1:
                 result["match_status"] = "unmatched" if not candidates else "review"
                 result["review_notes"] = ("Manual ID did not match ESPN summary competitors" if manual else f"{len(candidates)} exact team matches found among {len(date_cache[date])} ESPN events")
@@ -202,7 +209,7 @@ def main():
     (out/"player_boxscores_raw.json").write_text(json.dumps(player_lines, indent=2, ensure_ascii=False), encoding="utf-8")
     counts = dict(Counter(x["match_status"] for x in report))
     summary = {"games_checked": len(rows), "match_counts": counts, "player_lines_raw": len(player_lines),
-               "method": "exact date + two distinct normalized schools; no fuzzy auto-accept",
+               "method": "date + two distinct normalized schools; D1 scoreboard group=50 plus exact manual IDs",
                "warning": "raw boxscores not yet normalized or scoring-validated; do not publish on leaderboards"}
     (out/"summary.json").write_text(json.dumps(summary, indent=2), encoding="utf-8")
     print(json.dumps(summary, indent=2))

@@ -67,7 +67,9 @@ def normalize_player(item, game, school_name, other_school):
         "blk": int_or_none(raw.get("blk")),
         "tov": int_or_none(raw.get("to")),
         "pf": int_or_none(raw.get("pf")),
-        "source": "ESPN summary API",
+        "source": item.get("source_name") or "ESPN summary API",
+        "source_url": item.get("source_url") or None,
+        "supplemental_official_source": bool(item.get("supplemental_official_source")),
     }
     if player["pts"] is not None and None not in (fgm, fg3m, ftm):
         # Field goals include 3-pointers, which add one extra point each.
@@ -81,6 +83,7 @@ def main():
     parser.add_argument("--attendance", default=str(ROOT / "data" / "attendance.csv"))
     parser.add_argument("--matches", default=str(ROOT / "output" / "matches.csv"))
     parser.add_argument("--raw", default=str(ROOT / "output" / "player_boxscores_raw.json"))
+    parser.add_argument("--supplements", default=str(ROOT / "data" / "official_boxscore_supplements.csv"))
     parser.add_argument("--output", default=str(ROOT / "output"))
     parser.add_argument("--expected-games", type=int, default=94)
     args = parser.parse_args()
@@ -117,6 +120,44 @@ def main():
         id_and_event.add(key)
         raw_by_attendance[game_id].append(item)
         team_name_candidates[str(item["team_id"])][item["team"]] += 1
+
+
+    # The ESPN feed occasionally omits an entire player who appears in the
+    # official school box score. Supplements are append-only, attributable
+    # corrections, never destructive changes to the ESPN source data.
+    supplements = read_csv(args.supplements) if Path(args.supplements).exists() else []
+    for row in supplements:
+        game_id = str(row["attendance_id"])
+        if game_id not in match_by_id:
+            raise ValueError("Unknown supplemented attendance ID: " + game_id)
+        game = match_by_id[game_id]
+        if row["espn_event_id"] != game["espn_event_id"]:
+            raise ValueError("Supplement ESPN event ID mismatch for attendance " + game_id)
+        if not re.fullmatch(r"espn:\d+", row["player_id"]):
+            raise ValueError("Supplement requires a verified ESPN athlete ID")
+        if row["team_id"] not in (game["away_team_id"], game["home_team_id"]):
+            raise ValueError("Supplement team ID mismatches game for attendance " + game_id)
+        if not row["source_url"].startswith("https://") or not row["source_name"]:
+            raise ValueError("Supplement must cite an official source for attendance " + game_id)
+        key = (game_id, row["player_id"])
+        if key in id_and_event:
+            raise ValueError("Supplement duplicates an imported player-game: " + str(key))
+        id_and_event.add(key)
+        stats = {k: row[k] for k in (
+            "min", "pts", "fg", "3pt", "ft", "reb", "ast", "to",
+            "stl", "blk", "oreb", "dreb", "pf"
+        )}
+        school = game["away"] if row["team_id"] == game["away_team_id"] else game["home"]
+        raw_by_attendance[game_id].append({
+            "attendance_id": game_id, "event_id": row["espn_event_id"],
+            "player_id": row["player_id"], "player": row["player"],
+            "team_id": row["team_id"], "team": school,
+            "raw_stats": stats,
+            "source_name": row["source_name"],
+            "source_url": row["source_url"],
+            "supplemental_official_source": True,
+        })
+        team_name_candidates[row["team_id"]][school] += 1
 
     players_all, players_certified, qa_rows, games = [], [], [], []
     for record in attendance:
@@ -173,6 +214,7 @@ def main():
             "home_score": scores["home"], "home_player_points": home_total,
             "home_points_missing": scores["home"] - home_total,
             "away_player_lines": counts[away_id], "home_player_lines": counts[home_id],
+            "official_supplement_lines": sum(bool(p["supplemental_official_source"]) for p in player_lines),
             "boxscore_status": status,
         })
 
@@ -198,7 +240,9 @@ def main():
         "games_identified": len(games),
         "games_complete": len(games) - len(incomplete),
         "games_partial": len(incomplete),
-        "raw_player_lines": len(players_all),
+        "raw_player_lines": len(imported),
+        "official_supplement_lines": len(supplements),
+        "combined_player_lines": len(players_all),
         "certified_player_lines": len(players_certified),
         "unique_players": len(by_player),
         "multi_school_players": sum(len(tids) > 1 for tids in by_player.values()),

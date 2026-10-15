@@ -42,6 +42,8 @@ ALIASES = {
     "california golden bears": "california", "cal": "california",
     "grambling state": "grambling", "unc asheville": "unc asheville",
     "saint marys gaels": "saint marys",
+    "mississippi st": "mississippi state", "michigan st": "michigan state",
+    "robert morris colonials": "robert morris",
 }
 def canonical(name):
     x = re.sub(r"[^a-z0-9]+", " ", (name or "").lower()).strip()
@@ -121,6 +123,7 @@ def main():
     ap.add_argument("--limit", type=int, default=10)
     ap.add_argument("--fetch-boxscores", action="store_true")
     ap.add_argument("--ids", default="", help="Comma-separated attendance IDs to test")
+    ap.add_argument("--manual-ids", default=str(ROOT / "data" / "manual_espn_ids.csv"), help="User-supplied ESPN event ID mapping")
     args = ap.parse_args()
     out = Path(args.output)
     out.mkdir(parents=True, exist_ok=True)
@@ -131,6 +134,10 @@ def main():
         rows = [r for r in rows if r["attendance_id"] in selected]
     elif args.limit > 0:
         rows = rows[:args.limit]
+    manual_ids = {}
+    if Path(args.manual_ids).exists():
+        with open(args.manual_ids, newline="", encoding="utf-8-sig") as handle:
+            manual_ids = {r["attendance_id"]: r for r in csv.DictReader(handle) if r.get("espn_event_id")}
     date_cache = {}
     report, player_lines = [], []
     for row in rows:
@@ -143,13 +150,27 @@ def main():
             "player_lines": 0, "review_notes": ""
         }
         try:
-            if date not in date_cache:
-                date_cache[date] = parse_scoreboard(
-                    get_json("/scoreboard", {"dates": date.replace("-", ""), "limit": 500}), date)
-            candidates = [e for e in date_cache[date] if match_event(e, row)]
+            manual = manual_ids.get(row["attendance_id"])
+            if manual:
+                # Directly identify the user-provided event, but still independently
+                # verify BOTH team identities from ESPN's returned event header.
+                if manual["date"] != date or canonical(manual["away"]) != canonical(row["away"]) or canonical(manual["home"]) != canonical(row["home"]):
+                    raise ValueError("manual ESPN mapping conflicts with attendance row")
+                summary = get_json("/summary", {"event": manual["espn_event_id"]})
+                header = summary.get("header") or {}
+                header_competition = (header.get("competitions") or [{}])[0]
+                event = {"id": str(manual["espn_event_id"]), "competitions": [header_competition]}
+                candidates = [event] if match_event(event, row) else []
+                if not candidates:
+                    result["review_notes"] = "ESPN event summary does not confirm both attended schools"
+            else:
+                if date not in date_cache:
+                    date_cache[date] = parse_scoreboard(
+                        get_json("/scoreboard", {"dates": date.replace("-", ""), "limit": 500}), date)
+                candidates = [e for e in date_cache[date] if match_event(e, row)]
             if len(candidates) != 1:
                 result["match_status"] = "unmatched" if not candidates else "review"
-                result["review_notes"] = f"{len(candidates)} exact team matches found among {len(date_cache[date])} ESPN events"
+                result["review_notes"] = ("Manual ID did not match ESPN summary competitors" if manual else f"{len(candidates)} exact team matches found among {len(date_cache[date])} ESPN events")
             else:
                 event = candidates[0]
                 result["match_status"] = "matched"
@@ -159,7 +180,8 @@ def main():
                     label = "away" if canonical(row["away"]) in team_labels(comp) else "home"
                     result[label+"_score"] = comp.get("score") or ""
                 if args.fetch_boxscores:
-                    summary = get_json("/summary", {"event": event["id"]})
+                    if not manual:
+                        summary = get_json("/summary", {"event": event["id"]})
                     lines, warnings = extract_boxscore(summary, row, event["id"])
                     player_lines.extend(lines)
                     result["player_lines"] = len(lines)

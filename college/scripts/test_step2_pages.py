@@ -41,7 +41,7 @@ def structure(source):
 
 def main():
     for filename in ("stats.html","player.html"):
-        nba=(REPO/filename).read_text(encoding="utf-8")
+        nba=(REPO/"nba"/filename).read_text(encoding="utf-8")
         college=(COLLEGE/filename).read_text(encoding="utf-8")
         a,b=structure(nba),structure(college)
         assert a.tags.count("table")==b.tags.count("table"), "Table count drift "+filename

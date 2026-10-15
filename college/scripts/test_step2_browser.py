@@ -24,6 +24,7 @@ url = f"http://127.0.0.1:{server.server_address[1]}/college/"
 
 checks = []
 errors = []
+completed = False
 def check(condition, label):
     if not condition:
         raise AssertionError(label)
@@ -102,13 +103,16 @@ try:
         mobile.wait_for_function("document.getElementById('players').textContent === '1034'")
         check(mobile.locator("#rows tr").count() == 1034,
               "Mobile-width leaderboard populates the entire roster")
+        check(mobile.evaluate("document.documentElement.scrollWidth <= innerWidth + 2"),
+              "Mobile player leaderboard has no document-level horizontal overflow")
         mobile.screenshot(path=str(OUTPUT / "college-stats-mobile.png"))
         check(not errors, "No unhandled browser JavaScript errors")
         browser.close()
+        completed = True
 finally:
     server.shutdown()
     report = {"checks_passed": len(checks), "checks": checks, "page_errors": errors,
-              "status": "PASS" if not errors else "FAIL",
+              "status": "PASS" if completed and not errors else "FAIL",
               "environment": "Playwright Chromium over HTTP, checked-in validated college JSON"}
     (OUTPUT / "report.json").write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(report, indent=2), flush=True)

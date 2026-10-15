@@ -18,24 +18,45 @@ const parseMinutes=v=>{const s=String(v??'');if(/^\d+:\d\d$/.test(s)){const [a,b
 const valid=p=>p.minutes!=null&&p.minutes!==''&&p.minutes!=='--';const complete=(p,k)=>p[k]!=null;
 const tile=(name,value)=>'<div class="tile"><small>'+esc(name)+'</small><strong>'+esc(value)+'</strong></div>';
 const ddouble=p=>['pts','reb','ast','stl','blk'].every(k=>complete(p,k))?['pts','reb','ast','stl','blk'].filter(k=>Number(p[k])>=10).length:null;
-let entries=[];
+let entries=[],archiveGames=[];
+function readArchiveGames(csv){
+ const lines=csv.trim().split(/\r?\n/),keys=lines.shift().split(",");
+ return lines.map(line=>{const values=line.split(",");return Object.fromEntries(keys.map((key,i)=>[key,values[i]??""]))});
+}
+function archiveGameId(p){
+ // Prefer official NBA game ID; use dates and participating teams when older imports have no NBA ID.
+ const direct=archiveGames.find(g=>g.nba_game_id&&String(g.nba_game_id)===String(p.game_id??""));
+ if(direct)return direct.id;
+ const onDate=archiveGames.filter(g=>g.date===p.date);
+ if(onDate.length===1)return onDate[0].id;
+ const team=teamNames[String(p.team_id)];
+ const matches=onDate.filter(g=>g.away===team||g.home===team);
+ return matches.length===1?matches[0].id:null;
+}
+function archiveGameLink(p,label){
+ const gameId=archiveGameId(p),caption=esc(label);
+ return gameId?'<a href="./game.html?id='+encodeURIComponent(gameId)+'">'+caption+'</a>':'<span title="Archive box score link unavailable">'+caption+'</span>';
+}
 function draw(data,allLogs){entries=data.filter(valid);if(!entries.length){$('name').textContent='Player not found';$('seen').textContent='Return to the player leaderboard to select a profile.';return}
  const first=entries[0],num=id=>entries.reduce((s,p)=>s+Number(p[id]||0),0),all=k=>entries.every(p=>complete(p,k)),totalMinutes=entries.reduce((s,p)=>s+parseMinutes(p.minutes),0),gp=entries.length,pts=num('pts'),reb=num('reb'),ast=num('ast'),fga=num('fga'),fgm=num('fgm'),fg3m=num('fg3m'),fg3a=num('fg3a'),ftm=num('ftm'),fta=num('fta'),stl=all('stl')?num('stl'):null,blk=all('blk')?num('blk'):null,tov=all('tov')?num('tov'):null;
  $('name').textContent=first.player;document.title=first.player+' | Courtside Archive';const teams=[...new Set(entries.map(p=>teamNames[String(p.team_id)]||'Unknown team'))];$('teams').textContent=teams.join(' · ');$('seen').textContent=gp+' attended '+(gp===1?'game':'games')+' · '+[...new Set(entries.map(p=>p.date.slice(0,4)))].sort().join(', ');
  const head=[['Games Seen',gp],['PPG',fmt(pts/gp)],['RPG',fmt(reb/gp)],['APG',fmt(ast/gp)],['TS%',fmt(pct(pts,2*(fga+.44*fta)))+'%'],['Best Scoring',Math.max(...entries.map(p=>Number(p.pts||0)))+' PTS']];$('headline').innerHTML=head.map(([k,v])=>'<div class="stat"><small>'+k+'</small><strong>'+v+'</strong></div>').join('');
  const aid=first.player_id.match(/^espn:(\d+)$/);const portrait=$('portrait'),fall=$('portraitFallback');fall.textContent=first.player.split(' ').map(x=>x[0]).slice(0,2).join('').toUpperCase();const fail=()=>{portrait.style.display='none';fall.style.display='grid'};portrait.onerror=fail;if(aid){portrait.src='https://a.espncdn.com/i/headshots/nba/players/full/'+aid[1]+'.png';portrait.alt='Portrait of '+first.player}else fail();
  const best=entries.slice().sort((a,b)=>Number(b.pts||0)-Number(a.pts||0))[0];const impact=p=>['pts','reb','ast','stl','blk','tov','fga','fgm','fta','ftm'].every(k=>p[k]!=null)?Number(p.pts)+Number(p.reb)+Number(p.ast)+Number(p.stl)+Number(p.blk)-Number(p.tov)-(Number(p.fga)-Number(p.fgm))-(Number(p.fta)-Number(p.ftm)):null;
- $('signature').innerHTML='<div class="feature"><small>Signature scoring performance</small><strong>'+best.pts+' points</strong><p>'+esc(best.date)+' · '+esc(teamNames[String(best.team_id)]||'')+' · '+best.reb+' REB · '+best.ast+' AST</p><a href="https://www.espn.com/nba/boxscore/_/gameId/'+encodeURIComponent(best.espn_event_id)+'" target="_blank" rel="noopener">View original box score →</a></div>';
+ $('signature').innerHTML='<div class="feature"><small>Signature scoring performance</small><strong>'+best.pts+' points</strong><p>'+esc(best.date)+' · '+esc(teamNames[String(best.team_id)]||'')+' · '+best.reb+' REB · '+best.ast+' AST</p>'+archiveGameLink(best,"View Courtside Archive box score →")+'</div>';
  $('overviewTiles').innerHTML=[['Minutes',fmt(totalMinutes)],['Points',pts],['Rebounds',reb],['Assists',ast],['Steals',stl??'—'],['Blocks',blk??'—'],['FG/FGA',fgm+' / '+fga],['3PM/3PA',fg3m+' / '+fg3a]].map(([k,v])=>tile(k,v)).join('');
  const ddKnown=entries.every(p=>ddouble(p)!=null),dds=entries.filter(p=>ddouble(p)>=2).length,tds=entries.filter(p=>ddouble(p)>=3).length;
  $('advancedTiles').innerHTML=[['eFG%',fmt(pct(fgm+.5*fg3m,fga))+'%'],['TS%',fmt(pct(pts,2*(fga+.44*fta)))+'%'],['3PAr',fga?fmt(fg3a/fga,3):'—'],['FTr',fga?fmt(fta/fga,3):'—'],['2P%',fmt(pct(fgm-fg3m,fga-fg3a))+'%'],['AST/TO',tov==null||tov===0?'—':fmt(ast/tov,2)],['PTS/36',totalMinutes?fmt(pts*36/totalMinutes):'—'],['REB/36',totalMinutes?fmt(reb*36/totalMinutes):'—'],['AST/36',totalMinutes?fmt(ast*36/totalMinutes):'—'],['Stocks/G',stl==null||blk==null?'—':fmt((stl+blk)/gp)],['Archive Impact/G',entries.every(p=>impact(p)!=null)?fmt(entries.reduce((s,p)=>s+impact(p),0)/gp):'—'],['Best Archive Impact',entries.every(p=>impact(p)!=null)?fmt(Math.max(...entries.map(impact)),0):'—']].map(([k,v])=>tile(k,v)).join('');
  $('milestoneTiles').innerHTML=[['20+ point games',entries.filter(p=>Number(p.pts)>=20).length],['30+ point games',entries.filter(p=>Number(p.pts)>=30).length],['40+ point games',entries.filter(p=>Number(p.pts)>=40).length],['50+ point games',entries.filter(p=>Number(p.pts)>=50).length],['10+ rebound games',entries.filter(p=>Number(p.reb)>=10).length],['10+ assist games',entries.filter(p=>Number(p.ast)>=10).length],['Double-doubles',ddKnown?dds:'—'],['Triple-doubles',ddKnown?tds:'—']].map(([k,v])=>tile(k,v)).join('');
  const eventTeams=new Map();for(const p of allLogs){const id=String(p.espn_event_id);if(!eventTeams.has(id))eventTeams.set(id,new Set());eventTeams.get(id).add(String(p.team_id))}
- $('gamelog').innerHTML=entries.slice().sort((a,b)=>a.date.localeCompare(b.date)).map(p=>'<tr><td>'+esc(p.date)+'</td><td>'+esc(teamNames[String(p.team_id)]||'—')+'</td><td>'+esc(teamNames[[...(eventTeams.get(String(p.espn_event_id))||[])].find(id=>id!==String(p.team_id))]||'—')+'</td><td>'+esc(p.minutes)+'</td>'+['pts','reb','ast','stl','blk'].map(k=>'<td>'+(p[k]??'—')+'</td>').join('')+'<td>'+p.fgm+'-'+p.fga+'</td><td>'+p.fg3m+'-'+p.fg3a+'</td><td>'+p.ftm+'-'+p.fta+'</td><td><a target="_blank" rel="noopener" href="https://www.espn.com/nba/boxscore/_/gameId/'+encodeURIComponent(p.espn_event_id)+'">ESPN ↗</a></td></tr>').join('');
+ $('gamelog').innerHTML=entries.slice().sort((a,b)=>a.date.localeCompare(b.date)).map(p=>'<tr><td>'+archiveGameLink(p,p.date)+'</td><td>'+esc(teamNames[String(p.team_id)]||'—')+'</td><td>'+esc(teamNames[[...(eventTeams.get(String(p.espn_event_id))||[])].find(id=>id!==String(p.team_id))]||'—')+'</td><td>'+esc(p.minutes)+'</td>'+['pts','reb','ast','stl','blk'].map(k=>'<td>'+(p[k]??'—')+'</td>').join('')+'<td>'+p.fgm+'-'+p.fga+'</td><td>'+p.fg3m+'-'+p.fg3a+'</td><td>'+p.ftm+'-'+p.fta+'</td><td>'+archiveGameLink(p,"View box score →")+'</td></tr>').join('');
 }
 document.querySelectorAll('[data-tab]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-tab]').forEach(t=>t.classList.toggle('active',t===b));for(const id of ['overview','advanced','games','milestones'])$(id+'Panel').classList.toggle('hidden',id!==b.dataset.tab)}));
 const id=new URLSearchParams(location.search).get('id');
 const hallOfFameIds=new Set(["662","110","136","885","261","592","336","215","1015","272","1987","614","996","1975","2384","1722"]);const hallBadge=document.getElementById("hofBadge");if(hallBadge&&id&&hallOfFameIds.has(String(id).replace(/^espn:/,""))){hallBadge.classList.add("visible");document.querySelector(".accolade-row").classList.add("visible")}
 if(id){fetch("../data/nba_career_awards.json?v=20261015-1",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("HTTP "+r.status);return r.json()}).then(data=>{const awards=data.players?.[String(id).replace(/^espn:/,"")];if(awards?.mvp)$("mvpBadge").classList.add("visible");if(awards?.all_nba)$("allNbaBadge").classList.add("visible");if(awards?.mvp||awards?.all_nba)document.querySelector(".accolade-row").classList.add("visible")}).catch(err=>console.warn("Career award badges unavailable:",err))}
-if(!id){$('name').textContent='Choose a player';$('seen').innerHTML='<a href="./stats.html">Browse the player leaderboard →</a>'}else fetch('../data/player_boxscores_espn.json?v=player-design-1',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.json()}).then(logs=>draw(logs.filter(p=>p.player_id===id),logs)).catch(e=>{$('name').textContent='Unable to load profile';$('seen').textContent=e.message});
+if(!id){$('name').textContent='Choose a player';$('seen').innerHTML='<a href="./stats.html">Browse the player leaderboard →</a>'}else Promise.all([
+ fetch('../data/player_boxscores_espn.json?v=player-design-1',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('NBA player stats HTTP '+r.status);return r.json()}),
+ fetch('../data/games.csv?v=player-archive-links-20261015',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('NBA games HTTP '+r.status);return r.text()})
+]).then(([logs,csv])=>{archiveGames=readArchiveGames(csv);draw(logs.filter(p=>p.player_id===id),logs)}).catch(e=>{$('name').textContent='Unable to load profile';$('seen').textContent=e.message});
 </script></main></body></html>

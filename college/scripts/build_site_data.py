@@ -8,6 +8,7 @@ espn_event_id is the provider's actual NCAA event ID (never an NBA ID).
 import argparse
 import csv
 import json
+import unicodedata
 from collections import defaultdict
 from pathlib import Path
 
@@ -124,6 +125,22 @@ def build(source, destination, expected_games=94, expected_players=1825):
             totals.append(sum(minutes(p["minutes"]) for p in lines))
         check(any(all(abs(total-(200+25*n)) <= .1 for total in totals) for n in range(8)),
               "Team-minute discrepancy in game " + g["id"])
+
+    # Do not conflate an official-source provisional identity with any different
+    # ESPN athlete ID. This scan is diagnostic: identical names alone NEVER
+    # authorize a cross-provider merge.
+    normalized_names = defaultdict(set)
+    for player_id, player_name in name_by_id.items():
+        key = "".join(ch for ch in unicodedata.normalize("NFKD", player_name.casefold())
+                      if ch.isalnum() and not unicodedata.combining(ch))
+        normalized_names[key].add(player_id)
+    possible_alias_collisions = {
+        key: sorted(ids) for key, ids in normalized_names.items()
+        if len(ids)>1 and any(pid.startswith("official:") for pid in ids)
+    }
+    check(not possible_alias_collisions,
+          "Provisional athlete identity collision needs manual review: " +
+          repr(possible_alias_collisions))
 
     schools_by_player = {
         pid: sorted(teams[tid] for tid in school_ids)

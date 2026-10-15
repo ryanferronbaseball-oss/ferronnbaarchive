@@ -2,6 +2,18 @@
 
 Baseline: [94/94 game point-and-minute validation](https://github.com/ryanferronbaseball-oss/ferronnbaarchive/actions/runs/38775099460) (October 15, 2026). 1,825 player-game rows, 1,034 distinct identifiers, 35 official supplements. **NBA production stays untouched**; all implementation work remains on `college-import-pilot`.
 
+## Step-by-step checkpoint status (October 15, 2026)
+
+**Step 1 — Data conversion and relational validation: COMPLETE.** The version-controlled `college/scripts/build_site_data.py` adapter runs in GitHub Actions after the 94-game normalizer and produces a separately downloadable `college-site-ready-data` artifact with `games.csv`, `player_boxscores_espn.json`, `team_names.json`, and `validation.json`. [Successful Step 1 workflow](https://github.com/ryanferronbaseball-oss/ferronnbaarchive/actions/runs/38776739381).
+
+Verified output: **94 games**, **1,825 player appearances**, **1,034 unique player IDs**, **75 college school IDs**, **14 multi-school ESPN athlete identities**, no duplicate attendance/player combinations, exact source event/date/school joins, all point and minute totals reconciled. Regression fixtures: **Jase Townsend 14 attended games / 170 points**, **Daniel Akin 2 / 36**, **Tory San Antonio 2 / 10**, and **Hunter Sallis 4 / 63** with Gonzaga + Wake Forest still connected to one player. All statistics and official-source provenance are retained. The separate site data is generated as a CI artifact, **not yet checked into the served website path or published**.
+
+**Known non-blocking data gap:** all 94 arena fields in the current sourced college game export are blank. **Do not guess venues, fabricate arena counts, or treat unverified arenas as a single physical arena.** Venue lookup must be a distinct fact-check before launching arena insights. The Step 1 result proves the data schema and joins, not page layout fidelity or exhaustive field-by-field historical verification.
+
+**Step 2 — Player statistics and profile UI port: NEXT.** Reuse the existing NBA page HTML structure, shared CSS, and exact sortable statistical views. Replace NBA-only team maps, links and headshots with NCAA-specific references; keep multi-school player profiles unified and default to the full chronological game log. Conduct visual and click-through tests before considering these two pages complete.
+
+**Steps 3–4 — Other five pages, then full site review/release: NOT STARTED.** Stay on development branch; leave NBA production untouched.
+
 ## Phase 1 — College data adapter and test fixture
 
 The current NBA site's seven HTML pages consume `./data/games.csv` and `./data/player_boxscores_espn.json`, rendered with `./assets/site.css` and `./assets/site.js`. They should be ported to `college/*.html` with `../assets/` shared references and `./data/` college references. Keep existing markup, component classes, breakpoints, controls and visual hierarchy.

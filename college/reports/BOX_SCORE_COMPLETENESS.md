@@ -58,18 +58,15 @@ Two games still reconcile every point yet fail the NCAA expected player-minute c
 | 37 | 2020-01-25 | Santa Clara @ San Diego | 7 | 0 |
 | 42 | 2021-11-09 | La Verne @ San Diego | 0 | 13 |
 | 43 | 2021-11-17 | UC Riverside @ San Diego | 0 | 8 |
-| 45 | 2021-11-19 | Cal State Fullerton @ San Diego | 7 | 14 |
 | 47 | 2021-11-28 | Cal State Northridge @ San Diego | 0 | 3 |
 | 48 | 2021-12-05 | Cal Poly @ San Diego | 2 | 7 |
 | 49 | 2021-12-08 | Cal State Fullerton @ San Diego State | 3 | 0 |
 | 54 | 2022-02-03 | Gonzaga @ San Diego | 0 | 13 |
 | 55 | 2022-02-05 | Santa Clara @ San Diego | 0 | 7 |
 | 56 | 2022-11-09 | Florida Gulf Coast @ San Diego | 0 | 11 |
-| 59 | 2022-11-17 | Utah State @ San Diego | 21 | 7 |
 | 61 | 2022-11-28 | Longwood @ San Diego | 0 | 15 |
 | 63 | 2022-12-03 | UNLV @ San Diego | 0 | 14 |
 | 66 | 2023-01-05 | Pacific @ San Diego | 0 | 12 |
-| 68 | 2023-01-12 | Pepperdine @ San Diego | 2 | 25 |
 | 71 | 2023-01-25 | Utah State @ San Diego State | 15 | 0 |
 | 72 | 2023-01-28 | San Francisco @ San Diego | 0 | 21 |
 

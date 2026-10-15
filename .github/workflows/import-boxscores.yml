@@ -1,0 +1,27 @@
+name: Import historical NBA box scores
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install data dependencies
+        run: pip install -r requirements.txt
+      - name: Import and validate historical box scores
+        run: python scripts/import_boxscores.py
+      - name: Commit verified data and status
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/player_boxscores.json data/import_report.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Update validated NBA player box score data"
+            git push
+          fi

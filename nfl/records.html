@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NFL Records & Milestones | Courtside Archive</title>
+<meta name="description" content="Personal NFL attendance records: passing, rushing, receiving, defense, special teams and team performances.">
+<link rel="stylesheet" href="./assets/archive.css"><script src="./assets/archive.js" defer></script>
+<style>
+.record-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.record-card{border:1px solid #d6e0d3;border-radius:14px;padding:18px;background:#fff}.record-card .record-value{font-size:30px;line-height:1.2;font-weight:850;color:#284d3c;letter-spacing:-.04em}.record-card h3{font-size:14px;margin:0 0 10px;color:#56685d}.record-card a{font-weight:800}.record-card small{display:block;margin-top:5px;color:#66776a}.record-card .caption{margin-top:8px}.records-filter{flex-wrap:wrap}.records-filter button[aria-pressed=true]{background:#284d3c;color:white}.records-filter button{border:1px solid #cbd8c9;background:#e9efe6;color:#284d3c;border-radius:8px;padding:10px 13px;font-weight:750;cursor:pointer}.record-note{font-size:13px;color:#627267;margin-top:15px}@media(max-width:680px){.record-grid{grid-template-columns:1fr}}
+</style></head><body><main><div id="navigation"></div>
+<div class="eyebrow">NFL · Personal attendance</div><h1>Records & milestones.</h1>
+<p class="lead">The biggest individual and team performances from the NFL games you attended. Every record links to its original game or player profile.</p>
+<section class="metrics" id="summary"><div class="metric"><strong>—</strong><small>Games analyzed</small></div></section>
+<div class="section-heading"><h2>Explore records</h2><span class="caption">Choose a statistical category</span></div>
+<div class="tabbar records-filter" id="filters" aria-label="Record categories"></div>
+<div class="section-heading"><h2 id="sectionTitle">Passing</h2><span id="recordCount" class="caption"></span></div>
+<div class="record-grid" id="records" aria-live="polite"><div class="empty">Loading records…</div></div>
+<section class="panel"><h2>How records are counted</h2><p class="lead">Individual records are single-game highs, drawn from ESPN's imported box-score categories. Team and game records use the final scores and quarter scoring of the attended games. Ties are displayed together.</p>
+<p class="record-note">Only games you attended are included—not players' career or season records. Missing source categories are not interpreted as zero. For kickers, made field goals and longest successful kicks are derived from source kicking lines. QB rating and percentage fields are not used as cumulative records. Sack totals and other defensive categories may have incomplete historical coverage.</p>
+<p class="record-note">For fantasy impact records and the 30-point club, visit <a href="./milestones.html">Full-PPR Milestones ↗</a>.</p></section>
+<footer class="footer">Courtside Archive · NFL attendance records from imported historical ESPN box scores.</footer>
+</main><script>
+document.addEventListener("DOMContentLoaded",async()=>{
+ const A=window.NFLArchive,el=id=>document.getElementById(id);
+ el("navigation").innerHTML=A.nav("records");
+ const groups={
+  passing:[["Passing yards","passing","YDS"],["Passing touchdowns","passing","TD"],["Completions","passing","C/ATT","made"],["Pass attempts","passing","C/ATT","attempts"]],
+  rushing:[["Rushing yards","rushing","YDS"],["Rushing touchdowns","rushing","TD"],["Rushing attempts","rushing","CAR"],["Longest rush","rushing","LONG"]],
+  receiving:[["Receiving yards","receiving","YDS"],["Receptions","receiving","REC"],["Receiving touchdowns","receiving","TD"],["Longest reception","receiving","LONG"],["Targets","receiving","TGTS"]],
+  defense:[["Total tackles","defensive","TOT"],["Solo tackles","defensive","SOLO"],["Sacks","defensive","SACKS"],["Tackles for loss","defensive","TFL"],["Passes defended","defensive","PD"],["Interceptions","interceptions","INT"],["Interception return yards","interceptions","YDS"],["Fumbles recovered","fumbles","REC"],["Player fumbles","fumbles","FUM"]],
+  special:[["Field goals made","kicking","FG","made"],["Field goals attempted","kicking","FG","attempts"],["Longest field goal","kicking","LONG"],["Kicking points","kicking","PTS"],["Punting yards","punting","YDS"],["Longest punt","punting","LONG"],["Kick return yards","kickReturns","YDS"],["Longest kick return","kickReturns","LONG"],["Punt return yards","puntReturns","YDS"],["Longest punt return","puntReturns","LONG"]],
+  team:[["Most team points","team","points"],["Largest winning margin","game","margin"],["Most combined points","game","combined"],["Most overtime points","game","overtime"]]
+ };
+ const titles={passing:"Passing",rushing:"Rushing",receiving:"Receiving",defense:"Defense",special:"Special Teams",team:"Team & Game"};
+ let group="passing",games=[],rows=[];
+ const number=x=>{const n=Number(String(x??"").replaceAll(",",""));return Number.isFinite(n)?n:null};
+ function candidates(cat,label,mode){
+  return rows.filter(r=>r.category===cat).map(r=>{
+   const i=r.stat_labels.indexOf(label);if(i<0)return null;
+   const raw=String(r.stat_values[i]??"");if(!raw.trim()||raw==="—")return null;
+   let val;
+   if(mode==="made"||mode==="attempts"){const parts=raw.split("/");if(parts.length!==2)return null;val=number(parts[mode==="made"?0:1]);}
+   else val=number(raw);
+   if(val===null)return null;
+   return {value:val,player:r.player,athlete_id:r.athlete_id,team:r.team,game_id:r.game_id};
+  }).filter(Boolean);
+ }
+ function teamCandidates(metric){
+  const out=[];
+  for(const g of games){
+   if(metric==="points"){out.push({value:g.away_score,player:g.away,game_id:g.id},{value:g.home_score,player:g.home,game_id:g.id});}
+   if(metric==="margin")out.push({value:Math.abs(g.away_score-g.home_score),player:(g.away_score>=g.home_score?g.away:g.home)+" vs "+(g.away_score>=g.home_score?g.home:g.away),game_id:g.id});
+   if(metric==="combined")out.push({value:g.away_score+g.home_score,player:g.away_abbr+" at "+g.home_abbr,game_id:g.id});
+   if(metric==="overtime"&&g.overtime){const a=g.quarters.away.slice(4).reduce((s,v)=>s+Number(v||0),0),h=g.quarters.home.slice(4).reduce((s,v)=>s+Number(v||0),0);out.push({value:a+h,player:g.away_abbr+" at "+g.home_abbr,game_id:g.id});}
+  }return out;
+ }
+ function render(){
+  el("sectionTitle").textContent=titles[group];el("filters").querySelectorAll("button").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.group===group)));
+  const cards=groups[group].map(([name,cat,label,mode])=>{
+   const all=cat==="team"||cat==="game"?teamCandidates(label):candidates(cat,label,mode);
+   if(!all.length)return '<article class="record-card"><h3>'+A.esc(name)+'</h3><div class="caption">Not available in imported data</div></article>';
+   const max=Math.max(...all.map(x=>x.value)),winners=all.filter(x=>x.value===max);
+   return '<article class="record-card"><h3>'+A.esc(name)+'</h3><div class="record-value">'+A.esc(A.fmt(max))+'</div>'+winners.map(w=>{
+    const g=games.find(x=>x.id===w.game_id);
+    const playerUrl=w.athlete_id?'./player.html?id='+encodeURIComponent(w.athlete_id):'./game.html?id='+encodeURIComponent(w.game_id);
+    return '<div style="margin-top:10px"><a href="'+playerUrl+'">'+A.esc(w.player)+'</a>'+(w.team?'<small>'+A.esc(w.team)+'</small>':'')+'<div class="caption"><a href="./game.html?id='+encodeURIComponent(w.game_id)+'">'+A.esc(g?A.date(g.date)+" · "+g.away_abbr+" at "+g.home_abbr:"View game")+' ↗</a></div></div>';
+   }).join("")+'</article>';
+  });
+  el("recordCount").textContent=cards.length+" record categories";
+  el("records").innerHTML=cards.join("");
+ }
+ try{
+  const data=await A.load();games=data.games;rows=data.rows;
+  el("summary").innerHTML='<div class="metric"><strong>'+games.length+'</strong><small>Games analyzed</small></div><div class="metric"><strong>'+new Set(rows.map(x=>x.athlete_id)).size+'</strong><small>Players with box-score records</small></div><div class="metric"><strong>'+Object.values(groups).reduce((s,v)=>s+v.length,0)+'</strong><small>Record categories</small></div>';
+  el("filters").innerHTML=Object.keys(groups).map(key=>'<button type="button" data-group="'+key+'" aria-pressed="'+(key===group)+'">'+titles[key]+'</button>').join("");
+  el("filters").addEventListener("click",e=>{const b=e.target.closest("button[data-group]");if(b){group=b.dataset.group;render()}});
+  render();
+ }catch(e){el("records").innerHTML='<div class="empty">Unable to load NFL records: '+A.esc(e.message)+'</div>';}
+});
+</script></body></html>

@@ -1,10 +1,10 @@
 # College archive — ESPN box-score completeness audit
 
-Latest: [94-game validated ESPN import after four additional official box-score restorations (October 15, 2026)](https://github.com/ryanferronbaseball-oss/ferronnbaarchive/actions/runs/38773910953).
+Latest: [all 94 college attendance game box scores now reconcile on points and minutes (October 15, 2026)](https://github.com/ryanferronbaseball-oss/ferronnbaarchive/actions/runs/38775099460).
 
-**Attendance matching:** 94/94 games. **Point-score reconciliation:** 91/94. **Strict point-and-minute reconciliation:** 90/94. **Games requiring backfill:** 4 (3 with missing player points, 1 with missing player minutes only). **Original ESPN rows:** 1,790. **Officially supplemented rows:** 30. **Existing ESPN rows corrected from official scores:** 9. **Total combined player lines:** 1,820. **Strictly certified player lines:** 1,742.
+**Attendance matching:** 94/94 games. **Point-score reconciliation:** 94/94 games. **NCAA team-minute reconciliation:** 94/94 games. **Open point/minute backfill queue:** 0. **Original ESPN player lines:** 1,790. **Officially sourced supplements:** 35. **Officially corrected existing ESPN lines:** 9. **Combined certified player-game records:** 1,825. **Distinct player IDs:** 1,034. **Players seen representing multiple schools (stable ESPN IDs):** 14. **Duplicate player-game records:** 0.
 
-A game is marked **complete only when both teams' player points match their final scores AND their player-minute totals match NCAA regulation or overtime expectations**. Partial games remain in the attendance history, but raw player rows from those games are excluded from certified leaderboard totals pending verification/backfill. Excluding a game is not a claim that its player performances are wrong; it is a conservative choice while ESPN's lineup appears incomplete.
+A game passes **this completeness gate** only if both teams' individual player points match the final scores AND the player-minute totals equal expected NCAA regulation or overtime totals. **All 94 currently pass.** This verifies scoring/minute coverage, **not** independent accuracy of every box-score category for all 94 games; remaining work includes checking statistical field mapping, athlete identity linking, advanced-stat availability, and NBA-to-college page parity before publication.
 
 ## Verified repairs from official school records
 
@@ -66,7 +66,7 @@ The original ESPN game-summary import had **zero** Jase Townsend appearances in 
 
 **Attended-game totals from these fourteen official player lines: 170 PTS, 417 MIN, 14 GP (12.1 PPG)**. This is not a full USD career total. The source comparison and 17-game HTML audit run are documented at [this GitHub workflow](https://github.com/ryanferronbaseball-oss/ferronnbaarchive/actions/runs/38771801039).
 
-Ten more games passed the strict game-level quality gate after restoring eleven Townsend appearances. **Cal Poly at San Diego on December 5, 2021 (#48) remains partial**, because Cal Poly's player totals are still short **two points and twenty minutes**; Townsend's San Diego statistics are now restored and USD's own team totals reconcile.
+Ten more games passed the strict game-level quality gate after restoring eleven Townsend appearances. **Cal Poly at San Diego on December 5, 2021 (#48) was subsequently repaired** using the official Cal Poly box score; Trevon Taylor was restored and Tuukka Jaakkola's minutes were corrected. Both teams now reconcile.
 
 ## Life Pacific, Hofstra, Santa Clara and Cal Poly restorations — October 15, 2026
 
@@ -85,26 +85,29 @@ The PDF confirms Life Pacific's *Brummett* and *Saavedra* spellings, which diffe
 
 These six added individual lines have **22 points and 122 player-minutes in total**, but also include two zero-point players who would not be detected by scoring reconciliation alone. Where ESPN athlete IDs are not independently confirmed, restored players use qualified official-source identifiers rather than invented ESPN IDs.
 
-Full validation: [GitHub Actions run 38773910953](https://github.com/ryanferronbaseball-oss/ferronnbaarchive/actions/runs/38773910953). **Remaining attendance IDs: 31, 49, 64, 71.**
+Historical four-game repair checkpoint: [GitHub Actions run 38773910953](https://github.com/ryanferronbaseball-oss/ferronnbaarchive/actions/runs/38773910953). The four remaining IDs at that checkpoint (31, 49, 64, 71) have since been repaired in the final run below.
 
-## Additional scoreless-player investigation
+## Final four game repairs — zero open score/minute exceptions
 
-One game still reconciles every point yet fails the NCAA expected player-minute check, suggesting a missing zero-point player appearance:
+The final four official game sources were cross-checked against all existing player records. **Five additional missing player-game lines** were restored; the rest of the existing player statistics in those four matches agreed with the official box-score player lines.
 
-| Attendance ID | Date | Matchup | Imported team minutes needing investigation |
-|---:|---|---|---|
-| 64 | 2022-12-10 | Denver @ UCLA | Denver 197 of 200 |
+| Attendance ID | Date | Game | Missing player restored | Scoring and minutes verified |
+|---:|---|---|---|---|
+| 31 | 2019-11-30 | Eastern Michigan 56 at UC Irvine 77 | Jalen King — 1 PTS, 15 MIN, 4 REB | Both sides: official PTS / 200 MIN |
+| 49 | 2021-12-08 | Cal State Fullerton 56 at San Diego State 66 | Tory San Antonio — 3 PTS, 20 MIN, 2 REB | Both sides: official PTS / 200 MIN |
+| 64 | 2022-12-10 | Denver 64 at UCLA 87 | JaVonni Bickham — 0 PTS, 2 MIN; James Sanders IV — 0 PTS, 1 MIN | Both sides: official PTS / 200 MIN |
+| 71 | 2023-01-25 | Utah State 75 at San Diego State 85 | Daniel (Dan) Akin — 15 PTS, 31 MIN, 10 REB | Both sides: official PTS / 200 MIN |
 
-**The scoring backfill queue below contains 3 games.** The additional minute-only case brings the total open QA queue to 4.
+Official box-score sources:
+- [UC Irvine — Eastern Michigan box score](https://ucirvinesports.com/sports/mens-basketball/stats/2019/eastern-mich-/boxscore/6331), provided by attendee via another UC Irvine archival URL.
+- [The Big West — Cal State Fullerton at San Diego State full box score](https://bigwest.org/boxscore.aspx?id=JcLFfL9RUu0H5ystoOMbjVYg6D0KfPp31nT122ARuneT2vycwtveFRCctcGElibpWiSwNGM89sokk%2F2x5I%2F%2FsVR4SNoI5Zlyj4atEIDl3QLCZKDRPCOwrEmZsXGQLvnu6Zj2X6ZZeU2ykr9SueRFLpyy1Dw4GdzlnCAWJ%2FSkTcY%3D&path=mbball). Attendee's [San Diego State page](https://goaztecs.com/boxscore/3435) confirms the matchup and final score.
+- [University of Denver — UCLA game box score](https://denverpioneers.com/sports/mens-basketball/stats/2022-23/ucla/boxscore/12495), corroborating attendee's [UCLA game](https://uclabruins.com/boxscore/3250).
+- [Utah State — San Diego State box score](https://utahstateaggies.com/sports/mens-basketball/stats/2022-23/san-diego-state/boxscore/15240), corroborating attendee's [San Diego State page](https://goaztecs.com/boxscore/3481).
 
-## Backfill queue (3 games with missing player points)
+**Unified identities:** Tory San Antonio uses the identical `official:cal-state-fullerton:tory-san-antonio` ID in attended games #45 and #49; Daniel Akin uses `official:utah-state:daniel-akin` in #59 and #71. The remaining new athletes have distinct source-qualified provisional IDs until a real ESPN athlete ID can be independently linked. Do not synthesize ESPN athlete IDs.
 
-| Attendance ID | Date | Matchup | Missing from away player's summed PTS | Missing from home player's summed PTS |
-|---:|---|---|---:|---:|
-| 31 | 2019-11-30 | Eastern Michigan @ UC Irvine | 1 | 0 |
-| 49 | 2021-12-08 | Cal State Fullerton @ San Diego State | 3 | 0 |
-| 71 | 2023-01-25 | Utah State @ San Diego State | 15 | 0 |
+## Final verification and publication gate
 
-**Quality gate before integrating college into live navigation:** resolve or explicitly document all partial games; validate player rows and aggregations, preserve the exact NBA design and seven page structures, test college school-transfer player profiles, and verify mobile/desktop navigation. No production merge while audit failures remain unresolved.
+[**GitHub Actions 94-game import and normalization, successful October 15, 2026**](https://github.com/ryanferronbaseball-oss/ferronnbaarchive/actions/runs/38775099460) reports `games_complete=94`, `games_partial=0`, `incomplete_attendance_ids=[]`, `safe_to_publish_all_game_leaderboards=true`, and `certified_player_lines=1825`. The generated artifact includes full raw data, sourced correction audit, normalized player rows, event/team IDs and the complete 94-game reconciliation table.
 
-The underlying workflow artifact includes full machine-readable reconciliation CSV, the normalized complete-player dataset, and the full raw import for controlled backfill.
+**No statistical score/minute backfills remain in this initial attendance batch.** Before attaching college pages to the live NBA archive, still validate column schemas, derived statistics, name/ID deduplication, school-transfer game logs, and each college page's structure and responsive visual fidelity to its NBA counterpart. ESPN's historical data may have field-level issues that are not detectable from matching total points/minutes alone. **Keep the entire college release on `college-import-pilot` until these separate UI and statistical checks pass; leave `main` unchanged.**

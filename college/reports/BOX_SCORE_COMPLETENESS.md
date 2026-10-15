@@ -49,9 +49,9 @@ The original ESPN game-summary import had **zero** Jase Townsend appearances in 
 | 45 | 2021-11-19 | Cal State Fullerton | 14 | 32 | [USD](https://usdtoreros.com/sports/mens-basketball/stats/2021-22/cal-state-fullerton/boxscore/12406) |
 | 47 | 2021-11-28 | Cal State Northridge | 3 | 33 | [USD](https://usdtoreros.com/boxscore.aspx?id=12409&path=mbball) |
 | 48 | 2021-12-05 | Cal Poly | 7 | 20 | [USD](https://usdtoreros.com/sports/mens-basketball/stats/2021-22/cal-poly/boxscore/12411) |
-| 50 | 2021-12-11 | Cal Lutheran | DNP | — | [USD](https://usdtoreros.com/sports/mens-basketball/stats/2021-22/cal-lutheran/boxscore/12412) |
-| 52 | 2022-01-13 | Portland | DNP | — | [USD](https://usdtoreros.com/sports/mens-basketball/stats/2021-22/portland/boxscore/12253) |
-| 53 | 2022-01-15 | Loyola Marymount | DNP | — | [USD](https://usdtoreros.com/boxscore.aspx?id=12254&path=mbball) |
+| 50 | 2021-12-11 | Cal Lutheran | No appearance | — | [USD](https://usdtoreros.com/sports/mens-basketball/stats/2021-22/cal-lutheran/boxscore/12412) |
+| 52 | 2022-01-13 | Portland | No appearance | — | [USD](https://usdtoreros.com/sports/mens-basketball/stats/2021-22/portland/boxscore/12253) |
+| 53 | 2022-01-15 | Loyola Marymount | No appearance | — | [USD](https://usdtoreros.com/sports/mens-basketball/stats/2021-22/loyola-marymount/boxscore/12254) |
 | 54 | 2022-02-03 | Gonzaga | 13 | 25 | [USD](https://usdtoreros.com/sports/mens-basketball/stats/2021-22/gonzaga/boxscore/12249) |
 | 55 | 2022-02-05 | Santa Clara | 7 | 27 | [USD](https://usdtoreros.com/boxscore.aspx?id=12259&path=mbball) |
 | 56 | 2022-11-09 | Florida Gulf Coast | 11 | 25 | [USD](https://usdtoreros.com/boxscore.aspx?id=13875&path=mbball) |
@@ -61,6 +61,8 @@ The original ESPN game-summary import had **zero** Jase Townsend appearances in 
 | 66 | 2023-01-05 | Pacific | 12 | 36 | [USD](https://usdtoreros.com/boxscore.aspx?id=13855&path=mbball) |
 | 68 | 2023-01-12 | Pepperdine | 25 | 38 | [USD](https://usdtoreros.com/sports/mens-basketball/stats/2022-23/pepperdine/boxscore/13857) |
 | 72 | 2023-01-28 | San Francisco | 21 | 33 | [USD](https://usdtoreros.com/sports/mens-basketball/stats/2022-23/san-francisco/boxscore/13861) |
+
+**Three non-appearance confirmations:** The official [Cal Lutheran (December 11)](https://usdtoreros.com/sports/mens-basketball/stats/2021-22/cal-lutheran/boxscore/12412), [Portland (January 13)](https://usdtoreros.com/sports/mens-basketball/stats/2021-22/portland/boxscore/12253), and [Loyola Marymount (January 15)](https://usdtoreros.com/sports/mens-basketball/stats/2021-22/loyola-marymount/boxscore/12254) player tables were checked separately after the attendee supplied all three source links. Townsend does not have an individual appearance in any of them, so no zero-stat or DNP record is fabricated. These were already included in the 17-game audit. A BYU box-score link was mistakenly supplied and explicitly withdrawn by the attendee; that game is **not** added to the attendance archive. The 94-game attendance list and player-stat dataset are unchanged by this confirmation.
 
 **Attended-game totals from these fourteen official player lines: 170 PTS, 417 MIN, 14 GP (12.1 PPG)**. This is not a full USD career total. The source comparison and 17-game HTML audit run are documented at [this GitHub workflow](https://github.com/ryanferronbaseball-oss/ferronnbaarchive/actions/runs/38771801039).
 

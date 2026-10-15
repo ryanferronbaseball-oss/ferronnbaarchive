@@ -98,3 +98,8 @@ body:has(#portrait) .hero{background:linear-gradient(115deg,#EAF0E7,#FFFEFB 85%)
 #signaturePerformances .ca-fallback img{background:#EDF0E9}
 #signaturePerformances .ca-feature strong{color:#252A2B!important}
 #profileAdvanced .profile-stat strong{color:#252A2B!important}
+
+/* Cross-league return link: same navigation pattern in NBA and NCAA sections. */
+.ca-hub-link{display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;flex:none;font-size:12px;font-weight:850;letter-spacing:.01em;padding:10px 13px;border:1px solid #C5D6C6;border-radius:9px;background:#E5EAE2;color:#284D3C!important;text-decoration:none!important}
+.ca-hub-link:hover,.ca-hub-link:focus-visible{background:#DAE7D8!important;color:#18392A!important}
+@media(max-width:650px){.ca-hub-link{font-size:12px;padding:8px 12px}}

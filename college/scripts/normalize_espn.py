@@ -83,6 +83,7 @@ def normalize_player(item, game, school_name, other_school):
         "source": item.get("source_name") or "ESPN summary API",
         "source_url": item.get("source_url") or None,
         "supplemental_official_source": bool(item.get("supplemental_official_source")),
+        "official_override_source": bool(item.get("official_override_source")),
     }
     if player["pts"] is not None and None not in (fgm, fg3m, ftm):
         # Field goals include 3-pointers, which add one extra point each.
@@ -97,6 +98,7 @@ def main():
     parser.add_argument("--matches", default=str(ROOT / "output" / "matches.csv"))
     parser.add_argument("--raw", default=str(ROOT / "output" / "player_boxscores_raw.json"))
     parser.add_argument("--supplements", default=str(ROOT / "data" / "official_boxscore_supplements.csv"))
+    parser.add_argument("--overrides", default=str(ROOT / "data" / "official_boxscore_overrides.csv"))
     parser.add_argument("--output", default=str(ROOT / "output"))
     parser.add_argument("--expected-games", type=int, default=94)
     args = parser.parse_args()
@@ -135,6 +137,50 @@ def main():
         team_name_candidates[str(item["team_id"])][item["team"]] += 1
 
 
+    # A recorded ESPN line can contain incorrect minutes/steals/blocks/etc.
+    # Record both sides of each override for forensic review. Exact IDs and
+    # game IDs are required; we never overwrite the original import artifact.
+    overrides = read_csv(args.overrides) if Path(args.overrides).exists() else []
+    override_audit = []
+    correction_keys = set()
+    for correction in overrides:
+        gid = correction["attendance_id"]
+        game = match_by_id.get(gid)
+        if not game or correction["espn_event_id"] != game["espn_event_id"]:
+            raise ValueError("Override not linked to confirmed attendance and ESPN event")
+        key = (gid, correction["player_id"])
+        if key in correction_keys:
+            raise ValueError("Duplicate official override for player game " + str(key))
+        correction_keys.add(key)
+        if not re.fullmatch(r"espn:\d+", correction["player_id"]):
+            raise ValueError("Override must reference an existing ESPN player ID")
+        if correction["team_id"] not in (game["away_team_id"], game["home_team_id"]):
+            raise ValueError("Override team ID does not match event")
+        if not correction["source_url"].startswith("https://") or not correction["source_name"]:
+            raise ValueError("Official override missing public source")
+        original = [p for p in raw_by_attendance[gid]
+                    if p["player_id"] == correction["player_id"]]
+        if len(original) != 1 or original[0]["team_id"] != correction["team_id"]:
+            raise ValueError("Override must match exactly one ESPN player appearance")
+        if original[0]["player"] != correction["player"]:
+            raise ValueError("Override name mismatch: " + correction["player"])
+        before = original[0]["raw_stats"]
+        after = {k: correction[k] for k in (
+            "min", "pts", "fg", "3pt", "ft", "reb", "ast", "to",
+            "stl", "blk", "oreb", "dreb", "pf"
+        )}
+        override_audit.append({
+            "attendance_id": gid, "espn_event_id": game["espn_event_id"],
+            "player_id": correction["player_id"], "player": correction["player"],
+            "original_espn_raw_stats": before, "official_corrected_stats": after,
+            "source_name": correction["source_name"],
+            "source_url": correction["source_url"],
+        })
+        original[0]["raw_stats"] = after
+        original[0]["source_name"] = correction["source_name"]
+        original[0]["source_url"] = correction["source_url"]
+        original[0]["official_override_source"] = True
+
     # The ESPN feed occasionally omits an entire player who appears in the
     # official school box score. Supplements are append-only, attributable
     # corrections, never destructive changes to the ESPN source data.
@@ -146,8 +192,8 @@ def main():
         game = match_by_id[game_id]
         if row["espn_event_id"] != game["espn_event_id"]:
             raise ValueError("Supplement ESPN event ID mismatch for attendance " + game_id)
-        if not re.fullmatch(r"espn:\d+", row["player_id"]):
-            raise ValueError("Supplement requires a verified ESPN athlete ID")
+        if not re.fullmatch(r"(?:espn:\d+|official:[a-z0-9-]+:[a-z0-9-]+)", row["player_id"]):
+            raise ValueError("Supplement requires a stable provider-qualified athlete ID")
         if row["team_id"] not in (game["away_team_id"], game["home_team_id"]):
             raise ValueError("Supplement team ID mismatches game for attendance " + game_id)
         if not row["source_url"].startswith("https://") or not row["source_name"]:
@@ -171,6 +217,10 @@ def main():
             "supplemental_official_source": True,
         })
         team_name_candidates[row["team_id"]][school] += 1
+
+    (out / "official_override_audit.json").write_text(
+        json.dumps(override_audit, indent=2, ensure_ascii=False) + "\n",
+        encoding="utf-8")
 
     players_all, players_certified, qa_rows, games = [], [], [], []
     for record in attendance:
@@ -279,6 +329,8 @@ def main():
         "games_partial": len(incomplete),
         "raw_player_lines": len(imported),
         "official_supplement_lines": len(supplements),
+        "official_corrected_existing_lines": len(overrides),
+        "provisional_official_athlete_ids": sorted({p["player_id"] for p in players_all if p["player_id"].startswith("official:")}),
         "combined_player_lines": len(players_all),
         "certified_player_lines": len(players_certified),
         "unique_players": len(by_player),

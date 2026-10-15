@@ -78,26 +78,26 @@
     <span class="portal-mark" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="#284D3C" stroke-width="1.7"><rect x="3" y="3" width="34" height="34" rx="2"/><path d="M3 20h34M20 3v34M13 3v9h14V3M13 37v-9h14v9"/><circle cx="20" cy="20" r="6"/></svg></span>
     <span class="portal-wordmark">COURTSIDE ARCHIVE<small>EVERY GAME HAS A STORY</small></span>
   </a>
-  <nav class="portal-nav" aria-label="Choose a basketball archive">
+  <nav class="portal-nav" aria-label="Choose a sports archive">
     <a href="./nba/index.html">NBA ↗</a>
-    <a href="./college/index.html">College ↗</a>
+    <a href="./college/index.html">College ↗</a><a href="./nfl/index.html">NFL ↗</a>
   </nav>
 </header>
 <section class="portal-hero" aria-labelledby="site-title">
   <div>
     <div class="portal-kicker">The personal attendance collection</div>
     <h1 id="site-title">Every game.<br><em>Every era.</em><br>One archive.</h1>
-    <p class="hero-copy">A personal history of basketball games attended—from NBA nights to college rivalries. Pick a league to explore the games, players, records and moments you saw in person.</p>
-    <div class="hero-annotation"><span><i></i> Built around games actually attended</span><span><i></i> Separate NBA & college statistics</span></div>
+    <p class="hero-copy">A personal history of the games attended—from NBA and college basketball to NFL Sundays. Pick a sport to explore the games, players, records and moments you saw in person.</p>
+    <div class="hero-annotation"><span><i></i> Built around games actually attended</span><span><i></i> Independent stats for each sport</span></div>
   </div>
-  <aside class="hero-number" aria-label="Total games logged across both basketball archives">
-    <strong id="allGames">125</strong>
+  <aside class="hero-number" aria-label="Total games logged across your sports archives">
+    <strong id="allGames">128</strong>
     <small>Games in the archives</small>
     <p>One collection, with league-specific data, leaderboards and history.</p>
   </aside>
 </section>
 <section id="archives" aria-labelledby="choose-title">
-  <div class="section-top"><div><div class="portal-kicker" style="margin:0">Choose your court</div><h2 id="choose-title">Explore the archives</h2></div><p>Two distinct basketball collections. One shared home.</p></div>
+  <div class="section-top"><div><div class="portal-kicker" style="margin:0">Choose your archive</div><h2 id="choose-title">Explore the archives</h2></div><p>Three sports collections. One shared home.</p></div>
   <div class="sport-grid">
     <article class="sport-card nba">
       <div class="sport-graphic" aria-hidden="true">
@@ -123,6 +123,7 @@
         <a class="sport-button" href="./college/index.html">Enter college archive <span aria-hidden="true">↗</span></a>
       </div>
     </article>
+    <article class="sport-card nfl"><div class="sport-graphic" aria-hidden="true" style="background:#E7EAE3"><svg viewBox="0 0 580 210" preserveAspectRatio="xMidYMid slice"><g fill="none" stroke="#8F9F86" stroke-width="2" opacity=".55"><path d="M0 45H580M0 105H580M0 165H580M95 0V210M295 0V210M495 0V210"/><rect x="185" y="55" width="210" height="100" rx="50"/><path d="M275 105h40M281 95v20M291 95v20M301 95v20"/></g></svg><span class="type">NFL</span><span class="serial">03 / PRO FOOTBALL</span></div><div class="sport-body"><span class="sport-label">Professional football</span><h3>NFL Attendance</h3><p>Three games spanning Arizona and Tennessee, including two overtime finishes. Explore the complete imported NFL player box-score categories and historical leaderboards.</p><div class="sport-metrics"><div><strong id="nflGames">3</strong><small>Games logged</small></div><div><strong>253</strong><small>Player-stat rows</small></div></div><a class="sport-button" href="./nfl/index.html">Enter NFL archive <span aria-hidden="true">↗</span></a></div></article>
   </div>
   <div class="future" aria-label="Future expansion">
     <div><small>On the horizon</small><strong>MLB & more sports</strong><p>The site is organized to add new sport archives without mixing unrelated player statistics.</p></div>
@@ -138,10 +139,11 @@
    const r=await fetch(url,{cache:"no-store"});if(!r.ok)throw Error("archive index unavailable");
    return r.text().then(t=>Math.max(0,t.trim().split(/\r?\n/).length-1));
   };
-  const [nba,college]=await Promise.all([count("./data/games.csv"),count("./college/data/games.csv")]);
+  const [nba,college,nfl]=await Promise.all([count("./data/games.csv"),count("./college/data/games.csv"),fetch("./nfl/data/games.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("NFL index unavailable");return r.json()}).then(g=>g.length)]);
   document.getElementById("nbaGames").textContent=nba.toLocaleString();
   document.getElementById("collegeGames").textContent=college.toLocaleString();
-  document.getElementById("allGames").textContent=(nba+college).toLocaleString();
+  document.getElementById("nflGames").textContent=nfl.toLocaleString();
+  document.getElementById("allGames").textContent=(nba+college+nfl).toLocaleString();
  }catch(err){ /* Keep documented fallback counts when serving offline. */ }
 })();
 </script>

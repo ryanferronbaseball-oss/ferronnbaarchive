@@ -1,9 +1,9 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>NFL Player Profile | Courtside Archive</title><meta name="description" content="A player's NFL game logs and statistics from the games you attended.">
-<link rel="stylesheet" href="./assets/archive.css"><script src="./assets/archive.js" defer></script></head>
+<link rel="stylesheet" href="./assets/archive.css"><script src="./assets/archive.js" defer></script><style>.player-hero{display:flex;align-items:center;gap:22px;margin:24px 0}.player-portrait{width:132px;height:150px;flex:none;border-radius:16px;background:linear-gradient(145deg,#e5eee4,#cadbcc);border:1px solid #c7d7c5;overflow:hidden;display:grid;place-items:center}.player-portrait img{width:100%;height:100%;object-fit:contain;object-position:center bottom}.player-portrait .portrait-fallback{display:none;font-size:38px;font-weight:850;letter-spacing:-.06em;color:#345a45}.player-hero-copy{min-width:0}.player-hero-copy h1{margin:0 0 8px}@media(max-width:520px){.player-hero{gap:14px}.player-portrait{width:96px;height:112px}.player-portrait .portrait-fallback{font-size:29px}}</style></head>
 <body><main><div id="navigation"></div><div class="eyebrow">NFL · Player profile</div>
-<h1 id="playerName">Player profile</h1><p class="lead" id="playerSummary">Loading your personal player-game log…</p>
+<section class="player-hero"><div class="player-portrait"><img id="playerPortrait" alt="" style="display:none"><span id="portraitFallback" class="portrait-fallback" style="display:grid">NFL</span></div><div class="player-hero-copy"><h1 id="playerName">Player profile</h1><p class="lead" id="playerSummary">Loading your personal player-game log…</p></div></section>
 <div class="metrics" id="metrics"></div>
 <div class="section-heading"><h2>Games you attended</h2><a class="action-link secondary" href="./stats.html">All leaderboards ↗</a></div>
 <div class="game-grid" id="games"></div>
@@ -11,7 +11,7 @@
 <div id="careerStats"></div>
 <h2>Full-PPR fantasy performances</h2><div id="pprStats"><div class="empty">Loading fantasy game performance…</div></div>
 <h2>Individual game logs</h2><div id="gameLogs"></div>
-<footer class="footer">Courtside Archive · NFL player statistics sourced from historical ESPN game box scores.</footer>
+<footer class="footer">Courtside Archive · NFL player statistics sourced from historical ESPN game box scores. Player photos are requested from ESPN when available; otherwise initials appear.</footer>
 </main><script>
 document.addEventListener("DOMContentLoaded",async()=>{
  const A=window.NFLArchive,el=id=>document.getElementById(id);
@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded",async()=>{
   const name=personal[0].player,teamNames=[...new Set(personal.map(x=>x.team))];
   const gameIDs=[...new Set(personal.map(x=>x.game_id))],seen=games.filter(g=>gameIDs.includes(g.id));
   el("playerName").textContent=name;document.title=name+" | NFL Courtside Archive";
+  const portrait=el("playerPortrait"),fallback=el("portraitFallback");fallback.textContent=name.split(/\\s+/).map(x=>x[0]).slice(0,2).join("").toUpperCase();portrait.onerror=()=>{portrait.style.display="none";fallback.style.display="grid"};if(/^\\d+$/.test(id)){portrait.onload=()=>{portrait.style.display="block";fallback.style.display="none"};portrait.alt="Portrait of "+name;portrait.src="https://a.espncdn.com/i/headshots/nfl/players/full/"+encodeURIComponent(id)+".png"}
   el("playerSummary").textContent=teamNames.join(" / ")+" · "+seen.length+" attended NFL game"+(seen.length===1?"":"s")+" with a recorded box-score category.";
   el("metrics").innerHTML='<div class="metric"><strong>'+seen.length+'</strong><small>Games you saw</small></div>'+
     '<div class="metric"><strong>'+teamNames.length+'</strong><small>NFL teams represented</small></div>'+

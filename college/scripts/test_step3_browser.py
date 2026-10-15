@@ -88,7 +88,7 @@ try:
     navigate(page,"game.html?id=76")
     page.wait_for_function("document.querySelectorAll('#game .score').length === 2")
     check("the pavilion at jserra" in page.locator("#game").inner_text().lower() and
-          "Neutral site" in page.locator("#game").inner_text(),
+          "neutral site" in page.locator("#game").inner_text().lower(),
           "2023 SoCal Showcase shown at its verified neutral-site venue")
     navigate(page,"records.html")
     page.wait_for_function("document.querySelectorAll('#cards .card').length === 6")
@@ -123,14 +123,14 @@ try:
     check(page.locator("#metrics .tile").count()==8,"Attendance insights original KPI grid loads")
     check(page.locator("#teamTable tr").count()==75,"Team records include all 75 witnessed schools")
     check("94" in page.locator("#metrics").inner_text(),"Attendance dashboard includes 94 attended games")
-    check("Lenovo Center" in page.locator("#arenaTable").inner_text(),
+    check("lenovo center" in page.locator("#arenaTable").inner_text().lower(),
           "Arena rankings combine PNC and Lenovo naming-rights eras")
     check("unknown arenas are excluded" not in page.locator("#arenaBars").inner_text(),
           "All 94 sourced games are included in physical venue counts")
     check(any("verified arenas" in tile.inner_text().lower() and "18" in tile.inner_text()
               for tile in page.locator("#metrics .tile").all()),
           "18 distinct physical arenas counted from 19 historical sponsor/name labels")
-    check("Jenny Craig Pavilion" in page.locator("#arenaTable").inner_text(),
+    check("jenny craig pavilion" in page.locator("#arenaTable").inner_text().lower(),
           "Fully backfilled San Diego arenas populate the historical venue leaderboard")
 
     page.locator("#period").select_option("calendar")

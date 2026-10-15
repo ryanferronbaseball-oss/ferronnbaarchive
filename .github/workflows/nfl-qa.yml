@@ -1,7 +1,7 @@
 name: NFL archive browser QA
 on:
   push:
-    branches: [nfl-three-game-import, main]
+    branches: [nfl-three-game-import, nfl-scoring-plays-and-leaderboards, main]
     paths:
       - "nfl/**"
       - "index.html"

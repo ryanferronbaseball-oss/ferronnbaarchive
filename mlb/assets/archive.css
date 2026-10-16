@@ -358,3 +358,7 @@ body[data-page="player"] main{width:100%;max-width:1160px;margin:0 auto;padding:
 @media(max-width:550px){
  .mlb-profile-stat-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
+
+/* Pitching overview: exactly 4 / 4 / 3 cards on desktop and iPad. */
+.mlb-profile-total-grid.mlb-profile-pitching-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media(max-width:700px){.mlb-profile-total-grid.mlb-profile-pitching-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}

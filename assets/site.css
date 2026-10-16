@@ -103,3 +103,70 @@ body:has(#portrait) .hero{background:linear-gradient(115deg,#EAF0E7,#FFFEFB 85%)
 .ca-hub-link{display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;flex:none;font-size:12px;font-weight:850;letter-spacing:.01em;padding:10px 13px;border:1px solid #C5D6C6;border-radius:9px;background:#E5EAE2;color:#284D3C!important;text-decoration:none!important}
 .ca-hub-link:hover,.ca-hub-link:focus-visible{background:#DAE7D8!important;color:#18392A!important}
 @media(max-width:650px){.ca-hub-link{font-size:12px;padding:8px 12px}}
+
+/* Text-only basketball mastheads, matching the NFL archive header. */
+header.ca-header{
+ gap:17px;
+ padding:23px 0;
+ border-bottom:1px solid #DEE1D8!important;
+}
+.ca-header .ca-logo.ca-logo-text{
+ display:block;
+ flex:none;
+ font-size:17px;
+ font-weight:900;
+ line-height:1.1;
+ letter-spacing:.035em;
+ color:#284D3C!important;
+ white-space:nowrap;
+}
+.ca-header .ca-logo-text small{
+ display:block;
+ color:#637468!important;
+ font-size:9px;
+ font-weight:500;
+ letter-spacing:.15em;
+ margin-top:5px;
+ line-height:1.1;
+}
+.ca-header .ca-nav{gap:5px;align-items:center}
+.ca-header .ca-nav>a{
+ text-decoration:none!important;
+ color:#284D3C!important;
+ font-size:13px;
+ font-weight:750;
+ padding:10px 13px;
+ border-radius:7px;
+}
+.ca-header .ca-nav>a[aria-current=page],.ca-header .ca-nav>a.active,.ca-header .ca-nav>a:hover{
+ background:#E8EFE6!important;
+ color:#284D3C!important;
+}
+.ca-header .ca-more>summary{
+ padding:10px 13px;
+ border-radius:7px;
+ font-size:13px;
+ font-weight:750;
+ color:#284D3C!important;
+}
+.ca-header .ca-hub-link{
+ display:inline;
+ flex:none;
+ padding:0!important;
+ border:0!important;
+ border-radius:0!important;
+ background:transparent!important;
+ box-shadow:none!important;
+ font-size:12px;
+ font-weight:750;
+ color:#284D3C!important;
+ text-decoration:none!important;
+ white-space:nowrap;
+}
+.ca-header .ca-hub-link:hover{
+ background:transparent!important;
+ text-decoration:underline!important;
+}
+@media(max-width:750px){
+ .ca-header .ca-nav>a,.ca-header .ca-more>summary{font-size:12px;padding:8px}
+}

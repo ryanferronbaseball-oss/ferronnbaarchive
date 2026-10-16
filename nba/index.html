@@ -3,7 +3,24 @@
 <title>Courtside Archive — NBA Attendance</title>
 <style>
 :root{color-scheme:dark;font-family:Inter,ui-sans-serif,system-ui,-apple-system,sans-serif;background:#0a1020;color:#eef3ff}*{box-sizing:border-box}body{margin:0}main{max-width:1140px;padding:32px 20px 90px;margin:auto}header{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #29364e;padding-bottom:22px}.brand{font-size:20px;font-weight:850;letter-spacing:.02em}.brand span{color:#70b7ff}header small,.muted{color:#9cabc7}h1{font-size:clamp(35px,6vw,64px);letter-spacing:-.05em;margin:56px 0 12px}p{line-height:1.6;color:#aab9d3;max-width:750px}.eyebrow{color:#73b7ff;text-transform:uppercase;font-size:12px;letter-spacing:.18em;font-weight:800}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:40px 0}.stat,.panel{background:#141d30;border:1px solid #28354c;border-radius:16px;padding:22px}.stat strong{font-size:36px;display:block}.stat small{color:#aab9d3}.panel{margin-top:20px}h2{margin:0 0 18px;font-size:22px}.sub{margin:-6px 0 20px;font-size:13px}.charts{display:grid;grid-template-columns:1fr 1fr;gap:18px}.barrow{display:grid;grid-template-columns:100px 1fr 30px;gap:12px;align-items:center;margin:10px 0;font-size:13px;color:#bdcce4}.track{height:10px;background:#243049;border-radius:99px;overflow:hidden}.fill{height:100%;background:linear-gradient(90deg,#337bcc,#75c5f5);border-radius:99px}.filters{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:18px}input,select{background:#0d1627;border:1px solid #394861;border-radius:9px;padding:12px;color:white;font:inherit;min-width:180px}input{flex:1}table{width:100%;border-collapse:collapse;font-size:14px}th{text-align:left;color:#8e9fb9;font-size:11px;letter-spacing:.1em;text-transform:uppercase}td,th{padding:14px 10px;border-bottom:1px solid #27334a}tbody tr:hover{background:#1a2942}.badge{display:inline-block;border-radius:20px;padding:5px 10px;background:#183851;color:#8bd1ff;font-size:11px;font-weight:800}.caution{color:#ffc98e;background:#392e25}.table-scroll{overflow:auto}.foot{margin:26px 0;font-size:13px;color:#90a3c4}@media(max-width:740px){.stats{grid-template-columns:repeat(2,1fr)}.charts{grid-template-columns:1fr}.barrow{grid-template-columns:88px 1fr 25px}header small{display:none}}
-.insight-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.insight-card{background:#0e1a2e;border:1px solid #2d415e;border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:6px}.insight-card small{text-transform:uppercase;letter-spacing:.07em;color:#98adcb;font-size:11px}.insight-card strong{font-size:clamp(21px,2.5vw,29px)}.insight-card span{color:#98adcb;font-size:12px}@media(max-width:780px){.insight-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}</style><link rel="stylesheet" href="../assets/site.css?v=editorial-ivory-2">
+.insight-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.insight-card{background:#0e1a2e;border:1px solid #2d415e;border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:6px}.insight-card small{text-transform:uppercase;letter-spacing:.07em;color:#98adcb;font-size:11px}.insight-card strong{font-size:clamp(21px,2.5vw,29px)}.insight-card span{color:#98adcb;font-size:12px}@media(max-width:780px){.insight-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}</style><link rel="stylesheet" href="../assets/site.css?v=editorial-ivory-2"><style id="recent-games-nfl-parity">
+/* Same recent-game card dimensions, typography and spacing as NFL home. */
+.recent-games-section{margin:28px 0 20px}
+.recent-games-section .section-heading{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:15px}
+.recent-games-section .section-heading h2{font-size:clamp(23px,3vw,32px);line-height:1.15;letter-spacing:-.035em;margin:0}
+.recent-games-section .action-link{display:inline-flex;align-items:center;justify-content:center;gap:6px;color:#fff!important;text-decoration:none!important;background:#284D3C;border:1px solid #284D3C;padding:11px 15px;border-radius:9px;font-size:13px;font-weight:750;width:fit-content}
+.recent-games-section .action-link.secondary{background:#EDF2EB;color:#284D3C!important;border-color:#C6D4C5}
+.recent-games-section .game-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+.recent-games-section .game-card{background:#FFFEFB;border:1px solid #DEE1D8;border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:9px;min-width:0}
+.recent-games-section .game-date,.recent-games-section .caption{font-size:12px;color:#637468;line-height:1.5}
+.recent-games-section .game-card h3{font-size:18px;letter-spacing:-.025em;margin:0;line-height:1.4;color:#252A2B}
+.recent-games-section .game-score{font-size:26px;color:#284D3C;font-weight:850;letter-spacing:-.04em;font-variant-numeric:tabular-nums}
+.recent-games-section .game-score span{font-size:14px;color:#637468}
+.recent-games-section .game-card .action-link{margin-top:auto}
+.recent-games-section .empty{border:1px dashed #B8CDB7;background:#F0F5ED;padding:24px;border-radius:12px;color:#637468;font-size:13px}
+@media(max-width:800px){.recent-games-section .game-grid{grid-template-columns:1fr}}
+@media(max-width:430px){.recent-games-section .game-card{padding:14px}}
+</style>
 <style id="nfl-homepage-alignment">
 /* Align basketball homepage header, hero typography and first-row spacing with NFL. */
 main{max-width:1160px;width:calc(100% - 36px);padding:0 0 80px;margin:0 auto}
@@ -21,7 +38,7 @@ main>.stats>.stat small{display:block;font-size:12px;margin-top:7px}
 <div class="eyebrow" >2006 — 2018 · Historical attendance</div><h1>Your NBA history.</h1>
 <a href="./hall-of-fame.html" style="display:inline-block;padding:12px 16px;border-radius:9px;background:#284d3c;color:#fff!important;font-weight:800;text-decoration:none;margin:12px 0 20px">★ NBA Hall of Famers You’ve Seen ↗</a><p class="home-lead">Your NBA attendance history, preserved in one place. Explore the matchups, players, seasons, and arenas you witnessed.</p>
 <div class="stats"><div class="stat"><strong id="gameCount">31</strong><small>Games attended</small></div><div class="stat"><strong id="yearCount">11</strong><small>Calendar years</small></div><div class="stat"><strong id="teamCount">18</strong><small>Teams encountered</small></div><div class="stat"><strong id="boxCoverage">30/31</strong><small>Full box scores imported</small></div></div>
-<section class="panel" id="insightsPreview"><h2>My NBA history at a glance</h2><p class="sub">Key attendance insights automatically updated from your game archive.</p><div class="insight-grid"><div class="insight-card"><small>Most-watched team</small><strong id="insightTeam">—</strong><span id="insightTeamDetail">From your attended games</span></div><div class="insight-card"><small>Home team win rate</small><strong id="insightHome">—</strong><span id="insightHomeDetail">Of games with final scores</span></div><div class="insight-card"><small>Close finishes</small><strong id="insightClose">—</strong><span>Decided by five points or fewer</span></div><div class="insight-card"><small>Average game points</small><strong id="insightPoints">—</strong><span>Combined score of both teams</span></div></div><p style="margin:18px 0 0"><a href="./insights.html" style="color:#8ad0ff;font-weight:800">Explore all Attendance Insights →</a></p></section>
+<section class="recent-games-section" aria-label="Three most recent games attended"><div class="section-heading"><h2>Games attended</h2><a class="action-link secondary" href="./game.html">All game box scores ↗</a></div><div id="recentGames" class="game-grid"><div class="empty">Loading your most recent games…</div></div></section>
 <section class="panel" id="signaturePerformances"><div class="eyebrow">The moments that stand out</div><h2 style="margin-top:12px">Signature performances</h2><p class="sub">Your greatest witnessed scoring, rebounding, and playmaking performances. Select one to open the game.</p><div class="ca-feature-grid" id="features"><div class="ca-feature">Loading record highlights…</div></div><a href="./milestones.html" style="font-weight:750">Explore Records & Milestones →</a></section>
 <div class="charts"><section class="panel"><h2>Most-watched teams</h2><div id="teams"></div></section><section class="panel"><h2>Attendance by year</h2><div id="years"></div></section></div>
 <section class="panel"><h2>My game history</h2><p class="sub">Based on your attendance sheet. Select a game to open its result and both team box scores.</p><div class="filters"><input id="search" type="search" placeholder="Search team, matchup, arena…"><select id="yearFilter"><option value="">All years</option></select><select id="sort"><option value="asc">Oldest first</option><option value="desc">Newest first</option></select></div><div class="table-scroll"><table><thead><tr><th>Date</th><th>Away</th><th>Home</th><th>Arena (recorded)</th><th>Details</th></tr></thead><tbody id="games"></tbody></table></div><div class="foot" id="showing"></div></section>
@@ -72,28 +89,28 @@ fetch('../data/player_boxscores_espn.json').then(r=>r.json()).then(logs=>{
  document.querySelector('#boxCoverage').textContent=distinct+'/'+items.length;
 }).catch(()=>{});
 
+const recentEsc=value=>String(value??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+const recentDate=value=>{const [year,month,day]=String(value).split('-').map(Number);return year&&month&&day?new Date(year,month-1,day).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'}):String(value??'')};
+function renderRecentGames(list){
+ const recent=list.slice().sort((a,b)=>b.date.localeCompare(a.date)||Number(b.id)-Number(a.id)).slice(0,3);
+ document.getElementById('recentGames').innerHTML=recent.map(g=>{
+  const away=recentEsc(g.away),home=recentEsc(g.home),arena=recentEsc(g.arena||'Venue not verified');
+  const scored=g.away_score!==''&&g.home_score!==''&&g.away_score!=null&&g.home_score!=null;
+  return '<article class="game-card"><div class="game-date">'+recentEsc(recentDate(g.date))+'</div><h3>'+away+' at '+home+'</h3>'+
+   '<div class="game-score">'+(scored?away+' '+recentEsc(g.away_score)+' <span>—</span> '+home+' '+recentEsc(g.home_score):'Final score unavailable')+'</div>'+
+   '<div class="caption">'+arena+'</div><a class="action-link" href="./game.html?id='+encodeURIComponent(g.id)+'">Game box score ↗</a></article>';
+ }).join('')||'<div class="empty">No attended games are available yet.</div>';
+}
 const parseCSVInsights=text=>{const lines=text.trim().split(/\r?\n/),headers=lines.shift().split(',');return lines.map(line=>Object.fromEntries(headers.map((h,i)=>[h,line.split(',')[i]??''])))};
 const insightTeamIds={"Atlanta":"1","Boston":"2","Charlotte":"30","Chicago":"4","Cleveland":"5","Denver":"7","Golden State":"9","Houston":"10","LA Clippers":"12","LA Lakers":"13","Miami":"14","Minnesota":"16","New Orleans":"3","New York":"18","Oklahoma City":"25","Phoenix":"21","Sacramento":"23","San Antonio":"24","Utah":"26"};
-Promise.all([fetch('../data/games.csv?v=home-insights-1',{cache:'no-store'}).then(r=>r.text()),fetch('../data/player_boxscores_espn.json?v=home-insights-1',{cache:'no-store'}).then(r=>r.json())]).then(([csv,players])=>{
- const gs=parseCSVInsights(csv),teams={};gs.forEach(g=>{for(const t of [g.home,g.away])teams[t]=(teams[t]||0)+1});
- const leader=Object.entries(teams).sort((a,b)=>b[1]-a[1])[0];
- document.getElementById('insightTeam').textContent=leader?leader[0]:'—';
- document.getElementById('insightTeamDetail').textContent=leader?leader[1]+' games attended':'';
+Promise.all([fetch('../data/games.csv?v=home-insights-1',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Games HTTP '+r.status);return r.text()}),fetch('../data/player_boxscores_espn.json?v=home-insights-1',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Player data HTTP '+r.status);return r.json()})]).then(([csv,players])=>{
+ const gs=parseCSVInsights(csv);
  document.getElementById('gameCount').textContent=gs.length;
- document.getElementById('teamCount').textContent=Object.keys(teams).length;
+ document.getElementById('teamCount').textContent=new Set(gs.flatMap(g=>[g.home,g.away])).size;
  document.getElementById('yearCount').textContent=new Set(gs.map(g=>g.date.slice(0,4))).size;
- const ev=new Map();players.forEach(p=>{const k=p.espn_event_id;if(!ev.has(k))ev.set(k,[]);ev.get(k).push(p)});
- const scored=gs.map(g=>{const rows=[...ev.values()].find(ps=>ps[0]?.date===g.date&&new Set(ps.map(p=>String(p.team_id))).has(insightTeamIds[g.away])&&new Set(ps.map(p=>String(p.team_id))).has(insightTeamIds[g.home]));
- const calc=t=>rows?rows.filter(p=>String(p.team_id)===insightTeamIds[t]).reduce((n,p)=>n+Number(p.pts||0),0):null;
- const away=g.away_score!==''?Number(g.away_score):calc(g.away),home=g.home_score!==''?Number(g.home_score):calc(g.home);
- return Number.isFinite(away)&&Number.isFinite(home)&&away!==null&&home!==null?{away,home}:null}).filter(Boolean);
- const homeWins=scored.filter(g=>g.home>g.away).length,close=scored.filter(g=>Math.abs(g.home-g.away)<=5).length;
- document.getElementById('insightHome').textContent=scored.length?(100*homeWins/scored.length).toFixed(1)+'%':'—';
- document.getElementById('insightHomeDetail').textContent=homeWins+' wins in '+scored.length+' games';
- document.getElementById('insightClose').textContent=close;
- document.getElementById('insightPoints').textContent=scored.length?(scored.reduce((n,g)=>n+g.away+g.home,0)/scored.length).toFixed(1):'—';
- document.getElementById('boxCoverage').textContent=ev.size+'/'+gs.length;
-}).catch(()=>{});
+ document.getElementById('boxCoverage').textContent=new Set(players.map(p=>p.espn_event_id)).size+'/'+gs.length;
+ renderRecentGames(gs);
+}).catch(e=>{document.getElementById('recentGames').innerHTML='<div class="empty">Unable to load recent games: '+recentEsc(e.message)+'</div>'});
 
 fetch('../data/player_boxscores_espn.json?v=design-features-1',{cache:'no-store'}).then(r=>r.json()).then(logs=>{
 const metrics=[['Scoring record','pts','PTS'],['Rebounding record','reb','REB'],['Playmaking record','ast','AST']];

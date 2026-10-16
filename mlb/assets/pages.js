@@ -106,22 +106,27 @@ function gamePage(){
  };
  const sideTable=(side,teamName)=>{
   const members=data.filter(r=>r.side===side||(!r.side&&r.team===teamName)).slice().sort(sortTeam);
+  const numbered=category==="batting"||category==="pitching";
   const rowsByTeam=members.map(r=>{
    const isSub=category==="batting"&&r.batting_sub_index!=null&&r.batting_sub_index>0;
    const spot=category==="batting"?(r.batting_slot??"—"):null;
-   const label=category==="batting"?(spot==="—"?"—":isSub?"↳":spot):null;
+   // Official lineup slots run 1–9. Pitchers use the MLB gamebook's
+   // appearance array: starting pitcher #1, relievers #2, #3, etc.
+   const orderNumber=category==="batting"?(spot==="—"?"—":isSub?"↳":String(spot))
+     :category==="pitching"?(r.pitching_appearance_index==null?"—":String(r.pitching_appearance_index+1)):null;
    const subtitle=esc(r.position||"")+(isSub?" · entered batting slot "+spot:"");
    return '<tr class="mlb-lineup-row'+(isSub?' mlb-substitute':'')+'" data-player-id="'+esc(r.player_id)+'"'
-    +(category==="batting"?' data-slot="'+esc(spot)+'" data-sub="'+(r.batting_sub_index??0)+'"':'')+'>'
-    +'<td><a href="'+playerUrl(r)+'">'+(isSub?'<span class="mlb-indent" aria-hidden="true">↳</span>':"")+esc(r.name)+'</a><small>'+subtitle+'</small></td>'
-    +(category==="batting"?'<td class="mlb-order">'+label+'</td>':"")
+    +(category==="batting"?' data-slot="'+esc(spot)+'" data-sub="'+(r.batting_sub_index??0)+'"':'')
+    +(category==="pitching"?' data-pitcher-index="'+(r.pitching_appearance_index??"")+'"':'')+'>'
+    +(numbered?'<td class="mlb-order" data-order="'+esc(orderNumber)+'">'+esc(orderNumber)+'</td>':"")
+    +'<td><a href="'+playerUrl(r)+'">'+esc(r.name)+'</a><small>'+subtitle+'</small></td>'
     +fields.map(k=>'<td>'+esc(A.disp(r[category]?.[k],k))+'</td>').join("")+'</tr>';
   });
-  const note=category==="batting"?"Official batting order · replacements nested within their original lineup spot"
-    :category==="pitching"?"Pitchers listed in appearance order":"Fielders grouped by lineup spot where applicable";
-  return '<section class="mlb-team-box" data-side="'+side+'"><div class="mlb-team-heading"><h3>'+esc(teamName)+'</h3><span>'+esc(side==="away"?"AWAY":"HOME")+'</span></div>'
+  const note=category==="batting"?"Official batting order · ↳ denotes a replacement in that lineup spot"
+    :category==="pitching"?"Official appearance order · #1 starting pitcher, followed by relief pitchers":"Fielders grouped by lineup spot where applicable";
+  return '<section class="mlb-team-box" data-side="'+side+'" data-category="'+category+'"><div class="mlb-team-heading"><h3>'+esc(teamName)+'</h3><span>'+esc(side==="away"?"AWAY":"HOME")+'</span></div>'
     +'<p class="mlb-team-caption">'+note+'</p>'
-    +table(["Player",...(category==="batting"?["Order"]:[]),...fields.map(k=>A.abbr[k]||k)],rowsByTeam,
+    +table([...(numbered?["Order"]:[]),"Player",...fields.map(k=>A.abbr[k]||k)],rowsByTeam,
        "No verified "+category+" entries for "+teamName+".")+'</section>';
  };
  box.innerHTML=sideTable("away",g.away)+sideTable("home",g.home);

@@ -71,6 +71,15 @@ try:
    check("San Diego Padres" in page.locator('#box .mlb-team-box[data-side="home"] h3').inner_text(),
          f"{width} home batting lineup properly labeled")
    for side in ("away","home"):
+    headings=page.locator(f'#box .mlb-team-box[data-side="{side}"] thead th').all_text_contents()
+    check([x.strip() for x in headings[:2]]==["Order","Player"],
+          f"{width} {side} batting order column is immediately left of player name")
+    display=page.locator(f'#box .mlb-team-box[data-side="{side}"] .mlb-lineup-row').evaluate_all(
+     "(xs)=>xs.map(x=>({slot:x.dataset.slot,sub:x.dataset.sub,order:x.querySelector('td:first-child').textContent.trim(),player:x.querySelector('td:nth-child(2) a')?.textContent.trim()}))")
+    check(all(d["order"]==("↳" if int(d["sub"])>0 else d["slot"]) for d in display if d["slot"]!="—"),
+          f"{width} {side} lineup numbers are in left column and substitutions use an arrow")
+    check(all(d["player"] for d in display),f"{width} {side} player names are in second column")
+   for side in ("away","home"):
     spots=page.locator(f'#box .mlb-team-box[data-side="{side}"] .mlb-lineup-row[data-slot]').evaluate_all(
      "(xs)=>xs.map(x=>Number(x.dataset.slot)).filter(Number.isInteger).filter(x=>x>=1&&x<=9)")
     check(len(set(spots))==9 and spots==sorted(spots),
@@ -86,15 +95,32 @@ try:
    page.locator("#gameStats [data-cat='pitching']").click()
    check(page.locator("#box tbody tr").count()>5,f"{width} pitching player lines")
    check(page.locator("#box .mlb-team-box").count()==2,f"{width} pitchers grouped by club")
+   for side in ("away","home"):
+    table_root=f'#box .mlb-team-box[data-side="{side}"]'
+    headings=page.locator(table_root+" thead th").all_text_contents()
+    check([x.strip() for x in headings[:2]]==["Order","Player"],
+          f"{width} {side} pitching order column appears left of player names")
+    displayed=page.locator(table_root+" .mlb-lineup-row").evaluate_all(
+     "(xs)=>xs.map(x=>({index:x.dataset.pitcherIndex,order:x.querySelector('td:first-child').textContent.trim(),name:x.querySelector('td:nth-child(2) a')?.textContent.trim()}))")
+    check(len(displayed)>=1 and displayed[0]["order"]=="1",
+          f"{width} {side} starting pitcher is numbered 1")
+    check(all(d["order"]==(str(int(d["index"])+1) if d["index"] else "—") and d["name"] for d in displayed),
+          f"{width} {side} pitchers follow official appearance order with number to left")
+    check([int(d["index"]) for d in displayed if d["index"]]==sorted(int(d["index"]) for d in displayed if d["index"]),
+          f"{width} {side} pitcher order ascending without alphabetization")
    page.locator("#gameStats [data-cat='fielding']").click()
    check(page.locator("#box tbody tr").count()>5,f"{width} individual fielding lines")
    check(page.locator("#box .mlb-team-box").count()==2,f"{width} fielding also separated into two teams")
+   check([x.strip() for x in page.locator('#box .mlb-team-box[data-side="away"] thead th').all_text_contents()][:1]==["Player"],
+         f"{width} fielding layout remains unchanged")
    page.locator("#gameStats [data-cat='batting']").click()
    sub_game=next((r["attendance_id"] for r in rows if r.get("batting_sub_index") is not None and r["batting_sub_index"]>0),None)
    if sub_game:
     page.locator("#gameSelect").select_option(str(sub_game))
     check(page.locator("#box .mlb-substitute").count()>0,
           f"{width} substitutes appear indented beneath their original lineup spots")
+    check(all(x=="↳" for x in page.locator("#box .mlb-substitute td:first-child").all_text_contents()),
+          f"{width} replacement arrows appear in lineup order column")
     for side in ("away","home"):
      slots=page.locator(f'#box .mlb-team-box[data-side="{side}"] .mlb-lineup-row[data-slot]').evaluate_all(
       "(xs)=>xs.map(x=>Number(x.dataset.slot)).filter(x=>x>=1&&x<=9)")

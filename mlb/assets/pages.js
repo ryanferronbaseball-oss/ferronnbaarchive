@@ -295,7 +295,7 @@ function profilePage(){
   +(ps? "":'<p class="mlb-profile-role-note">No pitching appearances in the games you attended. Pitching figures above reflect only those games.</p>')
   +'</div>':statBoxes(pitcher?pitchingCards:battingCards);
  const totals=(items,extraClass="")=>'<div class="mlb-profile-total-grid'+(extraClass?" "+extraClass:"")+'">'+items.map(([label,value])=>'<div class="mlb-profile-total"><small>'+esc(label)+'</small><strong>'+esc(value)+'</strong></div>').join("")+'</div>';
- const battingStats=[["Games",p.batting.length],["At-bats",bs.atBats],["Hits",bs.hits],["Doubles",bs.doubles],["Triples",bs.triples],["Home Runs",bs.homeRuns],["RBI",bs.rbi],["Runs",bs.runs],["Walks",bs.baseOnBalls],["Stolen Bases",bs.stolenBases]];
+ const battingStats=[["Games",p.batting.length],["Plate Appearances",bs.plateAppearances],["At-bats",bs.atBats],["Hits",bs.hits],["Doubles",bs.doubles],["Triples",bs.triples],["Home Runs",bs.homeRuns],["RBI",bs.rbi],["Runs",bs.runs],["Walks",bs.baseOnBalls],["Stolen Bases",bs.stolenBases]];
  // Games started comes from the official per-game box score when available;
  // older games can still identify the starter by first pitcher in team order.
  const pitcherGames=ps?[...new Set(p.pitching.map(r=>r.game_pk))].length:0;

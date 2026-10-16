@@ -78,3 +78,4 @@ function playerMatchStat(m,name){
 }
 window.SoccerArchive={esc,fmt,date,slug,playerUrl,gameUrl,isGoal,eventOrder,eventName,nav,load,leaderRows,matchCard,playerLink,formatMetric,scored,scorerLabel,playerMatchStat};
 })();
+;(()=>{if(document.querySelector('script[data-ca-player-search]'))return;const s=document.createElement('script');s.dataset.caPlayerSearch='1';s.src='../assets/player-search.js?v=quicksearch-20261016v2';document.head.appendChild(s)})();

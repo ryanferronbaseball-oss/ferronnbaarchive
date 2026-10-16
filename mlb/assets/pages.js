@@ -21,8 +21,19 @@ const short=(s)=>esc(s||"—");
 const linkPlayer=(p)=>'<a href="'+playerUrl(p)+'">'+esc(p.name)+'</a>';
 const batting=(r)=>A.addStats(r,"batting"),pitching=(r)=>A.addStats(r,"pitching");
 const playerRows=p=>[...p.batting,...p.pitching];
+const officialDecisionsByPlayer=new Map();
+for(const result of Object.values(decisions||{})){
+ if(result?.status!=="verified")continue;
+ for(const [field,target] of [["winner","wins"],["loser","losses"],["save","saves"]]){
+  const id=result[field]?.id;if(id==null)continue;
+  const key=String(id),record=officialDecisionsByPlayer.get(key)||{wins:0,losses:0,saves:0};
+  record[target]++;officialDecisionsByPlayer.set(key,record);
+ }
+}
+const pitcherDecisions=id=>officialDecisionsByPlayer.get(String(id))||{wins:0,losses:0,saves:0};
+const verifiedPitcherTotals=p=>({...pitching(p.pitching),...pitcherDecisions(p.player_id)});
 const bStats=players.map(p=>({p,stats:batting(p.batting)})).filter(x=>x.stats.games);
-const pStats=players.map(p=>({p,stats:pitching(p.pitching)})).filter(x=>x.stats.games);
+const pStats=players.map(p=>({p,stats:verifiedPitcherTotals(p)})).filter(x=>x.stats.games);
 const sig=[
  ["Hits in a game","batting","hits","H"],
  ["Home runs in a game","batting","homeRuns","HR"],
@@ -202,7 +213,12 @@ function profilePage(){
  const id=new URLSearchParams(location.search).get("id");
  const p=players.find(x=>String(x.player_id)===String(id));
  if(!p){app.innerHTML='<div class="eyebrow">MLB · Player profile</div><h1>Player not found.</h1><p><a href="./stats.html">← Player leaderboards</a></p>';return}
- const bs=batting(p.batting), ps=p.pitching.length?pitching(p.pitching):null;
+ const bs=batting(p.batting), ps=p.pitching.length?verifiedPitcherTotals(p):null;
+ const officialPitcherRecord=pitcherDecisions(p.player_id);
+ const hasOfficialTwoWayRole=p.rows.some(r=>String(r.position||"").toUpperCase()==="TWP");
+ const battingPosition=p.rows.some(r=>["DH","1B","2B","3B","SS","LF","CF","RF","OF","C"].includes(String(r.position||"").toUpperCase()));
+ const genuineTwoWay=(p.batting.length>0&&(hasOfficialTwoWayRole||String(p.player_id)==="660271"||(battingPosition&&p.pitching.length>0)));
+ const twoWay=genuineTwoWay;
  const career=awardsById[String(p.player_id)]||null,hof=career?.hall_of_fame||null;
  const honors=[["mvp","MVP","mvp","🏆"],["cy_young","Cy Young","cy","◆"],["gold_glove","Gold Glove","gg","★"],["silver_slugger","Silver Slugger","ss","✦"]];
  const hasHonors=!!(hof||honors.some(([key])=>career?.[key]?.length));
@@ -238,17 +254,30 @@ function profilePage(){
   +'<p class="mlb-note"><a href="https://statsapi.mlb.com/api/v1/awards" target="_blank" rel="noopener">Source: MLB official award records ↗</a></p></section>':"";
  const best=p.rows.map(r=>A.playerImpact(r)).filter(Boolean).sort((a,b)=>b.score-a.score)[0];
  const overviewLine=best?('<div class="mlb-profile-signature"><small>BEST WITNESSED PERFORMANCE</small><strong>'+best.score.toFixed(1)+' Impact Score</strong><span>'+esc(best.line)+' · '+date(best.row.date)+'</span><a href="./game.html?id='+esc(best.row.attendance_id)+'">View game ↗</a></div>'):"";
- const statCards=pitcher?[
-  ["Games Seen",p.game_count],["Innings Pitched",ps?.inningsPitched??"—"],["Strikeouts",ps?.strikeOuts??"—"],
-  ["ERA",A.disp(ps?.era,"era")],["WHIP",A.disp(ps?.whip,"whip")],["Best Outing",best?best.score.toFixed(1):"—"]
- ]:[
-  ["Games Seen",p.game_count],["Hits",bs.hits],["Home Runs",bs.homeRuns],
-  ["RBI",bs.rbi],["AVG",A.disp(bs.average,"average")],["Best Performance",best?best.score.toFixed(1):"—"]
+ const bestBatting=p.batting.map(r=>A.playerImpact(r)).filter(r=>r&&Number.isFinite(r.battingScore)&&r.role!=="Pitching")
+  .sort((a,b)=>b.battingScore-a.battingScore)[0];
+ const battingCards=[
+  ["Games",p.game_count],["Batting Average",A.disp(bs.average,"average")],["Home Runs",bs.homeRuns],
+  ["RBI",bs.rbi],["OPS",A.disp(bs.ops,"ops")],
+  ["Best Performance",bestBatting?bestBatting.battingScore.toFixed(1):"—"]
  ];
- const summaryTiles=statCards.map(([label,value])=>'<div class="mlb-profile-stat"><small>'+esc(label)+'</small><strong>'+esc(value)+'</strong></div>').join("");
+ const pitchingCards=[
+  ["Wins",officialPitcherRecord.wins],["Losses",officialPitcherRecord.losses],["Saves",officialPitcherRecord.saves],
+  ["Innings",ps?.inningsPitched??"0.0"],["Walks",ps?.baseOnBalls??0],["Strikeouts",ps?.strikeOuts??0]
+ ];
+ const statBoxes=items=>items.map(([label,value])=>'<div class="mlb-profile-stat"><small>'+esc(label)+'</small><strong>'+esc(value)+'</strong></div>').join("");
+ const statRow=(role,items)=>'<div class="mlb-profile-role-group" data-role="'+role+'">'
+  +'<div class="mlb-profile-role-label">'+(role==="batting"?"BATTING":"PITCHING")+'</div>'
+  +'<div class="mlb-profile-stat-grid">'+statBoxes(items)+'</div></div>';
+ // Two rows for actual two-way hitters/pitchers (including Shohei Ohtani);
+ // ordinary pitchers who batted in an NL game still receive only pitching cards.
+ const summaryTiles=twoWay?'<div class="mlb-profile-two-way" data-two-way="true">'
+  +statRow("batting",battingCards)+statRow("pitching",pitchingCards)
+  +(ps? "":'<p class="mlb-profile-role-note">No pitching appearances in the games you attended. Pitching figures above reflect only those games.</p>')
+  +'</div>':statBoxes(pitcher?pitchingCards:battingCards);
  const totals=(items)=>'<div class="mlb-profile-total-grid">'+items.map(([label,value])=>'<div class="mlb-profile-total"><small>'+esc(label)+'</small><strong>'+esc(value)+'</strong></div>').join("")+'</div>';
  const battingStats=[["Games",p.batting.length],["At-bats",bs.atBats],["Hits",bs.hits],["Doubles",bs.doubles],["Triples",bs.triples],["Home Runs",bs.homeRuns],["RBI",bs.rbi],["Runs",bs.runs],["Walks",bs.baseOnBalls],["Stolen Bases",bs.stolenBases]];
- const pitcherStats=ps?[["Appearances",p.pitching.length],["Innings",ps.inningsPitched],["Strikeouts",ps.strikeOuts],["Hits Allowed",ps.hits],["Earned Runs",ps.earnedRuns],["Walks",ps.baseOnBalls],["Wins",ps.wins],["Saves",ps.saves]]:[];
+ const pitcherStats=ps?[["Appearances",p.pitching.length],["Innings",ps.inningsPitched],["Strikeouts",ps.strikeOuts],["Hits Allowed",ps.hits],["Earned Runs",ps.earnedRuns],["Walks",ps.baseOnBalls],["Wins",officialPitcherRecord.wins],["Losses",officialPitcherRecord.losses],["Saves",officialPitcherRecord.saves]]:[];
  const rateItems=[["Batting Average",A.disp(bs.average,"average")],["On-Base Percentage",A.disp(bs.onBasePercentage,"onBasePercentage")],
   ["Slugging Percentage",A.disp(bs.sluggingPercentage,"sluggingPercentage")],["OPS",A.disp(bs.ops,"ops")],
   ["Extra-Base Hits",bs.doubles+bs.triples+bs.homeRuns],["Isolated Power",bs.average!=null&&bs.sluggingPercentage!=null?(bs.sluggingPercentage-bs.average).toFixed(3).replace(/^0/,""):"—"],
@@ -273,7 +302,7 @@ function profilePage(){
   +'<div class="mlb-profile-identity"><div class="mlb-profile-team-name">'+esc(p.teams.join(" / "))+'</div>'
   +'<h1>'+esc(p.name)+'</h1>'+badges
   +'<p class="mlb-profile-seen">'+p.game_count+' attended '+(p.game_count===1?"game":"games")+' · '+esc(years)+'</p></div></section>'
-  +'<div class="mlb-profile-headline-stats">'+summaryTiles+'</div>'
+  +'<div class="mlb-profile-headline-stats'+(twoWay?" is-two-way":"")+'">'+summaryTiles+'</div>'
   +'<div class="mlb-profile-tabs" id="profileTabs" role="tablist" aria-label="Player profile sections">'
   +[["overview","Overview"],["advanced","Advanced"],["games","Game Log"],["milestones","Milestones"]].map(([key,title],i)=>
    '<button type="button" class="mlb-profile-tab" role="tab" data-profile-tab="'+key+'" aria-controls="profile-'+key+'" aria-selected="'+(i===0)+'">'+title+'</button>').join("")+'</div>'

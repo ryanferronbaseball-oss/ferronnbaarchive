@@ -229,6 +229,17 @@ try:
    check(page.locator(".mlb-profile-hero").count()==1,f"{width} NBA-inspired framed player hero")
    check(page.locator(".mlb-profile-photo img").count()==1,f"{width} portrait inside player card")
    check(page.locator(".mlb-profile-headline-stats .mlb-profile-stat").count()==6,f"{width} six compact profile stats match NBA layout")
+   stat_labels=page.locator(".mlb-profile-headline-stats .mlb-profile-stat small").all_text_contents()
+   expected_batter=["Games","Batting Average","Home Runs","RBI","OPS","Best Performance"]
+   expected_pitcher=["Wins","Losses","Saves","Innings","Walks","Strikeouts"]
+   check(stat_labels in (expected_batter,expected_pitcher),
+         f"{width} profile six headline stats match role-specific requested categories")
+   if stat_labels==expected_pitcher:
+    profile_id=str(example["player_id"])
+    actual=[sum(1 for v in decisions.values() if v.get("status")=="verified" and v.get(k) and str(v[k]["id"])==profile_id) for k in ("winner","loser","save")]
+    displayed=[int(x.strip()) for x in page.locator(".mlb-profile-headline-stats .mlb-profile-stat strong").all_text_contents()[:3]]
+    check(displayed==actual,f"{width} pitcher W/L/S are from official attended-game decisions")
+
    geometry=page.evaluate("""() => {
      const css=x=>getComputedStyle(document.querySelector(x));
      const dimensions=x=>{const r=document.querySelector(x).getBoundingClientRect();return {width:r.width,height:r.height}};
@@ -278,6 +289,47 @@ try:
    check(page.locator("#profile-games").is_visible(),f"{width} Game Log tab opens")
    check(page.locator("#logs tbody tr").count()>=1,f"{width} individual game log")
    fits("MLB player")
+   # Exercise a confirmed winning pitcher instead of relying on the arbitrary first row.
+   tested_winner=next((v["winner"] for v in decisions.values()
+      if v.get("status")=="verified" and v.get("winner") and
+      any(str(r["player_id"])==str(v["winner"]["id"]) and r.get("pitching") for r in rows)),None)
+   check(tested_winner is not None,"At least one verified winning pitcher has an official individual box score")
+   pid=str(tested_winner["id"])
+   visit(f"mlb/player.html?id={pid}","document.querySelector('.mlb-profile-headline-stats .mlb-profile-stat')!==null")
+   expected_pitcher=["Wins","Losses","Saves","Innings","Walks","Strikeouts"]
+   p_labels=page.locator(".mlb-profile-headline-stats .mlb-profile-stat small").all_text_contents()
+   check(p_labels==expected_pitcher,f"{width} verified pitcher has the exact six requested headline statistics")
+   expected_record=[sum(1 for v in decisions.values() if v.get("status")=="verified" and v.get(k) and str(v[k]["id"])==pid)
+     for k in ("winner","loser","save")]
+   actual_record=[int(x) for x in page.locator(".mlb-profile-headline-stats .mlb-profile-stat strong").all_text_contents()[:3]]
+   check(actual_record==expected_record,f"{width} pitcher W/L/S exactly match official records")
+   check(page.locator(".mlb-profile-headline-stats .mlb-profile-stat").count()==6,f"{width} pitcher has NBA-size six-box stat row")
+   fits("pitcher profile")
+   # Hitter example selected among players with multiple at-bats and no pitching lines.
+   hitter=next((str(r["player_id"]) for r in rows if r.get("batting") and int(r["batting"].get("atBats") or 0)>0
+     and not any(str(x["player_id"])==str(r["player_id"]) and x.get("pitching") for x in rows)),None)
+   check(hitter is not None,"At least one pure hitter is in the witnessed game data")
+   visit(f"mlb/player.html?id={hitter}","document.querySelector('.mlb-profile-headline-stats .mlb-profile-stat')!==null")
+   expected_batter=["Games","Batting Average","Home Runs","RBI","OPS","Best Performance"]
+   check(page.locator(".mlb-profile-headline-stats .mlb-profile-stat small").all_text_contents()==expected_batter,
+      f"{width} hitter has the exact six requested statistics in order")
+   check(page.locator(".mlb-profile-headline-stats .mlb-profile-stat").count()==6,
+      f"{width} pure hitter retains one six-card NBA-style stat row")
+   fits("hitter profile")
+   ohtani_rows=[r for r in rows if str(r["player_id"])=="660271"]
+   if ohtani_rows:
+    visit("mlb/player.html?id=660271","document.querySelector('.mlb-profile-headline-stats .mlb-profile-stat')!==null")
+    check(page.locator(".mlb-profile-headline-stats.is-two-way").count()==1,
+          f"{width} Shohei Ohtani automatically uses the two-way layout")
+    check(page.locator(".mlb-profile-role-group").count()==2,
+          f"{width} two labeled batting and pitching stat rows")
+    check(page.locator(".mlb-profile-role-group[data-role='batting'] .mlb-profile-stat").count()==6 and
+          page.locator(".mlb-profile-role-group[data-role='pitching'] .mlb-profile-stat").count()==6,
+          f"{width} exactly six boxes in each Ohtani row")
+    check(page.locator(".mlb-profile-role-group[data-role='batting'] .mlb-profile-stat small").all_text_contents()==expected_batter
+         and page.locator(".mlb-profile-role-group[data-role='pitching'] .mlb-profile-stat small").all_text_contents()==expected_pitcher,
+          f"{width} two-way player groups batting above pitching with correct stats")
+    fits("Shohei two-way profile")
    visit("mlb/records.html","document.querySelector('#recordCards .mlb-record')!==null")
    check(page.locator("#mainTabs [role=tab]").count()==4,f"{width} four NBA/NFL Records tabs")
    check(page.locator("#recordCards .mlb-record").count()==6,f"{width} six MLB record holder cards")

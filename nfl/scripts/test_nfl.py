@@ -170,6 +170,7 @@ try:
    check("68" in page.locator('#teamCards').inner_text(),str(width)+" witnessed 68-point SF-Arizona combined scoring record")
    check(page.locator('#teamGames tr').count()==3,str(width)+" complete attended NFL results list")
    page.locator('#scoringGroups button[data-group="defense"]').click()
+   print("SCORING DEBUG",repr(page.locator('#scoringCards').inner_text()),"STATE",repr(page.locator('#scoringGroups').inner_text()),"ERRORS",errors,flush=True)
    check("Defensive touchdowns" in page.locator('#scoringCards').inner_text(),str(width)+" defense touchdown scoring breakdown")
    page.locator('#scoringGroups button[data-group="special"]').click()
    check("Blocked-kick touchdowns" in page.locator('#scoringCards').inner_text(),str(width)+" special teams blocked-punt scoring breakdown")

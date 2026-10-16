@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded",async()=>{
   document.getElementById("playerCount").textContent=new Set(rows.map(r=>r.athlete_id)).size;
   document.getElementById("statCount").textContent=rows.length;
   document.getElementById("scoringCount").textContent=Object.values(scoring).reduce((n,g)=>n+g.plays.length,0);
-  document.getElementById("games").innerHTML=games.map(A.gameCard).join("");
+  document.getElementById("games").innerHTML=games.slice().sort((a,b)=>b.date.localeCompare(a.date)||String(b.id).localeCompare(String(a.id))).slice(0,3).map(A.gameCard).join("");
   const top=ppr.performances[0],m=ppr.audit.milestones;
   document.getElementById("bestPpr").textContent=Number(top.fantasy_ppr).toFixed(2);
   document.getElementById("thirtyPpr").textContent=m["30"];

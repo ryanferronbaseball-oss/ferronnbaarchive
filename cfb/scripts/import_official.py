@@ -113,7 +113,7 @@ def normalized_category_row(g,team,cat,cells):
   sackcol=6 if classic else 4
   tfl=v[4] if classic else v[3]
   sacks=v[sackcol] if classic else v[sackcol].split("/")[0].strip()
-  pd=v[11] if classic else v[8]
+  pd=v[12] if classic else v[8]
   row(g,team,name,"defensive",["TOT","SOLO","SACKS","TFL","PD","QB HTS","TD"],
       [v[2],v[0],sacks if number(sacks)is not None else "",tfl if number(tfl)is not None else "",pd if number(pd)is not None else "",v[-1] if number(v[-1])is not None else "",""])
  elif cat=="punting":
@@ -251,9 +251,21 @@ def n(r,field):
  if r is None:return None
  ix=r["stat_labels"].index(field) if field in r["stat_labels"] else -1
  return number(r["stat_values"][ix]) if ix>=0 else None
+def verified_return_tds():
+ credits=collections.Counter()
+ for g in GAMES:
+  for play in SCORING.get(g["id"],{}).get("plays",[]):
+   if play["type"] not in ("Kick Return Touchdown","Punt Return Touchdown"):continue
+   text=play.get("description","")
+   match=re.search(r"(?:^| - )(.+?)\s+\d+\s+yd\s+(?:kickoff|punt)\s+return",text,re.I)
+   if not match:continue
+   credited=canonical(match.group(1),play["team"])
+   credits[(g["id"],identity(credited,play["team"]))]+=1
+ return credits
 def fantasy():
  # Source completeness policy: only the four full gamebooks qualify for PPR.
  groups=collections.defaultdict(list)
+ return_scores=verified_return_tds()
  for r in ROWS:
   if r["game_id"]==GAMES[0]["id"]:continue
   groups[(r["game_id"],r["athlete_id"])].append(r)
@@ -268,15 +280,16 @@ def fantasy():
   rec=f("receiving","REC");vy=f("receiving","YDS");vt=f("receiving","TD")
   # Individual interception throws and documented yardage are counted only
   # where corresponding source statistical categories exist.
-  score=round(py*.04+pt*4-ints*2+ry*.1+rt*6+rec+vy*.1+vt*6,2)
+  return_td=return_scores.get((gid,aid),0)
+  score=round(py*.04+pt*4-ints*2+ry*.1+rt*6+rec+vy*.1+vt*6+return_td*6,2)
   r=cat[0];g=next(x for x in GAMES if x["id"]==gid)
   result.append({"game_id":gid,"date":g["date"],"athlete_id":aid,"player":r["player"],"team":r["team"],
    "opponent":g["home_abbr"] if r["team"]==g["away_abbr"] else g["away_abbr"],
    "fantasy_ppr":score,"stat_line":{"passing_yards":py,"passing_tds":pt,"interceptions_thrown":ints,
     "rushing_yards":ry,"rushing_tds":rt,"receptions":rec,"receiving_yards":vy,"receiving_tds":vt,
-    "fumbles_lost":0,"offensive_two_point_conversions":0,"kick_punt_return_tds":0},
+    "fumbles_lost":0,"offensive_two_point_conversions":0,"kick_punt_return_tds":return_td},
    "ppr_components":{"passing":round(py*.04+pt*4,2),"rushing":round(ry*.1+rt*6,2),
-     "receiving":round(rec+vy*.1+vt*6,2),"turnovers":round(-ints*2,2),"two_point":0,"returns":0},
+     "receiving":round(rec+vy*.1+vt*6,2),"turnovers":round(-ints*2,2),"two_point":0,"returns":return_td*6},
    "score_type":"traditional_full_ppr","source":g["boxscore_url"]})
  return sorted(result,key=lambda p:(-p["fantasy_ppr"],p["date"],p["player"]))
 def main():
@@ -303,7 +316,7 @@ def main():
    "receiving_yards":0.1,"receiving_touchdowns":6,"reception":1,"fumbles_lost":-2,
    "successful_offensive_two_point_conversion":2,"individual_kick_or_punt_return_touchdown":6,
    "excluded":["K/DST scoring","IDP scoring","bonuses","TE premiums","yardage return points"],
-   "coverage_notice":"Fumbles-lost and return touchdowns are not added without verified individual box-score attribution."},
+   "coverage_notice":"Individual kick or punt return touchdowns are included when identifiable in the official scoring summary; fumbles-lost are not deducted unless supported by individual evidence."},
   "eligibility":"Officially verified full player boxscores (excludes incomplete 2017 WNMU game). Missing turnover values are not deducted.",
   "audit":{"player_games":len(ps),"games_covered":list(dict.fromkeys(p["game_id"] for p in ps)),
            "milestones":counts},"performances":ps}

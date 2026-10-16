@@ -127,4 +127,4 @@ function record(label,value,description,link){return '<article class="mlb-record
 function mlbRow(g){return '<tr><td><a href="'+gameUrl(g)+'">'+date(g.date)+'</a></td><td>'+esc(g.away)+" @ "+esc(g.home)+'</td><td>'+esc(g.ballpark)+'</td><td>'+((g.game_pk!=null&&yes(g.away_score)&&yes(g.home_score))?g.away_score+"–"+g.home_score:"—")+'</td><td>'+ (g.game_pk!=null?'<span class="mlb-pill verified">Matched</span>':'<span class="mlb-pill pending">Pending</span>')+'</td><td><a href="'+gameUrl(g)+'">View →</a></td></tr>'}
 window.MLBArchive={esc,date,fmt,num,yes,pad,nav,load,addStats,disp,oneStat,gameCard,gameUrl,playerUrl,table,bar,tiles,record,mlbRow,abbr,playerImpact,playerOfGame};
 })();
-;(()=>{if(document.querySelector('script[data-ca-player-search]'))return;const s=document.createElement('script');s.dataset.caPlayerSearch='1';s.src='../assets/player-search.js?v=quicksearch-20261016';document.head.appendChild(s)})();
+;(()=>{if(document.querySelector('script[data-ca-player-search]'))return;const s=document.createElement('script');s.dataset.caPlayerSearch='1';s.src='../assets/player-search.js?v=quicksearch-20261016v2';document.head.appendChild(s)})();

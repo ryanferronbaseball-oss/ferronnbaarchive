@@ -48,7 +48,7 @@ def main():
         assert a.tags.count("h2")==b.tags.count("h2"), "Section hierarchy drift "+filename
         assert set(("./index.html","./game.html","./stats.html","./milestones.html","./insights.html","./nba-alumni.html")).issubset(set(b.nav_links)) and b.nav_links.count("./stats.html")==1, "College must retain key page destinations, one Players link, and NBA career directory: "+filename
         assert (a.ids-({"hofBadge","mvpBadge","allNbaBadge"} if filename=="player.html" else set())).issubset(b.ids), "Shared NBA/NCAAB controls removed: "+str(a.ids-b.ids)
-        assert '../assets/site.css?v=editorial-ivory-2' in college, "Not using same canonical stylesheet"
+        assert '../assets/site.css?v=nfl-masthead-match-20261015' in college, "Not using same canonical stylesheet"
         assert '../assets/site.js?v=design-1' in college, "Not using existing nav logic"
         assert "./data/player_boxscores_espn.json" in college
         assert "./data/team_names.json" in college

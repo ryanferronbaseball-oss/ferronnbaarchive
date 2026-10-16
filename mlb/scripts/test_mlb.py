@@ -229,6 +229,43 @@ try:
    check(page.locator(".mlb-profile-hero").count()==1,f"{width} NBA-inspired framed player hero")
    check(page.locator(".mlb-profile-photo img").count()==1,f"{width} portrait inside player card")
    check(page.locator(".mlb-profile-headline-stats .mlb-profile-stat").count()==6,f"{width} six compact profile stats match NBA layout")
+   geometry=page.evaluate("""() => {
+     const css=x=>getComputedStyle(document.querySelector(x));
+     const dimensions=x=>{const r=document.querySelector(x).getBoundingClientRect();return {width:r.width,height:r.height}};
+     return {
+       hero:dimensions('.mlb-profile-hero'),photo:dimensions('.mlb-profile-photo'),
+       heroDirection:css('.mlb-profile-hero').flexDirection,
+       heroPadding:css('.mlb-profile-hero').paddingTop,
+       heroGap:css('.mlb-profile-hero').columnGap,
+       heroRadius:css('.mlb-profile-hero').borderTopLeftRadius,
+       statPadding:css('.mlb-profile-stat').paddingTop,
+       statRadius:css('.mlb-profile-stat').borderTopLeftRadius,
+       statsGap:css('.mlb-profile-headline-stats').columnGap,
+       cardPositions:[...document.querySelectorAll('.mlb-profile-stat')].map(x=>Math.round(x.getBoundingClientRect().top)),
+       tabPadding:css('.mlb-profile-tab').paddingLeft,
+       contentWidth:dimensions('main').width
+     };
+   }""")
+   check(geometry["heroRadius"]=="19px" and geometry["statRadius"]=="14px",
+         f"{width} frame and stat-card radii exactly match NBA's 19px and 14px")
+   check(geometry["statsGap"]=="11px",
+         f"{width} six stat cards use NBA's 11px spacing")
+   check(geometry["tabPadding"]=="16px",
+         f"{width} Overview/Advanced/Game Log/Milestones buttons use NBA padding")
+   if width>550:
+    check(geometry["heroDirection"]=="row" and geometry["heroPadding"]=="26px" and geometry["heroGap"]=="27px",
+          f"{width} NBA player-hero horizontal layout, 26px padding and 27px gap")
+    check(abs(geometry["photo"]["width"]-145)<1 and abs(geometry["photo"]["height"]-180)<1,
+          f"{width} NBA portrait geometry 145 by 180 pixels")
+    check(geometry["statPadding"]=="18px" and len(set(geometry["cardPositions"]))==1,
+          f"{width} six stat tiles in one row with 18px NBA padding")
+   else:
+    check(geometry["heroDirection"]=="column" and geometry["heroPadding"]=="18px",
+          f"{width} NBA-style mobile stacked player hero")
+    check(abs(geometry["photo"]["width"]-125)<1 and abs(geometry["photo"]["height"]-150)<1,
+          f"{width} NBA mobile portrait geometry 125 by 150 pixels")
+    check(geometry["statPadding"]=="12px" and len(set(geometry["cardPositions"]))==3,
+          f"{width} NBA mobile layout has two compact stat cards per row")
    check(page.locator("#profileTabs [role=tab]").count()==4,f"{width} four NBA-style profile tabs")
    check(page.locator("#profile-overview").is_visible(),f"{width} Overview default panel visible")
    page.locator('#profileTabs [data-profile-tab="advanced"]').click()

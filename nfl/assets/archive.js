@@ -90,7 +90,7 @@ function table(rows,category,{combined=false,empty="No players with recorded sta
    x.stat_values.map(s=>'<td>'+esc(s)+'</td>').join("")+'</tr>').join("")+'</tbody></table></div>';
 }
 function nav(active){
- const links=[["index.html","Overview","home"],["game.html","Games & Box Scores","game"],["stats.html","Leaderboards","stats"],["hall-of-fame.html","★ Hall of Fame","hof"],["milestones.html","PPR Milestones","milestones"],["records.html","Records","records"],["touchdowns.html","Touchdowns","touchdowns"],["highlights.html","Highlights","highlights"]];
+ const links=[["index.html","Overview","home"],["game.html","Games","game"],["stats.html","Leaderboards","stats"],["hall-of-fame.html","★ Hall of Fame","hof"],["milestones.html","PPR Milestones","milestones"],["records.html","Records","records"],["touchdowns.html","Touchdowns","touchdowns"],["highlights.html","Highlights","highlights"]];
  return '<header class="archive-header"><a class="archive-logo" href="./index.html">COURTSIDE ARCHIVE<small>EVERY GAME HAS A STORY · NFL</small></a>'+
    '<nav class="archive-nav" aria-label="NFL archive navigation">'+links.map(([href,title,name])=>'<a href="./'+href+'"'+(active===name?' aria-current="page"':'')+'>'+title+'</a>').join("")+
    '</nav><a class="back-link" href="../index.html">All archives ↗</a></header>';

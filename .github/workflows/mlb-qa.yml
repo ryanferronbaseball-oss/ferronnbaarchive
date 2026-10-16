@@ -1,0 +1,22 @@
+name: MLB archive browser QA
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "mlb/*.html"
+      - "mlb/assets/**"
+      - "mlb/data/**"
+      - "mlb/scripts/test_mlb.py"
+      - ".github/workflows/mlb-qa.yml"
+jobs:
+  mlb-browser:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install playwright
+      - run: python -m playwright install --with-deps chromium
+      - name: Verify historical boxscores and complete NBA/NFL-style MLB website
+        run: python mlb/scripts/test_mlb.py

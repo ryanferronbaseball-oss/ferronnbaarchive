@@ -1,0 +1,6241 @@
+{
+  "_meta": {
+    "source": "Official MLB StatsAPI annual awards/recipients (MLB player IDs)",
+    "source_url": "https://statsapi.mlb.com/api/v1/awards",
+    "hall_of_fame_confirmation": "https://www.mlb.com/news/hall-of-fame-inductions-by-year",
+    "career_scope": "Awarded at any point through MLB's latest officially posted honors, not necessarily during an attended season.",
+    "mvp_definition": "American and National League regular-season MVP awards only",
+    "cy_young_definition": "AL/NL and historical combined MLB Cy Young awards only",
+    "gold_glove_definition": "Rawlings AL/NL standard Gold Glove awards only",
+    "silver_slugger_definition": "AL/NL standard Silver Slugger awards only",
+    "player_pool": 1633,
+    "honored_players": 287,
+    "inductees": 21,
+    "award_recipients": {
+      "mvp": 33,
+      "cy_young": 16,
+      "gold_glove": 159,
+      "silver_slugger": 191
+    },
+    "sources": {
+      "MLBHOF": {
+        "recipient_records": 354,
+        "matched_records": 21
+      },
+      "ALMVP": {
+        "recipient_records": 95,
+        "matched_records": 22
+      },
+      "NLMVP": {
+        "recipient_records": 96,
+        "matched_records": 23
+      },
+      "ALCY": {
+        "recipient_records": 60,
+        "matched_records": 8
+      },
+      "NLCY": {
+        "recipient_records": 59,
+        "matched_records": 14
+      },
+      "MLBCY": {
+        "recipient_records": 11,
+        "matched_records": 0
+      },
+      "ALGG": {
+        "recipient_records": 618,
+        "matched_records": 168
+      },
+      "NLGG": {
+        "recipient_records": 618,
+        "matched_records": 193
+      },
+      "ALSS": {
+        "recipient_records": 419,
+        "matched_records": 197
+      },
+      "NLSS": {
+        "recipient_records": 418,
+        "matched_records": 225
+      }
+    },
+    "imported_utc": "2026-10-16T15:21:22.132759+00:00"
+  },
+  "players": {
+    "123833": {
+      "name": "Larry Walker",
+      "hall_of_fame": {
+        "year": 2020,
+        "source_id": "MLBHOF",
+        "source": "https://www.mlb.com/news/hall-of-fame-inductions-by-year"
+      },
+      "mvp": [
+        {
+          "year": 1997,
+          "league": "NL"
+        }
+      ],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 1992,
+          "league": "NL"
+        },
+        {
+          "year": 1993,
+          "league": "NL"
+        },
+        {
+          "year": 1997,
+          "league": "NL"
+        },
+        {
+          "year": 1998,
+          "league": "NL"
+        },
+        {
+          "year": 1999,
+          "league": "NL"
+        },
+        {
+          "year": 2001,
+          "league": "NL"
+        },
+        {
+          "year": 2002,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 1992,
+          "league": "NL"
+        },
+        {
+          "year": 1997,
+          "league": "NL"
+        },
+        {
+          "year": 1999,
+          "league": "NL"
+        }
+      ]
+    },
+    "115732": {
+      "name": "Todd Helton",
+      "hall_of_fame": {
+        "year": 2024,
+        "source_id": "MLBHOF",
+        "source": "https://www.mlb.com/news/hall-of-fame-inductions-by-year"
+      },
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2001,
+          "league": "NL"
+        },
+        {
+          "year": 2002,
+          "league": "NL"
+        },
+        {
+          "year": 2004,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 2000,
+          "league": "NL"
+        },
+        {
+          "year": 2001,
+          "league": "NL"
+        },
+        {
+          "year": 2002,
+          "league": "NL"
+        },
+        {
+          "year": 2003,
+          "league": "NL"
+        }
+      ]
+    },
+    "116569": {
+      "name": "Charles Johnson",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 1995,
+          "league": "NL"
+        },
+        {
+          "year": 1996,
+          "league": "NL"
+        },
+        {
+          "year": 1997,
+          "league": "NL"
+        },
+        {
+          "year": 1998,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "115749": {
+      "name": "Rickey Henderson",
+      "hall_of_fame": {
+        "year": 2009,
+        "source_id": "MLBHOF",
+        "source": "https://www.mlb.com/news/hall-of-fame-inductions-by-year"
+      },
+      "mvp": [
+        {
+          "year": 1990,
+          "league": "AL"
+        }
+      ],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 1981,
+          "league": "AL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 1981,
+          "league": "AL"
+        },
+        {
+          "year": 1985,
+          "league": "AL"
+        },
+        {
+          "year": 1990,
+          "league": "AL"
+        }
+      ]
+    },
+    "285131": {
+      "name": "César Izturis",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2004,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "134181": {
+      "name": "Adrian Beltré",
+      "hall_of_fame": {
+        "year": 2024,
+        "source_id": "MLBHOF",
+        "source": "https://www.mlb.com/news/hall-of-fame-inductions-by-year"
+      },
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2007,
+          "league": "AL"
+        },
+        {
+          "year": 2008,
+          "league": "AL"
+        },
+        {
+          "year": 2011,
+          "league": "AL"
+        },
+        {
+          "year": 2012,
+          "league": "AL"
+        },
+        {
+          "year": 2016,
+          "league": "AL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 2004,
+          "league": "NL"
+        },
+        {
+          "year": 2010,
+          "league": "AL"
+        },
+        {
+          "year": 2011,
+          "league": "AL"
+        },
+        {
+          "year": 2014,
+          "league": "AL"
+        }
+      ]
+    },
+    "115094": {
+      "name": "Shawn Green",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 1999,
+          "league": "AL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 1999,
+          "league": "AL"
+        }
+      ]
+    },
+    "150378": {
+      "name": "Eric Gagne",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [
+        {
+          "year": 2003,
+          "league": "NL"
+        }
+      ],
+      "gold_glove": [],
+      "silver_slugger": []
+    },
+    "150479": {
+      "name": "Felipe López",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2005,
+          "league": "NL"
+        }
+      ]
+    },
+    "110383": {
+      "name": "Rich Aurilia",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2001,
+          "league": "NL"
+        }
+      ]
+    },
+    "115135": {
+      "name": "Ken Griffey Jr.",
+      "hall_of_fame": {
+        "year": 2016,
+        "source_id": "MLBHOF",
+        "source": "https://www.mlb.com/news/hall-of-fame-inductions-by-year"
+      },
+      "mvp": [
+        {
+          "year": 1997,
+          "league": "AL"
+        }
+      ],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 1990,
+          "league": "AL"
+        },
+        {
+          "year": 1991,
+          "league": "AL"
+        },
+        {
+          "year": 1992,
+          "league": "AL"
+        },
+        {
+          "year": 1993,
+          "league": "AL"
+        },
+        {
+          "year": 1994,
+          "league": "AL"
+        },
+        {
+          "year": 1995,
+          "league": "AL"
+        },
+        {
+          "year": 1996,
+          "league": "AL"
+        },
+        {
+          "year": 1997,
+          "league": "AL"
+        },
+        {
+          "year": 1998,
+          "league": "AL"
+        },
+        {
+          "year": 1999,
+          "league": "AL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 1991,
+          "league": "AL"
+        },
+        {
+          "year": 1993,
+          "league": "AL"
+        },
+        {
+          "year": 1994,
+          "league": "AL"
+        },
+        {
+          "year": 1996,
+          "league": "AL"
+        },
+        {
+          "year": 1997,
+          "league": "AL"
+        },
+        {
+          "year": 1998,
+          "league": "AL"
+        },
+        {
+          "year": 1999,
+          "league": "AL"
+        }
+      ]
+    },
+    "150484": {
+      "name": "Vernon Wells",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2004,
+          "league": "AL"
+        },
+        {
+          "year": 2005,
+          "league": "AL"
+        },
+        {
+          "year": 2006,
+          "league": "AL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 2003,
+          "league": "AL"
+        }
+      ]
+    },
+    "407861": {
+      "name": "Orlando Hudson",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2005,
+          "league": "AL"
+        },
+        {
+          "year": 2006,
+          "league": "NL"
+        },
+        {
+          "year": 2007,
+          "league": "NL"
+        },
+        {
+          "year": 2009,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "431094": {
+      "name": "Aaron Hill",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2009,
+          "league": "AL"
+        },
+        {
+          "year": 2012,
+          "league": "NL"
+        }
+      ]
+    },
+    "113889": {
+      "name": "Darin Erstad",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2000,
+          "league": "AL"
+        },
+        {
+          "year": 2002,
+          "league": "AL"
+        },
+        {
+          "year": 2004,
+          "league": "AL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 2000,
+          "league": "AL"
+        }
+      ]
+    },
+    "134260": {
+      "name": "Bengie Molina",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2002,
+          "league": "AL"
+        },
+        {
+          "year": 2003,
+          "league": "AL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "111851": {
+      "name": "Orlando Cabrera",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2001,
+          "league": "NL"
+        },
+        {
+          "year": 2007,
+          "league": "AL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "115223": {
+      "name": "Vladimir Guerrero",
+      "hall_of_fame": {
+        "year": 2018,
+        "source_id": "MLBHOF",
+        "source": "https://www.mlb.com/news/hall-of-fame-inductions-by-year"
+      },
+      "mvp": [
+        {
+          "year": 2004,
+          "league": "AL"
+        }
+      ],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 1999,
+          "league": "NL"
+        },
+        {
+          "year": 2000,
+          "league": "NL"
+        },
+        {
+          "year": 2002,
+          "league": "NL"
+        },
+        {
+          "year": 2004,
+          "league": "AL"
+        },
+        {
+          "year": 2005,
+          "league": "AL"
+        },
+        {
+          "year": 2006,
+          "league": "AL"
+        },
+        {
+          "year": 2007,
+          "league": "AL"
+        },
+        {
+          "year": 2010,
+          "league": "AL"
+        }
+      ]
+    },
+    "117928": {
+      "name": "Mark Loretta",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2004,
+          "league": "NL"
+        }
+      ]
+    },
+    "124695": {
+      "name": "Eric Young Sr.",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 1996,
+          "league": "NL"
+        }
+      ]
+    },
+    "112903": {
+      "name": "José Cruz Jr.",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2003,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "116999": {
+      "name": "Jeff Kent",
+      "hall_of_fame": {
+        "year": 2026,
+        "source_id": "MLBHOF",
+        "source": "https://www.mlb.com/news/hall-of-fame-inductions-by-year"
+      },
+      "mvp": [
+        {
+          "year": 2000,
+          "league": "NL"
+        }
+      ],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2000,
+          "league": "NL"
+        },
+        {
+          "year": 2001,
+          "league": "NL"
+        },
+        {
+          "year": 2002,
+          "league": "NL"
+        },
+        {
+          "year": 2005,
+          "league": "NL"
+        }
+      ]
+    },
+    "400085": {
+      "name": "Ichiro Suzuki",
+      "hall_of_fame": {
+        "year": 2025,
+        "source_id": "MLBHOF",
+        "source": "https://www.mlb.com/news/hall-of-fame-inductions-by-year"
+      },
+      "mvp": [
+        {
+          "year": 2001,
+          "league": "AL"
+        }
+      ],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2001,
+          "league": "AL"
+        },
+        {
+          "year": 2002,
+          "league": "AL"
+        },
+        {
+          "year": 2003,
+          "league": "AL"
+        },
+        {
+          "year": 2004,
+          "league": "AL"
+        },
+        {
+          "year": 2005,
+          "league": "AL"
+        },
+        {
+          "year": 2006,
+          "league": "AL"
+        },
+        {
+          "year": 2007,
+          "league": "AL"
+        },
+        {
+          "year": 2008,
+          "league": "AL"
+        },
+        {
+          "year": 2009,
+          "league": "AL"
+        },
+        {
+          "year": 2010,
+          "league": "AL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 2001,
+          "league": "AL"
+        },
+        {
+          "year": 2007,
+          "league": "AL"
+        },
+        {
+          "year": 2009,
+          "league": "AL"
+        }
+      ]
+    },
+    "121640": {
+      "name": "Tim Salmon",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 1995,
+          "league": "AL"
+        }
+      ]
+    },
+    "110236": {
+      "name": "Garret Anderson",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2002,
+          "league": "AL"
+        },
+        {
+          "year": 2003,
+          "league": "AL"
+        }
+      ]
+    },
+    "425560": {
+      "name": "Adam LaRoche",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2012,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 2012,
+          "league": "NL"
+        }
+      ]
+    },
+    "116706": {
+      "name": "Chipper Jones",
+      "hall_of_fame": {
+        "year": 2018,
+        "source_id": "MLBHOF",
+        "source": "https://www.mlb.com/news/hall-of-fame-inductions-by-year"
+      },
+      "mvp": [
+        {
+          "year": 1999,
+          "league": "NL"
+        }
+      ],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 1999,
+          "league": "NL"
+        },
+        {
+          "year": 2000,
+          "league": "NL"
+        }
+      ]
+    },
+    "122477": {
+      "name": "John Smoltz",
+      "hall_of_fame": {
+        "year": 2015,
+        "source_id": "MLBHOF",
+        "source": "https://www.mlb.com/news/hall-of-fame-inductions-by-year"
+      },
+      "mvp": [],
+      "cy_young": [
+        {
+          "year": 1996,
+          "league": "NL"
+        }
+      ],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 1997,
+          "league": "NL"
+        }
+      ]
+    },
+    "121074": {
+      "name": "Edgar Renteria",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2002,
+          "league": "NL"
+        },
+        {
+          "year": 2003,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 2000,
+          "league": "NL"
+        },
+        {
+          "year": 2002,
+          "league": "NL"
+        },
+        {
+          "year": 2003,
+          "league": "NL"
+        }
+      ]
+    },
+    "425796": {
+      "name": "Jeff Francoeur",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2007,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "116662": {
+      "name": "Andruw Jones",
+      "hall_of_fame": {
+        "year": 2026,
+        "source_id": "MLBHOF",
+        "source": "https://www.mlb.com/news/hall-of-fame-inductions-by-year"
+      },
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 1998,
+          "league": "NL"
+        },
+        {
+          "year": 1999,
+          "league": "NL"
+        },
+        {
+          "year": 2000,
+          "league": "NL"
+        },
+        {
+          "year": 2001,
+          "league": "NL"
+        },
+        {
+          "year": 2002,
+          "league": "NL"
+        },
+        {
+          "year": 2003,
+          "league": "NL"
+        },
+        {
+          "year": 2004,
+          "league": "NL"
+        },
+        {
+          "year": 2005,
+          "league": "NL"
+        },
+        {
+          "year": 2006,
+          "league": "NL"
+        },
+        {
+          "year": 2007,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 2005,
+          "league": "NL"
+        }
+      ]
+    },
+    "435263": {
+      "name": "Brian McCann",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2006,
+          "league": "NL"
+        },
+        {
+          "year": 2008,
+          "league": "NL"
+        },
+        {
+          "year": 2009,
+          "league": "NL"
+        },
+        {
+          "year": 2010,
+          "league": "NL"
+        },
+        {
+          "year": 2011,
+          "league": "NL"
+        },
+        {
+          "year": 2015,
+          "league": "AL"
+        }
+      ]
+    },
+    "120691": {
+      "name": "Jorge Posada",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2000,
+          "league": "AL"
+        },
+        {
+          "year": 2001,
+          "league": "AL"
+        },
+        {
+          "year": 2002,
+          "league": "AL"
+        },
+        {
+          "year": 2003,
+          "league": "AL"
+        },
+        {
+          "year": 2007,
+          "league": "AL"
+        }
+      ]
+    },
+    "114739": {
+      "name": "Jason Giambi",
+      "hall_of_fame": null,
+      "mvp": [
+        {
+          "year": 2000,
+          "league": "AL"
+        }
+      ],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2001,
+          "league": "AL"
+        },
+        {
+          "year": 2002,
+          "league": "AL"
+        }
+      ]
+    },
+    "116539": {
+      "name": "Derek Jeter",
+      "hall_of_fame": {
+        "year": 2020,
+        "source_id": "MLBHOF",
+        "source": "https://www.mlb.com/news/hall-of-fame-inductions-by-year"
+      },
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2004,
+          "league": "AL"
+        },
+        {
+          "year": 2005,
+          "league": "AL"
+        },
+        {
+          "year": 2006,
+          "league": "AL"
+        },
+        {
+          "year": 2009,
+          "league": "AL"
+        },
+        {
+          "year": 2010,
+          "league": "AL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 2006,
+          "league": "AL"
+        },
+        {
+          "year": 2007,
+          "league": "AL"
+        },
+        {
+          "year": 2008,
+          "league": "AL"
+        },
+        {
+          "year": 2009,
+          "league": "AL"
+        },
+        {
+          "year": 2012,
+          "league": "AL"
+        }
+      ]
+    },
+    "124288": {
+      "name": "Bernie Williams",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 1997,
+          "league": "AL"
+        },
+        {
+          "year": 1998,
+          "league": "AL"
+        },
+        {
+          "year": 1999,
+          "league": "AL"
+        },
+        {
+          "year": 2000,
+          "league": "AL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 2002,
+          "league": "AL"
+        }
+      ]
+    },
+    "121250": {
+      "name": "Mariano Rivera",
+      "hall_of_fame": {
+        "year": 2019,
+        "source_id": "MLBHOF",
+        "source": "https://www.mlb.com/news/hall-of-fame-inductions-by-year"
+      },
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": []
+    },
+    "121347": {
+      "name": "Alex Rodriguez",
+      "hall_of_fame": null,
+      "mvp": [
+        {
+          "year": 2003,
+          "league": "AL"
+        },
+        {
+          "year": 2005,
+          "league": "AL"
+        },
+        {
+          "year": 2007,
+          "league": "AL"
+        }
+      ],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2002,
+          "league": "AL"
+        },
+        {
+          "year": 2003,
+          "league": "AL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 1996,
+          "league": "AL"
+        },
+        {
+          "year": 1998,
+          "league": "AL"
+        },
+        {
+          "year": 1999,
+          "league": "AL"
+        },
+        {
+          "year": 2000,
+          "league": "AL"
+        },
+        {
+          "year": 2001,
+          "league": "AL"
+        },
+        {
+          "year": 2002,
+          "league": "AL"
+        },
+        {
+          "year": 2003,
+          "league": "AL"
+        },
+        {
+          "year": 2005,
+          "league": "AL"
+        },
+        {
+          "year": 2007,
+          "league": "AL"
+        },
+        {
+          "year": 2008,
+          "league": "AL"
+        }
+      ]
+    },
+    "475582": {
+      "name": "Ryan Zimmerman",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2009,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 2009,
+          "league": "NL"
+        },
+        {
+          "year": 2010,
+          "league": "NL"
+        }
+      ]
+    },
+    "150093": {
+      "name": "Alfonso Soriano",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2002,
+          "league": "AL"
+        },
+        {
+          "year": 2004,
+          "league": "AL"
+        },
+        {
+          "year": 2005,
+          "league": "AL"
+        },
+        {
+          "year": 2006,
+          "league": "NL"
+        }
+      ]
+    },
+    "111904": {
+      "name": "Mike Cameron",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2001,
+          "league": "AL"
+        },
+        {
+          "year": 2003,
+          "league": "AL"
+        },
+        {
+          "year": 2006,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "408236": {
+      "name": "Adrián González",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2008,
+          "league": "NL"
+        },
+        {
+          "year": 2009,
+          "league": "NL"
+        },
+        {
+          "year": 2011,
+          "league": "AL"
+        },
+        {
+          "year": 2014,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 2011,
+          "league": "AL"
+        },
+        {
+          "year": 2014,
+          "league": "NL"
+        }
+      ]
+    },
+    "120536": {
+      "name": "Mike Piazza",
+      "hall_of_fame": {
+        "year": 2016,
+        "source_id": "MLBHOF",
+        "source": "https://www.mlb.com/news/hall-of-fame-inductions-by-year"
+      },
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 1993,
+          "league": "NL"
+        },
+        {
+          "year": 1994,
+          "league": "NL"
+        },
+        {
+          "year": 1995,
+          "league": "NL"
+        },
+        {
+          "year": 1996,
+          "league": "NL"
+        },
+        {
+          "year": 1997,
+          "league": "NL"
+        },
+        {
+          "year": 1998,
+          "league": "NL"
+        },
+        {
+          "year": 1999,
+          "league": "NL"
+        },
+        {
+          "year": 2000,
+          "league": "NL"
+        },
+        {
+          "year": 2001,
+          "league": "NL"
+        },
+        {
+          "year": 2002,
+          "league": "NL"
+        }
+      ]
+    },
+    "120074": {
+      "name": "David Ortiz",
+      "hall_of_fame": {
+        "year": 2022,
+        "source_id": "MLBHOF",
+        "source": "https://www.mlb.com/news/hall-of-fame-inductions-by-year"
+      },
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2004,
+          "league": "AL"
+        },
+        {
+          "year": 2005,
+          "league": "AL"
+        },
+        {
+          "year": 2006,
+          "league": "AL"
+        },
+        {
+          "year": 2007,
+          "league": "AL"
+        },
+        {
+          "year": 2011,
+          "league": "AL"
+        },
+        {
+          "year": 2013,
+          "league": "AL"
+        },
+        {
+          "year": 2016,
+          "league": "AL"
+        }
+      ]
+    },
+    "136780": {
+      "name": "Mike Lowell",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2005,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 2003,
+          "league": "NL"
+        }
+      ]
+    },
+    "120903": {
+      "name": "Manny Ramirez",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 1995,
+          "league": "AL"
+        },
+        {
+          "year": 1999,
+          "league": "AL"
+        },
+        {
+          "year": 2000,
+          "league": "AL"
+        },
+        {
+          "year": 2001,
+          "league": "AL"
+        },
+        {
+          "year": 2002,
+          "league": "AL"
+        },
+        {
+          "year": 2003,
+          "league": "AL"
+        },
+        {
+          "year": 2004,
+          "league": "AL"
+        },
+        {
+          "year": 2005,
+          "league": "AL"
+        },
+        {
+          "year": 2006,
+          "league": "AL"
+        }
+      ]
+    },
+    "456030": {
+      "name": "Dustin Pedroia",
+      "hall_of_fame": null,
+      "mvp": [
+        {
+          "year": 2008,
+          "league": "AL"
+        }
+      ],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2008,
+          "league": "AL"
+        },
+        {
+          "year": 2011,
+          "league": "AL"
+        },
+        {
+          "year": 2013,
+          "league": "AL"
+        },
+        {
+          "year": 2014,
+          "league": "AL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 2008,
+          "league": "AL"
+        }
+      ]
+    },
+    "425903": {
+      "name": "Kevin Youkilis",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2007,
+          "league": "AL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "452252": {
+      "name": "Adam Lind",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2009,
+          "league": "AL"
+        }
+      ]
+    },
+    "136880": {
+      "name": "Roy Halladay",
+      "hall_of_fame": {
+        "year": 2019,
+        "source_id": "MLBHOF",
+        "source": "https://www.mlb.com/news/hall-of-fame-inductions-by-year"
+      },
+      "mvp": [],
+      "cy_young": [
+        {
+          "year": 2003,
+          "league": "AL"
+        },
+        {
+          "year": 2010,
+          "league": "NL"
+        }
+      ],
+      "gold_glove": [],
+      "silver_slugger": []
+    },
+    "136267": {
+      "name": "Troy Glaus",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2000,
+          "league": "AL"
+        },
+        {
+          "year": 2001,
+          "league": "AL"
+        }
+      ]
+    },
+    "431145": {
+      "name": "Russell Martin",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2007,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 2007,
+          "league": "NL"
+        }
+      ]
+    },
+    "114935": {
+      "name": "Luis Gonzalez",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2001,
+          "league": "NL"
+        }
+      ]
+    },
+    "461314": {
+      "name": "Matt Kemp",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2009,
+          "league": "NL"
+        },
+        {
+          "year": 2011,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 2009,
+          "league": "NL"
+        },
+        {
+          "year": 2011,
+          "league": "NL"
+        }
+      ]
+    },
+    "444843": {
+      "name": "Andre Ethier",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2011,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 2009,
+          "league": "NL"
+        }
+      ]
+    },
+    "117759": {
+      "name": "Mike Lieberthal",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 1999,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "114596": {
+      "name": "Nomar Garciaparra",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 1997,
+          "league": "AL"
+        }
+      ]
+    },
+    "430947": {
+      "name": "Erick Aybar",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2011,
+          "league": "AL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "114849": {
+      "name": "Tom Glavine",
+      "hall_of_fame": {
+        "year": 2014,
+        "source_id": "MLBHOF",
+        "source": "https://www.mlb.com/news/hall-of-fame-inductions-by-year"
+      },
+      "mvp": [],
+      "cy_young": [
+        {
+          "year": 1991,
+          "league": "NL"
+        },
+        {
+          "year": 1998,
+          "league": "NL"
+        }
+      ],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 1991,
+          "league": "NL"
+        },
+        {
+          "year": 1995,
+          "league": "NL"
+        },
+        {
+          "year": 1996,
+          "league": "NL"
+        },
+        {
+          "year": 1998,
+          "league": "NL"
+        }
+      ]
+    },
+    "431151": {
+      "name": "David Wright",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2007,
+          "league": "NL"
+        },
+        {
+          "year": 2008,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 2007,
+          "league": "NL"
+        },
+        {
+          "year": 2008,
+          "league": "NL"
+        }
+      ]
+    },
+    "408314": {
+      "name": "José Reyes",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2006,
+          "league": "NL"
+        }
+      ]
+    },
+    "136860": {
+      "name": "Carlos Beltrán",
+      "hall_of_fame": {
+        "year": 2026,
+        "source_id": "MLBHOF",
+        "source": "https://www.mlb.com/news/hall-of-fame-inductions-by-year"
+      },
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2006,
+          "league": "NL"
+        },
+        {
+          "year": 2007,
+          "league": "NL"
+        },
+        {
+          "year": 2008,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 2006,
+          "league": "NL"
+        },
+        {
+          "year": 2007,
+          "league": "NL"
+        }
+      ]
+    },
+    "110184": {
+      "name": "Sandy Alomar Jr.",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 1990,
+          "league": "AL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "113232": {
+      "name": "Carlos Delgado",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 1999,
+          "league": "AL"
+        },
+        {
+          "year": 2000,
+          "league": "AL"
+        },
+        {
+          "year": 2003,
+          "league": "AL"
+        }
+      ]
+    },
+    "425630": {
+      "name": "Brandon Webb",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [
+        {
+          "year": 2006,
+          "league": "NL"
+        }
+      ],
+      "gold_glove": [],
+      "silver_slugger": []
+    },
+    "435041": {
+      "name": "Carlos Quentin",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2008,
+          "league": "AL"
+        }
+      ]
+    },
+    "452249": {
+      "name": "Micah Owings",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2007,
+          "league": "NL"
+        }
+      ]
+    },
+    "348563": {
+      "name": "Morgan Ensberg",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2005,
+          "league": "NL"
+        }
+      ]
+    },
+    "116034": {
+      "name": "Trevor Hoffman",
+      "hall_of_fame": {
+        "year": 2018,
+        "source_id": "MLBHOF",
+        "source": "https://www.mlb.com/news/hall-of-fame-inductions-by-year"
+      },
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": []
+    },
+    "136664": {
+      "name": "Michael Barrett",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2005,
+          "league": "NL"
+        }
+      ]
+    },
+    "285078": {
+      "name": "Josh Hamilton",
+      "hall_of_fame": null,
+      "mvp": [
+        {
+          "year": 2010,
+          "league": "AL"
+        }
+      ],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2008,
+          "league": "AL"
+        },
+        {
+          "year": 2010,
+          "league": "AL"
+        },
+        {
+          "year": 2012,
+          "league": "AL"
+        }
+      ]
+    },
+    "408252": {
+      "name": "Brandon Phillips",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2008,
+          "league": "NL"
+        },
+        {
+          "year": 2010,
+          "league": "NL"
+        },
+        {
+          "year": 2011,
+          "league": "NL"
+        },
+        {
+          "year": 2013,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 2011,
+          "league": "NL"
+        }
+      ]
+    },
+    "133380": {
+      "name": "Aramis Ramirez",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2011,
+          "league": "NL"
+        }
+      ]
+    },
+    "150302": {
+      "name": "Jason Marquis",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2005,
+          "league": "NL"
+        }
+      ]
+    },
+    "117601": {
+      "name": "Derrek Lee",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2003,
+          "league": "NL"
+        },
+        {
+          "year": 2005,
+          "league": "NL"
+        },
+        {
+          "year": 2007,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 2005,
+          "league": "NL"
+        }
+      ]
+    },
+    "407812": {
+      "name": "Matt Holliday",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2006,
+          "league": "NL"
+        },
+        {
+          "year": 2007,
+          "league": "NL"
+        },
+        {
+          "year": 2008,
+          "league": "NL"
+        },
+        {
+          "year": 2010,
+          "league": "NL"
+        }
+      ]
+    },
+    "453064": {
+      "name": "Troy Tulowitzki",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2010,
+          "league": "NL"
+        },
+        {
+          "year": 2011,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 2010,
+          "league": "NL"
+        },
+        {
+          "year": 2011,
+          "league": "NL"
+        }
+      ]
+    },
+    "113679": {
+      "name": "Jermaine Dye",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2000,
+          "league": "AL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 2006,
+          "league": "AL"
+        }
+      ]
+    },
+    "123272": {
+      "name": "Jim Thome",
+      "hall_of_fame": {
+        "year": 2018,
+        "source_id": "MLBHOF",
+        "source": "https://www.mlb.com/news/hall-of-fame-inductions-by-year"
+      },
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 1996,
+          "league": "AL"
+        }
+      ]
+    },
+    "150317": {
+      "name": "Joe Crede",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2006,
+          "league": "AL"
+        }
+      ]
+    },
+    "150229": {
+      "name": "A.J. Pierzynski",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2012,
+          "league": "AL"
+        }
+      ]
+    },
+    "116338": {
+      "name": "Torii Hunter",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2001,
+          "league": "AL"
+        },
+        {
+          "year": 2002,
+          "league": "AL"
+        },
+        {
+          "year": 2003,
+          "league": "AL"
+        },
+        {
+          "year": 2004,
+          "league": "AL"
+        },
+        {
+          "year": 2005,
+          "league": "AL"
+        },
+        {
+          "year": 2006,
+          "league": "AL"
+        },
+        {
+          "year": 2007,
+          "league": "AL"
+        },
+        {
+          "year": 2008,
+          "league": "AL"
+        },
+        {
+          "year": 2009,
+          "league": "AL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 2009,
+          "league": "AL"
+        },
+        {
+          "year": 2013,
+          "league": "AL"
+        }
+      ]
+    },
+    "477132": {
+      "name": "Clayton Kershaw",
+      "hall_of_fame": null,
+      "mvp": [
+        {
+          "year": 2014,
+          "league": "NL"
+        }
+      ],
+      "cy_young": [
+        {
+          "year": 2011,
+          "league": "NL"
+        },
+        {
+          "year": 2013,
+          "league": "NL"
+        },
+        {
+          "year": 2014,
+          "league": "NL"
+        }
+      ],
+      "gold_glove": [
+        {
+          "year": 2011,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "460576": {
+      "name": "Carlos Gómez",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2013,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "408047": {
+      "name": "Justin Morneau",
+      "hall_of_fame": null,
+      "mvp": [
+        {
+          "year": 2006,
+          "league": "AL"
+        }
+      ],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2006,
+          "league": "AL"
+        },
+        {
+          "year": 2008,
+          "league": "AL"
+        }
+      ]
+    },
+    "150212": {
+      "name": "Michael Cuddyer",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2013,
+          "league": "NL"
+        }
+      ]
+    },
+    "452104": {
+      "name": "Chase Headley",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2012,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 2012,
+          "league": "NL"
+        }
+      ]
+    },
+    "123723": {
+      "name": "Jose Vidro",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2003,
+          "league": "NL"
+        }
+      ]
+    },
+    "408241": {
+      "name": "Jake Peavy",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [
+        {
+          "year": 2007,
+          "league": "NL"
+        }
+      ],
+      "gold_glove": [
+        {
+          "year": 2012,
+          "league": "AL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "429666": {
+      "name": "J.J. Hardy",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2012,
+          "league": "AL"
+        },
+        {
+          "year": 2013,
+          "league": "AL"
+        },
+        {
+          "year": 2014,
+          "league": "AL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 2013,
+          "league": "AL"
+        }
+      ]
+    },
+    "425902": {
+      "name": "Prince Fielder",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2007,
+          "league": "NL"
+        },
+        {
+          "year": 2011,
+          "league": "NL"
+        },
+        {
+          "year": 2012,
+          "league": "AL"
+        }
+      ]
+    },
+    "460075": {
+      "name": "Ryan Braun",
+      "hall_of_fame": null,
+      "mvp": [
+        {
+          "year": 2011,
+          "league": "NL"
+        }
+      ],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2008,
+          "league": "NL"
+        },
+        {
+          "year": 2009,
+          "league": "NL"
+        },
+        {
+          "year": 2010,
+          "league": "NL"
+        },
+        {
+          "year": 2011,
+          "league": "NL"
+        },
+        {
+          "year": 2012,
+          "league": "NL"
+        }
+      ]
+    },
+    "285079": {
+      "name": "R.A. Dickey",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [
+        {
+          "year": 2012,
+          "league": "NL"
+        }
+      ],
+      "gold_glove": [
+        {
+          "year": 2013,
+          "league": "AL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "407893": {
+      "name": "Mark Teixeira",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2005,
+          "league": "AL"
+        },
+        {
+          "year": 2006,
+          "league": "AL"
+        },
+        {
+          "year": 2009,
+          "league": "AL"
+        },
+        {
+          "year": 2010,
+          "league": "AL"
+        },
+        {
+          "year": 2012,
+          "league": "AL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 2004,
+          "league": "AL"
+        },
+        {
+          "year": 2005,
+          "league": "AL"
+        },
+        {
+          "year": 2009,
+          "league": "AL"
+        }
+      ]
+    },
+    "453056": {
+      "name": "Jacoby Ellsbury",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2011,
+          "league": "AL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 2011,
+          "league": "AL"
+        }
+      ]
+    },
+    "424726": {
+      "name": "Jason Bay",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2009,
+          "league": "AL"
+        }
+      ]
+    },
+    "110029": {
+      "name": "Bobby Abreu",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2005,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 2004,
+          "league": "NL"
+        }
+      ]
+    },
+    "434778": {
+      "name": "Kendrys Morales",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2015,
+          "league": "AL"
+        }
+      ]
+    },
+    "425545": {
+      "name": "Josh Willingham",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2012,
+          "league": "AL"
+        }
+      ]
+    },
+    "519317": {
+      "name": "Giancarlo Stanton",
+      "hall_of_fame": null,
+      "mvp": [
+        {
+          "year": 2017,
+          "league": "NL"
+        }
+      ],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2014,
+          "league": "NL"
+        },
+        {
+          "year": 2017,
+          "league": "NL"
+        }
+      ]
+    },
+    "462564": {
+      "name": "Dan Uggla",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2010,
+          "league": "NL"
+        }
+      ]
+    },
+    "434670": {
+      "name": "Hanley Ramirez",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2008,
+          "league": "NL"
+        },
+        {
+          "year": 2009,
+          "league": "NL"
+        }
+      ]
+    },
+    "448801": {
+      "name": "Chris Davis",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2013,
+          "league": "AL"
+        }
+      ]
+    },
+    "435079": {
+      "name": "Ian Kinsler",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2016,
+          "league": "AL"
+        },
+        {
+          "year": 2018,
+          "league": "AL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "443558": {
+      "name": "Nelson Cruz",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2015,
+          "league": "AL"
+        },
+        {
+          "year": 2017,
+          "league": "AL"
+        },
+        {
+          "year": 2019,
+          "league": "AL"
+        },
+        {
+          "year": 2020,
+          "league": "AL"
+        }
+      ]
+    },
+    "276545": {
+      "name": "Michael Young",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2008,
+          "league": "AL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "543339": {
+      "name": "Daniel Hudson",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2011,
+          "league": "NL"
+        }
+      ]
+    },
+    "457708": {
+      "name": "Justin Upton",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2011,
+          "league": "NL"
+        },
+        {
+          "year": 2014,
+          "league": "NL"
+        },
+        {
+          "year": 2017,
+          "league": "AL"
+        }
+      ]
+    },
+    "467827": {
+      "name": "Gerardo Parra",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2011,
+          "league": "NL"
+        },
+        {
+          "year": 2013,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "407886": {
+      "name": "Ryan Ludwick",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2008,
+          "league": "NL"
+        }
+      ]
+    },
+    "543829": {
+      "name": "Dee Strange-Gordon",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2015,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 2015,
+          "league": "NL"
+        }
+      ]
+    },
+    "456715": {
+      "name": "Lorenzo Cain",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2019,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "456714": {
+      "name": "Billy Butler",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2012,
+          "league": "AL"
+        }
+      ]
+    },
+    "444876": {
+      "name": "Alcides Escobar",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2015,
+          "league": "AL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "460086": {
+      "name": "Alex Gordon",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2011,
+          "league": "AL"
+        },
+        {
+          "year": 2012,
+          "league": "AL"
+        },
+        {
+          "year": 2013,
+          "league": "AL"
+        },
+        {
+          "year": 2014,
+          "league": "AL"
+        },
+        {
+          "year": 2017,
+          "league": "AL"
+        },
+        {
+          "year": 2018,
+          "league": "AL"
+        },
+        {
+          "year": 2019,
+          "league": "AL"
+        },
+        {
+          "year": 2020,
+          "league": "AL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "543333": {
+      "name": "Eric Hosmer",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2013,
+          "league": "AL"
+        },
+        {
+          "year": 2014,
+          "league": "AL"
+        },
+        {
+          "year": 2015,
+          "league": "AL"
+        },
+        {
+          "year": 2017,
+          "league": "AL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 2017,
+          "league": "AL"
+        }
+      ]
+    },
+    "405395": {
+      "name": "Albert Pujols",
+      "hall_of_fame": null,
+      "mvp": [
+        {
+          "year": 2005,
+          "league": "NL"
+        },
+        {
+          "year": 2008,
+          "league": "NL"
+        },
+        {
+          "year": 2009,
+          "league": "NL"
+        }
+      ],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2006,
+          "league": "NL"
+        },
+        {
+          "year": 2010,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 2001,
+          "league": "NL"
+        },
+        {
+          "year": 2003,
+          "league": "NL"
+        },
+        {
+          "year": 2004,
+          "league": "NL"
+        },
+        {
+          "year": 2008,
+          "league": "NL"
+        },
+        {
+          "year": 2009,
+          "league": "NL"
+        },
+        {
+          "year": 2010,
+          "league": "NL"
+        }
+      ]
+    },
+    "444432": {
+      "name": "Mark Trumbo",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2016,
+          "league": "AL"
+        }
+      ]
+    },
+    "502517": {
+      "name": "Daniel Murphy",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2016,
+          "league": "NL"
+        },
+        {
+          "year": 2017,
+          "league": "NL"
+        }
+      ]
+    },
+    "519203": {
+      "name": "Anthony Rizzo",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2016,
+          "league": "NL"
+        },
+        {
+          "year": 2018,
+          "league": "NL"
+        },
+        {
+          "year": 2019,
+          "league": "NL"
+        },
+        {
+          "year": 2020,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 2016,
+          "league": "NL"
+        }
+      ]
+    },
+    "446381": {
+      "name": "Darwin Barney",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2012,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "135784": {
+      "name": "Placido Polanco",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2007,
+          "league": "AL"
+        },
+        {
+          "year": 2009,
+          "league": "AL"
+        },
+        {
+          "year": 2011,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 2007,
+          "league": "AL"
+        }
+      ]
+    },
+    "542303": {
+      "name": "Marcell Ozuna",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2017,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 2017,
+          "league": "NL"
+        },
+        {
+          "year": 2020,
+          "league": "NL"
+        }
+      ]
+    },
+    "408307": {
+      "name": "Carl Crawford",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2010,
+          "league": "AL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 2010,
+          "league": "AL"
+        }
+      ]
+    },
+    "458015": {
+      "name": "Joey Votto",
+      "hall_of_fame": null,
+      "mvp": [
+        {
+          "year": 2010,
+          "league": "NL"
+        }
+      ],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2011,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "457803": {
+      "name": "Jay Bruce",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2012,
+          "league": "NL"
+        },
+        {
+          "year": 2013,
+          "league": "NL"
+        }
+      ]
+    },
+    "429664": {
+      "name": "Robinson Canó",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2010,
+          "league": "AL"
+        },
+        {
+          "year": 2012,
+          "league": "AL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 2006,
+          "league": "AL"
+        },
+        {
+          "year": 2010,
+          "league": "AL"
+        },
+        {
+          "year": 2011,
+          "league": "AL"
+        },
+        {
+          "year": 2012,
+          "league": "AL"
+        },
+        {
+          "year": 2013,
+          "league": "AL"
+        }
+      ]
+    },
+    "282332": {
+      "name": "CC Sabathia",
+      "hall_of_fame": {
+        "year": 2025,
+        "source_id": "MLBHOF",
+        "source": "https://www.mlb.com/news/hall-of-fame-inductions-by-year"
+      },
+      "mvp": [],
+      "cy_young": [
+        {
+          "year": 2007,
+          "league": "AL"
+        }
+      ],
+      "gold_glove": [],
+      "silver_slugger": []
+    },
+    "458731": {
+      "name": "Brett Gardner",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2016,
+          "league": "AL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "434158": {
+      "name": "Curtis Granderson",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2011,
+          "league": "AL"
+        }
+      ]
+    },
+    "455976": {
+      "name": "Nick Markakis",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2011,
+          "league": "AL"
+        },
+        {
+          "year": 2014,
+          "league": "AL"
+        },
+        {
+          "year": 2018,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 2018,
+          "league": "NL"
+        }
+      ]
+    },
+    "434661": {
+      "name": "Nate McLouth",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2008,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "430945": {
+      "name": "Adam Jones",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2009,
+          "league": "AL"
+        },
+        {
+          "year": 2012,
+          "league": "AL"
+        },
+        {
+          "year": 2013,
+          "league": "AL"
+        },
+        {
+          "year": 2014,
+          "league": "AL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 2013,
+          "league": "AL"
+        }
+      ]
+    },
+    "592518": {
+      "name": "Manny Machado",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2013,
+          "league": "AL"
+        },
+        {
+          "year": 2015,
+          "league": "AL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 2020,
+          "league": "NL"
+        },
+        {
+          "year": 2024,
+          "league": "NL"
+        },
+        {
+          "year": 2025,
+          "league": "NL"
+        }
+      ]
+    },
+    "446308": {
+      "name": "Matt Wieters",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2011,
+          "league": "AL"
+        },
+        {
+          "year": 2012,
+          "league": "AL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "456034": {
+      "name": "David Price",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [
+        {
+          "year": 2012,
+          "league": "AL"
+        }
+      ],
+      "gold_glove": [],
+      "silver_slugger": []
+    },
+    "446334": {
+      "name": "Evan Longoria",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2009,
+          "league": "AL"
+        },
+        {
+          "year": 2010,
+          "league": "AL"
+        },
+        {
+          "year": 2017,
+          "league": "AL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 2009,
+          "league": "AL"
+        }
+      ]
+    },
+    "543939": {
+      "name": "Kolten Wong",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2019,
+          "league": "NL"
+        },
+        {
+          "year": 2020,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "572761": {
+      "name": "Matt Carpenter",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2013,
+          "league": "NL"
+        }
+      ]
+    },
+    "592743": {
+      "name": "Andrelton Simmons",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2013,
+          "league": "NL"
+        },
+        {
+          "year": 2014,
+          "league": "NL"
+        },
+        {
+          "year": 2017,
+          "league": "AL"
+        },
+        {
+          "year": 2018,
+          "league": "AL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "518692": {
+      "name": "Freddie Freeman",
+      "hall_of_fame": null,
+      "mvp": [
+        {
+          "year": 2020,
+          "league": "NL"
+        }
+      ],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2018,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 2019,
+          "league": "NL"
+        },
+        {
+          "year": 2020,
+          "league": "NL"
+        },
+        {
+          "year": 2021,
+          "league": "NL"
+        }
+      ]
+    },
+    "518792": {
+      "name": "Jason Heyward",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2012,
+          "league": "NL"
+        },
+        {
+          "year": 2014,
+          "league": "NL"
+        },
+        {
+          "year": 2015,
+          "league": "NL"
+        },
+        {
+          "year": 2016,
+          "league": "NL"
+        },
+        {
+          "year": 2017,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "521692": {
+      "name": "Salvador Perez",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2013,
+          "league": "AL"
+        },
+        {
+          "year": 2014,
+          "league": "AL"
+        },
+        {
+          "year": 2015,
+          "league": "AL"
+        },
+        {
+          "year": 2016,
+          "league": "AL"
+        },
+        {
+          "year": 2018,
+          "league": "AL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 2016,
+          "league": "AL"
+        },
+        {
+          "year": 2018,
+          "league": "AL"
+        },
+        {
+          "year": 2020,
+          "league": "AL"
+        },
+        {
+          "year": 2021,
+          "league": "AL"
+        },
+        {
+          "year": 2024,
+          "league": "AL"
+        }
+      ]
+    },
+    "545361": {
+      "name": "Mike Trout",
+      "hall_of_fame": null,
+      "mvp": [
+        {
+          "year": 2014,
+          "league": "AL"
+        },
+        {
+          "year": 2016,
+          "league": "AL"
+        },
+        {
+          "year": 2019,
+          "league": "AL"
+        }
+      ],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2012,
+          "league": "AL"
+        },
+        {
+          "year": 2013,
+          "league": "AL"
+        },
+        {
+          "year": 2014,
+          "league": "AL"
+        },
+        {
+          "year": 2015,
+          "league": "AL"
+        },
+        {
+          "year": 2016,
+          "league": "AL"
+        },
+        {
+          "year": 2018,
+          "league": "AL"
+        },
+        {
+          "year": 2019,
+          "league": "AL"
+        },
+        {
+          "year": 2020,
+          "league": "AL"
+        },
+        {
+          "year": 2022,
+          "league": "AL"
+        }
+      ]
+    },
+    "594777": {
+      "name": "Kole Calhoun",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2015,
+          "league": "AL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "592663": {
+      "name": "J.T. Realmuto",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2019,
+          "league": "NL"
+        },
+        {
+          "year": 2022,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 2018,
+          "league": "NL"
+        },
+        {
+          "year": 2019,
+          "league": "NL"
+        },
+        {
+          "year": 2022,
+          "league": "NL"
+        }
+      ]
+    },
+    "592885": {
+      "name": "Christian Yelich",
+      "hall_of_fame": null,
+      "mvp": [
+        {
+          "year": 2018,
+          "league": "NL"
+        }
+      ],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2014,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 2016,
+          "league": "NL"
+        },
+        {
+          "year": 2018,
+          "league": "NL"
+        },
+        {
+          "year": 2019,
+          "league": "NL"
+        }
+      ]
+    },
+    "456781": {
+      "name": "Donovan Solano",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2020,
+          "league": "NL"
+        }
+      ]
+    },
+    "514917": {
+      "name": "César Hernández",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2020,
+          "league": "AL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "456422": {
+      "name": "Michael Bourn",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2009,
+          "league": "NL"
+        },
+        {
+          "year": 2010,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "592273": {
+      "name": "Brandon Drury",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2022,
+          "league": "NL"
+        }
+      ]
+    },
+    "605113": {
+      "name": "Nick Ahmed",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2018,
+          "league": "NL"
+        },
+        {
+          "year": 2019,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "502671": {
+      "name": "Paul Goldschmidt",
+      "hall_of_fame": null,
+      "mvp": [
+        {
+          "year": 2022,
+          "league": "NL"
+        }
+      ],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2013,
+          "league": "NL"
+        },
+        {
+          "year": 2015,
+          "league": "NL"
+        },
+        {
+          "year": 2017,
+          "league": "NL"
+        },
+        {
+          "year": 2021,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 2013,
+          "league": "NL"
+        },
+        {
+          "year": 2015,
+          "league": "NL"
+        },
+        {
+          "year": 2017,
+          "league": "NL"
+        },
+        {
+          "year": 2018,
+          "league": "NL"
+        },
+        {
+          "year": 2022,
+          "league": "NL"
+        }
+      ]
+    },
+    "592662": {
+      "name": "Robbie Ray",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [
+        {
+          "year": 2021,
+          "league": "AL"
+        }
+      ],
+      "gold_glove": [],
+      "silver_slugger": []
+    },
+    "429667": {
+      "name": "Ryan Howard",
+      "hall_of_fame": null,
+      "mvp": [
+        {
+          "year": 2006,
+          "league": "NL"
+        }
+      ],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2006,
+          "league": "NL"
+        }
+      ]
+    },
+    "425844": {
+      "name": "Zack Greinke",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [
+        {
+          "year": 2009,
+          "league": "AL"
+        }
+      ],
+      "gold_glove": [
+        {
+          "year": 2014,
+          "league": "NL"
+        },
+        {
+          "year": 2015,
+          "league": "NL"
+        },
+        {
+          "year": 2016,
+          "league": "NL"
+        },
+        {
+          "year": 2017,
+          "league": "NL"
+        },
+        {
+          "year": 2018,
+          "league": "NL"
+        },
+        {
+          "year": 2019,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 2013,
+          "league": "NL"
+        },
+        {
+          "year": 2019,
+          "league": "NL"
+        }
+      ]
+    },
+    "457763": {
+      "name": "Buster Posey",
+      "hall_of_fame": null,
+      "mvp": [
+        {
+          "year": 2012,
+          "league": "NL"
+        }
+      ],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2016,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 2012,
+          "league": "NL"
+        },
+        {
+          "year": 2014,
+          "league": "NL"
+        },
+        {
+          "year": 2015,
+          "league": "NL"
+        },
+        {
+          "year": 2017,
+          "league": "NL"
+        },
+        {
+          "year": 2021,
+          "league": "NL"
+        }
+      ]
+    },
+    "543063": {
+      "name": "Brandon Crawford",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2015,
+          "league": "NL"
+        },
+        {
+          "year": 2016,
+          "league": "NL"
+        },
+        {
+          "year": 2017,
+          "league": "NL"
+        },
+        {
+          "year": 2021,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 2015,
+          "league": "NL"
+        }
+      ]
+    },
+    "572041": {
+      "name": "AJ Pollock",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2015,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "444482": {
+      "name": "David Peralta",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2019,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 2018,
+          "league": "NL"
+        }
+      ]
+    },
+    "592450": {
+      "name": "Aaron Judge",
+      "hall_of_fame": null,
+      "mvp": [
+        {
+          "year": 2022,
+          "league": "AL"
+        },
+        {
+          "year": 2024,
+          "league": "AL"
+        },
+        {
+          "year": 2025,
+          "league": "AL"
+        }
+      ],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2017,
+          "league": "AL"
+        },
+        {
+          "year": 2021,
+          "league": "AL"
+        },
+        {
+          "year": 2022,
+          "league": "AL"
+        },
+        {
+          "year": 2024,
+          "league": "AL"
+        },
+        {
+          "year": 2025,
+          "league": "AL"
+        }
+      ]
+    },
+    "596142": {
+      "name": "Gary Sánchez",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2017,
+          "league": "AL"
+        }
+      ]
+    },
+    "455117": {
+      "name": "Martín Maldonado",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2017,
+          "league": "AL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "643217": {
+      "name": "Andrew Benintendi",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2021,
+          "league": "AL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "519048": {
+      "name": "Mitch Moreland",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2016,
+          "league": "AL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "605141": {
+      "name": "Mookie Betts",
+      "hall_of_fame": null,
+      "mvp": [
+        {
+          "year": 2018,
+          "league": "AL"
+        }
+      ],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2016,
+          "league": "AL"
+        },
+        {
+          "year": 2017,
+          "league": "AL"
+        },
+        {
+          "year": 2018,
+          "league": "AL"
+        },
+        {
+          "year": 2019,
+          "league": "AL"
+        },
+        {
+          "year": 2020,
+          "league": "NL"
+        },
+        {
+          "year": 2022,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 2016,
+          "league": "AL"
+        },
+        {
+          "year": 2018,
+          "league": "AL"
+        },
+        {
+          "year": 2019,
+          "league": "AL"
+        },
+        {
+          "year": 2020,
+          "league": "NL"
+        },
+        {
+          "year": 2022,
+          "league": "NL"
+        },
+        {
+          "year": 2023,
+          "league": "NL"
+        },
+        {
+          "year": 2024,
+          "league": "NL"
+        }
+      ]
+    },
+    "593428": {
+      "name": "Xander Bogaerts",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2015,
+          "league": "AL"
+        },
+        {
+          "year": 2016,
+          "league": "AL"
+        },
+        {
+          "year": 2019,
+          "league": "AL"
+        },
+        {
+          "year": 2021,
+          "league": "AL"
+        },
+        {
+          "year": 2022,
+          "league": "AL"
+        }
+      ]
+    },
+    "598265": {
+      "name": "Jackie Bradley Jr.",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2018,
+          "league": "AL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "518626": {
+      "name": "Josh Donaldson",
+      "hall_of_fame": null,
+      "mvp": [
+        {
+          "year": 2015,
+          "league": "AL"
+        }
+      ],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2015,
+          "league": "AL"
+        },
+        {
+          "year": 2016,
+          "league": "AL"
+        }
+      ]
+    },
+    "430832": {
+      "name": "José Bautista",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2010,
+          "league": "AL"
+        },
+        {
+          "year": 2011,
+          "league": "AL"
+        },
+        {
+          "year": 2014,
+          "league": "AL"
+        }
+      ]
+    },
+    "519242": {
+      "name": "Chris Sale",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [
+        {
+          "year": 2024,
+          "league": "NL"
+        }
+      ],
+      "gold_glove": [
+        {
+          "year": 2024,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "572122": {
+      "name": "Kyle Seager",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2014,
+          "league": "AL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "451596": {
+      "name": "Yovani Gallardo",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2010,
+          "league": "NL"
+        }
+      ]
+    },
+    "547989": {
+      "name": "José Abreu",
+      "hall_of_fame": null,
+      "mvp": [
+        {
+          "year": 2020,
+          "league": "AL"
+        }
+      ],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2014,
+          "league": "AL"
+        },
+        {
+          "year": 2018,
+          "league": "AL"
+        },
+        {
+          "year": 2020,
+          "league": "AL"
+        }
+      ]
+    },
+    "641313": {
+      "name": "Tim Anderson",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2020,
+          "league": "AL"
+        }
+      ]
+    },
+    "400284": {
+      "name": "Chase Utley",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2006,
+          "league": "NL"
+        },
+        {
+          "year": 2007,
+          "league": "NL"
+        },
+        {
+          "year": 2008,
+          "league": "NL"
+        },
+        {
+          "year": 2009,
+          "league": "NL"
+        }
+      ]
+    },
+    "608369": {
+      "name": "Corey Seager",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2016,
+          "league": "NL"
+        },
+        {
+          "year": 2017,
+          "league": "NL"
+        },
+        {
+          "year": 2023,
+          "league": "AL"
+        }
+      ]
+    },
+    "641355": {
+      "name": "Cody Bellinger",
+      "hall_of_fame": null,
+      "mvp": [
+        {
+          "year": 2019,
+          "league": "NL"
+        }
+      ],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2019,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 2019,
+          "league": "NL"
+        },
+        {
+          "year": 2023,
+          "league": "NL"
+        }
+      ]
+    },
+    "518934": {
+      "name": "DJ LeMahieu",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2014,
+          "league": "NL"
+        },
+        {
+          "year": 2017,
+          "league": "NL"
+        },
+        {
+          "year": 2018,
+          "league": "NL"
+        },
+        {
+          "year": 2022,
+          "league": "AL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 2019,
+          "league": "AL"
+        },
+        {
+          "year": 2020,
+          "league": "AL"
+        }
+      ]
+    },
+    "571448": {
+      "name": "Nolan Arenado",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2013,
+          "league": "NL"
+        },
+        {
+          "year": 2014,
+          "league": "NL"
+        },
+        {
+          "year": 2015,
+          "league": "NL"
+        },
+        {
+          "year": 2016,
+          "league": "NL"
+        },
+        {
+          "year": 2017,
+          "league": "NL"
+        },
+        {
+          "year": 2018,
+          "league": "NL"
+        },
+        {
+          "year": 2019,
+          "league": "NL"
+        },
+        {
+          "year": 2020,
+          "league": "NL"
+        },
+        {
+          "year": 2021,
+          "league": "NL"
+        },
+        {
+          "year": 2022,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 2015,
+          "league": "NL"
+        },
+        {
+          "year": 2016,
+          "league": "NL"
+        },
+        {
+          "year": 2017,
+          "league": "NL"
+        },
+        {
+          "year": 2018,
+          "league": "NL"
+        },
+        {
+          "year": 2022,
+          "league": "NL"
+        }
+      ]
+    },
+    "596115": {
+      "name": "Trevor Story",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2018,
+          "league": "NL"
+        },
+        {
+          "year": 2019,
+          "league": "NL"
+        }
+      ]
+    },
+    "453568": {
+      "name": "Charlie Blackmon",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2016,
+          "league": "NL"
+        },
+        {
+          "year": 2017,
+          "league": "NL"
+        }
+      ]
+    },
+    "471865": {
+      "name": "Carlos González",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2010,
+          "league": "NL"
+        },
+        {
+          "year": 2012,
+          "league": "NL"
+        },
+        {
+          "year": 2013,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 2010,
+          "league": "NL"
+        },
+        {
+          "year": 2015,
+          "league": "NL"
+        }
+      ]
+    },
+    "435622": {
+      "name": "Ian Desmond",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2012,
+          "league": "NL"
+        },
+        {
+          "year": 2013,
+          "league": "NL"
+        },
+        {
+          "year": 2014,
+          "league": "NL"
+        }
+      ]
+    },
+    "605412": {
+      "name": "Joe Panik",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2016,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "457705": {
+      "name": "Andrew McCutchen",
+      "hall_of_fame": null,
+      "mvp": [
+        {
+          "year": 2013,
+          "league": "NL"
+        }
+      ],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2012,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 2012,
+          "league": "NL"
+        },
+        {
+          "year": 2013,
+          "league": "NL"
+        },
+        {
+          "year": 2014,
+          "league": "NL"
+        },
+        {
+          "year": 2015,
+          "league": "NL"
+        }
+      ]
+    },
+    "452678": {
+      "name": "Asdrúbal Cabrera",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2011,
+          "league": "AL"
+        }
+      ]
+    },
+    "493316": {
+      "name": "Yoenis Cespedes",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2015,
+          "league": "AL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 2016,
+          "league": "NL"
+        }
+      ]
+    },
+    "607625": {
+      "name": "Seth Lugo",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2024,
+          "league": "AL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "501571": {
+      "name": "Juan Lagares",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2014,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "554430": {
+      "name": "Zack Wheeler",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2023,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "453562": {
+      "name": "Jake Arrieta",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [
+        {
+          "year": 2015,
+          "league": "NL"
+        }
+      ],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2016,
+          "league": "NL"
+        }
+      ]
+    },
+    "467793": {
+      "name": "Carlos Santana",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2024,
+          "league": "AL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 2019,
+          "league": "AL"
+        }
+      ]
+    },
+    "660271": {
+      "name": "Shohei Ohtani",
+      "hall_of_fame": null,
+      "mvp": [
+        {
+          "year": 2021,
+          "league": "AL"
+        },
+        {
+          "year": 2023,
+          "league": "AL"
+        },
+        {
+          "year": 2024,
+          "league": "NL"
+        },
+        {
+          "year": 2025,
+          "league": "NL"
+        }
+      ],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2021,
+          "league": "AL"
+        },
+        {
+          "year": 2023,
+          "league": "AL"
+        },
+        {
+          "year": 2024,
+          "league": "NL"
+        },
+        {
+          "year": 2025,
+          "league": "NL"
+        }
+      ]
+    },
+    "595777": {
+      "name": "Jurickson Profar",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2024,
+          "league": "NL"
+        }
+      ]
+    },
+    "643396": {
+      "name": "Isiah Kiner-Falefa",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2020,
+          "league": "AL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "608336": {
+      "name": "Joey Gallo",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2020,
+          "league": "AL"
+        },
+        {
+          "year": 2021,
+          "league": "AL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "606466": {
+      "name": "Ketel Marte",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2024,
+          "league": "NL"
+        },
+        {
+          "year": 2025,
+          "league": "NL"
+        }
+      ]
+    },
+    "571466": {
+      "name": "Tucker Barnhart",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2017,
+          "league": "NL"
+        },
+        {
+          "year": 2020,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "665487": {
+      "name": "Fernando Tatis Jr.",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2023,
+          "league": "NL"
+        },
+        {
+          "year": 2025,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 2020,
+          "league": "NL"
+        },
+        {
+          "year": 2021,
+          "league": "NL"
+        }
+      ]
+    },
+    "518516": {
+      "name": "Madison Bumgarner",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2014,
+          "league": "NL"
+        },
+        {
+          "year": 2015,
+          "league": "NL"
+        }
+      ]
+    },
+    "608566": {
+      "name": "Germán Márquez",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2018,
+          "league": "NL"
+        }
+      ]
+    },
+    "502110": {
+      "name": "J.D. Martinez",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2015,
+          "league": "AL"
+        },
+        {
+          "year": 2018,
+          "league": "AL"
+        }
+      ]
+    },
+    "646240": {
+      "name": "Rafael Devers",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2021,
+          "league": "AL"
+        },
+        {
+          "year": 2023,
+          "league": "AL"
+        }
+      ]
+    },
+    "664034": {
+      "name": "Ty France",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2025,
+          "league": "AL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "663898": {
+      "name": "Brendan Rodgers",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2022,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "643446": {
+      "name": "Jeff McNeil",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2022,
+          "league": "NL"
+        }
+      ]
+    },
+    "596019": {
+      "name": "Francisco Lindor",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2016,
+          "league": "AL"
+        },
+        {
+          "year": 2019,
+          "league": "AL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 2017,
+          "league": "AL"
+        },
+        {
+          "year": 2018,
+          "league": "AL"
+        },
+        {
+          "year": 2023,
+          "league": "NL"
+        },
+        {
+          "year": 2024,
+          "league": "NL"
+        }
+      ]
+    },
+    "663757": {
+      "name": "Trent Grisham",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2020,
+          "league": "NL"
+        },
+        {
+          "year": 2022,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "673490": {
+      "name": "Ha-Seong Kim",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2023,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "605483": {
+      "name": "Blake Snell",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [
+        {
+          "year": 2018,
+          "league": "AL"
+        },
+        {
+          "year": 2023,
+          "league": "NL"
+        }
+      ],
+      "gold_glove": [],
+      "silver_slugger": []
+    },
+    "662139": {
+      "name": "Daulton Varsho",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2024,
+          "league": "AL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "672695": {
+      "name": "Geraldo Perdomo",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2025,
+          "league": "NL"
+        }
+      ]
+    },
+    "572233": {
+      "name": "Christian Walker",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2022,
+          "league": "NL"
+        },
+        {
+          "year": 2023,
+          "league": "NL"
+        },
+        {
+          "year": 2024,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "605137": {
+      "name": "Josh Bell",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2022,
+          "league": "NL"
+        }
+      ]
+    },
+    "665742": {
+      "name": "Juan Soto",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2020,
+          "league": "NL"
+        },
+        {
+          "year": 2021,
+          "league": "NL"
+        },
+        {
+          "year": 2022,
+          "league": "NL"
+        },
+        {
+          "year": 2023,
+          "league": "NL"
+        },
+        {
+          "year": 2024,
+          "league": "AL"
+        },
+        {
+          "year": 2025,
+          "league": "NL"
+        }
+      ]
+    },
+    "682998": {
+      "name": "Corbin Carroll",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2025,
+          "league": "NL"
+        }
+      ]
+    },
+    "572816": {
+      "name": "Corey Dickerson",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2018,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "676475": {
+      "name": "Alec Burleson",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2025,
+          "league": "NL"
+        }
+      ]
+    },
+    "669242": {
+      "name": "Tommy Edman",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2021,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "425794": {
+      "name": "Adam Wainwright",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2009,
+          "league": "NL"
+        },
+        {
+          "year": 2013,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 2017,
+          "league": "NL"
+        }
+      ]
+    },
+    "680977": {
+      "name": "Brendan Donovan",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2022,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "425877": {
+      "name": "Yadier Molina",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2008,
+          "league": "NL"
+        },
+        {
+          "year": 2009,
+          "league": "NL"
+        },
+        {
+          "year": 2010,
+          "league": "NL"
+        },
+        {
+          "year": 2011,
+          "league": "NL"
+        },
+        {
+          "year": 2012,
+          "league": "NL"
+        },
+        {
+          "year": 2013,
+          "league": "NL"
+        },
+        {
+          "year": 2014,
+          "league": "NL"
+        },
+        {
+          "year": 2015,
+          "league": "NL"
+        },
+        {
+          "year": 2018,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 2013,
+          "league": "NL"
+        }
+      ]
+    },
+    "607208": {
+      "name": "Trea Turner",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2022,
+          "league": "NL"
+        }
+      ]
+    },
+    "547180": {
+      "name": "Bryce Harper",
+      "hall_of_fame": null,
+      "mvp": [
+        {
+          "year": 2015,
+          "league": "NL"
+        },
+        {
+          "year": 2021,
+          "league": "NL"
+        }
+      ],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2015,
+          "league": "NL"
+        },
+        {
+          "year": 2021,
+          "league": "NL"
+        },
+        {
+          "year": 2023,
+          "league": "NL"
+        },
+        {
+          "year": 2024,
+          "league": "NL"
+        }
+      ]
+    },
+    "592206": {
+      "name": "Nick Castellanos",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2021,
+          "league": "NL"
+        }
+      ]
+    },
+    "656941": {
+      "name": "Kyle Schwarber",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2022,
+          "league": "NL"
+        }
+      ]
+    },
+    "621566": {
+      "name": "Matt Olson",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2018,
+          "league": "AL"
+        },
+        {
+          "year": 2019,
+          "league": "AL"
+        },
+        {
+          "year": 2025,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 2023,
+          "league": "NL"
+        }
+      ]
+    },
+    "669221": {
+      "name": "Sean Murphy",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2021,
+          "league": "AL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "660670": {
+      "name": "Ronald Acuña Jr.",
+      "hall_of_fame": null,
+      "mvp": [
+        {
+          "year": 2023,
+          "league": "NL"
+        }
+      ],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2019,
+          "league": "NL"
+        },
+        {
+          "year": 2020,
+          "league": "NL"
+        },
+        {
+          "year": 2023,
+          "league": "NL"
+        }
+      ]
+    },
+    "645277": {
+      "name": "Ozzie Albies",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2019,
+          "league": "NL"
+        },
+        {
+          "year": 2021,
+          "league": "NL"
+        }
+      ]
+    },
+    "608331": {
+      "name": "Max Fried",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2020,
+          "league": "NL"
+        },
+        {
+          "year": 2021,
+          "league": "NL"
+        },
+        {
+          "year": 2022,
+          "league": "NL"
+        },
+        {
+          "year": 2025,
+          "league": "AL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 2021,
+          "league": "NL"
+        }
+      ]
+    },
+    "663586": {
+      "name": "Austin Riley",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2021,
+          "league": "NL"
+        },
+        {
+          "year": 2023,
+          "league": "NL"
+        }
+      ]
+    },
+    "664023": {
+      "name": "Ian Happ",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2022,
+          "league": "NL"
+        },
+        {
+          "year": 2023,
+          "league": "NL"
+        },
+        {
+          "year": 2024,
+          "league": "NL"
+        },
+        {
+          "year": 2025,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "621020": {
+      "name": "Dansby Swanson",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2022,
+          "league": "NL"
+        },
+        {
+          "year": 2023,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "663538": {
+      "name": "Nico Hoerner",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2023,
+          "league": "NL"
+        },
+        {
+          "year": 2025,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "543228": {
+      "name": "Yan Gomes",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2014,
+          "league": "AL"
+        }
+      ]
+    },
+    "543685": {
+      "name": "Anthony Rendon",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2014,
+          "league": "NL"
+        },
+        {
+          "year": 2019,
+          "league": "NL"
+        }
+      ]
+    },
+    "641487": {
+      "name": "J.P. Crawford",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2020,
+          "league": "AL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "663728": {
+      "name": "Cal Raleigh",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2024,
+          "league": "AL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 2025,
+          "league": "AL"
+        }
+      ]
+    },
+    "606192": {
+      "name": "Teoscar Hernández",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2020,
+          "league": "AL"
+        },
+        {
+          "year": 2021,
+          "league": "AL"
+        },
+        {
+          "year": 2024,
+          "league": "NL"
+        }
+      ]
+    },
+    "664238": {
+      "name": "Dylan Moore",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2024,
+          "league": "AL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "677594": {
+      "name": "Julio Rodríguez",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2022,
+          "league": "AL"
+        },
+        {
+          "year": 2023,
+          "league": "AL"
+        }
+      ]
+    },
+    "665926": {
+      "name": "Andrés Giménez",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2022,
+          "league": "AL"
+        },
+        {
+          "year": 2023,
+          "league": "AL"
+        },
+        {
+          "year": 2024,
+          "league": "AL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "608070": {
+      "name": "José Ramírez",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2017,
+          "league": "AL"
+        },
+        {
+          "year": 2018,
+          "league": "AL"
+        },
+        {
+          "year": 2020,
+          "league": "AL"
+        },
+        {
+          "year": 2022,
+          "league": "AL"
+        },
+        {
+          "year": 2024,
+          "league": "AL"
+        },
+        {
+          "year": 2025,
+          "league": "AL"
+        }
+      ]
+    },
+    "680757": {
+      "name": "Steven Kwan",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2022,
+          "league": "AL"
+        },
+        {
+          "year": 2023,
+          "league": "AL"
+        },
+        {
+          "year": 2024,
+          "league": "AL"
+        },
+        {
+          "year": 2025,
+          "league": "AL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "664702": {
+      "name": "Myles Straw",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2022,
+          "league": "AL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "650490": {
+      "name": "Yandy Díaz",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2023,
+          "league": "AL"
+        }
+      ]
+    },
+    "650391": {
+      "name": "Eloy Jiménez",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2020,
+          "league": "AL"
+        }
+      ]
+    },
+    "673357": {
+      "name": "Luis Robert Jr.",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2020,
+          "league": "AL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 2023,
+          "league": "AL"
+        }
+      ]
+    },
+    "667670": {
+      "name": "Brent Rooker",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2024,
+          "league": "AL"
+        }
+      ]
+    },
+    "669707": {
+      "name": "Jared Triolo",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2024,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "672515": {
+      "name": "Gabriel Moreno",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2023,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "683002": {
+      "name": "Gunnar Henderson",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2023,
+          "league": "AL"
+        }
+      ]
+    },
+    "623993": {
+      "name": "Anthony Santander",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2024,
+          "league": "AL"
+        }
+      ]
+    },
+    "668939": {
+      "name": "Adley Rutschman",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2023,
+          "league": "AL"
+        }
+      ]
+    },
+    "602104": {
+      "name": "Ramón Urías",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2022,
+          "league": "AL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "656775": {
+      "name": "Cedric Mullins",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2021,
+          "league": "AL"
+        }
+      ]
+    },
+    "493329": {
+      "name": "Yuli Gurriel",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2021,
+          "league": "AL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "665862": {
+      "name": "Jazz Chisholm Jr.",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2025,
+          "league": "AL"
+        }
+      ]
+    },
+    "650333": {
+      "name": "Luis Arraez",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2022,
+          "league": "AL"
+        },
+        {
+          "year": 2023,
+          "league": "NL"
+        }
+      ]
+    },
+    "592178": {
+      "name": "Kris Bryant",
+      "hall_of_fame": null,
+      "mvp": [
+        {
+          "year": 2016,
+          "league": "NL"
+        }
+      ],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": []
+    },
+    "696100": {
+      "name": "Hunter Goodman",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2025,
+          "league": "NL"
+        }
+      ]
+    },
+    "686668": {
+      "name": "Brenton Doyle",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2023,
+          "league": "NL"
+        },
+        {
+          "year": 2024,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "678662": {
+      "name": "Ezequiel Tovar",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2024,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "686217": {
+      "name": "Sal Frelick",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2024,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "661388": {
+      "name": "William Contreras",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2023,
+          "league": "NL"
+        },
+        {
+          "year": 2024,
+          "league": "NL"
+        }
+      ]
+    },
+    "668930": {
+      "name": "Brice Turang",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2024,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "572191": {
+      "name": "Michael A. Taylor",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2021,
+          "league": "AL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "691718": {
+      "name": "Pete Crow-Armstrong",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2025,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "594807": {
+      "name": "Adam Duvall",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2021,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "518595": {
+      "name": "Travis d'Arnaud",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2020,
+          "league": "NL"
+        }
+      ]
+    },
+    "701538": {
+      "name": "Jackson Merrill",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2024,
+          "league": "NL"
+        }
+      ]
+    },
+    "656288": {
+      "name": "Griffin Canning",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2020,
+          "league": "AL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "624413": {
+      "name": "Pete Alonso",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2025,
+          "league": "NL"
+        }
+      ]
+    },
+    "516782": {
+      "name": "Starling Marte",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2015,
+          "league": "NL"
+        },
+        {
+          "year": 2016,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "664056": {
+      "name": "Harrison Bader",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2021,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "663993": {
+      "name": "Nathaniel Lowe",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2023,
+          "league": "AL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 2022,
+          "league": "AL"
+        }
+      ]
+    },
+    "641933": {
+      "name": "Tyler O'Neill",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2020,
+          "league": "NL"
+        },
+        {
+          "year": 2021,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "672275": {
+      "name": "Patrick Bailey",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2024,
+          "league": "NL"
+        },
+        {
+          "year": 2025,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "656716": {
+      "name": "Zach McKinstry",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2025,
+          "league": "AL"
+        }
+      ]
+    },
+    "595879": {
+      "name": "Javier Báez",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2020,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 2018,
+          "league": "NL"
+        }
+      ]
+    },
+    "693307": {
+      "name": "Dillon Dingler",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2025,
+          "league": "AL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "643289": {
+      "name": "Mauricio Dubón",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2023,
+          "league": "AL"
+        },
+        {
+          "year": 2025,
+          "league": "AL"
+        }
+      ],
+      "silver_slugger": []
+    },
+    "669373": {
+      "name": "Tarik Skubal",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [
+        {
+          "year": 2024,
+          "league": "AL"
+        },
+        {
+          "year": 2025,
+          "league": "AL"
+        }
+      ],
+      "gold_glove": [],
+      "silver_slugger": []
+    },
+    "663656": {
+      "name": "Kyle Tucker",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2022,
+          "league": "AL"
+        }
+      ],
+      "silver_slugger": [
+        {
+          "year": 2023,
+          "league": "AL"
+        },
+        {
+          "year": 2025,
+          "league": "NL"
+        }
+      ]
+    },
+    "663647": {
+      "name": "Ke'Bryan Hayes",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [
+        {
+          "year": 2023,
+          "league": "NL"
+        },
+        {
+          "year": 2025,
+          "league": "NL"
+        }
+      ],
+      "silver_slugger": []
+    }
+  }
+}

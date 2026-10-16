@@ -128,3 +128,5 @@ async function load(){
 }
 window.CFBArchive={GROUPS,TITLES,esc,date,fmt,numeric,group,sortPlayers,defaultColumn,table,nav,gameTitle,gameCard,period,scoring,scoreboard,load};
 })();
+
+;(()=>{if(document.querySelector('script[data-ca-player-search]'))return;const s=document.createElement('script');s.dataset.caPlayerSearch='1';s.src='../assets/player-search.js?v=quicksearch-20261016';document.head.appendChild(s)})();

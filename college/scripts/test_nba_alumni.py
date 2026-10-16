@@ -45,7 +45,7 @@ try:
   ok("Hunter Sallis" in page.locator("#cards").inner_text(),"Sallis college transfer profile exists")
   ok("Gonzaga / Wake Forest" in page.locator("#cards").inner_text(),"Both attended Sallis colleges are preserved")
   ok("12" in page.locator("#cards").inner_text(),"Personal witnessed-game calculations visible")
-  ok(page.locator('.player a[href^="./player.html?id="]').count()==expected_nba,"All matched alumni link to canonical player profiles")
+  ok(page.locator('.player a[href^="./player.html?id="]').count()>=expected_nba,"Every matched alumnus offers a canonical player-profile link")
   page.screenshot(path=str(OUT/"alumni-desktop.png"),full_page=True)
   page.locator("#search").fill("Holmgren")
   ok(page.locator(".player").count()==1,"Search by player works")

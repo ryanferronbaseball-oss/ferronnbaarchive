@@ -11,8 +11,10 @@
 <section id="playerOfGame" class="panel pog" aria-label="NFL Player of the Game" aria-live="polite"><div class="empty">Loading Player of the Game…</div></section>
 <div class="section-heading"><h2>Scoring plays</h2><span class="caption" id="scoringCount"></span></div>
 <section id="scoring" class="panel" aria-label="Scoring play chronology" aria-live="polite"><div class="empty">Loading scoring plays…</div></section>
-<div class="section-heading"><h2>Top fantasy performances</h2><a href="./milestones.html" class="action-link secondary">PPR milestones ↗</a></div>
- <section id="pprLeaders" class="panel" aria-label="Top Full-PPR offensive scores in this game"><div class="empty">Loading PPR scores…</div></section>
+<section id="pprLeaders" class="panel ppr-board" aria-label="Top Full-PPR offensive scores in this game">
+ <div class="ppr-board-heading"><h2>Top fantasy performances</h2><a href="./milestones.html" class="action-link secondary">PPR milestones ↗</a></div>
+ <div id="pprTable" aria-live="polite"><div class="empty">Loading PPR scores…</div></div>
+</section>
  <div class="section-heading"><h2>Player box score</h2><span class="caption">Select statistical group</span></div>
 <div class="tabbar" role="tablist" id="statTabs" aria-label="Game box-score statistics">
 <button type="button" role="tab" data-group="offense" aria-selected="true">Offense</button>
@@ -75,7 +77,7 @@ document.addEventListener("DOMContentLoaded",async()=>{
   const gamePpr=ppr.filter(x=>x.game_id===selected.id);
   el("playerOfGame").innerHTML=playerOfGame(gamePpr);
   const ranks=gamePpr.slice().sort((a,b)=>b.fantasy_ppr-a.fantasy_ppr||a.player.localeCompare(b.player)).slice(0,5);
-  el("pprLeaders").innerHTML=ranks.length?'<div class="table-wrap"><table><thead><tr><th>Player</th><th>PPR points</th><th>Receiving</th><th>Rushing</th><th>Passing</th></tr></thead><tbody>'+ranks.map(x=>'<tr><td><a href="./player.html?id='+encodeURIComponent(x.athlete_id)+'">'+A.esc(x.player)+'</a><small>'+A.esc(x.team)+'</small></td><td><strong>'+Number(x.fantasy_ppr).toFixed(2)+'</strong></td><td>'+x.stat_line.receptions+' REC · '+x.stat_line.receiving_yards+' YDS</td><td>'+x.stat_line.rushing_yards+' YDS</td><td>'+x.stat_line.passing_yards+' YDS</td></tr>').join("")+'</tbody></table></div>':'<div class="empty">No offensive fantasy records available.</div>';
+  el("pprTable").innerHTML=ranks.length?'<div class="impact-scroll"><table class="impact-board"><thead><tr><th>Player</th><th>PPR points</th><th>Receiving</th><th>Rushing</th><th>Passing</th></tr></thead><tbody>'+ranks.map(x=>'<tr><td class="impact-player"><a class="player-link" href="./player.html?id='+encodeURIComponent(x.athlete_id)+'">'+A.esc(x.player)+'</a><small>'+A.esc(x.team)+'</small></td><td class="impact-number"><strong>'+Number(x.fantasy_ppr).toFixed(2)+'</strong></td><td>'+A.esc(x.stat_line.receptions)+' REC · '+A.esc(x.stat_line.receiving_yards)+' YDS</td><td>'+A.esc(x.stat_line.rushing_yards)+' YDS</td><td>'+A.esc(x.stat_line.passing_yards)+' YDS</td></tr>').join("")+'</tbody></table></div>':'<div class="empty">No offensive fantasy records available.</div>';
   renderTabs();
  }
  try{

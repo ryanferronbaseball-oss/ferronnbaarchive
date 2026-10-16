@@ -65,6 +65,28 @@ tbody small{display:block;color:var(--muted);font-size:11px;font-weight:400;marg
 .pog-method{font-size:12px;line-height:1.6;color:var(--muted);margin:16px 0 0}
 @media(max-width:800px){.pog-stats{grid-template-columns:repeat(4,minmax(0,1fr))}}
 @media(max-width:520px){.pog-stats{grid-template-columns:repeat(3,minmax(0,1fr))}.pog-head{flex-wrap:wrap}.pog-impact{align-items:flex-start;text-align:left}.pog-stat{padding:11px 4px}}
+/* Mirrors the NBA and college Top 5 Impact Performances table treatment. */
+.ppr-board-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.ppr-board-heading h2{margin:0 0 15px}
+.ppr-board-heading .action-link{margin:0 0 15px}
+.impact-scroll{margin-top:12px;border:1px solid #D8DDD4;border-radius:11px;overflow-x:auto;max-width:100%}
+.impact-board{min-width:680px;width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+.impact-board th{background:#F0F2EB;color:#486050;text-transform:uppercase;font-size:11px;letter-spacing:.055em;font-weight:800}
+.impact-board th,.impact-board td{padding:13px 12px;border-bottom:1px solid #E6EAE2;text-align:right}
+.impact-board th:first-child,.impact-board td:first-child{text-align:left;position:sticky;left:0;min-width:205px;z-index:1;background:#FFFEFB}
+.impact-board th:first-child{z-index:2;background:#F0F2EB}
+.impact-board tbody tr:nth-child(even){background:#F8F9F5}
+.impact-board tbody tr:nth-child(even) td{background:#F8F9F5}
+.impact-board tbody tr:nth-child(even) td:first-child{background:#F8F9F5}
+.impact-board tbody tr:hover{background:#EDF2E9}
+.impact-board tbody tr:hover td{background:#EDF2E9}
+.impact-board tbody tr:hover td:first-child{background:#EDF2E9}
+.impact-board tbody tr:last-child td{border-bottom:0}
+.impact-board .impact-player .player-link{font-weight:800;color:#284D3C;text-decoration:none}
+.impact-board .impact-player .player-link:hover{text-decoration:underline}
+.impact-board .impact-player small{display:block;font-size:11px;font-weight:500;color:#637468;margin-top:4px}
+.impact-board .impact-number strong{color:#284D3C;font-size:19px;font-weight:850}
+@media(max-width:530px){.impact-board{min-width:650px}.impact-board th,.impact-board td{padding:12px 10px}.impact-board th:first-child,.impact-board td:first-child{min-width:175px}}
 .footer{border-top:1px solid var(--hair);padding-top:24px;color:var(--muted);font-size:12px;margin-top:45px}
 @media(max-width:800px){.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.game-grid,.feature{grid-template-columns:1fr}.play{grid-template-columns:65px 1fr;gap:10px}.play-score{grid-column:2;text-align:left}.archive-header{gap:8px}}
 @media(max-width:430px){main{width:calc(100% - 24px)}.metrics{gap:8px}.metric{padding:12px}.metric strong{font-size:25px}.archive-nav a{padding:8px 10px}.panel{padding:14px}.scoreboard{padding:14px}.team-name{font-size:15px}.team-score{font-size:23px}}

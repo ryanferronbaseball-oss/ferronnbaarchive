@@ -257,7 +257,8 @@ def verified_return_tds():
   for play in SCORING.get(g["id"],{}).get("plays",[]):
    if play["type"] not in ("Kick Return Touchdown","Punt Return Touchdown"):continue
    text=play.get("description","")
-   match=re.search(r"(?:^| - )(.+?)\s+\d+\s+yd\s+(?:kickoff|punt)\s+return",text,re.I)
+   source_line=text.split(" - ",1)[1] if " - " in text else text
+   match=re.search(r"^(.+?)\s+\d+\s+yd\s+(?:kickoff|punt)\s+return",source_line,re.I)
    if not match:continue
    credited=canonical(match.group(1),play["team"])
    credits[(g["id"],identity(credited,play["team"]))]+=1

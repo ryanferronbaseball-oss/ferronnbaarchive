@@ -1,0 +1,41 @@
+name: MLB official game import
+on:
+  workflow_dispatch:
+    inputs:
+      scope:
+        description: "Import five pilot games or all 131 attended games"
+        type: choice
+        options: ["pilot","all"]
+        default: "pilot"
+  push:
+    paths:
+      - "mlb/scripts/import_official.py"
+      - ".github/workflows/mlb-import.yml"
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Import official MLB schedules and player box scores
+        run: python mlb/scripts/import_official.py --${{ github.event.inputs.scope || 'pilot' }}
+      - name: Upload import audit
+        uses: actions/upload-artifact@v4
+        with:
+          name: mlb-official-import-report
+          path: mlb/data/import_report.json
+      - name: Push validated game and player data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git pull --rebase origin main
+          git add mlb/data/games.json mlb/data/player_stats.json mlb/data/scoring_plays.json mlb/data/import_report.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Import source-verified MLB historical player boxscores"
+            git push origin HEAD:main
+          fi

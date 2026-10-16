@@ -23,7 +23,7 @@ jobs:
         with:
           python-version: "3.12"
       - name: Import official MLB schedules and player box scores
-        run: python mlb/scripts/import_official.py --${{ github.event.inputs.scope || 'pilot' }}
+        run: python mlb/scripts/import_official.py --${{ github.event.inputs.scope || 'all' }}
       - name: Upload import audit
         uses: actions/upload-artifact@v4
         with:

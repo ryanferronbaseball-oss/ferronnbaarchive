@@ -104,7 +104,7 @@ try:
    visit("cfb/touchdowns.html")
    fits("Touchdown History")
    visit("index.html")
-   page.wait_for_function("document.getElementById('allGames').textContent==='133'")
+   page.wait_for_function("document.getElementById('allGames').textContent==='136'")
    check(page.locator("a[href='./cfb/index.html']").count()>0,f"{width} portal includes college football")
    fits("master portal")
    check(not errors,f"{width} zero JavaScript page errors: {errors}")

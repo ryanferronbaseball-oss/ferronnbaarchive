@@ -93,6 +93,8 @@ try:
       for filename in PAGES:
         route=f"{sport}/{filename}"
         navigate(desktop,route)
+        check(desktop.locator('.ca-nav a[data-nav="index"]').inner_text()=="Overview",
+              route+" navigation calls the home screen Overview")
         check(desktop.locator(".ca-hub-link").get_attribute("href")=="../index.html",
               route+" points back to root master")
         check(desktop.evaluate(masthead_style)==nfl_masthead,

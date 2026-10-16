@@ -1,0 +1,30 @@
+name: MLB official pitching decisions
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "mlb/scripts/import_decisions.py"
+      - ".github/workflows/mlb-decisions.yml"
+jobs:
+  official-decisions:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Verify winning and losing pitchers and saves for all 131 games
+        run: python mlb/scripts/import_decisions.py
+      - name: Publish official pitcher decisions to site
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add mlb/data/decisions.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Add official W-L-S pitching decisions for historical MLB attendance"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi

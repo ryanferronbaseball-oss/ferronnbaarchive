@@ -12,6 +12,7 @@ games=json.loads((D/"games.json").read_text())
 rows=json.loads((D/"player_stats.json").read_text())
 scoring=json.loads((D/"scoring_plays.json").read_text())
 report=json.loads((D/"import_report.json").read_text())
+decisions=json.loads((D/"decisions.json").read_text())
 def check(condition,msg):
  assert condition,msg
  print("PASS",msg,flush=True)
@@ -26,6 +27,11 @@ check(len(double)==2 and double[0]["game_pk"]!=double[1]["game_pk"],"2022 Rockie
 check(len({g["game_pk"] for g in games})==131,"No duplicate MLB game IDs")
 check(len([g for g in games if g.get("innings")])==131,"All games have complete inning-level coverage")
 check(len(scoring)>=131,"Scoring play data retained for every MLB game")
+check(len(decisions)==131 and all(x["status"]=="verified" for x in decisions.values()),"Official W/L pitching decisions verified for all 131 MLB games")
+check(all(x.get("winner",{}).get("id") and x.get("loser",{}).get("id") for x in decisions.values()),"Official winners and losers contain MLB player IDs")
+check(sum(bool(x["save"]) for x in decisions.values())>=50,"Official saved/no-save game decisions independently identified")
+check(decisions["15785"]["save"] is None and decisions["662250"]["save"] is None,"Confirmed no-save games are not fabricated")
+check(decisions["662250"]["winner"]["name"]=="Yu Darvish","Official 2022 doubleheader decision recognizes Yu Darvish")
 check(report.get("lineup_team_games_with_nine_spots")==262,"All 262 team box scores have nine official batting-order positions")
 check(report.get("lineup_slot_rows",0)>3000,"Official batting slots imported for more than 3,000 player lines")
 check(all(r.get("side") in ("away","home") for r in rows),"Every MLB player box-score record identifies its home/away team")
@@ -63,6 +69,32 @@ try:
    visit("mlb/game.html?id=94","document.querySelector('#gameStats #box tbody tr')!==null")
    check(page.locator("#gameSelect option").count()==131,f"{width} game selector lists all 131")
    check("Colorado Rockies" in page.locator("#scoreboard").inner_text(),f"{width} first doubleheader game loaded")
+   check(page.locator("#scoreboard #pitchingDecisions").count()==1 and page.locator("#scoreboard #playerOfGame").count()==1,
+         f"{width} official decisions and one Player of the Game appear immediately beneath score")
+   check(page.locator("#scoreboard > section#pitchingDecisions + section#playerOfGame").count()==1,
+         f"{width} W/L/Save section appears before Player of the Game")
+   check(page.locator("#pitchingDecisions [data-decision]").count()==3,
+         f"{width} three labeled W/L/Save decisions show for each game")
+   check("Yu Darvish" in page.locator('#pitchingDecisions [data-decision="winner"]').inner_text() and
+         "Jake Bird" in page.locator('#pitchingDecisions [data-decision="loser"]').inner_text(),
+         f"{width} first doubleheader official winning/losing pitchers match MLB")
+   check("No save" in page.locator('#pitchingDecisions [data-decision="save"]').inner_text(),
+         f"{width} official no-save game displays No save, not a guessed reliever")
+   check(page.locator("#playerOfGame .mlb-potg-info h3").count()==1,
+         f"{width} exactly one Player of the Game, no hitter/pitcher split")
+   check(page.locator("#playerOfGame .mlb-potg-impact strong").count()==1 and
+         float(page.locator("#playerOfGame .mlb-potg-impact strong").inner_text())>0,
+         f"{width} single comparable hitter/pitcher Impact Score displayed")
+   result=page.evaluate("""async()=>{const d=await MLBArchive.load();const by=new Map();for(const r of d.rows){if(!by.has(r.game_pk))by.set(r.game_pk,[]);by.get(r.game_pk).push(r)}
+     const winners=d.games.map(g=>MLBArchive.playerOfGame(by.get(g.game_pk)||[]));
+     return {count:winners.filter(Boolean).length,names:winners.filter(Boolean).map(w=>w.row.player_id),
+       nonfinite:winners.filter(Boolean).some(w=>!Number.isFinite(w.score)),
+       pitching:winners.filter(Boolean).filter(w=>w.role==="Pitching").length,
+       batting:winners.filter(Boolean).filter(w=>w.role==="Batting").length};}""")
+   check(result["count"]==131 and not result["nonfinite"] and len(result["names"])==131,
+         f"{width} every imported game identifies one finite-scoring Player of the Game")
+   check(result["pitching"]>0 and result["batting"]>0,
+         f"{width} unified impact model can award either pitcher or hitter")
    check(page.locator("#box .mlb-team-box").count()==2,f"{width} batting score splits two teams")
    check(page.locator("#box .mlb-team-box").evaluate_all("(xs)=>xs.map(e=>e.dataset.side)")==["away","home"],
          f"{width} away lineup appears before home lineup")
@@ -88,6 +120,16 @@ try:
      "(xs)=>xs.map(x=>Number(x.dataset.playerId))")
     check(all(any(r["player_id"]==id and r["game_pk"]==662250 and r["side"]==side for r in rows) for id in ids),
           f"{width} {side} lineup cannot contain opponents")
+   page.locator("#gameSelect").select_option("95")
+   check("Josh Hader" in page.locator('#pitchingDecisions [data-decision="winner"]').inner_text() and
+         "Alex Colomé" in page.locator('#pitchingDecisions [data-decision="loser"]').inner_text(),
+         f"{width} decisions refresh correctly when switching games")
+   check(page.locator("#playerOfGame .mlb-potg-info h3").count()==1,
+         f"{width} one fresh Player of the Game when switching doubleheader games")
+   saved=next(g for g in games if decisions[str(g["game_pk"])].get("save"))
+   page.locator("#gameSelect").select_option(str(saved["attendance_id"]))
+   check(decisions[str(saved["game_pk"])]["save"]["name"] in page.locator('#pitchingDecisions [data-decision="save"]').inner_text(),
+         f"{width} saved games display official credited save pitcher")
    page.locator("#gameSelect").select_option("95")
    check(page.locator("#box .mlb-team-box").count()==2,
          f"{width} both team batting lineups stay separated when switching doubleheader games")

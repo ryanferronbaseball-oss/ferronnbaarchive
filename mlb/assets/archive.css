@@ -182,3 +182,30 @@ tbody small{display:block;color:var(--muted);font-size:11px;font-weight:400;marg
 .mlb-team-box .mlb-lineup-row.mlb-substitute td:first-child{padding-left:7px}
 .mlb-team-box .mlb-lineup-row.mlb-substitute td:nth-child(2){padding-left:26px;background:#F6F8F3}
 .mlb-team-box .mlb-lineup-row.mlb-substitute .mlb-order{color:#7C947C}
+
+/* Game recap: official W/L/S followed by one cross-discipline Player of the Game. */
+.mlb-pregame-eyebrow{font-size:11px;font-weight:850;letter-spacing:.14em;color:#627967;text-transform:uppercase;margin-bottom:5px}
+#pitchingDecisions,#playerOfGame{margin:16px 0;padding:22px 24px}
+#pitchingDecisions h2,#playerOfGame h2{margin:4px 0 18px;font-size:clamp(22px,3vw,30px)}
+.mlb-decision-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+.mlb-decision-card{min-width:0;border:1px solid #DEE4DA;background:#F7F9F4;padding:18px 17px;border-radius:12px}
+.mlb-decision-type{font-size:10px;letter-spacing:.11em;font-weight:900;color:#335944}
+.mlb-decision-role{font-size:12px;color:#788777;margin:5px 0 9px}
+.mlb-decision-name{display:block;font-weight:850;font-size:clamp(14px,2vw,18px);line-height:1.3;color:#284D3C;overflow-wrap:anywhere}
+.mlb-decision-unavailable{font-size:14px;color:#8A8C83;font-weight:650}
+.mlb-potg-panel{background:linear-gradient(125deg,#F3F8F0,#FFFEFB);border-color:#BCCFBD}
+.mlb-potg-body{display:flex;gap:22px;align-items:center}
+.mlb-potg-portrait{width:120px;height:145px;flex:0 0 120px;border-radius:14px;overflow:hidden;display:grid;place-items:center;background:linear-gradient(135deg,#D6E7D5,#BED8C6);font-size:34px;font-weight:900;color:#284D3C}
+.mlb-potg-portrait img{width:100%;height:100%;object-fit:cover;object-position:center top}
+.mlb-potg-info{min-width:0;flex:1}
+.mlb-potg-info h3{font-size:clamp(23px,3.5vw,35px);line-height:1.12;letter-spacing:-.035em;margin:6px 0 11px}
+.mlb-potg-info h3 a{text-decoration:none;color:#284D3C}
+.mlb-potg-info h3 a:hover{text-decoration:underline}
+.mlb-potg-category{font-size:11px;color:#5D7C63;font-weight:850;text-transform:uppercase;letter-spacing:.095em}
+.mlb-potg-statline{font-size:15px;font-weight:720;line-height:1.5}
+.mlb-potg-impact{display:inline-flex;align-items:baseline;gap:9px;margin:12px 0 8px;color:#284D3C}
+.mlb-potg-impact strong{font-size:29px;font-variant-numeric:tabular-nums;letter-spacing:-.04em}
+.mlb-potg-impact span{font-size:11px;letter-spacing:.07em;text-transform:uppercase;font-weight:800;color:#637968}
+.mlb-potg-profile{display:block;font-size:12px;font-weight:800;margin-top:6px}
+.mlb-potg-panel .mlb-note,.mlb-decisions-panel .mlb-note{margin:16px 0 0}
+@media(max-width:650px){.mlb-decision-grid{grid-template-columns:1fr}.mlb-decision-card{padding:13px 15px}.mlb-decision-role{margin:2px 0 5px}.mlb-potg-body{gap:15px}.mlb-potg-portrait{width:88px;height:106px;flex-basis:88px}#pitchingDecisions,#playerOfGame{padding:18px}}

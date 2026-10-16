@@ -4,7 +4,7 @@ const A=window.MLBArchive,app=document.getElementById("app"),el=id=>document.get
 const {esc,fmt,date,playerUrl,gameUrl,table,bar,tiles,record,mlbRow}=A;
 el("navigation").innerHTML=A.nav(page);
 let d;try{d=await A.load()}catch(err){app.innerHTML='<div class="empty">Unable to load attendance data: '+esc(err.message)+'</div>';return}
-const {games,rows,players,scores}=d;
+const {games,rows,players,scores,decisions}=d;
 const verified=games.filter(g=>g.game_pk!=null);
 const sorted=games.slice().sort((a,b)=>b.date.localeCompare(a.date)||b.attendance_id-a.attendance_id);
 const counts=(items)=>{let m=new Map();for(let s of items)m.set(s,(m.get(s)||0)+1);return [...m].sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0]))};
@@ -85,7 +85,39 @@ function gamePage(){
  const line=(team,label,total)=>'<tr><td>'+esc(label)+'</td>'+list.map(i=>'<td>'+A.disp(i[team]??"—",team)+'</td>').join("")+'<td><strong>'+esc(total)+'</strong></td></tr>';
  innings='<section class="panel"><h2>Line score by inning</h2><div class="table-wrap"><table class="mlb-innings"><thead><tr><th>Club</th>'+th+'<th>R</th></tr></thead><tbody>'+line("away",g.away,g.away_score)+line("home",g.home,g.home_score)+'</tbody></table></div></section>';
  }
- el("scoreboard").innerHTML=board+innings;
+ const officialDecision=decisions?.[String(g.game_pk)]||null;
+ const decisionVerified=officialDecision?.status==="verified";
+ const decisionPerson=(person,role)=>{
+  if(!decisionVerified)return '<span class="mlb-decision-unavailable">Not verified</span>';
+  if(!person)return '<span class="mlb-decision-unavailable">'+(role==="Save"?"No save":"Unavailable")+'</span>';
+  return '<a class="mlb-decision-name" href="./player.html?id='+encodeURIComponent(person.id)+'">'+esc(person.name||"Player #"+person.id)+'</a>';
+ };
+ const decisionsPanel='<section class="panel mlb-decisions-panel" id="pitchingDecisions">'
+  +'<div class="mlb-pregame-eyebrow">OFFICIAL MLB GAME DECISIONS</div><h2>Win, Loss & Save</h2>'
+  +'<div class="mlb-decision-grid">'
+  +[["WIN","Winner","winner"],["LOSS","Loser","loser"],["SAVE","Save","save"]].map(([short,label,key])=>
+    '<div class="mlb-decision-card" data-decision="'+key+'"><span class="mlb-decision-type">'+short+'</span>'
+    +'<div class="mlb-decision-role">'+label+'</div>'
+    +decisionPerson(officialDecision?.[key],label)+'</div>').join("")
+  +'</div><p class="mlb-note">Pitching decisions are the official win, loss and save credits, not selections from the impact ranking.</p></section>';
+ const standout=A.playerOfGame(gameStats);
+ const playerCard=standout?(()=>{
+  const r=standout.row,photoId=encodeURIComponent(r.player_id);
+  const fallback=esc(String(r.name||"").split(/\s+/).map(x=>x[0]).slice(0,2).join("").toUpperCase());
+  const image='<img alt="" src="https://img.mlbstatic.com/mlb-photos/image/upload/w_213,q_85/v1/people/'+photoId+'/headshot/67/current"'
+    +' onerror="this.style.display=\'none\';this.parentElement.textContent=\''+fallback+'\'">';
+  return '<div class="mlb-potg-body"><div class="mlb-potg-portrait">'+image+'</div><div class="mlb-potg-info">'
+    +'<div class="mlb-potg-category">'+esc(standout.role)+' · '+esc(r.team)+'</div>'
+    +'<h3><a href="'+playerUrl(r)+'">'+esc(r.name)+'</a></h3>'
+    +'<div class="mlb-potg-statline">'+esc(standout.line)+'</div>'
+    +'<div class="mlb-potg-impact"><strong>'+standout.score.toFixed(1)+'</strong><span>Impact Score</span></div>'
+    +'<a href="'+playerUrl(r)+'" class="mlb-potg-profile">View player profile ↗</a></div></div>';
+ })():'<div class="empty">No verified player statistics are available for this game.</div>';
+ const potgPanel='<section class="panel mlb-potg-panel" id="playerOfGame">'
+  +'<div class="mlb-pregame-eyebrow">SIGNATURE PERFORMANCE</div><h2>Player of the Game</h2>'
+  +playerCard
+  +'<p class="mlb-note">Custom, unofficial one-player impact rating. Hitting rewards total bases, runs, RBI, walks and steals; pitching rewards innings and strikeouts while penalizing runs, hits and walks. Both are compared on one scale, regardless of winning team.</p></section>';
+ el("scoreboard").innerHTML=board+decisionsPanel+potgPanel+innings;
  const order=[["batting","Batting"],["pitching","Pitching"],["fielding","Fielding"]];
  el("gameStats").innerHTML='<div class="mlb-nav-tabs" role="tablist">'+order.map(([c,title],i)=>'<button type="button" role="tab" aria-selected="'+(i===0)+'" data-cat="'+c+'">'+title+'</button>').join("")+'</div><section class="panel"><h2 id="statTitle">Batting box score</h2><div id="box"></div></section><section class="panel"><h2>Scoring plays</h2><div id="scoring"></div></section>'
  +'<p class="mlb-note">Official data: '+(confirmed?'<a target="_blank" rel="noopener" href="'+esc(g.source_url||"https://www.mlb.com/gameday/"+g.game_pk)+'">MLB game record ↗</a>':'Unmatched attendance entry. No player statistics are invented.')+'</p>';

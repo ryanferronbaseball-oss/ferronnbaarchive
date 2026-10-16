@@ -1,18 +1,20 @@
 /* Courtside Archive — shared, sport-scoped player quick search. */
 (()=>{
 'use strict';
-const sport=location.pathname.split('/').filter(Boolean)[0];
+const sections=location.pathname.split('/').filter(Boolean);
+const sport=sections.find(part=>['mlb','nba','college','nfl','cfb','soccer'].includes(part));
 const sources={
  mlb:{url:'./data/player_stats.json',name:'name',id:'player_id'},
  nba:{url:'../data/player_boxscores_espn.json',name:'player',id:'player_id'},
  college:{url:'./data/player_boxscores_espn.json',name:'player',id:'player_id'},
  nfl:{url:'./data/player_stats.json',name:'player',id:'athlete_id'},
- cfb:{url:'./data/player_stats.json',name:'player',id:'athlete_id'}
+ cfb:{url:'./data/player_stats.json',name:'player',id:'athlete_id'},
+ soccer:{url:'./data/matches.json',name:'name',id:'id'}
 };
 const info=sources[sport];if(!info)return;
 const normalize=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().trim();
-const profile=p=>(sport==='college'?'./stats.html?player=':'./player.html?id=')+encodeURIComponent(p.id);
-const label={mlb:'MLB',nba:'NBA',college:'College basketball',nfl:'NFL',cfb:'College football'}[sport];
+const profile=p=>'./player.html?id='+encodeURIComponent(p.id);
+const label={mlb:'MLB',nba:'NBA',college:'College basketball',nfl:'NFL',cfb:'College football',soccer:'Soccer'}[sport];
 function mount(){
  if(document.getElementById('ca-player-quick-search'))return;
  const header=document.querySelector('.archive-header,.ca-header,header.ca-header');
@@ -49,8 +51,10 @@ function mount(){
  input.addEventListener('focus',render);
  input.addEventListener('keydown',e=>{if(e.key==='Escape')close();if(e.key==='Enter'&&open){const first=panel.querySelector('a');if(first){e.preventDefault();location.href=first.href}}});
  document.addEventListener('pointerdown',e=>{if(!box.contains(e.target))close()});
- fetch(info.url,{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Player index unavailable');return r.json()}).then(data=>{
-  const rows=Array.isArray(data)?data:Array.isArray(data.rows)?data.rows:[];
+ const loadRows=()=>sport==='soccer'
+  ? window.SoccerArchive.load().then(data=>data.players)
+  : fetch(info.url,{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Player index unavailable');return r.json()}).then(data=>Array.isArray(data)?data:Array.isArray(data.rows)?data.rows:[]);
+ loadRows().then(rows=>{
   const map=new Map();
   rows.forEach(row=>{const id=row[info.id],name=row[info.name];if(id==null||!name)return;const key=String(id);if(!map.has(key))map.set(key,{id:key,name:String(name),key:normalize(name)})});
   players=[...map.values()];loaded=true;render();

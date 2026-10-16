@@ -56,7 +56,7 @@ def main():
                 check(b.counts.get(tag,0)==a.counts.get(tag,0)+1,file+" retains all NBA selectors plus optional school filter")
             else:
                 check(a.counts.get(tag,0)==b.counts.get(tag,0),file+" has original NBA "+tag+" count")
-        check(a.ids.issubset(b.ids),file+" preserves all NBA control IDs")
+        check((a.ids-({"hofBadge","mvpBadge","allNbaBadge"} if file=="player.html" else set())).issubset(b.ids),file+" preserves shared statistical control IDs (league-specific award badges may differ)")
         check(all(link in b.nav_links for link in ("./index.html","./game.html","./stats.html","./milestones.html","./insights.html","./nba-alumni.html")) and b.nav_links.count("./stats.html")==1 and "./stats.html" in a.nav_links,file+" preserves functional primary navigation, distinct menu destinations, and the college career link")
         check(all((COLLEGE/ref.removeprefix("./")).is_file()
                   for ref in b.links if ref.startswith("./") and "?" not in ref and "#" not in ref),

@@ -8,6 +8,7 @@
 <p class="lead">Game-by-game box scores with full scoring chronology, from opening kickoff to the final score.</p>
 <div class="toolbar"><label class="filter-label" for="gameSelect">Your game</label><select id="gameSelect" aria-label="Select attended College Football game"></select></div>
 <section id="scoreboard" aria-label="Game score by quarter"><div class="empty">Loading game…</div></section>
+<p class="note" id="sourceNote" aria-live="polite"></p>
 <section id="playerOfGame" class="panel pog" aria-label="College Football Player of the Game" aria-live="polite"><div class="empty">Loading Player of the Game…</div></section>
 <section id="pprLeaders" class="panel ppr-board" aria-label="Top Full-PPR offensive scores in this game">
  <div class="ppr-board-heading"><h2>Top fantasy performances</h2><a href="./records.html#milestones" class="action-link secondary">PPR milestones ↗</a></div>
@@ -22,7 +23,7 @@
 <div id="boxscore" aria-live="polite"></div>
 <div class="section-heading"><h2>Scoring plays</h2><span class="caption" id="scoringCount"></span></div>
 <section id="scoring" class="panel" aria-label="Scoring play chronology" aria-live="polite"><div class="empty">Loading scoring plays…</div></section>
-<p class="note">Scoring plays are in actual game order; successful conversions are grouped with their touchdowns. The running score reflects ESPN's historical records. Player tables retain source-defined categories, with team-by-team breakdowns. Older games can have missing specialty fields where the original records did not capture them.</p>
+<p class="note">Scoring plays are in actual game order; successful conversions are grouped with their touchdowns. The running score follows the official school scoring summary. Unverified historical player statistics are not invented. Player tables retain source-defined categories, with team-by-team breakdowns. Older games can have missing specialty fields where the original records did not capture them.</p>
 <div class="section-heading"><h2>Explore more</h2><a class="action-link secondary" href="./stats.html">College Football player leaderboards ↗</a></div>
 <footer class="footer">Courtside Archive · Historical College Football box score and scoring play source: ESPN.</footer>
 </main><script>
@@ -69,6 +70,9 @@ document.addEventListener("DOMContentLoaded",async()=>{
  function setGame(id){
   selected=games.find(g=>g.id===id)||games[0];if(!selected)return;
   el("gameSelect").value=selected.id;el("scoreboard").innerHTML=A.scoreboard(selected);
+  const partial=selected.verification==="partial_player_boxscore";
+  el("sourceNote").innerHTML=(partial?'<strong>Partial historical box score.</strong> Only the individually verified game-recap statistics are listed; Full-PPR is unavailable for this game. ':'Official school gamebook with verified player statistics. ')
+    +'<a href="'+A.esc(selected.boxscore_url)+'" target="_blank" rel="noopener">View original school source ↗</a>';
   const event=score[selected.id];
   el("scoringCount").textContent=(event?.plays.length||0)+" scoring plays";
   el("scoring").innerHTML=A.scoring(event?.plays||[],selected);

@@ -8,6 +8,7 @@
 <p class="lead">Game-by-game box scores with full scoring chronology, from opening kickoff to the final score.</p>
 <div class="toolbar"><label class="filter-label" for="gameSelect">Your game</label><select id="gameSelect" aria-label="Select attended NFL game"></select></div>
 <section id="scoreboard" aria-label="Game score by quarter"><div class="empty">Loading game…</div></section>
+<section id="playerOfGame" class="panel pog" aria-label="NFL Player of the Game" aria-live="polite"><div class="empty">Loading Player of the Game…</div></section>
 <div class="section-heading"><h2>Scoring plays</h2><span class="caption" id="scoringCount"></span></div>
 <section id="scoring" class="panel" aria-label="Scoring play chronology" aria-live="polite"><div class="empty">Loading scoring plays…</div></section>
 <div class="section-heading"><h2>Top fantasy performances</h2><a href="./milestones.html" class="action-link secondary">PPR milestones ↗</a></div>
@@ -43,6 +44,26 @@ document.addEventListener("DOMContentLoaded",async()=>{
   const body=A.GROUPS[group].map(([cat,title])=>boxSection(cat,title)).join("");
   el("boxscore").innerHTML=body||'<div class="empty">There are no source box-score rows for this statistical group in the selected game.</div>';
  }
+ function playerOfGame(performances){
+  const ranked=performances.filter(x=>Number.isFinite(Number(x.fantasy_ppr)))
+   .sort((a,b)=>Number(b.fantasy_ppr)-Number(a.fantasy_ppr)||a.player.localeCompare(b.player));
+  const p=ranked[0];
+  if(!p)return '<div class="empty">No eligible offensive Full-PPR performance is available for this game.</div>';
+  const s=p.stat_line||{};
+  const n=k=>Number.isFinite(Number(s[k]))&&s[k]!=null?Number(s[k]):0;
+  const cell=(label,value)=>'<div class="pog-stat"><span>'+A.esc(label)+'</span><strong>'+A.esc(value)+'</strong></div>';
+  const totalTds=n("passing_tds")+n("rushing_tds")+n("receiving_tds")+n("kick_punt_return_tds");
+  const fields=[["PASS YDS",n("passing_yards")],["PASS TD",n("passing_tds")],["INT",n("interceptions_thrown")],
+   ["RUSH YDS",n("rushing_yards")],["RUSH TD",n("rushing_tds")],["REC",n("receptions")],
+   ["REC YDS",n("receiving_yards")],["REC TD",n("receiving_tds")],["FUM LOST",n("fumbles_lost")],
+   ["2-PT",n("offensive_two_point_conversions")],["RET TD",n("kick_punt_return_tds")],["TOTAL TD",totalTds]];
+  return '<div class="pog-kicker">Courtside Archive selection · Unofficial</div>'
+   +'<h2>Player of the Game</h2>'
+   +'<div class="pog-head"><div><div class="pog-player"><a href="./player.html?id='+encodeURIComponent(p.athlete_id)+'">'+A.esc(p.player)+'</a></div><div class="pog-team">'+A.esc(p.team)+'</div></div>'
+   +'<div class="pog-impact"><strong>'+Number(p.fantasy_ppr).toFixed(2)+'</strong><span>Full-PPR points</span></div></div>'
+   +'<div class="pog-stats">'+fields.map(([label,value])=>cell(label,value)).join("")+'</div>'
+   +'<p class="pog-method">Unofficial selection based on the highest traditional offensive Full-PPR fantasy score in this game (including receptions, yards, touchdowns and turnover deductions). K/DST and individual defensive scoring are excluded; this is not an official NFL award.</p>';
+ }
  function setGame(id){
   selected=games.find(g=>g.id===id)||games[0];if(!selected)return;
   el("gameSelect").value=selected.id;el("scoreboard").innerHTML=A.scoreboard(selected);
@@ -51,7 +72,9 @@ document.addEventListener("DOMContentLoaded",async()=>{
   el("scoring").innerHTML=A.scoring(event?.plays||[],selected);
   document.title=selected.away_abbr+" at "+selected.home_abbr+" · "+selected.date+" | NFL Courtside Archive";
   history.replaceState(null,"","./game.html?id="+encodeURIComponent(selected.id));
-  const ranks=ppr.filter(x=>x.game_id===selected.id).sort((a,b)=>b.fantasy_ppr-a.fantasy_ppr||a.player.localeCompare(b.player)).slice(0,5);
+  const gamePpr=ppr.filter(x=>x.game_id===selected.id);
+  el("playerOfGame").innerHTML=playerOfGame(gamePpr);
+  const ranks=gamePpr.slice().sort((a,b)=>b.fantasy_ppr-a.fantasy_ppr||a.player.localeCompare(b.player)).slice(0,5);
   el("pprLeaders").innerHTML=ranks.length?'<div class="table-wrap"><table><thead><tr><th>Player</th><th>PPR points</th><th>Receiving</th><th>Rushing</th><th>Passing</th></tr></thead><tbody>'+ranks.map(x=>'<tr><td><a href="./player.html?id='+encodeURIComponent(x.athlete_id)+'">'+A.esc(x.player)+'</a><small>'+A.esc(x.team)+'</small></td><td><strong>'+Number(x.fantasy_ppr).toFixed(2)+'</strong></td><td>'+x.stat_line.receptions+' REC · '+x.stat_line.receiving_yards+' YDS</td><td>'+x.stat_line.rushing_yards+' YDS</td><td>'+x.stat_line.passing_yards+' YDS</td></tr>').join("")+'</tbody></table></div>':'<div class="empty">No offensive fantasy records available.</div>';
   renderTabs();
  }
@@ -61,6 +84,6 @@ document.addEventListener("DOMContentLoaded",async()=>{
   el("gameSelect").addEventListener("change",e=>setGame(e.target.value));
   el("statTabs").querySelectorAll("button").forEach(btn=>btn.addEventListener("click",()=>{group=btn.dataset.group;renderTabs()}));
   setGame(urlGame);
- }catch(e){el("scoreboard").innerHTML='<div class="empty">Unable to load this game: '+A.esc(e.message)+'</div>';el("scoring").innerHTML="";el("boxscore").innerHTML=""}
+ }catch(e){el("scoreboard").innerHTML='<div class="empty">Unable to load this game: '+A.esc(e.message)+'</div>';el("scoring").innerHTML="";el("playerOfGame").innerHTML='<div class="empty">Player of the Game could not be loaded.</div>';el("boxscore").innerHTML=""}
 });
 </script></body></html>

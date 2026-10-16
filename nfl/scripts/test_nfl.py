@@ -66,6 +66,27 @@ try:
    page.wait_for_function("document.querySelectorAll('#scoring .play').length===13")
    check("M.Pittman" in page.locator("#scoring").inner_text(),str(width)+" detailed 2023 game-winning scoring description")
    check("Gardner Minshew" in page.locator("#boxscore").inner_text(),str(width)+" 2023 offense box score")
+   nfl_styles=page.evaluate("""() => {
+     const selectors={"heading":"#pprLeaders h2","player":"#pprLeaders .impact-player a",
+       "team":"#pprLeaders .impact-player small","score":"#pprLeaders .impact-number strong",
+       "header":"#pprLeaders .impact-board th","stats":"#pprLeaders .impact-board td:nth-child(3)"};
+     return Object.fromEntries(Object.entries(selectors).map(([name,selector])=>[name,getComputedStyle(document.querySelector(selector)).fontSize]));
+   }""")
+   top_gap=page.evaluate("""() => Math.round(
+     document.querySelector('#pprLeaders .impact-scroll').getBoundingClientRect().top
+      - document.querySelector('#pprLeaders .ppr-board-heading').getBoundingClientRect().bottom)""")
+   check(10<=top_gap<=16,str(width)+" NFL top-fantasy panel has basketball-sized header-to-table spacing")
+   visit("nba/game.html?id=1")
+   page.wait_for_function("document.querySelectorAll('.impact-board tbody tr').length===5")
+   nba_styles=page.evaluate("""() => {
+     const selectors={"heading":"section.panel:has(.impact-board) h2","player":".impact-board .impact-player a",
+       "team":".impact-board .impact-player small","score":".impact-board .impact-number strong",
+       "header":".impact-board th","stats":".impact-board td:nth-child(3)"};
+     return Object.fromEntries(Object.entries(selectors).map(([name,selector])=>[name,getComputedStyle(document.querySelector(selector)).fontSize]));
+   }""")
+   check(nfl_styles==nba_styles,str(width)+" NFL leaderboard font sizes match NBA player, team, score, header, stat and title")
+   visit("nfl/game.html?id=nfl-2023-12-03-ind-ten")
+   page.wait_for_function("document.querySelectorAll('#pprLeaders .impact-board tbody tr').length===5")
    check("Michael Pittman Jr." in page.locator("#pprLeaders").inner_text(),str(width)+" 2023 box score highlights top Full-PPR performers")
    check(page.locator("#pprLeaders .impact-board tbody tr").count()==5,str(width)+" Top fantasy performances matches the five-row basketball table")
    check(page.locator("#pprLeaders .impact-board th").all_text_contents()==["Player","PPR points","Receiving","Rushing","Passing"],str(width)+" Fantasy table preserves its original production columns")

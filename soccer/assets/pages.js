@@ -55,7 +55,7 @@ function overview(){
  +'<p class="lead">Three matches across MLS and the FIFA World Cup. Explore the same personal game history, players, signature performances and records you know from basketball and football.</p>'
  +metricCards([["Matches",matches.length],["Goals witnessed",goalsTotal],["Players who appeared",players.filter(p=>p.appearances).length],["Competitions",new Set(matches.map(m=>m.competition)).size]])
  +'<div class="section-heading"><h2>Recent matches</h2><a class="action-link secondary" href="./game.html">Explore games ↗</a></div>'
- +'<section class="game-grid">'+latest.map(A.matchCard).join("")+'</section>'
+ +'<section id="games" class="game-grid">'+latest.map(A.matchCard).join("")+'</section>'
  +'<div class="section-heading"><h2>Signature Performances</h2><a class="action-link secondary" href="./records.html">View all Records ↗</a></div>'
  +'<p class="soccer-info">Single-match performances from matches you attended, not full-season totals.</p><div class="soccer-grid">'
  +categories.map(([title,k])=>{const a=per.slice().sort((a,b)=>b[k]-a[k]||b.assists-a.assists||b.goals-a.goals||a.p.name.localeCompare(b.p.name))[0];
@@ -93,7 +93,7 @@ function gameView(m){
 }
 function gamesView(){
  let id=new URLSearchParams(location.search).get("id");const m=one(id);
- const render=(x)=>{app.innerHTML=gameView(x);el("gameSelect").addEventListener("change",()=>{const next=one(el("gameSelect").value);history.replaceState(null,"",link(next));render(next)});}
+ const render=(x)=>{app.innerHTML=gameView(x);el("gameSelect").addEventListener("change",()=>{const next=one(el("gameSelect").value);window.history.replaceState(null,"",link(next));render(next)});}
  render(m);
 }
 const columns=[["Appearances","appearances"],["Starts","starts"],["Goals","goals"],["Direct assists","assists"],["Goal contributions","contributions"],["MLS secondary assists","secondary_assists"],["Clean sheets (GK)","clean_sheets"],["Yellow cards","yellow"],["Red cards","red"]];

@@ -1,0 +1,30 @@
+name: MLB career Hall of Fame and awards import
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "mlb/scripts/import_career_awards.py"
+      - ".github/workflows/mlb-career-awards.yml"
+jobs:
+  awards:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Match 10 official MLB Hall of Fame and annual award categories to historical player IDs
+        run: python mlb/scripts/import_career_awards.py
+      - name: Publish verified MLB career honors
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add mlb/data/career_awards.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Import officially recognized Hall of Famers and career MLB awards"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi

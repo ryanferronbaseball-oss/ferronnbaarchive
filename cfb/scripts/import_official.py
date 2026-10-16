@@ -29,13 +29,27 @@ def number(s):
  except (ValueError,TypeError):return None
 def val(a,i,default=""):
  return clean(a[i]) if len(a)>i else default
+def canonical(name,team):
+ name=clean(name)
+ if team=="USD":
+  known={"LAWRENCE, A":"Anthony Lawrence","MARTINEZ, E":"Emilio Martinez",
+         "PRIEST, Justin":"Justin Priest","BANDY, Michael":"Michael Bandy",
+         "SINNETT, Reid":"Reid Sinnett","KINCAID, Dalton":"Dalton Kincaid",
+         "DWELLEY, Ross":"Ross Dwelley"}
+  if name.upper() in {k.upper() for k in known}:
+   return next(v for k,v in known.items() if k.upper()==name.upper())
+ if "," in name:
+  last,first=[z.strip() for z in name.split(",",1)]
+  if first and last:return clean(first+" "+last.title())
+ return name.title() if name.isupper() else name
 def identity(n,team):
- n=clean(n)
+ n=canonical(n,team)
  # Stable names across attended games; no cross-school identity guessed.
  normalized=re.sub(r"[^a-z0-9]+","-",n.lower()).strip("-")
  return "cfb-"+re.sub(r"[^a-z0-9]+","-",team.lower())+"-"+normalized
 def row(g,team,name,category,labels,values):
  if not name or name.lower() in ("team","totals","total") or name.startswith("-"):return
+ name=canonical(name,team)
  athlete_id=identity(name,team)
  if not any(clean(v) for v in values):return
  ROWS.append(dict(game_id=g["id"],date=g["date"],espn_event_id=g.get("espn_event_id"),team=team,
@@ -157,7 +171,12 @@ def extract(g,soup):
  scoring_candidates=[]
  for t in tables[:7]:
   heads=clean(t.get_text(" ",strip=True))[:180].lower()
-  if ("scoring play" in heads or ("qtr" in heads and "time" in heads and "score" in heads)):
+  sample_rows=[]
+  for tr in t.find_all("tr")[:18]:
+   vals=[clean(x.get_text(" ",strip=True)) for x in tr.find_all("td",recursive=False)]
+   if len(vals)>=5 and vals[-2].isdigit() and vals[-1].isdigit() and " - " in vals[-3]:
+    sample_rows.append(vals)
+  if sample_rows or ("scoring play" in heads):
    scoring_candidates.append(t)
  print("SCORING TABLES",g["id"],len(scoring_candidates),flush=True)
  scoring_rows=[]

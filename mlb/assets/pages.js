@@ -307,8 +307,8 @@ function profilePage(){
   ?p.pitching.reduce((sum,row)=>sum+Number(row.pitching[key]),0):"—";
  const pitcherStats=ps?[
   ["Games",pitcherGames],["Games Started",starts],["Wins",officialPitcherRecord.wins],["Losses",officialPitcherRecord.losses],
-  ["Hits",ps.hits],["Earned Runs",ps.earnedRuns],["Walks",ps.baseOnBalls],["K’s",ps.strikeOuts],
-  ["Saves",officialPitcherRecord.saves],["Holds",reliefCount("holds")],["Blown Saves",reliefCount("blownSaves")]
+  ["Innings",ps.inningsPitched],["Hits",ps.hits],["Earned Runs",ps.earnedRuns],["Walks",ps.baseOnBalls],
+  ["K’s",ps.strikeOuts],["Saves",officialPitcherRecord.saves],["Holds",reliefCount("holds")],["Blown Saves",reliefCount("blownSaves")]
  ]:[];
  const rateItems=[["Batting Average",A.disp(bs.average,"average")],["On-Base Percentage",A.disp(bs.onBasePercentage,"onBasePercentage")],
   ["Slugging Percentage",A.disp(bs.sluggingPercentage,"sluggingPercentage")],["OPS",A.disp(bs.ops,"ops")],

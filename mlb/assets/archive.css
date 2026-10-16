@@ -253,3 +253,88 @@ tbody small{display:block;color:var(--muted);font-size:11px;font-weight:400;marg
 .mlb-honor-year{display:inline-flex;background:white;border:1px solid #D4DFC9;border-radius:7px;padding:6px 9px;color:#2C5139;font-weight:750;font-size:12px}
 @media(max-width:850px){.mlb-hof-grid{grid-template-columns:1fr}}
 @media(max-width:560px){.mlb-hof-summary{grid-template-columns:repeat(2,minmax(0,1fr))}.mlb-hof-figures{gap:6px}.mlb-hof-figure{padding:9px}.mlb-hof-card{padding:15px}.mlb-hof-portrait{width:76px;height:89px;flex-basis:76px}.mlb-hof-figure strong{font-size:18px}}
+
+
+/* MLB player page: visual parity with NBA's framed editorial player card.
+   Keep baseball-specific statistics, but share the same header/stat/tabs rhythm. */
+.mlb-player-back{margin:18px 0 23px;font-size:12px;font-weight:650}
+.mlb-player-back a{color:#315C43;text-underline-offset:3px}
+.mlb-profile-hero.mlb-profile-head{
+ display:flex;align-items:center;gap:22px;padding:19px 20px;margin:0 0 14px;
+ border:1px solid #D5E0D2;border-radius:16px;
+ background:linear-gradient(108deg,#E8F0E6 0%,#F8FAF5 57%,#FFFEFB 100%);min-width:0
+}
+.mlb-profile-photo{display:grid;place-items:center;width:110px;height:122px;flex:0 0 110px;
+ background:linear-gradient(145deg,#DCE7DC,#EEF4EA);border:1px solid #C6D9C6;
+ border-radius:11px;overflow:hidden;font-size:33px;font-weight:850;color:#315940}
+.mlb-profile-photo img{width:100%;height:100%;object-fit:cover;object-position:top center}
+.mlb-profile-identity{flex:1;min-width:0}
+.mlb-profile-team-name{color:#2D5640;font-weight:900;font-size:10px;letter-spacing:.17em;text-transform:uppercase}
+.mlb-profile-identity h1{font-size:clamp(30px,4.4vw,45px);line-height:1.05;margin:8px 0 9px;letter-spacing:-.06em;overflow-wrap:anywhere}
+.mlb-profile-seen{margin:8px 0 0;color:#607265;font-size:12px;line-height:1.6}
+.mlb-profile-achievements{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}
+.mlb-profile-badge{display:inline-flex;align-items:center;justify-content:center;min-height:23px;padding:4px 8px;
+ border:1px solid transparent;border-radius:6px;font-size:10px;font-weight:850;letter-spacing:.04em;
+ line-height:1.25;text-decoration:none!important;white-space:normal}
+.mlb-profile-badge.hof{background:#FFF2C7;color:#6A4E1D;border-color:#D9BC74}
+.mlb-profile-badge.mvp{background:#D9EFE0;color:#185139;border-color:#96C4A4}
+.mlb-profile-badge.cy{background:#E0EBFA;color:#31567A;border-color:#AFC7E2}
+.mlb-profile-badge.gg{background:#FAE8C9;color:#79501A;border-color:#DDC08B}
+.mlb-profile-badge.ss{background:#E8EAF1;color:#48556B;border-color:#BCC8D9}
+.mlb-profile-badge:hover{filter:brightness(.96)}
+.mlb-profile-headline-stats{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:9px;margin:13px 0 11px}
+.mlb-profile-stat{background:#FFFEFB;border:1px solid #E0E2DB;border-radius:10px;padding:13px 12px;min-width:0;
+ box-shadow:0 3px 10px rgba(41,62,48,.025)}
+.mlb-profile-stat small{display:block;color:#68766B;font-size:10px;margin-bottom:8px;line-height:1.4}
+.mlb-profile-stat strong{display:block;color:#28312D;font-size:clamp(18px,2.1vw,24px);letter-spacing:-.045em;line-height:1.2;
+ font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.mlb-profile-tabs{display:flex;flex-wrap:wrap;gap:6px;margin:13px 0 13px}
+.mlb-profile-tab,.mlb-profile-log-tabs button{border:1px solid #D2DDD0;border-radius:7px;
+ background:#EFF3EB;color:#335D42;font-weight:750;padding:10px 13px;font-size:12px;line-height:1.35}
+.mlb-profile-tab:hover,.mlb-profile-log-tabs button:hover{background:#DFEADD}
+.mlb-profile-tab[aria-selected="true"],.mlb-profile-log-tabs button[aria-selected="true"]{background:#284D3C;color:#fff;border-color:#284D3C}
+.mlb-profile-panel{margin-top:0;border-radius:14px;min-width:0}
+.mlb-profile-panel[hidden]{display:none!important}
+.mlb-profile-panel h2{font-size:23px;margin:0 0 16px}
+.mlb-profile-panel h3{color:#365E46;font-size:15px;margin:20px 0 12px}
+.mlb-profile-signature{border:1px solid #D8E2D4;border-radius:12px;padding:16px 17px;background:linear-gradient(110deg,#EFF6EC,#FAFCF6);
+ display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 14px;margin-bottom:17px}
+.mlb-profile-signature small{color:#6C7B65;font-weight:850;font-size:10px;letter-spacing:.07em;flex-basis:100%}
+.mlb-profile-signature strong{color:#2A513B;font-size:21px;letter-spacing:-.025em}
+.mlb-profile-signature span{color:#526853;font-size:12px}
+.mlb-profile-signature a{font-size:12px;font-weight:850}
+.mlb-profile-total-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.mlb-profile-total{background:#F4F7F1;border:1px solid #E3E9DE;border-radius:10px;padding:14px;min-width:0}
+.mlb-profile-total small{display:block;font-size:11px;line-height:1.5;color:#65766B}
+.mlb-profile-total strong{display:block;font-size:23px;letter-spacing:-.03em;color:#284D3C;margin-top:6px;font-variant-numeric:tabular-nums}
+.mlb-profile-log-tabs{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 18px}
+.mlb-profile-section{margin-top:27px}
+.mlb-profile-section h2{font-size:22px;margin:0 0 7px}
+.mlb-profile-award-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:15px 0 16px}
+.mlb-award-tab{font-weight:800;font-size:12px;padding:10px 13px;border:1px solid #CEDBCB;border-radius:7px;color:#315C41;background:#F0F4EC}
+.mlb-award-tab.hof{background:#FFF2D3;color:#75531D;border-color:#D6BB7D}
+.mlb-award-tab.mvp{background:#E1F0E2;color:#2E6140;border-color:#A4CBAA}
+.mlb-award-tab.cy{background:#E8F0FA;color:#385A7A;border-color:#B0C5E2}
+.mlb-award-tab.gg{background:#FCEDD5;color:#79531F;border-color:#E1C18D}
+.mlb-award-tab.ss{background:#EEF0F3;color:#505E6F;border-color:#C1CBD6}
+.mlb-award-tab[aria-selected="true"]{background:#284D3C;color:#fff;border-color:#284D3C}
+.mlb-profile-panel .mlb-honor-detail{margin-top:8px}
+.mlb-profile-panel .mlb-honor-detail p{line-height:1.55}
+@media(max-width:950px){
+ .mlb-profile-headline-stats{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .mlb-profile-total-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(max-width:620px){
+ .mlb-profile-hero.mlb-profile-head{padding:15px;gap:12px;align-items:center}
+ .mlb-profile-photo{width:85px;height:98px;flex-basis:85px;font-size:23px}
+ .mlb-profile-identity h1{font-size:clamp(25px,7vw,35px)}
+ .mlb-profile-team-name{font-size:9px;letter-spacing:.12em}
+ .mlb-profile-badge{font-size:9px;padding:4px 6px}
+ .mlb-profile-headline-stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .mlb-profile-total-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .mlb-profile-panel{padding:16px}
+ .mlb-profile-stat{padding:12px}
+ .mlb-profile-signature{padding:13px}
+ .mlb-profile-tabs{gap:5px}
+ .mlb-profile-tab{padding:9px 11px}
+}

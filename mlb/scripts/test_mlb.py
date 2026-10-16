@@ -200,7 +200,9 @@ try:
    check(page.locator("#hofGrid .mlb-hof-card").count()==21,f"{width} Hall of Fame sort retains every inducted player")
    fits("Hall of Fame page")
    visit(f"mlb/player.html?id={hof_id}","document.querySelector('.mlb-profile-head')!==null")
-   check(page.locator('.mlb-accolade.hof').count()==1,f"{width} Hall of Fame badge on inducted player's profile")
+   check(page.locator('.mlb-profile-hero .mlb-profile-badge.hof').count()==1,f"{width} gold Hall of Fame badge sits inside player hero")
+   check(page.locator(".mlb-profile-headline-stats .mlb-profile-stat").count()==6,f"{width} six matching top stats on Hall of Fame profile")
+   check(page.locator("#profileTabs .mlb-profile-tab").count()==4,f"{width} awards coexist with NBA-style profile navigation")
    check(page.locator('#honorTabs [data-honor="hall_of_fame"]').count()==1,f"{width} Hall of Fame career tab exists")
    check(str(honored[hof_id]["hall_of_fame"]["year"]) in page.locator('#honor-hall_of_fame').inner_text(),
          f"{width} inducted class year appears on player profile")
@@ -208,15 +210,35 @@ try:
    for category in ("mvp","cy_young","gold_glove","silver_slugger"):
     chosen=next(pid for pid,p in honored.items() if p.get(category))
     visit(f"mlb/player.html?id={chosen}","document.querySelector('.mlb-profile-head')!==null")
-    check(page.locator(f'[data-honor-link="{category}"]').count()==1,f"{width} verified {category} career award badge")
+    check(page.locator(f'.mlb-profile-hero [data-honor-link="{category}"]').count()==1,f"{width} colored {category} achievement badge is inside player card")
+    check(page.locator(f'.mlb-profile-hero [data-honor-link="{category}"]').evaluate("(el)=>getComputedStyle(el).backgroundColor")!="rgba(0, 0, 0, 0)",
+          f"{width} {category} badge has distinct background")
+    check(page.locator(f'#honorTabs [data-honor="{category}"]').count()==1,
+          f"{width} colored {category} award-history tab exists")
     page.locator(f'#honorTabs [data-honor="{category}"]').click()
     check(page.locator(f'#honor-{category}').is_visible(),f"{width} {category} tab opens verified award years")
+    page.locator(f'.mlb-profile-hero [data-honor-link="{category}"]').click()
+    check(page.locator("#profile-overview").is_visible() and page.locator(f'#honor-{category}').is_visible(),
+          f"{width} {category} hero badge switches to corresponding honor details")
     check(str(honored[chosen][category][0]["year"]) in page.locator(f'#honor-{category}').inner_text(),
           f"{width} {category} year is shown from official record")
    fits("MLB awarded player")
    example=rows[0]
    visit(f"mlb/player.html?id={example['player_id']}","document.querySelector('.mlb-profile-head')!==null")
    check(example["name"] in page.locator(".mlb-profile-head").inner_text(),f"{width} MLB-ID player profile")
+   check(page.locator(".mlb-profile-hero").count()==1,f"{width} NBA-inspired framed player hero")
+   check(page.locator(".mlb-profile-photo img").count()==1,f"{width} portrait inside player card")
+   check(page.locator(".mlb-profile-headline-stats .mlb-profile-stat").count()==6,f"{width} six compact profile stats match NBA layout")
+   check(page.locator("#profileTabs [role=tab]").count()==4,f"{width} four NBA-style profile tabs")
+   check(page.locator("#profile-overview").is_visible(),f"{width} Overview default panel visible")
+   page.locator('#profileTabs [data-profile-tab="advanced"]').click()
+   check(page.locator("#profile-advanced").is_visible() and not page.locator("#profile-overview").is_visible(),
+         f"{width} Advanced player rates appear on selected tab")
+   page.locator('#profileTabs [data-profile-tab="milestones"]').click()
+   check(page.locator("#profile-milestones").is_visible() and page.locator("#profile-milestones .mlb-profile-total").count()>=6,
+         f"{width} witnessed single-game milestones accessible")
+   page.locator('#profileTabs [data-profile-tab="games"]').click()
+   check(page.locator("#profile-games").is_visible(),f"{width} Game Log tab opens")
    check(page.locator("#logs tbody tr").count()>=1,f"{width} individual game log")
    fits("MLB player")
    visit("mlb/records.html","document.querySelector('#recordCards .mlb-record')!==null")

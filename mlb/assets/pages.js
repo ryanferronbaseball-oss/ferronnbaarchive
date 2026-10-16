@@ -324,10 +324,19 @@ function profilePage(){
  const fipHitBatters=canCalculateFip?p.pitching.reduce((total,row)=>total+Number(row.pitching.hitBatsmen),0):null;
  const estimatedFip=canCalculateFip?
   (13*ps.homeRuns+3*(ps.baseOnBalls+fipHitBatters)-2*ps.strikeOuts)*3/ps.outs+3.20:null;
- const pitchingRates=ps?[["ERA",A.disp(ps.era,"era")],["FIP (est.)",estimatedFip==null?"—":estimatedFip.toFixed(2)],
-  ["WHIP",A.disp(ps.whip,"whip")],["Strikeouts per 9",A.disp(ps.k9,"k9")],
-  ["Walks per 9",A.disp(ps.bb9,"bb9")],["K/BB Ratio",ps.baseOnBalls?(ps.strikeOuts/ps.baseOnBalls).toFixed(2):"—"],
-  ["Innings Pitched",ps.inningsPitched]]:[];
+ // Pitcher strikeout and walk rates use batters faced (BF), not innings.
+ // Missing BF/BB/K in any attended-game line means we cannot quote an exact rate.
+ const completeBatterFaced=!!ps&&p.pitching.length>0&&p.pitching.every(row=>
+  ["battersFaced","strikeOuts","baseOnBalls"].every(key=>
+   row.pitching?.[key]!=null&&Number.isFinite(Number(row.pitching[key]))));
+ const totalBattersFaced=completeBatterFaced?p.pitching.reduce((sum,row)=>sum+Number(row.pitching.battersFaced),0):0;
+ const kRate=totalBattersFaced>0?(100*ps.strikeOuts/totalBattersFaced).toFixed(1)+"%":"—";
+ const bbRate=totalBattersFaced>0?(100*ps.baseOnBalls/totalBattersFaced).toFixed(1)+"%":"—";
+ const pitchingRates=ps?[
+  ["ERA",A.disp(ps.era,"era")],["FIP",estimatedFip==null?"—":estimatedFip.toFixed(2)],
+  ["WHIP",A.disp(ps.whip,"whip")],["K/BB",ps.baseOnBalls?(ps.strikeOuts/ps.baseOnBalls).toFixed(2):"—"],
+  ["K%",kRate],["BB%",bbRate]
+ ]:[];
  const thresholds=[
   ["3+ hit games",r=>Number(r.batting?.hits||0)>=3],
   ["Multi-HR games",r=>Number(r.batting?.homeRuns||0)>=2],
@@ -359,7 +368,7 @@ function profilePage(){
   +'<section class="panel mlb-profile-panel" id="profile-advanced" role="tabpanel" hidden>'
   +'<h2>Advanced statistics</h2><p class="mlb-note">Rate statistics combine only your witnessed games. Calculated from official batting and pitching lines—not complete MLB career totals.</p>'
   +(p.batting.length?'<h3>Batting efficiency</h3>'+totals(rateItems):"")
-  +(ps?'<h3>Pitching efficiency</h3>'+totals(pitchingRates)
+  +(ps?'<h3>Pitching efficiency</h3>'+totals(pitchingRates,"mlb-profile-pitching-advanced-grid")
    +'<p class="mlb-note">Estimated FIP uses only attended-game pitching totals: (13 × HR + 3 × (BB + HBP) − 2 × K) ÷ IP + 3.20. Actual FIP uses a season-specific league constant and typically excludes intentional walks. A dash means required pitching data is unavailable; small game samples can be volatile.</p>':"")+'</section>'
   +'<section class="panel mlb-profile-panel" id="profile-games" role="tabpanel" hidden>'
   +'<h2>Every game you witnessed</h2><div class="mlb-profile-log-tabs" role="tablist" aria-label="Game log stat group">'

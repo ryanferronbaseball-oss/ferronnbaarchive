@@ -7,6 +7,7 @@ MVP = AL/NL regular-season MVP (excludes World Series, All-Star, other MVPs).
 Cy Young = AL/NL Cy Young, plus pre-1967 combined MLB Cy Young where relevant.
 Gold Glove = regular AL/NL Rawlings Gold Glove, not Platinum/All-Time/MiLB.
 Silver Slugger = regular AL/NL Silver Slugger, not team MVP awards.
+MLB All-Star = MLBALL official All-Star selections, deduplicated by season.
 National Baseball Hall of Fame = verified MLBHOF recipient, not eligibility.
 """
 import concurrent.futures,datetime,json,pathlib,time,urllib.request,urllib.error
@@ -19,7 +20,8 @@ CATEGORIES={
  "MLBHOF":("hall_of_fame",None),"ALMVP":("mvp","AL"),"NLMVP":("mvp","NL"),
  "ALCY":("cy_young","AL"),"NLCY":("cy_young","NL"),"MLBCY":("cy_young","MLB"),
  "ALGG":("gold_glove","AL"),"NLGG":("gold_glove","NL"),
- "ALSS":("silver_slugger","AL"),"NLSS":("silver_slugger","NL")
+ "ALSS":("silver_slugger","AL"),"NLSS":("silver_slugger","NL"),
+ "MLBALL":("all_star",None)
 }
 def fetch(item):
  award_id=item
@@ -33,7 +35,7 @@ def fetch(item):
   except Exception:
    if attempt==2:raise
    time.sleep(0.7*(attempt+1))
-players={pid:{"name":name,"hall_of_fame":None,"mvp":[],"cy_young":[],"gold_glove":[],"silver_slugger":[]} for pid,name in unique.items()}
+players={pid:{"name":name,"hall_of_fame":None,"mvp":[],"cy_young":[],"gold_glove":[],"silver_slugger":[],"all_star":[]} for pid,name in unique.items()}
 source_counts={}
 with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:
  for award_id,records in pool.map(fetch,CATEGORIES):
@@ -58,12 +60,14 @@ with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:
     record={"year":year,"league":league}
     notes=award.get("notes")
     if notes:record["notes"]=str(notes)
-    if record not in players[pid][kind]:players[pid][kind].append(record)
+    if kind=="all_star":
+     if not any(r["year"]==year for r in players[pid]["all_star"]):players[pid]["all_star"].append({"year":year})
+    elif record not in players[pid][kind]:players[pid][kind].append(record)
   source_counts[award_id]={"recipient_records":len(records),"matched_records":matched}
 for val in players.values():
- for k in ["mvp","cy_young","gold_glove","silver_slugger"]:
+ for k in ["mvp","cy_young","gold_glove","silver_slugger","all_star"]:
   val[k].sort(key=lambda x:(x["year"],x.get("league",""),x.get("notes","")))
-retained={pid:p for pid,p in players.items() if p["hall_of_fame"] or any(p[k] for k in ["mvp","cy_young","gold_glove","silver_slugger"])}
+retained={pid:p for pid,p in players.items() if p["hall_of_fame"] or any(p[k] for k in ["mvp","cy_young","gold_glove","silver_slugger","all_star"])}
 output={"_meta":{
   "source":"Official MLB StatsAPI annual awards/recipients (MLB player IDs)",
   "source_url":"https://statsapi.mlb.com/api/v1/awards",
@@ -73,9 +77,10 @@ output={"_meta":{
   "cy_young_definition":"AL/NL and historical combined MLB Cy Young awards only",
   "gold_glove_definition":"Rawlings AL/NL standard Gold Glove awards only",
   "silver_slugger_definition":"AL/NL standard Silver Slugger awards only",
+  "all_star_definition":"Official MLB All-Star selections deduplicated by year; not All-MLB Team or All-Star Game appearances",
   "player_pool":len(unique),"honored_players":len(retained),
   "inductees":sum(bool(x["hall_of_fame"]) for x in retained.values()),
-  "award_recipients":{k:sum(bool(x[k]) for x in retained.values()) for k in ["mvp","cy_young","gold_glove","silver_slugger"]},
+  "award_recipients":{k:sum(bool(x[k]) for x in retained.values()) for k in ["mvp","cy_young","gold_glove","silver_slugger","all_star"]},
   "sources":source_counts,"imported_utc":datetime.datetime.now(datetime.timezone.utc).isoformat()},
  "players":retained}
 assert len(unique)>300

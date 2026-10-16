@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>College Football Player Leaderboards | Courtside Archive</title>
+<meta name="description" content="The top passing, rushing, receiving, defensive, kicking and return performances you witnessed at College Football games.">
+<link rel="stylesheet" href="./assets/archive.css"><script src="./assets/archive.js?v=records-nav-20261016" defer></script></head>
+<body><main><div id="navigation"></div>
+<div class="eyebrow">College Football · Personal player statistics</div>
+<h1>Player leaderboards.</h1>
+<p class="lead">Every player, every game you witnessed. Rank your College Football attendance history by offensive production, defensive impact, special teams performances, and full-PPR fantasy points from the games you attended.</p>
+<div class="tabbar" id="groupTabs" role="tablist" aria-label="Leaderboard statistical groups">
+ <button type="button" role="tab" data-group="offense" aria-selected="true">Offense</button>
+ <button type="button" role="tab" data-group="defense" aria-selected="false">Defense</button>
+ <button type="button" role="tab" data-group="special" aria-selected="false">Special Teams</button>
+ <button type="button" role="tab" data-group="fantasy" aria-selected="false">Fantasy PPR</button>
+</div>
+<div class="toolbar">
+ <label for="category" class="filter-label">Statistic</label><select id="category" aria-label="Statistical leaderboard"></select>
+ <label for="gameFilter" class="filter-label">Games</label><select id="gameFilter" aria-label="Filter by game"><option value="all">All attended College Football games</option></select>
+ <label for="sort" class="filter-label">Rank by</label><select id="sort" aria-label="Statistic to rank by"></select>
+ <input type="search" id="search" placeholder="Search player or team…" aria-label="Search leaderboard players"/>
+</div>
+<div class="toolbar" id="advancedControls"><label for="viewMode" class="filter-label">View</label><select id="viewMode"><option value="traditional">Traditional</option><option value="advanced">Advanced / Efficiency</option><option value="pergame">Per-game averages</option></select><label for="teamFilter" class="filter-label">Team</label><select id="teamFilter"><option value="all">All teams</option></select><label for="seasonFilter" class="filter-label">Season</label><select id="seasonFilter"><option value="all">All seasons</option></select><label for="minGames" class="filter-label">Minimum games</label><select id="minGames"><option value="1">1 game</option><option value="2">2 games</option><option value="3">3 games</option><option value="5">5 games</option></select><label for="minOpportunities" class="filter-label">Minimum attempts / touches</label><select id="minOpportunities"><option value="0">Any</option><option value="5">5+</option><option value="10">10+</option><option value="20">20+</option><option value="50">50+</option></select></div><p class="note" id="modeHelp">Traditional totals across your attended games.</p><div class="section-heading"><h2 id="boardTitle">Offense · Passing</h2><span id="entryCount" class="caption"></span></div>
+<div id="board" aria-live="polite"><div class="empty">Loading personal College Football leaderboards…</div></div>
+<p class="note"><strong>Full PPR:</strong> Fantasy tab totals and averages derive from the separate verified offensive player-game scores. A fantasy point is not a measure of defensive impact, and kicker / D/ST values are intentionally excluded. See the <a href="./records.html#milestones">30+ PPR Milestones page</a> for individual performances and scoring rules.</p>
+<p class="note"><strong>All-games totals</strong> sum counting stats across College Football games you personally attended—not complete College Football career totals. Passing/rushing/receiving averages and field-goal percentages are recalculated from the underlying totals, and a combined passer rating is calculated using the standard College Football formula. ESPN's proprietary QBR is intentionally not summed or averaged. Long plays represent the maximum observed in a qualifying category, not a total. Some 2007–08 fields may be missing or recorded as zero by their source.</p>
+<footer class="footer">Courtside Archive · College Football personal leaderboards · <a href="./game.html">See game-by-game box scores ↗</a></footer>
+</main><script>
+document.addEventListener("DOMContentLoaded",async()=>{
+ const A=window.CFBArchive,el=id=>document.getElementById(id);
+ el("navigation").innerHTML=A.nav("stats");
+ let data={games:[],rows:[],ppr:{performances:[]}},group="offense",category="passing";
+ function renderFantasy(){
+  const id=el("gameFilter").value,all=id==="all";
+  let picks=data.ppr.performances.filter(x=>(all||x.game_id===id)&&(el("teamFilter").value==="all"||x.team===el("teamFilter").value)&&(el("seasonFilter").value==="all"||data.games.some(g=>g.id===x.game_id&&String(g.season)===el("seasonFilter").value)));
+  const q=el("search").value.trim().toLowerCase();
+  picks=picks.filter(x=>(x.player+" "+x.team).toLowerCase().includes(q));
+  const esc=A.esc,points=n=>Number(n).toFixed(2),sort=el("sort").value;
+  const maps=new Map();
+  for(const p of picks){
+    const key=p.athlete_id;
+    if(!maps.has(key))maps.set(key,{id:key,player:p.player,team:new Set(),scores:[],dates:[],games:[]});
+    const m=maps.get(key);m.team.add(p.team);m.scores.push(p.fantasy_ppr);m.dates.push(p.date);m.games.push(p.game_id);
+  }
+  const ranked=[...maps.values()].map(m=>({
+    id:m.id,player:m.player,team:[...m.team].join(" / "),games:m.scores.length,
+    total:m.scores.reduce((a,n)=>a+n,0),best:Math.max(...m.scores),
+    avg:m.scores.reduce((a,n)=>a+n,0)/m.scores.length,date:m.dates[0],game_id:m.games[0]
+  }));
+  ranked.sort((a,b)=>{
+    const key=sort==="name"?"name":sort==="avg"?"avg":sort==="best"?"best":sort==="games"?"games":"total";
+    return key==="name"?a.player.localeCompare(b.player):b[key]-a[key]||a.player.localeCompare(b.player);
+  });
+  const eligible=ranked.filter(x=>x.games>=Number(el("minGames").value));
+  el("boardTitle").textContent="Fantasy · Full PPR"+(all?" · All attended games":" · Selected game");
+  el("entryCount").textContent=eligible.length+" players · "+picks.length+" player-games";
+  el("board").innerHTML=eligible.length?'<div class="table-wrap"><table><thead><tr><th>Player / team</th><th>Games</th>'+
+  (all?'<th>Total PPR</th><th>Avg PPR</th><th>Best PPR</th>':'<th>PPR</th>')+
+  '<th>Details</th></tr></thead><tbody>'+eligible.map(x=>'<tr><td><a href="./player.html?id='+encodeURIComponent(x.id)+'">'+esc(x.player)+'</a><small>'+esc(x.team)+'</small></td>'+
+  '<td>'+x.games+'</td><td><strong>'+points(x.total)+'</strong></td>'+
+  (all?'<td>'+points(x.avg)+'</td><td>'+points(x.best)+'</td>':'')+
+  '<td><a href="'+(all?'./player.html?id='+encodeURIComponent(x.id):'./game.html?id='+encodeURIComponent(x.game_id))+'">'+(all?'Player games ↗':'Box score ↗')+'</a></td></tr>').join("")+'</tbody></table></div>':
+  '<div class="empty">No fantasy offensive players match these filters.</div>';
+ }
+ function options(){
+  if(group==="fantasy"){
+   el("category").innerHTML='<option value="ppr">Full PPR</option>';el("category").value="ppr";
+   el("category").disabled=true;
+   el("sort").innerHTML='<option value="total">Most fantasy points</option><option value="avg">Highest PPR average</option><option value="best">Best single game</option><option value="games">Most games seen</option><option value="name">Player name A–Z</option>';
+   el("sort").value="total";return;
+  }
+  el("category").disabled=false;
+  el("category").innerHTML=A.GROUPS[group].map(([id,name])=>'<option value="'+id+'">'+A.esc(name)+'</option>').join("");
+  if(!A.GROUPS[group].some(x=>x[0]===category))category=A.GROUPS[group][0][0];
+  el("category").value=category;
+  const r=data.rows.find(x=>x.category===category),labels=r?.stat_labels||[];
+  const primary=A.defaultColumn(category,labels);
+  el("sort").innerHTML=labels.map((label,i)=>'<option value="'+i+'">'+A.esc(label)+'</option>').join("");
+  el("sort").value=String(primary);
+ }
+ function numeric(v){const n=Number(String(v??"").replaceAll(",",""));return Number.isFinite(n)?n:0}
+ function filterRows(){const game=el("gameFilter").value,season=el("seasonFilter").value,team=el("teamFilter").value;const ids=new Set(data.games.filter(g=>(season==="all"||String(g.season)===season)&&(game==="all"||g.id===game)).map(g=>g.id));return data.rows.filter(x=>ids.has(x.game_id)&&(team==="all"||x.team===team))}
+ function renderAdvanced(rows,combined,mode){
+  const labels=rows[0]?.stat_labels||[],pick=(r,key)=>{const i=r.stat_labels.indexOf(key);return i<0?0:numeric(r.stat_values[i])},pair=(r,key)=>{const i=r.stat_labels.indexOf(key);const p=String(i<0?"":r.stat_values[i]).split("/");return p.length===2?[numeric(p[0]),numeric(p[1])]:[0,0]};
+  const buckets=new Map();
+  for(const r of rows){const id=String(r.athlete_id),key=combined?id:id+"|"+r.game_id;if(!buckets.has(key))buckets.set(key,{id,player:r.player,teams:new Set(),games:new Set(),items:[]});const b=buckets.get(key);b.teams.add(r.team);b.games.add(r.game_id);b.items.push(r)}
+  const defs={
+   passing:[["YDS/G","ydsg"],["TD/G","tdg"],["Comp%","cmp"],["YDS/ATT","ypa"],["TD%","tdpct"],["INT%","intpct"],["Passer RTG","rtg"]],
+   rushing:[["YDS/G","ydsg"],["CAR/G","carg"],["YDS/CAR","ypc"],["TD/G","tdg"]],
+   receiving:[["YDS/G","ydsg"],["REC/G","recg"],["YDS/REC","ypr"],["Catch%","catch"],["YDS/TGT","ypt"],["TD/G","tdg"]],
+   defensive:[["Tackles/G","tackles"],["Solo/G","solo"],["Sacks/G","sacks"],["TFL/G","tfl"],["PD/G","pd"]],
+   interceptions:[["INT/G","intg"],["Return YDS/G","ydsg"]],
+   fumbles:[["FUM/G","fumg"],["Recoveries/G","recg"]],
+   kicking:[["FG%","fgpct"],["FG Made/G","fgpg"],["PTS/G","ptsg"]],
+   punting:[["Punt AVG","puntavg"],["Punts/G","puntg"]],
+   kickReturns:[["Return AVG","returnavg"],["YDS/G","ydsg"]],
+   puntReturns:[["Return AVG","returnavg"],["YDS/G","ydsg"]]
+  };
+  const allDefs=defs[category]||[],fields=mode==="pergame"?allDefs.filter(x=>x[0].includes("/G")):allDefs.filter(x=>!x[0].includes("/G"));const chosen=fields.length?fields:allDefs;
+  const calc=b=>{const n=b.games.size,sum=k=>b.items.reduce((s,r)=>s+pick(r,k),0),sumPair=k=>b.items.reduce((a,r)=>{const p=pair(r,k);return[a[0]+p[0],a[1]+p[1]]},[0,0]),safe=(a,d)=>d?a/d:null;const [com,att]=sumPair("C/ATT"),[fg,fga]=sumPair("FG"),yd=sum("YDS"),td=sum("TD"),rec=sum("REC"),car=sum("CAR"),tgt=sum("TGTS"),no=sum("NO"),int=sum("INT");const clip=x=>Math.max(0,Math.min(2.375,x));const rtg=att?100/6*(clip((com/att-.3)*5)+clip((yd/att-3)*.25)+clip(td/att*20)+clip(2.375-int/att*25)):null;return {...b,n,opps:category==="passing"?att:category==="rushing"?car:category==="receiving"?tgt:category==="kicking"?fga:category==="punting"||category==="kickReturns"||category==="puntReturns"?no:0,values:{ydsg:safe(yd,n),tdg:safe(td,n),cmp:att?safe(com*100,att):null,ypa:safe(yd,att),tdpct:safe(td*100,att),intpct:safe(int*100,att),rtg,carg:safe(car,n),ypc:safe(yd,car),recg:safe(rec,n),ypr:safe(yd,rec),catch:safe(rec*100,tgt),ypt:safe(yd,tgt),tackles:safe(sum("TOT"),n),solo:safe(sum("SOLO"),n),sacks:safe(sum("SACKS"),n),tfl:safe(sum("TFL"),n),pd:safe(sum("PD"),n),intg:safe(int,n),fumg:safe(sum("FUM"),n),fgpct:safe(fg*100,fga),fgpg:safe(fg,n),ptsg:safe(sum("PTS"),n),puntavg:safe(yd,no),puntg:safe(no,n),returnavg:safe(yd,no)}}};
+  const min=Number(el("minGames").value),minOpp=Number(el("minOpportunities").value),q=el("search").value.trim().toLowerCase();const ranked=[...buckets.values()].map(calc).filter(b=>b.n>=min&&b.opps>=minOpp&&(b.player+" "+[...b.teams].join(" ")).toLowerCase().includes(q));
+  const sort=el("sort");const old=sort.value;sort.innerHTML=chosen.map(([label,key])=>'<option value="'+key+'">'+A.esc(label)+'</option>').join("");sort.value=chosen.some(x=>x[1]===old)?old:chosen[0]?.[1]||"";const k=sort.value;ranked.sort((a,b)=>(b.values[k]??-Infinity)-(a.values[k]??-Infinity)||a.player.localeCompare(b.player));
+  el("entryCount").textContent=ranked.length+" qualifying players";
+  el("board").innerHTML=ranked.length?'<div class="table-wrap"><table><thead><tr><th>Player / team</th><th>G</th>'+chosen.map(x=>'<th>'+A.esc(x[0])+'</th>').join("")+'</tr></thead><tbody>'+ranked.map(b=>'<tr><td><a href="./player.html?id='+encodeURIComponent(b.id)+'">'+A.esc(b.player)+'</a><small>'+A.esc([...b.teams].join(" / "))+'</small></td><td>'+b.n+'</td>'+chosen.map(([,key])=>'<td>'+(b.values[key]==null?"—":b.values[key].toFixed(1))+'</td>').join("")+'</tr>').join("")+'</tbody></table></div>':'<div class="empty">No players meet these eligibility filters.</div>';
+ }
+ function render(){
+  el("groupTabs").querySelectorAll("button").forEach(b=>b.setAttribute("aria-selected",String(b.dataset.group===group)));
+  const mode=el("viewMode").value;
+  el("advancedControls").querySelector('label[for="minOpportunities"]').textContent=category==="passing"?"Minimum pass attempts":category==="rushing"?"Minimum carries":category==="receiving"?"Minimum targets":"Minimum opportunities";
+  el("advancedControls").querySelector('label[for="minOpportunities"]').style.display=group==="fantasy"?"none":"";
+  el("minOpportunities").style.display=group==="fantasy"?"none":"";
+  if(group==="fantasy"){el("viewMode").disabled=true;renderFantasy();return}
+  el("viewMode").disabled=false;
+  const groupName=A.TITLES[group],label=A.GROUPS[group].find(x=>x[0]===category)?.[1]||category;
+  el("boardTitle").textContent=groupName+" · "+label+(mode==="traditional"?"":" · "+(mode==="advanced"?"Efficiency":"Per game"));
+  const id=el("gameFilter").value,combined=id==="all";
+  const source=filterRows().filter(x=>x.category===category);
+  el("modeHelp").textContent=mode==="traditional"?"Traditional totals and weighted averages from attended games.":mode==="advanced"?"Efficiency uses combined attempts and totals, not averages of per-game percentages.": "Per-game averages use the number of attended games with a recorded row in this category.";
+  if(mode!=="traditional"){renderAdvanced(source,combined,mode);return}
+  let items=combined?A.group(source,category):source;
+  const query=el("search").value.trim().toLowerCase(),min=Number(el("minGames").value);
+  items=items.filter(x=>(x.player+" "+x.team).toLowerCase().includes(query)&&(combined?x.games>=min:min<=1));
+  const r=data.rows.find(x=>x.category===category),labels=r?.stat_labels||[];const sort=el("sort"),previous=sort.value;const expected=labels.map((_,i)=>String(i));if(sort.options.length!==expected.length||[...sort.options].some((o,i)=>o.value!==expected[i])){sort.innerHTML=labels.map((label,i)=>'<option value="'+i+'">'+A.esc(label)+'</option>').join("");sort.value=String(A.defaultColumn(category,labels))}else if(previous)sort.value=previous;
+  items=A.sortPlayers(items,category,Number(sort.value));
+  el("entryCount").textContent=items.length+" players"+(combined?" · all selected games":" · selected game");
+  el("board").innerHTML=A.table(items,category,{combined});
+ }
+ el("groupTabs").querySelectorAll("button").forEach(b=>b.addEventListener("click",()=>{group=b.dataset.group;category=group==="fantasy"?"ppr":A.GROUPS[group][0][0];options();render()}));
+ el("category").addEventListener("change",e=>{category=e.target.value;options();render()});
+ ["gameFilter","sort","viewMode","teamFilter","seasonFilter","minGames","minOpportunities"].forEach(id=>el(id).addEventListener("change",render));
+ el("search").addEventListener("input",render);
+ try{
+  data=await A.load();
+  el("gameFilter").innerHTML='<option value="all">All attended College Football games</option>'+data.games.map(g=>'<option value="'+A.esc(g.id)+'">'+A.esc(g.date)+' · '+A.esc(g.away_abbr)+' at '+A.esc(g.home_abbr)+'</option>').join("");
+  el("teamFilter").innerHTML='<option value="all">All teams</option>'+[...new Set(data.rows.map(x=>x.team))].sort().map(t=>'<option value="'+A.esc(t)+'">'+A.esc(t)+'</option>').join("");
+  el("seasonFilter").innerHTML='<option value="all">All seasons</option>'+[...new Set(data.games.map(g=>g.season))].sort((a,b)=>b-a).map(y=>'<option value="'+y+'">'+y+'</option>').join("");
+  options();render();
+ }catch(e){el("board").innerHTML='<div class="empty">Unable to load player leaderboards: '+A.esc(e.message)+'</div>'}
+});
+</script></body></html>

@@ -26,6 +26,10 @@ check(len(double)==2 and double[0]["game_pk"]!=double[1]["game_pk"],"2022 Rockie
 check(len({g["game_pk"] for g in games})==131,"No duplicate MLB game IDs")
 check(len([g for g in games if g.get("innings")])==131,"All games have complete inning-level coverage")
 check(len(scoring)>=131,"Scoring play data retained for every MLB game")
+check(report.get("lineup_team_games_with_nine_spots")==262,"All 262 team box scores have nine official batting-order positions")
+check(report.get("lineup_slot_rows",0)>3000,"Official batting slots imported for more than 3,000 player lines")
+check(all(r.get("side") in ("away","home") for r in rows),"Every MLB player box-score record identifies its home/away team")
+check(all(1<=r["batting_slot"]<=9 for r in rows if r.get("batting_slot") is not None),"All verified lineup slots are between one and nine")
 for file in ["archive.js","pages.js"]:
  src=(ROOT/"mlb/assets"/file).read_text()
  with tempfile.NamedTemporaryFile(suffix=".js",mode="w") as f:
@@ -59,12 +63,42 @@ try:
    visit("mlb/game.html?id=94","document.querySelector('#gameStats #box tbody tr')!==null")
    check(page.locator("#gameSelect option").count()==131,f"{width} game selector lists all 131")
    check("Colorado Rockies" in page.locator("#scoreboard").inner_text(),f"{width} first doubleheader game loaded")
+   check(page.locator("#box .mlb-team-box").count()==2,f"{width} batting score splits two teams")
+   check(page.locator("#box .mlb-team-box").evaluate_all("(xs)=>xs.map(e=>e.dataset.side)")==["away","home"],
+         f"{width} away lineup appears before home lineup")
+   check("Colorado Rockies" in page.locator('#box .mlb-team-box[data-side="away"] h3').inner_text(),
+         f"{width} away batting lineup properly labeled")
+   check("San Diego Padres" in page.locator('#box .mlb-team-box[data-side="home"] h3').inner_text(),
+         f"{width} home batting lineup properly labeled")
+   for side in ("away","home"):
+    spots=page.locator(f'#box .mlb-team-box[data-side="{side}"] .mlb-lineup-row[data-slot]').evaluate_all(
+     "(xs)=>xs.map(x=>Number(x.dataset.slot)).filter(Number.isInteger).filter(x=>x>=1&&x<=9)")
+    check(len(set(spots))==9 and spots==sorted(spots),
+          f"{width} {side} team batting order runs 1 through 9 with substitutions in their parent slots")
+    ids=page.locator(f'#box .mlb-team-box[data-side="{side}"] .mlb-lineup-row').evaluate_all(
+     "(xs)=>xs.map(x=>Number(x.dataset.playerId))")
+    check(all(any(r["player_id"]==id and r["game_pk"]==662250 and r["side"]==side for r in rows) for id in ids),
+          f"{width} {side} lineup cannot contain opponents")
    page.locator("#gameSelect").select_option("95")
+   check(page.locator("#box .mlb-team-box").count()==2,
+         f"{width} both team batting lineups stay separated when switching doubleheader games")
    check(page.locator("#scoreboard").count()==1 and "San Diego Padres" in page.locator("#scoreboard").inner_text(),f"{width} second doubleheader selectable")
    page.locator("#gameStats [data-cat='pitching']").click()
    check(page.locator("#box tbody tr").count()>5,f"{width} pitching player lines")
+   check(page.locator("#box .mlb-team-box").count()==2,f"{width} pitchers grouped by club")
    page.locator("#gameStats [data-cat='fielding']").click()
    check(page.locator("#box tbody tr").count()>5,f"{width} individual fielding lines")
+   check(page.locator("#box .mlb-team-box").count()==2,f"{width} fielding also separated into two teams")
+   page.locator("#gameStats [data-cat='batting']").click()
+   sub_game=next((r["attendance_id"] for r in rows if r.get("batting_sub_index") is not None and r["batting_sub_index"]>0),None)
+   if sub_game:
+    page.locator("#gameSelect").select_option(str(sub_game))
+    check(page.locator("#box .mlb-substitute").count()>0,
+          f"{width} substitutes appear indented beneath their original lineup spots")
+    for side in ("away","home"):
+     slots=page.locator(f'#box .mlb-team-box[data-side="{side}"] .mlb-lineup-row[data-slot]').evaluate_all(
+      "(xs)=>xs.map(x=>Number(x.dataset.slot)).filter(x=>x>=1&&x<=9)")
+     check(slots==sorted(slots),f"{width} replacement batters remain nested in order")
    fits("MLB game")
    visit("mlb/stats.html","document.querySelector('#board tbody tr')!==null")
    check(page.locator("#board tbody tr").count()>=15,f"{width} batting leaderboards loaded")

@@ -134,3 +134,20 @@ tbody small{display:block;color:var(--muted);font-size:11px;font-weight:400;marg
 .mlb-steps{counter-reset:steps}.mlb-steps>p{margin:11px 0;font-size:13px}
 @media(max-width:800px){.mlb-charts{grid-template-columns:1fr}.mlb-feature-grid,.mlb-records-grid{grid-template-columns:1fr}.mlb-split{grid-template-columns:1fr}.mlb-score{gap:8px;padding:16px}}
 @media(max-width:460px){.mlb-filters label{width:100%}.mlb-filters input,.mlb-filters select{width:100%}.mlb-profile-head{gap:12px}.mlb-portrait{width:88px;height:100px}.mlb-avatar{width:52px;height:60px}}
+
+/* Official MLB lineup presentation: two separate teams and authentic batting slots. */
+.mlb-team-box{margin:16px 0 24px}
+.mlb-team-box+.mlb-team-box{padding-top:21px;border-top:1px solid var(--hair)}
+.mlb-team-heading{display:flex;gap:12px;align-items:center;justify-content:space-between;margin:0 0 4px}
+.mlb-team-heading h3{color:var(--forest);font-size:20px;margin:0}
+.mlb-team-heading span{font-size:10px;letter-spacing:.11em;font-weight:850;background:#E9EFE5;border:1px solid #D5E1D0;border-radius:20px;color:#41634A;padding:5px 11px}
+.mlb-team-caption{font-size:11px;line-height:1.5;color:var(--muted);margin:3px 0 13px}
+.mlb-team-box .table-wrap{margin-bottom:0}
+.mlb-lineup-row td{font-variant-numeric:tabular-nums}
+.mlb-lineup-row .mlb-order{color:var(--forest);font-weight:900;text-align:center}
+.mlb-lineup-row.mlb-substitute td:first-child{padding-left:25px}
+.mlb-lineup-row.mlb-substitute td:first-child a{font-weight:600}
+.mlb-indent{margin-right:6px;color:#8C9B89}
+.mlb-lineup-row.mlb-substitute td{background:#F6F8F3}
+.mlb-team-box .mlb-sticky{min-width:770px}
+@media(max-width:650px){.mlb-team-heading h3{font-size:17px}.mlb-team-box .mlb-sticky{min-width:740px}}

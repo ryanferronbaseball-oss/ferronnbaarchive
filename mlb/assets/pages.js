@@ -94,9 +94,37 @@ function gamePage(){
  panels.querySelectorAll("[data-cat]").forEach(b=>b.setAttribute("aria-selected",String(b.dataset.cat===category)));
  el("statTitle").textContent=category.charAt(0).toUpperCase()+category.slice(1)+" box score";
  const fields=category==="batting"?["atBats","runs","hits","doubles","triples","homeRuns","rbi","baseOnBalls","strikeOuts"]:category==="pitching"?["inningsPitched","hits","earnedRuns","baseOnBalls","strikeOuts","homeRuns","numberOfPitches"]:["putOuts","assists","errors"];
- const data=gameStats.filter(r=>r[category]&&Object.keys(r[category]).length);
- const trs=data.sort((a,b)=>a.team_id-b.team_id||a.name.localeCompare(b.name)).map(r=>'<tr><td><a href="'+playerUrl(r)+'">'+esc(r.name)+'</a><small>'+esc(r.team)+' · '+esc(r.position)+'</small></td>'+fields.map(k=>'<td>'+esc(A.disp(r[category]?.[k],k))+'</td>').join("")+'</tr>');
- box.innerHTML=table(["Player",...fields.map(k=>A.abbr[k]||k)],trs,"This game does not yet have verified "+category+" statistics.");
+ const data=gameStats.filter(r=>category==="batting"?(r.batting_slot!=null||(r.batting&&A.num(r.batting.plateAppearances)+A.num(r.batting.atBats)>0)):(r[category]&&Object.keys(r[category]).length));
+ const sortTeam=(a,b)=>{
+  if(category==="pitching"){
+   return (a.pitching_appearance_index??999)-(b.pitching_appearance_index??999)||a.name.localeCompare(b.name);
+  }
+  return (a.batting_slot??999)-(b.batting_slot??999)
+    ||(a.batting_sub_index??999)-(b.batting_sub_index??999)
+    ||(a.batter_appearance_index??999)-(b.batter_appearance_index??999)
+    ||a.name.localeCompare(b.name);
+ };
+ const sideTable=(side,teamName)=>{
+  const members=data.filter(r=>r.side===side||(!r.side&&r.team===teamName)).slice().sort(sortTeam);
+  const rowsByTeam=members.map(r=>{
+   const isSub=category==="batting"&&r.batting_sub_index!=null&&r.batting_sub_index>0;
+   const spot=category==="batting"?(r.batting_slot??"—"):null;
+   const label=category==="batting"?(spot==="—"?"—":isSub?"↳":spot):null;
+   const subtitle=esc(r.position||"")+(isSub?" · entered batting slot "+spot:"");
+   return '<tr class="mlb-lineup-row'+(isSub?' mlb-substitute':'')+'" data-player-id="'+esc(r.player_id)+'"'
+    +(category==="batting"?' data-slot="'+esc(spot)+'" data-sub="'+(r.batting_sub_index??0)+'"':'')+'>'
+    +'<td><a href="'+playerUrl(r)+'">'+(isSub?'<span class="mlb-indent" aria-hidden="true">↳</span>':"")+esc(r.name)+'</a><small>'+subtitle+'</small></td>'
+    +(category==="batting"?'<td class="mlb-order">'+label+'</td>':"")
+    +fields.map(k=>'<td>'+esc(A.disp(r[category]?.[k],k))+'</td>').join("")+'</tr>';
+  });
+  const note=category==="batting"?"Official batting order · replacements nested within their original lineup spot"
+    :category==="pitching"?"Pitchers listed in appearance order":"Fielders grouped by lineup spot where applicable";
+  return '<section class="mlb-team-box" data-side="'+side+'"><div class="mlb-team-heading"><h3>'+esc(teamName)+'</h3><span>'+esc(side==="away"?"AWAY":"HOME")+'</span></div>'
+    +'<p class="mlb-team-caption">'+note+'</p>'
+    +table(["Player",...(category==="batting"?["Order"]:[]),...fields.map(k=>A.abbr[k]||k)],rowsByTeam,
+       "No verified "+category+" entries for "+teamName+".")+'</section>';
+ };
+ box.innerHTML=sideTable("away",g.away)+sideTable("home",g.home);
  }
  panels.querySelectorAll("[data-cat]").forEach(b=>b.addEventListener("click",()=>show(b.dataset.cat)));show("batting");
  const scoring=scores[String(g.game_pk)]||[];

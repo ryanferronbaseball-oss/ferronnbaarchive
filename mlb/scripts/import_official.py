@@ -104,10 +104,18 @@ def parse_bat(stats):
   b["plateAppearances"]=sum(integer(b[k]) for k in ["atBats","baseOnBalls","hitByPitch","sacFlies","sacBunts"])
  return b
 def parse_box(e,box):
+ """Retain MLB's official lineup slots, substitutions and pitcher appearance order.
+
+ A battingOrder like '400' is the fourth starter; '401' is the first
+ replacement within the fourth spot. Never alphabetize a lineup.
+ """
  result=[]
  for side in ("away","home"):
   t=box.get("teams",{}).get(side,{})
   team=t.get("team",{})
+  starters=[integer(x) for x in (t.get("battingOrder") or [])]
+  batters=[integer(x) for x in (t.get("batters") or [])]
+  pitchers=[integer(x) for x in (t.get("pitchers") or [])]
   for key,p in t.get("players",{}).items():
    stats=p.get("stats",{})
    batting=parse_bat(stats.get("batting"))
@@ -116,9 +124,22 @@ def parse_box(e,box):
    if not batting and not pitching and not fielding:continue
    person=p.get("person",{})
    player_id=person.get("id") or integer(key.replace("ID",""))
+   value=p.get("battingOrder")
+   official_order=integer(value) if value is not None else None
+   slot=official_order//100 if official_order and 100<=official_order<1000 else None
+   sub=official_order%100 if slot is not None else None
+   order_source="player_batting_order" if slot is not None else None
+   if slot is None and player_id in starters:
+    slot=starters.index(player_id)+1
+    sub=0
+    order_source="team_starting_batting_order"
    result.append({"game_pk":e["game_pk"],"attendance_id":e["attendance_id"],
-      "date":e["date"],"team_id":team.get("id"),"team":team.get("name"),
+      "date":e["date"],"side":side,"team_id":team.get("id"),"team":team.get("name"),
       "player_id":player_id,"name":person.get("fullName"),"position":p.get("position",{}).get("abbreviation"),
+      "batting_order":official_order,"batting_slot":slot,"batting_sub_index":sub,
+      "batting_order_source":order_source,
+      "batter_appearance_index":batters.index(player_id) if player_id in batters else None,
+      "pitching_appearance_index":pitchers.index(player_id) if player_id in pitchers else None,
       "batting":batting,"pitching":pitching,"fielding":fielding})
  return result
 def parse_linescore(e,lines):
@@ -192,6 +213,8 @@ def main():
  stats=collections.Counter(g["stat_status"] for g in enriched if g.get("stat_status"))
  report={"source_count":len(ATTENDANCE),"attempted":len(keep),"matched":sum(bool(g.get("game_pk")) for g in enriched),
  "player_rows":len(player_rows),"statuses":dict(stats),
+ "lineup_slot_rows":sum(1 for r in player_rows if r.get("batting_slot") is not None),
+ "lineup_team_games_with_nine_spots":sum(1 for pk in {r["game_pk"] for r in player_rows} for side in ("away","home") if len({r["batting_slot"] for r in player_rows if r["game_pk"]==pk and r.get("side")==side and r.get("batting_slot") is not None})>=9),
  "doubleheaders":[{"date":e["date"],"id":e["attendance_id"],"game_pk":e.get("game_pk")} for e in enriched if e["date"]=="2022-08-02" and e["home"]=="San Diego Padres"],
  "unmatched":[{"id":g["attendance_id"],"date":g["date"],"away":g["away"],"home":g["home"]} for g in enriched if g.get("match_status")=="unmatched"],
  "timestamp":datetime.datetime.now(datetime.timezone.utc).isoformat(),"source":"MLB StatsAPI"}

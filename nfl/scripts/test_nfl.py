@@ -71,7 +71,7 @@ try:
    check(page.locator("#pprLeaders .impact-board th").all_text_contents()==["Player","PPR points","Receiving","Rushing","Passing"],str(width)+" Fantasy table preserves its original production columns")
    check(page.locator("#pprLeaders .impact-player small").count()==5,str(width)+" Five NFL players show teams below linked names")
    check(page.locator("#pprLeaders .impact-number strong").first.inner_text()=="27.50",str(width)+" 2023 fantasy leader displays highlighted PPR score")
-   check(page.evaluate("getComputedStyle(document.querySelector('#pprLeaders .impact-board th')).textTransform")==="uppercase",str(width)+" Fantasy table headers use basketball leaderboard styling")
+   check(page.evaluate("getComputedStyle(document.querySelector('#pprLeaders .impact-board th')).textTransform")=="uppercase",str(width)+" Fantasy table headers use basketball leaderboard styling")
    check("Michael Pittman Jr." in page.locator("#playerOfGame").inner_text() and "27.50" in page.locator("#playerOfGame").inner_text(),str(width)+" 2023 Player of the Game uses highest Full-PPR score")
    check(page.locator("#playerOfGame").bounding_box()["y"]<page.locator("#scoring").bounding_box()["y"],str(width)+" Player of the Game sits above scoring chronology")
    page.get_by_role("tab",name="Defense").click()

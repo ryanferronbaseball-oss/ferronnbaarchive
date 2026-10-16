@@ -9,8 +9,6 @@
 <div class="toolbar"><label class="filter-label" for="gameSelect">Your game</label><select id="gameSelect" aria-label="Select attended NFL game"></select></div>
 <section id="scoreboard" aria-label="Game score by quarter"><div class="empty">Loading game…</div></section>
 <section id="playerOfGame" class="panel pog" aria-label="NFL Player of the Game" aria-live="polite"><div class="empty">Loading Player of the Game…</div></section>
-<div class="section-heading"><h2>Scoring plays</h2><span class="caption" id="scoringCount"></span></div>
-<section id="scoring" class="panel" aria-label="Scoring play chronology" aria-live="polite"><div class="empty">Loading scoring plays…</div></section>
 <section id="pprLeaders" class="panel ppr-board" aria-label="Top Full-PPR offensive scores in this game">
  <div class="ppr-board-heading"><h2>Top fantasy performances</h2><a href="./milestones.html" class="action-link secondary">PPR milestones ↗</a></div>
  <div id="pprTable" aria-live="polite"><div class="empty">Loading PPR scores…</div></div>
@@ -22,6 +20,8 @@
 <button type="button" role="tab" data-group="special" aria-selected="false">Special Teams</button>
 </div>
 <div id="boxscore" aria-live="polite"></div>
+<div class="section-heading"><h2>Scoring plays</h2><span class="caption" id="scoringCount"></span></div>
+<section id="scoring" class="panel" aria-label="Scoring play chronology" aria-live="polite"><div class="empty">Loading scoring plays…</div></section>
 <p class="note">Scoring plays are in actual game order; successful conversions are grouped with their touchdowns. The running score reflects ESPN's historical records. Player tables retain source-defined categories, with team-by-team breakdowns. Older games can have missing specialty fields where the original records did not capture them.</p>
 <div class="section-heading"><h2>Explore more</h2><a class="action-link secondary" href="./stats.html">NFL player leaderboards ↗</a></div>
 <footer class="footer">Courtside Archive · Historical NFL box score and scoring play source: ESPN.</footer>

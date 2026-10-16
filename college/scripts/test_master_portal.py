@@ -88,6 +88,17 @@ try:
     for sport,game_id in (("nba","1"),("college","59")):
       navigate(desktop,f"{sport}/game.html?id={game_id}")
       desktop.wait_for_function("document.querySelectorAll('.impact-board tbody tr').length === 5")
+      box_heading=desktop.locator("#game .boxscore-section-heading h2")
+      check(box_heading.count()==1 and box_heading.inner_text()=="Player box score",
+            sport+" game labels both teams' box scores")
+      check(desktop.evaluate("""() => {
+        const heading=document.querySelector("#game .boxscore-section-heading");
+        const prev=heading.previousElementSibling;
+        const first=heading.nextElementSibling;
+        const second=first?.nextElementSibling;
+        return !!prev?.querySelector(".impact-board") && !!first?.querySelector("table") &&
+               !!second?.querySelector("table") && heading.querySelector("h2")?.textContent==="Player box score";
+      }"""),sport+" box-score heading appears between top-five rankings and team tables")
       board=desktop.locator(".impact-board")
       check(board.locator("thead th").all_text_contents()==
             ["Player","Impact score","PTS","REB","AST","STL","BLK"],

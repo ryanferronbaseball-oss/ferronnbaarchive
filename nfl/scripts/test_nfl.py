@@ -66,6 +66,10 @@ try:
    page.wait_for_function("document.querySelectorAll('#scoring .play').length===13")
    check("M.Pittman" in page.locator("#scoring").inner_text(),str(width)+" detailed 2023 game-winning scoring description")
    check("Gardner Minshew" in page.locator("#boxscore").inner_text(),str(width)+" 2023 offense box score")
+   check(page.locator("#boxscore").bounding_box()["y"]+page.locator("#boxscore").bounding_box()["height"] <= page.locator("#scoring").bounding_box()["y"],
+         str(width)+" scoring plays appear below the entire offensive box score")
+   check(page.locator("#pprLeaders").bounding_box()["y"] < page.locator("#boxscore").bounding_box()["y"],
+         str(width)+" fantasy ranking stays above NFL player box score")
    nfl_styles=page.evaluate("""() => {
      const selectors={"heading":"#pprLeaders h2","player":"#pprLeaders .impact-player a",
        "team":"#pprLeaders .impact-player small","score":"#pprLeaders .impact-number strong",

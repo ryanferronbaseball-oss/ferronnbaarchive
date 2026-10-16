@@ -73,12 +73,30 @@ try:
     desktop.wait_for_url("**/index.html")
     check(desktop.locator("#allGames").inner_text()=="128","College-to-master return works")
 
+    # The masthead title and subtitle should have the identical computed type
+    # treatment as the existing NFL header, not only the same headline size.
+    masthead_style="""() => {
+      const title=document.querySelector('.archive-logo, .ca-logo-text');
+      const subtitle=title.querySelector('small');
+      const styles=(node)=>{
+        const s=getComputedStyle(node);
+        return Object.fromEntries([
+          "fontFamily","fontSize","fontWeight","lineHeight","letterSpacing",
+          "textTransform","fontStyle","color","display","marginTop"
+        ].map(k=>[k,s[k]]));
+      };
+      return {title:styles(title),subtitle:styles(subtitle)};
+    }"""
+    navigate(desktop,"nfl/index.html")
+    nfl_masthead=desktop.evaluate(masthead_style)
     for sport in ("nba","college"):
       for filename in PAGES:
         route=f"{sport}/{filename}"
         navigate(desktop,route)
         check(desktop.locator(".ca-hub-link").get_attribute("href")=="../index.html",
               route+" points back to root master")
+        check(desktop.evaluate(masthead_style)==nfl_masthead,
+              route+" title and tagline fonts exactly match NFL masthead")
         check(desktop.locator(".ca-header .ca-logo").inner_text()==
               "COURTSIDE ARCHIVE\nEVERY GAME HAS A STORY · "+("NBA" if sport=="nba" else "COLLEGE BASKETBALL"),
               route+" uses NFL-style text logo and sport-specific tagline")
@@ -163,8 +181,12 @@ try:
           mobile.get_by_role("link",name="Enter NFL archive").is_visible(),
           "All three sport entrances are visible on mobile")
     mobile.screenshot(path=str(OUTPUT/"courtside-master-mobile.png"),full_page=True)
+    navigate(mobile,"nfl/index.html")
+    nfl_mobile_masthead=mobile.evaluate(masthead_style)
     for route in ("nba/index.html","college/index.html"):
       navigate(mobile,route)
+      check(mobile.evaluate(masthead_style)==nfl_mobile_masthead,
+            route+" mobile title and tagline fonts match NFL")
       mobile.wait_for_function("document.querySelector('.ca-hub-link') !== null")
       check(mobile.locator(".ca-header .ca-logo-text small").is_visible() and
             mobile.locator(".ca-header .ca-mark").count()==0,

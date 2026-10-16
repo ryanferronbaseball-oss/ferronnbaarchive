@@ -9,7 +9,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[2]
-PAGES=["index.html","game.html","stats.html","player.html","records.html","milestones.html","insights.html"]
+PAGES=["index.html","game.html","stats.html","player.html","milestones.html","insights.html"]
 NEW=PAGES[:2]+PAGES[4:]
 COLLEGE=ROOT/"college"
 
@@ -78,6 +78,16 @@ def main():
         if file in NEW:
             check(not re.search(r"\bNBA\b|\bnba\b|2006-02-26|31-game archive",rendered.replace('<a href="./nba-alumni.html" data-nav="nba-alumni">To the NBA</a>', "")),
                   file+" has no inherited NBA-specific content")
+    for sport in ("nba","college"):
+        old=(ROOT/sport/"records.html").read_text(encoding="utf8")
+        check('<meta http-equiv="refresh" content="0;url=./milestones.html">' in old and
+              'location.replace("./milestones.html"+location.search+location.hash)' in old,
+              sport+" old single-game records URL redirects to unified Records and preserves query/fragment")
+    for file in PAGES:
+        html=(COLLEGE/file).read_text(encoding="utf8")
+        check('href="./records.html"' not in html and 'class="ca-more"' not in html,
+              file+" no longer contains redundant single-game Records menu")
+
     home=(COLLEGE/"index.html").read_text(encoding="utf8")
     check("2006-02-26" not in home and "parseCSV(csv)" in home,"Homepage uses imported data, not hardcoded NBA history")
     game=(COLLEGE/"game.html").read_text(encoding="utf8")

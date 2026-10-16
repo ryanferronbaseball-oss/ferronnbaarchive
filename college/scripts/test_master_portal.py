@@ -21,7 +21,7 @@ checks=[]
 errors=[]
 completed=False
 PAGES=("index.html","game.html","stats.html","player.html",
-       "records.html","milestones.html","insights.html")
+       "milestones.html","insights.html")
 
 def check(ok,label):
     if not ok:raise AssertionError(label)
@@ -123,6 +123,8 @@ try:
               route+" logo font matches NFL")
         nav=desktop.locator(".ca-nav a[data-nav]").first.get_attribute("href")
         check(nav=="./index.html",route+" retains relative league-scoped navigation")
+        check(desktop.locator(".ca-nav .ca-more, .ca-nav a[href='./records.html']").count()==0,
+              route+" has no redundant Single-game Records menu or link")
         check(desktop.evaluate("getComputedStyle(document.body).backgroundColor")=="rgb(250, 248, 242)",
               route+" preserves the canonical ivory NBA editorial theme")
 
@@ -171,6 +173,13 @@ try:
       check(desktop.locator("#recordValueHeader").inner_text()=="3PM" and
             desktop.locator("#recordTopRows tr").count()==10,
             route+" made-three category returns ten ranked games")
+      for metric,heading in (("fgm","FGM"),("ftm","FTM")):
+        desktop.locator("#recordCategory").select_option(metric)
+        check(desktop.locator("#recordValueHeader").inner_text()==heading and
+              desktop.locator("#recordTopRows tr").count()==10,
+              route+" preserves the original single-game "+heading+" leaderboard")
+        check(desktop.locator("#recordTopRows a[href^='./player.html?id=']").count()==10,
+              route+" "+heading+" retains direct player links")
 
     # Basketball impact leaderboard mirrors each game's Player of the Game calculation.
     for sport,game_id in (("nba","1"),("college","59")):
@@ -208,7 +217,7 @@ try:
       ("stats.html?player=LeBron","nba/stats.html?player=LeBron"),
       ("milestones.html","nba/milestones.html"),
       ("insights.html","nba/insights.html"),
-      ("records.html","nba/records.html"),
+      ("records.html","nba/milestones.html"),
       ("sports.html","index.html")
     ):
       legacy=browser.new_page(viewport={"width":1280,"height":900})
@@ -217,6 +226,18 @@ try:
       print("LEGACY ROUTE CHECK",oldroute,"current",legacy.url,flush=True)
       check(legacy.url.endswith(newroute),"Legacy /"+oldroute+" redirects without losing query to /"+newroute)
       legacy.close()
+
+    # Existing league-scoped bookmarks redirect to the single canonical
+    # Records page without losing query strings or fragment identifiers.
+    for sport in ("nba","college"):
+      old=f"{sport}/records.html"
+      redirect=browser.new_page()
+      setup(redirect)
+      redirect.goto(base+old+"?legacy=1#topTenPanel",wait_until="domcontentloaded")
+      redirect.wait_for_url("**/"+sport+"/milestones.html?legacy=1#topTenPanel")
+      check(redirect.locator("#recordCategory").count()==1,
+            old+" redirects to the unified Records page while retaining query and fragment")
+      redirect.close()
 
     mobile=browser.new_page(viewport={"width":390,"height":844},device_scale_factor=1)
     setup(mobile)

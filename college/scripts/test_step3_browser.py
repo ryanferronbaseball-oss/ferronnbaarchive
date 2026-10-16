@@ -91,16 +91,11 @@ try:
           "neutral site" in page.locator("#game").inner_text().lower(),
           "2023 SoCal Showcase shown at its verified neutral-site venue")
     navigate(page,"records.html")
-    page.wait_for_function("document.querySelectorAll('#cards .card').length === 6")
-    check(page.locator("#cards .card").count()==6,
-          "Six original single-game records cards render from NCAA data")
-    check(page.locator("#table tr").count()>0,
-          "Single-game leaderboards populate with real performances")
-    page.locator("#search").fill("Jase Townsend")
-    check(page.locator("#table tr").count()>0 and
-          "Jase Townsend" in page.locator("#table").inner_text(),
-          "Record search finds officially supplemented NCAA players")
-    page.screenshot(path=str(OUTPUT/"college-single-game-records.png"),full_page=True)
+    page.wait_for_url("**/college/milestones.html")
+    check(page.locator("#recordTopRows tr").count()==10,
+          "Retired single-game records URL redirects to the integrated Top 10 Record Book")
+    check(page.locator(".ca-nav .ca-more").count()==0,
+          "College archive removes duplicate More/Single-game Records navigation")
 
     navigate(page,"milestones.html")
     page.wait_for_function("document.getElementById('coverage').textContent.includes('94 games attended')")
@@ -110,6 +105,11 @@ try:
           "Milestones include exactly 94 distinct NCAA game results")
     check(page.locator("#recordTopRows tr").count()==10 and page.locator("#progression").count()==0,
           "College record book replaces personal progression with Top 10 player games")
+    for metric,abbrev in (("fgm","FGM"),("ftm","FTM")):
+        page.locator("#recordCategory").select_option(metric)
+        check(page.locator("#recordValueHeader").inner_text()==abbrev and
+              page.locator("#recordTopRows tr").count()==10,
+              "Unified Record Book preserves "+abbrev+" single-game rankings")
     page.locator("#recordCategory").select_option("ast")
     check(page.locator("#recordValueHeader").inner_text()=="AST" and
           page.locator("#recordTopRows tr").count()==10,

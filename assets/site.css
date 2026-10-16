@@ -109,6 +109,15 @@ header.ca-header{
  gap:17px;
  padding:23px 0;
  border-bottom:1px solid #DEE1D8!important;
+ /* Center the masthead at the NFL's 1160px page width, regardless of
+    each basketball page's different main width and internal padding. */
+ width:min(1160px,calc(100vw - 36px));
+ position:relative;
+ left:50%;
+ transform:translateX(-50%);
+}
+@media(max-width:430px){
+ header.ca-header{width:calc(100vw - 24px)}
 }
 .ca-header .ca-logo.ca-logo-text{
  display:block;

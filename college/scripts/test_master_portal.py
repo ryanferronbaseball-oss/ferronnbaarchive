@@ -89,6 +89,11 @@ try:
     }"""
     navigate(desktop,"nfl/index.html")
     nfl_masthead=desktop.evaluate(masthead_style)
+    header_bounds="""() => {
+      const rect=document.querySelector('.archive-header, .ca-header').getBoundingClientRect();
+      return {left:rect.left,right:rect.right};
+    }"""
+    nfl_header_bounds=desktop.evaluate(header_bounds)
     for sport in ("nba","college"):
       for filename in PAGES:
         route=f"{sport}/{filename}"
@@ -99,6 +104,9 @@ try:
               route+" points back to root master")
         check(desktop.evaluate(masthead_style)==nfl_masthead,
               route+" title and tagline fonts exactly match NFL masthead")
+        actual_bounds=desktop.evaluate(header_bounds)
+        check(all(abs(actual_bounds[k]-nfl_header_bounds[k])<=2 for k in ("left","right")),
+              route+" masthead horizontal bounds match NFL to within two pixels")
         check("nfl-masthead-match-20261015" in desktop.locator('link[href*="/assets/site.css"]').get_attribute("href"),
               route+" loads newly versioned masthead CSS instead of cached old theme")
         check(desktop.locator(".ca-header .ca-logo").inner_text()==
@@ -127,6 +135,9 @@ try:
             route+" uses the common logo-free header")
       check(desktop.locator(".ca-header .ca-hub-link").get_attribute("href")=="../index.html",
             route+" retains All archives navigation")
+      actual_bounds=desktop.evaluate(header_bounds)
+      check(all(abs(actual_bounds[k]-nfl_header_bounds[k])<=2 for k in ("left","right")),
+            route+" standalone masthead matches NFL left and right edges")
 
     # Basketball impact leaderboard mirrors each game's Player of the Game calculation.
     for sport,game_id in (("nba","1"),("college","59")):
@@ -187,10 +198,14 @@ try:
     mobile.screenshot(path=str(OUTPUT/"courtside-master-mobile.png"),full_page=True)
     navigate(mobile,"nfl/index.html")
     nfl_mobile_masthead=mobile.evaluate(masthead_style)
+    nfl_mobile_header_bounds=mobile.evaluate(header_bounds)
     for route in ("nba/index.html","college/index.html"):
       navigate(mobile,route)
       check(mobile.evaluate(masthead_style)==nfl_mobile_masthead,
             route+" mobile title and tagline fonts match NFL")
+      actual_bounds=mobile.evaluate(header_bounds)
+      check(all(abs(actual_bounds[k]-nfl_mobile_header_bounds[k])<=2 for k in ("left","right")),
+            route+" mobile header aligns to NFL on both sides")
       check("nfl-masthead-match-20261015" in mobile.locator('link[href*="/assets/site.css"]').get_attribute("href"),
             route+" mobile masthead requests refreshed CSS")
       mobile.wait_for_function("document.querySelector('.ca-hub-link') !== null")

@@ -46,7 +46,7 @@ base=f"http://127.0.0.1:{server.server_address[1]}/"
 try:
  with sync_playwright() as pw:
   browser=pw.chromium.launch(headless=True,args=["--no-sandbox"])
-  for width in (1280,390):
+  for width in (1330,390):
    page=browser.new_page(viewport={"width":width,"height":900})
    errors=[]
    page.on("pageerror",lambda e:errors.append(str(e)))
@@ -211,7 +211,7 @@ try:
    page.screenshot(path=str(out/("milestones-"+str(width)+".png")),full_page=True)
    noOverflow("player profile")
    visit("index.html")
-   page.wait_for_function("document.getElementById('allGames').textContent==='128'")
+   page.wait_for_function("document.getElementById('allGames').textContent==='133'")
    check(page.locator('a[href="./nfl/index.html"]').count()>=1,str(width)+" master portal links to NFL")
    noOverflow("master portal")
    check(not errors,str(width)+" no uncaught JavaScript errors")

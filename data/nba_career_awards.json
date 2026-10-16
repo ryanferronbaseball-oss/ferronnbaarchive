@@ -4,130 +4,179 @@
     "through_season": "2025-26",
     "mvp_source": "https://www.nba.com/news/history-mvp-award-winners",
     "all_nba_source": "https://www.nba.com/news/history-all-nba-teams",
-    "note": "Season-independent honors. When new players are imported, update this reviewed ESPN-player-ID lookup."
+    "note": "Season-independent honors. When new players are imported, update this reviewed ESPN-player-ID lookup.",
+    "all_star_source": "https://en.wikipedia.org/wiki/List_of_NBA_All-Stars",
+    "all_star_definition": "NBA All-Star selections through the 2026 All-Star Game, including unavailable-to-play selections; not All-Star Game appearances.",
+    "count_policy": "Only show a numeric count when a reviewed number is present. Existing Boolean MVP and All-NBA labels remain but are not interpreted as one award."
   },
   "players": {
     "25": {
       "name": "Metta World Peace",
-      "all_nba": true
+      "all_nba": true,
+      "all_star": 1
     },
     "91": {
       "name": "Elton Brand",
-      "all_nba": true
+      "all_nba": true,
+      "all_star": 2
     },
     "110": {
       "name": "Kobe Bryant",
       "all_nba": true,
-      "mvp": true
+      "mvp": true,
+      "all_star": 18,
+      "mvp_count": 1,
+      "all_nba_count": 15
     },
     "136": {
       "name": "Vince Carter",
-      "all_nba": true
+      "all_nba": true,
+      "all_star": 8
     },
     "138": {
       "name": "Sam Cassell",
-      "all_nba": true
+      "all_nba": true,
+      "all_star": 1
     },
     "194": {
       "name": "Baron Davis",
-      "all_nba": true
+      "all_nba": true,
+      "all_star": 2
     },
     "215": {
       "name": "Tim Duncan",
       "all_nba": true,
-      "mvp": true
+      "mvp": true,
+      "all_star": 15,
+      "mvp_count": 2,
+      "all_nba_count": 15
     },
     "261": {
       "name": "Kevin Garnett",
       "all_nba": true,
-      "mvp": true
+      "mvp": true,
+      "all_star": 15,
+      "mvp_count": 1,
+      "all_nba_count": 9
     },
     "272": {
       "name": "Manu Ginobili",
-      "all_nba": true
+      "all_nba": true,
+      "all_star": 2
     },
     "336": {
       "name": "Grant Hill",
-      "all_nba": true
+      "all_nba": true,
+      "all_star": 7
     },
     "351": {
       "name": "Juwan Howard",
-      "all_nba": true
+      "all_nba": true,
+      "all_star": 1
     },
     "509": {
       "name": "Stephon Marbury",
-      "all_nba": true
+      "all_nba": true,
+      "all_star": 2
     },
     "510": {
       "name": "Shawn Marion",
-      "all_nba": true
+      "all_nba": true,
+      "all_star": 4
     },
     "592": {
       "name": "Steve Nash",
       "all_nba": true,
-      "mvp": true
+      "mvp": true,
+      "all_star": 8,
+      "mvp_count": 2,
+      "all_nba_count": 7
     },
     "614": {
       "name": "Shaquille O'Neal",
       "all_nba": true,
-      "mvp": true
+      "mvp": true,
+      "all_star": 15,
+      "mvp_count": 1,
+      "all_nba_count": 14
     },
     "615": {
       "name": "Jermaine O'Neal",
-      "all_nba": true
+      "all_nba": true,
+      "all_star": 6
     },
     "662": {
       "name": "Paul Pierce",
-      "all_nba": true
+      "all_nba": true,
+      "all_star": 10
     },
     "885": {
       "name": "Ben Wallace",
-      "all_nba": true
+      "all_nba": true,
+      "all_star": 4
     },
     "984": {
       "name": "Tyson Chandler",
-      "all_nba": true
+      "all_nba": true,
+      "all_star": 1
     },
     "996": {
       "name": "Pau Gasol",
-      "all_nba": true
+      "all_nba": true,
+      "all_star": 6,
+      "all_nba_count": 4
     },
     "1015": {
       "name": "Tony Parker",
-      "all_nba": true
+      "all_nba": true,
+      "all_star": 6,
+      "all_nba_count": 4
     },
     "1017": {
       "name": "Zach Randolph",
-      "all_nba": true
+      "all_nba": true,
+      "all_star": 2
     },
     "1703": {
       "name": "Carlos Boozer",
-      "all_nba": true
+      "all_nba": true,
+      "all_star": 2
     },
     "1722": {
       "name": "Yao Ming",
-      "all_nba": true
+      "all_nba": true,
+      "all_star": 8
     },
     "1727": {
       "name": "Amar'e Stoudemire",
-      "all_nba": true
+      "all_nba": true,
+      "all_star": 6
     },
     "1966": {
       "name": "LeBron James",
       "all_nba": true,
-      "mvp": true
+      "mvp": true,
+      "all_star": 22,
+      "mvp_count": 4,
+      "all_nba_count": 21
     },
     "1975": {
       "name": "Carmelo Anthony",
-      "all_nba": true
+      "all_nba": true,
+      "all_star": 10,
+      "all_nba_count": 6
     },
     "1987": {
       "name": "Dwyane Wade",
-      "all_nba": true
+      "all_nba": true,
+      "all_star": 13,
+      "all_nba_count": 8
     },
     "2384": {
       "name": "Dwight Howard",
-      "all_nba": true
+      "all_nba": true,
+      "all_star": 8,
+      "all_nba_count": 8
     },
     "2389": {
       "name": "Al Jefferson",
@@ -135,84 +184,114 @@
     },
     "2748": {
       "name": "Andrew Bynum",
-      "all_nba": true
+      "all_nba": true,
+      "all_star": 1
     },
     "2772": {
       "name": "David Lee",
-      "all_nba": true
+      "all_nba": true,
+      "all_star": 2
     },
     "2779": {
       "name": "Chris Paul",
-      "all_nba": true
+      "all_nba": true,
+      "all_star": 12,
+      "all_nba_count": 11
     },
     "2798": {
       "name": "Deron Williams",
-      "all_nba": true
+      "all_nba": true,
+      "all_star": 3
     },
     "3202": {
       "name": "Kevin Durant",
       "all_nba": true,
-      "mvp": true
+      "mvp": true,
+      "all_star": 16,
+      "mvp_count": 1,
+      "all_nba_count": 12
     },
     "3213": {
       "name": "Al Horford",
-      "all_nba": true
+      "all_nba": true,
+      "all_star": 5
     },
     "3224": {
       "name": "Joakim Noah",
-      "all_nba": true
+      "all_nba": true,
+      "all_star": 2
     },
     "3423": {
       "name": "Goran Dragic",
-      "all_nba": true
+      "all_nba": true,
+      "all_star": 1
     },
     "3442": {
       "name": "DeAndre Jordan",
-      "all_nba": true
+      "all_nba": true,
+      "all_star": 1
     },
     "3449": {
       "name": "Kevin Love",
-      "all_nba": true
+      "all_nba": true,
+      "all_star": 5
     },
     "3456": {
       "name": "Derrick Rose",
       "all_nba": true,
-      "mvp": true
+      "mvp": true,
+      "all_star": 3,
+      "mvp_count": 1,
+      "all_nba_count": 1
     },
     "3468": {
       "name": "Russell Westbrook",
       "all_nba": true,
-      "mvp": true
+      "mvp": true,
+      "all_star": 9,
+      "mvp_count": 1,
+      "all_nba_count": 9
     },
     "3989": {
       "name": "Blake Griffin",
-      "all_nba": true
+      "all_nba": true,
+      "all_star": 6,
+      "all_nba_count": 5
     },
     "3992": {
       "name": "James Harden",
       "all_nba": true,
-      "mvp": true
+      "mvp": true,
+      "all_star": 11,
+      "mvp_count": 1,
+      "all_nba_count": 7
     },
     "6472": {
       "name": "Isaiah Thomas",
-      "all_nba": true
+      "all_nba": true,
+      "all_star": 2
     },
     "6475": {
       "name": "Klay Thompson",
-      "all_nba": true
+      "all_nba": true,
+      "all_star": 5
     },
     "3064514": {
       "name": "Julius Randle",
-      "all_nba": true
+      "all_nba": true,
+      "all_star": 3
     },
     "3112335": {
       "name": "Nikola Jokic",
       "all_nba": true,
-      "mvp": true
+      "mvp": true,
+      "all_star": 8,
+      "mvp_count": 3
     },
     "3136193": {
       "name": "Devin Booker",
-      "all_nba": true
+      "all_nba": true,
+      "all_star": 5
     },
     "3936299": {
       "name": "Jamal Murray",
@@ -220,7 +299,8 @@
     },
     "4066259": {
       "name": "De'Aaron Fox",
-      "all_nba": true
+      "all_nba": true,
+      "all_star": 2
     }
   }
 }

@@ -33,9 +33,9 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git pull --rebase origin main
           git add mlb/data/games.json mlb/data/player_stats.json mlb/data/scoring_plays.json mlb/data/import_report.json
           if ! git diff --cached --quiet; then
             git commit -m "Import source-verified MLB historical player boxscores"
+            git pull --rebase origin main
             git push origin HEAD:main
           fi

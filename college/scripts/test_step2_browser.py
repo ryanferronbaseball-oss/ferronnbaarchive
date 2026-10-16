@@ -75,8 +75,8 @@ try:
         check(page.locator("#schoolFilterWrap").is_hidden(),
               "Single-school player does not show school filter")
         check(page.locator("#gamelog a").first.get_attribute("href").startswith(
-            "https://www.espn.com/mens-college-basketball/"),
-            "Boxscore links use ESPN college basketball endpoints")
+            "./game.html?id="),
+            "Boxscore links open verified internal Courtside Archive game pages")
 
         page.goto(url + "player.html?id=espn%3A4433281", wait_until="domcontentloaded")
         page.wait_for_function("document.getElementById('name').textContent === 'Hunter Sallis'")

@@ -5,6 +5,15 @@ const {esc,fmt,date,playerUrl,gameUrl,table,bar,tiles,record,mlbRow}=A;
 el("navigation").innerHTML=A.nav(page);
 let d;try{d=await A.load()}catch(err){app.innerHTML='<div class="empty">Unable to load attendance data: '+esc(err.message)+'</div>';return}
 const {games,rows,players,scores,decisions}=d;
+let careerHonors=null;
+if(page==="hof"||page==="player"){
+ try{const r=await fetch("./data/career_awards.json",{cache:"no-store"});
+  if(!r.ok)throw Error("Career awards HTTP "+r.status);
+  careerHonors=await r.json();
+ }catch(error){console.warn("Career honors unavailable",error);}
+}
+const awardsById=careerHonors?.players||{};
+
 const verified=games.filter(g=>g.game_pk!=null);
 const sorted=games.slice().sort((a,b)=>b.date.localeCompare(a.date)||b.attendance_id-a.attendance_id);
 const counts=(items)=>{let m=new Map();for(let s of items)m.set(s,(m.get(s)||0)+1);return [...m].sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0]))};
@@ -193,8 +202,33 @@ function profilePage(){
  const id=new URLSearchParams(location.search).get("id"),p=players.find(x=>String(x.player_id)===String(id));
  if(!p){app.innerHTML='<div class="eyebrow">MLB · Player profile</div><h1>Player not found.</h1><p class="lead">This player has not yet appeared in an officially imported attendance-game box score.</p><a class="action-link" href="./stats.html">All players ↗</a>';return}
  const bs=batting(p.batting),ps=pitching.length?pitching(p.pitching):null;
- app.innerHTML='<div class="eyebrow">MLB · Player profile</div><div class="mlb-profile-head"><div class="mlb-portrait"><img alt="" src="https://img.mlbstatic.com/mlb-photos/image/upload/w_213,q_85/v1/people/'+esc(p.player_id)+'/headshot/67/current" onerror="this.style.display=\'none\';this.parentElement.textContent=\''+esc(p.name.split(" ").map(x=>x[0]).slice(0,2).join(""))+'\'"></div><div><h1>'+esc(p.name)+'</h1><p class="lead">'+esc(p.teams.join(" / "))+' · '+p.game_count+' attended games with player statistics</p></div></div>'
- +tiles([["Games",p.game_count],["Hits",bs.hits],["Home runs",bs.homeRuns],["Pitching SO",ps?.strikeOuts||0]])
+ const career=awardsById[String(p.player_id)]||null;
+ const hof=career?.hall_of_fame||null;
+ const honorCategories=[["mvp","MVP","mvp"],["cy_young","Cy Young","cy"],["gold_glove","Gold Glove","gg"],["silver_slugger","Silver Slugger","ss"]];
+ const hasHonors=!!(hof||honorCategories.some(([key])=>career?.[key]?.length));
+ const honorBadges=hasHonors?'<div class="mlb-accolades" aria-label="Career honors">'
+   +(hof?'<a class="mlb-accolade hof" href="./hall-of-fame.html">★ Hall of Fame · '+hof.year+'</a>':"")
+   +honorCategories.filter(([key])=>career?.[key]?.length).map(([key,label,theme])=>'<a href="#careerHonors" class="mlb-accolade '+theme+'" data-honor-link="'+key+'">'+esc(label)+' · '+career[key].length+'</a>').join("")
+   +'</div>':"";
+ const honorTabs=[...(hof?[["hall_of_fame","Hall of Fame"]]:[]),...honorCategories.map(([k,name])=>[k,name])];
+ const firstHonor=honorTabs.find(([k])=>k==="hall_of_fame"?!!hof:!!career?.[k]?.length)?.[0]||"mvp";
+ const honorPanel=hasHonors?'<section class="panel mlb-honors-panel" id="careerHonors">'
+  +'<h2>Career Awards & Honors</h2><p class="mlb-note">Career honors, including awards won outside seasons or games you personally attended. Official MLB award recipients only.</p>'
+  +'<div class="mlb-nav-tabs" id="honorTabs" role="tablist" aria-label="Career award categories">'
+  +honorTabs.map(([k,label])=>'<button type="button" role="tab" data-honor="'+k+'" aria-controls="honor-'+k+'" aria-selected="'+(k===firstHonor)+'">'+esc(label)+(k==="hall_of_fame"?"":' ('+(career?.[k]?.length||0)+')')+'</button>').join("")+'</div>'
+  +honorTabs.map(([k,label])=>{
+   const inducted=k==="hall_of_fame",entries=inducted?(hof?[{year:hof.year}]:[]):career?.[k]||[];
+   const detail=entries.length?(inducted?
+    '<p>Inducted into the National Baseball Hall of Fame in '+hof.year+'. <a href="./hall-of-fame.html">Other Hall of Famers you have seen ↗</a></p>':
+    '<p>'+entries.length+' verified career '+esc(label)+' '+(entries.length===1?"award":"awards")+'.</p>'):
+    '<p>No verified career '+esc(label)+' awards.</p>';
+   return '<div class="mlb-honor-detail" role="tabpanel" id="honor-'+k+'"'+(k===firstHonor?"":" hidden")+'><strong>'+esc(label)+'</strong>'+detail
+    +(entries.length?'<div class="mlb-honor-tags">'+entries.map(a=>'<span class="mlb-honor-year">'+(a.league?esc(a.league)+" ":"")+a.year+(a.notes?" · "+esc(a.notes):"")+'</span>').join("")+'</div>':"")
+    +'</div>';
+  }).join("")
+  +'<p class="mlb-note"><a target="_blank" rel="noopener" href="https://statsapi.mlb.com/api/v1/awards">Source: MLB official awards history ↗</a></p></section>':"";
+ app.innerHTML='<div class="eyebrow">MLB · Player profile</div><div class="mlb-profile-head"><div class="mlb-portrait"><img alt="" src="https://img.mlbstatic.com/mlb-photos/image/upload/w_213,q_85/v1/people/'+esc(p.player_id)+'/headshot/67/current" onerror="this.style.display=\'none\';this.parentElement.textContent=\''+esc(p.name.split(" ").map(x=>x[0]).slice(0,2).join(""))+'\'"></div><div><h1>'+esc(p.name)+'</h1>'+honorBadges+'<p class="lead">'+esc(p.teams.join(" / "))+' · '+p.game_count+' attended games with player statistics</p></div></div>'
+ +tiles([["Games",p.game_count],["Hits",bs.hits],["Home runs",bs.homeRuns],["Pitching SO",ps?.strikeOuts||0]])+honorPanel
  +'<section class="panel"><h2>Batting from games you attended</h2><div class="mlb-records-grid">'+["atBats","hits","homeRuns","rbi","baseOnBalls","strikeOuts","average","onBasePercentage","sluggingPercentage","ops"].map(k=>record(A.abbr[k]||k,A.disp(bs[k],k),"")).join("")+'</div></section>'
  +(ps?'<section class="panel"><h2>Pitching from games you attended</h2><div class="mlb-records-grid">'+["inningsPitched","strikeOuts","era","whip","wins","losses"].map(k=>record(A.abbr[k]||k,A.disp(ps[k],k),"")).join("")+'</div></section>':'')
  +'<section class="panel"><h2>Individual game logs</h2><div class="mlb-nav-tabs"><button type="button" role="tab" data-side="batting" aria-selected="true">Batting</button><button type="button" role="tab" data-side="pitching" aria-selected="false">Pitching</button></div><div id="logs"></div></section>';
@@ -204,8 +238,72 @@ function profilePage(){
  const keys=type==="batting"?["atBats","runs","hits","homeRuns","rbi","baseOnBalls","strikeOuts"]:["inningsPitched","hits","earnedRuns","baseOnBalls","strikeOuts"];
  el("logs").innerHTML=table(["Date","Team","Opponent",...keys.map(k=>A.abbr[k]||k)],entries.map(r=>{let g=games.find(x=>x.game_pk===r.game_pk);let opponent=g?(r.team_id===(g.mlb_home_team_id??-1)?g.away:g.home):"";return '<tr><td><a href="'+gameUrl(g||{attendance_id:r.attendance_id})+'">'+date(r.date)+'</a></td><td>'+esc(r.team)+'</td><td>'+esc(g?g.away+" @ "+g.home:"")+'</td>'+keys.map(k=>'<td>'+esc(A.disp(r[type][k],k))+'</td>').join("")+'</tr>'}),"No verified "+type+" game lines.");
  }
+ if(hasHonors){
+  const showHonor=key=>{
+   app.querySelectorAll("#honorTabs [data-honor]").forEach(btn=>btn.setAttribute("aria-selected",String(btn.dataset.honor===key)));
+   app.querySelectorAll(".mlb-honor-detail").forEach(panel=>panel.hidden=panel.id!=="honor-"+key);
+  };
+  app.querySelectorAll("#honorTabs [data-honor]").forEach(btn=>btn.addEventListener("click",()=>showHonor(btn.dataset.honor)));
+  app.querySelectorAll("[data-honor-link]").forEach(a=>a.addEventListener("click",()=>showHonor(a.dataset.honorLink)));
+ }
  app.querySelectorAll("[data-side]").forEach(b=>b.addEventListener("click",()=>logs(b.dataset.side)));logs("batting");document.title=p.name+" | MLB Courtside Archive";
 }
+
+function hofPage(){
+ const hall=players.filter(p=>awardsById[String(p.player_id)]?.hall_of_fame).map(p=>{
+  const induction=awardsById[String(p.player_id)].hall_of_fame;
+  const seasonStats=batting(p.batting),pitchStats=pitching(p.pitching);
+  const seen=games.filter(g=>p.games.has(g.game_pk)).sort((a,b)=>b.date.localeCompare(a.date));
+  return {p,induction,seen,seasonStats,pitchStats};
+ }).sort((a,b)=>b.seen.length-a.seen.length||a.p.name.localeCompare(b.p.name));
+ const totals=hall.reduce((acc,x)=>acc+x.seen.length,0);
+ const uniqueGames=new Set(hall.flatMap(x=>x.seen.map(g=>g.game_pk))).size;
+ const teams=[...new Set(hall.flatMap(x=>x.p.teams))].sort();
+ app.innerHTML='<div class="eyebrow">MLB · Legacy and recognition</div>'
+  +'<h1>Hall of Famers you\'ve seen.</h1>'
+  +'<p class="lead">Every inducted National Baseball Hall of Fame player who appeared in the '+games.length+' MLB games you attended. Career induction honors; all batting, pitching and game counts below reflect only your personally witnessed games.</p>'
+  +'<div class="mlb-hof-summary">'
+  +[['Hall of Famers seen',hall.length],['Combined appearances',totals],['Games featuring inductees',uniqueGames]]
+    .map(([label,value])=>'<div class="metric"><strong>'+value+'</strong><small>'+esc(label)+'</small></div>').join("")+'</div>'
+  +'<div class="mlb-hof-toolbar"><input id="hofSearch" type="search" placeholder="Search Hall of Famers or clubs…" aria-label="Search Hall of Famers">'
+  +'<select id="hofSort" aria-label="Sort Hall of Fame cards"><option value="games">Most games seen</option><option value="year">Induction year</option><option value="name">Player name</option></select>'
+  +'<select id="hofTeam" aria-label="Filter Hall of Famers by team"><option value="">All teams</option>'
+  +teams.map(t=>'<option value="'+esc(t)+'">'+esc(t)+'</option>').join("")+'</select></div>'
+  +'<p class="mlb-hof-count" id="hofShowing"></p><section class="mlb-hof-grid" id="hofGrid"></section>'
+  +'<p class="mlb-note">Hall of Fame classes are matched by exact MLB player ID to official Hall Of Fame induction records. A player can have been inducted after you saw them. Only actual National Baseball Hall of Fame inductees are counted, not nominees or future candidates. '
+  +'<a href="https://www.mlb.com/news/hall-of-fame-inductions-by-year" target="_blank" rel="noopener">Official induction history ↗</a></p>';
+ const card=m=>{
+  const p=m.p,record=m.induction;
+  const portrait='<div class="mlb-hof-portrait"><img loading="lazy" alt="" src="https://img.mlbstatic.com/mlb-photos/image/upload/w_213,q_85/v1/people/'+encodeURIComponent(p.player_id)+'/headshot/67/current" onerror="this.style.display=\'none\';this.parentNode.textContent=\''+esc(p.name.split(" ").map(s=>s[0]).slice(0,2).join(""))+'\'"></div>';
+  const lastStat=p.pitching.length>p.batting.length?
+    ['Ks witnessed',m.pitchStats.strikeOuts]:['Hits witnessed',m.seasonStats.hits];
+  return '<article class="mlb-hof-card" data-player-id="'+p.player_id+'">'
+   +'<div class="mlb-hof-head">'+portrait+'<div class="mlb-hof-title">'
+   +'<span class="mlb-hof-badge">★ HALL OF FAME</span>'
+   +'<h2><a href="'+playerUrl(p)+'">'+esc(p.name)+'</a></h2>'
+   +'<div class="mlb-hof-meta">Class of '+record.year+' · '+esc(p.teams.join(" / "))+'</div></div></div>'
+   +'<div class="mlb-hof-figures">'
+   +[['Games you attended',m.seen.length],['Hall of Fame class',record.year],lastStat]
+   .map(([label,value])=>'<div class="mlb-hof-figure"><strong>'+esc(value)+'</strong><small>'+esc(label)+'</small></div>').join("")+'</div>'
+   +'<div class="mlb-hof-games"><strong>Games you witnessed</strong>'
+   +m.seen.slice(0,7).map(g=>'<a href="'+gameUrl(g)+'">'+date(g.date)+' · '+esc(g.away)+' at '+esc(g.home)+'</a>').join("")
+   +(m.seen.length>7?'<span class="mlb-hof-meta">And '+(m.seen.length-7)+' more on the player profile</span>':"")+'</div>'
+   +'<div class="mlb-hof-links"><a href="'+playerUrl(p)+'">Player profile ↗</a><a target="_blank" rel="noopener" href="https://baseballhall.org/hall-of-fame">Cooperstown ↗</a></div></article>';
+ };
+ const render=()=>{
+  const q=el("hofSearch").value.trim().toLowerCase(),sort=el("hofSort").value,team=el("hofTeam").value;
+  const matched=hall.filter(x=>(!team||x.p.teams.includes(team))&&
+   (!q||x.p.name.toLowerCase().includes(q)||x.p.teams.join(" ").toLowerCase().includes(q)));
+  matched.sort((a,b)=>sort==="name"?a.p.name.localeCompare(b.p.name):
+   sort==="year"?a.induction.year-b.induction.year||a.p.name.localeCompare(b.p.name):
+   b.seen.length-a.seen.length||a.p.name.localeCompare(b.p.name));
+  el("hofShowing").textContent="Showing "+matched.length+" of "+hall.length+" inducted players from your game history.";
+  el("hofGrid").innerHTML=matched.length?matched.map(card).join(""):'<div class="mlb-hof-empty">No Hall of Famers match these filters.</div>';
+ };
+ for(const id of ["hofSearch","hofSort","hofTeam"])el(id).addEventListener("input",render);
+ render();
+}
+
 const recDefs=[
  ["Hits","batting","hits"],["Home runs","batting","homeRuns"],["RBI","batting","rbi"],
  ["Stolen bases","batting","stolenBases"],["Pitching strikeouts","pitching","strikeOuts"],["Pitching outs","pitching","outs"],
@@ -261,5 +359,5 @@ function recordsPage(){
  el("moments").innerHTML=table(["Date","Match","Highlight","Score","Game"],complete.slice().sort((a,b)=>(b.away_score+b.home_score)-(a.away_score+a.home_score)).slice(0,25).map(g=>'<tr><td>'+date(g.date)+'</td><td>'+esc(g.away)+' @ '+esc(g.home)+'</td><td>'+esc((g.innings?.length||9)>9?"Extra innings":g.home_score===0||g.away_score===0?"Shutout":"High-scoring / attended game")+'</td><td>'+g.away_score+'–'+g.home_score+'</td><td><a href="'+gameUrl(g)+'">Game ↗</a></td></tr>'));
  if(location.hash==="#milestones")app.querySelector('[data-tab="milestones"]').click();
 }
-if(page==="home")overview();else if(page==="games")gamePage();else if(page==="players")statsPage();else if(page==="player")profilePage();else if(page==="records")recordsPage();
+if(page==="home")overview();else if(page==="games")gamePage();else if(page==="players")statsPage();else if(page==="player")profilePage();else if(page==="records")recordsPage();else if(page==="hof")hofPage();
 });

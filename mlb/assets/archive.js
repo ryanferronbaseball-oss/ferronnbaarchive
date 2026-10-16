@@ -8,7 +8,7 @@ const asInt=v=>Math.round(num(v)), pad=v=>String(v).padStart(2,"0");
 const playerUrl=p=>"./player.html?id="+encodeURIComponent(p.player_id);
 const gameUrl=g=>"./game.html?id="+encodeURIComponent(g.attendance_id);
 function nav(active){
-const paths=[["index.html","Overview","home"],["game.html","Games","games"],["stats.html","Players","players"],["records.html","Records","records"]];
+const paths=[["index.html","Overview","home"],["game.html","Games","games"],["stats.html","Players","players"],["hall-of-fame.html","★ Hall of Fame","hof"],["records.html","Records","records"]];
 return '<header class="archive-header"><a class="archive-logo" href="./index.html">COURTSIDE ARCHIVE<small>EVERY GAME HAS A STORY · MLB</small></a><nav class="archive-nav" aria-label="MLB archive navigation">'
 +paths.map(([href,name,key])=>'<a href="./'+href+'"'+(active===key?' aria-current="page"':'')+'>'+name+'</a>').join("")
 +'<a href="../index.html" class="back-link">All sports ↗</a></nav></header>';

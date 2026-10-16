@@ -209,3 +209,47 @@ tbody small{display:block;color:var(--muted);font-size:11px;font-weight:400;marg
 .mlb-potg-profile{display:block;font-size:12px;font-weight:800;margin-top:6px}
 .mlb-potg-panel .mlb-note,.mlb-decisions-panel .mlb-note{margin:16px 0 0}
 @media(max-width:650px){.mlb-decision-grid{grid-template-columns:1fr}.mlb-decision-card{padding:13px 15px}.mlb-decision-role{margin:2px 0 5px}.mlb-potg-body{gap:15px}.mlb-potg-portrait{width:88px;height:106px;flex-basis:88px}#pitchingDecisions,#playerOfGame{padding:18px}}
+
+
+/* MLB Hall of Fame page: NBA/NFL matching cream-and-forest legend cards. */
+.mlb-hof-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:25px 0}
+.mlb-hof-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:18px 0}
+.mlb-hof-card{background:#FFFEFB;border:1px solid #D9DED4;border-radius:16px;padding:20px;min-width:0;overflow:hidden}
+.mlb-hof-head{display:flex;gap:15px;align-items:center}
+.mlb-hof-portrait{width:92px;height:105px;flex:0 0 92px;background:linear-gradient(135deg,#E6EFE3,#CCDCCB);border-radius:11px;display:grid;place-items:center;overflow:hidden;color:#284D3C;font-size:29px;font-weight:850}
+.mlb-hof-portrait img{width:100%;height:100%;object-fit:cover;object-position:center top}
+.mlb-hof-title{min-width:0}.mlb-hof-title h2{font-size:clamp(19px,2.4vw,24px);letter-spacing:-.025em;margin:7px 0 5px;overflow-wrap:anywhere}
+.mlb-hof-title h2 a{color:#284D3C;text-decoration:none}.mlb-hof-title h2 a:hover{text-decoration:underline}
+.mlb-hof-badge{display:inline-flex;background:#FFF1CB;border:1px solid #D5B86E;color:#744F19;border-radius:7px;padding:5px 9px;font-weight:850;font-size:11px;letter-spacing:.05em}
+.mlb-hof-meta{color:#667668;font-size:12px;line-height:1.5}
+.mlb-hof-figures{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:18px 0}
+.mlb-hof-figure{min-width:0;padding:12px;border-radius:9px;background:#F1F5EF}
+.mlb-hof-figure strong{display:block;color:#284D3C;font-size:21px;font-weight:850}
+.mlb-hof-figure small{display:block;color:#647568;font-size:11px;margin-top:4px}
+.mlb-hof-games{margin:13px 0 0;font-size:12px;line-height:1.8}
+.mlb-hof-games strong{display:block;color:#566B59;margin-bottom:4px}
+.mlb-hof-games a{display:block;text-decoration:none;color:#315E40;font-weight:700}
+.mlb-hof-games a:hover{text-decoration:underline}
+.mlb-hof-links{display:flex;flex-wrap:wrap;gap:14px;margin-top:16px;font-weight:800;font-size:12px}
+.mlb-hof-empty{grid-column:1/-1;padding:25px;border:1px dashed #C9D5C5;border-radius:12px;color:#607562}
+.mlb-hof-toolbar{display:flex;flex-wrap:wrap;gap:10px;margin:19px 0}
+.mlb-hof-toolbar input,.mlb-hof-toolbar select{min-width:0;border:1px solid #CCD5C8;background:white;border-radius:9px;padding:11px 13px;color:#234632;font:inherit;font-size:13px}
+.mlb-hof-toolbar input{flex:1;min-width:190px}
+.mlb-hof-count{font-size:12px;color:#697967;margin:4px 0 13px}
+.mlb-accolades{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:10px 0 12px}
+.mlb-accolade{display:inline-flex;align-items:center;gap:5px;background:#EFF5EC;border:1px solid #BDCFB8;color:#2E5B3F;border-radius:8px;padding:7px 10px;font-size:11px;font-weight:850;text-decoration:none}
+.mlb-accolade:hover{background:#E5F0E0}
+.mlb-accolade.hof{background:#FFF0C8;border-color:#D1B36B;color:#805719}
+.mlb-accolade.mvp{background:#E0EFDE;border-color:#9BC19D;color:#275C34}
+.mlb-accolade.cy{background:#E5EDFA;border-color:#B0BFDA;color:#2D4F78}
+.mlb-accolade.gg{background:#FFF1D9;border-color:#DFC08E;color:#7E541A}
+.mlb-accolade.ss{background:#EEF0F2;border-color:#C3CBD3;color:#495B66}
+.mlb-honors-panel h2{margin:0 0 10px}
+.mlb-honor-detail{padding:16px;border-radius:11px;background:#F5F7F2;border:1px solid #DDE4D9;font-size:13px;line-height:1.65}
+.mlb-honor-detail[hidden]{display:none!important}
+.mlb-honor-detail strong{color:#284D3C;font-size:17px}
+.mlb-honor-detail p{margin:8px 0}
+.mlb-honor-tags{display:flex;flex-wrap:wrap;gap:7px;margin:14px 0 0}
+.mlb-honor-year{display:inline-flex;background:white;border:1px solid #D4DFC9;border-radius:7px;padding:6px 9px;color:#2C5139;font-weight:750;font-size:12px}
+@media(max-width:850px){.mlb-hof-grid{grid-template-columns:1fr}}
+@media(max-width:560px){.mlb-hof-summary{grid-template-columns:repeat(2,minmax(0,1fr))}.mlb-hof-figures{gap:6px}.mlb-hof-figure{padding:9px}.mlb-hof-card{padding:15px}.mlb-hof-portrait{width:76px;height:89px;flex-basis:76px}.mlb-hof-figure strong{font-size:18px}}

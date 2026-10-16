@@ -12,6 +12,9 @@ games=json.loads((D/"games.json").read_text())
 rows=json.loads((D/"player_stats.json").read_text())
 scoring=json.loads((D/"scoring_plays.json").read_text())
 report=json.loads((D/"import_report.json").read_text())
+honors=json.loads((D/"career_awards.json").read_text())
+honored=honors["players"]
+hall_ids=[pid for pid,p in honored.items() if p.get("hall_of_fame")]
 decisions=json.loads((D/"decisions.json").read_text())
 def check(condition,msg):
  assert condition,msg
@@ -36,6 +39,14 @@ check(report.get("lineup_team_games_with_nine_spots")==262,"All 262 team box sco
 check(report.get("lineup_slot_rows",0)>3000,"Official batting slots imported for more than 3,000 player lines")
 check(all(r.get("side") in ("away","home") for r in rows),"Every MLB player box-score record identifies its home/away team")
 check(all(1<=r["batting_slot"]<=9 for r in rows if r.get("batting_slot") is not None),"All verified lineup slots are between one and nine")
+check(len(hall_ids)==21,"Exactly 21 witnessed MLB players have Hall of Fame induction records")
+check(honors["_meta"]["player_pool"]==len({str(r["player_id"]) for r in rows}),"Awards filtered to all actual unique MLB player IDs")
+check(honors["_meta"]["award_recipients"]["mvp"]>=30,"Official MVP awards matched to 30+ attended players")
+check(honors["_meta"]["award_recipients"]["cy_young"]>=15,"Cy Young awards matched to at least 15 pitchers seen")
+check(honors["_meta"]["award_recipients"]["gold_glove"]>=150,"Official Gold Glove records matched to 150+ players")
+check(honors["_meta"]["award_recipients"]["silver_slugger"]>=180,"Official Silver Slugger records matched to 180+ players")
+check(all(p["hall_of_fame"]["year"]<=2026 for p in honored.values() if p.get("hall_of_fame")),"No future Hall of Fame induction classes assumed")
+check(all(1960<=a["year"]<=2026 for p in honored.values() for key in ("mvp","cy_young","gold_glove","silver_slugger") for a in p.get(key,[])),"Every award has a valid historic season")
 for file in ["archive.js","pages.js"]:
  src=(ROOT/"mlb/assets"/file).read_text()
  with tempfile.NamedTemporaryFile(suffix=".js",mode="w") as f:
@@ -173,6 +184,36 @@ try:
    page.locator("#category").select_option("pitching")
    check(page.locator("#board tbody tr").count()>=15,f"{width} pitching leaderboards loaded")
    fits("MLB players")
+   visit("mlb/hall-of-fame.html","document.querySelectorAll('#hofGrid .mlb-hof-card').length===21")
+   check(page.locator('nav a[href="./hall-of-fame.html"]').count()==1,f"{width} Hall of Fame nav immediately follows Players")
+   check(page.locator("#hofGrid .mlb-hof-card").count()==len(hall_ids),f"{width} all inducted players seen have legend cards")
+   check(page.locator("#hofShowing").inner_text().startswith("Showing 21"),f"{width} Hall of Fame page reports precise inducted count")
+   check(page.locator(".mlb-hof-summary .metric").count()==3,f"{width} NBA/NFL-style three Hall of Fame summary metrics")
+   check("Class of" in page.locator("#hofGrid .mlb-hof-card").first.inner_text(),f"{width} Hall of Fame class year on every card")
+   check(page.locator(".mlb-hof-card .mlb-hof-games a").count()>=21,f"{width} witnessed games linked from Hall of Fame cards")
+   hof_id=hall_ids[0]
+   hof_player=next(r["name"] for r in rows if str(r["player_id"])==hof_id)
+   page.locator("#hofSearch").fill(hof_player)
+   check(page.locator("#hofGrid .mlb-hof-card").count()==1,f"{width} Hall of Fame player search narrows list")
+   page.locator("#hofSearch").fill("")
+   page.locator("#hofSort").select_option("year")
+   check(page.locator("#hofGrid .mlb-hof-card").count()==21,f"{width} Hall of Fame sort retains every inducted player")
+   fits("Hall of Fame page")
+   visit(f"mlb/player.html?id={hof_id}","document.querySelector('.mlb-profile-head')!==null")
+   check(page.locator('.mlb-accolade.hof').count()==1,f"{width} Hall of Fame badge on inducted player's profile")
+   check(page.locator('#honorTabs [data-honor="hall_of_fame"]').count()==1,f"{width} Hall of Fame career tab exists")
+   check(str(honored[hof_id]["hall_of_fame"]["year"]) in page.locator('#honor-hall_of_fame').inner_text(),
+         f"{width} inducted class year appears on player profile")
+   check(page.locator('#honorTabs [data-honor]').count()==5,f"{width} five honors tabs include MVP Cy Young Gold Glove Silver Slugger")
+   for category in ("mvp","cy_young","gold_glove","silver_slugger"):
+    chosen=next(pid for pid,p in honored.items() if p.get(category))
+    visit(f"mlb/player.html?id={chosen}","document.querySelector('.mlb-profile-head')!==null")
+    check(page.locator(f'[data-honor-link="{category}"]').count()==1,f"{width} verified {category} career award badge")
+    page.locator(f'#honorTabs [data-honor="{category}"]').click()
+    check(page.locator(f'#honor-{category}').is_visible(),f"{width} {category} tab opens verified award years")
+    check(str(honored[chosen][category][0]["year"]) in page.locator(f'#honor-{category}').inner_text(),
+          f"{width} {category} year is shown from official record")
+   fits("MLB awarded player")
    example=rows[0]
    visit(f"mlb/player.html?id={example['player_id']}","document.querySelector('.mlb-profile-head')!==null")
    check(example["name"] in page.locator(".mlb-profile-head").inner_text(),f"{width} MLB-ID player profile")

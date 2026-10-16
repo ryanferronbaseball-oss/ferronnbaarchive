@@ -108,6 +108,12 @@ try:
           "Original six milestone record cards load")
     check(page.locator("#teamGames tr").count()==94,
           "Milestones include exactly 94 distinct NCAA game results")
+    check(page.locator("#recordTopRows tr").count()==10 and page.locator("#progression").count()==0,
+          "College record book replaces personal progression with Top 10 player games")
+    page.locator("#recordCategory").select_option("ast")
+    check(page.locator("#recordValueHeader").inner_text()=="AST" and
+          page.locator("#recordTopRows tr").count()==10,
+          "College record book switches to Top 10 assists")
     page.locator('[data-tab="milestones"]').click()
     check(page.locator("#milestonesTab").is_visible(),"Statistical milestone tab works")
     page.locator("#milestone").select_option(index=1)

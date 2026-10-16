@@ -139,6 +139,39 @@ try:
       check(all(abs(actual_bounds[k]-nfl_header_bounds[k])<=2 for k in ("left","right")),
             route+" standalone masthead matches NFL left and right edges")
 
+    # Both basketball Record Books use a selectable top-ten player-game
+    # leaderboard instead of the removed personal record progression.
+    for sport in ("nba","college"):
+      route=f"{sport}/milestones.html"
+      navigate(desktop,route)
+      desktop.wait_for_function("document.querySelectorAll('#recordTopRows tr').length === 10")
+      check(desktop.locator("#recordCards .record").count()==6,
+            route+" retains all six record-holder cards")
+      check(desktop.locator("#progression").count()==0 and
+            desktop.locator("#recordTopRows tr").count()==10,
+            route+" replaces progression with ten performances")
+      check(desktop.locator("#recordValueHeader").inner_text()=="PTS",
+            route+" defaults to scoring record category")
+      check(desktop.locator("#recordTopRows a[href^='./player.html?id=']").count()==10 and
+            desktop.locator("#recordTopRows a[href^='./game.html?id=']").count()==10,
+            route+" links every ranked performance to its player and box score")
+      scores=[int(v) for v in desktop.locator("#recordTopRows td:nth-child(5)").all_text_contents()]
+      check(scores==sorted(scores,reverse=True),
+            route+" top-ten points rankings are descending")
+      check(scores[0]==int(desktop.locator("#recordCards .record strong").first.inner_text()),
+            route+" Top 10 and scoring record card agree")
+      desktop.locator("#recordCategory").select_option("reb")
+      check(desktop.locator("#recordValueHeader").inner_text()=="REB" and
+            desktop.locator("#recordTopRows tr").count()==10,
+            route+" changes to Top 10 rebounds on selection")
+      rebounds=[int(v) for v in desktop.locator("#recordTopRows td:nth-child(5)").all_text_contents()]
+      check(rebounds==sorted(rebounds,reverse=True),
+            route+" selected rebound rankings are descending")
+      desktop.locator("#recordCategory").select_option("fg3m")
+      check(desktop.locator("#recordValueHeader").inner_text()=="3PM" and
+            desktop.locator("#recordTopRows tr").count()==10,
+            route+" made-three category returns ten ranked games")
+
     # Basketball impact leaderboard mirrors each game's Player of the Game calculation.
     for sport,game_id in (("nba","1"),("college","59")):
       navigate(desktop,f"{sport}/game.html?id={game_id}")

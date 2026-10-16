@@ -84,6 +84,24 @@ try:
         check(desktop.evaluate("getComputedStyle(document.body).backgroundColor")=="rgb(250, 248, 242)",
               route+" preserves the canonical ivory NBA editorial theme")
 
+    # Basketball impact leaderboard mirrors each game's Player of the Game calculation.
+    for sport,game_id in (("nba","1"),("college","59")):
+      navigate(desktop,f"{sport}/game.html?id={game_id}")
+      desktop.wait_for_function("document.querySelectorAll('.impact-board tbody tr').length === 5")
+      board=desktop.locator(".impact-board")
+      check(board.locator("thead th").all_text_contents()==
+            ["Player","Impact score","PTS","REB","AST","STL","BLK"],
+            sport+" game impact leaderboard has all seven requested columns")
+      check(board.locator("tbody tr").count()==5,
+            sport+" game ranks exactly five players by impact")
+      scores=[int(x) for x in board.locator("tbody tr .impact-number strong").all_text_contents()]
+      check(scores==sorted(scores,reverse=True),sport+" impact rankings are descending")
+      check(scores[0]==int(desktop.locator(".pog-impact strong").inner_text()),
+            sport+" top impact score agrees with Player of the Game")
+      check(board.locator("tbody tr .impact-player small").count()==5 and
+            board.locator("tbody tr .impact-player a").count()==5,
+            sport+" game shows five linked player names and team labels")
+
     # Previously bookmarked NBA detail and leaderboard links must keep deep link queries.
     for oldroute,newroute in (
       ("game.html?id=1","nba/game.html?id=1"),

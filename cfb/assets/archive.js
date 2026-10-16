@@ -115,7 +115,7 @@ function scoreboard(g){
  const a=g.quarters.away,h=g.quarters.home,max=Math.max(a.length,h.length);
  const head=Array.from({length:max},(_,i)=>'<th scope="col">'+period(i+1)+'</th>').join("");
  const row=(name,arr,total)=>'<tr><td>'+esc(name)+'</td>'+Array.from({length:max},(_,i)=>'<td>'+esc(arr[i]??"—")+'</td>').join("")+'<td><strong>'+total+'</strong></td></tr>';
- return '<div class="scoreboard"><div class="game-date">'+esc(date(g.date))+' · Week '+g.week+' · '+esc(g.stadium)+'</div>'+
+ return '<div class="scoreboard"><div class="game-date">'+esc(date(g.date))+(g.week?' · Week '+g.week:'')+' · '+esc(g.stadium)+'</div>'+
  '<div class="scoreline"><div><div class="team-scoreline"><span class="team-name">'+esc(g.away)+'</span><span class="team-score">'+g.away_score+'</span></div>'+
  '<div class="team-scoreline"><span class="team-name">'+esc(g.home)+'</span><span class="team-score">'+g.home_score+'</span></div></div>'+
  '<span class="game-date">'+(g.overtime?'FINAL / OT':'FINAL')+'</span></div>'+

@@ -97,6 +97,8 @@ try:
               route+" points back to root master")
         check(desktop.evaluate(masthead_style)==nfl_masthead,
               route+" title and tagline fonts exactly match NFL masthead")
+        check("nfl-masthead-match-20261015" in desktop.locator('link[href*="/assets/site.css"]').get_attribute("href"),
+              route+" loads newly versioned masthead CSS instead of cached old theme")
         check(desktop.locator(".ca-header .ca-logo").inner_text()==
               "COURTSIDE ARCHIVE\nEVERY GAME HAS A STORY · "+("NBA" if sport=="nba" else "COLLEGE BASKETBALL"),
               route+" uses NFL-style text logo and sport-specific tagline")
@@ -187,6 +189,8 @@ try:
       navigate(mobile,route)
       check(mobile.evaluate(masthead_style)==nfl_mobile_masthead,
             route+" mobile title and tagline fonts match NFL")
+      check("nfl-masthead-match-20261015" in mobile.locator('link[href*="/assets/site.css"]').get_attribute("href"),
+            route+" mobile masthead requests refreshed CSS")
       mobile.wait_for_function("document.querySelector('.ca-hub-link') !== null")
       check(mobile.locator(".ca-header .ca-logo-text small").is_visible() and
             mobile.locator(".ca-header .ca-mark").count()==0,

@@ -79,10 +79,32 @@ try:
         navigate(desktop,route)
         check(desktop.locator(".ca-hub-link").get_attribute("href")=="../index.html",
               route+" points back to root master")
+        check(desktop.locator(".ca-header .ca-logo").inner_text()==
+              "COURTSIDE ARCHIVE\nEVERY GAME HAS A STORY · "+("NBA" if sport=="nba" else "COLLEGE BASKETBALL"),
+              route+" uses NFL-style text logo and sport-specific tagline")
+        check(desktop.locator(".ca-header .ca-mark, .ca-header svg").count()==0,
+              route+" has no masthead icon")
+        check(desktop.evaluate("""() => {
+          const css=getComputedStyle(document.querySelector('.ca-header .ca-hub-link'));
+          return css.borderTopStyle==='none' && css.paddingLeft==='0px' &&
+            css.paddingRight==='0px' && css.backgroundColor==='rgba(0, 0, 0, 0)';
+        }"""),route+" has an unboxed All archives link")
+        check(desktop.evaluate("""() => getComputedStyle(document.querySelector('.ca-header .ca-logo')).fontSize""")=="17px",
+              route+" logo font matches NFL")
         nav=desktop.locator(".ca-nav a[data-nav]").first.get_attribute("href")
         check(nav=="./index.html",route+" retains relative league-scoped navigation")
         check(desktop.evaluate("getComputedStyle(document.body).backgroundColor")=="rgb(250, 248, 242)",
               route+" preserves the canonical ivory NBA editorial theme")
+
+    # Standalone basketball directories share the same masthead, too.
+    for sport,filename in (("nba","hall-of-fame.html"),("college","nba-alumni.html")):
+      route=f"{sport}/{filename}"
+      navigate(desktop,route)
+      check(desktop.locator(".ca-header .ca-mark, .ca-header svg").count()==0 and
+            desktop.locator(".ca-logo-text small").inner_text().endswith("NBA" if sport=="nba" else "COLLEGE BASKETBALL"),
+            route+" uses the common logo-free header")
+      check(desktop.locator(".ca-header .ca-hub-link").get_attribute("href")=="../index.html",
+            route+" retains All archives navigation")
 
     # Basketball impact leaderboard mirrors each game's Player of the Game calculation.
     for sport,game_id in (("nba","1"),("college","59")):
@@ -144,6 +166,9 @@ try:
     for route in ("nba/index.html","college/index.html"):
       navigate(mobile,route)
       mobile.wait_for_function("document.querySelector('.ca-hub-link') !== null")
+      check(mobile.locator(".ca-header .ca-logo-text small").is_visible() and
+            mobile.locator(".ca-header .ca-mark").count()==0,
+            route+" mobile header shows its sport with no icon")
       check(mobile.locator(".ca-hub-link").is_visible(),
             route+" shows the return-to-master link")
       check(mobile.evaluate("document.documentElement.scrollWidth <= innerWidth + 2"),

@@ -66,13 +66,15 @@ tbody small{display:block;color:var(--muted);font-size:11px;font-weight:400;marg
 @media(max-width:800px){.pog-stats{grid-template-columns:repeat(4,minmax(0,1fr))}}
 @media(max-width:520px){.pog-stats{grid-template-columns:repeat(3,minmax(0,1fr))}.pog-head{flex-wrap:wrap}.pog-impact{align-items:flex-start;text-align:left}.pog-stat{padding:11px 4px}}
 /* Mirrors the NBA and college Top 5 Impact Performances table treatment. */
-.ppr-board-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
-.ppr-board-heading h2{margin:0 0 15px}
-.ppr-board-heading .action-link{margin:0 0 15px}
-.impact-scroll{margin-top:12px;border:1px solid #D8DDD4;border-radius:11px;overflow-x:auto;max-width:100%}
+.ppr-board{padding:21px;border-radius:15px}
+.ppr-board-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:15px}
+.ppr-board-heading h2{margin:0;font-size:22px;line-height:normal;letter-spacing:normal}
+.ppr-board-heading .action-link{margin:0}
+.impact-scroll{margin-top:0;border:1px solid #D8DDD4;border-radius:11px;overflow-x:auto;max-width:100%}
 .impact-board{min-width:680px;width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
 .impact-board th{background:#F0F2EB;color:#486050;text-transform:uppercase;font-size:11px;letter-spacing:.055em;font-weight:800}
 .impact-board th,.impact-board td{padding:13px 12px;border-bottom:1px solid #E6EAE2;text-align:right}
+.impact-board td{font-size:13px}
 .impact-board th:first-child,.impact-board td:first-child{text-align:left;position:sticky;left:0;min-width:205px;z-index:1;background:#FFFEFB}
 .impact-board th:first-child{z-index:2;background:#F0F2EB}
 .impact-board tbody tr:nth-child(even){background:#F8F9F5}

@@ -90,14 +90,14 @@ try:
     check("the pavilion at jserra" in page.locator("#game").inner_text().lower() and
           "neutral site" in page.locator("#game").inner_text().lower(),
           "2023 SoCal Showcase shown at its verified neutral-site venue")
-    navigate(page,"records.html")
-    page.wait_for_url("**/college/milestones.html")
-    check(page.locator("#recordTopRows tr").count()==10,
-          "Retired single-game records URL redirects to the integrated Top 10 Record Book")
-    check(page.locator(".ca-nav .ca-more").count()==0,
-          "College archive removes duplicate More/Single-game Records navigation")
-
     navigate(page,"milestones.html")
+    page.wait_for_url("**/college/records.html")
+    check(page.locator("#recordTopRows tr").count()==10,
+          "Legacy milestones URL redirects to the canonical basketball Record Book")
+    check(page.locator(".ca-nav .ca-more").count()==0,
+          "College archive has no duplicate Records navigation")
+
+    navigate(page,"records.html")
     page.wait_for_function("document.getElementById('coverage').textContent.includes('94 games attended')")
     check(page.locator("#recordCards .record").count()==6,
           "Original six milestone record cards load")

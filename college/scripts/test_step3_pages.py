@@ -9,7 +9,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[2]
-PAGES=["index.html","game.html","stats.html","player.html","milestones.html","insights.html"]
+PAGES=["index.html","game.html","stats.html","player.html","records.html","insights.html"]
 NEW=PAGES[:2]+PAGES[4:]
 COLLEGE=ROOT/"college"
 
@@ -57,7 +57,7 @@ def main():
             else:
                 check(a.counts.get(tag,0)==b.counts.get(tag,0),file+" has original NBA "+tag+" count")
         check((a.ids-({"hofBadge","mvpBadge","allNbaBadge"} if file=="player.html" else set())).issubset(b.ids),file+" preserves shared statistical control IDs (league-specific award badges may differ)")
-        check(all(link in b.nav_links for link in ("./index.html","./game.html","./stats.html","./milestones.html","./insights.html","./nba-alumni.html")) and b.nav_links.count("./stats.html")==1 and "./stats.html" in a.nav_links,file+" preserves functional primary navigation, distinct menu destinations, and the college career link")
+        check(all(link in b.nav_links for link in ("./index.html","./game.html","./stats.html","./records.html","./insights.html","./nba-alumni.html")) and b.nav_links.count("./stats.html")==1 and "./stats.html" in a.nav_links,file+" preserves functional primary navigation, distinct menu destinations, and the college career link")
         check(all((COLLEGE/ref.removeprefix("./")).is_file()
                   for ref in b.links if ref.startswith("./") and "?" not in ref and "#" not in ref),
               file+" links to existing college pages")
@@ -79,13 +79,13 @@ def main():
             check(not re.search(r"\bNBA\b|\bnba\b|2006-02-26|31-game archive",rendered.replace('<a href="./nba-alumni.html" data-nav="nba-alumni">To the NBA</a>', "")),
                   file+" has no inherited NBA-specific content")
     for sport in ("nba","college"):
-        old=(ROOT/sport/"records.html").read_text(encoding="utf8")
-        check('<meta http-equiv="refresh" content="0;url=./milestones.html">' in old and
-              'location.replace("./milestones.html"+location.search+location.hash)' in old,
+        old=(ROOT/sport/"milestones.html").read_text(encoding="utf8")
+        check('<meta http-equiv="refresh" content="0;url=./records.html">' in old and
+              'location.replace("./records.html"+location.search+location.hash)' in old,
               sport+" old single-game records URL redirects to unified Records and preserves query/fragment")
     for file in PAGES:
         html=(COLLEGE/file).read_text(encoding="utf8")
-        check('href="./records.html"' not in html and 'class="ca-more"' not in html,
+        check('href="./milestones.html"' not in html and 'class="ca-more"' not in html,
               file+" no longer contains redundant single-game Records menu")
 
     home=(COLLEGE/"index.html").read_text(encoding="utf8")
@@ -93,7 +93,7 @@ def main():
     game=(COLLEGE/"game.html").read_text(encoding="utf8")
     check("String(p.game_id)===String(g.id)" in game and "NCAA" in game,
           "Game box scores join by attendance ID and show college sources")
-    milestones=(COLLEGE/"milestones.html").read_text(encoding="utf8")
+    milestones=(COLLEGE/"records.html").read_text(encoding="utf8")
     check("byDateMatch=new Map(games.map(g=>[String(g.espn_event_id),g]))" in milestones and
           "String(p.game_id)===String(g.id)" in milestones,
           "Record game links use matched NCAA event IDs and attendance IDs")

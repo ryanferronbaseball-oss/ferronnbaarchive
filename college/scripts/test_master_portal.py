@@ -21,7 +21,7 @@ checks=[]
 errors=[]
 completed=False
 PAGES=("index.html","game.html","stats.html","player.html",
-       "milestones.html","insights.html")
+       "records.html","insights.html")
 
 def check(ok,label):
     if not ok:raise AssertionError(label)
@@ -123,8 +123,8 @@ try:
               route+" logo font matches NFL")
         nav=desktop.locator(".ca-nav a[data-nav]").first.get_attribute("href")
         check(nav=="./index.html",route+" retains relative league-scoped navigation")
-        check(desktop.locator(".ca-nav .ca-more, .ca-nav a[href='./records.html']").count()==0,
-              route+" has no redundant Single-game Records menu or link")
+        check(desktop.locator(".ca-nav .ca-more, .ca-nav a[href='./milestones.html']").count()==0,
+              route+" has no redundant legacy milestones menu or link")
         check(desktop.evaluate("getComputedStyle(document.body).backgroundColor")=="rgb(250, 248, 242)",
               route+" preserves the canonical ivory NBA editorial theme")
 
@@ -144,7 +144,7 @@ try:
     # Both basketball Record Books use a selectable top-ten player-game
     # leaderboard instead of the removed personal record progression.
     for sport in ("nba","college"):
-      route=f"{sport}/milestones.html"
+      route=f"{sport}/records.html"
       navigate(desktop,route)
       desktop.wait_for_function("document.querySelectorAll('#recordTopRows tr').length === 10")
       check(desktop.locator("#recordCards .record").count()==6,
@@ -215,9 +215,9 @@ try:
       ("game.html?id=1","nba/game.html?id=1"),
       ("player.html?id=espn%3A12345","nba/player.html?id=espn%3A12345"),
       ("stats.html?player=LeBron","nba/stats.html?player=LeBron"),
-      ("milestones.html","nba/milestones.html"),
+      ("milestones.html","nba/records.html"),
       ("insights.html","nba/insights.html"),
-      ("records.html","nba/milestones.html"),
+      ("records.html","nba/records.html"),
       ("sports.html","index.html")
     ):
       legacy=browser.new_page(viewport={"width":1280,"height":900})
@@ -230,11 +230,11 @@ try:
     # Existing league-scoped bookmarks redirect to the single canonical
     # Records page without losing query strings or fragment identifiers.
     for sport in ("nba","college"):
-      old=f"{sport}/records.html"
+      old=f"{sport}/milestones.html"
       redirect=browser.new_page()
       setup(redirect)
       redirect.goto(base+old+"?legacy=1#topTenPanel",wait_until="domcontentloaded")
-      redirect.wait_for_url("**/"+sport+"/milestones.html?legacy=1#topTenPanel")
+      redirect.wait_for_url("**/"+sport+"/records.html?legacy=1#topTenPanel")
       check(redirect.locator("#recordCategory").count()==1,
             old+" redirects to the unified Records page while retaining query and fragment")
       redirect.close()

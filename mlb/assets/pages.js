@@ -13,6 +13,24 @@ if(page==="hof"||page==="player"){
  }catch(error){console.warn("Career honors unavailable",error);}
 }
 const awardsById=careerHonors?.players||{};
+// Load the MLB official career All-Star selections without altering any existing award data.
+if(page==="player"){
+ const selectedPlayerId=new URLSearchParams(location.search).get("id");
+ if(selectedPlayerId&&/^\d+$/.test(selectedPlayerId)){
+  fetch("https://statsapi.mlb.com/api/v1/awards/MLBALL/recipients",{cache:"force-cache"})
+   .then(r=>{if(!r.ok)throw Error("All-Star award records HTTP "+r.status);return r.json()})
+   .then(data=>{
+    const entries=(data.awards||[]).filter(a=>String(a.player?.id||"")===selectedPlayerId);
+    const years=[...new Set(entries.map(a=>Number(a.season||String(a.date||"").slice(0,4))).filter(y=>y>=1900&&y<=2026))].sort((a,b)=>a-b);
+    if(!years.length)return;
+    awardsById[selectedPlayerId]??={name:players.find(p=>String(p.player_id)===selectedPlayerId)?.name};
+    awardsById[selectedPlayerId].all_star=years.map(year=>({year}));
+    if(document.body.dataset.page==="player")profilePage();
+   })
+   .catch(err=>console.warn("Live MLB All-Star selections unavailable:",err));
+ }
+}
+
 
 const verified=games.filter(g=>g.game_pk!=null);
 const sorted=games.slice().sort((a,b)=>b.date.localeCompare(a.date)||b.attendance_id-a.attendance_id);
@@ -220,7 +238,7 @@ function profilePage(){
  const genuineTwoWay=(p.batting.length>0&&(hasOfficialTwoWayRole||String(p.player_id)==="660271"||(battingPosition&&p.pitching.length>0)));
  const twoWay=genuineTwoWay;
  const career=awardsById[String(p.player_id)]||null,hof=career?.hall_of_fame||null;
- const honors=[["mvp","MVP","mvp","🏆"],["cy_young","Cy Young","cy","◆"],["gold_glove","Gold Glove","gg","★"],["silver_slugger","Silver Slugger","ss","✦"]];
+ const honors=[["mvp","MVP","mvp","🏆"],["cy_young","Cy Young","cy","◆"],["gold_glove","Gold Glove","gg","★"],["silver_slugger","Silver Slugger","ss","✦"],["all_star","All-Star","as","☆"]];
  const hasHonors=!!(hof||honors.some(([key])=>career?.[key]?.length));
  const played=games.filter(g=>p.games.has(g.game_pk)).sort((a,b)=>a.date.localeCompare(b.date));
  const startYear=played[0]?.date.slice(0,4)||"—",endYear=played[played.length-1]?.date.slice(0,4)||"—";
@@ -230,7 +248,7 @@ function profilePage(){
  const badges=hasHonors?'<div class="mlb-profile-achievements" aria-label="Career accomplishments">'
   +(hof?'<a class="mlb-profile-badge hof" href="./hall-of-fame.html" title="National Baseball Hall of Fame, inducted '+hof.year+'">★ HALL OF FAME ↗</a>':"")
   +honors.filter(([key])=>career?.[key]?.length).map(([key,title,theme,mark])=>
-   '<a class="mlb-profile-badge '+theme+'" href="#careerHonors" data-honor-link="'+key+'" title="MLB career '+esc(title)+' winner; click for award years">'+mark+' '+esc(title.toUpperCase())+(career[key].length>1?' · '+career[key].length:'')+'</a>').join("")
+   '<a class="mlb-profile-badge '+theme+'" href="#careerHonors" data-honor-link="'+key+'" title="MLB career '+esc(title)+' winner; click for award years">'+mark+' '+esc(title.toUpperCase())+' · '+career[key].length+'</a>').join("")
   +'</div>':"";
  const labels=[...(hof?[["hall_of_fame","Hall of Fame"]]:[]),...honors.map(([key,title])=>[key,title])];
  const chosen=labels.find(([key])=>key==="hall_of_fame"?!!hof:!!career?.[key]?.length)?.[0]||"mvp";
@@ -247,11 +265,11 @@ function profilePage(){
    const inducted=key==="hall_of_fame",entries=inducted?(hof?[{year:hof.year}]:[]):career?.[key]||[];
    return '<div class="mlb-honor-detail" role="tabpanel" id="honor-'+key+'"'+(key===chosen?"":" hidden")+'><strong>'+esc(title)+'</strong>'
     +(entries.length?(inducted?'<p>Inducted into the National Baseball Hall of Fame in '+hof.year+'. <a href="./hall-of-fame.html">See your Hall of Famers ↗</a></p>':
-    '<p>'+entries.length+' verified career '+esc(title)+' '+(entries.length===1?"award":"awards")+'.</p>'):'<p>No verified career '+esc(title)+' awards.</p>')
+    '<p>'+entries.length+' verified career '+esc(title)+' '+(key==="all_star"?(entries.length===1?" selection":" selections"):(entries.length===1?" award":" awards"))+'.</p>'):'<p>No verified career '+esc(title)+' awards.</p>')
     +(entries.length?'<div class="mlb-honor-tags">'+entries.map(a=>'<span class="mlb-honor-year">'+(a.league?esc(a.league)+" ":"")+esc(a.year)+(a.notes?" · "+esc(a.notes):"")+'</span>').join("")+'</div>':"")
     +'</div>';
   }).join("")
-  +'<p class="mlb-note"><a href="https://statsapi.mlb.com/api/v1/awards" target="_blank" rel="noopener">Source: MLB official award records ↗</a></p></section>':"";
+  +'<p class="mlb-note"><a href="https://statsapi.mlb.com/api/v1/awards" target="_blank" rel="noopener">Source: MLB official award records ↗</a> · All-Star totals represent selections, not appearances.</p></section>':"";
  const best=p.rows.map(r=>A.playerImpact(r)).filter(Boolean).sort((a,b)=>b.score-a.score)[0];
  const overviewLine=best?('<div class="mlb-profile-signature"><small>BEST WITNESSED PERFORMANCE</small><strong>'+best.score.toFixed(1)+' Impact Score</strong><span>'+esc(best.line)+' · '+date(best.row.date)+'</span><a href="./game.html?id='+esc(best.row.attendance_id)+'">View game ↗</a></div>'):"";
  const bestBatting=p.batting.map(r=>A.playerImpact(r)).filter(r=>r&&Number.isFinite(r.battingScore)&&r.role!=="Pitching")

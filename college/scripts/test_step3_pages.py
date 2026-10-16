@@ -61,7 +61,7 @@ def main():
         check(all((COLLEGE/ref.removeprefix("./")).is_file()
                   for ref in b.links if ref.startswith("./") and "?" not in ref and "#" not in ref),
               file+" links to existing college pages")
-        check("../assets/site.css?v=editorial-ivory-2" in rendered and
+        check("../assets/site.css?v=nfl-masthead-match-20261015" in rendered and
               "../assets/site.js?v=design-1" in rendered,file+" uses identical canonical NBA theme/nav")
         check("./data/" in rendered,file+" uses college-scoped JSON/CSV")
         check("https://www.espn.com/nba/" not in rendered and

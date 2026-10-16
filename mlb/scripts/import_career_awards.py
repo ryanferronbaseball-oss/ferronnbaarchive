@@ -7,7 +7,7 @@ MVP = AL/NL regular-season MVP (excludes World Series, All-Star, other MVPs).
 Cy Young = AL/NL Cy Young, plus pre-1967 combined MLB Cy Young where relevant.
 Gold Glove = regular AL/NL Rawlings Gold Glove, not Platinum/All-Time/MiLB.
 Silver Slugger = regular AL/NL Silver Slugger, not team MVP awards.
-MLB All-Star = MLBALL official All-Star selections, deduplicated by season.
+MLB All-Star = official ALAS and NLAS award recipients, deduplicated by season.
 National Baseball Hall of Fame = verified MLBHOF recipient, not eligibility.
 """
 import concurrent.futures,datetime,json,pathlib,time,urllib.request,urllib.error
@@ -16,23 +16,12 @@ stats=json.loads((D/"player_stats.json").read_text(encoding="utf-8"))
 unique={}
 for r in stats:
  if r.get("player_id") is not None:unique[str(r["player_id"])]=r.get("name") or f"MLB #{r['player_id']}"
-# Diagnostics: identify officially supported All-Star sources before importing.
-try:
- with urllib.request.urlopen("https://statsapi.mlb.com/api/v1/awards",timeout=25) as rr:
-  award_index=json.load(rr).get("awards",[])
- print("MLB ALLSTAR SOURCE DISCOVERY",[(a.get("id"),a.get("name")) for a in award_index if "star" in a.get("name","").lower() or "star" in a.get("id","").lower()],flush=True)
-except Exception as exc:print("ALLSTAR LIST LOOKUP FAILED",repr(exc),flush=True)
-for addr in ["https://statsapi.mlb.com/api/v1/people/115135/awards","https://statsapi.mlb.com/api/v1/teams/159/roster?rosterType=allStar&season=2024","https://statsapi.mlb.com/api/v1/schedule?sportId=1&gameTypes=A&season=2024"]:
- try:
-  with urllib.request.urlopen(addr,timeout=25) as rr: obj=json.load(rr)
-  print("ALLSTAR SOURCE TEST",addr,"keys",list(obj),"sample",json.dumps(obj,ensure_ascii=False)[:1100],flush=True)
- except Exception as exc:print("ALLSTAR SOURCE TEST FAILED",addr,repr(exc),flush=True)
 CATEGORIES={
  "MLBHOF":("hall_of_fame",None),"ALMVP":("mvp","AL"),"NLMVP":("mvp","NL"),
  "ALCY":("cy_young","AL"),"NLCY":("cy_young","NL"),"MLBCY":("cy_young","MLB"),
  "ALGG":("gold_glove","AL"),"NLGG":("gold_glove","NL"),
  "ALSS":("silver_slugger","AL"),"NLSS":("silver_slugger","NL"),
- "MLBALL":("all_star",None)
+ "ALAS":("all_star","AL"),"NLAS":("all_star","NL")
 }
 def fetch(item):
  award_id=item

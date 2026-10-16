@@ -17,10 +17,10 @@ const awardsById=careerHonors?.players||{};
 if(page==="player"&&!(careerHonors?._meta?.all_star_definition)){
  const selectedPlayerId=new URLSearchParams(location.search).get("id");
  if(selectedPlayerId&&/^\d+$/.test(selectedPlayerId)){
-  fetch("https://statsapi.mlb.com/api/v1/awards/MLBALL/recipients",{cache:"force-cache"})
+  fetch("https://statsapi.mlb.com/api/v1/people/"+encodeURIComponent(selectedPlayerId)+"/awards",{cache:"force-cache"})
    .then(r=>{if(!r.ok)throw Error("All-Star award records HTTP "+r.status);return r.json()})
    .then(data=>{
-    const entries=(data.awards||[]).filter(a=>String(a.player?.id||"")===selectedPlayerId);
+    const entries=(data.awards||[]).filter(a=>a.id==="ALAS"||a.id==="NLAS");
     const years=[...new Set(entries.map(a=>Number(a.season||String(a.date||"").slice(0,4))).filter(y=>y>=1900&&y<=2026))].sort((a,b)=>a-b);
     if(!years.length)return;
     awardsById[selectedPlayerId]??={name:players.find(p=>String(p.player_id)===selectedPlayerId)?.name};

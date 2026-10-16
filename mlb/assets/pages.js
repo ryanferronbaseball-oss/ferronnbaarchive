@@ -14,7 +14,7 @@ if(page==="hof"||page==="player"){
 }
 const awardsById=careerHonors?.players||{};
 // Load the MLB official career All-Star selections without altering any existing award data.
-if(page==="player"){
+if(page==="player"&&!(careerHonors?._meta?.all_star_definition)){
  const selectedPlayerId=new URLSearchParams(location.search).get("id");
  if(selectedPlayerId&&/^\d+$/.test(selectedPlayerId)){
   fetch("https://statsapi.mlb.com/api/v1/awards/MLBALL/recipients",{cache:"force-cache"})

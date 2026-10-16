@@ -238,7 +238,8 @@ function profilePage(){
  const genuineTwoWay=(p.batting.length>0&&(hasOfficialTwoWayRole||String(p.player_id)==="660271"||(battingPosition&&p.pitching.length>0)));
  const twoWay=genuineTwoWay;
  const career=awardsById[String(p.player_id)]||null,hof=career?.hall_of_fame||null;
- const honors=[["mvp","MVP","mvp","🏆"],["cy_young","Cy Young","cy","◆"],["gold_glove","Gold Glove","gg","★"],["silver_slugger","Silver Slugger","ss","✦"],["all_star","All-Star","as","☆"]];
+ const hasAllStarData=!!(careerHonors?._meta?.all_star_definition||Array.isArray(career?.all_star));
+  const honors=[["mvp","MVP","mvp","🏆"],["cy_young","Cy Young","cy","◆"],["gold_glove","Gold Glove","gg","★"],["silver_slugger","Silver Slugger","ss","✦"],...(hasAllStarData?[["all_star","All-Star","as","☆"]]:[])];
  const hasHonors=!!(hof||honors.some(([key])=>career?.[key]?.length));
  const played=games.filter(g=>p.games.has(g.game_pk)).sort((a,b)=>a.date.localeCompare(b.date));
  const startYear=played[0]?.date.slice(0,4)||"—",endYear=played[played.length-1]?.date.slice(0,4)||"—";

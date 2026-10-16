@@ -2,7 +2,21 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>NFL Attendance | Courtside Archive</title>
 <meta name="description" content="Explore every NFL game you attended, verified game box scores, scoring plays and player leaderboards.">
-<link rel="stylesheet" href="./assets/archive.css"><script src="./assets/archive.js?v=hof-nav-20261015" defer></script></head>
+<link rel="stylesheet" href="./assets/archive.css"><script src="./assets/archive.js?v=hof-nav-20261015" defer></script><style id="signature-card-parity">
+.signature-section{margin:28px 0 20px}
+.signature-section .section-heading h2{margin:0}
+.signature-section .section-heading{margin-bottom:12px}
+.signature-description{color:#637468;line-height:1.65;font-size:13px;margin:0 0 16px;max-width:760px}
+.ca-feature-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin:18px 0}
+.ca-feature{padding:19px;border:1px solid #DEDCD2;border-radius:14px;background:linear-gradient(145deg,#FFFEFB,#F4F3EB);min-width:0}
+.ca-feature small{font-size:11px;color:#8A642A;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+.ca-feature strong{display:block;font-size:30px;margin:12px 0 4px;color:#252A2B}
+.ca-feature .ca-name{font-size:13px;font-weight:700;color:#252A2B}
+.ca-feature p{font-size:12px;color:#667268;margin:5px 0}
+.ca-feature a{display:inline-block;margin-top:10px;font-weight:750}
+.ca-fallback{display:grid;place-items:center;background:linear-gradient(130deg,#E5EAE2,#D7E2D5);font-weight:850;font-size:30px;color:#284D3C}
+@media(max-width:800px){.ca-feature-grid{grid-template-columns:1fr}}
+</style></head>
 <body><main><div id="navigation"></div>
 <div class="eyebrow">National Football League · Personal attendance</div>
 <h1>Your NFL history.</h1>
@@ -16,8 +30,9 @@
 </section>
 <div class="section-heading"><h2>Games attended</h2><a class="action-link secondary" href="./game.html">All game box scores ↗</a></div>
 <section id="games" class="game-grid"><div class="empty">Loading your three historical NFL games…</div></section>
-<div class="section-heading"><h2>Your statistical leaders</h2><a class="action-link secondary" href="./stats.html">Full leaderboards ↗</a></div>
-<section class="feature" id="leaders"><div class="empty">Loading player leaderboards…</div></section>
+<section class="signature-section" id="signaturePerformances"><div class="section-heading"><h2>Signature Performances</h2><a class="action-link secondary" href="./records.html">Single-game records ↗</a></div>
+<p class="signature-description">Your greatest witnessed single-game passing, rushing, and receiving performances. Select one to open the game.</p>
+<div class="ca-feature-grid" id="leaders"><div class="empty">Loading signature performances…</div></div></section>
 <section class="panel"><div class="section-heading"><h2 style="margin:0">Full-PPR impact games</h2><a class="action-link secondary" href="./milestones.html">PPR milestones ↗</a></div>
   <p class="lead">Your fantasy-football equivalent of basketball Game Score: rank every offensive game by Full-PPR points and spotlight 30+ performances.</p>
   <div class="metrics" style="grid-template-columns:repeat(2,minmax(0,1fr))"><div class="metric"><strong id="bestPpr">—</strong><small>Highest single-game PPR</small></div><div class="metric"><strong id="thirtyPpr">—</strong><small>30+ PPR games witnessed</small></div></div>
@@ -42,13 +57,23 @@ document.addEventListener("DOMContentLoaded",async()=>{
   document.getElementById("bestPpr").textContent=Number(top.fantasy_ppr).toFixed(2);
   document.getElementById("thirtyPpr").textContent=m["30"];
   document.getElementById("topPpr").innerHTML='<strong style="font-size:18px;color:#284D3C">'+A.esc(top.player)+'</strong> · '+Number(top.fantasy_ppr).toFixed(2)+' PPR <span class="caption">('+A.esc(top.date)+')</span> · <a href="./game.html?id='+encodeURIComponent(top.game_id)+'">View game ↗</a>';
-  const leaders=[["passing","Passing yards","YDS"],["rushing","Rushing yards","YDS"],["receiving","Receiving yards","YDS"]];
-  document.getElementById("leaders").innerHTML=leaders.map(([cat,title,key])=>{
-   const ranked=A.sortPlayers(A.group(rows,cat),cat);
-   const lead=ranked[0],idx=lead?.labels.indexOf(key)??-1;
-   return '<article class="panel"><div class="caption">'+A.esc(title)+'</div><div class="number">'+(lead&&idx>=0?A.esc(lead.stat_values[idx]):"—")+'</div>'+
-    '<h3>'+(lead?'<a href="./player.html?id='+encodeURIComponent(lead.athlete_id)+'">'+A.esc(lead.player)+'</a>':"No data")+'</h3>'+
-    '<div class="caption">'+(lead?A.esc(lead.team)+" · "+lead.games+" game(s) seen":"")+'</div></article>'
+  const categories=[["passing","Passing record","Passing yards","YDS"],["rushing","Rushing record","Rushing yards","YDS"],["receiving","Receiving record","Receiving yards","YDS"]];
+  const gameById=new Map(games.map(g=>[String(g.id),g]));
+  const performances=categories.map(([category,title,description,stat])=>{
+   const eligible=rows.filter(p=>p.category===category).map(p=>{
+    const idx=p.stat_labels.indexOf(stat);
+    return {...p,record:idx<0?NaN:Number(String(p.stat_values[idx]).replace(/,/g,""))};
+   }).filter(p=>Number.isFinite(p.record));
+   eligible.sort((a,b)=>b.record-a.record||a.date.localeCompare(b.date)||a.player.localeCompare(b.player));
+   return {title,description,stat,player:eligible[0]||null};
+  });
+  document.getElementById("leaders").innerHTML=performances.map(({title,stat,player:p})=>{
+   if(!p)return '<article class="ca-feature"><small>'+A.esc(title)+'</small><p>No verified performance is available.</p></article>';
+   const fullName=String(p.player),initials=fullName.split(/\s+/).map(v=>v[0]).slice(0,2).join("").toUpperCase();
+   const photoId=String(p.athlete_id??"");
+   const photo=/^\d+$/.test(photoId)?'<img style="width:100%;height:100%;object-fit:cover" src="https://a.espncdn.com/i/headshots/nfl/players/full/'+photoId+'.png" alt="" onerror="this.style.display=\'none\';this.parentElement.textContent=\''+A.esc(initials)+'\'">':A.esc(initials);
+   const game=gameById.get(String(p.game_id));
+   return '<article class="ca-feature"><small>'+A.esc(title)+'</small><div style="display:flex;gap:12px;align-items:center;margin-top:8px"><div class="ca-fallback" style="width:65px;height:74px;flex:none;border-radius:9px;overflow:hidden">'+photo+'</div><div><strong>'+A.esc(p.record)+' '+A.esc(stat)+'</strong><div class="ca-name">'+A.esc(fullName)+'</div><p>'+A.esc(p.date)+'</p></div></div><a href="'+(game?'./game.html?id='+encodeURIComponent(game.id):'./player.html?id='+encodeURIComponent(p.athlete_id))+'">View performance →</a></article>';
   }).join("");
  }catch(err){document.getElementById("games").innerHTML='<div class="empty">Unable to load NFL game data: '+A.esc(err.message)+'</div>';document.getElementById("leaders").innerHTML=""}
 });

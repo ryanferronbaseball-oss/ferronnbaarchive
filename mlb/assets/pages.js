@@ -294,9 +294,22 @@ function profilePage(){
   +statRow("batting",battingCards)+statRow("pitching",pitchingCards)
   +(ps? "":'<p class="mlb-profile-role-note">No pitching appearances in the games you attended. Pitching figures above reflect only those games.</p>')
   +'</div>':statBoxes(pitcher?pitchingCards:battingCards);
- const totals=(items)=>'<div class="mlb-profile-total-grid">'+items.map(([label,value])=>'<div class="mlb-profile-total"><small>'+esc(label)+'</small><strong>'+esc(value)+'</strong></div>').join("")+'</div>';
+ const totals=(items,extraClass="")=>'<div class="mlb-profile-total-grid'+(extraClass?" "+extraClass:"")+'">'+items.map(([label,value])=>'<div class="mlb-profile-total"><small>'+esc(label)+'</small><strong>'+esc(value)+'</strong></div>').join("")+'</div>';
  const battingStats=[["Games",p.batting.length],["At-bats",bs.atBats],["Hits",bs.hits],["Doubles",bs.doubles],["Triples",bs.triples],["Home Runs",bs.homeRuns],["RBI",bs.rbi],["Runs",bs.runs],["Walks",bs.baseOnBalls],["Stolen Bases",bs.stolenBases]];
- const pitcherStats=ps?[["Appearances",p.pitching.length],["Innings",ps.inningsPitched],["Strikeouts",ps.strikeOuts],["Hits Allowed",ps.hits],["Earned Runs",ps.earnedRuns],["Walks",ps.baseOnBalls],["Wins",officialPitcherRecord.wins],["Losses",officialPitcherRecord.losses],["Saves",officialPitcherRecord.saves]]:[];
+ // Games started comes from the official per-game box score when available;
+ // older games can still identify the starter by first pitcher in team order.
+ const pitcherGames=ps?[...new Set(p.pitching.map(r=>r.game_pk))].length:0;
+ const starts=ps?p.pitching.reduce((sum,row)=>sum+(row.pitching?.gamesStarted!=null
+  ?Number(row.pitching.gamesStarted)||0:row.pitching_appearance_index===0?1:0),0):0;
+ // A missing hold / blown-save field is NOT proof of zero in older box scores.
+ // Show a number only if every witnessed pitching line records that stat.
+ const reliefCount=key=>ps&&p.pitching.length&&p.pitching.every(row=>row.pitching?.[key]!=null&&Number.isFinite(Number(row.pitching[key])))
+  ?p.pitching.reduce((sum,row)=>sum+Number(row.pitching[key]),0):"—";
+ const pitcherStats=ps?[
+  ["Games",pitcherGames],["Games Started",starts],["Wins",officialPitcherRecord.wins],["Losses",officialPitcherRecord.losses],
+  ["Hits",ps.hits],["Earned Runs",ps.earnedRuns],["Walks",ps.baseOnBalls],["K’s",ps.strikeOuts],
+  ["Saves",officialPitcherRecord.saves],["Holds",reliefCount("holds")],["Blown Saves",reliefCount("blownSaves")]
+ ]:[];
  const rateItems=[["Batting Average",A.disp(bs.average,"average")],["On-Base Percentage",A.disp(bs.onBasePercentage,"onBasePercentage")],
   ["Slugging Percentage",A.disp(bs.sluggingPercentage,"sluggingPercentage")],["OPS",A.disp(bs.ops,"ops")],
   ["Extra-Base Hits",bs.doubles+bs.triples+bs.homeRuns],["Isolated Power",bs.average!=null&&bs.sluggingPercentage!=null?(bs.sluggingPercentage-bs.average).toFixed(3).replace(/^0/,""):"—"],
@@ -327,9 +340,10 @@ function profilePage(){
    '<button type="button" class="mlb-profile-tab" role="tab" data-profile-tab="'+key+'" aria-controls="profile-'+key+'" aria-selected="'+(i===0)+'">'+title+'</button>').join("")+'</div>'
   +'<section class="panel mlb-profile-panel" id="profile-overview" role="tabpanel">'
   +'<h2>Player overview</h2>'+overviewLine
-  +(pitcher&&ps?'<h3>Pitching statistics from games you attended</h3>'+totals(pitcherStats):"")
+  +(pitcher&&ps?'<h3>Pitching statistics from games you attended</h3>'+totals(pitcherStats,"mlb-profile-pitching-grid"):"")
   +'<h3>Batting statistics from games you attended</h3>'+totals(battingStats)
-  +(!pitcher&&ps?'<h3>Pitching statistics from games you attended</h3>'+totals(pitcherStats):"")
+  +(!pitcher&&ps?'<h3>Pitching statistics from games you attended</h3>'+totals(pitcherStats,"mlb-profile-pitching-grid"):"")
+  +(ps?'<p class="mlb-note">Pitching figures cover only games you attended. Holds and blown saves show — if an official game line is missing the stat.</p>':"")
   +awardPanel+'</section>'
   +'<section class="panel mlb-profile-panel" id="profile-advanced" role="tabpanel" hidden>'
   +'<h2>Advanced statistics</h2><p class="mlb-note">Rate statistics combine only your witnessed games. Calculated from official batting and pitching lines—not complete MLB career totals.</p>'

@@ -42,16 +42,16 @@ try:
     desktop=browser.new_page(viewport={"width":1440,"height":960},device_scale_factor=1)
     setup(desktop)
     navigate(desktop,"index.html")
-    desktop.wait_for_function("document.getElementById('allGames').textContent === '136'")
+    desktop.wait_for_function("document.getElementById('allGames').textContent === '267'")
     check(desktop.locator("#nbaGames").inner_text()=="31","Master reads 31 NBA game rows")
     check(desktop.locator("#collegeGames").inner_text()=="94","Master reads 94 separate college rows")
-    check(desktop.locator("#allGames").inner_text()=="136","Master shows 136 combined game visits")
+    check(desktop.locator("#allGames").inner_text()=="267","Master shows 267 combined game visits")
     check(desktop.get_by_role("link",name="Enter NBA archive").get_attribute("href")=="./nba/index.html",
           "Master routes NBA through a dedicated /nba/ path")
     check(desktop.get_by_role("link",name="Enter college archive").get_attribute("href")=="./college/index.html",
           "Master routes college through a dedicated /college/ path")
-    check(desktop.locator(".sport-card").count()==5 and desktop.locator(".future").count()==1,
-          "Five sports archives are active; MLB stays future-only")
+    check(desktop.locator(".sport-card").count()==6 and desktop.locator(".future").count()==1,
+          "Six sports archives are active; future expansion remains available")
     check(desktop.get_by_role("link",name="Enter NFL archive").get_attribute("href")=="./nfl/index.html","Master routes NFL through its dedicated /nfl/ path")
     check(desktop.get_by_role("link",name="Enter CFB archive").get_attribute("href")=="./cfb/index.html","Master routes CFB through its own /cfb/ archive")
     check(desktop.locator("#cfbGames").inner_text()=="5","Master reads five college football game visits")
@@ -64,7 +64,7 @@ try:
           "NBA homepage returns to the master root")
     desktop.locator(".ca-hub-link").click()
     desktop.wait_for_url("**/index.html")
-    check(desktop.locator("#allGames").inner_text()=="136","NBA-to-master return works")
+    check(desktop.locator("#allGames").inner_text()=="267","NBA-to-master return works")
 
     desktop.get_by_role("link",name="Enter college archive").click()
     desktop.wait_for_url("**/college/index.html")
@@ -73,7 +73,7 @@ try:
           "College homepage returns to master root")
     desktop.locator(".ca-hub-link").click()
     desktop.wait_for_url("**/index.html")
-    check(desktop.locator("#allGames").inner_text()=="136","College-to-master return works")
+    check(desktop.locator("#allGames").inner_text()=="267","College-to-master return works")
 
     # The masthead title and subtitle should have the identical computed type
     # treatment as the existing NFL header, not only the same headline size.
@@ -244,7 +244,7 @@ try:
     mobile=browser.new_page(viewport={"width":390,"height":844},device_scale_factor=1)
     setup(mobile)
     navigate(mobile,"index.html")
-    mobile.wait_for_function("document.getElementById('allGames').textContent === '136'")
+    mobile.wait_for_function("document.getElementById('allGames').textContent === '267'")
     check(mobile.evaluate("document.documentElement.scrollWidth <= innerWidth + 2"),
           "Master site does not overflow 390px viewport")
     check(mobile.get_by_role("link",name="Enter NBA archive").is_visible() and

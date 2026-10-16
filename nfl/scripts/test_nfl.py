@@ -211,7 +211,7 @@ try:
    page.screenshot(path=str(out/("milestones-"+str(width)+".png")),full_page=True)
    noOverflow("player profile")
    visit("index.html")
-   page.wait_for_function("document.getElementById('allGames').textContent==='136'")
+   page.wait_for_function("document.getElementById('allGames').textContent==='267'")
    check(page.locator('a[href="./nfl/index.html"]').count()>=1,str(width)+" master portal links to NFL")
    noOverflow("master portal")
    check(not errors,str(width)+" no uncaught JavaScript errors")

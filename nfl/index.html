@@ -16,6 +16,30 @@
 .ca-feature a{display:inline-block;margin-top:10px;font-weight:750}
 .ca-fallback{display:grid;place-items:center;background:linear-gradient(130deg,#E5EAE2,#D7E2D5);font-weight:850;font-size:30px;color:#284D3C}
 @media(max-width:800px){.ca-feature-grid{grid-template-columns:1fr}}
+</style><style id="nfl-basketball-home-data">
+/* Same two-up chart panels, proportional bars, and searchable history layout as basketball. */
+.charts{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.charts .panel{margin-top:20px}
+.charts h2,#gameHistorySection h2{font-size:22px;letter-spacing:normal;margin:0 0 18px}
+.barrow{display:grid;grid-template-columns:minmax(90px,115px) minmax(0,1fr) 30px;gap:12px;align-items:center;margin:10px 0;font-size:13px;color:#55665B}
+.barrow span{overflow-wrap:anywhere}
+.barrow strong{text-align:right;color:#252A2B;font-variant-numeric:tabular-nums}
+.track{height:10px;background:#E2E6DE;border-radius:99px;overflow:hidden}
+.fill{height:100%;background:linear-gradient(90deg,#284D3C,#779680);border-radius:99px}
+#gameHistorySection .sub{margin:-6px 0 20px;font-size:13px;color:#667268}
+#gameHistorySection .filters{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+#gameHistorySection .filters input,#gameHistorySection .filters select{background:#FFFEFB;color:#252A2B;border:1px solid #CFCFC5;border-radius:9px;padding:12px;font:inherit;min-width:170px}
+#gameHistorySection .filters input{flex:1}
+#gameHistorySection .table-scroll{overflow-x:auto;max-width:100%;border-radius:10px}
+#gameHistorySection table{width:100%;border-collapse:collapse;font-size:14px;white-space:normal}
+#gameHistorySection th{text-align:left;background:#F1F2EC;color:#5A6B5F;font-size:11px;letter-spacing:.1em;text-transform:uppercase;position:static}
+#gameHistorySection td,#gameHistorySection th{padding:14px 10px;border-bottom:1px solid #E5E4DC;min-width:0}
+#gameHistorySection td:first-child{position:static;background:transparent}
+#gameHistorySection td a{font-weight:800;color:#284D3C;text-decoration:none}
+#gameHistorySection td a:hover{text-decoration:underline}
+#gameHistorySection .badge{display:inline-block;padding:5px 10px;background:#E5EAE2;border:1px solid #D0D9CF;border-radius:20px;font-size:11px;font-weight:800;white-space:nowrap}
+#gameHistorySection .foot{margin:26px 0;color:#667268;font-size:13px}
+@media(max-width:740px){.charts{grid-template-columns:1fr}.barrow{grid-template-columns:88px minmax(0,1fr) 25px}#gameHistorySection .table-scroll table{min-width:590px}}
 </style></head>
 <body><main><div id="navigation"></div>
 <div class="eyebrow">National Football League · Personal attendance</div>
@@ -33,11 +57,20 @@
 <section class="signature-section" id="signaturePerformances"><div class="section-heading"><h2>Signature Performances</h2><a class="action-link secondary" href="./records.html">Single-game records ↗</a></div>
 <p class="signature-description">Your greatest witnessed single-game passing, rushing, and receiving performances. Select one to open the game.</p>
 <div class="ca-feature-grid" id="leaders"><div class="empty">Loading signature performances…</div></div></section>
-<section class="panel"><div class="section-heading"><h2 style="margin:0">Full-PPR impact games</h2><a class="action-link secondary" href="./milestones.html">PPR milestones ↗</a></div>
-  <p class="lead">Your fantasy-football equivalent of basketball Game Score: rank every offensive game by Full-PPR points and spotlight 30+ performances.</p>
-  <div class="metrics" style="grid-template-columns:repeat(2,minmax(0,1fr))"><div class="metric"><strong id="bestPpr">—</strong><small>Highest single-game PPR</small></div><div class="metric"><strong id="thirtyPpr">—</strong><small>30+ PPR games witnessed</small></div></div>
-  <div id="topPpr"><div class="empty">Loading fantasy milestones…</div></div>
- </section>
+<div class="charts" aria-label="NFL attendance charts">
+ <section class="panel"><h2>Most-watched teams</h2><div id="teams"></div></section>
+ <section class="panel"><h2>Attendance by year</h2><div id="years"></div></section>
+</div>
+<section class="panel" id="gameHistorySection"><h2>My game history</h2>
+ <p class="sub">Based on your attendance history. Select a game to open its result and full box score.</p>
+ <div class="filters">
+  <input id="search" type="search" placeholder="Search team, matchup, stadium…" aria-label="Search attended NFL games">
+  <select id="yearFilter" aria-label="Filter attended NFL games by year"><option value="">All years</option></select>
+  <select id="sort" aria-label="Sort attended NFL games by date"><option value="asc">Oldest first</option><option value="desc">Newest first</option></select>
+ </div>
+ <div class="table-scroll"><table><thead><tr><th>Date</th><th>Away</th><th>Home</th><th>Stadium</th><th>Details</th></tr></thead><tbody id="gameHistoryRows"><tr><td colspan="5">Loading attended games…</td></tr></tbody></table></div>
+ <div class="foot" id="showing"></div>
+</section>
 <div class="panel"><h3>Explore your NFL stats</h3>
 <p class="lead">The box score for each game includes a scoring-play timeline and separate Offense, Defense, and Special Teams tables. The leaderboard page uses the same categories to rank players across the games you attended.</p>
 <a class="action-link" href="./stats.html">Open all NFL leaderboards ↗</a></div>
@@ -47,16 +80,38 @@ document.addEventListener("DOMContentLoaded",async()=>{
  const A=window.NFLArchive;
  document.getElementById("navigation").innerHTML=A.nav("home");
  try{
-  const {games,rows,scoring,ppr}=await A.load();
+  const {games,rows,scoring}=await A.load();
   document.getElementById("gameCount").textContent=games.length;
   document.getElementById("playerCount").textContent=new Set(rows.map(r=>r.athlete_id)).size;
   document.getElementById("statCount").textContent=rows.length;
   document.getElementById("scoringCount").textContent=Object.values(scoring).reduce((n,g)=>n+g.plays.length,0);
   document.getElementById("games").innerHTML=games.slice().sort((a,b)=>b.date.localeCompare(a.date)||String(b.id).localeCompare(String(a.id))).slice(0,3).map(A.gameCard).join("");
-  const top=ppr.performances[0],m=ppr.audit.milestones;
-  document.getElementById("bestPpr").textContent=Number(top.fantasy_ppr).toFixed(2);
-  document.getElementById("thirtyPpr").textContent=m["30"];
-  document.getElementById("topPpr").innerHTML='<strong style="font-size:18px;color:#284D3C">'+A.esc(top.player)+'</strong> · '+Number(top.fantasy_ppr).toFixed(2)+' PPR <span class="caption">('+A.esc(top.date)+')</span> · <a href="./game.html?id='+encodeURIComponent(top.game_id)+'">View game ↗</a>';
+  // Counts are based on attended games: both home and away teams count once.
+  const nflEsc=A.esc;
+  const chart=(id,entries)=>{
+   const maximum=Math.max(1,...entries.map(row=>row[1]));
+   document.getElementById(id).innerHTML=entries.map(([label,count])=>'<div class="barrow"><span>'+nflEsc(label)+'</span><div class="track"><div class="fill" style="width:'+(count/maximum*100).toFixed(2)+'%"></div></div><strong>'+count+'</strong></div>').join('');
+  };
+  const teamCount=new Map(),yearCount=new Map();
+  for(const g of games){
+   for(const t of [g.away,g.home])teamCount.set(t,(teamCount.get(t)||0)+1);
+   const year=String(g.date).slice(0,4);
+   yearCount.set(year,(yearCount.get(year)||0)+1);
+  }
+  chart('teams',[...teamCount].sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0])).slice(0,6));
+  chart('years',[...yearCount].sort((a,b)=>a[0].localeCompare(b[0])));
+  document.getElementById('yearFilter').innerHTML='<option value="">All years</option>'+[...yearCount.keys()].sort().reverse().map(y=>'<option value="'+nflEsc(y)+'">'+nflEsc(y)+'</option>').join('');
+  const renderHistory=()=>{
+   const query=document.getElementById('search').value.trim().toLowerCase();
+   const year=document.getElementById('yearFilter').value;
+   const sort=document.getElementById('sort').value;
+   const matches=games.filter(g=>(!year||g.date.startsWith(year))&&[g.away,g.home,g.stadium,g.city,g.state,g.date].join(' ').toLowerCase().includes(query)).slice().sort((a,b)=>sort==='asc'?a.date.localeCompare(b.date)||String(a.id).localeCompare(String(b.id)):b.date.localeCompare(a.date)||String(b.id).localeCompare(String(a.id)));
+   document.getElementById('gameHistoryRows').innerHTML=matches.map(g=>'<tr><td><a href="./game.html?id='+encodeURIComponent(g.id)+'">'+nflEsc(g.date)+'</a></td><td>'+nflEsc(g.away)+'</td><td><strong>'+nflEsc(g.home)+'</strong></td><td>'+nflEsc(g.stadium)+'</td><td><a class="badge" href="./game.html?id='+encodeURIComponent(g.id)+'">View game →</a></td></tr>').join('')||'<tr><td colspan="5">No matching games.</td></tr>';
+   document.getElementById('showing').textContent='Showing '+matches.length+' of '+games.length+' games.';
+  };
+  for(const id of ['search','yearFilter','sort'])document.getElementById(id).addEventListener('input',renderHistory);
+  renderHistory();
+
   const categories=[["passing","Passing record","Passing yards","YDS"],["rushing","Rushing record","Rushing yards","YDS"],["receiving","Receiving record","Receiving yards","YDS"]];
   const gameById=new Map(games.map(g=>[String(g.id),g]));
   const performances=categories.map(([category,title,description,stat])=>{
@@ -75,6 +130,6 @@ document.addEventListener("DOMContentLoaded",async()=>{
    const game=gameById.get(String(p.game_id));
    return '<article class="ca-feature"><small>'+A.esc(title)+'</small><div style="display:flex;gap:12px;align-items:center;margin-top:8px"><div class="ca-fallback" style="width:65px;height:74px;flex:none;border-radius:9px;overflow:hidden">'+photo+'</div><div><strong>'+A.esc(p.record)+' '+A.esc(stat)+'</strong><div class="ca-name">'+A.esc(fullName)+'</div><p>'+A.esc(p.date)+'</p></div></div><a href="'+(game?'./game.html?id='+encodeURIComponent(game.id):'./player.html?id='+encodeURIComponent(p.athlete_id))+'">View performance →</a></article>';
   }).join("");
- }catch(err){document.getElementById("games").innerHTML='<div class="empty">Unable to load NFL game data: '+A.esc(err.message)+'</div>';document.getElementById("leaders").innerHTML=""}
+ }catch(err){document.getElementById("games").innerHTML='<div class="empty">Unable to load NFL game data: '+A.esc(err.message)+'</div>';document.getElementById("leaders").innerHTML="";document.getElementById("gameHistoryRows").innerHTML='<tr><td colspan="5">Unable to load game history.</td></tr>'}
 });
 </script></body></html>

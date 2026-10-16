@@ -126,4 +126,4 @@ Promise.all([
  fetch('./data/player_boxscores_espn.json?v=college-step3',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Players HTTP '+r.status);return r.json()})
 ]).then(([csv,rows])=>{games=parseCSV(csv);players=rows;if(games.length!==94||players.length!==1825)throw Error('College data contract changed');render()})
 .catch(e=>{$('showing').textContent='Unable to load college attendance: '+e.message;$('features').textContent='Record highlights unavailable.'});
-</script><script src="../assets/site.js?v=design-1"></script></body></html>
+</script><script src="../assets/site.js?v=search-20261016-v3"></script></body></html>

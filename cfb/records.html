@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>College Football Records | Courtside Archive</title>
+<meta name="description" content="Your personal College Football record book: single-game leaders, statistical milestones, team and game records, legendary performances and iconic moments.">
+<link rel="stylesheet" href="./assets/archive.css">
+<script defer src="./assets/archive.js?v=records-4tabs-20261016"></script>
+<style>
+.records-hero{margin:0 0 27px}.records-hero .eyebrow{margin-top:44px}.records-hero h1{margin-bottom:10px}
+.records-main-tabs,.records-subtabs{display:flex;flex-wrap:wrap;gap:8px;margin:19px 0}
+.records-main-tabs button{font:inherit;font-weight:800;font-size:13px;padding:12px 17px;border-radius:10px;border:1px solid #CBD8C9;background:#EDF2EB;color:#284D3C}
+.records-main-tabs button[aria-selected=true]{background:#284D3C;color:#fff;border-color:#284D3C}
+.records-subtabs button{font:inherit;font-size:13px;font-weight:750;padding:9px 14px;background:#EEF2EA;border:1px solid #D1DCCE;border-radius:8px;color:#284D3C}
+.records-subtabs button[aria-pressed=true]{background:#284D3C;color:white;border-color:#284D3C}
+.records-tab[hidden]{display:none!important}
+.records-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.records-card{background:#FFFEFB;border:1px solid #DEE1D8;border-radius:14px;padding:18px;min-width:0}
+.records-card .category{font-size:11px;text-transform:uppercase;letter-spacing:.08em;font-weight:800;color:#66776A}
+.records-card strong{display:block;margin:9px 0 8px;color:#284D3C;font-size:29px;line-height:1.15;font-variant-numeric:tabular-nums}
+.records-card .record-owner{font-weight:750;font-size:14px;line-height:1.5}
+.records-card .caption{margin-top:6px}.records-card a{font-weight:800;color:#284D3C}
+.records-filter-row{display:flex;flex-wrap:wrap;gap:12px;align-items:end;margin:17px 0}
+.records-field{font-size:12px;font-weight:800;color:#637468;display:flex;flex-direction:column;gap:7px}
+.records-field select,.records-filter-row select{font:inherit;min-width:215px;max-width:100%;color:#252A2B;background:#fff;border:1px solid #C8D2C8;border-radius:9px;padding:11px}
+.records-panel-title{margin:0 0 7px;font-size:22px}
+.records-intro{margin:0 0 12px;font-size:13px;color:#637468;line-height:1.6}
+.records-count{font-size:12px;color:#637468}
+.records-table{min-width:690px}
+.records-table th:first-child,.records-table td:first-child{min-width:68px}
+.records-table td:nth-child(2),.records-table th:nth-child(2){text-align:left}
+.records-table .stat-value{font-weight:850;color:#284D3C}
+.records-badges{display:flex;flex-wrap:wrap;gap:6px}
+.records-badges span{font-size:11px;font-weight:750;background:#EAF1E6;color:#284D3C;padding:6px 8px;border-radius:50px;white-space:normal}
+.legend-subsection{margin-top:25px}
+.legend-subsection h2{margin:0 0 7px}
+.records-empty{font-size:13px;color:#637468;padding:20px}
+.records-note{font-size:12px;color:#637468;line-height:1.65}
+.records-two-metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:14px 0}
+.records-two-metrics .metric{margin:0}
+.records-pill{display:inline-block;background:#EEF2EA;color:#284D3C;font-size:11px;font-weight:750;padding:5px 9px;border-radius:100px}
+.records-game-sort{margin-bottom:14px}
+@media(max-width:820px){.records-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:530px){.records-grid{grid-template-columns:1fr}.records-main-tabs button{padding:10px 12px}.records-subtabs button{padding:9px 11px}.records-field{width:100%}.records-field select{width:100%}}
+</style>
+</head>
+<body><main>
+<div id="navigation"></div>
+<header class="records-hero">
+ <div class="eyebrow">College Football · Your personal record book</div>
+ <h1>The best I've witnessed.</h1>
+ <p class="lead">Records, milestones, and unforgettable performances from the College Football games you've attended. Every record belongs to your personal attendance history.</p>
+ <div class="caption" id="coverage">Loading your College Football history…</div>
+</header>
+<div class="records-main-tabs" role="tablist" aria-label="College Football Records sections" id="mainTabs">
+ <button role="tab" type="button" data-tab="records" aria-selected="true" aria-controls="recordsTab">Record Book</button>
+ <button role="tab" type="button" data-tab="milestones" aria-selected="false" aria-controls="milestonesTab">Milestones</button>
+ <button role="tab" type="button" data-tab="teams" aria-selected="false" aria-controls="teamsTab">Team &amp; Game Records</button>
+ <button role="tab" type="button" data-tab="legendary" aria-selected="false" aria-controls="legendaryTab">Legendary Performances</button>
+</div>
+<section class="records-tab" role="tabpanel" id="recordsTab">
+ <div class="section-heading"><h2>Single-game record holders</h2><span class="caption">Individual games, not career totals</span></div>
+ <div class="records-subtabs" id="recordGroups" role="group" aria-label="Record Book statistical groups">
+  <button data-group="offense" type="button" aria-pressed="true">Offense</button><button data-group="defense" type="button" aria-pressed="false">Defense</button><button data-group="special" type="button" aria-pressed="false">Special Teams</button>
+ </div>
+ <div class="records-grid" id="recordCards" aria-live="polite"><div class="empty">Loading record holders…</div></div>
+ <section class="panel">
+  <h2 class="records-panel-title">Top 10 single-game performances</h2>
+  <p class="records-intro">Choose a statistic to rank the ten best individual performances. Repeat appearances by the same player and tied games count separately.</p>
+  <div class="records-filter-row"><label class="records-field" for="recordStat">Statistic<select id="recordStat"></select></label><span id="recordCount" class="records-count" aria-live="polite"></span></div>
+  <div class="table-wrap"><table class="records-table"><thead><tr><th>Rank</th><th>Player</th><th>Team</th><th>Date</th><th id="recordMetric">YDS</th><th>Game</th></tr></thead><tbody id="recordTop10"></tbody></table></div>
+ </section>
+</section>
+<section class="records-tab" role="tabpanel" id="milestonesTab" hidden>
+ <section class="panel">
+  <h2 class="records-panel-title">Statistical milestones</h2>
+  <p class="records-intro">Traditional football statistics and Full-PPR are equally represented. See every qualifying player-game or rank how often each player has reached the threshold.</p>
+  <div class="records-subtabs" id="milestoneGroups" role="group" aria-label="Milestone statistical groups">
+   <button type="button" data-group="offense" aria-pressed="true">Offense</button><button type="button" data-group="defense" aria-pressed="false">Defense</button><button type="button" data-group="special" aria-pressed="false">Special Teams</button>
+  </div>
+  <div class="records-filter-row"><label class="records-field" for="milestoneStat">Milestone<select id="milestoneStat"></select></label></div>
+  <div class="records-two-metrics"><div class="metric"><strong id="milestoneCount">—</strong><small>Qualifying performances</small></div><div class="metric"><strong id="milestonePlayers">—</strong><small>Unique qualifying players</small></div></div>
+  <div class="records-subtabs" id="milestoneModes" role="group" aria-label="Milestone ranking view">
+   <button type="button" data-mode="performances" aria-pressed="true">Individual performances</button><button type="button" data-mode="players" aria-pressed="false">Player frequency rankings</button>
+  </div>
+  <div class="table-wrap"><table class="records-table"><thead id="milestoneHead"></thead><tbody id="milestoneBody"></tbody></table></div>
+  <p class="records-note" id="milestoneInfo"></p>
+ </section>
+</section>
+<section class="records-tab" role="tabpanel" id="teamsTab" hidden>
+ <div class="section-heading"><h2>Team &amp; game records</h2><span class="caption">Final scores and verified scoring chronology</span></div>
+ <div class="records-grid" id="teamCards"></div>
+ <section class="panel">
+  <h2 class="records-panel-title">Quarters, halves &amp; game drama</h2>
+  <p class="records-intro">Statistically measurable scoring, overtime, lead changes, and completed comeback wins.</p>
+  <div class="records-grid" id="dramaCards"></div>
+ </section>
+ <section class="panel">
+  <h2 class="records-panel-title">Scoring breakdown</h2>
+  <p class="records-intro">Most touchdowns or scoring plays by a team in an attended game, based on the recorded scoring events.</p>
+  <div class="records-subtabs" id="scoringGroups" role="group" aria-label="Scoring type"><button type="button" data-group="all" aria-pressed="true">All scoring</button><button type="button" data-group="offense" aria-pressed="false">Offense</button><button type="button" data-group="defense" aria-pressed="false">Defense</button><button type="button" data-group="special" aria-pressed="false">Special Teams</button></div>
+  <div class="records-grid" id="scoringCards"></div>
+ </section>
+ <section class="panel">
+  <h2 class="records-panel-title">Every attended College Football game</h2>
+  <div class="records-filter-row records-game-sort"><label class="records-field" for="gameSort">Sort games<select id="gameSort"><option value="date">Date · oldest first</option><option value="recent">Date · newest first</option><option value="points">Most combined points</option><option value="margin">Largest winning margin</option></select></label></div>
+  <div class="table-wrap"><table class="records-table"><thead><tr><th>Date</th><th>Matchup</th><th>Final</th><th>Total PTS</th><th>Margin</th><th>OT</th><th>Game</th></tr></thead><tbody id="teamGames"></tbody></table></div>
+ </section>
+</section>
+<section class="records-tab" role="tabpanel" id="legendaryTab" hidden>
+ <div class="section-heading"><h2>Legendary performances</h2><span class="caption">Verified statistical feats and iconic scoring plays</span></div>
+ <p class="lead">A player may qualify for multiple achievements in the same game. These are predefined accomplishments—not subjective player awards.</p>
+ <section class="panel legend-subsection">
+  <h2>Statistical Feats</h2>
+  <p class="records-intro">Extraordinary individual box-score performances, including elite Full-PPR games, defensive standout performances, and special teams achievements.</p>
+  <div class="records-subtabs" id="featGroups" role="group" aria-label="Statistical feat groups"><button type="button" data-group="all" aria-pressed="true">All</button><button type="button" data-group="offense" aria-pressed="false">Offense</button><button type="button" data-group="defense" aria-pressed="false">Defense</button><button type="button" data-group="special" aria-pressed="false">Special Teams</button></div>
+  <div class="caption" id="featCount"></div>
+  <div class="table-wrap"><table class="records-table"><thead><tr><th>Achievement</th><th>Player</th><th>Stat line</th><th>Date</th><th>Game</th></tr></thead><tbody id="feats"></tbody></table></div>
+ </section>
+ <section class="panel legend-subsection">
+  <h2>Iconic Moments</h2>
+  <p class="records-intro">Unforgettable events evidenced by the actual scoring timeline: overtime walk-offs, defensive returns, blocked-kick scores, and exceptional long touchdowns.</p>
+  <div class="records-subtabs" id="momentGroups" role="group" aria-label="Iconic moment groups"><button type="button" data-group="all" aria-pressed="true">All</button><button type="button" data-group="offense" aria-pressed="false">Offense</button><button type="button" data-group="defense" aria-pressed="false">Defense</button><button type="button" data-group="special" aria-pressed="false">Special Teams</button></div>
+  <div class="caption" id="momentCount"></div>
+  <div class="table-wrap"><table class="records-table"><thead><tr><th>Moment</th><th>Player / Team</th><th>Scoring play</th><th>Date</th><th>Game</th></tr></thead><tbody id="moments"></tbody></table></div>
+ </section>
+</section>
+<section class="panel"><h2 class="records-panel-title">About these records</h2>
+ <p class="records-note">Only games attended are included. Missing source values never count as zero. Quarter, comeback, and lead-change records are calculated from verified final scores and archived scoring events. Full-PPR uses traditional ESPN-style offensive scoring, with no IDP or kicker fantasy points. A play is credited to a named player only when the underlying game report identifies that player. Some older defensive statistics may be incomplete.</p>
+ <p class="records-note">See <a href="./touchdowns.html">Touchdown History</a> or <a href="./highlights.html">Game Highlights</a> for additional play-by-play perspectives.</p>
+</section>
+<footer class="footer">Courtside Archive · College Football · Statistics and scoring events from your personally attended games.</footer>
+</main>
+<script>
+document.addEventListener("DOMContentLoaded",async()=>{
+ "use strict";
+ const A=window.CFBArchive,el=id=>document.getElementById(id);
+ el("navigation").innerHTML=A.nav("records");
+ let games=[],rows=[],ppr=[],scoring={},recordGroup="offense",milestoneGroup="offense",milestoneMode="performances",scoringGroup="all",featGroup="all",momentGroup="all",feats=[],moments=[];
+ const gameMap=new Map(),players=new Map();
+ const num=x=>{if(x===null||x===undefined||String(x).trim()==="")return null;const n=Number(String(x).replaceAll(",",""));return Number.isFinite(n)?n:null};
+ const gameLink=id=>'<a href="./game.html?id='+encodeURIComponent(id)+'">View game →</a>';
+ const playerLink=x=>x.athlete_id?'<a href="./player.html?id='+encodeURIComponent(x.athlete_id)+'">'+A.esc(x.player)+'</a>':A.esc(x.player);
+ const date=x=>A.date(x);
+ const look=(r,key)=>{const ix=r.stat_labels.indexOf(key);return ix<0?null:r.stat_values[ix]};
+ const stat=(r,key,mode)=>{
+  const raw=look(r,key);if(raw===null||String(raw).trim()==="")return null;
+  if(mode==="made"||mode==="attempts"){const bits=String(raw).split("/");return bits.length===2?num(bits[mode==="made"?0:1]):null}
+  return num(raw);
+ };
+ const groupTitles={offense:"Offense",defense:"Defense",special:"Special Teams"};
+ const recordDefs={
+  offense:[
+   ["Passing yards","passing","YDS"],["Passing touchdowns","passing","TD"],["Pass completions","passing","C/ATT","made"],["Pass attempts","passing","C/ATT","attempts"],
+   ["Rushing yards","rushing","YDS"],["Rushing touchdowns","rushing","TD"],["Rush attempts","rushing","CAR"],["Longest rush","rushing","LONG"],
+   ["Receiving yards","receiving","YDS"],["Receptions","receiving","REC"],["Receiving touchdowns","receiving","TD"],["Longest reception","receiving","LONG"],["Targets","receiving","TGTS"]],
+  defense:[
+   ["Total tackles","defensive","TOT"],["Solo tackles","defensive","SOLO"],["Sacks","defensive","SACKS"],["Tackles for loss","defensive","TFL"],["Passes defended","defensive","PD"],
+   ["Interceptions","interceptions","INT"],["Interception return yards","interceptions","YDS"],["Fumbles recovered","fumbles","REC"]],
+  special:[
+   ["Field goals made","kicking","FG","made"],["Field goals attempted","kicking","FG","attempts"],["Longest made field goal","kicking","LONG"],["Kicking points","kicking","PTS"],["Punting yards","punting","YDS"],["Longest punt","punting","LONG"],
+   ["Kick return yards","kickReturns","YDS"],["Longest kick return","kickReturns","LONG"],["Punt return yards","puntReturns","YDS"],["Longest punt return","puntReturns","LONG"]]
+ };
+ const allCandidates=(cat,key,mode)=>rows.filter(r=>r.category===cat).map(r=>{const value=stat(r,key,mode);if(value===null)return null;
+  if(cat==="kicking"&&key==="LONG"&&!(stat(r,"FG","made")>0))return null;
+  return {value,player:r.player,athlete_id:r.athlete_id,team:r.team,game_id:r.game_id,date:r.date};
+ }).filter(Boolean);
+ const order=(a,b)=>b.value-a.value||a.date.localeCompare(b.date)||a.player.localeCompare(b.player);
+ const fromDef=def=>allCandidates(def[1],def[2],def[3]).sort(order);
+ const recordCard=(title,all)=>{if(!all.length)return '<article class="records-card"><div class="category">'+A.esc(title)+'</div><p class="caption">Not available in imported data</p></article>';
+  const top=all[0],ties=all.filter(x=>x.value===top.value),fmtValue=Number.isInteger(top.value)?A.fmt(top.value):A.fmt(top.value);
+  return '<article class="records-card"><div class="category">'+A.esc(title)+'</div><strong>'+fmtValue+'</strong>'+
+   ties.map(x=>'<div class="record-owner">'+playerLink(x)+'</div><div class="caption">'+A.esc(x.team)+' · '+A.esc(date(x.date))+' · '+gameLink(x.game_id)+'</div>').join("")+'</article>';
+ };
+ const updateBtns=(parent,attr,active)=>el(parent).querySelectorAll("button["+attr+"]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset[attr.slice(5)]===active)));
+ function renderRecords(){
+  const defs=recordDefs[recordGroup];
+  updateBtns("recordGroups","data-group",recordGroup);
+  const prev=el("recordStat").value;
+  el("recordStat").innerHTML=defs.map((d,i)=>'<option value="'+i+'">'+A.esc(d[0])+'</option>').join("");
+  el("recordStat").value=defs.some((d,i)=>String(i)===prev)?prev:"0";
+  el("recordCards").innerHTML=defs.map(d=>recordCard("Most "+d[0].toLowerCase(),fromDef(d))).join("");
+  renderTop10();
+ }
+ function renderTop10(){
+  const def=recordDefs[recordGroup][Number(el("recordStat").value)||0],top=fromDef(def),selected=top.slice(0,10);
+  el("recordMetric").textContent=def[2]==="C/ATT"?(def[3]==="made"?"COMP":"ATT"):def[2]==="FG"?(def[3]==="made"?"FGM":"FGA"):def[2];
+  el("recordCount").textContent="Showing "+selected.length+" of "+top.length+" available player-games";
+  el("recordTop10").innerHTML=selected.map((x,i)=>'<tr><td>'+(i+1)+'</td><td>'+playerLink(x)+'</td><td>'+A.esc(x.team)+'</td><td>'+A.esc(date(x.date))+'</td><td class="stat-value">'+A.fmt(x.value)+'</td><td>'+gameLink(x.game_id)+'</td></tr>').join("")||'<tr><td colspan="6" class="records-empty">No verified performances for this statistic.</td></tr>';
+ }
+ const M=[];
+ const addMil=(id,group,section,label,cat,key,min,mode)=>M.push({id,group,section,label,cat,key,min,mode});
+ for(const [v,l] of [[250,"250+"],[300,"300+"],[400,"400+"]])addMil("pass"+v,"offense","Passing",l+" passing yards","passing","YDS",v);
+ for(const v of [3,4,5])addMil("passTd"+v,"offense","Passing",v+"+ passing TDs","passing","TD",v);
+ for(const v of [100,150,200])addMil("rush"+v,"offense","Rushing",v+"+ rushing yards","rushing","YDS",v);
+ for(const v of [2,3])addMil("rushTd"+v,"offense","Rushing",v+"+ rushing TDs","rushing","TD",v);
+ for(const v of [100,150,200])addMil("rec"+v,"offense","Receiving",v+"+ receiving yards","receiving","YDS",v);
+ for(const v of [8,10,12])addMil("catches"+v,"offense","Receiving",v+"+ receptions","receiving","REC",v);
+ for(const v of [2,3])addMil("recTd"+v,"offense","Receiving",v+"+ receiving TDs","receiving","TD",v);
+ for(const v of [20,25,30,40])addMil("ppr"+v,"offense","Full-PPR",v+"+ Full-PPR points","ppr","fantasy_ppr",v);
+ for(const v of [10,15])addMil("tackles"+v,"defense","Tackles",v+"+ total tackles","defensive","TOT",v);
+ for(const v of [2,3])addMil("sacks"+v,"defense","Sacks",v+"+ sacks","defensive","SACKS",v);
+ addMil("int2","defense","Takeaways","2+ interceptions","interceptions","INT",2);
+ addMil("pd3","defense","Coverage","3+ passes defended","defensive","PD",3);
+ addMil("defTD","defense","Scoring","Defensive touchdown","play","defense",1);
+ for(const v of [3,4])addMil("fg"+v,"special","Kicking",v+"+ field goals made","kicking","FG",v,"made");
+ addMil("longfg50","special","Kicking","50+ yard made field goal","kicking","LONG",50);
+ for(const v of [100,150])addMil("kr"+v,"special","Kick returns",v+"+ kick return yards","kickReturns","YDS",v);
+ addMil("pr100","special","Punt returns","100+ punt return yards","puntReturns","YDS",100);
+ addMil("specialTD","special","Scoring","Special teams return/blocked-kick TD","play","special",1);
+ function scoringKind(p){if(p.kind!=="touchdown")return "other";const t=p.type.toLowerCase();
+  if(t.includes("passing")||t.includes("rushing"))return "offense";
+  if(t.includes("interception")||t.includes("fumble"))return "defense";
+  if(t.includes("blocked")||t.includes("kick return")||t.includes("punt return"))return "special";
+  return "other";
+ }
+ // The credit for these existing historical scoring plays is verified against
+ // the imported College Football player gamebook and source descriptions.
+ const scorerNames={};
+ 
+ function identity(name,game_id){
+  const r=rows.find(x=>x.player===name&&x.game_id===game_id);
+  return {player:name,athlete_id:r?.athlete_id||null};
+ }
+ function scoringPlayer(p,g){
+  let name=scorerNames[String(p.id)]||null;
+  const desc=String(p.description||"").split(" - ").slice(1).join(" - ");
+  const candidate=desc.match(/^(.+?)\s+\d+\s+yd\s+(?:pass|run|kickoff return|punt return|interception|fumble return)\b/i);
+  if(!name&&candidate){
+    const raw=candidate[1].trim();
+    const found=rows.find(r=>r.game_id===g.id&&r.team===p.team&&(r.player.toLowerCase()===raw.toLowerCase()||r.player.toLowerCase()===raw.split(",").reverse().map(z=>z.trim()).join(" ").toLowerCase()));
+    name=found?found.player:raw;
+  }
+  if(!name&&scoringKind(p)==="special"){const m=p.description.match(/^([A-Z][a-z]+(?:\s+[A-Z][a-z]+)+)\s+\d+\s+Yd Return/);if(m)name=m[1]}
+  if(!name)return null;
+  return {...identity(name,g.id),game_id:g.id,date:g.date,team:p.team,value:1};
+ }
+ function eventCandidates(kind){
+  return games.flatMap(g=>(scoring[g.id]?.plays||[]).filter(p=>p.kind==="touchdown"&&scoringKind(p)===kind).map(p=>{
+   const named=scoringPlayer(p,g);return named?{...named,play:p}:{value:1,player:p.team+" scoring unit",team:p.team,game_id:g.id,date:g.date,athlete_id:null,play:p};
+  }));
+ }
+ const milestoneDefs=group=>M.filter(x=>x.group===group);
+ function renderMilestoneOptions(){
+  updateBtns("milestoneGroups","data-group",milestoneGroup);
+  const prev=el("milestoneStat").value,defs=milestoneDefs(milestoneGroup);
+  const sections=[...new Set(defs.map(x=>x.section))];
+  el("milestoneStat").innerHTML=sections.map(s=>'<optgroup label="'+A.esc(s)+'">'+defs.filter(x=>x.section===s).map(x=>'<option value="'+x.id+'">'+A.esc(x.label)+'</option>').join("")+'</optgroup>').join("");
+  el("milestoneStat").value=defs.some(x=>x.id===prev)?prev:milestoneGroup==="offense"?"pass300":defs[0].id;
+  renderMilestones();
+ }
+ function milestoneEntries(d){
+  const list=d.cat==="ppr"?ppr.map(x=>({value:x.fantasy_ppr,player:x.player,athlete_id:x.athlete_id,team:x.team,game_id:x.game_id,date:x.date})):
+   d.cat==="play"?eventCandidates(d.key):allCandidates(d.cat,d.key,d.mode);
+  return list.filter(x=>x.value!==null&&x.value>=d.min).sort(order);
+ }
+ function renderMilestones(){
+  const d=M.find(x=>x.id===el("milestoneStat").value);if(!d)return;
+  const selected=milestoneEntries(d),playerMap=new Map();
+  for(const x of selected){const key=x.athlete_id||x.player+"|"+x.team,seen=playerMap.get(key)||{...x,count:0,dates:[]};seen.count++;seen.dates.push(x);playerMap.set(key,seen)}
+  el("milestoneCount").textContent=selected.length;
+  el("milestonePlayers").textContent=playerMap.size;
+  updateBtns("milestoneModes","data-mode",milestoneMode);
+  if(milestoneMode==="performances"){
+   el("milestoneHead").innerHTML="<tr><th>Player</th><th>Team</th><th>Date</th><th>"+A.esc(d.label)+"</th><th>Game</th></tr>";
+   el("milestoneBody").innerHTML=selected.map(x=>'<tr><td>'+playerLink(x)+'</td><td>'+A.esc(x.team)+'</td><td>'+A.esc(date(x.date))+'</td><td class="stat-value">'+A.fmt(x.value)+'</td><td>'+gameLink(x.game_id)+'</td></tr>').join("")||'<tr><td colspan="5" class="records-empty">No qualifying performances in your attended games.</td></tr>';
+  }else{
+   el("milestoneHead").innerHTML="<tr><th>Rank</th><th>Player</th><th>Occurrences</th><th>Games</th></tr>";
+   const list=[...playerMap.values()].sort((a,b)=>b.count-a.count||b.value-a.value||a.player.localeCompare(b.player));
+   el("milestoneBody").innerHTML=list.map((x,i)=>'<tr><td>'+(i+1)+'</td><td>'+playerLink(x)+'</td><td class="stat-value">'+x.count+'</td><td>'+x.dates.map(y=>A.esc(date(y.date))+" ("+gameLink(y.game_id)+")").join(" · ")+'</td></tr>').join("")||'<tr><td colspan="4" class="records-empty">No players reached this threshold.</td></tr>';
+  }
+  el("milestoneInfo").textContent=d.label+" · "+selected.length+" player-games or verified scoring achievements · "+playerMap.size+" players/scoring units. Thresholds are inclusive.";
+ }
+ function gameSummary(g){const a=Number(g.away_score),h=Number(g.home_score);return {g,away:a,home:h,total:a+h,margin:Math.abs(a-h),winner:a>h?g.away:g.home,loser:a>h?g.home:g.away};}
+ const gs=()=>games.map(gameSummary);
+ function teamCard(label,arr,opt={}){
+  if(!arr.length)return '<article class="records-card"><div class="category">'+A.esc(label)+'</div><div class="caption">Not available in these games</div></article>';
+  const ordered=arr.slice().sort((a,b)=>opt.low?a.value-b.value:b.value-a.value),top=ordered[0],ties=ordered.filter(x=>x.value===top.value);
+  return '<article class="records-card"><div class="category">'+A.esc(label)+'</div><strong>'+A.fmt(top.value)+'</strong>'+ties.map(x=>'<div class="record-owner">'+A.esc(x.label)+'</div><div class="caption">'+A.esc(date(x.game.date))+' · '+gameLink(x.game.id)+'</div>').join("")+'</article>';
+ }
+ function teamCandidateGame(g,value,label){return {game:g,value,label};}
+ function renderTeamCards(){
+  const all=gs(),teamRows=all.flatMap(x=>[teamCandidateGame(x.g,x.away,x.g.away),teamCandidateGame(x.g,x.home,x.g.home)]);
+  const both=all.map(x=>teamCandidateGame(x.g,x.total,x.g.away_abbr+" at "+x.g.home_abbr));
+  const margins=all.map(x=>teamCandidateGame(x.g,x.margin,x.winner+" over "+x.loser));
+  el("teamCards").innerHTML=[
+   teamCard("Most team points",teamRows),teamCard("Fewest team points",teamRows,{low:true}),teamCard("Most combined points",both),
+   teamCard("Fewest combined points",both,{low:true}),teamCard("Largest final margin",margins),teamCard("Closest final",margins,{low:true})
+  ].join("");
+ }
+ function lead(g,p){return (p.away_score||0)-(p.home_score||0)}
+ function dramaValues(g){
+  const plays=scoring[g.id]?.plays||[],winner=g.away_score>=g.home_score?"away":"home";
+  const winnerDiff=p=>winner==="away"?p.away_score-p.home_score:p.home_score-p.away_score;
+  const biggestComeback=Math.max(0,...plays.map(p=>-winnerDiff(p)));
+  const startQ4=(g.quarters.away[0]+g.quarters.away[1]+g.quarters.away[2])-(g.quarters.home[0]+g.quarters.home[1]+g.quarters.home[2]);
+  const q4Deficit=Math.max(0,winner==="away"?-startQ4:startQ4);
+  let lastLead=0,changes=0;
+  for(const p of plays){const current=Math.sign(lead(g,p));if(current&&lastLead&&current!==lastLead)changes++;if(current)lastLead=current}
+  return {biggestComeback,q4Deficit,changes};
+ }
+ function renderDrama(){
+  const quarters=[],halves=[],overtime=[],combinedQuarter=[],comebacks=[],fourth=[],changes=[],otGames=[];
+  for(const g of games){
+   const a=g.quarters.away,h=g.quarters.home;
+   for(let i=0;i<Math.min(4,a.length,h.length);i++){
+    const q="Q"+(i+1);quarters.push(teamCandidateGame(g,a[i],g.away_abbr+" · "+q),teamCandidateGame(g,h[i],g.home_abbr+" · "+q));
+    combinedQuarter.push(teamCandidateGame(g,a[i]+h[i],g.away_abbr+" @ "+g.home_abbr+" · "+q));
+   }
+   for(let i=0;i<2;i++){const ix=i*2,half="H"+(i+1);
+    halves.push(teamCandidateGame(g,a[ix]+a[ix+1],g.away_abbr+" · "+half),teamCandidateGame(g,h[ix]+h[ix+1],g.home_abbr+" · "+half));
+   }
+   if(g.overtime){const x=a.slice(4).reduce((t,n)=>t+Number(n||0),0)+h.slice(4).reduce((t,n)=>t+Number(n||0),0);overtime.push(teamCandidateGame(g,x,g.away_abbr+" @ "+g.home_abbr));otGames.push(g)}
+   const drama=dramaValues(g);
+   if(drama.biggestComeback>0)comebacks.push(teamCandidateGame(g,drama.biggestComeback,(g.away_score>g.home_score?g.away:g.home)+" came back to win"));
+   if(drama.q4Deficit>0)fourth.push(teamCandidateGame(g,drama.q4Deficit,(g.away_score>g.home_score?g.away:g.home)+" entered Q4 trailing"));
+   changes.push(teamCandidateGame(g,drama.changes,g.away_abbr+" @ "+g.home_abbr));
+  }
+  el("dramaCards").innerHTML=[
+   teamCard("Most team points in a quarter",quarters),teamCard("Most combined points in a quarter",combinedQuarter),
+   teamCard("Most team points in a half",halves),teamCard("Most combined OT points",overtime),
+   teamCard("Largest deficit overcome to win",comebacks),teamCard("Fourth-quarter comeback",fourth),
+   teamCard("Most lead changes",changes)
+  ].join("");
+ }
+ function scoringCategories(){return {
+  all:[["Most touchdowns in a game",p=>p.kind==="touchdown"],["Most field goals in a game",p=>p.kind==="field_goal"],["Most scoring plays in a game",p=>p.points>0]],
+  offense:[["Passing touchdowns",p=>p.kind==="touchdown"&&p.type==="Passing Touchdown"],["Rushing touchdowns",p=>p.kind==="touchdown"&&p.type==="Rushing Touchdown"],["Offensive touchdowns",p=>p.kind==="touchdown"&&scoringKind(p)==="offense"]],
+  defense:[["Interception-return TDs",p=>p.kind==="touchdown"&&p.type==="Interception Return Touchdown"],["Fumble-return TDs",p=>p.kind==="touchdown"&&p.type==="Fumble Return Touchdown"],["Defensive touchdowns",p=>p.kind==="touchdown"&&scoringKind(p)==="defense"]],
+  special:[["Blocked-kick touchdowns",p=>p.kind==="touchdown"&&/blocked/i.test(p.type)],["Kick or punt return TDs",p=>p.kind==="touchdown"&&/^(Kick|Punt) Return/i.test(p.type)],["Special teams touchdowns",p=>p.kind==="touchdown"&&scoringKind(p)==="special"]]
+ }}
+ function renderScoring(){
+  updateBtns("scoringGroups","data-group",scoringGroup);
+  el("scoringCards").innerHTML=scoringCategories()[scoringGroup].map(([label,match])=>{
+   const arr=games.flatMap(g=>{
+    const cnt=new Map();for(const p of scoring[g.id]?.plays||[]){if(!match(p))continue;cnt.set(p.team,(cnt.get(p.team)||0)+1)}
+    return [...cnt].map(([team,value])=>teamCandidateGame(g,value,team));
+   });return teamCard(label,arr)
+  }).join("");
+ }
+ function renderGames(){
+  const all=gs(),sort=el("gameSort").value;
+  all.sort((a,b)=>sort==="recent"?b.g.date.localeCompare(a.g.date):sort==="points"?b.total-a.total:sort==="margin"?b.margin-a.margin:a.g.date.localeCompare(b.g.date));
+  el("teamGames").innerHTML=all.map(x=>'<tr><td>'+A.esc(date(x.g.date))+'</td><td>'+A.esc(x.g.away_abbr+" @ "+x.g.home_abbr)+'</td><td>'+x.away+'–'+x.home+'</td><td>'+x.total+'</td><td>'+x.margin+'</td><td>'+(x.g.overtime?"Yes":"No")+'</td><td>'+gameLink(x.g.id)+'</td></tr>').join("");
+ }
+ function singleStat(p,category,key){const r=rows.find(x=>x.game_id===p.game_id&&String(x.athlete_id)===String(p.athlete_id)&&x.category===category);return r?stat(r,key):null}
+ function makeFeats(){
+  const per=new Map();
+  for(const r of rows){const k=r.game_id+"|"+r.athlete_id,existing=per.get(k)||{player:r.player,team:r.team,athlete_id:r.athlete_id,game_id:r.game_id,date:r.date,stats:{}};existing.stats[r.category]=r;per.set(k,existing)}
+  const fantasy=new Map(ppr.map(x=>[x.game_id+"|"+x.athlete_id,x.fantasy_ppr]));
+  const list=[];
+  function award(p,group,label,line){list.push({...p,group,label,line})}
+  for(const p of per.values()){
+   const get=(cat,key,mode)=>p.stats[cat]?stat(p.stats[cat],key,mode):null;
+   const py=get("passing","YDS"),pt=get("passing","TD"),ry=get("rushing","YDS"),rt=get("rushing","TD"),vy=get("receiving","YDS"),vt=get("receiving","TD");
+   const pscore=fantasy.get(p.game_id+"|"+p.athlete_id);
+   if(py>=450)award(p,"offense","450+ passing yards",py+" passing yards");
+   if(pt>=5)award(p,"offense","5+ passing TDs",pt+" passing TDs");
+   if(py>=400&&pt>=4)award(p,"offense","400 yards & 4 passing TDs",py+" yards · "+pt+" TDs");
+   if(ry>=200)award(p,"offense","200+ rushing yards",ry+" rushing yards");
+   if(rt>=3)award(p,"offense","3+ rushing TDs",rt+" rushing TDs");
+   if(vy>=200)award(p,"offense","200+ receiving yards",vy+" receiving yards");
+   if(vt>=3)award(p,"offense","3+ receiving TDs",vt+" receiving TDs");
+   if(vy>=150&&vt>=2)award(p,"offense","150 yards & 2 receiving TDs",vy+" yards · "+vt+" TDs");
+   if(ry!==null&&vy!==null&&ry+vy>=200&&(rt||0)+(vt||0)>=2)award(p,"offense","200+ scrimmage yards & 2 TDs",(ry+vy)+" scrimmage yards · "+((rt||0)+(vt||0))+" TDs");
+   if(pscore>=40)award(p,"offense","40+ Full-PPR points",A.fmt(pscore)+" PPR");
+   const sacks=get("defensive","SACKS"),ints=get("interceptions","INT");
+   if(sacks>=3)award(p,"defense","3+ sacks",sacks+" sacks");
+   if(ints>=2)award(p,"defense","2+ interceptions",ints+" interceptions");
+   const fgm=get("kicking","FG","made"),longfg=get("kicking","LONG");
+   if(fgm>=4)award(p,"special","4+ field goals made",fgm+" field goals");
+   if(fgm>0&&longfg>=55)award(p,"special","55+ yard made field goal",longfg+" yard long made FG");
+  }
+  for(const kind of ["defense","special"])for(const e of eventCandidates(kind)){
+   // Exclude unattributed team scores from individual feat lists; keep them
+   // in Iconic Moments, where game and team attribution remains available.
+   if(!e.athlete_id)continue;
+   const p={...e,game_id:e.game_id,date:e.date};
+   const already=list.some(x=>x.athlete_id===e.athlete_id&&x.game_id===e.game_id&&x.label===(kind==="defense"?"Defensive touchdown":"Special teams touchdown"));
+   if(!already)award(p,kind,kind==="defense"?"Defensive touchdown":"Special teams touchdown","Verified scoring play");
+  }
+  return list.sort((a,b)=>b.date.localeCompare(a.date)||a.label.localeCompare(b.label)||a.player.localeCompare(b.player));
+ }
+ const walkoffLabels={};
+ function momentAttribution(p,g){
+  if(walkoffLabels[String(p.id)])return walkoffLabels[String(p.id)];
+  if(scorerNames[String(p.id)])return scorerNames[String(p.id)];
+  return p.team+" scoring unit";
+ }
+ function makeMoments(){
+  const found=new Map();
+  const add=(g,p,group,label)=>{
+   const key=g.id+"|"+p.id;
+   const x=found.get(key)||{game_id:g.id,date:g.date,p,team:p.team,player:momentAttribution(p,g),group,labels:[]};
+   if(!x.labels.includes(label))x.labels.push(label);
+   found.set(key,x);
+  };
+  for(const g of games){
+   const plays=scoring[g.id]?.plays||[],last=plays[plays.length-1];
+   for(let i=0;i<plays.length;i++){
+    const p=plays[i],kind=scoringKind(p);
+    if(p.kind!=="touchdown")continue;
+    if(g.overtime&&p.period>=5&&p.id===last?.id&&p.away_score===g.away_score&&p.home_score===g.home_score)add(g,p,kind,"Overtime walk-off touchdown");
+    if(kind==="defense")add(g,p,"defense","Defensive return touchdown");
+    if(kind==="special")add(g,p,"special",/blocked/i.test(p.type)?"Blocked-kick touchdown":"Special teams return touchdown");
+    const desc=p.description||"";
+    const m=desc.match(/for (?:a )?(\d+)\s+yards?,?\s+TOUCHDOWN/i)||desc.match(/for (?:a )?(\d+)\s+yard Touchdown/i)||desc.match(/(\d+)\s+Yd Return/i);
+    if(m&&Number(m[1])>=75)add(g,p,kind,"75+ yard touchdown");
+    if(p.period===4&&p.kind==="touchdown"){
+     const parts=String(p.clock||"").split(":");const seconds=parts.length===2?Number(parts[0])*60+Number(parts[1]):9999;
+     if(seconds<=120){
+      const difference=x=>x.away_score-x.home_score,now=Math.sign(difference(p)),old=Math.sign(i?difference(plays[i-1]):0);
+      const future=plays.slice(i+1).every(x=>now!==0&&Math.sign(difference(x))===now);
+      if(now!==0&&now!==old&&future&&((now>0&&g.away_score>g.home_score)||(now<0&&g.home_score>g.away_score)))add(g,p,kind,"Late game-winning touchdown");
+     }
+    }
+   }
+  }
+  return [...found.values()].sort((a,b)=>b.date.localeCompare(a.date)||a.p.period-b.p.period||a.p.clock.localeCompare(b.p.clock));
+ }
+ function renderFeats(){
+  updateBtns("featGroups","data-group",featGroup);
+  const selected=feats.filter(x=>featGroup==="all"||x.group===featGroup);
+  el("featCount").textContent=selected.length+" qualifying achievement"+(selected.length===1?"":"s");
+  el("feats").innerHTML=selected.map(x=>'<tr><td><span class="records-pill">'+A.esc(x.label)+'</span></td><td>'+playerLink(x)+'</td><td>'+A.esc(x.line)+'</td><td>'+A.esc(date(x.date))+'</td><td>'+gameLink(x.game_id)+'</td></tr>').join("")||'<tr><td colspan="5" class="records-empty">No legendary statistical feats qualify in this category yet.</td></tr>';
+ }
+ function renderMoments(){
+  updateBtns("momentGroups","data-group",momentGroup);
+  const selected=moments.filter(x=>momentGroup==="all"||x.group===momentGroup);
+  el("momentCount").textContent=selected.length+" verified iconic scoring event"+(selected.length===1?"":"s");
+  el("moments").innerHTML=selected.map(x=>'<tr><td><div class="records-badges">'+x.labels.map(t=>'<span>'+A.esc(t)+'</span>').join("")+'</div></td><td>'+A.esc(x.player)+'<small>'+A.esc(x.team)+'</small></td><td>'+A.esc(A.period(x.p.period)+" "+x.p.clock+" · "+x.p.description)+'</td><td>'+A.esc(date(x.date))+'</td><td>'+gameLink(x.game_id)+'</td></tr>').join("")||'<tr><td colspan="5" class="records-empty">No iconic moments are verified in this category yet.</td></tr>';
+ }
+ function mainTab(tab){
+  el("mainTabs").querySelectorAll("button").forEach(b=>b.setAttribute("aria-selected",String(b.dataset.tab===tab)));
+  for(const id of ["records","milestones","teams","legendary"])el(id+"Tab").hidden=id!==tab;
+ }
+ function groupControl(id,assign,render){
+  el(id).addEventListener("click",event=>{const b=event.target.closest("button[data-group]");if(!b)return;assign(b.dataset.group);render()});
+ }
+ el("mainTabs").addEventListener("click",e=>{const button=e.target.closest("button[data-tab]");if(button)mainTab(button.dataset.tab)});
+ groupControl("recordGroups",v=>{recordGroup=v;el("recordStat").value=""},renderRecords);
+ el("recordStat").addEventListener("change",renderTop10);
+ groupControl("milestoneGroups",v=>{milestoneGroup=v},renderMilestoneOptions);
+ el("milestoneStat").addEventListener("change",renderMilestones);
+ el("milestoneModes").addEventListener("click",e=>{const b=e.target.closest("button[data-mode]");if(b){milestoneMode=b.dataset.mode;renderMilestones()}});
+ groupControl("scoringGroups",v=>{scoringGroup=v},renderScoring);
+ el("gameSort").addEventListener("change",renderGames);
+ groupControl("featGroups",v=>{featGroup=v},renderFeats);
+ groupControl("momentGroups",v=>{momentGroup=v},renderMoments);
+ try{
+  const data=await A.load();games=data.games;rows=data.rows;scoring=data.scoring;ppr=data.ppr.performances;
+  games.forEach(x=>gameMap.set(x.id,x));rows.forEach(x=>players.set(x.game_id+"|"+x.athlete_id,x));
+  el("coverage").textContent=games.length+" games attended · "+new Set(rows.map(x=>x.athlete_id)).size+" players with box-score statistics · "+ppr.length+" Full-PPR player-games";
+  feats=makeFeats();moments=makeMoments();
+  renderRecords();renderMilestoneOptions();renderTeamCards();renderDrama();renderScoring();renderGames();renderFeats();renderMoments();
+  if(location.hash==="#milestones")mainTab("milestones");
+ }catch(err){
+  el("coverage").textContent="Unable to load College Football records: "+err.message;
+  el("recordCards").innerHTML='<div class="empty">Records unavailable: '+A.esc(err.message)+'</div>';
+ }
+});
+</script>
+</body></html>

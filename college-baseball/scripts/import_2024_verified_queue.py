@@ -73,6 +73,27 @@ def main():
             if not any(v in src for v in formats):
                 raise ValueError("University scorebook does not visibly confirm attendance date")
             rows,stat_audit=import_one(g,item,player_keys)
+            # Charleston's official February 19 scorebook abbreviates its
+            # two winning/closing pitchers in the batting/pitching tables
+            # as E. Bice / D. Aiken, but explicitly credits Emmett Bice
+            # (W) and Davis Aiken (SV) with the full given names.
+            # Require exact original abbreviated rows and exact game/team.
+            if gid=="cb-2024-02-19-marshall-college-of-charleston-att0231":
+                for abbreviated,canonical in (
+                    ("E. Bice","Emmett Bice"),("D. Aiken","Davis Aiken")):
+                    matches=[p for p in rows if p["team"]=="College of Charleston"
+                             and p["player"]==abbreviated and "pitching" in p]
+                    if len(matches)!=1:
+                        raise ValueError("Official Charleston pitcher abbreviation not uniquely resolved: "+abbreviated)
+                    p=matches[0]
+                    old_key=(gid,p["player_id"])
+                    new_id="cb-college-of-charleston-"+canonical.lower().replace(" ","-")
+                    new_key=(gid,new_id)
+                    if old_key not in player_keys or (new_key in player_keys and new_key!=old_key):
+                        raise ValueError("Charleston pitcher identity mapping collision")
+                    player_keys.remove(old_key); player_keys.add(new_key)
+                    p["player"]=canonical
+                    p["player_id"]=new_id
             decision=scorer_labels(response.text,rows,gid)
             g.update({"game_type":item["game_type"],
                       "postseason_round":item.get("postseason_round"),

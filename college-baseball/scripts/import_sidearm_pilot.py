@@ -108,7 +108,14 @@ def batting_rows(table_s,table_d,game_id,team,url):
             "stolenBases":vals["SB"],"caughtStealing":vals["CS"],
             "hitByPitch":vals["HBP"],"sacBunts":vals["SH"],"sacFlies":vals["SF"]}}
         people.append(record)
-    if totals is None:raise ValueError(f"{game_id} {team}: batting totals missing")
+    if totals is None:
+        for label,table in (("simple",table_s),("details",table_d)):
+            print("DEBUG TOTALS",game_id,team,label,"tr count",len(table.find_all("tr")),
+                "tfoot",bool(table.find("tfoot")),flush=True)
+            for tr in table.find_all("tr")[-3:]:
+                print("DEBUG ROW",label,[{"text":cell.get_text(" ",strip=True)[:35],
+                    "span":cell.get("colspan","1")} for cell in tr.find_all(["td","th"],recursive=False)],flush=True)
+        raise ValueError(f"{game_id} {team}: batting totals missing")
     for k,field in [("AB","atBats"),("R","runs"),("H","hits"),("RBI","rbi"),("BB","baseOnBalls"),("SO","strikeOuts")]:
         actual=sum(p["batting"][field] for p in people)
         if actual!=totals[k]:

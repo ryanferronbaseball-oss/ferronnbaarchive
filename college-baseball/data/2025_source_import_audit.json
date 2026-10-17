@@ -4,579 +4,123 @@
   "original_attendance_entries": 444,
   "verified_2026_unchanged": 68,
   "total_2025_attendance": 74,
-  "completed_in_this_run": 5,
-  "verified_2025_total": 5,
+  "completed_in_this_run": 1,
+  "verified_2025_total": 6,
   "linked_source_games": 9,
   "passed_games": [
     {
-      "game_id": "cb-2025-05-31-little-rock-rhode-island-att0366",
-      "source_url": "https://gorhody.com/sports/baseball/stats/2025/little-rock/boxscore/11499",
+      "game_id": "cb-2025-05-25-ole-miss-vanderbilt-att0364",
+      "source_url": "https://olemisssports.com/sports/baseball/stats/2025/vanderbilt/boxscore/14454",
       "score": [
-        22,
-        10
+        2,
+        3
       ],
-      "source_game_id": "11499",
-      "player_rows": 31,
+      "source_game_id": "14454",
+      "player_rows": 28,
       "source_stat_audit": {
-        "game_id": "cb-2025-05-31-little-rock-rhode-island-att0366",
-        "source": "https://gorhody.com/sports/baseball/stats/2025/little-rock/boxscore/11499",
+        "game_id": "cb-2025-05-25-ole-miss-vanderbilt-att0364",
+        "source": "https://olemisssports.com/sports/baseball/stats/2025/vanderbilt/boxscore/14454",
         "http_code": 200,
-        "source_bytes": 681161,
-        "source_sha256": "e56b7a5f0e37c3211745b5d9744593be19f836a44d62204a798bd84842776a6f",
+        "source_bytes": 1709972,
+        "source_sha256": "3e53eeb1adb0f7499e546bb942842150ce7f2cbf7635993480c83c17bcac1754",
         "teams": [
           {
-            "name": "Little Rock",
-            "batters": 9,
-            "pitchers": 4,
-            "AB": 46,
-            "R": 22,
-            "H": 20,
-            "RBI": 21,
-            "BB": 7,
-            "SO": 6,
-            "pitching_outs": 27,
-            "pitching_runs": 10,
-            "pitching_hits": 12
-          },
-          {
-            "name": "Rhode Island",
-            "batters": 10,
-            "pitchers": 8,
-            "AB": 38,
-            "R": 10,
-            "H": 12,
-            "RBI": 9,
-            "BB": 8,
-            "SO": 8,
-            "pitching_outs": 27,
-            "pitching_runs": 22,
-            "pitching_hits": 20
-          }
-        ],
-        "source_warnings": [],
-        "player_rows": 31,
-        "status": "PASS",
-        "scoreboard": [
-          {
-            "runs": 22,
-            "hits": 20,
-            "errors": 0,
-            "innings": [
-              0,
-              5,
-              0,
-              3,
-              2,
-              2,
-              3,
-              0,
-              7
-            ]
-          },
-          {
-            "runs": 10,
-            "hits": 12,
-            "errors": 2,
-            "innings": [
-              0,
-              3,
-              0,
-              4,
-              1,
-              0,
-              0,
-              2,
-              0
-            ]
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "Little Rock",
-            "nine_starting_slots": true,
-            "batter_rows": 9,
-            "pitcher_rows": 4,
-            "substitutes": 0
-          },
-          {
-            "team": "Rhode Island",
-            "nine_starting_slots": true,
-            "batter_rows": 10,
-            "pitcher_rows": 8,
-            "substitutes": 1
-          }
-        ],
-        "official_decisions": {
-          "win": "Bunting,Brody",
-          "loss": "Urena, Jeremy",
-          "save": null
-        },
-        "resolved_pitcher_decisions": {
-          "win": null,
-          "loss": null,
-          "save": null
-        }
-      },
-      "pitching_decisions": {
-        "win": "Brody Bunting",
-        "loss": "Jeremy Urena",
-        "save": null
-      }
-    },
-    {
-      "game_id": "cb-2025-05-30-east-tennessee-state-louisville-att0365",
-      "source_url": "https://etsubucs.com/sports/baseball/stats/2025/no-2-louisville/boxscore/12312",
-      "score": [
-        3,
-        8
-      ],
-      "source_game_id": "12312",
-      "player_rows": 24,
-      "source_stat_audit": {
-        "game_id": "cb-2025-05-30-east-tennessee-state-louisville-att0365",
-        "source": "https://etsubucs.com/sports/baseball/stats/2025/no-2-louisville/boxscore/12312",
-        "http_code": 200,
-        "source_bytes": 628476,
-        "source_sha256": "6b79bcea8cea71e44880f908ea2870cfcd3a6927fb49ee062af054c6ff2f617b",
-        "teams": [
-          {
-            "name": "East Tennessee State",
-            "batters": 10,
+            "name": "Ole Miss",
+            "batters": 11,
             "pitchers": 3,
-            "AB": 30,
-            "R": 3,
-            "H": 3,
-            "RBI": 3,
-            "BB": 4,
-            "SO": 18,
-            "pitching_outs": 24,
-            "pitching_runs": 8,
-            "pitching_hits": 9
-          },
-          {
-            "name": "Louisville",
-            "batters": 9,
-            "pitchers": 2,
-            "AB": 32,
-            "R": 8,
-            "H": 9,
-            "RBI": 8,
-            "BB": 2,
-            "SO": 7,
-            "pitching_outs": 27,
-            "pitching_runs": 3,
-            "pitching_hits": 3
-          }
-        ],
-        "source_warnings": [],
-        "player_rows": 24,
-        "status": "PASS",
-        "scoreboard": [
-          {
-            "runs": 3,
-            "hits": 3,
-            "errors": 2,
-            "innings": [
-              0,
-              0,
-              2,
-              0,
-              0,
-              0,
-              0,
-              1,
-              0
-            ]
-          },
-          {
-            "runs": 8,
-            "hits": 9,
-            "errors": 0,
-            "innings": [
-              0,
-              0,
-              2,
-              2,
-              3,
-              0,
-              1,
-              0,
-              null
-            ]
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "East Tennessee State",
-            "nine_starting_slots": true,
-            "batter_rows": 10,
-            "pitcher_rows": 3,
-            "substitutes": 1
-          },
-          {
-            "team": "Louisville",
-            "nine_starting_slots": true,
-            "batter_rows": 9,
-            "pitcher_rows": 2,
-            "substitutes": 0
-          }
-        ],
-        "official_decisions": {
-          "win": "Patrick Forbes",
-          "loss": "Fink, Carter",
-          "save": "Brennyn Cutts"
-        },
-        "resolved_pitcher_decisions": {
-          "win": "Patrick Forbes",
-          "loss": null,
-          "save": "Brennyn Cutts"
-        }
-      },
-      "pitching_decisions": {
-        "win": "Patrick Forbes",
-        "loss": "Carter Fink",
-        "save": "Brennyn Cutts"
-      }
-    },
-    {
-      "game_id": "cb-2025-05-24-tennessee-vanderbilt-att0362",
-      "source_url": "https://utsports.com/sports/baseball/stats/2025/vanderbilt/boxscore/29526",
-      "score": [
-        0,
-        10
-      ],
-      "source_game_id": "29526",
-      "player_rows": 29,
-      "source_stat_audit": {
-        "game_id": "cb-2025-05-24-tennessee-vanderbilt-att0362",
-        "source": "https://utsports.com/sports/baseball/stats/2025/vanderbilt/boxscore/29526",
-        "http_code": 200,
-        "source_bytes": 1111671,
-        "source_sha256": "9fb7219d2b4e4e9365713576212359faf1a46e0c884b13a930594ac470539a36",
-        "teams": [
-          {
-            "name": "Tennessee",
-            "batters": 13,
-            "pitchers": 5,
-            "AB": 25,
-            "R": 0,
+            "AB": 29,
+            "R": 2,
             "H": 4,
-            "RBI": 0,
-            "BB": 3,
-            "SO": 11,
-            "pitching_outs": 18,
-            "pitching_runs": 10,
-            "pitching_hits": 13
+            "RBI": 2,
+            "BB": 6,
+            "SO": 10,
+            "pitching_outs": 24,
+            "pitching_runs": 3,
+            "pitching_hits": 7
           },
           {
             "name": "Vanderbilt",
             "batters": 9,
-            "pitchers": 2,
+            "pitchers": 5,
             "AB": 29,
-            "R": 10,
-            "H": 13,
-            "RBI": 8,
-            "BB": 2,
-            "SO": 4,
-            "pitching_outs": 21,
-            "pitching_runs": 0,
+            "R": 3,
+            "H": 7,
+            "RBI": 3,
+            "BB": 0,
+            "SO": 5,
+            "pitching_outs": 27,
+            "pitching_runs": 2,
             "pitching_hits": 4
           }
         ],
         "source_warnings": [],
-        "player_rows": 29,
+        "player_rows": 28,
         "status": "PASS",
         "scoreboard": [
           {
-            "runs": 0,
+            "runs": 2,
             "hits": 4,
-            "errors": 2,
+            "errors": 1,
             "innings": [
               0,
               0,
               0,
               0,
+              1,
               0,
               0,
-              0
+              0,
+              1
             ]
           },
           {
-            "runs": 10,
-            "hits": 13,
+            "runs": 3,
+            "hits": 7,
             "errors": 0,
             "innings": [
-              1,
-              4,
               2,
               0,
               0,
-              3,
+              0,
+              1,
+              0,
+              0,
+              0,
               null
             ]
           }
         ],
         "lineup_audit": [
           {
-            "team": "Tennessee",
+            "team": "Ole Miss",
             "nine_starting_slots": true,
-            "batter_rows": 13,
-            "pitcher_rows": 5,
-            "substitutes": 4
+            "batter_rows": 11,
+            "pitcher_rows": 3,
+            "substitutes": 2
           },
           {
             "team": "Vanderbilt",
             "nine_starting_slots": true,
             "batter_rows": 9,
-            "pitcher_rows": 2,
+            "pitcher_rows": 5,
             "substitutes": 0
           }
         ],
         "official_decisions": {
-          "win": "Bowker",
-          "loss": "Kuhns, Tegan",
-          "save": "Fennell"
+          "win": "Luke Guth",
+          "loss": "Hooks, Walker",
+          "save": "Sawyer Hawks"
         },
         "resolved_pitcher_decisions": {
-          "win": "Bowker",
+          "win": "Luke Guth",
           "loss": null,
-          "save": "Fennell"
+          "save": "Sawyer Hawks"
         }
       },
       "pitching_decisions": {
-        "win": "Bowker",
-        "loss": "Tegan Kuhns",
-        "save": "Fennell"
-      }
-    },
-    {
-      "game_id": "cb-2025-05-24-ole-miss-lsu-att0363",
-      "source_url": "https://olemisssports.com/sports/baseball/stats/2025/lsu/boxscore/14452",
-      "score": [
-        2,
-        0
-      ],
-      "source_game_id": "14452",
-      "player_rows": 26,
-      "source_stat_audit": {
-        "game_id": "cb-2025-05-24-ole-miss-lsu-att0363",
-        "source": "https://olemisssports.com/sports/baseball/stats/2025/lsu/boxscore/14452",
-        "http_code": 200,
-        "source_bytes": 1686060,
-        "source_sha256": "4e93955f09cc79bbd0e9405b8cb5fed313b575fead4f5b4cc61ed23d8a6965a9",
-        "teams": [
-          {
-            "name": "Ole Miss",
-            "batters": 9,
-            "pitchers": 4,
-            "AB": 29,
-            "R": 2,
-            "H": 3,
-            "RBI": 2,
-            "BB": 5,
-            "SO": 14,
-            "pitching_outs": 27,
-            "pitching_runs": 0,
-            "pitching_hits": 2
-          },
-          {
-            "name": "LSU",
-            "batters": 10,
-            "pitchers": 3,
-            "AB": 27,
-            "R": 0,
-            "H": 2,
-            "RBI": 0,
-            "BB": 5,
-            "SO": 8,
-            "pitching_outs": 27,
-            "pitching_runs": 2,
-            "pitching_hits": 3
-          }
-        ],
-        "source_warnings": [],
-        "player_rows": 26,
-        "status": "PASS",
-        "scoreboard": [
-          {
-            "runs": 2,
-            "hits": 3,
-            "errors": 0,
-            "innings": [
-              1,
-              0,
-              0,
-              1,
-              0,
-              0,
-              0,
-              0,
-              0
-            ]
-          },
-          {
-            "runs": 0,
-            "hits": 2,
-            "errors": 1,
-            "innings": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ]
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "Ole Miss",
-            "nine_starting_slots": true,
-            "batter_rows": 9,
-            "pitcher_rows": 4,
-            "substitutes": 0
-          },
-          {
-            "team": "LSU",
-            "nine_starting_slots": true,
-            "batter_rows": 10,
-            "pitcher_rows": 3,
-            "substitutes": 1
-          }
-        ],
-        "official_decisions": {
-          "win": "Dennis, Gunnar",
-          "loss": "Jaden Noot",
-          "save": "Spencer, Connor"
-        },
-        "resolved_pitcher_decisions": {
-          "win": null,
-          "loss": "Jaden Noot",
-          "save": null
-        }
-      },
-      "pitching_decisions": {
-        "win": "Gunnar Dennis",
-        "loss": "Jaden Noot",
-        "save": "Connor Spencer"
-      }
-    },
-    {
-      "game_id": "cb-2025-05-23-ole-miss-arkansas-att0360",
-      "source_url": "https://olemisssports.com/sports/baseball/stats/2025/arkansas/boxscore/14450",
-      "score": [
-        5,
-        2
-      ],
-      "source_game_id": "14450",
-      "player_rows": 30,
-      "source_stat_audit": {
-        "game_id": "cb-2025-05-23-ole-miss-arkansas-att0360",
-        "source": "https://olemisssports.com/sports/baseball/stats/2025/arkansas/boxscore/14450",
-        "http_code": 200,
-        "source_bytes": 1733129,
-        "source_sha256": "3932569bfde481640c5a45eabcf39ca5847c0f828593404ab8d1d6794ae6612c",
-        "teams": [
-          {
-            "name": "Ole Miss",
-            "batters": 11,
-            "pitchers": 4,
-            "AB": 36,
-            "R": 5,
-            "H": 10,
-            "RBI": 5,
-            "BB": 3,
-            "SO": 13,
-            "pitching_outs": 27,
-            "pitching_runs": 2,
-            "pitching_hits": 5
-          },
-          {
-            "name": "Arkansas",
-            "batters": 11,
-            "pitchers": 4,
-            "AB": 32,
-            "R": 2,
-            "H": 5,
-            "RBI": 2,
-            "BB": 3,
-            "SO": 11,
-            "pitching_outs": 27,
-            "pitching_runs": 5,
-            "pitching_hits": 10
-          }
-        ],
-        "source_warnings": [],
-        "player_rows": 30,
-        "status": "PASS",
-        "scoreboard": [
-          {
-            "runs": 5,
-            "hits": 10,
-            "errors": 0,
-            "innings": [
-              5,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ]
-          },
-          {
-            "runs": 2,
-            "hits": 5,
-            "errors": 1,
-            "innings": [
-              1,
-              1,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ]
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "Ole Miss",
-            "nine_starting_slots": true,
-            "batter_rows": 11,
-            "pitcher_rows": 4,
-            "substitutes": 2
-          },
-          {
-            "team": "Arkansas",
-            "nine_starting_slots": true,
-            "batter_rows": 11,
-            "pitcher_rows": 4,
-            "substitutes": 2
-          }
-        ],
-        "official_decisions": {
-          "win": "Maddox, Riley",
-          "loss": "Zach Root",
-          "save": "Spencer, Connor"
-        },
-        "resolved_pitcher_decisions": {
-          "win": null,
-          "loss": "Zach Root",
-          "save": null
-        }
-      },
-      "pitching_decisions": {
-        "win": "Riley Maddox",
-        "loss": "Zach Root",
-        "save": "Connor Spencer"
+        "win": "Luke Guth",
+        "loss": "Walker Hooks",
+        "save": "Sawyer Hawks"
       }
     }
   ],
@@ -595,11 +139,6 @@
       "game_id": "cb-2025-05-31-dallas-baptist-lsu-att0367",
       "source_url": "https://dbupatriots.com/sports/baseball/stats/2025/-1-lsu/boxscore/8549",
       "reason": "HTTPSConnectionPool(host='dbupatriots.com', port=443): Max retries exceeded with url: /sports/baseball/stats/2025/-1-lsu/boxscore/8549 (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)')))"
-    },
-    {
-      "game_id": "cb-2025-05-25-ole-miss-vanderbilt-att0364",
-      "source_url": "https://olemisssports.com/sports/baseball/stats/2025/vanderbilt/boxscore/14454",
-      "reason": "Ole Miss: source batting order resolved to 10 starting slots, not 9"
     }
   ]
 }

@@ -8369,10 +8369,10 @@
     "postseason_round": null,
     "away_score": 4,
     "home_score": 8,
-    "score_provenance": "official_university_doubleheader_recap_and_sec_season_log",
-    "source_url": "https://vucommodores.com/news/2024/03/23/gamecocks-take-doubleheader",
-    "verification": "source_matched",
-    "official_boxscore_status": "not_imported",
+    "score_provenance": "official_pdf_gamebook",
+    "source_url": "https://storage.googleapis.com/vucommodores-prod/2024/03/VU23-Box.pdf",
+    "verification": "official_boxscore_verified",
+    "official_boxscore_status": "verified",
     "possible_same_day_doubleheader": true,
     "provisional_worksheet_game_sequence": 1,
     "notes": "Original workbook Sheet1 row 261. User explicitly confirmed attendance at BOTH March 23 2024 Vanderbilt at South Carolina games. This original worksheet first row is assigned to Game 1 in chronological order, consistent with official Vanderbilt schedule (Game 1 Vanderbilt 4 South Carolina 8, Game 2 Vanderbilt 3 South Carolina 8). The user confirmed both games, not the original worksheet ordering. Full player-level import still pending.",
@@ -8380,10 +8380,62 @@
     "home_hits": 7,
     "away_errors": 3,
     "home_errors": 0,
-    "source_type": "official_university_doubleheader_recap",
+    "source_type": "official_university_pdf_scorebook",
     "attendance_confirmed_by_user": true,
     "attendance_confirmation_date": "2026-10-17",
-    "attendance_sequence_basis": "original_worksheet_chronological_order"
+    "attendance_sequence_basis": "original_worksheet_chronological_order",
+    "pitching_decisions": {
+      "win": "Chris Veach",
+      "loss": "Miller Green",
+      "save": "Garrett Gainey"
+    },
+    "innings": [
+      {
+        "inning": 1,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 2,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 3,
+        "away": 0,
+        "home": 2
+      },
+      {
+        "inning": 4,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 5,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 6,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 7,
+        "away": 2,
+        "home": 5
+      },
+      {
+        "inning": 8,
+        "away": 1,
+        "home": 1
+      },
+      {
+        "inning": 9,
+        "away": 1,
+        "home": null
+      }
+    ]
   },
   {
     "id": "cb-2024-03-23-vanderbilt-south-carolina-att0261",
@@ -8402,10 +8454,10 @@
     "postseason_round": null,
     "away_score": 3,
     "home_score": 8,
-    "score_provenance": "official_university_doubleheader_recap_and_sec_season_log",
-    "source_url": "https://vucommodores.com/news/2024/03/23/gamecocks-take-doubleheader",
-    "verification": "source_matched",
-    "official_boxscore_status": "not_imported",
+    "score_provenance": "official_pdf_gamebook",
+    "source_url": "https://storage.googleapis.com/vucommodores-prod/2024/03/VU24-Box.pdf",
+    "verification": "official_boxscore_verified",
+    "official_boxscore_status": "verified",
     "possible_same_day_doubleheader": true,
     "provisional_worksheet_game_sequence": 2,
     "notes": "Original workbook Sheet1 row 262. User explicitly confirmed attendance at BOTH March 23 2024 Vanderbilt at South Carolina games. This original worksheet second row is assigned to Game 2 in chronological order, consistent with official Vanderbilt schedule (Game 1 Vanderbilt 4 South Carolina 8, Game 2 Vanderbilt 3 South Carolina 8). The user confirmed both games, not the original worksheet ordering. Full player-level import still pending.",
@@ -8413,10 +8465,62 @@
     "home_hits": 8,
     "away_errors": 0,
     "home_errors": 2,
-    "source_type": "official_university_doubleheader_recap",
+    "source_type": "official_university_pdf_scorebook",
     "attendance_confirmed_by_user": true,
     "attendance_confirmation_date": "2026-10-17",
-    "attendance_sequence_basis": "original_worksheet_chronological_order"
+    "attendance_sequence_basis": "original_worksheet_chronological_order",
+    "pitching_decisions": {
+      "win": "Ty Good",
+      "loss": "Bryce Cunningham",
+      "save": "Garrett Gainey"
+    },
+    "innings": [
+      {
+        "inning": 1,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 2,
+        "away": 1,
+        "home": 1
+      },
+      {
+        "inning": 3,
+        "away": 1,
+        "home": 0
+      },
+      {
+        "inning": 4,
+        "away": 1,
+        "home": 0
+      },
+      {
+        "inning": 5,
+        "away": 0,
+        "home": 4
+      },
+      {
+        "inning": 6,
+        "away": 0,
+        "home": 2
+      },
+      {
+        "inning": 7,
+        "away": 0,
+        "home": 1
+      },
+      {
+        "inning": 8,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 9,
+        "away": 0,
+        "home": null
+      }
+    ]
   },
   {
     "id": "cb-2024-03-24-vanderbilt-south-carolina-att0262",
@@ -8426,23 +8530,79 @@
     "season": 2024,
     "away": "Vanderbilt",
     "home": "South Carolina",
-    "ballpark": null,
-    "city": null,
-    "state": null,
-    "neutral_site": null,
+    "ballpark": "Founders Park",
+    "city": "Columbia",
+    "state": "SC",
+    "neutral_site": false,
     "game_number": null,
-    "game_type": null,
+    "game_type": "regular_season",
     "postseason_round": null,
     "away_score": 2,
     "home_score": 10,
-    "score_provenance": "official_university_or_conference_source",
-    "source_url": "https://vucommodores.com/boxscore/291509/",
-    "verification": "source_matched",
-    "official_boxscore_status": "not_imported",
+    "score_provenance": "official_pdf_gamebook",
+    "source_url": "https://storage.googleapis.com/vucommodores-prod/2024/03/VU25-Box.pdf",
+    "verification": "official_boxscore_verified",
+    "official_boxscore_status": "verified",
     "possible_same_day_doubleheader": false,
     "provisional_worksheet_game_sequence": null,
     "notes": "Original workbook Sheet1 row 263. Official Vanderbilt game page, March 24 series finale.",
-    "source_type": "official_university_result_index_or_recap"
+    "source_type": "official_university_pdf_scorebook",
+    "away_hits": 4,
+    "home_hits": 9,
+    "away_errors": 2,
+    "home_errors": 1,
+    "pitching_decisions": {
+      "win": "Tyler Pitzer",
+      "loss": "Devin Futrell",
+      "save": null
+    },
+    "innings": [
+      {
+        "inning": 1,
+        "away": 0,
+        "home": 6
+      },
+      {
+        "inning": 2,
+        "away": 0,
+        "home": 1
+      },
+      {
+        "inning": 3,
+        "away": 0,
+        "home": 1
+      },
+      {
+        "inning": 4,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 5,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 6,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 7,
+        "away": 2,
+        "home": 1
+      },
+      {
+        "inning": 8,
+        "away": 0,
+        "home": 1
+      },
+      {
+        "inning": 9,
+        "away": 0,
+        "home": null
+      }
+    ]
   },
   {
     "id": "cb-2024-03-26-william-and-mary-vcu-att0263",

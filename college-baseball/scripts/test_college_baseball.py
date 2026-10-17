@@ -76,6 +76,37 @@ check(all(g["source_url"] and
 check({g["id"] for g in committed if g["verification"] == "official_boxscore_verified"} ==
       {r["game_id"] for r in pilot_rows},
       "Player stats are tied to three verified regional games only")
+
+# Reconcile audited team and pitcher lines to each official PDF's box score,
+# not merely to metadata or a guessed batting average.
+expected = {
+    ("2026-05-29", "NC State"): {"ab": 38, "r": 3, "h": 12, "rbi": 3, "bb": 6, "k": 5},
+    ("2026-05-29", "UCF"): {"ab": 35, "r": 9, "h": 11, "rbi": 9, "bb": 1, "k": 5},
+    ("2026-05-30", "Auburn"): {"ab": 42, "r": 17, "h": 18, "rbi": 17, "bb": 7, "k": 5},
+    ("2026-05-30", "NC State"): {"ab": 39, "r": 13, "h": 14, "rbi": 10, "bb": 3, "k": 4},
+    ("2026-05-31", "Auburn"): {"ab": 30, "r": 8, "h": 5, "rbi": 7, "bb": 5, "k": 6},
+    ("2026-05-31", "Milwaukee"): {"ab": 30, "r": 1, "h": 4, "rbi": 1, "bb": 0, "k": 14},
+}
+keys = {"ab": "atBats", "r": "runs", "h": "hits",
+        "rbi": "rbi", "bb": "baseOnBalls", "k": "strikeOuts"}
+for game in committed:
+    if game["verification"] != "official_boxscore_verified":
+        continue
+    for team in (game["away"], game["home"]):
+        player_list = [r for r in pilot_rows if r["game_id"] == game["id"] and r["team"] == team]
+        bats = [r["batting"] for r in player_list if "batting" in r]
+        pitchers = [r["pitching"] for r in player_list if "pitching" in r]
+        totals = {k: sum(b[keys[k]] for b in bats) for k in keys}
+        check(totals == expected[(game["date"], team)], "Official team batting totals match " + game["date"] + " " + team)
+        other = game["home"] if team == game["away"] else game["away"]
+        opposition = [r["batting"] for r in pilot_rows if r["game_id"] == game["id"] and r["team"] == other and "batting" in r]
+        outs = sum(p["outs"] for p in pitchers)
+        hits_allowed = sum(p["hits"] for p in pitchers)
+        strikeouts = sum(p["strikeOuts"] for p in pitchers)
+        check(outs in (24, 27) and hits_allowed == sum(x["hits"] for x in opposition)
+              and strikeouts == sum(x["strikeOuts"] for x in opposition),
+              "Official pitcher outs/hits/strikeouts match opponent " + game["date"] + " " + team)
+
 check(pilot_report["uploaded_total_attendance_rows"] == 444 and
       pilot_report["unimported_worksheet_rows"] == 439,
       "Entire 444-game history accounted for without claiming it was imported")

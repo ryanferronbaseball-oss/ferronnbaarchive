@@ -71,7 +71,19 @@ def main():
                 f"{mm}/{dd}/{yy%100:02d}",f"{mm:02d}/{dd:02d}/{yy%100:02d}",
                 f"{mm}/{dd:02d}/{yy%100:02d}"}
             if not any(v in src for v in formats):
-                raise ValueError("University scorebook does not visibly confirm attendance date")
+                # 2024 opening-day Duke vs Indiana: Indiana's official
+                # 2024 text schedule explicitly says Friday Feb 16, while
+                # BOTH universities' archived individual boxscore headers
+                # incorrectly read Feb 15 for the identical 6-3 contest.
+                # Preserve the attended/official-schedule date and document
+                # this ONE exception instead of rewriting it to the error.
+                duke_iu_date_exception=(
+                    gid=="cb-2024-02-16-duke-indiana-att0225"
+                    and item.get("source_date_exception")=="indiana_2024_official_schedule_feb16"
+                    and "2/15/2024" in src
+                    and item["official_score"]==[6,3])
+                if not duke_iu_date_exception:
+                    raise ValueError("University scorebook does not visibly confirm attendance date")
             rows,stat_audit=import_one(g,item,player_keys)
             # Charleston's official February 19 scorebook abbreviates its
             # two winning/closing pitchers in the batting/pitching tables

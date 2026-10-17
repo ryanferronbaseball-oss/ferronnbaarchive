@@ -1,5 +1,13 @@
 # College Baseball — Month-by-Month Review Gates
 
+## October 17, 2026 — Entire 2024 season authorized
+
+**User explicitly approved moving to 2024** after the 2025 backfill reached 69/74 verified gamebooks. The new authorized boundary is **2024–2026 only**. Continue source-backed 2025 fixes as needed; beginning 2024 does **not** silently mean the remaining 2025 source exceptions are complete.
+
+The original attendance workbook records **71 games in 2024**: **June 6, May 16, April 7, March 25, February 17**. All listed matchups are four-year colleges (including NCAA Division II Point Loma Nazarene, Angelo State, Indianapolis and Tampa), so they are eligible under the current rules, subject to game-specific validation. **JUCO/NJCAA remains excluded** and retained attendance-only. Preserve the exact 444 original workbook rows and IDs; source-verify 2024 games from June backward, individually verifying university boxscore identity, official venue/neutral-site, correct home-away official R/H/E and innings, source starter positions 1–9 with substitutes, all individual batting/pitching records and W/L/S.
+
+Special checks: 2024 March 23 Vanderbilt–South Carolina has **two same-date matches**, reconcile Game 1 versus Game 2 against official evidence and never silently assume workbook ordering. March 30 South Alabama–Old Dominion workbook year was corrected to 2024 on earlier explicit user instruction, with conflicting weekday metadata: validate official actual date. Preserve the NCAA DII contests regardless of difficulty locating source gamebooks; do not count them complete without verified source. 2023 and earlier are **not approved**; no merge or publication is approved.
+
 ## 2025 monthly review gate — CURRENT (October 17, 2026)
 
 User approval for full **2025** backfill is active. **23 of 74** official full player gamebooks verified and imported; May **23/29**, June **0/2**, April **0/10**, March **0/19**, February **0/14**. **51 2025 games remain**. The 26 linked official source entries include three held back: two one-page LSU regional PDFs requiring standalone, source-audited player transcription and Dallas Baptist–Little Rock requiring an accessible complete university scorebook. **48 further attendance games need official source discovery**; those are not equivalent to source failure and must not be silently counted completed.

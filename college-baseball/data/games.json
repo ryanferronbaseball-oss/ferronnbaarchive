@@ -8595,14 +8595,14 @@
     "id": "cb-2024-04-15-southern-mississippi-georgia-state-att0269",
     "attendance_id": "cb-attended-0269",
     "source_worksheet_row": 270,
-    "date": "2024-04-15",
+    "date": "2024-04-14",
     "season": 2024,
     "away": "Southern Mississippi",
     "home": "Georgia State",
-    "ballpark": null,
-    "city": null,
-    "state": null,
-    "neutral_site": null,
+    "ballpark": "GSU Baseball Complex",
+    "city": "Atlanta",
+    "state": "GA",
+    "neutral_site": false,
     "game_number": null,
     "game_type": null,
     "postseason_round": null,
@@ -8614,8 +8614,15 @@
     "official_boxscore_status": "not_imported",
     "possible_same_day_doubleheader": false,
     "provisional_worksheet_game_sequence": null,
-    "notes": "Original workbook Sheet1 row 270. Source official game date April 14, 2024, original attendee list says April 15: preserve original until approved.",
-    "source_type": "official_university_or_conference_gamebook"
+    "notes": "Original workbook Sheet1 row 270. Source official game date April 14, 2024, original attendee list says April 15: preserve original until approved. Corrected worksheet April 15 to April 14 based on Southern Miss, Georgia State and Sun Belt official records; stable original attendance ID retained.",
+    "source_type": "official_university_or_conference_gamebook",
+    "original_attendance_date": "2024-04-15",
+    "date_corrected": true,
+    "date_correction_provenance": [
+      "https://southernmiss.com/sports/baseball/stats/2024/georgia-state/boxscore/11075",
+      "https://georgiastatesports.com/news/2024/4/14/baseball-panthers-fall-sunday-but-win-series-over-southern-miss.aspx",
+      "https://sunbeltsports.org/schedule.aspx?schedule=1753"
+    ]
   },
   {
     "id": "cb-2024-04-21-connecticut-georgetown-att0270",

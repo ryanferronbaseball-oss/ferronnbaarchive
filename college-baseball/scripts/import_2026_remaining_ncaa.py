@@ -91,7 +91,7 @@ def extract_line_score(soup, expected):
     raise ValueError("Official inning R/H/E scoreboard could not be unambiguously parsed and checked")
 
 
-def _source_batters(table, valid_players, team):
+def _source_batters(table, valid_players, team, game_id):
     """Only accept a source-indented substitution; never infer a tenth slot."""
     head = table_head(table)
     raw = table.find("tbody")
@@ -134,6 +134,19 @@ def _source_batters(table, valid_players, team):
         child_indent = bool(playercell.select('[class*="ml-[10px]"]'))
         padded = bool(re.match(r"^(?:\u00a0|\s){3,}", raw_name))
         is_sub = indent_style or child_indent or padded or pos.lower() in ("ph", "pr", "ph/dh", "pr/dh")
+        # Official Tennessee Feb 14 G1 box score (source game ID 29927)
+        # places two *defensive-only*, zero-PA replacements immediately after
+        # pinch hitters, WITHOUT indentation: CF Fisher Ingersoll follows
+        # PH Aaron Biediger (original CF Karson Irvin); 3B Christian
+        # Westcott follows PH Greyson Shafer (original 3B Andy Miller).
+        # This game-specific exception is source-transcribed, not guessed.
+        manual_defensive_sub = (game_id=="cb-2026-02-14-nicholls-tennessee-att0376"
+            and team=="Nicholls" and name in ("Fisher Ingersoll","Christian Westcott"))
+        if manual_defensive_sub:
+            stats=valid_players[key]["batting"]
+            if any(stats.get(k,0) for k in ("atBats","runs","hits","rbi","baseOnBalls","strikeOuts")):
+                raise ValueError("Manually verified defensive-only source substitute gained plate appearance")
+            is_sub = True
         seen.append((key, name, is_sub))
     if len(seen) != len(valid_players) or len({x[0] for x in seen}) != len(seen):
         raise ValueError(team + ": cannot exactly match source batter lineup against source player records")
@@ -175,7 +188,7 @@ def assign_source_lineups(short_tables, game, rows, totals_by_side):
         valid = {slug(r["player"]): r for r in records}
         if len(valid) != len(records):
             raise ValueError(team + ": source batting names collide")
-        slots = _source_batters(tb, valid, team)
+        slots = _source_batters(tb, valid, team, game["id"])
         n = 0
         for slot_index, slot in enumerate(slots, 1):
             for sub_index, key in enumerate(slot):

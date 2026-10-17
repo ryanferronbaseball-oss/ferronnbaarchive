@@ -1,16 +1,16 @@
 # College Baseball · Courtside Archive
 
-**Status:** source-verified initial pilot on an isolated draft branch. Five game scorebooks are matched, three include full player tables; production remains unchanged until reviewed and approved.
+**Status:** source-verified initial pilot on an isolated draft branch. Six game scoreboards are source-matched, three include full player tables; production remains unchanged until reviewed and approved.
 
 The site lives at \`/college-baseball/\` to avoid collision with the established college-basketball \`/college/\` site, professional \`/mlb/\` site, or future MiLB coverage. All college statistics are their own level-specific measurements.
 
 ## Pilot import update — October 2026
 
-The uploaded college baseball workbook has **444 attendance rows**, dated 2017–2026 after correcting South Alabama at Old Dominion on March 30, 2024 per user confirmation. The first pilot stages **five verified game scores and inning lines** from the 2026 NCAA Auburn Regional, with **three complete official hitter/pitcher box scores (81 player-game rows; 62 distinct athlete identities)**. The two other games await player-stat transcription. All regional game sources are original official university one-page gamebooks, linked in `data/games.json`.
+The uploaded college baseball workbook has **444 attendance rows**, dated 2017–2026 after correcting South Alabama at Old Dominion on March 30, 2024 per user confirmation. The first pilot stages **six verified game scores and inning lines** from the 2026 NCAA Auburn Regional, with **three complete official hitter/pitcher box scores (81 player-game rows; 62 distinct athlete identities)**. The other three games await player-stat transcription. All regional game sources are original official university one-page gamebooks, linked in `data/games.json`.
 
-The published site is **unchanged**; the pilot exists on PR #10 only. Other 439 attendance entries remain in the uploaded master sheet and normalized import-review queue, **not** asserted to have official scores or player stats.
+The published site is **unchanged**; the pilot exists on PR #10 only. Other 438 attendance entries remain in the uploaded master sheet and normalized import-review queue, **not** asserted to have official scores or player stats.
 
-Original workbook worksheet rows 440–444 are the staged games. Row 445 (May 31 Milwaukee @ Auburn) is held: the official regional schedule has **Auburn @ Milwaukee** late on May 31 and **Milwaukee @ Auburn** on June 1, so confirmation is required to determine which game the row represents.
+Original workbook rows **440–445** are the staged games. The user clarified that **attendance game #444 (spreadsheet row 445)** was **UCF @ Auburn**, rather than the originally entered Milwaukee @ Auburn. Official Regional **Game 5** on May 31 ended Auburn 9–3 UCF. The other May 31 attendance entry (**game #443, spreadsheet row 444**) is **Auburn @ Milwaukee**, official Regional **Game 6**, which Auburn won 8–1. Its existing source-verified player box score is retained under the original game ID. Both entries remain distinct; the university scorebooks and user correction are recorded in `data/import_report.json`.
 
 The date originally recorded as `Friday, 3/30/34` is confirmed by the user to mean **2024-03-30**, South Alabama @ Old Dominion. This is preserved in `data/import_report.json`, not silently altered in the original upload.
 

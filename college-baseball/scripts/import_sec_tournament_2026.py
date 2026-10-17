@@ -95,7 +95,26 @@ def main():
                        and "batting" in r and r.get("batting_sub_index")==0]
                 if sorted(spots)!=list(range(1,10)):
                     raise ValueError("Missing source-verified batting order on re-run: "+gid)
-        print("PASS: four previously source-verified SEC gamebooks preserved without duplication")
+        updated=0
+        for gid in SOURCES:
+            game=by_id[gid]
+            group=[r for r in records if r["game_id"]==gid and "pitching" in r]
+            decisions=game.get("pitching_decisions",{})
+            for choice,field in (("win","wins"),("loss","losses"),("save","saves")):
+                official=decisions.get(choice)
+                eligible=[r for r in group if official and slug(r["player"])==slug(official)]
+                if official and len(eligible)!=1:
+                    raise ValueError(f"{gid}: official {choice} {official!r} not uniquely identified in pitcher lines")
+                for pitcher in group:
+                    correct=int(bool(official and pitcher["player_id"]==eligible[0]["player_id"]))
+                    if pitcher["pitching"].get(field)!=correct:
+                        pitcher["pitching"][field]=correct
+                        updated+=1
+        if updated:
+            (DATA/"player_stats.json").write_text(
+                json.dumps(records,ensure_ascii=False,indent=2)+"\\n",encoding="utf-8")
+        print("PASS: four SEC gamebooks re-checked; pitcher decisions repaired:",
+              updated,"fields; no duplicate records")
         return
 
     audit = []
@@ -112,7 +131,9 @@ def main():
             raise ValueError("Incorrect game season")
         if any(r["game_id"] == gid for r in records):
             raise ValueError("Game already has player records; no duplicate import " + gid)
-        source_rows, source_audit = scrape(game)
+        source_rows, source_audit = scrape({**game, "winner":game.get("pitching_decisions",{}).get("win"),
+                                           "loser":game.get("pitching_decisions",{}).get("loss"),
+                                           "save":game.get("pitching_decisions",{}).get("save")})
         observed = {(r["team"], slug(r["player"])): r for r in source_rows if "batting" in r}
         spec = LINEUPS[gid]
         if set(spec) != {game["away"],game["home"]}:

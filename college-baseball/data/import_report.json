@@ -1,47 +1,48 @@
 {
-  "status": "attendance_imported_pilot_boxscores_verified",
-  "scope": "college baseball only; not MLB, MiLB or other college sports",
-  "attendance_games": 444,
-  "official_boxscores_imported": 5,
-  "player_stat_rows": 138,
+  "status": "five_game_official_source_pilot",
+  "scope": "college baseball only",
+  "uploaded_spreadsheet": "NCAAB Games.xlsx",
+  "uploaded_total_attendance_rows": 444,
+  "season_span": "2017–2026 after user-confirmed 2024 typo correction",
+  "staged_games": 5,
+  "official_score_and_inning_lines_matched": 5,
+  "official_player_boxscores_imported": 3,
+  "player_stat_rows": 81,
+  "unique_player_ids": 62,
   "scores_supplied_by_user": 0,
-  "linked_unverified_sources": 0,
-  "seasons": [
-    2017,
-    2018,
-    2019,
-    2020,
-    2021,
-    2022,
-    2023,
-    2024,
-    2025,
-    2026
+  "source_docs": "Auburn University Athletics game-by-game PDF box scores",
+  "source_worksheet_rows": [
+    440,
+    441,
+    442,
+    443,
+    444
   ],
-  "source_file": "NCAAB Games.xlsx / Sheet1, 444 game rows",
-  "source_corrections": [
-    "Sheet1 row 267: South Alabama at Old Dominion corrected 2034-03-30 to 2024-03-30 per user; calendar weekday Saturday"
-  ],
-  "source_duplicate_matchups": 13,
-  "review_queue": [
-    "Sheet1 row 444: Auburn at Milwaukee listed May 31, 2026; official Auburn Regional schedule has UCF at Auburn May 31 and Milwaukee at Auburn May 31; June 1 is Milwaukee at Auburn. Confirm whether row 444 is May 31 UCF at Auburn or June 1 Milwaukee at Auburn.",
-    "Sheet1 row 441: NC State at UCF started May 29 but finished May 30 due to suspension; resumed attendance needs confirmation."
-  ],
-  "warning": "Five games have officially reconciled batting and pitching source records. 439 attendance-only games await official boxscore import. Unresolved school source player-credit conflict retained in audit without guessing.",
-  "official_scoreboards_verified": 5,
-  "verified_batches": [
+  "source_normalization": {
+    "North Carolina State": "NC State",
+    "Central Florida": "UCF"
+  },
+  "unimported_worksheet_rows": 439,
+  "needs_clarification": [
     {
-      "batch": "2026_auburn_regional_pilot.json",
-      "games": 5,
-      "verification": "scoreboard checked against linked university athletic box scores"
+      "worksheet_row": 445,
+      "date_entered": "2026-05-31",
+      "away_entered": "Milwaukee",
+      "home_entered": "Auburn",
+      "reason": "Official 2026 Auburn Regional schedule shows Auburn @ Milwaukee on May 31 at 10:10pm and Milwaukee @ Auburn on June 1 at 8pm. This row may refer to the June 1 regional final or may duplicate May 31 with reversed home/away; do not change without user's confirmation."
     }
   ],
-  "pilot_player_audit_status": "PASS",
-  "pilot_player_audit_file": "college-baseball/data/pilot_player_stat_audit.json",
-  "official_source_warnings": [
+  "known_correction": [
     {
-      "game_id": "cb-2026-05-30-auburn-north-carolina-state",
-      "message": "Official loser label 'Connor Clark' does not appear in that game's pitcher lines; individual pitcher W/L attribution intentionally unavailable."
+      "worksheet_row": 267,
+      "entered_date": "3/30/34",
+      "confirmed_date": "2024-03-30",
+      "away": "South Alabama",
+      "home": "Old Dominion",
+      "source": "User confirmation"
     }
-  ]
+  ],
+  "same_day_identical_matchup_pairs_in_full_sheet": 13,
+  "metadata_status": "pilot_only_other_attendance_not_imported",
+  "warning": "Source PDFs provide only reported fields; unavailable measurements are kept null. Two games await complete player-line transcription. Do not treat the other 439 rows as missing or verified."
 }

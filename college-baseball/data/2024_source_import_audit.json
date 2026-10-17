@@ -1,27 +1,136 @@
 {
-  "status": "PARTIAL_REVIEW_REQUIRED",
+  "status": "PASS",
   "approval": "2024–2026 official four-year source backfill; no 2023 or earlier, no release",
   "original_attendance": 444,
   "attendance_2024": 71,
-  "verified_2024_total": 70,
-  "remaining_2024": 1,
+  "verified_2024_total": 71,
+  "remaining_2024": 0,
   "2025_gamebooks_preserved": 69,
   "2026_gamebooks_preserved": 68,
-  "completed_in_this_run": 0,
+  "completed_in_this_run": 1,
   "linked_2024_sources": 71,
   "months_verified": {
     "2024-02": 17,
-    "2024-03": 24,
+    "2024-03": 25,
     "2024-04": 7,
     "2024-05": 16,
     "2024-06": 6
   },
-  "passed_games": [],
-  "pending_review": [
+  "passed_games": [
     {
       "game_id": "cb-2024-03-08-notre-dame-virginia-tech-att0251",
       "source_url": "https://theacc.com/boxscore.aspx?id=JcLFfL9RUu0H5ystoOMbjQ7A58QMysWHEEqi7hufVoQXO5nVxbctjHh%2F6ifARsoKUNz2Cn1GpJx0eQgL%2FI8uNugW6%2F65ooJ9xE6%2BliOEFRks1pqns5E%2BSdhOF6cTmGJTatGL0tWP3RUaQJSzuX6XO7iNsKjtsD5Dds7TBMqMg4sEGg9iuR4sUWMKzgK6cFVK&path=baseball",
-      "reason": "cb-2024-03-08-notre-dame-virginia-tech-att0251 Virginia Tech row 0: summary/composite AB disagree"
+      "score": [
+        3,
+        11
+      ],
+      "player_game_rows": 32,
+      "pitching_decisions": {
+        "win": "Brett Renfrow",
+        "loss": "Ricky Reeth",
+        "save": null
+      },
+      "stat_audit": {
+        "game_id": "cb-2024-03-08-notre-dame-virginia-tech-att0251",
+        "source": "https://theacc.com/boxscore.aspx?id=JcLFfL9RUu0H5ystoOMbjQ7A58QMysWHEEqi7hufVoQXO5nVxbctjHh%2F6ifARsoKUNz2Cn1GpJx0eQgL%2FI8uNugW6%2F65ooJ9xE6%2BliOEFRks1pqns5E%2BSdhOF6cTmGJTatGL0tWP3RUaQJSzuX6XO7iNsKjtsD5Dds7TBMqMg4sEGg9iuR4sUWMKzgK6cFVK&path=baseball",
+        "http_code": 200,
+        "source_bytes": 709098,
+        "source_sha256": "bcdc58d5b8ac474d90f2570d2c33181c62ed4f11ac4436395b276378cbf37ef5",
+        "teams": [
+          {
+            "name": "Notre Dame",
+            "batters": 13,
+            "pitchers": 5,
+            "AB": 28,
+            "R": 3,
+            "H": 3,
+            "RBI": 3,
+            "BB": 1,
+            "SO": 12,
+            "pitching_outs": 24,
+            "pitching_runs": 11,
+            "pitching_hits": 16
+          },
+          {
+            "name": "Virginia Tech",
+            "batters": 12,
+            "pitchers": 2,
+            "AB": 40,
+            "R": 11,
+            "H": 16,
+            "RBI": 10,
+            "BB": 3,
+            "SO": 8,
+            "pitching_outs": 27,
+            "pitching_runs": 3,
+            "pitching_hits": 3
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 32,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 3,
+            "hits": 3,
+            "errors": 2,
+            "innings": [
+              1,
+              0,
+              1,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 11,
+            "hits": 16,
+            "errors": 1,
+            "innings": [
+              3,
+              1,
+              1,
+              1,
+              0,
+              5,
+              0,
+              0,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Notre Dame",
+            "nine_starting_slots": true,
+            "batter_rows": 13,
+            "pitcher_rows": 5,
+            "substitutes": 4
+          },
+          {
+            "team": "Virginia Tech",
+            "nine_starting_slots": true,
+            "batter_rows": 12,
+            "pitcher_rows": 2,
+            "substitutes": 3
+          }
+        ],
+        "official_decisions": {
+          "win": "Brett Renfrow",
+          "loss": "Ricky Reeth",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": "Brett Renfrow",
+          "loss": "Ricky Reeth",
+          "save": null
+        }
+      }
     }
-  ]
+  ],
+  "pending_review": []
 }

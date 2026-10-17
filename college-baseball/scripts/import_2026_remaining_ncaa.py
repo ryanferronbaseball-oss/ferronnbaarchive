@@ -161,6 +161,20 @@ def _source_batters(table, valid_players, team, game_id):
         if (game_id=="cb-2025-05-21-alabama-tennessee-att0354"
               and team=="Alabama" and name=="Will Plattner"):
             is_sub=True
+        # The official May 21 Tennessee gamebook lists Manny Marin after
+        # Cannon Peebles in the ninth original batting-order slot, but the
+        # defensive replacement has no indentation in the source HTML.
+        if (game_id=="cb-2025-05-21-alabama-tennessee-att0354"
+              and team=="Tennessee" and name=="Manny Marin"):
+            is_sub=True
+        # The official South Carolina vs Florida SEC gamebook places FOUR
+        # successive replacements behind original catcher Max Kaufer at
+        # spot nine: Dalton Mashore (PH), Gavin Braland (C), Will Tippett
+        # (PH), Ryan Bakes (C). Two C and the latter PH have no source indent.
+        if (game_id=="cb-2025-05-20-south-carolina-florida-att0352"
+              and team=="South Carolina"
+              and name in ("Gavin Braland","Will Tippett","Ryan Bakes")):
+            is_sub=True
         seen.append((key, name, is_sub))
     if len(seen) != len(valid_players) or len({x[0] for x in seen}) != len(seen):
         raise ValueError(team + ": cannot exactly match source batter lineup against source player records")

@@ -330,6 +330,25 @@ def _source_batters(table, valid_players, team, game_id):
         }
         if name in source_confirmed_unindented.get((game_id, team), set()):
             is_sub = True
+        # Explicit official 2024 ACC Championship late substitutions:
+        # May 24 Louisville–Clemson: Alex Alicea entered following PH
+        # Brandon Anderson in the original lineup slot after Logan Beard.
+        # May 22 Pitt–Wake Forest: Cameron Nelson followed PH Tate
+        # Ballestero; Jacob Burley followed PH Javar Williams.
+        # May 21 Miami–Louisville: Ryan McCoy's original batting spot was
+        # successively occupied by PH Logan Beard, PR Lucas Moore and
+        # defensive 1B Brandon Anderson. Alex Alicea started separately.
+        source_2024_unindented = {
+            ("cb-2024-05-24-louisville-clemson-att0287", "Louisville"):
+                {"Alex Alicea"},
+            ("cb-2024-05-22-pittsburgh-wake-forest-att0281", "Wake Forest"):
+                {"Cameron Nelson", "Jacob Burley"},
+            ("cb-2024-05-21-miami-louisville-att0277", "Louisville"):
+                {"Lucas Moore", "Brandon Anderson"},
+        }
+        if name in source_2024_unindented.get((game_id, team), set()):
+            is_sub = True
+
         seen.append((key, name, is_sub))
     if len(seen) != len(valid_players) or len({x[0] for x in seen}) != len(seen):
         raise ValueError(team + ": cannot exactly match source batter lineup against source player records")

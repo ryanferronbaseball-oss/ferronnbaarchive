@@ -1,20 +1,21 @@
 # College Baseball · Courtside Archive
 
-**Status (October 17, 2026):** 444 original attendance entries remain in unpublished **draft PR #10**. **2024: 60/71 official full player gamebooks verified; 2025: 69/74; 2026: 68/68 eligible NCAA/four-year games verified.** Seven 2026 junior-college games remain excluded from statistical backfill. **197 verified full gamebooks and 5,848 player-game records across 2024–26.** The final **11 2024 games** are source-matched with game scores but have NOT yet passed full player/stat/lineup imports. Nothing has been merged or published.
+**Status (October 17, 2026):** 444 original attendance entries remain in unpublished **draft PR #10**. **2024 is COMPLETE: 71/71 official full player gamebooks verified; 2025: 69/74; 2026: 68/68 eligible NCAA/four-year games verified.** Seven 2026 junior-college games remain excluded from statistical backfill. Across 2024–26, **208 official full gamebooks and 6,183 player-game records** are verified. Nothing has been merged or published.
 
 The site lives under \`/college-baseball/\`, with independent college baseball stats and verified inter-level player IDs only. It shares the exact MLB archive design system for Inter fonts, navigation, scoreboards, box-score layout, cards, responsive tables, and bat-order number column.
 
-## 2024 backfill — in progress (authorized October 17, 2026)
+## 2024 backfill — COMPLETE (authorized October 17, 2026)
 
-**60/71 four-year NCAA/DII player gamebooks fully verified, 11 remaining.** Monthly complete-gamebook coverage: **June 6/6, May 14/16, April 6/7, March 20/25, February 14/17.** All 60 passed original batting lineup 1–9, substitution and pitching-decision consistency checks. Eleven more 2024 attendance rows now have source-matched official scores; **these are not completed player box scores**. NCAA Division II four-year teams remain eligible, whereas junior-college games are excluded from player-stat backfill.
+**71/71 four-year NCAA/DII gamebooks fully verified, 0 remaining.** Monthly completion: **June 6/6, May 16/16, April 7/7, March 25/25, February 17/17.** All completed gamebooks were imported from original university, ACC, or NCAA source records with reconciliation of batting/pitching totals, lineup spots 1–9, substitutions, innings and pitching decisions. Four-year NCAA Division II games remain included; NJCAA/JUCO games are excluded.
 
-- [2024 monthly progress audit](data/2024_monthly_progress_audit.json): updated verified counts and exact remaining 11.
-- [2024 player source import audit](data/2024_source_import_audit.json): the working importer PASS status and individual source validation.
-- [Remaining-game source audit](data/2024_remaining_verification_and_source_match_audit.json): the 11 matches and original date/identity reconciliations.
+- [2024 monthly completion audit](data/2024_monthly_progress_audit.json): 71/71 and exact monthly totals.
+- [2024 full source import audit](data/2024_source_import_audit.json): PASS with no remaining source exceptions.
+- [2024 final source discovery and identity audit](data/2024_remaining_verification_and_source_match_audit.json): cleared backlog and original date reconciliation.
+- The final source formats included original 2024 Virginia/Clemson StatCrew HTML, Vanderbilt/Auburn/Georgia Tech official PDFs, and the ACC March 8 Notre Dame at Virginia Tech full gamebook.
 
-**Identity and date reconciliation:** The user confirmed **Siena at UNC Asheville March 2 Game 1 only**, which is now player-imported; for the **March 23 Vanderbilt–South Carolina doubleheader**, both actual games were attended. The original two attendance rows were provisionally assigned in chronological Game 1 and Game 2 order; do not claim that the original worksheet row order itself was confirmed. The user confirmed **Florida State–Virginia on May 24** (not May 23). Southern Miss–Georgia State was **April 14** (not April 15) according to both schools and Sun Belt. Duke–Indiana was **February 16** based on Indiana's official schedule, despite a contradictory February 15 gamebook header; that one documented exception passed full-source import and retained the recorded attendance date. Stable worksheet-derived game IDs were kept while dates were corrected so existing player records and URLs are not orphaned.
+**User-confirmed identity and date corrections:** Siena–UNC Asheville March 2 **Game 1 only**; Vanderbilt–South Carolina March 23 **both games** (the sheet's two attendance rows are mapped chronologically as Game 1/2; their original entry order was not separately confirmed); Florida State–Virginia on **May 24**, not May 23. University records confirm Southern Miss–Georgia State **April 14**, not the original April 15. Duke–Indiana **February 16** remains authoritative despite the archived boxscore metadata showing February 15. All original 444 worksheet attendance IDs were preserved, including legacy IDs where a user-approved date changed.
 
-**Still open:** Eleven matchups require alternate college scorebook ingestion (ACC/SEC, WMT and tournament archival records); do not infer or add individual player performances from season stats or recaps. 2025 and 2026 verified imports are frozen. 2023 and earlier are out of approved scope. Do not merge/publish without separate explicit user authorization.
+**Release boundary:** Full 2024 import is complete in the unpublished branch. The five remaining unverified 2025 gamebooks are separate work, and no 2023 or earlier imports or merge/publication are authorized.
 
 ## 2025 backfill — nearly complete (authorized October 17, 2026)
 

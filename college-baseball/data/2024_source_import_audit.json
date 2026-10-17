@@ -1,0 +1,933 @@
+{
+  "status": "PASS",
+  "approval": "2024–2026 official four-year source backfill; no 2023 or earlier, no release",
+  "original_attendance": 444,
+  "attendance_2024": 71,
+  "verified_2024_total": 8,
+  "remaining_2024": 63,
+  "2025_gamebooks_preserved": 69,
+  "2026_gamebooks_preserved": 68,
+  "completed_in_this_run": 8,
+  "linked_2024_sources": 8,
+  "months_verified": {
+    "2024-05": 2,
+    "2024-06": 6
+  },
+  "passed_games": [
+    {
+      "game_id": "cb-2024-06-08-florida-clemson-att0295",
+      "source_url": "https://floridagators.com/sports/baseball/stats/2024/clemson/boxscore/26527",
+      "score": [
+        10,
+        7
+      ],
+      "player_game_rows": 26,
+      "pitching_decisions": {
+        "win": "Fisher Jameson",
+        "loss": "Tristan Smith",
+        "save": "Brandon Neely"
+      },
+      "stat_audit": {
+        "game_id": "cb-2024-06-08-florida-clemson-att0295",
+        "source": "https://floridagators.com/sports/baseball/stats/2024/clemson/boxscore/26527",
+        "http_code": 200,
+        "source_bytes": 1425503,
+        "source_sha256": "04f23fb9bf6c7cddfb3b22d628431aa267b57377f79c5053d2a64574f2b57652",
+        "teams": [
+          {
+            "name": "Florida",
+            "batters": 9,
+            "pitchers": 4,
+            "AB": 35,
+            "R": 10,
+            "H": 10,
+            "RBI": 10,
+            "BB": 8,
+            "SO": 8,
+            "pitching_outs": 27,
+            "pitching_runs": 7,
+            "pitching_hits": 9
+          },
+          {
+            "name": "Clemson",
+            "batters": 9,
+            "pitchers": 4,
+            "AB": 34,
+            "R": 7,
+            "H": 9,
+            "RBI": 5,
+            "BB": 6,
+            "SO": 13,
+            "pitching_outs": 27,
+            "pitching_runs": 10,
+            "pitching_hits": 10
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 26,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 10,
+            "hits": 10,
+            "errors": 0,
+            "innings": [
+              0,
+              0,
+              1,
+              1,
+              7,
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          {
+            "runs": 7,
+            "hits": 9,
+            "errors": 1,
+            "innings": [
+              2,
+              1,
+              1,
+              0,
+              1,
+              2,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Florida",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 4,
+            "substitutes": 0
+          },
+          {
+            "team": "Clemson",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 4,
+            "substitutes": 0
+          }
+        ],
+        "official_decisions": {
+          "win": "Jameson, Fisher",
+          "loss": "Tristan Smith",
+          "save": "Neely, Brandon"
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": "Tristan Smith",
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2024-06-03-point-loma-nazarene-angelo-state-att0294",
+      "source_url": "https://angelosports.com/sports/baseball/stats/2024/-4-point-loma/boxscore/5819",
+      "score": [
+        6,
+        13
+      ],
+      "player_game_rows": 32,
+      "pitching_decisions": {
+        "win": "Mason Bryant",
+        "loss": "Christian Williams",
+        "save": "Johnny Stacy"
+      },
+      "stat_audit": {
+        "game_id": "cb-2024-06-03-point-loma-nazarene-angelo-state-att0294",
+        "source": "https://angelosports.com/sports/baseball/stats/2024/-4-point-loma/boxscore/5819",
+        "http_code": 200,
+        "source_bytes": 621636,
+        "source_sha256": "09f7713f943abeea5b0b8d3e33c672a0eb5a4f6977a23fe03709bf59251d0d14",
+        "teams": [
+          {
+            "name": "Point Loma Nazarene",
+            "batters": 13,
+            "pitchers": 6,
+            "AB": 37,
+            "R": 6,
+            "H": 12,
+            "RBI": 6,
+            "BB": 5,
+            "SO": 6,
+            "pitching_outs": 24,
+            "pitching_runs": 13,
+            "pitching_hits": 15
+          },
+          {
+            "name": "Angelo State",
+            "batters": 9,
+            "pitchers": 5,
+            "AB": 35,
+            "R": 13,
+            "H": 15,
+            "RBI": 12,
+            "BB": 5,
+            "SO": 7,
+            "pitching_outs": 27,
+            "pitching_runs": 6,
+            "pitching_hits": 12
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 32,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 6,
+            "hits": 12,
+            "errors": 1,
+            "innings": [
+              1,
+              2,
+              0,
+              2,
+              0,
+              0,
+              1,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 13,
+            "hits": 15,
+            "errors": 0,
+            "innings": [
+              1,
+              1,
+              0,
+              2,
+              0,
+              3,
+              3,
+              3,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Point Loma Nazarene",
+            "nine_starting_slots": true,
+            "batter_rows": 13,
+            "pitcher_rows": 6,
+            "substitutes": 4
+          },
+          {
+            "team": "Angelo State",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 5,
+            "substitutes": 0
+          }
+        ],
+        "official_decisions": {
+          "win": "Bryant, Mason",
+          "loss": "Christian Williams",
+          "save": "Stacy, Johnny"
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": "Christian Williams",
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2024-06-02-indianapolis-tampa-att0293",
+      "source_url": "https://athletics.uindy.edu/sports/baseball/stats/2024/tampa/boxscore/12937",
+      "score": [
+        3,
+        9
+      ],
+      "player_game_rows": 26,
+      "pitching_decisions": {
+        "win": "Alex Canney",
+        "loss": "Diego Cardenas",
+        "save": null
+      },
+      "stat_audit": {
+        "game_id": "cb-2024-06-02-indianapolis-tampa-att0293",
+        "source": "https://athletics.uindy.edu/sports/baseball/stats/2024/tampa/boxscore/12937",
+        "http_code": 200,
+        "source_bytes": 523152,
+        "source_sha256": "b40579bb4811e7792b7b4b7c259c7f156d6a29a163e3e69b83238197693228fa",
+        "teams": [
+          {
+            "name": "Indianapolis",
+            "batters": 9,
+            "pitchers": 4,
+            "AB": 34,
+            "R": 3,
+            "H": 9,
+            "RBI": 2,
+            "BB": 1,
+            "SO": 12,
+            "pitching_outs": 24,
+            "pitching_runs": 9,
+            "pitching_hits": 14
+          },
+          {
+            "name": "Tampa",
+            "batters": 11,
+            "pitchers": 3,
+            "AB": 36,
+            "R": 9,
+            "H": 14,
+            "RBI": 8,
+            "BB": 2,
+            "SO": 10,
+            "pitching_outs": 27,
+            "pitching_runs": 3,
+            "pitching_hits": 9
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 26,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 3,
+            "hits": 9,
+            "errors": 1,
+            "innings": [
+              0,
+              0,
+              0,
+              2,
+              0,
+              1,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 9,
+            "hits": 14,
+            "errors": 0,
+            "innings": [
+              2,
+              0,
+              1,
+              1,
+              0,
+              1,
+              2,
+              2,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Indianapolis",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 4,
+            "substitutes": 0
+          },
+          {
+            "team": "Tampa",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 3,
+            "substitutes": 2
+          }
+        ],
+        "official_decisions": {
+          "win": "Alex Canney",
+          "loss": "Cardenas, Diego",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": "Alex Canney",
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2024-06-02-south-carolina-james-madison-att0292",
+      "source_url": "https://jmusports.com/sports/baseball/stats/2024/south-carolina/boxscore/19973",
+      "score": [
+        0,
+        2
+      ],
+      "player_game_rows": 23,
+      "pitching_decisions": {
+        "win": "Donovan Burke",
+        "loss": "Dylan Eskew",
+        "save": null
+      },
+      "stat_audit": {
+        "game_id": "cb-2024-06-02-south-carolina-james-madison-att0292",
+        "source": "https://jmusports.com/sports/baseball/stats/2024/south-carolina/boxscore/19973",
+        "http_code": 200,
+        "source_bytes": 1178144,
+        "source_sha256": "85024361cc725bc75fee731a9172e691b13b05623c87f4e3386ca46f962d8442",
+        "teams": [
+          {
+            "name": "South Carolina",
+            "batters": 9,
+            "pitchers": 3,
+            "AB": 29,
+            "R": 0,
+            "H": 5,
+            "RBI": 0,
+            "BB": 4,
+            "SO": 8,
+            "pitching_outs": 24,
+            "pitching_runs": 2,
+            "pitching_hits": 5
+          },
+          {
+            "name": "James Madison",
+            "batters": 9,
+            "pitchers": 2,
+            "AB": 28,
+            "R": 2,
+            "H": 5,
+            "RBI": 2,
+            "BB": 2,
+            "SO": 4,
+            "pitching_outs": 27,
+            "pitching_runs": 0,
+            "pitching_hits": 5
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 23,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 0,
+            "hits": 5,
+            "errors": 0,
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 2,
+            "hits": 5,
+            "errors": 1,
+            "innings": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "South Carolina",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 3,
+            "substitutes": 0
+          },
+          {
+            "team": "James Madison",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 2,
+            "substitutes": 0
+          }
+        ],
+        "official_decisions": {
+          "win": "Burke, Donovan",
+          "loss": "Dylan Eskew",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": "Dylan Eskew",
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2024-06-01-south-carolina-nc-state-att0291",
+      "source_url": "https://gopack.com/sports/baseball/stats/2024/south-carolina/boxscore/23424",
+      "score": [
+        4,
+        6
+      ],
+      "player_game_rows": 25,
+      "pitching_decisions": {
+        "win": "Cooper Consiglio",
+        "loss": "Connor McCreery",
+        "save": "Derrick Smith"
+      },
+      "stat_audit": {
+        "game_id": "cb-2024-06-01-south-carolina-nc-state-att0291",
+        "source": "https://gopack.com/sports/baseball/stats/2024/south-carolina/boxscore/23424",
+        "http_code": 200,
+        "source_bytes": 1062808,
+        "source_sha256": "b0a1faa8a0bf05e22036565e1ebab33e37e7aadf7225244b8a35d9e85ee7e29b",
+        "teams": [
+          {
+            "name": "South Carolina",
+            "batters": 10,
+            "pitchers": 3,
+            "AB": 30,
+            "R": 4,
+            "H": 7,
+            "RBI": 4,
+            "BB": 5,
+            "SO": 9,
+            "pitching_outs": 24,
+            "pitching_runs": 6,
+            "pitching_hits": 8
+          },
+          {
+            "name": "NC State",
+            "batters": 9,
+            "pitchers": 3,
+            "AB": 31,
+            "R": 6,
+            "H": 8,
+            "RBI": 5,
+            "BB": 6,
+            "SO": 6,
+            "pitching_outs": 27,
+            "pitching_runs": 4,
+            "pitching_hits": 7
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 25,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 4,
+            "hits": 7,
+            "errors": 1,
+            "innings": [
+              0,
+              0,
+              1,
+              0,
+              1,
+              0,
+              2,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 6,
+            "hits": 8,
+            "errors": 0,
+            "innings": [
+              1,
+              0,
+              2,
+              0,
+              1,
+              0,
+              1,
+              1,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "South Carolina",
+            "nine_starting_slots": true,
+            "batter_rows": 10,
+            "pitcher_rows": 3,
+            "substitutes": 1
+          },
+          {
+            "team": "NC State",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 3,
+            "substitutes": 0
+          }
+        ],
+        "official_decisions": {
+          "win": "Consiglio, Cooper",
+          "loss": "Connor Mccreery",
+          "save": "Smith, Derrick"
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": "Connor Mccreery",
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2024-06-01-bryant-james-madison-att0290",
+      "source_url": "https://bryantbulldogs.com/sports/baseball/stats/2024/james-madison-university/boxscore/10642",
+      "score": [
+        1,
+        8
+      ],
+      "player_game_rows": 31,
+      "pitching_decisions": {
+        "win": "Entsminger",
+        "loss": "Liam LeVangie",
+        "save": null
+      },
+      "stat_audit": {
+        "game_id": "cb-2024-06-01-bryant-james-madison-att0290",
+        "source": "https://bryantbulldogs.com/sports/baseball/stats/2024/james-madison-university/boxscore/10642",
+        "http_code": 200,
+        "source_bytes": 810077,
+        "source_sha256": "a9c387b455ce35c77b36b4e8cf5920fe17e20170cadb91049fa9f10ebdc8ceee",
+        "teams": [
+          {
+            "name": "Bryant",
+            "batters": 12,
+            "pitchers": 6,
+            "AB": 35,
+            "R": 1,
+            "H": 8,
+            "RBI": 0,
+            "BB": 1,
+            "SO": 9,
+            "pitching_outs": 24,
+            "pitching_runs": 8,
+            "pitching_hits": 9
+          },
+          {
+            "name": "James Madison",
+            "batters": 9,
+            "pitchers": 4,
+            "AB": 27,
+            "R": 8,
+            "H": 9,
+            "RBI": 6,
+            "BB": 6,
+            "SO": 6,
+            "pitching_outs": 27,
+            "pitching_runs": 1,
+            "pitching_hits": 8
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 31,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 1,
+            "hits": 8,
+            "errors": 2,
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0
+            ]
+          },
+          {
+            "runs": 8,
+            "hits": 9,
+            "errors": 2,
+            "innings": [
+              2,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              4,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Bryant",
+            "nine_starting_slots": true,
+            "batter_rows": 12,
+            "pitcher_rows": 6,
+            "substitutes": 3
+          },
+          {
+            "team": "James Madison",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 4,
+            "substitutes": 0
+          }
+        ],
+        "official_decisions": {
+          "win": "Entsminger",
+          "loss": "LeVangie, Liam",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": "Entsminger",
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2024-05-31-bryant-nc-state-att0289",
+      "source_url": "https://bryantbulldogs.com/sports/baseball/stats/2024/nc-state-university/boxscore/10641",
+      "score": [
+        2,
+        9
+      ],
+      "player_game_rows": 27,
+      "pitching_decisions": {
+        "win": "Highfill",
+        "loss": "Austin Wainer",
+        "save": "Dudan"
+      },
+      "stat_audit": {
+        "game_id": "cb-2024-05-31-bryant-nc-state-att0289",
+        "source": "https://bryantbulldogs.com/sports/baseball/stats/2024/nc-state-university/boxscore/10641",
+        "http_code": 200,
+        "source_bytes": 793051,
+        "source_sha256": "03e9ec2c1e370fd4eec6db84c9f143503e3bceb00914bf4fafae2671785097e8",
+        "teams": [
+          {
+            "name": "Bryant",
+            "batters": 11,
+            "pitchers": 4,
+            "AB": 31,
+            "R": 2,
+            "H": 4,
+            "RBI": 2,
+            "BB": 2,
+            "SO": 10,
+            "pitching_outs": 24,
+            "pitching_runs": 9,
+            "pitching_hits": 11
+          },
+          {
+            "name": "NC State",
+            "batters": 10,
+            "pitchers": 2,
+            "AB": 33,
+            "R": 9,
+            "H": 11,
+            "RBI": 9,
+            "BB": 7,
+            "SO": 5,
+            "pitching_outs": 27,
+            "pitching_runs": 2,
+            "pitching_hits": 4
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 27,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 2,
+            "hits": 4,
+            "errors": 0,
+            "innings": [
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 9,
+            "hits": 11,
+            "errors": 2,
+            "innings": [
+              0,
+              0,
+              3,
+              0,
+              0,
+              4,
+              0,
+              2,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Bryant",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 4,
+            "substitutes": 2
+          },
+          {
+            "team": "NC State",
+            "nine_starting_slots": true,
+            "batter_rows": 10,
+            "pitcher_rows": 2,
+            "substitutes": 1
+          }
+        ],
+        "official_decisions": {
+          "win": "Highfill",
+          "loss": "Wainer, Austin",
+          "save": "Dudan"
+        },
+        "resolved_pitcher_decisions": {
+          "win": "Highfill",
+          "loss": null,
+          "save": "Dudan"
+        }
+      }
+    },
+    {
+      "game_id": "cb-2024-05-31-james-madison-south-carolina-att0288",
+      "source_url": "https://jmusports.com/sports/baseball/stats/2024/south-carolina/boxscore/19912",
+      "score": [
+        7,
+        8
+      ],
+      "player_game_rows": 26,
+      "pitching_decisions": {
+        "win": "Chris Veach",
+        "loss": "Joe Vogatsky",
+        "save": null
+      },
+      "stat_audit": {
+        "game_id": "cb-2024-05-31-james-madison-south-carolina-att0288",
+        "source": "https://jmusports.com/sports/baseball/stats/2024/south-carolina/boxscore/19912",
+        "http_code": 200,
+        "source_bytes": 1270894,
+        "source_sha256": "ef09ee9ecf02c313eaf14b3897cba35aa05d29f3166b56359baff224d29f048d",
+        "teams": [
+          {
+            "name": "James Madison",
+            "batters": 9,
+            "pitchers": 4,
+            "AB": 39,
+            "R": 7,
+            "H": 12,
+            "RBI": 7,
+            "BB": 4,
+            "SO": 8,
+            "pitching_outs": 29,
+            "pitching_runs": 8,
+            "pitching_hits": 12
+          },
+          {
+            "name": "South Carolina",
+            "batters": 10,
+            "pitchers": 3,
+            "AB": 32,
+            "R": 8,
+            "H": 12,
+            "RBI": 8,
+            "BB": 6,
+            "SO": 6,
+            "pitching_outs": 30,
+            "pitching_runs": 7,
+            "pitching_hits": 12
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 26,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 7,
+            "hits": 12,
+            "errors": 1,
+            "innings": [
+              1,
+              0,
+              0,
+              0,
+              3,
+              3,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 8,
+            "hits": 12,
+            "errors": 4,
+            "innings": [
+              0,
+              0,
+              1,
+              0,
+              3,
+              1,
+              0,
+              0,
+              2,
+              1
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "James Madison",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 4,
+            "substitutes": 0
+          },
+          {
+            "team": "South Carolina",
+            "nine_starting_slots": true,
+            "batter_rows": 10,
+            "pitcher_rows": 3,
+            "substitutes": 1
+          }
+        ],
+        "official_decisions": {
+          "win": "Chris Veach",
+          "loss": "Vogatsky, Joe",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": "Chris Veach",
+          "loss": null,
+          "save": null
+        }
+      }
+    }
+  ],
+  "pending_review": []
+}

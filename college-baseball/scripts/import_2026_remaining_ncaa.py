@@ -275,6 +275,27 @@ def _source_batters(table, valid_players, team, game_id):
         if (game_id=="cb-2025-03-01-ut-martin-old-dominion-att0310"
               and team=="Old Dominion" and name=="Tyler Zedalis"):
             is_sub=True
+        # 2025-02-18 Georgia: official UGA box score lists PH/1B
+        # Christian Adams, PR Erik Parker, 1B Charlie Jones after
+        # Ryland Zaborowski in the same starting batting-order slot.
+        if (game_id=="cb-2025-02-18-georgia-kennesaw-state-att0305"
+              and team=="Georgia" and name in ("Erik Parker","Charlie Jones")):
+            is_sub=True
+        # 2025-02-17 K-State official lineup: David Bishop follows
+        # PH/PR substitutions in the eighth position; he is not an
+        # invented tenth original batting slot.
+        if (game_id=="cb-2025-02-17-kansas-state-coastal-carolina-att0304"
+              and team=="Kansas State" and name=="David Bishop"):
+            is_sub=True
+        # 2/15 Quinnipiac: Jack Bryan original DH, Ametrano PR,
+        # Marino PH/DH, Zeislof RF, all in the original eighth slot.
+        if (game_id=="cb-2025-02-15-quinnipiac-unc-wilmington-att0301"
+              and team=="Quinnipiac" and name in ("James Marino","Luke Zeislof")):
+            is_sub=True
+        # 2/14 UNC Wilmington: Novobilsky DH, Zelenka PH, Galaska PH.
+        if (game_id=="cb-2025-02-14-quinnipiac-unc-wilmington-att0298"
+              and team=="UNC Wilmington" and name=="Ryker Galaska"):
+            is_sub=True
 
         # Source play-by-play corroborates the unindented entries below,
         # whose predecessor already appears in the same batting slot.

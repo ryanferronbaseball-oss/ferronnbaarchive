@@ -113,12 +113,15 @@ function renderGames(d){
   if(!g){$("cb-game-details").innerHTML=pending(d.games.length?"Select a game above to open its score and verified player box score.":"No college baseball games imported yet.");return}
   const source=link(g.source_url),players=d.rows.filter(x=>x.game_id===g.id);
   const innings=Array.isArray(g.innings)&&g.innings.length?renderInnings(g):"";
+  const dec=g.pitching_decisions;
+  const person=name=>{if(!name)return "—";const p=players.find(x=>x.pitching&&x.player===name);return p?'<a href="'+playerUrl(p)+'">'+esc(name)+'</a>':esc(name)};
+  const decisions=dec?'<section class="panel" id="cb-pitching-decisions"><h2>Official pitching decisions</h2><p class="cb-sub">W: '+person(dec.win||dec.winner)+' · L: '+person(dec.loss||dec.loser)+' · SV: '+(dec.save?person(dec.save):"No save")+'</p></section>':"";
   const box=players.length?renderBox(g,players):pending(g.verification==="official_scoreboard_verified"?"The official final score, inning line and pitching decisions are verified. Complete individual batting and pitching box score import remains pending.":"Official college player box score not yet imported for this attended game. No batting or pitching lines have been fabricated.");
   $("cb-game-details").innerHTML='<section class="cb-game-summary"><div class="cb-card-meta">'+esc(date(g.date))+(g.game_number?' · Doubleheader game '+g.game_number:'')+'</div><h2>'+esc(gameLabel(g))+'</h2>'
   +'<div class="cb-score">'+esc(score(g))+'</div><span class="cb-chip '+(g.verification==="official_boxscore_verified"?"":"pending")+'">'+esc(sourceLabel(g))+'</span>'
   +'<p class="cb-card-meta">'+esc(g.ballpark||"Ballpark pending")+(g.city?' · '+esc(g.city):"")+(g.state?', '+esc(g.state):"")+(g.neutral_site===true?' · Neutral site':'')+(g.postseason_round?' · '+esc(g.postseason_round):"")+'</p>'
   +(source?'<a href="'+esc(source)+'" target="_blank" rel="noopener noreferrer" class="cb-link">Game source ↗</a>':"")
-  +'</section>'+innings+(g.pitching_decisions?'<div class="panel"><h2>Official pitching decisions</h2><p class="cb-sub">W: '+esc(g.pitching_decisions.winner||"—")+' · L: '+esc(g.pitching_decisions.loser||"—")+(g.pitching_decisions.save?' · SV: '+esc(g.pitching_decisions.save):'')+'</p></div>':'')+'<div class="section-heading"><h2>Player box score</h2></div>'+box;
+  +'</section>'+innings+decisions+'<div class="section-heading"><h2>Player box score</h2></div>'+box;
  };
  picker.addEventListener("change",()=>{if(picker.value)history.replaceState(null,"","?id="+encodeURIComponent(picker.value));else history.replaceState(null,"",location.pathname);showGame()});
  const draw=()=>{
@@ -185,7 +188,7 @@ function renderPlayer(d){
  $("app").innerHTML='<div class="eyebrow">College Baseball · Player profile</div><h1>'+esc(p.name)+'</h1><p class="lead">'+esc(p.teams.join(" / "))+' · '+p.games.length+' game'+(p.games.length===1?"":"s")+' witnessed</p>'
  +'<div class="cb-note">Only college baseball appearances from attended games appear here; professional seasons are not added to college totals.</div>'
  +(qualifiedHit?'<h2>Hitting in games you attended</h2>'+metrics([["Games with batting",p.rows.filter(r=>r.batting!=null).length],["Hits",fmt(b.hits)],["Home runs",fmt(b.homeRuns)],["AVG",rate(b.average,3)],["RBI",fmt(b.rbi)],["OPS",rate(b.ops,3)] ]):"")
- +(qualifiedPitch?'<h2>Pitching in games you attended</h2>'+metrics([["IP",pi.innings??"—"],["Strikeouts",fmt(pi.strikeouts)],["Wins",fmt(pi.wins)],["Losses",fmt(pi.losses)],["ERA",rate(pi.era,2)],["WHIP",rate(pi.whip,2)]]):"")
+ +(qualifiedPitch?'<h2>Pitching in games you attended</h2>'+metrics([["IP",pi.innings??"—"],["Strikeouts",fmt(pi.strikeouts)],["Wins",fmt(pi.wins)],["Losses",fmt(pi.losses)],["Saves",fmt(pi.saves)],["ERA",rate(pi.era,2)],["WHIP",rate(pi.whip,2)]]):"")
  +(cross?'<div class="cb-note"><strong>Professional connection:</strong> Verified identity link to this player’s independent <a class="cb-link" href="../mlb/player.html?id='+encodeURIComponent(cross.mlb_player_id)+'">MLB attendance profile ↗</a>. College and MLB statistics remain separate.</div>':"")
  +'<h2>Every game you witnessed</h2><div class="cb-grid">'+entries.map(gameCard).join("")+'</div>'
  +'<h2>Recorded college game logs</h2>'

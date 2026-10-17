@@ -296,6 +296,17 @@ def _source_batters(table, valid_players, team, game_id):
         if (game_id=="cb-2025-02-14-quinnipiac-unc-wilmington-att0298"
               and team=="UNC Wilmington" and name=="Ryker Galaska"):
             is_sub=True
+        # 2/17 official Coastal Carolina source: Thorndyke 1B, PH Estep,
+        # and unindented defensive replacement Kaleb Huffman share slot.
+        if (game_id=="cb-2025-02-17-kansas-state-coastal-carolina-att0304"
+              and team=="Coastal Carolina" and name=="Kaleb Huffman"):
+            is_sub=True
+        # 2/15 UNCW source: starting DH Cole Nelson, PH Ryker Galaska,
+        # PR Dylan Schaefer and PH/LF Bromley Thornton are in one spot.
+        if (game_id=="cb-2025-02-15-quinnipiac-unc-wilmington-att0301"
+              and team=="UNC Wilmington"
+              and name in ("Dylan Schaefer","Bromley Thornton")):
+            is_sub=True
 
         # Source play-by-play corroborates the unindented entries below,
         # whose predecessor already appears in the same batting slot.

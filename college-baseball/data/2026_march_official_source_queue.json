@@ -185,7 +185,20 @@
     ],
     "warning": "Game 1 and Game 2 have distinct official source results and start times. Preserve each original worksheet row; confirm sheet sequence before mapping game numbers. No stats imported."
   },
-  "unresolved_junior_college": [
+  "next_steps": [
+    "Reconcile original individual official university batting and pitching tables for 12 source-found games",
+    "Keep duplicate date opponents games separate with their original workbook IDs",
+    "Work the remaining NCAA/four-year gamebooks; continue directly into February after March (full 2026 approved)."
+  ],
+  "approval": {
+    "march": true,
+    "february": true,
+    "year_2025": false,
+    "publish": false
+  },
+  "user_scope_override": "2026-10-17: Seven 2026 NJCAA entries excluded overall; March 20 pair excluded. Historic queue is a source-discovery snapshot and may predate verified gamebook advances.",
+  "eligible_march_games": 19,
+  "excluded_junior_college": [
     {
       "date": "2026-03-20",
       "away": "Wabash Valley",
@@ -194,19 +207,8 @@
         "cb-2026-03-20-wabash-valley-walters-state-att0396",
         "cb-2026-03-20-wabash-valley-walters-state-att0397"
       ],
-      "needed": "Find and distinguish first and second same-day junior-college official gamebooks. Do not infer exact scores/lineups."
+      "needed": "No further work per user exclusion of all junior-college games",
+      "status": "excluded_from_backfill"
     }
-  ],
-  "next_steps": [
-    "Reconcile original individual official university batting and pitching tables for 12 source-found games",
-    "Keep duplicate date opponents games separate with their original workbook IDs",
-    "Source-discover both Wabash Valley/Walters State same-day games; junior college box scores may be sparse",
-    "After all March games are complete, request February user approval"
-  ],
-  "approval": {
-    "march": true,
-    "february": false,
-    "year_2025": false,
-    "publish": false
-  }
+  ]
 }

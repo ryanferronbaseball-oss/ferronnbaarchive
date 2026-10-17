@@ -1,0 +1,83 @@
+{
+  "status": "PASS",
+  "checked_season": "2026",
+  "may": {
+    "full": 27,
+    "of": 27
+  },
+  "april": {
+    "full": 6,
+    "of": 14,
+    "pending": [
+      {
+        "id": "cb-2026-04-03-liberty-western-kentucky-att0404",
+        "source_worksheet_row": 405,
+        "date": "2026-04-03",
+        "away": "Liberty",
+        "home": "Western Kentucky"
+      },
+      {
+        "id": "cb-2026-04-04-missouri-kentucky-att0405",
+        "source_worksheet_row": 406,
+        "date": "2026-04-04",
+        "away": "Missouri",
+        "home": "Kentucky"
+      },
+      {
+        "id": "cb-2026-04-04-austin-peay-eastern-kentucky-att0406",
+        "source_worksheet_row": 407,
+        "date": "2026-04-04",
+        "away": "Austin Peay",
+        "home": "Eastern Kentucky"
+      },
+      {
+        "id": "cb-2026-04-05-lsu-tennessee-att0407",
+        "source_worksheet_row": 408,
+        "date": "2026-04-05",
+        "away": "LSU",
+        "home": "Tennessee"
+      },
+      {
+        "id": "cb-2026-04-09-oklahoma-vanderbilt-att0408",
+        "source_worksheet_row": 409,
+        "date": "2026-04-09",
+        "away": "Oklahoma",
+        "home": "Vanderbilt"
+      },
+      {
+        "id": "cb-2026-04-10-villanova-xavier-att0409",
+        "source_worksheet_row": 410,
+        "date": "2026-04-10",
+        "away": "Villanova",
+        "home": "Xavier"
+      },
+      {
+        "id": "cb-2026-04-10-baylor-cincinnati-att0410",
+        "source_worksheet_row": 411,
+        "date": "2026-04-10",
+        "away": "Baylor",
+        "home": "Cincinnati"
+      },
+      {
+        "id": "cb-2026-04-12-stanford-louisville-att0413",
+        "source_worksheet_row": 414,
+        "date": "2026-04-12",
+        "away": "Stanford",
+        "home": "Louisville"
+      }
+    ]
+  },
+  "records": 940,
+  "unique_players": 588,
+  "whole_archive_games": 444,
+  "integrity_tests": [
+    "All source-verified games have exactly nine initial batting order slots per team",
+    "All verified game batting runs and hits reconcile to final score and team hit totals",
+    "All verified game pitching runs and hits reconcile to opposing batting totals",
+    "Unique game+player identities and exact 444 attendance preserved"
+  ],
+  "issue_count": 0,
+  "march_approval": "Approved to begin after April completion and QA",
+  "february_approval": "Not approved",
+  "publication": "Draft only"
+}

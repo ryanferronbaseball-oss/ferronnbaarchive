@@ -7,7 +7,7 @@
   "remaining_2024": 10,
   "2025_gamebooks_preserved": 69,
   "2026_gamebooks_preserved": 68,
-  "completed_in_this_run": 1,
+  "completed_in_this_run": 0,
   "linked_2024_sources": 65,
   "months_verified": {
     "2024-02": 14,
@@ -16,86 +16,7 @@
     "2024-05": 15,
     "2024-06": 6
   },
-  "passed_games": [
-    {
-      "game_id": "cb-2024-05-23-clemson-miami-att0283",
-      "source_url": "https://data.clemsontigers.com/Stats/Baseball/2024/cu245231.htm",
-      "score": [
-        7,
-        8
-      ],
-      "player_game_rows": 27,
-      "pitching_decisions": {
-        "win": "Gage Ziehl",
-        "loss": "Ethan Darden",
-        "save": "Myles Caba"
-      },
-      "stat_audit": {
-        "status": "PASS",
-        "game_id": "cb-2024-05-23-clemson-miami-att0283",
-        "source": "https://data.clemsontigers.com/Stats/Baseball/2024/cu245231.htm",
-        "source_bytes": 9672,
-        "source_sha256": "d5fc6bd6bb784816f6253c50d8156bfec397c490236e19fff5f5da6104e8df35",
-        "player_rows": 27,
-        "scoreboard": [
-          {
-            "innings": [
-              0,
-              2,
-              1,
-              0,
-              0,
-              0,
-              1,
-              2,
-              1
-            ],
-            "runs": 7,
-            "hits": 11,
-            "errors": 2
-          },
-          {
-            "innings": [
-              1,
-              5,
-              0,
-              0,
-              0,
-              1,
-              0,
-              1,
-              null
-            ],
-            "runs": 8,
-            "hits": 12,
-            "errors": 2
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "Clemson",
-            "nine_starting_slots": true,
-            "batter_rows": 10,
-            "pitcher_rows": 4,
-            "substitutes": 1
-          },
-          {
-            "team": "Miami",
-            "nine_starting_slots": true,
-            "batter_rows": 10,
-            "pitcher_rows": 3,
-            "substitutes": 1
-          }
-        ],
-        "pitching_decisions": {
-          "win": "Gage Ziehl",
-          "loss": "Ethan Darden",
-          "save": "Myles Caba"
-        },
-        "source_type": "official_university_statcrew_html"
-      }
-    }
-  ],
+  "passed_games": [],
   "pending_review": [
     {
       "game_id": "cb-2024-02-24-virginia-iowa-att0237",

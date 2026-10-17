@@ -6049,22 +6049,78 @@
     "away": "Marshall",
     "home": "College of Charleston",
     "ballpark": null,
-    "city": null,
-    "state": null,
-    "neutral_site": null,
+    "city": "Mount Pleasant",
+    "state": "SC",
+    "neutral_site": false,
     "game_number": null,
-    "game_type": null,
+    "game_type": "regular_season",
     "postseason_round": null,
     "away_score": 5,
     "home_score": 8,
-    "score_provenance": "official_university_or_conference_source",
+    "score_provenance": "official_boxscore",
     "source_url": "https://cofcsports.com/sports/baseball/stats/2024/marshall/boxscore/11657",
-    "verification": "source_matched",
-    "official_boxscore_status": "not_imported",
+    "verification": "official_boxscore_verified",
+    "official_boxscore_status": "verified",
     "possible_same_day_doubleheader": false,
     "provisional_worksheet_game_sequence": null,
     "notes": "Original workbook Sheet1 row 232.",
-    "source_type": "official_university_or_conference_gamebook"
+    "source_type": "official_university_sidearm_boxscore",
+    "away_hits": 10,
+    "home_hits": 8,
+    "away_errors": 2,
+    "home_errors": 0,
+    "innings": [
+      {
+        "inning": 1,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 2,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 3,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 4,
+        "away": 1,
+        "home": 4
+      },
+      {
+        "inning": 5,
+        "away": 1,
+        "home": 1
+      },
+      {
+        "inning": 6,
+        "away": 3,
+        "home": 1
+      },
+      {
+        "inning": 7,
+        "away": 0,
+        "home": 1
+      },
+      {
+        "inning": 8,
+        "away": 0,
+        "home": 1
+      },
+      {
+        "inning": 9,
+        "away": 0,
+        "home": null
+      }
+    ],
+    "pitching_decisions": {
+      "win": "Emmett Bice",
+      "loss": "E. Leon",
+      "save": "Davis Aiken"
+    }
   },
   {
     "id": "cb-2024-02-20-presbyterian-clemson-att0232",
@@ -6079,18 +6135,74 @@
     "state": "SC",
     "neutral_site": false,
     "game_number": null,
-    "game_type": null,
+    "game_type": "regular_season",
     "postseason_round": null,
     "away_score": 2,
     "home_score": 8,
-    "score_provenance": "official_university_or_conference_source",
+    "score_provenance": "official_boxscore",
     "source_url": "https://gobluehose.com/sports/baseball/stats/2024/clemson/boxscore/13189",
-    "verification": "source_matched",
-    "official_boxscore_status": "not_imported",
+    "verification": "official_boxscore_verified",
+    "official_boxscore_status": "verified",
     "possible_same_day_doubleheader": false,
     "provisional_worksheet_game_sequence": null,
     "notes": "Original workbook Sheet1 row 233. Official Clemson season game index confirms final; specific game-level lineup link needs extraction. Original verified university Sidearm individual batting/pitching gamebook located.",
-    "source_type": "official_university_sidearm_boxscore"
+    "source_type": "official_university_sidearm_boxscore",
+    "away_hits": 3,
+    "home_hits": 10,
+    "away_errors": 1,
+    "home_errors": 1,
+    "innings": [
+      {
+        "inning": 1,
+        "away": 0,
+        "home": 1
+      },
+      {
+        "inning": 2,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 3,
+        "away": 2,
+        "home": 1
+      },
+      {
+        "inning": 4,
+        "away": 0,
+        "home": 1
+      },
+      {
+        "inning": 5,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 6,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 7,
+        "away": 0,
+        "home": 5
+      },
+      {
+        "inning": 8,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 9,
+        "away": 0,
+        "home": null
+      }
+    ],
+    "pitching_decisions": {
+      "win": "Joe Allen",
+      "loss": "Kyle Mueller",
+      "save": null
+    }
   },
   {
     "id": "cb-2024-02-21-queens-south-carolina-att0233",
@@ -6859,18 +6971,74 @@
     "state": "SC",
     "neutral_site": true,
     "game_number": null,
-    "game_type": null,
+    "game_type": "regular_season",
     "postseason_round": null,
     "away_score": 11,
     "home_score": 2,
-    "score_provenance": "official_university_or_conference_source",
+    "score_provenance": "official_boxscore",
     "source_url": "https://seminoles.com/sports/baseball/stats/2024/michigan-state/boxscore/13735",
-    "verification": "source_matched",
-    "official_boxscore_status": "not_imported",
+    "verification": "official_boxscore_verified",
+    "official_boxscore_status": "verified",
     "possible_same_day_doubleheader": false,
     "provisional_worksheet_game_sequence": null,
     "notes": "Original workbook Sheet1 row 246. Official ACC individual gamebook, distinct from FSU-Illinois later same date. Official standalone player-line boxscore newly verified.",
-    "source_type": "official_university_sidearm_boxscore"
+    "source_type": "official_university_sidearm_boxscore",
+    "away_hits": 13,
+    "home_hits": 10,
+    "away_errors": 0,
+    "home_errors": 5,
+    "innings": [
+      {
+        "inning": 1,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 2,
+        "away": 2,
+        "home": 0
+      },
+      {
+        "inning": 3,
+        "away": 1,
+        "home": 0
+      },
+      {
+        "inning": 4,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 5,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 6,
+        "away": 2,
+        "home": 0
+      },
+      {
+        "inning": 7,
+        "away": 1,
+        "home": 0
+      },
+      {
+        "inning": 8,
+        "away": 3,
+        "home": 2
+      },
+      {
+        "inning": 9,
+        "away": 2,
+        "home": 0
+      }
+    ],
+    "pitching_decisions": {
+      "win": "Jamie Arnold",
+      "loss": "Joseph Dzierwa",
+      "save": null
+    }
   },
   {
     "id": "cb-2024-03-02-illinois-western-michigan-att0246",
@@ -7429,23 +7597,79 @@
     "season": 2024,
     "away": "Bucknell",
     "home": "Campbell",
-    "ballpark": null,
-    "city": null,
-    "state": null,
-    "neutral_site": null,
+    "ballpark": "Jim Perry Stadium",
+    "city": "Buies Creek",
+    "state": "NC",
+    "neutral_site": false,
     "game_number": null,
-    "game_type": null,
+    "game_type": "regular_season",
     "postseason_round": null,
     "away_score": 5,
     "home_score": 20,
-    "score_provenance": "official_university_or_conference_source",
+    "score_provenance": "official_boxscore",
     "source_url": "https://bucknellbison.com/sports/baseball/stats/2024/campbell/boxscore/19095",
-    "verification": "source_matched",
-    "official_boxscore_status": "not_imported",
+    "verification": "official_boxscore_verified",
+    "official_boxscore_status": "verified",
     "possible_same_day_doubleheader": false,
     "provisional_worksheet_game_sequence": null,
     "notes": "Original workbook Sheet1 row 255.",
-    "source_type": "official_university_or_conference_gamebook"
+    "source_type": "official_university_sidearm_boxscore",
+    "away_hits": 9,
+    "home_hits": 18,
+    "away_errors": 2,
+    "home_errors": 0,
+    "innings": [
+      {
+        "inning": 1,
+        "away": 0,
+        "home": 2
+      },
+      {
+        "inning": 2,
+        "away": 1,
+        "home": 4
+      },
+      {
+        "inning": 3,
+        "away": 4,
+        "home": 3
+      },
+      {
+        "inning": 4,
+        "away": 0,
+        "home": 2
+      },
+      {
+        "inning": 5,
+        "away": 0,
+        "home": 2
+      },
+      {
+        "inning": 6,
+        "away": 0,
+        "home": 1
+      },
+      {
+        "inning": 7,
+        "away": 0,
+        "home": 6
+      },
+      {
+        "inning": 8,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 9,
+        "away": 0,
+        "home": null
+      }
+    ],
+    "pitching_decisions": {
+      "win": "Ethan Snyder",
+      "loss": "Jake Schultz",
+      "save": "Nate Brittain"
+    }
   },
   {
     "id": "cb-2024-03-12-rutgers-north-carolina-att0255",
@@ -9144,18 +9368,74 @@
     "state": "NC",
     "neutral_site": true,
     "game_number": null,
-    "game_type": null,
-    "postseason_round": null,
+    "game_type": "conference_tournament",
+    "postseason_round": "ACC Baseball Championship",
     "away_score": 8,
     "home_score": 11,
-    "score_provenance": "official_university_or_conference_source",
+    "score_provenance": "official_boxscore",
     "source_url": "https://goduke.com/sports/baseball/stats/2024/virginia-tech/boxscore/23386",
-    "verification": "source_matched",
-    "official_boxscore_status": "not_imported",
+    "verification": "official_boxscore_verified",
+    "official_boxscore_status": "verified",
     "possible_same_day_doubleheader": false,
     "provisional_worksheet_game_sequence": null,
     "notes": "Original workbook Sheet1 row 280. Official standalone player-line boxscore newly verified.",
-    "source_type": "official_university_sidearm_boxscore"
+    "source_type": "official_university_sidearm_boxscore",
+    "away_hits": 5,
+    "home_hits": 11,
+    "away_errors": 0,
+    "home_errors": 0,
+    "innings": [
+      {
+        "inning": 1,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 2,
+        "away": 5,
+        "home": 0
+      },
+      {
+        "inning": 3,
+        "away": 0,
+        "home": 6
+      },
+      {
+        "inning": 4,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 5,
+        "away": 0,
+        "home": 1
+      },
+      {
+        "inning": 6,
+        "away": 0,
+        "home": 2
+      },
+      {
+        "inning": 7,
+        "away": 1,
+        "home": 2
+      },
+      {
+        "inning": 8,
+        "away": 2,
+        "home": 0
+      },
+      {
+        "inning": 9,
+        "away": 0,
+        "home": null
+      }
+    ],
+    "pitching_decisions": {
+      "win": "James Tallon",
+      "loss": "Matthew Siverling",
+      "save": "Charlie Beilenson"
+    }
   },
   {
     "id": "cb-2024-05-22-virginia-georgia-tech-att0280",
@@ -9540,23 +9820,79 @@
     "season": 2024,
     "away": "Florida State",
     "home": "Virginia",
-    "ballpark": null,
-    "city": null,
-    "state": null,
-    "neutral_site": null,
+    "ballpark": "Truist Field",
+    "city": "Charlotte",
+    "state": "NC",
+    "neutral_site": true,
     "game_number": null,
-    "game_type": null,
-    "postseason_round": null,
+    "game_type": "conference_tournament",
+    "postseason_round": "ACC Baseball Championship",
     "away_score": 12,
     "home_score": 7,
-    "score_provenance": "official_university_or_conference_source",
+    "score_provenance": "official_boxscore",
     "source_url": "https://seminoles.com/sports/baseball/stats/2024/virginia/boxscore/15137",
-    "verification": "source_matched",
-    "official_boxscore_status": "not_imported",
+    "verification": "official_boxscore_verified",
+    "official_boxscore_status": "verified",
     "possible_same_day_doubleheader": false,
     "provisional_worksheet_game_sequence": null,
     "notes": "Original workbook Sheet1 row 287. User confirmed 2024-05-24 correct; date in original attendance sheet was 2024-05-23. Stable ID retained as legacy key to preserve references.",
-    "source_type": "official_university_or_conference_gamebook"
+    "source_type": "official_university_sidearm_boxscore",
+    "away_hits": 16,
+    "home_hits": 9,
+    "away_errors": 1,
+    "home_errors": 0,
+    "innings": [
+      {
+        "inning": 1,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 2,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 3,
+        "away": 0,
+        "home": 1
+      },
+      {
+        "inning": 4,
+        "away": 2,
+        "home": 0
+      },
+      {
+        "inning": 5,
+        "away": 2,
+        "home": 0
+      },
+      {
+        "inning": 6,
+        "away": 0,
+        "home": 1
+      },
+      {
+        "inning": 7,
+        "away": 7,
+        "home": 5
+      },
+      {
+        "inning": 8,
+        "away": 1,
+        "home": 0
+      },
+      {
+        "inning": 9,
+        "away": 0,
+        "home": 0
+      }
+    ],
+    "pitching_decisions": {
+      "win": "Jamie Arnold",
+      "loss": "Joe Savino",
+      "save": "Brennen Oxford"
+    }
   },
   {
     "id": "cb-2024-05-24-louisville-clemson-att0287",

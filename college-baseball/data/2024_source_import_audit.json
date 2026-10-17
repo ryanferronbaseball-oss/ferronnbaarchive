@@ -1,127 +1,469 @@
 {
-  "status": "PARTIAL_REVIEW_REQUIRED",
+  "status": "PASS",
   "approval": "2024–2026 official four-year source backfill; no 2023 or earlier, no release",
   "original_attendance": 444,
   "attendance_2024": 71,
-  "verified_2024_total": 51,
-  "remaining_2024": 20,
+  "verified_2024_total": 57,
+  "remaining_2024": 14,
   "2025_gamebooks_preserved": 69,
   "2026_gamebooks_preserved": 68,
-  "completed_in_this_run": 2,
-  "linked_2024_sources": 56,
+  "completed_in_this_run": 6,
+  "linked_2024_sources": 57,
   "months_verified": {
-    "2024-02": 11,
-    "2024-03": 17,
+    "2024-02": 13,
+    "2024-03": 19,
     "2024-04": 5,
-    "2024-05": 12,
+    "2024-05": 14,
     "2024-06": 6
   },
   "passed_games": [
     {
-      "game_id": "cb-2024-03-01-purdue-east-carolina-att0243",
-      "source_url": "https://ecupirates.com/sports/baseball/stats/2024/purdue/boxscore/13162",
+      "game_id": "cb-2024-02-19-marshall-college-of-charleston-att0231",
+      "source_url": "https://cofcsports.com/sports/baseball/stats/2024/marshall/boxscore/11657",
       "score": [
-        1,
-        7
+        5,
+        8
       ],
-      "player_game_rows": 25,
+      "player_game_rows": 28,
       "pitching_decisions": {
-        "win": "Trey Yesavage",
-        "loss": "Jordan Morales",
-        "save": null
+        "win": "Emmett Bice",
+        "loss": "E. Leon",
+        "save": "Davis Aiken"
       },
       "stat_audit": {
-        "game_id": "cb-2024-03-01-purdue-east-carolina-att0243",
-        "source": "https://ecupirates.com/sports/baseball/stats/2024/purdue/boxscore/13162",
+        "game_id": "cb-2024-02-19-marshall-college-of-charleston-att0231",
+        "source": "https://cofcsports.com/sports/baseball/stats/2024/marshall/boxscore/11657",
         "http_code": 200,
-        "source_bytes": 1122151,
-        "source_sha256": "21639676c8845efa5168d6acfa506dbf269b9ff83d19743129fd94ae6feb545e",
+        "source_bytes": 1308649,
+        "source_sha256": "e83b413a46d23c543e141fdaf1c35cdc8db2acf94b63dffa17ea761c81ee3d18",
         "teams": [
           {
-            "name": "Purdue",
-            "batters": 11,
-            "pitchers": 2,
-            "AB": 31,
-            "R": 1,
-            "H": 3,
-            "RBI": 1,
-            "BB": 2,
-            "SO": 12,
+            "name": "Marshall",
+            "batters": 10,
+            "pitchers": 4,
+            "AB": 37,
+            "R": 5,
+            "H": 10,
+            "RBI": 5,
+            "BB": 5,
+            "SO": 10,
             "pitching_outs": 24,
-            "pitching_runs": 7,
-            "pitching_hits": 9
+            "pitching_runs": 8,
+            "pitching_hits": 8
           },
           {
-            "name": "East Carolina",
+            "name": "College of Charleston",
             "batters": 10,
-            "pitchers": 2,
-            "AB": 31,
-            "R": 7,
-            "H": 9,
-            "RBI": 7,
-            "BB": 0,
-            "SO": 3,
+            "pitchers": 4,
+            "AB": 32,
+            "R": 8,
+            "H": 8,
+            "RBI": 6,
+            "BB": 11,
+            "SO": 4,
             "pitching_outs": 27,
-            "pitching_runs": 1,
-            "pitching_hits": 3
+            "pitching_runs": 5,
+            "pitching_hits": 10
           }
         ],
         "source_warnings": [],
-        "player_rows": 25,
+        "player_rows": 28,
         "status": "PASS",
         "scoreboard": [
           {
-            "runs": 1,
-            "hits": 3,
+            "runs": 5,
+            "hits": 10,
+            "errors": 2,
+            "innings": [
+              0,
+              0,
+              0,
+              1,
+              1,
+              3,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 8,
+            "hits": 8,
             "errors": 0,
             "innings": [
               0,
               0,
               0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              1
-            ]
-          },
-          {
-            "runs": 7,
-            "hits": 9,
-            "errors": 1,
-            "innings": [
-              0,
-              0,
-              3,
+              4,
               1,
-              0,
-              0,
-              0,
-              3,
+              1,
+              1,
+              1,
               null
             ]
           }
         ],
         "lineup_audit": [
           {
-            "team": "Purdue",
-            "nine_starting_slots": true,
-            "batter_rows": 11,
-            "pitcher_rows": 2,
-            "substitutes": 2
-          },
-          {
-            "team": "East Carolina",
+            "team": "Marshall",
             "nine_starting_slots": true,
             "batter_rows": 10,
-            "pitcher_rows": 2,
+            "pitcher_rows": 4,
+            "substitutes": 1
+          },
+          {
+            "team": "College of Charleston",
+            "nine_starting_slots": true,
+            "batter_rows": 10,
+            "pitcher_rows": 4,
             "substitutes": 1
           }
         ],
         "official_decisions": {
-          "win": "Yesavage, Trey",
-          "loss": "Morales, Jordan",
+          "win": "Bice, Emmett",
+          "loss": "E. Leon",
+          "save": "Aiken, Davis"
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": "E. Leon",
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2024-03-10-bucknell-campbell-att0254",
+      "source_url": "https://bucknellbison.com/sports/baseball/stats/2024/campbell/boxscore/19095",
+      "score": [
+        5,
+        20
+      ],
+      "player_game_rows": 35,
+      "pitching_decisions": {
+        "win": "Ethan Snyder",
+        "loss": "Jake Schultz",
+        "save": "Nate Brittain"
+      },
+      "stat_audit": {
+        "game_id": "cb-2024-03-10-bucknell-campbell-att0254",
+        "source": "https://bucknellbison.com/sports/baseball/stats/2024/campbell/boxscore/19095",
+        "http_code": 200,
+        "source_bytes": 1289341,
+        "source_sha256": "fec0493b154ab6ee5c39a6b21cbceb5622b6ad3346a7150b46d738fa84397260",
+        "teams": [
+          {
+            "name": "Bucknell",
+            "batters": 13,
+            "pitchers": 6,
+            "AB": 35,
+            "R": 5,
+            "H": 9,
+            "RBI": 5,
+            "BB": 3,
+            "SO": 11,
+            "pitching_outs": 24,
+            "pitching_runs": 20,
+            "pitching_hits": 18
+          },
+          {
+            "name": "Campbell",
+            "batters": 13,
+            "pitchers": 3,
+            "AB": 44,
+            "R": 20,
+            "H": 18,
+            "RBI": 20,
+            "BB": 12,
+            "SO": 5,
+            "pitching_outs": 27,
+            "pitching_runs": 5,
+            "pitching_hits": 9
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 35,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 5,
+            "hits": 9,
+            "errors": 2,
+            "innings": [
+              0,
+              1,
+              4,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 20,
+            "hits": 18,
+            "errors": 0,
+            "innings": [
+              2,
+              4,
+              3,
+              2,
+              2,
+              1,
+              6,
+              0,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Bucknell",
+            "nine_starting_slots": true,
+            "batter_rows": 13,
+            "pitcher_rows": 6,
+            "substitutes": 4
+          },
+          {
+            "team": "Campbell",
+            "nine_starting_slots": true,
+            "batter_rows": 13,
+            "pitcher_rows": 3,
+            "substitutes": 4
+          }
+        ],
+        "official_decisions": {
+          "win": "Snyder, Ethan",
+          "loss": "Schultz, Jake",
+          "save": "Brittain, Nate"
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2024-05-23-florida-state-virginia-att0286",
+      "source_url": "https://seminoles.com/sports/baseball/stats/2024/virginia/boxscore/15137",
+      "score": [
+        12,
+        7
+      ],
+      "player_game_rows": 31,
+      "pitching_decisions": {
+        "win": "Jamie Arnold",
+        "loss": "Joe Savino",
+        "save": "Brennen Oxford"
+      },
+      "stat_audit": {
+        "game_id": "cb-2024-05-23-florida-state-virginia-att0286",
+        "source": "https://seminoles.com/sports/baseball/stats/2024/virginia/boxscore/15137",
+        "http_code": 200,
+        "source_bytes": 1239893,
+        "source_sha256": "26bda4b7dfabdccda19f4135c2157550ec49733abe959719573f4ec6991df5d2",
+        "teams": [
+          {
+            "name": "Florida State",
+            "batters": 12,
+            "pitchers": 3,
+            "AB": 40,
+            "R": 12,
+            "H": 16,
+            "RBI": 12,
+            "BB": 5,
+            "SO": 7,
+            "pitching_outs": 27,
+            "pitching_runs": 7,
+            "pitching_hits": 9
+          },
+          {
+            "name": "Virginia",
+            "batters": 9,
+            "pitchers": 7,
+            "AB": 36,
+            "R": 7,
+            "H": 9,
+            "RBI": 7,
+            "BB": 2,
+            "SO": 12,
+            "pitching_outs": 27,
+            "pitching_runs": 12,
+            "pitching_hits": 16
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 31,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 12,
+            "hits": 16,
+            "errors": 1,
+            "innings": [
+              0,
+              0,
+              0,
+              2,
+              2,
+              0,
+              7,
+              1,
+              0
+            ]
+          },
+          {
+            "runs": 7,
+            "hits": 9,
+            "errors": 0,
+            "innings": [
+              0,
+              0,
+              1,
+              0,
+              0,
+              1,
+              5,
+              0,
+              0
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Florida State",
+            "nine_starting_slots": true,
+            "batter_rows": 12,
+            "pitcher_rows": 3,
+            "substitutes": 3
+          },
+          {
+            "team": "Virginia",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 7,
+            "substitutes": 0
+          }
+        ],
+        "official_decisions": {
+          "win": "Arnold, Jamie",
+          "loss": "Joe Savino",
+          "save": "Oxford, Brennen"
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": "Joe Savino",
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2024-03-02-florida-state-michigan-state-att0245",
+      "source_url": "https://seminoles.com/sports/baseball/stats/2024/michigan-state/boxscore/13735",
+      "score": [
+        11,
+        2
+      ],
+      "player_game_rows": 34,
+      "pitching_decisions": {
+        "win": "Jamie Arnold",
+        "loss": "Joseph Dzierwa",
+        "save": null
+      },
+      "stat_audit": {
+        "game_id": "cb-2024-03-02-florida-state-michigan-state-att0245",
+        "source": "https://seminoles.com/sports/baseball/stats/2024/michigan-state/boxscore/13735",
+        "http_code": 200,
+        "source_bytes": 1265164,
+        "source_sha256": "e126250a56925ea84dfc52aad70453d4f228e16853ed66f4417abdc58da36566",
+        "teams": [
+          {
+            "name": "Florida State",
+            "batters": 17,
+            "pitchers": 3,
+            "AB": 42,
+            "R": 11,
+            "H": 13,
+            "RBI": 9,
+            "BB": 8,
+            "SO": 13,
+            "pitching_outs": 27,
+            "pitching_runs": 2,
+            "pitching_hits": 10
+          },
+          {
+            "name": "Michigan State",
+            "batters": 10,
+            "pitchers": 4,
+            "AB": 35,
+            "R": 2,
+            "H": 10,
+            "RBI": 2,
+            "BB": 2,
+            "SO": 10,
+            "pitching_outs": 27,
+            "pitching_runs": 11,
+            "pitching_hits": 13
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 34,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 11,
+            "hits": 13,
+            "errors": 0,
+            "innings": [
+              0,
+              2,
+              1,
+              0,
+              0,
+              2,
+              1,
+              3,
+              2
+            ]
+          },
+          {
+            "runs": 2,
+            "hits": 10,
+            "errors": 5,
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              0
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Florida State",
+            "nine_starting_slots": true,
+            "batter_rows": 17,
+            "pitcher_rows": 3,
+            "substitutes": 8
+          },
+          {
+            "team": "Michigan State",
+            "nine_starting_slots": true,
+            "batter_rows": 10,
+            "pitcher_rows": 4,
+            "substitutes": 1
+          }
+        ],
+        "official_decisions": {
+          "win": "Arnold, Jamie",
+          "loss": "Dzierwa,joseph",
           "save": null
         },
         "resolved_pitcher_decisions": {
@@ -132,141 +474,233 @@
       }
     },
     {
-      "game_id": "cb-2024-03-17-nc-state-georgia-tech-att0257",
-      "source_url": "https://gopack.com/sports/baseball/stats/2024/georgia-tech/boxscore/23042",
+      "game_id": "cb-2024-05-21-virginia-tech-duke-att0279",
+      "source_url": "https://goduke.com/sports/baseball/stats/2024/virginia-tech/boxscore/23386",
       "score": [
-        5,
-        15
+        8,
+        11
       ],
-      "player_game_rows": 29,
+      "player_game_rows": 34,
       "pitching_decisions": {
-        "win": "Logan McGuire",
-        "loss": "Dominic Fritton",
-        "save": null
+        "win": "James Tallon",
+        "loss": "Matthew Siverling",
+        "save": "Charlie Beilenson"
       },
       "stat_audit": {
-        "game_id": "cb-2024-03-17-nc-state-georgia-tech-att0257",
-        "source": "https://gopack.com/sports/baseball/stats/2024/georgia-tech/boxscore/23042",
+        "game_id": "cb-2024-05-21-virginia-tech-duke-att0279",
+        "source": "https://goduke.com/sports/baseball/stats/2024/virginia-tech/boxscore/23386",
         "http_code": 200,
-        "source_bytes": 1108549,
-        "source_sha256": "29701b5b8cd9d8ca78d407a8d7185199a7273acfaa9a05187e36e87072b640b3",
+        "source_bytes": 1318816,
+        "source_sha256": "53f0ad269377df89f031d2daa374887c8ab43d57fc46cf314a6ce589ab98587f",
         "teams": [
           {
-            "name": "NC State",
-            "batters": 10,
-            "pitchers": 5,
-            "AB": 25,
-            "R": 5,
-            "H": 6,
-            "RBI": 5,
-            "BB": 8,
-            "SO": 7,
-            "pitching_outs": 20,
-            "pitching_runs": 15,
-            "pitching_hits": 12
+            "name": "Virginia Tech",
+            "batters": 11,
+            "pitchers": 7,
+            "AB": 27,
+            "R": 8,
+            "H": 5,
+            "RBI": 8,
+            "BB": 9,
+            "SO": 11,
+            "pitching_outs": 24,
+            "pitching_runs": 11,
+            "pitching_hits": 11
           },
           {
-            "name": "Georgia Tech",
-            "batters": 9,
-            "pitchers": 5,
-            "AB": 31,
-            "R": 15,
-            "H": 12,
-            "RBI": 14,
-            "BB": 9,
-            "SO": 7,
-            "pitching_outs": 21,
-            "pitching_runs": 5,
-            "pitching_hits": 6
+            "name": "Duke",
+            "batters": 10,
+            "pitchers": 6,
+            "AB": 33,
+            "R": 11,
+            "H": 11,
+            "RBI": 11,
+            "BB": 4,
+            "SO": 12,
+            "pitching_outs": 27,
+            "pitching_runs": 8,
+            "pitching_hits": 5
           }
         ],
         "source_warnings": [],
-        "player_rows": 29,
+        "player_rows": 34,
         "status": "PASS",
         "scoreboard": [
           {
-            "runs": 5,
-            "hits": 6,
-            "errors": 2,
+            "runs": 8,
+            "hits": 5,
+            "errors": 0,
             "innings": [
+              0,
+              5,
+              0,
               0,
               0,
               0,
               1,
-              0,
-              0,
-              4
+              2,
+              0
             ]
           },
           {
-            "runs": 15,
-            "hits": 12,
+            "runs": 11,
+            "hits": 11,
             "errors": 0,
             "innings": [
-              3,
-              3,
               0,
+              0,
+              6,
+              0,
+              1,
               2,
               2,
               0,
-              5
+              null
             ]
           }
         ],
         "lineup_audit": [
           {
-            "team": "NC State",
+            "team": "Virginia Tech",
             "nine_starting_slots": true,
-            "batter_rows": 10,
-            "pitcher_rows": 5,
-            "substitutes": 1
+            "batter_rows": 11,
+            "pitcher_rows": 7,
+            "substitutes": 2
           },
           {
-            "team": "Georgia Tech",
+            "team": "Duke",
             "nine_starting_slots": true,
-            "batter_rows": 9,
-            "pitcher_rows": 5,
-            "substitutes": 0
+            "batter_rows": 10,
+            "pitcher_rows": 6,
+            "substitutes": 1
           }
         ],
         "official_decisions": {
-          "win": "Logan Mcguire",
-          "loss": "Fritton, Dominic",
+          "win": "Tallon, James",
+          "loss": "Matthew Siverling",
+          "save": "Beilenson, Charlie"
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": "Matthew Siverling",
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2024-02-20-presbyterian-clemson-att0232",
+      "source_url": "https://gobluehose.com/sports/baseball/stats/2024/clemson/boxscore/13189",
+      "score": [
+        2,
+        8
+      ],
+      "player_game_rows": 32,
+      "pitching_decisions": {
+        "win": "Joe Allen",
+        "loss": "Kyle Mueller",
+        "save": null
+      },
+      "stat_audit": {
+        "game_id": "cb-2024-02-20-presbyterian-clemson-att0232",
+        "source": "https://gobluehose.com/sports/baseball/stats/2024/clemson/boxscore/13189",
+        "http_code": 200,
+        "source_bytes": 642732,
+        "source_sha256": "89cf6dae31990adf1f18fd5c2d5a35da905665db3c8644064dbdf9828636559a",
+        "teams": [
+          {
+            "name": "Presbyterian",
+            "batters": 13,
+            "pitchers": 5,
+            "AB": 30,
+            "R": 2,
+            "H": 3,
+            "RBI": 2,
+            "BB": 4,
+            "SO": 8,
+            "pitching_outs": 24,
+            "pitching_runs": 8,
+            "pitching_hits": 10
+          },
+          {
+            "name": "Clemson",
+            "batters": 10,
+            "pitchers": 4,
+            "AB": 34,
+            "R": 8,
+            "H": 10,
+            "RBI": 8,
+            "BB": 7,
+            "SO": 7,
+            "pitching_outs": 27,
+            "pitching_runs": 2,
+            "pitching_hits": 3
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 32,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 2,
+            "hits": 3,
+            "errors": 1,
+            "innings": [
+              0,
+              0,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 8,
+            "hits": 10,
+            "errors": 1,
+            "innings": [
+              1,
+              0,
+              1,
+              1,
+              0,
+              0,
+              5,
+              0,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Presbyterian",
+            "nine_starting_slots": true,
+            "batter_rows": 13,
+            "pitcher_rows": 5,
+            "substitutes": 4
+          },
+          {
+            "team": "Clemson",
+            "nine_starting_slots": true,
+            "batter_rows": 10,
+            "pitcher_rows": 4,
+            "substitutes": 1
+          }
+        ],
+        "official_decisions": {
+          "win": "Joe Allen",
+          "loss": "Mueller, Kyle",
           "save": null
         },
         "resolved_pitcher_decisions": {
-          "win": "Logan Mcguire",
+          "win": "Joe Allen",
           "loss": null,
           "save": null
         }
       }
     }
   ],
-  "pending_review": [
-    {
-      "game_id": "cb-2024-02-19-marshall-college-of-charleston-att0231",
-      "source_url": "https://cofcsports.com/sports/baseball/stats/2024/marshall/boxscore/11657",
-      "reason": "Official Win scorer 'Bice, Emmett' not uniquely matched among source pitchers cb-2024-02-19-marshall-college-of-charleston-att0231"
-    },
-    {
-      "game_id": "cb-2024-03-10-bucknell-campbell-att0254",
-      "source_url": "https://bucknellbison.com/sports/baseball/stats/2024/campbell/boxscore/19095",
-      "reason": "Bucknell: source batting order resolved to 10 starting slots, not 9"
-    },
-    {
-      "game_id": "cb-2024-05-23-florida-state-virginia-att0286",
-      "source_url": "https://seminoles.com/sports/baseball/stats/2024/virginia/boxscore/15137",
-      "reason": "Florida State: source batting order resolved to 10 starting slots, not 9"
-    },
-    {
-      "game_id": "cb-2024-03-02-florida-state-michigan-state-att0245",
-      "source_url": "https://seminoles.com/sports/baseball/stats/2024/michigan-state/boxscore/13735",
-      "reason": "Florida State: source batting order resolved to 11 starting slots, not 9"
-    },
-    {
-      "game_id": "cb-2024-05-21-virginia-tech-duke-att0279",
-      "source_url": "https://goduke.com/sports/baseball/stats/2024/virginia-tech/boxscore/23386",
-      "reason": "Virginia Tech: source batting order resolved to 10 starting slots, not 9"
-    }
-  ]
+  "pending_review": []
 }

@@ -15,7 +15,7 @@ def pdf_text(content):
         subprocess.check_call([sys.executable,"-m","pip","install","--quiet","pypdf==5.9.0"])
         from pypdf import PdfReader
     src=PdfReader(io.BytesIO(content))
-    if len(src.pages)<2:raise ValueError("Expected official source PDF at least two pages")
+    if len(src.pages)<1:raise ValueError("Official source PDF has no pages")
     txt=src.pages[0].extract_text()
     if not txt or len(txt)<800:raise ValueError("Official PDF has no first-page player scorebook text")
     return txt
@@ -27,7 +27,9 @@ def parse(game,item,global_keys,response):
     months=["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
     if not re.search(r"\b"+months[month]+r"\s+"+str(day)+r",\s*2024\b",text,re.I):
         raise ValueError("PDF printed game date differs from attendance record")
-    if not re.search(r"Vanderbilt at South Carolina",text,re.I):
+    # Named schools must both occur in the original document heading.
+    header=" ".join(first[:6])
+    if not all(re.search(re.escape(t),header,re.I) for t in (game["away"],game["home"])):
         raise ValueError("Wrong official PDF team pairing")
     dh=item.get("official_doubleheader_game")
     if dh and not re.search(r"\(Game\s+"+str(dh)+r"\)",text,re.I):
@@ -94,6 +96,8 @@ def parse(game,item,global_keys,response):
        ("cb-2024-03-23-vanderbilt-south-carolina-att0260","South Carolina"):{"Evan Stone"},
        ("cb-2024-03-23-vanderbilt-south-carolina-att0261","Vanderbilt"):{"Jacob Humphrey"},
        ("cb-2024-03-23-vanderbilt-south-carolina-att0261","South Carolina"):{"Gavin Casas"},
+       ("cb-2024-02-23-iowa-auburn-att0235","Auburn"):{"Deric Fabian"},
+       ("cb-2024-04-14-virginia-tech-georgia-tech-att0268","Georgia Tech"):{"Tyler Minnick"},
     }
     for i,t in enumerate(teams):
         bat=batting[t]
@@ -141,14 +145,24 @@ def parse(game,item,global_keys,response):
         raise ValueError("PDF contains duplicate player identity")
     decision_labels={}
     for label in ("Win","Loss","Save"):
-        m=re.search(r"\b"+label+r"\s*-\s*([A-Za-z'. -]+?)\s*\((\d+(?:-\d+)?)\)",text,re.I)
+        m=re.search(r"\b"+label+r"\s*-\s*([A-Za-z'. ,-]+?)\s*\((\d+(?:-\d+)?)\)",text,re.I)
         if not m and label=="Save" and re.search(r"Save\s*-\s*None",text,re.I):
             decision_labels[label.lower()]=None;continue
         if not m:raise ValueError("Official PDF missing explicit scorer "+label)
         name=m.group(1).strip()
-        candidates=[p for p in rows.values() if "pitching" in p and (
-            p["player"].split()[-1].casefold()==name.casefold() or
-            p["player"].casefold()==name.casefold())]
+        def identify(p):
+            # University PDFs abbreviate decisions "Tilly, C.", "M. Siverling"
+            # and "Thomas, B". Match team source full names uniquely.
+            source=re.findall(r"[a-z]+",name.lower())
+            actual=re.findall(r"[a-z]+",p["player"].lower())
+            if not source or not actual:return False
+            if source==actual:return True
+            if len(source)==1:return source[0]==actual[-1]
+            if len(source)==2:
+                return (source[0]==actual[-1] and actual[0].startswith(source[1][0])
+                    or source[-1]==actual[-1] and actual[0].startswith(source[0][0]))
+            return False
+        candidates=[p for p in rows.values() if "pitching" in p and identify(p)]
         if len(candidates)!=1:raise ValueError("PDF official "+label+" pitcher not uniquely identified: "+name)
         decision_labels[label.lower()]=candidates[0]["player"]
     if decision_labels["win"]==decision_labels["loss"]:raise ValueError("Same winner/loser in official scorer")

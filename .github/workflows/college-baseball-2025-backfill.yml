@@ -5,6 +5,7 @@ on:
     paths:
       - "college-baseball/data/2025_official_source_queue.json"
       - "college-baseball/scripts/import_2025_verified_queue.py"
+      - "college-baseball/scripts/import_2026_remaining_ncaa.py"
       - ".github/workflows/college-baseball-2025-backfill.yml"
 permissions:
   contents: write

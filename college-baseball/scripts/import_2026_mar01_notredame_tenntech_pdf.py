@@ -89,14 +89,16 @@ def read_pdf():
         raise ValueError("Unexpected gamebook PDF page count")
     content=pdf[0].get_text("text")
     normalized=" ".join(content.split())
-    print("PDF_TEXT_SAMPLE",repr(normalized[:2200]),flush=True)
+    # Embedded PDF font kerning sometimes splits names (e.g. "Ber kland").
+    # Match identities after removing only whitespace/punctuation, never digits.
+    condensed=re.sub(r"[^a-z0-9]+","",normalized.lower())
     # The official scorebook's PDF extractor may insert spaces between
     # comma-separated first/last names. Verify identities as individual
     # source tokens and reconcile all numeric player totals below.
     for token in ("Official Box Score", "Notre Dame", "Tennessee Tech",
                   "03/01/2026", "Uber", "Casabella", "Berkland",
                   "Brzustewciz", "Smelser", "Moffitt"):
-        if token.lower() not in normalized.lower():
+        if re.sub(r"[^a-z0-9]+","",token.lower()) not in condensed:
             raise ValueError("Official PDF identity token missing: "+token)
     # Full player-name membership is a second independent PDF safeguard.
     for team, slots in BATS.items():
@@ -105,11 +107,11 @@ def read_pdf():
                 surname=name.rsplit(" ",1)[-1]
                 if name=="Parker Brzustewicz":
                     surname="Brzustewciz"  # University PDF misprint; roster correct.
-                if surname not in normalized:
+                if surname.lower() not in condensed:
                     raise ValueError("Source-PDF player identity not found: "+name)
     for team, pitchers in PITCHERS.items():
         for name,*_ in pitchers:
-            if name.rsplit(" ",1)[-1] not in normalized:
+            if name.rsplit(" ",1)[-1].lower() not in condensed:
                 raise ValueError("Official PDF pitcher missing: "+name)
     return hashlib.sha256(raw).hexdigest(),len(raw)
 

@@ -105,7 +105,7 @@ def _source_batters(table, valid_players, team):
         playercell = cells[name_idx]
         pos = cells[0].get_text(" ", strip=True) if name_idx != 0 else ""
         source_name = playercell.get_text(" ", strip=True).strip()
-        source_pos = re.match(r"^(ph|pr|c|1b|2b|3b|ss|cf|lf|rf|p|dh)(?:/(?:ph|pr|c|1b|2b|3b|ss|cf|lf|rf|p|dh))*\\s+", source_name, re.I)
+        source_pos = re.match(r"^(ph|pr|c|1b|2b|3b|ss|cf|lf|rf|p|dh)(?:/(?:ph|pr|c|1b|2b|3b|ss|cf|lf|rf|p|dh))*\s+", source_name, re.I)
         if source_pos:
             # Some university scorebooks inline positions in the Player cell.
             # Pitchers appearing solely for the defensive scorer section do

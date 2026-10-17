@@ -10,7 +10,7 @@
     "2024-02": 17
   },
   "verified_player_gamebooks_at_queue_creation": 0,
-  "official_source_urls_identified": 56,
+  "official_source_urls_identified": 57,
   "source_queue": [
     {
       "game_id": "cb-2024-06-08-florida-clemson-att0295",
@@ -1187,6 +1187,27 @@
       "source_type": "official_university_sidearm_boxscore",
       "verification": "official_url_final_score_verified_player_lines_pending",
       "source_game_id": "23386"
+    },
+    {
+      "game_id": "cb-2024-02-20-presbyterian-clemson-att0232",
+      "worksheet_row": 233,
+      "date": "2024-02-20",
+      "away": "Presbyterian",
+      "home": "Clemson",
+      "source_url": "https://gobluehose.com/sports/baseball/stats/2024/clemson/boxscore/13189",
+      "official_score": [
+        2,
+        8
+      ],
+      "ballpark": "Doug Kingsmore Stadium",
+      "city": "Clemson",
+      "state": "SC",
+      "game_type": "regular_season",
+      "postseason_round": null,
+      "neutral_site": false,
+      "source_type": "official_university_sidearm_boxscore",
+      "verification": "official_url_final_score_verified_player_lines_pending",
+      "source_game_id": "13189"
     }
   ],
   "manual_review_flags": [
@@ -1204,7 +1225,7 @@
     "Preserve all verified 2025/2026 players, gamebook metadata, and their audits",
     "Do not publish/merge; 2023 and earlier are not authorized"
   ],
-  "new_2024_official_gamebooks_for_strict_import": 29,
+  "new_2024_official_gamebooks_for_strict_import": 30,
   "pending_identity_review_rows": [
     245,
     261,

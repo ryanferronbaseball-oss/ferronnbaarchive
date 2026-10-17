@@ -7,7 +7,7 @@
   "remaining_2024": 12,
   "2025_gamebooks_preserved": 69,
   "2026_gamebooks_preserved": 68,
-  "completed_in_this_run": 1,
+  "completed_in_this_run": 0,
   "linked_2024_sources": 59,
   "months_verified": {
     "2024-02": 14,
@@ -16,121 +16,6 @@
     "2024-05": 14,
     "2024-06": 6
   },
-  "passed_games": [
-    {
-      "game_id": "cb-2024-02-16-duke-indiana-att0225",
-      "source_url": "https://iuhoosiers.com/sports/baseball/stats/2024/duke/boxscore/26942",
-      "score": [
-        6,
-        3
-      ],
-      "player_game_rows": 27,
-      "pitching_decisions": {
-        "win": "Jonathan Santucci",
-        "loss": "Brayden Risedorph",
-        "save": "Charlie Beilenson"
-      },
-      "stat_audit": {
-        "game_id": "cb-2024-02-16-duke-indiana-att0225",
-        "source": "https://iuhoosiers.com/sports/baseball/stats/2024/duke/boxscore/26942",
-        "http_code": 200,
-        "source_bytes": 1066907,
-        "source_sha256": "88b00dd6ad227f7df5400542ccbbe0a1fb04d8489bb273270879730dd9e60bee",
-        "teams": [
-          {
-            "name": "Duke",
-            "batters": 9,
-            "pitchers": 3,
-            "AB": 36,
-            "R": 6,
-            "H": 10,
-            "RBI": 6,
-            "BB": 3,
-            "SO": 7,
-            "pitching_outs": 27,
-            "pitching_runs": 3,
-            "pitching_hits": 9
-          },
-          {
-            "name": "Indiana",
-            "batters": 11,
-            "pitchers": 4,
-            "AB": 35,
-            "R": 3,
-            "H": 9,
-            "RBI": 3,
-            "BB": 3,
-            "SO": 13,
-            "pitching_outs": 27,
-            "pitching_runs": 6,
-            "pitching_hits": 10
-          }
-        ],
-        "source_warnings": [],
-        "player_rows": 27,
-        "status": "PASS",
-        "scoreboard": [
-          {
-            "runs": 6,
-            "hits": 10,
-            "errors": 0,
-            "innings": [
-              0,
-              0,
-              0,
-              0,
-              1,
-              2,
-              2,
-              1,
-              0
-            ]
-          },
-          {
-            "runs": 3,
-            "hits": 9,
-            "errors": 2,
-            "innings": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              2,
-              1,
-              0,
-              0
-            ]
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "Duke",
-            "nine_starting_slots": true,
-            "batter_rows": 9,
-            "pitcher_rows": 3,
-            "substitutes": 0
-          },
-          {
-            "team": "Indiana",
-            "nine_starting_slots": true,
-            "batter_rows": 11,
-            "pitcher_rows": 4,
-            "substitutes": 2
-          }
-        ],
-        "official_decisions": {
-          "win": "Santucci, Jonathan",
-          "loss": "Risedorph, Brayden",
-          "save": "Beilenson, Charlie"
-        },
-        "resolved_pitcher_decisions": {
-          "win": null,
-          "loss": null,
-          "save": null
-        }
-      }
-    }
-  ],
+  "passed_games": [],
   "pending_review": []
 }

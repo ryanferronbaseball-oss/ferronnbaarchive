@@ -5,122 +5,122 @@
   "verified_2026_unchanged": 68,
   "total_2025_attendance": 74,
   "completed_in_this_run": 1,
-  "verified_2025_total": 66,
+  "verified_2025_total": 67,
   "linked_source_games": 74,
   "passed_games": [
     {
-      "game_id": "cb-2025-05-22-oklahoma-vanderbilt-att0359",
-      "source_url": "https://soonersports.com/sports/baseball/stats/2025/vanderbilt/boxscore/15226",
+      "game_id": "cb-2025-03-22-western-kentucky-kennesaw-state-att0325",
+      "source_url": "https://wkusports.com/sports/baseball/stats/2025/kennesaw-state/boxscore/12878",
       "score": [
-        1,
-        6
+        4,
+        1
       ],
-      "source_game_id": "15226",
-      "player_rows": 28,
+      "source_game_id": "12878",
+      "player_rows": 27,
       "source_stat_audit": {
-        "game_id": "cb-2025-05-22-oklahoma-vanderbilt-att0359",
-        "source": "https://soonersports.com/sports/baseball/stats/2025/vanderbilt/boxscore/15226",
+        "game_id": "cb-2025-03-22-western-kentucky-kennesaw-state-att0325",
+        "source": "https://wkusports.com/sports/baseball/stats/2025/kennesaw-state/boxscore/12878",
         "http_code": 200,
-        "source_bytes": 1210107,
-        "source_sha256": "e80d482171fb81e05942421f3530f8e112cfcb9ec1380068fbc8b9ea3c13834e",
+        "source_bytes": 1050000,
+        "source_sha256": "3c5266c4c41e655e0394c48509fffc3bfe681d138b7414830c8962be667a6ce1",
         "teams": [
           {
-            "name": "Oklahoma",
-            "batters": 10,
-            "pitchers": 5,
-            "AB": 29,
-            "R": 1,
-            "H": 2,
-            "RBI": 1,
-            "BB": 6,
-            "SO": 17,
-            "pitching_outs": 24,
-            "pitching_runs": 6,
-            "pitching_hits": 8
-          },
-          {
-            "name": "Vanderbilt",
-            "batters": 9,
-            "pitchers": 4,
-            "AB": 33,
-            "R": 6,
-            "H": 8,
-            "RBI": 6,
-            "BB": 2,
-            "SO": 4,
+            "name": "Western Kentucky",
+            "batters": 12,
+            "pitchers": 3,
+            "AB": 28,
+            "R": 4,
+            "H": 6,
+            "RBI": 3,
+            "BB": 5,
+            "SO": 7,
             "pitching_outs": 27,
             "pitching_runs": 1,
-            "pitching_hits": 2
+            "pitching_hits": 5
+          },
+          {
+            "name": "Kennesaw State",
+            "batters": 10,
+            "pitchers": 2,
+            "AB": 32,
+            "R": 1,
+            "H": 5,
+            "RBI": 1,
+            "BB": 7,
+            "SO": 9,
+            "pitching_outs": 27,
+            "pitching_runs": 4,
+            "pitching_hits": 6
           }
         ],
         "source_warnings": [],
-        "player_rows": 28,
+        "player_rows": 27,
         "status": "PASS",
         "scoreboard": [
           {
-            "runs": 1,
-            "hits": 2,
-            "errors": 3,
+            "runs": 4,
+            "hits": 6,
+            "errors": 2,
             "innings": [
-              0,
-              0,
-              0,
               1,
               0,
               0,
               0,
               0,
-              0
+              1,
+              0,
+              1,
+              1
             ]
           },
           {
-            "runs": 6,
-            "hits": 8,
+            "runs": 1,
+            "hits": 5,
             "errors": 0,
             "innings": [
               0,
               0,
-              4,
-              1,
               0,
               0,
-              1,
               0,
-              null
+              0,
+              0,
+              0,
+              1
             ]
           }
         ],
         "lineup_audit": [
           {
-            "team": "Oklahoma",
+            "team": "Western Kentucky",
             "nine_starting_slots": true,
-            "batter_rows": 10,
-            "pitcher_rows": 5,
-            "substitutes": 1
+            "batter_rows": 12,
+            "pitcher_rows": 3,
+            "substitutes": 3
           },
           {
-            "team": "Vanderbilt",
+            "team": "Kennesaw State",
             "nine_starting_slots": true,
-            "batter_rows": 9,
-            "pitcher_rows": 4,
-            "substitutes": 0
+            "batter_rows": 10,
+            "pitcher_rows": 2,
+            "substitutes": 1
           }
         ],
         "official_decisions": {
-          "win": "Jd Thompson",
-          "loss": "Crossland, Cade",
-          "save": null
+          "win": "Whalen, Drew",
+          "loss": "Harry Cain",
+          "save": "Jones, Evan"
         },
         "resolved_pitcher_decisions": {
-          "win": "Jd Thompson",
-          "loss": null,
+          "win": null,
+          "loss": "Harry Cain",
           "save": null
         }
       },
       "pitching_decisions": {
-        "win": "Jd Thompson",
-        "loss": "Cade Crossland",
-        "save": null
+        "win": "Drew Whalen",
+        "loss": "Harry Cain",
+        "save": "Evan Jones"
       }
     }
   ],
@@ -145,11 +145,6 @@
       "game_id": "cb-2025-04-13-stanford-clemson-att0333",
       "source_url": "https://data.clemsontigers.com/Stats/Baseball/2025/cu254131.htm",
       "reason": "Official school boxscore doesn't visibly confirm attendance date"
-    },
-    {
-      "game_id": "cb-2025-03-22-western-kentucky-kennesaw-state-att0325",
-      "source_url": "https://wkusports.com/sports/baseball/stats/2025/kennesaw-state/boxscore/12878",
-      "reason": "Official Win scorer 'Whalen, Drew' not uniquely matched among source pitchers cb-2025-03-22-western-kentucky-kennesaw-state-att0325"
     },
     {
       "game_id": "cb-2025-02-19-north-alabama-auburn-att0306",

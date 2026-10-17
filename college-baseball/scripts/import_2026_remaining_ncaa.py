@@ -246,6 +246,35 @@ def _source_batters(table, valid_players, team, game_id):
         if (game_id=="cb-2025-03-15-virginia-tech-nc-state-att0322"
               and team=="Virginia Tech" and name=="Ethan Gibson"):
             is_sub=True
+        # Explicit source-backed original batting-order substitutions.
+        # NC State 3/15: RF Gilliam enters behind PH Novy (Brayden Fraasman).
+        if (game_id=="cb-2025-03-15-virginia-tech-nc-state-att0322"
+              and team=="NC State" and name=="Jet Gilliam"):
+            is_sub=True
+        # Wake Forest 3/14: Salvino pinch-runs and then plays LF for
+        # PH Costello (who batted for original LF Javar Williams).
+        if (game_id=="cb-2025-03-14-miami-wake-forest-att0321"
+              and team=="Wake Forest" and name=="Mitchell Salvino"):
+            is_sub=True
+        # Bonnies 3/2: catcher Cordeiro replaced PH Mannino, who
+        # batted for original catcher Brian Carrothers.
+        if (game_id=="cb-2025-03-02-st-bonaventure-ut-martin-att0313"
+              and team=="St. Bonaventure" and name=="Antonio Cordeiro"):
+            is_sub=True
+        # ODU 3/2: second baseman Hammond enters for PH Scotty Young
+        # (for Maverick Stallings); third baseman Connors enters for PH
+        # Bryce Jones (for original Tyler Zedalis).
+        if (game_id=="cb-2025-03-02-old-dominion-middle-tennessee-state-att0312"
+              and team=="Old Dominion" and name in ("Tahraun Hammond","Brody Connors")):
+            is_sub=True
+        # MTSU 3/1: 3B Vinson after PH Brady Holloway for Hayden Miller.
+        if (game_id=="cb-2025-03-01-st-bonaventure-middle-tennessee-state-att0311"
+              and team=="Middle Tennessee State" and name=="Cale Vinson"):
+            is_sub=True
+        # ODU 3/1: PR/1B Zedalis for PH Zach Leite for Ryan Thomas.
+        if (game_id=="cb-2025-03-01-ut-martin-old-dominion-att0310"
+              and team=="Old Dominion" and name=="Tyler Zedalis"):
+            is_sub=True
 
         # Source play-by-play corroborates the unindented entries below,
         # whose predecessor already appears in the same batting slot.

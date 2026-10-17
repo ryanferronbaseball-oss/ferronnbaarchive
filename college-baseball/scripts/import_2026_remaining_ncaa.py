@@ -177,9 +177,13 @@ def _source_batters(table, valid_players, team, game_id):
             is_sub=True
         # Oregon May 16: unindented Burke Lee Mabeus follows Jax Gimenez
         # as a defensive replacement; Jeffery Heard follows PH Coen Niclai.
-        if (game_id=="cb-2025-05-16-oregon-iowa-att0348"
+        if (game_id in ("cb-2025-05-16-oregon-iowa-att0348",
+                        "cb-2025-05-17-oregon-iowa-att0349")
               and team=="Oregon"
-              and name in ("Burke Lee Mabeus","Jeffery Heard")):
+              and slug(name)=="burke-lee-mabeus"):
+            is_sub=True
+        if (game_id=="cb-2025-05-16-oregon-iowa-att0348"
+              and team=="Oregon" and slug(name)=="jeffery-heard"):
             is_sub=True
         # Davidson May 10: C Collins follows pinch hitter A Katz;
         # J Daly follows PH L Reeves. Both defensive replacements occur

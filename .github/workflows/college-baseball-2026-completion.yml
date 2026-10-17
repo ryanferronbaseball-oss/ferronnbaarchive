@@ -57,6 +57,7 @@ jobs:
                 len(audit['pending_review']),'source reviews')
           PY
       - name: Commit audited imports back to the development branch only
+        if: github.event_name == 'workflow_dispatch'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

@@ -65,7 +65,7 @@ function metrics(items){return '<div class="metrics">'+items.map(([name,val])=>'
 function pending(message){return '<div class="cb-empty">'+esc(message)+'</div>'}
 function score(g){return g.away_score==null||g.home_score==null?"Score pending":fmt(g.away_score)+" – "+fmt(g.home_score)}
 function gameLabel(g){return g.away+" @ "+g.home}
-function sourceLabel(g){return g.verification==="official_boxscore_verified"?"Official box score verified":g.away_score!=null?"Score from attendance list · source check pending":"Attendance logged · box score pending"}
+function sourceLabel(g){return g.verification==="official_boxscore_verified"?"Official player box score verified":g.verification==="official_scoreboard_verified"?"Official score & innings verified · player stats pending":g.away_score!=null?"Score from attendance list · source check pending":"Attendance logged · box score pending"}
 function gameName(g){return '<a href="'+gameUrl(g)+'">'+esc(date(g.date))+" · "+esc(gameLabel(g))+'</a>'}
 function gameCard(g){
  return '<article class="cb-game-card"><div class="cb-card-meta">'+esc(date(g.date))+(g.game_number?' · Game '+g.game_number:'')+'</div>'
@@ -113,12 +113,12 @@ function renderGames(d){
   if(!g){$("cb-game-details").innerHTML=pending(d.games.length?"Select a game above to open its score and verified player box score.":"No college baseball games imported yet.");return}
   const source=link(g.source_url),players=d.rows.filter(x=>x.game_id===g.id);
   const innings=Array.isArray(g.innings)&&g.innings.length?renderInnings(g):"";
-  const box=players.length?renderBox(g,players):pending("Official college player box score not yet imported for this attended game. No batting or pitching lines have been fabricated.");
+  const box=players.length?renderBox(g,players):pending(g.verification==="official_scoreboard_verified"?"The official final score, inning line and pitching decisions are verified. Complete individual batting and pitching box score import remains pending.":"Official college player box score not yet imported for this attended game. No batting or pitching lines have been fabricated.");
   $("cb-game-details").innerHTML='<section class="cb-game-summary"><div class="cb-card-meta">'+esc(date(g.date))+(g.game_number?' · Doubleheader game '+g.game_number:'')+'</div><h2>'+esc(gameLabel(g))+'</h2>'
   +'<div class="cb-score">'+esc(score(g))+'</div><span class="cb-chip '+(g.verification==="official_boxscore_verified"?"":"pending")+'">'+esc(sourceLabel(g))+'</span>'
   +'<p class="cb-card-meta">'+esc(g.ballpark||"Ballpark pending")+(g.city?' · '+esc(g.city):"")+(g.state?', '+esc(g.state):"")+(g.neutral_site===true?' · Neutral site':'')+(g.postseason_round?' · '+esc(g.postseason_round):"")+'</p>'
   +(source?'<a href="'+esc(source)+'" target="_blank" rel="noopener noreferrer" class="cb-link">Game source ↗</a>':"")
-  +'</section>'+innings+'<div class="section-heading"><h2>Player box score</h2></div>'+box;
+  +'</section>'+innings+(g.pitching_decisions?'<div class="panel"><h2>Official pitching decisions</h2><p class="cb-sub">W: '+esc(g.pitching_decisions.winner||"—")+' · L: '+esc(g.pitching_decisions.loser||"—")+(g.pitching_decisions.save?' · SV: '+esc(g.pitching_decisions.save):'')+'</p></div>':'')+'<div class="section-heading"><h2>Player box score</h2></div>'+box;
  };
  picker.addEventListener("change",()=>{if(picker.value)history.replaceState(null,"","?id="+encodeURIComponent(picker.value));else history.replaceState(null,"",location.pathname);showGame()});
  const draw=()=>{

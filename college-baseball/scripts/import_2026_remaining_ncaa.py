@@ -345,6 +345,12 @@ def _source_batters(table, valid_players, team, game_id):
                 {"Cameron Nelson", "Jacob Burley"},
             ("cb-2024-05-21-miami-louisville-att0277", "Louisville"):
                 {"Lucas Moore", "Brandon Anderson"},
+            # May 1 Campbell–Liberty official player table explicitly
+            # lists Dalen Thompson as PH after starter Grant Knipp and
+            # PR Josh Foulks. The Sidearm PH label occurs in Pos, not in
+            # the cell/class scanned for the substitution indentation.
+            ("cb-2024-05-01-campbell-liberty-att0274", "Campbell"):
+                {"Dalen Thompson"},
         }
         if name in source_2024_unindented.get((game_id, team), set()):
             is_sub = True

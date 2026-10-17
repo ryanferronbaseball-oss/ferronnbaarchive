@@ -135,6 +135,9 @@ source_replacements = {
     ("cb-2026-05-15-mercer-east-tennessee-state-att0423", "Mercer", "Nathan Rowland"): (3, 1),
     ("cb-2026-05-16-arkansas-kentucky-att0424", "Arkansas", "Alexander Peck"): (8, 1),
     ("cb-2026-05-16-arkansas-kentucky-att0424", "Arkansas", "Maika Niu"): (9, 1),
+    ("cb-2026-05-10-little-rock-ut-martin-att0421", "Little Rock", "Michael O'brien"): (4, 1),
+    ("cb-2026-05-10-little-rock-ut-martin-att0421", "Little Rock", "Austin Coyle"): (6, 1),
+    ("cb-2026-05-10-little-rock-ut-martin-att0421", "Little Rock", "Trey Hill"): (8, 1),
 }
 seen_replacements = {}
 for game in committed:
@@ -217,6 +220,8 @@ expected = {
     ("cb-2026-05-15-mercer-east-tennessee-state-att0423", "East Tennessee State"): {"ab": 33, "r": 7, "h": 10, "rbi": 7, "bb": 5, "k": 7},
     ("cb-2026-05-16-arkansas-kentucky-att0424", "Arkansas"): {"ab": 41, "r": 16, "h": 14, "rbi": 14, "bb": 7, "k": 12},
     ("cb-2026-05-16-arkansas-kentucky-att0424", "Kentucky"): {"ab": 44, "r": 12, "h": 17, "rbi": 11, "bb": 3, "k": 10},
+    ("cb-2026-05-10-little-rock-ut-martin-att0421", "Little Rock"): {"ab": 52, "r": 16, "h": 23, "rbi": 16, "bb": 1, "k": 4},
+    ("cb-2026-05-10-little-rock-ut-martin-att0421", "UT Martin"): {"ab": 42, "r": 14, "h": 13, "rbi": 13, "bb": 3, "k": 5},
 }
 
 keys = {"ab": "atBats", "r": "runs", "h": "hits",

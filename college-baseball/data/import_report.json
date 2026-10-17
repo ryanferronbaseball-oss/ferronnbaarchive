@@ -1,5 +1,5 @@
 {
-  "status": "attendance_imported_official_boxscores_pending",
+  "status": "attendance_imported_pilot_scores_verified",
   "scope": "college baseball only; not MLB, MiLB or other college sports",
   "attendance_games": 444,
   "official_boxscores_imported": 0,
@@ -24,7 +24,16 @@
   ],
   "source_duplicate_matchups": 13,
   "review_queue": [
-    "Sheet1 row 444: Auburn at Milwaukee listed May 31, 2026; official Auburn Regional schedule has UCF at Auburn May 31 and Milwaukee at Auburn May 31; June 1 is Milwaukee at Auburn. Confirm whether row 444 is May 31 UCF at Auburn or June 1 Milwaukee at Auburn."
+    "Sheet1 row 444: Auburn at Milwaukee listed May 31, 2026; official Auburn Regional schedule has UCF at Auburn May 31 and Milwaukee at Auburn May 31; June 1 is Milwaukee at Auburn. Confirm whether row 444 is May 31 UCF at Auburn or June 1 Milwaukee at Auburn.",
+    "Sheet1 row 441: NC State at UCF started May 29 but finished May 30 due to suspension; resumed attendance needs confirmation."
   ],
-  "warning": "Scores and player statistics not inferred from attendance sheet. Official box score verification and stadium/date matching pending."
+  "warning": "Five pilot final scores, R/H/E, innings and pitching decisions source-verified. Complete player batting/pitching scorebooks not yet reconciled.",
+  "official_scoreboards_verified": 5,
+  "verified_batches": [
+    {
+      "batch": "2026_auburn_regional_pilot.json",
+      "games": 5,
+      "verification": "scoreboard checked against linked university athletic box scores"
+    }
+  ]
 }

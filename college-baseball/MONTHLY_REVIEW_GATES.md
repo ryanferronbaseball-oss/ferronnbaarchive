@@ -1,12 +1,15 @@
 # College Baseball — Month-by-Month Review Gates
 
-## Approval policy (confirmed October 17, 2026)
+## Approval policy (updated October 17, 2026)
 
-- **Approved active month:** May 2026. Continue source verification and imports for all May attended games without requiring per-game approval.
-- **Next month:** April 2026 — **user-approved October 17, 2026, conditional on May finishing QA.** Finish May's full official player gamebooks, run data and desktop/mobile quality checks, and then begin April without asking again. Present a May completion summary when ready.
-- **March 2026:** user-approved October 17, 2026, conditional on April's player gamebooks and QA reaching the April completion checkpoint. No need to ask again for March.\n- After completing March, request separate explicit approval before beginning **February 2026**, and then **2025** (work backward through 2025).
-- For every month: preserve all original attendance rows; match official scores/innings, hitting/pitching player lines, lineup slots and replacements; verify player IDs; record sources; distinguish complete gamebooks from score-only records; flag ambiguities. Never fabricate missing statistics.
-- Month progression and **publication** are separate approvals. Do not merge the college baseball draft to main merely because an import month is approved.
+- **Approved:** May, April, March, February, and January **2026**. Continue newest-to-oldest after each month's source and integrity checks; do not wait for an additional approval.
+- **Not approved:** 2025 or earlier imports, or publication/merging the draft into `main`.
+- Preserve all 444 original attendance entries, source-match each individual game (including same-day doubleheaders), verify official batting/pitching lines, lineup slots, replacements and team totals. Missing/unreliable records remain attendance-only or score-only without fabricated player statistics.
+- Each month should receive an auditable checkpoint; unresolved historical sources can be listed in a clearly separated review queue rather than silently treated as complete.
+
+## October 17, 2026 — Expanded full-season approval
+
+**User explicitly approved continuing throughout ALL of 2026** in chronological reverse order, including the remainder of March, all of February, and the two January attendance entries. Month-by-month completion and source audits remain required, but **no separate user authorization is needed to cross 2026 month boundaries**. Work on the 2025 season and publication/merging into main are **not approved**. Preserve source-missing or ambiguous games as incomplete and flag them for review instead of inventing stats.
 
 ## May 2026 audit checkpoint
 

@@ -376,11 +376,11 @@ with tempfile.TemporaryDirectory() as t:
                       and "Camden Kuhnke" not in page.locator("#cb-game-details").inner_text(),
                       f"{width} corrected game #444 has official UCF/Auburn, not Milwaukee, player tables")
                 decisions = page.locator("#cb-pitching-decisions")
-                check("W: Alex Petrovic" in decisions.inner_text()
-                      and "L: Roman Kimball" in decisions.inner_text()
-                      and "SV: Ryan Hetzler" in decisions.inner_text()
+                check(decisions.locator('[data-decision="win"] .mlb-decision-name').inner_text() == "Alex Petrovic"
+                      and decisions.locator('[data-decision="loss"] .mlb-decision-name').inner_text() == "Roman Kimball"
+                      and decisions.locator('[data-decision="save"] .mlb-decision-name').inner_text() == "Ryan Hetzler"
                       and decisions.locator('a[href="./player.html?id=cb-auburn-ryan-hetzler"]').count() == 1,
-                      f"{width} May 31 official W/L/S credit correct linked college pitchers")
+                      f"{width} May 31 MLB-style W/L/S cards credit correct linked college pitchers")
                 check([x.inner_text() for x in page.locator('.mlb-team-box[data-side="away"][data-category="batting"] .mlb-order').all()]
                       == ["1", "2", "3", "4", "5", "6", "7", "↳", "8", "9"],
                       f"{width} May 31 UCF lineup numbering matches MLB substitute format")
@@ -392,12 +392,12 @@ with tempfile.TemporaryDirectory() as t:
                 visit(page, host, "game.html?id=cb-2026-05-29-milwaukee-auburn", "#cb-game-details .cb-game-summary")
                 check("13 – 8" in page.locator("#cb-game-details").inner_text()
                       and "Grant Ross" in page.locator("#cb-game-details").inner_text()
-                      and "W: Riley Peterson" in page.locator("#cb-pitching-decisions").inner_text(),
+                      and page.locator('#cb-pitching-decisions [data-decision="win"] .mlb-decision-name').inner_text() == "Riley Peterson",
                       f"{width} May 29 full official Milwaukee-Auburn hitter/pitcher records render")
                 visit(page, host, "game.html?id=cb-2026-05-30-ucf-milwaukee", "#cb-game-details .cb-game-summary")
                 check("6 – 13" in page.locator("#cb-game-details").inner_text()
                       and "Andrew Williamson" in page.locator("#cb-game-details").inner_text()
-                      and "W: Aric Ehmke" in page.locator("#cb-pitching-decisions").inner_text(),
+                      and page.locator('#cb-pitching-decisions [data-decision="win"] .mlb-decision-name').inner_text() == "Aric Ehmke",
                       f"{width} May 30 UCF-Milwaukee full gamebook and linked decision render")
                 visit(page, host, "game.html?id=cb-2026-05-30-auburn-nc-state", "#cb-game-details .cb-game-summary")
                 check(page.locator('.mlb-team-box[data-side="home"] tr[data-player-id="cb-nc-state-christian-serrano"][data-slot="8"][data-sub="1"] .mlb-order').inner_text()=="↳"

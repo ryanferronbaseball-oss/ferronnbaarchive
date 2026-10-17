@@ -1,10 +1,10 @@
 {
-  "status": "six_game_player_boxscore_pilot_complete",
+  "status": "all_attendance_staged_source_verification_in_progress",
   "scope": "college baseball only",
   "uploaded_spreadsheet": "NCAAB Games.xlsx",
   "uploaded_total_attendance_rows": 444,
   "season_span": "2017–2026 after user-confirmed 2024 typo correction",
-  "staged_games": 6,
+  "staged_games": 444,
   "official_score_and_inning_lines_matched": 6,
   "official_player_boxscores_imported": 6,
   "player_stat_rows": 165,
@@ -23,7 +23,7 @@
     "North Carolina State": "NC State",
     "Central Florida": "UCF"
   },
-  "unimported_worksheet_rows": 438,
+  "unimported_worksheet_rows": 0,
   "needs_clarification": [],
   "known_correction": [
     {
@@ -50,7 +50,7 @@
   ],
   "same_day_identical_matchup_pairs_in_full_sheet": 13,
   "metadata_status": "pilot_only_other_attendance_not_imported",
-  "warning": "All six 2026 Auburn Regional gamebooks are now imported and individually checked. Only six of 444 personal attendance games are staged on the draft site; the other 438 are awaiting newest-to-oldest import and must not be treated as fully sourced.",
+  "warning": "All 444 attendance matchups listed. Only individually sourced gamebooks have verified scores and player statistics. Unresolved doubleheaders retain distinct source IDs; original ordering is not taken as official.",
   "resolved_matchups": [
     {
       "attendance_game_number": 443,
@@ -115,5 +115,8 @@
   ],
   "remaining_official_boxscore_work": 0,
   "remaining_attendance_games_not_yet_imported": 438,
-  "validation": "Each of six matchups independently reconciled by team AB/R/H/RBI/BB/SO, pitcher outs/hits/runs/strikeouts, innings line scores and official W/L/S attribution; official gamebooks linked."
+  "validation": "Each of six matchups independently reconciled by team AB/R/H/RBI/BB/SO, pitcher outs/hits/runs/strikeouts, innings line scores and official W/L/S attribution; official gamebooks linked.",
+  "all_attendance_entries_staged": 444,
+  "attendance_only_pending_official_verification": 438,
+  "source": "User workbook; 444 original rows, two user-corrected entries."
 }

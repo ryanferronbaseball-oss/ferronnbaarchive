@@ -5,10 +5,10 @@
   "uploaded_total_attendance_rows": 444,
   "season_span": "2017–2026 after user-confirmed 2024 typo correction",
   "staged_games": 444,
-  "official_score_and_inning_lines_matched": 33,
-  "official_player_boxscores_imported": 33,
-  "player_stat_rows": 940,
-  "unique_player_ids": 588,
+  "official_score_and_inning_lines_matched": 41,
+  "official_player_boxscores_imported": 41,
+  "player_stat_rows": 1175,
+  "unique_player_ids": 724,
   "scores_supplied_by_user": 0,
   "source_docs": "Official Auburn, Arkansas, LSU, Florida, Mississippi State, Tennessee and Texas athletics/conference box scores and university recaps",
   "source_worksheet_rows": [
@@ -58,7 +58,7 @@
   ],
   "same_day_identical_matchup_pairs_in_full_sheet": 13,
   "metadata_status": "full_444_game_attendance_directory_plus_may_2026_official_sources",
-  "warning": "444 attendance entries preserved. May 2026: 27/27 complete; April 2026: 6/14 full player gamebooks, 8 source-located and pending complete player-level validation. March user-approved after April; February/publishing not approved.",
+  "warning": "444 attendance entries preserved. May 2026 and April 2026 complete with source-verified individual gamebooks. March user-approved as next stage; February/2025 and publication still require separate approval.",
   "resolved_matchups": [
     {
       "attendance_game_number": 443,
@@ -137,10 +137,10 @@
   "remaining_attendance_games_not_yet_imported": 0,
   "validation": "May 2026: all 27 official player books mapped to matching attendance games; scores, R/H/E, pitching/team opposing R and H, batting lineup starters checked; new imports have complete official per-inning lines. CI browser test separately tracked.",
   "all_attendance_entries_staged": 444,
-  "attendance_only_pending_official_verification": 411,
+  "attendance_only_pending_official_verification": 403,
   "source": "User workbook; 444 original rows, two user-corrected entries.",
   "official_scoreboard_player_lines_pending": 0,
-  "latest_verified_batch": "April 2026 newest-to-oldest: April 26, 25, 24 (two games), April 11 (both doubleheader games)",
+  "latest_verified_batch": "April 2026 complete: all 14 official attended gamebooks source verified; March 2026 approved and next",
   "latest_verified_batch_games": [
     {
       "worksheet_row": 432,
@@ -295,27 +295,18 @@
     "may_2026": {
       "attended": 27,
       "complete": 27,
-      "status": "player_data_integrity_pass"
+      "status": "PASS"
     },
     "april_2026": {
       "attended": 14,
-      "full_player_gamebooks": 6,
-      "source_queue": "data/2026_april_official_source_queue.json",
-      "status": "in_progress",
-      "remaining": [
-        "cb-2026-04-03-liberty-western-kentucky-att0404",
-        "cb-2026-04-04-missouri-kentucky-att0405",
-        "cb-2026-04-04-austin-peay-eastern-kentucky-att0406",
-        "cb-2026-04-05-lsu-tennessee-att0407",
-        "cb-2026-04-09-oklahoma-vanderbilt-att0408",
-        "cb-2026-04-10-villanova-xavier-att0409",
-        "cb-2026-04-10-baylor-cincinnati-att0410",
-        "cb-2026-04-12-stanford-louisville-att0413"
-      ]
+      "complete": 14,
+      "status": "PASS",
+      "audit_file": "data/2026_april_month_complete_audit.json"
     },
     "march_2026": {
+      "attended": 21,
       "approved": true,
-      "begin_only_after_april_complete": true
+      "status": "ready_to_start"
     },
     "february_2026": {
       "approved": false

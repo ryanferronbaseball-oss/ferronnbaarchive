@@ -6857,22 +6857,79 @@
     "season": 2024,
     "away": "Santa Clara",
     "home": "San Diego",
-    "ballpark": null,
-    "city": null,
-    "state": null,
-    "neutral_site": null,
+    "ballpark": "Fowler Park",
+    "city": "San Diego",
+    "state": "CA",
+    "neutral_site": false,
     "game_number": null,
-    "game_type": null,
+    "game_type": "regular_season",
     "postseason_round": null,
-    "away_score": null,
-    "home_score": null,
-    "score_provenance": null,
-    "source_url": null,
-    "verification": "attendance_only",
-    "official_boxscore_status": "not_imported",
+    "away_score": 0,
+    "home_score": 2,
+    "score_provenance": "official_boxscore",
+    "source_url": "https://usdtoreros.com/sports/baseball/stats/2024/santa-clara/boxscore/14356",
+    "verification": "official_boxscore_verified",
+    "official_boxscore_status": "verified",
     "possible_same_day_doubleheader": false,
     "provisional_worksheet_game_sequence": null,
-    "notes": "Original workbook Sheet1 row 276."
+    "notes": "Original workbook Sheet1 row 276.",
+    "away_hits": 5,
+    "home_hits": 6,
+    "away_errors": 1,
+    "home_errors": 0,
+    "innings": [
+      {
+        "inning": 1,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 2,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 3,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 4,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 5,
+        "away": 0,
+        "home": 1
+      },
+      {
+        "inning": 6,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 7,
+        "away": 0,
+        "home": 1
+      },
+      {
+        "inning": 8,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 9,
+        "away": 0,
+        "home": null
+      }
+    ],
+    "pitching_decisions": {
+      "win": "Logan Reddemann",
+      "loss": "Brandon GOMEZ",
+      "save": "Conner Thurman"
+    },
+    "source_type": "official_university_sidearm_boxscore"
   },
   {
     "id": "cb-2024-05-05-california-southern-california-att0276",
@@ -6882,22 +6939,79 @@
     "season": 2024,
     "away": "California",
     "home": "Southern California",
-    "ballpark": null,
-    "city": null,
-    "state": null,
-    "neutral_site": null,
+    "ballpark": "Great Park",
+    "city": "Irvine",
+    "state": "CA",
+    "neutral_site": false,
     "game_number": null,
-    "game_type": null,
+    "game_type": "regular_season",
     "postseason_round": null,
-    "away_score": null,
-    "home_score": null,
-    "score_provenance": null,
-    "source_url": null,
-    "verification": "attendance_only",
-    "official_boxscore_status": "not_imported",
+    "away_score": 6,
+    "home_score": 3,
+    "score_provenance": "official_boxscore",
+    "source_url": "https://usctrojans.com/sports/baseball/stats/2024/california/boxscore/33804",
+    "verification": "official_boxscore_verified",
+    "official_boxscore_status": "verified",
     "possible_same_day_doubleheader": false,
     "provisional_worksheet_game_sequence": null,
-    "notes": "Original workbook Sheet1 row 277."
+    "notes": "Original workbook Sheet1 row 277.",
+    "away_hits": 5,
+    "home_hits": 5,
+    "away_errors": 0,
+    "home_errors": 2,
+    "innings": [
+      {
+        "inning": 1,
+        "away": 0,
+        "home": 2
+      },
+      {
+        "inning": 2,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 3,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 4,
+        "away": 4,
+        "home": 0
+      },
+      {
+        "inning": 5,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 6,
+        "away": 0,
+        "home": 1
+      },
+      {
+        "inning": 7,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 8,
+        "away": 2,
+        "home": 0
+      },
+      {
+        "inning": 9,
+        "away": 0,
+        "home": 0
+      }
+    ],
+    "pitching_decisions": {
+      "win": "Trey Newmann",
+      "loss": "William Watson",
+      "save": "Tyler Stasiowski"
+    },
+    "source_type": "official_university_sidearm_boxscore"
   },
   {
     "id": "cb-2024-05-21-miami-louisville-att0277",

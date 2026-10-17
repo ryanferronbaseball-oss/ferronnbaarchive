@@ -1,194 +1,194 @@
 {
-  "status": "PASS",
+  "status": "PARTIAL_REVIEW_REQUIRED",
   "approval": "2024–2026 official four-year source backfill; no 2023 or earlier, no release",
   "original_attendance": 444,
   "attendance_2024": 71,
-  "verified_2024_total": 15,
-  "remaining_2024": 56,
+  "verified_2024_total": 17,
+  "remaining_2024": 54,
   "2025_gamebooks_preserved": 69,
   "2026_gamebooks_preserved": 68,
-  "completed_in_this_run": 3,
-  "linked_2024_sources": 15,
+  "completed_in_this_run": 2,
+  "linked_2024_sources": 18,
   "months_verified": {
-    "2024-05": 9,
+    "2024-05": 11,
     "2024-06": 6
   },
   "passed_games": [
     {
-      "game_id": "cb-2024-05-24-louisville-clemson-att0287",
-      "source_url": "https://gocards.com/sports/baseball/stats/2024/clemson/boxscore/25056",
+      "game_id": "cb-2024-05-05-california-southern-california-att0276",
+      "source_url": "https://usctrojans.com/sports/baseball/stats/2024/california/boxscore/33804",
       "score": [
-        7,
-        8
+        6,
+        3
       ],
-      "player_game_rows": 29,
+      "player_game_rows": 26,
       "pitching_decisions": {
-        "win": "Austin Gordon",
-        "loss": "Tucker Biven",
-        "save": null
+        "win": "Trey Newmann",
+        "loss": "William Watson",
+        "save": "Tyler Stasiowski"
       },
       "stat_audit": {
-        "game_id": "cb-2024-05-24-louisville-clemson-att0287",
-        "source": "https://gocards.com/sports/baseball/stats/2024/clemson/boxscore/25056",
+        "game_id": "cb-2024-05-05-california-southern-california-att0276",
+        "source": "https://usctrojans.com/sports/baseball/stats/2024/california/boxscore/33804",
         "http_code": 200,
-        "source_bytes": 1124667,
-        "source_sha256": "94028fecd1a65c554dab7265d7603a02c2e6dd561013b88eb2d0c0a74c81f72e",
+        "source_bytes": 1467184,
+        "source_sha256": "f32a87c44d8ff0c87760c1bc553ab9f7e1fb3ae7ad2223000f7995c2d5a1e2cb",
         "teams": [
           {
-            "name": "Louisville",
-            "batters": 12,
+            "name": "California",
+            "batters": 10,
             "pitchers": 3,
-            "AB": 35,
-            "R": 7,
-            "H": 8,
+            "AB": 32,
+            "R": 6,
+            "H": 5,
             "RBI": 6,
-            "BB": 2,
-            "SO": 6,
-            "pitching_outs": 25,
-            "pitching_runs": 8,
-            "pitching_hits": 14
-          },
-          {
-            "name": "Clemson",
-            "batters": 9,
-            "pitchers": 5,
-            "AB": 38,
-            "R": 8,
-            "H": 14,
-            "RBI": 8,
-            "BB": 3,
+            "BB": 4,
             "SO": 9,
             "pitching_outs": 27,
-            "pitching_runs": 7,
-            "pitching_hits": 8
+            "pitching_runs": 3,
+            "pitching_hits": 5
+          },
+          {
+            "name": "Southern California",
+            "batters": 10,
+            "pitchers": 3,
+            "AB": 30,
+            "R": 3,
+            "H": 5,
+            "RBI": 3,
+            "BB": 5,
+            "SO": 5,
+            "pitching_outs": 27,
+            "pitching_runs": 6,
+            "pitching_hits": 5
           }
         ],
         "source_warnings": [],
-        "player_rows": 29,
+        "player_rows": 26,
         "status": "PASS",
         "scoreboard": [
           {
-            "runs": 7,
-            "hits": 8,
-            "errors": 1,
+            "runs": 6,
+            "hits": 5,
+            "errors": 0,
             "innings": [
-              1,
-              3,
-              1,
-              1,
               0,
               0,
-              1,
               0,
+              4,
+              0,
+              0,
+              0,
+              2,
               0
             ]
           },
           {
-            "runs": 8,
-            "hits": 14,
-            "errors": 1,
+            "runs": 3,
+            "hits": 5,
+            "errors": 2,
             "innings": [
+              2,
+              0,
               0,
               0,
               0,
               1,
               0,
-              3,
               0,
-              3,
-              1
+              0
             ]
           }
         ],
         "lineup_audit": [
           {
-            "team": "Louisville",
+            "team": "California",
             "nine_starting_slots": true,
-            "batter_rows": 12,
+            "batter_rows": 10,
             "pitcher_rows": 3,
-            "substitutes": 3
+            "substitutes": 1
           },
           {
-            "team": "Clemson",
+            "team": "Southern California",
             "nine_starting_slots": true,
-            "batter_rows": 9,
-            "pitcher_rows": 5,
-            "substitutes": 0
+            "batter_rows": 10,
+            "pitcher_rows": 3,
+            "substitutes": 1
           }
         ],
         "official_decisions": {
-          "win": "Austin Gordon",
-          "loss": "Biven, Tucker",
-          "save": null
+          "win": "Newmann,trey",
+          "loss": "Watson, William",
+          "save": "Stasiowski,tyler"
         },
         "resolved_pitcher_decisions": {
-          "win": "Austin Gordon",
+          "win": null,
           "loss": null,
           "save": null
         }
       }
     },
     {
-      "game_id": "cb-2024-05-22-pittsburgh-wake-forest-att0281",
-      "source_url": "https://godeacs.com/sports/baseball/stats/2024/pitt/boxscore/13807",
+      "game_id": "cb-2024-05-04-santa-clara-san-diego-att0275",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2024/santa-clara/boxscore/14356",
       "score": [
-        1,
-        8
+        0,
+        2
       ],
-      "player_game_rows": 36,
+      "player_game_rows": 23,
       "pitching_decisions": {
-        "win": "Zach Johnston",
-        "loss": "Aidan Coleman",
-        "save": null
+        "win": "Logan Reddemann",
+        "loss": "Brandon GOMEZ",
+        "save": "Conner Thurman"
       },
       "stat_audit": {
-        "game_id": "cb-2024-05-22-pittsburgh-wake-forest-att0281",
-        "source": "https://godeacs.com/sports/baseball/stats/2024/pitt/boxscore/13807",
+        "game_id": "cb-2024-05-04-santa-clara-san-diego-att0275",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2024/santa-clara/boxscore/14356",
         "http_code": 200,
-        "source_bytes": 927051,
-        "source_sha256": "08098b1b883ac23577a2f59f62ba606864a3e5eb36187854d21ae861f43bb0ae",
+        "source_bytes": 615051,
+        "source_sha256": "30c4815e7ce25e7218e7d255ad72f5d8ee9de451dbf00e52ee18e4f479af6ead",
         "teams": [
           {
-            "name": "Pittsburgh",
-            "batters": 10,
-            "pitchers": 5,
-            "AB": 31,
-            "R": 1,
+            "name": "Santa Clara",
+            "batters": 11,
+            "pitchers": 1,
+            "AB": 32,
+            "R": 0,
             "H": 5,
-            "RBI": 1,
-            "BB": 4,
-            "SO": 14,
+            "RBI": 0,
+            "BB": 3,
+            "SO": 9,
             "pitching_outs": 24,
-            "pitching_runs": 8,
-            "pitching_hits": 8
+            "pitching_runs": 2,
+            "pitching_hits": 6
           },
           {
-            "name": "Wake Forest",
-            "batters": 14,
-            "pitchers": 7,
-            "AB": 31,
-            "R": 8,
-            "H": 8,
-            "RBI": 8,
-            "BB": 7,
-            "SO": 12,
+            "name": "San Diego",
+            "batters": 9,
+            "pitchers": 2,
+            "AB": 26,
+            "R": 2,
+            "H": 6,
+            "RBI": 2,
+            "BB": 1,
+            "SO": 4,
             "pitching_outs": 27,
-            "pitching_runs": 1,
+            "pitching_runs": 0,
             "pitching_hits": 5
           }
         ],
         "source_warnings": [],
-        "player_rows": 36,
+        "player_rows": 23,
         "status": "PASS",
         "scoreboard": [
           {
-            "runs": 1,
+            "runs": 0,
             "hits": 5,
-            "errors": 0,
+            "errors": 1,
             "innings": [
               0,
               0,
-              1,
+              0,
               0,
               0,
               0,
@@ -198,16 +198,16 @@
             ]
           },
           {
-            "runs": 8,
-            "hits": 8,
+            "runs": 2,
+            "hits": 6,
             "errors": 0,
             "innings": [
-              2,
-              3,
+              0,
+              0,
               0,
               0,
               1,
-              1,
+              0,
               1,
               0,
               null
@@ -216,146 +216,38 @@
         ],
         "lineup_audit": [
           {
-            "team": "Pittsburgh",
+            "team": "Santa Clara",
             "nine_starting_slots": true,
-            "batter_rows": 10,
-            "pitcher_rows": 5,
-            "substitutes": 1
+            "batter_rows": 11,
+            "pitcher_rows": 1,
+            "substitutes": 2
           },
           {
-            "team": "Wake Forest",
-            "nine_starting_slots": true,
-            "batter_rows": 14,
-            "pitcher_rows": 7,
-            "substitutes": 5
-          }
-        ],
-        "official_decisions": {
-          "win": "Johnston, Zach",
-          "loss": "Aidan Coleman",
-          "save": null
-        },
-        "resolved_pitcher_decisions": {
-          "win": null,
-          "loss": "Aidan Coleman",
-          "save": null
-        }
-      }
-    },
-    {
-      "game_id": "cb-2024-05-21-miami-louisville-att0277",
-      "source_url": "https://gocards.com/sports/baseball/stats/2024/miami/boxscore/25055",
-      "score": [
-        8,
-        5
-      ],
-      "player_game_rows": 28,
-      "pitching_decisions": {
-        "win": "Rafe Schlesinger",
-        "loss": "Evan Webster",
-        "save": "Myles Caba"
-      },
-      "stat_audit": {
-        "game_id": "cb-2024-05-21-miami-louisville-att0277",
-        "source": "https://gocards.com/sports/baseball/stats/2024/miami/boxscore/25055",
-        "http_code": 200,
-        "source_bytes": 1111335,
-        "source_sha256": "0092ca556c12b4df10539611b9a6bb38f5de54a4f45fa0c4c41df630d363f1cb",
-        "teams": [
-          {
-            "name": "Miami",
-            "batters": 9,
-            "pitchers": 2,
-            "AB": 35,
-            "R": 8,
-            "H": 12,
-            "RBI": 8,
-            "BB": 6,
-            "SO": 11,
-            "pitching_outs": 27,
-            "pitching_runs": 5,
-            "pitching_hits": 11
-          },
-          {
-            "name": "Louisville",
-            "batters": 13,
-            "pitchers": 4,
-            "AB": 36,
-            "R": 5,
-            "H": 11,
-            "RBI": 5,
-            "BB": 1,
-            "SO": 10,
-            "pitching_outs": 27,
-            "pitching_runs": 8,
-            "pitching_hits": 12
-          }
-        ],
-        "source_warnings": [],
-        "player_rows": 28,
-        "status": "PASS",
-        "scoreboard": [
-          {
-            "runs": 8,
-            "hits": 12,
-            "errors": 0,
-            "innings": [
-              3,
-              0,
-              0,
-              0,
-              0,
-              2,
-              3,
-              0,
-              0
-            ]
-          },
-          {
-            "runs": 5,
-            "hits": 11,
-            "errors": 0,
-            "innings": [
-              0,
-              0,
-              1,
-              0,
-              1,
-              1,
-              0,
-              0,
-              2
-            ]
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "Miami",
+            "team": "San Diego",
             "nine_starting_slots": true,
             "batter_rows": 9,
             "pitcher_rows": 2,
             "substitutes": 0
-          },
-          {
-            "team": "Louisville",
-            "nine_starting_slots": true,
-            "batter_rows": 13,
-            "pitcher_rows": 4,
-            "substitutes": 4
           }
         ],
         "official_decisions": {
-          "win": "Rafe Schlesinger",
-          "loss": "Webster, Evan",
-          "save": "Myles Caba"
+          "win": "Reddemann, Logan",
+          "loss": "GOMEZ, Brandon",
+          "save": "Thurman, Conner"
         },
         "resolved_pitcher_decisions": {
-          "win": "Rafe Schlesinger",
+          "win": null,
           "loss": null,
-          "save": "Myles Caba"
+          "save": null
         }
       }
     }
   ],
-  "pending_review": []
+  "pending_review": [
+    {
+      "game_id": "cb-2024-05-01-campbell-liberty-att0274",
+      "source_url": "https://libertyflames.com/sports/baseball/stats/2024/campbell/boxscore/13445",
+      "reason": "Campbell: source batting order resolved to 10 starting slots, not 9"
+    }
+  ]
 }

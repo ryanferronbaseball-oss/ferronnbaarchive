@@ -92,7 +92,7 @@ def run():
     out = {"metadata":{"scope":"pilot","coverage":"imported games only",
                        "not_complete_attendance_leaderboards":True,
                        "historical_pitch_speed_caution":"Measurement systems vary across eras"},
-           "report":report,"highlights":highlights,"leaders":leaders}
+           "report":report,"events":events,"highlights":highlights,"leaders":leaders}
     path = DATA / "statcast_pilot.json"
     path.write_text(json.dumps(out,indent=2,allow_nan=False)+"\n")
     print(json.dumps(report,indent=2))

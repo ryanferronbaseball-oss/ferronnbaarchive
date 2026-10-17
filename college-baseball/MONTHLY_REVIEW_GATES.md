@@ -1,5 +1,13 @@
 # College Baseball — Month-by-Month Review Gates
 
+## October 17, 2026 — 2024 university source import gate: 27/71
+
+Latest verified checkpoint: **2024 27/71**, **2025 69/74**, **2026 68/68**; across 2024–26 **164** verified gamebooks with **4,827** player-game records. All 444 original attendance records retained, and seven known 2026 JUCO games excluded from stats.
+
+2024 monthly completion: June **6/6**, May **12/16**, April **4/7**, March **5/25**, February **0/17**. First **27/27 identified official university HTML scorebooks fully reconciled**, including NCAA Division II; all remaining **44** attendance records are unsourced or awaiting official identification. No unverified player statistics were added. See `data/2024_monthly_progress_audit.json`, `data/2024_official_source_queue.json`, and `data/2024_source_import_audit.json`.
+
+The potential May 23 vs May 24 Florida State–Virginia original-workbook date error, March 23 Vanderbilt–South Carolina doubleheader ordering, and March 30 South Alabama–Old Dominion known date correction are source-review flags, **not** approvals for changing original 444 attendance IDs. 2023 and earlier and publication remain unapproved.
+
 ## October 17, 2026 — Entire 2024 season authorized
 
 **User explicitly approved moving to 2024** after the 2025 backfill reached 69/74 verified gamebooks. The new authorized boundary is **2024–2026 only**. Continue source-backed 2025 fixes as needed; beginning 2024 does **not** silently mean the remaining 2025 source exceptions are complete.

@@ -63,7 +63,17 @@ attended = load_csv(SITE / "data" / "attendance.csv")
 committed = json.loads((SITE / "data" / "games.json").read_text())
 pilot_rows = json.loads((SITE / "data" / "player_stats.json").read_text())
 pilot_report = json.loads((SITE / "data" / "import_report.json").read_text())
-check(len(attended) == len(committed) == 6, "Six attended regional contests staged including corrected game #444")
+check(len(attended) == 6 and len(committed) == 444, "All 444 attendance entries staged with 6 verified initial Regional gamebooks")
+check(len({g["source_worksheet_row"] for g in committed}) == 444,
+      "Unique workbook source rows preserved for every attended contest")
+check(len([g for g in committed if g["verification"] == "attendance_only"]) == 438,
+      "No fabricated scores or player rows for 438 pending gamebooks")
+check(all(g["away_score"] is None and g["home_score"] is None
+          and g["game_number"] is None for g in committed
+          if g["verification"] == "attendance_only"),
+      "Attendance-only entries keep scores and doubleheader numbering unknown until confirmed")
+check(any(g["possible_same_day_doubleheader"] for g in committed if g["verification"] == "attendance_only"),
+      "Ambiguous same-day repeat matchups preserved for later doubleheader reconciliation")
 check(len(pilot_rows) == 165 and len({r["player_id"] for r in pilot_rows}) == 86,
       "Six official college baseball scorebooks produce 165 audited rows for 86 athletes")
 check(len([g for g in committed if g["verification"] == "official_boxscore_verified"]) == 6,
@@ -73,7 +83,7 @@ check(not any(g["verification"] == "source_matched" for g in committed),
 check(all(g["source_url"] and
           sum(x["away"] or 0 for x in g["innings"]) == g["away_score"] and
           sum(x["home"] or 0 for x in g["innings"]) == g["home_score"]
-          for g in committed),
+          for g in committed if g["verification"] == "official_boxscore_verified"),
       "Every pilot game has source-backed innings reconciling to final")
 check({g["id"] for g in committed if g["verification"] == "official_boxscore_verified"} ==
       {r["game_id"] for r in pilot_rows},
@@ -93,6 +103,8 @@ source_replacements = {
 }
 seen_replacements = {}
 for game in committed:
+    if game["verification"] != "official_boxscore_verified":
+        continue
     for team in (game["away"], game["home"]):
         lineup = [r for r in pilot_rows if r["game_id"] == game["id"]
                   and r["team"] == team and "batting" in r]
@@ -173,8 +185,9 @@ for game in committed:
               "Pitching " + field + " match source gamebook and player for " + game["id"])
 
 check(pilot_report["uploaded_total_attendance_rows"] == 444 and
-      pilot_report["unimported_worksheet_rows"] == 438,
-      "All 444 attendance entries accounted for; 6 staged with 438 not yet imported")
+      pilot_report["unimported_worksheet_rows"] == 0 and
+      pilot_report["attendance_only_pending_official_verification"] == 438,
+      "All 444 attendance entries staged; 6 verified and 438 held attendance-only")
 check(pilot_report["known_correction"][0]["confirmed_date"] == "2024-03-30",
       "South Alabama/Old Dominion correction recorded for upcoming bulk import")
 check(pilot_report["known_correction"][1]["attendance_game_number"] == 444 and
@@ -363,9 +376,9 @@ with tempfile.TemporaryDirectory() as t:
                 page = browser.new_page(viewport={"width": width, "height": 900})
                 page.on("pageerror", lambda e: errors.append(str(e)))
                 visit(page, host, "index.html", ".metrics")
-                page.wait_for_function("document.querySelector('.metrics .metric strong').innerText==='6'")
+                page.wait_for_function("document.querySelector('.metrics .metric strong').innerText==='444'")
                 check(page.locator(".cb-game-card").count() >= 6,
-                      f"{width} actual six attended regional games render")
+                      f"{width} actual 444-game attendance summary and six newest sourced games render")
                 page.screenshot(path=str(REVIEW / f"overview-{width}.png"), full_page=True)
                 visit(page, host, "game.html?id=cb-2026-05-31-ucf-auburn", "#cb-game-details .cb-game-summary")
                 check("UCF @ Auburn" in page.locator("#cb-game-details").inner_text()
@@ -440,8 +453,8 @@ with tempfile.TemporaryDirectory() as t:
             check(not errors, "Full real-source pilot also has zero browser JavaScript errors")
             browser.close()
             (REVIEW / "manifest.json").write_text(json.dumps({
-                "scope": "Draft only; six source-verified college baseball games from the Auburn Regional",
-                "games": 6, "player_game_rows": 165, "unique_players": 86,
+                "scope": "Draft only; all 444 attended college baseball games with six source-verified Auburn Regional gamebooks",
+                "games": 444, "verified_gamebooks": 6, "attendance_only": 438, "player_game_rows": 165, "unique_players": 86,
                 "browser_viewports": [1280, 390],
                 "screenshots": sorted(p.name for p in REVIEW.glob("*.png")),
                 "live_site_modified": False,

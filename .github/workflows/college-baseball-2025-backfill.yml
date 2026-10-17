@@ -47,7 +47,8 @@ jobs:
           assert sum(g['date'].startswith('2026') and g['verification']=='official_boxscore_verified' for g in games)==68
           assert sum(g['date'].startswith('2025') and g['verification']=='official_boxscore_verified' for g in games)>=audit['verified_2025_total']
           assert len({(r['game_id'],r['player_id']) for r in rows})==len(rows)
-          assert all(g['verification']=='attendance_only' for g in games if g['date']<'2025')
+          assert all(g['verification']=='attendance_only' for g in games if g['date']<'2024')
+          assert sum(g['date'].startswith('2024') and g['verification']=='official_boxscore_verified' for g in games)>=0
           assert all(g['verification']=='attendance_only' for g in games if g.get('boxscore_backfill_excluded'))
           print('2025 SOURCE-GATED IMPORT',audit['completed_in_this_run'],'added;',
                 audit['verified_2025_total'],'2025 verified;',

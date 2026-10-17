@@ -162,7 +162,7 @@ def main():
                 for surname,full_name in official_pitchers.items():
                     hits=[p for p in rows if p["team"]=="Western Kentucky"
                         and "pitching" in p and
-                        p["player"].lower().replace(","," ").split()[0]==surname]
+                        surname in re.findall(r"[a-z]+",p["player"].lower())]
                     if len(hits)!=1:
                         raise ValueError("WKU abbreviated source pitcher ambiguous: "+surname)
                     row=hits[0];old=row["player_id"]

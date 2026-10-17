@@ -62,8 +62,18 @@ committed = json.loads((SITE / "data" / "games.json").read_text())
 check(len(attended) == len(committed) == 444, "All 444 user-supplied college baseball games preserved")
 check({g["id"] for g in attended} == {g["id"] for g in committed},
       "Official site attendance identities match normalized uploaded spreadsheet")
-check(all(g["verification"] == "attendance_only" for g in committed),
-      "No submitted college games falsely treated as officially verified")
+check(len([g for g in committed if g["verification"] == "attendance_only"]) == 439,
+      "439 nonpilot attendance entries remain unverified with no fictional box scores")
+check(len([g for g in committed if g["verification"] == "official_scoreboard_verified"]) == 5,
+      "Five source-verified NCAA Auburn Regional line scores integrated")
+check(all(g["source_url"] and g["pitching_decisions"]["winner"]
+          and sum(x["away"] or 0 for x in g["innings"]) == g["away_score"]
+          and sum(x["home"] or 0 for x in g["innings"]) == g["home_score"]
+          for g in committed if g["verification"] == "official_scoreboard_verified"),
+      "Five pilot game innings and pitching decisions reconcile to official source scores")
+check(all(g["official_boxscore_status"] == "player_stats_pending"
+          for g in committed if g["verification"] == "official_scoreboard_verified"),
+      "Source-verified scoreboard never falsely claims complete player gamebooks")
 check(sum(g["game_number"] is not None for g in committed) == 26,
       "Thirteen same-day doubleheader pairs remain 26 distinct entries")
 check(len([g for g in committed if g["date"] == "2024-03-30" and g["away"] == "South Alabama" and g["home"] == "Old Dominion"]) == 1,

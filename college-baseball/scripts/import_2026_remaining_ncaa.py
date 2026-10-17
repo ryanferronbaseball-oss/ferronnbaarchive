@@ -104,7 +104,17 @@ def _source_batters(table, valid_players, team):
             continue
         playercell = cells[name_idx]
         pos = cells[0].get_text(" ", strip=True) if name_idx != 0 else ""
-        name = normalize_name(playercell.get_text(" ", strip=True), pos)
+        source_name = playercell.get_text(" ", strip=True).strip()
+        source_pos = re.match(r"^(ph|pr|c|1b|2b|3b|ss|cf|lf|rf|p|dh)(?:/(?:ph|pr|c|1b|2b|3b|ss|cf|lf|rf|p|dh))*\\s+", source_name, re.I)
+        if source_pos:
+            # Some university scorebooks inline positions in the Player cell.
+            # Pitchers appearing solely for the defensive scorer section do
+            # not constitute a tenth batting-order spot.
+            position_prefix = source_pos.group(0).strip().lower()
+            source_name = source_name[source_pos.end():].strip()
+            if position_prefix == "p":
+                continue
+        name = normalize_name(source_name, pos)
         key = slug(name)
         if key not in valid_players:
             continue
@@ -140,6 +150,7 @@ def _source_batters(table, valid_players, team):
         else:
             slots.append([key])
     if len(slots) != 9:
+        print("SOURCE-ORDER-REVIEW", team, [(k, is_sub) for k,_,is_sub in seen], flush=True)
         raise ValueError(team + ": source batting order resolved to " + str(len(slots)) + " starting slots, not 9")
     return slots
 

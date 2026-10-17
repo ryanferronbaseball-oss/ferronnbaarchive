@@ -89,6 +89,7 @@ def read_pdf():
         raise ValueError("Unexpected gamebook PDF page count")
     content=pdf[0].get_text("text")
     normalized=" ".join(content.split())
+    print("PDF_TEXT_SAMPLE",repr(normalized[:2200]),flush=True)
     # The official scorebook's PDF extractor may insert spaces between
     # comma-separated first/last names. Verify identities as individual
     # source tokens and reconcile all numeric player totals below.

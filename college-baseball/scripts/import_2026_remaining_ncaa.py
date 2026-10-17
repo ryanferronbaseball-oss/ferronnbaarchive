@@ -378,6 +378,12 @@ def _source_batters(table, valid_players, team, game_id):
         if (game_id=="cb-2024-03-13-rutgers-north-carolina-att0256"
               and team=="Rutgers" and slug(name)=="jd-jones"):
             is_sub = True
+        # UNC March 13: Patrick Alvarez followed Carter French, who
+        # entered LF in place of original Gavin Gallaher. Same sixth slot.
+        if (game_id=="cb-2024-03-13-rutgers-north-carolina-att0256"
+              and team=="North Carolina" and slug(name)=="patrick-alvarez"):
+            is_sub = True
+
         # West Virginia 2024 March 7 official source: C Luke Szepek
         # enters after PR Armani Guzman for Sam White, and PH/DH Michael
         # Perazza follows PH Nick Barone in original DH Aaron Jamison's

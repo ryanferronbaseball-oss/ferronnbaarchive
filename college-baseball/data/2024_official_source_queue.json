@@ -10,7 +10,7 @@
     "2024-02": 17
   },
   "verified_player_gamebooks_at_queue_creation": 0,
-  "official_source_urls_identified": 60,
+  "official_source_urls_identified": 65,
   "source_queue": [
     {
       "game_id": "cb-2024-06-08-florida-clemson-att0295",
@@ -1276,6 +1276,111 @@
       "source_game_id": "9841",
       "official_doubleheader_game": 1,
       "attendance_game_1_user_confirmed": true
+    },
+    {
+      "game_id": "cb-2024-02-24-virginia-iowa-att0237",
+      "worksheet_row": 238,
+      "date": "2024-02-24",
+      "away": "Virginia",
+      "home": "Iowa",
+      "source_url": "https://static.virginiasports.com/custompages/sports/m-basebl/stats/2023-2024/6iowa.htm",
+      "official_score": [
+        12,
+        9
+      ],
+      "ballpark": "Bragan Field",
+      "city": "Jacksonville",
+      "state": "FL",
+      "game_type": "regular_season",
+      "postseason_round": null,
+      "neutral_site": true,
+      "source_type": "official_university_statcrew_html",
+      "verification": "official_full_original_player_boxscore_requires_legacy_parser",
+      "legacy_statcrew_source": true
+    },
+    {
+      "game_id": "cb-2024-02-25-virginia-auburn-att0239",
+      "worksheet_row": 240,
+      "date": "2024-02-25",
+      "away": "Virginia",
+      "home": "Auburn",
+      "source_url": "https://static.virginiasports.com/custompages/sports/m-basebl/stats/2023-2024/7auburn.htm",
+      "official_score": [
+        6,
+        4
+      ],
+      "ballpark": "Bragan Field",
+      "city": "Jacksonville",
+      "state": "FL",
+      "game_type": "regular_season",
+      "postseason_round": null,
+      "neutral_site": true,
+      "source_type": "official_university_statcrew_html",
+      "verification": "official_full_original_player_boxscore_requires_legacy_parser",
+      "legacy_statcrew_source": true
+    },
+    {
+      "game_id": "cb-2024-03-06-virginia-george-washington-att0249",
+      "worksheet_row": 250,
+      "date": "2024-03-06",
+      "away": "Virginia",
+      "home": "George Washington",
+      "source_url": "https://static.virginiasports.com/custompages/sports/m-basebl/stats/2023-2024/13gw.htm",
+      "official_score": [
+        26,
+        12
+      ],
+      "ballpark": "Tucker Field at Barcroft Park",
+      "city": "Arlington",
+      "state": "VA",
+      "game_type": "regular_season",
+      "postseason_round": null,
+      "neutral_site": false,
+      "source_type": "official_university_statcrew_html",
+      "verification": "official_full_original_player_boxscore_requires_legacy_parser",
+      "legacy_statcrew_source": true
+    },
+    {
+      "game_id": "cb-2024-05-22-virginia-georgia-tech-att0280",
+      "worksheet_row": 281,
+      "date": "2024-05-22",
+      "away": "Virginia",
+      "home": "Georgia Tech",
+      "source_url": "https://static.virginiasports.com/custompages/sports/m-basebl/stats/2023-2024/55gt.htm",
+      "official_score": [
+        13,
+        0
+      ],
+      "ballpark": "Truist Field",
+      "city": "Charlotte",
+      "state": "NC",
+      "game_type": "conference_tournament",
+      "postseason_round": "ACC Tournament",
+      "neutral_site": true,
+      "source_type": "official_university_statcrew_html",
+      "verification": "official_full_original_player_boxscore_requires_legacy_parser",
+      "legacy_statcrew_source": true
+    },
+    {
+      "game_id": "cb-2024-05-23-clemson-miami-att0283",
+      "worksheet_row": 284,
+      "date": "2024-05-23",
+      "away": "Clemson",
+      "home": "Miami",
+      "source_url": "https://data.clemsontigers.com/Stats/Baseball/2024/cu245231.htm",
+      "official_score": [
+        7,
+        8
+      ],
+      "ballpark": "Truist Field",
+      "city": "Charlotte",
+      "state": "NC",
+      "game_type": "conference_tournament",
+      "postseason_round": "ACC Tournament",
+      "neutral_site": true,
+      "source_type": "official_university_statcrew_html",
+      "verification": "official_full_original_player_boxscore_requires_legacy_parser",
+      "legacy_statcrew_source": true
     }
   ],
   "manual_review_flags": [
@@ -1293,7 +1398,7 @@
     "Preserve all verified 2025/2026 players, gamebook metadata, and their audits",
     "Do not publish/merge; 2023 and earlier are not authorized"
   ],
-  "new_2024_official_gamebooks_for_strict_import": 33,
+  "new_2024_official_gamebooks_for_strict_import": 65,
   "pending_identity_review_rows": [
     261,
     262

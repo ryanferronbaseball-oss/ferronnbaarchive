@@ -1,124 +1,353 @@
 {
-  "status": "PASS",
+  "status": "PARTIAL_REVIEW_REQUIRED",
   "approval": "2024–2026 official four-year source backfill; no 2023 or earlier, no release",
   "original_attendance": 444,
   "attendance_2024": 71,
-  "verified_2024_total": 18,
-  "remaining_2024": 53,
+  "verified_2024_total": 21,
+  "remaining_2024": 50,
   "2025_gamebooks_preserved": 69,
   "2026_gamebooks_preserved": 68,
-  "completed_in_this_run": 1,
-  "linked_2024_sources": 18,
+  "completed_in_this_run": 3,
+  "linked_2024_sources": 22,
   "months_verified": {
+    "2024-04": 3,
     "2024-05": 12,
     "2024-06": 6
   },
   "passed_games": [
     {
-      "game_id": "cb-2024-05-01-campbell-liberty-att0274",
-      "source_url": "https://libertyflames.com/sports/baseball/stats/2024/campbell/boxscore/13445",
+      "game_id": "cb-2024-04-28-st-louis-george-washington-att0273",
+      "source_url": "https://gwsports.com/sports/baseball/stats/2024/saint-louis/boxscore/14475",
       "score": [
-        9,
-        14
+        4,
+        2
       ],
-      "player_game_rows": 34,
+      "player_game_rows": 27,
       "pitching_decisions": {
-        "win": "Trey Cooper",
-        "loss": "David Rossow",
-        "save": null
+        "win": "Owen Kelly",
+        "loss": "Jarrett Korson",
+        "save": "Evan Gray"
       },
       "stat_audit": {
-        "game_id": "cb-2024-05-01-campbell-liberty-att0274",
-        "source": "https://libertyflames.com/sports/baseball/stats/2024/campbell/boxscore/13445",
+        "game_id": "cb-2024-04-28-st-louis-george-washington-att0273",
+        "source": "https://gwsports.com/sports/baseball/stats/2024/saint-louis/boxscore/14475",
         "http_code": 200,
-        "source_bytes": 1504735,
-        "source_sha256": "ab99ad219e341828793d9ca12b3b1aa03720d8e10aaa909a589aabf6db54f37f",
+        "source_bytes": 1144774,
+        "source_sha256": "ad961dd15543b1fc74f1b8fbee1df992ed4e5d36874d3b9f763051fff1b84bb4",
         "teams": [
           {
-            "name": "Campbell",
-            "batters": 11,
-            "pitchers": 6,
-            "AB": 39,
-            "R": 9,
-            "H": 12,
-            "RBI": 9,
-            "BB": 7,
-            "SO": 8,
-            "pitching_outs": 24,
-            "pitching_runs": 14,
-            "pitching_hits": 10
+            "name": "St. Louis",
+            "batters": 9,
+            "pitchers": 3,
+            "AB": 35,
+            "R": 4,
+            "H": 9,
+            "RBI": 4,
+            "BB": 4,
+            "SO": 6,
+            "pitching_outs": 27,
+            "pitching_runs": 2,
+            "pitching_hits": 6
           },
           {
-            "name": "Liberty",
+            "name": "George Washington",
             "batters": 10,
-            "pitchers": 7,
+            "pitchers": 5,
             "AB": 33,
-            "R": 14,
-            "H": 10,
-            "RBI": 11,
-            "BB": 15,
+            "R": 2,
+            "H": 6,
+            "RBI": 1,
+            "BB": 0,
             "SO": 9,
             "pitching_outs": 27,
-            "pitching_runs": 9,
-            "pitching_hits": 12
+            "pitching_runs": 4,
+            "pitching_hits": 9
           }
         ],
         "source_warnings": [],
-        "player_rows": 34,
+        "player_rows": 27,
         "status": "PASS",
         "scoreboard": [
           {
-            "runs": 9,
-            "hits": 12,
-            "errors": 1,
+            "runs": 4,
+            "hits": 9,
+            "errors": 3,
             "innings": [
+              0,
+              0,
               2,
-              0,
               1,
               0,
               1,
               0,
               0,
-              4,
-              1
+              0
             ]
           },
           {
-            "runs": 14,
-            "hits": 10,
-            "errors": 2,
+            "runs": 2,
+            "hits": 6,
+            "errors": 1,
             "innings": [
-              5,
               1,
+              0,
+              0,
               1,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "St. Louis",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 3,
+            "substitutes": 0
+          },
+          {
+            "team": "George Washington",
+            "nine_starting_slots": true,
+            "batter_rows": 10,
+            "pitcher_rows": 5,
+            "substitutes": 1
+          }
+        ],
+        "official_decisions": {
+          "win": "Owen Kelly",
+          "loss": "Korson, Jarrett",
+          "save": "Evan Gray"
+        },
+        "resolved_pitcher_decisions": {
+          "win": "Owen Kelly",
+          "loss": null,
+          "save": "Evan Gray"
+        }
+      }
+    },
+    {
+      "game_id": "cb-2024-04-26-baylor-west-virginia-att0271",
+      "source_url": "https://wvusports.com/sports/baseball/stats/2024/baylor/boxscore/20196",
+      "score": [
+        5,
+        18
+      ],
+      "player_game_rows": 37,
+      "pitching_decisions": {
+        "win": "Tyler Switalski",
+        "loss": "Mason Marriott",
+        "save": null
+      },
+      "stat_audit": {
+        "game_id": "cb-2024-04-26-baylor-west-virginia-att0271",
+        "source": "https://wvusports.com/sports/baseball/stats/2024/baylor/boxscore/20196",
+        "http_code": 200,
+        "source_bytes": 1562016,
+        "source_sha256": "6d732b55c1b6505e62ddd30e5a262194fffeb73c46d5ebda79f3d725af279ce6",
+        "teams": [
+          {
+            "name": "Baylor",
+            "batters": 15,
+            "pitchers": 4,
+            "AB": 35,
+            "R": 5,
+            "H": 8,
+            "RBI": 5,
+            "BB": 3,
+            "SO": 11,
+            "pitching_outs": 24,
+            "pitching_runs": 18,
+            "pitching_hits": 12
+          },
+          {
+            "name": "West Virginia",
+            "batters": 14,
+            "pitchers": 4,
+            "AB": 34,
+            "R": 18,
+            "H": 12,
+            "RBI": 17,
+            "BB": 4,
+            "SO": 9,
+            "pitching_outs": 27,
+            "pitching_runs": 5,
+            "pitching_hits": 8
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 37,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 5,
+            "hits": 8,
+            "errors": 4,
+            "innings": [
+              2,
+              0,
               2,
               0,
               1,
-              3,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 18,
+            "hits": 12,
+            "errors": 1,
+            "innings": [
+              4,
+              6,
+              2,
               1,
+              0,
+              0,
+              5,
+              0,
               null
             ]
           }
         ],
         "lineup_audit": [
           {
-            "team": "Campbell",
+            "team": "Baylor",
             "nine_starting_slots": true,
-            "batter_rows": 11,
-            "pitcher_rows": 6,
-            "substitutes": 2
+            "batter_rows": 15,
+            "pitcher_rows": 4,
+            "substitutes": 6
           },
           {
-            "team": "Liberty",
+            "team": "West Virginia",
             "nine_starting_slots": true,
-            "batter_rows": 10,
-            "pitcher_rows": 7,
-            "substitutes": 1
+            "batter_rows": 14,
+            "pitcher_rows": 4,
+            "substitutes": 5
           }
         ],
         "official_decisions": {
-          "win": "Cooper, Trey",
-          "loss": "Rossow, David",
+          "win": "Switalski, Tyler",
+          "loss": "Marriott, Mason",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2024-04-02-coastal-carolina-unc-wilmington-att0267",
+      "source_url": "https://uncwsports.com/sports/baseball/stats/2024/coastal-carolina/boxscore/10224",
+      "score": [
+        4,
+        6
+      ],
+      "player_game_rows": 31,
+      "pitching_decisions": {
+        "win": "Luke Craig",
+        "loss": "Josh O'Neill",
+        "save": null
+      },
+      "stat_audit": {
+        "game_id": "cb-2024-04-02-coastal-carolina-unc-wilmington-att0267",
+        "source": "https://uncwsports.com/sports/baseball/stats/2024/coastal-carolina/boxscore/10224",
+        "http_code": 200,
+        "source_bytes": 1403219,
+        "source_sha256": "354b3a9fcaf795ccf981ffbc43d2e2abaf534b2844e3a1b3073d739d48fff58b",
+        "teams": [
+          {
+            "name": "Coastal Carolina",
+            "batters": 10,
+            "pitchers": 6,
+            "AB": 37,
+            "R": 4,
+            "H": 11,
+            "RBI": 4,
+            "BB": 1,
+            "SO": 16,
+            "pitching_outs": 24,
+            "pitching_runs": 6,
+            "pitching_hits": 7
+          },
+          {
+            "name": "UNC Wilmington",
+            "batters": 11,
+            "pitchers": 4,
+            "AB": 29,
+            "R": 6,
+            "H": 7,
+            "RBI": 5,
+            "BB": 2,
+            "SO": 8,
+            "pitching_outs": 27,
+            "pitching_runs": 4,
+            "pitching_hits": 11
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 31,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 4,
+            "hits": 11,
+            "errors": 2,
+            "innings": [
+              1,
+              0,
+              0,
+              0,
+              1,
+              2,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 6,
+            "hits": 7,
+            "errors": 0,
+            "innings": [
+              0,
+              1,
+              2,
+              1,
+              0,
+              0,
+              2,
+              0,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Coastal Carolina",
+            "nine_starting_slots": true,
+            "batter_rows": 10,
+            "pitcher_rows": 6,
+            "substitutes": 1
+          },
+          {
+            "team": "UNC Wilmington",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 4,
+            "substitutes": 2
+          }
+        ],
+        "official_decisions": {
+          "win": "Craig, Luke",
+          "loss": "O'Neill, Josh",
           "save": null
         },
         "resolved_pitcher_decisions": {
@@ -129,5 +358,11 @@
       }
     }
   ],
-  "pending_review": []
+  "pending_review": [
+    {
+      "game_id": "cb-2024-04-27-baylor-west-virginia-att0272",
+      "source_url": "https://wvusports.com/sports/baseball/stats/2024/baylor/boxscore/20197",
+      "reason": "West Virginia: source batting order resolved to 10 starting slots, not 9"
+    }
+  ]
 }

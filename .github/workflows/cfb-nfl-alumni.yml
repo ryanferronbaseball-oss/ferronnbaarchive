@@ -1,0 +1,41 @@
+name: College Football → NFL Alumni QA
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "cfb/data/nfl_crosswalk.json"
+      - "cfb/data/player_stats.json"
+      - "cfb/data/games.json"
+      - "cfb/nfl-alumni.html"
+      - "cfb/assets/archive.js"
+      - "cfb/scripts/test_nfl_alumni.py"
+      - ".github/workflows/cfb-nfl-alumni.yml"
+  pull_request:
+    paths:
+      - "cfb/data/nfl_crosswalk.json"
+      - "cfb/nfl-alumni.html"
+      - "cfb/assets/archive.js"
+      - "cfb/scripts/test_nfl_alumni.py"
+      - ".github/workflows/cfb-nfl-alumni.yml"
+jobs:
+  nfl-alumni:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install --disable-pip-version-check playwright
+      - run: python -m playwright install --with-deps chromium
+      - name: Verify NFL crosswalk and CFB alumni desktop/mobile page
+        run: python cfb/scripts/test_nfl_alumni.py
+      - name: Attach alumni design review screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: college-football-nfl-design-review
+          path: cfb/output/nfl-alumni/
+          if-no-files-found: warn

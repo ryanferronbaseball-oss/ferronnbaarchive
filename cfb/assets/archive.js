@@ -90,7 +90,7 @@ function table(rows,category,{combined=false,empty="No players with recorded sta
    x.stat_values.map(s=>'<td>'+esc(s)+'</td>').join("")+'</tr>').join("")+'</tbody></table></div>';
 }
 function nav(active){
- const links=[["index.html","Overview","home"],["game.html","Games","game"],["stats.html","Leaderboards","stats"],["records.html","Records","records"],["touchdowns.html","Touchdowns","touchdowns"]];
+ const links=[["index.html","Overview","home"],["game.html","Games","game"],["stats.html","Leaderboards","stats"],["records.html","Records","records"],["touchdowns.html","Touchdowns","touchdowns"],["nfl-alumni.html","To the NFL","nfl"]];
  return '<header class="archive-header"><a class="archive-logo" href="./index.html">COURTSIDE ARCHIVE<small>EVERY GAME HAS A STORY · COLLEGE FOOTBALL</small></a>'+
    '<nav class="archive-nav" aria-label="College Football archive navigation">'+links.map(([href,title,name])=>'<a href="./'+href+'"'+((active===name||((active==='milestones'||active==='highlights')&&name==='records'))?' aria-current="page"':'')+'>'+title+'</a>').join("")+
    '</nav><a class="back-link" href="../index.html">All archives ↗</a></header>';

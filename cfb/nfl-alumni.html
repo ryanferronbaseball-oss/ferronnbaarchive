@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>From College to the NFL | Courtside Archive</title>
+<meta name="description" content="Verified future NFL players you witnessed in your personal college football attendance archive, from college game logs to professional draft histories.">
+<link rel="stylesheet" href="./assets/archive.css">
+<script src="./assets/archive.js?v=nfl-alumni-20261017" defer></script>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,sans-serif;background:#FAF8F2;color:#252A2B}
+main{max-width:1150px;margin:auto;padding:24px 20px 86px}.ca-hub-link{white-space:nowrap}h1{font-size:clamp(38px,5.5vw,65px);line-height:1.08;letter-spacing:-.055em;margin:11px 0 15px}
+.lead{color:#667268;font-size:16px;line-height:1.7;max-width:760px}.eyebrow{color:#284D3C;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;margin-top:48px}
+.summary{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:30px 0}
+.metric{background:#FFFEFB;border:1px solid #DEDCD2;border-radius:14px;padding:18px}.metric strong{display:block;font-size:30px;color:#284D3C;font-variant-numeric:tabular-nums}.metric small{font-size:12px;color:#667268}
+.toolbar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:20px 0}.toolbar input,.toolbar select{font:inherit;padding:11px 13px;border:1px solid #CDD5CA;background:#fff;border-radius:9px;color:#252A2B;min-width:0}.toolbar input{flex:1;min-width:190px}.toolbar select{max-width:100%}
+.tabs{display:flex;gap:7px;flex-wrap:wrap}.tabs button{font:inherit;font-size:13px;font-weight:750;padding:11px 15px;border-radius:9px;border:1px solid #CCD8CB;background:#E9EEE7;color:#284D3C;cursor:pointer}.tabs button[aria-selected=true]{background:#284D3C!important;color:white!important}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-items:stretch}
+.player{border:1px solid #DEDCD2;background:#FFFEFB;border-radius:16px;padding:20px;min-width:0;overflow:hidden;display:flex;flex-direction:column;gap:0}
+.player-head{display:block;min-width:0}
+.identity{display:grid;grid-template-columns:58px minmax(0,1fr);gap:13px;align-items:center;min-width:0}
+.identity>div{min-width:0}
+.portrait{width:58px;height:58px;object-fit:contain;border-radius:12px;background:#E5EAE2;border:1px solid #C5D3C2}
+.player-name{display:block;font-size:21px;line-height:1.2;overflow-wrap:anywhere;letter-spacing:-.03em;font-weight:800;color:#284D3C!important;text-decoration:none!important}
+.player-name:hover{text-decoration:underline!important}
+.school{color:#667268;font-size:13px;margin-top:5px;overflow-wrap:anywhere}
+.pill{display:inline-block;background:#E5EAE2;color:#284D3C;padding:6px 10px;font-size:11px;font-weight:750;border-radius:20px;white-space:normal}
+.player-head>.pill{margin-top:13px}
+.line{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:17px 0 14px;padding:13px;background:#F5F5EF;border-radius:10px}
+.line>div{min-width:0}.line strong{display:block;font-size:22px;font-variant-numeric:tabular-nums;line-height:1.25}
+.line small{display:block;font-size:11px;color:#667268;line-height:1.4;margin-top:4px}
+.info{font-size:13px;color:#46584A;line-height:1.6;margin:7px 0;overflow-wrap:anywhere}.info b{color:#252A2B}
+.links{display:flex;gap:12px;flex-wrap:wrap;margin-top:auto;padding-top:17px;font-weight:700;font-size:13px}.links a{color:#284D3C!important}
+.date-list{font-size:12px;color:#667268;line-height:1.7;margin-top:6px}.state{color:#667268;padding:26px;border:1px dashed #BECDBF;background:#F2F4EE;border-radius:14px}.note{color:#667268;line-height:1.65;font-size:12px;max-width:900px;margin:25px 0}
+@media(max-width:980px){.cards{grid-template-columns:1fr}}@media(max-width:760px){.summary{grid-template-columns:repeat(2,minmax(0,1fr))}.cards{grid-template-columns:1fr}}@media(max-width:430px){main{padding:18px 14px 70px}.summary{gap:8px}.metric{padding:13px}.toolbar input{width:100%}.player{padding:16px}.player-name{font-size:20px}.line{gap:5px;padding:10px}.line strong{font-size:19px}}
+
+.player-head>.pill{margin-top:13px}
+.pill.secondary{background:#F0EEE6;color:#7D6030}
+.pill.bronze{background:#F5E8D4;color:#755021}
+.portrait{display:grid;place-items:center;color:#284D3C;font-weight:900;font-size:20px;letter-spacing:-.04em}
+.line strong{font-size:clamp(18px,2.3vw,22px)}
+.game-entry{display:inline-flex;align-items:baseline;gap:4px;flex-wrap:wrap;margin-right:6px}
+.game-entry a{font-weight:800;color:#284D3C!important}
+.cards .player{scroll-margin-top:22px}
+.ppr{color:#476951;font-weight:700}
+.not-available{color:#667268}
+.player-state{color:#637468;font-size:11px;margin:9px 0 0}
+.notes-banner{margin:14px 0;padding:13px 16px;border-left:3px solid #779680;background:#EFF3EB;color:#4D6554;font-size:13px;line-height:1.6}
+.card-meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.school b{color:#284D3C}
+@media(max-width:430px){.line strong{font-size:17px}.metric strong{font-size:25px}.player{gap:2px}}
+</style></head>
+<body><main>
+<div id="navigation"></div>
+<div class="eyebrow">College football · Career pathways</div>
+<h1>From college to the NFL.</h1>
+<p class="lead">You saw them before the league did. Revisit future NFL players you watched in college, the exact matchups and performances you witnessed, and how their professional careers began.</p>
+<div class="notes-banner"><strong>Growing verified directory:</strong> These are individually checked NFL connections from your college football attendance log, not a claim that every eventual pro has been identified. NFL appearance status reflects verified records as of October 17, 2026. The college stats on this page cover only your personally attended games.</div>
+<section class="summary" aria-label="NFL alumni counts">
+ <div class="metric"><strong id="nflCount">—</strong><small>Verified NFL alumni</small></div>
+ <div class="metric"><strong id="rosterCount">—</strong><small>NFL roster / preseason only</small></div>
+ <div class="metric"><strong id="seenCount">—</strong><small>College games featuring verified players</small></div>
+ <div class="metric"><strong id="firstCount">—</strong><small>First-round NFL picks</small></div>
+</section>
+<div class="tabs" role="tablist" aria-label="NFL career classifications">
+ <button type="button" role="tab" aria-selected="true" data-group="nfl">Played in the NFL</button>
+ <button type="button" role="tab" aria-selected="false" data-group="roster_only">NFL roster / preseason only</button>
+</div>
+<div class="toolbar">
+ <input id="search" type="search" aria-label="Search NFL alumni by player school position or pro team" placeholder="Search player, college, position or NFL team…">
+ <select id="sort" aria-label="Sort NFL alumni">
+  <option value="draft">Highest NFL draft pick</option>
+  <option value="games">Most college games seen</option>
+  <option value="year">Earliest NFL season</option>
+  <option value="name">Name A–Z</option>
+ </select>
+</div>
+<p class="player-state" id="showing" aria-live="polite"></p>
+<div class="cards" id="cards" aria-live="polite"><div class="state">Loading verified NFL records and attended college gamebooks…</div></div>
+<p class="note">NFL alumni status requires independently confirmed regular-season or postseason game participation—not only a practice-squad assignment or preseason action. NFL roster/preseason-only players are listed separately. The drafting team is the original club that made the selection; professional team affiliations can change. The college listed on a player's witnessed game may differ from the school represented at the NFL draft if that player transferred. Unavailable box-score statistics are never silently treated as verified zeroes. NFL records are reviewed snapshots and do not automatically update after each game.</p>
+</main>
+<script>
+document.addEventListener("DOMContentLoaded",()=>{
+ "use strict";
+ const A=window.CFBArchive,el=id=>document.getElementById(id);
+ el("navigation").innerHTML=A.nav("nfl");
+ const escapeHtml=A.esc;
+ const when=v=>A.date(v);
+ const teams={USD:"San Diego",WFU:"Wake Forest",NCS:"NC State",WNMU:"Western New Mexico",BUTLER:"Butler",DAV:"Davidson",UCD:"UC Davis"};
+ const asNum=v=>v===null||v===undefined||String(v).trim()===""||String(v).trim()==="—"||String(v).trim()==="-"?null:Number.isFinite(Number(v))?Number(v):null;
+ const showNumber=n=>n==null?"—":Math.round(n).toLocaleString("en-US");
+ let players=[],group="nfl";
+ function statsFor(records,category,label){
+   const groupRows=records.filter(r=>r.category===category);
+   let sum=0,usable=0;
+   for(const r of groupRows){
+     const index=(r.stat_labels||[]).indexOf(label);
+     if(index<0)continue;
+     const v=asNum((r.stat_values||[])[index]);
+     if(v!=null){sum+=v;usable++;}
+   }
+   return usable?sum:null;
+ }
+ function primaryStats(records,position){
+   const s=(cat,key)=>statsFor(records,cat,key);
+   if(position==="QB")return [["Passing yards",s("passing","YDS")],["Passing TD",s("passing","TD")],["Rushing yards",s("rushing","YDS")]];
+   if(position==="RB")return [["Rushing yards",s("rushing","YDS")],["Rushing TD",s("rushing","TD")],["Receptions",s("receiving","REC")]];
+   if(position==="CB"||position==="DB")return [["Total tackles",s("defensive","TOT")],["Passes defended",s("defensive","PD")],["Interceptions",s("interceptions","INT")]];
+   return [["Receptions",s("receiving","REC")],["Receiving yards",s("receiving","YDS")],["Receiving TD",s("receiving","TD")]];
+ }
+ function gameSummary(records,position){
+   const arr=primaryStats(records,position);
+   return arr.map(([name,n])=>showNumber(n)+" "+name.toLowerCase()).join(" · ");
+ }
+ function bestKey(position){return position==="QB"?"passing":position==="RB"?"rushing":position==="CB"?"defensive":"receiving"}
+ function bestValue(records,position){
+   const kind=bestKey(position),label=kind==="defensive"?"TOT":"YDS";
+   return statsFor(records,kind,label)??-1;
+ }
+ function collegeAppearances(logs,games,register){
+   const grouped=new Map();
+   for(const row of logs){
+     const id=String(row.athlete_id);
+     if(!grouped.has(id))grouped.set(id,[]);
+     grouped.get(id).push(row);
+   }
+   const gameMap=new Map(games.map(g=>[g.id,g]));
+   const output=[];
+   for(const r of register){
+     const rows=grouped.get(r.athlete_id);
+     if(!rows||!rows.length)continue;
+     const byGame=new Map();
+     for(const row of rows){
+       if(!gameMap.has(row.game_id))continue;
+       if(!byGame.has(row.game_id))byGame.set(row.game_id,[]);
+       byGame.get(row.game_id).push(row);
+     }
+     const seen=[...byGame.entries()].map(([id,stats])=>({game:gameMap.get(id),rows:stats}))
+       .sort((a,b)=>a.game.date.localeCompare(b.game.date));
+     if(!seen.length)continue;
+     const schoolAbbr=[...new Set(rows.map(x=>x.team))],schools=schoolAbbr.map(x=>teams[x]||x);
+     output.push({...r,name:rows[0].player,schools,rows,seen,stats:primaryStats(rows,r.position),
+       best:seen.slice().sort((a,b)=>bestValue(b.rows,r.position)-bestValue(a.rows,r.position))[0]});
+   }
+   return output;
+ }
+ function render(){
+   const query=el("search").value.trim().toLowerCase(),sort=el("sort").value;
+   const matched=players.filter(p=>p.category===group&&[p.name,p.position,...p.schools,p.nfl_team||"",p.draft_team||"",p.draft_school||""].join(" ").toLowerCase().includes(query));
+   matched.sort((a,b)=>sort==="name"?a.name.localeCompare(b.name):
+     sort==="games"?b.seen.length-a.seen.length||a.name.localeCompare(b.name):
+     sort==="year"?(a.first_nfl_season??9999)-(b.first_nfl_season??9999)||a.name.localeCompare(b.name):
+     (a.draft_pick??9999)-(b.draft_pick??9999)||a.name.localeCompare(b.name));
+   el("showing").textContent="Showing "+matched.length+" of "+players.filter(p=>p.category===group).length+" verified "+(group==="nfl"?"NFL alumni.":"NFL roster / preseason-only players.");
+   if(!matched.length){
+     el("cards").innerHTML='<div class="state">'+(query?"No players match your search.":"No verified players are currently listed in this category.")+'</div>';return;
+   }
+   el("cards").innerHTML=matched.map(p=>{
+     const initials=p.name.split(/\s+/).map(w=>w[0]).slice(0,2).join("").toUpperCase();
+     const draft=p.draft_year?(p.draft_year+" · Round "+p.draft_round+" · Pick #"+p.draft_pick+" · "+p.draft_team):"Undrafted";
+     const schools=p.schools.join(" / ");
+     const nflText=p.category==="nfl"?("First verified NFL season: "+p.first_nfl_season):"NFL roster / preseason, no verified regular-season or playoff appearance";
+     const gameRefs=p.seen.map(x=>{
+       const g=x.game,opponent=g.away_abbr===x.rows[0].team?g.home:g.away;
+       const numbers=gameSummary(x.rows,p.position);
+       return '<span class="game-entry"><a href="./game.html?id='+encodeURIComponent(g.id)+'">'+escapeHtml(when(g.date))+'</a> <span>('+escapeHtml(opponent)+', '+escapeHtml(numbers)+')</span></span>';
+     }).join(" · ");
+     const best=p.best,stats=best?gameSummary(best.rows,p.position):"—";
+     return '<article class="player" data-player-id="'+escapeHtml(p.athlete_id)+'" data-category="'+escapeHtml(p.category)+'">'
+      +'<div class="player-head"><div class="identity"><div class="portrait" aria-hidden="true">'+escapeHtml(initials)+'</div><div>'
+      +'<a class="player-name" href="./player.html?id='+encodeURIComponent(p.athlete_id)+'">'+escapeHtml(p.name)+'</a>'
+      +'<div class="school">'+escapeHtml(schools)+' · '+escapeHtml(p.position)+'</div></div></div>'
+      +'<div class="card-meta"><span class="pill'+(p.category==="roster_only"?" secondary":"")+'">'+(p.category==="nfl"?"NFL alumnus":"NFL opportunity")+'</span>'
+      +(p.draft_pick&&p.draft_pick<=32?'<span class="pill bronze">First-round pick</span>':'')+'</div></div>'
+      +'<div class="line">'+p.stats.map(([key,value])=>'<div><strong>'+escapeHtml(showNumber(value))+'</strong><small>'+escapeHtml(key)+' witnessed</small></div>').join("")+'</div>'
+      +'<div class="info"><b>College games witnessed:</b> '+p.seen.length+' · '+escapeHtml(when(p.seen[0].game.date))+(p.seen.length>1?' – '+escapeHtml(when(p.seen[p.seen.length-1].game.date)):'')+'</div>'
+      +'<div class="info"><b>NFL Draft:</b> '+escapeHtml(draft)+'</div>'
+      +(p.draft_school&&p.draft_school!==p.schools[0]?'<div class="info"><b>College at draft:</b> '+escapeHtml(p.draft_school)+'</div>':'')
+      +'<div class="info"><b>NFL team(s):</b> '+escapeHtml(p.nfl_team||"—")+'</div>'
+      +'<div class="info"><b>NFL status:</b> '+escapeHtml(nflText)+'</div>'
+      +'<div class="info"><b>Top witnessed college game:</b> '+escapeHtml(stats)+' · <a href="./game.html?id='+encodeURIComponent(best.game.id)+'">'+escapeHtml(when(best.game.date))+'</a></div>'
+      +'<div class="date-list"><b>Every attended appearance:</b> '+gameRefs+'</div>'
+      +'<div class="links"><a href="./player.html?id='+encodeURIComponent(p.athlete_id)+'">College profile ↗</a><a href="'+escapeHtml(p.source_url)+'" target="_blank" rel="noopener noreferrer">NFL career source ↗</a>'
+      +(p.draft_source_url?'<a href="'+escapeHtml(p.draft_source_url)+'" target="_blank" rel="noopener noreferrer">Draft source ↗</a>':'')+'</div>'
+      +'</article>';
+   }).join("");
+ }
+ Promise.all([
+  fetch("./data/nfl_crosswalk.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("NFL verified directory");return r.json()}),
+  fetch("./data/player_stats.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("college box scores");return r.json()}),
+  fetch("./data/games.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("attended college games");return r.json()})
+ ]).then(([cross,logs,games])=>{
+   players=collegeAppearances(logs,games,cross);
+   const nfl=players.filter(x=>x.category==="nfl"),roster=players.filter(x=>x.category==="roster_only");
+   el("nflCount").textContent=nfl.length;
+   el("rosterCount").textContent=roster.length;
+   el("seenCount").textContent=new Set(players.flatMap(x=>x.seen.map(y=>y.game.id))).size;
+   el("firstCount").textContent=players.filter(x=>x.draft_pick&&x.draft_pick<=32).length;
+   render();
+ }).catch(err=>{el("cards").innerHTML='<div class="state">Unable to load college → NFL directory: '+escapeHtml(err.message)+'</div>'});
+ document.querySelectorAll("[data-group]").forEach(button=>button.addEventListener("click",()=>{
+   group=button.dataset.group;
+   document.querySelectorAll("[data-group]").forEach(x=>x.setAttribute("aria-selected",String(x===button)));
+   render();
+ }));
+ el("search").addEventListener("input",render);
+ el("sort").addEventListener("change",render);
+});
+</script></body></html>

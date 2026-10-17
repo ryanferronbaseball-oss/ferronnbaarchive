@@ -79,6 +79,9 @@ def main():
         if any(game.get(k)!=item[k] for k in ("date","away","home")):
             raise ValueError("Official source game identity disagrees with original attendance "+gid)
         url=item["source_url"]
+        # Capture this game's own identity before any request or parser failure.
+        # Never reuse a prior loop iteration's snapshot for a different game.
+        snapshot=deepcopy(game)
         if game["verification"]=="official_boxscore_verified":
             prior=[p for p in players if p["game_id"]==gid]
             if not prior or game.get("source_url")!=url or len(prior)<18:
@@ -99,7 +102,6 @@ def main():
                 raise ValueError("Official school boxscore doesn't visibly confirm attendance date")
             # import_one itself re-reads the page and reconciles both official
             # batter/pitcher tables and nine source starter/substitution slots.
-            snapshot=deepcopy(game)
             rows,audit=import_one(game,item,global_keys)
             decisions=scorer_labels(resp.text,rows,gid)
             game.update({
@@ -120,8 +122,7 @@ def main():
             print("PASS 2025",gid,len(rows),flush=True)
         except Exception as exc:
             # No partial score or player results from a failed official gamebook.
-            if "snapshot" in locals():
-                game.clear();game.update(snapshot)
+            game.clear();game.update(snapshot)
             pending.append({"game_id":gid,"source_url":url,"reason":str(exc)})
             print("REVIEW 2025",gid,str(exc),flush=True)
     assert len(games)==444 and len({g["id"] for g in games})==444

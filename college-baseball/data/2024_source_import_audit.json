@@ -1,5 +1,5 @@
 {
-  "status": "PASS",
+  "status": "PARTIAL_REVIEW_REQUIRED",
   "approval": "2024–2026 official four-year source backfill; no 2023 or earlier, no release",
   "original_attendance": 444,
   "attendance_2024": 71,
@@ -7,8 +7,8 @@
   "remaining_2024": 1,
   "2025_gamebooks_preserved": 69,
   "2026_gamebooks_preserved": 68,
-  "completed_in_this_run": 2,
-  "linked_2024_sources": 70,
+  "completed_in_this_run": 0,
+  "linked_2024_sources": 71,
   "months_verified": {
     "2024-02": 17,
     "2024-03": 24,
@@ -16,159 +16,12 @@
     "2024-05": 16,
     "2024-06": 6
   },
-  "passed_games": [
+  "passed_games": [],
+  "pending_review": [
     {
-      "game_id": "cb-2024-02-23-iowa-auburn-att0235",
-      "source_url": "https://storage.googleapis.com/auburn-prod/2024/05/16/Qwfk9D0ysZymh4NIW2QjKniQFWvF2vNh2c5nSnd5.pdf",
-      "score": [
-        5,
-        7
-      ],
-      "player_game_rows": 28,
-      "pitching_decisions": {
-        "win": "Cam Tilly",
-        "loss": "Whitlock",
-        "save": null
-      },
-      "stat_audit": {
-        "status": "PASS",
-        "source": "https://storage.googleapis.com/auburn-prod/2024/05/16/Qwfk9D0ysZymh4NIW2QjKniQFWvF2vNh2c5nSnd5.pdf",
-        "source_sha256": "826ef78b068453f557e045433ea161778e6f07c27ee025a1d1811c9a8a756efe",
-        "source_type": "official_university_pdf_gamebook",
-        "player_rows": 28,
-        "lineup_audit": [
-          {
-            "team": "Iowa",
-            "nine_starting_slots": true,
-            "batter_rows": 9,
-            "pitcher_rows": 4,
-            "substitutes": 0
-          },
-          {
-            "team": "Auburn",
-            "nine_starting_slots": true,
-            "batter_rows": 11,
-            "pitcher_rows": 4,
-            "substitutes": 2
-          }
-        ],
-        "scoreboard": [
-          {
-            "innings": [
-              1,
-              1,
-              0,
-              1,
-              0,
-              0,
-              0,
-              0,
-              2
-            ],
-            "runs": 5,
-            "hits": 9,
-            "errors": 1
-          },
-          {
-            "innings": [
-              0,
-              0,
-              1,
-              0,
-              0,
-              1,
-              3,
-              2,
-              null
-            ],
-            "runs": 7,
-            "hits": 8,
-            "errors": 1
-          }
-        ],
-        "pitching_decisions": {
-          "win": "Cam Tilly",
-          "loss": "Whitlock",
-          "save": null
-        }
-      }
-    },
-    {
-      "game_id": "cb-2024-04-14-virginia-tech-georgia-tech-att0268",
-      "source_url": "https://storage.googleapis.com/ramblinwreck-com-prod/2024/04/gt041424.pdf",
-      "score": [
-        7,
-        11
-      ],
-      "player_game_rows": 34,
-      "pitching_decisions": {
-        "win": "Brett Thomas",
-        "loss": "Matthew Siverling",
-        "save": "Dawson Brown"
-      },
-      "stat_audit": {
-        "status": "PASS",
-        "source": "https://storage.googleapis.com/ramblinwreck-com-prod/2024/04/gt041424.pdf",
-        "source_sha256": "a1dea60457869e62e8ba44a7978188e1729c7e69132a4d19273aa46fa3ae8be9",
-        "source_type": "official_university_pdf_gamebook",
-        "player_rows": 34,
-        "lineup_audit": [
-          {
-            "team": "Virginia Tech",
-            "nine_starting_slots": true,
-            "batter_rows": 9,
-            "pitcher_rows": 6,
-            "substitutes": 0
-          },
-          {
-            "team": "Georgia Tech",
-            "nine_starting_slots": true,
-            "batter_rows": 14,
-            "pitcher_rows": 5,
-            "substitutes": 5
-          }
-        ],
-        "scoreboard": [
-          {
-            "innings": [
-              3,
-              3,
-              0,
-              1,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "runs": 7,
-            "hits": 11,
-            "errors": 2
-          },
-          {
-            "innings": [
-              0,
-              0,
-              0,
-              0,
-              6,
-              3,
-              0,
-              2,
-              null
-            ],
-            "runs": 11,
-            "hits": 16,
-            "errors": 2
-          }
-        ],
-        "pitching_decisions": {
-          "win": "Brett Thomas",
-          "loss": "Matthew Siverling",
-          "save": "Dawson Brown"
-        }
-      }
+      "game_id": "cb-2024-03-08-notre-dame-virginia-tech-att0251",
+      "source_url": "https://theacc.com/boxscore.aspx?id=JcLFfL9RUu0H5ystoOMbjQ7A58QMysWHEEqi7hufVoQXO5nVxbctjHh%2F6ifARsoKUNz2Cn1GpJx0eQgL%2FI8uNugW6%2F65ooJ9xE6%2BliOEFRks1pqns5E%2BSdhOF6cTmGJTatGL0tWP3RUaQJSzuX6XO7iNsKjtsD5Dds7TBMqMg4sEGg9iuR4sUWMKzgK6cFVK&path=baseball",
+      "reason": "cb-2024-03-08-notre-dame-virginia-tech-att0251 Virginia Tech row 0: summary/composite AB disagree"
     }
-  ],
-  "pending_review": []
+  ]
 }

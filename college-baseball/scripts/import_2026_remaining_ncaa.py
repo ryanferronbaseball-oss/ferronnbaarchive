@@ -339,6 +339,11 @@ def _source_batters(table, valid_players, team, game_id):
         # successively occupied by PH Logan Beard, PR Lucas Moore and
         # defensive 1B Brandon Anderson. Alex Alicea started separately.
         source_2024_unindented = {
+            # Indiana's official opening-weekend gamebook: late PH Joey
+            # Brenczewski bats for original 2B Brandon Burckel; Hayden
+            # Carlson takes 2B after the pinch hitter in original slot nine.
+            ("cb-2024-02-16-duke-indiana-att0225", "Indiana"):
+                {"Joey Brenczewski", "Hayden Carlson"},
             # Official 2024 sources have unindented defensive successors in
             # their Player/Pos lineup table. Only these exact, source-observed
             # 2024 identities are mapped to their original batting slots.

@@ -79,6 +79,47 @@ check({g["id"] for g in committed if g["verification"] == "official_boxscore_ver
       {r["game_id"] for r in pilot_rows},
       "Player stats are tied to all six verified regional games")
 
+# Exactly nine independently sourced batting slots for every team, with
+# pinch-hitters/defensive replacements on the existing slot (MLB conventions).
+source_replacements = {
+    ("cb-2026-05-29-nc-state-ucf", "NC State", "Vincent DeCarlo"): (9, 1),
+    ("cb-2026-05-29-nc-state-ucf", "UCF", "Stephen Chucka"): (7, 1),
+    ("cb-2026-05-30-auburn-nc-state", "NC State", "Christian Serrano"): (8, 1),
+    ("cb-2026-05-30-auburn-nc-state", "NC State", "Vincent DeCarlo"): (9, 1),
+    ("cb-2026-05-30-ucf-milwaukee", "Milwaukee", "Cade Palkowski"): (5, 1),
+    ("cb-2026-05-31-ucf-auburn", "UCF", "Cayden Gaskin"): (7, 1),
+    ("cb-2026-05-31-auburn-milwaukee", "Milwaukee", "Tate Schmidt"): (7, 1),
+    ("cb-2026-05-31-auburn-milwaukee", "Milwaukee", "Tristan Ellis"): (7, 2),
+}
+seen_replacements = {}
+for game in committed:
+    for team in (game["away"], game["home"]):
+        lineup = [r for r in pilot_rows if r["game_id"] == game["id"]
+                  and r["team"] == team and "batting" in r]
+        pitching = [r for r in pilot_rows if r["game_id"] == game["id"]
+                   and r["team"] == team and "pitching" in r]
+        starters = [r for r in lineup if r.get("batting_sub_index") == 0]
+        slots = [r.get("batting_slot") for r in starters]
+        check(sorted(slots) == list(range(1, 10)) and len(starters) == 9,
+              "Official source confirms nine starting batting positions: " + game["id"] + " " + team)
+        check(all(1 <= r["batting_slot"] <= 9 and r["position"]
+                  and r.get("batting_appearance_index") is not None for r in lineup),
+              "Batting order and defensive position sourced for every player: " + game["id"] + " " + team)
+        check(sorted(r["pitching_appearance_index"] for r in pitching) == list(range(len(pitching))),
+              "Official pitching appearances remain in scorebook order: " + game["id"] + " " + team)
+        for r in lineup:
+            if r.get("batting_sub_index", 0):
+                key = (game["id"], team, r["player"])
+                seen_replacements[key] = (r["batting_slot"], r["batting_sub_index"])
+                check(key in source_replacements and
+                      source_replacements[key] == seen_replacements[key],
+                      "Pinch hitter or field replacement attributed to correct batting slot: " + r["player"])
+check(seen_replacements == source_replacements and len(seen_replacements) == 8,
+      "All eight source-documented substitutions retain official batting slot, never 10+")
+check(sum(1 for r in pilot_rows if "batting" in r) == 116,
+      "Official NCAA pilot includes 116 batting records with verified lineup order")
+
+
 # Reconcile audited team and pitcher lines to each official PDF's box score,
 # not merely to metadata or a guessed batting average.
 expected = {
@@ -284,8 +325,15 @@ with tempfile.TemporaryDirectory() as t:
                 visit(page, host, "game.html?id=cb-synthetic-test-only", "#cb-game-details .cb-game-summary")
                 check("3 – 2" in page.locator("#cb-game-details").inner_text(),
                       f"{width} score and official box-score panel available")
-                check(page.locator('#cb-game-details a[href="./player.html?id=synthetic-athlete"]').count() == 2,
-                      f"{width} two-way player links from batting and pitching tables")
+                check(page.locator('#cb-box .mlb-lineup-row a[href="./player.html?id=synthetic-athlete"]').count() == 1,
+                      f"{width} two-way player's batting table has a linked game record")
+                check(page.locator('#cb-box .mlb-order').first.inner_text() == "—",
+                      f"{width} never fabricate lineup order when gamebook slot data is unavailable")
+                page.locator('[data-cat="pitching"]').click()
+                check(page.locator('#cb-box .mlb-lineup-row a[href="./player.html?id=synthetic-athlete"]').count() == 1
+                      and page.locator('#cb-stat-title').inner_text() == "Pitching box score",
+                      f"{width} MLB-style pitching tab links the same two-way athlete")
+                page.locator('[data-cat="batting"]').click()
                 visit(page, host, "stats.html", "#cb-player-board .cb-table")
                 check("Test Player" in page.locator("#cb-player-board").inner_text(),
                       f"{width} batting leaderboard includes fictional test player")
@@ -333,6 +381,13 @@ with tempfile.TemporaryDirectory() as t:
                       and "SV: Ryan Hetzler" in decisions.inner_text()
                       and decisions.locator('a[href="./player.html?id=cb-auburn-ryan-hetzler"]').count() == 1,
                       f"{width} May 31 official W/L/S credit correct linked college pitchers")
+                check([x.inner_text() for x in page.locator('.mlb-team-box[data-side="away"][data-category="batting"] .mlb-order').all()]
+                      == ["1", "2", "3", "4", "5", "6", "7", "↳", "8", "9"],
+                      f"{width} May 31 UCF lineup numbering matches MLB substitute format")
+                check(page.locator('.mlb-team-box[data-side="away"] tr[data-player-id="cb-ucf-cayden-gaskin"][data-slot="7"][data-sub="1"] .mlb-order').inner_text()=="↳",
+                      f"{width} verified UCF pinch hitter Cayden Gaskin follows seventh slot")
+                check(page.evaluate("getComputedStyle(document.body).fontFamily.startsWith('Inter')"),
+                      f"{width} College Baseball font matches MLB Inter family")
                 page.screenshot(path=str(REVIEW / f"may31-ucf-auburn-{width}.png"), full_page=True)
                 visit(page, host, "game.html?id=cb-2026-05-29-milwaukee-auburn", "#cb-game-details .cb-game-summary")
                 check("13 – 8" in page.locator("#cb-game-details").inner_text()
@@ -344,10 +399,27 @@ with tempfile.TemporaryDirectory() as t:
                       and "Andrew Williamson" in page.locator("#cb-game-details").inner_text()
                       and "W: Aric Ehmke" in page.locator("#cb-pitching-decisions").inner_text(),
                       f"{width} May 30 UCF-Milwaukee full gamebook and linked decision render")
+                visit(page, host, "game.html?id=cb-2026-05-30-auburn-nc-state", "#cb-game-details .cb-game-summary")
+                check(page.locator('.mlb-team-box[data-side="home"] tr[data-player-id="cb-nc-state-christian-serrano"][data-slot="8"][data-sub="1"] .mlb-order').inner_text()=="↳"
+                      and page.locator('.mlb-team-box[data-side="home"] tr[data-player-id="cb-nc-state-vincent-decarlo"][data-slot="9"][data-sub="1"] .mlb-order').inner_text()=="↳",
+                      f"{width} NC State pinch hitters share their source-verified lineup spots")
                 visit(page, host, "game.html?id=cb-2026-05-31-auburn-milwaukee", "#cb-game-details .cb-game-summary")
                 check("8 – 1" in page.locator("#cb-game-details").inner_text() and
                       "Chase Fralick" in page.locator("#cb-game-details").inner_text(),
                       f"{width} actual May 31 game shows score and official players")
+                mke = page.locator('.mlb-team-box[data-side="home"][data-category="batting"]')
+                check([x.inner_text() for x in mke.locator(".mlb-order").all()] == 
+                      ["1", "2", "3", "4", "5", "6", "7", "↳", "↳", "8", "9"],
+                      f"{width} Milwaukee bat order shows two replacements at seventh spot")
+                check(mke.locator('tr[data-player-id="cb-milwaukee-tate-schmidt"][data-slot="7"][data-sub="1"]').count()==1
+                      and mke.locator('tr[data-player-id="cb-milwaukee-tristan-ellis"][data-slot="7"][data-sub="2"]').count()==1,
+                      f"{width} Milwaukee substitutions appear under Bozak instead of 10/11")
+                page.locator('[data-cat="pitching"]').click()
+                check([x.inner_text() for x in page.locator('.mlb-team-box[data-side="away"] .mlb-order').all()] == ["1","2"]
+                      and [x.inner_text() for x in page.locator('.mlb-team-box[data-side="home"] .mlb-order').all()] == ["1","2","3","4"],
+                      f"{width} college pitching appearances numbered like MLB tables")
+                check(page.locator('.cb-boxscore-table').first.evaluate('(e)=>e.scrollWidth>=e.clientWidth'),
+                      f"{width} MLB-style box scores horizontally scroll within their card")
                 visit(page, host, "stats.html", "#cb-player-board .cb-table")
                 check("Chase Fralick" in page.locator("#cb-player-board").inner_text(),
                       f"{width} all six official gamebooks build hitter leaderboard")

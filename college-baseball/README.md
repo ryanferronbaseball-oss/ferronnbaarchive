@@ -4,6 +4,14 @@
 
 The site lives under \`/college-baseball/\`, with independent college baseball stats and verified inter-level player IDs only. It shares the exact MLB archive design system for Inter fonts, navigation, scoreboards, box-score layout, cards, responsive tables, and bat-order number column.
 
+## 2025 backfill — in progress (authorized October 17, 2026)
+
+**2025 attendance: 74 games; official full player scorebooks: 23/74 verified.** May has 23/29 verified. June (0/2), April (0/10), March (0/19) and February (0/14) remain pending. The existing full official 2026 set (68/68) and all original 444 attendance entries are preserved.
+
+The latest deterministic checkpoint is [2025 source-coverage audit](data/2025_monthly_progress_audit.json) (23 imported, 51 pending). It separates 26 identified university scorebook links (23 imported, 3 blocked for PDF/source-access work) from 48 games needing further source discovery. The two June LSU regional official PDFs are linked but **not yet transcribed**; Dallas Baptist–Little Rock needs an accessible complete official source. Unverified games remain attendance-only, with no invented statistics. The 2025 source workflow runs only on the unpublished draft branch.
+
+**Scope:** 2025 is authorized for further sourcing/import without monthly approvals. 2024 and older are not authorized. The draft remains unpublished and must not merge into `main` without separate approval.
+
 ## 2026 NCAA season — final PASS (October 17, 2026)
 
 **2026 statistical backfill is complete: 68/68 eligible NCAA/four-year gamebooks, 1,990 verified player-game records and 1,061 distinct college player IDs.** The 7 junior-college games remain as original attendance-only rows, excluded from statistics. All 444 original attendance games remain in the unpublished draft.

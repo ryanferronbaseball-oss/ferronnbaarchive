@@ -4,299 +4,69 @@
   "original_attendance_entries": 444,
   "verified_2026_unchanged": 68,
   "total_2025_attendance": 74,
-  "completed_in_this_run": 3,
-  "verified_2025_total": 19,
-  "linked_source_games": 24,
+  "completed_in_this_run": 1,
+  "verified_2025_total": 20,
+  "linked_source_games": 26,
   "passed_games": [
     {
-      "game_id": "cb-2025-05-08-nc-state-north-carolina-att0342",
-      "source_url": "https://goheels.com/sports/baseball/stats/2025/nc-state/boxscore/25939",
+      "game_id": "cb-2025-05-02-san-francisco-san-diego-att0339",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2025/san-francisco/boxscore/14807",
       "score": [
         1,
-        8
+        10
       ],
-      "source_game_id": "25939",
-      "player_rows": 22,
+      "source_game_id": "14807",
+      "player_rows": 28,
       "source_stat_audit": {
-        "game_id": "cb-2025-05-08-nc-state-north-carolina-att0342",
-        "source": "https://goheels.com/sports/baseball/stats/2025/nc-state/boxscore/25939",
+        "game_id": "cb-2025-05-02-san-francisco-san-diego-att0339",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2025/san-francisco/boxscore/14807",
         "http_code": 200,
-        "source_bytes": 1280487,
-        "source_sha256": "cd8efa54f3a9bf3ae79b524f6bfb7c0891f52a0cfdd4082787e270eafda5d89d",
+        "source_bytes": 648672,
+        "source_sha256": "fb4eb30b70e916c3b933b12e2d34b69fd9614cc5915fadf4142d6d1634b37ed3",
         "teams": [
           {
-            "name": "NC State",
-            "batters": 9,
-            "pitchers": 2,
-            "AB": 31,
+            "name": "San Francisco",
+            "batters": 11,
+            "pitchers": 3,
+            "AB": 27,
             "R": 1,
-            "H": 5,
+            "H": 2,
             "RBI": 1,
-            "BB": 0,
-            "SO": 5,
+            "BB": 5,
+            "SO": 16,
             "pitching_outs": 24,
-            "pitching_runs": 8,
-            "pitching_hits": 12
+            "pitching_runs": 10,
+            "pitching_hits": 10
           },
           {
-            "name": "North Carolina",
-            "batters": 9,
-            "pitchers": 2,
-            "AB": 35,
-            "R": 8,
-            "H": 12,
-            "RBI": 8,
-            "BB": 0,
-            "SO": 5,
+            "name": "San Diego",
+            "batters": 10,
+            "pitchers": 4,
+            "AB": 31,
+            "R": 10,
+            "H": 10,
+            "RBI": 9,
+            "BB": 3,
+            "SO": 6,
             "pitching_outs": 27,
             "pitching_runs": 1,
-            "pitching_hits": 5
+            "pitching_hits": 2
           }
         ],
         "source_warnings": [],
-        "player_rows": 22,
+        "player_rows": 28,
         "status": "PASS",
         "scoreboard": [
           {
             "runs": 1,
-            "hits": 5,
-            "errors": 2,
-            "innings": [
-              1,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ]
-          },
-          {
-            "runs": 8,
-            "hits": 12,
-            "errors": 0,
-            "innings": [
-              1,
-              1,
-              2,
-              0,
-              3,
-              0,
-              0,
-              1,
-              null
-            ]
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "NC State",
-            "nine_starting_slots": true,
-            "batter_rows": 9,
-            "pitcher_rows": 2,
-            "substitutes": 0
-          },
-          {
-            "team": "North Carolina",
-            "nine_starting_slots": true,
-            "batter_rows": 9,
-            "pitcher_rows": 2,
-            "substitutes": 0
-          }
-        ],
-        "official_decisions": {
-          "win": "Knapp, Jake",
-          "loss": "Ryan Marohn",
-          "save": null
-        },
-        "resolved_pitcher_decisions": {
-          "win": null,
-          "loss": "Ryan Marohn",
-          "save": null
-        }
-      },
-      "pitching_decisions": {
-        "win": "Jake Knapp",
-        "loss": "Ryan Marohn",
-        "save": null
-      }
-    },
-    {
-      "game_id": "cb-2025-05-06-georgia-southern-georgia-tech-att0341",
-      "source_url": "https://gseagles.com/sports/baseball/stats/2025/georgia-tech/boxscore/16717",
-      "score": [
-        5,
-        8
-      ],
-      "source_game_id": "16717",
-      "player_rows": 31,
-      "source_stat_audit": {
-        "game_id": "cb-2025-05-06-georgia-southern-georgia-tech-att0341",
-        "source": "https://gseagles.com/sports/baseball/stats/2025/georgia-tech/boxscore/16717",
-        "http_code": 200,
-        "source_bytes": 1377739,
-        "source_sha256": "fece31a487f2832e1c9169632d10d151bc336a58f6afbc2917a9344587dba895",
-        "teams": [
-          {
-            "name": "Georgia Southern",
-            "batters": 11,
-            "pitchers": 4,
-            "AB": 38,
-            "R": 5,
-            "H": 12,
-            "RBI": 4,
-            "BB": 2,
-            "SO": 10,
-            "pitching_outs": 24,
-            "pitching_runs": 8,
-            "pitching_hits": 11
-          },
-          {
-            "name": "Georgia Tech",
-            "batters": 10,
-            "pitchers": 6,
-            "AB": 35,
-            "R": 8,
-            "H": 11,
-            "RBI": 8,
-            "BB": 5,
-            "SO": 5,
-            "pitching_outs": 27,
-            "pitching_runs": 5,
-            "pitching_hits": 12
-          }
-        ],
-        "source_warnings": [],
-        "player_rows": 31,
-        "status": "PASS",
-        "scoreboard": [
-          {
-            "runs": 5,
-            "hits": 12,
-            "errors": 3,
-            "innings": [
-              1,
-              1,
-              0,
-              0,
-              0,
-              2,
-              0,
-              1,
-              0
-            ]
-          },
-          {
-            "runs": 8,
-            "hits": 11,
+            "hits": 2,
             "errors": 1,
             "innings": [
-              1,
-              1,
-              1,
-              5,
-              0,
-              0,
-              0,
-              0,
-              null
-            ]
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "Georgia Southern",
-            "nine_starting_slots": true,
-            "batter_rows": 11,
-            "pitcher_rows": 4,
-            "substitutes": 2
-          },
-          {
-            "team": "Georgia Tech",
-            "nine_starting_slots": true,
-            "batter_rows": 10,
-            "pitcher_rows": 6,
-            "substitutes": 1
-          }
-        ],
-        "official_decisions": {
-          "win": "Kayden Campbell",
-          "loss": "Smith, Davis",
-          "save": "Mason Patel"
-        },
-        "resolved_pitcher_decisions": {
-          "win": "Kayden Campbell",
-          "loss": null,
-          "save": "Mason Patel"
-        }
-      },
-      "pitching_decisions": {
-        "win": "Kayden Campbell",
-        "loss": "Davis Smith",
-        "save": "Mason Patel"
-      }
-    },
-    {
-      "game_id": "cb-2025-05-03-san-francisco-san-diego-att0340",
-      "source_url": "https://usdtoreros.com/sports/baseball/stats/2025/san-francisco/boxscore/14808",
-      "score": [
-        2,
-        4
-      ],
-      "source_game_id": "14808",
-      "player_rows": 27,
-      "source_stat_audit": {
-        "game_id": "cb-2025-05-03-san-francisco-san-diego-att0340",
-        "source": "https://usdtoreros.com/sports/baseball/stats/2025/san-francisco/boxscore/14808",
-        "http_code": 200,
-        "source_bytes": 642234,
-        "source_sha256": "3a55105d9c0ac6413f9c7d97d3e6272e2a016d9f8fac8491a7ff3b5410fdae39",
-        "teams": [
-          {
-            "name": "San Francisco",
-            "batters": 9,
-            "pitchers": 3,
-            "AB": 31,
-            "R": 2,
-            "H": 6,
-            "RBI": 2,
-            "BB": 4,
-            "SO": 6,
-            "pitching_outs": 24,
-            "pitching_runs": 4,
-            "pitching_hits": 4
-          },
-          {
-            "name": "San Diego",
-            "batters": 11,
-            "pitchers": 4,
-            "AB": 27,
-            "R": 4,
-            "H": 4,
-            "RBI": 4,
-            "BB": 2,
-            "SO": 5,
-            "pitching_outs": 27,
-            "pitching_runs": 2,
-            "pitching_hits": 6
-          }
-        ],
-        "source_warnings": [],
-        "player_rows": 27,
-        "status": "PASS",
-        "scoreboard": [
-          {
-            "runs": 2,
-            "hits": 6,
-            "errors": 0,
-            "innings": [
-              1,
-              0,
-              0,
               0,
               1,
+              0,
+              0,
+              0,
               0,
               0,
               0,
@@ -304,17 +74,17 @@
             ]
           },
           {
-            "runs": 4,
-            "hits": 4,
+            "runs": 10,
+            "hits": 10,
             "errors": 0,
             "innings": [
+              1,
               0,
               0,
               0,
               0,
-              3,
               0,
-              0,
+              8,
               1,
               null
             ]
@@ -324,33 +94,33 @@
           {
             "team": "San Francisco",
             "nine_starting_slots": true,
-            "batter_rows": 9,
+            "batter_rows": 11,
             "pitcher_rows": 3,
-            "substitutes": 0
+            "substitutes": 2
           },
           {
             "team": "San Diego",
             "nine_starting_slots": true,
-            "batter_rows": 11,
+            "batter_rows": 10,
             "pitcher_rows": 4,
-            "substitutes": 2
+            "substitutes": 1
           }
         ],
         "official_decisions": {
-          "win": "LaMaison, Tristan",
-          "loss": "Joe Soberon",
-          "save": "Smith, Austin"
+          "win": "Cody, Hayden",
+          "loss": "Gabriel Barrett",
+          "save": null
         },
         "resolved_pitcher_decisions": {
           "win": null,
-          "loss": "Joe Soberon",
+          "loss": "Gabriel Barrett",
           "save": null
         }
       },
       "pitching_decisions": {
-        "win": "Tristan LaMaison",
-        "loss": "Joe Soberon",
-        "save": "Austin Smith"
+        "win": "Hayden Cody",
+        "loss": "Gabriel Barrett",
+        "save": null
       }
     }
   ],
@@ -371,14 +141,19 @@
       "reason": "Official source PDF identified; separate PDF line transcription required"
     },
     {
+      "game_id": "cb-2025-05-17-oregon-iowa-att0349",
+      "source_url": "https://goducks.com/sports/baseball/stats/2025/iowa/boxscore/23665",
+      "reason": "Oregon: source batting order resolved to 10 starting slots, not 9"
+    },
+    {
       "game_id": "cb-2025-05-16-oregon-iowa-att0348",
       "source_url": "https://goducks.com/sports/baseball/stats/2025/iowa/boxscore/23664",
-      "reason": "Oregon: source batting order resolved to 11 starting slots, not 9"
+      "reason": "Oregon: source batting order resolved to 10 starting slots, not 9"
     },
     {
       "game_id": "cb-2025-05-10-george-mason-davidson-att0344",
       "source_url": "https://davidsonwildcats.com/sports/baseball/stats/2025/george-mason/boxscore/9771",
-      "reason": "Davidson: source batting order resolved to 11 starting slots, not 9"
+      "reason": "Official Win scorer 'Fix, Isaac' not uniquely matched among source pitchers cb-2025-05-10-george-mason-davidson-att0344"
     }
   ]
 }

@@ -5,10 +5,10 @@
   "uploaded_total_attendance_rows": 444,
   "season_span": "2017–2026 after user-confirmed 2024 typo correction",
   "staged_games": 444,
-  "official_score_and_inning_lines_matched": 87,
-  "official_player_boxscores_imported": 87,
-  "player_stat_rows": 2523,
-  "unique_player_ids": 1409,
+  "official_score_and_inning_lines_matched": 88,
+  "official_player_boxscores_imported": 88,
+  "player_stat_rows": 2551,
+  "unique_player_ids": 1420,
   "scores_supplied_by_user": 0,
   "source_docs": "Official Auburn, Arkansas, LSU, Florida, Mississippi State, Tennessee and Texas athletics/conference box scores and university recaps",
   "source_worksheet_rows": [
@@ -137,7 +137,7 @@
   "remaining_attendance_games_not_yet_imported": 0,
   "validation": "May 2026: all 27 official player books mapped to matching attendance games; scores, R/H/E, pitching/team opposing R and H, batting lineup starters checked; new imports have complete official per-inning lines. CI browser test separately tracked.",
   "all_attendance_entries_staged": 444,
-  "attendance_only_pending_official_verification": 357,
+  "attendance_only_pending_official_verification": 356,
   "source": "User workbook; 444 original rows, two user-corrected entries.",
   "official_scoreboard_player_lines_pending": 0,
   "latest_verified_batch": "2025 official university scorebooks, reverse-chronological source-gated imports",
@@ -410,8 +410,8 @@
   "2025_backfill": {
     "authorized": true,
     "total_original_games": 74,
-    "verified_player_gamebooks": 19,
-    "source_queue_pending_review": 5,
-    "remaining_attendance_only": 55
+    "verified_player_gamebooks": 20,
+    "source_queue_pending_review": 6,
+    "remaining_attendance_only": 54
   }
 }

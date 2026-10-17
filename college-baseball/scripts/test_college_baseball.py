@@ -262,9 +262,11 @@ for game in committed:
         outs = sum(p["outs"] for p in pitchers)
         hits_allowed = sum(p["hits"] for p in pitchers)
         strikeouts = sum(p["strikeOuts"] for p in pitchers)
-        check(outs in (18, 21, 24, 27) and hits_allowed == sum(x["hits"] for x in opposition)
+        # Innings beyond the ninth are valid (LSU-Tennessee Apr 5 went
+        # twelve); check source opponent totals here, then exact outs below.
+        check(hits_allowed == sum(x["hits"] for x in opposition)
               and strikeouts == sum(x["strikeOuts"] for x in opposition),
-              "Official pitcher outs/hits/strikeouts match opponent " + game["date"] + " " + team)
+              "Official pitcher hits/strikeouts match opponent " + game["date"] + " " + team)
 
         other_runs = game["away_score"] if other == game["away"] else game["home_score"]
         runs_allowed = sum(p["runs"] for p in pitchers)

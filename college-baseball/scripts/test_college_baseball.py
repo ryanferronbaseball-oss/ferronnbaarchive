@@ -59,29 +59,32 @@ def visit(page, host, path, selector):
 
 attended = load_csv(SITE / "data" / "attendance.csv")
 committed = json.loads((SITE / "data" / "games.json").read_text())
-check(len(attended) == len(committed) == 444, "All 444 user-supplied college baseball games preserved")
-check({g["id"] for g in attended} == {g["id"] for g in committed},
-      "Official site attendance identities match normalized uploaded spreadsheet")
-check(len([g for g in committed if g["verification"] == "attendance_only"]) == 439,
-      "439 nonpilot attendance entries remain unverified with no fictional box scores")
-check(len([g for g in committed if g["verification"] == "official_scoreboard_verified"]) == 5,
-      "Five source-verified NCAA Auburn Regional line scores integrated")
-check(all(g["source_url"] and g["pitching_decisions"]["winner"]
-          and sum(x["away"] or 0 for x in g["innings"]) == g["away_score"]
-          and sum(x["home"] or 0 for x in g["innings"]) == g["home_score"]
-          for g in committed if g["verification"] == "official_scoreboard_verified"),
-      "Five pilot game innings and pitching decisions reconcile to official source scores")
-check(all(g["official_boxscore_status"] == "player_stats_pending"
-          for g in committed if g["verification"] == "official_scoreboard_verified"),
-      "Source-verified scoreboard never falsely claims complete player gamebooks")
-check(sum(g["game_number"] is not None for g in committed) == 26,
-      "Thirteen same-day doubleheader pairs remain 26 distinct entries")
-check(len([g for g in committed if g["date"] == "2024-03-30" and g["away"] == "South Alabama" and g["home"] == "Old Dominion"]) == 1,
-      "South Alabama at Old Dominion corrected to 2024-03-30")
-check(len([g for g in committed if "NEEDS MATCH REVIEW" in (g.get("notes") or "")]) == 1,
-      "Ambiguous Auburn–Milwaukee source entry is flagged, not silently substituted")
-check(json.loads((SITE / "data" / "player_stats.json").read_text()) == [],
-      "No invented historical college baseball box scores")
+pilot_rows = json.loads((SITE / "data" / "player_stats.json").read_text())
+pilot_report = json.loads((SITE / "data" / "import_report.json").read_text())
+check(len(attended) == len(committed) == 5, "Five attended regional contests staged as first pilot")
+check(len(pilot_rows) == 81 and len({r["player_id"] for r in pilot_rows}) == 62,
+      "Three official college baseball scorebooks produce 81 audited rows for 62 players")
+check(len([g for g in committed if g["verification"] == "official_boxscore_verified"]) == 3,
+      "Only three complete player gamebooks marked verified")
+check(len([g for g in committed if g["verification"] == "source_matched"]) == 2,
+      "Two official score/inning lines await player table import")
+check(all(g["source_url"] and
+          sum(x["away"] or 0 for x in g["innings"]) == g["away_score"] and
+          sum(x["home"] or 0 for x in g["innings"]) == g["home_score"]
+          for g in committed),
+      "Every pilot game has source-backed innings reconciling to final")
+check({g["id"] for g in committed if g["verification"] == "official_boxscore_verified"} ==
+      {r["game_id"] for r in pilot_rows},
+      "Player stats are tied to three verified regional games only")
+check(pilot_report["uploaded_total_attendance_rows"] == 444 and
+      pilot_report["unimported_worksheet_rows"] == 439,
+      "Entire 444-game history accounted for without claiming it was imported")
+check(pilot_report["known_correction"][0]["confirmed_date"] == "2024-03-30",
+      "South Alabama/Old Dominion correction recorded for upcoming bulk import")
+check(pilot_report["needs_clarification"][0]["worksheet_row"] == 445,
+      "Ambiguous May 31 reverse-orientation entry held for confirmation")
+check(sum(g["game_number"] is not None for g in committed) == 0,
+      "Regional bracket game number not mistakenly treated as a doubleheader number")
 check(json.loads((SITE / "data" / "mlb_crosswalk.json").read_text()) == [],
       "No false college-to-MLB player identity matches")
 check(make_report([])["attendance_games"] == 0, "Empty import reports honest zero verified inputs")
@@ -137,6 +140,7 @@ with tempfile.TemporaryDirectory() as t:
     # The real 444-game attendance list is kept in the repo, but exercise
     # the empty-state UI on a fully disposable test-only server.
     (empty_root / "games.json").write_text("[]\n")
+    (empty_root / "player_stats.json").write_text("[]\n")
     (empty_root / "import_report.json").write_text(json.dumps(make_report([])))
     server = run_server(staging)
     host = f"http://127.0.0.1:{server.server_address[1]}"

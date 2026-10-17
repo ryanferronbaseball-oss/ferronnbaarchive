@@ -97,6 +97,15 @@ def main():
             for k,field in (("win","wins"),("loss","losses"),("save","saves")):
                 p["pitching"][field]=int(mapped[k] is not None and p["player"]==mapped[k])
         game["pitching_decisions"]=mapped
+        # The two February 14 Tennessee–Nicholls entries are separate
+        # official 1:02pm (G1) and 4:32pm (G2) gamebooks; retain the user's
+        # source worksheet order but flag attendance-row confirmation.
+        if gid=="cb-2026-02-14-nicholls-tennessee-att0376":
+            game["game_number"]=1
+            game["attendance_segment_confirmation_pending"]=True
+        elif gid=="cb-2026-02-14-nicholls-tennessee-att0377":
+            game["game_number"]=2
+            game["attendance_segment_confirmation_pending"]=True
         reviews.append({"game_id":gid,"source_url":url,"official_decisions":found,
                         "reconciled_player_decisions":mapped,"source_pitchers":len(pitchers)})
         print("PASS SOURCE W/L/S",gid,mapped,flush=True)

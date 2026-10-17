@@ -103,6 +103,23 @@ def main():
             # import_one itself re-reads the page and reconciles both official
             # batter/pitcher tables and nine source starter/substitution slots.
             rows,audit=import_one(game,item,global_keys)
+            # Mississippi State's 2025 May 21 university stat table truncates
+            # the losing pitcher's visible name to "Mcpherson", while its
+            # *same official gamebook* credits "Mcpherson, Ryan (4-1)".
+            # Use the full verified scorer name to avoid a false player ID.
+            if gid=="cb-2025-05-21-texas-a-m-mississippi-state-att0353":
+                matches=[p for p in rows if p["team"]=="Mississippi State"
+                         and p["player"].casefold()=="mcpherson" and "pitching" in p]
+                if len(matches)!=1:
+                    raise ValueError("Cannot map official Mississippi State scorer to single source pitcher")
+                p=matches[0]
+                old=p["player_id"]
+                p["player"]="Ryan Mcpherson"
+                p["player_id"]="cb-mississippi-state-ryan-mcpherson"
+                global_keys.remove((gid,old))
+                if (gid,p["player_id"]) in global_keys:
+                    raise ValueError("Official Mississippi State pitcher identity collision")
+                global_keys.add((gid,p["player_id"]))
             decisions=scorer_labels(resp.text,rows,gid)
             game.update({
                "game_type":item["game_type"],

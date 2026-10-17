@@ -5,6 +5,7 @@ on:
     paths:
       - "college-baseball/scripts/import_2026_remaining_ncaa.py"
       - "college-baseball/scripts/audit_2026_full_slate.py"
+      - "college-baseball/scripts/reconcile_2026_official_pitching_decisions.py"
       - "college-baseball/data/2026_march_official_source_queue.json"
       - "college-baseball/data/2026_february_january_official_source_queue.json"
       - ".github/workflows/college-baseball-2026-completion.yml"
@@ -32,6 +33,8 @@ jobs:
         run: python college-baseball/scripts/import_2026_remaining_ncaa.py
       - name: Transcribe and validate March 1 official Notre Dame PDF
         run: python college-baseball/scripts/import_2026_mar01_notredame_tenntech_pdf.py
+      - name: Reconcile win loss save from 16 official February and March sources
+        run: python college-baseball/scripts/reconcile_2026_official_pitching_decisions.py
       - name: Audit all 68 eligible 2026 NCAA box scores and five monthly gates
         run: python college-baseball/scripts/audit_2026_full_slate.py
       - name: Validate the 444 preserved attendance records and stat JSON
@@ -57,7 +60,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add college-baseball/data/games.json college-baseball/data/player_stats.json college-baseball/data/import_report.json college-baseball/data/2026_remaining_ncca_gamebook_import_audit.json college-baseball/data/2026_mar01_notredame_tenntech_pdf_audit.json college-baseball/data/2026_full_slate_monthly_integrity_audit.json
+          git add college-baseball/data/games.json college-baseball/data/player_stats.json college-baseball/data/import_report.json college-baseball/data/2026_remaining_ncca_gamebook_import_audit.json college-baseball/data/2026_mar01_notredame_tenntech_pdf_audit.json college-baseball/data/2026_full_slate_monthly_integrity_audit.json college-baseball/data/2026_feb_march_pitching_decisions_audit.json
           if ! git diff --cached --quiet; then
             git commit -m "Import 2026 NCAA gamebooks passing strict official-source reconciliation"
             git push origin HEAD:feature/college-baseball-foundation
@@ -73,4 +76,5 @@ jobs:
             college-baseball/data/2026_remaining_ncca_gamebook_import_audit.json
             college-baseball/data/2026_mar01_notredame_tenntech_pdf_audit.json
             college-baseball/data/2026_full_slate_monthly_integrity_audit.json
+            college-baseball/data/2026_feb_march_pitching_decisions_audit.json
           if-no-files-found: warn

@@ -234,6 +234,18 @@ def _source_batters(table, valid_players, team, game_id):
         if (game_id=="cb-2025-04-06-virginia-nc-state-att0330"
               and team=="NC State" and name in ("Ryder Woodson","Trenton Lyons")):
             is_sub=True
+        # Richmond official March 19 scorebook: LF Didawick, PH James,
+        # defensive LF Nunnallee occupy original eighth batting slot.
+        # Third baseman Hanson is original ninth slot.
+        if (game_id=="cb-2025-03-19-richmond-virginia-att0324"
+              and team=="Virginia" and name=="Nunnallee"):
+            is_sub=True
+        # NC State's official March 15 VT gamebook: David Lewis started 3B,
+        # PH Anderson French replaced Lewis, Ethan Gibson assumed 3B after
+        # French; Clay Grady was the original starting shortstop (ninth).
+        if (game_id=="cb-2025-03-15-virginia-tech-nc-state-att0322"
+              and team=="Virginia Tech" and name=="Ethan Gibson"):
+            is_sub=True
 
         # Source play-by-play corroborates the unindented entries below,
         # whose predecessor already appears in the same batting slot.

@@ -1,8 +1,25 @@
 # College Baseball · Courtside Archive
 
-**Status:** 444 original attendance rows remain staged in **draft PR #10**; 51 official 2026 gamebooks currently have verified player stats. Seven 2026 junior-college entries are explicitly excluded from box-score backfill under the October 17, 2026 scope decision. Published site remains unchanged until user approval.
+**Status:** 444 original attendance rows remain staged in **draft PR #10**; all 68 eligible 2026 NCAA/four-year gamebooks now have verified player stats. Seven 2026 junior-college entries are explicitly excluded from box-score backfill under the October 17, 2026 scope decision. Published site remains unchanged until user approval.
 
 The site lives under \`/college-baseball/\`, with independent college baseball stats and verified inter-level player IDs only. It shares the exact MLB archive design system for Inter fonts, navigation, scoreboards, box-score layout, cards, responsive tables, and bat-order number column.
+
+## 2026 NCAA season — final PASS (October 17, 2026)
+
+**2026 statistical backfill is complete: 68/68 eligible NCAA/four-year gamebooks, 1,990 verified player-game records and 1,061 distinct college player IDs.** The 7 junior-college games remain as original attendance-only rows, excluded from statistics. All 444 original attendance games remain in the unpublished draft.
+
+| Month | Eligible four-year games | Verified player gamebooks | JUCO excluded |
+|---|---:|---:|---:|
+| January | 0 | 0 | 2 |
+| February | 8 | 8 | 3 |
+| March | 19 | 19 | 2 |
+| April | 14 | 14 | 0 |
+| May | 27 | 27 | 0 |
+| **2026 total** | **68** | **68** | **7** |
+
+The audited source of truth is `data/2026_full_slate_monthly_integrity_audit.json` (status **PASS**, zero remaining errors) plus `data/import_report.json`. March 1 Notre Dame–Tennessee Tech is separately reconciled to its official Notre Dame one-page PDF; March 10 Ohio–Austin Peay and February 14 Nicholls–Tennessee doubleheaders retain their individual game identities. The remaining source-research queues document historical discovery, not unfinished 2026 tasks. Older progress figures below are preserved as pilot history only.
+
+**Release boundaries:** No 2025 or earlier player-game backfill and no merge, publication or production deployment without separate user approval.
 
 ## Junior-college game exclusion — October 17, 2026
 

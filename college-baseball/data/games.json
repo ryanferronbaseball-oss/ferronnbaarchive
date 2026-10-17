@@ -11391,7 +11391,7 @@
     "official_boxscore_status": "verified",
     "possible_same_day_doubleheader": false,
     "provisional_worksheet_game_sequence": null,
-    "notes": "Original workbook Sheet1 row 415.",
+    "notes": "Original workbook Sheet1 row 415. Official Bellarmine play-by-play shows eight completed innings; the ninth-inning scoreboard zeros are empty placeholders, not a played ninth. Verified against both teams' pitching totals (24 outs each).",
     "away_hits": 14,
     "home_hits": 7,
     "away_errors": 0,
@@ -11436,11 +11436,6 @@
         "inning": 8,
         "away": 2,
         "home": 0
-      },
-      {
-        "inning": 9,
-        "away": 0,
-        "home": 0
       }
     ],
     "pitching_decisions": {
@@ -11449,7 +11444,8 @@
       "save": null
     },
     "source_attendance": 74,
-    "first_pitch_local": "11:08"
+    "first_pitch_local": "11:08",
+    "completed_innings": 8
   },
   {
     "id": "cb-2026-04-24-clemson-louisville-att0415",

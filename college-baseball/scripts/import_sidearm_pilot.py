@@ -237,17 +237,33 @@ def scrape(game):
         own=audit["teams"][i];other=audit["teams"][1-i]
         if own["pitching_hits"]!=other["H"] or own["pitching_runs"]!=other["R"]:
             raise ValueError(f"{game['id']}: {own['name']} pitching totals don't reconcile opponent hitting")
+    decisions={}
+    audit["source_warnings"]=[]
     for result in ("winner","loser","save"):
         expected=game.get(result)
         matched=[r for r in row_by_id.values() if "pitching" in r and expected
                  and slug(r["player"])==slug(expected)]
-        if len(matched)!=(1 if expected else 0):
-            raise ValueError(f"{game['id']}: official pitching decision {result} {expected!r} does not map to exactly one pitcher")
+        if not expected:
+            decisions[result]=None
+        elif len(matched)==1:
+            decisions[result]=matched[0]["player_id"]
+        else:
+            # NCAA school webpages can contain a mismatch between the stated
+            # W/L and the actual pitcher table. Preserve the published winner/
+            # loser at GAME level but do not credit a nonexistent pitcher.
+            decisions[result]=None
+            audit["source_warnings"].append(
+                f"Official {result} label {expected!r} does not appear in that game's pitcher lines; "
+                "individual pitcher W/L attribution intentionally unavailable.")
     for r in row_by_id.values():
         if "pitching" in r:
-            r["pitching"]["wins"]=int(slug(r["player"])==slug(game["winner"]))
-            r["pitching"]["losses"]=int(slug(r["player"])==slug(game["loser"]))
-            r["pitching"]["saves"]=int(bool(game.get("save")) and slug(r["player"])==slug(game["save"]))
+            # Null is intentional: a source-disputed decision cannot be treated
+            # as an actual recorded zero-loss event for every pitcher.
+            for result,field in (("winner","wins"),("loser","losses"),("save","saves")):
+                r["pitching"][field]=(int(r["player_id"]==decisions[result])
+                    if decisions[result] else (0 if not game.get(result) else None))
+    if audit["source_warnings"]:
+        print("SOURCE WARNING",game["id"],json.dumps(audit["source_warnings"]),flush=True)
     if len(row_by_id)<17:
         raise ValueError(f"{game['id']}: too few player boxscore rows {len(row_by_id)}")
     audit["player_rows"]=len(row_by_id)

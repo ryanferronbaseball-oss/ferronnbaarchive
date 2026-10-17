@@ -307,12 +307,16 @@ check(pilot_report["known_correction"][1]["attendance_game_number"] == 444 and
       not pilot_report["needs_clarification"],
       "User correction to final attendance game 444 resolved without altering prior game 443")
 numbered_games = [g for g in committed if g["game_number"] is not None]
-check(len(numbered_games) == 2 and
+check(len(numbered_games) == 6 and
       {(g["date"], g["away"], g["home"], g["game_number"]) for g in numbered_games}
-      == {("2026-04-11", "East Tennessee State", "Belmont", 1),
+      == {("2026-02-14", "Nicholls", "Tennessee", 1),
+          ("2026-02-14", "Nicholls", "Tennessee", 2),
+          ("2026-03-10", "Ohio", "Austin Peay", 1),
+          ("2026-03-10", "Ohio", "Austin Peay", 2),
+          ("2026-04-11", "East Tennessee State", "Belmont", 1),
           ("2026-04-11", "East Tennessee State", "Belmont", 2)} and
       all(g["verification"] == "official_boxscore_verified" for g in numbered_games),
-      "Both source-verified ETSU-Belmont doubleheader games retain distinct numbers")
+      "All three 2026 official doubleheaders preserve separate G1/G2 identifiers")
 check(all(g["game_number"] is None for g in committed
           if (g.get("postseason_round") or "").lower().find("regional") >= 0),
       "Regional tournament bracket game number not mistaken for a doubleheader number")

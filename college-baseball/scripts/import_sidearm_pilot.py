@@ -58,6 +58,13 @@ def table_rows(table,head):
                 vals.extend([""]*(span-1)+[text])
             else:
                 vals.extend([text]*span)
+        # Some Sidearm composite tables render batting lines as two physical
+        # cells: position, then "name AB R H ... PO A", even though the header
+        # exposes 20 logical columns. Reconstruct exactly the final 18 integers.
+        if len(vals)!=len(head) and len(head)==20 and len(vals)==2:
+            tokens=vals[1].split()
+            if len(tokens)>=19 and all(re.fullmatch(r"\d+",x) for x in tokens[-18:]):
+                vals=[vals[0]," ".join(tokens[:-18]),*tokens[-18:]]
         if len(vals)!=len(head):
             continue
         if any(x.strip().lower()=="totals" for x in vals[:2]):

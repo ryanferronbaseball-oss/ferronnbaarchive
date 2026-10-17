@@ -114,6 +114,21 @@ for game in committed:
               and strikeouts == sum(x["strikeOuts"] for x in opposition),
               "Official pitcher outs/hits/strikeouts match opponent " + game["date"] + " " + team)
 
+        other_runs = game["away_score"] if other == game["away"] else game["home_score"]
+        runs_allowed = sum(p["runs"] for p in pitchers)
+        earned = sum(p["earnedRuns"] for p in pitchers)
+        needed_outs = 24 if team == game["away"] and game["home_score"] > game["away_score"] else 27
+        check(outs == needed_outs and runs_allowed == other_runs and earned <= runs_allowed,
+              "Pitchers reconcile innings, opponent runs, and earned runs " + game["id"] + " " + team)
+    available = [r for r in pilot_rows if r["game_id"] == game["id"] and "pitching" in r]
+    for choice, field in (("win", "wins"), ("loss", "losses"), ("save", "saves")):
+        official = game.get("pitching_decisions", {}).get(choice)
+        matches = [r for r in available if r["pitching"].get(field) == 1]
+        check(len(matches) == (1 if official else 0) and
+              (not official or matches[0]["player"] == official) and
+              all(r["pitching"].get(field) in (0, 1) for r in available),
+              "Pitching " + field + " match source gamebook and player for " + game["id"])
+
 check(pilot_report["uploaded_total_attendance_rows"] == 444 and
       pilot_report["unimported_worksheet_rows"] == 438,
       "All 444 attendance entries accounted for; 6 staged with 438 not yet imported")
@@ -288,6 +303,8 @@ with tempfile.TemporaryDirectory() as t:
                       f"{width} seeded-test records page fits viewport")
                 page.close()
             check(not errors, "Both populated-view widths have zero uncaught JavaScript errors")
+            # Validate real-data source links, W/L/S attribution and full
+            # batting/pitching tables in each of the three newly imported games.
             # Finally, test all six real source-backed pilot games, distinct from
             # the synthetic examples and also without modifying the repo data.
             for source in ("games.json", "player_stats.json", "import_report.json"):
@@ -307,6 +324,22 @@ with tempfile.TemporaryDirectory() as t:
                       and "Alex Petrovic" in page.locator("#cb-game-details").inner_text()
                       and "Camden Kuhnke" not in page.locator("#cb-game-details").inner_text(),
                       f"{width} corrected game #444 has official UCF/Auburn, not Milwaukee, player tables")
+                decisions = page.locator("#cb-pitching-decisions")
+                check("W: Alex Petrovic" in decisions.inner_text()
+                      and "L: Roman Kimball" in decisions.inner_text()
+                      and "SV: Ryan Hetzler" in decisions.inner_text()
+                      and decisions.locator('a[href="./player.html?id=cb-auburn-ryan-hetzler"]').count() == 1,
+                      f"{width} May 31 official W/L/S credit correct linked college pitchers")
+                visit(page, host, "game.html?id=cb-2026-05-29-milwaukee-auburn", "#cb-game-details .cb-game-summary")
+                check("13 – 8" in page.locator("#cb-game-details").inner_text()
+                      and "Grant Ross" in page.locator("#cb-game-details").inner_text()
+                      and "W: Riley Peterson" in page.locator("#cb-pitching-decisions").inner_text(),
+                      f"{width} May 29 full official Milwaukee-Auburn hitter/pitcher records render")
+                visit(page, host, "game.html?id=cb-2026-05-30-ucf-milwaukee", "#cb-game-details .cb-game-summary")
+                check("6 – 13" in page.locator("#cb-game-details").inner_text()
+                      and "Andrew Williamson" in page.locator("#cb-game-details").inner_text()
+                      and "W: Aric Ehmke" in page.locator("#cb-pitching-decisions").inner_text(),
+                      f"{width} May 30 UCF-Milwaukee full gamebook and linked decision render")
                 visit(page, host, "game.html?id=cb-2026-05-31-auburn-milwaukee", "#cb-game-details .cb-game-summary")
                 check("8 – 1" in page.locator("#cb-game-details").inner_text() and
                       "Chase Fralick" in page.locator("#cb-game-details").inner_text(),

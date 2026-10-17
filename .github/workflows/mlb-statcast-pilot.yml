@@ -1,0 +1,112 @@
+name: MLB Statcast pilot
+on:
+  push:
+    branches:
+      - feature/mlb-statcast-pilot
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+jobs:
+  validate-statcast:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install --disable-pip-version-check pybaseball pandas
+      - run: python mlb/scripts/statcast_pilot.py
+      - name: Check pilot records
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = json.loads(Path('mlb/data/statcast_pilot.json').read_text())
+          print('Pilot results:')
+          for x in p['report']: print(x)
+          print('Leader counts:', {k:len(v) for k,v in p['leaders'].items()})
+          assert len(p['report']) == 5
+          assert len({x['game_pk'] for x in p['report']}) == 5
+          PY
+      - name: Cross-check five pilot games against Baseball Savant CSV
+        run: python mlb/scripts/verify_statcast_pilot.py
+      - name: Import and independently verify 15 additional Statcast games
+        run: python mlb/scripts/statcast_batch_02.py
+      - name: Source-verify next 15 attended games (batch 03)
+        run: python mlb/scripts/statcast_batch_02.py --offset 15 --count 15 --label 03
+      - name: Source-verify next 15 attended games (batch 04)
+        run: python mlb/scripts/statcast_batch_02.py --offset 30 --count 15 --label 04
+      - name: Source-verify next 15 attended games (batch 05)
+        run: python mlb/scripts/statcast_batch_02.py --offset 45 --count 15 --label 05
+      - name: Source-verify remaining 12 attended games (batch 06)
+        run: python mlb/scripts/statcast_batch_02.py --offset 60 --count 12 --label 06
+      - name: Confirm all 2015-onward attended games exactly once
+        run: python mlb/scripts/assemble_statcast_attendance.py
+      - name: Export official player names
+        run: python mlb/scripts/export_statcast_player_names.py
+      - name: Build source-verified website data
+        run: python mlb/scripts/build_statcast_site.py
+      - name: Check new UI JavaScript syntax
+        run: |
+          node --check mlb/assets/archive.js
+          node --check mlb/assets/pages.js
+          node --check mlb/assets/statcast-ui.js
+      - name: Check UI schema and archive links
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path('mlb/data/statcast_summary.json')
+          d = json.loads(p.read_text())
+          assert d['meta']['status'] == 'PASS'
+          assert d['meta']['imported_pitch_events'] == 22844
+          assert len(d['games']) == 77
+          assert len({g['pk'] for g in d['games']}) == 77
+          assert sum(g['count'] for g in d['games']) == 22844
+          assert d['leaders']['fastest'] and d['leaders']['hardest'] and d['leaders']['longest']
+          assert all(g['attendance_id'] for g in d['games'])
+          assert all(p['name'] for p in d['bats'] + d['pits'])
+          for path in ['mlb/statcast.html','mlb/assets/statcast-ui.js','mlb/assets/statcast.css']:
+              assert Path(path).is_file()
+          assert './assets/statcast-ui.js' in Path('mlb/statcast.html').read_text()
+          assert 'statcast.html' in Path('mlb/assets/archive.js').read_text()
+          print('UI snapshot and route checks passed: 77 games, 22844 pitches')
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mlb-statcast-all-attended-validation
+          path: |
+            mlb/data/statcast_pilot.json
+            mlb/data/statcast_verification.json
+            mlb/data/statcast_batch_02.json
+            mlb/data/statcast_batch_02_verification.json
+            mlb/data/statcast_batch_03.json
+            mlb/data/statcast_batch_03_verification.json
+            mlb/data/statcast_batch_04.json
+            mlb/data/statcast_batch_04_verification.json
+            mlb/data/statcast_batch_05.json
+            mlb/data/statcast_batch_05_verification.json
+            mlb/data/statcast_batch_06.json
+            mlb/data/statcast_batch_06_verification.json
+            mlb/data/statcast_attendance_2015plus.json
+            mlb/data/statcast_attendance_manifest.json
+            mlb/data/statcast_summary.json
+            mlb/data/statcast_player_names.json
+          if-no-files-found: warn
+      # This updates only the isolated draft PR branch, never production.
+      # Commits made with GITHUB_TOKEN do not recursively trigger new Actions runs.
+      - name: Stage verified snapshot on draft branch only
+        if: github.event_name == 'push' && github.ref == 'refs/heads/feature/mlb-statcast-pilot'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f mlb/data/statcast_summary.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Stage 77-game verified Statcast UI snapshot [skip ci]"
+            git push origin HEAD:feature/mlb-statcast-pilot
+          fi

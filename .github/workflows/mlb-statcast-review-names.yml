@@ -1,0 +1,21 @@
+name: MLB Statcast review player names
+on:
+  push:
+    branches:
+      - feature/mlb-statcast-pilot
+  workflow_dispatch:
+jobs:
+  export-players:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Export player names from existing official box-score records
+        run: python mlb/scripts/export_statcast_player_names.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: mlb-statcast-player-names
+          path: mlb/data/statcast_player_names.json
+          if-no-files-found: error

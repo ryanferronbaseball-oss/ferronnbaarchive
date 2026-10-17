@@ -156,6 +156,8 @@ function gamePage(){
   +playerCard
   +'<p class="mlb-note">Custom, unofficial one-player impact rating. Hitting rewards total bases, runs, RBI, walks and steals; pitching rewards innings and strikeouts while penalizing runs, hits and walks. Both are compared on one scale, regardless of winning team.</p></section>';
  el("scoreboard").innerHTML=board+decisionsPanel+potgPanel+innings;
+ el("scoreboard").insertAdjacentHTML("beforeend", '<div id="sc-game-panel"></div>');
+ window.MLBStatcast?.renderGame(g,el("sc-game-panel"));
  const order=[["batting","Batting"],["pitching","Pitching"],["fielding","Fielding"]];
  el("gameStats").innerHTML='<div class="mlb-nav-tabs" role="tablist">'+order.map(([c,title],i)=>'<button type="button" role="tab" aria-selected="'+(i===0)+'" data-cat="'+c+'">'+title+'</button>').join("")+'</div><section class="panel"><h2 id="statTitle">Batting box score</h2><div id="box"></div></section><section class="panel"><h2>Scoring plays</h2><div id="scoring"></div></section>'
  +'<p class="mlb-note">Official data: '+(confirmed?'<a target="_blank" rel="noopener" href="'+esc(g.source_url||"https://www.mlb.com/gameday/"+g.game_pk)+'">MLB game record ↗</a>':'Unmatched attendance entry. No player statistics are invented.')+'</p>';
@@ -404,6 +406,8 @@ function profilePage(){
   app.querySelectorAll("[data-honor-link]").forEach(a=>a.addEventListener("click",()=>{showMain("overview");showHonor(a.dataset.honorLink)}));
  }
  if(location.hash==="#careerHonors"&&hasHonors)showMain("overview");
+ app.insertAdjacentHTML("beforeend", '<div id="sc-profile-panel"></div>');
+ window.MLBStatcast?.renderPlayer(p,el("sc-profile-panel"));
  document.title=p.name+" | MLB Courtside Archive";
 }
 
@@ -515,6 +519,8 @@ function recordsPage(){
  feats.sort((a,b)=>b.r.date.localeCompare(a.r.date));
  el("feats").innerHTML=feats.length?table(["Achievement","Player","Date","Value","Game"],feats.map(({label,r})=>{let g=games.find(x=>x.game_pk===r.game_pk);return '<tr><td>'+esc(label)+'</td><td><a href="'+playerUrl(r)+'">'+esc(r.name)+'</a></td><td>'+date(r.date)+'</td><td>'+r.value+'</td><td>'+(g?'<a href="'+gameUrl(g)+'">Game ↗</a>':'—')+'</td></tr>'}),"No achievements recorded yet."):'<div class="empty">No verified qualifying statistical feats yet.</div>';
  el("moments").innerHTML=table(["Date","Match","Highlight","Score","Game"],complete.slice().sort((a,b)=>(b.away_score+b.home_score)-(a.away_score+a.home_score)).slice(0,25).map(g=>'<tr><td>'+date(g.date)+'</td><td>'+esc(g.away)+' @ '+esc(g.home)+'</td><td>'+esc((g.innings?.length||9)>9?"Extra innings":g.home_score===0||g.away_score===0?"Shutout":"High-scoring / attended game")+'</td><td>'+g.away_score+'–'+g.home_score+'</td><td><a href="'+gameUrl(g)+'">Game ↗</a></td></tr>'));
+ app.insertAdjacentHTML("beforeend", '<div id="sc-records-panel"></div>');
+ window.MLBStatcast?.renderRecords(el("sc-records-panel"));
  if(location.hash==="#milestones")app.querySelector('[data-tab="milestones"]').click();
 }
 if(page==="home")overview();else if(page==="games")gamePage();else if(page==="players")statsPage();else if(page==="player")profilePage();else if(page==="records")recordsPage();else if(page==="hof")hofPage();

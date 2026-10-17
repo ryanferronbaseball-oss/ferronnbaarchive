@@ -96,9 +96,29 @@ def batting_rows(table_s,table_d,game_id,team,url):
                 "span":td.get("colspan","1")} for td in tr.find_all(["td","th"],recursive=False)][:28],flush=True)
         raise ValueError(f"{game_id} {team}: simple/detail row count mismatch {len(short)} vs {len(detail)}")
     if game_id=="cb-2024-03-08-notre-dame-virginia-tech-att0251":
-        print("ND-COMPOSITE-REVIEW",team,
-              "simple",[(x.get("Player"),x.get("AB"),x.get("R"),x.get("H")) for x in short[:9]],
-              "detail",[(x.get("Player"),x.get("AB"),x.get("R"),x.get("H")) for x in detail[:9]],flush=True)
+        # The original ACC composite batting table sorts Tech's players by AB,
+        # while the batting summary keeps the ACTUAL nine-person lineup.
+        # Match complete source player names before validating every stat and
+        # retain original summary order for substitutions and batting slots.
+        detailed={}
+        total_record=None
+        for rec in detail:
+            if rec.get("_totals"):
+                if total_record is not None:raise ValueError("Duplicate source batting total")
+                total_record=rec;continue
+            k=slug(normalize_name(rec["Player"]))
+            if not k or k in detailed:raise ValueError("Duplicate/missing composite player identity")
+            detailed[k]=rec
+        reordered=[]
+        for rec in short:
+            if rec.get("_totals"):
+                if total_record is None:raise ValueError("Missing composite batting total")
+                reordered.append(total_record);continue
+            k=slug(normalize_name(rec["Player"]))
+            if k not in detailed:raise ValueError("Official composite player not found: "+str(rec["Player"]))
+            reordered.append(detailed.pop(k))
+        if detailed:raise ValueError("Extra unmatched composite player lines")
+        detail=reordered
     people=[];totals=None
     for i,(s,x) in enumerate(zip(short,detail)):
         if s.get("_totals") or x.get("_totals"):

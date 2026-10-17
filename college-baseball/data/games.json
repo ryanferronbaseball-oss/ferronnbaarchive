@@ -10232,22 +10232,75 @@
     "season": 2026,
     "away": "Baylor",
     "home": "Cincinnati",
-    "ballpark": null,
-    "city": null,
-    "state": null,
-    "neutral_site": null,
+    "ballpark": "UC Baseball Stadium",
+    "city": "Cincinnati",
+    "state": "OH",
+    "neutral_site": false,
     "game_number": null,
-    "game_type": null,
+    "game_type": "regular_season",
     "postseason_round": null,
-    "away_score": null,
-    "home_score": null,
-    "score_provenance": null,
-    "source_url": null,
-    "verification": "attendance_only",
-    "official_boxscore_status": "not_imported",
+    "away_score": 1,
+    "home_score": 11,
+    "score_provenance": "official_boxscore",
+    "source_url": "https://baylorbears.com/sports/baseball/stats/2026/cincinnati/boxscore/29605",
+    "verification": "official_boxscore_verified",
+    "official_boxscore_status": "verified",
     "possible_same_day_doubleheader": false,
     "provisional_worksheet_game_sequence": null,
-    "notes": "Original workbook Sheet1 row 411."
+    "notes": "Original workbook Sheet1 row 411.",
+    "away_hits": 7,
+    "home_hits": 10,
+    "away_errors": 3,
+    "home_errors": 0,
+    "innings": [
+      {
+        "inning": 1,
+        "away": 1,
+        "home": 0
+      },
+      {
+        "inning": 2,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 3,
+        "away": 0,
+        "home": 2
+      },
+      {
+        "inning": 4,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 5,
+        "away": 0,
+        "home": 3
+      },
+      {
+        "inning": 6,
+        "away": 0,
+        "home": 2
+      },
+      {
+        "inning": 7,
+        "away": 0,
+        "home": 2
+      },
+      {
+        "inning": 8,
+        "away": 0,
+        "home": 2
+      }
+    ],
+    "pitching_decisions": {
+      "win": "Nathan Taylor",
+      "loss": "Lucas Davenport",
+      "save": null
+    },
+    "source_attendance": 794,
+    "first_pitch_local": "17:05"
   },
   {
     "id": "cb-2026-04-11-east-tennessee-state-belmont-att0411",

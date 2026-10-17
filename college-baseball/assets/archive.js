@@ -252,22 +252,39 @@ function renderPlayers(d){
 function renderPlayer(d){
  const id=new URLSearchParams(location.search).get("id"),p=d.players.find(x=>String(x.player_id)===id);
  if(!p){$("app").innerHTML='<div class="eyebrow">College Baseball · Player profile</div><h1>Player profile</h1>'+pending("No verified college baseball player profile is available for this ID. Players appear after official gamebook imports.");return}
- const b=bat(p.rows),pi=pitch(p.rows);
- const qualifiedHit=p.rows.some(x=>x.batting!=null),qualifiedPitch=p.rows.some(x=>x.pitching!=null);
+ const b=bat(p.rows),pi=pitch(p.rows),qualifiedHit=p.rows.some(x=>x.batting!=null),qualifiedPitch=p.rows.some(x=>x.pitching!=null);
  const cross=d.crosswalk.find(x=>x.verified===true&&String(x.college_player_id)===id);
  const entries=unique(p.rows.map(x=>x.game_id)).map(game_id=>d.gameMap.get(game_id)).filter(Boolean).sort((a,b)=>a.date.localeCompare(b.date));
- $("app").innerHTML='<div class="eyebrow">College Baseball · Player profile</div><h1>'+esc(p.name)+'</h1><p class="lead">'+esc(p.teams.join(" / "))+' · '+p.games.length+' game'+(p.games.length===1?"":"s")+' witnessed</p>'
- +'<div class="cb-note">Only college baseball appearances from attended games appear here; professional seasons are not added to college totals.</div>'
- +(qualifiedHit?'<h2>Hitting in games you attended</h2>'+metrics([["Games with batting",p.rows.filter(r=>r.batting!=null).length],["Hits",fmt(b.hits)],["Home runs",fmt(b.homeRuns)],["AVG",rate(b.average,3)],["RBI",fmt(b.rbi)],["OPS",rate(b.ops,3)] ]):"")
- +(qualifiedPitch?'<h2>Pitching in games you attended</h2>'+metrics([["IP",pi.innings??"—"],["Strikeouts",fmt(pi.strikeouts)],["Wins",fmt(pi.wins)],["Losses",fmt(pi.losses)],["Saves",fmt(pi.saves)],["ERA",rate(pi.era,2)],["WHIP",rate(pi.whip,2)]]):"")
+ const initials=p.name.split(/\s+/).map(x=>x[0]).slice(0,2).join("").toUpperCase();
+ const roleStats=(label,items)=>'<section class="cb-profile-role"><h2>'+esc(label)+'</h2><div class="metrics mlb-profile-stat-grid cb-profile-metrics">'
+  +items.map(([title,value])=>'<div class="metric mlb-profile-stat"><small>'+esc(title)+'</small><strong>'+esc(value==null?"—":value)+'</strong></div>').join("")
+  +'</div></section>';
+ const hitter=qualifiedHit?roleStats("Hitting in games you attended",[
+  ["Games",p.rows.filter(r=>r.batting!=null).length],["Batting Average",rate(b.average,3)],
+  ["Home Runs",fmt(b.homeRuns)],["RBI",fmt(b.rbi)],["OPS",rate(b.ops,3)],["Hits",fmt(b.hits)]
+ ]):"";
+ const pitcher=qualifiedPitch?roleStats("Pitching in games you attended",[
+  ["Wins",fmt(pi.wins)],["Losses",fmt(pi.losses)],["Saves",fmt(pi.saves)],
+  ["Innings Pitched",pi.innings??"—"],["Walks",fmt(pi.walks)],["Strikeouts",fmt(pi.strikeouts)]
+ ])+'<div class="mlb-profile-total-grid cb-profile-rate-grid">'
+  +[["ERA",rate(pi.era,2)],["WHIP",rate(pi.whip,2)],["Hits Allowed",fmt(pi.hits)],["Earned Runs",fmt(pi.earnedRuns)]]
+   .map(([title,value])=>'<div class="mlb-profile-total"><small>'+esc(title)+'</small><strong>'+esc(value)+'</strong></div>').join("")+'</div>':"";
+ $("app").innerHTML='<div class="eyebrow">College Baseball · Player profile</div>'
+ +'<section class="mlb-profile-hero mlb-profile-head cb-profile-hero">'
+ +'<div class="mlb-profile-photo cb-profile-initials" aria-hidden="true">'+esc(initials)+'</div>'
+ +'<div class="mlb-profile-identity"><div class="mlb-profile-team-name">'+esc(p.teams.join(" / "))+'</div>'
+ +'<h1>'+esc(p.name)+'</h1><p class="mlb-profile-seen">'+p.games.length+' game'+(p.games.length===1?"":"s")+' witnessed · College baseball</p>'
+ +'</div></section>'
+ +'<p class="mlb-note">Only college baseball appearances from games you attended appear here; professional seasons are never added to college totals.</p>'
+ +hitter+pitcher
  +(cross?'<div class="cb-note"><strong>Professional connection:</strong> Verified identity link to this player’s independent <a class="cb-link" href="../mlb/player.html?id='+encodeURIComponent(cross.mlb_player_id)+'">MLB attendance profile ↗</a>. College and MLB statistics remain separate.</div>':"")
- +'<h2>Every game you witnessed</h2><div class="cb-grid">'+entries.map(gameCard).join("")+'</div>'
- +'<h2>Recorded college game logs</h2>'
+ +'<div class="section-heading"><h2>Every game you witnessed</h2></div><div class="game-grid cb-grid cb-profile-games">'+entries.map(gameCard).join("")+'</div>'
+ +'<section class="panel cb-player-game-log"><h2>Recorded college game logs</h2>'
  +htmlTable(["Date","Matchup","AB","H","HR","RBI","IP","K"],p.rows.map(r=>{
   const g=d.gameMap.get(r.game_id);
   return '<tr><td><a href="'+gameUrl(g)+'">'+esc(date(g.date))+'</a></td><td>'+esc(gameLabel(g))+'</td>'
   +[stat(r.batting?.atBats),stat(r.batting?.hits),stat(r.batting?.homeRuns),stat(r.batting?.rbi),r.pitching?.outs!=null?Math.floor(r.pitching.outs/3)+"."+(r.pitching.outs%3):null,stat(r.pitching?.strikeOuts)].map(x=>'<td>'+esc(x==null?"—":x)+'</td>').join("")+'</tr>';
- })) ;
+ }))+'</section>';
 }
 function renderRecords(d){
  const defs=[["Hits","batting","hits"],["Home runs","batting","homeRuns"],["RBI","batting","rbi"],["Strikeouts","pitching","strikeOuts"],["Outs pitched","pitching","outs"],["Stolen bases","batting","stolenBases"]];

@@ -152,6 +152,25 @@ def main():
                     global_keys.add((gid,new_id))
                     pitcher["player"]=canonical
                     pitcher["player_id"]=new_id
+            # WKU's 2025 March 22 school boxscore abbreviates its official
+            # pitcher names to "Whalen, D.", "Peters, T." and "Jones, E.";
+            # WKU's same-day official game recap identifies them fully as
+            # Drew Whalen, Treyson Peters, and Evan Jones.
+            if gid=="cb-2025-03-22-western-kentucky-kennesaw-state-att0325":
+                official_pitchers={"whalen":"Drew Whalen",
+                    "peters":"Treyson Peters","jones":"Evan Jones"}
+                for surname,full_name in official_pitchers.items():
+                    hits=[p for p in rows if p["team"]=="Western Kentucky"
+                        and "pitching" in p and
+                        p["player"].lower().replace(","," ").split()[0]==surname]
+                    if len(hits)!=1:
+                        raise ValueError("WKU abbreviated source pitcher ambiguous: "+surname)
+                    row=hits[0];old=row["player_id"]
+                    new="cb-western-kentucky-"+full_name.lower().replace(" ","-")
+                    if (gid,new) in global_keys and old!=new:
+                        raise ValueError("WKU corrected pitcher ID collision")
+                    global_keys.remove((gid,old));global_keys.add((gid,new))
+                    row["player"]=full_name;row["player_id"]=new
             decisions=scorer_labels(resp.text,rows,gid)
             game.update({
                "game_type":item["game_type"],

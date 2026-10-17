@@ -1,16 +1,16 @@
 {
-  "status": "PARTIAL_REVIEW_REQUIRED",
+  "status": "PASS",
   "approval": "2024–2026 official four-year source backfill; no 2023 or earlier, no release",
   "original_attendance": 444,
   "attendance_2024": 71,
-  "verified_2024_total": 58,
-  "remaining_2024": 13,
+  "verified_2024_total": 59,
+  "remaining_2024": 12,
   "2025_gamebooks_preserved": 69,
   "2026_gamebooks_preserved": 68,
   "completed_in_this_run": 1,
   "linked_2024_sources": 59,
   "months_verified": {
-    "2024-02": 13,
+    "2024-02": 14,
     "2024-03": 19,
     "2024-04": 6,
     "2024-05": 14,
@@ -18,101 +18,101 @@
   },
   "passed_games": [
     {
-      "game_id": "cb-2024-04-15-southern-mississippi-georgia-state-att0269",
-      "source_url": "https://southernmiss.com/sports/baseball/stats/2024/georgia-state/boxscore/11075",
+      "game_id": "cb-2024-02-16-duke-indiana-att0225",
+      "source_url": "https://iuhoosiers.com/sports/baseball/stats/2024/duke/boxscore/26942",
       "score": [
-        14,
-        9
+        6,
+        3
       ],
-      "player_game_rows": 29,
+      "player_game_rows": 27,
       "pitching_decisions": {
-        "win": "Kros Sivley",
-        "loss": "Davis Chastain",
-        "save": null
+        "win": "Jonathan Santucci",
+        "loss": "Brayden Risedorph",
+        "save": "Charlie Beilenson"
       },
       "stat_audit": {
-        "game_id": "cb-2024-04-15-southern-mississippi-georgia-state-att0269",
-        "source": "https://southernmiss.com/sports/baseball/stats/2024/georgia-state/boxscore/11075",
+        "game_id": "cb-2024-02-16-duke-indiana-att0225",
+        "source": "https://iuhoosiers.com/sports/baseball/stats/2024/duke/boxscore/26942",
         "http_code": 200,
-        "source_bytes": 1153833,
-        "source_sha256": "15297d729a1ddfed2f70a07d1eac2a6bf0e565be9611986edce75e4739885863",
+        "source_bytes": 1066907,
+        "source_sha256": "88b00dd6ad227f7df5400542ccbbe0a1fb04d8489bb273270879730dd9e60bee",
         "teams": [
           {
-            "name": "Southern Mississippi",
-            "batters": 11,
+            "name": "Duke",
+            "batters": 9,
             "pitchers": 3,
-            "AB": 38,
-            "R": 14,
-            "H": 13,
-            "RBI": 14,
-            "BB": 4,
-            "SO": 8,
+            "AB": 36,
+            "R": 6,
+            "H": 10,
+            "RBI": 6,
+            "BB": 3,
+            "SO": 7,
             "pitching_outs": 27,
-            "pitching_runs": 9,
-            "pitching_hits": 15
+            "pitching_runs": 3,
+            "pitching_hits": 9
           },
           {
-            "name": "Georgia State",
+            "name": "Indiana",
             "batters": 11,
             "pitchers": 4,
-            "AB": 42,
-            "R": 9,
-            "H": 15,
-            "RBI": 9,
+            "AB": 35,
+            "R": 3,
+            "H": 9,
+            "RBI": 3,
             "BB": 3,
-            "SO": 10,
+            "SO": 13,
             "pitching_outs": 27,
-            "pitching_runs": 14,
-            "pitching_hits": 13
+            "pitching_runs": 6,
+            "pitching_hits": 10
           }
         ],
         "source_warnings": [],
-        "player_rows": 29,
+        "player_rows": 27,
         "status": "PASS",
         "scoreboard": [
           {
-            "runs": 14,
-            "hits": 13,
-            "errors": 1,
+            "runs": 6,
+            "hits": 10,
+            "errors": 0,
             "innings": [
+              0,
+              0,
+              0,
+              0,
               1,
-              0,
-              0,
-              0,
               2,
               2,
-              3,
-              2,
-              4
+              1,
+              0
             ]
           },
           {
-            "runs": 9,
-            "hits": 15,
-            "errors": 0,
+            "runs": 3,
+            "hits": 9,
+            "errors": 2,
             "innings": [
-              3,
+              0,
+              0,
+              0,
+              0,
+              0,
               2,
               1,
               0,
-              0,
-              0,
-              0,
-              0,
-              3
+              0
             ]
           }
         ],
         "lineup_audit": [
           {
-            "team": "Southern Mississippi",
+            "team": "Duke",
             "nine_starting_slots": true,
-            "batter_rows": 11,
+            "batter_rows": 9,
             "pitcher_rows": 3,
-            "substitutes": 2
+            "substitutes": 0
           },
           {
-            "team": "Georgia State",
+            "team": "Indiana",
             "nine_starting_slots": true,
             "batter_rows": 11,
             "pitcher_rows": 4,
@@ -120,9 +120,9 @@
           }
         ],
         "official_decisions": {
-          "win": "Sivley, Kros",
-          "loss": "Chastain, Davis",
-          "save": null
+          "win": "Santucci, Jonathan",
+          "loss": "Risedorph, Brayden",
+          "save": "Beilenson, Charlie"
         },
         "resolved_pitcher_decisions": {
           "win": null,
@@ -132,11 +132,5 @@
       }
     }
   ],
-  "pending_review": [
-    {
-      "game_id": "cb-2024-02-16-duke-indiana-att0225",
-      "source_url": "https://iuhoosiers.com/sports/baseball/stats/2024/duke/boxscore/26942",
-      "reason": "Indiana: source batting order resolved to 10 starting slots, not 9"
-    }
-  ]
+  "pending_review": []
 }

@@ -1,26 +1,227 @@
 {
   "status": "PARTIAL_REVIEW_REQUIRED",
-  "completed_this_run": 0,
+  "completed_this_run": 2,
   "prior_verified": 65,
-  "total_verified": 65,
+  "total_verified": 67,
   "eligible_2026": 68,
   "original_attendance_rows": 444,
-  "completed_games": [],
+  "completed_games": [
+    {
+      "game_id": "cb-2026-02-22-marist-vanderbilt-att0382",
+      "player_rows": 28,
+      "source_url": "https://goredfoxes.com/boxscore.aspx?id=15360",
+      "audit": {
+        "game_id": "cb-2026-02-22-marist-vanderbilt-att0382",
+        "source": "https://goredfoxes.com/boxscore.aspx?id=15360",
+        "http_code": 200,
+        "source_bytes": 694412,
+        "source_sha256": "274fccf50d393b1afd60f50705939e041f5ce8e83678776a5d5f4014c43f3560",
+        "teams": [
+          {
+            "name": "Marist",
+            "batters": 11,
+            "pitchers": 5,
+            "AB": 30,
+            "R": 1,
+            "H": 3,
+            "RBI": 0,
+            "BB": 6,
+            "SO": 12,
+            "pitching_outs": 24,
+            "pitching_runs": 8,
+            "pitching_hits": 8
+          },
+          {
+            "name": "Vanderbilt",
+            "batters": 10,
+            "pitchers": 3,
+            "AB": 30,
+            "R": 8,
+            "H": 8,
+            "RBI": 7,
+            "BB": 7,
+            "SO": 6,
+            "pitching_outs": 27,
+            "pitching_runs": 1,
+            "pitching_hits": 3
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 28,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 1,
+            "hits": 3,
+            "errors": 0,
+            "innings": [
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 8,
+            "hits": 8,
+            "errors": 1,
+            "innings": [
+              0,
+              0,
+              2,
+              0,
+              2,
+              1,
+              3,
+              0,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Marist",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 5,
+            "substitutes": 2
+          },
+          {
+            "team": "Vanderbilt",
+            "nine_starting_slots": true,
+            "batter_rows": 10,
+            "pitcher_rows": 3,
+            "substitutes": 1
+          }
+        ],
+        "official_decisions": {
+          "win": "Jacob Faulkner",
+          "loss": "Mazza, Steven",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": "Jacob Faulkner",
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2026-02-14-nicholls-tennessee-att0376",
+      "player_rows": 30,
+      "source_url": "https://utsports.com/sports/baseball/stats/2026/nicholls/boxscore/29927",
+      "audit": {
+        "game_id": "cb-2026-02-14-nicholls-tennessee-att0376",
+        "source": "https://utsports.com/sports/baseball/stats/2026/nicholls/boxscore/29927",
+        "http_code": 200,
+        "source_bytes": 1127716,
+        "source_sha256": "f7170fc1b3dd1e5b3bebd8000000121232506b9efacbd4894b2b9ef00b1ff1c8",
+        "teams": [
+          {
+            "name": "Nicholls",
+            "batters": 13,
+            "pitchers": 5,
+            "AB": 30,
+            "R": 1,
+            "H": 4,
+            "RBI": 1,
+            "BB": 1,
+            "SO": 15,
+            "pitching_outs": 24,
+            "pitching_runs": 5,
+            "pitching_hits": 8
+          },
+          {
+            "name": "Tennessee",
+            "batters": 9,
+            "pitchers": 3,
+            "AB": 29,
+            "R": 5,
+            "H": 8,
+            "RBI": 5,
+            "BB": 9,
+            "SO": 6,
+            "pitching_outs": 27,
+            "pitching_runs": 1,
+            "pitching_hits": 4
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 30,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 1,
+            "hits": 4,
+            "errors": 0,
+            "innings": [
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 5,
+            "hits": 8,
+            "errors": 0,
+            "innings": [
+              1,
+              0,
+              0,
+              3,
+              0,
+              1,
+              0,
+              0,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Nicholls",
+            "nine_starting_slots": true,
+            "batter_rows": 13,
+            "pitcher_rows": 5,
+            "substitutes": 4
+          },
+          {
+            "team": "Tennessee",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 3,
+            "substitutes": 0
+          }
+        ],
+        "official_decisions": {
+          "win": "Mack, Landon",
+          "loss": "Will Mabry",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": "Will Mabry",
+          "save": null
+        }
+      }
+    }
+  ],
   "pending_review": [
     {
       "game_id": "cb-2026-03-01-notre-dame-tennessee-tech-att0383",
       "source_url": "https://fightingirish.com/wp-content/uploads/2026/03/3126_ND.pdf",
       "reason": "Official PDF needs separately audited PDF line transcription"
-    },
-    {
-      "game_id": "cb-2026-02-22-marist-vanderbilt-att0382",
-      "source_url": "https://goredfoxes.com/boxscore.aspx?id=15360",
-      "reason": "Marist: cannot exactly match source batter lineup against source player records"
-    },
-    {
-      "game_id": "cb-2026-02-14-nicholls-tennessee-att0376",
-      "source_url": "https://utsports.com/sports/baseball/stats/2026/nicholls/boxscore/29927",
-      "reason": "Nicholls: source batting order resolved to 11 starting slots, not 9"
     }
   ],
   "approval": "2026 statistical backfill only; keep draft PR; do not publish"

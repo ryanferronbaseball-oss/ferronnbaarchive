@@ -45,6 +45,8 @@ def table_head(table):
 def table_rows(table,head):
     body=table.find("tbody")
     trs=body.find_all("tr",recursive=False) if body else table.find_all("tr")[1:]
+    foot=table.find("tfoot")
+    if foot:trs+=foot.find_all("tr",recursive=False)
     result=[]
     for tr in trs:
         cells=tr.find_all(["td","th"],recursive=False)

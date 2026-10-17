@@ -1,8 +1,30 @@
 {
-  "status": "awaiting_attendance_log",
-  "attendance_games": 0,
+  "status": "attendance_imported_official_boxscores_pending",
+  "scope": "college baseball only; not MLB, MiLB or other college sports",
+  "attendance_games": 444,
   "official_boxscores_imported": 0,
   "player_stat_rows": 0,
-  "scope": "college baseball only",
-  "warning": "No college baseball attendance game list has been supplied yet. These are zero verified records, not a complete attendance count."
+  "scores_supplied_by_user": 0,
+  "linked_unverified_sources": 0,
+  "seasons": [
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025,
+    2026
+  ],
+  "source_file": "NCAAB Games.xlsx / Sheet1, 444 game rows",
+  "source_corrections": [
+    "Sheet1 row 267: South Alabama at Old Dominion corrected 2034-03-30 to 2024-03-30 per user; calendar weekday Saturday"
+  ],
+  "source_duplicate_matchups": 13,
+  "review_queue": [
+    "Sheet1 row 444: Auburn at Milwaukee listed May 31, 2026; official Auburn Regional schedule has UCF at Auburn May 31 and Milwaukee at Auburn May 31; June 1 is Milwaukee at Auburn. Confirm whether row 444 is May 31 UCF at Auburn or June 1 Milwaukee at Auburn."
+  ],
+  "warning": "Scores and player statistics not inferred from attendance sheet. Official box score verification and stadium/date matching pending."
 }

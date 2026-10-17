@@ -234,6 +234,29 @@ def _source_batters(table, valid_players, team, game_id):
         if (game_id=="cb-2025-04-06-virginia-nc-state-att0330"
               and team=="NC State" and name in ("Ryder Woodson","Trenton Lyons")):
             is_sub=True
+
+        # Source play-by-play corroborates the unindented entries below,
+        # whose predecessor already appears in the same batting slot.
+        source_confirmed_unindented = {
+            # Apr 27 ECU–Tulane official PBP: Peltier ran for Collins,
+            # Whitaker hit for Peltier, Bowman hit for Parham.
+            ("cb-2025-04-27-tulane-east-carolina-att0338", "East Carolina"):
+                {"Alex Peltier", "Davin Whitaker", "Kenan Bowman"},
+            # Apr 19 Minnesota–Rutgers: catcher Chatelle entered after
+            # pinch hitter Sweeney for the ninth lineup position.
+            ("cb-2025-04-19-minnesota-rutgers-att0335", "Rutgers"):
+                {"Matt Chatelle"},
+            # Mar 19 Richmond–Virginia: LF Nunnallee replaced PH James
+            # at starter Didawick's batting-order position.
+            ("cb-2025-03-19-richmond-virginia-att0324", "Virginia"):
+                {"Nunnallee"},
+            # Mar 15 Virginia Tech–NC State: 3B Gibson replaced PH French,
+            # who batted for original third baseman Lewis.
+            ("cb-2025-03-15-virginia-tech-nc-state-att0322", "Virginia Tech"):
+                {"Ethan Gibson"},
+        }
+        if name in source_confirmed_unindented.get((game_id, team), set()):
+            is_sub = True
         seen.append((key, name, is_sub))
     if len(seen) != len(valid_players) or len({x[0] for x in seen}) != len(seen):
         raise ValueError(team + ": cannot exactly match source batter lineup against source player records")

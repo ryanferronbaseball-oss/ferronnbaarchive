@@ -95,6 +95,10 @@ def batting_rows(table_s,table_d,game_id,team,url):
             print("DEBUG CELLS",[{"text":td.get_text(" ",strip=True)[:60],
                 "span":td.get("colspan","1")} for td in tr.find_all(["td","th"],recursive=False)][:28],flush=True)
         raise ValueError(f"{game_id} {team}: simple/detail row count mismatch {len(short)} vs {len(detail)}")
+    if game_id=="cb-2024-03-08-notre-dame-virginia-tech-att0251":
+        print("ND-COMPOSITE-REVIEW",team,
+              "simple",[(x.get("Player"),x.get("AB"),x.get("R"),x.get("H")) for x in short[:9]],
+              "detail",[(x.get("Player"),x.get("AB"),x.get("R"),x.get("H")) for x in detail[:9]],flush=True)
     people=[];totals=None
     for i,(s,x) in enumerate(zip(short,detail)):
         if s.get("_totals") or x.get("_totals"):

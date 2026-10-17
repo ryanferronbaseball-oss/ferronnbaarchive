@@ -271,9 +271,20 @@ for game in committed:
         other_runs = game["away_score"] if other == game["away"] else game["home_score"]
         runs_allowed = sum(p["runs"] for p in pitchers)
         earned = sum(p["earnedRuns"] for p in pitchers)
-        needed_outs = 3 * (len(game["innings"]) - (1 if team == game["away"] and game["home_score"] > game["away_score"] and game["innings"][-1]["home"] is None else 0))
-        check(outs == needed_outs and runs_allowed == other_runs and earned <= runs_allowed,
-              "Pitchers reconcile innings, opponent runs, and earned runs " + game["id"] + " " + team)
+        completed_innings = len(game["innings"])
+        # The away pitchers may record fewer than three outs in the last
+        # home half-inning of a walk-off or run-rule finish. Baylor-Cincinnati
+        # Apr 10 ended in the eighth on a two-run, 10-run-margin home finish.
+        if team == game["away"] and game["home_score"] > game["away_score"]:
+            if game["innings"][-1]["home"] is None:
+                valid_outs = {3 * (completed_innings - 1)}
+            else:
+                valid_outs = set(range(3 * (completed_innings - 1),
+                                       3 * completed_innings + 1))
+        else:
+            valid_outs = {3 * completed_innings}
+        check(outs in valid_outs and runs_allowed == other_runs and earned <= runs_allowed,
+              "Pitchers reconcile completed/partial innings, opponent runs, and earned runs " + game["id"] + " " + team)
     available = [r for r in pilot_rows if r["game_id"] == game["id"] and "pitching" in r]
     for choice, field in (("win", "wins"), ("loss", "losses"), ("save", "saves")):
         official = game.get("pitching_decisions", {}).get(choice)

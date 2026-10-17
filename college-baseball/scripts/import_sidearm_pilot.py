@@ -181,7 +181,24 @@ def scrape(game):
     html=resp.text
     if len(html)<50000:raise ValueError(f"{game['id']}: official boxscore HTML unexpectedly short")
     short,detail,pitch=official_tables(html,game)
-    teams=[game["away"],game["home"]]
+    # Some Sidearm athletics feeds put the page's host school first even when
+    # it is the designated home side. Identify each table by BOTH official
+    # batting runs and hits, not its position or inferred home/away status.
+    order=[]
+    for batting_table in short:
+        total=next((r for r in table_rows(batting_table,table_head(batting_table))
+                    if r.get("_totals")),None)
+        if total is None:raise ValueError(f"{game['id']}: missing table R/H totals for team ordering")
+        rhs=(number(total["R"],"R",game["id"]),number(total["H"],"H",game["id"]))
+        if rhs==(game["away_score"],game["away_hits"]):
+            order.append(game["away"])
+        elif rhs==(game["home_score"],game["home_hits"]):
+            order.append(game["home"])
+        else:
+            raise ValueError(f"{game['id']}: batting R/H {rhs} matches neither team")
+    if set(order)!={game["away"],game["home"]} or len(order)!=2:
+        raise ValueError(f"{game['id']}: duplicated/unidentified team order {order}")
+    teams=order
     row_by_id={}
     audit={"game_id":game["id"],"source":url,"http_code":resp.status_code,
            "source_bytes":len(resp.content),"source_sha256":hashlib.sha256(resp.content).hexdigest(),
@@ -201,9 +218,10 @@ def scrape(game):
                 if field in person:
                     if field in rec:raise ValueError(f"Duplicate {field} player {pid} in {game['id']}")
                     rec[field]=person[field]
-        if total["R"]!=game["away_score" if i==0 else "home_score"]:
+        side="away" if team==game["away"] else "home"
+        if total["R"]!=game[side+"_score"]:
             raise ValueError(f"{game['id']} {team}: R mismatch vs known official scoreboard")
-        if total["H"]!=game["away_hits" if i==0 else "home_hits"]:
+        if total["H"]!=game[side+"_hits"]:
             raise ValueError(f"{game['id']} {team}: H mismatch vs official scoreboard")
         audit["teams"].append({"name":team,"batters":len(bats),"pitchers":len(pitchers),"AB":total["AB"],
                                 "R":total["R"],"H":total["H"],"RBI":total["RBI"],"BB":total["BB"],"SO":total["SO"],

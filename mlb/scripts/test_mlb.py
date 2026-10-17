@@ -206,7 +206,7 @@ try:
    check(page.locator('#honorTabs [data-honor="hall_of_fame"]').count()==1,f"{width} Hall of Fame career tab exists")
    check(str(honored[hof_id]["hall_of_fame"]["year"]) in page.locator('#honor-hall_of_fame').inner_text(),
          f"{width} inducted class year appears on player profile")
-   check(page.locator('#honorTabs [data-honor]').count()==5,f"{width} five honors tabs include MVP Cy Young Gold Glove Silver Slugger")
+   check(page.locator('#honorTabs [data-honor]').count()>=5,f"{width} honors tabs include Hall of Fame MVP Cy Young Gold Glove Silver Slugger plus any verified All-Star tab")
    for category in ("mvp","cy_young","gold_glove","silver_slugger"):
     chosen=next(pid for pid,p in honored.items() if p.get(category))
     visit(f"mlb/player.html?id={chosen}","document.querySelector('.mlb-profile-head')!==null")

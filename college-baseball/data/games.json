@@ -9653,8 +9653,8 @@
     "home_score": 8,
     "score_provenance": "official_boxscore",
     "source_url": "https://mkepanthers.com/boxscore.aspx?id=19125",
-    "verification": "official_scoreboard_verified",
-    "official_boxscore_status": "player_stats_pending",
+    "verification": "official_boxscore_verified",
+    "official_boxscore_status": "verified",
     "notes": "Original workbook Sheet1 row 440.",
     "away_hits": 16,
     "home_hits": 9,
@@ -9716,7 +9716,9 @@
     "first_pitch_local": "12:06",
     "source_attendance": 6408,
     "completion_date": null,
-    "attendance_segment_confirmation_pending": false
+    "attendance_segment_confirmation_pending": false,
+    "stat_source": "official_school_sidearm",
+    "verified_player_rows": 28
   },
   {
     "id": "cb-2026-05-29-north-carolina-state-central-florida",
@@ -9736,8 +9738,8 @@
     "home_score": 9,
     "score_provenance": "official_boxscore",
     "source_url": "https://gopack.com/sports/baseball/stats/2026/ucf/boxscore/24664",
-    "verification": "official_scoreboard_verified",
-    "official_boxscore_status": "player_stats_pending",
+    "verification": "official_boxscore_verified",
+    "official_boxscore_status": "verified",
     "notes": "Original workbook Sheet1 row 441. Suspended due to weather Friday evening and completed Saturday morning, May 30; user attendance in resumed segment not yet confirmed.",
     "away_hits": 12,
     "home_hits": 11,
@@ -9799,7 +9801,9 @@
     "first_pitch_local": "19:06",
     "source_attendance": 6057,
     "completion_date": "2026-05-30",
-    "attendance_segment_confirmation_pending": true
+    "attendance_segment_confirmation_pending": true,
+    "stat_source": "official_school_sidearm",
+    "verified_player_rows": 27
   },
   {
     "id": "cb-2026-05-30-auburn-north-carolina-state",
@@ -9819,8 +9823,8 @@
     "home_score": 13,
     "score_provenance": "official_boxscore",
     "source_url": "https://gopack.com/sports/baseball/stats/2026/auburn/boxscore/24677",
-    "verification": "official_scoreboard_verified",
-    "official_boxscore_status": "player_stats_pending",
+    "verification": "official_boxscore_verified",
+    "official_boxscore_status": "verified",
     "notes": "Original workbook Sheet1 row 442.",
     "away_hits": 18,
     "home_hits": 14,
@@ -9882,7 +9886,12 @@
     "first_pitch_local": "14:06",
     "source_attendance": null,
     "completion_date": null,
-    "attendance_segment_confirmation_pending": false
+    "attendance_segment_confirmation_pending": false,
+    "stat_source": "official_school_sidearm",
+    "verified_player_rows": 28,
+    "official_source_warnings": [
+      "Official loser label 'Connor Clark' does not appear in that game's pitcher lines; individual pitcher W/L attribution intentionally unavailable."
+    ]
   },
   {
     "id": "cb-2026-05-30-central-florida-milwaukee",
@@ -9902,8 +9911,8 @@
     "home_score": 13,
     "score_provenance": "official_boxscore",
     "source_url": "https://mkepanthers.com/boxscore.aspx?id=19126",
-    "verification": "official_scoreboard_verified",
-    "official_boxscore_status": "player_stats_pending",
+    "verification": "official_boxscore_verified",
+    "official_boxscore_status": "verified",
     "notes": "Original workbook Sheet1 row 443.",
     "away_hits": 8,
     "home_hits": 9,
@@ -9965,7 +9974,9 @@
     "first_pitch_local": "19:06",
     "source_attendance": 6104,
     "completion_date": null,
-    "attendance_segment_confirmation_pending": false
+    "attendance_segment_confirmation_pending": false,
+    "stat_source": "official_school_sidearm",
+    "verified_player_rows": 29
   },
   {
     "id": "cb-2026-05-31-auburn-milwaukee",
@@ -10007,8 +10018,8 @@
     "home_score": 8,
     "score_provenance": "official_boxscore",
     "source_url": "https://mkepanthers.com/boxscore.aspx?id=19127&path=baseball",
-    "verification": "official_scoreboard_verified",
-    "official_boxscore_status": "player_stats_pending",
+    "verification": "official_boxscore_verified",
+    "official_boxscore_status": "verified",
     "notes": "Original workbook Sheet1 row 445.",
     "away_hits": 4,
     "home_hits": 5,
@@ -10070,6 +10081,8 @@
     "first_pitch_local": "22:10",
     "source_attendance": 6090,
     "completion_date": null,
-    "attendance_segment_confirmation_pending": false
+    "attendance_segment_confirmation_pending": false,
+    "stat_source": "official_school_sidearm",
+    "verified_player_rows": 26
   }
 ]

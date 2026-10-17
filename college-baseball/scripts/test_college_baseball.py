@@ -132,6 +132,7 @@ source_replacements = {
     ("cb-2026-05-19-south-carolina-tennessee-att0427", "South Carolina", "Logan Sutter"): (5, 1),
     ("cb-2026-05-19-south-carolina-tennessee-att0427", "Tennessee", "Ariel Antigua"): (8, 1),
     ("cb-2026-05-14-virginia-louisville-att0422", "Virginia", "Antonio Perrotta"): (7, 1),
+    ("cb-2026-05-15-mercer-east-tennessee-state-att0423", "Mercer", "Nathan Rowland"): (3, 1),
 }
 seen_replacements = {}
 for game in committed:
@@ -210,6 +211,8 @@ expected = {
     ("cb-2026-05-19-kentucky-vanderbilt-att0426", "Vanderbilt"): {"ab": 35, "r": 8, "h": 12, "rbi": 6, "bb": 5, "k": 8},
     ("cb-2026-05-14-virginia-louisville-att0422", "Virginia"): {"ab": 36, "r": 8, "h": 8, "rbi": 4, "bb": 9, "k": 8},
     ("cb-2026-05-14-virginia-louisville-att0422", "Louisville"): {"ab": 36, "r": 3, "h": 8, "rbi": 3, "bb": 5, "k": 10},
+    ("cb-2026-05-15-mercer-east-tennessee-state-att0423", "Mercer"): {"ab": 33, "r": 9, "h": 11, "rbi": 9, "bb": 2, "k": 10},
+    ("cb-2026-05-15-mercer-east-tennessee-state-att0423", "East Tennessee State"): {"ab": 33, "r": 7, "h": 10, "rbi": 7, "bb": 5, "k": 7},
 }
 
 keys = {"ab": "atBats", "r": "runs", "h": "hits",

@@ -22,7 +22,7 @@
 .sc-table{overflow:auto;max-width:100%;border-radius:11px;border:1px solid #DEE1D8}
 .sc-table table{width:100%;min-width:650px;background:white;border-collapse:collapse}
 .sc-table th,.sc-table td{padding:12px 11px;font-size:12px;border-bottom:1px solid #E8EBE6;text-align:right}
-.sc-table th:first-child,.sc-table td:first-child{text-align:left;min-width:50px}
+.sc-table th:first-child,.sc-table td:first-child{text-align:left;min-width:170px;position:static;left:auto}
 .sc-table td:nth-child(2){text-align:left}
 .sc-table td a{color:#284D3C;font-weight:700;text-decoration:none}
 .sc-table td a:hover{text-decoration:underline}

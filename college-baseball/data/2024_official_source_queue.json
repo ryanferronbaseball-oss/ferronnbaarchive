@@ -10,7 +10,7 @@
     "2024-02": 17
   },
   "verified_player_gamebooks_at_queue_creation": 0,
-  "official_source_urls_identified": 68,
+  "official_source_urls_identified": 70,
   "source_queue": [
     {
       "game_id": "cb-2024-06-08-florida-clemson-att0295",
@@ -1447,6 +1447,46 @@
       "verification": "official_pdf_player_scorebook_requires_source_gate",
       "official_doubleheader_game": null,
       "user_attendance_confirmed": true
+    },
+    {
+      "game_id": "cb-2024-02-23-iowa-auburn-att0235",
+      "worksheet_row": 236,
+      "date": "2024-02-23",
+      "away": "Iowa",
+      "home": "Auburn",
+      "source_url": "https://storage.googleapis.com/auburn-prod/2024/05/16/Qwfk9D0ysZymh4NIW2QjKniQFWvF2vNh2c5nSnd5.pdf",
+      "official_score": [
+        5,
+        7
+      ],
+      "ballpark": "Bragan Field",
+      "city": "Jacksonville",
+      "state": "FL",
+      "game_type": "regular_season",
+      "postseason_round": null,
+      "neutral_site": true,
+      "source_type": "official_university_pdf_scorebook",
+      "verification": "original_university_one_page_pdf_full_player_boxscore_strict_audit"
+    },
+    {
+      "game_id": "cb-2024-04-14-virginia-tech-georgia-tech-att0268",
+      "worksheet_row": 269,
+      "date": "2024-04-14",
+      "away": "Virginia Tech",
+      "home": "Georgia Tech",
+      "source_url": "https://storage.googleapis.com/ramblinwreck-com-prod/2024/04/gt041424.pdf",
+      "official_score": [
+        7,
+        11
+      ],
+      "ballpark": "Mac Nease Park",
+      "city": "Atlanta",
+      "state": "GA",
+      "game_type": "regular_season",
+      "postseason_round": null,
+      "neutral_site": false,
+      "source_type": "official_university_pdf_scorebook",
+      "verification": "original_university_one_page_pdf_full_player_boxscore_strict_audit"
     }
   ],
   "manual_review_flags": [

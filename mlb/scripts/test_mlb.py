@@ -366,6 +366,8 @@ try:
    page.locator("#sc-games-table [data-sc-game]").first.click()
    check(page.locator("#sc-game-detail .sc-metric").count()==6,
          f"{width} attended-game Statcast summary opens")
+   check(page.locator("#sc-game-detail .sc-metric-player").count()==3,
+         f"{width} Statcast game detail credits all three event leaders")
    page.locator('[data-sc-tab="players"]').click()
    page.locator("#sc-player-search").fill("Kyle Schwarber")
    check(page.locator("#sc-players-table tbody tr").count()>=1
@@ -380,8 +382,19 @@ try:
    visit("mlb/game.html?id=55","document.querySelector('#sc-game-panel .sc-metric')!==null")
    check(page.locator("#sc-game-panel .sc-metric").count()==5,
          f"{width} original 2015 Royals–Angels game displays tracked measurements")
+   leaders=page.locator("#sc-game-panel .sc-metric-player")
+   check(leaders.count()==3 and leaders.all_text_contents()==["Mike Trout ↗","Kelvin Herrera ↗","Kendrys Morales ↗"],
+         f"{width} each 2015 game event has the correct credited batter or pitcher")
+   check([x.split("?id=")[-1] for x in leaders.evaluate_all("(xs)=>xs.map(e=>e.getAttribute('href'))")]==["545361","516969","434778"],
+         f"{width} Statcast event credits link to the corresponding official MLB player profiles")
    check(page.locator("#pitchingDecisions").count()==1 and page.locator("#box").count()==1,
          f"{width} Statcast panel preserves official game decisions and box score")
+   visit("mlb/game.html?id=101","document.querySelectorAll('#sc-game-panel .sc-metric-player').length===3")
+   check(page.locator("#sc-game-panel .sc-metric-player").all_text_contents()==["Kyle Schwarber ↗","José Alvarado ↗","Kyle Schwarber ↗"],
+         f"{width} 2022 postseason game credits Schwarber's hardest contact and HR, Alvarado's fastest pitch")
+   visit("mlb/game.html?id=120","document.querySelector('#sc-game-panel .sc-metric-note')!==null")
+   check(page.locator("#sc-game-panel .sc-metric-player").count()==2 and "No home runs" in page.locator("#sc-game-panel").inner_text(),
+         f"{width} game without home runs shows no invented HR hitter and still credits contact/pitch leaders")
    visit("mlb/game.html?id=1","document.querySelector('#sc-game-panel')!==null")
    check("predates Statcast" in page.locator("#sc-game-panel").inner_text(),
          f"{width} pre-2015 game explicitly has no invented Statcast readings")

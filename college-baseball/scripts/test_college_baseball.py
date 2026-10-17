@@ -66,28 +66,35 @@ pilot_report = json.loads((SITE / "data" / "import_report.json").read_text())
 check(len(attended) == 6 and len(committed) == 444, "All 444 attendance entries staged with 6 verified initial Regional gamebooks")
 check(len({g["source_worksheet_row"] for g in committed}) == 444,
       "Unique workbook source rows preserved for every attended contest")
-check(len([g for g in committed if g["verification"] == "attendance_only"]) == 438,
-      "No fabricated scores or player rows for 438 pending gamebooks")
+check(len([g for g in committed if g["verification"] == "attendance_only"]) == 430,
+      "No fabricated scores or player rows for 430 pending gamebooks")
 check(all(g["away_score"] is None and g["home_score"] is None
           and g["game_number"] is None for g in committed
           if g["verification"] == "attendance_only"),
       "Attendance-only entries keep scores and doubleheader numbering unknown until confirmed")
 check(any(g["possible_same_day_doubleheader"] for g in committed if g["verification"] == "attendance_only"),
       "Ambiguous same-day repeat matchups preserved for later doubleheader reconciliation")
-check(len(pilot_rows) == 165 and len({r["player_id"] for r in pilot_rows}) == 86,
-      "Six official college baseball scorebooks produce 165 audited rows for 86 athletes")
-check(len([g for g in committed if g["verification"] == "official_boxscore_verified"]) == 6,
-      "All six college gamebooks marked fully verified")
-check(not any(g["verification"] == "source_matched" for g in committed),
-      "No pilot game remains incomplete")
+check(all(g["away_score"] is not None and g["home_score"] is not None and g["source_url"]
+          and len(g["innings"]) in (8,9) for g in committed
+          if g["verification"] == "official_scoreboard_verified"),
+      "Six SEC Tournament score-matched games have sourced inning lines with no fictitious player stats")
+check(not {g["id"] for g in committed if g["verification"] == "official_scoreboard_verified"}
+      & {r["game_id"] for r in pilot_rows},
+      "No player lines are borrowed for sourced-but-incomplete SEC Tournament games")
+check(len(pilot_rows) == 216 and len({r["player_id"] for r in pilot_rows}) == 117,
+      "Eight complete college gamebooks provide 216 audited player rows for 117 athletes")
+check(len([g for g in committed if g["verification"] == "official_boxscore_verified"]) == 8,
+      "Eight college gamebooks marked fully verified")
+check(len([g for g in committed if g["verification"] == "official_scoreboard_verified"]) == 6,
+      "Six SEC Tournament matchups have source-verified scores with player lines pending")
 check(all(g["source_url"] and
           sum(x["away"] or 0 for x in g["innings"]) == g["away_score"] and
           sum(x["home"] or 0 for x in g["innings"]) == g["home_score"]
-          for g in committed if g["verification"] == "official_boxscore_verified"),
-      "Every pilot game has source-backed innings reconciling to final")
+          for g in committed if g["verification"] != "attendance_only"),
+      "All fourteen sourced games have inning totals reconciled to official scores")
 check({g["id"] for g in committed if g["verification"] == "official_boxscore_verified"} ==
       {r["game_id"] for r in pilot_rows},
-      "Player stats are tied to all six verified regional games")
+      "Player stats are tied only to eight fully verified gamebooks")
 
 # Exactly nine independently sourced batting slots for every team, with
 # pinch-hitters/defensive replacements on the existing slot (MLB conventions).
@@ -100,6 +107,10 @@ source_replacements = {
     ("cb-2026-05-31-ucf-auburn", "UCF", "Cayden Gaskin"): (7, 1),
     ("cb-2026-05-31-auburn-milwaukee", "Milwaukee", "Tate Schmidt"): (7, 1),
     ("cb-2026-05-31-auburn-milwaukee", "Milwaukee", "Tristan Ellis"): (7, 2),
+    ("cb-2026-05-20-lsu-auburn-att0432", "LSU", "Daniel Harden"): (5, 1),
+    ("cb-2026-05-20-lsu-auburn-att0432", "LSU", "Edward Yamin IV"): (8, 1),
+    ("cb-2026-05-20-lsu-auburn-att0432", "LSU", "Trent Caraway"): (8, 2),
+    ("cb-2026-05-20-lsu-auburn-att0432", "LSU", "Zach Yorke"): (9, 1),
 }
 seen_replacements = {}
 for game in committed:
@@ -126,10 +137,10 @@ for game in committed:
                 check(key in source_replacements and
                       source_replacements[key] == seen_replacements[key],
                       "Pinch hitter or field replacement attributed to correct batting slot: " + r["player"])
-check(seen_replacements == source_replacements and len(seen_replacements) == 8,
-      "All eight source-documented substitutions retain official batting slot, never 10+")
-check(sum(1 for r in pilot_rows if "batting" in r) == 116,
-      "Official NCAA pilot includes 116 batting records with verified lineup order")
+check(seen_replacements == source_replacements and len(seen_replacements) == 12,
+      "Twelve verified substitutions remain in their original batting slots, never 10+")
+check(sum(1 for r in pilot_rows if "batting" in r) == 156,
+      "Eight complete gamebooks include 156 hitters with official lineup order")
 
 
 # Reconcile audited team and pitcher lines to each official PDF's box score,
@@ -146,7 +157,11 @@ expected = {
     ("cb-2026-05-31-ucf-auburn", "UCF"): {"ab": 32, "r": 3, "h": 6, "rbi": 3, "bb": 3, "k": 11},
     ("cb-2026-05-31-ucf-auburn", "Auburn"): {"ab": 32, "r": 9, "h": 10, "rbi": 9, "bb": 5, "k": 11},
     ("cb-2026-05-31-auburn-milwaukee", "Auburn"): {"ab": 30, "r": 8, "h": 5, "rbi": 7, "bb": 5, "k": 6},
-    ("cb-2026-05-31-auburn-milwaukee", "Milwaukee"): {"ab": 30, "r": 1, "h": 4, "rbi": 1, "bb": 0, "k": 14},
+    ("cb-2026-05-31-auburn-milwaukee", "Milwaukee"): {"ab": 30, "r": 1, "h": 4, "rbi": 1, "bb": 0, "k": 14    ("cb-2026-05-20-lsu-auburn-att0432", "LSU"): {"ab": 28, "r": 1, "h": 4, "rbi": 1, "bb": 3, "k": 6},
+    ("cb-2026-05-20-lsu-auburn-att0432", "Auburn"): {"ab": 30, "r": 3, "h": 7, "rbi": 2, "bb": 1, "k": 12},
+    ("cb-2026-05-23-arkansas-auburn-att0438", "Arkansas"): {"ab": 32, "r": 2, "h": 5, "rbi": 2, "bb": 2, "k": 15},
+    ("cb-2026-05-23-arkansas-auburn-att0438", "Auburn"): {"ab": 32, "r": 1, "h": 7, "rbi": 1, "bb": 1, "k": 11},
+},
 }
 
 keys = {"ab": "atBats", "r": "runs", "h": "hits",
@@ -186,8 +201,10 @@ for game in committed:
 
 check(pilot_report["uploaded_total_attendance_rows"] == 444 and
       pilot_report["unimported_worksheet_rows"] == 0 and
-      pilot_report["attendance_only_pending_official_verification"] == 438,
-      "All 444 attendance entries staged; 6 verified and 438 held attendance-only")
+      pilot_report["attendance_only_pending_official_verification"] == 430 and
+      pilot_report["official_player_boxscores_imported"] == 8 and
+      pilot_report["official_scoreboard_player_lines_pending"] == 6,
+      "All 444 attended games staged: eight complete, six sourced scores, 430 attendance-only")
 check(pilot_report["known_correction"][0]["confirmed_date"] == "2024-03-30",
       "South Alabama/Old Dominion correction recorded for upcoming bulk import")
 check(pilot_report["known_correction"][1]["attendance_game_number"] == 444 and
@@ -368,7 +385,7 @@ with tempfile.TemporaryDirectory() as t:
             check(not errors, "Both populated-view widths have zero uncaught JavaScript errors")
             # Validate real-data source links, W/L/S attribution and full
             # batting/pitching tables in each of the three newly imported games.
-            # Finally, test all six real source-backed pilot games, distinct from
+            # Finally, test all 444 attended games and eight verified source gamebooks, distinct from
             # the synthetic examples and also without modifying the repo data.
             for source in ("games.json", "player_stats.json", "import_report.json"):
                 (empty_root / source).write_text((SITE / "data" / source).read_text())
@@ -453,12 +470,12 @@ with tempfile.TemporaryDirectory() as t:
             check(not errors, "Full real-source pilot also has zero browser JavaScript errors")
             browser.close()
             (REVIEW / "manifest.json").write_text(json.dumps({
-                "scope": "Draft only; all 444 attended college baseball games with six source-verified Auburn Regional gamebooks",
-                "games": 444, "verified_gamebooks": 6, "attendance_only": 438, "player_game_rows": 165, "unique_players": 86,
+                "scope": "Draft only; all 444 games with eight complete source-verified gamebooks and six source-matched SEC Tournament scores",
+                "games": 444, "verified_gamebooks": 8, "source_matched": 6, "attendance_only": 430, "player_game_rows": 216, "unique_players": 117,
                 "browser_viewports": [1280, 390],
                 "screenshots": sorted(p.name for p in REVIEW.glob("*.png")),
                 "live_site_modified": False,
             }, indent=2) + "\n")
     finally:
         server.shutdown()
-print("PASS all six Regional gamebooks, 165 player lines, full team reconciliation and mobile/browser QA")
+print("PASS 444 college baseball games, eight complete gamebooks, six sourced SEC scores, 216 player lines and mobile/browser QA")

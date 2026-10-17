@@ -261,6 +261,37 @@ with tempfile.TemporaryDirectory() as t:
                       f"{width} seeded-test records page fits viewport")
                 page.close()
             check(not errors, "Both populated-view widths have zero uncaught JavaScript errors")
+            # Finally, test the actual five source-backed pilot games, distinct from
+            # the synthetic examples and also without modifying the repo data.
+            for source in ("games.json", "player_stats.json", "import_report.json"):
+                (empty_root / source).write_text((SITE / "data" / source).read_text())
+            for width in (1280, 390):
+                page = browser.new_page(viewport={"width": width, "height": 900})
+                page.on("pageerror", lambda e: errors.append(str(e)))
+                visit(page, host, "index.html", ".metrics")
+                page.wait_for_function("document.querySelector('.metrics .metric strong').innerText==='5'")
+                check(page.locator(".cb-game-card").count() >= 5,
+                      f"{width} actual five attended regional games render")
+                visit(page, host, "game.html?id=cb-2026-05-31-auburn-milwaukee", "#cb-game-details .cb-game-summary")
+                check("8 – 1" in page.locator("#cb-game-details").inner_text() and
+                      "Chase Fralick" in page.locator("#cb-game-details").inner_text(),
+                      f"{width} actual May 31 game shows score and official players")
+                visit(page, host, "stats.html", "#cb-player-board .cb-table")
+                check("Chase Fralick" in page.locator("#cb-player-board").inner_text(),
+                      f"{width} actual three official gamebooks build hitter leaderboard")
+                page.locator("#cb-role").select_option("pitch")
+                check("LJ Cormier" in page.locator("#cb-player-board").inner_text(),
+                      f"{width} actual pitcher leaderboard contains source-backed winner")
+                visit(page, host, "player.html?id=cb-auburn-chase-fralick", "#app .metrics")
+                check("Chase Fralick" in page.locator("#app").inner_text(),
+                      f"{width} cross-game college player identity connects")
+                visit(page, host, "records.html", ".cb-record")
+                check("Chase Fralick" in page.locator("#app").inner_text(),
+                      f"{width} official gamebook feeds personal signature records")
+                check(page.evaluate("document.documentElement.scrollWidth<=innerWidth+3"),
+                      f"{width} live pilot fits screen")
+                page.close()
+            check(not errors, "Full real-source pilot also has zero browser JavaScript errors")
             browser.close()
     finally:
         server.shutdown()

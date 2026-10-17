@@ -198,7 +198,7 @@ function renderPlayer(d){
 function renderRecords(d){
  const defs=[["Hits","batting","hits"],["Home runs","batting","homeRuns"],["RBI","batting","rbi"],["Strikeouts","pitching","strikeOuts"],["Outs pitched","pitching","outs"],["Stolen bases","batting","stolenBases"]];
  $("app").innerHTML='<div class="eyebrow">College Baseball · Historical records</div><h1>Signature Performances</h1><p class="lead">Best single-game performances you witnessed, drawn strictly from imported and source-verified college box scores.</p>'
- +'<div class="cb-note">A player's best attended game is not necessarily a season or school record. We will never infer missing stats from an incomplete scorebook.</div>'
+ +'<div class="cb-note">The top witnessed performance is not necessarily a season or school record. We will never infer missing stats from an incomplete scorebook.</div>'
  +(d.rows.length?'<div class="cb-grid">'+defs.map(([label,category,key])=>{
   const list=d.rows.map(r=>({r,val:stat(r[category]?.[key])})).filter(x=>x.val!=null&&d.gameMap.has(x.r.game_id));
   list.sort((a,b)=>b.val-a.val||a.r.player.localeCompare(b.r.player));

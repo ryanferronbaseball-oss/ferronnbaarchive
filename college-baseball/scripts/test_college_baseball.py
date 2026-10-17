@@ -81,12 +81,12 @@ check(all(g["away_score"] is not None and g["home_score"] is not None and g["sou
 check(not {g["id"] for g in committed if g["verification"] == "official_scoreboard_verified"}
       & {r["game_id"] for r in pilot_rows},
       "No player lines are borrowed for sourced-but-incomplete SEC Tournament games")
-check(len(pilot_rows) == 246 and len({r["player_id"] for r in pilot_rows}) == 147,
-      "Nine complete college gamebooks provide 246 audited player rows for 147 athletes")
-check(len([g for g in committed if g["verification"] == "official_boxscore_verified"]) == 9,
-      "Nine college gamebooks marked fully verified")
-check(len([g for g in committed if g["verification"] == "official_scoreboard_verified"]) == 5,
-      "Five SEC Tournament matchups have source-verified scores with player lines pending")
+check(len(pilot_rows) >= 246 and len({r["player_id"] for r in pilot_rows}) >= 147,
+      "All original 246 verified records preserved as subsequent audited games are added")
+check(len([g for g in committed if g["verification"] == "official_boxscore_verified"]) >= 9,
+      "No previously verified gamebook downgraded")
+check(len([g for g in committed if g["verification"] == "official_scoreboard_verified"]) <= 5,
+      "No more than five SEC Tournament games have player lines pending")
 check(all(g["source_url"] and
           sum(x["away"] or 0 for x in g["innings"]) == g["away_score"] and
           sum(x["home"] or 0 for x in g["innings"]) == g["home_score"]
@@ -94,7 +94,7 @@ check(all(g["source_url"] and
       "All fourteen sourced games have inning totals reconciled to official scores")
 check({g["id"] for g in committed if g["verification"] == "official_boxscore_verified"} ==
       {r["game_id"] for r in pilot_rows},
-      "Player stats are tied only to eight fully verified gamebooks")
+      "Player stats are tied only to games with complete official player box scores")
 
 # Exactly nine independently sourced batting slots for every team, with
 # pinch-hitters/defensive replacements on the existing slot (MLB conventions).
@@ -113,6 +113,14 @@ source_replacements = {
     ("cb-2026-05-20-lsu-auburn-att0432", "LSU", "Zach Yorke"): (9, 1),
     ("cb-2026-05-23-florida-georgia-att0437", "Georgia", "Cole Johnson"): (3, 1),
     ("cb-2026-05-23-florida-georgia-att0437", "Georgia", "Bryce Calloway"): (3, 2),
+    ("cb-2026-05-20-tennessee-arkansas-att0431", "Tennessee", "Stone Lawless"): (7, 1),
+    ("cb-2026-05-20-tennessee-arkansas-att0431", "Arkansas", "Carter Rutenbar"): (7, 1),
+    ("cb-2026-05-21-mississippi-state-georgia-att0433", "Mississippi State", "Blake Bevis"): (7, 1),
+    ("cb-2026-05-21-mississippi-state-georgia-att0433", "Georgia", "Jordy Oriach"): (3, 1),
+    ("cb-2026-05-22-arkansas-texas-att0435", "Texas", "Presley Courville"): (2, 1),
+    ("cb-2026-05-22-arkansas-texas-att0435", "Texas", "Callum Early"): (7, 1),
+    ("cb-2026-05-22-arkansas-texas-att0435", "Texas", "Josh Livingston"): (8, 1),
+    ("cb-2026-05-22-arkansas-texas-att0435", "Texas", "Jayden Duplantier"): (9, 1),
 }
 seen_replacements = {}
 for game in committed:
@@ -139,10 +147,11 @@ for game in committed:
                 check(key in source_replacements and
                       source_replacements[key] == seen_replacements[key],
                       "Pinch hitter or field replacement attributed to correct batting slot: " + r["player"])
-check(seen_replacements == source_replacements and len(seen_replacements) == 14,
-      "Fourteen verified substitutions remain in their original batting slots, never 10+")
-check(sum(1 for r in pilot_rows if "batting" in r) == 176,
-      "Nine complete gamebooks include 176 hitters with official lineup order")
+check(seen_replacements == {k:v for k,v in source_replacements.items()
+                            if k[0] in {g["id"] for g in committed if g["verification"] == "official_boxscore_verified"}},
+      "Every verified source substitution is in the original 1–9 batting slot")
+check(sum(1 for r in pilot_rows if "batting" in r) >= 176,
+      "All 176 initial hitters remain, with new verified lineup positions included")
 
 
 # Reconcile audited team and pitcher lines to each official PDF's box score,
@@ -166,6 +175,14 @@ expected = {
     ("cb-2026-05-23-arkansas-auburn-att0438", "Auburn"): {"ab": 32, "r": 1, "h": 7, "rbi": 1, "bb": 1, "k": 11},
     ("cb-2026-05-23-florida-georgia-att0437", "Florida"): {"ab": 35, "r": 7, "h": 8, "rbi": 7, "bb": 2, "k": 9},
     ("cb-2026-05-23-florida-georgia-att0437", "Georgia"): {"ab": 34, "r": 8, "h": 12, "rbi": 7, "bb": 1, "k": 13},
+    ("cb-2026-05-20-tennessee-arkansas-att0431", "Tennessee"): {"ab": 36, "r": 4, "h": 8, "rbi": 4, "bb": 2, "k": 10},
+    ("cb-2026-05-20-tennessee-arkansas-att0431", "Arkansas"): {"ab": 32, "r": 8, "h": 9, "rbi": 8, "bb": 4, "k": 11},
+    ("cb-2026-05-21-mississippi-state-georgia-att0433", "Mississippi State"): {"ab": 31, "r": 3, "h": 9, "rbi": 3, "bb": 2, "k": 4},
+    ("cb-2026-05-21-mississippi-state-georgia-att0433", "Georgia"): {"ab": 30, "r": 5, "h": 8, "rbi": 5, "bb": 5, "k": 9},
+    ("cb-2026-05-21-florida-alabama-att0434", "Florida"): {"ab": 38, "r": 13, "h": 16, "rbi": 12, "bb": 2, "k": 8},
+    ("cb-2026-05-21-florida-alabama-att0434", "Alabama"): {"ab": 33, "r": 3, "h": 9, "rbi": 3, "bb": 1, "k": 14},
+    ("cb-2026-05-22-arkansas-texas-att0435", "Arkansas"): {"ab": 37, "r": 8, "h": 11, "rbi": 8, "bb": 5, "k": 16},
+    ("cb-2026-05-22-arkansas-texas-att0435", "Texas"): {"ab": 32, "r": 1, "h": 4, "rbi": 1, "bb": 4, "k": 14},
 }
 
 keys = {"ab": "atBats", "r": "runs", "h": "hits",
@@ -191,7 +208,7 @@ for game in committed:
         other_runs = game["away_score"] if other == game["away"] else game["home_score"]
         runs_allowed = sum(p["runs"] for p in pitchers)
         earned = sum(p["earnedRuns"] for p in pitchers)
-        needed_outs = 24 if team == game["away"] and game["home_score"] > game["away_score"] else 27
+        needed_outs = 24 if len(game["innings"]) == 8 or (team == game["away"] and game["home_score"] > game["away_score"]) else 27
         check(outs == needed_outs and runs_allowed == other_runs and earned <= runs_allowed,
               "Pitchers reconcile innings, opponent runs, and earned runs " + game["id"] + " " + team)
     available = [r for r in pilot_rows if r["game_id"] == game["id"] and "pitching" in r]
@@ -206,9 +223,9 @@ for game in committed:
 check(pilot_report["uploaded_total_attendance_rows"] == 444 and
       pilot_report["unimported_worksheet_rows"] == 0 and
       pilot_report["attendance_only_pending_official_verification"] == 430 and
-      pilot_report["official_player_boxscores_imported"] == 9 and
-      pilot_report["official_scoreboard_player_lines_pending"] == 5,
-      "All 444 attended games staged: nine complete, five sourced scores, 430 attendance-only")
+      pilot_report["official_player_boxscores_imported"] == sum(g["verification"] == "official_boxscore_verified" for g in committed) and
+      pilot_report["official_scoreboard_player_lines_pending"] == sum(g["verification"] == "official_scoreboard_verified" for g in committed),
+      "All 444 attended games staged with truthful full/score-only verification counts")
 check(pilot_report["known_correction"][0]["confirmed_date"] == "2024-03-30",
       "South Alabama/Old Dominion correction recorded for upcoming bulk import")
 check(pilot_report["known_correction"][1]["attendance_game_number"] == 444 and

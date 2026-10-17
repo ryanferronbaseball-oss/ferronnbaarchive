@@ -5,350 +5,352 @@
   "verified_2026_unchanged": 68,
   "total_2025_attendance": 74,
   "completed_in_this_run": 3,
-  "verified_2025_total": 30,
-  "linked_source_games": 37,
+  "verified_2025_total": 33,
+  "linked_source_games": 42,
   "passed_games": [
     {
-      "game_id": "cb-2025-05-10-pittsburgh-wake-forest-att0345",
-      "source_url": "https://godeacs.com/sports/baseball/stats/2025/pitt/boxscore/14025",
+      "game_id": "cb-2025-03-30-tennessee-south-carolina-att0328",
+      "source_url": "https://utsports.com/sports/baseball/stats/2025/south-carolina/boxscore/29235",
       "score": [
-        10,
-        8
+        7,
+        2
       ],
-      "source_game_id": "14025",
-      "player_rows": 33,
+      "source_game_id": "29235",
+      "player_rows": 26,
       "source_stat_audit": {
-        "game_id": "cb-2025-05-10-pittsburgh-wake-forest-att0345",
-        "source": "https://godeacs.com/sports/baseball/stats/2025/pitt/boxscore/14025",
+        "game_id": "cb-2025-03-30-tennessee-south-carolina-att0328",
+        "source": "https://utsports.com/sports/baseball/stats/2025/south-carolina/boxscore/29235",
         "http_code": 200,
-        "source_bytes": 916125,
-        "source_sha256": "0680a9068ba63e9e382c856e959cbb018e07baea94109d9582b828956ae8544e",
+        "source_bytes": 1113983,
+        "source_sha256": "b7e5f6245b13b9c5fc4d95c250c8915cd5c363bee088815da55422b72887ae32",
         "teams": [
           {
-            "name": "Pittsburgh",
-            "batters": 12,
-            "pitchers": 4,
-            "AB": 36,
-            "R": 10,
-            "H": 9,
-            "RBI": 10,
-            "BB": 9,
-            "SO": 11,
-            "pitching_outs": 27,
-            "pitching_runs": 8,
-            "pitching_hits": 11
-          },
-          {
-            "name": "Wake Forest",
-            "batters": 11,
-            "pitchers": 6,
-            "AB": 38,
-            "R": 8,
-            "H": 11,
-            "RBI": 8,
-            "BB": 6,
-            "SO": 10,
-            "pitching_outs": 27,
-            "pitching_runs": 10,
-            "pitching_hits": 9
-          }
-        ],
-        "source_warnings": [],
-        "player_rows": 33,
-        "status": "PASS",
-        "scoreboard": [
-          {
-            "runs": 10,
-            "hits": 9,
-            "errors": 2,
-            "innings": [
-              0,
-              0,
-              4,
-              0,
-              0,
-              2,
-              0,
-              3,
-              1
-            ]
-          },
-          {
-            "runs": 8,
-            "hits": 11,
-            "errors": 0,
-            "innings": [
-              3,
-              0,
-              0,
-              1,
-              2,
-              0,
-              1,
-              1,
-              0
-            ]
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "Pittsburgh",
-            "nine_starting_slots": true,
-            "batter_rows": 12,
-            "pitcher_rows": 4,
-            "substitutes": 3
-          },
-          {
-            "team": "Wake Forest",
-            "nine_starting_slots": true,
-            "batter_rows": 11,
-            "pitcher_rows": 6,
-            "substitutes": 2
-          }
-        ],
-        "official_decisions": {
-          "win": "Firoved,ethan",
-          "loss": "Leffew, Haiden",
-          "save": null
-        },
-        "resolved_pitcher_decisions": {
-          "win": null,
-          "loss": null,
-          "save": null
-        }
-      },
-      "pitching_decisions": {
-        "win": "Ethan Firoved",
-        "loss": "Haiden Leffew",
-        "save": null
-      }
-    },
-    {
-      "game_id": "cb-2025-04-26-tulane-east-carolina-att0337",
-      "source_url": "https://tulanegreenwave.com/sports/baseball/stats/2025/east-carolina/boxscore/22920",
-      "score": [
-        5,
-        15
-      ],
-      "source_game_id": "22920",
-      "player_rows": 31,
-      "source_stat_audit": {
-        "game_id": "cb-2025-04-26-tulane-east-carolina-att0337",
-        "source": "https://tulanegreenwave.com/sports/baseball/stats/2025/east-carolina/boxscore/22920",
-        "http_code": 200,
-        "source_bytes": 1175904,
-        "source_sha256": "275018345541efaa8f58091863b811d8e97a7eb683cea3088445c88eaf1d21c1",
-        "teams": [
-          {
-            "name": "Tulane",
-            "batters": 12,
-            "pitchers": 4,
-            "AB": 28,
-            "R": 5,
-            "H": 5,
-            "RBI": 5,
-            "BB": 4,
-            "SO": 10,
-            "pitching_outs": 23,
-            "pitching_runs": 15,
-            "pitching_hits": 16
-          },
-          {
-            "name": "East Carolina",
-            "batters": 13,
+            "name": "Tennessee",
+            "batters": 9,
             "pitchers": 2,
-            "AB": 37,
-            "R": 15,
-            "H": 16,
-            "RBI": 15,
-            "BB": 4,
-            "SO": 6,
-            "pitching_outs": 24,
-            "pitching_runs": 5,
-            "pitching_hits": 5
-          }
-        ],
-        "source_warnings": [],
-        "player_rows": 31,
-        "status": "PASS",
-        "scoreboard": [
-          {
-            "runs": 5,
-            "hits": 5,
-            "errors": 1,
-            "innings": [
-              2,
-              0,
-              3,
-              0,
-              0,
-              0,
-              0,
-              0
-            ]
+            "AB": 38,
+            "R": 7,
+            "H": 12,
+            "RBI": 7,
+            "BB": 2,
+            "SO": 10,
+            "pitching_outs": 27,
+            "pitching_runs": 2,
+            "pitching_hits": 10
           },
           {
-            "runs": 15,
-            "hits": 16,
-            "errors": 0,
-            "innings": [
-              3,
-              0,
-              1,
-              6,
-              0,
-              0,
-              1,
-              4
-            ]
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "Tulane",
-            "nine_starting_slots": true,
-            "batter_rows": 12,
-            "pitcher_rows": 4,
-            "substitutes": 3
-          },
-          {
-            "team": "East Carolina",
-            "nine_starting_slots": true,
-            "batter_rows": 13,
-            "pitcher_rows": 2,
-            "substitutes": 4
-          }
-        ],
-        "official_decisions": {
-          "win": "Norby, Ethan",
-          "loss": "Montiel, Tayler",
-          "save": null
-        },
-        "resolved_pitcher_decisions": {
-          "win": null,
-          "loss": null,
-          "save": null
-        }
-      },
-      "pitching_decisions": {
-        "win": "Ethan Norby",
-        "loss": "Tayler Montiel",
-        "save": null
-      }
-    },
-    {
-      "game_id": "cb-2025-04-11-louisville-nc-state-att0331",
-      "source_url": "https://gocards.com/sports/baseball/stats/2025/nc-state/boxscore/25392",
-      "score": [
-        11,
-        13
-      ],
-      "source_game_id": "25392",
-      "player_rows": 29,
-      "source_stat_audit": {
-        "game_id": "cb-2025-04-11-louisville-nc-state-att0331",
-        "source": "https://gocards.com/sports/baseball/stats/2025/nc-state/boxscore/25392",
-        "http_code": 200,
-        "source_bytes": 1174329,
-        "source_sha256": "c014646a5cbcd83bfc0d0ea0ee126f43f419aee216ad1dc10c6b125a927aae85",
-        "teams": [
-          {
-            "name": "Louisville",
+            "name": "South Carolina",
             "batters": 9,
             "pitchers": 6,
-            "AB": 34,
-            "R": 11,
-            "H": 11,
-            "RBI": 8,
+            "AB": 35,
+            "R": 2,
+            "H": 10,
+            "RBI": 2,
             "BB": 3,
-            "SO": 9,
-            "pitching_outs": 24,
-            "pitching_runs": 13,
-            "pitching_hits": 11
-          },
-          {
-            "name": "NC State",
-            "batters": 10,
-            "pitchers": 4,
-            "AB": 32,
-            "R": 13,
-            "H": 11,
-            "RBI": 11,
-            "BB": 16,
-            "SO": 2,
+            "SO": 5,
             "pitching_outs": 27,
-            "pitching_runs": 11,
-            "pitching_hits": 11
+            "pitching_runs": 7,
+            "pitching_hits": 12
           }
         ],
         "source_warnings": [],
-        "player_rows": 29,
+        "player_rows": 26,
         "status": "PASS",
         "scoreboard": [
           {
-            "runs": 11,
-            "hits": 11,
-            "errors": 0,
+            "runs": 7,
+            "hits": 12,
+            "errors": 1,
             "innings": [
-              1,
-              0,
-              5,
-              1,
-              4,
               0,
               0,
+              0,
+              3,
+              2,
+              0,
+              2,
               0,
               0
             ]
           },
           {
-            "runs": 13,
-            "hits": 11,
-            "errors": 1,
+            "runs": 2,
+            "hits": 10,
+            "errors": 0,
             "innings": [
+              1,
               0,
-              1,
-              1,
-              7,
-              3,
+              0,
               0,
               0,
               1,
-              null
+              0,
+              0,
+              0
             ]
           }
         ],
         "lineup_audit": [
           {
-            "team": "Louisville",
+            "team": "Tennessee",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 2,
+            "substitutes": 0
+          },
+          {
+            "team": "South Carolina",
             "nine_starting_slots": true,
             "batter_rows": 9,
             "pitcher_rows": 6,
             "substitutes": 0
-          },
-          {
-            "team": "NC State",
-            "nine_starting_slots": true,
-            "batter_rows": 10,
-            "pitcher_rows": 4,
-            "substitutes": 1
           }
         ],
         "official_decisions": {
-          "win": "Camden Wimbish",
-          "loss": "Murphy, Casen",
-          "save": "Jacob Dudan"
+          "win": "Krenzel, Brayden",
+          "loss": "Matthew Becker",
+          "save": null
         },
         "resolved_pitcher_decisions": {
-          "win": "Camden Wimbish",
-          "loss": null,
-          "save": "Jacob Dudan"
+          "win": null,
+          "loss": "Matthew Becker",
+          "save": null
         }
       },
       "pitching_decisions": {
-        "win": "Camden Wimbish",
-        "loss": "Casen Murphy",
-        "save": "Jacob Dudan"
+        "win": "Brayden Krenzel",
+        "loss": "Matthew Becker",
+        "save": null
+      }
+    },
+    {
+      "game_id": "cb-2025-03-29-tennessee-south-carolina-att0327",
+      "source_url": "https://utsports.com/sports/baseball/stats/2025/south-carolina/boxscore/29234",
+      "score": [
+        7,
+        5
+      ],
+      "source_game_id": "29234",
+      "player_rows": 28,
+      "source_stat_audit": {
+        "game_id": "cb-2025-03-29-tennessee-south-carolina-att0327",
+        "source": "https://utsports.com/sports/baseball/stats/2025/south-carolina/boxscore/29234",
+        "http_code": 200,
+        "source_bytes": 1124437,
+        "source_sha256": "a50440e38f570c5c7d353da98a346d3367cf08ec0933f26fcc56fcd07df0e33f",
+        "teams": [
+          {
+            "name": "Tennessee",
+            "batters": 12,
+            "pitchers": 3,
+            "AB": 35,
+            "R": 7,
+            "H": 8,
+            "RBI": 7,
+            "BB": 1,
+            "SO": 7,
+            "pitching_outs": 27,
+            "pitching_runs": 5,
+            "pitching_hits": 11
+          },
+          {
+            "name": "South Carolina",
+            "batters": 11,
+            "pitchers": 2,
+            "AB": 35,
+            "R": 5,
+            "H": 11,
+            "RBI": 5,
+            "BB": 2,
+            "SO": 8,
+            "pitching_outs": 27,
+            "pitching_runs": 7,
+            "pitching_hits": 8
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 28,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 7,
+            "hits": 8,
+            "errors": 0,
+            "innings": [
+              0,
+              0,
+              0,
+              3,
+              0,
+              0,
+              0,
+              2,
+              2
+            ]
+          },
+          {
+            "runs": 5,
+            "hits": 11,
+            "errors": 0,
+            "innings": [
+              0,
+              0,
+              0,
+              1,
+              2,
+              1,
+              0,
+              1,
+              0
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Tennessee",
+            "nine_starting_slots": true,
+            "batter_rows": 12,
+            "pitcher_rows": 3,
+            "substitutes": 3
+          },
+          {
+            "team": "South Carolina",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 2,
+            "substitutes": 2
+          }
+        ],
+        "official_decisions": {
+          "win": "Snead, Nate",
+          "loss": "Brandon Stone",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": "Brandon Stone",
+          "save": null
+        }
+      },
+      "pitching_decisions": {
+        "win": "Nate Snead",
+        "loss": "Brandon Stone",
+        "save": null
+      }
+    },
+    {
+      "game_id": "cb-2025-03-28-tennessee-south-carolina-att0326",
+      "source_url": "https://utsports.com/sports/baseball/stats/2025/south-carolina/boxscore/29225",
+      "score": [
+        11,
+        7
+      ],
+      "source_game_id": "29225",
+      "player_rows": 26,
+      "source_stat_audit": {
+        "game_id": "cb-2025-03-28-tennessee-south-carolina-att0326",
+        "source": "https://utsports.com/sports/baseball/stats/2025/south-carolina/boxscore/29225",
+        "http_code": 200,
+        "source_bytes": 1126658,
+        "source_sha256": "d1dc4ee27123fa4119995d9d54b52b66846cb5175a6b914a26abe3a0eb702e95",
+        "teams": [
+          {
+            "name": "Tennessee",
+            "batters": 9,
+            "pitchers": 3,
+            "AB": 35,
+            "R": 11,
+            "H": 10,
+            "RBI": 11,
+            "BB": 4,
+            "SO": 6,
+            "pitching_outs": 27,
+            "pitching_runs": 7,
+            "pitching_hits": 13
+          },
+          {
+            "name": "South Carolina",
+            "batters": 11,
+            "pitchers": 3,
+            "AB": 39,
+            "R": 7,
+            "H": 13,
+            "RBI": 6,
+            "BB": 2,
+            "SO": 14,
+            "pitching_outs": 27,
+            "pitching_runs": 11,
+            "pitching_hits": 10
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 26,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 11,
+            "hits": 10,
+            "errors": 0,
+            "innings": [
+              1,
+              5,
+              0,
+              0,
+              4,
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          {
+            "runs": 7,
+            "hits": 13,
+            "errors": 1,
+            "innings": [
+              2,
+              0,
+              0,
+              0,
+              1,
+              2,
+              0,
+              0,
+              2
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Tennessee",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 3,
+            "substitutes": 0
+          },
+          {
+            "team": "South Carolina",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 3,
+            "substitutes": 2
+          }
+        ],
+        "official_decisions": {
+          "win": "Doyle, Liam",
+          "loss": "Mccoy",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": "Mccoy",
+          "save": null
+        }
+      },
+      "pitching_decisions": {
+        "win": "Liam Doyle",
+        "loss": "McCoy",
+        "save": null
       }
     }
   ],
@@ -387,6 +389,16 @@
       "game_id": "cb-2025-04-06-virginia-nc-state-att0330",
       "source_url": "https://gopack.com/sports/baseball/stats/2025/virginia/boxscore/23700",
       "reason": "NC State: source batting order resolved to 11 starting slots, not 9"
+    },
+    {
+      "game_id": "cb-2025-03-19-richmond-virginia-att0324",
+      "source_url": "https://richmondspiders.com/sports/baseball/stats/2025/virginia/boxscore/11480",
+      "reason": "Virginia: source batting order resolved to 10 starting slots, not 9"
+    },
+    {
+      "game_id": "cb-2025-03-15-virginia-tech-nc-state-att0322",
+      "source_url": "https://gopack.com/sports/baseball/stats/2025/virginia-tech/boxscore/23688",
+      "reason": "Virginia Tech: source batting order resolved to 10 starting slots, not 9"
     }
   ]
 }

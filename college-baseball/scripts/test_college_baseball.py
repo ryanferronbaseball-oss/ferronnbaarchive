@@ -306,8 +306,16 @@ check(pilot_report["known_correction"][1]["attendance_game_number"] == 444 and
       pilot_report["known_correction"][1]["worksheet_row"] == 445 and
       not pilot_report["needs_clarification"],
       "User correction to final attendance game 444 resolved without altering prior game 443")
-check(sum(g["game_number"] is not None for g in committed) == 0,
-      "Regional bracket game number not mistakenly treated as a doubleheader number")
+numbered_games = [g for g in committed if g["game_number"] is not None]
+check(len(numbered_games) == 2 and
+      {(g["date"], g["away"], g["home"], g["game_number"]) for g in numbered_games}
+      == {("2026-04-11", "East Tennessee State", "Belmont", 1),
+          ("2026-04-11", "East Tennessee State", "Belmont", 2)} and
+      all(g["verification"] == "official_boxscore_verified" for g in numbered_games),
+      "Both source-verified ETSU-Belmont doubleheader games retain distinct numbers")
+check(all(g["game_number"] is None for g in committed
+          if (g.get("postseason_round") or "").lower().find("regional") >= 0),
+      "Regional tournament bracket game number not mistaken for a doubleheader number")
 
 corrected = next(g for g in committed if g["source_worksheet_row"] == 445)
 original = next(g for g in committed if g["source_worksheet_row"] == 444)

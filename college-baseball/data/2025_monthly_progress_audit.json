@@ -1,0 +1,398 @@
+{
+  "status": "PARTIAL_BACKFILL_IN_PROGRESS",
+  "as_of": "2026-10-17",
+  "approved_season": 2025,
+  "published": false,
+  "approval_boundary": "Do not import 2024 or earlier, or merge/publish draft without separate approval",
+  "original_attendance_rows": 444,
+  "prior_2026_eligible_verified": 68,
+  "attendance_games_2025": 74,
+  "verified_2025": 23,
+  "remaining_2025": 51,
+  "official_source_links_identified": 26,
+  "source_linked_not_verified": [
+    {
+      "game_id": "cb-2025-06-01-lsu-little-rock-att0369",
+      "source_url": "https://static.lsusports.net/assets/docs/bb/25stats/LSU601.pdf",
+      "reason": "Official source PDF identified; separate PDF line transcription required"
+    },
+    {
+      "game_id": "cb-2025-06-01-dallas-baptist-little-rock-att0368",
+      "source_url": "https://dbupatriots.com/sports/baseball/stats/2025/little-rock/boxscore/8550",
+      "reason": "HTTPSConnectionPool(host='dbupatriots.com', port=443): Max retries exceeded with url: /sports/baseball/stats/2025/little-rock/boxscore/8550 (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)')))"
+    },
+    {
+      "game_id": "cb-2025-05-31-dallas-baptist-lsu-att0367",
+      "source_url": "https://static.lsusports.net/assets/docs/bb/25stats/LSU531.pdf",
+      "reason": "Official source PDF identified; separate PDF line transcription required"
+    }
+  ],
+  "sources_not_yet_identified": [
+    {
+      "game_id": "cb-2025-02-04-lenoir-rhyne-barton-att0296",
+      "date": "2025-02-04",
+      "away": "Lenoir-Rhyne",
+      "home": "Barton",
+      "source_worksheet_row": 297
+    },
+    {
+      "game_id": "cb-2025-02-14-quinnipiac-georgia-att0297",
+      "date": "2025-02-14",
+      "away": "Quinnipiac",
+      "home": "Georgia",
+      "source_worksheet_row": 298
+    },
+    {
+      "game_id": "cb-2025-02-14-quinnipiac-unc-wilmington-att0298",
+      "date": "2025-02-14",
+      "away": "Quinnipiac",
+      "home": "UNC Wilmington",
+      "source_worksheet_row": 299
+    },
+    {
+      "game_id": "cb-2025-02-15-georgia-quinnipiac-att0299",
+      "date": "2025-02-15",
+      "away": "Georgia",
+      "home": "Quinnipiac",
+      "source_worksheet_row": 300
+    },
+    {
+      "game_id": "cb-2025-02-15-georgia-unc-wilmington-att0300",
+      "date": "2025-02-15",
+      "away": "Georgia",
+      "home": "UNC Wilmington",
+      "source_worksheet_row": 301
+    },
+    {
+      "game_id": "cb-2025-02-15-quinnipiac-unc-wilmington-att0301",
+      "date": "2025-02-15",
+      "away": "Quinnipiac",
+      "home": "UNC Wilmington",
+      "source_worksheet_row": 302
+    },
+    {
+      "game_id": "cb-2025-02-16-georgia-unc-wilmington-att0302",
+      "date": "2025-02-16",
+      "away": "Georgia",
+      "home": "UNC Wilmington",
+      "source_worksheet_row": 303
+    },
+    {
+      "game_id": "cb-2025-02-17-washington-st-joe-s-att0303",
+      "date": "2025-02-17",
+      "away": "Washington",
+      "home": "St. Joe's",
+      "source_worksheet_row": 304
+    },
+    {
+      "game_id": "cb-2025-02-17-kansas-state-coastal-carolina-att0304",
+      "date": "2025-02-17",
+      "away": "Kansas State",
+      "home": "Coastal Carolina",
+      "source_worksheet_row": 305
+    },
+    {
+      "game_id": "cb-2025-02-18-georgia-kennesaw-state-att0305",
+      "date": "2025-02-18",
+      "away": "Georgia",
+      "home": "Kennesaw State",
+      "source_worksheet_row": 306
+    },
+    {
+      "game_id": "cb-2025-02-19-north-alabama-auburn-att0306",
+      "date": "2025-02-19",
+      "away": "North Alabama",
+      "home": "Auburn",
+      "source_worksheet_row": 307
+    },
+    {
+      "game_id": "cb-2025-02-23-northwestern-state-troy-att0307",
+      "date": "2025-02-23",
+      "away": "Northwestern State",
+      "home": "Troy",
+      "source_worksheet_row": 308
+    },
+    {
+      "game_id": "cb-2025-02-28-ut-martin-middle-tennessee-state-att0308",
+      "date": "2025-02-28",
+      "away": "UT Martin",
+      "home": "Middle Tennessee State",
+      "source_worksheet_row": 309
+    },
+    {
+      "game_id": "cb-2025-02-28-old-dominion-st-bonaventure-att0309",
+      "date": "2025-02-28",
+      "away": "Old Dominion",
+      "home": "St. Bonaventure",
+      "source_worksheet_row": 310
+    },
+    {
+      "game_id": "cb-2025-03-01-ut-martin-old-dominion-att0310",
+      "date": "2025-03-01",
+      "away": "UT Martin",
+      "home": "Old Dominion",
+      "source_worksheet_row": 311
+    },
+    {
+      "game_id": "cb-2025-03-01-st-bonaventure-middle-tennessee-state-att0311",
+      "date": "2025-03-01",
+      "away": "St. Bonaventure",
+      "home": "Middle Tennessee State",
+      "source_worksheet_row": 312
+    },
+    {
+      "game_id": "cb-2025-03-02-old-dominion-middle-tennessee-state-att0312",
+      "date": "2025-03-02",
+      "away": "Old Dominion",
+      "home": "Middle Tennessee State",
+      "source_worksheet_row": 313
+    },
+    {
+      "game_id": "cb-2025-03-02-st-bonaventure-ut-martin-att0313",
+      "date": "2025-03-02",
+      "away": "St. Bonaventure",
+      "home": "UT Martin",
+      "source_worksheet_row": 314
+    },
+    {
+      "game_id": "cb-2025-03-04-gardner-webb-east-carolina-att0314",
+      "date": "2025-03-04",
+      "away": "Gardner Webb",
+      "home": "East Carolina",
+      "source_worksheet_row": 315
+    },
+    {
+      "game_id": "cb-2025-03-07-cornell-michigan-state-att0315",
+      "date": "2025-03-07",
+      "away": "Cornell",
+      "home": "Michigan State",
+      "source_worksheet_row": 316
+    },
+    {
+      "game_id": "cb-2025-03-07-uab-michigan-state-att0316",
+      "date": "2025-03-07",
+      "away": "UAB",
+      "home": "Michigan State",
+      "source_worksheet_row": 317
+    },
+    {
+      "game_id": "cb-2025-03-08-stonehill-high-point-att0317",
+      "date": "2025-03-08",
+      "away": "Stonehill",
+      "home": "High Point",
+      "source_worksheet_row": 318
+    },
+    {
+      "game_id": "cb-2025-03-09-stanford-north-carolina-att0318",
+      "date": "2025-03-09",
+      "away": "Stanford",
+      "home": "North Carolina",
+      "source_worksheet_row": 319
+    },
+    {
+      "game_id": "cb-2025-03-12-george-mason-duke-att0319",
+      "date": "2025-03-12",
+      "away": "George Mason",
+      "home": "Duke",
+      "source_worksheet_row": 320
+    },
+    {
+      "game_id": "cb-2025-03-14-princeton-liberty-att0320",
+      "date": "2025-03-14",
+      "away": "Princeton",
+      "home": "Liberty",
+      "source_worksheet_row": 321
+    },
+    {
+      "game_id": "cb-2025-03-14-miami-wake-forest-att0321",
+      "date": "2025-03-14",
+      "away": "Miami",
+      "home": "Wake Forest",
+      "source_worksheet_row": 322
+    },
+    {
+      "game_id": "cb-2025-03-15-virginia-tech-nc-state-att0322",
+      "date": "2025-03-15",
+      "away": "Virginia Tech",
+      "home": "NC State",
+      "source_worksheet_row": 323
+    },
+    {
+      "game_id": "cb-2025-03-16-harvard-northeastern-att0323",
+      "date": "2025-03-16",
+      "away": "Harvard",
+      "home": "Northeastern",
+      "source_worksheet_row": 324
+    },
+    {
+      "game_id": "cb-2025-03-19-richmond-virginia-att0324",
+      "date": "2025-03-19",
+      "away": "Richmond",
+      "home": "Virginia",
+      "source_worksheet_row": 325
+    },
+    {
+      "game_id": "cb-2025-03-22-western-kentucky-kennesaw-state-att0325",
+      "date": "2025-03-22",
+      "away": "Western Kentucky",
+      "home": "Kennesaw State",
+      "source_worksheet_row": 326
+    },
+    {
+      "game_id": "cb-2025-03-28-tennessee-south-carolina-att0326",
+      "date": "2025-03-28",
+      "away": "Tennessee",
+      "home": "South Carolina",
+      "source_worksheet_row": 327
+    },
+    {
+      "game_id": "cb-2025-03-29-tennessee-south-carolina-att0327",
+      "date": "2025-03-29",
+      "away": "Tennessee",
+      "home": "South Carolina",
+      "source_worksheet_row": 328
+    },
+    {
+      "game_id": "cb-2025-03-30-tennessee-south-carolina-att0328",
+      "date": "2025-03-30",
+      "away": "Tennessee",
+      "home": "South Carolina",
+      "source_worksheet_row": 329
+    },
+    {
+      "game_id": "cb-2025-04-06-northeastern-campbell-att0329",
+      "date": "2025-04-06",
+      "away": "Northeastern",
+      "home": "Campbell",
+      "source_worksheet_row": 330
+    },
+    {
+      "game_id": "cb-2025-04-06-virginia-nc-state-att0330",
+      "date": "2025-04-06",
+      "away": "Virginia",
+      "home": "NC State",
+      "source_worksheet_row": 331
+    },
+    {
+      "game_id": "cb-2025-04-11-louisville-nc-state-att0331",
+      "date": "2025-04-11",
+      "away": "Louisville",
+      "home": "NC State",
+      "source_worksheet_row": 332
+    },
+    {
+      "game_id": "cb-2025-04-12-louisville-nc-state-att0332",
+      "date": "2025-04-12",
+      "away": "Louisville",
+      "home": "NC State",
+      "source_worksheet_row": 333
+    },
+    {
+      "game_id": "cb-2025-04-13-stanford-clemson-att0333",
+      "date": "2025-04-13",
+      "away": "Stanford",
+      "home": "Clemson",
+      "source_worksheet_row": 334
+    },
+    {
+      "game_id": "cb-2025-04-18-stony-brook-hofstra-att0334",
+      "date": "2025-04-18",
+      "away": "Stony Brook",
+      "home": "Hofstra",
+      "source_worksheet_row": 335
+    },
+    {
+      "game_id": "cb-2025-04-19-minnesota-rutgers-att0335",
+      "date": "2025-04-19",
+      "away": "Minnesota",
+      "home": "Rutgers",
+      "source_worksheet_row": 336
+    },
+    {
+      "game_id": "cb-2025-04-25-nebraska-maryland-att0336",
+      "date": "2025-04-25",
+      "away": "Nebraska",
+      "home": "Maryland",
+      "source_worksheet_row": 337
+    },
+    {
+      "game_id": "cb-2025-04-26-tulane-east-carolina-att0337",
+      "date": "2025-04-26",
+      "away": "Tulane",
+      "home": "East Carolina",
+      "source_worksheet_row": 338
+    },
+    {
+      "game_id": "cb-2025-04-27-tulane-east-carolina-att0338",
+      "date": "2025-04-27",
+      "away": "Tulane",
+      "home": "East Carolina",
+      "source_worksheet_row": 339
+    },
+    {
+      "game_id": "cb-2025-05-09-richmond-vcu-att0343",
+      "date": "2025-05-09",
+      "away": "Richmond",
+      "home": "VCU",
+      "source_worksheet_row": 344
+    },
+    {
+      "game_id": "cb-2025-05-10-pittsburgh-wake-forest-att0345",
+      "date": "2025-05-10",
+      "away": "Pittsburgh",
+      "home": "Wake Forest",
+      "source_worksheet_row": 346
+    },
+    {
+      "game_id": "cb-2025-05-22-texas-a-m-auburn-att0357",
+      "date": "2025-05-22",
+      "away": "Texas A&M",
+      "home": "Auburn",
+      "source_worksheet_row": 358
+    },
+    {
+      "game_id": "cb-2025-05-22-oklahoma-vanderbilt-att0359",
+      "date": "2025-05-22",
+      "away": "Oklahoma",
+      "home": "Vanderbilt",
+      "source_worksheet_row": 360
+    },
+    {
+      "game_id": "cb-2025-05-23-texas-a-m-lsu-att0361",
+      "date": "2025-05-23",
+      "away": "Texas A&M",
+      "home": "LSU",
+      "source_worksheet_row": 362
+    }
+  ],
+  "monthly": {
+    "2025-06": {
+      "attendance": 2,
+      "verified": 0
+    },
+    "2025-05": {
+      "attendance": 29,
+      "verified": 23
+    },
+    "2025-04": {
+      "attendance": 10,
+      "verified": 0
+    },
+    "2025-03": {
+      "attendance": 19,
+      "verified": 0
+    },
+    "2025-02": {
+      "attendance": 14,
+      "verified": 0
+    }
+  },
+  "rules": [
+    "Preserve original attendance records",
+    "Only source-reconciled full player gamebooks count as verified",
+    "Preserve original nine-slot order, substitutions, innings R/H/E, pitchers and decisions",
+    "All junior-college games excluded",
+    "2024 and earlier not authorized",
+    "2026 verified data unchanged and unpublished"
+  ]
+}

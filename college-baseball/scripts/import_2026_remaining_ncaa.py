@@ -351,6 +351,11 @@ def _source_batters(table, valid_players, team, game_id):
             # the cell/class scanned for the substitution indentation.
             ("cb-2024-05-01-campbell-liberty-att0274", "Campbell"):
                 {"Dalen Thompson"},
+            # Apr 27 WVU–Baylor: pinch hitter Ellis Garcia replaced
+            # Sam White and Aaron Jamison entered in CF for Garcia;
+            # Skylar King moved to LF. University PBP ninth inning.
+            ("cb-2024-04-27-baylor-west-virginia-att0272", "West Virginia"):
+                {"Aaron Jamison"},
         }
         if name in source_2024_unindented.get((game_id, team), set()):
             is_sub = True

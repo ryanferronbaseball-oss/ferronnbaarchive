@@ -6116,7 +6116,12 @@
     "official_boxscore_status": "not_imported",
     "possible_same_day_doubleheader": false,
     "provisional_worksheet_game_sequence": null,
-    "notes": "Original workbook Sheet1 row 245."
+    "notes": "Original workbook Sheet1 row 245. 2024-03-02 Siena at UNC Asheville was a two-game doubleheader; workbook has one record without game number. Candidate Game 1: Siena 6, UNC Asheville 11, official 12:00 pm https://uncabulldogs.com/sports/baseball/stats/2024/siena/boxscore/9841 ; candidate Game 2: Siena 5, UNC Asheville 12, official 3:45 pm https://uncabulldogs.com/sports/baseball/stats/2024/siena/boxscore/9842. Do not assign unverified game identity.",
+    "candidate_source_urls": [
+      "https://uncabulldogs.com/sports/baseball/stats/2024/siena/boxscore/9841",
+      "https://uncabulldogs.com/sports/baseball/stats/2024/siena/boxscore/9842"
+    ],
+    "source_match_review_required": true
   },
   {
     "id": "cb-2024-03-02-florida-state-michigan-state-att0245",
@@ -6811,7 +6816,11 @@
     "official_boxscore_status": "not_imported",
     "possible_same_day_doubleheader": true,
     "provisional_worksheet_game_sequence": 1,
-    "notes": "Original workbook Sheet1 row 261. One of 2 same-date matchups in source; game_number 1 provisional source-sheet sequence, verify against gamebooks."
+    "notes": "Original workbook Sheet1 row 261. One of 2 same-date matchups in source; game_number 1 provisional source-sheet sequence, verify against gamebooks. 2024-03-23 Vanderbilt at South Carolina doubleheader: candidate Game 1: Vanderbilt 4, South Carolina 8; Game 2: Vanderbilt 3, South Carolina 8. Original two workbook rows are not labeled and order needs confirmation.",
+    "candidate_source_urls": [
+      "https://vucommodores.com/news/2024/03/23/gamecocks-take-doubleheader"
+    ],
+    "source_match_review_required": true
   },
   {
     "id": "cb-2024-03-23-vanderbilt-south-carolina-att0261",
@@ -6836,7 +6845,11 @@
     "official_boxscore_status": "not_imported",
     "possible_same_day_doubleheader": true,
     "provisional_worksheet_game_sequence": 2,
-    "notes": "Original workbook Sheet1 row 262. One of 2 same-date matchups in source; game_number 2 provisional source-sheet sequence, verify against gamebooks."
+    "notes": "Original workbook Sheet1 row 262. One of 2 same-date matchups in source; game_number 2 provisional source-sheet sequence, verify against gamebooks. 2024-03-23 Vanderbilt at South Carolina doubleheader: candidate Game 1: Vanderbilt 4, South Carolina 8; Game 2: Vanderbilt 3, South Carolina 8. Original two workbook rows are not labeled and order needs confirmation.",
+    "candidate_source_urls": [
+      "https://vucommodores.com/news/2024/03/23/gamecocks-take-doubleheader"
+    ],
+    "source_match_review_required": true
   },
   {
     "id": "cb-2024-03-24-vanderbilt-south-carolina-att0262",

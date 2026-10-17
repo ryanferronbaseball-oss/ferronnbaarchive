@@ -1,16 +1,20 @@
 # College Baseball · Courtside Archive
 
-**Status:** 444 original attendance rows remain staged in **draft PR #10**; all 68 eligible 2026 NCAA/four-year gamebooks now have verified player stats. Seven 2026 junior-college entries are explicitly excluded from box-score backfill under the October 17, 2026 scope decision. Published site remains unchanged until user approval.
+**Status (October 17, 2026):** 444 original attendance rows in unpublished **draft PR #10**. **2024: 27/71 official full gamebooks verified; 2025: 69/74; 2026: 68/68 eligible NCAA/four-year games verified.** Seven 2026 junior-college entries remain excluded from statistical backfill. **164 verified gamebooks, 4,827 player-game records.** Nothing has been merged or published.
 
 The site lives under \`/college-baseball/\`, with independent college baseball stats and verified inter-level player IDs only. It shares the exact MLB archive design system for Inter fonts, navigation, scoreboards, box-score layout, cards, responsive tables, and bat-order number column.
 
-## 2025 backfill — in progress (authorized October 17, 2026)
+## 2024 backfill — in progress (authorized October 17, 2026)
 
-**2025 attendance: 74 games; official full player scorebooks: 23/74 verified.** May has 23/29 verified. June (0/2), April (0/10), March (0/19) and February (0/14) remain pending. The existing full official 2026 set (68/68) and all original 444 attendance entries are preserved.
+**27/71 official NCAA/four-year player gamebooks verified.** June **6/6** complete, May **12/16**, April **4/7**, March **5/25**, February **0/17**. All **27 university source links** have been fully imported and checked, with **44 games needing official source discovery**. The initial June imports include two legitimate **NCAA Division II** gamebooks; Division II schools are not excluded as junior colleges.
 
-The latest deterministic checkpoint is [2025 source-coverage audit](data/2025_monthly_progress_audit.json) (23 imported, 51 pending). It separates 26 identified university scorebook links (23 imported, 3 blocked for PDF/source-access work) from 48 games needing further source discovery. The two June LSU regional official PDFs are linked but **not yet transcribed**; Dallas Baptist–Little Rock needs an accessible complete official source. Unverified games remain attendance-only, with no invented statistics. The 2025 source workflow runs only on the unpublished draft branch.
+[2024 monthly coverage audit](data/2024_monthly_progress_audit.json) records the precise 44-game remaining source queue; [2024 source import audit](data/2024_source_import_audit.json) confirms all 27 official player scorebooks passed, including 1–9 lineups/subs, innings and W/L/S. Leave the original attendance date for the possible 2024 May 23 Florida State–Virginia typo unchanged until explicit review. The March 23 Vanderbilt–South Carolina doubleheader must preserve both games and verify order before attributing Game 1 vs Game 2.
 
-**Scope:** 2025 is authorized for further sourcing/import without monthly approvals. 2024 and older are not authorized. The draft remains unpublished and must not merge into `main` without separate approval.
+## 2025 backfill — nearly complete (authorized October 17, 2026)
+
+**69/74 original attendance games now have complete official four-year/NCAA player scorebooks. Five remain unverified.** The current [2025 source import audit](data/2025_source_import_audit.json) holds the five exact unresolved records and source exceptions. The 2025 gamebooks remain intact throughout 2024 imports.
+
+**Scope:** Only 2024–2026 four-year college games are approved for source-backed player-stat imports. Exclude all JUCO/NJCAA stat imports, retain every original attendance record, and **do not touch 2023 or earlier or publish/merge** without a new approval.
 
 ## 2026 NCAA season — final PASS (October 17, 2026)
 

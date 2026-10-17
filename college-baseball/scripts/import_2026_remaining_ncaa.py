@@ -339,6 +339,28 @@ def _source_batters(table, valid_players, team, game_id):
         # successively occupied by PH Logan Beard, PR Lucas Moore and
         # defensive 1B Brandon Anderson. Alex Alicea started separately.
         source_2024_unindented = {
+            # Official 2024 sources have unindented defensive successors in
+            # their Player/Pos lineup table. Only these exact, source-observed
+            # 2024 identities are mapped to their original batting slots.
+            # FSU March 2 vs Michigan State: outfielders Duncan/Davis/Williams,
+            # late 1B Trippel, catcher Jackson and SS Fisher replace starters
+            # (plus the explicitly labeled PH Kamaka and PH Max Williams).
+            ("cb-2024-03-02-florida-state-michigan-state-att0245", "Florida State"):
+                {"Andrew Duncan", "Matty Davis", "Jordan Williams",
+                 "Titan Kamaka", "Lance Trippel", "Riley Jackson",
+                 "Max Williams", "Cal Fisher"},
+            # FSU May 24 ACC tournament: PR Ross succeeds LF Ferrer,
+            # and PH Jordan Williams / C Jaxson West succeed Holbrook.
+            ("cb-2024-05-23-florida-state-virginia-att0286", "Florida State"):
+                {"Deamez Ross", "Jordan Williams", "Jaxson West"},
+            # Bucknell March 10: the official three consecutive DH entries
+            # Facinelli, Trommer and Sinins share the original sixth slot.
+            ("cb-2024-03-10-bucknell-campbell-att0254", "Bucknell"):
+                {"Matt Alexander", "Michael Trommer", "Ben Sinins"},
+            # VT May 21: catcher Cooke is PH-replaced by Eisert; defensive
+            # first baseman Gibson follows Eisert in that same eighth slot.
+            ("cb-2024-05-21-virginia-tech-duke-att0279", "Virginia Tech"):
+                {"Eddie Eisert", "Ethan Gibson"},
             ("cb-2024-05-24-louisville-clemson-att0287", "Louisville"):
                 {"Alex Alicea"},
             ("cb-2024-05-22-pittsburgh-wake-forest-att0281", "Wake Forest"):

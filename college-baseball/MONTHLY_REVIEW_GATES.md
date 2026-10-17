@@ -1,5 +1,11 @@
 # College Baseball — Month-by-Month Review Gates
 
+## 2025 monthly review gate — CURRENT (October 17, 2026)
+
+User approval for full **2025** backfill is active. **23 of 74** official full player gamebooks verified and imported; May **23/29**, June **0/2**, April **0/10**, March **0/19**, February **0/14**. **51 2025 games remain**. The 26 linked official source entries include three held back: two one-page LSU regional PDFs requiring standalone, source-audited player transcription and Dallas Baptist–Little Rock requiring an accessible complete university scorebook. **48 further attendance games need official source discovery**; those are not equivalent to source failure and must not be silently counted completed.
+
+References: `data/2025_monthly_progress_audit.json` (per-game pending queue and summary), `data/2025_source_import_audit.json` (source-check exceptions), `data/2025_official_source_queue.json` (official links). 2026 remains **68/68 complete**, no change in the 444 original attendance entries, and **no 2024-or-earlier imports or publication** are approved.
+
 ## October 17, 2026 — 2025 season approved
 
 **New authorization:** After completion of all 68 eligible 2026 gamebooks, user explicitly approved processing the **entire 2025 college baseball attendance slate**, newest to oldest. 2025 attendance contains **74 original games**: June 2, May 29, April 10, March 19, February 14. All currently listed schools appear to be four-year programs; any subsequently verified NJCAA/junior-college game must be retained as attendance-only and excluded. Apply the same individual official source, inning/R-H-E, original nine-slot batting order, player statistics, pitching W/L/S, and monthly integrity audit standards as 2026.

@@ -13,7 +13,7 @@ from pathlib import Path
 import requests
 
 DATA_DIR = Path(__file__).resolve().parents[1] / "data"
-SAMPLE_YEARS = (2015, 2022, 2026)
+SAMPLE_YEARS = (2015, 2018, 2022, 2024, 2026)
 CHECK_FIELDS = ("game_pk", "at_bat_number", "pitch_number", "pitcher", "batter",
                 "release_speed", "launch_speed", "launch_angle",
                 "hit_distance_sc", "events", "description")
@@ -117,7 +117,7 @@ def main():
                            "status": "BLOCKED", "error": str(exc)[:300]})
     outcome = {"definition": "Pitch-event identity and field comparison to Savant raw CSV",
                "sample_years": list(SAMPLE_YEARS), "games": report,
-               "all_passed": len(report) == 3 and
+               "all_passed": len(report) == len(SAMPLE_YEARS) and
                              all(x["status"] == "PASS" for x in report)}
     out_path = DATA_DIR / "statcast_verification.json"
     out_path.write_text(json.dumps(outcome, indent=2, allow_nan=False) + "\n")

@@ -73,7 +73,7 @@ def pitch_rows(soup,first_pre,teams):
             section=re.sub(r"^\s*hbp\s+ibb\s+ab\s+bf\s+fo\s+go\s+np\s*","",section,flags=re.I)
             pattern=re.compile(r"([A-Za-z][A-Za-z0-9 .,'-]{1,55}?)\s+"
                 r"(?:[WLS],\d+(?:-\d+)?\s+)?"
-                r"(\d+\.[012])\s+((?:\d+\s+){14}\d+)\b")
+                r"(\d+\.[012])\s+((?:\d+\s+){13}\d+)\b")
             for m in pattern.finditer(section):
                 name=normalize_name(m.group(1).strip())
                 ip=m.group(2); vals=list(map(int,m.group(3).split()))
@@ -177,7 +177,7 @@ def import_statcrew(game,item,global_keys,response):
             person=row(team,name)
             person["pitching"]={"outs":outs,"hits":vals[0],"runs":vals[1],"earnedRuns":vals[2],
                                "baseOnBalls":vals[3],"strikeOuts":vals[4],
-                               "numberOfPitches":vals[-1] if len(vals)>=15 else None}
+                               "numberOfPitches":vals[-1] if len(vals)>=14 else None}
             person["pitching_appearance_index"]=n
         team_pitch=[p["pitching"] for p in records.values() if p["team"]==team and "pitching" in p]
         if sum(p["runs"] for p in team_pitch)!=score[1-i]["runs"] or sum(p["hits"] for p in team_pitch)!=score[1-i]["hits"]:

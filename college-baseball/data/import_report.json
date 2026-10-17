@@ -1,11 +1,11 @@
 {
-  "status": "five_game_official_source_pilot",
+  "status": "six_game_official_score_pilot",
   "scope": "college baseball only",
   "uploaded_spreadsheet": "NCAAB Games.xlsx",
   "uploaded_total_attendance_rows": 444,
   "season_span": "2017–2026 after user-confirmed 2024 typo correction",
-  "staged_games": 5,
-  "official_score_and_inning_lines_matched": 5,
+  "staged_games": 6,
+  "official_score_and_inning_lines_matched": 6,
   "official_player_boxscores_imported": 3,
   "player_stat_rows": 81,
   "unique_player_ids": 62,
@@ -16,22 +16,15 @@
     441,
     442,
     443,
-    444
+    444,
+    445
   ],
   "source_normalization": {
     "North Carolina State": "NC State",
     "Central Florida": "UCF"
   },
-  "unimported_worksheet_rows": 439,
-  "needs_clarification": [
-    {
-      "worksheet_row": 445,
-      "date_entered": "2026-05-31",
-      "away_entered": "Milwaukee",
-      "home_entered": "Auburn",
-      "reason": "Official 2026 Auburn Regional schedule shows Auburn @ Milwaukee on May 31 at 10:10pm and Milwaukee @ Auburn on June 1 at 8pm. This row may refer to the June 1 regional final or may duplicate May 31 with reversed home/away; do not change without user's confirmation."
-    }
-  ],
+  "unimported_worksheet_rows": 438,
+  "needs_clarification": [],
   "known_correction": [
     {
       "worksheet_row": 267,
@@ -40,9 +33,40 @@
       "away": "South Alabama",
       "home": "Old Dominion",
       "source": "User confirmation"
+    },
+    {
+      "attendance_game_number": 444,
+      "worksheet_row": 445,
+      "entered_date": "2026-05-31",
+      "entered_away": "Milwaukee",
+      "entered_home": "Auburn",
+      "confirmed_date": "2026-05-31",
+      "confirmed_away": "UCF",
+      "confirmed_home": "Auburn",
+      "official_regional_game_number": 5,
+      "official_score": "UCF 3 - Auburn 9",
+      "source": "User correction confirmed by Auburn Regional schedule and official university box score"
     }
   ],
   "same_day_identical_matchup_pairs_in_full_sheet": 13,
   "metadata_status": "pilot_only_other_attendance_not_imported",
-  "warning": "Source PDFs provide only reported fields; unavailable measurements are kept null. Two games await complete player-line transcription. Do not treat the other 439 rows as missing or verified."
+  "warning": "Six official Auburn Regional scores and inning lines are matched. Three games have complete player stat tables (81 player-game rows); three await transcription. Remaining 438 attendance entries are not yet on draft site and are not verified.",
+  "resolved_matchups": [
+    {
+      "attendance_game_number": 443,
+      "worksheet_row": 444,
+      "match": "Auburn @ Milwaukee",
+      "official_regional_game_number": 6,
+      "score": "Auburn 8 - Milwaukee 1",
+      "note": "Preserved original source row 444 as the later May 31 contest; player tables and existing game ID unchanged"
+    },
+    {
+      "attendance_game_number": 444,
+      "worksheet_row": 445,
+      "match": "UCF @ Auburn",
+      "official_regional_game_number": 5,
+      "score": "UCF 3 - Auburn 9",
+      "note": "Corrected original source row 445 per user; official game source documents linked"
+    }
+  ]
 }

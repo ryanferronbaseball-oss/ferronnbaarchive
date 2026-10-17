@@ -1,6 +1,6 @@
 {
-  "scope": "March 2026 NCAA and JUCO college baseball",
-  "status": "7_full_gamebooks_reconciled_12_remaining_sources_identified",
+  "scope": "March 2026 eligible NCAA/four-year college baseball; NJCAA excluded",
+  "status": "10_of_19_eligible_full_gamebooks_verified_9_pending_11_source_links_identified_for_pending",
   "march_attendance_games": 21,
   "fully_verified_player_gamebooks": [
     "cb-2026-03-15-notre-dame-louisville-att0395",
@@ -9,11 +9,14 @@
     "cb-2026-03-22-missouri-tennessee-att0400",
     "cb-2026-03-27-william-and-mary-unc-wilmington-att0401",
     "cb-2026-03-28-new-mexico-state-middle-tennessee-state-att0402",
-    "cb-2026-03-29-new-mexico-state-middle-tennessee-state-att0403"
+    "cb-2026-03-29-new-mexico-state-middle-tennessee-state-att0403",
+    "cb-2026-03-11-marshall-louisville-att0390",
+    "cb-2026-03-13-notre-dame-louisville-att0392",
+    "cb-2026-03-14-notre-dame-louisville-att0394"
   ],
-  "remaining_attendance_games": 14,
-  "source_identified_for": 12,
-  "source_discovery_required_for": 2,
+  "remaining_attendance_games": 9,
+  "source_identified_for": 9,
+  "source_discovery_required_for": 0,
   "official_sources": [
     {
       "game_id": "cb-2026-03-14-notre-dame-louisville-att0394",
@@ -154,6 +157,56 @@
       ],
       "source_type": "university_official_pdf",
       "verification": "source_discovered_player_stats_not_imported"
+    },
+    {
+      "game_id": "cb-2026-03-10-ohio-austin-peay-att0387",
+      "worksheet_row": 388,
+      "date": "2026-03-10",
+      "away": "Ohio",
+      "home": "Austin Peay",
+      "source_url": "https://letsgopeay.com/boxscore.aspx?id=14112",
+      "official_score": [
+        5,
+        18
+      ],
+      "source_type": "university_official_boxscore",
+      "verification": "source_discovered_player_stats_not_imported",
+      "official_doubleheader_game": 1,
+      "first_pitch_local": "13:05",
+      "official_hits": [
+        6,
+        14
+      ],
+      "official_errors": [
+        2,
+        1
+      ],
+      "original_attendance_order_check": "provisional; workbook row 388 assumed first game; source distinguishes 1:05 PM first game"
+    },
+    {
+      "game_id": "cb-2026-03-10-ohio-austin-peay-att0388",
+      "worksheet_row": 389,
+      "date": "2026-03-10",
+      "away": "Ohio",
+      "home": "Austin Peay",
+      "source_url": "https://letsgopeay.com/sports/baseball/stats/2026/ohio/boxscore/14113",
+      "official_score": [
+        6,
+        15
+      ],
+      "source_type": "university_official_boxscore",
+      "verification": "source_discovered_player_stats_not_imported",
+      "official_doubleheader_game": 2,
+      "first_pitch_local": "16:28",
+      "official_hits": [
+        11,
+        16
+      ],
+      "official_errors": [
+        0,
+        0
+      ],
+      "original_attendance_order_check": "provisional; workbook row 389 assumed second game; source distinguishes 4:28 PM second game"
     }
   ],
   "ohio_austin_peay_doubleheader": {
@@ -198,17 +251,9 @@
   },
   "user_scope_override": "2026-10-17: Seven 2026 NJCAA entries excluded overall; March 20 pair excluded. Historic queue is a source-discovery snapshot and may predate verified gamebook advances.",
   "eligible_march_games": 19,
-  "excluded_junior_college": [
-    {
-      "date": "2026-03-20",
-      "away": "Wabash Valley",
-      "home": "Walters State",
-      "attendance_ids": [
-        "cb-2026-03-20-wabash-valley-walters-state-att0396",
-        "cb-2026-03-20-wabash-valley-walters-state-att0397"
-      ],
-      "needed": "No further work per user exclusion of all junior-college games",
-      "status": "excluded_from_backfill"
-    }
-  ]
+  "excluded_junior_college": 2,
+  "eligible_games": 19,
+  "junior_college_exclusion_applied": true,
+  "last_reconciled": "2026-10-17",
+  "new_findings": "March 10 Ohio–Austin Peay 1:05pm first game 5-18 official boxscore 14112; 4:28pm second 6-15 official boxscore 14113. Spreadsheet row association provisional pending original-order confirmation."
 }

@@ -8,6 +8,9 @@ ROOT=Path(__file__).resolve().parents[1]
 DATA=ROOT/"data"
 COLS=["date","away","home","ballpark","city","state","neutral_site","game_number","game_type","postseason_round","away_score","home_score","source_url","notes"]
 ALIASES={"North Carolina State":"NC State","Central Florida":"UCF"}
+# Exclude NJCAA/junior-college games from box-score backfill; retain source attendance rows.
+JUNIOR_COLLEGE_TEAMS={"Walters State","Pellissippi State","USC Salkehatchie","Wabash Valley"}
+
 
 def clean(s):
     t=unicodedata.normalize("NFKD",s).encode("ascii","ignore").decode().lower()
@@ -55,6 +58,9 @@ def build(source,prior):
             "provisional_worksheet_game_sequence":int(row["game_number"]) if row["game_number"] else None,
             "notes":row["notes"] or None
         }
+        if away in JUNIOR_COLLEGE_TEAMS or home in JUNIOR_COLLEGE_TEAMS:
+            g["boxscore_backfill_excluded"]=True
+            g["boxscore_backfill_exclusion_reason"]="junior_college"
         result.append(g)
     assert len(result)==len({g["id"] for g in result})==444
     assert len({g["source_worksheet_row"] for g in result})==444

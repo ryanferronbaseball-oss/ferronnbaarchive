@@ -11,6 +11,7 @@ import json
 import math
 from pathlib import Path
 from pybaseball import statcast_single_game
+import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
@@ -22,9 +23,7 @@ FIELDS = ("game_pk", "at_bat_number", "pitch_number", "game_date",
 
 def clean(v):
     if v is None: return None
-    try:
-        if math.isnan(float(v)): return None
-    except (ValueError, TypeError, OverflowError): pass
+    if pd.isna(v): return None
     if hasattr(v, "item"): v = v.item()
     if hasattr(v, "isoformat"): return v.isoformat()
     return v
@@ -97,6 +96,8 @@ def run():
     path = DATA / "statcast_pilot.json"
     path.write_text(json.dumps(out,indent=2,allow_nan=False)+"\n")
     print(json.dumps(report,indent=2))
+    if not any(r["status"] == "imported" for r in report):
+        raise RuntimeError("No pilot Statcast games imported; check source/network before treating results as verified")
     print("Wrote",path)
 
 if __name__=="__main__":

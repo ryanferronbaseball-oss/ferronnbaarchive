@@ -1,0 +1,64 @@
+name: College Baseball 2026 NCAA Completion Import
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "college-baseball/scripts/import_2026_remaining_ncaa.py"
+      - "college-baseball/data/2026_march_official_source_queue.json"
+      - "college-baseball/data/2026_february_january_official_source_queue.json"
+      - ".github/workflows/college-baseball-2026-completion.yml"
+permissions:
+  contents: write
+jobs:
+  import-remaining-ncaa:
+    if: github.ref == 'refs/heads/feature/college-baseball-foundation'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install official gamebook parsers
+        run: python -m pip install requests beautifulsoup4
+      - name: Verify and import only source-reconciled 2026 NCAA games
+        run: python college-baseball/scripts/import_2026_remaining_ncaa.py
+      - name: Validate the 444 preserved attendance records and stat JSON
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=Path('college-baseball/data')
+          games=json.loads((d/'games.json').read_text())
+          stats=json.loads((d/'player_stats.json').read_text())
+          audit=json.loads((d/'2026_remaining_ncca_gamebook_import_audit.json').read_text())
+          assert len(games)==444
+          assert len({g['id'] for g in games})==444
+          assert sum(g.get('boxscore_backfill_excluded') and g['date'].startswith('2026') for g in games)==7
+          assert not any(s['game_id'] in {g['id'] for g in games if g.get('boxscore_backfill_excluded')} for s in stats)
+          assert len({(s['game_id'],s['player_id']) for s in stats})==len(stats)
+          assert all(len({s['batting_slot'] for s in stats if s['game_id']==g['id'] and s['team']==team and s.get('batting_sub_index')==0})==9 for g in games if g['date'].startswith('2026') and g['verification']=='official_boxscore_verified' for team in (g['away'],g['home']))
+          assert audit['eligible_2026']==68
+          print('2026 integrity PASS',audit['total_verified'],'official books;',
+                len(audit['pending_review']),'source reviews')
+          PY
+      - name: Commit audited imports back to the development branch only
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add college-baseball/data/games.json college-baseball/data/player_stats.json college-baseball/data/import_report.json college-baseball/data/2026_remaining_ncca_gamebook_import_audit.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Import 2026 NCAA gamebooks passing strict official-source reconciliation"
+            git push origin HEAD:feature/college-baseball-foundation
+          else
+            echo "No changes to verified game records"
+          fi
+      - name: Attach source reconciliation and blockers
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: 2026-ncaa-backfill-audit
+          path: college-baseball/data/2026_remaining_ncca_gamebook_import_audit.json
+          if-no-files-found: warn

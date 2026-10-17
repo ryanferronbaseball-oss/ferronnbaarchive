@@ -205,6 +205,8 @@ expected = {
     ("cb-2026-05-22-auburn-texas-a-m-att0436", "Texas A&M"): {"ab": 28, "r": 0, "h": 2, "rbi": 0, "bb": 5, "k": 13},
     ("cb-2026-05-19-south-carolina-tennessee-att0427", "South Carolina"): {"ab": 36, "r": 6, "h": 11, "rbi": 6, "bb": 3, "k": 13},
     ("cb-2026-05-19-south-carolina-tennessee-att0427", "Tennessee"): {"ab": 40, "r": 11, "h": 15, "rbi": 10, "bb": 0, "k": 10},
+    ("cb-2026-05-19-kentucky-vanderbilt-att0426", "Kentucky"): {"ab": 33, "r": 5, "h": 8, "rbi": 5, "bb": 2, "k": 10},
+    ("cb-2026-05-19-kentucky-vanderbilt-att0426", "Vanderbilt"): {"ab": 35, "r": 8, "h": 12, "rbi": 6, "bb": 5, "k": 8},
 }
 
 keys = {"ab": "atBats", "r": "runs", "h": "hits",

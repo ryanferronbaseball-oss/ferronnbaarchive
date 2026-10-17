@@ -1,12 +1,15 @@
 name: College Baseball 2026 NCAA Completion Import
 on:
   workflow_dispatch:
-  push:
+  pull_request:
     paths:
       - "college-baseball/scripts/import_2026_remaining_ncaa.py"
       - "college-baseball/data/2026_march_official_source_queue.json"
       - "college-baseball/data/2026_february_january_official_source_queue.json"
       - ".github/workflows/college-baseball-2026-completion.yml"
+concurrency:
+  group: college-baseball-2026-completion-draft
+  cancel-in-progress: true
 permissions:
   contents: write
 jobs:
@@ -17,6 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          ref: feature/college-baseball-foundation
           persist-credentials: true
       - uses: actions/setup-python@v5
         with:

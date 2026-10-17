@@ -16,7 +16,12 @@ function getData(){
  return cache;
 }
 function unit(v,u){return v==null?"—":num(v)+" "+u}
-function summaryCard(k,v){return '<div class="sc-metric"><strong>'+esc(v)+'</strong><small>'+esc(k)+'</small></div>'}
+function summaryCard(k,v,person,note){
+ return '<div class="sc-metric"><strong>'+esc(v)+'</strong><small>'+esc(k)+'</small>'
+  +(person?'<a class="sc-metric-player" href="'+playerLink(person)+'" aria-label="'+esc(k+': '+person.name+', view player profile')+'">'+esc(person.name)+' ↗</a>'
+   :note?'<span class="sc-metric-note">'+esc(note)+'</span>':'')
+  +'</div>';
+}
 function empty(message){return '<div class="sc-empty">'+esc(message)+'</div>'}
 function playerName(p){return '<a href="'+playerLink(p)+'">'+esc(p.name||"Player #"+p.id)+'</a>'}
 function gameName(g){return '<a href="'+gameLink(g)+'">'+esc(date(g.date))+' · '+esc(label(g))+'</a>'}
@@ -29,7 +34,16 @@ function topRows(d,kind,max=10){
  });
  return table(heads,rows);
 }
-function tiles(items){return '<div class="sc-metrics">'+items.map(([k,v])=>summaryCard(k,v)).join("")+'</div>'}
+function tiles(items){return '<div class="sc-metrics">'+items.map(([k,v,person,note])=>summaryCard(k,v,person,note)).join("")+'</div>'}
+function gameEventLeaders(d,g){
+ // Player IDs come from the same verified game-level event records as the measurements.
+ const lookup=(group,id,value)=>value==null||id==null?null:d[group].find(p=>String(p.id)===String(id))||null;
+ return [
+  ["Hardest-hit ball",unit(g.maxEV,"mph"),lookup("bats",g.maxEVPlayer,g.maxEV),g.maxEV==null?"No measured contact":"Player unavailable"],
+  ["Fastest pitch",unit(g.maxPitch,"mph"),lookup("pits",g.maxPitchPlayer,g.maxPitch),g.maxPitch==null?"No measured pitch":"Player unavailable"],
+  ["Longest home run",unit(g.longHR,"ft"),lookup("bats",g.longHRPlayer,g.longHR),g.longHR==null?(g.homers===0?"No home runs":"Distance not recorded"):"Player unavailable"]
+ ];
+}
 function renderSite(){
  const app=document.getElementById("app"),nav=document.getElementById("navigation");
  if(nav&&A?.nav)nav.innerHTML=A.nav("statcast");
@@ -61,7 +75,7 @@ function renderSite(){
   const list=d.games.filter(g=>(!year||g.date.startsWith(year))&&[g.date,g.away,g.home,g.pk].some(z=>String(z).toLowerCase().includes(q)));
   $("sc-games-table").innerHTML=table(["Date & matchup","Pitch events","Exit velo events","Max EV","Fastest pitch","HR","Detail"],list.map(g=>'<tr><td>'+gameName(g)+'</td><td>'+g.count+'</td><td>'+g.evCount+'</td><td>'+esc(unit(g.maxEV,"mph"))+'</td><td>'+esc(unit(g.maxPitch,"mph"))+'</td><td>'+g.homers+'</td><td><button class="sc-detail-button" data-sc-game="'+g.pk+'">Review</button></td></tr>'));
   $("sc-games-table").querySelectorAll("[data-sc-game]").forEach(b=>b.addEventListener("click",()=>{const g=d.games.find(x=>String(x.pk)===b.dataset.scGame);
-    $("sc-game-detail").hidden=false;$("sc-game-detail").innerHTML='<h3>'+gameName(g)+'</h3>'+tiles([["Tracked pitch events",g.count],["Pitch speed measurements",g.pitchCount],["Exit velocity measurements",g.evCount],["Hardest contact",unit(g.maxEV,"mph")],["Fastest pitch",unit(g.maxPitch,"mph")],["Longest measured HR",unit(g.longHR,"ft")]])+'<p class="mlb-note">Hardest contact: '+esc(d.bats.find(x=>x.id===g.maxEVPlayer)?.name||"—")+' · Fastest pitch: '+esc(d.pits.find(x=>x.id===g.maxPitchPlayer)?.name||"—")+'.</p><a class="action-link" href="'+gameLink(g)+'">Full box score ↗</a>';
+    $("sc-game-detail").hidden=false;$("sc-game-detail").innerHTML='<h3>'+gameName(g)+'</h3>'+tiles([["Tracked pitch events",g.count],["Pitch speed measurements",g.pitchCount],["Exit velocity measurements",g.evCount],...gameEventLeaders(d,g)])+'<p class="mlb-note">Each event leader is credited to the batter or pitcher who produced it. Click a player name to view their attended-game profile.</p><a class="action-link" href="'+gameLink(g)+'">Full box score ↗</a>';
     $("sc-game-detail").scrollIntoView({block:"nearest"});
   }));
  }
@@ -87,7 +101,7 @@ function renderGame(g,target){
  getData().then(d=>{
   const s=d.games.find(x=>x.pk===Number(g.game_pk));
   if(!s){target.innerHTML=empty("No verified Statcast record available for this game.");return}
-  target.innerHTML='<section class="panel sc-panel-inline"><h2>Statcast game summary</h2>'+tiles([["Tracked pitches",s.count],["Batted balls with EV",s.evCount],["Hardest-hit ball",unit(s.maxEV,"mph")],["Fastest pitch",unit(s.maxPitch,"mph")],["Measured longest HR",unit(s.longHR,"ft")]])+'<p class="mlb-note">Measurements from your attended game, cross-checked against Baseball Savant. The pitching and batting box score remains official MLB StatsAPI data.</p><a href="./statcast.html" class="action-link secondary">Explore Statcast rankings ↗</a></section>';
+  target.innerHTML='<section class="panel sc-panel-inline"><h2>Statcast game summary</h2>'+tiles([["Tracked pitches",s.count],["Batted balls with EV",s.evCount],...gameEventLeaders(d,s)])+'<p class="mlb-note">Click each credited batter or pitcher to see their profile. Measurements are cross-checked against Baseball Savant; the batting and pitching box scores remain official MLB StatsAPI data.</p><a href="./statcast.html" class="action-link secondary">Explore Statcast rankings ↗</a></section>';
  }).catch(err=>target.innerHTML=empty("Statcast temporarily unavailable; official box score remains intact."));
 }
 function renderPlayer(p,target){

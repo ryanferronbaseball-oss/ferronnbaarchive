@@ -4,53 +4,53 @@
   "original_attendance_entries": 444,
   "verified_2026_unchanged": 68,
   "total_2025_attendance": 74,
-  "completed_in_this_run": 4,
-  "verified_2025_total": 10,
+  "completed_in_this_run": 1,
+  "verified_2025_total": 11,
   "linked_source_games": 15,
   "passed_games": [
     {
-      "game_id": "cb-2025-05-22-tennessee-texas-att0358",
-      "source_url": "https://utsports.com/sports/baseball/stats/2025/texas/boxscore/29524",
+      "game_id": "cb-2025-05-21-texas-a-m-mississippi-state-att0353",
+      "source_url": "https://hailstate.com/sports/baseball/stats/2025/texas-am/boxscore/27187",
       "score": [
-        7,
-        5
+        9,
+        0
       ],
-      "source_game_id": "29524",
+      "source_game_id": "27187",
       "player_rows": 30,
       "source_stat_audit": {
-        "game_id": "cb-2025-05-22-tennessee-texas-att0358",
-        "source": "https://utsports.com/sports/baseball/stats/2025/texas/boxscore/29524",
+        "game_id": "cb-2025-05-21-texas-a-m-mississippi-state-att0353",
+        "source": "https://hailstate.com/sports/baseball/stats/2025/texas-am/boxscore/27187",
         "http_code": 200,
-        "source_bytes": 1221218,
-        "source_sha256": "2439905a0d57e858dd36c0779627147cd1978f674875e3741f2e715e23ec743f",
+        "source_bytes": 1313047,
+        "source_sha256": "00629fa5a028da95a74119151c686c8a25d98e8977c05a5590fd825b158cde56",
         "teams": [
           {
-            "name": "Tennessee",
-            "batters": 11,
+            "name": "Texas A&M",
+            "batters": 10,
             "pitchers": 4,
-            "AB": 41,
-            "R": 7,
-            "H": 9,
-            "RBI": 7,
-            "BB": 2,
-            "SO": 12,
-            "pitching_outs": 36,
-            "pitching_runs": 5,
-            "pitching_hits": 10
+            "AB": 37,
+            "R": 9,
+            "H": 10,
+            "RBI": 9,
+            "BB": 4,
+            "SO": 10,
+            "pitching_outs": 27,
+            "pitching_runs": 0,
+            "pitching_hits": 6
           },
           {
-            "name": "Texas",
-            "batters": 10,
+            "name": "Mississippi State",
+            "batters": 11,
             "pitchers": 5,
-            "AB": 44,
-            "R": 5,
-            "H": 10,
-            "RBI": 5,
-            "BB": 6,
-            "SO": 18,
-            "pitching_outs": 36,
-            "pitching_runs": 7,
-            "pitching_hits": 9
+            "AB": 31,
+            "R": 0,
+            "H": 6,
+            "RBI": 0,
+            "BB": 3,
+            "SO": 7,
+            "pitching_outs": 27,
+            "pitching_runs": 9,
+            "pitching_hits": 10
           }
         ],
         "source_warnings": [],
@@ -58,35 +58,13 @@
         "status": "PASS",
         "scoreboard": [
           {
-            "runs": 7,
-            "hits": 9,
-            "errors": 2,
-            "innings": [
-              0,
-              0,
-              0,
-              0,
-              2,
-              2,
-              0,
-              0,
-              0,
-              1,
-              0,
-              2
-            ]
-          },
-          {
-            "runs": 5,
+            "runs": 9,
             "hits": 10,
-            "errors": 1,
+            "errors": 0,
             "innings": [
-              1,
               0,
-              0,
-              3,
-              0,
-              0,
+              6,
+              2,
               0,
               0,
               0,
@@ -94,384 +72,55 @@
               0,
               0
             ]
+          },
+          {
+            "runs": 0,
+            "hits": 6,
+            "errors": 2,
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
           }
         ],
         "lineup_audit": [
           {
-            "team": "Tennessee",
+            "team": "Texas A&M",
+            "nine_starting_slots": true,
+            "batter_rows": 10,
+            "pitcher_rows": 4,
+            "substitutes": 1
+          },
+          {
+            "team": "Mississippi State",
             "nine_starting_slots": true,
             "batter_rows": 11,
-            "pitcher_rows": 4,
+            "pitcher_rows": 5,
             "substitutes": 2
-          },
-          {
-            "team": "Texas",
-            "nine_starting_slots": true,
-            "batter_rows": 10,
-            "pitcher_rows": 5,
-            "substitutes": 1
           }
         ],
         "official_decisions": {
-          "win": "Snead, Nate",
-          "loss": "Volantis",
+          "win": "Ryan Prager",
+          "loss": "Mcpherson, Ryan",
           "save": null
         },
         "resolved_pitcher_decisions": {
-          "win": null,
-          "loss": "Volantis",
+          "win": "Ryan Prager",
+          "loss": null,
           "save": null
         }
       },
       "pitching_decisions": {
-        "win": "Nate Snead",
-        "loss": "Volantis",
+        "win": "Ryan Prager",
+        "loss": "Ryan Mcpherson",
         "save": null
-      }
-    },
-    {
-      "game_id": "cb-2025-05-21-florida-ole-miss-att0356",
-      "source_url": "https://olemisssports.com/sports/baseball/stats/2025/florida/boxscore/14223",
-      "score": [
-        1,
-        3
-      ],
-      "source_game_id": "14223",
-      "player_rows": 25,
-      "source_stat_audit": {
-        "game_id": "cb-2025-05-21-florida-ole-miss-att0356",
-        "source": "https://olemisssports.com/sports/baseball/stats/2025/florida/boxscore/14223",
-        "http_code": 200,
-        "source_bytes": 1673558,
-        "source_sha256": "f55427ffedfe86343da9d3b86041f8510d8776bed63e276b89607d2e4d520a9c",
-        "teams": [
-          {
-            "name": "Florida",
-            "batters": 9,
-            "pitchers": 3,
-            "AB": 31,
-            "R": 1,
-            "H": 4,
-            "RBI": 0,
-            "BB": 1,
-            "SO": 11,
-            "pitching_outs": 24,
-            "pitching_runs": 3,
-            "pitching_hits": 7
-          },
-          {
-            "name": "Ole Miss",
-            "batters": 10,
-            "pitchers": 3,
-            "AB": 29,
-            "R": 3,
-            "H": 7,
-            "RBI": 2,
-            "BB": 1,
-            "SO": 11,
-            "pitching_outs": 27,
-            "pitching_runs": 1,
-            "pitching_hits": 4
-          }
-        ],
-        "source_warnings": [],
-        "player_rows": 25,
-        "status": "PASS",
-        "scoreboard": [
-          {
-            "runs": 1,
-            "hits": 4,
-            "errors": 2,
-            "innings": [
-              0,
-              0,
-              0,
-              0,
-              1,
-              0,
-              0,
-              0,
-              0
-            ]
-          },
-          {
-            "runs": 3,
-            "hits": 7,
-            "errors": 3,
-            "innings": [
-              0,
-              0,
-              0,
-              3,
-              0,
-              0,
-              0,
-              0,
-              null
-            ]
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "Florida",
-            "nine_starting_slots": true,
-            "batter_rows": 9,
-            "pitcher_rows": 3,
-            "substitutes": 0
-          },
-          {
-            "team": "Ole Miss",
-            "nine_starting_slots": true,
-            "batter_rows": 10,
-            "pitcher_rows": 3,
-            "substitutes": 1
-          }
-        ],
-        "official_decisions": {
-          "win": "Elliott, Hunter",
-          "loss": "Liam Peterson",
-          "save": "Spencer, Connor"
-        },
-        "resolved_pitcher_decisions": {
-          "win": null,
-          "loss": "Liam Peterson",
-          "save": null
-        }
-      },
-      "pitching_decisions": {
-        "win": "Hunter Elliott",
-        "loss": "Liam Peterson",
-        "save": "Connor Spencer"
-      }
-    },
-    {
-      "game_id": "cb-2025-05-21-oklahoma-georgia-att0355",
-      "source_url": "https://soonersports.com/sports/baseball/stats/2025/georgia/boxscore/15224",
-      "score": [
-        3,
-        2
-      ],
-      "source_game_id": "15224",
-      "player_rows": 27,
-      "source_stat_audit": {
-        "game_id": "cb-2025-05-21-oklahoma-georgia-att0355",
-        "source": "https://soonersports.com/sports/baseball/stats/2025/georgia/boxscore/15224",
-        "http_code": 200,
-        "source_bytes": 1175533,
-        "source_sha256": "69e2fcfbde11629366a806bb2562473fd70a46c6189f0c32fc99b31943e65b75",
-        "teams": [
-          {
-            "name": "Oklahoma",
-            "batters": 9,
-            "pitchers": 3,
-            "AB": 30,
-            "R": 3,
-            "H": 8,
-            "RBI": 3,
-            "BB": 3,
-            "SO": 10,
-            "pitching_outs": 27,
-            "pitching_runs": 2,
-            "pitching_hits": 5
-          },
-          {
-            "name": "Georgia",
-            "batters": 10,
-            "pitchers": 5,
-            "AB": 30,
-            "R": 2,
-            "H": 5,
-            "RBI": 2,
-            "BB": 0,
-            "SO": 8,
-            "pitching_outs": 27,
-            "pitching_runs": 3,
-            "pitching_hits": 8
-          }
-        ],
-        "source_warnings": [],
-        "player_rows": 27,
-        "status": "PASS",
-        "scoreboard": [
-          {
-            "runs": 3,
-            "hits": 8,
-            "errors": 0,
-            "innings": [
-              0,
-              0,
-              0,
-              1,
-              0,
-              2,
-              0,
-              0,
-              0
-            ]
-          },
-          {
-            "runs": 2,
-            "hits": 5,
-            "errors": 2,
-            "innings": [
-              0,
-              0,
-              1,
-              0,
-              0,
-              0,
-              0,
-              1,
-              0
-            ]
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "Oklahoma",
-            "nine_starting_slots": true,
-            "batter_rows": 9,
-            "pitcher_rows": 3,
-            "substitutes": 0
-          },
-          {
-            "team": "Georgia",
-            "nine_starting_slots": true,
-            "batter_rows": 10,
-            "pitcher_rows": 5,
-            "substitutes": 1
-          }
-        ],
-        "official_decisions": {
-          "win": "Witherspoon, Kyson",
-          "loss": "Matthew Hoskins",
-          "save": "Crooks, Dylan"
-        },
-        "resolved_pitcher_decisions": {
-          "win": null,
-          "loss": "Matthew Hoskins",
-          "save": null
-        }
-      },
-      "pitching_decisions": {
-        "win": "Kyson Witherspoon",
-        "loss": "Matthew Hoskins",
-        "save": "Dylan Crooks"
-      }
-    },
-    {
-      "game_id": "cb-2025-05-20-missouri-alabama-att0350",
-      "source_url": "https://rolltide.com/sports/baseball/stats/2025/missouri/boxscore/19864",
-      "score": [
-        1,
-        4
-      ],
-      "source_game_id": "19864",
-      "player_rows": 24,
-      "source_stat_audit": {
-        "game_id": "cb-2025-05-20-missouri-alabama-att0350",
-        "source": "https://rolltide.com/sports/baseball/stats/2025/missouri/boxscore/19864",
-        "http_code": 200,
-        "source_bytes": 1200646,
-        "source_sha256": "75932cfaf4b7484f8ff711fbf5831a9c8c6bb80bd5de7c9c4d4260aa22d63621",
-        "teams": [
-          {
-            "name": "Missouri",
-            "batters": 9,
-            "pitchers": 2,
-            "AB": 36,
-            "R": 1,
-            "H": 9,
-            "RBI": 1,
-            "BB": 1,
-            "SO": 10,
-            "pitching_outs": 24,
-            "pitching_runs": 4,
-            "pitching_hits": 8
-          },
-          {
-            "name": "Alabama",
-            "batters": 9,
-            "pitchers": 4,
-            "AB": 29,
-            "R": 4,
-            "H": 8,
-            "RBI": 4,
-            "BB": 7,
-            "SO": 4,
-            "pitching_outs": 27,
-            "pitching_runs": 1,
-            "pitching_hits": 9
-          }
-        ],
-        "source_warnings": [],
-        "player_rows": 24,
-        "status": "PASS",
-        "scoreboard": [
-          {
-            "runs": 1,
-            "hits": 9,
-            "errors": 0,
-            "innings": [
-              0,
-              0,
-              0,
-              1,
-              0,
-              0,
-              0,
-              0,
-              0
-            ]
-          },
-          {
-            "runs": 4,
-            "hits": 8,
-            "errors": 1,
-            "innings": [
-              0,
-              0,
-              0,
-              2,
-              0,
-              0,
-              1,
-              1,
-              null
-            ]
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "Missouri",
-            "nine_starting_slots": true,
-            "batter_rows": 9,
-            "pitcher_rows": 2,
-            "substitutes": 0
-          },
-          {
-            "team": "Alabama",
-            "nine_starting_slots": true,
-            "batter_rows": 9,
-            "pitcher_rows": 4,
-            "substitutes": 0
-          }
-        ],
-        "official_decisions": {
-          "win": "Fay, Tyler",
-          "loss": "Wil Libbert",
-          "save": "Ozmer, Carson"
-        },
-        "resolved_pitcher_decisions": {
-          "win": null,
-          "loss": "Wil Libbert",
-          "save": null
-        }
-      },
-      "pitching_decisions": {
-        "win": "Tyler Fay",
-        "loss": "Wil Libbert",
-        "save": "Carson Ozmer"
       }
     }
   ],
@@ -494,12 +143,7 @@
     {
       "game_id": "cb-2025-05-21-alabama-tennessee-att0354",
       "source_url": "https://rolltide.com/boxscore.aspx?id=19947",
-      "reason": "Alabama: source batting order resolved to 10 starting slots, not 9"
-    },
-    {
-      "game_id": "cb-2025-05-21-texas-a-m-mississippi-state-att0353",
-      "source_url": "https://hailstate.com/sports/baseball/stats/2025/texas-am/boxscore/27187",
-      "reason": "Official Loss scorer 'Mcpherson, Ryan' not uniquely matched among source pitchers cb-2025-05-21-texas-a-m-mississippi-state-att0353"
+      "reason": "Tennessee: source batting order resolved to 10 starting slots, not 9"
     }
   ]
 }

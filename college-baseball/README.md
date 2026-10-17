@@ -1,8 +1,22 @@
 # College Baseball · Courtside Archive
 
-**Status:** foundation on an isolated draft branch; **no user attendance list or official player box score has been loaded yet.** The published archive remains unchanged until reviewed and approved.
+**Status:** source-verified initial pilot on an isolated draft branch. Five game scorebooks are matched, three include full player tables; production remains unchanged until reviewed and approved.
 
 The site lives at \`/college-baseball/\` to avoid collision with the established college-basketball \`/college/\` site, professional \`/mlb/\` site, or future MiLB coverage. All college statistics are their own level-specific measurements.
+
+## Pilot import update — October 2026
+
+The uploaded college baseball workbook has **444 attendance rows**, dated 2017–2026 after correcting South Alabama at Old Dominion on March 30, 2024 per user confirmation. The first pilot stages **five verified game scores and inning lines** from the 2026 NCAA Auburn Regional, with **three complete official hitter/pitcher box scores (81 player-game rows; 62 distinct athlete identities)**. The two other games await player-stat transcription. All regional game sources are original official university one-page gamebooks, linked in `data/games.json`.
+
+The published site is **unchanged**; the pilot exists on PR #10 only. Other 439 attendance entries remain in the uploaded master sheet and normalized import-review queue, **not** asserted to have official scores or player stats.
+
+Original workbook worksheet rows 440–444 are the staged games. Row 445 (May 31 Milwaukee @ Auburn) is held: the official regional schedule has **Auburn @ Milwaukee** late on May 31 and **Milwaukee @ Auburn** on June 1, so confirmation is required to determine which game the row represents.
+
+The date originally recorded as `Friday, 3/30/34` is confirmed by the user to mean **2024-03-30**, South Alabama @ Old Dominion. This is preserved in `data/import_report.json`, not silently altered in the original upload.
+
+The university PDF headers, batter/runner scores, inning line totals, pitcher outs, team hits, and strikeouts were cross-checked. Distinct regional **game numbers** are not the same field as doubleheader **game_number**. Future 2026 → 2025 → older imports should proceed in reviewed chunks, retaining a source-match/uncertainty queue.
+
+**Do not re-run the simple `import_attendance.py` command in write mode on the current pilot data directory:** it intentionally produces attendance-only records and will overwrite individually verified game metadata. Use `--validate-only` while pilot source-backed box scores are being accumulated.
 
 ## What we are building
 

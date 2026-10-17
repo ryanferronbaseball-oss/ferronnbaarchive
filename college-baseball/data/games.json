@@ -7976,22 +7976,79 @@
     "season": 2025,
     "away": "Kansas State",
     "home": "Coastal Carolina",
-    "ballpark": null,
-    "city": null,
-    "state": null,
-    "neutral_site": null,
+    "ballpark": "Springs Brooks Stadium",
+    "city": "Conway",
+    "state": "SC",
+    "neutral_site": false,
     "game_number": null,
-    "game_type": null,
+    "game_type": "regular_season",
     "postseason_round": null,
-    "away_score": null,
-    "home_score": null,
-    "score_provenance": null,
-    "source_url": null,
-    "verification": "attendance_only",
-    "official_boxscore_status": "not_imported",
+    "away_score": 2,
+    "home_score": 9,
+    "score_provenance": "official_boxscore",
+    "source_url": "https://www.kstatesports.com/sports/baseball/stats/2025/coastal-carolina/boxscore/18791",
+    "verification": "official_boxscore_verified",
+    "official_boxscore_status": "verified",
     "possible_same_day_doubleheader": false,
     "provisional_worksheet_game_sequence": null,
-    "notes": "Original workbook Sheet1 row 305."
+    "notes": "Original workbook Sheet1 row 305.",
+    "away_hits": 6,
+    "home_hits": 14,
+    "away_errors": 1,
+    "home_errors": 1,
+    "innings": [
+      {
+        "inning": 1,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 2,
+        "away": 0,
+        "home": 2
+      },
+      {
+        "inning": 3,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 4,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 5,
+        "away": 0,
+        "home": 1
+      },
+      {
+        "inning": 6,
+        "away": 1,
+        "home": 4
+      },
+      {
+        "inning": 7,
+        "away": 0,
+        "home": 2
+      },
+      {
+        "inning": 8,
+        "away": 1,
+        "home": 0
+      },
+      {
+        "inning": 9,
+        "away": 0,
+        "home": null
+      }
+    ],
+    "pitching_decisions": {
+      "win": "Jacob Morrison",
+      "loss": "Lincoln Sheffield",
+      "save": null
+    },
+    "source_type": "official_university_sidearm_boxscore"
   },
   {
     "id": "cb-2025-02-18-georgia-kennesaw-state-att0305",

@@ -5,122 +5,122 @@
   "verified_2026_unchanged": 68,
   "total_2025_attendance": 74,
   "completed_in_this_run": 1,
-  "verified_2025_total": 67,
+  "verified_2025_total": 68,
   "linked_source_games": 74,
   "passed_games": [
     {
-      "game_id": "cb-2025-03-22-western-kentucky-kennesaw-state-att0325",
-      "source_url": "https://wkusports.com/sports/baseball/stats/2025/kennesaw-state/boxscore/12878",
+      "game_id": "cb-2025-02-17-kansas-state-coastal-carolina-att0304",
+      "source_url": "https://www.kstatesports.com/sports/baseball/stats/2025/coastal-carolina/boxscore/18791",
       "score": [
-        4,
-        1
+        2,
+        9
       ],
-      "source_game_id": "12878",
-      "player_rows": 27,
+      "source_game_id": "18791",
+      "player_rows": 40,
       "source_stat_audit": {
-        "game_id": "cb-2025-03-22-western-kentucky-kennesaw-state-att0325",
-        "source": "https://wkusports.com/sports/baseball/stats/2025/kennesaw-state/boxscore/12878",
+        "game_id": "cb-2025-02-17-kansas-state-coastal-carolina-att0304",
+        "source": "https://www.kstatesports.com/sports/baseball/stats/2025/coastal-carolina/boxscore/18791",
         "http_code": 200,
-        "source_bytes": 1050000,
-        "source_sha256": "3c5266c4c41e655e0394c48509fffc3bfe681d138b7414830c8962be667a6ce1",
+        "source_bytes": 1549889,
+        "source_sha256": "96e6767fd2cf48df7e0a9b5ce9a79e2a3721c1b9205ec2ab8bf4a9294d526f94",
         "teams": [
           {
-            "name": "Western Kentucky",
-            "batters": 12,
-            "pitchers": 3,
-            "AB": 28,
-            "R": 4,
+            "name": "Kansas State",
+            "batters": 17,
+            "pitchers": 5,
+            "AB": 31,
+            "R": 2,
             "H": 6,
-            "RBI": 3,
-            "BB": 5,
-            "SO": 7,
-            "pitching_outs": 27,
-            "pitching_runs": 1,
-            "pitching_hits": 5
-          },
-          {
-            "name": "Kennesaw State",
-            "batters": 10,
-            "pitchers": 2,
-            "AB": 32,
-            "R": 1,
-            "H": 5,
             "RBI": 1,
             "BB": 7,
-            "SO": 9,
+            "SO": 10,
+            "pitching_outs": 24,
+            "pitching_runs": 9,
+            "pitching_hits": 14
+          },
+          {
+            "name": "Coastal Carolina",
+            "batters": 13,
+            "pitchers": 5,
+            "AB": 35,
+            "R": 9,
+            "H": 14,
+            "RBI": 7,
+            "BB": 4,
+            "SO": 11,
             "pitching_outs": 27,
-            "pitching_runs": 4,
+            "pitching_runs": 2,
             "pitching_hits": 6
           }
         ],
         "source_warnings": [],
-        "player_rows": 27,
+        "player_rows": 40,
         "status": "PASS",
         "scoreboard": [
           {
-            "runs": 4,
+            "runs": 2,
             "hits": 6,
-            "errors": 2,
+            "errors": 1,
             "innings": [
-              1,
               0,
               0,
               0,
               0,
-              1,
               0,
               1,
-              1
+              0,
+              1,
+              0
             ]
           },
           {
-            "runs": 1,
-            "hits": 5,
-            "errors": 0,
+            "runs": 9,
+            "hits": 14,
+            "errors": 1,
             "innings": [
               0,
+              2,
               0,
               0,
+              1,
+              4,
+              2,
               0,
-              0,
-              0,
-              0,
-              0,
-              1
+              null
             ]
           }
         ],
         "lineup_audit": [
           {
-            "team": "Western Kentucky",
+            "team": "Kansas State",
             "nine_starting_slots": true,
-            "batter_rows": 12,
-            "pitcher_rows": 3,
-            "substitutes": 3
+            "batter_rows": 17,
+            "pitcher_rows": 5,
+            "substitutes": 8
           },
           {
-            "team": "Kennesaw State",
+            "team": "Coastal Carolina",
             "nine_starting_slots": true,
-            "batter_rows": 10,
-            "pitcher_rows": 2,
-            "substitutes": 1
+            "batter_rows": 13,
+            "pitcher_rows": 5,
+            "substitutes": 4
           }
         ],
         "official_decisions": {
-          "win": "Whalen, Drew",
-          "loss": "Harry Cain",
-          "save": "Jones, Evan"
+          "win": "Morrison, Jacob",
+          "loss": "Sheffield, Lincoln",
+          "save": null
         },
         "resolved_pitcher_decisions": {
           "win": null,
-          "loss": "Harry Cain",
+          "loss": null,
           "save": null
         }
       },
       "pitching_decisions": {
-        "win": "Drew Whalen",
-        "loss": "Harry Cain",
-        "save": "Evan Jones"
+        "win": "Jacob Morrison",
+        "loss": "Lincoln Sheffield",
+        "save": null
       }
     }
   ],
@@ -152,14 +152,9 @@
       "reason": "Official inning R/H/E scoreboard could not be unambiguously parsed and checked"
     },
     {
-      "game_id": "cb-2025-02-17-kansas-state-coastal-carolina-att0304",
-      "source_url": "https://www.kstatesports.com/sports/baseball/stats/2025/coastal-carolina/boxscore/18791",
-      "reason": "Coastal Carolina: source batting order resolved to 10 starting slots, not 9"
-    },
-    {
       "game_id": "cb-2025-02-15-quinnipiac-unc-wilmington-att0301",
       "source_url": "https://gobobcats.com/sports/baseball/stats/2025/uncw/boxscore/22618",
-      "reason": "UNC Wilmington: source batting order resolved to 11 starting slots, not 9"
+      "reason": "Official Win scorer 'Franconere, J.c' not uniquely matched among source pitchers cb-2025-02-15-quinnipiac-unc-wilmington-att0301"
     }
   ]
 }

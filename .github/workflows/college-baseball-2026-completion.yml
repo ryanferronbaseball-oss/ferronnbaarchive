@@ -14,7 +14,7 @@ permissions:
   contents: write
 jobs:
   import-remaining-ncaa:
-    if: github.ref == 'refs/heads/feature/college-baseball-foundation'
+    if: github.event.pull_request.head.ref == 'feature/college-baseball-foundation' || github.ref == 'refs/heads/feature/college-baseball-foundation'
     runs-on: ubuntu-latest
     timeout-minutes: 25
     steps:

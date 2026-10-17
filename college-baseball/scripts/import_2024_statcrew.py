@@ -105,6 +105,15 @@ def import_statcrew(game,item,global_keys,response):
     teams=(game["away"],game["home"])
     bats=parse_bats(soup,first_pre,teams);pitches=pitch_rows(soup,first_pre,teams)
     if any(t not in bats or len(bats[t])<9 or not pitches[t] for t in teams):
+        print("STATCREW-STRUCTURE",game["id"],"bats",{k:len(v) for k,v in bats.items()},
+            "pitches",{k:len(v) for k,v in pitches.items()},
+            "first_trows",[tr.get_text(" ",strip=True)[:200]
+                          for t in soup.find_all("table") for tr in t.find_all("tr")
+                          if not tr.find("tr") and "ip h r er" in tr.get_text(" ",strip=True).lower()][:4],
+            "pitch-table",[tr.get_text(" ",strip=True)[:135] for t in soup.find_all("table")
+                 if "ip h r er" in t.get_text(" ",strip=True).lower()
+                 for tr in t.find_all("tr") if not tr.find("tr")][:10],
+            flush=True)
         raise ValueError("Original source missing team batting/pitching lines")
     records={};lineups=[]
     def row(team,name):

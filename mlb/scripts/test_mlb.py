@@ -343,6 +343,55 @@ try:
    page.locator("#mainTabs [data-tab='legendary']").click()
    check(page.locator("#feats").count()==1 and page.locator("#moments tbody tr").count()>=1,f"{width} legendary performance panels")
    fits("MLB records")
+   # Source-verified Statcast is an added layer, never a replacement for the box scores.
+   visit("mlb/statcast.html","document.querySelector('#sc-main') && !document.querySelector('#sc-main').hidden")
+   check(page.locator('nav a[href="./statcast.html"][aria-current="page"]').count()==1,
+         f"{width} Statcast navigation is selected on its own page")
+   check("22,844" in page.locator("#sc-metrics").inner_text(),
+         f"{width} Statcast data reports all 22,844 verified pitch events")
+   check(page.locator("#sc-highlights .sc-highlight").count()==3,
+         f"{width} three Statcast signature moments visible")
+   check(page.locator("#sc-record-table tbody tr").count()==100,
+         f"{width} individual hardest-hit events ranked without player deduplication")
+   page.locator('#sc-record-toggle [data-kind="fastest"]').click()
+   check(page.locator("#sc-record-table tbody tr").count()==100
+         and "Aroldis Chapman" in page.locator("#sc-record-table tbody tr").first.inner_text(),
+         f"{width} fastest pitch switches to source-backed top 100")
+   page.locator('[data-sc-tab="games"]').click()
+   check(page.locator("#sc-games-table tbody tr").count()==77,
+         f"{width} all 77 tracked attendance games searchable")
+   page.locator("#sc-year").select_option("2026")
+   check(page.locator("#sc-games-table tbody tr").count()==3,
+         f"{width} 2026 filter includes precisely three attended games")
+   page.locator("#sc-games-table [data-sc-game]").first.click()
+   check(page.locator("#sc-game-detail .sc-metric").count()==6,
+         f"{width} attended-game Statcast summary opens")
+   page.locator('[data-sc-tab="players"]').click()
+   page.locator("#sc-player-search").fill("Kyle Schwarber")
+   check(page.locator("#sc-players-table tbody tr").count()>=1
+         and "Kyle Schwarber" in page.locator("#sc-players-table tbody tr").first.inner_text(),
+         f"{width} hitter Statcast leaderboard searches official player names")
+   page.locator('#sc-role-toggle [data-role="pits"]').click()
+   page.locator("#sc-player-search").fill("Aroldis Chapman")
+   check(page.locator("#sc-players-table tbody tr").count()>=1
+         and "Aroldis Chapman" in page.locator("#sc-players-table tbody tr").first.inner_text(),
+         f"{width} pitcher Statcast leaderboard searches official player names")
+   fits("Statcast dashboard")
+   visit("mlb/game.html?id=55","document.querySelector('#sc-game-panel .sc-metric')!==null")
+   check(page.locator("#sc-game-panel .sc-metric").count()==5,
+         f"{width} original 2015 Royals–Angels game displays tracked measurements")
+   check(page.locator("#pitchingDecisions").count()==1 and page.locator("#box").count()==1,
+         f"{width} Statcast panel preserves official game decisions and box score")
+   visit("mlb/game.html?id=1","document.querySelector('#sc-game-panel')!==null")
+   check("predates Statcast" in page.locator("#sc-game-panel").inner_text(),
+         f"{width} pre-2015 game explicitly has no invented Statcast readings")
+   visit("mlb/player.html?id=656941","document.querySelector('#sc-profile-panel .sc-metric')!==null")
+   check("Hitting measurements" in page.locator("#sc-profile-panel").inner_text(),
+         f"{width} witnessed Kyle Schwarber player profile gains Statcast batting measurements")
+   visit("mlb/records.html","document.querySelector('#sc-records-panel .sc-highlight')!==null")
+   check(page.locator("#sc-records-panel .sc-highlight").count()==3,
+         f"{width} Statcast pitch and contact records coexist with traditional records")
+   fits("MLB records with Statcast")
    visit("index.html","document.getElementById('allGames').textContent==='267'")
    check(page.locator(".sport-card").count()==6,f"{width} sixth sports archive card")
    fits("main portal")

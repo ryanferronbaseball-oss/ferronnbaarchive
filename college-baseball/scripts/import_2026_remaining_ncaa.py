@@ -192,6 +192,24 @@ def _source_batters(table, valid_players, team, game_id):
               and team=="Davidson"
               and name in ("C Collins","J Daly")):
             is_sub=True
+        # University boxscore: Pitt May 10 defensive SS Jake Kendro enters
+        # after PH Jackson Cooke in the original 8th batting position.
+        if (game_id=="cb-2025-05-10-pittsburgh-wake-forest-att0345"
+              and team=="Pittsburgh" and name=="Jake Kendro"):
+            is_sub=True
+        # University scorebook: Tulane April 27 PR/LF Brock Slaton follows
+        # PH Tracy Mitchem in the 8th original batting-order slot.
+        if (game_id=="cb-2025-04-27-tulane-east-carolina-att0338"
+              and team=="Tulane" and name=="Brock Slaton"):
+            is_sub=True
+        # Tulane's official April 26 HTML boxscore explicitly shows
+        # DH Michael Kalinich, PH/DH John Collins, PR Kenan Bowman and
+        # PH Davin Whitaker consecutively in the SAME 6th batting slot.
+        # Some nested successor substitutions omit the indentation.
+        if (game_id=="cb-2025-04-26-tulane-east-carolina-att0337"
+              and team=="East Carolina"
+              and name in ("Kenan Bowman","Davin Whitaker")):
+            is_sub=True
         seen.append((key, name, is_sub))
     if len(seen) != len(valid_players) or len({x[0] for x in seen}) != len(seen):
         raise ValueError(team + ": cannot exactly match source batter lineup against source player records")

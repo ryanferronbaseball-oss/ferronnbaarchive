@@ -101,7 +101,9 @@ def main():
             src=soup.get_text(" ",strip=True)
             yy,mm,dd=(int(n) for n in game["date"].split("-"))
             visible_date=f"{mm}/{dd}/{yy}"
-            if visible_date not in src and f"{mm}/{dd:02d}/{yy}" not in src and f"{mm:02d}/{dd:02d}/{yy}" not in src and f"{mm:02d}/{dd}/{yy}" not in src:
+            formats={f"{mm}/{dd}/{yy}",f"{mm}/{dd:02d}/{yy}",f"{mm:02d}/{dd:02d}/{yy}",f"{mm:02d}/{dd}/{yy}",
+                     f"{mm}/{dd}/{yy%100:02d}",f"{mm:02d}/{dd:02d}/{yy%100:02d}",f"{mm}/{dd:02d}/{yy%100:02d}"}
+            if not any(fmt in src for fmt in formats):
                 raise ValueError("Official school boxscore doesn't visibly confirm attendance date")
             # import_one itself re-reads the page and reconciles both official
             # batter/pitcher tables and nine source starter/substitution slots.

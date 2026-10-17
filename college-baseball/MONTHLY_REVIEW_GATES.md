@@ -1,5 +1,12 @@
 # College Baseball — Month-by-Month Review Gates
 
+## October 17, 2026 — Junior-college exclusion (latest scope decision)
+
+**User decision:** Ignore **all junior-college / NJCAA games** for box-score/statistical backfill in this archive, including older seasons. Retain the original 444-row personal attendance source and its stable IDs for provenance; mark known JUCO entries `boxscore_backfill_excluded: true` with reason `junior_college`. They are not missing/blocked games and must not count toward monthly backfill completion denominators or missing-source queues. Do not research, infer stats for, or import JUCO gamebooks. NCAA and other eligible four-year college matchups continue normally; never mistake NCAA DIII **Wabash College** for NJCAA **Wabash Valley College**.
+
+Seven 2026 exclusions: January 23 Walters State–USC Salkehatchie (2); February 12–13 Walters State–Pellissippi State (3); March 20 Wabash Valley–Walters State (2). Thus 2026 eligible games are **68 of 75**: January **0 of 2**, February **8 of 11**, March **19 of 21**, April **14 of 14**, May **27 of 27**. May/April are complete; March currently has 10 of 19 eligible verified gamebooks (nine remaining), followed by February's eight. January requires no JUCO sourcing. Previous JUCO discovery notes are superseded by this decision. Approval for all of 2026 remains intact; 2025 and publication/merge remain unapproved.
+
+
 ## Approval policy (updated October 17, 2026)
 
 - **Approved:** May, April, March, February, and January **2026**. Continue newest-to-oldest after each month's source and integrity checks; do not wait for an additional approval.

@@ -40,7 +40,7 @@ jobs:
           audit=json.loads((d/'2026_remaining_ncca_gamebook_import_audit.json').read_text())
           assert len(games)==444
           assert len({g['id'] for g in games})==444
-          assert sum(g.get('boxscore_backfill_excluded') and g['date'].startswith('2026') for g in games)==7
+          assert sum(bool(g.get('boxscore_backfill_excluded')) and g['date'].startswith('2026') for g in games)==7
           assert not any(s['game_id'] in {g['id'] for g in games if g.get('boxscore_backfill_excluded')} for s in stats)
           assert len({(s['game_id'],s['player_id']) for s in stats})==len(stats)
           assert all(len({s['batting_slot'] for s in stats if s['game_id']==g['id'] and s['team']==team and s.get('batting_sub_index')==0})==9 for g in games if g['date'].startswith('2026') and g['verification']=='official_boxscore_verified' for team in (g['away'],g['home']))

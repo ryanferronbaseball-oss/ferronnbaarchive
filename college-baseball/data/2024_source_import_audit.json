@@ -3,115 +3,115 @@
   "approval": "2024–2026 official four-year source backfill; no 2023 or earlier, no release",
   "original_attendance": 444,
   "attendance_2024": 71,
-  "verified_2024_total": 23,
-  "remaining_2024": 48,
+  "verified_2024_total": 25,
+  "remaining_2024": 46,
   "2025_gamebooks_preserved": 69,
   "2026_gamebooks_preserved": 68,
-  "completed_in_this_run": 1,
-  "linked_2024_sources": 26,
+  "completed_in_this_run": 2,
+  "linked_2024_sources": 27,
   "months_verified": {
-    "2024-03": 1,
+    "2024-03": 3,
     "2024-04": 4,
     "2024-05": 12,
     "2024-06": 6
   },
   "passed_games": [
     {
-      "game_id": "cb-2024-03-22-mercer-unc-greensboro-att0259",
-      "source_url": "https://uncgspartans.com/sports/baseball/stats/2024/mercer/boxscore/8778",
+      "game_id": "cb-2024-03-21-louisville-wake-forest-att0258",
+      "source_url": "https://godeacs.com/sports/baseball/stats/2024/louisville/boxscore/13570",
       "score": [
-        5,
-        2
+        7,
+        16
       ],
-      "player_game_rows": 24,
+      "player_game_rows": 32,
       "pitching_decisions": {
-        "win": "Colton Cosper",
-        "loss": "Julien Peissel",
+        "win": "Josh Hartle",
+        "loss": "Sebastian Gongora",
         "save": null
       },
       "stat_audit": {
-        "game_id": "cb-2024-03-22-mercer-unc-greensboro-att0259",
-        "source": "https://uncgspartans.com/sports/baseball/stats/2024/mercer/boxscore/8778",
+        "game_id": "cb-2024-03-21-louisville-wake-forest-att0258",
+        "source": "https://godeacs.com/sports/baseball/stats/2024/louisville/boxscore/13570",
         "http_code": 200,
-        "source_bytes": 527366,
-        "source_sha256": "893a724339400f4fd41c6db272ede9e2f06e7d9716434b4cd2b7df015da4faf9",
+        "source_bytes": 886916,
+        "source_sha256": "5ff93c71f8845fea6985f1de447b6e23ca7be0f0174c4994dd0db3d2cb401e8a",
         "teams": [
           {
-            "name": "Mercer",
-            "batters": 10,
-            "pitchers": 1,
-            "AB": 35,
-            "R": 5,
-            "H": 9,
-            "RBI": 5,
+            "name": "Louisville",
+            "batters": 15,
+            "pitchers": 4,
+            "AB": 32,
+            "R": 7,
+            "H": 7,
+            "RBI": 7,
             "BB": 3,
-            "SO": 11,
-            "pitching_outs": 27,
-            "pitching_runs": 2,
-            "pitching_hits": 6
+            "SO": 12,
+            "pitching_outs": 24,
+            "pitching_runs": 16,
+            "pitching_hits": 13
           },
           {
-            "name": "UNC Greensboro",
+            "name": "Wake Forest",
             "batters": 10,
             "pitchers": 3,
-            "AB": 31,
-            "R": 2,
-            "H": 6,
-            "RBI": 2,
-            "BB": 1,
-            "SO": 5,
+            "AB": 35,
+            "R": 16,
+            "H": 13,
+            "RBI": 14,
+            "BB": 8,
+            "SO": 11,
             "pitching_outs": 27,
-            "pitching_runs": 5,
-            "pitching_hits": 9
+            "pitching_runs": 7,
+            "pitching_hits": 7
           }
         ],
         "source_warnings": [],
-        "player_rows": 24,
+        "player_rows": 32,
         "status": "PASS",
         "scoreboard": [
           {
-            "runs": 5,
-            "hits": 9,
-            "errors": 0,
-            "innings": [
-              0,
-              0,
-              1,
-              0,
-              0,
-              1,
-              1,
-              1,
-              1
-            ]
-          },
-          {
-            "runs": 2,
-            "hits": 6,
+            "runs": 7,
+            "hits": 7,
             "errors": 2,
             "innings": [
               0,
               0,
+              5,
+              2,
               0,
               0,
               0,
               0,
+              0
+            ]
+          },
+          {
+            "runs": 16,
+            "hits": 13,
+            "errors": 1,
+            "innings": [
+              3,
+              2,
+              0,
+              3,
               0,
               0,
-              2
+              5,
+              3,
+              null
             ]
           }
         ],
         "lineup_audit": [
           {
-            "team": "Mercer",
+            "team": "Louisville",
             "nine_starting_slots": true,
-            "batter_rows": 10,
-            "pitcher_rows": 1,
-            "substitutes": 1
+            "batter_rows": 15,
+            "pitcher_rows": 4,
+            "substitutes": 6
           },
           {
-            "team": "UNC Greensboro",
+            "team": "Wake Forest",
             "nine_starting_slots": true,
             "batter_rows": 10,
             "pitcher_rows": 3,
@@ -119,13 +119,127 @@
           }
         ],
         "official_decisions": {
-          "win": "Colton Cosper",
-          "loss": "Peissel, Julien",
+          "win": "Hartle, Josh",
+          "loss": "Sebastian Gongora",
           "save": null
         },
         "resolved_pitcher_decisions": {
-          "win": "Colton Cosper",
-          "loss": null,
+          "win": null,
+          "loss": "Sebastian Gongora",
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2024-03-12-rutgers-north-carolina-att0255",
+      "source_url": "https://goheels.com/sports/baseball/stats/2024/rutgers/boxscore/25040",
+      "score": [
+        7,
+        13
+      ],
+      "player_game_rows": 33,
+      "pitching_decisions": {
+        "win": "Matthew Matthijs",
+        "loss": "Joe Mazza",
+        "save": null
+      },
+      "stat_audit": {
+        "game_id": "cb-2024-03-12-rutgers-north-carolina-att0255",
+        "source": "https://goheels.com/sports/baseball/stats/2024/rutgers/boxscore/25040",
+        "http_code": 200,
+        "source_bytes": 1448181,
+        "source_sha256": "5da75109d435801187853392d4a1da21f63bcb42114e7629640c47c97cbabbd8",
+        "teams": [
+          {
+            "name": "Rutgers",
+            "batters": 11,
+            "pitchers": 5,
+            "AB": 36,
+            "R": 7,
+            "H": 9,
+            "RBI": 6,
+            "BB": 8,
+            "SO": 5,
+            "pitching_outs": 24,
+            "pitching_runs": 13,
+            "pitching_hits": 17
+          },
+          {
+            "name": "North Carolina",
+            "batters": 11,
+            "pitchers": 6,
+            "AB": 39,
+            "R": 13,
+            "H": 17,
+            "RBI": 13,
+            "BB": 6,
+            "SO": 7,
+            "pitching_outs": 27,
+            "pitching_runs": 7,
+            "pitching_hits": 9
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 33,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 7,
+            "hits": 9,
+            "errors": 0,
+            "innings": [
+              4,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              0,
+              1
+            ]
+          },
+          {
+            "runs": 13,
+            "hits": 17,
+            "errors": 3,
+            "innings": [
+              3,
+              0,
+              0,
+              1,
+              1,
+              0,
+              3,
+              5,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Rutgers",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 5,
+            "substitutes": 2
+          },
+          {
+            "team": "North Carolina",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 6,
+            "substitutes": 2
+          }
+        ],
+        "official_decisions": {
+          "win": "Matthijs, Matthew",
+          "loss": "Joe Mazza",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": "Joe Mazza",
           "save": null
         }
       }
@@ -133,19 +247,14 @@
   ],
   "pending_review": [
     {
-      "game_id": "cb-2024-03-21-louisville-wake-forest-att0258",
-      "source_url": "https://godeacs.com/sports/baseball/stats/2024/louisville/boxscore/13570",
-      "reason": "Louisville: source batting order resolved to 10 starting slots, not 9"
-    },
-    {
       "game_id": "cb-2024-03-13-rutgers-north-carolina-att0256",
       "source_url": "https://goheels.com/sports/baseball/stats/2024/rutgers/boxscore/25041",
-      "reason": "Rutgers: source batting order resolved to 12 starting slots, not 9"
+      "reason": "Rutgers: source batting order resolved to 10 starting slots, not 9"
     },
     {
-      "game_id": "cb-2024-03-12-rutgers-north-carolina-att0255",
-      "source_url": "https://goheels.com/sports/baseball/stats/2024/rutgers/boxscore/25040",
-      "reason": "Rutgers: source batting order resolved to 10 starting slots, not 9"
+      "game_id": "cb-2024-03-07-byu-west-virginia-att0250",
+      "source_url": "https://wvusports.com/sports/baseball/stats/2024/byu/boxscore/20168",
+      "reason": "West Virginia: source batting order resolved to 11 starting slots, not 9"
     }
   ]
 }

@@ -17,7 +17,7 @@ BATCH_SIZE = 15
 MIN_YEAR = 2015
 
 
-def choose_games(games):
+def choose_games(games, offset=0, count=BATCH_SIZE):
     # Retain original pilot identities even if the attendance list is reordered.
     pilot_pks = {
         int(next(g for g in games if g["date"].startswith(str(year))
@@ -39,16 +39,14 @@ def choose_games(games):
         for year in season_years:
             if i < len(seasons[year]):
                 selected.append(seasons[year][i])
-                if len(selected) == BATCH_SIZE:
-                    return selected
-    return selected
+    return selected[offset:offset + count]
 
 
-def run():
+def run(offset=0, count=BATCH_SIZE, label="02"):
     games = json.loads((DATA / "games.json").read_text())
-    chosen = choose_games(games)
-    if len(chosen) != BATCH_SIZE:
-        raise RuntimeError(f"Expected {BATCH_SIZE} games, found {len(chosen)}")
+    chosen = choose_games(games, offset=offset, count=count)
+    if len(chosen) != count:
+        raise RuntimeError(f"Expected {count} games, found {len(chosen)}")
     unique_pk = {int(g["game_pk"]) for g in chosen}
     if len(unique_pk) != len(chosen):
         raise RuntimeError("Duplicate game_pks in selected batch")
@@ -88,11 +86,11 @@ def run():
 
     batch = {
         "metadata": {"scope": "second pilot batch", "not_production_ready": True,
-                     "batch_size": BATCH_SIZE,
+                     "batch_size": count,
                      "not_complete_attendance_leaderboards": True},
         "report": imports, "events": records
     }
-    (DATA / "statcast_batch_02.json").write_text(json.dumps(batch, indent=2, allow_nan=False) + "\n")
+    (DATA / f"statcast_batch_{label}.json").write_text(json.dumps(batch, indent=2, allow_nan=False) + "\n")
 
     for game in chosen:
         try:
@@ -102,10 +100,10 @@ def run():
                       "status": "BLOCKED", "error": str(exc)[:300]}
         audits.append(result)
         print(f"AUDIT {game['date']} {game['game_pk']}: {result['status']}", flush=True)
-    all_passed = len(audits) == BATCH_SIZE and all(x["status"] == "PASS" for x in audits)
-    verification = {"batch": "02", "all_passed": all_passed,
+    all_passed = len(audits) == count and all(x["status"] == "PASS" for x in audits)
+    verification = {"batch": label, "all_passed": all_passed,
                     "imported_event_count": len(records), "games": audits}
-    (DATA / "statcast_batch_02_verification.json").write_text(
+    (DATA / f"statcast_batch_{label}_verification.json").write_text(
         json.dumps(verification, indent=2, allow_nan=False) + "\n")
     print("Summary: ", json.dumps({"all_passed": all_passed,
           "imported_events": len(records),
@@ -115,4 +113,12 @@ def run():
 
 
 if __name__ == "__main__":
-    sys.exit(run())
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--offset", type=int, default=0)
+    parser.add_argument("--count", type=int, default=BATCH_SIZE)
+    parser.add_argument("--label", default="02")
+    args = parser.parse_args()
+    if args.offset < 0 or not 1 <= args.count <= BATCH_SIZE or not args.label.isdigit():
+        parser.error("Require nonnegative offset, count 1-15, and numeric label")
+    sys.exit(run(offset=args.offset, count=args.count, label=args.label))

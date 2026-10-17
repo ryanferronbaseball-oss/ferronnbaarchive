@@ -1,0 +1,55 @@
+{
+  "status": "PASS",
+  "total_original_attendance": 444,
+  "full_gamebooks": 48,
+  "may_2026": {
+    "total": 27,
+    "verified": 27
+  },
+  "april_2026": {
+    "total": 14,
+    "verified": 14
+  },
+  "march_2026": {
+    "total": 21,
+    "verified": 7,
+    "verified_game_ids": [
+      "cb-2026-03-15-notre-dame-louisville-att0395",
+      "cb-2026-03-20-missouri-tennessee-att0398",
+      "cb-2026-03-21-missouri-tennessee-att0399",
+      "cb-2026-03-22-missouri-tennessee-att0400",
+      "cb-2026-03-27-william-and-mary-unc-wilmington-att0401",
+      "cb-2026-03-28-new-mexico-state-middle-tennessee-state-att0402",
+      "cb-2026-03-29-new-mexico-state-middle-tennessee-state-att0403"
+    ],
+    "pending_game_ids": [
+      "cb-2026-03-01-notre-dame-tennessee-tech-att0383",
+      "cb-2026-03-06-the-citadel-kentucky-att0384",
+      "cb-2026-03-07-the-citadel-kentucky-att0385",
+      "cb-2026-03-08-the-citadel-kentucky-att0386",
+      "cb-2026-03-10-ohio-austin-peay-att0387",
+      "cb-2026-03-10-ohio-austin-peay-att0388",
+      "cb-2026-03-10-indiana-state-vanderbilt-att0389",
+      "cb-2026-03-11-marshall-louisville-att0390",
+      "cb-2026-03-13-austin-peay-bellarmine-att0391",
+      "cb-2026-03-13-notre-dame-louisville-att0392",
+      "cb-2026-03-14-alabama-kentucky-att0393",
+      "cb-2026-03-14-notre-dame-louisville-att0394",
+      "cb-2026-03-20-wabash-valley-walters-state-att0396",
+      "cb-2026-03-20-wabash-valley-walters-state-att0397"
+    ]
+  },
+  "player_game_records": 1373,
+  "distinct_player_ids": 813,
+  "issue_count": 0,
+  "checks": [
+    "one record per distinct source attendance contest",
+    "nine source-lineup starters for both teams on completed gamebooks",
+    "batter runs/hits reconcile official score and hits",
+    "pitching runs/hits reconcile opponent",
+    "innings total to final score",
+    "unique player-game IDs"
+  ],
+  "next_approval": "February 2026 is not yet approved",
+  "publish_approval": false
+}

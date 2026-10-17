@@ -5,121 +5,121 @@
   "verified_2026_unchanged": 68,
   "total_2025_attendance": 74,
   "completed_in_this_run": 1,
-  "verified_2025_total": 11,
-  "linked_source_games": 15,
+  "verified_2025_total": 12,
+  "linked_source_games": 17,
   "passed_games": [
     {
-      "game_id": "cb-2025-05-21-texas-a-m-mississippi-state-att0353",
-      "source_url": "https://hailstate.com/sports/baseball/stats/2025/texas-am/boxscore/27187",
+      "game_id": "cb-2025-05-20-kentucky-oklahoma-att0351",
+      "source_url": "https://soonersports.com/sports/baseball/stats/2025/kentucky/boxscore/15220",
       "score": [
-        9,
-        0
+        1,
+        5
       ],
-      "source_game_id": "27187",
-      "player_rows": 30,
+      "source_game_id": "15220",
+      "player_rows": 27,
       "source_stat_audit": {
-        "game_id": "cb-2025-05-21-texas-a-m-mississippi-state-att0353",
-        "source": "https://hailstate.com/sports/baseball/stats/2025/texas-am/boxscore/27187",
+        "game_id": "cb-2025-05-20-kentucky-oklahoma-att0351",
+        "source": "https://soonersports.com/sports/baseball/stats/2025/kentucky/boxscore/15220",
         "http_code": 200,
-        "source_bytes": 1313047,
-        "source_sha256": "00629fa5a028da95a74119151c686c8a25d98e8977c05a5590fd825b158cde56",
+        "source_bytes": 1182322,
+        "source_sha256": "2bb63065c8de30336b0af4efca967a827bc7a95c86a2b49e042616cb61516f22",
         "teams": [
           {
-            "name": "Texas A&M",
-            "batters": 10,
-            "pitchers": 4,
-            "AB": 37,
-            "R": 9,
-            "H": 10,
-            "RBI": 9,
-            "BB": 4,
-            "SO": 10,
-            "pitching_outs": 27,
-            "pitching_runs": 0,
-            "pitching_hits": 6
-          },
-          {
-            "name": "Mississippi State",
-            "batters": 11,
+            "name": "Kentucky",
+            "batters": 9,
             "pitchers": 5,
             "AB": 31,
-            "R": 0,
+            "R": 1,
             "H": 6,
             "RBI": 0,
             "BB": 3,
-            "SO": 7,
+            "SO": 6,
+            "pitching_outs": 24,
+            "pitching_runs": 5,
+            "pitching_hits": 7
+          },
+          {
+            "name": "Oklahoma",
+            "batters": 10,
+            "pitchers": 3,
+            "AB": 29,
+            "R": 5,
+            "H": 7,
+            "RBI": 5,
+            "BB": 2,
+            "SO": 6,
             "pitching_outs": 27,
-            "pitching_runs": 9,
-            "pitching_hits": 10
+            "pitching_runs": 1,
+            "pitching_hits": 6
           }
         ],
         "source_warnings": [],
-        "player_rows": 30,
+        "player_rows": 27,
         "status": "PASS",
         "scoreboard": [
           {
-            "runs": 9,
-            "hits": 10,
+            "runs": 1,
+            "hits": 6,
             "errors": 0,
             "innings": [
               0,
-              6,
-              2,
-              0,
-              0,
               0,
               1,
+              0,
+              0,
+              0,
+              0,
               0,
               0
             ]
           },
           {
-            "runs": 0,
-            "hits": 6,
-            "errors": 2,
+            "runs": 5,
+            "hits": 7,
+            "errors": 1,
             "innings": [
               0,
               0,
+              3,
               0,
               0,
+              1,
               0,
-              0,
-              0,
-              0,
-              0
+              1,
+              null
             ]
           }
         ],
         "lineup_audit": [
           {
-            "team": "Texas A&M",
+            "team": "Kentucky",
             "nine_starting_slots": true,
-            "batter_rows": 10,
-            "pitcher_rows": 4,
-            "substitutes": 1
+            "batter_rows": 9,
+            "pitcher_rows": 5,
+            "substitutes": 0
           },
           {
-            "team": "Mississippi State",
+            "team": "Oklahoma",
             "nine_starting_slots": true,
-            "batter_rows": 11,
-            "pitcher_rows": 5,
-            "substitutes": 2
+            "batter_rows": 10,
+            "pitcher_rows": 3,
+            "substitutes": 1
           }
         ],
         "official_decisions": {
-          "win": "Ryan Prager",
-          "loss": "Mcpherson, Ryan",
+          "win": "Hitt, James",
+          "loss": "Scott Rouse",
           "save": null
         },
         "resolved_pitcher_decisions": {
-          "win": "Ryan Prager",
-          "loss": null,
+          "win": null,
+          "loss": "Scott Rouse",
           "save": null
         }
       },
       "pitching_decisions": {
-        "win": "Ryan Prager",
-        "loss": "Ryan Mcpherson",
+        "win": "James Hitt",
+        "loss": "Scott Rouse",
         "save": null
       }
     }
@@ -127,8 +127,8 @@
   "pending_review": [
     {
       "game_id": "cb-2025-06-01-lsu-little-rock-att0369",
-      "source_url": "https://lrtrojans.com/sports/baseball/stats/2025/lsu/boxscore/12641",
-      "reason": "404 Client Error: Not Found for url: https://lrtrojans.com/sports/baseball/stats/2025/lsu/boxscore/12641"
+      "source_url": "https://static.lsusports.net/assets/docs/bb/25stats/LSU601.pdf",
+      "reason": "Official source PDF identified; separate PDF line transcription required"
     },
     {
       "game_id": "cb-2025-06-01-dallas-baptist-little-rock-att0368",
@@ -137,13 +137,18 @@
     },
     {
       "game_id": "cb-2025-05-31-dallas-baptist-lsu-att0367",
-      "source_url": "https://dbupatriots.com/sports/baseball/stats/2025/-1-lsu/boxscore/8549",
-      "reason": "HTTPSConnectionPool(host='dbupatriots.com', port=443): Max retries exceeded with url: /sports/baseball/stats/2025/-1-lsu/boxscore/8549 (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)')))"
+      "source_url": "https://static.lsusports.net/assets/docs/bb/25stats/LSU531.pdf",
+      "reason": "Official source PDF identified; separate PDF line transcription required"
     },
     {
       "game_id": "cb-2025-05-21-alabama-tennessee-att0354",
       "source_url": "https://rolltide.com/boxscore.aspx?id=19947",
       "reason": "Tennessee: source batting order resolved to 10 starting slots, not 9"
+    },
+    {
+      "game_id": "cb-2025-05-20-south-carolina-florida-att0352",
+      "source_url": "https://d2b5htfb6s9xp9.cloudfront.net/sports/baseball/stats/2025/south-carolina/boxscore/27367",
+      "reason": "South Carolina: source batting order resolved to 12 starting slots, not 9"
     }
   ]
 }

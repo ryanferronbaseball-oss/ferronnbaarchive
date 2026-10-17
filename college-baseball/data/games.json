@@ -8814,22 +8814,79 @@
     "season": 2025,
     "away": "Kentucky",
     "home": "Oklahoma",
-    "ballpark": null,
-    "city": null,
-    "state": null,
-    "neutral_site": null,
+    "ballpark": "Hoover Met",
+    "city": "Hoover",
+    "state": "AL",
+    "neutral_site": true,
     "game_number": null,
-    "game_type": null,
-    "postseason_round": null,
-    "away_score": null,
-    "home_score": null,
-    "score_provenance": null,
-    "source_url": null,
-    "verification": "attendance_only",
-    "official_boxscore_status": "not_imported",
+    "game_type": "conference_tournament",
+    "postseason_round": "SEC Tournament",
+    "away_score": 1,
+    "home_score": 5,
+    "score_provenance": "official_boxscore",
+    "source_url": "https://soonersports.com/sports/baseball/stats/2025/kentucky/boxscore/15220",
+    "verification": "official_boxscore_verified",
+    "official_boxscore_status": "verified",
     "possible_same_day_doubleheader": false,
     "provisional_worksheet_game_sequence": null,
-    "notes": "Original workbook Sheet1 row 352."
+    "notes": "Original workbook Sheet1 row 352.",
+    "away_hits": 6,
+    "home_hits": 7,
+    "away_errors": 0,
+    "home_errors": 1,
+    "innings": [
+      {
+        "inning": 1,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 2,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 3,
+        "away": 1,
+        "home": 3
+      },
+      {
+        "inning": 4,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 5,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 6,
+        "away": 0,
+        "home": 1
+      },
+      {
+        "inning": 7,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 8,
+        "away": 0,
+        "home": 1
+      },
+      {
+        "inning": 9,
+        "away": 0,
+        "home": null
+      }
+    ],
+    "pitching_decisions": {
+      "win": "James Hitt",
+      "loss": "Scott Rouse",
+      "save": null
+    },
+    "source_type": "official_university_sidearm_boxscore"
   },
   {
     "id": "cb-2025-05-20-south-carolina-florida-att0352",

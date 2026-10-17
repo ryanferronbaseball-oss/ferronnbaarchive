@@ -228,8 +228,9 @@ check(original["id"] == "cb-2026-05-31-auburn-milwaukee"
 check(any(x["game_id"] == original["id"] for x in pilot_rows)
       and len([x for x in pilot_rows if x["game_id"] == corrected["id"]]) == 27,
       "Corrected UCF-Auburn game 5 has its own 27 verified player entries")
-check({g["source_worksheet_row"] for g in committed} == set(range(440,446)),
-      "Six distinct source rows retained without merging tournament games")
+check({g["source_worksheet_row"] for g in committed} == set(range(2,446)) and
+      len([g for g in committed if g["source_worksheet_row"] in range(440,446)]) == 6,
+      "All 444 distinct source rows retained, including six separate Auburn Regional games")
 
 check(json.loads((SITE / "data" / "mlb_crosswalk.json").read_text()) == [],
       "No false college-to-MLB player identity matches")

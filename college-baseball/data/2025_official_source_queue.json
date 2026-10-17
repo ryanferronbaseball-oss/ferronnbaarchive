@@ -9,7 +9,7 @@
     "2025-02": 14
   },
   "verified_player_gamebooks": 0,
-  "official_source_url_verified": 71,
+  "official_source_url_verified": 74,
   "updated": "2026-10-17",
   "source_queue": [
     {
@@ -183,6 +183,28 @@
       "review_flag": null
     },
     {
+      "game_id": "cb-2025-05-23-texas-a-m-lsu-att0361",
+      "worksheet_row": 362,
+      "date": "2025-05-23",
+      "away": "Texas A&M",
+      "home": "LSU",
+      "source_url": "https://lsusports.net/boxscore/sec-tournament-30/",
+      "official_score": [
+        3,
+        4
+      ],
+      "ballpark": "Hoover Met",
+      "city": "Hoover",
+      "state": "AL",
+      "neutral_site": true,
+      "game_type": "conference_tournament",
+      "postseason_round": "SEC Tournament",
+      "source_type": "official_lsu_wmt_scoreboard",
+      "verification": "source_identified_player_lines_need_official_gamebook",
+      "source_game_id": "sec-tournament-30",
+      "notes": "Official university WMT scoreboard and TAMU recap identify game; separate player-gamebook source needed."
+    },
+    {
       "game_id": "cb-2025-05-23-ole-miss-arkansas-att0360",
       "worksheet_row": 361,
       "date": "2025-05-23",
@@ -204,6 +226,27 @@
       "review_flag": null
     },
     {
+      "game_id": "cb-2025-05-22-oklahoma-vanderbilt-att0359",
+      "worksheet_row": 360,
+      "date": "2025-05-22",
+      "away": "Oklahoma",
+      "home": "Vanderbilt",
+      "source_url": "https://soonersports.com/sports/baseball/stats/2025/vanderbilt/boxscore/15226",
+      "official_score": [
+        1,
+        6
+      ],
+      "ballpark": "Hoover Met",
+      "city": "Hoover",
+      "state": "AL",
+      "neutral_site": true,
+      "game_type": "conference_tournament",
+      "postseason_round": "SEC Tournament",
+      "source_type": "official_university_sidearm_boxscore",
+      "verification": "official_url_score_verified_player_lines_pending",
+      "source_game_id": "15226"
+    },
+    {
       "game_id": "cb-2025-05-22-tennessee-texas-att0358",
       "worksheet_row": 359,
       "date": "2025-05-22",
@@ -222,6 +265,28 @@
       "source_type": "official_university_sidearm_boxscore",
       "verification": "official_url_score_verified_player_lines_pending",
       "source_game_id": "29524"
+    },
+    {
+      "game_id": "cb-2025-05-22-texas-a-m-auburn-att0357",
+      "worksheet_row": 358,
+      "date": "2025-05-22",
+      "away": "Texas A&M",
+      "home": "Auburn",
+      "source_url": "https://auburntigers.com/sports/baseball/schedule/season/2025",
+      "official_score": [
+        3,
+        2
+      ],
+      "ballpark": "Hoover Met",
+      "city": "Hoover",
+      "state": "AL",
+      "neutral_site": true,
+      "game_type": "conference_tournament",
+      "postseason_round": "SEC Tournament",
+      "source_type": "official_auburn_schedule_and_boxscore_link",
+      "verification": "source_identified_player_gamebook_needed",
+      "source_game_id": "sec20250522-tamu-auburn",
+      "notes": "Auburn's May22 tournament event has Box Score and PDF; require exact gamebook destination before player-stat import."
     },
     {
       "game_id": "cb-2025-05-21-florida-ole-miss-att0356",

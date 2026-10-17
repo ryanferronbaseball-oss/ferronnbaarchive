@@ -48,9 +48,16 @@ def table_rows(table,head):
     result=[]
     for tr in trs:
         cells=tr.find_all(["td","th"],recursive=False)
-        if len(cells)!=len(head):
+        vals=[]
+        for cell in cells:
+            text=cell.get_text(" ",strip=True)
+            span=int(cell.get("colspan","1"))
+            if span>1 and text.strip().casefold()=="totals":
+                vals.extend([""]*(span-1)+[text])
+            else:
+                vals.extend([text]*span)
+        if len(vals)!=len(head):
             continue
-        vals=[cell.get_text(" ",strip=True) for cell in cells]
         if any(x.strip().lower()=="totals" for x in vals[:2]):
             result.append({"_totals":True,**{h:v for h,v in zip(head,vals)}})
             continue

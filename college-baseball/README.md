@@ -1,27 +1,34 @@
 # College Baseball · Courtside Archive
 
-**Status:** source-verified initial pilot on an isolated draft branch. All six official NCAA Regional gamebooks now include full batting and pitching tables; production remains unchanged until reviewed and approved.
+**Status:** 444 attended college baseball games are staged in **draft PR #10**, with eight complete official gamebooks and six additional sourced college tournament scoreboards. Published site unchanged until user approval.
 
-The site lives at \`/college-baseball/\` to avoid collision with the established college-basketball \`/college/\` site, professional \`/mlb/\` site, or future MiLB coverage. All college statistics are their own level-specific measurements.
+The site lives under \`/college-baseball/\`, with independent college baseball stats and verified inter-level player IDs only. It shares the exact MLB archive design system for Inter fonts, navigation, scoreboards, box-score layout, cards, responsive tables, and bat-order number column.
 
-## Pilot import update — October 2026
+## Attendance import and source verification — October 2026
 
-The uploaded college baseball workbook has **444 attendance rows**, dated 2017–2026 after correcting South Alabama at Old Dominion on March 30, 2024 per user confirmation. The first pilot stages **six verified game scores and inning lines** from the 2026 NCAA Auburn Regional, with **all six official hitter/pitcher box scores (165 player-game rows; 86 distinct athlete identities)**. No pilot game awaits batting or pitching transcription. All regional game sources are original university PDFs or official Milwaukee Athletics and Big 12 Conference HTML box scores, linked in `data/games.json`.
+The original uploaded Excel workbook \`NCAAB Games.xlsx\` has **444 attendance entries, 2017–2026**, now all represented in \`data/games.json\`. \`data/attendance_master_444.csv\` is an auditable plain-text normalized sheet, preserving original workbook row numbers 2–445. The original spreadsheet is not changed. \`data/attendance_source_444.deflate.b64\` is a losslessly packed record of the normalized attendance data, decoded by \`scripts/build_attendance_master.py\`, which preserves official gamebooks and gives each date/matchup/source-row a stable ID. No unidentified doubleheader or tournament game is merged. Same-date repeated matchups are flagged \`possible_same_day_doubleheader\` and do **not** receive invented doubleheader game numbers.
 
-The published site is **unchanged**; the pilot exists on PR #10 only. Other 438 attendance entries remain in the uploaded master sheet and normalized import-review queue, **not** asserted to have official scores or player stats.
+Current data statuses:
 
-Original workbook rows **440–445** are the staged games. The user clarified that **attendance game #444 (spreadsheet row 445)** was **UCF @ Auburn**, rather than the originally entered Milwaukee @ Auburn. Official Regional **Game 5** on May 31 ended Auburn 9–3 UCF. The other May 31 attendance entry (**game #443, spreadsheet row 444**) is **Auburn @ Milwaukee**, official Regional **Game 6**, which Auburn won 8–1. Its existing source-verified player box score is retained under the original game ID. Both entries remain distinct; the university scorebooks and user correction are recorded in `data/import_report.json`.
+| Status | Games | Meaning |
+|---|---:|---|
+| \`official_boxscore_verified\` | **8** | All original player batting, pitching, lineup positions and substitutions imported from official sources and reconciled to game totals |
+| \`official_scoreboard_verified\` | **6** | Original college gamebook / university or conference source identifies matchup, tournament game, R/H/E, innings and pitching decisions; **individual player lines not yet imported** |
+| \`attendance_only\` | **430** | Original attended date / schools retained; no invented scores, player stats or gamebook availability |
+| **Total** | **444** | Original personal attendance entries, one distinct row per contest |
 
-The date originally recorded as `Friday, 3/30/34` is confirmed by the user to mean **2024-03-30**, South Alabama @ Old Dominion. This is preserved in `data/import_report.json`, not silently altered in the original upload.
+The first fully completed batch includes **six 2026 NCAA Auburn Regional games** on May 29–31, including the user-corrected final attendance game #444 **UCF @ Auburn** (regional Game 5, Auburn 9–3), plus the separately documented **Auburn @ Milwaukee** later May 31 (regional Game 6, Auburn 8–1). These gamebooks include 165 player-game lines.
 
-University and conference box-score tables, batter/runner scores, inning line totals, pitcher outs, team hits, and strikeouts were cross-checked. Distinct regional **game numbers** are not the same field as doubleheader **game_number**. Future 2026 → 2025 → older imports should proceed in reviewed chunks, retaining a source-match/uncertainty queue.
+The next source-verified batch covers **eight SEC Tournament games (May 20–23, 2026; original workbook rows 432–439)**. All eight final scores and per-inning lines are checked and staged. Two also have *complete official hitter and pitcher gamebooks*, including 51 additional player-game lines:
+- **May 20 LSU @ Auburn:** Auburn 3–1; 27 player-game lines, source-confirmed starting batting order and four substitute entries; winner Jake Marciano, loser Casan Evans, save Jackson Sanders. Official LSU 2026 PDF gamebook cited in game record.
+- **May 23 Arkansas @ Auburn:** Arkansas 2–1; 24 player-game lines and nine starters on each side; winner Ethan McElvain, loser Ryan Hetzler. Official Arkansas gamebook linked.
+- **Six further May 20–23 SEC tournament games** (Tennessee–Arkansas, Mississippi State–Georgia, Florida–Alabama, Arkansas–Texas, Auburn–Texas A&M, Florida–Georgia) have official scores, inning lines and decisions but **not** individual player stats yet.
 
-**Do not re-run the simple `import_attendance.py` command in write mode on the current pilot data directory:** it intentionally produces attendance-only records and will overwrite individually verified game metadata. Use `--validate-only` while pilot source-backed box scores are being accumulated.
+Across eight full scorebooks: **216 source-reconciled player-game rows, 117 unique college athlete IDs**. Batting-slot identities stay 1–9 with indented \`↳\` substitutions, and pitcher #1 is the starting pitcher. Incomplete NCAA stats are not filled from a season roster or guessed.
 
+Other confirmed corrections: user's South Alabama @ Old Dominion 2024-03-30 originally appeared as \`Friday, 3/30/34\`; final game #444 originally entered Milwaukee–Auburn but corrected to UCF–Auburn. Both corrections documented in \`data/import_report.json\` and in the source queue.
 
-The [college baseball QA workflow](../.github/workflows/college-baseball-qa.yml) automatically runs the full six-game source audit plus desktop/mobile browser smoke tests. On passing runs it uploads a design-review artifact containing screenshots of the overview, verified UCF–Auburn box score with winning/losing/saving pitchers, hitter leaderboards, and signature performances at both 1280px and 390px widths.
-
-The six gamebooks have official pitching wins/losses (and one save) attributed to the correct individual players. Missing data is preserved as unknown rather than fabricated. A true pitcher earned-run average uses recorded outs (not decimal innings). Next staged step is importing the remaining **438** games as attendance-only entries, then verifying the newest 2026 games in manageable batches before older seasons.
+The source audit and browser checks are in \`scripts/test_college_baseball.py\` and GitHub workflow \`.github/workflows/college-baseball-qa.yml\` (desktop 1280px + mobile 390px, with screenshot artifacts). Current review gate is **draft only**; do not merge into \`main\` until user approval. Import remaining 2026 official player gamebooks newest-to-oldest in batches of 5–10, marking source conflicts or unavailable stats rather than silently guessing.
 
 ## What we are building
 

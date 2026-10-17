@@ -29,9 +29,13 @@ jobs:
           assert len(p['report']) == 5
           assert len({x['game_pk'] for x in p['report']}) == 5
           PY
+      - name: Cross-check three games against Baseball Savant CSV
+        run: python mlb/scripts/verify_statcast_pilot.py
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: mlb-statcast-pilot
-          path: mlb/data/statcast_pilot.json
+          path: |
+            mlb/data/statcast_pilot.json
+            mlb/data/statcast_verification.json
           if-no-files-found: warn

@@ -175,6 +175,19 @@ def _source_batters(table, valid_players, team, game_id):
               and team=="South Carolina"
               and name in ("Gavin Braland","Will Tippett","Ryan Bakes")):
             is_sub=True
+        # Oregon May 16: unindented Burke Lee Mabeus follows Jax Gimenez
+        # as a defensive replacement; Jeffery Heard follows PH Coen Niclai.
+        if (game_id=="cb-2025-05-16-oregon-iowa-att0348"
+              and team=="Oregon"
+              and name in ("Burke Lee Mabeus","Jeffery Heard")):
+            is_sub=True
+        # Davidson May 10: C Collins follows pinch hitter A Katz;
+        # J Daly follows PH L Reeves. Both defensive replacements occur
+        # in the prior official batting slot, despite lost HTML indentation.
+        if (game_id=="cb-2025-05-10-george-mason-davidson-att0344"
+              and team=="Davidson"
+              and name in ("C Collins","J Daly")):
+            is_sub=True
         seen.append((key, name, is_sub))
     if len(seen) != len(valid_players) or len({x[0] for x in seen}) != len(seen):
         raise ValueError(team + ": cannot exactly match source batter lineup against source player records")

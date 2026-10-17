@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "checked_2026_april_games": 14,
+  "checked_2026_may_games": 27,
+  "all_staged_games": 444,
+  "full_gamebooks": 41,
+  "all_player_rows": 1175,
+  "unique_player_ids": 724,
+  "issues": [],
+  "checks": [
+    "All 444 original attendance IDs preserved",
+    "Unique (game_id, player_id) across every full gamebook",
+    "Exactly nine starting batter slots for both teams",
+    "Verified batter runs and hits equal official game R/H totals",
+    "Verified pitching hits/runs reconcile to the opponent's batting",
+    "Inning-by-inning score sums equal final official scoreboard",
+    "Individual source URLs and integer pitcher outs preserved"
+  ],
+  "approved_next_stage": "March 2026",
+  "blocked_after_march": [
+    "February 2026",
+    "2025 season",
+    "publication"
+  ]
+}

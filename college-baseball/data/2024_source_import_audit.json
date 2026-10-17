@@ -1,134 +1,151 @@
 {
-  "status": "PASS",
+  "status": "PARTIAL_REVIEW_REQUIRED",
   "approval": "2024–2026 official four-year source backfill; no 2023 or earlier, no release",
   "original_attendance": 444,
   "attendance_2024": 71,
-  "verified_2024_total": 22,
-  "remaining_2024": 49,
+  "verified_2024_total": 23,
+  "remaining_2024": 48,
   "2025_gamebooks_preserved": 69,
   "2026_gamebooks_preserved": 68,
   "completed_in_this_run": 1,
-  "linked_2024_sources": 22,
+  "linked_2024_sources": 26,
   "months_verified": {
+    "2024-03": 1,
     "2024-04": 4,
     "2024-05": 12,
     "2024-06": 6
   },
   "passed_games": [
     {
-      "game_id": "cb-2024-04-27-baylor-west-virginia-att0272",
-      "source_url": "https://wvusports.com/sports/baseball/stats/2024/baylor/boxscore/20197",
+      "game_id": "cb-2024-03-22-mercer-unc-greensboro-att0259",
+      "source_url": "https://uncgspartans.com/sports/baseball/stats/2024/mercer/boxscore/8778",
       "score": [
-        2,
-        5
+        5,
+        2
       ],
-      "player_game_rows": 27,
+      "player_game_rows": 24,
       "pitching_decisions": {
-        "win": "Derek Clark",
-        "loss": "Collin McKinney",
-        "save": "Maxx Yehl"
+        "win": "Colton Cosper",
+        "loss": "Julien Peissel",
+        "save": null
       },
       "stat_audit": {
-        "game_id": "cb-2024-04-27-baylor-west-virginia-att0272",
-        "source": "https://wvusports.com/sports/baseball/stats/2024/baylor/boxscore/20197",
+        "game_id": "cb-2024-03-22-mercer-unc-greensboro-att0259",
+        "source": "https://uncgspartans.com/sports/baseball/stats/2024/mercer/boxscore/8778",
         "http_code": 200,
-        "source_bytes": 1435678,
-        "source_sha256": "873f69f13e6354cae935599f25433f8178b2accc456030e2ff918b3b3ae397a5",
+        "source_bytes": 527366,
+        "source_sha256": "893a724339400f4fd41c6db272ede9e2f06e7d9716434b4cd2b7df015da4faf9",
         "teams": [
           {
-            "name": "Baylor",
+            "name": "Mercer",
             "batters": 10,
-            "pitchers": 3,
-            "AB": 34,
-            "R": 2,
-            "H": 7,
-            "RBI": 2,
-            "BB": 3,
-            "SO": 9,
-            "pitching_outs": 24,
-            "pitching_runs": 5,
-            "pitching_hits": 8
-          },
-          {
-            "name": "West Virginia",
-            "batters": 11,
-            "pitchers": 3,
-            "AB": 30,
+            "pitchers": 1,
+            "AB": 35,
             "R": 5,
-            "H": 8,
-            "RBI": 4,
-            "BB": 6,
-            "SO": 6,
+            "H": 9,
+            "RBI": 5,
+            "BB": 3,
+            "SO": 11,
             "pitching_outs": 27,
             "pitching_runs": 2,
-            "pitching_hits": 7
+            "pitching_hits": 6
+          },
+          {
+            "name": "UNC Greensboro",
+            "batters": 10,
+            "pitchers": 3,
+            "AB": 31,
+            "R": 2,
+            "H": 6,
+            "RBI": 2,
+            "BB": 1,
+            "SO": 5,
+            "pitching_outs": 27,
+            "pitching_runs": 5,
+            "pitching_hits": 9
           }
         ],
         "source_warnings": [],
-        "player_rows": 27,
+        "player_rows": 24,
         "status": "PASS",
         "scoreboard": [
           {
-            "runs": 2,
-            "hits": 7,
+            "runs": 5,
+            "hits": 9,
             "errors": 0,
             "innings": [
               0,
               0,
-              0,
               1,
               0,
               0,
-              0,
               1,
-              0
+              1,
+              1,
+              1
             ]
           },
           {
-            "runs": 5,
-            "hits": 8,
+            "runs": 2,
+            "hits": 6,
             "errors": 2,
             "innings": [
               0,
-              1,
               0,
               0,
-              3,
               0,
-              1,
               0,
-              null
+              0,
+              0,
+              0,
+              2
             ]
           }
         ],
         "lineup_audit": [
           {
-            "team": "Baylor",
+            "team": "Mercer",
+            "nine_starting_slots": true,
+            "batter_rows": 10,
+            "pitcher_rows": 1,
+            "substitutes": 1
+          },
+          {
+            "team": "UNC Greensboro",
             "nine_starting_slots": true,
             "batter_rows": 10,
             "pitcher_rows": 3,
             "substitutes": 1
-          },
-          {
-            "team": "West Virginia",
-            "nine_starting_slots": true,
-            "batter_rows": 11,
-            "pitcher_rows": 3,
-            "substitutes": 2
           }
         ],
         "official_decisions": {
-          "win": "Clark, Derek",
-          "loss": "Mckinney, Collin",
-          "save": "Yehl, Maxx"
+          "win": "Colton Cosper",
+          "loss": "Peissel, Julien",
+          "save": null
         },
         "resolved_pitcher_decisions": {
-          "win": null,
+          "win": "Colton Cosper",
           "loss": null,
           "save": null
         }
       }
     }
   ],
-  "pending_review": []
+  "pending_review": [
+    {
+      "game_id": "cb-2024-03-21-louisville-wake-forest-att0258",
+      "source_url": "https://godeacs.com/sports/baseball/stats/2024/louisville/boxscore/13570",
+      "reason": "Louisville: source batting order resolved to 10 starting slots, not 9"
+    },
+    {
+      "game_id": "cb-2024-03-13-rutgers-north-carolina-att0256",
+      "source_url": "https://goheels.com/sports/baseball/stats/2024/rutgers/boxscore/25041",
+      "reason": "Rutgers: source batting order resolved to 12 starting slots, not 9"
+    },
+    {
+      "game_id": "cb-2024-03-12-rutgers-north-carolina-att0255",
+      "source_url": "https://goheels.com/sports/baseball/stats/2024/rutgers/boxscore/25040",
+      "reason": "Rutgers: source batting order resolved to 10 starting slots, not 9"
+    }
+  ]
 }

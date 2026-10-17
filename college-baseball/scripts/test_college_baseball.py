@@ -122,6 +122,12 @@ source_replacements = {
     ("cb-2026-05-22-arkansas-texas-att0435", "Texas", "Josh Livingston"): (8, 1),
     ("cb-2026-05-22-arkansas-texas-att0435", "Texas", "Jayden Duplantier"): (9, 1),
     ("cb-2026-05-20-vanderbilt-florida-att0430", "Vanderbilt", "Aukai Kea"): (9, 1),
+    ("cb-2026-05-19-missouri-ole-miss-att0425", "Missouri", "Isaiah Frost"): (3, 1),
+    ("cb-2026-05-19-missouri-ole-miss-att0425", "Missouri", "Eric Maisonet"): (3, 2),
+    ("cb-2026-05-19-lsu-oklahoma-att0428", "LSU", "Brayden Simpson"): (2, 1),
+    ("cb-2026-05-19-lsu-oklahoma-att0428", "LSU", "William Patrick"): (7, 1),
+    ("cb-2026-05-19-lsu-oklahoma-att0428", "Oklahoma", "Nolan Stevens"): (8, 1),
+    ("cb-2026-05-19-lsu-oklahoma-att0428", "Oklahoma", "Drew Dickerson"): (9, 1),
 }
 seen_replacements = {}
 for game in committed:
@@ -188,6 +194,10 @@ expected = {
     ("cb-2026-05-20-missouri-mississippi-state-att0429", "Mississippi State"): {"ab": 28, "r": 12, "h": 8, "rbi": 12, "bb": 4, "k": 10},
     ("cb-2026-05-20-vanderbilt-florida-att0430", "Vanderbilt"): {"ab": 32, "r": 3, "h": 6, "rbi": 3, "bb": 4, "k": 12},
     ("cb-2026-05-20-vanderbilt-florida-att0430", "Florida"): {"ab": 36, "r": 8, "h": 14, "rbi": 8, "bb": 6, "k": 9},
+    ("cb-2026-05-19-missouri-ole-miss-att0425", "Missouri"): {"ab": 40, "r": 10, "h": 14, "rbi": 9, "bb": 7, "k": 10},
+    ("cb-2026-05-19-missouri-ole-miss-att0425", "Ole Miss"): {"ab": 36, "r": 8, "h": 9, "rbi": 8, "bb": 4, "k": 14},
+    ("cb-2026-05-19-lsu-oklahoma-att0428", "LSU"): {"ab": 37, "r": 6, "h": 11, "rbi": 3, "bb": 8, "k": 12},
+    ("cb-2026-05-19-lsu-oklahoma-att0428", "Oklahoma"): {"ab": 34, "r": 2, "h": 6, "rbi": 1, "bb": 3, "k": 13},
 }
 
 keys = {"ab": "atBats", "r": "runs", "h": "hits",

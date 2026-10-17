@@ -1,0 +1,169 @@
+{
+  "scope": "2026 early-season official source discovery",
+  "status": "source_discovery_only_not_player_import",
+  "user_approval": "All 2026 months approved; 2025 and publication not approved",
+  "sequential_gate": "Finish March source reconciliation, then February, then January; can research future-month sources in advance",
+  "march_juco_note": "March 20 Wabash Valley/Walters State two gamebooks still require exact source identification; do not conflate Wabash College with Wabash Valley College",
+  "february_2026": {
+    "attended": 11,
+    "official_gamebooks_identified": 8,
+    "source_not_found": 3,
+    "gamebooks": [
+      {
+        "game_id": "cb-2026-02-22-marist-vanderbilt-att0382",
+        "worksheet_row": 383,
+        "date": "2026-02-22",
+        "away": "Marist",
+        "home": "Vanderbilt",
+        "source": "https://goredfoxes.com/boxscore.aspx?id=15360",
+        "result": "Marist 1, Vanderbilt 8",
+        "status": "official_gamebook_identified_player_lines_not_imported",
+        "notes": "Full official Marist athletics boxscore, nine innings",
+        "identity_confidence": "exact date matchup"
+      },
+      {
+        "game_id": "cb-2026-02-21-marist-vanderbilt-att0381",
+        "worksheet_row": 382,
+        "date": "2026-02-21",
+        "away": "Marist",
+        "home": "Vanderbilt",
+        "source": "https://goredfoxes.com/sports/baseball/stats/2026/vanderbilt-university/boxscore/15359",
+        "result": "Marist 1, Vanderbilt 12",
+        "status": "official_gamebook_identified_player_lines_not_imported",
+        "notes": "Full official Marist athletics boxscore, seven innings",
+        "identity_confidence": "exact date matchup"
+      },
+      {
+        "game_id": "cb-2026-02-20-marist-vanderbilt-att0380",
+        "worksheet_row": 381,
+        "date": "2026-02-20",
+        "away": "Marist",
+        "home": "Vanderbilt",
+        "source": "https://goredfoxes.com/boxscore.aspx?id=15358",
+        "result": "Marist 5, Vanderbilt 16",
+        "status": "official_gamebook_identified_player_lines_not_imported",
+        "notes": "Full official Marist athletics boxscore, eight innings",
+        "identity_confidence": "exact date matchup"
+      },
+      {
+        "game_id": "cb-2026-02-17-eastern-michigan-vanderbilt-att0379",
+        "worksheet_row": 380,
+        "date": "2026-02-17",
+        "away": "Eastern Michigan",
+        "home": "Vanderbilt",
+        "source": "https://emueagles.com/sports/baseball/stats/2026/vanderbilt/boxscore/19391",
+        "result": "Eastern Michigan 2, Vanderbilt 13",
+        "status": "official_gamebook_identified_player_lines_not_imported",
+        "notes": "Seven-inning run rule",
+        "identity_confidence": "exact date matchup"
+      },
+      {
+        "game_id": "cb-2026-02-15-michigan-state-louisville-att0378",
+        "worksheet_row": 379,
+        "date": "2026-02-15",
+        "away": "Michigan State",
+        "home": "Louisville",
+        "source": "https://msuspartans.com/sports/baseball/stats/2026/louisville/boxscore/20314",
+        "result": "Michigan State 1, Louisville 9",
+        "status": "official_gamebook_identified_player_lines_not_imported",
+        "notes": "Nine innings",
+        "identity_confidence": "exact date matchup"
+      },
+      {
+        "game_id": "cb-2026-02-14-nicholls-tennessee-att0377",
+        "worksheet_row": 378,
+        "date": "2026-02-14",
+        "away": "Nicholls",
+        "home": "Tennessee",
+        "source": "https://utsports.com/sports/baseball/stats/2026/nicholls/boxscore/29928",
+        "result": "Nicholls 2, Tennessee 12",
+        "status": "official_gamebook_identified_player_lines_not_imported",
+        "notes": "Official doubleheader GAME 2, start 4:32 pm, seven innings",
+        "dh": 2,
+        "identity_confidence": "official game number confirmed, spreadsheet row-to-game ordering is provisional until attendance sequence cross-check"
+      },
+      {
+        "game_id": "cb-2026-02-14-nicholls-tennessee-att0376",
+        "worksheet_row": 377,
+        "date": "2026-02-14",
+        "away": "Nicholls",
+        "home": "Tennessee",
+        "source": "https://utsports.com/sports/baseball/stats/2026/nicholls/boxscore/29927",
+        "result": "Nicholls 1, Tennessee 5",
+        "status": "official_gamebook_identified_player_lines_not_imported",
+        "notes": "Official doubleheader GAME 1, start 1:02 pm, nine innings",
+        "dh": 1,
+        "identity_confidence": "official game number confirmed, spreadsheet row-to-game ordering is provisional until attendance sequence cross-check"
+      },
+      {
+        "game_id": "cb-2026-02-13-nicholls-tennessee-att0375",
+        "worksheet_row": 376,
+        "date": "2026-02-13",
+        "away": "Nicholls",
+        "home": "Tennessee",
+        "source": "https://utsports.com/sports/baseball/stats/2026/nicholls/boxscore/29926",
+        "result": "Nicholls 0, Tennessee 10",
+        "status": "official_gamebook_identified_player_lines_not_imported",
+        "notes": "Eight innings",
+        "identity_confidence": "exact date matchup"
+      }
+    ],
+    "juco_pending": [
+      {
+        "game_id": "cb-2026-02-12-walters-state-pellissippi-state-att0372",
+        "date": "2026-02-12",
+        "away": "Walters State",
+        "home": "Pellissippi State",
+        "status": "official_boxscore_not_yet_found",
+        "notes": "JUCO: preserve distinct attendance row and keep stats unverified"
+      },
+      {
+        "game_id": "cb-2026-02-12-walters-state-pellissippi-state-att0373",
+        "date": "2026-02-12",
+        "away": "Walters State",
+        "home": "Pellissippi State",
+        "status": "official_boxscore_not_yet_found",
+        "notes": "JUCO: preserve distinct attendance row and keep stats unverified"
+      },
+      {
+        "game_id": "cb-2026-02-13-walters-state-pellissippi-state-att0374",
+        "date": "2026-02-13",
+        "away": "Walters State",
+        "home": "Pellissippi State",
+        "status": "official_boxscore_not_yet_found",
+        "notes": "JUCO: preserve distinct attendance row and keep stats unverified"
+      }
+    ]
+  },
+  "january_2026": {
+    "attended": 2,
+    "event_match_confirmed": true,
+    "gamebooks_identified": 0,
+    "pending": [
+      {
+        "game_id": "cb-2026-01-23-walters-state-usc-salkehatchie-att0370",
+        "date": "2026-01-23",
+        "away": "Walters State",
+        "home": "USC Salkehatchie",
+        "status": "event_verified_but_scorebook_missing",
+        "event_url": "https://www.uscsalkathletics.com/event-details/usc-salkehatchie-baseball-dh-vs-walters-state-1",
+        "notes": "Official USC Salkehatchie event announcement confirms a Jan 23 doubleheader in Allendale. Game-level exact score, roster and individual statistics not yet independently matched; do not copy scores from other dates."
+      },
+      {
+        "game_id": "cb-2026-01-23-walters-state-usc-salkehatchie-att0371",
+        "date": "2026-01-23",
+        "away": "Walters State",
+        "home": "USC Salkehatchie",
+        "status": "event_verified_but_scorebook_missing",
+        "event_url": "https://www.uscsalkathletics.com/event-details/usc-salkehatchie-baseball-dh-vs-walters-state-1",
+        "notes": "Official USC Salkehatchie event announcement confirms a Jan 23 doubleheader in Allendale. Game-level exact score, roster and individual statistics not yet independently matched; do not copy scores from other dates."
+      }
+    ]
+  },
+  "rules": [
+    "No official_boxscore_verified promotion from this research queue",
+    "Maintain one record per attended contest",
+    "Lineup starters, substitute order, pitching totals, and score/inning lines must independently reconcile",
+    "Seek junior-college official scorer exports if possible; unavailable stats stay null"
+  ]
+}

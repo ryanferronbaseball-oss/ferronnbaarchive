@@ -6694,23 +6694,79 @@
     "season": 2024,
     "away": "Virginia",
     "home": "Auburn",
-    "ballpark": null,
-    "city": null,
-    "state": null,
-    "neutral_site": null,
+    "ballpark": "Bragan Field",
+    "city": "Jacksonville",
+    "state": "FL",
+    "neutral_site": true,
     "game_number": null,
-    "game_type": null,
+    "game_type": "regular_season",
     "postseason_round": null,
     "away_score": 6,
     "home_score": 4,
-    "score_provenance": "official_university_or_conference_source",
-    "source_url": "https://virginiasports.com/news/2024/02/25/no-14-virginia-claims-jax-college-classic-crown",
-    "verification": "source_matched",
-    "official_boxscore_status": "not_imported",
+    "score_provenance": "official_boxscore",
+    "source_url": "https://static.virginiasports.com/custompages/sports/m-basebl/stats/2023-2024/7auburn.htm",
+    "verification": "official_boxscore_verified",
+    "official_boxscore_status": "verified",
     "possible_same_day_doubleheader": false,
     "provisional_worksheet_game_sequence": null,
     "notes": "Original workbook Sheet1 row 240. Official UVA recap; exact full gamebook link still needed.",
-    "source_type": "official_university_result_index_or_recap"
+    "source_type": "official_university_statcrew_html",
+    "away_hits": 11,
+    "home_hits": 7,
+    "away_errors": 1,
+    "home_errors": 0,
+    "pitching_decisions": {
+      "win": "Kevin Jaxel",
+      "loss": "Christian Herberholz",
+      "save": "Aidan Teel"
+    },
+    "innings": [
+      {
+        "inning": 1,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 2,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 3,
+        "away": 1,
+        "home": 1
+      },
+      {
+        "inning": 4,
+        "away": 0,
+        "home": 1
+      },
+      {
+        "inning": 5,
+        "away": 1,
+        "home": 0
+      },
+      {
+        "inning": 6,
+        "away": 1,
+        "home": 0
+      },
+      {
+        "inning": 7,
+        "away": 1,
+        "home": 1
+      },
+      {
+        "inning": 8,
+        "away": 2,
+        "home": 1
+      },
+      {
+        "inning": 9,
+        "away": 0,
+        "home": 0
+      }
+    ]
   },
   {
     "id": "cb-2024-02-27-vcu-north-carolina-att0240",

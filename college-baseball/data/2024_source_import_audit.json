@@ -1,16 +1,16 @@
 {
-  "status": "PARTIAL_REVIEW_REQUIRED",
+  "status": "PASS",
   "approval": "2024–2026 official four-year source backfill; no 2023 or earlier, no release",
   "original_attendance": 444,
   "attendance_2024": 71,
-  "verified_2024_total": 64,
-  "remaining_2024": 7,
+  "verified_2024_total": 65,
+  "remaining_2024": 6,
   "2025_gamebooks_preserved": 69,
   "2026_gamebooks_preserved": 68,
-  "completed_in_this_run": 3,
+  "completed_in_this_run": 1,
   "linked_2024_sources": 65,
   "months_verified": {
-    "2024-02": 15,
+    "2024-02": 16,
     "2024-03": 21,
     "2024-04": 6,
     "2024-05": 16,
@@ -18,56 +18,56 @@
   },
   "passed_games": [
     {
-      "game_id": "cb-2024-02-24-virginia-iowa-att0237",
-      "source_url": "https://static.virginiasports.com/custompages/sports/m-basebl/stats/2023-2024/6iowa.htm",
+      "game_id": "cb-2024-02-25-virginia-auburn-att0239",
+      "source_url": "https://static.virginiasports.com/custompages/sports/m-basebl/stats/2023-2024/7auburn.htm",
       "score": [
-        12,
-        9
+        6,
+        4
       ],
-      "player_game_rows": 31,
+      "player_game_rows": 28,
       "pitching_decisions": {
-        "win": "Ryan Osinski",
-        "loss": "Brant Hogue",
-        "save": "Blake Barker"
+        "win": "Kevin Jaxel",
+        "loss": "Christian Herberholz",
+        "save": "Aidan Teel"
       },
       "stat_audit": {
         "status": "PASS",
-        "game_id": "cb-2024-02-24-virginia-iowa-att0237",
-        "source": "https://static.virginiasports.com/custompages/sports/m-basebl/stats/2023-2024/6iowa.htm",
-        "source_bytes": 42395,
-        "source_sha256": "cd3fca8de66a124971b9df2838e50f6afd2cc37e690634d76689d64f10781a10",
-        "player_rows": 31,
+        "game_id": "cb-2024-02-25-virginia-auburn-att0239",
+        "source": "https://static.virginiasports.com/custompages/sports/m-basebl/stats/2023-2024/7auburn.htm",
+        "source_bytes": 39961,
+        "source_sha256": "0226f0c7f01a6cddfffdb575a67bfe165222caeca9eaa9a82f9247e466973d94",
+        "player_rows": 28,
         "scoreboard": [
           {
             "innings": [
               0,
               0,
+              1,
+              0,
+              1,
+              1,
+              1,
               2,
-              5,
-              0,
-              0,
-              1,
-              1,
-              3
+              0
             ],
-            "runs": 12,
-            "hits": 13,
-            "errors": 2
+            "runs": 6,
+            "hits": 11,
+            "errors": 1
           },
           {
             "innings": [
-              6,
+              0,
               0,
               1,
               1,
               0,
               0,
-              0,
+              1,
               1,
               0
             ],
-            "runs": 9,
-            "hits": 13,
+            "runs": 4,
+            "hits": 7,
             "errors": 0
           }
         ],
@@ -75,12 +75,12 @@
           {
             "team": "Virginia",
             "nine_starting_slots": true,
-            "batter_rows": 12,
+            "batter_rows": 9,
             "pitcher_rows": 4,
-            "substitutes": 3
+            "substitutes": 0
           },
           {
-            "team": "Iowa",
+            "team": "Auburn",
             "nine_starting_slots": true,
             "batter_rows": 11,
             "pitcher_rows": 4,
@@ -88,171 +88,13 @@
           }
         ],
         "pitching_decisions": {
-          "win": "Ryan Osinski",
-          "loss": "Brant Hogue",
-          "save": "Blake Barker"
-        },
-        "source_type": "official_university_statcrew_html"
-      }
-    },
-    {
-      "game_id": "cb-2024-03-06-virginia-george-washington-att0249",
-      "source_url": "https://static.virginiasports.com/custompages/sports/m-basebl/stats/2023-2024/13gw.htm",
-      "score": [
-        26,
-        12
-      ],
-      "player_game_rows": 48,
-      "pitching_decisions": {
-        "win": "Ryan Osinski",
-        "loss": "Jarrett Korson",
-        "save": null
-      },
-      "stat_audit": {
-        "status": "PASS",
-        "game_id": "cb-2024-03-06-virginia-george-washington-att0249",
-        "source": "https://static.virginiasports.com/custompages/sports/m-basebl/stats/2023-2024/13gw.htm",
-        "source_bytes": 66537,
-        "source_sha256": "7c5d240721b543f595ee1b951a9822a8fcdfead811a5b83c59fa5d44d1681db2",
-        "player_rows": 48,
-        "scoreboard": [
-          {
-            "innings": [
-              4,
-              8,
-              2,
-              0,
-              5,
-              0,
-              6,
-              1,
-              0
-            ],
-            "runs": 26,
-            "hits": 24,
-            "errors": 2
-          },
-          {
-            "innings": [
-              2,
-              0,
-              2,
-              3,
-              1,
-              0,
-              0,
-              4,
-              0
-            ],
-            "runs": 12,
-            "hits": 16,
-            "errors": 0
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "Virginia",
-            "nine_starting_slots": true,
-            "batter_rows": 15,
-            "pitcher_rows": 7,
-            "substitutes": 6
-          },
-          {
-            "team": "George Washington",
-            "nine_starting_slots": true,
-            "batter_rows": 16,
-            "pitcher_rows": 10,
-            "substitutes": 7
-          }
-        ],
-        "pitching_decisions": {
-          "win": "Ryan Osinski",
-          "loss": "Jarrett Korson",
-          "save": null
-        },
-        "source_type": "official_university_statcrew_html"
-      }
-    },
-    {
-      "game_id": "cb-2024-05-22-virginia-georgia-tech-att0280",
-      "source_url": "https://static.virginiasports.com/custompages/sports/m-basebl/stats/2023-2024/55gt.htm",
-      "score": [
-        13,
-        0
-      ],
-      "player_game_rows": 27,
-      "pitching_decisions": {
-        "win": "Evan Blanco",
-        "loss": "Aeden Finateri",
-        "save": null
-      },
-      "stat_audit": {
-        "status": "PASS",
-        "game_id": "cb-2024-05-22-virginia-georgia-tech-att0280",
-        "source": "https://static.virginiasports.com/custompages/sports/m-basebl/stats/2023-2024/55gt.htm",
-        "source_bytes": 39128,
-        "source_sha256": "0a085a2ccb92174e9a1c1b0f21c9ab64efc67836a3d8630e17443b3bff961875",
-        "player_rows": 27,
-        "scoreboard": [
-          {
-            "innings": [
-              0,
-              4,
-              1,
-              2,
-              3,
-              3,
-              0
-            ],
-            "runs": 13,
-            "hits": 16,
-            "errors": 0
-          },
-          {
-            "innings": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "runs": 0,
-            "hits": 5,
-            "errors": 1
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "Virginia",
-            "nine_starting_slots": true,
-            "batter_rows": 10,
-            "pitcher_rows": 2,
-            "substitutes": 1
-          },
-          {
-            "team": "Georgia Tech",
-            "nine_starting_slots": true,
-            "batter_rows": 9,
-            "pitcher_rows": 6,
-            "substitutes": 0
-          }
-        ],
-        "pitching_decisions": {
-          "win": "Evan Blanco",
-          "loss": "Aeden Finateri",
-          "save": null
+          "win": "Kevin Jaxel",
+          "loss": "Christian Herberholz",
+          "save": "Aidan Teel"
         },
         "source_type": "official_university_statcrew_html"
       }
     }
   ],
-  "pending_review": [
-    {
-      "game_id": "cb-2024-02-25-virginia-auburn-att0239",
-      "source_url": "https://static.virginiasports.com/custompages/sports/m-basebl/stats/2023-2024/7auburn.htm",
-      "reason": "Ambiguous original StatCrew pitcher Herberholz,C []"
-    }
-  ]
+  "pending_review": []
 }

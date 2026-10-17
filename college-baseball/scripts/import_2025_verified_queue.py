@@ -82,6 +82,7 @@ def main():
         # Capture this game's own identity before any request or parser failure.
         # Never reuse a prior loop iteration's snapshot for a different game.
         snapshot=deepcopy(game)
+        snapshot_keys=set(global_keys)
         if game["verification"]=="official_boxscore_verified":
             prior=[p for p in players if p["game_id"]==gid]
             if not prior or game.get("source_url")!=url or len(prior)<18:
@@ -91,6 +92,8 @@ def main():
             pending.append({"game_id":gid,"reason":"Original status is not attendance-only"})
             continue
         try:
+            if url.lower().split("?")[0].endswith(".pdf"):
+                raise ValueError("Official source PDF identified; separate PDF line transcription required")
             # Source dates are visibly checked, not inferred from a relative URL.
             resp=session.get(url,timeout=40)
             resp.raise_for_status()
@@ -140,6 +143,7 @@ def main():
         except Exception as exc:
             # No partial score or player results from a failed official gamebook.
             game.clear();game.update(snapshot)
+            global_keys.clear();global_keys.update(snapshot_keys)
             pending.append({"game_id":gid,"source_url":url,"reason":str(exc)})
             print("REVIEW 2025",gid,str(exc),flush=True)
     assert len(games)==444 and len({g["id"] for g in games})==444

@@ -1,9 +1,9 @@
 {
-  "status": "attendance_imported_pilot_scores_verified",
+  "status": "attendance_imported_pilot_boxscores_verified",
   "scope": "college baseball only; not MLB, MiLB or other college sports",
   "attendance_games": 444,
-  "official_boxscores_imported": 0,
-  "player_stat_rows": 0,
+  "official_boxscores_imported": 5,
+  "player_stat_rows": 138,
   "scores_supplied_by_user": 0,
   "linked_unverified_sources": 0,
   "seasons": [
@@ -27,13 +27,21 @@
     "Sheet1 row 444: Auburn at Milwaukee listed May 31, 2026; official Auburn Regional schedule has UCF at Auburn May 31 and Milwaukee at Auburn May 31; June 1 is Milwaukee at Auburn. Confirm whether row 444 is May 31 UCF at Auburn or June 1 Milwaukee at Auburn.",
     "Sheet1 row 441: NC State at UCF started May 29 but finished May 30 due to suspension; resumed attendance needs confirmation."
   ],
-  "warning": "Five pilot final scores, R/H/E, innings and pitching decisions source-verified. Complete player batting/pitching scorebooks not yet reconciled.",
+  "warning": "Five games have officially reconciled batting and pitching source records. 439 attendance-only games await official boxscore import. Unresolved school source player-credit conflict retained in audit without guessing.",
   "official_scoreboards_verified": 5,
   "verified_batches": [
     {
       "batch": "2026_auburn_regional_pilot.json",
       "games": 5,
       "verification": "scoreboard checked against linked university athletic box scores"
+    }
+  ],
+  "pilot_player_audit_status": "PASS",
+  "pilot_player_audit_file": "college-baseball/data/pilot_player_stat_audit.json",
+  "official_source_warnings": [
+    {
+      "game_id": "cb-2026-05-30-auburn-north-carolina-state",
+      "message": "Official loser label 'Connor Clark' does not appear in that game's pitcher lines; individual pitcher W/L attribution intentionally unavailable."
     }
   ]
 }

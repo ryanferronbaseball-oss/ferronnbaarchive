@@ -223,9 +223,10 @@ function renderBox(g,rows,category){
 }
 function renderPlayers(d){
  $("app").innerHTML='<div class="eyebrow">College Baseball · Witnessed players</div><h1>Players & leaderboards</h1><p class="lead">College box-score statistics only. When players reach professional baseball, their college lines will remain independent and can connect to separate verified MLB profiles.</p>'
- +'<div class="cb-toolbar"><input id="cb-player-search" type="search" placeholder="Search player or college…" aria-label="Player name or school">'
- +'<select id="cb-role" aria-label="Player role"><option value="hit">Batting</option><option value="pitch">Pitching</option></select>'
- +'<select id="cb-sort" aria-label="Sort statistical leaderboard"></select></div><p id="cb-board-note" class="cb-sub"></p><div id="cb-player-board"></div>';
+ +'<div class="mlb-filters cb-player-filters"><label for="cb-player-search">Find a player<input id="cb-player-search" type="search" placeholder="Search player or college…" aria-label="Player name or school"></label>'
+ +'<label for="cb-role">Statistical group<select id="cb-role" aria-label="Player role"><option value="hit">Batting</option><option value="pitch">Pitching</option></select></label>'
+ +'<label for="cb-sort">Sort leaderboard<select id="cb-sort" aria-label="Sort statistical leaderboard"></select></label></div>'
+ +'<section class="panel cb-leaderboard-panel"><h2>Player leaderboard</h2><p id="cb-board-note" class="mlb-note"></p><div id="cb-player-board"></div></section>';
  const roles={hit:[["hits","Hits"],["homeRuns","Home runs"],["rbi","RBI"],["average","AVG"],["ops","OPS"],["atBats","At-bats"]],pitch:[["strikeouts","Strikeouts"],["outs","Outs pitched"],["era","ERA"],["whip","WHIP"],["wins","Wins"],["saves","Saves"]]};
  let role="hit";
  function options(){const sel=$("cb-sort");sel.innerHTML=roles[role].map(([key,label])=>'<option value="'+key+'">'+label+'</option>').join("");sel.value=role==="hit"?"hits":"strikeouts"}
@@ -289,13 +290,13 @@ function renderPlayer(d){
 function renderRecords(d){
  const defs=[["Hits","batting","hits"],["Home runs","batting","homeRuns"],["RBI","batting","rbi"],["Strikeouts","pitching","strikeOuts"],["Outs pitched","pitching","outs"],["Stolen bases","batting","stolenBases"]];
  $("app").innerHTML='<div class="eyebrow">College Baseball · Historical records</div><h1>Signature Performances</h1><p class="lead">Best single-game performances you witnessed, drawn strictly from imported and source-verified college box scores.</p>'
- +'<div class="cb-note">The top witnessed performance is not necessarily a season or school record. We will never infer missing stats from an incomplete scorebook.</div>'
- +(d.rows.length?'<div class="cb-grid">'+defs.map(([label,category,key])=>{
+ +'<p class="mlb-note">The top witnessed performance is not necessarily a season or school record. We never infer missing stats from incomplete scorebooks.</p>'
+ +(d.rows.length?'<div class="mlb-records-grid cb-grid cb-records-grid">'+defs.map(([label,category,key])=>{
   const list=d.rows.map(r=>({r,val:stat(r[category]?.[key])})).filter(x=>x.val!=null&&d.gameMap.has(x.r.game_id));
   list.sort((a,b)=>b.val-a.val||a.r.player.localeCompare(b.r.player));
-  if(!list.length)return '<article class="cb-record"><small>'+esc(label)+'</small><strong>—</strong><p>Not available in verified gamebooks</p></article>';
+  if(!list.length)return '<article class="mlb-record cb-record"><small>'+esc(label)+'</small><strong>—</strong><p>Not available in verified gamebooks</p></article>';
   const best=list[0],g=d.gameMap.get(best.r.game_id);
-  return '<article class="cb-record"><small>'+esc(label+' · single game')+'</small><strong>'+esc(key==="outs"?Math.floor(best.val/3)+"."+(best.val%3)+" IP":fmt(best.val))+'</strong><p><a href="'+playerUrl(best.r)+'" class="cb-link">'+esc(best.r.player)+'</a></p><p>'+gameName(g)+'</p></article>';
+  return '<article class="mlb-record cb-record"><small>'+esc(label+' · single game')+'</small><strong>'+esc(key==="outs"?Math.floor(best.val/3)+"."+(best.val%3)+" IP":fmt(best.val))+'</strong><p><a href="'+playerUrl(best.r)+'" class="cb-link">'+esc(best.r.player)+'</a></p><p>'+gameName(g)+'</p></article>';
  }).join("")+'</div>'
  +defs.map(([label,category,key])=>{
   const list=d.rows.map(r=>({r,val:stat(r[category]?.[key])})).filter(x=>x.val!=null&&d.gameMap.has(x.r.game_id));

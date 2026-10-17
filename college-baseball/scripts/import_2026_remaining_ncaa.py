@@ -147,6 +147,14 @@ def _source_batters(table, valid_players, team, game_id):
             if any(stats.get(k,0) for k in ("atBats","runs","hits","rbi","baseOnBalls","strikeOuts")):
                 raise ValueError("Manually verified defensive-only source substitute gained plate appearance")
             is_sub = True
+        # The original 2025-05-25 Ole Miss/Vanderbilt university lineup
+        # records Luke Cheng (starter), Collin Reuter (PH), then Brayden
+        # Randle (SS) all in official original batting slot 9. Randle is
+        # the defensive replacement with a recorded AB, but lacks a source
+        # indent; preserve the source lineup, do not invent slot ten.
+        if (game_id=="cb-2025-05-25-ole-miss-vanderbilt-att0364"
+              and team=="Ole Miss" and name=="Brayden Randle"):
+            is_sub=True
         seen.append((key, name, is_sub))
     if len(seen) != len(valid_players) or len({x[0] for x in seen}) != len(seen):
         raise ValueError(team + ": cannot exactly match source batter lineup against source player records")

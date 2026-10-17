@@ -4,202 +4,315 @@
   "original_attendance_entries": 444,
   "verified_2026_unchanged": 68,
   "total_2025_attendance": 74,
-  "completed_in_this_run": 4,
-  "verified_2025_total": 27,
-  "linked_source_games": 33,
+  "completed_in_this_run": 3,
+  "verified_2025_total": 30,
+  "linked_source_games": 37,
   "passed_games": [
     {
-      "game_id": "cb-2025-05-09-richmond-vcu-att0343",
-      "source_url": "https://vcuathletics.com/sports/baseball/stats/2025/richmond/boxscore/6759",
+      "game_id": "cb-2025-05-10-pittsburgh-wake-forest-att0345",
+      "source_url": "https://godeacs.com/sports/baseball/stats/2025/pitt/boxscore/14025",
       "score": [
-        8,
-        2
+        10,
+        8
       ],
-      "source_game_id": "6759",
-      "player_rows": 23,
+      "source_game_id": "14025",
+      "player_rows": 33,
       "source_stat_audit": {
-        "game_id": "cb-2025-05-09-richmond-vcu-att0343",
-        "source": "https://vcuathletics.com/sports/baseball/stats/2025/richmond/boxscore/6759",
+        "game_id": "cb-2025-05-10-pittsburgh-wake-forest-att0345",
+        "source": "https://godeacs.com/sports/baseball/stats/2025/pitt/boxscore/14025",
         "http_code": 200,
-        "source_bytes": 564688,
-        "source_sha256": "3d34483512acbda12f04fe284102a88e8e1dc860be289f8ca6d6d24965b5a633",
+        "source_bytes": 916125,
+        "source_sha256": "0680a9068ba63e9e382c856e959cbb018e07baea94109d9582b828956ae8544e",
         "teams": [
           {
-            "name": "Richmond",
-            "batters": 9,
-            "pitchers": 3,
-            "AB": 43,
-            "R": 8,
-            "H": 13,
-            "RBI": 6,
-            "BB": 3,
-            "SO": 10,
-            "pitching_outs": 27,
-            "pitching_runs": 2,
-            "pitching_hits": 5
-          },
-          {
-            "name": "VCU",
-            "batters": 9,
-            "pitchers": 2,
-            "AB": 30,
-            "R": 2,
-            "H": 5,
-            "RBI": 2,
-            "BB": 2,
-            "SO": 5,
+            "name": "Pittsburgh",
+            "batters": 12,
+            "pitchers": 4,
+            "AB": 36,
+            "R": 10,
+            "H": 9,
+            "RBI": 10,
+            "BB": 9,
+            "SO": 11,
             "pitching_outs": 27,
             "pitching_runs": 8,
-            "pitching_hits": 13
+            "pitching_hits": 11
+          },
+          {
+            "name": "Wake Forest",
+            "batters": 11,
+            "pitchers": 6,
+            "AB": 38,
+            "R": 8,
+            "H": 11,
+            "RBI": 8,
+            "BB": 6,
+            "SO": 10,
+            "pitching_outs": 27,
+            "pitching_runs": 10,
+            "pitching_hits": 9
           }
         ],
         "source_warnings": [],
-        "player_rows": 23,
+        "player_rows": 33,
         "status": "PASS",
         "scoreboard": [
           {
-            "runs": 8,
-            "hits": 13,
-            "errors": 0,
+            "runs": 10,
+            "hits": 9,
+            "errors": 2,
             "innings": [
-              1,
+              0,
+              0,
+              4,
+              0,
+              0,
               2,
               0,
-              1,
-              1,
-              0,
-              0,
-              1,
-              2
+              3,
+              1
             ]
           },
           {
-            "runs": 2,
-            "hits": 5,
-            "errors": 4,
+            "runs": 8,
+            "hits": 11,
+            "errors": 0,
             "innings": [
+              3,
               0,
               0,
-              0,
-              0,
-              0,
-              0,
-              0,
+              1,
               2,
+              0,
+              1,
+              1,
               0
             ]
           }
         ],
         "lineup_audit": [
           {
-            "team": "Richmond",
+            "team": "Pittsburgh",
             "nine_starting_slots": true,
-            "batter_rows": 9,
-            "pitcher_rows": 3,
-            "substitutes": 0
+            "batter_rows": 12,
+            "pitcher_rows": 4,
+            "substitutes": 3
           },
           {
-            "team": "VCU",
+            "team": "Wake Forest",
             "nine_starting_slots": true,
-            "batter_rows": 9,
-            "pitcher_rows": 2,
-            "substitutes": 0
+            "batter_rows": 11,
+            "pitcher_rows": 6,
+            "substitutes": 2
           }
         ],
         "official_decisions": {
-          "win": "Jackson Hinchliffe",
-          "loss": "Tappy, Owen",
+          "win": "Firoved,ethan",
+          "loss": "Leffew, Haiden",
           "save": null
         },
         "resolved_pitcher_decisions": {
-          "win": "Jackson Hinchliffe",
+          "win": null,
           "loss": null,
           "save": null
         }
       },
       "pitching_decisions": {
-        "win": "Jackson Hinchliffe",
-        "loss": "Owen Tappy",
+        "win": "Ethan Firoved",
+        "loss": "Haiden Leffew",
         "save": null
       }
     },
     {
-      "game_id": "cb-2025-04-25-nebraska-maryland-att0336",
-      "source_url": "https://umterps.com/sports/baseball/stats/2025/nebraska/boxscore/18441",
+      "game_id": "cb-2025-04-26-tulane-east-carolina-att0337",
+      "source_url": "https://tulanegreenwave.com/sports/baseball/stats/2025/east-carolina/boxscore/22920",
       "score": [
         5,
-        12
+        15
       ],
-      "source_game_id": "18441",
-      "player_rows": 26,
+      "source_game_id": "22920",
+      "player_rows": 31,
       "source_stat_audit": {
-        "game_id": "cb-2025-04-25-nebraska-maryland-att0336",
-        "source": "https://umterps.com/sports/baseball/stats/2025/nebraska/boxscore/18441",
+        "game_id": "cb-2025-04-26-tulane-east-carolina-att0337",
+        "source": "https://tulanegreenwave.com/sports/baseball/stats/2025/east-carolina/boxscore/22920",
         "http_code": 200,
-        "source_bytes": 1626087,
-        "source_sha256": "7cd9253c1316e32d744291811dd2cee45852746a2ffd59888976bd8820c7c0f2",
+        "source_bytes": 1175904,
+        "source_sha256": "275018345541efaa8f58091863b811d8e97a7eb683cea3088445c88eaf1d21c1",
         "teams": [
           {
-            "name": "Nebraska",
-            "batters": 11,
+            "name": "Tulane",
+            "batters": 12,
             "pitchers": 4,
-            "AB": 36,
+            "AB": 28,
             "R": 5,
-            "H": 9,
+            "H": 5,
             "RBI": 5,
-            "BB": 3,
-            "SO": 4,
-            "pitching_outs": 24,
-            "pitching_runs": 12,
-            "pitching_hits": 13
+            "BB": 4,
+            "SO": 10,
+            "pitching_outs": 23,
+            "pitching_runs": 15,
+            "pitching_hits": 16
           },
           {
-            "name": "Maryland",
-            "batters": 9,
+            "name": "East Carolina",
+            "batters": 13,
             "pitchers": 2,
-            "AB": 36,
-            "R": 12,
-            "H": 13,
-            "RBI": 11,
-            "BB": 7,
-            "SO": 9,
-            "pitching_outs": 27,
+            "AB": 37,
+            "R": 15,
+            "H": 16,
+            "RBI": 15,
+            "BB": 4,
+            "SO": 6,
+            "pitching_outs": 24,
             "pitching_runs": 5,
-            "pitching_hits": 9
+            "pitching_hits": 5
           }
         ],
         "source_warnings": [],
-        "player_rows": 26,
+        "player_rows": 31,
         "status": "PASS",
         "scoreboard": [
           {
             "runs": 5,
-            "hits": 9,
-            "errors": 0,
+            "hits": 5,
+            "errors": 1,
             "innings": [
-              1,
               2,
               0,
-              1,
+              3,
               0,
               0,
-              1,
+              0,
               0,
               0
             ]
           },
           {
-            "runs": 12,
-            "hits": 13,
+            "runs": 15,
+            "hits": 16,
             "errors": 0,
             "innings": [
-              0,
               3,
-              2,
+              0,
+              1,
+              6,
+              0,
+              0,
+              1,
+              4
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Tulane",
+            "nine_starting_slots": true,
+            "batter_rows": 12,
+            "pitcher_rows": 4,
+            "substitutes": 3
+          },
+          {
+            "team": "East Carolina",
+            "nine_starting_slots": true,
+            "batter_rows": 13,
+            "pitcher_rows": 2,
+            "substitutes": 4
+          }
+        ],
+        "official_decisions": {
+          "win": "Norby, Ethan",
+          "loss": "Montiel, Tayler",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      },
+      "pitching_decisions": {
+        "win": "Ethan Norby",
+        "loss": "Tayler Montiel",
+        "save": null
+      }
+    },
+    {
+      "game_id": "cb-2025-04-11-louisville-nc-state-att0331",
+      "source_url": "https://gocards.com/sports/baseball/stats/2025/nc-state/boxscore/25392",
+      "score": [
+        11,
+        13
+      ],
+      "source_game_id": "25392",
+      "player_rows": 29,
+      "source_stat_audit": {
+        "game_id": "cb-2025-04-11-louisville-nc-state-att0331",
+        "source": "https://gocards.com/sports/baseball/stats/2025/nc-state/boxscore/25392",
+        "http_code": 200,
+        "source_bytes": 1174329,
+        "source_sha256": "c014646a5cbcd83bfc0d0ea0ee126f43f419aee216ad1dc10c6b125a927aae85",
+        "teams": [
+          {
+            "name": "Louisville",
+            "batters": 9,
+            "pitchers": 6,
+            "AB": 34,
+            "R": 11,
+            "H": 11,
+            "RBI": 8,
+            "BB": 3,
+            "SO": 9,
+            "pitching_outs": 24,
+            "pitching_runs": 13,
+            "pitching_hits": 11
+          },
+          {
+            "name": "NC State",
+            "batters": 10,
+            "pitchers": 4,
+            "AB": 32,
+            "R": 13,
+            "H": 11,
+            "RBI": 11,
+            "BB": 16,
+            "SO": 2,
+            "pitching_outs": 27,
+            "pitching_runs": 11,
+            "pitching_hits": 11
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 29,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 11,
+            "hits": 11,
+            "errors": 0,
+            "innings": [
               1,
               0,
-              0,
               5,
+              1,
+              4,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 13,
+            "hits": 11,
+            "errors": 1,
+            "innings": [
+              0,
+              1,
+              1,
+              7,
+              3,
+              0,
+              0,
               1,
               null
             ]
@@ -207,259 +320,35 @@
         ],
         "lineup_audit": [
           {
-            "team": "Nebraska",
-            "nine_starting_slots": true,
-            "batter_rows": 11,
-            "pitcher_rows": 4,
-            "substitutes": 2
-          },
-          {
-            "team": "Maryland",
-            "nine_starting_slots": true,
-            "batter_rows": 9,
-            "pitcher_rows": 2,
-            "substitutes": 0
-          }
-        ],
-        "official_decisions": {
-          "win": "Mccoy, Kyle",
-          "loss": "Walsh, Will",
-          "save": "Hastings, Logan"
-        },
-        "resolved_pitcher_decisions": {
-          "win": null,
-          "loss": null,
-          "save": null
-        }
-      },
-      "pitching_decisions": {
-        "win": "Kyle McCoy",
-        "loss": "Will Walsh",
-        "save": "Logan Hastings"
-      }
-    },
-    {
-      "game_id": "cb-2025-04-18-stony-brook-hofstra-att0334",
-      "source_url": "https://stonybrookathletics.com/sports/baseball/stats/2025/hofstra/boxscore/11907",
-      "score": [
-        17,
-        3
-      ],
-      "source_game_id": "11907",
-      "player_rows": 30,
-      "source_stat_audit": {
-        "game_id": "cb-2025-04-18-stony-brook-hofstra-att0334",
-        "source": "https://stonybrookathletics.com/sports/baseball/stats/2025/hofstra/boxscore/11907",
-        "http_code": 200,
-        "source_bytes": 525424,
-        "source_sha256": "4363624719542888023e0e22b407835381d0be524229493bc51a4e8abd5d8aed",
-        "teams": [
-          {
-            "name": "Stony Brook",
-            "batters": 15,
-            "pitchers": 1,
-            "AB": 38,
-            "R": 17,
-            "H": 16,
-            "RBI": 17,
-            "BB": 8,
-            "SO": 3,
-            "pitching_outs": 21,
-            "pitching_runs": 3,
-            "pitching_hits": 8
-          },
-          {
-            "name": "Hofstra",
-            "batters": 11,
-            "pitchers": 3,
-            "AB": 29,
-            "R": 3,
-            "H": 8,
-            "RBI": 3,
-            "BB": 0,
-            "SO": 4,
-            "pitching_outs": 21,
-            "pitching_runs": 17,
-            "pitching_hits": 16
-          }
-        ],
-        "source_warnings": [],
-        "player_rows": 30,
-        "status": "PASS",
-        "scoreboard": [
-          {
-            "runs": 17,
-            "hits": 16,
-            "errors": 0,
-            "innings": [
-              0,
-              8,
-              5,
-              0,
-              2,
-              0,
-              2
-            ]
-          },
-          {
-            "runs": 3,
-            "hits": 8,
-            "errors": 2,
-            "innings": [
-              0,
-              0,
-              0,
-              1,
-              0,
-              0,
-              2
-            ]
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "Stony Brook",
-            "nine_starting_slots": true,
-            "batter_rows": 15,
-            "pitcher_rows": 1,
-            "substitutes": 6
-          },
-          {
-            "team": "Hofstra",
-            "nine_starting_slots": true,
-            "batter_rows": 11,
-            "pitcher_rows": 3,
-            "substitutes": 2
-          }
-        ],
-        "official_decisions": {
-          "win": "Smink , Eddie",
-          "loss": "Hamilton, Sean",
-          "save": null
-        },
-        "resolved_pitcher_decisions": {
-          "win": null,
-          "loss": null,
-          "save": null
-        }
-      },
-      "pitching_decisions": {
-        "win": "Eddie Smink",
-        "loss": "Sean Hamilton",
-        "save": null
-      }
-    },
-    {
-      "game_id": "cb-2025-04-06-northeastern-campbell-att0329",
-      "source_url": "https://gocamels.com/sports/baseball/stats/2025/northeastern/boxscore/207692",
-      "score": [
-        8,
-        18
-      ],
-      "source_game_id": "207692",
-      "player_rows": 30,
-      "source_stat_audit": {
-        "game_id": "cb-2025-04-06-northeastern-campbell-att0329",
-        "source": "https://gocamels.com/sports/baseball/stats/2025/northeastern/boxscore/207692",
-        "http_code": 200,
-        "source_bytes": 701962,
-        "source_sha256": "de856c6a88853e1599fda829602cdc9efdb81dc00ddb978bd317c706f3efde56",
-        "teams": [
-          {
-            "name": "Northeastern",
-            "batters": 9,
-            "pitchers": 6,
-            "AB": 30,
-            "R": 8,
-            "H": 7,
-            "RBI": 8,
-            "BB": 6,
-            "SO": 6,
-            "pitching_outs": 21,
-            "pitching_runs": 18,
-            "pitching_hits": 17
-          },
-          {
-            "name": "Campbell",
-            "batters": 10,
-            "pitchers": 5,
-            "AB": 40,
-            "R": 18,
-            "H": 17,
-            "RBI": 18,
-            "BB": 4,
-            "SO": 5,
-            "pitching_outs": 24,
-            "pitching_runs": 8,
-            "pitching_hits": 7
-          }
-        ],
-        "source_warnings": [],
-        "player_rows": 30,
-        "status": "PASS",
-        "scoreboard": [
-          {
-            "runs": 8,
-            "hits": 7,
-            "errors": 2,
-            "innings": [
-              0,
-              0,
-              6,
-              0,
-              0,
-              2,
-              0,
-              0
-            ]
-          },
-          {
-            "runs": 18,
-            "hits": 17,
-            "errors": 2,
-            "innings": [
-              0,
-              1,
-              1,
-              9,
-              0,
-              4,
-              2,
-              1
-            ]
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "Northeastern",
+            "team": "Louisville",
             "nine_starting_slots": true,
             "batter_rows": 9,
             "pitcher_rows": 6,
             "substitutes": 0
           },
           {
-            "team": "Campbell",
+            "team": "NC State",
             "nine_starting_slots": true,
             "batter_rows": 10,
-            "pitcher_rows": 5,
+            "pitcher_rows": 4,
             "substitutes": 1
           }
         ],
         "official_decisions": {
-          "win": "Grubich, Lleyton",
-          "loss": "Gottesman,Jordan",
-          "save": null
+          "win": "Camden Wimbish",
+          "loss": "Murphy, Casen",
+          "save": "Jacob Dudan"
         },
         "resolved_pitcher_decisions": {
-          "win": null,
+          "win": "Camden Wimbish",
           "loss": null,
-          "save": null
+          "save": "Jacob Dudan"
         }
       },
       "pitching_decisions": {
-        "win": "Lleyton Grubich",
-        "loss": "Jordan Gottesman",
-        "save": null
+        "win": "Camden Wimbish",
+        "loss": "Casen Murphy",
+        "save": "Jacob Dudan"
       }
     }
   ],
@@ -480,19 +369,24 @@
       "reason": "Official source PDF identified; separate PDF line transcription required"
     },
     {
-      "game_id": "cb-2025-05-10-pittsburgh-wake-forest-att0345",
-      "source_url": "https://godeacs.com/sports/baseball/stats/2025/pitt/boxscore/14025",
-      "reason": "Pittsburgh: source batting order resolved to 10 starting slots, not 9"
-    },
-    {
       "game_id": "cb-2025-04-27-tulane-east-carolina-att0338",
       "source_url": "https://ecupirates.com/sports/baseball/stats/2025/tulane/boxscore/13754",
-      "reason": "Tulane: source batting order resolved to 10 starting slots, not 9"
+      "reason": "East Carolina: source batting order resolved to 12 starting slots, not 9"
     },
     {
-      "game_id": "cb-2025-04-26-tulane-east-carolina-att0337",
-      "source_url": "https://tulanegreenwave.com/sports/baseball/stats/2025/east-carolina/boxscore/22920",
-      "reason": "East Carolina: source batting order resolved to 11 starting slots, not 9"
+      "game_id": "cb-2025-04-19-minnesota-rutgers-att0335",
+      "source_url": "https://gophersports.com/sports/baseball/stats/2025/rutgers/boxscore/21668",
+      "reason": "Rutgers: source batting order resolved to 10 starting slots, not 9"
+    },
+    {
+      "game_id": "cb-2025-04-12-louisville-nc-state-att0332",
+      "source_url": "https://gopack.com/sports/baseball/stats/2025/louisville/boxscore/23703",
+      "reason": "NC State: source batting order resolved to 11 starting slots, not 9"
+    },
+    {
+      "game_id": "cb-2025-04-06-virginia-nc-state-att0330",
+      "source_url": "https://gopack.com/sports/baseball/stats/2025/virginia/boxscore/23700",
+      "reason": "NC State: source batting order resolved to 11 starting slots, not 9"
     }
   ]
 }

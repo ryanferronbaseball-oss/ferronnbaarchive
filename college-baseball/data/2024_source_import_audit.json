@@ -1,5 +1,5 @@
 {
-  "status": "PASS",
+  "status": "PARTIAL_REVIEW_REQUIRED",
   "approval": "2024–2026 official four-year source backfill; no 2023 or earlier, no release",
   "original_attendance": 444,
   "attendance_2024": 71,
@@ -8,7 +8,7 @@
   "2025_gamebooks_preserved": 69,
   "2026_gamebooks_preserved": 68,
   "completed_in_this_run": 0,
-  "linked_2024_sources": 60,
+  "linked_2024_sources": 65,
   "months_verified": {
     "2024-02": 14,
     "2024-03": 20,
@@ -17,5 +17,31 @@
     "2024-06": 6
   },
   "passed_games": [],
-  "pending_review": []
+  "pending_review": [
+    {
+      "game_id": "cb-2024-02-24-virginia-iowa-att0237",
+      "source_url": "https://static.virginiasports.com/custompages/sports/m-basebl/stats/2023-2024/6iowa.htm",
+      "reason": "Official inning R/H/E scoreboard could not be unambiguously parsed and checked"
+    },
+    {
+      "game_id": "cb-2024-02-25-virginia-auburn-att0239",
+      "source_url": "https://static.virginiasports.com/custompages/sports/m-basebl/stats/2023-2024/7auburn.htm",
+      "reason": "Official inning R/H/E scoreboard could not be unambiguously parsed and checked"
+    },
+    {
+      "game_id": "cb-2024-03-06-virginia-george-washington-att0249",
+      "source_url": "https://static.virginiasports.com/custompages/sports/m-basebl/stats/2023-2024/13gw.htm",
+      "reason": "Official inning R/H/E scoreboard could not be unambiguously parsed and checked"
+    },
+    {
+      "game_id": "cb-2024-05-22-virginia-georgia-tech-att0280",
+      "source_url": "https://static.virginiasports.com/custompages/sports/m-basebl/stats/2023-2024/55gt.htm",
+      "reason": "Official inning R/H/E scoreboard could not be unambiguously parsed and checked"
+    },
+    {
+      "game_id": "cb-2024-05-23-clemson-miami-att0283",
+      "source_url": "https://data.clemsontigers.com/Stats/Baseball/2024/cu245231.htm",
+      "reason": "Official source response unexpectedly short"
+    }
+  ]
 }

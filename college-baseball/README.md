@@ -1,6 +1,6 @@
 # College Baseball · Courtside Archive
 
-**Status:** 444 attended college baseball games are staged in **draft PR #10**, with eight complete official gamebooks and six additional sourced college tournament scoreboards. Published site unchanged until user approval.
+**Status:** 444 attended college baseball games are staged in **draft PR #10**, with nine complete official gamebooks and five additional sourced college tournament scoreboards. Published site unchanged until user approval.
 
 The site lives under \`/college-baseball/\`, with independent college baseball stats and verified inter-level player IDs only. It shares the exact MLB archive design system for Inter fonts, navigation, scoreboards, box-score layout, cards, responsive tables, and bat-order number column.
 
@@ -12,19 +12,20 @@ Current data statuses:
 
 | Status | Games | Meaning |
 |---|---:|---|
-| \`official_boxscore_verified\` | **8** | All original player batting, pitching, lineup positions and substitutions imported from official sources and reconciled to game totals |
-| \`official_scoreboard_verified\` | **6** | Original college gamebook / university or conference source identifies matchup, tournament game, R/H/E, innings and pitching decisions; **individual player lines not yet imported** |
+| \`official_boxscore_verified\` | **9** | All original player batting, pitching, lineup positions and substitutions imported from official sources and reconciled to game totals |
+| \`official_scoreboard_verified\` | **5** | Original college gamebook / university or conference source identifies matchup, tournament game, R/H/E, innings and pitching decisions; **individual player lines not yet imported** |
 | \`attendance_only\` | **430** | Original attended date / schools retained; no invented scores, player stats or gamebook availability |
 | **Total** | **444** | Original personal attendance entries, one distinct row per contest |
 
 The first fully completed batch includes **six 2026 NCAA Auburn Regional games** on May 29–31, including the user-corrected final attendance game #444 **UCF @ Auburn** (regional Game 5, Auburn 9–3), plus the separately documented **Auburn @ Milwaukee** later May 31 (regional Game 6, Auburn 8–1). These gamebooks include 165 player-game lines.
 
-The next source-verified batch covers **eight SEC Tournament games (May 20–23, 2026; original workbook rows 432–439)**. All eight final scores and per-inning lines are checked and staged. Two also have *complete official hitter and pitcher gamebooks*, including 51 additional player-game lines:
+The next source-verified batch covers **eight SEC Tournament games (May 20–23, 2026; original workbook rows 432–439)**. All eight final scores and per-inning lines are checked and staged. Three also have *complete official hitter and pitcher gamebooks*, including 81 additional player-game lines:
 - **May 20 LSU @ Auburn:** Auburn 3–1; 27 player-game lines, source-confirmed starting batting order and four substitute entries; winner Jake Marciano, loser Casan Evans, save Jackson Sanders. Official LSU 2026 PDF gamebook cited in game record.
 - **May 23 Arkansas @ Auburn:** Arkansas 2–1; 24 player-game lines and nine starters on each side; winner Ethan McElvain, loser Ryan Hetzler. Official Arkansas gamebook linked.
-- **Six further May 20–23 SEC tournament games** (Tennessee–Arkansas, Mississippi State–Georgia, Florida–Alabama, Arkansas–Texas, Auburn–Texas A&M, Florida–Georgia) have official scores, inning lines and decisions but **not** individual player stats yet.
+- **May 23 Florida @ Georgia:** Georgia 8–7; 30 player-game lines, nine starting batting spots per team, two DH substitutions confirmed by the official Florida gamebook; winning pitcher Justin Byrd, losing pitcher Joshua Whritenour.
+- **Five further May 20–23 SEC tournament games** (Tennessee–Arkansas, Mississippi State–Georgia, Florida–Alabama, Arkansas–Texas, Auburn–Texas A&M) have official scores, inning lines and decisions but **not** individual player stats yet.
 
-Across eight full scorebooks: **216 source-reconciled player-game rows, 117 unique college athlete IDs**. Batting-slot identities stay 1–9 with indented \`↳\` substitutions, and pitcher #1 is the starting pitcher. Incomplete NCAA stats are not filled from a season roster or guessed.
+Across nine full scorebooks: **246 source-reconciled player-game rows, 147 unique college athlete IDs**. Batting-slot identities stay 1–9 with indented \`↳\` substitutions, and pitcher #1 is the starting pitcher. Incomplete NCAA stats are not filled from a season roster or guessed.
 
 Other confirmed corrections: user's South Alabama @ Old Dominion 2024-03-30 originally appeared as \`Friday, 3/30/34\`; final game #444 originally entered Milwaukee–Auburn but corrected to UCF–Auburn. Both corrections documented in \`data/import_report.json\` and in the source queue.
 

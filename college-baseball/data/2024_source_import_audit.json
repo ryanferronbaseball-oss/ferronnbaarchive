@@ -3,20 +3,245 @@
   "approval": "2024–2026 official four-year source backfill; no 2023 or earlier, no release",
   "original_attendance": 444,
   "attendance_2024": 71,
-  "verified_2024_total": 49,
-  "remaining_2024": 22,
+  "verified_2024_total": 51,
+  "remaining_2024": 20,
   "2025_gamebooks_preserved": 69,
   "2026_gamebooks_preserved": 68,
-  "completed_in_this_run": 0,
-  "linked_2024_sources": 52,
+  "completed_in_this_run": 2,
+  "linked_2024_sources": 56,
   "months_verified": {
     "2024-02": 11,
-    "2024-03": 15,
+    "2024-03": 17,
     "2024-04": 5,
     "2024-05": 12,
     "2024-06": 6
   },
-  "passed_games": [],
+  "passed_games": [
+    {
+      "game_id": "cb-2024-03-01-purdue-east-carolina-att0243",
+      "source_url": "https://ecupirates.com/sports/baseball/stats/2024/purdue/boxscore/13162",
+      "score": [
+        1,
+        7
+      ],
+      "player_game_rows": 25,
+      "pitching_decisions": {
+        "win": "Trey Yesavage",
+        "loss": "Jordan Morales",
+        "save": null
+      },
+      "stat_audit": {
+        "game_id": "cb-2024-03-01-purdue-east-carolina-att0243",
+        "source": "https://ecupirates.com/sports/baseball/stats/2024/purdue/boxscore/13162",
+        "http_code": 200,
+        "source_bytes": 1122151,
+        "source_sha256": "21639676c8845efa5168d6acfa506dbf269b9ff83d19743129fd94ae6feb545e",
+        "teams": [
+          {
+            "name": "Purdue",
+            "batters": 11,
+            "pitchers": 2,
+            "AB": 31,
+            "R": 1,
+            "H": 3,
+            "RBI": 1,
+            "BB": 2,
+            "SO": 12,
+            "pitching_outs": 24,
+            "pitching_runs": 7,
+            "pitching_hits": 9
+          },
+          {
+            "name": "East Carolina",
+            "batters": 10,
+            "pitchers": 2,
+            "AB": 31,
+            "R": 7,
+            "H": 9,
+            "RBI": 7,
+            "BB": 0,
+            "SO": 3,
+            "pitching_outs": 27,
+            "pitching_runs": 1,
+            "pitching_hits": 3
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 25,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 1,
+            "hits": 3,
+            "errors": 0,
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          {
+            "runs": 7,
+            "hits": 9,
+            "errors": 1,
+            "innings": [
+              0,
+              0,
+              3,
+              1,
+              0,
+              0,
+              0,
+              3,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Purdue",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 2,
+            "substitutes": 2
+          },
+          {
+            "team": "East Carolina",
+            "nine_starting_slots": true,
+            "batter_rows": 10,
+            "pitcher_rows": 2,
+            "substitutes": 1
+          }
+        ],
+        "official_decisions": {
+          "win": "Yesavage, Trey",
+          "loss": "Morales, Jordan",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2024-03-17-nc-state-georgia-tech-att0257",
+      "source_url": "https://gopack.com/sports/baseball/stats/2024/georgia-tech/boxscore/23042",
+      "score": [
+        5,
+        15
+      ],
+      "player_game_rows": 29,
+      "pitching_decisions": {
+        "win": "Logan McGuire",
+        "loss": "Dominic Fritton",
+        "save": null
+      },
+      "stat_audit": {
+        "game_id": "cb-2024-03-17-nc-state-georgia-tech-att0257",
+        "source": "https://gopack.com/sports/baseball/stats/2024/georgia-tech/boxscore/23042",
+        "http_code": 200,
+        "source_bytes": 1108549,
+        "source_sha256": "29701b5b8cd9d8ca78d407a8d7185199a7273acfaa9a05187e36e87072b640b3",
+        "teams": [
+          {
+            "name": "NC State",
+            "batters": 10,
+            "pitchers": 5,
+            "AB": 25,
+            "R": 5,
+            "H": 6,
+            "RBI": 5,
+            "BB": 8,
+            "SO": 7,
+            "pitching_outs": 20,
+            "pitching_runs": 15,
+            "pitching_hits": 12
+          },
+          {
+            "name": "Georgia Tech",
+            "batters": 9,
+            "pitchers": 5,
+            "AB": 31,
+            "R": 15,
+            "H": 12,
+            "RBI": 14,
+            "BB": 9,
+            "SO": 7,
+            "pitching_outs": 21,
+            "pitching_runs": 5,
+            "pitching_hits": 6
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 29,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 5,
+            "hits": 6,
+            "errors": 2,
+            "innings": [
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              4
+            ]
+          },
+          {
+            "runs": 15,
+            "hits": 12,
+            "errors": 0,
+            "innings": [
+              3,
+              3,
+              0,
+              2,
+              2,
+              0,
+              5
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "NC State",
+            "nine_starting_slots": true,
+            "batter_rows": 10,
+            "pitcher_rows": 5,
+            "substitutes": 1
+          },
+          {
+            "team": "Georgia Tech",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 5,
+            "substitutes": 0
+          }
+        ],
+        "official_decisions": {
+          "win": "Logan Mcguire",
+          "loss": "Fritton, Dominic",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": "Logan Mcguire",
+          "loss": null,
+          "save": null
+        }
+      }
+    }
+  ],
   "pending_review": [
     {
       "game_id": "cb-2024-02-19-marshall-college-of-charleston-att0231",
@@ -32,6 +257,16 @@
       "game_id": "cb-2024-05-23-florida-state-virginia-att0286",
       "source_url": "https://seminoles.com/sports/baseball/stats/2024/virginia/boxscore/15137",
       "reason": "Florida State: source batting order resolved to 10 starting slots, not 9"
+    },
+    {
+      "game_id": "cb-2024-03-02-florida-state-michigan-state-att0245",
+      "source_url": "https://seminoles.com/sports/baseball/stats/2024/michigan-state/boxscore/13735",
+      "reason": "Florida State: source batting order resolved to 11 starting slots, not 9"
+    },
+    {
+      "game_id": "cb-2024-05-21-virginia-tech-duke-att0279",
+      "source_url": "https://goduke.com/sports/baseball/stats/2024/virginia-tech/boxscore/23386",
+      "reason": "Virginia Tech: source batting order resolved to 10 starting slots, not 9"
     }
   ]
 }

@@ -1,0 +1,90 @@
+{
+  "status": "SOURCE_DISCOVERY_NEAR_COMPLETE_PLAYER_BACKFILL_OPEN",
+  "date": "2026-10-17",
+  "scope": "Unpublished 2024 four-year college baseball, JUCO excluded; no 2023 or earlier; 2025/2026 unchanged",
+  "totals": {
+    "2024_attended": 71,
+    "full_player_boxscores_verified": 27,
+    "source_matched_awaiting_full_player_import": 41,
+    "attendance_rows_awaiting_doubleheader_identity": 3,
+    "official_result_source_coverage": 68,
+    "player_stat_gamebooks_remaining": 44
+  },
+  "identity_blockers": [
+    {
+      "worksheet_row": 245,
+      "date": "2024-03-02",
+      "matchup": "Siena at UNC Asheville",
+      "issue": "One attendance entry, two games played. Do not invent which game was attended.",
+      "candidate_games": [
+        {
+          "game_number": 1,
+          "away_score": 6,
+          "home_score": 11,
+          "start_local": "12:00",
+          "source_url": "https://uncabulldogs.com/sports/baseball/stats/2024/siena/boxscore/9841"
+        },
+        {
+          "game_number": 2,
+          "away_score": 5,
+          "home_score": 12,
+          "start_local": "15:45",
+          "source_url": "https://uncabulldogs.com/sports/baseball/stats/2024/siena/boxscore/9842"
+        }
+      ]
+    },
+    {
+      "worksheet_rows": [
+        261,
+        262
+      ],
+      "date": "2024-03-23",
+      "matchup": "Vanderbilt at South Carolina",
+      "issue": "Two attendance entries match two official games; workbook order not confirmed.",
+      "candidate_games": [
+        {
+          "game_number": 1,
+          "away_score": 4,
+          "home_score": 8
+        },
+        {
+          "game_number": 2,
+          "away_score": 3,
+          "home_score": 8
+        }
+      ],
+      "source_url": "https://vucommodores.com/news/2024/03/23/gamecocks-take-doubleheader"
+    }
+  ],
+  "date_review": [
+    {
+      "worksheet_row": 287,
+      "attendance_sheet_date": "2024-05-23",
+      "verified_date": "2024-05-24",
+      "status": "user_confirmed_and_corrected_in_games_json",
+      "id_note": "Legacy game ID intentionally retained for referential stability",
+      "source_url": "https://seminoles.com/sports/baseball/stats/2024/virginia/boxscore/15137"
+    },
+    {
+      "worksheet_row": 270,
+      "sheet_date": "2024-04-15",
+      "source_date": "2024-04-14",
+      "status": "flagged_not_changed_pending_user_review",
+      "source_url": "https://southernmiss.com/sports/baseball/stats/2024/georgia-state/boxscore/11075"
+    },
+    {
+      "worksheet_row": 226,
+      "sheet_date": "2024-02-16",
+      "boxscore_header_date": "2024-02-15",
+      "status": "flagged_not_changed_without_confirmation",
+      "source_url": "https://goduke.com/sports/baseball/stats/2024/indiana/boxscore/21657"
+    }
+  ],
+  "data_integrity": {
+    "existing_full_player_gamebooks_unchanged": true,
+    "newly_matched_gamebooks_not_marked_as_full_imports": true,
+    "2025_and_2026_unchanged": true,
+    "published_or_merged": false
+  },
+  "next_action": "Extract and validate all player-game rows for 41 linked sources; match the three ambiguous attendance records only after game identity verification; reconcile team batting and pitching totals, lineup/substitutions, W/L/S, innings and R/H/E; update progress audits only after verified player import."
+}

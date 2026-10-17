@@ -10,7 +10,7 @@
     "2024-02": 17
   },
   "verified_player_gamebooks_at_queue_creation": 0,
-  "official_source_urls_identified": 52,
+  "official_source_urls_identified": 56,
   "source_queue": [
     {
       "game_id": "cb-2024-06-08-florida-clemson-att0295",
@@ -1103,6 +1103,90 @@
       "source_type": "official_university_sidearm_boxscore",
       "verification": "official_url_final_score_verified_player_lines_pending",
       "source_game_id": "15137"
+    },
+    {
+      "game_id": "cb-2024-03-01-purdue-east-carolina-att0243",
+      "worksheet_row": 244,
+      "date": "2024-03-01",
+      "away": "Purdue",
+      "home": "East Carolina",
+      "source_url": "https://ecupirates.com/sports/baseball/stats/2024/purdue/boxscore/13162",
+      "official_score": [
+        1,
+        7
+      ],
+      "ballpark": "Lewis Field at Clark-LeClair Stadium",
+      "city": "Greenville",
+      "state": "NC",
+      "game_type": "regular_season",
+      "postseason_round": null,
+      "neutral_site": false,
+      "source_type": "official_university_sidearm_boxscore",
+      "verification": "official_url_final_score_verified_player_lines_pending",
+      "source_game_id": "13162"
+    },
+    {
+      "game_id": "cb-2024-03-02-florida-state-michigan-state-att0245",
+      "worksheet_row": 246,
+      "date": "2024-03-02",
+      "away": "Florida State",
+      "home": "Michigan State",
+      "source_url": "https://seminoles.com/sports/baseball/stats/2024/michigan-state/boxscore/13735",
+      "official_score": [
+        11,
+        2
+      ],
+      "ballpark": "Fluor Field",
+      "city": "Greenville",
+      "state": "SC",
+      "game_type": "regular_season",
+      "postseason_round": null,
+      "neutral_site": true,
+      "source_type": "official_university_sidearm_boxscore",
+      "verification": "official_url_final_score_verified_player_lines_pending",
+      "source_game_id": "13735"
+    },
+    {
+      "game_id": "cb-2024-03-17-nc-state-georgia-tech-att0257",
+      "worksheet_row": 258,
+      "date": "2024-03-17",
+      "away": "NC State",
+      "home": "Georgia Tech",
+      "source_url": "https://gopack.com/sports/baseball/stats/2024/georgia-tech/boxscore/23042",
+      "official_score": [
+        5,
+        15
+      ],
+      "ballpark": "Mac Nease Park",
+      "city": "Atlanta",
+      "state": "GA",
+      "game_type": "regular_season",
+      "postseason_round": null,
+      "neutral_site": false,
+      "source_type": "official_university_sidearm_boxscore",
+      "verification": "official_url_final_score_verified_player_lines_pending",
+      "source_game_id": "23042"
+    },
+    {
+      "game_id": "cb-2024-05-21-virginia-tech-duke-att0279",
+      "worksheet_row": 280,
+      "date": "2024-05-21",
+      "away": "Virginia Tech",
+      "home": "Duke",
+      "source_url": "https://goduke.com/sports/baseball/stats/2024/virginia-tech/boxscore/23386",
+      "official_score": [
+        8,
+        11
+      ],
+      "ballpark": "Truist Field",
+      "city": "Charlotte",
+      "state": "NC",
+      "game_type": "conference_tournament",
+      "postseason_round": "ACC Baseball Championship",
+      "neutral_site": true,
+      "source_type": "official_university_sidearm_boxscore",
+      "verification": "official_url_final_score_verified_player_lines_pending",
+      "source_game_id": "23386"
     }
   ],
   "manual_review_flags": [
@@ -1120,7 +1204,7 @@
     "Preserve all verified 2025/2026 players, gamebook metadata, and their audits",
     "Do not publish/merge; 2023 and earlier are not authorized"
   ],
-  "new_2024_official_gamebooks_for_strict_import": 25,
+  "new_2024_official_gamebooks_for_strict_import": 29,
   "pending_identity_review_rows": [
     245,
     261,

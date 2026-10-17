@@ -131,6 +131,7 @@ source_replacements = {
     ("cb-2026-05-22-auburn-texas-a-m-att0436", "Texas A&M", "Terrence Kiel II"): (4, 1),
     ("cb-2026-05-19-south-carolina-tennessee-att0427", "South Carolina", "Logan Sutter"): (5, 1),
     ("cb-2026-05-19-south-carolina-tennessee-att0427", "Tennessee", "Ariel Antigua"): (8, 1),
+    ("cb-2026-05-14-virginia-louisville-att0422", "Virginia", "Antonio Perrotta"): (7, 1),
 }
 seen_replacements = {}
 for game in committed:
@@ -207,6 +208,8 @@ expected = {
     ("cb-2026-05-19-south-carolina-tennessee-att0427", "Tennessee"): {"ab": 40, "r": 11, "h": 15, "rbi": 10, "bb": 0, "k": 10},
     ("cb-2026-05-19-kentucky-vanderbilt-att0426", "Kentucky"): {"ab": 33, "r": 5, "h": 8, "rbi": 5, "bb": 2, "k": 10},
     ("cb-2026-05-19-kentucky-vanderbilt-att0426", "Vanderbilt"): {"ab": 35, "r": 8, "h": 12, "rbi": 6, "bb": 5, "k": 8},
+    ("cb-2026-05-14-virginia-louisville-att0422", "Virginia"): {"ab": 36, "r": 8, "h": 8, "rbi": 4, "bb": 9, "k": 8},
+    ("cb-2026-05-14-virginia-louisville-att0422", "Louisville"): {"ab": 36, "r": 3, "h": 8, "rbi": 3, "bb": 5, "k": 10},
 }
 
 keys = {"ab": "atBats", "r": "runs", "h": "hits",

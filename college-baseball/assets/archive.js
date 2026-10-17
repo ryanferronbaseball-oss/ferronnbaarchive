@@ -68,13 +68,15 @@ function gameLabel(g){return g.away+" @ "+g.home}
 function sourceLabel(g){return g.verification==="official_boxscore_verified"?"Official player box score verified":g.verification==="official_scoreboard_verified"?"Official score & innings verified · player stats pending":g.away_score!=null?"Score from attendance list · source check pending":"Attendance logged · box score pending"}
 function gameName(g){return '<a href="'+gameUrl(g)+'">'+esc(date(g.date))+" · "+esc(gameLabel(g))+'</a>'}
 function gameCard(g){
- return '<article class="cb-game-card"><div class="cb-card-meta">'+esc(date(g.date))+(g.game_number?' · Game '+g.game_number:'')+'</div>'
- +'<h3>'+gameName(g)+'</h3><div class="cb-score">'+esc(score(g))+'</div>'
- +'<p class="cb-card-meta">'+esc(g.ballpark||"Ballpark not recorded")+' · '+esc(sourceLabel(g))+'</p>'
- +'<a class="cb-link" href="'+gameUrl(g)+'">View game ↗</a></article>';
+ return '<article class="game-card cb-game-card"><div class="game-date">'+esc(date(g.date))
+ +(g.regional_game_number?' · Regional Game '+g.regional_game_number:g.game_number?' · Game '+g.game_number:'')+'</div>'
+ +'<h3>'+gameName(g)+'</h3><div class="game-score">'+esc(score(g))+'</div>'
+ +'<div class="game-date">'+esc(g.ballpark||"Ballpark not recorded")+'</div>'
+ +'<span class="mlb-pill '+(g.verification==="official_boxscore_verified"?"verified":"pending")+'">'+esc(sourceLabel(g))+'</span>'
+ +'<a class="action-link secondary" href="'+gameUrl(g)+'">View game ↗</a></article>';
 }
 function htmlTable(columns,rows,whenEmpty="No verified player statistics yet"){
- return '<div class="cb-table-wrap"><table class="cb-table"><thead><tr>'+columns.map(s=>'<th scope="col">'+esc(s)+'</th>').join("")+'</tr></thead><tbody>'
+ return '<div class="table-wrap cb-table-wrap"><table class="cb-table"><thead><tr>'+columns.map(s=>'<th scope="col">'+esc(s)+'</th>').join("")+'</tr></thead><tbody>'
  +(rows.length?rows.join(""):'<tr><td colspan="'+columns.length+'">'+esc(whenEmpty)+'</td></tr>')+'</tbody></table></div>';
 }
 function chart(items){
@@ -93,12 +95,12 @@ function renderHome(d){
  +metrics([["Games logged",d.games.length],["Seasons",seasons.length],["Schools seen",teams.length],["Ballparks logged",parks.length]])
  +(d.games.length?
  '<div class="cb-chart-grid"><section class="panel"><h2>Most-watched programs</h2>'+chart(teams.slice(0,8))+'</section><section class="panel"><h2>Ballpark history</h2>'+(parks.length?chart(parks.slice(0,8)):pending("Ballpark details await import."))+'</section></div>'
- +'<div class="section-heading"><h2>Recently attended games</h2><a href="./game.html" class="action-link secondary">Explore all games ↗</a></div><div class="cb-grid">'+d.games.slice(0,6).map(gameCard).join("")+'</div>'
+ +'<div class="section-heading"><h2>Recently attended games</h2><a href="./game.html" class="action-link secondary">Explore all games ↗</a></div><div class="game-grid cb-grid">'+d.games.slice(0,6).map(gameCard).join("")+'</div>'
  :pending("Ready for your first college baseball attendance list. No games have been added or invented. The import template accepts dates, teams, ballparks, tournament rounds, and doubleheader game numbers."))
- +'<div class="section-heading"><h2>Build your college baseball archive</h2></div><div class="cb-grid">'
- +'<div class="cb-game-card"><h3>Games & box scores</h3><p class="cb-sub">Inning-by-inning results, lineups, batting, pitching, scoring details and pitching decisions when official sources are verified.</p><a href="./game.html" class="cb-link">View games ↗</a></div>'
- +'<div class="cb-game-card"><h3>Players & leaderboards</h3><p class="cb-sub">Every player you watched, with witnessed-game career lines and hitter/pitcher summaries, including two-way players.</p><a href="./stats.html" class="cb-link">View players ↗</a></div>'
- +'<div class="cb-game-card"><h3>Signature performances</h3><p class="cb-sub">Best single-game hitting and pitching performances, records, and tournament milestones; no fabricated data.</p><a href="./records.html" class="cb-link">View records ↗</a></div></div>';
+ +'<div class="section-heading"><h2>Build your college baseball archive</h2></div><div class="game-grid cb-grid">'
+ +'<div class="game-card cb-game-card"><h3>Games & box scores</h3><p class="cb-sub">Inning-by-inning results, lineups, batting, pitching, scoring details and pitching decisions when official sources are verified.</p><a href="./game.html" class="cb-link">View games ↗</a></div>'
+ +'<div class="game-card cb-game-card"><h3>Players & leaderboards</h3><p class="cb-sub">Every player you watched, with witnessed-game career lines and hitter/pitcher summaries, including two-way players.</p><a href="./stats.html" class="cb-link">View players ↗</a></div>'
+ +'<div class="game-card cb-game-card"><h3>Signature performances</h3><p class="cb-sub">Best single-game hitting and pitching performances, records, and tournament milestones; no fabricated data.</p><a href="./records.html" class="cb-link">View records ↗</a></div></div>';
 }
 function renderGames(d){
  $("app").innerHTML='<div class="eyebrow">College Baseball · Games & box scores</div><h1>Game details.</h1>'

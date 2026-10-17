@@ -10,7 +10,7 @@
     "2024-02": 17
   },
   "verified_player_gamebooks_at_queue_creation": 0,
-  "official_source_urls_identified": 70,
+  "official_source_urls_identified": 71,
   "source_queue": [
     {
       "game_id": "cb-2024-06-08-florida-clemson-att0295",
@@ -1487,6 +1487,26 @@
       "neutral_site": false,
       "source_type": "official_university_pdf_scorebook",
       "verification": "original_university_one_page_pdf_full_player_boxscore_strict_audit"
+    },
+    {
+      "game_id": "cb-2024-03-08-notre-dame-virginia-tech-att0251",
+      "worksheet_row": 252,
+      "date": "2024-03-08",
+      "away": "Notre Dame",
+      "home": "Virginia Tech",
+      "source_url": "https://theacc.com/boxscore.aspx?id=JcLFfL9RUu0H5ystoOMbjQ7A58QMysWHEEqi7hufVoQXO5nVxbctjHh%2F6ifARsoKUNz2Cn1GpJx0eQgL%2FI8uNugW6%2F65ooJ9xE6%2BliOEFRks1pqns5E%2BSdhOF6cTmGJTatGL0tWP3RUaQJSzuX6XO7iNsKjtsD5Dds7TBMqMg4sEGg9iuR4sUWMKzgK6cFVK&path=baseball",
+      "official_score": [
+        3,
+        11
+      ],
+      "ballpark": "English Field at Atlantic Union Bank Park",
+      "city": "Blacksburg",
+      "state": "VA",
+      "game_type": "regular_season",
+      "postseason_round": null,
+      "neutral_site": false,
+      "source_type": "official_acc_sidearm_boxscore",
+      "verification": "official_full_acc_batting_pitching_source_pending_automated_audit"
     }
   ],
   "manual_review_flags": [

@@ -17,6 +17,8 @@ The site lives under \`/college-baseball/\`, with independent college baseball s
 | May | 27 | 27 | 0 |
 | **2026 total** | **68** | **68** | **7** |
 
+The three documented doubleheaders—Nicholls–Tennessee (February 14), Ohio–Austin Peay (March 10), and ETSU–Belmont (April 11)—each retain their two separately verified attendance/game records with explicit Game 1 and Game 2 labels. The February and March attendance-row alignment remains flagged for final confirmation rather than silently inferred.
+
 The final scorer-decision audit also matches the win, loss and save credits against 16 original February/March university box scores (including surname-first university naming), with each credited pitcher reconciled to the correct player-game record. See `data/2026_feb_march_pitching_decisions_audit.json` (**PASS**).
 
 The audited source of truth is `data/2026_full_slate_monthly_integrity_audit.json` (status **PASS**, zero remaining errors) plus `data/import_report.json`. March 1 Notre Dame–Tennessee Tech is separately reconciled to its official Notre Dame one-page PDF; March 10 Ohio–Austin Peay and February 14 Nicholls–Tennessee doubleheaders retain their individual game identities. The remaining source-research queues document historical discovery, not unfinished 2026 tasks. Older progress figures below are preserved as pilot history only.

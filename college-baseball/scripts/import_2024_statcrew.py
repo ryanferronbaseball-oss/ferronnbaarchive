@@ -110,6 +110,8 @@ def import_statcrew(game,item,global_keys,response):
             "first_trows",[tr.get_text(" ",strip=True)[:200]
                           for t in soup.find_all("table") for tr in t.find_all("tr")
                           if not tr.find("tr") and "ip h r er" in tr.get_text(" ",strip=True).lower()][:4],
+            "pitch-text",[repr(t.get_text()[:600]) for t in soup.find_all("table")
+                 if "ip h r er" in t.get_text(" ",strip=True).lower()][:1],
             "pitch-table",[tr.get_text(" ",strip=True)[:135] for t in soup.find_all("table")
                  if "ip h r er" in t.get_text(" ",strip=True).lower()
                  for tr in t.find_all("tr") if not tr.find("tr")][:10],

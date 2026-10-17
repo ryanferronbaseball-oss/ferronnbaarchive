@@ -111,6 +111,10 @@ def batting_rows(table_s,table_d,game_id,team,url):
         if not pname or pname.casefold()=="totals":
             raise ValueError(f"{game_id} {team}: invalid hitter name {s.get('Player')}")
         vals={key:number(x[key],key,pname) for key in ("AB","R","H","RBI","2B","3B","HR","BB","SB","CS","HBP","SH","SF","SO")}
+        # A listed pitcher with no offensive contribution did not necessarily
+        # take a plate appearance. Keep them through the pitching table only.
+        if pos.lower()=="p" and not any(vals.values()):
+            continue
         record={
           "game_id":game_id,"player_id":"cb-"+slug(team)+"-"+slug(pname),"player":pname,
           "team":team,"position":pos or None,"source_url":url,
@@ -233,6 +237,17 @@ def scrape(game):
         own=audit["teams"][i];other=audit["teams"][1-i]
         if own["pitching_hits"]!=other["H"] or own["pitching_runs"]!=other["R"]:
             raise ValueError(f"{game['id']}: {own['name']} pitching totals don't reconcile opponent hitting")
+    for result in ("winner","loser","save"):
+        expected=game.get(result)
+        matched=[r for r in row_by_id.values() if "pitching" in r and expected
+                 and slug(r["player"])==slug(expected)]
+        if len(matched)!=(1 if expected else 0):
+            raise ValueError(f"{game['id']}: official pitching decision {result} {expected!r} does not map to exactly one pitcher")
+    for r in row_by_id.values():
+        if "pitching" in r:
+            r["pitching"]["wins"]=int(slug(r["player"])==slug(game["winner"]))
+            r["pitching"]["losses"]=int(slug(r["player"])==slug(game["loser"]))
+            r["pitching"]["saves"]=int(bool(game.get("save")) and slug(r["player"])==slug(game["save"]))
     if len(row_by_id)<17:
         raise ValueError(f"{game['id']}: too few player boxscore rows {len(row_by_id)}")
     audit["player_rows"]=len(row_by_id)

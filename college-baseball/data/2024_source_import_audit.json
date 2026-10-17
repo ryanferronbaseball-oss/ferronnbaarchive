@@ -1,5 +1,5 @@
 {
-  "status": "PASS",
+  "status": "PARTIAL_REVIEW_REQUIRED",
   "approval": "2024–2026 official four-year source backfill; no 2023 or earlier, no release",
   "original_attendance": 444,
   "attendance_2024": 71,
@@ -7,8 +7,8 @@
   "remaining_2024": 6,
   "2025_gamebooks_preserved": 69,
   "2026_gamebooks_preserved": 68,
-  "completed_in_this_run": 1,
-  "linked_2024_sources": 65,
+  "completed_in_this_run": 0,
+  "linked_2024_sources": 68,
   "months_verified": {
     "2024-02": 16,
     "2024-03": 21,
@@ -16,85 +16,22 @@
     "2024-05": 16,
     "2024-06": 6
   },
-  "passed_games": [
+  "passed_games": [],
+  "pending_review": [
     {
-      "game_id": "cb-2024-02-25-virginia-auburn-att0239",
-      "source_url": "https://static.virginiasports.com/custompages/sports/m-basebl/stats/2023-2024/7auburn.htm",
-      "score": [
-        6,
-        4
-      ],
-      "player_game_rows": 28,
-      "pitching_decisions": {
-        "win": "Kevin Jaxel",
-        "loss": "Christian Herberholz",
-        "save": "Aidan Teel"
-      },
-      "stat_audit": {
-        "status": "PASS",
-        "game_id": "cb-2024-02-25-virginia-auburn-att0239",
-        "source": "https://static.virginiasports.com/custompages/sports/m-basebl/stats/2023-2024/7auburn.htm",
-        "source_bytes": 39961,
-        "source_sha256": "0226f0c7f01a6cddfffdb575a67bfe165222caeca9eaa9a82f9247e466973d94",
-        "player_rows": 28,
-        "scoreboard": [
-          {
-            "innings": [
-              0,
-              0,
-              1,
-              0,
-              1,
-              1,
-              1,
-              2,
-              0
-            ],
-            "runs": 6,
-            "hits": 11,
-            "errors": 1
-          },
-          {
-            "innings": [
-              0,
-              0,
-              1,
-              1,
-              0,
-              0,
-              1,
-              1,
-              0
-            ],
-            "runs": 4,
-            "hits": 7,
-            "errors": 0
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "Virginia",
-            "nine_starting_slots": true,
-            "batter_rows": 9,
-            "pitcher_rows": 4,
-            "substitutes": 0
-          },
-          {
-            "team": "Auburn",
-            "nine_starting_slots": true,
-            "batter_rows": 11,
-            "pitcher_rows": 4,
-            "substitutes": 2
-          }
-        ],
-        "pitching_decisions": {
-          "win": "Kevin Jaxel",
-          "loss": "Christian Herberholz",
-          "save": "Aidan Teel"
-        },
-        "source_type": "official_university_statcrew_html"
-      }
+      "game_id": "cb-2024-03-23-vanderbilt-south-carolina-att0260",
+      "source_url": "https://storage.googleapis.com/vucommodores-prod/2024/03/VU23-Box.pdf",
+      "reason": "Not a verifiable official university HTML boxscore; PDF requires separate source transcription"
+    },
+    {
+      "game_id": "cb-2024-03-23-vanderbilt-south-carolina-att0261",
+      "source_url": "https://storage.googleapis.com/vucommodores-prod/2024/03/VU24-Box.pdf",
+      "reason": "Not a verifiable official university HTML boxscore; PDF requires separate source transcription"
+    },
+    {
+      "game_id": "cb-2024-03-24-vanderbilt-south-carolina-att0262",
+      "source_url": "https://storage.googleapis.com/vucommodores-prod/2024/03/VU25-Box.pdf",
+      "reason": "Not a verifiable official university HTML boxscore; PDF requires separate source transcription"
     }
-  ],
-  "pending_review": []
+  ]
 }

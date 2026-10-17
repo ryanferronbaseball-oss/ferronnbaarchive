@@ -4,26 +4,142 @@
   "original_attendance_entries": 444,
   "verified_2026_unchanged": 68,
   "total_2025_attendance": 74,
-  "completed_in_this_run": 0,
-  "verified_2025_total": 63,
-  "linked_source_games": 71,
-  "passed_games": [],
+  "completed_in_this_run": 1,
+  "verified_2025_total": 66,
+  "linked_source_games": 74,
+  "passed_games": [
+    {
+      "game_id": "cb-2025-05-22-oklahoma-vanderbilt-att0359",
+      "source_url": "https://soonersports.com/sports/baseball/stats/2025/vanderbilt/boxscore/15226",
+      "score": [
+        1,
+        6
+      ],
+      "source_game_id": "15226",
+      "player_rows": 28,
+      "source_stat_audit": {
+        "game_id": "cb-2025-05-22-oklahoma-vanderbilt-att0359",
+        "source": "https://soonersports.com/sports/baseball/stats/2025/vanderbilt/boxscore/15226",
+        "http_code": 200,
+        "source_bytes": 1210107,
+        "source_sha256": "e80d482171fb81e05942421f3530f8e112cfcb9ec1380068fbc8b9ea3c13834e",
+        "teams": [
+          {
+            "name": "Oklahoma",
+            "batters": 10,
+            "pitchers": 5,
+            "AB": 29,
+            "R": 1,
+            "H": 2,
+            "RBI": 1,
+            "BB": 6,
+            "SO": 17,
+            "pitching_outs": 24,
+            "pitching_runs": 6,
+            "pitching_hits": 8
+          },
+          {
+            "name": "Vanderbilt",
+            "batters": 9,
+            "pitchers": 4,
+            "AB": 33,
+            "R": 6,
+            "H": 8,
+            "RBI": 6,
+            "BB": 2,
+            "SO": 4,
+            "pitching_outs": 27,
+            "pitching_runs": 1,
+            "pitching_hits": 2
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 28,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 1,
+            "hits": 2,
+            "errors": 3,
+            "innings": [
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 6,
+            "hits": 8,
+            "errors": 0,
+            "innings": [
+              0,
+              0,
+              4,
+              1,
+              0,
+              0,
+              1,
+              0,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Oklahoma",
+            "nine_starting_slots": true,
+            "batter_rows": 10,
+            "pitcher_rows": 5,
+            "substitutes": 1
+          },
+          {
+            "team": "Vanderbilt",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 4,
+            "substitutes": 0
+          }
+        ],
+        "official_decisions": {
+          "win": "Jd Thompson",
+          "loss": "Crossland, Cade",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": "Jd Thompson",
+          "loss": null,
+          "save": null
+        }
+      },
+      "pitching_decisions": {
+        "win": "Jd Thompson",
+        "loss": "Cade Crossland",
+        "save": null
+      }
+    }
+  ],
   "metadata_corrections": [],
   "pending_review": [
-    {
-      "game_id": "cb-2025-06-01-lsu-little-rock-att0369",
-      "source_url": "https://static.lsusports.net/assets/docs/bb/25stats/LSU601.pdf",
-      "reason": "Official source PDF identified; separate PDF line transcription required"
-    },
     {
       "game_id": "cb-2025-06-01-dallas-baptist-little-rock-att0368",
       "source_url": "https://dbupatriots.com/sports/baseball/stats/2025/little-rock/boxscore/8550",
       "reason": "HTTPSConnectionPool(host='dbupatriots.com', port=443): Max retries exceeded with url: /sports/baseball/stats/2025/little-rock/boxscore/8550 (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)')))"
     },
     {
-      "game_id": "cb-2025-05-31-dallas-baptist-lsu-att0367",
-      "source_url": "https://static.lsusports.net/assets/docs/bb/25stats/LSU531.pdf",
-      "reason": "Official source PDF identified; separate PDF line transcription required"
+      "game_id": "cb-2025-05-23-texas-a-m-lsu-att0361",
+      "source_url": "https://lsusports.net/boxscore/sec-tournament-30/",
+      "reason": "404 Client Error: Not Found for url: https://lsusports.net/boxscore/sec-tournament-30"
+    },
+    {
+      "game_id": "cb-2025-05-22-texas-a-m-auburn-att0357",
+      "source_url": "https://auburntigers.com/sports/baseball/schedule/season/2025",
+      "reason": "Official school boxscore doesn't visibly confirm attendance date"
     },
     {
       "game_id": "cb-2025-04-13-stanford-clemson-att0333",

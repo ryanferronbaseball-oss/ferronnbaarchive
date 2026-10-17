@@ -81,7 +81,9 @@ def pitch_rows(soup,first_pre,teams):
                 if any(p[0]==name for p in out[team]):
                     raise ValueError("Duplicate source pitcher "+name)
                 out[team].append((name,outs,vals))
-            if not out[team]:raise ValueError("Cannot read university pitcher section for "+team)
+            if not out[team]:
+                print("STATCREW-SECTION-REVIEW",team,repr(section[:1200]),flush=True)
+                raise ValueError("Cannot read university pitcher section for "+team)
         return out
     out={t:[] for t in teams};team=None
     for l in lines:

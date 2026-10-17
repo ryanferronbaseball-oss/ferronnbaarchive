@@ -9,7 +9,7 @@
     "2025-02": 14
   },
   "verified_player_gamebooks": 0,
-  "official_source_url_verified": 68,
+  "official_source_url_verified": 71,
   "updated": "2026-10-17",
   "source_queue": [
     {
@@ -684,6 +684,28 @@
       "source_game_id": "11907"
     },
     {
+      "game_id": "cb-2025-04-13-stanford-clemson-att0333",
+      "worksheet_row": 334,
+      "date": "2025-04-13",
+      "away": "Stanford",
+      "home": "Clemson",
+      "source_url": "https://data.clemsontigers.com/Stats/Baseball/2025/cu254131.htm",
+      "official_score": [
+        11,
+        6
+      ],
+      "ballpark": "Doug Kingsmore Stadium",
+      "city": "Clemson",
+      "state": "SC",
+      "neutral_site": false,
+      "game_type": "regular_season",
+      "postseason_round": null,
+      "source_type": "official_university_legacy_html_gamebook",
+      "verification": "official_gamebook_source_identified_different_parser_required",
+      "source_game_id": "cu254131.htm",
+      "notes": "Official Clemson box score linked from April 13 game recap; legacy NCAA HTML rather than Sidearm; no invented stats if parser fails"
+    },
+    {
       "game_id": "cb-2025-04-12-louisville-nc-state-att0332",
       "worksheet_row": 333,
       "date": "2025-04-12",
@@ -824,6 +846,27 @@
       "source_game_id": "29225"
     },
     {
+      "game_id": "cb-2025-03-22-western-kentucky-kennesaw-state-att0325",
+      "worksheet_row": 326,
+      "date": "2025-03-22",
+      "away": "Western Kentucky",
+      "home": "Kennesaw State",
+      "source_url": "https://wkusports.com/sports/baseball/stats/2025/kennesaw-state/boxscore/12878",
+      "official_score": [
+        4,
+        1
+      ],
+      "ballpark": "Walter Kelly Field",
+      "city": "Marietta",
+      "state": "GA",
+      "neutral_site": false,
+      "game_type": "regular_season",
+      "postseason_round": null,
+      "source_type": "official_university_sidearm_boxscore",
+      "verification": "official_url_score_verified_player_lines_pending",
+      "source_game_id": "12878"
+    },
+    {
       "game_id": "cb-2025-03-19-richmond-virginia-att0324",
       "worksheet_row": 325,
       "date": "2025-03-19",
@@ -842,6 +885,27 @@
       "source_type": "official_university_sidearm_boxscore",
       "verification": "official_url_score_verified_player_lines_pending",
       "source_game_id": "11480"
+    },
+    {
+      "game_id": "cb-2025-03-16-harvard-northeastern-att0323",
+      "worksheet_row": 324,
+      "date": "2025-03-16",
+      "away": "Harvard",
+      "home": "Northeastern",
+      "source_url": "https://gocrimson.com/sports/baseball/stats/2025/northeastern-university/boxscore/31531",
+      "official_score": [
+        4,
+        8
+      ],
+      "ballpark": "Friedman Diamond",
+      "city": "Brookline",
+      "state": "MA",
+      "neutral_site": false,
+      "game_type": "regular_season",
+      "postseason_round": null,
+      "source_type": "official_university_sidearm_boxscore",
+      "verification": "official_url_score_verified_player_lines_pending",
+      "source_game_id": "31531"
     },
     {
       "game_id": "cb-2025-03-15-virginia-tech-nc-state-att0322",

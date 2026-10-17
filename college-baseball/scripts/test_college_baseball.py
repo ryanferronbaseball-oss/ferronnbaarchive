@@ -157,11 +157,11 @@ expected = {
     ("cb-2026-05-31-ucf-auburn", "UCF"): {"ab": 32, "r": 3, "h": 6, "rbi": 3, "bb": 3, "k": 11},
     ("cb-2026-05-31-ucf-auburn", "Auburn"): {"ab": 32, "r": 9, "h": 10, "rbi": 9, "bb": 5, "k": 11},
     ("cb-2026-05-31-auburn-milwaukee", "Auburn"): {"ab": 30, "r": 8, "h": 5, "rbi": 7, "bb": 5, "k": 6},
-    ("cb-2026-05-31-auburn-milwaukee", "Milwaukee"): {"ab": 30, "r": 1, "h": 4, "rbi": 1, "bb": 0, "k": 14    ("cb-2026-05-20-lsu-auburn-att0432", "LSU"): {"ab": 28, "r": 1, "h": 4, "rbi": 1, "bb": 3, "k": 6},
+    ("cb-2026-05-31-auburn-milwaukee", "Milwaukee"): {"ab": 30, "r": 1, "h": 4, "rbi": 1, "bb": 0, "k": 14},
+    ("cb-2026-05-20-lsu-auburn-att0432", "LSU"): {"ab": 28, "r": 1, "h": 4, "rbi": 1, "bb": 3, "k": 6},
     ("cb-2026-05-20-lsu-auburn-att0432", "Auburn"): {"ab": 30, "r": 3, "h": 7, "rbi": 2, "bb": 1, "k": 12},
     ("cb-2026-05-23-arkansas-auburn-att0438", "Arkansas"): {"ab": 32, "r": 2, "h": 5, "rbi": 2, "bb": 2, "k": 15},
     ("cb-2026-05-23-arkansas-auburn-att0438", "Auburn"): {"ab": 32, "r": 1, "h": 7, "rbi": 1, "bb": 1, "k": 11},
-},
 }
 
 keys = {"ab": "atBats", "r": "runs", "h": "hits",

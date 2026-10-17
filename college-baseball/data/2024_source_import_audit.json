@@ -1,239 +1,125 @@
 {
-  "status": "PARTIAL_REVIEW_REQUIRED",
+  "status": "PASS",
   "approval": "2024–2026 official four-year source backfill; no 2023 or earlier, no release",
   "original_attendance": 444,
   "attendance_2024": 71,
-  "verified_2024_total": 17,
-  "remaining_2024": 54,
+  "verified_2024_total": 18,
+  "remaining_2024": 53,
   "2025_gamebooks_preserved": 69,
   "2026_gamebooks_preserved": 68,
-  "completed_in_this_run": 2,
+  "completed_in_this_run": 1,
   "linked_2024_sources": 18,
   "months_verified": {
-    "2024-05": 11,
+    "2024-05": 12,
     "2024-06": 6
   },
   "passed_games": [
     {
-      "game_id": "cb-2024-05-05-california-southern-california-att0276",
-      "source_url": "https://usctrojans.com/sports/baseball/stats/2024/california/boxscore/33804",
+      "game_id": "cb-2024-05-01-campbell-liberty-att0274",
+      "source_url": "https://libertyflames.com/sports/baseball/stats/2024/campbell/boxscore/13445",
       "score": [
-        6,
-        3
+        9,
+        14
       ],
-      "player_game_rows": 26,
+      "player_game_rows": 34,
       "pitching_decisions": {
-        "win": "Trey Newmann",
-        "loss": "William Watson",
-        "save": "Tyler Stasiowski"
+        "win": "Trey Cooper",
+        "loss": "David Rossow",
+        "save": null
       },
       "stat_audit": {
-        "game_id": "cb-2024-05-05-california-southern-california-att0276",
-        "source": "https://usctrojans.com/sports/baseball/stats/2024/california/boxscore/33804",
+        "game_id": "cb-2024-05-01-campbell-liberty-att0274",
+        "source": "https://libertyflames.com/sports/baseball/stats/2024/campbell/boxscore/13445",
         "http_code": 200,
-        "source_bytes": 1467184,
-        "source_sha256": "f32a87c44d8ff0c87760c1bc553ab9f7e1fb3ae7ad2223000f7995c2d5a1e2cb",
+        "source_bytes": 1504735,
+        "source_sha256": "ab99ad219e341828793d9ca12b3b1aa03720d8e10aaa909a589aabf6db54f37f",
         "teams": [
           {
-            "name": "California",
-            "batters": 10,
-            "pitchers": 3,
-            "AB": 32,
-            "R": 6,
-            "H": 5,
-            "RBI": 6,
-            "BB": 4,
-            "SO": 9,
-            "pitching_outs": 27,
-            "pitching_runs": 3,
-            "pitching_hits": 5
+            "name": "Campbell",
+            "batters": 11,
+            "pitchers": 6,
+            "AB": 39,
+            "R": 9,
+            "H": 12,
+            "RBI": 9,
+            "BB": 7,
+            "SO": 8,
+            "pitching_outs": 24,
+            "pitching_runs": 14,
+            "pitching_hits": 10
           },
           {
-            "name": "Southern California",
+            "name": "Liberty",
             "batters": 10,
-            "pitchers": 3,
-            "AB": 30,
-            "R": 3,
-            "H": 5,
-            "RBI": 3,
-            "BB": 5,
-            "SO": 5,
+            "pitchers": 7,
+            "AB": 33,
+            "R": 14,
+            "H": 10,
+            "RBI": 11,
+            "BB": 15,
+            "SO": 9,
             "pitching_outs": 27,
-            "pitching_runs": 6,
-            "pitching_hits": 5
+            "pitching_runs": 9,
+            "pitching_hits": 12
           }
         ],
         "source_warnings": [],
-        "player_rows": 26,
+        "player_rows": 34,
         "status": "PASS",
         "scoreboard": [
           {
-            "runs": 6,
-            "hits": 5,
-            "errors": 0,
+            "runs": 9,
+            "hits": 12,
+            "errors": 1,
             "innings": [
+              2,
               0,
+              1,
+              0,
+              1,
               0,
               0,
               4,
-              0,
-              0,
-              0,
-              2,
-              0
+              1
             ]
           },
           {
-            "runs": 3,
-            "hits": 5,
+            "runs": 14,
+            "hits": 10,
             "errors": 2,
             "innings": [
+              5,
+              1,
+              1,
               2,
               0,
-              0,
-              0,
-              0,
               1,
-              0,
-              0,
-              0
-            ]
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "California",
-            "nine_starting_slots": true,
-            "batter_rows": 10,
-            "pitcher_rows": 3,
-            "substitutes": 1
-          },
-          {
-            "team": "Southern California",
-            "nine_starting_slots": true,
-            "batter_rows": 10,
-            "pitcher_rows": 3,
-            "substitutes": 1
-          }
-        ],
-        "official_decisions": {
-          "win": "Newmann,trey",
-          "loss": "Watson, William",
-          "save": "Stasiowski,tyler"
-        },
-        "resolved_pitcher_decisions": {
-          "win": null,
-          "loss": null,
-          "save": null
-        }
-      }
-    },
-    {
-      "game_id": "cb-2024-05-04-santa-clara-san-diego-att0275",
-      "source_url": "https://usdtoreros.com/sports/baseball/stats/2024/santa-clara/boxscore/14356",
-      "score": [
-        0,
-        2
-      ],
-      "player_game_rows": 23,
-      "pitching_decisions": {
-        "win": "Logan Reddemann",
-        "loss": "Brandon GOMEZ",
-        "save": "Conner Thurman"
-      },
-      "stat_audit": {
-        "game_id": "cb-2024-05-04-santa-clara-san-diego-att0275",
-        "source": "https://usdtoreros.com/sports/baseball/stats/2024/santa-clara/boxscore/14356",
-        "http_code": 200,
-        "source_bytes": 615051,
-        "source_sha256": "30c4815e7ce25e7218e7d255ad72f5d8ee9de451dbf00e52ee18e4f479af6ead",
-        "teams": [
-          {
-            "name": "Santa Clara",
-            "batters": 11,
-            "pitchers": 1,
-            "AB": 32,
-            "R": 0,
-            "H": 5,
-            "RBI": 0,
-            "BB": 3,
-            "SO": 9,
-            "pitching_outs": 24,
-            "pitching_runs": 2,
-            "pitching_hits": 6
-          },
-          {
-            "name": "San Diego",
-            "batters": 9,
-            "pitchers": 2,
-            "AB": 26,
-            "R": 2,
-            "H": 6,
-            "RBI": 2,
-            "BB": 1,
-            "SO": 4,
-            "pitching_outs": 27,
-            "pitching_runs": 0,
-            "pitching_hits": 5
-          }
-        ],
-        "source_warnings": [],
-        "player_rows": 23,
-        "status": "PASS",
-        "scoreboard": [
-          {
-            "runs": 0,
-            "hits": 5,
-            "errors": 1,
-            "innings": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ]
-          },
-          {
-            "runs": 2,
-            "hits": 6,
-            "errors": 0,
-            "innings": [
-              0,
-              0,
-              0,
-              0,
+              3,
               1,
-              0,
-              1,
-              0,
               null
             ]
           }
         ],
         "lineup_audit": [
           {
-            "team": "Santa Clara",
+            "team": "Campbell",
             "nine_starting_slots": true,
             "batter_rows": 11,
-            "pitcher_rows": 1,
+            "pitcher_rows": 6,
             "substitutes": 2
           },
           {
-            "team": "San Diego",
+            "team": "Liberty",
             "nine_starting_slots": true,
-            "batter_rows": 9,
-            "pitcher_rows": 2,
-            "substitutes": 0
+            "batter_rows": 10,
+            "pitcher_rows": 7,
+            "substitutes": 1
           }
         ],
         "official_decisions": {
-          "win": "Reddemann, Logan",
-          "loss": "GOMEZ, Brandon",
-          "save": "Thurman, Conner"
+          "win": "Cooper, Trey",
+          "loss": "Rossow, David",
+          "save": null
         },
         "resolved_pitcher_decisions": {
           "win": null,
@@ -243,11 +129,5 @@
       }
     }
   ],
-  "pending_review": [
-    {
-      "game_id": "cb-2024-05-01-campbell-liberty-att0274",
-      "source_url": "https://libertyflames.com/sports/baseball/stats/2024/campbell/boxscore/13445",
-      "reason": "Campbell: source batting order resolved to 10 starting slots, not 9"
-    }
-  ]
+  "pending_review": []
 }

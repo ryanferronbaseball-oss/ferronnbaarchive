@@ -62,12 +62,12 @@ committed = json.loads((SITE / "data" / "games.json").read_text())
 pilot_rows = json.loads((SITE / "data" / "player_stats.json").read_text())
 pilot_report = json.loads((SITE / "data" / "import_report.json").read_text())
 check(len(attended) == len(committed) == 6, "Six attended regional contests staged including corrected game #444")
-check(len(pilot_rows) == 81 and len({r["player_id"] for r in pilot_rows}) == 62,
-      "Three official college baseball scorebooks produce 81 audited rows for 62 players")
-check(len([g for g in committed if g["verification"] == "official_boxscore_verified"]) == 3,
-      "Only three complete player gamebooks marked verified")
-check(len([g for g in committed if g["verification"] == "source_matched"]) == 3,
-      "Three official score/inning lines await player table import")
+check(len(pilot_rows) == 165 and len({r["player_id"] for r in pilot_rows}) == 86,
+      "Six official college baseball scorebooks produce 165 audited rows for 86 athletes")
+check(len([g for g in committed if g["verification"] == "official_boxscore_verified"]) == 6,
+      "All six college gamebooks marked fully verified")
+check(not any(g["verification"] == "source_matched" for g in committed),
+      "No pilot game remains incomplete")
 check(all(g["source_url"] and
           sum(x["away"] or 0 for x in g["innings"]) == g["away_score"] and
           sum(x["home"] or 0 for x in g["innings"]) == g["home_score"]
@@ -75,18 +75,25 @@ check(all(g["source_url"] and
       "Every pilot game has source-backed innings reconciling to final")
 check({g["id"] for g in committed if g["verification"] == "official_boxscore_verified"} ==
       {r["game_id"] for r in pilot_rows},
-      "Player stats are tied to three verified regional games only")
+      "Player stats are tied to all six verified regional games")
 
 # Reconcile audited team and pitcher lines to each official PDF's box score,
 # not merely to metadata or a guessed batting average.
 expected = {
-    ("2026-05-29", "NC State"): {"ab": 38, "r": 3, "h": 12, "rbi": 3, "bb": 6, "k": 5},
-    ("2026-05-29", "UCF"): {"ab": 35, "r": 9, "h": 11, "rbi": 9, "bb": 1, "k": 5},
-    ("2026-05-30", "Auburn"): {"ab": 42, "r": 17, "h": 18, "rbi": 17, "bb": 7, "k": 5},
-    ("2026-05-30", "NC State"): {"ab": 39, "r": 13, "h": 14, "rbi": 10, "bb": 3, "k": 4},
-    ("2026-05-31", "Auburn"): {"ab": 30, "r": 8, "h": 5, "rbi": 7, "bb": 5, "k": 6},
-    ("2026-05-31", "Milwaukee"): {"ab": 30, "r": 1, "h": 4, "rbi": 1, "bb": 0, "k": 14},
+    ("cb-2026-05-29-milwaukee-auburn", "Milwaukee"): {"ab": 38, "r": 13, "h": 16, "rbi": 12, "bb": 6, "k": 12},
+    ("cb-2026-05-29-milwaukee-auburn", "Auburn"): {"ab": 35, "r": 8, "h": 9, "rbi": 8, "bb": 0, "k": 6},
+    ("cb-2026-05-29-nc-state-ucf", "NC State"): {"ab": 38, "r": 3, "h": 12, "rbi": 3, "bb": 6, "k": 5},
+    ("cb-2026-05-29-nc-state-ucf", "UCF"): {"ab": 35, "r": 9, "h": 11, "rbi": 9, "bb": 1, "k": 5},
+    ("cb-2026-05-30-auburn-nc-state", "Auburn"): {"ab": 42, "r": 17, "h": 18, "rbi": 17, "bb": 7, "k": 5},
+    ("cb-2026-05-30-auburn-nc-state", "NC State"): {"ab": 39, "r": 13, "h": 14, "rbi": 10, "bb": 3, "k": 4},
+    ("cb-2026-05-30-ucf-milwaukee", "UCF"): {"ab": 35, "r": 6, "h": 8, "rbi": 6, "bb": 5, "k": 6},
+    ("cb-2026-05-30-ucf-milwaukee", "Milwaukee"): {"ab": 31, "r": 13, "h": 9, "rbi": 11, "bb": 9, "k": 8},
+    ("cb-2026-05-31-ucf-auburn", "UCF"): {"ab": 32, "r": 3, "h": 6, "rbi": 3, "bb": 3, "k": 11},
+    ("cb-2026-05-31-ucf-auburn", "Auburn"): {"ab": 32, "r": 9, "h": 10, "rbi": 9, "bb": 5, "k": 11},
+    ("cb-2026-05-31-auburn-milwaukee", "Auburn"): {"ab": 30, "r": 8, "h": 5, "rbi": 7, "bb": 5, "k": 6},
+    ("cb-2026-05-31-auburn-milwaukee", "Milwaukee"): {"ab": 30, "r": 1, "h": 4, "rbi": 1, "bb": 0, "k": 14},
 }
+
 keys = {"ab": "atBats", "r": "runs", "h": "hits",
         "rbi": "rbi", "bb": "baseOnBalls", "k": "strikeOuts"}
 for game in committed:
@@ -97,7 +104,7 @@ for game in committed:
         bats = [r["batting"] for r in player_list if "batting" in r]
         pitchers = [r["pitching"] for r in player_list if "pitching" in r]
         totals = {k: sum(b[keys[k]] for b in bats) for k in keys}
-        check(totals == expected[(game["date"], team)], "Official team batting totals match " + game["date"] + " " + team)
+        check(totals == expected[(game["id"], team)], "Official team batting totals match " + game["id"] + " " + team)
         other = game["home"] if team == game["away"] else game["away"]
         opposition = [r["batting"] for r in pilot_rows if r["game_id"] == game["id"] and r["team"] == other and "batting" in r]
         outs = sum(p["outs"] for p in pitchers)
@@ -131,8 +138,8 @@ check(original["id"] == "cb-2026-05-31-auburn-milwaukee"
       and original["verification"] == "official_boxscore_verified",
       "Game #443 retains the source-verified Auburn 8 Milwaukee 1 box score")
 check(any(x["game_id"] == original["id"] for x in pilot_rows)
-      and all(x["game_id"] != corrected["id"] for x in pilot_rows),
-      "Verified game 6 player lines never misassigned to corrected game 5")
+      and len([x for x in pilot_rows if x["game_id"] == corrected["id"]]) == 27,
+      "Corrected UCF-Auburn game 5 has its own 27 verified player entries")
 check({g["source_worksheet_row"] for g in committed} == set(range(440,446)),
       "Six distinct source rows retained without merging tournament games")
 
@@ -281,7 +288,7 @@ with tempfile.TemporaryDirectory() as t:
                       f"{width} seeded-test records page fits viewport")
                 page.close()
             check(not errors, "Both populated-view widths have zero uncaught JavaScript errors")
-            # Finally, test the actual five source-backed pilot games, distinct from
+            # Finally, test all six real source-backed pilot games, distinct from
             # the synthetic examples and also without modifying the repo data.
             for source in ("games.json", "player_stats.json", "import_report.json"):
                 (empty_root / source).write_text((SITE / "data" / source).read_text())
@@ -296,15 +303,17 @@ with tempfile.TemporaryDirectory() as t:
                 check("UCF @ Auburn" in page.locator("#cb-game-details").inner_text()
                       and "3 – 9" in page.locator("#cb-game-details").inner_text(),
                       f"{width} corrected final attendance game #444 shows UCF at Auburn 9-3")
-                check("Official college player box score not yet imported" in page.locator("#cb-game-details").inner_text(),
-                      f"{width} corrected game #444 does not borrow Milwaukee player's stats")
+                check("DeAmez Ross" in page.locator("#cb-game-details").inner_text()
+                      and "Alex Petrovic" in page.locator("#cb-game-details").inner_text()
+                      and "Camden Kuhnke" not in page.locator("#cb-game-details").inner_text(),
+                      f"{width} corrected game #444 has official UCF/Auburn, not Milwaukee, player tables")
                 visit(page, host, "game.html?id=cb-2026-05-31-auburn-milwaukee", "#cb-game-details .cb-game-summary")
                 check("8 – 1" in page.locator("#cb-game-details").inner_text() and
                       "Chase Fralick" in page.locator("#cb-game-details").inner_text(),
                       f"{width} actual May 31 game shows score and official players")
                 visit(page, host, "stats.html", "#cb-player-board .cb-table")
                 check("Chase Fralick" in page.locator("#cb-player-board").inner_text(),
-                      f"{width} actual three official gamebooks build hitter leaderboard")
+                      f"{width} all six official gamebooks build hitter leaderboard")
                 page.locator("#cb-role").select_option("pitch")
                 check("LJ Cormier" in page.locator("#cb-player-board").inner_text(),
                       f"{width} actual pitcher leaderboard contains source-backed winner")
@@ -321,4 +330,4 @@ with tempfile.TemporaryDirectory() as t:
             browser.close()
     finally:
         server.shutdown()
-print("PASS college baseball foundation, no fabricated attendance, import and responsive browser QA")
+print("PASS all six Regional gamebooks, 165 player lines, full team reconciliation and mobile/browser QA")

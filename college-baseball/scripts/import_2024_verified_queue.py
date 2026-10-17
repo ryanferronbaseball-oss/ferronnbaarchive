@@ -106,7 +106,11 @@ def main():
                     and item["official_score"]==[6,3])
                 if not duke_iu_date_exception:
                     raise ValueError("University scorebook does not visibly confirm attendance date")
-            rows,stat_audit=import_one(g,item,player_keys)
+            if item.get("legacy_statcrew_source"):
+                from import_2024_statcrew import import_statcrew
+                rows,stat_audit=import_statcrew(g,item,player_keys,response)
+            else:
+                rows,stat_audit=import_one(g,item,player_keys)
             # Charleston's official February 19 scorebook abbreviates its
             # two winning/closing pitchers in the batting/pitching tables
             # as E. Bice / D. Aiken, but explicitly credits Emmett Bice
@@ -128,7 +132,8 @@ def main():
                     player_keys.remove(old_key); player_keys.add(new_key)
                     p["player"]=canonical
                     p["player_id"]=new_id
-            decision=scorer_labels(response.text,rows,gid)
+            decision=(g["pitching_decisions"] if item.get("legacy_statcrew_source")
+                      else scorer_labels(response.text,rows,gid))
             g.update({"game_type":item["game_type"],
                       "postseason_round":item.get("postseason_round"),
                       "ballpark":item["ballpark"],"city":item["city"],"state":item["state"],

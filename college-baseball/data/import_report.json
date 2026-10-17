@@ -58,7 +58,7 @@
   ],
   "same_day_identical_matchup_pairs_in_full_sheet": 13,
   "metadata_status": "full_444_game_attendance_directory_plus_may_2026_official_sources",
-  "warning": "2025 backfill in progress, verified games only. 2026 preserved. Older years and publication not approved.",
+  "warning": "2026 68/68 NCAA gamebooks verified, 7 JUCO excluded. 2025 source-verified backfill authorized and in progress at 23/74; 51 pending. All 444 original attendance rows preserved. 2024 and earlier and publication/merge not approved.",
   "resolved_matchups": [
     {
       "attendance_game_number": 443,
@@ -329,7 +329,14 @@
       "source_queue": "data/2026_february_january_official_source_queue.json"
     },
     "season_2025": {
-      "approved": false
+      "approved": true,
+      "status": "in_progress",
+      "attended": 74,
+      "verified_full_gamebooks": 23,
+      "pending": 51,
+      "source_queue": "data/2025_official_source_queue.json",
+      "coverage_audit": "data/2025_monthly_progress_audit.json",
+      "source_audit": "data/2025_source_import_audit.json"
     },
     "publication": {
       "approved": false
@@ -374,6 +381,9 @@
       "eligible": 27,
       "complete": 27,
       "junior_college_excluded": 0
+    },
+    "season_2024": {
+      "approved": false
     }
   },
   "early_2026_source_research": "data/2026_february_january_official_source_queue.json",

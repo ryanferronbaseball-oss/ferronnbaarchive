@@ -133,6 +133,8 @@ source_replacements = {
     ("cb-2026-05-19-south-carolina-tennessee-att0427", "Tennessee", "Ariel Antigua"): (8, 1),
     ("cb-2026-05-14-virginia-louisville-att0422", "Virginia", "Antonio Perrotta"): (7, 1),
     ("cb-2026-05-15-mercer-east-tennessee-state-att0423", "Mercer", "Nathan Rowland"): (3, 1),
+    ("cb-2026-05-16-arkansas-kentucky-att0424", "Arkansas", "Alexander Peck"): (8, 1),
+    ("cb-2026-05-16-arkansas-kentucky-att0424", "Arkansas", "Maika Niu"): (9, 1),
 }
 seen_replacements = {}
 for game in committed:
@@ -213,6 +215,8 @@ expected = {
     ("cb-2026-05-14-virginia-louisville-att0422", "Louisville"): {"ab": 36, "r": 3, "h": 8, "rbi": 3, "bb": 5, "k": 10},
     ("cb-2026-05-15-mercer-east-tennessee-state-att0423", "Mercer"): {"ab": 33, "r": 9, "h": 11, "rbi": 9, "bb": 2, "k": 10},
     ("cb-2026-05-15-mercer-east-tennessee-state-att0423", "East Tennessee State"): {"ab": 33, "r": 7, "h": 10, "rbi": 7, "bb": 5, "k": 7},
+    ("cb-2026-05-16-arkansas-kentucky-att0424", "Arkansas"): {"ab": 41, "r": 16, "h": 14, "rbi": 14, "bb": 7, "k": 12},
+    ("cb-2026-05-16-arkansas-kentucky-att0424", "Kentucky"): {"ab": 44, "r": 12, "h": 17, "rbi": 11, "bb": 3, "k": 10},
 }
 
 keys = {"ab": "atBats", "r": "runs", "h": "hits",

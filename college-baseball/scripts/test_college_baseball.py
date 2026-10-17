@@ -129,6 +129,8 @@ source_replacements = {
     ("cb-2026-05-19-lsu-oklahoma-att0428", "Oklahoma", "Nolan Stevens"): (8, 1),
     ("cb-2026-05-19-lsu-oklahoma-att0428", "Oklahoma", "Drew Dickerson"): (9, 1),
     ("cb-2026-05-22-auburn-texas-a-m-att0436", "Texas A&M", "Terrence Kiel II"): (4, 1),
+    ("cb-2026-05-19-south-carolina-tennessee-att0427", "South Carolina", "Logan Sutter"): (5, 1),
+    ("cb-2026-05-19-south-carolina-tennessee-att0427", "Tennessee", "Ariel Antigua"): (8, 1),
 }
 seen_replacements = {}
 for game in committed:
@@ -201,6 +203,8 @@ expected = {
     ("cb-2026-05-19-lsu-oklahoma-att0428", "Oklahoma"): {"ab": 34, "r": 2, "h": 6, "rbi": 1, "bb": 3, "k": 13},
     ("cb-2026-05-22-auburn-texas-a-m-att0436", "Auburn"): {"ab": 37, "r": 7, "h": 11, "rbi": 7, "bb": 2, "k": 11},
     ("cb-2026-05-22-auburn-texas-a-m-att0436", "Texas A&M"): {"ab": 28, "r": 0, "h": 2, "rbi": 0, "bb": 5, "k": 13},
+    ("cb-2026-05-19-south-carolina-tennessee-att0427", "South Carolina"): {"ab": 36, "r": 6, "h": 11, "rbi": 6, "bb": 3, "k": 13},
+    ("cb-2026-05-19-south-carolina-tennessee-att0427", "Tennessee"): {"ab": 40, "r": 11, "h": 15, "rbi": 10, "bb": 0, "k": 10},
 }
 
 keys = {"ab": "atBats", "r": "runs", "h": "hits",

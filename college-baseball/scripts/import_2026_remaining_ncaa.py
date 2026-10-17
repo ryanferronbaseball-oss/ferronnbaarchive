@@ -180,6 +180,31 @@ def assign_source_lineups(short_tables, game, rows, totals_by_side):
     return audits
 
 
+def debug_lineup_markup(game, url):
+    """Log a short snapshot of official player-cell markup for manual source QA."""
+    try:
+        page = SESSION.get(url, timeout=30)
+        page.raise_for_status()
+        short, _, _ = official_tables(page.text, game)
+        for ti, tab in enumerate(short):
+            head = table_head(tab)
+            if "Player" not in head:
+                continue
+            pi = head.index("Player")
+            body = tab.find("tbody")
+            trs = body.find_all("tr", recursive=False) if body else tab.find_all("tr")[1:]
+            for tr in trs[:24]:
+                cells = tr.find_all(["th", "td"], recursive=False)
+                if len(cells) <= pi:
+                    continue
+                node = cells[pi]
+                print("SOURCE-LINEUP", game["id"], ti,
+                      "player=", repr(node.get_text(" ", strip=False)[:95]),
+                      "html=", str(node)[:340].replace("\n", " "), flush=True)
+    except Exception as exc:
+        print("SOURCE-LINEUP-DEBUG-ERROR", game["id"], str(exc), flush=True)
+
+
 def parse_decision(soup, key):
     # A decision can be empty or not match the listed pitcher; preserve unknown,
     # not a fabricated zero or guessed pitcher W/L/S.
@@ -304,6 +329,8 @@ def main():
             pending.append({"game_id": game["id"], "source_url": official.get("source_url"),
                             "reason": str(exc)})
             print("REVIEW", game["id"], str(exc), flush=True)
+            if "batting" in str(exc) or "lineup" in str(exc):
+                debug_lineup_markup(game, official.get("source_url") or official.get("source"))
     # All JUCO and prior-year records are immutable under this job.
     for gid, orig in originals.items():
         if orig.get("boxscore_backfill_excluded") or not orig["date"].startswith(TARGET_YEAR):

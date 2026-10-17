@@ -1,17 +1,25 @@
 {
-  "status": "all_attendance_staged_source_verification_in_progress",
+  "status": "all_444_attendance_staged_with_2026_sec_tournament_batch_one",
   "scope": "college baseball only",
   "uploaded_spreadsheet": "NCAAB Games.xlsx",
   "uploaded_total_attendance_rows": 444,
   "season_span": "2017–2026 after user-confirmed 2024 typo correction",
   "staged_games": 444,
-  "official_score_and_inning_lines_matched": 6,
-  "official_player_boxscores_imported": 6,
-  "player_stat_rows": 165,
-  "unique_player_ids": 86,
+  "official_score_and_inning_lines_matched": 14,
+  "official_player_boxscores_imported": 8,
+  "player_stat_rows": 216,
+  "unique_player_ids": 117,
   "scores_supplied_by_user": 0,
-  "source_docs": "Official Milwaukee Athletics HTML gamebooks, Big 12 Conference HTML box score, and Auburn University Athletics source PDFs",
+  "source_docs": "Official Auburn, Arkansas, LSU, Florida, Mississippi State, Tennessee and Texas athletics/conference box scores and university recaps",
   "source_worksheet_rows": [
+    432,
+    433,
+    434,
+    435,
+    436,
+    437,
+    438,
+    439,
     440,
     441,
     442,
@@ -49,8 +57,8 @@
     }
   ],
   "same_day_identical_matchup_pairs_in_full_sheet": 13,
-  "metadata_status": "pilot_only_other_attendance_not_imported",
-  "warning": "All 444 attendance matchups listed. Only individually sourced gamebooks have verified scores and player statistics. Unresolved doubleheaders retain distinct source IDs; original ordering is not taken as official.",
+  "metadata_status": "full_444_game_attendance_directory_plus_may_2026_official_sources",
+  "warning": "444 attended games are displayed in draft. Eight games have complete verified player box scores (six NCAA Regional plus two SEC Tournament), six additional SEC Tournament games have official scores/innings/pitcher decisions but no player stats yet, and 430 have attendance-only metadata; no missing player stats are inferred.",
   "resolved_matchups": [
     {
       "attendance_game_number": 443,
@@ -71,52 +79,142 @@
   ],
   "official_boxscore_sources": [
     {
-      "regional_game_number": 1,
+      "id": "cb-2026-05-20-lsu-auburn-att0432",
+      "worksheet_row": 433,
+      "source_url": "https://static.lsusports.net/assets/docs/bb/26stats/26boxscores.pdf#page=132",
+      "verified": true
+    },
+    {
+      "id": "cb-2026-05-23-arkansas-auburn-att0438",
+      "worksheet_row": 439,
+      "source_url": "https://arkansasrazorbacks.com/stats/baseball/2026/ark58.htm",
+      "verified": true
+    },
+    {
       "id": "cb-2026-05-29-milwaukee-auburn",
       "worksheet_row": 440,
       "source_url": "https://mkepanthers.com/sports/baseball/stats/2026/auburn/boxscore/19125",
       "verified": true
     },
     {
-      "regional_game_number": 2,
       "id": "cb-2026-05-29-nc-state-ucf",
       "worksheet_row": 441,
       "source_url": "https://storage.googleapis.com/auburn-prod/2026/05/30/CtHy45oL3lLEkKyMzLthPcWetLS6K1d8xYLeUswq.pdf",
       "verified": true
     },
     {
-      "regional_game_number": 3,
       "id": "cb-2026-05-30-auburn-nc-state",
       "worksheet_row": 442,
       "source_url": "https://storage.googleapis.com/auburn-prod/2026/05/30/hgokYvQ1Iyb8xQ9wLH9CSavzftVqyefiXxnrYlR5.pdf",
       "verified": true
     },
     {
-      "regional_game_number": 4,
       "id": "cb-2026-05-30-ucf-milwaukee",
       "worksheet_row": 443,
       "source_url": "https://mkepanthers.com/sports/baseball/stats/2026/ucf/boxscore/19126",
       "verified": true
     },
     {
-      "regional_game_number": 5,
-      "id": "cb-2026-05-31-ucf-auburn",
-      "worksheet_row": 445,
-      "source_url": "https://big12sports.com/boxscore.aspx?id=JcLFfL9RUu0H5ystoOMbjetIb%2B4rf85jh0EXvDMaKl0XzODpTGG4K9HaIXFQc03OKhgXj%2FCzlFnj5ZmetyTmjq7l8Xuvdqg2OT4K1T5zyla5lWpuIfMz%2B26lLVQ7mIqsglh1CCPHEGGRqf8B1ZVlig%3D%3D&path=baseball",
-      "verified": true
-    },
-    {
-      "regional_game_number": 6,
       "id": "cb-2026-05-31-auburn-milwaukee",
       "worksheet_row": 444,
       "source_url": "https://storage.googleapis.com/auburn-prod/2026/06/01/gABVgCShBRJVn2SbogYy1rBiMyIGmnmzypXIIRJb.pdf",
       "verified": true
+    },
+    {
+      "id": "cb-2026-05-31-ucf-auburn",
+      "worksheet_row": 445,
+      "source_url": "https://big12sports.com/boxscore.aspx?id=JcLFfL9RUu0H5ystoOMbjetIb%2B4rf85jh0EXvDMaKl0XzODpTGG4K9HaIXFQc03OKhgXj%2FCzlFnj5ZmetyTmjq7l8Xuvdqg2OT4K1T5zyla5lWpuIfMz%2B26lLVQ7mIqsglh1CCPHEGGRqf8B1ZVlig%3D%3D&path=baseball",
+      "verified": true
     }
   ],
-  "remaining_official_boxscore_work": 0,
-  "remaining_attendance_games_not_yet_imported": 438,
-  "validation": "Each of six matchups independently reconciled by team AB/R/H/RBI/BB/SO, pitcher outs/hits/runs/strikeouts, innings line scores and official W/L/S attribution; official gamebooks linked.",
+  "remaining_official_boxscore_work": 6,
+  "remaining_attendance_games_not_yet_imported": 0,
+  "validation": "Five new data safeguards: source workbook rows stay distinct; every sourced inning line reconciles to final score; roster/lineup positions from gamebooks; pitcher wins/losses/saves are source credited; unknown historical dates/scores/stats remain null.",
   "all_attendance_entries_staged": 444,
-  "attendance_only_pending_official_verification": 438,
-  "source": "User workbook; 444 original rows, two user-corrected entries."
+  "attendance_only_pending_official_verification": 430,
+  "source": "User workbook; 444 original rows, two user-corrected entries.",
+  "official_scoreboard_player_lines_pending": 6,
+  "latest_verified_batch": "SEC Tournament games May 20–23, 2026 (workbook rows 432–439)",
+  "latest_verified_batch_games": [
+    {
+      "worksheet_row": 432,
+      "date": "2026-05-20",
+      "away": "Tennessee",
+      "home": "Arkansas",
+      "away_score": 4,
+      "home_score": 8,
+      "status": "official_scoreboard_verified",
+      "official_source": "https://utsports.com/sports/baseball/stats/2026/arkansas/boxscore/30092"
+    },
+    {
+      "worksheet_row": 433,
+      "date": "2026-05-20",
+      "away": "LSU",
+      "home": "Auburn",
+      "away_score": 1,
+      "home_score": 3,
+      "status": "official_boxscore_verified",
+      "official_source": "https://static.lsusports.net/assets/docs/bb/26stats/26boxscores.pdf#page=132"
+    },
+    {
+      "worksheet_row": 434,
+      "date": "2026-05-21",
+      "away": "Mississippi State",
+      "home": "Georgia",
+      "away_score": 3,
+      "home_score": 5,
+      "status": "official_scoreboard_verified",
+      "official_source": "https://hailstate.com/sports/baseball/stats/2026/georgia/boxscore/27713"
+    },
+    {
+      "worksheet_row": 435,
+      "date": "2026-05-21",
+      "away": "Florida",
+      "home": "Alabama",
+      "away_score": 13,
+      "home_score": 3,
+      "status": "official_scoreboard_verified",
+      "official_source": "https://floridagators.com/sports/baseball/stats/2026/alabama/boxscore/28031"
+    },
+    {
+      "worksheet_row": 436,
+      "date": "2026-05-22",
+      "away": "Arkansas",
+      "home": "Texas",
+      "away_score": 8,
+      "home_score": 1,
+      "status": "official_scoreboard_verified",
+      "official_source": "https://texaslonghorns.com/sports/baseball/stats/2026/arkansas/boxscore/22672"
+    },
+    {
+      "worksheet_row": 437,
+      "date": "2026-05-22",
+      "away": "Auburn",
+      "home": "Texas A&M",
+      "away_score": 7,
+      "home_score": 0,
+      "status": "official_scoreboard_verified",
+      "official_source": "https://auburntigers.com/news/2026/05/22/no-6-auburn-blanks-no-9-texas-aandm-7-0-to-advance-to-sec-semis"
+    },
+    {
+      "worksheet_row": 438,
+      "date": "2026-05-23",
+      "away": "Florida",
+      "home": "Georgia",
+      "away_score": 7,
+      "home_score": 8,
+      "status": "official_scoreboard_verified",
+      "official_source": "https://floridagators.com/sports/baseball/stats/2026/georgia/boxscore/28034"
+    },
+    {
+      "worksheet_row": 439,
+      "date": "2026-05-23",
+      "away": "Arkansas",
+      "home": "Auburn",
+      "away_score": 2,
+      "home_score": 1,
+      "status": "official_boxscore_verified",
+      "official_source": "https://arkansasrazorbacks.com/stats/baseball/2026/ark58.htm"
+    }
+  ]
 }

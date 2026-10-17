@@ -432,3 +432,74 @@ body[data-page="player"] main{width:100%;max-width:1160px;margin:0 auto;padding:
 .cb-logo{font-size:12px;font-weight:850;letter-spacing:.12em}
 @media(max-width:760px){.cb-chart-grid{grid-template-columns:1fr}.cb-grid{grid-template-columns:1fr}.cb-bar{grid-template-columns:90px minmax(0,1fr) 27px}.cb-table{min-width:620px}}
 @media(max-width:470px){.cb-toolbar input{flex-basis:100%}.cb-game-card{padding:15px}}
+
+
+/* College Baseball / MLB design parity: typography and grids inherit from
+   the exact MLB stylesheet above. Override only college-only components. */
+.cb-game-summary{
+  padding:0;
+  margin:16px 0 19px;
+  background:none;
+  border:0;
+  border-radius:0;
+}
+.cb-game-summary .mlb-score{margin:18px 0 14px}
+.cb-game-summary .mlb-note{margin:12px 0;line-height:1.65}
+.cb-game-summary .mlb-pill{margin:0 0 3px}
+.cb-game-summary a{font-weight:800}
+.cb-boxscore{display:block}
+.cb-boxscore .mlb-team-box{margin:16px 0 22px}
+.cb-boxscore .mlb-team-heading h3{font-size:20px;margin:0;color:var(--forest)}
+.cb-boxscore .mlb-team-caption{margin:4px 0 13px}
+.cb-boxscore-table{margin:0}
+.cb-boxscore-table .mlb-sticky{min-width:770px}
+.cb-boxscore-table th{font-size:12px}
+.cb-boxscore-table td{font-size:13px}
+.cb-boxscore-table .cb-player-cell small{display:block;font-size:11px;color:var(--muted);font-weight:450;line-height:1.5;margin-top:3px}
+.cb-boxscore-table .mlb-lineup-row.mlb-substitute .cb-player-cell a{font-weight:650}
+.cb-boxscore-table .mlb-lineup-row.mlb-substitute .cb-player-cell{padding-left:25px}
+.cb-boxscore-table .mlb-lineup-row.mlb-substitute .cb-player-cell small{color:#697D6B}
+.cb-boxscore-table .mlb-lineup-row.mlb-substitute td{background:#F6F8F3}
+.cb-boxscore-table .mlb-lineup-row.mlb-substitute td:nth-child(2){background:#F6F8F3}
+.cb-boxscore-table .mlb-order{width:56px;min-width:56px;max-width:56px}
+.cb-boxscore-table .mlb-lineup-row.mlb-substitute .mlb-order{color:#79937D}
+.cb-boxscore-table .mlb-team-box .table-wrap{border-radius:11px}
+.cb-game-card{padding:20px}
+.cb-game-card .mlb-pill{align-self:flex-start;white-space:normal}
+.cb-game-card .game-score{font-size:26px;margin:4px 0}
+.cb-game-card .game-date{font-size:12px}
+.game-grid.cb-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+.cb-table-wrap{border-color:var(--hair);border-radius:11px;background:white}
+.cb-table{font-size:13px;min-width:660px}
+.cb-table th{font-size:12px;letter-spacing:normal;text-transform:none;background:#F0F3ED;color:#486050}
+.cb-table th,.cb-table td{padding:12px}
+.cb-table tbody tr:nth-child(even) td{background:#FBFCFA}
+.cb-table td a{font-weight:750}
+.cb-profile-role h2{font-size:23px;margin:22px 0 14px}
+.cb-profile-hero{margin:28px 0 0}
+.cb-profile-initials{font-size:35px;color:var(--forest)}
+.cb-profile-metrics{grid-template-columns:repeat(6,minmax(0,1fr));margin:15px 0 21px;gap:11px}
+.cb-profile-metrics .metric{padding:18px}
+.cb-profile-metrics .metric small{font-size:11px;line-height:1.4;margin:0}
+.cb-profile-metrics .metric strong{font-size:26px;line-height:1.2;letter-spacing:-.045em;margin-top:9px;color:#28312D}
+.cb-profile-rate-grid{grid-template-columns:repeat(4,minmax(0,1fr));margin:0 0 21px;gap:10px}
+.cb-profile-games{margin:15px 0 26px}
+.cb-player-game-log{margin-top:21px}
+.cb-player-game-log h2{font-size:23px;margin:0 0 16px}
+.cb-record.mlb-record{border:1px solid #D5E0D1;background:#FFFEFB;padding:18px}
+@media(max-width:850px){
+  .cb-profile-metrics{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .cb-profile-rate-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:800px){
+  .game-grid.cb-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:550px){
+  .cb-profile-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .cb-profile-hero{margin:22px 0 0}
+  .cb-boxscore-table .mlb-sticky{min-width:740px}
+}
+@media(max-width:530px){
+  .game-grid.cb-grid{grid-template-columns:1fr}
+  .cb-game-card{padding:17px}
+}

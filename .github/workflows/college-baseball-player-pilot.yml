@@ -6,6 +6,7 @@ on:
       - "college-baseball/scripts/import_sidearm_pilot.py"
       - "college-baseball/scripts/import_sec_tournament_2026.py"
       - "college-baseball/scripts/import_2026_may20_early_sec.py"
+      - "college-baseball/scripts/import_2026_may19_sec.py"
       - "college-baseball/data/verified_batches/**"
       - ".github/workflows/college-baseball-player-pilot.yml"
 concurrency:
@@ -53,12 +54,21 @@ jobs:
           name: college-baseball-sec-2026-may20-earlier-round
           path: college-baseball/data/2026_sec_may20_second_round_audit.json
           if-no-files-found: warn
+      - name: Source-reconcile two additional May 19 SEC Tournament gamebooks
+        run: python college-baseball/scripts/import_2026_may19_sec.py
+      - name: Attach May 19 SEC official individual player audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: college-baseball-sec-2026-may19-first-round
+          path: college-baseball/data/2026_sec_may19_first_round_audit.json
+          if-no-files-found: warn
       - name: Stage audited source output on unpublished draft branch only
         if: github.event_name == 'push' && github.ref == 'refs/heads/feature/college-baseball-foundation'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -f college-baseball/data/pilot_player_stats_verified.json college-baseball/data/pilot_player_stat_audit.json college-baseball/data/games.json college-baseball/data/player_stats.json college-baseball/data/import_report.json college-baseball/data/2026_sec_tournament_player_audit.json college-baseball/data/2026_sec_may20_second_round_audit.json
+          git add -f college-baseball/data/pilot_player_stats_verified.json college-baseball/data/pilot_player_stat_audit.json college-baseball/data/games.json college-baseball/data/player_stats.json college-baseball/data/import_report.json college-baseball/data/2026_sec_tournament_player_audit.json college-baseball/data/2026_sec_may20_second_round_audit.json college-baseball/data/2026_sec_may19_first_round_audit.json
           if ! git diff --cached --quiet; then
             git commit -m "Add independently reconciled 2026 SEC tournament player gamebooks [skip ci]"
             git push origin HEAD:feature/college-baseball-foundation

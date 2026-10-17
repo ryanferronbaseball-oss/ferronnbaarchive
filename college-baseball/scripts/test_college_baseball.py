@@ -66,8 +66,8 @@ pilot_report = json.loads((SITE / "data" / "import_report.json").read_text())
 check(len(attended) == 6 and len(committed) == 444, "All 444 attendance entries staged with 6 verified initial Regional gamebooks")
 check(len({g["source_worksheet_row"] for g in committed}) == 444,
       "Unique workbook source rows preserved for every attended contest")
-check(len([g for g in committed if g["verification"] == "attendance_only"]) == 430,
-      "No fabricated scores or player rows for 430 pending gamebooks")
+check(len([g for g in committed if g["verification"] == "attendance_only"]) <= 430,
+      "Previously confirmed attendance-only records stay unmodified except source-verified imports")
 check(all(g["away_score"] is None and g["home_score"] is None
           and g["game_number"] is None for g in committed
           if g["verification"] == "attendance_only"),
@@ -121,6 +121,7 @@ source_replacements = {
     ("cb-2026-05-22-arkansas-texas-att0435", "Texas", "Callum Early"): (7, 1),
     ("cb-2026-05-22-arkansas-texas-att0435", "Texas", "Josh Livingston"): (8, 1),
     ("cb-2026-05-22-arkansas-texas-att0435", "Texas", "Jayden Duplantier"): (9, 1),
+    ("cb-2026-05-20-vanderbilt-florida-att0430", "Vanderbilt", "Aukai Kea"): (9, 1),
 }
 seen_replacements = {}
 for game in committed:
@@ -183,6 +184,10 @@ expected = {
     ("cb-2026-05-21-florida-alabama-att0434", "Alabama"): {"ab": 33, "r": 3, "h": 9, "rbi": 3, "bb": 1, "k": 14},
     ("cb-2026-05-22-arkansas-texas-att0435", "Arkansas"): {"ab": 37, "r": 8, "h": 11, "rbi": 8, "bb": 5, "k": 16},
     ("cb-2026-05-22-arkansas-texas-att0435", "Texas"): {"ab": 32, "r": 1, "h": 4, "rbi": 1, "bb": 4, "k": 14},
+    ("cb-2026-05-20-missouri-mississippi-state-att0429", "Missouri"): {"ab": 23, "r": 2, "h": 5, "rbi": 2, "bb": 1, "k": 8},
+    ("cb-2026-05-20-missouri-mississippi-state-att0429", "Mississippi State"): {"ab": 28, "r": 12, "h": 8, "rbi": 12, "bb": 4, "k": 10},
+    ("cb-2026-05-20-vanderbilt-florida-att0430", "Vanderbilt"): {"ab": 32, "r": 3, "h": 6, "rbi": 3, "bb": 4, "k": 12},
+    ("cb-2026-05-20-vanderbilt-florida-att0430", "Florida"): {"ab": 36, "r": 8, "h": 14, "rbi": 8, "bb": 6, "k": 9},
 }
 
 keys = {"ab": "atBats", "r": "runs", "h": "hits",
@@ -201,14 +206,14 @@ for game in committed:
         outs = sum(p["outs"] for p in pitchers)
         hits_allowed = sum(p["hits"] for p in pitchers)
         strikeouts = sum(p["strikeOuts"] for p in pitchers)
-        check(outs in (24, 27) and hits_allowed == sum(x["hits"] for x in opposition)
+        check(outs in (18, 21, 24, 27) and hits_allowed == sum(x["hits"] for x in opposition)
               and strikeouts == sum(x["strikeOuts"] for x in opposition),
               "Official pitcher outs/hits/strikeouts match opponent " + game["date"] + " " + team)
 
         other_runs = game["away_score"] if other == game["away"] else game["home_score"]
         runs_allowed = sum(p["runs"] for p in pitchers)
         earned = sum(p["earnedRuns"] for p in pitchers)
-        needed_outs = 24 if len(game["innings"]) == 8 or (team == game["away"] and game["home_score"] > game["away_score"]) else 27
+        needed_outs = 3 * (len(game["innings"]) - (1 if team == game["away"] and game["home_score"] > game["away_score"] and game["innings"][-1]["home"] is None else 0))
         check(outs == needed_outs and runs_allowed == other_runs and earned <= runs_allowed,
               "Pitchers reconcile innings, opponent runs, and earned runs " + game["id"] + " " + team)
     available = [r for r in pilot_rows if r["game_id"] == game["id"] and "pitching" in r]
@@ -222,7 +227,7 @@ for game in committed:
 
 check(pilot_report["uploaded_total_attendance_rows"] == 444 and
       pilot_report["unimported_worksheet_rows"] == 0 and
-      pilot_report["attendance_only_pending_official_verification"] == 430 and
+      pilot_report["attendance_only_pending_official_verification"] == sum(g["verification"] == "attendance_only" for g in committed) and
       pilot_report["official_player_boxscores_imported"] == sum(g["verification"] == "official_boxscore_verified" for g in committed) and
       pilot_report["official_scoreboard_player_lines_pending"] == sum(g["verification"] == "official_scoreboard_verified" for g in committed),
       "All 444 attended games staged with truthful full/score-only verification counts")

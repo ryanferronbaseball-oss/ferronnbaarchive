@@ -61,13 +61,13 @@ attended = load_csv(SITE / "data" / "attendance.csv")
 committed = json.loads((SITE / "data" / "games.json").read_text())
 pilot_rows = json.loads((SITE / "data" / "player_stats.json").read_text())
 pilot_report = json.loads((SITE / "data" / "import_report.json").read_text())
-check(len(attended) == len(committed) == 5, "Five attended regional contests staged as first pilot")
+check(len(attended) == len(committed) == 6, "Six attended regional contests staged including corrected game #444")
 check(len(pilot_rows) == 81 and len({r["player_id"] for r in pilot_rows}) == 62,
       "Three official college baseball scorebooks produce 81 audited rows for 62 players")
 check(len([g for g in committed if g["verification"] == "official_boxscore_verified"]) == 3,
       "Only three complete player gamebooks marked verified")
-check(len([g for g in committed if g["verification"] == "source_matched"]) == 2,
-      "Two official score/inning lines await player table import")
+check(len([g for g in committed if g["verification"] == "source_matched"]) == 3,
+      "Three official score/inning lines await player table import")
 check(all(g["source_url"] and
           sum(x["away"] or 0 for x in g["innings"]) == g["away_score"] and
           sum(x["home"] or 0 for x in g["innings"]) == g["home_score"]
@@ -108,14 +108,34 @@ for game in committed:
               "Official pitcher outs/hits/strikeouts match opponent " + game["date"] + " " + team)
 
 check(pilot_report["uploaded_total_attendance_rows"] == 444 and
-      pilot_report["unimported_worksheet_rows"] == 439,
-      "Entire 444-game history accounted for without claiming it was imported")
+      pilot_report["unimported_worksheet_rows"] == 438,
+      "All 444 attendance entries accounted for; 6 staged with 438 not yet imported")
 check(pilot_report["known_correction"][0]["confirmed_date"] == "2024-03-30",
       "South Alabama/Old Dominion correction recorded for upcoming bulk import")
-check(pilot_report["needs_clarification"][0]["worksheet_row"] == 445,
-      "Ambiguous May 31 reverse-orientation entry held for confirmation")
+check(pilot_report["known_correction"][1]["attendance_game_number"] == 444 and
+      pilot_report["known_correction"][1]["worksheet_row"] == 445 and
+      not pilot_report["needs_clarification"],
+      "User correction to final attendance game 444 resolved without altering prior game 443")
 check(sum(g["game_number"] is not None for g in committed) == 0,
       "Regional bracket game number not mistakenly treated as a doubleheader number")
+
+corrected = next(g for g in committed if g["source_worksheet_row"] == 445)
+original = next(g for g in committed if g["source_worksheet_row"] == 444)
+check(corrected["id"] == "cb-2026-05-31-ucf-auburn" and corrected["away"] == "UCF"
+      and corrected["home"] == "Auburn" and corrected["away_score"] == 3
+      and corrected["home_score"] == 9 and corrected["regional_game_number"] == 5,
+      "Final attendance game #444 is now UCF 3 at Auburn 9 on May 31")
+check(original["id"] == "cb-2026-05-31-auburn-milwaukee"
+      and original["away_score"] == 8 and original["home_score"] == 1
+      and original["regional_game_number"] == 6
+      and original["verification"] == "official_boxscore_verified",
+      "Game #443 retains the source-verified Auburn 8 Milwaukee 1 box score")
+check(any(x["game_id"] == original["id"] for x in pilot_rows)
+      and all(x["game_id"] != corrected["id"] for x in pilot_rows),
+      "Verified game 6 player lines never misassigned to corrected game 5")
+check({g["source_worksheet_row"] for g in committed} == set(range(440,446)),
+      "Six distinct source rows retained without merging tournament games")
+
 check(json.loads((SITE / "data" / "mlb_crosswalk.json").read_text()) == [],
       "No false college-to-MLB player identity matches")
 check(make_report([])["attendance_games"] == 0, "Empty import reports honest zero verified inputs")
@@ -272,6 +292,12 @@ with tempfile.TemporaryDirectory() as t:
                 page.wait_for_function("document.querySelector('.metrics .metric strong').innerText==='5'")
                 check(page.locator(".cb-game-card").count() >= 5,
                       f"{width} actual five attended regional games render")
+                visit(page, host, "game.html?id=cb-2026-05-31-ucf-auburn", "#cb-game-details .cb-game-summary")
+                check("UCF @ Auburn" in page.locator("#cb-game-details").inner_text()
+                      and "3 – 9" in page.locator("#cb-game-details").inner_text(),
+                      f"{width} corrected final attendance game #444 shows UCF at Auburn 9-3")
+                check("Official college player box score not yet imported" in page.locator("#cb-game-details").inner_text(),
+                      f"{width} corrected game #444 does not borrow Milwaukee player's stats")
                 visit(page, host, "game.html?id=cb-2026-05-31-auburn-milwaukee", "#cb-game-details .cb-game-summary")
                 check("8 – 1" in page.locator("#cb-game-details").inner_text() and
                       "Chase Fralick" in page.locator("#cb-game-details").inner_text(),

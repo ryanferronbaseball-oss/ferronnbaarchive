@@ -28,3 +28,10 @@ jobs:
         run: python college-baseball/scripts/test_college_baseball.py
       - name: Confirm empty attendance input validates without populating false games
         run: python college-baseball/scripts/import_attendance.py --validate-only
+      - name: Attach college baseball six-game pilot screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: college-baseball-six-game-review
+          path: college-baseball/output/regional-pilot-review/
+          if-no-files-found: warn

@@ -55,8 +55,8 @@ def main():
             if g.get("source_url")!=url or len(known)<18:
                 raise ValueError("Previously verified 2024 gamebook has changed source/players: "+gid)
             continue
-        if g.get("verification")!="attendance_only":
-            pending.append({"game_id":gid,"source_url":url,"reason":"Nonattendance prior source state requires review"})
+        if g.get("verification") not in ("attendance_only", "source_matched"):
+            pending.append({"game_id":gid,"source_url":url,"reason":"Prior source state requires review"})
             continue
         snapshot=deepcopy(g)
         original_keys=set(player_keys)

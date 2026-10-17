@@ -86,6 +86,12 @@ def main():
                       "first_table",repr(next((t.get_text(" ",strip=True)[:500] for t in sample_tables
                                                if "Player" in t.get_text(" ",strip=True)),"")),
                       flush=True)
+                if "virginiasports.com/custompages" in url:
+                    print("STATCREW-VA-DETAIL",gid,
+                          "tables",[(i, len(t.find_all("tr")),
+                                     [c.get_text(" ",strip=True) for c in t.find_all("tr")[:3]][:3])
+                                    for i,t in enumerate(sample_tables)],
+                          "pres",[(len(p),repr(p[:850])) for p in sample_pres],flush=True)
             if not any(v in src for v in formats):
                 # 2024 opening-day Duke vs Indiana: Indiana's official
                 # 2024 text schedule explicitly says Friday Feb 16, while

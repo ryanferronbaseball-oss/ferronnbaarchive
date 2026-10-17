@@ -3,19 +3,134 @@
   "approval": "2024–2026 official four-year source backfill; no 2023 or earlier, no release",
   "original_attendance": 444,
   "attendance_2024": 71,
-  "verified_2024_total": 59,
-  "remaining_2024": 12,
+  "verified_2024_total": 60,
+  "remaining_2024": 11,
   "2025_gamebooks_preserved": 69,
   "2026_gamebooks_preserved": 68,
-  "completed_in_this_run": 0,
-  "linked_2024_sources": 59,
+  "completed_in_this_run": 1,
+  "linked_2024_sources": 60,
   "months_verified": {
     "2024-02": 14,
-    "2024-03": 19,
+    "2024-03": 20,
     "2024-04": 6,
     "2024-05": 14,
     "2024-06": 6
   },
-  "passed_games": [],
+  "passed_games": [
+    {
+      "game_id": "cb-2024-03-02-siena-unc-asheville-att0244",
+      "source_url": "https://uncabulldogs.com/sports/baseball/stats/2024/siena/boxscore/9841",
+      "score": [
+        6,
+        11
+      ],
+      "player_game_rows": 26,
+      "pitching_decisions": {
+        "win": "Justin Needles",
+        "loss": "Tyler Kidwell",
+        "save": null
+      },
+      "stat_audit": {
+        "game_id": "cb-2024-03-02-siena-unc-asheville-att0244",
+        "source": "https://uncabulldogs.com/sports/baseball/stats/2024/siena/boxscore/9841",
+        "http_code": 200,
+        "source_bytes": 1056719,
+        "source_sha256": "6de10c0e1674641e5b7825b175136f25a21b53b7868b7afbf38b0304359f4b4e",
+        "teams": [
+          {
+            "name": "Siena",
+            "batters": 9,
+            "pitchers": 5,
+            "AB": 34,
+            "R": 6,
+            "H": 10,
+            "RBI": 6,
+            "BB": 7,
+            "SO": 8,
+            "pitching_outs": 24,
+            "pitching_runs": 11,
+            "pitching_hits": 15
+          },
+          {
+            "name": "UNC Asheville",
+            "batters": 10,
+            "pitchers": 2,
+            "AB": 38,
+            "R": 11,
+            "H": 15,
+            "RBI": 10,
+            "BB": 8,
+            "SO": 5,
+            "pitching_outs": 27,
+            "pitching_runs": 6,
+            "pitching_hits": 10
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 26,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 6,
+            "hits": 10,
+            "errors": 1,
+            "innings": [
+              0,
+              0,
+              1,
+              4,
+              1,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 11,
+            "hits": 15,
+            "errors": 0,
+            "innings": [
+              0,
+              1,
+              4,
+              0,
+              2,
+              1,
+              3,
+              0,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Siena",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 5,
+            "substitutes": 0
+          },
+          {
+            "team": "UNC Asheville",
+            "nine_starting_slots": true,
+            "batter_rows": 10,
+            "pitcher_rows": 2,
+            "substitutes": 1
+          }
+        ],
+        "official_decisions": {
+          "win": "Needles, Justin",
+          "loss": "Kidwell, Tyler",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    }
+  ],
   "pending_review": []
 }

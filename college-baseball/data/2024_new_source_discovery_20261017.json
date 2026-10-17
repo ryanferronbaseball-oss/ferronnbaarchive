@@ -1,0 +1,69 @@
+{
+  "status": "OFFICIAL_SOURCE_LINKS_DISCOVERED_AWAITING_PLAYER_IMPORT",
+  "verified_at": "2026-10-17",
+  "branch": "feature/college-baseball-foundation",
+  "sources": [
+    {
+      "source_row": 287,
+      "old_date": "2024-05-23",
+      "verified_date": "2024-05-24",
+      "away": "Florida State",
+      "home": "Virginia",
+      "url": "https://seminoles.com/sports/baseball/stats/2024/virginia/boxscore/15137",
+      "note": "USER CONFIRMED DATE CORRECTION. Existing stable game ID still uses 2024-05-23; update references atomically before promoting player lines."
+    },
+    {
+      "source_row": 284,
+      "date": "2024-05-23",
+      "away": "Clemson",
+      "home": "Miami",
+      "away_score": 7,
+      "home_score": 8,
+      "url": "https://theacc.com/boxscore.aspx?id=JcLFfL9RUu0H5ystoOMbjQ7A58QMysWHEEqi7hufVoQXO5nVxbctjHh%2F6ifARsoKUNz2Cn1GpJx0eQgL%2FI8uNugW6%2F65ooJ9xE6%2BliOEFRl1EIOMAkcBvIU2aC8AuTau6wuMsoas69NIsXZTxjBW8kXiq8vS23fOsaCs8PflHepYeK6JM3xnbLgFWTjLdu0I&path=baseball",
+      "winning_pitcher": "Gage Ziehl",
+      "losing_pitcher": "Ethan Darden",
+      "save_pitcher": "Myles Caba"
+    },
+    {
+      "source_row": 281,
+      "date": "2024-05-22",
+      "away": "Virginia",
+      "home": "Georgia Tech",
+      "away_score": 13,
+      "home_score": 0,
+      "url": "https://theacc.com/boxscore.aspx?id=JcLFfL9RUu0H5ystoOMbjQ7A58QMysWHEEqi7hufVoQXO5nVxbctjHh%2F6ifARsoKUNz2Cn1GpJx0eQgL%2FI8uNugW6%2F65ooJ9xE6%2BliOEFRnzsQ9bFkKPA8gUfOXC8MHLqtz6gCeYro6gxwvfyezJTHgq3wa7tTR3MLBiYrxv4%2FeMU6wV4TrpGiL%2Bqi76RCtp&path=baseball",
+      "winning_pitcher": "Evan Blanco",
+      "losing_pitcher": "Aeden Finateri"
+    },
+    {
+      "source_row": 280,
+      "date": "2024-05-21",
+      "away": "Virginia Tech",
+      "home": "Duke",
+      "away_score": 8,
+      "home_score": 11,
+      "url": "https://theacc.com/boxscore.aspx?id=7ltyipP022aUJKmSgYVs3wXi7up73ghniwD5ElWyd07J7BNseBaMQePf0fY%2F3yUPzfbjWs34YWQFqcM30Vtc5YaIwnE9n4gwsfNPwEc7%2FkTpuOIle6L%2F2tjZUE3yxUWMNyIbQ6bYKBxq431MYO1rf2%2Fr2AaNCQEZYOtburA4hhE%3D&path=baseball",
+      "winning_pitcher": "James Tallon",
+      "losing_pitcher": "Matthew Siverling",
+      "save_pitcher": "Charlie Beilenson"
+    },
+    {
+      "source_row": 271,
+      "date": "2024-04-21",
+      "away": "Connecticut",
+      "home": "Georgetown",
+      "away_score": 7,
+      "home_score": 6,
+      "url": "https://guhoyas.com/sports/baseball/stats/2024/university-of-connecticut/boxscore/20469",
+      "winning_pitcher": "Jack Sullivan",
+      "losing_pitcher": "Everett Catlett",
+      "save_pitcher": "Brady Afthim"
+    }
+  ],
+  "notes": [
+    "Do not change 27/71 completed import count until full batting, pitching, W/L/S, lineup and team-total audits pass.",
+    "Source row 287 user-approved correction is May 24, 2024. Preserve attendance identity, original_date, and avoid duplicate game IDs.",
+    "Keep 2023 and earlier and main branch unchanged; JUCO excluded; NCAA DII included.",
+    "23 March Vanderbilt South Carolina doubleheader still needs game ordering verified."
+  ]
+}

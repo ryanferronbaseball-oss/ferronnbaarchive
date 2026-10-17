@@ -3,243 +3,129 @@
   "approval": "2024–2026 official four-year source backfill; no 2023 or earlier, no release",
   "original_attendance": 444,
   "attendance_2024": 71,
-  "verified_2024_total": 25,
-  "remaining_2024": 46,
+  "verified_2024_total": 26,
+  "remaining_2024": 45,
   "2025_gamebooks_preserved": 69,
   "2026_gamebooks_preserved": 68,
-  "completed_in_this_run": 2,
+  "completed_in_this_run": 1,
   "linked_2024_sources": 27,
   "months_verified": {
-    "2024-03": 3,
+    "2024-03": 4,
     "2024-04": 4,
     "2024-05": 12,
     "2024-06": 6
   },
   "passed_games": [
     {
-      "game_id": "cb-2024-03-21-louisville-wake-forest-att0258",
-      "source_url": "https://godeacs.com/sports/baseball/stats/2024/louisville/boxscore/13570",
+      "game_id": "cb-2024-03-07-byu-west-virginia-att0250",
+      "source_url": "https://wvusports.com/sports/baseball/stats/2024/byu/boxscore/20168",
       "score": [
-        7,
-        16
+        4,
+        10
       ],
-      "player_game_rows": 32,
+      "player_game_rows": 29,
       "pitching_decisions": {
-        "win": "Josh Hartle",
-        "loss": "Sebastian Gongora",
+        "win": "Aidan Major",
+        "loss": "Ben Hansen",
         "save": null
       },
       "stat_audit": {
-        "game_id": "cb-2024-03-21-louisville-wake-forest-att0258",
-        "source": "https://godeacs.com/sports/baseball/stats/2024/louisville/boxscore/13570",
+        "game_id": "cb-2024-03-07-byu-west-virginia-att0250",
+        "source": "https://wvusports.com/sports/baseball/stats/2024/byu/boxscore/20168",
         "http_code": 200,
-        "source_bytes": 886916,
-        "source_sha256": "5ff93c71f8845fea6985f1de447b6e23ca7be0f0174c4994dd0db3d2cb401e8a",
+        "source_bytes": 1468097,
+        "source_sha256": "6769b4287777868bcb035a386020f16f0796a3ba672ecab91abee61001c45479",
         "teams": [
           {
-            "name": "Louisville",
-            "batters": 15,
-            "pitchers": 4,
-            "AB": 32,
-            "R": 7,
-            "H": 7,
-            "RBI": 7,
-            "BB": 3,
-            "SO": 12,
+            "name": "BYU",
+            "batters": 9,
+            "pitchers": 5,
+            "AB": 36,
+            "R": 4,
+            "H": 10,
+            "RBI": 4,
+            "BB": 1,
+            "SO": 9,
             "pitching_outs": 24,
-            "pitching_runs": 16,
+            "pitching_runs": 10,
             "pitching_hits": 13
           },
           {
-            "name": "Wake Forest",
-            "batters": 10,
-            "pitchers": 3,
-            "AB": 35,
-            "R": 16,
+            "name": "West Virginia",
+            "batters": 13,
+            "pitchers": 2,
+            "AB": 36,
+            "R": 10,
             "H": 13,
-            "RBI": 14,
+            "RBI": 7,
             "BB": 8,
-            "SO": 11,
+            "SO": 7,
             "pitching_outs": 27,
-            "pitching_runs": 7,
-            "pitching_hits": 7
+            "pitching_runs": 4,
+            "pitching_hits": 10
           }
         ],
         "source_warnings": [],
-        "player_rows": 32,
+        "player_rows": 29,
         "status": "PASS",
         "scoreboard": [
           {
-            "runs": 7,
-            "hits": 7,
+            "runs": 4,
+            "hits": 10,
             "errors": 2,
             "innings": [
               0,
               0,
-              5,
-              2,
               0,
               0,
               0,
               0,
+              1,
+              3,
               0
             ]
           },
           {
-            "runs": 16,
+            "runs": 10,
             "hits": 13,
-            "errors": 1,
-            "innings": [
-              3,
-              2,
-              0,
-              3,
-              0,
-              0,
-              5,
-              3,
-              null
-            ]
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "Louisville",
-            "nine_starting_slots": true,
-            "batter_rows": 15,
-            "pitcher_rows": 4,
-            "substitutes": 6
-          },
-          {
-            "team": "Wake Forest",
-            "nine_starting_slots": true,
-            "batter_rows": 10,
-            "pitcher_rows": 3,
-            "substitutes": 1
-          }
-        ],
-        "official_decisions": {
-          "win": "Hartle, Josh",
-          "loss": "Sebastian Gongora",
-          "save": null
-        },
-        "resolved_pitcher_decisions": {
-          "win": null,
-          "loss": "Sebastian Gongora",
-          "save": null
-        }
-      }
-    },
-    {
-      "game_id": "cb-2024-03-12-rutgers-north-carolina-att0255",
-      "source_url": "https://goheels.com/sports/baseball/stats/2024/rutgers/boxscore/25040",
-      "score": [
-        7,
-        13
-      ],
-      "player_game_rows": 33,
-      "pitching_decisions": {
-        "win": "Matthew Matthijs",
-        "loss": "Joe Mazza",
-        "save": null
-      },
-      "stat_audit": {
-        "game_id": "cb-2024-03-12-rutgers-north-carolina-att0255",
-        "source": "https://goheels.com/sports/baseball/stats/2024/rutgers/boxscore/25040",
-        "http_code": 200,
-        "source_bytes": 1448181,
-        "source_sha256": "5da75109d435801187853392d4a1da21f63bcb42114e7629640c47c97cbabbd8",
-        "teams": [
-          {
-            "name": "Rutgers",
-            "batters": 11,
-            "pitchers": 5,
-            "AB": 36,
-            "R": 7,
-            "H": 9,
-            "RBI": 6,
-            "BB": 8,
-            "SO": 5,
-            "pitching_outs": 24,
-            "pitching_runs": 13,
-            "pitching_hits": 17
-          },
-          {
-            "name": "North Carolina",
-            "batters": 11,
-            "pitchers": 6,
-            "AB": 39,
-            "R": 13,
-            "H": 17,
-            "RBI": 13,
-            "BB": 6,
-            "SO": 7,
-            "pitching_outs": 27,
-            "pitching_runs": 7,
-            "pitching_hits": 9
-          }
-        ],
-        "source_warnings": [],
-        "player_rows": 33,
-        "status": "PASS",
-        "scoreboard": [
-          {
-            "runs": 7,
-            "hits": 9,
             "errors": 0,
             "innings": [
-              4,
-              0,
-              0,
-              0,
-              0,
-              1,
               1,
               0,
-              1
-            ]
-          },
-          {
-            "runs": 13,
-            "hits": 17,
-            "errors": 3,
-            "innings": [
-              3,
               0,
               0,
-              1,
-              1,
-              0,
-              3,
               5,
+              0,
+              3,
+              1,
               null
             ]
           }
         ],
         "lineup_audit": [
           {
-            "team": "Rutgers",
+            "team": "BYU",
             "nine_starting_slots": true,
-            "batter_rows": 11,
+            "batter_rows": 9,
             "pitcher_rows": 5,
-            "substitutes": 2
+            "substitutes": 0
           },
           {
-            "team": "North Carolina",
+            "team": "West Virginia",
             "nine_starting_slots": true,
-            "batter_rows": 11,
-            "pitcher_rows": 6,
-            "substitutes": 2
+            "batter_rows": 13,
+            "pitcher_rows": 2,
+            "substitutes": 4
           }
         ],
         "official_decisions": {
-          "win": "Matthijs, Matthew",
-          "loss": "Joe Mazza",
+          "win": "Major, Aidan",
+          "loss": "Hansen, Ben",
           "save": null
         },
         "resolved_pitcher_decisions": {
           "win": null,
-          "loss": "Joe Mazza",
+          "loss": null,
           "save": null
         }
       }
@@ -249,12 +135,7 @@
     {
       "game_id": "cb-2024-03-13-rutgers-north-carolina-att0256",
       "source_url": "https://goheels.com/sports/baseball/stats/2024/rutgers/boxscore/25041",
-      "reason": "Rutgers: source batting order resolved to 10 starting slots, not 9"
-    },
-    {
-      "game_id": "cb-2024-03-07-byu-west-virginia-att0250",
-      "source_url": "https://wvusports.com/sports/baseball/stats/2024/byu/boxscore/20168",
-      "reason": "West Virginia: source batting order resolved to 11 starting slots, not 9"
+      "reason": "North Carolina: source batting order resolved to 10 starting slots, not 9"
     }
   ]
 }

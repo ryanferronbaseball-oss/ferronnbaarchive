@@ -1,0 +1,37 @@
+name: MLB Statcast pilot
+on:
+  push:
+    branches:
+      - feature/mlb-statcast-pilot
+  workflow_dispatch:
+jobs:
+  validate-statcast:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install --disable-pip-version-check pybaseball pandas
+      - run: python mlb/scripts/statcast_pilot.py
+      - name: Check pilot records
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = json.loads(Path('mlb/data/statcast_pilot.json').read_text())
+          print('Pilot results:')
+          for x in p['report']: print(x)
+          print('Leader counts:', {k:len(v) for k,v in p['leaders'].items()})
+          assert len(p['report']) == 5
+          assert len({x['game_pk'] for x in p['report']}) == 5
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mlb-statcast-pilot
+          path: mlb/data/statcast_pilot.json
+          if-no-files-found: warn

@@ -59,21 +59,21 @@ def pitch_rows(soup,first_pre,teams):
         # The UVA StatCrew HTML stores each pitching table datum in a
         # separate <td>, not an individual row. Flatten the ordered text,
         # divide at exact university headings, then read each 15-field line.
-        txt=re.sub(r"\\s+"," ",t.get_text(" ",strip=True)).replace("\\xa0"," ")
+        txt=re.sub(r"\s+"," ",t.get_text(" ",strip=True)).replace("\xa0"," ")
         out={team:[] for team in teams}
         headings=[]
         for team in teams:
-            m=re.search(re.escape(team)+r"\\s+ip\\s+h\\s+r\\s+er\\s+bb\\s+so\\s+wp\\s+bk",txt,re.I)
+            m=re.search(re.escape(team)+r"\s+ip\s+h\s+r\s+er\s+bb\s+so\s+wp\s+bk",txt,re.I)
             if not m:raise ValueError("University pitching section missing "+team)
             headings.append((m.start(),m.end(),team))
         headings.sort()
         for ix,(_,end,team) in enumerate(headings):
             section=txt[end:headings[ix+1][0] if ix+1<len(headings) else len(txt)]
             # Skip remaining header labels through 'np'.
-            section=re.sub(r"^\\s*hbp\\s+ibb\\s+ab\\s+bf\\s+fo\\s+go\\s+np\\s*","",section,flags=re.I)
-            pattern=re.compile(r"([A-Za-z][A-Za-z0-9 .,'-]{1,55}?)\\s+"
-                r"(?:[WLS],\\d+(?:-\\d+)?\\s+)?"
-                r"(\\d+\\.[012])\\s+((?:\\d+\\s+){14}\\d+)\\b")
+            section=re.sub(r"^\s*hbp\s+ibb\s+ab\s+bf\s+fo\s+go\s+np\s*","",section,flags=re.I)
+            pattern=re.compile(r"([A-Za-z][A-Za-z0-9 .,'-]{1,55}?)\s+"
+                r"(?:[WLS],\d+(?:-\d+)?\s+)?"
+                r"(\d+\.[012])\s+((?:\d+\s+){14}\d+)\b")
             for m in pattern.finditer(section):
                 name=normalize_name(m.group(1).strip())
                 ip=m.group(2); vals=list(map(int,m.group(3).split()))

@@ -57,8 +57,19 @@ def visit(page, host, path, selector):
     page.wait_for_selector(selector, timeout=12000)
 
 
-check(json.loads((SITE / "data" / "games.json").read_text()) == [],
-      "No invented college baseball attendance games")
+attended = load_csv(SITE / "data" / "attendance.csv")
+committed = json.loads((SITE / "data" / "games.json").read_text())
+check(len(attended) == len(committed) == 444, "All 444 user-supplied college baseball games preserved")
+check({g["id"] for g in attended} == {g["id"] for g in committed},
+      "Official site attendance identities match normalized uploaded spreadsheet")
+check(all(g["verification"] == "attendance_only" for g in committed),
+      "No submitted college games falsely treated as officially verified")
+check(sum(g["game_number"] is not None for g in committed) == 26,
+      "Thirteen same-day doubleheader pairs remain 26 distinct entries")
+check(len([g for g in committed if g["date"] == "2024-03-30" and g["away"] == "South Alabama" and g["home"] == "Old Dominion"]) == 1,
+      "South Alabama at Old Dominion corrected to 2024-03-30")
+check(len([g for g in committed if "NEEDS MATCH REVIEW" in (g.get("notes") or "")]) == 1,
+      "Ambiguous Auburn–Milwaukee source entry is flagged, not silently substituted")
 check(json.loads((SITE / "data" / "player_stats.json").read_text()) == [],
       "No invented historical college baseball box scores")
 check(json.loads((SITE / "data" / "mlb_crosswalk.json").read_text()) == [],
@@ -113,6 +124,10 @@ with tempfile.TemporaryDirectory() as t:
     staging = tmp / "site"
     shutil.copytree(SITE, staging / "college-baseball")
     empty_root = staging / "college-baseball" / "data"
+    # The real 444-game attendance list is kept in the repo, but exercise
+    # the empty-state UI on a fully disposable test-only server.
+    (empty_root / "games.json").write_text("[]\n")
+    (empty_root / "import_report.json").write_text(json.dumps(make_report([])))
     server = run_server(staging)
     host = f"http://127.0.0.1:{server.server_address[1]}"
     errors = []

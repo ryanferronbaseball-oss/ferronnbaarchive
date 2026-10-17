@@ -4,8 +4,12 @@
 
 **User decision:** Ignore **all junior-college / NJCAA games** for box-score/statistical backfill in this archive, including older seasons. Retain the original 444-row personal attendance source and its stable IDs for provenance; mark known JUCO entries `boxscore_backfill_excluded: true` with reason `junior_college`. They are not missing/blocked games and must not count toward monthly backfill completion denominators or missing-source queues. Do not research, infer stats for, or import JUCO gamebooks. NCAA and other eligible four-year college matchups continue normally; never mistake NCAA DIII **Wabash College** for NJCAA **Wabash Valley College**.
 
-Seven 2026 exclusions: January 23 Walters State–USC Salkehatchie (2); February 12–13 Walters State–Pellissippi State (3); March 20 Wabash Valley–Walters State (2). Thus 2026 eligible games are **68 of 75**: January **0 of 2**, February **8 of 11**, March **19 of 21**, April **14 of 14**, May **27 of 27**. May/April are complete; March currently has 10 of 19 eligible verified gamebooks (nine remaining), followed by February's eight. January requires no JUCO sourcing. Previous JUCO discovery notes are superseded by this decision. Approval for all of 2026 remains intact; 2025 and publication/merge remain unapproved.
+Seven 2026 exclusions: January 23 Walters State–USC Salkehatchie (2); February 12–13 Walters State–Pellissippi State (3); March 20 Wabash Valley–Walters State (2). Thus 2026 eligible games are **68 of 75**: January **0 of 2**, February **8 of 11**, March **19 of 21**, April **14 of 14**, May **27 of 27**. May/April are complete; March finished at 19/19 and February at 8/8; January requires no JUCO sourcing. The 2026 slate is complete and verified. Previous JUCO discovery notes are superseded by this decision. Approval for all of 2026 remains intact; 2025 and publication/merge remain unapproved.
 
+
+## 2026 NCAA all-month gate — PASSED (October 17, 2026)
+
+Every approved 2026 NCAA/four-year game now has an officially reconciled player scorebook: **May 27/27, April 14/14, March 19/19, February 8/8, January 0/0**. The **7 junior-college exclusions** remain attendance-only and do not count as missing. **68/68 eligible complete; 1,990 player-game stat lines; 444 original attendance records preserved.** This supersedes all interim monthly snapshots below. Full validation: [2026 season audit](data/2026_full_slate_monthly_integrity_audit.json); [official Notre Dame PDF audit](data/2026_mar01_notredame_tenntech_pdf_audit.json). **Do not work on 2025 or publish/merge this branch without fresh authorization.**
 
 ## Approval policy (updated October 17, 2026)
 

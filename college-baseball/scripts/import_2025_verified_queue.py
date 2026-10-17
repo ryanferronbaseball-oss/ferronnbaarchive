@@ -171,6 +171,21 @@ def main():
                         raise ValueError("WKU corrected pitcher ID collision")
                     global_keys.remove((gid,old));global_keys.add((gid,new))
                     row["player"]=full_name;row["player_id"]=new
+            # 2/15 Quinnipiac university HTML truncates the pitcher's
+            # full surname "Franconere" to "Francon" in the player table;
+            # the same school source credits "Franconere, J.C." with the win.
+            if gid=="cb-2025-02-15-quinnipiac-unc-wilmington-att0301":
+                matches=[p for p in rows if p["team"]=="Quinnipiac"
+                    and "pitching" in p and
+                    ("francon" in p["player"].lower())]
+                if len(matches)!=1:
+                    raise ValueError("Official Quinnipiac J.C. Franconere pitcher name ambiguous")
+                row=matches[0];old=row["player_id"]
+                new="cb-quinnipiac-jc-franconere"
+                if (gid,new) in global_keys and new!=old:
+                    raise ValueError("Quinnipiac pitcher collision")
+                global_keys.remove((gid,old));global_keys.add((gid,new))
+                row["player"]="J.C. Franconere";row["player_id"]=new
             decisions=scorer_labels(resp.text,rows,gid)
             game.update({
                "game_type":item["game_type"],

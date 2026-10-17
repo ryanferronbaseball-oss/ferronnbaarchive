@@ -112,7 +112,7 @@ def main():
                         updated+=1
         if updated:
             (DATA/"player_stats.json").write_text(
-                json.dumps(records,ensure_ascii=False,indent=2)+"\\n",encoding="utf-8")
+                json.dumps(records,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
         print("PASS: four SEC gamebooks re-checked; pitcher decisions repaired:",
               updated,"fields; no duplicate records")
         return

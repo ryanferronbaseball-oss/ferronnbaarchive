@@ -3,6 +3,9 @@ on:
   push:
     branches:
       - feature/mlb-statcast-pilot
+  pull_request:
+    branches:
+      - main
   workflow_dispatch:
 jobs:
   validate-statcast:

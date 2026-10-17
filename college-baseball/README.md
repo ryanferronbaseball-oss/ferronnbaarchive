@@ -1,8 +1,12 @@
 # College Baseball · Courtside Archive
 
-**Status:** 444 attended college baseball games are staged in **draft PR #10**, with nine complete official gamebooks and five additional sourced college tournament scoreboards. Published site unchanged until user approval.
+**Status:** 444 original attendance rows remain staged in **draft PR #10**; 51 official 2026 gamebooks currently have verified player stats. Seven 2026 junior-college entries are explicitly excluded from box-score backfill under the October 17, 2026 scope decision. Published site remains unchanged until user approval.
 
 The site lives under \`/college-baseball/\`, with independent college baseball stats and verified inter-level player IDs only. It shares the exact MLB archive design system for Inter fonts, navigation, scoreboards, box-score layout, cards, responsive tables, and bat-order number column.
+
+## Junior-college game exclusion — October 17, 2026
+
+Exclude all NJCAA/junior-college games from box-score lookup, player statistics, 2026 work queues, and monthly progress denominators. Retain their original attendance rows only for audit/provenance and identify them with `boxscore_backfill_excluded: true` and `boxscore_backfill_exclusion_reason: "junior_college"`. Exactly seven 2026 games are excluded (two January, three February, two March). This leaves **68 eligible NCAA/four-year games** for 2026: 27 May, 14 April, 19 March, 8 February and none in January. Other seasons must follow the same rule when work is authorized. Approval currently extends through all 2026, not 2025 or publication. Older numerical snapshots below document prior stages, not current counts.
 
 ## Attendance import and source verification — October 2026
 

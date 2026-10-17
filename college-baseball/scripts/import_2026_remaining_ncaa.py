@@ -356,6 +356,20 @@ def _source_batters(table, valid_players, team, game_id):
             # Skylar King moved to LF. University PBP ninth inning.
             ("cb-2024-04-27-baylor-west-virginia-att0272", "West Virginia"):
                 {"Aaron Jamison"},
+            # March 21 Louisville–Wake: CF Korbyn Dickerson replaced
+            # PH Matt Klein after CF Michael Lippe.
+            ("cb-2024-03-21-louisville-wake-forest-att0258", "Louisville"):
+                {"Korbyn Dickerson"},
+            # March 13 Rutgers–UNC: 1B Jordan Sweeney followed PR
+            # Scotty Young, catcher JD Jones followed PR Pete Ciuffreda,
+            # then PH Jackson Natili followed JD Jones, all in their
+            # respective original batting-order positions.
+            ("cb-2024-03-13-rutgers-north-carolina-att0256", "Rutgers"):
+                {"Jordan Sweeney", "JD Jones", "Jackson Natili"},
+            # March 12 Rutgers–UNC: PH Jackson Natili followed
+            # original 1B Ty Doucette; Scotty Young then pinch ran.
+            ("cb-2024-03-12-rutgers-north-carolina-att0255", "Rutgers"):
+                {"Jackson Natili"},
         }
         if name in source_2024_unindented.get((game_id, team), set()):
             is_sub = True

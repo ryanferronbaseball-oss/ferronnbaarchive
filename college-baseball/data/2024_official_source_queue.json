@@ -10,7 +10,7 @@
     "2024-02": 17
   },
   "verified_player_gamebooks_at_queue_creation": 0,
-  "official_source_urls_identified": 65,
+  "official_source_urls_identified": 68,
   "source_queue": [
     {
       "game_id": "cb-2024-06-08-florida-clemson-att0295",
@@ -1381,6 +1381,72 @@
       "source_type": "official_university_statcrew_html",
       "verification": "official_full_original_player_boxscore_requires_legacy_parser",
       "legacy_statcrew_source": true
+    },
+    {
+      "game_id": "cb-2024-03-23-vanderbilt-south-carolina-att0260",
+      "worksheet_row": 261,
+      "date": "2024-03-23",
+      "away": "Vanderbilt",
+      "home": "South Carolina",
+      "source_url": "https://storage.googleapis.com/vucommodores-prod/2024/03/VU23-Box.pdf",
+      "official_score": [
+        4,
+        8
+      ],
+      "ballpark": "Founders Park",
+      "city": "Columbia",
+      "state": "SC",
+      "game_type": "regular_season",
+      "postseason_round": null,
+      "neutral_site": false,
+      "source_type": "official_university_pdf_scorebook",
+      "verification": "official_pdf_player_scorebook_requires_source_gate",
+      "official_doubleheader_game": 1,
+      "user_attendance_confirmed": true
+    },
+    {
+      "game_id": "cb-2024-03-23-vanderbilt-south-carolina-att0261",
+      "worksheet_row": 262,
+      "date": "2024-03-23",
+      "away": "Vanderbilt",
+      "home": "South Carolina",
+      "source_url": "https://storage.googleapis.com/vucommodores-prod/2024/03/VU24-Box.pdf",
+      "official_score": [
+        3,
+        8
+      ],
+      "ballpark": "Founders Park",
+      "city": "Columbia",
+      "state": "SC",
+      "game_type": "regular_season",
+      "postseason_round": null,
+      "neutral_site": false,
+      "source_type": "official_university_pdf_scorebook",
+      "verification": "official_pdf_player_scorebook_requires_source_gate",
+      "official_doubleheader_game": 2,
+      "user_attendance_confirmed": true
+    },
+    {
+      "game_id": "cb-2024-03-24-vanderbilt-south-carolina-att0262",
+      "worksheet_row": 263,
+      "date": "2024-03-24",
+      "away": "Vanderbilt",
+      "home": "South Carolina",
+      "source_url": "https://storage.googleapis.com/vucommodores-prod/2024/03/VU25-Box.pdf",
+      "official_score": [
+        2,
+        10
+      ],
+      "ballpark": "Founders Park",
+      "city": "Columbia",
+      "state": "SC",
+      "game_type": "regular_season",
+      "postseason_round": null,
+      "neutral_site": false,
+      "source_type": "official_university_pdf_scorebook",
+      "verification": "official_pdf_player_scorebook_requires_source_gate",
+      "official_doubleheader_game": null,
+      "user_attendance_confirmed": true
     }
   ],
   "manual_review_flags": [

@@ -10715,22 +10715,80 @@
     "season": 2026,
     "away": "South Carolina",
     "home": "Tennessee",
-    "ballpark": null,
-    "city": null,
-    "state": null,
-    "neutral_site": null,
+    "ballpark": "Hoover Met",
+    "city": "Hoover",
+    "state": "AL",
+    "neutral_site": true,
     "game_number": null,
-    "game_type": null,
-    "postseason_round": null,
-    "away_score": null,
-    "home_score": null,
-    "score_provenance": null,
-    "source_url": null,
-    "verification": "attendance_only",
-    "official_boxscore_status": "not_imported",
+    "game_type": "conference_tournament",
+    "postseason_round": "SEC Tournament · First Round",
+    "away_score": 6,
+    "home_score": 11,
+    "score_provenance": "official_boxscore",
+    "source_url": "https://utsports.com/sports/baseball/stats/2026/south-carolina/boxscore/29760",
+    "verification": "official_boxscore_verified",
+    "official_boxscore_status": "verified",
     "possible_same_day_doubleheader": false,
     "provisional_worksheet_game_sequence": null,
-    "notes": "Original workbook Sheet1 row 428."
+    "notes": "Original workbook Sheet1 row 428.",
+    "away_hits": 11,
+    "home_hits": 15,
+    "away_errors": 3,
+    "home_errors": 1,
+    "innings": [
+      {
+        "inning": 1,
+        "away": 0,
+        "home": 2
+      },
+      {
+        "inning": 2,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 3,
+        "away": 3,
+        "home": 6
+      },
+      {
+        "inning": 4,
+        "away": 0,
+        "home": 1
+      },
+      {
+        "inning": 5,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 6,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 7,
+        "away": 3,
+        "home": 0
+      },
+      {
+        "inning": 8,
+        "away": 0,
+        "home": 2
+      },
+      {
+        "inning": 9,
+        "away": 0,
+        "home": null
+      }
+    ],
+    "pitching_decisions": {
+      "win": "Cam Appenzeller",
+      "loss": "Brandon Stone",
+      "save": "Will Haas"
+    },
+    "source_attendance": 7617,
+    "first_pitch_local": "17:36"
   },
   {
     "id": "cb-2026-05-19-lsu-oklahoma-att0428",

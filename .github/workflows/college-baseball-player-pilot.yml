@@ -12,6 +12,7 @@ on:
       - "college-baseball/scripts/import_2026_may19_sc_tennessee.py"
       - "college-baseball/scripts/import_2026_may19_ky_vandy_pdf.py"
       - "college-baseball/scripts/import_2026_may14_virginia_louisville.py"
+      - "college-baseball/scripts/import_2026_may15_mercer_etsu.py"
       - "college-baseball/data/verified_batches/**"
       - ".github/workflows/college-baseball-player-pilot.yml"
 concurrency:
@@ -107,12 +108,21 @@ jobs:
           name: college-baseball-may14-virginia-louisville
           path: college-baseball/data/2026_may14_virginia_louisville_audit.json
           if-no-files-found: warn
+      - name: Audit May 15 Mercer at ETSU official complete hitter and two-way pitcher gamebook
+        run: python college-baseball/scripts/import_2026_may15_mercer_etsu.py
+      - name: Attach May 15 Mercer ETSU source team reconciliation
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: college-baseball-may15-mercer-etsu
+          path: college-baseball/data/2026_may15_mercer_etsu_audit.json
+          if-no-files-found: warn
       - name: Stage audited source output on unpublished draft branch only
         if: github.event_name == 'push' && github.ref == 'refs/heads/feature/college-baseball-foundation'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -f college-baseball/data/pilot_player_stats_verified.json college-baseball/data/pilot_player_stat_audit.json college-baseball/data/games.json college-baseball/data/player_stats.json college-baseball/data/import_report.json college-baseball/data/2026_sec_tournament_player_audit.json college-baseball/data/2026_sec_may20_second_round_audit.json college-baseball/data/2026_sec_may19_first_round_audit.json college-baseball/data/2026_auburn_tamu_pdf_audit.json college-baseball/data/2026_sec_may19_south_carolina_tennessee_audit.json college-baseball/data/2026_sec_may19_kentucky_vanderbilt_pdf_audit.json college-baseball/data/2026_may14_virginia_louisville_audit.json
+          git add -f college-baseball/data/pilot_player_stats_verified.json college-baseball/data/pilot_player_stat_audit.json college-baseball/data/games.json college-baseball/data/player_stats.json college-baseball/data/import_report.json college-baseball/data/2026_sec_tournament_player_audit.json college-baseball/data/2026_sec_may20_second_round_audit.json college-baseball/data/2026_sec_may19_first_round_audit.json college-baseball/data/2026_auburn_tamu_pdf_audit.json college-baseball/data/2026_sec_may19_south_carolina_tennessee_audit.json college-baseball/data/2026_sec_may19_kentucky_vanderbilt_pdf_audit.json college-baseball/data/2026_may14_virginia_louisville_audit.json college-baseball/data/2026_may15_mercer_etsu_audit.json
           if ! git diff --cached --quiet; then
             git commit -m "Add independently reconciled 2026 SEC tournament player gamebooks [skip ci]"
             git push origin HEAD:feature/college-baseball-foundation

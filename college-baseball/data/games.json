@@ -5622,8 +5622,13 @@
     "official_boxscore_status": "not_imported",
     "possible_same_day_doubleheader": false,
     "provisional_worksheet_game_sequence": null,
-    "notes": "Original workbook Sheet1 row 226. Duke schedule and media hub say Feb 16; Sidearm boxscore header says Feb 15: date conflict requires review; preserve user Feb 16.",
-    "source_type": "official_university_or_conference_gamebook"
+    "notes": "Original workbook Sheet1 row 226. 2024-02-16 CONFIRMED by Duke's 2024 final schedule, Feb 16 postgame recap, and Feb 16 pregame matchup notes. Duke's Sidearm player box-score page incorrectly displays 2024-02-15 for this same 6-3 game; use Feb 16 as the authoritative game date. User specifically identified the correct Feb 16 date on October 17, 2026. Player-level import pending.",
+    "source_type": "official_university_or_conference_gamebook",
+    "date_verification": "confirmed_official_schedule_and_postgame_recap",
+    "date_verification_source_urls": [
+      "https://goduke.com/sports/baseball/schedule/text/2024",
+      "https://goduke.com/news/2024/2/16/baseball-santucci-tosses-gem-no-12-duke-rolls-to-opening-day-victory-over-indiana"
+    ]
   },
   {
     "id": "cb-2024-02-16-george-mason-coastal-carolina-att0226",

@@ -65,7 +65,7 @@ def main():
     assert len(before_2025_rows)==74
     global_keys={(s["game_id"],s["player_id"]) for s in players}
     assert len(global_keys)==len(players)
-    verified=[];pending=[]
+    verified=[];pending=[];metadata_updates=[]
     session=requests.Session()
     session.headers["User-Agent"]="Mozilla/5.0 Courtside Archive Official Source Audit"
     source_keys=set()
@@ -87,6 +87,13 @@ def main():
             prior=[p for p in players if p["game_id"]==gid]
             if not prior or game.get("source_url")!=url or len(prior)<18:
                 raise ValueError("Previously verified stats unexpectedly changed "+gid)
+            # Repair earlier importer assigning neutral_site=True to ALL
+            # games. It should only be set for neutral tournament matches
+            # or games individually documented as neutral (e.g. Fluor Field).
+            expected_neutral=bool(item.get("neutral_site",item["game_type"] in ("ncaa_postseason","conference_tournament")))
+            if game.get("neutral_site") != expected_neutral:
+                game["neutral_site"]=expected_neutral
+                metadata_updates.append(gid)
             continue
         if game["verification"]!="attendance_only":
             pending.append({"game_id":gid,"reason":"Original status is not attendance-only"})
@@ -151,7 +158,7 @@ def main():
                "postseason_round":item["postseason_round"],
                "ballpark":item["ballpark"],
                "city":item["city"],"state":item["state"],
-               "neutral_site":True,
+               "neutral_site":bool(item.get("neutral_site",item["game_type"] in ("ncaa_postseason","conference_tournament"))),
                "pitching_decisions":decisions,
                "source_type":item["source_type"],
             })
@@ -177,7 +184,7 @@ def main():
                               r.get("batting_sub_index",99),
                               r.get("pitching_appearance_index",99),r["player_id"]))
     num_2025=sum(g["date"].startswith("2025") and g["verification"]=="official_boxscore_verified" for g in games)
-    if verified:
+    if verified or metadata_updates:
         report["official_player_boxscores_imported"]=sum(g["verification"]=="official_boxscore_verified" for g in games)
         report["official_score_and_inning_lines_matched"]=sum(g["verification"]!="attendance_only" for g in games)
         report["attendance_only_pending_official_verification"]=sum(g["verification"]=="attendance_only" for g in games)
@@ -196,8 +203,8 @@ def main():
            "total_2025_attendance":74,"completed_in_this_run":len(verified),
            "verified_2025_total":num_2025,
            "linked_source_games":len(queue["source_queue"]),
-           "passed_games":verified,"pending_review":pending}
-    if verified:
+           "passed_games":verified,"metadata_corrections":metadata_updates,"pending_review":pending}
+    if verified or metadata_updates:
         write("games.json",games);write("player_stats.json",players)
         write("import_report.json",report)
     write("2025_source_import_audit.json",audit)

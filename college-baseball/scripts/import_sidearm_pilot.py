@@ -152,7 +152,12 @@ def pitching_rows(table,game_id,team,url):
         p={"outs":innings_outs(r["IP"],pname)}
         for name,key in [("H","hits"),("R","runs"),("ER","earnedRuns"),("BB","baseOnBalls"),
                          ("SO","strikeOuts"),("NP","numberOfPitches"),("HBP","hitBatsmen")]:
-            p[key]=number(r[name],name,pname)
+            # Historic official college boxscores occasionally omit pitch counts
+            # (NP = "--"). Preserve unknown as null; never fabricate zero.
+            if name=="NP" and str(r[name]).strip() in ("--", "-", ""):
+                p[key]=None
+            else:
+                p[key]=number(r[name],name,pname)
         people.append({"game_id":game_id,"player_id":"cb-"+slug(team)+"-"+slug(pname),
             "player":pname,"team":team,"source_url":url,"source_type":"official_sidearm_boxscore",
             "verification":"official_boxscore_verified","pitching":p})

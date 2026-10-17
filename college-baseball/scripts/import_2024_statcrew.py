@@ -142,6 +142,10 @@ def import_statcrew(game,item,global_keys,response):
             person["pitching_appearance_index"]=n
         team_pitch=[p["pitching"] for p in records.values() if p["team"]==team and "pitching" in p]
         if sum(p["runs"] for p in team_pitch)!=score[1-i]["runs"] or sum(p["hits"] for p in team_pitch)!=score[1-i]["hits"]:
+            print("STATCREW-PITCH-REVIEW",game["id"], team,
+                  [(x[0],x[1],x[2][:6]) for x in pitches[team]],
+                  "totals",[(sum(p[k] for p in team_pitch)) for k in ("runs","hits")],
+                  "opponents",score[1-i],flush=True)
             raise ValueError(team+": pitchers runs/hits do not reconcile with opponents")
         lineups.append({"team":team,"nine_starting_slots":True,"batter_rows":len(hitters),
                         "pitcher_rows":len(pitches[team]),"substitutes":len(hitters)-9})

@@ -78,6 +78,26 @@ def main():
     if len(existing_keys) != len(records):
         raise ValueError("Duplicate pre-existing athlete/game identity")
 
+    complete_existing = [gid for gid in SOURCES
+                         if any(r["game_id"] == gid for r in records)]
+    if complete_existing:
+        if len(complete_existing) != len(SOURCES):
+            raise ValueError("Partial previously imported SEC batch requires manual reconciliation")
+        for gid in SOURCES:
+            game=by_id[gid]
+            group=[r for r in records if r["game_id"] == gid]
+            if (game["verification"]!="official_boxscore_verified"
+                or len(group)<18 or {r["team"] for r in group}!={game["away"],game["home"]}
+                or any(r.get("source_url")!=SOURCES[gid] for r in group)):
+                raise ValueError("Previously staged gamebook is not source-reconciled: "+gid)
+            for team in (game["away"],game["home"]):
+                spots=[r["batting_slot"] for r in group if r["team"]==team
+                       and "batting" in r and r.get("batting_sub_index")==0]
+                if sorted(spots)!=list(range(1,10)):
+                    raise ValueError("Missing source-verified batting order on re-run: "+gid)
+        print("PASS: four previously source-verified SEC gamebooks preserved without duplication")
+        return
+
     audit = []
     new_records = []
     for gid, url in SOURCES.items():

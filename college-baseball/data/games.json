@@ -6530,23 +6530,79 @@
     "season": 2024,
     "away": "Virginia",
     "home": "Iowa",
-    "ballpark": null,
-    "city": null,
-    "state": null,
-    "neutral_site": null,
+    "ballpark": "Bragan Field",
+    "city": "Jacksonville",
+    "state": "FL",
+    "neutral_site": true,
     "game_number": null,
-    "game_type": null,
+    "game_type": "regular_season",
     "postseason_round": null,
     "away_score": 12,
     "home_score": 9,
-    "score_provenance": "official_university_or_conference_source",
-    "source_url": "https://virginiasports.com/news/2024/02/24/no-14-virginia-downs-no-18-iowa-in-comeback-fashion",
-    "verification": "source_matched",
-    "official_boxscore_status": "not_imported",
+    "score_provenance": "official_boxscore",
+    "source_url": "https://static.virginiasports.com/custompages/sports/m-basebl/stats/2023-2024/6iowa.htm",
+    "verification": "official_boxscore_verified",
+    "official_boxscore_status": "verified",
     "possible_same_day_doubleheader": false,
     "provisional_worksheet_game_sequence": null,
     "notes": "Original workbook Sheet1 row 238. Official UVA recap; exact full gamebook link still needed.",
-    "source_type": "official_university_result_index_or_recap"
+    "source_type": "official_university_statcrew_html",
+    "away_hits": 13,
+    "home_hits": 13,
+    "away_errors": 2,
+    "home_errors": 0,
+    "pitching_decisions": {
+      "win": "Ryan Osinski",
+      "loss": "Brant Hogue",
+      "save": "Blake Barker"
+    },
+    "innings": [
+      {
+        "inning": 1,
+        "away": 0,
+        "home": 6
+      },
+      {
+        "inning": 2,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 3,
+        "away": 2,
+        "home": 1
+      },
+      {
+        "inning": 4,
+        "away": 5,
+        "home": 1
+      },
+      {
+        "inning": 5,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 6,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 7,
+        "away": 1,
+        "home": 0
+      },
+      {
+        "inning": 8,
+        "away": 1,
+        "home": 1
+      },
+      {
+        "inning": 9,
+        "away": 3,
+        "home": 0
+      }
+    ]
   },
   {
     "id": "cb-2024-02-25-wichita-state-iowa-att0238",
@@ -7412,23 +7468,79 @@
     "season": 2024,
     "away": "Virginia",
     "home": "George Washington",
-    "ballpark": null,
-    "city": null,
-    "state": null,
-    "neutral_site": null,
+    "ballpark": "Tucker Field at Barcroft Park",
+    "city": "Arlington",
+    "state": "VA",
+    "neutral_site": false,
     "game_number": null,
-    "game_type": null,
+    "game_type": "regular_season",
     "postseason_round": null,
     "away_score": 26,
     "home_score": 12,
-    "score_provenance": "official_university_or_conference_source",
-    "source_url": "https://theacc.com/boxscore.aspx?id=JcLFfL9RUu0H5ystoOMbjQ7A58QMysWHEEqi7hufVoQXO5nVxbctjHh%2F6ifARsoKUNz2Cn1GpJx0eQgL%2FI8uNugW6%2F65ooJ9xE6%2BliOEFRlNhcng%2Fcz2x%2BWkyiNa6xVZbCDQZI73ylg6w08ih81yNYTd%2B%2BcOioIOA88h%2FCtNR7R8hAWYOs0MEwTzn5he%2FsPv&path=baseball",
-    "verification": "source_matched",
-    "official_boxscore_status": "not_imported",
+    "score_provenance": "official_boxscore",
+    "source_url": "https://static.virginiasports.com/custompages/sports/m-basebl/stats/2023-2024/13gw.htm",
+    "verification": "official_boxscore_verified",
+    "official_boxscore_status": "verified",
     "possible_same_day_doubleheader": false,
     "provisional_worksheet_game_sequence": null,
     "notes": "Original workbook Sheet1 row 250.",
-    "source_type": "official_university_or_conference_gamebook"
+    "source_type": "official_university_statcrew_html",
+    "away_hits": 24,
+    "home_hits": 16,
+    "away_errors": 2,
+    "home_errors": 0,
+    "pitching_decisions": {
+      "win": "Ryan Osinski",
+      "loss": "Jarrett Korson",
+      "save": null
+    },
+    "innings": [
+      {
+        "inning": 1,
+        "away": 4,
+        "home": 2
+      },
+      {
+        "inning": 2,
+        "away": 8,
+        "home": 0
+      },
+      {
+        "inning": 3,
+        "away": 2,
+        "home": 2
+      },
+      {
+        "inning": 4,
+        "away": 0,
+        "home": 3
+      },
+      {
+        "inning": 5,
+        "away": 5,
+        "home": 1
+      },
+      {
+        "inning": 6,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 7,
+        "away": 6,
+        "home": 0
+      },
+      {
+        "inning": 8,
+        "away": 1,
+        "home": 4
+      },
+      {
+        "inning": 9,
+        "away": 0,
+        "home": 0
+      }
+    ]
   },
   {
     "id": "cb-2024-03-07-byu-west-virginia-att0250",
@@ -9629,23 +9741,69 @@
     "season": 2024,
     "away": "Virginia",
     "home": "Georgia Tech",
-    "ballpark": null,
-    "city": null,
-    "state": null,
-    "neutral_site": null,
+    "ballpark": "Truist Field",
+    "city": "Charlotte",
+    "state": "NC",
+    "neutral_site": true,
     "game_number": null,
-    "game_type": null,
-    "postseason_round": null,
+    "game_type": "conference_tournament",
+    "postseason_round": "ACC Tournament",
     "away_score": 13,
     "home_score": 0,
-    "score_provenance": "official_university_or_conference_source",
-    "source_url": "https://theacc.com/boxscore.aspx?id=JcLFfL9RUu0H5ystoOMbjQ7A58QMysWHEEqi7hufVoQXO5nVxbctjHh%2F6ifARsoKUNz2Cn1GpJx0eQgL%2FI8uNugW6%2F65ooJ9xE6%2BliOEFRnzsQ9bFkKPA8gUfOXC8MHLqtz6gCeYro6gxwvfyezJTHgq3wa7tTR3MLBiYrxv4%2FeMU6wV4TrpGiL%2Bqi76RCtp&path=baseball",
-    "verification": "source_matched",
-    "official_boxscore_status": "not_imported",
+    "score_provenance": "official_boxscore",
+    "source_url": "https://static.virginiasports.com/custompages/sports/m-basebl/stats/2023-2024/55gt.htm",
+    "verification": "official_boxscore_verified",
+    "official_boxscore_status": "verified",
     "possible_same_day_doubleheader": false,
     "provisional_worksheet_game_sequence": null,
     "notes": "Original workbook Sheet1 row 281.",
-    "source_type": "official_university_or_conference_gamebook"
+    "source_type": "official_university_statcrew_html",
+    "away_hits": 16,
+    "home_hits": 5,
+    "away_errors": 0,
+    "home_errors": 1,
+    "pitching_decisions": {
+      "win": "Evan Blanco",
+      "loss": "Aeden Finateri",
+      "save": null
+    },
+    "innings": [
+      {
+        "inning": 1,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 2,
+        "away": 4,
+        "home": 0
+      },
+      {
+        "inning": 3,
+        "away": 1,
+        "home": 0
+      },
+      {
+        "inning": 4,
+        "away": 2,
+        "home": 0
+      },
+      {
+        "inning": 5,
+        "away": 3,
+        "home": 0
+      },
+      {
+        "inning": 6,
+        "away": 3,
+        "home": 0
+      },
+      {
+        "inning": 7,
+        "away": 0,
+        "home": 0
+      }
+    ]
   },
   {
     "id": "cb-2024-05-22-pittsburgh-wake-forest-att0281",

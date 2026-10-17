@@ -4,102 +4,217 @@
   "original_attendance_entries": 444,
   "verified_2026_unchanged": 68,
   "total_2025_attendance": 74,
-  "completed_in_this_run": 1,
-  "verified_2025_total": 13,
+  "completed_in_this_run": 2,
+  "verified_2025_total": 15,
   "linked_source_games": 18,
   "passed_games": [
     {
-      "game_id": "cb-2025-05-15-arizona-state-oklahoma-state-att0347",
-      "source_url": "https://okstate.com/sports/baseball/stats/2025/arizona-state/boxscore/16712",
+      "game_id": "cb-2025-05-21-alabama-tennessee-att0354",
+      "source_url": "https://rolltide.com/boxscore.aspx?id=19947",
       "score": [
-        2,
-        6
+        10,
+        15
       ],
-      "source_game_id": "16712",
-      "player_rows": 26,
+      "source_game_id": "boxscore.aspx?id=19947",
+      "player_rows": 37,
       "source_stat_audit": {
-        "game_id": "cb-2025-05-15-arizona-state-oklahoma-state-att0347",
-        "source": "https://okstate.com/sports/baseball/stats/2025/arizona-state/boxscore/16712",
+        "game_id": "cb-2025-05-21-alabama-tennessee-att0354",
+        "source": "https://rolltide.com/boxscore.aspx?id=19947",
         "http_code": 200,
-        "source_bytes": 1116026,
-        "source_sha256": "8762b645ee0d61588bc50f7f9d13be95999734e6e9e7b476c360a637cd03c541",
+        "source_bytes": 1394269,
+        "source_sha256": "4a54e672a6cfc37c80c434884b6b22cf49f7942c3dd972f07ab7c953ccbe9a9f",
         "teams": [
           {
-            "name": "Arizona State",
-            "batters": 10,
-            "pitchers": 4,
-            "AB": 34,
-            "R": 2,
-            "H": 9,
-            "RBI": 2,
-            "BB": 2,
-            "SO": 8,
+            "name": "Alabama",
+            "batters": 11,
+            "pitchers": 9,
+            "AB": 36,
+            "R": 10,
+            "H": 10,
+            "RBI": 8,
+            "BB": 4,
+            "SO": 12,
             "pitching_outs": 24,
-            "pitching_runs": 6,
-            "pitching_hits": 7
+            "pitching_runs": 15,
+            "pitching_hits": 20
           },
           {
-            "name": "Oklahoma State",
-            "batters": 9,
-            "pitchers": 3,
-            "AB": 31,
-            "R": 6,
-            "H": 7,
-            "RBI": 6,
-            "BB": 3,
-            "SO": 11,
+            "name": "Tennessee",
+            "batters": 13,
+            "pitchers": 4,
+            "AB": 41,
+            "R": 15,
+            "H": 20,
+            "RBI": 14,
+            "BB": 6,
+            "SO": 7,
             "pitching_outs": 27,
-            "pitching_runs": 2,
-            "pitching_hits": 9
+            "pitching_runs": 10,
+            "pitching_hits": 10
           }
         ],
         "source_warnings": [],
-        "player_rows": 26,
+        "player_rows": 37,
         "status": "PASS",
         "scoreboard": [
           {
-            "runs": 2,
-            "hits": 9,
-            "errors": 0,
+            "runs": 10,
+            "hits": 10,
+            "errors": 2,
             "innings": [
+              0,
+              0,
+              0,
               1,
+              5,
               0,
               0,
               0,
-              0,
-              0,
-              0,
-              0,
-              1
+              4
             ]
           },
           {
-            "runs": 6,
-            "hits": 7,
-            "errors": 0,
+            "runs": 15,
+            "hits": 20,
+            "errors": 1,
             "innings": [
               1,
-              4,
-              0,
-              0,
               1,
               0,
+              3,
+              1,
+              5,
               0,
-              0,
+              4,
               null
             ]
           }
         ],
         "lineup_audit": [
           {
-            "team": "Arizona State",
+            "team": "Alabama",
             "nine_starting_slots": true,
-            "batter_rows": 10,
-            "pitcher_rows": 4,
-            "substitutes": 1
+            "batter_rows": 11,
+            "pitcher_rows": 9,
+            "substitutes": 2
           },
           {
-            "team": "Oklahoma State",
+            "team": "Tennessee",
+            "nine_starting_slots": true,
+            "batter_rows": 13,
+            "pitcher_rows": 4,
+            "substitutes": 4
+          }
+        ],
+        "official_decisions": {
+          "win": "Aj Russell",
+          "loss": "Adams, Zane",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": "Aj Russell",
+          "loss": null,
+          "save": null
+        }
+      },
+      "pitching_decisions": {
+        "win": "Aj Russell",
+        "loss": "Zane Adams",
+        "save": null
+      }
+    },
+    {
+      "game_id": "cb-2025-05-20-south-carolina-florida-att0352",
+      "source_url": "https://d2b5htfb6s9xp9.cloudfront.net/sports/baseball/stats/2025/south-carolina/boxscore/27367",
+      "score": [
+        3,
+        11
+      ],
+      "source_game_id": "27367",
+      "player_rows": 33,
+      "source_stat_audit": {
+        "game_id": "cb-2025-05-20-south-carolina-florida-att0352",
+        "source": "https://d2b5htfb6s9xp9.cloudfront.net/sports/baseball/stats/2025/south-carolina/boxscore/27367",
+        "http_code": 200,
+        "source_bytes": 1470265,
+        "source_sha256": "b2cdaeb7da82ccb72c99e5aa7cea4dc2fcd216f3fc12523af532b5be66463f8f",
+        "teams": [
+          {
+            "name": "South Carolina",
+            "batters": 13,
+            "pitchers": 8,
+            "AB": 37,
+            "R": 3,
+            "H": 11,
+            "RBI": 2,
+            "BB": 3,
+            "SO": 6,
+            "pitching_outs": 24,
+            "pitching_runs": 11,
+            "pitching_hits": 13
+          },
+          {
+            "name": "Florida",
+            "batters": 9,
+            "pitchers": 3,
+            "AB": 37,
+            "R": 11,
+            "H": 13,
+            "RBI": 11,
+            "BB": 6,
+            "SO": 10,
+            "pitching_outs": 27,
+            "pitching_runs": 3,
+            "pitching_hits": 11
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 33,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 3,
+            "hits": 11,
+            "errors": 2,
+            "innings": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              0
+            ]
+          },
+          {
+            "runs": 11,
+            "hits": 13,
+            "errors": 0,
+            "innings": [
+              0,
+              3,
+              2,
+              1,
+              1,
+              0,
+              0,
+              4,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "South Carolina",
+            "nine_starting_slots": true,
+            "batter_rows": 13,
+            "pitcher_rows": 8,
+            "substitutes": 4
+          },
+          {
+            "team": "Florida",
             "nine_starting_slots": true,
             "batter_rows": 9,
             "pitcher_rows": 3,
@@ -107,19 +222,19 @@
           }
         ],
         "official_decisions": {
-          "win": "Bodendorf, Harrison",
-          "loss": "Jacobs, Ben",
+          "win": "Rowland, Blaine",
+          "loss": "Brandon Stone",
           "save": null
         },
         "resolved_pitcher_decisions": {
           "win": null,
-          "loss": null,
+          "loss": "Brandon Stone",
           "save": null
         }
       },
       "pitching_decisions": {
-        "win": "Harrison Bodendorf",
-        "loss": "Ben Jacobs",
+        "win": "Blaine Rowland",
+        "loss": "Brandon Stone",
         "save": null
       }
     }
@@ -139,16 +254,6 @@
       "game_id": "cb-2025-05-31-dallas-baptist-lsu-att0367",
       "source_url": "https://static.lsusports.net/assets/docs/bb/25stats/LSU531.pdf",
       "reason": "Official source PDF identified; separate PDF line transcription required"
-    },
-    {
-      "game_id": "cb-2025-05-21-alabama-tennessee-att0354",
-      "source_url": "https://rolltide.com/boxscore.aspx?id=19947",
-      "reason": "Tennessee: source batting order resolved to 10 starting slots, not 9"
-    },
-    {
-      "game_id": "cb-2025-05-20-south-carolina-florida-att0352",
-      "source_url": "https://d2b5htfb6s9xp9.cloudfront.net/sports/baseball/stats/2025/south-carolina/boxscore/27367",
-      "reason": "South Carolina: source batting order resolved to 12 starting slots, not 9"
     }
   ]
 }

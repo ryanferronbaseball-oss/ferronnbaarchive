@@ -21,6 +21,8 @@ from playwright.sync_api import sync_playwright
 
 ROOT = Path(__file__).resolve().parents[2]
 SITE = ROOT / "college-baseball"
+REVIEW = SITE / "output" / "regional-pilot-review"
+REVIEW.mkdir(parents=True, exist_ok=True)
 MOD = runpy.run_path(str(SITE / "scripts" / "import_attendance.py"))
 load_csv, make_report = MOD["load_csv"], MOD["make_report"]
 
@@ -316,6 +318,7 @@ with tempfile.TemporaryDirectory() as t:
                 page.wait_for_function("document.querySelector('.metrics .metric strong').innerText==='6'")
                 check(page.locator(".cb-game-card").count() >= 6,
                       f"{width} actual six attended regional games render")
+                page.screenshot(path=str(REVIEW / f"overview-{width}.png"), full_page=True)
                 visit(page, host, "game.html?id=cb-2026-05-31-ucf-auburn", "#cb-game-details .cb-game-summary")
                 check("UCF @ Auburn" in page.locator("#cb-game-details").inner_text()
                       and "3 – 9" in page.locator("#cb-game-details").inner_text(),
@@ -330,6 +333,7 @@ with tempfile.TemporaryDirectory() as t:
                       and "SV: Ryan Hetzler" in decisions.inner_text()
                       and decisions.locator('a[href="./player.html?id=cb-auburn-ryan-hetzler"]').count() == 1,
                       f"{width} May 31 official W/L/S credit correct linked college pitchers")
+                page.screenshot(path=str(REVIEW / f"may31-ucf-auburn-{width}.png"), full_page=True)
                 visit(page, host, "game.html?id=cb-2026-05-29-milwaukee-auburn", "#cb-game-details .cb-game-summary")
                 check("13 – 8" in page.locator("#cb-game-details").inner_text()
                       and "Grant Ross" in page.locator("#cb-game-details").inner_text()
@@ -347,6 +351,7 @@ with tempfile.TemporaryDirectory() as t:
                 visit(page, host, "stats.html", "#cb-player-board .cb-table")
                 check("Chase Fralick" in page.locator("#cb-player-board").inner_text(),
                       f"{width} all six official gamebooks build hitter leaderboard")
+                page.screenshot(path=str(REVIEW / f"batting-leaderboard-{width}.png"), full_page=True)
                 page.locator("#cb-role").select_option("pitch")
                 check("LJ Cormier" in page.locator("#cb-player-board").inner_text(),
                       f"{width} actual pitcher leaderboard contains source-backed winner")
@@ -356,11 +361,19 @@ with tempfile.TemporaryDirectory() as t:
                 visit(page, host, "records.html", ".cb-record")
                 check("Chase Fralick" in page.locator("#app").inner_text(),
                       f"{width} official gamebook feeds personal signature records")
+                page.screenshot(path=str(REVIEW / f"signature-performances-{width}.png"), full_page=True)
                 check(page.evaluate("document.documentElement.scrollWidth<=innerWidth+3"),
                       f"{width} live pilot fits screen")
                 page.close()
             check(not errors, "Full real-source pilot also has zero browser JavaScript errors")
             browser.close()
+            (REVIEW / "manifest.json").write_text(json.dumps({
+                "scope": "Draft only; six source-verified college baseball games from the Auburn Regional",
+                "games": 6, "player_game_rows": 165, "unique_players": 86,
+                "browser_viewports": [1280, 390],
+                "screenshots": sorted(p.name for p in REVIEW.glob("*.png")),
+                "live_site_modified": False,
+            }, indent=2) + "\n")
     finally:
         server.shutdown()
 print("PASS all six Regional gamebooks, 165 player lines, full team reconciliation and mobile/browser QA")

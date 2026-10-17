@@ -4,393 +4,52 @@
   "original_attendance_entries": 444,
   "verified_2026_unchanged": 68,
   "total_2025_attendance": 74,
-  "completed_in_this_run": 6,
-  "verified_2025_total": 51,
-  "linked_source_games": 67,
+  "completed_in_this_run": 11,
+  "verified_2025_total": 62,
+  "linked_source_games": 68,
   "passed_games": [
     {
-      "game_id": "cb-2025-02-23-northwestern-state-troy-att0307",
-      "source_url": "https://troytrojans.com/sports/baseball/stats/2025/northwestern-state/boxscore/10370",
+      "game_id": "cb-2025-03-15-virginia-tech-nc-state-att0322",
+      "source_url": "https://gopack.com/sports/baseball/stats/2025/virginia-tech/boxscore/23688",
       "score": [
-        4,
-        14
-      ],
-      "source_game_id": "10370",
-      "player_rows": 30,
-      "source_stat_audit": {
-        "game_id": "cb-2025-02-23-northwestern-state-troy-att0307",
-        "source": "https://troytrojans.com/sports/baseball/stats/2025/northwestern-state/boxscore/10370",
-        "http_code": 200,
-        "source_bytes": 1046232,
-        "source_sha256": "843010498cc9255ecb78abcfd3472792760a2049e6cdc03dc5336352deeca05e",
-        "teams": [
-          {
-            "name": "Northwestern State",
-            "batters": 9,
-            "pitchers": 6,
-            "AB": 24,
-            "R": 4,
-            "H": 5,
-            "RBI": 4,
-            "BB": 5,
-            "SO": 6,
-            "pitching_outs": 20,
-            "pitching_runs": 14,
-            "pitching_hits": 14
-          },
-          {
-            "name": "Troy",
-            "batters": 11,
-            "pitchers": 4,
-            "AB": 33,
-            "R": 14,
-            "H": 14,
-            "RBI": 14,
-            "BB": 12,
-            "SO": 6,
-            "pitching_outs": 21,
-            "pitching_runs": 4,
-            "pitching_hits": 5
-          }
-        ],
-        "source_warnings": [],
-        "player_rows": 30,
-        "status": "PASS",
-        "scoreboard": [
-          {
-            "runs": 4,
-            "hits": 5,
-            "errors": 1,
-            "innings": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              2,
-              2
-            ]
-          },
-          {
-            "runs": 14,
-            "hits": 14,
-            "errors": 0,
-            "innings": [
-              1,
-              3,
-              0,
-              0,
-              3,
-              2,
-              5
-            ]
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "Northwestern State",
-            "nine_starting_slots": true,
-            "batter_rows": 9,
-            "pitcher_rows": 6,
-            "substitutes": 0
-          },
-          {
-            "team": "Troy",
-            "nine_starting_slots": true,
-            "batter_rows": 11,
-            "pitcher_rows": 4,
-            "substitutes": 2
-          }
-        ],
-        "official_decisions": {
-          "win": "Nelson, Drew",
-          "loss": "Hillen, Trent",
-          "save": null
-        },
-        "resolved_pitcher_decisions": {
-          "win": null,
-          "loss": null,
-          "save": null
-        }
-      },
-      "pitching_decisions": {
-        "win": "Drew Nelson",
-        "loss": "Trent Hillen",
-        "save": null
-      }
-    },
-    {
-      "game_id": "cb-2025-02-16-georgia-unc-wilmington-att0302",
-      "source_url": "https://georgiadogs.com/sports/baseball/stats/2025/uncw/boxscore/25441",
-      "score": [
-        2,
+        3,
         6
       ],
-      "source_game_id": "25441",
-      "player_rows": 28,
+      "source_game_id": "23688",
+      "player_rows": 29,
       "source_stat_audit": {
-        "game_id": "cb-2025-02-16-georgia-unc-wilmington-att0302",
-        "source": "https://georgiadogs.com/sports/baseball/stats/2025/uncw/boxscore/25441",
+        "game_id": "cb-2025-03-15-virginia-tech-nc-state-att0322",
+        "source": "https://gopack.com/sports/baseball/stats/2025/virginia-tech/boxscore/23688",
         "http_code": 200,
-        "source_bytes": 1208315,
-        "source_sha256": "c284b83bc92bedb5c4b170ca102ae08b4370fb454c829fbdf68343867be9a603",
+        "source_bytes": 1081884,
+        "source_sha256": "4254861b0036421ebbc72377113edb2dcc9ce9b9ab08c550641eff2e0ed87a58",
         "teams": [
           {
-            "name": "Georgia",
+            "name": "Virginia Tech",
             "batters": 12,
-            "pitchers": 5,
-            "AB": 29,
-            "R": 2,
-            "H": 2,
-            "RBI": 2,
-            "BB": 4,
-            "SO": 12,
+            "pitchers": 4,
+            "AB": 34,
+            "R": 3,
+            "H": 7,
+            "RBI": 3,
+            "BB": 0,
+            "SO": 9,
             "pitching_outs": 24,
             "pitching_runs": 6,
             "pitching_hits": 6
           },
           {
-            "name": "UNC Wilmington",
-            "batters": 9,
-            "pitchers": 3,
-            "AB": 26,
+            "name": "NC State",
+            "batters": 11,
+            "pitchers": 2,
+            "AB": 27,
             "R": 6,
             "H": 6,
-            "RBI": 5,
-            "BB": 6,
-            "SO": 11,
-            "pitching_outs": 27,
-            "pitching_runs": 2,
-            "pitching_hits": 2
-          }
-        ],
-        "source_warnings": [],
-        "player_rows": 28,
-        "status": "PASS",
-        "scoreboard": [
-          {
-            "runs": 2,
-            "hits": 2,
-            "errors": 0,
-            "innings": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              2,
-              0
-            ]
-          },
-          {
-            "runs": 6,
-            "hits": 6,
-            "errors": 0,
-            "innings": [
-              6,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              null
-            ]
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "Georgia",
-            "nine_starting_slots": true,
-            "batter_rows": 12,
-            "pitcher_rows": 5,
-            "substitutes": 3
-          },
-          {
-            "team": "UNC Wilmington",
-            "nine_starting_slots": true,
-            "batter_rows": 9,
-            "pitcher_rows": 3,
-            "substitutes": 0
-          }
-        ],
-        "official_decisions": {
-          "win": "Connor Marshburn",
-          "loss": "Brown, Zach",
-          "save": null
-        },
-        "resolved_pitcher_decisions": {
-          "win": "Connor Marshburn",
-          "loss": null,
-          "save": null
-        }
-      },
-      "pitching_decisions": {
-        "win": "Connor Marshburn",
-        "loss": "Zach Brown",
-        "save": null
-      }
-    },
-    {
-      "game_id": "cb-2025-02-15-georgia-unc-wilmington-att0300",
-      "source_url": "https://georgiadogs.com/sports/baseball/stats/2025/uncw/boxscore/25440",
-      "score": [
-        7,
-        3
-      ],
-      "source_game_id": "25440",
-      "player_rows": 30,
-      "source_stat_audit": {
-        "game_id": "cb-2025-02-15-georgia-unc-wilmington-att0300",
-        "source": "https://georgiadogs.com/sports/baseball/stats/2025/uncw/boxscore/25440",
-        "http_code": 200,
-        "source_bytes": 1227164,
-        "source_sha256": "791008c39372434c6727015f1b693c1b2a178084f75de976e931c8abca177e50",
-        "teams": [
-          {
-            "name": "Georgia",
-            "batters": 11,
-            "pitchers": 3,
-            "AB": 35,
-            "R": 7,
-            "H": 11,
             "RBI": 6,
-            "BB": 8,
-            "SO": 7,
+            "BB": 3,
+            "SO": 3,
             "pitching_outs": 27,
             "pitching_runs": 3,
-            "pitching_hits": 4
-          },
-          {
-            "name": "UNC Wilmington",
-            "batters": 11,
-            "pitchers": 5,
-            "AB": 31,
-            "R": 3,
-            "H": 4,
-            "RBI": 3,
-            "BB": 5,
-            "SO": 13,
-            "pitching_outs": 27,
-            "pitching_runs": 7,
-            "pitching_hits": 11
-          }
-        ],
-        "source_warnings": [],
-        "player_rows": 30,
-        "status": "PASS",
-        "scoreboard": [
-          {
-            "runs": 7,
-            "hits": 11,
-            "errors": 0,
-            "innings": [
-              0,
-              0,
-              0,
-              2,
-              1,
-              0,
-              3,
-              1,
-              0
-            ]
-          },
-          {
-            "runs": 3,
-            "hits": 4,
-            "errors": 0,
-            "innings": [
-              0,
-              0,
-              0,
-              2,
-              0,
-              1,
-              0,
-              0,
-              0
-            ]
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "Georgia",
-            "nine_starting_slots": true,
-            "batter_rows": 11,
-            "pitcher_rows": 3,
-            "substitutes": 2
-          },
-          {
-            "team": "UNC Wilmington",
-            "nine_starting_slots": true,
-            "batter_rows": 11,
-            "pitcher_rows": 5,
-            "substitutes": 2
-          }
-        ],
-        "official_decisions": {
-          "win": "Davis Ii, Alton",
-          "loss": "Aubrey Smith",
-          "save": null
-        },
-        "resolved_pitcher_decisions": {
-          "win": null,
-          "loss": "Aubrey Smith",
-          "save": null
-        }
-      },
-      "pitching_decisions": {
-        "win": "Alton Davis II",
-        "loss": "Aubrey Smith",
-        "save": null
-      }
-    },
-    {
-      "game_id": "cb-2025-02-15-georgia-quinnipiac-att0299",
-      "source_url": "https://gobobcats.com/sports/baseball/stats/2025/georgia/boxscore/22617",
-      "score": [
-        7,
-        4
-      ],
-      "source_game_id": "22617",
-      "player_rows": 29,
-      "source_stat_audit": {
-        "game_id": "cb-2025-02-15-georgia-quinnipiac-att0299",
-        "source": "https://gobobcats.com/sports/baseball/stats/2025/georgia/boxscore/22617",
-        "http_code": 200,
-        "source_bytes": 1366678,
-        "source_sha256": "86708fb4ea2d1e11381b505b5a2c20b8426aab1f26e5d66c9ccdd01358a23b08",
-        "teams": [
-          {
-            "name": "Georgia",
-            "batters": 11,
-            "pitchers": 5,
-            "AB": 29,
-            "R": 7,
-            "H": 7,
-            "RBI": 7,
-            "BB": 10,
-            "SO": 7,
-            "pitching_outs": 27,
-            "pitching_runs": 4,
-            "pitching_hits": 5
-          },
-          {
-            "name": "Quinnipiac",
-            "batters": 9,
-            "pitchers": 4,
-            "AB": 30,
-            "R": 4,
-            "H": 5,
-            "RBI": 3,
-            "BB": 4,
-            "SO": 6,
-            "pitching_outs": 27,
-            "pitching_runs": 7,
             "pitching_hits": 7
           }
         ],
@@ -399,114 +58,114 @@
         "status": "PASS",
         "scoreboard": [
           {
-            "runs": 7,
+            "runs": 3,
             "hits": 7,
-            "errors": 1,
+            "errors": 2,
             "innings": [
+              0,
+              0,
+              0,
+              1,
+              1,
+              1,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 6,
+            "hits": 6,
+            "errors": 0,
+            "innings": [
+              0,
               2,
               0,
               0,
               0,
               0,
               1,
-              1,
               3,
-              0
-            ]
-          },
-          {
-            "runs": 4,
-            "hits": 5,
-            "errors": 0,
-            "innings": [
-              0,
-              0,
-              0,
-              3,
-              0,
-              0,
-              1,
-              0,
-              0
+              null
             ]
           }
         ],
         "lineup_audit": [
           {
-            "team": "Georgia",
+            "team": "Virginia Tech",
             "nine_starting_slots": true,
-            "batter_rows": 11,
-            "pitcher_rows": 5,
-            "substitutes": 2
+            "batter_rows": 12,
+            "pitcher_rows": 4,
+            "substitutes": 3
           },
           {
-            "team": "Quinnipiac",
+            "team": "NC State",
             "nine_starting_slots": true,
-            "batter_rows": 9,
-            "pitcher_rows": 4,
-            "substitutes": 0
+            "batter_rows": 11,
+            "pitcher_rows": 2,
+            "substitutes": 2
           }
         ],
         "official_decisions": {
-          "win": "Davis Chastain",
-          "loss": "Gannon, Jack",
-          "save": "Dj Radtke"
+          "win": "Shaffner, Andrew",
+          "loss": "Andrew Sentlinger",
+          "save": null
         },
         "resolved_pitcher_decisions": {
-          "win": "Davis Chastain",
-          "loss": null,
-          "save": "Dj Radtke"
+          "win": null,
+          "loss": "Andrew Sentlinger",
+          "save": null
         }
       },
       "pitching_decisions": {
-        "win": "Davis Chastain",
-        "loss": "Jack Gannon",
-        "save": "Dj Radtke"
+        "win": "Andrew Shaffner",
+        "loss": "Andrew Sentlinger",
+        "save": null
       }
     },
     {
-      "game_id": "cb-2025-02-14-quinnipiac-georgia-att0297",
-      "source_url": "https://georgiadogs.com/sports/baseball/stats/2025/quinnipiac/boxscore/25439",
+      "game_id": "cb-2025-03-14-miami-wake-forest-att0321",
+      "source_url": "https://godeacs.com/sports/baseball/stats/2025/miami/boxscore/13957",
       "score": [
-        1,
-        9
+        0,
+        8
       ],
-      "source_game_id": "25439",
+      "source_game_id": "13957",
       "player_rows": 24,
       "source_stat_audit": {
-        "game_id": "cb-2025-02-14-quinnipiac-georgia-att0297",
-        "source": "https://georgiadogs.com/sports/baseball/stats/2025/quinnipiac/boxscore/25439",
+        "game_id": "cb-2025-03-14-miami-wake-forest-att0321",
+        "source": "https://godeacs.com/sports/baseball/stats/2025/miami/boxscore/13957",
         "http_code": 200,
-        "source_bytes": 1152939,
-        "source_sha256": "4421159b61a829a69b8d6062120d6f84968e214e4328127f07a53f9aeb85dc6c",
+        "source_bytes": 770363,
+        "source_sha256": "1b015df235d44c62521eea27bb2c3f1fccdf9ac599a06842ccbf4e23c26d700d",
         "teams": [
           {
-            "name": "Quinnipiac",
-            "batters": 9,
-            "pitchers": 4,
-            "AB": 28,
-            "R": 1,
-            "H": 4,
-            "RBI": 1,
-            "BB": 5,
-            "SO": 6,
-            "pitching_outs": 24,
-            "pitching_runs": 9,
-            "pitching_hits": 4
-          },
-          {
-            "name": "Georgia",
+            "name": "Miami",
             "batters": 9,
             "pitchers": 2,
-            "AB": 27,
-            "R": 9,
-            "H": 4,
+            "AB": 29,
+            "R": 0,
+            "H": 3,
+            "RBI": 0,
+            "BB": 2,
+            "SO": 11,
+            "pitching_outs": 24,
+            "pitching_runs": 8,
+            "pitching_hits": 10
+          },
+          {
+            "name": "Wake Forest",
+            "batters": 11,
+            "pitchers": 2,
+            "AB": 34,
+            "R": 8,
+            "H": 10,
             "RBI": 8,
-            "BB": 8,
-            "SO": 4,
+            "BB": 3,
+            "SO": 8,
             "pitching_outs": 27,
-            "pitching_runs": 1,
-            "pitching_hits": 4
+            "pitching_runs": 0,
+            "pitching_hits": 3
           }
         ],
         "source_warnings": [],
@@ -514,123 +173,8 @@
         "status": "PASS",
         "scoreboard": [
           {
-            "runs": 1,
-            "hits": 4,
-            "errors": 0,
-            "innings": [
-              0,
-              0,
-              1,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ]
-          },
-          {
-            "runs": 9,
-            "hits": 4,
-            "errors": 0,
-            "innings": [
-              5,
-              0,
-              1,
-              0,
-              0,
-              1,
-              2,
-              0,
-              null
-            ]
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "Quinnipiac",
-            "nine_starting_slots": true,
-            "batter_rows": 9,
-            "pitcher_rows": 4,
-            "substitutes": 0
-          },
-          {
-            "team": "Georgia",
-            "nine_starting_slots": true,
-            "batter_rows": 9,
-            "pitcher_rows": 2,
-            "substitutes": 0
-          }
-        ],
-        "official_decisions": {
-          "win": "Farley, Paul",
-          "loss": "Josh Lajoie",
-          "save": null
-        },
-        "resolved_pitcher_decisions": {
-          "win": null,
-          "loss": "Josh Lajoie",
-          "save": null
-        }
-      },
-      "pitching_decisions": {
-        "win": "Paul Farley",
-        "loss": "Josh Lajoie",
-        "save": null
-      }
-    },
-    {
-      "game_id": "cb-2025-02-04-lenoir-rhyne-barton-att0296",
-      "source_url": "https://bartonbulldogs.com/sports/baseball/stats/2025/lenoir-rhyne/boxscore/6025",
-      "score": [
-        4,
-        10
-      ],
-      "source_game_id": "6025",
-      "player_rows": 38,
-      "source_stat_audit": {
-        "game_id": "cb-2025-02-04-lenoir-rhyne-barton-att0296",
-        "source": "https://bartonbulldogs.com/sports/baseball/stats/2025/lenoir-rhyne/boxscore/6025",
-        "http_code": 200,
-        "source_bytes": 589672,
-        "source_sha256": "4825015d4a4fabfb1fea5851dc2b6b0ebe3b87b25814a83932bd52964e22e795",
-        "teams": [
-          {
-            "name": "Lenoir-Rhyne",
-            "batters": 16,
-            "pitchers": 8,
-            "AB": 34,
-            "R": 4,
-            "H": 7,
-            "RBI": 4,
-            "BB": 7,
-            "SO": 7,
-            "pitching_outs": 24,
-            "pitching_runs": 10,
-            "pitching_hits": 12
-          },
-          {
-            "name": "Barton",
-            "batters": 10,
-            "pitchers": 4,
-            "AB": 34,
-            "R": 10,
-            "H": 12,
-            "RBI": 9,
-            "BB": 8,
-            "SO": 7,
-            "pitching_outs": 27,
-            "pitching_runs": 4,
-            "pitching_hits": 7
-          }
-        ],
-        "source_warnings": [],
-        "player_rows": 38,
-        "status": "PASS",
-        "scoreboard": [
-          {
-            "runs": 4,
-            "hits": 7,
+            "runs": 0,
+            "hits": 3,
             "errors": 2,
             "innings": [
               0,
@@ -639,23 +183,253 @@
               0,
               0,
               0,
-              1,
               0,
-              3
+              0,
+              0
             ]
           },
           {
-            "runs": 10,
+            "runs": 8,
+            "hits": 10,
+            "errors": 1,
+            "innings": [
+              2,
+              1,
+              0,
+              4,
+              0,
+              0,
+              0,
+              1,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Miami",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 2,
+            "substitutes": 0
+          },
+          {
+            "team": "Wake Forest",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 2,
+            "substitutes": 2
+          }
+        ],
+        "official_decisions": {
+          "win": "Lunceford, Logan",
+          "loss": "Nick Robert",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": "Nick Robert",
+          "save": null
+        }
+      },
+      "pitching_decisions": {
+        "win": "Logan Lunceford",
+        "loss": "Nick Robert",
+        "save": null
+      }
+    },
+    {
+      "game_id": "cb-2025-03-08-stonehill-high-point-att0317",
+      "source_url": "https://highpointpanthers.com/sports/baseball/stats/2025/stonehill/boxscore/15752",
+      "score": [
+        9,
+        21
+      ],
+      "source_game_id": "15752",
+      "player_rows": 39,
+      "source_stat_audit": {
+        "game_id": "cb-2025-03-08-stonehill-high-point-att0317",
+        "source": "https://highpointpanthers.com/sports/baseball/stats/2025/stonehill/boxscore/15752",
+        "http_code": 200,
+        "source_bytes": 753231,
+        "source_sha256": "dd803a40098b570466f91c59b75dde7cfe1eaddc2031c87e042580186ce4ec4f",
+        "teams": [
+          {
+            "name": "Stonehill",
+            "batters": 14,
+            "pitchers": 6,
+            "AB": 41,
+            "R": 9,
+            "H": 12,
+            "RBI": 9,
+            "BB": 4,
+            "SO": 4,
+            "pitching_outs": 24,
+            "pitching_runs": 21,
+            "pitching_hits": 15
+          },
+          {
+            "name": "High Point",
+            "batters": 15,
+            "pitchers": 4,
+            "AB": 35,
+            "R": 21,
+            "H": 15,
+            "RBI": 20,
+            "BB": 6,
+            "SO": 2,
+            "pitching_outs": 27,
+            "pitching_runs": 9,
+            "pitching_hits": 12
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 39,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 9,
             "hits": 12,
             "errors": 1,
             "innings": [
               0,
+              0,
+              0,
               3,
+              1,
+              2,
+              3,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 21,
+            "hits": 15,
+            "errors": 2,
+            "innings": [
+              0,
+              8,
+              1,
+              2,
+              0,
+              4,
+              0,
+              6,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Stonehill",
+            "nine_starting_slots": true,
+            "batter_rows": 14,
+            "pitcher_rows": 6,
+            "substitutes": 5
+          },
+          {
+            "team": "High Point",
+            "nine_starting_slots": true,
+            "batter_rows": 15,
+            "pitcher_rows": 4,
+            "substitutes": 6
+          }
+        ],
+        "official_decisions": {
+          "win": "Story, Dylan",
+          "loss": "Lanzer,Jake",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      },
+      "pitching_decisions": {
+        "win": "Dylan Story",
+        "loss": "Jake Lanzer",
+        "save": null
+      }
+    },
+    {
+      "game_id": "cb-2025-03-04-gardner-webb-east-carolina-att0314",
+      "source_url": "https://gwusports.com/sports/baseball/stats/2025/east-carolina/boxscore/8420",
+      "score": [
+        8,
+        11
+      ],
+      "source_game_id": "8420",
+      "player_rows": 35,
+      "source_stat_audit": {
+        "game_id": "cb-2025-03-04-gardner-webb-east-carolina-att0314",
+        "source": "https://gwusports.com/sports/baseball/stats/2025/east-carolina/boxscore/8420",
+        "http_code": 200,
+        "source_bytes": 1429449,
+        "source_sha256": "d43b76c5a0ec3307f90517b6aea142ecf75c4a02168b4a5ebdb62a4486e1fab6",
+        "teams": [
+          {
+            "name": "Gardner Webb",
+            "batters": 9,
+            "pitchers": 10,
+            "AB": 40,
+            "R": 8,
+            "H": 13,
+            "RBI": 8,
+            "BB": 7,
+            "SO": 11,
+            "pitching_outs": 24,
+            "pitching_runs": 11,
+            "pitching_hits": 10
+          },
+          {
+            "name": "East Carolina",
+            "batters": 11,
+            "pitchers": 5,
+            "AB": 34,
+            "R": 11,
+            "H": 10,
+            "RBI": 7,
+            "BB": 10,
+            "SO": 8,
+            "pitching_outs": 27,
+            "pitching_runs": 8,
+            "pitching_hits": 13
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 35,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 8,
+            "hits": 13,
+            "errors": 1,
+            "innings": [
+              1,
+              1,
+              2,
+              0,
+              2,
+              2,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 11,
+            "hits": 10,
+            "errors": 1,
+            "innings": [
               1,
               5,
               0,
-              0,
               1,
+              0,
+              4,
+              0,
               0,
               null
             ]
@@ -663,34 +437,833 @@
         ],
         "lineup_audit": [
           {
-            "team": "Lenoir-Rhyne",
+            "team": "Gardner Webb",
             "nine_starting_slots": true,
-            "batter_rows": 16,
-            "pitcher_rows": 8,
-            "substitutes": 7
+            "batter_rows": 9,
+            "pitcher_rows": 10,
+            "substitutes": 0
           },
           {
-            "team": "Barton",
+            "team": "East Carolina",
             "nine_starting_slots": true,
-            "batter_rows": 10,
-            "pitcher_rows": 4,
-            "substitutes": 1
+            "batter_rows": 11,
+            "pitcher_rows": 5,
+            "substitutes": 2
           }
         ],
         "official_decisions": {
-          "win": "Campbell, A.J.",
-          "loss": "Preston Drebes",
+          "win": "Hunter, Jake",
+          "loss": "Guzman, Dominic",
           "save": null
         },
         "resolved_pitcher_decisions": {
           "win": null,
-          "loss": "Preston Drebes",
+          "loss": null,
           "save": null
         }
       },
       "pitching_decisions": {
-        "win": "A.J. Campbell",
-        "loss": "Preston Drebes",
+        "win": "Jake Hunter",
+        "loss": "Dominic Guzman",
+        "save": null
+      }
+    },
+    {
+      "game_id": "cb-2025-03-02-st-bonaventure-ut-martin-att0313",
+      "source_url": "https://utmsports.com/sports/baseball/stats/2025/st-bonaventure/boxscore/12304",
+      "score": [
+        13,
+        6
+      ],
+      "source_game_id": "12304",
+      "player_rows": 31,
+      "source_stat_audit": {
+        "game_id": "cb-2025-03-02-st-bonaventure-ut-martin-att0313",
+        "source": "https://utmsports.com/sports/baseball/stats/2025/st-bonaventure/boxscore/12304",
+        "http_code": 200,
+        "source_bytes": 1105899,
+        "source_sha256": "e37d10742434afb383b475413d055cb30f319959230f3f8e7fe95114efb7ffac",
+        "teams": [
+          {
+            "name": "St. Bonaventure",
+            "batters": 11,
+            "pitchers": 4,
+            "AB": 37,
+            "R": 13,
+            "H": 9,
+            "RBI": 7,
+            "BB": 13,
+            "SO": 7,
+            "pitching_outs": 27,
+            "pitching_runs": 6,
+            "pitching_hits": 9
+          },
+          {
+            "name": "UT Martin",
+            "batters": 9,
+            "pitchers": 7,
+            "AB": 36,
+            "R": 6,
+            "H": 9,
+            "RBI": 4,
+            "BB": 5,
+            "SO": 6,
+            "pitching_outs": 27,
+            "pitching_runs": 13,
+            "pitching_hits": 9
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 31,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 13,
+            "hits": 9,
+            "errors": 4,
+            "innings": [
+              1,
+              1,
+              0,
+              1,
+              5,
+              0,
+              2,
+              2,
+              1
+            ]
+          },
+          {
+            "runs": 6,
+            "hits": 9,
+            "errors": 5,
+            "innings": [
+              1,
+              0,
+              2,
+              1,
+              0,
+              0,
+              0,
+              1,
+              1
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "St. Bonaventure",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 4,
+            "substitutes": 2
+          },
+          {
+            "team": "UT Martin",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 7,
+            "substitutes": 0
+          }
+        ],
+        "official_decisions": {
+          "win": "Kade Walker",
+          "loss": "Thornton, Quincy",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": "Kade Walker",
+          "loss": null,
+          "save": null
+        }
+      },
+      "pitching_decisions": {
+        "win": "Kade Walker",
+        "loss": "Quincy Thornton",
+        "save": null
+      }
+    },
+    {
+      "game_id": "cb-2025-03-02-old-dominion-middle-tennessee-state-att0312",
+      "source_url": "https://goblueraiders.com/sports/baseball/stats/2025/old-dominion/boxscore/15082",
+      "score": [
+        5,
+        3
+      ],
+      "source_game_id": "15082",
+      "player_rows": 31,
+      "source_stat_audit": {
+        "game_id": "cb-2025-03-02-old-dominion-middle-tennessee-state-att0312",
+        "source": "https://goblueraiders.com/sports/baseball/stats/2025/old-dominion/boxscore/15082",
+        "http_code": 200,
+        "source_bytes": 834287,
+        "source_sha256": "da4e9529f1fe579d81de3463d5071aca8b81e5ee0ed6cee1dc0fac879284b5e5",
+        "teams": [
+          {
+            "name": "Old Dominion",
+            "batters": 14,
+            "pitchers": 3,
+            "AB": 33,
+            "R": 5,
+            "H": 8,
+            "RBI": 3,
+            "BB": 5,
+            "SO": 16,
+            "pitching_outs": 27,
+            "pitching_runs": 3,
+            "pitching_hits": 9
+          },
+          {
+            "name": "Middle Tennessee State",
+            "batters": 11,
+            "pitchers": 3,
+            "AB": 34,
+            "R": 3,
+            "H": 9,
+            "RBI": 2,
+            "BB": 2,
+            "SO": 8,
+            "pitching_outs": 27,
+            "pitching_runs": 5,
+            "pitching_hits": 8
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 31,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 5,
+            "hits": 8,
+            "errors": 2,
+            "innings": [
+              0,
+              1,
+              0,
+              1,
+              2,
+              1,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 3,
+            "hits": 9,
+            "errors": 2,
+            "innings": [
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Old Dominion",
+            "nine_starting_slots": true,
+            "batter_rows": 14,
+            "pitcher_rows": 3,
+            "substitutes": 5
+          },
+          {
+            "team": "Middle Tennessee State",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 3,
+            "substitutes": 2
+          }
+        ],
+        "official_decisions": {
+          "win": "Morgan, Blake",
+          "loss": "Horn, Drew",
+          "save": "Matela, Bailey"
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      },
+      "pitching_decisions": {
+        "win": "Blake Morgan",
+        "loss": "Drew Horn",
+        "save": "Bailey Matela"
+      }
+    },
+    {
+      "game_id": "cb-2025-03-01-st-bonaventure-middle-tennessee-state-att0311",
+      "source_url": "https://goblueraiders.com/sports/baseball/stats/2025/st-bonaventure/boxscore/15081",
+      "score": [
+        13,
+        3
+      ],
+      "source_game_id": "15081",
+      "player_rows": 28,
+      "source_stat_audit": {
+        "game_id": "cb-2025-03-01-st-bonaventure-middle-tennessee-state-att0311",
+        "source": "https://goblueraiders.com/sports/baseball/stats/2025/st-bonaventure/boxscore/15081",
+        "http_code": 200,
+        "source_bytes": 816224,
+        "source_sha256": "21cb4c50feb863daaaa0f0059e6f53ae9c49a89a56990f132222f2e675d2942f",
+        "teams": [
+          {
+            "name": "St. Bonaventure",
+            "batters": 10,
+            "pitchers": 2,
+            "AB": 34,
+            "R": 13,
+            "H": 13,
+            "RBI": 13,
+            "BB": 8,
+            "SO": 6,
+            "pitching_outs": 21,
+            "pitching_runs": 3,
+            "pitching_hits": 5
+          },
+          {
+            "name": "Middle Tennessee State",
+            "batters": 11,
+            "pitchers": 5,
+            "AB": 26,
+            "R": 3,
+            "H": 5,
+            "RBI": 3,
+            "BB": 2,
+            "SO": 9,
+            "pitching_outs": 21,
+            "pitching_runs": 13,
+            "pitching_hits": 13
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 28,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 13,
+            "hits": 13,
+            "errors": 3,
+            "innings": [
+              2,
+              2,
+              3,
+              0,
+              2,
+              3,
+              1
+            ]
+          },
+          {
+            "runs": 3,
+            "hits": 5,
+            "errors": 5,
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              2
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "St. Bonaventure",
+            "nine_starting_slots": true,
+            "batter_rows": 10,
+            "pitcher_rows": 2,
+            "substitutes": 1
+          },
+          {
+            "team": "Middle Tennessee State",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 5,
+            "substitutes": 2
+          }
+        ],
+        "official_decisions": {
+          "win": "Michael Salina",
+          "loss": "Alderman, Chandler",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": "Michael Salina",
+          "loss": null,
+          "save": null
+        }
+      },
+      "pitching_decisions": {
+        "win": "Michael Salina",
+        "loss": "Chandler Alderman",
+        "save": null
+      }
+    },
+    {
+      "game_id": "cb-2025-03-01-ut-martin-old-dominion-att0310",
+      "source_url": "https://utmsports.com/sports/baseball/stats/2025/old-dominion/boxscore/12303",
+      "score": [
+        6,
+        0
+      ],
+      "source_game_id": "12303",
+      "player_rows": 28,
+      "source_stat_audit": {
+        "game_id": "cb-2025-03-01-ut-martin-old-dominion-att0310",
+        "source": "https://utmsports.com/sports/baseball/stats/2025/old-dominion/boxscore/12303",
+        "http_code": 200,
+        "source_bytes": 1005261,
+        "source_sha256": "b2fb7f91063d0625cb3a3be88d57788fa4e67bd2465d488c4d654281fbb69d37",
+        "teams": [
+          {
+            "name": "UT Martin",
+            "batters": 10,
+            "pitchers": 2,
+            "AB": 35,
+            "R": 6,
+            "H": 9,
+            "RBI": 6,
+            "BB": 3,
+            "SO": 9,
+            "pitching_outs": 27,
+            "pitching_runs": 0,
+            "pitching_hits": 4
+          },
+          {
+            "name": "Old Dominion",
+            "batters": 12,
+            "pitchers": 4,
+            "AB": 29,
+            "R": 0,
+            "H": 4,
+            "RBI": 0,
+            "BB": 4,
+            "SO": 6,
+            "pitching_outs": 27,
+            "pitching_runs": 6,
+            "pitching_hits": 9
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 28,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 6,
+            "hits": 9,
+            "errors": 1,
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              5,
+              1
+            ]
+          },
+          {
+            "runs": 0,
+            "hits": 4,
+            "errors": 1,
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "UT Martin",
+            "nine_starting_slots": true,
+            "batter_rows": 10,
+            "pitcher_rows": 2,
+            "substitutes": 1
+          },
+          {
+            "team": "Old Dominion",
+            "nine_starting_slots": true,
+            "batter_rows": 12,
+            "pitcher_rows": 4,
+            "substitutes": 3
+          }
+        ],
+        "official_decisions": {
+          "win": "Bayles, Drake",
+          "loss": "Levari, Marco",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      },
+      "pitching_decisions": {
+        "win": "Drake Bayles",
+        "loss": "Marco Levari",
+        "save": null
+      }
+    },
+    {
+      "game_id": "cb-2025-02-18-georgia-kennesaw-state-att0305",
+      "source_url": "https://georgiadogs.com/sports/baseball/stats/2025/kennesaw-state/boxscore/25442",
+      "score": [
+        6,
+        4
+      ],
+      "source_game_id": "25442",
+      "player_rows": 38,
+      "source_stat_audit": {
+        "game_id": "cb-2025-02-18-georgia-kennesaw-state-att0305",
+        "source": "https://georgiadogs.com/sports/baseball/stats/2025/kennesaw-state/boxscore/25442",
+        "http_code": 200,
+        "source_bytes": 1340506,
+        "source_sha256": "0403932e94b185366eac8dc33f4ab26f5b78f77323c8caa8975c7f628cd62c03",
+        "teams": [
+          {
+            "name": "Georgia",
+            "batters": 13,
+            "pitchers": 8,
+            "AB": 34,
+            "R": 6,
+            "H": 9,
+            "RBI": 4,
+            "BB": 10,
+            "SO": 14,
+            "pitching_outs": 27,
+            "pitching_runs": 4,
+            "pitching_hits": 7
+          },
+          {
+            "name": "Kennesaw State",
+            "batters": 9,
+            "pitchers": 8,
+            "AB": 32,
+            "R": 4,
+            "H": 7,
+            "RBI": 4,
+            "BB": 7,
+            "SO": 16,
+            "pitching_outs": 27,
+            "pitching_runs": 6,
+            "pitching_hits": 9
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 38,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 6,
+            "hits": 9,
+            "errors": 1,
+            "innings": [
+              0,
+              0,
+              0,
+              2,
+              0,
+              0,
+              1,
+              1,
+              2
+            ]
+          },
+          {
+            "runs": 4,
+            "hits": 7,
+            "errors": 0,
+            "innings": [
+              1,
+              3,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Georgia",
+            "nine_starting_slots": true,
+            "batter_rows": 13,
+            "pitcher_rows": 8,
+            "substitutes": 4
+          },
+          {
+            "team": "Kennesaw State",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 8,
+            "substitutes": 0
+          }
+        ],
+        "official_decisions": {
+          "win": "Mcloughlin, Tyler",
+          "loss": "Nate Helman",
+          "save": "Curley, Brian"
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": "Nate Helman",
+          "save": null
+        }
+      },
+      "pitching_decisions": {
+        "win": "Tyler McLoughlin",
+        "loss": "Nate Helman",
+        "save": "Brian Curley"
+      }
+    },
+    {
+      "game_id": "cb-2025-02-17-washington-st-joe-s-att0303",
+      "source_url": "https://sjuhawks.com/sports/baseball/stats/2025/washington/boxscore/13133",
+      "score": [
+        12,
+        9
+      ],
+      "source_game_id": "13133",
+      "player_rows": 33,
+      "source_stat_audit": {
+        "game_id": "cb-2025-02-17-washington-st-joe-s-att0303",
+        "source": "https://sjuhawks.com/sports/baseball/stats/2025/washington/boxscore/13133",
+        "http_code": 200,
+        "source_bytes": 652228,
+        "source_sha256": "7ba6b7410b34e3677f08a043ef90231b026ba4d4e350eedffcacefcdb9d0e974",
+        "teams": [
+          {
+            "name": "Washington",
+            "batters": 11,
+            "pitchers": 6,
+            "AB": 37,
+            "R": 12,
+            "H": 10,
+            "RBI": 11,
+            "BB": 11,
+            "SO": 10,
+            "pitching_outs": 27,
+            "pitching_runs": 9,
+            "pitching_hits": 11
+          },
+          {
+            "name": "St. Joe's",
+            "batters": 10,
+            "pitchers": 6,
+            "AB": 37,
+            "R": 9,
+            "H": 11,
+            "RBI": 8,
+            "BB": 4,
+            "SO": 8,
+            "pitching_outs": 27,
+            "pitching_runs": 12,
+            "pitching_hits": 10
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 33,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 12,
+            "hits": 10,
+            "errors": 1,
+            "innings": [
+              0,
+              2,
+              0,
+              2,
+              0,
+              0,
+              3,
+              1,
+              4
+            ]
+          },
+          {
+            "runs": 9,
+            "hits": 11,
+            "errors": 1,
+            "innings": [
+              1,
+              0,
+              2,
+              0,
+              0,
+              1,
+              0,
+              0,
+              5
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Washington",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 6,
+            "substitutes": 2
+          },
+          {
+            "team": "St. Joe's",
+            "nine_starting_slots": true,
+            "batter_rows": 10,
+            "pitcher_rows": 6,
+            "substitutes": 1
+          }
+        ],
+        "official_decisions": {
+          "win": "Isaac Yeager",
+          "loss": "Stein, Nathan",
+          "save": "Josh Emanuels"
+        },
+        "resolved_pitcher_decisions": {
+          "win": "Isaac Yeager",
+          "loss": null,
+          "save": "Josh Emanuels"
+        }
+      },
+      "pitching_decisions": {
+        "win": "Isaac Yeager",
+        "loss": "Nathan Stein",
+        "save": "Josh Emanuels"
+      }
+    },
+    {
+      "game_id": "cb-2025-02-14-quinnipiac-unc-wilmington-att0298",
+      "source_url": "https://gobobcats.com/sports/baseball/stats/2025/uncw/boxscore/22616",
+      "score": [
+        1,
+        12
+      ],
+      "source_game_id": "22616",
+      "player_rows": 27,
+      "source_stat_audit": {
+        "game_id": "cb-2025-02-14-quinnipiac-unc-wilmington-att0298",
+        "source": "https://gobobcats.com/sports/baseball/stats/2025/uncw/boxscore/22616",
+        "http_code": 200,
+        "source_bytes": 1305347,
+        "source_sha256": "fc3ca0709998c44fe0c8c66ad43cbd330fbee448a4715255db1b7e5a830a3701",
+        "teams": [
+          {
+            "name": "Quinnipiac",
+            "batters": 10,
+            "pitchers": 4,
+            "AB": 27,
+            "R": 1,
+            "H": 3,
+            "RBI": 1,
+            "BB": 0,
+            "SO": 9,
+            "pitching_outs": 22,
+            "pitching_runs": 12,
+            "pitching_hits": 14
+          },
+          {
+            "name": "UNC Wilmington",
+            "batters": 11,
+            "pitchers": 2,
+            "AB": 37,
+            "R": 12,
+            "H": 14,
+            "RBI": 12,
+            "BB": 6,
+            "SO": 7,
+            "pitching_outs": 24,
+            "pitching_runs": 1,
+            "pitching_hits": 3
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 27,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 1,
+            "hits": 3,
+            "errors": 1,
+            "innings": [
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 12,
+            "hits": 14,
+            "errors": 0,
+            "innings": [
+              0,
+              5,
+              0,
+              0,
+              0,
+              3,
+              0,
+              4
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Quinnipiac",
+            "nine_starting_slots": true,
+            "batter_rows": 10,
+            "pitcher_rows": 4,
+            "substitutes": 1
+          },
+          {
+            "team": "UNC Wilmington",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 2,
+            "substitutes": 2
+          }
+        ],
+        "official_decisions": {
+          "win": "Zane Taylor",
+          "loss": "Balcom, Nick",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": "Zane Taylor",
+          "loss": null,
+          "save": null
+        }
+      },
+      "pitching_decisions": {
+        "win": "Zane Taylor",
+        "loss": "Nick Balcom",
         "save": null
       }
     }
@@ -713,69 +1286,19 @@
       "reason": "Official source PDF identified; separate PDF line transcription required"
     },
     {
-      "game_id": "cb-2025-03-15-virginia-tech-nc-state-att0322",
-      "source_url": "https://gopack.com/sports/baseball/stats/2025/virginia-tech/boxscore/23688",
-      "reason": "NC State: source batting order resolved to 10 starting slots, not 9"
-    },
-    {
-      "game_id": "cb-2025-03-14-miami-wake-forest-att0321",
-      "source_url": "https://godeacs.com/sports/baseball/stats/2025/miami/boxscore/13957",
-      "reason": "Wake Forest: source batting order resolved to 10 starting slots, not 9"
-    },
-    {
-      "game_id": "cb-2025-03-08-stonehill-high-point-att0317",
-      "source_url": "https://highpointpanthers.com/sports/baseball/stats/2025/stonehill/boxscore/15752",
-      "reason": "Jake Lanzer - invalid NP '--'"
-    },
-    {
-      "game_id": "cb-2025-03-02-st-bonaventure-ut-martin-att0313",
-      "source_url": "https://utmsports.com/sports/baseball/stats/2025/st-bonaventure/boxscore/12304",
-      "reason": "St. Bonaventure: source batting order resolved to 10 starting slots, not 9"
-    },
-    {
-      "game_id": "cb-2025-03-02-old-dominion-middle-tennessee-state-att0312",
-      "source_url": "https://goblueraiders.com/sports/baseball/stats/2025/old-dominion/boxscore/15082",
-      "reason": "Old Dominion: source batting order resolved to 11 starting slots, not 9"
-    },
-    {
-      "game_id": "cb-2025-03-01-st-bonaventure-middle-tennessee-state-att0311",
-      "source_url": "https://goblueraiders.com/sports/baseball/stats/2025/st-bonaventure/boxscore/15081",
-      "reason": "Middle Tennessee State: source batting order resolved to 10 starting slots, not 9"
-    },
-    {
-      "game_id": "cb-2025-03-01-ut-martin-old-dominion-att0310",
-      "source_url": "https://utmsports.com/sports/baseball/stats/2025/old-dominion/boxscore/12303",
-      "reason": "Old Dominion: source batting order resolved to 10 starting slots, not 9"
-    },
-    {
       "game_id": "cb-2025-02-19-north-alabama-auburn-att0306",
       "source_url": "https://auburntigers.com/boxscore/29316",
       "reason": "Official inning R/H/E scoreboard could not be unambiguously parsed and checked"
     },
     {
-      "game_id": "cb-2025-02-18-georgia-kennesaw-state-att0305",
-      "source_url": "https://georgiadogs.com/sports/baseball/stats/2025/kennesaw-state/boxscore/25442",
-      "reason": "Georgia: source batting order resolved to 11 starting slots, not 9"
-    },
-    {
       "game_id": "cb-2025-02-17-kansas-state-coastal-carolina-att0304",
       "source_url": "https://www.kstatesports.com/sports/baseball/stats/2025/coastal-carolina/boxscore/18791",
-      "reason": "Kansas State: source batting order resolved to 10 starting slots, not 9"
-    },
-    {
-      "game_id": "cb-2025-02-17-washington-st-joe-s-att0303",
-      "source_url": "https://sjuhawks.com/sports/baseball/stats/2025/washington/boxscore/13133",
-      "reason": "Bradley Gilbert - invalid NP '--'"
+      "reason": "Coastal Carolina: source batting order resolved to 10 starting slots, not 9"
     },
     {
       "game_id": "cb-2025-02-15-quinnipiac-unc-wilmington-att0301",
       "source_url": "https://gobobcats.com/sports/baseball/stats/2025/uncw/boxscore/22618",
-      "reason": "Quinnipiac: source batting order resolved to 11 starting slots, not 9"
-    },
-    {
-      "game_id": "cb-2025-02-14-quinnipiac-unc-wilmington-att0298",
-      "source_url": "https://gobobcats.com/sports/baseball/stats/2025/uncw/boxscore/22616",
-      "reason": "UNC Wilmington: source batting order resolved to 10 starting slots, not 9"
+      "reason": "UNC Wilmington: source batting order resolved to 11 starting slots, not 9"
     }
   ]
 }

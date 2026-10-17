@@ -5,10 +5,10 @@
   "uploaded_total_attendance_rows": 444,
   "season_span": "2017–2026 after user-confirmed 2024 typo correction",
   "staged_games": 444,
-  "official_score_and_inning_lines_matched": 51,
-  "official_player_boxscores_imported": 51,
-  "player_stat_rows": 1465,
-  "unique_player_ids": 844,
+  "official_score_and_inning_lines_matched": 58,
+  "official_player_boxscores_imported": 58,
+  "player_stat_rows": 1679,
+  "unique_player_ids": 945,
   "scores_supplied_by_user": 0,
   "source_docs": "Official Auburn, Arkansas, LSU, Florida, Mississippi State, Tennessee and Texas athletics/conference box scores and university recaps",
   "source_worksheet_rows": [
@@ -58,7 +58,7 @@
   ],
   "same_day_identical_matchup_pairs_in_full_sheet": 13,
   "metadata_status": "full_444_game_attendance_directory_plus_may_2026_official_sources",
-  "warning": "All 444 attendance rows intact. January through May 2026 approved for imports. Latest March gamebooks official-source verified; remaining sources flagged. Neither 2025 nor publication approved.",
+  "warning": "2026 NCAA approved, JUCO excluded, older years and publication NOT approved. Incomplete official sources remain unverified, see audit.",
   "resolved_matchups": [
     {
       "attendance_game_number": 443,
@@ -133,14 +133,14 @@
       "verified": true
     }
   ],
-  "remaining_official_boxscore_work": 0,
+  "remaining_official_boxscore_work": 10,
   "remaining_attendance_games_not_yet_imported": 0,
   "validation": "May 2026: all 27 official player books mapped to matching attendance games; scores, R/H/E, pitching/team opposing R and H, batting lineup starters checked; new imports have complete official per-inning lines. CI browser test separately tracked.",
   "all_attendance_entries_staged": 444,
-  "attendance_only_pending_official_verification": 393,
+  "attendance_only_pending_official_verification": 386,
   "source": "User workbook; 444 original rows, two user-corrected entries.",
   "official_scoreboard_player_lines_pending": 0,
-  "latest_verified_batch": "March 11 2026 Marshall at Louisville official gamebook imported; March 10/21",
+  "latest_verified_batch": "2026 NCAA February/March strict source reconciling (no JUCO)",
   "latest_verified_batch_games": [
     {
       "worksheet_row": 432,
@@ -369,5 +369,6 @@
       }
     },
     "updated": "2026-10-17"
-  }
+  },
+  "remaining_2026_eligible_noncaa_pending": 10
 }

@@ -9472,17 +9472,63 @@
     "state": null,
     "neutral_site": null,
     "game_number": null,
-    "game_type": null,
+    "game_type": "regular_season",
     "postseason_round": null,
-    "away_score": null,
-    "home_score": null,
-    "score_provenance": null,
-    "source_url": null,
-    "verification": "attendance_only",
-    "official_boxscore_status": "not_imported",
+    "away_score": 2,
+    "home_score": 13,
+    "score_provenance": "official_boxscore",
+    "source_url": "https://emueagles.com/sports/baseball/stats/2026/vanderbilt/boxscore/19391",
+    "verification": "official_boxscore_verified",
+    "official_boxscore_status": "verified",
     "possible_same_day_doubleheader": false,
     "provisional_worksheet_game_sequence": null,
-    "notes": "Original workbook Sheet1 row 380."
+    "notes": "Original workbook Sheet1 row 380.",
+    "away_hits": 5,
+    "home_hits": 13,
+    "away_errors": 1,
+    "home_errors": 0,
+    "innings": [
+      {
+        "inning": 1,
+        "away": 0,
+        "home": 3
+      },
+      {
+        "inning": 2,
+        "away": 0,
+        "home": 1
+      },
+      {
+        "inning": 3,
+        "away": 0,
+        "home": 2
+      },
+      {
+        "inning": 4,
+        "away": 2,
+        "home": 3
+      },
+      {
+        "inning": 5,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 6,
+        "away": 0,
+        "home": 2
+      },
+      {
+        "inning": 7,
+        "away": 0,
+        "home": 2
+      }
+    ],
+    "pitching_decisions": {
+      "win": "Luke Guth",
+      "loss": null,
+      "save": null
+    }
   },
   {
     "id": "cb-2026-02-20-marist-vanderbilt-att0380",
@@ -9497,17 +9543,68 @@
     "state": null,
     "neutral_site": null,
     "game_number": null,
-    "game_type": null,
+    "game_type": "regular_season",
     "postseason_round": null,
-    "away_score": null,
-    "home_score": null,
-    "score_provenance": null,
-    "source_url": null,
-    "verification": "attendance_only",
-    "official_boxscore_status": "not_imported",
+    "away_score": 5,
+    "home_score": 16,
+    "score_provenance": "official_boxscore",
+    "source_url": "https://goredfoxes.com/boxscore.aspx?id=15358",
+    "verification": "official_boxscore_verified",
+    "official_boxscore_status": "verified",
     "possible_same_day_doubleheader": false,
     "provisional_worksheet_game_sequence": null,
-    "notes": "Original workbook Sheet1 row 381."
+    "notes": "Original workbook Sheet1 row 381.",
+    "away_hits": 7,
+    "home_hits": 18,
+    "away_errors": 1,
+    "home_errors": 2,
+    "innings": [
+      {
+        "inning": 1,
+        "away": 1,
+        "home": 3
+      },
+      {
+        "inning": 2,
+        "away": 1,
+        "home": 0
+      },
+      {
+        "inning": 3,
+        "away": 1,
+        "home": 0
+      },
+      {
+        "inning": 4,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 5,
+        "away": 0,
+        "home": 6
+      },
+      {
+        "inning": 6,
+        "away": 2,
+        "home": 0
+      },
+      {
+        "inning": 7,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 8,
+        "away": 0,
+        "home": 7
+      }
+    ],
+    "pitching_decisions": {
+      "win": "Connor Fennell",
+      "loss": null,
+      "save": "England Bryan"
+    }
   },
   {
     "id": "cb-2026-02-21-marist-vanderbilt-att0381",
@@ -9522,17 +9619,63 @@
     "state": null,
     "neutral_site": null,
     "game_number": null,
-    "game_type": null,
+    "game_type": "regular_season",
     "postseason_round": null,
-    "away_score": null,
-    "home_score": null,
-    "score_provenance": null,
-    "source_url": null,
-    "verification": "attendance_only",
-    "official_boxscore_status": "not_imported",
+    "away_score": 1,
+    "home_score": 12,
+    "score_provenance": "official_boxscore",
+    "source_url": "https://goredfoxes.com/sports/baseball/stats/2026/vanderbilt-university/boxscore/15359",
+    "verification": "official_boxscore_verified",
+    "official_boxscore_status": "verified",
     "possible_same_day_doubleheader": false,
     "provisional_worksheet_game_sequence": null,
-    "notes": "Original workbook Sheet1 row 382."
+    "notes": "Original workbook Sheet1 row 382.",
+    "away_hits": 5,
+    "home_hits": 15,
+    "away_errors": 1,
+    "home_errors": 0,
+    "innings": [
+      {
+        "inning": 1,
+        "away": 0,
+        "home": 4
+      },
+      {
+        "inning": 2,
+        "away": 0,
+        "home": 4
+      },
+      {
+        "inning": 3,
+        "away": 0,
+        "home": 2
+      },
+      {
+        "inning": 4,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 5,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 6,
+        "away": 1,
+        "home": 2
+      },
+      {
+        "inning": 7,
+        "away": 0,
+        "home": null
+      }
+    ],
+    "pitching_decisions": {
+      "win": "Austin Nye",
+      "loss": null,
+      "save": null
+    }
   },
   {
     "id": "cb-2026-02-22-marist-vanderbilt-att0382",
@@ -9671,18 +9814,65 @@
     "city": null,
     "state": null,
     "neutral_site": null,
-    "game_number": null,
-    "game_type": null,
+    "game_number": 1,
+    "game_type": "regular_season",
     "postseason_round": null,
-    "away_score": null,
-    "home_score": null,
-    "score_provenance": null,
-    "source_url": null,
-    "verification": "attendance_only",
-    "official_boxscore_status": "not_imported",
+    "away_score": 5,
+    "home_score": 18,
+    "score_provenance": "official_boxscore",
+    "source_url": "https://letsgopeay.com/boxscore.aspx?id=14112",
+    "verification": "official_boxscore_verified",
+    "official_boxscore_status": "verified",
     "possible_same_day_doubleheader": true,
     "provisional_worksheet_game_sequence": 1,
-    "notes": "Original workbook Sheet1 row 388. One of 2 same-date matchups in source; game_number 1 provisional source-sheet sequence, verify against gamebooks."
+    "notes": "Original workbook Sheet1 row 388. One of 2 same-date matchups in source; game_number 1 provisional source-sheet sequence, verify against gamebooks.",
+    "away_hits": 6,
+    "home_hits": 14,
+    "away_errors": 2,
+    "home_errors": 1,
+    "innings": [
+      {
+        "inning": 1,
+        "away": 0,
+        "home": 10
+      },
+      {
+        "inning": 2,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 3,
+        "away": 0,
+        "home": 4
+      },
+      {
+        "inning": 4,
+        "away": 2,
+        "home": 0
+      },
+      {
+        "inning": 5,
+        "away": 2,
+        "home": 2
+      },
+      {
+        "inning": 6,
+        "away": 1,
+        "home": 2
+      },
+      {
+        "inning": 7,
+        "away": 0,
+        "home": null
+      }
+    ],
+    "pitching_decisions": {
+      "win": null,
+      "loss": "Gaige Stuckey",
+      "save": null
+    },
+    "attendance_segment_confirmation_pending": true
   },
   {
     "id": "cb-2026-03-10-ohio-austin-peay-att0388",
@@ -9696,18 +9886,75 @@
     "city": null,
     "state": null,
     "neutral_site": null,
-    "game_number": null,
-    "game_type": null,
+    "game_number": 2,
+    "game_type": "regular_season",
     "postseason_round": null,
-    "away_score": null,
-    "home_score": null,
-    "score_provenance": null,
-    "source_url": null,
-    "verification": "attendance_only",
-    "official_boxscore_status": "not_imported",
+    "away_score": 6,
+    "home_score": 15,
+    "score_provenance": "official_boxscore",
+    "source_url": "https://letsgopeay.com/sports/baseball/stats/2026/ohio/boxscore/14113",
+    "verification": "official_boxscore_verified",
+    "official_boxscore_status": "verified",
     "possible_same_day_doubleheader": true,
     "provisional_worksheet_game_sequence": 2,
-    "notes": "Original workbook Sheet1 row 389. One of 2 same-date matchups in source; game_number 2 provisional source-sheet sequence, verify against gamebooks."
+    "notes": "Original workbook Sheet1 row 389. One of 2 same-date matchups in source; game_number 2 provisional source-sheet sequence, verify against gamebooks.",
+    "away_hits": 11,
+    "home_hits": 16,
+    "away_errors": 0,
+    "home_errors": 0,
+    "innings": [
+      {
+        "inning": 1,
+        "away": 0,
+        "home": 1
+      },
+      {
+        "inning": 2,
+        "away": 0,
+        "home": 2
+      },
+      {
+        "inning": 3,
+        "away": 1,
+        "home": 0
+      },
+      {
+        "inning": 4,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 5,
+        "away": 0,
+        "home": 4
+      },
+      {
+        "inning": 6,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 7,
+        "away": 3,
+        "home": 5
+      },
+      {
+        "inning": 8,
+        "away": 2,
+        "home": 3
+      },
+      {
+        "inning": 9,
+        "away": 0,
+        "home": null
+      }
+    ],
+    "pitching_decisions": {
+      "win": null,
+      "loss": "Colton Landtiser",
+      "save": null
+    },
+    "attendance_segment_confirmation_pending": true
   },
   {
     "id": "cb-2026-03-10-indiana-state-vanderbilt-att0389",
@@ -9722,17 +9969,73 @@
     "state": null,
     "neutral_site": null,
     "game_number": null,
-    "game_type": null,
+    "game_type": "regular_season",
     "postseason_round": null,
-    "away_score": null,
-    "home_score": null,
-    "score_provenance": null,
-    "source_url": null,
-    "verification": "attendance_only",
-    "official_boxscore_status": "not_imported",
+    "away_score": 6,
+    "home_score": 14,
+    "score_provenance": "official_boxscore",
+    "source_url": "https://gosycamores.com/boxscore.aspx?id=17069&path=baseball",
+    "verification": "official_boxscore_verified",
+    "official_boxscore_status": "verified",
     "possible_same_day_doubleheader": false,
     "provisional_worksheet_game_sequence": null,
-    "notes": "Original workbook Sheet1 row 390."
+    "notes": "Original workbook Sheet1 row 390.",
+    "away_hits": 6,
+    "home_hits": 14,
+    "away_errors": 2,
+    "home_errors": 1,
+    "innings": [
+      {
+        "inning": 1,
+        "away": 0,
+        "home": 1
+      },
+      {
+        "inning": 2,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 3,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 4,
+        "away": 1,
+        "home": 1
+      },
+      {
+        "inning": 5,
+        "away": 5,
+        "home": 6
+      },
+      {
+        "inning": 6,
+        "away": 0,
+        "home": 2
+      },
+      {
+        "inning": 7,
+        "away": 0,
+        "home": 4
+      },
+      {
+        "inning": 8,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 9,
+        "away": 0,
+        "home": null
+      }
+    ],
+    "pitching_decisions": {
+      "win": "Tristan Bristow",
+      "loss": null,
+      "save": null
+    }
   },
   {
     "id": "cb-2026-03-11-marshall-louisville-att0390",
@@ -9820,17 +10123,73 @@
     "state": null,
     "neutral_site": null,
     "game_number": null,
-    "game_type": null,
+    "game_type": "regular_season",
     "postseason_round": null,
-    "away_score": null,
-    "home_score": null,
-    "score_provenance": null,
-    "source_url": null,
-    "verification": "attendance_only",
-    "official_boxscore_status": "not_imported",
+    "away_score": 15,
+    "home_score": 9,
+    "score_provenance": "official_boxscore",
+    "source_url": "https://athletics.bellarmine.edu/sports/baseball/stats/2026/austin-peay-state-university/boxscore/8787",
+    "verification": "official_boxscore_verified",
+    "official_boxscore_status": "verified",
     "possible_same_day_doubleheader": false,
     "provisional_worksheet_game_sequence": null,
-    "notes": "Original workbook Sheet1 row 392."
+    "notes": "Original workbook Sheet1 row 392.",
+    "away_hits": 14,
+    "home_hits": 10,
+    "away_errors": 1,
+    "home_errors": 3,
+    "innings": [
+      {
+        "inning": 1,
+        "away": 2,
+        "home": 0
+      },
+      {
+        "inning": 2,
+        "away": 0,
+        "home": 1
+      },
+      {
+        "inning": 3,
+        "away": 8,
+        "home": 0
+      },
+      {
+        "inning": 4,
+        "away": 0,
+        "home": 1
+      },
+      {
+        "inning": 5,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 6,
+        "away": 0,
+        "home": 6
+      },
+      {
+        "inning": 7,
+        "away": 0,
+        "home": 1
+      },
+      {
+        "inning": 8,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 9,
+        "away": 5,
+        "home": 0
+      }
+    ],
+    "pitching_decisions": {
+      "win": "Cody Airington",
+      "loss": null,
+      "save": "Gavin Alveti"
+    }
   },
   {
     "id": "cb-2026-03-13-notre-dame-louisville-att0392",

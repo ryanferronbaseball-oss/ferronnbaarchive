@@ -70,6 +70,22 @@ def main():
                 f"{mm}/{dd:02d}/{yy}",f"{mm:02d}/{dd}/{yy}",
                 f"{mm}/{dd}/{yy%100:02d}",f"{mm:02d}/{dd:02d}/{yy%100:02d}",
                 f"{mm}/{dd:02d}/{yy%100:02d}"}
+            if item.get("legacy_statcrew_source"):
+                from datetime import date as _date
+                dt=_date(yy,mm,dd)
+                formats.update({dt.strftime("%b %d, %Y"),
+                                dt.strftime("%B %d, %Y"),
+                                dt.strftime("%b %d, %Y").replace(" 0"," "),
+                                dt.strftime("%B %d, %Y").replace(" 0"," ")})
+                soup=BeautifulSoup(response.text,"html.parser")
+                sample_pres=[p.get_text() for p in soup.find_all("pre")]
+                sample_tables=soup.find_all("table")
+                print("STATCREW-DIAG",gid,"bytes",len(response.content),
+                      "pre",len(sample_pres),"table",len(sample_tables),
+                      "first_pre",repr(next((p[:1300] for p in sample_pres if "Player" in p or "Box Score" in p),"")),
+                      "first_table",repr(next((t.get_text(" ",strip=True)[:500] for t in sample_tables
+                                               if "Player" in t.get_text(" ",strip=True)),"")),
+                      flush=True)
             if not any(v in src for v in formats):
                 # 2024 opening-day Duke vs Indiana: Indiana's official
                 # 2024 text schedule explicitly says Friday Feb 16, while

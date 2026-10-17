@@ -10,7 +10,7 @@
     "2024-02": 17
   },
   "verified_player_gamebooks_at_queue_creation": 0,
-  "official_source_urls_identified": 57,
+  "official_source_urls_identified": 59,
   "source_queue": [
     {
       "game_id": "cb-2024-06-08-florida-clemson-att0295",
@@ -1208,6 +1208,51 @@
       "source_type": "official_university_sidearm_boxscore",
       "verification": "official_url_final_score_verified_player_lines_pending",
       "source_game_id": "13189"
+    },
+    {
+      "game_id": "cb-2024-02-16-duke-indiana-att0225",
+      "worksheet_row": 226,
+      "date": "2024-02-16",
+      "away": "Duke",
+      "home": "Indiana",
+      "source_url": "https://iuhoosiers.com/sports/baseball/stats/2024/duke/boxscore/26942",
+      "official_score": [
+        6,
+        3
+      ],
+      "ballpark": "Springs Brooks Stadium",
+      "city": "Conway",
+      "state": "SC",
+      "game_type": "regular_season",
+      "postseason_round": null,
+      "neutral_site": true,
+      "source_type": "official_university_sidearm_boxscore",
+      "verification": "official_url_final_score_verified_player_lines_pending",
+      "source_game_id": "26942",
+      "source_date_exception": "indiana_2024_official_schedule_feb16",
+      "corroborating_schedule": "https://iuhoosiers.com/sports/baseball/schedule/text/2024"
+    },
+    {
+      "game_id": "cb-2024-04-15-southern-mississippi-georgia-state-att0269",
+      "worksheet_row": 270,
+      "date": "2024-04-14",
+      "away": "Southern Mississippi",
+      "home": "Georgia State",
+      "source_url": "https://southernmiss.com/sports/baseball/stats/2024/georgia-state/boxscore/11075",
+      "official_score": [
+        14,
+        9
+      ],
+      "ballpark": "GSU Baseball Complex",
+      "city": "Atlanta",
+      "state": "GA",
+      "game_type": "regular_season",
+      "postseason_round": null,
+      "neutral_site": false,
+      "source_type": "official_university_sidearm_boxscore",
+      "verification": "official_url_final_score_verified_player_lines_pending",
+      "source_game_id": "11075",
+      "original_attendance_date": "2024-04-15"
     }
   ],
   "manual_review_flags": [
@@ -1225,13 +1270,14 @@
     "Preserve all verified 2025/2026 players, gamebook metadata, and their audits",
     "Do not publish/merge; 2023 and earlier are not authorized"
   ],
-  "new_2024_official_gamebooks_for_strict_import": 30,
+  "new_2024_official_gamebooks_for_strict_import": 32,
   "pending_identity_review_rows": [
     245,
     261,
     262
   ],
-  "skipped_date_conflict_rows": [
+  "skipped_date_conflict_rows": [],
+  "resolved_date_review_rows": [
     226,
     270
   ]

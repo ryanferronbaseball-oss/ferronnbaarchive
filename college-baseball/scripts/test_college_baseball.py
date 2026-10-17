@@ -289,9 +289,9 @@ with tempfile.TemporaryDirectory() as t:
                 page = browser.new_page(viewport={"width": width, "height": 900})
                 page.on("pageerror", lambda e: errors.append(str(e)))
                 visit(page, host, "index.html", ".metrics")
-                page.wait_for_function("document.querySelector('.metrics .metric strong').innerText==='5'")
-                check(page.locator(".cb-game-card").count() >= 5,
-                      f"{width} actual five attended regional games render")
+                page.wait_for_function("document.querySelector('.metrics .metric strong').innerText==='6'")
+                check(page.locator(".cb-game-card").count() >= 6,
+                      f"{width} actual six attended regional games render")
                 visit(page, host, "game.html?id=cb-2026-05-31-ucf-auburn", "#cb-game-details .cb-game-summary")
                 check("UCF @ Auburn" in page.locator("#cb-game-details").inner_text()
                       and "3 – 9" in page.locator("#cb-game-details").inner_text(),

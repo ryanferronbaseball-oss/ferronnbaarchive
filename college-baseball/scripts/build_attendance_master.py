@@ -20,7 +20,7 @@ def load_source():
     return [dict(zip(COLS,x)) for x in rows]
 
 def build(source,prior):
-    official={g["source_worksheet_row"]:g for g in prior if g.get("verification")=="official_boxscore_verified"}
+    official={g["source_worksheet_row"]:g for g in prior if g.get("verification") in ("official_boxscore_verified","official_scoreboard_verified")}
     assert len(official)>=6 and len(official)==len(set(official)),"missing official scorebooks"
     doubles=Counter((x["date"],x["away"].lower(),x["home"].lower()) for x in source)
     result=[]
@@ -67,7 +67,10 @@ def main():
     previous=json.loads((DATA/"games.json").read_text())
     entries=build(source,previous)
     official=sum(g["verification"]=="official_boxscore_verified" for g in entries)
-    print("Attendance",len(entries),"Official gamebooks",official,"Attendance only",len(entries)-official)
+    scores=sum(g["verification"]=="official_scoreboard_verified" for g in entries)
+    pending=sum(g["verification"]=="attendance_only" for g in entries)
+    assert official+scores+pending==444
+    print("Attendance",len(entries),"Official gamebooks",official,"Scores only",scores,"Attendance only",pending)
     if "--validate-only" in sys.argv:return
     (DATA/"games.json").write_text(json.dumps(entries,indent=2,ensure_ascii=False)+"\n")
     with (DATA/"attendance_master_444.csv").open("w",newline="",encoding="utf-8") as h:
@@ -82,7 +85,9 @@ def main():
         "status":"all_attendance_staged_source_verification_in_progress",
         "staged_games":444,"all_attendance_entries_staged":444,
         "unimported_worksheet_rows":0,
-        "attendance_only_pending_official_verification":444-official,
+        "attendance_only_pending_official_verification":pending,
+        "official_score_and_inning_lines_matched":official+scores,
+        "official_scoreboard_player_lines_pending":scores,
         "official_player_boxscores_imported":official,
         "source":"User workbook; 444 original rows, two user-corrected entries.",
         "warning":"All 444 attendance matchups listed. Only individually sourced gamebooks have verified scores and player statistics. Unresolved doubleheaders retain distinct source IDs; original ordering is not taken as official."

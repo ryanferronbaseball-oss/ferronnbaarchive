@@ -1,14 +1,14 @@
 {
-  "status": "all_444_attendance_staged_with_2026_sec_tournament_batch_one",
+  "status": "all_444_attendance_staged_with_2026_sec_tournament_first_batch",
   "scope": "college baseball only",
   "uploaded_spreadsheet": "NCAAB Games.xlsx",
   "uploaded_total_attendance_rows": 444,
   "season_span": "2017–2026 after user-confirmed 2024 typo correction",
   "staged_games": 444,
   "official_score_and_inning_lines_matched": 14,
-  "official_player_boxscores_imported": 8,
-  "player_stat_rows": 216,
-  "unique_player_ids": 117,
+  "official_player_boxscores_imported": 9,
+  "player_stat_rows": 246,
+  "unique_player_ids": 147,
   "scores_supplied_by_user": 0,
   "source_docs": "Official Auburn, Arkansas, LSU, Florida, Mississippi State, Tennessee and Texas athletics/conference box scores and university recaps",
   "source_worksheet_rows": [
@@ -58,7 +58,7 @@
   ],
   "same_day_identical_matchup_pairs_in_full_sheet": 13,
   "metadata_status": "full_444_game_attendance_directory_plus_may_2026_official_sources",
-  "warning": "444 attended games are displayed in draft. Eight games have complete verified player box scores (six NCAA Regional plus two SEC Tournament), six additional SEC Tournament games have official scores/innings/pitcher decisions but no player stats yet, and 430 have attendance-only metadata; no missing player stats are inferred.",
+  "warning": "All 444 games staged in draft. Nine source-verified player-game scorebooks (six Auburn Regional, three SEC Tournament), five SEC Tournament matchups with official scores/innings but missing player-stat transcription, and 430 attendance-only entries. Missing college box scores never inferred.",
   "resolved_matchups": [
     {
       "attendance_game_number": 443,
@@ -82,6 +82,12 @@
       "id": "cb-2026-05-20-lsu-auburn-att0432",
       "worksheet_row": 433,
       "source_url": "https://static.lsusports.net/assets/docs/bb/26stats/26boxscores.pdf#page=132",
+      "verified": true
+    },
+    {
+      "id": "cb-2026-05-23-florida-georgia-att0437",
+      "worksheet_row": 438,
+      "source_url": "https://floridagators.com/sports/baseball/stats/2026/georgia/boxscore/28034",
       "verified": true
     },
     {
@@ -127,13 +133,13 @@
       "verified": true
     }
   ],
-  "remaining_official_boxscore_work": 6,
+  "remaining_official_boxscore_work": 5,
   "remaining_attendance_games_not_yet_imported": 0,
-  "validation": "Five new data safeguards: source workbook rows stay distinct; every sourced inning line reconciles to final score; roster/lineup positions from gamebooks; pitcher wins/losses/saves are source credited; unknown historical dates/scores/stats remain null.",
+  "validation": "Nine complete scorebooks reconciled for team AB/R/H/RBI/BB/SO, pitcher outs/hits/runs/strikeouts, batting order and substitutions, W/L/S. Five additional 2026 SEC Tournament matchups have official scores/innings.",
   "all_attendance_entries_staged": 444,
   "attendance_only_pending_official_verification": 430,
   "source": "User workbook; 444 original rows, two user-corrected entries.",
-  "official_scoreboard_player_lines_pending": 6,
+  "official_scoreboard_player_lines_pending": 5,
   "latest_verified_batch": "SEC Tournament games May 20–23, 2026 (workbook rows 432–439)",
   "latest_verified_batch_games": [
     {
@@ -203,7 +209,7 @@
       "home": "Georgia",
       "away_score": 7,
       "home_score": 8,
-      "status": "official_scoreboard_verified",
+      "status": "official_boxscore_verified",
       "official_source": "https://floridagators.com/sports/baseball/stats/2026/georgia/boxscore/28034"
     },
     {

@@ -373,6 +373,20 @@ def _source_batters(table, valid_players, team, game_id):
         }
         if name in source_2024_unindented.get((game_id, team), set()):
             is_sub = True
+        # Some source tables capitalize "JD" as "Jd"; match the actual
+        # Rutgers catcher identity, not display-name capitalization.
+        if (game_id=="cb-2024-03-13-rutgers-north-carolina-att0256"
+              and team=="Rutgers" and slug(name)=="jd-jones"):
+            is_sub = True
+        # West Virginia 2024 March 7 official source: C Luke Szepek
+        # enters after PR Armani Guzman for Sam White, and PH/DH Michael
+        # Perazza follows PH Nick Barone in original DH Aaron Jamison's
+        # slot. Both lack Sidearm child indentation.
+        if (game_id=="cb-2024-03-07-byu-west-virginia-att0250"
+              and team=="West Virginia"
+              and slug(name) in ("luke-szepek","michael-perazza")):
+            is_sub = True
+
 
         seen.append((key, name, is_sub))
     if len(seen) != len(valid_players) or len({x[0] for x in seen}) != len(seen):

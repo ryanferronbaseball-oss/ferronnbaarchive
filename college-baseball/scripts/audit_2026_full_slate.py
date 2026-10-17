@@ -87,8 +87,11 @@ def main():
         assert monthly[m]["eligible"]==elig
         assert monthly[m]["verified"]==elig
         assert monthly[m]["junior_college_excluded"]==exclude
-    assert sum(m["player_game_rows"] for m in monthly.values())==len(stats)
-    assert report["official_player_boxscores_imported"]==68
+    prior_year_game_ids={g["id"] for g in year}
+    scoped_stats=[s for s in stats if s["game_id"] in prior_year_game_ids]
+    assert sum(m["player_game_rows"] for m in monthly.values())==len(scoped_stats)
+    assert report["official_player_boxscores_imported"]==sum(g["verification"]=="official_boxscore_verified" for g in games)
+    assert sum(g["verification"]=="official_boxscore_verified" for g in year)==68
     assert report["player_stat_rows"]==len(stats)
     stage["html_phase_pending_review_before_pdf"]=stage.get("pending_review",[])
     stage["pending_review"]=[]
@@ -98,35 +101,22 @@ def main():
         "game_id":pdf["game_id"],"source_url":pdf["source_url"],"audit_file":
         "2026_mar01_notredame_tenntech_pdf_audit.json"}
     stage["integrity_audit"]="2026_full_slate_monthly_integrity_audit.json"
-    report["remaining_official_boxscore_work"]=0
-    report["remaining_2026_eligible_noncaa_pending"]=0
-    report["remaining_2026_eligible_ncaa_pending"]=0
-    report["latest_verified_batch"]="2026 full eligible NCAA slate 68/68, official HTML and PDF audits complete"
-    report["warning"]=("All 444 original attendance games retained. 2026: 68/68 eligible "
-        "four-year/NCAA player gamebooks complete; 7 JUCO retained and excluded. "
-        "Only 2026 source work approved; 2025 and publication/merge not approved.")
-    gate=report.setdefault("monthly_review_gate",{})
-    for m,detail in monthly.items():
-        gate[m]={"status":"PASS","attended":detail["eligible"]+detail["junior_college_excluded"],
-                 "eligible":detail["eligible"],"complete":detail["verified"],
-                 "junior_college_excluded":detail["junior_college_excluded"]}
-    gate["publication"]={"approved":False}
-    gate["season_2025"]={"approved":False}
+    # Important: a 2026 re-audit must NOT overwrite a 2025 import report,
+    # change cross-season completion totals or revoke the 2025 authorization.
     audit={"status":"PASS","year":2026,"original_attendance":444,
            "total_attended_2026":len(year),"eligible":68,
            "complete_official_player_gamebooks":68,"junior_college_excluded":7,
-           "player_game_rows":len(stats),"unique_player_ids":len({r["player_id"] for r in stats}),
+           "player_game_rows":len(scoped_stats),"unique_player_ids":len({r["player_id"] for r in scoped_stats}),
            "months":dict(sorted(monthly.items())),
            "game_level_source_audits":[stage["integrity_audit"],
                    "2026_mar01_notredame_tenntech_pdf_audit.json"],
-           "integrity_issues":[],"scope":"2026 only; 2025 and publication not approved"}
+           "integrity_issues":[],"scope":"2026 audit only; 2025 backfill separately user-approved; publication not approved"}
     for filename,ob in (
         ("2026_remaining_ncca_gamebook_import_audit.json",stage),
-        ("2026_full_slate_monthly_integrity_audit.json",audit),
-        ("import_report.json",report)):
+        ("2026_full_slate_monthly_integrity_audit.json",audit)):
         write(filename,ob)
     print("COMPLETE 2026: 68 / 68 eligible NCAA gamebooks, 7 JUCO excluded,",
-          len(stats),"player-game rows; all source and lineup checks PASS",flush=True)
+          len(scoped_stats),"2026 player-game rows; all source and lineup checks PASS",flush=True)
 
 
 if __name__=="__main__":

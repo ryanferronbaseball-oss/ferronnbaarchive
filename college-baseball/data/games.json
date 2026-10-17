@@ -276,6 +276,78 @@
     "notes": "Pilot from original 444-row college baseball attendance list. The May 31 reverse-orientation Milwaukee @ Auburn row is separately held for identification."
   },
   {
+    "id": "cb-2026-05-31-ucf-auburn",
+    "attendance_id": "ncaab-upload-row-445",
+    "source_worksheet_row": 445,
+    "date": "2026-05-31",
+    "season": 2026,
+    "away": "UCF",
+    "home": "Auburn",
+    "ballpark": "Plainsman Park",
+    "city": "Auburn",
+    "state": "AL",
+    "neutral_site": null,
+    "game_number": null,
+    "game_type": "ncaa_postseason",
+    "postseason_round": "NCAA Auburn Regional",
+    "regional_game_number": 5,
+    "away_score": 3,
+    "home_score": 9,
+    "away_hits": 6,
+    "home_hits": 10,
+    "away_errors": 0,
+    "home_errors": 1,
+    "innings": [
+      {
+        "away": 1,
+        "home": 0
+      },
+      {
+        "away": 1,
+        "home": 0
+      },
+      {
+        "away": 0,
+        "home": 2
+      },
+      {
+        "away": 0,
+        "home": 1
+      },
+      {
+        "away": 0,
+        "home": 1
+      },
+      {
+        "away": 1,
+        "home": 2
+      },
+      {
+        "away": 0,
+        "home": 1
+      },
+      {
+        "away": 0,
+        "home": 2
+      },
+      {
+        "away": 0,
+        "home": null
+      }
+    ],
+    "source_url": "https://auburntigers.com/documents/ec6c3ba0-5e00-42de-a7c9-104fbfb4cd85.pdf",
+    "corroborating_source_url": "https://big12sports.com/boxscore.aspx?id=JcLFfL9RUu0H5ystoOMbjetIb%2B4rf85jh0EXvDMaKl0XzODpTGG4K9HaIXFQc03OKhgXj%2FCzlFnj5ZmetyTmjq7l8Xuvdqg2OT4K1T5zyla5lWpuIfMz%2B26lLVQ7mIqsglh1CCPHEGGRqf8B1ZVlig%3D%3D&path=baseball",
+    "verification": "source_matched",
+    "official_boxscore_status": "official_score_and_innings_reconciled_player_lines_pending",
+    "score_provenance": "official_university_boxscore",
+    "pitching_decisions": {
+      "win": "Alex Petrovic",
+      "loss": "Roman Kimball",
+      "save": "Ryan Hetzler"
+    },
+    "notes": "User corrected final attendance entry (game #444, Excel row 445) from Milwaukee vs Auburn to UCF vs Auburn. Official NCAA Auburn Regional Game 5, 5:06 PM CT. Original row 444/game #443 remains Auburn vs Milwaukee later that evening."
+  },
+  {
     "id": "cb-2026-05-31-auburn-milwaukee",
     "attendance_id": "ncaab-upload-row-444",
     "source_worksheet_row": 444,

@@ -1,16 +1,16 @@
 {
-  "status": "six_game_official_score_pilot",
+  "status": "six_game_player_boxscore_pilot_complete",
   "scope": "college baseball only",
   "uploaded_spreadsheet": "NCAAB Games.xlsx",
   "uploaded_total_attendance_rows": 444,
   "season_span": "2017–2026 after user-confirmed 2024 typo correction",
   "staged_games": 6,
   "official_score_and_inning_lines_matched": 6,
-  "official_player_boxscores_imported": 3,
-  "player_stat_rows": 81,
-  "unique_player_ids": 62,
+  "official_player_boxscores_imported": 6,
+  "player_stat_rows": 165,
+  "unique_player_ids": 86,
   "scores_supplied_by_user": 0,
-  "source_docs": "Auburn University Athletics game-by-game PDF box scores",
+  "source_docs": "Official Milwaukee Athletics HTML gamebooks, Big 12 Conference HTML box score, and Auburn University Athletics source PDFs",
   "source_worksheet_rows": [
     440,
     441,
@@ -50,7 +50,7 @@
   ],
   "same_day_identical_matchup_pairs_in_full_sheet": 13,
   "metadata_status": "pilot_only_other_attendance_not_imported",
-  "warning": "Six official Auburn Regional scores and inning lines are matched. Three games have complete player stat tables (81 player-game rows); three await transcription. Remaining 438 attendance entries are not yet on draft site and are not verified.",
+  "warning": "All six 2026 Auburn Regional gamebooks are now imported and individually checked. Only six of 444 personal attendance games are staged on the draft site; the other 438 are awaiting newest-to-oldest import and must not be treated as fully sourced.",
   "resolved_matchups": [
     {
       "attendance_game_number": 443,
@@ -68,5 +68,52 @@
       "score": "UCF 3 - Auburn 9",
       "note": "Corrected original source row 445 per user; official game source documents linked"
     }
-  ]
+  ],
+  "official_boxscore_sources": [
+    {
+      "regional_game_number": 1,
+      "id": "cb-2026-05-29-milwaukee-auburn",
+      "worksheet_row": 440,
+      "source_url": "https://mkepanthers.com/sports/baseball/stats/2026/auburn/boxscore/19125",
+      "verified": true
+    },
+    {
+      "regional_game_number": 2,
+      "id": "cb-2026-05-29-nc-state-ucf",
+      "worksheet_row": 441,
+      "source_url": "https://storage.googleapis.com/auburn-prod/2026/05/30/CtHy45oL3lLEkKyMzLthPcWetLS6K1d8xYLeUswq.pdf",
+      "verified": true
+    },
+    {
+      "regional_game_number": 3,
+      "id": "cb-2026-05-30-auburn-nc-state",
+      "worksheet_row": 442,
+      "source_url": "https://storage.googleapis.com/auburn-prod/2026/05/30/hgokYvQ1Iyb8xQ9wLH9CSavzftVqyefiXxnrYlR5.pdf",
+      "verified": true
+    },
+    {
+      "regional_game_number": 4,
+      "id": "cb-2026-05-30-ucf-milwaukee",
+      "worksheet_row": 443,
+      "source_url": "https://mkepanthers.com/sports/baseball/stats/2026/ucf/boxscore/19126",
+      "verified": true
+    },
+    {
+      "regional_game_number": 5,
+      "id": "cb-2026-05-31-ucf-auburn",
+      "worksheet_row": 445,
+      "source_url": "https://big12sports.com/boxscore.aspx?id=JcLFfL9RUu0H5ystoOMbjetIb%2B4rf85jh0EXvDMaKl0XzODpTGG4K9HaIXFQc03OKhgXj%2FCzlFnj5ZmetyTmjq7l8Xuvdqg2OT4K1T5zyla5lWpuIfMz%2B26lLVQ7mIqsglh1CCPHEGGRqf8B1ZVlig%3D%3D&path=baseball",
+      "verified": true
+    },
+    {
+      "regional_game_number": 6,
+      "id": "cb-2026-05-31-auburn-milwaukee",
+      "worksheet_row": 444,
+      "source_url": "https://storage.googleapis.com/auburn-prod/2026/06/01/gABVgCShBRJVn2SbogYy1rBiMyIGmnmzypXIIRJb.pdf",
+      "verified": true
+    }
+  ],
+  "remaining_official_boxscore_work": 0,
+  "remaining_attendance_games_not_yet_imported": 438,
+  "validation": "Each of six matchups independently reconciled by team AB/R/H/RBI/BB/SO, pitcher outs/hits/runs/strikeouts, innings line scores and official W/L/S attribution; official gamebooks linked."
 }

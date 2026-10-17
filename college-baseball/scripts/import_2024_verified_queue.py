@@ -61,56 +61,62 @@ def main():
         snapshot=deepcopy(g)
         original_keys=set(player_keys)
         try:
-            if not url.startswith("https://") or url.lower().split("?")[0].endswith(".pdf"):
-                raise ValueError("Not a verifiable official university HTML boxscore; PDF requires separate source transcription")
+            if not url.startswith("https://"):
+                raise ValueError("Official college scorebook must be an HTTPS source")
             response=sessions.get(url,timeout=45);response.raise_for_status()
-            src=BeautifulSoup(response.text,"html.parser").get_text(" ",strip=True)
-            yy,mm,dd=(int(n) for n in item["date"].split("-"))
-            formats={f"{mm}/{dd}/{yy}",f"{mm:02d}/{dd:02d}/{yy}",
-                f"{mm}/{dd:02d}/{yy}",f"{mm:02d}/{dd}/{yy}",
-                f"{mm}/{dd}/{yy%100:02d}",f"{mm:02d}/{dd:02d}/{yy%100:02d}",
-                f"{mm}/{dd:02d}/{yy%100:02d}"}
-            if item.get("legacy_statcrew_source"):
-                from datetime import date as _date
-                dt=_date(yy,mm,dd)
-                formats.update({dt.strftime("%b %d, %Y"),
-                                dt.strftime("%B %d, %Y"),
-                                dt.strftime("%b %d, %Y").replace(" 0"," "),
-                                dt.strftime("%B %d, %Y").replace(" 0"," ")})
-                soup=BeautifulSoup(response.text,"html.parser")
-                sample_pres=[p.get_text() for p in soup.find_all("pre")]
-                sample_tables=soup.find_all("table")
-                print("STATCREW-DIAG",gid,"bytes",len(response.content),
-                      "pre",len(sample_pres),"table",len(sample_tables),
-                      "first_pre",repr(next((p[:1300] for p in sample_pres if "Player" in p or "Box Score" in p),"")),
-                      "first_table",repr(next((t.get_text(" ",strip=True)[:500] for t in sample_tables
-                                               if "Player" in t.get_text(" ",strip=True)),"")),
-                      flush=True)
-                if "virginiasports.com/custompages" in url:
-                    print("STATCREW-VA-DETAIL",gid,
-                          "tables",[(i, len(t.find_all("tr")),
-                                     [c.get_text(" ",strip=True) for c in t.find_all("tr")[:3]][:3])
-                                    for i,t in enumerate(sample_tables)],
-                          "pres",[(len(p),repr(p[:850])) for p in sample_pres],flush=True)
-            if not any(v in src for v in formats):
-                # 2024 opening-day Duke vs Indiana: Indiana's official
-                # 2024 text schedule explicitly says Friday Feb 16, while
-                # BOTH universities' archived individual boxscore headers
-                # incorrectly read Feb 15 for the identical 6-3 contest.
-                # Preserve the attended/official-schedule date and document
-                # this ONE exception instead of rewriting it to the error.
-                duke_iu_date_exception=(
-                    gid=="cb-2024-02-16-duke-indiana-att0225"
-                    and item.get("source_date_exception")=="indiana_2024_official_schedule_feb16"
-                    and "2/15/2024" in src
-                    and item["official_score"]==[6,3])
-                if not duke_iu_date_exception:
-                    raise ValueError("University scorebook does not visibly confirm attendance date")
-            if item.get("legacy_statcrew_source"):
-                from import_2024_statcrew import import_statcrew
-                rows,stat_audit=import_statcrew(g,item,player_keys,response)
+            if item.get("source_type") == "official_university_pdf_scorebook":
+                if not url.lower().split("?")[0].endswith(".pdf"):
+                    raise ValueError("Official PDF record does not reference a real PDF")
+                from import_2024_pdf import parse as parse_pdf
+                rows,stat_audit=parse_pdf(g,item,player_keys,response)
             else:
-                rows,stat_audit=import_one(g,item,player_keys)
+                src=BeautifulSoup(response.text,"html.parser").get_text(" ",strip=True)
+                yy,mm,dd=(int(n) for n in item["date"].split("-"))
+                formats={f"{mm}/{dd}/{yy}",f"{mm:02d}/{dd:02d}/{yy}",
+                    f"{mm}/{dd:02d}/{yy}",f"{mm:02d}/{dd}/{yy}",
+                    f"{mm}/{dd}/{yy%100:02d}",f"{mm:02d}/{dd:02d}/{yy%100:02d}",
+                    f"{mm}/{dd:02d}/{yy%100:02d}"}
+                if item.get("legacy_statcrew_source"):
+                    from datetime import date as _date
+                    dt=_date(yy,mm,dd)
+                    formats.update({dt.strftime("%b %d, %Y"),
+                                    dt.strftime("%B %d, %Y"),
+                                    dt.strftime("%b %d, %Y").replace(" 0"," "),
+                                    dt.strftime("%B %d, %Y").replace(" 0"," ")})
+                    soup=BeautifulSoup(response.text,"html.parser")
+                    sample_pres=[p.get_text() for p in soup.find_all("pre")]
+                    sample_tables=soup.find_all("table")
+                    print("STATCREW-DIAG",gid,"bytes",len(response.content),
+                          "pre",len(sample_pres),"table",len(sample_tables),
+                          "first_pre",repr(next((p[:1300] for p in sample_pres if "Player" in p or "Box Score" in p),"")),
+                          "first_table",repr(next((t.get_text(" ",strip=True)[:500] for t in sample_tables
+                                                   if "Player" in t.get_text(" ",strip=True)),"")),
+                          flush=True)
+                    if "virginiasports.com/custompages" in url:
+                        print("STATCREW-VA-DETAIL",gid,
+                              "tables",[(i, len(t.find_all("tr")),
+                                         [c.get_text(" ",strip=True) for c in t.find_all("tr")[:3]][:3])
+                                        for i,t in enumerate(sample_tables)],
+                              "pres",[(len(p),repr(p[:850])) for p in sample_pres],flush=True)
+                if not any(v in src for v in formats):
+                    # 2024 opening-day Duke vs Indiana: Indiana's official
+                    # 2024 text schedule explicitly says Friday Feb 16, while
+                    # BOTH universities' archived individual boxscore headers
+                    # incorrectly read Feb 15 for the identical 6-3 contest.
+                    # Preserve the attended/official-schedule date and document
+                    # this ONE exception instead of rewriting it to the error.
+                    duke_iu_date_exception=(
+                        gid=="cb-2024-02-16-duke-indiana-att0225"
+                        and item.get("source_date_exception")=="indiana_2024_official_schedule_feb16"
+                        and "2/15/2024" in src
+                        and item["official_score"]==[6,3])
+                    if not duke_iu_date_exception:
+                        raise ValueError("University scorebook does not visibly confirm attendance date")
+                if item.get("legacy_statcrew_source"):
+                    from import_2024_statcrew import import_statcrew
+                    rows,stat_audit=import_statcrew(g,item,player_keys,response)
+                else:
+                    rows,stat_audit=import_one(g,item,player_keys)
             # Charleston's official February 19 scorebook abbreviates its
             # two winning/closing pitchers in the batting/pitching tables
             # as E. Bice / D. Aiken, but explicitly credits Emmett Bice
@@ -132,7 +138,8 @@ def main():
                     player_keys.remove(old_key); player_keys.add(new_key)
                     p["player"]=canonical
                     p["player_id"]=new_id
-            decision=(g["pitching_decisions"] if item.get("legacy_statcrew_source")
+            decision=(g["pitching_decisions"] if (item.get("legacy_statcrew_source") or
+                item.get("source_type")=="official_university_pdf_scorebook")
                       else scorer_labels(response.text,rows,gid))
             g.update({"game_type":item["game_type"],
                       "postseason_round":item.get("postseason_round"),

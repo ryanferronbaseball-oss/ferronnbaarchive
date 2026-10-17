@@ -134,7 +134,7 @@ def main():
         for i,(short,name,pos,ab,r,h,rbi,bb,k) in enumerate(B[team]):
             sub=(team=="Arkansas" and name in ("Alexander Peck","Maika Niu"))
             slot=(8 if name=="Alexander Peck" else 9 if name=="Maika Niu"
-                  else i-1 if team=="Arkansas" and i>=9 else i+1)
+                  else i if team=="Arkansas" and i>=9 else i+1)
             vals={"atBats":ab,"runs":r,"hits":h,"rbi":rbi,"baseOnBalls":bb,
                   "strikeOuts":k,"doubles":0,"triples":0,"homeRuns":0,
                   "hitByPitch":0,"sacBunts":0,"sacFlies":0,

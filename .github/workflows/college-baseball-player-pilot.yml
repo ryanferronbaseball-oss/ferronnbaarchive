@@ -1,0 +1,45 @@
+name: College Baseball Official Player Boxscore Pilot
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "college-baseball/scripts/import_sidearm_pilot.py"
+      - "college-baseball/data/verified_batches/**"
+      - ".github/workflows/college-baseball-player-pilot.yml"
+concurrency:
+  group: college-baseball-player-pilot-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  verified-player-boxscores:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install official gamebook HTML parser
+        run: python -m pip install --disable-pip-version-check requests beautifulsoup4
+      - name: Verify all 5 official player box scores against team totals and opposing pitching
+        run: python college-baseball/scripts/import_sidearm_pilot.py
+      - name: Attach validated player data and source-by-source audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: college-baseball-five-game-player-boxscore-pilot
+          path: |
+            college-baseball/data/pilot_player_stats_verified.json
+            college-baseball/data/pilot_player_stat_audit.json
+          if-no-files-found: warn
+      - name: Stage audited source output on unpublished draft branch only
+        if: github.event_name == 'push' && github.ref == 'refs/heads/feature/college-baseball-foundation'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f college-baseball/data/pilot_player_stats_verified.json college-baseball/data/pilot_player_stat_audit.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Stage independently reconciled five-game college baseball player stats [skip ci]"
+            git push origin HEAD:feature/college-baseball-foundation
+          fi

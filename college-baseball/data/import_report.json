@@ -58,7 +58,7 @@
   ],
   "same_day_identical_matchup_pairs_in_full_sheet": 13,
   "metadata_status": "full_444_game_attendance_directory_plus_may_2026_official_sources",
-  "warning": "2026 NCAA approved, JUCO excluded, older years and publication NOT approved. Incomplete official sources remain unverified, see audit.",
+  "warning": "All 444 original attendance games retained. 2026: 68/68 eligible four-year/NCAA player gamebooks complete; 7 JUCO retained and excluded. Only 2026 source work approved; 2025 and publication/merge not approved.",
   "resolved_matchups": [
     {
       "attendance_game_number": 443,
@@ -133,14 +133,14 @@
       "verified": true
     }
   ],
-  "remaining_official_boxscore_work": 1,
+  "remaining_official_boxscore_work": 0,
   "remaining_attendance_games_not_yet_imported": 0,
   "validation": "May 2026: all 27 official player books mapped to matching attendance games; scores, R/H/E, pitching/team opposing R and H, batting lineup starters checked; new imports have complete official per-inning lines. CI browser test separately tracked.",
   "all_attendance_entries_staged": 444,
   "attendance_only_pending_official_verification": 376,
   "source": "User workbook; 444 original rows, two user-corrected entries.",
   "official_scoreboard_player_lines_pending": 0,
-  "latest_verified_batch": "March 1 official Notre Dame–Tennessee Tech PDF; complete 2026 March",
+  "latest_verified_batch": "2026 full eligible NCAA slate 68/68, official HTML and PDF audits complete",
   "latest_verified_batch_games": [
     {
       "worksheet_row": 432,
@@ -339,6 +339,41 @@
       "approved": true,
       "status": "event_found_official_boxscores_pending",
       "source_queue": "data/2026_february_january_official_source_queue.json"
+    },
+    "2026-01": {
+      "status": "PASS",
+      "attended": 2,
+      "eligible": 0,
+      "complete": 0,
+      "junior_college_excluded": 2
+    },
+    "2026-02": {
+      "status": "PASS",
+      "attended": 11,
+      "eligible": 8,
+      "complete": 8,
+      "junior_college_excluded": 3
+    },
+    "2026-03": {
+      "status": "PASS",
+      "attended": 21,
+      "eligible": 19,
+      "complete": 19,
+      "junior_college_excluded": 2
+    },
+    "2026-04": {
+      "status": "PASS",
+      "attended": 14,
+      "eligible": 14,
+      "complete": 14,
+      "junior_college_excluded": 0
+    },
+    "2026-05": {
+      "status": "PASS",
+      "attended": 27,
+      "eligible": 27,
+      "complete": 27,
+      "junior_college_excluded": 0
     }
   },
   "early_2026_source_research": "data/2026_february_january_official_source_queue.json",
@@ -370,5 +405,6 @@
     },
     "updated": "2026-10-17"
   },
-  "remaining_2026_eligible_noncaa_pending": 1
+  "remaining_2026_eligible_noncaa_pending": 0,
+  "remaining_2026_eligible_ncaa_pending": 0
 }

@@ -1,0 +1,49 @@
+{
+  "status": "PASS",
+  "year": 2026,
+  "original_attendance": 444,
+  "total_attended_2026": 75,
+  "eligible": 68,
+  "complete_official_player_gamebooks": 68,
+  "junior_college_excluded": 7,
+  "player_game_rows": 1990,
+  "unique_player_ids": 1061,
+  "months": {
+    "2026-01": {
+      "eligible": 0,
+      "verified": 0,
+      "junior_college_excluded": 2,
+      "player_game_rows": 0
+    },
+    "2026-02": {
+      "eligible": 8,
+      "verified": 8,
+      "junior_college_excluded": 3,
+      "player_game_rows": 238
+    },
+    "2026-03": {
+      "eligible": 19,
+      "verified": 19,
+      "junior_college_excluded": 2,
+      "player_game_rows": 577
+    },
+    "2026-04": {
+      "eligible": 14,
+      "verified": 14,
+      "junior_college_excluded": 0,
+      "player_game_rows": 416
+    },
+    "2026-05": {
+      "eligible": 27,
+      "verified": 27,
+      "junior_college_excluded": 0,
+      "player_game_rows": 759
+    }
+  },
+  "game_level_source_audits": [
+    "2026_full_slate_monthly_integrity_audit.json",
+    "2026_mar01_notredame_tenntech_pdf_audit.json"
+  ],
+  "integrity_issues": [],
+  "scope": "2026 only; 2025 and publication not approved"
+}

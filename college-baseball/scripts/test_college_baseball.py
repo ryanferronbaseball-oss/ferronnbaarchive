@@ -87,11 +87,21 @@ check(len([g for g in committed if g["verification"] == "official_boxscore_verif
       "No previously verified gamebook downgraded")
 check(len([g for g in committed if g["verification"] == "official_scoreboard_verified"]) <= 5,
       "No more than five SEC Tournament games have player lines pending")
-check(all(g["source_url"] and
-          sum(x["away"] or 0 for x in g["innings"]) == g["away_score"] and
-          sum(x["home"] or 0 for x in g["innings"]) == g["home_score"]
+# A source-matched university recap may establish only the final score;
+# all fully verified player gamebooks must include inning totals.
+check(all(
+          g["source_url"]
+          and (g["verification"] == "source_matched" or bool(g.get("innings")))
+          and (not g.get("innings") or
+               (sum(x["away"] or 0 for x in g["innings"]) == g["away_score"]
+                and sum(x["home"] or 0 for x in g["innings"]) == g["home_score"]))
           for g in committed if g["verification"] != "attendance_only"),
-      "All fourteen sourced games have inning totals reconciled to official scores")
+      "Sourced records retain source URLs; available inning lines reconcile with totals")
+confirmed_2024={g["source_worksheet_row"]:g for g in committed if g["season"] == 2024}
+check(all(confirmed_2024[row]["game_number"] == number and
+          (confirmed_2024[row]["away_score"],confirmed_2024[row]["home_score"]) == (a,h)
+          for row,number,a,h in [(245,1,6,11),(261,1,4,8),(262,2,3,8)]),
+      "User-confirmed 2024 doubleheader identities and scores stay attached to distinct rows")
 check({g["id"] for g in committed if g["verification"] == "official_boxscore_verified"} ==
       {r["game_id"] for r in pilot_rows},
       "Player stats are tied only to games with complete official player box scores")

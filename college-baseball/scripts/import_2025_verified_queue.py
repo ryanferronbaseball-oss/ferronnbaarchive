@@ -125,6 +125,26 @@ def main():
                 if (gid,p["player_id"]) in global_keys:
                     raise ValueError("Official Mississippi State pitcher identity collision")
                 global_keys.add((gid,p["player_id"]))
+            # Davidson's 2025 May 10 university pitching table abbreviates
+            # scorer names as "Fix, I" and "Weber,". Its same official page
+            # gives full names "Fix, Isaac" and "Weber, Matt". Reconcile the
+            # exact team/pitcher before assigning college player identities.
+            if gid=="cb-2025-05-10-george-mason-davidson-att0344":
+                official_names={"fix":"Isaac Fix","weber":"Matt Weber"}
+                for surname,canonical in official_names.items():
+                    found=[p for p in rows if p["team"]=="Davidson"
+                           and "pitching" in p
+                           and p["player"].split()[-1].casefold()==surname]
+                    if len(found)!=1:
+                        raise ValueError("Davidson source abbreviated pitcher ambiguous: "+surname)
+                    pitcher=found[0];old_id=pitcher["player_id"]
+                    new_id="cb-davidson-"+canonical.lower().replace(" ","-")
+                    if (gid,new_id) in global_keys and new_id!=old_id:
+                        raise ValueError("Official Davidson pitcher name collision")
+                    global_keys.remove((gid,old_id))
+                    global_keys.add((gid,new_id))
+                    pitcher["player"]=canonical
+                    pitcher["player_id"]=new_id
             decisions=scorer_labels(resp.text,rows,gid)
             game.update({
                "game_type":item["game_type"],

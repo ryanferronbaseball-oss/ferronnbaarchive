@@ -1,406 +1,66 @@
 {
-  "status": "PARTIAL_REVIEW_REQUIRED",
+  "status": "PASS",
   "approval": "2024–2026 official four-year source backfill; no 2023 or earlier, no release",
   "original_attendance": 444,
   "attendance_2024": 71,
-  "verified_2024_total": 12,
-  "remaining_2024": 59,
+  "verified_2024_total": 15,
+  "remaining_2024": 56,
   "2025_gamebooks_preserved": 69,
   "2026_gamebooks_preserved": 68,
-  "completed_in_this_run": 4,
+  "completed_in_this_run": 3,
   "linked_2024_sources": 15,
   "months_verified": {
-    "2024-05": 6,
+    "2024-05": 9,
     "2024-06": 6
   },
   "passed_games": [
     {
-      "game_id": "cb-2024-05-23-duke-nc-state-att0285",
-      "source_url": "https://gopack.com/sports/baseball/stats/2024/duke/boxscore/23422",
+      "game_id": "cb-2024-05-24-louisville-clemson-att0287",
+      "source_url": "https://gocards.com/sports/baseball/stats/2024/clemson/boxscore/25056",
       "score": [
-        8,
-        1
-      ],
-      "player_game_rows": 25,
-      "pitching_decisions": {
-        "win": "Andrew Healy",
-        "loss": "Sam Highfill",
-        "save": null
-      },
-      "stat_audit": {
-        "game_id": "cb-2024-05-23-duke-nc-state-att0285",
-        "source": "https://gopack.com/sports/baseball/stats/2024/duke/boxscore/23422",
-        "http_code": 200,
-        "source_bytes": 1056524,
-        "source_sha256": "76542cc63bf8bb473c74180e1698d3b02bde6c7e9b0f219df403757df2f2beb8",
-        "teams": [
-          {
-            "name": "Duke",
-            "batters": 9,
-            "pitchers": 3,
-            "AB": 32,
-            "R": 8,
-            "H": 6,
-            "RBI": 8,
-            "BB": 8,
-            "SO": 9,
-            "pitching_outs": 27,
-            "pitching_runs": 1,
-            "pitching_hits": 5
-          },
-          {
-            "name": "NC State",
-            "batters": 9,
-            "pitchers": 4,
-            "AB": 31,
-            "R": 1,
-            "H": 5,
-            "RBI": 1,
-            "BB": 1,
-            "SO": 6,
-            "pitching_outs": 27,
-            "pitching_runs": 8,
-            "pitching_hits": 6
-          }
-        ],
-        "source_warnings": [],
-        "player_rows": 25,
-        "status": "PASS",
-        "scoreboard": [
-          {
-            "runs": 8,
-            "hits": 6,
-            "errors": 0,
-            "innings": [
-              0,
-              0,
-              0,
-              0,
-              6,
-              2,
-              0,
-              0,
-              0
-            ]
-          },
-          {
-            "runs": 1,
-            "hits": 5,
-            "errors": 0,
-            "innings": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              1
-            ]
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "Duke",
-            "nine_starting_slots": true,
-            "batter_rows": 9,
-            "pitcher_rows": 3,
-            "substitutes": 0
-          },
-          {
-            "team": "NC State",
-            "nine_starting_slots": true,
-            "batter_rows": 9,
-            "pitcher_rows": 4,
-            "substitutes": 0
-          }
-        ],
-        "official_decisions": {
-          "win": "Healy, Andrew",
-          "loss": "Highfill, Sam",
-          "save": null
-        },
-        "resolved_pitcher_decisions": {
-          "win": null,
-          "loss": null,
-          "save": null
-        }
-      }
-    },
-    {
-      "game_id": "cb-2024-05-23-north-carolina-pittsburgh-att0284",
-      "source_url": "https://goheels.com/sports/baseball/stats/2024/pitt/boxscore/25078",
-      "score": [
-        12,
-        2
-      ],
-      "player_game_rows": 36,
-      "pitching_decisions": {
-        "win": "Jason Decaro",
-        "loss": "Ryan Andrade",
-        "save": null
-      },
-      "stat_audit": {
-        "game_id": "cb-2024-05-23-north-carolina-pittsburgh-att0284",
-        "source": "https://goheels.com/sports/baseball/stats/2024/pitt/boxscore/25078",
-        "http_code": 200,
-        "source_bytes": 1445756,
-        "source_sha256": "743301812b415a98e50ffe485d2cc3ead480c504ee44c46d455464c0bb940a46",
-        "teams": [
-          {
-            "name": "North Carolina",
-            "batters": 12,
-            "pitchers": 3,
-            "AB": 39,
-            "R": 12,
-            "H": 15,
-            "RBI": 12,
-            "BB": 8,
-            "SO": 7,
-            "pitching_outs": 27,
-            "pitching_runs": 2,
-            "pitching_hits": 7
-          },
-          {
-            "name": "Pittsburgh",
-            "batters": 13,
-            "pitchers": 8,
-            "AB": 34,
-            "R": 2,
-            "H": 7,
-            "RBI": 2,
-            "BB": 1,
-            "SO": 8,
-            "pitching_outs": 27,
-            "pitching_runs": 12,
-            "pitching_hits": 15
-          }
-        ],
-        "source_warnings": [],
-        "player_rows": 36,
-        "status": "PASS",
-        "scoreboard": [
-          {
-            "runs": 12,
-            "hits": 15,
-            "errors": 0,
-            "innings": [
-              4,
-              0,
-              0,
-              1,
-              0,
-              3,
-              0,
-              0,
-              4
-            ]
-          },
-          {
-            "runs": 2,
-            "hits": 7,
-            "errors": 1,
-            "innings": [
-              0,
-              0,
-              0,
-              2,
-              0,
-              0,
-              0,
-              0,
-              0
-            ]
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "North Carolina",
-            "nine_starting_slots": true,
-            "batter_rows": 12,
-            "pitcher_rows": 3,
-            "substitutes": 3
-          },
-          {
-            "team": "Pittsburgh",
-            "nine_starting_slots": true,
-            "batter_rows": 13,
-            "pitcher_rows": 8,
-            "substitutes": 4
-          }
-        ],
-        "official_decisions": {
-          "win": "Decaro, Jason",
-          "loss": "Ryan Andrade",
-          "save": null
-        },
-        "resolved_pitcher_decisions": {
-          "win": null,
-          "loss": "Ryan Andrade",
-          "save": null
-        }
-      }
-    },
-    {
-      "game_id": "cb-2024-05-22-nc-state-virginia-tech-att0282",
-      "source_url": "https://gopack.com/sports/baseball/stats/2024/virginia-tech/boxscore/23276",
-      "score": [
-        19,
-        9
-      ],
-      "player_game_rows": 33,
-      "pitching_decisions": {
-        "win": "P.J. Labriola",
-        "loss": "Brett Renfrow",
-        "save": null
-      },
-      "stat_audit": {
-        "game_id": "cb-2024-05-22-nc-state-virginia-tech-att0282",
-        "source": "https://gopack.com/sports/baseball/stats/2024/virginia-tech/boxscore/23276",
-        "http_code": 200,
-        "source_bytes": 1176268,
-        "source_sha256": "600bd229795a9561d9dd1953af487926a042c4e80ee91742b8c7a50172831fd1",
-        "teams": [
-          {
-            "name": "NC State",
-            "batters": 10,
-            "pitchers": 4,
-            "AB": 42,
-            "R": 19,
-            "H": 20,
-            "RBI": 17,
-            "BB": 9,
-            "SO": 8,
-            "pitching_outs": 24,
-            "pitching_runs": 9,
-            "pitching_hits": 13
-          },
-          {
-            "name": "Virginia Tech",
-            "batters": 13,
-            "pitchers": 6,
-            "AB": 36,
-            "R": 9,
-            "H": 13,
-            "RBI": 9,
-            "BB": 4,
-            "SO": 12,
-            "pitching_outs": 24,
-            "pitching_runs": 19,
-            "pitching_hits": 20
-          }
-        ],
-        "source_warnings": [],
-        "player_rows": 33,
-        "status": "PASS",
-        "scoreboard": [
-          {
-            "runs": 19,
-            "hits": 20,
-            "errors": 0,
-            "innings": [
-              0,
-              0,
-              6,
-              4,
-              0,
-              2,
-              1,
-              6
-            ]
-          },
-          {
-            "runs": 9,
-            "hits": 13,
-            "errors": 1,
-            "innings": [
-              0,
-              0,
-              0,
-              1,
-              0,
-              6,
-              0,
-              2
-            ]
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "NC State",
-            "nine_starting_slots": true,
-            "batter_rows": 10,
-            "pitcher_rows": 4,
-            "substitutes": 1
-          },
-          {
-            "team": "Virginia Tech",
-            "nine_starting_slots": true,
-            "batter_rows": 13,
-            "pitcher_rows": 6,
-            "substitutes": 4
-          }
-        ],
-        "official_decisions": {
-          "win": "Labriola, P.j.",
-          "loss": "Brett Renfrow",
-          "save": null
-        },
-        "resolved_pitcher_decisions": {
-          "win": null,
-          "loss": "Brett Renfrow",
-          "save": null
-        }
-      }
-    },
-    {
-      "game_id": "cb-2024-05-21-georgia-tech-florida-state-att0278",
-      "source_url": "https://seminoles.com/sports/baseball/stats/2024/georgia-tech/boxscore/13782",
-      "score": [
-        9,
-        12
+        7,
+        8
       ],
       "player_game_rows": 29,
       "pitching_decisions": {
-        "win": "John Abraham",
-        "loss": "Tate McKee",
-        "save": "Jamie Arnold"
+        "win": "Austin Gordon",
+        "loss": "Tucker Biven",
+        "save": null
       },
       "stat_audit": {
-        "game_id": "cb-2024-05-21-georgia-tech-florida-state-att0278",
-        "source": "https://seminoles.com/sports/baseball/stats/2024/georgia-tech/boxscore/13782",
+        "game_id": "cb-2024-05-24-louisville-clemson-att0287",
+        "source": "https://gocards.com/sports/baseball/stats/2024/clemson/boxscore/25056",
         "http_code": 200,
-        "source_bytes": 1246362,
-        "source_sha256": "8babca4eaa40c00366b25a136c2d1fbc37e8938921408a7f5a4bcde383f8e6b8",
+        "source_bytes": 1124667,
+        "source_sha256": "94028fecd1a65c554dab7265d7603a02c2e6dd561013b88eb2d0c0a74c81f72e",
         "teams": [
           {
-            "name": "Georgia Tech",
-            "batters": 9,
+            "name": "Louisville",
+            "batters": 12,
             "pitchers": 3,
-            "AB": 39,
-            "R": 9,
-            "H": 12,
-            "RBI": 9,
-            "BB": 8,
-            "SO": 5,
-            "pitching_outs": 24,
-            "pitching_runs": 12,
-            "pitching_hits": 13
+            "AB": 35,
+            "R": 7,
+            "H": 8,
+            "RBI": 6,
+            "BB": 2,
+            "SO": 6,
+            "pitching_outs": 25,
+            "pitching_runs": 8,
+            "pitching_hits": 14
           },
           {
-            "name": "Florida State",
+            "name": "Clemson",
             "batters": 9,
-            "pitchers": 8,
-            "AB": 37,
-            "R": 12,
-            "H": 13,
-            "RBI": 11,
-            "BB": 1,
-            "SO": 7,
+            "pitchers": 5,
+            "AB": 38,
+            "R": 8,
+            "H": 14,
+            "RBI": 8,
+            "BB": 3,
+            "SO": 9,
             "pitching_outs": 27,
-            "pitching_runs": 9,
-            "pitching_hits": 12
+            "pitching_runs": 7,
+            "pitching_hits": 8
           }
         ],
         "source_warnings": [],
@@ -408,9 +68,123 @@
         "status": "PASS",
         "scoreboard": [
           {
-            "runs": 9,
-            "hits": 12,
+            "runs": 7,
+            "hits": 8,
             "errors": 1,
+            "innings": [
+              1,
+              3,
+              1,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 8,
+            "hits": 14,
+            "errors": 1,
+            "innings": [
+              0,
+              0,
+              0,
+              1,
+              0,
+              3,
+              0,
+              3,
+              1
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Louisville",
+            "nine_starting_slots": true,
+            "batter_rows": 12,
+            "pitcher_rows": 3,
+            "substitutes": 3
+          },
+          {
+            "team": "Clemson",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 5,
+            "substitutes": 0
+          }
+        ],
+        "official_decisions": {
+          "win": "Austin Gordon",
+          "loss": "Biven, Tucker",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": "Austin Gordon",
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2024-05-22-pittsburgh-wake-forest-att0281",
+      "source_url": "https://godeacs.com/sports/baseball/stats/2024/pitt/boxscore/13807",
+      "score": [
+        1,
+        8
+      ],
+      "player_game_rows": 36,
+      "pitching_decisions": {
+        "win": "Zach Johnston",
+        "loss": "Aidan Coleman",
+        "save": null
+      },
+      "stat_audit": {
+        "game_id": "cb-2024-05-22-pittsburgh-wake-forest-att0281",
+        "source": "https://godeacs.com/sports/baseball/stats/2024/pitt/boxscore/13807",
+        "http_code": 200,
+        "source_bytes": 927051,
+        "source_sha256": "08098b1b883ac23577a2f59f62ba606864a3e5eb36187854d21ae861f43bb0ae",
+        "teams": [
+          {
+            "name": "Pittsburgh",
+            "batters": 10,
+            "pitchers": 5,
+            "AB": 31,
+            "R": 1,
+            "H": 5,
+            "RBI": 1,
+            "BB": 4,
+            "SO": 14,
+            "pitching_outs": 24,
+            "pitching_runs": 8,
+            "pitching_hits": 8
+          },
+          {
+            "name": "Wake Forest",
+            "batters": 14,
+            "pitchers": 7,
+            "AB": 31,
+            "R": 8,
+            "H": 8,
+            "RBI": 8,
+            "BB": 7,
+            "SO": 12,
+            "pitching_outs": 27,
+            "pitching_runs": 1,
+            "pitching_hits": 5
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 36,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 1,
+            "hits": 5,
+            "errors": 0,
             "innings": [
               0,
               0,
@@ -418,72 +192,170 @@
               0,
               0,
               0,
-              5,
               0,
-              3
+              0,
+              0
             ]
           },
           {
-            "runs": 12,
-            "hits": 13,
-            "errors": 2,
+            "runs": 8,
+            "hits": 8,
+            "errors": 0,
             "innings": [
               2,
+              3,
               0,
               0,
-              4,
-              2,
+              1,
+              1,
+              1,
               0,
-              0,
-              4,
               null
             ]
           }
         ],
         "lineup_audit": [
           {
-            "team": "Georgia Tech",
+            "team": "Pittsburgh",
             "nine_starting_slots": true,
-            "batter_rows": 9,
-            "pitcher_rows": 3,
-            "substitutes": 0
+            "batter_rows": 10,
+            "pitcher_rows": 5,
+            "substitutes": 1
           },
           {
-            "team": "Florida State",
+            "team": "Wake Forest",
             "nine_starting_slots": true,
-            "batter_rows": 9,
-            "pitcher_rows": 8,
-            "substitutes": 0
+            "batter_rows": 14,
+            "pitcher_rows": 7,
+            "substitutes": 5
           }
         ],
         "official_decisions": {
-          "win": "Abraham, John",
-          "loss": "Tate Mckee",
-          "save": "Arnold, Jamie"
+          "win": "Johnston, Zach",
+          "loss": "Aidan Coleman",
+          "save": null
         },
         "resolved_pitcher_decisions": {
           "win": null,
-          "loss": "Tate Mckee",
+          "loss": "Aidan Coleman",
           "save": null
         }
       }
-    }
-  ],
-  "pending_review": [
-    {
-      "game_id": "cb-2024-05-24-louisville-clemson-att0287",
-      "source_url": "https://gocards.com/sports/baseball/stats/2024/clemson/boxscore/25056",
-      "reason": "Louisville: source batting order resolved to 10 starting slots, not 9"
-    },
-    {
-      "game_id": "cb-2024-05-22-pittsburgh-wake-forest-att0281",
-      "source_url": "https://godeacs.com/sports/baseball/stats/2024/pitt/boxscore/13807",
-      "reason": "Wake Forest: source batting order resolved to 11 starting slots, not 9"
     },
     {
       "game_id": "cb-2024-05-21-miami-louisville-att0277",
       "source_url": "https://gocards.com/sports/baseball/stats/2024/miami/boxscore/25055",
-      "reason": "Louisville: source batting order resolved to 11 starting slots, not 9"
+      "score": [
+        8,
+        5
+      ],
+      "player_game_rows": 28,
+      "pitching_decisions": {
+        "win": "Rafe Schlesinger",
+        "loss": "Evan Webster",
+        "save": "Myles Caba"
+      },
+      "stat_audit": {
+        "game_id": "cb-2024-05-21-miami-louisville-att0277",
+        "source": "https://gocards.com/sports/baseball/stats/2024/miami/boxscore/25055",
+        "http_code": 200,
+        "source_bytes": 1111335,
+        "source_sha256": "0092ca556c12b4df10539611b9a6bb38f5de54a4f45fa0c4c41df630d363f1cb",
+        "teams": [
+          {
+            "name": "Miami",
+            "batters": 9,
+            "pitchers": 2,
+            "AB": 35,
+            "R": 8,
+            "H": 12,
+            "RBI": 8,
+            "BB": 6,
+            "SO": 11,
+            "pitching_outs": 27,
+            "pitching_runs": 5,
+            "pitching_hits": 11
+          },
+          {
+            "name": "Louisville",
+            "batters": 13,
+            "pitchers": 4,
+            "AB": 36,
+            "R": 5,
+            "H": 11,
+            "RBI": 5,
+            "BB": 1,
+            "SO": 10,
+            "pitching_outs": 27,
+            "pitching_runs": 8,
+            "pitching_hits": 12
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 28,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 8,
+            "hits": 12,
+            "errors": 0,
+            "innings": [
+              3,
+              0,
+              0,
+              0,
+              0,
+              2,
+              3,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 5,
+            "hits": 11,
+            "errors": 0,
+            "innings": [
+              0,
+              0,
+              1,
+              0,
+              1,
+              1,
+              0,
+              0,
+              2
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Miami",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 2,
+            "substitutes": 0
+          },
+          {
+            "team": "Louisville",
+            "nine_starting_slots": true,
+            "batter_rows": 13,
+            "pitcher_rows": 4,
+            "substitutes": 4
+          }
+        ],
+        "official_decisions": {
+          "win": "Rafe Schlesinger",
+          "loss": "Webster, Evan",
+          "save": "Myles Caba"
+        },
+        "resolved_pitcher_decisions": {
+          "win": "Rafe Schlesinger",
+          "loss": null,
+          "save": "Myles Caba"
+        }
+      }
     }
-  ]
+  ],
+  "pending_review": []
 }

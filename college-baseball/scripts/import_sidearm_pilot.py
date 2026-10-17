@@ -83,6 +83,10 @@ def batting_rows(table_s,table_d,game_id,team,url):
     h1=table_head(table_s);h2=table_head(table_d)
     short=table_rows(table_s,h1);detail=table_rows(table_d,h2)
     if len(short)!=len(detail) or len(short)<9:
+        print("DEBUG COMPOSITE",game_id,team,"headers",h2,"counts",len(short),len(detail),flush=True)
+        for tr in table_d.find_all("tr")[:5]:
+            print("DEBUG CELLS",[{"text":td.get_text(" ",strip=True)[:60],
+                "span":td.get("colspan","1")} for td in tr.find_all(["td","th"],recursive=False)][:28],flush=True)
         raise ValueError(f"{game_id} {team}: simple/detail row count mismatch {len(short)} vs {len(detail)}")
     people=[];totals=None
     for i,(s,x) in enumerate(zip(short,detail)):

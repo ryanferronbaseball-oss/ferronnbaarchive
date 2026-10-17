@@ -246,7 +246,17 @@ for game in committed:
         bats = [r["batting"] for r in player_list if "batting" in r]
         pitchers = [r["pitching"] for r in player_list if "pitching" in r]
         totals = {k: sum(b[keys[k]] for b in bats) for k in keys}
-        check(totals == expected[(game["id"], team)], "Official team batting totals match " + game["id"] + " " + team)
+        # Retain strict transcribed six-column spot checks for the original
+        # audit set. Source-verified later imports use source-backed game R/H
+        # as mandatory checks rather than raising a KeyError for missing
+        # static pilot fixtures.
+        if (game["id"], team) in expected:
+            check(totals == expected[(game["id"], team)],
+                  "Original official team batting totals match " + game["id"] + " " + team)
+        side = "away" if team == game["away"] else "home"
+        check(totals["r"] == game[side + "_score"] and
+              totals["h"] == game[side + "_hits"],
+              "Official batter totals reconcile to source game scoreboard " + game["id"] + " " + team)
         other = game["home"] if team == game["away"] else game["away"]
         opposition = [r["batting"] for r in pilot_rows if r["game_id"] == game["id"] and r["team"] == other and "batting" in r]
         outs = sum(p["outs"] for p in pitchers)

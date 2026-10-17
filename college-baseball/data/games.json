@@ -10698,22 +10698,80 @@
     "season": 2026,
     "away": "Arkansas",
     "home": "Kentucky",
-    "ballpark": null,
-    "city": null,
-    "state": null,
-    "neutral_site": null,
+    "ballpark": "Kentucky Proud Park",
+    "city": "Lexington",
+    "state": "KY",
+    "neutral_site": false,
     "game_number": null,
-    "game_type": null,
+    "game_type": "regular_season",
     "postseason_round": null,
-    "away_score": null,
-    "home_score": null,
-    "score_provenance": null,
-    "source_url": null,
-    "verification": "attendance_only",
-    "official_boxscore_status": "not_imported",
+    "away_score": 16,
+    "home_score": 12,
+    "score_provenance": "official_boxscore",
+    "source_url": "https://arkansasrazorbacks.com/stats/baseball/2026/ARK55.pdf",
+    "verification": "official_boxscore_verified",
+    "official_boxscore_status": "verified",
     "possible_same_day_doubleheader": false,
     "provisional_worksheet_game_sequence": null,
-    "notes": "Original workbook Sheet1 row 425."
+    "notes": "Original workbook Sheet1 row 425.",
+    "away_hits": 14,
+    "home_hits": 17,
+    "away_errors": 1,
+    "home_errors": 2,
+    "innings": [
+      {
+        "inning": 1,
+        "away": 10,
+        "home": 0
+      },
+      {
+        "inning": 2,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 3,
+        "away": 1,
+        "home": 2
+      },
+      {
+        "inning": 4,
+        "away": 1,
+        "home": 1
+      },
+      {
+        "inning": 5,
+        "away": 0,
+        "home": 9
+      },
+      {
+        "inning": 6,
+        "away": 2,
+        "home": 0
+      },
+      {
+        "inning": 7,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 8,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 9,
+        "away": 2,
+        "home": 0
+      }
+    ],
+    "pitching_decisions": {
+      "win": "Parker Coil",
+      "loss": "Tristan Hunter",
+      "save": "James DeCremer"
+    },
+    "source_attendance": 3963,
+    "first_pitch_local": "14:02"
   },
   {
     "id": "cb-2026-05-19-missouri-ole-miss-att0425",

@@ -1,5 +1,11 @@
 # College Baseball — Month-by-Month Review Gates
 
+## October 17, 2026 — 2025 season approved
+
+**New authorization:** After completion of all 68 eligible 2026 gamebooks, user explicitly approved processing the **entire 2025 college baseball attendance slate**, newest to oldest. 2025 attendance contains **74 original games**: June 2, May 29, April 10, March 19, February 14. All currently listed schools appear to be four-year programs; any subsequently verified NJCAA/junior-college game must be retained as attendance-only and excluded. Apply the same individual official source, inning/R-H-E, original nine-slot batting order, player statistics, pitching W/L/S, and monthly integrity audit standards as 2026.
+
+**Do not** continue into 2024 or earlier or merge/publish the draft without further explicit user approval. The 2026 audit remains complete and untouched. Previous statements below that 2025 has not been approved are historical, superseded by this authorization.
+
 ## October 17, 2026 — Junior-college exclusion (latest scope decision)
 
 **User decision:** Ignore **all junior-college / NJCAA games** for box-score/statistical backfill in this archive, including older seasons. Retain the original 444-row personal attendance source and its stable IDs for provenance; mark known JUCO entries `boxscore_backfill_excluded: true` with reason `junior_college`. They are not missing/blocked games and must not count toward monthly backfill completion denominators or missing-source queues. Do not research, infer stats for, or import JUCO gamebooks. NCAA and other eligible four-year college matchups continue normally; never mistake NCAA DIII **Wabash College** for NJCAA **Wabash Valley College**.

@@ -32,17 +32,37 @@ jobs:
           assert len(p['report']) == 5
           assert len({x['game_pk'] for x in p['report']}) == 5
           PY
-      - name: Cross-check three games against Baseball Savant CSV
+      - name: Cross-check five pilot games against Baseball Savant CSV
         run: python mlb/scripts/verify_statcast_pilot.py
       - name: Import and independently verify 15 additional Statcast games
         run: python mlb/scripts/statcast_batch_02.py
+      - name: Source-verify next 15 attended games (batch 03)
+        run: python mlb/scripts/statcast_batch_02.py --offset 15 --count 15 --label 03
+      - name: Source-verify next 15 attended games (batch 04)
+        run: python mlb/scripts/statcast_batch_02.py --offset 30 --count 15 --label 04
+      - name: Source-verify next 15 attended games (batch 05)
+        run: python mlb/scripts/statcast_batch_02.py --offset 45 --count 15 --label 05
+      - name: Source-verify remaining 12 attended games (batch 06)
+        run: python mlb/scripts/statcast_batch_02.py --offset 60 --count 12 --label 06
+      - name: Confirm all 2015-onward attended games exactly once
+        run: python mlb/scripts/assemble_statcast_attendance.py
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: mlb-statcast-pilot
+          name: mlb-statcast-all-attended-validation
           path: |
             mlb/data/statcast_pilot.json
             mlb/data/statcast_verification.json
             mlb/data/statcast_batch_02.json
             mlb/data/statcast_batch_02_verification.json
+            mlb/data/statcast_batch_03.json
+            mlb/data/statcast_batch_03_verification.json
+            mlb/data/statcast_batch_04.json
+            mlb/data/statcast_batch_04_verification.json
+            mlb/data/statcast_batch_05.json
+            mlb/data/statcast_batch_05_verification.json
+            mlb/data/statcast_batch_06.json
+            mlb/data/statcast_batch_06_verification.json
+            mlb/data/statcast_attendance_2015plus.json
+            mlb/data/statcast_attendance_manifest.json
           if-no-files-found: warn

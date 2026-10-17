@@ -30,7 +30,9 @@ def main():
     assert all(g["verification"]=="attendance_only" for g in excluded)
     assert all(g.get("boxscore_backfill_exclusion_reason")=="junior_college" for g in excluded)
     assert all(g["verification"]=="official_boxscore_verified" for g in eligible)
-    assert all(g.get("official_boxscore_status")=="verified" for g in eligible)
+    assert all(g.get("official_boxscore_status") in ("verified","player_lines_reconciled") for g in eligible)
+    # The original nine-game pilot used the equivalent legacy status
+    # "player_lines_reconciled"; its individual statistics are source-verified.
     excluded_ids={g["id"] for g in excluded}
     assert not any(r["game_id"] in excluded_ids for r in stats)
     rows=defaultdict(list)

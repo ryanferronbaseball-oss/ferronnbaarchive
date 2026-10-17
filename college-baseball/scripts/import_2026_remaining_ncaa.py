@@ -118,8 +118,12 @@ def _source_batters(table, valid_players, team):
         indent_style = any(x in all_style for x in (
             "padding-left", "text-indent", "indent", "substitute", "sub-row",
         ))
+        # Sidearm Vue markup marks pinch hitters/runners using a child <a>
+        # with Tailwind class ml-[10px]; the table cell itself is unindented.
+        # This was confirmed against each school's official gamebook HTML.
+        child_indent = bool(playercell.select('[class*="ml-[10px]"]'))
         padded = bool(re.match(r"^(?:\u00a0|\s){3,}", raw_name))
-        is_sub = indent_style or padded or pos.lower() in ("ph", "pr", "ph/dh", "pr/dh")
+        is_sub = indent_style or child_indent or padded or pos.lower() in ("ph", "pr", "ph/dh", "pr/dh")
         seen.append((key, name, is_sub))
     if len(seen) != len(valid_players) or len({x[0] for x in seen}) != len(seen):
         raise ValueError(team + ": cannot exactly match source batter lineup against source player records")

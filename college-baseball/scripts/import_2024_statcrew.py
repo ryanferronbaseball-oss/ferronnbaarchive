@@ -120,7 +120,8 @@ def match_pitcher(name,pitchers):
         terms=p["player"].casefold().split()
         if (terms==n or (terms[-1] in n and (len(n)==1 or
               terms[0][0] in n[0] or n[-1]==terms[-1])) or
-              (len(n)==1 and terms[-1]==n[0])):
+              (len(n)==1 and terms[-1]==n[0]) or
+              (len(n)==2 and n[0]==terms[-1] and n[1].startswith(terms[0][0]))):
             hits.append(p)
     if len(hits)!=1:raise ValueError("Ambiguous original StatCrew pitcher "+name+" "+str([x["player"] for x in hits]))
     return hits[0]["player"]

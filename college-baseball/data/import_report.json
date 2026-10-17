@@ -341,5 +341,33 @@
       "source_queue": "data/2026_february_january_official_source_queue.json"
     }
   },
-  "early_2026_source_research": "data/2026_february_january_official_source_queue.json"
+  "early_2026_source_research": "data/2026_february_january_official_source_queue.json",
+  "junior_college_scope": {
+    "policy": "Exclude all junior-college games from box-score backfill and monthly completion denominators; preserve original attendance rows",
+    "excluded_2026_games": 7,
+    "eligible_2026_games": 68,
+    "monthly_2026": {
+      "2026-01": {
+        "eligible": 0,
+        "excluded": 2
+      },
+      "2026-02": {
+        "eligible": 8,
+        "excluded": 3
+      },
+      "2026-03": {
+        "eligible": 19,
+        "excluded": 2
+      },
+      "2026-04": {
+        "eligible": 14,
+        "excluded": 0
+      },
+      "2026-05": {
+        "eligible": 27,
+        "excluded": 0
+      }
+    },
+    "updated": "2026-10-17"
+  }
 }

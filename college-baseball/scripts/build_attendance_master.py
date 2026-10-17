@@ -23,8 +23,14 @@ def load_source():
     return [dict(zip(COLS,x)) for x in rows]
 
 def build(source,prior):
-    official={g["source_worksheet_row"]:g for g in prior if g.get("verification") in ("official_boxscore_verified","official_scoreboard_verified")}
-    assert len(official)>=6 and len(official)==len(set(official)),"missing official scorebooks"
+    # Preserve independently verified gamebooks, source-matched scoreboards and
+    # user-confirmed attendance identities when rebuilding from the old workbook.
+    # Otherwise the source-only rows and confirmed doubleheader game numbers get wiped.
+    retained={g["source_worksheet_row"]:g for g in prior if g.get("verification") in (
+        "official_boxscore_verified","official_scoreboard_verified","source_matched"
+    )}
+    assert len(retained)>=6 and len(retained)==len(set(retained)),"missing imported game records"
+    approved_date_corrections={287:("2024-05-23","2024-05-24")}
     doubles=Counter((x["date"],x["away"].lower(),x["home"].lower()) for x in source)
     result=[]
     for number,row in enumerate(source,1):
@@ -33,9 +39,16 @@ def build(source,prior):
         away=ALIASES.get(row["away"],row["away"])
         home=ALIASES.get(row["home"],row["home"])
         assert re.fullmatch(r"\d{4}-\d{2}-\d{2}",date) and away!=home
-        if sheetrow in official:
-            g=official[sheetrow]
-            assert (g["date"],g["away"],g["home"])==(date,away,home),"pilot source conflict"
+        if sheetrow in retained:
+            g=retained[sheetrow]
+            # The original workbook date was explicitly corrected by the user.
+            date_is_approved=(
+                sheetrow in approved_date_corrections
+                and approved_date_corrections[sheetrow]==(date,g["date"])
+            )
+            assert (g["date"]==date or date_is_approved) and (
+                g["away"],g["home"]
+            )==(away,home),"source/verified game identity conflict"
             result.append(g)
             continue
         a,b=row["away_score"],row["home_score"]
@@ -74,9 +87,11 @@ def main():
     entries=build(source,previous)
     official=sum(g["verification"]=="official_boxscore_verified" for g in entries)
     scores=sum(g["verification"]=="official_scoreboard_verified" for g in entries)
+    matched=sum(g["verification"]=="source_matched" for g in entries)
     pending=sum(g["verification"]=="attendance_only" for g in entries)
-    assert official+scores+pending==444
-    print("Attendance",len(entries),"Official gamebooks",official,"Scores only",scores,"Attendance only",pending)
+    assert official+scores+matched+pending==444
+    print("Attendance",len(entries),"Official gamebooks",official,"Scores only",scores,
+          "Source matched",matched,"Attendance only",pending)
     if "--validate-only" in sys.argv:return
     (DATA/"games.json").write_text(json.dumps(entries,indent=2,ensure_ascii=False)+"\n")
     with (DATA/"attendance_master_444.csv").open("w",newline="",encoding="utf-8") as h:
@@ -92,11 +107,15 @@ def main():
         "staged_games":444,"all_attendance_entries_staged":444,
         "unimported_worksheet_rows":0,
         "attendance_only_pending_official_verification":pending,
-        "official_score_and_inning_lines_matched":official+scores,
-        "official_scoreboard_player_lines_pending":scores,
+        "official_score_and_inning_lines_matched":sum(
+            bool(g.get("innings")) and g.get("away_score") is not None
+            and g.get("home_score") is not None for g in entries
+        ),
+        "official_scoreboard_player_lines_pending":scores+matched,
+        "source_matched_player_lines_pending":matched,
         "official_player_boxscores_imported":official,
         "source":"User workbook; 444 original rows, two user-corrected entries.",
-        "warning":"All 444 attendance matchups listed. Only individually sourced gamebooks have verified scores and player statistics. Unresolved doubleheaders retain distinct source IDs; original ordering is not taken as official."
+        "warning":"All 444 attendance matchups listed. Full player statistics count only after complete gamebook verification; source-matched records are still pending. User-confirmed 2024 doubleheader identities and 2024-05-24 Florida State–Virginia date are preserved."
     })
     rp.write_text(json.dumps(report,indent=2,ensure_ascii=False)+"\n")
 if __name__=="__main__":main()

@@ -58,7 +58,7 @@
   ],
   "same_day_identical_matchup_pairs_in_full_sheet": 13,
   "metadata_status": "full_444_game_attendance_directory_plus_may_2026_official_sources",
-  "warning": "444 attendance entries preserved. May 27/27 and April 14/14 complete. March 7/21 individual gamebooks verified; 14 pending. February, 2025 and publication still gated.",
+  "warning": "All 444 original attendance entries preserved. User approved all 75 games in 2026 (Jan–May); Feb/Jan source discovery staged with 8 university gamebooks and JUCO source gaps. 2025 and publication remain gated. Do not invent unverified games or statistics.",
   "resolved_matchups": [
     {
       "attendance_game_number": 443,
@@ -325,13 +325,23 @@
       ]
     },
     "february_2026": {
-      "approved": false
+      "approved": true,
+      "attended": 11,
+      "status": "source_discovery_ready",
+      "source_queue": "data/2026_february_january_official_source_queue.json"
     },
     "season_2025": {
       "approved": false
     },
     "publication": {
       "approved": false
+    },
+    "january_2026": {
+      "attended": 2,
+      "approved": true,
+      "status": "event_found_official_boxscores_pending",
+      "source_queue": "data/2026_february_january_official_source_queue.json"
     }
-  }
+  },
+  "early_2026_source_research": "data/2026_february_january_official_source_queue.json"
 }

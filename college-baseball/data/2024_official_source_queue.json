@@ -10,7 +10,7 @@
     "2024-02": 17
   },
   "verified_player_gamebooks_at_queue_creation": 0,
-  "official_source_urls_identified": 22,
+  "official_source_urls_identified": 26,
   "source_queue": [
     {
       "game_id": "cb-2024-06-08-florida-clemson-att0295",
@@ -473,6 +473,90 @@
       "source_type": "official_university_sidearm_boxscore",
       "verification": "official_url_final_score_verified_player_lines_pending",
       "source_game_id": "10224"
+    },
+    {
+      "game_id": "cb-2024-03-22-mercer-unc-greensboro-att0259",
+      "worksheet_row": 260,
+      "date": "2024-03-22",
+      "away": "Mercer",
+      "home": "UNC Greensboro",
+      "source_url": "https://uncgspartans.com/sports/baseball/stats/2024/mercer/boxscore/8778",
+      "official_score": [
+        5,
+        2
+      ],
+      "ballpark": "UNCG Baseball Stadium",
+      "city": "Greensboro",
+      "state": "NC",
+      "game_type": "regular_season",
+      "postseason_round": null,
+      "neutral_site": false,
+      "source_type": "official_university_sidearm_boxscore",
+      "verification": "official_url_final_score_verified_player_lines_pending",
+      "source_game_id": "8778"
+    },
+    {
+      "game_id": "cb-2024-03-21-louisville-wake-forest-att0258",
+      "worksheet_row": 259,
+      "date": "2024-03-21",
+      "away": "Louisville",
+      "home": "Wake Forest",
+      "source_url": "https://godeacs.com/sports/baseball/stats/2024/louisville/boxscore/13570",
+      "official_score": [
+        7,
+        16
+      ],
+      "ballpark": "David F. Couch Ballpark",
+      "city": "Winston-Salem",
+      "state": "NC",
+      "game_type": "regular_season",
+      "postseason_round": null,
+      "neutral_site": false,
+      "source_type": "official_university_sidearm_boxscore",
+      "verification": "official_url_final_score_verified_player_lines_pending",
+      "source_game_id": "13570"
+    },
+    {
+      "game_id": "cb-2024-03-13-rutgers-north-carolina-att0256",
+      "worksheet_row": 257,
+      "date": "2024-03-13",
+      "away": "Rutgers",
+      "home": "North Carolina",
+      "source_url": "https://goheels.com/sports/baseball/stats/2024/rutgers/boxscore/25041",
+      "official_score": [
+        8,
+        9
+      ],
+      "ballpark": "Boshamer Stadium",
+      "city": "Chapel Hill",
+      "state": "NC",
+      "game_type": "regular_season",
+      "postseason_round": null,
+      "neutral_site": false,
+      "source_type": "official_university_sidearm_boxscore",
+      "verification": "official_url_final_score_verified_player_lines_pending",
+      "source_game_id": "25041"
+    },
+    {
+      "game_id": "cb-2024-03-12-rutgers-north-carolina-att0255",
+      "worksheet_row": 256,
+      "date": "2024-03-12",
+      "away": "Rutgers",
+      "home": "North Carolina",
+      "source_url": "https://goheels.com/sports/baseball/stats/2024/rutgers/boxscore/25040",
+      "official_score": [
+        7,
+        13
+      ],
+      "ballpark": "Boshamer Stadium",
+      "city": "Chapel Hill",
+      "state": "NC",
+      "game_type": "regular_season",
+      "postseason_round": null,
+      "neutral_site": false,
+      "source_type": "official_university_sidearm_boxscore",
+      "verification": "official_url_final_score_verified_player_lines_pending",
+      "source_game_id": "25040"
     }
   ],
   "manual_review_flags": [

@@ -56,7 +56,7 @@ def pitch_rows(soup,first_pre,teams):
         t=next((t for t in soup.find_all("table") if re.search(r"\bip\s+h\s+r\s+er\s+bb\s+so\b",
                 t.get_text(" ",strip=True),re.I)),None)
         if t is None:raise ValueError("Missing StatCrew university pitching table")
-        lines=[tr.get_text(" ",strip=True) for tr in t.find_all("tr") if not tr.find("tr")]
+        lines=t.get_text().splitlines()
     out={t:[] for t in teams};team=None
     for l in lines:
         s=l.strip()

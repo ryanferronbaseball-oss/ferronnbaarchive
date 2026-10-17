@@ -210,6 +210,30 @@ def _source_batters(table, valid_players, team, game_id):
               and team=="East Carolina"
               and name in ("Kenan Bowman","Davin Whitaker")):
             is_sub=True
+        # The 4/27 official ECU play-by-play lists PH Collins for Kalinich,
+        # PR Peltier for Collins, PH Whitaker for Peltier (all sixth slot);
+        # and PH Parham for Bouche then PH Bowman for Parham (ninth slot).
+        if (game_id=="cb-2025-04-27-tulane-east-carolina-att0338"
+              and team=="East Carolina"
+              and name in ("Alex Peltier","Davin Whitaker","Kenan Bowman")):
+            is_sub=True
+        # 4/19 Rutgers official Minnesota gamebook: Sweeney PH for
+        # original catcher JD Jones; Matt Chatelle to catcher for Sweeney.
+        if (game_id=="cb-2025-04-19-minnesota-rutgers-att0335"
+              and team=="Rutgers" and name=="Matt Chatelle"):
+            is_sub=True
+        # NC State original 4/12 lineup has Luke Nixon followed by Novy
+        # and Matt Heavner followed by Jaros / Jaxon Lucas; these are
+        # official defensive/pitcher substitutions with no HTML indentation.
+        if (game_id=="cb-2025-04-12-louisville-nc-state-att0332"
+              and team=="NC State" and name in ("Brandon Novy","Jaxon Lucas")):
+            is_sub=True
+        # 4/6 NC State vs Virginia original line places Jet Gilliam,
+        # PH Brandon Novy, PR/LF Ryder Woodson, PH Trenton Lyons into
+        # slot eight, with Matt Heavner / PH Drew Lanphere at slot nine.
+        if (game_id=="cb-2025-04-06-virginia-nc-state-att0330"
+              and team=="NC State" and name in ("Ryder Woodson","Trenton Lyons")):
+            is_sub=True
         seen.append((key, name, is_sub))
     if len(seen) != len(valid_players) or len({x[0] for x in seen}) != len(seen):
         raise ValueError(team + ": cannot exactly match source batter lineup against source player records")

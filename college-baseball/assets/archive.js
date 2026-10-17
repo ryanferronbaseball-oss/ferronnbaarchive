@@ -13,8 +13,8 @@ const unique=a=>[...new Set(a.filter(x=>x!=null&&x!==""))];
 function nav(active){
  const links=[["index.html","Overview","home"],["game.html","Games","games"],["stats.html","Players","players"],["records.html","Records","records"]];
  return '<header class="archive-header"><a class="archive-logo" href="./index.html">COURTSIDE ARCHIVE<small>EVERY GAME HAS A STORY · COLLEGE BASEBALL</small></a>'
- +'<nav class="archive-nav" aria-label="College Baseball archive navigation">'+links.map(([href,label,name])=>'<a href="./'+href+'"'+(active===name||active==="player"&&name==="players"?' aria-current="page"':'')+'>'+label+'</a>').join("")+'</nav>'
- +'<a class="back-link" href="../index.html">All archives ↗</a></header>';
+ +'<nav class="archive-nav" aria-label="College Baseball archive navigation">'+links.map(([href,label,name])=>'<a href="./'+href+'"'+(active===name||active==="player"&&name==="players"?' aria-current="page"':'')+'>'+label+'</a>').join("")
+ +'<a href="../index.html" class="back-link">All sports ↗</a></nav></header>';
 }
 async function json(name,fallback){const r=await fetch("./data/"+name,{cache:"no-store"});if(!r.ok)throw Error("Missing "+name+" ("+r.status+")");return r.json()}
 async function load(){
@@ -101,53 +101,122 @@ function renderHome(d){
  +'<div class="cb-game-card"><h3>Signature performances</h3><p class="cb-sub">Best single-game hitting and pitching performances, records, and tournament milestones; no fabricated data.</p><a href="./records.html" class="cb-link">View records ↗</a></div></div>';
 }
 function renderGames(d){
- $("app").innerHTML='<div class="eyebrow">College Baseball · Game archive</div><h1>Games & Box Scores</h1>'
- +'<p class="lead">Search your personal game history. Scores and player totals are shown only to the extent documented in the original attendance list or later verified official gamebooks.</p>'
- +'<div class="cb-toolbar"><label for="cb-game-select">Game</label><select id="cb-game-select"><option value="">Select an attended game</option>'+d.games.map(g=>'<option value="'+esc(g.id)+'">'+esc(date(g.date)+" · "+gameLabel(g))+'</option>').join("")+'</select></div><div id="cb-game-details"></div>'
- +'<div class="section-heading"><h2>All attended games</h2></div><div class="cb-toolbar"><input id="cb-game-search" type="search" aria-label="Search dates teams and parks" placeholder="Search teams, dates, venue or tournament…"><select id="cb-season-filter" aria-label="Season filter"><option value="">All seasons</option>'+unique(d.games.map(g=>g.season)).sort((a,b)=>b-a).map(y=>'<option>'+y+'</option>').join("")+'</select></div><div id="cb-game-list"></div>';
- const chosen=new URLSearchParams(location.search).get("id");
- const picker=$("cb-game-select");
+ $("app").innerHTML='<div class="eyebrow">College Baseball · Games & box scores</div><h1>Game details.</h1>'
+ +'<p class="lead">Scores, inning lines and authentic batting and pitching box scores from college games you attended, where documented in official scorebooks.</p>'
+ +'<div class="toolbar"><label class="filter-label" for="cb-game-select">Attended game</label><select id="cb-game-select">'
+ +'<option value="">Select an attended game</option>'+d.games.map(g=>'<option value="'+esc(g.id)+'">'+esc(date(g.date)+" · "+gameLabel(g)+(g.away_score!=null?" · "+g.away_score+"–"+g.home_score:" · Pending"))+'</option>').join("")+'</select></div>'
+ +'<section id="cb-game-details" aria-live="polite"></section>'
+ +'<div class="section-heading"><h2>All attended games</h2></div><div class="toolbar">'
+ +'<input id="cb-game-search" type="search" aria-label="Search dates teams and parks" placeholder="Search teams, dates, venue or tournament…">'
+ +'<label class="filter-label" for="cb-season-filter">Season</label><select id="cb-season-filter" aria-label="Season filter"><option value="">All seasons</option>'
+ +unique(d.games.map(g=>g.season)).sort((a,b)=>b-a).map(y=>'<option>'+y+'</option>').join("")+'</select></div><div id="cb-game-list"></div>';
+ const chosen=new URLSearchParams(location.search).get("id"),picker=$("cb-game-select");
  if(chosen&&d.gameMap.has(chosen))picker.value=chosen;
- const showGame=()=>{
+ function showGame(){
   const g=d.gameMap.get(picker.value);
-  if(!g){$("cb-game-details").innerHTML=pending(d.games.length?"Select a game above to open its score and verified player box score.":"No college baseball games imported yet.");return}
+  if(!g){$("cb-game-details").innerHTML=pending(d.games.length?"Select a game to open its official scoreboard and player box score.":"No college baseball games imported yet.");return}
   const source=link(g.source_url),players=d.rows.filter(x=>x.game_id===g.id);
-  const innings=Array.isArray(g.innings)&&g.innings.length?renderInnings(g):"";
-  const dec=g.pitching_decisions;
-  const person=name=>{if(!name)return "—";const p=players.find(x=>x.pitching&&x.player===name);return p?'<a href="'+playerUrl(p)+'">'+esc(name)+'</a>':esc(name)};
-  const decisions=dec?'<section class="panel" id="cb-pitching-decisions"><h2>Official pitching decisions</h2><p class="cb-sub">W: '+person(dec.win||dec.winner)+' · L: '+person(dec.loss||dec.loser)+' · SV: '+(dec.save?person(dec.save):"No save")+'</p></section>':"";
-  const box=players.length?renderBox(g,players):pending(g.verification==="official_scoreboard_verified"?"The official final score, inning line and pitching decisions are verified. Complete individual batting and pitching box score import remains pending.":"Official college player box score not yet imported for this attended game. No batting or pitching lines have been fabricated.");
-  $("cb-game-details").innerHTML='<section class="cb-game-summary"><div class="cb-card-meta">'+esc(date(g.date))+(g.game_number?' · Doubleheader game '+g.game_number:'')+'</div><h2>'+esc(gameLabel(g))+'</h2>'
-  +'<div class="cb-score">'+esc(score(g))+'</div><span class="cb-chip '+(g.verification==="official_boxscore_verified"?"":"pending")+'">'+esc(sourceLabel(g))+'</span>'
-  +'<p class="cb-card-meta">'+esc(g.ballpark||"Ballpark pending")+(g.city?' · '+esc(g.city):"")+(g.state?', '+esc(g.state):"")+(g.neutral_site===true?' · Neutral site':'')+(g.postseason_round?' · '+esc(g.postseason_round):"")+'</p>'
-  +(source?'<a href="'+esc(source)+'" target="_blank" rel="noopener noreferrer" class="cb-link">Game source ↗</a>':"")
-  +'</section>'+innings+decisions+'<div class="section-heading"><h2>Player box score</h2></div>'+box;
- };
- picker.addEventListener("change",()=>{if(picker.value)history.replaceState(null,"","?id="+encodeURIComponent(picker.value));else history.replaceState(null,"",location.pathname);showGame()});
- const draw=()=>{
+  const actual=g.away_score!=null&&g.home_score!=null;
+  const scoreContent=actual?g.away_score+" – "+g.home_score:"—";
+  const decision=g.pitching_decisions;
+  const person=name=>{
+   if(!name)return '<span class="mlb-decision-unavailable">No save</span>';
+   const p=players.find(x=>x.pitching&&x.player===name);
+   return p?'<a class="mlb-decision-name" href="'+playerUrl(p)+'">'+esc(name)+'</a>'
+    :'<span class="mlb-decision-unavailable">'+esc(name)+'</span>';
+  };
+  const decisions=decision?'<section class="panel mlb-decisions-panel" id="cb-pitching-decisions">'
+   +'<div class="mlb-pregame-eyebrow">OFFICIAL COLLEGE GAME DECISIONS</div><h2>Win, Loss & Save</h2>'
+   +'<div class="mlb-decision-grid">'
+   +[["WIN","Winner","win"],["LOSS","Loser","loss"],["SAVE","Save","save"]].map(([heading,label,key])=>
+    '<div class="mlb-decision-card" data-decision="'+key+'"><span class="mlb-decision-type">'+heading+'</span>'
+    +'<div class="mlb-decision-role">'+label+'</div>'+person(decision[key]|| (key==="win"?decision.winner:key==="loss"?decision.loser:null))+'</div>').join("")
+   +'</div><p class="mlb-note">Official win/loss/save credits from the original gamebook, not a custom performance award.</p></section>':"";
+  const box=players.length?'<div class="mlb-nav-tabs" role="tablist" aria-label="College baseball box score category">'
+   +'<button type="button" role="tab" aria-selected="true" data-cat="batting">Batting</button>'
+   +'<button type="button" role="tab" aria-selected="false" data-cat="pitching">Pitching</button></div>'
+   +'<section class="panel" id="cb-boxscore-panel"><h2 id="cb-stat-title">Batting box score</h2><div id="cb-box"></div></section>'
+   :pending("Official college player box score not yet imported for this game. No batting or pitching lines have been fabricated.");
+  $("cb-game-details").innerHTML='<section class="cb-game-summary">'
+   +'<div class="mlb-score" aria-label="'+esc(gameLabel(g)+", final score "+scoreContent)+'">'
+   +'<div class="side">'+esc(g.away)+'</div><div class="final">'+esc(scoreContent)+'</div><div class="side">'+esc(g.home)+'</div></div>'
+   +'<p class="mlb-note">'+esc(date(g.date))+' · '+esc(gameLabel(g))+' · '+esc(g.ballpark||"Ballpark pending")
+   +(g.city?" · "+esc(g.city):"")+(g.state?", "+esc(g.state):"")
+   +(g.regional_game_number?" · Regional Game "+esc(g.regional_game_number):"")
+   +(g.game_number?" · Doubleheader Game "+esc(g.game_number):"")
+   +(g.postseason_round?" · "+esc(g.postseason_round):"")+'</p>'
+   +'<span class="mlb-pill '+(g.verification==="official_boxscore_verified"?"verified":"pending")+'">'+esc(sourceLabel(g))+'</span>'
+   +(source?'<p class="mlb-note"><a href="'+esc(source)+'" target="_blank" rel="noopener noreferrer">Official college gamebook ↗</a></p>':"")
+   +'</section>'
+   +(Array.isArray(g.innings)&&g.innings.length?renderInnings(g):"")
+   +decisions+box;
+  if(!players.length)return;
+  const tabs=$("cb-game-details").querySelectorAll("[data-cat]");
+  const showCategory=category=>{
+   tabs.forEach(b=>b.setAttribute("aria-selected",String(b.dataset.cat===category)));
+   $("cb-stat-title").textContent=(category==="batting"?"Batting":"Pitching")+" box score";
+   $("cb-box").innerHTML=renderBox(g,players,category);
+  };
+  tabs.forEach(b=>b.addEventListener("click",()=>showCategory(b.dataset.cat)));
+  showCategory("batting");
+ }
+ picker.addEventListener("change",()=>{
+  if(picker.value)history.replaceState(null,"","?id="+encodeURIComponent(picker.value));
+  else history.replaceState(null,"",location.pathname);
+  showGame();
+ });
+ function draw(){
   const q=$("cb-game-search").value.trim().toLowerCase(),year=$("cb-season-filter").value;
   const list=d.games.filter(g=>(!year||String(g.season)===year)&&gameSearch(g,q));
-  $("cb-game-list").innerHTML=list.length?htmlTable(["Date","Matchup","Score","Ballpark","Verification"],list.map(g=>'<tr><td><a href="'+gameUrl(g)+'">'+esc(date(g.date))+'</a></td><td>'+esc(gameLabel(g))+'</td><td>'+esc(score(g))+'</td><td>'+esc(g.ballpark||"—")+'</td><td>'+esc(sourceLabel(g))+'</td></tr>')):pending("No matching attended games. Import a college baseball list or adjust the filters.");
- };
- $("cb-game-search").addEventListener("input",draw);$("cb-season-filter").addEventListener("change",draw);
+  $("cb-game-list").innerHTML=list.length?htmlTable(["Date","Matchup","Score","Ballpark","Verification"],list.map(g=>'<tr><td><a href="'+gameUrl(g)+'">'+esc(date(g.date))+'</a></td><td>'+esc(gameLabel(g))+'</td><td>'+esc(score(g))+'</td><td>'+esc(g.ballpark||"—")+'</td><td>'+esc(sourceLabel(g))+'</td></tr>'))
+  :pending("No matching attended games. Import your college baseball list or adjust the filters.");
+ }
+ $("cb-game-search").addEventListener("input",draw);
+ $("cb-season-filter").addEventListener("change",draw);
  draw();showGame();
 }
 function renderInnings(g){
- const arr=g.innings;
- return '<div class="section-heading"><h2>Inning-by-inning</h2></div>'
- +htmlTable(["Club",...arr.map((_,i)=>String(i+1)),"R"],
- [[g.away,...arr.map(x=>x.away),g.away_score],[g.home,...arr.map(x=>x.home),g.home_score]].map((row)=>'<tr>'+row.map(x=>'<td>'+esc(x==null?"—":x)+'</td>').join("")+'</tr>'));
+ const list=g.innings;
+ const line=(team,label,total)=>'<tr><td>'+esc(label)+'</td>'+list.map(x=>'<td>'+esc(x[team]==null?"—":x[team])+'</td>').join("")+'<td><strong>'+esc(total==null?"—":total)+'</strong></td></tr>';
+ return '<section class="panel"><h2>Line score by inning</h2>'
+ +'<div class="table-wrap"><table class="mlb-innings"><thead><tr><th>Club</th>'
+ +list.map((x,i)=>'<th>'+esc(x.inning??i+1)+'</th>').join("")+'<th>R</th></tr></thead>'
+ +'<tbody>'+line("away",g.away,g.away_score)+line("home",g.home,g.home_score)+'</tbody></table></div></section>';
 }
-function renderBox(g,rows){
- const sides=[["Away",g.away],["Home",g.home]];
- return '<div class="cb-boxscore">'+sides.map(([label,team])=>{
- const own=rows.filter(x=>x.team===team||x.team_id===team);
- const bats=own.filter(x=>x.batting!=null),pits=own.filter(x=>x.pitching!=null);
- const player=x=>'<a href="'+playerUrl(x)+'">'+esc(x.player||"Unknown player")+'</a>';
- const numStat=(r,cat,key)=>{const n=stat(r[cat]?.[key]);return n==null?"—":fmt(n)};
- const batting=htmlTable(["Batter","AB","R","H","2B","3B","HR","RBI","BB","SO"],bats.map(r=>'<tr><td>'+player(r)+'</td>'+["atBats","runs","hits","doubles","triples","homeRuns","rbi","baseOnBalls","strikeOuts"].map(k=>'<td>'+numStat(r,"batting",k)+'</td>').join("")+'</tr>'));
- const pitching=htmlTable(["Pitcher","IP","H","R","ER","BB","SO","Pitches"],pits.map(r=>'<tr><td>'+player(r)+'</td><td>'+esc(r.pitching.outs==null?"—":Math.floor(r.pitching.outs/3)+"."+(r.pitching.outs%3))+'</td>'+["hits","runs","earnedRuns","baseOnBalls","strikeOuts","numberOfPitches"].map(k=>'<td>'+numStat(r,"pitching",k)+'</td>').join("")+'</tr>'));
- return '<section><h3>'+esc(label+" · "+team)+"</h3><h4>Batting</h4>"+batting+"<h4>Pitching</h4>"+pitching+"</section>";
+function renderBox(g,rows,category){
+ const batting=category==="batting",fields=batting
+ ?[["atBats","AB"],["runs","R"],["hits","H"],["doubles","2B"],["triples","3B"],["homeRuns","HR"],["rbi","RBI"],["baseOnBalls","BB"],["strikeOuts","SO"]]
+ :[["outs","IP"],["hits","H"],["earnedRuns","ER"],["baseOnBalls","BB"],["strikeOuts","SO"],["numberOfPitches","Pitches"]];
+ return '<div class="cb-boxscore">'+[["away",g.away],["home",g.home]].map(([side,team])=>{
+  const members=rows.filter(r=>r.team===team&&r[category]!=null).slice().sort((a,b)=>batting
+   ?(a.batting_slot??999)-(b.batting_slot??999)||(a.batting_sub_index??999)-(b.batting_sub_index??999)||(a.batting_appearance_index??999)-(b.batting_appearance_index??999)
+   :(a.pitching_appearance_index??999)-(b.pitching_appearance_index??999)||a.player.localeCompare(b.player));
+  const numbered=members.map(r=>{
+   const sub=batting&&r.batting_sub_index!=null&&r.batting_sub_index>0;
+   const spot=batting?(r.batting_slot??"—"):null;
+   const number=batting?(spot==="—"?"—":sub?"↳":String(spot))
+    :r.pitching_appearance_index==null?"—":String(r.pitching_appearance_index+1);
+   const position=r.position||"",subtitle=batting?position+(sub?" · entered batting slot "+spot:""):"";
+   const cells=fields.map(([key])=>{
+    const value=stat(r[category]?.[key]);
+    const output=key==="outs"&&value!=null?Math.floor(value/3)+"."+(value%3):value==null?"—":fmt(value);
+    return '<td>'+esc(output)+'</td>';
+   }).join("");
+   return '<tr class="mlb-lineup-row'+(sub?" mlb-substitute":"")+'" data-player-id="'+esc(r.player_id)+'"'
+    +(batting?' data-slot="'+esc(spot)+'" data-sub="'+(r.batting_sub_index??"")+'"':' data-pitcher-index="'+(r.pitching_appearance_index??"")+'"')+'>'
+    +'<td class="mlb-order" data-order="'+esc(number)+'">'+esc(number)+'</td>'
+    +'<td class="cb-player-cell"><a href="'+playerUrl(r)+'">'+esc(r.player||"Unknown player")+'</a>'
+    +(subtitle?'<small>'+esc(subtitle)+'</small>':"")+'</td>'
+    +cells+'</tr>';
+  }).join("");
+  const note=batting?"Official batting order · ↳ denotes a replacement in that lineup spot"
+   :"Official pitching appearance order · #1 starting pitcher, followed by relievers";
+  return '<section class="mlb-team-box" data-side="'+side+'" data-category="'+category+'">'
+   +'<div class="mlb-team-heading"><h3>'+esc(team)+'</h3><span>'+side.toUpperCase()+'</span></div>'
+   +'<p class="mlb-team-caption">'+note+'</p>'
+   +'<div class="table-wrap cb-boxscore-table"><table class="mlb-sticky cb-roster-table"><thead><tr>'
+   +'<th scope="col">Order</th><th scope="col">Player</th>'+fields.map(([,key])=>'<th scope="col">'+esc(key)+'</th>').join("")+'</tr></thead>'
+   +'<tbody>'+(numbered||'<tr><td colspan="'+(fields.length+2)+'">No verified '+esc(category)+' statistics available.</td></tr>')+'</tbody></table></div></section>';
  }).join("")+'</div>';
 }
 function renderPlayers(d){

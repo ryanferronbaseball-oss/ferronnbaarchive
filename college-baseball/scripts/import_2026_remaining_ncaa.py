@@ -155,6 +155,12 @@ def _source_batters(table, valid_players, team, game_id):
         if (game_id=="cb-2025-05-25-ole-miss-vanderbilt-att0364"
               and team=="Ole Miss" and name=="Brayden Randle"):
             is_sub=True
+        # Alabama's May 21 official scorer places SS Will Plattner after
+        # PH Peyton Steele in the same batting-order position. The defensive
+        # replacement is unindented in the university rendering.
+        if (game_id=="cb-2025-05-21-alabama-tennessee-att0354"
+              and team=="Alabama" and name=="Will Plattner"):
+            is_sub=True
         seen.append((key, name, is_sub))
     if len(seen) != len(valid_players) or len({x[0] for x in seen}) != len(seen):
         raise ValueError(team + ": cannot exactly match source batter lineup against source player records")

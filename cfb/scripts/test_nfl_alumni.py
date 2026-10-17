@@ -13,6 +13,8 @@ from playwright.sync_api import sync_playwright
 
 ROOT = Path(__file__).resolve().parents[2]
 DATA = ROOT / "cfb" / "data"
+OUT = ROOT / "cfb" / "output" / "nfl-alumni"
+OUT.mkdir(parents=True, exist_ok=True)
 games = json.loads((DATA / "games.json").read_text())
 rows = json.loads((DATA / "player_stats.json").read_text())
 cross = json.loads((DATA / "nfl_crosswalk.json").read_text())
@@ -135,8 +137,16 @@ try:
             check(page.evaluate("document.documentElement.scrollWidth<=innerWidth+3"),
                   f"{width} no horizontal overflow")
             check(not errors, f"{width} no uncaught JavaScript errors: {errors}")
+            page.screenshot(path=str(OUT / f"nfl-alumni-{width}.png"), full_page=True)
             page.close()
         browser.close()
 finally:
     server.shutdown()
+(OUT / "review-manifest.json").write_text(json.dumps({
+    "status": "PASS", "scope": "seven reviewed college football NFL connections",
+    "verified_nfl_alumni": 6, "nfl_roster_only": 1,
+    "games_with_verified_connections": len(seen),
+    "desktop_screenshot": "nfl-alumni-1280.png",
+    "mobile_screenshot": "nfl-alumni-390.png"
+}, indent=2) + "\n")
 print("PASS CFB-to-NFL initial verified crosswalk and desktop/mobile browser QA")

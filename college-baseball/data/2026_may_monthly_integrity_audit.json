@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "scope": "All May 2026 college baseball attended games",
+  "games": 27,
+  "player_rows": 759,
+  "all_attendance_rows": 444,
+  "unmatched_or_invalid": [],
+  "checks": [
+    "each May attended game has complete boxscore verification",
+    "each matched team has nine distinct starting batting slots",
+    "hitter R/H reconcile with team scoreboard",
+    "pitching H/R reconcile with opposing score and hits",
+    "unique player-game IDs",
+    "source-verified substitutions preserved"
+  ],
+  "next_month": "April 2026",
+  "next_month_user_approved": true,
+  "march_user_approved": false
+}

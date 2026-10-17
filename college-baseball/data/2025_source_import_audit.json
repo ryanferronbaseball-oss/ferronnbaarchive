@@ -5,121 +5,121 @@
   "verified_2026_unchanged": 68,
   "total_2025_attendance": 74,
   "completed_in_this_run": 1,
-  "verified_2025_total": 12,
-  "linked_source_games": 17,
+  "verified_2025_total": 13,
+  "linked_source_games": 18,
   "passed_games": [
     {
-      "game_id": "cb-2025-05-20-kentucky-oklahoma-att0351",
-      "source_url": "https://soonersports.com/sports/baseball/stats/2025/kentucky/boxscore/15220",
+      "game_id": "cb-2025-05-15-arizona-state-oklahoma-state-att0347",
+      "source_url": "https://okstate.com/sports/baseball/stats/2025/arizona-state/boxscore/16712",
       "score": [
-        1,
-        5
+        2,
+        6
       ],
-      "source_game_id": "15220",
-      "player_rows": 27,
+      "source_game_id": "16712",
+      "player_rows": 26,
       "source_stat_audit": {
-        "game_id": "cb-2025-05-20-kentucky-oklahoma-att0351",
-        "source": "https://soonersports.com/sports/baseball/stats/2025/kentucky/boxscore/15220",
+        "game_id": "cb-2025-05-15-arizona-state-oklahoma-state-att0347",
+        "source": "https://okstate.com/sports/baseball/stats/2025/arizona-state/boxscore/16712",
         "http_code": 200,
-        "source_bytes": 1182322,
-        "source_sha256": "2bb63065c8de30336b0af4efca967a827bc7a95c86a2b49e042616cb61516f22",
+        "source_bytes": 1116026,
+        "source_sha256": "8762b645ee0d61588bc50f7f9d13be95999734e6e9e7b476c360a637cd03c541",
         "teams": [
           {
-            "name": "Kentucky",
-            "batters": 9,
-            "pitchers": 5,
-            "AB": 31,
-            "R": 1,
-            "H": 6,
-            "RBI": 0,
-            "BB": 3,
-            "SO": 6,
+            "name": "Arizona State",
+            "batters": 10,
+            "pitchers": 4,
+            "AB": 34,
+            "R": 2,
+            "H": 9,
+            "RBI": 2,
+            "BB": 2,
+            "SO": 8,
             "pitching_outs": 24,
-            "pitching_runs": 5,
+            "pitching_runs": 6,
             "pitching_hits": 7
           },
           {
-            "name": "Oklahoma",
-            "batters": 10,
+            "name": "Oklahoma State",
+            "batters": 9,
             "pitchers": 3,
-            "AB": 29,
-            "R": 5,
+            "AB": 31,
+            "R": 6,
             "H": 7,
-            "RBI": 5,
-            "BB": 2,
-            "SO": 6,
+            "RBI": 6,
+            "BB": 3,
+            "SO": 11,
             "pitching_outs": 27,
-            "pitching_runs": 1,
-            "pitching_hits": 6
+            "pitching_runs": 2,
+            "pitching_hits": 9
           }
         ],
         "source_warnings": [],
-        "player_rows": 27,
+        "player_rows": 26,
         "status": "PASS",
         "scoreboard": [
           {
-            "runs": 1,
-            "hits": 6,
+            "runs": 2,
+            "hits": 9,
             "errors": 0,
             "innings": [
-              0,
-              0,
               1,
               0,
               0,
               0,
               0,
               0,
-              0
+              0,
+              0,
+              1
             ]
           },
           {
-            "runs": 5,
+            "runs": 6,
             "hits": 7,
-            "errors": 1,
+            "errors": 0,
             "innings": [
-              0,
-              0,
-              3,
+              1,
+              4,
               0,
               0,
               1,
               0,
-              1,
+              0,
+              0,
               null
             ]
           }
         ],
         "lineup_audit": [
           {
-            "team": "Kentucky",
-            "nine_starting_slots": true,
-            "batter_rows": 9,
-            "pitcher_rows": 5,
-            "substitutes": 0
-          },
-          {
-            "team": "Oklahoma",
+            "team": "Arizona State",
             "nine_starting_slots": true,
             "batter_rows": 10,
-            "pitcher_rows": 3,
+            "pitcher_rows": 4,
             "substitutes": 1
+          },
+          {
+            "team": "Oklahoma State",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 3,
+            "substitutes": 0
           }
         ],
         "official_decisions": {
-          "win": "Hitt, James",
-          "loss": "Scott Rouse",
+          "win": "Bodendorf, Harrison",
+          "loss": "Jacobs, Ben",
           "save": null
         },
         "resolved_pitcher_decisions": {
           "win": null,
-          "loss": "Scott Rouse",
+          "loss": null,
           "save": null
         }
       },
       "pitching_decisions": {
-        "win": "James Hitt",
-        "loss": "Scott Rouse",
+        "win": "Harrison Bodendorf",
+        "loss": "Ben Jacobs",
         "save": null
       }
     }

@@ -5,10 +5,10 @@
   "uploaded_total_attendance_rows": 444,
   "season_span": "2017–2026 after user-confirmed 2024 typo correction",
   "staged_games": 444,
-  "official_score_and_inning_lines_matched": 16,
-  "official_player_boxscores_imported": 15,
-  "player_stat_rows": 415,
-  "unique_player_ids": 257,
+  "official_score_and_inning_lines_matched": 18,
+  "official_player_boxscores_imported": 17,
+  "player_stat_rows": 475,
+  "unique_player_ids": 299,
   "scores_supplied_by_user": 0,
   "source_docs": "Official Auburn, Arkansas, LSU, Florida, Mississippi State, Tennessee and Texas athletics/conference box scores and university recaps",
   "source_worksheet_rows": [
@@ -58,7 +58,7 @@
   ],
   "same_day_identical_matchup_pairs_in_full_sheet": 13,
   "metadata_status": "full_444_game_attendance_directory_plus_may_2026_official_sources",
-  "warning": "444 attendance games staged in unpublished branch. 15 official complete player gamebooks, 1 official score-only, 428 attendance-only. No player statistics are inferred for unverified games.",
+  "warning": "No attendance or player records inferred: 444 source attendance rows preserved, only independently reconciled official gamebooks promoted.",
   "resolved_matchups": [
     {
       "attendance_game_number": 443,
@@ -137,10 +137,10 @@
   "remaining_attendance_games_not_yet_imported": 0,
   "validation": "Nine complete scorebooks reconciled for team AB/R/H/RBI/BB/SO, pitcher outs/hits/runs/strikeouts, batting order and substitutions, W/L/S. Five additional 2026 SEC Tournament matchups have official scores/innings.",
   "all_attendance_entries_staged": 444,
-  "attendance_only_pending_official_verification": 428,
+  "attendance_only_pending_official_verification": 426,
   "source": "User workbook; 444 original rows, two user-corrected entries.",
   "official_scoreboard_player_lines_pending": 1,
-  "latest_verified_batch": "SEC Tournament May 20 2026 · Missouri/Mississippi State and Vanderbilt/Florida",
+  "latest_verified_batch": "SEC Tournament May 19 2026 · Missouri/Ole Miss and LSU/Oklahoma",
   "latest_verified_batch_games": [
     {
       "worksheet_row": 432,
@@ -241,6 +241,17 @@
       "game_id": "cb-2026-05-20-vanderbilt-florida-att0430",
       "source_url": "https://floridagators.com/sports/baseball/stats/2026/vanderbilt/boxscore/27672",
       "verification": "official_boxscore_verified"
+    },
+    {
+      "game_id": "cb-2026-05-19-missouri-ole-miss-att0425",
+      "source_url": "https://olemisssports.com/sports/baseball/stats/2026/missouri/boxscore/14713",
+      "verification": "official_boxscore_verified"
+    },
+    {
+      "game_id": "cb-2026-05-19-lsu-oklahoma-att0428",
+      "source_url": "https://soonersports.com/sports/baseball/stats/2026/lsu/boxscore/15789",
+      "verification": "official_boxscore_verified"
     }
-  ]
+  ],
+  "2026_may19_first_round_audit": "data/2026_sec_may19_first_round_audit.json"
 }

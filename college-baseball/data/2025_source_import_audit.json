@@ -5,80 +5,425 @@
   "verified_2026_unchanged": 68,
   "total_2025_attendance": 74,
   "completed_in_this_run": 4,
-  "verified_2025_total": 37,
-  "linked_source_games": 42,
+  "verified_2025_total": 41,
+  "linked_source_games": 47,
   "passed_games": [
     {
-      "game_id": "cb-2025-04-27-tulane-east-carolina-att0338",
-      "source_url": "https://ecupirates.com/sports/baseball/stats/2025/tulane/boxscore/13754",
+      "game_id": "cb-2025-03-19-richmond-virginia-att0324",
+      "source_url": "https://richmondspiders.com/sports/baseball/stats/2025/virginia/boxscore/11480",
       "score": [
-        7,
+        6,
         2
       ],
-      "source_game_id": "13754",
-      "player_rows": 33,
+      "source_game_id": "11480",
+      "player_rows": 34,
       "source_stat_audit": {
-        "game_id": "cb-2025-04-27-tulane-east-carolina-att0338",
-        "source": "https://ecupirates.com/sports/baseball/stats/2025/tulane/boxscore/13754",
+        "game_id": "cb-2025-03-19-richmond-virginia-att0324",
+        "source": "https://richmondspiders.com/sports/baseball/stats/2025/virginia/boxscore/11480",
         "http_code": 200,
-        "source_bytes": 1217930,
-        "source_sha256": "d93279d8e7ff8358d50cbcbcbd340c5ac9faa4a313286d590b4985dffc7717ab",
+        "source_bytes": 1122133,
+        "source_sha256": "0d6aa629e58a527064b8e78b931fa22ad1f78cc358ba59f6821ad876abf06eea",
         "teams": [
           {
-            "name": "Tulane",
-            "batters": 11,
-            "pitchers": 4,
-            "AB": 34,
-            "R": 7,
+            "name": "Richmond",
+            "batters": 9,
+            "pitchers": 7,
+            "AB": 35,
+            "R": 6,
             "H": 9,
-            "RBI": 5,
-            "BB": 1,
-            "SO": 5,
+            "RBI": 6,
+            "BB": 6,
+            "SO": 8,
             "pitching_outs": 27,
             "pitching_runs": 2,
             "pitching_hits": 8
           },
           {
-            "name": "East Carolina",
-            "batters": 15,
-            "pitchers": 3,
-            "AB": 31,
+            "name": "Virginia",
+            "batters": 11,
+            "pitchers": 7,
+            "AB": 34,
             "R": 2,
             "H": 8,
             "RBI": 2,
-            "BB": 6,
-            "SO": 8,
+            "BB": 5,
+            "SO": 9,
             "pitching_outs": 27,
-            "pitching_runs": 7,
+            "pitching_runs": 6,
             "pitching_hits": 9
           }
         ],
         "source_warnings": [],
-        "player_rows": 33,
+        "player_rows": 34,
         "status": "PASS",
         "scoreboard": [
           {
-            "runs": 7,
+            "runs": 6,
             "hits": 9,
             "errors": 0,
             "innings": [
+              0,
+              4,
               1,
+              0,
               1,
               0,
               0,
-              1,
-              2,
               0,
-              2,
               0
             ]
           },
           {
             "runs": 2,
             "hits": 8,
+            "errors": 2,
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Richmond",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 7,
+            "substitutes": 0
+          },
+          {
+            "team": "Virginia",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 7,
+            "substitutes": 2
+          }
+        ],
+        "official_decisions": {
+          "win": "Peacock, Gerry",
+          "loss": "Hodges",
+          "save": "Santiago-cruz, Angel"
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": "Hodges",
+          "save": null
+        }
+      },
+      "pitching_decisions": {
+        "win": "Gerry Peacock",
+        "loss": "Hodges",
+        "save": "Angel Santiago-cruz"
+      }
+    },
+    {
+      "game_id": "cb-2025-03-14-princeton-liberty-att0320",
+      "source_url": "https://libertyflames.com/sports/baseball/stats/2025/princeton/boxscore/14637",
+      "score": [
+        4,
+        6
+      ],
+      "source_game_id": "14637",
+      "player_rows": 24,
+      "source_stat_audit": {
+        "game_id": "cb-2025-03-14-princeton-liberty-att0320",
+        "source": "https://libertyflames.com/sports/baseball/stats/2025/princeton/boxscore/14637",
+        "http_code": 200,
+        "source_bytes": 1335423,
+        "source_sha256": "45d3f95c6c1ce74863c0e068fdf6bba00a0938834a39f5e4d7cd5519ae624fa2",
+        "teams": [
+          {
+            "name": "Princeton",
+            "batters": 9,
+            "pitchers": 3,
+            "AB": 35,
+            "R": 4,
+            "H": 9,
+            "RBI": 3,
+            "BB": 0,
+            "SO": 11,
+            "pitching_outs": 24,
+            "pitching_runs": 6,
+            "pitching_hits": 6
+          },
+          {
+            "name": "Liberty",
+            "batters": 9,
+            "pitchers": 3,
+            "AB": 30,
+            "R": 6,
+            "H": 6,
+            "RBI": 4,
+            "BB": 3,
+            "SO": 11,
+            "pitching_outs": 27,
+            "pitching_runs": 4,
+            "pitching_hits": 9
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 24,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 4,
+            "hits": 9,
+            "errors": 1,
+            "innings": [
+              0,
+              2,
+              0,
+              0,
+              0,
+              0,
+              2,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 6,
+            "hits": 6,
+            "errors": 0,
+            "innings": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              4,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Princeton",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 3,
+            "substitutes": 0
+          },
+          {
+            "team": "Liberty",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 3,
+            "substitutes": 0
+          }
+        ],
+        "official_decisions": {
+          "win": "Frankel, Jack",
+          "loss": "Faulkner, Jacob",
+          "save": "August, Tyler"
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      },
+      "pitching_decisions": {
+        "win": "Jack Frankel",
+        "loss": "Jacob Faulkner",
+        "save": "Tyler August"
+      }
+    },
+    {
+      "game_id": "cb-2025-03-09-stanford-north-carolina-att0318",
+      "source_url": "https://goheels.com/sports/baseball/stats/2025/stanford/boxscore/25906",
+      "score": [
+        7,
+        0
+      ],
+      "source_game_id": "25906",
+      "player_rows": 26,
+      "source_stat_audit": {
+        "game_id": "cb-2025-03-09-stanford-north-carolina-att0318",
+        "source": "https://goheels.com/sports/baseball/stats/2025/stanford/boxscore/25906",
+        "http_code": 200,
+        "source_bytes": 1333274,
+        "source_sha256": "24167ab3b8106f0ce16f612be1673c9163799c933703db7efd9dedc8d9fe91f0",
+        "teams": [
+          {
+            "name": "Stanford",
+            "batters": 9,
+            "pitchers": 3,
+            "AB": 32,
+            "R": 7,
+            "H": 7,
+            "RBI": 6,
+            "BB": 2,
+            "SO": 10,
+            "pitching_outs": 27,
+            "pitching_runs": 0,
+            "pitching_hits": 6
+          },
+          {
+            "name": "North Carolina",
+            "batters": 10,
+            "pitchers": 4,
+            "AB": 32,
+            "R": 0,
+            "H": 6,
+            "RBI": 0,
+            "BB": 3,
+            "SO": 14,
+            "pitching_outs": 27,
+            "pitching_runs": 7,
+            "pitching_hits": 7
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 26,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 7,
+            "hits": 7,
             "errors": 0,
             "innings": [
               0,
+              0,
+              0,
+              0,
+              2,
+              3,
+              0,
+              1,
+              1
+            ]
+          },
+          {
+            "runs": 0,
+            "hits": 6,
+            "errors": 1,
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Stanford",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 3,
+            "substitutes": 0
+          },
+          {
+            "team": "North Carolina",
+            "nine_starting_slots": true,
+            "batter_rows": 10,
+            "pitcher_rows": 4,
+            "substitutes": 1
+          }
+        ],
+        "official_decisions": {
+          "win": "Volchko, Joey",
+          "loss": "Haugh, Aidan",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      },
+      "pitching_decisions": {
+        "win": "Joey Volchko",
+        "loss": "Aidan Haugh",
+        "save": null
+      }
+    },
+    {
+      "game_id": "cb-2025-03-07-cornell-michigan-state-att0315",
+      "source_url": "https://cornellbigred.com/sports/baseball/stats/2025/michigan-state-university/boxscore/60616",
+      "score": [
+        2,
+        3
+      ],
+      "source_game_id": "60616",
+      "player_rows": 28,
+      "source_stat_audit": {
+        "game_id": "cb-2025-03-07-cornell-michigan-state-att0315",
+        "source": "https://cornellbigred.com/sports/baseball/stats/2025/michigan-state-university/boxscore/60616",
+        "http_code": 200,
+        "source_bytes": 653020,
+        "source_sha256": "527f34e68676025f3d19bbbb745fdb53ac3ebb9bb7a593be581e265a4c39bd7d",
+        "teams": [
+          {
+            "name": "Cornell",
+            "batters": 9,
+            "pitchers": 4,
+            "AB": 33,
+            "R": 2,
+            "H": 8,
+            "RBI": 2,
+            "BB": 4,
+            "SO": 8,
+            "pitching_outs": 25,
+            "pitching_runs": 3,
+            "pitching_hits": 6
+          },
+          {
+            "name": "Michigan State",
+            "batters": 11,
+            "pitchers": 4,
+            "AB": 31,
+            "R": 3,
+            "H": 6,
+            "RBI": 3,
+            "BB": 3,
+            "SO": 5,
+            "pitching_outs": 27,
+            "pitching_runs": 2,
+            "pitching_hits": 8
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 28,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 2,
+            "hits": 8,
+            "errors": 2,
+            "innings": [
+              0,
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 3,
+            "hits": 6,
+            "errors": 1,
+            "innings": [
+              1,
               0,
               0,
               1,
@@ -92,378 +437,62 @@
         ],
         "lineup_audit": [
           {
-            "team": "Tulane",
+            "team": "Cornell",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 4,
+            "substitutes": 0
+          },
+          {
+            "team": "Michigan State",
             "nine_starting_slots": true,
             "batter_rows": 11,
             "pitcher_rows": 4,
             "substitutes": 2
-          },
-          {
-            "team": "East Carolina",
-            "nine_starting_slots": true,
-            "batter_rows": 15,
-            "pitcher_rows": 3,
-            "substitutes": 6
           }
         ],
         "official_decisions": {
-          "win": "Carter Benbrook",
-          "loss": "Jenkins, Sean",
+          "win": "Horvath,Tyler",
+          "loss": "Jaun, William",
           "save": null
         },
         "resolved_pitcher_decisions": {
-          "win": "Carter Benbrook",
+          "win": null,
           "loss": null,
           "save": null
         }
       },
       "pitching_decisions": {
-        "win": "Carter Benbrook",
-        "loss": "Sean Jenkins",
-        "save": null
-      }
-    },
-    {
-      "game_id": "cb-2025-04-19-minnesota-rutgers-att0335",
-      "source_url": "https://gophersports.com/sports/baseball/stats/2025/rutgers/boxscore/21668",
-      "score": [
-        8,
-        4
-      ],
-      "source_game_id": "21668",
-      "player_rows": 27,
-      "source_stat_audit": {
-        "game_id": "cb-2025-04-19-minnesota-rutgers-att0335",
-        "source": "https://gophersports.com/sports/baseball/stats/2025/rutgers/boxscore/21668",
-        "http_code": 200,
-        "source_bytes": 1236520,
-        "source_sha256": "3de89d97270eba34c90d19e80ff6869e0f96bf5fe970052559d6d0f15d904219",
-        "teams": [
-          {
-            "name": "Minnesota",
-            "batters": 9,
-            "pitchers": 3,
-            "AB": 31,
-            "R": 8,
-            "H": 10,
-            "RBI": 8,
-            "BB": 5,
-            "SO": 6,
-            "pitching_outs": 27,
-            "pitching_runs": 4,
-            "pitching_hits": 14
-          },
-          {
-            "name": "Rutgers",
-            "batters": 12,
-            "pitchers": 3,
-            "AB": 38,
-            "R": 4,
-            "H": 14,
-            "RBI": 4,
-            "BB": 4,
-            "SO": 6,
-            "pitching_outs": 27,
-            "pitching_runs": 8,
-            "pitching_hits": 10
-          }
-        ],
-        "source_warnings": [],
-        "player_rows": 27,
-        "status": "PASS",
-        "scoreboard": [
-          {
-            "runs": 8,
-            "hits": 10,
-            "errors": 0,
-            "innings": [
-              0,
-              0,
-              1,
-              0,
-              5,
-              0,
-              2,
-              0,
-              0
-            ]
-          },
-          {
-            "runs": 4,
-            "hits": 14,
-            "errors": 1,
-            "innings": [
-              0,
-              0,
-              1,
-              1,
-              0,
-              0,
-              0,
-              2,
-              0
-            ]
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "Minnesota",
-            "nine_starting_slots": true,
-            "batter_rows": 9,
-            "pitcher_rows": 3,
-            "substitutes": 0
-          },
-          {
-            "team": "Rutgers",
-            "nine_starting_slots": true,
-            "batter_rows": 12,
-            "pitcher_rows": 3,
-            "substitutes": 3
-          }
-        ],
-        "official_decisions": {
-          "win": "Rooney, Noah",
-          "loss": "Quinn Berglin",
-          "save": null
-        },
-        "resolved_pitcher_decisions": {
-          "win": null,
-          "loss": "Quinn Berglin",
-          "save": null
-        }
-      },
-      "pitching_decisions": {
-        "win": "Noah Rooney",
-        "loss": "Quinn Berglin",
-        "save": null
-      }
-    },
-    {
-      "game_id": "cb-2025-04-12-louisville-nc-state-att0332",
-      "source_url": "https://gopack.com/sports/baseball/stats/2025/louisville/boxscore/23703",
-      "score": [
-        25,
-        8
-      ],
-      "source_game_id": "23703",
-      "player_rows": 37,
-      "source_stat_audit": {
-        "game_id": "cb-2025-04-12-louisville-nc-state-att0332",
-        "source": "https://gopack.com/sports/baseball/stats/2025/louisville/boxscore/23703",
-        "http_code": 200,
-        "source_bytes": 1197631,
-        "source_sha256": "37822e2b6a6d636ad10bac4ee629ef0727c1cfb37003c4d49896ab37fa8bbc84",
-        "teams": [
-          {
-            "name": "Louisville",
-            "batters": 13,
-            "pitchers": 3,
-            "AB": 47,
-            "R": 25,
-            "H": 21,
-            "RBI": 24,
-            "BB": 5,
-            "SO": 3,
-            "pitching_outs": 21,
-            "pitching_runs": 8,
-            "pitching_hits": 9
-          },
-          {
-            "name": "NC State",
-            "batters": 17,
-            "pitchers": 5,
-            "AB": 29,
-            "R": 8,
-            "H": 9,
-            "RBI": 7,
-            "BB": 8,
-            "SO": 4,
-            "pitching_outs": 21,
-            "pitching_runs": 25,
-            "pitching_hits": 21
-          }
-        ],
-        "source_warnings": [],
-        "player_rows": 37,
-        "status": "PASS",
-        "scoreboard": [
-          {
-            "runs": 25,
-            "hits": 21,
-            "errors": 1,
-            "innings": [
-              4,
-              0,
-              4,
-              4,
-              4,
-              0,
-              9
-            ]
-          },
-          {
-            "runs": 8,
-            "hits": 9,
-            "errors": 5,
-            "innings": [
-              0,
-              0,
-              0,
-              3,
-              0,
-              2,
-              3
-            ]
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "Louisville",
-            "nine_starting_slots": true,
-            "batter_rows": 13,
-            "pitcher_rows": 3,
-            "substitutes": 4
-          },
-          {
-            "team": "NC State",
-            "nine_starting_slots": true,
-            "batter_rows": 17,
-            "pitcher_rows": 5,
-            "substitutes": 8
-          }
-        ],
-        "official_decisions": {
-          "win": "Brennyn Cutts",
-          "loss": "Andrews, Heath",
-          "save": null
-        },
-        "resolved_pitcher_decisions": {
-          "win": "Brennyn Cutts",
-          "loss": null,
-          "save": null
-        }
-      },
-      "pitching_decisions": {
-        "win": "Brennyn Cutts",
-        "loss": "Heath Andrews",
-        "save": null
-      }
-    },
-    {
-      "game_id": "cb-2025-04-06-virginia-nc-state-att0330",
-      "source_url": "https://gopack.com/sports/baseball/stats/2025/virginia/boxscore/23700",
-      "score": [
-        8,
-        9
-      ],
-      "source_game_id": "23700",
-      "player_rows": 33,
-      "source_stat_audit": {
-        "game_id": "cb-2025-04-06-virginia-nc-state-att0330",
-        "source": "https://gopack.com/sports/baseball/stats/2025/virginia/boxscore/23700",
-        "http_code": 200,
-        "source_bytes": 1153426,
-        "source_sha256": "d49a343648c0d4980fe427b7097593344bd4d5a229c38582fed5f3e57488e07b",
-        "teams": [
-          {
-            "name": "Virginia",
-            "batters": 10,
-            "pitchers": 5,
-            "AB": 37,
-            "R": 8,
-            "H": 14,
-            "RBI": 7,
-            "BB": 2,
-            "SO": 3,
-            "pitching_outs": 26,
-            "pitching_runs": 9,
-            "pitching_hits": 6
-          },
-          {
-            "name": "NC State",
-            "batters": 14,
-            "pitchers": 4,
-            "AB": 30,
-            "R": 9,
-            "H": 6,
-            "RBI": 9,
-            "BB": 7,
-            "SO": 9,
-            "pitching_outs": 27,
-            "pitching_runs": 8,
-            "pitching_hits": 14
-          }
-        ],
-        "source_warnings": [],
-        "player_rows": 33,
-        "status": "PASS",
-        "scoreboard": [
-          {
-            "runs": 8,
-            "hits": 14,
-            "errors": 1,
-            "innings": [
-              3,
-              1,
-              0,
-              0,
-              0,
-              2,
-              2,
-              0,
-              0
-            ]
-          },
-          {
-            "runs": 9,
-            "hits": 6,
-            "errors": 1,
-            "innings": [
-              2,
-              0,
-              0,
-              0,
-              0,
-              0,
-              4,
-              0,
-              3
-            ]
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "Virginia",
-            "nine_starting_slots": true,
-            "batter_rows": 10,
-            "pitcher_rows": 5,
-            "substitutes": 1
-          },
-          {
-            "team": "NC State",
-            "nine_starting_slots": true,
-            "batter_rows": 14,
-            "pitcher_rows": 4,
-            "substitutes": 5
-          }
-        ],
-        "official_decisions": {
-          "win": "Dudan, Jacob",
-          "loss": "Matt Lanzendorfer",
-          "save": null
-        },
-        "resolved_pitcher_decisions": {
-          "win": null,
-          "loss": "Matt Lanzendorfer",
-          "save": null
-        }
-      },
-      "pitching_decisions": {
-        "win": "Jacob Dudan",
-        "loss": "Matt Lanzendorfer",
+        "win": "Tyler Horvath",
+        "loss": "William Jaun",
         "save": null
       }
     }
+  ],
+  "metadata_corrections": [
+    "cb-2025-05-17-oregon-iowa-att0349",
+    "cb-2025-05-16-oregon-iowa-att0348",
+    "cb-2025-05-15-arizona-state-oklahoma-state-att0347",
+    "cb-2025-05-11-louisiana-southern-mississippi-att0346",
+    "cb-2025-05-10-pittsburgh-wake-forest-att0345",
+    "cb-2025-05-10-george-mason-davidson-att0344",
+    "cb-2025-05-09-richmond-vcu-att0343",
+    "cb-2025-05-08-nc-state-north-carolina-att0342",
+    "cb-2025-05-06-georgia-southern-georgia-tech-att0341",
+    "cb-2025-05-03-san-francisco-san-diego-att0340",
+    "cb-2025-05-02-san-francisco-san-diego-att0339",
+    "cb-2025-04-27-tulane-east-carolina-att0338",
+    "cb-2025-04-26-tulane-east-carolina-att0337",
+    "cb-2025-04-25-nebraska-maryland-att0336",
+    "cb-2025-04-19-minnesota-rutgers-att0335",
+    "cb-2025-04-18-stony-brook-hofstra-att0334",
+    "cb-2025-04-12-louisville-nc-state-att0332",
+    "cb-2025-04-11-louisville-nc-state-att0331",
+    "cb-2025-04-06-virginia-nc-state-att0330",
+    "cb-2025-04-06-northeastern-campbell-att0329",
+    "cb-2025-03-30-tennessee-south-carolina-att0328",
+    "cb-2025-03-29-tennessee-south-carolina-att0327",
+    "cb-2025-03-28-tennessee-south-carolina-att0326"
   ],
   "pending_review": [
     {
@@ -482,14 +511,19 @@
       "reason": "Official source PDF identified; separate PDF line transcription required"
     },
     {
-      "game_id": "cb-2025-03-19-richmond-virginia-att0324",
-      "source_url": "https://richmondspiders.com/sports/baseball/stats/2025/virginia/boxscore/11480",
-      "reason": "Virginia: source batting order resolved to 10 starting slots, not 9"
-    },
-    {
       "game_id": "cb-2025-03-15-virginia-tech-nc-state-att0322",
       "source_url": "https://gopack.com/sports/baseball/stats/2025/virginia-tech/boxscore/23688",
-      "reason": "Virginia Tech: source batting order resolved to 10 starting slots, not 9"
+      "reason": "NC State: source batting order resolved to 10 starting slots, not 9"
+    },
+    {
+      "game_id": "cb-2025-03-14-miami-wake-forest-att0321",
+      "source_url": "https://godeacs.com/sports/baseball/stats/2025/miami/boxscore/13957",
+      "reason": "Wake Forest: source batting order resolved to 10 starting slots, not 9"
+    },
+    {
+      "game_id": "cb-2025-03-08-stonehill-high-point-att0317",
+      "source_url": "https://highpointpanthers.com/sports/baseball/stats/2025/stonehill/boxscore/15752",
+      "reason": "Jake Lanzer - invalid NP '--'"
     }
   ]
 }

@@ -99,64 +99,39 @@ def main():
             pending.append({"game_id":gid,"reason":"Original status is not attendance-only"})
             continue
         try:
-            if url.lower().split("?")[0].endswith(".pdf"):
-                raise ValueError("Official source PDF identified; separate PDF line transcription required")
-            # Source dates are visibly checked, not inferred from a relative URL.
+            pdf_source=item.get("source_type")=="official_university_pdf_scorebook"
+            if url.lower().split("?")[0].endswith(".pdf") and not pdf_source:
+                raise ValueError("Unsupported source PDF; independently audited PDF parser required")
             resp=session.get(url,timeout=40)
             resp.raise_for_status()
-            if gid=="cb-2025-05-22-texas-a-m-auburn-att0357":
-                # Source discovery only; don't assume a schedule row is a gamebook.
-                import re as _re
-                body=resp.text
-                idx=body.find("2025-05-22T11:02")
-                if idx>=0:
-                    event_segment=body[idx:idx+23000]
-                    print("AUBURN-MAY22-EVENT-LINKS",
-                      _re.findall(r'href="([^"]+)"',event_segment)[:25],flush=True)
-                    print("AUBURN-MAY22-EVENT-PDF",
-                      _re.findall(r'[^"\\s<>]{0,230}\\.pdf[^"\\s<>]{0,100}',event_segment,_re.I)[:12],flush=True)
-                for token in ("May 22", "May. 22", "2025-05-22", "Texas A&M"):
-                    print("AUBURN-LINK-DISCOVERY",token,
-                        [(m.start(),repr(body[max(0,m.start()-180):m.start()+550])) for m in list(_re.finditer(_re.escape(token),body,_re.I))[:3]],
-                        flush=True)
-                for time_node in BeautifulSoup(body,"html.parser").find_all("time",datetime=True):
-                    if not time_node["datetime"].startswith("2025-05-22"):continue
-                    parent=next((p for p in time_node.parents
-                                 if "schedule-event-item" in " ".join(p.get("class",[]))),
-                                None)
-                    if parent:
-                        print("AUBURN-EXACT-EVENT", parent.get_text(" ",strip=True)[:450],
-                              [(a.get_text(" ",strip=True)[:45],a.get("href"))
-                               for a in parent.find_all("a",href=True)][-18:],flush=True)
-                for anchor in BeautifulSoup(body,"html.parser").find_all("a",href=True):
-                    if "pdf" in anchor.get("href","").lower() and "Texas" in anchor.parent.get_text(" ",strip=True):
-                        print("AUBURN-PDF-CANDIDATE",anchor.get("href"),flush=True)
-
-            soup=BeautifulSoup(resp.text,"html.parser")
-            src=soup.get_text(" ",strip=True)
-            yy,mm,dd=(int(n) for n in game["date"].split("-"))
-            visible_date=f"{mm}/{dd}/{yy}"
-            formats={f"{mm}/{dd}/{yy}",f"{mm}/{dd:02d}/{yy}",f"{mm:02d}/{dd:02d}/{yy}",f"{mm:02d}/{dd}/{yy}",
-                     f"{mm}/{dd}/{yy%100:02d}",f"{mm:02d}/{dd:02d}/{yy%100:02d}",f"{mm}/{dd:02d}/{yy%100:02d}"}
             legacy=bool(item.get("legacy_statcrew_source"))
-            if legacy:
-                from datetime import date as _date
-                dt=_date(yy,mm,dd)
-                formats.update({dt.strftime("%b %d, %Y"),
-                                dt.strftime("%B %d, %Y"),
-                                dt.strftime("%b %d, %Y").replace(" 0"," "),
-                                dt.strftime("%B %d, %Y").replace(" 0"," ")})
-            if not any(fmt in src for fmt in formats):
-                raise ValueError("Official school boxscore doesn't visibly confirm attendance date")
-            if legacy:
-                # Use the same fail-closed StatCrew source transcription that
-                # completed the historical 2024 UVA/Clemson gamebooks.
-                from import_2024_statcrew import import_statcrew
-                rows,audit=import_statcrew(game,item,global_keys,resp)
+            if pdf_source:
+                # Same source-validated scorer parser that completed the 2024
+                # official Auburn/Vanderbilt university PDF gamebooks.
+                from import_2024_pdf import parse as parse_pdf
+                rows,audit=parse_pdf(game,item,global_keys,resp)
             else:
-                # Sidearm importer reconciles scoreboard, complete batting,
-                # both pitching tables, original nine-slot lineup and W/L/S.
-                rows,audit=import_one(game,item,global_keys)
+                soup=BeautifulSoup(resp.text,"html.parser")
+                src=soup.get_text(" ",strip=True)
+                yy,mm,dd=(int(n) for n in game["date"].split("-"))
+                formats={f"{mm}/{dd}/{yy}",f"{mm}/{dd:02d}/{yy}",
+                         f"{mm:02d}/{dd:02d}/{yy}",f"{mm:02d}/{dd}/{yy}",
+                         f"{mm}/{dd}/{yy%100:02d}",f"{mm:02d}/{dd:02d}/{yy%100:02d}",
+                         f"{mm}/{dd:02d}/{yy%100:02d}"}
+                if legacy:
+                    from datetime import date as _date
+                    dt=_date(yy,mm,dd)
+                    formats.update({dt.strftime("%b %d, %Y"),
+                                    dt.strftime("%B %d, %Y"),
+                                    dt.strftime("%b %d, %Y").replace(" 0"," "),
+                                    dt.strftime("%B %d, %Y").replace(" 0"," ")})
+                if not any(fmt in src for fmt in formats):
+                    raise ValueError("Official school boxscore doesn't visibly confirm attendance date")
+                if legacy:
+                    from import_2024_statcrew import import_statcrew
+                    rows,audit=import_statcrew(game,item,global_keys,resp)
+                else:
+                    rows,audit=import_one(game,item,global_keys)
             # Mississippi State's 2025 May 21 university stat table truncates
             # the losing pitcher's visible name to "Mcpherson", while its
             # *same official gamebook* credits "Mcpherson, Ryan (4-1)".
@@ -228,7 +203,7 @@ def main():
                     raise ValueError("Quinnipiac pitcher collision")
                 global_keys.remove((gid,old));global_keys.add((gid,new))
                 row["player"]="J.C. Franconere";row["player_id"]=new
-            decisions=(game["pitching_decisions"] if legacy
+            decisions=(game["pitching_decisions"] if (legacy or pdf_source)
                        else scorer_labels(resp.text,rows,gid))
             game.update({
                "game_type":item["game_type"],

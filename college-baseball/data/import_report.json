@@ -6,9 +6,9 @@
   "season_span": "2017–2026 after user-confirmed 2024 typo correction",
   "staged_games": 444,
   "official_score_and_inning_lines_matched": 213,
-  "official_player_boxscores_imported": 424,
-  "player_stat_rows": 12794,
-  "unique_player_ids": 5448,
+  "official_player_boxscores_imported": 428,
+  "player_stat_rows": 12909,
+  "unique_player_ids": 5450,
   "scores_supplied_by_user": 0,
   "source_docs": "Official Auburn, Arkansas, LSU, Florida, Mississippi State, Tennessee and Texas athletics/conference box scores and university recaps",
   "source_worksheet_rows": [
@@ -137,10 +137,10 @@
   "remaining_attendance_games_not_yet_imported": 0,
   "validation": "May 2026: all 27 official player books mapped to matching attendance games; scores, R/H/E, pitching/team opposing R and H, batting lineup starters checked; new imports have complete official per-inning lines. CI browser test separately tracked.",
   "all_attendance_entries_staged": 444,
-  "attendance_only_pending_official_verification": 20,
+  "attendance_only_pending_official_verification": 16,
   "source": "User workbook; 444 original rows, two user-corrected entries.",
   "official_scoreboard_player_lines_pending": 0,
-  "latest_verified_batch": "Historical official gamebooks 2018 (development branch)",
+  "latest_verified_batch": "Historical official gamebooks 2022 (development branch)",
   "latest_verified_batch_games": [
     {
       "worksheet_row": 432,
@@ -404,7 +404,7 @@
       "status": "in_progress",
       "source_queue": "data/2022_official_source_queue.json",
       "audit_file": "data/2022_monthly_progress_audit.json",
-      "full_player_boxscores_imported": 57
+      "full_player_boxscores_imported": 61
     },
     "season_2021": {
       "approved": true,
@@ -538,11 +538,11 @@
     "original_attendance_games": 62,
     "official_gamebooks_located": 62,
     "date_discrepancy_pending": 1,
-    "player_boxscore_imported": 57,
+    "player_boxscore_imported": 61,
     "source_queue": "data/2022_official_source_queue.json",
     "monthly_audit": "data/2022_monthly_progress_audit.json",
-    "new_verified_gamebooks_last_run": 2,
-    "last_run_pending_review": 5
+    "new_verified_gamebooks_last_run": 4,
+    "last_run_pending_review": 1
   },
   "2021_backfill": {
     "approved": true,

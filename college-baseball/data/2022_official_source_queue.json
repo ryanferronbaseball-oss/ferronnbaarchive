@@ -1,0 +1,1319 @@
+{
+  "status": "OFFICIAL_GAMEBOOK_SOURCE_DISCOVERY_COMPLETE_PLAYER_IMPORT_PENDING",
+  "authorization": "2022 college baseball backfill approved October 17 2026; original 444 attendance rows stay stable; no 2021 and earlier, no production release",
+  "season": 2022,
+  "original_attendance_games": 62,
+  "monthly_review": {
+    "2022-02": {
+      "attended": 7,
+      "official_boxscore_urls": 7,
+      "player_gamebooks_imported": 0,
+      "date_conflicts": 0
+    },
+    "2022-03": {
+      "attended": 16,
+      "official_boxscore_urls": 16,
+      "player_gamebooks_imported": 0,
+      "date_conflicts": 0
+    },
+    "2022-04": {
+      "attended": 16,
+      "official_boxscore_urls": 16,
+      "player_gamebooks_imported": 0,
+      "date_conflicts": 1
+    },
+    "2022-05": {
+      "attended": 17,
+      "official_boxscore_urls": 17,
+      "player_gamebooks_imported": 0,
+      "date_conflicts": 0
+    },
+    "2022-06": {
+      "attended": 6,
+      "official_boxscore_urls": 6,
+      "player_gamebooks_imported": 0,
+      "date_conflicts": 0
+    }
+  },
+  "progress": {
+    "total": 62,
+    "official_full_gamebook_urls": 62,
+    "date_matched": 61,
+    "date_review": 1,
+    "usd_games": 54,
+    "non_usd": 8,
+    "game1Game2_rows": 4,
+    "player_gamebooks_imported": 0,
+    "player_game_stats_added": 0
+  },
+  "core_source_pages": [
+    "https://usdtoreros.com/sports/baseball/schedule/2022",
+    "https://usdtoreros.com/sports/baseball/stats/2022",
+    "https://gculopes.com/sports/baseball/schedule/2022",
+    "https://gostanford.com/sports/baseball/schedule/season/2022",
+    "https://osubeavers.com/sports/baseball/schedule/2022"
+  ],
+  "integrity": "Every exact source score stored away/home as in original attendance row, individual source URLs use university-hosted gamebooks. Source discovery is NOT a full player-game stat import. Date-conflict and both doubleheader attendance row mappings remain audit-gated. Do not infer the correct April 21 game from original mistaken date. All older seasons, merge, or production deployment remain unapproved.",
+  "source_queue": [
+    {
+      "game_id": "cb-2022-02-18-oregon-san-diego-att0116",
+      "attendance_id": "cb-attended-0116",
+      "source_worksheet_row": 117,
+      "original_date": "2022-02-18",
+      "away": "Oregon",
+      "home": "San Diego",
+      "game_type": "regular_season",
+      "official_boxscore_verified_player_level": false,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/oregon/boxscore/12438",
+      "source_type": "official_usd_full_gamebook",
+      "official_score": [
+        1,
+        11
+      ],
+      "official_date": "2022-02-18",
+      "source_identity_status": "official_date_match",
+      "venue": null,
+      "source_sidearm_game_id": 12438
+    },
+    {
+      "game_id": "cb-2022-02-19-oregon-san-diego-att0117",
+      "attendance_id": "cb-attended-0117",
+      "source_worksheet_row": 118,
+      "original_date": "2022-02-19",
+      "away": "Oregon",
+      "home": "San Diego",
+      "game_type": "regular_season",
+      "official_boxscore_verified_player_level": false,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/oregon/boxscore/12439",
+      "source_type": "official_usd_full_gamebook",
+      "official_score": [
+        4,
+        10
+      ],
+      "official_date": "2022-02-19",
+      "source_identity_status": "official_date_match",
+      "venue": null,
+      "source_sidearm_game_id": 12439
+    },
+    {
+      "game_id": "cb-2022-02-20-oregon-san-diego-att0118",
+      "attendance_id": "cb-attended-0118",
+      "source_worksheet_row": 119,
+      "original_date": "2022-02-20",
+      "away": "Oregon",
+      "home": "San Diego",
+      "game_type": "regular_season",
+      "official_boxscore_verified_player_level": false,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/oregon/boxscore/12440",
+      "source_type": "official_usd_full_gamebook",
+      "official_score": [
+        4,
+        5
+      ],
+      "official_date": "2022-02-20",
+      "source_identity_status": "official_date_match",
+      "venue": null,
+      "source_sidearm_game_id": 12440
+    },
+    {
+      "game_id": "cb-2022-02-21-oregon-san-diego-att0119",
+      "attendance_id": "cb-attended-0119",
+      "source_worksheet_row": 120,
+      "original_date": "2022-02-21",
+      "away": "Oregon",
+      "home": "San Diego",
+      "game_type": "regular_season",
+      "official_boxscore_verified_player_level": false,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/oregon/boxscore/12441",
+      "source_type": "official_usd_full_gamebook",
+      "official_score": [
+        21,
+        11
+      ],
+      "official_date": "2022-02-21",
+      "source_identity_status": "official_date_match",
+      "venue": null,
+      "source_sidearm_game_id": 12441
+    },
+    {
+      "game_id": "cb-2022-02-25-unlv-san-diego-att0120",
+      "attendance_id": "cb-attended-0120",
+      "source_worksheet_row": 121,
+      "original_date": "2022-02-25",
+      "away": "UNLV",
+      "home": "San Diego",
+      "game_type": "regular_season",
+      "official_boxscore_verified_player_level": false,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/unlv/boxscore/12442",
+      "source_type": "official_usd_full_gamebook",
+      "official_score": [
+        2,
+        1
+      ],
+      "official_date": "2022-02-25",
+      "source_identity_status": "official_date_match",
+      "venue": null,
+      "source_sidearm_game_id": 12442
+    },
+    {
+      "game_id": "cb-2022-02-26-fresno-state-san-diego-att0121",
+      "attendance_id": "cb-attended-0121",
+      "source_worksheet_row": 122,
+      "original_date": "2022-02-26",
+      "away": "Fresno State",
+      "home": "San Diego",
+      "game_type": "regular_season",
+      "official_boxscore_verified_player_level": false,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/fresno-state/boxscore/12443",
+      "source_type": "official_usd_full_gamebook",
+      "official_score": [
+        0,
+        4
+      ],
+      "official_date": "2022-02-26",
+      "source_identity_status": "official_date_match",
+      "venue": null,
+      "source_sidearm_game_id": 12443
+    },
+    {
+      "game_id": "cb-2022-02-27-unlv-san-diego-att0122",
+      "attendance_id": "cb-attended-0122",
+      "source_worksheet_row": 123,
+      "original_date": "2022-02-27",
+      "away": "UNLV",
+      "home": "San Diego",
+      "game_type": "regular_season",
+      "official_boxscore_verified_player_level": false,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/unlv/boxscore/12444",
+      "source_type": "official_usd_full_gamebook",
+      "official_score": [
+        16,
+        9
+      ],
+      "official_date": "2022-02-27",
+      "source_identity_status": "official_date_match",
+      "venue": null,
+      "source_sidearm_game_id": 12444
+    },
+    {
+      "game_id": "cb-2022-03-04-dallas-baptist-san-diego-att0123",
+      "attendance_id": "cb-attended-0123",
+      "source_worksheet_row": 124,
+      "original_date": "2022-03-04",
+      "away": "Dallas Baptist",
+      "home": "San Diego",
+      "game_type": "regular_season",
+      "official_boxscore_verified_player_level": false,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/dallas-baptist/boxscore/12445",
+      "source_type": "official_usd_full_gamebook",
+      "official_score": [
+        8,
+        9
+      ],
+      "official_date": "2022-03-04",
+      "source_identity_status": "official_date_match",
+      "venue": null,
+      "source_sidearm_game_id": 12445
+    },
+    {
+      "game_id": "cb-2022-03-05-dallas-baptist-san-diego-att0124",
+      "attendance_id": "cb-attended-0124",
+      "source_worksheet_row": 125,
+      "original_date": "2022-03-05",
+      "away": "Dallas Baptist",
+      "home": "San Diego",
+      "game_type": "regular_season",
+      "official_boxscore_verified_player_level": false,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/dallas-baptist/boxscore/12446",
+      "source_type": "official_usd_full_gamebook",
+      "official_score": [
+        8,
+        6
+      ],
+      "official_date": "2022-03-05",
+      "source_identity_status": "official_date_match",
+      "venue": null,
+      "source_sidearm_game_id": 12446
+    },
+    {
+      "game_id": "cb-2022-03-06-dallas-baptist-san-diego-att0125",
+      "attendance_id": "cb-attended-0125",
+      "source_worksheet_row": 126,
+      "original_date": "2022-03-06",
+      "away": "Dallas Baptist",
+      "home": "San Diego",
+      "game_type": "regular_season",
+      "official_boxscore_verified_player_level": false,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/dallas-baptist/boxscore/12447",
+      "source_type": "official_usd_full_gamebook",
+      "official_score": [
+        5,
+        4
+      ],
+      "official_date": "2022-03-06",
+      "source_identity_status": "official_date_match",
+      "venue": null,
+      "source_sidearm_game_id": 12447
+    },
+    {
+      "game_id": "cb-2022-03-08-uc-san-diego-san-diego-att0126",
+      "attendance_id": "cb-attended-0126",
+      "source_worksheet_row": 127,
+      "original_date": "2022-03-08",
+      "away": "UC San Diego",
+      "home": "San Diego",
+      "game_type": "regular_season",
+      "official_boxscore_verified_player_level": false,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/uc-san-diego/boxscore/12448",
+      "source_type": "official_usd_full_gamebook",
+      "official_score": [
+        0,
+        2
+      ],
+      "official_date": "2022-03-08",
+      "source_identity_status": "official_date_match",
+      "venue": null,
+      "source_sidearm_game_id": 12448
+    },
+    {
+      "game_id": "cb-2022-03-11-san-diego-grand-canyon-att0127",
+      "attendance_id": "cb-attended-0127",
+      "source_worksheet_row": 128,
+      "original_date": "2022-03-11",
+      "away": "San Diego",
+      "home": "Grand Canyon",
+      "game_type": "regular_season",
+      "official_boxscore_verified_player_level": false,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/grand-canyon/boxscore/12449",
+      "source_type": "official_usd_full_gamebook",
+      "official_score": [
+        5,
+        6
+      ],
+      "official_date": "2022-03-11",
+      "source_identity_status": "official_date_match",
+      "venue": null,
+      "source_sidearm_game_id": 12449
+    },
+    {
+      "game_id": "cb-2022-03-12-san-diego-grand-canyon-att0128",
+      "attendance_id": "cb-attended-0128",
+      "source_worksheet_row": 129,
+      "original_date": "2022-03-12",
+      "away": "San Diego",
+      "home": "Grand Canyon",
+      "game_type": "regular_season",
+      "official_boxscore_verified_player_level": false,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/grand-canyon/boxscore/12450",
+      "source_type": "official_usd_full_gamebook",
+      "official_score": [
+        7,
+        1
+      ],
+      "official_date": "2022-03-12",
+      "source_identity_status": "official_date_match",
+      "venue": null,
+      "source_sidearm_game_id": 12450
+    },
+    {
+      "game_id": "cb-2022-03-13-san-diego-grand-canyon-att0129",
+      "attendance_id": "cb-attended-0129",
+      "source_worksheet_row": 130,
+      "original_date": "2022-03-13",
+      "away": "San Diego",
+      "home": "Grand Canyon",
+      "game_type": "regular_season",
+      "official_boxscore_verified_player_level": false,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/grand-canyon/boxscore/12451",
+      "source_type": "official_usd_full_gamebook",
+      "official_score": [
+        7,
+        5
+      ],
+      "official_date": "2022-03-13",
+      "source_identity_status": "official_date_match",
+      "venue": null,
+      "source_sidearm_game_id": 12451
+    },
+    {
+      "game_id": "cb-2022-03-15-cal-state-fullerton-san-diego-att0130",
+      "attendance_id": "cb-attended-0130",
+      "source_worksheet_row": 131,
+      "original_date": "2022-03-15",
+      "away": "Cal State Fullerton",
+      "home": "San Diego",
+      "game_type": "regular_season",
+      "official_boxscore_verified_player_level": false,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/cal-state-fullerton/boxscore/12452",
+      "source_type": "official_usd_full_gamebook",
+      "official_score": [
+        10,
+        11
+      ],
+      "official_date": "2022-03-15",
+      "source_identity_status": "official_date_match",
+      "venue": null,
+      "source_sidearm_game_id": 12452
+    },
+    {
+      "game_id": "cb-2022-03-18-san-diego-pepperdine-att0131",
+      "attendance_id": "cb-attended-0131",
+      "source_worksheet_row": 132,
+      "original_date": "2022-03-18",
+      "away": "San Diego",
+      "home": "Pepperdine",
+      "game_type": "regular_season",
+      "official_boxscore_verified_player_level": false,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/pepperdine/boxscore/12453",
+      "source_type": "official_usd_full_gamebook",
+      "official_score": [
+        0,
+        3
+      ],
+      "official_date": "2022-03-18",
+      "source_identity_status": "official_date_match",
+      "venue": null,
+      "source_sidearm_game_id": 12453
+    },
+    {
+      "game_id": "cb-2022-03-19-san-diego-pepperdine-att0132",
+      "attendance_id": "cb-attended-0132",
+      "source_worksheet_row": 133,
+      "original_date": "2022-03-19",
+      "away": "San Diego",
+      "home": "Pepperdine",
+      "game_type": "regular_season",
+      "official_boxscore_verified_player_level": false,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/pepperdine/boxscore/12454",
+      "source_type": "official_usd_full_gamebook",
+      "official_score": [
+        8,
+        1
+      ],
+      "official_date": "2022-03-19",
+      "source_identity_status": "official_date_match",
+      "venue": null,
+      "source_sidearm_game_id": 12454
+    },
+    {
+      "game_id": "cb-2022-03-20-san-diego-pepperdine-att0133",
+      "attendance_id": "cb-attended-0133",
+      "source_worksheet_row": 134,
+      "original_date": "2022-03-20",
+      "away": "San Diego",
+      "home": "Pepperdine",
+      "game_type": "regular_season",
+      "official_boxscore_verified_player_level": false,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/pepperdine/boxscore/12455",
+      "source_type": "official_usd_full_gamebook",
+      "official_score": [
+        6,
+        3
+      ],
+      "official_date": "2022-03-20",
+      "source_identity_status": "official_date_match",
+      "venue": null,
+      "source_sidearm_game_id": 12455
+    },
+    {
+      "game_id": "cb-2022-03-22-uc-irvine-san-diego-att0134",
+      "attendance_id": "cb-attended-0134",
+      "source_worksheet_row": 135,
+      "original_date": "2022-03-22",
+      "away": "UC Irvine",
+      "home": "San Diego",
+      "game_type": "regular_season",
+      "official_boxscore_verified_player_level": false,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/uc-irvine/boxscore/12456",
+      "source_type": "official_usd_full_gamebook",
+      "official_score": [
+        5,
+        6
+      ],
+      "official_date": "2022-03-22",
+      "source_identity_status": "official_date_match",
+      "venue": null,
+      "source_sidearm_game_id": 12456
+    },
+    {
+      "game_id": "cb-2022-03-25-saint-mary-s-san-diego-att0135",
+      "attendance_id": "cb-attended-0135",
+      "source_worksheet_row": 136,
+      "original_date": "2022-03-25",
+      "away": "Saint Mary's",
+      "home": "San Diego",
+      "game_type": "regular_season",
+      "official_boxscore_verified_player_level": false,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/saint-mary-s/boxscore/12457",
+      "source_type": "official_usd_full_gamebook",
+      "official_score": [
+        2,
+        4
+      ],
+      "official_date": "2022-03-25",
+      "source_identity_status": "official_date_match",
+      "venue": null,
+      "source_sidearm_game_id": 12457
+    },
+    {
+      "game_id": "cb-2022-03-26-saint-mary-s-san-diego-att0136",
+      "attendance_id": "cb-attended-0136",
+      "source_worksheet_row": 137,
+      "original_date": "2022-03-26",
+      "away": "Saint Mary's",
+      "home": "San Diego",
+      "game_type": "regular_season",
+      "official_boxscore_verified_player_level": false,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/saint-mary-s/boxscore/12458",
+      "source_type": "official_usd_full_gamebook",
+      "official_score": [
+        1,
+        4
+      ],
+      "official_date": "2022-03-26",
+      "source_identity_status": "official_date_match",
+      "venue": null,
+      "source_sidearm_game_id": 12458
+    },
+    {
+      "game_id": "cb-2022-03-27-saint-mary-s-san-diego-att0137",
+      "attendance_id": "cb-attended-0137",
+      "source_worksheet_row": 138,
+      "original_date": "2022-03-27",
+      "away": "Saint Mary's",
+      "home": "San Diego",
+      "game_type": "regular_season",
+      "official_boxscore_verified_player_level": false,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/saint-mary-s/boxscore/12459",
+      "source_type": "official_usd_full_gamebook",
+      "official_score": [
+        6,
+        11
+      ],
+      "official_date": "2022-03-27",
+      "source_identity_status": "official_date_match",
+      "venue": null,
+      "source_sidearm_game_id": 12459
+    },
+    {
+      "game_id": "cb-2022-03-29-san-diego-cal-baptist-att0138",
+      "attendance_id": "cb-attended-0138",
+      "source_worksheet_row": 139,
+      "original_date": "2022-03-29",
+      "away": "San Diego",
+      "home": "Cal Baptist",
+      "game_type": "regular_season",
+      "official_boxscore_verified_player_level": false,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/california-baptist/boxscore/12460",
+      "source_type": "official_usd_full_gamebook",
+      "official_score": [
+        7,
+        2
+      ],
+      "official_date": "2022-03-29",
+      "source_identity_status": "official_date_match",
+      "venue": null,
+      "source_sidearm_game_id": 12460
+    },
+    {
+      "game_id": "cb-2022-04-01-san-diego-san-francisco-att0139",
+      "attendance_id": "cb-attended-0139",
+      "source_worksheet_row": 140,
+      "original_date": "2022-04-01",
+      "away": "San Diego",
+      "home": "San Francisco",
+      "game_type": "regular_season",
+      "official_boxscore_verified_player_level": false,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/san-francisco/boxscore/12461",
+      "source_type": "official_usd_full_gamebook",
+      "official_score": [
+        8,
+        3
+      ],
+      "official_date": "2022-04-01",
+      "source_identity_status": "official_date_match",
+      "venue": null,
+      "source_sidearm_game_id": 12461
+    },
+    {
+      "game_id": "cb-2022-04-02-san-diego-san-francisco-att0140",
+      "attendance_id": "cb-attended-0140",
+      "source_worksheet_row": 141,
+      "original_date": "2022-04-02",
+      "away": "San Diego",
+      "home": "San Francisco",
+      "game_type": "regular_season",
+      "official_boxscore_verified_player_level": false,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/san-francisco/boxscore/12462",
+      "source_type": "official_usd_full_gamebook",
+      "official_score": [
+        5,
+        6
+      ],
+      "official_date": "2022-04-02",
+      "source_identity_status": "official_date_match",
+      "venue": null,
+      "source_sidearm_game_id": 12462
+    },
+    {
+      "game_id": "cb-2022-04-03-san-diego-san-francisco-att0141",
+      "attendance_id": "cb-attended-0141",
+      "source_worksheet_row": 142,
+      "original_date": "2022-04-03",
+      "away": "San Diego",
+      "home": "San Francisco",
+      "game_type": "regular_season",
+      "official_boxscore_verified_player_level": false,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/san-francisco/boxscore/12463",
+      "source_type": "official_usd_full_gamebook",
+      "official_score": [
+        2,
+        3
+      ],
+      "official_date": "2022-04-03",
+      "source_identity_status": "official_date_match",
+      "venue": null,
+      "source_sidearm_game_id": 12463
+    },
+    {
+      "game_id": "cb-2022-04-05-san-diego-uc-san-diego-att0142",
+      "attendance_id": "cb-attended-0142",
+      "source_worksheet_row": 143,
+      "original_date": "2022-04-05",
+      "away": "San Diego",
+      "home": "UC San Diego",
+      "game_type": "regular_season",
+      "official_boxscore_verified_player_level": false,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/uc-san-diego/boxscore/12464",
+      "source_type": "official_usd_full_gamebook",
+      "official_score": [
+        13,
+        4
+      ],
+      "official_date": "2022-04-05",
+      "source_identity_status": "official_date_match",
+      "venue": null,
+      "source_sidearm_game_id": 12464
+    },
+    {
+      "game_id": "cb-2022-04-08-san-diego-portland-att0143",
+      "attendance_id": "cb-attended-0143",
+      "source_worksheet_row": 144,
+      "original_date": "2022-04-08",
+      "away": "San Diego",
+      "home": "Portland",
+      "game_type": "regular_season",
+      "official_boxscore_verified_player_level": false,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/portland/boxscore/12465",
+      "source_type": "official_usd_full_gamebook",
+      "official_score": [
+        2,
+        6
+      ],
+      "official_date": "2022-04-08",
+      "source_identity_status": "official_date_match",
+      "venue": null,
+      "source_sidearm_game_id": 12465
+    },
+    {
+      "game_id": "cb-2022-04-09-san-diego-portland-att0144",
+      "attendance_id": "cb-attended-0144",
+      "source_worksheet_row": 145,
+      "original_date": "2022-04-09",
+      "away": "San Diego",
+      "home": "Portland",
+      "game_type": "regular_season",
+      "official_boxscore_verified_player_level": false,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/portland/boxscore/12466",
+      "source_type": "official_usd_full_gamebook",
+      "official_score": [
+        8,
+        6
+      ],
+      "official_date": "2022-04-09",
+      "source_identity_status": "official_date_match",
+      "venue": null,
+      "source_sidearm_game_id": 12466,
+      "official_doubleheader_game": 1,
+      "needs_attendance_order_confirmation": true,
+      "review_note": "USD–Portland April 9: G1 starts 1:00pm and is USD 8–6, G2 starts 4:30pm and is Portland 5–4 in 10 innings."
+    },
+    {
+      "game_id": "cb-2022-04-09-san-diego-portland-att0145",
+      "attendance_id": "cb-attended-0145",
+      "source_worksheet_row": 146,
+      "original_date": "2022-04-09",
+      "away": "San Diego",
+      "home": "Portland",
+      "game_type": "regular_season",
+      "official_boxscore_verified_player_level": false,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/portland/boxscore/12467",
+      "source_type": "official_usd_full_gamebook",
+      "official_score": [
+        4,
+        5
+      ],
+      "official_date": "2022-04-09",
+      "source_identity_status": "official_date_match",
+      "venue": null,
+      "source_sidearm_game_id": 12467,
+      "official_doubleheader_game": 2,
+      "needs_attendance_order_confirmation": true,
+      "review_note": "USD–Portland April 9: G1 starts 1:00pm and is USD 8–6, G2 starts 4:30pm and is Portland 5–4 in 10 innings."
+    },
+    {
+      "game_id": "cb-2022-04-12-san-diego-state-san-diego-att0146",
+      "attendance_id": "cb-attended-0146",
+      "source_worksheet_row": 147,
+      "original_date": "2022-04-12",
+      "away": "San Diego State",
+      "home": "San Diego",
+      "game_type": "regular_season",
+      "official_boxscore_verified_player_level": false,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/san-diego-state/boxscore/12468",
+      "source_type": "official_usd_full_gamebook",
+      "official_score": [
+        3,
+        8
+      ],
+      "official_date": "2022-04-12",
+      "source_identity_status": "official_date_match",
+      "venue": null,
+      "source_sidearm_game_id": 12468
+    },
+    {
+      "game_id": "cb-2022-04-14-loyola-marymount-san-diego-att0147",
+      "attendance_id": "cb-attended-0147",
+      "source_worksheet_row": 148,
+      "original_date": "2022-04-14",
+      "away": "Loyola Marymount",
+      "home": "San Diego",
+      "game_type": "regular_season",
+      "official_boxscore_verified_player_level": false,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/loyola-marymount/boxscore/12469",
+      "source_type": "official_usd_full_gamebook",
+      "official_score": [
+        8,
+        9
+      ],
+      "official_date": "2022-04-14",
+      "source_identity_status": "official_date_match",
+      "venue": null,
+      "source_sidearm_game_id": 12469
+    },
+    {
+      "game_id": "cb-2022-04-15-loyola-marymount-san-diego-att0148",
+      "attendance_id": "cb-attended-0148",
+      "source_worksheet_row": 149,
+      "original_date": "2022-04-15",
+      "away": "Loyola Marymount",
+      "home": "San Diego",
+      "game_type": "regular_season",
+      "official_boxscore_verified_player_level": false,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/loyola-marymount/boxscore/12470",
+      "source_type": "official_usd_full_gamebook",
+      "official_score": [
+        0,
+        1
+      ],
+      "official_date": "2022-04-15",
+      "source_identity_status": "official_date_match",
+      "venue": null,
+      "source_sidearm_game_id": 12470
+    },
+    {
+      "game_id": "cb-2022-04-16-loyola-marymount-san-diego-att0149",
+      "attendance_id": "cb-attended-0149",
+      "source_worksheet_row": 150,
+      "original_date": "2022-04-16",
+      "away": "Loyola Marymount",
+      "home": "San Diego",
+      "game_type": "regular_season",
+      "official_boxscore_verified_player_level": false,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/loyola-marymount/boxscore/12471",
+      "source_type": "official_usd_full_gamebook",
+      "official_score": [
+        8,
+        1
+      ],
+      "official_date": "2022-04-16",
+      "source_identity_status": "official_date_match",
+      "venue": null,
+      "source_sidearm_game_id": 12471
+    },
+    {
+      "game_id": "cb-2022-04-18-san-diego-san-diego-state-att0150",
+      "attendance_id": "cb-attended-0150",
+      "source_worksheet_row": 151,
+      "original_date": "2022-04-18",
+      "away": "San Diego",
+      "home": "San Diego State",
+      "game_type": "regular_season",
+      "official_boxscore_verified_player_level": false,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/san-diego-state/boxscore/12472",
+      "source_type": "official_usd_full_gamebook",
+      "official_score": [
+        15,
+        1
+      ],
+      "official_date": "2022-04-18",
+      "source_identity_status": "official_date_match",
+      "venue": null,
+      "source_sidearm_game_id": 12472
+    },
+    {
+      "game_id": "cb-2022-04-21-grand-canyon-stanford-att0151",
+      "attendance_id": "cb-attended-0151",
+      "source_worksheet_row": 152,
+      "original_date": "2022-04-21",
+      "away": "Grand Canyon",
+      "home": "Stanford",
+      "game_type": "regular_season",
+      "official_boxscore_verified_player_level": false,
+      "source_url": "https://gculopes.com/sports/baseball/stats/2022/stanford/boxscore/18165",
+      "source_type": "official_university_full_gamebook",
+      "official_score": [
+        1,
+        11
+      ],
+      "source_identity_status": "official_date_conflicts_with_attendance",
+      "official_date": "2022-04-22",
+      "venue": "Tony Gwynn Stadium, San Diego, CA",
+      "needs_attendance_confirmation": true,
+      "review_note": "Original April 21 GCU at Stanford attendance row conflicts with both universities: Stanford–GCU was actually April 22. GCU played San Diego State on April 21. Do not change original date or infer actual attended contest without user confirmation."
+    },
+    {
+      "game_id": "cb-2022-04-26-san-diego-cal-state-fullerton-att0152",
+      "attendance_id": "cb-attended-0152",
+      "source_worksheet_row": 153,
+      "original_date": "2022-04-26",
+      "away": "San Diego",
+      "home": "Cal State Fullerton",
+      "game_type": "regular_season",
+      "official_boxscore_verified_player_level": false,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/cal-state-fullerton/boxscore/12476",
+      "source_type": "official_usd_full_gamebook",
+      "official_score": [
+        7,
+        8
+      ],
+      "official_date": "2022-04-26",
+      "source_identity_status": "official_date_match",
+      "venue": null,
+      "source_sidearm_game_id": 12476
+    },
+    {
+      "game_id": "cb-2022-04-29-santa-clara-san-diego-att0153",
+      "attendance_id": "cb-attended-0153",
+      "source_worksheet_row": 154,
+      "original_date": "2022-04-29",
+      "away": "Santa Clara",
+      "home": "San Diego",
+      "game_type": "regular_season",
+      "official_boxscore_verified_player_level": false,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/santa-clara/boxscore/12477",
+      "source_type": "official_usd_full_gamebook",
+      "official_score": [
+        3,
+        8
+      ],
+      "official_date": "2022-04-29",
+      "source_identity_status": "official_date_match",
+      "venue": null,
+      "source_sidearm_game_id": 12477
+    },
+    {
+      "game_id": "cb-2022-04-30-santa-clara-san-diego-att0154",
+      "attendance_id": "cb-attended-0154",
+      "source_worksheet_row": 155,
+      "original_date": "2022-04-30",
+      "away": "Santa Clara",
+      "home": "San Diego",
+      "game_type": "regular_season",
+      "official_boxscore_verified_player_level": false,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/santa-clara/boxscore/12478",
+      "source_type": "official_usd_full_gamebook",
+      "official_score": [
+        4,
+        17
+      ],
+      "official_date": "2022-04-30",
+      "source_identity_status": "official_date_match",
+      "venue": null,
+      "source_sidearm_game_id": 12478
+    },
+    {
+      "game_id": "cb-2022-05-01-santa-clara-san-diego-att0155",
+      "attendance_id": "cb-attended-0155",
+      "source_worksheet_row": 156,
+      "original_date": "2022-05-01",
+      "away": "Santa Clara",
+      "home": "San Diego",
+      "game_type": "regular_season",
+      "official_boxscore_verified_player_level": false,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/santa-clara/boxscore/12479",
+      "source_type": "official_usd_full_gamebook",
+      "official_score": [
+        3,
+        2
+      ],
+      "official_date": "2022-05-01",
+      "source_identity_status": "official_date_match",
+      "venue": null,
+      "source_sidearm_game_id": 12479
+    },
+    {
+      "game_id": "cb-2022-05-03-san-diego-uc-irvine-att0156",
+      "attendance_id": "cb-attended-0156",
+      "source_worksheet_row": 157,
+      "original_date": "2022-05-03",
+      "away": "San Diego",
+      "home": "UC Irvine",
+      "game_type": "regular_season",
+      "official_boxscore_verified_player_level": false,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/uc-irvine/boxscore/12480",
+      "source_type": "official_usd_full_gamebook",
+      "official_score": [
+        1,
+        6
+      ],
+      "official_date": "2022-05-03",
+      "source_identity_status": "official_date_match",
+      "venue": null,
+      "source_sidearm_game_id": 12480
+    },
+    {
+      "game_id": "cb-2022-05-06-san-diego-pacific-att0157",
+      "attendance_id": "cb-attended-0157",
+      "source_worksheet_row": 158,
+      "original_date": "2022-05-06",
+      "away": "San Diego",
+      "home": "Pacific",
+      "game_type": "regular_season",
+      "official_boxscore_verified_player_level": false,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/pacific/boxscore/12481",
+      "source_type": "official_usd_full_gamebook",
+      "official_score": [
+        9,
+        4
+      ],
+      "official_date": "2022-05-06",
+      "source_identity_status": "official_date_match",
+      "venue": null,
+      "source_sidearm_game_id": 12481
+    },
+    {
+      "game_id": "cb-2022-05-07-san-diego-pacific-att0158",
+      "attendance_id": "cb-attended-0158",
+      "source_worksheet_row": 159,
+      "original_date": "2022-05-07",
+      "away": "San Diego",
+      "home": "Pacific",
+      "game_type": "regular_season",
+      "official_boxscore_verified_player_level": false,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/pacific/boxscore/12482",
+      "source_type": "official_usd_full_gamebook",
+      "official_score": [
+        9,
+        6
+      ],
+      "official_date": "2022-05-07",
+      "source_identity_status": "official_date_match",
+      "venue": null,
+      "source_sidearm_game_id": 12482
+    },
+    {
+      "game_id": "cb-2022-05-08-san-diego-pacific-att0159",
+      "attendance_id": "cb-attended-0159",
+      "source_worksheet_row": 160,
+      "original_date": "2022-05-08",
+      "away": "San Diego",
+      "home": "Pacific",
+      "game_type": "regular_season",
+      "official_boxscore_verified_player_level": false,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/pacific/boxscore/12483",
+      "source_type": "official_usd_full_gamebook",
+      "official_score": [
+        12,
+        5
+      ],
+      "official_date": "2022-05-08",
+      "source_identity_status": "official_date_match",
+      "venue": null,
+      "source_sidearm_game_id": 12483
+    },
+    {
+      "game_id": "cb-2022-05-10-cal-baptist-san-diego-att0160",
+      "attendance_id": "cb-attended-0160",
+      "source_worksheet_row": 161,
+      "original_date": "2022-05-10",
+      "away": "Cal Baptist",
+      "home": "San Diego",
+      "game_type": "regular_season",
+      "official_boxscore_verified_player_level": false,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/california-baptist/boxscore/12484",
+      "source_type": "official_usd_full_gamebook",
+      "official_score": [
+        2,
+        9
+      ],
+      "official_date": "2022-05-10",
+      "source_identity_status": "official_date_match",
+      "venue": null,
+      "source_sidearm_game_id": 12484
+    },
+    {
+      "game_id": "cb-2022-05-20-gonzaga-san-diego-att0161",
+      "attendance_id": "cb-attended-0161",
+      "source_worksheet_row": 162,
+      "original_date": "2022-05-20",
+      "away": "Gonzaga",
+      "home": "San Diego",
+      "game_type": "regular_season",
+      "official_boxscore_verified_player_level": false,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/gonzaga/boxscore/12485",
+      "source_type": "official_usd_full_gamebook",
+      "official_score": [
+        8,
+        4
+      ],
+      "official_date": "2022-05-20",
+      "source_identity_status": "official_date_match",
+      "venue": null,
+      "source_sidearm_game_id": 12485
+    },
+    {
+      "game_id": "cb-2022-05-21-gonzaga-san-diego-att0162",
+      "attendance_id": "cb-attended-0162",
+      "source_worksheet_row": 163,
+      "original_date": "2022-05-21",
+      "away": "Gonzaga",
+      "home": "San Diego",
+      "game_type": "regular_season",
+      "official_boxscore_verified_player_level": false,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/gonzaga/boxscore/12487",
+      "source_type": "official_usd_full_gamebook",
+      "official_score": [
+        4,
+        7
+      ],
+      "official_date": "2022-05-21",
+      "source_identity_status": "official_date_match",
+      "venue": null,
+      "source_sidearm_game_id": 12487,
+      "official_doubleheader_game": 1,
+      "needs_attendance_order_confirmation": true,
+      "review_note": "Gonzaga–USD May 21: G1 starts 1:00pm and is USD 7–4, G2 starts 4:45pm and is Gonzaga 1–0; IDs 12487 and 12486 are reverse numerical order."
+    },
+    {
+      "game_id": "cb-2022-05-21-gonzaga-san-diego-att0163",
+      "attendance_id": "cb-attended-0163",
+      "source_worksheet_row": 164,
+      "original_date": "2022-05-21",
+      "away": "Gonzaga",
+      "home": "San Diego",
+      "game_type": "regular_season",
+      "official_boxscore_verified_player_level": false,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/gonzaga/boxscore/12486",
+      "source_type": "official_usd_full_gamebook",
+      "official_score": [
+        1,
+        0
+      ],
+      "official_date": "2022-05-21",
+      "source_identity_status": "official_date_match",
+      "venue": null,
+      "source_sidearm_game_id": 12486,
+      "official_doubleheader_game": 2,
+      "needs_attendance_order_confirmation": true,
+      "review_note": "Gonzaga–USD May 21: G1 starts 1:00pm and is USD 7–4, G2 starts 4:45pm and is Gonzaga 1–0; IDs 12487 and 12486 are reverse numerical order."
+    },
+    {
+      "game_id": "cb-2022-05-22-hawaii-uc-san-diego-att0164",
+      "attendance_id": "cb-attended-0164",
+      "source_worksheet_row": 165,
+      "original_date": "2022-05-22",
+      "away": "Hawaii",
+      "home": "UC San Diego",
+      "game_type": "regular_season",
+      "official_boxscore_verified_player_level": false,
+      "source_url": "https://ucsdtritons.com/sports/baseball/stats/2022/hawai-i/boxscore/8695",
+      "source_type": "official_university_full_gamebook",
+      "official_score": [
+        4,
+        0
+      ],
+      "source_identity_status": "official_date_match",
+      "official_date": "2022-05-22",
+      "venue": "Triton Ballpark, La Jolla, CA",
+      "needs_attendance_confirmation": false,
+      "review_note": null
+    },
+    {
+      "game_id": "cb-2022-05-25-san-francisco-san-diego-att0165",
+      "attendance_id": "cb-attended-0165",
+      "source_worksheet_row": 166,
+      "original_date": "2022-05-25",
+      "away": "San Francisco",
+      "home": "San Diego",
+      "game_type": "conference_tournament",
+      "official_boxscore_verified_player_level": false,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/san-francisco/boxscore/12656",
+      "source_type": "official_usd_full_gamebook",
+      "official_score": [
+        5,
+        10
+      ],
+      "official_date": "2022-05-25",
+      "source_identity_status": "official_date_match",
+      "venue": "Banner Island Park, Stockton, CA",
+      "source_sidearm_game_id": 12656
+    },
+    {
+      "game_id": "cb-2022-05-26-loyola-marymount-gonzaga-att0166",
+      "attendance_id": "cb-attended-0166",
+      "source_worksheet_row": 167,
+      "original_date": "2022-05-26",
+      "away": "Loyola Marymount",
+      "home": "Gonzaga",
+      "game_type": "conference_tournament",
+      "official_boxscore_verified_player_level": false,
+      "source_url": "https://gozags.com/sports/baseball/stats/2022/loyola-marymount/boxscore/8242",
+      "source_type": "official_university_full_gamebook",
+      "official_score": [
+        2,
+        16
+      ],
+      "source_identity_status": "official_date_match",
+      "official_date": "2022-05-26",
+      "venue": "Banner Island Park, Stockton, CA",
+      "needs_attendance_confirmation": false,
+      "review_note": null
+    },
+    {
+      "game_id": "cb-2022-05-26-san-diego-portland-att0167",
+      "attendance_id": "cb-attended-0167",
+      "source_worksheet_row": 168,
+      "original_date": "2022-05-26",
+      "away": "San Diego",
+      "home": "Portland",
+      "game_type": "conference_tournament",
+      "official_boxscore_verified_player_level": false,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/portland/boxscore/12657",
+      "source_type": "official_usd_full_gamebook",
+      "official_score": [
+        22,
+        8
+      ],
+      "official_date": "2022-05-26",
+      "source_identity_status": "official_date_match",
+      "venue": "Banner Island Park, Stockton, CA",
+      "source_sidearm_game_id": 12657
+    },
+    {
+      "game_id": "cb-2022-05-27-portland-loyola-marymount-att0168",
+      "attendance_id": "cb-attended-0168",
+      "source_worksheet_row": 169,
+      "original_date": "2022-05-27",
+      "away": "Portland",
+      "home": "Loyola Marymount",
+      "game_type": "conference_tournament",
+      "official_boxscore_verified_player_level": false,
+      "source_url": "https://lmulions.com/sports/baseball/stats/2022/portland/boxscore/14223",
+      "source_type": "official_university_full_gamebook",
+      "official_score": [
+        10,
+        2
+      ],
+      "source_identity_status": "official_date_match",
+      "official_date": "2022-05-27",
+      "venue": "Banner Island Park, Stockton, CA",
+      "needs_attendance_confirmation": false,
+      "review_note": null
+    },
+    {
+      "game_id": "cb-2022-05-27-gonzaga-san-diego-att0169",
+      "attendance_id": "cb-attended-0169",
+      "source_worksheet_row": 170,
+      "original_date": "2022-05-27",
+      "away": "Gonzaga",
+      "home": "San Diego",
+      "game_type": "conference_tournament",
+      "official_boxscore_verified_player_level": false,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/gonzaga/boxscore/12658",
+      "source_type": "official_usd_full_gamebook",
+      "official_score": [
+        3,
+        5
+      ],
+      "official_date": "2022-05-27",
+      "source_identity_status": "official_date_match",
+      "venue": "Banner Island Park, Stockton, CA",
+      "source_sidearm_game_id": 12658
+    },
+    {
+      "game_id": "cb-2022-05-27-gonzaga-portland-att0170",
+      "attendance_id": "cb-attended-0170",
+      "source_worksheet_row": 171,
+      "original_date": "2022-05-27",
+      "away": "Gonzaga",
+      "home": "Portland",
+      "game_type": "conference_tournament",
+      "official_boxscore_verified_player_level": false,
+      "source_url": "https://portlandpilots.com/sports/baseball/stats/2022/-1-gonzaga/boxscore/11495",
+      "source_type": "official_university_full_gamebook",
+      "official_score": [
+        7,
+        0
+      ],
+      "source_identity_status": "official_date_match",
+      "official_date": "2022-05-27",
+      "venue": "Banner Island Park, Stockton, CA",
+      "needs_attendance_confirmation": false,
+      "review_note": null
+    },
+    {
+      "game_id": "cb-2022-05-28-san-diego-gonzaga-att0171",
+      "attendance_id": "cb-attended-0171",
+      "source_worksheet_row": 172,
+      "original_date": "2022-05-28",
+      "away": "San Diego",
+      "home": "Gonzaga",
+      "game_type": "conference_tournament",
+      "official_boxscore_verified_player_level": false,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/gonzaga/boxscore/12659",
+      "source_type": "official_usd_full_gamebook",
+      "official_score": [
+        15,
+        12
+      ],
+      "official_date": "2022-05-28",
+      "source_identity_status": "official_date_match",
+      "venue": "Banner Island Park, Stockton, CA",
+      "source_sidearm_game_id": 12659
+    },
+    {
+      "game_id": "cb-2022-06-03-san-diego-vanderbilt-att0172",
+      "attendance_id": "cb-attended-0172",
+      "source_worksheet_row": 173,
+      "original_date": "2022-06-03",
+      "away": "San Diego",
+      "home": "Vanderbilt",
+      "game_type": "ncaa_postseason",
+      "official_boxscore_verified_player_level": false,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/vanderbilt/boxscore/12660",
+      "source_type": "official_usd_full_gamebook",
+      "official_score": [
+        3,
+        2
+      ],
+      "official_date": "2022-06-03",
+      "source_identity_status": "official_date_match",
+      "venue": "Goss Stadium, Corvallis, OR",
+      "source_sidearm_game_id": 12660
+    },
+    {
+      "game_id": "cb-2022-06-03-new-mexico-state-oregon-state-att0173",
+      "attendance_id": "cb-attended-0173",
+      "source_worksheet_row": 174,
+      "original_date": "2022-06-03",
+      "away": "New Mexico State",
+      "home": "Oregon State",
+      "game_type": "ncaa_postseason",
+      "official_boxscore_verified_player_level": false,
+      "source_url": "https://osubeavers.com/sports/baseball/stats/2022/new-mexico-state/boxscore/18462",
+      "source_type": "official_university_full_gamebook",
+      "official_score": [
+        4,
+        5
+      ],
+      "source_identity_status": "official_date_match",
+      "official_date": "2022-06-03",
+      "venue": "Goss Stadium, Corvallis, OR",
+      "needs_attendance_confirmation": false,
+      "review_note": "Ten-inning NCAA Regional contest."
+    },
+    {
+      "game_id": "cb-2022-06-04-vanderbilt-new-mexico-state-att0174",
+      "attendance_id": "cb-attended-0174",
+      "source_worksheet_row": 175,
+      "original_date": "2022-06-04",
+      "away": "Vanderbilt",
+      "home": "New Mexico State",
+      "game_type": "ncaa_postseason",
+      "official_boxscore_verified_player_level": false,
+      "source_url": "https://nmstatesports.com/sports/baseball/stats/2022/vanderbilt/boxscore/14804",
+      "source_type": "official_university_full_gamebook",
+      "official_score": [
+        21,
+        1
+      ],
+      "source_identity_status": "official_date_match",
+      "official_date": "2022-06-04",
+      "venue": "Goss Stadium, Corvallis, OR",
+      "needs_attendance_confirmation": false,
+      "review_note": null
+    },
+    {
+      "game_id": "cb-2022-06-04-san-diego-oregon-state-att0175",
+      "attendance_id": "cb-attended-0175",
+      "source_worksheet_row": 176,
+      "original_date": "2022-06-04",
+      "away": "San Diego",
+      "home": "Oregon State",
+      "game_type": "ncaa_postseason",
+      "official_boxscore_verified_player_level": false,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/oregon-state/boxscore/12661",
+      "source_type": "official_usd_full_gamebook",
+      "official_score": [
+        3,
+        12
+      ],
+      "official_date": "2022-06-04",
+      "source_identity_status": "official_date_match",
+      "venue": "Goss Stadium, Corvallis, OR",
+      "source_sidearm_game_id": 12661
+    },
+    {
+      "game_id": "cb-2022-06-05-vanderbilt-san-diego-att0176",
+      "attendance_id": "cb-attended-0176",
+      "source_worksheet_row": 177,
+      "original_date": "2022-06-05",
+      "away": "Vanderbilt",
+      "home": "San Diego",
+      "game_type": "ncaa_postseason",
+      "official_boxscore_verified_player_level": false,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/vanderbilt/boxscore/12662",
+      "source_type": "official_usd_full_gamebook",
+      "official_score": [
+        14,
+        4
+      ],
+      "official_date": "2022-06-05",
+      "source_identity_status": "official_date_match",
+      "venue": "Goss Stadium, Corvallis, OR",
+      "source_sidearm_game_id": 12662
+    },
+    {
+      "game_id": "cb-2022-06-05-oregon-state-vanderbilt-att0177",
+      "attendance_id": "cb-attended-0177",
+      "source_worksheet_row": 178,
+      "original_date": "2022-06-05",
+      "away": "Oregon State",
+      "home": "Vanderbilt",
+      "game_type": "ncaa_postseason",
+      "official_boxscore_verified_player_level": false,
+      "source_url": "https://osubeavers.com/sports/baseball/stats/2022/vanderbilt/boxscore/18465",
+      "source_type": "official_university_full_gamebook",
+      "official_score": [
+        1,
+        8
+      ],
+      "source_identity_status": "official_date_match",
+      "official_date": "2022-06-05",
+      "venue": "Goss Stadium, Corvallis, OR",
+      "needs_attendance_confirmation": false,
+      "review_note": null
+    }
+  ]
+}

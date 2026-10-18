@@ -58,7 +58,7 @@
   ],
   "same_day_identical_matchup_pairs_in_full_sheet": 13,
   "metadata_status": "full_444_game_attendance_directory_plus_may_2026_official_sources",
-  "warning": "2024–2026 four-year NCAA/four-year verified source-gamebooks only; all junior colleges excluded from backfill. 2023 and earlier, merge/publication unapproved.",
+  "warning": "2019 41/41 official full gamebook sources matched; 2020 11/11 official full gamebook sources matched, March 11 Cal Baptist–San Diego official game confirmed by user (original worksheet March 10 preserved). 2021 32/32 sources matched; 2022 62/62 with one unresolved source date conflict; 2023 47/47 with three unresolved date conflicts. 2019–2023 player-level boxscores NOT yet imported. Verified 2024–2026 gamebooks 213, player-game rows 6316 unchanged. JUCO excluded. 2018 and earlier, merge, publication not authorized.",
   "resolved_matchups": [
     {
       "attendance_game_number": 443,
@@ -422,11 +422,12 @@
       "eligible": 11,
       "full_gamebooks_verified_urls": 11,
       "official_date_matches": 10,
-      "official_date_reconciliation_required": 1,
+      "official_date_reconciliation_required": 0,
       "full_player_boxscores_imported": 0,
-      "status": "FULL_OFFICIAL_SOURCE_QUEUE_READY_EXCEPT_MARCH_10_DATE_REVIEW",
+      "status": "ALL_11_OFFICIAL_GAME_IDENTITIES_USER_CONFIRMED_READY_FOR_PLAYER_IMPORT",
       "source_queue": "data/2020_official_source_queue.json",
-      "audit_file": "data/2020_monthly_progress_audit.json"
+      "audit_file": "data/2020_monthly_progress_audit.json",
+      "official_date_corrections_user_confirmed": 1
     },
     "season_2019": {
       "approved": true,
@@ -524,10 +525,11 @@
     "original_attendance_games": 11,
     "official_full_gamebooks_located": 11,
     "official_date_matches": 10,
-    "date_review_pending": 1,
+    "date_review_pending": 0,
     "player_boxscore_imported": 0,
     "source_queue": "data/2020_official_source_queue.json",
-    "monthly_audit": "data/2020_monthly_progress_audit.json"
+    "monthly_audit": "data/2020_monthly_progress_audit.json",
+    "official_date_corrections_user_confirmed": 1
   },
   "2019_backfill": {
     "approved": true,

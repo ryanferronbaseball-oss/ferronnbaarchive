@@ -12247,22 +12247,79 @@
     "season": 2025,
     "away": "North Alabama",
     "home": "Auburn",
-    "ballpark": null,
-    "city": null,
-    "state": null,
-    "neutral_site": null,
+    "ballpark": "Plainsman Park",
+    "city": "Auburn",
+    "state": "AL",
+    "neutral_site": false,
     "game_number": null,
-    "game_type": null,
+    "game_type": "regular_season",
     "postseason_round": null,
-    "away_score": null,
-    "home_score": null,
-    "score_provenance": null,
-    "source_url": null,
-    "verification": "attendance_only",
-    "official_boxscore_status": "not_imported",
+    "away_score": 2,
+    "home_score": 6,
+    "score_provenance": "official_boxscore",
+    "source_url": "https://roarlions.com/sports/baseball/stats/2025/auburn/boxscore/4901",
+    "verification": "official_boxscore_verified",
+    "official_boxscore_status": "verified",
     "possible_same_day_doubleheader": false,
     "provisional_worksheet_game_sequence": null,
-    "notes": "Original workbook Sheet1 row 307."
+    "notes": "Original workbook Sheet1 row 307.",
+    "away_hits": 4,
+    "home_hits": 9,
+    "away_errors": 2,
+    "home_errors": 0,
+    "innings": [
+      {
+        "inning": 1,
+        "away": 2,
+        "home": 1
+      },
+      {
+        "inning": 2,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 3,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 4,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 5,
+        "away": 0,
+        "home": 1
+      },
+      {
+        "inning": 6,
+        "away": 0,
+        "home": 1
+      },
+      {
+        "inning": 7,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 8,
+        "away": 0,
+        "home": 3
+      },
+      {
+        "inning": 9,
+        "away": 0,
+        "home": null
+      }
+    ],
+    "pitching_decisions": {
+      "win": "Griffin Graves",
+      "loss": "Landon Scruggs",
+      "save": "Parker Carlson"
+    },
+    "source_type": "official_north_alabama_sidearm_full_player_boxscore"
   },
   {
     "id": "cb-2025-02-23-northwestern-state-troy-att0307",
@@ -16556,22 +16613,79 @@
     "season": 2025,
     "away": "Texas A&M",
     "home": "LSU",
-    "ballpark": null,
-    "city": null,
-    "state": null,
-    "neutral_site": null,
+    "ballpark": "Hoover Met",
+    "city": "Hoover",
+    "state": "AL",
+    "neutral_site": true,
     "game_number": null,
-    "game_type": null,
-    "postseason_round": null,
-    "away_score": null,
-    "home_score": null,
-    "score_provenance": null,
-    "source_url": null,
-    "verification": "attendance_only",
-    "official_boxscore_status": "not_imported",
+    "game_type": "conference_tournament",
+    "postseason_round": "SEC Tournament",
+    "away_score": 3,
+    "home_score": 4,
+    "score_provenance": "official_boxscore",
+    "source_url": "https://static.lsusports.net/assets/docs/bb/25stats/game12.htm",
+    "verification": "official_boxscore_verified",
+    "official_boxscore_status": "verified",
     "possible_same_day_doubleheader": false,
     "provisional_worksheet_game_sequence": null,
-    "notes": "Original workbook Sheet1 row 362."
+    "notes": "Original workbook Sheet1 row 362.",
+    "away_hits": 6,
+    "home_hits": 5,
+    "away_errors": 0,
+    "home_errors": 0,
+    "pitching_decisions": {
+      "win": "Kade Anderson",
+      "loss": "Myles Patton",
+      "save": "Anthony Eyanson"
+    },
+    "innings": [
+      {
+        "inning": 1,
+        "away": 0,
+        "home": 2
+      },
+      {
+        "inning": 2,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 3,
+        "away": 0,
+        "home": 2
+      },
+      {
+        "inning": 4,
+        "away": 2,
+        "home": 0
+      },
+      {
+        "inning": 5,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 6,
+        "away": 1,
+        "home": 0
+      },
+      {
+        "inning": 7,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 8,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 9,
+        "away": 0,
+        "home": null
+      }
+    ],
+    "source_type": "official_lsu_statcrew_original_html"
   },
   {
     "id": "cb-2025-05-24-tennessee-vanderbilt-att0362",

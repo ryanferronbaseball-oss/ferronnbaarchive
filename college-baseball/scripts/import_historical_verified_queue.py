@@ -14,6 +14,8 @@ from pathlib import Path
 
 import requests
 from bs4 import BeautifulSoup
+# import_one also applies source-PBP-confirmed unindented defensive substitutions
+# for two explicitly user-confirmed corrected-date 2022/2023 gamebooks.
 from import_2026_remaining_ncaa import import_one
 from import_2024_statcrew import import_statcrew
 from import_2024_pdf import parse as parse_pdf

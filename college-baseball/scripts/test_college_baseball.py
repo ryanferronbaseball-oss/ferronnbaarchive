@@ -580,8 +580,13 @@ with tempfile.TemporaryDirectory() as t:
                 check("Chase Fralick" in page.locator("#app").inner_text(),
                       f"{width} cross-game college player identity connects")
                 visit(page, host, "records.html", ".cb-record")
-                check("Chase Fralick" in page.locator("#app").inner_text(),
-                      f"{width} official gamebook feeds personal signature records")
+                # Historical backfill legitimately changes the single-game
+                # record holders. Verify source-backed record categories and
+                # linked player cards rather than freezing an earlier leader.
+                check(page.locator(".cb-record").count() == 6 and
+                      page.locator(".cb-record a.cb-link").count() >= 3 and
+                      "Signature Performances" in page.locator("#app").inner_text(),
+                      f"{width} verified gamebooks dynamically feed six linked signature records")
                 page.screenshot(path=str(REVIEW / f"signature-performances-{width}.png"), full_page=True)
                 check(page.evaluate("document.documentElement.scrollWidth<=innerWidth+3"),
                       f"{width} live pilot fits screen")

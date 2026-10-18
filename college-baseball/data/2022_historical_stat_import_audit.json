@@ -4,10 +4,10 @@
   "limit": 0,
   "status": "PASS",
   "original_attendance_games": 444,
-  "verified_this_run": 1,
+  "verified_this_run": 0,
   "verified_in_season": 62,
-  "verified_overall": 431,
-  "player_game_rows_total": 13001,
+  "verified_overall": 434,
+  "player_game_rows_total": 13088,
   "already_verified": [
     "cb-2022-06-05-oregon-state-vanderbilt-att0177",
     "cb-2022-06-05-vanderbilt-san-diego-att0176",
@@ -35,6 +35,7 @@
     "cb-2022-04-30-santa-clara-san-diego-att0154",
     "cb-2022-04-29-santa-clara-san-diego-att0153",
     "cb-2022-04-26-san-diego-cal-state-fullerton-att0152",
+    "cb-2022-04-21-grand-canyon-stanford-att0151",
     "cb-2022-04-18-san-diego-san-diego-state-att0150",
     "cb-2022-04-16-loyola-marymount-san-diego-att0149",
     "cb-2022-04-15-loyola-marymount-san-diego-att0148",
@@ -71,120 +72,7 @@
     "cb-2022-02-19-oregon-san-diego-att0117",
     "cb-2022-02-18-oregon-san-diego-att0116"
   ],
-  "completed": [
-    {
-      "game_id": "cb-2022-04-21-grand-canyon-stanford-att0151",
-      "player_rows": 32,
-      "source_url": "https://gculopes.com/sports/baseball/stats/2022/stanford/boxscore/18165",
-      "win": "Alex Williams",
-      "loss": "Daniel Avitia",
-      "source_audit": {
-        "game_id": "cb-2022-04-21-grand-canyon-stanford-att0151",
-        "source": "https://gculopes.com/sports/baseball/stats/2022/stanford/boxscore/18165",
-        "http_code": 200,
-        "source_bytes": 1186723,
-        "source_sha256": "f8cd4c902d70a69d2250832aace963cc16f3ebb64acb84adc4da3beb1345d802",
-        "teams": [
-          {
-            "name": "Grand Canyon",
-            "batters": 14,
-            "pitchers": 4,
-            "AB": 33,
-            "R": 1,
-            "H": 7,
-            "RBI": 1,
-            "BB": 3,
-            "SO": 5,
-            "pitching_outs": 24,
-            "pitching_runs": 11,
-            "pitching_hits": 11
-          },
-          {
-            "name": "Stanford",
-            "batters": 12,
-            "pitchers": 2,
-            "AB": 31,
-            "R": 11,
-            "H": 11,
-            "RBI": 11,
-            "BB": 2,
-            "SO": 4,
-            "pitching_outs": 27,
-            "pitching_runs": 1,
-            "pitching_hits": 7
-          }
-        ],
-        "source_warnings": [],
-        "player_rows": 32,
-        "status": "PASS",
-        "scoreboard": [
-          {
-            "runs": 1,
-            "hits": 7,
-            "errors": 0,
-            "innings": [
-              0,
-              1,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ]
-          },
-          {
-            "runs": 11,
-            "hits": 11,
-            "errors": 0,
-            "innings": [
-              0,
-              4,
-              2,
-              0,
-              2,
-              2,
-              1,
-              0,
-              null
-            ]
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "Grand Canyon",
-            "nine_starting_slots": true,
-            "batter_rows": 14,
-            "pitcher_rows": 4,
-            "substitutes": 5
-          },
-          {
-            "team": "Stanford",
-            "nine_starting_slots": true,
-            "batter_rows": 12,
-            "pitcher_rows": 2,
-            "substitutes": 3
-          }
-        ],
-        "official_decisions": {
-          "win": "Williams, Alex",
-          "loss": "Avitia, Daniel",
-          "save": null
-        },
-        "resolved_pitcher_decisions": {
-          "win": null,
-          "loss": null,
-          "save": null
-        },
-        "date_correction": {
-          "original_worksheet_date": "2022-04-21",
-          "verified_official_date": "2022-04-22",
-          "user_confirmed": "2026-10-17"
-        }
-      }
-    }
-  ],
+  "completed": [],
   "pending_review": [],
   "release": "Draft branch only; never auto-publish or merge"
 }

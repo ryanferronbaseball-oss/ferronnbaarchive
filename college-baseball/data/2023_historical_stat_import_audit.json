@@ -4,10 +4,10 @@
   "limit": 0,
   "status": "PASS",
   "original_attendance_games": 444,
-  "verified_this_run": 1,
+  "verified_this_run": 0,
   "verified_in_season": 47,
-  "verified_overall": 432,
-  "player_game_rows_total": 13028,
+  "verified_overall": 434,
+  "player_game_rows_total": 13088,
   "already_verified": [
     "cb-2023-05-24-saint-mary-s-san-diego-att0224",
     "cb-2023-05-24-gonzaga-santa-clara-att0223",
@@ -48,6 +48,7 @@
     "cb-2023-03-03-san-diego-oregon-att0188",
     "cb-2023-03-02-san-diego-oregon-att0187",
     "cb-2023-02-26-uc-irvine-san-diego-att0186",
+    "cb-2023-02-25-unlv-san-diego-att0185",
     "cb-2023-02-25-unlv-uc-irvine-att0184",
     "cb-2023-02-24-hawaii-san-diego-att0183",
     "cb-2023-02-21-cal-state-northrdige-san-diego-state-att0182",
@@ -56,120 +57,7 @@
     "cb-2023-02-18-nebraska-san-diego-att0179",
     "cb-2023-02-17-nebraska-san-diego-att0178"
   ],
-  "completed": [
-    {
-      "game_id": "cb-2023-02-25-unlv-san-diego-att0185",
-      "player_rows": 27,
-      "source_url": "https://unlvrebels.com/sports/baseball/stats/2023/university-of-san-diego/boxscore/15889",
-      "win": "Ryan Robinson",
-      "loss": "Nick Rupp",
-      "source_audit": {
-        "game_id": "cb-2023-02-25-unlv-san-diego-att0185",
-        "source": "https://unlvrebels.com/sports/baseball/stats/2023/university-of-san-diego/boxscore/15889",
-        "http_code": 200,
-        "source_bytes": 1288392,
-        "source_sha256": "ca6b10781543658185507d76ac41e8ff4d04648c6408d1399cc00bd84ec91f43",
-        "teams": [
-          {
-            "name": "UNLV",
-            "batters": 11,
-            "pitchers": 3,
-            "AB": 36,
-            "R": 5,
-            "H": 9,
-            "RBI": 4,
-            "BB": 4,
-            "SO": 15,
-            "pitching_outs": 25,
-            "pitching_runs": 6,
-            "pitching_hits": 7
-          },
-          {
-            "name": "San Diego",
-            "batters": 10,
-            "pitchers": 3,
-            "AB": 31,
-            "R": 6,
-            "H": 7,
-            "RBI": 6,
-            "BB": 5,
-            "SO": 7,
-            "pitching_outs": 27,
-            "pitching_runs": 5,
-            "pitching_hits": 9
-          }
-        ],
-        "source_warnings": [],
-        "player_rows": 27,
-        "status": "PASS",
-        "scoreboard": [
-          {
-            "runs": 5,
-            "hits": 9,
-            "errors": 0,
-            "innings": [
-              0,
-              0,
-              0,
-              3,
-              0,
-              0,
-              2,
-              0,
-              0
-            ]
-          },
-          {
-            "runs": 6,
-            "hits": 7,
-            "errors": 1,
-            "innings": [
-              0,
-              0,
-              0,
-              2,
-              2,
-              1,
-              0,
-              0,
-              1
-            ]
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "UNLV",
-            "nine_starting_slots": true,
-            "batter_rows": 11,
-            "pitcher_rows": 3,
-            "substitutes": 2
-          },
-          {
-            "team": "San Diego",
-            "nine_starting_slots": true,
-            "batter_rows": 10,
-            "pitcher_rows": 3,
-            "substitutes": 1
-          }
-        ],
-        "official_decisions": {
-          "win": "Robinson, Ryan",
-          "loss": "Rupp, Nick",
-          "save": null
-        },
-        "resolved_pitcher_decisions": {
-          "win": null,
-          "loss": null,
-          "save": null
-        },
-        "date_correction": {
-          "original_worksheet_date": "2023-02-25",
-          "verified_official_date": "2023-02-26",
-          "user_confirmed": "2026-10-17"
-        }
-      }
-    }
-  ],
+  "completed": [],
   "pending_review": [],
   "release": "Draft branch only; never auto-publish or merge"
 }

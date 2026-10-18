@@ -4,10 +4,10 @@
   "limit": 0,
   "status": "PARTIAL_REVIEW_REQUIRED",
   "original_attendance_games": 444,
-  "verified_this_run": 1,
-  "verified_in_season": 25,
-  "verified_overall": 424,
-  "player_game_rows_total": 12794,
+  "verified_this_run": 2,
+  "verified_in_season": 27,
+  "verified_overall": 434,
+  "player_game_rows_total": 13088,
   "already_verified": [
     "cb-2018-05-08-uc-riverside-san-diego-att0030",
     "cb-2018-05-06-gonzaga-san-diego-att0029",
@@ -21,6 +21,7 @@
     "cb-2018-03-18-santa-clara-san-diego-att0020",
     "cb-2018-03-17-santa-clara-san-diego-att0019",
     "cb-2018-03-16-santa-clara-san-diego-att0018",
+    "cb-2018-03-04-indiana-san-diego-att0016",
     "cb-2018-03-03-indiana-san-diego-att0015",
     "cb-2018-03-03-indiana-san-diego-att0014",
     "cb-2018-03-02-indiana-san-diego-att0013",
@@ -36,110 +37,151 @@
   ],
   "completed": [
     {
-      "game_id": "cb-2018-03-04-indiana-san-diego-att0016",
-      "player_rows": 36,
-      "source_url": "https://iuhoosiers.com/sports/baseball/stats/2018/-13-san-diego/boxscore/13860",
-      "win": "Cameron Beauchamp",
-      "loss": "Nate Walker",
+      "game_id": "cb-2018-02-18-cincinnati-san-diego-att0006",
+      "player_rows": 27,
+      "source_url": "https://storage.googleapis.com/gobearcats-com-prod/2025/06/29/EIKFzFi4XIx7rW5a9UvwMzpwiQSNIr5qQEvTHkBg.pdf",
+      "win": "Travis KUHN",
+      "loss": "Jalen WADE",
       "source_audit": {
-        "game_id": "cb-2018-03-04-indiana-san-diego-att0016",
-        "source": "https://iuhoosiers.com/sports/baseball/stats/2018/-13-san-diego/boxscore/13860",
-        "http_code": 200,
-        "source_bytes": 1162199,
-        "source_sha256": "d54e4bf9d0f792c0695bd2b61196591df15d3cc426e832812db060a3a08acbbf",
-        "teams": [
-          {
-            "name": "Indiana",
-            "batters": 12,
-            "pitchers": 5,
-            "AB": 38,
-            "R": 8,
-            "H": 14,
-            "RBI": 6,
-            "BB": 2,
-            "SO": 7,
-            "pitching_outs": 27,
-            "pitching_runs": 4,
-            "pitching_hits": 11
-          },
-          {
-            "name": "San Diego",
-            "batters": 13,
-            "pitchers": 7,
-            "AB": 38,
-            "R": 4,
-            "H": 11,
-            "RBI": 3,
-            "BB": 3,
-            "SO": 4,
-            "pitching_outs": 27,
-            "pitching_runs": 8,
-            "pitching_hits": 14
-          }
-        ],
-        "source_warnings": [],
-        "player_rows": 36,
         "status": "PASS",
-        "scoreboard": [
-          {
-            "runs": 8,
-            "hits": 14,
-            "errors": 5,
-            "innings": [
-              0,
-              0,
-              3,
-              0,
-              3,
-              0,
-              2,
-              0,
-              0
-            ]
-          },
-          {
-            "runs": 4,
-            "hits": 11,
-            "errors": 1,
-            "innings": [
-              0,
-              1,
-              0,
-              0,
-              0,
-              1,
-              0,
-              2,
-              0
-            ]
-          }
-        ],
+        "source": "https://storage.googleapis.com/gobearcats-com-prod/2025/06/29/EIKFzFi4XIx7rW5a9UvwMzpwiQSNIr5qQEvTHkBg.pdf",
+        "source_sha256": "a9849a5b41a4a17988645a845f5a5e7561d4a307a0deb03c26f1417e7b9f7a44",
+        "source_type": "official_university_pdf_gamebook",
+        "player_rows": 27,
         "lineup_audit": [
           {
-            "team": "Indiana",
+            "team": "Cincinnati",
             "nine_starting_slots": true,
-            "batter_rows": 12,
-            "pitcher_rows": 5,
-            "substitutes": 3
+            "batter_rows": 9,
+            "pitcher_rows": 3,
+            "substitutes": 0
           },
           {
             "team": "San Diego",
             "nine_starting_slots": true,
-            "batter_rows": 13,
-            "pitcher_rows": 7,
-            "substitutes": 4
+            "batter_rows": 11,
+            "pitcher_rows": 4,
+            "substitutes": 2
           }
         ],
-        "official_decisions": {
-          "win": "Beauchamp, Cam",
-          "loss": "Walker, Nate",
+        "scoreboard": [
+          {
+            "innings": [
+              0,
+              0,
+              0,
+              1,
+              0,
+              2,
+              0,
+              0,
+              0
+            ],
+            "runs": 3,
+            "hits": 7,
+            "errors": 0
+          },
+          {
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              0,
+              0,
+              2
+            ],
+            "runs": 4,
+            "hits": 7,
+            "errors": 0
+          }
+        ],
+        "pitching_decisions": {
+          "win": "Travis KUHN",
+          "loss": "Jalen WADE",
           "save": null
         },
-        "resolved_pitcher_decisions": {
-          "win": null,
-          "loss": null,
-          "save": null
-        }
+        "archive_source_header_date": "2018-02-17",
+        "verified_official_schedule_date": "2018-02-18",
+        "date_discrepancy_evidence": "Original Cincinnati/SD official Feb 18 schedule, scored Game 1/Game 2 PDFs marked Feb 17",
+        "source_game_number": 2
+      }
+    },
+    {
+      "game_id": "cb-2018-02-18-cincinnati-san-diego-att0005",
+      "player_rows": 33,
+      "source_url": "https://storage.googleapis.com/gobearcats-com-prod/2025/06/23/qre66UMRSF5t969mTcx51AEMiCvv3XATSOCaqyhH.pdf",
+      "win": "Jarod YOAKAM",
+      "loss": "Justin FRIEDMAN",
+      "source_audit": {
+        "status": "PASS",
+        "source": "https://storage.googleapis.com/gobearcats-com-prod/2025/06/23/qre66UMRSF5t969mTcx51AEMiCvv3XATSOCaqyhH.pdf",
+        "source_sha256": "d40e2878fce2af9acac5b913d96661258ca500b004a4bf128f97a8aa85d190e1",
+        "source_type": "official_university_pdf_gamebook",
+        "player_rows": 33,
+        "lineup_audit": [
+          {
+            "team": "Cincinnati",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 4,
+            "substitutes": 0
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 16,
+            "pitcher_rows": 4,
+            "substitutes": 7
+          }
+        ],
+        "scoreboard": [
+          {
+            "innings": [
+              0,
+              3,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              3
+            ],
+            "runs": 7,
+            "hits": 8,
+            "errors": 3
+          },
+          {
+            "innings": [
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              2,
+              0,
+              0
+            ],
+            "runs": 4,
+            "hits": 12,
+            "errors": 3
+          }
+        ],
+        "pitching_decisions": {
+          "win": "Jarod YOAKAM",
+          "loss": "Justin FRIEDMAN",
+          "save": "Reese ROBINSON"
+        },
+        "archive_source_header_date": "2018-02-17",
+        "verified_official_schedule_date": "2018-02-18",
+        "date_discrepancy_evidence": "Original Cincinnati/SD official Feb 18 schedule, scored Game 1/Game 2 PDFs marked Feb 17",
+        "source_game_number": 1
       }
     }
   ],
@@ -157,16 +199,6 @@
     {
       "game_id": "cb-2018-03-13-san-diego-state-san-diego-att0017",
       "source_url": "https://usdtoreros.com/documents/2018/5/10/14105__m_basebl_2017_18_misc_non_event__USDvsSDSUboxMar13.pdf",
-      "reason": "University PDF download did not yield PDF bytes"
-    },
-    {
-      "game_id": "cb-2018-02-18-cincinnati-san-diego-att0006",
-      "source_url": "https://usdtoreros.com/documents/2018/5/10/13995__m_basebl_2017_18_box_score__stats_20180219aab.pdf",
-      "reason": "University PDF download did not yield PDF bytes"
-    },
-    {
-      "game_id": "cb-2018-02-18-cincinnati-san-diego-att0005",
-      "source_url": "https://usdtoreros.com/documents/2018/5/10/13995__m_basebl_2017_18_box_score__stats_20180219aaa.pdf",
       "reason": "University PDF download did not yield PDF bytes"
     }
   ],

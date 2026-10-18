@@ -363,6 +363,28 @@ def _source_batters(table, valid_players, team, game_id):
         if slug(name) in verified_2018_unindented.get((game_id, team), set()):
             is_sub = True
 
+        # 2019–23 original university play-by-play also contains exact
+        # unindented follow-on substitutions (never guessed or global).
+        pbp_2019_2023_substitutions = {
+            # 2019 Fresno State at Kansas State: Higgins PH for Nogales.
+            ("cb-2019-02-22-fresno-state-kansas-state-att0036", "Fresno State"):
+                {"ryan-higgins"},
+            # 2020 Southern Illinois vs Seattle: O'Brien DH for PH Gray,
+            # who followed original DH Mason Hiser in slot eight.
+            ("cb-2020-02-23-southern-illinois-seattle-att0078", "Southern Illinois"):
+                {"kyle-o-brien"},
+            # 2020 Arizona–Iowa university play-by-play: 1B Klassen for PH
+            # Paugh; Kato PH for Klassen; 3B Bullard for Casagrande.
+            ("cb-2020-02-22-arizona-iowa-att0076", "Arizona"):
+                {"blake-klassen", "kobe-kato", "tony-bullard"},
+            # 2023 CSUN–San Diego State: Rhee CF for PH Weems,
+            # original 3B Giannini's ninth starter slot.
+            ("cb-2023-02-21-cal-state-northrdige-san-diego-state-att0182", "San Diego State"):
+                {"charlie-rhee"},
+        }
+        if slug(name) in pbp_2019_2023_substitutions.get((game_id, team), set()):
+            is_sub = True
+
         # Source play-by-play corroborates the unindented entries below,
         # whose predecessor already appears in the same batting slot.
         source_confirmed_unindented = {

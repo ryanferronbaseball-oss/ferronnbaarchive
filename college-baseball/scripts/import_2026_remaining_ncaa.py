@@ -315,8 +315,9 @@ def _source_batters(table, valid_players, team, game_id):
         verified_legacy_pbp_substitutes = {
             # Grand Canyon's 2/24/18 university source boxscore 10239:
             # "ROSENBERG, T to ss for CALVERT, G." after PH Calvert for Houghtby.
+            # Source name is abbreviated "T Rosenberg", not "Trevor Rosenberg".
             ("cb-2018-02-24-grand-canyon-san-diego-att0010", "San Diego"):
-                {"trevor-rosenberg"},
+                {"t-rosenberg"},
             # Cal Poly's 2/24/18 official university boxscore 618:
             # "DiCarlo, Nick to 3b for Emmerson, Myles"; Emmerson PH for Ogrin.
             ("cb-2018-02-24-cal-poly-grand-canyon-att0009", "Cal Poly"):

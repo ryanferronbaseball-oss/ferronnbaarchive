@@ -6,9 +6,9 @@
   "season_span": "2017–2026 after user-confirmed 2024 typo correction",
   "staged_games": 444,
   "official_score_and_inning_lines_matched": 213,
-  "official_player_boxscores_imported": 396,
-  "player_stat_rows": 11933,
-  "unique_player_ids": 5150,
+  "official_player_boxscores_imported": 397,
+  "player_stat_rows": 11958,
+  "unique_player_ids": 5164,
   "scores_supplied_by_user": 0,
   "source_docs": "Official Auburn, Arkansas, LSU, Florida, Mississippi State, Tennessee and Texas athletics/conference box scores and university recaps",
   "source_worksheet_rows": [
@@ -137,10 +137,10 @@
   "remaining_attendance_games_not_yet_imported": 0,
   "validation": "May 2026: all 27 official player books mapped to matching attendance games; scores, R/H/E, pitching/team opposing R and H, batting lineup starters checked; new imports have complete official per-inning lines. CI browser test separately tracked.",
   "all_attendance_entries_staged": 444,
-  "attendance_only_pending_official_verification": 48,
+  "attendance_only_pending_official_verification": 47,
   "source": "User workbook; 444 original rows, two user-corrected entries.",
   "official_scoreboard_player_lines_pending": 0,
-  "latest_verified_batch": "Historical official gamebooks 2021 (development branch)",
+  "latest_verified_batch": "Historical official gamebooks 2018 (development branch)",
   "latest_verified_batch_games": [
     {
       "worksheet_row": 432,
@@ -451,7 +451,7 @@
       "official_identity_scores_matched": 30,
       "full_gamebook_direct_sources_located": 30,
       "full_player_gamebook_url_pending": 0,
-      "full_player_boxscores_imported": 11,
+      "full_player_boxscores_imported": 12,
       "status": "in_progress",
       "source_queue": "data/2018_official_source_queue.json",
       "audit_file": "data/2018_monthly_progress_audit.json",
@@ -589,14 +589,14 @@
     "official_game_identifications": 30,
     "full_player_gamebook_direct_sources": 30,
     "full_player_gamebook_link_not_yet_found": 0,
-    "player_boxscore_imported": 11,
+    "player_boxscore_imported": 12,
     "source_queue": "data/2018_official_source_queue.json",
     "monthly_audit": "data/2018_monthly_progress_audit.json",
     "full_player_gamebook_contents_verified": 30,
     "full_player_gamebook_content_verification_pending": 0,
     "asu_2018_05_09_user_batter_so_reconstructed": true,
-    "new_verified_gamebooks_last_run": 11,
-    "last_run_pending_review": 19
+    "new_verified_gamebooks_last_run": 1,
+    "last_run_pending_review": 18
   },
   "2017_backfill": {
     "approved": true,

@@ -198,7 +198,45 @@ def main():
                     rows, trace = import_statcrew(g, normalized, keys, source)
                     decision = g.get("pitching_decisions")
                 else:
-                    rows, trace = import_one(g, normalized, keys)
+                    # 2022 NCAA Corvallis Regional: university official
+                    # home/away designates Oregon State visiting 12 and
+                    # USD home 3 at OSU's own stadium. The original personal
+                    # worksheet calls USD "away" and Oregon State "home".
+                    # Preserve original worksheet ID and team labels, but
+                    # parse the university GAMEBOOK side first, and then
+                    # map every official R/H/E and inning field back.
+                    reversed_2022_regional = (
+                        gid=="cb-2022-06-04-san-diego-oregon-state-att0175"
+                        and scores==[3,12]
+                        and (g["away"],g["home"])==("San Diego","Oregon State"))
+                    if reversed_2022_regional:
+                        source_game=deepcopy(g)
+                        source_game["away"],source_game["home"] = g["home"],g["away"]
+                        normalized["official_score"]=[12,3]
+                        rows,trace=import_one(source_game,normalized,keys)
+                        if (source_game["away_score"],source_game["home_score"],
+                            source_game["away_hits"],source_game["home_hits"],
+                            source_game["away_errors"],source_game["home_errors"]) != (12,3,13,7,0,2):
+                            raise ValueError("2022 Oregon State official source-side checksum failed")
+                        g.update({
+                            "source_url":url,"verification":"official_boxscore_verified",
+                            "official_boxscore_status":"verified",
+                            "score_provenance":"official_boxscore",
+                            "away_score":source_game["home_score"],
+                            "home_score":source_game["away_score"],
+                            "away_hits":source_game["home_hits"],
+                            "home_hits":source_game["away_hits"],
+                            "away_errors":source_game["home_errors"],
+                            "home_errors":source_game["away_errors"],
+                            "innings":[{"inning":i["inning"],"away":i["home"],"home":i["away"]}
+                                       for i in source_game["innings"]],
+                            "source_home_away_side_reversed_for_attendance":True,
+                            "source_home_away_note":"University official designated Oregon State as visitor despite Corvallis venue. Original personal worksheet USD-away/OSU-home identity preserved; full source RHE and inning columns mapped explicitly."
+                        })
+                        trace["original_attendance_team_order"]=["San Diego","Oregon State"]
+                        trace["official_university_team_order"]=["Oregon State","San Diego"]
+                    else:
+                        rows, trace = import_one(g, normalized, keys)
                     if g.get("official_draw") and gid == "cb-2023-02-20-nebraska-san-diego-att0181":
                         # No pitcher can be credited with Win/Loss/Save in a 16–16 tie.
                         decision = {"win": None, "loss": None, "save": None}

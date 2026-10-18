@@ -1,12 +1,12 @@
 {
   "season": 2021,
-  "status": "PARTIAL_FULL_GAMEBOOK_SOURCE_DISCOVERY_NO_PLAYER_ROWS_IMPORTED",
+  "status": "FULL_GAMEBOOK_DISCOVERY_31_OF_32_GAME_IDENTITIES_VERIFIED_ZERO_PLAYER_IMPORTS",
   "approved": true,
   "original_attendance_games": 32,
-  "full_individual_player_boxscore_source_urls": 27,
+  "full_individual_player_boxscore_source_urls": 31,
   "official_one_of_two_source_games_unresolved": 1,
-  "official_game_only_without_readable_player_tables": 3,
-  "official_recap_only_until_full_player_gamebook_located": 1,
+  "official_game_only_without_readable_player_tables": 0,
+  "official_recap_only_until_full_player_gamebook_located": 0,
   "full_player_scorebooks_imported": 0,
   "existing_prior_year_boxscores_preserved": 213,
   "existing_prior_year_player_rows_preserved": 6316,
@@ -29,16 +29,16 @@
     },
     "2021-04": {
       "original_games": 7,
-      "linked_full_player_gamebooks": 5,
+      "linked_full_player_gamebooks": 6,
       "linked_game_only": 0,
       "requires_doubleheader_choice": 1,
-      "awaiting_full_boxscore": 1,
+      "awaiting_full_boxscore": 0,
       "player_gamebooks_imported": 0
     },
     "2021-05": {
       "original_games": 5,
-      "linked_full_player_gamebooks": 2,
-      "linked_game_only": 3,
+      "linked_full_player_gamebooks": 5,
+      "linked_game_only": 0,
       "requires_doubleheader_choice": 0,
       "awaiting_full_boxscore": 0,
       "player_gamebooks_imported": 0
@@ -63,25 +63,36 @@
       "issue": "Separate 4:10 p.m. UC Riverside at USD game 2",
       "score": "USD 9–0 UC Riverside",
       "official_source_id": 12117
-    },
-    {
-      "game_id": "cb-2021-04-02-san-diego-cal-state-fullerton-att0104",
-      "issue": "Friday at Goodwin Field 1–3 loss, official result and recap confirmed, complete player gamebook URL not yet located; do not misassign Saturday April 3 USD home 8–2 win."
-    },
-    {
-      "game_ids": [
-        "cb-2021-05-06-byu-san-diego-att0113",
-        "cb-2021-05-07-byu-san-diego-att0114",
-        "cb-2021-05-08-byu-san-diego-att0115"
-      ],
-      "issue": "BYU university boxscore pages confirm date and score, but do not expose readable batting and pitching player tables through text retrieval; official USD source or another reliable full gamebook needed before import."
     }
   ],
   "notes": [
     "March 5/7 USD–UCSD home/away is preserved exactly as source workbook; USD official schedule and detailed USD cumulative stats agree with original; the WCC historical schedule index reverses March 5 and March 7 sites and must not override gamebook-level venue evidence.",
     "Vanguard is a four-year NAIA school (not JUCO) and its March 30 game remains eligible for source backfill.",
-    "COVID-era boxscore listed attendance (1 or 100) is official stadium attendance, not proof of which game the user attended; no synthetic attendance verification."
+    "COVID-era boxscore listed attendance (1 or 100) is official stadium attendance, not proof of which game the user attended; no synthetic attendance verification.",
+    "October 17 source research resolved all four previously missing full gamebooks. The only remaining attendance record without one uniquely assigned verified gamebook is the April 24 CSUB–UCSD one-row/two-game ambiguity; both complete gamebooks are available."
   ],
   "source_file": "data/2021_official_source_queue.json",
-  "release_boundary": "Unpublished draft only; older 2020 and earlier not approved; 2022 and 2023 player imports still at zero."
+  "release_boundary": "Unpublished draft only; older 2020 and earlier not approved; 2022 and 2023 player imports still at zero.",
+  "resolved_research": [
+    {
+      "subject": "April 2, 2021 San Diego at Cal State Fullerton",
+      "full_gamebook": "https://usdtoreros.com/sports/baseball/stats/2021/cal-state-fullerton/boxscore/12125",
+      "score": "USD 1 – CSU Fullerton 3"
+    },
+    {
+      "subject": "May 6, 2021 BYU at USD (10 innings)",
+      "full_gamebook": "https://usdtoreros.com/sports/baseball/stats/2021/byu/boxscore/12085",
+      "score": "BYU 6 – USD 4"
+    },
+    {
+      "subject": "May 7, 2021 BYU at USD",
+      "full_gamebook": "https://usdtoreros.com/sports/baseball/stats/2021/byu/boxscore/12086",
+      "score": "BYU 11 – USD 10"
+    },
+    {
+      "subject": "May 8, 2021 BYU at USD",
+      "full_gamebook": "https://usdtoreros.com/sports/baseball/stats/2021/byu/boxscore/12087",
+      "score": "BYU 12 – USD 13"
+    }
+  ]
 }

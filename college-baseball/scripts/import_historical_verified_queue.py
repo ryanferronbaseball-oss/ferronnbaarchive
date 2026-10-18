@@ -23,6 +23,22 @@ DATA = Path(__file__).resolve().parents[1] / "data"
 YEARS = tuple(range(2017, 2024))
 MAX_ORIGINAL = 444
 
+# Explicit user attestation on 2026-10-17. Keep the immutable original
+# worksheet date in its own field, retain the historic attendance ID, and show
+# the source-verifiable actual game date on the finished site.
+CONFIRMED_DATE_CORRECTIONS = {
+    "cb-2022-04-21-grand-canyon-stanford-att0151": ("2022-04-21", "2022-04-22"),
+    "cb-2023-02-25-unlv-uc-irvine-att0184": ("2023-02-25", "2023-02-26"),
+    "cb-2023-02-25-unlv-san-diego-att0185": ("2023-02-25", "2023-02-26"),
+    "cb-2023-02-26-uc-irvine-san-diego-att0186": ("2023-02-26", "2023-02-27"),
+}
+
+def verified_user_date_correction(gid, row, original):
+    expected = CONFIRMED_DATE_CORRECTIONS.get(gid)
+    return bool(expected and expected == (original, row.get("official_date"))
+                and row.get("attendance_identity_user_confirmed") is True
+                and row.get("attendance_user_confirmation_date") == "2026-10-17")
+
 
 def load(name):
     return json.loads((DATA / name).read_text(encoding="utf-8"))
@@ -92,8 +108,8 @@ def resolve(year, game, row):
         raise ValueError("University source identity or doubleheader attendance order needs confirmation")
     if "date_conflict" in row.get("research_status", "") or row.get("source_identity_status") == "official_date_conflicts_with_attendance":
         raise ValueError("Unreconciled date conflict")
-    if row.get("official_date") and row["official_date"] != original and not row.get("attendance_identity_user_confirmed"):
-        raise ValueError("Official and original dates differ without explicit user confirmation")
+    if row.get("official_date") and row["official_date"] != original and not verified_user_date_correction(game["id"], row, original):
+        raise ValueError("Official and original dates differ without matching verified user-confirmed correction")
     if year == 2018 and row.get("data_evidence_path"):
         # ASU batting data is documented, but its PDF score-by-innings and
         # exact substitution slots have not yet been independently reconciled.
@@ -263,6 +279,20 @@ def main():
                 raise ValueError("Original attendance date mutated")
             if g["source_worksheet_row"] != originals[gid]["source_worksheet_row"]:
                 raise ValueError("Original attendance source row mutated")
+            # Only after the full original gamebook (lineups, player totals,
+            # pitching decisions and inning line) passes all checks may the
+            # official display date differ from the original user's sheet.
+            original_date = original_date_for(gid, originals)
+            if verified_user_date_correction(gid, row, original_date):
+                g["original_worksheet_date"] = original_date
+                g["date"] = row["official_date"]
+                g["date_correction_user_confirmed"] = "2026-10-17"
+                g["date_correction_provenance"] = "Official university gamebook plus explicit user attestation"
+                trace["date_correction"] = {
+                    "original_worksheet_date": original_date,
+                    "verified_official_date": g["date"],
+                    "user_confirmed": "2026-10-17",
+                }
             g["game_type"] = row.get("game_type") or g.get("game_type") or "regular_season"
             g["source_import_season"] = args.season
             players.extend(rows)
@@ -279,9 +309,16 @@ def main():
     for gid, prior in originals.items():
         current = byid[gid]
         if gid.startswith("cb-" + str(args.season) + "-"):
-            for k in ("id","attendance_id","source_worksheet_row","date","away","home","season"):
+            for k in ("id","attendance_id","source_worksheet_row","away","home","season"):
                 if current[k] != prior[k]:
                     raise ValueError("Original identity was changed: " + gid)
+            if current["date"] != prior["date"]:
+                row = queue.get(gid, {})
+                if not (verified_user_date_correction(gid, row, prior["date"])
+                        and current["date"] == row["official_date"]
+                        and current.get("original_worksheet_date") == prior["date"]
+                        and current.get("date_correction_user_confirmed") == "2026-10-17"):
+                    raise ValueError("Non-attested change to attendance game date: " + gid)
         elif current != prior:
             raise ValueError("Historical importer altered protected year: " + gid)
     if [r for r in players if not r["game_id"].startswith("cb-" + str(args.season) + "-")] != protected_players:

@@ -4,10 +4,10 @@
   "limit": 0,
   "status": "PARTIAL_REVIEW_REQUIRED",
   "original_attendance_games": 444,
-  "verified_this_run": 1,
-  "verified_in_season": 12,
-  "verified_overall": 397,
-  "player_game_rows_total": 11958,
+  "verified_this_run": 3,
+  "verified_in_season": 15,
+  "verified_overall": 401,
+  "player_game_rows_total": 12068,
   "already_verified": [
     "cb-2018-05-04-gonzaga-san-diego-att0027",
     "cb-2018-04-17-cal-state-fullerton-san-diego-att0026",
@@ -19,49 +19,157 @@
     "cb-2018-03-16-santa-clara-san-diego-att0018",
     "cb-2018-02-25-arkansas-san-diego-att0011",
     "cb-2018-02-23-michigan-san-diego-att0008",
-    "cb-2018-02-23-cal-poly-arkansas-att0007"
+    "cb-2018-02-23-cal-poly-arkansas-att0007",
+    "cb-2018-02-16-california-san-diego-att0002"
   ],
   "completed": [
     {
-      "game_id": "cb-2018-02-16-california-san-diego-att0002",
-      "player_rows": 25,
-      "source_url": "https://calbears.com/sports/baseball/stats/2018/san-diego/boxscore/19869",
-      "win": "Jared Horn",
-      "loss": "Paul Richan",
+      "game_id": "cb-2018-02-24-cal-poly-grand-canyon-att0009",
+      "player_rows": 28,
+      "source_url": "https://gopoly.com/sports/baseball/stats/2018/grand-canyon/boxscore/618",
+      "win": "Mike Lundin",
+      "loss": "Trent Shelton",
       "source_audit": {
-        "game_id": "cb-2018-02-16-california-san-diego-att0002",
-        "source": "https://calbears.com/sports/baseball/stats/2018/san-diego/boxscore/19869",
+        "game_id": "cb-2018-02-24-cal-poly-grand-canyon-att0009",
+        "source": "https://gopoly.com/sports/baseball/stats/2018/grand-canyon/boxscore/618",
         "http_code": 200,
-        "source_bytes": 1139391,
-        "source_sha256": "7a83f79c5444c629f446a01c01de111895417699a8ba329f62c08de98f69bd6a",
+        "source_bytes": 1329000,
+        "source_sha256": "83c91bf60d47ce444a1a319af3ecd25e846a350d2d2a8b57019486c36bb5da61",
+        "teams": [
+          {
+            "name": "Cal Poly",
+            "batters": 11,
+            "pitchers": 4,
+            "AB": 26,
+            "R": 1,
+            "H": 3,
+            "RBI": 1,
+            "BB": 5,
+            "SO": 5,
+            "pitching_outs": 24,
+            "pitching_runs": 5,
+            "pitching_hits": 12
+          },
+          {
+            "name": "Grand Canyon",
+            "batters": 10,
+            "pitchers": 3,
+            "AB": 30,
+            "R": 5,
+            "H": 12,
+            "RBI": 5,
+            "BB": 2,
+            "SO": 9,
+            "pitching_outs": 27,
+            "pitching_runs": 1,
+            "pitching_hits": 3
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 28,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 1,
+            "hits": 3,
+            "errors": 1,
+            "innings": [
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 5,
+            "hits": 12,
+            "errors": 0,
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              2,
+              0,
+              1,
+              2,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Cal Poly",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 4,
+            "substitutes": 2
+          },
+          {
+            "team": "Grand Canyon",
+            "nine_starting_slots": true,
+            "batter_rows": 10,
+            "pitcher_rows": 3,
+            "substitutes": 1
+          }
+        ],
+        "official_decisions": {
+          "win": "Lundin, Mike",
+          "loss": "Shelton, Trent",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2018-02-17-california-cincinnati-att0004",
+      "player_rows": 25,
+      "source_url": "https://calbears.com/sports/baseball/stats/2018/cincinnati/boxscore/19884",
+      "win": "Perez",
+      "loss": "Matt Ladrech",
+      "source_audit": {
+        "game_id": "cb-2018-02-17-california-cincinnati-att0004",
+        "source": "https://calbears.com/sports/baseball/stats/2018/cincinnati/boxscore/19884",
+        "http_code": 200,
+        "source_bytes": 1126470,
+        "source_sha256": "0ce89e719b4094848873331a5d517b5d02abececd42bb377a8799b24b21f7689",
         "teams": [
           {
             "name": "California",
-            "batters": 9,
-            "pitchers": 2,
-            "AB": 35,
-            "R": 6,
-            "H": 8,
-            "RBI": 5,
-            "BB": 5,
-            "SO": 14,
-            "pitching_outs": 27,
-            "pitching_runs": 1,
+            "batters": 11,
+            "pitchers": 3,
+            "AB": 33,
+            "R": 1,
+            "H": 9,
+            "RBI": 1,
+            "BB": 0,
+            "SO": 8,
+            "pitching_outs": 24,
+            "pitching_runs": 3,
             "pitching_hits": 8
           },
           {
-            "name": "San Diego",
-            "batters": 10,
-            "pitchers": 4,
-            "AB": 34,
-            "R": 1,
+            "name": "Cincinnati",
+            "batters": 9,
+            "pitchers": 3,
+            "AB": 32,
+            "R": 3,
             "H": 8,
-            "RBI": 1,
-            "BB": 3,
-            "SO": 10,
+            "RBI": 3,
+            "BB": 0,
+            "SO": 12,
             "pitching_outs": 27,
-            "pitching_runs": 6,
-            "pitching_hits": 8
+            "pitching_runs": 1,
+            "pitching_hits": 9
           }
         ],
         "source_warnings": [],
@@ -69,35 +177,35 @@
         "status": "PASS",
         "scoreboard": [
           {
-            "runs": 6,
-            "hits": 8,
+            "runs": 1,
+            "hits": 9,
             "errors": 0,
             "innings": [
               0,
-              0,
-              0,
-              0,
-              0,
               1,
               0,
-              5,
+              0,
+              0,
+              0,
+              0,
+              0,
               0
             ]
           },
           {
-            "runs": 1,
+            "runs": 3,
             "hits": 8,
-            "errors": 1,
+            "errors": 0,
             "innings": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
+              1,
+              1,
               0,
               1,
-              0
+              0,
+              0,
+              0,
+              0,
+              null
             ]
           }
         ],
@@ -105,22 +213,129 @@
           {
             "team": "California",
             "nine_starting_slots": true,
-            "batter_rows": 9,
-            "pitcher_rows": 2,
-            "substitutes": 0
+            "batter_rows": 11,
+            "pitcher_rows": 3,
+            "substitutes": 2
           },
           {
-            "team": "San Diego",
+            "team": "Cincinnati",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 3,
+            "substitutes": 0
+          }
+        ],
+        "official_decisions": {
+          "win": "Perez",
+          "loss": "Ladrech, Matt",
+          "save": "Orndorff"
+        },
+        "resolved_pitcher_decisions": {
+          "win": "Perez",
+          "loss": null,
+          "save": "Orndorff"
+        }
+      }
+    },
+    {
+      "game_id": "cb-2018-02-17-california-san-diego-att0003",
+      "player_rows": 29,
+      "source_url": "https://calbears.com/sports/baseball/stats/2018/san-diego/boxscore/19870",
+      "win": "G Ponce",
+      "loss": "Arman Sabouri",
+      "source_audit": {
+        "game_id": "cb-2018-02-17-california-san-diego-att0003",
+        "source": "https://calbears.com/sports/baseball/stats/2018/san-diego/boxscore/19870",
+        "http_code": 200,
+        "source_bytes": 1205216,
+        "source_sha256": "09c140db5b9525ec55d6a44c9f1f22023508e29b0a1b94683d6355f43fa2ac03",
+        "teams": [
+          {
+            "name": "California",
+            "batters": 10,
+            "pitchers": 4,
+            "AB": 37,
+            "R": 8,
+            "H": 12,
+            "RBI": 8,
+            "BB": 6,
+            "SO": 13,
+            "pitching_outs": 24,
+            "pitching_runs": 11,
+            "pitching_hits": 13
+          },
+          {
+            "name": "San Diego",
+            "batters": 12,
+            "pitchers": 3,
+            "AB": 37,
+            "R": 11,
+            "H": 13,
+            "RBI": 7,
+            "BB": 3,
+            "SO": 6,
+            "pitching_outs": 27,
+            "pitching_runs": 8,
+            "pitching_hits": 12
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 29,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 8,
+            "hits": 12,
+            "errors": 2,
+            "innings": [
+              0,
+              2,
+              3,
+              0,
+              0,
+              1,
+              0,
+              2,
+              0
+            ]
+          },
+          {
+            "runs": 11,
+            "hits": 13,
+            "errors": 1,
+            "innings": [
+              3,
+              1,
+              0,
+              0,
+              0,
+              0,
+              7,
+              0,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "California",
             "nine_starting_slots": true,
             "batter_rows": 10,
             "pitcher_rows": 4,
             "substitutes": 1
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 12,
+            "pitcher_rows": 3,
+            "substitutes": 3
           }
         ],
         "official_decisions": {
-          "win": "Horn, Jared",
-          "loss": "Richan, Paul",
-          "save": "Shortridge, Aaron"
+          "win": "Ponce, G",
+          "loss": "Sabouri, Arman",
+          "save": null
         },
         "resolved_pitcher_decisions": {
           "win": null,
@@ -197,11 +412,6 @@
       "reason": "San Diego: source batting order resolved to 10 starting slots, not 9"
     },
     {
-      "game_id": "cb-2018-02-24-cal-poly-grand-canyon-att0009",
-      "source_url": "https://gopoly.com/sports/baseball/stats/2018/grand-canyon/boxscore/618",
-      "reason": "Cal Poly: source batting order resolved to 10 starting slots, not 9"
-    },
-    {
       "game_id": "cb-2018-02-18-cincinnati-san-diego-att0006",
       "source_url": "https://usdtoreros.com/documents/2018/5/10/13995__m_basebl_2017_18_box_score__stats_20180219aab.pdf",
       "reason": "University PDF download did not yield PDF bytes"
@@ -210,16 +420,6 @@
       "game_id": "cb-2018-02-18-cincinnati-san-diego-att0005",
       "source_url": "https://usdtoreros.com/documents/2018/5/10/13995__m_basebl_2017_18_box_score__stats_20180219aaa.pdf",
       "reason": "University PDF download did not yield PDF bytes"
-    },
-    {
-      "game_id": "cb-2018-02-17-california-cincinnati-att0004",
-      "source_url": "https://calbears.com/sports/baseball/stats/2018/cincinnati/boxscore/19884",
-      "reason": "California: source batting order resolved to 10 starting slots, not 9"
-    },
-    {
-      "game_id": "cb-2018-02-17-california-san-diego-att0003",
-      "source_url": "https://calbears.com/sports/baseball/stats/2018/san-diego/boxscore/19870",
-      "reason": "San Diego: source batting order resolved to 10 starting slots, not 9"
     }
   ],
   "release": "Draft branch only; never auto-publish or merge"

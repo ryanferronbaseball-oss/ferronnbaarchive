@@ -98,9 +98,14 @@ def resolve(year, game, row):
         # ASU batting data is documented, but its PDF score-by-innings and
         # exact substitution slots have not yet been independently reconciled.
         raise ValueError("2018 ASU screenshot evidence not yet a verified complete inning/lineup gamebook")
-    scores = score_pair(row["official_score"])
-    if scores[0] == scores[1]:
-        raise ValueError("Tied game needs draw-aware strict importer")
+    # The source is an official seven-inning TIE (16–16), not a
+    # nine-inning game with an invented winner or loser. Narrow exception:
+    # original university 2/20/2023 full gamebook R/H/E corroborated.
+    is_seven_inning_nebraska_tie = (game["id"] == "cb-2023-02-20-nebraska-san-diego-att0181"
+        and row["official_score"] == "Nebraska 16, San Diego 16 (7-inning tie)")
+    scores = [16, 16] if is_seven_inning_nebraska_tie else score_pair(row["official_score"])
+    if scores[0] == scores[1] and not is_seven_inning_nebraska_tie:
+        raise ValueError("Other tied games require separately audited draw import")
     url = source_url(row)
     if not url or not url.startswith("https://"):
         raise ValueError("Official HTTPS full gamebook URL missing")
@@ -194,11 +199,20 @@ def main():
                     decision = g.get("pitching_decisions")
                 else:
                     rows, trace = import_one(g, normalized, keys)
-                    decision = scorer_labels(source.text, rows, gid)
-                    g["pitching_decisions"] = decision
+                    if g.get("official_draw") and gid == "cb-2023-02-20-nebraska-san-diego-att0181":
+                        # No pitcher can be credited with Win/Loss/Save in a 16–16 tie.
+                        decision = {"win": None, "loss": None, "save": None}
+                        if g["pitching_decisions"] != decision:
+                            raise ValueError("Tie gamebook unexpectedly lists pitcher decision")
+                    else:
+                        decision = scorer_labels(source.text, rows, gid)
+                        g["pitching_decisions"] = decision
             if g.get("verification") != "official_boxscore_verified" or len(rows) < 18:
                 raise ValueError("Incomplete player-gamebook parsing")
-            if not decision or not decision.get("win") or not decision.get("loss"):
+            if gid == "cb-2023-02-20-nebraska-san-diego-att0181" and g.get("official_draw"):
+                if decision != {"win": None, "loss": None, "save": None} or len(g.get("innings", [])) != 7:
+                    raise ValueError("Historical university tie must be 7 innings with no winning/losing pitcher")
+            elif not decision or not decision.get("win") or not decision.get("loss"):
                 raise ValueError("Official winning and losing pitchers missing")
             if any(k not in g for k in ("innings", "away_score", "home_score")):
                 raise ValueError("Official score-by-innings or totals missing")

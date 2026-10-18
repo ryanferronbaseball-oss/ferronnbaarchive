@@ -3,10 +3,10 @@
   "kind": "college_baseball_source_scoped_person_identity_overrides",
   "source": "Original archive owner confirmed each multi-school person",
   "original_attendance_ids_preserved": 444,
-  "original_player_game_rows_preserved": 13183,
+  "original_player_game_rows_preserved": 13188,
   "requested_person_merges": 96,
-  "activated_person_merges": 92,
-  "pending_person_merges": 4,
+  "activated_person_merges": 96,
+  "pending_person_merges": 0,
   "merge_policy": "Only listed pair of exact normalized person names and school-specific original source player IDs; all other IDs remain separate",
   "merges": [
     {
@@ -491,6 +491,29 @@
         }
       ],
       "source_rows": 9
+    },
+    {
+      "name": "Tate Soderstrom",
+      "canonical_id": "cb-arizona-t-soderstrom",
+      "source_player_ids": [
+        "cb-arizona-t-soderstrom",
+        "cb-uc-san-diego-tate-soderstrom"
+      ],
+      "schools": [
+        "Arizona",
+        "UC San Diego"
+      ],
+      "pairs": [
+        {
+          "team": "Arizona",
+          "source_player_id": "cb-arizona-t-soderstrom"
+        },
+        {
+          "team": "UC San Diego",
+          "source_player_id": "cb-uc-san-diego-tate-soderstrom"
+        }
+      ],
+      "source_rows": 7
     },
     {
       "name": "Drew Berkland",
@@ -1528,6 +1551,29 @@
       "source_rows": 3
     },
     {
+      "name": "Ethan Lizama",
+      "canonical_id": "cb-western-kentucky-e-lizama",
+      "source_player_ids": [
+        "cb-western-kentucky-e-lizama",
+        "cb-south-carolina-ethan-lizama"
+      ],
+      "schools": [
+        "Western Kentucky",
+        "South Carolina"
+      ],
+      "pairs": [
+        {
+          "team": "South Carolina",
+          "source_player_id": "cb-south-carolina-ethan-lizama"
+        },
+        {
+          "team": "Western Kentucky",
+          "source_player_id": "cb-western-kentucky-e-lizama"
+        }
+      ],
+      "source_rows": 2
+    },
+    {
       "name": "KaiKea Harrison",
       "canonical_id": "cb-southern-california-kaikea-harrison",
       "source_player_ids": [
@@ -1592,6 +1638,29 @@
         {
           "team": "UNC Greensboro",
           "source_player_id": "cb-unc-greensboro-jake-ogden"
+        }
+      ],
+      "source_rows": 2
+    },
+    {
+      "name": "Kyle Hvidsten",
+      "canonical_id": "cb-western-kentucky-k-hvidsten",
+      "source_player_ids": [
+        "cb-western-kentucky-k-hvidsten",
+        "cb-liberty-kyle-hvidsten"
+      ],
+      "schools": [
+        "Western Kentucky",
+        "Liberty"
+      ],
+      "pairs": [
+        {
+          "team": "Liberty",
+          "source_player_id": "cb-liberty-kyle-hvidsten"
+        },
+        {
+          "team": "Western Kentucky",
+          "source_player_id": "cb-western-kentucky-k-hvidsten"
         }
       ],
       "source_rows": 2
@@ -2101,6 +2170,29 @@
         }
       ],
       "source_rows": 4
+    },
+    {
+      "name": "Michael Graziano",
+      "canonical_id": "cb-georgia-tech-michael-graziano",
+      "source_player_ids": [
+        "cb-georgia-tech-michael-graziano",
+        "cb-mercer-michael-graziano"
+      ],
+      "schools": [
+        "Georgia Tech",
+        "Mercer"
+      ],
+      "pairs": [
+        {
+          "team": "Georgia Tech",
+          "source_player_id": "cb-georgia-tech-michael-graziano"
+        },
+        {
+          "team": "Mercer",
+          "source_player_id": "cb-mercer-michael-graziano"
+        }
+      ],
+      "source_rows": 2
     },
     {
       "name": "Kyle Johnson",

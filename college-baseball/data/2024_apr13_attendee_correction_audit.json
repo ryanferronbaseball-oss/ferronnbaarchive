@@ -1,0 +1,82 @@
+{
+  "status": "PASS",
+  "user_attendance_date_correction_date": "2026-10-18",
+  "attendance_id": "cb-attended-0268",
+  "worksheet_row": 269,
+  "original_worksheet_date": "2024-04-14",
+  "corrected_attendance_date": "2024-04-13",
+  "from_wrong_game_id": "cb-2024-04-14-virginia-tech-georgia-tech-att0268",
+  "to_correct_game_id": "cb-2024-04-13-virginia-tech-georgia-tech-att0268",
+  "wrong_unattended_original_2024_04_14_result": "Virginia Tech 7 Georgia Tech 11",
+  "actual_attended_2024_04_13_result": "Virginia Tech 0 Georgia Tech 19 (7 innings)",
+  "original_unattended_player_rows_removed": 34,
+  "actual_attended_official_player_rows": 39,
+  "original_full_season_source_scorebook": "https://storage.googleapis.com/ramblinwreck-com-prod/2024/04/gt041324.pdf",
+  "original_full_season_source_sha256": "01d9be5552a38a6845e2c32899e173d7fafd573c3b03c837d10150e788db138e",
+  "official_source_audit": {
+    "status": "PASS",
+    "source": "https://storage.googleapis.com/ramblinwreck-com-prod/2024/04/gt041324.pdf",
+    "source_sha256": "01d9be5552a38a6845e2c32899e173d7fafd573c3b03c837d10150e788db138e",
+    "source_type": "official_university_pdf_gamebook",
+    "player_rows": 39,
+    "lineup_audit": [
+      {
+        "team": "Virginia Tech",
+        "nine_starting_slots": true,
+        "batter_rows": 14,
+        "pitcher_rows": 8,
+        "substitutes": 5
+      },
+      {
+        "team": "Georgia Tech",
+        "nine_starting_slots": true,
+        "batter_rows": 17,
+        "pitcher_rows": 1,
+        "substitutes": 8
+      }
+    ],
+    "scoreboard": [
+      {
+        "innings": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "runs": 0,
+        "hits": 3,
+        "errors": 1
+      },
+      {
+        "innings": [
+          1,
+          6,
+          1,
+          0,
+          8,
+          3,
+          0
+        ],
+        "runs": 19,
+        "hits": 11,
+        "errors": 0
+      }
+    ],
+    "pitching_decisions": {
+      "win": "Cam Jones",
+      "loss": "Wyatt Parliament",
+      "save": null
+    }
+  },
+  "prior_player_rows": 13183,
+  "new_player_rows": 13188,
+  "all_attendance_ids_preserved": 444,
+  "all_verified_games_preserved": 437,
+  "source_team_batting_slots": {
+    "Virginia Tech": 9,
+    "Georgia Tech": 9
+  }
+}

@@ -108,6 +108,13 @@ def main():
                 # Source discovery only; don't assume a schedule row is a gamebook.
                 import re as _re
                 body=resp.text
+                idx=body.find("2025-05-22T11:02")
+                if idx>=0:
+                    event_segment=body[idx:idx+23000]
+                    print("AUBURN-MAY22-EVENT-LINKS",
+                      _re.findall(r'href="([^"]+)"',event_segment)[:25],flush=True)
+                    print("AUBURN-MAY22-EVENT-PDF",
+                      _re.findall(r'[^"\\s<>]{0,230}\\.pdf[^"\\s<>]{0,100}',event_segment,_re.I)[:12],flush=True)
                 for token in ("May 22", "May. 22", "2025-05-22", "Texas A&M"):
                     print("AUBURN-LINK-DISCOVERY",token,
                         [(m.start(),repr(body[max(0,m.start()-180):m.start()+550])) for m in list(_re.finditer(_re.escape(token),body,_re.I))[:3]],

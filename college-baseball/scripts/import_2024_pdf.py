@@ -20,13 +20,35 @@ def pdf_text(content):
     if not txt or len(txt)<800:raise ValueError("Official PDF has no first-page player scorebook text")
     return txt
 
+# Narrow legacy exception: original Cincinnati scorebooks printed Feb 17
+# although the original universities both list these distinct games Feb 18.
+# Game number, complete teams/scores, inning lines and scorer still must pass.
+CINCINNATI_2018_ARCHIVE = {
+    "cb-2018-02-18-cincinnati-san-diego-att0005":
+        (1, 10, (7, 4),
+         "https://storage.googleapis.com/gobearcats-com-prod/2025/06/23/qre66UMRSF5t969mTcx51AEMiCvv3XATSOCaqyhH.pdf"),
+    "cb-2018-02-18-cincinnati-san-diego-att0006":
+        (2, 9, (3, 4),
+         "https://storage.googleapis.com/gobearcats-com-prod/2025/06/29/EIKFzFi4XIx7rW5a9UvwMzpwiQSNIr5qQEvTHkBg.pdf"),
+}
+
 def parse(game,item,global_keys,response):
     text=pdf_text(response.content)
     first=text.splitlines()
     month,day=int(game["date"][5:7]),int(game["date"][8:10])
     months=["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
-    if not re.search(r"\b"+months[month]+r"\s+"+str(day)+r",\s*"+str(game["date"][:4])+r"\b",text,re.I):
+    legacy=CINCINNATI_2018_ARCHIVE.get(game["id"])
+    date_ok=bool(re.search(r"\b"+months[month]+r"\s+"+str(day)+r",\s*"+str(game["date"][:4])+r"\b",text,re.I))
+    if legacy:
+        dh_number, innings_expected, legacy_scores, archive_url=legacy
+        if (game["date"]!="2018-02-18" or (game["away"],game["home"])!=("Cincinnati","San Diego")
+            or tuple(item["official_score"])!=legacy_scores or item.get("official_doubleheader_game")!=dh_number
+            or item["source_url"]!=archive_url
+            or not re.search(r"Feb\s+17,\s*2018\b",text,re.I)):
+            raise ValueError("2018 Cincinnati university archive provenance or exact game check failed")
+    elif not date_ok:
         raise ValueError("PDF printed game date differs from attendance record")
+    innings_expected=legacy[1] if legacy else 9
     # Named schools must both occur in the original document heading.
     header=" ".join(first[:6])
     if not all(re.search(re.escape(t),header,re.I) for t in (game["away"],game["home"])):
@@ -75,13 +97,15 @@ def parse(game,item,global_keys,response):
             for t in teams:
                 if not line.startswith(t+" "):continue
                 vals=line[len(t):].split()
-                if len(vals)==12 and all(x.isdigit() or x.casefold()=="x" for x in vals):
+                if len(vals)==innings_expected+3 and all(x.isdigit() or x.casefold()=="x" for x in vals):
                     run,hit,err=map(int,vals[-3:])
                     invals=[int(x) if x.isdigit() else None for x in vals[:-3]]
                     if sum(n or 0 for n in invals)!=run:raise ValueError("Printed inning runs do not sum to game total")
                     innings[t]={"innings":invals,"runs":run,"hits":hit,"errors":err}
     if set(innings)!=set(teams) or [innings[t]["runs"] for t in teams]!=scores:
-        raise ValueError("Official PDF lacks correctly ordered nine-inning R/H/E scores")
+        raise ValueError("Official PDF lacks correctly ordered complete R/H/E and inning scores")
+    if any(len(innings[t]["innings"])!=innings_expected for t in teams):
+        raise ValueError("Official PDF did not match verified game inning count")
     if set(totals)!=set(teams) or any(not pitching[t] for t in teams):
         raise ValueError("Both original PDF batting and pitching tables required")
     rows={};lineups=[]
@@ -98,6 +122,9 @@ def parse(game,item,global_keys,response):
        ("cb-2024-03-23-vanderbilt-south-carolina-att0261","South Carolina"):{"Gavin Casas"},
        ("cb-2024-02-23-iowa-auburn-att0235","Auburn"):{"Deric Fabian"},
        ("cb-2024-04-14-virginia-tech-georgia-tech-att0268","Georgia Tech"):{"Tyler Minnick"},
+       # Cincinnati 2018 second game: unindented defensive SS replaces
+       # PH Kevin Collard in starter Jeff Houghtby's ninth batting slot.
+       ("cb-2018-02-18-cincinnati-san-diego-att0006","San Diego"):{"Trevor Rosenburg"},
     }
     for i,t in enumerate(teams):
         bat=batting[t]
@@ -187,4 +214,9 @@ def parse(game,item,global_keys,response):
       "source_type":"official_university_pdf_gamebook","player_rows":len(result),
       "lineup_audit":lineups,"scoreboard":[innings[t] for t in teams],
       "pitching_decisions":decision_labels}
+    if legacy:
+        audit["archive_source_header_date"]="2018-02-17"
+        audit["verified_official_schedule_date"]=game["date"]
+        audit["date_discrepancy_evidence"]="Original Cincinnati/SD official Feb 18 schedule, scored Game 1/Game 2 PDFs marked Feb 17"
+        audit["source_game_number"]=legacy[0]
     return result,audit

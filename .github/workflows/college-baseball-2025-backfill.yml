@@ -47,7 +47,13 @@ jobs:
           assert sum(g['date'].startswith('2026') and g['verification']=='official_boxscore_verified' for g in games)==68
           assert sum(g['date'].startswith('2025') and g['verification']=='official_boxscore_verified' for g in games)>=audit['verified_2025_total']
           assert len({(r['game_id'],r['player_id']) for r in rows})==len(rows)
-          assert all(g['verification']=='attendance_only' for g in games if g['date']<'2024')
+          # 2017–2023 official historical gamebooks were fully imported since
+          # this workflow was written. Protect them instead of assuming none.
+          historical={2017:1,2018:30,2019:41,2020:11,2021:32,2022:62,2023:47}
+          assert all(sum(g['season']==year and g['verification']=='official_boxscore_verified'
+                         for g in games)==count for year,count in historical.items())
+          assert all(g['verification']=='official_boxscore_verified'
+                     for g in games if g['season']<2024 and not g.get('boxscore_backfill_excluded'))
           assert sum(g['date'].startswith('2024') and g['verification']=='official_boxscore_verified' for g in games)>=0
           assert all(g['verification']=='attendance_only' for g in games if g.get('boxscore_backfill_excluded'))
           print('2025 SOURCE-GATED IMPORT',audit['completed_in_this_run'],'added;',

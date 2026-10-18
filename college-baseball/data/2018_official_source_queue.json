@@ -1,12 +1,12 @@
 {
   "season": 2018,
-  "status": "ALL_30_GAME_IDENTITIES_VERIFIED_26_OF_30_DIRECT_FULL_GAMEBOOK_LINKS_4_MORE_TO_LOCATE",
+  "status": "ALL_30_GAME_IDENTITIES_VERIFIED_27_OF_30_DIRECT_FULL_GAMEBOOK_LINKS_3_MORE_TO_LOCATE",
   "scope": "User approved 2018 and 2017 source discovery October 17, 2026. No JUCO. Preserve 444 original attendance game IDs. No merges, publication, deployment or 2016-and-older approval.",
   "progress": {
     "original_attendance_games": 30,
     "official_game_identity_matches": 30,
-    "official_full_player_gamebook_direct_sources_located": 26,
-    "official_schedule_and_score_verified_full_gamebook_url_pending": 4,
+    "official_full_player_gamebook_direct_sources_located": 27,
+    "official_schedule_and_score_verified_full_gamebook_url_pending": 3,
     "original_date_conflicts": 0,
     "source_linked_doubleheader_rows": 4,
     "player_gamebooks_imported": 0,
@@ -15,13 +15,14 @@
   "source_schedule": "https://usdtoreros.com/sports/baseball/schedule/2018",
   "notes": [
     "All 30 original 2018 attendance game IDs have matching official score and team/date identity from university schedule/gamebooks; no date conflicts.",
-    "26/30 exact full player gamebook URLs are directly linked; remaining 4 have confirmed official game identity and final score, but DO NOT claim full individual-player boxscores located.",
+    "27/30 exact full player gamebook URLs are directly linked; remaining 3 have confirmed official game identity and final score, but DO NOT claim full individual-player boxscores located.",
     "2018 Feb 18 Cincinnati doubleheader: Game 1 Cincinnati 7–USD 4 (10 innings), Game 2 Cincinnati 3–USD 4 walk-off; separate official university complete PDFs.",
     "2018 March 3 Indiana doubleheader: Game 1 Indiana 5–USD 6, Game 2 Indiana 6–USD 5; separate official university complete PDFs.",
     "2018 Apr 3 UC Irvine 2–USD 1 (11 innings) and May 6 Gonzaga 4–USD 5 (11 innings).",
     "California–Cincinnati Feb 17, Cal Poly–Arkansas Feb 23, Cal Poly–GCU Feb 24 are neutral tournament matches outside USD's own team schedule and have independent official university full player-level gamebooks.",
     "Game scores stored away,home respecting original stable worksheet team assignments, not a generic winner-first score string.",
-    "New 2018 official player-gamebook links verified for Indiana Mar 2/4, Santa Clara Mar 16–18, LMU Apr 6–8, UC Irvine Apr 3, Gonzaga May 4–6, and UC Riverside May 8; do not infer Arizona State May 9 stat link just from ASU schedule box-score label."
+    "New 2018 official player-gamebook links verified for Indiana Mar 2/4, Santa Clara Mar 16–18, LMU Apr 6–8, UC Irvine Apr 3, Gonzaga May 4–6, and UC Riverside May 8; do not infer Arizona State May 9 stat link just from ASU schedule box-score label.",
+    "April 17 Fullerton 4, USD 10 complete official Cal State Fullerton university gamebook /sports/baseball/stats/2018/san-diego/boxscore/1417 verified through university opponent history and actual player-level gamebook content."
   ],
   "rows": [
     {
@@ -513,7 +514,10 @@
       "official_identity_source": "https://usdtoreros.com/sports/baseball/schedule/2018",
       "identity_match_status": "verified_date_teams_venue_when_available_and_final_score",
       "stat_import_status": "not_imported",
-      "full_player_gamebook_status": "full_player_gamebook_url_pending"
+      "full_player_gamebook_status": "exact_university_gamebook_source_identified",
+      "official_full_gamebook_url": "https://fullertontitans.com/sports/baseball/stats/2018/san-diego/boxscore/1417",
+      "full_gamebook_source_type": "official_cal_state_fullerton_full_player_gamebook_html",
+      "source_confirmation": "Official Cal State Fullerton opponent-history link opened to Fullerton Sidearm complete April 17, 2018 4–10 USD gamebook ID 1417; page contains full individual batting and pitching tables."
     },
     {
       "game_id": "cb-2018-05-04-gonzaga-san-diego-att0027",
@@ -630,17 +634,6 @@
       "official_score": [
         6,
         5
-      ],
-      "source_status": "official_date_teams_score_verified_full_player_link_pending",
-      "official_identity_source": "https://usdtoreros.com/sports/baseball/schedule/2018"
-    },
-    {
-      "game_id": "cb-2018-04-17-cal-state-fullerton-san-diego-att0026",
-      "date": "2018-04-17",
-      "match": "Cal State Fullerton at San Diego",
-      "official_score": [
-        4,
-        10
       ],
       "source_status": "official_date_teams_score_verified_full_player_link_pending",
       "official_identity_source": "https://usdtoreros.com/sports/baseball/schedule/2018"

@@ -308,6 +308,35 @@ def _source_batters(table, valid_players, team, game_id):
               and name in ("Dylan Schaefer","Bromley Thornton")):
             is_sub=True
 
+        # Exact 2018–2019 gamebook PBP confirms these unindented in-order
+        # substitutions. The original nine-slot batting order is corroborated
+        # by each university's own batting table and a "to [position] for"
+        # entry in the PLAY-BY-PLAY; only these unique game/player pairs apply.
+        verified_legacy_pbp_substitutes = {
+            # Grand Canyon's 2/24/18 university source boxscore 10239:
+            # "ROSENBERG, T to ss for CALVERT, G." after PH Calvert for Houghtby.
+            ("cb-2018-02-24-grand-canyon-san-diego-att0010", "San Diego"):
+                {"trevor-rosenberg"},
+            # Cal Poly's 2/24/18 official university boxscore 618:
+            # "DiCarlo, Nick to 3b for Emmerson, Myles"; Emmerson PH for Ogrin.
+            ("cb-2018-02-24-cal-poly-grand-canyon-att0009", "Cal Poly"):
+                {"nick-dicarlo"},
+            # 2/17/18 California–Cincinnati official boxscore 19884:
+            # "Selma to rf for Mack", after Mack took Lee's batting spot.
+            ("cb-2018-02-17-california-cincinnati-att0004", "California"):
+                {"quentin-selma"},
+            # 2/17/18 California–USD official boxscore 19870:
+            # "COLAROSSI, C to lf for PREWETT, N"; Prewett PH for Herburger.
+            ("cb-2018-02-17-california-san-diego-att0003", "San Diego"):
+                {"c-colarossi"},
+            # 2/23/19 Kansas State–Utah official boxscore 15468:
+            # "Almanza, C. to 1b for Thompson, T.", after PH Tyler Thompson.
+            ("cb-2019-02-23-kansas-state-utah-att0038", "Utah"):
+                {"christian-almanza"},
+        }
+        if slug(name) in verified_legacy_pbp_substitutes.get((game_id, team), set()):
+            is_sub = True
+
         # Source play-by-play corroborates the unindented entries below,
         # whose predecessor already appears in the same batting slot.
         source_confirmed_unindented = {

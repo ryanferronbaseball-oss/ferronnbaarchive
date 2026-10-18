@@ -58,7 +58,7 @@
   ],
   "same_day_identical_matchup_pairs_in_full_sheet": 13,
   "metadata_status": "full_444_game_attendance_directory_plus_may_2026_official_sources",
-  "warning": "2024–2026 four-year NCAA/four-year verified source-gamebooks only; all junior colleges excluded from backfill. 2023 and earlier, merge/publication unapproved.",
+  "warning": "2021: 27/32 complete official gamebook source URLs verified, five source/attendance exceptions including one April 24 doubleheader identity; 2022: 62/62 source URLs, one date conflict; 2023: 47/47 source URLs, three date conflicts; 2021-2023 player-level boxscores NOT imported. 2024–2026 full official gamebooks 213 and player-game rows 6316 unchanged. All JUCO backfill excluded. 2020 and earlier and merge/publication not approved.",
   "resolved_matchups": [
     {
       "attendance_game_number": 443,
@@ -402,6 +402,19 @@
       "status": "SOURCE_DISCOVERY_COMPLETE_PLAYER_STATS_PENDING",
       "source_queue": "data/2022_official_source_queue.json",
       "audit_file": "data/2022_monthly_progress_audit.json"
+    },
+    "season_2021": {
+      "approved": true,
+      "attended": 32,
+      "eligible": 32,
+      "full_gamebooks_verified_urls": 27,
+      "ambiguous_one_of_two_doubleheader_games": 1,
+      "official_game_score_only": 3,
+      "recap_only_without_full_gamebook": 1,
+      "full_player_boxscores_imported": 0,
+      "status": "OFFICIAL_SOURCE_DISCOVERY_PARTIAL_IMPORT_PENDING",
+      "source_queue": "data/2021_official_source_queue.json",
+      "audit_file": "data/2021_monthly_progress_audit.json"
     }
   },
   "early_2026_source_research": "data/2026_february_january_official_source_queue.json",
@@ -469,5 +482,16 @@
     "player_boxscore_imported": 0,
     "source_queue": "data/2022_official_source_queue.json",
     "monthly_audit": "data/2022_monthly_progress_audit.json"
+  },
+  "2021_backfill": {
+    "approved": true,
+    "original_attendance_games": 32,
+    "full_player_gamebooks_located": 27,
+    "ambiguous_csub_doubleheader": 1,
+    "byu_official_game_only": 3,
+    "fullerton_recap_only": 1,
+    "player_boxscore_imported": 0,
+    "source_queue": "data/2021_official_source_queue.json",
+    "monthly_audit": "data/2021_monthly_progress_audit.json"
   }
 }

@@ -112,6 +112,15 @@ def main():
                     print("AUBURN-LINK-DISCOVERY",token,
                         [(m.start(),repr(body[max(0,m.start()-180):m.start()+550])) for m in list(_re.finditer(_re.escape(token),body,_re.I))[:3]],
                         flush=True)
+                for time_node in BeautifulSoup(body,"html.parser").find_all("time",datetime=True):
+                    if not time_node["datetime"].startswith("2025-05-22"):continue
+                    parent=next((p for p in time_node.parents
+                                 if "schedule-event-item" in " ".join(p.get("class",[]))),
+                                None)
+                    if parent:
+                        print("AUBURN-EXACT-EVENT", parent.get_text(" ",strip=True)[:450],
+                              [(a.get_text(" ",strip=True)[:45],a.get("href"))
+                               for a in parent.find_all("a",href=True)][-18:],flush=True)
                 for anchor in BeautifulSoup(body,"html.parser").find_all("a",href=True):
                     if "pdf" in anchor.get("href","").lower() and "Texas" in anchor.parent.get_text(" ",strip=True):
                         print("AUBURN-PDF-CANDIDATE",anchor.get("href"),flush=True)

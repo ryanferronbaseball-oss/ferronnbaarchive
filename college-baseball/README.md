@@ -1,6 +1,6 @@
 # College Baseball · Courtside Archive
 
-**Status (October 17, 2026):** 444 original attendance entries remain in unpublished **draft PR #10**. **2024 is COMPLETE: 71/71 official full player gamebooks verified; 2025: 69/74; 2026: 68/68 eligible NCAA/four-year games verified.** Seven 2026 junior-college games remain excluded from statistical backfill. Across 2024–26, **208 official full gamebooks and 6,183 player-game records** are verified. Nothing has been merged or published.
+**Status (October 17, 2026):** 444 original attendance entries remain in unpublished **draft PR #10**. **2024 COMPLETE: 71/71; 2025 COMPLETE: 74/74; 2026 COMPLETE: 68/68 eligible NCAA/four-year games verified.** Seven 2026 junior-college games remain excluded from statistical backfill. Across 2024–26, **213 official full gamebooks and 6,316 player-game records** are verified. Nothing has been merged or published.
 
 The site lives under \`/college-baseball/\`, with independent college baseball stats and verified inter-level player IDs only. It shares the exact MLB archive design system for Inter fonts, navigation, scoreboards, box-score layout, cards, responsive tables, and bat-order number column.
 
@@ -15,13 +15,19 @@ The site lives under \`/college-baseball/\`, with independent college baseball s
 
 **User-confirmed identity and date corrections:** Siena–UNC Asheville March 2 **Game 1 only**; Vanderbilt–South Carolina March 23 **both games** (the sheet's two attendance rows are mapped chronologically as Game 1/2; their original entry order was not separately confirmed); Florida State–Virginia on **May 24**, not May 23. University records confirm Southern Miss–Georgia State **April 14**, not the original April 15. Duke–Indiana **February 16** remains authoritative despite the archived boxscore metadata showing February 15. All original 444 worksheet attendance IDs were preserved, including legacy IDs where a user-approved date changed.
 
-**Release boundary:** Full 2024 import is complete in the unpublished branch. The five remaining unverified 2025 gamebooks are separate work, and no 2023 or earlier imports or merge/publication are authorized.
+**Release boundary:** Full 2024 import is complete in the unpublished branch. The five remaining 2025 gamebooks have now passed strict source imports; no 2023 or earlier imports or merge/publication are authorized.
 
-## 2025 backfill — nearly complete (authorized October 17, 2026)
+## 2025 backfill — COMPLETE (authorized October 17, 2026)
 
-**69/74 original attendance games now have complete official four-year/NCAA player scorebooks. Five remain unverified.** The current [2025 source import audit](data/2025_source_import_audit.json) holds the five exact unresolved records and source exceptions. The 2025 gamebooks remain intact throughout 2024 imports.
+**74/74 original 2025 attendance games have full official-source, player-level gamebooks verified, 0 remaining.** The [2025 source import audit](data/2025_source_import_audit.json) is **PASS**, with no pending gamebooks or source exceptions. The five final completed gamebooks are:
 
-**Scope:** Only 2024–2026 four-year college games are approved for source-backed player-stat imports. Exclude all JUCO/NJCAA stat imports, retain every original attendance record, and **do not touch 2023 or earlier or publish/merge** without a new approval.
+- February 19: North Alabama 2 at Auburn 6 — original North Alabama Sidearm gamebook.
+- April 13: Stanford 11 at Clemson 6 — original ACC conference gamebook, summary and composite player tables matched by identity.
+- May 22: Texas A&M 3 vs Auburn 2 — original Auburn one-page PDF gamebook with pitching decisions and lineups.
+- May 23: Texas A&M 3 vs LSU 4 — LSU archival StatCrew original HTML gamebook.
+- June 1: Dallas Baptist 6 vs Little Rock 8 — official Conference USA gamebook, bypassing original university certificate error.
+
+**Verified totals:** 2024 71/71, 2025 74/74, 2026 68/68 eligible four-year gamebooks, with **213 official full gamebooks and 6,316 player-game records**. Original 444 attendance entries retained. All JUCO games excluded from stat backfill; 2023 and earlier, release/merge/publication not authorized.
 
 ## 2026 NCAA season — final PASS (October 17, 2026)
 

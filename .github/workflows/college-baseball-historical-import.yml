@@ -43,6 +43,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          ref: feature/college-baseball-foundation
           persist-credentials: true
       - uses: actions/setup-python@v5
         with:
@@ -66,7 +67,7 @@ jobs:
             fi
           else
             # Source-verified historical queue, newest to oldest. This never merges.
-            for SEASON in 2023 2022 2021; do
+            for SEASON in 2020 2019 2018 2017; do
               python college-baseball/scripts/import_historical_verified_queue.py --season "${SEASON}"
             done
           fi

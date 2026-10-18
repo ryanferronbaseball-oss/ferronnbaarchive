@@ -656,10 +656,10 @@
       ],
       "official_identity_source": "https://usdtoreros.com/sports/baseball/schedule/2018",
       "identity_match_status": "verified_date_teams_venue_when_available_and_final_score",
-      "stat_import_status": "not_imported",
+      "stat_import_status": "complete_source_evidence_ready_for_strict_import",
       "full_player_gamebook_status": "complete_player_batting_pitching_and_user_reconciled_batter_strikeouts_available",
       "official_boxscore_page_url": "https://thesundevils.com/boxscore/466",
-      "notes": "Official 2018 ASU 12–USD 7. Both full player tables documented from supplied screenshots; ASU screenshot SO values incorrectly assign team K to pitcher entries. User reconstructed individual batting K values from play-by-play, including Todd Jackson 1, and opposing pitcher totals reconcile exactly 7 ASU and 11 USD. Structured evidence in data/2018_05_09_asu_san_diego_screenshot_evidence.json. Preserve 0 actual imported player rows.",
+      "notes": "Official 2018 ASU 12–USD 7. Both full player tables documented from supplied screenshots; ASU screenshot SO values incorrectly assign team K to pitcher entries. User reconstructed individual batting K values from play-by-play, including Todd Jackson 1, and opposing pitcher totals reconcile exactly 7 ASU and 11 USD. Structured evidence in data/2018_05_09_asu_san_diego_screenshot_evidence.json. Preserve 0 actual imported player rows. Owner supplied original 9-inning R/H/E image and explicitly verified all five lineup replacements on 2026-10-18, including Omahen replacing PH Jackson. Import must still pass strict team/pitcher/lineup checks.",
       "official_full_gamebook_url": "https://usdtoreros.com/documents/2018/6/27/14288__m_basebl_2017_18_misc_non_event__USDvsASUboxMay9.pdf",
       "full_gamebook_source_type": "official_university_pdf_document_link_identified",
       "player_tables_content_verification": "VERIFIED from two user-supplied Arizona State browser-rendered batting and pitching tables; all player AB/R/H/RBI/extra-base hits/BB/HBP, and IP/H/R/ER/BB/SO/NP entries were transcribed and checked against team totals in data/2018_05_09_asu_san_diego_screenshot_evidence.json. Individual batter SO were reconstructed by user from play-by-play and sum to ASU 7 and USD 11, equal opponent pitching totals. Original USD university gamebook PDF URL remains linked but bytes not separately inspected; team inning line and exact batting-order substitution position should be separately checked at import.",
@@ -670,7 +670,12 @@
         "arizona_state_batters": 7,
         "san_diego_batters": 11
       },
-      "data_evidence_path": "data/2018_05_09_asu_san_diego_screenshot_evidence.json"
+      "data_evidence_path": "data/2018_05_09_asu_san_diego_screenshot_evidence.json",
+      "asu_source_reconstruction_confirmed": "2026-10-18",
+      "source_scoreboard_screenshot_file_id": "file_0000000045a081f5b589dd3a9489b970",
+      "source_full_boxscore_reconciliation_status": "original_scoreboard_plus_official_university_batting_pitching_and_owner_explicit_five_substitutions_verified",
+      "source_batting_order_attendee_verified": "2026-10-18",
+      "source_saved_evidence_file": "data/2018_05_09_asu_san_diego_screenshot_evidence.json"
     }
   ],
   "pending_gamebook_cases": [],

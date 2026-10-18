@@ -25,7 +25,7 @@ def parse(game,item,global_keys,response):
     first=text.splitlines()
     month,day=int(game["date"][5:7]),int(game["date"][8:10])
     months=["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
-    if not re.search(r"\b"+months[month]+r"\s+"+str(day)+r",\s*2024\b",text,re.I):
+    if not re.search(r"\b"+months[month]+r"\s+"+str(day)+r",\s*"+str(game["date"][:4])+r"\b",text,re.I):
         raise ValueError("PDF printed game date differs from attendance record")
     # Named schools must both occur in the original document heading.
     header=" ".join(first[:6])
@@ -136,7 +136,7 @@ def parse(game,item,global_keys,response):
             raise ValueError(t+" pitcher runs do not equal opponent runs")
         if sum(x[2][0] for x in pitching[t])!=innings[teams[1-i]]["hits"]:
             raise ValueError(t+" pitcher hits do not equal opponent hits")
-        if sum(x[1] for x in pitching[t])!=(27 if i==1 else 24):
+        if sum(x[1] for x in pitching[t])!=source_summary[6]:
             raise ValueError(t+" original pitching outs do not reconcile with nine-inning final")
         lineups.append({"team":t,"nine_starting_slots":True,
                         "batter_rows":len(hitter),"pitcher_rows":len(pitching[t]),

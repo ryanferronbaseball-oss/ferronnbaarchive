@@ -58,7 +58,7 @@
   ],
   "same_day_identical_matchup_pairs_in_full_sheet": 13,
   "metadata_status": "full_444_game_attendance_directory_plus_may_2026_official_sources",
-  "warning": "2024–2026 four-year NCAA/four-year verified source-gamebooks only; all junior colleges excluded from backfill. 2023 and earlier, merge/publication unapproved.",
+  "warning": "2019 41/41 exact official player-gamebook sources located, 2020 11/11 official full gamebook sources with one original March 10 versus official March 11 date discrepancy held. 2021 32/32 sources matched (April 24 first-game user-confirmed); 2022 62/62 sources with one date discrepancy; 2023 47/47 sources with three date discrepancies. 2019–2023 player-level boxscores NOT imported. 2024–26 213 verified gamebooks and 6316 player-game stats remain unchanged. JUCO excluded. 2018 and earlier, merge or publication not authorized.",
   "resolved_matchups": [
     {
       "attendance_game_number": 443,
@@ -415,6 +415,30 @@
       "status": "OFFICIAL_FULL_GAMEBOOK_SOURCES_32_OF_32_MATCHED_PLAYER_IMPORT_PENDING",
       "source_queue": "data/2021_official_source_queue.json",
       "audit_file": "data/2021_monthly_progress_audit.json"
+    },
+    "season_2020": {
+      "approved": true,
+      "attended": 11,
+      "eligible": 11,
+      "full_gamebooks_verified_urls": 11,
+      "official_date_matches": 10,
+      "official_date_reconciliation_required": 1,
+      "full_player_boxscores_imported": 0,
+      "status": "FULL_OFFICIAL_SOURCE_QUEUE_READY_EXCEPT_MARCH_10_DATE_REVIEW",
+      "source_queue": "data/2020_official_source_queue.json",
+      "audit_file": "data/2020_monthly_progress_audit.json"
+    },
+    "season_2019": {
+      "approved": true,
+      "attended": 41,
+      "eligible": 41,
+      "full_gamebooks_verified_urls": 41,
+      "official_date_matches": 41,
+      "official_date_reconciliation_required": 0,
+      "full_player_boxscores_imported": 0,
+      "status": "FULL_OFFICIAL_SOURCE_QUEUE_READY_FOR_PLAYER_IMPORT",
+      "source_queue": "data/2019_official_source_queue.json",
+      "audit_file": "data/2019_monthly_progress_audit.json"
     }
   },
   "early_2026_source_research": "data/2026_february_january_official_source_queue.json",
@@ -494,5 +518,25 @@
     "source_queue": "data/2021_official_source_queue.json",
     "monthly_audit": "data/2021_monthly_progress_audit.json",
     "user_confirmed_csub_2021_04_24": "Game 1, 12:03 PM, CSUB 3–UCSD 2; source ID 8289. Do not import Game 2 ID 8292 as attended."
+  },
+  "2020_backfill": {
+    "approved": true,
+    "original_attendance_games": 11,
+    "official_full_gamebooks_located": 11,
+    "official_date_matches": 10,
+    "date_review_pending": 1,
+    "player_boxscore_imported": 0,
+    "source_queue": "data/2020_official_source_queue.json",
+    "monthly_audit": "data/2020_monthly_progress_audit.json"
+  },
+  "2019_backfill": {
+    "approved": true,
+    "original_attendance_games": 41,
+    "official_full_gamebooks_located": 41,
+    "official_date_matches": 41,
+    "date_review_pending": 0,
+    "player_boxscore_imported": 0,
+    "source_queue": "data/2019_official_source_queue.json",
+    "monthly_audit": "data/2019_monthly_progress_audit.json"
   }
 }

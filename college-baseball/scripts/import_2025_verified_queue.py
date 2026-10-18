@@ -259,7 +259,15 @@ def main():
     if verified or metadata_updates:
         write("games.json",games);write("player_stats.json",players)
         write("import_report.json",report)
-    write("2025_source_import_audit.json",audit)
+    # Preserve the last authoritative PASS audit on idempotent re-runs;
+    # otherwise a zero-new-game run rewrites passed_games to [] and
+    # needlessly races other GitHub Actions writers to this draft branch.
+    existing_audit=read("2025_source_import_audit.json")
+    if (verified or metadata_updates or
+        existing_audit.get("status")!=audit["status"] or
+        existing_audit.get("verified_2025_total")!=num_2025 or
+        existing_audit.get("pending_review",[])!=pending):
+        write("2025_source_import_audit.json",audit)
     print(json.dumps({"status":audit["status"],"new":len(verified),
                       "2025_verified":num_2025,"pending_review":len(pending)},indent=2),flush=True)
 

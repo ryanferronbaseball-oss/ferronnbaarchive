@@ -58,7 +58,7 @@
   ],
   "same_day_identical_matchup_pairs_in_full_sheet": 13,
   "metadata_status": "full_444_game_attendance_directory_plus_may_2026_official_sources",
-  "warning": "2024–2026 four-year NCAA/four-year verified source-gamebooks only; all junior colleges excluded from backfill. 2023 and earlier, merge/publication unapproved.",
+  "warning": "2017 1/1 official full gamebook source matched; 2018 30/30 source dates/teams/results matched with 26/30 direct official full player gamebook URLs, four direct gamebooks pending (Mar 13 SDSU, Apr 14 SMC, Apr 17 Fullerton, May 9 ASU). 2019–2023 full gamebooks found as earlier audits; 2017–2023 player-level boxscores NOT imported. 2024–2026 verified 213 university full gamebooks/6316 player rows unchanged. JUCO backfill excluded. 2016 and earlier and merge/publication not approved.",
   "resolved_matchups": [
     {
       "attendance_game_number": 443,
@@ -440,6 +440,30 @@
       "status": "FULL_OFFICIAL_SOURCE_QUEUE_READY_FOR_PLAYER_IMPORT",
       "source_queue": "data/2019_official_source_queue.json",
       "audit_file": "data/2019_monthly_progress_audit.json"
+    },
+    "season_2018": {
+      "approved": true,
+      "attended": 30,
+      "eligible": 30,
+      "official_identity_scores_matched": 30,
+      "full_gamebook_direct_sources_located": 26,
+      "full_player_gamebook_url_pending": 4,
+      "full_player_boxscores_imported": 0,
+      "status": "SCORE_IDENTITY_COMPLETE_26_OF_30_FULL_GAMEBOOK_SOURCES_LINKED_NO_STATS_IMPORTED",
+      "source_queue": "data/2018_official_source_queue.json",
+      "audit_file": "data/2018_monthly_progress_audit.json"
+    },
+    "season_2017": {
+      "approved": true,
+      "attended": 1,
+      "eligible": 1,
+      "official_identity_scores_matched": 1,
+      "full_gamebook_direct_sources_located": 1,
+      "full_player_gamebook_url_pending": 0,
+      "full_player_boxscores_imported": 0,
+      "status": "ONE_OF_ONE_FULL_UNIVERSITY_GAMEBOOK_IDENTIFIED_NO_STATS_IMPORTED",
+      "source_queue": "data/2017_official_source_queue.json",
+      "audit_file": "data/2017_monthly_progress_audit.json"
     }
   },
   "early_2026_source_research": "data/2026_february_january_official_source_queue.json",
@@ -540,5 +564,25 @@
     "player_boxscore_imported": 0,
     "source_queue": "data/2019_official_source_queue.json",
     "monthly_audit": "data/2019_monthly_progress_audit.json"
+  },
+  "2018_backfill": {
+    "approved": true,
+    "original_attendance_games": 30,
+    "official_game_identifications": 30,
+    "full_player_gamebook_direct_sources": 26,
+    "full_player_gamebook_link_not_yet_found": 4,
+    "player_boxscore_imported": 0,
+    "source_queue": "data/2018_official_source_queue.json",
+    "monthly_audit": "data/2018_monthly_progress_audit.json"
+  },
+  "2017_backfill": {
+    "approved": true,
+    "original_attendance_games": 1,
+    "official_game_identifications": 1,
+    "full_player_gamebook_direct_sources": 1,
+    "full_player_gamebook_link_not_yet_found": 0,
+    "player_boxscore_imported": 0,
+    "source_queue": "data/2017_official_source_queue.json",
+    "monthly_audit": "data/2017_monthly_progress_audit.json"
   }
 }

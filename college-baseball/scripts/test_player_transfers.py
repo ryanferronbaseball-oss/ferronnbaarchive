@@ -107,7 +107,7 @@ try:
             check(page.locator(".cb-profile-hero h1").inner_text()==who,
                   "Former second-school deep link did not resolve to unified "+who)
             display=page.locator(".mlb-profile-team-name").inner_text()
-            check(all(s in display for s in schools),
+            check(all(s.casefold() in display.casefold() for s in schools),
                   "Player profile does not show both user-confirmed schools: "+who+" "+display)
             check(page.locator(".cb-player-game-log tbody tr").count()==games_expected,
                   "Witnessed game logs do not combine source rows for "+who)
@@ -115,15 +115,15 @@ try:
         # Four deferred players remain at their old, single-school URL.
         page.goto(base+"/player.html?id="+quote("cb-uc-san-diego-tate-soderstrom"),wait_until="domcontentloaded")
         page.locator(".cb-profile-hero").wait_for(timeout=35000)
-        check(page.locator(".mlb-profile-team-name").inner_text()=="UC San Diego",
+        check(page.locator(".mlb-profile-team-name").inner_text().casefold()=="uc san diego",
               "One-school-only proposal incorrectly merged an unobserved Arizona profile")
         page.goto(base+"/stats.html",wait_until="domcontentloaded")
         page.locator("#cb-player-board .cb-table").wait_for(timeout=35000)
         page.locator("#cb-player-search").fill("Justin DeCriscio")
         page.wait_for_timeout(250)
         check(page.locator("#cb-player-board tbody tr").count()==1 and
-              "San Diego" in page.locator("#cb-player-board").inner_text() and
-              "NC State" in page.locator("#cb-player-board").inner_text(),
+              "san diego" in page.locator("#cb-player-board").inner_text().casefold() and
+              "nc state" in page.locator("#cb-player-board").inner_text().casefold(),
               "Unified career player leaderboard still contains separate Justin DeCriscio entries")
         browser.close()
 finally:

@@ -34,7 +34,15 @@ def scorer_labels(page, rows, gid):
             raise ValueError(f"Source does not state official {label}: {gid}")
         name=match.group(1).strip(" ,;.")
         pitchers=[r for r in rows if "pitching" in r]
-        matches=[r for r in pitchers if name_variants(r["player"]) & name_variants(name)]
+        # Older university gamebook uses "Beauchamp, Cam (3-0)" while
+        # parsed roster stores "Cam Beauchamp". Match reversed scorer
+        # notation only through an independently unique pitcher identity.
+        order_normalized=name
+        if "," in name:
+            last,first=name.split(",",1)
+            if last.strip() and first.strip():
+                order_normalized=first.strip()+" "+last.strip()
+        matches=[r for r in pitchers if name_variants(r["player"]) & name_variants(order_normalized)]
         if not matches:
             # Some old Sidearm gamebooks show just the pitcher's last name.
             surname_matches=[r for r in pitchers if r["player"].split()[-1].casefold()==name.casefold()]

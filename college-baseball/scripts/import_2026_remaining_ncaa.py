@@ -112,7 +112,14 @@ def _source_batters(table, valid_players, team, game_id):
             # not constitute a tenth batting-order spot.
             position_prefix = source_pos.group(0).strip().lower()
             source_name = source_name[source_pos.end():].strip()
-            if position_prefix == "p":
+            # 2023 Apr 21 USD starter Austin Smith was the starting DH
+            # AND winning pitcher, with 3 AB / 2 H / 2 RBI in the official
+            # batting table. Don't discard his real seventh batting slot
+            # merely because source printed his fielding position as P.
+            genuine_batting_pitcher = (game_id=="cb-2023-04-21-san-francisco-san-diego-att0208"
+                and team=="San Diego" and "smith" in source_name.lower()
+                and "austin" in source_name.lower())
+            if position_prefix == "p" and not genuine_batting_pitcher:
                 continue
         name = normalize_name(source_name, pos)
         key = slug(name)

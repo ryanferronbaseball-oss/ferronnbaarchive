@@ -1,5 +1,12 @@
 # College Baseball — Month-by-Month Review Gates
 
+## October 17, 2026 — 2021 full-season authorized, official gamebook discovery partially complete (current)
+
+User approved working backward to 2021 after the 2022 official-source queue. Of the **32 original 2021 attendance rows**, **27** official player-level gamebooks have confirmed direct links; **0 full player gamebooks imported**. **Five** entries are held for April 24 CSUB–UCSD one-worksheet-row versus two-game doubleheader identification, April 2 USD–Fullerton full player-gamebook lookup, and three BYU–USD games with official game-score pages but unavailable player tables. March 13 UC Riverside doubleheader has separate Game 1 (USD 7–0, 1 PM) and Game 2 (USD 9–0, 4:10 PM) direct player gamebooks. March 30 Vanguard NAIA is eligible; exclude JUCO only. See [2021 source queue](data/2021_official_source_queue.json) and [2021 audit](data/2021_monthly_progress_audit.json).
+
+**Authorized college seasons:** 2021 through 2026, excluding JUCO. 2020 and earlier not yet authorized; no merge, publish, deploy. Older status notes are a chronology, superseded by these latest review gates.
+
+
 ## October 17, 2026 — 2022 full-season authorized; official source discovery COMPLETE (current)
 
 User approved working backward through 2022 after 2023 source discovery. **62/62 original four-year games have university full gamebook links** (February 7, March 16, April 16, May 17, June 6); **0/62 full player scorebook imports have been completed**. 61 official source dates match the attendance list and one April 21 Grand Canyon–Stanford worksheet date conflicts with the official April 22 matchup. The user confirmation for that date/match is pending. April 9 USD–Portland and May 21 Gonzaga–USD contain genuine doubleheaders, distinct official source IDs and game times. Preserve 444 original worksheet IDs and all prior verified 2024–26 gamebooks. See [2022 source queue](data/2022_official_source_queue.json) and [2022 month/exception audit](data/2022_monthly_progress_audit.json).

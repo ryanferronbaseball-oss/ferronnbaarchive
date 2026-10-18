@@ -58,7 +58,7 @@
   ],
   "same_day_identical_matchup_pairs_in_full_sheet": 13,
   "metadata_status": "full_444_game_attendance_directory_plus_may_2026_official_sources",
-  "warning": "2024–2026 four-year NCAA/four-year verified source-gamebooks only; all junior colleges excluded from backfill. 2023 and earlier, merge/publication unapproved.",
+  "warning": "2017–2018 all attended games have complete university gamebook references and player batting/pitching table evidence; 2018 May 9 ASU–USD player tables transcribed from user screenshots with hitter K reconstructed by user from play-by-play (ASU 7, USD 11) and recorded in evidence JSON. The university PDF 14288 is linked but not separately parsed. 2017–2023 player stats have NOT been imported. 2024–2026 verified 213 university gamebooks and 6316 player-game rows remain unchanged, original attendance 444 preserved, JUCO excluded, no merge/publication.",
   "resolved_matchups": [
     {
       "attendance_game_number": 443,
@@ -449,10 +449,12 @@
       "full_gamebook_direct_sources_located": 30,
       "full_player_gamebook_url_pending": 0,
       "full_player_boxscores_imported": 0,
-      "status": "30_OFFICIAL_GAMEBOOK_LINKS_FOUND_29_CONTENT_VERIFIED_ASU_PDF_PENDING_PLAYER_TABLE_READ",
+      "status": "2018_FULL_TABLE_EVIDENCE_ALL_30_GAMES_USER_BATTER_SO_RECONCILED_IMPORT_PENDING",
       "source_queue": "data/2018_official_source_queue.json",
       "audit_file": "data/2018_monthly_progress_audit.json",
-      "player_table_content_pending_verification": 1
+      "player_table_content_pending_verification": 1,
+      "full_player_batting_pitching_evidence_sources_verified": 30,
+      "batter_strikeout_reconciled_from_user_play_by_play": 1
     },
     "season_2017": {
       "approved": true,
@@ -575,8 +577,9 @@
     "player_boxscore_imported": 0,
     "source_queue": "data/2018_official_source_queue.json",
     "monthly_audit": "data/2018_monthly_progress_audit.json",
-    "full_player_gamebook_contents_verified": 29,
-    "full_player_gamebook_content_verification_pending": 1
+    "full_player_gamebook_contents_verified": 30,
+    "full_player_gamebook_content_verification_pending": 0,
+    "asu_2018_05_09_user_batter_so_reconstructed": true
   },
   "2017_backfill": {
     "approved": true,

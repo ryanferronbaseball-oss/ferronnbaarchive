@@ -58,7 +58,7 @@
   ],
   "same_day_identical_matchup_pairs_in_full_sheet": 13,
   "metadata_status": "full_444_game_attendance_directory_plus_may_2026_official_sources",
-  "warning": "2024–2026 four-year NCAA/four-year verified source-gamebooks only; all junior colleges excluded from backfill. 2023 and earlier, merge/publication unapproved.",
+  "warning": "2023 four-year university original sources found 47/47; no 2023 player-game stats imported yet. 2024–2026 verified 213/213, 6,316 player-game lines preserved. JUCO excluded from historical stats. 2022 and earlier and any merge/publication unapproved.",
   "resolved_matchups": [
     {
       "attendance_game_number": 443,
@@ -330,10 +330,10 @@
     },
     "season_2025": {
       "approved": true,
-      "status": "in_progress",
       "attended": 74,
-      "verified_full_gamebooks": 23,
-      "pending": 51,
+      "verified_full_gamebooks": 74,
+      "pending": 0,
+      "status": "PASS",
       "source_queue": "data/2025_official_source_queue.json",
       "coverage_audit": "data/2025_monthly_progress_audit.json",
       "source_audit": "data/2025_source_import_audit.json"
@@ -386,10 +386,18 @@
       "approved": true,
       "complete": 71,
       "eligible": 71,
-      "status": "in_progress"
+      "status": "PASS"
     },
     "season_2023": {
-      "approved": false
+      "approved": true,
+      "attended": 47,
+      "eligible": 47,
+      "official_gamebooks_located": 47,
+      "verified_full_gamebooks": 0,
+      "source_date_discrepancies": 3,
+      "status": "source_discovery_complete_player_import_pending",
+      "source_queue": "data/2023_official_source_queue.json",
+      "audit_file": "data/2023_monthly_progress_audit.json"
     }
   },
   "early_2026_source_research": "data/2026_february_january_official_source_queue.json",
@@ -437,5 +445,16 @@
     "source_queue_size": 71,
     "linked_source_exceptions": 0,
     "remaining_attendance_only": 0
+  },
+  "2023_backfill": {
+    "authorized": true,
+    "original_attendance_games": 47,
+    "official_full_gamebook_source_links": 47,
+    "official_boxscores_player_rows_imported": 0,
+    "source_date_reconciliation_pending": 3,
+    "tie_7_inning_special_case": 1,
+    "source_queue": "data/2023_official_source_queue.json",
+    "month_audit": "data/2023_monthly_progress_audit.json",
+    "stage": "source_discovery_completed_no_player_stat_backfill_yet"
   }
 }

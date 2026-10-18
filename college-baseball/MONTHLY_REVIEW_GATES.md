@@ -1,11 +1,10 @@
 # College Baseball — Month-by-Month Review Gates
 
-## October 17, 2026 — 2018 and 2017 authorized; historical source discovery checkpoint (latest)
+## October 17, 2026 — 2018 and 2017 authorized, ONLY May 9 ASU gamebook not verified (latest)
 
-User explicitly approved **2018 and 2017**. Original archive 2018 **30** attended games (Feb 11, Mar 8, Apr 6, May 5), all with official date/team/score identities; **27** have direct university full batting/pitching player-gamebook links, and **three** have official score/recap identity but no exact full player gamebook linked: March 13 SDSU at USD, April 14 Saint Mary's at USD, May 9 Arizona State at USD. April 17 Fullerton at USD source found in the university player-level gamebook ID 1417. **2017 one attended game**, April 20 BYU 3 USD 6, has complete official university gamebook. **No player boxscore rows yet imported for 2017 or 2018 (0/31).** Two 2018 doubleheaders confirmed separately: Cincinnati Feb 18 G1 Cincinnati 7–USD 4 (10 innings) and G2 USD 4–Cincinnati 3; Indiana Mar 3 G1 USD 6–Indiana 5 and G2 Indiana 6–USD 5. Retain both original IDs for each. Do not equate verified result-only source with full player-level stat readiness. See [2018 source queue](data/2018_official_source_queue.json), [2018 monthly audit](data/2018_monthly_progress_audit.json), [2017 source queue](data/2017_official_source_queue.json) and [2017 monthly audit](data/2017_monthly_progress_audit.json).
+User approved research for 2017–2018. **2017: 1/1** official complete player-gamebook. **2018: 30/30** original attendance game date/team/score identities matched, **29/30** official university-hosted full batting/pitching player-gamebooks sourced. The March 13 SDSU at USD university full PDF gamebook and April 14 Saint Mary's at USD university full PDF gamebook were supplied by user and content-verified; March 13 direct university file is `https://usdtoreros.com/documents/2018/5/10/14105__m_basebl_2017_18_misc_non_event__USDvsSDSUboxMar13.pdf`. **Only May 9, 2018 ASU 12 at USD 7** remains without retrievable individual-player batting/pitching tables; ASU official `https://thesundevils.com/boxscore/466` confirms game identity and result but does not expose full player rows, so source remains pending. Both 2018 USD doubleheaders (Cincinnati Feb 18, Indiana March 3) have two uniquely mapped original attendance IDs. No 2017/2018 player stats actually imported yet. [2018 full source queue](data/2018_official_source_queue.json), [2018 monthly audit](data/2018_monthly_progress_audit.json), [2017 source queue](data/2017_official_source_queue.json).
 
-**Authorized seasons:** 2017–2026 non-JUCO. 2016 and earlier not authorized, no publication/merge. Prior review gates represent historical checkpoints only.
-
+**Authorized years:** 2017–2026 four-year non-JUCO. No merging or publication without user permission.
 
 ## October 17, 2026 — 2020 and 2019 official game identity matching complete (latest checkpoint)
 

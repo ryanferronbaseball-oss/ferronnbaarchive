@@ -1,8 +1,8 @@
 # College Baseball — Month-by-Month Review Gates
 
-## October 17, 2026 — 2021 full-season authorized, official gamebook discovery partially complete (current)
+## October 17, 2026 — 2021 full-season authorized, 31/32 official gamebook identities matched (current)
 
-User approved working backward to 2021 after the 2022 official-source queue. Of the **32 original 2021 attendance rows**, **27** official player-level gamebooks have confirmed direct links; **0 full player gamebooks imported**. **Five** entries are held for April 24 CSUB–UCSD one-worksheet-row versus two-game doubleheader identification, April 2 USD–Fullerton full player-gamebook lookup, and three BYU–USD games with official game-score pages but unavailable player tables. March 13 UC Riverside doubleheader has separate Game 1 (USD 7–0, 1 PM) and Game 2 (USD 9–0, 4:10 PM) direct player gamebooks. March 30 Vanguard NAIA is eligible; exclude JUCO only. See [2021 source queue](data/2021_official_source_queue.json) and [2021 audit](data/2021_monthly_progress_audit.json).
+User approved working backward to 2021 after the 2022 official-source queue. Of the **32 original 2021 attendance rows**, **31 official full player-level gamebooks have matched direct links**, including April 2 USD at Cal State Fullerton (ID 12125) and May 6–8 BYU at USD (IDs 12085–12087); **0/32 player-gamebooks actually imported**. April 24 CSU Bakersfield–UCSD has two full separate official gamebooks, but one original attendance row: **12:03 PM CSUB 3–UCSD 2** or **3:32 PM CSUB 1–UCSD 7**. User must clarify which game they attended before import. March 13 UC Riverside doubleheader distinctly identified as Game 1 (USD 7–0, 1 PM) and Game 2 (USD 9–0, 4:10 PM). March 30 Vanguard University (NAIA) is eligible (JUCO only excluded). See [2021 source queue](data/2021_official_source_queue.json) and [2021 monthly audit](data/2021_monthly_progress_audit.json).
 
 **Authorized college seasons:** 2021 through 2026, excluding JUCO. 2020 and earlier not yet authorized; no merge, publish, deploy. Older status notes are a chronology, superseded by these latest review gates.
 

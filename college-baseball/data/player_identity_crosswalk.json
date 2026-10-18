@@ -5,8 +5,8 @@
   "original_attendance_ids_preserved": 444,
   "original_player_game_rows_preserved": 13183,
   "requested_person_merges": 96,
-  "activated_person_merges": 91,
-  "pending_person_merges": 5,
+  "activated_person_merges": 92,
+  "pending_person_merges": 4,
   "merge_policy": "Only listed pair of exact normalized person names and school-specific original source player IDs; all other IDs remain separate",
   "merges": [
     {
@@ -445,6 +445,29 @@
         }
       ],
       "source_rows": 6
+    },
+    {
+      "name": "Gavin Kilen",
+      "canonical_id": "cb-louisville-gavin-kilen",
+      "source_player_ids": [
+        "cb-louisville-gavin-kilen",
+        "cb-tennessee-gavin-kilen"
+      ],
+      "schools": [
+        "Louisville",
+        "Tennessee"
+      ],
+      "pairs": [
+        {
+          "team": "Louisville",
+          "source_player_id": "cb-louisville-gavin-kilen"
+        },
+        {
+          "team": "Tennessee",
+          "source_player_id": "cb-tennessee-gavin-kilen"
+        }
+      ],
+      "source_rows": 7
     },
     {
       "name": "Chris McHugh",

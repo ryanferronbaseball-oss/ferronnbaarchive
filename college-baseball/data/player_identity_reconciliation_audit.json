@@ -4,10 +4,10 @@
   "original_game_count": 444,
   "original_player_game_rows": 13183,
   "eligible_gamebooks": 437,
-  "ready_merges": 91,
-  "not_ready": 5,
+  "ready_merges": 92,
+  "not_ready": 4,
   "pending_breakdown": {
-    "one_or_both_schools_not_in_attended_game_player_rows": 5
+    "one_or_both_schools_not_in_attended_game_player_rows": 4
   },
   "preview": [
     {
@@ -784,7 +784,7 @@
     },
     {
       "sequence": 20,
-      "name": "Gaven Kilen",
+      "name": "Gavin Kilen",
       "approved_schools": [
         "Louisville",
         "Tennessee"
@@ -792,23 +792,35 @@
       "source_sides": [
         {
           "normalized_school": "louisville",
-          "observed_teams": [],
-          "source_player_ids": [],
-          "source_player_rows": 0,
-          "games": 0,
-          "seasons": []
+          "observed_teams": [
+            "Louisville"
+          ],
+          "source_player_ids": [
+            "cb-louisville-gavin-kilen"
+          ],
+          "source_player_rows": 3,
+          "games": 3,
+          "seasons": [
+            2024
+          ]
         },
         {
           "normalized_school": "tennessee",
-          "observed_teams": [],
-          "source_player_ids": [],
-          "source_player_rows": 0,
-          "games": 0,
-          "seasons": []
+          "observed_teams": [
+            "Tennessee"
+          ],
+          "source_player_ids": [
+            "cb-tennessee-gavin-kilen"
+          ],
+          "source_player_rows": 4,
+          "games": 4,
+          "seasons": [
+            2025
+          ]
         }
       ],
-      "status": "one_or_both_schools_not_in_attended_game_player_rows",
-      "note": null
+      "status": "merge_ready",
+      "note": "User listed Gaven Kilen. Official MLB bio and transactions confirm the spelling Gavin Kilen, Louisville then Tennessee, in 2024–2025; source https://www.mlb.com/player/gavin-kilen-702264. Match only this exact corrected name and the two user-identified schools."
     },
     {
       "sequence": 21,
@@ -3841,5 +3853,5 @@
     }
   ],
   "source_id_unique_count_before": 5544,
-  "source_id_unique_count_after_simulated": 5453
+  "source_id_unique_count_after_simulated": 5452
 }

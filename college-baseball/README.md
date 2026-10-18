@@ -1,8 +1,16 @@
 # College Baseball · Courtside Archive
 
-**Status (October 17, 2026):** 444 original attendance entries remain in unpublished **draft PR #10**. **2024 COMPLETE: 71/71; 2025 COMPLETE: 74/74; 2026 COMPLETE: 68/68 eligible NCAA/four-year games verified.** Seven 2026 junior-college games remain excluded from statistical backfill. Across 2024–26, **213 official full gamebooks and 6,316 player-game records** are verified. Nothing has been merged or published.
+**Status (October 17, 2026):** 444 original attendance records on unpublished **draft PR #10**. **2023 official-source discovery COMPLETE: 47/47 original university gamebooks located (0 player-stat gamebooks imported; three date conflicts and one seven-inning tie need special handling).** **2024 71/71, 2025 74/74, 2026 68/68 NCAA/four-year games fully imported** = 213 full gamebooks and 6,316 verified player-game records. Seven 2026 JUCO games excluded. No merge or publication.
 
 The site lives under \`/college-baseball/\`, with independent college baseball stats and verified inter-level player IDs only. It shares the exact MLB archive design system for Inter fonts, navigation, scoreboards, box-score layout, cards, responsive tables, and bat-order number column.
+
+## 2023 backfill — SOURCES LOCATED, STAT IMPORT PENDING (authorized October 17, 2026)
+
+**47/47 original attendance games now have linked original university full gamebooks, but 0/47 have completed player-level imports.** May: **10/10** source links, April: **18/18**, March: **10/10**, February **9/9**. Exactly **44** original attendance date entries match the official gamebook date; **three February tournament dates** (UNLV–UC Irvine and UNLV–San Diego originally entered February 25, UC Irvine–San Diego originally entered February 26) need reconciliation to official **February 26/27** dates. On February 20, Nebraska–San Diego finished **16–16 in 7 innings**: the importer must handle a tie without manufacturing a winner or nine innings. The spelling *Cal State Northrdige* in the February 21 original row maps to official CSUN.
+
+- [2023 complete official source queue](data/2023_official_source_queue.json) — one official gamebook link per game, original stable attendance IDs, and flagged discrepancies.
+- [2023 month-by-month checkpoint](data/2023_monthly_progress_audit.json) — source discovery complete; player-stat import not yet complete.
+- Work may proceed newest-to-oldest through all of 2023 without new monthly approval. **Neither 2022-and-earlier backfill nor publishing/merging has been approved.** Do not alter the existing 213 officially verified 2024–26 gamebooks or their 6,316 player-game rows. All 444 attendance IDs remain intact, and JUCO games remain excluded from statistical backfill.
 
 ## 2024 backfill — COMPLETE (authorized October 17, 2026)
 
@@ -15,7 +23,7 @@ The site lives under \`/college-baseball/\`, with independent college baseball s
 
 **User-confirmed identity and date corrections:** Siena–UNC Asheville March 2 **Game 1 only**; Vanderbilt–South Carolina March 23 **both games** (the sheet's two attendance rows are mapped chronologically as Game 1/2; their original entry order was not separately confirmed); Florida State–Virginia on **May 24**, not May 23. University records confirm Southern Miss–Georgia State **April 14**, not the original April 15. Duke–Indiana **February 16** remains authoritative despite the archived boxscore metadata showing February 15. All original 444 worksheet attendance IDs were preserved, including legacy IDs where a user-approved date changed.
 
-**Release boundary:** Full 2024 import is complete in the unpublished branch. The five remaining 2025 gamebooks have now passed strict source imports; no 2023 or earlier imports or merge/publication are authorized.
+**Historical release note (superseded for 2023 on October 17, 2026):** The 2024 import is complete, 2025 is complete, and the current approval extends to 2023 only. No 2022-or-earlier backfill or publication is authorized.
 
 ## 2025 backfill — COMPLETE (authorized October 17, 2026)
 
@@ -27,7 +35,7 @@ The site lives under \`/college-baseball/\`, with independent college baseball s
 - May 23: Texas A&M 3 vs LSU 4 — LSU archival StatCrew original HTML gamebook.
 - June 1: Dallas Baptist 6 vs Little Rock 8 — official Conference USA gamebook, bypassing original university certificate error.
 
-**Verified totals:** 2024 71/71, 2025 74/74, 2026 68/68 eligible four-year gamebooks, with **213 official full gamebooks and 6,316 player-game records**. Original 444 attendance entries retained. All JUCO games excluded from stat backfill; 2023 and earlier, release/merge/publication not authorized.
+**Verified totals:** 2024 71/71, 2025 74/74, 2026 68/68 eligible four-year gamebooks, with **213 official full gamebooks and 6,316 player-game records**. Original 444 attendance entries retained. All JUCO games excluded from stat backfill; 2023 sourcing and import now approved; 2022-and-earlier and release/merge/publication remain unauthorized.
 
 ## 2026 NCAA season — final PASS (October 17, 2026)
 

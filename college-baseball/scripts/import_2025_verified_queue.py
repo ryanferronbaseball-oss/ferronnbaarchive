@@ -104,6 +104,18 @@ def main():
             # Source dates are visibly checked, not inferred from a relative URL.
             resp=session.get(url,timeout=40)
             resp.raise_for_status()
+            if gid=="cb-2025-05-22-texas-a-m-auburn-att0357":
+                # Source discovery only; don't assume a schedule row is a gamebook.
+                import re as _re
+                body=resp.text
+                for token in ("May 22", "May. 22", "2025-05-22", "Texas A&M"):
+                    print("AUBURN-LINK-DISCOVERY",token,
+                        [(m.start(),repr(body[max(0,m.start()-180):m.start()+550])) for m in list(_re.finditer(_re.escape(token),body,_re.I))[:3]],
+                        flush=True)
+                for anchor in BeautifulSoup(body,"html.parser").find_all("a",href=True):
+                    if "pdf" in anchor.get("href","").lower() and "Texas" in anchor.parent.get_text(" ",strip=True):
+                        print("AUBURN-PDF-CANDIDATE",anchor.get("href"),flush=True)
+
             soup=BeautifulSoup(resp.text,"html.parser")
             src=soup.get_text(" ",strip=True)
             yy,mm,dd=(int(n) for n in game["date"].split("-"))

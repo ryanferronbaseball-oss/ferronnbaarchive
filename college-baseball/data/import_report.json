@@ -58,7 +58,7 @@
   ],
   "same_day_identical_matchup_pairs_in_full_sheet": 13,
   "metadata_status": "full_444_game_attendance_directory_plus_may_2026_official_sources",
-  "warning": "2023 four-year university original sources found 47/47; no 2023 player-game stats imported yet. 2024–2026 verified 213/213, 6,316 player-game lines preserved. JUCO excluded from historical stats. 2022 and earlier and any merge/publication unapproved.",
+  "warning": "2024–2026 four-year NCAA/four-year verified source-gamebooks only; all junior colleges excluded from backfill. 2023 and earlier, merge/publication unapproved.",
   "resolved_matchups": [
     {
       "attendance_game_number": 443,
@@ -386,18 +386,10 @@
       "approved": true,
       "complete": 71,
       "eligible": 71,
-      "status": "PASS"
+      "status": "in_progress"
     },
     "season_2023": {
-      "approved": true,
-      "attended": 47,
-      "eligible": 47,
-      "official_gamebooks_located": 47,
-      "verified_full_gamebooks": 0,
-      "source_date_discrepancies": 3,
-      "status": "source_discovery_complete_player_import_pending",
-      "source_queue": "data/2023_official_source_queue.json",
-      "audit_file": "data/2023_monthly_progress_audit.json"
+      "approved": false
     }
   },
   "early_2026_source_research": "data/2026_february_january_official_source_queue.json",

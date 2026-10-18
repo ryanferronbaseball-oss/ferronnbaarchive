@@ -58,7 +58,7 @@
   ],
   "same_day_identical_matchup_pairs_in_full_sheet": 13,
   "metadata_status": "full_444_game_attendance_directory_plus_may_2026_official_sources",
-  "warning": "2024–2026 four-year NCAA/four-year verified source-gamebooks only; all junior colleges excluded from backfill. 2023 and earlier, merge/publication unapproved.",
+  "warning": "2017 complete official full gamebook 1/1; 2018: 30/30 game identities matched, 29/30 exact university full player-gamebook sources linked and content confirmed, only May 9 ASU at USD game (12–7) has ASU official boxscore /466 summary but individual batting/pitching tables not retrievable. 2019–2023 full gamebooks sourced subject to their recorded identity holds. 2017–2023 player stat imports NOT performed. 2024–2026 verified gamebooks 213, individual player-game rows 6316 preserved; total original attended game IDs 444 unchanged. JUCO excluded. No merge/publication.",
   "resolved_matchups": [
     {
       "attendance_game_number": 443,
@@ -446,10 +446,10 @@
       "attended": 30,
       "eligible": 30,
       "official_identity_scores_matched": 30,
-      "full_gamebook_direct_sources_located": 27,
-      "full_player_gamebook_url_pending": 3,
+      "full_gamebook_direct_sources_located": 29,
+      "full_player_gamebook_url_pending": 1,
       "full_player_boxscores_imported": 0,
-      "status": "SCORE_IDENTITY_COMPLETE_27_OF_30_FULL_GAMEBOOK_SOURCES_LINKED_NO_STATS_IMPORTED",
+      "status": "29_OF_30_FULL_PLAYER_SOURCES_LINKED_ONLY_MAY_9_ASU_PENDING",
       "source_queue": "data/2018_official_source_queue.json",
       "audit_file": "data/2018_monthly_progress_audit.json"
     },
@@ -569,8 +569,8 @@
     "approved": true,
     "original_attendance_games": 30,
     "official_game_identifications": 30,
-    "full_player_gamebook_direct_sources": 27,
-    "full_player_gamebook_link_not_yet_found": 3,
+    "full_player_gamebook_direct_sources": 29,
+    "full_player_gamebook_link_not_yet_found": 1,
     "player_boxscore_imported": 0,
     "source_queue": "data/2018_official_source_queue.json",
     "monthly_audit": "data/2018_monthly_progress_audit.json"

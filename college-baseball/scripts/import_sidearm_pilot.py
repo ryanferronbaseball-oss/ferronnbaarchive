@@ -95,7 +95,9 @@ def batting_rows(table_s,table_d,game_id,team,url):
             print("DEBUG CELLS",[{"text":td.get_text(" ",strip=True)[:60],
                 "span":td.get("colspan","1")} for td in tr.find_all(["td","th"],recursive=False)][:28],flush=True)
         raise ValueError(f"{game_id} {team}: simple/detail row count mismatch {len(short)} vs {len(detail)}")
-    if game_id=="cb-2024-03-08-notre-dame-virginia-tech-att0251":
+    if game_id in ("cb-2024-03-08-notre-dame-virginia-tech-att0251",
+                    "cb-2025-04-13-stanford-clemson-att0333",
+                    "cb-2025-06-01-dallas-baptist-little-rock-att0368"):
         # The original ACC composite batting table sorts Tech's players by AB,
         # while the batting summary keeps the ACTUAL nine-person lineup.
         # Match complete source player names before validating every stat and

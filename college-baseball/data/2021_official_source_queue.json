@@ -1,11 +1,11 @@
 {
   "season": 2021,
   "authorization": "2021 source discovery user approved October 17, 2026. Preserve all 444 original attendance records and prior years. Do not work on 2020 and before without authorization.",
-  "status": "OFFICIAL_FULL_GAMEBOOK_DISCOVERY_COMPLETE_EXCEPT_AMBIGUOUS_ATTENDANCE_IDENTITY",
+  "status": "OFFICIAL_FULL_GAMEBOOK_DISCOVERY_COMPLETE_32_OF_32_PLAYER_IMPORT_PENDING",
   "original_attendance_games": 32,
   "progress": {
-    "full_gamebooks_verified_source_url": 31,
-    "ambiguous_one_of_two_complete_source_books": 1,
+    "full_gamebooks_verified_source_url": 32,
+    "ambiguous_one_of_two_complete_source_books": 0,
     "official_game_record_but_full_stat_content_unreadable": 0,
     "recap_only_full_source_pending": 0,
     "stats_imported": 0
@@ -22,7 +22,7 @@
     "https://ucsdtritons.com/sports/baseball/stats/2021",
     "https://fullertontitans.com/sports/baseball/schedule/2021"
   ],
-  "record_integrity": "31 university player-level gamebooks individually associated with original attendance IDs. April 24 CSUB–UCSD doubleheader has both official full gamebooks, but worksheet has only one row, so attended game identity cannot be chosen without user confirming first or second game. Source discovery is not actual player import; zero gamebooks imported. Prior season attendance IDs and data remain unchanged.",
+  "record_integrity": "All 32 original 2021 attendance records now map uniquely to official complete player gamebooks; for April 24 CSUB–UCSD the user confirmed 12:03 PM Game 1 (source 8289) only and 3:32 PM Game 2 (source 8292) is retained as an expressly unselected source. Preserve all original attendance IDs and rows. Zero 2021 player-gamebooks have been imported yet.",
   "source_queue": [
     {
       "game_id": "cb-2021-02-19-san-diego-san-diego-state-att0084",
@@ -534,31 +534,33 @@
       "source_scope": "2021 four-year college baseball; exclude JUCO; includes Vanguard University (NAIA)",
       "player_stat_import_status": "not_imported",
       "official_date": "2021-04-24",
-      "official_score": null,
-      "official_full_gamebook_candidates": [
-        {
-          "first_pitch": "12:03 pm",
-          "official_score": [
-            3,
-            2
-          ],
-          "official_full_gamebook_url": "https://ucsdtritons.com/sports/baseball/stats/2021/csu-bakersfield/boxscore/8289",
-          "name": "CSU Bakersfield 3, UC San Diego 2"
-        },
-        {
-          "first_pitch": "3:32 pm",
-          "official_score": [
-            1,
-            7
-          ],
-          "official_full_gamebook_url": "https://ucsdtritons.com/sports/baseball/stats/2021/csu-bakersfield/boxscore/8292",
-          "name": "CSU Bakersfield 1, UC San Diego 7"
-        }
+      "official_score": [
+        3,
+        2
       ],
-      "source_type": "official_ucsd_two_separate_full_gamebook_candidates",
-      "source_status": "two_official_full_gamebooks_but_attended_game_identity_unknown",
-      "needs_user_confirmation": true,
-      "note": "April 24 is a doubleheader but original attendance worksheet has only ONE entry. Do not assign either candidate until user specifies which game they attended."
+      "source_type": "official_ucsd_university_full_player_gamebook",
+      "source_status": "official_full_gamebook_verified_source_url",
+      "needs_user_confirmation": false,
+      "note": "User specifically confirmed April 24, 2021 GAME 1 at 12:03 PM. Game 1 is CSUB 3–UCSD 2, official full boxscore ID 8289. Separate 3:32 PM Game 2 official ID 8292 is NOT the attended game and must NOT be imported as attended. Player-stat import remains pending.",
+      "official_full_gamebook_url": "https://ucsdtritons.com/sports/baseball/stats/2021/csu-bakersfield/boxscore/8289",
+      "source_sidearm_game_id": 8289,
+      "official_doubleheader_game": 1,
+      "official_first_pitch": "12:03 pm",
+      "attendance_identity_resolution": "explicit_user_confirmation_2026-10-17",
+      "attendance_confirmation": "User confirmed attendance at first game (12:03 p.m.) of April 24, 2021 CSU Bakersfield at UC San Diego doubleheader, score CSU Bakersfield 3–UC San Diego 2.",
+      "unattended_doubleheader_game": {
+        "official_doubleheader_game": 2,
+        "first_pitch": "3:32 pm",
+        "official_score": [
+          1,
+          7
+        ],
+        "official_full_gamebook_url": "https://ucsdtritons.com/sports/baseball/stats/2021/csu-bakersfield/boxscore/8292",
+        "source_sidearm_game_id": 8292,
+        "attendance_status": "not_attended_per_user_first_game_only",
+        "import_to_personal_attendance_archive": false
+      },
+      "source_validation": "Official UC San Diego player-level gamebook; 12:03 p.m., 3–2 score, and Game 1 identity verified by explicit user confirmation 2026-10-17."
     },
     {
       "game_id": "cb-2021-04-30-pepperdine-san-diego-att0110",

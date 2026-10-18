@@ -6,9 +6,9 @@
   "season_span": "2017–2026 after user-confirmed 2024 typo correction",
   "staged_games": 444,
   "official_score_and_inning_lines_matched": 213,
-  "official_player_boxscores_imported": 428,
-  "player_stat_rows": 12909,
-  "unique_player_ids": 5450,
+  "official_player_boxscores_imported": 430,
+  "player_stat_rows": 12969,
+  "unique_player_ids": 5461,
   "scores_supplied_by_user": 0,
   "source_docs": "Official Auburn, Arkansas, LSU, Florida, Mississippi State, Tennessee and Texas athletics/conference box scores and university recaps",
   "source_worksheet_rows": [
@@ -137,10 +137,10 @@
   "remaining_attendance_games_not_yet_imported": 0,
   "validation": "May 2026: all 27 official player books mapped to matching attendance games; scores, R/H/E, pitching/team opposing R and H, batting lineup starters checked; new imports have complete official per-inning lines. CI browser test separately tracked.",
   "all_attendance_entries_staged": 444,
-  "attendance_only_pending_official_verification": 16,
+  "attendance_only_pending_official_verification": 14,
   "source": "User workbook; 444 original rows, two user-corrected entries.",
   "official_scoreboard_player_lines_pending": 0,
-  "latest_verified_batch": "Historical official gamebooks 2022 (development branch)",
+  "latest_verified_batch": "Historical official gamebooks 2023 (development branch)",
   "latest_verified_batch_games": [
     {
       "worksheet_row": 432,
@@ -390,7 +390,7 @@
     },
     "season_2023": {
       "approved": false,
-      "full_player_boxscores_imported": 44,
+      "full_player_boxscores_imported": 46,
       "status": "in_progress"
     },
     "season_2022": {
@@ -522,16 +522,16 @@
     "authorized": true,
     "original_attendance_games": 47,
     "official_full_gamebook_source_links": 47,
-    "official_boxscores_player_rows_imported": 44,
+    "official_boxscores_player_rows_imported": 46,
     "source_date_reconciliation_pending": 3,
     "tie_7_inning_special_case": 1,
     "source_queue": "data/2023_official_source_queue.json",
     "month_audit": "data/2023_monthly_progress_audit.json",
     "stage": "historical_verified_player_stat_backfill_in_progress",
     "approved": true,
-    "player_boxscore_imported": 44,
-    "new_verified_gamebooks_last_run": 1,
-    "last_run_pending_review": 3
+    "player_boxscore_imported": 46,
+    "new_verified_gamebooks_last_run": 2,
+    "last_run_pending_review": 1
   },
   "2022_backfill": {
     "approved": true,

@@ -4,10 +4,10 @@
   "limit": 0,
   "status": "PARTIAL_REVIEW_REQUIRED",
   "original_attendance_games": 444,
-  "verified_this_run": 0,
-  "verified_in_season": 44,
-  "verified_overall": 428,
-  "player_game_rows_total": 12909,
+  "verified_this_run": 2,
+  "verified_in_season": 46,
+  "verified_overall": 430,
+  "player_game_rows_total": 12969,
   "already_verified": [
     "cb-2023-05-24-saint-mary-s-san-diego-att0224",
     "cb-2023-05-24-gonzaga-santa-clara-att0223",
@@ -54,22 +54,237 @@
     "cb-2023-02-18-nebraska-san-diego-att0179",
     "cb-2023-02-17-nebraska-san-diego-att0178"
   ],
-  "completed": [],
-  "pending_review": [
+  "completed": [
     {
       "game_id": "cb-2023-02-26-uc-irvine-san-diego-att0186",
+      "player_rows": 32,
       "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/uc-irvine/boxscore/13896",
-      "reason": "Unreconciled date conflict"
-    },
-    {
-      "game_id": "cb-2023-02-25-unlv-san-diego-att0185",
-      "source_url": "https://unlvrebels.com/sports/baseball/stats/2023/university-of-san-diego/boxscore/15889",
-      "reason": "Unreconciled date conflict"
+      "win": "Cooper Robinson",
+      "loss": "Morgan Lunceford",
+      "source_audit": {
+        "game_id": "cb-2023-02-26-uc-irvine-san-diego-att0186",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2023/uc-irvine/boxscore/13896",
+        "http_code": 200,
+        "source_bytes": 686570,
+        "source_sha256": "806ccda740e181ef851b04567205276b43c4bbb0f518cc833610a493432fe104",
+        "teams": [
+          {
+            "name": "UC Irvine",
+            "batters": 11,
+            "pitchers": 4,
+            "AB": 32,
+            "R": 14,
+            "H": 11,
+            "RBI": 13,
+            "BB": 9,
+            "SO": 7,
+            "pitching_outs": 27,
+            "pitching_runs": 6,
+            "pitching_hits": 10
+          },
+          {
+            "name": "San Diego",
+            "batters": 10,
+            "pitchers": 7,
+            "AB": 37,
+            "R": 6,
+            "H": 10,
+            "RBI": 6,
+            "BB": 3,
+            "SO": 7,
+            "pitching_outs": 27,
+            "pitching_runs": 14,
+            "pitching_hits": 11
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 32,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 14,
+            "hits": 11,
+            "errors": 0,
+            "innings": [
+              0,
+              1,
+              1,
+              0,
+              0,
+              6,
+              6,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 6,
+            "hits": 10,
+            "errors": 0,
+            "innings": [
+              2,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              2,
+              1
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "UC Irvine",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 4,
+            "substitutes": 2
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 10,
+            "pitcher_rows": 7,
+            "substitutes": 1
+          }
+        ],
+        "official_decisions": {
+          "win": "Robinson, Cooper",
+          "loss": "Lunceford, Morgan",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        },
+        "date_correction": {
+          "original_worksheet_date": "2023-02-26",
+          "verified_official_date": "2023-02-27",
+          "user_confirmed": "2026-10-17"
+        }
+      }
     },
     {
       "game_id": "cb-2023-02-25-unlv-uc-irvine-att0184",
+      "player_rows": 28,
       "source_url": "https://unlvrebels.com/sports/baseball/stats/2023/uc-irvine/boxscore/15890",
-      "reason": "Unreconciled date conflict"
+      "win": "Josh Sharman",
+      "loss": "Riley Kelly",
+      "source_audit": {
+        "game_id": "cb-2023-02-25-unlv-uc-irvine-att0184",
+        "source": "https://unlvrebels.com/sports/baseball/stats/2023/uc-irvine/boxscore/15890",
+        "http_code": 200,
+        "source_bytes": 1320088,
+        "source_sha256": "ba879de8229c5bea9fb6184cfa430a503c1695e903a2522cac5bba8df142e5dd",
+        "teams": [
+          {
+            "name": "UNLV",
+            "batters": 9,
+            "pitchers": 3,
+            "AB": 42,
+            "R": 10,
+            "H": 17,
+            "RBI": 9,
+            "BB": 3,
+            "SO": 4,
+            "pitching_outs": 27,
+            "pitching_runs": 4,
+            "pitching_hits": 10
+          },
+          {
+            "name": "UC irvine",
+            "batters": 10,
+            "pitchers": 6,
+            "AB": 36,
+            "R": 4,
+            "H": 10,
+            "RBI": 4,
+            "BB": 4,
+            "SO": 11,
+            "pitching_outs": 27,
+            "pitching_runs": 10,
+            "pitching_hits": 17
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 28,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 10,
+            "hits": 17,
+            "errors": 0,
+            "innings": [
+              5,
+              0,
+              0,
+              0,
+              2,
+              1,
+              0,
+              0,
+              2
+            ]
+          },
+          {
+            "runs": 4,
+            "hits": 10,
+            "errors": 2,
+            "innings": [
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              3,
+              0,
+              0
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "UNLV",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 3,
+            "substitutes": 0
+          },
+          {
+            "team": "UC irvine",
+            "nine_starting_slots": true,
+            "batter_rows": 10,
+            "pitcher_rows": 6,
+            "substitutes": 1
+          }
+        ],
+        "official_decisions": {
+          "win": "Sharman, Josh",
+          "loss": "Kelly, Riley",
+          "save": "Sellinger, Jack"
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        },
+        "date_correction": {
+          "original_worksheet_date": "2023-02-25",
+          "verified_official_date": "2023-02-26",
+          "user_confirmed": "2026-10-17"
+        }
+      }
+    }
+  ],
+  "pending_review": [
+    {
+      "game_id": "cb-2023-02-25-unlv-san-diego-att0185",
+      "source_url": "https://unlvrebels.com/sports/baseball/stats/2023/university-of-san-diego/boxscore/15889",
+      "reason": "UNLV: source batting order resolved to 10 starting slots, not 9"
     }
   ],
   "release": "Draft branch only; never auto-publish or merge"

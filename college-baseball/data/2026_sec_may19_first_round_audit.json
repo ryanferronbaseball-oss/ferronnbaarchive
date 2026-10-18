@@ -1,0 +1,123 @@
+{
+  "status": "PASS",
+  "verified_games": 2,
+  "player_rows_added": 60,
+  "games": [
+    {
+      "game_id": "cb-2026-05-19-missouri-ole-miss-att0425",
+      "source": "https://olemisssports.com/sports/baseball/stats/2026/missouri/boxscore/14713",
+      "http_code": 200,
+      "source_bytes": 1767176,
+      "source_sha256": "14c4cebcf31f0e778c4948007d877d3e6fe177bfe189137e9fd92242fc79ea43",
+      "teams": [
+        {
+          "name": "Missouri",
+          "batters": 11,
+          "pitchers": 3,
+          "AB": 40,
+          "R": 10,
+          "H": 14,
+          "RBI": 9,
+          "BB": 7,
+          "SO": 10,
+          "pitching_outs": 27,
+          "pitching_runs": 8,
+          "pitching_hits": 9
+        },
+        {
+          "name": "Ole Miss",
+          "batters": 9,
+          "pitchers": 6,
+          "AB": 36,
+          "R": 8,
+          "H": 9,
+          "RBI": 8,
+          "BB": 4,
+          "SO": 14,
+          "pitching_outs": 27,
+          "pitching_runs": 10,
+          "pitching_hits": 14
+        }
+      ],
+      "source_warnings": [],
+      "player_rows": 29,
+      "status": "PASS",
+      "batting_lineups_source_verified": true,
+      "lineup_substitutions": {
+        "Isaiah Frost": {
+          "team": "Missouri",
+          "spot": 3,
+          "sub_index": 1
+        },
+        "Eric Maisonet": {
+          "team": "Missouri",
+          "spot": 3,
+          "sub_index": 2
+        }
+      }
+    },
+    {
+      "game_id": "cb-2026-05-19-lsu-oklahoma-att0428",
+      "source": "https://soonersports.com/sports/baseball/stats/2026/lsu/boxscore/15789",
+      "http_code": 200,
+      "source_bytes": 1247224,
+      "source_sha256": "680e88d06aa5bd4e05e6d654a587de9d8b6f4e4e6a6d63f128032903d1dc00cf",
+      "teams": [
+        {
+          "name": "LSU",
+          "batters": 11,
+          "pitchers": 3,
+          "AB": 37,
+          "R": 6,
+          "H": 11,
+          "RBI": 3,
+          "BB": 8,
+          "SO": 12,
+          "pitching_outs": 27,
+          "pitching_runs": 2,
+          "pitching_hits": 6
+        },
+        {
+          "name": "Oklahoma",
+          "batters": 11,
+          "pitchers": 6,
+          "AB": 34,
+          "R": 2,
+          "H": 6,
+          "RBI": 1,
+          "BB": 3,
+          "SO": 13,
+          "pitching_outs": 27,
+          "pitching_runs": 6,
+          "pitching_hits": 11
+        }
+      ],
+      "source_warnings": [],
+      "player_rows": 31,
+      "status": "PASS",
+      "batting_lineups_source_verified": true,
+      "lineup_substitutions": {
+        "Brayden Simpson": {
+          "team": "LSU",
+          "spot": 2,
+          "sub_index": 1
+        },
+        "William Patrick": {
+          "team": "LSU",
+          "spot": 7,
+          "sub_index": 1
+        },
+        "Nolan Stevens": {
+          "team": "Oklahoma",
+          "spot": 8,
+          "sub_index": 1
+        },
+        "Drew Dickerson": {
+          "team": "Oklahoma",
+          "spot": 9,
+          "sub_index": 1
+        }
+      }
+    }
+  ]
+}

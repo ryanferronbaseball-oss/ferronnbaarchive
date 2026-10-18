@@ -1,0 +1,110 @@
+name: College Baseball Historical Player Stats Import
+on:
+  workflow_dispatch:
+    inputs:
+      season:
+        description: "Historical year to import (2017–2023)"
+        required: true
+        type: choice
+        options:
+          - "2023"
+          - "2022"
+          - "2021"
+          - "2020"
+          - "2019"
+          - "2018"
+          - "2017"
+        default: "2023"
+      month:
+        description: "Month (2–6) or blank for all eligible games in the year"
+        required: false
+        default: ""
+        type: string
+  push:
+    branches:
+      - feature/college-baseball-foundation
+    paths:
+      - "college-baseball/scripts/import_historical_verified_queue.py"
+      - ".github/workflows/college-baseball-historical-import.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: college-baseball-historical-import-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  import:
+    if: github.ref == 'refs/heads/feature/college-baseball-foundation'
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: feature/college-baseball-foundation
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install strict scorebook parser dependencies
+        run: python -m pip install --disable-pip-version-check requests beautifulsoup4 pypdf
+      - name: Check historical parser Python syntax
+        run: python -m py_compile college-baseball/scripts/import_historical_verified_queue.py
+      - name: Reconcile official Nebraska-USD seven-inning draw pitching no-decisions
+        run: python college-baseball/scripts/reconcile_2023_tie_decisions.py
+      - name: Import selected official historical gamebooks, source-gated
+        shell: bash
+        env:
+          HISTORICAL_SEASON: ${{ github.event_name == 'workflow_dispatch' && inputs.season || '2023' }}
+          HISTORICAL_MONTH: ${{ github.event_name == 'workflow_dispatch' && inputs.month || '5' }}
+          IS_MANUAL: ${{ github.event_name == 'workflow_dispatch' }}
+        run: |
+          if [ "${IS_MANUAL}" = "true" ]; then
+            if [ -z "${HISTORICAL_MONTH}" ]; then
+              python college-baseball/scripts/import_historical_verified_queue.py --season "${HISTORICAL_SEASON}"
+            else
+              python college-baseball/scripts/import_historical_verified_queue.py --season "${HISTORICAL_SEASON}" --month "${HISTORICAL_MONTH}"
+            fi
+          else
+            # Source-verified historical queue, newest to oldest. This never merges.
+            for SEASON in 2018 2022 2023; do
+              python college-baseball/scripts/import_historical_verified_queue.py --season "${SEASON}"
+            done
+          fi
+      - name: Verify protected attendance and player ID invariants
+        run: |
+          python - <<'PY'
+          import json, pathlib
+          d=pathlib.Path('college-baseball/data')
+          games=json.loads((d/'games.json').read_text())
+          players=json.loads((d/'player_stats.json').read_text())
+          assert len(games)==444==len({g['id'] for g in games})
+          assert len(players)==len({(r['game_id'],r['player_id']) for r in players})
+          assert all(g.get('verification')!='official_boxscore_verified' or
+              len([p for p in players if p['game_id']==g['id']])>=18 for g in games)
+          for year, count in ((2024,71),(2025,74),(2026,68)):
+              assert sum(g['season']==year and g['verification']=='official_boxscore_verified' for g in games)==count
+          print('PASS: original attendance protected; 2024–2026 213 full gamebooks preserved')
+          PY
+      - name: Commit verified player rows to unpublished draft branch only
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add college-baseball/data/games.json college-baseball/data/player_stats.json college-baseball/data/import_report.json
+          git add college-baseball/data/*_historical_stat_import_audit.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Import verified historical NCAA player box scores into draft site data"
+            git push origin HEAD:feature/college-baseball-foundation
+          else
+            echo "No verified changes to commit"
+          fi
+      - name: Preserve per-game review audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: historical-player-import-review
+          path: college-baseball/data/*_historical_stat_import_audit.json
+          if-no-files-found: warn

@@ -1,0 +1,121 @@
+#!/usr/bin/env python3
+"""Expand a lossless 444-row source file into verified + attendance-only games."""
+import base64, csv, io, json, re, sys, unicodedata, zlib
+from collections import Counter
+from pathlib import Path
+
+ROOT=Path(__file__).resolve().parents[1]
+DATA=ROOT/"data"
+COLS=["date","away","home","ballpark","city","state","neutral_site","game_number","game_type","postseason_round","away_score","home_score","source_url","notes"]
+ALIASES={"North Carolina State":"NC State","Central Florida":"UCF"}
+# Exclude NJCAA/junior-college games from box-score backfill; retain source attendance rows.
+JUNIOR_COLLEGE_TEAMS={"Walters State","Pellissippi State","USC Salkehatchie","Wabash Valley"}
+
+
+def clean(s):
+    t=unicodedata.normalize("NFKD",s).encode("ascii","ignore").decode().lower()
+    return re.sub(r"(^-+|-+$)","",re.sub(r"-+","-",re.sub(r"[^a-z0-9]+","-",t)))
+
+def load_source():
+    raw=base64.b64decode((DATA/"attendance_source_444.deflate.b64").read_text().strip(),validate=True)
+    rows=json.loads(zlib.decompress(raw))
+    assert len(rows)==444 and all(len(x)==len(COLS) for x in rows),"invalid attendance source"
+    return [dict(zip(COLS,x)) for x in rows]
+
+def build(source,prior):
+    # Preserve independently verified gamebooks, source-matched scoreboards and
+    # user-confirmed attendance identities when rebuilding from the old workbook.
+    # Otherwise the source-only rows and confirmed doubleheader game numbers get wiped.
+    retained={g["source_worksheet_row"]:g for g in prior if g.get("verification") in (
+        "official_boxscore_verified","official_scoreboard_verified","source_matched"
+    )}
+    assert len(retained)>=6 and len(retained)==len(set(retained)),"missing imported game records"
+    approved_date_corrections={287:("2024-05-23","2024-05-24")}
+    doubles=Counter((x["date"],x["away"].lower(),x["home"].lower()) for x in source)
+    result=[]
+    for number,row in enumerate(source,1):
+        sheetrow=number+1
+        date=row["date"]
+        away=ALIASES.get(row["away"],row["away"])
+        home=ALIASES.get(row["home"],row["home"])
+        assert re.fullmatch(r"\d{4}-\d{2}-\d{2}",date) and away!=home
+        if sheetrow in retained:
+            g=retained[sheetrow]
+            # The original workbook date was explicitly corrected by the user.
+            date_is_approved=(
+                sheetrow in approved_date_corrections
+                and approved_date_corrections[sheetrow]==(date,g["date"])
+            )
+            assert (g["date"]==date or date_is_approved) and (
+                g["away"],g["home"]
+            )==(away,home),"source/verified game identity conflict"
+            result.append(g)
+            continue
+        a,b=row["away_score"],row["home_score"]
+        assert bool(a)==bool(b),"partial scores in attendance source"
+        neutral={"yes":True,"no":False,"":None}.get(row["neutral_site"].lower())
+        g={
+            "id":f"cb-{date}-{clean(away)}-{clean(home)}-att{number:04d}",
+            "attendance_id":f"cb-attended-{number:04d}",
+            "source_worksheet_row":sheetrow,
+            "date":date,"season":int(date[:4]),"away":away,"home":home,
+            "ballpark":row["ballpark"] or None,"city":row["city"] or None,
+            "state":row["state"] or None,"neutral_site":neutral,
+            "game_number":None,"game_type":row["game_type"] or None,
+            "postseason_round":row["postseason_round"] or None,
+            "away_score":int(a) if a else None,"home_score":int(b) if b else None,
+            "score_provenance":"user_attendance_log" if a else None,
+            "source_url":row["source_url"] or None,
+            "verification":"attendance_only","official_boxscore_status":"not_imported",
+            "possible_same_day_doubleheader":doubles[(date,row["away"].lower(),row["home"].lower())]>1,
+            "provisional_worksheet_game_sequence":int(row["game_number"]) if row["game_number"] else None,
+            "notes":row["notes"] or None
+        }
+        if away in JUNIOR_COLLEGE_TEAMS or home in JUNIOR_COLLEGE_TEAMS:
+            g["boxscore_backfill_excluded"]=True
+            g["boxscore_backfill_exclusion_reason"]="junior_college"
+        result.append(g)
+    assert len(result)==len({g["id"] for g in result})==444
+    assert len({g["source_worksheet_row"] for g in result})==444
+    assert (result[265]["date"],result[265]["away"],result[265]["home"])==("2024-03-30","South Alabama","Old Dominion")
+    assert (result[-1]["away"],result[-1]["home"])==("UCF","Auburn")
+    return result
+
+def main():
+    source=load_source()
+    previous=json.loads((DATA/"games.json").read_text())
+    entries=build(source,previous)
+    official=sum(g["verification"]=="official_boxscore_verified" for g in entries)
+    scores=sum(g["verification"]=="official_scoreboard_verified" for g in entries)
+    matched=sum(g["verification"]=="source_matched" for g in entries)
+    pending=sum(g["verification"]=="attendance_only" for g in entries)
+    assert official+scores+matched+pending==444
+    print("Attendance",len(entries),"Official gamebooks",official,"Scores only",scores,
+          "Source matched",matched,"Attendance only",pending)
+    if "--validate-only" in sys.argv:return
+    (DATA/"games.json").write_text(json.dumps(entries,indent=2,ensure_ascii=False)+"\n")
+    with (DATA/"attendance_master_444.csv").open("w",newline="",encoding="utf-8") as h:
+        fields=["attendance_id","source_worksheet_row"]+COLS
+        writer=csv.DictWriter(h,fieldnames=fields)
+        writer.writeheader()
+        for i,r in enumerate(source,1):
+            writer.writerow({"attendance_id":f"cb-attended-{i:04d}","source_worksheet_row":i+1,**r})
+    rp=DATA/"import_report.json"
+    report=json.loads(rp.read_text())
+    report.update({
+        "status":"all_attendance_staged_source_verification_in_progress",
+        "staged_games":444,"all_attendance_entries_staged":444,
+        "unimported_worksheet_rows":0,
+        "attendance_only_pending_official_verification":pending,
+        "official_score_and_inning_lines_matched":sum(
+            bool(g.get("innings")) and g.get("away_score") is not None
+            and g.get("home_score") is not None for g in entries
+        ),
+        "official_scoreboard_player_lines_pending":scores+matched,
+        "source_matched_player_lines_pending":matched,
+        "official_player_boxscores_imported":official,
+        "source":"User workbook; 444 original rows, two user-corrected entries.",
+        "warning":"All 444 attendance matchups listed. Full player statistics count only after complete gamebook verification; source-matched records are still pending. User-confirmed 2024 doubleheader identities and 2024-05-24 Florida State–Virginia date are preserved."
+    })
+    rp.write_text(json.dumps(report,indent=2,ensure_ascii=False)+"\n")
+if __name__=="__main__":main()

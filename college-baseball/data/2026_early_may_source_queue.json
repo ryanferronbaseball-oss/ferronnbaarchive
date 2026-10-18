@@ -1,0 +1,57 @@
+{
+  "status": "official_sources_identified_player_import_pending",
+  "scope": "Newest-to-oldest 2026 continuation after 22 complete gamebooks",
+  "verification_policy": "Source discovery is not a complete imported box score. Preserve attendance_only until individual player batting, pitching, starting lineup, substitutes, and team totals reconcile with source.",
+  "games": [
+    {
+      "worksheet_row": 422,
+      "date": "2026-05-10",
+      "away": "Little Rock",
+      "home": "UT Martin",
+      "official_source": "https://utmsports.com/sports/baseball/stats/2026/little-rock/boxscore/13609",
+      "away_score": 16,
+      "home_score": 14,
+      "venue": "Skyhawk Field",
+      "next_step": "transcribe and reconcile individual official player lines"
+    },
+    {
+      "worksheet_row": 421,
+      "date": "2026-05-05",
+      "away": "Louisville",
+      "home": "Vanderbilt",
+      "official_source": "https://gocards.com/sports/baseball/stats/2026/vanderbilt/boxscore/26027",
+      "away_score": 6,
+      "home_score": 12,
+      "venue": "Hawkins Field",
+      "next_step": "transcribe and reconcile individual official player lines"
+    },
+    {
+      "worksheet_row": 420,
+      "date": "2026-05-03",
+      "away": "Tennessee",
+      "home": "Kentucky",
+      "official_source": "https://utsports.com/sports/baseball/stats/2026/kentucky/boxscore/29752",
+      "next_step": "verify full official score and reconcile player lines"
+    },
+    {
+      "worksheet_row": 419,
+      "date": "2026-05-01",
+      "away": "Tennessee",
+      "home": "Kentucky",
+      "official_source": "https://utsports.com/sports/baseball/stats/2026/kentucky/boxscore/29750",
+      "away_score": 2,
+      "home_score": 9,
+      "venue": "Kentucky Proud Park",
+      "next_step": "transcribe and reconcile individual official player lines"
+    }
+  ],
+  "unresolved": [
+    {
+      "worksheet_row": 425,
+      "date": "2026-05-16",
+      "away": "Arkansas",
+      "home": "Kentucky",
+      "next_step": "find exact 2026 gamebook and verify attendance game identity"
+    }
+  ]
+}

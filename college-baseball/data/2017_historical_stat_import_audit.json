@@ -1,0 +1,87 @@
+{
+  "season": 2017,
+  "month": null,
+  "limit": 0,
+  "status": "PASS",
+  "original_attendance_games": 444,
+  "verified_this_run": 1,
+  "verified_in_season": 1,
+  "verified_overall": 413,
+  "player_game_rows_total": 12431,
+  "already_verified": [],
+  "completed": [
+    {
+      "game_id": "cb-2017-04-20-byu-san-diego-att0001",
+      "player_rows": 31,
+      "source_url": "https://usandiego_ftp.sidearmsports.com/custompages/sports/m-basebl/stats/2016-201736.html",
+      "win": "Nick Sprengel",
+      "loss": "Maverik BUFFO",
+      "source_audit": {
+        "status": "PASS",
+        "game_id": "cb-2017-04-20-byu-san-diego-att0001",
+        "source": "https://usandiego_ftp.sidearmsports.com/custompages/sports/m-basebl/stats/2016-201736.html",
+        "source_bytes": 12433,
+        "source_sha256": "8e8bc09591a61ac25726ddf818d445a4658635d3354ffaa34cb0ce7302fe8b7e",
+        "player_rows": 31,
+        "scoreboard": [
+          {
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              3
+            ],
+            "runs": 3,
+            "hits": 8,
+            "errors": 1
+          },
+          {
+            "innings": [
+              1,
+              0,
+              4,
+              0,
+              0,
+              0,
+              1,
+              0,
+              null
+            ],
+            "runs": 6,
+            "hits": 9,
+            "errors": 0
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "BYU",
+            "nine_starting_slots": true,
+            "batter_rows": 14,
+            "pitcher_rows": 3,
+            "substitutes": 5
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 3,
+            "substitutes": 2
+          }
+        ],
+        "pitching_decisions": {
+          "win": "Nick Sprengel",
+          "loss": "Maverik BUFFO",
+          "save": "Troy Conyers"
+        },
+        "source_type": "official_university_statcrew_html"
+      }
+    }
+  ],
+  "pending_review": [],
+  "release": "Draft branch only; never auto-publish or merge"
+}

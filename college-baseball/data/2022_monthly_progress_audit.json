@@ -1,0 +1,104 @@
+{
+  "status": "SOURCE_DISCOVERY_COMPLETE_PLAYER_STATS_IMPORT_PENDING",
+  "season": 2022,
+  "approved": true,
+  "original_attendance_entries": 444,
+  "original_2022_attendance_games": 62,
+  "non_JUCO_eligible_games": 62,
+  "official_university_boxscore_urls": 62,
+  "original_date_matches_official_source": 61,
+  "original_date_discrepancies": 1,
+  "full_verified_player_boxscore_imports": 0,
+  "existing_verified_2024_to_2026_gamebooks_preserved": 213,
+  "existing_player_game_records_preserved": 6316,
+  "months": [
+    {
+      "month": "2022-06",
+      "attended": 6,
+      "official_boxscore_urls": 6,
+      "player_gamebooks_imported": 0,
+      "date_conflicts": 0
+    },
+    {
+      "month": "2022-05",
+      "attended": 17,
+      "official_boxscore_urls": 17,
+      "player_gamebooks_imported": 0,
+      "date_conflicts": 0
+    },
+    {
+      "month": "2022-04",
+      "attended": 16,
+      "official_boxscore_urls": 16,
+      "player_gamebooks_imported": 0,
+      "date_conflicts": 1
+    },
+    {
+      "month": "2022-03",
+      "attended": 16,
+      "official_boxscore_urls": 16,
+      "player_gamebooks_imported": 0,
+      "date_conflicts": 0
+    },
+    {
+      "month": "2022-02",
+      "attended": 7,
+      "official_boxscore_urls": 7,
+      "player_gamebooks_imported": 0,
+      "date_conflicts": 0
+    }
+  ],
+  "special_cases": [
+    {
+      "type": "official_date_discrepancy",
+      "game_id": "cb-2022-04-21-grand-canyon-stanford-att0151",
+      "worksheet_date": "2022-04-21",
+      "official_boxscore_date": "2022-04-22",
+      "official_match": "Grand Canyon 1, Stanford 11 at Tony Gwynn Stadium",
+      "conflicting_same_date_fixture": "Grand Canyon at San Diego State on April 21, 2022",
+      "action": "Do not rewrite attendance date or infer game identity until user confirms what they attended."
+    },
+    {
+      "type": "same_day_doubleheader",
+      "original_attendance_rows": [
+        145,
+        146
+      ],
+      "game_ids": [
+        "cb-2022-04-09-san-diego-portland-att0144",
+        "cb-2022-04-09-san-diego-portland-att0145"
+      ],
+      "game_1": "USD 8–6 Portland; 1:00 PM; USD source boxscore ID 12466",
+      "game_2": "USD 4–5 Portland; 4:30 PM; USD source boxscore ID 12467",
+      "action": "Two separate original attendance rows; preserve source order and keep association provisional until user confirms attended both and original row order."
+    },
+    {
+      "type": "same_day_doubleheader",
+      "original_attendance_rows": [
+        163,
+        164
+      ],
+      "game_ids": [
+        "cb-2022-05-21-gonzaga-san-diego-att0162",
+        "cb-2022-05-21-gonzaga-san-diego-att0163"
+      ],
+      "game_1": "Gonzaga 4, USD 7; 1:00 PM; USD source boxscore ID 12487",
+      "game_2": "Gonzaga 1, USD 0; 4:45 PM; USD source boxscore ID 12486",
+      "action": "Official source IDs reverse chronological; do not confuse game 1 and game 2."
+    },
+    {
+      "type": "tournament_neutral",
+      "event": "WCC Tournament May 25–28",
+      "location": "Banner Island Park, Stockton, California",
+      "action": "Use official designated away/home and preserve game IDs; no inference from schedule display alone."
+    },
+    {
+      "type": "tournament_neutral",
+      "event": "NCAA Corvallis Regional June 3–5",
+      "location": "Goss Stadium, Corvallis, Oregon",
+      "action": "All six gamebooks located, including ten-inning June 3 NMSU–OSU and both June 5 games; don't merge results with June 6 rematch user did not list."
+    }
+  ],
+  "verified_source_manifest": "data/2022_official_source_queue.json",
+  "release_boundary": "unpublished draft, 2021 and earlier not authorized; source discovery is not player-stat verification"
+}

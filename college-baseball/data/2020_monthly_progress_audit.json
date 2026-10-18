@@ -1,0 +1,54 @@
+{
+  "season": 2020,
+  "status": "SOURCE_DISCOVERY_11_OF_11_GAME_IDENTITIES_USER_CONFIRMED_PLAYER_IMPORT_0_OF_11",
+  "review_date": "2026-10-17",
+  "original_attendance_file": "data/games.json",
+  "original_archive_game_count": 444,
+  "previous_2024_2026_verified_full_gamebooks_preserved": 213,
+  "previous_2024_2026_player_rows_preserved": 6316,
+  "scope": "Keep original attended game IDs, original row numbers and attendance dates immutable. Exclude JUCO. Source discovery != player stats imported. 2018 and earlier, publication, merge not authorized.",
+  "original_attendance_games": 11,
+  "official_full_player_gamebooks_located": 11,
+  "fully_date_matched": 10,
+  "original_date_reconciliation_required": 0,
+  "complete_player_gamebooks_imported": 0,
+  "months": {
+    "2020-02": {
+      "attendance_games": 9,
+      "official_full_gamebooks_located": 9,
+      "date_conflicts": 0,
+      "full_gamebooks_imported": 0
+    },
+    "2020-03": {
+      "attendance_games": 2,
+      "official_full_gamebooks_located": 2,
+      "date_conflicts": 0,
+      "full_gamebooks_imported": 0,
+      "resolved_original_date_mismatches": 1
+    }
+  },
+  "source_file": "data/2020_official_source_queue.json",
+  "notes": [
+    "Six week truncated NCAA baseball season due to COVID-19; user's attended 2020 records go from February 18 to original March 10 (official university gamebook March 11).",
+    "Tony Gwynn Legacy university gamebooks matched: Southern Illinois at Arizona February 21, Arizona at Iowa February 22, Southern Illinois at Seattle February 23; all at Fowler Park, university designated away/home preserved.",
+    "February 29 Monmouth at San Diego went ten innings and official result Monmouth 3, USD 4; February 28 USD 7–0 Monmouth is an official no-hitter by Jake Miller.",
+    "Attendance att0083 original March 10 CBU at USD has official March 11 boxscore and full player data, but player import must wait for original attendance date reconciliation.",
+    "October 17, 2026 user explicitly confirmed March 11 California Baptist at USD was the game they attended. All 11 2020 attendance entries now have unambiguous official game identity; original worksheet date stays unchanged for historical traceability."
+  ],
+  "exceptions": [],
+  "original_date_corrections_confirmed_by_user": 1,
+  "resolved_source_identity": [
+    {
+      "original_attendance_game_id": "cb-2020-03-10-cal-baptist-san-diego-att0083",
+      "original_attendance_date": "2020-03-10",
+      "official_game_date": "2020-03-11",
+      "official_score": [
+        0,
+        2
+      ],
+      "official_source_url": "https://usdtoreros.com/sports/baseball/stats/2020/california-baptist/boxscore/9683",
+      "user_confirmed_date": "2026-10-17",
+      "resolution": "Explicit user confirmation that March 11 California Baptist at USD was attended. Preserve original March 10 as source-workbook date, source worksheet row 84, stable game ID. Release hold for future player-stat import; player lines NOT imported."
+    }
+  ]
+}

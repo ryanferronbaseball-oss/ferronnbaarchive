@@ -1,0 +1,232 @@
+{
+  "season": 2020,
+  "status": "OFFICIAL_GAMEBOOK_SOURCE_MATCHING_COMPLETE_ALL_11_IDENTITIES_CONFIRMED_PLAYER_IMPORT_PENDING",
+  "authorization": "2020 and 2019 seasons explicitly approved by user October 17 2026. Original 444 attendance records immutable; JUCO excluded. 2018 and earlier and merging, publication/deployment not authorized.",
+  "progress": {
+    "attendance_games": 11,
+    "official_full_gamebook_source_urls": 11,
+    "date_matched": 10,
+    "date_reconciliation_required": 0,
+    "doubleheader_entries": 0,
+    "full_player_gamebooks_imported": 0,
+    "individual_player_stat_rows_added": 0,
+    "user_confirmed_official_date_corrections": 1
+  },
+  "monthly_review": {
+    "2020-02": {
+      "attendance_games": 9,
+      "official_full_gamebooks_located": 9,
+      "date_conflicts": 0,
+      "full_gamebooks_imported": 0
+    },
+    "2020-03": {
+      "attendance_games": 2,
+      "official_full_gamebooks_located": 2,
+      "date_conflicts": 1,
+      "full_gamebooks_imported": 0
+    }
+  },
+  "integrity": "All 11 original 2020 attendance records now uniquely identified and sourced to university gamebooks. California Baptist at San Diego official March 11 game (USD 2–0) explicitly user-confirmed despite original spreadsheet March 10 typo; original date, source row and ID preserved for provenance. Source identity cleared for future player-stat import. No 2020 player-level stats imported yet.",
+  "rows": [
+    {
+      "game_id": "cb-2020-02-18-uc-irvine-san-diego-att0073",
+      "attendance_id": "cb-attended-0073",
+      "source_workbook_row": 74,
+      "original_attendance_date": "2020-02-18",
+      "away": "UC Irvine",
+      "home": "San Diego",
+      "official_date": "2020-02-18",
+      "source_identity_status": "official_date_match",
+      "player_stat_import_status": "not_imported",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2020/uc-irvine/boxscore/9667",
+      "source_type": "official_usd_full_player_gamebook",
+      "source_sidearm_game_id": 9667,
+      "official_score": [
+        1,
+        9
+      ]
+    },
+    {
+      "game_id": "cb-2020-02-21-southern-illinois-arizona-att0074",
+      "attendance_id": "cb-attended-0074",
+      "source_workbook_row": 75,
+      "original_attendance_date": "2020-02-21",
+      "away": "Southern Illinois",
+      "home": "Arizona",
+      "official_date": "2020-02-21",
+      "source_identity_status": "official_date_match",
+      "player_stat_import_status": "not_imported",
+      "source_url": "https://arizonawildcats.com/sports/baseball/stats/2020/southern-illinois/boxscore/20377",
+      "source_type": "official_arizona_university_full_player_gamebook",
+      "official_score": [
+        5,
+        6
+      ]
+    },
+    {
+      "game_id": "cb-2020-02-21-nebraska-san-diego-att0075",
+      "attendance_id": "cb-attended-0075",
+      "source_workbook_row": 76,
+      "original_attendance_date": "2020-02-21",
+      "away": "Nebraska",
+      "home": "San Diego",
+      "official_date": "2020-02-21",
+      "source_identity_status": "official_date_match",
+      "player_stat_import_status": "not_imported",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2020/nebraska/boxscore/9669",
+      "source_type": "official_usd_full_player_gamebook",
+      "source_sidearm_game_id": 9669,
+      "official_score": [
+        11,
+        12
+      ]
+    },
+    {
+      "game_id": "cb-2020-02-22-arizona-iowa-att0076",
+      "attendance_id": "cb-attended-0076",
+      "source_workbook_row": 77,
+      "original_attendance_date": "2020-02-22",
+      "away": "Arizona",
+      "home": "Iowa",
+      "official_date": "2020-02-22",
+      "source_identity_status": "official_date_match",
+      "player_stat_import_status": "not_imported",
+      "source_url": "https://arizonawildcats.com/sports/baseball/stats/2020/iowa/boxscore/20378",
+      "source_type": "official_arizona_university_full_player_gamebook",
+      "official_score": [
+        1,
+        4
+      ]
+    },
+    {
+      "game_id": "cb-2020-02-22-seattle-san-diego-att0077",
+      "attendance_id": "cb-attended-0077",
+      "source_workbook_row": 78,
+      "original_attendance_date": "2020-02-22",
+      "away": "Seattle",
+      "home": "San Diego",
+      "official_date": "2020-02-22",
+      "source_identity_status": "official_date_match",
+      "player_stat_import_status": "not_imported",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2020/seattle/boxscore/9671",
+      "source_type": "official_usd_full_player_gamebook",
+      "source_sidearm_game_id": 9671,
+      "official_score": [
+        2,
+        6
+      ]
+    },
+    {
+      "game_id": "cb-2020-02-23-southern-illinois-seattle-att0078",
+      "attendance_id": "cb-attended-0078",
+      "source_workbook_row": 79,
+      "original_attendance_date": "2020-02-23",
+      "away": "Southern Illinois",
+      "home": "Seattle",
+      "official_date": "2020-02-23",
+      "source_identity_status": "official_date_match",
+      "player_stat_import_status": "not_imported",
+      "source_url": "https://siusalukis.com/sports/baseball/stats/2020/seattle/boxscore/9208",
+      "source_type": "official_southern_illinois_university_full_player_gamebook",
+      "official_score": [
+        2,
+        9
+      ]
+    },
+    {
+      "game_id": "cb-2020-02-23-iowa-san-diego-att0079",
+      "attendance_id": "cb-attended-0079",
+      "source_workbook_row": 80,
+      "original_attendance_date": "2020-02-23",
+      "away": "Iowa",
+      "home": "San Diego",
+      "official_date": "2020-02-23",
+      "source_identity_status": "official_date_match",
+      "player_stat_import_status": "not_imported",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2020/iowa/boxscore/9673",
+      "source_type": "official_usd_full_player_gamebook",
+      "source_sidearm_game_id": 9673,
+      "official_score": [
+        5,
+        10
+      ]
+    },
+    {
+      "game_id": "cb-2020-02-28-monmouth-san-diego-att0080",
+      "attendance_id": "cb-attended-0080",
+      "source_workbook_row": 81,
+      "original_attendance_date": "2020-02-28",
+      "away": "Monmouth",
+      "home": "San Diego",
+      "official_date": "2020-02-28",
+      "source_identity_status": "official_date_match",
+      "player_stat_import_status": "not_imported",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2020/monmouth/boxscore/9676",
+      "source_type": "official_usd_full_player_gamebook",
+      "source_sidearm_game_id": 9676,
+      "official_score": [
+        0,
+        7
+      ]
+    },
+    {
+      "game_id": "cb-2020-02-29-monmouth-san-diego-att0081",
+      "attendance_id": "cb-attended-0081",
+      "source_workbook_row": 82,
+      "original_attendance_date": "2020-02-29",
+      "away": "Monmouth",
+      "home": "San Diego",
+      "official_date": "2020-02-29",
+      "source_identity_status": "official_date_match",
+      "player_stat_import_status": "not_imported",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2020/monmouth/boxscore/9677",
+      "source_type": "official_usd_full_player_gamebook",
+      "source_sidearm_game_id": 9677,
+      "official_score": [
+        3,
+        4
+      ]
+    },
+    {
+      "game_id": "cb-2020-03-01-monmouth-san-diego-att0082",
+      "attendance_id": "cb-attended-0082",
+      "source_workbook_row": 83,
+      "original_attendance_date": "2020-03-01",
+      "away": "Monmouth",
+      "home": "San Diego",
+      "official_date": "2020-03-01",
+      "source_identity_status": "official_date_match",
+      "player_stat_import_status": "not_imported",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2020/monmouth/boxscore/9678",
+      "source_type": "official_usd_full_player_gamebook",
+      "source_sidearm_game_id": 9678,
+      "official_score": [
+        7,
+        11
+      ]
+    },
+    {
+      "game_id": "cb-2020-03-10-cal-baptist-san-diego-att0083",
+      "attendance_id": "cb-attended-0083",
+      "source_workbook_row": 84,
+      "original_attendance_date": "2020-03-10",
+      "away": "Cal Baptist",
+      "home": "San Diego",
+      "official_date": "2020-03-11",
+      "source_identity_status": "official_date_correction_explicitly_confirmed_by_user",
+      "player_stat_import_status": "not_imported",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2020/california-baptist/boxscore/9683",
+      "source_type": "official_usd_full_player_gamebook",
+      "source_sidearm_game_id": 9683,
+      "official_score": [
+        0,
+        2
+      ],
+      "requires_user_date_reconciliation": false,
+      "source_confirmation": "Official San Diego 2020 gamebook ID 9683 identifies March 11, 2020 California Baptist 0–San Diego 2. The original March 10 source-workbook date is a confirmed worksheet date error; user personally confirmed the March 11 game on October 17, 2026. Preserve original worksheet date, stable ID and row for provenance.",
+      "attendance_identity_user_confirmed": true,
+      "attendance_identity_confirmation_date": "2026-10-17",
+      "attendance_identity_confirmation": "User confirmed they attended the March 11, 2020 California Baptist at San Diego game, final score Cal Baptist 0, USD 2. Original spreadsheet says March 10 in row 84; original source row/date and stable attendance game ID remain unchanged for provenance. Official March 11 source is cleared for later player-stat verification and import."
+    }
+  ]
+}

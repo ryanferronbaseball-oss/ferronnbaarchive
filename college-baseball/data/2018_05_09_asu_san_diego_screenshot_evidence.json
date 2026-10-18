@@ -1,0 +1,822 @@
+{
+  "season": 2018,
+  "game_id": "cb-2018-05-09-arizona-state-san-diego-att0031",
+  "attendance_id": "cb-attended-0031",
+  "game_date": "2018-05-09",
+  "source_game_page": "https://thesundevils.com/boxscore/466",
+  "source_type": "USER_PROVIDED_ARIZONA_STATE_BOX_SCORE_BATTING_AND_PITCHING_SCREENSHOTS",
+  "original_screenshots": [
+    {
+      "filename": "Screenshot 2026-10-17 at 10.19.42 PM.png",
+      "source": "user_provided_prior_turn",
+      "section": "complete batting tables",
+      "width": 2048,
+      "height": 961
+    },
+    {
+      "filename": "Screenshot 2026-10-17 at 10.20.37 PM.png",
+      "source": "user_provided_current_turn",
+      "section": "complete pitching tables",
+      "width": 2048,
+      "height": 245
+    }
+  ],
+  "status": "FULL_PLAYER_GAMEBOOK_OFFICIAL_VERIFIED_IMPORT_PASS_2026_10_18",
+  "verified_score": {
+    "away": "Arizona State",
+    "away_runs": 12,
+    "away_hits": 13,
+    "home": "San Diego",
+    "home_runs": 7,
+    "home_hits": 14,
+    "innings": 9
+  },
+  "batting": {
+    "away": {
+      "team": "Arizona State",
+      "team_totals": {
+        "ab": 39,
+        "r": 12,
+        "h": 13,
+        "rbi": 10,
+        "doubles": 5,
+        "triples": 0,
+        "hr": 3,
+        "bb": 8,
+        "hbp": 1,
+        "so": 7,
+        "so_provenance": "User reconstructed individual SO from game play-by-play; equals opposing pitchers' total 7 K"
+      },
+      "players": [
+        {
+          "name": "Spencer Torkelson",
+          "position": "1B",
+          "ab": 4,
+          "r": 1,
+          "h": 0,
+          "rbi": 0,
+          "doubles": 0,
+          "triples": 0,
+          "hr": 0,
+          "bb": 2,
+          "hbp": 0,
+          "source_display_order": 1,
+          "batter_strikeouts": 3,
+          "batter_strikeouts_status": "user_transcribed_from_original_play_by_play_2026_10_17",
+          "batter_strikeouts_provenance": "user_play_by_play_reconstruction"
+        },
+        {
+          "name": "Boyd Vander Kooi",
+          "position": "1B",
+          "ab": 0,
+          "r": 0,
+          "h": 0,
+          "rbi": 0,
+          "doubles": 0,
+          "triples": 0,
+          "hr": 0,
+          "bb": 0,
+          "hbp": 0,
+          "source_display_order": 2,
+          "batter_strikeouts": 0,
+          "batter_strikeouts_status": "zero_derived_from_team_strikeout_checksum_and_all_positive_user_counts",
+          "batter_strikeouts_provenance": "team_pitcher_strikeout_total_less_all_explicit_positive_hitter_SO_equals_zero"
+        },
+        {
+          "name": "Gage Canning",
+          "position": "CF",
+          "ab": 5,
+          "r": 2,
+          "h": 2,
+          "rbi": 0,
+          "doubles": 0,
+          "triples": 0,
+          "hr": 0,
+          "bb": 1,
+          "hbp": 0,
+          "source_display_order": 3,
+          "batter_strikeouts": 0,
+          "batter_strikeouts_status": "zero_derived_from_team_strikeout_checksum_and_all_positive_user_counts",
+          "batter_strikeouts_provenance": "team_pitcher_strikeout_total_less_all_explicit_positive_hitter_SO_equals_zero"
+        },
+        {
+          "name": "Carter Aldrete",
+          "position": "3B",
+          "ab": 6,
+          "r": 2,
+          "h": 3,
+          "rbi": 1,
+          "doubles": 1,
+          "triples": 0,
+          "hr": 1,
+          "bb": 0,
+          "hbp": 0,
+          "source_display_order": 4,
+          "batter_strikeouts": 0,
+          "batter_strikeouts_status": "zero_derived_from_team_strikeout_checksum_and_all_positive_user_counts",
+          "batter_strikeouts_provenance": "team_pitcher_strikeout_total_less_all_explicit_positive_hitter_SO_equals_zero"
+        },
+        {
+          "name": "Lyle Lin",
+          "position": "C",
+          "ab": 3,
+          "r": 1,
+          "h": 0,
+          "rbi": 0,
+          "doubles": 0,
+          "triples": 0,
+          "hr": 0,
+          "bb": 1,
+          "hbp": 1,
+          "source_display_order": 5,
+          "batter_strikeouts": 1,
+          "batter_strikeouts_status": "user_transcribed_from_original_play_by_play_2026_10_17",
+          "batter_strikeouts_provenance": "user_play_by_play_reconstruction"
+        },
+        {
+          "name": "Luke Leisenring",
+          "position": "C",
+          "ab": 0,
+          "r": 0,
+          "h": 0,
+          "rbi": 0,
+          "doubles": 0,
+          "triples": 0,
+          "hr": 0,
+          "bb": 0,
+          "hbp": 0,
+          "source_display_order": 6,
+          "batter_strikeouts": 0,
+          "batter_strikeouts_status": "zero_derived_from_team_strikeout_checksum_and_all_positive_user_counts",
+          "batter_strikeouts_provenance": "team_pitcher_strikeout_total_less_all_explicit_positive_hitter_SO_equals_zero"
+        },
+        {
+          "name": "Hunter Jump",
+          "position": "LF",
+          "ab": 2,
+          "r": 1,
+          "h": 1,
+          "rbi": 4,
+          "doubles": 0,
+          "triples": 0,
+          "hr": 0,
+          "bb": 3,
+          "hbp": 0,
+          "source_display_order": 7,
+          "batter_strikeouts": 0,
+          "batter_strikeouts_status": "zero_derived_from_team_strikeout_checksum_and_all_positive_user_counts",
+          "batter_strikeouts_provenance": "team_pitcher_strikeout_total_less_all_explicit_positive_hitter_SO_equals_zero"
+        },
+        {
+          "name": "Trevor Hauver",
+          "position": "LF",
+          "ab": 0,
+          "r": 0,
+          "h": 0,
+          "rbi": 0,
+          "doubles": 0,
+          "triples": 0,
+          "hr": 0,
+          "bb": 0,
+          "hbp": 0,
+          "source_display_order": 8,
+          "batter_strikeouts": 0,
+          "batter_strikeouts_status": "zero_derived_from_team_strikeout_checksum_and_all_positive_user_counts",
+          "batter_strikeouts_provenance": "team_pitcher_strikeout_total_less_all_explicit_positive_hitter_SO_equals_zero"
+        },
+        {
+          "name": "Alika Williams",
+          "position": "SS",
+          "ab": 5,
+          "r": 1,
+          "h": 3,
+          "rbi": 1,
+          "doubles": 2,
+          "triples": 0,
+          "hr": 0,
+          "bb": 0,
+          "hbp": 0,
+          "source_display_order": 9,
+          "batter_strikeouts": 0,
+          "batter_strikeouts_status": "zero_derived_from_team_strikeout_checksum_and_all_positive_user_counts",
+          "batter_strikeouts_provenance": "team_pitcher_strikeout_total_less_all_explicit_positive_hitter_SO_equals_zero"
+        },
+        {
+          "name": "Hunter Bishop",
+          "position": "RF",
+          "ab": 4,
+          "r": 2,
+          "h": 1,
+          "rbi": 2,
+          "doubles": 0,
+          "triples": 0,
+          "hr": 1,
+          "bb": 1,
+          "hbp": 0,
+          "source_display_order": 10,
+          "batter_strikeouts": 0,
+          "batter_strikeouts_status": "zero_derived_from_team_strikeout_checksum_and_all_positive_user_counts",
+          "batter_strikeouts_provenance": "team_pitcher_strikeout_total_less_all_explicit_positive_hitter_SO_equals_zero"
+        },
+        {
+          "name": "Zach Hogueisson",
+          "position": "DH",
+          "ab": 5,
+          "r": 2,
+          "h": 3,
+          "rbi": 2,
+          "doubles": 2,
+          "triples": 0,
+          "hr": 1,
+          "bb": 0,
+          "hbp": 0,
+          "source_display_order": 11,
+          "batter_strikeouts": 0,
+          "batter_strikeouts_status": "zero_derived_from_team_strikeout_checksum_and_all_positive_user_counts",
+          "batter_strikeouts_provenance": "team_pitcher_strikeout_total_less_all_explicit_positive_hitter_SO_equals_zero"
+        },
+        {
+          "name": "Drew Swift",
+          "position": "2B",
+          "ab": 5,
+          "r": 0,
+          "h": 0,
+          "rbi": 0,
+          "doubles": 0,
+          "triples": 0,
+          "hr": 0,
+          "bb": 0,
+          "hbp": 0,
+          "source_display_order": 12,
+          "batter_strikeouts": 3,
+          "batter_strikeouts_status": "user_transcribed_from_original_play_by_play_2026_10_17",
+          "batter_strikeouts_provenance": "user_play_by_play_reconstruction"
+        }
+      ]
+    },
+    "home": {
+      "team": "San Diego",
+      "team_totals": {
+        "ab": 39,
+        "r": 7,
+        "h": 14,
+        "rbi": 6,
+        "doubles": 5,
+        "triples": 1,
+        "hr": 1,
+        "bb": 1,
+        "hbp": 1,
+        "so": 11,
+        "so_provenance": "User reconstructed individual SO from game play-by-play; equals opposing pitchers' total 11 K"
+      },
+      "players": [
+        {
+          "name": "Paul Kunst",
+          "position": "2B",
+          "ab": 5,
+          "r": 2,
+          "h": 4,
+          "rbi": 1,
+          "doubles": 2,
+          "triples": 0,
+          "hr": 0,
+          "bb": 0,
+          "hbp": 0,
+          "source_display_order": 1,
+          "batter_strikeouts": 0,
+          "batter_strikeouts_status": "zero_derived_from_team_strikeout_checksum_and_all_positive_user_counts",
+          "batter_strikeouts_provenance": "team_pitcher_strikeout_total_less_all_explicit_positive_hitter_SO_equals_zero"
+        },
+        {
+          "name": "Jay Schuyler",
+          "position": "RF",
+          "ab": 5,
+          "r": 2,
+          "h": 2,
+          "rbi": 3,
+          "doubles": 0,
+          "triples": 0,
+          "hr": 1,
+          "bb": 0,
+          "hbp": 0,
+          "source_display_order": 2,
+          "batter_strikeouts": 0,
+          "batter_strikeouts_status": "zero_derived_from_team_strikeout_checksum_and_all_positive_user_counts",
+          "batter_strikeouts_provenance": "team_pitcher_strikeout_total_less_all_explicit_positive_hitter_SO_equals_zero"
+        },
+        {
+          "name": "Shane McGuire",
+          "position": "1B",
+          "ab": 4,
+          "r": 0,
+          "h": 0,
+          "rbi": 0,
+          "doubles": 0,
+          "triples": 0,
+          "hr": 0,
+          "bb": 0,
+          "hbp": 1,
+          "source_display_order": 3,
+          "batter_strikeouts": 2,
+          "batter_strikeouts_status": "user_transcribed_from_original_play_by_play_2026_10_17",
+          "batter_strikeouts_provenance": "user_play_by_play_reconstruction"
+        },
+        {
+          "name": "Brhet Bewley",
+          "position": "DH",
+          "ab": 5,
+          "r": 0,
+          "h": 3,
+          "rbi": 1,
+          "doubles": 1,
+          "triples": 0,
+          "hr": 0,
+          "bb": 0,
+          "hbp": 0,
+          "source_display_order": 4,
+          "batter_strikeouts": 1,
+          "batter_strikeouts_status": "user_transcribed_from_original_play_by_play_2026_10_17",
+          "batter_strikeouts_provenance": "user_play_by_play_reconstruction"
+        },
+        {
+          "name": "Jeff Houghtby",
+          "position": "3B/SS",
+          "ab": 5,
+          "r": 0,
+          "h": 1,
+          "rbi": 0,
+          "doubles": 1,
+          "triples": 0,
+          "hr": 0,
+          "bb": 0,
+          "hbp": 0,
+          "source_display_order": 5,
+          "batter_strikeouts": 1,
+          "batter_strikeouts_status": "user_transcribed_from_original_play_by_play_2026_10_17",
+          "batter_strikeouts_provenance": "user_play_by_play_reconstruction"
+        },
+        {
+          "name": "Adam Kerner",
+          "position": "C",
+          "ab": 4,
+          "r": 0,
+          "h": 2,
+          "rbi": 0,
+          "doubles": 0,
+          "triples": 0,
+          "hr": 0,
+          "bb": 0,
+          "hbp": 0,
+          "source_display_order": 6,
+          "batter_strikeouts": 1,
+          "batter_strikeouts_status": "user_transcribed_from_original_play_by_play_2026_10_17",
+          "batter_strikeouts_provenance": "user_play_by_play_reconstruction"
+        },
+        {
+          "name": "Kevin Collard",
+          "position": "LF",
+          "ab": 4,
+          "r": 2,
+          "h": 2,
+          "rbi": 0,
+          "doubles": 1,
+          "triples": 1,
+          "hr": 0,
+          "bb": 0,
+          "hbp": 0,
+          "source_display_order": 7,
+          "batter_strikeouts": 1,
+          "batter_strikeouts_status": "user_transcribed_from_original_play_by_play_2026_10_17",
+          "batter_strikeouts_provenance": "user_play_by_play_reconstruction"
+        },
+        {
+          "name": "Connor Doyle",
+          "position": "CF",
+          "ab": 4,
+          "r": 0,
+          "h": 0,
+          "rbi": 1,
+          "doubles": 0,
+          "triples": 0,
+          "hr": 0,
+          "bb": 0,
+          "hbp": 0,
+          "source_display_order": 8,
+          "batter_strikeouts": 3,
+          "batter_strikeouts_status": "user_transcribed_from_original_play_by_play_2026_10_17",
+          "batter_strikeouts_provenance": "user_play_by_play_reconstruction"
+        },
+        {
+          "name": "Trevor Rosenberg",
+          "position": "SS",
+          "ab": 2,
+          "r": 1,
+          "h": 0,
+          "rbi": 0,
+          "doubles": 0,
+          "triples": 0,
+          "hr": 0,
+          "bb": 1,
+          "hbp": 0,
+          "source_display_order": 9,
+          "batter_strikeouts": 1,
+          "batter_strikeouts_status": "user_transcribed_from_original_play_by_play_2026_10_17",
+          "batter_strikeouts_provenance": "user_play_by_play_reconstruction"
+        },
+        {
+          "name": "Todd Jackson",
+          "position": "PH",
+          "ab": 1,
+          "r": 0,
+          "h": 0,
+          "rbi": 0,
+          "doubles": 0,
+          "triples": 0,
+          "hr": 0,
+          "bb": 0,
+          "hbp": 0,
+          "source_display_order": 10,
+          "batter_strikeouts": 1,
+          "batter_strikeouts_status": "user_transcribed_from_original_play_by_play_2026_10_17",
+          "batter_strikeouts_provenance": "user_play_by_play_reconstruction"
+        },
+        {
+          "name": "Trevor Omahen",
+          "position": "3B",
+          "ab": 0,
+          "r": 0,
+          "h": 0,
+          "rbi": 0,
+          "doubles": 0,
+          "triples": 0,
+          "hr": 0,
+          "bb": 0,
+          "hbp": 0,
+          "source_display_order": 11,
+          "batter_strikeouts": 0,
+          "batter_strikeouts_status": "zero_derived_from_team_strikeout_checksum_and_all_positive_user_counts",
+          "batter_strikeouts_provenance": "team_pitcher_strikeout_total_less_all_explicit_positive_hitter_SO_equals_zero"
+        }
+      ]
+    }
+  },
+  "pitching": {
+    "away": {
+      "team": "Arizona State",
+      "team_totals": {
+        "ip": "9.0",
+        "h": 14,
+        "r": 7,
+        "er": 7,
+        "bb": 1,
+        "so": 11,
+        "np": 124
+      },
+      "players": [
+        {
+          "name": "Sam Romero",
+          "ip": "6.1",
+          "h": 9,
+          "r": 5,
+          "er": 5,
+          "bb": 1,
+          "so": 6,
+          "wp": 1,
+          "bk": 0,
+          "hbp": 1,
+          "ibb": 0,
+          "ab": 27,
+          "bf": 29,
+          "fo": 5,
+          "go": 7,
+          "np": 86,
+          "decision": "W"
+        },
+        {
+          "name": "Connor Higgins",
+          "ip": "0.1",
+          "h": 1,
+          "r": 0,
+          "er": 0,
+          "bb": 0,
+          "so": 1,
+          "wp": 1,
+          "bk": 0,
+          "hbp": 0,
+          "ibb": 0,
+          "ab": 2,
+          "bf": 2,
+          "fo": 0,
+          "go": 0,
+          "np": 10,
+          "decision": null
+        },
+        {
+          "name": "Dellan Raish",
+          "ip": "2.1",
+          "h": 4,
+          "r": 2,
+          "er": 2,
+          "bb": 0,
+          "so": 4,
+          "wp": 0,
+          "bk": 0,
+          "hbp": 0,
+          "ibb": 0,
+          "ab": 10,
+          "bf": 10,
+          "fo": 1,
+          "go": 1,
+          "np": 28,
+          "decision": null
+        }
+      ]
+    },
+    "home": {
+      "team": "San Diego",
+      "team_totals": {
+        "ip": "9.0",
+        "h": 13,
+        "r": 12,
+        "er": 10,
+        "bb": 8,
+        "so": 7,
+        "np": 177
+      },
+      "players": [
+        {
+          "name": "Nick Sprengel",
+          "ip": "3.0",
+          "h": 5,
+          "r": 7,
+          "er": 7,
+          "bb": 6,
+          "so": 3,
+          "wp": 1,
+          "bk": 0,
+          "hbp": 1,
+          "ibb": 0,
+          "ab": 13,
+          "bf": 20,
+          "fo": 2,
+          "go": 3,
+          "np": 90,
+          "decision": "L"
+        },
+        {
+          "name": "Travis Kuhn",
+          "ip": "2.2",
+          "h": 3,
+          "r": 2,
+          "er": 2,
+          "bb": 1,
+          "so": 1,
+          "wp": 0,
+          "bk": 0,
+          "hbp": 0,
+          "ibb": 0,
+          "ab": 10,
+          "bf": 11,
+          "fo": 3,
+          "go": 3,
+          "np": 37,
+          "decision": null
+        },
+        {
+          "name": "Louie Crow",
+          "ip": "1.1",
+          "h": 1,
+          "r": 0,
+          "er": 0,
+          "bb": 1,
+          "so": 2,
+          "wp": 0,
+          "bk": 0,
+          "hbp": 0,
+          "ibb": 0,
+          "ab": 5,
+          "bf": 6,
+          "fo": 1,
+          "go": 1,
+          "np": 20,
+          "decision": null
+        },
+        {
+          "name": "Nate Walker",
+          "ip": "2.0",
+          "h": 4,
+          "r": 3,
+          "er": 1,
+          "bb": 0,
+          "so": 1,
+          "wp": 1,
+          "bk": 0,
+          "hbp": 0,
+          "ibb": 0,
+          "ab": 11,
+          "bf": 11,
+          "fo": 3,
+          "go": 2,
+          "np": 30,
+          "decision": null
+        }
+      ]
+    }
+  },
+  "pitching_decisions": {
+    "win": "Sam Romero",
+    "loss": "Nick Sprengel",
+    "save": null,
+    "save_note": "No save explicitly shown in supplied screenshot; do not infer save/no-save."
+  },
+  "data_quality_holds": [
+    "RESOLVED ON OCTOBER 17, 2026: ASU batting table SO field was incorrect (zeros for hitters and opponent pitcher totals in batting pitcher rows). User supplied every nonzero hitter K from play-by-play, including Todd Jackson's one strikeout in a follow-up. Assigned 3+1+3=7 Arizona State batter Ks, and 2+1+1+1+1+3+1+1=11 San Diego batter Ks; totals exactly reconcile to opposing pitchers' source totals. Remaining hitters have zero by difference, not from the incorrect ASU screenshot.",
+    "Pitching SO (7 for San Diego pitchers and 11 for Arizona State pitchers) is clearly verified and safe.",
+    "The game source did not independently label a save. Record save as null/unknown, not a credited save."
+  ],
+  "review_state": {
+    "batting_fields_ab_r_h_rbi_extra_base_hits_bb_hbp": "transcribed_and_team_total_checked",
+    "pitching_lines": "transcribed_and_team_total_checked",
+    "batter_strikeouts": "user_play_by_play_reconstructed_11_for_USD_7_for_ASU_reconciled",
+    "game_identity": "matched",
+    "player_stat_import": "PASS_30_PLAYER_GAME_ROWS",
+    "game_innings": "original_user_provided_official_image_source_exact_nine_innings_verification_PASS",
+    "starting_order_nine_slots_and_substitutions": "archive_owner_explicitly_confirmed_2026_10_18",
+    "pitcher_decisions": "W Romero L Sprengel; save not labeled in screenshot; keep null without inventing credited save"
+  },
+  "user_reconstructed_batter_strikeouts": {
+    "date_confirmed": "2026-10-17",
+    "user_source": "Original game play-by-play manually examined by archive owner",
+    "away": "Arizona State",
+    "home": "San Diego",
+    "away_batters_with_strikeouts": {
+      "Spencer Torkelson": 3,
+      "Lyle Lin": 1,
+      "Drew Swift": 3
+    },
+    "away_total": 7,
+    "home_batters_with_strikeouts": {
+      "Shane McGuire": 2,
+      "Brhet Bewley": 1,
+      "Jeff Houghtby": 1,
+      "Adam Kerner": 1,
+      "Kevin Collard": 1,
+      "Connor Doyle": 3,
+      "Trevor Rosenberg": 1,
+      "Todd Jackson": 1
+    },
+    "home_total": 11,
+    "verification": "Positive strikeout counts were directly supplied by user from play-by-play; all other 0s are team-total-derived and both teams independently reconcile with opponent pitching totals.",
+    "source_page": "https://thesundevils.com/boxscore/466",
+    "pending_unrelated_data": "Inning-by-inning line score, save designation and strict substitute batting-order slots not fully verified from the two screenshots alone; official USD PDF is identified but not downloaded or parsed."
+  },
+  "scoreboard_source": {
+    "filename": "Screenshot 2026-10-18 at 12.32.47 AM.png",
+    "file_id": "file_0000000045a081f5b589dd3a9489b970",
+    "source": "user_provided_original_baseball_game_scoreboard_screenshot_2026_10_18",
+    "printed_date": "05/09/2018",
+    "printed_attendance": 658,
+    "printed_sport": "Baseball",
+    "inning_columns": 9,
+    "away": {
+      "team": "Arizona State",
+      "innings": [
+        1,
+        1,
+        3,
+        2,
+        1,
+        1,
+        0,
+        2,
+        1
+      ],
+      "runs": 12,
+      "hits": 13,
+      "errors": 0
+    },
+    "home": {
+      "team": "San Diego",
+      "innings": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        4,
+        0,
+        2
+      ],
+      "runs": 7,
+      "hits": 14,
+      "errors": 1
+    },
+    "validation": "nine_inning_run_sums_and_game_boxscore_team_hit_totals_reconcile"
+  },
+  "user_confirmed_source_lineup": {
+    "confirmed_on": "2026-10-18",
+    "user_confirmed_substitutions": [
+      {
+        "team": "San Diego",
+        "substitute": "Todd Jackson",
+        "replaced": "Trevor Rosenberg",
+        "role": "pinch_hitter",
+        "slot": 9
+      },
+      {
+        "team": "San Diego",
+        "substitute": "Trevor Omahen",
+        "replaced": "Todd Jackson",
+        "role": "defensive_successor",
+        "slot": 9
+      },
+      {
+        "team": "Arizona State",
+        "substitute": "Boyd Vander Kooi",
+        "replaced": "Spencer Torkelson",
+        "slot": 1
+      },
+      {
+        "team": "Arizona State",
+        "substitute": "Luke Leisenring",
+        "replaced": "Lyle Lin",
+        "slot": 4
+      },
+      {
+        "team": "Arizona State",
+        "substitute": "Trevor Hauver",
+        "replaced": "Hunter Jump",
+        "slot": 5
+      }
+    ],
+    "lineups": {
+      "away": [
+        [
+          "Spencer Torkelson",
+          "Boyd Vander Kooi"
+        ],
+        [
+          "Gage Canning"
+        ],
+        [
+          "Carter Aldrete"
+        ],
+        [
+          "Lyle Lin",
+          "Luke Leisenring"
+        ],
+        [
+          "Hunter Jump",
+          "Trevor Hauver"
+        ],
+        [
+          "Alika Williams"
+        ],
+        [
+          "Hunter Bishop"
+        ],
+        [
+          "Zach Hogueisson"
+        ],
+        [
+          "Drew Swift"
+        ]
+      ],
+      "home": [
+        [
+          "Paul Kunst"
+        ],
+        [
+          "Jay Schuyler"
+        ],
+        [
+          "Shane McGuire"
+        ],
+        [
+          "Brhet Bewley"
+        ],
+        [
+          "Jeff Houghtby"
+        ],
+        [
+          "Adam Kerner"
+        ],
+        [
+          "Kevin Collard"
+        ],
+        [
+          "Connor Doyle"
+        ],
+        [
+          "Trevor Rosenberg",
+          "Todd Jackson",
+          "Trevor Omahen"
+        ]
+      ]
+    },
+    "source": "Original May 9 game box batting tables and archive owner's explicit batting-order substitution confirmations on 2026-10-18"
+  },
+  "import_audit_file": "data/2018_historical_stat_import_audit.json",
+  "final_verification": "30 complete player-game rows, 9 original batting slots both teams, all source innings R/H/E, official W/L and individual pitcher/batter totals passed strict source import; official screenshot has no explicit save label"
+}

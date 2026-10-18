@@ -1,0 +1,82 @@
+{
+  "generated_on": "2026-10-17",
+  "status": "2026-10-17 current main development source data 424 verified 12794 player-game rows; 13 non-JUCO attendance games awaiting source and identity reconciliation; do not publish",
+  "original_attendance_games": 444,
+  "verified_full_boxscores": 424,
+  "excluded_JUCO_games": 7,
+  "non_JUCO_pending": 13,
+  "years": {
+    "2018": 5,
+    "2022": 5,
+    "2023": 3
+  },
+  "user_confirmation_needed": {
+    "2022_portland_doubleheader": {
+      "original_rows": [
+        145,
+        146
+      ],
+      "date": "2022-04-09",
+      "proposed_order": "Row 145 G1 1:00 p.m. USD 8–Portland 6; row 146 G2 4:30 p.m. Portland 5–USD 4 in 10",
+      "source_urls": [
+        "https://usdtoreros.com/sports/baseball/stats/2022/portland/boxscore/12466",
+        "https://usdtoreros.com/sports/baseball/stats/2022/portland/boxscore/12467"
+      ]
+    },
+    "2022_gonzaga_doubleheader": {
+      "original_rows": [
+        163,
+        164
+      ],
+      "date": "2022-05-21",
+      "proposed_order": "Row 163 G1 1:00 p.m. USD 7–Gonzaga 4; row 164 G2 4:45 p.m. Gonzaga 1–USD 0",
+      "note": "Official source IDs reverse sequence (12487 first, 12486 second)",
+      "source_urls": [
+        "https://usdtoreros.com/sports/baseball/stats/2022/gonzaga/boxscore/12487",
+        "https://usdtoreros.com/sports/baseball/stats/2022/gonzaga/boxscore/12486"
+      ]
+    },
+    "2022_grand_canyon_stanford": {
+      "original_date": "2022-04-21",
+      "official_date": "2022-04-22",
+      "source": "https://gculopes.com/sports/baseball/stats/2022/stanford/boxscore/18165",
+      "question": "Was April 22 GCU 1–Stanford 11 the game attended at Tony Gwynn Stadium? If not, clarify April 21 game; source dates cannot be inferred from workbook."
+    },
+    "2023_tony_gwynn_weather": {
+      "original_dates": [
+        "2023-02-25",
+        "2023-02-25",
+        "2023-02-26"
+      ],
+      "official_dates": [
+        "2023-02-26",
+        "2023-02-26",
+        "2023-02-27"
+      ],
+      "games": [
+        "UNLV 10–UC Irvine 4",
+        "UNLV 5–USD 6",
+        "UC Irvine 14–USD 6"
+      ],
+      "sources": [
+        "https://unlvrebels.com/sports/baseball/schedule/2023",
+        "https://usdtoreros.com/sports/baseball/schedule/2023",
+        "https://ucirvinesports.com/sports/baseball/schedule/2023"
+      ],
+      "note": "Weather-driven rescheduling confirmed independently by university calendars. Preserve original worksheet date and request user to confirm these were their attended games."
+    }
+  },
+  "technical_holds": {
+    "year2018": {
+      "num": 5,
+      "games": [
+        "Feb 18 Cincinnati–USD game 1 and game 2: archived USD PDF links return non-PDF bytes to CI parser",
+        "Mar 13 SDSU 9–USD 3: PDF uploaded by user but direct university server does not return PDF bytes to runner",
+        "Apr 14 Saint Mary's 6–USD 5: PDF uploaded by user but direct university server does not return PDF bytes to runner",
+        "May 9 ASU 12–USD 7: full user-supplied batting/pitching and play-by-play hitter K reconciliation saved, but inning-by-inning and true substitution lineup positions not yet audited"
+      ],
+      "next_action": "Recover user-uploaded PDFs from file library into source-controlled provenance, or parse official alternative HTML; do not infer inning line or lineup substitutions. Strict source totals and protected years must pass."
+    }
+  },
+  "note": "2017, 2019, 2020, 2021 now fully imported according to games.json despite older monthly audit summaries; do not rely on historical snapshots."
+}

@@ -1,0 +1,149 @@
+name: College Baseball Official Player Boxscore Pilot
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "college-baseball/scripts/import_sidearm_pilot.py"
+      - "college-baseball/scripts/import_sec_tournament_2026.py"
+      - "college-baseball/scripts/import_2026_may20_early_sec.py"
+      - "college-baseball/scripts/import_2026_may19_sec.py"
+      - "college-baseball/scripts/probe_official_pdf_2026.py"
+      - "college-baseball/scripts/import_auburn_tamu_pdf_2026.py"
+      - "college-baseball/scripts/import_2026_may19_sc_tennessee.py"
+      - "college-baseball/scripts/import_2026_may19_ky_vandy_pdf.py"
+      - "college-baseball/scripts/import_2026_may14_virginia_louisville.py"
+      - "college-baseball/scripts/import_2026_may15_mercer_etsu.py"
+      - "college-baseball/scripts/import_2026_may16_arkansas_kentucky.py"
+      - "college-baseball/scripts/import_2026_may10_littlerock_utmartin.py"
+      - "college-baseball/data/verified_batches/**"
+      - ".github/workflows/college-baseball-player-pilot.yml"
+concurrency:
+  group: college-baseball-player-pilot-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  verified-player-boxscores:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install official gamebook HTML parser
+        run: python -m pip install --disable-pip-version-check requests beautifulsoup4 pypdf
+      - name: Verify all 5 official player box scores against team totals and opposing pitching
+        run: python college-baseball/scripts/import_sidearm_pilot.py
+      - name: Attach validated player data and source-by-source audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: college-baseball-five-game-player-boxscore-pilot
+          path: |
+            college-baseball/data/pilot_player_stats_verified.json
+            college-baseball/data/pilot_player_stat_audit.json
+          if-no-files-found: warn
+      - name: Source-reconcile four SEC Tournament full gamebooks, lineup positions and pitchers
+        run: python college-baseball/scripts/import_sec_tournament_2026.py
+      - name: Attach SEC Tournament official individual player audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: college-baseball-sec-2026-four-official-gamebooks
+          path: college-baseball/data/2026_sec_tournament_player_audit.json
+          if-no-files-found: warn
+      - name: Source-reconcile May 20 SEC Tournament earlier round official gamebooks
+        run: python college-baseball/scripts/import_2026_may20_early_sec.py
+      - name: Attach May 20 SEC Tournament earlier-round source audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: college-baseball-sec-2026-may20-earlier-round
+          path: college-baseball/data/2026_sec_may20_second_round_audit.json
+          if-no-files-found: warn
+      - name: Source-reconcile two additional May 19 SEC Tournament gamebooks
+        run: python college-baseball/scripts/import_2026_may19_sec.py
+      - name: Attach May 19 SEC official individual player audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: college-baseball-sec-2026-may19-first-round
+          path: college-baseball/data/2026_sec_may19_first_round_audit.json
+          if-no-files-found: warn
+      - name: Inspect source links for Auburn Texas A&M official PDF without inventing game lines
+        continue-on-error: true
+        run: python college-baseball/scripts/probe_official_pdf_2026.py
+      - name: Verify full May 22 Auburn Texas A&M official PDF and source-matched batting, pitching and substitutions
+        run: python college-baseball/scripts/import_auburn_tamu_pdf_2026.py
+      - name: Attach audited source original Auburn gamebook verification
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: college-baseball-auburn-tamu-may22-official-pdf
+          path: college-baseball/data/2026_auburn_tamu_pdf_audit.json
+          if-no-files-found: warn
+      - name: Source-verify May 19 Gamecocks-Volunteers official player gamebook
+        run: python college-baseball/scripts/import_2026_may19_sc_tennessee.py
+      - name: Attach May 19 South Carolina Tennessee source audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: college-baseball-may19-south-carolina-tennessee
+          path: college-baseball/data/2026_sec_may19_south_carolina_tennessee_audit.json
+          if-no-files-found: warn
+      - name: Source-verify May 19 Kentucky Vanderbilt official SEC PDF scorebook
+        run: python college-baseball/scripts/import_2026_may19_ky_vandy_pdf.py
+      - name: Attach May 19 Kentucky Vanderbilt PDF audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: college-baseball-may19-kentucky-vanderbilt
+          path: college-baseball/data/2026_sec_may19_kentucky_vanderbilt_pdf_audit.json
+          if-no-files-found: warn
+      - name: Source-verify official Virginia at Louisville May 14 2026 full gamebook
+        run: python college-baseball/scripts/import_2026_may14_virginia_louisville.py
+      - name: Attach Virginia Louisville original full boxscore audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: college-baseball-may14-virginia-louisville
+          path: college-baseball/data/2026_may14_virginia_louisville_audit.json
+          if-no-files-found: warn
+      - name: Audit May 15 Mercer at ETSU official complete hitter and two-way pitcher gamebook
+        run: python college-baseball/scripts/import_2026_may15_mercer_etsu.py
+      - name: Attach May 15 Mercer ETSU source team reconciliation
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: college-baseball-may15-mercer-etsu
+          path: college-baseball/data/2026_may15_mercer_etsu_audit.json
+          if-no-files-found: warn
+      - name: Import and source-verify May 16 Arkansas at Kentucky full PDF gamebook
+        run: python college-baseball/scripts/import_2026_may16_arkansas_kentucky.py
+      - name: Attach May16 Arkansas Kentucky official gamebook audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: college-baseball-may16-arkansas-kentucky
+          path: college-baseball/data/2026_may16_arkansas_kentucky_pdf_audit.json
+          if-no-files-found: warn
+      - name: Source-audit Little Rock at UT Martin May 10 official gamebook and every substitution
+        run: python college-baseball/scripts/import_2026_may10_littlerock_utmartin.py
+      - name: Attach May10 Little Rock UT Martin player audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: college-baseball-may10-little-rock-ut-martin
+          path: college-baseball/data/2026_may10_little_rock_utmartin_audit.json
+          if-no-files-found: warn
+      - name: Stage audited source output on unpublished draft branch only
+        if: github.event_name == 'push' && github.ref == 'refs/heads/feature/college-baseball-foundation'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f college-baseball/data/pilot_player_stats_verified.json college-baseball/data/pilot_player_stat_audit.json college-baseball/data/games.json college-baseball/data/player_stats.json college-baseball/data/import_report.json college-baseball/data/2026_sec_tournament_player_audit.json college-baseball/data/2026_sec_may20_second_round_audit.json college-baseball/data/2026_sec_may19_first_round_audit.json college-baseball/data/2026_auburn_tamu_pdf_audit.json college-baseball/data/2026_sec_may19_south_carolina_tennessee_audit.json college-baseball/data/2026_sec_may19_kentucky_vanderbilt_pdf_audit.json college-baseball/data/2026_may14_virginia_louisville_audit.json college-baseball/data/2026_may15_mercer_etsu_audit.json college-baseball/data/2026_may16_arkansas_kentucky_pdf_audit.json college-baseball/data/2026_may10_little_rock_utmartin_audit.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Add independently reconciled 2026 SEC tournament player gamebooks [skip ci]"
+            git push origin HEAD:feature/college-baseball-foundation
+          fi

@@ -1,0 +1,91 @@
+{
+  "status": "PASS",
+  "scope": "Only 2025 approved NCAA/four-year games; no 2024, no release",
+  "original_attendance_entries": 444,
+  "verified_2026_unchanged": 68,
+  "total_2025_attendance": 74,
+  "completed_in_this_run": 1,
+  "verified_2025_total": 74,
+  "linked_source_games": 74,
+  "passed_games": [
+    {
+      "game_id": "cb-2025-05-22-texas-a-m-auburn-att0357",
+      "source_url": "https://storage.googleapis.com/auburn-prod/2025/05/23/SDbWI4p6H0cZg8tyo5LFycKPk6WAtPElf5AeOVSK.pdf",
+      "score": [
+        3,
+        2
+      ],
+      "source_game_id": "auburn-2025-05-22-vs-texas-am-pdf",
+      "player_rows": 29,
+      "source_stat_audit": {
+        "status": "PASS",
+        "source": "https://storage.googleapis.com/auburn-prod/2025/05/23/SDbWI4p6H0cZg8tyo5LFycKPk6WAtPElf5AeOVSK.pdf",
+        "source_sha256": "1585548047ac2726a24f824cd8d83b06142f972292f1693fb4b56671370f6281",
+        "source_type": "official_university_pdf_gamebook",
+        "player_rows": 29,
+        "lineup_audit": [
+          {
+            "team": "Texas A&M",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 4,
+            "substitutes": 2
+          },
+          {
+            "team": "Auburn",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 3,
+            "substitutes": 2
+          }
+        ],
+        "scoreboard": [
+          {
+            "innings": [
+              0,
+              0,
+              3,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "runs": 3,
+            "hits": 4,
+            "errors": 0
+          },
+          {
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "runs": 2,
+            "hits": 6,
+            "errors": 0
+          }
+        ],
+        "pitching_decisions": {
+          "win": "Lamkin",
+          "loss": "Cam Tilly",
+          "save": "Freshcorn"
+        }
+      },
+      "pitching_decisions": {
+        "win": "Lamkin",
+        "loss": "Cam Tilly",
+        "save": "Freshcorn"
+      }
+    }
+  ],
+  "metadata_corrections": [],
+  "pending_review": []
+}

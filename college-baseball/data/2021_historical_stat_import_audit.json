@@ -1,0 +1,3450 @@
+{
+  "season": 2021,
+  "month": null,
+  "limit": 0,
+  "status": "PASS",
+  "original_attendance_games": 444,
+  "verified_this_run": 32,
+  "verified_in_season": 32,
+  "verified_overall": 396,
+  "player_game_rows_total": 11933,
+  "already_verified": [],
+  "completed": [
+    {
+      "game_id": "cb-2021-05-08-byu-san-diego-att0115",
+      "player_rows": 32,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2021/byu/boxscore/12087",
+      "win": "Brycen Mautz",
+      "loss": "Easton WALKER",
+      "source_audit": {
+        "game_id": "cb-2021-05-08-byu-san-diego-att0115",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2021/byu/boxscore/12087",
+        "http_code": 200,
+        "source_bytes": 692456,
+        "source_sha256": "19add3fd4dc475a9e6fc0adf7dd55a6d7cb60b24ad0ae7cbbeb39d8840565fb1",
+        "teams": [
+          {
+            "name": "BYU",
+            "batters": 9,
+            "pitchers": 5,
+            "AB": 44,
+            "R": 12,
+            "H": 19,
+            "RBI": 12,
+            "BB": 3,
+            "SO": 8,
+            "pitching_outs": 26,
+            "pitching_runs": 13,
+            "pitching_hits": 16
+          },
+          {
+            "name": "San Diego",
+            "batters": 13,
+            "pitchers": 5,
+            "AB": 42,
+            "R": 13,
+            "H": 16,
+            "RBI": 12,
+            "BB": 2,
+            "SO": 4,
+            "pitching_outs": 27,
+            "pitching_runs": 12,
+            "pitching_hits": 19
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 32,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 12,
+            "hits": 19,
+            "errors": 1,
+            "innings": [
+              0,
+              0,
+              0,
+              8,
+              1,
+              1,
+              0,
+              2,
+              0
+            ]
+          },
+          {
+            "runs": 13,
+            "hits": 16,
+            "errors": 0,
+            "innings": [
+              0,
+              1,
+              6,
+              1,
+              0,
+              1,
+              0,
+              0,
+              4
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "BYU",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 5,
+            "substitutes": 0
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 13,
+            "pitcher_rows": 5,
+            "substitutes": 4
+          }
+        ],
+        "official_decisions": {
+          "win": "Mautz, Brycen",
+          "loss": "WALKER, Easton",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2021-05-07-byu-san-diego-att0114",
+      "player_rows": 39,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2021/byu/boxscore/12086",
+      "win": "Cooper MCKEEHAN",
+      "loss": "Conner Thurman",
+      "source_audit": {
+        "game_id": "cb-2021-05-07-byu-san-diego-att0114",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2021/byu/boxscore/12086",
+        "http_code": 200,
+        "source_bytes": 728369,
+        "source_sha256": "3cd53c811b991504300ab6de1b6239e89415c6e193d8bbb7232d52add6319163",
+        "teams": [
+          {
+            "name": "BYU",
+            "batters": 12,
+            "pitchers": 6,
+            "AB": 43,
+            "R": 11,
+            "H": 15,
+            "RBI": 10,
+            "BB": 6,
+            "SO": 14,
+            "pitching_outs": 27,
+            "pitching_runs": 10,
+            "pitching_hits": 17
+          },
+          {
+            "name": "San Diego",
+            "batters": 15,
+            "pitchers": 6,
+            "AB": 44,
+            "R": 10,
+            "H": 17,
+            "RBI": 10,
+            "BB": 3,
+            "SO": 6,
+            "pitching_outs": 27,
+            "pitching_runs": 11,
+            "pitching_hits": 15
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 39,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 11,
+            "hits": 15,
+            "errors": 1,
+            "innings": [
+              0,
+              7,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              2
+            ]
+          },
+          {
+            "runs": 10,
+            "hits": 17,
+            "errors": 1,
+            "innings": [
+              1,
+              0,
+              1,
+              1,
+              2,
+              0,
+              1,
+              0,
+              4
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "BYU",
+            "nine_starting_slots": true,
+            "batter_rows": 12,
+            "pitcher_rows": 6,
+            "substitutes": 3
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 15,
+            "pitcher_rows": 6,
+            "substitutes": 6
+          }
+        ],
+        "official_decisions": {
+          "win": "MCKEEHAN, Cooper",
+          "loss": "Thurman, Conner",
+          "save": "SMITH, Carter"
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2021-05-06-byu-san-diego-att0113",
+      "player_rows": 31,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2021/byu/boxscore/12085",
+      "win": "Reid MCLAUGHLIN",
+      "loss": "Ryan Robinson",
+      "source_audit": {
+        "game_id": "cb-2021-05-06-byu-san-diego-att0113",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2021/byu/boxscore/12085",
+        "http_code": 200,
+        "source_bytes": 667849,
+        "source_sha256": "1876920f18b2f5b6ba40b8f7d15451da7968df72c5d23bca5ea20066cae74f8d",
+        "teams": [
+          {
+            "name": "BYU",
+            "batters": 13,
+            "pitchers": 4,
+            "AB": 38,
+            "R": 6,
+            "H": 9,
+            "RBI": 5,
+            "BB": 2,
+            "SO": 17,
+            "pitching_outs": 30,
+            "pitching_runs": 4,
+            "pitching_hits": 10
+          },
+          {
+            "name": "San Diego",
+            "batters": 11,
+            "pitchers": 3,
+            "AB": 39,
+            "R": 4,
+            "H": 10,
+            "RBI": 4,
+            "BB": 1,
+            "SO": 6,
+            "pitching_outs": 30,
+            "pitching_runs": 6,
+            "pitching_hits": 9
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 31,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 6,
+            "hits": 9,
+            "errors": 0,
+            "innings": [
+              1,
+              0,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              2
+            ]
+          },
+          {
+            "runs": 4,
+            "hits": 10,
+            "errors": 1,
+            "innings": [
+              0,
+              0,
+              0,
+              2,
+              1,
+              0,
+              1,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "BYU",
+            "nine_starting_slots": true,
+            "batter_rows": 13,
+            "pitcher_rows": 4,
+            "substitutes": 4
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 3,
+            "substitutes": 2
+          }
+        ],
+        "official_decisions": {
+          "win": "MCLAUGHLIN, Reid",
+          "loss": "Robinson, Ryan",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2021-05-02-pepperdine-san-diego-att0112",
+      "player_rows": 33,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2021/pepperdine/boxscore/12130",
+      "win": "Lucas Braun",
+      "loss": "TYLER MURRAH",
+      "source_audit": {
+        "game_id": "cb-2021-05-02-pepperdine-san-diego-att0112",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2021/pepperdine/boxscore/12130",
+        "http_code": 200,
+        "source_bytes": 690401,
+        "source_sha256": "fd5b71f894dcab88eed87afb0bf25672ebc65cb2a4195f9e2a86a5f2c033ffcd",
+        "teams": [
+          {
+            "name": "Pepperdine",
+            "batters": 9,
+            "pitchers": 6,
+            "AB": 39,
+            "R": 9,
+            "H": 15,
+            "RBI": 9,
+            "BB": 3,
+            "SO": 6,
+            "pitching_outs": 26,
+            "pitching_runs": 10,
+            "pitching_hits": 13
+          },
+          {
+            "name": "San Diego",
+            "batters": 13,
+            "pitchers": 5,
+            "AB": 36,
+            "R": 10,
+            "H": 13,
+            "RBI": 9,
+            "BB": 7,
+            "SO": 3,
+            "pitching_outs": 27,
+            "pitching_runs": 9,
+            "pitching_hits": 15
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 33,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 9,
+            "hits": 15,
+            "errors": 2,
+            "innings": [
+              0,
+              3,
+              4,
+              0,
+              2,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 10,
+            "hits": 13,
+            "errors": 0,
+            "innings": [
+              1,
+              3,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              5
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Pepperdine",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 6,
+            "substitutes": 0
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 13,
+            "pitcher_rows": 5,
+            "substitutes": 4
+          }
+        ],
+        "official_decisions": {
+          "win": "Braun, Lucas",
+          "loss": "MURRAH, TYLER",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2021-05-01-pepperdine-san-diego-att0111",
+      "player_rows": 26,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2021/pepperdine/boxscore/12129",
+      "win": "Carter Rustad",
+      "loss": "COOPER CHANDLER",
+      "source_audit": {
+        "game_id": "cb-2021-05-01-pepperdine-san-diego-att0111",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2021/pepperdine/boxscore/12129",
+        "http_code": 200,
+        "source_bytes": 646733,
+        "source_sha256": "e8d63bb2e36369a45b4a2fa0ab2599c4358b6f89118d10514699770d77b94bd9",
+        "teams": [
+          {
+            "name": "Pepperdine",
+            "batters": 9,
+            "pitchers": 3,
+            "AB": 38,
+            "R": 6,
+            "H": 11,
+            "RBI": 5,
+            "BB": 4,
+            "SO": 12,
+            "pitching_outs": 24,
+            "pitching_runs": 7,
+            "pitching_hits": 8
+          },
+          {
+            "name": "San Diego",
+            "batters": 11,
+            "pitchers": 3,
+            "AB": 31,
+            "R": 7,
+            "H": 8,
+            "RBI": 7,
+            "BB": 3,
+            "SO": 4,
+            "pitching_outs": 27,
+            "pitching_runs": 6,
+            "pitching_hits": 11
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 26,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 6,
+            "hits": 11,
+            "errors": 1,
+            "innings": [
+              1,
+              2,
+              0,
+              2,
+              0,
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          {
+            "runs": 7,
+            "hits": 8,
+            "errors": 1,
+            "innings": [
+              5,
+              0,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Pepperdine",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 3,
+            "substitutes": 0
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 3,
+            "substitutes": 2
+          }
+        ],
+        "official_decisions": {
+          "win": "Rustad, Carter",
+          "loss": "CHANDLER, COOPER",
+          "save": "Shaw, Kieran"
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2021-04-30-pepperdine-san-diego-att0110",
+      "player_rows": 29,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2021/pepperdine/boxscore/12128",
+      "win": "Jake Miller",
+      "loss": "TREVOR HINKEL",
+      "source_audit": {
+        "game_id": "cb-2021-04-30-pepperdine-san-diego-att0110",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2021/pepperdine/boxscore/12128",
+        "http_code": 200,
+        "source_bytes": 658930,
+        "source_sha256": "bdbe977cb0cc93a872300d9ee772d85e00d71b6af876e571874f403cace11b4c",
+        "teams": [
+          {
+            "name": "Pepperdine",
+            "batters": 11,
+            "pitchers": 3,
+            "AB": 37,
+            "R": 3,
+            "H": 10,
+            "RBI": 3,
+            "BB": 3,
+            "SO": 15,
+            "pitching_outs": 24,
+            "pitching_runs": 8,
+            "pitching_hits": 11
+          },
+          {
+            "name": "San Diego",
+            "batters": 11,
+            "pitchers": 4,
+            "AB": 32,
+            "R": 8,
+            "H": 11,
+            "RBI": 7,
+            "BB": 1,
+            "SO": 2,
+            "pitching_outs": 27,
+            "pitching_runs": 3,
+            "pitching_hits": 10
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 29,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 3,
+            "hits": 10,
+            "errors": 1,
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              2,
+              0
+            ]
+          },
+          {
+            "runs": 8,
+            "hits": 11,
+            "errors": 1,
+            "innings": [
+              1,
+              0,
+              0,
+              2,
+              0,
+              5,
+              0,
+              0,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Pepperdine",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 3,
+            "substitutes": 2
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 4,
+            "substitutes": 2
+          }
+        ],
+        "official_decisions": {
+          "win": "Miller, Jake",
+          "loss": "HINKEL, TREVOR",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2021-04-24-cal-state-bakersfield-uc-san-diego-att0109",
+      "player_rows": 25,
+      "source_url": "https://ucsdtritons.com/sports/baseball/stats/2021/csu-bakersfield/boxscore/8289",
+      "win": "Aaron Charles",
+      "loss": "Noah Conlon",
+      "source_audit": {
+        "game_id": "cb-2021-04-24-cal-state-bakersfield-uc-san-diego-att0109",
+        "source": "https://ucsdtritons.com/sports/baseball/stats/2021/csu-bakersfield/boxscore/8289",
+        "http_code": 200,
+        "source_bytes": 598510,
+        "source_sha256": "e56a53ee895c069d522d375fa4512dffd765f71b3dbe546a0ff238fc18d3c537",
+        "teams": [
+          {
+            "name": "Cal State Bakersfield",
+            "batters": 9,
+            "pitchers": 2,
+            "AB": 31,
+            "R": 3,
+            "H": 6,
+            "RBI": 3,
+            "BB": 5,
+            "SO": 5,
+            "pitching_outs": 27,
+            "pitching_runs": 2,
+            "pitching_hits": 9
+          },
+          {
+            "name": "UC San Diego",
+            "batters": 11,
+            "pitchers": 3,
+            "AB": 34,
+            "R": 2,
+            "H": 9,
+            "RBI": 2,
+            "BB": 2,
+            "SO": 10,
+            "pitching_outs": 27,
+            "pitching_runs": 3,
+            "pitching_hits": 6
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 25,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 3,
+            "hits": 6,
+            "errors": 0,
+            "innings": [
+              0,
+              0,
+              0,
+              3,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 2,
+            "hits": 9,
+            "errors": 0,
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              0,
+              0
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Cal State Bakersfield",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 2,
+            "substitutes": 0
+          },
+          {
+            "team": "UC San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 3,
+            "substitutes": 2
+          }
+        ],
+        "official_decisions": {
+          "win": "Charles, Aaron",
+          "loss": "Conlon, Noah",
+          "save": "O'Connor, Kellen"
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2021-04-18-san-francisco-san-diego-att0108",
+      "player_rows": 31,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2021/san-francisco/boxscore/12078",
+      "win": "Conner Thurman",
+      "loss": "Grant NECHAK",
+      "source_audit": {
+        "game_id": "cb-2021-04-18-san-francisco-san-diego-att0108",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2021/san-francisco/boxscore/12078",
+        "http_code": 200,
+        "source_bytes": 660641,
+        "source_sha256": "75f4ae610b8b11657d88908a0b71b4d9db504238f4e674b6716dd3a0846ed4d7",
+        "teams": [
+          {
+            "name": "San Francisco",
+            "batters": 14,
+            "pitchers": 3,
+            "AB": 33,
+            "R": 1,
+            "H": 8,
+            "RBI": 1,
+            "BB": 4,
+            "SO": 7,
+            "pitching_outs": 24,
+            "pitching_runs": 8,
+            "pitching_hits": 6
+          },
+          {
+            "name": "San Diego",
+            "batters": 11,
+            "pitchers": 3,
+            "AB": 26,
+            "R": 8,
+            "H": 6,
+            "RBI": 8,
+            "BB": 7,
+            "SO": 2,
+            "pitching_outs": 27,
+            "pitching_runs": 1,
+            "pitching_hits": 8
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 31,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 1,
+            "hits": 8,
+            "errors": 0,
+            "innings": [
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 8,
+            "hits": 6,
+            "errors": 0,
+            "innings": [
+              1,
+              0,
+              0,
+              0,
+              2,
+              0,
+              1,
+              4,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "San Francisco",
+            "nine_starting_slots": true,
+            "batter_rows": 14,
+            "pitcher_rows": 3,
+            "substitutes": 5
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 3,
+            "substitutes": 2
+          }
+        ],
+        "official_decisions": {
+          "win": "Thurman, Conner",
+          "loss": "NECHAK, Grant",
+          "save": "Hyde, Jack"
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2021-04-17-san-francisco-san-diego-att0107",
+      "player_rows": 29,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2021/san-francisco/boxscore/12077",
+      "win": "Jake Miller",
+      "loss": "Josh MOLLERUS",
+      "source_audit": {
+        "game_id": "cb-2021-04-17-san-francisco-san-diego-att0107",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2021/san-francisco/boxscore/12077",
+        "http_code": 200,
+        "source_bytes": 657820,
+        "source_sha256": "55e618b7c9beaf2b8530320844a4513afcf818ecc4d6ebf824a36d5a4e1a34fc",
+        "teams": [
+          {
+            "name": "San Francisco",
+            "batters": 10,
+            "pitchers": 5,
+            "AB": 35,
+            "R": 5,
+            "H": 8,
+            "RBI": 3,
+            "BB": 3,
+            "SO": 9,
+            "pitching_outs": 24,
+            "pitching_runs": 7,
+            "pitching_hits": 8
+          },
+          {
+            "name": "San Diego",
+            "batters": 11,
+            "pitchers": 3,
+            "AB": 30,
+            "R": 7,
+            "H": 8,
+            "RBI": 6,
+            "BB": 4,
+            "SO": 2,
+            "pitching_outs": 27,
+            "pitching_runs": 5,
+            "pitching_hits": 8
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 29,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 5,
+            "hits": 8,
+            "errors": 2,
+            "innings": [
+              0,
+              0,
+              2,
+              0,
+              2,
+              1,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 7,
+            "hits": 8,
+            "errors": 2,
+            "innings": [
+              4,
+              0,
+              2,
+              0,
+              0,
+              0,
+              0,
+              1,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "San Francisco",
+            "nine_starting_slots": true,
+            "batter_rows": 10,
+            "pitcher_rows": 5,
+            "substitutes": 1
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 3,
+            "substitutes": 2
+          }
+        ],
+        "official_decisions": {
+          "win": "Miller, Jake",
+          "loss": "MOLLERUS, Josh",
+          "save": "Shaw, Kieran"
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2021-04-16-san-francisco-san-diego-att0106",
+      "player_rows": 36,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2021/san-francisco/boxscore/12076",
+      "win": "Landen BOURASSA",
+      "loss": "Carter Rustad",
+      "source_audit": {
+        "game_id": "cb-2021-04-16-san-francisco-san-diego-att0106",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2021/san-francisco/boxscore/12076",
+        "http_code": 200,
+        "source_bytes": 692309,
+        "source_sha256": "cf47480c64a9366bdf838837d8d42f698103e8205831910ddc4403013674cd46",
+        "teams": [
+          {
+            "name": "San Francisco",
+            "batters": 14,
+            "pitchers": 2,
+            "AB": 39,
+            "R": 12,
+            "H": 16,
+            "RBI": 11,
+            "BB": 5,
+            "SO": 4,
+            "pitching_outs": 27,
+            "pitching_runs": 1,
+            "pitching_hits": 6
+          },
+          {
+            "name": "San Diego",
+            "batters": 15,
+            "pitchers": 5,
+            "AB": 33,
+            "R": 1,
+            "H": 6,
+            "RBI": 1,
+            "BB": 1,
+            "SO": 5,
+            "pitching_outs": 27,
+            "pitching_runs": 12,
+            "pitching_hits": 16
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 36,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 12,
+            "hits": 16,
+            "errors": 1,
+            "innings": [
+              1,
+              4,
+              1,
+              1,
+              2,
+              0,
+              1,
+              0,
+              2
+            ]
+          },
+          {
+            "runs": 1,
+            "hits": 6,
+            "errors": 2,
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "San Francisco",
+            "nine_starting_slots": true,
+            "batter_rows": 14,
+            "pitcher_rows": 2,
+            "substitutes": 5
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 15,
+            "pitcher_rows": 5,
+            "substitutes": 6
+          }
+        ],
+        "official_decisions": {
+          "win": "BOURASSA, Landen",
+          "loss": "Rustad, Carter",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2021-04-03-cal-state-fullerton-san-diego-att0105",
+      "player_rows": 29,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2021/cal-state-fullerton/boxscore/12126",
+      "win": "Conner Thurman",
+      "loss": "Kyle Luckham",
+      "source_audit": {
+        "game_id": "cb-2021-04-03-cal-state-fullerton-san-diego-att0105",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2021/cal-state-fullerton/boxscore/12126",
+        "http_code": 200,
+        "source_bytes": 650962,
+        "source_sha256": "344243a690c1d9d46403c08d90d71637f3a2e5b93950510588d0359ffed9e050",
+        "teams": [
+          {
+            "name": "Cal State Fullerton",
+            "batters": 13,
+            "pitchers": 3,
+            "AB": 28,
+            "R": 2,
+            "H": 4,
+            "RBI": 2,
+            "BB": 4,
+            "SO": 10,
+            "pitching_outs": 24,
+            "pitching_runs": 8,
+            "pitching_hits": 10
+          },
+          {
+            "name": "San Diego",
+            "batters": 11,
+            "pitchers": 2,
+            "AB": 33,
+            "R": 8,
+            "H": 10,
+            "RBI": 6,
+            "BB": 2,
+            "SO": 6,
+            "pitching_outs": 27,
+            "pitching_runs": 2,
+            "pitching_hits": 4
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 29,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 2,
+            "hits": 4,
+            "errors": 2,
+            "innings": [
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0
+            ]
+          },
+          {
+            "runs": 8,
+            "hits": 10,
+            "errors": 0,
+            "innings": [
+              0,
+              0,
+              0,
+              2,
+              0,
+              1,
+              5,
+              0,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Cal State Fullerton",
+            "nine_starting_slots": true,
+            "batter_rows": 13,
+            "pitcher_rows": 3,
+            "substitutes": 4
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 2,
+            "substitutes": 2
+          }
+        ],
+        "official_decisions": {
+          "win": "Thurman, Conner",
+          "loss": "Luckham, Kyle",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2021-04-02-san-diego-cal-state-fullerton-att0104",
+      "player_rows": 26,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2021/cal-state-fullerton/boxscore/12125",
+      "win": "Michael Weisberg",
+      "loss": "Ivran Romero",
+      "source_audit": {
+        "game_id": "cb-2021-04-02-san-diego-cal-state-fullerton-att0104",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2021/cal-state-fullerton/boxscore/12125",
+        "http_code": 200,
+        "source_bytes": 636568,
+        "source_sha256": "60ea3f437d7e1b82107f1cb18e0dbad0ef39fb86b718ee0384c1b82074dfbfb6",
+        "teams": [
+          {
+            "name": "San Diego",
+            "batters": 10,
+            "pitchers": 4,
+            "AB": 34,
+            "R": 1,
+            "H": 6,
+            "RBI": 1,
+            "BB": 0,
+            "SO": 4,
+            "pitching_outs": 24,
+            "pitching_runs": 3,
+            "pitching_hits": 7
+          },
+          {
+            "name": "Cal State Fullerton",
+            "batters": 9,
+            "pitchers": 3,
+            "AB": 28,
+            "R": 3,
+            "H": 7,
+            "RBI": 3,
+            "BB": 8,
+            "SO": 7,
+            "pitching_outs": 27,
+            "pitching_runs": 1,
+            "pitching_hits": 6
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 26,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 1,
+            "hits": 6,
+            "errors": 1,
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 3,
+            "hits": 7,
+            "errors": 3,
+            "innings": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 10,
+            "pitcher_rows": 4,
+            "substitutes": 1
+          },
+          {
+            "team": "Cal State Fullerton",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 3,
+            "substitutes": 0
+          }
+        ],
+        "official_decisions": {
+          "win": "Weisberg, Michael",
+          "loss": "Romero, Ivran",
+          "save": "Repetti, Cameron"
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2021-03-30-vanguard-san-diego-att0103",
+      "player_rows": 40,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2021/vanguard-university-calif-/boxscore/12066",
+      "win": "Lucas Braun",
+      "loss": "Tyler Armenta",
+      "source_audit": {
+        "game_id": "cb-2021-03-30-vanguard-san-diego-att0103",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2021/vanguard-university-calif-/boxscore/12066",
+        "http_code": 200,
+        "source_bytes": 714731,
+        "source_sha256": "4339c204fa9cbd519fd8ba260e31cd76f3cc393905a71cefa9da5a2382e49751",
+        "teams": [
+          {
+            "name": "Vanguard",
+            "batters": 14,
+            "pitchers": 7,
+            "AB": 35,
+            "R": 4,
+            "H": 9,
+            "RBI": 4,
+            "BB": 6,
+            "SO": 13,
+            "pitching_outs": 24,
+            "pitching_runs": 10,
+            "pitching_hits": 7
+          },
+          {
+            "name": "San Diego",
+            "batters": 12,
+            "pitchers": 7,
+            "AB": 27,
+            "R": 10,
+            "H": 7,
+            "RBI": 10,
+            "BB": 5,
+            "SO": 3,
+            "pitching_outs": 27,
+            "pitching_runs": 4,
+            "pitching_hits": 9
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 40,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 4,
+            "hits": 9,
+            "errors": 2,
+            "innings": [
+              3,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 10,
+            "hits": 7,
+            "errors": 0,
+            "innings": [
+              0,
+              5,
+              0,
+              3,
+              2,
+              0,
+              0,
+              0,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Vanguard",
+            "nine_starting_slots": true,
+            "batter_rows": 14,
+            "pitcher_rows": 7,
+            "substitutes": 5
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 12,
+            "pitcher_rows": 7,
+            "substitutes": 3
+          }
+        ],
+        "official_decisions": {
+          "win": "Braun, Lucas",
+          "loss": "Armenta, Tyler",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2021-03-28-pacific-san-diego-att0102",
+      "player_rows": 32,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2021/pacific/boxscore/12065",
+      "win": "Carter Rustad",
+      "loss": "Henrik Reinersten",
+      "source_audit": {
+        "game_id": "cb-2021-03-28-pacific-san-diego-att0102",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2021/pacific/boxscore/12065",
+        "http_code": 200,
+        "source_bytes": 666534,
+        "source_sha256": "3f0b994ec3b3c150f8d22fd8993611ce92a8285eca2d1c35c2478f5b04ab9bda",
+        "teams": [
+          {
+            "name": "Pacific",
+            "batters": 12,
+            "pitchers": 3,
+            "AB": 33,
+            "R": 1,
+            "H": 8,
+            "RBI": 1,
+            "BB": 6,
+            "SO": 7,
+            "pitching_outs": 24,
+            "pitching_runs": 5,
+            "pitching_hits": 7
+          },
+          {
+            "name": "San Diego",
+            "batters": 12,
+            "pitchers": 5,
+            "AB": 28,
+            "R": 5,
+            "H": 7,
+            "RBI": 4,
+            "BB": 1,
+            "SO": 9,
+            "pitching_outs": 27,
+            "pitching_runs": 1,
+            "pitching_hits": 8
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 32,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 1,
+            "hits": 8,
+            "errors": 1,
+            "innings": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 5,
+            "hits": 7,
+            "errors": 1,
+            "innings": [
+              0,
+              0,
+              2,
+              0,
+              3,
+              0,
+              0,
+              0,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Pacific",
+            "nine_starting_slots": true,
+            "batter_rows": 12,
+            "pitcher_rows": 3,
+            "substitutes": 3
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 12,
+            "pitcher_rows": 5,
+            "substitutes": 3
+          }
+        ],
+        "official_decisions": {
+          "win": "Rustad, Carter",
+          "loss": "Reinersten, Henrik",
+          "save": "Shaw, Kieran"
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2021-03-27-pacific-san-diego-att0101",
+      "player_rows": 36,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2021/pacific/boxscore/12064",
+      "win": "Jack Hyde",
+      "loss": "Hunter Hayes",
+      "source_audit": {
+        "game_id": "cb-2021-03-27-pacific-san-diego-att0101",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2021/pacific/boxscore/12064",
+        "http_code": 200,
+        "source_bytes": 703929,
+        "source_sha256": "442a147b9c20c2080d34626bb1d259b7e9f8bbd30eae0d7641f258594d9b4bde",
+        "teams": [
+          {
+            "name": "Pacific",
+            "batters": 14,
+            "pitchers": 6,
+            "AB": 34,
+            "R": 3,
+            "H": 7,
+            "RBI": 2,
+            "BB": 5,
+            "SO": 6,
+            "pitching_outs": 24,
+            "pitching_runs": 15,
+            "pitching_hits": 21
+          },
+          {
+            "name": "San Diego",
+            "batters": 13,
+            "pitchers": 3,
+            "AB": 41,
+            "R": 15,
+            "H": 21,
+            "RBI": 14,
+            "BB": 5,
+            "SO": 2,
+            "pitching_outs": 27,
+            "pitching_runs": 3,
+            "pitching_hits": 7
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 36,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 3,
+            "hits": 7,
+            "errors": 3,
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              3,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 15,
+            "hits": 21,
+            "errors": 2,
+            "innings": [
+              1,
+              5,
+              0,
+              3,
+              4,
+              0,
+              0,
+              2,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Pacific",
+            "nine_starting_slots": true,
+            "batter_rows": 14,
+            "pitcher_rows": 6,
+            "substitutes": 5
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 13,
+            "pitcher_rows": 3,
+            "substitutes": 4
+          }
+        ],
+        "official_decisions": {
+          "win": "Hyde, Jack",
+          "loss": "Hayes, Hunter",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2021-03-26-pacific-san-diego-att0100",
+      "player_rows": 32,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2021/pacific/boxscore/12063",
+      "win": "Ryan Robinson",
+      "loss": "Hayden Pearce",
+      "source_audit": {
+        "game_id": "cb-2021-03-26-pacific-san-diego-att0100",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2021/pacific/boxscore/12063",
+        "http_code": 200,
+        "source_bytes": 659473,
+        "source_sha256": "8ce48aa5d05b5600bcd9f26425dea64b437d7b5a610ba0686a98b637d56e48b4",
+        "teams": [
+          {
+            "name": "Pacific",
+            "batters": 13,
+            "pitchers": 4,
+            "AB": 31,
+            "R": 1,
+            "H": 6,
+            "RBI": 1,
+            "BB": 3,
+            "SO": 15,
+            "pitching_outs": 24,
+            "pitching_runs": 3,
+            "pitching_hits": 9
+          },
+          {
+            "name": "San Diego",
+            "batters": 11,
+            "pitchers": 4,
+            "AB": 31,
+            "R": 3,
+            "H": 9,
+            "RBI": 3,
+            "BB": 1,
+            "SO": 7,
+            "pitching_outs": 27,
+            "pitching_runs": 1,
+            "pitching_hits": 6
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 32,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 1,
+            "hits": 6,
+            "errors": 1,
+            "innings": [
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 3,
+            "hits": 9,
+            "errors": 1,
+            "innings": [
+              0,
+              0,
+              1,
+              0,
+              0,
+              1,
+              1,
+              0,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Pacific",
+            "nine_starting_slots": true,
+            "batter_rows": 13,
+            "pitcher_rows": 4,
+            "substitutes": 4
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 4,
+            "substitutes": 2
+          }
+        ],
+        "official_decisions": {
+          "win": "Robinson, Ryan",
+          "loss": "Pearce, Hayden",
+          "save": "Shaw, Kieran"
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2021-03-23-san-diego-southern-california-att0099",
+      "player_rows": 31,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2021/usc/boxscore/12062",
+      "win": "Carter Rustad",
+      "loss": "Charlie Hurley",
+      "source_audit": {
+        "game_id": "cb-2021-03-23-san-diego-southern-california-att0099",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2021/usc/boxscore/12062",
+        "http_code": 200,
+        "source_bytes": 671214,
+        "source_sha256": "bcd6a4fd89b832eb72b04f56837dcc1a906fab028f77fdeeb4d80a5c4e53162d",
+        "teams": [
+          {
+            "name": "San Diego",
+            "batters": 13,
+            "pitchers": 5,
+            "AB": 38,
+            "R": 6,
+            "H": 12,
+            "RBI": 6,
+            "BB": 2,
+            "SO": 2,
+            "pitching_outs": 27,
+            "pitching_runs": 5,
+            "pitching_hits": 12
+          },
+          {
+            "name": "Southern California",
+            "batters": 9,
+            "pitchers": 4,
+            "AB": 37,
+            "R": 5,
+            "H": 12,
+            "RBI": 5,
+            "BB": 3,
+            "SO": 2,
+            "pitching_outs": 27,
+            "pitching_runs": 6,
+            "pitching_hits": 12
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 31,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 6,
+            "hits": 12,
+            "errors": 2,
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              1,
+              2,
+              1,
+              0,
+              2
+            ]
+          },
+          {
+            "runs": 5,
+            "hits": 12,
+            "errors": 1,
+            "innings": [
+              1,
+              0,
+              0,
+              1,
+              3,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 13,
+            "pitcher_rows": 5,
+            "substitutes": 4
+          },
+          {
+            "team": "Southern California",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 4,
+            "substitutes": 0
+          }
+        ],
+        "official_decisions": {
+          "win": "Rustad, Carter",
+          "loss": "Hurley, Charlie",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2021-03-14-uc-riverside-san-diego-att0098",
+      "player_rows": 32,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2021/uc-riverside/boxscore/12058",
+      "win": "Kieran Shaw",
+      "loss": "Eric Marrujo",
+      "source_audit": {
+        "game_id": "cb-2021-03-14-uc-riverside-san-diego-att0098",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2021/uc-riverside/boxscore/12058",
+        "http_code": 200,
+        "source_bytes": 686422,
+        "source_sha256": "4edf69a9c4cc1043eb81fdb70702f84333fc234c67ba46809990ff1dc8b6b119",
+        "teams": [
+          {
+            "name": "UC Riverside",
+            "batters": 10,
+            "pitchers": 5,
+            "AB": 38,
+            "R": 4,
+            "H": 11,
+            "RBI": 4,
+            "BB": 2,
+            "SO": 6,
+            "pitching_outs": 28,
+            "pitching_runs": 5,
+            "pitching_hits": 8
+          },
+          {
+            "name": "San Diego",
+            "batters": 11,
+            "pitchers": 6,
+            "AB": 34,
+            "R": 5,
+            "H": 8,
+            "RBI": 5,
+            "BB": 3,
+            "SO": 4,
+            "pitching_outs": 30,
+            "pitching_runs": 4,
+            "pitching_hits": 11
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 32,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 4,
+            "hits": 11,
+            "errors": 2,
+            "innings": [
+              1,
+              0,
+              0,
+              0,
+              3,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 5,
+            "hits": 8,
+            "errors": 1,
+            "innings": [
+              0,
+              0,
+              0,
+              2,
+              0,
+              0,
+              1,
+              0,
+              1,
+              1
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "UC Riverside",
+            "nine_starting_slots": true,
+            "batter_rows": 10,
+            "pitcher_rows": 5,
+            "substitutes": 1
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 6,
+            "substitutes": 2
+          }
+        ],
+        "official_decisions": {
+          "win": "Shaw, Kieran",
+          "loss": "Eric Marrujo",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": "Eric Marrujo",
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2021-03-13-uc-riverside-san-diego-att0097",
+      "player_rows": 29,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2021/uc-riverside/boxscore/12117",
+      "win": "Brycen Mautz",
+      "loss": "Jake Lachemann",
+      "source_audit": {
+        "game_id": "cb-2021-03-13-uc-riverside-san-diego-att0097",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2021/uc-riverside/boxscore/12117",
+        "http_code": 200,
+        "source_bytes": 648299,
+        "source_sha256": "3c6288f87138b8d0281bfe3cc2a04223ea9f19fb31c446acf3cd04d0333319c5",
+        "teams": [
+          {
+            "name": "UC Riverside",
+            "batters": 10,
+            "pitchers": 4,
+            "AB": 29,
+            "R": 0,
+            "H": 2,
+            "RBI": 0,
+            "BB": 1,
+            "SO": 11,
+            "pitching_outs": 24,
+            "pitching_runs": 9,
+            "pitching_hits": 10
+          },
+          {
+            "name": "San Diego",
+            "batters": 13,
+            "pitchers": 2,
+            "AB": 33,
+            "R": 9,
+            "H": 10,
+            "RBI": 8,
+            "BB": 2,
+            "SO": 2,
+            "pitching_outs": 27,
+            "pitching_runs": 0,
+            "pitching_hits": 2
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 29,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 0,
+            "hits": 2,
+            "errors": 0,
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 9,
+            "hits": 10,
+            "errors": 0,
+            "innings": [
+              4,
+              0,
+              0,
+              0,
+              1,
+              2,
+              1,
+              1,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "UC Riverside",
+            "nine_starting_slots": true,
+            "batter_rows": 10,
+            "pitcher_rows": 4,
+            "substitutes": 1
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 13,
+            "pitcher_rows": 2,
+            "substitutes": 4
+          }
+        ],
+        "official_decisions": {
+          "win": "Mautz, Brycen",
+          "loss": "Jake Lachemann",
+          "save": "Romero, Ivran"
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": "Jake Lachemann",
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2021-03-13-uc-riverside-san-diego-att0096",
+      "player_rows": 24,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2021/uc-riverside/boxscore/12057",
+      "win": "Conner Thurman",
+      "loss": "Abbott Haffar",
+      "source_audit": {
+        "game_id": "cb-2021-03-13-uc-riverside-san-diego-att0096",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2021/uc-riverside/boxscore/12057",
+        "http_code": 200,
+        "source_bytes": 626532,
+        "source_sha256": "657ac4308fe571f48d7881c63e724f91448a1ebd33314f0c992035bbcf6bc68a",
+        "teams": [
+          {
+            "name": "UC Riverside",
+            "batters": 9,
+            "pitchers": 2,
+            "AB": 29,
+            "R": 0,
+            "H": 2,
+            "RBI": 0,
+            "BB": 1,
+            "SO": 14,
+            "pitching_outs": 24,
+            "pitching_runs": 7,
+            "pitching_hits": 14
+          },
+          {
+            "name": "San Diego",
+            "batters": 11,
+            "pitchers": 2,
+            "AB": 35,
+            "R": 7,
+            "H": 14,
+            "RBI": 7,
+            "BB": 2,
+            "SO": 4,
+            "pitching_outs": 27,
+            "pitching_runs": 0,
+            "pitching_hits": 2
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 24,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 0,
+            "hits": 2,
+            "errors": 1,
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 7,
+            "hits": 14,
+            "errors": 0,
+            "innings": [
+              0,
+              0,
+              3,
+              0,
+              0,
+              0,
+              0,
+              4,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "UC Riverside",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 2,
+            "substitutes": 0
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 2,
+            "substitutes": 2
+          }
+        ],
+        "official_decisions": {
+          "win": "Thurman, Conner",
+          "loss": "Abbott Haffar",
+          "save": "Shaw, Kieran"
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": "Abbott Haffar",
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2021-03-12-uc-riverside-san-diego-att0095",
+      "player_rows": 32,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2021/uc-riverside/boxscore/12056",
+      "win": "Jake Miller",
+      "loss": "Zach Jacobs",
+      "source_audit": {
+        "game_id": "cb-2021-03-12-uc-riverside-san-diego-att0095",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2021/uc-riverside/boxscore/12056",
+        "http_code": 200,
+        "source_bytes": 681532,
+        "source_sha256": "acc9af20e94b559608d1759c8b533980da41bc5b74c04d9719e1997ab9f63608",
+        "teams": [
+          {
+            "name": "UC Riverside",
+            "batters": 13,
+            "pitchers": 3,
+            "AB": 34,
+            "R": 4,
+            "H": 8,
+            "RBI": 3,
+            "BB": 3,
+            "SO": 14,
+            "pitching_outs": 24,
+            "pitching_runs": 16,
+            "pitching_hits": 12
+          },
+          {
+            "name": "San Diego",
+            "batters": 12,
+            "pitchers": 4,
+            "AB": 36,
+            "R": 16,
+            "H": 12,
+            "RBI": 15,
+            "BB": 7,
+            "SO": 7,
+            "pitching_outs": 27,
+            "pitching_runs": 4,
+            "pitching_hits": 8
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 32,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 4,
+            "hits": 8,
+            "errors": 3,
+            "innings": [
+              0,
+              1,
+              1,
+              0,
+              0,
+              0,
+              2,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 16,
+            "hits": 12,
+            "errors": 1,
+            "innings": [
+              1,
+              0,
+              2,
+              3,
+              2,
+              3,
+              0,
+              5,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "UC Riverside",
+            "nine_starting_slots": true,
+            "batter_rows": 13,
+            "pitcher_rows": 3,
+            "substitutes": 4
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 12,
+            "pitcher_rows": 4,
+            "substitutes": 3
+          }
+        ],
+        "official_decisions": {
+          "win": "Miller, Jake",
+          "loss": "Zach Jacobs",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": "Zach Jacobs",
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2021-03-11-santa-clara-uc-san-diego-att0094",
+      "player_rows": 26,
+      "source_url": "https://ucsdtritons.com/sports/baseball/stats/2021/santa-clara/boxscore/8205",
+      "win": "Locke BERNHARDT",
+      "loss": "Noah Conlon",
+      "source_audit": {
+        "game_id": "cb-2021-03-11-santa-clara-uc-san-diego-att0094",
+        "source": "https://ucsdtritons.com/sports/baseball/stats/2021/santa-clara/boxscore/8205",
+        "http_code": 200,
+        "source_bytes": 612571,
+        "source_sha256": "cfe792b7e39117247f1e8e605429c5af2a8bcd129667dab53328f02531683ec8",
+        "teams": [
+          {
+            "name": "Santa Clara",
+            "batters": 9,
+            "pitchers": 3,
+            "AB": 32,
+            "R": 6,
+            "H": 9,
+            "RBI": 6,
+            "BB": 6,
+            "SO": 8,
+            "pitching_outs": 27,
+            "pitching_runs": 4,
+            "pitching_hits": 4
+          },
+          {
+            "name": "UC San Diego",
+            "batters": 12,
+            "pitchers": 2,
+            "AB": 30,
+            "R": 4,
+            "H": 4,
+            "RBI": 3,
+            "BB": 5,
+            "SO": 13,
+            "pitching_outs": 27,
+            "pitching_runs": 6,
+            "pitching_hits": 9
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 26,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 6,
+            "hits": 9,
+            "errors": 3,
+            "innings": [
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              4,
+              1,
+              0
+            ]
+          },
+          {
+            "runs": 4,
+            "hits": 4,
+            "errors": 3,
+            "innings": [
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              0
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Santa Clara",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 3,
+            "substitutes": 0
+          },
+          {
+            "team": "UC San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 12,
+            "pitcher_rows": 2,
+            "substitutes": 3
+          }
+        ],
+        "official_decisions": {
+          "win": "BERNHARDT,Locke",
+          "loss": "Conlon, Noah",
+          "save": "HOWARD,Travis"
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2021-03-07-uc-san-diego-san-diego-att0093",
+      "player_rows": 35,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2021/uc-san-diego/boxscore/12055",
+      "win": "Grady Miller",
+      "loss": "Aren Alvarez",
+      "source_audit": {
+        "game_id": "cb-2021-03-07-uc-san-diego-san-diego-att0093",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2021/uc-san-diego/boxscore/12055",
+        "http_code": 200,
+        "source_bytes": 681358,
+        "source_sha256": "d755159860573344bc51908a9f2f296c4d0ec7d30a4c8f9062ad7ad7e4985d43",
+        "teams": [
+          {
+            "name": "UC San Diego",
+            "batters": 11,
+            "pitchers": 4,
+            "AB": 32,
+            "R": 2,
+            "H": 5,
+            "RBI": 1,
+            "BB": 2,
+            "SO": 12,
+            "pitching_outs": 24,
+            "pitching_runs": 8,
+            "pitching_hits": 7
+          },
+          {
+            "name": "San Diego",
+            "batters": 15,
+            "pitchers": 5,
+            "AB": 29,
+            "R": 8,
+            "H": 7,
+            "RBI": 8,
+            "BB": 2,
+            "SO": 2,
+            "pitching_outs": 27,
+            "pitching_runs": 2,
+            "pitching_hits": 5
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 35,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 2,
+            "hits": 5,
+            "errors": 0,
+            "innings": [
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 8,
+            "hits": 7,
+            "errors": 1,
+            "innings": [
+              1,
+              0,
+              0,
+              3,
+              0,
+              0,
+              0,
+              4,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "UC San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 4,
+            "substitutes": 2
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 15,
+            "pitcher_rows": 5,
+            "substitutes": 6
+          }
+        ],
+        "official_decisions": {
+          "win": "Miller, Grady",
+          "loss": "Alvarez,Aren",
+          "save": "Shaw, Kieran"
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2021-03-06-uc-san-diego-san-diego-att0092",
+      "player_rows": 27,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2021/uc-san-diego/boxscore/12054",
+      "win": "Conner Thurman",
+      "loss": "Brandon Weed",
+      "source_audit": {
+        "game_id": "cb-2021-03-06-uc-san-diego-san-diego-att0092",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2021/uc-san-diego/boxscore/12054",
+        "http_code": 200,
+        "source_bytes": 653186,
+        "source_sha256": "2d7f39ef6f3960f7a9d244e8d4ab15ad70d5504f305e4bd13046223fc67de701",
+        "teams": [
+          {
+            "name": "UC San Diego",
+            "batters": 9,
+            "pitchers": 4,
+            "AB": 31,
+            "R": 2,
+            "H": 5,
+            "RBI": 2,
+            "BB": 2,
+            "SO": 7,
+            "pitching_outs": 24,
+            "pitching_runs": 10,
+            "pitching_hits": 12
+          },
+          {
+            "name": "San Diego",
+            "batters": 11,
+            "pitchers": 3,
+            "AB": 31,
+            "R": 10,
+            "H": 12,
+            "RBI": 10,
+            "BB": 6,
+            "SO": 0,
+            "pitching_outs": 27,
+            "pitching_runs": 2,
+            "pitching_hits": 5
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 27,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 2,
+            "hits": 5,
+            "errors": 1,
+            "innings": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0
+            ]
+          },
+          {
+            "runs": 10,
+            "hits": 12,
+            "errors": 1,
+            "innings": [
+              0,
+              1,
+              4,
+              0,
+              0,
+              1,
+              0,
+              4,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "UC San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 4,
+            "substitutes": 0
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 3,
+            "substitutes": 2
+          }
+        ],
+        "official_decisions": {
+          "win": "Thurman, Conner",
+          "loss": "Weed,Brandon",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2021-03-05-san-diego-uc-san-diego-att0091",
+      "player_rows": 35,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2021/uc-san-diego/boxscore/12053",
+      "win": "Brycen Mautz",
+      "loss": "Chris Gilmartin",
+      "source_audit": {
+        "game_id": "cb-2021-03-05-san-diego-uc-san-diego-att0091",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2021/uc-san-diego/boxscore/12053",
+        "http_code": 200,
+        "source_bytes": 713034,
+        "source_sha256": "a097f02b8e42c46ace4ae73e0899c54000f85e0d27c24b9a7af1dc47ed80f5b7",
+        "teams": [
+          {
+            "name": "San Diego",
+            "batters": 14,
+            "pitchers": 3,
+            "AB": 41,
+            "R": 15,
+            "H": 17,
+            "RBI": 15,
+            "BB": 7,
+            "SO": 5,
+            "pitching_outs": 27,
+            "pitching_runs": 10,
+            "pitching_hits": 14
+          },
+          {
+            "name": "UC San Diego",
+            "batters": 13,
+            "pitchers": 5,
+            "AB": 41,
+            "R": 10,
+            "H": 14,
+            "RBI": 9,
+            "BB": 4,
+            "SO": 10,
+            "pitching_outs": 27,
+            "pitching_runs": 15,
+            "pitching_hits": 17
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 35,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 15,
+            "hits": 17,
+            "errors": 1,
+            "innings": [
+              1,
+              5,
+              4,
+              2,
+              1,
+              0,
+              0,
+              1,
+              1,
+              0
+            ]
+          },
+          {
+            "runs": 10,
+            "hits": 14,
+            "errors": 2,
+            "innings": [
+              0,
+              2,
+              3,
+              2,
+              0,
+              3,
+              0,
+              0,
+              0,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 14,
+            "pitcher_rows": 3,
+            "substitutes": 5
+          },
+          {
+            "team": "UC San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 13,
+            "pitcher_rows": 5,
+            "substitutes": 4
+          }
+        ],
+        "official_decisions": {
+          "win": "Mautz, Brycen",
+          "loss": "Gilmartin,Chris",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2021-03-04-san-diego-uc-san-diego-att0090",
+      "player_rows": 35,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2021/uc-san-diego/boxscore/12052",
+      "win": "Jake Miller",
+      "loss": "Cameron Leonard",
+      "source_audit": {
+        "game_id": "cb-2021-03-04-san-diego-uc-san-diego-att0090",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2021/uc-san-diego/boxscore/12052",
+        "http_code": 200,
+        "source_bytes": 698548,
+        "source_sha256": "0c3fe9ea437ea4b518a8ef3e26364322a2263b437ea1c0b316f881b71f08eba1",
+        "teams": [
+          {
+            "name": "San Diego",
+            "batters": 13,
+            "pitchers": 5,
+            "AB": 38,
+            "R": 12,
+            "H": 12,
+            "RBI": 10,
+            "BB": 5,
+            "SO": 6,
+            "pitching_outs": 27,
+            "pitching_runs": 4,
+            "pitching_hits": 7
+          },
+          {
+            "name": "UC San Diego",
+            "batters": 14,
+            "pitchers": 3,
+            "AB": 33,
+            "R": 4,
+            "H": 7,
+            "RBI": 3,
+            "BB": 7,
+            "SO": 12,
+            "pitching_outs": 27,
+            "pitching_runs": 12,
+            "pitching_hits": 12
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 35,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 12,
+            "hits": 12,
+            "errors": 1,
+            "innings": [
+              2,
+              1,
+              2,
+              3,
+              0,
+              0,
+              0,
+              1,
+              3,
+              0
+            ]
+          },
+          {
+            "runs": 4,
+            "hits": 7,
+            "errors": 4,
+            "innings": [
+              0,
+              1,
+              0,
+              1,
+              0,
+              1,
+              0,
+              1,
+              0,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 13,
+            "pitcher_rows": 5,
+            "substitutes": 4
+          },
+          {
+            "team": "UC San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 14,
+            "pitcher_rows": 3,
+            "substitutes": 5
+          }
+        ],
+        "official_decisions": {
+          "win": "Miller, Jake",
+          "loss": "Leonard,Cameron",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2021-02-28-cal-state-fullerton-san-diego-att0089",
+      "player_rows": 30,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2021/cal-state-fullerton/boxscore/12051",
+      "win": "Kyle Luckham",
+      "loss": "Grady Miller",
+      "source_audit": {
+        "game_id": "cb-2021-02-28-cal-state-fullerton-san-diego-att0089",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2021/cal-state-fullerton/boxscore/12051",
+        "http_code": 200,
+        "source_bytes": 658271,
+        "source_sha256": "1dbae19bc4ed7f5bfe017408dbc728b5caa491ae724ec90701a4eec9e2987feb",
+        "teams": [
+          {
+            "name": "Cal State Fullerton",
+            "batters": 9,
+            "pitchers": 4,
+            "AB": 35,
+            "R": 5,
+            "H": 10,
+            "RBI": 5,
+            "BB": 2,
+            "SO": 5,
+            "pitching_outs": 27,
+            "pitching_runs": 1,
+            "pitching_hits": 4
+          },
+          {
+            "name": "San Diego",
+            "batters": 11,
+            "pitchers": 6,
+            "AB": 31,
+            "R": 1,
+            "H": 4,
+            "RBI": 1,
+            "BB": 2,
+            "SO": 6,
+            "pitching_outs": 27,
+            "pitching_runs": 5,
+            "pitching_hits": 10
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 30,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 5,
+            "hits": 10,
+            "errors": 0,
+            "innings": [
+              0,
+              2,
+              3,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 1,
+            "hits": 4,
+            "errors": 0,
+            "innings": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Cal State Fullerton",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 4,
+            "substitutes": 0
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 6,
+            "substitutes": 2
+          }
+        ],
+        "official_decisions": {
+          "win": "Luckham, Kyle",
+          "loss": "Miller, Grady",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2021-02-27-cal-state-fullerton-san-diego-att0088",
+      "player_rows": 39,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2021/cal-state-fullerton/boxscore/12050",
+      "win": "Eddy Pelc",
+      "loss": "Landon Anderson",
+      "source_audit": {
+        "game_id": "cb-2021-02-27-cal-state-fullerton-san-diego-att0088",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2021/cal-state-fullerton/boxscore/12050",
+        "http_code": 200,
+        "source_bytes": 699122,
+        "source_sha256": "d0b4248e11a8930a5603ef106c92ec76b599fa9616ac6a4028b6a5f77e85efb9",
+        "teams": [
+          {
+            "name": "Cal State Fullerton",
+            "batters": 15,
+            "pitchers": 4,
+            "AB": 32,
+            "R": 5,
+            "H": 8,
+            "RBI": 3,
+            "BB": 4,
+            "SO": 10,
+            "pitching_outs": 25,
+            "pitching_runs": 6,
+            "pitching_hits": 10
+          },
+          {
+            "name": "San Diego",
+            "batters": 16,
+            "pitchers": 4,
+            "AB": 34,
+            "R": 6,
+            "H": 10,
+            "RBI": 6,
+            "BB": 5,
+            "SO": 5,
+            "pitching_outs": 27,
+            "pitching_runs": 5,
+            "pitching_hits": 8
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 39,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 5,
+            "hits": 8,
+            "errors": 1,
+            "innings": [
+              0,
+              0,
+              1,
+              0,
+              0,
+              2,
+              2,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 6,
+            "hits": 10,
+            "errors": 1,
+            "innings": [
+              1,
+              1,
+              0,
+              2,
+              0,
+              0,
+              0,
+              0,
+              2
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Cal State Fullerton",
+            "nine_starting_slots": true,
+            "batter_rows": 15,
+            "pitcher_rows": 4,
+            "substitutes": 6
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 16,
+            "pitcher_rows": 4,
+            "substitutes": 7
+          }
+        ],
+        "official_decisions": {
+          "win": "Pelc, Eddy",
+          "loss": "Anderson, Landon",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2021-02-26-cal-state-fullerton-san-diego-att0087",
+      "player_rows": 34,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2021/cal-state-fullerton/boxscore/12049",
+      "win": "Jake Miller",
+      "loss": "Tanner Bibee",
+      "source_audit": {
+        "game_id": "cb-2021-02-26-cal-state-fullerton-san-diego-att0087",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2021/cal-state-fullerton/boxscore/12049",
+        "http_code": 200,
+        "source_bytes": 669836,
+        "source_sha256": "6097130510a38cf84bbfff7b7a5a1788b58d2f87847ca8dfb3d331048f548280",
+        "teams": [
+          {
+            "name": "Cal State Fullerton",
+            "batters": 15,
+            "pitchers": 3,
+            "AB": 35,
+            "R": 1,
+            "H": 7,
+            "RBI": 1,
+            "BB": 1,
+            "SO": 19,
+            "pitching_outs": 24,
+            "pitching_runs": 6,
+            "pitching_hits": 14
+          },
+          {
+            "name": "San Diego",
+            "batters": 13,
+            "pitchers": 3,
+            "AB": 33,
+            "R": 6,
+            "H": 14,
+            "RBI": 6,
+            "BB": 2,
+            "SO": 7,
+            "pitching_outs": 27,
+            "pitching_runs": 1,
+            "pitching_hits": 7
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 34,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 1,
+            "hits": 7,
+            "errors": 1,
+            "innings": [
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 6,
+            "hits": 14,
+            "errors": 0,
+            "innings": [
+              1,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              4,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Cal State Fullerton",
+            "nine_starting_slots": true,
+            "batter_rows": 15,
+            "pitcher_rows": 3,
+            "substitutes": 6
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 13,
+            "pitcher_rows": 3,
+            "substitutes": 4
+          }
+        ],
+        "official_decisions": {
+          "win": "Miller, Jake",
+          "loss": "Bibee, Tanner",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2021-02-21-san-diego-state-san-diego-att0086",
+      "player_rows": 31,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2021/san-diego-state/boxscore/12047",
+      "win": "Ivran Romero",
+      "loss": "Casey O'SULLIVAN",
+      "source_audit": {
+        "game_id": "cb-2021-02-21-san-diego-state-san-diego-att0086",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2021/san-diego-state/boxscore/12047",
+        "http_code": 200,
+        "source_bytes": 698071,
+        "source_sha256": "b618c2c922319f22444a613e92c2b5dc3cec2df14a535595bccc2a7d1b0a6be7",
+        "teams": [
+          {
+            "name": "San Diego State",
+            "batters": 10,
+            "pitchers": 7,
+            "AB": 42,
+            "R": 12,
+            "H": 16,
+            "RBI": 10,
+            "BB": 1,
+            "SO": 5,
+            "pitching_outs": 24,
+            "pitching_runs": 16,
+            "pitching_hits": 11
+          },
+          {
+            "name": "San Diego",
+            "batters": 11,
+            "pitchers": 4,
+            "AB": 33,
+            "R": 16,
+            "H": 11,
+            "RBI": 13,
+            "BB": 7,
+            "SO": 3,
+            "pitching_outs": 27,
+            "pitching_runs": 12,
+            "pitching_hits": 16
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 31,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 12,
+            "hits": 16,
+            "errors": 1,
+            "innings": [
+              2,
+              0,
+              1,
+              3,
+              0,
+              6,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 16,
+            "hits": 11,
+            "errors": 1,
+            "innings": [
+              0,
+              0,
+              2,
+              1,
+              0,
+              3,
+              4,
+              6,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "San Diego State",
+            "nine_starting_slots": true,
+            "batter_rows": 10,
+            "pitcher_rows": 7,
+            "substitutes": 1
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 4,
+            "substitutes": 2
+          }
+        ],
+        "official_decisions": {
+          "win": "Romero, Ivran",
+          "loss": "O'SULLIVAN, Casey",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2021-02-20-san-diego-san-diego-state-att0085",
+      "player_rows": 34,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2021/san-diego-state/boxscore/12046",
+      "win": "T. BROWN",
+      "loss": "Eddy Pelc",
+      "source_audit": {
+        "game_id": "cb-2021-02-20-san-diego-san-diego-state-att0085",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2021/san-diego-state/boxscore/12046",
+        "http_code": 200,
+        "source_bytes": 734070,
+        "source_sha256": "7019d6ccadf9c625e8c8eb1298a7cb8592fe6ca19d4b5720a14aa41d634d071f",
+        "teams": [
+          {
+            "name": "San Diego",
+            "batters": 11,
+            "pitchers": 6,
+            "AB": 45,
+            "R": 18,
+            "H": 17,
+            "RBI": 16,
+            "BB": 10,
+            "SO": 4,
+            "pitching_outs": 29,
+            "pitching_runs": 19,
+            "pitching_hits": 15
+          },
+          {
+            "name": "San Diego State",
+            "batters": 11,
+            "pitchers": 6,
+            "AB": 44,
+            "R": 19,
+            "H": 15,
+            "RBI": 16,
+            "BB": 9,
+            "SO": 9,
+            "pitching_outs": 30,
+            "pitching_runs": 18,
+            "pitching_hits": 17
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 34,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 18,
+            "hits": 17,
+            "errors": 1,
+            "innings": [
+              4,
+              1,
+              9,
+              0,
+              2,
+              0,
+              1,
+              1,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 19,
+            "hits": 15,
+            "errors": 2,
+            "innings": [
+              2,
+              8,
+              0,
+              2,
+              0,
+              0,
+              4,
+              2,
+              0,
+              1
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 6,
+            "substitutes": 2
+          },
+          {
+            "team": "San Diego State",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 6,
+            "substitutes": 2
+          }
+        ],
+        "official_decisions": {
+          "win": "BROWN, T.",
+          "loss": "Pelc, Eddy",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2021-02-19-san-diego-san-diego-state-att0084",
+      "player_rows": 33,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2021/san-diego-state/boxscore/12045",
+      "win": "Troy MELTON",
+      "loss": "Jake Miller",
+      "source_audit": {
+        "game_id": "cb-2021-02-19-san-diego-san-diego-state-att0084",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2021/san-diego-state/boxscore/12045",
+        "http_code": 200,
+        "source_bytes": 695349,
+        "source_sha256": "434ee49f29776d4fd3569c5b2ef44154c950e28192b15effd4d36e5c601a2c9d",
+        "teams": [
+          {
+            "name": "San Diego",
+            "batters": 12,
+            "pitchers": 7,
+            "AB": 36,
+            "R": 7,
+            "H": 11,
+            "RBI": 6,
+            "BB": 2,
+            "SO": 9,
+            "pitching_outs": 24,
+            "pitching_runs": 14,
+            "pitching_hits": 19
+          },
+          {
+            "name": "San Diego State",
+            "batters": 9,
+            "pitchers": 5,
+            "AB": 38,
+            "R": 14,
+            "H": 19,
+            "RBI": 14,
+            "BB": 3,
+            "SO": 6,
+            "pitching_outs": 27,
+            "pitching_runs": 7,
+            "pitching_hits": 11
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 33,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 7,
+            "hits": 11,
+            "errors": 1,
+            "innings": [
+              2,
+              0,
+              0,
+              0,
+              2,
+              0,
+              3,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 14,
+            "hits": 19,
+            "errors": 2,
+            "innings": [
+              0,
+              4,
+              1,
+              0,
+              3,
+              4,
+              2,
+              0,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 12,
+            "pitcher_rows": 7,
+            "substitutes": 3
+          },
+          {
+            "team": "San Diego State",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 5,
+            "substitutes": 0
+          }
+        ],
+        "official_decisions": {
+          "win": "MELTON, Troy",
+          "loss": "Miller, Jake",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    }
+  ],
+  "pending_review": [],
+  "release": "Draft branch only; never auto-publish or merge"
+}

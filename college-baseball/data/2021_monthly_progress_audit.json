@@ -1,0 +1,108 @@
+{
+  "season": 2021,
+  "status": "FULL_GAMEBOOK_DISCOVERY_COMPLETE_32_OF_32_IDENTITIES_ZERO_PLAYER_IMPORTS",
+  "approved": true,
+  "original_attendance_games": 32,
+  "full_individual_player_boxscore_source_urls": 32,
+  "official_one_of_two_source_games_unresolved": 0,
+  "official_game_only_without_readable_player_tables": 0,
+  "official_recap_only_until_full_player_gamebook_located": 0,
+  "full_player_scorebooks_imported": 0,
+  "existing_prior_year_boxscores_preserved": 213,
+  "existing_prior_year_player_rows_preserved": 6316,
+  "month_counts": {
+    "2021-02": {
+      "original_games": 6,
+      "linked_full_player_gamebooks": 6,
+      "linked_game_only": 0,
+      "requires_doubleheader_choice": 0,
+      "awaiting_full_boxscore": 0,
+      "player_gamebooks_imported": 0
+    },
+    "2021-03": {
+      "original_games": 14,
+      "linked_full_player_gamebooks": 14,
+      "linked_game_only": 0,
+      "requires_doubleheader_choice": 0,
+      "awaiting_full_boxscore": 0,
+      "player_gamebooks_imported": 0
+    },
+    "2021-04": {
+      "original_games": 7,
+      "linked_full_player_gamebooks": 7,
+      "linked_game_only": 0,
+      "requires_doubleheader_choice": 0,
+      "awaiting_full_boxscore": 0,
+      "player_gamebooks_imported": 0
+    },
+    "2021-05": {
+      "original_games": 5,
+      "linked_full_player_gamebooks": 5,
+      "linked_game_only": 0,
+      "requires_doubleheader_choice": 0,
+      "awaiting_full_boxscore": 0,
+      "player_gamebooks_imported": 0
+    }
+  },
+  "review_exceptions": [
+    {
+      "game_id": "cb-2021-03-13-uc-riverside-san-diego-att0096",
+      "issue": "Separate 1:00 p.m. UC Riverside at USD game 1",
+      "score": "USD 7–0 UC Riverside",
+      "official_source_id": 12057
+    },
+    {
+      "game_id": "cb-2021-03-13-uc-riverside-san-diego-att0097",
+      "issue": "Separate 4:10 p.m. UC Riverside at USD game 2",
+      "score": "USD 9–0 UC Riverside",
+      "official_source_id": 12117
+    }
+  ],
+  "notes": [
+    "March 5/7 USD–UCSD home/away is preserved exactly as source workbook; USD official schedule and detailed USD cumulative stats agree with original; the WCC historical schedule index reverses March 5 and March 7 sites and must not override gamebook-level venue evidence.",
+    "Vanguard is a four-year NAIA school (not JUCO) and its March 30 game remains eligible for source backfill.",
+    "COVID-era boxscore listed attendance (1 or 100) is official stadium attendance, not proof of which game the user attended; no synthetic attendance verification.",
+    "October 17 source research resolved all four previously missing full gamebooks. The only remaining attendance record without one uniquely assigned verified gamebook is the April 24 CSUB–UCSD one-row/two-game ambiguity; both complete gamebooks are available.",
+    "User explicitly confirmed April 24 CSU Bakersfield at UC San Diego attendance was 12:03 PM Game 1 (3–2), so all 32 2021 original attendance entries now have unique official full player gamebook source matches; still zero player-stat imports."
+  ],
+  "source_file": "data/2021_official_source_queue.json",
+  "release_boundary": "Unpublished draft only; older 2020 and earlier not approved; 2022 and 2023 player imports still at zero.",
+  "resolved_research": [
+    {
+      "subject": "April 2, 2021 San Diego at Cal State Fullerton",
+      "full_gamebook": "https://usdtoreros.com/sports/baseball/stats/2021/cal-state-fullerton/boxscore/12125",
+      "score": "USD 1 – CSU Fullerton 3"
+    },
+    {
+      "subject": "May 6, 2021 BYU at USD (10 innings)",
+      "full_gamebook": "https://usdtoreros.com/sports/baseball/stats/2021/byu/boxscore/12085",
+      "score": "BYU 6 – USD 4"
+    },
+    {
+      "subject": "May 7, 2021 BYU at USD",
+      "full_gamebook": "https://usdtoreros.com/sports/baseball/stats/2021/byu/boxscore/12086",
+      "score": "BYU 11 – USD 10"
+    },
+    {
+      "subject": "May 8, 2021 BYU at USD",
+      "full_gamebook": "https://usdtoreros.com/sports/baseball/stats/2021/byu/boxscore/12087",
+      "score": "BYU 12 – USD 13"
+    }
+  ],
+  "resolved_attendance_identity": [
+    {
+      "game_id": "cb-2021-04-24-cal-state-bakersfield-uc-san-diego-att0109",
+      "user_confirmed": "2026-10-17",
+      "decision": "Game 1 only",
+      "first_pitch": "12:03 pm",
+      "source_url": "https://ucsdtritons.com/sports/baseball/stats/2021/csu-bakersfield/boxscore/8289",
+      "score": [
+        3,
+        2
+      ],
+      "excluded_source_url": "https://ucsdtritons.com/sports/baseball/stats/2021/csu-bakersfield/boxscore/8292",
+      "excluded_game": "Game 2, 3:32 pm, CSU Bakersfield 1–UC San Diego 7",
+      "full_player_gamebook_imported": false
+    }
+  ]
+}

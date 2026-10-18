@@ -1,0 +1,96 @@
+{
+  "status": "PASS",
+  "official_source": "Louisiana State University athletics NCAA Baton Rouge Regional single-page PDFs",
+  "games": [
+    {
+      "game_id": "cb-2025-06-01-lsu-little-rock-att0369",
+      "source_url": "https://static.lsusports.net/assets/docs/bb/25stats/LSU601.pdf",
+      "source_sha256": "df3cc7dbd2422c7f0d62b2643dedc19a7315f2e627ac8583b2c1391d95cb07ef",
+      "score": [
+        4,
+        10
+      ],
+      "teams": [
+        {
+          "team": "LSU",
+          "batters": 14,
+          "pitchers": 5,
+          "batting_totals": [
+            37,
+            4,
+            11,
+            2,
+            4,
+            5
+          ]
+        },
+        {
+          "team": "Little Rock",
+          "batters": 10,
+          "pitchers": 4,
+          "batting_totals": [
+            30,
+            10,
+            8,
+            9,
+            11,
+            10
+          ]
+        }
+      ],
+      "rows_added": 33,
+      "lineup_slots": 9,
+      "decisions": {
+        "win": "Brenden Katz",
+        "loss": "Chase Shores",
+        "save": "Malcolm Brown"
+      }
+    },
+    {
+      "game_id": "cb-2025-05-31-dallas-baptist-lsu-att0367",
+      "source_url": "https://static.lsusports.net/assets/docs/bb/25stats/LSU531.pdf",
+      "source_sha256": "e78ead433e9928d9b54dc5eb8ca6244b97e36754950be71aedb625b64210ac35",
+      "score": [
+        0,
+        12
+      ],
+      "teams": [
+        {
+          "team": "Dallas Baptist",
+          "batters": 12,
+          "pitchers": 4,
+          "batting_totals": [
+            31,
+            0,
+            4,
+            0,
+            5,
+            15
+          ]
+        },
+        {
+          "team": "LSU",
+          "batters": 15,
+          "pitchers": 4,
+          "batting_totals": [
+            34,
+            12,
+            10,
+            9,
+            7,
+            8
+          ]
+        }
+      ],
+      "rows_added": 35,
+      "lineup_slots": 9,
+      "decisions": {
+        "win": "Kade Anderson",
+        "loss": "Micah Bucknam",
+        "save": null
+      }
+    }
+  ],
+  "2026_untouched": true,
+  "original_attendance_games": 444
+}

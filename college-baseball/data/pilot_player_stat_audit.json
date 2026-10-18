@@ -1,0 +1,212 @@
+{
+  "status": "PASS",
+  "pilot_games": 5,
+  "player_rows": 138,
+  "source": "official athletic department Sidearm gamebooks, matched by date/team/innings",
+  "games": [
+    {
+      "game_id": "cb-2026-05-29-milwaukee-auburn",
+      "source": "https://mkepanthers.com/boxscore.aspx?id=19125",
+      "http_code": 200,
+      "source_bytes": 565534,
+      "source_sha256": "d4558061713007b965f506bcd1556c6ff41c7e2bffb5c2d2d230170d720f7e1c",
+      "teams": [
+        {
+          "name": "Milwaukee",
+          "batters": 9,
+          "pitchers": 2,
+          "AB": 38,
+          "R": 13,
+          "H": 16,
+          "RBI": 12,
+          "BB": 6,
+          "SO": 12,
+          "pitching_outs": 27,
+          "pitching_runs": 8,
+          "pitching_hits": 9
+        },
+        {
+          "name": "Auburn",
+          "batters": 9,
+          "pitchers": 8,
+          "AB": 35,
+          "R": 8,
+          "H": 9,
+          "RBI": 8,
+          "BB": 0,
+          "SO": 6,
+          "pitching_outs": 27,
+          "pitching_runs": 13,
+          "pitching_hits": 16
+        }
+      ],
+      "source_warnings": [],
+      "player_rows": 28,
+      "status": "PASS"
+    },
+    {
+      "game_id": "cb-2026-05-29-north-carolina-state-central-florida",
+      "source": "https://gopack.com/sports/baseball/stats/2026/ucf/boxscore/24664",
+      "http_code": 200,
+      "source_bytes": 1088626,
+      "source_sha256": "e6b658e1e168847c00058bbc3aa207f78e44ec8212e0ecbf047f8b3aefc66ebb",
+      "teams": [
+        {
+          "name": "North Carolina State",
+          "batters": 10,
+          "pitchers": 3,
+          "AB": 38,
+          "R": 3,
+          "H": 12,
+          "RBI": 3,
+          "BB": 6,
+          "SO": 5,
+          "pitching_outs": 24,
+          "pitching_runs": 9,
+          "pitching_hits": 11
+        },
+        {
+          "name": "Central Florida",
+          "batters": 10,
+          "pitchers": 4,
+          "AB": 35,
+          "R": 9,
+          "H": 11,
+          "RBI": 9,
+          "BB": 1,
+          "SO": 5,
+          "pitching_outs": 27,
+          "pitching_runs": 3,
+          "pitching_hits": 12
+        }
+      ],
+      "source_warnings": [],
+      "player_rows": 27,
+      "status": "PASS"
+    },
+    {
+      "game_id": "cb-2026-05-30-auburn-north-carolina-state",
+      "source": "https://gopack.com/sports/baseball/stats/2026/auburn/boxscore/24677",
+      "http_code": 200,
+      "source_bytes": 1156764,
+      "source_sha256": "0b377d1e26963368b593e20f35617130b7b941cde8baccd9fa4d37d8e1394560",
+      "teams": [
+        {
+          "name": "Auburn",
+          "batters": 9,
+          "pitchers": 4,
+          "AB": 42,
+          "R": 17,
+          "H": 18,
+          "RBI": 17,
+          "BB": 7,
+          "SO": 5,
+          "pitching_outs": 27,
+          "pitching_runs": 13,
+          "pitching_hits": 14
+        },
+        {
+          "name": "North Carolina State",
+          "batters": 11,
+          "pitchers": 4,
+          "AB": 39,
+          "R": 13,
+          "H": 14,
+          "RBI": 10,
+          "BB": 3,
+          "SO": 4,
+          "pitching_outs": 27,
+          "pitching_runs": 17,
+          "pitching_hits": 18
+        }
+      ],
+      "source_warnings": [
+        "Official loser label 'Connor Clark' does not appear in that game's pitcher lines; individual pitcher W/L attribution intentionally unavailable."
+      ],
+      "player_rows": 28,
+      "status": "PASS"
+    },
+    {
+      "game_id": "cb-2026-05-30-central-florida-milwaukee",
+      "source": "https://mkepanthers.com/boxscore.aspx?id=19126",
+      "http_code": 200,
+      "source_bytes": 570002,
+      "source_sha256": "055f80887a233690853830a62e9a8c671b50cd23bd64783b55cdbfeb1030b474",
+      "teams": [
+        {
+          "name": "Central Florida",
+          "batters": 9,
+          "pitchers": 6,
+          "AB": 35,
+          "R": 6,
+          "H": 8,
+          "RBI": 6,
+          "BB": 5,
+          "SO": 6,
+          "pitching_outs": 24,
+          "pitching_runs": 13,
+          "pitching_hits": 9
+        },
+        {
+          "name": "Milwaukee",
+          "batters": 10,
+          "pitchers": 4,
+          "AB": 31,
+          "R": 13,
+          "H": 9,
+          "RBI": 11,
+          "BB": 9,
+          "SO": 8,
+          "pitching_outs": 27,
+          "pitching_runs": 6,
+          "pitching_hits": 8
+        }
+      ],
+      "source_warnings": [],
+      "player_rows": 29,
+      "status": "PASS"
+    },
+    {
+      "game_id": "cb-2026-05-31-milwaukee-auburn",
+      "source": "https://mkepanthers.com/boxscore.aspx?id=19127&path=baseball",
+      "http_code": 200,
+      "source_bytes": 532563,
+      "source_sha256": "1772a266bd1ba1228c067db3e164858c994d8d3663d5a739f340aaae19dc7c5f",
+      "teams": [
+        {
+          "name": "Auburn",
+          "batters": 9,
+          "pitchers": 2,
+          "AB": 30,
+          "R": 8,
+          "H": 5,
+          "RBI": 7,
+          "BB": 5,
+          "SO": 6,
+          "pitching_outs": 27,
+          "pitching_runs": 1,
+          "pitching_hits": 4
+        },
+        {
+          "name": "Milwaukee",
+          "batters": 11,
+          "pitchers": 4,
+          "AB": 30,
+          "R": 1,
+          "H": 4,
+          "RBI": 1,
+          "BB": 0,
+          "SO": 14,
+          "pitching_outs": 27,
+          "pitching_runs": 8,
+          "pitching_hits": 5
+        }
+      ],
+      "source_warnings": [],
+      "player_rows": 26,
+      "status": "PASS"
+    }
+  ],
+  "total_source_batters": 97,
+  "total_source_pitchers": 41
+}

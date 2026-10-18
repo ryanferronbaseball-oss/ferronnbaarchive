@@ -1,0 +1,29 @@
+name: College Baseball Official Boxscore Discovery
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "college-baseball/scripts/inspect_sidearm_sources.py"
+      - "college-baseball/data/verified_batches/**"
+      - ".github/workflows/college-baseball-source-discovery.yml"
+jobs:
+  inspect-boxscore:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install HTML verification parser
+        run: python -m pip install requests beautifulsoup4
+      - name: Inspect five official university gamebooks
+        run: python college-baseball/scripts/inspect_sidearm_sources.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: college-baseball-2026-pilot-html-inspection
+          path: college-baseball/output/pilot-source-inspection.json
+          if-no-files-found: warn

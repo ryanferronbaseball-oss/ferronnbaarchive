@@ -1,0 +1,72 @@
+{
+  "status": "ARCHIVED — user excluded all junior-college games from statistical backfill on 2026-10-17",
+  "scope": "2026 January–March JUCO doubleheaders",
+  "background": "Official JUCO schedule/recap sources discovered; some direct boxscore pages require further retrieval or refuse automated reads. Results are not full player-stat verification.",
+  "cases": [
+    {
+      "date": "2026-03-20",
+      "away": "Wabash Valley",
+      "home": "Walters State",
+      "attendance_ids": [
+        "cb-2026-03-20-wabash-valley-walters-state-att0396",
+        "cb-2026-03-20-wabash-valley-walters-state-att0397"
+      ],
+      "reported_result_sequence": [
+        "Walters State 4, Wabash Valley 1",
+        "Walters State 11, Wabash Valley 6"
+      ],
+      "sources": [
+        "https://www.wsccathletics.com/sports/bsb/2025-26/releases/20260320s5uxgb",
+        "https://www.njcaaregion24.com/sports/bsb/2025-26/schedule?eid=ryrt8j3ysiyvbo00",
+        "https://www.wvcwarriorathletics.com/sports/bsb/2025-26/schedule"
+      ],
+      "status": "excluded_from_backfill",
+      "remaining": "No action required per user JUCO exclusion."
+    },
+    {
+      "date": "2026-02-12",
+      "away": "Walters State",
+      "home": "Pellissippi State",
+      "attendance_ids": [
+        "cb-2026-02-12-walters-state-pellissippi-state-att0372",
+        "cb-2026-02-12-walters-state-pellissippi-state-att0373"
+      ],
+      "sources": [
+        "https://psccpanthers.com/sports/bsb/2025-26/schedule?eid=vrkb8lccgis5etb8",
+        "https://psccpanthers.com/sports/bsb/2025-26/schedule?eid=hrou45wrrqf8v5fa"
+      ],
+      "status": "excluded_from_backfill",
+      "remaining": "No action required per user JUCO exclusion."
+    },
+    {
+      "date": "2026-02-13",
+      "away": "Walters State",
+      "home": "Pellissippi State",
+      "attendance_ids": [
+        "cb-2026-02-13-walters-state-pellissippi-state-att0374"
+      ],
+      "status": "excluded_from_backfill",
+      "reported_result": "Walters State 12, Pellissippi State 6",
+      "source": "https://psccpanthers.com/sports/bsb/2025-26/schedule",
+      "remaining": "No action required per user JUCO exclusion."
+    },
+    {
+      "date": "2026-01-23",
+      "away": "Walters State",
+      "home": "USC Salkehatchie",
+      "attendance_ids": [
+        "cb-2026-01-23-walters-state-usc-salkehatchie-att0370",
+        "cb-2026-01-23-walters-state-usc-salkehatchie-att0371"
+      ],
+      "status": "excluded_from_backfill",
+      "source": "https://www.uscsalkathletics.com/event-details/usc-salkehatchie-baseball-dh-vs-walters-state-1",
+      "remaining": "No action required per user JUCO exclusion."
+    }
+  ],
+  "safeguards": [
+    "Excluded junior-college entries retain original attendance IDs for provenance only",
+    "No JUCO games count against monthly eligible gamebook completion totals",
+    "Do not confuse Wabash Valley College (JUCO) with Wabash College (NCAA DIII)"
+  ],
+  "policy_override": "No further JUCO score or player-line research, gamebook import, or missing-source queue. Preserve original attendance rows and mark boxscore_backfill_excluded."
+}

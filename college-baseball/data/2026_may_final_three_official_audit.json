@@ -1,0 +1,185 @@
+{
+  "status": "PASS",
+  "source_type": "university athletic department published Sidearm full gamebook",
+  "games": [
+    {
+      "game_id": "cb-2026-05-01-tennessee-kentucky-att0418",
+      "source_url": "https://utsports.com/sports/baseball/stats/2026/kentucky/boxscore/29750",
+      "player_rows": 27,
+      "team_audits": [
+        {
+          "team": "Tennessee",
+          "batters": 10,
+          "pitchers": 4,
+          "atBats": 32,
+          "runs": 2,
+          "hits": 7,
+          "rbi": 2,
+          "baseOnBalls": 2,
+          "strikeOuts": 6,
+          "pitching": {
+            "outs": 24,
+            "hits": 13,
+            "runs": 9,
+            "strikeOuts": 9
+          }
+        },
+        {
+          "team": "Kentucky",
+          "batters": 10,
+          "pitchers": 3,
+          "atBats": 37,
+          "runs": 9,
+          "hits": 13,
+          "rbi": 8,
+          "baseOnBalls": 3,
+          "strikeOuts": 9,
+          "pitching": {
+            "outs": 27,
+            "hits": 7,
+            "runs": 2,
+            "strikeOuts": 6
+          }
+        }
+      ],
+      "status": "PASS",
+      "lineup_starters_1_to_9": true,
+      "substitutions": [
+        {
+          "team": "Tennessee",
+          "player": "Stone Lawless",
+          "slot": 1,
+          "sub_index": 1
+        },
+        {
+          "team": "Kentucky",
+          "player": "Tyler Cerny",
+          "slot": 7,
+          "sub_index": 1
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2026-05-03-tennessee-kentucky-att0419",
+      "source_url": "https://utsports.com/sports/baseball/stats/2026/kentucky/boxscore/29752",
+      "player_rows": 32,
+      "team_audits": [
+        {
+          "team": "Tennessee",
+          "batters": 11,
+          "pitchers": 4,
+          "atBats": 37,
+          "runs": 10,
+          "hits": 13,
+          "rbi": 9,
+          "baseOnBalls": 2,
+          "strikeOuts": 7,
+          "pitching": {
+            "outs": 27,
+            "hits": 15,
+            "runs": 9,
+            "strikeOuts": 11
+          }
+        },
+        {
+          "team": "Kentucky",
+          "batters": 9,
+          "pitchers": 8,
+          "atBats": 40,
+          "runs": 9,
+          "hits": 15,
+          "rbi": 9,
+          "baseOnBalls": 3,
+          "strikeOuts": 11,
+          "pitching": {
+            "outs": 27,
+            "hits": 13,
+            "runs": 10,
+            "strikeOuts": 7
+          }
+        }
+      ],
+      "status": "PASS",
+      "lineup_starters_1_to_9": true,
+      "substitutions": [
+        {
+          "team": "Tennessee",
+          "player": "Ariel Antigua",
+          "slot": 2,
+          "sub_index": 1
+        },
+        {
+          "team": "Tennessee",
+          "player": "Jay Abernathy",
+          "slot": 8,
+          "sub_index": 1
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2026-05-05-louisville-vanderbilt-att0420",
+      "source_url": "https://gocards.com/sports/baseball/stats/2026/vanderbilt/boxscore/26027",
+      "player_rows": 32,
+      "team_audits": [
+        {
+          "team": "Louisville",
+          "batters": 11,
+          "pitchers": 6,
+          "atBats": 30,
+          "runs": 6,
+          "hits": 4,
+          "rbi": 6,
+          "baseOnBalls": 4,
+          "strikeOuts": 14,
+          "pitching": {
+            "outs": 24,
+            "hits": 11,
+            "runs": 12,
+            "strikeOuts": 12
+          }
+        },
+        {
+          "team": "Vanderbilt",
+          "batters": 9,
+          "pitchers": 6,
+          "atBats": 34,
+          "runs": 12,
+          "hits": 11,
+          "rbi": 12,
+          "baseOnBalls": 5,
+          "strikeOuts": 12,
+          "pitching": {
+            "outs": 27,
+            "hits": 4,
+            "runs": 6,
+            "strikeOuts": 14
+          }
+        }
+      ],
+      "status": "PASS",
+      "lineup_starters_1_to_9": true,
+      "substitutions": [
+        {
+          "team": "Louisville",
+          "player": "Kyle Campbell",
+          "slot": 7,
+          "sub_index": 1
+        },
+        {
+          "team": "Louisville",
+          "player": "George Baker",
+          "slot": 9,
+          "sub_index": 1
+        }
+      ]
+    }
+  ],
+  "record_additions": 91,
+  "post_import_totals": {
+    "may_full": 27,
+    "all_full": 27,
+    "player_rows": 759,
+    "unique_player_ids": 464
+  },
+  "identity_note": "Kentucky athlete initials expanded using Kentucky 2026 game notes roster; Tennessee and Louisville gamebooks provide full names."
+}

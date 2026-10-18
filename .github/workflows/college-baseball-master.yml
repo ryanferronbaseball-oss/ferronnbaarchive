@@ -1,0 +1,54 @@
+name: Expand college baseball attendance master
+on:
+  push:
+    branches:
+      - feature/college-baseball-foundation
+    paths:
+      - "college-baseball/data/attendance_source_444.deflate.b64"
+      - "college-baseball/scripts/build_attendance_master.py"
+      - ".github/workflows/college-baseball-master.yml"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  expand-attendance:
+    if: github.ref == 'refs/heads/feature/college-baseball-foundation'
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate 444 normalized source rows without changing existing official box scores
+        run: python college-baseball/scripts/build_attendance_master.py --validate-only
+      - name: Expand complete attendance history preserving six verified gamebooks
+        run: python college-baseball/scripts/build_attendance_master.py
+      - name: Assert expected source data is present
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          base=Path("college-baseball/data")
+          items=json.loads((base/"games.json").read_text())
+          assert len(items)==444
+          assert len([g for g in items if g["verification"]=="official_boxscore_verified"])==6
+          assert len([g for g in items if g["verification"]=="attendance_only"])==438
+          assert len(list((base/"attendance_master_444.csv").read_text().splitlines()))==445
+          assert len(set(g["source_worksheet_row"] for g in items))==444
+          assert items[-1]["away"]=="UCF" and items[-1]["home"]=="Auburn"
+          print("PASS all 444 rows, 6 verified Regional gamebooks, 438 attendance-only entries")
+          PY
+      - name: Commit auditable game directory and decoded master CSV to the draft branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add college-baseball/data/games.json college-baseball/data/import_report.json college-baseball/data/attendance_master_444.csv
+          if ! git diff --cached --quiet; then
+            git commit -m "Stage all 444 college baseball attended games; preserve six verified scorebooks"
+            git push origin HEAD:feature/college-baseball-foundation
+          else
+            echo "Attendance directory already up to date."
+          fi

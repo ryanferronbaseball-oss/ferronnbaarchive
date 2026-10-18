@@ -1,0 +1,163 @@
+{
+  "season": 2018,
+  "month": null,
+  "limit": 0,
+  "status": "PASS",
+  "original_attendance_games": 444,
+  "verified_this_run": 1,
+  "verified_in_season": 30,
+  "verified_overall": 437,
+  "player_game_rows_total": 13183,
+  "already_verified": [
+    "cb-2018-05-08-uc-riverside-san-diego-att0030",
+    "cb-2018-05-06-gonzaga-san-diego-att0029",
+    "cb-2018-05-05-gonzaga-san-diego-att0028",
+    "cb-2018-05-04-gonzaga-san-diego-att0027",
+    "cb-2018-04-17-cal-state-fullerton-san-diego-att0026",
+    "cb-2018-04-14-saint-mary-s-san-diego-att0025",
+    "cb-2018-04-08-loyola-marymount-san-diego-att0024",
+    "cb-2018-04-07-loyola-marymount-san-diego-att0023",
+    "cb-2018-04-06-loyola-marymount-san-diego-att0022",
+    "cb-2018-04-03-uc-irvine-san-diego-att0021",
+    "cb-2018-03-18-santa-clara-san-diego-att0020",
+    "cb-2018-03-17-santa-clara-san-diego-att0019",
+    "cb-2018-03-16-santa-clara-san-diego-att0018",
+    "cb-2018-03-13-san-diego-state-san-diego-att0017",
+    "cb-2018-03-04-indiana-san-diego-att0016",
+    "cb-2018-03-03-indiana-san-diego-att0015",
+    "cb-2018-03-03-indiana-san-diego-att0014",
+    "cb-2018-03-02-indiana-san-diego-att0013",
+    "cb-2018-02-25-arizona-san-diego-att0012",
+    "cb-2018-02-25-arkansas-san-diego-att0011",
+    "cb-2018-02-24-grand-canyon-san-diego-att0010",
+    "cb-2018-02-24-cal-poly-grand-canyon-att0009",
+    "cb-2018-02-23-michigan-san-diego-att0008",
+    "cb-2018-02-23-cal-poly-arkansas-att0007",
+    "cb-2018-02-18-cincinnati-san-diego-att0006",
+    "cb-2018-02-18-cincinnati-san-diego-att0005",
+    "cb-2018-02-17-california-cincinnati-att0004",
+    "cb-2018-02-17-california-san-diego-att0003",
+    "cb-2018-02-16-california-san-diego-att0002"
+  ],
+  "completed": [
+    {
+      "game_id": "cb-2018-05-09-arizona-state-san-diego-att0031",
+      "player_rows": 30,
+      "source_url": "https://thesundevils.com/boxscore/466",
+      "win": "Sam Romero",
+      "loss": "Nick Sprengel",
+      "source_audit": {
+        "status": "PASS",
+        "source": "https://thesundevils.com/boxscore/466",
+        "source_evidence_sha256": "9084aaa688dcb86ba0b18a53fbecd8193fad90a3571636f399be09ded5fe05ab",
+        "source_scoreboard_file_id": "file_0000000045a081f5b589dd3a9489b970",
+        "source_type": "official_university_batting_pitching_plus_attendee_original_lineup_and_scoreboard",
+        "player_rows": 30,
+        "lineup_audit": [
+          {
+            "team": "Arizona State",
+            "nine_starting_slots": true,
+            "batter_rows": 12,
+            "pitcher_rows": 3,
+            "substitutes": 3,
+            "owner_confirmed": "2026-10-18"
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 4,
+            "substitutes": 2,
+            "owner_confirmed": "2026-10-18"
+          }
+        ],
+        "scoreboard": {
+          "filename": "Screenshot 2026-10-18 at 12.32.47 AM.png",
+          "file_id": "file_0000000045a081f5b589dd3a9489b970",
+          "source": "user_provided_original_baseball_game_scoreboard_screenshot_2026_10_18",
+          "printed_date": "05/09/2018",
+          "printed_attendance": 658,
+          "printed_sport": "Baseball",
+          "inning_columns": 9,
+          "away": {
+            "team": "Arizona State",
+            "innings": [
+              1,
+              1,
+              3,
+              2,
+              1,
+              1,
+              0,
+              2,
+              1
+            ],
+            "runs": 12,
+            "hits": 13,
+            "errors": 0
+          },
+          "home": {
+            "team": "San Diego",
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              4,
+              0,
+              2
+            ],
+            "runs": 7,
+            "hits": 14,
+            "errors": 1
+          },
+          "validation": "nine_inning_run_sums_and_game_boxscore_team_hit_totals_reconcile"
+        },
+        "pitching_decisions": {
+          "win": "Sam Romero",
+          "loss": "Nick Sprengel",
+          "save": null
+        },
+        "save_provenance": "not_explicitly_labeled_in_source",
+        "attendee_confirmed_substitutions": [
+          {
+            "team": "San Diego",
+            "substitute": "Todd Jackson",
+            "replaced": "Trevor Rosenberg",
+            "role": "pinch_hitter",
+            "slot": 9
+          },
+          {
+            "team": "San Diego",
+            "substitute": "Trevor Omahen",
+            "replaced": "Todd Jackson",
+            "role": "defensive_successor",
+            "slot": 9
+          },
+          {
+            "team": "Arizona State",
+            "substitute": "Boyd Vander Kooi",
+            "replaced": "Spencer Torkelson",
+            "slot": 1
+          },
+          {
+            "team": "Arizona State",
+            "substitute": "Luke Leisenring",
+            "replaced": "Lyle Lin",
+            "slot": 4
+          },
+          {
+            "team": "Arizona State",
+            "substitute": "Trevor Hauver",
+            "replaced": "Hunter Jump",
+            "slot": 5
+          }
+        ]
+      }
+    }
+  ],
+  "pending_review": [],
+  "release": "Draft branch only; never auto-publish or merge"
+}

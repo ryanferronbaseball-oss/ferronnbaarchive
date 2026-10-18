@@ -1,0 +1,63 @@
+{
+  "status": "PASS_2024_FULL_PLAYER_GAMEBOOKS_71_OF_71_COMPLETE",
+  "date": "2026-10-17",
+  "scope": "Unpublished 2024 four-year college baseball, JUCO excluded; no 2023 or earlier; 2025/2026 unchanged",
+  "totals": {
+    "2024_attended": 71,
+    "full_player_boxscores_verified": 71,
+    "source_matched_awaiting_full_player_import": 0,
+    "attendance_rows_awaiting_doubleheader_identity": 0,
+    "official_result_source_coverage": 71,
+    "player_stat_gamebooks_remaining": 0,
+    "three_years_verified_gamebooks": 208,
+    "three_years_player_game_rows": 6183
+  },
+  "identity_blockers": [],
+  "date_review": [
+    {
+      "worksheet_row": 287,
+      "original_date": "2024-05-23",
+      "verified_date": "2024-05-24",
+      "resolution": "user approved, games.json corrected, legacy id retained"
+    },
+    {
+      "worksheet_row": 270,
+      "original_date": "2024-04-15",
+      "verified_date": "2024-04-14",
+      "resolution": "both schools and Sun Belt schedule verify Sunday Apr14; games.json corrected, legacy id retained"
+    },
+    {
+      "worksheet_row": 226,
+      "original_date": "2024-02-16",
+      "source_gamebook_header": "2024-02-15",
+      "resolution": "Indiana official schedule confirms Feb16 and source exact matchup/score, importer documents exception"
+    }
+  ],
+  "data_integrity": {
+    "existing_2024_full_player_gamebooks_verified": 71,
+    "other_2024_games_not_misreported_as_full_imports": true,
+    "year_2025_full_gamebooks_unchanged": 69,
+    "year_2026_full_gamebooks_unchanged": 68,
+    "junior_college_stats_excluded": true,
+    "published_or_merged": false
+  },
+  "next_action": "2024 backfill complete: 71/71 four-year player gamebooks source-verified; leave unpublished draft unmerged. 2025 retains five gamebooks awaiting separate work; 2023 and earlier unapproved.",
+  "attendance_identity_resolution": [
+    {
+      "worksheet_row": 245,
+      "game": "Siena at UNC Asheville 2024-03-02",
+      "confirmation": "User confirmed Game 1 only; source UNC Asheville 11 Siena 6, start noon; user did not attend Game 2.",
+      "assigned_game_number": 1
+    },
+    {
+      "worksheet_rows": [
+        261,
+        262
+      ],
+      "game": "Vanderbilt at South Carolina doubleheader 2024-03-23",
+      "confirmation": "User confirmed attendance BOTH games; first worksheet row provisionally maps to Game 1 (SC 8 Vanderbilt 4), second to Game 2 (SC 8 Vanderbilt 3). Original worksheet order not explicitly confirmed.",
+      "assignment_confidence": "provisional row order but both games attended"
+    }
+  ],
+  "remaining_games": []
+}

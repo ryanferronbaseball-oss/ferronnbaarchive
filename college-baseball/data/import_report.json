@@ -1,0 +1,624 @@
+{
+  "status": "all_444_attendance_staged_with_2026_sec_tournament_first_batch",
+  "scope": "college baseball only",
+  "uploaded_spreadsheet": "NCAAB Games.xlsx",
+  "uploaded_total_attendance_rows": 444,
+  "season_span": "2017–2026 after user-confirmed 2024 typo correction",
+  "staged_games": 444,
+  "official_score_and_inning_lines_matched": 213,
+  "official_player_boxscores_imported": 437,
+  "player_stat_rows": 13183,
+  "unique_player_ids": 5544,
+  "scores_supplied_by_user": 0,
+  "source_docs": "Official Auburn, Arkansas, LSU, Florida, Mississippi State, Tennessee and Texas athletics/conference box scores and university recaps",
+  "source_worksheet_rows": [
+    432,
+    433,
+    434,
+    435,
+    436,
+    437,
+    438,
+    439,
+    440,
+    441,
+    442,
+    443,
+    444,
+    445
+  ],
+  "source_normalization": {
+    "North Carolina State": "NC State",
+    "Central Florida": "UCF"
+  },
+  "unimported_worksheet_rows": 0,
+  "needs_clarification": [],
+  "known_correction": [
+    {
+      "worksheet_row": 267,
+      "entered_date": "3/30/34",
+      "confirmed_date": "2024-03-30",
+      "away": "South Alabama",
+      "home": "Old Dominion",
+      "source": "User confirmation"
+    },
+    {
+      "attendance_game_number": 444,
+      "worksheet_row": 445,
+      "entered_date": "2026-05-31",
+      "entered_away": "Milwaukee",
+      "entered_home": "Auburn",
+      "confirmed_date": "2026-05-31",
+      "confirmed_away": "UCF",
+      "confirmed_home": "Auburn",
+      "official_regional_game_number": 5,
+      "official_score": "UCF 3 - Auburn 9",
+      "source": "User correction confirmed by Auburn Regional schedule and official university box score"
+    }
+  ],
+  "same_day_identical_matchup_pairs_in_full_sheet": 13,
+  "metadata_status": "full_444_game_attendance_directory_plus_may_2026_official_sources",
+  "warning": "2024–2026 four-year NCAA/four-year verified source-gamebooks only; all junior colleges excluded from backfill. 2023 and earlier, merge/publication unapproved.",
+  "resolved_matchups": [
+    {
+      "attendance_game_number": 443,
+      "worksheet_row": 444,
+      "match": "Auburn @ Milwaukee",
+      "official_regional_game_number": 6,
+      "score": "Auburn 8 - Milwaukee 1",
+      "note": "Preserved original source row 444 as the later May 31 contest; player tables and existing game ID unchanged"
+    },
+    {
+      "attendance_game_number": 444,
+      "worksheet_row": 445,
+      "match": "UCF @ Auburn",
+      "official_regional_game_number": 5,
+      "score": "UCF 3 - Auburn 9",
+      "note": "Corrected original source row 445 per user; official game source documents linked"
+    }
+  ],
+  "official_boxscore_sources": [
+    {
+      "id": "cb-2026-05-20-lsu-auburn-att0432",
+      "worksheet_row": 433,
+      "source_url": "https://static.lsusports.net/assets/docs/bb/26stats/26boxscores.pdf#page=132",
+      "verified": true
+    },
+    {
+      "id": "cb-2026-05-23-florida-georgia-att0437",
+      "worksheet_row": 438,
+      "source_url": "https://floridagators.com/sports/baseball/stats/2026/georgia/boxscore/28034",
+      "verified": true
+    },
+    {
+      "id": "cb-2026-05-23-arkansas-auburn-att0438",
+      "worksheet_row": 439,
+      "source_url": "https://arkansasrazorbacks.com/stats/baseball/2026/ark58.htm",
+      "verified": true
+    },
+    {
+      "id": "cb-2026-05-29-milwaukee-auburn",
+      "worksheet_row": 440,
+      "source_url": "https://mkepanthers.com/sports/baseball/stats/2026/auburn/boxscore/19125",
+      "verified": true
+    },
+    {
+      "id": "cb-2026-05-29-nc-state-ucf",
+      "worksheet_row": 441,
+      "source_url": "https://storage.googleapis.com/auburn-prod/2026/05/30/CtHy45oL3lLEkKyMzLthPcWetLS6K1d8xYLeUswq.pdf",
+      "verified": true
+    },
+    {
+      "id": "cb-2026-05-30-auburn-nc-state",
+      "worksheet_row": 442,
+      "source_url": "https://storage.googleapis.com/auburn-prod/2026/05/30/hgokYvQ1Iyb8xQ9wLH9CSavzftVqyefiXxnrYlR5.pdf",
+      "verified": true
+    },
+    {
+      "id": "cb-2026-05-30-ucf-milwaukee",
+      "worksheet_row": 443,
+      "source_url": "https://mkepanthers.com/sports/baseball/stats/2026/ucf/boxscore/19126",
+      "verified": true
+    },
+    {
+      "id": "cb-2026-05-31-auburn-milwaukee",
+      "worksheet_row": 444,
+      "source_url": "https://storage.googleapis.com/auburn-prod/2026/06/01/gABVgCShBRJVn2SbogYy1rBiMyIGmnmzypXIIRJb.pdf",
+      "verified": true
+    },
+    {
+      "id": "cb-2026-05-31-ucf-auburn",
+      "worksheet_row": 445,
+      "source_url": "https://big12sports.com/boxscore.aspx?id=JcLFfL9RUu0H5ystoOMbjetIb%2B4rf85jh0EXvDMaKl0XzODpTGG4K9HaIXFQc03OKhgXj%2FCzlFnj5ZmetyTmjq7l8Xuvdqg2OT4K1T5zyla5lWpuIfMz%2B26lLVQ7mIqsglh1CCPHEGGRqf8B1ZVlig%3D%3D&path=baseball",
+      "verified": true
+    }
+  ],
+  "remaining_official_boxscore_work": 0,
+  "remaining_attendance_games_not_yet_imported": 0,
+  "validation": "May 2026: all 27 official player books mapped to matching attendance games; scores, R/H/E, pitching/team opposing R and H, batting lineup starters checked; new imports have complete official per-inning lines. CI browser test separately tracked.",
+  "all_attendance_entries_staged": 444,
+  "attendance_only_pending_official_verification": 7,
+  "source": "User workbook; 444 original rows, two user-corrected entries.",
+  "official_scoreboard_player_lines_pending": 0,
+  "latest_verified_batch": "Historical official gamebooks 2018 (development branch)",
+  "latest_verified_batch_games": [
+    {
+      "worksheet_row": 432,
+      "date": "2026-05-20",
+      "away": "Tennessee",
+      "home": "Arkansas",
+      "away_score": 4,
+      "home_score": 8,
+      "status": "official_boxscore_verified",
+      "official_source": "https://utsports.com/sports/baseball/stats/2026/arkansas/boxscore/30092"
+    },
+    {
+      "worksheet_row": 433,
+      "date": "2026-05-20",
+      "away": "LSU",
+      "home": "Auburn",
+      "away_score": 1,
+      "home_score": 3,
+      "status": "official_boxscore_verified",
+      "official_source": "https://static.lsusports.net/assets/docs/bb/26stats/26boxscores.pdf#page=132"
+    },
+    {
+      "worksheet_row": 434,
+      "date": "2026-05-21",
+      "away": "Mississippi State",
+      "home": "Georgia",
+      "away_score": 3,
+      "home_score": 5,
+      "status": "official_boxscore_verified",
+      "official_source": "https://hailstate.com/sports/baseball/stats/2026/georgia/boxscore/27713"
+    },
+    {
+      "worksheet_row": 435,
+      "date": "2026-05-21",
+      "away": "Florida",
+      "home": "Alabama",
+      "away_score": 13,
+      "home_score": 3,
+      "status": "official_boxscore_verified",
+      "official_source": "https://floridagators.com/sports/baseball/stats/2026/alabama/boxscore/28031"
+    },
+    {
+      "worksheet_row": 436,
+      "date": "2026-05-22",
+      "away": "Arkansas",
+      "home": "Texas",
+      "away_score": 8,
+      "home_score": 1,
+      "status": "official_boxscore_verified",
+      "official_source": "https://texaslonghorns.com/sports/baseball/stats/2026/arkansas/boxscore/22672"
+    },
+    {
+      "worksheet_row": 437,
+      "date": "2026-05-22",
+      "away": "Auburn",
+      "home": "Texas A&M",
+      "away_score": 7,
+      "home_score": 0,
+      "status": "official_boxscore_verified",
+      "official_source": "https://storage.googleapis.com/auburn-prod/2026/05/23/B1yXyMnFNLlPuQs4IZQC4WYlQNbHmcsWGsihLulK.pdf"
+    },
+    {
+      "worksheet_row": 438,
+      "date": "2026-05-23",
+      "away": "Florida",
+      "home": "Georgia",
+      "away_score": 7,
+      "home_score": 8,
+      "status": "official_boxscore_verified",
+      "official_source": "https://floridagators.com/sports/baseball/stats/2026/georgia/boxscore/28034"
+    },
+    {
+      "worksheet_row": 439,
+      "date": "2026-05-23",
+      "away": "Arkansas",
+      "home": "Auburn",
+      "away_score": 2,
+      "home_score": 1,
+      "status": "official_boxscore_verified",
+      "official_source": "https://arkansasrazorbacks.com/stats/baseball/2026/ark58.htm"
+    }
+  ],
+  "sec_tournament_four_sidearm_audit": "data/2026_sec_tournament_player_audit.json",
+  "latest_verified_game_ids": [
+    "cb-2026-05-20-tennessee-arkansas-att0431",
+    "cb-2026-05-21-mississippi-state-georgia-att0433",
+    "cb-2026-05-21-florida-alabama-att0434",
+    "cb-2026-05-22-arkansas-texas-att0435"
+  ],
+  "next_2026_boxscore_audit": "data/2026_sec_may20_second_round_audit.json",
+  "additional_official_gamebooks": [
+    {
+      "game_id": "cb-2026-05-20-missouri-mississippi-state-att0429",
+      "source_url": "https://hailstate.com/sports/baseball/stats/2026/missouri/boxscore/27457",
+      "verification": "official_boxscore_verified"
+    },
+    {
+      "game_id": "cb-2026-05-20-vanderbilt-florida-att0430",
+      "source_url": "https://floridagators.com/sports/baseball/stats/2026/vanderbilt/boxscore/27672",
+      "verification": "official_boxscore_verified"
+    },
+    {
+      "game_id": "cb-2026-05-19-missouri-ole-miss-att0425",
+      "source_url": "https://olemisssports.com/sports/baseball/stats/2026/missouri/boxscore/14713",
+      "verification": "official_boxscore_verified"
+    },
+    {
+      "game_id": "cb-2026-05-19-lsu-oklahoma-att0428",
+      "source_url": "https://soonersports.com/sports/baseball/stats/2026/lsu/boxscore/15789",
+      "verification": "official_boxscore_verified"
+    },
+    {
+      "game_id": "cb-2026-05-22-auburn-texas-a-m-att0436",
+      "source_url": "https://storage.googleapis.com/auburn-prod/2026/05/23/B1yXyMnFNLlPuQs4IZQC4WYlQNbHmcsWGsihLulK.pdf",
+      "verification": "official_boxscore_verified",
+      "roster_source_url": "https://12thman.com/sports/baseball/roster/season/2026"
+    },
+    {
+      "game_id": "cb-2026-05-19-south-carolina-tennessee-att0427",
+      "source_url": "https://utsports.com/sports/baseball/stats/2026/south-carolina/boxscore/29760",
+      "verification": "official_boxscore_verified"
+    },
+    {
+      "game_id": "cb-2026-05-19-kentucky-vanderbilt-att0426",
+      "source_url": "https://storage.googleapis.com/vucommodores-prod/2026/05/VU57-vs-Kentucky-SECT-Box.pdf",
+      "verification": "official_boxscore_verified"
+    },
+    {
+      "game_id": "cb-2026-05-14-virginia-louisville-att0422",
+      "source_url": "https://gocards.com/sports/baseball/stats/2026/virginia/boxscore/26032",
+      "verification": "official_boxscore_verified"
+    },
+    {
+      "game_id": "cb-2026-05-15-mercer-east-tennessee-state-att0423",
+      "source_url": "https://etsubucs.com/sports/baseball/stats/2026/mercer/boxscore/12578",
+      "verification": "official_boxscore_verified"
+    },
+    {
+      "game_id": "cb-2026-05-16-arkansas-kentucky-att0424",
+      "source_url": "https://arkansasrazorbacks.com/stats/baseball/2026/ARK55.pdf",
+      "verification": "official_boxscore_verified"
+    },
+    {
+      "game_id": "cb-2026-05-10-little-rock-ut-martin-att0421",
+      "source_url": "https://utmsports.com/sports/baseball/stats/2026/little-rock/boxscore/13609",
+      "verification": "official_boxscore_verified"
+    }
+  ],
+  "2026_may19_first_round_audit": "data/2026_sec_may19_first_round_audit.json",
+  "2026_may22_auburn_tamu_official_pdf_audit": "data/2026_auburn_tamu_pdf_audit.json",
+  "monthly_review_gate": {
+    "may_2026": {
+      "attended": 27,
+      "complete": 27,
+      "status": "PASS"
+    },
+    "april_2026": {
+      "attended": 14,
+      "complete": 14,
+      "status": "PASS",
+      "audit_file": "data/2026_april_month_complete_audit.json"
+    },
+    "march_2026": {
+      "attended": 21,
+      "complete": 10,
+      "approved": true,
+      "status": "in_progress",
+      "pending": [
+        "cb-2026-03-01-notre-dame-tennessee-tech-att0383",
+        "cb-2026-03-06-the-citadel-kentucky-att0384",
+        "cb-2026-03-07-the-citadel-kentucky-att0385",
+        "cb-2026-03-08-the-citadel-kentucky-att0386",
+        "cb-2026-03-10-ohio-austin-peay-att0387",
+        "cb-2026-03-10-ohio-austin-peay-att0388",
+        "cb-2026-03-10-indiana-state-vanderbilt-att0389",
+        "cb-2026-03-13-austin-peay-bellarmine-att0391",
+        "cb-2026-03-14-alabama-kentucky-att0393",
+        "cb-2026-03-20-wabash-valley-walters-state-att0396",
+        "cb-2026-03-20-wabash-valley-walters-state-att0397"
+      ]
+    },
+    "february_2026": {
+      "approved": true,
+      "attended": 11,
+      "status": "source_discovery_ready",
+      "source_queue": "data/2026_february_january_official_source_queue.json"
+    },
+    "season_2025": {
+      "approved": true,
+      "attended": 74,
+      "verified_full_gamebooks": 74,
+      "pending": 0,
+      "status": "PASS",
+      "source_queue": "data/2025_official_source_queue.json",
+      "coverage_audit": "data/2025_monthly_progress_audit.json",
+      "source_audit": "data/2025_source_import_audit.json"
+    },
+    "publication": {
+      "approved": false
+    },
+    "january_2026": {
+      "attended": 2,
+      "approved": true,
+      "status": "event_found_official_boxscores_pending",
+      "source_queue": "data/2026_february_january_official_source_queue.json"
+    },
+    "2026-01": {
+      "status": "PASS",
+      "attended": 2,
+      "eligible": 0,
+      "complete": 0,
+      "junior_college_excluded": 2
+    },
+    "2026-02": {
+      "status": "PASS",
+      "attended": 11,
+      "eligible": 8,
+      "complete": 8,
+      "junior_college_excluded": 3
+    },
+    "2026-03": {
+      "status": "PASS",
+      "attended": 21,
+      "eligible": 19,
+      "complete": 19,
+      "junior_college_excluded": 2
+    },
+    "2026-04": {
+      "status": "PASS",
+      "attended": 14,
+      "eligible": 14,
+      "complete": 14,
+      "junior_college_excluded": 0
+    },
+    "2026-05": {
+      "status": "PASS",
+      "attended": 27,
+      "eligible": 27,
+      "complete": 27,
+      "junior_college_excluded": 0
+    },
+    "season_2024": {
+      "approved": true,
+      "complete": 71,
+      "eligible": 71,
+      "status": "in_progress"
+    },
+    "season_2023": {
+      "approved": false
+    },
+    "season_2022": {
+      "approved": true,
+      "attended": 62,
+      "eligible": 62,
+      "official_full_gamebook_source_urls": 62,
+      "source_date_matches": 61,
+      "date_identity_conflicts": 1,
+      "full_player_gamebooks_imported": 0,
+      "status": "verified_complete",
+      "source_queue": "data/2022_official_source_queue.json",
+      "audit_file": "data/2022_monthly_progress_audit.json",
+      "full_player_boxscores_imported": 62
+    },
+    "season_2021": {
+      "approved": true,
+      "attended": 32,
+      "eligible": 32,
+      "full_gamebooks_verified_urls": 32,
+      "ambiguous_one_of_two_doubleheader_games": 0,
+      "official_game_score_only": 0,
+      "recap_only_without_full_gamebook": 0,
+      "full_player_boxscores_imported": 32,
+      "status": "verified_complete",
+      "source_queue": "data/2021_official_source_queue.json",
+      "audit_file": "data/2021_monthly_progress_audit.json"
+    },
+    "season_2020": {
+      "approved": true,
+      "attended": 11,
+      "eligible": 11,
+      "full_gamebooks_verified_urls": 11,
+      "official_date_matches": 10,
+      "official_date_reconciliation_required": 0,
+      "full_player_boxscores_imported": 11,
+      "status": "verified_complete",
+      "source_queue": "data/2020_official_source_queue.json",
+      "audit_file": "data/2020_monthly_progress_audit.json",
+      "official_date_corrections_user_confirmed": 1
+    },
+    "season_2019": {
+      "approved": true,
+      "attended": 41,
+      "eligible": 41,
+      "full_gamebooks_verified_urls": 41,
+      "official_date_matches": 41,
+      "official_date_reconciliation_required": 0,
+      "full_player_boxscores_imported": 41,
+      "status": "verified_complete",
+      "source_queue": "data/2019_official_source_queue.json",
+      "audit_file": "data/2019_monthly_progress_audit.json"
+    },
+    "season_2018": {
+      "approved": true,
+      "attended": 30,
+      "eligible": 30,
+      "official_identity_scores_matched": 30,
+      "full_gamebook_direct_sources_located": 30,
+      "full_player_gamebook_url_pending": 0,
+      "full_player_boxscores_imported": 30,
+      "status": "verified_complete",
+      "source_queue": "data/2018_official_source_queue.json",
+      "audit_file": "data/2018_monthly_progress_audit.json",
+      "player_table_content_pending_verification": 1,
+      "full_player_batting_pitching_evidence_sources_verified": 30,
+      "batter_strikeout_reconciled_from_user_play_by_play": 1
+    },
+    "season_2017": {
+      "approved": true,
+      "attended": 1,
+      "eligible": 1,
+      "official_identity_scores_matched": 1,
+      "full_gamebook_direct_sources_located": 1,
+      "full_player_gamebook_url_pending": 0,
+      "full_player_boxscores_imported": 1,
+      "status": "verified_complete",
+      "source_queue": "data/2017_official_source_queue.json",
+      "audit_file": "data/2017_monthly_progress_audit.json"
+    }
+  },
+  "early_2026_source_research": "data/2026_february_january_official_source_queue.json",
+  "junior_college_scope": {
+    "policy": "Exclude all junior-college games from box-score backfill and monthly completion denominators; preserve original attendance rows",
+    "excluded_2026_games": 7,
+    "eligible_2026_games": 68,
+    "monthly_2026": {
+      "2026-01": {
+        "eligible": 0,
+        "excluded": 2
+      },
+      "2026-02": {
+        "eligible": 8,
+        "excluded": 3
+      },
+      "2026-03": {
+        "eligible": 19,
+        "excluded": 2
+      },
+      "2026-04": {
+        "eligible": 14,
+        "excluded": 0
+      },
+      "2026-05": {
+        "eligible": 27,
+        "excluded": 0
+      }
+    },
+    "updated": "2026-10-17"
+  },
+  "remaining_2026_eligible_noncaa_pending": 0,
+  "remaining_2026_eligible_ncaa_pending": 0,
+  "2025_backfill": {
+    "authorized": true,
+    "total_original_games": 74,
+    "verified_player_gamebooks": 74,
+    "source_queue_pending_review": 0,
+    "remaining_attendance_only": 0
+  },
+  "2024_backfill": {
+    "authorized": true,
+    "original_attendance_games": 71,
+    "verified_full_player_gamebooks": 71,
+    "source_queue_size": 71,
+    "linked_source_exceptions": 0,
+    "remaining_attendance_only": 0
+  },
+  "2023_backfill": {
+    "authorized": true,
+    "original_attendance_games": 47,
+    "official_full_gamebook_source_links": 47,
+    "official_boxscores_player_rows_imported": 47,
+    "source_date_reconciliation_pending": 3,
+    "tie_7_inning_special_case": 1,
+    "source_queue": "data/2023_official_source_queue.json",
+    "month_audit": "data/2023_monthly_progress_audit.json",
+    "stage": "historical_verified_player_stat_backfill_in_progress",
+    "approved": true,
+    "player_boxscore_imported": 47,
+    "new_verified_gamebooks_last_run": 1,
+    "last_run_pending_review": 0
+  },
+  "2022_backfill": {
+    "approved": true,
+    "original_attendance_games": 62,
+    "official_gamebooks_located": 62,
+    "date_discrepancy_pending": 1,
+    "player_boxscore_imported": 62,
+    "source_queue": "data/2022_official_source_queue.json",
+    "monthly_audit": "data/2022_monthly_progress_audit.json",
+    "new_verified_gamebooks_last_run": 1,
+    "last_run_pending_review": 0
+  },
+  "2021_backfill": {
+    "approved": true,
+    "original_attendance_games": 32,
+    "full_player_gamebooks_located": 32,
+    "ambiguous_csub_doubleheader": 0,
+    "byu_official_game_only": 0,
+    "fullerton_recap_only": 0,
+    "player_boxscore_imported": 32,
+    "source_queue": "data/2021_official_source_queue.json",
+    "monthly_audit": "data/2021_monthly_progress_audit.json",
+    "user_confirmed_csub_2021_04_24": "Game 1, 12:03 PM, CSUB 3–UCSD 2; source ID 8289. Do not import Game 2 ID 8292 as attended.",
+    "new_verified_gamebooks_last_run": 32,
+    "last_run_pending_review": 0
+  },
+  "2020_backfill": {
+    "approved": true,
+    "original_attendance_games": 11,
+    "official_full_gamebooks_located": 11,
+    "official_date_matches": 10,
+    "date_review_pending": 0,
+    "player_boxscore_imported": 11,
+    "source_queue": "data/2020_official_source_queue.json",
+    "monthly_audit": "data/2020_monthly_progress_audit.json",
+    "official_date_corrections_user_confirmed": 1,
+    "new_verified_gamebooks_last_run": 1,
+    "last_run_pending_review": 0
+  },
+  "2019_backfill": {
+    "approved": true,
+    "original_attendance_games": 41,
+    "official_full_gamebooks_located": 41,
+    "official_date_matches": 41,
+    "date_review_pending": 0,
+    "player_boxscore_imported": 41,
+    "source_queue": "data/2019_official_source_queue.json",
+    "monthly_audit": "data/2019_monthly_progress_audit.json",
+    "new_verified_gamebooks_last_run": 1,
+    "last_run_pending_review": 0
+  },
+  "2018_backfill": {
+    "approved": true,
+    "original_attendance_games": 30,
+    "official_game_identifications": 30,
+    "full_player_gamebook_direct_sources": 30,
+    "full_player_gamebook_link_not_yet_found": 0,
+    "player_boxscore_imported": 30,
+    "source_queue": "data/2018_official_source_queue.json",
+    "monthly_audit": "data/2018_monthly_progress_audit.json",
+    "full_player_gamebook_contents_verified": 30,
+    "full_player_gamebook_content_verification_pending": 0,
+    "asu_2018_05_09_user_batter_so_reconstructed": true,
+    "new_verified_gamebooks_last_run": 1,
+    "last_run_pending_review": 0
+  },
+  "2017_backfill": {
+    "approved": true,
+    "original_attendance_games": 1,
+    "official_game_identifications": 1,
+    "full_player_gamebook_direct_sources": 1,
+    "full_player_gamebook_link_not_yet_found": 0,
+    "player_boxscore_imported": 1,
+    "source_queue": "data/2017_official_source_queue.json",
+    "monthly_audit": "data/2017_monthly_progress_audit.json",
+    "new_verified_gamebooks_last_run": 1,
+    "last_run_pending_review": 0
+  },
+  "source_matched_player_gamebook_pending": 0,
+  "pending_complete_player_gamebooks": 0,
+  "last_source_only_result_note": "Resolved October 18, 2026: Arizona State at San Diego 2018-05-09 source scoreboard and all five substitute identities supplied and source-gated fully imported.",
+  "release_readiness": {
+    "complete_eligible_gamebooks": 437,
+    "eligible_games": 437,
+    "original_attendance_ids": 444,
+    "juco_excluded": 7,
+    "verified_player_game_rows": 13183,
+    "last_gamebook_completed": "cb-2018-05-09-arizona-state-san-diego-att0031",
+    "deployment_status": "development_branch_not_merged",
+    "last_gamebook_verified_on": "2026-10-18"
+  }
+}

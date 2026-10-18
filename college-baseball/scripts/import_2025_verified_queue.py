@@ -1,0 +1,289 @@
+#!/usr/bin/env python3
+"""Source-gated import of 2025 four-year college baseball gamebooks.
+
+Every import is tied to an unchanged original attendance row and a human-identified
+official university box-score URL. Require exact school/date, R/H/E and inning line,
+all player hitting/pitching totals, real nine-slot batting order, source substitutions,
+and unique official win/loss/save decisions. Preserve verified 2026 and all JUCO.
+"""
+from copy import deepcopy
+from pathlib import Path
+import json
+import re
+import requests
+from bs4 import BeautifulSoup
+from import_2026_remaining_ncaa import import_one
+from reconcile_2026_official_pitching_decisions import name_variants
+
+DATA=Path(__file__).resolve().parents[1]/"data"
+def read(name):return json.loads((DATA/name).read_text(encoding="utf-8"))
+def write(name,obj):(DATA/name).write_text(json.dumps(obj,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+
+def scorer_labels(page, rows, gid):
+    text=BeautifulSoup(page,"html.parser").get_text(" ",strip=True)
+    found={}
+    for label in ("Win","Loss","Save"):
+        # Source is always the originally identified official university gamebook.
+        pattern=(rf"\b{label}\s*:\s*([^\n:]*?)\s*\(\d+-\d+\)"
+            if label!="Save" else r"\bSave\s*:\s*([^\n:]*?)\s*\(\d+\)")
+        match=re.search(pattern,text,re.I)
+        if not match:
+            if label=="Save":
+                found["save"]=None
+                continue
+            raise ValueError(f"Source does not state official {label}: {gid}")
+        name=match.group(1).strip(" ,;.")
+        pitchers=[r for r in rows if "pitching" in r]
+        # Older university gamebook uses "Beauchamp, Cam (3-0)" while
+        # parsed roster stores "Cam Beauchamp". Match reversed scorer
+        # notation only through an independently unique pitcher identity.
+        order_normalized=name
+        if "," in name:
+            last,first=name.split(",",1)
+            if last.strip() and first.strip():
+                order_normalized=first.strip()+" "+last.strip()
+        matches=[r for r in pitchers if name_variants(r["player"]) & name_variants(order_normalized)]
+        if not matches:
+            # Some old Sidearm gamebooks show just the pitcher's last name.
+            surname_matches=[r for r in pitchers if r["player"].split()[-1].casefold()==name.casefold()]
+            if len(surname_matches)==1:matches=surname_matches
+        # IU original 3/4/2018 university source labels the Win
+        # scorer "Beauchamp, Cam" but its pitcher table gives his full
+        # name "Beauchamp, Cameron". Exact game/role and unique pitcher only.
+        if (gid=="cb-2018-03-04-indiana-san-diego-att0016"
+            and label=="Win" and name=="Beauchamp, Cam" and not matches):
+            matches=[r for r in pitchers
+                     if r["player"]=="Cameron Beauchamp" and r["team"]=="Indiana"]
+        if len(matches)!=1:
+            raise ValueError(f"Official {label} scorer {name!r} not uniquely matched among source pitchers {gid}")
+        found[label.lower()]=matches[0]["player"]
+    if found["win"]==found["loss"]:
+        raise ValueError("Official scorer W and L identical")
+    for r in rows:
+        if "pitching" in r:
+            for label,field in (("win","wins"),("loss","losses"),("save","saves")):
+                r["pitching"][field]=int(found[label] is not None and r["player"]==found[label])
+    return found
+
+def main():
+    games=read("games.json")
+    original_count=len(games)
+    players=read("player_stats.json")
+    report=read("import_report.json")
+    queue=read("2025_official_source_queue.json")
+    byid={g["id"]:g for g in games}
+    assert original_count==444==len(byid)
+    before_2026={g["id"]:deepcopy(g) for g in games if g["date"].startswith("2026")}
+    before_stats_2026=[deepcopy(s) for s in players if s["game_id"] in before_2026]
+    before_pre2025={g["id"]:deepcopy(g) for g in games if g["date"]<"2025-01-01"}
+    before_2025_rows={g["id"]:g for g in games if g["date"].startswith("2025")}
+    assert len(before_2025_rows)==74
+    global_keys={(s["game_id"],s["player_id"]) for s in players}
+    assert len(global_keys)==len(players)
+    verified=[];pending=[];metadata_updates=[]
+    session=requests.Session()
+    session.headers["User-Agent"]="Mozilla/5.0 Courtside Archive Official Source Audit"
+    source_keys=set()
+    for item in queue["source_queue"]:
+        gid=item["game_id"]
+        if gid in source_keys:raise ValueError("Duplicate 2025 source queue game ID "+gid)
+        source_keys.add(gid)
+        game=byid.get(gid)
+        if game is None or not game["date"].startswith("2025") or game.get("boxscore_backfill_excluded"):
+            raise ValueError("Source queue game outside 2025 approved eligible scope "+gid)
+        if any(game.get(k)!=item[k] for k in ("date","away","home")):
+            raise ValueError("Official source game identity disagrees with original attendance "+gid)
+        url=item["source_url"]
+        # Capture this game's own identity before any request or parser failure.
+        # Never reuse a prior loop iteration's snapshot for a different game.
+        snapshot=deepcopy(game)
+        snapshot_keys=set(global_keys)
+        if game["verification"]=="official_boxscore_verified":
+            prior=[p for p in players if p["game_id"]==gid]
+            if not prior or game.get("source_url")!=url or len(prior)<18:
+                raise ValueError("Previously verified stats unexpectedly changed "+gid)
+            # Repair earlier importer assigning neutral_site=True to ALL
+            # games. It should only be set for neutral tournament matches
+            # or games individually documented as neutral (e.g. Fluor Field).
+            expected_neutral=bool(item.get("neutral_site",item["game_type"] in ("ncaa_postseason","conference_tournament")))
+            if game.get("neutral_site") != expected_neutral:
+                game["neutral_site"]=expected_neutral
+                metadata_updates.append(gid)
+            continue
+        if game["verification"]!="attendance_only":
+            pending.append({"game_id":gid,"reason":"Original status is not attendance-only"})
+            continue
+        try:
+            pdf_source=item.get("source_type")=="official_university_pdf_scorebook"
+            if url.lower().split("?")[0].endswith(".pdf") and not pdf_source:
+                raise ValueError("Unsupported source PDF; independently audited PDF parser required")
+            resp=session.get(url,timeout=40)
+            resp.raise_for_status()
+            legacy=bool(item.get("legacy_statcrew_source"))
+            if pdf_source:
+                # Same source-validated scorer parser that completed the 2024
+                # official Auburn/Vanderbilt university PDF gamebooks.
+                from import_2024_pdf import parse as parse_pdf
+                rows,audit=parse_pdf(game,item,global_keys,resp)
+            else:
+                soup=BeautifulSoup(resp.text,"html.parser")
+                src=soup.get_text(" ",strip=True)
+                yy,mm,dd=(int(n) for n in game["date"].split("-"))
+                formats={f"{mm}/{dd}/{yy}",f"{mm}/{dd:02d}/{yy}",
+                         f"{mm:02d}/{dd:02d}/{yy}",f"{mm:02d}/{dd}/{yy}",
+                         f"{mm}/{dd}/{yy%100:02d}",f"{mm:02d}/{dd:02d}/{yy%100:02d}",
+                         f"{mm}/{dd:02d}/{yy%100:02d}"}
+                if legacy:
+                    from datetime import date as _date
+                    dt=_date(yy,mm,dd)
+                    formats.update({dt.strftime("%b %d, %Y"),
+                                    dt.strftime("%B %d, %Y"),
+                                    dt.strftime("%b %d, %Y").replace(" 0"," "),
+                                    dt.strftime("%B %d, %Y").replace(" 0"," ")})
+                if not any(fmt in src for fmt in formats):
+                    raise ValueError("Official school boxscore doesn't visibly confirm attendance date")
+                if legacy:
+                    from import_2024_statcrew import import_statcrew
+                    rows,audit=import_statcrew(game,item,global_keys,resp)
+                else:
+                    rows,audit=import_one(game,item,global_keys)
+            # Mississippi State's 2025 May 21 university stat table truncates
+            # the losing pitcher's visible name to "Mcpherson", while its
+            # *same official gamebook* credits "Mcpherson, Ryan (4-1)".
+            # Use the full verified scorer name to avoid a false player ID.
+            if gid=="cb-2025-05-21-texas-a-m-mississippi-state-att0353":
+                matches=[p for p in rows if p["team"]=="Mississippi State"
+                         and p["player"].casefold()=="mcpherson" and "pitching" in p]
+                if len(matches)!=1:
+                    raise ValueError("Cannot map official Mississippi State scorer to single source pitcher")
+                p=matches[0]
+                old=p["player_id"]
+                p["player"]="Ryan Mcpherson"
+                p["player_id"]="cb-mississippi-state-ryan-mcpherson"
+                global_keys.remove((gid,old))
+                if (gid,p["player_id"]) in global_keys:
+                    raise ValueError("Official Mississippi State pitcher identity collision")
+                global_keys.add((gid,p["player_id"]))
+            # Davidson's 2025 May 10 university pitching table abbreviates
+            # scorer names as "Fix, I" and "Weber,". Its same official page
+            # gives full names "Fix, Isaac" and "Weber, Matt". Reconcile the
+            # exact team/pitcher before assigning college player identities.
+            if gid=="cb-2025-05-10-george-mason-davidson-att0344":
+                official_names={"fix":"Isaac Fix","weber":"Matt Weber"}
+                for surname,canonical in official_names.items():
+                    found=[p for p in rows if p["team"]=="Davidson"
+                           and "pitching" in p
+                           and p["player"].split()[-1].casefold()==surname]
+                    if len(found)!=1:
+                        raise ValueError("Davidson source abbreviated pitcher ambiguous: "+surname)
+                    pitcher=found[0];old_id=pitcher["player_id"]
+                    new_id="cb-davidson-"+canonical.lower().replace(" ","-")
+                    if (gid,new_id) in global_keys and new_id!=old_id:
+                        raise ValueError("Official Davidson pitcher name collision")
+                    global_keys.remove((gid,old_id))
+                    global_keys.add((gid,new_id))
+                    pitcher["player"]=canonical
+                    pitcher["player_id"]=new_id
+            # WKU's 2025 March 22 school boxscore abbreviates its official
+            # pitcher names to "Whalen, D.", "Peters, T." and "Jones, E.";
+            # WKU's same-day official game recap identifies them fully as
+            # Drew Whalen, Treyson Peters, and Evan Jones.
+            if gid=="cb-2025-03-22-western-kentucky-kennesaw-state-att0325":
+                official_pitchers={"whalen":"Drew Whalen",
+                    "peters":"Treyson Peters","jones":"Evan Jones"}
+                for surname,full_name in official_pitchers.items():
+                    hits=[p for p in rows if p["team"]=="Western Kentucky"
+                        and "pitching" in p and
+                        surname in re.findall(r"[a-z]+",p["player"].lower())]
+                    if len(hits)!=1:
+                        raise ValueError("WKU abbreviated source pitcher ambiguous: "+surname)
+                    row=hits[0];old=row["player_id"]
+                    new="cb-western-kentucky-"+full_name.lower().replace(" ","-")
+                    if (gid,new) in global_keys and old!=new:
+                        raise ValueError("WKU corrected pitcher ID collision")
+                    global_keys.remove((gid,old));global_keys.add((gid,new))
+                    row["player"]=full_name;row["player_id"]=new
+            # 2/15 Quinnipiac university HTML truncates the pitcher's
+            # full surname "Franconere" to "Francon" in the player table;
+            # the same school source credits "Franconere, J.C." with the win.
+            if gid=="cb-2025-02-15-quinnipiac-unc-wilmington-att0301":
+                matches=[p for p in rows if p["team"]=="Quinnipiac"
+                    and "pitching" in p and
+                    ("francon" in p["player"].lower())]
+                if len(matches)!=1:
+                    raise ValueError("Official Quinnipiac J.C. Franconere pitcher name ambiguous")
+                row=matches[0];old=row["player_id"]
+                new="cb-quinnipiac-jc-franconere"
+                if (gid,new) in global_keys and new!=old:
+                    raise ValueError("Quinnipiac pitcher collision")
+                global_keys.remove((gid,old));global_keys.add((gid,new))
+                row["player"]="J.C. Franconere";row["player_id"]=new
+            decisions=(game["pitching_decisions"] if (legacy or pdf_source)
+                       else scorer_labels(resp.text,rows,gid))
+            game.update({
+               "game_type":item["game_type"],
+               "postseason_round":item["postseason_round"],
+               "ballpark":item["ballpark"],
+               "city":item["city"],"state":item["state"],
+               "neutral_site":bool(item.get("neutral_site",item["game_type"] in ("ncaa_postseason","conference_tournament"))),
+               "pitching_decisions":decisions,
+               "source_type":item["source_type"],
+            })
+            if game["game_type"]=="ncaa_postseason":
+                game["postseason_round"]="NCAA Regional"
+            players.extend(rows)
+            verified.append({"game_id":gid,"source_url":url,"score":item["official_score"],
+                             "source_game_id":item["source_game_id"],"player_rows":len(rows),
+                             "source_stat_audit":audit,"pitching_decisions":decisions})
+            print("PASS 2025",gid,len(rows),flush=True)
+        except Exception as exc:
+            # No partial score or player results from a failed official gamebook.
+            game.clear();game.update(snapshot)
+            global_keys.clear();global_keys.update(snapshot_keys)
+            pending.append({"game_id":gid,"source_url":url,"reason":str(exc)})
+            print("REVIEW 2025",gid,str(exc),flush=True)
+    assert len(games)==444 and len({g["id"] for g in games})==444
+    assert all(byid[k]==v for k,v in before_2026.items())
+    assert all(byid[k]==v for k,v in before_pre2025.items())
+    assert [s for s in players if s["game_id"] in before_2026]==before_stats_2026
+    assert len(players)==len({(s["game_id"],s["player_id"]) for s in players})
+    players.sort(key=lambda r:(r["game_id"],r["team"],r.get("batting_slot",99),
+                              r.get("batting_sub_index",99),
+                              r.get("pitching_appearance_index",99),r["player_id"]))
+    num_2025=sum(g["date"].startswith("2025") and g["verification"]=="official_boxscore_verified" for g in games)
+    if verified or metadata_updates:
+        report["official_player_boxscores_imported"]=sum(g["verification"]=="official_boxscore_verified" for g in games)
+        report["official_score_and_inning_lines_matched"]=sum(g["verification"]!="attendance_only" for g in games)
+        report["attendance_only_pending_official_verification"]=sum(g["verification"]=="attendance_only" for g in games)
+        report["player_stat_rows"]=len(players)
+        report["unique_player_ids"]=len({s["player_id"] for s in players})
+        report["latest_verified_batch"]="2025 official university scorebooks, reverse-chronological source-gated imports"
+        report["2025_backfill"]={"authorized":True,"total_original_games":74,
+             "verified_player_gamebooks":num_2025,
+             "source_queue_pending_review":len(pending),
+             "remaining_attendance_only":74-num_2025}
+        report["warning"]="2025 backfill in progress, verified games only. 2026 preserved. Older years and publication not approved."
+    audit={"status":"PASS" if not pending else "PARTIAL_REVIEW_REQUIRED",
+           "scope":"Only 2025 approved NCAA/four-year games; no 2024, no release",
+           "original_attendance_entries":444,
+           "verified_2026_unchanged":68,
+           "total_2025_attendance":74,"completed_in_this_run":len(verified),
+           "verified_2025_total":num_2025,
+           "linked_source_games":len(queue["source_queue"]),
+           "passed_games":verified,"metadata_corrections":metadata_updates,"pending_review":pending}
+    if verified or metadata_updates:
+        write("games.json",games);write("player_stats.json",players)
+        write("import_report.json",report)
+    # Preserve the last authoritative PASS audit on idempotent re-runs;
+    # otherwise a zero-new-game run rewrites passed_games to [] and
+    # needlessly races other GitHub Actions writers to this draft branch.
+    existing_audit=read("2025_source_import_audit.json")
+    if (verified or metadata_updates or
+        existing_audit.get("status")!=audit["status"] or
+        existing_audit.get("verified_2025_total")!=num_2025 or
+        existing_audit.get("pending_review",[])!=pending):
+        write("2025_source_import_audit.json",audit)
+    print(json.dumps({"status":audit["status"],"new":len(verified),
+                      "2025_verified":num_2025,"pending_review":len(pending)},indent=2),flush=True)
+
+if __name__=="__main__":main()

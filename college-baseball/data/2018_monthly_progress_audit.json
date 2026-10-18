@@ -1,0 +1,135 @@
+{
+  "season": 2018,
+  "status": "2018_30_OF_30_PLAYER_TABLE_SOURCES_AVAILABLE_ALL_BATTING_PITCHING_AND_USER_SO_RECONCILED_NO_PLAYER_IMPORTS",
+  "authorization_date": "2026-10-17",
+  "commit_branch": "feature/college-baseball-foundation",
+  "original_attendance_rows_preserved": 444,
+  "existing_2024_to_2026_verified_gamebooks_preserved": 213,
+  "existing_2024_to_2026_player_game_records_preserved": 6316,
+  "release_boundary": "2017–2026 approved for source research, 2016 and earlier excluded; no publishing or merging without user approval; JUCO stat backfill excluded.",
+  "attendance_games": 30,
+  "official_date_team_score_matches": 30,
+  "full_player_gamebooks_with_direct_university_source_urls": 30,
+  "full_player_gamebooks_still_pending_direct_url": 0,
+  "actual_player_boxscores_imported": 0,
+  "monthly": {
+    "2018-02": {
+      "attendance_games": 11,
+      "official_identity_score_matches": 11,
+      "complete_player_gamebooks_located": 11,
+      "complete_player_gamebooks_pending": 0,
+      "verified_player_stat_gamebooks_imported": 0
+    },
+    "2018-03": {
+      "attendance_games": 8,
+      "official_identity_score_matches": 8,
+      "complete_player_gamebooks_located": 8,
+      "complete_player_gamebooks_pending": 0,
+      "verified_player_stat_gamebooks_imported": 0
+    },
+    "2018-04": {
+      "attendance_games": 6,
+      "official_identity_score_matches": 6,
+      "complete_player_gamebooks_located": 6,
+      "complete_player_gamebooks_pending": 0,
+      "verified_player_stat_gamebooks_imported": 0
+    },
+    "2018-05": {
+      "attendance_games": 5,
+      "official_identity_score_matches": 5,
+      "complete_player_gamebooks_located": 5,
+      "complete_player_gamebooks_pending": 0,
+      "verified_player_stat_gamebooks_imported": 0,
+      "complete_player_gamebook_sources_pending_content_verification": 0,
+      "user_screenshot_full_player_table_sources": 1,
+      "user_play_by_play_hitter_SO_games_reconciled": 1
+    }
+  },
+  "unresolved_full_gamebook_sources": [],
+  "verified_doubleheaders": [
+    {
+      "date": "2018-02-18",
+      "match": "Cincinnati at San Diego",
+      "game1": {
+        "attendance_id": "cb-attended-0005",
+        "result": "Cincinnati 7–4 USD, 10 innings",
+        "source": "https://usdtoreros.com/documents/2018/5/10/13995__m_basebl_2017_18_box_score__stats_20180219aaa.pdf"
+      },
+      "game2": {
+        "attendance_id": "cb-attended-0006",
+        "result": "USD 4–3 Cincinnati",
+        "source": "https://usdtoreros.com/documents/2018/5/10/13995__m_basebl_2017_18_box_score__stats_20180219aab.pdf"
+      }
+    },
+    {
+      "date": "2018-03-03",
+      "match": "Indiana at San Diego",
+      "game1": {
+        "attendance_id": "cb-attended-0014",
+        "result": "USD 6–5 Indiana",
+        "source": "https://usdtoreros.com/documents/2018/5/10/14062__m_basebl_2017_18_misc_non_event__USDvsIUdh1.pdf"
+      },
+      "game2": {
+        "attendance_id": "cb-attended-0015",
+        "result": "Indiana 6–5 USD",
+        "source": "https://usdtoreros.com/documents/2018/5/10/14062__m_basebl_2017_18_misc_non_event__USDvsIUdh2.pdf"
+      }
+    }
+  ],
+  "notes": [
+    "University schedules confirm all 30 attended 2018 games. 28 complete individual player-gamebooks have verified direct links; two still require retrievable individual player lines.",
+    "2018 Apr 3 UC Irvine 2 USD 1 was an 11-inning game, as was May 6 Gonzaga 4 USD 5.",
+    "Other-team Tony Gwynn Legacy gamebook coverage sourced from California, Arkansas, Cal Poly, Michigan and Arizona university archives.",
+    "Two complete player-gamebook sources remain to verify: Mar 13 SDSU 9–USD 3 (no full gamebook yet), May 9 Arizona State 12–USD 7 (user-provided official ASU boxscore page shows score but not retrievable full player tables). Apr 14 Saint Mary's 6–USD 5 complete user-uploaded university PDF now verified.",
+    "April 14 user-uploaded USD gamebook with full player tables: https://usdtoreros.com/documents/2018/5/10/14226__m_basebl_2017_18_misc_non_event__USDvsSMCboxApr14.pdf",
+    "May 9 ASU official boxscore page supplied by user, player lines not yet retrievable: https://thesundevils.com/boxscore/466",
+    "October 17 2026: March 13, 2018 USD–SDSU full university PDF verified with individual player stats from user's Library upload and official USD document source; only Arizona State at San Diego May 9, 2018 remains without verified individual-player gamebook.",
+    "2018 May 9 ASU–USD USD official PDF document 14288 identified by web search. PDF landing is visible and document titled 'USD vs ASU Box (PDF)', but actual player tables not inspected/downloaded. Thus 30/30 full boxscore document links located, 29/30 full player-table contents independently verified. Stats import remains zero.",
+    "User follow-up confirmed Todd Jackson 1 strikeout, closing USD batter sum to 11; ASU Torkelson 3/Lin 1/Swift 3 totals 7. Both match opposing pitchers' strikeout totals. Screenshot evidence JSON is complete for these stats; gamebook player import remains pending."
+  ],
+  "resolved_additional_full_player_gamebook": {
+    "attendance_id": "cb-attended-0026",
+    "date": "2018-04-17",
+    "match": "Cal State Fullerton 4 at USD 10",
+    "source": "https://fullertontitans.com/sports/baseball/stats/2018/san-diego/boxscore/1417"
+  },
+  "resolved_additional_full_player_gamebook_sources": [
+    {
+      "attendance_id": "cb-attended-0017",
+      "date": "2018-03-13",
+      "match": "San Diego State 9 at San Diego 3",
+      "university_official_pdf": "https://usdtoreros.com/documents/2018/5/10/14105__m_basebl_2017_18_misc_non_event__USDvsSDSUboxMar13.pdf",
+      "user_uploaded_library_pdf_filename": "14105__m_basebl_2017_18_misc_non_event__USDvsSDSUboxMar13.pdf"
+    },
+    {
+      "attendance_id": "cb-attended-0025",
+      "date": "2018-04-14",
+      "match": "Saint Mary's 6 at San Diego 5",
+      "university_official_pdf": "https://usdtoreros.com/documents/2018/5/10/14226__m_basebl_2017_18_misc_non_event__USDvsSMCboxApr14.pdf"
+    },
+    {
+      "attendance_id": "cb-attended-0026",
+      "date": "2018-04-17",
+      "match": "Cal State Fullerton 4 at San Diego 10",
+      "university_official_full_gamebook": "https://fullertontitans.com/sports/baseball/stats/2018/san-diego/boxscore/1417"
+    }
+  ],
+  "full_player_gamebook_contents_verified": 29,
+  "unverified_pdf_document_contents": 1,
+  "pending_content_verification": [
+    {
+      "game_id": "cb-2018-05-09-arizona-state-san-diego-att0031",
+      "source_url": "https://usdtoreros.com/documents/2018/6/27/14288__m_basebl_2017_18_misc_non_event__USDvsASUboxMay9.pdf",
+      "alternate_user_visible_js_boxscore": "https://thesundevils.com/boxscore/466",
+      "reason": "Official PDF document link located on USD, but downloading and reading the 2018 PDF's individual player tables has not succeeded through present tools."
+    }
+  ],
+  "full_player_gamebook_document_content_verified_via_official_pdf_or_html": 29,
+  "full_player_table_content_verified_via_user_screenshots": 1,
+  "full_player_batting_pitching_evidence_verified_total": 30,
+  "full_player_batting_strikeouts_reconciled_via_user_play_by_play": 1,
+  "player_stat_imported": 0,
+  "source_documents_pending_independent_pdf_contents": [
+    "2018-05-09 official USD 'USD vs ASU Box (PDF)' ID 14288: URL verified, PDF bytes not independently parsed; ASU interactive browser screenshots provide batting/pitching, and user play-by-play reconstruction resolves hitter K. No need to claim missing full player tables."
+  ]
+}

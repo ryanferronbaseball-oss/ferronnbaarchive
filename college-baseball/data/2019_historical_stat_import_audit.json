@@ -1,0 +1,128 @@
+{
+  "season": 2019,
+  "month": null,
+  "limit": 0,
+  "status": "PASS",
+  "original_attendance_games": 444,
+  "verified_this_run": 1,
+  "verified_in_season": 41,
+  "verified_overall": 415,
+  "player_game_rows_total": 12506,
+  "already_verified": [
+    "cb-2019-05-14-cal-baptist-san-diego-att0072",
+    "cb-2019-05-12-pacific-san-diego-att0071",
+    "cb-2019-05-11-pacific-san-diego-att0070",
+    "cb-2019-05-10-pacific-san-diego-att0069",
+    "cb-2019-05-07-uc-irvine-san-diego-att0068",
+    "cb-2019-05-05-san-diego-santa-clara-att0067",
+    "cb-2019-05-04-san-diego-santa-clara-att0066",
+    "cb-2019-05-03-san-diego-santa-clara-att0065",
+    "cb-2019-04-24-hawaii-san-diego-att0064",
+    "cb-2019-04-23-san-diego-state-san-diego-att0063",
+    "cb-2019-04-20-portland-san-diego-att0062",
+    "cb-2019-04-19-portland-san-diego-att0061",
+    "cb-2019-04-18-portland-san-diego-att0060",
+    "cb-2019-04-09-long-beach-state-san-diego-att0059",
+    "cb-2019-04-06-byu-san-diego-att0058",
+    "cb-2019-04-05-byu-san-diego-att0057",
+    "cb-2019-04-04-byu-san-diego-att0056",
+    "cb-2019-03-26-san-diego-uc-irvine-att0055",
+    "cb-2019-03-24-san-francisco-san-diego-att0054",
+    "cb-2019-03-23-san-francisco-san-diego-att0053",
+    "cb-2019-03-22-san-francisco-san-diego-att0052",
+    "cb-2019-03-19-cal-state-fullerton-san-diego-att0051",
+    "cb-2019-03-17-pepperdine-san-diego-att0050",
+    "cb-2019-03-16-pepperdine-san-diego-att0049",
+    "cb-2019-03-15-pepperdine-san-diego-att0048",
+    "cb-2019-03-12-tcu-san-diego-att0047",
+    "cb-2019-03-05-san-diego-uc-riverside-att0046",
+    "cb-2019-03-04-st-john-s-san-diego-att0045",
+    "cb-2019-03-03-st-john-s-san-diego-att0044",
+    "cb-2019-03-01-st-john-s-san-diego-att0043",
+    "cb-2019-02-26-san-diego-san-diego-state-att0042",
+    "cb-2019-02-24-utah-san-diego-att0041",
+    "cb-2019-02-23-missouri-state-san-diego-att0039",
+    "cb-2019-02-23-kansas-state-utah-att0038",
+    "cb-2019-02-22-oklahoma-san-diego-att0037",
+    "cb-2019-02-22-fresno-state-kansas-state-att0036",
+    "cb-2019-02-19-uc-irvine-san-diego-state-att0035",
+    "cb-2019-02-16-wagner-san-diego-att0034",
+    "cb-2019-02-16-wagner-san-diego-att0033",
+    "cb-2019-02-15-wagner-san-diego-att0032"
+  ],
+  "completed": [
+    {
+      "game_id": "cb-2019-02-24-cal-state-fullerton-oklahoma-att0040",
+      "player_rows": 37,
+      "source_url": "https://soonersports.com/sports/2019/8/7/2150228",
+      "win": "K. Luckham",
+      "loss": "Levi hbp ibb ab bf fo go Prater",
+      "source_audit": {
+        "status": "PASS",
+        "game_id": "cb-2019-02-24-cal-state-fullerton-oklahoma-att0040",
+        "source": "https://soonersports.com/sports/2019/8/7/2150228",
+        "source_bytes": 678918,
+        "source_sha256": "05c2bbe084ebaa76215cd6e6d3f9cb7b3a7a08c39f860ad46aa89014f0e289e2",
+        "player_rows": 37,
+        "scoreboard": [
+          {
+            "innings": [
+              0,
+              0,
+              2,
+              1,
+              4,
+              1,
+              0,
+              0,
+              0
+            ],
+            "runs": 8,
+            "hits": 15,
+            "errors": 1
+          },
+          {
+            "innings": [
+              0,
+              3,
+              0,
+              0,
+              3,
+              0,
+              0,
+              0,
+              0
+            ],
+            "runs": 6,
+            "hits": 11,
+            "errors": 1
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Cal State Fullerton",
+            "nine_starting_slots": true,
+            "batter_rows": 13,
+            "pitcher_rows": 4,
+            "substitutes": 4
+          },
+          {
+            "team": "Oklahoma",
+            "nine_starting_slots": true,
+            "batter_rows": 12,
+            "pitcher_rows": 8,
+            "substitutes": 3
+          }
+        ],
+        "pitching_decisions": {
+          "win": "K. Luckham",
+          "loss": "Levi hbp ibb ab bf fo go Prater",
+          "save": "M. Weisberg"
+        },
+        "source_type": "official_university_statcrew_html"
+      }
+    }
+  ],
+  "pending_review": [],
+  "release": "Draft branch only; never auto-publish or merge"
+}

@@ -1,0 +1,76 @@
+name: College Baseball 2024 Official Source Backfill
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - "college-baseball/data/2024_official_source_queue.json"
+      - "college-baseball/scripts/import_2024_verified_queue.py"
+      - "college-baseball/scripts/import_2026_remaining_ncaa.py"
+      - ".github/workflows/college-baseball-2024-backfill.yml"
+permissions:
+  contents: write
+concurrency:
+  group: college-baseball-2024-source-verification-draft
+  cancel-in-progress: true
+jobs:
+  source-verify-and-import-2024:
+    if: github.event.pull_request.head.ref == 'feature/college-baseball-foundation' || github.ref == 'refs/heads/feature/college-baseball-foundation'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feature/college-baseball-foundation
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install official scorebook parser requirements
+        run: python -m pip install requests beautifulsoup4
+      - name: Verify full 2024 university batting and pitching gamebooks
+        run: python college-baseball/scripts/import_2024_verified_queue.py
+      - name: Protect original attendance and verified earlier seasons
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          d=Path('college-baseball/data')
+          games=json.loads((d/'games.json').read_text())
+          rows=json.loads((d/'player_stats.json').read_text())
+          audit=json.loads((d/'2024_source_import_audit.json').read_text())
+          assert len(games)==444==len({g['id'] for g in games})
+          assert len([g for g in games if g['date'].startswith('2024')])==71
+          assert len({(p['game_id'],p['player_id']) for p in rows})==len(rows)
+          assert audit['2026_gamebooks_preserved']==68
+          assert audit['2025_gamebooks_preserved']>=69
+          assert audit['verified_2024_total']==sum(g['date'].startswith('2024') and g['verification']=='official_boxscore_verified' for g in games)
+          # 2017–2023 official historical gamebooks were fully imported since
+          # this workflow was written. Protect them instead of assuming none.
+          historical={2017:1,2018:30,2019:41,2020:11,2021:32,2022:62,2023:47}
+          assert all(sum(g['season']==year and g['verification']=='official_boxscore_verified'
+                         for g in games)==count for year,count in historical.items())
+          assert all(g['verification']=='official_boxscore_verified'
+                     for g in games if g['season']<2024 and not g.get('boxscore_backfill_excluded'))
+          assert all(g['verification']=='attendance_only' for g in games if g.get('boxscore_backfill_excluded'))
+          print('2024 VERIFIED',audit['verified_2024_total'],'/71',
+                'new this run',audit['completed_in_this_run'],
+                'exceptions',len(audit['pending_review']))
+          PY
+      - name: Commit 2024 reconciled university gamebooks to unpublished draft only
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add college-baseball/data/games.json college-baseball/data/player_stats.json college-baseball/data/import_report.json college-baseball/data/2024_source_import_audit.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Backfill officially reconciled 2024 college baseball gamebooks"
+            git push origin HEAD:feature/college-baseball-foundation
+          else
+            echo "No new 2024 university gamebooks verified in this batch"
+          fi
+      - name: Attach 2024 official gamebook audit and source exceptions
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: college-baseball-2024-source-audit
+          path: college-baseball/data/2024_source_import_audit.json
+          if-no-files-found: warn

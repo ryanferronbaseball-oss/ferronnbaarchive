@@ -1,0 +1,547 @@
+{
+  "status": "SOURCE_DISCOVERY_COMPLETE__PLAYER_IMPORT_PENDING",
+  "date": "2026-10-17",
+  "authorization": "2023 approved; exclude JUCO; preserve original 444 attendance rows and avoid main/production",
+  "scope": "unpublished college baseball branch",
+  "attendance_games": 47,
+  "source_gamebooks_identified": 47,
+  "full_player_gamebooks_imported": 0,
+  "source_date_matches": 44,
+  "source_date_conflicts": 3,
+  "seven_inning_ties_needing_importer_handling": 1,
+  "month_checkpoints": [
+    {
+      "month": "2023-05",
+      "attended": 10,
+      "official_gamebook_sources_located": 10,
+      "player_gamebooks_fully_imported": 0,
+      "original_date_conflicts": 0
+    },
+    {
+      "month": "2023-04",
+      "attended": 18,
+      "official_gamebook_sources_located": 18,
+      "player_gamebooks_fully_imported": 0,
+      "original_date_conflicts": 0
+    },
+    {
+      "month": "2023-03",
+      "attended": 10,
+      "official_gamebook_sources_located": 10,
+      "player_gamebooks_fully_imported": 0,
+      "original_date_conflicts": 0
+    },
+    {
+      "month": "2023-02",
+      "attended": 9,
+      "official_gamebook_sources_located": 9,
+      "player_gamebooks_fully_imported": 0,
+      "original_date_conflicts": 3
+    }
+  ],
+  "protected_records": "2024-2026 previously officially verified gamebooks and original 444 attendance IDs",
+  "priority_problems": [
+    {
+      "game_id": "cb-2023-02-20-nebraska-san-diego-att0181",
+      "details": "Nebraska 16–San Diego 16 after 7 innings (official tie), not a nine-inning game, no W/L/S",
+      "resolution": "Use tie-compatible scorer, do not fabricate winner/loser or 8th/9th innings"
+    },
+    {
+      "category": "Tony Gwynn Legacy shifted date",
+      "games": [
+        {
+          "game_id": "cb-2023-02-25-unlv-uc-irvine-att0184",
+          "original_attendance_date": "2023-02-25",
+          "official_date": "2023-02-26",
+          "score": "UNLV 10, UC Irvine 4"
+        },
+        {
+          "game_id": "cb-2023-02-25-unlv-san-diego-att0185",
+          "original_attendance_date": "2023-02-25",
+          "official_date": "2023-02-26",
+          "score": "UNLV 5, San Diego 6"
+        },
+        {
+          "game_id": "cb-2023-02-26-uc-irvine-san-diego-att0186",
+          "original_attendance_date": "2023-02-26",
+          "official_date": "2023-02-27",
+          "score": "UC Irvine 14, San Diego 6"
+        }
+      ],
+      "resolution": "Hold conflicting original attendance dates unchanged until attendance identity resolved against official university source"
+    }
+  ],
+  "gamebook_source_manifest": [
+    {
+      "game_id": "cb-2023-02-17-nebraska-san-diego-att0178",
+      "original_date": "2023-02-17",
+      "official_date": "2023-02-17",
+      "opponents": "Nebraska at San Diego",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/nebraska/boxscore/13891",
+      "source_status": "official_full_gamebook_located_player_import_pending",
+      "source_date_discrepancy": false,
+      "requires_special_tie_parser": false
+    },
+    {
+      "game_id": "cb-2023-02-18-nebraska-san-diego-att0179",
+      "original_date": "2023-02-18",
+      "official_date": "2023-02-18",
+      "opponents": "Nebraska at San Diego",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/nebraska/boxscore/13892",
+      "source_status": "official_full_gamebook_located_player_import_pending",
+      "source_date_discrepancy": false,
+      "requires_special_tie_parser": false
+    },
+    {
+      "game_id": "cb-2023-02-19-nebraska-san-diego-att0180",
+      "original_date": "2023-02-19",
+      "official_date": "2023-02-19",
+      "opponents": "Nebraska at San Diego",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/nebraska/boxscore/13893",
+      "source_status": "official_full_gamebook_located_player_import_pending",
+      "source_date_discrepancy": false,
+      "requires_special_tie_parser": false
+    },
+    {
+      "game_id": "cb-2023-02-20-nebraska-san-diego-att0181",
+      "original_date": "2023-02-20",
+      "official_date": "2023-02-20",
+      "opponents": "Nebraska at San Diego",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/nebraska/boxscore/13894",
+      "source_status": "official_full_gamebook_located_player_import_pending",
+      "source_date_discrepancy": false,
+      "requires_special_tie_parser": true
+    },
+    {
+      "game_id": "cb-2023-02-21-cal-state-northrdige-san-diego-state-att0182",
+      "original_date": "2023-02-21",
+      "official_date": "2023-02-21",
+      "opponents": "Cal State Northrdige at San Diego State",
+      "source_url": "https://gomatadors.com/sports/baseball/stats/2023/san-diego-state/boxscore/15859",
+      "source_status": "official_full_gamebook_located_player_import_pending",
+      "source_date_discrepancy": false,
+      "requires_special_tie_parser": false
+    },
+    {
+      "game_id": "cb-2023-02-24-hawaii-san-diego-att0183",
+      "original_date": "2023-02-24",
+      "official_date": "2023-02-24",
+      "opponents": "Hawaii at San Diego",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/hawaii/boxscore/13895",
+      "source_status": "official_full_gamebook_located_player_import_pending",
+      "source_date_discrepancy": false,
+      "requires_special_tie_parser": false
+    },
+    {
+      "game_id": "cb-2023-02-25-unlv-uc-irvine-att0184",
+      "original_date": "2023-02-25",
+      "official_date": "2023-02-26",
+      "opponents": "UNLV at UC irvine",
+      "source_url": "https://unlvrebels.com/sports/baseball/stats/2023/uc-irvine/boxscore/15890",
+      "source_status": "official_date_conflict_do_not_import_until_reconciled",
+      "source_date_discrepancy": true,
+      "requires_special_tie_parser": false
+    },
+    {
+      "game_id": "cb-2023-02-25-unlv-san-diego-att0185",
+      "original_date": "2023-02-25",
+      "official_date": "2023-02-26",
+      "opponents": "UNLV at San Diego",
+      "source_url": "https://unlvrebels.com/sports/baseball/stats/2023/university-of-san-diego/boxscore/15889",
+      "source_status": "official_date_conflict_do_not_import_until_reconciled",
+      "source_date_discrepancy": true,
+      "requires_special_tie_parser": false
+    },
+    {
+      "game_id": "cb-2023-02-26-uc-irvine-san-diego-att0186",
+      "original_date": "2023-02-26",
+      "official_date": "2023-02-27",
+      "opponents": "UC Irvine at San Diego",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/uc-irvine/boxscore/13896",
+      "source_status": "official_date_conflict_do_not_import_until_reconciled",
+      "source_date_discrepancy": true,
+      "requires_special_tie_parser": false
+    },
+    {
+      "game_id": "cb-2023-03-02-san-diego-oregon-att0187",
+      "original_date": "2023-03-02",
+      "official_date": "2023-03-02",
+      "opponents": "San Diego at Oregon",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/oregon/boxscore/13898",
+      "source_status": "official_full_gamebook_located_player_import_pending",
+      "source_date_discrepancy": false,
+      "requires_special_tie_parser": false
+    },
+    {
+      "game_id": "cb-2023-03-03-san-diego-oregon-att0188",
+      "original_date": "2023-03-03",
+      "official_date": "2023-03-03",
+      "opponents": "San Diego at Oregon",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/oregon/boxscore/13899",
+      "source_status": "official_full_gamebook_located_player_import_pending",
+      "source_date_discrepancy": false,
+      "requires_special_tie_parser": false
+    },
+    {
+      "game_id": "cb-2023-03-04-san-diego-oregon-att0189",
+      "original_date": "2023-03-04",
+      "official_date": "2023-03-04",
+      "opponents": "San Diego at Oregon",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/oregon/boxscore/13900",
+      "source_status": "official_full_gamebook_located_player_import_pending",
+      "source_date_discrepancy": false,
+      "requires_special_tie_parser": false
+    },
+    {
+      "game_id": "cb-2023-03-05-san-diego-oregon-att0190",
+      "original_date": "2023-03-05",
+      "official_date": "2023-03-05",
+      "opponents": "San Diego at Oregon",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/oregon/boxscore/13901",
+      "source_status": "official_full_gamebook_located_player_import_pending",
+      "source_date_discrepancy": false,
+      "requires_special_tie_parser": false
+    },
+    {
+      "game_id": "cb-2023-03-07-san-diego-oregon-state-att0191",
+      "original_date": "2023-03-07",
+      "official_date": "2023-03-07",
+      "opponents": "San Diego at Oregon State",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/oregon-state/boxscore/13902",
+      "source_status": "official_full_gamebook_located_player_import_pending",
+      "source_date_discrepancy": false,
+      "requires_special_tie_parser": false
+    },
+    {
+      "game_id": "cb-2023-03-17-pacific-san-diego-att0192",
+      "original_date": "2023-03-17",
+      "official_date": "2023-03-17",
+      "opponents": "Pacific at San Diego",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/pacific/boxscore/13907",
+      "source_status": "official_full_gamebook_located_player_import_pending",
+      "source_date_discrepancy": false,
+      "requires_special_tie_parser": false
+    },
+    {
+      "game_id": "cb-2023-03-18-pacific-san-diego-att0193",
+      "original_date": "2023-03-18",
+      "official_date": "2023-03-18",
+      "opponents": "Pacific at San Diego",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/pacific/boxscore/13906",
+      "source_status": "official_full_gamebook_located_player_import_pending",
+      "source_date_discrepancy": false,
+      "requires_special_tie_parser": false
+    },
+    {
+      "game_id": "cb-2023-03-19-pacific-san-diego-att0194",
+      "original_date": "2023-03-19",
+      "official_date": "2023-03-19",
+      "opponents": "Pacific at San Diego",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/pacific/boxscore/13908",
+      "source_status": "official_full_gamebook_located_player_import_pending",
+      "source_date_discrepancy": false,
+      "requires_special_tie_parser": false
+    },
+    {
+      "game_id": "cb-2023-03-28-san-diego-cal-state-northridge-att0195",
+      "original_date": "2023-03-28",
+      "official_date": "2023-03-28",
+      "opponents": "San Diego at Cal State Northridge",
+      "source_url": "https://gomatadors.com/sports/baseball/stats/2023/san-diego/boxscore/15840",
+      "source_status": "official_full_gamebook_located_player_import_pending",
+      "source_date_discrepancy": false,
+      "requires_special_tie_parser": false
+    },
+    {
+      "game_id": "cb-2023-03-31-pepperdine-san-diego-att0196",
+      "original_date": "2023-03-31",
+      "official_date": "2023-03-31",
+      "opponents": "Pepperdine at San Diego",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/pepperdine/boxscore/13914",
+      "source_status": "official_full_gamebook_located_player_import_pending",
+      "source_date_discrepancy": false,
+      "requires_special_tie_parser": false
+    },
+    {
+      "game_id": "cb-2023-04-01-pepperdine-san-diego-att0197",
+      "original_date": "2023-04-01",
+      "official_date": "2023-04-01",
+      "opponents": "Pepperdine at San Diego",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/pepperdine/boxscore/13915",
+      "source_status": "official_full_gamebook_located_player_import_pending",
+      "source_date_discrepancy": false,
+      "requires_special_tie_parser": false
+    },
+    {
+      "game_id": "cb-2023-04-02-pepperdine-san-diego-att0198",
+      "original_date": "2023-04-02",
+      "official_date": "2023-04-02",
+      "opponents": "Pepperdine at San Diego",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/pepperdine/boxscore/13916",
+      "source_status": "official_full_gamebook_located_player_import_pending",
+      "source_date_discrepancy": false,
+      "requires_special_tie_parser": false
+    },
+    {
+      "game_id": "cb-2023-04-04-san-diego-uc-san-diego-att0199",
+      "original_date": "2023-04-04",
+      "official_date": "2023-04-04",
+      "opponents": "San Diego at UC San Diego",
+      "source_url": "https://ucsdtritons.com/sports/baseball/stats/2023/usd/boxscore/9362",
+      "source_status": "official_full_gamebook_located_player_import_pending",
+      "source_date_discrepancy": false,
+      "requires_special_tie_parser": false
+    },
+    {
+      "game_id": "cb-2023-04-06-san-diego-gonzaga-att0200",
+      "original_date": "2023-04-06",
+      "official_date": "2023-04-06",
+      "opponents": "San Diego at Gonzaga",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/gonzaga/boxscore/13918",
+      "source_status": "official_full_gamebook_located_player_import_pending",
+      "source_date_discrepancy": false,
+      "requires_special_tie_parser": false
+    },
+    {
+      "game_id": "cb-2023-04-07-san-diego-gonzaga-att0201",
+      "original_date": "2023-04-07",
+      "official_date": "2023-04-07",
+      "opponents": "San Diego at Gonzaga",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/gonzaga/boxscore/13919",
+      "source_status": "official_full_gamebook_located_player_import_pending",
+      "source_date_discrepancy": false,
+      "requires_special_tie_parser": false
+    },
+    {
+      "game_id": "cb-2023-04-08-san-diego-gonzaga-att0202",
+      "original_date": "2023-04-08",
+      "official_date": "2023-04-08",
+      "opponents": "San Diego at Gonzaga",
+      "source_url": "https://gozags.com/sports/baseball/stats/2023/san-diego/boxscore/8680",
+      "source_status": "official_full_gamebook_located_player_import_pending",
+      "source_date_discrepancy": false,
+      "requires_special_tie_parser": false
+    },
+    {
+      "game_id": "cb-2023-04-11-san-diego-uc-irvine-att0203",
+      "original_date": "2023-04-11",
+      "official_date": "2023-04-11",
+      "opponents": "San Diego at UC Irvine",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/uc-irvine/boxscore/13921",
+      "source_status": "official_full_gamebook_located_player_import_pending",
+      "source_date_discrepancy": false,
+      "requires_special_tie_parser": false
+    },
+    {
+      "game_id": "cb-2023-04-14-portland-san-diego-att0204",
+      "original_date": "2023-04-14",
+      "official_date": "2023-04-14",
+      "opponents": "Portland at San Diego",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/portland/boxscore/13922",
+      "source_status": "official_full_gamebook_located_player_import_pending",
+      "source_date_discrepancy": false,
+      "requires_special_tie_parser": false
+    },
+    {
+      "game_id": "cb-2023-04-15-portland-san-diego-att0205",
+      "original_date": "2023-04-15",
+      "official_date": "2023-04-15",
+      "opponents": "Portland at San Diego",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/portland/boxscore/13923",
+      "source_status": "official_full_gamebook_located_player_import_pending",
+      "source_date_discrepancy": false,
+      "requires_special_tie_parser": false
+    },
+    {
+      "game_id": "cb-2023-04-16-portland-san-diego-att0206",
+      "original_date": "2023-04-16",
+      "official_date": "2023-04-16",
+      "opponents": "Portland at San Diego",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/portland/boxscore/13924",
+      "source_status": "official_full_gamebook_located_player_import_pending",
+      "source_date_discrepancy": false,
+      "requires_special_tie_parser": false
+    },
+    {
+      "game_id": "cb-2023-04-18-san-diego-san-diego-state-att0207",
+      "original_date": "2023-04-18",
+      "official_date": "2023-04-18",
+      "opponents": "San Diego at San Diego State",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/san-diego-state/boxscore/13941",
+      "source_status": "official_full_gamebook_located_player_import_pending",
+      "source_date_discrepancy": false,
+      "requires_special_tie_parser": false
+    },
+    {
+      "game_id": "cb-2023-04-21-san-francisco-san-diego-att0208",
+      "original_date": "2023-04-21",
+      "official_date": "2023-04-21",
+      "opponents": "San Francisco at San Diego",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/san-francisco/boxscore/13925",
+      "source_status": "official_full_gamebook_located_player_import_pending",
+      "source_date_discrepancy": false,
+      "requires_special_tie_parser": false
+    },
+    {
+      "game_id": "cb-2023-04-22-san-francisco-san-diego-att0209",
+      "original_date": "2023-04-22",
+      "official_date": "2023-04-22",
+      "opponents": "San Francisco at San Diego",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/san-francisco/boxscore/13926",
+      "source_status": "official_full_gamebook_located_player_import_pending",
+      "source_date_discrepancy": false,
+      "requires_special_tie_parser": false
+    },
+    {
+      "game_id": "cb-2023-04-23-san-francisco-san-diego-att0210",
+      "original_date": "2023-04-23",
+      "official_date": "2023-04-23",
+      "opponents": "San Francisco at San Diego",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/san-francisco/boxscore/13927",
+      "source_status": "official_full_gamebook_located_player_import_pending",
+      "source_date_discrepancy": false,
+      "requires_special_tie_parser": false
+    },
+    {
+      "game_id": "cb-2023-04-25-cal-state-northridge-san-diego-att0211",
+      "original_date": "2023-04-25",
+      "official_date": "2023-04-25",
+      "opponents": "Cal State Northridge at San Diego",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/csun/boxscore/13928",
+      "source_status": "official_full_gamebook_located_player_import_pending",
+      "source_date_discrepancy": false,
+      "requires_special_tie_parser": false
+    },
+    {
+      "game_id": "cb-2023-04-28-san-diego-loyola-marymount-att0212",
+      "original_date": "2023-04-28",
+      "official_date": "2023-04-28",
+      "opponents": "San Diego at Loyola Marymount",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/loyola-marymount/boxscore/13929",
+      "source_status": "official_full_gamebook_located_player_import_pending",
+      "source_date_discrepancy": false,
+      "requires_special_tie_parser": false
+    },
+    {
+      "game_id": "cb-2023-04-29-san-diego-loyola-marymount-att0213",
+      "original_date": "2023-04-29",
+      "official_date": "2023-04-29",
+      "opponents": "San Diego at Loyola Marymount",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/loyola-marymount/boxscore/13930",
+      "source_status": "official_full_gamebook_located_player_import_pending",
+      "source_date_discrepancy": false,
+      "requires_special_tie_parser": false
+    },
+    {
+      "game_id": "cb-2023-04-30-san-diego-loyola-marymount-att0214",
+      "original_date": "2023-04-30",
+      "official_date": "2023-04-30",
+      "opponents": "San Diego at Loyola Marymount",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/loyola-marymount/boxscore/13931",
+      "source_status": "official_full_gamebook_located_player_import_pending",
+      "source_date_discrepancy": false,
+      "requires_special_tie_parser": false
+    },
+    {
+      "game_id": "cb-2023-05-04-byu-san-diego-att0215",
+      "original_date": "2023-05-04",
+      "official_date": "2023-05-04",
+      "opponents": "BYU at San Diego",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/byu/boxscore/13932",
+      "source_status": "official_full_gamebook_located_player_import_pending",
+      "source_date_discrepancy": false,
+      "requires_special_tie_parser": false
+    },
+    {
+      "game_id": "cb-2023-05-05-byu-san-diego-att0216",
+      "original_date": "2023-05-05",
+      "official_date": "2023-05-05",
+      "opponents": "BYU at San Diego",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/byu/boxscore/13933",
+      "source_status": "official_full_gamebook_located_player_import_pending",
+      "source_date_discrepancy": false,
+      "requires_special_tie_parser": false
+    },
+    {
+      "game_id": "cb-2023-05-06-byu-san-diego-att0217",
+      "original_date": "2023-05-06",
+      "official_date": "2023-05-06",
+      "opponents": "BYU at San Diego",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/byu/boxscore/13934",
+      "source_status": "official_full_gamebook_located_player_import_pending",
+      "source_date_discrepancy": false,
+      "requires_special_tie_parser": false
+    },
+    {
+      "game_id": "cb-2023-05-07-cal-state-northridge-uc-san-diego-att0218",
+      "original_date": "2023-05-07",
+      "official_date": "2023-05-07",
+      "opponents": "Cal State Northridge at UC San Diego",
+      "source_url": "https://ucsdtritons.com/sports/baseball/stats/2023/csun/boxscore/9381",
+      "source_status": "official_full_gamebook_located_player_import_pending",
+      "source_date_discrepancy": false,
+      "requires_special_tie_parser": false
+    },
+    {
+      "game_id": "cb-2023-05-09-uc-irvine-san-diego-att0219",
+      "original_date": "2023-05-09",
+      "official_date": "2023-05-09",
+      "opponents": "UC Irvine at San Diego",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/uc-irvine/boxscore/13935",
+      "source_status": "official_full_gamebook_located_player_import_pending",
+      "source_date_discrepancy": false,
+      "requires_special_tie_parser": false
+    },
+    {
+      "game_id": "cb-2023-05-12-san-diego-saint-mary-s-att0220",
+      "original_date": "2023-05-12",
+      "official_date": "2023-05-12",
+      "opponents": "San Diego at Saint Mary's",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/saint-mary-s/boxscore/13936",
+      "source_status": "official_full_gamebook_located_player_import_pending",
+      "source_date_discrepancy": false,
+      "requires_special_tie_parser": false
+    },
+    {
+      "game_id": "cb-2023-05-13-san-diego-saint-mary-s-att0221",
+      "original_date": "2023-05-13",
+      "official_date": "2023-05-13",
+      "opponents": "San Diego at Saint Mary's",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/saint-mary-s/boxscore/13937",
+      "source_status": "official_full_gamebook_located_player_import_pending",
+      "source_date_discrepancy": false,
+      "requires_special_tie_parser": false
+    },
+    {
+      "game_id": "cb-2023-05-14-san-diego-saint-mary-s-att0222",
+      "original_date": "2023-05-14",
+      "official_date": "2023-05-14",
+      "opponents": "San Diego at Saint Mary's",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/saint-mary-s/boxscore/13938",
+      "source_status": "official_full_gamebook_located_player_import_pending",
+      "source_date_discrepancy": false,
+      "requires_special_tie_parser": false
+    },
+    {
+      "game_id": "cb-2023-05-24-gonzaga-santa-clara-att0223",
+      "original_date": "2023-05-24",
+      "official_date": "2023-05-24",
+      "opponents": "Gonzaga at Santa Clara",
+      "source_url": "https://gozags.com/sports/baseball/stats/2023/santa-clara/boxscore/8846",
+      "source_status": "official_full_gamebook_located_player_import_pending",
+      "source_date_discrepancy": false,
+      "requires_special_tie_parser": false
+    },
+    {
+      "game_id": "cb-2023-05-24-saint-mary-s-san-diego-att0224",
+      "original_date": "2023-05-24",
+      "official_date": "2023-05-24",
+      "opponents": "Saint Mary's at San Diego",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/saint-mary-s/boxscore/13940",
+      "source_status": "official_full_gamebook_located_player_import_pending",
+      "source_date_discrepancy": false,
+      "requires_special_tie_parser": false
+    }
+  ],
+  "statistical_verification_note": "University boxscore URL discovered does not mean the full individual player/pitcher line tables have been parsed or inserted. Zero 2023 player/gamebook rows are counted complete at this checkpoint."
+}

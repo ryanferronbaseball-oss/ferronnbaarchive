@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "game_id": "cb-2026-03-14-notre-dame-louisville-att0394",
+  "source_url": "https://gocards.com/sports/baseball/stats/2026/notre-dame/boxscore/25998",
+  "original_sheet_row": 395,
+  "date": "2026-03-14",
+  "final_score": "Notre Dame 7 - Louisville 8",
+  "player_game_rows_added": 26,
+  "team_audits": [
+    {
+      "team": "Notre Dame",
+      "batter_rows": 10,
+      "pitcher_rows": 4,
+      "source_batter_totals": [
+        40,
+        7,
+        12,
+        6,
+        4,
+        7
+      ],
+      "source_pitching_totals": {
+        "outs": 24,
+        "hits": 15,
+        "runs": 8,
+        "so": 7
+      },
+      "starting_slots_verified": true,
+      "substitutions": [
+        {
+          "player": "Brandon Logan",
+          "slot": 5,
+          "sub_index": 1
+        }
+      ]
+    },
+    {
+      "team": "Louisville",
+      "batter_rows": 9,
+      "pitcher_rows": 3,
+      "source_batter_totals": [
+        36,
+        8,
+        15,
+        6,
+        4,
+        7
+      ],
+      "source_pitching_totals": {
+        "outs": 27,
+        "hits": 12,
+        "runs": 7,
+        "so": 7
+      },
+      "starting_slots_verified": true,
+      "substitutions": []
+    }
+  ],
+  "record_integrity": "Totals confirmed from school official full box score; 1-9 starter order; substitutions kept in source slot; source innings and pitching decisions match."
+}

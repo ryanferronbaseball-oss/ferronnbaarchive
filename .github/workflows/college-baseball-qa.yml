@@ -26,6 +26,8 @@ jobs:
         run: python -m playwright install --with-deps chromium
       - name: Verify synthetic import, no invented games, responsive baseball UI
         run: python college-baseball/scripts/test_college_baseball.py
+      - name: Verify the actual college baseball archive and protected historical player rows
+        run: python college-baseball/scripts/verify_real_site_data.py
       - name: Confirm empty attendance input validates without populating false games
         run: python college-baseball/scripts/import_attendance.py --validate-only
       - name: Attach college baseball six-game pilot screenshots

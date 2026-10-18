@@ -4,131 +4,24 @@
   "limit": 0,
   "status": "PASS",
   "original_attendance_games": 444,
-  "verified_this_run": 1,
+  "verified_this_run": 0,
   "verified_in_season": 11,
-  "verified_overall": 414,
-  "player_game_rows_total": 12469,
+  "verified_overall": 418,
+  "player_game_rows_total": 12601,
   "already_verified": [
     "cb-2020-03-10-cal-baptist-san-diego-att0083",
     "cb-2020-03-01-monmouth-san-diego-att0082",
     "cb-2020-02-29-monmouth-san-diego-att0081",
     "cb-2020-02-28-monmouth-san-diego-att0080",
     "cb-2020-02-23-iowa-san-diego-att0079",
+    "cb-2020-02-23-southern-illinois-seattle-att0078",
     "cb-2020-02-22-seattle-san-diego-att0077",
     "cb-2020-02-22-arizona-iowa-att0076",
     "cb-2020-02-21-nebraska-san-diego-att0075",
     "cb-2020-02-21-southern-illinois-arizona-att0074",
     "cb-2020-02-18-uc-irvine-san-diego-att0073"
   ],
-  "completed": [
-    {
-      "game_id": "cb-2020-02-23-southern-illinois-seattle-att0078",
-      "player_rows": 38,
-      "source_url": "https://siusalukis.com/sports/baseball/stats/2020/seattle/boxscore/9208",
-      "win": "Alex McBee",
-      "loss": "Blake Begner",
-      "source_audit": {
-        "game_id": "cb-2020-02-23-southern-illinois-seattle-att0078",
-        "source": "https://siusalukis.com/sports/baseball/stats/2020/seattle/boxscore/9208",
-        "http_code": 200,
-        "source_bytes": 1210966,
-        "source_sha256": "f019a22e9c4a574cb7a91504384539f04edbc91118057cc8d66026d2c4e4cd80",
-        "teams": [
-          {
-            "name": "Southern Illinois",
-            "batters": 14,
-            "pitchers": 6,
-            "AB": 35,
-            "R": 2,
-            "H": 10,
-            "RBI": 2,
-            "BB": 3,
-            "SO": 4,
-            "pitching_outs": 24,
-            "pitching_runs": 9,
-            "pitching_hits": 15
-          },
-          {
-            "name": "Seattle",
-            "batters": 13,
-            "pitchers": 5,
-            "AB": 36,
-            "R": 9,
-            "H": 15,
-            "RBI": 9,
-            "BB": 7,
-            "SO": 6,
-            "pitching_outs": 27,
-            "pitching_runs": 2,
-            "pitching_hits": 10
-          }
-        ],
-        "source_warnings": [],
-        "player_rows": 38,
-        "status": "PASS",
-        "scoreboard": [
-          {
-            "runs": 2,
-            "hits": 10,
-            "errors": 0,
-            "innings": [
-              1,
-              0,
-              0,
-              0,
-              0,
-              1,
-              0,
-              0,
-              0
-            ]
-          },
-          {
-            "runs": 9,
-            "hits": 15,
-            "errors": 0,
-            "innings": [
-              5,
-              1,
-              0,
-              0,
-              3,
-              0,
-              0,
-              0,
-              null
-            ]
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "Southern Illinois",
-            "nine_starting_slots": true,
-            "batter_rows": 14,
-            "pitcher_rows": 6,
-            "substitutes": 5
-          },
-          {
-            "team": "Seattle",
-            "nine_starting_slots": true,
-            "batter_rows": 13,
-            "pitcher_rows": 5,
-            "substitutes": 4
-          }
-        ],
-        "official_decisions": {
-          "win": "Mcbee, Alex",
-          "loss": "Begner, Blake",
-          "save": null
-        },
-        "resolved_pitcher_decisions": {
-          "win": null,
-          "loss": null,
-          "save": null
-        }
-      }
-    }
-  ],
+  "completed": [],
   "pending_review": [],
   "release": "Draft branch only; never auto-publish or merge"
 }

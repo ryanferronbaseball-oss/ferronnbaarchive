@@ -410,6 +410,23 @@ def _source_batters(table, valid_players, team, game_id):
         if slug(name) in source_legacy_lineup_followons.get((game_id, team), set()):
             is_sub = True
 
+        # Explicit university PBP substantiates these historical follow-ons:
+        # IU March 3 G1 and G2, USD March 4, USD Feb 25, Seattle Feb 23 2020.
+        explicit_historical_followons = {
+            ("cb-2018-03-03-indiana-san-diego-att0014", "Indiana"):
+                {"colby-stratten", "drew-ashley", "justin-walker"},
+            ("cb-2018-03-03-indiana-san-diego-att0015", "Indiana"):
+                {"justin-walker"},
+            ("cb-2018-03-04-indiana-san-diego-att0016", "San Diego"):
+                {"dante-gutierrez"},
+            ("cb-2018-02-25-arizona-san-diego-att0012", "San Diego"):
+                {"c-doyle"},
+            ("cb-2020-02-23-southern-illinois-seattle-att0078", "Seattle"):
+                {"dylan-gerard"},
+        }
+        if slug(name) in explicit_historical_followons.get((game_id, team), set()):
+            is_sub = True
+
         # Source play-by-play corroborates the unindented entries below,
         # whose predecessor already appears in the same batting slot.
         source_confirmed_unindented = {

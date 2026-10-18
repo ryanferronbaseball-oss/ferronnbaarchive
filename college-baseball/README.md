@@ -1,8 +1,18 @@
 # College Baseball · Courtside Archive
 
-**Status (October 17, 2026):** Unpublished draft PR #10 retains 444 original attendance records. **2021: 32/32 official full university gamebooks matched, April 24 first-game identity confirmed, 0/32 player rows imported**; **2022: 62/62 source gamebooks located, 0/62 imports**; **2023: 47/47 source links located, 0/47 imports**. **2024 71/71, 2025 74/74, 2026 68/68** verified college gamebooks = **213 official 2024–26 full gamebooks and 6,316 player-game records**, JUCO excluded. Nothing merged or published.
+**Status (October 17, 2026):** Draft PR #10: all 444 original attendance IDs retained. **2019 41/41**, **2020 11/11** (one date conflict), **2021 32/32**, **2022 62/62** (one date conflict), **2023 47/47** (three date conflicts) university gamebook sources located. **2019–2023 zero player-gamebook imports**. **2024 71/71, 2025 74/74, 2026 68/68** verified full college boxscores = **213 2024–26 verified gamebooks and 6,316 player-game records** (JUCO excluded). Nothing merged or published.
 
 The site lives under \`/college-baseball/\`, with independent college baseball stats and verified inter-level player IDs only. It shares the exact MLB archive design system for Inter fonts, navigation, scoreboards, box-score layout, cards, responsive tables, and bat-order number column.
+
+## 2019–2020 backfill — ALL 52 OFFICIAL GAMEBOOK SOURCES LINKED (authorized October 17, 2026)
+
+**2019:** 41/41 original attended four-year NCAA baseball games source-matched to official university-hosted full individual-player gamebooks: Feb 11, Mar 13, Apr 9, May 8. All dates matched. February 16 Wagner–USD official doubleheader is specifically assigned Game 1 **Wagner 9, USD 15** at 1:03 PM (USD source 8231) and Game 2 **Wagner 1, USD 3** at 5:09 PM (USD source 8232); cumulative stats list these out of chronological order, so use actual first pitch. 2019 Tony Gwynn Legacy off-USD matchups are fully sourced from UC Irvine, K-State, Utah, and Oklahoma university archives.
+
+**2020:** 11/11 original attendance entries have university-hosted full individual-player gamebook links: February 9, March 2. **Ten dates match and one original worksheet date does not**: source row 84 (att0083) records California Baptist at USD on **March 10**, while the USD schedule and gamebook ID 9683 place the USD 2–0 win on **March 11**. The original row/date must remain unchanged and game stats import held until the user clarifies. All February 21–23 Tony Gwynn Legacy games, including four-school off-USD games, are matched to full player gamebooks. February 29 Monmouth–USD went 10 innings.
+
+- [2019 official gamebook queue](data/2019_official_source_queue.json) and [2019 monthly audit](data/2019_monthly_progress_audit.json)
+- [2020 official gamebook queue](data/2020_official_source_queue.json) and [2020 monthly audit](data/2020_monthly_progress_audit.json)
+- **Important:** **0/41 2019 and 0/11 2020 individual player-gamebooks imported.** Sourcing is distinct from full game/stat import. Original 444 attendance records and the existing 213 fully verified 2024–26 gamebooks/6,316 player rows are unchanged. Exclude JUCO; **2018 and earlier, merging or publication not approved**.
 
 ## 2021 backfill — 32/32 OFFICIAL GAMEBOOK SOURCES MATCHED (authorized October 17, 2026)
 

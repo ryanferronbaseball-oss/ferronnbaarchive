@@ -33,7 +33,8 @@
     "User-provided Apr 14 USD PDF verified as complete Saint Mary's 6–USD 5 boxscore: https://usdtoreros.com/documents/2018/5/10/14226__m_basebl_2017_18_misc_non_event__USDvsSMCboxApr14.pdf",
     "User-provided May 9 ASU official boxscore page verified for 12–7 identity but not yet player-row completeness: https://thesundevils.com/boxscore/466",
     "Official University of San Diego document 'USD vs ASU Box (PDF)' independently found for May 9 2018, document ID 14288. All 30 games now have university-hosted gamebook source links; 29 have independently confirmed individual batting/pitching content. This last PDF is located but its content still needs confirmation before player-level import.",
-    "October 17, 2026: ASU at USD May 9 full batting and pitching table content supplied by user screenshot; individual hitter strikeouts reconstructed from play-by-play, 7 ASU hitters and 11 USD hitters match opposing pitching SO totals. All 30 attended 2018 games now have full player batting/pitching evidence, though university gamebook PDF 14288 remains unparsed and no player-game stats have been imported."
+    "October 17, 2026: ASU at USD May 9 full batting and pitching table content supplied by user screenshot; individual hitter strikeouts reconstructed from play-by-play, 7 ASU hitters and 11 USD hitters match opposing pitching SO totals. All 30 attended 2018 games now have full player batting/pitching evidence, though university gamebook PDF 14288 remains unparsed and no player-game stats have been imported.",
+    "For 2018 Feb 16 California at San Diego and Feb 24 Grand Canyon at San Diego, exact original full university Sidearm player boxscores were located on the away school's valid SSL university host, replacing defunct USD legacy FTP host links. Both original attendance IDs and final scores unchanged."
   ],
   "rows": [
     {
@@ -52,8 +53,10 @@
       "identity_match_status": "verified_date_teams_venue_when_available_and_final_score",
       "stat_import_status": "not_imported",
       "full_player_gamebook_status": "exact_university_gamebook_source_identified",
-      "official_full_gamebook_url": "https://usandiego_ftp.sidearmsports.com/custompages/sports/m-basebl/stats/2017-2018bb1.html",
-      "full_gamebook_source_type": "official_usd_historical_full_gamebook_html"
+      "official_full_gamebook_url": "https://calbears.com/sports/baseball/stats/2018/san-diego/boxscore/19869",
+      "full_gamebook_source_type": "official_california_full_university_gamebook_html",
+      "source_url_previous": "https://usandiego_ftp.sidearmsports.com/custompages/sports/m-basebl/stats/2017-2018bb1.html",
+      "source_confirmation": "California official Feb 16 university player box score directly verified through university game recap box score link; replaces USD legacy archive with invalid SSL certificate."
     },
     {
       "game_id": "cb-2018-02-17-california-san-diego-att0003",
@@ -216,8 +219,10 @@
       "identity_match_status": "verified_date_teams_venue_when_available_and_final_score",
       "stat_import_status": "not_imported",
       "full_player_gamebook_status": "exact_university_gamebook_source_identified",
-      "official_full_gamebook_url": "https://usandiego_ftp.sidearmsports.com/custompages/sports/m-basebl/stats/2017-2018bs7.html",
-      "full_gamebook_source_type": "official_usd_historical_full_gamebook_html"
+      "official_full_gamebook_url": "https://gculopes.com/sports/baseball/stats/2018/san-diego/boxscore/10239",
+      "full_gamebook_source_type": "official_grand_canyon_full_university_gamebook_html",
+      "source_url_previous": "https://usandiego_ftp.sidearmsports.com/custompages/sports/m-basebl/stats/2017-2018bs7.html",
+      "source_confirmation": "GCU official Feb 24 university player gamebook selected via its historical schedule: opponent USD and exact score 4-8; replaces USD legacy archive with invalid SSL certificate."
     },
     {
       "game_id": "cb-2018-02-25-arkansas-san-diego-att0011",

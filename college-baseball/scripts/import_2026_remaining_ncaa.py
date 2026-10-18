@@ -427,6 +427,16 @@ def _source_batters(table, valid_players, team, game_id):
         if slug(name) in explicit_historical_followons.get((game_id, team), set()):
             is_sub = True
 
+        # UCI's Apr 3, 2018 official PLAY-BY-PLAY explicitly shows four
+        # unindented nested successors in the source seventh/fourth slots:
+        # Lee PR for Anderson -> Mazur C; Peabody CF -> Johnston PH/CF
+        # -> Castro PH -> Filia CF -> Palmer PH.
+        if (game_id == "cb-2018-04-03-uc-irvine-san-diego-att0021"
+              and team == "UC Irvine"
+              and slug(name) in ("griffin-mazur", "jacob-castro",
+                                 "mikey-filia", "jake-palmer")):
+            is_sub = True
+
         # Source play-by-play corroborates the unindented entries below,
         # whose predecessor already appears in the same batting slot.
         source_confirmed_unindented = {

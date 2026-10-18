@@ -1,11 +1,10 @@
 # College Baseball — Month-by-Month Review Gates
 
-## October 17, 2026 — 2021 full-season authorized, 31/32 official gamebook identities matched (current)
+## October 17, 2026 — 2021 full-season authorized, all 32 official gamebook identities matched (current)
 
-User approved working backward to 2021 after the 2022 official-source queue. Of the **32 original 2021 attendance rows**, **31 official full player-level gamebooks have matched direct links**, including April 2 USD at Cal State Fullerton (ID 12125) and May 6–8 BYU at USD (IDs 12085–12087); **0/32 player-gamebooks actually imported**. April 24 CSU Bakersfield–UCSD has two full separate official gamebooks, but one original attendance row: **12:03 PM CSUB 3–UCSD 2** or **3:32 PM CSUB 1–UCSD 7**. User must clarify which game they attended before import. March 13 UC Riverside doubleheader distinctly identified as Game 1 (USD 7–0, 1 PM) and Game 2 (USD 9–0, 4:10 PM). March 30 Vanguard University (NAIA) is eligible (JUCO only excluded). See [2021 source queue](data/2021_official_source_queue.json) and [2021 monthly audit](data/2021_monthly_progress_audit.json).
+User confirmed that **the April 24, 2021 CSU Bakersfield at UC San Diego attended game was Game 1 at 12:03 PM, score CSUB 3–UC San Diego 2**; select university full gamebook ID **8289** for original attendance row 110 (att0109). **Do not attach or import 3:32 PM Game 2** (CSUB 1–UCSD 7, full gamebook ID 8292) to the original attendance row. The March 13 UC Riverside–San Diego doubleheader likewise retains the two separately identified original rows. All **32/32 2021 original attendance entries now have uniquely matched official player gamebook sources**, but **0/32 full player-gamebooks are imported**. The last attendance source ambiguity is resolved. Vanguard University (NAIA) is eligible; only JUCO games are excluded. See [2021 gamebook queue](data/2021_official_source_queue.json) and [2021 audit](data/2021_monthly_progress_audit.json).
 
-**Authorized college seasons:** 2021 through 2026, excluding JUCO. 2020 and earlier not yet authorized; no merge, publish, deploy. Older status notes are a chronology, superseded by these latest review gates.
-
+**Authorized seasons:** 2021–2026 non-JUCO. 2020 and earlier, merge, publication or production deployment not authorized. Historical review notes below are superseded by this checkpoint.
 
 ## October 17, 2026 — 2022 full-season authorized; official source discovery COMPLETE (current)
 

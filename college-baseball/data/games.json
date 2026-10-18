@@ -2499,15 +2499,15 @@
     "game_number": null,
     "game_type": null,
     "postseason_round": null,
-    "away_score": null,
-    "home_score": null,
-    "score_provenance": null,
-    "source_url": null,
-    "verification": "attendance_only",
-    "official_boxscore_status": "not_imported",
+    "away_score": 12,
+    "home_score": 7,
+    "score_provenance": "official_asu_original_boxscore_plus_usd_2018_game_recap",
+    "source_url": "https://thesundevils.com/boxscore/466",
+    "verification": "source_matched",
+    "official_boxscore_status": "individual_player_stat_evidence_reconciled_full_gamebook_pending",
     "possible_same_day_doubleheader": false,
     "provisional_worksheet_game_sequence": null,
-    "notes": "Original workbook Sheet1 row 32."
+    "notes": "Original workbook Sheet1 row 32. ASU vs USD 12–7 final officially verified (ASU official 2018 schedule and USD May 14 recap); screenshot-transcribed individual batter/pitcher evidence already present in 2018_05_09_asu_san_diego_screenshot_evidence.json. Full inning-by-inning scoreboard and nine-slot lineup still unresolved: do not count this as complete player gamebook or invent innings."
   },
   {
     "id": "cb-2019-02-15-wagner-san-diego-att0032",

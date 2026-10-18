@@ -4,10 +4,10 @@
   "limit": 0,
   "status": "PARTIAL_REVIEW_REQUIRED",
   "original_attendance_games": 444,
-  "verified_this_run": 0,
-  "verified_in_season": 39,
-  "verified_overall": 404,
-  "player_game_rows_total": 12150,
+  "verified_this_run": 1,
+  "verified_in_season": 40,
+  "verified_overall": 408,
+  "player_game_rows_total": 12279,
   "already_verified": [
     "cb-2019-05-14-cal-baptist-san-diego-att0072",
     "cb-2019-05-12-pacific-san-diego-att0071",
@@ -49,17 +49,120 @@
     "cb-2019-02-16-wagner-san-diego-att0033",
     "cb-2019-02-15-wagner-san-diego-att0032"
   ],
-  "completed": [],
+  "completed": [
+    {
+      "game_id": "cb-2019-02-22-fresno-state-kansas-state-att0036",
+      "player_rows": 39,
+      "source_url": "https://www.kstatesports.com/sports/baseball/stats/2019/fresno-state/boxscore/6949",
+      "win": "Ryan Jensen",
+      "loss": "Tyler Eckberg",
+      "source_audit": {
+        "game_id": "cb-2019-02-22-fresno-state-kansas-state-att0036",
+        "source": "https://www.kstatesports.com/sports/baseball/stats/2019/fresno-state/boxscore/6949",
+        "http_code": 200,
+        "source_bytes": 1535522,
+        "source_sha256": "d9670182a5bea00f5605cc06adf052877f82e288206ccd28faeaaba50eee3183",
+        "teams": [
+          {
+            "name": "Fresno State",
+            "batters": 15,
+            "pitchers": 5,
+            "AB": 40,
+            "R": 11,
+            "H": 13,
+            "RBI": 10,
+            "BB": 6,
+            "SO": 9,
+            "pitching_outs": 27,
+            "pitching_runs": 3,
+            "pitching_hits": 6
+          },
+          {
+            "name": "Kansas State",
+            "batters": 14,
+            "pitchers": 5,
+            "AB": 33,
+            "R": 3,
+            "H": 6,
+            "RBI": 3,
+            "BB": 4,
+            "SO": 9,
+            "pitching_outs": 27,
+            "pitching_runs": 11,
+            "pitching_hits": 13
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 39,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 11,
+            "hits": 13,
+            "errors": 1,
+            "innings": [
+              0,
+              2,
+              5,
+              1,
+              1,
+              1,
+              1,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 3,
+            "hits": 6,
+            "errors": 0,
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              2
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Fresno State",
+            "nine_starting_slots": true,
+            "batter_rows": 15,
+            "pitcher_rows": 5,
+            "substitutes": 6
+          },
+          {
+            "team": "Kansas State",
+            "nine_starting_slots": true,
+            "batter_rows": 14,
+            "pitcher_rows": 5,
+            "substitutes": 5
+          }
+        ],
+        "official_decisions": {
+          "win": "Jensen, Ryan",
+          "loss": "Eckberg, Tyler",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    }
+  ],
   "pending_review": [
     {
       "game_id": "cb-2019-02-24-cal-state-fullerton-oklahoma-att0040",
       "source_url": "https://soonersports.com/sports/2019/8/7/2150228",
       "reason": "Cannot read university pitcher section for Cal State Fullerton"
-    },
-    {
-      "game_id": "cb-2019-02-22-fresno-state-kansas-state-att0036",
-      "source_url": "https://www.kstatesports.com/sports/baseball/stats/2019/fresno-state/boxscore/6949",
-      "reason": "Fresno State: source batting order resolved to 10 starting slots, not 9"
     }
   ],
   "release": "Draft branch only; never auto-publish or merge"

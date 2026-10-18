@@ -4,266 +4,62 @@
   "limit": 0,
   "status": "PARTIAL_REVIEW_REQUIRED",
   "original_attendance_games": 444,
-  "verified_this_run": 9,
-  "verified_in_season": 9,
-  "verified_overall": 232,
-  "player_game_rows_total": 6879,
-  "already_verified": [],
+  "verified_this_run": 1,
+  "verified_in_season": 10,
+  "verified_overall": 407,
+  "player_game_rows_total": 12240,
+  "already_verified": [
+    "cb-2020-03-10-cal-baptist-san-diego-att0083",
+    "cb-2020-03-01-monmouth-san-diego-att0082",
+    "cb-2020-02-29-monmouth-san-diego-att0081",
+    "cb-2020-02-28-monmouth-san-diego-att0080",
+    "cb-2020-02-23-iowa-san-diego-att0079",
+    "cb-2020-02-22-seattle-san-diego-att0077",
+    "cb-2020-02-21-nebraska-san-diego-att0075",
+    "cb-2020-02-21-southern-illinois-arizona-att0074",
+    "cb-2020-02-18-uc-irvine-san-diego-att0073"
+  ],
   "completed": [
     {
-      "game_id": "cb-2020-03-10-cal-baptist-san-diego-att0083",
-      "player_rows": 31,
-      "source_url": "https://usdtoreros.com/sports/baseball/stats/2020/california-baptist/boxscore/9683",
-      "win": "Jack Dolak",
-      "loss": "Chris Burica",
-      "source_audit": {
-        "game_id": "cb-2020-03-10-cal-baptist-san-diego-att0083",
-        "source": "https://usdtoreros.com/sports/baseball/stats/2020/california-baptist/boxscore/9683",
-        "http_code": 200,
-        "source_bytes": 653808,
-        "source_sha256": "e983a23d66cb87356144b867995ae1a0aa8de9cfbe3837bfc3fd15c78a306ec5",
-        "teams": [
-          {
-            "name": "Cal Baptist",
-            "batters": 12,
-            "pitchers": 3,
-            "AB": 28,
-            "R": 0,
-            "H": 2,
-            "RBI": 0,
-            "BB": 4,
-            "SO": 13,
-            "pitching_outs": 24,
-            "pitching_runs": 2,
-            "pitching_hits": 8
-          },
-          {
-            "name": "San Diego",
-            "batters": 13,
-            "pitchers": 3,
-            "AB": 32,
-            "R": 2,
-            "H": 8,
-            "RBI": 2,
-            "BB": 4,
-            "SO": 6,
-            "pitching_outs": 27,
-            "pitching_runs": 0,
-            "pitching_hits": 2
-          }
-        ],
-        "source_warnings": [],
-        "player_rows": 31,
-        "status": "PASS",
-        "scoreboard": [
-          {
-            "runs": 0,
-            "hits": 2,
-            "errors": 0,
-            "innings": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ]
-          },
-          {
-            "runs": 2,
-            "hits": 8,
-            "errors": 0,
-            "innings": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              2,
-              0,
-              0,
-              null
-            ]
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "Cal Baptist",
-            "nine_starting_slots": true,
-            "batter_rows": 12,
-            "pitcher_rows": 3,
-            "substitutes": 3
-          },
-          {
-            "team": "San Diego",
-            "nine_starting_slots": true,
-            "batter_rows": 13,
-            "pitcher_rows": 3,
-            "substitutes": 4
-          }
-        ],
-        "official_decisions": {
-          "win": "Dolak, Jack",
-          "loss": "Burica, Chris",
-          "save": "Thurman, Conner"
-        },
-        "resolved_pitcher_decisions": {
-          "win": null,
-          "loss": null,
-          "save": null
-        }
-      }
-    },
-    {
-      "game_id": "cb-2020-03-01-monmouth-san-diego-att0082",
-      "player_rows": 36,
-      "source_url": "https://usdtoreros.com/sports/baseball/stats/2020/monmouth/boxscore/9678",
-      "win": "Carter Rustad",
-      "loss": "Trey Dombroski",
-      "source_audit": {
-        "game_id": "cb-2020-03-01-monmouth-san-diego-att0082",
-        "source": "https://usdtoreros.com/sports/baseball/stats/2020/monmouth/boxscore/9678",
-        "http_code": 200,
-        "source_bytes": 700440,
-        "source_sha256": "f3a8a652e287f53d7ea45b762ef314f5b5d88dfabac4784a033ba12e8073419f",
-        "teams": [
-          {
-            "name": "Monmouth",
-            "batters": 13,
-            "pitchers": 5,
-            "AB": 35,
-            "R": 7,
-            "H": 9,
-            "RBI": 7,
-            "BB": 7,
-            "SO": 5,
-            "pitching_outs": 24,
-            "pitching_runs": 11,
-            "pitching_hits": 17
-          },
-          {
-            "name": "San Diego",
-            "batters": 12,
-            "pitchers": 6,
-            "AB": 37,
-            "R": 11,
-            "H": 17,
-            "RBI": 11,
-            "BB": 2,
-            "SO": 3,
-            "pitching_outs": 27,
-            "pitching_runs": 7,
-            "pitching_hits": 9
-          }
-        ],
-        "source_warnings": [],
-        "player_rows": 36,
-        "status": "PASS",
-        "scoreboard": [
-          {
-            "runs": 7,
-            "hits": 9,
-            "errors": 0,
-            "innings": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              4,
-              3,
-              0
-            ]
-          },
-          {
-            "runs": 11,
-            "hits": 17,
-            "errors": 2,
-            "innings": [
-              2,
-              3,
-              3,
-              0,
-              0,
-              3,
-              0,
-              0,
-              null
-            ]
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "Monmouth",
-            "nine_starting_slots": true,
-            "batter_rows": 13,
-            "pitcher_rows": 5,
-            "substitutes": 4
-          },
-          {
-            "team": "San Diego",
-            "nine_starting_slots": true,
-            "batter_rows": 12,
-            "pitcher_rows": 6,
-            "substitutes": 3
-          }
-        ],
-        "official_decisions": {
-          "win": "Rustad, Carter",
-          "loss": "Dombroski, Trey",
-          "save": "Thurman, Conner"
-        },
-        "resolved_pitcher_decisions": {
-          "win": null,
-          "loss": null,
-          "save": null
-        }
-      }
-    },
-    {
-      "game_id": "cb-2020-02-29-monmouth-san-diego-att0081",
+      "game_id": "cb-2020-02-22-arizona-iowa-att0076",
       "player_rows": 32,
-      "source_url": "https://usdtoreros.com/sports/baseball/stats/2020/monmouth/boxscore/9677",
-      "win": "Conner Thurman",
-      "loss": "Mason Miller",
+      "source_url": "https://arizonawildcats.com/sports/baseball/stats/2020/iowa/boxscore/20378",
+      "win": "Grant Judkins",
+      "loss": "Quinn Flanagan",
       "source_audit": {
-        "game_id": "cb-2020-02-29-monmouth-san-diego-att0081",
-        "source": "https://usdtoreros.com/sports/baseball/stats/2020/monmouth/boxscore/9677",
+        "game_id": "cb-2020-02-22-arizona-iowa-att0076",
+        "source": "https://arizonawildcats.com/sports/baseball/stats/2020/iowa/boxscore/20378",
         "http_code": 200,
-        "source_bytes": 670592,
-        "source_sha256": "60b3730565128646cc34938639e8661195c216db59547c80558169a372b7cc3a",
+        "source_bytes": 1323354,
+        "source_sha256": "abe74a3e4be30cd9548d22574075319b7e5bac85ca2431aef0657bd5679d925d",
         "teams": [
           {
-            "name": "Monmouth",
-            "batters": 12,
-            "pitchers": 3,
-            "AB": 35,
-            "R": 3,
-            "H": 8,
-            "RBI": 3,
+            "name": "Arizona",
+            "batters": 14,
+            "pitchers": 5,
+            "AB": 31,
+            "R": 1,
+            "H": 4,
+            "RBI": 1,
             "BB": 3,
-            "SO": 15,
-            "pitching_outs": 28,
+            "SO": 9,
+            "pitching_outs": 24,
             "pitching_runs": 4,
             "pitching_hits": 8
           },
           {
-            "name": "San Diego",
-            "batters": 14,
-            "pitchers": 3,
-            "AB": 32,
+            "name": "Iowa",
+            "batters": 9,
+            "pitchers": 4,
+            "AB": 31,
             "R": 4,
             "H": 8,
             "RBI": 4,
-            "BB": 2,
-            "SO": 9,
-            "pitching_outs": 30,
-            "pitching_runs": 3,
-            "pitching_hits": 8
+            "BB": 4,
+            "SO": 12,
+            "pitching_outs": 27,
+            "pitching_runs": 1,
+            "pitching_hits": 4
           }
         ],
         "source_warnings": [],
@@ -271,18 +67,17 @@
         "status": "PASS",
         "scoreboard": [
           {
-            "runs": 3,
-            "hits": 8,
-            "errors": 0,
+            "runs": 1,
+            "hits": 4,
+            "errors": 2,
             "innings": [
               0,
               0,
               0,
               0,
               0,
-              3,
               0,
-              0,
+              1,
               0,
               0
             ]
@@ -290,336 +85,14 @@
           {
             "runs": 4,
             "hits": 8,
-            "errors": 0,
-            "innings": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              3,
-              0,
-              1
-            ]
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "Monmouth",
-            "nine_starting_slots": true,
-            "batter_rows": 12,
-            "pitcher_rows": 3,
-            "substitutes": 3
-          },
-          {
-            "team": "San Diego",
-            "nine_starting_slots": true,
-            "batter_rows": 14,
-            "pitcher_rows": 3,
-            "substitutes": 5
-          }
-        ],
-        "official_decisions": {
-          "win": "Thurman, Conner",
-          "loss": "Miller, Mason",
-          "save": null
-        },
-        "resolved_pitcher_decisions": {
-          "win": null,
-          "loss": null,
-          "save": null
-        }
-      }
-    },
-    {
-      "game_id": "cb-2020-02-28-monmouth-san-diego-att0080",
-      "player_rows": 25,
-      "source_url": "https://usdtoreros.com/sports/baseball/stats/2020/monmouth/boxscore/9676",
-      "win": "Jake Miller",
-      "loss": "Dan Klepchick",
-      "source_audit": {
-        "game_id": "cb-2020-02-28-monmouth-san-diego-att0080",
-        "source": "https://usdtoreros.com/sports/baseball/stats/2020/monmouth/boxscore/9676",
-        "http_code": 200,
-        "source_bytes": 627418,
-        "source_sha256": "c72873f851a9a8dcfb7a0edd667ab8c5f6dcef1431ca43e8f4efed3839d780cc",
-        "teams": [
-          {
-            "name": "Monmouth",
-            "batters": 10,
-            "pitchers": 3,
-            "AB": 27,
-            "R": 0,
-            "H": 0,
-            "RBI": 0,
-            "BB": 2,
-            "SO": 10,
-            "pitching_outs": 24,
-            "pitching_runs": 7,
-            "pitching_hits": 9
-          },
-          {
-            "name": "San Diego",
-            "batters": 11,
-            "pitchers": 1,
-            "AB": 30,
-            "R": 7,
-            "H": 9,
-            "RBI": 7,
-            "BB": 1,
-            "SO": 4,
-            "pitching_outs": 27,
-            "pitching_runs": 0,
-            "pitching_hits": 0
-          }
-        ],
-        "source_warnings": [],
-        "player_rows": 25,
-        "status": "PASS",
-        "scoreboard": [
-          {
-            "runs": 0,
-            "hits": 0,
             "errors": 1,
             "innings": [
               0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ]
-          },
-          {
-            "runs": 7,
-            "hits": 9,
-            "errors": 0,
-            "innings": [
-              0,
+              2,
               2,
               0,
               0,
               0,
-              1,
-              4,
-              0,
-              null
-            ]
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "Monmouth",
-            "nine_starting_slots": true,
-            "batter_rows": 10,
-            "pitcher_rows": 3,
-            "substitutes": 1
-          },
-          {
-            "team": "San Diego",
-            "nine_starting_slots": true,
-            "batter_rows": 11,
-            "pitcher_rows": 1,
-            "substitutes": 2
-          }
-        ],
-        "official_decisions": {
-          "win": "Miller, Jake",
-          "loss": "Klepchick, Dan",
-          "save": null
-        },
-        "resolved_pitcher_decisions": {
-          "win": null,
-          "loss": null,
-          "save": null
-        }
-      }
-    },
-    {
-      "game_id": "cb-2020-02-23-iowa-san-diego-att0079",
-      "player_rows": 36,
-      "source_url": "https://usdtoreros.com/sports/baseball/stats/2020/iowa/boxscore/9673",
-      "win": "Conner Thurman",
-      "loss": "Drew Irvine",
-      "source_audit": {
-        "game_id": "cb-2020-02-23-iowa-san-diego-att0079",
-        "source": "https://usdtoreros.com/sports/baseball/stats/2020/iowa/boxscore/9673",
-        "http_code": 200,
-        "source_bytes": 692587,
-        "source_sha256": "6286530072b798584875a161b07f85b05bee545d717c30dbbae1706f335cb704",
-        "teams": [
-          {
-            "name": "Iowa",
-            "batters": 13,
-            "pitchers": 5,
-            "AB": 38,
-            "R": 5,
-            "H": 12,
-            "RBI": 5,
-            "BB": 7,
-            "SO": 12,
-            "pitching_outs": 24,
-            "pitching_runs": 10,
-            "pitching_hits": 10
-          },
-          {
-            "name": "San Diego",
-            "batters": 14,
-            "pitchers": 4,
-            "AB": 35,
-            "R": 10,
-            "H": 10,
-            "RBI": 7,
-            "BB": 4,
-            "SO": 8,
-            "pitching_outs": 27,
-            "pitching_runs": 5,
-            "pitching_hits": 12
-          }
-        ],
-        "source_warnings": [],
-        "player_rows": 36,
-        "status": "PASS",
-        "scoreboard": [
-          {
-            "runs": 5,
-            "hits": 12,
-            "errors": 4,
-            "innings": [
-              1,
-              1,
-              0,
-              0,
-              0,
-              0,
-              2,
-              0,
-              1
-            ]
-          },
-          {
-            "runs": 10,
-            "hits": 10,
-            "errors": 0,
-            "innings": [
-              0,
-              0,
-              1,
-              0,
-              2,
-              1,
-              3,
-              3,
-              null
-            ]
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "Iowa",
-            "nine_starting_slots": true,
-            "batter_rows": 13,
-            "pitcher_rows": 5,
-            "substitutes": 4
-          },
-          {
-            "team": "San Diego",
-            "nine_starting_slots": true,
-            "batter_rows": 14,
-            "pitcher_rows": 4,
-            "substitutes": 5
-          }
-        ],
-        "official_decisions": {
-          "win": "Thurman, Conner",
-          "loss": "Drew Irvine",
-          "save": null
-        },
-        "resolved_pitcher_decisions": {
-          "win": null,
-          "loss": "Drew Irvine",
-          "save": null
-        }
-      }
-    },
-    {
-      "game_id": "cb-2020-02-22-seattle-san-diego-att0077",
-      "player_rows": 28,
-      "source_url": "https://usdtoreros.com/sports/baseball/stats/2020/seattle/boxscore/9671",
-      "win": "Carter Rustad",
-      "loss": "Ethan Christianson",
-      "source_audit": {
-        "game_id": "cb-2020-02-22-seattle-san-diego-att0077",
-        "source": "https://usdtoreros.com/sports/baseball/stats/2020/seattle/boxscore/9671",
-        "http_code": 200,
-        "source_bytes": 647063,
-        "source_sha256": "69f0f6313bd9a1bc06426cb444d606e68bd4ef194731519d1cdbaad50d2ca52a",
-        "teams": [
-          {
-            "name": "Seattle",
-            "batters": 12,
-            "pitchers": 3,
-            "AB": 28,
-            "R": 2,
-            "H": 3,
-            "RBI": 1,
-            "BB": 6,
-            "SO": 13,
-            "pitching_outs": 24,
-            "pitching_runs": 6,
-            "pitching_hits": 10
-          },
-          {
-            "name": "San Diego",
-            "batters": 11,
-            "pitchers": 2,
-            "AB": 31,
-            "R": 6,
-            "H": 10,
-            "RBI": 5,
-            "BB": 1,
-            "SO": 9,
-            "pitching_outs": 27,
-            "pitching_runs": 2,
-            "pitching_hits": 3
-          }
-        ],
-        "source_warnings": [],
-        "player_rows": 28,
-        "status": "PASS",
-        "scoreboard": [
-          {
-            "runs": 2,
-            "hits": 3,
-            "errors": 1,
-            "innings": [
-              0,
-              0,
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              0
-            ]
-          },
-          {
-            "runs": 6,
-            "hits": 10,
-            "errors": 0,
-            "innings": [
-              0,
-              0,
-              4,
-              0,
-              1,
-              1,
               0,
               0,
               null
@@ -627,351 +100,30 @@
           }
         ],
         "lineup_audit": [
-          {
-            "team": "Seattle",
-            "nine_starting_slots": true,
-            "batter_rows": 12,
-            "pitcher_rows": 3,
-            "substitutes": 3
-          },
-          {
-            "team": "San Diego",
-            "nine_starting_slots": true,
-            "batter_rows": 11,
-            "pitcher_rows": 2,
-            "substitutes": 2
-          }
-        ],
-        "official_decisions": {
-          "win": "Rustad, Carter",
-          "loss": "Christianson, Ethan",
-          "save": "Miller, Jake"
-        },
-        "resolved_pitcher_decisions": {
-          "win": null,
-          "loss": null,
-          "save": null
-        }
-      }
-    },
-    {
-      "game_id": "cb-2020-02-21-nebraska-san-diego-att0075",
-      "player_rows": 31,
-      "source_url": "https://usdtoreros.com/sports/baseball/stats/2020/nebraska/boxscore/9669",
-      "win": "Conner Thurman",
-      "loss": "Shay Schanaman",
-      "source_audit": {
-        "game_id": "cb-2020-02-21-nebraska-san-diego-att0075",
-        "source": "https://usdtoreros.com/sports/baseball/stats/2020/nebraska/boxscore/9669",
-        "http_code": 200,
-        "source_bytes": 687732,
-        "source_sha256": "4ac2043e0e16a7d6577d89adb374dc2d5ca694a6ac1abaef3fc16125514d8523",
-        "teams": [
-          {
-            "name": "Nebraska",
-            "batters": 9,
-            "pitchers": 4,
-            "AB": 42,
-            "R": 11,
-            "H": 18,
-            "RBI": 10,
-            "BB": 4,
-            "SO": 8,
-            "pitching_outs": 24,
-            "pitching_runs": 12,
-            "pitching_hits": 10
-          },
-          {
-            "name": "San Diego",
-            "batters": 14,
-            "pitchers": 4,
-            "AB": 37,
-            "R": 12,
-            "H": 10,
-            "RBI": 11,
-            "BB": 2,
-            "SO": 5,
-            "pitching_outs": 27,
-            "pitching_runs": 11,
-            "pitching_hits": 18
-          }
-        ],
-        "source_warnings": [],
-        "player_rows": 31,
-        "status": "PASS",
-        "scoreboard": [
-          {
-            "runs": 11,
-            "hits": 18,
-            "errors": 4,
-            "innings": [
-              0,
-              1,
-              6,
-              0,
-              0,
-              2,
-              0,
-              1,
-              1
-            ]
-          },
-          {
-            "runs": 12,
-            "hits": 10,
-            "errors": 3,
-            "innings": [
-              0,
-              0,
-              0,
-              3,
-              1,
-              0,
-              5,
-              3,
-              null
-            ]
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "Nebraska",
-            "nine_starting_slots": true,
-            "batter_rows": 9,
-            "pitcher_rows": 4,
-            "substitutes": 0
-          },
-          {
-            "team": "San Diego",
-            "nine_starting_slots": true,
-            "batter_rows": 14,
-            "pitcher_rows": 4,
-            "substitutes": 5
-          }
-        ],
-        "official_decisions": {
-          "win": "Thurman, Conner",
-          "loss": "Schanaman, Shay",
-          "save": null
-        },
-        "resolved_pitcher_decisions": {
-          "win": null,
-          "loss": null,
-          "save": null
-        }
-      }
-    },
-    {
-      "game_id": "cb-2020-02-21-southern-illinois-arizona-att0074",
-      "player_rows": 25,
-      "source_url": "https://arizonawildcats.com/sports/baseball/stats/2020/southern-illinois/boxscore/20377",
-      "win": "Garrett Irvin",
-      "loss": "Kyle Back",
-      "source_audit": {
-        "game_id": "cb-2020-02-21-southern-illinois-arizona-att0074",
-        "source": "https://arizonawildcats.com/sports/baseball/stats/2020/southern-illinois/boxscore/20377",
-        "http_code": 200,
-        "source_bytes": 1251621,
-        "source_sha256": "fd675b25b22342f55b9fa19a667edbce183719edb501727c3562318af3f8be7c",
-        "teams": [
-          {
-            "name": "Southern Illinois",
-            "batters": 10,
-            "pitchers": 3,
-            "AB": 30,
-            "R": 5,
-            "H": 7,
-            "RBI": 5,
-            "BB": 2,
-            "SO": 14,
-            "pitching_outs": 24,
-            "pitching_runs": 6,
-            "pitching_hits": 12
-          },
-          {
-            "name": "Arizona",
-            "batters": 9,
-            "pitchers": 3,
-            "AB": 34,
-            "R": 6,
-            "H": 12,
-            "RBI": 5,
-            "BB": 2,
-            "SO": 5,
-            "pitching_outs": 27,
-            "pitching_runs": 5,
-            "pitching_hits": 7
-          }
-        ],
-        "source_warnings": [],
-        "player_rows": 25,
-        "status": "PASS",
-        "scoreboard": [
-          {
-            "runs": 5,
-            "hits": 7,
-            "errors": 0,
-            "innings": [
-              0,
-              0,
-              5,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ]
-          },
-          {
-            "runs": 6,
-            "hits": 12,
-            "errors": 0,
-            "innings": [
-              1,
-              0,
-              1,
-              1,
-              3,
-              0,
-              0,
-              0,
-              null
-            ]
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "Southern Illinois",
-            "nine_starting_slots": true,
-            "batter_rows": 10,
-            "pitcher_rows": 3,
-            "substitutes": 1
-          },
           {
             "team": "Arizona",
             "nine_starting_slots": true,
+            "batter_rows": 14,
+            "pitcher_rows": 5,
+            "substitutes": 5
+          },
+          {
+            "team": "Iowa",
+            "nine_starting_slots": true,
             "batter_rows": 9,
-            "pitcher_rows": 3,
+            "pitcher_rows": 4,
             "substitutes": 0
           }
         ],
         "official_decisions": {
-          "win": "Irvin, Garrett",
-          "loss": "Back, Kyle",
-          "save": "Luna, Gil"
+          "win": "Grant Judkins",
+          "loss": "Flanagan, Quinn",
+          "save": "Grant Leonard"
         },
         "resolved_pitcher_decisions": {
-          "win": null,
+          "win": "Grant Judkins",
           "loss": null,
-          "save": null
-        }
-      }
-    },
-    {
-      "game_id": "cb-2020-02-18-uc-irvine-san-diego-att0073",
-      "player_rows": 34,
-      "source_url": "https://usdtoreros.com/sports/baseball/stats/2020/uc-irvine/boxscore/9667",
-      "win": "Grady Miller",
-      "loss": "Nick Pinto",
-      "source_audit": {
-        "game_id": "cb-2020-02-18-uc-irvine-san-diego-att0073",
-        "source": "https://usdtoreros.com/sports/baseball/stats/2020/uc-irvine/boxscore/9667",
-        "http_code": 200,
-        "source_bytes": 677862,
-        "source_sha256": "a568a2bed427ce14748c017fe1c79c47cc2afbad1ff20b13ea47949aa712bdeb",
-        "teams": [
-          {
-            "name": "UC Irvine",
-            "batters": 13,
-            "pitchers": 4,
-            "AB": 30,
-            "R": 1,
-            "H": 3,
-            "RBI": 1,
-            "BB": 5,
-            "SO": 10,
-            "pitching_outs": 24,
-            "pitching_runs": 9,
-            "pitching_hits": 11
-          },
-          {
-            "name": "San Diego",
-            "batters": 12,
-            "pitchers": 5,
-            "AB": 34,
-            "R": 9,
-            "H": 11,
-            "RBI": 9,
-            "BB": 4,
-            "SO": 8,
-            "pitching_outs": 27,
-            "pitching_runs": 1,
-            "pitching_hits": 3
-          }
-        ],
-        "source_warnings": [],
-        "player_rows": 34,
-        "status": "PASS",
-        "scoreboard": [
-          {
-            "runs": 1,
-            "hits": 3,
-            "errors": 1,
-            "innings": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              1,
-              0
-            ]
-          },
-          {
-            "runs": 9,
-            "hits": 11,
-            "errors": 1,
-            "innings": [
-              2,
-              0,
-              3,
-              0,
-              0,
-              1,
-              0,
-              3,
-              null
-            ]
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "UC Irvine",
-            "nine_starting_slots": true,
-            "batter_rows": 13,
-            "pitcher_rows": 4,
-            "substitutes": 4
-          },
-          {
-            "team": "San Diego",
-            "nine_starting_slots": true,
-            "batter_rows": 12,
-            "pitcher_rows": 5,
-            "substitutes": 3
-          }
-        ],
-        "official_decisions": {
-          "win": "Miller, Grady",
-          "loss": "Pinto, Nick",
-          "save": null
-        },
-        "resolved_pitcher_decisions": {
-          "win": null,
-          "loss": null,
-          "save": null
+          "save": "Grant Leonard"
         }
       }
     }
@@ -980,12 +132,7 @@
     {
       "game_id": "cb-2020-02-23-southern-illinois-seattle-att0078",
       "source_url": "https://siusalukis.com/sports/baseball/stats/2020/seattle/boxscore/9208",
-      "reason": "Southern Illinois: source batting order resolved to 10 starting slots, not 9"
-    },
-    {
-      "game_id": "cb-2020-02-22-arizona-iowa-att0076",
-      "source_url": "https://arizonawildcats.com/sports/baseball/stats/2020/iowa/boxscore/20378",
-      "reason": "Arizona: source batting order resolved to 12 starting slots, not 9"
+      "reason": "Seattle: source batting order resolved to 10 starting slots, not 9"
     }
   ],
   "release": "Draft branch only; never auto-publish or merge"

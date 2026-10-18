@@ -58,10 +58,17 @@ jobs:
           HISTORICAL_MONTH: ${{ github.event_name == 'workflow_dispatch' && inputs.month || '5' }}
           IS_MANUAL: ${{ github.event_name == 'workflow_dispatch' }}
         run: |
-          if [ "${IS_MANUAL}" = "true" ] && [ -z "${HISTORICAL_MONTH}" ]; then
-            python college-baseball/scripts/import_historical_verified_queue.py --season "${HISTORICAL_SEASON}"
+          if [ "${IS_MANUAL}" = "true" ]; then
+            if [ -z "${HISTORICAL_MONTH}" ]; then
+              python college-baseball/scripts/import_historical_verified_queue.py --season "${HISTORICAL_SEASON}"
+            else
+              python college-baseball/scripts/import_historical_verified_queue.py --season "${HISTORICAL_SEASON}" --month "${HISTORICAL_MONTH}"
+            fi
           else
-            python college-baseball/scripts/import_historical_verified_queue.py --season "${HISTORICAL_SEASON}" --month "${HISTORICAL_MONTH}"
+            # Source-verified historical queue, newest to oldest. This never merges.
+            for SEASON in 2023 2022 2021; do
+              python college-baseball/scripts/import_historical_verified_queue.py --season "${SEASON}"
+            done
           fi
       - name: Verify protected attendance and player ID invariants
         run: |

@@ -44,7 +44,13 @@ jobs:
           assert audit['2026_gamebooks_preserved']==68
           assert audit['2025_gamebooks_preserved']>=69
           assert audit['verified_2024_total']==sum(g['date'].startswith('2024') and g['verification']=='official_boxscore_verified' for g in games)
-          assert all(g['verification']=='attendance_only' for g in games if g['date']<'2024')
+          # 2017–2023 official historical gamebooks were fully imported since
+          # this workflow was written. Protect them instead of assuming none.
+          historical={2017:1,2018:30,2019:41,2020:11,2021:32,2022:62,2023:47}
+          assert all(sum(g['season']==year and g['verification']=='official_boxscore_verified'
+                         for g in games)==count for year,count in historical.items())
+          assert all(g['verification']=='official_boxscore_verified'
+                     for g in games if g['season']<2024 and not g.get('boxscore_backfill_excluded'))
           assert all(g['verification']=='attendance_only' for g in games if g.get('boxscore_backfill_excluded'))
           print('2024 VERIFIED',audit['verified_2024_total'],'/71',
                 'new this run',audit['completed_in_this_run'],

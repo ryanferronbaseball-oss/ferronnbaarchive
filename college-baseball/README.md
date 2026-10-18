@@ -1,8 +1,18 @@
 # College Baseball · Courtside Archive
 
-**Status (October 17, 2026):** 444 original attendance records on unpublished **draft PR #10**. **2023 official-source discovery COMPLETE: 47/47 original university gamebooks located (0 player-stat gamebooks imported; three date conflicts and one seven-inning tie need special handling).** **2024 71/71, 2025 74/74, 2026 68/68 NCAA/four-year games fully imported** = 213 full gamebooks and 6,316 verified player-game records. Seven 2026 JUCO games excluded. No merge or publication.
+**Status (October 17, 2026):** Unpublished draft PR #10 retains 444 original attendance records. **2022: 62/62 university official gamebooks located, 0/62 player-level imports, one official date conflict**; **2023: 47/47 source links located, 0/47 player-level imports**. **2024 71/71, 2025 74/74, 2026 68/68** verified full college gamebooks = **213 official 2024–26 full gamebooks and 6,316 player-game records**, with 7 JUCO games excluded. Nothing merged or published.
 
 The site lives under \`/college-baseball/\`, with independent college baseball stats and verified inter-level player IDs only. It shares the exact MLB archive design system for Inter fonts, navigation, scoreboards, box-score layout, cards, responsive tables, and bat-order number column.
+
+## 2022 backfill — OFFICIAL SOURCES LOCATED (authorized October 17, 2026)
+
+**62/62 original 2022 attendance games now have linked university original complete gamebook URLs, but 0/62 player-gamebooks are imported into the archive as verified.** February 7/7, March 16/16, April 16/16, May 17/17, June 6/6 source links. Exactly **61** date-matched original sources; **April 21 Grand Canyon–Stanford** original workbook row 152 conflicts with both 2022 university schedules, which list that game on **April 22** at Tony Gwynn Stadium; GCU faced San Diego State on April 21. Keep the original attendance metadata unchanged and require identity clarification before that game's stat import.
+
+Two WCC series doubleheaders require explicit source-specific **Game 1 / Game 2** mapping: April 9 San Diego at Portland (1 PM USD 8–6 Portland; 4:30 PM USD 4–5 Portland in 10) and May 21 Gonzaga at San Diego (1 PM Gonzaga 4–USD 7; 4:45 PM Gonzaga 1–USD 0). USD official source IDs **12487 / 12486** run in reverse for the latter. All six June 3–5 Corvallis Regional gamebooks are sourced, with June 3 NMSU–Oregon State played in 10 innings. Preserve WCC Stockton neutral-site game identities.
+
+- [2022 original university gamebook source queue](data/2022_official_source_queue.json): all 62 direct source links tied to original stable attendance IDs, with the one conflicted date separately marked.
+- [2022 monthly progress and exception audit](data/2022_monthly_progress_audit.json): source-match coverage, doubleheader ordering, venue and clearance gates; **zero 2022 player-level box scores imported yet**.
+- **Scope:** user authorized 2022 source backfill on October 17, 2026. Earlier years and publication/merge still not approved. Existing 2023 official-source research and 213 fully verified 2024–26 gamebooks remain preserved unchanged. All JUCO backfill excluded.
 
 ## 2023 backfill — SOURCES LOCATED, STAT IMPORT PENDING (authorized October 17, 2026)
 

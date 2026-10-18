@@ -4,217 +4,4100 @@
   "limit": 0,
   "status": "PARTIAL_REVIEW_REQUIRED",
   "original_attendance_games": 444,
-  "verified_this_run": 0,
-  "verified_in_season": 0,
-  "verified_overall": 223,
-  "player_game_rows_total": 6601,
+  "verified_this_run": 38,
+  "verified_in_season": 38,
+  "verified_overall": 270,
+  "player_game_rows_total": 8100,
   "already_verified": [],
-  "completed": [],
-  "pending_review": [
+  "completed": [
     {
       "game_id": "cb-2019-05-14-cal-baptist-san-diego-att0072",
+      "player_rows": 36,
       "source_url": "https://usdtoreros.com/boxscore.aspx?id=9278&path=baseball",
-      "reason": "'source_worksheet_row'"
+      "win": "Cade Brown",
+      "loss": "Travis Booth",
+      "source_audit": {
+        "game_id": "cb-2019-05-14-cal-baptist-san-diego-att0072",
+        "source": "https://usdtoreros.com/boxscore.aspx?id=9278&path=baseball",
+        "http_code": 200,
+        "source_bytes": 701624,
+        "source_sha256": "bb53a96c24d1d485944fef47937066afb750906d8d9c450fa869d9f42971c959",
+        "teams": [
+          {
+            "name": "Cal Baptist",
+            "batters": 12,
+            "pitchers": 7,
+            "AB": 35,
+            "R": 4,
+            "H": 9,
+            "RBI": 3,
+            "BB": 8,
+            "SO": 6,
+            "pitching_outs": 24,
+            "pitching_runs": 5,
+            "pitching_hits": 11
+          },
+          {
+            "name": "San Diego",
+            "batters": 11,
+            "pitchers": 6,
+            "AB": 32,
+            "R": 5,
+            "H": 11,
+            "RBI": 4,
+            "BB": 4,
+            "SO": 6,
+            "pitching_outs": 27,
+            "pitching_runs": 4,
+            "pitching_hits": 9
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 36,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 4,
+            "hits": 9,
+            "errors": 3,
+            "innings": [
+              0,
+              1,
+              1,
+              0,
+              0,
+              0,
+              2,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 5,
+            "hits": 11,
+            "errors": 1,
+            "innings": [
+              2,
+              1,
+              0,
+              0,
+              1,
+              1,
+              0,
+              0,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Cal Baptist",
+            "nine_starting_slots": true,
+            "batter_rows": 12,
+            "pitcher_rows": 7,
+            "substitutes": 3
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 6,
+            "substitutes": 2
+          }
+        ],
+        "official_decisions": {
+          "win": "Brown, Cade",
+          "loss": "Booth, Travis",
+          "save": "Walker, Nathan"
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
     },
     {
       "game_id": "cb-2019-05-12-pacific-san-diego-att0071",
+      "player_rows": 29,
       "source_url": "https://usdtoreros.com/boxscore.aspx?id=9277&path=baseball",
-      "reason": "'source_worksheet_row'"
+      "win": "Travis Kuhn",
+      "loss": "Ryan Shreve",
+      "source_audit": {
+        "game_id": "cb-2019-05-12-pacific-san-diego-att0071",
+        "source": "https://usdtoreros.com/boxscore.aspx?id=9277&path=baseball",
+        "http_code": 200,
+        "source_bytes": 648793,
+        "source_sha256": "4b11f5f96fbb142e7c19497d737cc98d9ef92510b5779dd4acedc238e23705a4",
+        "teams": [
+          {
+            "name": "Pacific",
+            "batters": 10,
+            "pitchers": 2,
+            "AB": 32,
+            "R": 2,
+            "H": 6,
+            "RBI": 2,
+            "BB": 5,
+            "SO": 9,
+            "pitching_outs": 24,
+            "pitching_runs": 4,
+            "pitching_hits": 8
+          },
+          {
+            "name": "San Diego",
+            "batters": 13,
+            "pitchers": 4,
+            "AB": 32,
+            "R": 4,
+            "H": 8,
+            "RBI": 4,
+            "BB": 1,
+            "SO": 4,
+            "pitching_outs": 27,
+            "pitching_runs": 2,
+            "pitching_hits": 6
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 29,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 2,
+            "hits": 6,
+            "errors": 0,
+            "innings": [
+              0,
+              0,
+              0,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 4,
+            "hits": 8,
+            "errors": 0,
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              3,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Pacific",
+            "nine_starting_slots": true,
+            "batter_rows": 10,
+            "pitcher_rows": 2,
+            "substitutes": 1
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 13,
+            "pitcher_rows": 4,
+            "substitutes": 4
+          }
+        ],
+        "official_decisions": {
+          "win": "Kuhn, Travis",
+          "loss": "Shreve, Ryan",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
     },
     {
       "game_id": "cb-2019-05-11-pacific-san-diego-att0070",
+      "player_rows": 31,
       "source_url": "https://usdtoreros.com/boxscore.aspx?id=9276&path=baseball",
-      "reason": "'source_worksheet_row'"
+      "win": "Lucas Sweany",
+      "loss": "Josh Hendrickson",
+      "source_audit": {
+        "game_id": "cb-2019-05-11-pacific-san-diego-att0070",
+        "source": "https://usdtoreros.com/boxscore.aspx?id=9276&path=baseball",
+        "http_code": 200,
+        "source_bytes": 684547,
+        "source_sha256": "5d4a7a1e4146df7b944ab41cc87bf8de507471c4949871808f42ecb04e060498",
+        "teams": [
+          {
+            "name": "Pacific",
+            "batters": 12,
+            "pitchers": 2,
+            "AB": 40,
+            "R": 16,
+            "H": 19,
+            "RBI": 16,
+            "BB": 10,
+            "SO": 6,
+            "pitching_outs": 27,
+            "pitching_runs": 7,
+            "pitching_hits": 12
+          },
+          {
+            "name": "San Diego",
+            "batters": 11,
+            "pitchers": 6,
+            "AB": 39,
+            "R": 7,
+            "H": 12,
+            "RBI": 5,
+            "BB": 2,
+            "SO": 4,
+            "pitching_outs": 27,
+            "pitching_runs": 16,
+            "pitching_hits": 19
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 31,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 16,
+            "hits": 19,
+            "errors": 1,
+            "innings": [
+              5,
+              3,
+              0,
+              3,
+              2,
+              0,
+              0,
+              3,
+              0
+            ]
+          },
+          {
+            "runs": 7,
+            "hits": 12,
+            "errors": 0,
+            "innings": [
+              0,
+              0,
+              2,
+              0,
+              3,
+              0,
+              0,
+              0,
+              2
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Pacific",
+            "nine_starting_slots": true,
+            "batter_rows": 12,
+            "pitcher_rows": 2,
+            "substitutes": 3
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 6,
+            "substitutes": 2
+          }
+        ],
+        "official_decisions": {
+          "win": "Sweany, Lucas",
+          "loss": "Hendrickson, Josh",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
     },
     {
       "game_id": "cb-2019-05-10-pacific-san-diego-att0069",
+      "player_rows": 34,
       "source_url": "https://usdtoreros.com/boxscore.aspx?id=9275&path=baseball",
-      "reason": "'source_worksheet_row'"
+      "win": "Anthony Donatella",
+      "loss": "Ricky Reynoso",
+      "source_audit": {
+        "game_id": "cb-2019-05-10-pacific-san-diego-att0069",
+        "source": "https://usdtoreros.com/boxscore.aspx?id=9275&path=baseball",
+        "http_code": 200,
+        "source_bytes": 687750,
+        "source_sha256": "e1ed090af7867664db7ec16326e508329a9be6026d7e92ba56693667a1291248",
+        "teams": [
+          {
+            "name": "Pacific",
+            "batters": 13,
+            "pitchers": 6,
+            "AB": 31,
+            "R": 3,
+            "H": 7,
+            "RBI": 3,
+            "BB": 5,
+            "SO": 9,
+            "pitching_outs": 24,
+            "pitching_runs": 12,
+            "pitching_hits": 13
+          },
+          {
+            "name": "San Diego",
+            "batters": 12,
+            "pitchers": 3,
+            "AB": 35,
+            "R": 12,
+            "H": 13,
+            "RBI": 12,
+            "BB": 7,
+            "SO": 4,
+            "pitching_outs": 27,
+            "pitching_runs": 3,
+            "pitching_hits": 7
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 34,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 3,
+            "hits": 7,
+            "errors": 1,
+            "innings": [
+              0,
+              1,
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 12,
+            "hits": 13,
+            "errors": 2,
+            "innings": [
+              1,
+              0,
+              0,
+              5,
+              4,
+              0,
+              0,
+              2,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Pacific",
+            "nine_starting_slots": true,
+            "batter_rows": 13,
+            "pitcher_rows": 6,
+            "substitutes": 4
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 12,
+            "pitcher_rows": 3,
+            "substitutes": 3
+          }
+        ],
+        "official_decisions": {
+          "win": "Donatella, Anthony",
+          "loss": "Reynoso, Ricky",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
     },
     {
       "game_id": "cb-2019-05-07-uc-irvine-san-diego-att0068",
+      "player_rows": 30,
       "source_url": "https://usdtoreros.com/boxscore.aspx?id=9274&path=baseball",
-      "reason": "'source_worksheet_row'"
+      "win": "Nicola Mislinski",
+      "loss": "Michael Frias",
+      "source_audit": {
+        "game_id": "cb-2019-05-07-uc-irvine-san-diego-att0068",
+        "source": "https://usdtoreros.com/boxscore.aspx?id=9274&path=baseball",
+        "http_code": 200,
+        "source_bytes": 651081,
+        "source_sha256": "0bd3af7e3aa00fe4493d2aadd0f633f019b27a0f6afb115200471f33a058060f",
+        "teams": [
+          {
+            "name": "UC Irvine",
+            "batters": 9,
+            "pitchers": 3,
+            "AB": 33,
+            "R": 1,
+            "H": 9,
+            "RBI": 1,
+            "BB": 2,
+            "SO": 11,
+            "pitching_outs": 24,
+            "pitching_runs": 4,
+            "pitching_hits": 5
+          },
+          {
+            "name": "San Diego",
+            "batters": 13,
+            "pitchers": 5,
+            "AB": 28,
+            "R": 4,
+            "H": 5,
+            "RBI": 4,
+            "BB": 1,
+            "SO": 5,
+            "pitching_outs": 27,
+            "pitching_runs": 1,
+            "pitching_hits": 9
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 30,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 1,
+            "hits": 9,
+            "errors": 0,
+            "innings": [
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 4,
+            "hits": 5,
+            "errors": 0,
+            "innings": [
+              1,
+              0,
+              3,
+              0,
+              0,
+              0,
+              0,
+              0,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "UC Irvine",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 3,
+            "substitutes": 0
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 13,
+            "pitcher_rows": 5,
+            "substitutes": 4
+          }
+        ],
+        "official_decisions": {
+          "win": "Mislinski, Nicola",
+          "loss": "Frias, Michael",
+          "save": "Kuhn, Travis"
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
     },
     {
       "game_id": "cb-2019-05-05-san-diego-santa-clara-att0067",
+      "player_rows": 35,
       "source_url": "https://usdtoreros.com/boxscore.aspx?id=9273&path=baseball",
-      "reason": "'source_worksheet_row'"
+      "win": "Grady Miller",
+      "loss": "Matthew MCGARRY",
+      "source_audit": {
+        "game_id": "cb-2019-05-05-san-diego-santa-clara-att0067",
+        "source": "https://usdtoreros.com/boxscore.aspx?id=9273&path=baseball",
+        "http_code": 200,
+        "source_bytes": 695381,
+        "source_sha256": "ff60bad6f516a810aec8651f919e784492de49058cca35a4382d60d76a8bd35a",
+        "teams": [
+          {
+            "name": "San Diego",
+            "batters": 12,
+            "pitchers": 4,
+            "AB": 36,
+            "R": 8,
+            "H": 11,
+            "RBI": 7,
+            "BB": 6,
+            "SO": 5,
+            "pitching_outs": 27,
+            "pitching_runs": 6,
+            "pitching_hits": 9
+          },
+          {
+            "name": "Santa Clara",
+            "batters": 12,
+            "pitchers": 7,
+            "AB": 35,
+            "R": 6,
+            "H": 9,
+            "RBI": 6,
+            "BB": 5,
+            "SO": 6,
+            "pitching_outs": 27,
+            "pitching_runs": 8,
+            "pitching_hits": 11
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 35,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 8,
+            "hits": 11,
+            "errors": 4,
+            "innings": [
+              0,
+              0,
+              1,
+              0,
+              1,
+              6,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 6,
+            "hits": 9,
+            "errors": 0,
+            "innings": [
+              0,
+              0,
+              0,
+              3,
+              0,
+              0,
+              0,
+              3,
+              0
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 12,
+            "pitcher_rows": 4,
+            "substitutes": 3
+          },
+          {
+            "team": "Santa Clara",
+            "nine_starting_slots": true,
+            "batter_rows": 12,
+            "pitcher_rows": 7,
+            "substitutes": 3
+          }
+        ],
+        "official_decisions": {
+          "win": "Miller, Grady",
+          "loss": "MCGARRY, Matthew",
+          "save": "Walker, Nathan"
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
     },
     {
       "game_id": "cb-2019-05-04-san-diego-santa-clara-att0066",
+      "player_rows": 26,
       "source_url": "https://usdtoreros.com/boxscore.aspx?id=9272&path=baseball",
-      "reason": "'source_worksheet_row'"
+      "win": "Keegan MCCARVILLE",
+      "loss": "Chris Murphy",
+      "source_audit": {
+        "game_id": "cb-2019-05-04-san-diego-santa-clara-att0066",
+        "source": "https://usdtoreros.com/boxscore.aspx?id=9272&path=baseball",
+        "http_code": 200,
+        "source_bytes": 640737,
+        "source_sha256": "3b3ed4498ba48d65799d68d193e068661573c059c90e8586aca09abe923a5591",
+        "teams": [
+          {
+            "name": "San Diego",
+            "batters": 11,
+            "pitchers": 2,
+            "AB": 32,
+            "R": 2,
+            "H": 6,
+            "RBI": 2,
+            "BB": 4,
+            "SO": 10,
+            "pitching_outs": 24,
+            "pitching_runs": 5,
+            "pitching_hits": 7
+          },
+          {
+            "name": "Santa Clara",
+            "batters": 9,
+            "pitchers": 4,
+            "AB": 29,
+            "R": 5,
+            "H": 7,
+            "RBI": 4,
+            "BB": 4,
+            "SO": 8,
+            "pitching_outs": 27,
+            "pitching_runs": 2,
+            "pitching_hits": 6
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 26,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 2,
+            "hits": 6,
+            "errors": 2,
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 5,
+            "hits": 7,
+            "errors": 0,
+            "innings": [
+              0,
+              1,
+              1,
+              2,
+              1,
+              0,
+              0,
+              0,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 2,
+            "substitutes": 2
+          },
+          {
+            "team": "Santa Clara",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 4,
+            "substitutes": 0
+          }
+        ],
+        "official_decisions": {
+          "win": "MCCARVILLE, Keegan",
+          "loss": "Murphy, Chris",
+          "save": "LEX, Eric"
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
     },
     {
       "game_id": "cb-2019-05-03-san-diego-santa-clara-att0065",
+      "player_rows": 27,
       "source_url": "https://usdtoreros.com/boxscore.aspx?id=9271&path=baseball",
-      "reason": "'source_worksheet_row'"
+      "win": "Anthony Donatella",
+      "loss": "Locke BERNHARDT",
+      "source_audit": {
+        "game_id": "cb-2019-05-03-san-diego-santa-clara-att0065",
+        "source": "https://usdtoreros.com/boxscore.aspx?id=9271&path=baseball",
+        "http_code": 200,
+        "source_bytes": 664946,
+        "source_sha256": "711ea9ee64dfe75c6b64d7b6139b26c172ee805335ebd287f10212ae026a9d92",
+        "teams": [
+          {
+            "name": "San Diego",
+            "batters": 11,
+            "pitchers": 2,
+            "AB": 41,
+            "R": 14,
+            "H": 15,
+            "RBI": 11,
+            "BB": 4,
+            "SO": 5,
+            "pitching_outs": 27,
+            "pitching_runs": 6,
+            "pitching_hits": 12
+          },
+          {
+            "name": "Santa Clara",
+            "batters": 10,
+            "pitchers": 4,
+            "AB": 37,
+            "R": 6,
+            "H": 12,
+            "RBI": 5,
+            "BB": 2,
+            "SO": 8,
+            "pitching_outs": 27,
+            "pitching_runs": 14,
+            "pitching_hits": 15
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 27,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 14,
+            "hits": 15,
+            "errors": 1,
+            "innings": [
+              4,
+              0,
+              0,
+              3,
+              2,
+              0,
+              1,
+              0,
+              4
+            ]
+          },
+          {
+            "runs": 6,
+            "hits": 12,
+            "errors": 4,
+            "innings": [
+              6,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 2,
+            "substitutes": 2
+          },
+          {
+            "team": "Santa Clara",
+            "nine_starting_slots": true,
+            "batter_rows": 10,
+            "pitcher_rows": 4,
+            "substitutes": 1
+          }
+        ],
+        "official_decisions": {
+          "win": "Donatella, Anthony",
+          "loss": "BERNHARDT, Locke",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
     },
     {
       "game_id": "cb-2019-04-24-hawaii-san-diego-att0064",
+      "player_rows": 36,
       "source_url": "https://usdtoreros.com/boxscore.aspx?id=9266&path=baseball",
-      "reason": "'source_worksheet_row'"
+      "win": "Li'i Pontes",
+      "loss": "Cade Brown",
+      "source_audit": {
+        "game_id": "cb-2019-04-24-hawaii-san-diego-att0064",
+        "source": "https://usdtoreros.com/boxscore.aspx?id=9266&path=baseball",
+        "http_code": 200,
+        "source_bytes": 699761,
+        "source_sha256": "20a73d498c047304996a0d843946bd0c60e88f6bd808a959c5efbe986a5e4778",
+        "teams": [
+          {
+            "name": "Hawaii",
+            "batters": 9,
+            "pitchers": 10,
+            "AB": 33,
+            "R": 5,
+            "H": 9,
+            "RBI": 4,
+            "BB": 6,
+            "SO": 8,
+            "pitching_outs": 27,
+            "pitching_runs": 2,
+            "pitching_hits": 11
+          },
+          {
+            "name": "San Diego",
+            "batters": 11,
+            "pitchers": 6,
+            "AB": 35,
+            "R": 2,
+            "H": 11,
+            "RBI": 2,
+            "BB": 2,
+            "SO": 6,
+            "pitching_outs": 27,
+            "pitching_runs": 5,
+            "pitching_hits": 9
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 36,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 5,
+            "hits": 9,
+            "errors": 1,
+            "innings": [
+              1,
+              0,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              2
+            ]
+          },
+          {
+            "runs": 2,
+            "hits": 11,
+            "errors": 1,
+            "innings": [
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Hawaii",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 10,
+            "substitutes": 0
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 6,
+            "substitutes": 2
+          }
+        ],
+        "official_decisions": {
+          "win": "Pontes, Li'i",
+          "loss": "Brown, Cade",
+          "save": "Thomas, Dylan"
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
     },
     {
       "game_id": "cb-2019-04-23-san-diego-state-san-diego-att0063",
+      "player_rows": 31,
       "source_url": "https://usdtoreros.com/boxscore.aspx?id=9265&path=baseball",
-      "reason": "'source_worksheet_row'"
+      "win": "Adrian MARDUENO",
+      "loss": "Jake Miller",
+      "source_audit": {
+        "game_id": "cb-2019-04-23-san-diego-state-san-diego-att0063",
+        "source": "https://usdtoreros.com/boxscore.aspx?id=9265&path=baseball",
+        "http_code": 200,
+        "source_bytes": 668233,
+        "source_sha256": "ef0acc96420aef6c7bc694b63cd9247a390a7043d2266d0b705b130acd33c098",
+        "teams": [
+          {
+            "name": "San Diego State",
+            "batters": 11,
+            "pitchers": 5,
+            "AB": 33,
+            "R": 4,
+            "H": 9,
+            "RBI": 2,
+            "BB": 4,
+            "SO": 7,
+            "pitching_outs": 27,
+            "pitching_runs": 2,
+            "pitching_hits": 10
+          },
+          {
+            "name": "San Diego",
+            "batters": 11,
+            "pitchers": 6,
+            "AB": 33,
+            "R": 2,
+            "H": 10,
+            "RBI": 2,
+            "BB": 2,
+            "SO": 5,
+            "pitching_outs": 27,
+            "pitching_runs": 4,
+            "pitching_hits": 9
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 31,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 4,
+            "hits": 9,
+            "errors": 0,
+            "innings": [
+              0,
+              1,
+              0,
+              1,
+              0,
+              0,
+              0,
+              2,
+              0
+            ]
+          },
+          {
+            "runs": 2,
+            "hits": 10,
+            "errors": 1,
+            "innings": [
+              0,
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "San Diego State",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 5,
+            "substitutes": 2
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 6,
+            "substitutes": 2
+          }
+        ],
+        "official_decisions": {
+          "win": "MARDUENO, Adrian",
+          "loss": "Miller, Jake",
+          "save": "SCHMITT, Casey"
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
     },
     {
       "game_id": "cb-2019-04-20-portland-san-diego-att0062",
+      "player_rows": 37,
       "source_url": "https://usdtoreros.com/boxscore.aspx?id=9264&path=baseball",
-      "reason": "'source_worksheet_row'"
+      "win": "Chris CLEMENTS",
+      "loss": "Anthony Donatella",
+      "source_audit": {
+        "game_id": "cb-2019-04-20-portland-san-diego-att0062",
+        "source": "https://usdtoreros.com/boxscore.aspx?id=9264&path=baseball",
+        "http_code": 200,
+        "source_bytes": 700246,
+        "source_sha256": "2aedd6fb991dcf34f1302332bef33426d6c9b3729a3a52e9cb6a079dd2fe07a3",
+        "teams": [
+          {
+            "name": "Portland",
+            "batters": 13,
+            "pitchers": 2,
+            "AB": 45,
+            "R": 20,
+            "H": 19,
+            "RBI": 20,
+            "BB": 10,
+            "SO": 9,
+            "pitching_outs": 27,
+            "pitching_runs": 0,
+            "pitching_hits": 1
+          },
+          {
+            "name": "San Diego",
+            "batters": 15,
+            "pitchers": 7,
+            "AB": 27,
+            "R": 0,
+            "H": 1,
+            "RBI": 0,
+            "BB": 4,
+            "SO": 8,
+            "pitching_outs": 27,
+            "pitching_runs": 20,
+            "pitching_hits": 19
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 37,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 20,
+            "hits": 19,
+            "errors": 1,
+            "innings": [
+              0,
+              1,
+              0,
+              2,
+              4,
+              2,
+              1,
+              9,
+              1
+            ]
+          },
+          {
+            "runs": 0,
+            "hits": 1,
+            "errors": 1,
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Portland",
+            "nine_starting_slots": true,
+            "batter_rows": 13,
+            "pitcher_rows": 2,
+            "substitutes": 4
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 15,
+            "pitcher_rows": 7,
+            "substitutes": 6
+          }
+        ],
+        "official_decisions": {
+          "win": "CLEMENTS, Chris",
+          "loss": "Donatella, Anthony",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
     },
     {
       "game_id": "cb-2019-04-19-portland-san-diego-att0061",
+      "player_rows": 30,
       "source_url": "https://usdtoreros.com/boxscore.aspx?id=9263&path=baseball",
-      "reason": "'source_worksheet_row'"
+      "win": "Grady Miller",
+      "loss": "Eli MORSE",
+      "source_audit": {
+        "game_id": "cb-2019-04-19-portland-san-diego-att0061",
+        "source": "https://usdtoreros.com/boxscore.aspx?id=9263&path=baseball",
+        "http_code": 200,
+        "source_bytes": 657520,
+        "source_sha256": "9eac3290676b32bb364d3222d083cf1681a821c07dc814516e675c7a41b981f0",
+        "teams": [
+          {
+            "name": "Portland",
+            "batters": 14,
+            "pitchers": 3,
+            "AB": 32,
+            "R": 2,
+            "H": 6,
+            "RBI": 2,
+            "BB": 4,
+            "SO": 6,
+            "pitching_outs": 24,
+            "pitching_runs": 10,
+            "pitching_hits": 14
+          },
+          {
+            "name": "San Diego",
+            "batters": 11,
+            "pitchers": 2,
+            "AB": 36,
+            "R": 10,
+            "H": 14,
+            "RBI": 7,
+            "BB": 2,
+            "SO": 4,
+            "pitching_outs": 27,
+            "pitching_runs": 2,
+            "pitching_hits": 6
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 30,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 2,
+            "hits": 6,
+            "errors": 2,
+            "innings": [
+              0,
+              0,
+              0,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 10,
+            "hits": 14,
+            "errors": 0,
+            "innings": [
+              6,
+              0,
+              0,
+              2,
+              1,
+              0,
+              1,
+              0,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Portland",
+            "nine_starting_slots": true,
+            "batter_rows": 14,
+            "pitcher_rows": 3,
+            "substitutes": 5
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 2,
+            "substitutes": 2
+          }
+        ],
+        "official_decisions": {
+          "win": "Miller, Grady",
+          "loss": "MORSE, Eli",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
     },
     {
       "game_id": "cb-2019-04-18-portland-san-diego-att0060",
+      "player_rows": 25,
       "source_url": "https://usdtoreros.com/boxscore.aspx?id=9262&path=baseball",
-      "reason": "'source_worksheet_row'"
+      "win": "Travis Kuhn",
+      "loss": "Christian PETERS",
+      "source_audit": {
+        "game_id": "cb-2019-04-18-portland-san-diego-att0060",
+        "source": "https://usdtoreros.com/boxscore.aspx?id=9262&path=baseball",
+        "http_code": 200,
+        "source_bytes": 641585,
+        "source_sha256": "f21c6d042952236d64546b024e8c5ca1306a60176ce215326c3e7d1b9df30110",
+        "teams": [
+          {
+            "name": "Portland",
+            "batters": 9,
+            "pitchers": 3,
+            "AB": 34,
+            "R": 3,
+            "H": 7,
+            "RBI": 3,
+            "BB": 4,
+            "SO": 12,
+            "pitching_outs": 29,
+            "pitching_runs": 4,
+            "pitching_hits": 10
+          },
+          {
+            "name": "San Diego",
+            "batters": 11,
+            "pitchers": 2,
+            "AB": 37,
+            "R": 4,
+            "H": 10,
+            "RBI": 4,
+            "BB": 2,
+            "SO": 6,
+            "pitching_outs": 30,
+            "pitching_runs": 3,
+            "pitching_hits": 7
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 25,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 3,
+            "hits": 7,
+            "errors": 1,
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              2,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 4,
+            "hits": 10,
+            "errors": 0,
+            "innings": [
+              0,
+              0,
+              1,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Portland",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 3,
+            "substitutes": 0
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 2,
+            "substitutes": 2
+          }
+        ],
+        "official_decisions": {
+          "win": "Kuhn, Travis",
+          "loss": "PETERS, Christian",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
     },
     {
       "game_id": "cb-2019-04-09-long-beach-state-san-diego-att0059",
+      "player_rows": 38,
       "source_url": "https://usdtoreros.com/boxscore.aspx?id=9257&path=baseball",
-      "reason": "'source_worksheet_row'"
+      "win": "Alfredo Ruiz",
+      "loss": "Louie Crow",
+      "source_audit": {
+        "game_id": "cb-2019-04-09-long-beach-state-san-diego-att0059",
+        "source": "https://usdtoreros.com/boxscore.aspx?id=9257&path=baseball",
+        "http_code": 200,
+        "source_bytes": 701262,
+        "source_sha256": "47dca4ccd3b72c1e9399e13e1cc5fd59accda68cbda9cc8347ea6b9569f06dbf",
+        "teams": [
+          {
+            "name": "Long Beach State",
+            "batters": 11,
+            "pitchers": 5,
+            "AB": 29,
+            "R": 5,
+            "H": 9,
+            "RBI": 4,
+            "BB": 4,
+            "SO": 4,
+            "pitching_outs": 27,
+            "pitching_runs": 4,
+            "pitching_hits": 7
+          },
+          {
+            "name": "San Diego",
+            "batters": 14,
+            "pitchers": 8,
+            "AB": 35,
+            "R": 4,
+            "H": 7,
+            "RBI": 4,
+            "BB": 2,
+            "SO": 3,
+            "pitching_outs": 27,
+            "pitching_runs": 5,
+            "pitching_hits": 9
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 38,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 5,
+            "hits": 9,
+            "errors": 4,
+            "innings": [
+              2,
+              0,
+              3,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 4,
+            "hits": 7,
+            "errors": 1,
+            "innings": [
+              0,
+              0,
+              0,
+              2,
+              0,
+              1,
+              0,
+              1,
+              0
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Long Beach State",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 5,
+            "substitutes": 2
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 14,
+            "pitcher_rows": 8,
+            "substitutes": 5
+          }
+        ],
+        "official_decisions": {
+          "win": "Ruiz, Alfredo",
+          "loss": "Crow, Louie",
+          "save": "Sheaks, John"
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
     },
     {
       "game_id": "cb-2019-04-06-byu-san-diego-att0058",
+      "player_rows": 33,
       "source_url": "https://usdtoreros.com/boxscore.aspx?id=9256&path=baseball",
-      "reason": "'source_worksheet_row'"
+      "win": "Justin STERNER",
+      "loss": "Jack Dolak",
+      "source_audit": {
+        "game_id": "cb-2019-04-06-byu-san-diego-att0058",
+        "source": "https://usdtoreros.com/boxscore.aspx?id=9256&path=baseball",
+        "http_code": 200,
+        "source_bytes": 683238,
+        "source_sha256": "ed190ddf38b4fa2c35f4e225baab6ccf92b4a2c83a434ddd1da84e47c3b43600",
+        "teams": [
+          {
+            "name": "BYU",
+            "batters": 10,
+            "pitchers": 2,
+            "AB": 43,
+            "R": 17,
+            "H": 17,
+            "RBI": 17,
+            "BB": 8,
+            "SO": 8,
+            "pitching_outs": 27,
+            "pitching_runs": 4,
+            "pitching_hits": 12
+          },
+          {
+            "name": "San Diego",
+            "batters": 15,
+            "pitchers": 6,
+            "AB": 37,
+            "R": 4,
+            "H": 12,
+            "RBI": 4,
+            "BB": 1,
+            "SO": 6,
+            "pitching_outs": 27,
+            "pitching_runs": 17,
+            "pitching_hits": 17
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 33,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 17,
+            "hits": 17,
+            "errors": 0,
+            "innings": [
+              2,
+              4,
+              0,
+              3,
+              5,
+              1,
+              2,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 4,
+            "hits": 12,
+            "errors": 1,
+            "innings": [
+              0,
+              0,
+              1,
+              0,
+              0,
+              2,
+              1,
+              0,
+              0
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "BYU",
+            "nine_starting_slots": true,
+            "batter_rows": 10,
+            "pitcher_rows": 2,
+            "substitutes": 1
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 15,
+            "pitcher_rows": 6,
+            "substitutes": 6
+          }
+        ],
+        "official_decisions": {
+          "win": "STERNER, Justin",
+          "loss": "Dolak, Jack",
+          "save": "INOUYE, Blake"
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
     },
     {
       "game_id": "cb-2019-04-05-byu-san-diego-att0057",
+      "player_rows": 33,
       "source_url": "https://usdtoreros.com/boxscore.aspx?id=9254&path=baseball",
-      "reason": "'source_worksheet_row'"
+      "win": "Grady Miller",
+      "loss": "Mitch MCINTYRE",
+      "source_audit": {
+        "game_id": "cb-2019-04-05-byu-san-diego-att0057",
+        "source": "https://usdtoreros.com/boxscore.aspx?id=9254&path=baseball",
+        "http_code": 200,
+        "source_bytes": 683707,
+        "source_sha256": "f9c632647f5402fedb2d0803aeeb9834e5c0eb1c0ad79b77dff7607a13c2c2d9",
+        "teams": [
+          {
+            "name": "BYU",
+            "batters": 13,
+            "pitchers": 4,
+            "AB": 34,
+            "R": 5,
+            "H": 6,
+            "RBI": 5,
+            "BB": 5,
+            "SO": 12,
+            "pitching_outs": 28,
+            "pitching_runs": 6,
+            "pitching_hits": 11
+          },
+          {
+            "name": "San Diego",
+            "batters": 13,
+            "pitchers": 4,
+            "AB": 34,
+            "R": 6,
+            "H": 11,
+            "RBI": 5,
+            "BB": 4,
+            "SO": 4,
+            "pitching_outs": 30,
+            "pitching_runs": 5,
+            "pitching_hits": 6
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 33,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 5,
+            "hits": 6,
+            "errors": 2,
+            "innings": [
+              0,
+              0,
+              0,
+              2,
+              0,
+              2,
+              1,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 6,
+            "hits": 11,
+            "errors": 0,
+            "innings": [
+              0,
+              0,
+              1,
+              2,
+              0,
+              2,
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "BYU",
+            "nine_starting_slots": true,
+            "batter_rows": 13,
+            "pitcher_rows": 4,
+            "substitutes": 4
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 13,
+            "pitcher_rows": 4,
+            "substitutes": 4
+          }
+        ],
+        "official_decisions": {
+          "win": "Miller, Grady",
+          "loss": "MCINTYRE, Mitch",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
     },
     {
       "game_id": "cb-2019-04-04-byu-san-diego-att0056",
+      "player_rows": 27,
       "source_url": "https://usdtoreros.com/boxscore.aspx?id=9255&path=baseball",
-      "reason": "'source_worksheet_row'"
+      "win": "Chris Murphy",
+      "loss": "Jordan WOOD",
+      "source_audit": {
+        "game_id": "cb-2019-04-04-byu-san-diego-att0056",
+        "source": "https://usdtoreros.com/boxscore.aspx?id=9255&path=baseball",
+        "http_code": 200,
+        "source_bytes": 660913,
+        "source_sha256": "78221ae0343a47d8219c1a79a67e6ba0675f7375121a487b4203ab0fcac75581",
+        "teams": [
+          {
+            "name": "BYU",
+            "batters": 12,
+            "pitchers": 4,
+            "AB": 36,
+            "R": 5,
+            "H": 8,
+            "RBI": 3,
+            "BB": 7,
+            "SO": 11,
+            "pitching_outs": 24,
+            "pitching_runs": 15,
+            "pitching_hits": 15
+          },
+          {
+            "name": "San Diego",
+            "batters": 9,
+            "pitchers": 3,
+            "AB": 37,
+            "R": 15,
+            "H": 15,
+            "RBI": 14,
+            "BB": 6,
+            "SO": 5,
+            "pitching_outs": 27,
+            "pitching_runs": 5,
+            "pitching_hits": 8
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 27,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 5,
+            "hits": 8,
+            "errors": 0,
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              4,
+              0,
+              1,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 15,
+            "hits": 15,
+            "errors": 2,
+            "innings": [
+              4,
+              1,
+              0,
+              0,
+              2,
+              4,
+              4,
+              0,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "BYU",
+            "nine_starting_slots": true,
+            "batter_rows": 12,
+            "pitcher_rows": 4,
+            "substitutes": 3
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 3,
+            "substitutes": 0
+          }
+        ],
+        "official_decisions": {
+          "win": "Murphy, Chris",
+          "loss": "WOOD, Jordan",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
     },
     {
       "game_id": "cb-2019-03-26-san-diego-uc-irvine-att0055",
+      "player_rows": 38,
       "source_url": "https://usdtoreros.com/boxscore.aspx?id=9249&path=baseball",
-      "reason": "'source_worksheet_row'"
+      "win": "Ryan Johnston",
+      "loss": "Jack Dolak",
+      "source_audit": {
+        "game_id": "cb-2019-03-26-san-diego-uc-irvine-att0055",
+        "source": "https://usdtoreros.com/boxscore.aspx?id=9249&path=baseball",
+        "http_code": 200,
+        "source_bytes": 719252,
+        "source_sha256": "d48ce5dc982d70a467185636e593141253b876ad1ad7c613eec91fdb34b33e0f",
+        "teams": [
+          {
+            "name": "San Diego",
+            "batters": 16,
+            "pitchers": 8,
+            "AB": 39,
+            "R": 7,
+            "H": 11,
+            "RBI": 7,
+            "BB": 4,
+            "SO": 10,
+            "pitching_outs": 24,
+            "pitching_runs": 17,
+            "pitching_hits": 16
+          },
+          {
+            "name": "UC Irvine",
+            "batters": 9,
+            "pitchers": 6,
+            "AB": 39,
+            "R": 17,
+            "H": 16,
+            "RBI": 17,
+            "BB": 7,
+            "SO": 5,
+            "pitching_outs": 27,
+            "pitching_runs": 7,
+            "pitching_hits": 11
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 38,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 7,
+            "hits": 11,
+            "errors": 0,
+            "innings": [
+              0,
+              1,
+              4,
+              0,
+              0,
+              1,
+              1,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 17,
+            "hits": 16,
+            "errors": 3,
+            "innings": [
+              3,
+              6,
+              0,
+              5,
+              0,
+              1,
+              0,
+              2,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 16,
+            "pitcher_rows": 8,
+            "substitutes": 7
+          },
+          {
+            "team": "UC Irvine",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 6,
+            "substitutes": 0
+          }
+        ],
+        "official_decisions": {
+          "win": "Johnston, Ryan",
+          "loss": "Dolak, Jack",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
     },
     {
       "game_id": "cb-2019-03-24-san-francisco-san-diego-att0054",
+      "player_rows": 33,
       "source_url": "https://usdtoreros.com/boxscore.aspx?id=9248&path=baseball",
-      "reason": "'source_worksheet_row'"
+      "win": "Travis Kuhn",
+      "loss": "Joey STEELE",
+      "source_audit": {
+        "game_id": "cb-2019-03-24-san-francisco-san-diego-att0054",
+        "source": "https://usdtoreros.com/boxscore.aspx?id=9248&path=baseball",
+        "http_code": 200,
+        "source_bytes": 676613,
+        "source_sha256": "7934d7b7e34dc2afca208a92f92e52130c96f85cc7e9d4972fcf5d2826538974",
+        "teams": [
+          {
+            "name": "San Francisco",
+            "batters": 11,
+            "pitchers": 5,
+            "AB": 35,
+            "R": 4,
+            "H": 9,
+            "RBI": 4,
+            "BB": 3,
+            "SO": 8,
+            "pitching_outs": 24,
+            "pitching_runs": 6,
+            "pitching_hits": 11
+          },
+          {
+            "name": "San Diego",
+            "batters": 13,
+            "pitchers": 4,
+            "AB": 36,
+            "R": 6,
+            "H": 11,
+            "RBI": 5,
+            "BB": 6,
+            "SO": 4,
+            "pitching_outs": 27,
+            "pitching_runs": 4,
+            "pitching_hits": 9
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 33,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 4,
+            "hits": 9,
+            "errors": 2,
+            "innings": [
+              2,
+              0,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 6,
+            "hits": 11,
+            "errors": 0,
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              6,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "San Francisco",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 5,
+            "substitutes": 2
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 13,
+            "pitcher_rows": 4,
+            "substitutes": 4
+          }
+        ],
+        "official_decisions": {
+          "win": "Kuhn, Travis",
+          "loss": "STEELE, Joey",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
     },
     {
       "game_id": "cb-2019-03-23-san-francisco-san-diego-att0053",
+      "player_rows": 34,
       "source_url": "https://usdtoreros.com/boxscore.aspx?id=9247&path=baseball",
-      "reason": "'source_worksheet_row'"
+      "win": "Scott PARKER",
+      "loss": "Jake Miller",
+      "source_audit": {
+        "game_id": "cb-2019-03-23-san-francisco-san-diego-att0053",
+        "source": "https://usdtoreros.com/boxscore.aspx?id=9247&path=baseball",
+        "http_code": 200,
+        "source_bytes": 688860,
+        "source_sha256": "6fce38e7d76efc8b7afa6a1361d929e016dd939950c268527676bde4b869e8d2",
+        "teams": [
+          {
+            "name": "San Francisco",
+            "batters": 11,
+            "pitchers": 3,
+            "AB": 37,
+            "R": 10,
+            "H": 11,
+            "RBI": 9,
+            "BB": 11,
+            "SO": 9,
+            "pitching_outs": 27,
+            "pitching_runs": 4,
+            "pitching_hits": 9
+          },
+          {
+            "name": "San Diego",
+            "batters": 15,
+            "pitchers": 5,
+            "AB": 35,
+            "R": 4,
+            "H": 9,
+            "RBI": 4,
+            "BB": 1,
+            "SO": 8,
+            "pitching_outs": 27,
+            "pitching_runs": 10,
+            "pitching_hits": 11
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 34,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 10,
+            "hits": 11,
+            "errors": 1,
+            "innings": [
+              0,
+              0,
+              1,
+              0,
+              3,
+              1,
+              1,
+              0,
+              4
+            ]
+          },
+          {
+            "runs": 4,
+            "hits": 9,
+            "errors": 4,
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              2,
+              1,
+              0,
+              1,
+              0
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "San Francisco",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 3,
+            "substitutes": 2
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 15,
+            "pitcher_rows": 5,
+            "substitutes": 6
+          }
+        ],
+        "official_decisions": {
+          "win": "PARKER, Scott",
+          "loss": "Miller, Jake",
+          "save": "STEELE, Joey"
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
     },
     {
       "game_id": "cb-2019-03-22-san-francisco-san-diego-att0052",
+      "player_rows": 33,
       "source_url": "https://usdtoreros.com/boxscore.aspx?id=9246&path=baseball",
-      "reason": "'source_worksheet_row'"
+      "win": "Chris Murphy",
+      "loss": "Riley ORNIDO",
+      "source_audit": {
+        "game_id": "cb-2019-03-22-san-francisco-san-diego-att0052",
+        "source": "https://usdtoreros.com/boxscore.aspx?id=9246&path=baseball",
+        "http_code": 200,
+        "source_bytes": 669754,
+        "source_sha256": "0268d48d7f47b86d3bb8d86df00355cd0bf58eabb91928ac847c5fb5c0cb8635",
+        "teams": [
+          {
+            "name": "San Francisco",
+            "batters": 15,
+            "pitchers": 3,
+            "AB": 29,
+            "R": 3,
+            "H": 4,
+            "RBI": 3,
+            "BB": 4,
+            "SO": 11,
+            "pitching_outs": 24,
+            "pitching_runs": 10,
+            "pitching_hits": 12
+          },
+          {
+            "name": "San Diego",
+            "batters": 12,
+            "pitchers": 3,
+            "AB": 35,
+            "R": 10,
+            "H": 12,
+            "RBI": 8,
+            "BB": 6,
+            "SO": 5,
+            "pitching_outs": 27,
+            "pitching_runs": 3,
+            "pitching_hits": 4
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 33,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 3,
+            "hits": 4,
+            "errors": 2,
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              3,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 10,
+            "hits": 12,
+            "errors": 0,
+            "innings": [
+              0,
+              0,
+              7,
+              0,
+              1,
+              0,
+              2,
+              0,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "San Francisco",
+            "nine_starting_slots": true,
+            "batter_rows": 15,
+            "pitcher_rows": 3,
+            "substitutes": 6
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 12,
+            "pitcher_rows": 3,
+            "substitutes": 3
+          }
+        ],
+        "official_decisions": {
+          "win": "Murphy, Chris",
+          "loss": "ORNIDO, Riley",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
     },
     {
       "game_id": "cb-2019-03-19-cal-state-fullerton-san-diego-att0051",
+      "player_rows": 32,
       "source_url": "https://usdtoreros.com/boxscore.aspx?id=9244&path=baseball",
-      "reason": "'source_worksheet_row'"
+      "win": "Louie Crow",
+      "loss": "Joe Magrisi",
+      "source_audit": {
+        "game_id": "cb-2019-03-19-cal-state-fullerton-san-diego-att0051",
+        "source": "https://usdtoreros.com/boxscore.aspx?id=9244&path=baseball",
+        "http_code": 200,
+        "source_bytes": 665389,
+        "source_sha256": "170fb258658ebd5ae2d4deaced1b5f1bc856b888568b6945768736c5ac9811d9",
+        "teams": [
+          {
+            "name": "Cal State Fullerton",
+            "batters": 12,
+            "pitchers": 5,
+            "AB": 32,
+            "R": 2,
+            "H": 6,
+            "RBI": 2,
+            "BB": 2,
+            "SO": 7,
+            "pitching_outs": 24,
+            "pitching_runs": 6,
+            "pitching_hits": 5
+          },
+          {
+            "name": "San Diego",
+            "batters": 12,
+            "pitchers": 3,
+            "AB": 31,
+            "R": 6,
+            "H": 5,
+            "RBI": 4,
+            "BB": 5,
+            "SO": 5,
+            "pitching_outs": 27,
+            "pitching_runs": 2,
+            "pitching_hits": 6
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 32,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 2,
+            "hits": 6,
+            "errors": 1,
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              0
+            ]
+          },
+          {
+            "runs": 6,
+            "hits": 5,
+            "errors": 3,
+            "innings": [
+              0,
+              5,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Cal State Fullerton",
+            "nine_starting_slots": true,
+            "batter_rows": 12,
+            "pitcher_rows": 5,
+            "substitutes": 3
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 12,
+            "pitcher_rows": 3,
+            "substitutes": 3
+          }
+        ],
+        "official_decisions": {
+          "win": "Crow, Louie",
+          "loss": "Magrisi, Joe",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
     },
     {
       "game_id": "cb-2019-03-17-pepperdine-san-diego-att0050",
+      "player_rows": 28,
       "source_url": "https://usdtoreros.com/boxscore.aspx?id=9243&path=baseball",
-      "reason": "'source_worksheet_row'"
+      "win": "Jonathan PENDERGAST",
+      "loss": "Josh Hendrickson",
+      "source_audit": {
+        "game_id": "cb-2019-03-17-pepperdine-san-diego-att0050",
+        "source": "https://usdtoreros.com/boxscore.aspx?id=9243&path=baseball",
+        "http_code": 200,
+        "source_bytes": 654327,
+        "source_sha256": "536cec3c9d0e5b8970ec4c12688503e960570fa97acc8075cef0bf5d0178d489",
+        "teams": [
+          {
+            "name": "Pepperdine",
+            "batters": 9,
+            "pitchers": 2,
+            "AB": 34,
+            "R": 10,
+            "H": 10,
+            "RBI": 9,
+            "BB": 4,
+            "SO": 8,
+            "pitching_outs": 27,
+            "pitching_runs": 5,
+            "pitching_hits": 9
+          },
+          {
+            "name": "San Diego",
+            "batters": 11,
+            "pitchers": 6,
+            "AB": 34,
+            "R": 5,
+            "H": 9,
+            "RBI": 5,
+            "BB": 2,
+            "SO": 6,
+            "pitching_outs": 27,
+            "pitching_runs": 10,
+            "pitching_hits": 10
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 28,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 10,
+            "hits": 10,
+            "errors": 0,
+            "innings": [
+              0,
+              1,
+              5,
+              3,
+              1,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 5,
+            "hits": 9,
+            "errors": 1,
+            "innings": [
+              3,
+              0,
+              0,
+              0,
+              2,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Pepperdine",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 2,
+            "substitutes": 0
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 6,
+            "substitutes": 2
+          }
+        ],
+        "official_decisions": {
+          "win": "PENDERGAST, Jonathan",
+          "loss": "Hendrickson, Josh",
+          "save": "STOUTLAND, Christian"
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
     },
     {
       "game_id": "cb-2019-03-16-pepperdine-san-diego-att0049",
+      "player_rows": 34,
       "source_url": "https://usdtoreros.com/boxscore.aspx?id=9242&path=baseball",
-      "reason": "'source_worksheet_row'"
+      "win": "Trevor KNISKERN",
+      "loss": "Grady Miller",
+      "source_audit": {
+        "game_id": "cb-2019-03-16-pepperdine-san-diego-att0049",
+        "source": "https://usdtoreros.com/boxscore.aspx?id=9242&path=baseball",
+        "http_code": 200,
+        "source_bytes": 685581,
+        "source_sha256": "049ffcb7ebf06585a6ebccfcae126e6cd6992963b0b2a7d8183d1a0485ebc143",
+        "teams": [
+          {
+            "name": "Pepperdine",
+            "batters": 12,
+            "pitchers": 3,
+            "AB": 33,
+            "R": 8,
+            "H": 9,
+            "RBI": 7,
+            "BB": 6,
+            "SO": 8,
+            "pitching_outs": 27,
+            "pitching_runs": 7,
+            "pitching_hits": 14
+          },
+          {
+            "name": "San Diego",
+            "batters": 14,
+            "pitchers": 5,
+            "AB": 40,
+            "R": 7,
+            "H": 14,
+            "RBI": 7,
+            "BB": 2,
+            "SO": 9,
+            "pitching_outs": 27,
+            "pitching_runs": 8,
+            "pitching_hits": 9
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 34,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 8,
+            "hits": 9,
+            "errors": 2,
+            "innings": [
+              0,
+              0,
+              1,
+              2,
+              2,
+              0,
+              0,
+              2,
+              1
+            ]
+          },
+          {
+            "runs": 7,
+            "hits": 14,
+            "errors": 2,
+            "innings": [
+              0,
+              0,
+              1,
+              2,
+              2,
+              0,
+              0,
+              0,
+              2
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Pepperdine",
+            "nine_starting_slots": true,
+            "batter_rows": 12,
+            "pitcher_rows": 3,
+            "substitutes": 3
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 14,
+            "pitcher_rows": 5,
+            "substitutes": 5
+          }
+        ],
+        "official_decisions": {
+          "win": "KNISKERN, Trevor",
+          "loss": "Miller, Grady",
+          "save": "MAHONY, Michael"
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
     },
     {
       "game_id": "cb-2019-03-15-pepperdine-san-diego-att0048",
+      "player_rows": 24,
       "source_url": "https://usdtoreros.com/boxscore.aspx?id=9241&path=baseball",
-      "reason": "'source_worksheet_row'"
+      "win": "Chris Murphy",
+      "loss": "Cooper CHANDLER",
+      "source_audit": {
+        "game_id": "cb-2019-03-15-pepperdine-san-diego-att0048",
+        "source": "https://usdtoreros.com/boxscore.aspx?id=9241&path=baseball",
+        "http_code": 200,
+        "source_bytes": 627432,
+        "source_sha256": "8e692acaf33eea46bc9503263a3ab57a90ab21976d394d2e132afe0fc18c1e71",
+        "teams": [
+          {
+            "name": "Pepperdine",
+            "batters": 9,
+            "pitchers": 2,
+            "AB": 30,
+            "R": 1,
+            "H": 5,
+            "RBI": 1,
+            "BB": 5,
+            "SO": 7,
+            "pitching_outs": 24,
+            "pitching_runs": 5,
+            "pitching_hits": 9
+          },
+          {
+            "name": "San Diego",
+            "batters": 11,
+            "pitchers": 2,
+            "AB": 32,
+            "R": 5,
+            "H": 9,
+            "RBI": 5,
+            "BB": 1,
+            "SO": 6,
+            "pitching_outs": 27,
+            "pitching_runs": 1,
+            "pitching_hits": 5
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 24,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 1,
+            "hits": 5,
+            "errors": 0,
+            "innings": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 5,
+            "hits": 9,
+            "errors": 0,
+            "innings": [
+              0,
+              0,
+              0,
+              2,
+              2,
+              0,
+              1,
+              0,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Pepperdine",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 2,
+            "substitutes": 0
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 2,
+            "substitutes": 2
+          }
+        ],
+        "official_decisions": {
+          "win": "Murphy, Chris",
+          "loss": "CHANDLER, Cooper",
+          "save": "Miller, Jake"
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
     },
     {
       "game_id": "cb-2019-03-12-tcu-san-diego-att0047",
+      "player_rows": 36,
       "source_url": "https://usdtoreros.com/boxscore.aspx?id=9240&path=baseball",
-      "reason": "'source_worksheet_row'"
+      "win": "Grady Miller",
+      "loss": "Augie Mihlbauer",
+      "source_audit": {
+        "game_id": "cb-2019-03-12-tcu-san-diego-att0047",
+        "source": "https://usdtoreros.com/boxscore.aspx?id=9240&path=baseball",
+        "http_code": 200,
+        "source_bytes": 705925,
+        "source_sha256": "c99d4b83d07fdcfd1a21977dd30c9dcae4628c6ba70d2e19d01cb147e897b8c5",
+        "teams": [
+          {
+            "name": "TCU",
+            "batters": 9,
+            "pitchers": 6,
+            "AB": 34,
+            "R": 6,
+            "H": 11,
+            "RBI": 6,
+            "BB": 9,
+            "SO": 6,
+            "pitching_outs": 24,
+            "pitching_runs": 9,
+            "pitching_hits": 13
+          },
+          {
+            "name": "San Diego",
+            "batters": 13,
+            "pitchers": 8,
+            "AB": 34,
+            "R": 9,
+            "H": 13,
+            "RBI": 7,
+            "BB": 8,
+            "SO": 7,
+            "pitching_outs": 27,
+            "pitching_runs": 6,
+            "pitching_hits": 11
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 36,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 6,
+            "hits": 11,
+            "errors": 4,
+            "innings": [
+              2,
+              2,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 9,
+            "hits": 13,
+            "errors": 1,
+            "innings": [
+              0,
+              0,
+              0,
+              1,
+              0,
+              6,
+              1,
+              1,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "TCU",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 6,
+            "substitutes": 0
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 13,
+            "pitcher_rows": 8,
+            "substitutes": 4
+          }
+        ],
+        "official_decisions": {
+          "win": "Miller, Grady",
+          "loss": "Mihlbauer, Augie",
+          "save": "Dolak, Jack"
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
     },
     {
       "game_id": "cb-2019-03-05-san-diego-uc-riverside-att0046",
+      "player_rows": 46,
       "source_url": "https://usdtoreros.com/boxscore.aspx?id=9239&path=baseball",
-      "reason": "'source_worksheet_row'"
+      "win": "Cade Brown",
+      "loss": "C Cannon",
+      "source_audit": {
+        "game_id": "cb-2019-03-05-san-diego-uc-riverside-att0046",
+        "source": "https://usdtoreros.com/boxscore.aspx?id=9239&path=baseball",
+        "http_code": 200,
+        "source_bytes": 775183,
+        "source_sha256": "1a2857a948bf54971b407677a21e5a8b30e63ac3341fb927d160cf201bb88e84",
+        "teams": [
+          {
+            "name": "San Diego",
+            "batters": 17,
+            "pitchers": 6,
+            "AB": 50,
+            "R": 31,
+            "H": 25,
+            "RBI": 31,
+            "BB": 13,
+            "SO": 8,
+            "pitching_outs": 27,
+            "pitching_runs": 3,
+            "pitching_hits": 4
+          },
+          {
+            "name": "UC Riverside",
+            "batters": 17,
+            "pitchers": 9,
+            "AB": 31,
+            "R": 3,
+            "H": 4,
+            "RBI": 2,
+            "BB": 4,
+            "SO": 6,
+            "pitching_outs": 27,
+            "pitching_runs": 31,
+            "pitching_hits": 25
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 46,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 31,
+            "hits": 25,
+            "errors": 1,
+            "innings": [
+              5,
+              1,
+              5,
+              5,
+              0,
+              6,
+              4,
+              0,
+              5
+            ]
+          },
+          {
+            "runs": 3,
+            "hits": 4,
+            "errors": 5,
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              3,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 17,
+            "pitcher_rows": 6,
+            "substitutes": 8
+          },
+          {
+            "team": "UC Riverside",
+            "nine_starting_slots": true,
+            "batter_rows": 17,
+            "pitcher_rows": 9,
+            "substitutes": 8
+          }
+        ],
+        "official_decisions": {
+          "win": "Brown, Cade",
+          "loss": "Cannon,C",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
     },
     {
       "game_id": "cb-2019-03-04-st-john-s-san-diego-att0045",
+      "player_rows": 30,
       "source_url": "https://usdtoreros.com/boxscore.aspx?id=9237&path=baseball",
-      "reason": "'source_worksheet_row'"
+      "win": "Joe KELLY",
+      "loss": "Grady Miller",
+      "source_audit": {
+        "game_id": "cb-2019-03-04-st-john-s-san-diego-att0045",
+        "source": "https://usdtoreros.com/boxscore.aspx?id=9237&path=baseball",
+        "http_code": 200,
+        "source_bytes": 666667,
+        "source_sha256": "3e37ac87907f10c1799821db69a68a1312e9ef615ec64de8561aab51b8c2c94c",
+        "teams": [
+          {
+            "name": "St. John's",
+            "batters": 9,
+            "pitchers": 2,
+            "AB": 36,
+            "R": 7,
+            "H": 9,
+            "RBI": 6,
+            "BB": 3,
+            "SO": 10,
+            "pitching_outs": 27,
+            "pitching_runs": 5,
+            "pitching_hits": 7
+          },
+          {
+            "name": "San Diego",
+            "batters": 14,
+            "pitchers": 5,
+            "AB": 32,
+            "R": 5,
+            "H": 7,
+            "RBI": 5,
+            "BB": 5,
+            "SO": 4,
+            "pitching_outs": 27,
+            "pitching_runs": 7,
+            "pitching_hits": 9
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 30,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 7,
+            "hits": 9,
+            "errors": 0,
+            "innings": [
+              0,
+              2,
+              0,
+              1,
+              4,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 5,
+            "hits": 7,
+            "errors": 3,
+            "innings": [
+              1,
+              1,
+              2,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "St. John's",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 2,
+            "substitutes": 0
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 14,
+            "pitcher_rows": 5,
+            "substitutes": 5
+          }
+        ],
+        "official_decisions": {
+          "win": "KELLY, Joe",
+          "loss": "Miller, Grady",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
     },
     {
       "game_id": "cb-2019-03-03-st-john-s-san-diego-att0044",
+      "player_rows": 29,
       "source_url": "https://usdtoreros.com/boxscore.aspx?id=9238&path=baseball",
-      "reason": "'source_worksheet_row'"
+      "win": "Anthony Donatella",
+      "loss": "Gavin HOLLOWELL",
+      "source_audit": {
+        "game_id": "cb-2019-03-03-st-john-s-san-diego-att0044",
+        "source": "https://usdtoreros.com/boxscore.aspx?id=9238&path=baseball",
+        "http_code": 200,
+        "source_bytes": 653275,
+        "source_sha256": "0d165b916c409db842f66a7da6d64b6dc048d98896f9201552fec6dcb345aea5",
+        "teams": [
+          {
+            "name": "St. John's",
+            "batters": 9,
+            "pitchers": 3,
+            "AB": 32,
+            "R": 1,
+            "H": 4,
+            "RBI": 1,
+            "BB": 5,
+            "SO": 12,
+            "pitching_outs": 29,
+            "pitching_runs": 2,
+            "pitching_hits": 10
+          },
+          {
+            "name": "San Diego",
+            "batters": 15,
+            "pitchers": 2,
+            "AB": 37,
+            "R": 2,
+            "H": 10,
+            "RBI": 2,
+            "BB": 2,
+            "SO": 8,
+            "pitching_outs": 30,
+            "pitching_runs": 1,
+            "pitching_hits": 4
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 29,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 1,
+            "hits": 4,
+            "errors": 0,
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 2,
+            "hits": 10,
+            "errors": 0,
+            "innings": [
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "St. John's",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 3,
+            "substitutes": 0
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 15,
+            "pitcher_rows": 2,
+            "substitutes": 6
+          }
+        ],
+        "official_decisions": {
+          "win": "Donatella, Anthony",
+          "loss": "HOLLOWELL, Gavin",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
     },
     {
       "game_id": "cb-2019-03-01-st-john-s-san-diego-att0043",
+      "player_rows": 37,
       "source_url": "https://usdtoreros.com/boxscore.aspx?id=9236&path=baseball",
-      "reason": "'source_worksheet_row'"
+      "win": "Jack Dolak",
+      "loss": "Ben GREENBERG",
+      "source_audit": {
+        "game_id": "cb-2019-03-01-st-john-s-san-diego-att0043",
+        "source": "https://usdtoreros.com/boxscore.aspx?id=9236&path=baseball",
+        "http_code": 200,
+        "source_bytes": 695567,
+        "source_sha256": "0b495b5a8bf63156536208b7084d89ed9a130d67cf228182ba17018139185ca5",
+        "teams": [
+          {
+            "name": "St. John's",
+            "batters": 11,
+            "pitchers": 8,
+            "AB": 31,
+            "R": 3,
+            "H": 6,
+            "RBI": 3,
+            "BB": 6,
+            "SO": 9,
+            "pitching_outs": 24,
+            "pitching_runs": 9,
+            "pitching_hits": 11
+          },
+          {
+            "name": "San Diego",
+            "batters": 14,
+            "pitchers": 4,
+            "AB": 33,
+            "R": 9,
+            "H": 11,
+            "RBI": 8,
+            "BB": 7,
+            "SO": 9,
+            "pitching_outs": 27,
+            "pitching_runs": 3,
+            "pitching_hits": 6
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 37,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 3,
+            "hits": 6,
+            "errors": 2,
+            "innings": [
+              0,
+              2,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 9,
+            "hits": 11,
+            "errors": 0,
+            "innings": [
+              2,
+              0,
+              0,
+              0,
+              0,
+              2,
+              3,
+              2,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "St. John's",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 8,
+            "substitutes": 2
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 14,
+            "pitcher_rows": 4,
+            "substitutes": 5
+          }
+        ],
+        "official_decisions": {
+          "win": "Dolak, Jack",
+          "loss": "GREENBERG, Ben",
+          "save": "Miller, Jake"
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
     },
     {
       "game_id": "cb-2019-02-26-san-diego-san-diego-state-att0042",
+      "player_rows": 28,
       "source_url": "https://usdtoreros.com/boxscore.aspx?id=9235&path=baseball",
-      "reason": "'source_worksheet_row'"
+      "win": "Jack Dolak",
+      "loss": "Casey O'SULLIVAN",
+      "source_audit": {
+        "game_id": "cb-2019-02-26-san-diego-san-diego-state-att0042",
+        "source": "https://usdtoreros.com/boxscore.aspx?id=9235&path=baseball",
+        "http_code": 200,
+        "source_bytes": 651194,
+        "source_sha256": "57778906a40b3d512616ed559c72cd445c84935aad30a87f8691f8d1c03f5db4",
+        "teams": [
+          {
+            "name": "San Diego",
+            "batters": 11,
+            "pitchers": 5,
+            "AB": 32,
+            "R": 4,
+            "H": 5,
+            "RBI": 1,
+            "BB": 3,
+            "SO": 3,
+            "pitching_outs": 27,
+            "pitching_runs": 2,
+            "pitching_hits": 4
+          },
+          {
+            "name": "San Diego State",
+            "batters": 9,
+            "pitchers": 3,
+            "AB": 30,
+            "R": 2,
+            "H": 4,
+            "RBI": 2,
+            "BB": 5,
+            "SO": 8,
+            "pitching_outs": 27,
+            "pitching_runs": 4,
+            "pitching_hits": 5
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 28,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 4,
+            "hits": 5,
+            "errors": 0,
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              4,
+              0
+            ]
+          },
+          {
+            "runs": 2,
+            "hits": 4,
+            "errors": 2,
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              0
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 5,
+            "substitutes": 2
+          },
+          {
+            "team": "San Diego State",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 3,
+            "substitutes": 0
+          }
+        ],
+        "official_decisions": {
+          "win": "Dolak, Jack",
+          "loss": "O'SULLIVAN, Casey",
+          "save": "Brown, Cade"
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
     },
     {
       "game_id": "cb-2019-02-24-utah-san-diego-att0041",
+      "player_rows": 32,
       "source_url": "https://usdtoreros.com/boxscore.aspx?id=9234&path=baseball",
-      "reason": "'source_worksheet_row'"
-    },
-    {
-      "game_id": "cb-2019-02-24-cal-state-fullerton-oklahoma-att0040",
-      "source_url": "https://soonersports.com/sports/2019/8/7/2150228",
-      "reason": "'source_worksheet_row'"
+      "win": "Dustyn Schramm",
+      "loss": "Travis Kuhn",
+      "source_audit": {
+        "game_id": "cb-2019-02-24-utah-san-diego-att0041",
+        "source": "https://usdtoreros.com/boxscore.aspx?id=9234&path=baseball",
+        "http_code": 200,
+        "source_bytes": 676672,
+        "source_sha256": "31c6f364dc83c510f9a7b02de1bad8f1a13273600e161ca959c03aaac6d4596f",
+        "teams": [
+          {
+            "name": "Utah",
+            "batters": 11,
+            "pitchers": 4,
+            "AB": 33,
+            "R": 6,
+            "H": 8,
+            "RBI": 6,
+            "BB": 10,
+            "SO": 11,
+            "pitching_outs": 27,
+            "pitching_runs": 5,
+            "pitching_hits": 13
+          },
+          {
+            "name": "San Diego",
+            "batters": 14,
+            "pitchers": 3,
+            "AB": 38,
+            "R": 5,
+            "H": 13,
+            "RBI": 5,
+            "BB": 6,
+            "SO": 6,
+            "pitching_outs": 27,
+            "pitching_runs": 6,
+            "pitching_hits": 8
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 32,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 6,
+            "hits": 8,
+            "errors": 1,
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              3,
+              1,
+              0
+            ]
+          },
+          {
+            "runs": 5,
+            "hits": 13,
+            "errors": 3,
+            "innings": [
+              2,
+              1,
+              0,
+              0,
+              0,
+              2,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Utah",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 4,
+            "substitutes": 2
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 14,
+            "pitcher_rows": 3,
+            "substitutes": 5
+          }
+        ],
+        "official_decisions": {
+          "win": "Schramm, Dustyn",
+          "loss": "Kuhn, Travis",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
     },
     {
       "game_id": "cb-2019-02-23-missouri-state-san-diego-att0039",
+      "player_rows": 31,
       "source_url": "https://usdtoreros.com/boxscore.aspx?id=8262&path=baseball",
-      "reason": "'source_worksheet_row'"
+      "win": "Josh Hendrickson",
+      "loss": "Hayden Juenger",
+      "source_audit": {
+        "game_id": "cb-2019-02-23-missouri-state-san-diego-att0039",
+        "source": "https://usdtoreros.com/boxscore.aspx?id=8262&path=baseball",
+        "http_code": 200,
+        "source_bytes": 677654,
+        "source_sha256": "3c60d82e3d826b22961c74a68d09f803ba573e60ef1447405e1dabdb95cdb690",
+        "teams": [
+          {
+            "name": "Missouri State",
+            "batters": 11,
+            "pitchers": 5,
+            "AB": 34,
+            "R": 4,
+            "H": 7,
+            "RBI": 3,
+            "BB": 5,
+            "SO": 12,
+            "pitching_outs": 24,
+            "pitching_runs": 14,
+            "pitching_hits": 10
+          },
+          {
+            "name": "San Diego",
+            "batters": 10,
+            "pitchers": 5,
+            "AB": 30,
+            "R": 14,
+            "H": 10,
+            "RBI": 12,
+            "BB": 11,
+            "SO": 2,
+            "pitching_outs": 27,
+            "pitching_runs": 4,
+            "pitching_hits": 7
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 31,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 4,
+            "hits": 7,
+            "errors": 1,
+            "innings": [
+              0,
+              0,
+              0,
+              1,
+              0,
+              3,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 14,
+            "hits": 10,
+            "errors": 0,
+            "innings": [
+              3,
+              1,
+              4,
+              0,
+              0,
+              4,
+              2,
+              0,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Missouri State",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 5,
+            "substitutes": 2
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 10,
+            "pitcher_rows": 5,
+            "substitutes": 1
+          }
+        ],
+        "official_decisions": {
+          "win": "Hendrickson, Josh",
+          "loss": "Juenger,Hayden",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2019-02-22-oklahoma-san-diego-att0037",
+      "player_rows": 30,
+      "source_url": "https://usdtoreros.com/boxscore.aspx?id=8235&path=baseball",
+      "win": "Cade Cavalli",
+      "loss": "Chris Murphy",
+      "source_audit": {
+        "game_id": "cb-2019-02-22-oklahoma-san-diego-att0037",
+        "source": "https://usdtoreros.com/boxscore.aspx?id=8235&path=baseball",
+        "http_code": 200,
+        "source_bytes": 647906,
+        "source_sha256": "5e9e8e1d94baafbc3d2f73dcca8a224f5c2681453ef9d6342d38e585bb7c2c84",
+        "teams": [
+          {
+            "name": "Oklahoma",
+            "batters": 10,
+            "pitchers": 3,
+            "AB": 32,
+            "R": 6,
+            "H": 4,
+            "RBI": 6,
+            "BB": 3,
+            "SO": 17,
+            "pitching_outs": 27,
+            "pitching_runs": 1,
+            "pitching_hits": 5
+          },
+          {
+            "name": "San Diego",
+            "batters": 14,
+            "pitchers": 3,
+            "AB": 28,
+            "R": 1,
+            "H": 5,
+            "RBI": 1,
+            "BB": 3,
+            "SO": 7,
+            "pitching_outs": 27,
+            "pitching_runs": 6,
+            "pitching_hits": 4
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 30,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 6,
+            "hits": 4,
+            "errors": 0,
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              4,
+              0,
+              2
+            ]
+          },
+          {
+            "runs": 1,
+            "hits": 5,
+            "errors": 1,
+            "innings": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Oklahoma",
+            "nine_starting_slots": true,
+            "batter_rows": 10,
+            "pitcher_rows": 3,
+            "substitutes": 1
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 14,
+            "pitcher_rows": 3,
+            "substitutes": 5
+          }
+        ],
+        "official_decisions": {
+          "win": "Cavalli, Cade",
+          "loss": "Murphy, Chris",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2019-02-19-uc-irvine-san-diego-state-att0035",
+      "player_rows": 36,
+      "source_url": "https://ucirvinesports.com/sports/baseball/stats/2019/san-diego-state/boxscore/5415",
+      "win": "Casey O'sullivan",
+      "loss": "Alonzo Garcia",
+      "source_audit": {
+        "game_id": "cb-2019-02-19-uc-irvine-san-diego-state-att0035",
+        "source": "https://ucirvinesports.com/sports/baseball/stats/2019/san-diego-state/boxscore/5415",
+        "http_code": 200,
+        "source_bytes": 1455731,
+        "source_sha256": "c565a61fdf1934bab07110d0317e4212e2c9bf4eefdfba12927f851e7bd74316",
+        "teams": [
+          {
+            "name": "UC Irvine",
+            "batters": 14,
+            "pitchers": 6,
+            "AB": 35,
+            "R": 3,
+            "H": 7,
+            "RBI": 2,
+            "BB": 4,
+            "SO": 12,
+            "pitching_outs": 24,
+            "pitching_runs": 9,
+            "pitching_hits": 10
+          },
+          {
+            "name": "San Diego State",
+            "batters": 9,
+            "pitchers": 7,
+            "AB": 29,
+            "R": 9,
+            "H": 10,
+            "RBI": 9,
+            "BB": 9,
+            "SO": 8,
+            "pitching_outs": 27,
+            "pitching_runs": 3,
+            "pitching_hits": 7
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 36,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 3,
+            "hits": 7,
+            "errors": 0,
+            "innings": [
+              0,
+              0,
+              0,
+              1,
+              1,
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          {
+            "runs": 9,
+            "hits": 10,
+            "errors": 1,
+            "innings": [
+              3,
+              0,
+              0,
+              0,
+              5,
+              0,
+              1,
+              0,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "UC Irvine",
+            "nine_starting_slots": true,
+            "batter_rows": 14,
+            "pitcher_rows": 6,
+            "substitutes": 5
+          },
+          {
+            "team": "San Diego State",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 7,
+            "substitutes": 0
+          }
+        ],
+        "official_decisions": {
+          "win": "O'sullivan, Casey",
+          "loss": "Garcia, Alonzo",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2019-02-16-wagner-san-diego-att0034",
+      "player_rows": 31,
+      "source_url": "https://usdtoreros.com/boxscore.aspx?id=8232&path=baseball",
+      "win": "Josh Hendrickson",
+      "loss": "Nick ZUPPE",
+      "source_audit": {
+        "game_id": "cb-2019-02-16-wagner-san-diego-att0034",
+        "source": "https://usdtoreros.com/boxscore.aspx?id=8232&path=baseball",
+        "http_code": 200,
+        "source_bytes": 652371,
+        "source_sha256": "04ffd73879059c30bc48104bbc3d046729cc04529d7e53f41d41d96d2f71552d",
+        "teams": [
+          {
+            "name": "Wagner",
+            "batters": 13,
+            "pitchers": 4,
+            "AB": 33,
+            "R": 1,
+            "H": 7,
+            "RBI": 1,
+            "BB": 3,
+            "SO": 10,
+            "pitching_outs": 24,
+            "pitching_runs": 3,
+            "pitching_hits": 8
+          },
+          {
+            "name": "San Diego",
+            "batters": 11,
+            "pitchers": 3,
+            "AB": 29,
+            "R": 3,
+            "H": 8,
+            "RBI": 3,
+            "BB": 4,
+            "SO": 7,
+            "pitching_outs": 27,
+            "pitching_runs": 1,
+            "pitching_hits": 7
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 31,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 1,
+            "hits": 7,
+            "errors": 0,
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          {
+            "runs": 3,
+            "hits": 8,
+            "errors": 0,
+            "innings": [
+              0,
+              0,
+              1,
+              0,
+              2,
+              0,
+              0,
+              0,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Wagner",
+            "nine_starting_slots": true,
+            "batter_rows": 13,
+            "pitcher_rows": 4,
+            "substitutes": 4
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 3,
+            "substitutes": 2
+          }
+        ],
+        "official_decisions": {
+          "win": "Hendrickson, Josh",
+          "loss": "ZUPPE, Nick",
+          "save": "Kuhn, Travis"
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2019-02-16-wagner-san-diego-att0033",
+      "player_rows": 28,
+      "source_url": "https://usdtoreros.com/boxscore.aspx?id=8231&path=baseball",
+      "win": "Grady Miller",
+      "loss": "Eric LIGDA",
+      "source_audit": {
+        "game_id": "cb-2019-02-16-wagner-san-diego-att0033",
+        "source": "https://usdtoreros.com/boxscore.aspx?id=8231&path=baseball",
+        "http_code": 200,
+        "source_bytes": 670133,
+        "source_sha256": "6d318f1235fb30221fd554ff9cb2ec9db659b3c10fa9c7397312765c7a4498a2",
+        "teams": [
+          {
+            "name": "Wagner",
+            "batters": 10,
+            "pitchers": 3,
+            "AB": 35,
+            "R": 9,
+            "H": 14,
+            "RBI": 9,
+            "BB": 4,
+            "SO": 4,
+            "pitching_outs": 24,
+            "pitching_runs": 15,
+            "pitching_hits": 15
+          },
+          {
+            "name": "San Diego",
+            "batters": 12,
+            "pitchers": 3,
+            "AB": 34,
+            "R": 15,
+            "H": 15,
+            "RBI": 15,
+            "BB": 5,
+            "SO": 6,
+            "pitching_outs": 27,
+            "pitching_runs": 9,
+            "pitching_hits": 14
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 28,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 9,
+            "hits": 14,
+            "errors": 3,
+            "innings": [
+              2,
+              0,
+              0,
+              0,
+              0,
+              3,
+              0,
+              4,
+              0
+            ]
+          },
+          {
+            "runs": 15,
+            "hits": 15,
+            "errors": 0,
+            "innings": [
+              0,
+              6,
+              1,
+              0,
+              2,
+              5,
+              1,
+              0,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Wagner",
+            "nine_starting_slots": true,
+            "batter_rows": 10,
+            "pitcher_rows": 3,
+            "substitutes": 1
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 12,
+            "pitcher_rows": 3,
+            "substitutes": 3
+          }
+        ],
+        "official_decisions": {
+          "win": "Miller, Grady",
+          "loss": "LIGDA, Eric",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2019-02-15-wagner-san-diego-att0032",
+      "player_rows": 33,
+      "source_url": "https://usdtoreros.com/boxscore.aspx?id=8230&path=baseball",
+      "win": "Chris Murphy",
+      "loss": "Neil ABBATIELLO",
+      "source_audit": {
+        "game_id": "cb-2019-02-15-wagner-san-diego-att0032",
+        "source": "https://usdtoreros.com/boxscore.aspx?id=8230&path=baseball",
+        "http_code": 200,
+        "source_bytes": 681143,
+        "source_sha256": "002cfa5e39df06a064e322b3cf4a9fa9cb354be664fc8b6e4d10991ac74f73f7",
+        "teams": [
+          {
+            "name": "Wagner",
+            "batters": 11,
+            "pitchers": 4,
+            "AB": 27,
+            "R": 0,
+            "H": 1,
+            "RBI": 0,
+            "BB": 7,
+            "SO": 12,
+            "pitching_outs": 24,
+            "pitching_runs": 14,
+            "pitching_hits": 16
+          },
+          {
+            "name": "San Diego",
+            "batters": 14,
+            "pitchers": 4,
+            "AB": 39,
+            "R": 14,
+            "H": 16,
+            "RBI": 13,
+            "BB": 8,
+            "SO": 2,
+            "pitching_outs": 27,
+            "pitching_runs": 0,
+            "pitching_hits": 1
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 33,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 0,
+            "hits": 1,
+            "errors": 2,
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 14,
+            "hits": 16,
+            "errors": 0,
+            "innings": [
+              0,
+              3,
+              0,
+              0,
+              3,
+              4,
+              2,
+              2,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Wagner",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 4,
+            "substitutes": 2
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 14,
+            "pitcher_rows": 4,
+            "substitutes": 5
+          }
+        ],
+        "official_decisions": {
+          "win": "Murphy, Chris",
+          "loss": "ABBATIELLO, Neil",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    }
+  ],
+  "pending_review": [
+    {
+      "game_id": "cb-2019-02-24-cal-state-fullerton-oklahoma-att0040",
+      "source_url": "https://soonersports.com/sports/2019/8/7/2150228",
+      "reason": "Original StatCrew innings/RHE not consistent with attendance game"
     },
     {
       "game_id": "cb-2019-02-23-kansas-state-utah-att0038",
       "source_url": "https://utahutes.com/sports/baseball/stats/2019/kansas-state/boxscore/15468",
-      "reason": "'source_worksheet_row'"
-    },
-    {
-      "game_id": "cb-2019-02-22-oklahoma-san-diego-att0037",
-      "source_url": "https://usdtoreros.com/boxscore.aspx?id=8235&path=baseball",
-      "reason": "'source_worksheet_row'"
+      "reason": "Utah: source batting order resolved to 10 starting slots, not 9"
     },
     {
       "game_id": "cb-2019-02-22-fresno-state-kansas-state-att0036",
       "source_url": "https://www.kstatesports.com/sports/baseball/stats/2019/fresno-state/boxscore/6949",
-      "reason": "'source_worksheet_row'"
-    },
-    {
-      "game_id": "cb-2019-02-19-uc-irvine-san-diego-state-att0035",
-      "source_url": "https://ucirvinesports.com/sports/baseball/stats/2019/san-diego-state/boxscore/5415",
-      "reason": "'source_worksheet_row'"
-    },
-    {
-      "game_id": "cb-2019-02-16-wagner-san-diego-att0034",
-      "source_url": "https://usdtoreros.com/boxscore.aspx?id=8232&path=baseball",
-      "reason": "'source_worksheet_row'"
-    },
-    {
-      "game_id": "cb-2019-02-16-wagner-san-diego-att0033",
-      "source_url": "https://usdtoreros.com/boxscore.aspx?id=8231&path=baseball",
-      "reason": "'source_worksheet_row'"
-    },
-    {
-      "game_id": "cb-2019-02-15-wagner-san-diego-att0032",
-      "source_url": "https://usdtoreros.com/boxscore.aspx?id=8230&path=baseball",
-      "reason": "'source_worksheet_row'"
+      "reason": "Fresno State: source batting order resolved to 10 starting slots, not 9"
     }
   ],
   "release": "Draft branch only; never auto-publish or merge"

@@ -6,15 +6,15 @@
   "original_attendance_games": 444,
   "verified_this_run": 0,
   "verified_in_season": 0,
-  "verified_overall": 223,
-  "player_game_rows_total": 6601,
+  "verified_overall": 281,
+  "player_game_rows_total": 8420,
   "already_verified": [],
   "completed": [],
   "pending_review": [
     {
       "game_id": "cb-2017-04-20-byu-san-diego-att0001",
       "source_url": "https://usandiego_ftp.sidearmsports.com/custompages/sports/m-basebl/stats/2016-201736.html",
-      "reason": "'source_worksheet_row'"
+      "reason": "HTTPSConnectionPool(host='usandiego_ftp.sidearmsports.com', port=443): Max retries exceeded with url: /custompages/sports/m-basebl/stats/2016-201736.html (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'usandiego_ftp.sidearmsports.com'. (_ssl.c:1010)\")))"
     }
   ],
   "release": "Draft branch only; never auto-publish or merge"

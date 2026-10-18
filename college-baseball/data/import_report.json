@@ -6,9 +6,9 @@
   "season_span": "2017–2026 after user-confirmed 2024 typo correction",
   "staged_games": 444,
   "official_score_and_inning_lines_matched": 213,
-  "official_player_boxscores_imported": 223,
-  "player_stat_rows": 6601,
-  "unique_player_ids": 3747,
+  "official_player_boxscores_imported": 281,
+  "player_stat_rows": 8420,
+  "unique_player_ids": 4417,
   "scores_supplied_by_user": 0,
   "source_docs": "Official Auburn, Arkansas, LSU, Florida, Mississippi State, Tennessee and Texas athletics/conference box scores and university recaps",
   "source_worksheet_rows": [
@@ -137,10 +137,10 @@
   "remaining_attendance_games_not_yet_imported": 0,
   "validation": "May 2026: all 27 official player books mapped to matching attendance games; scores, R/H/E, pitching/team opposing R and H, batting lineup starters checked; new imports have complete official per-inning lines. CI browser test separately tracked.",
   "all_attendance_entries_staged": 444,
-  "attendance_only_pending_official_verification": 221,
+  "attendance_only_pending_official_verification": 163,
   "source": "User workbook; 444 original rows, two user-corrected entries.",
   "official_scoreboard_player_lines_pending": 0,
-  "latest_verified_batch": "Historical official gamebooks 2023 (development branch)",
+  "latest_verified_batch": "Historical official gamebooks 2018 (development branch)",
   "latest_verified_batch_games": [
     {
       "worksheet_row": 432,
@@ -425,8 +425,8 @@
       "full_gamebooks_verified_urls": 11,
       "official_date_matches": 10,
       "official_date_reconciliation_required": 0,
-      "full_player_boxscores_imported": 0,
-      "status": "ALL_11_OFFICIAL_GAME_IDENTITIES_USER_CONFIRMED_READY_FOR_PLAYER_IMPORT",
+      "full_player_boxscores_imported": 9,
+      "status": "in_progress",
       "source_queue": "data/2020_official_source_queue.json",
       "audit_file": "data/2020_monthly_progress_audit.json",
       "official_date_corrections_user_confirmed": 1
@@ -438,8 +438,8 @@
       "full_gamebooks_verified_urls": 41,
       "official_date_matches": 41,
       "official_date_reconciliation_required": 0,
-      "full_player_boxscores_imported": 0,
-      "status": "FULL_OFFICIAL_SOURCE_QUEUE_READY_FOR_PLAYER_IMPORT",
+      "full_player_boxscores_imported": 38,
+      "status": "in_progress",
       "source_queue": "data/2019_official_source_queue.json",
       "audit_file": "data/2019_monthly_progress_audit.json"
     },
@@ -450,8 +450,8 @@
       "official_identity_scores_matched": 30,
       "full_gamebook_direct_sources_located": 30,
       "full_player_gamebook_url_pending": 0,
-      "full_player_boxscores_imported": 0,
-      "status": "2018_FULL_TABLE_EVIDENCE_ALL_30_GAMES_USER_BATTER_SO_RECONCILED_IMPORT_PENDING",
+      "full_player_boxscores_imported": 11,
+      "status": "in_progress",
       "source_queue": "data/2018_official_source_queue.json",
       "audit_file": "data/2018_monthly_progress_audit.json",
       "player_table_content_pending_verification": 1,
@@ -559,10 +559,12 @@
     "official_full_gamebooks_located": 11,
     "official_date_matches": 10,
     "date_review_pending": 0,
-    "player_boxscore_imported": 0,
+    "player_boxscore_imported": 9,
     "source_queue": "data/2020_official_source_queue.json",
     "monthly_audit": "data/2020_monthly_progress_audit.json",
-    "official_date_corrections_user_confirmed": 1
+    "official_date_corrections_user_confirmed": 1,
+    "new_verified_gamebooks_last_run": 9,
+    "last_run_pending_review": 2
   },
   "2019_backfill": {
     "approved": true,
@@ -570,9 +572,11 @@
     "official_full_gamebooks_located": 41,
     "official_date_matches": 41,
     "date_review_pending": 0,
-    "player_boxscore_imported": 0,
+    "player_boxscore_imported": 38,
     "source_queue": "data/2019_official_source_queue.json",
-    "monthly_audit": "data/2019_monthly_progress_audit.json"
+    "monthly_audit": "data/2019_monthly_progress_audit.json",
+    "new_verified_gamebooks_last_run": 38,
+    "last_run_pending_review": 3
   },
   "2018_backfill": {
     "approved": true,
@@ -580,12 +584,14 @@
     "official_game_identifications": 30,
     "full_player_gamebook_direct_sources": 30,
     "full_player_gamebook_link_not_yet_found": 0,
-    "player_boxscore_imported": 0,
+    "player_boxscore_imported": 11,
     "source_queue": "data/2018_official_source_queue.json",
     "monthly_audit": "data/2018_monthly_progress_audit.json",
     "full_player_gamebook_contents_verified": 30,
     "full_player_gamebook_content_verification_pending": 0,
-    "asu_2018_05_09_user_batter_so_reconstructed": true
+    "asu_2018_05_09_user_batter_so_reconstructed": true,
+    "new_verified_gamebooks_last_run": 11,
+    "last_run_pending_review": 19
   },
   "2017_backfill": {
     "approved": true,

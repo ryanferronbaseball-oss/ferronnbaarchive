@@ -4,10 +4,10 @@
   "limit": 0,
   "status": "PARTIAL_REVIEW_REQUIRED",
   "original_attendance_games": 444,
-  "verified_this_run": 1,
+  "verified_this_run": 0,
   "verified_in_season": 44,
-  "verified_overall": 420,
-  "player_game_rows_total": 12667,
+  "verified_overall": 424,
+  "player_game_rows_total": 12794,
   "already_verified": [
     "cb-2023-05-24-saint-mary-s-san-diego-att0224",
     "cb-2023-05-24-gonzaga-santa-clara-att0223",
@@ -25,6 +25,7 @@
     "cb-2023-04-25-cal-state-northridge-san-diego-att0211",
     "cb-2023-04-23-san-francisco-san-diego-att0210",
     "cb-2023-04-22-san-francisco-san-diego-att0209",
+    "cb-2023-04-21-san-francisco-san-diego-att0208",
     "cb-2023-04-18-san-diego-san-diego-state-att0207",
     "cb-2023-04-16-portland-san-diego-att0206",
     "cb-2023-04-15-portland-san-diego-att0205",
@@ -53,115 +54,7 @@
     "cb-2023-02-18-nebraska-san-diego-att0179",
     "cb-2023-02-17-nebraska-san-diego-att0178"
   ],
-  "completed": [
-    {
-      "game_id": "cb-2023-04-21-san-francisco-san-diego-att0208",
-      "player_rows": 31,
-      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/san-francisco/boxscore/13925",
-      "win": "Austin Smith",
-      "loss": "Jesse BARRON",
-      "source_audit": {
-        "game_id": "cb-2023-04-21-san-francisco-san-diego-att0208",
-        "source": "https://usdtoreros.com/sports/baseball/stats/2023/san-francisco/boxscore/13925",
-        "http_code": 200,
-        "source_bytes": 680343,
-        "source_sha256": "0f353fd30f9f7f08e0d982e65ab3d6e9ca165fd9d04c6b88fcf4db39f818edd4",
-        "teams": [
-          {
-            "name": "San Francisco",
-            "batters": 13,
-            "pitchers": 3,
-            "AB": 36,
-            "R": 3,
-            "H": 11,
-            "RBI": 3,
-            "BB": 0,
-            "SO": 9,
-            "pitching_outs": 24,
-            "pitching_runs": 17,
-            "pitching_hits": 17
-          },
-          {
-            "name": "San Diego",
-            "batters": 11,
-            "pitchers": 5,
-            "AB": 41,
-            "R": 17,
-            "H": 17,
-            "RBI": 15,
-            "BB": 4,
-            "SO": 5,
-            "pitching_outs": 27,
-            "pitching_runs": 3,
-            "pitching_hits": 11
-          }
-        ],
-        "source_warnings": [],
-        "player_rows": 31,
-        "status": "PASS",
-        "scoreboard": [
-          {
-            "runs": 3,
-            "hits": 11,
-            "errors": 2,
-            "innings": [
-              0,
-              2,
-              0,
-              0,
-              1,
-              0,
-              0,
-              0,
-              0
-            ]
-          },
-          {
-            "runs": 17,
-            "hits": 17,
-            "errors": 0,
-            "innings": [
-              9,
-              1,
-              0,
-              3,
-              0,
-              0,
-              4,
-              0,
-              null
-            ]
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "San Francisco",
-            "nine_starting_slots": true,
-            "batter_rows": 13,
-            "pitcher_rows": 3,
-            "substitutes": 4
-          },
-          {
-            "team": "San Diego",
-            "nine_starting_slots": true,
-            "batter_rows": 11,
-            "pitcher_rows": 5,
-            "substitutes": 2
-          }
-        ],
-        "official_decisions": {
-          "win": "Smith, Austin",
-          "loss": "BARRON, Jesse",
-          "save": null
-        },
-        "resolved_pitcher_decisions": {
-          "win": null,
-          "loss": null,
-          "save": null
-        }
-      }
-    }
-  ],
+  "completed": [],
   "pending_review": [
     {
       "game_id": "cb-2023-02-26-uc-irvine-san-diego-att0186",

@@ -385,6 +385,31 @@ def _source_batters(table, valid_players, team, game_id):
         if slug(name) in pbp_2019_2023_substitutions.get((game_id, team), set()):
             is_sub = True
 
+        # Verified older USD/Indiana and Seattle university play-by-play.
+        # Only defensive/pinch transitions named here (not inferred starters).
+        source_legacy_lineup_followons = {
+            # Mar 3, 2018 IU/USD first game 1:10pm:
+            # Bunnell -> PH Eustace -> defensive 2B Stratten -> PH Ashley;
+            # Houston -> PH Crail -> SS Walker.
+            ("cb-2018-03-03-indiana-san-diego-att0014", "Indiana"):
+                {"colby-stratten", "drew-ashley", "justin-walker"},
+            # Mar 3 second game 5pm: Ashley -> 2B Stratten;
+            # Houston -> PH Crail -> defensive SS Walker.
+            ("cb-2018-03-03-indiana-san-diego-att0015", "Indiana"):
+                {"colby-stratten", "justin-walker"},
+            # Mar 4: Gutierrez DH/PH for prior Odekirk; university PBP.
+            ("cb-2018-03-04-indiana-san-diego-att0016", "San Diego"):
+                {"dante-gutierrez"},
+            # Feb 25: Connor Doyle LF for PH Dante Gutierrez.
+            ("cb-2018-02-25-arizona-san-diego-att0012", "San Diego"):
+                {"c-doyle"},
+            # Feb 23 2020 Seattle: Gerard 3B for PH Sherick; not 10th starter.
+            ("cb-2020-02-23-southern-illinois-seattle-att0078", "Seattle"):
+                {"dylan-gerard"},
+        }
+        if slug(name) in source_legacy_lineup_followons.get((game_id, team), set()):
+            is_sub = True
+
         # Source play-by-play corroborates the unindented entries below,
         # whose predecessor already appears in the same batting slot.
         source_confirmed_unindented = {

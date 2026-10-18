@@ -21,7 +21,7 @@
       "height": 245
     }
   ],
-  "status": "BOTH_TEAMS_COMPLETE_BATTING_PITCHING_PLAYER_LINES_WITH_USER_RECONSTRUCTED_SO",
+  "status": "FULL_GAME_RECONCILED_FROM_USER_SUPPLIED_OFFICIAL_SCOREBOARD_PLAYER_TABLES_AND_SUBSTITUTIONS_PENDING_STRICT_IMPORT",
   "verified_score": {
     "away": "Arizona State",
     "away_runs": 12,
@@ -632,16 +632,18 @@
   "data_quality_holds": [
     "RESOLVED ON OCTOBER 17, 2026: ASU batting table SO field was incorrect (zeros for hitters and opponent pitcher totals in batting pitcher rows). User supplied every nonzero hitter K from play-by-play, including Todd Jackson's one strikeout in a follow-up. Assigned 3+1+3=7 Arizona State batter Ks, and 2+1+1+1+1+3+1+1=11 San Diego batter Ks; totals exactly reconcile to opposing pitchers' source totals. Remaining hitters have zero by difference, not from the incorrect ASU screenshot.",
     "Pitching SO (7 for San Diego pitchers and 11 for Arizona State pitchers) is clearly verified and safe.",
-    "Both screenshots capture the respective player tables but do not show an inning-by-inning scoring line, all batting-order substitution indentation, runner LOB, batter-by-batter SO, or authoritative save outcome; leave those unknown.",
-    "Player source screenshot rows retain on-screen display ordering and defensive substitutions. Source_display_order is not guaranteed true batting order. Never silently assert nine-slot batting order from visual row positions.",
-    "Source screenshots currently live in original user conversation attachments; repository evidence JSON transcribes verified fields, and official ASU score page is cited. Full player tables are available to read, but not yet imported into games.json or player_stats.json."
+    "Source screenshots currently live in original user conversation attachments; repository evidence JSON transcribes verified fields, and official ASU score page is cited. Full player tables are available to read, but not yet imported into games.json or player_stats.json.",
+    "The game source did not independently label a save. Record save as null/unknown, not a credited save."
   ],
   "review_state": {
     "batting_fields_ab_r_h_rbi_extra_base_hits_bb_hbp": "transcribed_and_team_total_checked",
     "pitching_lines": "transcribed_and_team_total_checked",
     "batter_strikeouts": "user_play_by_play_reconstructed_11_for_USD_7_for_ASU_reconciled",
     "game_identity": "matched",
-    "player_stat_import": "not_started"
+    "player_stat_import": "not_started",
+    "game_innings": "source_image_provided_2026_10_18_reconciled",
+    "starting_order_nine_slots_and_substitutions": "archive_owner_explicitly_confirmed_2026_10_18",
+    "pitcher_decisions": "W Romero L Sprengel; save not labeled in screenshot; keep null without inventing credited save"
   },
   "user_reconstructed_batter_strikeouts": {
     "date_confirmed": "2026-10-17",
@@ -668,5 +670,152 @@
     "verification": "Positive strikeout counts were directly supplied by user from play-by-play; all other 0s are team-total-derived and both teams independently reconcile with opponent pitching totals.",
     "source_page": "https://thesundevils.com/boxscore/466",
     "pending_unrelated_data": "Inning-by-inning line score, save designation and strict substitute batting-order slots not fully verified from the two screenshots alone; official USD PDF is identified but not downloaded or parsed."
+  },
+  "scoreboard_source": {
+    "filename": "Screenshot 2026-10-18 at 12.32.47 AM.png",
+    "file_id": "file_0000000045a081f5b589dd3a9489b970",
+    "source": "user_provided_original_baseball_game_scoreboard_screenshot_2026_10_18",
+    "printed_date": "05/09/2018",
+    "printed_attendance": 658,
+    "printed_sport": "Baseball",
+    "inning_columns": 9,
+    "away": {
+      "team": "Arizona State",
+      "innings": [
+        1,
+        1,
+        3,
+        2,
+        1,
+        1,
+        0,
+        2,
+        1
+      ],
+      "runs": 12,
+      "hits": 13,
+      "errors": 0
+    },
+    "home": {
+      "team": "San Diego",
+      "innings": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        4,
+        0,
+        2
+      ],
+      "runs": 7,
+      "hits": 14,
+      "errors": 1
+    },
+    "validation": "nine_inning_run_sums_and_game_boxscore_team_hit_totals_reconcile"
+  },
+  "user_confirmed_source_lineup": {
+    "confirmed_on": "2026-10-18",
+    "user_confirmed_substitutions": [
+      {
+        "team": "San Diego",
+        "substitute": "Todd Jackson",
+        "replaced": "Trevor Rosenberg",
+        "role": "pinch_hitter",
+        "slot": 9
+      },
+      {
+        "team": "San Diego",
+        "substitute": "Trevor Omahen",
+        "replaced": "Todd Jackson",
+        "role": "defensive_successor",
+        "slot": 9
+      },
+      {
+        "team": "Arizona State",
+        "substitute": "Boyd Vander Kooi",
+        "replaced": "Spencer Torkelson",
+        "slot": 1
+      },
+      {
+        "team": "Arizona State",
+        "substitute": "Luke Leisenring",
+        "replaced": "Lyle Lin",
+        "slot": 4
+      },
+      {
+        "team": "Arizona State",
+        "substitute": "Trevor Hauver",
+        "replaced": "Hunter Jump",
+        "slot": 5
+      }
+    ],
+    "lineups": {
+      "away": [
+        [
+          "Spencer Torkelson",
+          "Boyd Vander Kooi"
+        ],
+        [
+          "Gage Canning"
+        ],
+        [
+          "Carter Aldrete"
+        ],
+        [
+          "Lyle Lin",
+          "Luke Leisenring"
+        ],
+        [
+          "Hunter Jump",
+          "Trevor Hauver"
+        ],
+        [
+          "Alika Williams"
+        ],
+        [
+          "Hunter Bishop"
+        ],
+        [
+          "Zach Hogueisson"
+        ],
+        [
+          "Drew Swift"
+        ]
+      ],
+      "home": [
+        [
+          "Paul Kunst"
+        ],
+        [
+          "Jay Schuyler"
+        ],
+        [
+          "Shane McGuire"
+        ],
+        [
+          "Brhet Bewley"
+        ],
+        [
+          "Jeff Houghtby"
+        ],
+        [
+          "Adam Kerner"
+        ],
+        [
+          "Kevin Collard"
+        ],
+        [
+          "Connor Doyle"
+        ],
+        [
+          "Trevor Rosenberg",
+          "Todd Jackson",
+          "Trevor Omahen"
+        ]
+      ]
+    },
+    "source": "Original May 9 game box batting tables and archive owner's explicit batting-order substitution confirmations on 2026-10-18"
   }
 }

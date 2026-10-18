@@ -461,6 +461,17 @@ def _source_batters(table, valid_players, team, game_id):
         # Source play-by-play corroborates the unindented entries below,
         # whose predecessor already appears in the same batting slot.
         source_confirmed_unindented = {
+            # 2022 Apr 22 Grand Canyon–Stanford original university
+            # play-by-play: "Saum,C to c for Gargus,H" at top of 9th.
+            # Stanford's box prints Saum immediately after PH Henry Gargus
+            # without indent; both occupy starter Kody Huff's fifth slot.
+            ("cb-2022-04-21-grand-canyon-stanford-att0151", "Stanford"):
+                {"Charlie Saum"},
+            # 2023 Feb 26 UNLV–San Diego play-by-play: "RODRIGUEZ,N
+            # to 2b for KRYSZCZUK,A" in bottom 7th. Horvat began 2B;
+            # PH Kryszczuk and 2B Rodriguez use the original ninth spot.
+            ("cb-2023-02-25-unlv-san-diego-att0185", "UNLV"):
+                {"Noah Rodriguez"},
             # Apr 27 ECU–Tulane official PBP: Peltier ran for Collins,
             # Whitaker hit for Peltier, Bowman hit for Parham.
             ("cb-2025-04-27-tulane-east-carolina-att0338", "East Carolina"):

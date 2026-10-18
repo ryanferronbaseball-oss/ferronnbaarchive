@@ -1,6 +1,6 @@
 {
   "season": 2018,
-  "status": "30_IDENTITIES_MATCHED_29_DIRECT_FULL_GAMEBOOK_SOURCES_1_ASU_PLAYER_GAMEBOOK_PENDING_0_PLAYER_IMPORTS",
+  "status": "30_OF_30_UNIVERSITY_GAMEBOOK_LINKS_FOUND_29_CONTENT_VERIFIED_1_PDF_CONTENT_PENDING_0_PLAYER_STAT_IMPORTS",
   "authorization_date": "2026-10-17",
   "commit_branch": "feature/college-baseball-foundation",
   "original_attendance_rows_preserved": 444,
@@ -9,8 +9,8 @@
   "release_boundary": "2017–2026 approved for source research, 2016 and earlier excluded; no publishing or merging without user approval; JUCO stat backfill excluded.",
   "attendance_games": 30,
   "official_date_team_score_matches": 30,
-  "full_player_gamebooks_with_direct_university_source_urls": 29,
-  "full_player_gamebooks_still_pending_direct_url": 1,
+  "full_player_gamebooks_with_direct_university_source_urls": 30,
+  "full_player_gamebooks_still_pending_direct_url": 0,
   "actual_player_boxscores_imported": 0,
   "monthly": {
     "2018-02": {
@@ -37,25 +37,13 @@
     "2018-05": {
       "attendance_games": 5,
       "official_identity_score_matches": 5,
-      "complete_player_gamebooks_located": 4,
-      "complete_player_gamebooks_pending": 1,
-      "verified_player_stat_gamebooks_imported": 0
+      "complete_player_gamebooks_located": 5,
+      "complete_player_gamebooks_pending": 0,
+      "verified_player_stat_gamebooks_imported": 0,
+      "complete_player_gamebook_sources_pending_content_verification": 1
     }
   },
-  "unresolved_full_gamebook_sources": [
-    {
-      "game_id": "cb-2018-05-09-arizona-state-san-diego-att0031",
-      "date": "2018-05-09",
-      "match": "Arizona State at San Diego",
-      "official_score": [
-        12,
-        7
-      ],
-      "source_status": "official_university_boxscore_page_linked_player_tables_not_yet_retrievable",
-      "official_identity_source": "https://usdtoreros.com/sports/baseball/schedule/2018",
-      "official_boxscore_page_url": "https://thesundevils.com/boxscore/466"
-    }
-  ],
+  "unresolved_full_gamebook_sources": [],
   "verified_doubleheaders": [
     {
       "date": "2018-02-18",
@@ -93,7 +81,8 @@
     "Two complete player-gamebook sources remain to verify: Mar 13 SDSU 9–USD 3 (no full gamebook yet), May 9 Arizona State 12–USD 7 (user-provided official ASU boxscore page shows score but not retrievable full player tables). Apr 14 Saint Mary's 6–USD 5 complete user-uploaded university PDF now verified.",
     "April 14 user-uploaded USD gamebook with full player tables: https://usdtoreros.com/documents/2018/5/10/14226__m_basebl_2017_18_misc_non_event__USDvsSMCboxApr14.pdf",
     "May 9 ASU official boxscore page supplied by user, player lines not yet retrievable: https://thesundevils.com/boxscore/466",
-    "October 17 2026: March 13, 2018 USD–SDSU full university PDF verified with individual player stats from user's Library upload and official USD document source; only Arizona State at San Diego May 9, 2018 remains without verified individual-player gamebook."
+    "October 17 2026: March 13, 2018 USD–SDSU full university PDF verified with individual player stats from user's Library upload and official USD document source; only Arizona State at San Diego May 9, 2018 remains without verified individual-player gamebook.",
+    "2018 May 9 ASU–USD USD official PDF document 14288 identified by web search. PDF landing is visible and document titled 'USD vs ASU Box (PDF)', but actual player tables not inspected/downloaded. Thus 30/30 full boxscore document links located, 29/30 full player-table contents independently verified. Stats import remains zero."
   ],
   "resolved_additional_full_player_gamebook": {
     "attendance_id": "cb-attended-0026",
@@ -120,6 +109,16 @@
       "date": "2018-04-17",
       "match": "Cal State Fullerton 4 at San Diego 10",
       "university_official_full_gamebook": "https://fullertontitans.com/sports/baseball/stats/2018/san-diego/boxscore/1417"
+    }
+  ],
+  "full_player_gamebook_contents_verified": 29,
+  "unverified_pdf_document_contents": 1,
+  "pending_content_verification": [
+    {
+      "game_id": "cb-2018-05-09-arizona-state-san-diego-att0031",
+      "source_url": "https://usdtoreros.com/documents/2018/6/27/14288__m_basebl_2017_18_misc_non_event__USDvsASUboxMay9.pdf",
+      "alternate_user_visible_js_boxscore": "https://thesundevils.com/boxscore/466",
+      "reason": "Official PDF document link located on USD, but downloading and reading the 2018 PDF's individual player tables has not succeeded through present tools."
     }
   ]
 }

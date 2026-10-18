@@ -58,7 +58,7 @@
   ],
   "same_day_identical_matchup_pairs_in_full_sheet": 13,
   "metadata_status": "full_444_game_attendance_directory_plus_may_2026_official_sources",
-  "warning": "2024–2026 four-year NCAA/four-year verified source-gamebooks only; all junior colleges excluded from backfill. 2023 and earlier, merge/publication unapproved.",
+  "warning": "2022 source discovery 62/62, 2023 47/47; 2022/2023 player stats NOT yet imported, one 2022 date conflict and three 2023 conflicts held for review. 2024–26 full official gamebooks 213/213 and player-game rows 6316 unchanged. All junior colleges excluded. 2021 and earlier and merge/publication not approved.",
   "resolved_matchups": [
     {
       "attendance_game_number": 443,
@@ -390,6 +390,18 @@
     },
     "season_2023": {
       "approved": false
+    },
+    "season_2022": {
+      "approved": true,
+      "attended": 62,
+      "eligible": 62,
+      "official_full_gamebook_source_urls": 62,
+      "source_date_matches": 61,
+      "date_identity_conflicts": 1,
+      "full_player_gamebooks_imported": 0,
+      "status": "SOURCE_DISCOVERY_COMPLETE_PLAYER_STATS_PENDING",
+      "source_queue": "data/2022_official_source_queue.json",
+      "audit_file": "data/2022_monthly_progress_audit.json"
     }
   },
   "early_2026_source_research": "data/2026_february_january_official_source_queue.json",
@@ -448,5 +460,14 @@
     "source_queue": "data/2023_official_source_queue.json",
     "month_audit": "data/2023_monthly_progress_audit.json",
     "stage": "source_discovery_completed_no_player_stat_backfill_yet"
+  },
+  "2022_backfill": {
+    "approved": true,
+    "original_attendance_games": 62,
+    "official_gamebooks_located": 62,
+    "date_discrepancy_pending": 1,
+    "player_boxscore_imported": 0,
+    "source_queue": "data/2022_official_source_queue.json",
+    "monthly_audit": "data/2022_monthly_progress_audit.json"
   }
 }

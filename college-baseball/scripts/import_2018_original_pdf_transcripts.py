@@ -59,9 +59,10 @@ def batter_line(part):
         raise ValueError("Unknown original source batting position: " + who)
     person = proper_name(mm.group(1))
     pos = mm.group(2).lower()
-    vals = list(map(int,m.group(2).split())) if False else list(map(int,m.group(0).split())) if False else list(map(int,re.findall(r"\d+",m.group(0)))) if False else list(map(int,re.findall(r"\b\d+\b",m.group(1).split()[-1]))) if False else list(map(int,re.findall(r"\d+",m.group(0).split()[-1]))) if False else list(map(int,re.findall(r"\d+",m.group(0)))) if False else list(map(int,re.findall(r"\d+",m.group(0)))) if False else list(map(int, re.findall(r"\d+", m.group(0)))) if False else None
-    vals = list(map(int, m.group(0).split()[-9:])) if False else list(map(int, re.findall(r"\d+", part[part.find(m.group(1))+len(m.group(1)):].split()[-9:]))) if False else None
-    return (person, pos, list(map(int, m.group(2).split())), bool(part and part[0].isspace()))
+    # Source-substitution indentation is relative to each original column.
+    indent = len(part) - len(part.lstrip())
+    return (person, pos, list(map(int, m.group(2).split())), indent)
+
 
 def pitcher_line(part):
     if not part.strip():
@@ -177,14 +178,15 @@ def parse(game, row, global_keys):
     audits=[]
     for i,team in enumerate(teams):
         slots=[]
-        for appearance,(name,pos,vals,indented) in enumerate(batters[team]):
+        source_indent_baseline=batters[team][0][3]
+        for appearance,(name,pos,vals,indent) in enumerate(batters[team]):
             ab,r,h,rbi,bb,so,po,assist,lob=vals
             # Pitchers with no plate appearances in these Statcrew sheets are
             # fielding entries, not tenth starting batting slots. Milam
             # genuinely hit in 2018 and must remain a starter.
             no_batting=pos=="p" and all(v==0 for v in vals[:6])
             if no_batting: continue
-            is_sub=(indented or pos.startswith("ph") or pos.startswith("pr")
+            is_sub=(indent>source_indent_baseline or pos.startswith("ph") or pos.startswith("pr")
                     or "/ph" in pos)
             if is_sub:
                 if not slots:raise ValueError("Substitution preceded lineup starter")

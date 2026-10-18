@@ -58,7 +58,7 @@
   ],
   "same_day_identical_matchup_pairs_in_full_sheet": 13,
   "metadata_status": "full_444_game_attendance_directory_plus_may_2026_official_sources",
-  "warning": "Verified historical imports are source-gated and provisional on an unpublished development branch; unresolved dates, ties, missing scorebooks and partial gamebooks remain pending. No JUCO included. No production deployment or merge.",
+  "warning": "Draft data; 436 of 437 eligible complete player gamebooks source verified. Seven JUCO attendance entries excluded; last Arizona State May 9 2018 source_matched final score only and full player gamebook still pending. No published merge or deployment.",
   "resolved_matchups": [
     {
       "attendance_game_number": 443,
@@ -137,7 +137,7 @@
   "remaining_attendance_games_not_yet_imported": 0,
   "validation": "May 2026: all 27 official player books mapped to matching attendance games; scores, R/H/E, pitching/team opposing R and H, batting lineup starters checked; new imports have complete official per-inning lines. CI browser test separately tracked.",
   "all_attendance_entries_staged": 444,
-  "attendance_only_pending_official_verification": 8,
+  "attendance_only_pending_official_verification": 7,
   "source": "User workbook; 444 original rows, two user-corrected entries.",
   "official_scoreboard_player_lines_pending": 0,
   "latest_verified_batch": "Historical official gamebooks 2018 (development branch)",
@@ -609,5 +609,8 @@
     "monthly_audit": "data/2017_monthly_progress_audit.json",
     "new_verified_gamebooks_last_run": 1,
     "last_run_pending_review": 0
-  }
+  },
+  "source_matched_player_gamebook_pending": 1,
+  "pending_complete_player_gamebooks": 1,
+  "last_source_only_result_note": "May 9 2018 Arizona State at San Diego (12–7): official matchup/final recorded, complete gamebook blocked only on independent source inning line and substitutions; status source_matched rather than official_boxscore_verified."
 }

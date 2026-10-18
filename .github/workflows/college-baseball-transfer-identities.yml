@@ -1,0 +1,45 @@
+name: College Baseball Owner Transfer Identity Reconciliation
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - feature/college-baseball-player-transfers-batch-01
+    paths:
+      - college-baseball/data/player_identity_merges.json
+      - college-baseball/scripts/reconcile_player_identities.py
+      - .github/workflows/college-baseball-transfer-identities.yml
+permissions:
+  contents: write
+concurrency:
+  group: college-baseball-transfer-identities-batch-01
+  cancel-in-progress: true
+jobs:
+  audit-and-build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feature/college-baseball-player-transfers-batch-01
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Audit source identities and build safe player crosswalk without altering source stats
+        run: python college-baseball/scripts/reconcile_player_identities.py --apply
+      - name: Commit small verified source-scoped crosswalk and comprehensive identity audit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add college-baseball/data/player_identity_crosswalk.json college-baseball/data/player_identity_reconciliation_audit.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Build verified first-batch player transfer ID crosswalk and matching audit"
+            git push origin HEAD:feature/college-baseball-player-transfers-batch-01
+          fi
+      - name: Attach transfer-ID matching audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: college-baseball-96-player-identity-audit
+          path: college-baseball/data/player_identity_reconciliation_audit.json
+          if-no-files-found: warn

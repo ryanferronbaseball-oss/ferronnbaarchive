@@ -18,7 +18,27 @@ function nav(active){
 }
 async function json(name,fallback){const r=await fetch("./data/"+name,{cache:"no-store"});if(!r.ok)throw Error("Missing "+name+" ("+r.status+")");return r.json()}
 async function load(){
- const [games,rows,report,crosswalk]=await Promise.all([json("games.json"),json("player_stats.json"),json("import_report.json"),json("mlb_crosswalk.json")]);
+ const [games,sourceRows,report,crosswalk,identity]=await Promise.all([json("games.json"),json("player_stats.json"),json("import_report.json"),json("mlb_crosswalk.json"),json("player_identity_crosswalk.json")]);
+ if(!identity||!Array.isArray(identity.merges))throw Error("Missing verified player identity merge manifest");
+ // Apply source-scoped team+player ID aliases in browser memory, never to
+ // the preserved original gamebook rows. Existing game team attribution stays intact.
+ const scopedAliases=new Map(),redirects=new Map();
+ for(const m of identity.merges){
+  if(!m.canonical_id||!Array.isArray(m.pairs)||!Array.isArray(m.source_player_ids))throw Error("Malformed transfer identity crosswalk");
+  for(const pair of m.pairs){
+   const key=pair.team+"\u0000"+pair.source_player_id;
+   if(scopedAliases.has(key)&&scopedAliases.get(key)!==m.canonical_id)throw Error("Conflicting transfer identity aliases");
+   scopedAliases.set(key,m.canonical_id);
+  }
+  for(const sourceId of m.source_player_ids){
+   if(redirects.has(sourceId)&&redirects.get(sourceId)!==m.canonical_id)throw Error("Conflicting transfer deep-link redirects");
+   redirects.set(sourceId,m.canonical_id);
+  }
+ }
+ const rows=sourceRows.map(r=>{
+  const unified=scopedAliases.get(r.team+"\u0000"+r.player_id);
+  return unified?{...r,original_school_player_id:r.player_id,player_id:unified}:r;
+ });
  if(!Array.isArray(games)||!Array.isArray(rows)||!Array.isArray(crosswalk))throw Error("Unexpected college baseball data structure");
  const gameMap=new Map(games.map(g=>[g.id,g]));
  if(gameMap.size!==games.length)throw Error("Duplicate college baseball game IDs");
@@ -34,7 +54,7 @@ async function load(){
   p.rows.push(r);
  }
  const players=[...byPlayer.values()].map(p=>({...p,teams:[...p.teams],games:[...p.games]}));
- return {games:games.slice().sort((a,b)=>b.date.localeCompare(a.date)||a.id.localeCompare(b.id)),rows,players,gameMap,report,crosswalk};
+ return {games:games.slice().sort((a,b)=>b.date.localeCompare(a.date)||a.id.localeCompare(b.id)),rows,players,gameMap,report,crosswalk,identity,redirects};
 }
 function sum(rows,category,key){
  const values=rows.map(r=>stat(r[category]?.[key])).filter(v=>v!=null);
@@ -251,7 +271,9 @@ function renderPlayers(d){
  options();draw();
 }
 function renderPlayer(d){
- const id=new URLSearchParams(location.search).get("id"),p=d.players.find(x=>String(x.player_id)===id);
+ const requestedId=new URLSearchParams(location.search).get("id");
+  const id=d.redirects.get(requestedId)||requestedId;
+  const p=d.players.find(x=>String(x.player_id)===id);
  if(!p){$("app").innerHTML='<div class="eyebrow">College Baseball · Player profile</div><h1>Player profile</h1>'+pending("No verified college baseball player profile is available for this ID. Players appear after official gamebook imports.");return}
  const b=bat(p.rows),pi=pitch(p.rows),qualifiedHit=p.rows.some(x=>x.batting!=null),qualifiedPitch=p.rows.some(x=>x.pitching!=null);
  const cross=d.crosswalk.find(x=>x.verified===true&&String(x.college_player_id)===id);

@@ -1,18 +1,18 @@
 # College Baseball · Courtside Archive
 
-**Status (October 17, 2026):** Unpublished draft PR #10 retains 444 original attendance records. **2021: 27/32 university full player gamebook links, 5 audit exceptions and 0/32 imports**; **2022: 62/62 source gamebooks linked, 0/62 imports**; **2023: 47/47 sources linked, 0/47 imports**. **2024 71/71, 2025 74/74, 2026 68/68** verified college gamebooks = **213 official 2024–26 full boxscores and 6,316 player-game records** (JUCO excluded). No merge or production deployment.
+**Status (October 17, 2026):** Unpublished draft PR #10 retains 444 original attendance records. **2021: 31/32 university full player gamebooks matched to attendance IDs, one April 24 doubleheader needs attended-game confirmation, 0/32 imported**; **2022: 62/62 source gamebooks located, 0/62 imports**; **2023: 47/47 sources located, 0/47 imports**. **2024 71/71, 2025 74/74, 2026 68/68** verified college gamebooks = **213 official 2024–26 full gamebooks and 6,316 player-game records**, JUCO excluded. Nothing merged or published.
 
 The site lives under \`/college-baseball/\`, with independent college baseball stats and verified inter-level player IDs only. It shares the exact MLB archive design system for Inter fonts, navigation, scoreboards, box-score layout, cards, responsive tables, and bat-order number column.
 
-## 2021 backfill — PARTIAL FULL GAMEBOOK DISCOVERY (authorized October 17, 2026)
+## 2021 backfill — 31/32 ORIGINAL GAME IDENTITIES SOURCED (authorized October 17, 2026)
 
-**32 original 2021 attendance entries (Feb 6, Mar 14, Apr 7, May 5): 27 university-hosted full individual-player gamebook links established; 0/32 2021 player-level boxscores imported.** Remaining five source match issues: April 24 CSUB at UC San Diego was actually **two games** (12:03 PM CSUB 3–UCSD 2; 3:32 PM CSUB 1–UCSD 7) but user worksheet has one attendance row, so neither can be assigned yet; April 2 USD at Fullerton 1–3 official result/recap found, but a complete player-level gamebook link remains pending; May 6–8 BYU at USD university boxscore pages identified, but player-line data is not accessible in retrieved pages, so the standard complete-gamebook parser must not treat them as verified player sources.
+**32 original 2021 attendance entries (Feb 6, Mar 14, Apr 7, May 5): 31 university-hosted full individual-player gamebooks matched to original IDs; 0/32 2021 player-level boxscores imported.** The remaining original April 24 CSU Bakersfield at UC San Diego worksheet row corresponds to a real doubleheader with two confirmed gamebooks (12:03 PM CSUB 3–UCSD 2; 3:32 PM CSUB 1–UCSD 7) and cannot be uniquely selected without user indicating which game was attended. **All 32 original records have official boxscore coverage or candidate sources; 31 are uniquely matched and one has two candidate full gamebooks.**
 
-The **March 13 UC Riverside at San Diego doubleheader is separated**: first game 1:00 PM USD 7–0 (USD source 12057), second 4:10 PM USD 9–0 (USD source 12117). The March 30 Vanguard (four-year NAIA) game is eligible, as it is not JUCO. Current official USD detailed historical gamebooks resolve March 5/7 location in favor of original attendance list; a conflicting WCC season index must not overwrite source gamebook identity.
+The April 2 USD at Fullerton 1–3 was resolved with the complete USD university source ID **12125**. May 6–8 BYU at USD gamebooks were resolved as university Sidearm IDs **12085, 12086, 12087** (May 6 game was ten innings). The March 13 UC Riverside at San Diego doubleheader is uniquely matched: first game 1:00 PM USD 7–0 (ID 12057); second 4:10 PM USD 9–0 (ID 12117). March 30 Vanguard is eligible NAIA/four-year, not JUCO. March 5/7 venues were verified on the USD official source page rather than reversed WCC index.
 
-- [2021 official source queue](data/2021_official_source_queue.json): preserves the original 32 attendance IDs, 27 direct player-level gamebooks, candidate boxscores for April 24 and official game/recap-only sources for the remaining four.
-- [2021 monthly progress audit](data/2021_monthly_progress_audit.json): monthly checkpoints, source verification limits and identity hold.
-- **Scope:** User authorized 2021 discovery on October 17, 2026. Still no 2021 full player-stat imports, no 2020 and earlier authorization, no publication or merge. All 444 attendance records and existing 2024–26 verified player-stat records remain unchanged; all JUCO backfill is excluded.
+- [2021 official source queue](data/2021_official_source_queue.json) (31 exact player-gamebook sources and both April 24 alternatives tied to the preserved original attendance list).
+- [2021 monthly progress audit](data/2021_monthly_progress_audit.json) with date, venue, doubleheader and stat import gates.
+- **Scope:** 2021 authorized for source matching; individual-player stat imports remain at zero, no 2020 and earlier authorization, no merge/publication. The 444 original attendance records and 213 2024–26 fully verified gamebooks and 6,316 player-game rows are untouched. All JUCO backfill excluded.
 
 ## 2022 backfill — OFFICIAL SOURCES LOCATED (authorized October 17, 2026)
 

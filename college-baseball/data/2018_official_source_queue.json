@@ -1,12 +1,12 @@
 {
   "season": 2018,
-  "status": "ALL_30_GAME_IDENTITIES_VERIFIED_13_OF_30_DIRECT_FULL_GAMEBOOK_LINKS_17_MORE_TO_LOCATE",
+  "status": "ALL_30_GAME_IDENTITIES_VERIFIED_26_OF_30_DIRECT_FULL_GAMEBOOK_LINKS_4_MORE_TO_LOCATE",
   "scope": "User approved 2018 and 2017 source discovery October 17, 2026. No JUCO. Preserve 444 original attendance game IDs. No merges, publication, deployment or 2016-and-older approval.",
   "progress": {
     "original_attendance_games": 30,
     "official_game_identity_matches": 30,
-    "official_full_player_gamebook_direct_sources_located": 13,
-    "official_schedule_and_score_verified_full_gamebook_url_pending": 17,
+    "official_full_player_gamebook_direct_sources_located": 26,
+    "official_schedule_and_score_verified_full_gamebook_url_pending": 4,
     "original_date_conflicts": 0,
     "source_linked_doubleheader_rows": 4,
     "player_gamebooks_imported": 0,
@@ -15,12 +15,13 @@
   "source_schedule": "https://usdtoreros.com/sports/baseball/schedule/2018",
   "notes": [
     "All 30 original 2018 attendance game IDs have matching official score and team/date identity from university schedule/gamebooks; no date conflicts.",
-    "13/30 exact full player gamebook URLs are directly linked; remaining 17 have confirmed official game identity and final score, but DO NOT claim full individual-player boxscores located.",
+    "26/30 exact full player gamebook URLs are directly linked; remaining 4 have confirmed official game identity and final score, but DO NOT claim full individual-player boxscores located.",
     "2018 Feb 18 Cincinnati doubleheader: Game 1 Cincinnati 7–USD 4 (10 innings), Game 2 Cincinnati 3–USD 4 walk-off; separate official university complete PDFs.",
     "2018 March 3 Indiana doubleheader: Game 1 Indiana 5–USD 6, Game 2 Indiana 6–USD 5; separate official university complete PDFs.",
     "2018 Apr 3 UC Irvine 2–USD 1 (11 innings) and May 6 Gonzaga 4–USD 5 (11 innings).",
     "California–Cincinnati Feb 17, Cal Poly–Arkansas Feb 23, Cal Poly–GCU Feb 24 are neutral tournament matches outside USD's own team schedule and have independent official university full player-level gamebooks.",
-    "Game scores stored away,home respecting original stable worksheet team assignments, not a generic winner-first score string."
+    "Game scores stored away,home respecting original stable worksheet team assignments, not a generic winner-first score string.",
+    "New 2018 official player-gamebook links verified for Indiana Mar 2/4, Santa Clara Mar 16–18, LMU Apr 6–8, UC Irvine Apr 3, Gonzaga May 4–6, and UC Riverside May 8; do not infer Arizona State May 9 stat link just from ASU schedule box-score label."
   ],
   "rows": [
     {
@@ -259,7 +260,9 @@
       "official_identity_source": "https://usdtoreros.com/sports/baseball/schedule/2018",
       "identity_match_status": "verified_date_teams_venue_when_available_and_final_score",
       "stat_import_status": "not_imported",
-      "full_player_gamebook_status": "full_player_gamebook_url_pending"
+      "full_player_gamebook_status": "exact_university_gamebook_source_identified",
+      "official_full_gamebook_url": "https://iuhoosiers.com/sports/baseball/stats/2018/-13-san-diego/boxscore/13857",
+      "full_gamebook_source_type": "official_indiana_full_player_gamebook_html"
     },
     {
       "game_id": "cb-2018-03-03-indiana-san-diego-att0014",
@@ -322,7 +325,9 @@
       "official_identity_source": "https://usdtoreros.com/sports/baseball/schedule/2018",
       "identity_match_status": "verified_date_teams_venue_when_available_and_final_score",
       "stat_import_status": "not_imported",
-      "full_player_gamebook_status": "full_player_gamebook_url_pending"
+      "full_player_gamebook_status": "exact_university_gamebook_source_identified",
+      "official_full_gamebook_url": "https://iuhoosiers.com/sports/baseball/stats/2018/-13-san-diego/boxscore/13860",
+      "full_gamebook_source_type": "official_indiana_full_player_gamebook_html"
     },
     {
       "game_id": "cb-2018-03-13-san-diego-state-san-diego-att0017",
@@ -356,7 +361,9 @@
       "official_identity_source": "https://usdtoreros.com/sports/baseball/schedule/2018",
       "identity_match_status": "verified_date_teams_venue_when_available_and_final_score",
       "stat_import_status": "not_imported",
-      "full_player_gamebook_status": "full_player_gamebook_url_pending"
+      "full_player_gamebook_status": "exact_university_gamebook_source_identified",
+      "official_full_gamebook_url": "https://santaclarabroncos.com/sports/baseball/stats/2018/san-diego/boxscore/1056",
+      "full_gamebook_source_type": "official_santa_clara_full_player_gamebook_html"
     },
     {
       "game_id": "cb-2018-03-17-santa-clara-san-diego-att0019",
@@ -373,7 +380,9 @@
       "official_identity_source": "https://usdtoreros.com/sports/baseball/schedule/2018",
       "identity_match_status": "verified_date_teams_venue_when_available_and_final_score",
       "stat_import_status": "not_imported",
-      "full_player_gamebook_status": "full_player_gamebook_url_pending"
+      "full_player_gamebook_status": "exact_university_gamebook_source_identified",
+      "official_full_gamebook_url": "https://santaclarabroncos.com/sports/baseball/stats/2018/san-diego/boxscore/1057",
+      "full_gamebook_source_type": "official_santa_clara_full_player_gamebook_html"
     },
     {
       "game_id": "cb-2018-03-18-santa-clara-san-diego-att0020",
@@ -390,7 +399,9 @@
       "official_identity_source": "https://usdtoreros.com/sports/baseball/schedule/2018",
       "identity_match_status": "verified_date_teams_venue_when_available_and_final_score",
       "stat_import_status": "not_imported",
-      "full_player_gamebook_status": "full_player_gamebook_url_pending"
+      "full_player_gamebook_status": "exact_university_gamebook_source_identified",
+      "official_full_gamebook_url": "https://santaclarabroncos.com/sports/baseball/stats/2018/san-diego/boxscore/1058",
+      "full_gamebook_source_type": "official_santa_clara_full_player_gamebook_html"
     },
     {
       "game_id": "cb-2018-04-03-uc-irvine-san-diego-att0021",
@@ -407,9 +418,11 @@
       "official_identity_source": "https://usdtoreros.com/sports/baseball/schedule/2018",
       "identity_match_status": "verified_date_teams_venue_when_available_and_final_score",
       "stat_import_status": "not_imported",
-      "full_player_gamebook_status": "full_player_gamebook_url_pending",
+      "full_player_gamebook_status": "exact_university_gamebook_source_identified",
       "innings": 11,
-      "notes": "Apr 3 USD–UC Irvine 1–2 in 11 innings."
+      "notes": "Apr 3 USD–UC Irvine 1–2 in 11 innings.",
+      "official_full_gamebook_url": "https://ucirvinesports.com/sports/baseball/stats/2018/san-diego/boxscore/5047",
+      "full_gamebook_source_type": "official_uc_irvine_full_player_gamebook_html"
     },
     {
       "game_id": "cb-2018-04-06-loyola-marymount-san-diego-att0022",
@@ -426,7 +439,9 @@
       "official_identity_source": "https://usdtoreros.com/sports/baseball/schedule/2018",
       "identity_match_status": "verified_date_teams_venue_when_available_and_final_score",
       "stat_import_status": "not_imported",
-      "full_player_gamebook_status": "full_player_gamebook_url_pending"
+      "full_player_gamebook_status": "exact_university_gamebook_source_identified",
+      "official_full_gamebook_url": "https://lmulions.com/sports/baseball/stats/2018/san-diego/boxscore/1916",
+      "full_gamebook_source_type": "official_loyola_marymount_full_player_gamebook_html"
     },
     {
       "game_id": "cb-2018-04-07-loyola-marymount-san-diego-att0023",
@@ -443,7 +458,9 @@
       "official_identity_source": "https://usdtoreros.com/sports/baseball/schedule/2018",
       "identity_match_status": "verified_date_teams_venue_when_available_and_final_score",
       "stat_import_status": "not_imported",
-      "full_player_gamebook_status": "full_player_gamebook_url_pending"
+      "full_player_gamebook_status": "exact_university_gamebook_source_identified",
+      "official_full_gamebook_url": "https://lmulions.com/sports/baseball/stats/2018/san-diego/boxscore/1917",
+      "full_gamebook_source_type": "official_loyola_marymount_full_player_gamebook_html"
     },
     {
       "game_id": "cb-2018-04-08-loyola-marymount-san-diego-att0024",
@@ -460,7 +477,9 @@
       "official_identity_source": "https://usdtoreros.com/sports/baseball/schedule/2018",
       "identity_match_status": "verified_date_teams_venue_when_available_and_final_score",
       "stat_import_status": "not_imported",
-      "full_player_gamebook_status": "full_player_gamebook_url_pending"
+      "full_player_gamebook_status": "exact_university_gamebook_source_identified",
+      "official_full_gamebook_url": "https://lmulions.com/sports/baseball/stats/2018/san-diego/boxscore/1918",
+      "full_gamebook_source_type": "official_loyola_marymount_full_player_gamebook_html"
     },
     {
       "game_id": "cb-2018-04-14-saint-mary-s-san-diego-att0025",
@@ -511,7 +530,9 @@
       "official_identity_source": "https://usdtoreros.com/sports/baseball/schedule/2018",
       "identity_match_status": "verified_date_teams_venue_when_available_and_final_score",
       "stat_import_status": "not_imported",
-      "full_player_gamebook_status": "full_player_gamebook_url_pending"
+      "full_player_gamebook_status": "exact_university_gamebook_source_identified",
+      "official_full_gamebook_url": "https://gozags.com/sports/baseball/stats/2018/san-diego/boxscore/1463",
+      "full_gamebook_source_type": "official_gonzaga_full_player_gamebook_html"
     },
     {
       "game_id": "cb-2018-05-05-gonzaga-san-diego-att0028",
@@ -528,7 +549,9 @@
       "official_identity_source": "https://usdtoreros.com/sports/baseball/schedule/2018",
       "identity_match_status": "verified_date_teams_venue_when_available_and_final_score",
       "stat_import_status": "not_imported",
-      "full_player_gamebook_status": "full_player_gamebook_url_pending"
+      "full_player_gamebook_status": "exact_university_gamebook_source_identified",
+      "official_full_gamebook_url": "https://gozags.com/sports/baseball/stats/2018/san-diego/boxscore/1464",
+      "full_gamebook_source_type": "official_gonzaga_full_player_gamebook_html"
     },
     {
       "game_id": "cb-2018-05-06-gonzaga-san-diego-att0029",
@@ -545,9 +568,11 @@
       "official_identity_source": "https://usdtoreros.com/sports/baseball/schedule/2018",
       "identity_match_status": "verified_date_teams_venue_when_available_and_final_score",
       "stat_import_status": "not_imported",
-      "full_player_gamebook_status": "full_player_gamebook_url_pending",
+      "full_player_gamebook_status": "exact_university_gamebook_source_identified",
       "innings": 11,
-      "notes": "May 6 Gonzaga 4, USD 5 after 11 innings."
+      "notes": "May 6 Gonzaga 4, USD 5 after 11 innings.",
+      "official_full_gamebook_url": "https://gozags.com/sports/baseball/stats/2018/san-diego/boxscore/1465",
+      "full_gamebook_source_type": "official_gonzaga_full_player_gamebook_html"
     },
     {
       "game_id": "cb-2018-05-08-uc-riverside-san-diego-att0030",
@@ -564,7 +589,9 @@
       "official_identity_source": "https://usdtoreros.com/sports/baseball/schedule/2018",
       "identity_match_status": "verified_date_teams_venue_when_available_and_final_score",
       "stat_import_status": "not_imported",
-      "full_player_gamebook_status": "full_player_gamebook_url_pending"
+      "full_player_gamebook_status": "exact_university_gamebook_source_identified",
+      "official_full_gamebook_url": "https://gohighlanders.com/sports/baseball/stats/2018/san-diego/boxscore/11756",
+      "full_gamebook_source_type": "official_uc_riverside_full_player_gamebook_html"
     },
     {
       "game_id": "cb-2018-05-09-arizona-state-san-diego-att0031",
@@ -582,6 +609,52 @@
       "identity_match_status": "verified_date_teams_venue_when_available_and_final_score",
       "stat_import_status": "not_imported",
       "full_player_gamebook_status": "full_player_gamebook_url_pending"
+    }
+  ],
+  "pending_gamebook_cases": [
+    {
+      "game_id": "cb-2018-03-13-san-diego-state-san-diego-att0017",
+      "date": "2018-03-13",
+      "match": "San Diego State at San Diego",
+      "official_score": [
+        9,
+        3
+      ],
+      "source_status": "official_date_teams_score_verified_full_player_link_pending",
+      "official_identity_source": "https://usdtoreros.com/sports/baseball/schedule/2018"
+    },
+    {
+      "game_id": "cb-2018-04-14-saint-mary-s-san-diego-att0025",
+      "date": "2018-04-14",
+      "match": "Saint Mary's at San Diego",
+      "official_score": [
+        6,
+        5
+      ],
+      "source_status": "official_date_teams_score_verified_full_player_link_pending",
+      "official_identity_source": "https://usdtoreros.com/sports/baseball/schedule/2018"
+    },
+    {
+      "game_id": "cb-2018-04-17-cal-state-fullerton-san-diego-att0026",
+      "date": "2018-04-17",
+      "match": "Cal State Fullerton at San Diego",
+      "official_score": [
+        4,
+        10
+      ],
+      "source_status": "official_date_teams_score_verified_full_player_link_pending",
+      "official_identity_source": "https://usdtoreros.com/sports/baseball/schedule/2018"
+    },
+    {
+      "game_id": "cb-2018-05-09-arizona-state-san-diego-att0031",
+      "date": "2018-05-09",
+      "match": "Arizona State at San Diego",
+      "official_score": [
+        12,
+        7
+      ],
+      "source_status": "official_date_teams_score_verified_full_player_link_pending",
+      "official_identity_source": "https://usdtoreros.com/sports/baseball/schedule/2018"
     }
   ]
 }

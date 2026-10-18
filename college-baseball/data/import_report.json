@@ -58,7 +58,7 @@
   ],
   "same_day_identical_matchup_pairs_in_full_sheet": 13,
   "metadata_status": "full_444_game_attendance_directory_plus_may_2026_official_sources",
-  "warning": "Verified historical imports are source-gated and provisional on an unpublished development branch; unresolved dates, ties, missing scorebooks and partial gamebooks remain pending. No JUCO included. No production deployment or merge.",
+  "warning": "All 437 eligible four-year college baseball gamebooks have original-source-verified player rows. Seven JUCO attendance records are excluded from the 437 eligible games. This remains a development branch; no production merge or deployment.",
   "resolved_matchups": [
     {
       "attendance_game_number": 443,
@@ -610,7 +610,17 @@
     "new_verified_gamebooks_last_run": 1,
     "last_run_pending_review": 0
   },
-  "source_matched_player_gamebook_pending": 1,
-  "pending_complete_player_gamebooks": 1,
-  "last_source_only_result_note": "May 9 2018 Arizona State at San Diego (12–7): official matchup/final recorded, complete gamebook blocked only on independent source inning line and substitutions; status source_matched rather than official_boxscore_verified."
+  "source_matched_player_gamebook_pending": 0,
+  "pending_complete_player_gamebooks": 0,
+  "last_source_only_result_note": "Resolved October 18, 2026: Arizona State at San Diego 2018-05-09 source scoreboard and all five substitute identities supplied and source-gated fully imported.",
+  "release_readiness": {
+    "complete_eligible_gamebooks": 437,
+    "eligible_games": 437,
+    "original_attendance_ids": 444,
+    "juco_excluded": 7,
+    "verified_player_game_rows": 13183,
+    "last_gamebook_completed": "cb-2018-05-09-arizona-state-san-diego-att0031",
+    "deployment_status": "development_branch_not_merged",
+    "last_gamebook_verified_on": "2026-10-18"
+  }
 }

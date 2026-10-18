@@ -79,13 +79,17 @@ def source_url(row):
 def resolve(year, game, row):
     if game.get("boxscore_backfill_excluded"):
         raise ValueError("JUCO explicitly excluded")
-    if any(game.get(k) != row[k] for k in ("away", "home", "source_worksheet_row")):
+    # Older research queues use source_workbook_row; the original game file
+    # consistently uses source_worksheet_row. Compare values, not field labels.
+    source_row = row.get("source_worksheet_row", row.get("source_workbook_row"))
+    if source_row is None or source_row != game.get("source_worksheet_row") or (
+        game["away"], game["home"]) != (row["away"], row["home"]):
         raise ValueError("Source names or original attendance row differ")
     original = row.get("original_date", row.get("original_attendance_date"))
     if original != game["date"] or game["season"] != year:
         raise ValueError("Original attendance date or season differs")
-    if row.get("needs_attendance_confirmation") or row.get("requires_user_date_reconciliation"):
-        raise ValueError("University source identity needs attendance confirmation")
+    if row.get("needs_attendance_confirmation") or row.get("requires_user_date_reconciliation") or row.get("needs_attendance_order_confirmation"):
+        raise ValueError("University source identity or doubleheader attendance order needs confirmation")
     if "date_conflict" in row.get("research_status", "") or row.get("source_identity_status") == "official_date_conflicts_with_attendance":
         raise ValueError("Unreconciled date conflict")
     if row.get("official_date") and row["official_date"] != original and not row.get("attendance_identity_user_confirmed"):
@@ -234,6 +238,10 @@ def main():
     y.update({"approved":True,"player_boxscore_imported":imported_this_year,
               "new_verified_gamebooks_last_run":len(completed),
               "last_run_pending_review":len(pending)})
+    if "official_boxscores_player_rows_imported" in y:
+        y["official_boxscores_player_rows_imported"] = imported_this_year
+    if "stage" in y:
+        y["stage"] = "historical_verified_player_stat_backfill_in_progress"
     gate=report.setdefault("monthly_review_gate",{}).setdefault("season_"+str(args.season),{})
     gate["full_player_boxscores_imported"] = imported_this_year
     gate["status"] = "in_progress" if pending or imported_this_year < len(queue) else "verified_complete"

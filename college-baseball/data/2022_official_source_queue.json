@@ -780,11 +780,14 @@
         1,
         11
       ],
-      "source_identity_status": "official_date_conflicts_with_attendance",
+      "source_identity_status": "official_date_user_confirmed",
       "official_date": "2022-04-22",
       "venue": "Tony Gwynn Stadium, San Diego, CA",
-      "needs_attendance_confirmation": true,
-      "review_note": "Original April 21 GCU at Stanford attendance row conflicts with both universities: Stanford–GCU was actually April 22. GCU played San Diego State on April 21. Do not change original date or infer actual attended contest without user confirmation."
+      "needs_attendance_confirmation": false,
+      "review_note": "Original April 21 GCU at Stanford attendance row conflicts with both universities: Stanford–GCU was actually April 22. GCU played San Diego State on April 21. Do not change original date or infer actual attended contest without user confirmation. User confirmed this matchup and corrected date on 2026-10-17.",
+      "attendance_identity_user_confirmed": true,
+      "attendance_user_confirmation_date": "2026-10-17",
+      "attendance_user_confirmation_note": "User explicitly confirmed these attended matchups and corrected official dates on 2026-10-17. Retain original worksheet date and attendance ID."
     },
     {
       "game_id": "cb-2022-04-26-san-diego-cal-state-fullerton-att0152",

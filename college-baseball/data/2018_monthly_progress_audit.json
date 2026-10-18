@@ -1,6 +1,6 @@
 {
   "season": 2018,
-  "status": "30_IDENTITIES_MATCHED_26_DIRECT_FULL_GAMEBOOK_SOURCES_4_PLAYER_LINKS_PENDING_0_PLAYER_IMPORTS",
+  "status": "30_IDENTITIES_MATCHED_27_DIRECT_FULL_GAMEBOOK_SOURCES_3_PLAYER_LINKS_PENDING_0_PLAYER_IMPORTS",
   "authorization_date": "2026-10-17",
   "commit_branch": "feature/college-baseball-foundation",
   "original_attendance_rows_preserved": 444,
@@ -9,8 +9,8 @@
   "release_boundary": "2017–2026 approved for source research, 2016 and earlier excluded; no publishing or merging without user approval; JUCO stat backfill excluded.",
   "attendance_games": 30,
   "official_date_team_score_matches": 30,
-  "full_player_gamebooks_with_direct_university_source_urls": 26,
-  "full_player_gamebooks_still_pending_direct_url": 4,
+  "full_player_gamebooks_with_direct_university_source_urls": 27,
+  "full_player_gamebooks_still_pending_direct_url": 3,
   "actual_player_boxscores_imported": 0,
   "monthly": {
     "2018-02": {
@@ -30,8 +30,8 @@
     "2018-04": {
       "attendance_games": 6,
       "official_identity_score_matches": 6,
-      "complete_player_gamebooks_located": 4,
-      "complete_player_gamebooks_pending": 2,
+      "complete_player_gamebooks_located": 5,
+      "complete_player_gamebooks_pending": 1,
       "verified_player_stat_gamebooks_imported": 0
     },
     "2018-05": {
@@ -61,17 +61,6 @@
       "official_score": [
         6,
         5
-      ],
-      "source_status": "official_date_teams_score_verified_full_player_link_pending",
-      "official_identity_source": "https://usdtoreros.com/sports/baseball/schedule/2018"
-    },
-    {
-      "game_id": "cb-2018-04-17-cal-state-fullerton-san-diego-att0026",
-      "date": "2018-04-17",
-      "match": "Cal State Fullerton at San Diego",
-      "official_score": [
-        4,
-        10
       ],
       "source_status": "official_date_teams_score_verified_full_player_link_pending",
       "official_identity_source": "https://usdtoreros.com/sports/baseball/schedule/2018"
@@ -119,9 +108,15 @@
     }
   ],
   "notes": [
-    "University schedules confirm exact away/home and dates for all 30 user-attended 2018 games; independent full player-level gamebook links are provided for 26, not fabricated for the remaining four.",
+    "University schedules confirm exact away/home and dates for all 30 user-attended 2018 games; independent full player-level gamebook links are provided for 27, not fabricated for the remaining three.",
     "2018 Apr 3 UC Irvine 2 USD 1 was an 11-inning game, as was May 6 Gonzaga 4 USD 5.",
     "Other-team Tony Gwynn Legacy gamebook coverage sourced from California, Arkansas, Cal Poly, Michigan and Arizona university archives.",
-    "Four full-gamebook direct source URLs remain unverified: Mar 13 San Diego State 9–USD 3, Apr 14 Saint Mary's 6–USD 5, Apr 17 Cal State Fullerton 4–USD 10, May 9 Arizona State 12–USD 7. Official schedule/recap confirms identity and result, but score alone cannot substitute for complete individual-player stat source."
-  ]
+    "Three full-gamebook direct source URLs remain unverified: Mar 13 San Diego State 9–USD 3, Apr 14 Saint Mary's 6–USD 5, May 9 Arizona State 12–USD 7. Official schedule/recap confirms identity and result, but score alone cannot substitute for complete individual-player stat source."
+  ],
+  "resolved_additional_full_player_gamebook": {
+    "attendance_id": "cb-attended-0026",
+    "date": "2018-04-17",
+    "match": "Cal State Fullerton 4 at USD 10",
+    "source": "https://fullertontitans.com/sports/baseball/stats/2018/san-diego/boxscore/1417"
+  }
 }

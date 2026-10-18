@@ -110,11 +110,25 @@ def main():
             visible_date=f"{mm}/{dd}/{yy}"
             formats={f"{mm}/{dd}/{yy}",f"{mm}/{dd:02d}/{yy}",f"{mm:02d}/{dd:02d}/{yy}",f"{mm:02d}/{dd}/{yy}",
                      f"{mm}/{dd}/{yy%100:02d}",f"{mm:02d}/{dd:02d}/{yy%100:02d}",f"{mm}/{dd:02d}/{yy%100:02d}"}
+            legacy=bool(item.get("legacy_statcrew_source"))
+            if legacy:
+                from datetime import date as _date
+                dt=_date(yy,mm,dd)
+                formats.update({dt.strftime("%b %d, %Y"),
+                                dt.strftime("%B %d, %Y"),
+                                dt.strftime("%b %d, %Y").replace(" 0"," "),
+                                dt.strftime("%B %d, %Y").replace(" 0"," ")})
             if not any(fmt in src for fmt in formats):
                 raise ValueError("Official school boxscore doesn't visibly confirm attendance date")
-            # import_one itself re-reads the page and reconciles both official
-            # batter/pitcher tables and nine source starter/substitution slots.
-            rows,audit=import_one(game,item,global_keys)
+            if legacy:
+                # Use the same fail-closed StatCrew source transcription that
+                # completed the historical 2024 UVA/Clemson gamebooks.
+                from import_2024_statcrew import import_statcrew
+                rows,audit=import_statcrew(game,item,global_keys,resp)
+            else:
+                # Sidearm importer reconciles scoreboard, complete batting,
+                # both pitching tables, original nine-slot lineup and W/L/S.
+                rows,audit=import_one(game,item,global_keys)
             # Mississippi State's 2025 May 21 university stat table truncates
             # the losing pitcher's visible name to "Mcpherson", while its
             # *same official gamebook* credits "Mcpherson, Ryan (4-1)".
@@ -186,7 +200,8 @@ def main():
                     raise ValueError("Quinnipiac pitcher collision")
                 global_keys.remove((gid,old));global_keys.add((gid,new))
                 row["player"]="J.C. Franconere";row["player_id"]=new
-            decisions=scorer_labels(resp.text,rows,gid)
+            decisions=(game["pitching_decisions"] if legacy
+                       else scorer_labels(resp.text,rows,gid))
             game.update({
                "game_type":item["game_type"],
                "postseason_round":item["postseason_round"],

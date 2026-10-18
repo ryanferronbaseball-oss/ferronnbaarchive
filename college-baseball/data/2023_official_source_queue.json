@@ -401,9 +401,11 @@
       "research_status": "official_full_gamebook_located_player_import_pending",
       "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/portland/boxscore/13922",
       "source_type": "official_university_sidearm_gamebook",
-      "official_score": "Portland 7, San Diego 8",
+      "official_score": "Portland 8, San Diego 7",
       "site": "Fowler Park, San Diego",
-      "game_type": "regular_season"
+      "game_type": "regular_season",
+      "previous_incorrect_research_score": "Portland 7, San Diego 8",
+      "research_correction_note": "Corrected previous wrong initial research-queue score using original USD university full boxscore team score by innings, final R/H/E and same date. Original attendance worksheet date, teams, and stable ID unchanged. Parser should now require exact full scoreboard match."
     },
     {
       "game_id": "cb-2023-04-15-portland-san-diego-att0205",
@@ -415,9 +417,11 @@
       "research_status": "official_full_gamebook_located_player_import_pending",
       "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/portland/boxscore/13923",
       "source_type": "official_university_sidearm_gamebook",
-      "official_score": "Portland 5, San Diego 9",
+      "official_score": "Portland 9, San Diego 5",
       "site": "Fowler Park, San Diego",
-      "game_type": "regular_season"
+      "game_type": "regular_season",
+      "previous_incorrect_research_score": "Portland 5, San Diego 9",
+      "research_correction_note": "Corrected previous wrong initial research-queue score using original USD university full boxscore team score by innings, final R/H/E and same date. Original attendance worksheet date, teams, and stable ID unchanged. Parser should now require exact full scoreboard match."
     },
     {
       "game_id": "cb-2023-04-16-portland-san-diego-att0206",
@@ -429,9 +433,11 @@
       "research_status": "official_full_gamebook_located_player_import_pending",
       "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/portland/boxscore/13924",
       "source_type": "official_university_sidearm_gamebook",
-      "official_score": "Portland 7, San Diego 6",
+      "official_score": "Portland 6, San Diego 7",
       "site": "Fowler Park, San Diego",
-      "game_type": "regular_season"
+      "game_type": "regular_season",
+      "previous_incorrect_research_score": "Portland 7, San Diego 6",
+      "research_correction_note": "Corrected previous wrong initial research-queue score using original USD university full boxscore team score by innings, final R/H/E and same date. Original attendance worksheet date, teams, and stable ID unchanged. Parser should now require exact full scoreboard match."
     },
     {
       "game_id": "cb-2023-04-18-san-diego-san-diego-state-att0207",
@@ -683,5 +689,27 @@
     "All 18 April 2023 attendance games matched full original university gamebooks and 2023 USD schedule scoreboard; NCAA player-stat import still pending.",
     "All ten March 2023 attendance contests matched original university full gamebooks. March 18 Pacific source game 13906 is earlier than March 17 Pacific source 13907; identity verified by source date and score, not by ascending Sidearm numeric ID.",
     "All 47 games have official university full gamebook URLs; February 25–26 Tony Gwynn Legacy attendance dates conflict with February 26–27 source schedule for exactly 3 records. Other 44 game source dates match. 2023 Feb 20 Nebraska/San Diego is 16–16 seven-inning tie and cannot be imported through a 9-inning winner/loser-only parser."
-  ]
+  ],
+  "source_score_corrections_2023_04": {
+    "source": "official University of San Diego individual gamebook innings/scoreboard",
+    "corrected": [
+      {
+        "game": "cb-2023-04-14-portland-san-diego-att0204",
+        "old": "Portland 7, San Diego 8",
+        "correct": "Portland 8, San Diego 7"
+      },
+      {
+        "game": "cb-2023-04-15-portland-san-diego-att0205",
+        "old": "Portland 5, San Diego 9",
+        "correct": "Portland 9, San Diego 5"
+      },
+      {
+        "game": "cb-2023-04-16-portland-san-diego-att0206",
+        "old": "Portland 7, San Diego 6",
+        "correct": "Portland 6, San Diego 7"
+      }
+    ],
+    "corrected_on": "2026-10-17",
+    "full_stats_reimport_required": true
+  }
 }

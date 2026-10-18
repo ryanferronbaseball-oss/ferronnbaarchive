@@ -40,7 +40,7 @@
       "date": "2025-06-01",
       "away": "Dallas Baptist",
       "home": "Little Rock",
-      "source_url": "https://dbupatriots.com/sports/baseball/stats/2025/little-rock/boxscore/8550",
+      "source_url": "https://conferenceusa.com/boxscore.aspx?id=7ltyipP022aUJKmSgYVs3wXi7up73ghniwD5ElWyd07J7BNseBaMQePf0fY%2F3yUPe0xn2NSP1KhYlEEwJJTI2vF49MSWN8eSAvBSlXqqqqAbfa5QCOvqItY0uiBAAe4E2k24HvsE2lWpCSmQcjz6t%2FTintI8icxHV5uyu9YfeYM%3D&path=baseball",
       "official_score": [
         6,
         8
@@ -50,10 +50,11 @@
       "state": "LA",
       "game_type": "ncaa_postseason",
       "postseason_round": "NCAA Baton Rouge Regional / Nashville Regional (exact bracket round reviewed separately)",
-      "source_type": "official_university_sidearm_boxscore",
-      "verification": "official_url_score_verified_player_lines_pending",
-      "source_game_id": "8550",
-      "review_flag": null
+      "source_type": "official_cusa_sidearm_full_player_boxscore",
+      "verification": "official_alternative_original_source_awaiting_player_audit",
+      "source_game_id": "cusa-20250601-dbu-little-rock",
+      "review_flag": null,
+      "notes": "Official conference Sidearm alternative avoids university SSL certificate failure."
     },
     {
       "game_id": "cb-2025-05-31-dallas-baptist-lsu-att0367",
@@ -188,7 +189,7 @@
       "date": "2025-05-23",
       "away": "Texas A&M",
       "home": "LSU",
-      "source_url": "https://lsusports.net/boxscore/sec-tournament-30/",
+      "source_url": "https://static.lsusports.net/assets/docs/bb/25stats/game12.htm",
       "official_score": [
         3,
         4
@@ -199,10 +200,11 @@
       "neutral_site": true,
       "game_type": "conference_tournament",
       "postseason_round": "SEC Tournament",
-      "source_type": "official_lsu_wmt_scoreboard",
-      "verification": "source_identified_player_lines_need_official_gamebook",
-      "source_game_id": "sec-tournament-30",
-      "notes": "Official university WMT scoreboard and TAMU recap identify game; separate player-gamebook source needed."
+      "source_type": "official_lsu_statcrew_original_html",
+      "verification": "official_alternative_original_source_awaiting_player_audit",
+      "source_game_id": "lsu-2025-game12",
+      "notes": "LSU original 2025 original HTML gamebook contains Texas A&M 3 LSU 4 May 23 2025, all source batting and pitching lines.",
+      "legacy_statcrew_source": true
     },
     {
       "game_id": "cb-2025-05-23-ole-miss-arkansas-att0360",
@@ -754,7 +756,7 @@
       "date": "2025-04-13",
       "away": "Stanford",
       "home": "Clemson",
-      "source_url": "https://data.clemsontigers.com/Stats/Baseball/2025/cu254131.htm",
+      "source_url": "https://theacc.com/boxscore.aspx?id=JcLFfL9RUu0H5ystoOMbjQ7A58QMysWHEEqi7hufVoQXO5nVxbctjHh%2F6ifARsoKUNz2Cn1GpJx0eQgL%2FI8uNugW6%2F65ooJ9xE6%2BliOEFRl1EIOMAkcBvIU2aC8AuTauCGGaSEdWKLMwB6pxJuRC4Pn4585Q5%2FHCZpKhX7fcTTzm9NS3UeCAntLP6CUZGwLJ&path=baseball",
       "official_score": [
         11,
         6
@@ -765,10 +767,10 @@
       "neutral_site": false,
       "game_type": "regular_season",
       "postseason_round": null,
-      "source_type": "official_university_legacy_html_gamebook",
-      "verification": "official_gamebook_source_identified_different_parser_required",
-      "source_game_id": "cu254131.htm",
-      "notes": "Official Clemson box score linked from April 13 game recap; legacy NCAA HTML rather than Sidearm; no invented stats if parser fails"
+      "source_type": "official_acc_sidearm_full_player_boxscore",
+      "verification": "official_alternative_original_source_awaiting_player_audit",
+      "source_game_id": "acc-20250413-stanford-clemson",
+      "notes": "Replace Clemson legacy page lacking parser-compatible date with original April 13 2025 ACC Sidearm batting and pitching tables."
     },
     {
       "game_id": "cb-2025-04-12-louisville-nc-state-att0332",
@@ -1311,7 +1313,7 @@
       "date": "2025-02-19",
       "away": "North Alabama",
       "home": "Auburn",
-      "source_url": "https://auburntigers.com/boxscore/29316",
+      "source_url": "https://roarlions.com/sports/baseball/stats/2025/auburn/boxscore/4901",
       "official_score": [
         2,
         6
@@ -1322,10 +1324,10 @@
       "neutral_site": false,
       "game_type": "regular_season",
       "postseason_round": null,
-      "source_type": "official_university_js_boxscore_pending_html_gamebook",
-      "verification": "score_verified_player_gamebook_not_yet_accessible",
-      "source_game_id": "29316",
-      "notes": "University page shows scoreboard but not directly parseable player lines; do not promote verified without complete official source"
+      "source_type": "official_north_alabama_sidearm_full_player_boxscore",
+      "verification": "official_alternative_original_source_awaiting_player_audit",
+      "source_game_id": "4901",
+      "notes": "Alternative original university Sidearm gamebook for North Alabama 2 Auburn 6; 2025-02-19."
     },
     {
       "game_id": "cb-2025-02-18-georgia-kennesaw-state-att0305",
@@ -1547,5 +1549,14 @@
     "Remain unpublished draft; stop before 2024"
   ],
   "next_source_discovery": "May 23 Texas A&M LSU, May 22 Texas A&M Auburn and Oklahoma Vanderbilt; April 19/13/12/11/06 official scorebooks then March",
-  "notes": "Alternates for LSU regional games are official LSU PDFs; do not feed them into the HTML importer or bypass DBU TLS verification."
+  "notes": "Alternates for LSU regional games are official LSU PDFs; do not feed them into the HTML importer or bypass DBU TLS verification.",
+  "alternate_source_backfill_20251017": {
+    "rows_updated": [
+      307,
+      334,
+      362,
+      369
+    ],
+    "description": "Four missing originals replaced with verified official conference/university scorebook sources. 2025 2024 and 2026 data unchanged until player checks PASS."
+  }
 }

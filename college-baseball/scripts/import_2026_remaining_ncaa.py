@@ -437,6 +437,15 @@ def _source_batters(table, valid_players, team, game_id):
                                  "mikey-filia", "jake-palmer")):
             is_sub = True
 
+        # USD Apr 3, 2018 vs UC Irvine: after PH/LF Herburger for
+        # original C Kerner, Rosenberg replaced him at SS in same slot;
+        # Garrett Calvert then PH for Rosenberg in the 11th. Original USD
+        # nine starters and all later defensive shifts confirmed in UCI PBP.
+        if (game_id=="cb-2018-04-03-uc-irvine-san-diego-att0021"
+              and team=="San Diego"
+              and slug(name) in ("trevor-rosenberg","garrett-calvert")):
+            is_sub=True
+
         # Source play-by-play corroborates the unindented entries below,
         # whose predecessor already appears in the same batting slot.
         source_confirmed_unindented = {

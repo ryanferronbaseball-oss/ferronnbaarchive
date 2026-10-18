@@ -21,7 +21,7 @@
       "height": 245
     }
   ],
-  "status": "FULL_GAME_RECONCILED_FROM_USER_SUPPLIED_OFFICIAL_SCOREBOARD_PLAYER_TABLES_AND_SUBSTITUTIONS_PENDING_STRICT_IMPORT",
+  "status": "FULL_PLAYER_GAMEBOOK_OFFICIAL_VERIFIED_IMPORT_PASS_2026_10_18",
   "verified_score": {
     "away": "Arizona State",
     "away_runs": 12,
@@ -632,7 +632,6 @@
   "data_quality_holds": [
     "RESOLVED ON OCTOBER 17, 2026: ASU batting table SO field was incorrect (zeros for hitters and opponent pitcher totals in batting pitcher rows). User supplied every nonzero hitter K from play-by-play, including Todd Jackson's one strikeout in a follow-up. Assigned 3+1+3=7 Arizona State batter Ks, and 2+1+1+1+1+3+1+1=11 San Diego batter Ks; totals exactly reconcile to opposing pitchers' source totals. Remaining hitters have zero by difference, not from the incorrect ASU screenshot.",
     "Pitching SO (7 for San Diego pitchers and 11 for Arizona State pitchers) is clearly verified and safe.",
-    "Source screenshots currently live in original user conversation attachments; repository evidence JSON transcribes verified fields, and official ASU score page is cited. Full player tables are available to read, but not yet imported into games.json or player_stats.json.",
     "The game source did not independently label a save. Record save as null/unknown, not a credited save."
   ],
   "review_state": {
@@ -640,8 +639,8 @@
     "pitching_lines": "transcribed_and_team_total_checked",
     "batter_strikeouts": "user_play_by_play_reconstructed_11_for_USD_7_for_ASU_reconciled",
     "game_identity": "matched",
-    "player_stat_import": "not_started",
-    "game_innings": "source_image_provided_2026_10_18_reconciled",
+    "player_stat_import": "PASS_30_PLAYER_GAME_ROWS",
+    "game_innings": "original_user_provided_official_image_source_exact_nine_innings_verification_PASS",
     "starting_order_nine_slots_and_substitutions": "archive_owner_explicitly_confirmed_2026_10_18",
     "pitcher_decisions": "W Romero L Sprengel; save not labeled in screenshot; keep null without inventing credited save"
   },
@@ -817,5 +816,7 @@
       ]
     },
     "source": "Original May 9 game box batting tables and archive owner's explicit batting-order substitution confirmations on 2026-10-18"
-  }
+  },
+  "import_audit_file": "data/2018_historical_stat_import_audit.json",
+  "final_verification": "30 complete player-game rows, 9 original batting slots both teams, all source innings R/H/E, official W/L and individual pitcher/batter totals passed strict source import; official screenshot has no explicit save label"
 }

@@ -4,10 +4,10 @@
   "limit": 0,
   "status": "PARTIAL_REVIEW_REQUIRED",
   "original_attendance_games": 444,
-  "verified_this_run": 0,
-  "verified_in_season": 23,
-  "verified_overall": 419,
-  "player_game_rows_total": 12636,
+  "verified_this_run": 1,
+  "verified_in_season": 24,
+  "verified_overall": 423,
+  "player_game_rows_total": 12758,
   "already_verified": [
     "cb-2018-05-08-uc-riverside-san-diego-att0030",
     "cb-2018-05-06-gonzaga-san-diego-att0029",
@@ -33,7 +33,119 @@
     "cb-2018-02-17-california-san-diego-att0003",
     "cb-2018-02-16-california-san-diego-att0002"
   ],
-  "completed": [],
+  "completed": [
+    {
+      "game_id": "cb-2018-04-03-uc-irvine-san-diego-att0021",
+      "player_rows": 41,
+      "source_url": "https://ucirvinesports.com/sports/baseball/stats/2018/san-diego/boxscore/5047",
+      "win": "Evan McMillin",
+      "loss": "Anthony Donatella",
+      "source_audit": {
+        "game_id": "cb-2018-04-03-uc-irvine-san-diego-att0021",
+        "source": "https://ucirvinesports.com/sports/baseball/stats/2018/san-diego/boxscore/5047",
+        "http_code": 200,
+        "source_bytes": 1522362,
+        "source_sha256": "c41874e95b587b0a91fdf2597aa5926d20f2896002244bf8b807d5422463f9fb",
+        "teams": [
+          {
+            "name": "UC Irvine",
+            "batters": 17,
+            "pitchers": 6,
+            "AB": 39,
+            "R": 2,
+            "H": 10,
+            "RBI": 2,
+            "BB": 6,
+            "SO": 7,
+            "pitching_outs": 33,
+            "pitching_runs": 1,
+            "pitching_hits": 7
+          },
+          {
+            "name": "San Diego",
+            "batters": 13,
+            "pitchers": 6,
+            "AB": 39,
+            "R": 1,
+            "H": 7,
+            "RBI": 1,
+            "BB": 4,
+            "SO": 9,
+            "pitching_outs": 33,
+            "pitching_runs": 2,
+            "pitching_hits": 10
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 41,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 2,
+            "hits": 10,
+            "errors": 1,
+            "innings": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          {
+            "runs": 1,
+            "hits": 7,
+            "errors": 1,
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "UC Irvine",
+            "nine_starting_slots": true,
+            "batter_rows": 17,
+            "pitcher_rows": 6,
+            "substitutes": 8
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 13,
+            "pitcher_rows": 6,
+            "substitutes": 4
+          }
+        ],
+        "official_decisions": {
+          "win": "Mcmillin, Evan",
+          "loss": "Donatella, Anthony",
+          "save": "Spear, Cole"
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    }
+  ],
   "pending_review": [
     {
       "game_id": "cb-2018-05-09-arizona-state-san-diego-att0031",
@@ -44,11 +156,6 @@
       "game_id": "cb-2018-04-14-saint-mary-s-san-diego-att0025",
       "source_url": "https://usdtoreros.com/documents/2018/5/10/14226__m_basebl_2017_18_misc_non_event__USDvsSMCboxApr14.pdf",
       "reason": "University PDF download did not yield PDF bytes"
-    },
-    {
-      "game_id": "cb-2018-04-03-uc-irvine-san-diego-att0021",
-      "source_url": "https://ucirvinesports.com/sports/baseball/stats/2018/san-diego/boxscore/5047",
-      "reason": "San Diego: source batting order resolved to 11 starting slots, not 9"
     },
     {
       "game_id": "cb-2018-03-13-san-diego-state-san-diego-att0017",

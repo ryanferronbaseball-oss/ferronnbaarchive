@@ -5,9 +5,9 @@
   "status": "PARTIAL_REVIEW_REQUIRED",
   "original_attendance_games": 444,
   "verified_this_run": 1,
-  "verified_in_season": 43,
-  "verified_overall": 419,
-  "player_game_rows_total": 12636,
+  "verified_in_season": 44,
+  "verified_overall": 420,
+  "player_game_rows_total": 12667,
   "already_verified": [
     "cb-2023-05-24-saint-mary-s-san-diego-att0224",
     "cb-2023-05-24-gonzaga-santa-clara-att0223",
@@ -48,105 +48,110 @@
     "cb-2023-03-02-san-diego-oregon-att0187",
     "cb-2023-02-24-hawaii-san-diego-att0183",
     "cb-2023-02-21-cal-state-northrdige-san-diego-state-att0182",
+    "cb-2023-02-20-nebraska-san-diego-att0181",
     "cb-2023-02-19-nebraska-san-diego-att0180",
     "cb-2023-02-18-nebraska-san-diego-att0179",
     "cb-2023-02-17-nebraska-san-diego-att0178"
   ],
   "completed": [
     {
-      "game_id": "cb-2023-02-20-nebraska-san-diego-att0181",
-      "player_rows": 35,
-      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/nebraska/boxscore/13894",
-      "win": null,
-      "loss": null,
+      "game_id": "cb-2023-04-21-san-francisco-san-diego-att0208",
+      "player_rows": 31,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/san-francisco/boxscore/13925",
+      "win": "Austin Smith",
+      "loss": "Jesse BARRON",
       "source_audit": {
-        "game_id": "cb-2023-02-20-nebraska-san-diego-att0181",
-        "source": "https://usdtoreros.com/sports/baseball/stats/2023/nebraska/boxscore/13894",
+        "game_id": "cb-2023-04-21-san-francisco-san-diego-att0208",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2023/san-francisco/boxscore/13925",
         "http_code": 200,
-        "source_bytes": 692886,
-        "source_sha256": "da53a3e30fa5022f06eb8c913832dafe5ee038cfa26ffbddbf6ee071ba6e6b04",
+        "source_bytes": 680343,
+        "source_sha256": "0f353fd30f9f7f08e0d982e65ab3d6e9ca165fd9d04c6b88fcf4db39f818edd4",
         "teams": [
           {
-            "name": "Nebraska",
-            "batters": 12,
-            "pitchers": 8,
-            "AB": 38,
-            "R": 16,
-            "H": 17,
-            "RBI": 13,
-            "BB": 7,
-            "SO": 11,
-            "pitching_outs": 21,
-            "pitching_runs": 16,
-            "pitching_hits": 7
+            "name": "San Francisco",
+            "batters": 13,
+            "pitchers": 3,
+            "AB": 36,
+            "R": 3,
+            "H": 11,
+            "RBI": 3,
+            "BB": 0,
+            "SO": 9,
+            "pitching_outs": 24,
+            "pitching_runs": 17,
+            "pitching_hits": 17
           },
           {
             "name": "San Diego",
-            "batters": 10,
+            "batters": 11,
             "pitchers": 5,
-            "AB": 24,
-            "R": 16,
-            "H": 7,
+            "AB": 41,
+            "R": 17,
+            "H": 17,
             "RBI": 15,
-            "BB": 8,
+            "BB": 4,
             "SO": 5,
-            "pitching_outs": 21,
-            "pitching_runs": 16,
-            "pitching_hits": 17
+            "pitching_outs": 27,
+            "pitching_runs": 3,
+            "pitching_hits": 11
           }
         ],
         "source_warnings": [],
-        "player_rows": 35,
+        "player_rows": 31,
         "status": "PASS",
         "scoreboard": [
           {
-            "runs": 16,
-            "hits": 17,
-            "errors": 1,
+            "runs": 3,
+            "hits": 11,
+            "errors": 2,
             "innings": [
-              1,
-              3,
               0,
-              0,
-              5,
               2,
-              5
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0
             ]
           },
           {
-            "runs": 16,
-            "hits": 7,
-            "errors": 3,
+            "runs": 17,
+            "hits": 17,
+            "errors": 0,
             "innings": [
-              0,
+              9,
               1,
               0,
-              9,
+              3,
               0,
               0,
-              6
+              4,
+              0,
+              null
             ]
           }
         ],
         "lineup_audit": [
           {
-            "team": "Nebraska",
+            "team": "San Francisco",
             "nine_starting_slots": true,
-            "batter_rows": 12,
-            "pitcher_rows": 8,
-            "substitutes": 3
+            "batter_rows": 13,
+            "pitcher_rows": 3,
+            "substitutes": 4
           },
           {
             "team": "San Diego",
             "nine_starting_slots": true,
-            "batter_rows": 10,
+            "batter_rows": 11,
             "pitcher_rows": 5,
-            "substitutes": 1
+            "substitutes": 2
           }
         ],
         "official_decisions": {
-          "win": null,
-          "loss": null,
+          "win": "Smith, Austin",
+          "loss": "BARRON, Jesse",
           "save": null
         },
         "resolved_pitcher_decisions": {
@@ -158,11 +163,6 @@
     }
   ],
   "pending_review": [
-    {
-      "game_id": "cb-2023-04-21-san-francisco-san-diego-att0208",
-      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/san-francisco/boxscore/13925",
-      "reason": "San Diego: cannot exactly match source batter lineup against source player records"
-    },
     {
       "game_id": "cb-2023-02-26-uc-irvine-san-diego-att0186",
       "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/uc-irvine/boxscore/13896",

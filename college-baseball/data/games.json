@@ -1424,17 +1424,84 @@
     "state": null,
     "neutral_site": null,
     "game_number": null,
-    "game_type": null,
+    "game_type": "regular_season",
     "postseason_round": null,
-    "away_score": null,
-    "home_score": null,
-    "score_provenance": null,
-    "source_url": null,
-    "verification": "attendance_only",
-    "official_boxscore_status": "not_imported",
+    "away_score": 2,
+    "home_score": 1,
+    "score_provenance": "official_boxscore",
+    "source_url": "https://ucirvinesports.com/sports/baseball/stats/2018/san-diego/boxscore/5047",
+    "verification": "official_boxscore_verified",
+    "official_boxscore_status": "verified",
     "possible_same_day_doubleheader": false,
     "provisional_worksheet_game_sequence": null,
-    "notes": "Original workbook Sheet1 row 22."
+    "notes": "Original workbook Sheet1 row 22.",
+    "away_hits": 10,
+    "home_hits": 7,
+    "away_errors": 1,
+    "home_errors": 1,
+    "innings": [
+      {
+        "inning": 1,
+        "away": 1,
+        "home": 0
+      },
+      {
+        "inning": 2,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 3,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 4,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 5,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 6,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 7,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 8,
+        "away": 0,
+        "home": 1
+      },
+      {
+        "inning": 9,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 10,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 11,
+        "away": 1,
+        "home": 0
+      }
+    ],
+    "pitching_decisions": {
+      "win": "Evan McMillin",
+      "loss": "Anthony Donatella",
+      "save": "Cole Spear"
+    },
+    "source_import_season": 2018
   },
   {
     "id": "cb-2018-04-06-loyola-marymount-san-diego-att0022",
@@ -10738,17 +10805,74 @@
     "state": null,
     "neutral_site": null,
     "game_number": null,
-    "game_type": null,
+    "game_type": "regular_season",
     "postseason_round": null,
-    "away_score": null,
-    "home_score": null,
-    "score_provenance": null,
-    "source_url": null,
-    "verification": "attendance_only",
-    "official_boxscore_status": "not_imported",
+    "away_score": 1,
+    "home_score": 4,
+    "score_provenance": "official_boxscore",
+    "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/saint-mary-s/boxscore/12458",
+    "verification": "official_boxscore_verified",
+    "official_boxscore_status": "verified",
     "possible_same_day_doubleheader": false,
     "provisional_worksheet_game_sequence": null,
-    "notes": "Original workbook Sheet1 row 137."
+    "notes": "Original workbook Sheet1 row 137.",
+    "away_hits": 5,
+    "home_hits": 12,
+    "away_errors": 1,
+    "home_errors": 1,
+    "innings": [
+      {
+        "inning": 1,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 2,
+        "away": 0,
+        "home": 1
+      },
+      {
+        "inning": 3,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 4,
+        "away": 0,
+        "home": 1
+      },
+      {
+        "inning": 5,
+        "away": 1,
+        "home": 0
+      },
+      {
+        "inning": 6,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 7,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 8,
+        "away": 0,
+        "home": 2
+      },
+      {
+        "inning": 9,
+        "away": 0,
+        "home": null
+      }
+    ],
+    "pitching_decisions": {
+      "win": "Brycen Mautz",
+      "loss": "Christoper CAMPOS",
+      "save": "Conner Thurman"
+    },
+    "source_import_season": 2022
   },
   {
     "id": "cb-2022-03-27-saint-mary-s-san-diego-att0137",
@@ -13634,17 +13758,76 @@
     "state": null,
     "neutral_site": null,
     "game_number": null,
-    "game_type": null,
+    "game_type": "ncaa_postseason",
     "postseason_round": null,
-    "away_score": null,
-    "home_score": null,
-    "score_provenance": null,
-    "source_url": null,
-    "verification": "attendance_only",
-    "official_boxscore_status": "not_imported",
+    "away_score": 3,
+    "home_score": 12,
+    "score_provenance": "official_boxscore",
+    "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/oregon-state/boxscore/12661",
+    "verification": "official_boxscore_verified",
+    "official_boxscore_status": "verified",
     "possible_same_day_doubleheader": false,
     "provisional_worksheet_game_sequence": null,
-    "notes": "Original workbook Sheet1 row 176."
+    "notes": "Original workbook Sheet1 row 176.",
+    "away_hits": 7,
+    "home_hits": 13,
+    "away_errors": 2,
+    "home_errors": 0,
+    "innings": [
+      {
+        "inning": 1,
+        "away": 0,
+        "home": 4
+      },
+      {
+        "inning": 2,
+        "away": 0,
+        "home": 2
+      },
+      {
+        "inning": 3,
+        "away": 2,
+        "home": 2
+      },
+      {
+        "inning": 4,
+        "away": 0,
+        "home": 1
+      },
+      {
+        "inning": 5,
+        "away": 1,
+        "home": 0
+      },
+      {
+        "inning": 6,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 7,
+        "away": 0,
+        "home": 2
+      },
+      {
+        "inning": 8,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 9,
+        "away": 0,
+        "home": 1
+      }
+    ],
+    "source_home_away_side_reversed_for_attendance": true,
+    "source_home_away_note": "University official designated Oregon State as visitor despite Corvallis venue. Original personal worksheet USD-away/OSU-home identity preserved; full source RHE and inning columns mapped explicitly.",
+    "pitching_decisions": {
+      "win": "Jake Pfennigs",
+      "loss": "Ryan Kysar",
+      "save": "Brock Townsend"
+    },
+    "source_import_season": 2022
   },
   {
     "id": "cb-2022-06-05-vanderbilt-san-diego-att0176",
@@ -16104,17 +16287,74 @@
     "state": null,
     "neutral_site": null,
     "game_number": null,
-    "game_type": null,
+    "game_type": "regular_season",
     "postseason_round": null,
-    "away_score": null,
-    "home_score": null,
-    "score_provenance": null,
-    "source_url": null,
-    "verification": "attendance_only",
-    "official_boxscore_status": "not_imported",
+    "away_score": 3,
+    "home_score": 17,
+    "score_provenance": "official_boxscore",
+    "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/san-francisco/boxscore/13925",
+    "verification": "official_boxscore_verified",
+    "official_boxscore_status": "verified",
     "possible_same_day_doubleheader": false,
     "provisional_worksheet_game_sequence": null,
-    "notes": "Original workbook Sheet1 row 209."
+    "notes": "Original workbook Sheet1 row 209.",
+    "away_hits": 11,
+    "home_hits": 17,
+    "away_errors": 2,
+    "home_errors": 0,
+    "innings": [
+      {
+        "inning": 1,
+        "away": 0,
+        "home": 9
+      },
+      {
+        "inning": 2,
+        "away": 2,
+        "home": 1
+      },
+      {
+        "inning": 3,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 4,
+        "away": 0,
+        "home": 3
+      },
+      {
+        "inning": 5,
+        "away": 1,
+        "home": 0
+      },
+      {
+        "inning": 6,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 7,
+        "away": 0,
+        "home": 4
+      },
+      {
+        "inning": 8,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 9,
+        "away": 0,
+        "home": null
+      }
+    ],
+    "pitching_decisions": {
+      "win": "Austin Smith",
+      "loss": "Jesse BARRON",
+      "save": null
+    },
+    "source_import_season": 2023
   },
   {
     "id": "cb-2023-04-22-san-francisco-san-diego-att0209",

@@ -75,7 +75,7 @@ def pitch_rows(soup,first_pre,teams):
             section=re.sub(r"^\s*hbp\s+ibb\s+ab\s+bf\s+fo\s+go\s+np\s*","",section,flags=re.I)
             pattern=re.compile(r"([A-Za-z][A-Za-z0-9 .,'-]{1,55}?)\s+"
                 r"(?:[WLS],\d+(?:-\d+)?\s+)?"
-                r"(\d+\.[012])\s+((?:\d+\s+){13}\d+)\b")
+                r"(\d+\.[012])\s+((?:\d+\s+){12,13}\d+)\b")
             for m in pattern.finditer(section):
                 name=normalize_name(m.group(1).strip())
                 ip=m.group(2); vals=list(map(int,m.group(3).split()))

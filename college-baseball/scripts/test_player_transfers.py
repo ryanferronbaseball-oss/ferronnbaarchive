@@ -24,15 +24,14 @@ audit=json.loads((DATA/"player_identity_reconciliation_audit.json").read_text())
 cross=json.loads((DATA/"player_identity_crosswalk.json").read_text())
 original=json.loads((DATA/"player_stats.json").read_text())
 games=json.loads((DATA/"games.json").read_text())
-check(len(games)==444 and len(original)==13183 and len(rules["rules"])==96,
+check(len(games)==444 and len(original)==13188 and len(rules["rules"])==96,
       "Protected college attendance or original official player rows changed")
-check(audit["ready_merges"]==92 and audit["not_ready"]==4 and
-      cross["activated_person_merges"]==92 and cross["pending_person_merges"]==4,
-      "Only 92 identities supported by current 96 owner-nominated school pairs")
-check({x["name"] for x in audit["preview"] if x["status"]!="merge_ready"}==
-      {"Tate Soderstrom","Ethan Lizama","Kyle Hvidsten","Michael Graziano"},
-      "Unexpected four school-side source exceptions")
-check(len(cross["merges"])==92 and len({m["canonical_id"] for m in cross["merges"]})==92,
+check(audit["ready_merges"]==96 and audit["not_ready"]==0 and
+      cross["activated_person_merges"]==96 and cross["pending_person_merges"]==0,
+      "All 96 attendee-approved transfer identities must now source-match")
+check(all(x["status"]=="merge_ready" for x in audit["preview"]),
+      "Every requested transfer pair must match both school records")
+check(len(cross["merges"])==96 and len({m["canonical_id"] for m in cross["merges"]})==96,
       "Missing or duplicate canonical identities")
 source_by_key=defaultdict(list)
 for r in original:
@@ -51,7 +50,10 @@ for m in cross["merges"]:
           "Both exact source player identities must be present")
     for t,i in pairs:
         check(school(t) in allowed_schools and
-              all(name(r["player"])==name(rule["name"]) for r in source_by_key[(t,i)]),
+              all(name(r["player"]) in ({name(rule["name"])} |
+                  {name(alias) for sch,aliases in rule.get("source_names_by_school",{}).items()
+                   if school(sch)==school(t) for alias in aliases})
+                  for r in source_by_key[(t,i)]),
               "Owner name and school gate failed")
         check((t,i) not in mapped and i not in used_ids, "Double-booked source player ID")
         mapped[(t,i)]=m["canonical_id"]
@@ -63,15 +65,15 @@ for withheld in ("Dylan Johnson","Tanner Smith"):
     check(set(m["schools"])==expected and
           all(school(pair["team"]) in {school(t) for t in expected} for pair in m["pairs"]),
           "Explicit name collision school exclusion breached")
-# Simulate the browser alias transform and require the entire 13,183 original lines
+# Simulate the browser alias transform and require all 13,188 genuine player-game lines
 # to remain present, with no duplicate canonical person-game IDs.
 unified=[(r["game_id"],mapped.get((r["team"],r["player_id"]),r["player_id"])) for r in original]
 check(len(set(unified))==len(original),"Two identities collided in the same attended game")
 before=len({r["player_id"] for r in original})
 after=len({p for _,p in unified})
-check(before-after==92,"Exactly one unique player identity should collapse per approved pair")
-print(json.dumps({"source_records_preserved":len(original),"verified_owner_proposals":92,
-      "left_pending":4,"before_unique_players":before,"after_unique_players":after,
+check(before-after==96,"Exactly one unique player identity should collapse per approved pair")
+print(json.dumps({"source_records_preserved":len(original),"verified_owner_proposals":96,
+      "left_pending":0,"before_unique_players":before,"after_unique_players":after,
       "source_college_games":len(games)},indent=2))
 
 # Existing JS page has full crosswalk logic. Smoke-test its behavior in Chromium.
@@ -94,6 +96,10 @@ cases=[
     ("Gavin Kilen",["Louisville","Tennessee"],7),
     ("Dylan Johnson",["Fresno State","Gonzaga"],11),
     ("Tanner Smith",["Oregon State","Miami"],2),
+    ("Ethan Lizama",["Western Kentucky","South Carolina"],2),
+    ("Tate Soderstrom",["Arizona","UC San Diego"],7),
+    ("Kyle Hvidsten",["Western Kentucky","Liberty"],2),
+    ("Michael Graziano",["Georgia Tech","Mercer"],2),
 ]
 try:
     with sync_playwright() as pw:
@@ -112,11 +118,21 @@ try:
             check(page.locator(".cb-player-game-log tbody tr").count()==games_expected,
                   "Witnessed game logs do not combine source rows for "+who)
             print("PASS unified old-school deep link",who,display,games_expected)
-        # Four deferred players remain at their old, single-school URL.
-        page.goto(base+"/player.html?id="+quote("cb-uc-san-diego-tate-soderstrom"),wait_until="domcontentloaded")
-        page.locator(".cb-profile-hero").wait_for(timeout=35000)
-        check(page.locator(".mlb-profile-team-name").inner_text().casefold()=="uc san diego",
-              "One-school-only proposal incorrectly merged an unobserved Arizona profile")
+        # Explicit 4/13 original university game replaces the wrong 4/14
+        # attended-game identity without breaking the old scorecard deep link.
+        oldgame="cb-2024-04-14-virginia-tech-georgia-tech-att0268"
+        newgame="cb-2024-04-13-virginia-tech-georgia-tech-att0268"
+        check(sum(g["id"]==newgame for g in games)==1 and
+              not any(g["id"]==oldgame for g in games),
+              "Correct attended April 13 identity not installed")
+        for gid in (newgame,oldgame):
+            page.goto(base+"/game.html?id="+quote(gid),wait_until="domcontentloaded")
+            page.locator("#cb-game-details .cb-game-summary").wait_for(timeout=35000)
+            summary=page.locator("#cb-game-details").inner_text()
+            check("0 – 19" in summary and "Apr 13, 2024" in summary and
+                  "Cam Jones" in summary,"April 13 score/date/official winner missing at game link")
+            check(page.locator("#cb-game-details tr.mlb-substitute").count()>=13,
+                  "April 13 nine-slot batting orders dropped official pinch hitters")
         page.goto(base+"/stats.html",wait_until="domcontentloaded")
         page.locator("#cb-player-board .cb-table").wait_for(timeout=35000)
         page.locator("#cb-player-search").fill("Justin DeCriscio")
@@ -129,4 +145,4 @@ try:
 finally:
     server.shutdown()
     thread.join(timeout=5)
-print("PASS 92 scoped transfer profiles, redirects, leaderboards, exclusion rules and original official boxscore data")
+print("PASS 96 scoped transfer profiles, initials, old April 14 link, 13 pinch hitter rows and original 4/13 boxscore data")

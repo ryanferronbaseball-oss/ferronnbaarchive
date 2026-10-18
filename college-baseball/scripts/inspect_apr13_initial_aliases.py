@@ -7,7 +7,7 @@ import requests
 from pathlib import Path
 from collections import Counter
 from copy import deepcopy
-from import_2024_pdf import parse
+from import_2024_pdf import parse,pdf_text
 D=Path(__file__).resolve().parents[1]/"data"
 rows=json.loads((D/"player_stats.json").read_text())
 games=json.loads((D/"games.json").read_text())
@@ -25,6 +25,7 @@ old=next(g for g in games if g["id"]==OLD)
 source="https://storage.googleapis.com/ramblinwreck-com-prod/2024/04/gt041324.pdf"
 res=requests.get(source,timeout=45);res.raise_for_status()
 print("PDF SOURCE",res.status_code,len(res.content),res.content[:5],flush=True)
+print("PDF SCOREBOOK LINES",[(i,repr(v)) for i,v in enumerate(pdf_text(res.content).splitlines()) if ("ip h r er" in v.lower() or v.strip().startswith("Totals") or "Score by Innings" in v or "Cam Jones" in v or "Wyatt Parliament" in v or "Virginia Tech 0" in v or "Georgia Tech 19" in v)],flush=True)
 g=deepcopy(old);g.update({"id":NEW,"date":"2024-04-13","away_score":None,"home_score":None})
 item={"source_url":source,"official_score":[0,19],"date":"2024-04-13","source_type":"official_university_pdf_scorebook","worksheet_row":269}
 keys={(r["game_id"],r["player_id"]) for r in rows if r["game_id"]!=OLD}

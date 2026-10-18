@@ -93,7 +93,7 @@ def parse(game,item,global_keys,response):
                 vals=list(map(int,m.group(2).split()))
                 batting[batteam].append((name,pos,vals,original.startswith((" ","\t","\u00a0"))))
         if mode=="pitch" and pitchteam:
-            m=re.match(r"^(.+?)\s+(\d+\.[012])\s+((?:\d+\s+){7}\d+)\s*$",line)
+            m=re.match(r"^(.+?)\s+(\d+\.[012])\s+((?:\d+\s+){7}\d+)(?:\s+\d+\.\d+)?\s*$",line)
             if m:
                 name=normalize_name(m.group(1))
                 ip=m.group(2)

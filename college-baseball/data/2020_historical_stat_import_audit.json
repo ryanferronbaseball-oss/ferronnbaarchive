@@ -2,12 +2,12 @@
   "season": 2020,
   "month": null,
   "limit": 0,
-  "status": "PARTIAL_REVIEW_REQUIRED",
+  "status": "PASS",
   "original_attendance_games": 444,
   "verified_this_run": 1,
-  "verified_in_season": 10,
-  "verified_overall": 407,
-  "player_game_rows_total": 12240,
+  "verified_in_season": 11,
+  "verified_overall": 414,
+  "player_game_rows_total": 12469,
   "already_verified": [
     "cb-2020-03-10-cal-baptist-san-diego-att0083",
     "cb-2020-03-01-monmouth-san-diego-att0082",
@@ -15,83 +15,84 @@
     "cb-2020-02-28-monmouth-san-diego-att0080",
     "cb-2020-02-23-iowa-san-diego-att0079",
     "cb-2020-02-22-seattle-san-diego-att0077",
+    "cb-2020-02-22-arizona-iowa-att0076",
     "cb-2020-02-21-nebraska-san-diego-att0075",
     "cb-2020-02-21-southern-illinois-arizona-att0074",
     "cb-2020-02-18-uc-irvine-san-diego-att0073"
   ],
   "completed": [
     {
-      "game_id": "cb-2020-02-22-arizona-iowa-att0076",
-      "player_rows": 32,
-      "source_url": "https://arizonawildcats.com/sports/baseball/stats/2020/iowa/boxscore/20378",
-      "win": "Grant Judkins",
-      "loss": "Quinn Flanagan",
+      "game_id": "cb-2020-02-23-southern-illinois-seattle-att0078",
+      "player_rows": 38,
+      "source_url": "https://siusalukis.com/sports/baseball/stats/2020/seattle/boxscore/9208",
+      "win": "Alex McBee",
+      "loss": "Blake Begner",
       "source_audit": {
-        "game_id": "cb-2020-02-22-arizona-iowa-att0076",
-        "source": "https://arizonawildcats.com/sports/baseball/stats/2020/iowa/boxscore/20378",
+        "game_id": "cb-2020-02-23-southern-illinois-seattle-att0078",
+        "source": "https://siusalukis.com/sports/baseball/stats/2020/seattle/boxscore/9208",
         "http_code": 200,
-        "source_bytes": 1323354,
-        "source_sha256": "abe74a3e4be30cd9548d22574075319b7e5bac85ca2431aef0657bd5679d925d",
+        "source_bytes": 1210966,
+        "source_sha256": "f019a22e9c4a574cb7a91504384539f04edbc91118057cc8d66026d2c4e4cd80",
         "teams": [
           {
-            "name": "Arizona",
+            "name": "Southern Illinois",
             "batters": 14,
-            "pitchers": 5,
-            "AB": 31,
-            "R": 1,
-            "H": 4,
-            "RBI": 1,
+            "pitchers": 6,
+            "AB": 35,
+            "R": 2,
+            "H": 10,
+            "RBI": 2,
             "BB": 3,
-            "SO": 9,
+            "SO": 4,
             "pitching_outs": 24,
-            "pitching_runs": 4,
-            "pitching_hits": 8
+            "pitching_runs": 9,
+            "pitching_hits": 15
           },
           {
-            "name": "Iowa",
-            "batters": 9,
-            "pitchers": 4,
-            "AB": 31,
-            "R": 4,
-            "H": 8,
-            "RBI": 4,
-            "BB": 4,
-            "SO": 12,
+            "name": "Seattle",
+            "batters": 13,
+            "pitchers": 5,
+            "AB": 36,
+            "R": 9,
+            "H": 15,
+            "RBI": 9,
+            "BB": 7,
+            "SO": 6,
             "pitching_outs": 27,
-            "pitching_runs": 1,
-            "pitching_hits": 4
+            "pitching_runs": 2,
+            "pitching_hits": 10
           }
         ],
         "source_warnings": [],
-        "player_rows": 32,
+        "player_rows": 38,
         "status": "PASS",
         "scoreboard": [
           {
-            "runs": 1,
-            "hits": 4,
-            "errors": 2,
+            "runs": 2,
+            "hits": 10,
+            "errors": 0,
             "innings": [
-              0,
-              0,
+              1,
               0,
               0,
               0,
               0,
               1,
               0,
+              0,
               0
             ]
           },
           {
-            "runs": 4,
-            "hits": 8,
-            "errors": 1,
+            "runs": 9,
+            "hits": 15,
+            "errors": 0,
             "innings": [
+              5,
+              1,
               0,
-              2,
-              2,
               0,
-              0,
+              3,
               0,
               0,
               0,
@@ -101,39 +102,33 @@
         ],
         "lineup_audit": [
           {
-            "team": "Arizona",
+            "team": "Southern Illinois",
             "nine_starting_slots": true,
             "batter_rows": 14,
-            "pitcher_rows": 5,
+            "pitcher_rows": 6,
             "substitutes": 5
           },
           {
-            "team": "Iowa",
+            "team": "Seattle",
             "nine_starting_slots": true,
-            "batter_rows": 9,
-            "pitcher_rows": 4,
-            "substitutes": 0
+            "batter_rows": 13,
+            "pitcher_rows": 5,
+            "substitutes": 4
           }
         ],
         "official_decisions": {
-          "win": "Grant Judkins",
-          "loss": "Flanagan, Quinn",
-          "save": "Grant Leonard"
+          "win": "Mcbee, Alex",
+          "loss": "Begner, Blake",
+          "save": null
         },
         "resolved_pitcher_decisions": {
-          "win": "Grant Judkins",
+          "win": null,
           "loss": null,
-          "save": "Grant Leonard"
+          "save": null
         }
       }
     }
   ],
-  "pending_review": [
-    {
-      "game_id": "cb-2020-02-23-southern-illinois-seattle-att0078",
-      "source_url": "https://siusalukis.com/sports/baseball/stats/2020/seattle/boxscore/9208",
-      "reason": "Seattle: source batting order resolved to 10 starting slots, not 9"
-    }
-  ],
+  "pending_review": [],
   "release": "Draft branch only; never auto-publish or merge"
 }

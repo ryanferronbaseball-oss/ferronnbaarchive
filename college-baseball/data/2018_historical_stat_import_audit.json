@@ -4,11 +4,14 @@
   "limit": 0,
   "status": "PARTIAL_REVIEW_REQUIRED",
   "original_attendance_games": 444,
-  "verified_this_run": 4,
-  "verified_in_season": 20,
-  "verified_overall": 412,
-  "player_game_rows_total": 12400,
+  "verified_this_run": 3,
+  "verified_in_season": 23,
+  "verified_overall": 418,
+  "player_game_rows_total": 12601,
   "already_verified": [
+    "cb-2018-05-08-uc-riverside-san-diego-att0030",
+    "cb-2018-05-06-gonzaga-san-diego-att0029",
+    "cb-2018-05-05-gonzaga-san-diego-att0028",
     "cb-2018-05-04-gonzaga-san-diego-att0027",
     "cb-2018-04-17-cal-state-fullerton-san-diego-att0026",
     "cb-2018-04-08-loyola-marymount-san-diego-att0024",
@@ -17,6 +20,7 @@
     "cb-2018-03-18-santa-clara-san-diego-att0020",
     "cb-2018-03-17-santa-clara-san-diego-att0019",
     "cb-2018-03-16-santa-clara-san-diego-att0018",
+    "cb-2018-03-02-indiana-san-diego-att0013",
     "cb-2018-02-25-arkansas-san-diego-att0011",
     "cb-2018-02-24-grand-canyon-san-diego-att0010",
     "cb-2018-02-24-cal-poly-grand-canyon-att0009",
@@ -28,42 +32,42 @@
   ],
   "completed": [
     {
-      "game_id": "cb-2018-05-08-uc-riverside-san-diego-att0030",
+      "game_id": "cb-2018-03-03-indiana-san-diego-att0015",
       "player_rows": 34,
-      "source_url": "https://gohighlanders.com/sports/baseball/stats/2018/san-diego/boxscore/11756",
-      "win": "Johnny Breidenthal",
-      "loss": "Doug Nimura",
+      "source_url": "https://iuhoosiers.com/sports/baseball/stats/2018/-13-san-diego/boxscore/13859",
+      "win": "B.J. Sabol",
+      "loss": "Gabriel Ponce",
       "source_audit": {
-        "game_id": "cb-2018-05-08-uc-riverside-san-diego-att0030",
-        "source": "https://gohighlanders.com/sports/baseball/stats/2018/san-diego/boxscore/11756",
+        "game_id": "cb-2018-03-03-indiana-san-diego-att0015",
+        "source": "https://iuhoosiers.com/sports/baseball/stats/2018/-13-san-diego/boxscore/13859",
         "http_code": 200,
-        "source_bytes": 1172579,
-        "source_sha256": "f3d43e461d774d97742dc69d0f27532f30937ee9491ce8799a6dcca01a8154fb",
+        "source_bytes": 1129435,
+        "source_sha256": "b6ff9f3e0f2c763d3aec18b948d147ba68da54e53b6d34aa74f2f81cc4b11dd0",
         "teams": [
           {
-            "name": "UC Riverside",
+            "name": "Indiana",
             "batters": 14,
-            "pitchers": 4,
-            "AB": 35,
+            "pitchers": 5,
+            "AB": 34,
             "R": 6,
             "H": 10,
             "RBI": 6,
-            "BB": 6,
-            "SO": 9,
+            "BB": 3,
+            "SO": 14,
             "pitching_outs": 27,
             "pitching_runs": 5,
-            "pitching_hits": 10
+            "pitching_hits": 13
           },
           {
             "name": "San Diego",
-            "batters": 12,
+            "batters": 11,
             "pitchers": 4,
-            "AB": 35,
+            "AB": 38,
             "R": 5,
-            "H": 10,
+            "H": 13,
             "RBI": 5,
             "BB": 3,
-            "SO": 10,
+            "SO": 8,
             "pitching_outs": 27,
             "pitching_runs": 6,
             "pitching_hits": 10
@@ -80,351 +84,26 @@
             "innings": [
               0,
               0,
-              6,
+              1,
               0,
               0,
+              1,
+              2,
               0,
-              0,
-              0,
-              0
+              2
             ]
           },
           {
             "runs": 5,
-            "hits": 10,
-            "errors": 1,
-            "innings": [
-              2,
-              0,
-              0,
-              0,
-              0,
-              0,
-              3,
-              0,
-              0
-            ]
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "UC Riverside",
-            "nine_starting_slots": true,
-            "batter_rows": 14,
-            "pitcher_rows": 4,
-            "substitutes": 5
-          },
-          {
-            "team": "San Diego",
-            "nine_starting_slots": true,
-            "batter_rows": 12,
-            "pitcher_rows": 4,
-            "substitutes": 3
-          }
-        ],
-        "official_decisions": {
-          "win": "Breidenthal, Johnny",
-          "loss": "Nimura, Doug",
-          "save": "Quijada, Hazahel"
-        },
-        "resolved_pitcher_decisions": {
-          "win": null,
-          "loss": null,
-          "save": null
-        }
-      }
-    },
-    {
-      "game_id": "cb-2018-05-06-gonzaga-san-diego-att0029",
-      "player_rows": 32,
-      "source_url": "https://gozags.com/sports/baseball/stats/2018/san-diego/boxscore/1465",
-      "win": "Travis Kuhn",
-      "loss": "Taylor Davis",
-      "source_audit": {
-        "game_id": "cb-2018-05-06-gonzaga-san-diego-att0029",
-        "source": "https://gozags.com/sports/baseball/stats/2018/san-diego/boxscore/1465",
-        "http_code": 200,
-        "source_bytes": 1364459,
-        "source_sha256": "905f0be95b4326ecf9acf0b787643ad0753f92d40064b77934e5606f4799ae62",
-        "teams": [
-          {
-            "name": "Gonzaga",
-            "batters": 11,
-            "pitchers": 5,
-            "AB": 41,
-            "R": 4,
-            "H": 10,
-            "RBI": 4,
-            "BB": 6,
-            "SO": 5,
-            "pitching_outs": 31,
-            "pitching_runs": 5,
-            "pitching_hits": 11
-          },
-          {
-            "name": "San Diego",
-            "batters": 12,
-            "pitchers": 4,
-            "AB": 37,
-            "R": 5,
-            "H": 11,
-            "RBI": 5,
-            "BB": 4,
-            "SO": 5,
-            "pitching_outs": 33,
-            "pitching_runs": 4,
-            "pitching_hits": 10
-          }
-        ],
-        "source_warnings": [],
-        "player_rows": 32,
-        "status": "PASS",
-        "scoreboard": [
-          {
-            "runs": 4,
-            "hits": 10,
+            "hits": 13,
             "errors": 0,
             "innings": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              4,
-              0,
-              0,
-              0,
-              0
-            ]
-          },
-          {
-            "runs": 5,
-            "hits": 11,
-            "errors": 3,
-            "innings": [
-              0,
-              0,
-              0,
-              0,
-              0,
               1,
               0,
-              0,
-              3,
-              0,
-              1
-            ]
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "Gonzaga",
-            "nine_starting_slots": true,
-            "batter_rows": 11,
-            "pitcher_rows": 5,
-            "substitutes": 2
-          },
-          {
-            "team": "San Diego",
-            "nine_starting_slots": true,
-            "batter_rows": 12,
-            "pitcher_rows": 4,
-            "substitutes": 3
-          }
-        ],
-        "official_decisions": {
-          "win": "Kuhn, Travis",
-          "loss": "Davis, Taylor",
-          "save": null
-        },
-        "resolved_pitcher_decisions": {
-          "win": null,
-          "loss": null,
-          "save": null
-        }
-      }
-    },
-    {
-      "game_id": "cb-2018-05-05-gonzaga-san-diego-att0028",
-      "player_rows": 28,
-      "source_url": "https://gozags.com/sports/baseball/stats/2018/san-diego/boxscore/1464",
-      "win": "Alek Jacob",
-      "loss": "C Murphy",
-      "source_audit": {
-        "game_id": "cb-2018-05-05-gonzaga-san-diego-att0028",
-        "source": "https://gozags.com/sports/baseball/stats/2018/san-diego/boxscore/1464",
-        "http_code": 200,
-        "source_bytes": 1277369,
-        "source_sha256": "9305b772c7a852d2bfa4aa3d88e770ebf403d30bb188c6a4b16d1c180429e2b5",
-        "teams": [
-          {
-            "name": "Gonzaga",
-            "batters": 9,
-            "pitchers": 4,
-            "AB": 35,
-            "R": 5,
-            "H": 5,
-            "RBI": 3,
-            "BB": 3,
-            "SO": 7,
-            "pitching_outs": 27,
-            "pitching_runs": 3,
-            "pitching_hits": 10
-          },
-          {
-            "name": "San Diego",
-            "batters": 12,
-            "pitchers": 3,
-            "AB": 36,
-            "R": 3,
-            "H": 10,
-            "RBI": 3,
-            "BB": 0,
-            "SO": 8,
-            "pitching_outs": 27,
-            "pitching_runs": 5,
-            "pitching_hits": 5
-          }
-        ],
-        "source_warnings": [],
-        "player_rows": 28,
-        "status": "PASS",
-        "scoreboard": [
-          {
-            "runs": 5,
-            "hits": 5,
-            "errors": 1,
-            "innings": [
-              0,
-              0,
-              0,
               1,
-              3,
-              1,
-              0,
-              0,
-              0
-            ]
-          },
-          {
-            "runs": 3,
-            "hits": 10,
-            "errors": 4,
-            "innings": [
-              2,
-              0,
-              0,
-              0,
-              1,
-              0,
-              0,
-              0,
-              0
-            ]
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "Gonzaga",
-            "nine_starting_slots": true,
-            "batter_rows": 9,
-            "pitcher_rows": 4,
-            "substitutes": 0
-          },
-          {
-            "team": "San Diego",
-            "nine_starting_slots": true,
-            "batter_rows": 12,
-            "pitcher_rows": 3,
-            "substitutes": 3
-          }
-        ],
-        "official_decisions": {
-          "win": "Jacob, Alek",
-          "loss": "Murphy, C",
-          "save": "Legumina, Casey"
-        },
-        "resolved_pitcher_decisions": {
-          "win": null,
-          "loss": null,
-          "save": null
-        }
-      }
-    },
-    {
-      "game_id": "cb-2018-03-02-indiana-san-diego-att0013",
-      "player_rows": 27,
-      "source_url": "https://iuhoosiers.com/sports/baseball/stats/2018/-13-san-diego/boxscore/13857",
-      "win": "Jonathan Stiever",
-      "loss": "Paul Richan",
-      "source_audit": {
-        "game_id": "cb-2018-03-02-indiana-san-diego-att0013",
-        "source": "https://iuhoosiers.com/sports/baseball/stats/2018/-13-san-diego/boxscore/13857",
-        "http_code": 200,
-        "source_bytes": 1055818,
-        "source_sha256": "a3e491ae4286cce630670fe397dc160a379786cd7d1af13e04b8b620da378683",
-        "teams": [
-          {
-            "name": "Indiana",
-            "batters": 11,
-            "pitchers": 2,
-            "AB": 39,
-            "R": 10,
-            "H": 13,
-            "RBI": 10,
-            "BB": 3,
-            "SO": 8,
-            "pitching_outs": 27,
-            "pitching_runs": 4,
-            "pitching_hits": 8
-          },
-          {
-            "name": "San Diego",
-            "batters": 10,
-            "pitchers": 4,
-            "AB": 31,
-            "R": 4,
-            "H": 8,
-            "RBI": 3,
-            "BB": 2,
-            "SO": 10,
-            "pitching_outs": 27,
-            "pitching_runs": 10,
-            "pitching_hits": 13
-          }
-        ],
-        "source_warnings": [],
-        "player_rows": 27,
-        "status": "PASS",
-        "scoreboard": [
-          {
-            "runs": 10,
-            "hits": 13,
-            "errors": 1,
-            "innings": [
-              0,
-              1,
-              0,
-              5,
-              2,
-              0,
               0,
               2,
-              0
-            ]
-          },
-          {
-            "runs": 4,
-            "hits": 8,
-            "errors": 3,
-            "innings": [
-              0,
-              0,
-              0,
               1,
-              0,
-              3,
               0,
               0,
               0
@@ -435,22 +114,236 @@
           {
             "team": "Indiana",
             "nine_starting_slots": true,
-            "batter_rows": 11,
-            "pitcher_rows": 2,
-            "substitutes": 2
+            "batter_rows": 14,
+            "pitcher_rows": 5,
+            "substitutes": 5
           },
           {
             "team": "San Diego",
             "nine_starting_slots": true,
-            "batter_rows": 10,
+            "batter_rows": 11,
             "pitcher_rows": 4,
-            "substitutes": 1
+            "substitutes": 2
           }
         ],
         "official_decisions": {
-          "win": "Stiever, Jonathan",
-          "loss": "Richan, Paul",
-          "save": "Kryzsko, Kade"
+          "win": "Sabol , B.j.",
+          "loss": "Ponce, Gabriel",
+          "save": "Krueger, Cal"
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2018-03-03-indiana-san-diego-att0014",
+      "player_rows": 29,
+      "source_url": "https://iuhoosiers.com/sports/baseball/stats/2018/-13-san-diego/boxscore/13858",
+      "win": "Chris Murphy",
+      "loss": "Pauly Milto",
+      "source_audit": {
+        "game_id": "cb-2018-03-03-indiana-san-diego-att0014",
+        "source": "https://iuhoosiers.com/sports/baseball/stats/2018/-13-san-diego/boxscore/13858",
+        "http_code": 200,
+        "source_bytes": 1069269,
+        "source_sha256": "3d027f56bb3019c444bc9e0ff5cacb8eb155de49e7c12aa730feb21ec132c885",
+        "teams": [
+          {
+            "name": "Indiana",
+            "batters": 14,
+            "pitchers": 3,
+            "AB": 35,
+            "R": 5,
+            "H": 11,
+            "RBI": 5,
+            "BB": 0,
+            "SO": 11,
+            "pitching_outs": 24,
+            "pitching_runs": 6,
+            "pitching_hits": 15
+          },
+          {
+            "name": "San Diego",
+            "batters": 9,
+            "pitchers": 3,
+            "AB": 37,
+            "R": 6,
+            "H": 15,
+            "RBI": 6,
+            "BB": 3,
+            "SO": 6,
+            "pitching_outs": 27,
+            "pitching_runs": 5,
+            "pitching_hits": 11
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 29,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 5,
+            "hits": 11,
+            "errors": 0,
+            "innings": [
+              0,
+              0,
+              0,
+              1,
+              0,
+              1,
+              0,
+              1,
+              2
+            ]
+          },
+          {
+            "runs": 6,
+            "hits": 15,
+            "errors": 0,
+            "innings": [
+              3,
+              0,
+              0,
+              0,
+              3,
+              0,
+              0,
+              0,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Indiana",
+            "nine_starting_slots": true,
+            "batter_rows": 14,
+            "pitcher_rows": 3,
+            "substitutes": 5
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 3,
+            "substitutes": 0
+          }
+        ],
+        "official_decisions": {
+          "win": "Murphy, Chris",
+          "loss": "Milto, Pauly",
+          "save": "Crow, Louie"
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2018-02-25-arizona-san-diego-att0012",
+      "player_rows": 32,
+      "source_url": "https://arizonawildcats.com/sports/baseball/stats/2018/tony-gwynn-classic-vs-san-diego/boxscore/15291",
+      "win": "Nigel Ward",
+      "loss": "Avery Weems",
+      "source_audit": {
+        "game_id": "cb-2018-02-25-arizona-san-diego-att0012",
+        "source": "https://arizonawildcats.com/sports/baseball/stats/2018/tony-gwynn-classic-vs-san-diego/boxscore/15291",
+        "http_code": 200,
+        "source_bytes": 1311932,
+        "source_sha256": "d26bfa7425de18ef68491042dc0bd0c8453b73c82e1d74103348e8f83c94ac94",
+        "teams": [
+          {
+            "name": "Arizona",
+            "batters": 12,
+            "pitchers": 4,
+            "AB": 30,
+            "R": 3,
+            "H": 7,
+            "RBI": 2,
+            "BB": 8,
+            "SO": 7,
+            "pitching_outs": 24,
+            "pitching_runs": 5,
+            "pitching_hits": 4
+          },
+          {
+            "name": "San Diego",
+            "batters": 11,
+            "pitchers": 5,
+            "AB": 24,
+            "R": 5,
+            "H": 4,
+            "RBI": 4,
+            "BB": 4,
+            "SO": 4,
+            "pitching_outs": 27,
+            "pitching_runs": 3,
+            "pitching_hits": 7
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 32,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 3,
+            "hits": 7,
+            "errors": 2,
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              1,
+              1
+            ]
+          },
+          {
+            "runs": 5,
+            "hits": 4,
+            "errors": 0,
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              3,
+              2,
+              0,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Arizona",
+            "nine_starting_slots": true,
+            "batter_rows": 12,
+            "pitcher_rows": 4,
+            "substitutes": 3
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 5,
+            "substitutes": 2
+          }
+        ],
+        "official_decisions": {
+          "win": "Ward, Nigel",
+          "loss": "Weems, Avery",
+          "save": "Crow, Louie"
         },
         "resolved_pitcher_decisions": {
           "win": null,
@@ -484,22 +377,7 @@
     {
       "game_id": "cb-2018-03-04-indiana-san-diego-att0016",
       "source_url": "https://iuhoosiers.com/sports/baseball/stats/2018/-13-san-diego/boxscore/13860",
-      "reason": "San Diego: source batting order resolved to 10 starting slots, not 9"
-    },
-    {
-      "game_id": "cb-2018-03-03-indiana-san-diego-att0015",
-      "source_url": "https://iuhoosiers.com/sports/baseball/stats/2018/-13-san-diego/boxscore/13859",
-      "reason": "Indiana: source batting order resolved to 10 starting slots, not 9"
-    },
-    {
-      "game_id": "cb-2018-03-03-indiana-san-diego-att0014",
-      "source_url": "https://iuhoosiers.com/sports/baseball/stats/2018/-13-san-diego/boxscore/13858",
-      "reason": "Indiana: source batting order resolved to 12 starting slots, not 9"
-    },
-    {
-      "game_id": "cb-2018-02-25-arizona-san-diego-att0012",
-      "source_url": "https://arizonawildcats.com/sports/baseball/stats/2018/tony-gwynn-classic-vs-san-diego/boxscore/15291",
-      "reason": "San Diego: source batting order resolved to 10 starting slots, not 9"
+      "reason": "Official Win scorer 'Beauchamp, Cam' not uniquely matched among source pitchers cb-2018-03-04-indiana-san-diego-att0016"
     },
     {
       "game_id": "cb-2018-02-18-cincinnati-san-diego-att0006",

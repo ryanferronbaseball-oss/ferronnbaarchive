@@ -800,17 +800,74 @@
     "state": null,
     "neutral_site": null,
     "game_number": null,
-    "game_type": null,
+    "game_type": "regular_season",
     "postseason_round": null,
-    "away_score": null,
-    "home_score": null,
-    "score_provenance": null,
-    "source_url": null,
-    "verification": "attendance_only",
-    "official_boxscore_status": "not_imported",
+    "away_score": 3,
+    "home_score": 5,
+    "score_provenance": "official_boxscore",
+    "source_url": "https://arizonawildcats.com/sports/baseball/stats/2018/tony-gwynn-classic-vs-san-diego/boxscore/15291",
+    "verification": "official_boxscore_verified",
+    "official_boxscore_status": "verified",
     "possible_same_day_doubleheader": false,
     "provisional_worksheet_game_sequence": null,
-    "notes": "Original workbook Sheet1 row 13."
+    "notes": "Original workbook Sheet1 row 13.",
+    "away_hits": 7,
+    "home_hits": 4,
+    "away_errors": 2,
+    "home_errors": 0,
+    "innings": [
+      {
+        "inning": 1,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 2,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 3,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 4,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 5,
+        "away": 1,
+        "home": 0
+      },
+      {
+        "inning": 6,
+        "away": 0,
+        "home": 3
+      },
+      {
+        "inning": 7,
+        "away": 0,
+        "home": 2
+      },
+      {
+        "inning": 8,
+        "away": 1,
+        "home": 0
+      },
+      {
+        "inning": 9,
+        "away": 1,
+        "home": null
+      }
+    ],
+    "pitching_decisions": {
+      "win": "Nigel Ward",
+      "loss": "Avery Weems",
+      "save": "Louie Crow"
+    },
+    "source_import_season": 2018
   },
   {
     "id": "cb-2018-03-02-indiana-san-diego-att0013",
@@ -907,17 +964,74 @@
     "state": null,
     "neutral_site": null,
     "game_number": null,
-    "game_type": null,
+    "game_type": "regular_season",
     "postseason_round": null,
-    "away_score": null,
-    "home_score": null,
-    "score_provenance": null,
-    "source_url": null,
-    "verification": "attendance_only",
-    "official_boxscore_status": "not_imported",
+    "away_score": 5,
+    "home_score": 6,
+    "score_provenance": "official_boxscore",
+    "source_url": "https://iuhoosiers.com/sports/baseball/stats/2018/-13-san-diego/boxscore/13858",
+    "verification": "official_boxscore_verified",
+    "official_boxscore_status": "verified",
     "possible_same_day_doubleheader": true,
     "provisional_worksheet_game_sequence": 1,
-    "notes": "Original workbook Sheet1 row 15. One of 2 same-date matchups in source; game_number 1 provisional source-sheet sequence, verify against gamebooks."
+    "notes": "Original workbook Sheet1 row 15. One of 2 same-date matchups in source; game_number 1 provisional source-sheet sequence, verify against gamebooks.",
+    "away_hits": 11,
+    "home_hits": 15,
+    "away_errors": 0,
+    "home_errors": 0,
+    "innings": [
+      {
+        "inning": 1,
+        "away": 0,
+        "home": 3
+      },
+      {
+        "inning": 2,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 3,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 4,
+        "away": 1,
+        "home": 0
+      },
+      {
+        "inning": 5,
+        "away": 0,
+        "home": 3
+      },
+      {
+        "inning": 6,
+        "away": 1,
+        "home": 0
+      },
+      {
+        "inning": 7,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 8,
+        "away": 1,
+        "home": 0
+      },
+      {
+        "inning": 9,
+        "away": 2,
+        "home": null
+      }
+    ],
+    "pitching_decisions": {
+      "win": "Chris Murphy",
+      "loss": "Pauly Milto",
+      "save": "Louie Crow"
+    },
+    "source_import_season": 2018
   },
   {
     "id": "cb-2018-03-03-indiana-san-diego-att0015",
@@ -932,17 +1046,74 @@
     "state": null,
     "neutral_site": null,
     "game_number": null,
-    "game_type": null,
+    "game_type": "regular_season",
     "postseason_round": null,
-    "away_score": null,
-    "home_score": null,
-    "score_provenance": null,
-    "source_url": null,
-    "verification": "attendance_only",
-    "official_boxscore_status": "not_imported",
+    "away_score": 6,
+    "home_score": 5,
+    "score_provenance": "official_boxscore",
+    "source_url": "https://iuhoosiers.com/sports/baseball/stats/2018/-13-san-diego/boxscore/13859",
+    "verification": "official_boxscore_verified",
+    "official_boxscore_status": "verified",
     "possible_same_day_doubleheader": true,
     "provisional_worksheet_game_sequence": 2,
-    "notes": "Original workbook Sheet1 row 16. One of 2 same-date matchups in source; game_number 2 provisional source-sheet sequence, verify against gamebooks."
+    "notes": "Original workbook Sheet1 row 16. One of 2 same-date matchups in source; game_number 2 provisional source-sheet sequence, verify against gamebooks.",
+    "away_hits": 10,
+    "home_hits": 13,
+    "away_errors": 0,
+    "home_errors": 0,
+    "innings": [
+      {
+        "inning": 1,
+        "away": 0,
+        "home": 1
+      },
+      {
+        "inning": 2,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 3,
+        "away": 1,
+        "home": 1
+      },
+      {
+        "inning": 4,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 5,
+        "away": 0,
+        "home": 2
+      },
+      {
+        "inning": 6,
+        "away": 1,
+        "home": 1
+      },
+      {
+        "inning": 7,
+        "away": 2,
+        "home": 0
+      },
+      {
+        "inning": 8,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 9,
+        "away": 2,
+        "home": 0
+      }
+    ],
+    "pitching_decisions": {
+      "win": "B.J. Sabol",
+      "loss": "Gabriel Ponce",
+      "save": "Cal Krueger"
+    },
+    "source_import_season": 2018
   },
   {
     "id": "cb-2018-03-04-indiana-san-diego-att0016",
@@ -2652,17 +2823,74 @@
     "state": null,
     "neutral_site": null,
     "game_number": null,
-    "game_type": null,
+    "game_type": "regular_season",
     "postseason_round": null,
-    "away_score": null,
-    "home_score": null,
-    "score_provenance": null,
-    "source_url": null,
-    "verification": "attendance_only",
-    "official_boxscore_status": "not_imported",
+    "away_score": 8,
+    "home_score": 6,
+    "score_provenance": "official_boxscore",
+    "source_url": "https://soonersports.com/sports/2019/8/7/2150228",
+    "verification": "official_boxscore_verified",
+    "official_boxscore_status": "verified",
     "possible_same_day_doubleheader": false,
     "provisional_worksheet_game_sequence": null,
-    "notes": "Original workbook Sheet1 row 41."
+    "notes": "Original workbook Sheet1 row 41.",
+    "away_hits": 15,
+    "home_hits": 11,
+    "away_errors": 1,
+    "home_errors": 1,
+    "pitching_decisions": {
+      "win": "K. Luckham",
+      "loss": "Levi hbp ibb ab bf fo go Prater",
+      "save": "M. Weisberg"
+    },
+    "innings": [
+      {
+        "inning": 1,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 2,
+        "away": 0,
+        "home": 3
+      },
+      {
+        "inning": 3,
+        "away": 2,
+        "home": 0
+      },
+      {
+        "inning": 4,
+        "away": 1,
+        "home": 0
+      },
+      {
+        "inning": 5,
+        "away": 4,
+        "home": 3
+      },
+      {
+        "inning": 6,
+        "away": 1,
+        "home": 0
+      },
+      {
+        "inning": 7,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 8,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 9,
+        "away": 0,
+        "home": 0
+      }
+    ],
+    "source_import_season": 2019
   },
   {
     "id": "cb-2019-02-24-utah-san-diego-att0041",
@@ -5726,17 +5954,74 @@
     "state": null,
     "neutral_site": null,
     "game_number": null,
-    "game_type": null,
+    "game_type": "regular_season",
     "postseason_round": null,
-    "away_score": null,
-    "home_score": null,
-    "score_provenance": null,
-    "source_url": null,
-    "verification": "attendance_only",
-    "official_boxscore_status": "not_imported",
+    "away_score": 2,
+    "home_score": 9,
+    "score_provenance": "official_boxscore",
+    "source_url": "https://siusalukis.com/sports/baseball/stats/2020/seattle/boxscore/9208",
+    "verification": "official_boxscore_verified",
+    "official_boxscore_status": "verified",
     "possible_same_day_doubleheader": false,
     "provisional_worksheet_game_sequence": null,
-    "notes": "Original workbook Sheet1 row 79."
+    "notes": "Original workbook Sheet1 row 79.",
+    "away_hits": 10,
+    "home_hits": 15,
+    "away_errors": 0,
+    "home_errors": 0,
+    "innings": [
+      {
+        "inning": 1,
+        "away": 1,
+        "home": 5
+      },
+      {
+        "inning": 2,
+        "away": 0,
+        "home": 1
+      },
+      {
+        "inning": 3,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 4,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 5,
+        "away": 0,
+        "home": 3
+      },
+      {
+        "inning": 6,
+        "away": 1,
+        "home": 0
+      },
+      {
+        "inning": 7,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 8,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 9,
+        "away": 0,
+        "home": null
+      }
+    ],
+    "pitching_decisions": {
+      "win": "Alex McBee",
+      "loss": "Blake Begner",
+      "save": null
+    },
+    "source_import_season": 2020
   },
   {
     "id": "cb-2020-02-23-iowa-san-diego-att0079",

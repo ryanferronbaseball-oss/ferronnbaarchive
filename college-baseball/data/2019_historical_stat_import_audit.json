@@ -2,12 +2,12 @@
   "season": 2019,
   "month": null,
   "limit": 0,
-  "status": "PARTIAL_REVIEW_REQUIRED",
+  "status": "PASS",
   "original_attendance_games": 444,
   "verified_this_run": 1,
-  "verified_in_season": 40,
-  "verified_overall": 408,
-  "player_game_rows_total": 12279,
+  "verified_in_season": 41,
+  "verified_overall": 415,
+  "player_game_rows_total": 12506,
   "already_verified": [
     "cb-2019-05-14-cal-baptist-san-diego-att0072",
     "cb-2019-05-12-pacific-san-diego-att0071",
@@ -44,6 +44,7 @@
     "cb-2019-02-23-missouri-state-san-diego-att0039",
     "cb-2019-02-23-kansas-state-utah-att0038",
     "cb-2019-02-22-oklahoma-san-diego-att0037",
+    "cb-2019-02-22-fresno-state-kansas-state-att0036",
     "cb-2019-02-19-uc-irvine-san-diego-state-att0035",
     "cb-2019-02-16-wagner-san-diego-att0034",
     "cb-2019-02-16-wagner-san-diego-att0033",
@@ -51,119 +52,77 @@
   ],
   "completed": [
     {
-      "game_id": "cb-2019-02-22-fresno-state-kansas-state-att0036",
-      "player_rows": 39,
-      "source_url": "https://www.kstatesports.com/sports/baseball/stats/2019/fresno-state/boxscore/6949",
-      "win": "Ryan Jensen",
-      "loss": "Tyler Eckberg",
+      "game_id": "cb-2019-02-24-cal-state-fullerton-oklahoma-att0040",
+      "player_rows": 37,
+      "source_url": "https://soonersports.com/sports/2019/8/7/2150228",
+      "win": "K. Luckham",
+      "loss": "Levi hbp ibb ab bf fo go Prater",
       "source_audit": {
-        "game_id": "cb-2019-02-22-fresno-state-kansas-state-att0036",
-        "source": "https://www.kstatesports.com/sports/baseball/stats/2019/fresno-state/boxscore/6949",
-        "http_code": 200,
-        "source_bytes": 1535522,
-        "source_sha256": "d9670182a5bea00f5605cc06adf052877f82e288206ccd28faeaaba50eee3183",
-        "teams": [
-          {
-            "name": "Fresno State",
-            "batters": 15,
-            "pitchers": 5,
-            "AB": 40,
-            "R": 11,
-            "H": 13,
-            "RBI": 10,
-            "BB": 6,
-            "SO": 9,
-            "pitching_outs": 27,
-            "pitching_runs": 3,
-            "pitching_hits": 6
-          },
-          {
-            "name": "Kansas State",
-            "batters": 14,
-            "pitchers": 5,
-            "AB": 33,
-            "R": 3,
-            "H": 6,
-            "RBI": 3,
-            "BB": 4,
-            "SO": 9,
-            "pitching_outs": 27,
-            "pitching_runs": 11,
-            "pitching_hits": 13
-          }
-        ],
-        "source_warnings": [],
-        "player_rows": 39,
         "status": "PASS",
+        "game_id": "cb-2019-02-24-cal-state-fullerton-oklahoma-att0040",
+        "source": "https://soonersports.com/sports/2019/8/7/2150228",
+        "source_bytes": 678918,
+        "source_sha256": "05c2bbe084ebaa76215cd6e6d3f9cb7b3a7a08c39f860ad46aa89014f0e289e2",
+        "player_rows": 37,
         "scoreboard": [
           {
-            "runs": 11,
-            "hits": 13,
-            "errors": 1,
             "innings": [
+              0,
               0,
               2,
-              5,
               1,
+              4,
               1,
-              1,
-              1,
+              0,
               0,
               0
-            ]
+            ],
+            "runs": 8,
+            "hits": 15,
+            "errors": 1
           },
           {
-            "runs": 3,
-            "hits": 6,
-            "errors": 0,
             "innings": [
               0,
+              3,
+              0,
+              0,
+              3,
               0,
               0,
               0,
-              0,
-              1,
-              0,
-              0,
-              2
-            ]
+              0
+            ],
+            "runs": 6,
+            "hits": 11,
+            "errors": 1
           }
         ],
         "lineup_audit": [
           {
-            "team": "Fresno State",
+            "team": "Cal State Fullerton",
             "nine_starting_slots": true,
-            "batter_rows": 15,
-            "pitcher_rows": 5,
-            "substitutes": 6
+            "batter_rows": 13,
+            "pitcher_rows": 4,
+            "substitutes": 4
           },
           {
-            "team": "Kansas State",
+            "team": "Oklahoma",
             "nine_starting_slots": true,
-            "batter_rows": 14,
-            "pitcher_rows": 5,
-            "substitutes": 5
+            "batter_rows": 12,
+            "pitcher_rows": 8,
+            "substitutes": 3
           }
         ],
-        "official_decisions": {
-          "win": "Jensen, Ryan",
-          "loss": "Eckberg, Tyler",
-          "save": null
+        "pitching_decisions": {
+          "win": "K. Luckham",
+          "loss": "Levi hbp ibb ab bf fo go Prater",
+          "save": "M. Weisberg"
         },
-        "resolved_pitcher_decisions": {
-          "win": null,
-          "loss": null,
-          "save": null
-        }
+        "source_type": "official_university_statcrew_html"
       }
     }
   ],
-  "pending_review": [
-    {
-      "game_id": "cb-2019-02-24-cal-state-fullerton-oklahoma-att0040",
-      "source_url": "https://soonersports.com/sports/2019/8/7/2150228",
-      "reason": "Cannot read university pitcher section for Cal State Fullerton"
-    }
-  ],
+  "pending_review": [],
   "release": "Draft branch only; never auto-publish or merge"
 }

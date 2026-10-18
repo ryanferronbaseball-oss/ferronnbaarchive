@@ -1,0 +1,779 @@
+{
+  "version": 1,
+  "status": "attendee_asserted_pending_id_audit",
+  "source": "Explicit attendee-provided player-transfer identity batches, 2026-10-18",
+  "policy": "Match both exact normalized person names AND approved school pairs, never names alone. No other team is an implied alias. Preserve per-row historical team, game and statistics.",
+  "expected_proposals": 96,
+  "rules": [
+    {
+      "sequence": 1,
+      "name": "Justin DeCriscio",
+      "schools": [
+        "San Diego",
+        "North Carolina State"
+      ]
+    },
+    {
+      "sequence": 2,
+      "name": "James Arakawa",
+      "schools": [
+        "Pacific",
+        "San Diego"
+      ]
+    },
+    {
+      "sequence": 3,
+      "name": "Austin Smith",
+      "schools": [
+        "UC San Diego",
+        "San Diego"
+      ]
+    },
+    {
+      "sequence": 4,
+      "name": "Ripken Reyes",
+      "schools": [
+        "California",
+        "San Diego"
+      ]
+    },
+    {
+      "sequence": 5,
+      "name": "Henry Ford",
+      "schools": [
+        "Virginia",
+        "Tennessee"
+      ]
+    },
+    {
+      "sequence": 6,
+      "name": "Enzo Apodaca",
+      "schools": [
+        "Gonzaga",
+        "Baylor"
+      ]
+    },
+    {
+      "sequence": 7,
+      "name": "Jayce Tharnish",
+      "schools": [
+        "St. Bonaventure",
+        "Kentucky"
+      ]
+    },
+    {
+      "sequence": 8,
+      "name": "Mike Mancini",
+      "schools": [
+        "James Madison",
+        "Vanderbilt"
+      ]
+    },
+    {
+      "sequence": 9,
+      "name": "Parker Noland",
+      "schools": [
+        "Vanderbilt",
+        "South Carolina"
+      ]
+    },
+    {
+      "sequence": 10,
+      "name": "Devin Obee",
+      "schools": [
+        "Duke",
+        "Georgia"
+      ]
+    },
+    {
+      "sequence": 11,
+      "name": "Shea Kramer",
+      "schools": [
+        "Utah",
+        "Gonzaga"
+      ]
+    },
+    {
+      "sequence": 12,
+      "name": "Jase Woita",
+      "schools": [
+        "South Carolina",
+        "Missouri"
+      ]
+    },
+    {
+      "sequence": 13,
+      "name": "Logan Johnstone",
+      "schools": [
+        "Gonzaga",
+        "Vanderbilt"
+      ]
+    },
+    {
+      "sequence": 14,
+      "name": "Chris Stanfield",
+      "schools": [
+        "Auburn",
+        "LSU"
+      ]
+    },
+    {
+      "sequence": 15,
+      "name": "Dylan Johnson",
+      "schools": [
+        "Fresno State",
+        "Gonzaga"
+      ],
+      "notes": "Do not merge with any Dylan Johnson at schools other than Fresno State and Gonzaga"
+    },
+    {
+      "sequence": 16,
+      "name": "Christian Almanza",
+      "schools": [
+        "Utah",
+        "Saint Mary's"
+      ]
+    },
+    {
+      "sequence": 17,
+      "name": "Tony Boetto",
+      "schools": [
+        "Santa Clara",
+        "Portland"
+      ]
+    },
+    {
+      "sequence": 18,
+      "name": "Robbie Burnett",
+      "schools": [
+        "UNC Asheville",
+        "Georgia"
+      ]
+    },
+    {
+      "sequence": 19,
+      "name": "AJ Gracia",
+      "schools": [
+        "Duke",
+        "Virginia"
+      ]
+    },
+    {
+      "sequence": 20,
+      "name": "Gaven Kilen",
+      "schools": [
+        "Louisville",
+        "Tennessee"
+      ]
+    },
+    {
+      "sequence": 21,
+      "name": "Chris McHugh",
+      "schools": [
+        "VCU",
+        "North Carolina State"
+      ]
+    },
+    {
+      "sequence": 22,
+      "name": "Tate Soderstrom",
+      "schools": [
+        "Arizona",
+        "UC San Diego"
+      ]
+    },
+    {
+      "sequence": 23,
+      "name": "Drew Berkland",
+      "schools": [
+        "Minnesota",
+        "Notre Dame"
+      ]
+    },
+    {
+      "sequence": 24,
+      "name": "Mark Quatrani",
+      "schools": [
+        "Cornell",
+        "Notre Dame"
+      ]
+    },
+    {
+      "sequence": 25,
+      "name": "Isaac Humphrey",
+      "schools": [
+        "Louisville",
+        "Ole Miss"
+      ]
+    },
+    {
+      "sequence": 26,
+      "name": "Kam Durnin",
+      "schools": [
+        "Wichita State",
+        "Missouri"
+      ]
+    },
+    {
+      "sequence": 27,
+      "name": "Tyler Minnick",
+      "schools": [
+        "Georgia Tech",
+        "Middle Tennessee State"
+      ]
+    },
+    {
+      "sequence": 28,
+      "name": "Ozzie Pratt",
+      "schools": [
+        "BYU",
+        "Southern Miss"
+      ]
+    },
+    {
+      "sequence": 29,
+      "name": "Briley Knight",
+      "schools": [
+        "Utah",
+        "Portland"
+      ]
+    },
+    {
+      "sequence": 30,
+      "name": "Crew Robinson",
+      "schools": [
+        "UC San Diego",
+        "BYU"
+      ]
+    },
+    {
+      "sequence": 31,
+      "name": "Brayden Horton",
+      "schools": [
+        "Liberty",
+        "Oklahoma"
+      ]
+    },
+    {
+      "sequence": 32,
+      "name": "Tagger Tyson",
+      "schools": [
+        "Louisville",
+        "Kentucky"
+      ]
+    },
+    {
+      "sequence": 33,
+      "name": "Mike Gunning",
+      "schools": [
+        "Binghamton",
+        "St. Bonaventure"
+      ]
+    },
+    {
+      "sequence": 34,
+      "name": "Kane Kepley",
+      "schools": [
+        "Liberty",
+        "North Carolina"
+      ]
+    },
+    {
+      "sequence": 35,
+      "name": "Camden Kozeal",
+      "schools": [
+        "Vanderbilt",
+        "Arkansas"
+      ]
+    },
+    {
+      "sequence": 36,
+      "name": "Camden Johnson",
+      "schools": [
+        "Wichita State",
+        "Oklahoma"
+      ]
+    },
+    {
+      "sequence": 37,
+      "name": "Tristan Bissetta",
+      "schools": [
+        "Clemson",
+        "Ole Miss"
+      ]
+    },
+    {
+      "sequence": 38,
+      "name": "Brandon Larson",
+      "schools": [
+        "UC San Diego",
+        "Stanford"
+      ]
+    },
+    {
+      "sequence": 39,
+      "name": "Alex Bouche",
+      "schools": [
+        "Old Dominion",
+        "East Carolina"
+      ]
+    },
+    {
+      "sequence": 40,
+      "name": "Joe Fitzhugh",
+      "schools": [
+        "San Diego State",
+        "Pacific"
+      ]
+    },
+    {
+      "sequence": 41,
+      "name": "Kamau Neighbors",
+      "schools": [
+        "Cal State Northridge",
+        "Louisville"
+      ]
+    },
+    {
+      "sequence": 42,
+      "name": "Derek Williams",
+      "schools": [
+        "Wichita State",
+        "Miami"
+      ]
+    },
+    {
+      "sequence": 43,
+      "name": "Jordan Jaffe",
+      "schools": [
+        "Richmond",
+        "Liberty"
+      ]
+    },
+    {
+      "sequence": 44,
+      "name": "Joey Nicolai",
+      "schools": [
+        "UC Riverside",
+        "Point Loma"
+      ]
+    },
+    {
+      "sequence": 45,
+      "name": "Kyson Donahue",
+      "schools": [
+        "Arizona",
+        "Hawaii"
+      ]
+    },
+    {
+      "sequence": 46,
+      "name": "Kuhio Aloy",
+      "schools": [
+        "BYU",
+        "Arkansas"
+      ]
+    },
+    {
+      "sequence": 47,
+      "name": "Ryan Jaros",
+      "schools": [
+        "Georgia Tech",
+        "North Carolina State"
+      ]
+    },
+    {
+      "sequence": 48,
+      "name": "Aden Hill",
+      "schools": [
+        "VCU",
+        "Maryland"
+      ]
+    },
+    {
+      "sequence": 49,
+      "name": "Macaddin Dye",
+      "schools": [
+        "Liberty",
+        "North Carolina"
+      ]
+    },
+    {
+      "sequence": 50,
+      "name": "Parker Coley",
+      "schools": [
+        "Southeastern Louisiana",
+        "Western Kentucky"
+      ]
+    },
+    {
+      "sequence": 51,
+      "name": "Peter Abinanti",
+      "schools": [
+        "St. John's",
+        "San Diego"
+      ]
+    },
+    {
+      "sequence": 52,
+      "name": "Hugh Pinkney",
+      "schools": [
+        "Rutgers",
+        "Tulane"
+      ]
+    },
+    {
+      "sequence": 53,
+      "name": "Lorenzo Carrier",
+      "schools": [
+        "Miami",
+        "Pittsburgh"
+      ]
+    },
+    {
+      "sequence": 54,
+      "name": "Max Jensen",
+      "schools": [
+        "Cornell",
+        "Vanderbilt"
+      ]
+    },
+    {
+      "sequence": 55,
+      "name": "Peyton Bonds",
+      "schools": [
+        "Campbell",
+        "Rutgers"
+      ]
+    },
+    {
+      "sequence": 56,
+      "name": "Nick Barone",
+      "schools": [
+        "West Virginia",
+        "Liberty"
+      ]
+    },
+    {
+      "sequence": 57,
+      "name": "Steven Meier",
+      "schools": [
+        "Old Dominion",
+        "Troy"
+      ]
+    },
+    {
+      "sequence": 58,
+      "name": "Darnell Parker Jr.",
+      "schools": [
+        "Wichita State",
+        "Campbell"
+      ]
+    },
+    {
+      "sequence": 59,
+      "name": "Jackson Cherry",
+      "schools": [
+        "Mercer",
+        "Virginia Tech"
+      ]
+    },
+    {
+      "sequence": 60,
+      "name": "Vytas Valincius",
+      "schools": [
+        "Illinois",
+        "Mississippi State"
+      ]
+    },
+    {
+      "sequence": 61,
+      "name": "Easton Richter",
+      "schools": [
+        "Saint Louis",
+        "Minnesota"
+      ]
+    },
+    {
+      "sequence": 62,
+      "name": "Brennan Holt",
+      "schools": [
+        "South Alabama",
+        "Alabama"
+      ]
+    },
+    {
+      "sequence": 63,
+      "name": "Tanner Thomas",
+      "schools": [
+        "Gardner-Webb",
+        "Xavier"
+      ]
+    },
+    {
+      "sequence": 64,
+      "name": "Trenton Lyons",
+      "schools": [
+        "North Carolina State",
+        "Kennesaw State"
+      ]
+    },
+    {
+      "sequence": 65,
+      "name": "Sam Harris",
+      "schools": [
+        "Duke",
+        "Virginia"
+      ]
+    },
+    {
+      "sequence": 66,
+      "name": "Bristol Carter",
+      "schools": [
+        "East Carolina",
+        "Auburn"
+      ]
+    },
+    {
+      "sequence": 67,
+      "name": "Jaxon Sorenson",
+      "schools": [
+        "Gonzaga",
+        "Liberty"
+      ]
+    },
+    {
+      "sequence": 68,
+      "name": "Ethan Lizama",
+      "schools": [
+        "Western Kentucky",
+        "South Carolina"
+      ]
+    },
+    {
+      "sequence": 69,
+      "name": "KaiKea Harrison",
+      "schools": [
+        "USC",
+        "Tulane"
+      ]
+    },
+    {
+      "sequence": 70,
+      "name": "Liam Willson",
+      "schools": [
+        "Wake Forest",
+        "Maryland"
+      ]
+    },
+    {
+      "sequence": 71,
+      "name": "Jake Ogden",
+      "schools": [
+        "UNC Greensboro",
+        "Miami"
+      ]
+    },
+    {
+      "sequence": 72,
+      "name": "Kyle Hvidsten",
+      "schools": [
+        "Western Kentucky",
+        "Liberty"
+      ]
+    },
+    {
+      "sequence": 73,
+      "name": "Bryce Clavon",
+      "schools": [
+        "Georgia",
+        "Clemson"
+      ]
+    },
+    {
+      "sequence": 74,
+      "name": "Maximus Martin",
+      "schools": [
+        "Georgia State",
+        "Kansas State"
+      ]
+    },
+    {
+      "sequence": 75,
+      "name": "Jo Stevens",
+      "schools": [
+        "CSU Bakersfield",
+        "Purdue"
+      ]
+    },
+    {
+      "sequence": 76,
+      "name": "Reed Stallman",
+      "schools": [
+        "Campbell",
+        "Mississippi State"
+      ]
+    },
+    {
+      "sequence": 77,
+      "name": "Cal Sefcik",
+      "schools": [
+        "Indiana",
+        "Cincinnati"
+      ]
+    },
+    {
+      "sequence": 78,
+      "name": "Charlie Jones",
+      "schools": [
+        "Georgia",
+        "Kennesaw State"
+      ]
+    },
+    {
+      "sequence": 79,
+      "name": "Chris Katz",
+      "schools": [
+        "Wake Forest",
+        "Mercer"
+      ]
+    },
+    {
+      "sequence": 80,
+      "name": "Gavin Miller",
+      "schools": [
+        "Auburn",
+        "Pittsburgh"
+      ]
+    },
+    {
+      "sequence": 81,
+      "name": "Jake Bechtel",
+      "schools": [
+        "North Carolina State",
+        "UNC Wilmington"
+      ]
+    },
+    {
+      "sequence": 82,
+      "name": "Jack Goodman",
+      "schools": [
+        "Pepperdine",
+        "Northeastern"
+      ]
+    },
+    {
+      "sequence": 83,
+      "name": "Noah Murray",
+      "schools": [
+        "Duke",
+        "Virginia"
+      ]
+    },
+    {
+      "sequence": 84,
+      "name": "Jake Randolph",
+      "schools": [
+        "Presbyterian",
+        "South Carolina"
+      ]
+    },
+    {
+      "sequence": 85,
+      "name": "Josh Paino",
+      "schools": [
+        "California Baptist",
+        "Clemson"
+      ]
+    },
+    {
+      "sequence": 86,
+      "name": "Ryan Moerman",
+      "schools": [
+        "Illinois",
+        "Ole Miss"
+      ]
+    },
+    {
+      "sequence": 87,
+      "name": "Alex Lambeau",
+      "schools": [
+        "Loyola Marymount",
+        "Santa Clara"
+      ]
+    },
+    {
+      "sequence": 88,
+      "name": "Luke Szepek",
+      "schools": [
+        "West Virginia",
+        "Stony Brook"
+      ]
+    },
+    {
+      "sequence": 89,
+      "name": "Devan Zirwas",
+      "schools": [
+        "VCU",
+        "Eastern Michigan"
+      ]
+    },
+    {
+      "sequence": 90,
+      "name": "Logan Sutter",
+      "schools": [
+        "Purdue",
+        "South Carolina"
+      ]
+    },
+    {
+      "sequence": 91,
+      "name": "Tanner Smith",
+      "schools": [
+        "Oregon State",
+        "Miami"
+      ],
+      "notes": "Do not merge with Tanner Smith at Oregon"
+    },
+    {
+      "sequence": 92,
+      "name": "Scotty Young",
+      "schools": [
+        "Rutgers",
+        "Old Dominion"
+      ]
+    },
+    {
+      "sequence": 93,
+      "name": "Chone James",
+      "schools": [
+        "Virginia",
+        "Mississippi State"
+      ]
+    },
+    {
+      "sequence": 94,
+      "name": "Ryder Woodson",
+      "schools": [
+        "North Carolina State",
+        "Mississippi State"
+      ]
+    },
+    {
+      "sequence": 95,
+      "name": "Michael Graziano",
+      "schools": [
+        "Georgia Tech",
+        "Mercer"
+      ]
+    },
+    {
+      "sequence": 96,
+      "name": "Kyle Johnson",
+      "schools": [
+        "Duke",
+        "Virginia"
+      ]
+    }
+  ]
+}

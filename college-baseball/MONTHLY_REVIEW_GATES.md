@@ -1,5 +1,12 @@
 # College Baseball — Month-by-Month Review Gates
 
+## October 17, 2026 — 2020 and 2019 season discovery completed (latest checkpoint)
+
+User explicitly authorized **2020 and 2019**. **2019: 41/41** complete official university player gamebooks located, original source dates all matched. February 16 Wagner vs USD has two unique original attendance rows: **Game 1 Wagner 9–USD 15, 1:03 PM (USD Sidearm source 8231)** and **Game 2 Wagner 1–USD 3, 5:09 PM (USD Sidearm source 8232)**; do not use USD aggregate per-game listing order, which is reversed. **2020: 11/11** complete official university player gamebooks linked; exactly one date conflict, user original **March 10 California Baptist at USD** versus official **March 11, 2020 USD 2–0** (USD source 9683). Hold that single game's player-stat import pending date reconciliation, keep original date and ID untouched. No 2019 or 2020 individual player stats yet imported (0/52). See [2019 source queue](data/2019_official_source_queue.json), [2020 source queue](data/2020_official_source_queue.json), [2019 monthly audit](data/2019_monthly_progress_audit.json), and [2020 monthly audit](data/2020_monthly_progress_audit.json).
+
+**Authorized seasons:** 2019–2026 four-year non-JUCO. **2018 and earlier not authorized**; no merge, production publish or deployment. Earlier checkpoint notes are historical and superseded by this authorization.
+
+
 ## October 17, 2026 — 2021 full-season authorized, all 32 official gamebook identities matched (current)
 
 User confirmed that **the April 24, 2021 CSU Bakersfield at UC San Diego attended game was Game 1 at 12:03 PM, score CSUB 3–UC San Diego 2**; select university full gamebook ID **8289** for original attendance row 110 (att0109). **Do not attach or import 3:32 PM Game 2** (CSUB 1–UCSD 7, full gamebook ID 8292) to the original attendance row. The March 13 UC Riverside–San Diego doubleheader likewise retains the two separately identified original rows. All **32/32 2021 original attendance entries now have uniquely matched official player gamebook sources**, but **0/32 full player-gamebooks are imported**. The last attendance source ambiguity is resolved. Vanguard University (NAIA) is eligible; only JUCO games are excluded. See [2021 gamebook queue](data/2021_official_source_queue.json) and [2021 audit](data/2021_monthly_progress_audit.json).

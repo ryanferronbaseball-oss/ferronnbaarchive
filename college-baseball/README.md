@@ -1,17 +1,17 @@
 # College Baseball · Courtside Archive
 
-**Current verified status (October 17, 2026):** Unpublished draft PR #10 contains **434/437 eligible attended college baseball games with fully imported, original-source-verified player box scores** and **13,088 player-game rows**. All **444 original attendance IDs** remain intact. Seven JUCO attendance games are excluded from player-stat backfill. **Three 2018 games remain**, listed below. Nothing has merged into production or been deployed.
+**Current verified status (October 18, 2026):** Unpublished draft PR #10 contains **436/437 eligible attended college baseball games with fully imported, original-source-verified player box scores** and **13,153 player-game rows**. All **444 original attendance IDs** remain intact. Seven JUCO attendance games are excluded from player-stat backfill. **One 2018 full gamebook remains**, listed below. Nothing has merged into production or been deployed.
 
 The site lives under `/college-baseball/`, with independent college baseball stats and verified inter-level player IDs only. It shares the MLB archive design system: Inter fonts, navigation, scoreboards, box-score layout, player cards, responsive tables, and numbered batting-order slots.
 
-## October 17, 2026 — authoritative post-verification import status
+## October 18, 2026 — authoritative post-verification import status
 
 The original university batting, pitching, scorer decisions, inning totals, and nine-slot starting lineups are source-validated by `scripts/import_historical_verified_queue.py`. The latest [2018 incomplete-game audit](data/2018_historical_stat_import_audit.json), [2022 complete-game audit](data/2022_historical_stat_import_audit.json), [2023 complete-game audit](data/2023_historical_stat_import_audit.json), and `data/import_report.json` determine actual completion—not the older source discovery notes below.
 
 | Season | Fully verified player gamebooks | Eligible attended games |
 |---|---:|---:|
 | 2017 | 1 | 1 |
-| 2018 | 27 | 30 |
+| 2018 | 29 | 30 |
 | 2019 | 41 | 41 |
 | 2020 | 11 | 11 |
 | 2021 | 32 | 32 |
@@ -20,19 +20,19 @@ The original university batting, pitching, scorer decisions, inning totals, and 
 | 2024 | 71 | 71 |
 | 2025 | 74 | 74 |
 | 2026 | 68 | 68 |
-| **Total** | **434** | **437** |
+| **Total** | **436** | **437** |
 
 All four previously held 2022–2023 attendance date conflicts were **explicitly confirmed by the user October 17, 2026** and imported. Actual site dates now match their original university gamebooks; each record also keeps `original_worksheet_date`, `date_correction_user_confirmed`, original source worksheet row and immutable game ID. The 2022 Gonzaga–San Diego and San Diego–Portland two-game doubleheaders were imported separately, matching both start times and scores. The official 2023 seven-inning Nebraska–San Diego 16–16 tie retains no win, loss or save.
 
 **October 18 update: both February 18 Cincinnati–San Diego games are fully imported.** The original university-hosted archived scorebooks were recovered from Cincinnati's Google Cloud archive (not USD's inaccessible PDF landing pages). Game 1 imported **33 player rows**, Game 2 **27**; all nine starting batting slots, 10- and 9-inning scores, scorer's winning/losing/saving pitchers, and source player totals verified. The archived PDFs print February 17 but both universities' actual game schedules identify Sunday, February 18. The source header-date discrepancy is explicitly preserved in the strict import audits rather than silently corrected.
 
-**The only three remaining unimported games, all from 2018:**
+**October 18 update: the two user-uploaded complete original 2018 USD PDFs are fully imported**, via source-preserving, strict `scripts/import_2018_original_pdf_transcripts.py`:
+- March 13 San Diego State 9, San Diego 3: **36 player-game rows**; W Daniel Ritcheson, L Anthony Donatella; full R/H/E, pitching outs, score-by-innings and nine batting spots passed.
+- April 14 Saint Mary's 6, San Diego 5: **29 player-game rows**; W Kevin Milam, L Chris Murphy, SV Michael Hobbs; full source verification passed.
 
-1. March 13, San Diego State at San Diego (SDSU 9–3): original user-supplied university PDF and transcribed source in `data/official_pdf_transcriptions/2018_03_13_sdsu_san_diego.txt`; strict player-stat import pending.
-2. April 14, Saint Mary's at San Diego (Saint Mary's 6–5): original user-supplied university PDF and transcribed source in `data/official_pdf_transcriptions/2018_04_14_saint_marys_san_diego.txt`; strict player-stat import pending.
-3. May 9, Arizona State at San Diego (ASU 12–7): official batting/pitching and user-reconciled hitter K evidence in `data/2018_05_09_asu_san_diego_screenshot_evidence.json`; full inning line and exact substitution slots still require verification.
+**Only one pending full player gamebook remains: May 9, 2018 Arizona State 12 at San Diego 7.** The attended game, final score, official source links, both teams' transcribed batting/pitching tables, all 18 team-level SO checks and each user's play-by-play-reconstructed batter strikeout are already recorded. The verified 12–7 final has been added to the attended game entry with status `source_matched`. **However, the exact nine-inning run sequence and defensively replaced lineup slots have not been source-verified.** Do not count the game as a complete box score or invent the missing innings; this remains the last release-completeness hold. Its official USD PDF download currently returns an HTML landing page instead of readable PDF bytes, while ASU's official website only renders the detailed play-by-play client-side.
 
-Do not mark a source-matched game as imported until all individual player rows, inning R/H/E, pitcher decisions and nine batting slots pass the same stringent checks. No JUCO backfill. **No publication, production merge, or live-site deployment was authorized.**
+Do not mark a source-matched game as imported until all individual player rows, inning R/H/E, pitcher decisions and nine batting slots pass the same stringent checks. No JUCO backfill. **The user expressed intent to publish once all three final source cases are officially reconciled. The final Arizona State gamebook is still incomplete, so no production merge or deployment has been performed; only development-branch commits.**
 
 The sections below are a **preserved historical discovery timeline**. Their earlier claims such as “0 imports,” “41 pending,” or incomplete year totals were snapshots written *before* the source-verified imports and are no longer current.
 

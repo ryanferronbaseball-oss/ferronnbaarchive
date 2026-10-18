@@ -29,8 +29,15 @@ for g in verified:
     assert len(observed)>=18, f"Verified game has fewer than 18 player rows: {g['id']}"
     assert g.get("source_url","").startswith("https://"), f"Verified game lacks official source {g['id']}"
     assert g.get("innings"), f"Verified game has no full inning scoreboard {g['id']}"
-    assert g.get("pitching_decisions",{}).get("win"), f"Verified game has no official winner {g['id']}"
-    assert g.get("pitching_decisions",{}).get("loss"), f"Verified game has no official loser {g['id']}"
+    if g.get("official_draw"):
+        assert g["id"] == "cb-2023-02-20-nebraska-san-diego-att0181"
+        assert (g["away_score"], g["home_score"], len(g["innings"])) == (16, 16, 7)
+        assert g.get("pitching_decisions") == {"win":None,"loss":None,"save":None}
+        assert all(r["pitching"].get("wins")==0 and r["pitching"].get("losses")==0
+                   for r in observed if "pitching" in r), "Official draw cannot credit pitcher decisions"
+    else:
+        assert g.get("pitching_decisions",{}).get("win"), f"Verified game has no official winner {g['id']}"
+        assert g.get("pitching_decisions",{}).get("loss"), f"Verified game has no official loser {g['id']}"
     assert g.get("away_score") is not None and g.get("home_score") is not None
     for team,score in ((g["away"],g["away_score"]),(g["home"],g["home_score"])):
         batters=[p for p in observed if p["team"]==team and "batting" in p]

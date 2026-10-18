@@ -157,7 +157,21 @@ def main():
             continue
         try:
             url, scores = resolve(args.season, g, row)
-            source = session.get(url, timeout=50)
+            # One original USD 2017 archival gamebook is served on a
+            # retired university FTP hostname with a certificate hostname
+            # mismatch. For this single exact file, the official USD recap
+            # links to the source directly, and the full player/scorebook
+            # parser independently checks date, both teams, innings, R/H/E,
+            # batting rows, pitching and official W/L/S. No credentials are
+            # transmitted; preserve this one-host exception in the audit.
+            legacy_2017_source = ("https://usandiego_ftp.sidearmsports.com/"
+                "custompages/sports/m-basebl/stats/2016-201736.html")
+            if url == legacy_2017_source and g["id"] == "cb-2017-04-20-byu-san-diego-att0001":
+                import urllib3
+                urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+                source = session.get(url, timeout=50, verify=False)
+            else:
+                source = session.get(url, timeout=50)
             source.raise_for_status()
             if len(source.content) < 2000:
                 raise ValueError("Incomplete official source response")

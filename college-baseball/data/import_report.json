@@ -6,9 +6,9 @@
   "season_span": "2017–2026 after user-confirmed 2024 typo correction",
   "staged_games": 444,
   "official_score_and_inning_lines_matched": 213,
-  "official_player_boxscores_imported": 401,
-  "player_stat_rows": 12068,
-  "unique_player_ids": 5228,
+  "official_player_boxscores_imported": 405,
+  "player_stat_rows": 12179,
+  "unique_player_ids": 5242,
   "scores_supplied_by_user": 0,
   "source_docs": "Official Auburn, Arkansas, LSU, Florida, Mississippi State, Tennessee and Texas athletics/conference box scores and university recaps",
   "source_worksheet_rows": [
@@ -137,7 +137,7 @@
   "remaining_attendance_games_not_yet_imported": 0,
   "validation": "May 2026: all 27 official player books mapped to matching attendance games; scores, R/H/E, pitching/team opposing R and H, batting lineup starters checked; new imports have complete official per-inning lines. CI browser test separately tracked.",
   "all_attendance_entries_staged": 444,
-  "attendance_only_pending_official_verification": 43,
+  "attendance_only_pending_official_verification": 39,
   "source": "User workbook; 444 original rows, two user-corrected entries.",
   "official_scoreboard_player_lines_pending": 0,
   "latest_verified_batch": "Historical official gamebooks 2018 (development branch)",
@@ -390,7 +390,7 @@
     },
     "season_2023": {
       "approved": false,
-      "full_player_boxscores_imported": 38,
+      "full_player_boxscores_imported": 41,
       "status": "in_progress"
     },
     "season_2022": {
@@ -451,7 +451,7 @@
       "official_identity_scores_matched": 30,
       "full_gamebook_direct_sources_located": 30,
       "full_player_gamebook_url_pending": 0,
-      "full_player_boxscores_imported": 15,
+      "full_player_boxscores_imported": 16,
       "status": "in_progress",
       "source_queue": "data/2018_official_source_queue.json",
       "audit_file": "data/2018_monthly_progress_audit.json",
@@ -522,16 +522,16 @@
     "authorized": true,
     "original_attendance_games": 47,
     "official_full_gamebook_source_links": 47,
-    "official_boxscores_player_rows_imported": 38,
+    "official_boxscores_player_rows_imported": 41,
     "source_date_reconciliation_pending": 3,
     "tie_7_inning_special_case": 1,
     "source_queue": "data/2023_official_source_queue.json",
     "month_audit": "data/2023_monthly_progress_audit.json",
     "stage": "historical_verified_player_stat_backfill_in_progress",
     "approved": true,
-    "player_boxscore_imported": 38,
-    "new_verified_gamebooks_last_run": 28,
-    "last_run_pending_review": 9
+    "player_boxscore_imported": 41,
+    "new_verified_gamebooks_last_run": 3,
+    "last_run_pending_review": 6
   },
   "2022_backfill": {
     "approved": true,
@@ -589,14 +589,14 @@
     "official_game_identifications": 30,
     "full_player_gamebook_direct_sources": 30,
     "full_player_gamebook_link_not_yet_found": 0,
-    "player_boxscore_imported": 15,
+    "player_boxscore_imported": 16,
     "source_queue": "data/2018_official_source_queue.json",
     "monthly_audit": "data/2018_monthly_progress_audit.json",
     "full_player_gamebook_contents_verified": 30,
     "full_player_gamebook_content_verification_pending": 0,
     "asu_2018_05_09_user_batter_so_reconstructed": true,
-    "new_verified_gamebooks_last_run": 3,
-    "last_run_pending_review": 15
+    "new_verified_gamebooks_last_run": 1,
+    "last_run_pending_review": 14
   },
   "2017_backfill": {
     "approved": true,

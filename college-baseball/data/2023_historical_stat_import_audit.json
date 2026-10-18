@@ -4,10 +4,10 @@
   "limit": 0,
   "status": "PARTIAL_REVIEW_REQUIRED",
   "original_attendance_games": 444,
-  "verified_this_run": 28,
-  "verified_in_season": 38,
-  "verified_overall": 309,
-  "player_game_rows_total": 9269,
+  "verified_this_run": 3,
+  "verified_in_season": 41,
+  "verified_overall": 404,
+  "player_game_rows_total": 12150,
   "already_verified": [
     "cb-2023-05-24-saint-mary-s-san-diego-att0224",
     "cb-2023-05-24-gonzaga-santa-clara-att0223",
@@ -18,584 +18,77 @@
     "cb-2023-05-07-cal-state-northridge-uc-san-diego-att0218",
     "cb-2023-05-06-byu-san-diego-att0217",
     "cb-2023-05-05-byu-san-diego-att0216",
-    "cb-2023-05-04-byu-san-diego-att0215"
+    "cb-2023-05-04-byu-san-diego-att0215",
+    "cb-2023-04-30-san-diego-loyola-marymount-att0214",
+    "cb-2023-04-29-san-diego-loyola-marymount-att0213",
+    "cb-2023-04-28-san-diego-loyola-marymount-att0212",
+    "cb-2023-04-25-cal-state-northridge-san-diego-att0211",
+    "cb-2023-04-23-san-francisco-san-diego-att0210",
+    "cb-2023-04-22-san-francisco-san-diego-att0209",
+    "cb-2023-04-18-san-diego-san-diego-state-att0207",
+    "cb-2023-04-11-san-diego-uc-irvine-att0203",
+    "cb-2023-04-08-san-diego-gonzaga-att0202",
+    "cb-2023-04-07-san-diego-gonzaga-att0201",
+    "cb-2023-04-06-san-diego-gonzaga-att0200",
+    "cb-2023-04-04-san-diego-uc-san-diego-att0199",
+    "cb-2023-04-02-pepperdine-san-diego-att0198",
+    "cb-2023-04-01-pepperdine-san-diego-att0197",
+    "cb-2023-03-31-pepperdine-san-diego-att0196",
+    "cb-2023-03-28-san-diego-cal-state-northridge-att0195",
+    "cb-2023-03-19-pacific-san-diego-att0194",
+    "cb-2023-03-18-pacific-san-diego-att0193",
+    "cb-2023-03-17-pacific-san-diego-att0192",
+    "cb-2023-03-07-san-diego-oregon-state-att0191",
+    "cb-2023-03-05-san-diego-oregon-att0190",
+    "cb-2023-03-04-san-diego-oregon-att0189",
+    "cb-2023-03-03-san-diego-oregon-att0188",
+    "cb-2023-03-02-san-diego-oregon-att0187",
+    "cb-2023-02-24-hawaii-san-diego-att0183",
+    "cb-2023-02-19-nebraska-san-diego-att0180",
+    "cb-2023-02-18-nebraska-san-diego-att0179",
+    "cb-2023-02-17-nebraska-san-diego-att0178"
   ],
   "completed": [
     {
-      "game_id": "cb-2023-04-30-san-diego-loyola-marymount-att0214",
-      "player_rows": 30,
-      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/loyola-marymount/boxscore/13931",
-      "win": "Merrick Baldo",
-      "loss": "Ivran Romero",
+      "game_id": "cb-2023-04-16-portland-san-diego-att0206",
+      "player_rows": 28,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/portland/boxscore/13924",
+      "win": "Ryan Robinson",
+      "loss": "Jacob DOBMEIER",
       "source_audit": {
-        "game_id": "cb-2023-04-30-san-diego-loyola-marymount-att0214",
-        "source": "https://usdtoreros.com/sports/baseball/stats/2023/loyola-marymount/boxscore/13931",
+        "game_id": "cb-2023-04-16-portland-san-diego-att0206",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2023/portland/boxscore/13924",
         "http_code": 200,
-        "source_bytes": 683046,
-        "source_sha256": "c216316cdb030aa80c94920f2de367c044c88f18a00bbba0d7791da82a3e6aa9",
+        "source_bytes": 657156,
+        "source_sha256": "a548b4c9252a9e686729ec7293d4e67b6ebf75716f06cb8196781888a0462aee",
         "teams": [
+          {
+            "name": "Portland",
+            "batters": 10,
+            "pitchers": 5,
+            "AB": 38,
+            "R": 6,
+            "H": 13,
+            "RBI": 6,
+            "BB": 1,
+            "SO": 6,
+            "pitching_outs": 25,
+            "pitching_runs": 7,
+            "pitching_hits": 11
+          },
           {
             "name": "San Diego",
             "batters": 9,
-            "pitchers": 6,
-            "AB": 43,
-            "R": 9,
-            "H": 15,
-            "RBI": 9,
-            "BB": 4,
-            "SO": 11,
-            "pitching_outs": 24,
-            "pitching_runs": 10,
-            "pitching_hits": 17
-          },
-          {
-            "name": "Loyola Marymount",
-            "batters": 11,
-            "pitchers": 4,
-            "AB": 36,
-            "R": 10,
-            "H": 17,
-            "RBI": 10,
-            "BB": 6,
-            "SO": 4,
-            "pitching_outs": 27,
-            "pitching_runs": 9,
-            "pitching_hits": 15
-          }
-        ],
-        "source_warnings": [],
-        "player_rows": 30,
-        "status": "PASS",
-        "scoreboard": [
-          {
-            "runs": 9,
-            "hits": 15,
-            "errors": 0,
-            "innings": [
-              1,
-              0,
-              0,
-              4,
-              0,
-              3,
-              0,
-              1,
-              0
-            ]
-          },
-          {
-            "runs": 10,
-            "hits": 17,
-            "errors": 1,
-            "innings": [
-              1,
-              1,
-              2,
-              0,
-              3,
-              0,
-              1,
-              2,
-              null
-            ]
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "San Diego",
-            "nine_starting_slots": true,
-            "batter_rows": 9,
-            "pitcher_rows": 6,
-            "substitutes": 0
-          },
-          {
-            "team": "Loyola Marymount",
-            "nine_starting_slots": true,
-            "batter_rows": 11,
-            "pitcher_rows": 4,
-            "substitutes": 2
-          }
-        ],
-        "official_decisions": {
-          "win": "Merrick Baldo",
-          "loss": "Romero, Ivran",
-          "save": null
-        },
-        "resolved_pitcher_decisions": {
-          "win": "Merrick Baldo",
-          "loss": null,
-          "save": null
-        }
-      }
-    },
-    {
-      "game_id": "cb-2023-04-29-san-diego-loyola-marymount-att0213",
-      "player_rows": 26,
-      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/loyola-marymount/boxscore/13930",
-      "win": "Ryan Robinson",
-      "loss": "Merrick Baldo",
-      "source_audit": {
-        "game_id": "cb-2023-04-29-san-diego-loyola-marymount-att0213",
-        "source": "https://usdtoreros.com/sports/baseball/stats/2023/loyola-marymount/boxscore/13930",
-        "http_code": 200,
-        "source_bytes": 645587,
-        "source_sha256": "10bc30053bef4b83546e7a1ffc42ab2df858cb07b73200d86a560b6380c274ac",
-        "teams": [
-          {
-            "name": "San Diego",
-            "batters": 10,
             "pitchers": 4,
             "AB": 34,
-            "R": 6,
-            "H": 11,
-            "RBI": 6,
-            "BB": 4,
-            "SO": 7,
-            "pitching_outs": 27,
-            "pitching_runs": 3,
-            "pitching_hits": 6
-          },
-          {
-            "name": "Loyola Marymount",
-            "batters": 11,
-            "pitchers": 2,
-            "AB": 31,
-            "R": 3,
-            "H": 6,
-            "RBI": 3,
-            "BB": 5,
-            "SO": 3,
-            "pitching_outs": 27,
-            "pitching_runs": 6,
-            "pitching_hits": 11
-          }
-        ],
-        "source_warnings": [],
-        "player_rows": 26,
-        "status": "PASS",
-        "scoreboard": [
-          {
-            "runs": 6,
-            "hits": 11,
-            "errors": 1,
-            "innings": [
-              0,
-              0,
-              0,
-              2,
-              1,
-              0,
-              0,
-              2,
-              1
-            ]
-          },
-          {
-            "runs": 3,
-            "hits": 6,
-            "errors": 1,
-            "innings": [
-              0,
-              0,
-              0,
-              0,
-              1,
-              0,
-              2,
-              0,
-              0
-            ]
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "San Diego",
-            "nine_starting_slots": true,
-            "batter_rows": 10,
-            "pitcher_rows": 4,
-            "substitutes": 1
-          },
-          {
-            "team": "Loyola Marymount",
-            "nine_starting_slots": true,
-            "batter_rows": 11,
-            "pitcher_rows": 2,
-            "substitutes": 2
-          }
-        ],
-        "official_decisions": {
-          "win": "Robinson, Ryan",
-          "loss": "Merrick Baldo",
-          "save": "Thurman, Conner"
-        },
-        "resolved_pitcher_decisions": {
-          "win": null,
-          "loss": "Merrick Baldo",
-          "save": null
-        }
-      }
-    },
-    {
-      "game_id": "cb-2023-04-28-san-diego-loyola-marymount-att0212",
-      "player_rows": 29,
-      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/loyola-marymount/boxscore/13929",
-      "win": "Conner Thurman",
-      "loss": "Diego Barrera",
-      "source_audit": {
-        "game_id": "cb-2023-04-28-san-diego-loyola-marymount-att0212",
-        "source": "https://usdtoreros.com/sports/baseball/stats/2023/loyola-marymount/boxscore/13929",
-        "http_code": 200,
-        "source_bytes": 664689,
-        "source_sha256": "41f073d246bbd0c4f56b92c0633b99d45dcd9a73e7dc0aa7adb43979401c36d3",
-        "teams": [
-          {
-            "name": "San Diego",
-            "batters": 11,
-            "pitchers": 5,
-            "AB": 36,
-            "R": 11,
-            "H": 12,
-            "RBI": 11,
-            "BB": 4,
-            "SO": 4,
-            "pitching_outs": 27,
-            "pitching_runs": 1,
-            "pitching_hits": 11
-          },
-          {
-            "name": "Loyola Marymount",
-            "batters": 10,
-            "pitchers": 3,
-            "AB": 39,
-            "R": 1,
-            "H": 11,
-            "RBI": 1,
-            "BB": 3,
-            "SO": 8,
-            "pitching_outs": 27,
-            "pitching_runs": 11,
-            "pitching_hits": 12
-          }
-        ],
-        "source_warnings": [],
-        "player_rows": 29,
-        "status": "PASS",
-        "scoreboard": [
-          {
-            "runs": 11,
-            "hits": 12,
-            "errors": 1,
-            "innings": [
-              3,
-              0,
-              0,
-              0,
-              3,
-              0,
-              5,
-              0,
-              0
-            ]
-          },
-          {
-            "runs": 1,
-            "hits": 11,
-            "errors": 1,
-            "innings": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              1,
-              0
-            ]
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "San Diego",
-            "nine_starting_slots": true,
-            "batter_rows": 11,
-            "pitcher_rows": 5,
-            "substitutes": 2
-          },
-          {
-            "team": "Loyola Marymount",
-            "nine_starting_slots": true,
-            "batter_rows": 10,
-            "pitcher_rows": 3,
-            "substitutes": 1
-          }
-        ],
-        "official_decisions": {
-          "win": "Thurman, Conner",
-          "loss": "Diego Barrera",
-          "save": null
-        },
-        "resolved_pitcher_decisions": {
-          "win": null,
-          "loss": "Diego Barrera",
-          "save": null
-        }
-      }
-    },
-    {
-      "game_id": "cb-2023-04-25-cal-state-northridge-san-diego-att0211",
-      "player_rows": 36,
-      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/csun/boxscore/13928",
-      "win": "Hayden Cody",
-      "loss": "Mason Schmidt",
-      "source_audit": {
-        "game_id": "cb-2023-04-25-cal-state-northridge-san-diego-att0211",
-        "source": "https://usdtoreros.com/sports/baseball/stats/2023/csun/boxscore/13928",
-        "http_code": 200,
-        "source_bytes": 705899,
-        "source_sha256": "8de6d32d15129cfa7d93bef230b4c406baa65f7eb78f68400da655d3f50771dc",
-        "teams": [
-          {
-            "name": "Cal State Northridge",
-            "batters": 12,
-            "pitchers": 6,
-            "AB": 31,
             "R": 7,
-            "H": 9,
+            "H": 11,
             "RBI": 7,
             "BB": 7,
-            "SO": 9,
-            "pitching_outs": 27,
-            "pitching_runs": 4,
-            "pitching_hits": 8
-          },
-          {
-            "name": "San Diego",
-            "batters": 10,
-            "pitchers": 9,
-            "AB": 32,
-            "R": 4,
-            "H": 8,
-            "RBI": 4,
-            "BB": 6,
-            "SO": 11,
-            "pitching_outs": 27,
-            "pitching_runs": 7,
-            "pitching_hits": 9
-          }
-        ],
-        "source_warnings": [],
-        "player_rows": 36,
-        "status": "PASS",
-        "scoreboard": [
-          {
-            "runs": 7,
-            "hits": 9,
-            "errors": 0,
-            "innings": [
-              2,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              4,
-              1
-            ]
-          },
-          {
-            "runs": 4,
-            "hits": 8,
-            "errors": 1,
-            "innings": [
-              2,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              2,
-              0
-            ]
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "Cal State Northridge",
-            "nine_starting_slots": true,
-            "batter_rows": 12,
-            "pitcher_rows": 6,
-            "substitutes": 3
-          },
-          {
-            "team": "San Diego",
-            "nine_starting_slots": true,
-            "batter_rows": 10,
-            "pitcher_rows": 9,
-            "substitutes": 1
-          }
-        ],
-        "official_decisions": {
-          "win": "Cody, Hayden",
-          "loss": "Schmidt, Mason",
-          "save": "Romero, Joshua"
-        },
-        "resolved_pitcher_decisions": {
-          "win": null,
-          "loss": null,
-          "save": null
-        }
-      }
-    },
-    {
-      "game_id": "cb-2023-04-23-san-francisco-san-diego-att0210",
-      "player_rows": 29,
-      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/san-francisco/boxscore/13927",
-      "win": "Ryan Kysar",
-      "loss": "Max JONES",
-      "source_audit": {
-        "game_id": "cb-2023-04-23-san-francisco-san-diego-att0210",
-        "source": "https://usdtoreros.com/sports/baseball/stats/2023/san-francisco/boxscore/13927",
-        "http_code": 200,
-        "source_bytes": 667736,
-        "source_sha256": "33952169145d6e2d19242388c88eb9599956a45245355e544b8c4a00007bc190",
-        "teams": [
-          {
-            "name": "San Francisco",
-            "batters": 11,
-            "pitchers": 4,
-            "AB": 36,
-            "R": 7,
-            "H": 10,
-            "RBI": 7,
-            "BB": 3,
-            "SO": 10,
-            "pitching_outs": 24,
-            "pitching_runs": 9,
-            "pitching_hits": 10
-          },
-          {
-            "name": "San Diego",
-            "batters": 10,
-            "pitchers": 4,
-            "AB": 27,
-            "R": 9,
-            "H": 10,
-            "RBI": 9,
-            "BB": 10,
-            "SO": 3,
-            "pitching_outs": 27,
-            "pitching_runs": 7,
-            "pitching_hits": 10
-          }
-        ],
-        "source_warnings": [],
-        "player_rows": 29,
-        "status": "PASS",
-        "scoreboard": [
-          {
-            "runs": 7,
-            "hits": 10,
-            "errors": 0,
-            "innings": [
-              0,
-              2,
-              0,
-              0,
-              2,
-              0,
-              1,
-              2,
-              0
-            ]
-          },
-          {
-            "runs": 9,
-            "hits": 10,
-            "errors": 0,
-            "innings": [
-              0,
-              2,
-              2,
-              0,
-              4,
-              1,
-              0,
-              0,
-              null
-            ]
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "San Francisco",
-            "nine_starting_slots": true,
-            "batter_rows": 11,
-            "pitcher_rows": 4,
-            "substitutes": 2
-          },
-          {
-            "team": "San Diego",
-            "nine_starting_slots": true,
-            "batter_rows": 10,
-            "pitcher_rows": 4,
-            "substitutes": 1
-          }
-        ],
-        "official_decisions": {
-          "win": "Kysar, Ryan",
-          "loss": "JONES, Max",
-          "save": "Gonzalez, Aídan"
-        },
-        "resolved_pitcher_decisions": {
-          "win": null,
-          "loss": null,
-          "save": null
-        }
-      }
-    },
-    {
-      "game_id": "cb-2023-04-22-san-francisco-san-diego-att0209",
-      "player_rows": 28,
-      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/san-francisco/boxscore/13926",
-      "win": "Ryan Robinson",
-      "loss": "Oscar LEPE",
-      "source_audit": {
-        "game_id": "cb-2023-04-22-san-francisco-san-diego-att0209",
-        "source": "https://usdtoreros.com/sports/baseball/stats/2023/san-francisco/boxscore/13926",
-        "http_code": 200,
-        "source_bytes": 657043,
-        "source_sha256": "8dceddf4e2df08d9c010b3a1c76488176b85d49855000f016dd0ced2729bbdac",
-        "teams": [
-          {
-            "name": "San Francisco",
-            "batters": 9,
-            "pitchers": 3,
-            "AB": 34,
-            "R": 5,
-            "H": 8,
-            "RBI": 5,
-            "BB": 4,
-            "SO": 7,
-            "pitching_outs": 25,
-            "pitching_runs": 6,
-            "pitching_hits": 10
-          },
-          {
-            "name": "San Diego",
-            "batters": 12,
-            "pitchers": 4,
-            "AB": 33,
-            "R": 6,
-            "H": 10,
-            "RBI": 6,
-            "BB": 5,
             "SO": 4,
             "pitching_outs": 27,
-            "pitching_runs": 5,
-            "pitching_hits": 8
+            "pitching_runs": 6,
+            "pitching_hits": 13
           }
         ],
         "source_warnings": [],
@@ -603,57 +96,57 @@
         "status": "PASS",
         "scoreboard": [
           {
-            "runs": 5,
-            "hits": 8,
-            "errors": 1,
+            "runs": 6,
+            "hits": 13,
+            "errors": 0,
             "innings": [
-              1,
-              0,
               3,
               0,
               0,
-              1,
               0,
+              1,
+              1,
+              1,
               0,
               0
             ]
           },
           {
-            "runs": 6,
-            "hits": 10,
-            "errors": 1,
+            "runs": 7,
+            "hits": 11,
+            "errors": 0,
             "innings": [
-              3,
-              0,
-              0,
-              0,
-              0,
+              1,
               0,
               1,
               0,
-              2
+              0,
+              0,
+              2,
+              0,
+              3
             ]
           }
         ],
         "lineup_audit": [
           {
-            "team": "San Francisco",
+            "team": "Portland",
             "nine_starting_slots": true,
-            "batter_rows": 9,
-            "pitcher_rows": 3,
-            "substitutes": 0
+            "batter_rows": 10,
+            "pitcher_rows": 5,
+            "substitutes": 1
           },
           {
             "team": "San Diego",
             "nine_starting_slots": true,
-            "batter_rows": 12,
+            "batter_rows": 9,
             "pitcher_rows": 4,
-            "substitutes": 3
+            "substitutes": 0
           }
         ],
         "official_decisions": {
           "win": "Robinson, Ryan",
-          "loss": "LEPE, Oscar",
+          "loss": "DOBMEIER, Jacob",
           "save": null
         },
         "resolved_pitcher_decisions": {
@@ -664,259 +157,45 @@
       }
     },
     {
-      "game_id": "cb-2023-04-18-san-diego-san-diego-state-att0207",
-      "player_rows": 38,
-      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/san-diego-state/boxscore/13941",
-      "win": "Julian JACKSON",
-      "loss": "Peter Michael",
-      "source_audit": {
-        "game_id": "cb-2023-04-18-san-diego-san-diego-state-att0207",
-        "source": "https://usdtoreros.com/sports/baseball/stats/2023/san-diego-state/boxscore/13941",
-        "http_code": 200,
-        "source_bytes": 684310,
-        "source_sha256": "2e57c95948320ba1143b4467733c550bb312597b2df7ea0d224fdbc9121b5d49",
-        "teams": [
-          {
-            "name": "San Diego",
-            "batters": 10,
-            "pitchers": 8,
-            "AB": 26,
-            "R": 0,
-            "H": 2,
-            "RBI": 0,
-            "BB": 1,
-            "SO": 9,
-            "pitching_outs": 24,
-            "pitching_runs": 1,
-            "pitching_hits": 3
-          },
-          {
-            "name": "San Diego State",
-            "batters": 12,
-            "pitchers": 8,
-            "AB": 26,
-            "R": 1,
-            "H": 3,
-            "RBI": 1,
-            "BB": 1,
-            "SO": 6,
-            "pitching_outs": 27,
-            "pitching_runs": 0,
-            "pitching_hits": 2
-          }
-        ],
-        "source_warnings": [],
-        "player_rows": 38,
-        "status": "PASS",
-        "scoreboard": [
-          {
-            "runs": 0,
-            "hits": 2,
-            "errors": 1,
-            "innings": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ]
-          },
-          {
-            "runs": 1,
-            "hits": 3,
-            "errors": 1,
-            "innings": [
-              1,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              null
-            ]
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "San Diego",
-            "nine_starting_slots": true,
-            "batter_rows": 10,
-            "pitcher_rows": 8,
-            "substitutes": 1
-          },
-          {
-            "team": "San Diego State",
-            "nine_starting_slots": true,
-            "batter_rows": 12,
-            "pitcher_rows": 8,
-            "substitutes": 3
-          }
-        ],
-        "official_decisions": {
-          "win": "JACKSON, Julian",
-          "loss": "Michael, Peter",
-          "save": "SAUER, Kelena"
-        },
-        "resolved_pitcher_decisions": {
-          "win": null,
-          "loss": null,
-          "save": null
-        }
-      }
-    },
-    {
-      "game_id": "cb-2023-04-11-san-diego-uc-irvine-att0203",
-      "player_rows": 33,
-      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/uc-irvine/boxscore/13921",
-      "win": "Tanner Brooks",
-      "loss": "Mikiah Negrete",
-      "source_audit": {
-        "game_id": "cb-2023-04-11-san-diego-uc-irvine-att0203",
-        "source": "https://usdtoreros.com/sports/baseball/stats/2023/uc-irvine/boxscore/13921",
-        "http_code": 200,
-        "source_bytes": 672253,
-        "source_sha256": "e01b2ef704a45a85c9ac9b436a8ed60fffdc9ada03e734094521c9e2e910ad47",
-        "teams": [
-          {
-            "name": "San Diego",
-            "batters": 10,
-            "pitchers": 8,
-            "AB": 31,
-            "R": 2,
-            "H": 4,
-            "RBI": 2,
-            "BB": 2,
-            "SO": 11,
-            "pitching_outs": 24,
-            "pitching_runs": 3,
-            "pitching_hits": 4
-          },
-          {
-            "name": "UC Irvine",
-            "batters": 9,
-            "pitchers": 6,
-            "AB": 26,
-            "R": 3,
-            "H": 4,
-            "RBI": 3,
-            "BB": 5,
-            "SO": 7,
-            "pitching_outs": 27,
-            "pitching_runs": 2,
-            "pitching_hits": 4
-          }
-        ],
-        "source_warnings": [],
-        "player_rows": 33,
-        "status": "PASS",
-        "scoreboard": [
-          {
-            "runs": 2,
-            "hits": 4,
-            "errors": 1,
-            "innings": [
-              0,
-              1,
-              0,
-              0,
-              0,
-              1,
-              0,
-              0,
-              0
-            ]
-          },
-          {
-            "runs": 3,
-            "hits": 4,
-            "errors": 1,
-            "innings": [
-              0,
-              0,
-              1,
-              0,
-              0,
-              1,
-              0,
-              1,
-              null
-            ]
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "San Diego",
-            "nine_starting_slots": true,
-            "batter_rows": 10,
-            "pitcher_rows": 8,
-            "substitutes": 1
-          },
-          {
-            "team": "UC Irvine",
-            "nine_starting_slots": true,
-            "batter_rows": 9,
-            "pitcher_rows": 6,
-            "substitutes": 0
-          }
-        ],
-        "official_decisions": {
-          "win": "Brooks, Tanner",
-          "loss": "Negrete, Mikiah",
-          "save": "King, Jacob"
-        },
-        "resolved_pitcher_decisions": {
-          "win": null,
-          "loss": null,
-          "save": null
-        }
-      }
-    },
-    {
-      "game_id": "cb-2023-04-08-san-diego-gonzaga-att0202",
+      "game_id": "cb-2023-04-15-portland-san-diego-att0205",
       "player_rows": 29,
-      "source_url": "https://gozags.com/sports/baseball/stats/2023/san-diego/boxscore/8680",
-      "win": "Ryan Robinson",
-      "loss": "Nate Deschryver",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/portland/boxscore/13923",
+      "win": "Peter ALLEGRO",
+      "loss": "James Sashin",
       "source_audit": {
-        "game_id": "cb-2023-04-08-san-diego-gonzaga-att0202",
-        "source": "https://gozags.com/sports/baseball/stats/2023/san-diego/boxscore/8680",
+        "game_id": "cb-2023-04-15-portland-san-diego-att0205",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2023/portland/boxscore/13923",
         "http_code": 200,
-        "source_bytes": 1317655,
-        "source_sha256": "6df60cc4b8807f73889e841515bc9c5cc8c45f07f8f66ebaf902b4ff418b5402",
+        "source_bytes": 659552,
+        "source_sha256": "0d07967be08d93852fb8626c8fc97ddfcc7c210c7a06f724f38e48ac2b89475c",
         "teams": [
           {
-            "name": "San Diego",
-            "batters": 10,
-            "pitchers": 6,
-            "AB": 38,
-            "R": 9,
-            "H": 15,
-            "RBI": 8,
-            "BB": 4,
-            "SO": 9,
-            "pitching_outs": 27,
-            "pitching_runs": 3,
-            "pitching_hits": 10
-          },
-          {
-            "name": "Gonzaga",
+            "name": "Portland",
             "batters": 10,
             "pitchers": 3,
-            "AB": 36,
-            "R": 3,
-            "H": 10,
-            "RBI": 3,
-            "BB": 0,
-            "SO": 3,
+            "AB": 37,
+            "R": 9,
+            "H": 11,
+            "RBI": 9,
+            "BB": 2,
+            "SO": 8,
+            "pitching_outs": 27,
+            "pitching_runs": 5,
+            "pitching_hits": 7
+          },
+          {
+            "name": "San Diego",
+            "batters": 10,
+            "pitchers": 6,
+            "AB": 34,
+            "R": 5,
+            "H": 7,
+            "RBI": 4,
+            "BB": 4,
+            "SO": 6,
             "pitching_outs": 27,
             "pitching_runs": 9,
-            "pitching_hits": 15
+            "pitching_hits": 11
           }
         ],
         "source_warnings": [],
@@ -925,270 +204,56 @@
         "scoreboard": [
           {
             "runs": 9,
-            "hits": 15,
-            "errors": 1,
-            "innings": [
-              3,
-              0,
-              0,
-              0,
-              2,
-              1,
-              1,
-              0,
-              2
-            ]
-          },
-          {
-            "runs": 3,
-            "hits": 10,
+            "hits": 11,
             "errors": 2,
             "innings": [
               0,
-              0,
-              0,
-              2,
-              0,
+              4,
+              3,
               0,
               1,
               0,
+              0,
+              1,
+              0
+            ]
+          },
+          {
+            "runs": 5,
+            "hits": 7,
+            "errors": 0,
+            "innings": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              4,
               0
             ]
           }
         ],
         "lineup_audit": [
+          {
+            "team": "Portland",
+            "nine_starting_slots": true,
+            "batter_rows": 10,
+            "pitcher_rows": 3,
+            "substitutes": 1
+          },
           {
             "team": "San Diego",
             "nine_starting_slots": true,
             "batter_rows": 10,
             "pitcher_rows": 6,
             "substitutes": 1
-          },
-          {
-            "team": "Gonzaga",
-            "nine_starting_slots": true,
-            "batter_rows": 10,
-            "pitcher_rows": 3,
-            "substitutes": 1
           }
         ],
         "official_decisions": {
-          "win": "Robinson, Ryan",
-          "loss": "Deschryver, Nate",
-          "save": null
-        },
-        "resolved_pitcher_decisions": {
-          "win": null,
-          "loss": null,
-          "save": null
-        }
-      }
-    },
-    {
-      "game_id": "cb-2023-04-07-san-diego-gonzaga-att0201",
-      "player_rows": 27,
-      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/gonzaga/boxscore/13919",
-      "win": "MATTHEW MUELLER",
-      "loss": "James Sashin",
-      "source_audit": {
-        "game_id": "cb-2023-04-07-san-diego-gonzaga-att0201",
-        "source": "https://usdtoreros.com/sports/baseball/stats/2023/gonzaga/boxscore/13919",
-        "http_code": 200,
-        "source_bytes": 640944,
-        "source_sha256": "dd64f9d2a1997ace374b048f1eb9bc69f8d0dc3c804ad53bbdfe9f57f027045a",
-        "teams": [
-          {
-            "name": "San Diego",
-            "batters": 12,
-            "pitchers": 2,
-            "AB": 34,
-            "R": 2,
-            "H": 10,
-            "RBI": 1,
-            "BB": 3,
-            "SO": 4,
-            "pitching_outs": 24,
-            "pitching_runs": 3,
-            "pitching_hits": 8
-          },
-          {
-            "name": "Gonzaga",
-            "batters": 11,
-            "pitchers": 2,
-            "AB": 31,
-            "R": 3,
-            "H": 8,
-            "RBI": 3,
-            "BB": 2,
-            "SO": 6,
-            "pitching_outs": 27,
-            "pitching_runs": 2,
-            "pitching_hits": 10
-          }
-        ],
-        "source_warnings": [],
-        "player_rows": 27,
-        "status": "PASS",
-        "scoreboard": [
-          {
-            "runs": 2,
-            "hits": 10,
-            "errors": 1,
-            "innings": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              1,
-              0,
-              0,
-              1
-            ]
-          },
-          {
-            "runs": 3,
-            "hits": 8,
-            "errors": 0,
-            "innings": [
-              0,
-              0,
-              2,
-              0,
-              0,
-              0,
-              0,
-              1,
-              null
-            ]
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "San Diego",
-            "nine_starting_slots": true,
-            "batter_rows": 12,
-            "pitcher_rows": 2,
-            "substitutes": 3
-          },
-          {
-            "team": "Gonzaga",
-            "nine_starting_slots": true,
-            "batter_rows": 11,
-            "pitcher_rows": 2,
-            "substitutes": 2
-          }
-        ],
-        "official_decisions": {
-          "win": "MUELLER, MATTHEW",
+          "win": "ALLEGRO, Peter",
           "loss": "Sashin, James",
-          "save": "BUCKNER, TY"
-        },
-        "resolved_pitcher_decisions": {
-          "win": null,
-          "loss": null,
-          "save": null
-        }
-      }
-    },
-    {
-      "game_id": "cb-2023-04-06-san-diego-gonzaga-att0200",
-      "player_rows": 30,
-      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/gonzaga/boxscore/13918",
-      "win": "Austin Smith",
-      "loss": "OWEN WILD",
-      "source_audit": {
-        "game_id": "cb-2023-04-06-san-diego-gonzaga-att0200",
-        "source": "https://usdtoreros.com/sports/baseball/stats/2023/gonzaga/boxscore/13918",
-        "http_code": 200,
-        "source_bytes": 658598,
-        "source_sha256": "2bb402f205cc9ee7bd72cea1f1a6e9b79bd1b6551a764251cd4dfa049afaa6a9",
-        "teams": [
-          {
-            "name": "San Diego",
-            "batters": 12,
-            "pitchers": 4,
-            "AB": 37,
-            "R": 8,
-            "H": 11,
-            "RBI": 7,
-            "BB": 4,
-            "SO": 5,
-            "pitching_outs": 27,
-            "pitching_runs": 1,
-            "pitching_hits": 3
-          },
-          {
-            "name": "Gonzaga",
-            "batters": 13,
-            "pitchers": 2,
-            "AB": 30,
-            "R": 1,
-            "H": 3,
-            "RBI": 1,
-            "BB": 6,
-            "SO": 14,
-            "pitching_outs": 27,
-            "pitching_runs": 8,
-            "pitching_hits": 11
-          }
-        ],
-        "source_warnings": [],
-        "player_rows": 30,
-        "status": "PASS",
-        "scoreboard": [
-          {
-            "runs": 8,
-            "hits": 11,
-            "errors": 0,
-            "innings": [
-              4,
-              0,
-              1,
-              1,
-              0,
-              0,
-              1,
-              0,
-              1
-            ]
-          },
-          {
-            "runs": 1,
-            "hits": 3,
-            "errors": 0,
-            "innings": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              1,
-              0
-            ]
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "San Diego",
-            "nine_starting_slots": true,
-            "batter_rows": 12,
-            "pitcher_rows": 4,
-            "substitutes": 3
-          },
-          {
-            "team": "Gonzaga",
-            "nine_starting_slots": true,
-            "batter_rows": 13,
-            "pitcher_rows": 2,
-            "substitutes": 4
-          }
-        ],
-        "official_decisions": {
-          "win": "Smith, Austin",
-          "loss": "WILD, OWEN",
           "save": null
         },
         "resolved_pitcher_decisions": {
@@ -1199,366 +264,45 @@
       }
     },
     {
-      "game_id": "cb-2023-04-04-san-diego-uc-san-diego-att0199",
-      "player_rows": 39,
-      "source_url": "https://ucsdtritons.com/sports/baseball/stats/2023/usd/boxscore/9362",
-      "win": "Mikiah NEGRETE",
-      "loss": "Ethan Holt",
+      "game_id": "cb-2023-04-14-portland-san-diego-att0204",
+      "player_rows": 25,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/portland/boxscore/13922",
+      "win": "Joey GARTRELL",
+      "loss": "Austin Smith",
       "source_audit": {
-        "game_id": "cb-2023-04-04-san-diego-uc-san-diego-att0199",
-        "source": "https://ucsdtritons.com/sports/baseball/stats/2023/usd/boxscore/9362",
+        "game_id": "cb-2023-04-14-portland-san-diego-att0204",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2023/portland/boxscore/13922",
         "http_code": 200,
-        "source_bytes": 677154,
-        "source_sha256": "a65a246826713d0729ddbca49897f5f2ec3ff43be490aa88224ec259ecce9855",
+        "source_bytes": 649530,
+        "source_sha256": "48ae8ec0b64e0b4710de9570d549ae52c260180fab275c5913c8ddff3742efe1",
         "teams": [
           {
-            "name": "San Diego",
-            "batters": 9,
-            "pitchers": 9,
-            "AB": 36,
-            "R": 5,
-            "H": 13,
-            "RBI": 5,
-            "BB": 4,
-            "SO": 5,
-            "pitching_outs": 27,
-            "pitching_runs": 2,
-            "pitching_hits": 3
-          },
-          {
-            "name": "UC San Diego",
-            "batters": 13,
-            "pitchers": 8,
-            "AB": 27,
-            "R": 2,
-            "H": 3,
-            "RBI": 1,
-            "BB": 5,
-            "SO": 6,
-            "pitching_outs": 27,
-            "pitching_runs": 5,
-            "pitching_hits": 13
-          }
-        ],
-        "source_warnings": [],
-        "player_rows": 39,
-        "status": "PASS",
-        "scoreboard": [
-          {
-            "runs": 5,
-            "hits": 13,
-            "errors": 0,
-            "innings": [
-              0,
-              1,
-              1,
-              0,
-              0,
-              0,
-              0,
-              0,
-              3
-            ]
-          },
-          {
-            "runs": 2,
-            "hits": 3,
-            "errors": 1,
-            "innings": [
-              0,
-              0,
-              1,
-              1,
-              0,
-              0,
-              0,
-              0,
-              0
-            ]
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "San Diego",
-            "nine_starting_slots": true,
-            "batter_rows": 9,
-            "pitcher_rows": 9,
-            "substitutes": 0
-          },
-          {
-            "team": "UC San Diego",
-            "nine_starting_slots": true,
-            "batter_rows": 13,
-            "pitcher_rows": 8,
-            "substitutes": 4
-          }
-        ],
-        "official_decisions": {
-          "win": "NEGRETE, Mikiah",
-          "loss": "Holt, Ethan",
-          "save": null
-        },
-        "resolved_pitcher_decisions": {
-          "win": null,
-          "loss": null,
-          "save": null
-        }
-      }
-    },
-    {
-      "game_id": "cb-2023-04-02-pepperdine-san-diego-att0198",
-      "player_rows": 33,
-      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/pepperdine/boxscore/13916",
-      "win": "Ivran Romero",
-      "loss": "GUNNAR NICHOLS",
-      "source_audit": {
-        "game_id": "cb-2023-04-02-pepperdine-san-diego-att0198",
-        "source": "https://usdtoreros.com/sports/baseball/stats/2023/pepperdine/boxscore/13916",
-        "http_code": 200,
-        "source_bytes": 687912,
-        "source_sha256": "cae6f4d67b042df962bc5421874b9ba69af216689310ae585b95004fd8fe4c5e",
-        "teams": [
-          {
-            "name": "Pepperdine",
-            "batters": 11,
-            "pitchers": 5,
-            "AB": 32,
-            "R": 6,
-            "H": 8,
-            "RBI": 6,
-            "BB": 9,
-            "SO": 11,
-            "pitching_outs": 24,
-            "pitching_runs": 7,
-            "pitching_hits": 7
-          },
-          {
-            "name": "San Diego",
+            "name": "Portland",
             "batters": 10,
-            "pitchers": 7,
-            "AB": 28,
-            "R": 7,
-            "H": 7,
-            "RBI": 6,
-            "BB": 7,
-            "SO": 2,
+            "pitchers": 3,
+            "AB": 40,
+            "R": 8,
+            "H": 13,
+            "RBI": 8,
+            "BB": 5,
+            "SO": 10,
             "pitching_outs": 27,
-            "pitching_runs": 6,
-            "pitching_hits": 8
-          }
-        ],
-        "source_warnings": [],
-        "player_rows": 33,
-        "status": "PASS",
-        "scoreboard": [
-          {
-            "runs": 6,
-            "hits": 8,
-            "errors": 2,
-            "innings": [
-              0,
-              0,
-              0,
-              2,
-              0,
-              0,
-              1,
-              0,
-              3
-            ]
-          },
-          {
-            "runs": 7,
-            "hits": 7,
-            "errors": 1,
-            "innings": [
-              3,
-              0,
-              1,
-              0,
-              1,
-              0,
-              0,
-              2,
-              null
-            ]
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "Pepperdine",
-            "nine_starting_slots": true,
-            "batter_rows": 11,
-            "pitcher_rows": 5,
-            "substitutes": 2
-          },
-          {
-            "team": "San Diego",
-            "nine_starting_slots": true,
-            "batter_rows": 10,
-            "pitcher_rows": 7,
-            "substitutes": 1
-          }
-        ],
-        "official_decisions": {
-          "win": "Romero, Ivran",
-          "loss": "NICHOLS, GUNNAR",
-          "save": "Suspenzi, Nick"
-        },
-        "resolved_pitcher_decisions": {
-          "win": null,
-          "loss": null,
-          "save": null
-        }
-      }
-    },
-    {
-      "game_id": "cb-2023-04-01-pepperdine-san-diego-att0197",
-      "player_rows": 24,
-      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/pepperdine/boxscore/13915",
-      "win": "Austin Smith",
-      "loss": "BRANDON LLEWELLYN",
-      "source_audit": {
-        "game_id": "cb-2023-04-01-pepperdine-san-diego-att0197",
-        "source": "https://usdtoreros.com/sports/baseball/stats/2023/pepperdine/boxscore/13915",
-        "http_code": 200,
-        "source_bytes": 636130,
-        "source_sha256": "8a6e867377a9d36daa58553cbfa631b550ef32fbaae10276f9ec6d9ae26864bf",
-        "teams": [
-          {
-            "name": "Pepperdine",
-            "batters": 11,
-            "pitchers": 2,
-            "AB": 32,
-            "R": 4,
-            "H": 7,
-            "RBI": 4,
-            "BB": 2,
-            "SO": 9,
-            "pitching_outs": 24,
-            "pitching_runs": 8,
+            "pitching_runs": 7,
             "pitching_hits": 9
           },
           {
             "name": "San Diego",
-            "batters": 10,
-            "pitchers": 2,
-            "AB": 29,
-            "R": 8,
+            "batters": 9,
+            "pitchers": 4,
+            "AB": 32,
+            "R": 7,
             "H": 9,
-            "RBI": 8,
-            "BB": 5,
-            "SO": 1,
-            "pitching_outs": 27,
-            "pitching_runs": 4,
-            "pitching_hits": 7
-          }
-        ],
-        "source_warnings": [],
-        "player_rows": 24,
-        "status": "PASS",
-        "scoreboard": [
-          {
-            "runs": 4,
-            "hits": 7,
-            "errors": 2,
-            "innings": [
-              4,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ]
-          },
-          {
-            "runs": 8,
-            "hits": 9,
-            "errors": 3,
-            "innings": [
-              1,
-              1,
-              0,
-              2,
-              0,
-              0,
-              4,
-              0,
-              null
-            ]
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "Pepperdine",
-            "nine_starting_slots": true,
-            "batter_rows": 11,
-            "pitcher_rows": 2,
-            "substitutes": 2
-          },
-          {
-            "team": "San Diego",
-            "nine_starting_slots": true,
-            "batter_rows": 10,
-            "pitcher_rows": 2,
-            "substitutes": 1
-          }
-        ],
-        "official_decisions": {
-          "win": "Smith, Austin",
-          "loss": "LLEWELLYN, BRANDON",
-          "save": null
-        },
-        "resolved_pitcher_decisions": {
-          "win": null,
-          "loss": null,
-          "save": null
-        }
-      }
-    },
-    {
-      "game_id": "cb-2023-03-31-pepperdine-san-diego-att0196",
-      "player_rows": 25,
-      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/pepperdine/boxscore/13914",
-      "win": "SHANE TELFER",
-      "loss": "James Sashin",
-      "source_audit": {
-        "game_id": "cb-2023-03-31-pepperdine-san-diego-att0196",
-        "source": "https://usdtoreros.com/sports/baseball/stats/2023/pepperdine/boxscore/13914",
-        "http_code": 200,
-        "source_bytes": 644689,
-        "source_sha256": "10fd80a191d80d1f2fc5561bc6db6477500e3a26a2a848082d8a7a38ff599446",
-        "teams": [
-          {
-            "name": "Pepperdine",
-            "batters": 9,
-            "pitchers": 2,
-            "AB": 36,
-            "R": 8,
-            "H": 11,
             "RBI": 7,
-            "BB": 6,
-            "SO": 9,
-            "pitching_outs": 27,
-            "pitching_runs": 3,
-            "pitching_hits": 4
-          },
-          {
-            "name": "San Diego",
-            "batters": 9,
-            "pitchers": 5,
-            "AB": 28,
-            "R": 3,
-            "H": 4,
-            "RBI": 3,
-            "BB": 4,
-            "SO": 5,
+            "BB": 3,
+            "SO": 3,
             "pitching_outs": 27,
             "pitching_runs": 8,
-            "pitching_hits": 11
+            "pitching_hits": 13
           }
         ],
         "source_warnings": [],
@@ -1567,1448 +311,57 @@
         "scoreboard": [
           {
             "runs": 8,
-            "hits": 11,
-            "errors": 2,
-            "innings": [
-              3,
-              0,
-              0,
-              0,
-              0,
-              2,
-              1,
-              0,
-              2
-            ]
-          },
-          {
-            "runs": 3,
-            "hits": 4,
-            "errors": 2,
-            "innings": [
-              0,
-              3,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ]
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "Pepperdine",
-            "nine_starting_slots": true,
-            "batter_rows": 9,
-            "pitcher_rows": 2,
-            "substitutes": 0
-          },
-          {
-            "team": "San Diego",
-            "nine_starting_slots": true,
-            "batter_rows": 9,
-            "pitcher_rows": 5,
-            "substitutes": 0
-          }
-        ],
-        "official_decisions": {
-          "win": "TELFER, SHANE",
-          "loss": "Sashin, James",
-          "save": "BAIRD, JACK"
-        },
-        "resolved_pitcher_decisions": {
-          "win": null,
-          "loss": null,
-          "save": null
-        }
-      }
-    },
-    {
-      "game_id": "cb-2023-03-28-san-diego-cal-state-northridge-att0195",
-      "player_rows": 33,
-      "source_url": "https://gomatadors.com/sports/baseball/stats/2023/san-diego/boxscore/15840",
-      "win": "Ryan Wentz",
-      "loss": "Mikiah Negrete",
-      "source_audit": {
-        "game_id": "cb-2023-03-28-san-diego-cal-state-northridge-att0195",
-        "source": "https://gomatadors.com/sports/baseball/stats/2023/san-diego/boxscore/15840",
-        "http_code": 200,
-        "source_bytes": 1038072,
-        "source_sha256": "9831a1bf6d4dd1864036fb87cea320bf9be98fdf056c726382aa8f77ef602c2e",
-        "teams": [
-          {
-            "name": "San Diego",
-            "batters": 10,
-            "pitchers": 6,
-            "AB": 33,
-            "R": 10,
-            "H": 10,
-            "RBI": 9,
-            "BB": 8,
-            "SO": 6,
-            "pitching_outs": 24,
-            "pitching_runs": 12,
-            "pitching_hits": 16
-          },
-          {
-            "name": "Cal State Northridge",
-            "batters": 12,
-            "pitchers": 5,
-            "AB": 42,
-            "R": 12,
-            "H": 16,
-            "RBI": 10,
-            "BB": 1,
-            "SO": 7,
-            "pitching_outs": 27,
-            "pitching_runs": 10,
-            "pitching_hits": 10
-          }
-        ],
-        "source_warnings": [],
-        "player_rows": 33,
-        "status": "PASS",
-        "scoreboard": [
-          {
-            "runs": 10,
-            "hits": 10,
-            "errors": 4,
-            "innings": [
-              2,
-              0,
-              2,
-              0,
-              0,
-              0,
-              2,
-              2,
-              2
-            ]
-          },
-          {
-            "runs": 12,
-            "hits": 16,
-            "errors": 3,
-            "innings": [
-              0,
-              3,
-              1,
-              4,
-              3,
-              0,
-              0,
-              1,
-              null
-            ]
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "San Diego",
-            "nine_starting_slots": true,
-            "batter_rows": 10,
-            "pitcher_rows": 6,
-            "substitutes": 1
-          },
-          {
-            "team": "Cal State Northridge",
-            "nine_starting_slots": true,
-            "batter_rows": 12,
-            "pitcher_rows": 5,
-            "substitutes": 3
-          }
-        ],
-        "official_decisions": {
-          "win": "Wentz, Ryan",
-          "loss": "Negrete, Mikiah",
-          "save": null
-        },
-        "resolved_pitcher_decisions": {
-          "win": null,
-          "loss": null,
-          "save": null
-        }
-      }
-    },
-    {
-      "game_id": "cb-2023-03-19-pacific-san-diego-att0194",
-      "player_rows": 23,
-      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/pacific/boxscore/13908",
-      "win": "Grant Stevens",
-      "loss": "Ivran Romero",
-      "source_audit": {
-        "game_id": "cb-2023-03-19-pacific-san-diego-att0194",
-        "source": "https://usdtoreros.com/sports/baseball/stats/2023/pacific/boxscore/13908",
-        "http_code": 200,
-        "source_bytes": 629978,
-        "source_sha256": "b919db49acf95d1d823f9803031d6992f1ffbc76e226c3c5f94d8037dc4d0c36",
-        "teams": [
-          {
-            "name": "Pacific",
-            "batters": 10,
-            "pitchers": 1,
-            "AB": 33,
-            "R": 5,
-            "H": 9,
-            "RBI": 5,
-            "BB": 1,
-            "SO": 11,
-            "pitching_outs": 27,
-            "pitching_runs": 2,
-            "pitching_hits": 8
-          },
-          {
-            "name": "San Diego",
-            "batters": 9,
-            "pitchers": 4,
-            "AB": 33,
-            "R": 2,
-            "H": 8,
-            "RBI": 2,
-            "BB": 3,
-            "SO": 5,
-            "pitching_outs": 27,
-            "pitching_runs": 5,
-            "pitching_hits": 9
-          }
-        ],
-        "source_warnings": [],
-        "player_rows": 23,
-        "status": "PASS",
-        "scoreboard": [
-          {
-            "runs": 5,
-            "hits": 9,
-            "errors": 2,
-            "innings": [
-              0,
-              0,
-              0,
-              2,
-              0,
-              3,
-              0,
-              0,
-              0
-            ]
-          },
-          {
-            "runs": 2,
-            "hits": 8,
-            "errors": 1,
-            "innings": [
-              1,
-              0,
-              1,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ]
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "Pacific",
-            "nine_starting_slots": true,
-            "batter_rows": 10,
-            "pitcher_rows": 1,
-            "substitutes": 1
-          },
-          {
-            "team": "San Diego",
-            "nine_starting_slots": true,
-            "batter_rows": 9,
-            "pitcher_rows": 4,
-            "substitutes": 0
-          }
-        ],
-        "official_decisions": {
-          "win": "Grant Stevens",
-          "loss": "Romero, Ivran",
-          "save": null
-        },
-        "resolved_pitcher_decisions": {
-          "win": "Grant Stevens",
-          "loss": null,
-          "save": null
-        }
-      }
-    },
-    {
-      "game_id": "cb-2023-03-18-pacific-san-diego-att0193",
-      "player_rows": 31,
-      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/pacific/boxscore/13906",
-      "win": "Ryan Robinson",
-      "loss": "Michael Defelippi",
-      "source_audit": {
-        "game_id": "cb-2023-03-18-pacific-san-diego-att0193",
-        "source": "https://usdtoreros.com/sports/baseball/stats/2023/pacific/boxscore/13906",
-        "http_code": 200,
-        "source_bytes": 699323,
-        "source_sha256": "c70f4a8214fe20b244e52a7dee67b4c26a553b7a55979ced0ed5f7d30024ccc2",
-        "teams": [
-          {
-            "name": "Pacific",
-            "batters": 10,
-            "pitchers": 5,
-            "AB": 41,
-            "R": 9,
-            "H": 19,
-            "RBI": 8,
-            "BB": 5,
-            "SO": 6,
-            "pitching_outs": 24,
-            "pitching_runs": 16,
-            "pitching_hits": 8
-          },
-          {
-            "name": "San Diego",
-            "batters": 10,
-            "pitchers": 6,
-            "AB": 29,
-            "R": 16,
-            "H": 8,
-            "RBI": 11,
-            "BB": 14,
-            "SO": 7,
-            "pitching_outs": 27,
-            "pitching_runs": 9,
-            "pitching_hits": 19
-          }
-        ],
-        "source_warnings": [],
-        "player_rows": 31,
-        "status": "PASS",
-        "scoreboard": [
-          {
-            "runs": 9,
-            "hits": 19,
-            "errors": 3,
-            "innings": [
-              3,
-              0,
-              0,
-              3,
-              0,
-              2,
-              0,
-              0,
-              1
-            ]
-          },
-          {
-            "runs": 16,
-            "hits": 8,
-            "errors": 1,
-            "innings": [
-              1,
-              0,
-              0,
-              1,
-              0,
-              4,
-              0,
-              10,
-              null
-            ]
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "Pacific",
-            "nine_starting_slots": true,
-            "batter_rows": 10,
-            "pitcher_rows": 5,
-            "substitutes": 1
-          },
-          {
-            "team": "San Diego",
-            "nine_starting_slots": true,
-            "batter_rows": 10,
-            "pitcher_rows": 6,
-            "substitutes": 1
-          }
-        ],
-        "official_decisions": {
-          "win": "Robinson, Ryan",
-          "loss": "Michael Defelippi",
-          "save": null
-        },
-        "resolved_pitcher_decisions": {
-          "win": null,
-          "loss": "Michael Defelippi",
-          "save": null
-        }
-      }
-    },
-    {
-      "game_id": "cb-2023-03-17-pacific-san-diego-att0192",
-      "player_rows": 34,
-      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/pacific/boxscore/13907",
-      "win": "James Sashin",
-      "loss": "Cooper Lanz",
-      "source_audit": {
-        "game_id": "cb-2023-03-17-pacific-san-diego-att0192",
-        "source": "https://usdtoreros.com/sports/baseball/stats/2023/pacific/boxscore/13907",
-        "http_code": 200,
-        "source_bytes": 680264,
-        "source_sha256": "d1f6f0c4f14708036e2493ec442eb10361377516fd73ae5d9278f0348aed3872",
-        "teams": [
-          {
-            "name": "Pacific",
-            "batters": 13,
-            "pitchers": 5,
-            "AB": 29,
-            "R": 3,
-            "H": 5,
-            "RBI": 3,
-            "BB": 4,
-            "SO": 10,
-            "pitching_outs": 24,
-            "pitching_runs": 9,
-            "pitching_hits": 11
-          },
-          {
-            "name": "San Diego",
-            "batters": 11,
-            "pitchers": 5,
-            "AB": 34,
-            "R": 9,
-            "H": 11,
-            "RBI": 9,
-            "BB": 4,
-            "SO": 7,
-            "pitching_outs": 27,
-            "pitching_runs": 3,
-            "pitching_hits": 5
-          }
-        ],
-        "source_warnings": [],
-        "player_rows": 34,
-        "status": "PASS",
-        "scoreboard": [
-          {
-            "runs": 3,
-            "hits": 5,
-            "errors": 1,
-            "innings": [
-              1,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              2
-            ]
-          },
-          {
-            "runs": 9,
-            "hits": 11,
-            "errors": 0,
-            "innings": [
-              2,
-              1,
-              1,
-              2,
-              2,
-              0,
-              0,
-              1,
-              null
-            ]
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "Pacific",
-            "nine_starting_slots": true,
-            "batter_rows": 13,
-            "pitcher_rows": 5,
-            "substitutes": 4
-          },
-          {
-            "team": "San Diego",
-            "nine_starting_slots": true,
-            "batter_rows": 11,
-            "pitcher_rows": 5,
-            "substitutes": 2
-          }
-        ],
-        "official_decisions": {
-          "win": "Sashin, James",
-          "loss": "Cooper Lanz",
-          "save": null
-        },
-        "resolved_pitcher_decisions": {
-          "win": null,
-          "loss": "Cooper Lanz",
-          "save": null
-        }
-      }
-    },
-    {
-      "game_id": "cb-2023-03-07-san-diego-oregon-state-att0191",
-      "player_rows": 32,
-      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/oregon-state/boxscore/13902",
-      "win": "Justin Thorsteinson",
-      "loss": "Mikiah Negrete",
-      "source_audit": {
-        "game_id": "cb-2023-03-07-san-diego-oregon-state-att0191",
-        "source": "https://usdtoreros.com/sports/baseball/stats/2023/oregon-state/boxscore/13902",
-        "http_code": 200,
-        "source_bytes": 679685,
-        "source_sha256": "6ab3d4c037359ef2923f1166e7d5ec61c8f557d7be459ab280839bfd5255a28c",
-        "teams": [
-          {
-            "name": "San Diego",
-            "batters": 10,
-            "pitchers": 4,
-            "AB": 30,
-            "R": 4,
-            "H": 9,
-            "RBI": 3,
-            "BB": 3,
-            "SO": 6,
-            "pitching_outs": 24,
-            "pitching_runs": 9,
-            "pitching_hits": 13
-          },
-          {
-            "name": "Oregon State",
-            "batters": 12,
-            "pitchers": 7,
-            "AB": 35,
-            "R": 9,
-            "H": 13,
-            "RBI": 9,
-            "BB": 4,
-            "SO": 7,
-            "pitching_outs": 27,
-            "pitching_runs": 4,
-            "pitching_hits": 9
-          }
-        ],
-        "source_warnings": [],
-        "player_rows": 32,
-        "status": "PASS",
-        "scoreboard": [
-          {
-            "runs": 4,
-            "hits": 9,
-            "errors": 0,
-            "innings": [
-              0,
-              0,
-              2,
-              0,
-              1,
-              0,
-              0,
-              0,
-              1
-            ]
-          },
-          {
-            "runs": 9,
             "hits": 13,
             "errors": 1,
             "innings": [
-              0,
-              0,
-              2,
-              1,
-              2,
-              1,
-              0,
-              3,
-              null
-            ]
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "San Diego",
-            "nine_starting_slots": true,
-            "batter_rows": 10,
-            "pitcher_rows": 4,
-            "substitutes": 1
-          },
-          {
-            "team": "Oregon State",
-            "nine_starting_slots": true,
-            "batter_rows": 12,
-            "pitcher_rows": 7,
-            "substitutes": 3
-          }
-        ],
-        "official_decisions": {
-          "win": "Thorsteinson, Justin",
-          "loss": "Negrete, Mikiah",
-          "save": null
-        },
-        "resolved_pitcher_decisions": {
-          "win": null,
-          "loss": null,
-          "save": null
-        }
-      }
-    },
-    {
-      "game_id": "cb-2023-03-05-san-diego-oregon-att0190",
-      "player_rows": 31,
-      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/oregon/boxscore/13901",
-      "win": "Austin Anderson",
-      "loss": "Morgan Lunceford",
-      "source_audit": {
-        "game_id": "cb-2023-03-05-san-diego-oregon-att0190",
-        "source": "https://usdtoreros.com/sports/baseball/stats/2023/oregon/boxscore/13901",
-        "http_code": 200,
-        "source_bytes": 663748,
-        "source_sha256": "fc1b869dbc3316ff24df32e330aec1dc607c09f5d7208217126b0d8f41f1448d",
-        "teams": [
-          {
-            "name": "San Diego",
-            "batters": 10,
-            "pitchers": 4,
-            "AB": 26,
-            "R": 1,
-            "H": 3,
-            "RBI": 1,
-            "BB": 6,
-            "SO": 9,
-            "pitching_outs": 24,
-            "pitching_runs": 5,
-            "pitching_hits": 9
-          },
-          {
-            "name": "Oregon",
-            "batters": 11,
-            "pitchers": 6,
-            "AB": 31,
-            "R": 5,
-            "H": 9,
-            "RBI": 5,
-            "BB": 3,
-            "SO": 8,
-            "pitching_outs": 27,
-            "pitching_runs": 1,
-            "pitching_hits": 3
-          }
-        ],
-        "source_warnings": [],
-        "player_rows": 31,
-        "status": "PASS",
-        "scoreboard": [
-          {
-            "runs": 1,
-            "hits": 3,
-            "errors": 2,
-            "innings": [
-              0,
-              1,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ]
-          },
-          {
-            "runs": 5,
-            "hits": 9,
-            "errors": 1,
-            "innings": [
-              1,
-              1,
-              1,
-              0,
-              0,
-              0,
-              2,
-              0,
-              null
-            ]
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "San Diego",
-            "nine_starting_slots": true,
-            "batter_rows": 10,
-            "pitcher_rows": 4,
-            "substitutes": 1
-          },
-          {
-            "team": "Oregon",
-            "nine_starting_slots": true,
-            "batter_rows": 11,
-            "pitcher_rows": 6,
-            "substitutes": 2
-          }
-        ],
-        "official_decisions": {
-          "win": "Anderson, Austin",
-          "loss": "Lunceford, Morgan",
-          "save": null
-        },
-        "resolved_pitcher_decisions": {
-          "win": null,
-          "loss": null,
-          "save": null
-        }
-      }
-    },
-    {
-      "game_id": "cb-2023-03-04-san-diego-oregon-att0189",
-      "player_rows": 34,
-      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/oregon/boxscore/13900",
-      "win": "Jackson Pace",
-      "loss": "Garrett Rennie",
-      "source_audit": {
-        "game_id": "cb-2023-03-04-san-diego-oregon-att0189",
-        "source": "https://usdtoreros.com/sports/baseball/stats/2023/oregon/boxscore/13900",
-        "http_code": 200,
-        "source_bytes": 677082,
-        "source_sha256": "a46ff876486acf7068cabb8dee1c60b34e4a4bffbd961e36d3701671f5c9a3ff",
-        "teams": [
-          {
-            "name": "San Diego",
-            "batters": 10,
-            "pitchers": 5,
-            "AB": 30,
-            "R": 0,
-            "H": 4,
-            "RBI": 0,
-            "BB": 2,
-            "SO": 5,
-            "pitching_outs": 24,
-            "pitching_runs": 13,
-            "pitching_hits": 13
-          },
-          {
-            "name": "Oregon",
-            "batters": 15,
-            "pitchers": 4,
-            "AB": 35,
-            "R": 13,
-            "H": 13,
-            "RBI": 13,
-            "BB": 6,
-            "SO": 7,
-            "pitching_outs": 27,
-            "pitching_runs": 0,
-            "pitching_hits": 4
-          }
-        ],
-        "source_warnings": [],
-        "player_rows": 34,
-        "status": "PASS",
-        "scoreboard": [
-          {
-            "runs": 0,
-            "hits": 4,
-            "errors": 1,
-            "innings": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ]
-          },
-          {
-            "runs": 13,
-            "hits": 13,
-            "errors": 0,
-            "innings": [
-              0,
-              0,
-              0,
-              2,
               4,
-              5,
-              2,
-              0,
-              null
-            ]
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "San Diego",
-            "nine_starting_slots": true,
-            "batter_rows": 10,
-            "pitcher_rows": 5,
-            "substitutes": 1
-          },
-          {
-            "team": "Oregon",
-            "nine_starting_slots": true,
-            "batter_rows": 15,
-            "pitcher_rows": 4,
-            "substitutes": 6
-          }
-        ],
-        "official_decisions": {
-          "win": "Pace, Jackson",
-          "loss": "Rennie, Garrett",
-          "save": null
-        },
-        "resolved_pitcher_decisions": {
-          "win": null,
-          "loss": null,
-          "save": null
-        }
-      }
-    },
-    {
-      "game_id": "cb-2023-03-03-san-diego-oregon-att0188",
-      "player_rows": 26,
-      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/oregon/boxscore/13899",
-      "win": "Logan Mercado",
-      "loss": "Ryan Robinson",
-      "source_audit": {
-        "game_id": "cb-2023-03-03-san-diego-oregon-att0188",
-        "source": "https://usdtoreros.com/sports/baseball/stats/2023/oregon/boxscore/13899",
-        "http_code": 200,
-        "source_bytes": 638524,
-        "source_sha256": "24f3466d3fefe2e7dfd090a01ef374ffb099134db56bac89c7b7844d7892a229",
-        "teams": [
-          {
-            "name": "San Diego",
-            "batters": 9,
-            "pitchers": 3,
-            "AB": 33,
-            "R": 3,
-            "H": 6,
-            "RBI": 2,
-            "BB": 6,
-            "SO": 6,
-            "pitching_outs": 25,
-            "pitching_runs": 4,
-            "pitching_hits": 9
-          },
-          {
-            "name": "Oregon",
-            "batters": 12,
-            "pitchers": 2,
-            "AB": 34,
-            "R": 4,
-            "H": 9,
-            "RBI": 4,
-            "BB": 2,
-            "SO": 9,
-            "pitching_outs": 27,
-            "pitching_runs": 3,
-            "pitching_hits": 6
-          }
-        ],
-        "source_warnings": [],
-        "player_rows": 26,
-        "status": "PASS",
-        "scoreboard": [
-          {
-            "runs": 3,
-            "hits": 6,
-            "errors": 2,
-            "innings": [
-              0,
-              1,
-              1,
-              0,
-              0,
-              0,
-              1,
-              0,
-              0
-            ]
-          },
-          {
-            "runs": 4,
-            "hits": 9,
-            "errors": 3,
-            "innings": [
-              0,
-              0,
-              3,
-              0,
-              0,
-              0,
-              0,
-              0,
-              1
-            ]
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "San Diego",
-            "nine_starting_slots": true,
-            "batter_rows": 9,
-            "pitcher_rows": 3,
-            "substitutes": 0
-          },
-          {
-            "team": "Oregon",
-            "nine_starting_slots": true,
-            "batter_rows": 12,
-            "pitcher_rows": 2,
-            "substitutes": 3
-          }
-        ],
-        "official_decisions": {
-          "win": "Mercado, Logan",
-          "loss": "Robinson, Ryan",
-          "save": null
-        },
-        "resolved_pitcher_decisions": {
-          "win": null,
-          "loss": null,
-          "save": null
-        }
-      }
-    },
-    {
-      "game_id": "cb-2023-03-02-san-diego-oregon-att0187",
-      "player_rows": 24,
-      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/oregon/boxscore/13898",
-      "win": "Jace Stoffal",
-      "loss": "Drake Frize",
-      "source_audit": {
-        "game_id": "cb-2023-03-02-san-diego-oregon-att0187",
-        "source": "https://usdtoreros.com/sports/baseball/stats/2023/oregon/boxscore/13898",
-        "http_code": 200,
-        "source_bytes": 628176,
-        "source_sha256": "5e7b5c9db28dc391f72df70de84e332712a63dd49dc0005e51f7cffcc3b3ea1a",
-        "teams": [
-          {
-            "name": "San Diego",
-            "batters": 10,
-            "pitchers": 3,
-            "AB": 32,
-            "R": 2,
-            "H": 6,
-            "RBI": 2,
-            "BB": 4,
-            "SO": 8,
-            "pitching_outs": 24,
-            "pitching_runs": 3,
-            "pitching_hits": 7
-          },
-          {
-            "name": "Oregon",
-            "batters": 9,
-            "pitchers": 3,
-            "AB": 26,
-            "R": 3,
-            "H": 7,
-            "RBI": 3,
-            "BB": 2,
-            "SO": 8,
-            "pitching_outs": 27,
-            "pitching_runs": 2,
-            "pitching_hits": 6
-          }
-        ],
-        "source_warnings": [],
-        "player_rows": 24,
-        "status": "PASS",
-        "scoreboard": [
-          {
-            "runs": 2,
-            "hits": 6,
-            "errors": 0,
-            "innings": [
-              1,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              1,
-              0
-            ]
-          },
-          {
-            "runs": 3,
-            "hits": 7,
-            "errors": 0,
-            "innings": [
-              0,
-              0,
-              0,
-              2,
-              0,
-              0,
-              1,
-              0,
-              null
-            ]
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "San Diego",
-            "nine_starting_slots": true,
-            "batter_rows": 10,
-            "pitcher_rows": 3,
-            "substitutes": 1
-          },
-          {
-            "team": "Oregon",
-            "nine_starting_slots": true,
-            "batter_rows": 9,
-            "pitcher_rows": 3,
-            "substitutes": 0
-          }
-        ],
-        "official_decisions": {
-          "win": "Stoffal, Jace",
-          "loss": "Frize, Drake",
-          "save": "Mollerus, Josh"
-        },
-        "resolved_pitcher_decisions": {
-          "win": null,
-          "loss": null,
-          "save": null
-        }
-      }
-    },
-    {
-      "game_id": "cb-2023-02-24-hawaii-san-diego-att0183",
-      "player_rows": 37,
-      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/hawaii/boxscore/13895",
-      "win": "Aídan Gonzalez",
-      "loss": "Dalton Renne",
-      "source_audit": {
-        "game_id": "cb-2023-02-24-hawaii-san-diego-att0183",
-        "source": "https://usdtoreros.com/sports/baseball/stats/2023/hawaii/boxscore/13895",
-        "http_code": 200,
-        "source_bytes": 690667,
-        "source_sha256": "ee218a67b71d00e9e00315038fe808d1f69bf47151f041be40c88fd24392fd9a",
-        "teams": [
-          {
-            "name": "Hawaii",
-            "batters": 15,
-            "pitchers": 4,
-            "AB": 29,
-            "R": 2,
-            "H": 2,
-            "RBI": 1,
-            "BB": 6,
-            "SO": 4,
-            "pitching_outs": 24,
-            "pitching_runs": 14,
-            "pitching_hits": 15
-          },
-          {
-            "name": "San Diego",
-            "batters": 13,
-            "pitchers": 5,
-            "AB": 38,
-            "R": 14,
-            "H": 15,
-            "RBI": 13,
-            "BB": 5,
-            "SO": 6,
-            "pitching_outs": 27,
-            "pitching_runs": 2,
-            "pitching_hits": 2
-          }
-        ],
-        "source_warnings": [],
-        "player_rows": 37,
-        "status": "PASS",
-        "scoreboard": [
-          {
-            "runs": 2,
-            "hits": 2,
-            "errors": 2,
-            "innings": [
-              0,
-              0,
-              0,
-              0,
-              2,
-              0,
-              0,
-              0,
-              0
-            ]
-          },
-          {
-            "runs": 14,
-            "hits": 15,
-            "errors": 2,
-            "innings": [
-              2,
-              0,
-              3,
-              1,
-              0,
-              5,
-              3,
-              0,
-              null
-            ]
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "Hawaii",
-            "nine_starting_slots": true,
-            "batter_rows": 15,
-            "pitcher_rows": 4,
-            "substitutes": 6
-          },
-          {
-            "team": "San Diego",
-            "nine_starting_slots": true,
-            "batter_rows": 13,
-            "pitcher_rows": 5,
-            "substitutes": 4
-          }
-        ],
-        "official_decisions": {
-          "win": "Gonzalez, Aídan",
-          "loss": "Dalton Renne",
-          "save": null
-        },
-        "resolved_pitcher_decisions": {
-          "win": null,
-          "loss": "Dalton Renne",
-          "save": null
-        }
-      }
-    },
-    {
-      "game_id": "cb-2023-02-19-nebraska-san-diego-att0180",
-      "player_rows": 31,
-      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/nebraska/boxscore/13893",
-      "win": "Drake Frize",
-      "loss": "Michael Garza",
-      "source_audit": {
-        "game_id": "cb-2023-02-19-nebraska-san-diego-att0180",
-        "source": "https://usdtoreros.com/sports/baseball/stats/2023/nebraska/boxscore/13893",
-        "http_code": 200,
-        "source_bytes": 680284,
-        "source_sha256": "6af28e1e030dba2067365a737246a679c255500a7bfedc20be5a0aacc04cbd24",
-        "teams": [
-          {
-            "name": "Nebraska",
-            "batters": 9,
-            "pitchers": 6,
-            "AB": 34,
-            "R": 9,
-            "H": 10,
-            "RBI": 9,
-            "BB": 3,
-            "SO": 12,
-            "pitching_outs": 25,
-            "pitching_runs": 10,
-            "pitching_hits": 9
-          },
-          {
-            "name": "San Diego",
-            "batters": 10,
-            "pitchers": 6,
-            "AB": 32,
-            "R": 10,
-            "H": 9,
-            "RBI": 10,
-            "BB": 4,
-            "SO": 5,
-            "pitching_outs": 27,
-            "pitching_runs": 9,
-            "pitching_hits": 10
-          }
-        ],
-        "source_warnings": [],
-        "player_rows": 31,
-        "status": "PASS",
-        "scoreboard": [
-          {
-            "runs": 9,
-            "hits": 10,
-            "errors": 0,
-            "innings": [
-              3,
               2,
               1,
               1,
-              1,
-              1,
-              0,
-              0,
-              0
-            ]
-          },
-          {
-            "runs": 10,
-            "hits": 9,
-            "errors": 0,
-            "innings": [
-              2,
-              0,
-              0,
-              0,
-              5,
-              2,
-              0,
-              0,
-              1
-            ]
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "Nebraska",
-            "nine_starting_slots": true,
-            "batter_rows": 9,
-            "pitcher_rows": 6,
-            "substitutes": 0
-          },
-          {
-            "team": "San Diego",
-            "nine_starting_slots": true,
-            "batter_rows": 10,
-            "pitcher_rows": 6,
-            "substitutes": 1
-          }
-        ],
-        "official_decisions": {
-          "win": "Frize, Drake",
-          "loss": "Garza, Michael",
-          "save": null
-        },
-        "resolved_pitcher_decisions": {
-          "win": null,
-          "loss": null,
-          "save": null
-        }
-      }
-    },
-    {
-      "game_id": "cb-2023-02-18-nebraska-san-diego-att0179",
-      "player_rows": 28,
-      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/nebraska/boxscore/13892",
-      "win": "Tristan LaMaison",
-      "loss": "Shay Schanaman",
-      "source_audit": {
-        "game_id": "cb-2023-02-18-nebraska-san-diego-att0179",
-        "source": "https://usdtoreros.com/sports/baseball/stats/2023/nebraska/boxscore/13892",
-        "http_code": 200,
-        "source_bytes": 650789,
-        "source_sha256": "bf247c344054a2916ad5645f64398492a01ed74a9e7d06c8922d404e1ab78cce",
-        "teams": [
-          {
-            "name": "Nebraska",
-            "batters": 11,
-            "pitchers": 3,
-            "AB": 37,
-            "R": 3,
-            "H": 11,
-            "RBI": 3,
-            "BB": 1,
-            "SO": 12,
-            "pitching_outs": 24,
-            "pitching_runs": 5,
-            "pitching_hits": 6
-          },
-          {
-            "name": "San Diego",
-            "batters": 11,
-            "pitchers": 4,
-            "AB": 29,
-            "R": 5,
-            "H": 6,
-            "RBI": 4,
-            "BB": 4,
-            "SO": 5,
-            "pitching_outs": 27,
-            "pitching_runs": 3,
-            "pitching_hits": 11
-          }
-        ],
-        "source_warnings": [],
-        "player_rows": 28,
-        "status": "PASS",
-        "scoreboard": [
-          {
-            "runs": 3,
-            "hits": 11,
-            "errors": 1,
-            "innings": [
               0,
               0,
               0,
               0,
-              1,
-              0,
-              0,
-              2,
-              0
-            ]
-          },
-          {
-            "runs": 5,
-            "hits": 6,
-            "errors": 0,
-            "innings": [
-              2,
-              0,
-              0,
-              0,
-              0,
-              1,
-              0,
-              2,
-              null
-            ]
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "Nebraska",
-            "nine_starting_slots": true,
-            "batter_rows": 11,
-            "pitcher_rows": 3,
-            "substitutes": 2
-          },
-          {
-            "team": "San Diego",
-            "nine_starting_slots": true,
-            "batter_rows": 11,
-            "pitcher_rows": 4,
-            "substitutes": 2
-          }
-        ],
-        "official_decisions": {
-          "win": "LaMaison, Tristan",
-          "loss": "Schanaman, Shay",
-          "save": "Smith, Austin"
-        },
-        "resolved_pitcher_decisions": {
-          "win": null,
-          "loss": null,
-          "save": null
-        }
-      }
-    },
-    {
-      "game_id": "cb-2023-02-17-nebraska-san-diego-att0178",
-      "player_rows": 29,
-      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/nebraska/boxscore/13891",
-      "win": "Mikiah Negrete",
-      "loss": "Emmett Olson",
-      "source_audit": {
-        "game_id": "cb-2023-02-17-nebraska-san-diego-att0178",
-        "source": "https://usdtoreros.com/sports/baseball/stats/2023/nebraska/boxscore/13891",
-        "http_code": 200,
-        "source_bytes": 658204,
-        "source_sha256": "d7228a8b10293fa0e56cc39da415db09c43d9f72b18d19fef483f11f259d2beb",
-        "teams": [
-          {
-            "name": "Nebraska",
-            "batters": 9,
-            "pitchers": 4,
-            "AB": 32,
-            "R": 3,
-            "H": 5,
-            "RBI": 3,
-            "BB": 7,
-            "SO": 9,
-            "pitching_outs": 24,
-            "pitching_runs": 7,
-            "pitching_hits": 10
-          },
-          {
-            "name": "San Diego",
-            "batters": 11,
-            "pitchers": 5,
-            "AB": 31,
-            "R": 7,
-            "H": 10,
-            "RBI": 7,
-            "BB": 4,
-            "SO": 8,
-            "pitching_outs": 27,
-            "pitching_runs": 3,
-            "pitching_hits": 5
-          }
-        ],
-        "source_warnings": [],
-        "player_rows": 29,
-        "status": "PASS",
-        "scoreboard": [
-          {
-            "runs": 3,
-            "hits": 5,
-            "errors": 0,
-            "innings": [
-              0,
-              0,
-              0,
-              2,
-              0,
-              0,
-              0,
-              1,
               0
             ]
           },
           {
             "runs": 7,
-            "hits": 10,
-            "errors": 1,
+            "hits": 9,
+            "errors": 2,
             "innings": [
-              0,
-              2,
+              5,
+              1,
               0,
               0,
               0,
               1,
-              1,
-              3,
-              null
+              0,
+              0,
+              0
             ]
           }
         ],
         "lineup_audit": [
           {
-            "team": "Nebraska",
+            "team": "Portland",
             "nine_starting_slots": true,
-            "batter_rows": 9,
-            "pitcher_rows": 4,
-            "substitutes": 0
+            "batter_rows": 10,
+            "pitcher_rows": 3,
+            "substitutes": 1
           },
           {
             "team": "San Diego",
             "nine_starting_slots": true,
-            "batter_rows": 11,
-            "pitcher_rows": 5,
-            "substitutes": 2
+            "batter_rows": 9,
+            "pitcher_rows": 4,
+            "substitutes": 0
           }
         ],
         "official_decisions": {
-          "win": "Negrete, Mikiah",
-          "loss": "Olson, Emmett",
-          "save": "Robinson, Ryan"
+          "win": "GARTRELL, Joey",
+          "loss": "Smith, Austin",
+          "save": "DOBMEIER, Jacob"
         },
         "resolved_pitcher_decisions": {
           "win": null,
@@ -3023,21 +376,6 @@
       "game_id": "cb-2023-04-21-san-francisco-san-diego-att0208",
       "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/san-francisco/boxscore/13925",
       "reason": "San Diego: cannot exactly match source batter lineup against source player records"
-    },
-    {
-      "game_id": "cb-2023-04-16-portland-san-diego-att0206",
-      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/portland/boxscore/13924",
-      "reason": "Official inning R/H/E scoreboard could not be unambiguously parsed and checked"
-    },
-    {
-      "game_id": "cb-2023-04-15-portland-san-diego-att0205",
-      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/portland/boxscore/13923",
-      "reason": "Official inning R/H/E scoreboard could not be unambiguously parsed and checked"
-    },
-    {
-      "game_id": "cb-2023-04-14-portland-san-diego-att0204",
-      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/portland/boxscore/13922",
-      "reason": "Official inning R/H/E scoreboard could not be unambiguously parsed and checked"
     },
     {
       "game_id": "cb-2023-02-26-uc-irvine-san-diego-att0186",

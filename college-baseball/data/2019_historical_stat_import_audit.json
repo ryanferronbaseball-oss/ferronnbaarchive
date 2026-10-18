@@ -4,10 +4,10 @@
   "limit": 0,
   "status": "PARTIAL_REVIEW_REQUIRED",
   "original_attendance_games": 444,
-  "verified_this_run": 1,
+  "verified_this_run": 0,
   "verified_in_season": 39,
-  "verified_overall": 398,
-  "player_game_rows_total": 11986,
+  "verified_overall": 404,
+  "player_game_rows_total": 12150,
   "already_verified": [
     "cb-2019-05-14-cal-baptist-san-diego-att0072",
     "cb-2019-05-12-pacific-san-diego-att0071",
@@ -42,126 +42,19 @@
     "cb-2019-02-26-san-diego-san-diego-state-att0042",
     "cb-2019-02-24-utah-san-diego-att0041",
     "cb-2019-02-23-missouri-state-san-diego-att0039",
+    "cb-2019-02-23-kansas-state-utah-att0038",
     "cb-2019-02-22-oklahoma-san-diego-att0037",
     "cb-2019-02-19-uc-irvine-san-diego-state-att0035",
     "cb-2019-02-16-wagner-san-diego-att0034",
     "cb-2019-02-16-wagner-san-diego-att0033",
     "cb-2019-02-15-wagner-san-diego-att0032"
   ],
-  "completed": [
-    {
-      "game_id": "cb-2019-02-23-kansas-state-utah-att0038",
-      "player_rows": 28,
-      "source_url": "https://utahutes.com/sports/baseball/stats/2019/kansas-state/boxscore/15468",
-      "win": "Jordan Wicks",
-      "loss": "Riley Pierce",
-      "source_audit": {
-        "game_id": "cb-2019-02-23-kansas-state-utah-att0038",
-        "source": "https://utahutes.com/sports/baseball/stats/2019/kansas-state/boxscore/15468",
-        "http_code": 200,
-        "source_bytes": 1346820,
-        "source_sha256": "723ff33b90c74215c82d796b52acb04a3685c9c1e0cd224dd69b30985da9c369",
-        "teams": [
-          {
-            "name": "Kansas State",
-            "batters": 9,
-            "pitchers": 4,
-            "AB": 36,
-            "R": 6,
-            "H": 11,
-            "RBI": 5,
-            "BB": 3,
-            "SO": 10,
-            "pitching_outs": 27,
-            "pitching_runs": 4,
-            "pitching_hits": 8
-          },
-          {
-            "name": "Utah",
-            "batters": 12,
-            "pitchers": 3,
-            "AB": 34,
-            "R": 4,
-            "H": 8,
-            "RBI": 3,
-            "BB": 3,
-            "SO": 7,
-            "pitching_outs": 27,
-            "pitching_runs": 6,
-            "pitching_hits": 11
-          }
-        ],
-        "source_warnings": [],
-        "player_rows": 28,
-        "status": "PASS",
-        "scoreboard": [
-          {
-            "runs": 6,
-            "hits": 11,
-            "errors": 2,
-            "innings": [
-              1,
-              0,
-              4,
-              0,
-              1,
-              0,
-              0,
-              0,
-              0
-            ]
-          },
-          {
-            "runs": 4,
-            "hits": 8,
-            "errors": 3,
-            "innings": [
-              0,
-              0,
-              1,
-              1,
-              0,
-              0,
-              0,
-              2,
-              0
-            ]
-          }
-        ],
-        "lineup_audit": [
-          {
-            "team": "Kansas State",
-            "nine_starting_slots": true,
-            "batter_rows": 9,
-            "pitcher_rows": 4,
-            "substitutes": 0
-          },
-          {
-            "team": "Utah",
-            "nine_starting_slots": true,
-            "batter_rows": 12,
-            "pitcher_rows": 3,
-            "substitutes": 3
-          }
-        ],
-        "official_decisions": {
-          "win": "Wicks, Jordan",
-          "loss": "Pierce, Riley",
-          "save": "Zubradt, Mitch"
-        },
-        "resolved_pitcher_decisions": {
-          "win": null,
-          "loss": null,
-          "save": null
-        }
-      }
-    }
-  ],
+  "completed": [],
   "pending_review": [
     {
       "game_id": "cb-2019-02-24-cal-state-fullerton-oklahoma-att0040",
       "source_url": "https://soonersports.com/sports/2019/8/7/2150228",
-      "reason": "Original StatCrew innings/RHE not consistent with attendance game"
+      "reason": "Cannot read university pitcher section for Cal State Fullerton"
     },
     {
       "game_id": "cb-2019-02-22-fresno-state-kansas-state-att0036",

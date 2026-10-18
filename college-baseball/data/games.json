@@ -5972,11 +5972,6 @@
         "inning": 9,
         "away": 3,
         "home": 0
-      },
-      {
-        "inning": 10,
-        "away": 0,
-        "home": null
       }
     ],
     "pitching_decisions": {
@@ -5984,7 +5979,8 @@
       "loss": "Cameron Leonard",
       "save": null
     },
-    "source_import_season": 2021
+    "source_import_season": 2021,
+    "source_gamebook_trailing_empty_inning_note": "Source included unplayed 10th header with away 0 / home blank; official game was nine innings. Trailing nonplayed scoreboard cell removed after strict sum and final result checks."
   },
   {
     "id": "cb-2021-03-05-san-diego-uc-san-diego-att0091",
@@ -6059,11 +6055,6 @@
         "inning": 9,
         "away": 1,
         "home": 0
-      },
-      {
-        "inning": 10,
-        "away": 0,
-        "home": null
       }
     ],
     "pitching_decisions": {
@@ -6071,7 +6062,8 @@
       "loss": "Chris Gilmartin",
       "save": null
     },
-    "source_import_season": 2021
+    "source_import_season": 2021,
+    "source_gamebook_trailing_empty_inning_note": "Source included unplayed 10th header with away 0 / home blank; official game was nine innings. Trailing nonplayed scoreboard cell removed after strict sum and final result checks."
   },
   {
     "id": "cb-2021-03-06-uc-san-diego-san-diego-att0092",

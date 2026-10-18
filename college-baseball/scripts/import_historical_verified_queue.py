@@ -20,6 +20,7 @@ from import_2026_remaining_ncaa import import_one
 from import_2024_statcrew import import_statcrew
 from import_2024_pdf import parse as parse_pdf
 from import_2018_original_pdf_transcripts import parse as parse_2018_uploaded_pdf, SOURCES as UPLOADED_2018_GAMEBOOKS
+from import_2018_asu_reconciled import parse as parse_2018_asu, GAME_ID as RECONCILED_ASU_GAME_ID
 from import_2025_verified_queue import scorer_labels
 
 DATA = Path(__file__).resolve().parents[1] / "data"
@@ -113,10 +114,14 @@ def resolve(year, game, row):
         raise ValueError("Unreconciled date conflict")
     if row.get("official_date") and row["official_date"] != original and not verified_user_date_correction(game["id"], row, original):
         raise ValueError("Official and original dates differ without matching verified user-confirmed correction")
-    if year == 2018 and row.get("data_evidence_path"):
-        # ASU batting data is documented, but its PDF score-by-innings and
-        # exact substitution slots have not yet been independently reconciled.
-        raise ValueError("2018 ASU screenshot evidence not yet a verified complete inning/lineup gamebook")
+    if year == 2018 and row.get("data_evidence_path") and not (
+        game["id"] == RECONCILED_ASU_GAME_ID
+        and row.get("asu_source_reconstruction_confirmed") == "2026-10-18"
+        and row.get("source_scoreboard_screenshot_file_id")
+            == "file_0000000045a081f5b589dd3a9489b970"):
+        # Do not bypass other data-evidence holds: only the exact supplied
+        # ASU original inning screenshot and explicit user substitutions.
+        raise ValueError("2018 ASU full gamebook source identity and owner reconciliation not verified")
     # The source is an official seven-inning TIE (16–16), not a
     # nine-inning game with an invented winner or loser. Narrow exception:
     # original university 2/20/2023 full gamebook R/H/E corroborated.
@@ -125,7 +130,10 @@ def resolve(year, game, row):
     scores = [16, 16] if is_seven_inning_nebraska_tie else score_pair(row["official_score"])
     if scores[0] == scores[1] and not is_seven_inning_nebraska_tie:
         raise ValueError("Other tied games require separately audited draw import")
-    url = source_url(row)
+    url = (row.get("official_boxscore_page_url")
+           if year == 2018 and game["id"] == RECONCILED_ASU_GAME_ID
+           and row.get("asu_source_reconstruction_confirmed") == "2026-10-18"
+           else source_url(row))
     if not url or not url.startswith("https://"):
         raise ValueError("Official HTTPS full gamebook URL missing")
     return url, scores
@@ -181,7 +189,16 @@ def main():
             continue
         try:
             url, scores = resolve(args.season, g, row)
-            if args.season == 2018 and gid in UPLOADED_2018_GAMEBOOKS:
+            if args.season == 2018 and gid == RECONCILED_ASU_GAME_ID:
+                # Original ASU gamebook's batter SO field is wrong; the
+                # archive owner separately reconstructed individual Ks and
+                # supplied the exact original score-by-inning source image
+                # plus replacement-to-predecessor links for all substitutes.
+                # The dedicated parser reconciles every available source
+                # column and the exact nine-slot batting orders, fail-closed.
+                rows, trace = parse_2018_asu(g, row, keys)
+                decision = g.get("pitching_decisions")
+            elif args.season == 2018 and gid in UPLOADED_2018_GAMEBOOKS:
                 # Only two exact source-verified original USD Automated
                 # ScoreBook PDFs supplied by this archive's owner.
                 # Their complete, line-preserving transcriptions are

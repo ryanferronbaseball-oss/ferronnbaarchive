@@ -1,0 +1,3845 @@
+{
+  "status": "PASS",
+  "source_manifests": 96,
+  "original_game_count": 444,
+  "original_player_game_rows": 13183,
+  "eligible_gamebooks": 437,
+  "ready_merges": 91,
+  "not_ready": 5,
+  "pending_breakdown": {
+    "one_or_both_schools_not_in_attended_game_player_rows": 5
+  },
+  "preview": [
+    {
+      "sequence": 1,
+      "name": "Justin DeCriscio",
+      "approved_schools": [
+        "San Diego",
+        "North Carolina State"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "san diego",
+          "observed_teams": [
+            "San Diego"
+          ],
+          "source_player_ids": [
+            "cb-san-diego-justin-decriscio"
+          ],
+          "source_player_rows": 75,
+          "games": 75,
+          "seasons": [
+            2022,
+            2023,
+            2024
+          ]
+        },
+        {
+          "normalized_school": "north carolina state",
+          "observed_teams": [
+            "NC State"
+          ],
+          "source_player_ids": [
+            "cb-nc-state-justin-decriscio"
+          ],
+          "source_player_rows": 5,
+          "games": 5,
+          "seasons": [
+            2025
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 2,
+      "name": "James Arakawa",
+      "approved_schools": [
+        "Pacific",
+        "San Diego"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "pacific",
+          "observed_teams": [
+            "Pacific"
+          ],
+          "source_player_ids": [
+            "cb-pacific-james-arakawa"
+          ],
+          "source_player_rows": 6,
+          "games": 6,
+          "seasons": [
+            2019,
+            2021
+          ]
+        },
+        {
+          "normalized_school": "san diego",
+          "observed_teams": [
+            "San Diego"
+          ],
+          "source_player_ids": [
+            "cb-san-diego-james-arakawa"
+          ],
+          "source_player_rows": 41,
+          "games": 41,
+          "seasons": [
+            2023
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 3,
+      "name": "Austin Smith",
+      "approved_schools": [
+        "UC San Diego",
+        "San Diego"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "uc san diego",
+          "observed_teams": [
+            "UC San Diego"
+          ],
+          "source_player_ids": [
+            "cb-uc-san-diego-austin-smith"
+          ],
+          "source_player_rows": 3,
+          "games": 3,
+          "seasons": [
+            2022
+          ]
+        },
+        {
+          "normalized_school": "san diego",
+          "observed_teams": [
+            "San Diego"
+          ],
+          "source_player_ids": [
+            "cb-san-diego-austin-smith"
+          ],
+          "source_player_rows": 45,
+          "games": 45,
+          "seasons": [
+            2023,
+            2024,
+            2025
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 4,
+      "name": "Ripken Reyes",
+      "approved_schools": [
+        "California",
+        "San Diego"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "california",
+          "observed_teams": [
+            "California"
+          ],
+          "source_player_ids": [
+            "cb-california-ripken-reyes"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2018
+          ]
+        },
+        {
+          "normalized_school": "san diego",
+          "observed_teams": [
+            "San Diego"
+          ],
+          "source_player_ids": [
+            "cb-san-diego-ripken-reyes"
+          ],
+          "source_player_rows": 37,
+          "games": 37,
+          "seasons": [
+            2019
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 5,
+      "name": "Henry Ford",
+      "approved_schools": [
+        "Virginia",
+        "Tennessee"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "virginia",
+          "observed_teams": [
+            "Virginia"
+          ],
+          "source_player_ids": [
+            "cb-virginia-henry-ford"
+          ],
+          "source_player_rows": 7,
+          "games": 7,
+          "seasons": [
+            2024,
+            2025
+          ]
+        },
+        {
+          "normalized_school": "tennessee",
+          "observed_teams": [
+            "Tennessee"
+          ],
+          "source_player_ids": [
+            "cb-tennessee-henry-ford"
+          ],
+          "source_player_rows": 11,
+          "games": 11,
+          "seasons": [
+            2026
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 6,
+      "name": "Enzo Apodaca",
+      "approved_schools": [
+        "Gonzaga",
+        "Baylor"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "gonzaga",
+          "observed_teams": [
+            "Gonzaga"
+          ],
+          "source_player_ids": [
+            "cb-gonzaga-enzo-apodaca"
+          ],
+          "source_player_rows": 11,
+          "games": 11,
+          "seasons": [
+            2022,
+            2023
+          ]
+        },
+        {
+          "normalized_school": "baylor",
+          "observed_teams": [
+            "Baylor"
+          ],
+          "source_player_ids": [
+            "cb-baylor-enzo-apodaca"
+          ],
+          "source_player_rows": 2,
+          "games": 2,
+          "seasons": [
+            2024
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 7,
+      "name": "Jayce Tharnish",
+      "approved_schools": [
+        "St. Bonaventure",
+        "Kentucky"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "saint bonaventure",
+          "observed_teams": [
+            "St. Bonaventure"
+          ],
+          "source_player_ids": [
+            "cb-st-bonaventure-jayce-tharnish"
+          ],
+          "source_player_rows": 3,
+          "games": 3,
+          "seasons": [
+            2025
+          ]
+        },
+        {
+          "normalized_school": "kentucky",
+          "observed_teams": [
+            "Kentucky"
+          ],
+          "source_player_ids": [
+            "cb-kentucky-jayce-tharnish"
+          ],
+          "source_player_rows": 9,
+          "games": 9,
+          "seasons": [
+            2026
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 8,
+      "name": "Mike Mancini",
+      "approved_schools": [
+        "James Madison",
+        "Vanderbilt"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "james madison",
+          "observed_teams": [
+            "James Madison"
+          ],
+          "source_player_ids": [
+            "cb-james-madison-mike-mancini"
+          ],
+          "source_player_rows": 2,
+          "games": 2,
+          "seasons": [
+            2024
+          ]
+        },
+        {
+          "normalized_school": "vanderbilt",
+          "observed_teams": [
+            "Vanderbilt"
+          ],
+          "source_player_ids": [
+            "cb-vanderbilt-mike-mancini"
+          ],
+          "source_player_rows": 10,
+          "games": 10,
+          "seasons": [
+            2025,
+            2026
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 9,
+      "name": "Parker Noland",
+      "approved_schools": [
+        "Vanderbilt",
+        "South Carolina"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "vanderbilt",
+          "observed_teams": [
+            "Vanderbilt"
+          ],
+          "source_player_ids": [
+            "cb-vanderbilt-parker-noland"
+          ],
+          "source_player_rows": 4,
+          "games": 4,
+          "seasons": [
+            2022
+          ]
+        },
+        {
+          "normalized_school": "south carolina",
+          "observed_teams": [
+            "South Carolina"
+          ],
+          "source_player_ids": [
+            "cb-south-carolina-parker-noland"
+          ],
+          "source_player_rows": 7,
+          "games": 7,
+          "seasons": [
+            2024
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 10,
+      "name": "Devin Obee",
+      "approved_schools": [
+        "Duke",
+        "Georgia"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "duke",
+          "observed_teams": [
+            "Duke"
+          ],
+          "source_player_ids": [
+            "cb-duke-devin-obee"
+          ],
+          "source_player_rows": 5,
+          "games": 5,
+          "seasons": [
+            2024
+          ]
+        },
+        {
+          "normalized_school": "georgia",
+          "observed_teams": [
+            "Georgia"
+          ],
+          "source_player_ids": [
+            "cb-georgia-devin-obee"
+          ],
+          "source_player_rows": 6,
+          "games": 6,
+          "seasons": [
+            2025
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 11,
+      "name": "Shea Kramer",
+      "approved_schools": [
+        "Utah",
+        "Gonzaga"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "utah",
+          "observed_teams": [
+            "Utah"
+          ],
+          "source_player_ids": [
+            "cb-utah-shea-kramer"
+          ],
+          "source_player_rows": 2,
+          "games": 2,
+          "seasons": [
+            2019
+          ]
+        },
+        {
+          "normalized_school": "gonzaga",
+          "observed_teams": [
+            "Gonzaga"
+          ],
+          "source_player_ids": [
+            "cb-gonzaga-shea-kramer"
+          ],
+          "source_player_rows": 7,
+          "games": 7,
+          "seasons": [
+            2022
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 12,
+      "name": "Jase Woita",
+      "approved_schools": [
+        "South Carolina",
+        "Missouri"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "south carolina",
+          "observed_teams": [
+            "South Carolina"
+          ],
+          "source_player_ids": [
+            "cb-south-carolina-jase-woita"
+          ],
+          "source_player_rows": 3,
+          "games": 3,
+          "seasons": [
+            2025
+          ]
+        },
+        {
+          "normalized_school": "missouri",
+          "observed_teams": [
+            "Missouri"
+          ],
+          "source_player_ids": [
+            "cb-missouri-jase-woita"
+          ],
+          "source_player_rows": 6,
+          "games": 6,
+          "seasons": [
+            2026
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 13,
+      "name": "Logan Johnstone",
+      "approved_schools": [
+        "Gonzaga",
+        "Vanderbilt"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "gonzaga",
+          "observed_teams": [
+            "Gonzaga"
+          ],
+          "source_player_ids": [
+            "cb-gonzaga-logan-johnstone"
+          ],
+          "source_player_rows": 2,
+          "games": 2,
+          "seasons": [
+            2022
+          ]
+        },
+        {
+          "normalized_school": "vanderbilt",
+          "observed_teams": [
+            "Vanderbilt"
+          ],
+          "source_player_ids": [
+            "cb-vanderbilt-logan-johnstone"
+          ],
+          "source_player_rows": 8,
+          "games": 8,
+          "seasons": [
+            2026
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 14,
+      "name": "Chris Stanfield",
+      "approved_schools": [
+        "Auburn",
+        "LSU"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "auburn",
+          "observed_teams": [
+            "Auburn"
+          ],
+          "source_player_ids": [
+            "cb-auburn-chris-stanfield"
+          ],
+          "source_player_rows": 3,
+          "games": 3,
+          "seasons": [
+            2024
+          ]
+        },
+        {
+          "normalized_school": "lsu",
+          "observed_teams": [
+            "LSU"
+          ],
+          "source_player_ids": [
+            "cb-lsu-chris-stanfield"
+          ],
+          "source_player_rows": 7,
+          "games": 7,
+          "seasons": [
+            2025,
+            2026
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 15,
+      "name": "Dylan Johnson",
+      "approved_schools": [
+        "Fresno State",
+        "Gonzaga"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "fresno state",
+          "observed_teams": [
+            "Fresno State"
+          ],
+          "source_player_ids": [
+            "cb-fresno-state-dylan-johnson"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2019
+          ]
+        },
+        {
+          "normalized_school": "gonzaga",
+          "observed_teams": [
+            "Gonzaga"
+          ],
+          "source_player_ids": [
+            "cb-gonzaga-dylan-johnson"
+          ],
+          "source_player_rows": 10,
+          "games": 10,
+          "seasons": [
+            2022,
+            2023
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": "Do not merge with any Dylan Johnson at schools other than Fresno State and Gonzaga"
+    },
+    {
+      "sequence": 16,
+      "name": "Christian Almanza",
+      "approved_schools": [
+        "Utah",
+        "Saint Mary's"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "utah",
+          "observed_teams": [
+            "Utah"
+          ],
+          "source_player_ids": [
+            "cb-utah-christian-almanza"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2019
+          ]
+        },
+        {
+          "normalized_school": "saint mary s",
+          "observed_teams": [
+            "Saint Mary's"
+          ],
+          "source_player_ids": [
+            "cb-saint-mary-s-christian-almanza"
+          ],
+          "source_player_rows": 6,
+          "games": 6,
+          "seasons": [
+            2022,
+            2023
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 17,
+      "name": "Tony Boetto",
+      "approved_schools": [
+        "Santa Clara",
+        "Portland"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "santa clara",
+          "observed_teams": [
+            "Santa Clara"
+          ],
+          "source_player_ids": [
+            "cb-santa-clara-tony-boetto"
+          ],
+          "source_player_rows": 4,
+          "games": 4,
+          "seasons": [
+            2018,
+            2019
+          ]
+        },
+        {
+          "normalized_school": "portland",
+          "observed_teams": [
+            "Portland"
+          ],
+          "source_player_ids": [
+            "cb-portland-tony-boetto"
+          ],
+          "source_player_rows": 4,
+          "games": 4,
+          "seasons": [
+            2022
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 18,
+      "name": "Robbie Burnett",
+      "approved_schools": [
+        "UNC Asheville",
+        "Georgia"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "unc asheville",
+          "observed_teams": [
+            "UNC Asheville"
+          ],
+          "source_player_ids": [
+            "cb-unc-asheville-robbie-burnett"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2024
+          ]
+        },
+        {
+          "normalized_school": "georgia",
+          "observed_teams": [
+            "Georgia"
+          ],
+          "source_player_ids": [
+            "cb-georgia-robbie-burnett"
+          ],
+          "source_player_rows": 5,
+          "games": 5,
+          "seasons": [
+            2025
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 19,
+      "name": "AJ Gracia",
+      "approved_schools": [
+        "Duke",
+        "Virginia"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "duke",
+          "observed_teams": [
+            "Duke"
+          ],
+          "source_player_ids": [
+            "cb-duke-aj-gracia"
+          ],
+          "source_player_rows": 5,
+          "games": 5,
+          "seasons": [
+            2024
+          ]
+        },
+        {
+          "normalized_school": "virginia",
+          "observed_teams": [
+            "Virginia"
+          ],
+          "source_player_ids": [
+            "cb-virginia-aj-gracia"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2026
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 20,
+      "name": "Gaven Kilen",
+      "approved_schools": [
+        "Louisville",
+        "Tennessee"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "louisville",
+          "observed_teams": [],
+          "source_player_ids": [],
+          "source_player_rows": 0,
+          "games": 0,
+          "seasons": []
+        },
+        {
+          "normalized_school": "tennessee",
+          "observed_teams": [],
+          "source_player_ids": [],
+          "source_player_rows": 0,
+          "games": 0,
+          "seasons": []
+        }
+      ],
+      "status": "one_or_both_schools_not_in_attended_game_player_rows",
+      "note": null
+    },
+    {
+      "sequence": 21,
+      "name": "Chris McHugh",
+      "approved_schools": [
+        "VCU",
+        "North Carolina State"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "vcu",
+          "observed_teams": [
+            "VCU"
+          ],
+          "source_player_ids": [
+            "cb-vcu-chris-mchugh"
+          ],
+          "source_player_rows": 2,
+          "games": 2,
+          "seasons": [
+            2024
+          ]
+        },
+        {
+          "normalized_school": "north carolina state",
+          "observed_teams": [
+            "NC State"
+          ],
+          "source_player_ids": [
+            "cb-nc-state-chris-mchugh"
+          ],
+          "source_player_rows": 7,
+          "games": 7,
+          "seasons": [
+            2025,
+            2026
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 22,
+      "name": "Tate Soderstrom",
+      "approved_schools": [
+        "Arizona",
+        "UC San Diego"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "arizona",
+          "observed_teams": [],
+          "source_player_ids": [],
+          "source_player_rows": 0,
+          "games": 0,
+          "seasons": []
+        },
+        {
+          "normalized_school": "uc san diego",
+          "observed_teams": [
+            "UC San Diego"
+          ],
+          "source_player_ids": [
+            "cb-uc-san-diego-tate-soderstrom"
+          ],
+          "source_player_rows": 6,
+          "games": 6,
+          "seasons": [
+            2021
+          ]
+        }
+      ],
+      "status": "one_or_both_schools_not_in_attended_game_player_rows",
+      "note": null
+    },
+    {
+      "sequence": 23,
+      "name": "Drew Berkland",
+      "approved_schools": [
+        "Minnesota",
+        "Notre Dame"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "minnesota",
+          "observed_teams": [
+            "Minnesota"
+          ],
+          "source_player_ids": [
+            "cb-minnesota-drew-berkland"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2025
+          ]
+        },
+        {
+          "normalized_school": "notre dame",
+          "observed_teams": [
+            "Notre Dame"
+          ],
+          "source_player_ids": [
+            "cb-notre-dame-drew-berkland"
+          ],
+          "source_player_rows": 4,
+          "games": 4,
+          "seasons": [
+            2026
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 24,
+      "name": "Mark Quatrani",
+      "approved_schools": [
+        "Cornell",
+        "Notre Dame"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "cornell",
+          "observed_teams": [
+            "Cornell"
+          ],
+          "source_player_ids": [
+            "cb-cornell-mark-quatrani"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2025
+          ]
+        },
+        {
+          "normalized_school": "notre dame",
+          "observed_teams": [
+            "Notre Dame"
+          ],
+          "source_player_ids": [
+            "cb-notre-dame-mark-quatrani"
+          ],
+          "source_player_rows": 4,
+          "games": 4,
+          "seasons": [
+            2026
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 25,
+      "name": "Isaac Humphrey",
+      "approved_schools": [
+        "Louisville",
+        "Ole Miss"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "louisville",
+          "observed_teams": [
+            "Louisville"
+          ],
+          "source_player_ids": [
+            "cb-louisville-isaac-humphrey"
+          ],
+          "source_player_rows": 3,
+          "games": 3,
+          "seasons": [
+            2024
+          ]
+        },
+        {
+          "normalized_school": "ole miss",
+          "observed_teams": [
+            "Ole Miss"
+          ],
+          "source_player_ids": [
+            "cb-ole-miss-isaac-humphrey"
+          ],
+          "source_player_rows": 4,
+          "games": 4,
+          "seasons": [
+            2025
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 26,
+      "name": "Kam Durnin",
+      "approved_schools": [
+        "Wichita State",
+        "Missouri"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "wichita state",
+          "observed_teams": [
+            "Wichita State"
+          ],
+          "source_player_ids": [
+            "cb-wichita-state-kam-durnin"
+          ],
+          "source_player_rows": 2,
+          "games": 2,
+          "seasons": [
+            2024
+          ]
+        },
+        {
+          "normalized_school": "missouri",
+          "observed_teams": [
+            "Missouri"
+          ],
+          "source_player_ids": [
+            "cb-missouri-kam-durnin"
+          ],
+          "source_player_rows": 6,
+          "games": 6,
+          "seasons": [
+            2026
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 27,
+      "name": "Tyler Minnick",
+      "approved_schools": [
+        "Georgia Tech",
+        "Middle Tennessee State"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "georgia tech",
+          "observed_teams": [
+            "Georgia Tech"
+          ],
+          "source_player_ids": [
+            "cb-georgia-tech-tyler-minnick"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2024
+          ]
+        },
+        {
+          "normalized_school": "middle tennessee state",
+          "observed_teams": [
+            "Middle Tennessee State"
+          ],
+          "source_player_ids": [
+            "cb-middle-tennessee-state-tyler-minnick"
+          ],
+          "source_player_rows": 5,
+          "games": 5,
+          "seasons": [
+            2025,
+            2026
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 28,
+      "name": "Ozzie Pratt",
+      "approved_schools": [
+        "BYU",
+        "Southern Miss"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "brigham young",
+          "observed_teams": [
+            "BYU"
+          ],
+          "source_player_ids": [
+            "cb-byu-ozzie-pratt"
+          ],
+          "source_player_rows": 3,
+          "games": 3,
+          "seasons": [
+            2023
+          ]
+        },
+        {
+          "normalized_school": "southern miss",
+          "observed_teams": [
+            "Southern Mississippi"
+          ],
+          "source_player_ids": [
+            "cb-southern-mississippi-ozzie-pratt"
+          ],
+          "source_player_rows": 2,
+          "games": 2,
+          "seasons": [
+            2024,
+            2025
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 29,
+      "name": "Briley Knight",
+      "approved_schools": [
+        "Utah",
+        "Portland"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "utah",
+          "observed_teams": [
+            "Utah"
+          ],
+          "source_player_ids": [
+            "cb-utah-briley-knight"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2019
+          ]
+        },
+        {
+          "normalized_school": "portland",
+          "observed_teams": [
+            "Portland"
+          ],
+          "source_player_ids": [
+            "cb-portland-briley-knight"
+          ],
+          "source_player_rows": 5,
+          "games": 5,
+          "seasons": [
+            2022,
+            2023
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 30,
+      "name": "Crew Robinson",
+      "approved_schools": [
+        "UC San Diego",
+        "BYU"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "uc san diego",
+          "observed_teams": [
+            "UC San Diego"
+          ],
+          "source_player_ids": [
+            "cb-uc-san-diego-crew-robinson"
+          ],
+          "source_player_rows": 5,
+          "games": 5,
+          "seasons": [
+            2022,
+            2023
+          ]
+        },
+        {
+          "normalized_school": "brigham young",
+          "observed_teams": [
+            "BYU"
+          ],
+          "source_player_ids": [
+            "cb-byu-crew-robinson"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2024
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 31,
+      "name": "Brayden Horton",
+      "approved_schools": [
+        "Liberty",
+        "Oklahoma"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "liberty",
+          "observed_teams": [
+            "Liberty"
+          ],
+          "source_player_ids": [
+            "cb-liberty-brayden-horton"
+          ],
+          "source_player_rows": 2,
+          "games": 2,
+          "seasons": [
+            2024
+          ]
+        },
+        {
+          "normalized_school": "oklahoma",
+          "observed_teams": [
+            "Oklahoma"
+          ],
+          "source_player_ids": [
+            "cb-oklahoma-brayden-horton"
+          ],
+          "source_player_rows": 3,
+          "games": 3,
+          "seasons": [
+            2025
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 32,
+      "name": "Tagger Tyson",
+      "approved_schools": [
+        "Louisville",
+        "Kentucky"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "louisville",
+          "observed_teams": [
+            "Louisville"
+          ],
+          "source_player_ids": [
+            "cb-louisville-tagger-tyson"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2025
+          ]
+        },
+        {
+          "normalized_school": "kentucky",
+          "observed_teams": [
+            "Kentucky"
+          ],
+          "source_player_ids": [
+            "cb-kentucky-tagger-tyson"
+          ],
+          "source_player_rows": 4,
+          "games": 4,
+          "seasons": [
+            2026
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 33,
+      "name": "Mike Gunning",
+      "approved_schools": [
+        "Binghamton",
+        "St. Bonaventure"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "binghamton",
+          "observed_teams": [
+            "Binghamton"
+          ],
+          "source_player_ids": [
+            "cb-binghamton-mike-gunning"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2024
+          ]
+        },
+        {
+          "normalized_school": "saint bonaventure",
+          "observed_teams": [
+            "St. Bonaventure"
+          ],
+          "source_player_ids": [
+            "cb-st-bonaventure-mike-gunning"
+          ],
+          "source_player_rows": 3,
+          "games": 3,
+          "seasons": [
+            2025
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 34,
+      "name": "Kane Kepley",
+      "approved_schools": [
+        "Liberty",
+        "North Carolina"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "liberty",
+          "observed_teams": [
+            "Liberty"
+          ],
+          "source_player_ids": [
+            "cb-liberty-kane-kepley"
+          ],
+          "source_player_rows": 2,
+          "games": 2,
+          "seasons": [
+            2024
+          ]
+        },
+        {
+          "normalized_school": "north carolina",
+          "observed_teams": [
+            "North Carolina"
+          ],
+          "source_player_ids": [
+            "cb-north-carolina-kane-kepley"
+          ],
+          "source_player_rows": 2,
+          "games": 2,
+          "seasons": [
+            2025
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 35,
+      "name": "Camden Kozeal",
+      "approved_schools": [
+        "Vanderbilt",
+        "Arkansas"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "vanderbilt",
+          "observed_teams": [
+            "Vanderbilt"
+          ],
+          "source_player_ids": [
+            "cb-vanderbilt-camden-kozeal"
+          ],
+          "source_player_rows": 3,
+          "games": 3,
+          "seasons": [
+            2024
+          ]
+        },
+        {
+          "normalized_school": "arkansas",
+          "observed_teams": [
+            "Arkansas"
+          ],
+          "source_player_ids": [
+            "cb-arkansas-camden-kozeal"
+          ],
+          "source_player_rows": 4,
+          "games": 4,
+          "seasons": [
+            2026
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 36,
+      "name": "Camden Johnson",
+      "approved_schools": [
+        "Wichita State",
+        "Oklahoma"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "wichita state",
+          "observed_teams": [
+            "Wichita State"
+          ],
+          "source_player_ids": [
+            "cb-wichita-state-camden-johnson"
+          ],
+          "source_player_rows": 3,
+          "games": 3,
+          "seasons": [
+            2024
+          ]
+        },
+        {
+          "normalized_school": "oklahoma",
+          "observed_teams": [
+            "Oklahoma"
+          ],
+          "source_player_ids": [
+            "cb-oklahoma-camden-johnson"
+          ],
+          "source_player_rows": 2,
+          "games": 2,
+          "seasons": [
+            2026
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 37,
+      "name": "Tristan Bissetta",
+      "approved_schools": [
+        "Clemson",
+        "Ole Miss"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "clemson",
+          "observed_teams": [
+            "Clemson"
+          ],
+          "source_player_ids": [
+            "cb-clemson-tristan-bissetta"
+          ],
+          "source_player_rows": 3,
+          "games": 3,
+          "seasons": [
+            2024
+          ]
+        },
+        {
+          "normalized_school": "ole miss",
+          "observed_teams": [
+            "Ole Miss"
+          ],
+          "source_player_ids": [
+            "cb-ole-miss-tristan-bissetta"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2026
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 38,
+      "name": "Brandon Larson",
+      "approved_schools": [
+        "UC San Diego",
+        "Stanford"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "uc san diego",
+          "observed_teams": [
+            "UC San Diego"
+          ],
+          "source_player_ids": [
+            "cb-uc-san-diego-brandon-larson"
+          ],
+          "source_player_rows": 2,
+          "games": 2,
+          "seasons": [
+            2023
+          ]
+        },
+        {
+          "normalized_school": "stanford",
+          "observed_teams": [
+            "Stanford"
+          ],
+          "source_player_ids": [
+            "cb-stanford-brandon-larson"
+          ],
+          "source_player_rows": 2,
+          "games": 2,
+          "seasons": [
+            2025
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 39,
+      "name": "Alex Bouche",
+      "approved_schools": [
+        "Old Dominion",
+        "East Carolina"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "old dominion",
+          "observed_teams": [
+            "Old Dominion"
+          ],
+          "source_player_ids": [
+            "cb-old-dominion-alex-bouche"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2024
+          ]
+        },
+        {
+          "normalized_school": "east carolina",
+          "observed_teams": [
+            "East Carolina"
+          ],
+          "source_player_ids": [
+            "cb-east-carolina-alex-bouche"
+          ],
+          "source_player_rows": 3,
+          "games": 3,
+          "seasons": [
+            2025
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 40,
+      "name": "Joe Fitzhugh",
+      "approved_schools": [
+        "San Diego State",
+        "Pacific"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "san diego state",
+          "observed_teams": [
+            "San Diego State"
+          ],
+          "source_player_ids": [
+            "cb-san-diego-state-joe-fitzhugh"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2019
+          ]
+        },
+        {
+          "normalized_school": "pacific",
+          "observed_teams": [
+            "Pacific"
+          ],
+          "source_player_ids": [
+            "cb-pacific-joe-fitzhugh"
+          ],
+          "source_player_rows": 3,
+          "games": 3,
+          "seasons": [
+            2021
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 41,
+      "name": "Kamau Neighbors",
+      "approved_schools": [
+        "Cal State Northridge",
+        "Louisville"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "cal state northridge",
+          "observed_teams": [
+            "Cal State Northridge"
+          ],
+          "source_player_ids": [
+            "cb-cal-state-northridge-kamau-neighbors"
+          ],
+          "source_player_rows": 2,
+          "games": 2,
+          "seasons": [
+            2023
+          ]
+        },
+        {
+          "normalized_school": "louisville",
+          "observed_teams": [
+            "Louisville"
+          ],
+          "source_player_ids": [
+            "cb-louisville-kamau-neighbors"
+          ],
+          "source_player_rows": 2,
+          "games": 2,
+          "seasons": [
+            2025
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 42,
+      "name": "Derek Williams",
+      "approved_schools": [
+        "Wichita State",
+        "Miami"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "wichita state",
+          "observed_teams": [
+            "Wichita State"
+          ],
+          "source_player_ids": [
+            "cb-wichita-state-derek-williams"
+          ],
+          "source_player_rows": 3,
+          "games": 3,
+          "seasons": [
+            2024
+          ]
+        },
+        {
+          "normalized_school": "miami",
+          "observed_teams": [
+            "Miami"
+          ],
+          "source_player_ids": [
+            "cb-miami-derek-williams"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2025
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 43,
+      "name": "Jordan Jaffe",
+      "approved_schools": [
+        "Richmond",
+        "Liberty"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "richmond",
+          "observed_teams": [
+            "Richmond"
+          ],
+          "source_player_ids": [
+            "cb-richmond-jordan-jaffe"
+          ],
+          "source_player_rows": 2,
+          "games": 2,
+          "seasons": [
+            2025
+          ]
+        },
+        {
+          "normalized_school": "liberty",
+          "observed_teams": [
+            "Liberty"
+          ],
+          "source_player_ids": [
+            "cb-liberty-jordan-jaffe"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2026
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 44,
+      "name": "Joey Nicolai",
+      "approved_schools": [
+        "UC Riverside",
+        "Point Loma"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "uc riverside",
+          "observed_teams": [
+            "UC Riverside"
+          ],
+          "source_player_ids": [
+            "cb-uc-riverside-joey-nicolai"
+          ],
+          "source_player_rows": 3,
+          "games": 3,
+          "seasons": [
+            2021
+          ]
+        },
+        {
+          "normalized_school": "point loma",
+          "observed_teams": [
+            "Point Loma Nazarene"
+          ],
+          "source_player_ids": [
+            "cb-point-loma-nazarene-joey-nicolai"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2024
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 45,
+      "name": "Kyson Donahue",
+      "approved_schools": [
+        "Arizona",
+        "Hawaii"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "arizona",
+          "observed_teams": [
+            "Arizona"
+          ],
+          "source_player_ids": [
+            "cb-arizona-kyson-donahue"
+          ],
+          "source_player_rows": 2,
+          "games": 2,
+          "seasons": [
+            2020
+          ]
+        },
+        {
+          "normalized_school": "hawaii",
+          "observed_teams": [
+            "Hawaii"
+          ],
+          "source_player_ids": [
+            "cb-hawaii-kyson-donahue"
+          ],
+          "source_player_rows": 2,
+          "games": 2,
+          "seasons": [
+            2022,
+            2023
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 46,
+      "name": "Kuhio Aloy",
+      "approved_schools": [
+        "BYU",
+        "Arkansas"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "brigham young",
+          "observed_teams": [
+            "BYU"
+          ],
+          "source_player_ids": [
+            "cb-byu-kuhio-aloy"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2024
+          ]
+        },
+        {
+          "normalized_school": "arkansas",
+          "observed_teams": [
+            "Arkansas"
+          ],
+          "source_player_ids": [
+            "cb-arkansas-kuhio-aloy"
+          ],
+          "source_player_rows": 3,
+          "games": 3,
+          "seasons": [
+            2025,
+            2026
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 47,
+      "name": "Ryan Jaros",
+      "approved_schools": [
+        "Georgia Tech",
+        "North Carolina State"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "georgia tech",
+          "observed_teams": [
+            "Georgia Tech"
+          ],
+          "source_player_ids": [
+            "cb-georgia-tech-ryan-jaros"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2024
+          ]
+        },
+        {
+          "normalized_school": "north carolina state",
+          "observed_teams": [
+            "NC State"
+          ],
+          "source_player_ids": [
+            "cb-nc-state-ryan-jaros"
+          ],
+          "source_player_rows": 3,
+          "games": 3,
+          "seasons": [
+            2025
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 48,
+      "name": "Aden Hill",
+      "approved_schools": [
+        "VCU",
+        "Maryland"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "vcu",
+          "observed_teams": [
+            "VCU"
+          ],
+          "source_player_ids": [
+            "cb-vcu-aden-hill"
+          ],
+          "source_player_rows": 2,
+          "games": 2,
+          "seasons": [
+            2024
+          ]
+        },
+        {
+          "normalized_school": "maryland",
+          "observed_teams": [
+            "Maryland"
+          ],
+          "source_player_ids": [
+            "cb-maryland-aden-hill"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2025
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 49,
+      "name": "Macaddin Dye",
+      "approved_schools": [
+        "Liberty",
+        "North Carolina"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "liberty",
+          "observed_teams": [
+            "Liberty"
+          ],
+          "source_player_ids": [
+            "cb-liberty-macaddin-dye"
+          ],
+          "source_player_rows": 2,
+          "games": 2,
+          "seasons": [
+            2024
+          ]
+        },
+        {
+          "normalized_school": "north carolina",
+          "observed_teams": [
+            "North Carolina"
+          ],
+          "source_player_ids": [
+            "cb-north-carolina-macaddin-dye"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2025
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 50,
+      "name": "Parker Coley",
+      "approved_schools": [
+        "Southeastern Louisiana",
+        "Western Kentucky"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "southeastern louisiana",
+          "observed_teams": [
+            "Southeastern Louisiana"
+          ],
+          "source_player_ids": [
+            "cb-southeastern-louisiana-parker-coley"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2024
+          ]
+        },
+        {
+          "normalized_school": "western kentucky",
+          "observed_teams": [
+            "Western Kentucky"
+          ],
+          "source_player_ids": [
+            "cb-western-kentucky-parker-coley"
+          ],
+          "source_player_rows": 2,
+          "games": 2,
+          "seasons": [
+            2026
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 51,
+      "name": "Peter Abinanti",
+      "approved_schools": [
+        "St. John's",
+        "San Diego"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "st john s",
+          "observed_teams": [
+            "St. John's"
+          ],
+          "source_player_ids": [
+            "cb-st-john-s-peter-abinanti"
+          ],
+          "source_player_rows": 2,
+          "games": 2,
+          "seasons": [
+            2019
+          ]
+        },
+        {
+          "normalized_school": "san diego",
+          "observed_teams": [
+            "San Diego"
+          ],
+          "source_player_ids": [
+            "cb-san-diego-peter-abinanti"
+          ],
+          "source_player_rows": 7,
+          "games": 7,
+          "seasons": [
+            2021
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 52,
+      "name": "Hugh Pinkney",
+      "approved_schools": [
+        "Rutgers",
+        "Tulane"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "rutgers",
+          "observed_teams": [
+            "Rutgers"
+          ],
+          "source_player_ids": [
+            "cb-rutgers-hugh-pinkney"
+          ],
+          "source_player_rows": 2,
+          "games": 2,
+          "seasons": [
+            2024
+          ]
+        },
+        {
+          "normalized_school": "tulane",
+          "observed_teams": [
+            "Tulane"
+          ],
+          "source_player_ids": [
+            "cb-tulane-hugh-pinkney"
+          ],
+          "source_player_rows": 2,
+          "games": 2,
+          "seasons": [
+            2025
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 53,
+      "name": "Lorenzo Carrier",
+      "approved_schools": [
+        "Miami",
+        "Pittsburgh"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "miami",
+          "observed_teams": [
+            "Miami"
+          ],
+          "source_player_ids": [
+            "cb-miami-lorenzo-carrier"
+          ],
+          "source_player_rows": 2,
+          "games": 2,
+          "seasons": [
+            2024
+          ]
+        },
+        {
+          "normalized_school": "pittsburgh",
+          "observed_teams": [
+            "Pittsburgh"
+          ],
+          "source_player_ids": [
+            "cb-pittsburgh-lorenzo-carrier"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2025
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 54,
+      "name": "Max Jensen",
+      "approved_schools": [
+        "Cornell",
+        "Vanderbilt"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "cornell",
+          "observed_teams": [
+            "Cornell"
+          ],
+          "source_player_ids": [
+            "cb-cornell-max-jensen"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2025
+          ]
+        },
+        {
+          "normalized_school": "vanderbilt",
+          "observed_teams": [
+            "Vanderbilt"
+          ],
+          "source_player_ids": [
+            "cb-vanderbilt-max-jensen"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2026
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 55,
+      "name": "Peyton Bonds",
+      "approved_schools": [
+        "Campbell",
+        "Rutgers"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "campbell",
+          "observed_teams": [
+            "Campbell"
+          ],
+          "source_player_ids": [
+            "cb-campbell-peyton-bonds"
+          ],
+          "source_player_rows": 2,
+          "games": 2,
+          "seasons": [
+            2024
+          ]
+        },
+        {
+          "normalized_school": "rutgers",
+          "observed_teams": [
+            "Rutgers"
+          ],
+          "source_player_ids": [
+            "cb-rutgers-peyton-bonds"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2025
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 56,
+      "name": "Nick Barone",
+      "approved_schools": [
+        "West Virginia",
+        "Liberty"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "west virginia",
+          "observed_teams": [
+            "West Virginia"
+          ],
+          "source_player_ids": [
+            "cb-west-virginia-nick-barone"
+          ],
+          "source_player_rows": 2,
+          "games": 2,
+          "seasons": [
+            2024
+          ]
+        },
+        {
+          "normalized_school": "liberty",
+          "observed_teams": [
+            "Liberty"
+          ],
+          "source_player_ids": [
+            "cb-liberty-nick-barone"
+          ],
+          "source_player_rows": 2,
+          "games": 2,
+          "seasons": [
+            2025,
+            2026
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 57,
+      "name": "Steven Meier",
+      "approved_schools": [
+        "Old Dominion",
+        "Troy"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "old dominion",
+          "observed_teams": [
+            "Old Dominion"
+          ],
+          "source_player_ids": [
+            "cb-old-dominion-steven-meier"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2024
+          ]
+        },
+        {
+          "normalized_school": "troy",
+          "observed_teams": [
+            "Troy"
+          ],
+          "source_player_ids": [
+            "cb-troy-steven-meier"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2025
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 58,
+      "name": "Darnell Parker Jr.",
+      "approved_schools": [
+        "Wichita State",
+        "Campbell"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "wichita state",
+          "observed_teams": [
+            "Wichita State"
+          ],
+          "source_player_ids": [
+            "cb-wichita-state-darnell-parker-jr"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2024
+          ]
+        },
+        {
+          "normalized_school": "campbell",
+          "observed_teams": [
+            "Campbell"
+          ],
+          "source_player_ids": [
+            "cb-campbell-darnell-parker-jr"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2025
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 59,
+      "name": "Jackson Cherry",
+      "approved_schools": [
+        "Mercer",
+        "Virginia Tech"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "mercer",
+          "observed_teams": [
+            "Mercer"
+          ],
+          "source_player_ids": [
+            "cb-mercer-jackson-cherry"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2024
+          ]
+        },
+        {
+          "normalized_school": "virginia tech",
+          "observed_teams": [
+            "Virginia Tech"
+          ],
+          "source_player_ids": [
+            "cb-virginia-tech-jackson-cherry"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2025
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 60,
+      "name": "Vytas Valincius",
+      "approved_schools": [
+        "Illinois",
+        "Mississippi State"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "illinois",
+          "observed_teams": [
+            "Illinois"
+          ],
+          "source_player_ids": [
+            "cb-illinois-vytas-valincius"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2024
+          ]
+        },
+        {
+          "normalized_school": "mississippi state",
+          "observed_teams": [
+            "Mississippi State"
+          ],
+          "source_player_ids": [
+            "cb-mississippi-state-vytas-valincius"
+          ],
+          "source_player_rows": 2,
+          "games": 2,
+          "seasons": [
+            2026
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 61,
+      "name": "Easton Richter",
+      "approved_schools": [
+        "Saint Louis",
+        "Minnesota"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "saint louis",
+          "observed_teams": [
+            "St. Louis"
+          ],
+          "source_player_ids": [
+            "cb-st-louis-easton-richter"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2024
+          ]
+        },
+        {
+          "normalized_school": "minnesota",
+          "observed_teams": [
+            "Minnesota"
+          ],
+          "source_player_ids": [
+            "cb-minnesota-easton-richter"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2025
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 62,
+      "name": "Brennan Holt",
+      "approved_schools": [
+        "South Alabama",
+        "Alabama"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "south alabama",
+          "observed_teams": [
+            "South Alabama"
+          ],
+          "source_player_ids": [
+            "cb-south-alabama-brennan-holt"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2024
+          ]
+        },
+        {
+          "normalized_school": "alabama",
+          "observed_teams": [
+            "Alabama"
+          ],
+          "source_player_ids": [
+            "cb-alabama-brennan-holt"
+          ],
+          "source_player_rows": 2,
+          "games": 2,
+          "seasons": [
+            2026
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 63,
+      "name": "Tanner Thomas",
+      "approved_schools": [
+        "Gardner-Webb",
+        "Xavier"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "gardner webb",
+          "observed_teams": [
+            "Gardner Webb"
+          ],
+          "source_player_ids": [
+            "cb-gardner-webb-tanner-thomas"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2025
+          ]
+        },
+        {
+          "normalized_school": "xavier",
+          "observed_teams": [
+            "Xavier"
+          ],
+          "source_player_ids": [
+            "cb-xavier-tanner-thomas"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2026
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 64,
+      "name": "Trenton Lyons",
+      "approved_schools": [
+        "North Carolina State",
+        "Kennesaw State"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "north carolina state",
+          "observed_teams": [
+            "NC State"
+          ],
+          "source_player_ids": [
+            "cb-nc-state-trenton-lyons"
+          ],
+          "source_player_rows": 2,
+          "games": 2,
+          "seasons": [
+            2025
+          ]
+        },
+        {
+          "normalized_school": "kennesaw state",
+          "observed_teams": [
+            "Kennesaw State"
+          ],
+          "source_player_ids": [
+            "cb-kennesaw-state-trenton-lyons"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2026
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 65,
+      "name": "Sam Harris",
+      "approved_schools": [
+        "Duke",
+        "Virginia"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "duke",
+          "observed_teams": [
+            "Duke"
+          ],
+          "source_player_ids": [
+            "cb-duke-sam-harris"
+          ],
+          "source_player_rows": 2,
+          "games": 2,
+          "seasons": [
+            2024,
+            2025
+          ]
+        },
+        {
+          "normalized_school": "virginia",
+          "observed_teams": [
+            "Virginia"
+          ],
+          "source_player_ids": [
+            "cb-virginia-sam-harris"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2026
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 66,
+      "name": "Bristol Carter",
+      "approved_schools": [
+        "East Carolina",
+        "Auburn"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "east carolina",
+          "observed_teams": [
+            "East Carolina"
+          ],
+          "source_player_ids": [
+            "cb-east-carolina-bristol-carter"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2024
+          ]
+        },
+        {
+          "normalized_school": "auburn",
+          "observed_teams": [
+            "Auburn"
+          ],
+          "source_player_ids": [
+            "cb-auburn-bristol-carter"
+          ],
+          "source_player_rows": 5,
+          "games": 5,
+          "seasons": [
+            2025,
+            2026
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 67,
+      "name": "Jaxon Sorenson",
+      "approved_schools": [
+        "Gonzaga",
+        "Liberty"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "gonzaga",
+          "observed_teams": [
+            "Gonzaga"
+          ],
+          "source_player_ids": [
+            "cb-gonzaga-jaxon-sorenson"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2022
+          ]
+        },
+        {
+          "normalized_school": "liberty",
+          "observed_teams": [
+            "Liberty"
+          ],
+          "source_player_ids": [
+            "cb-liberty-jaxon-sorenson"
+          ],
+          "source_player_rows": 2,
+          "games": 2,
+          "seasons": [
+            2025,
+            2026
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 68,
+      "name": "Ethan Lizama",
+      "approved_schools": [
+        "Western Kentucky",
+        "South Carolina"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "western kentucky",
+          "observed_teams": [],
+          "source_player_ids": [],
+          "source_player_rows": 0,
+          "games": 0,
+          "seasons": []
+        },
+        {
+          "normalized_school": "south carolina",
+          "observed_teams": [
+            "South Carolina"
+          ],
+          "source_player_ids": [
+            "cb-south-carolina-ethan-lizama"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2026
+          ]
+        }
+      ],
+      "status": "one_or_both_schools_not_in_attended_game_player_rows",
+      "note": null
+    },
+    {
+      "sequence": 69,
+      "name": "KaiKea Harrison",
+      "approved_schools": [
+        "USC",
+        "Tulane"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "usc",
+          "observed_teams": [
+            "Southern California"
+          ],
+          "source_player_ids": [
+            "cb-southern-california-kaikea-harrison"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2024
+          ]
+        },
+        {
+          "normalized_school": "tulane",
+          "observed_teams": [
+            "Tulane"
+          ],
+          "source_player_ids": [
+            "cb-tulane-kaikea-harrison"
+          ],
+          "source_player_rows": 2,
+          "games": 2,
+          "seasons": [
+            2025
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 70,
+      "name": "Liam Willson",
+      "approved_schools": [
+        "Wake Forest",
+        "Maryland"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "wake forest",
+          "observed_teams": [
+            "Wake Forest"
+          ],
+          "source_player_ids": [
+            "cb-wake-forest-liam-willson"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2024
+          ]
+        },
+        {
+          "normalized_school": "maryland",
+          "observed_teams": [
+            "Maryland"
+          ],
+          "source_player_ids": [
+            "cb-maryland-liam-willson"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2025
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 71,
+      "name": "Jake Ogden",
+      "approved_schools": [
+        "UNC Greensboro",
+        "Miami"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "unc greensboro",
+          "observed_teams": [
+            "UNC Greensboro"
+          ],
+          "source_player_ids": [
+            "cb-unc-greensboro-jake-ogden"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2024
+          ]
+        },
+        {
+          "normalized_school": "miami",
+          "observed_teams": [
+            "Miami"
+          ],
+          "source_player_ids": [
+            "cb-miami-jake-ogden"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2025
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 72,
+      "name": "Kyle Hvidsten",
+      "approved_schools": [
+        "Western Kentucky",
+        "Liberty"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "western kentucky",
+          "observed_teams": [],
+          "source_player_ids": [],
+          "source_player_rows": 0,
+          "games": 0,
+          "seasons": []
+        },
+        {
+          "normalized_school": "liberty",
+          "observed_teams": [
+            "Liberty"
+          ],
+          "source_player_ids": [
+            "cb-liberty-kyle-hvidsten"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2026
+          ]
+        }
+      ],
+      "status": "one_or_both_schools_not_in_attended_game_player_rows",
+      "note": null
+    },
+    {
+      "sequence": 73,
+      "name": "Bryce Clavon",
+      "approved_schools": [
+        "Georgia",
+        "Clemson"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "georgia",
+          "observed_teams": [
+            "Georgia"
+          ],
+          "source_player_ids": [
+            "cb-georgia-bryce-clavon"
+          ],
+          "source_player_rows": 3,
+          "games": 3,
+          "seasons": [
+            2025
+          ]
+        },
+        {
+          "normalized_school": "clemson",
+          "observed_teams": [
+            "Clemson"
+          ],
+          "source_player_ids": [
+            "cb-clemson-bryce-clavon"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2026
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 74,
+      "name": "Maximus Martin",
+      "approved_schools": [
+        "Georgia State",
+        "Kansas State"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "georgia state",
+          "observed_teams": [
+            "Georgia State"
+          ],
+          "source_player_ids": [
+            "cb-georgia-state-maximus-martin"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2024
+          ]
+        },
+        {
+          "normalized_school": "kansas state",
+          "observed_teams": [
+            "Kansas State"
+          ],
+          "source_player_ids": [
+            "cb-kansas-state-maximus-martin"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2025
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 75,
+      "name": "Jo Stevens",
+      "approved_schools": [
+        "CSU Bakersfield",
+        "Purdue"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "csu bakersfield",
+          "observed_teams": [
+            "Cal State Bakersfield"
+          ],
+          "source_player_ids": [
+            "cb-cal-state-bakersfield-jo-stevens"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2021
+          ]
+        },
+        {
+          "normalized_school": "purdue",
+          "observed_teams": [
+            "Purdue"
+          ],
+          "source_player_ids": [
+            "cb-purdue-jo-stevens"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2024
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 76,
+      "name": "Reed Stallman",
+      "approved_schools": [
+        "Campbell",
+        "Mississippi State"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "campbell",
+          "observed_teams": [
+            "Campbell"
+          ],
+          "source_player_ids": [
+            "cb-campbell-reed-stallman"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2024
+          ]
+        },
+        {
+          "normalized_school": "mississippi state",
+          "observed_teams": [
+            "Mississippi State"
+          ],
+          "source_player_ids": [
+            "cb-mississippi-state-reed-stallman"
+          ],
+          "source_player_rows": 2,
+          "games": 2,
+          "seasons": [
+            2026
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 77,
+      "name": "Cal Sefcik",
+      "approved_schools": [
+        "Indiana",
+        "Cincinnati"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "indiana",
+          "observed_teams": [
+            "Indiana"
+          ],
+          "source_player_ids": [
+            "cb-indiana-cal-sefcik"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2024
+          ]
+        },
+        {
+          "normalized_school": "cincinnati",
+          "observed_teams": [
+            "Cincinnati"
+          ],
+          "source_player_ids": [
+            "cb-cincinnati-cal-sefcik"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2026
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 78,
+      "name": "Charlie Jones",
+      "approved_schools": [
+        "Georgia",
+        "Kennesaw State"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "georgia",
+          "observed_teams": [
+            "Georgia"
+          ],
+          "source_player_ids": [
+            "cb-georgia-charlie-jones"
+          ],
+          "source_player_rows": 2,
+          "games": 2,
+          "seasons": [
+            2025
+          ]
+        },
+        {
+          "normalized_school": "kennesaw state",
+          "observed_teams": [
+            "Kennesaw State"
+          ],
+          "source_player_ids": [
+            "cb-kennesaw-state-charlie-jones"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2026
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 79,
+      "name": "Chris Katz",
+      "approved_schools": [
+        "Wake Forest",
+        "Mercer"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "wake forest",
+          "observed_teams": [
+            "Wake Forest"
+          ],
+          "source_player_ids": [
+            "cb-wake-forest-chris-katz"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2025
+          ]
+        },
+        {
+          "normalized_school": "mercer",
+          "observed_teams": [
+            "Mercer"
+          ],
+          "source_player_ids": [
+            "cb-mercer-chris-katz"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2026
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 80,
+      "name": "Gavin Miller",
+      "approved_schools": [
+        "Auburn",
+        "Pittsburgh"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "auburn",
+          "observed_teams": [
+            "Auburn"
+          ],
+          "source_player_ids": [
+            "cb-auburn-gavin-miller"
+          ],
+          "source_player_rows": 2,
+          "games": 2,
+          "seasons": [
+            2024
+          ]
+        },
+        {
+          "normalized_school": "pittsburgh",
+          "observed_teams": [
+            "Pittsburgh"
+          ],
+          "source_player_ids": [
+            "cb-pittsburgh-gavin-miller"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2025
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 81,
+      "name": "Jake Bechtel",
+      "approved_schools": [
+        "North Carolina State",
+        "UNC Wilmington"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "north carolina state",
+          "observed_teams": [
+            "NC State"
+          ],
+          "source_player_ids": [
+            "cb-nc-state-jake-bechtel"
+          ],
+          "source_player_rows": 2,
+          "games": 2,
+          "seasons": [
+            2024,
+            2025
+          ]
+        },
+        {
+          "normalized_school": "unc wilmington",
+          "observed_teams": [
+            "UNC Wilmington"
+          ],
+          "source_player_ids": [
+            "cb-unc-wilmington-jake-bechtel"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2026
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 82,
+      "name": "Jack Goodman",
+      "approved_schools": [
+        "Pepperdine",
+        "Northeastern"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "pepperdine",
+          "observed_teams": [
+            "Pepperdine"
+          ],
+          "source_player_ids": [
+            "cb-pepperdine-jack-goodman"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2023
+          ]
+        },
+        {
+          "normalized_school": "northeastern",
+          "observed_teams": [
+            "Northeastern"
+          ],
+          "source_player_ids": [
+            "cb-northeastern-jack-goodman"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2025
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 83,
+      "name": "Noah Murray",
+      "approved_schools": [
+        "Duke",
+        "Virginia"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "duke",
+          "observed_teams": [
+            "Duke"
+          ],
+          "source_player_ids": [
+            "cb-duke-noah-murray"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2024
+          ]
+        },
+        {
+          "normalized_school": "virginia",
+          "observed_teams": [
+            "Virginia"
+          ],
+          "source_player_ids": [
+            "cb-virginia-noah-murray"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2026
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 84,
+      "name": "Jake Randolph",
+      "approved_schools": [
+        "Presbyterian",
+        "South Carolina"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "presbyterian",
+          "observed_teams": [
+            "Presbyterian"
+          ],
+          "source_player_ids": [
+            "cb-presbyterian-jake-randolph"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2024
+          ]
+        },
+        {
+          "normalized_school": "south carolina",
+          "observed_teams": [
+            "South Carolina"
+          ],
+          "source_player_ids": [
+            "cb-south-carolina-jake-randolph"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2026
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 85,
+      "name": "Josh Paino",
+      "approved_schools": [
+        "California Baptist",
+        "Clemson"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "california baptist",
+          "observed_teams": [
+            "Cal Baptist"
+          ],
+          "source_player_ids": [
+            "cb-cal-baptist-josh-paino"
+          ],
+          "source_player_rows": 2,
+          "games": 2,
+          "seasons": [
+            2022
+          ]
+        },
+        {
+          "normalized_school": "clemson",
+          "observed_teams": [
+            "Clemson"
+          ],
+          "source_player_ids": [
+            "cb-clemson-josh-paino"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2025
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 86,
+      "name": "Ryan Moerman",
+      "approved_schools": [
+        "Illinois",
+        "Ole Miss"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "illinois",
+          "observed_teams": [
+            "Illinois"
+          ],
+          "source_player_ids": [
+            "cb-illinois-ryan-moerman"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2024
+          ]
+        },
+        {
+          "normalized_school": "ole miss",
+          "observed_teams": [
+            "Ole Miss"
+          ],
+          "source_player_ids": [
+            "cb-ole-miss-ryan-moerman"
+          ],
+          "source_player_rows": 2,
+          "games": 2,
+          "seasons": [
+            2025
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 87,
+      "name": "Alex Lambeau",
+      "approved_schools": [
+        "Loyola Marymount",
+        "Santa Clara"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "loyola marymount",
+          "observed_teams": [
+            "Loyola Marymount"
+          ],
+          "source_player_ids": [
+            "cb-loyola-marymount-alex-lambeau"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2018
+          ]
+        },
+        {
+          "normalized_school": "santa clara",
+          "observed_teams": [
+            "Santa Clara"
+          ],
+          "source_player_ids": [
+            "cb-santa-clara-alex-lambeau"
+          ],
+          "source_player_rows": 2,
+          "games": 2,
+          "seasons": [
+            2022
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 88,
+      "name": "Luke Szepek",
+      "approved_schools": [
+        "West Virginia",
+        "Stony Brook"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "west virginia",
+          "observed_teams": [
+            "West Virginia"
+          ],
+          "source_player_ids": [
+            "cb-west-virginia-luke-szepek"
+          ],
+          "source_player_rows": 2,
+          "games": 2,
+          "seasons": [
+            2024
+          ]
+        },
+        {
+          "normalized_school": "stony brook",
+          "observed_teams": [
+            "Stony Brook"
+          ],
+          "source_player_ids": [
+            "cb-stony-brook-luke-szepek"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2025
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 89,
+      "name": "Devan Zirwas",
+      "approved_schools": [
+        "VCU",
+        "Eastern Michigan"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "vcu",
+          "observed_teams": [
+            "VCU"
+          ],
+          "source_player_ids": [
+            "cb-vcu-devan-zirwas"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2024
+          ]
+        },
+        {
+          "normalized_school": "eastern michigan",
+          "observed_teams": [
+            "Eastern Michigan"
+          ],
+          "source_player_ids": [
+            "cb-eastern-michigan-devan-zirwas"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2026
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 90,
+      "name": "Logan Sutter",
+      "approved_schools": [
+        "Purdue",
+        "South Carolina"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "purdue",
+          "observed_teams": [
+            "Purdue"
+          ],
+          "source_player_ids": [
+            "cb-purdue-logan-sutter"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2024
+          ]
+        },
+        {
+          "normalized_school": "south carolina",
+          "observed_teams": [
+            "South Carolina"
+          ],
+          "source_player_ids": [
+            "cb-south-carolina-logan-sutter"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2026
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 91,
+      "name": "Tanner Smith",
+      "approved_schools": [
+        "Oregon State",
+        "Miami"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "oregon state",
+          "observed_teams": [
+            "Oregon State"
+          ],
+          "source_player_ids": [
+            "cb-oregon-state-tanner-smith"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2022
+          ]
+        },
+        {
+          "normalized_school": "miami",
+          "observed_teams": [
+            "Miami"
+          ],
+          "source_player_ids": [
+            "cb-miami-tanner-smith"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2025
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": "Do not merge with Tanner Smith at Oregon"
+    },
+    {
+      "sequence": 92,
+      "name": "Scotty Young",
+      "approved_schools": [
+        "Rutgers",
+        "Old Dominion"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "rutgers",
+          "observed_teams": [
+            "Rutgers"
+          ],
+          "source_player_ids": [
+            "cb-rutgers-scotty-young"
+          ],
+          "source_player_rows": 2,
+          "games": 2,
+          "seasons": [
+            2024
+          ]
+        },
+        {
+          "normalized_school": "old dominion",
+          "observed_teams": [
+            "Old Dominion"
+          ],
+          "source_player_ids": [
+            "cb-old-dominion-scotty-young"
+          ],
+          "source_player_rows": 2,
+          "games": 2,
+          "seasons": [
+            2025
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 93,
+      "name": "Chone James",
+      "approved_schools": [
+        "Virginia",
+        "Mississippi State"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "virginia",
+          "observed_teams": [
+            "Virginia"
+          ],
+          "source_player_ids": [
+            "cb-virginia-chone-james"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2025
+          ]
+        },
+        {
+          "normalized_school": "mississippi state",
+          "observed_teams": [
+            "Mississippi State"
+          ],
+          "source_player_ids": [
+            "cb-mississippi-state-chone-james"
+          ],
+          "source_player_rows": 2,
+          "games": 2,
+          "seasons": [
+            2026
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 94,
+      "name": "Ryder Woodson",
+      "approved_schools": [
+        "North Carolina State",
+        "Mississippi State"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "north carolina state",
+          "observed_teams": [
+            "NC State"
+          ],
+          "source_player_ids": [
+            "cb-nc-state-ryder-woodson"
+          ],
+          "source_player_rows": 2,
+          "games": 2,
+          "seasons": [
+            2025
+          ]
+        },
+        {
+          "normalized_school": "mississippi state",
+          "observed_teams": [
+            "Mississippi State"
+          ],
+          "source_player_ids": [
+            "cb-mississippi-state-ryder-woodson"
+          ],
+          "source_player_rows": 2,
+          "games": 2,
+          "seasons": [
+            2026
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 95,
+      "name": "Michael Graziano",
+      "approved_schools": [
+        "Georgia Tech",
+        "Mercer"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "georgia tech",
+          "observed_teams": [],
+          "source_player_ids": [],
+          "source_player_rows": 0,
+          "games": 0,
+          "seasons": []
+        },
+        {
+          "normalized_school": "mercer",
+          "observed_teams": [
+            "Mercer"
+          ],
+          "source_player_ids": [
+            "cb-mercer-michael-graziano"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2026
+          ]
+        }
+      ],
+      "status": "one_or_both_schools_not_in_attended_game_player_rows",
+      "note": null
+    },
+    {
+      "sequence": 96,
+      "name": "Kyle Johnson",
+      "approved_schools": [
+        "Duke",
+        "Virginia"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "duke",
+          "observed_teams": [
+            "Duke"
+          ],
+          "source_player_ids": [
+            "cb-duke-kyle-johnson"
+          ],
+          "source_player_rows": 6,
+          "games": 6,
+          "seasons": [
+            2024,
+            2025
+          ]
+        },
+        {
+          "normalized_school": "virginia",
+          "observed_teams": [
+            "Virginia"
+          ],
+          "source_player_ids": [
+            "cb-virginia-kyle-johnson"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2026
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    }
+  ],
+  "source_id_unique_count_before": 5544,
+  "source_id_unique_count_after_simulated": 5453
+}

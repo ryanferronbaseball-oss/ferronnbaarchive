@@ -21,7 +21,7 @@
       "height": 245
     }
   ],
-  "status": "FULL_PLAYER_LEVEL_BATTING_AND_PITCHING_TABLES_AVAILABLE_USER_SCREENSHOTS_BUT_BATTER_SO_SOURCE_ANOMALY",
+  "status": "BOTH_TEAMS_COMPLETE_BATTING_PITCHING_PLAYER_LINES_WITH_USER_RECONSTRUCTED_SO",
   "verified_score": {
     "away": "Arizona State",
     "away_runs": 12,
@@ -43,7 +43,9 @@
         "triples": 0,
         "hr": 3,
         "bb": 8,
-        "hbp": 1
+        "hbp": 1,
+        "so": 7,
+        "so_provenance": "User reconstructed individual SO from game play-by-play; equals opposing pitchers' total 7 K"
       },
       "players": [
         {
@@ -59,8 +61,9 @@
           "bb": 2,
           "hbp": 0,
           "source_display_order": 1,
-          "batter_strikeouts": null,
-          "batter_strikeouts_status": "unreliable_in_source_screenshot_do_not_import"
+          "batter_strikeouts": 3,
+          "batter_strikeouts_status": "user_transcribed_from_original_play_by_play_2026_10_17",
+          "batter_strikeouts_provenance": "user_play_by_play_reconstruction"
         },
         {
           "name": "Boyd Vander Kooi",
@@ -75,8 +78,9 @@
           "bb": 0,
           "hbp": 0,
           "source_display_order": 2,
-          "batter_strikeouts": null,
-          "batter_strikeouts_status": "unreliable_in_source_screenshot_do_not_import"
+          "batter_strikeouts": 0,
+          "batter_strikeouts_status": "zero_derived_from_team_strikeout_checksum_and_all_positive_user_counts",
+          "batter_strikeouts_provenance": "team_pitcher_strikeout_total_less_all_explicit_positive_hitter_SO_equals_zero"
         },
         {
           "name": "Gage Canning",
@@ -91,8 +95,9 @@
           "bb": 1,
           "hbp": 0,
           "source_display_order": 3,
-          "batter_strikeouts": null,
-          "batter_strikeouts_status": "unreliable_in_source_screenshot_do_not_import"
+          "batter_strikeouts": 0,
+          "batter_strikeouts_status": "zero_derived_from_team_strikeout_checksum_and_all_positive_user_counts",
+          "batter_strikeouts_provenance": "team_pitcher_strikeout_total_less_all_explicit_positive_hitter_SO_equals_zero"
         },
         {
           "name": "Carter Aldrete",
@@ -107,8 +112,9 @@
           "bb": 0,
           "hbp": 0,
           "source_display_order": 4,
-          "batter_strikeouts": null,
-          "batter_strikeouts_status": "unreliable_in_source_screenshot_do_not_import"
+          "batter_strikeouts": 0,
+          "batter_strikeouts_status": "zero_derived_from_team_strikeout_checksum_and_all_positive_user_counts",
+          "batter_strikeouts_provenance": "team_pitcher_strikeout_total_less_all_explicit_positive_hitter_SO_equals_zero"
         },
         {
           "name": "Lyle Lin",
@@ -123,8 +129,9 @@
           "bb": 1,
           "hbp": 1,
           "source_display_order": 5,
-          "batter_strikeouts": null,
-          "batter_strikeouts_status": "unreliable_in_source_screenshot_do_not_import"
+          "batter_strikeouts": 1,
+          "batter_strikeouts_status": "user_transcribed_from_original_play_by_play_2026_10_17",
+          "batter_strikeouts_provenance": "user_play_by_play_reconstruction"
         },
         {
           "name": "Luke Leisenring",
@@ -139,8 +146,9 @@
           "bb": 0,
           "hbp": 0,
           "source_display_order": 6,
-          "batter_strikeouts": null,
-          "batter_strikeouts_status": "unreliable_in_source_screenshot_do_not_import"
+          "batter_strikeouts": 0,
+          "batter_strikeouts_status": "zero_derived_from_team_strikeout_checksum_and_all_positive_user_counts",
+          "batter_strikeouts_provenance": "team_pitcher_strikeout_total_less_all_explicit_positive_hitter_SO_equals_zero"
         },
         {
           "name": "Hunter Jump",
@@ -155,8 +163,9 @@
           "bb": 3,
           "hbp": 0,
           "source_display_order": 7,
-          "batter_strikeouts": null,
-          "batter_strikeouts_status": "unreliable_in_source_screenshot_do_not_import"
+          "batter_strikeouts": 0,
+          "batter_strikeouts_status": "zero_derived_from_team_strikeout_checksum_and_all_positive_user_counts",
+          "batter_strikeouts_provenance": "team_pitcher_strikeout_total_less_all_explicit_positive_hitter_SO_equals_zero"
         },
         {
           "name": "Trevor Hauver",
@@ -171,8 +180,9 @@
           "bb": 0,
           "hbp": 0,
           "source_display_order": 8,
-          "batter_strikeouts": null,
-          "batter_strikeouts_status": "unreliable_in_source_screenshot_do_not_import"
+          "batter_strikeouts": 0,
+          "batter_strikeouts_status": "zero_derived_from_team_strikeout_checksum_and_all_positive_user_counts",
+          "batter_strikeouts_provenance": "team_pitcher_strikeout_total_less_all_explicit_positive_hitter_SO_equals_zero"
         },
         {
           "name": "Alika Williams",
@@ -187,8 +197,9 @@
           "bb": 0,
           "hbp": 0,
           "source_display_order": 9,
-          "batter_strikeouts": null,
-          "batter_strikeouts_status": "unreliable_in_source_screenshot_do_not_import"
+          "batter_strikeouts": 0,
+          "batter_strikeouts_status": "zero_derived_from_team_strikeout_checksum_and_all_positive_user_counts",
+          "batter_strikeouts_provenance": "team_pitcher_strikeout_total_less_all_explicit_positive_hitter_SO_equals_zero"
         },
         {
           "name": "Hunter Bishop",
@@ -203,8 +214,9 @@
           "bb": 1,
           "hbp": 0,
           "source_display_order": 10,
-          "batter_strikeouts": null,
-          "batter_strikeouts_status": "unreliable_in_source_screenshot_do_not_import"
+          "batter_strikeouts": 0,
+          "batter_strikeouts_status": "zero_derived_from_team_strikeout_checksum_and_all_positive_user_counts",
+          "batter_strikeouts_provenance": "team_pitcher_strikeout_total_less_all_explicit_positive_hitter_SO_equals_zero"
         },
         {
           "name": "Zach Hogueisson",
@@ -219,8 +231,9 @@
           "bb": 0,
           "hbp": 0,
           "source_display_order": 11,
-          "batter_strikeouts": null,
-          "batter_strikeouts_status": "unreliable_in_source_screenshot_do_not_import"
+          "batter_strikeouts": 0,
+          "batter_strikeouts_status": "zero_derived_from_team_strikeout_checksum_and_all_positive_user_counts",
+          "batter_strikeouts_provenance": "team_pitcher_strikeout_total_less_all_explicit_positive_hitter_SO_equals_zero"
         },
         {
           "name": "Drew Swift",
@@ -235,8 +248,9 @@
           "bb": 0,
           "hbp": 0,
           "source_display_order": 12,
-          "batter_strikeouts": null,
-          "batter_strikeouts_status": "unreliable_in_source_screenshot_do_not_import"
+          "batter_strikeouts": 3,
+          "batter_strikeouts_status": "user_transcribed_from_original_play_by_play_2026_10_17",
+          "batter_strikeouts_provenance": "user_play_by_play_reconstruction"
         }
       ]
     },
@@ -251,7 +265,9 @@
         "triples": 1,
         "hr": 1,
         "bb": 1,
-        "hbp": 1
+        "hbp": 1,
+        "so": 11,
+        "so_provenance": "User reconstructed individual SO from game play-by-play; equals opposing pitchers' total 11 K"
       },
       "players": [
         {
@@ -267,8 +283,9 @@
           "bb": 0,
           "hbp": 0,
           "source_display_order": 1,
-          "batter_strikeouts": null,
-          "batter_strikeouts_status": "unreliable_in_source_screenshot_do_not_import"
+          "batter_strikeouts": 0,
+          "batter_strikeouts_status": "zero_derived_from_team_strikeout_checksum_and_all_positive_user_counts",
+          "batter_strikeouts_provenance": "team_pitcher_strikeout_total_less_all_explicit_positive_hitter_SO_equals_zero"
         },
         {
           "name": "Jay Schuyler",
@@ -283,8 +300,9 @@
           "bb": 0,
           "hbp": 0,
           "source_display_order": 2,
-          "batter_strikeouts": null,
-          "batter_strikeouts_status": "unreliable_in_source_screenshot_do_not_import"
+          "batter_strikeouts": 0,
+          "batter_strikeouts_status": "zero_derived_from_team_strikeout_checksum_and_all_positive_user_counts",
+          "batter_strikeouts_provenance": "team_pitcher_strikeout_total_less_all_explicit_positive_hitter_SO_equals_zero"
         },
         {
           "name": "Shane McGuire",
@@ -299,8 +317,9 @@
           "bb": 0,
           "hbp": 1,
           "source_display_order": 3,
-          "batter_strikeouts": null,
-          "batter_strikeouts_status": "unreliable_in_source_screenshot_do_not_import"
+          "batter_strikeouts": 2,
+          "batter_strikeouts_status": "user_transcribed_from_original_play_by_play_2026_10_17",
+          "batter_strikeouts_provenance": "user_play_by_play_reconstruction"
         },
         {
           "name": "Brhet Bewley",
@@ -315,8 +334,9 @@
           "bb": 0,
           "hbp": 0,
           "source_display_order": 4,
-          "batter_strikeouts": null,
-          "batter_strikeouts_status": "unreliable_in_source_screenshot_do_not_import"
+          "batter_strikeouts": 1,
+          "batter_strikeouts_status": "user_transcribed_from_original_play_by_play_2026_10_17",
+          "batter_strikeouts_provenance": "user_play_by_play_reconstruction"
         },
         {
           "name": "Jeff Houghtby",
@@ -331,8 +351,9 @@
           "bb": 0,
           "hbp": 0,
           "source_display_order": 5,
-          "batter_strikeouts": null,
-          "batter_strikeouts_status": "unreliable_in_source_screenshot_do_not_import"
+          "batter_strikeouts": 1,
+          "batter_strikeouts_status": "user_transcribed_from_original_play_by_play_2026_10_17",
+          "batter_strikeouts_provenance": "user_play_by_play_reconstruction"
         },
         {
           "name": "Adam Kerner",
@@ -347,8 +368,9 @@
           "bb": 0,
           "hbp": 0,
           "source_display_order": 6,
-          "batter_strikeouts": null,
-          "batter_strikeouts_status": "unreliable_in_source_screenshot_do_not_import"
+          "batter_strikeouts": 1,
+          "batter_strikeouts_status": "user_transcribed_from_original_play_by_play_2026_10_17",
+          "batter_strikeouts_provenance": "user_play_by_play_reconstruction"
         },
         {
           "name": "Kevin Collard",
@@ -363,8 +385,9 @@
           "bb": 0,
           "hbp": 0,
           "source_display_order": 7,
-          "batter_strikeouts": null,
-          "batter_strikeouts_status": "unreliable_in_source_screenshot_do_not_import"
+          "batter_strikeouts": 1,
+          "batter_strikeouts_status": "user_transcribed_from_original_play_by_play_2026_10_17",
+          "batter_strikeouts_provenance": "user_play_by_play_reconstruction"
         },
         {
           "name": "Connor Doyle",
@@ -379,8 +402,9 @@
           "bb": 0,
           "hbp": 0,
           "source_display_order": 8,
-          "batter_strikeouts": null,
-          "batter_strikeouts_status": "unreliable_in_source_screenshot_do_not_import"
+          "batter_strikeouts": 3,
+          "batter_strikeouts_status": "user_transcribed_from_original_play_by_play_2026_10_17",
+          "batter_strikeouts_provenance": "user_play_by_play_reconstruction"
         },
         {
           "name": "Trevor Rosenberg",
@@ -395,8 +419,9 @@
           "bb": 1,
           "hbp": 0,
           "source_display_order": 9,
-          "batter_strikeouts": null,
-          "batter_strikeouts_status": "unreliable_in_source_screenshot_do_not_import"
+          "batter_strikeouts": 1,
+          "batter_strikeouts_status": "user_transcribed_from_original_play_by_play_2026_10_17",
+          "batter_strikeouts_provenance": "user_play_by_play_reconstruction"
         },
         {
           "name": "Todd Jackson",
@@ -411,8 +436,9 @@
           "bb": 0,
           "hbp": 0,
           "source_display_order": 10,
-          "batter_strikeouts": null,
-          "batter_strikeouts_status": "unreliable_in_source_screenshot_do_not_import"
+          "batter_strikeouts": 1,
+          "batter_strikeouts_status": "user_transcribed_from_original_play_by_play_2026_10_17",
+          "batter_strikeouts_provenance": "user_play_by_play_reconstruction"
         },
         {
           "name": "Trevor Omahen",
@@ -427,8 +453,9 @@
           "bb": 0,
           "hbp": 0,
           "source_display_order": 11,
-          "batter_strikeouts": null,
-          "batter_strikeouts_status": "unreliable_in_source_screenshot_do_not_import"
+          "batter_strikeouts": 0,
+          "batter_strikeouts_status": "zero_derived_from_team_strikeout_checksum_and_all_positive_user_counts",
+          "batter_strikeouts_provenance": "team_pitcher_strikeout_total_less_all_explicit_positive_hitter_SO_equals_zero"
         }
       ]
     }
@@ -603,7 +630,7 @@
     "save_note": "No save explicitly shown in supplied screenshot; do not infer save/no-save."
   },
   "data_quality_holds": [
-    "The batting screenshot's SO columns show 0 for all position players and assign the fielding team's pitcher strikeout totals to pitchers in batting rows (USD screenshot totals 7, ASU screenshot totals 11); they are NOT valid player batting SO statistics. Every batter has batter_strikeouts=null pending independent official gamebook cross-check. Do not substitute these numbers or infer individual hitter SO.",
+    "RESOLVED ON OCTOBER 17, 2026: ASU batting table SO field was incorrect (zeros for hitters and opponent pitcher totals in batting pitcher rows). User supplied every nonzero hitter K from play-by-play, including Todd Jackson's one strikeout in a follow-up. Assigned 3+1+3=7 Arizona State batter Ks, and 2+1+1+1+1+3+1+1=11 San Diego batter Ks; totals exactly reconcile to opposing pitchers' source totals. Remaining hitters have zero by difference, not from the incorrect ASU screenshot.",
     "Pitching SO (7 for San Diego pitchers and 11 for Arizona State pitchers) is clearly verified and safe.",
     "Both screenshots capture the respective player tables but do not show an inning-by-inning scoring line, all batting-order substitution indentation, runner LOB, batter-by-batter SO, or authoritative save outcome; leave those unknown.",
     "Player source screenshot rows retain on-screen display ordering and defensive substitutions. Source_display_order is not guaranteed true batting order. Never silently assert nine-slot batting order from visual row positions.",
@@ -612,8 +639,34 @@
   "review_state": {
     "batting_fields_ab_r_h_rbi_extra_base_hits_bb_hbp": "transcribed_and_team_total_checked",
     "pitching_lines": "transcribed_and_team_total_checked",
-    "batter_strikeouts": "unverified_source_bug",
+    "batter_strikeouts": "user_play_by_play_reconstructed_11_for_USD_7_for_ASU_reconciled",
     "game_identity": "matched",
     "player_stat_import": "not_started"
+  },
+  "user_reconstructed_batter_strikeouts": {
+    "date_confirmed": "2026-10-17",
+    "user_source": "Original game play-by-play manually examined by archive owner",
+    "away": "Arizona State",
+    "home": "San Diego",
+    "away_batters_with_strikeouts": {
+      "Spencer Torkelson": 3,
+      "Lyle Lin": 1,
+      "Drew Swift": 3
+    },
+    "away_total": 7,
+    "home_batters_with_strikeouts": {
+      "Shane McGuire": 2,
+      "Brhet Bewley": 1,
+      "Jeff Houghtby": 1,
+      "Adam Kerner": 1,
+      "Kevin Collard": 1,
+      "Connor Doyle": 3,
+      "Trevor Rosenberg": 1,
+      "Todd Jackson": 1
+    },
+    "home_total": 11,
+    "verification": "Positive strikeout counts were directly supplied by user from play-by-play; all other 0s are team-total-derived and both teams independently reconcile with opponent pitching totals.",
+    "source_page": "https://thesundevils.com/boxscore/466",
+    "pending_unrelated_data": "Inning-by-inning line score, save designation and strict substitute batting-order slots not fully verified from the two screenshots alone; official USD PDF is identified but not downloaded or parsed."
   }
 }

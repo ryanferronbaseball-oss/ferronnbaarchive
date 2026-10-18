@@ -1,17 +1,19 @@
 {
   "season": 2018,
-  "status": "2018_SOURCE_MATCHING_29_OF_30_FULL_PLAYER_GAMEBOOKS_ONLY_ASU_MAY_9_PENDING",
+  "status": "2018_UNIVERSITY_GAMEBOOK_LINKS_30_OF_30_IDENTIFIED_29_CONTENT_VERIFIED_1_PENDING_DOWNLOAD_AND_PLAYER_TABLE_VERIFICATION_0_IMPORTED",
   "scope": "User approved 2018 and 2017 source discovery October 17, 2026. No JUCO. Preserve 444 original attendance game IDs. No merges, publication, deployment or 2016-and-older approval.",
   "progress": {
     "original_attendance_games": 30,
     "official_game_identity_matches": 30,
-    "official_full_player_gamebook_direct_sources_located": 29,
-    "official_schedule_and_score_verified_full_gamebook_url_pending": 1,
+    "official_full_player_gamebook_direct_sources_located": 30,
+    "official_schedule_and_score_verified_full_gamebook_url_pending": 0,
     "original_date_conflicts": 0,
     "source_linked_doubleheader_rows": 4,
     "player_gamebooks_imported": 0,
     "player_stat_rows_imported": 0,
-    "official_university_boxscore_page_linked_player_tables_unverified": 1
+    "official_university_boxscore_page_linked_player_tables_unverified": 1,
+    "full_player_gamebook_sources_with_player_tables_content_verified": 29,
+    "full_player_gamebook_links_found_but_player_table_content_pending_verification": 1
   },
   "source_schedule": "https://usdtoreros.com/sports/baseball/schedule/2018",
   "notes": [
@@ -26,7 +28,7 @@
     "April 17 Fullerton 4, USD 10 complete official Cal State Fullerton university gamebook /sports/baseball/stats/2018/san-diego/boxscore/1417 verified through university opponent history and actual player-level gamebook content.",
     "User-provided Apr 14 USD PDF verified as complete Saint Mary's 6–USD 5 boxscore: https://usdtoreros.com/documents/2018/5/10/14226__m_basebl_2017_18_misc_non_event__USDvsSMCboxApr14.pdf",
     "User-provided May 9 ASU official boxscore page verified for 12–7 identity but not yet player-row completeness: https://thesundevils.com/boxscore/466",
-    "2018 complete individual batting/pitching university gamebook links verified for 29 of 30 original attended games. March 13 SDSU at USD source is USD official PDF filename 14105__m_basebl_2017_18_misc_non_event__USDvsSDSUboxMar13.pdf, supplied in user's file Library, and available at official USD source URL. April 14 Saint Mary's at USD likewise verified from university PDF. Only May 9 Arizona State 12 at San Diego 7 has an official summary/game-result source without retrievable full individual player lines; ASU /boxscore/466 is NOT sufficient as complete full gamebook."
+    "Official University of San Diego document 'USD vs ASU Box (PDF)' independently found for May 9 2018, document ID 14288. All 30 games now have university-hosted gamebook source links; 29 have independently confirmed individual batting/pitching content. This last PDF is located but its content still needs confirmation before player-level import."
   ],
   "rows": [
     {
@@ -624,23 +626,22 @@
       "official_identity_source": "https://usdtoreros.com/sports/baseball/schedule/2018",
       "identity_match_status": "verified_date_teams_venue_when_available_and_final_score",
       "stat_import_status": "not_imported",
-      "full_player_gamebook_status": "official_university_boxscore_page_linked_player_tables_not_yet_retrievable",
+      "full_player_gamebook_status": "university_named_gamebook_pdf_located_full_player_tables_unverified",
       "official_boxscore_page_url": "https://thesundevils.com/boxscore/466",
-      "notes": "User provided the ASU official boxscore URL. University page confirms May 9, 2018, Arizona State 12 at San Diego 7, but the accessible response only exposes team score/date/location, not individual player batting/pitching rows. Keep full gamebook source pending; do not count as player-import-ready."
+      "notes": "2018 May 9 ASU 12, USD 7. Source originally user-provided https://thesundevils.com/boxscore/466 (the human-visible player stat tables are client-rendered and absent from simplified HTML retrieval). Independent official University of San Diego 'USD vs ASU Box (PDF)' link discovered at university documents/2018/6/27/14288...; the full PDF content is not currently readable through these tools, so mark source located but player-data not verified/imported.",
+      "official_full_gamebook_url": "https://usdtoreros.com/documents/2018/6/27/14288__m_basebl_2017_18_misc_non_event__USDvsASUboxMay9.pdf",
+      "full_gamebook_source_type": "official_university_pdf_document_link_identified",
+      "player_tables_content_verification": "PENDING; PDF link resolves to university downloadable-document landing page in available scraper; bytes/content unavailable via text retrieval. ASU interactive page renders batting/pitching in human browser but retrieved HTML only includes date/score. Do not mark import ready or copy unverified stat numbers.",
+      "source_validation": "The official USD domain identifies university document 14288 as 'USD vs ASU Box (PDF)' with filename USDvsASUboxMay9.pdf; team/date/score matched against ASU's official boxscore/466 page and USD 2018 schedule. PDF itself not inspected/extracted; requires content validation when import begins."
     }
   ],
-  "pending_gamebook_cases": [
+  "pending_gamebook_cases": [],
+  "pending_player_table_verification": [
     {
       "game_id": "cb-2018-05-09-arizona-state-san-diego-att0031",
-      "date": "2018-05-09",
-      "match": "Arizona State at San Diego",
-      "official_score": [
-        12,
-        7
-      ],
-      "source_status": "official_university_boxscore_page_linked_player_tables_not_yet_retrievable",
-      "official_identity_source": "https://usdtoreros.com/sports/baseball/schedule/2018",
-      "official_boxscore_page_url": "https://thesundevils.com/boxscore/466"
+      "source_url": "https://usdtoreros.com/documents/2018/6/27/14288__m_basebl_2017_18_misc_non_event__USDvsASUboxMay9.pdf",
+      "alternate_user_visible_js_boxscore": "https://thesundevils.com/boxscore/466",
+      "reason": "Official PDF document link located on USD, but downloading and reading the 2018 PDF's individual player tables has not succeeded through present tools."
     }
   ]
 }

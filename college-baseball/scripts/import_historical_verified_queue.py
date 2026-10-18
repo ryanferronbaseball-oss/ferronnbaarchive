@@ -19,6 +19,7 @@ from bs4 import BeautifulSoup
 from import_2026_remaining_ncaa import import_one
 from import_2024_statcrew import import_statcrew
 from import_2024_pdf import parse as parse_pdf
+from import_2018_original_pdf_transcripts import parse as parse_2018_uploaded_pdf, SOURCES as UPLOADED_2018_GAMEBOOKS
 from import_2025_verified_queue import scorer_labels
 
 DATA = Path(__file__).resolve().parents[1] / "data"
@@ -180,89 +181,98 @@ def main():
             continue
         try:
             url, scores = resolve(args.season, g, row)
-            # One original USD 2017 archival gamebook is served on a
-            # retired university FTP hostname with a certificate hostname
-            # mismatch. For this single exact file, the official USD recap
-            # links to the source directly, and the full player/scorebook
-            # parser independently checks date, both teams, innings, R/H/E,
-            # batting rows, pitching and official W/L/S. No credentials are
-            # transmitted; preserve this one-host exception in the audit.
-            legacy_2017_source = ("https://usandiego_ftp.sidearmsports.com/"
-                "custompages/sports/m-basebl/stats/2016-201736.html")
-            if url == legacy_2017_source and g["id"] == "cb-2017-04-20-byu-san-diego-att0001":
-                import urllib3
-                urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
-                source = session.get(url, timeout=50, verify=False)
-            else:
-                source = session.get(url, timeout=50)
-            source.raise_for_status()
-            if len(source.content) < 2000:
-                raise ValueError("Incomplete official source response")
-            if url.lower().split("?")[0].endswith(".pdf"):
-                if not source.content.startswith(b"%PDF"):
-                    raise ValueError("University PDF download did not yield PDF bytes")
-                normalized = {"source_url": url, "official_score": scores,
-                              "official_doubleheader_game": row.get("official_doubleheader_game")}
-                rows, trace = parse_pdf(g, normalized, keys, source)
+            if args.season == 2018 and gid in UPLOADED_2018_GAMEBOOKS:
+                # Only two exact source-verified original USD Automated
+                # ScoreBook PDFs supplied by this archive's owner.
+                # Their complete, line-preserving transcriptions are
+                # committed locally because USD now returns HTML landing
+                # pages instead of the original PDF bytes.
+                rows, trace = parse_2018_uploaded_pdf(g, row, keys)
                 decision = g.get("pitching_decisions")
             else:
-                if not exact_date_in_page(source.text, row.get("official_date", row.get("official_game_date", g["date"]))):
-                    raise ValueError("Printed full gamebook does not visibly confirm official game date")
-                normalized = {"source_url": url, "official_score": scores,
-                              "official_doubleheader_game": row.get("official_doubleheader_game")}
-                soup = BeautifulSoup(source.text, "html.parser")
-                is_legacy = bool(soup.find("pre") and "Score by Innings" in source.text)
-                if is_legacy:
-                    rows, trace = import_statcrew(g, normalized, keys, source)
+                # One original USD 2017 archival gamebook is served on a
+                # retired university FTP hostname with a certificate hostname
+                # mismatch. For this single exact file, the official USD recap
+                # links to the source directly, and the full player/scorebook
+                # parser independently checks date, both teams, innings, R/H/E,
+                # batting rows, pitching and official W/L/S. No credentials are
+                # transmitted; preserve this one-host exception in the audit.
+                legacy_2017_source = ("https://usandiego_ftp.sidearmsports.com/"
+                    "custompages/sports/m-basebl/stats/2016-201736.html")
+                if url == legacy_2017_source and g["id"] == "cb-2017-04-20-byu-san-diego-att0001":
+                    import urllib3
+                    urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+                    source = session.get(url, timeout=50, verify=False)
+                else:
+                    source = session.get(url, timeout=50)
+                source.raise_for_status()
+                if len(source.content) < 2000:
+                    raise ValueError("Incomplete official source response")
+                if url.lower().split("?")[0].endswith(".pdf"):
+                    if not source.content.startswith(b"%PDF"):
+                        raise ValueError("University PDF download did not yield PDF bytes")
+                    normalized = {"source_url": url, "official_score": scores,
+                                  "official_doubleheader_game": row.get("official_doubleheader_game")}
+                    rows, trace = parse_pdf(g, normalized, keys, source)
                     decision = g.get("pitching_decisions")
                 else:
-                    # 2022 NCAA Corvallis Regional: university official
-                    # home/away designates Oregon State visiting 12 and
-                    # USD home 3 at OSU's own stadium. The original personal
-                    # worksheet calls USD "away" and Oregon State "home".
-                    # Preserve original worksheet ID and team labels, but
-                    # parse the university GAMEBOOK side first, and then
-                    # map every official R/H/E and inning field back.
-                    reversed_2022_regional = (
-                        gid=="cb-2022-06-04-san-diego-oregon-state-att0175"
-                        and scores==[3,12]
-                        and (g["away"],g["home"])==("San Diego","Oregon State"))
-                    if reversed_2022_regional:
-                        source_game=deepcopy(g)
-                        source_game["away"],source_game["home"] = g["home"],g["away"]
-                        normalized["official_score"]=[12,3]
-                        rows,trace=import_one(source_game,normalized,keys)
-                        if (source_game["away_score"],source_game["home_score"],
-                            source_game["away_hits"],source_game["home_hits"],
-                            source_game["away_errors"],source_game["home_errors"]) != (12,3,13,7,0,2):
-                            raise ValueError("2022 Oregon State official source-side checksum failed")
-                        g.update({
-                            "source_url":url,"verification":"official_boxscore_verified",
-                            "official_boxscore_status":"verified",
-                            "score_provenance":"official_boxscore",
-                            "away_score":source_game["home_score"],
-                            "home_score":source_game["away_score"],
-                            "away_hits":source_game["home_hits"],
-                            "home_hits":source_game["away_hits"],
-                            "away_errors":source_game["home_errors"],
-                            "home_errors":source_game["away_errors"],
-                            "innings":[{"inning":i["inning"],"away":i["home"],"home":i["away"]}
-                                       for i in source_game["innings"]],
-                            "source_home_away_side_reversed_for_attendance":True,
-                            "source_home_away_note":"University official designated Oregon State as visitor despite Corvallis venue. Original personal worksheet USD-away/OSU-home identity preserved; full source RHE and inning columns mapped explicitly."
-                        })
-                        trace["original_attendance_team_order"]=["San Diego","Oregon State"]
-                        trace["official_university_team_order"]=["Oregon State","San Diego"]
+                    if not exact_date_in_page(source.text, row.get("official_date", row.get("official_game_date", g["date"]))):
+                        raise ValueError("Printed full gamebook does not visibly confirm official game date")
+                    normalized = {"source_url": url, "official_score": scores,
+                                  "official_doubleheader_game": row.get("official_doubleheader_game")}
+                    soup = BeautifulSoup(source.text, "html.parser")
+                    is_legacy = bool(soup.find("pre") and "Score by Innings" in source.text)
+                    if is_legacy:
+                        rows, trace = import_statcrew(g, normalized, keys, source)
+                        decision = g.get("pitching_decisions")
                     else:
-                        rows, trace = import_one(g, normalized, keys)
-                    if g.get("official_draw") and gid == "cb-2023-02-20-nebraska-san-diego-att0181":
-                        # No pitcher can be credited with Win/Loss/Save in a 16–16 tie.
-                        decision = {"win": None, "loss": None, "save": None}
-                        if g["pitching_decisions"] != decision:
-                            raise ValueError("Tie gamebook unexpectedly lists pitcher decision")
-                    else:
-                        decision = scorer_labels(source.text, rows, gid)
-                        g["pitching_decisions"] = decision
+                        # 2022 NCAA Corvallis Regional: university official
+                        # home/away designates Oregon State visiting 12 and
+                        # USD home 3 at OSU's own stadium. The original personal
+                        # worksheet calls USD "away" and Oregon State "home".
+                        # Preserve original worksheet ID and team labels, but
+                        # parse the university GAMEBOOK side first, and then
+                        # map every official R/H/E and inning field back.
+                        reversed_2022_regional = (
+                            gid=="cb-2022-06-04-san-diego-oregon-state-att0175"
+                            and scores==[3,12]
+                            and (g["away"],g["home"])==("San Diego","Oregon State"))
+                        if reversed_2022_regional:
+                            source_game=deepcopy(g)
+                            source_game["away"],source_game["home"] = g["home"],g["away"]
+                            normalized["official_score"]=[12,3]
+                            rows,trace=import_one(source_game,normalized,keys)
+                            if (source_game["away_score"],source_game["home_score"],
+                                source_game["away_hits"],source_game["home_hits"],
+                                source_game["away_errors"],source_game["home_errors"]) != (12,3,13,7,0,2):
+                                raise ValueError("2022 Oregon State official source-side checksum failed")
+                            g.update({
+                                "source_url":url,"verification":"official_boxscore_verified",
+                                "official_boxscore_status":"verified",
+                                "score_provenance":"official_boxscore",
+                                "away_score":source_game["home_score"],
+                                "home_score":source_game["away_score"],
+                                "away_hits":source_game["home_hits"],
+                                "home_hits":source_game["away_hits"],
+                                "away_errors":source_game["home_errors"],
+                                "home_errors":source_game["away_errors"],
+                                "innings":[{"inning":i["inning"],"away":i["home"],"home":i["away"]}
+                                           for i in source_game["innings"]],
+                                "source_home_away_side_reversed_for_attendance":True,
+                                "source_home_away_note":"University official designated Oregon State as visitor despite Corvallis venue. Original personal worksheet USD-away/OSU-home identity preserved; full source RHE and inning columns mapped explicitly."
+                            })
+                            trace["original_attendance_team_order"]=["San Diego","Oregon State"]
+                            trace["official_university_team_order"]=["Oregon State","San Diego"]
+                        else:
+                            rows, trace = import_one(g, normalized, keys)
+                        if g.get("official_draw") and gid == "cb-2023-02-20-nebraska-san-diego-att0181":
+                            # No pitcher can be credited with Win/Loss/Save in a 16–16 tie.
+                            decision = {"win": None, "loss": None, "save": None}
+                            if g["pitching_decisions"] != decision:
+                                raise ValueError("Tie gamebook unexpectedly lists pitcher decision")
+                        else:
+                            decision = scorer_labels(source.text, rows, gid)
+                            g["pitching_decisions"] = decision
             if g.get("verification") != "official_boxscore_verified" or len(rows) < 18:
                 raise ValueError("Incomplete player-gamebook parsing")
             if gid == "cb-2023-02-20-nebraska-san-diego-att0181" and g.get("official_draw"):

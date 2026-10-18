@@ -338,6 +338,31 @@ def _source_batters(table, valid_players, team, game_id):
         if slug(name) in verified_legacy_pbp_substitutes.get((game_id, team), set()):
             is_sub = True
 
+        # 2018 university PLAY-BY-PLAY identifies unindented substitutes
+        # explicitly and preserves exactly nine original batting slots.
+        verified_2018_unindented = {
+            # UC Riverside May 8: Omahen to 3B for PH Herburger.
+            ("cb-2018-05-08-uc-riverside-san-diego-att0030", "San Diego"):
+                {"trevor-omahen"},
+            # Gonzaga May 6: Omahen to 3B for PH Collard.
+            ("cb-2018-05-06-gonzaga-san-diego-att0029", "San Diego"):
+                {"t-omahen"},
+            # Gonzaga May 5: Gutierrez PH for Rosenberg, no indent.
+            ("cb-2018-05-05-gonzaga-san-diego-att0028", "San Diego"):
+                {"d-gutierrez"},
+            # Indiana Mar 2: Stratten to 2B for PH Christopher Lowe.
+            ("cb-2018-03-02-indiana-san-diego-att0013", "Indiana"):
+                {"colby-stratten"},
+            # Indiana Mar 4: Stratten to 2B for DH Sam Crail.
+            ("cb-2018-03-04-indiana-san-diego-att0016", "Indiana"):
+                {"colby-stratten"},
+            # Arizona Feb 25: T Soderstrom to DH for PH Morimoto.
+            ("cb-2018-02-25-arizona-san-diego-att0012", "Arizona"):
+                {"t-soderstrom"},
+        }
+        if slug(name) in verified_2018_unindented.get((game_id, team), set()):
+            is_sub = True
+
         # Source play-by-play corroborates the unindented entries below,
         # whose predecessor already appears in the same batting slot.
         source_confirmed_unindented = {

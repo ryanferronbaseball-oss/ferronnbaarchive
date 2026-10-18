@@ -69,7 +69,7 @@ jobs:
             fi
           else
             # Source-verified historical queue, newest to oldest. This never merges.
-            for SEASON in 2023; do
+            for SEASON in 2022 2023; do
               python college-baseball/scripts/import_historical_verified_queue.py --season "${SEASON}"
             done
           fi

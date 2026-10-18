@@ -116,9 +116,14 @@ def _source_batters(table, valid_players, team, game_id):
             # AND winning pitcher, with 3 AB / 2 H / 2 RBI in the official
             # batting table. Don't discard his real seventh batting slot
             # merely because source printed his fielding position as P.
-            genuine_batting_pitcher = (game_id=="cb-2023-04-21-san-francisco-san-diego-att0208"
-                and team=="San Diego" and "smith" in source_name.lower()
-                and "austin" in source_name.lower())
+            genuine_batting_pitcher = (
+                (game_id=="cb-2023-04-21-san-francisco-san-diego-att0208"
+                 and team=="San Diego" and "smith" in source_name.lower()
+                 and "austin" in source_name.lower())
+                or
+                (game_id=="cb-2022-03-26-saint-mary-s-san-diego-att0136"
+                 and team=="Saint Mary's"
+                 and any(t in source_name.lower() for t in ("taurek", "winget"))))
             if position_prefix == "p" and not genuine_batting_pitcher:
                 continue
         name = normalize_name(source_name, pos)

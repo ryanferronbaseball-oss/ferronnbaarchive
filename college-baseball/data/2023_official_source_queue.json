@@ -1,0 +1,488 @@
+{
+  "scope": "2023 college baseball attendance backfill authorized October 17 2026; no publishing or merging",
+  "year": 2023,
+  "source_of_attendance": "NCAAB Games.xlsx, preserved 444-row attendance master",
+  "original_attendance_games": 47,
+  "monthly_original_rows": {
+    "2023-02": 9,
+    "2023-03": 10,
+    "2023-04": 18,
+    "2023-05": 10
+  },
+  "progress": {
+    "full_gamebooks_imported": 0,
+    "official_full_gamebooks_identified": 6,
+    "date_reconciliation_required": 3,
+    "recap_only_identified": 1,
+    "full_gamebooks_not_yet_located": 37
+  },
+  "official_schedule_refs": [
+    "https://usdtoreros.com/sports/baseball/schedule/2023",
+    "https://unlvrebels.com/sports/baseball/schedule/2023",
+    "https://ucirvinesports.com/sports/baseball/schedule/2023",
+    "https://wccsports.com/tournaments/?id=107"
+  ],
+  "sourcing_policy": "University/conference original full box scores before any player stats; preserve every original attendance ID; never infer batting order, substitute entries, decisions or boxscore completion from schedule totals. Keep date-conflict rows frozen pending reconciliation; no JUCO backfill, no merge or live deployment.",
+  "source_queue": [
+    {
+      "game_id": "cb-2023-02-17-nebraska-san-diego-att0178",
+      "attendance_id": "cb-attended-0178",
+      "source_worksheet_row": 179,
+      "original_attendance_date": "2023-02-17",
+      "away": "Nebraska",
+      "home": "San Diego",
+      "research_status": "official_full_gamebook_discovery_pending"
+    },
+    {
+      "game_id": "cb-2023-02-18-nebraska-san-diego-att0179",
+      "attendance_id": "cb-attended-0179",
+      "source_worksheet_row": 180,
+      "original_attendance_date": "2023-02-18",
+      "away": "Nebraska",
+      "home": "San Diego",
+      "research_status": "official_full_gamebook_discovery_pending"
+    },
+    {
+      "game_id": "cb-2023-02-19-nebraska-san-diego-att0180",
+      "attendance_id": "cb-attended-0180",
+      "source_worksheet_row": 181,
+      "original_attendance_date": "2023-02-19",
+      "away": "Nebraska",
+      "home": "San Diego",
+      "research_status": "official_full_gamebook_discovery_pending"
+    },
+    {
+      "game_id": "cb-2023-02-20-nebraska-san-diego-att0181",
+      "attendance_id": "cb-attended-0181",
+      "source_worksheet_row": 182,
+      "original_attendance_date": "2023-02-20",
+      "away": "Nebraska",
+      "home": "San Diego",
+      "research_status": "official_full_gamebook_discovery_pending"
+    },
+    {
+      "game_id": "cb-2023-02-21-cal-state-northrdige-san-diego-state-att0182",
+      "attendance_id": "cb-attended-0182",
+      "source_worksheet_row": 183,
+      "original_attendance_date": "2023-02-21",
+      "away": "Cal State Northrdige",
+      "home": "San Diego State",
+      "official_recap_url": "https://gomatadors.com/news/2023/2/21/baseball-csun-notches-first-road-win-of-the-season-at-san-diego-state",
+      "official_score": "CSUN 7, San Diego State 5",
+      "research_status": "university_recap_identified_full_gamebook_pending",
+      "note": "Original worksheet spells Northridge as Northrdige; preserve original ID and resolve canonical team alias after source confirmation"
+    },
+    {
+      "game_id": "cb-2023-02-24-hawaii-san-diego-att0183",
+      "attendance_id": "cb-attended-0183",
+      "source_worksheet_row": 184,
+      "original_attendance_date": "2023-02-24",
+      "away": "Hawaii",
+      "home": "San Diego",
+      "research_status": "official_full_gamebook_discovery_pending"
+    },
+    {
+      "game_id": "cb-2023-02-25-unlv-uc-irvine-att0184",
+      "attendance_id": "cb-attended-0184",
+      "source_worksheet_row": 185,
+      "original_attendance_date": "2023-02-25",
+      "away": "UNLV",
+      "home": "UC irvine",
+      "candidate_official_date": "2023-02-26",
+      "source_url": "https://unlvrebels.com/sports/baseball/stats/2023/uc-irvine/boxscore/15890",
+      "official_score": "UNLV 10, UC Irvine 4",
+      "why": "University 2023 schedule/official boxscore puts this game Feb 26 after Tony Gwynn Legacy weather adjustments",
+      "research_status": "official_date_conflict_do_not_import_until_reconciled"
+    },
+    {
+      "game_id": "cb-2023-02-25-unlv-san-diego-att0185",
+      "attendance_id": "cb-attended-0185",
+      "source_worksheet_row": 186,
+      "original_attendance_date": "2023-02-25",
+      "away": "UNLV",
+      "home": "San Diego",
+      "candidate_official_date": "2023-02-26",
+      "source_url": "https://unlvrebels.com/sports/baseball/stats/2023/university-of-san-diego/boxscore/15889",
+      "official_score": "UNLV 5, San Diego 6",
+      "why": "Both USD and UNLV original 2023 schedules list Feb 26",
+      "research_status": "official_date_conflict_do_not_import_until_reconciled"
+    },
+    {
+      "game_id": "cb-2023-02-26-uc-irvine-san-diego-att0186",
+      "attendance_id": "cb-attended-0186",
+      "source_worksheet_row": 187,
+      "original_attendance_date": "2023-02-26",
+      "away": "UC Irvine",
+      "home": "San Diego",
+      "candidate_official_date": "2023-02-27",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/uc-irvine/boxscore/13896",
+      "official_score": "UC Irvine 14, San Diego 6",
+      "why": "Both USD and UC Irvine official gamebooks list Feb 27",
+      "research_status": "official_date_conflict_do_not_import_until_reconciled"
+    },
+    {
+      "game_id": "cb-2023-03-02-san-diego-oregon-att0187",
+      "attendance_id": "cb-attended-0187",
+      "source_worksheet_row": 188,
+      "original_attendance_date": "2023-03-02",
+      "away": "San Diego",
+      "home": "Oregon",
+      "research_status": "official_full_gamebook_discovery_pending"
+    },
+    {
+      "game_id": "cb-2023-03-03-san-diego-oregon-att0188",
+      "attendance_id": "cb-attended-0188",
+      "source_worksheet_row": 189,
+      "original_attendance_date": "2023-03-03",
+      "away": "San Diego",
+      "home": "Oregon",
+      "research_status": "official_full_gamebook_discovery_pending"
+    },
+    {
+      "game_id": "cb-2023-03-04-san-diego-oregon-att0189",
+      "attendance_id": "cb-attended-0189",
+      "source_worksheet_row": 190,
+      "original_attendance_date": "2023-03-04",
+      "away": "San Diego",
+      "home": "Oregon",
+      "research_status": "official_full_gamebook_discovery_pending"
+    },
+    {
+      "game_id": "cb-2023-03-05-san-diego-oregon-att0190",
+      "attendance_id": "cb-attended-0190",
+      "source_worksheet_row": 191,
+      "original_attendance_date": "2023-03-05",
+      "away": "San Diego",
+      "home": "Oregon",
+      "research_status": "official_full_gamebook_discovery_pending"
+    },
+    {
+      "game_id": "cb-2023-03-07-san-diego-oregon-state-att0191",
+      "attendance_id": "cb-attended-0191",
+      "source_worksheet_row": 192,
+      "original_attendance_date": "2023-03-07",
+      "away": "San Diego",
+      "home": "Oregon State",
+      "research_status": "official_full_gamebook_discovery_pending"
+    },
+    {
+      "game_id": "cb-2023-03-17-pacific-san-diego-att0192",
+      "attendance_id": "cb-attended-0192",
+      "source_worksheet_row": 193,
+      "original_attendance_date": "2023-03-17",
+      "away": "Pacific",
+      "home": "San Diego",
+      "research_status": "official_full_gamebook_discovery_pending"
+    },
+    {
+      "game_id": "cb-2023-03-18-pacific-san-diego-att0193",
+      "attendance_id": "cb-attended-0193",
+      "source_worksheet_row": 194,
+      "original_attendance_date": "2023-03-18",
+      "away": "Pacific",
+      "home": "San Diego",
+      "research_status": "official_full_gamebook_discovery_pending"
+    },
+    {
+      "game_id": "cb-2023-03-19-pacific-san-diego-att0194",
+      "attendance_id": "cb-attended-0194",
+      "source_worksheet_row": 195,
+      "original_attendance_date": "2023-03-19",
+      "away": "Pacific",
+      "home": "San Diego",
+      "research_status": "official_full_gamebook_discovery_pending"
+    },
+    {
+      "game_id": "cb-2023-03-28-san-diego-cal-state-northridge-att0195",
+      "attendance_id": "cb-attended-0195",
+      "source_worksheet_row": 196,
+      "original_attendance_date": "2023-03-28",
+      "away": "San Diego",
+      "home": "Cal State Northridge",
+      "research_status": "official_full_gamebook_discovery_pending"
+    },
+    {
+      "game_id": "cb-2023-03-31-pepperdine-san-diego-att0196",
+      "attendance_id": "cb-attended-0196",
+      "source_worksheet_row": 197,
+      "original_attendance_date": "2023-03-31",
+      "away": "Pepperdine",
+      "home": "San Diego",
+      "research_status": "official_full_gamebook_discovery_pending"
+    },
+    {
+      "game_id": "cb-2023-04-01-pepperdine-san-diego-att0197",
+      "attendance_id": "cb-attended-0197",
+      "source_worksheet_row": 198,
+      "original_attendance_date": "2023-04-01",
+      "away": "Pepperdine",
+      "home": "San Diego",
+      "research_status": "official_full_gamebook_discovery_pending"
+    },
+    {
+      "game_id": "cb-2023-04-02-pepperdine-san-diego-att0198",
+      "attendance_id": "cb-attended-0198",
+      "source_worksheet_row": 199,
+      "original_attendance_date": "2023-04-02",
+      "away": "Pepperdine",
+      "home": "San Diego",
+      "research_status": "official_full_gamebook_discovery_pending"
+    },
+    {
+      "game_id": "cb-2023-04-04-san-diego-uc-san-diego-att0199",
+      "attendance_id": "cb-attended-0199",
+      "source_worksheet_row": 200,
+      "original_attendance_date": "2023-04-04",
+      "away": "San Diego",
+      "home": "UC San Diego",
+      "research_status": "official_full_gamebook_discovery_pending"
+    },
+    {
+      "game_id": "cb-2023-04-06-san-diego-gonzaga-att0200",
+      "attendance_id": "cb-attended-0200",
+      "source_worksheet_row": 201,
+      "original_attendance_date": "2023-04-06",
+      "away": "San Diego",
+      "home": "Gonzaga",
+      "research_status": "official_full_gamebook_discovery_pending"
+    },
+    {
+      "game_id": "cb-2023-04-07-san-diego-gonzaga-att0201",
+      "attendance_id": "cb-attended-0201",
+      "source_worksheet_row": 202,
+      "original_attendance_date": "2023-04-07",
+      "away": "San Diego",
+      "home": "Gonzaga",
+      "research_status": "official_full_gamebook_discovery_pending"
+    },
+    {
+      "game_id": "cb-2023-04-08-san-diego-gonzaga-att0202",
+      "attendance_id": "cb-attended-0202",
+      "source_worksheet_row": 203,
+      "original_attendance_date": "2023-04-08",
+      "away": "San Diego",
+      "home": "Gonzaga",
+      "research_status": "official_full_gamebook_discovery_pending"
+    },
+    {
+      "game_id": "cb-2023-04-11-san-diego-uc-irvine-att0203",
+      "attendance_id": "cb-attended-0203",
+      "source_worksheet_row": 204,
+      "original_attendance_date": "2023-04-11",
+      "away": "San Diego",
+      "home": "UC Irvine",
+      "research_status": "official_full_gamebook_discovery_pending"
+    },
+    {
+      "game_id": "cb-2023-04-14-portland-san-diego-att0204",
+      "attendance_id": "cb-attended-0204",
+      "source_worksheet_row": 205,
+      "original_attendance_date": "2023-04-14",
+      "away": "Portland",
+      "home": "San Diego",
+      "research_status": "official_full_gamebook_discovery_pending"
+    },
+    {
+      "game_id": "cb-2023-04-15-portland-san-diego-att0205",
+      "attendance_id": "cb-attended-0205",
+      "source_worksheet_row": 206,
+      "original_attendance_date": "2023-04-15",
+      "away": "Portland",
+      "home": "San Diego",
+      "research_status": "official_full_gamebook_discovery_pending"
+    },
+    {
+      "game_id": "cb-2023-04-16-portland-san-diego-att0206",
+      "attendance_id": "cb-attended-0206",
+      "source_worksheet_row": 207,
+      "original_attendance_date": "2023-04-16",
+      "away": "Portland",
+      "home": "San Diego",
+      "research_status": "official_full_gamebook_discovery_pending"
+    },
+    {
+      "game_id": "cb-2023-04-18-san-diego-san-diego-state-att0207",
+      "attendance_id": "cb-attended-0207",
+      "source_worksheet_row": 208,
+      "original_attendance_date": "2023-04-18",
+      "away": "San Diego",
+      "home": "San Diego State",
+      "research_status": "official_full_gamebook_discovery_pending"
+    },
+    {
+      "game_id": "cb-2023-04-21-san-francisco-san-diego-att0208",
+      "attendance_id": "cb-attended-0208",
+      "source_worksheet_row": 209,
+      "original_attendance_date": "2023-04-21",
+      "away": "San Francisco",
+      "home": "San Diego",
+      "research_status": "official_full_gamebook_discovery_pending"
+    },
+    {
+      "game_id": "cb-2023-04-22-san-francisco-san-diego-att0209",
+      "attendance_id": "cb-attended-0209",
+      "source_worksheet_row": 210,
+      "original_attendance_date": "2023-04-22",
+      "away": "San Francisco",
+      "home": "San Diego",
+      "research_status": "official_full_gamebook_discovery_pending"
+    },
+    {
+      "game_id": "cb-2023-04-23-san-francisco-san-diego-att0210",
+      "attendance_id": "cb-attended-0210",
+      "source_worksheet_row": 211,
+      "original_attendance_date": "2023-04-23",
+      "away": "San Francisco",
+      "home": "San Diego",
+      "research_status": "official_full_gamebook_discovery_pending"
+    },
+    {
+      "game_id": "cb-2023-04-25-cal-state-northridge-san-diego-att0211",
+      "attendance_id": "cb-attended-0211",
+      "source_worksheet_row": 212,
+      "original_attendance_date": "2023-04-25",
+      "away": "Cal State Northridge",
+      "home": "San Diego",
+      "research_status": "official_full_gamebook_discovery_pending"
+    },
+    {
+      "game_id": "cb-2023-04-28-san-diego-loyola-marymount-att0212",
+      "attendance_id": "cb-attended-0212",
+      "source_worksheet_row": 213,
+      "original_attendance_date": "2023-04-28",
+      "away": "San Diego",
+      "home": "Loyola Marymount",
+      "research_status": "official_full_gamebook_discovery_pending"
+    },
+    {
+      "game_id": "cb-2023-04-29-san-diego-loyola-marymount-att0213",
+      "attendance_id": "cb-attended-0213",
+      "source_worksheet_row": 214,
+      "original_attendance_date": "2023-04-29",
+      "away": "San Diego",
+      "home": "Loyola Marymount",
+      "research_status": "official_full_gamebook_discovery_pending"
+    },
+    {
+      "game_id": "cb-2023-04-30-san-diego-loyola-marymount-att0214",
+      "attendance_id": "cb-attended-0214",
+      "source_worksheet_row": 215,
+      "original_attendance_date": "2023-04-30",
+      "away": "San Diego",
+      "home": "Loyola Marymount",
+      "research_status": "official_full_gamebook_discovery_pending"
+    },
+    {
+      "game_id": "cb-2023-05-04-byu-san-diego-att0215",
+      "attendance_id": "cb-attended-0215",
+      "source_worksheet_row": 216,
+      "original_attendance_date": "2023-05-04",
+      "away": "BYU",
+      "home": "San Diego",
+      "research_status": "official_full_gamebook_discovery_pending"
+    },
+    {
+      "game_id": "cb-2023-05-05-byu-san-diego-att0216",
+      "attendance_id": "cb-attended-0216",
+      "source_worksheet_row": 217,
+      "original_attendance_date": "2023-05-05",
+      "away": "BYU",
+      "home": "San Diego",
+      "research_status": "official_full_gamebook_discovery_pending"
+    },
+    {
+      "game_id": "cb-2023-05-06-byu-san-diego-att0217",
+      "attendance_id": "cb-attended-0217",
+      "source_worksheet_row": 218,
+      "original_attendance_date": "2023-05-06",
+      "away": "BYU",
+      "home": "San Diego",
+      "research_status": "official_full_gamebook_discovery_pending"
+    },
+    {
+      "game_id": "cb-2023-05-07-cal-state-northridge-uc-san-diego-att0218",
+      "attendance_id": "cb-attended-0218",
+      "source_worksheet_row": 219,
+      "original_attendance_date": "2023-05-07",
+      "away": "Cal State Northridge",
+      "home": "UC San Diego",
+      "source_url": "https://ucsdtritons.com/sports/baseball/stats/2023/csun/boxscore/9381",
+      "official_score": "CSUN 11, UC San Diego 0",
+      "source_type": "official_university_sidearm_gamebook",
+      "research_status": "official_full_gamebook_located_player_import_pending"
+    },
+    {
+      "game_id": "cb-2023-05-09-uc-irvine-san-diego-att0219",
+      "attendance_id": "cb-attended-0219",
+      "source_worksheet_row": 220,
+      "original_attendance_date": "2023-05-09",
+      "away": "UC Irvine",
+      "home": "San Diego",
+      "research_status": "official_full_gamebook_discovery_pending"
+    },
+    {
+      "game_id": "cb-2023-05-12-san-diego-saint-mary-s-att0220",
+      "attendance_id": "cb-attended-0220",
+      "source_worksheet_row": 221,
+      "original_attendance_date": "2023-05-12",
+      "away": "San Diego",
+      "home": "Saint Mary's",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/saint-mary-s/boxscore/13936",
+      "official_score": "San Diego 4, Saint Mary's 3",
+      "source_type": "official_university_sidearm_gamebook",
+      "research_status": "official_full_gamebook_located_player_import_pending"
+    },
+    {
+      "game_id": "cb-2023-05-13-san-diego-saint-mary-s-att0221",
+      "attendance_id": "cb-attended-0221",
+      "source_worksheet_row": 222,
+      "original_attendance_date": "2023-05-13",
+      "away": "San Diego",
+      "home": "Saint Mary's",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/saint-mary-s/boxscore/13937",
+      "official_score": "San Diego 0, Saint Mary's 6",
+      "source_type": "official_university_sidearm_gamebook",
+      "research_status": "official_full_gamebook_located_player_import_pending"
+    },
+    {
+      "game_id": "cb-2023-05-14-san-diego-saint-mary-s-att0222",
+      "attendance_id": "cb-attended-0222",
+      "source_worksheet_row": 223,
+      "original_attendance_date": "2023-05-14",
+      "away": "San Diego",
+      "home": "Saint Mary's",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/saint-mary-s/boxscore/13938",
+      "official_score": "San Diego 10, Saint Mary's 8",
+      "source_type": "official_university_sidearm_gamebook",
+      "research_status": "official_full_gamebook_located_player_import_pending"
+    },
+    {
+      "game_id": "cb-2023-05-24-gonzaga-santa-clara-att0223",
+      "attendance_id": "cb-attended-0223",
+      "source_worksheet_row": 224,
+      "original_attendance_date": "2023-05-24",
+      "away": "Gonzaga",
+      "home": "Santa Clara",
+      "source_url": "https://gozags.com/sports/baseball/stats/2023/santa-clara/boxscore/8846",
+      "official_score": "Gonzaga 2, Santa Clara 4",
+      "source_type": "official_university_sidearm_gamebook",
+      "site": "Las Vegas Ballpark",
+      "game_type": "conference_tournament",
+      "research_status": "official_full_gamebook_located_player_import_pending"
+    },
+    {
+      "game_id": "cb-2023-05-24-saint-mary-s-san-diego-att0224",
+      "attendance_id": "cb-attended-0224",
+      "source_worksheet_row": 225,
+      "original_attendance_date": "2023-05-24",
+      "away": "Saint Mary's",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/saint-mary-s/boxscore/13940",
+      "official_score": "Saint Mary's 17, San Diego 8",
+      "source_type": "official_university_sidearm_gamebook",
+      "site": "Las Vegas Ballpark",
+      "game_type": "conference_tournament",
+      "research_status": "official_full_gamebook_located_player_import_pending"
+    }
+  ]
+}

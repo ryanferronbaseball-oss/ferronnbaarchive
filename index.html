@@ -136,7 +136,7 @@
       <div class="sport-body">
         <span class="sport-label">College baseball</span><h3>College Baseball Attendance</h3>
         <p>Every eligible four-year college game witnessed from 2017–2026, with official box scores, numbered batting orders, player profiles, game logs and statistical leaderboards.</p>
-        <div class="sport-metrics"><div><strong id="collegeBaseballGames">437</strong><small>Verified games</small></div><div><strong id="collegeBaseballStats">13,183</strong><small>Player-stat rows</small></div></div>
+        <div class="sport-metrics"><div><strong id="collegeBaseballGames">437</strong><small>Verified games</small></div><div><strong id="collegeBaseballStats">13,188</strong><small>Player-stat rows</small></div></div>
         <a class="sport-button" href="./college-baseball/index.html">Enter college baseball archive <span aria-hidden="true">↗</span></a>
       </div>
     </article>
@@ -167,7 +167,7 @@
   document.getElementById("mlbStats").textContent=mlbReport?.player_rows?.toLocaleString()||"Pending";
   const verifiedCollegeBaseball=collegeBaseballReport.official_player_boxscores_imported||437;
   document.getElementById("collegeBaseballGames").textContent=verifiedCollegeBaseball.toLocaleString();
-  document.getElementById("collegeBaseballStats").textContent=(collegeBaseballReport.player_stat_rows||13183).toLocaleString();
+  document.getElementById("collegeBaseballStats").textContent=(collegeBaseballReport.player_stat_rows||13188).toLocaleString();
   document.getElementById("allGames").textContent=(nba+college+nfl+cfb+soccerMatches.length+mlbGames.length+verifiedCollegeBaseball).toLocaleString();
  }catch(err){ /* Keep documented fallback counts when serving offline. */ }
 })();

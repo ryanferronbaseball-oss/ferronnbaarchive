@@ -48,7 +48,16 @@ def parse(game,item,global_keys,response):
             raise ValueError("2018 Cincinnati university archive provenance or exact game check failed")
     elif not date_ok:
         raise ValueError("PDF printed game date differs from attendance record")
-    innings_expected=legacy[1] if legacy else 9
+    # User corrected a previously mistaken April 14 attendance entry to the
+    # official Saturday, April 13 Virginia Tech @ Georgia Tech 19-0 run-rule
+    # game. Original Georgia Tech PDF states exactly SEVEN innings. Keep the
+    # exception fixed to this specific protected attendance identity.
+    apr13_gt=(game["id"]=="cb-2024-04-13-virginia-tech-georgia-tech-att0268"
+              and game["date"]=="2024-04-13"
+              and (game["away"],game["home"])==("Virginia Tech","Georgia Tech")
+              and item["official_score"]==[0,19]
+              and item["source_url"]=="https://storage.googleapis.com/ramblinwreck-com-prod/2024/04/gt041324.pdf")
+    innings_expected=legacy[1] if legacy else (7 if apr13_gt else 9)
     # Named schools must both occur in the original document heading.
     header=" ".join(first[:6])
     if not all(re.search(re.escape(t),header,re.I) for t in (game["away"],game["home"])):
@@ -77,14 +86,14 @@ def parse(game,item,global_keys,response):
         if pm:
             pitchteam=pm;mode="pitch";continue
         if mode=="bat" and batteam:
-            m=re.match(r"^\s*(.*?)\s+((?:\d+\s+){8}\d+)\s*$",original)
+            m=re.match(r"^\s*(.*?)\s+((?:\d+\s+){8}\d+)(?:\s+(?:\.\d+|-))?\s*$",original)
             if m:
                 from import_2024_statcrew import split_player
                 name,pos=split_player(m.group(1))
                 vals=list(map(int,m.group(2).split()))
                 batting[batteam].append((name,pos,vals,original.startswith((" ","\t","\u00a0"))))
         if mode=="pitch" and pitchteam:
-            m=re.match(r"^(.+?)\s+(\d+\.[012])\s+((?:\d+\s+){7}\d+)\s*$",line)
+            m=re.match(r"^(.+?)\s+(\d+\.[012])\s+((?:\d+\s+){7}\d+)(?:\s+\d+\.\d+)?\s*$",line)
             if m:
                 name=normalize_name(m.group(1))
                 ip=m.group(2)
@@ -129,7 +138,11 @@ def parse(game,item,global_keys,response):
     for i,t in enumerate(teams):
         bat=batting[t]
         if not bat or len(bat)<9:raise ValueError("PDF batter rows missing for "+t)
-        hitter=[x for x in bat if x[1]!="p"]
+        # GT starting pitcher Cam Jones ALSO batted fifth (1 AB, four BB);
+        # VT pitchers listed after batting totals did not enter the order.
+        # This is an officially documented two-way starting batting spot.
+        hitter=[x for x in bat if x[1]!="p" or
+                (apr13_gt and t=="Georgia Tech" and x[0]=="Cam Jones")]
         source_summary=totals[t]
         for k in range(6):
             if sum(x[2][k] for x in bat)!=source_summary[k]:
@@ -164,7 +177,7 @@ def parse(game,item,global_keys,response):
         if sum(x[2][0] for x in pitching[t])!=innings[teams[1-i]]["hits"]:
             raise ValueError(t+" pitcher hits do not equal opponent hits")
         if sum(x[1] for x in pitching[t])!=source_summary[6]:
-            raise ValueError(t+" original pitching outs do not reconcile with nine-inning final")
+            raise ValueError(t+" original pitching outs do not reconcile with official "+str(innings_expected)+"-inning final")
         lineups.append({"team":t,"nine_starting_slots":True,
                         "batter_rows":len(hitter),"pitcher_rows":len(pitching[t]),
                         "substitutes":len(hitter)-9})

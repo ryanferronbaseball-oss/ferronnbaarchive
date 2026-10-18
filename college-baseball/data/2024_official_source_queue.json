@@ -1469,15 +1469,15 @@
       "verification": "original_university_one_page_pdf_full_player_boxscore_strict_audit"
     },
     {
-      "game_id": "cb-2024-04-14-virginia-tech-georgia-tech-att0268",
+      "game_id": "cb-2024-04-13-virginia-tech-georgia-tech-att0268",
       "worksheet_row": 269,
-      "date": "2024-04-14",
+      "date": "2024-04-13",
       "away": "Virginia Tech",
       "home": "Georgia Tech",
-      "source_url": "https://storage.googleapis.com/ramblinwreck-com-prod/2024/04/gt041424.pdf",
+      "source_url": "https://storage.googleapis.com/ramblinwreck-com-prod/2024/04/gt041324.pdf",
       "official_score": [
-        7,
-        11
+        0,
+        19
       ],
       "ballpark": "Mac Nease Park",
       "city": "Atlanta",
@@ -1486,7 +1486,11 @@
       "postseason_round": null,
       "neutral_site": false,
       "source_type": "official_university_pdf_scorebook",
-      "verification": "original_university_one_page_pdf_full_player_boxscore_strict_audit"
+      "verification": "attendee_corrected_attendance_date_exact_pdf_source_verified",
+      "expected_innings": 7,
+      "attendee_corrected_from_date": "2024-04-14",
+      "original_worksheet_date": "2024-04-14",
+      "correction_source_pdf_sha256": "01d9be5552a38a6845e2c32899e173d7fafd573c3b03c837d10150e788db138e"
     },
     {
       "game_id": "cb-2024-03-08-notre-dame-virginia-tech-att0251",

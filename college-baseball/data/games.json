@@ -22023,10 +22023,10 @@
     "source_type": "official_university_sidearm_boxscore"
   },
   {
-    "id": "cb-2024-04-14-virginia-tech-georgia-tech-att0268",
+    "id": "cb-2024-04-13-virginia-tech-georgia-tech-att0268",
     "attendance_id": "cb-attended-0268",
     "source_worksheet_row": 269,
-    "date": "2024-04-14",
+    "date": "2024-04-13",
     "season": 2024,
     "away": "Virginia Tech",
     "home": "Georgia Tech",
@@ -22037,50 +22037,50 @@
     "game_number": null,
     "game_type": "regular_season",
     "postseason_round": null,
-    "away_score": 7,
-    "home_score": 11,
+    "away_score": 0,
+    "home_score": 19,
     "score_provenance": "official_pdf_gamebook",
-    "source_url": "https://storage.googleapis.com/ramblinwreck-com-prod/2024/04/gt041424.pdf",
+    "source_url": "https://storage.googleapis.com/ramblinwreck-com-prod/2024/04/gt041324.pdf",
     "verification": "official_boxscore_verified",
     "official_boxscore_status": "verified",
     "possible_same_day_doubleheader": false,
     "provisional_worksheet_game_sequence": null,
-    "notes": "Original workbook Sheet1 row 269. Official ACC individual gamebook.",
+    "notes": "User corrected original workbook row 269 attendance date from April 14 to April 13, 2024 on October 18, 2026. Full source replaced, not shifted: Georgia Tech 19-0 Virginia Tech, seven-inning mercy-rule game, 39 official player gamebook rows. Original imported April 14 game was Georgia Tech 11-7 with 34 player rows and was NOT attended. Source PDF https://storage.googleapis.com/ramblinwreck-com-prod/2024/04/gt041324.pdf.",
     "source_type": "official_university_pdf_scorebook",
-    "away_hits": 11,
-    "home_hits": 16,
-    "away_errors": 2,
-    "home_errors": 2,
+    "away_hits": 3,
+    "home_hits": 11,
+    "away_errors": 1,
+    "home_errors": 0,
     "pitching_decisions": {
-      "win": "Brett Thomas",
-      "loss": "Matthew Siverling",
-      "save": "Dawson Brown"
+      "win": "Cam Jones",
+      "loss": "Wyatt Parliament",
+      "save": null
     },
     "innings": [
       {
         "inning": 1,
-        "away": 3,
-        "home": 0
+        "away": 0,
+        "home": 1
       },
       {
         "inning": 2,
-        "away": 3,
-        "home": 0
+        "away": 0,
+        "home": 6
       },
       {
         "inning": 3,
         "away": 0,
-        "home": 0
+        "home": 1
       },
       {
         "inning": 4,
-        "away": 1,
+        "away": 0,
         "home": 0
       },
       {
         "inning": 5,
         "away": 0,
-        "home": 6
+        "home": 8
       },
       {
         "inning": 6,
@@ -22091,18 +22091,11 @@
         "inning": 7,
         "away": 0,
         "home": 0
-      },
-      {
-        "inning": 8,
-        "away": 0,
-        "home": 2
-      },
-      {
-        "inning": 9,
-        "away": 0,
-        "home": null
       }
-    ]
+    ],
+    "attendance_date_original_worksheet": "2024-04-14",
+    "attendance_date_corrected_by_attendee": "2026-10-18",
+    "original_incorrect_game_id": "cb-2024-04-14-virginia-tech-georgia-tech-att0268"
   },
   {
     "id": "cb-2024-04-15-southern-mississippi-georgia-state-att0269",

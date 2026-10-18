@@ -1,0 +1,53 @@
+name: College Baseball Apr13 and Initialed Transfer Corrections
+on:
+  push:
+    branches:
+      - feature/college-baseball-apr13-transfer-initials-fix
+    paths:
+      - "college-baseball/scripts/inspect_apr13_initial_aliases.py"
+      - "college-baseball/scripts/apply_apr13_initial_aliases.py"
+      - "college-baseball/scripts/import_2024_pdf.py"
+      - "college-baseball/scripts/reconcile_player_identities.py"
+      - "college-baseball/data/player_identity_merges.json"
+      - ".github/workflows/college-baseball-apr13-correction.yml"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: college-baseball-apr13-correction
+  cancel-in-progress: true
+jobs:
+  reconcile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feature/college-baseball-apr13-transfer-initials-fix
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install official source parser requirements
+        run: python -m pip install requests beautifulsoup4 pypdf
+      - name: Inspect NCAA school-name aliases and strict April 13 gamebook
+        run: python college-baseball/scripts/inspect_apr13_initial_aliases.py
+      - name: Apply owner verified April 13 boxscore replacement and resolve exact initialed transfer identities
+        if: hashFiles('college-baseball/scripts/apply_apr13_initial_aliases.py') != ''
+        run: python college-baseball/scripts/apply_apr13_initial_aliases.py
+      - name: Recompute 96 owner-approved player crosswalk and full matching audit
+        if: hashFiles('college-baseball/scripts/apply_apr13_initial_aliases.py') != ''
+        run: python college-baseball/scripts/reconcile_player_identities.py --apply
+      - name: Check complete real data
+        if: hashFiles('college-baseball/scripts/apply_apr13_initial_aliases.py') != ''
+        run: python college-baseball/scripts/verify_real_site_data.py
+      - name: Persist validated correction only on unpublished branch
+        if: hashFiles('college-baseball/scripts/apply_apr13_initial_aliases.py') != ''
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add college-baseball/data/games.json college-baseball/data/player_stats.json college-baseball/data/2024_official_source_queue.json college-baseball/data/import_report.json college-baseball/data/attendance_master_444.csv college-baseball/data/player_identity_reconciliation_audit.json college-baseball/data/player_identity_crosswalk.json college-baseball/data/2024_apr13_attendee_correction_audit.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Correct attended GT vs VT April 13 source gamebook, 96 transfer identities"
+            git push origin HEAD:feature/college-baseball-apr13-transfer-initials-fix
+          fi

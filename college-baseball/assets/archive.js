@@ -22,7 +22,7 @@ async function load(){
  if(!identity||!Array.isArray(identity.merges))throw Error("Missing verified player identity merge manifest");
  // Apply source-scoped team+player ID aliases in browser memory, never to
  // the preserved original gamebook rows. Existing game team attribution stays intact.
- const scopedAliases=new Map(),redirects=new Map();
+ const scopedAliases=new Map(),redirects=new Map(),displayNames=new Map();
  for(const m of identity.merges){
   if(!m.canonical_id||!Array.isArray(m.pairs)||!Array.isArray(m.source_player_ids))throw Error("Malformed transfer identity crosswalk");
   for(const pair of m.pairs){
@@ -30,6 +30,8 @@ async function load(){
    if(scopedAliases.has(key)&&scopedAliases.get(key)!==m.canonical_id)throw Error("Conflicting transfer identity aliases");
    scopedAliases.set(key,m.canonical_id);
   }
+  if(displayNames.has(m.canonical_id)&&displayNames.get(m.canonical_id)!==m.name)throw Error("Conflicting unified transfer display names");
+  displayNames.set(m.canonical_id,m.name);
   for(const sourceId of m.source_player_ids){
    if(redirects.has(sourceId)&&redirects.get(sourceId)!==m.canonical_id)throw Error("Conflicting transfer deep-link redirects");
    redirects.set(sourceId,m.canonical_id);
@@ -48,7 +50,7 @@ async function load(){
   const id=String(r.player_id||"");
   if(!id)continue;
   let p=byPlayer.get(id);
-  if(!p){p={player_id:id,name:r.player||"Player",teams:new Set(),games:new Set(),rows:[]};byPlayer.set(id,p)}
+  if(!p){p={player_id:id,name:displayNames.get(id)||r.player||"Player",teams:new Set(),games:new Set(),rows:[]};byPlayer.set(id,p)}
   if(r.team)p.teams.add(r.team);
   p.games.add(r.game_id);
   p.rows.push(r);
@@ -132,7 +134,10 @@ function renderGames(d){
  +'<input id="cb-game-search" type="search" aria-label="Search dates teams and parks" placeholder="Search teams, dates, venue or tournament…">'
  +'<label class="filter-label" for="cb-season-filter">Season</label><select id="cb-season-filter" aria-label="Season filter"><option value="">All seasons</option>'
  +unique(d.games.map(g=>g.season)).sort((a,b)=>b-a).map(y=>'<option>'+y+'</option>').join("")+'</select></div><div id="cb-game-list"></div>';
- const chosen=new URLSearchParams(location.search).get("id"),picker=$("cb-game-select");
+ const requestedGameId=new URLSearchParams(location.search).get("id");
+ const chosen=requestedGameId==="cb-2024-04-14-virginia-tech-georgia-tech-att0268"
+  ?"cb-2024-04-13-virginia-tech-georgia-tech-att0268":requestedGameId;
+ const picker=$("cb-game-select");
  if(chosen&&d.gameMap.has(chosen))picker.value=chosen;
  function showGame(){
   const g=d.gameMap.get(picker.value);

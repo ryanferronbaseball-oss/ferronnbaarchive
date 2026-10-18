@@ -87,8 +87,11 @@ def main():
     rows=json.loads(SOURCE.read_text(encoding="utf-8"))
     games=json.loads(GAMES.read_text(encoding="utf-8"))
     by_game={g["id"]:g for g in games}
-    if len(games)!=444 or len(rows)!=13183 or len(by_game)!=444 or len(proposals["rules"])!=96:
-        raise ValueError("Attended game, player line, or proposed transfer manifest count changed; review before reconciliation")
+    report=json.loads((DATA/"import_report.json").read_text(encoding="utf-8"))
+    if (len(games)!=444 or len(rows)!=report["player_stat_rows"]
+        or len(by_game)!=444 or len(proposals["rules"])!=96
+        or report["official_player_boxscores_imported"]!=437):
+        raise ValueError("Attended game, verified gamebooks, player lines, or proposed transfer manifest changed; review before reconciliation")
     if len({(r["game_id"],r["player_id"]) for r in rows})!=len(rows):
         raise ValueError("Duplicate original official player-game record")
     index=defaultdict(list)
@@ -113,8 +116,22 @@ def main():
         if len(expected)!=2 or expected[0]==expected[1]:
             raise ValueError("Transfer needs two distinct approved schools: "+n)
         side=[]
+        # Initials are NEVER globally expanded. Only owner-approved
+        # name spellings at the exact expected SOURCE school may match.
+        input_names=rule.get("source_names_by_school",{})
+        if any(school(k) not in expected for k in input_names):
+            raise ValueError("Unapproved school-scoped name alias "+n)
+        allowed_by_school={}
         for t in expected:
-            matches=index.get((nkey,t),[])
+            permitted={nkey}
+            for raw_school,aliases in input_names.items():
+                if school(raw_school)==t:
+                    if not isinstance(aliases,list) or not aliases:
+                        raise ValueError("Invalid owner alias list "+n)
+                    permitted.update(name(alias) for alias in aliases)
+            allowed_by_school[t]=permitted
+        for t in expected:
+            matches=[r for allowed in allowed_by_school[t] for r in index.get((allowed,t),[])]
             ids=sorted({r["player_id"] for r in matches})
             appearances=sorted({(r["game_id"],r["team"]) for r in matches})
             side.append({"normalized_school":t,"observed_teams":sorted({r["team"] for r in matches}),
@@ -132,7 +149,7 @@ def main():
             ids=[s["source_player_ids"][0] for s in side]
             if any(i in used for i in ids):
                 issue="source_player_id_shared_with_another_proposal"
-            elif any(school(r["team"]) not in expected or name(r["player"])!=nkey
+            elif any(school(r["team"]) not in expected or name(r["player"]) not in allowed_by_school[school(r["team"])]
                      for i in ids for r in by_id[i]):
                 issue="source_id_also_used_for_other_name_or_unapproved_school"
             elif len({r["game_id"] for i in ids for r in by_id[i]})!=sum(len(by_id[i]) for i in ids):

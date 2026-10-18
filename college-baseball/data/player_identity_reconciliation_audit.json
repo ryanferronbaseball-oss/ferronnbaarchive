@@ -2,13 +2,11 @@
   "status": "PASS",
   "source_manifests": 96,
   "original_game_count": 444,
-  "original_player_game_rows": 13183,
+  "original_player_game_rows": 13188,
   "eligible_gamebooks": 437,
-  "ready_merges": 92,
-  "not_ready": 4,
-  "pending_breakdown": {
-    "one_or_both_schools_not_in_attended_game_player_rows": 4
-  },
+  "ready_merges": 96,
+  "not_ready": 0,
+  "pending_breakdown": {},
   "preview": [
     {
       "sequence": 1,
@@ -873,11 +871,17 @@
       "source_sides": [
         {
           "normalized_school": "arizona",
-          "observed_teams": [],
-          "source_player_ids": [],
-          "source_player_rows": 0,
-          "games": 0,
-          "seasons": []
+          "observed_teams": [
+            "Arizona"
+          ],
+          "source_player_ids": [
+            "cb-arizona-t-soderstrom"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2018
+          ]
         },
         {
           "normalized_school": "uc san diego",
@@ -894,8 +898,8 @@
           ]
         }
       ],
-      "status": "one_or_both_schools_not_in_attended_game_player_rows",
-      "note": null
+      "status": "merge_ready",
+      "note": "Archive owner confirmed original source Arizona boxscore lists 'T. Soderstrom' and other school uses 'Tate Soderstrom'; exact school-scoped alias only, do not apply to any other player."
     },
     {
       "sequence": 23,
@@ -2717,11 +2721,17 @@
       "source_sides": [
         {
           "normalized_school": "western kentucky",
-          "observed_teams": [],
-          "source_player_ids": [],
-          "source_player_rows": 0,
-          "games": 0,
-          "seasons": []
+          "observed_teams": [
+            "Western Kentucky"
+          ],
+          "source_player_ids": [
+            "cb-western-kentucky-e-lizama"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2025
+          ]
         },
         {
           "normalized_school": "south carolina",
@@ -2738,8 +2748,8 @@
           ]
         }
       ],
-      "status": "one_or_both_schools_not_in_attended_game_player_rows",
-      "note": null
+      "status": "merge_ready",
+      "note": "Archive owner confirmed original source Western Kentucky boxscore lists 'E. Lizama' and other school uses 'Ethan Lizama'; exact school-scoped alias only, do not apply to any other player."
     },
     {
       "sequence": 69,
@@ -2871,11 +2881,17 @@
       "source_sides": [
         {
           "normalized_school": "western kentucky",
-          "observed_teams": [],
-          "source_player_ids": [],
-          "source_player_rows": 0,
-          "games": 0,
-          "seasons": []
+          "observed_teams": [
+            "Western Kentucky"
+          ],
+          "source_player_ids": [
+            "cb-western-kentucky-k-hvidsten"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2025
+          ]
         },
         {
           "normalized_school": "liberty",
@@ -2892,8 +2908,8 @@
           ]
         }
       ],
-      "status": "one_or_both_schools_not_in_attended_game_player_rows",
-      "note": null
+      "status": "merge_ready",
+      "note": "Archive owner confirmed original source Western Kentucky boxscore lists 'K. Hvidsten' and other school uses 'Kyle Hvidsten'; exact school-scoped alias only, do not apply to any other player."
     },
     {
       "sequence": 73,
@@ -3786,11 +3802,17 @@
       "source_sides": [
         {
           "normalized_school": "georgia tech",
-          "observed_teams": [],
-          "source_player_ids": [],
-          "source_player_rows": 0,
-          "games": 0,
-          "seasons": []
+          "observed_teams": [
+            "Georgia Tech"
+          ],
+          "source_player_ids": [
+            "cb-georgia-tech-michael-graziano"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2024
+          ]
         },
         {
           "normalized_school": "mercer",
@@ -3807,7 +3829,7 @@
           ]
         }
       ],
-      "status": "one_or_both_schools_not_in_attended_game_player_rows",
+      "status": "merge_ready",
       "note": null
     },
     {
@@ -3852,6 +3874,6 @@
       "note": null
     }
   ],
-  "source_id_unique_count_before": 5544,
-  "source_id_unique_count_after_simulated": 5452
+  "source_id_unique_count_before": 5549,
+  "source_id_unique_count_after_simulated": 5453
 }

@@ -58,7 +58,7 @@
   ],
   "same_day_identical_matchup_pairs_in_full_sheet": 13,
   "metadata_status": "full_444_game_attendance_directory_plus_may_2026_official_sources",
-  "warning": "2024–2026 four-year NCAA/four-year verified source-gamebooks only; all junior colleges excluded from backfill. 2023 and earlier, merge/publication unapproved.",
+  "warning": "2018: 30/30 original game identities and official university boxscore document links found. May 9 ASU at USD official PDF document 14288 located, PDF player contents not yet downloaded/read via available tools, so full player content verified for 29/30; 0 2018 player gamebooks imported. 2017 full gamebook source located. 2017–2023 full player stats not yet imported; other years' documented date conflicts require separate reconciliation. 2024–26 verified 213 gamebooks and 6316 individual player-game records, original 444 attendance IDs unchanged. No merge/publication; JUCO excluded.",
   "resolved_matchups": [
     {
       "attendance_game_number": 443,
@@ -446,12 +446,13 @@
       "attended": 30,
       "eligible": 30,
       "official_identity_scores_matched": 30,
-      "full_gamebook_direct_sources_located": 29,
-      "full_player_gamebook_url_pending": 1,
+      "full_gamebook_direct_sources_located": 30,
+      "full_player_gamebook_url_pending": 0,
       "full_player_boxscores_imported": 0,
-      "status": "29_OF_30_FULL_PLAYER_SOURCES_LINKED_ONLY_MAY_9_ASU_PENDING",
+      "status": "30_OFFICIAL_GAMEBOOK_LINKS_FOUND_29_CONTENT_VERIFIED_ASU_PDF_PENDING_PLAYER_TABLE_READ",
       "source_queue": "data/2018_official_source_queue.json",
-      "audit_file": "data/2018_monthly_progress_audit.json"
+      "audit_file": "data/2018_monthly_progress_audit.json",
+      "player_table_content_pending_verification": 1
     },
     "season_2017": {
       "approved": true,
@@ -569,11 +570,13 @@
     "approved": true,
     "original_attendance_games": 30,
     "official_game_identifications": 30,
-    "full_player_gamebook_direct_sources": 29,
-    "full_player_gamebook_link_not_yet_found": 1,
+    "full_player_gamebook_direct_sources": 30,
+    "full_player_gamebook_link_not_yet_found": 0,
     "player_boxscore_imported": 0,
     "source_queue": "data/2018_official_source_queue.json",
-    "monthly_audit": "data/2018_monthly_progress_audit.json"
+    "monthly_audit": "data/2018_monthly_progress_audit.json",
+    "full_player_gamebook_contents_verified": 29,
+    "full_player_gamebook_content_verification_pending": 1
   },
   "2017_backfill": {
     "approved": true,

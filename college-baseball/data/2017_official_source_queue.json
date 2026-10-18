@@ -1,0 +1,45 @@
+{
+  "season": 2017,
+  "status": "OFFICIAL_SOURCE_DISCOVERY_COMPLETE_1_OF_1_PLAYER_STAT_IMPORT_PENDING",
+  "scope": "User approved 2018 and 2017 source discovery October 17, 2026. No JUCO. Preserve 444 original attendance game IDs. No merging, publication, deployment or 2016-and-older approval.",
+  "progress": {
+    "original_attendance_games": 1,
+    "official_game_identity_matches": 1,
+    "official_full_player_gamebook_direct_sources_located": 1,
+    "official_schedule_and_score_verified_full_gamebook_url_pending": 0,
+    "original_date_conflicts": 0,
+    "player_gamebooks_imported": 0,
+    "player_stat_rows_imported": 0
+  },
+  "source_schedule": "https://usdtoreros.com/sports/baseball/schedule/2017",
+  "notes": [
+    "2017 April 20 BYU 3 at USD 6 at Fowler Park. Original university historical full scorebook contains complete player batting/pitching tables, inning-by-inning scoring, substitutions, and W/L/S decisions.",
+    "The 2017 archive's only attended college game has one full gamebook source confirmed; player stats remain unimported."
+  ],
+  "rows": [
+    {
+      "game_id": "cb-2017-04-20-byu-san-diego-att0001",
+      "attendance_id": "cb-attended-0001",
+      "source_workbook_row": 2,
+      "original_date": "2017-04-20",
+      "away": "BYU",
+      "home": "San Diego",
+      "official_game_date": "2017-04-20",
+      "official_score": [
+        3,
+        6
+      ],
+      "official_identity_source": "https://usdtoreros.com/sports/baseball/schedule/2017",
+      "stat_import_status": "not_imported",
+      "full_player_gamebook_status": "exact_university_gamebook_source_identified",
+      "official_full_gamebook_url": "https://usandiego_ftp.sidearmsports.com/custompages/sports/m-basebl/stats/2016-201736.html",
+      "full_gamebook_source_type": "official_usd_historical_full_gamebook_html",
+      "official_first_pitch": "18:06",
+      "win": "Nick Sprengel",
+      "loss": "Maverik Buffo",
+      "save": "Troy Conyers",
+      "scorebook_game_code": "USD36",
+      "identity_match_status": "verified_date_teams_score_and_full_player_gamebook"
+    }
+  ]
+}

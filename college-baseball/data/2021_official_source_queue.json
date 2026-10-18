@@ -1,0 +1,683 @@
+{
+  "season": 2021,
+  "authorization": "2021 source discovery user approved October 17, 2026. Preserve all 444 original attendance records and prior years. Do not work on 2020 and before without authorization.",
+  "status": "PARTIAL_OFFICIAL_FULL_GAMEBOOK_SOURCE_DISCOVERY_PLAYER_LEVEL_IMPORT_PENDING",
+  "original_attendance_games": 32,
+  "progress": {
+    "full_gamebooks_verified_source_url": 27,
+    "ambiguous_one_of_two_complete_source_books": 1,
+    "official_game_record_but_full_stat_content_unreadable": 3,
+    "recap_only_full_source_pending": 1,
+    "stats_imported": 0
+  },
+  "original_month_totals": {
+    "2021-05": 5,
+    "2021-04": 7,
+    "2021-03": 14,
+    "2021-02": 6
+  },
+  "sources": [
+    "https://usdtoreros.com/sports/baseball/schedule/2021",
+    "https://usdtoreros.com/sports/baseball/stats/2021",
+    "https://ucsdtritons.com/sports/baseball/stats/2021",
+    "https://fullertontitans.com/sports/baseball/schedule/2021"
+  ],
+  "record_integrity": "Do not represent a schedule or recap as player-level boxscore, never auto-choose one of April 24 CSUB doubleheader candidates, no date changes to original attendance ids. All player-level imports remain pending.",
+  "source_queue": [
+    {
+      "game_id": "cb-2021-02-19-san-diego-san-diego-state-att0084",
+      "attendance_id": "cb-attended-0084",
+      "source_workbook_row": 85,
+      "original_date": "2021-02-19",
+      "away": "San Diego",
+      "home": "San Diego State",
+      "source_scope": "2021 four-year college baseball; exclude JUCO; includes Vanguard University (NAIA)",
+      "player_stat_import_status": "not_imported",
+      "official_date": "2021-02-19",
+      "official_score": [
+        7,
+        14
+      ],
+      "official_full_gamebook_url": "https://usdtoreros.com/sports/baseball/stats/2021/san-diego-state/boxscore/12045",
+      "source_type": "official_usd_university_full_player_gamebook",
+      "source_status": "official_full_gamebook_verified_source_url",
+      "source_sidearm_game_id": 12045,
+      "source_validation": "Official USD player-level Sidearm boxscore, matched by schedule date and final runs; source IDs independently checked for distinctive cases, index references checked for series."
+    },
+    {
+      "game_id": "cb-2021-02-20-san-diego-san-diego-state-att0085",
+      "attendance_id": "cb-attended-0085",
+      "source_workbook_row": 86,
+      "original_date": "2021-02-20",
+      "away": "San Diego",
+      "home": "San Diego State",
+      "source_scope": "2021 four-year college baseball; exclude JUCO; includes Vanguard University (NAIA)",
+      "player_stat_import_status": "not_imported",
+      "official_date": "2021-02-20",
+      "official_score": [
+        18,
+        19
+      ],
+      "official_full_gamebook_url": "https://usdtoreros.com/sports/baseball/stats/2021/san-diego-state/boxscore/12046",
+      "source_type": "official_usd_university_full_player_gamebook",
+      "source_status": "official_full_gamebook_verified_source_url",
+      "source_sidearm_game_id": 12046,
+      "source_validation": "Official USD player-level Sidearm boxscore, matched by schedule date and final runs; source IDs independently checked for distinctive cases, index references checked for series."
+    },
+    {
+      "game_id": "cb-2021-02-21-san-diego-state-san-diego-att0086",
+      "attendance_id": "cb-attended-0086",
+      "source_workbook_row": 87,
+      "original_date": "2021-02-21",
+      "away": "San Diego State",
+      "home": "San Diego",
+      "source_scope": "2021 four-year college baseball; exclude JUCO; includes Vanguard University (NAIA)",
+      "player_stat_import_status": "not_imported",
+      "official_date": "2021-02-21",
+      "official_score": [
+        12,
+        16
+      ],
+      "official_full_gamebook_url": "https://usdtoreros.com/sports/baseball/stats/2021/san-diego-state/boxscore/12047",
+      "source_type": "official_usd_university_full_player_gamebook",
+      "source_status": "official_full_gamebook_verified_source_url",
+      "source_sidearm_game_id": 12047,
+      "source_validation": "Official USD player-level Sidearm boxscore, matched by schedule date and final runs; source IDs independently checked for distinctive cases, index references checked for series."
+    },
+    {
+      "game_id": "cb-2021-02-26-cal-state-fullerton-san-diego-att0087",
+      "attendance_id": "cb-attended-0087",
+      "source_workbook_row": 88,
+      "original_date": "2021-02-26",
+      "away": "Cal State Fullerton",
+      "home": "San Diego",
+      "source_scope": "2021 four-year college baseball; exclude JUCO; includes Vanguard University (NAIA)",
+      "player_stat_import_status": "not_imported",
+      "official_date": "2021-02-26",
+      "official_score": [
+        1,
+        6
+      ],
+      "official_full_gamebook_url": "https://usdtoreros.com/sports/baseball/stats/2021/cal-state-fullerton/boxscore/12049",
+      "source_type": "official_usd_university_full_player_gamebook",
+      "source_status": "official_full_gamebook_verified_source_url",
+      "source_sidearm_game_id": 12049,
+      "source_validation": "Official USD player-level Sidearm boxscore, matched by schedule date and final runs; source IDs independently checked for distinctive cases, index references checked for series."
+    },
+    {
+      "game_id": "cb-2021-02-27-cal-state-fullerton-san-diego-att0088",
+      "attendance_id": "cb-attended-0088",
+      "source_workbook_row": 89,
+      "original_date": "2021-02-27",
+      "away": "Cal State Fullerton",
+      "home": "San Diego",
+      "source_scope": "2021 four-year college baseball; exclude JUCO; includes Vanguard University (NAIA)",
+      "player_stat_import_status": "not_imported",
+      "official_date": "2021-02-27",
+      "official_score": [
+        5,
+        6
+      ],
+      "official_full_gamebook_url": "https://usdtoreros.com/sports/baseball/stats/2021/cal-state-fullerton/boxscore/12050",
+      "source_type": "official_usd_university_full_player_gamebook",
+      "source_status": "official_full_gamebook_verified_source_url",
+      "source_sidearm_game_id": 12050,
+      "source_validation": "Official USD player-level Sidearm boxscore, matched by schedule date and final runs; source IDs independently checked for distinctive cases, index references checked for series."
+    },
+    {
+      "game_id": "cb-2021-02-28-cal-state-fullerton-san-diego-att0089",
+      "attendance_id": "cb-attended-0089",
+      "source_workbook_row": 90,
+      "original_date": "2021-02-28",
+      "away": "Cal State Fullerton",
+      "home": "San Diego",
+      "source_scope": "2021 four-year college baseball; exclude JUCO; includes Vanguard University (NAIA)",
+      "player_stat_import_status": "not_imported",
+      "official_date": "2021-02-28",
+      "official_score": [
+        5,
+        1
+      ],
+      "official_full_gamebook_url": "https://usdtoreros.com/sports/baseball/stats/2021/cal-state-fullerton/boxscore/12051",
+      "source_type": "official_usd_university_full_player_gamebook",
+      "source_status": "official_full_gamebook_verified_source_url",
+      "source_sidearm_game_id": 12051,
+      "source_validation": "Official USD player-level Sidearm boxscore, matched by schedule date and final runs; source IDs independently checked for distinctive cases, index references checked for series."
+    },
+    {
+      "game_id": "cb-2021-03-04-san-diego-uc-san-diego-att0090",
+      "attendance_id": "cb-attended-0090",
+      "source_workbook_row": 91,
+      "original_date": "2021-03-04",
+      "away": "San Diego",
+      "home": "UC San Diego",
+      "source_scope": "2021 four-year college baseball; exclude JUCO; includes Vanguard University (NAIA)",
+      "player_stat_import_status": "not_imported",
+      "official_date": "2021-03-04",
+      "official_score": [
+        12,
+        4
+      ],
+      "official_full_gamebook_url": "https://usdtoreros.com/sports/baseball/stats/2021/uc-san-diego/boxscore/12052",
+      "source_type": "official_usd_university_full_player_gamebook",
+      "source_status": "official_full_gamebook_verified_source_url",
+      "source_sidearm_game_id": 12052,
+      "source_validation": "Official USD player-level Sidearm boxscore, matched by schedule date and final runs; source IDs independently checked for distinctive cases, index references checked for series."
+    },
+    {
+      "game_id": "cb-2021-03-05-san-diego-uc-san-diego-att0091",
+      "attendance_id": "cb-attended-0091",
+      "source_workbook_row": 92,
+      "original_date": "2021-03-05",
+      "away": "San Diego",
+      "home": "UC San Diego",
+      "source_scope": "2021 four-year college baseball; exclude JUCO; includes Vanguard University (NAIA)",
+      "player_stat_import_status": "not_imported",
+      "official_date": "2021-03-05",
+      "official_score": [
+        15,
+        10
+      ],
+      "official_full_gamebook_url": "https://usdtoreros.com/sports/baseball/stats/2021/uc-san-diego/boxscore/12053",
+      "source_type": "official_usd_university_full_player_gamebook",
+      "source_status": "official_full_gamebook_verified_source_url",
+      "source_sidearm_game_id": 12053,
+      "source_validation": "Official USD player-level Sidearm boxscore, matched by schedule date and final runs; source IDs independently checked for distinctive cases, index references checked for series."
+    },
+    {
+      "game_id": "cb-2021-03-06-uc-san-diego-san-diego-att0092",
+      "attendance_id": "cb-attended-0092",
+      "source_workbook_row": 93,
+      "original_date": "2021-03-06",
+      "away": "UC San Diego",
+      "home": "San Diego",
+      "source_scope": "2021 four-year college baseball; exclude JUCO; includes Vanguard University (NAIA)",
+      "player_stat_import_status": "not_imported",
+      "official_date": "2021-03-06",
+      "official_score": [
+        2,
+        10
+      ],
+      "official_full_gamebook_url": "https://usdtoreros.com/sports/baseball/stats/2021/uc-san-diego/boxscore/12054",
+      "source_type": "official_usd_university_full_player_gamebook",
+      "source_status": "official_full_gamebook_verified_source_url",
+      "source_sidearm_game_id": 12054,
+      "source_validation": "Official USD player-level Sidearm boxscore, matched by schedule date and final runs; source IDs independently checked for distinctive cases, index references checked for series."
+    },
+    {
+      "game_id": "cb-2021-03-07-uc-san-diego-san-diego-att0093",
+      "attendance_id": "cb-attended-0093",
+      "source_workbook_row": 94,
+      "original_date": "2021-03-07",
+      "away": "UC San Diego",
+      "home": "San Diego",
+      "source_scope": "2021 four-year college baseball; exclude JUCO; includes Vanguard University (NAIA)",
+      "player_stat_import_status": "not_imported",
+      "official_date": "2021-03-07",
+      "official_score": [
+        2,
+        8
+      ],
+      "official_full_gamebook_url": "https://usdtoreros.com/sports/baseball/stats/2021/uc-san-diego/boxscore/12055",
+      "source_type": "official_usd_university_full_player_gamebook",
+      "source_status": "official_full_gamebook_verified_source_url",
+      "source_sidearm_game_id": 12055,
+      "source_validation": "Official USD player-level Sidearm boxscore, matched by schedule date and final runs; source IDs independently checked for distinctive cases, index references checked for series."
+    },
+    {
+      "game_id": "cb-2021-03-11-santa-clara-uc-san-diego-att0094",
+      "attendance_id": "cb-attended-0094",
+      "source_workbook_row": 95,
+      "original_date": "2021-03-11",
+      "away": "Santa Clara",
+      "home": "UC San Diego",
+      "source_scope": "2021 four-year college baseball; exclude JUCO; includes Vanguard University (NAIA)",
+      "player_stat_import_status": "not_imported",
+      "official_date": "2021-03-11",
+      "official_score": [
+        6,
+        4
+      ],
+      "official_full_gamebook_url": "https://ucsdtritons.com/sports/baseball/stats/2021/santa-clara/boxscore/8205",
+      "alternate_official_full_gamebook": "https://santaclarabroncos.com/sports/baseball/stats/2021/uc-san-diego/boxscore/1216",
+      "source_type": "official_ucsd_university_full_player_gamebook",
+      "source_status": "official_full_gamebook_verified_source_url"
+    },
+    {
+      "game_id": "cb-2021-03-12-uc-riverside-san-diego-att0095",
+      "attendance_id": "cb-attended-0095",
+      "source_workbook_row": 96,
+      "original_date": "2021-03-12",
+      "away": "UC Riverside",
+      "home": "San Diego",
+      "source_scope": "2021 four-year college baseball; exclude JUCO; includes Vanguard University (NAIA)",
+      "player_stat_import_status": "not_imported",
+      "official_date": "2021-03-12",
+      "official_score": [
+        4,
+        16
+      ],
+      "official_full_gamebook_url": "https://usdtoreros.com/sports/baseball/stats/2021/uc-riverside/boxscore/12056",
+      "source_type": "official_usd_university_full_player_gamebook",
+      "source_status": "official_full_gamebook_verified_source_url",
+      "source_sidearm_game_id": 12056,
+      "source_validation": "Official USD player-level Sidearm boxscore, matched by schedule date and final runs; source IDs independently checked for distinctive cases, index references checked for series."
+    },
+    {
+      "game_id": "cb-2021-03-13-uc-riverside-san-diego-att0096",
+      "attendance_id": "cb-attended-0096",
+      "source_workbook_row": 97,
+      "original_date": "2021-03-13",
+      "away": "UC Riverside",
+      "home": "San Diego",
+      "source_scope": "2021 four-year college baseball; exclude JUCO; includes Vanguard University (NAIA)",
+      "player_stat_import_status": "not_imported",
+      "official_date": "2021-03-13",
+      "official_score": [
+        0,
+        7
+      ],
+      "official_full_gamebook_url": "https://usdtoreros.com/sports/baseball/stats/2021/uc-riverside/boxscore/12057",
+      "source_type": "official_usd_university_full_player_gamebook",
+      "source_status": "official_full_gamebook_verified_source_url",
+      "source_sidearm_game_id": 12057,
+      "source_validation": "Official USD player-level Sidearm boxscore, matched by schedule date and final runs; source IDs independently checked for distinctive cases, index references checked for series."
+    },
+    {
+      "game_id": "cb-2021-03-13-uc-riverside-san-diego-att0097",
+      "attendance_id": "cb-attended-0097",
+      "source_workbook_row": 98,
+      "original_date": "2021-03-13",
+      "away": "UC Riverside",
+      "home": "San Diego",
+      "source_scope": "2021 four-year college baseball; exclude JUCO; includes Vanguard University (NAIA)",
+      "player_stat_import_status": "not_imported",
+      "official_date": "2021-03-13",
+      "official_score": [
+        0,
+        9
+      ],
+      "official_full_gamebook_url": "https://usdtoreros.com/sports/baseball/stats/2021/uc-riverside/boxscore/12117",
+      "source_type": "official_usd_university_full_player_gamebook",
+      "source_status": "official_full_gamebook_verified_source_url",
+      "source_sidearm_game_id": 12117,
+      "source_validation": "Official USD player-level Sidearm boxscore, matched by schedule date and final runs; source IDs independently checked for distinctive cases, index references checked for series."
+    },
+    {
+      "game_id": "cb-2021-03-14-uc-riverside-san-diego-att0098",
+      "attendance_id": "cb-attended-0098",
+      "source_workbook_row": 99,
+      "original_date": "2021-03-14",
+      "away": "UC Riverside",
+      "home": "San Diego",
+      "source_scope": "2021 four-year college baseball; exclude JUCO; includes Vanguard University (NAIA)",
+      "player_stat_import_status": "not_imported",
+      "official_date": "2021-03-14",
+      "official_score": [
+        4,
+        5
+      ],
+      "official_full_gamebook_url": "https://usdtoreros.com/sports/baseball/stats/2021/uc-riverside/boxscore/12058",
+      "source_type": "official_usd_university_full_player_gamebook",
+      "source_status": "official_full_gamebook_verified_source_url",
+      "source_sidearm_game_id": 12058,
+      "source_validation": "Official USD player-level Sidearm boxscore, matched by schedule date and final runs; source IDs independently checked for distinctive cases, index references checked for series."
+    },
+    {
+      "game_id": "cb-2021-03-23-san-diego-southern-california-att0099",
+      "attendance_id": "cb-attended-0099",
+      "source_workbook_row": 100,
+      "original_date": "2021-03-23",
+      "away": "San Diego",
+      "home": "Southern California",
+      "source_scope": "2021 four-year college baseball; exclude JUCO; includes Vanguard University (NAIA)",
+      "player_stat_import_status": "not_imported",
+      "official_date": "2021-03-23",
+      "official_score": [
+        6,
+        5
+      ],
+      "official_full_gamebook_url": "https://usdtoreros.com/sports/baseball/stats/2021/usc/boxscore/12062",
+      "source_type": "official_usd_university_full_player_gamebook",
+      "source_status": "official_full_gamebook_verified_source_url",
+      "source_sidearm_game_id": 12062,
+      "source_validation": "Official USD player-level Sidearm boxscore, matched by schedule date and final runs; source IDs independently checked for distinctive cases, index references checked for series."
+    },
+    {
+      "game_id": "cb-2021-03-26-pacific-san-diego-att0100",
+      "attendance_id": "cb-attended-0100",
+      "source_workbook_row": 101,
+      "original_date": "2021-03-26",
+      "away": "Pacific",
+      "home": "San Diego",
+      "source_scope": "2021 four-year college baseball; exclude JUCO; includes Vanguard University (NAIA)",
+      "player_stat_import_status": "not_imported",
+      "official_date": "2021-03-26",
+      "official_score": [
+        1,
+        3
+      ],
+      "official_full_gamebook_url": "https://usdtoreros.com/sports/baseball/stats/2021/pacific/boxscore/12063",
+      "source_type": "official_usd_university_full_player_gamebook",
+      "source_status": "official_full_gamebook_verified_source_url",
+      "source_sidearm_game_id": 12063,
+      "source_validation": "Official USD player-level Sidearm boxscore, matched by schedule date and final runs; source IDs independently checked for distinctive cases, index references checked for series."
+    },
+    {
+      "game_id": "cb-2021-03-27-pacific-san-diego-att0101",
+      "attendance_id": "cb-attended-0101",
+      "source_workbook_row": 102,
+      "original_date": "2021-03-27",
+      "away": "Pacific",
+      "home": "San Diego",
+      "source_scope": "2021 four-year college baseball; exclude JUCO; includes Vanguard University (NAIA)",
+      "player_stat_import_status": "not_imported",
+      "official_date": "2021-03-27",
+      "official_score": [
+        3,
+        15
+      ],
+      "official_full_gamebook_url": "https://usdtoreros.com/sports/baseball/stats/2021/pacific/boxscore/12064",
+      "source_type": "official_usd_university_full_player_gamebook",
+      "source_status": "official_full_gamebook_verified_source_url",
+      "source_sidearm_game_id": 12064,
+      "source_validation": "Official USD player-level Sidearm boxscore, matched by schedule date and final runs; source IDs independently checked for distinctive cases, index references checked for series."
+    },
+    {
+      "game_id": "cb-2021-03-28-pacific-san-diego-att0102",
+      "attendance_id": "cb-attended-0102",
+      "source_workbook_row": 103,
+      "original_date": "2021-03-28",
+      "away": "Pacific",
+      "home": "San Diego",
+      "source_scope": "2021 four-year college baseball; exclude JUCO; includes Vanguard University (NAIA)",
+      "player_stat_import_status": "not_imported",
+      "official_date": "2021-03-28",
+      "official_score": [
+        1,
+        5
+      ],
+      "official_full_gamebook_url": "https://usdtoreros.com/sports/baseball/stats/2021/pacific/boxscore/12065",
+      "source_type": "official_usd_university_full_player_gamebook",
+      "source_status": "official_full_gamebook_verified_source_url",
+      "source_sidearm_game_id": 12065,
+      "source_validation": "Official USD player-level Sidearm boxscore, matched by schedule date and final runs; source IDs independently checked for distinctive cases, index references checked for series."
+    },
+    {
+      "game_id": "cb-2021-03-30-vanguard-san-diego-att0103",
+      "attendance_id": "cb-attended-0103",
+      "source_workbook_row": 104,
+      "original_date": "2021-03-30",
+      "away": "Vanguard",
+      "home": "San Diego",
+      "source_scope": "2021 four-year college baseball; exclude JUCO; includes Vanguard University (NAIA)",
+      "player_stat_import_status": "not_imported",
+      "official_date": "2021-03-30",
+      "official_score": [
+        4,
+        10
+      ],
+      "official_full_gamebook_url": "https://usdtoreros.com/sports/baseball/stats/2021/vanguard-university-calif-/boxscore/12066",
+      "source_type": "official_usd_university_full_player_gamebook",
+      "source_status": "official_full_gamebook_verified_source_url",
+      "source_sidearm_game_id": 12066,
+      "source_validation": "Official USD player-level Sidearm boxscore, matched by schedule date and final runs; source IDs independently checked for distinctive cases, index references checked for series."
+    },
+    {
+      "game_id": "cb-2021-04-02-san-diego-cal-state-fullerton-att0104",
+      "attendance_id": "cb-attended-0104",
+      "source_workbook_row": 105,
+      "original_date": "2021-04-02",
+      "away": "San Diego",
+      "home": "Cal State Fullerton",
+      "source_scope": "2021 four-year college baseball; exclude JUCO; includes Vanguard University (NAIA)",
+      "player_stat_import_status": "not_imported",
+      "official_date": "2021-04-02",
+      "official_score": [
+        1,
+        3
+      ],
+      "official_recap": "https://fullertontitans.com/news/2021/4/2/4_2_2021_2588.aspx",
+      "official_team_schedule": "https://fullertontitans.com/sports/baseball/schedule/2021",
+      "source_type": "official_university_recap_and_schedule",
+      "source_status": "complete_player_gamebook_url_not_yet_located",
+      "note": "Friday April 2 road loss 1–3 at Cal State Fullerton (Goodwin Field); do not mistake the official April 3 home box score for this game."
+    },
+    {
+      "game_id": "cb-2021-04-03-cal-state-fullerton-san-diego-att0105",
+      "attendance_id": "cb-attended-0105",
+      "source_workbook_row": 106,
+      "original_date": "2021-04-03",
+      "away": "Cal State Fullerton",
+      "home": "San Diego",
+      "source_scope": "2021 four-year college baseball; exclude JUCO; includes Vanguard University (NAIA)",
+      "player_stat_import_status": "not_imported",
+      "official_date": "2021-04-03",
+      "official_score": [
+        2,
+        8
+      ],
+      "official_full_gamebook_url": "https://usdtoreros.com/sports/baseball/stats/2021/cal-state-fullerton/boxscore/12126",
+      "source_type": "official_usd_university_full_player_gamebook",
+      "source_status": "official_full_gamebook_verified_source_url",
+      "source_sidearm_game_id": 12126,
+      "source_validation": "Official USD player-level Sidearm boxscore, matched by schedule date and final runs; source IDs independently checked for distinctive cases, index references checked for series."
+    },
+    {
+      "game_id": "cb-2021-04-16-san-francisco-san-diego-att0106",
+      "attendance_id": "cb-attended-0106",
+      "source_workbook_row": 107,
+      "original_date": "2021-04-16",
+      "away": "San Francisco",
+      "home": "San Diego",
+      "source_scope": "2021 four-year college baseball; exclude JUCO; includes Vanguard University (NAIA)",
+      "player_stat_import_status": "not_imported",
+      "official_date": "2021-04-16",
+      "official_score": [
+        12,
+        1
+      ],
+      "official_full_gamebook_url": "https://usdtoreros.com/sports/baseball/stats/2021/san-francisco/boxscore/12076",
+      "source_type": "official_usd_university_full_player_gamebook",
+      "source_status": "official_full_gamebook_verified_source_url",
+      "source_sidearm_game_id": 12076,
+      "source_validation": "Official USD player-level Sidearm boxscore, matched by schedule date and final runs; source IDs independently checked for distinctive cases, index references checked for series."
+    },
+    {
+      "game_id": "cb-2021-04-17-san-francisco-san-diego-att0107",
+      "attendance_id": "cb-attended-0107",
+      "source_workbook_row": 108,
+      "original_date": "2021-04-17",
+      "away": "San Francisco",
+      "home": "San Diego",
+      "source_scope": "2021 four-year college baseball; exclude JUCO; includes Vanguard University (NAIA)",
+      "player_stat_import_status": "not_imported",
+      "official_date": "2021-04-17",
+      "official_score": [
+        5,
+        7
+      ],
+      "official_full_gamebook_url": "https://usdtoreros.com/sports/baseball/stats/2021/san-francisco/boxscore/12077",
+      "source_type": "official_usd_university_full_player_gamebook",
+      "source_status": "official_full_gamebook_verified_source_url",
+      "source_sidearm_game_id": 12077,
+      "source_validation": "Official USD player-level Sidearm boxscore, matched by schedule date and final runs; source IDs independently checked for distinctive cases, index references checked for series."
+    },
+    {
+      "game_id": "cb-2021-04-18-san-francisco-san-diego-att0108",
+      "attendance_id": "cb-attended-0108",
+      "source_workbook_row": 109,
+      "original_date": "2021-04-18",
+      "away": "San Francisco",
+      "home": "San Diego",
+      "source_scope": "2021 four-year college baseball; exclude JUCO; includes Vanguard University (NAIA)",
+      "player_stat_import_status": "not_imported",
+      "official_date": "2021-04-18",
+      "official_score": [
+        1,
+        8
+      ],
+      "official_full_gamebook_url": "https://usdtoreros.com/sports/baseball/stats/2021/san-francisco/boxscore/12078",
+      "source_type": "official_usd_university_full_player_gamebook",
+      "source_status": "official_full_gamebook_verified_source_url",
+      "source_sidearm_game_id": 12078,
+      "source_validation": "Official USD player-level Sidearm boxscore, matched by schedule date and final runs; source IDs independently checked for distinctive cases, index references checked for series."
+    },
+    {
+      "game_id": "cb-2021-04-24-cal-state-bakersfield-uc-san-diego-att0109",
+      "attendance_id": "cb-attended-0109",
+      "source_workbook_row": 110,
+      "original_date": "2021-04-24",
+      "away": "Cal State Bakersfield",
+      "home": "UC San Diego",
+      "source_scope": "2021 four-year college baseball; exclude JUCO; includes Vanguard University (NAIA)",
+      "player_stat_import_status": "not_imported",
+      "official_date": "2021-04-24",
+      "official_score": null,
+      "official_full_gamebook_candidates": [
+        {
+          "first_pitch": "12:03 pm",
+          "official_score": [
+            3,
+            2
+          ],
+          "official_full_gamebook_url": "https://ucsdtritons.com/sports/baseball/stats/2021/csu-bakersfield/boxscore/8289",
+          "name": "CSU Bakersfield 3, UC San Diego 2"
+        },
+        {
+          "first_pitch": "3:32 pm",
+          "official_score": [
+            1,
+            7
+          ],
+          "official_full_gamebook_url": "https://ucsdtritons.com/sports/baseball/stats/2021/csu-bakersfield/boxscore/8292",
+          "name": "CSU Bakersfield 1, UC San Diego 7"
+        }
+      ],
+      "source_type": "official_ucsd_two_separate_full_gamebook_candidates",
+      "source_status": "two_official_full_gamebooks_but_attended_game_identity_unknown",
+      "needs_user_confirmation": true,
+      "note": "April 24 is a doubleheader but original attendance worksheet has only ONE entry. Do not assign either candidate until user specifies which game they attended."
+    },
+    {
+      "game_id": "cb-2021-04-30-pepperdine-san-diego-att0110",
+      "attendance_id": "cb-attended-0110",
+      "source_workbook_row": 111,
+      "original_date": "2021-04-30",
+      "away": "Pepperdine",
+      "home": "San Diego",
+      "source_scope": "2021 four-year college baseball; exclude JUCO; includes Vanguard University (NAIA)",
+      "player_stat_import_status": "not_imported",
+      "official_date": "2021-04-30",
+      "official_score": [
+        3,
+        8
+      ],
+      "official_full_gamebook_url": "https://usdtoreros.com/sports/baseball/stats/2021/pepperdine/boxscore/12128",
+      "source_type": "official_usd_university_full_player_gamebook",
+      "source_status": "official_full_gamebook_verified_source_url",
+      "source_sidearm_game_id": 12128,
+      "source_validation": "Official USD player-level Sidearm boxscore, matched by schedule date and final runs; source IDs independently checked for distinctive cases, index references checked for series."
+    },
+    {
+      "game_id": "cb-2021-05-01-pepperdine-san-diego-att0111",
+      "attendance_id": "cb-attended-0111",
+      "source_workbook_row": 112,
+      "original_date": "2021-05-01",
+      "away": "Pepperdine",
+      "home": "San Diego",
+      "source_scope": "2021 four-year college baseball; exclude JUCO; includes Vanguard University (NAIA)",
+      "player_stat_import_status": "not_imported",
+      "official_date": "2021-05-01",
+      "official_score": [
+        6,
+        7
+      ],
+      "official_full_gamebook_url": "https://usdtoreros.com/sports/baseball/stats/2021/pepperdine/boxscore/12129",
+      "source_type": "official_usd_university_full_player_gamebook",
+      "source_status": "official_full_gamebook_verified_source_url",
+      "source_sidearm_game_id": 12129,
+      "source_validation": "Official USD player-level Sidearm boxscore, matched by schedule date and final runs; source IDs independently checked for distinctive cases, index references checked for series."
+    },
+    {
+      "game_id": "cb-2021-05-02-pepperdine-san-diego-att0112",
+      "attendance_id": "cb-attended-0112",
+      "source_workbook_row": 113,
+      "original_date": "2021-05-02",
+      "away": "Pepperdine",
+      "home": "San Diego",
+      "source_scope": "2021 four-year college baseball; exclude JUCO; includes Vanguard University (NAIA)",
+      "player_stat_import_status": "not_imported",
+      "official_date": "2021-05-02",
+      "official_score": [
+        9,
+        10
+      ],
+      "official_full_gamebook_url": "https://usdtoreros.com/sports/baseball/stats/2021/pepperdine/boxscore/12130",
+      "source_type": "official_usd_university_full_player_gamebook",
+      "source_status": "official_full_gamebook_verified_source_url",
+      "source_sidearm_game_id": 12130,
+      "source_validation": "Official USD player-level Sidearm boxscore, matched by schedule date and final runs; source IDs independently checked for distinctive cases, index references checked for series."
+    },
+    {
+      "game_id": "cb-2021-05-06-byu-san-diego-att0113",
+      "attendance_id": "cb-attended-0113",
+      "source_workbook_row": 114,
+      "original_date": "2021-05-06",
+      "away": "BYU",
+      "home": "San Diego",
+      "source_scope": "2021 four-year college baseball; exclude JUCO; includes Vanguard University (NAIA)",
+      "player_stat_import_status": "not_imported",
+      "official_date": "2021-05-06",
+      "official_score": [
+        6,
+        4
+      ],
+      "official_game_record_url": "https://byucougars.com/boxscore/1560",
+      "official_university_schedule": "https://usdtoreros.com/sports/baseball/schedule/2021",
+      "source_type": "official_byu_university_boxscore_page",
+      "source_status": "official_game_page_located_but_player_tables_not_accessible_in_text_retrieval",
+      "note": "Official BYU game and score page confirmed but content loads via JavaScript; full player rows not yet verified. 2021 USD gamebook source still required for standard importer."
+    },
+    {
+      "game_id": "cb-2021-05-07-byu-san-diego-att0114",
+      "attendance_id": "cb-attended-0114",
+      "source_workbook_row": 115,
+      "original_date": "2021-05-07",
+      "away": "BYU",
+      "home": "San Diego",
+      "source_scope": "2021 four-year college baseball; exclude JUCO; includes Vanguard University (NAIA)",
+      "player_stat_import_status": "not_imported",
+      "official_date": "2021-05-07",
+      "official_score": [
+        11,
+        10
+      ],
+      "official_game_record_url": "https://byucougars.com/boxscore/1561",
+      "official_university_schedule": "https://usdtoreros.com/sports/baseball/schedule/2021",
+      "source_type": "official_byu_university_boxscore_page",
+      "source_status": "official_game_page_located_but_player_tables_not_accessible_in_text_retrieval",
+      "note": "Official BYU game and score page confirmed but content loads via JavaScript; full player rows not yet verified. 2021 USD gamebook source still required for standard importer."
+    },
+    {
+      "game_id": "cb-2021-05-08-byu-san-diego-att0115",
+      "attendance_id": "cb-attended-0115",
+      "source_workbook_row": 116,
+      "original_date": "2021-05-08",
+      "away": "BYU",
+      "home": "San Diego",
+      "source_scope": "2021 four-year college baseball; exclude JUCO; includes Vanguard University (NAIA)",
+      "player_stat_import_status": "not_imported",
+      "official_date": "2021-05-08",
+      "official_score": [
+        12,
+        13
+      ],
+      "official_game_record_url": "https://byucougars.com/boxscore/1562",
+      "official_university_schedule": "https://usdtoreros.com/sports/baseball/schedule/2021",
+      "source_type": "official_byu_university_boxscore_page",
+      "source_status": "official_game_page_located_but_player_tables_not_accessible_in_text_retrieval",
+      "note": "Official BYU game and score page confirmed but content loads via JavaScript; full player rows not yet verified. 2021 USD gamebook source still required for standard importer."
+    }
+  ]
+}

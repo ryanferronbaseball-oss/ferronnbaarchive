@@ -1,0 +1,62 @@
+{
+  "season": 2019,
+  "status": "SOURCE_DISCOVERY_41_OF_41_PLAYER_IMPORT_0_OF_41",
+  "review_date": "2026-10-17",
+  "original_attendance_file": "data/games.json",
+  "original_archive_game_count": 444,
+  "previous_2024_2026_verified_full_gamebooks_preserved": 213,
+  "previous_2024_2026_player_rows_preserved": 6316,
+  "scope": "Keep original attended game IDs, original row numbers and attendance dates immutable. Exclude JUCO. Source discovery != player stats imported. 2018 and earlier, publication, merge not authorized.",
+  "original_attendance_games": 41,
+  "official_full_player_gamebooks_located": 41,
+  "fully_date_matched": 41,
+  "original_date_reconciliation_required": 0,
+  "complete_player_gamebooks_imported": 0,
+  "months": {
+    "2019-02": {
+      "attendance_games": 11,
+      "official_full_gamebooks_located": 11,
+      "date_conflicts": 0,
+      "full_gamebooks_imported": 0
+    },
+    "2019-03": {
+      "attendance_games": 13,
+      "official_full_gamebooks_located": 13,
+      "date_conflicts": 0,
+      "full_gamebooks_imported": 0
+    },
+    "2019-04": {
+      "attendance_games": 9,
+      "official_full_gamebooks_located": 9,
+      "date_conflicts": 0,
+      "full_gamebooks_imported": 0
+    },
+    "2019-05": {
+      "attendance_games": 8,
+      "official_full_gamebooks_located": 8,
+      "date_conflicts": 0,
+      "full_gamebooks_imported": 0
+    }
+  },
+  "source_file": "data/2019_official_source_queue.json",
+  "notes": [
+    "2019 Tony Gwynn Legacy non-USD hosted gamebooks matched from UC Irvine at San Diego State February 19, Fresno State at Kansas State February 22, Kansas State at Utah February 23, and Cal State Fullerton at Oklahoma February 24; all are official university player-level gamebooks.",
+    "Wagner at USD February 16 has two games, but USD cumulative season game-by-game lists the 3–1 second game ahead of the 15–9 opener. University gamebook actual start times and USD season schedule confirm 15–9 first, 3–1 second.",
+    "March 3 Saint John's at San Diego official game went 10 innings; April 18 San Diego 4–3 Portland also went 10 innings. Preserve exact official inning structures."
+  ],
+  "doubleheader": {
+    "date": "2019-02-16",
+    "first": {
+      "game_id": "cb-2019-02-16-wagner-san-diego-att0033",
+      "first_pitch": "1:03 pm",
+      "score": "Wagner 9, San Diego 15",
+      "boxscore": "https://usdtoreros.com/boxscore.aspx?id=8231&path=baseball"
+    },
+    "second": {
+      "game_id": "cb-2019-02-16-wagner-san-diego-att0034",
+      "first_pitch": "5:09 pm",
+      "score": "Wagner 1, San Diego 3",
+      "boxscore": "https://usdtoreros.com/boxscore.aspx?id=8232&path=baseball"
+    }
+  }
+}

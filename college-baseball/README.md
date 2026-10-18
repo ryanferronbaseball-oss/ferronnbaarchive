@@ -1,29 +1,40 @@
 # College Baseball · Courtside Archive
 
-**Status (October 17, 2026):** Unpublished draft PR #10: **396/444 original attended college games have fully imported source-verified player box scores, with 11,933 individual player-game rows**. 7 JUCO attendance rows are excluded from gamebook/stat backfill; 41 other historical games remain subject to strict source parsing, original date, lineup, or PDF accessibility holds. Year-by-year verified: **2017 0/1 · 2018 11/30 · 2019 38/41 · 2020 9/11 · 2021 32/32 · 2022 55/62 · 2023 38/47 · 2024 71/71 · 2025 74/74 · 2026 68/68**. Original 444 attendance IDs preserved. Nothing merged or published.
+**Current verified status (October 17, 2026):** Unpublished draft PR #10 contains **432/437 eligible attended college baseball games with fully imported, original-source-verified player box scores** and **13,028 player-game rows**. All **444 original attendance IDs** remain intact. Seven JUCO attendance games are excluded from player-stat backfill. **Five 2018 games remain**, listed below. Nothing has merged into production or been deployed.
 
-The site lives under \`/college-baseball/\`, with independent college baseball stats and verified inter-level player IDs only. It shares the exact MLB archive design system for Inter fonts, navigation, scoreboards, box-score layout, cards, responsive tables, and bat-order number column.
+The site lives under `/college-baseball/`, with independent college baseball stats and verified inter-level player IDs only. It shares the MLB archive design system: Inter fonts, navigation, scoreboards, box-score layout, player cards, responsive tables, and numbered batting-order slots.
 
-## October 17, 2026 — Real historical player-stat import status (supersedes pre-import research notes below)
+## October 17, 2026 — authoritative post-verification import status
 
-**The historical gamebooks have now been imported into the site data wherever the official batting, pitching, scorer decisions, line-score innings, and nine-slot lineups reconcile.** The committed [real player-stat import audits](data/2023_historical_stat_import_audit.json) report season-by-season exception details, and `data/player_stats.json` now has **11,933 player-game rows**, up from 6,316 when 2017–2023 player imports began. Full source-verified attendance gamebooks now total **396**, including the entire **2021 season (32/32)**. May 2023 was the initial 10-game success pilot; the newest-to-oldest audit subsequently imported the remaining source-valid years. Confirmed 2020 March 11 Cal Baptist–USD and 2021 April 24 CSU Bakersfield–UC San Diego Game 1 are included, with original worksheet dates/IDs preserved.
+The original university batting, pitching, scorer decisions, inning totals, and nine-slot starting lineups are source-validated by `scripts/import_historical_verified_queue.py`. The latest [2018 incomplete-game audit](data/2018_historical_stat_import_audit.json), [2022 complete-game audit](data/2022_historical_stat_import_audit.json), [2023 complete-game audit](data/2023_historical_stat_import_audit.json), and `data/import_report.json` determine actual completion—not the older source discovery notes below.
 
-| Year | Full player gamebooks imported | Original attended games |
+| Season | Fully verified player gamebooks | Eligible attended games |
 |---|---:|---:|
-| 2017 | 0 | 1 |
-| 2018 | 11 | 30 |
-| 2019 | 38 | 41 |
-| 2020 | 9 | 11 |
+| 2017 | 1 | 1 |
+| 2018 | 25 | 30 |
+| 2019 | 41 | 41 |
+| 2020 | 11 | 11 |
 | 2021 | 32 | 32 |
-| 2022 | 55 | 62 |
-| 2023 | 38 | 47 |
+| 2022 | 62 | 62 |
+| 2023 | 47 | 47 |
 | 2024 | 71 | 71 |
 | 2025 | 74 | 74 |
-| 2026 | 68 | 68 eligible, plus 7 JUCO attendance rows excluded |
+| 2026 | 68 | 68 |
+| **Total** | **432** | **437** |
 
-**41 non-JUCO historical games remain in review**, including unusable PDF landing pages, source lineup substitution ambiguities, a seven-inning 2023 draw, three unreconciled 2023 date conflicts, one unreconciled 2022 date conflict, and four source-order-confirmation holds for two 2022 doubleheaders. These require source-specific fixes rather than invented stats. The May 9, 2018 ASU–USD game already has user-supplied player tables and individually reconstructed hitter strikeouts in `data/2018_05_09_asu_san_diego_screenshot_evidence.json` but awaits verified inning line and true batting-order slots to qualify for a full gamebook import.
+All four previously held 2022–2023 attendance date conflicts were **explicitly confirmed by the user October 17, 2026** and imported. Actual site dates now match their original university gamebooks; each record also keeps `original_worksheet_date`, `date_correction_user_confirmed`, original source worksheet row and immutable game ID. The 2022 Gonzaga–San Diego and San Diego–Portland two-game doubleheaders were imported separately, matching both start times and scores. The official 2023 seven-inning Nebraska–San Diego 16–16 tie retains no win, loss or save.
 
-**No publication or merge was authorized.** The source-discovery paragraphs below were written *before* player-stat imports and are retained as a research chronology; their earlier `0 imported` numbers are historical, not current.
+**The only five unimported games, all from 2018:**
+
+1. February 18, Cincinnati at San Diego **Game 1** (Cincinnati 7–4, ten innings): official match identified; source PDF download still not consumable by the importer.
+2. February 18, Cincinnati at San Diego **Game 2** (San Diego 4–3): independently matched gamebook; official PDF download still not consumable by the importer.
+3. March 13, San Diego State at San Diego (SDSU 9–3): user-supplied original university full PDF and its exact extracted scorebook text are preserved in `data/official_pdf_transcriptions/2018_03_13_sdsu_san_diego.txt`; strict player-stat parser/import remains.
+4. April 14, Saint Mary's at San Diego (Saint Mary's 6–5): user-supplied original university full PDF and its exact extracted scorebook text are preserved in `data/official_pdf_transcriptions/2018_04_14_saint_marys_san_diego.txt`; strict player-stat parser/import remains.
+5. May 9, Arizona State at San Diego (ASU 12–7): complete official batting/pitching screenshot evidence and user's individually reconciled batter strikeouts preserved in `data/2018_05_09_asu_san_diego_screenshot_evidence.json`; full inning line and exact substitutes' slots still require source corroboration.
+
+Do not mark a source-matched game as imported until all individual player rows, inning R/H/E, pitcher decisions and nine batting slots pass the same stringent checks. No JUCO backfill. **No publication, production merge, or live-site deployment was authorized.**
+
+The sections below are a **preserved historical discovery timeline**. Their earlier claims such as “0 imports,” “41 pending,” or incomplete year totals were snapshots written *before* the source-verified imports and are no longer current.
 
 ## 2017–2018 backfill — all gamebooks identified and full player tables evidenced (October 17, 2026)
 

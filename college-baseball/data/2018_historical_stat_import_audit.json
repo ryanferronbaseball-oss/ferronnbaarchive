@@ -5,9 +5,9 @@
   "status": "PARTIAL_REVIEW_REQUIRED",
   "original_attendance_games": 444,
   "verified_this_run": 1,
-  "verified_in_season": 24,
-  "verified_overall": 423,
-  "player_game_rows_total": 12758,
+  "verified_in_season": 25,
+  "verified_overall": 424,
+  "player_game_rows_total": 12794,
   "already_verified": [
     "cb-2018-05-08-uc-riverside-san-diego-att0030",
     "cb-2018-05-06-gonzaga-san-diego-att0029",
@@ -17,6 +17,7 @@
     "cb-2018-04-08-loyola-marymount-san-diego-att0024",
     "cb-2018-04-07-loyola-marymount-san-diego-att0023",
     "cb-2018-04-06-loyola-marymount-san-diego-att0022",
+    "cb-2018-04-03-uc-irvine-san-diego-att0021",
     "cb-2018-03-18-santa-clara-san-diego-att0020",
     "cb-2018-03-17-santa-clara-san-diego-att0019",
     "cb-2018-03-16-santa-clara-san-diego-att0018",
@@ -35,108 +36,104 @@
   ],
   "completed": [
     {
-      "game_id": "cb-2018-04-03-uc-irvine-san-diego-att0021",
-      "player_rows": 41,
-      "source_url": "https://ucirvinesports.com/sports/baseball/stats/2018/san-diego/boxscore/5047",
-      "win": "Evan McMillin",
-      "loss": "Anthony Donatella",
+      "game_id": "cb-2018-03-04-indiana-san-diego-att0016",
+      "player_rows": 36,
+      "source_url": "https://iuhoosiers.com/sports/baseball/stats/2018/-13-san-diego/boxscore/13860",
+      "win": "Cameron Beauchamp",
+      "loss": "Nate Walker",
       "source_audit": {
-        "game_id": "cb-2018-04-03-uc-irvine-san-diego-att0021",
-        "source": "https://ucirvinesports.com/sports/baseball/stats/2018/san-diego/boxscore/5047",
+        "game_id": "cb-2018-03-04-indiana-san-diego-att0016",
+        "source": "https://iuhoosiers.com/sports/baseball/stats/2018/-13-san-diego/boxscore/13860",
         "http_code": 200,
-        "source_bytes": 1522362,
-        "source_sha256": "c41874e95b587b0a91fdf2597aa5926d20f2896002244bf8b807d5422463f9fb",
+        "source_bytes": 1162199,
+        "source_sha256": "d54e4bf9d0f792c0695bd2b61196591df15d3cc426e832812db060a3a08acbbf",
         "teams": [
           {
-            "name": "UC Irvine",
-            "batters": 17,
-            "pitchers": 6,
-            "AB": 39,
-            "R": 2,
-            "H": 10,
-            "RBI": 2,
-            "BB": 6,
+            "name": "Indiana",
+            "batters": 12,
+            "pitchers": 5,
+            "AB": 38,
+            "R": 8,
+            "H": 14,
+            "RBI": 6,
+            "BB": 2,
             "SO": 7,
-            "pitching_outs": 33,
-            "pitching_runs": 1,
-            "pitching_hits": 7
+            "pitching_outs": 27,
+            "pitching_runs": 4,
+            "pitching_hits": 11
           },
           {
             "name": "San Diego",
             "batters": 13,
-            "pitchers": 6,
-            "AB": 39,
-            "R": 1,
-            "H": 7,
-            "RBI": 1,
-            "BB": 4,
-            "SO": 9,
-            "pitching_outs": 33,
-            "pitching_runs": 2,
-            "pitching_hits": 10
+            "pitchers": 7,
+            "AB": 38,
+            "R": 4,
+            "H": 11,
+            "RBI": 3,
+            "BB": 3,
+            "SO": 4,
+            "pitching_outs": 27,
+            "pitching_runs": 8,
+            "pitching_hits": 14
           }
         ],
         "source_warnings": [],
-        "player_rows": 41,
+        "player_rows": 36,
         "status": "PASS",
         "scoreboard": [
           {
-            "runs": 2,
-            "hits": 10,
-            "errors": 1,
+            "runs": 8,
+            "hits": 14,
+            "errors": 5,
             "innings": [
-              1,
               0,
               0,
+              3,
               0,
+              3,
               0,
+              2,
               0,
-              0,
-              0,
-              0,
-              0,
-              1
+              0
             ]
           },
           {
-            "runs": 1,
-            "hits": 7,
+            "runs": 4,
+            "hits": 11,
             "errors": 1,
             "innings": [
               0,
-              0,
-              0,
-              0,
+              1,
               0,
               0,
               0,
               1,
               0,
-              0,
+              2,
               0
             ]
           }
         ],
         "lineup_audit": [
           {
-            "team": "UC Irvine",
+            "team": "Indiana",
             "nine_starting_slots": true,
-            "batter_rows": 17,
-            "pitcher_rows": 6,
-            "substitutes": 8
+            "batter_rows": 12,
+            "pitcher_rows": 5,
+            "substitutes": 3
           },
           {
             "team": "San Diego",
             "nine_starting_slots": true,
             "batter_rows": 13,
-            "pitcher_rows": 6,
+            "pitcher_rows": 7,
             "substitutes": 4
           }
         ],
         "official_decisions": {
-          "win": "Mcmillin, Evan",
-          "loss": "Donatella, Anthony",
-          "save": "Spear, Cole"
+          "win": "Beauchamp, Cam",
+          "loss": "Walker, Nate",
+          "save": null
         },
         "resolved_pitcher_decisions": {
           "win": null,
@@ -161,11 +158,6 @@
       "game_id": "cb-2018-03-13-san-diego-state-san-diego-att0017",
       "source_url": "https://usdtoreros.com/documents/2018/5/10/14105__m_basebl_2017_18_misc_non_event__USDvsSDSUboxMar13.pdf",
       "reason": "University PDF download did not yield PDF bytes"
-    },
-    {
-      "game_id": "cb-2018-03-04-indiana-san-diego-att0016",
-      "source_url": "https://iuhoosiers.com/sports/baseball/stats/2018/-13-san-diego/boxscore/13860",
-      "reason": "Official Win scorer 'Beauchamp, Cam' not uniquely matched among source pitchers cb-2018-03-04-indiana-san-diego-att0016"
     },
     {
       "game_id": "cb-2018-02-18-cincinnati-san-diego-att0006",

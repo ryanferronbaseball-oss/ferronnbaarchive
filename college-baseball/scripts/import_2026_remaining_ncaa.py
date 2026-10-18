@@ -644,7 +644,8 @@ def import_one(game, official, global_keys):
     if url.lower().split("?")[0].endswith(".pdf"):
         raise ValueError("Official PDF needs separately audited PDF line transcription")
     expected = [int(x) for x in official["official_score"]]
-    if len(expected) != 2 or expected[0] == expected[1]:
+    official_7_inning_tie = (game["id"] == "cb-2023-02-20-nebraska-san-diego-att0181" and expected == [16, 16])
+    if len(expected) != 2 or (expected[0] == expected[1] and not official_7_inning_tie):
         raise ValueError("Official game final scores missing/ambiguous")
     page = SESSION.get(url, timeout=45)
     page.raise_for_status()
@@ -652,6 +653,14 @@ def import_one(game, official, global_keys):
         raise ValueError("Official source response unexpectedly short")
     soup = BeautifulSoup(page.text, "html.parser")
     line = extract_line_score(soup, expected)
+    if official_7_inning_tie:
+        # University official R/H/E 2/20/2023: Nebraska 16/17/1,
+        # USD 16/7/3, score after exactly seven innings. No W/L/S.
+        if ([x["innings"] for x in line] !=
+            [[1, 3, 0, 0, 5, 2, 5], [0, 1, 0, 9, 0, 0, 6]] or
+            [(x["runs"], x["hits"], x["errors"]) for x in line]
+                != [(16, 17, 1), (16, 7, 3)]):
+            raise ValueError("2023 Nebraska 16–16 tie: official seven-inning R/H/E checksum failed")
     short, detail, pitching = official_tables(page.text, game)
     if len(short) != 2 or len(detail) != 2 or len(pitching) != 2:
         raise ValueError("Official source missing either team's batting/pitching table")
@@ -681,6 +690,8 @@ def import_one(game, official, global_keys):
         raise ValueError("Individual source hitters do not total to official inning scoreboard")
     # Decisions must be explicitly cross-matched to source pitcher lines.
     decisions = {k: parse_decision(soup, k) for k in ("win", "loss", "save")}
+    if official_7_inning_tie and any(decisions.values()):
+        raise ValueError("A seven-inning 16–16 tie cannot have a pitcher winning/losing decision")
     resolved = {}
     for key, name in decisions.items():
         match = [r for r in rows if "pitching" in r and name and slug(r["player"]) == slug(name)]
@@ -702,6 +713,9 @@ def import_one(game, official, global_keys):
                               "save": resolved["save"]},
         "game_type": "regular_season", "postseason_round": None,
     })
+    if official_7_inning_tie:
+        game["official_draw"] = True
+        game["official_draw_note"] = "University original seven-inning gamebook: Nebraska 16, San Diego 16; no credited W/L/S."
     if official.get("official_doubleheader_game"):
         game["game_number"] = int(official["official_doubleheader_game"])
         game["attendance_segment_confirmation_pending"] = True

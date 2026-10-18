@@ -1,5 +1,12 @@
 # College Baseball — Month-by-Month Review Gates
 
+## October 17, 2026 — 2023 season authorized; source discovery PASS (current)
+
+User approved proceeding with 2023 baseball. **47/47 original attended matches have official university gamebook links on the unpublished development branch** (May 10, April 18, March 10, February 9). Source discovery is complete but **0/47 complete individual player gamebooks have been imported or counted verified**. Preserve source-to-attendance IDs and month gates. February has three original date-vs-official date discrepancies at the Tony Gwynn Legacy tournament; freeze the original metadata until reconciled. February 20 Nebraska–San Diego is an official seven-inning **16–16 tie**, requiring tie-aware score validation rather than inventing winning/losing decisions. February 21 *Northrdige* is an original worksheet typo for CSUN. See [2023 source queue](data/2023_official_source_queue.json) and [2023 monthly audit](data/2023_monthly_progress_audit.json).
+
+**Authorized:** all of 2023, 2024, 2025 and 2026 eligible non-JUCO gamebooks. **Not authorized:** 2022 and earlier source imports or merging/publishing the draft branch. All previous older approval statements in this chronological audit file are historical, superseded by this checkpoint.
+
+
 ## October 17, 2026 — 2024 university source import gate: 27/71
 
 Latest verified checkpoint: **2024 27/71**, **2025 69/74**, **2026 68/68**; across 2024–26 **164** verified gamebooks with **4,827** player-game records. All 444 original attendance records retained, and seven known 2026 JUCO games excluded from stats.

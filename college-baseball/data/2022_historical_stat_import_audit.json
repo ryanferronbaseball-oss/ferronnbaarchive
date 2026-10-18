@@ -1,0 +1,5955 @@
+{
+  "season": 2022,
+  "month": null,
+  "limit": 0,
+  "status": "PARTIAL_REVIEW_REQUIRED",
+  "original_attendance_games": 444,
+  "verified_this_run": 55,
+  "verified_in_season": 55,
+  "verified_overall": 364,
+  "player_game_rows_total": 10920,
+  "already_verified": [],
+  "completed": [
+    {
+      "game_id": "cb-2022-06-05-oregon-state-vanderbilt-att0177",
+      "player_rows": 29,
+      "source_url": "https://osubeavers.com/sports/baseball/stats/2022/vanderbilt/boxscore/18465",
+      "win": "Devin Futrell",
+      "loss": "Jacob Kmatz",
+      "source_audit": {
+        "game_id": "cb-2022-06-05-oregon-state-vanderbilt-att0177",
+        "source": "https://osubeavers.com/sports/baseball/stats/2022/vanderbilt/boxscore/18465",
+        "http_code": 200,
+        "source_bytes": 1213814,
+        "source_sha256": "33a81634ac83f1cd5ce4ea8ce780b297085269d85bab1114442c323efa9b0797",
+        "teams": [
+          {
+            "name": "Oregon State",
+            "batters": 12,
+            "pitchers": 5,
+            "AB": 35,
+            "R": 1,
+            "H": 8,
+            "RBI": 0,
+            "BB": 3,
+            "SO": 6,
+            "pitching_outs": 24,
+            "pitching_runs": 8,
+            "pitching_hits": 11
+          },
+          {
+            "name": "Vanderbilt",
+            "batters": 10,
+            "pitchers": 2,
+            "AB": 35,
+            "R": 8,
+            "H": 11,
+            "RBI": 6,
+            "BB": 4,
+            "SO": 4,
+            "pitching_outs": 27,
+            "pitching_runs": 1,
+            "pitching_hits": 8
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 29,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 1,
+            "hits": 8,
+            "errors": 2,
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 8,
+            "hits": 11,
+            "errors": 1,
+            "innings": [
+              0,
+              3,
+              1,
+              1,
+              0,
+              3,
+              0,
+              0,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Oregon State",
+            "nine_starting_slots": true,
+            "batter_rows": 12,
+            "pitcher_rows": 5,
+            "substitutes": 3
+          },
+          {
+            "team": "Vanderbilt",
+            "nine_starting_slots": true,
+            "batter_rows": 10,
+            "pitcher_rows": 2,
+            "substitutes": 1
+          }
+        ],
+        "official_decisions": {
+          "win": "Devin Futrell",
+          "loss": "Kmatz, Jacob",
+          "save": "Thomas Schultz"
+        },
+        "resolved_pitcher_decisions": {
+          "win": "Devin Futrell",
+          "loss": null,
+          "save": "Thomas Schultz"
+        }
+      }
+    },
+    {
+      "game_id": "cb-2022-06-05-vanderbilt-san-diego-att0176",
+      "player_rows": 30,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/vanderbilt/boxscore/12662",
+      "win": "Nick Maldonado",
+      "loss": "Ivran Romero",
+      "source_audit": {
+        "game_id": "cb-2022-06-05-vanderbilt-san-diego-att0176",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2022/vanderbilt/boxscore/12662",
+        "http_code": 200,
+        "source_bytes": 674884,
+        "source_sha256": "e115a0dc661fc38fd5a6be08b123160d87a31a64725b1f20e73c2019017bcdf3",
+        "teams": [
+          {
+            "name": "Vanderbilt",
+            "batters": 11,
+            "pitchers": 2,
+            "AB": 41,
+            "R": 14,
+            "H": 17,
+            "RBI": 14,
+            "BB": 6,
+            "SO": 4,
+            "pitching_outs": 27,
+            "pitching_runs": 4,
+            "pitching_hits": 7
+          },
+          {
+            "name": "San Diego",
+            "batters": 11,
+            "pitchers": 6,
+            "AB": 32,
+            "R": 4,
+            "H": 7,
+            "RBI": 4,
+            "BB": 6,
+            "SO": 7,
+            "pitching_outs": 27,
+            "pitching_runs": 14,
+            "pitching_hits": 17
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 30,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 14,
+            "hits": 17,
+            "errors": 1,
+            "innings": [
+              3,
+              0,
+              0,
+              2,
+              1,
+              0,
+              2,
+              3,
+              3
+            ]
+          },
+          {
+            "runs": 4,
+            "hits": 7,
+            "errors": 1,
+            "innings": [
+              0,
+              0,
+              2,
+              0,
+              1,
+              0,
+              0,
+              1,
+              0
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Vanderbilt",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 2,
+            "substitutes": 2
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 6,
+            "substitutes": 2
+          }
+        ],
+        "official_decisions": {
+          "win": "Nick Maldonado",
+          "loss": "Romero, Ivran",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": "Nick Maldonado",
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2022-06-04-vanderbilt-new-mexico-state-att0174",
+      "player_rows": 35,
+      "source_url": "https://nmstatesports.com/sports/baseball/stats/2022/vanderbilt/boxscore/14804",
+      "win": "Chris McElvain",
+      "loss": "Pablo Cortes",
+      "source_audit": {
+        "game_id": "cb-2022-06-04-vanderbilt-new-mexico-state-att0174",
+        "source": "https://nmstatesports.com/sports/baseball/stats/2022/vanderbilt/boxscore/14804",
+        "http_code": 200,
+        "source_bytes": 581600,
+        "source_sha256": "3f67508ac6361ddf5413841a8ee62d79bfc5b716933e712c7c0a5a727f9fb2ce",
+        "teams": [
+          {
+            "name": "Vanderbilt",
+            "batters": 13,
+            "pitchers": 2,
+            "AB": 43,
+            "R": 21,
+            "H": 18,
+            "RBI": 21,
+            "BB": 6,
+            "SO": 3,
+            "pitching_outs": 27,
+            "pitching_runs": 1,
+            "pitching_hits": 7
+          },
+          {
+            "name": "New Mexico State",
+            "batters": 13,
+            "pitchers": 7,
+            "AB": 34,
+            "R": 1,
+            "H": 7,
+            "RBI": 1,
+            "BB": 2,
+            "SO": 14,
+            "pitching_outs": 27,
+            "pitching_runs": 21,
+            "pitching_hits": 18
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 35,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 21,
+            "hits": 18,
+            "errors": 1,
+            "innings": [
+              1,
+              0,
+              3,
+              0,
+              5,
+              2,
+              1,
+              4,
+              5
+            ]
+          },
+          {
+            "runs": 1,
+            "hits": 7,
+            "errors": 3,
+            "innings": [
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Vanderbilt",
+            "nine_starting_slots": true,
+            "batter_rows": 13,
+            "pitcher_rows": 2,
+            "substitutes": 4
+          },
+          {
+            "team": "New Mexico State",
+            "nine_starting_slots": true,
+            "batter_rows": 13,
+            "pitcher_rows": 7,
+            "substitutes": 4
+          }
+        ],
+        "official_decisions": {
+          "win": "Chris McElvain",
+          "loss": "Cortes, Pablo",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": "Chris McElvain",
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2022-06-03-new-mexico-state-oregon-state-att0173",
+      "player_rows": 25,
+      "source_url": "https://osubeavers.com/sports/baseball/stats/2022/new-mexico-state/boxscore/18462",
+      "win": "Ryan Brown",
+      "loss": "Alex Bustamante",
+      "source_audit": {
+        "game_id": "cb-2022-06-03-new-mexico-state-oregon-state-att0173",
+        "source": "https://osubeavers.com/sports/baseball/stats/2022/new-mexico-state/boxscore/18462",
+        "http_code": 200,
+        "source_bytes": 1183615,
+        "source_sha256": "de92d1e8b45923a2999f0aa2d3bb3bace4925e30778af4db4b45df42507bd66f",
+        "teams": [
+          {
+            "name": "New Mexico State",
+            "batters": 10,
+            "pitchers": 2,
+            "AB": 34,
+            "R": 4,
+            "H": 4,
+            "RBI": 4,
+            "BB": 3,
+            "SO": 14,
+            "pitching_outs": 29,
+            "pitching_runs": 5,
+            "pitching_hits": 10
+          },
+          {
+            "name": "Oregon State",
+            "batters": 10,
+            "pitchers": 3,
+            "AB": 36,
+            "R": 5,
+            "H": 10,
+            "RBI": 4,
+            "BB": 8,
+            "SO": 11,
+            "pitching_outs": 30,
+            "pitching_runs": 4,
+            "pitching_hits": 4
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 25,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 4,
+            "hits": 4,
+            "errors": 0,
+            "innings": [
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              2,
+              0,
+              1,
+              0
+            ]
+          },
+          {
+            "runs": 5,
+            "hits": 10,
+            "errors": 2,
+            "innings": [
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              2,
+              0,
+              0,
+              1
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "New Mexico State",
+            "nine_starting_slots": true,
+            "batter_rows": 10,
+            "pitcher_rows": 2,
+            "substitutes": 1
+          },
+          {
+            "team": "Oregon State",
+            "nine_starting_slots": true,
+            "batter_rows": 10,
+            "pitcher_rows": 3,
+            "substitutes": 1
+          }
+        ],
+        "official_decisions": {
+          "win": "Brown, Ryan",
+          "loss": "Alex Bustamante",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": "Alex Bustamante",
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2022-06-03-san-diego-vanderbilt-att0172",
+      "player_rows": 24,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/vanderbilt/boxscore/12660",
+      "win": "Brycen Mautz",
+      "loss": "Carter Holton",
+      "source_audit": {
+        "game_id": "cb-2022-06-03-san-diego-vanderbilt-att0172",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2022/vanderbilt/boxscore/12660",
+        "http_code": 200,
+        "source_bytes": 628870,
+        "source_sha256": "11887840f3c497378bb7e3d58bff4dda7140403d0077975cc7458f38d529533d",
+        "teams": [
+          {
+            "name": "San Diego",
+            "batters": 9,
+            "pitchers": 3,
+            "AB": 32,
+            "R": 3,
+            "H": 6,
+            "RBI": 3,
+            "BB": 0,
+            "SO": 7,
+            "pitching_outs": 27,
+            "pitching_runs": 2,
+            "pitching_hits": 5
+          },
+          {
+            "name": "Vanderbilt",
+            "batters": 10,
+            "pitchers": 2,
+            "AB": 28,
+            "R": 2,
+            "H": 5,
+            "RBI": 2,
+            "BB": 3,
+            "SO": 7,
+            "pitching_outs": 27,
+            "pitching_runs": 3,
+            "pitching_hits": 6
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 24,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 3,
+            "hits": 6,
+            "errors": 0,
+            "innings": [
+              1,
+              0,
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 2,
+            "hits": 5,
+            "errors": 2,
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              0
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 3,
+            "substitutes": 0
+          },
+          {
+            "team": "Vanderbilt",
+            "nine_starting_slots": true,
+            "batter_rows": 10,
+            "pitcher_rows": 2,
+            "substitutes": 1
+          }
+        ],
+        "official_decisions": {
+          "win": "Mautz, Brycen",
+          "loss": "Carter Holton",
+          "save": "Churchill, Ian"
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": "Carter Holton",
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2022-05-28-san-diego-gonzaga-att0171",
+      "player_rows": 33,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/gonzaga/boxscore/12659",
+      "win": "Kyle Carr",
+      "loss": "NICO ZEGLIN",
+      "source_audit": {
+        "game_id": "cb-2022-05-28-san-diego-gonzaga-att0171",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2022/gonzaga/boxscore/12659",
+        "http_code": 200,
+        "source_bytes": 716575,
+        "source_sha256": "6e349bf5ce42dba4c6aa66016b7db77414ea7d8a5a10346c3071e6a91487a5fb",
+        "teams": [
+          {
+            "name": "San Diego",
+            "batters": 9,
+            "pitchers": 6,
+            "AB": 45,
+            "R": 15,
+            "H": 12,
+            "RBI": 13,
+            "BB": 9,
+            "SO": 12,
+            "pitching_outs": 33,
+            "pitching_runs": 12,
+            "pitching_hits": 18
+          },
+          {
+            "name": "Gonzaga",
+            "batters": 14,
+            "pitchers": 4,
+            "AB": 47,
+            "R": 12,
+            "H": 18,
+            "RBI": 12,
+            "BB": 5,
+            "SO": 5,
+            "pitching_outs": 33,
+            "pitching_runs": 15,
+            "pitching_hits": 12
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 33,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 15,
+            "hits": 12,
+            "errors": 0,
+            "innings": [
+              2,
+              3,
+              0,
+              1,
+              0,
+              0,
+              0,
+              6,
+              0,
+              0,
+              3
+            ]
+          },
+          {
+            "runs": 12,
+            "hits": 18,
+            "errors": 2,
+            "innings": [
+              5,
+              0,
+              2,
+              0,
+              0,
+              0,
+              3,
+              1,
+              1,
+              0,
+              0
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 6,
+            "substitutes": 0
+          },
+          {
+            "team": "Gonzaga",
+            "nine_starting_slots": true,
+            "batter_rows": 14,
+            "pitcher_rows": 4,
+            "substitutes": 5
+          }
+        ],
+        "official_decisions": {
+          "win": "Carr, Kyle",
+          "loss": "ZEGLIN, NICO",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2022-05-27-gonzaga-portland-att0170",
+      "player_rows": 29,
+      "source_url": "https://portlandpilots.com/sports/baseball/stats/2022/-1-gonzaga/boxscore/11495",
+      "win": "WILL KEMPNER",
+      "loss": "Peter Allegro",
+      "source_audit": {
+        "game_id": "cb-2022-05-27-gonzaga-portland-att0170",
+        "source": "https://portlandpilots.com/sports/baseball/stats/2022/-1-gonzaga/boxscore/11495",
+        "http_code": 200,
+        "source_bytes": 728636,
+        "source_sha256": "2d1230b565127a68534640de44bf85b62958a439b156a0428a0487de51c57539",
+        "teams": [
+          {
+            "name": "Gonzaga",
+            "batters": 9,
+            "pitchers": 3,
+            "AB": 34,
+            "R": 7,
+            "H": 9,
+            "RBI": 6,
+            "BB": 10,
+            "SO": 8,
+            "pitching_outs": 27,
+            "pitching_runs": 0,
+            "pitching_hits": 6
+          },
+          {
+            "name": "Portland",
+            "batters": 13,
+            "pitchers": 4,
+            "AB": 32,
+            "R": 0,
+            "H": 6,
+            "RBI": 0,
+            "BB": 6,
+            "SO": 17,
+            "pitching_outs": 27,
+            "pitching_runs": 7,
+            "pitching_hits": 9
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 29,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 7,
+            "hits": 9,
+            "errors": 1,
+            "innings": [
+              0,
+              0,
+              1,
+              2,
+              0,
+              0,
+              0,
+              0,
+              4
+            ]
+          },
+          {
+            "runs": 0,
+            "hits": 6,
+            "errors": 1,
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Gonzaga",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 3,
+            "substitutes": 0
+          },
+          {
+            "team": "Portland",
+            "nine_starting_slots": true,
+            "batter_rows": 13,
+            "pitcher_rows": 4,
+            "substitutes": 4
+          }
+        ],
+        "official_decisions": {
+          "win": "KEMPNER, WILL",
+          "loss": "Allegro, Peter",
+          "save": "SPELLACY, MICHAEL"
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2022-05-27-gonzaga-san-diego-att0169",
+      "player_rows": 23,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/gonzaga/boxscore/12658",
+      "win": "Brycen Mautz",
+      "loss": "GABRIEL HUGHES",
+      "source_audit": {
+        "game_id": "cb-2022-05-27-gonzaga-san-diego-att0169",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2022/gonzaga/boxscore/12658",
+        "http_code": 200,
+        "source_bytes": 626132,
+        "source_sha256": "0ad303335ab3b4cb562891e0d3d8b561382d96ba787dcdd761cd343da8c9e8e5",
+        "teams": [
+          {
+            "name": "Gonzaga",
+            "batters": 9,
+            "pitchers": 2,
+            "AB": 36,
+            "R": 3,
+            "H": 9,
+            "RBI": 3,
+            "BB": 2,
+            "SO": 11,
+            "pitching_outs": 24,
+            "pitching_runs": 5,
+            "pitching_hits": 7
+          },
+          {
+            "name": "San Diego",
+            "batters": 9,
+            "pitchers": 3,
+            "AB": 28,
+            "R": 5,
+            "H": 7,
+            "RBI": 5,
+            "BB": 3,
+            "SO": 10,
+            "pitching_outs": 27,
+            "pitching_runs": 3,
+            "pitching_hits": 9
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 23,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 3,
+            "hits": 9,
+            "errors": 1,
+            "innings": [
+              1,
+              0,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 5,
+            "hits": 7,
+            "errors": 0,
+            "innings": [
+              0,
+              0,
+              0,
+              3,
+              1,
+              0,
+              0,
+              1,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Gonzaga",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 2,
+            "substitutes": 0
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 3,
+            "substitutes": 0
+          }
+        ],
+        "official_decisions": {
+          "win": "Mautz, Brycen",
+          "loss": "HUGHES, GABRIEL",
+          "save": "Romero, Ivran"
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2022-05-27-portland-loyola-marymount-att0168",
+      "player_rows": 25,
+      "source_url": "https://lmulions.com/sports/baseball/stats/2022/portland/boxscore/14223",
+      "win": "Eli MORSE",
+      "loss": "Alex Burge",
+      "source_audit": {
+        "game_id": "cb-2022-05-27-portland-loyola-marymount-att0168",
+        "source": "https://lmulions.com/sports/baseball/stats/2022/portland/boxscore/14223",
+        "http_code": 200,
+        "source_bytes": 661321,
+        "source_sha256": "bd85f800931c8eee51aef8a4eccdf5ce137e41606c3355c1a5e0cdacdd6446e1",
+        "teams": [
+          {
+            "name": "Portland",
+            "batters": 11,
+            "pitchers": 2,
+            "AB": 39,
+            "R": 10,
+            "H": 13,
+            "RBI": 10,
+            "BB": 7,
+            "SO": 3,
+            "pitching_outs": 27,
+            "pitching_runs": 2,
+            "pitching_hits": 7
+          },
+          {
+            "name": "Loyola Marymount",
+            "batters": 9,
+            "pitchers": 3,
+            "AB": 32,
+            "R": 2,
+            "H": 7,
+            "RBI": 2,
+            "BB": 1,
+            "SO": 6,
+            "pitching_outs": 27,
+            "pitching_runs": 10,
+            "pitching_hits": 13
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 25,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 10,
+            "hits": 13,
+            "errors": 1,
+            "innings": [
+              0,
+              1,
+              2,
+              5,
+              0,
+              0,
+              0,
+              0,
+              2
+            ]
+          },
+          {
+            "runs": 2,
+            "hits": 7,
+            "errors": 1,
+            "innings": [
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Portland",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 2,
+            "substitutes": 2
+          },
+          {
+            "team": "Loyola Marymount",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 3,
+            "substitutes": 0
+          }
+        ],
+        "official_decisions": {
+          "win": "MORSE, Eli",
+          "loss": "Burge, Alex",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2022-05-26-san-diego-portland-att0167",
+      "player_rows": 34,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/portland/boxscore/12657",
+      "win": "Gabe Maya",
+      "loss": "Brett GILLIS",
+      "source_audit": {
+        "game_id": "cb-2022-05-26-san-diego-portland-att0167",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2022/portland/boxscore/12657",
+        "http_code": 200,
+        "source_bytes": 715584,
+        "source_sha256": "d122229645c86c25a9aa3d992b6978c73bdd9918b1159436e1d8eaf8ccb6d763",
+        "teams": [
+          {
+            "name": "San Diego",
+            "batters": 13,
+            "pitchers": 6,
+            "AB": 42,
+            "R": 22,
+            "H": 19,
+            "RBI": 20,
+            "BB": 9,
+            "SO": 10,
+            "pitching_outs": 27,
+            "pitching_runs": 8,
+            "pitching_hits": 14
+          },
+          {
+            "name": "Portland",
+            "batters": 11,
+            "pitchers": 4,
+            "AB": 40,
+            "R": 8,
+            "H": 14,
+            "RBI": 7,
+            "BB": 6,
+            "SO": 9,
+            "pitching_outs": 27,
+            "pitching_runs": 22,
+            "pitching_hits": 19
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 34,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 22,
+            "hits": 19,
+            "errors": 0,
+            "innings": [
+              1,
+              6,
+              2,
+              1,
+              4,
+              0,
+              7,
+              1,
+              0
+            ]
+          },
+          {
+            "runs": 8,
+            "hits": 14,
+            "errors": 2,
+            "innings": [
+              0,
+              0,
+              0,
+              1,
+              3,
+              4,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 13,
+            "pitcher_rows": 6,
+            "substitutes": 4
+          },
+          {
+            "team": "Portland",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 4,
+            "substitutes": 2
+          }
+        ],
+        "official_decisions": {
+          "win": "Maya, Gabe",
+          "loss": "GILLIS, Brett",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2022-05-26-loyola-marymount-gonzaga-att0166",
+      "player_rows": 27,
+      "source_url": "https://gozags.com/sports/baseball/stats/2022/loyola-marymount/boxscore/8242",
+      "win": "Owen Wild",
+      "loss": "Jimmy Galicia",
+      "source_audit": {
+        "game_id": "cb-2022-05-26-loyola-marymount-gonzaga-att0166",
+        "source": "https://gozags.com/sports/baseball/stats/2022/loyola-marymount/boxscore/8242",
+        "http_code": 200,
+        "source_bytes": 1290940,
+        "source_sha256": "f69201e8553bb611a68eb37be5d22e503bbb73f4d4d935c866c3679f6e8ddefb",
+        "teams": [
+          {
+            "name": "Loyola Marymount",
+            "batters": 10,
+            "pitchers": 3,
+            "AB": 33,
+            "R": 2,
+            "H": 8,
+            "RBI": 2,
+            "BB": 2,
+            "SO": 7,
+            "pitching_outs": 24,
+            "pitching_runs": 16,
+            "pitching_hits": 18
+          },
+          {
+            "name": "Gonzaga",
+            "batters": 12,
+            "pitchers": 2,
+            "AB": 41,
+            "R": 16,
+            "H": 18,
+            "RBI": 16,
+            "BB": 1,
+            "SO": 1,
+            "pitching_outs": 27,
+            "pitching_runs": 2,
+            "pitching_hits": 8
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 27,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 2,
+            "hits": 8,
+            "errors": 1,
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              0
+            ]
+          },
+          {
+            "runs": 16,
+            "hits": 18,
+            "errors": 0,
+            "innings": [
+              1,
+              3,
+              2,
+              0,
+              1,
+              0,
+              8,
+              1,
+              0
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Loyola Marymount",
+            "nine_starting_slots": true,
+            "batter_rows": 10,
+            "pitcher_rows": 3,
+            "substitutes": 1
+          },
+          {
+            "team": "Gonzaga",
+            "nine_starting_slots": true,
+            "batter_rows": 12,
+            "pitcher_rows": 2,
+            "substitutes": 3
+          }
+        ],
+        "official_decisions": {
+          "win": "Wild, Owen",
+          "loss": "Galicia, Jimmy",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2022-05-25-san-francisco-san-diego-att0165",
+      "player_rows": 33,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/san-francisco/boxscore/12656",
+      "win": "Ivran Romero",
+      "loss": "Josh MOLLERUS",
+      "source_audit": {
+        "game_id": "cb-2022-05-25-san-francisco-san-diego-att0165",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2022/san-francisco/boxscore/12656",
+        "http_code": 200,
+        "source_bytes": 678198,
+        "source_sha256": "49290be10f040e596f56005aa80ad72147e0c189daf78a05ee3cd52dcab9c1f6",
+        "teams": [
+          {
+            "name": "San Francisco",
+            "batters": 11,
+            "pitchers": 5,
+            "AB": 29,
+            "R": 5,
+            "H": 5,
+            "RBI": 5,
+            "BB": 5,
+            "SO": 12,
+            "pitching_outs": 24,
+            "pitching_runs": 10,
+            "pitching_hits": 11
+          },
+          {
+            "name": "San Diego",
+            "batters": 12,
+            "pitchers": 5,
+            "AB": 32,
+            "R": 10,
+            "H": 11,
+            "RBI": 9,
+            "BB": 5,
+            "SO": 7,
+            "pitching_outs": 27,
+            "pitching_runs": 5,
+            "pitching_hits": 5
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 33,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 5,
+            "hits": 5,
+            "errors": 4,
+            "innings": [
+              0,
+              1,
+              0,
+              1,
+              3,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 10,
+            "hits": 11,
+            "errors": 1,
+            "innings": [
+              2,
+              0,
+              0,
+              0,
+              0,
+              3,
+              2,
+              3,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "San Francisco",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 5,
+            "substitutes": 2
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 12,
+            "pitcher_rows": 5,
+            "substitutes": 3
+          }
+        ],
+        "official_decisions": {
+          "win": "Romero, Ivran",
+          "loss": "MOLLERUS, Josh",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2022-05-22-hawaii-uc-san-diego-att0164",
+      "player_rows": 26,
+      "source_url": "https://ucsdtritons.com/sports/baseball/stats/2022/hawai-i/boxscore/8695",
+      "win": "Connor Harrison",
+      "loss": "Noah Conlon",
+      "source_audit": {
+        "game_id": "cb-2022-05-22-hawaii-uc-san-diego-att0164",
+        "source": "https://ucsdtritons.com/sports/baseball/stats/2022/hawai-i/boxscore/8695",
+        "http_code": 200,
+        "source_bytes": 606732,
+        "source_sha256": "de5dacbc4ee90a73de31d81a6d7b990060ec50911e140c942a13e0e786676471",
+        "teams": [
+          {
+            "name": "Hawaii",
+            "batters": 9,
+            "pitchers": 3,
+            "AB": 30,
+            "R": 4,
+            "H": 3,
+            "RBI": 4,
+            "BB": 10,
+            "SO": 10,
+            "pitching_outs": 27,
+            "pitching_runs": 0,
+            "pitching_hits": 5
+          },
+          {
+            "name": "UC San Diego",
+            "batters": 11,
+            "pitchers": 3,
+            "AB": 31,
+            "R": 0,
+            "H": 5,
+            "RBI": 0,
+            "BB": 5,
+            "SO": 6,
+            "pitching_outs": 27,
+            "pitching_runs": 4,
+            "pitching_hits": 3
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 26,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 4,
+            "hits": 3,
+            "errors": 0,
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              1,
+              2
+            ]
+          },
+          {
+            "runs": 0,
+            "hits": 5,
+            "errors": 1,
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Hawaii",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 3,
+            "substitutes": 0
+          },
+          {
+            "team": "UC San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 3,
+            "substitutes": 2
+          }
+        ],
+        "official_decisions": {
+          "win": "Connor Harrison",
+          "loss": "Conlon, Noah",
+          "save": "Dalton Renne"
+        },
+        "resolved_pitcher_decisions": {
+          "win": "Connor Harrison",
+          "loss": null,
+          "save": "Dalton Renne"
+        }
+      }
+    },
+    {
+      "game_id": "cb-2022-05-20-gonzaga-san-diego-att0161",
+      "player_rows": 24,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/gonzaga/boxscore/12485",
+      "win": "GABRIEL HUGHES",
+      "loss": "Brycen Mautz",
+      "source_audit": {
+        "game_id": "cb-2022-05-20-gonzaga-san-diego-att0161",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2022/gonzaga/boxscore/12485",
+        "http_code": 200,
+        "source_bytes": 636932,
+        "source_sha256": "e9a3f654794196f4f49d030901eb1b8ff664e900b3a5978d5327f8b008f1a1ba",
+        "teams": [
+          {
+            "name": "Gonzaga",
+            "batters": 9,
+            "pitchers": 2,
+            "AB": 40,
+            "R": 8,
+            "H": 14,
+            "RBI": 7,
+            "BB": 1,
+            "SO": 15,
+            "pitching_outs": 27,
+            "pitching_runs": 4,
+            "pitching_hits": 7
+          },
+          {
+            "name": "San Diego",
+            "batters": 10,
+            "pitchers": 3,
+            "AB": 33,
+            "R": 4,
+            "H": 7,
+            "RBI": 4,
+            "BB": 3,
+            "SO": 9,
+            "pitching_outs": 27,
+            "pitching_runs": 8,
+            "pitching_hits": 14
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 24,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 8,
+            "hits": 14,
+            "errors": 0,
+            "innings": [
+              0,
+              1,
+              0,
+              0,
+              1,
+              4,
+              0,
+              0,
+              2
+            ]
+          },
+          {
+            "runs": 4,
+            "hits": 7,
+            "errors": 0,
+            "innings": [
+              0,
+              0,
+              2,
+              0,
+              0,
+              2,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Gonzaga",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 2,
+            "substitutes": 0
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 10,
+            "pitcher_rows": 3,
+            "substitutes": 1
+          }
+        ],
+        "official_decisions": {
+          "win": "HUGHES, GABRIEL",
+          "loss": "Mautz, Brycen",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2022-05-10-cal-baptist-san-diego-att0160",
+      "player_rows": 43,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/california-baptist/boxscore/12484",
+      "win": "James Sashin",
+      "loss": "Ryan Delgado",
+      "source_audit": {
+        "game_id": "cb-2022-05-10-cal-baptist-san-diego-att0160",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2022/california-baptist/boxscore/12484",
+        "http_code": 200,
+        "source_bytes": 723101,
+        "source_sha256": "9160538c9263b29c59a699735519f10bd953291844c03f1ee9045feaf0d871db",
+        "teams": [
+          {
+            "name": "Cal Baptist",
+            "batters": 16,
+            "pitchers": 10,
+            "AB": 31,
+            "R": 2,
+            "H": 6,
+            "RBI": 2,
+            "BB": 4,
+            "SO": 10,
+            "pitching_outs": 24,
+            "pitching_runs": 9,
+            "pitching_hits": 13
+          },
+          {
+            "name": "San Diego",
+            "batters": 10,
+            "pitchers": 7,
+            "AB": 35,
+            "R": 9,
+            "H": 13,
+            "RBI": 8,
+            "BB": 9,
+            "SO": 7,
+            "pitching_outs": 27,
+            "pitching_runs": 2,
+            "pitching_hits": 6
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 43,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 2,
+            "hits": 6,
+            "errors": 0,
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 9,
+            "hits": 13,
+            "errors": 0,
+            "innings": [
+              3,
+              0,
+              1,
+              0,
+              1,
+              0,
+              4,
+              0,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Cal Baptist",
+            "nine_starting_slots": true,
+            "batter_rows": 16,
+            "pitcher_rows": 10,
+            "substitutes": 7
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 10,
+            "pitcher_rows": 7,
+            "substitutes": 1
+          }
+        ],
+        "official_decisions": {
+          "win": "Sashin, James",
+          "loss": "Ryan Delgado",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": "Ryan Delgado",
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2022-05-08-san-diego-pacific-att0159",
+      "player_rows": 27,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/pacific/boxscore/12483",
+      "win": "Ivran Romero",
+      "loss": "Z. Patterson",
+      "source_audit": {
+        "game_id": "cb-2022-05-08-san-diego-pacific-att0159",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2022/pacific/boxscore/12483",
+        "http_code": 200,
+        "source_bytes": 658803,
+        "source_sha256": "6235d2030c5f0f15575096d5b55cf3b29bb469077c16d00b500d2bba8e099549",
+        "teams": [
+          {
+            "name": "San Diego",
+            "batters": 9,
+            "pitchers": 3,
+            "AB": 35,
+            "R": 12,
+            "H": 10,
+            "RBI": 12,
+            "BB": 7,
+            "SO": 5,
+            "pitching_outs": 27,
+            "pitching_runs": 5,
+            "pitching_hits": 10
+          },
+          {
+            "name": "Pacific",
+            "batters": 11,
+            "pitchers": 4,
+            "AB": 35,
+            "R": 5,
+            "H": 10,
+            "RBI": 4,
+            "BB": 2,
+            "SO": 12,
+            "pitching_outs": 27,
+            "pitching_runs": 12,
+            "pitching_hits": 10
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 27,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 12,
+            "hits": 10,
+            "errors": 0,
+            "innings": [
+              2,
+              1,
+              0,
+              0,
+              4,
+              3,
+              0,
+              0,
+              2
+            ]
+          },
+          {
+            "runs": 5,
+            "hits": 10,
+            "errors": 3,
+            "innings": [
+              3,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 3,
+            "substitutes": 0
+          },
+          {
+            "team": "Pacific",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 4,
+            "substitutes": 2
+          }
+        ],
+        "official_decisions": {
+          "win": "Romero, Ivran",
+          "loss": "Z. Patterson",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": "Z. Patterson",
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2022-05-07-san-diego-pacific-att0158",
+      "player_rows": 28,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/pacific/boxscore/12482",
+      "win": "Ian Churchill",
+      "loss": "J. Vaughan",
+      "source_audit": {
+        "game_id": "cb-2022-05-07-san-diego-pacific-att0158",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2022/pacific/boxscore/12482",
+        "http_code": 200,
+        "source_bytes": 662563,
+        "source_sha256": "83b490453e9512c0cc517d6a83dd66a16f666acb371ddb45174ee0a9e2278409",
+        "teams": [
+          {
+            "name": "San Diego",
+            "batters": 10,
+            "pitchers": 2,
+            "AB": 36,
+            "R": 9,
+            "H": 10,
+            "RBI": 9,
+            "BB": 5,
+            "SO": 3,
+            "pitching_outs": 27,
+            "pitching_runs": 6,
+            "pitching_hits": 7
+          },
+          {
+            "name": "Pacific",
+            "batters": 9,
+            "pitchers": 7,
+            "AB": 34,
+            "R": 6,
+            "H": 7,
+            "RBI": 5,
+            "BB": 3,
+            "SO": 14,
+            "pitching_outs": 27,
+            "pitching_runs": 9,
+            "pitching_hits": 10
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 28,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 9,
+            "hits": 10,
+            "errors": 0,
+            "innings": [
+              0,
+              2,
+              0,
+              0,
+              2,
+              0,
+              1,
+              3,
+              1
+            ]
+          },
+          {
+            "runs": 6,
+            "hits": 7,
+            "errors": 3,
+            "innings": [
+              2,
+              0,
+              1,
+              0,
+              0,
+              0,
+              3,
+              0,
+              0
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 10,
+            "pitcher_rows": 2,
+            "substitutes": 1
+          },
+          {
+            "team": "Pacific",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 7,
+            "substitutes": 0
+          }
+        ],
+        "official_decisions": {
+          "win": "Churchill, Ian",
+          "loss": "J. Vaughan",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": "J. Vaughan",
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2022-05-06-san-diego-pacific-att0157",
+      "player_rows": 27,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/pacific/boxscore/12481",
+      "win": "Ryan Kysar",
+      "loss": "H. Hayes",
+      "source_audit": {
+        "game_id": "cb-2022-05-06-san-diego-pacific-att0157",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2022/pacific/boxscore/12481",
+        "http_code": 200,
+        "source_bytes": 648172,
+        "source_sha256": "37464b813370a9843e37d1eb9f2f28e94f9e64649d0ead6757393645f9334c39",
+        "teams": [
+          {
+            "name": "San Diego",
+            "batters": 9,
+            "pitchers": 4,
+            "AB": 40,
+            "R": 9,
+            "H": 14,
+            "RBI": 8,
+            "BB": 3,
+            "SO": 6,
+            "pitching_outs": 27,
+            "pitching_runs": 4,
+            "pitching_hits": 9
+          },
+          {
+            "name": "Pacific",
+            "batters": 11,
+            "pitchers": 3,
+            "AB": 34,
+            "R": 4,
+            "H": 9,
+            "RBI": 4,
+            "BB": 4,
+            "SO": 11,
+            "pitching_outs": 27,
+            "pitching_runs": 9,
+            "pitching_hits": 14
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 27,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 9,
+            "hits": 14,
+            "errors": 0,
+            "innings": [
+              0,
+              1,
+              4,
+              1,
+              0,
+              3,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 4,
+            "hits": 9,
+            "errors": 1,
+            "innings": [
+              0,
+              0,
+              0,
+              3,
+              0,
+              0,
+              1,
+              0,
+              0
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 4,
+            "substitutes": 0
+          },
+          {
+            "team": "Pacific",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 3,
+            "substitutes": 2
+          }
+        ],
+        "official_decisions": {
+          "win": "Kysar, Ryan",
+          "loss": "H. Hayes",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": "H. Hayes",
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2022-05-03-san-diego-uc-irvine-att0156",
+      "player_rows": 29,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/uc-irvine/boxscore/12480",
+      "win": "David Vizcaino",
+      "loss": "Cole Colleran",
+      "source_audit": {
+        "game_id": "cb-2022-05-03-san-diego-uc-irvine-att0156",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2022/uc-irvine/boxscore/12480",
+        "http_code": 200,
+        "source_bytes": 652165,
+        "source_sha256": "088e0241f8c15aac5658849a93930ab35712d7c057613f758981cc62ce148243",
+        "teams": [
+          {
+            "name": "San Diego",
+            "batters": 11,
+            "pitchers": 5,
+            "AB": 31,
+            "R": 1,
+            "H": 2,
+            "RBI": 1,
+            "BB": 0,
+            "SO": 3,
+            "pitching_outs": 24,
+            "pitching_runs": 6,
+            "pitching_hits": 8
+          },
+          {
+            "name": "UC Irvine",
+            "batters": 10,
+            "pitchers": 3,
+            "AB": 28,
+            "R": 6,
+            "H": 8,
+            "RBI": 6,
+            "BB": 5,
+            "SO": 8,
+            "pitching_outs": 27,
+            "pitching_runs": 1,
+            "pitching_hits": 2
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 29,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 1,
+            "hits": 2,
+            "errors": 1,
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 6,
+            "hits": 8,
+            "errors": 2,
+            "innings": [
+              2,
+              0,
+              0,
+              3,
+              1,
+              0,
+              0,
+              0,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 5,
+            "substitutes": 2
+          },
+          {
+            "team": "UC Irvine",
+            "nine_starting_slots": true,
+            "batter_rows": 10,
+            "pitcher_rows": 3,
+            "substitutes": 1
+          }
+        ],
+        "official_decisions": {
+          "win": "Vizcaino, David",
+          "loss": "Colleran, Cole",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2022-05-01-santa-clara-san-diego-att0155",
+      "player_rows": 27,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/santa-clara/boxscore/12479",
+      "win": "Skylar HALES",
+      "loss": "Kyle Carr",
+      "source_audit": {
+        "game_id": "cb-2022-05-01-santa-clara-san-diego-att0155",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2022/santa-clara/boxscore/12479",
+        "http_code": 200,
+        "source_bytes": 640990,
+        "source_sha256": "180712b5a9cb4e9763f6c9f762738612fc36f261235e2c13257d0856fc9727b3",
+        "teams": [
+          {
+            "name": "Santa Clara",
+            "batters": 12,
+            "pitchers": 2,
+            "AB": 34,
+            "R": 3,
+            "H": 8,
+            "RBI": 3,
+            "BB": 2,
+            "SO": 8,
+            "pitching_outs": 27,
+            "pitching_runs": 2,
+            "pitching_hits": 9
+          },
+          {
+            "name": "San Diego",
+            "batters": 10,
+            "pitchers": 3,
+            "AB": 33,
+            "R": 2,
+            "H": 9,
+            "RBI": 2,
+            "BB": 4,
+            "SO": 3,
+            "pitching_outs": 27,
+            "pitching_runs": 3,
+            "pitching_hits": 8
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 27,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 3,
+            "hits": 8,
+            "errors": 0,
+            "innings": [
+              1,
+              0,
+              0,
+              1,
+              0,
+              1,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 2,
+            "hits": 9,
+            "errors": 2,
+            "innings": [
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Santa Clara",
+            "nine_starting_slots": true,
+            "batter_rows": 12,
+            "pitcher_rows": 2,
+            "substitutes": 3
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 10,
+            "pitcher_rows": 3,
+            "substitutes": 1
+          }
+        ],
+        "official_decisions": {
+          "win": "HALES,Skylar",
+          "loss": "Carr, Kyle",
+          "save": "REELFS,Alex"
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2022-04-30-santa-clara-san-diego-att0154",
+      "player_rows": 33,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/santa-clara/boxscore/12478",
+      "win": "Brycen Mautz",
+      "loss": "Nick SANDO",
+      "source_audit": {
+        "game_id": "cb-2022-04-30-santa-clara-san-diego-att0154",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2022/santa-clara/boxscore/12478",
+        "http_code": 200,
+        "source_bytes": 681677,
+        "source_sha256": "2bc460e53865e743e732d6dcc41ea8796fb81f3adec33f581dc122fce7c3256a",
+        "teams": [
+          {
+            "name": "Santa Clara",
+            "batters": 12,
+            "pitchers": 5,
+            "AB": 33,
+            "R": 4,
+            "H": 7,
+            "RBI": 4,
+            "BB": 4,
+            "SO": 13,
+            "pitching_outs": 24,
+            "pitching_runs": 17,
+            "pitching_hits": 20
+          },
+          {
+            "name": "San Diego",
+            "batters": 11,
+            "pitchers": 5,
+            "AB": 44,
+            "R": 17,
+            "H": 20,
+            "RBI": 17,
+            "BB": 2,
+            "SO": 3,
+            "pitching_outs": 27,
+            "pitching_runs": 4,
+            "pitching_hits": 7
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 33,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 4,
+            "hits": 7,
+            "errors": 2,
+            "innings": [
+              0,
+              0,
+              0,
+              4,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 17,
+            "hits": 20,
+            "errors": 0,
+            "innings": [
+              8,
+              4,
+              0,
+              2,
+              1,
+              2,
+              0,
+              0,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Santa Clara",
+            "nine_starting_slots": true,
+            "batter_rows": 12,
+            "pitcher_rows": 5,
+            "substitutes": 3
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 5,
+            "substitutes": 2
+          }
+        ],
+        "official_decisions": {
+          "win": "Mautz, Brycen",
+          "loss": "SANDO,Nick",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2022-04-29-santa-clara-san-diego-att0153",
+      "player_rows": 30,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/santa-clara/boxscore/12477",
+      "win": "Ryan Kysar",
+      "loss": "Cole KITCHEN",
+      "source_audit": {
+        "game_id": "cb-2022-04-29-santa-clara-san-diego-att0153",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2022/santa-clara/boxscore/12477",
+        "http_code": 200,
+        "source_bytes": 665284,
+        "source_sha256": "f8340b92cb57f576448b91c1ee74aba2a559081254afc14039cf8149a1e49c46",
+        "teams": [
+          {
+            "name": "Santa Clara",
+            "batters": 11,
+            "pitchers": 6,
+            "AB": 32,
+            "R": 3,
+            "H": 8,
+            "RBI": 3,
+            "BB": 3,
+            "SO": 10,
+            "pitching_outs": 24,
+            "pitching_runs": 8,
+            "pitching_hits": 11
+          },
+          {
+            "name": "San Diego",
+            "batters": 10,
+            "pitchers": 3,
+            "AB": 33,
+            "R": 8,
+            "H": 11,
+            "RBI": 8,
+            "BB": 5,
+            "SO": 4,
+            "pitching_outs": 27,
+            "pitching_runs": 3,
+            "pitching_hits": 8
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 30,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 3,
+            "hits": 8,
+            "errors": 1,
+            "innings": [
+              1,
+              0,
+              0,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 8,
+            "hits": 11,
+            "errors": 1,
+            "innings": [
+              1,
+              3,
+              2,
+              0,
+              2,
+              0,
+              0,
+              0,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Santa Clara",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 6,
+            "substitutes": 2
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 10,
+            "pitcher_rows": 3,
+            "substitutes": 1
+          }
+        ],
+        "official_decisions": {
+          "win": "Kysar, Ryan",
+          "loss": "KITCHEN,Cole",
+          "save": "Churchill, Ian"
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2022-04-26-san-diego-cal-state-fullerton-att0152",
+      "player_rows": 33,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/cal-state-fullerton/boxscore/12476",
+      "win": "Ryan Gil",
+      "loss": "Gabe Maya",
+      "source_audit": {
+        "game_id": "cb-2022-04-26-san-diego-cal-state-fullerton-att0152",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2022/cal-state-fullerton/boxscore/12476",
+        "http_code": 200,
+        "source_bytes": 687821,
+        "source_sha256": "1f0748d8b3ecd9bb2e5a07ade26257cb5759c64bc4009409c6a4203a36277a4a",
+        "teams": [
+          {
+            "name": "San Diego",
+            "batters": 10,
+            "pitchers": 6,
+            "AB": 36,
+            "R": 7,
+            "H": 11,
+            "RBI": 7,
+            "BB": 6,
+            "SO": 7,
+            "pitching_outs": 24,
+            "pitching_runs": 8,
+            "pitching_hits": 12
+          },
+          {
+            "name": "Cal State Fullerton",
+            "batters": 9,
+            "pitchers": 8,
+            "AB": 34,
+            "R": 8,
+            "H": 12,
+            "RBI": 7,
+            "BB": 1,
+            "SO": 9,
+            "pitching_outs": 27,
+            "pitching_runs": 7,
+            "pitching_hits": 11
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 33,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 7,
+            "hits": 11,
+            "errors": 2,
+            "innings": [
+              0,
+              5,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 8,
+            "hits": 12,
+            "errors": 0,
+            "innings": [
+              0,
+              3,
+              0,
+              0,
+              2,
+              0,
+              2,
+              1,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 10,
+            "pitcher_rows": 6,
+            "substitutes": 1
+          },
+          {
+            "team": "Cal State Fullerton",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 8,
+            "substitutes": 0
+          }
+        ],
+        "official_decisions": {
+          "win": "Gil, Ryan",
+          "loss": "Maya, Gabe",
+          "save": "Weisberg, Michael"
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2022-04-18-san-diego-san-diego-state-att0150",
+      "player_rows": 35,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/san-diego-state/boxscore/12472",
+      "win": "Ryan Kysar",
+      "loss": "Brian LEONHARDT",
+      "source_audit": {
+        "game_id": "cb-2022-04-18-san-diego-san-diego-state-att0150",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2022/san-diego-state/boxscore/12472",
+        "http_code": 200,
+        "source_bytes": 694259,
+        "source_sha256": "38b25407f53f2f2a6e4b907b475ccb737cedb13e4bb15c7a196e49269e28c0b1",
+        "teams": [
+          {
+            "name": "San Diego",
+            "batters": 13,
+            "pitchers": 5,
+            "AB": 43,
+            "R": 15,
+            "H": 16,
+            "RBI": 12,
+            "BB": 3,
+            "SO": 8,
+            "pitching_outs": 27,
+            "pitching_runs": 1,
+            "pitching_hits": 5
+          },
+          {
+            "name": "San Diego State",
+            "batters": 14,
+            "pitchers": 4,
+            "AB": 29,
+            "R": 1,
+            "H": 5,
+            "RBI": 1,
+            "BB": 3,
+            "SO": 8,
+            "pitching_outs": 27,
+            "pitching_runs": 15,
+            "pitching_hits": 16
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 35,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 15,
+            "hits": 16,
+            "errors": 0,
+            "innings": [
+              0,
+              8,
+              4,
+              0,
+              0,
+              0,
+              1,
+              1,
+              1
+            ]
+          },
+          {
+            "runs": 1,
+            "hits": 5,
+            "errors": 5,
+            "innings": [
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 13,
+            "pitcher_rows": 5,
+            "substitutes": 4
+          },
+          {
+            "team": "San Diego State",
+            "nine_starting_slots": true,
+            "batter_rows": 14,
+            "pitcher_rows": 4,
+            "substitutes": 5
+          }
+        ],
+        "official_decisions": {
+          "win": "Kysar, Ryan",
+          "loss": "LEONHARDT, Brian",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2022-04-16-loyola-marymount-san-diego-att0149",
+      "player_rows": 33,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/loyola-marymount/boxscore/12471",
+      "win": "Merrick BALDO",
+      "loss": "Ivran Romero",
+      "source_audit": {
+        "game_id": "cb-2022-04-16-loyola-marymount-san-diego-att0149",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2022/loyola-marymount/boxscore/12471",
+        "http_code": 200,
+        "source_bytes": 676183,
+        "source_sha256": "31657dd3de7136c7946ae95178a935c7dee215c3a80581d18b69e1cc8641ee89",
+        "teams": [
+          {
+            "name": "Loyola Marymount",
+            "batters": 12,
+            "pitchers": 2,
+            "AB": 34,
+            "R": 8,
+            "H": 11,
+            "RBI": 8,
+            "BB": 6,
+            "SO": 8,
+            "pitching_outs": 27,
+            "pitching_runs": 1,
+            "pitching_hits": 8
+          },
+          {
+            "name": "San Diego",
+            "batters": 11,
+            "pitchers": 8,
+            "AB": 32,
+            "R": 1,
+            "H": 8,
+            "RBI": 1,
+            "BB": 2,
+            "SO": 2,
+            "pitching_outs": 27,
+            "pitching_runs": 8,
+            "pitching_hits": 11
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 33,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 8,
+            "hits": 11,
+            "errors": 0,
+            "innings": [
+              0,
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              2,
+              4
+            ]
+          },
+          {
+            "runs": 1,
+            "hits": 8,
+            "errors": 0,
+            "innings": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Loyola Marymount",
+            "nine_starting_slots": true,
+            "batter_rows": 12,
+            "pitcher_rows": 2,
+            "substitutes": 3
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 8,
+            "substitutes": 2
+          }
+        ],
+        "official_decisions": {
+          "win": "BALDO, Merrick",
+          "loss": "Romero, Ivran",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2022-04-15-loyola-marymount-san-diego-att0148",
+      "player_rows": 20,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/loyola-marymount/boxscore/12470",
+      "win": "Brycen Mautz",
+      "loss": "Diego BARRERA",
+      "source_audit": {
+        "game_id": "cb-2022-04-15-loyola-marymount-san-diego-att0148",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2022/loyola-marymount/boxscore/12470",
+        "http_code": 200,
+        "source_bytes": 602523,
+        "source_sha256": "e5457c4d8966ac3c0bc89689d4d27976ca467dd24b3c8baef3d0ebe4bbbebcc1",
+        "teams": [
+          {
+            "name": "Loyola Marymount",
+            "batters": 9,
+            "pitchers": 1,
+            "AB": 30,
+            "R": 0,
+            "H": 6,
+            "RBI": 0,
+            "BB": 2,
+            "SO": 8,
+            "pitching_outs": 25,
+            "pitching_runs": 1,
+            "pitching_hits": 4
+          },
+          {
+            "name": "San Diego",
+            "batters": 9,
+            "pitchers": 1,
+            "AB": 27,
+            "R": 1,
+            "H": 4,
+            "RBI": 1,
+            "BB": 2,
+            "SO": 3,
+            "pitching_outs": 27,
+            "pitching_runs": 0,
+            "pitching_hits": 6
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 20,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 0,
+            "hits": 6,
+            "errors": 0,
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 1,
+            "hits": 4,
+            "errors": 0,
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Loyola Marymount",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 1,
+            "substitutes": 0
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 1,
+            "substitutes": 0
+          }
+        ],
+        "official_decisions": {
+          "win": "Mautz, Brycen",
+          "loss": "BARRERA, Diego",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2022-04-14-loyola-marymount-san-diego-att0147",
+      "player_rows": 31,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/loyola-marymount/boxscore/12469",
+      "win": "Ivran Romero",
+      "loss": "Mason KOKODYNSKI",
+      "source_audit": {
+        "game_id": "cb-2022-04-14-loyola-marymount-san-diego-att0147",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2022/loyola-marymount/boxscore/12469",
+        "http_code": 200,
+        "source_bytes": 730311,
+        "source_sha256": "1aa0bddb89a196a04055139434129c251e973ccf66ad5a5cac668049c0b9060f",
+        "teams": [
+          {
+            "name": "Loyola Marymount",
+            "batters": 9,
+            "pitchers": 5,
+            "AB": 53,
+            "R": 8,
+            "H": 13,
+            "RBI": 8,
+            "BB": 2,
+            "SO": 9,
+            "pitching_outs": 40,
+            "pitching_runs": 9,
+            "pitching_hits": 14
+          },
+          {
+            "name": "San Diego",
+            "batters": 11,
+            "pitchers": 6,
+            "AB": 52,
+            "R": 9,
+            "H": 14,
+            "RBI": 8,
+            "BB": 9,
+            "SO": 11,
+            "pitching_outs": 42,
+            "pitching_runs": 8,
+            "pitching_hits": 13
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 31,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 8,
+            "hits": 13,
+            "errors": 2,
+            "innings": [
+              0,
+              1,
+              5,
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 9,
+            "hits": 14,
+            "errors": 3,
+            "innings": [
+              0,
+              0,
+              1,
+              6,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Loyola Marymount",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 5,
+            "substitutes": 0
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 6,
+            "substitutes": 2
+          }
+        ],
+        "official_decisions": {
+          "win": "Romero, Ivran",
+          "loss": "KOKODYNSKI, Mason",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2022-04-12-san-diego-state-san-diego-att0146",
+      "player_rows": 33,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/san-diego-state/boxscore/12468",
+      "win": "Jack Hyde",
+      "loss": "Hunter HARGETT",
+      "source_audit": {
+        "game_id": "cb-2022-04-12-san-diego-state-san-diego-att0146",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2022/san-diego-state/boxscore/12468",
+        "http_code": 200,
+        "source_bytes": 677643,
+        "source_sha256": "cba018810a56703d8fbf39dd03b66100342001b5fac4d4e1705e93ccb8b6419d",
+        "teams": [
+          {
+            "name": "San Diego State",
+            "batters": 13,
+            "pitchers": 6,
+            "AB": 34,
+            "R": 3,
+            "H": 7,
+            "RBI": 3,
+            "BB": 6,
+            "SO": 7,
+            "pitching_outs": 24,
+            "pitching_runs": 8,
+            "pitching_hits": 5
+          },
+          {
+            "name": "San Diego",
+            "batters": 10,
+            "pitchers": 4,
+            "AB": 26,
+            "R": 8,
+            "H": 5,
+            "RBI": 4,
+            "BB": 10,
+            "SO": 8,
+            "pitching_outs": 27,
+            "pitching_runs": 3,
+            "pitching_hits": 7
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 33,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 3,
+            "hits": 7,
+            "errors": 1,
+            "innings": [
+              0,
+              0,
+              3,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 8,
+            "hits": 5,
+            "errors": 0,
+            "innings": [
+              2,
+              0,
+              0,
+              0,
+              1,
+              4,
+              0,
+              1,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "San Diego State",
+            "nine_starting_slots": true,
+            "batter_rows": 13,
+            "pitcher_rows": 6,
+            "substitutes": 4
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 10,
+            "pitcher_rows": 4,
+            "substitutes": 1
+          }
+        ],
+        "official_decisions": {
+          "win": "Hyde, Jack",
+          "loss": "HARGETT, Hunter",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2022-04-08-san-diego-portland-att0143",
+      "player_rows": 24,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/portland/boxscore/12465",
+      "win": "Brett GILLIS",
+      "loss": "Garrett Rennie",
+      "source_audit": {
+        "game_id": "cb-2022-04-08-san-diego-portland-att0143",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2022/portland/boxscore/12465",
+        "http_code": 200,
+        "source_bytes": 624960,
+        "source_sha256": "229c6b066784cfdb199379f481ea29cb05aa9f48787ca51416a8a31a0d49aceb",
+        "teams": [
+          {
+            "name": "San Diego",
+            "batters": 10,
+            "pitchers": 3,
+            "AB": 29,
+            "R": 2,
+            "H": 3,
+            "RBI": 2,
+            "BB": 2,
+            "SO": 8,
+            "pitching_outs": 24,
+            "pitching_runs": 6,
+            "pitching_hits": 10
+          },
+          {
+            "name": "Portland",
+            "batters": 9,
+            "pitchers": 2,
+            "AB": 35,
+            "R": 6,
+            "H": 10,
+            "RBI": 5,
+            "BB": 1,
+            "SO": 7,
+            "pitching_outs": 27,
+            "pitching_runs": 2,
+            "pitching_hits": 3
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 24,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 2,
+            "hits": 3,
+            "errors": 1,
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 6,
+            "hits": 10,
+            "errors": 0,
+            "innings": [
+              0,
+              0,
+              3,
+              0,
+              2,
+              0,
+              1,
+              0,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 10,
+            "pitcher_rows": 3,
+            "substitutes": 1
+          },
+          {
+            "team": "Portland",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 2,
+            "substitutes": 0
+          }
+        ],
+        "official_decisions": {
+          "win": "GILLIS, Brett",
+          "loss": "Rennie, Garrett",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2022-04-05-san-diego-uc-san-diego-att0142",
+      "player_rows": 39,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/uc-san-diego/boxscore/12464",
+      "win": "Jack Hyde",
+      "loss": "Cole Dale",
+      "source_audit": {
+        "game_id": "cb-2022-04-05-san-diego-uc-san-diego-att0142",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2022/uc-san-diego/boxscore/12464",
+        "http_code": 200,
+        "source_bytes": 717964,
+        "source_sha256": "afdb7120ccc1d38b9c38f2c1316a35e83c5497a6e36046230ec08c8e19485d1d",
+        "teams": [
+          {
+            "name": "San Diego",
+            "batters": 11,
+            "pitchers": 6,
+            "AB": 37,
+            "R": 13,
+            "H": 13,
+            "RBI": 12,
+            "BB": 9,
+            "SO": 9,
+            "pitching_outs": 27,
+            "pitching_runs": 4,
+            "pitching_hits": 8
+          },
+          {
+            "name": "UC San Diego",
+            "batters": 15,
+            "pitchers": 7,
+            "AB": 32,
+            "R": 4,
+            "H": 8,
+            "RBI": 4,
+            "BB": 5,
+            "SO": 13,
+            "pitching_outs": 27,
+            "pitching_runs": 13,
+            "pitching_hits": 13
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 39,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 13,
+            "hits": 13,
+            "errors": 1,
+            "innings": [
+              1,
+              6,
+              1,
+              2,
+              0,
+              1,
+              0,
+              2,
+              0
+            ]
+          },
+          {
+            "runs": 4,
+            "hits": 8,
+            "errors": 3,
+            "innings": [
+              1,
+              1,
+              0,
+              0,
+              0,
+              2,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 6,
+            "substitutes": 2
+          },
+          {
+            "team": "UC San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 15,
+            "pitcher_rows": 7,
+            "substitutes": 6
+          }
+        ],
+        "official_decisions": {
+          "win": "Hyde, Jack",
+          "loss": "Dale, Cole",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2022-04-03-san-diego-san-francisco-att0141",
+      "player_rows": 34,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/san-francisco/boxscore/12463",
+      "win": "Josh MOLLERUS",
+      "loss": "Conner Thurman",
+      "source_audit": {
+        "game_id": "cb-2022-04-03-san-diego-san-francisco-att0141",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2022/san-francisco/boxscore/12463",
+        "http_code": 200,
+        "source_bytes": 677059,
+        "source_sha256": "797cc74c45715c929a14308e05a1c5c86a32377ccd8cc7ee4a1d276573af294d",
+        "teams": [
+          {
+            "name": "San Diego",
+            "batters": 11,
+            "pitchers": 5,
+            "AB": 33,
+            "R": 2,
+            "H": 9,
+            "RBI": 1,
+            "BB": 3,
+            "SO": 4,
+            "pitching_outs": 25,
+            "pitching_runs": 3,
+            "pitching_hits": 7
+          },
+          {
+            "name": "San Francisco",
+            "batters": 12,
+            "pitchers": 6,
+            "AB": 28,
+            "R": 3,
+            "H": 7,
+            "RBI": 3,
+            "BB": 5,
+            "SO": 10,
+            "pitching_outs": 27,
+            "pitching_runs": 2,
+            "pitching_hits": 9
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 34,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 2,
+            "hits": 9,
+            "errors": 0,
+            "innings": [
+              0,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 3,
+            "hits": 7,
+            "errors": 1,
+            "innings": [
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 5,
+            "substitutes": 2
+          },
+          {
+            "team": "San Francisco",
+            "nine_starting_slots": true,
+            "batter_rows": 12,
+            "pitcher_rows": 6,
+            "substitutes": 3
+          }
+        ],
+        "official_decisions": {
+          "win": "MOLLERUS, Josh",
+          "loss": "Thurman, Conner",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2022-04-02-san-diego-san-francisco-att0140",
+      "player_rows": 30,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/san-francisco/boxscore/12462",
+      "win": "Lance SANTERRE",
+      "loss": "Ivran Romero",
+      "source_audit": {
+        "game_id": "cb-2022-04-02-san-diego-san-francisco-att0140",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2022/san-francisco/boxscore/12462",
+        "http_code": 200,
+        "source_bytes": 669094,
+        "source_sha256": "d046b73203ee577d17370dfb9416215c43464e848644e18d7bddaac1b4b6955e",
+        "teams": [
+          {
+            "name": "San Diego",
+            "batters": 10,
+            "pitchers": 3,
+            "AB": 36,
+            "R": 5,
+            "H": 10,
+            "RBI": 5,
+            "BB": 5,
+            "SO": 7,
+            "pitching_outs": 24,
+            "pitching_runs": 6,
+            "pitching_hits": 9
+          },
+          {
+            "name": "San Francisco",
+            "batters": 12,
+            "pitchers": 5,
+            "AB": 32,
+            "R": 6,
+            "H": 9,
+            "RBI": 6,
+            "BB": 1,
+            "SO": 14,
+            "pitching_outs": 27,
+            "pitching_runs": 5,
+            "pitching_hits": 10
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 30,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 5,
+            "hits": 10,
+            "errors": 1,
+            "innings": [
+              1,
+              0,
+              4,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 6,
+            "hits": 9,
+            "errors": 1,
+            "innings": [
+              0,
+              0,
+              1,
+              0,
+              2,
+              0,
+              2,
+              1,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 10,
+            "pitcher_rows": 3,
+            "substitutes": 1
+          },
+          {
+            "team": "San Francisco",
+            "nine_starting_slots": true,
+            "batter_rows": 12,
+            "pitcher_rows": 5,
+            "substitutes": 3
+          }
+        ],
+        "official_decisions": {
+          "win": "SANTERRE, Lance",
+          "loss": "Romero, Ivran",
+          "save": "MOLLERUS, Josh"
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2022-04-01-san-diego-san-francisco-att0139",
+      "player_rows": 26,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/san-francisco/boxscore/12461",
+      "win": "Garrett Rennie",
+      "loss": "Owen STEVENSON",
+      "source_audit": {
+        "game_id": "cb-2022-04-01-san-diego-san-francisco-att0139",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2022/san-francisco/boxscore/12461",
+        "http_code": 200,
+        "source_bytes": 650857,
+        "source_sha256": "7ea7705019be96d9994cc6948709a59e3c1808cda72ee7a8b691a8e52ea078f1",
+        "teams": [
+          {
+            "name": "San Diego",
+            "batters": 10,
+            "pitchers": 3,
+            "AB": 41,
+            "R": 8,
+            "H": 15,
+            "RBI": 8,
+            "BB": 1,
+            "SO": 7,
+            "pitching_outs": 27,
+            "pitching_runs": 3,
+            "pitching_hits": 6
+          },
+          {
+            "name": "San Francisco",
+            "batters": 10,
+            "pitchers": 3,
+            "AB": 31,
+            "R": 3,
+            "H": 6,
+            "RBI": 3,
+            "BB": 4,
+            "SO": 13,
+            "pitching_outs": 27,
+            "pitching_runs": 8,
+            "pitching_hits": 15
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 26,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 8,
+            "hits": 15,
+            "errors": 0,
+            "innings": [
+              1,
+              5,
+              0,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 3,
+            "hits": 6,
+            "errors": 3,
+            "innings": [
+              1,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 10,
+            "pitcher_rows": 3,
+            "substitutes": 1
+          },
+          {
+            "team": "San Francisco",
+            "nine_starting_slots": true,
+            "batter_rows": 10,
+            "pitcher_rows": 3,
+            "substitutes": 1
+          }
+        ],
+        "official_decisions": {
+          "win": "Rennie, Garrett",
+          "loss": "STEVENSON, Owen",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2022-03-29-san-diego-cal-baptist-att0138",
+      "player_rows": 39,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/california-baptist/boxscore/12460",
+      "win": "Ryan Robinson",
+      "loss": "Anthony Silvas",
+      "source_audit": {
+        "game_id": "cb-2022-03-29-san-diego-cal-baptist-att0138",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2022/california-baptist/boxscore/12460",
+        "http_code": 200,
+        "source_bytes": 710969,
+        "source_sha256": "9da244d1bcddf47c5bb049e5e21f9e9641a0fd76905b487b70477af1201704f4",
+        "teams": [
+          {
+            "name": "San Diego",
+            "batters": 10,
+            "pitchers": 6,
+            "AB": 34,
+            "R": 7,
+            "H": 11,
+            "RBI": 5,
+            "BB": 6,
+            "SO": 4,
+            "pitching_outs": 27,
+            "pitching_runs": 2,
+            "pitching_hits": 6
+          },
+          {
+            "name": "Cal Baptist",
+            "batters": 14,
+            "pitchers": 9,
+            "AB": 31,
+            "R": 2,
+            "H": 6,
+            "RBI": 2,
+            "BB": 5,
+            "SO": 13,
+            "pitching_outs": 27,
+            "pitching_runs": 7,
+            "pitching_hits": 11
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 39,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 7,
+            "hits": 11,
+            "errors": 1,
+            "innings": [
+              1,
+              5,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0
+            ]
+          },
+          {
+            "runs": 2,
+            "hits": 6,
+            "errors": 4,
+            "innings": [
+              0,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 10,
+            "pitcher_rows": 6,
+            "substitutes": 1
+          },
+          {
+            "team": "Cal Baptist",
+            "nine_starting_slots": true,
+            "batter_rows": 14,
+            "pitcher_rows": 9,
+            "substitutes": 5
+          }
+        ],
+        "official_decisions": {
+          "win": "Robinson, Ryan",
+          "loss": "Anthony Silvas",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": "Anthony Silvas",
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2022-03-27-saint-mary-s-san-diego-att0137",
+      "player_rows": 33,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/saint-mary-s/boxscore/12459",
+      "win": "James Sashin",
+      "loss": "Jack SNOOK",
+      "source_audit": {
+        "game_id": "cb-2022-03-27-saint-mary-s-san-diego-att0137",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2022/saint-mary-s/boxscore/12459",
+        "http_code": 200,
+        "source_bytes": 688843,
+        "source_sha256": "3238a9876b44ad3d1b6e4ce336996b0a320bb132e2b2871de34893b3b4279b07",
+        "teams": [
+          {
+            "name": "Saint Mary's",
+            "batters": 13,
+            "pitchers": 5,
+            "AB": 39,
+            "R": 6,
+            "H": 10,
+            "RBI": 6,
+            "BB": 3,
+            "SO": 5,
+            "pitching_outs": 24,
+            "pitching_runs": 11,
+            "pitching_hits": 12
+          },
+          {
+            "name": "San Diego",
+            "batters": 10,
+            "pitchers": 5,
+            "AB": 32,
+            "R": 11,
+            "H": 12,
+            "RBI": 10,
+            "BB": 4,
+            "SO": 2,
+            "pitching_outs": 27,
+            "pitching_runs": 6,
+            "pitching_hits": 10
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 33,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 6,
+            "hits": 10,
+            "errors": 2,
+            "innings": [
+              3,
+              0,
+              0,
+              0,
+              3,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 11,
+            "hits": 12,
+            "errors": 3,
+            "innings": [
+              0,
+              3,
+              0,
+              0,
+              3,
+              0,
+              0,
+              5,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Saint Mary's",
+            "nine_starting_slots": true,
+            "batter_rows": 13,
+            "pitcher_rows": 5,
+            "substitutes": 4
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 10,
+            "pitcher_rows": 5,
+            "substitutes": 1
+          }
+        ],
+        "official_decisions": {
+          "win": "Sashin, James",
+          "loss": "SNOOK, Jack",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2022-03-25-saint-mary-s-san-diego-att0135",
+      "player_rows": 30,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/saint-mary-s/boxscore/12457",
+      "win": "Ian Churchill",
+      "loss": "Jackson HULETT",
+      "source_audit": {
+        "game_id": "cb-2022-03-25-saint-mary-s-san-diego-att0135",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2022/saint-mary-s/boxscore/12457",
+        "http_code": 200,
+        "source_bytes": 661282,
+        "source_sha256": "dd57fbf2382f14dbd54da770fae2c4fa3ab122080167fc1823700dac1186be51",
+        "teams": [
+          {
+            "name": "Saint Mary's",
+            "batters": 14,
+            "pitchers": 4,
+            "AB": 33,
+            "R": 2,
+            "H": 6,
+            "RBI": 2,
+            "BB": 2,
+            "SO": 13,
+            "pitching_outs": 29,
+            "pitching_runs": 4,
+            "pitching_hits": 10
+          },
+          {
+            "name": "San Diego",
+            "batters": 9,
+            "pitchers": 3,
+            "AB": 36,
+            "R": 4,
+            "H": 10,
+            "RBI": 4,
+            "BB": 3,
+            "SO": 7,
+            "pitching_outs": 30,
+            "pitching_runs": 2,
+            "pitching_hits": 6
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 30,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 2,
+            "hits": 6,
+            "errors": 1,
+            "innings": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0
+            ]
+          },
+          {
+            "runs": 4,
+            "hits": 10,
+            "errors": 2,
+            "innings": [
+              0,
+              1,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Saint Mary's",
+            "nine_starting_slots": true,
+            "batter_rows": 14,
+            "pitcher_rows": 4,
+            "substitutes": 5
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 3,
+            "substitutes": 0
+          }
+        ],
+        "official_decisions": {
+          "win": "Churchill, Ian",
+          "loss": "HULETT, Jackson",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2022-03-22-uc-irvine-san-diego-att0134",
+      "player_rows": 34,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/uc-irvine/boxscore/12456",
+      "win": "Conner Thurman",
+      "loss": "Troy Taylor",
+      "source_audit": {
+        "game_id": "cb-2022-03-22-uc-irvine-san-diego-att0134",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2022/uc-irvine/boxscore/12456",
+        "http_code": 200,
+        "source_bytes": 691983,
+        "source_sha256": "beec5e1f5e643dc510a576d5984497063cd6a73d839ee5a47bcca00f627679a0",
+        "teams": [
+          {
+            "name": "UC Irvine",
+            "batters": 11,
+            "pitchers": 5,
+            "AB": 36,
+            "R": 5,
+            "H": 8,
+            "RBI": 5,
+            "BB": 3,
+            "SO": 15,
+            "pitching_outs": 29,
+            "pitching_runs": 6,
+            "pitching_hits": 10
+          },
+          {
+            "name": "San Diego",
+            "batters": 11,
+            "pitchers": 7,
+            "AB": 37,
+            "R": 6,
+            "H": 10,
+            "RBI": 6,
+            "BB": 5,
+            "SO": 3,
+            "pitching_outs": 30,
+            "pitching_runs": 5,
+            "pitching_hits": 8
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 34,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 5,
+            "hits": 8,
+            "errors": 2,
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              0,
+              0,
+              3,
+              0
+            ]
+          },
+          {
+            "runs": 6,
+            "hits": 10,
+            "errors": 0,
+            "innings": [
+              0,
+              0,
+              1,
+              1,
+              0,
+              0,
+              3,
+              0,
+              0,
+              1
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "UC Irvine",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 5,
+            "substitutes": 2
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 7,
+            "substitutes": 2
+          }
+        ],
+        "official_decisions": {
+          "win": "Thurman, Conner",
+          "loss": "Taylor, Troy",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2022-03-20-san-diego-pepperdine-att0133",
+      "player_rows": 27,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/pepperdine/boxscore/12455",
+      "win": "Ian Churchill",
+      "loss": "DANE MORROW",
+      "source_audit": {
+        "game_id": "cb-2022-03-20-san-diego-pepperdine-att0133",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2022/pepperdine/boxscore/12455",
+        "http_code": 200,
+        "source_bytes": 646921,
+        "source_sha256": "bee726e694ebb8c2b4cca2b5cad367bebbfe1ae12b64a7d09ca298deae081463",
+        "teams": [
+          {
+            "name": "San Diego",
+            "batters": 9,
+            "pitchers": 4,
+            "AB": 34,
+            "R": 6,
+            "H": 8,
+            "RBI": 6,
+            "BB": 5,
+            "SO": 4,
+            "pitching_outs": 27,
+            "pitching_runs": 3,
+            "pitching_hits": 10
+          },
+          {
+            "name": "Pepperdine",
+            "batters": 11,
+            "pitchers": 3,
+            "AB": 36,
+            "R": 3,
+            "H": 10,
+            "RBI": 3,
+            "BB": 3,
+            "SO": 10,
+            "pitching_outs": 27,
+            "pitching_runs": 6,
+            "pitching_hits": 8
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 27,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 6,
+            "hits": 8,
+            "errors": 0,
+            "innings": [
+              0,
+              0,
+              5,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          {
+            "runs": 3,
+            "hits": 10,
+            "errors": 1,
+            "innings": [
+              0,
+              0,
+              0,
+              2,
+              0,
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 4,
+            "substitutes": 0
+          },
+          {
+            "team": "Pepperdine",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 3,
+            "substitutes": 2
+          }
+        ],
+        "official_decisions": {
+          "win": "Churchill, Ian",
+          "loss": "MORROW, DANE",
+          "save": "Romero, Ivran"
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2022-03-19-san-diego-pepperdine-att0132",
+      "player_rows": 27,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/pepperdine/boxscore/12454",
+      "win": "Brycen Mautz",
+      "loss": "TREVOR HINKEL",
+      "source_audit": {
+        "game_id": "cb-2022-03-19-san-diego-pepperdine-att0132",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2022/pepperdine/boxscore/12454",
+        "http_code": 200,
+        "source_bytes": 651435,
+        "source_sha256": "71586e795f57a142e3e0b110a6c1abd34860b6bdfb5ef865bf677a0b472b44ec",
+        "teams": [
+          {
+            "name": "San Diego",
+            "batters": 9,
+            "pitchers": 3,
+            "AB": 36,
+            "R": 8,
+            "H": 11,
+            "RBI": 6,
+            "BB": 1,
+            "SO": 3,
+            "pitching_outs": 27,
+            "pitching_runs": 1,
+            "pitching_hits": 9
+          },
+          {
+            "name": "Pepperdine",
+            "batters": 11,
+            "pitchers": 4,
+            "AB": 34,
+            "R": 1,
+            "H": 9,
+            "RBI": 1,
+            "BB": 2,
+            "SO": 12,
+            "pitching_outs": 27,
+            "pitching_runs": 8,
+            "pitching_hits": 11
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 27,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 8,
+            "hits": 11,
+            "errors": 0,
+            "innings": [
+              1,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              5
+            ]
+          },
+          {
+            "runs": 1,
+            "hits": 9,
+            "errors": 2,
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 3,
+            "substitutes": 0
+          },
+          {
+            "team": "Pepperdine",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 4,
+            "substitutes": 2
+          }
+        ],
+        "official_decisions": {
+          "win": "Mautz, Brycen",
+          "loss": "HINKEL, TREVOR",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2022-03-18-san-diego-pepperdine-att0131",
+      "player_rows": 23,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/pepperdine/boxscore/12453",
+      "win": "BRANDON LLEWELLYN",
+      "loss": "Garrett Rennie",
+      "source_audit": {
+        "game_id": "cb-2022-03-18-san-diego-pepperdine-att0131",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2022/pepperdine/boxscore/12453",
+        "http_code": 200,
+        "source_bytes": 619441,
+        "source_sha256": "c31aa4248dd6253f9b4dcab38dc249cf5e9845e3ef5ab5999eb6dceab457e9b4",
+        "teams": [
+          {
+            "name": "San Diego",
+            "batters": 9,
+            "pitchers": 3,
+            "AB": 28,
+            "R": 0,
+            "H": 6,
+            "RBI": 0,
+            "BB": 4,
+            "SO": 6,
+            "pitching_outs": 24,
+            "pitching_runs": 3,
+            "pitching_hits": 10
+          },
+          {
+            "name": "Pepperdine",
+            "batters": 9,
+            "pitchers": 2,
+            "AB": 31,
+            "R": 3,
+            "H": 10,
+            "RBI": 3,
+            "BB": 2,
+            "SO": 7,
+            "pitching_outs": 27,
+            "pitching_runs": 0,
+            "pitching_hits": 6
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 23,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 0,
+            "hits": 6,
+            "errors": 0,
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 3,
+            "hits": 10,
+            "errors": 0,
+            "innings": [
+              0,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 3,
+            "substitutes": 0
+          },
+          {
+            "team": "Pepperdine",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 2,
+            "substitutes": 0
+          }
+        ],
+        "official_decisions": {
+          "win": "LLEWELLYN, BRANDON",
+          "loss": "Rennie, Garrett",
+          "save": "GEORGES, GRANT"
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2022-03-15-cal-state-fullerton-san-diego-att0130",
+      "player_rows": 37,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/cal-state-fullerton/boxscore/12452",
+      "win": "Jack Hyde",
+      "loss": "James Wambold",
+      "source_audit": {
+        "game_id": "cb-2022-03-15-cal-state-fullerton-san-diego-att0130",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2022/cal-state-fullerton/boxscore/12452",
+        "http_code": 200,
+        "source_bytes": 711040,
+        "source_sha256": "2cea831acc34222c597f5be9393e5c2ffdc1749f9537eda46a762d4c150898eb",
+        "teams": [
+          {
+            "name": "Cal State Fullerton",
+            "batters": 11,
+            "pitchers": 9,
+            "AB": 42,
+            "R": 10,
+            "H": 17,
+            "RBI": 10,
+            "BB": 5,
+            "SO": 7,
+            "pitching_outs": 24,
+            "pitching_runs": 11,
+            "pitching_hits": 14
+          },
+          {
+            "name": "San Diego",
+            "batters": 12,
+            "pitchers": 5,
+            "AB": 38,
+            "R": 11,
+            "H": 14,
+            "RBI": 11,
+            "BB": 5,
+            "SO": 6,
+            "pitching_outs": 27,
+            "pitching_runs": 10,
+            "pitching_hits": 17
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 37,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 10,
+            "hits": 17,
+            "errors": 3,
+            "innings": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              2,
+              3,
+              3
+            ]
+          },
+          {
+            "runs": 11,
+            "hits": 14,
+            "errors": 0,
+            "innings": [
+              1,
+              2,
+              0,
+              1,
+              0,
+              0,
+              6,
+              1,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Cal State Fullerton",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 9,
+            "substitutes": 2
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 12,
+            "pitcher_rows": 5,
+            "substitutes": 3
+          }
+        ],
+        "official_decisions": {
+          "win": "Hyde, Jack",
+          "loss": "Wambold, James",
+          "save": "Colleran, Cole"
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2022-03-13-san-diego-grand-canyon-att0129",
+      "player_rows": 32,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/grand-canyon/boxscore/12451",
+      "win": "Conner Thurman",
+      "loss": "Eli Ankeney",
+      "source_audit": {
+        "game_id": "cb-2022-03-13-san-diego-grand-canyon-att0129",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2022/grand-canyon/boxscore/12451",
+        "http_code": 200,
+        "source_bytes": 680218,
+        "source_sha256": "97f600ca286805e3eb8f0d9a6e6a0258bb61009a8f116915c2dcbc9eb9bbdb0c",
+        "teams": [
+          {
+            "name": "San Diego",
+            "batters": 10,
+            "pitchers": 4,
+            "AB": 38,
+            "R": 7,
+            "H": 13,
+            "RBI": 7,
+            "BB": 3,
+            "SO": 8,
+            "pitching_outs": 27,
+            "pitching_runs": 5,
+            "pitching_hits": 8
+          },
+          {
+            "name": "Grand Canyon",
+            "batters": 13,
+            "pitchers": 5,
+            "AB": 35,
+            "R": 5,
+            "H": 8,
+            "RBI": 5,
+            "BB": 5,
+            "SO": 11,
+            "pitching_outs": 27,
+            "pitching_runs": 7,
+            "pitching_hits": 13
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 32,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 7,
+            "hits": 13,
+            "errors": 0,
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              2,
+              3,
+              1
+            ]
+          },
+          {
+            "runs": 5,
+            "hits": 8,
+            "errors": 0,
+            "innings": [
+              2,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              1,
+              1
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 10,
+            "pitcher_rows": 4,
+            "substitutes": 1
+          },
+          {
+            "team": "Grand Canyon",
+            "nine_starting_slots": true,
+            "batter_rows": 13,
+            "pitcher_rows": 5,
+            "substitutes": 4
+          }
+        ],
+        "official_decisions": {
+          "win": "Thurman, Conner",
+          "loss": "Ankeney, Eli",
+          "save": "Hyde, Jack"
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2022-03-12-san-diego-grand-canyon-att0128",
+      "player_rows": 27,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/grand-canyon/boxscore/12450",
+      "win": "Brycen Mautz",
+      "loss": "Connor Markl",
+      "source_audit": {
+        "game_id": "cb-2022-03-12-san-diego-grand-canyon-att0128",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2022/grand-canyon/boxscore/12450",
+        "http_code": 200,
+        "source_bytes": 643097,
+        "source_sha256": "9a1988b9f63bc5d575bb711b83783dcbb280e2a210dcbc098a3e12c347c60ec7",
+        "teams": [
+          {
+            "name": "San Diego",
+            "batters": 12,
+            "pitchers": 2,
+            "AB": 39,
+            "R": 7,
+            "H": 15,
+            "RBI": 7,
+            "BB": 1,
+            "SO": 6,
+            "pitching_outs": 27,
+            "pitching_runs": 1,
+            "pitching_hits": 5
+          },
+          {
+            "name": "Grand Canyon",
+            "batters": 9,
+            "pitchers": 4,
+            "AB": 32,
+            "R": 1,
+            "H": 5,
+            "RBI": 1,
+            "BB": 1,
+            "SO": 12,
+            "pitching_outs": 27,
+            "pitching_runs": 7,
+            "pitching_hits": 15
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 27,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 7,
+            "hits": 15,
+            "errors": 0,
+            "innings": [
+              0,
+              3,
+              0,
+              2,
+              0,
+              0,
+              1,
+              1,
+              0
+            ]
+          },
+          {
+            "runs": 1,
+            "hits": 5,
+            "errors": 1,
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 12,
+            "pitcher_rows": 2,
+            "substitutes": 3
+          },
+          {
+            "team": "Grand Canyon",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 4,
+            "substitutes": 0
+          }
+        ],
+        "official_decisions": {
+          "win": "Mautz, Brycen",
+          "loss": "Markl, Connor",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2022-03-11-san-diego-grand-canyon-att0127",
+      "player_rows": 28,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/grand-canyon/boxscore/12449",
+      "win": "Eli Ankeney",
+      "loss": "Cole Colleran",
+      "source_audit": {
+        "game_id": "cb-2022-03-11-san-diego-grand-canyon-att0127",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2022/grand-canyon/boxscore/12449",
+        "http_code": 200,
+        "source_bytes": 649946,
+        "source_sha256": "c4c336de7003e199f0af72f0f48077b504274134512c64c1a60503ba903f6bb3",
+        "teams": [
+          {
+            "name": "San Diego",
+            "batters": 10,
+            "pitchers": 4,
+            "AB": 35,
+            "R": 5,
+            "H": 7,
+            "RBI": 4,
+            "BB": 0,
+            "SO": 8,
+            "pitching_outs": 25,
+            "pitching_runs": 6,
+            "pitching_hits": 12
+          },
+          {
+            "name": "Grand Canyon",
+            "batters": 12,
+            "pitchers": 2,
+            "AB": 34,
+            "R": 6,
+            "H": 12,
+            "RBI": 5,
+            "BB": 1,
+            "SO": 5,
+            "pitching_outs": 27,
+            "pitching_runs": 5,
+            "pitching_hits": 7
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 28,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 5,
+            "hits": 7,
+            "errors": 1,
+            "innings": [
+              0,
+              1,
+              2,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 6,
+            "hits": 12,
+            "errors": 1,
+            "innings": [
+              3,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              1
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 10,
+            "pitcher_rows": 4,
+            "substitutes": 1
+          },
+          {
+            "team": "Grand Canyon",
+            "nine_starting_slots": true,
+            "batter_rows": 12,
+            "pitcher_rows": 2,
+            "substitutes": 3
+          }
+        ],
+        "official_decisions": {
+          "win": "Ankeney, Eli",
+          "loss": "Colleran, Cole",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2022-03-08-uc-san-diego-san-diego-att0126",
+      "player_rows": 29,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/uc-san-diego/boxscore/12448",
+      "win": "Ivran Romero",
+      "loss": "Austin Smith",
+      "source_audit": {
+        "game_id": "cb-2022-03-08-uc-san-diego-san-diego-att0126",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2022/uc-san-diego/boxscore/12448",
+        "http_code": 200,
+        "source_bytes": 647822,
+        "source_sha256": "c1dd45752f71b47ff623dbc67c484044db06de28fdd3c8772685d728c3481dfe",
+        "teams": [
+          {
+            "name": "UC San Diego",
+            "batters": 12,
+            "pitchers": 5,
+            "AB": 31,
+            "R": 0,
+            "H": 4,
+            "RBI": 0,
+            "BB": 1,
+            "SO": 14,
+            "pitching_outs": 24,
+            "pitching_runs": 2,
+            "pitching_hits": 3
+          },
+          {
+            "name": "San Diego",
+            "batters": 10,
+            "pitchers": 3,
+            "AB": 28,
+            "R": 2,
+            "H": 3,
+            "RBI": 1,
+            "BB": 5,
+            "SO": 7,
+            "pitching_outs": 27,
+            "pitching_runs": 0,
+            "pitching_hits": 4
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 29,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 0,
+            "hits": 4,
+            "errors": 1,
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 2,
+            "hits": 3,
+            "errors": 2,
+            "innings": [
+              0,
+              0,
+              0,
+              2,
+              0,
+              0,
+              0,
+              0,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "UC San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 12,
+            "pitcher_rows": 5,
+            "substitutes": 3
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 10,
+            "pitcher_rows": 3,
+            "substitutes": 1
+          }
+        ],
+        "official_decisions": {
+          "win": "Romero, Ivran",
+          "loss": "Smith, Austin",
+          "save": "Thurman, Conner"
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2022-03-06-dallas-baptist-san-diego-att0125",
+      "player_rows": 34,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/dallas-baptist/boxscore/12447",
+      "win": "Alec Baker",
+      "loss": "Ian Churchill",
+      "source_audit": {
+        "game_id": "cb-2022-03-06-dallas-baptist-san-diego-att0125",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2022/dallas-baptist/boxscore/12447",
+        "http_code": 200,
+        "source_bytes": 682608,
+        "source_sha256": "a024bc8441a3c9be4eb548c0cd9c0d238407616a0587811e03092466983641c0",
+        "teams": [
+          {
+            "name": "Dallas Baptist",
+            "batters": 9,
+            "pitchers": 6,
+            "AB": 36,
+            "R": 5,
+            "H": 9,
+            "RBI": 5,
+            "BB": 4,
+            "SO": 7,
+            "pitching_outs": 27,
+            "pitching_runs": 4,
+            "pitching_hits": 12
+          },
+          {
+            "name": "San Diego",
+            "batters": 14,
+            "pitchers": 5,
+            "AB": 37,
+            "R": 4,
+            "H": 12,
+            "RBI": 4,
+            "BB": 3,
+            "SO": 11,
+            "pitching_outs": 27,
+            "pitching_runs": 5,
+            "pitching_hits": 9
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 34,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 5,
+            "hits": 9,
+            "errors": 2,
+            "innings": [
+              0,
+              1,
+              1,
+              0,
+              0,
+              0,
+              3,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 4,
+            "hits": 12,
+            "errors": 0,
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              3,
+              1,
+              0
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Dallas Baptist",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 6,
+            "substitutes": 0
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 14,
+            "pitcher_rows": 5,
+            "substitutes": 5
+          }
+        ],
+        "official_decisions": {
+          "win": "Baker, Alec",
+          "loss": "Churchill, Ian",
+          "save": "Rich, Kyle"
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2022-03-05-dallas-baptist-san-diego-att0124",
+      "player_rows": 26,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/dallas-baptist/boxscore/12446",
+      "win": "Ryan Johnson",
+      "loss": "Brycen Mautz",
+      "source_audit": {
+        "game_id": "cb-2022-03-05-dallas-baptist-san-diego-att0124",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2022/dallas-baptist/boxscore/12446",
+        "http_code": 200,
+        "source_bytes": 642413,
+        "source_sha256": "778379d6e7bef1ac67fa45fe600c72196e8fd72e771a1328277f878954a1a80f",
+        "teams": [
+          {
+            "name": "Dallas Baptist",
+            "batters": 11,
+            "pitchers": 4,
+            "AB": 35,
+            "R": 8,
+            "H": 10,
+            "RBI": 8,
+            "BB": 2,
+            "SO": 17,
+            "pitching_outs": 27,
+            "pitching_runs": 6,
+            "pitching_hits": 10
+          },
+          {
+            "name": "San Diego",
+            "batters": 9,
+            "pitchers": 2,
+            "AB": 33,
+            "R": 6,
+            "H": 10,
+            "RBI": 6,
+            "BB": 3,
+            "SO": 7,
+            "pitching_outs": 27,
+            "pitching_runs": 8,
+            "pitching_hits": 10
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 26,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 8,
+            "hits": 10,
+            "errors": 1,
+            "innings": [
+              2,
+              0,
+              1,
+              1,
+              1,
+              1,
+              2,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 6,
+            "hits": 10,
+            "errors": 2,
+            "innings": [
+              0,
+              0,
+              0,
+              1,
+              4,
+              0,
+              1,
+              0,
+              0
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Dallas Baptist",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 4,
+            "substitutes": 2
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 2,
+            "substitutes": 0
+          }
+        ],
+        "official_decisions": {
+          "win": "Johnson, Ryan",
+          "loss": "Mautz, Brycen",
+          "save": "Heaton, Zach"
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2022-03-04-dallas-baptist-san-diego-att0123",
+      "player_rows": 30,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/dallas-baptist/boxscore/12445",
+      "win": "Ryan Robinson",
+      "loss": "Luke Trahan",
+      "source_audit": {
+        "game_id": "cb-2022-03-04-dallas-baptist-san-diego-att0123",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2022/dallas-baptist/boxscore/12445",
+        "http_code": 200,
+        "source_bytes": 667591,
+        "source_sha256": "343435232ecfde00a08dc8ab5565386cc12a578b85610f6608866dd51ed02ce0",
+        "teams": [
+          {
+            "name": "Dallas Baptist",
+            "batters": 10,
+            "pitchers": 4,
+            "AB": 34,
+            "R": 8,
+            "H": 8,
+            "RBI": 6,
+            "BB": 6,
+            "SO": 11,
+            "pitching_outs": 26,
+            "pitching_runs": 9,
+            "pitching_hits": 11
+          },
+          {
+            "name": "San Diego",
+            "batters": 11,
+            "pitchers": 5,
+            "AB": 38,
+            "R": 9,
+            "H": 11,
+            "RBI": 9,
+            "BB": 3,
+            "SO": 6,
+            "pitching_outs": 27,
+            "pitching_runs": 8,
+            "pitching_hits": 8
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 30,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 8,
+            "hits": 8,
+            "errors": 1,
+            "innings": [
+              0,
+              0,
+              4,
+              0,
+              0,
+              1,
+              2,
+              0,
+              1
+            ]
+          },
+          {
+            "runs": 9,
+            "hits": 11,
+            "errors": 0,
+            "innings": [
+              0,
+              2,
+              0,
+              0,
+              0,
+              2,
+              0,
+              2,
+              3
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Dallas Baptist",
+            "nine_starting_slots": true,
+            "batter_rows": 10,
+            "pitcher_rows": 4,
+            "substitutes": 1
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 5,
+            "substitutes": 2
+          }
+        ],
+        "official_decisions": {
+          "win": "Robinson, Ryan",
+          "loss": "Trahan, Luke",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2022-02-27-unlv-san-diego-att0122",
+      "player_rows": 32,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/unlv/boxscore/12444",
+      "win": "Noah Mattera",
+      "loss": "Ian Churchill",
+      "source_audit": {
+        "game_id": "cb-2022-02-27-unlv-san-diego-att0122",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2022/unlv/boxscore/12444",
+        "http_code": 200,
+        "source_bytes": 692293,
+        "source_sha256": "82dc8afe1b3f99dbaead4d52ec80453fd7682c40550dddf2f94c3837e325b16d",
+        "teams": [
+          {
+            "name": "UNLV",
+            "batters": 9,
+            "pitchers": 4,
+            "AB": 43,
+            "R": 16,
+            "H": 17,
+            "RBI": 16,
+            "BB": 7,
+            "SO": 10,
+            "pitching_outs": 27,
+            "pitching_runs": 9,
+            "pitching_hits": 12
+          },
+          {
+            "name": "San Diego",
+            "batters": 12,
+            "pitchers": 7,
+            "AB": 38,
+            "R": 9,
+            "H": 12,
+            "RBI": 9,
+            "BB": 6,
+            "SO": 4,
+            "pitching_outs": 27,
+            "pitching_runs": 16,
+            "pitching_hits": 17
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 32,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 16,
+            "hits": 17,
+            "errors": 0,
+            "innings": [
+              0,
+              8,
+              0,
+              3,
+              0,
+              3,
+              0,
+              1,
+              1
+            ]
+          },
+          {
+            "runs": 9,
+            "hits": 12,
+            "errors": 1,
+            "innings": [
+              0,
+              1,
+              1,
+              0,
+              0,
+              5,
+              0,
+              0,
+              2
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "UNLV",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 4,
+            "substitutes": 0
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 12,
+            "pitcher_rows": 7,
+            "substitutes": 3
+          }
+        ],
+        "official_decisions": {
+          "win": "Mattera,Noah",
+          "loss": "Churchill, Ian",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2022-02-26-fresno-state-san-diego-att0121",
+      "player_rows": 28,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/fresno-state/boxscore/12443",
+      "win": "Brycen Mautz",
+      "loss": "Ixan HENDERSON",
+      "source_audit": {
+        "game_id": "cb-2022-02-26-fresno-state-san-diego-att0121",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2022/fresno-state/boxscore/12443",
+        "http_code": 200,
+        "source_bytes": 639941,
+        "source_sha256": "36b0b5abb4850c05f83af3707b127bd041c583a5143019c655bb0c1c1cdb9ef9",
+        "teams": [
+          {
+            "name": "Fresno State",
+            "batters": 10,
+            "pitchers": 2,
+            "AB": 30,
+            "R": 0,
+            "H": 5,
+            "RBI": 0,
+            "BB": 2,
+            "SO": 12,
+            "pitching_outs": 24,
+            "pitching_runs": 4,
+            "pitching_hits": 6
+          },
+          {
+            "name": "San Diego",
+            "batters": 13,
+            "pitchers": 3,
+            "AB": 29,
+            "R": 4,
+            "H": 6,
+            "RBI": 4,
+            "BB": 2,
+            "SO": 7,
+            "pitching_outs": 27,
+            "pitching_runs": 0,
+            "pitching_hits": 5
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 28,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 0,
+            "hits": 5,
+            "errors": 0,
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 4,
+            "hits": 6,
+            "errors": 1,
+            "innings": [
+              0,
+              1,
+              0,
+              0,
+              1,
+              0,
+              1,
+              1,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Fresno State",
+            "nine_starting_slots": true,
+            "batter_rows": 10,
+            "pitcher_rows": 2,
+            "substitutes": 1
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 13,
+            "pitcher_rows": 3,
+            "substitutes": 4
+          }
+        ],
+        "official_decisions": {
+          "win": "Mautz, Brycen",
+          "loss": "HENDERSON, Ixan",
+          "save": "Hyde, Jack"
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2022-02-25-unlv-san-diego-att0120",
+      "player_rows": 26,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/unlv/boxscore/12442",
+      "win": "Josh Ibarra",
+      "loss": "Garrett Rennie",
+      "source_audit": {
+        "game_id": "cb-2022-02-25-unlv-san-diego-att0120",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2022/unlv/boxscore/12442",
+        "http_code": 200,
+        "source_bytes": 632559,
+        "source_sha256": "0cd8e5e7d503dbbf24368019a1b3d8c33fcc1ffc5956112dcb1500b114214cf6",
+        "teams": [
+          {
+            "name": "UNLV",
+            "batters": 10,
+            "pitchers": 2,
+            "AB": 34,
+            "R": 2,
+            "H": 9,
+            "RBI": 2,
+            "BB": 2,
+            "SO": 9,
+            "pitching_outs": 27,
+            "pitching_runs": 1,
+            "pitching_hits": 6
+          },
+          {
+            "name": "San Diego",
+            "batters": 11,
+            "pitchers": 3,
+            "AB": 32,
+            "R": 1,
+            "H": 6,
+            "RBI": 1,
+            "BB": 2,
+            "SO": 4,
+            "pitching_outs": 27,
+            "pitching_runs": 2,
+            "pitching_hits": 9
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 26,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 2,
+            "hits": 9,
+            "errors": 0,
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              1,
+              0
+            ]
+          },
+          {
+            "runs": 1,
+            "hits": 6,
+            "errors": 1,
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "UNLV",
+            "nine_starting_slots": true,
+            "batter_rows": 10,
+            "pitcher_rows": 2,
+            "substitutes": 1
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 3,
+            "substitutes": 2
+          }
+        ],
+        "official_decisions": {
+          "win": "Ibarra,Josh",
+          "loss": "Rennie, Garrett",
+          "save": "Rupp,Nick"
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2022-02-21-oregon-san-diego-att0119",
+      "player_rows": 39,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/oregon/boxscore/12441",
+      "win": "Rio Britton",
+      "loss": "Drake Frize",
+      "source_audit": {
+        "game_id": "cb-2022-02-21-oregon-san-diego-att0119",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2022/oregon/boxscore/12441",
+        "http_code": 200,
+        "source_bytes": 728375,
+        "source_sha256": "e34b87d768cd1c82f9979a4dcedb6802a558aceaff06fcdc922f78f786e6cd53",
+        "teams": [
+          {
+            "name": "Oregon",
+            "batters": 13,
+            "pitchers": 6,
+            "AB": 42,
+            "R": 21,
+            "H": 20,
+            "RBI": 21,
+            "BB": 8,
+            "SO": 5,
+            "pitching_outs": 24,
+            "pitching_runs": 11,
+            "pitching_hits": 15
+          },
+          {
+            "name": "San Diego",
+            "batters": 12,
+            "pitchers": 8,
+            "AB": 35,
+            "R": 11,
+            "H": 15,
+            "RBI": 10,
+            "BB": 7,
+            "SO": 10,
+            "pitching_outs": 24,
+            "pitching_runs": 21,
+            "pitching_hits": 20
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 39,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 21,
+            "hits": 20,
+            "errors": 2,
+            "innings": [
+              0,
+              0,
+              0,
+              1,
+              3,
+              2,
+              3,
+              12
+            ]
+          },
+          {
+            "runs": 11,
+            "hits": 15,
+            "errors": 2,
+            "innings": [
+              0,
+              1,
+              0,
+              3,
+              4,
+              2,
+              1,
+              0
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Oregon",
+            "nine_starting_slots": true,
+            "batter_rows": 13,
+            "pitcher_rows": 6,
+            "substitutes": 4
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 12,
+            "pitcher_rows": 8,
+            "substitutes": 3
+          }
+        ],
+        "official_decisions": {
+          "win": "Britton, Rio",
+          "loss": "Frize, Drake",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2022-02-20-oregon-san-diego-att0118",
+      "player_rows": 33,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/oregon/boxscore/12440",
+      "win": "Conner Thurman",
+      "loss": "C. Ciuffetelli",
+      "source_audit": {
+        "game_id": "cb-2022-02-20-oregon-san-diego-att0118",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2022/oregon/boxscore/12440",
+        "http_code": 200,
+        "source_bytes": 669270,
+        "source_sha256": "aa80a0422391acd79d169c04b2eb04c62b76b895460fdd90d24398eada229596",
+        "teams": [
+          {
+            "name": "Oregon",
+            "batters": 14,
+            "pitchers": 4,
+            "AB": 32,
+            "R": 4,
+            "H": 10,
+            "RBI": 4,
+            "BB": 1,
+            "SO": 9,
+            "pitching_outs": 24,
+            "pitching_runs": 5,
+            "pitching_hits": 7
+          },
+          {
+            "name": "San Diego",
+            "batters": 12,
+            "pitchers": 3,
+            "AB": 26,
+            "R": 5,
+            "H": 7,
+            "RBI": 5,
+            "BB": 9,
+            "SO": 6,
+            "pitching_outs": 27,
+            "pitching_runs": 4,
+            "pitching_hits": 10
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 33,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 4,
+            "hits": 10,
+            "errors": 1,
+            "innings": [
+              1,
+              0,
+              0,
+              0,
+              1,
+              1,
+              0,
+              1,
+              0
+            ]
+          },
+          {
+            "runs": 5,
+            "hits": 7,
+            "errors": 0,
+            "innings": [
+              0,
+              0,
+              2,
+              2,
+              0,
+              0,
+              0,
+              1,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Oregon",
+            "nine_starting_slots": true,
+            "batter_rows": 14,
+            "pitcher_rows": 4,
+            "substitutes": 5
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 12,
+            "pitcher_rows": 3,
+            "substitutes": 3
+          }
+        ],
+        "official_decisions": {
+          "win": "Thurman, Conner",
+          "loss": "Ciuffetelli, C.",
+          "save": "Romero, Ivran"
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2022-02-19-oregon-san-diego-att0117",
+      "player_rows": 25,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/oregon/boxscore/12439",
+      "win": "Brycen Mautz",
+      "loss": "Andrew Mosiello",
+      "source_audit": {
+        "game_id": "cb-2022-02-19-oregon-san-diego-att0117",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2022/oregon/boxscore/12439",
+        "http_code": 200,
+        "source_bytes": 640533,
+        "source_sha256": "3d75827a3d3676258830520932b39f487e048dba62f38a829b971035285f7939",
+        "teams": [
+          {
+            "name": "Oregon",
+            "batters": 11,
+            "pitchers": 3,
+            "AB": 36,
+            "R": 4,
+            "H": 9,
+            "RBI": 3,
+            "BB": 1,
+            "SO": 15,
+            "pitching_outs": 24,
+            "pitching_runs": 10,
+            "pitching_hits": 7
+          },
+          {
+            "name": "San Diego",
+            "batters": 9,
+            "pitchers": 2,
+            "AB": 29,
+            "R": 10,
+            "H": 7,
+            "RBI": 5,
+            "BB": 6,
+            "SO": 2,
+            "pitching_outs": 27,
+            "pitching_runs": 4,
+            "pitching_hits": 9
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 25,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 4,
+            "hits": 9,
+            "errors": 2,
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              2,
+              2,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 10,
+            "hits": 7,
+            "errors": 1,
+            "innings": [
+              2,
+              0,
+              7,
+              0,
+              0,
+              1,
+              0,
+              0,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Oregon",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 3,
+            "substitutes": 2
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 2,
+            "substitutes": 0
+          }
+        ],
+        "official_decisions": {
+          "win": "Mautz, Brycen",
+          "loss": "Mosiello, Andrew",
+          "save": "Hyde, Jack"
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2022-02-18-oregon-san-diego-att0116",
+      "player_rows": 33,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/oregon/boxscore/12438",
+      "win": "Garrett Rennie",
+      "loss": "Adam Maier",
+      "source_audit": {
+        "game_id": "cb-2022-02-18-oregon-san-diego-att0116",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2022/oregon/boxscore/12438",
+        "http_code": 200,
+        "source_bytes": 673181,
+        "source_sha256": "fd03dfc80b954defc12ff3feab1791688dd305e429411eb61fa11a30063e0a85",
+        "teams": [
+          {
+            "name": "Oregon",
+            "batters": 13,
+            "pitchers": 5,
+            "AB": 31,
+            "R": 1,
+            "H": 7,
+            "RBI": 0,
+            "BB": 5,
+            "SO": 7,
+            "pitching_outs": 24,
+            "pitching_runs": 11,
+            "pitching_hits": 9
+          },
+          {
+            "name": "San Diego",
+            "batters": 11,
+            "pitchers": 4,
+            "AB": 35,
+            "R": 11,
+            "H": 9,
+            "RBI": 10,
+            "BB": 5,
+            "SO": 11,
+            "pitching_outs": 27,
+            "pitching_runs": 1,
+            "pitching_hits": 7
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 33,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 1,
+            "hits": 7,
+            "errors": 3,
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 11,
+            "hits": 9,
+            "errors": 1,
+            "innings": [
+              2,
+              2,
+              0,
+              0,
+              0,
+              0,
+              7,
+              0,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Oregon",
+            "nine_starting_slots": true,
+            "batter_rows": 13,
+            "pitcher_rows": 5,
+            "substitutes": 4
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 4,
+            "substitutes": 2
+          }
+        ],
+        "official_decisions": {
+          "win": "Rennie, Garrett",
+          "loss": "Maier, Adam",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    }
+  ],
+  "pending_review": [
+    {
+      "game_id": "cb-2022-06-04-san-diego-oregon-state-att0175",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/oregon-state/boxscore/12661",
+      "reason": "Official inning R/H/E scoreboard could not be unambiguously parsed and checked"
+    },
+    {
+      "game_id": "cb-2022-05-21-gonzaga-san-diego-att0163",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/gonzaga/boxscore/12486",
+      "reason": "University source identity or doubleheader attendance order needs confirmation"
+    },
+    {
+      "game_id": "cb-2022-05-21-gonzaga-san-diego-att0162",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/gonzaga/boxscore/12487",
+      "reason": "University source identity or doubleheader attendance order needs confirmation"
+    },
+    {
+      "game_id": "cb-2022-04-21-grand-canyon-stanford-att0151",
+      "source_url": "https://gculopes.com/sports/baseball/stats/2022/stanford/boxscore/18165",
+      "reason": "University source identity or doubleheader attendance order needs confirmation"
+    },
+    {
+      "game_id": "cb-2022-04-09-san-diego-portland-att0145",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/portland/boxscore/12467",
+      "reason": "University source identity or doubleheader attendance order needs confirmation"
+    },
+    {
+      "game_id": "cb-2022-04-09-san-diego-portland-att0144",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/portland/boxscore/12466",
+      "reason": "University source identity or doubleheader attendance order needs confirmation"
+    },
+    {
+      "game_id": "cb-2022-03-26-saint-mary-s-san-diego-att0136",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/saint-mary-s/boxscore/12458",
+      "reason": "Saint Mary's: cannot exactly match source batter lineup against source player records"
+    }
+  ],
+  "release": "Draft branch only; never auto-publish or merge"
+}

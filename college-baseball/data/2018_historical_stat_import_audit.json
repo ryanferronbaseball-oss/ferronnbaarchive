@@ -2,18 +2,19 @@
   "season": 2018,
   "month": null,
   "limit": 0,
-  "status": "PARTIAL_REVIEW_REQUIRED",
+  "status": "PASS",
   "original_attendance_games": 444,
-  "verified_this_run": 2,
-  "verified_in_season": 29,
-  "verified_overall": 436,
-  "player_game_rows_total": 13153,
+  "verified_this_run": 1,
+  "verified_in_season": 30,
+  "verified_overall": 437,
+  "player_game_rows_total": 13183,
   "already_verified": [
     "cb-2018-05-08-uc-riverside-san-diego-att0030",
     "cb-2018-05-06-gonzaga-san-diego-att0029",
     "cb-2018-05-05-gonzaga-san-diego-att0028",
     "cb-2018-05-04-gonzaga-san-diego-att0027",
     "cb-2018-04-17-cal-state-fullerton-san-diego-att0026",
+    "cb-2018-04-14-saint-mary-s-san-diego-att0025",
     "cb-2018-04-08-loyola-marymount-san-diego-att0024",
     "cb-2018-04-07-loyola-marymount-san-diego-att0023",
     "cb-2018-04-06-loyola-marymount-san-diego-att0022",
@@ -21,6 +22,7 @@
     "cb-2018-03-18-santa-clara-san-diego-att0020",
     "cb-2018-03-17-santa-clara-san-diego-att0019",
     "cb-2018-03-16-santa-clara-san-diego-att0018",
+    "cb-2018-03-13-san-diego-state-san-diego-att0017",
     "cb-2018-03-04-indiana-san-diego-att0016",
     "cb-2018-03-03-indiana-san-diego-att0015",
     "cb-2018-03-03-indiana-san-diego-att0014",
@@ -39,150 +41,123 @@
   ],
   "completed": [
     {
-      "game_id": "cb-2018-04-14-saint-mary-s-san-diego-att0025",
-      "player_rows": 29,
-      "source_url": "https://usdtoreros.com/documents/2018/5/10/14226__m_basebl_2017_18_misc_non_event__USDvsSMCboxApr14.pdf",
-      "win": "Kevin Milam",
-      "loss": "Chris Murphy",
+      "game_id": "cb-2018-05-09-arizona-state-san-diego-att0031",
+      "player_rows": 30,
+      "source_url": "https://thesundevils.com/boxscore/466",
+      "win": "Sam Romero",
+      "loss": "Nick Sprengel",
       "source_audit": {
         "status": "PASS",
-        "source": "https://usdtoreros.com/documents/2018/5/10/14226__m_basebl_2017_18_misc_non_event__USDvsSMCboxApr14.pdf",
-        "transcript_sha256": "818c899e72f68c73fa7e3799086c7708c95e6bef755b5c33831a9b8722afed75",
-        "source_type": "user_supplied_original_university_pdf_verified_full_transcript",
-        "player_rows": 29,
+        "source": "https://thesundevils.com/boxscore/466",
+        "source_evidence_sha256": "9084aaa688dcb86ba0b18a53fbecd8193fad90a3571636f399be09ded5fe05ab",
+        "source_scoreboard_file_id": "file_0000000045a081f5b589dd3a9489b970",
+        "source_type": "official_university_batting_pitching_plus_attendee_original_lineup_and_scoreboard",
+        "player_rows": 30,
         "lineup_audit": [
           {
-            "team": "Saint Mary's",
-            "slots": 9,
-            "batter_rows": 11,
-            "pitcher_rows": 3,
-            "substitutes": 2
-          },
-          {
-            "team": "San Diego",
-            "slots": 9,
+            "team": "Arizona State",
+            "nine_starting_slots": true,
             "batter_rows": 12,
-            "pitcher_rows": 4,
-            "substitutes": 3
-          }
-        ],
-        "scoreboard": {
-          "Saint Mary's": {
-            "innings": [
-              0,
-              1,
-              0,
-              0,
-              0,
-              5,
-              0,
-              0,
-              0
-            ],
-            "runs": 6,
-            "hits": 11,
-            "errors": 1
-          },
-          "San Diego": {
-            "innings": [
-              0,
-              0,
-              0,
-              1,
-              2,
-              0,
-              2,
-              0,
-              0
-            ],
-            "runs": 5,
-            "hits": 8,
-            "errors": 1
-          }
-        },
-        "pitching_decisions": {
-          "win": "Kevin Milam",
-          "loss": "Chris Murphy",
-          "save": "Michael Hobbs"
-        }
-      }
-    },
-    {
-      "game_id": "cb-2018-03-13-san-diego-state-san-diego-att0017",
-      "player_rows": 36,
-      "source_url": "https://usdtoreros.com/documents/2018/5/10/14105__m_basebl_2017_18_misc_non_event__USDvsSDSUboxMar13.pdf",
-      "win": "Daniel Ritcheson",
-      "loss": "Anthony Donatella",
-      "source_audit": {
-        "status": "PASS",
-        "source": "https://usdtoreros.com/documents/2018/5/10/14105__m_basebl_2017_18_misc_non_event__USDvsSDSUboxMar13.pdf",
-        "transcript_sha256": "9c1423ae68389dbf30b31467a7963638667d6ebbb3e2f304d1f01f458ac0c706",
-        "source_type": "user_supplied_original_university_pdf_verified_full_transcript",
-        "player_rows": 36,
-        "lineup_audit": [
-          {
-            "team": "San Diego State",
-            "slots": 9,
-            "batter_rows": 13,
-            "pitcher_rows": 7,
-            "substitutes": 4
+            "pitcher_rows": 3,
+            "substitutes": 3,
+            "owner_confirmed": "2026-10-18"
           },
           {
             "team": "San Diego",
-            "slots": 9,
-            "batter_rows": 10,
-            "pitcher_rows": 7,
-            "substitutes": 1
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 4,
+            "substitutes": 2,
+            "owner_confirmed": "2026-10-18"
           }
         ],
         "scoreboard": {
-          "San Diego State": {
+          "filename": "Screenshot 2026-10-18 at 12.32.47 AM.png",
+          "file_id": "file_0000000045a081f5b589dd3a9489b970",
+          "source": "user_provided_original_baseball_game_scoreboard_screenshot_2026_10_18",
+          "printed_date": "05/09/2018",
+          "printed_attendance": 658,
+          "printed_sport": "Baseball",
+          "inning_columns": 9,
+          "away": {
+            "team": "Arizona State",
             "innings": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              7,
+              1,
+              1,
+              3,
+              2,
+              1,
               1,
               0,
+              2,
               1
             ],
-            "runs": 9,
-            "hits": 7,
-            "errors": 1
+            "runs": 12,
+            "hits": 13,
+            "errors": 0
           },
-          "San Diego": {
+          "home": {
+            "team": "San Diego",
             "innings": [
               0,
               0,
-              1,
+              0,
               0,
               1,
               0,
-              1,
+              4,
               0,
-              0
+              2
             ],
-            "runs": 3,
-            "hits": 8,
-            "errors": 3
-          }
+            "runs": 7,
+            "hits": 14,
+            "errors": 1
+          },
+          "validation": "nine_inning_run_sums_and_game_boxscore_team_hit_totals_reconcile"
         },
         "pitching_decisions": {
-          "win": "Daniel Ritcheson",
-          "loss": "Anthony Donatella",
+          "win": "Sam Romero",
+          "loss": "Nick Sprengel",
           "save": null
-        }
+        },
+        "save_provenance": "not_explicitly_labeled_in_source",
+        "attendee_confirmed_substitutions": [
+          {
+            "team": "San Diego",
+            "substitute": "Todd Jackson",
+            "replaced": "Trevor Rosenberg",
+            "role": "pinch_hitter",
+            "slot": 9
+          },
+          {
+            "team": "San Diego",
+            "substitute": "Trevor Omahen",
+            "replaced": "Todd Jackson",
+            "role": "defensive_successor",
+            "slot": 9
+          },
+          {
+            "team": "Arizona State",
+            "substitute": "Boyd Vander Kooi",
+            "replaced": "Spencer Torkelson",
+            "slot": 1
+          },
+          {
+            "team": "Arizona State",
+            "substitute": "Luke Leisenring",
+            "replaced": "Lyle Lin",
+            "slot": 4
+          },
+          {
+            "team": "Arizona State",
+            "substitute": "Trevor Hauver",
+            "replaced": "Hunter Jump",
+            "slot": 5
+          }
+        ]
       }
     }
   ],
-  "pending_review": [
-    {
-      "game_id": "cb-2018-05-09-arizona-state-san-diego-att0031",
-      "source_url": "https://usdtoreros.com/documents/2018/6/27/14288__m_basebl_2017_18_misc_non_event__USDvsASUboxMay9.pdf",
-      "reason": "2018 ASU screenshot evidence not yet a verified complete inning/lineup gamebook"
-    }
-  ],
+  "pending_review": [],
   "release": "Draft branch only; never auto-publish or merge"
 }

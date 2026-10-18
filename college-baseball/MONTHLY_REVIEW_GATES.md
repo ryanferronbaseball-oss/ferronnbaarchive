@@ -1,11 +1,10 @@
 # College Baseball — Month-by-Month Review Gates
 
-## October 17, 2026 — 2020 and 2019 season discovery completed (latest checkpoint)
+## October 17, 2026 — 2020 and 2019 official game identity matching complete (latest checkpoint)
 
-User explicitly authorized **2020 and 2019**. **2019: 41/41** complete official university player gamebooks located, original source dates all matched. February 16 Wagner vs USD has two unique original attendance rows: **Game 1 Wagner 9–USD 15, 1:03 PM (USD Sidearm source 8231)** and **Game 2 Wagner 1–USD 3, 5:09 PM (USD Sidearm source 8232)**; do not use USD aggregate per-game listing order, which is reversed. **2020: 11/11** complete official university player gamebooks linked; exactly one date conflict, user original **March 10 California Baptist at USD** versus official **March 11, 2020 USD 2–0** (USD source 9683). Hold that single game's player-stat import pending date reconciliation, keep original date and ID untouched. No 2019 or 2020 individual player stats yet imported (0/52). See [2019 source queue](data/2019_official_source_queue.json), [2020 source queue](data/2020_official_source_queue.json), [2019 monthly audit](data/2019_monthly_progress_audit.json), and [2020 monthly audit](data/2020_monthly_progress_audit.json).
+User explicitly authorized **2020 and 2019**. **2019: 41/41** official full player gamebooks sourced, with no date conflicts. February 16 Wagner vs USD has separate attendance records: Game 1 **Wagner 9–USD 15, 1:03 PM (USD gamebook 8231)** and Game 2 **Wagner 1–USD 3, 5:09 PM (USD gamebook 8232)**. **2020: 11/11** full university gamebooks sourced and all attendance game identities resolved. The original worksheet row 84 lists **March 10, 2020 California Baptist at San Diego**, but official university gamebook ID **9683** establishes **March 11, 2020 (San Diego won 2–0)**. **The user explicitly confirmed October 17, 2026 that they attended the March 11 game**. Original worksheet date, stable source ID and row remain untouched for provenance; March 11 is the corrected official game date and the source identity hold is cleared for future player-stat import. **No 2019 or 2020 individual player-gamebook imports have been made (0/52)**. See [2019 source queue](data/2019_official_source_queue.json), [2020 source queue](data/2020_official_source_queue.json), and their monthly progress audits.
 
-**Authorized seasons:** 2019–2026 four-year non-JUCO. **2018 and earlier not authorized**; no merge, production publish or deployment. Earlier checkpoint notes are historical and superseded by this authorization.
-
+**Authorized seasons:** 2019–2026 four-year non-JUCO. **2018 and earlier not authorized**; no merge or publication. Older dated notes are historical, superseded by this confirmation.
 
 ## October 17, 2026 — 2021 full-season authorized, all 32 official gamebook identities matched (current)
 

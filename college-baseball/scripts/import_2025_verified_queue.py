@@ -47,6 +47,13 @@ def scorer_labels(page, rows, gid):
             # Some old Sidearm gamebooks show just the pitcher's last name.
             surname_matches=[r for r in pitchers if r["player"].split()[-1].casefold()==name.casefold()]
             if len(surname_matches)==1:matches=surname_matches
+        # IU original 3/4/2018 university source labels the Win
+        # scorer "Beauchamp, Cam" but its pitcher table gives his full
+        # name "Beauchamp, Cameron". Exact game/role and unique pitcher only.
+        if (gid=="cb-2018-03-04-indiana-san-diego-att0016"
+            and label=="Win" and name=="Beauchamp, Cam" and not matches):
+            matches=[r for r in pitchers
+                     if r["player"]=="Cameron Beauchamp" and r["team"]=="Indiana"]
         if len(matches)!=1:
             raise ValueError(f"Official {label} scorer {name!r} not uniquely matched among source pitchers {gid}")
         found[label.lower()]=matches[0]["player"]

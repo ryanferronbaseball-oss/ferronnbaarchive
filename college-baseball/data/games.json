@@ -1329,17 +1329,74 @@
     "state": null,
     "neutral_site": null,
     "game_number": null,
-    "game_type": null,
+    "game_type": "regular_season",
     "postseason_round": null,
-    "away_score": null,
-    "home_score": null,
-    "score_provenance": null,
-    "source_url": null,
-    "verification": "attendance_only",
-    "official_boxscore_status": "not_imported",
+    "away_score": 9,
+    "home_score": 3,
+    "score_provenance": "official_university_user_supplied_original_pdf",
+    "source_url": "https://usdtoreros.com/documents/2018/5/10/14105__m_basebl_2017_18_misc_non_event__USDvsSDSUboxMar13.pdf",
+    "verification": "official_boxscore_verified",
+    "official_boxscore_status": "verified",
     "possible_same_day_doubleheader": false,
     "provisional_worksheet_game_sequence": null,
-    "notes": "Original workbook Sheet1 row 18."
+    "notes": "Original workbook Sheet1 row 18.",
+    "away_hits": 7,
+    "home_hits": 8,
+    "away_errors": 1,
+    "home_errors": 3,
+    "innings": [
+      {
+        "inning": 1,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 2,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 3,
+        "away": 0,
+        "home": 1
+      },
+      {
+        "inning": 4,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 5,
+        "away": 0,
+        "home": 1
+      },
+      {
+        "inning": 6,
+        "away": 7,
+        "home": 0
+      },
+      {
+        "inning": 7,
+        "away": 1,
+        "home": 1
+      },
+      {
+        "inning": 8,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 9,
+        "away": 1,
+        "home": 0
+      }
+    ],
+    "pitching_decisions": {
+      "win": "Daniel Ritcheson",
+      "loss": "Anthony Donatella",
+      "save": null
+    },
+    "source_import_season": 2018
   },
   {
     "id": "cb-2018-03-16-santa-clara-san-diego-att0018",
@@ -1938,17 +1995,74 @@
     "state": null,
     "neutral_site": null,
     "game_number": null,
-    "game_type": null,
+    "game_type": "regular_season",
     "postseason_round": null,
-    "away_score": null,
-    "home_score": null,
-    "score_provenance": null,
-    "source_url": null,
-    "verification": "attendance_only",
-    "official_boxscore_status": "not_imported",
+    "away_score": 6,
+    "home_score": 5,
+    "score_provenance": "official_university_user_supplied_original_pdf",
+    "source_url": "https://usdtoreros.com/documents/2018/5/10/14226__m_basebl_2017_18_misc_non_event__USDvsSMCboxApr14.pdf",
+    "verification": "official_boxscore_verified",
+    "official_boxscore_status": "verified",
     "possible_same_day_doubleheader": false,
     "provisional_worksheet_game_sequence": null,
-    "notes": "Original workbook Sheet1 row 26."
+    "notes": "Original workbook Sheet1 row 26.",
+    "away_hits": 11,
+    "home_hits": 8,
+    "away_errors": 1,
+    "home_errors": 1,
+    "innings": [
+      {
+        "inning": 1,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 2,
+        "away": 1,
+        "home": 0
+      },
+      {
+        "inning": 3,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 4,
+        "away": 0,
+        "home": 1
+      },
+      {
+        "inning": 5,
+        "away": 0,
+        "home": 2
+      },
+      {
+        "inning": 6,
+        "away": 5,
+        "home": 0
+      },
+      {
+        "inning": 7,
+        "away": 0,
+        "home": 2
+      },
+      {
+        "inning": 8,
+        "away": 0,
+        "home": 0
+      },
+      {
+        "inning": 9,
+        "away": 0,
+        "home": 0
+      }
+    ],
+    "pitching_decisions": {
+      "win": "Kevin Milam",
+      "loss": "Chris Murphy",
+      "save": "Michael Hobbs"
+    },
+    "source_import_season": 2018
   },
   {
     "id": "cb-2018-04-17-cal-state-fullerton-san-diego-att0026",

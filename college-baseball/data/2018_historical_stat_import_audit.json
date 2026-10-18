@@ -5,9 +5,9 @@
   "status": "PARTIAL_REVIEW_REQUIRED",
   "original_attendance_games": 444,
   "verified_this_run": 2,
-  "verified_in_season": 27,
-  "verified_overall": 434,
-  "player_game_rows_total": 13088,
+  "verified_in_season": 29,
+  "verified_overall": 436,
+  "player_game_rows_total": 13153,
   "already_verified": [
     "cb-2018-05-08-uc-riverside-san-diego-att0030",
     "cb-2018-05-06-gonzaga-san-diego-att0029",
@@ -31,157 +31,149 @@
     "cb-2018-02-24-cal-poly-grand-canyon-att0009",
     "cb-2018-02-23-michigan-san-diego-att0008",
     "cb-2018-02-23-cal-poly-arkansas-att0007",
+    "cb-2018-02-18-cincinnati-san-diego-att0006",
+    "cb-2018-02-18-cincinnati-san-diego-att0005",
     "cb-2018-02-17-california-cincinnati-att0004",
     "cb-2018-02-17-california-san-diego-att0003",
     "cb-2018-02-16-california-san-diego-att0002"
   ],
   "completed": [
     {
-      "game_id": "cb-2018-02-18-cincinnati-san-diego-att0006",
-      "player_rows": 27,
-      "source_url": "https://storage.googleapis.com/gobearcats-com-prod/2025/06/29/EIKFzFi4XIx7rW5a9UvwMzpwiQSNIr5qQEvTHkBg.pdf",
-      "win": "Travis KUHN",
-      "loss": "Jalen WADE",
+      "game_id": "cb-2018-04-14-saint-mary-s-san-diego-att0025",
+      "player_rows": 29,
+      "source_url": "https://usdtoreros.com/documents/2018/5/10/14226__m_basebl_2017_18_misc_non_event__USDvsSMCboxApr14.pdf",
+      "win": "Kevin Milam",
+      "loss": "Chris Murphy",
       "source_audit": {
         "status": "PASS",
-        "source": "https://storage.googleapis.com/gobearcats-com-prod/2025/06/29/EIKFzFi4XIx7rW5a9UvwMzpwiQSNIr5qQEvTHkBg.pdf",
-        "source_sha256": "a9849a5b41a4a17988645a845f5a5e7561d4a307a0deb03c26f1417e7b9f7a44",
-        "source_type": "official_university_pdf_gamebook",
-        "player_rows": 27,
+        "source": "https://usdtoreros.com/documents/2018/5/10/14226__m_basebl_2017_18_misc_non_event__USDvsSMCboxApr14.pdf",
+        "transcript_sha256": "818c899e72f68c73fa7e3799086c7708c95e6bef755b5c33831a9b8722afed75",
+        "source_type": "user_supplied_original_university_pdf_verified_full_transcript",
+        "player_rows": 29,
         "lineup_audit": [
           {
-            "team": "Cincinnati",
-            "nine_starting_slots": true,
-            "batter_rows": 9,
+            "team": "Saint Mary's",
+            "slots": 9,
+            "batter_rows": 11,
             "pitcher_rows": 3,
-            "substitutes": 0
+            "substitutes": 2
           },
           {
             "team": "San Diego",
-            "nine_starting_slots": true,
-            "batter_rows": 11,
+            "slots": 9,
+            "batter_rows": 12,
             "pitcher_rows": 4,
-            "substitutes": 2
+            "substitutes": 3
           }
         ],
-        "scoreboard": [
-          {
+        "scoreboard": {
+          "Saint Mary's": {
+            "innings": [
+              0,
+              1,
+              0,
+              0,
+              0,
+              5,
+              0,
+              0,
+              0
+            ],
+            "runs": 6,
+            "hits": 11,
+            "errors": 1
+          },
+          "San Diego": {
             "innings": [
               0,
               0,
               0,
               1,
+              2,
               0,
               2,
               0,
+              0
+            ],
+            "runs": 5,
+            "hits": 8,
+            "errors": 1
+          }
+        },
+        "pitching_decisions": {
+          "win": "Kevin Milam",
+          "loss": "Chris Murphy",
+          "save": "Michael Hobbs"
+        }
+      }
+    },
+    {
+      "game_id": "cb-2018-03-13-san-diego-state-san-diego-att0017",
+      "player_rows": 36,
+      "source_url": "https://usdtoreros.com/documents/2018/5/10/14105__m_basebl_2017_18_misc_non_event__USDvsSDSUboxMar13.pdf",
+      "win": "Daniel Ritcheson",
+      "loss": "Anthony Donatella",
+      "source_audit": {
+        "status": "PASS",
+        "source": "https://usdtoreros.com/documents/2018/5/10/14105__m_basebl_2017_18_misc_non_event__USDvsSDSUboxMar13.pdf",
+        "transcript_sha256": "9c1423ae68389dbf30b31467a7963638667d6ebbb3e2f304d1f01f458ac0c706",
+        "source_type": "user_supplied_original_university_pdf_verified_full_transcript",
+        "player_rows": 36,
+        "lineup_audit": [
+          {
+            "team": "San Diego State",
+            "slots": 9,
+            "batter_rows": 13,
+            "pitcher_rows": 7,
+            "substitutes": 4
+          },
+          {
+            "team": "San Diego",
+            "slots": 9,
+            "batter_rows": 10,
+            "pitcher_rows": 7,
+            "substitutes": 1
+          }
+        ],
+        "scoreboard": {
+          "San Diego State": {
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              7,
+              1,
+              0,
+              1
+            ],
+            "runs": 9,
+            "hits": 7,
+            "errors": 1
+          },
+          "San Diego": {
+            "innings": [
+              0,
+              0,
+              1,
+              0,
+              1,
+              0,
+              1,
               0,
               0
             ],
             "runs": 3,
-            "hits": 7,
-            "errors": 0
-          },
-          {
-            "innings": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              2,
-              0,
-              0,
-              2
-            ],
-            "runs": 4,
-            "hits": 7,
-            "errors": 0
-          }
-        ],
-        "pitching_decisions": {
-          "win": "Travis KUHN",
-          "loss": "Jalen WADE",
-          "save": null
-        },
-        "archive_source_header_date": "2018-02-17",
-        "verified_official_schedule_date": "2018-02-18",
-        "date_discrepancy_evidence": "Original Cincinnati/SD official Feb 18 schedule, scored Game 1/Game 2 PDFs marked Feb 17",
-        "source_game_number": 2
-      }
-    },
-    {
-      "game_id": "cb-2018-02-18-cincinnati-san-diego-att0005",
-      "player_rows": 33,
-      "source_url": "https://storage.googleapis.com/gobearcats-com-prod/2025/06/23/qre66UMRSF5t969mTcx51AEMiCvv3XATSOCaqyhH.pdf",
-      "win": "Jarod YOAKAM",
-      "loss": "Justin FRIEDMAN",
-      "source_audit": {
-        "status": "PASS",
-        "source": "https://storage.googleapis.com/gobearcats-com-prod/2025/06/23/qre66UMRSF5t969mTcx51AEMiCvv3XATSOCaqyhH.pdf",
-        "source_sha256": "d40e2878fce2af9acac5b913d96661258ca500b004a4bf128f97a8aa85d190e1",
-        "source_type": "official_university_pdf_gamebook",
-        "player_rows": 33,
-        "lineup_audit": [
-          {
-            "team": "Cincinnati",
-            "nine_starting_slots": true,
-            "batter_rows": 9,
-            "pitcher_rows": 4,
-            "substitutes": 0
-          },
-          {
-            "team": "San Diego",
-            "nine_starting_slots": true,
-            "batter_rows": 16,
-            "pitcher_rows": 4,
-            "substitutes": 7
-          }
-        ],
-        "scoreboard": [
-          {
-            "innings": [
-              0,
-              3,
-              0,
-              0,
-              1,
-              0,
-              0,
-              0,
-              0,
-              3
-            ],
-            "runs": 7,
             "hits": 8,
             "errors": 3
-          },
-          {
-            "innings": [
-              1,
-              0,
-              0,
-              1,
-              0,
-              0,
-              0,
-              2,
-              0,
-              0
-            ],
-            "runs": 4,
-            "hits": 12,
-            "errors": 3
           }
-        ],
-        "pitching_decisions": {
-          "win": "Jarod YOAKAM",
-          "loss": "Justin FRIEDMAN",
-          "save": "Reese ROBINSON"
         },
-        "archive_source_header_date": "2018-02-17",
-        "verified_official_schedule_date": "2018-02-18",
-        "date_discrepancy_evidence": "Original Cincinnati/SD official Feb 18 schedule, scored Game 1/Game 2 PDFs marked Feb 17",
-        "source_game_number": 1
+        "pitching_decisions": {
+          "win": "Daniel Ritcheson",
+          "loss": "Anthony Donatella",
+          "save": null
+        }
       }
     }
   ],
@@ -190,16 +182,6 @@
       "game_id": "cb-2018-05-09-arizona-state-san-diego-att0031",
       "source_url": "https://usdtoreros.com/documents/2018/6/27/14288__m_basebl_2017_18_misc_non_event__USDvsASUboxMay9.pdf",
       "reason": "2018 ASU screenshot evidence not yet a verified complete inning/lineup gamebook"
-    },
-    {
-      "game_id": "cb-2018-04-14-saint-mary-s-san-diego-att0025",
-      "source_url": "https://usdtoreros.com/documents/2018/5/10/14226__m_basebl_2017_18_misc_non_event__USDvsSMCboxApr14.pdf",
-      "reason": "University PDF download did not yield PDF bytes"
-    },
-    {
-      "game_id": "cb-2018-03-13-san-diego-state-san-diego-att0017",
-      "source_url": "https://usdtoreros.com/documents/2018/5/10/14105__m_basebl_2017_18_misc_non_event__USDvsSDSUboxMar13.pdf",
-      "reason": "University PDF download did not yield PDF bytes"
     }
   ],
   "release": "Draft branch only; never auto-publish or merge"

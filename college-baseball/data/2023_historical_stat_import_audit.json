@@ -1,0 +1,1086 @@
+{
+  "season": 2023,
+  "month": 5,
+  "limit": 0,
+  "status": "PASS",
+  "original_attendance_games": 444,
+  "verified_this_run": 10,
+  "verified_in_season": 10,
+  "verified_overall": 223,
+  "player_game_rows_total": 6601,
+  "already_verified": [],
+  "completed": [
+    {
+      "game_id": "cb-2023-05-24-saint-mary-s-san-diego-att0224",
+      "player_rows": 30,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/saint-mary-s/boxscore/13940",
+      "win": "Connor LINCHEY",
+      "loss": "Ryan Robinson",
+      "source_audit": {
+        "game_id": "cb-2023-05-24-saint-mary-s-san-diego-att0224",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2023/saint-mary-s/boxscore/13940",
+        "http_code": 200,
+        "source_bytes": 682658,
+        "source_sha256": "dd940c39dcf60118884d2739dc54fd00eb367dde0337b56f20e5ab76015a9b76",
+        "teams": [
+          {
+            "name": "Saint Mary's",
+            "batters": 10,
+            "pitchers": 3,
+            "AB": 43,
+            "R": 17,
+            "H": 17,
+            "RBI": 17,
+            "BB": 5,
+            "SO": 12,
+            "pitching_outs": 27,
+            "pitching_runs": 8,
+            "pitching_hits": 13
+          },
+          {
+            "name": "San Diego",
+            "batters": 11,
+            "pitchers": 6,
+            "AB": 42,
+            "R": 8,
+            "H": 13,
+            "RBI": 8,
+            "BB": 2,
+            "SO": 8,
+            "pitching_outs": 27,
+            "pitching_runs": 17,
+            "pitching_hits": 17
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 30,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 17,
+            "hits": 17,
+            "errors": 3,
+            "innings": [
+              4,
+              0,
+              2,
+              2,
+              0,
+              1,
+              0,
+              0,
+              8
+            ]
+          },
+          {
+            "runs": 8,
+            "hits": 13,
+            "errors": 1,
+            "innings": [
+              0,
+              2,
+              0,
+              0,
+              2,
+              0,
+              1,
+              0,
+              3
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Saint Mary's",
+            "nine_starting_slots": true,
+            "batter_rows": 10,
+            "pitcher_rows": 3,
+            "substitutes": 1
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 6,
+            "substitutes": 2
+          }
+        ],
+        "official_decisions": {
+          "win": "LINCHEY, Connor",
+          "loss": "Robinson, Ryan",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2023-05-24-gonzaga-santa-clara-att0223",
+      "player_rows": 24,
+      "source_url": "https://gozags.com/sports/baseball/stats/2023/santa-clara/boxscore/8846",
+      "win": "Cade Pilchard",
+      "loss": "Owen Wild",
+      "source_audit": {
+        "game_id": "cb-2023-05-24-gonzaga-santa-clara-att0223",
+        "source": "https://gozags.com/sports/baseball/stats/2023/santa-clara/boxscore/8846",
+        "http_code": 200,
+        "source_bytes": 1236014,
+        "source_sha256": "0c3962e02e759326406c4c8c5831007ba03a7a5acad0df98f99c502d210dc67e",
+        "teams": [
+          {
+            "name": "Gonzaga",
+            "batters": 11,
+            "pitchers": 2,
+            "AB": 35,
+            "R": 2,
+            "H": 10,
+            "RBI": 2,
+            "BB": 1,
+            "SO": 5,
+            "pitching_outs": 24,
+            "pitching_runs": 4,
+            "pitching_hits": 12
+          },
+          {
+            "name": "Santa Clara",
+            "batters": 9,
+            "pitchers": 2,
+            "AB": 35,
+            "R": 4,
+            "H": 12,
+            "RBI": 4,
+            "BB": 0,
+            "SO": 7,
+            "pitching_outs": 27,
+            "pitching_runs": 2,
+            "pitching_hits": 10
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 24,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 2,
+            "hits": 10,
+            "errors": 0,
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              0
+            ]
+          },
+          {
+            "runs": 4,
+            "hits": 12,
+            "errors": 0,
+            "innings": [
+              0,
+              0,
+              0,
+              2,
+              0,
+              0,
+              1,
+              1,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Gonzaga",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 2,
+            "substitutes": 2
+          },
+          {
+            "team": "Santa Clara",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 2,
+            "substitutes": 0
+          }
+        ],
+        "official_decisions": {
+          "win": "Pilchard,cade",
+          "loss": "Wild, Owen",
+          "save": "Hales,skylar"
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2023-05-14-san-diego-saint-mary-s-att0222",
+      "player_rows": 30,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/saint-mary-s/boxscore/13938",
+      "win": "Ryan Kysar",
+      "loss": "Garret PLATA",
+      "source_audit": {
+        "game_id": "cb-2023-05-14-san-diego-saint-mary-s-att0222",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2023/saint-mary-s/boxscore/13938",
+        "http_code": 200,
+        "source_bytes": 679130,
+        "source_sha256": "03d01d73659efec1277b7b3db7eec12f81d74f1f81297fd0ac55942d8bb78a2e",
+        "teams": [
+          {
+            "name": "San Diego",
+            "batters": 10,
+            "pitchers": 5,
+            "AB": 36,
+            "R": 10,
+            "H": 10,
+            "RBI": 8,
+            "BB": 4,
+            "SO": 7,
+            "pitching_outs": 27,
+            "pitching_runs": 8,
+            "pitching_hits": 12
+          },
+          {
+            "name": "Saint Mary's",
+            "batters": 9,
+            "pitchers": 7,
+            "AB": 38,
+            "R": 8,
+            "H": 12,
+            "RBI": 8,
+            "BB": 3,
+            "SO": 10,
+            "pitching_outs": 27,
+            "pitching_runs": 10,
+            "pitching_hits": 10
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 30,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 10,
+            "hits": 10,
+            "errors": 0,
+            "innings": [
+              3,
+              0,
+              1,
+              1,
+              0,
+              4,
+              1,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 8,
+            "hits": 12,
+            "errors": 2,
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              4,
+              3,
+              1,
+              0,
+              0
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 10,
+            "pitcher_rows": 5,
+            "substitutes": 1
+          },
+          {
+            "team": "Saint Mary's",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 7,
+            "substitutes": 0
+          }
+        ],
+        "official_decisions": {
+          "win": "Kysar, Ryan",
+          "loss": "PLATA, Garret",
+          "save": "Thurman, Conner"
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2023-05-13-san-diego-saint-mary-s-att0221",
+      "player_rows": 25,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/saint-mary-s/boxscore/13937",
+      "win": "Ryan WILTSE",
+      "loss": "Austin Smith",
+      "source_audit": {
+        "game_id": "cb-2023-05-13-san-diego-saint-mary-s-att0221",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2023/saint-mary-s/boxscore/13937",
+        "http_code": 200,
+        "source_bytes": 644008,
+        "source_sha256": "114e1df7ccf440d878e9bd2f01be62c1052408bfb14af6362b92ae932fae2f0e",
+        "teams": [
+          {
+            "name": "San Diego",
+            "batters": 9,
+            "pitchers": 4,
+            "AB": 31,
+            "R": 0,
+            "H": 4,
+            "RBI": 0,
+            "BB": 6,
+            "SO": 3,
+            "pitching_outs": 24,
+            "pitching_runs": 6,
+            "pitching_hits": 10
+          },
+          {
+            "name": "Saint Mary's",
+            "batters": 9,
+            "pitchers": 4,
+            "AB": 31,
+            "R": 6,
+            "H": 10,
+            "RBI": 6,
+            "BB": 9,
+            "SO": 4,
+            "pitching_outs": 27,
+            "pitching_runs": 0,
+            "pitching_hits": 4
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 25,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 0,
+            "hits": 4,
+            "errors": 1,
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 6,
+            "hits": 10,
+            "errors": 1,
+            "innings": [
+              3,
+              0,
+              1,
+              1,
+              0,
+              1,
+              0,
+              0,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 4,
+            "substitutes": 0
+          },
+          {
+            "team": "Saint Mary's",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 4,
+            "substitutes": 0
+          }
+        ],
+        "official_decisions": {
+          "win": "WILTSE, Ryan",
+          "loss": "Smith, Austin",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2023-05-12-san-diego-saint-mary-s-att0220",
+      "player_rows": 25,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/saint-mary-s/boxscore/13936",
+      "win": "Ryan Robinson",
+      "loss": "SANDERS",
+      "source_audit": {
+        "game_id": "cb-2023-05-12-san-diego-saint-mary-s-att0220",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2023/saint-mary-s/boxscore/13936",
+        "http_code": 200,
+        "source_bytes": 635832,
+        "source_sha256": "9e8fcf7f72ef91f7c4634a922be90f22cffa382ea59641a466840ea0ec993e59",
+        "teams": [
+          {
+            "name": "San Diego",
+            "batters": 9,
+            "pitchers": 3,
+            "AB": 39,
+            "R": 4,
+            "H": 12,
+            "RBI": 4,
+            "BB": 2,
+            "SO": 4,
+            "pitching_outs": 27,
+            "pitching_runs": 3,
+            "pitching_hits": 9
+          },
+          {
+            "name": "Saint Mary's",
+            "batters": 11,
+            "pitchers": 2,
+            "AB": 34,
+            "R": 3,
+            "H": 9,
+            "RBI": 3,
+            "BB": 1,
+            "SO": 7,
+            "pitching_outs": 27,
+            "pitching_runs": 4,
+            "pitching_hits": 12
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 25,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 4,
+            "hits": 12,
+            "errors": 0,
+            "innings": [
+              0,
+              1,
+              0,
+              0,
+              1,
+              1,
+              1,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 3,
+            "hits": 9,
+            "errors": 0,
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              2,
+              0,
+              0
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 3,
+            "substitutes": 0
+          },
+          {
+            "team": "Saint Mary's",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 2,
+            "substitutes": 2
+          }
+        ],
+        "official_decisions": {
+          "win": "Robinson, Ryan",
+          "loss": "SANDERS",
+          "save": "Romero, Ivran"
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": "SANDERS",
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2023-05-09-uc-irvine-san-diego-att0219",
+      "player_rows": 37,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/uc-irvine/boxscore/13935",
+      "win": "Andre Antone",
+      "loss": "Tristan LaMaison",
+      "source_audit": {
+        "game_id": "cb-2023-05-09-uc-irvine-san-diego-att0219",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2023/uc-irvine/boxscore/13935",
+        "http_code": 200,
+        "source_bytes": 710952,
+        "source_sha256": "93671605f0c875b24db06036678aa2e6eaefd6b759d9c5019a8d634b12578619",
+        "teams": [
+          {
+            "name": "UC Irvine",
+            "batters": 10,
+            "pitchers": 6,
+            "AB": 37,
+            "R": 10,
+            "H": 16,
+            "RBI": 10,
+            "BB": 11,
+            "SO": 5,
+            "pitching_outs": 27,
+            "pitching_runs": 2,
+            "pitching_hits": 7
+          },
+          {
+            "name": "San Diego",
+            "batters": 9,
+            "pitchers": 12,
+            "AB": 33,
+            "R": 2,
+            "H": 7,
+            "RBI": 2,
+            "BB": 1,
+            "SO": 6,
+            "pitching_outs": 27,
+            "pitching_runs": 10,
+            "pitching_hits": 16
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 37,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 10,
+            "hits": 16,
+            "errors": 1,
+            "innings": [
+              0,
+              0,
+              1,
+              0,
+              2,
+              1,
+              0,
+              6,
+              0
+            ]
+          },
+          {
+            "runs": 2,
+            "hits": 7,
+            "errors": 0,
+            "innings": [
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "UC Irvine",
+            "nine_starting_slots": true,
+            "batter_rows": 10,
+            "pitcher_rows": 6,
+            "substitutes": 1
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 12,
+            "substitutes": 0
+          }
+        ],
+        "official_decisions": {
+          "win": "Antone, Andre",
+          "loss": "LaMaison, Tristan",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2023-05-07-cal-state-northridge-uc-san-diego-att0218",
+      "player_rows": 34,
+      "source_url": "https://ucsdtritons.com/sports/baseball/stats/2023/csun/boxscore/9381",
+      "win": "Jon Mocherman",
+      "loss": "Michael Mitchell",
+      "source_audit": {
+        "game_id": "cb-2023-05-07-cal-state-northridge-uc-san-diego-att0218",
+        "source": "https://ucsdtritons.com/sports/baseball/stats/2023/csun/boxscore/9381",
+        "http_code": 200,
+        "source_bytes": 637965,
+        "source_sha256": "de8b19f5eb567bff69a9d3aa5a25851c34318dadb7005b791f41e548c706bbfb",
+        "teams": [
+          {
+            "name": "Cal State Northridge",
+            "batters": 15,
+            "pitchers": 4,
+            "AB": 40,
+            "R": 11,
+            "H": 13,
+            "RBI": 10,
+            "BB": 1,
+            "SO": 12,
+            "pitching_outs": 27,
+            "pitching_runs": 0,
+            "pitching_hits": 3
+          },
+          {
+            "name": "UC San Diego",
+            "batters": 11,
+            "pitchers": 4,
+            "AB": 30,
+            "R": 0,
+            "H": 3,
+            "RBI": 0,
+            "BB": 2,
+            "SO": 7,
+            "pitching_outs": 27,
+            "pitching_runs": 11,
+            "pitching_hits": 13
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 34,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 11,
+            "hits": 13,
+            "errors": 1,
+            "innings": [
+              1,
+              1,
+              0,
+              1,
+              0,
+              0,
+              7,
+              1,
+              0
+            ]
+          },
+          {
+            "runs": 0,
+            "hits": 3,
+            "errors": 0,
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "Cal State Northridge",
+            "nine_starting_slots": true,
+            "batter_rows": 15,
+            "pitcher_rows": 4,
+            "substitutes": 6
+          },
+          {
+            "team": "UC San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 4,
+            "substitutes": 2
+          }
+        ],
+        "official_decisions": {
+          "win": "Mocherman, Jon",
+          "loss": "Mitchell, Michael",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2023-05-06-byu-san-diego-att0217",
+      "player_rows": 25,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/byu/boxscore/13934",
+      "win": "Austin Smith",
+      "loss": "Ben HANSEN",
+      "source_audit": {
+        "game_id": "cb-2023-05-06-byu-san-diego-att0217",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2023/byu/boxscore/13934",
+        "http_code": 200,
+        "source_bytes": 633078,
+        "source_sha256": "e68bd18aba08b191eb5b2a4e31480147ce3f73d5f513f56538ffbc6587b25e0e",
+        "teams": [
+          {
+            "name": "BYU",
+            "batters": 12,
+            "pitchers": 4,
+            "AB": 33,
+            "R": 1,
+            "H": 6,
+            "RBI": 1,
+            "BB": 1,
+            "SO": 16,
+            "pitching_outs": 24,
+            "pitching_runs": 5,
+            "pitching_hits": 6
+          },
+          {
+            "name": "San Diego",
+            "batters": 9,
+            "pitchers": 2,
+            "AB": 24,
+            "R": 5,
+            "H": 6,
+            "RBI": 4,
+            "BB": 7,
+            "SO": 5,
+            "pitching_outs": 27,
+            "pitching_runs": 1,
+            "pitching_hits": 6
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 25,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 1,
+            "hits": 6,
+            "errors": 1,
+            "innings": [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 5,
+            "hits": 6,
+            "errors": 0,
+            "innings": [
+              0,
+              0,
+              0,
+              1,
+              0,
+              3,
+              0,
+              1,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "BYU",
+            "nine_starting_slots": true,
+            "batter_rows": 12,
+            "pitcher_rows": 4,
+            "substitutes": 3
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 2,
+            "substitutes": 0
+          }
+        ],
+        "official_decisions": {
+          "win": "Smith, Austin",
+          "loss": "HANSEN, Ben",
+          "save": "Thurman, Conner"
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2023-05-05-byu-san-diego-att0216",
+      "player_rows": 25,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/byu/boxscore/13933",
+      "win": "Ivran Romero",
+      "loss": "Bryce ROBISON",
+      "source_audit": {
+        "game_id": "cb-2023-05-05-byu-san-diego-att0216",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2023/byu/boxscore/13933",
+        "http_code": 200,
+        "source_bytes": 636219,
+        "source_sha256": "aa62edc77d506f8f16d82f989e805fa841465a9d80682731c63b7a12474122ef",
+        "teams": [
+          {
+            "name": "BYU",
+            "batters": 10,
+            "pitchers": 4,
+            "AB": 37,
+            "R": 4,
+            "H": 12,
+            "RBI": 4,
+            "BB": 1,
+            "SO": 6,
+            "pitching_outs": 24,
+            "pitching_runs": 8,
+            "pitching_hits": 8
+          },
+          {
+            "name": "San Diego",
+            "batters": 9,
+            "pitchers": 2,
+            "AB": 30,
+            "R": 8,
+            "H": 8,
+            "RBI": 8,
+            "BB": 5,
+            "SO": 5,
+            "pitching_outs": 27,
+            "pitching_runs": 4,
+            "pitching_hits": 12
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 25,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 4,
+            "hits": 12,
+            "errors": 0,
+            "innings": [
+              0,
+              0,
+              1,
+              0,
+              0,
+              2,
+              0,
+              1,
+              0
+            ]
+          },
+          {
+            "runs": 8,
+            "hits": 8,
+            "errors": 0,
+            "innings": [
+              0,
+              0,
+              6,
+              2,
+              0,
+              0,
+              0,
+              0,
+              null
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "BYU",
+            "nine_starting_slots": true,
+            "batter_rows": 10,
+            "pitcher_rows": 4,
+            "substitutes": 1
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 2,
+            "substitutes": 0
+          }
+        ],
+        "official_decisions": {
+          "win": "Romero, Ivran",
+          "loss": "ROBISON, Bryce",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    },
+    {
+      "game_id": "cb-2023-05-04-byu-san-diego-att0215",
+      "player_rows": 30,
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/byu/boxscore/13932",
+      "win": "Mason OLSON",
+      "loss": "Garrett Rennie",
+      "source_audit": {
+        "game_id": "cb-2023-05-04-byu-san-diego-att0215",
+        "source": "https://usdtoreros.com/sports/baseball/stats/2023/byu/boxscore/13932",
+        "http_code": 200,
+        "source_bytes": 670075,
+        "source_sha256": "54766c6517007eb072654427777e945280c88a2f2ea192f35c45ea2ea14c818d",
+        "teams": [
+          {
+            "name": "BYU",
+            "batters": 9,
+            "pitchers": 3,
+            "AB": 38,
+            "R": 10,
+            "H": 15,
+            "RBI": 10,
+            "BB": 4,
+            "SO": 7,
+            "pitching_outs": 27,
+            "pitching_runs": 6,
+            "pitching_hits": 10
+          },
+          {
+            "name": "San Diego",
+            "batters": 11,
+            "pitchers": 7,
+            "AB": 36,
+            "R": 6,
+            "H": 10,
+            "RBI": 6,
+            "BB": 4,
+            "SO": 13,
+            "pitching_outs": 27,
+            "pitching_runs": 10,
+            "pitching_hits": 15
+          }
+        ],
+        "source_warnings": [],
+        "player_rows": 30,
+        "status": "PASS",
+        "scoreboard": [
+          {
+            "runs": 10,
+            "hits": 15,
+            "errors": 1,
+            "innings": [
+              4,
+              0,
+              6,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "runs": 6,
+            "hits": 10,
+            "errors": 0,
+            "innings": [
+              0,
+              1,
+              1,
+              0,
+              2,
+              0,
+              2,
+              0,
+              0
+            ]
+          }
+        ],
+        "lineup_audit": [
+          {
+            "team": "BYU",
+            "nine_starting_slots": true,
+            "batter_rows": 9,
+            "pitcher_rows": 3,
+            "substitutes": 0
+          },
+          {
+            "team": "San Diego",
+            "nine_starting_slots": true,
+            "batter_rows": 11,
+            "pitcher_rows": 7,
+            "substitutes": 2
+          }
+        ],
+        "official_decisions": {
+          "win": "OLSON, Mason",
+          "loss": "Rennie, Garrett",
+          "save": null
+        },
+        "resolved_pitcher_decisions": {
+          "win": null,
+          "loss": null,
+          "save": null
+        }
+      }
+    }
+  ],
+  "pending_review": [],
+  "release": "Draft branch only; never auto-publish or merge"
+}

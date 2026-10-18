@@ -6,9 +6,9 @@
   "season_span": "2017–2026 after user-confirmed 2024 typo correction",
   "staged_games": 444,
   "official_score_and_inning_lines_matched": 213,
-  "official_player_boxscores_imported": 213,
-  "player_stat_rows": 6316,
-  "unique_player_ids": 3611,
+  "official_player_boxscores_imported": 223,
+  "player_stat_rows": 6601,
+  "unique_player_ids": 3747,
   "scores_supplied_by_user": 0,
   "source_docs": "Official Auburn, Arkansas, LSU, Florida, Mississippi State, Tennessee and Texas athletics/conference box scores and university recaps",
   "source_worksheet_rows": [
@@ -58,7 +58,7 @@
   ],
   "same_day_identical_matchup_pairs_in_full_sheet": 13,
   "metadata_status": "full_444_game_attendance_directory_plus_may_2026_official_sources",
-  "warning": "2024–2026 four-year NCAA/four-year verified source-gamebooks only; all junior colleges excluded from backfill. 2023 and earlier, merge/publication unapproved.",
+  "warning": "Verified historical imports are source-gated and provisional on an unpublished development branch; unresolved dates, ties, missing scorebooks and partial gamebooks remain pending. No JUCO included. No production deployment or merge.",
   "resolved_matchups": [
     {
       "attendance_game_number": 443,
@@ -137,10 +137,10 @@
   "remaining_attendance_games_not_yet_imported": 0,
   "validation": "May 2026: all 27 official player books mapped to matching attendance games; scores, R/H/E, pitching/team opposing R and H, batting lineup starters checked; new imports have complete official per-inning lines. CI browser test separately tracked.",
   "all_attendance_entries_staged": 444,
-  "attendance_only_pending_official_verification": 231,
+  "attendance_only_pending_official_verification": 221,
   "source": "User workbook; 444 original rows, two user-corrected entries.",
   "official_scoreboard_player_lines_pending": 0,
-  "latest_verified_batch": "2025 official university scorebooks, reverse-chronological source-gated imports",
+  "latest_verified_batch": "Historical official gamebooks 2023 (development branch)",
   "latest_verified_batch_games": [
     {
       "worksheet_row": 432,
@@ -389,7 +389,9 @@
       "status": "in_progress"
     },
     "season_2023": {
-      "approved": false
+      "approved": false,
+      "full_player_boxscores_imported": 10,
+      "status": "in_progress"
     },
     "season_2022": {
       "approved": true,
@@ -524,7 +526,11 @@
     "tie_7_inning_special_case": 1,
     "source_queue": "data/2023_official_source_queue.json",
     "month_audit": "data/2023_monthly_progress_audit.json",
-    "stage": "source_discovery_completed_no_player_stat_backfill_yet"
+    "stage": "source_discovery_completed_no_player_stat_backfill_yet",
+    "approved": true,
+    "player_boxscore_imported": 10,
+    "new_verified_gamebooks_last_run": 10,
+    "last_run_pending_review": 0
   },
   "2022_backfill": {
     "approved": true,

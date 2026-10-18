@@ -1,13 +1,13 @@
 {
   "season": 2021,
   "authorization": "2021 source discovery user approved October 17, 2026. Preserve all 444 original attendance records and prior years. Do not work on 2020 and before without authorization.",
-  "status": "PARTIAL_OFFICIAL_FULL_GAMEBOOK_SOURCE_DISCOVERY_PLAYER_LEVEL_IMPORT_PENDING",
+  "status": "OFFICIAL_FULL_GAMEBOOK_DISCOVERY_COMPLETE_EXCEPT_AMBIGUOUS_ATTENDANCE_IDENTITY",
   "original_attendance_games": 32,
   "progress": {
-    "full_gamebooks_verified_source_url": 27,
+    "full_gamebooks_verified_source_url": 31,
     "ambiguous_one_of_two_complete_source_books": 1,
-    "official_game_record_but_full_stat_content_unreadable": 3,
-    "recap_only_full_source_pending": 1,
+    "official_game_record_but_full_stat_content_unreadable": 0,
+    "recap_only_full_source_pending": 0,
     "stats_imported": 0
   },
   "original_month_totals": {
@@ -22,7 +22,7 @@
     "https://ucsdtritons.com/sports/baseball/stats/2021",
     "https://fullertontitans.com/sports/baseball/schedule/2021"
   ],
-  "record_integrity": "Do not represent a schedule or recap as player-level boxscore, never auto-choose one of April 24 CSUB doubleheader candidates, no date changes to original attendance ids. All player-level imports remain pending.",
+  "record_integrity": "31 university player-level gamebooks individually associated with original attendance IDs. April 24 CSUB–UCSD doubleheader has both official full gamebooks, but worksheet has only one row, so attended game identity cannot be chosen without user confirming first or second game. Source discovery is not actual player import; zero gamebooks imported. Prior season attendance IDs and data remain unchanged.",
   "source_queue": [
     {
       "game_id": "cb-2021-02-19-san-diego-san-diego-state-att0084",
@@ -437,11 +437,12 @@
         1,
         3
       ],
-      "official_recap": "https://fullertontitans.com/news/2021/4/2/4_2_2021_2588.aspx",
-      "official_team_schedule": "https://fullertontitans.com/sports/baseball/schedule/2021",
-      "source_type": "official_university_recap_and_schedule",
-      "source_status": "complete_player_gamebook_url_not_yet_located",
-      "note": "Friday April 2 road loss 1–3 at Cal State Fullerton (Goodwin Field); do not mistake the official April 3 home box score for this game."
+      "source_type": "official_usd_university_full_player_gamebook",
+      "source_status": "official_full_gamebook_verified_source_url",
+      "note": "Friday April 2 away at Fullerton, 1–3, original USD university full gamebook ID 12125; April 3 is a separate USD home win.",
+      "official_full_gamebook_url": "https://usdtoreros.com/sports/baseball/stats/2021/cal-state-fullerton/boxscore/12125",
+      "source_sidearm_game_id": 12125,
+      "source_validation": "Verified original USD university full individual batting and pitching gamebook; date, final score and both teams matched exactly."
     },
     {
       "game_id": "cb-2021-04-03-cal-state-fullerton-san-diego-att0105",
@@ -633,11 +634,13 @@
         6,
         4
       ],
-      "official_game_record_url": "https://byucougars.com/boxscore/1560",
-      "official_university_schedule": "https://usdtoreros.com/sports/baseball/schedule/2021",
-      "source_type": "official_byu_university_boxscore_page",
-      "source_status": "official_game_page_located_but_player_tables_not_accessible_in_text_retrieval",
-      "note": "Official BYU game and score page confirmed but content loads via JavaScript; full player rows not yet verified. 2021 USD gamebook source still required for standard importer."
+      "source_type": "official_usd_university_full_player_gamebook",
+      "source_status": "official_full_gamebook_verified_source_url",
+      "note": "BYU 6–USD 4 played ten innings; player-level gamebook verified.",
+      "official_full_gamebook_url": "https://usdtoreros.com/sports/baseball/stats/2021/byu/boxscore/12085",
+      "source_sidearm_game_id": 12085,
+      "source_validation": "Verified original USD university full individual batting and pitching gamebook; date, final score and both teams matched exactly.",
+      "alternate_official_game_record_url": "https://byucougars.com/boxscore/1560"
     },
     {
       "game_id": "cb-2021-05-07-byu-san-diego-att0114",
@@ -653,11 +656,13 @@
         11,
         10
       ],
-      "official_game_record_url": "https://byucougars.com/boxscore/1561",
-      "official_university_schedule": "https://usdtoreros.com/sports/baseball/schedule/2021",
-      "source_type": "official_byu_university_boxscore_page",
-      "source_status": "official_game_page_located_but_player_tables_not_accessible_in_text_retrieval",
-      "note": "Official BYU game and score page confirmed but content loads via JavaScript; full player rows not yet verified. 2021 USD gamebook source still required for standard importer."
+      "source_type": "official_usd_university_full_player_gamebook",
+      "source_status": "official_full_gamebook_verified_source_url",
+      "note": "Full source batting/pitching and game identity matched.",
+      "official_full_gamebook_url": "https://usdtoreros.com/sports/baseball/stats/2021/byu/boxscore/12086",
+      "source_sidearm_game_id": 12086,
+      "source_validation": "Verified original USD university full individual batting and pitching gamebook; date, final score and both teams matched exactly.",
+      "alternate_official_game_record_url": "https://byucougars.com/boxscore/1561"
     },
     {
       "game_id": "cb-2021-05-08-byu-san-diego-att0115",
@@ -673,11 +678,13 @@
         12,
         13
       ],
-      "official_game_record_url": "https://byucougars.com/boxscore/1562",
-      "official_university_schedule": "https://usdtoreros.com/sports/baseball/schedule/2021",
-      "source_type": "official_byu_university_boxscore_page",
-      "source_status": "official_game_page_located_but_player_tables_not_accessible_in_text_retrieval",
-      "note": "Official BYU game and score page confirmed but content loads via JavaScript; full player rows not yet verified. 2021 USD gamebook source still required for standard importer."
+      "source_type": "official_usd_university_full_player_gamebook",
+      "source_status": "official_full_gamebook_verified_source_url",
+      "note": "Full source batting/pitching and game identity matched.",
+      "official_full_gamebook_url": "https://usdtoreros.com/sports/baseball/stats/2021/byu/boxscore/12087",
+      "source_sidearm_game_id": 12087,
+      "source_validation": "Verified original USD university full individual batting and pitching gamebook; date, final score and both teams matched exactly.",
+      "alternate_official_game_record_url": "https://byucougars.com/boxscore/1562"
     }
   ]
 }

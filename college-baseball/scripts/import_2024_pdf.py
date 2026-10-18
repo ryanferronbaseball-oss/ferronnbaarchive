@@ -86,7 +86,7 @@ def parse(game,item,global_keys,response):
         if pm:
             pitchteam=pm;mode="pitch";continue
         if mode=="bat" and batteam:
-            m=re.match(r"^\s*(.*?)\s+((?:\d+\s+){8}\d+)\s*$",original)
+            m=re.match(r"^\s*(.*?)\s+((?:\d+\s+){8}\d+)(?:\s+(?:\.\d+|-))?\s*$",original)
             if m:
                 from import_2024_statcrew import split_player
                 name,pos=split_player(m.group(1))

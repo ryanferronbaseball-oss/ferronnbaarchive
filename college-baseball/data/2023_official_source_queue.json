@@ -11,10 +11,11 @@
   },
   "progress": {
     "full_gamebooks_imported": 0,
-    "official_full_gamebooks_identified": 38,
+    "official_full_gamebooks_identified": 44,
     "date_reconciliation_required": 3,
     "recap_only_identified": 1,
-    "full_gamebooks_not_yet_located": 5
+    "full_gamebooks_not_yet_located": 0,
+    "official_full_gamebook_source_located_total": 47
   },
   "official_schedule_refs": [
     "https://usdtoreros.com/sports/baseball/schedule/2023",
@@ -31,7 +32,12 @@
       "original_attendance_date": "2023-02-17",
       "away": "Nebraska",
       "home": "San Diego",
-      "research_status": "official_full_gamebook_discovery_pending"
+      "research_status": "official_full_gamebook_located_player_import_pending",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/nebraska/boxscore/13891",
+      "official_score": "Nebraska 3, San Diego 7",
+      "site": "Fowler Park, San Diego",
+      "game_type": "regular_season",
+      "source_type": "official_university_sidearm_gamebook"
     },
     {
       "game_id": "cb-2023-02-18-nebraska-san-diego-att0179",
@@ -40,7 +46,12 @@
       "original_attendance_date": "2023-02-18",
       "away": "Nebraska",
       "home": "San Diego",
-      "research_status": "official_full_gamebook_discovery_pending"
+      "research_status": "official_full_gamebook_located_player_import_pending",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/nebraska/boxscore/13892",
+      "official_score": "Nebraska 3, San Diego 5",
+      "site": "Fowler Park, San Diego",
+      "game_type": "regular_season",
+      "source_type": "official_university_sidearm_gamebook"
     },
     {
       "game_id": "cb-2023-02-19-nebraska-san-diego-att0180",
@@ -49,7 +60,12 @@
       "original_attendance_date": "2023-02-19",
       "away": "Nebraska",
       "home": "San Diego",
-      "research_status": "official_full_gamebook_discovery_pending"
+      "research_status": "official_full_gamebook_located_player_import_pending",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/nebraska/boxscore/13893",
+      "official_score": "Nebraska 9, San Diego 10",
+      "site": "Fowler Park, San Diego",
+      "game_type": "regular_season",
+      "source_type": "official_university_sidearm_gamebook"
     },
     {
       "game_id": "cb-2023-02-20-nebraska-san-diego-att0181",
@@ -58,7 +74,13 @@
       "original_attendance_date": "2023-02-20",
       "away": "Nebraska",
       "home": "San Diego",
-      "research_status": "official_full_gamebook_discovery_pending"
+      "research_status": "official_full_gamebook_located_player_import_pending",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/nebraska/boxscore/13894",
+      "official_score": "Nebraska 16, San Diego 16 (7-inning tie)",
+      "site": "Fowler Park, San Diego",
+      "game_type": "regular_season",
+      "source_type": "official_university_sidearm_gamebook",
+      "special_scoring_note": "Official final is a 16–16 tie after 7 innings. Existing generic import_one refuses ties; import requires source-verified explicit tie/no winner or loser and seven-inning handling, rather than fabricating W/L or 9 innings."
     },
     {
       "game_id": "cb-2023-02-21-cal-state-northrdige-san-diego-state-att0182",
@@ -68,9 +90,14 @@
       "away": "Cal State Northrdige",
       "home": "San Diego State",
       "official_recap_url": "https://gomatadors.com/news/2023/2/21/baseball-csun-notches-first-road-win-of-the-season-at-san-diego-state",
-      "official_score": "CSUN 7, San Diego State 5",
-      "research_status": "university_recap_identified_full_gamebook_pending",
-      "note": "Original worksheet spells Northridge as Northrdige; preserve original ID and resolve canonical team alias after source confirmation"
+      "official_score": "Cal State Northridge 7, San Diego State 5",
+      "research_status": "official_full_gamebook_located_player_import_pending",
+      "note": "Original worksheet spells Northridge as Northrdige; preserve original ID and resolve canonical team alias after source confirmation",
+      "source_url": "https://gomatadors.com/sports/baseball/stats/2023/san-diego-state/boxscore/15859",
+      "site": "Tony Gwynn Stadium, San Diego",
+      "game_type": "regular_season",
+      "source_type": "official_university_sidearm_gamebook",
+      "source_team_alias": "Cal State Northrdige (worksheet typo) = CSUN/Cal State Northridge, confirmed by original official scorebook"
     },
     {
       "game_id": "cb-2023-02-24-hawaii-san-diego-att0183",
@@ -79,7 +106,12 @@
       "original_attendance_date": "2023-02-24",
       "away": "Hawaii",
       "home": "San Diego",
-      "research_status": "official_full_gamebook_discovery_pending"
+      "research_status": "official_full_gamebook_located_player_import_pending",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/hawaii/boxscore/13895",
+      "official_score": "Hawaii 2, San Diego 14",
+      "site": "Fowler Park, San Diego",
+      "game_type": "regular_season",
+      "source_type": "official_university_sidearm_gamebook"
     },
     {
       "game_id": "cb-2023-02-25-unlv-uc-irvine-att0184",
@@ -648,6 +680,7 @@
   "notes": [
     "All ten May 2023 attendance games have matching original university full gamebook URLs, including BYU May 4–6 and UC Irvine May 9. The 10 sources are not yet parsed into verified archive player stats.",
     "All 18 April 2023 attendance games matched full original university gamebooks and 2023 USD schedule scoreboard; NCAA player-stat import still pending.",
-    "All ten March 2023 attendance contests matched original university full gamebooks. March 18 Pacific source game 13906 is earlier than March 17 Pacific source 13907; identity verified by source date and score, not by ascending Sidearm numeric ID."
+    "All ten March 2023 attendance contests matched original university full gamebooks. March 18 Pacific source game 13906 is earlier than March 17 Pacific source 13907; identity verified by source date and score, not by ascending Sidearm numeric ID.",
+    "All 47 games have official university full gamebook URLs; February 25–26 Tony Gwynn Legacy attendance dates conflict with February 26–27 source schedule for exactly 3 records. Other 44 game source dates match. 2023 Feb 20 Nebraska/San Diego is 16–16 seven-inning tie and cannot be imported through a 9-inning winner/loser-only parser."
   ]
 }

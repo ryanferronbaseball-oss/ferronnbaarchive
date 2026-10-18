@@ -1,5 +1,12 @@
 # College Baseball — Month-by-Month Review Gates
 
+## October 17, 2026 — 2022 full-season authorized; official source discovery COMPLETE (current)
+
+User approved working backward through 2022 after 2023 source discovery. **62/62 original four-year games have university full gamebook links** (February 7, March 16, April 16, May 17, June 6); **0/62 full player scorebook imports have been completed**. 61 official source dates match the attendance list and one April 21 Grand Canyon–Stanford worksheet date conflicts with the official April 22 matchup. The user confirmation for that date/match is pending. April 9 USD–Portland and May 21 Gonzaga–USD contain genuine doubleheaders, distinct official source IDs and game times. Preserve 444 original worksheet IDs and all prior verified 2024–26 gamebooks. See [2022 source queue](data/2022_official_source_queue.json) and [2022 month/exception audit](data/2022_monthly_progress_audit.json).
+
+Current authorized seasons: **2022, 2023, 2024, 2025 and 2026 four-year/non-JUCO games**. Earlier years (2021 and prior), merging or publication remain unapproved. Older scope statements below document prior authorization state and are superseded by this entry.
+
+
 ## October 17, 2026 — 2023 season authorized; source discovery PASS (current)
 
 User approved proceeding with 2023 baseball. **47/47 original attended matches have official university gamebook links on the unpublished development branch** (May 10, April 18, March 10, February 9). Source discovery is complete but **0/47 complete individual player gamebooks have been imported or counted verified**. Preserve source-to-attendance IDs and month gates. February has three original date-vs-official date discrepancies at the Tony Gwynn Legacy tournament; freeze the original metadata until reconciled. February 20 Nebraska–San Diego is an official seven-inning **16–16 tie**, requiring tie-aware score validation rather than inventing winning/losing decisions. February 21 *Northrdige* is an original worksheet typo for CSUN. See [2023 source queue](data/2023_official_source_queue.json) and [2023 monthly audit](data/2023_monthly_progress_audit.json).

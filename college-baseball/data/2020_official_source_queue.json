@@ -1,15 +1,16 @@
 {
   "season": 2020,
-  "status": "OFFICIAL_GAMEBOOK_SOURCE_DISCOVERY_COMPLETE_WITH_ONE_DATE_RECONCILIATION_PENDING",
+  "status": "OFFICIAL_GAMEBOOK_SOURCE_MATCHING_COMPLETE_ALL_11_IDENTITIES_CONFIRMED_PLAYER_IMPORT_PENDING",
   "authorization": "2020 and 2019 seasons explicitly approved by user October 17 2026. Original 444 attendance records immutable; JUCO excluded. 2018 and earlier and merging, publication/deployment not authorized.",
   "progress": {
     "attendance_games": 11,
     "official_full_gamebook_source_urls": 11,
     "date_matched": 10,
-    "date_reconciliation_required": 1,
+    "date_reconciliation_required": 0,
     "doubleheader_entries": 0,
     "full_player_gamebooks_imported": 0,
-    "individual_player_stat_rows_added": 0
+    "individual_player_stat_rows_added": 0,
+    "user_confirmed_official_date_corrections": 1
   },
   "monthly_review": {
     "2020-02": {
@@ -25,7 +26,7 @@
       "full_gamebooks_imported": 0
     }
   },
-  "integrity": "Official university-hosted player-level boxscores linked to exact original attendance IDs. Original away and home and date and row identifiers preserved. 2020 March 10 worksheet date conflicts with official March 11. Do not mistake official source discovery for completed player-stat import.",
+  "integrity": "All 11 original 2020 attendance records now uniquely identified and sourced to university gamebooks. California Baptist at San Diego official March 11 game (USD 2–0) explicitly user-confirmed despite original spreadsheet March 10 typo; original date, source row and ID preserved for provenance. Source identity cleared for future player-stat import. No 2020 player-level stats imported yet.",
   "rows": [
     {
       "game_id": "cb-2020-02-18-uc-irvine-san-diego-att0073",
@@ -212,7 +213,7 @@
       "away": "Cal Baptist",
       "home": "San Diego",
       "official_date": "2020-03-11",
-      "source_identity_status": "official_game_date_conflicts_with_original_attendance_date",
+      "source_identity_status": "official_date_correction_explicitly_confirmed_by_user",
       "player_stat_import_status": "not_imported",
       "source_url": "https://usdtoreros.com/sports/baseball/stats/2020/california-baptist/boxscore/9683",
       "source_type": "official_usd_full_player_gamebook",
@@ -221,8 +222,11 @@
         0,
         2
       ],
-      "requires_user_date_reconciliation": true,
-      "source_confirmation": "Original spreadsheet lists California Baptist at San Diego on March 10. Official San Diego 2020 team schedule, game-by-game stats, and full gamebook agree on March 11. Keep original date/ID; do not treat that discrepancy as resolved or import player stats until reconciled."
+      "requires_user_date_reconciliation": false,
+      "source_confirmation": "Official San Diego 2020 gamebook ID 9683 identifies March 11, 2020 California Baptist 0–San Diego 2. The original March 10 source-workbook date is a confirmed worksheet date error; user personally confirmed the March 11 game on October 17, 2026. Preserve original worksheet date, stable ID and row for provenance.",
+      "attendance_identity_user_confirmed": true,
+      "attendance_identity_confirmation_date": "2026-10-17",
+      "attendance_identity_confirmation": "User confirmed they attended the March 11, 2020 California Baptist at San Diego game, final score Cal Baptist 0, USD 2. Original spreadsheet says March 10 in row 84; original source row/date and stable attendance game ID remain unchanged for provenance. Official March 11 source is cleared for later player-stat verification and import."
     }
   ]
 }

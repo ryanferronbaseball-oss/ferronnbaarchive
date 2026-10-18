@@ -1,8 +1,20 @@
 # College Baseball · Courtside Archive
 
-**Status (October 17, 2026):** Draft PR #10: all 444 original attendance IDs retained. **2019 41/41**, **2020 11/11** (original March 10 vs official March 11 user-confirmed), **2021 32/32**, **2022 62/62** (one source date conflict), **2023 47/47** (three date conflicts) university full gamebook sources linked. **2019–2023 zero player-gamebook imports**. **2024 71/71, 2025 74/74, 2026 68/68** verified full college boxscores = **213 2024–26 verified gamebooks and 6,316 player-game rows**, JUCO excluded. Nothing merged or published.
+**Status (October 17, 2026):** Unpublished PR #10 retains 444 attendance games. 2017 **1/1** university full gamebook located; 2018 **30/30 games verified, 26/30 complete gamebook links** located (four pending), 2019 **41/41**, 2020 **11/11** (user-confirmed March 11), 2021 **32/32**, 2022 **62/62** (one date conflict), 2023 **47/47** (three date conflicts) full source links as prior audits. **2017–23: zero player-stat imports**. **2024 71/71, 2025 74/74, 2026 68/68**: 213 verified player gamebooks and 6,316 player-game rows unchanged. JUCO excluded. No publication.
 
 The site lives under \`/college-baseball/\`, with independent college baseball stats and verified inter-level player IDs only. It shares the exact MLB archive design system for Inter fonts, navigation, scoreboards, box-score layout, cards, responsive tables, and bat-order number column.
+
+## 2017–2018 backfill — original identities matched, full player sources 27/31 (authorized October 17, 2026)
+
+**2017:** Original workbook has **one** attended game: April 20 BYU 3 at USD 6, Fowler Park. Full university historical player gamebook is directly sourced at `https://usandiego_ftp.sidearmsports.com/custompages/sports/m-basebl/stats/2016-201736.html`. **1/1 university gamebooks identified; 0/1 individual player stats imported.**
+
+**2018:** All **30** original attended game identities have independently verified official date, away/home, and score (February 11, March 8, April 6, May 5). **26/30 exact university-hosted full player gamebook links are located; four still need direct complete-gamebook sources**: Mar 13 SDSU 9 at USD 3, Apr 14 Saint Mary's 6 at USD 5, Apr 17 Fullerton 4 at USD 10, May 9 Arizona State 12 at USD 7. Each of these four has an official schedule/recap identity but **cannot be claimed as an imported player boxscore**. No 2018 player-level imports made.
+
+Doubleheader identities verified separately: **February 18 Cincinnati at USD** G1 Cincinnati 7–USD 4 (10 innings), G2 USD 4–Cincinnati 3; **March 3 Indiana at USD** G1 USD 6–Indiana 5, G2 Indiana 6–USD 5. Original two separate rows per doubleheader retained. Other 2018 complete gamebooks came from official California, Arkansas, Michigan, Cal Poly, Arizona, Santa Clara, Indiana, LMU, UC Irvine, Gonzaga and UC Riverside archives.
+
+- [2017 official source queue](data/2017_official_source_queue.json) · [2017 monthly audit](data/2017_monthly_progress_audit.json)
+- [2018 official source queue](data/2018_official_source_queue.json) · [2018 monthly audit](data/2018_monthly_progress_audit.json)
+- **Boundary:** User authorized 2017–2018 source matching. No 2016-or-earlier season work, no merge/publication; the original **444** attendance records, **213** 2024–26 verified gamebooks and **6,316** player-game records were not modified. JUCO excluded from player backfill.
 
 ## 2019–2020 backfill — ALL 52 OFFICIAL GAMEBOOK SOURCES LINKED (authorized October 17, 2026)
 

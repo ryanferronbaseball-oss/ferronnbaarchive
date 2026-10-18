@@ -9,9 +9,11 @@ def split_player(text):
     if not m:raise ValueError("StatCrew player/position unreadable: "+text)
     return normalize_name(m.group(1)),m.group(2).lower()
 def line_score(text,expected):
+    # Original Oklahoma Feb 24 2019 StatCrew has ONE dot after 'Cal State Fullerton.'
+    # Require the exact run sum and both ordered official teams even for this variant.
     out=[]
     for l in text.splitlines():
-        m=re.match(r"^\s*(.+?)\.{2,}\s+([0-9xX ]+)\s+-\s+(\d+)\s+(\d+)\s+(\d+)\s*$",l)
+        m=re.match(r"^\s*(.+?)\.{1,}\s+([0-9xX ]+)\s+-\s+(\d+)\s+(\d+)\s+(\d+)\s*$",l)
         if not m:continue
         inns=[None if c.lower()=="x" else int(c) for c in re.sub(r"\s","",m.group(2))]
         runs,hits,errors=map(int,m.groups()[2:])

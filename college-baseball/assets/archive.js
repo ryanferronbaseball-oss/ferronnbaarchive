@@ -277,7 +277,8 @@ function renderPlayer(d){
  if(!p){$("app").innerHTML='<div class="eyebrow">College Baseball · Player profile</div><h1>Player profile</h1>'+pending("No verified college baseball player profile is available for this ID. Players appear after official gamebook imports.");return}
  const b=bat(p.rows),pi=pitch(p.rows),qualifiedHit=p.rows.some(x=>x.batting!=null),qualifiedPitch=p.rows.some(x=>x.pitching!=null);
  const cross=d.crosswalk.find(x=>x.verified===true&&String(x.college_player_id)===id);
- const entries=unique(p.rows.map(x=>x.game_id)).map(game_id=>d.gameMap.get(game_id)).filter(Boolean).sort((a,b)=>a.date.localeCompare(b.date));
+ const entries=unique(p.rows.map(x=>x.game_id)).map(game_id=>d.gameMap.get(game_id)).filter(Boolean).sort((a,b)=>b.date.localeCompare(a.date)||b.id.localeCompare(a.id));
+ const logRows=p.rows.slice().sort((a,b)=>(d.gameMap.get(b.game_id)?.date||"").localeCompare(d.gameMap.get(a.game_id)?.date||"")||b.game_id.localeCompare(a.game_id));
  const initials=p.name.split(/\s+/).map(x=>x[0]).slice(0,2).join("").toUpperCase();
  const roleStats=(label,items)=>'<section class="cb-profile-role"><h2>'+esc(label)+'</h2><div class="metrics mlb-profile-stat-grid cb-profile-metrics">'
   +items.map(([title,value])=>'<div class="metric mlb-profile-stat"><small>'+esc(title)+'</small><strong>'+esc(value==null?"—":value)+'</strong></div>').join("")
@@ -301,12 +302,12 @@ function renderPlayer(d){
  +'<p class="mlb-note">Only college baseball appearances from games you attended appear here; professional seasons are never added to college totals.</p>'
  +hitter+pitcher
  +(cross?'<div class="cb-note"><strong>Professional connection:</strong> Verified identity link to this player’s independent <a class="cb-link" href="../mlb/player.html?id='+encodeURIComponent(cross.mlb_player_id)+'">MLB attendance profile ↗</a>. College and MLB statistics remain separate.</div>':"")
- +'<div class="section-heading"><h2>Every game you witnessed</h2></div><div class="game-grid cb-grid cb-profile-games">'+entries.map(gameCard).join("")+'</div>'
+ +'<div class="section-heading"><h2>Last 3 games witnessed</h2></div><div class="game-grid cb-grid cb-profile-games">'+entries.slice(0,3).map(gameCard).join("")+'</div>'
  +'<section class="panel cb-player-game-log"><h2>Recorded college game logs</h2>'
- +htmlTable(["Date","Matchup","AB","H","HR","RBI","IP","K"],p.rows.map(r=>{
+ +htmlTable(["Date","Matchup","AB","R (hitting)","H","HR","RBI","IP","H (allowed)","R (pitching)","BB","K"],logRows.map(r=>{
   const g=d.gameMap.get(r.game_id);
   return '<tr><td><a href="'+gameUrl(g)+'">'+esc(date(g.date))+'</a></td><td>'+esc(gameLabel(g))+'</td>'
-  +[stat(r.batting?.atBats),stat(r.batting?.hits),stat(r.batting?.homeRuns),stat(r.batting?.rbi),r.pitching?.outs!=null?Math.floor(r.pitching.outs/3)+"."+(r.pitching.outs%3):null,stat(r.pitching?.strikeOuts)].map(x=>'<td>'+esc(x==null?"—":x)+'</td>').join("")+'</tr>';
+  +[stat(r.batting?.atBats),stat(r.batting?.runs),stat(r.batting?.hits),stat(r.batting?.homeRuns),stat(r.batting?.rbi),r.pitching?.outs!=null?Math.floor(r.pitching.outs/3)+"."+(r.pitching.outs%3):null,stat(r.pitching?.hits),stat(r.pitching?.runs),stat(r.pitching?.baseOnBalls),stat(r.pitching?.strikeOuts)].map(x=>'<td>'+esc(x==null?"—":x)+'</td>').join("")+'</tr>';
  }))+'</section>';
 }
 function renderRecords(d){

@@ -12,6 +12,7 @@ import hashlib
 import json
 import pathlib
 import re
+import subprocess
 import urllib.request
 from bs4 import BeautifulSoup
 
@@ -141,7 +142,7 @@ def extract(g,soup):
  for cat in ("passing","rushing","receiving","defensive","punting","returns"):
   pair=bycat[cat]
   for i,t in enumerate(pair[:2]):
-   team=g["away_abbr"] if i==0 else g["home_abbr"]
+   team=(g["home_abbr"] if i==0 else g["away_abbr"]) if g.get("source_order")=="home_first" else (g["away_abbr"] if i==0 else g["home_abbr"])
    for cells in body(t):
     before=len(ROWS)
     normalized_category_row(g,team,cat,cells)
@@ -149,14 +150,14 @@ def extract(g,soup):
  # field-goal events + PATs -> standard kicker boxscore
  bykicker=collections.defaultdict(lambda:{"made":0,"attempt":0,"long":0,"xp_made":0,"xp_att":0})
  for i,t in enumerate(bycat["field_goals"][:2]):
-  team=g["away_abbr"] if i==0 else g["home_abbr"]
+  team=(g["home_abbr"] if i==0 else g["away_abbr"]) if g.get("source_order")=="home_first" else (g["away_abbr"] if i==0 else g["home_abbr"])
   for cells in body(t):
    if len(cells)<5:continue
    a=bykicker[(team,cells[0])];a["attempt"]+=1
    if "GOOD" in cells[4].upper():
     a["made"]+=1;a["long"]=max(a["long"],int(number(cells[3]) or 0))
  for i,t in enumerate(bycat["pat"][:2]):
-  team=g["away_abbr"] if i==0 else g["home_abbr"]
+  team=(g["home_abbr"] if i==0 else g["away_abbr"]) if g.get("source_order")=="home_first" else (g["away_abbr"] if i==0 else g["home_abbr"])
   for cells in body(t):
    if len(cells)<3:continue
    a=bykicker[(team,cells[0])];a["xp_att"]+=int(number(cells[1]) or 0)
@@ -189,6 +190,7 @@ def extract(g,soup):
    a,b=str(g["away_score"]),str(g["home_score"])
    if vals[-2].isdigit() and vals[-1].isdigit():
     aa,hh=int(vals[-2]),int(vals[-1])
+    if g.get("source_order")=="home_first":aa,hh=hh,aa
     desc=vals[-3]
     joined=" ".join(vals[:-3])
     match=re.search(r"\b(1st|2nd|3rd|4th|5th|OT)\b",joined,re.I)
@@ -294,6 +296,12 @@ def fantasy():
    "score_type":"traditional_full_ppr","source":g["boxscore_url"]})
  return sorted(result,key=lambda p:(-p["fantasy_ppr"],p["date"],p["player"]))
 def main():
+ # Preserve previously verified historical imports if an external school link breaks.
+ prior={}
+ for name in ("player_stats.json","scoring_plays.json","import_report.json"):
+  result=subprocess.run(["git","show",f"HEAD:cfb/data/{name}"],cwd=ROOT.parent,capture_output=True,text=True)
+  if result.returncode==0:
+   prior[name]=json.loads(result.stdout)
  for g in GAMES:
   try:
    if g["official_source_type"]=="game_recap":
@@ -308,8 +316,17 @@ def main():
    print("AUDIT",g["id"],status,"stats",sum(cats.values()),"scoring",len(p),flush=True)
   except Exception as err:
    print("IMPORT ERROR",g["id"],repr(err),flush=True)
-   SCORING[g["id"]]={"plays":[]}
-   REPORT.append({"game_id":g["id"],"status":"import_error","error":repr(err),"source":g["boxscore_url"]})
+   old_rows=[r for r in prior.get("player_stats.json",[]) if r["game_id"]==g["id"]]
+   old_scoring=prior.get("scoring_plays.json",{}).get(g["id"])
+   old_report=next((r for r in prior.get("import_report.json",[]) if r["game_id"]==g["id"]),None)
+   if old_rows and old_scoring and old_report:
+    ROWS.extend(old_rows)
+    SCORING[g["id"]]=old_scoring
+    REPORT.append(old_report)
+    print("PRESERVED VERIFIED PREVIOUS IMPORT",g["id"],len(old_rows),flush=True)
+   else:
+    SCORING[g["id"]]={"plays":[]}
+    REPORT.append({"game_id":g["id"],"status":"import_error","error":repr(err),"source":g["boxscore_url"]})
  ps=fantasy()
  counts={str(v):sum(p["fantasy_ppr"]>=v for p in ps) for v in (10,20,25,30,40)}
  data={"rules":{"name":"Traditional Full-PPR (ESPN-style)","passing_yards":0.04,

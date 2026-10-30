@@ -23,18 +23,19 @@
   },
   "eligibility": "Officially verified full player boxscores (excludes incomplete 2017 WNMU game). Missing turnover values are not deducted.",
   "audit": {
-    "player_games": 80,
+    "player_games": 103,
     "games_covered": [
       "cfb-2018-11-10-davidson-usd",
       "cfb-2017-09-23-butler-usd",
+      "cfb-2026-10-27-del-wku",
       "cfb-2019-09-07-ucd-usd",
       "cfb-2025-09-11-ncs-wfu"
     ],
     "milestones": {
-      "10": 31,
-      "20": 21,
-      "25": 11,
-      "30": 6,
+      "10": 42,
+      "20": 24,
+      "25": 13,
+      "30": 8,
       "40": 3
     }
   },
@@ -136,6 +137,38 @@
       "source": "https://butlersports.com/sports/football/stats/2017/san-diego/boxscore/5255"
     },
     {
+      "game_id": "cfb-2026-10-27-del-wku",
+      "date": "2026-10-27",
+      "athlete_id": "cfb-del-sean-wilson",
+      "player": "Sean Wilson",
+      "team": "DEL",
+      "opponent": "WKU",
+      "fantasy_ppr": 39.3,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": 0,
+        "rushing_tds": 0,
+        "receptions": 9.0,
+        "receiving_yards": 183.0,
+        "receiving_tds": 2.0,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": 0.0,
+        "receiving": 39.3,
+        "turnovers": 0,
+        "two_point": 0,
+        "returns": 0
+      },
+      "score_type": "traditional_full_ppr",
+      "source": "https://bluehens.com/sports/football/stats/2026/wku/boxscore/35236"
+    },
+    {
       "game_id": "cfb-2018-11-10-davidson-usd",
       "date": "2018-11-10",
       "athlete_id": "cfb-dav-william-wicks",
@@ -230,6 +263,38 @@
       },
       "score_type": "traditional_full_ppr",
       "source": "https://butlersports.com/sports/football/stats/2017/san-diego/boxscore/5255"
+    },
+    {
+      "game_id": "cfb-2026-10-27-del-wku",
+      "date": "2026-10-27",
+      "athlete_id": "cfb-del-nick-minicucci",
+      "player": "Nick Minicucci",
+      "team": "DEL",
+      "opponent": "WKU",
+      "fantasy_ppr": 33.86,
+      "stat_line": {
+        "passing_yards": 414.0,
+        "passing_tds": 4.0,
+        "interceptions_thrown": 0.0,
+        "rushing_yards": 13.0,
+        "rushing_tds": 0.0,
+        "receptions": 0,
+        "receiving_yards": 0,
+        "receiving_tds": 0,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 32.56,
+        "rushing": 1.3,
+        "receiving": 0.0,
+        "turnovers": -0.0,
+        "two_point": 0,
+        "returns": 0
+      },
+      "score_type": "traditional_full_ppr",
+      "source": "https://bluehens.com/sports/football/stats/2026/wku/boxscore/35236"
     },
     {
       "game_id": "cfb-2018-11-10-davidson-usd",
@@ -520,6 +585,38 @@
       "source": "https://godeacs.com/sports/football/stats/2025/nc-state/boxscore/14149"
     },
     {
+      "game_id": "cfb-2026-10-27-del-wku",
+      "date": "2026-10-27",
+      "athlete_id": "cfb-wku-brock-glenn",
+      "player": "Brock Glenn",
+      "team": "WKU",
+      "opponent": "DEL",
+      "fantasy_ppr": 21.86,
+      "stat_line": {
+        "passing_yards": 224.0,
+        "passing_tds": 1.0,
+        "interceptions_thrown": 2.0,
+        "rushing_yards": 129.0,
+        "rushing_tds": 0.0,
+        "receptions": 0,
+        "receiving_yards": 0,
+        "receiving_tds": 0,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 12.96,
+        "rushing": 12.9,
+        "receiving": 0.0,
+        "turnovers": -4.0,
+        "two_point": 0,
+        "returns": 0
+      },
+      "score_type": "traditional_full_ppr",
+      "source": "https://bluehens.com/sports/football/stats/2026/wku/boxscore/35236"
+    },
+    {
       "game_id": "cfb-2018-11-10-davidson-usd",
       "date": "2018-11-10",
       "athlete_id": "cfb-dav-tyler-phelps",
@@ -712,6 +809,38 @@
       "source": "https://usdtoreros.com/sports/football/stats/2018/davidson/boxscore/1805"
     },
     {
+      "game_id": "cfb-2026-10-27-del-wku",
+      "date": "2026-10-27",
+      "athlete_id": "cfb-del-kaderris-roberts",
+      "player": "Kaderris Roberts",
+      "team": "DEL",
+      "opponent": "WKU",
+      "fantasy_ppr": 18.4,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": 11.0,
+        "rushing_tds": 0.0,
+        "receptions": 7.0,
+        "receiving_yards": 43.0,
+        "receiving_tds": 1.0,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": 1.1,
+        "receiving": 17.3,
+        "turnovers": 0,
+        "two_point": 0,
+        "returns": 0
+      },
+      "score_type": "traditional_full_ppr",
+      "source": "https://bluehens.com/sports/football/stats/2026/wku/boxscore/35236"
+    },
+    {
       "game_id": "cfb-2025-09-11-ncs-wfu",
       "date": "2025-09-11",
       "athlete_id": "cfb-ncs-justin-joly",
@@ -840,6 +969,38 @@
       "source": "https://usdtoreros.com/sports/football/stats/2019/uc-davis/boxscore/9351"
     },
     {
+      "game_id": "cfb-2026-10-27-del-wku",
+      "date": "2026-10-27",
+      "athlete_id": "cfb-wku-ajay-allen",
+      "player": "Ajay Allen",
+      "team": "WKU",
+      "opponent": "DEL",
+      "fantasy_ppr": 16.0,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": 73.0,
+        "rushing_tds": 1.0,
+        "receptions": 2.0,
+        "receiving_yards": 7.0,
+        "receiving_tds": 0.0,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": 13.3,
+        "receiving": 2.7,
+        "turnovers": 0,
+        "two_point": 0,
+        "returns": 0
+      },
+      "score_type": "traditional_full_ppr",
+      "source": "https://bluehens.com/sports/football/stats/2026/wku/boxscore/35236"
+    },
+    {
       "game_id": "cfb-2017-09-23-butler-usd",
       "date": "2017-09-23",
       "athlete_id": "cfb-butler-will-marty",
@@ -870,6 +1031,38 @@
       },
       "score_type": "traditional_full_ppr",
       "source": "https://butlersports.com/sports/football/stats/2017/san-diego/boxscore/5255"
+    },
+    {
+      "game_id": "cfb-2026-10-27-del-wku",
+      "date": "2026-10-27",
+      "athlete_id": "cfb-del-jo-silver",
+      "player": "Jo Silver",
+      "team": "DEL",
+      "opponent": "WKU",
+      "fantasy_ppr": 15.1,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": 46.0,
+        "rushing_tds": 0.0,
+        "receptions": 2.0,
+        "receiving_yards": 25.0,
+        "receiving_tds": 1.0,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": 4.6,
+        "receiving": 10.5,
+        "turnovers": 0,
+        "two_point": 0,
+        "returns": 0
+      },
+      "score_type": "traditional_full_ppr",
+      "source": "https://bluehens.com/sports/football/stats/2026/wku/boxscore/35236"
     },
     {
       "game_id": "cfb-2025-09-11-ncs-wfu",
@@ -1000,6 +1193,134 @@
       "source": "https://butlersports.com/sports/football/stats/2017/san-diego/boxscore/5255"
     },
     {
+      "game_id": "cfb-2026-10-27-del-wku",
+      "date": "2026-10-27",
+      "athlete_id": "cfb-del-bryson-graves",
+      "player": "Bryson Graves",
+      "team": "DEL",
+      "opponent": "WKU",
+      "fantasy_ppr": 12.0,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": 0,
+        "rushing_tds": 0,
+        "receptions": 6.0,
+        "receiving_yards": 60.0,
+        "receiving_tds": 0.0,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": 0.0,
+        "receiving": 12.0,
+        "turnovers": 0,
+        "two_point": 0,
+        "returns": 0
+      },
+      "score_type": "traditional_full_ppr",
+      "source": "https://bluehens.com/sports/football/stats/2026/wku/boxscore/35236"
+    },
+    {
+      "game_id": "cfb-2026-10-27-del-wku",
+      "date": "2026-10-27",
+      "athlete_id": "cfb-wku-moussa-barry",
+      "player": "Moussa Barry",
+      "team": "WKU",
+      "opponent": "DEL",
+      "fantasy_ppr": 12.0,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": 0,
+        "rushing_tds": 0,
+        "receptions": 4.0,
+        "receiving_yards": 80.0,
+        "receiving_tds": 0.0,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": 0.0,
+        "receiving": 12.0,
+        "turnovers": 0,
+        "two_point": 0,
+        "returns": 0
+      },
+      "score_type": "traditional_full_ppr",
+      "source": "https://bluehens.com/sports/football/stats/2026/wku/boxscore/35236"
+    },
+    {
+      "game_id": "cfb-2026-10-27-del-wku",
+      "date": "2026-10-27",
+      "athlete_id": "cfb-wku-jaden-mcgill",
+      "player": "Jaden Mcgill",
+      "team": "WKU",
+      "opponent": "DEL",
+      "fantasy_ppr": 11.5,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": 15.0,
+        "rushing_tds": 0.0,
+        "receptions": 5.0,
+        "receiving_yards": 50.0,
+        "receiving_tds": 0.0,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": 1.5,
+        "receiving": 10.0,
+        "turnovers": 0,
+        "two_point": 0,
+        "returns": 0
+      },
+      "score_type": "traditional_full_ppr",
+      "source": "https://bluehens.com/sports/football/stats/2026/wku/boxscore/35236"
+    },
+    {
+      "game_id": "cfb-2026-10-27-del-wku",
+      "date": "2026-10-27",
+      "athlete_id": "cfb-wku-jonathan-stafford-jr",
+      "player": "Jonathan Stafford Jr.",
+      "team": "WKU",
+      "opponent": "DEL",
+      "fantasy_ppr": 11.4,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": 0,
+        "rushing_tds": 0,
+        "receptions": 5.0,
+        "receiving_yards": 64.0,
+        "receiving_tds": 0.0,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": 0.0,
+        "receiving": 11.4,
+        "turnovers": 0,
+        "two_point": 0,
+        "returns": 0
+      },
+      "score_type": "traditional_full_ppr",
+      "source": "https://bluehens.com/sports/football/stats/2026/wku/boxscore/35236"
+    },
+    {
       "game_id": "cfb-2019-09-07-ucd-usd",
       "date": "2019-09-07",
       "athlete_id": "cfb-ucd-matt-hyman",
@@ -1030,6 +1351,38 @@
       },
       "score_type": "traditional_full_ppr",
       "source": "https://usdtoreros.com/sports/football/stats/2019/uc-davis/boxscore/9351"
+    },
+    {
+      "game_id": "cfb-2026-10-27-del-wku",
+      "date": "2026-10-27",
+      "athlete_id": "cfb-del-donovan-lewis",
+      "player": "Donovan Lewis",
+      "team": "DEL",
+      "opponent": "WKU",
+      "fantasy_ppr": 10.1,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": 0,
+        "rushing_tds": 0,
+        "receptions": 5.0,
+        "receiving_yards": 51.0,
+        "receiving_tds": 0.0,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": 0.0,
+        "receiving": 10.1,
+        "turnovers": 0,
+        "two_point": 0,
+        "returns": 0
+      },
+      "score_type": "traditional_full_ppr",
+      "source": "https://bluehens.com/sports/football/stats/2026/wku/boxscore/35236"
     },
     {
       "game_id": "cfb-2017-09-23-butler-usd",
@@ -1096,6 +1449,38 @@
       "source": "https://godeacs.com/sports/football/stats/2025/nc-state/boxscore/14149"
     },
     {
+      "game_id": "cfb-2026-10-27-del-wku",
+      "date": "2026-10-27",
+      "athlete_id": "cfb-wku-cc-ezirim",
+      "player": "Cc Ezirim",
+      "team": "WKU",
+      "opponent": "DEL",
+      "fantasy_ppr": 9.2,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": 0,
+        "rushing_tds": 0,
+        "receptions": 2.0,
+        "receiving_yards": 12.0,
+        "receiving_tds": 1.0,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": 0.0,
+        "receiving": 9.2,
+        "turnovers": 0,
+        "two_point": 0,
+        "returns": 0
+      },
+      "score_type": "traditional_full_ppr",
+      "source": "https://bluehens.com/sports/football/stats/2026/wku/boxscore/35236"
+    },
+    {
       "game_id": "cfb-2019-09-07-ucd-usd",
       "date": "2019-09-07",
       "athlete_id": "cfb-usd-alex-spadone",
@@ -1158,6 +1543,38 @@
       },
       "score_type": "traditional_full_ppr",
       "source": "https://usdtoreros.com/sports/football/stats/2019/uc-davis/boxscore/9351"
+    },
+    {
+      "game_id": "cfb-2026-10-27-del-wku",
+      "date": "2026-10-27",
+      "athlete_id": "cfb-wku-zion-taylor",
+      "player": "Zion Taylor",
+      "team": "WKU",
+      "opponent": "DEL",
+      "fantasy_ppr": 8.5,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": 1.0,
+        "rushing_tds": 1.0,
+        "receptions": 2.0,
+        "receiving_yards": 4.0,
+        "receiving_tds": 0.0,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": 6.1,
+        "receiving": 2.4,
+        "turnovers": 0,
+        "two_point": 0,
+        "returns": 0
+      },
+      "score_type": "traditional_full_ppr",
+      "source": "https://bluehens.com/sports/football/stats/2026/wku/boxscore/35236"
     },
     {
       "game_id": "cfb-2017-09-23-butler-usd",
@@ -1416,6 +1833,38 @@
       "source": "https://butlersports.com/sports/football/stats/2017/san-diego/boxscore/5255"
     },
     {
+      "game_id": "cfb-2026-10-27-del-wku",
+      "date": "2026-10-27",
+      "athlete_id": "cfb-del-viron-ellison-jr",
+      "player": "Viron Ellison Jr.",
+      "team": "DEL",
+      "opponent": "WKU",
+      "fantasy_ppr": 7.1,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": 11.0,
+        "rushing_tds": 1.0,
+        "receptions": 0,
+        "receiving_yards": 0,
+        "receiving_tds": 0,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": 7.1,
+        "receiving": 0.0,
+        "turnovers": 0,
+        "two_point": 0,
+        "returns": 0
+      },
+      "score_type": "traditional_full_ppr",
+      "source": "https://bluehens.com/sports/football/stats/2026/wku/boxscore/35236"
+    },
+    {
       "game_id": "cfb-2017-09-23-butler-usd",
       "date": "2017-09-23",
       "athlete_id": "cfb-usd-nate-loya",
@@ -1510,6 +1959,38 @@
       },
       "score_type": "traditional_full_ppr",
       "source": "https://usdtoreros.com/sports/football/stats/2019/uc-davis/boxscore/9351"
+    },
+    {
+      "game_id": "cfb-2026-10-27-del-wku",
+      "date": "2026-10-27",
+      "athlete_id": "cfb-del-elijah-sessoms",
+      "player": "Elijah Sessoms",
+      "team": "DEL",
+      "opponent": "WKU",
+      "fantasy_ppr": 6.5,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": 0,
+        "rushing_tds": 0,
+        "receptions": 2.0,
+        "receiving_yards": 45.0,
+        "receiving_tds": 0.0,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": 0.0,
+        "receiving": 6.5,
+        "turnovers": 0,
+        "two_point": 0,
+        "returns": 0
+      },
+      "score_type": "traditional_full_ppr",
+      "source": "https://bluehens.com/sports/football/stats/2026/wku/boxscore/35236"
     },
     {
       "game_id": "cfb-2025-09-11-ncs-wfu",
@@ -1736,6 +2217,38 @@
       "source": "https://usdtoreros.com/sports/football/stats/2019/uc-davis/boxscore/9351"
     },
     {
+      "game_id": "cfb-2026-10-27-del-wku",
+      "date": "2026-10-27",
+      "athlete_id": "cfb-wku-quincy-burroughs",
+      "player": "Quincy Burroughs",
+      "team": "WKU",
+      "opponent": "DEL",
+      "fantasy_ppr": 3.9,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": 0,
+        "rushing_tds": 0,
+        "receptions": 3.0,
+        "receiving_yards": 9.0,
+        "receiving_tds": 0.0,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": 0.0,
+        "receiving": 3.9,
+        "turnovers": 0,
+        "two_point": 0,
+        "returns": 0
+      },
+      "score_type": "traditional_full_ppr",
+      "source": "https://bluehens.com/sports/football/stats/2026/wku/boxscore/35236"
+    },
+    {
       "game_id": "cfb-2018-11-10-davidson-usd",
       "date": "2018-11-10",
       "athlete_id": "cfb-dav-collin-hairr",
@@ -1894,6 +2407,38 @@
       },
       "score_type": "traditional_full_ppr",
       "source": "https://usdtoreros.com/sports/football/stats/2018/davidson/boxscore/1805"
+    },
+    {
+      "game_id": "cfb-2026-10-27-del-wku",
+      "date": "2026-10-27",
+      "athlete_id": "cfb-wku-coleson-arends",
+      "player": "Coleson Arends",
+      "team": "WKU",
+      "opponent": "DEL",
+      "fantasy_ppr": 3.3,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": 0,
+        "rushing_tds": 0,
+        "receptions": 2.0,
+        "receiving_yards": 13.0,
+        "receiving_tds": 0.0,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": 0.0,
+        "receiving": 3.3,
+        "turnovers": 0,
+        "two_point": 0,
+        "returns": 0
+      },
+      "score_type": "traditional_full_ppr",
+      "source": "https://bluehens.com/sports/football/stats/2026/wku/boxscore/35236"
     },
     {
       "game_id": "cfb-2017-09-23-butler-usd",
@@ -2184,6 +2729,38 @@
       "source": "https://usdtoreros.com/sports/football/stats/2018/davidson/boxscore/1805"
     },
     {
+      "game_id": "cfb-2026-10-27-del-wku",
+      "date": "2026-10-27",
+      "athlete_id": "cfb-del-da-wain-lofton",
+      "player": "Da'wain Lofton",
+      "team": "DEL",
+      "opponent": "WKU",
+      "fantasy_ppr": 1.7,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": 0,
+        "rushing_tds": 0,
+        "receptions": 1.0,
+        "receiving_yards": 7.0,
+        "receiving_tds": 0.0,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": 0.0,
+        "receiving": 1.7,
+        "turnovers": 0,
+        "two_point": 0,
+        "returns": 0
+      },
+      "score_type": "traditional_full_ppr",
+      "source": "https://bluehens.com/sports/football/stats/2026/wku/boxscore/35236"
+    },
+    {
       "game_id": "cfb-2017-09-23-butler-usd",
       "date": "2017-09-23",
       "athlete_id": "cfb-butler-james-marbaugh",
@@ -2248,6 +2825,70 @@
       "source": "https://usdtoreros.com/sports/football/stats/2019/uc-davis/boxscore/9351"
     },
     {
+      "game_id": "cfb-2026-10-27-del-wku",
+      "date": "2026-10-27",
+      "athlete_id": "cfb-wku-jyzaiah-rockwell",
+      "player": "Jyzaiah Rockwell",
+      "team": "WKU",
+      "opponent": "DEL",
+      "fantasy_ppr": 1.6,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": 0,
+        "rushing_tds": 0,
+        "receptions": 1.0,
+        "receiving_yards": 6.0,
+        "receiving_tds": 0.0,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": 0.0,
+        "receiving": 1.6,
+        "turnovers": 0,
+        "two_point": 0,
+        "returns": 0
+      },
+      "score_type": "traditional_full_ppr",
+      "source": "https://bluehens.com/sports/football/stats/2026/wku/boxscore/35236"
+    },
+    {
+      "game_id": "cfb-2026-10-27-del-wku",
+      "date": "2026-10-27",
+      "athlete_id": "cfb-wku-cameron-flowers",
+      "player": "Cameron Flowers",
+      "team": "WKU",
+      "opponent": "DEL",
+      "fantasy_ppr": 1.4,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": 14.0,
+        "rushing_tds": 0.0,
+        "receptions": 0,
+        "receiving_yards": 0,
+        "receiving_tds": 0,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": 1.4,
+        "receiving": 0.0,
+        "turnovers": 0,
+        "two_point": 0,
+        "returns": 0
+      },
+      "score_type": "traditional_full_ppr",
+      "source": "https://bluehens.com/sports/football/stats/2026/wku/boxscore/35236"
+    },
+    {
       "game_id": "cfb-2025-09-11-ncs-wfu",
       "date": "2025-09-11",
       "athlete_id": "cfb-wfu-jamario-clements",
@@ -2278,6 +2919,38 @@
       },
       "score_type": "traditional_full_ppr",
       "source": "https://godeacs.com/sports/football/stats/2025/nc-state/boxscore/14149"
+    },
+    {
+      "game_id": "cfb-2026-10-27-del-wku",
+      "date": "2026-10-27",
+      "athlete_id": "cfb-wku-rodney-tisdale-jr",
+      "player": "Rodney Tisdale Jr.",
+      "team": "WKU",
+      "opponent": "DEL",
+      "fantasy_ppr": 0.84,
+      "stat_line": {
+        "passing_yards": 21.0,
+        "passing_tds": 0.0,
+        "interceptions_thrown": 0.0,
+        "rushing_yards": 0,
+        "rushing_tds": 0,
+        "receptions": 0,
+        "receiving_yards": 0,
+        "receiving_tds": 0,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.84,
+        "rushing": 0.0,
+        "receiving": 0.0,
+        "turnovers": -0.0,
+        "two_point": 0,
+        "returns": 0
+      },
+      "score_type": "traditional_full_ppr",
+      "source": "https://bluehens.com/sports/football/stats/2026/wku/boxscore/35236"
     },
     {
       "game_id": "cfb-2019-09-07-ucd-usd",
@@ -2534,6 +3207,70 @@
       },
       "score_type": "traditional_full_ppr",
       "source": "https://godeacs.com/sports/football/stats/2025/nc-state/boxscore/14149"
+    },
+    {
+      "game_id": "cfb-2026-10-27-del-wku",
+      "date": "2026-10-27",
+      "athlete_id": "cfb-wku-lofton-howard",
+      "player": "Lofton Howard",
+      "team": "WKU",
+      "opponent": "DEL",
+      "fantasy_ppr": 0.0,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": 0,
+        "rushing_tds": 0,
+        "receptions": 0.0,
+        "receiving_yards": 0.0,
+        "receiving_tds": 0.0,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": 0.0,
+        "receiving": 0.0,
+        "turnovers": 0,
+        "two_point": 0,
+        "returns": 0
+      },
+      "score_type": "traditional_full_ppr",
+      "source": "https://bluehens.com/sports/football/stats/2026/wku/boxscore/35236"
+    },
+    {
+      "game_id": "cfb-2026-10-27-del-wku",
+      "date": "2026-10-27",
+      "athlete_id": "cfb-wku-rhett-larson",
+      "player": "Rhett Larson",
+      "team": "WKU",
+      "opponent": "DEL",
+      "fantasy_ppr": 0.0,
+      "stat_line": {
+        "passing_yards": 0,
+        "passing_tds": 0,
+        "interceptions_thrown": 0,
+        "rushing_yards": 0.0,
+        "rushing_tds": 0.0,
+        "receptions": 0,
+        "receiving_yards": 0,
+        "receiving_tds": 0,
+        "fumbles_lost": 0,
+        "offensive_two_point_conversions": 0,
+        "kick_punt_return_tds": 0
+      },
+      "ppr_components": {
+        "passing": 0.0,
+        "rushing": 0.0,
+        "receiving": 0.0,
+        "turnovers": 0,
+        "two_point": 0,
+        "returns": 0
+      },
+      "score_type": "traditional_full_ppr",
+      "source": "https://bluehens.com/sports/football/stats/2026/wku/boxscore/35236"
     },
     {
       "game_id": "cfb-2018-11-10-davidson-usd",

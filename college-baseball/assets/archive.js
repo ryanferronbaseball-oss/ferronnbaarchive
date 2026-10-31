@@ -85,11 +85,15 @@ function sum(rows,category,key){
 function bat(rows){
  const ab=sum(rows,"batting","atBats"),h=sum(rows,"batting","hits"),d=sum(rows,"batting","doubles"),t=sum(rows,"batting","triples"),hr=sum(rows,"batting","homeRuns");
  const bb=sum(rows,"batting","baseOnBalls"),hbp=sum(rows,"batting","hitByPitch"),sf=sum(rows,"batting","sacFlies");
+ const appearances=rows.filter(r=>r.batting!=null);
+ const pa=appearances.length&&appearances.every(r=>["atBats","baseOnBalls","hitByPitch","sacFlies","sacBunts"].every(k=>stat(r.batting[k])!=null))
+  ?appearances.reduce((total,r)=>total+["atBats","baseOnBalls","hitByPitch","sacFlies","sacBunts"].reduce((n,k)=>n+Number(r.batting[k]),0),0):null;
  const singles=h!=null&&d!=null&&t!=null&&hr!=null?h-d-t-hr:null;
  const tb=singles==null?null:singles+2*d+3*t+4*hr;
  const obDen=ab!=null&&bb!=null&&hbp!=null&&sf!=null?ab+bb+hbp+sf:null;
- return {atBats:ab,hits:h,runs:sum(rows,"batting","runs"),homeRuns:hr,rbi:sum(rows,"batting","rbi"),
+ return {games:new Set(appearances.map(r=>r.game_id)).size,plateAppearances:pa,atBats:ab,hits:h,runs:sum(rows,"batting","runs"),doubles:d,triples:t,homeRuns:hr,rbi:sum(rows,"batting","rbi"),
    walks:bb,strikeouts:sum(rows,"batting","strikeOuts"),stolenBases:sum(rows,"batting","stolenBases"),
+  walkPct:pa>0&&bb!=null?100*bb/pa:null,strikeoutPct:pa>0?100*sum(rows,"batting","strikeOuts")/pa:null,
    average:ab>0&&h!=null?h/ab:null,
    obp:obDen>0&&h!=null?(h+bb+hbp)/obDen:null,
    slg:ab>0&&tb!=null?tb/ab:null,
@@ -97,9 +101,15 @@ function bat(rows){
 }
 function pitch(rows){
  const outs=sum(rows,"pitching","outs"),earnedRuns=sum(rows,"pitching","earnedRuns"),h=sum(rows,"pitching","hits"),walks=sum(rows,"pitching","baseOnBalls");
- return {outs,innings:outs==null?null:Math.floor(outs/3)+"."+(outs%3),strikeouts:sum(rows,"pitching","strikeOuts"),
+ const appearances=rows.filter(r=>r.pitching!=null);
+ // A zero-based pitching appearance index identifies the starting pitcher.
+ const starts=new Set(appearances.filter(r=>r.pitching_appearance_index===0).map(r=>r.game_id)).size;
+ const battersFaced=appearances.length&&appearances.every(r=>stat(r.pitching.battersFaced)!=null)?sum(rows,"pitching","battersFaced"):null;
+ return {games:new Set(appearances.map(r=>r.game_id)).size,starts,battersFaced,outs,innings:outs==null?null:Math.floor(outs/3)+"."+(outs%3),strikeouts:sum(rows,"pitching","strikeOuts"),
   hits:h,walks,earnedRuns,era:outs>0&&earnedRuns!=null?27*earnedRuns/outs:null,
   whip:outs>0&&h!=null&&walks!=null?3*(h+walks)/outs:null,
+  walkPct:battersFaced>0&&walks!=null?100*walks/battersFaced:null,
+  strikeoutPct:battersFaced>0?100*sum(rows,"pitching","strikeOuts")/battersFaced:null,
   wins:sum(rows,"pitching","wins"),losses:sum(rows,"pitching","losses"),saves:sum(rows,"pitching","saves")};
 }
 const rate=(v,n)=>v==null?"—":Number(v).toFixed(n).replace(n===3?/^0(?=\.)/:/$^/,"");
@@ -269,7 +279,9 @@ function renderPlayers(d){
  +'<label for="cb-role">Statistical group<select id="cb-role" aria-label="Player role"><option value="hit">Batting</option><option value="pitch">Pitching</option></select></label>'
  +'<label for="cb-sort">Sort leaderboard<select id="cb-sort" aria-label="Sort statistical leaderboard"></select></label></div>'
  +'<section class="panel cb-leaderboard-panel"><h2>Player leaderboard</h2><p id="cb-board-note" class="mlb-note"></p><div id="cb-player-board"></div></section>';
- const roles={hit:[["hits","Hits"],["homeRuns","Home runs"],["rbi","RBI"],["average","AVG"],["ops","OPS"],["atBats","At-bats"]],pitch:[["strikeouts","Strikeouts"],["outs","Outs pitched"],["era","ERA"],["whip","WHIP"],["wins","Wins"],["saves","Saves"]]};
+ const hitColumns=[["games","Games"],["plateAppearances","PA"],["atBats","AB"],["runs","R"],["hits","H"],["doubles","2B"],["triples","3B"],["homeRuns","HR"],["rbi","RBI"],["walks","BB"],["strikeouts","K"],["average","BA"],["obp","OBP"],["slg","SLG"],["ops","OPS"],["walkPct","BB%"],["strikeoutPct","K%"]];
+ const pitchColumns=[["games","Games"],["starts","GS"],["innings","IP"],["battersFaced","BF"],["hits","H"],["earnedRuns","ER"],["walks","BB"],["strikeouts","K"],["era","ERA"],["whip","WHIP"],["walkPct","BB%"],["strikeoutPct","K%"]];
+ const roles={hit:hitColumns,pitch:pitchColumns};
  let role="hit";
  function options(){const sel=$("cb-sort");sel.innerHTML=roles[role].map(([key,label])=>'<option value="'+key+'">'+label+'</option>').join("");sel.value=role==="hit"?"hits":"strikeouts"}
  function draw(){
@@ -277,14 +289,21 @@ function renderPlayers(d){
   const rows=d.players.map(p=>({...p,stats:role==="hit"?bat(p.rows):pitch(p.rows)}))
   .filter(p=>p.name.toLowerCase().includes(q)||p.teams.join(" ").toLowerCase().includes(q))
   .filter(p=>p.stats[field]!=null)
-  .sort((a,b)=>field==="era"||field==="whip"?(a.stats[field]-b.stats[field])||a.name.localeCompare(b.name):(b.stats[field]-a.stats[field])||a.name.localeCompare(b.name)).slice(0,200);
-  $("cb-board-note").textContent="Rankings include only recorded values from imported college box scores. Missing categories are excluded rather than counted as zeros.";
+  .sort((a,b)=>(["era","whip"].includes(field)?a.stats[field]-b.stats[field]:b.stats[field]-a.stats[field])||a.name.localeCompare(b.name)).slice(0,200);
+  $("cb-board-note").textContent="Statistics cover only games attended. A dash means the source data cannot establish that total; pitching BF, BB% and K% require verified batters-faced data. Click the sort menu to rank by any column.";
   if(!d.players.length){$("cb-player-board").innerHTML=pending("No college player box scores have been imported yet. This leaderboard will populate as official college gamebooks are verified.");return}
-  const cols=role==="hit"?["Player / school","Games","AB","H","HR","RBI","AVG","OPS"]:["Player / school","Games","IP","H","BB","SO","ERA","WHIP"];
+  const columns=roles[role];
+  const cols=["Player / school",...columns.map(([,label])=>label)];
   const body=rows.map(p=>{
    const s=p.stats;
-   const vals=role==="hit"?[s.atBats,s.hits,s.homeRuns,s.rbi,rate(s.average,3),rate(s.ops,3)]:[s.innings,s.hits,s.walks,s.strikeouts,rate(s.era,2),rate(s.whip,2)];
-   return '<tr><td><a href="'+playerUrl(p)+'">'+esc(p.name)+'</a><div class="cb-card-meta">'+esc(p.teams.join(" / "))+'</div></td><td>'+p.games.length+'</td>'+vals.map(x=>'<td>'+esc(x==null?"—":fmt(Number(x))===x?x:String(x))+'</td>').join("")+'</tr>';
+   const vals=columns.map(([key])=>{
+    const v=s[key];if(v==null)return "—";
+    if(["average","obp","slg","ops"].includes(key))return rate(v,3);
+    if(["era","whip"].includes(key))return rate(v,2);
+    if(["walkPct","strikeoutPct"].includes(key))return v.toFixed(1)+"%";
+    return key==="innings"?v:fmt(v);
+   });
+   return '<tr><td><a href="'+playerUrl(p)+'">'+esc(p.name)+'</a><div class="cb-card-meta">'+esc(p.teams.join(" / "))+'</div></td>'+vals.map(x=>'<td>'+esc(x)+'</td>').join("")+'</tr>';
   });
   $("cb-player-board").innerHTML=htmlTable(cols,body,"No players have recorded statistics in this category.");
  }

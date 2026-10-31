@@ -4,8 +4,8 @@
   "source": "Original archive owner confirmed each multi-school person",
   "original_attendance_ids_preserved": 444,
   "original_player_game_rows_preserved": 13183,
-  "requested_person_merges": 99,
-  "activated_person_merges": 96,
+  "requested_person_merges": 100,
+  "activated_person_merges": 97,
   "pending_person_merges": 3,
   "merge_policy": "Only listed pair of exact normalized person names and school-specific original source player IDs; all other IDs remain separate",
   "merges": [
@@ -2217,6 +2217,34 @@
         }
       ],
       "source_rows": 3
+    },
+    {
+      "name": "Tyler Pitzer",
+      "canonical_id": "cb-south-carolina-tyler-pitzer",
+      "source_player_ids": [
+        "cb-south-carolina-tyler-pitzer",
+        "cb-mississippi-state-tyler-pitzer",
+        "cb-south-carolina-pitzer"
+      ],
+      "schools": [
+        "South Carolina",
+        "Mississippi State"
+      ],
+      "pairs": [
+        {
+          "team": "South Carolina",
+          "source_player_id": "cb-south-carolina-tyler-pitzer"
+        },
+        {
+          "team": "Mississippi State",
+          "source_player_id": "cb-mississippi-state-tyler-pitzer"
+        },
+        {
+          "team": "South Carolina",
+          "source_player_id": "cb-south-carolina-pitzer"
+        }
+      ],
+      "source_rows": 5
     }
   ]
 }

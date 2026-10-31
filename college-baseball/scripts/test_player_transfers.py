@@ -24,16 +24,16 @@ audit=json.loads((DATA/"player_identity_reconciliation_audit.json").read_text())
 cross=json.loads((DATA/"player_identity_crosswalk.json").read_text())
 original=json.loads((DATA/"player_stats.json").read_text())
 games=json.loads((DATA/"games.json").read_text())
-check(len(games)==444 and len(original)==13183 and len(rules["rules"])==rules["expected_proposals"]==99,
+check(len(games)==444 and len(original)==13183 and len(rules["rules"])==rules["expected_proposals"]==100,
       "Protected college attendance or original official player rows changed")
-check(audit["ready_merges"]==95 and audit["not_ready"]==4 and
-      cross["requested_person_merges"]==99 and
-      cross["activated_person_merges"]==96 and cross["pending_person_merges"]==3,
-      "96 of 99 owner-nominated identities linked, including the verified Davidson/Georgia transfer")
+check(audit["ready_merges"]==96 and audit["not_ready"]==4 and
+      cross["requested_person_merges"]==100 and
+      cross["activated_person_merges"]==97 and cross["pending_person_merges"]==3,
+      "97 of 100 owner-nominated identities linked, including the Tyler Pitzer school transfer and source-name alias")
 check({x["name"] for x in audit["preview"] if x["status"]!="merge_ready"}==
       {"Tate Soderstrom","Ethan Lizama","Kyle Hvidsten","Michael Graziano"},
       "Original-row audit should still document the four former source exceptions")
-check(len(cross["merges"])==96 and len({m["canonical_id"] for m in cross["merges"]})==96,
+check(len(cross["merges"])==97 and len({m["canonical_id"] for m in cross["merges"]})==97,
       "Missing or duplicate canonical identities")
 source_by_key=defaultdict(list)
 for r in original:
@@ -56,18 +56,22 @@ source_by_key[(corrected_graziano["team"],corrected_graziano["player_id"])].appe
 mapped={}
 used_ids=set()
 for m in cross["merges"]:
-    check(len(m["source_player_ids"])==2 and
+    check(len(m["source_player_ids"])==(3 if m["name"]=="Tyler Pitzer" else 2) and
           m["canonical_id"]==m["source_player_ids"][0],
           "Canonical ID must preserve first-school source profile URL")
     rule=next(x for x in rules["rules"] if name(x["name"])==name(m["name"]))
+    aliases={a["source_player_id"]:a for a in rule.get("source_aliases",[])}
     allowed_schools={school(t) for t in rule["schools"]}
     pairs={(x["team"],x["source_player_id"]) for x in m["pairs"]}
     matched=[r for t,i in pairs for r in source_by_key[(t,i)]]
-    check(len(pairs)==2 and len(matched)==m["source_rows"] and len(matched)>1,
+    check(len(pairs)==len(m["source_player_ids"]) and len(matched)==m["source_rows"] and len(matched)>1,
           "Both exact source player identities must be present")
     for t,i in pairs:
         check(school(t) in allowed_schools and
-              all(name(r["player"])==name(rule["name"]) for r in source_by_key[(t,i)]),
+              all(name(r["player"])==name(rule["name"]) or
+                  (i in aliases and r["player"]==aliases[i]["source_player_name"] and
+                   r["game_id"]==aliases[i]["game_id"] and r["team"]==aliases[i]["team"])
+                  for r in source_by_key[(t,i)]),
               "Owner name and school gate failed")
         check((t,i) not in mapped and i not in used_ids, "Double-booked source player ID")
         mapped[(t,i)]=m["canonical_id"]
@@ -86,7 +90,8 @@ unified=[(r["game_id"],mapped.get((r["team"],r["player_id"]),r["player_id"])) fo
 check(len(set(unified))==len(effective),"Two identities collided in the same attended game")
 before=len({r["player_id"] for r in effective})
 after=len({p for _,p in unified})
-check(before-after==cross["activated_person_merges"],"Exactly one unique player identity should collapse per approved pair")
+check(before-after==sum(len(m["source_player_ids"])-1 for m in cross["merges"]),
+      "Only owner-approved source identities may collapse, including the scoped Pitzer shorthand")
 print(json.dumps({"source_records_preserved":len(original),"verified_owner_proposals":cross["activated_person_merges"],
       "left_pending":cross["pending_person_merges"],"before_unique_players":before,"after_unique_players":after,
       "source_college_games":len(games)},indent=2))
@@ -115,6 +120,7 @@ cases=[
     ("Andrew Wiggins",["Indiana","NC State"],3),
     ("Michael Graziano",["Georgia Tech","Mercer"],2),
     ("Michael O'Shaughnessy",["Davidson","Georgia"],3),
+    ("Tyler Pitzer",["South Carolina","Mississippi State"],5),
 ]
 try:
     with sync_playwright() as pw:
@@ -133,6 +139,11 @@ try:
             check(page.locator(".cb-player-game-log tbody tr").count()==games_expected,
                   "Witnessed game logs do not combine source rows for "+who)
             print("PASS unified old-school deep link",who,display,games_expected)
+        page.goto(base+"/player.html?id="+quote("cb-south-carolina-pitzer"),wait_until="domcontentloaded")
+        page.locator(".cb-profile-hero").wait_for(timeout=35000)
+        check(page.locator(".cb-profile-hero h1").inner_text()=="Tyler Pitzer" and
+              page.locator(".cb-player-game-log tbody tr").count()==5,
+              "Abbreviated South Carolina Pitzer deep link resolves to all five attended games")
         # Three still-deferred players remain at their old, single-school URLs.
         page.goto(base+"/player.html?id="+quote("cb-uc-san-diego-tate-soderstrom"),wait_until="domcontentloaded")
         page.locator(".cb-profile-hero").wait_for(timeout=35000)
@@ -143,7 +154,8 @@ try:
         for who,schools in [("Justin DeCriscio",["San Diego","NC State"]),
                             ("Dalton Bargo",["Tennessee","NC State"]),
                             ("Andrew Wiggins",["Indiana","NC State"]),
-                            ("Michael O'Shaughnessy",["Davidson","Georgia"])]:
+                            ("Michael O'Shaughnessy",["Davidson","Georgia"]),
+                            ("Tyler Pitzer",["South Carolina","Mississippi State"])]:
             page.locator("#cb-player-search").fill(who)
             page.wait_for_timeout(250)
             board=page.locator("#cb-player-board")
@@ -154,4 +166,4 @@ try:
 finally:
     server.shutdown()
     thread.join(timeout=5)
-print("PASS 96 scoped transfer profiles, redirects, leaderboards, exclusion rules and original official boxscore data")
+print("PASS 97 scoped transfer profiles, redirects, leaderboards, exclusion rules and original official boxscore data")

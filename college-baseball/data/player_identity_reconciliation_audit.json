@@ -1,10 +1,10 @@
 {
   "status": "PASS",
-  "source_manifests": 99,
+  "source_manifests": 100,
   "original_game_count": 444,
   "original_player_game_rows": 13183,
   "eligible_gamebooks": 437,
-  "ready_merges": 95,
+  "ready_merges": 96,
   "not_ready": 4,
   "pending_breakdown": {
     "one_or_both_schools_not_in_attended_game_player_rows": 4
@@ -3970,8 +3970,56 @@
       ],
       "status": "merge_ready",
       "note": "Owner-confirmed transfer. Georgia's 2026 official roster identifies Michael O'Shaughnessy as a former Davidson player."
+    },
+    {
+      "sequence": 100,
+      "name": "Tyler Pitzer",
+      "approved_schools": [
+        "South Carolina",
+        "Mississippi State"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "south carolina",
+          "observed_teams": [
+            "South Carolina"
+          ],
+          "source_player_ids": [
+            "cb-south-carolina-tyler-pitzer"
+          ],
+          "source_player_rows": 3,
+          "games": 3,
+          "seasons": [
+            2024
+          ]
+        },
+        {
+          "normalized_school": "mississippi state",
+          "observed_teams": [
+            "Mississippi State"
+          ],
+          "source_player_ids": [
+            "cb-mississippi-state-tyler-pitzer"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2026
+          ]
+        }
+      ],
+      "verified_source_aliases": [
+        {
+          "team": "South Carolina",
+          "source_player_id": "cb-south-carolina-pitzer",
+          "source_player_name": "Pitzer",
+          "game_id": "cb-2025-03-28-tennessee-south-carolina-att0326"
+        }
+      ],
+      "status": "merge_ready",
+      "note": "Owner-confirmed transfer. Mississippi State's official roster lists South Carolina as the previous school; Tennessee's official March 28, 2025 box score uses only Pitzer for the South Carolina pitcher."
     }
   ],
   "source_id_unique_count_before": 5544,
-  "source_id_unique_count_after_simulated": 5449
+  "source_id_unique_count_after_simulated": 5447
 }

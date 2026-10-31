@@ -113,6 +113,18 @@ def main():
         expected=[school(t) for t in rule["schools"]]
         if len(expected)!=2 or expected[0]==expected[1]:
             raise ValueError("Transfer needs two distinct approved schools: "+n)
+        # Abbreviated official box-score names are admitted only by explicit
+        # owner-approved source ID, school, game, and exact printed name.
+        aliases={}
+        for alias in rule.get("source_aliases",[]):
+            aid=alias["source_player_id"]
+            found=by_id.get(aid,[])
+            if (aid in aliases or school(alias["team"]) not in expected or not found or
+                any(r["team"]!=alias["team"] or
+                    r["game_id"]!=alias["game_id"] or
+                    r["player"]!=alias["source_player_name"] for r in found)):
+                raise ValueError("Invalid source-scoped player-name alias: "+aid)
+            aliases[aid]=alias
         side=[]
         for t in expected:
             matches=index.get((nkey,t),[])
@@ -130,10 +142,13 @@ def main():
         elif side[0]["source_player_ids"][0]==side[1]["source_player_ids"][0]:
             issue="already_same_source_player_id"
         else:
-            ids=[s["source_player_ids"][0] for s in side]
+            ids=[s["source_player_ids"][0] for s in side]+list(aliases)
+            if len(ids)!=len(set(ids)):
+                raise ValueError("A source-name alias duplicates a full-name ID: "+n)
             if any(i in used for i in ids):
                 issue="source_player_id_shared_with_another_proposal"
-            elif any(school(r["team"]) not in expected or name(r["player"])!=nkey
+            elif any(school(r["team"]) not in expected or
+                     (name(r["player"])!=nkey and i not in aliases)
                      for i in ids for r in by_id[i]):
                 issue="source_id_also_used_for_other_name_or_unapproved_school"
             elif len({r["game_id"] for i in ids for r in by_id[i]})!=sum(len(by_id[i]) for i in ids):
@@ -145,6 +160,7 @@ def main():
                 canonical=ids[0]
                 changes.append({
                     "name":n,"canonical_id":canonical,
+                    **({"display_name":rule["display_name"]} if rule.get("display_name") else {}),
                     "source_player_ids":ids,
                     "schools":[s["observed_teams"][0] for s in side],
                     "pairs":[{"team":r["team"],"source_player_id":r["player_id"]}
@@ -153,6 +169,7 @@ def main():
                 })
         state.append({"sequence":rule["sequence"],"name":n,"approved_schools":rule["schools"],
                       "source_sides":side,
+                      **({"verified_source_aliases":list(aliases.values())} if aliases else {}),
                       "status":"merge_ready" if issue is None else issue,
                       "note":rule.get("notes")})
     # De-duplicate aliases by (school,id) while preserving deterministic input.
@@ -169,10 +186,8 @@ def main():
         "pending_breakdown":dict(Counter(r["status"] for r in state if r["status"]!="merge_ready")),
         "preview":state,
         "source_id_unique_count_before":len(originals),
-        "source_id_unique_count_after_simulated":len(originals)-len(changes),
+        "source_id_unique_count_after_simulated":len(originals)-sum(len(m["source_player_ids"])-1 for m in changes),
     }
-    if changes:
-        audit["source_id_unique_count_after_simulated"]=len(originals)-len(changes)
     dump(AUDIT,audit)
     if args.apply:
         payload={

@@ -407,6 +407,12 @@ with tempfile.TemporaryDirectory() as t:
     (empty_root / "games.json").write_text("[]\n")
     (empty_root / "player_stats.json").write_text("[]\n")
     (empty_root / "import_report.json").write_text(json.dumps(make_report([])))
+    # Game-specific official corrections require their source games. An empty
+    # attendance fixture must also have empty source-scoped correction lists.
+    (empty_root / "source_stat_backfills.json").write_text('{"games": []}\n')
+    (empty_root / "attendance_game_corrections.json").write_text('{"games": []}\n')
+    (empty_root / "player_name_corrections.json").write_text(
+        json.dumps({"game_id": "empty-fixture", "team": "empty-fixture", "corrections": []}))
     server = run_server(staging)
     host = f"http://127.0.0.1:{server.server_address[1]}"
     errors = []

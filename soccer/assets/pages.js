@@ -18,15 +18,15 @@ const playerByName=name=>players.find(p=>A.slug(p.name)===A.slug(name));
 const summary=(m)=>esc(m.home)+' '+m.home_score+'–'+m.away_score+' '+esc(m.away);
 const badge=(t)=>'<span class="soccer-micro">'+esc(t)+'</span>';
 const initial=n=>String(n).split(/\s+/).map(x=>x[0]).slice(0,2).join("").toUpperCase();
-const share=(p)=>'<a href="'+A.playerUrl(p.name)+'">'+esc(p.name)+'</a>';
+const share=(p)=>A.playerName(p.name);
 const eventHtml=(e,g,compact=false)=>{
  const title=A.eventName[e.type]||e.type;
- const detail=e.type==="substitution"?"Replaced "+esc(e.out||"unknown player"):
- (e.assist?'Assist: '+esc(e.assist):"")+(e.secondary_assist?' · Secondary: '+esc(e.secondary_assist):"")+
+ const detail=e.type==="substitution"?"Replaced "+A.playerName(e.out):
+ (e.assist?'Assist: '+A.playerName(e.assist):"")+(e.secondary_assist?' · Secondary: '+A.playerName(e.secondary_assist):"")+
  (e.type==="own_goal"?" · Credited to opposition":"");
  const score=e.type==="goal"||e.type==="own_goal"||e.type==="penalty_goal"?
  badge(e.type==="own_goal"?"OG":e.type==="penalty_goal"?"Penalty":"Goal"):"";
- return '<div class="soccer-event"><div class="time">'+esc(e.minute)+"'</div><div><b>"+esc(e.team)+' · '+esc(title)+'</b><div><a href="'+A.playerUrl(e.player)+'">'+esc(e.player||"Unattributed")+'</a></div>'+(detail?'<div class="details">'+detail+'</div>':"")+'</div><div class="score-at">'+score+'</div></div>';
+ return '<div class="soccer-event"><div class="time">'+esc(e.minute)+"'</div><div><b>"+esc(e.team)+' · '+esc(title)+'</b><div>'+A.playerName(e.player)+'</div>'+(detail?'<div class="details">'+detail+'</div>':"")+'</div><div class="score-at">'+score+'</div></div>';
 };
 const bar=(entries)=>{
  const max=Math.max(1,...entries.map(x=>x[1]));
@@ -75,8 +75,8 @@ function matchStats(m){
 }
 function lineup(m,side){
  const team=side==="home"?m.home:m.away,starters=m[side+"_starters"],subs=m[side+"_subs_used"]||[];
- return '<section><h3>'+esc(team)+'</h3><b>Starting XI</b><ol>'+starters.map(n=>'<li><a href="'+A.playerUrl(n)+'">'+esc(n)+'</a></li>').join("")+'</ol>'
- +'<b>Substitutes used</b><ul>'+subs.map(n=>'<li><a href="'+A.playerUrl(n)+'">'+esc(n)+'</a></li>').join("")+'</ul></section>';
+ return '<section><h3>'+esc(team)+'</h3><b>Starting XI</b><ol>'+starters.map(n=>'<li>'+A.playerName(n)+'</li>').join("")+'</ol>'
+ +'<b>Substitutes used</b><ul>'+subs.map(n=>'<li>'+A.playerName(n)+'</li>').join("")+'</ul></section>';
 }
 function gameView(m){
  const statline=(m.home_score+m.away_score)+' total goals · '+m.competition;
@@ -127,14 +127,14 @@ function profile(){
  document.title=p.name+" · Soccer | Courtside Archive";
  const log=p.matchLog.slice().sort((a,b)=>b.date.localeCompare(a.date));
  const eventRows=log.map(l=>'<tr><td><a href="./game.html?id='+encodeURIComponent(l.id)+'">'+dt(l.date)+'</a></td><td>'+esc(l.team)+'</td><td>'+esc(l.opponent)+'</td><td>'+(l.started?"Starter":"Substitute")+'</td><td>'+l.goals+'</td><td>'+l.assists+'</td><td>'+l.secondary_assists+'</td><td>'+l.yellow+'</td></tr>');
- app.innerHTML='<div class="eyebrow">Pro Soccer · Player profile</div><div class="soccer-profile-head"><div class="soccer-portrait">'+initial(p.name)+'</div><div><h1 style="margin:0">'+esc(p.name)+'</h1><p class="lead">'+esc(p.teams.join(" / "))+' · '+p.appearances+' attended match'+(p.appearances===1?"":"es")+'</p></div></div>'
+ app.innerHTML='<div class="eyebrow">Pro Soccer · Player profile</div><div class="soccer-profile-head"><div class="soccer-portrait">'+initial(p.name)+'</div><div><h1 style="margin:0">'+A.playerName(p.name,false)+'</h1><p class="lead">'+esc(p.teams.join(" / "))+' · '+p.appearances+' attended match'+(p.appearances===1?"":"es")+'</p></div></div>'
  +metricCards([["Appearances",p.appearances],["Goals",p.goals],["Direct assists",p.assists],["Goal contributions",p.contributions]])
  +'<div class="section-heading"><h2>Matches you attended</h2><a class="action-link secondary" href="./stats.html">All leaderboards ↗</a></div><div class="game-grid">'+log.map(l=>A.matchCard(one(l.id))).join("")+'</div>'
  +'<section class="soccer-panel"><h2>Player statistics</h2><div class="soccer-grid">'+[["Starts",p.starts],["MLS secondary assists",p.secondary_assists],["Yellow cards",p.yellow],["Red cards",p.red],["Penalties scored",p.penalties],["Clean sheets (starting GK)",p.clean_sheets]].map(([k,v])=>'<div class="soccer-tile"><small>'+esc(k)+'</small><strong>'+v+'</strong></div>').join("")+'</div></section>'
  +'<section class="soccer-panel"><h2>Individual match logs</h2><div class="table-wrap"><table class="soccer-stat-table"><thead><tr><th>Date</th><th>Team</th><th>Opponent</th><th>Role</th><th>Goals</th><th>Ast</th><th>2nd Ast</th><th>YC</th></tr></thead><tbody>'+eventRows.join("")+'</tbody></table></div></section>'
  +warn('Limited to matches attended. Player shots, xG, minutes, and passing metrics are intentionally unavailable rather than estimated. MLS secondary assists are separate from direct assists.');
 }
-function tile(label,value,body,href){return '<article class="soccer-tile"><small>'+esc(label)+'</small><strong>'+esc(value)+'</strong><p>'+esc(body||"")+'</p>'+(href?'<a href="'+href+'">View match ↗</a>':'')+'</article>'}
+function tile(label,value,body,href,bodyIsHtml=false){return '<article class="soccer-tile"><small>'+esc(label)+'</small><strong>'+esc(value)+'</strong><p>'+(bodyIsHtml?body:esc(body||""))+'</p>'+(href?'<a href="'+href+'">View match ↗</a>':'')+'</article>'}
 function recordTop(list,k,title){const sorted=list.slice().sort((a,b)=>b[k]-a[k]||b.assists-a.assists||a.p.name.localeCompare(b.p.name));return '<div class="table-wrap"><table class="soccer-stat-table"><thead><tr><th>Rank</th><th>Player</th><th>Club / Country</th><th>Date</th><th>'+esc(title)+'</th><th>Match</th></tr></thead><tbody>'+row(sorted.filter(x=>x[k]>0).slice(0,10).map((x,i)=>'<tr><td>'+(i+1)+'</td><td>'+pl(x.p)+'</td><td>'+esc(x.l.team)+'</td><td>'+dt(x.m.date)+'</td><td class="soccer-stat">'+x[k]+'</td><td><a href="'+link(x.m)+'">Match ↗</a></td></tr>'),'No verified qualifying performances',6)+'</tbody></table></div>';}
 function records(){
  const performance=matches.flatMap(m=>players.flatMap(p=>{const l=p.matchLog.find(x=>x.id===m.id);if(!l)return[];return[{p,m,l,goals:l.goals,assists:l.assists,contributions:l.goals+l.assists,secondary_assists:l.secondary_assists,yellow:l.yellow,red:l.red,starts:Number(l.started),appearances:1}]}));
@@ -149,7 +149,7 @@ function records(){
  +warn('Three-match scope: Nashville SC vs. Cincinnati, Nashville SC vs. Sporting KC, Morocco vs. Haiti. Only verifiable performance categories appear. MLS secondary assists are tracked separately.');
  el("mainTabs").addEventListener("click",e=>{const btn=e.target.closest("[data-tab]");if(!btn)return;const name=btn.dataset.tab;el("mainTabs").querySelectorAll("button").forEach(b=>b.setAttribute("aria-selected",String(b===btn)));["records","milestones","teams","legendary"].forEach(k=>el(k+"Tab").hidden=k!==name);});
  const best=k=>performance.slice().sort((a,b)=>b[k]-a[k]||b.contributions-a.contributions||a.p.name.localeCompare(b.p.name))[0];
- el("recordCards").innerHTML=definitions.map(([title,k])=>{const top=best(k);return tile("Most "+title.toLowerCase(),top[k],top.p.name+" · "+dt(top.m.date),link(top.m))}).join("");
+ el("recordCards").innerHTML=definitions.map(([title,k])=>{const top=best(k);return tile("Most "+title.toLowerCase(),top[k],A.playerName(top.p.name)+" · "+dt(top.m.date),link(top.m),true)}).join("");
  const record=()=>{const key=el("recordStat").value;el("recordTop").innerHTML=recordTop(performance,key,definitions.find(x=>x[1]===key)[0])};el("recordStat").addEventListener("change",record);record();
  function mile(){
   const [k,th]=el("milestoneStat").value.split(":");const threshold=Number(th),qualifying=performance.filter(x=>x[k]>=threshold),unique=new Set(qualifying.map(x=>x.p.id));
@@ -191,7 +191,7 @@ function records(){
   }
  }
  moments.sort((a,b)=>b.m.date.localeCompare(a.m.date)||A.eventOrder(a.e)-A.eventOrder(b.e));
- el("moments").innerHTML=moments.map(({e,m,tags})=>'<div class="soccer-event"><div class="time">'+esc(e.minute)+"'"+'</div><div><b>'+esc(e.player)+'</b><div class="details">'+esc(tags.join(" · "))+' · '+esc(m.home_abbr)+' vs '+esc(m.away_abbr)+'</div></div><a href="'+link(m)+'">Match ↗</a></div>').join("")||warn("No notable scoring events logged.");
+ el("moments").innerHTML=moments.map(({e,m,tags})=>'<div class="soccer-event"><div class="time">'+esc(e.minute)+"'"+'</div><div><b>'+A.playerName(e.player)+'</b><div class="details">'+esc(tags.join(" · "))+' · '+esc(m.home_abbr)+' vs '+esc(m.away_abbr)+'</div></div><a href="'+link(m)+'">Match ↗</a></div>').join("")||warn("No notable scoring events logged.");
  if(location.hash==="#milestones")el('mainTabs').querySelector('[data-tab="milestones"]').click();
 }
 function goalsView(){
@@ -199,7 +199,7 @@ function goalsView(){
  +metricCards([["Total goals",goals.length],["Matches",matches.length],["Individual goal scorers",new Set(goals.filter(x=>x.type!=="own_goal").map(x=>x.player)).size],["Penalties scored",goals.filter(x=>x.type==="penalty_goal").length]])
  +'<div class="soccer-panel"><div class="soccer-filters"><label>Show goals<select id="goalKind"><option value="all">All goals</option><option value="goal">Open-play / regular goals</option><option value="penalty_goal">Penalties</option><option value="own_goal">Own goals</option></select></label></div><div id="goalRows"></div></div>';
  const render=()=>{let k=el("goalKind").value;
- el("goalRows").innerHTML=goals.filter(e=>k==="all"||e.type===k).sort((a,b)=>b.m.date.localeCompare(a.m.date)||A.eventOrder(a)-A.eventOrder(b)).map(e=>'<div class="soccer-event"><span class="time">'+esc(e.minute)+"'"+'</span><div><b>'+A.scorerLabel(e)+'</b><div class="details">'+esc(e.team)+' · '+dt(e.m.date)+' · '+esc(e.m.home)+' vs '+esc(e.m.away)+'</div>'+(e.assist?'<div class="details">Assist: '+esc(e.assist)+'</div>':"")+'</div><a href="'+link(e.m)+'">Match ↗</a></div>').join("")||warn("No goals with this type.")};
+ el("goalRows").innerHTML=goals.filter(e=>k==="all"||e.type===k).sort((a,b)=>b.m.date.localeCompare(a.m.date)||A.eventOrder(a)-A.eventOrder(b)).map(e=>'<div class="soccer-event"><span class="time">'+esc(e.minute)+"'"+'</span><div><b>'+A.scorerLabel(e)+'</b><div class="details">'+esc(e.team)+' · '+dt(e.m.date)+' · '+esc(e.m.home)+' vs '+esc(e.m.away)+'</div>'+(e.assist?'<div class="details">Assist: '+A.playerName(e.assist)+'</div>':"")+'</div><a href="'+link(e.m)+'">Match ↗</a></div>').join("")||warn("No goals with this type.")};
  el("goalKind").addEventListener("change",render);render();
 }
 if(page==="home")overview();

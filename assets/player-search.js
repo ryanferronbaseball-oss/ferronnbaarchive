@@ -45,7 +45,7 @@ function mount(){
   if(!loaded){show('<div class="ca-search-message">'+(error?'Player search unavailable right now.':'Loading player index…')+'</div>');return}
   const matches=players.filter(p=>p.key.includes(q)).sort((a,b)=>Number(b.key.startsWith(q))-Number(a.key.startsWith(q))||a.name.localeCompare(b.name)).slice(0,8);
   if(!matches.length){show('<div class="ca-search-message">No matching players in this '+esc(label)+' archive.</div>');return}
-  show(matches.map(p=>'<a href="'+profile(p)+'">'+esc(p.name)+'<small>'+esc(label)+' · View player profile →</small></a>').join(''));
+  show(matches.map(p=>'<a href="'+profile(p)+'">'+esc(p.name)+(sport==='soccer'?window.SoccerArchive.nationalityFlag(p.name):'')+'<small>'+esc(label)+' · View player profile →</small></a>').join(''));
  };
  input.addEventListener('input',render);
  input.addEventListener('focus',render);

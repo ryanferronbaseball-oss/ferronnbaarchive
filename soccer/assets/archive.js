@@ -6,6 +6,21 @@ const date=v=>new Date(v+"T12:00:00").toLocaleDateString("en-US",{month:"short",
 const slug=x=>String(x).normalize("NFKD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
 const playerUrl=p=>"./player.html?id="+encodeURIComponent(slug(p));
 const gameUrl=m=>"./game.html?id="+encodeURIComponent(m.id);
+const nationalityCodes=new Map();
+const regionNames=new Intl.DisplayNames(["en"],{type:"region"});
+const countryName=code=>code==="GB-ENG"?"England":regionNames.of(code);
+const flagEmoji=code=>code==="GB-ENG"
+ ? String.fromCodePoint(0x1F3F4)+[..."gbeng"].map(c=>String.fromCodePoint(0xE0061+c.charCodeAt(0)-97)).join("")+String.fromCodePoint(0xE007F)
+ : [...code].map(c=>String.fromCodePoint(0x1F1E6+c.charCodeAt(0)-65)).join("");
+function nationalityFlag(name){
+ const code=nationalityCodes.get(name);if(!code)return "";
+ const country=esc(countryName(code));
+ return '<span class="soccer-flag" role="img" aria-label="'+country+'" title="'+country+'">'+flagEmoji(code)+'</span>';
+}
+function playerName(name,linked=true){
+ if(!name)return "Unattributed";
+ return (linked?'<a href="'+playerUrl(name)+'">'+esc(name)+'</a>':esc(name))+nationalityFlag(name);
+}
 const goalTypes=new Set(["goal","penalty_goal","own_goal"]);
 const isGoal=e=>goalTypes.has(e.type);
 const eventOrder=e=>{let [m,s]=String(e.minute).split("+");return Number(m)*100+Number(s||0)};
@@ -18,11 +33,13 @@ function nav(active){
  +'<a href="../index.html" class="back-link">All sports ↗</a></nav></header>';
 }
 async function load(){
- const r=await fetch("./data/matches.json",{cache:"no-store"});if(!r.ok)throw Error("Match data unavailable ("+r.status+")");const matches=await r.json();
+ const [r,nr]=await Promise.all([fetch("./data/matches.json",{cache:"no-store"}),fetch("./data/nationalities.json",{cache:"no-store"})]);
+ if(!r.ok)throw Error("Match data unavailable ("+r.status+")");const matches=await r.json();
+ if(nr.ok){const countries=await nr.json();for(const [code,names] of Object.entries(countries)){for(const name of names)nationalityCodes.set(name,code)}}
  const players=new Map(); const byId=new Map(matches.map(m=>[m.id,m]));
  const ensure=(name,team,m)=>{
   const id=slug(name);let p=players.get(id);
-  if(!p){p={id,name,teams:new Set(),matches:new Set(),starts:0,goals:0,assists:0,secondary_assists:0,penalties:0,own_goals:0,yellow:0,red:0,clean_sheets:0,events:[],matchLog:new Map()};players.set(id,p)}
+  if(!p){p={id,name,nationality:nationalityCodes.get(name)||null,teams:new Set(),matches:new Set(),starts:0,goals:0,assists:0,secondary_assists:0,penalties:0,own_goals:0,yellow:0,red:0,clean_sheets:0,events:[],matchLog:new Map()};players.set(id,p)}
   p.teams.add(team);
   if(!p.matchLog.has(m.id))p.matchLog.set(m.id,{id:m.id,date:m.date,team,opponent:team===m.home_abbr?m.away_abbr:m.home_abbr,started:false,goals:0,assists:0,secondary_assists:0,yellow:0,red:0,penalties:0,own_goals:0});
   return p;
@@ -67,15 +84,15 @@ function matchCard(m){return '<article class="game-card"><div class="eyebrow">'+
  +'<h3>'+esc(m.home)+' <span class="green">'+m.home_score+'–'+m.away_score+'</span> '+esc(m.away)+'</h3>'
  +'<div class="caption">'+esc(m.venue)+' · '+esc(m.city)+'</div>'
  +'<a class="action-link" href="'+gameUrl(m)+'">Match report & lineups ↗</a></article>';}
-function playerLink(p){return '<a href="'+playerUrl(p.name)+'">'+esc(p.name)+'</a>'}
+function playerLink(p){return playerName(p.name)}
 function formatMetric(n){return n===null||n===undefined?"—":fmt(n)}
 function scored(m){return (m.events||[]).filter(isGoal).sort((a,b)=>eventOrder(a)-eventOrder(b))}
-function scorerLabel(e){return esc(e.player||"Unattributed")+(e.type==="own_goal"?" (OG)":e.type==="penalty_goal"?" (PK)":"")}
+function scorerLabel(e){return playerName(e.player,false)+(e.type==="own_goal"?" (OG)":e.type==="penalty_goal"?" (PK)":"")}
 function playerMatchStat(m,name){
  const ev=m.events||[];return {goals:ev.filter(e=>e.player===name&&(e.type==="goal"||e.type==="penalty_goal")).length,
  assists:ev.filter(e=>e.assist===name).length,secondary:ev.filter(e=>e.secondary_assist===name).length,
  yellow:ev.filter(e=>e.player===name&&e.type==="yellow").length,red:ev.filter(e=>e.player===name&&e.type==="red").length};
 }
-window.SoccerArchive={esc,fmt,date,slug,playerUrl,gameUrl,isGoal,eventOrder,eventName,nav,load,leaderRows,matchCard,playerLink,formatMetric,scored,scorerLabel,playerMatchStat};
+window.SoccerArchive={esc,fmt,date,slug,playerUrl,gameUrl,isGoal,eventOrder,eventName,nav,load,leaderRows,matchCard,playerLink,playerName,nationalityFlag,countryName,formatMetric,scored,scorerLabel,playerMatchStat};
 })();
-;(()=>{if(document.querySelector('script[data-ca-player-search]'))return;const s=document.createElement('script');s.dataset.caPlayerSearch='1';s.src='../assets/player-search.js?v=quicksearch-20261016v2';document.head.appendChild(s)})();
+;(()=>{if(document.querySelector('script[data-ca-player-search]'))return;const s=document.createElement('script');s.dataset.caPlayerSearch='1';s.src='../assets/player-search.js?v=soccer-flags-20261031';document.head.appendChild(s)})();

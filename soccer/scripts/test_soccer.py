@@ -7,9 +7,15 @@ from pathlib import Path
 from playwright.sync_api import sync_playwright
 ROOT=Path(__file__).resolve().parents[2]
 data=json.loads((ROOT/"soccer/data/matches.json").read_text())
+nationalities=json.loads((ROOT/"soccer/data/nationalities.json").read_text())
 def check(ok,msg):
  assert ok,msg
  print("PASS",msg,flush=True)
+names={name for m in data for key in ("home_starters","away_starters","home_subs_used","away_subs_used") for name in m.get(key,[])}
+names.update(name for m in data for e in m["events"] for key in ("player","out","assist","secondary_assist") if (name:=e.get(key)))
+assigned=[name for group in nationalities.values() for name in group]
+check(set(assigned)==names and len(assigned)==len(names),f"All {len(names)} soccer players have one nationality tag")
+check("Ahmed Qasem" in nationalities["IQ"] and "Samuel Gidi" in nationalities["SK"],"National-team affiliation overrides birthplace for dual-national players")
 check(len(data)==3,"Only three launch matches are imported")
 check({m["id"] for m in data}=={
  "soc-2026-10-14-nsh-skc","soc-2026-08-29-nsh-cin","soc-2026-06-24-mar-hai"
@@ -57,6 +63,7 @@ try:
    visit("soccer/game.html?id=soc-2026-06-24-mar-hai","document.querySelector('#gameSelect')!==null")
    check("Morocco" in page.locator("#app").inner_text() and "Haiti" in page.locator("#app").inner_text(),f"{width} World Cup match report")
    check(page.locator(".soccer-lineup ol li").count()==22,f"{width} FIFA starting lineups")
+   check(page.locator(".soccer-lineup li .soccer-flag").count()==32,f"{width} every World Cup lineup player has a flag")
    check(page.locator(".soccer-panel").count()>=4,f"{width} goal, lineup, team-stat and timeline panels")
    check(page.locator(".soccer-event").count()>=25,f"{width} match timeline and goals show events")
    page.locator("#gameSelect").select_option("soc-2026-10-14-nsh-skc")
@@ -65,6 +72,7 @@ try:
    visit("soccer/stats.html","document.querySelector('#board tbody tr')!==null")
    page.locator("#category").select_option("goals")
    check("Hany Mukhtar" in page.locator("#board").inner_text(),f"{width} verified personal goals leaderboard")
+   check(page.locator("#board tbody tr .soccer-flag").count()>0,f"{width} leaderboard players show flags")
    page.locator("#category").select_option("assists")
    check("Hany Mukhtar" in page.locator("#board").inner_text(),f"{width} direct assists leaderboard")
    page.locator("#matchFilter").select_option("soc-2026-08-29-nsh-cin")
@@ -72,12 +80,14 @@ try:
    fits("leaderboards")
    visit("soccer/player.html?id=hany-mukhtar","document.querySelector('.soccer-profile-head')!==null")
    check("Hany Mukhtar" in page.locator(".soccer-profile-head").inner_text(),f"{width} linked player profile")
+   check(page.locator(".soccer-profile-head h1 .soccer-flag[aria-label='Germany']").count()==1,f"{width} player profile shows nationality")
    check(page.locator(".game-grid .game-card").count()==2,f"{width} Mukhtar has two MLS matches")
    check(page.locator(".soccer-stat-table tbody tr").count()==2,f"{width} player game logs")
    fits("player profile")
    visit("soccer/records.html","document.querySelector('#recordCards .soccer-tile')!==null")
    check(page.locator("#mainTabs button").count()==4,f"{width} four NFL-parity Records tabs")
    check(page.locator("#recordCards .soccer-tile").count()==6,f"{width} six record-holder cards")
+   check(page.locator("#recordCards .soccer-flag").count()==6,f"{width} record-holder players show flags")
    page.locator("#mainTabs button[data-tab='milestones']").click()
    check(page.locator("#milestoneTable tbody tr").count()>=1,f"{width} per-game milestone achievements")
    page.locator("#milestoneMode").select_option("players")
@@ -90,6 +100,7 @@ try:
    fits("Records")
    visit("soccer/goals.html","document.querySelector('#goalRows .soccer-event')!==null")
    check(page.locator("#goalRows .soccer-event").count()==14,f"{width} full verified 14-goal history")
+   check(page.locator("#goalRows .soccer-flag").count()>=14,f"{width} goals and assists show nationality flags")
    page.locator("#goalKind").select_option("own_goal")
    check(page.locator("#goalRows .soccer-event").count()==1,f"{width} own goal separated")
    fits("goal history")

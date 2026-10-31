@@ -495,7 +495,7 @@ with tempfile.TemporaryDirectory() as t:
                 page.locator("#cb-role").select_option("pitch")
                 check("4" in page.locator("#cb-player-board").inner_text(),
                       f"{width} pitching leaderboard includes four witnessed strikeouts")
-                visit(page, host, "player.html?id=synthetic-athlete", "#app .metrics")
+                visit(page, host, "player.html?id=synthetic-athlete", "#app .cb-profile-stat-rows")
                 check("Hitting in games you attended" in page.locator("#app").inner_text()
                       and "Pitching in games you attended" in page.locator("#app").inner_text(),
                       f"{width} two-way college player shows separate hitting and pitching rows")
@@ -512,7 +512,9 @@ with tempfile.TemporaryDirectory() as t:
             # batting/pitching tables in each of the three newly imported games.
             # Finally, test all 444 attended games and eight verified source gamebooks, distinct from
             # the synthetic examples and also without modifying the repo data.
-            for source in ("games.json", "player_stats.json", "import_report.json"):
+            for source in ("games.json", "player_stats.json", "import_report.json",
+                           "source_stat_backfills.json", "attendance_game_corrections.json",
+                           "player_name_corrections.json"):
                 (empty_root / source).write_text((SITE / "data" / source).read_text())
             for width in (1280, 390):
                 page = browser.new_page(viewport={"width": width, "height": 900})
@@ -582,7 +584,7 @@ with tempfile.TemporaryDirectory() as t:
                 page.locator("#cb-role").select_option("pitch")
                 check("LJ Cormier" in page.locator("#cb-player-board").inner_text(),
                       f"{width} actual pitcher leaderboard contains source-backed winner")
-                visit(page, host, "player.html?id=cb-auburn-chase-fralick", "#app .metrics")
+                visit(page, host, "player.html?id=cb-auburn-chase-fralick", "#app .cb-profile-stat-rows")
                 check("Chase Fralick" in page.locator("#app").inner_text(),
                       f"{width} cross-game college player identity connects")
                 visit(page, host, "records.html", ".cb-record")

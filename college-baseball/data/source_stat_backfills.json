@@ -323,7 +323,7 @@
     {
       "game_id": "cb-2025-06-01-lsu-little-rock-att0369",
       "source_url": "https://static.lsusports.net/assets/docs/bb/25stats/LSU601.pdf",
-      "verification_note": "Official June 1 Baton Rouge Regional gamebook: LSU 4, Little Rock 10. LSU 41 PA equals Little Rock 41 BF; Little Rock 43 PA equals LSU 43 BF. Little Rock Willbanks SH and Henry SF; no HBP.",
+      "verification_note": "Official June 1 Baton Rouge Regional gamebook: LSU 4, Little Rock 10. LSU 41 PA equals Little Rock 41 BF; Little Rock 43 PA equals LSU 43 BF. Little Rock Willbanks SH and Henry SF; no HBP. Doubles by LSU's Curiel and Hernandez and Little Rock's Cano and Harris; Cano also homered. No triples or other extra-base hits.",
       "expected_batting_rows": 24,
       "expected_pitching_rows": 9,
       "hit_by_pitch": {},
@@ -332,6 +332,18 @@
       },
       "sac_flies": {
         "cb-little-rock-zach-henry": 1
+      },
+      "extra_base_hits": {
+        "doubles": {
+          "cb-lsu-derek-curiel": 1,
+          "cb-lsu-luis-hernandez": 1,
+          "cb-little-rock-angel-cano": 1,
+          "cb-little-rock-sammy-harris": 1
+        },
+        "triples": {},
+        "home_runs": {
+          "cb-little-rock-angel-cano": 1
+        }
       },
       "batters_faced": {
         "cb-lsu-jaden-noot": 9,

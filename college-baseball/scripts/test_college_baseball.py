@@ -552,6 +552,22 @@ with tempfile.TemporaryDirectory() as t:
                       "#cb-game-details .cb-game-summary")
                 check("0 – 19" in page.locator("#cb-game-details").inner_text(),
                       f"{width} original game deep link resolves to the April 13 correction")
+                visit(page, host, "game.html?id=cb-2025-06-01-lsu-little-rock-att0369",
+                      "#cb-box .mlb-team-box[data-side='home']")
+                for player_id,values in {
+                    "cb-lsu-derek-curiel": ["1","0","0"],
+                    "cb-lsu-luis-hernandez": ["1","0","0"],
+                    "cb-little-rock-angel-cano": ["1","0","1"],
+                    "cb-little-rock-sammy-harris": ["1","0","0"],
+                    "cb-lsu-jared-jones": ["0","0","0"],
+                }.items():
+                    line=page.locator(f'#cb-box tr[data-player-id="{player_id}"]')
+                    check([line.locator('td').nth(i).inner_text() for i in (5,6,7)]==values,
+                          f"{width} June 1 LSU-Little Rock official extra-base hits for {player_id}")
+                visit(page, host, "player.html?id=cb-little-rock-angel-cano", ".cb-player-game-log")
+                cano_game=page.locator(".cb-player-game-log tbody tr").filter(has_text="Jun 1, 2025")
+                check(cano_game.count()==1 and cano_game.locator("td").nth(5).inner_text()=="1",
+                      f"{width} Angel Cano's June 1 home run appears in his linked college game log")
                 visit(page, host, "game.html?id=cb-2026-05-31-ucf-auburn", "#cb-game-details .cb-game-summary")
                 check("UCF @ Auburn" in page.locator("#cb-game-details").inner_text()
                       and "3 – 9" in page.locator("#cb-game-details").inner_text(),

@@ -99,12 +99,23 @@ function applyStatBackfills(sourceRows,manifest){
    if(!game[key]||typeof game[key]!=="object")throw Error("Missing stat backfill category: "+key);
    for(const [id,n] of Object.entries(game[key]))if(!ids.has(id)||!Number.isInteger(n)||n<0)throw Error("Invalid stat backfill entry: "+id);
   }
+  // Optional, single-game official scoring-summary backfill. An omitted
+  // player in these complete maps had zero extra-base hits in that game.
+  const extra=game.extra_base_hits;
+  if(extra){
+   const fields=["doubles","triples","home_runs"];
+   if(Object.keys(extra).length!==fields.length||fields.some(k=>!extra[k]||typeof extra[k]!=="object"||Array.isArray(extra[k])))throw Error("Incomplete extra-base-hit gamebook backfill");
+   for(const key of fields)for(const [id,n] of Object.entries(extra[key]))
+    if(!batIds.has(id)||!Number.isInteger(n)||n<0)throw Error("Invalid source-scoped extra-base hit: "+id);
+  }
   if(Object.keys(game.batters_faced).length!==pitching.length)throw Error("Incomplete pitcher BF backfill");
   const teamPA=new Map(),teamBF=new Map();
   for(const r of batting){
    const id=r.player_id,b=r.batting;
-   const values={hitByPitch:game.hit_by_pitch[id]??0,sacBunts:game.sac_bunts[id]??0,sacFlies:game.sac_flies[id]??0,catcherInterference:game.catcher_interference?.[id]??0};
+   const values={hitByPitch:game.hit_by_pitch[id]??0,sacBunts:game.sac_bunts[id]??0,sacFlies:game.sac_flies[id]??0,catcherInterference:game.catcher_interference?.[id]??0,
+    ...(extra?{doubles:extra.doubles[id]??0,triples:extra.triples[id]??0,homeRuns:extra.home_runs[id]??0}:{})};
    for(const [key,n] of Object.entries(values))if(b[key]!=null&&b[key]!==n)throw Error("Stat backfill disagrees with existing batting data: "+id);
+   if(extra&&(stat(b.hits)==null||values.doubles+values.triples+values.homeRuns>stat(b.hits)))throw Error("Extra-base-hit backfill exceeds verified hits: "+id);
    if(stat(b.atBats)==null||stat(b.baseOnBalls)==null)throw Error("Missing AB or BB in stat backfill: "+id);
    const pa=stat(b.atBats)+stat(b.baseOnBalls)+values.hitByPitch+values.sacBunts+values.sacFlies+values.catcherInterference;
    teamPA.set(r.team,(teamPA.get(r.team)||0)+pa);

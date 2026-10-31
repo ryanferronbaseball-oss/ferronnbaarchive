@@ -660,8 +660,37 @@ with tempfile.TemporaryDirectory() as t:
                 check(page.locator(".alumni-player").count()==1 and
                       "Aug 22, 2026" in page.locator(".alumni-player").inner_text() and
                       "23" in page.locator(".alumni-player").inner_text() and
-                      page.locator("#mlbCount").inner_text()=="66",
-                      f"{width} Kade Anderson joins the 66-person College-to-MLB directory with two witnessed LSU games")
+                      page.locator("#mlbCount").inner_text()=="71",
+                      f"{width} Kade Anderson remains in the 71-person College-to-MLB directory with two witnessed LSU games")
+                for name, college_id, mlb_id, draft_year, pick in [
+                    ("Josh Hendrickson", "cb-san-diego-josh-hendrickson", "681973", "2019", "1140"),
+                    ("Cooper Hjerpe", "cb-oregon-state-cooper-hjerpe", "687309", "2022", "22"),
+                    ("John Peck", "cb-pepperdine-john-peck", "807726", "2023", "200"),
+                    ("Nick Frasso", "cb-loyola-marymount-nick-frasso", "693308", "2020", "106"),
+                    ("Gabriel Hughes", "cb-gonzaga-gabriel-hughes", "687312", "2022", "10"),
+                ]:
+                    visit(page, host, f"player.html?id={college_id}", ".cb-profile-hero")
+                    check(page.locator(".cb-profile-hero h1").inner_text().casefold()==name.casefold() and
+                          page.locator(f".cb-mlb-alumnus[href*='{mlb_id}']").count()==1 and
+                          draft_year in page.locator(".cb-mlb-draft").inner_text() and
+                          f"Pick {pick}" in page.locator(".cb-mlb-draft").inner_text() and
+                          page.locator(".cb-player-game-log tbody tr").count()>=1 and
+                          page.locator(".cb-dual-level").count()==0,
+                          f"{width} {name} links to the correct MLB alumnus and draft tags without an unverified MLB attendance claim")
+                visit(page, host, "game.html?id=cb-2018-04-08-loyola-marymount-san-diego-att0024", "#cb-pitching-decisions")
+                check("Nick Frasso" in page.locator('[data-decision="loss"]').inner_text() and
+                      page.locator('[data-decision="loss"] a[href*="cb-loyola-marymount-nick-frasso"]').count()==1,
+                      f"{width} April 8 LMU official recap corrects Frasso's misattributed losing-pitcher identity")
+                page.locator('[data-cat="pitching"]').click()
+                check(page.locator('tr[data-player-id="cb-loyola-marymount-nick-frasso"][data-pitcher-index="0"]').count()==1 and
+                      page.locator('tr[data-player-id="cb-loyola-marymount-ryan-kawano"]').count()==0,
+                      f"{width} April 8 LMU starter's 2.0 innings belong to Nick Frasso, not Ryan Kawano")
+                visit(page, host, "mlb-alumni.html", ".alumni-player")
+                page.locator("#search").fill("Nick Frasso")
+                check(page.locator(".alumni-player").count()==1 and
+                      "Aug 4, 2026" in page.locator(".alumni-player").inner_text() and
+                      page.locator("#mlbCount").inner_text()=="71",
+                      f"{width} Nick Frasso joins the 71-person College-to-MLB directory")
                 visit(page, host, "records.html", ".cb-record")
                 # Historical backfill legitimately changes the single-game
                 # record holders. Verify source-backed record categories and

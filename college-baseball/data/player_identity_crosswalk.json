@@ -4,8 +4,8 @@
   "source": "Original archive owner confirmed each multi-school person",
   "original_attendance_ids_preserved": 444,
   "original_player_game_rows_preserved": 13183,
-  "requested_person_merges": 98,
-  "activated_person_merges": 95,
+  "requested_person_merges": 99,
+  "activated_person_merges": 96,
   "pending_person_merges": 3,
   "merge_policy": "Only listed pair of exact normalized person names and school-specific original source player IDs; all other IDs remain separate",
   "merges": [
@@ -2193,6 +2193,30 @@
         }
       ],
       "source_rows": 2
+    },
+    {
+      "name": "M. O'Shaughnessy",
+      "display_name": "Michael O'Shaughnessy",
+      "canonical_id": "cb-davidson-m-o-shaughnessy",
+      "source_player_ids": [
+        "cb-davidson-m-o-shaughnessy",
+        "cb-georgia-m-o-shaughnessy"
+      ],
+      "schools": [
+        "Davidson",
+        "Georgia"
+      ],
+      "pairs": [
+        {
+          "team": "Davidson",
+          "source_player_id": "cb-davidson-m-o-shaughnessy"
+        },
+        {
+          "team": "Georgia",
+          "source_player_id": "cb-georgia-m-o-shaughnessy"
+        }
+      ],
+      "source_rows": 3
     }
   ]
 }

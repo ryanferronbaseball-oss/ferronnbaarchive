@@ -24,16 +24,16 @@ audit=json.loads((DATA/"player_identity_reconciliation_audit.json").read_text())
 cross=json.loads((DATA/"player_identity_crosswalk.json").read_text())
 original=json.loads((DATA/"player_stats.json").read_text())
 games=json.loads((DATA/"games.json").read_text())
-check(len(games)==444 and len(original)==13183 and len(rules["rules"])==rules["expected_proposals"]==98,
+check(len(games)==444 and len(original)==13183 and len(rules["rules"])==rules["expected_proposals"]==99,
       "Protected college attendance or original official player rows changed")
-check(audit["ready_merges"]==94 and audit["not_ready"]==4 and
-      cross["requested_person_merges"]==98 and
-      cross["activated_person_merges"]==95 and cross["pending_person_merges"]==3,
-      "95 of 98 owner-nominated identities linked after the verified April 13 game correction")
+check(audit["ready_merges"]==95 and audit["not_ready"]==4 and
+      cross["requested_person_merges"]==99 and
+      cross["activated_person_merges"]==96 and cross["pending_person_merges"]==3,
+      "96 of 99 owner-nominated identities linked, including the verified Davidson/Georgia transfer")
 check({x["name"] for x in audit["preview"] if x["status"]!="merge_ready"}==
       {"Tate Soderstrom","Ethan Lizama","Kyle Hvidsten","Michael Graziano"},
       "Original-row audit should still document the four former source exceptions")
-check(len(cross["merges"])==95 and len({m["canonical_id"] for m in cross["merges"]})==95,
+check(len(cross["merges"])==96 and len({m["canonical_id"] for m in cross["merges"]})==96,
       "Missing or duplicate canonical identities")
 source_by_key=defaultdict(list)
 for r in original:
@@ -114,13 +114,14 @@ cases=[
     ("Dalton Bargo",["Tennessee","NC State"],8),
     ("Andrew Wiggins",["Indiana","NC State"],3),
     ("Michael Graziano",["Georgia Tech","Mercer"],2),
+    ("Michael O'Shaughnessy",["Davidson","Georgia"],3),
 ]
 try:
     with sync_playwright() as pw:
         browser=pw.chromium.launch()
         page=browser.new_page(viewport={"width":1100,"height":850})
         for who,schools,games_expected in cases:
-            match=next(x for x in cross["merges"] if x["name"]==who)
+            match=next(x for x in cross["merges"] if x.get("display_name",x["name"])==who)
             source_id=match["source_player_ids"][1] # formerly independent school
             page.goto(base+"/player.html?id="+quote(source_id),wait_until="domcontentloaded")
             page.locator(".cb-profile-hero").wait_for(timeout=35000)
@@ -141,7 +142,8 @@ try:
         page.locator("#cb-player-board .cb-table").wait_for(timeout=35000)
         for who,schools in [("Justin DeCriscio",["San Diego","NC State"]),
                             ("Dalton Bargo",["Tennessee","NC State"]),
-                            ("Andrew Wiggins",["Indiana","NC State"])]:
+                            ("Andrew Wiggins",["Indiana","NC State"]),
+                            ("Michael O'Shaughnessy",["Davidson","Georgia"])]:
             page.locator("#cb-player-search").fill(who)
             page.wait_for_timeout(250)
             board=page.locator("#cb-player-board")
@@ -152,4 +154,4 @@ try:
 finally:
     server.shutdown()
     thread.join(timeout=5)
-print("PASS 94 scoped transfer profiles, redirects, leaderboards, exclusion rules and original official boxscore data")
+print("PASS 96 scoped transfer profiles, redirects, leaderboards, exclusion rules and original official boxscore data")

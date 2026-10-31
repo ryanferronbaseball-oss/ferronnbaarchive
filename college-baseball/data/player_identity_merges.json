@@ -1,9 +1,9 @@
 {
   "version": 1,
   "status": "attendee_asserted_pending_id_audit",
-  "source": "Explicit attendee-provided player-transfer identity batches, 2026-10-18 and 2026-10-30",
+  "source": "Explicit attendee-provided player-transfer identity batches, 2026-10-18, 2026-10-30 and 2026-10-31",
   "policy": "Match both exact normalized person names AND approved school pairs, never names alone. No other team is an implied alias. Preserve per-row historical team, game and statistics.",
-  "expected_proposals": 98,
+  "expected_proposals": 99,
   "rules": [
     {
       "sequence": 1,
@@ -791,6 +791,16 @@
         "Indiana",
         "North Carolina State"
       ]
+    },
+    {
+      "sequence": 99,
+      "name": "M. O'Shaughnessy",
+      "display_name": "Michael O'Shaughnessy",
+      "schools": [
+        "Davidson",
+        "Georgia"
+      ],
+      "notes": "Owner-confirmed transfer. Georgia's 2026 official roster identifies Michael O'Shaughnessy as a former Davidson player."
     }
   ]
 }

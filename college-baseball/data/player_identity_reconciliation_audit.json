@@ -1,10 +1,10 @@
 {
   "status": "PASS",
-  "source_manifests": 98,
+  "source_manifests": 99,
   "original_game_count": 444,
   "original_player_game_rows": 13183,
   "eligible_gamebooks": 437,
-  "ready_merges": 94,
+  "ready_merges": 95,
   "not_ready": 4,
   "pending_breakdown": {
     "one_or_both_schools_not_in_attended_game_player_rows": 4
@@ -3930,8 +3930,48 @@
       ],
       "status": "merge_ready",
       "note": null
+    },
+    {
+      "sequence": 99,
+      "name": "M. O'Shaughnessy",
+      "approved_schools": [
+        "Davidson",
+        "Georgia"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "davidson",
+          "observed_teams": [
+            "Davidson"
+          ],
+          "source_player_ids": [
+            "cb-davidson-m-o-shaughnessy"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2025
+          ]
+        },
+        {
+          "normalized_school": "georgia",
+          "observed_teams": [
+            "Georgia"
+          ],
+          "source_player_ids": [
+            "cb-georgia-m-o-shaughnessy"
+          ],
+          "source_player_rows": 2,
+          "games": 2,
+          "seasons": [
+            2026
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": "Owner-confirmed transfer. Georgia's 2026 official roster identifies Michael O'Shaughnessy as a former Davidson player."
     }
   ],
   "source_id_unique_count_before": 5544,
-  "source_id_unique_count_after_simulated": 5450
+  "source_id_unique_count_after_simulated": 5449
 }

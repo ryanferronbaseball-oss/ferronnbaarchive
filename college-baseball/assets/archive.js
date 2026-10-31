@@ -186,7 +186,10 @@ async function load(){
   p.games.add(r.game_id);
   p.rows.push(r);
  }
- const players=[...byPlayer.values()].map(p=>({...p,teams:[...p.teams],games:[...p.games]}));
+ // Optional owner-approved display name for abbreviated source lineups;
+ // raw scorebook names, school attribution, and original IDs stay untouched.
+ const displayNames=new Map(identity.merges.filter(m=>m.display_name).map(m=>[m.canonical_id,m.display_name]));
+ const players=[...byPlayer.values()].map(p=>({...p,name:displayNames.get(p.player_id)||p.name,teams:[...p.teams],games:[...p.games]}));
  return {games:games.slice().sort((a,b)=>b.date.localeCompare(a.date)||a.id.localeCompare(b.id)),rows,players,gameMap,gameRedirects,report,crosswalk,identity,redirects};
 }
 function sum(rows,category,key){

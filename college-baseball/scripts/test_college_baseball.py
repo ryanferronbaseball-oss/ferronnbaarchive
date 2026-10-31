@@ -552,6 +552,21 @@ with tempfile.TemporaryDirectory() as t:
                       "#cb-game-details .cb-game-summary")
                 check("0 – 19" in page.locator("#cb-game-details").inner_text(),
                       f"{width} original game deep link resolves to the April 13 correction")
+                visit(page, host, "game.html?id=cb-2025-05-31-dallas-baptist-lsu-att0367",
+                      "#cb-box .mlb-team-box[data-side='home']")
+                for player_id,values in {
+                    "cb-lsu-ethan-frey": ["1","1","0"],
+                    "cb-auburn-chris-stanfield": ["0","0","1"],
+                    "cb-lsu-derek-curiel": ["0","0","0"],
+                    "cb-dallas-baptist-tom-poole": ["0","0","0"],
+                }.items():
+                    line=page.locator(f'#cb-box tr[data-player-id="{player_id}"]')
+                    check([line.locator('td').nth(i).inner_text() for i in (5,6,7)]==values,
+                          f"{width} May 31 Dallas Baptist-LSU source-verified extra-base hits for {player_id}")
+                visit(page, host, "player.html?id=cb-auburn-chris-stanfield", ".cb-player-game-log")
+                stanfield_game=page.locator(".cb-player-game-log tbody tr").filter(has_text="May 31, 2025").filter(has_text="Dallas Baptist @ LSU")
+                check(stanfield_game.count()==1 and stanfield_game.locator("td").nth(5).inner_text()=="1",
+                      f"{width} Chris Stanfield's May 31 LSU home run appears in his combined player log")
                 visit(page, host, "game.html?id=cb-2025-06-01-lsu-little-rock-att0369",
                       "#cb-box .mlb-team-box[data-side='home']")
                 for player_id,values in {

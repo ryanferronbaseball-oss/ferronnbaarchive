@@ -291,7 +291,7 @@
     {
       "game_id": "cb-2025-05-31-dallas-baptist-lsu-att0367",
       "source_url": "https://static.lsusports.net/assets/docs/bb/25stats/LSU531.pdf",
-      "verification_note": "Official May 31 Baton Rouge Regional gamebook: Dallas Baptist 0 at LSU 12. Dallas Baptist 37 PA equals LSU 37 BF; LSU 49 PA equals Dallas Baptist 49 BF. Six HBP (Grebeck for DBU; Jones, Dickinson, Brown, Milam and Hernandez for LSU), LSU Hernandez and Braswell SH, Larson SF.",
+      "verification_note": "Official May 31 Baton Rouge Regional gamebook: Dallas Baptist 0 at LSU 12. Dallas Baptist 37 PA equals LSU 37 BF; LSU 49 PA equals Dallas Baptist 49 BF. Six HBP (Grebeck for DBU; Jones, Dickinson, Brown, Milam and Hernandez for LSU), LSU Hernandez and Braswell SH, Larson SF. Frey doubled and tripled, Stanfield homered; no other extra-base hits.",
       "expected_batting_rows": 27,
       "expected_pitching_rows": 8,
       "hit_by_pitch": {
@@ -308,6 +308,17 @@
       },
       "sac_flies": {
         "cb-lsu-ashton-larson": 1
+      },
+      "extra_base_hits": {
+        "doubles": {
+          "cb-lsu-ethan-frey": 1
+        },
+        "triples": {
+          "cb-lsu-ethan-frey": 1
+        },
+        "home_runs": {
+          "cb-lsu-chris-stanfield": 1
+        }
       },
       "batters_faced": {
         "cb-dallas-baptist-micah-bucknam": 18,

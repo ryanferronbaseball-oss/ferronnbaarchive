@@ -1,9 +1,9 @@
 {
   "version": 1,
   "status": "attendee_asserted_pending_id_audit",
-  "source": "Explicit attendee-provided player-transfer identity batches, 2026-10-18",
+  "source": "Explicit attendee-provided player-transfer identity batches, 2026-10-18 and 2026-10-30",
   "policy": "Match both exact normalized person names AND approved school pairs, never names alone. No other team is an implied alias. Preserve per-row historical team, game and statistics.",
-  "expected_proposals": 96,
+  "expected_proposals": 98,
   "rules": [
     {
       "sequence": 1,
@@ -774,6 +774,22 @@
       "schools": [
         "Duke",
         "Virginia"
+      ]
+    },
+    {
+      "sequence": 97,
+      "name": "Dalton Bargo",
+      "schools": [
+        "Tennessee",
+        "North Carolina State"
+      ]
+    },
+    {
+      "sequence": 98,
+      "name": "Andrew Wiggins",
+      "schools": [
+        "Indiana",
+        "North Carolina State"
       ]
     }
   ]

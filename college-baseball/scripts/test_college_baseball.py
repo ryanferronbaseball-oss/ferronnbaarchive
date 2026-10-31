@@ -565,7 +565,7 @@ with tempfile.TemporaryDirectory() as t:
                     check([line.locator('td').nth(i).inner_text() for i in (5,6,7)]==values,
                           f"{width} June 1 LSU-Little Rock official extra-base hits for {player_id}")
                 visit(page, host, "player.html?id=cb-little-rock-angel-cano", ".cb-player-game-log")
-                cano_game=page.locator(".cb-player-game-log tbody tr").filter(has_text="Jun 1, 2025")
+                cano_game=page.locator(".cb-player-game-log tbody tr").filter(has_text="LSU @ Little Rock")
                 check(cano_game.count()==1 and cano_game.locator("td").nth(5).inner_text()=="1",
                       f"{width} Angel Cano's June 1 home run appears in his linked college game log")
                 visit(page, host, "game.html?id=cb-2026-05-31-ucf-auburn", "#cb-game-details .cb-game-summary")

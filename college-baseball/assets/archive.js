@@ -423,11 +423,14 @@ function renderPlayers(d){
  $("cb-sort").addEventListener("change",draw);$("cb-player-search").addEventListener("input",draw);
  options();draw();
 }
-function renderPlayer(d){
+async function renderPlayer(d){
  const requestedId=new URLSearchParams(location.search).get("id");
   const id=d.redirects.get(requestedId)||requestedId;
   const p=d.players.find(x=>String(x.player_id)===id);
  if(!p){$("app").innerHTML='<div class="eyebrow">College Baseball · Player profile</div><h1>Player profile</h1>'+pending("No verified college baseball player profile is available for this ID. Players appear after official gamebook imports.");return}
+ const alumniRegistry=await json("mlb_alumni_seed.json");
+ if(!Array.isArray(alumniRegistry.players))throw Error("Invalid verified MLB alumni registry");
+ const alumnus=alumniRegistry.players.find(x=>x.college_player_id===id&&Number.isInteger(x.mlb_player_id)&&x.mlb_debut);
  const b=bat(p.rows),pi=pitch(p.rows),qualifiedHit=p.rows.some(x=>x.batting!=null),qualifiedPitch=p.rows.some(x=>x.pitching!=null);
  const cross=d.crosswalk.find(x=>x.verified===true&&String(x.college_player_id)===id);
  const entries=unique(p.rows.map(x=>x.game_id)).map(game_id=>d.gameMap.get(game_id)).filter(Boolean).sort((a,b)=>b.date.localeCompare(a.date)||b.id.localeCompare(a.id));
@@ -452,7 +455,9 @@ function renderPlayer(d){
  +'<section class="mlb-profile-hero mlb-profile-head cb-profile-hero">'
  +'<div class="mlb-profile-photo cb-profile-initials" aria-hidden="true">'+esc(initials)+'</div>'
  +'<div class="mlb-profile-identity"><div class="mlb-profile-team-name">'+esc(p.teams.join(" / "))+'</div>'
- +'<h1>'+esc(p.name)+'</h1><p class="mlb-profile-seen">'+p.games.length+' game'+(p.games.length===1?"":"s")+' witnessed · College baseball</p>'
+ +'<h1>'+esc(p.name)+'</h1>'
+ +(alumnus?'<div class="mlb-profile-achievements"><a class="mlb-profile-badge cb-mlb-alumnus" href="https://www.mlb.com/player/'+encodeURIComponent(alumnus.mlb_player_id)+'" target="_blank" rel="noopener noreferrer" title="Verified MLB debut: '+esc(date(alumnus.mlb_debut))+'">★ MLB ALUMNUS ↗</a></div>':"")
+ +'<p class="mlb-profile-seen">'+p.games.length+' game'+(p.games.length===1?"":"s")+' witnessed · College baseball</p>'
  +'</div></section>'
  +'<p class="mlb-note">Only college baseball appearances from games you attended appear here; professional seasons are never added to college totals.</p>'
  +hitter+pitcher
@@ -488,11 +493,11 @@ function render(){
  $("navigation").innerHTML=nav(page);
  if(page==="mlb-alumni")return;
  app.innerHTML=pending("Loading college baseball attendance records…");
- load().then(d=>{
+ load().then(async d=>{
   if(page==="games")renderGames(d);
   else if(page==="players")renderPlayers(d);
   else if(page==="records")renderRecords(d);
-  else if(page==="player")renderPlayer(d);
+  else if(page==="player")await renderPlayer(d);
   else renderHome(d);
  }).catch(e=>{app.innerHTML=pending("Unable to load college baseball data: "+e.message)});
 }

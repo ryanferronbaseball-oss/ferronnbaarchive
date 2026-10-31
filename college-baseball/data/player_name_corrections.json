@@ -140,6 +140,19 @@
         {"source_player_id": "cb-south-carolina-pitzer", "source_player_name": "Pitzer", "player": "Tyler Pitzer", "canonical_player_id": "cb-south-carolina-tyler-pitzer"},
         {"source_player_id": "cb-south-carolina-c-jones", "source_player_name": "C. Jones", "player": "Caleb Jones", "canonical_player_id": "cb-south-carolina-caleb-jones"}
       ]
+    },
+    {
+      "game_id": "cb-2018-02-17-california-cincinnati-att0004",
+      "team": "Cincinnati",
+      "description": "Link the surname-only Cincinnati shortstop Rodriguez to Manny Rodriguez's verified full-name player profile in the adjacent February 18 games. Preserve the original California gamebook record and statistics.",
+      "verified_on": "2026-10-31",
+      "evidence_urls": [
+        "https://calbears.com/sports/baseball/stats/2018/cincinnati/boxscore/19884",
+        "https://gobearcats.com/news/2018/06/05/rodriguez-selected-in-tenth-round-of-mlb-draft-by-mets"
+      ],
+      "corrections": [
+        {"source_player_id": "cb-cincinnati-rodriguez", "source_player_name": "Rodriguez", "player": "Manny Rodriguez", "canonical_player_id": "cb-cincinnati-manny-rodriguez"}
+      ]
     }
   ]
 }

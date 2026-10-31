@@ -193,6 +193,54 @@
         "cb-georgia-tech-brett-thomas": 2,
         "cb-georgia-tech-carson-ballard": 4
       }
+    },
+    {
+      "game_id": "cb-2024-02-23-iowa-auburn-att0235",
+      "source_url": "https://storage.googleapis.com/auburn-prod/2024/05/16/Qwfk9D0ysZymh4NIW2QjKniQFWvF2vNh2c5nSnd5.pdf",
+      "verification_note": "Official February 23 Auburn gamebook (Iowa 5, Auburn 7) at Bragan Field. Iowa has 39 PA matching Auburn's 39 BF; Auburn has 38 PA matching Iowa's 38 BF. Iowa Petersen HBP and Seegers SH; Auburn Fabian SH and Weiss SF.",
+      "expected_batting_rows": 20,
+      "expected_pitching_rows": 8,
+      "hit_by_pitch": {
+        "cb-iowa-petersen": 1
+      },
+      "sac_bunts": {
+        "cb-iowa-seegers": 1,
+        "cb-auburn-deric-fabian": 1
+      },
+      "sac_flies": {
+        "cb-auburn-cooper-weiss": 1
+      },
+      "batters_faced": {
+        "cb-iowa-brecht": 25,
+        "cb-iowa-whitlock": 7,
+        "cb-iowa-voelker": 2,
+        "cb-iowa-cad-lanoue": 4,
+        "cb-auburn-chase-allsup": 18,
+        "cb-auburn-john-armstrong": 9,
+        "cb-auburn-cam-tilly": 7,
+        "cb-auburn-will-cannon": 5
+      }
+    },
+    {
+      "game_id": "cb-2024-05-23-clemson-miami-att0283",
+      "source_url": "https://data.clemsontigers.com/Stats/Baseball/2024/cu245231.htm",
+      "verification_note": "Official May 23 Clemson 7 vs Miami (Fla.) 8 ACC tournament box score at Truist Field. Clemson has 42 PA matching Miami's 42 BF; Miami has 38 PA matching Clemson's 38 BF. Jack Crighton was hit by a pitch; no sacrifice bunts or flies.",
+      "expected_batting_rows": 20,
+      "expected_pitching_rows": 7,
+      "hit_by_pitch": {
+        "cb-clemson-jack-crighton": 1
+      },
+      "sac_bunts": {},
+      "sac_flies": {},
+      "batters_faced": {
+        "cb-clemson-ethan-darden": 11,
+        "cb-clemson-lucas-mahlstedt": 16,
+        "cb-clemson-reed-garris": 6,
+        "cb-clemson-matthew-marchal": 5,
+        "cb-miami-gage-ziehl": 26,
+        "cb-miami-nick-robert": 7,
+        "cb-miami-myles-caba": 9
+      }
     }
   ]
 }

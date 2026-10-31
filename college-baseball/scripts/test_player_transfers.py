@@ -156,6 +156,8 @@ try:
                             ("Andrew Wiggins",["Indiana","NC State"]),
                             ("Michael O'Shaughnessy",["Davidson","Georgia"]),
                             ("Tyler Pitzer",["South Carolina","Mississippi State"])]:
+            if who=="Tyler Pitzer":
+                page.locator("#cb-role").select_option("pitch")
             page.locator("#cb-player-search").fill(who)
             page.wait_for_timeout(250)
             board=page.locator("#cb-player-board")

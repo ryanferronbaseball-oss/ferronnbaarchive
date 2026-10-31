@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify 96 attendee-proposed transferred players against original official rows;
+"""Verify attendee-proposed transferred players against original official rows;
 browser-test unified profiles, old deep links, game attribution, and restricted IDs.
 """
 from pathlib import Path
@@ -24,15 +24,15 @@ audit=json.loads((DATA/"player_identity_reconciliation_audit.json").read_text())
 cross=json.loads((DATA/"player_identity_crosswalk.json").read_text())
 original=json.loads((DATA/"player_stats.json").read_text())
 games=json.loads((DATA/"games.json").read_text())
-check(len(games)==444 and len(original)==13183 and len(rules["rules"])==96,
+check(len(games)==444 and len(original)==13183 and len(rules["rules"])==rules["expected_proposals"]==98,
       "Protected college attendance or original official player rows changed")
-check(audit["ready_merges"]==92 and audit["not_ready"]==4 and
-      cross["activated_person_merges"]==92 and cross["pending_person_merges"]==4,
-      "Only 92 identities supported by current 96 owner-nominated school pairs")
+check(audit["ready_merges"]==94 and audit["not_ready"]==4 and
+      cross["activated_person_merges"]==94 and cross["pending_person_merges"]==4,
+      "Exactly 94 identities supported by 98 owner-nominated school pairs")
 check({x["name"] for x in audit["preview"] if x["status"]!="merge_ready"}==
       {"Tate Soderstrom","Ethan Lizama","Kyle Hvidsten","Michael Graziano"},
       "Unexpected four school-side source exceptions")
-check(len(cross["merges"])==92 and len({m["canonical_id"] for m in cross["merges"]})==92,
+check(len(cross["merges"])==94 and len({m["canonical_id"] for m in cross["merges"]})==94,
       "Missing or duplicate canonical identities")
 source_by_key=defaultdict(list)
 for r in original:
@@ -69,8 +69,8 @@ unified=[(r["game_id"],mapped.get((r["team"],r["player_id"]),r["player_id"])) fo
 check(len(set(unified))==len(original),"Two identities collided in the same attended game")
 before=len({r["player_id"] for r in original})
 after=len({p for _,p in unified})
-check(before-after==92,"Exactly one unique player identity should collapse per approved pair")
-print(json.dumps({"source_records_preserved":len(original),"verified_owner_proposals":92,
+check(before-after==cross["activated_person_merges"],"Exactly one unique player identity should collapse per approved pair")
+print(json.dumps({"source_records_preserved":len(original),"verified_owner_proposals":cross["activated_person_merges"],
       "left_pending":4,"before_unique_players":before,"after_unique_players":after,
       "source_college_games":len(games)},indent=2))
 
@@ -94,6 +94,8 @@ cases=[
     ("Gavin Kilen",["Louisville","Tennessee"],7),
     ("Dylan Johnson",["Fresno State","Gonzaga"],11),
     ("Tanner Smith",["Oregon State","Miami"],2),
+    ("Dalton Bargo",["Tennessee","NC State"],8),
+    ("Andrew Wiggins",["Indiana","NC State"],3),
 ]
 try:
     with sync_playwright() as pw:
@@ -119,14 +121,17 @@ try:
               "One-school-only proposal incorrectly merged an unobserved Arizona profile")
         page.goto(base+"/stats.html",wait_until="domcontentloaded")
         page.locator("#cb-player-board .cb-table").wait_for(timeout=35000)
-        page.locator("#cb-player-search").fill("Justin DeCriscio")
-        page.wait_for_timeout(250)
-        check(page.locator("#cb-player-board tbody tr").count()==1 and
-              "san diego" in page.locator("#cb-player-board").inner_text().casefold() and
-              "nc state" in page.locator("#cb-player-board").inner_text().casefold(),
-              "Unified career player leaderboard still contains separate Justin DeCriscio entries")
+        for who,schools in [("Justin DeCriscio",["San Diego","NC State"]),
+                            ("Dalton Bargo",["Tennessee","NC State"]),
+                            ("Andrew Wiggins",["Indiana","NC State"])]:
+            page.locator("#cb-player-search").fill(who)
+            page.wait_for_timeout(250)
+            board=page.locator("#cb-player-board")
+            check(board.locator("tbody tr").count()==1 and
+                  all(s.casefold() in board.inner_text().casefold() for s in schools),
+                  "Unified career player leaderboard contains split or missing entries for "+who)
         browser.close()
 finally:
     server.shutdown()
     thread.join(timeout=5)
-print("PASS 92 scoped transfer profiles, redirects, leaderboards, exclusion rules and original official boxscore data")
+print("PASS 94 scoped transfer profiles, redirects, leaderboards, exclusion rules and original official boxscore data")

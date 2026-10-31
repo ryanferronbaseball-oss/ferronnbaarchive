@@ -408,7 +408,9 @@ try:
    visit("index.html", "Number(document.getElementById('allGames').textContent.replace(/,/g,'')) === "
          "['nbaGames','collegeGames','nflGames','cfbGames','soccerGames','mlbGames','collegeBaseballGames']"
          ".reduce((total,id)=>total+Number(document.getElementById(id).textContent.replace(/,/g,'')),0)")
-   check(page.locator(".sport-card").count()==6,f"{width} sixth sports archive card")
+   check(page.locator(".sport-card").count()>=7 and
+         page.locator(".sport-card.college-baseball").count()==1,
+         f"{width} all seven sports archive cards, including college baseball")
    fits("main portal")
    page.close()
   browser.close()

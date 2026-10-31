@@ -87,7 +87,8 @@ def main():
     rows=json.loads(SOURCE.read_text(encoding="utf-8"))
     games=json.loads(GAMES.read_text(encoding="utf-8"))
     by_game={g["id"]:g for g in games}
-    if len(games)!=444 or len(rows)!=13183 or len(by_game)!=444 or len(proposals["rules"])!=96:
+    expected_count=proposals["expected_proposals"]
+    if len(games)!=444 or len(rows)!=13183 or len(by_game)!=444 or len(proposals["rules"])!=expected_count:
         raise ValueError("Attended game, player line, or proposed transfer manifest count changed; review before reconciliation")
     if len({(r["game_id"],r["player_id"]) for r in rows})!=len(rows):
         raise ValueError("Duplicate original official player-game record")
@@ -160,7 +161,7 @@ def main():
         m["pairs"]=[{"team":a,"source_player_id":b} for a,b in sorted(pairs)]
     originals=Counter(r["player_id"] for r in rows)
     audit={
-        "status":"PASS","source_manifests":96,"original_game_count":444,
+        "status":"PASS","source_manifests":expected_count,"original_game_count":444,
         "original_player_game_rows":len(rows),
         "eligible_gamebooks":437,
         "ready_merges":len(changes),
@@ -180,14 +181,14 @@ def main():
             "source":"Original archive owner confirmed each multi-school person",
             "original_attendance_ids_preserved":444,
             "original_player_game_rows_preserved":len(rows),
-            "requested_person_merges":96,
+            "requested_person_merges":expected_count,
             "activated_person_merges":len(changes),
             "pending_person_merges":len(state)-len(changes),
             "merge_policy":"Only listed pair of exact normalized person names and school-specific original source player IDs; all other IDs remain separate",
             "merges":changes,
         }
         dump(OUTPUT,payload)
-    print(json.dumps({"audit":"PASS","requested":96,"ready":len(changes),
+    print(json.dumps({"audit":"PASS","requested":expected_count,"ready":len(changes),
         "pending":len(state)-len(changes),
         "reasons":audit["pending_breakdown"],"source_rows":len(rows)},indent=2))
 

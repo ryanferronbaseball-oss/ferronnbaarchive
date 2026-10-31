@@ -4,8 +4,8 @@
   "source": "Original archive owner confirmed each multi-school person",
   "original_attendance_ids_preserved": 444,
   "original_player_game_rows_preserved": 13183,
-  "requested_person_merges": 96,
-  "activated_person_merges": 92,
+  "requested_person_merges": 98,
+  "activated_person_merges": 94,
   "pending_person_merges": 4,
   "merge_policy": "Only listed pair of exact normalized person names and school-specific original source player IDs; all other IDs remain separate",
   "merges": [
@@ -2124,6 +2124,52 @@
         }
       ],
       "source_rows": 7
+    },
+    {
+      "name": "Dalton Bargo",
+      "canonical_id": "cb-tennessee-dalton-bargo",
+      "source_player_ids": [
+        "cb-tennessee-dalton-bargo",
+        "cb-nc-state-dalton-bargo"
+      ],
+      "schools": [
+        "Tennessee",
+        "NC State"
+      ],
+      "pairs": [
+        {
+          "team": "NC State",
+          "source_player_id": "cb-nc-state-dalton-bargo"
+        },
+        {
+          "team": "Tennessee",
+          "source_player_id": "cb-tennessee-dalton-bargo"
+        }
+      ],
+      "source_rows": 8
+    },
+    {
+      "name": "Andrew Wiggins",
+      "canonical_id": "cb-indiana-andrew-wiggins",
+      "source_player_ids": [
+        "cb-indiana-andrew-wiggins",
+        "cb-nc-state-andrew-wiggins"
+      ],
+      "schools": [
+        "Indiana",
+        "NC State"
+      ],
+      "pairs": [
+        {
+          "team": "Indiana",
+          "source_player_id": "cb-indiana-andrew-wiggins"
+        },
+        {
+          "team": "NC State",
+          "source_player_id": "cb-nc-state-andrew-wiggins"
+        }
+      ],
+      "source_rows": 3
     }
   ]
 }

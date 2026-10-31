@@ -144,14 +144,16 @@
     {
       "game_id": "cb-2018-02-17-california-cincinnati-att0004",
       "team": "Cincinnati",
-      "description": "Link the surname-only Cincinnati shortstop Rodriguez to Manny Rodriguez's verified full-name player profile in the adjacent February 18 games. Preserve the original California gamebook record and statistics.",
+      "description": "Link Cincinnati's surname-only Rodriguez to shortstop Manny Rodriguez, and Perez to left-handed pitcher J.T. Perez, using the official 2018 roster and adjacent full-name gamebooks. Preserve the original California gamebook records and statistics.",
       "verified_on": "2026-10-31",
       "evidence_urls": [
         "https://calbears.com/sports/baseball/stats/2018/cincinnati/boxscore/19884",
-        "https://gobearcats.com/news/2018/06/05/rodriguez-selected-in-tenth-round-of-mlb-draft-by-mets"
+        "https://gobearcats.com/news/2018/06/05/rodriguez-selected-in-tenth-round-of-mlb-draft-by-mets",
+        "https://gobearcats.com/sports/baseball/roster/season/2018/player/jt-perez"
       ],
       "corrections": [
-        {"source_player_id": "cb-cincinnati-rodriguez", "source_player_name": "Rodriguez", "player": "Manny Rodriguez", "canonical_player_id": "cb-cincinnati-manny-rodriguez"}
+        {"source_player_id": "cb-cincinnati-rodriguez", "source_player_name": "Rodriguez", "player": "Manny Rodriguez", "canonical_player_id": "cb-cincinnati-manny-rodriguez"},
+        {"source_player_id": "cb-cincinnati-perez", "source_player_name": "Perez", "player": "J.T. Perez", "canonical_player_id": "cb-cincinnati-jt-perez"}
       ]
     }
   ]

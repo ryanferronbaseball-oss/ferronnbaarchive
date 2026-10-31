@@ -458,12 +458,14 @@ async function renderPlayer(d){
  +'<div class="mlb-profile-photo cb-profile-initials" aria-hidden="true">'+esc(initials)+'</div>'
  +'<div class="mlb-profile-identity"><div class="mlb-profile-team-name">'+esc(p.teams.join(" / "))+'</div>'
  +'<h1>'+esc(p.name)+'</h1>'
- +(alumnus?'<div class="mlb-profile-achievements"><a class="mlb-profile-badge cb-mlb-alumnus" href="https://www.mlb.com/player/'+encodeURIComponent(alumnus.mlb_player_id)+'" target="_blank" rel="noopener noreferrer" title="Verified MLB debut: '+esc(date(alumnus.mlb_debut))+'">★ MLB ALUMNUS ↗</a>'+(draftTag?'<span class="mlb-profile-badge cb-mlb-draft" title="MLB draft year, round, overall pick and drafting team">'+esc(draftTag)+'</span>':"")+'</div>':"")
+ +(alumnus||cross?'<div class="mlb-profile-achievements">'
+  +(alumnus?'<a class="mlb-profile-badge cb-mlb-alumnus" href="https://www.mlb.com/player/'+encodeURIComponent(alumnus.mlb_player_id)+'" target="_blank" rel="noopener noreferrer" title="Verified MLB debut: '+esc(date(alumnus.mlb_debut))+'">★ MLB ALUMNUS ↗</a>':"")
+  +(draftTag?'<span class="mlb-profile-badge cb-mlb-draft" title="MLB draft year, round, overall pick and drafting team">'+esc(draftTag)+'</span>':"")
+  +(cross?'<a class="mlb-profile-badge cb-dual-level" href="../mlb/player.html?id='+encodeURIComponent(cross.mlb_player_id)+'" title="You attended this player’s college and MLB games">★ SEEN IN COLLEGE + MLB ↗</a>':"")+'</div>':"")
  +'<p class="mlb-profile-seen">'+p.games.length+' game'+(p.games.length===1?"":"s")+' witnessed · College baseball</p>'
  +'</div></section>'
  +'<p class="mlb-note">Only college baseball appearances from games you attended appear here; professional seasons are never added to college totals.</p>'
  +hitter+pitcher
- +(cross?'<div class="cb-note"><strong>Professional connection:</strong> Verified identity link to this player’s independent <a class="cb-link" href="../mlb/player.html?id='+encodeURIComponent(cross.mlb_player_id)+'">MLB attendance profile ↗</a>. College and MLB statistics remain separate.</div>':"")
  +'<div class="section-heading"><h2>Last 3 games witnessed</h2></div><div class="game-grid cb-grid cb-profile-games">'+entries.slice(0,3).map(gameCard).join("")+'</div>'
  +'<section class="panel cb-player-game-log"><h2>Recorded college game logs</h2>'
  +htmlTable(["Date","Matchup","AB","R (hitting)","H","HR","RBI","IP","H (allowed)","R (pitching)","BB","K"],logRows.map(r=>{

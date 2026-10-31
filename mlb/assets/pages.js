@@ -5,6 +5,19 @@ const {esc,fmt,date,playerUrl,gameUrl,table,bar,tiles,record,mlbRow}=A;
 el("navigation").innerHTML=A.nav(page);
 let d;try{d=await A.load()}catch(err){app.innerHTML='<div class="empty">Unable to load attendance data: '+esc(err.message)+'</div>';return}
 const {games,rows,players,scores,decisions}=d;
+const collegeCrossover=new Map();
+if(page==="player"){
+ try{
+  const response=await fetch("../college-baseball/data/mlb_crosswalk.json",{cache:"no-store"});
+  if(response.ok){
+   const links=await response.json();
+   if(Array.isArray(links))for(const link of links){
+    if(link.verified===true&&Number.isInteger(link.mlb_player_id)&&link.college_player_id)
+     collegeCrossover.set(String(link.mlb_player_id),link.college_player_id);
+   }
+  }
+ }catch(error){console.warn("College-to-MLB attendance links unavailable",error)}
+}
 let careerHonors=null;
 if(page==="hof"||page==="player"){
  try{const r=await fetch("./data/career_awards.json",{cache:"no-store"});
@@ -248,11 +261,13 @@ function profilePage(){
  const years=startYear===endYear?startYear:startYear+"–"+endYear;
  const pitcher=!!ps&&(p.pitching.length>=p.batting.length||!bs.atBats);
  const nameInitials=p.name.split(/\s+/).map(x=>x[0]).slice(0,2).join("").toUpperCase();
- const badges=hasHonors?'<div class="mlb-profile-achievements" aria-label="Career accomplishments">'
+ const collegeId=collegeCrossover.get(String(p.player_id));
+ const crossoverBadge=collegeId?'<div class="mlb-profile-achievements"><a class="mlb-profile-badge college-crossover" href="../college-baseball/player.html?id='+encodeURIComponent(collegeId)+'" title="You attended this player’s college and MLB games">★ SEEN IN COLLEGE + MLB ↗</a></div>':"";
+ const badges=crossoverBadge+(hasHonors?'<div class="mlb-profile-achievements" aria-label="Career accomplishments">'
   +(hof?'<a class="mlb-profile-badge hof" href="./hall-of-fame.html" title="National Baseball Hall of Fame, inducted '+hof.year+'">★ HALL OF FAME ↗</a>':"")
   +honors.filter(([key])=>career?.[key]?.length).map(([key,title,theme,mark])=>
    '<a class="mlb-profile-badge '+theme+'" href="#careerHonors" data-honor-link="'+key+'" title="MLB career '+esc(title)+' winner; click for award years">'+mark+' '+esc(title.toUpperCase())+' · '+career[key].length+'</a>').join("")
-  +'</div>':"";
+  +'</div>':"");
  const labels=[...(hof?[["hall_of_fame","Hall of Fame"]]:[]),...honors.map(([key,title])=>[key,title])];
  const chosen=labels.find(([key])=>key==="hall_of_fame"?!!hof:!!career?.[key]?.length)?.[0]||"mvp";
  const awardPanel=hasHonors?'<section class="mlb-profile-section mlb-honors-panel" id="careerHonors">'

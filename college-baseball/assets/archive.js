@@ -17,8 +17,52 @@ function nav(active){
  +'<a href="../index.html" class="back-link">All sports ↗</a></nav></header>';
 }
 async function json(name,fallback){const r=await fetch("./data/"+name,{cache:"no-store"});if(!r.ok)throw Error("Missing "+name+" ("+r.status+")");return r.json()}
+function applyStatBackfills(sourceRows,manifest){
+ if(!manifest||!Array.isArray(manifest.games))throw Error("Missing verified college game stat backfills");
+ const patches=new Map(),seenGames=new Set();
+ for(const game of manifest.games){
+  if(!game.game_id||seenGames.has(game.game_id))throw Error("Invalid or repeated stat backfill game");
+  seenGames.add(game.game_id);
+  const participants=sourceRows.filter(r=>r.game_id===game.game_id);
+  const batting=participants.filter(r=>r.batting),pitching=participants.filter(r=>r.pitching);
+  if(batting.length!==game.expected_batting_rows||pitching.length!==game.expected_pitching_rows)throw Error("Stat backfill row count mismatch: "+game.game_id);
+  const batIds=new Set(batting.map(r=>r.player_id)),pitchIds=new Set(pitching.map(r=>r.player_id));
+  if(batIds.size!==batting.length||pitchIds.size!==pitching.length)throw Error("Ambiguous stat backfill player ID");
+  const categories=[["hit_by_pitch",batIds],["sac_bunts",batIds],["sac_flies",batIds],["batters_faced",pitchIds]];
+  for(const [key,ids] of categories){
+   if(!game[key]||typeof game[key]!=="object")throw Error("Missing stat backfill category: "+key);
+   for(const [id,n] of Object.entries(game[key]))if(!ids.has(id)||!Number.isInteger(n)||n<0)throw Error("Invalid stat backfill entry: "+id);
+  }
+  if(Object.keys(game.batters_faced).length!==pitching.length)throw Error("Incomplete pitcher BF backfill");
+  const teamPA=new Map(),teamBF=new Map();
+  for(const r of batting){
+   const id=r.player_id,b=r.batting;
+   const values={hitByPitch:game.hit_by_pitch[id]??0,sacBunts:game.sac_bunts[id]??0,sacFlies:game.sac_flies[id]??0};
+   for(const [key,n] of Object.entries(values))if(b[key]!=null&&b[key]!==n)throw Error("Stat backfill disagrees with existing batting data: "+id);
+   if(stat(b.atBats)==null||stat(b.baseOnBalls)==null)throw Error("Missing AB or BB in stat backfill: "+id);
+   const pa=stat(b.atBats)+stat(b.baseOnBalls)+values.hitByPitch+values.sacBunts+values.sacFlies;
+   teamPA.set(r.team,(teamPA.get(r.team)||0)+pa);
+   const rowKey=[r.game_id,r.team,id].join("\u0000");
+   patches.set(rowKey,{...(patches.get(rowKey)||{}),batting:values});
+  }
+  for(const r of pitching){
+   const bf=game.batters_faced[r.player_id];
+   if(r.pitching.battersFaced!=null&&r.pitching.battersFaced!==bf)throw Error("Stat backfill disagrees with existing BF: "+r.player_id);
+   teamBF.set(r.team,(teamBF.get(r.team)||0)+bf);
+   const rowKey=[r.game_id,r.team,r.player_id].join("\u0000");
+   patches.set(rowKey,{...(patches.get(rowKey)||{}),pitching:{battersFaced:bf}});
+  }
+  const teams=[...teamPA.keys()];
+  if(teams.length!==2||teamBF.size!==2||teamPA.get(teams[0])!==teamBF.get(teams[1])||teamPA.get(teams[1])!==teamBF.get(teams[0]))throw Error("Stat backfill PA does not reconcile with opponent BF: "+game.game_id);
+ }
+ return sourceRows.map(r=>{
+  const fix=patches.get([r.game_id,r.team,r.player_id].join("\u0000"));
+  return fix?{...r,...(fix.batting?{batting:{...r.batting,...fix.batting}}:{}),...(fix.pitching?{pitching:{...r.pitching,...fix.pitching}}:{})}:r;
+ });
+}
 async function load(){
- const [games,sourceRows,report,crosswalk,identity,nameCorrections]=await Promise.all([json("games.json"),json("player_stats.json"),json("import_report.json"),json("mlb_crosswalk.json"),json("player_identity_crosswalk.json"),json("player_name_corrections.json")]);
+ const [games,rawRows,report,crosswalk,identity,nameCorrections,statBackfills]=await Promise.all([json("games.json"),json("player_stats.json"),json("import_report.json"),json("mlb_crosswalk.json"),json("player_identity_crosswalk.json"),json("player_name_corrections.json"),json("source_stat_backfills.json")]);
+ const sourceRows=applyStatBackfills(rawRows,statBackfills);
  if(!identity||!Array.isArray(identity.merges))throw Error("Missing verified player identity merge manifest");
  if(!nameCorrections||!Array.isArray(nameCorrections.corrections)||!nameCorrections.game_id||!nameCorrections.team)throw Error("Missing verified game-specific player name corrections");
  // Preserve official source rows: scoped corrections restore names and link

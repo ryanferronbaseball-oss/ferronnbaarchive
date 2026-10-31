@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "last_verified": "2026-10-30",
-  "description": "Initial 64 user-identified attended college baseball players, each independently matched to an official MLB player record with a confirmed MLB debut. MLB draft round/pick/team checked against MLB official draft records; Justin Sterner was undrafted.",
+  "last_verified": "2026-10-31",
+  "description": "65 verified college baseball alumni: the original 64 user-identified players plus Braden Montgomery, also witnessed in MLB. Each is independently matched to an official MLB debut; draft round/pick/team checked against MLB records. Justin Sterner was undrafted.",
   "players": [
     {
       "college_player_id": "cb-san-diego-riley-adams",
@@ -642,6 +642,16 @@
       "draft_pick": 140,
       "draft_team": "Chicago White Sox",
       "mlb_debut": "2026-04-15"
+    },
+    {
+      "college_player_id": "cb-stanford-braden-montgomery",
+      "mlb_player_id": 695731,
+      "name": "Braden Montgomery",
+      "draft_year": 2024,
+      "draft_round": "1",
+      "draft_pick": 12,
+      "draft_team": "Boston Red Sox",
+      "mlb_debut": "2026-06-09"
     }
   ]
 }

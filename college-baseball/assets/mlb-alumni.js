@@ -53,7 +53,7 @@ function render(){
   :sort==="games"?b.games.length-a.games.length||a.name.localeCompare(b.name)
   :(a.draft_pick??999)-(b.draft_pick??999)||a.name.localeCompare(b.name));
  if(!matches.length){
-  $("cards").innerHTML='<div class="alumni-empty">'+(query?"No players match this search.":group==="drafted_only"?"All 64 players in this first edition have a verified MLB debut. Future drafted-only players will appear here.":"No confirmed MLB alumni found.")+'</div>';
+  $("cards").innerHTML='<div class="alumni-empty">'+(query?"No players match this search.":group==="drafted_only"?`All ${fmt(players.length)} verified alumni in this directory have an MLB debut. Future drafted-only players will appear here.`:"No confirmed MLB alumni found.")+'</div>';
   return;
  }
  $("cards").innerHTML=matches.map(p=>{

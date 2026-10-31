@@ -355,13 +355,13 @@ alumni_ids = {p["college_player_id"]: p["mlb_player_id"] for p in
               json.loads((SITE / "data" / "mlb_alumni_seed.json").read_text())["players"]}
 attended_mlb_ids = {int(p["player_id"]) for p in
                     json.loads((ROOT / "mlb" / "data" / "player_stats.json").read_text())}
-check(len(dual_attendance) == 17 and
-      len({p["college_player_id"] for p in dual_attendance}) == 17 and
-      len({p["mlb_player_id"] for p in dual_attendance}) == 17 and
+check(len(dual_attendance) == 18 and
+      len({p["college_player_id"] for p in dual_attendance}) == 18 and
+      len({p["mlb_player_id"] for p in dual_attendance}) == 18 and
       all(p.get("verified") is True and
           alumni_ids.get(p["college_player_id"]) == p["mlb_player_id"] and
           p["mlb_player_id"] in attended_mlb_ids for p in dual_attendance),
-      "All 17 cross-archive links match official MLB identities and personally attended MLB box scores")
+      "All 18 cross-archive links match official MLB identities and personally attended MLB box scores")
 check(make_report([])["attendance_games"] == 0, "Empty import reports honest zero verified inputs")
 check(subprocess.run(["node", "--check", str(SITE / "assets" / "archive.js")],
                      capture_output=True).returncode == 0, "College baseball website JavaScript parses")

@@ -646,6 +646,22 @@ with tempfile.TemporaryDirectory() as t:
                 visit(page, host, "player.html?id=cb-auburn-chase-fralick", "#app .cb-profile-stat-rows")
                 check("Chase Fralick" in page.locator("#app").inner_text(),
                       f"{width} cross-game college player identity connects")
+                visit(page, host, "player.html?id=cb-lsu-kade-anderson", ".cb-profile-hero")
+                check(page.locator(".cb-profile-hero h1").inner_text()=="Kade Anderson" and
+                      page.locator(".cb-mlb-alumnus[href*='807739']").count()==1 and
+                      "2025" in page.locator(".cb-mlb-draft").inner_text() and
+                      "Pick 3" in page.locator(".cb-mlb-draft").inner_text() and
+                      "Seattle Mariners" in page.locator(".cb-mlb-draft").inner_text() and
+                      page.locator(".cb-player-game-log tbody tr").count()==2 and
+                      page.locator(".cb-dual-level").count()==0,
+                      f"{width} Kade Anderson MLB debut and draft are tagged without inventing attended MLB games")
+                visit(page, host, "mlb-alumni.html", ".alumni-player")
+                page.locator("#search").fill("Kade Anderson")
+                check(page.locator(".alumni-player").count()==1 and
+                      "Aug 22, 2026" in page.locator(".alumni-player").inner_text() and
+                      "23" in page.locator(".alumni-player").inner_text() and
+                      page.locator("#mlbCount").inner_text()=="66",
+                      f"{width} Kade Anderson joins the 66-person College-to-MLB directory with two witnessed LSU games")
                 visit(page, host, "records.html", ".cb-record")
                 # Historical backfill legitimately changes the single-game
                 # record holders. Verify source-backed record categories and

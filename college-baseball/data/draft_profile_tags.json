@@ -3,6 +3,7 @@
   "kind": "verified_attended_college_player_draft_tags",
   "last_verified": "2026-10-31",
   "description": "Source-scoped MLB Draft selections for players witnessed in college. A draft selection alone does not establish an MLB debut or college-to-MLB alumni status. A separate draft history page may use these records later.",
+  "selection_policy": "When a player has been drafted multiple times, the player-profile tag uses the latest MLB Draft selection (year, round, overall pick, and team). Earlier selections can be recorded in the future draft-history page.",
   "picks": [
     {"college_player_id": "cb-san-diego-riley-adams", "name": "Riley Adams", "draft_year": 2017, "draft_round": "3", "draft_pick": 99, "draft_team": "Toronto Blue Jays", "source_url": "https://wccsports.com/news/2017/6/14/WCC_Represented_Early_Often_in_2017_MLB_Draft.aspx"},
     {"college_player_id": "cb-san-diego-roman-garcia", "name": "Roman Garcia", "draft_year": 2017, "draft_round": "19", "draft_pick": 571, "draft_team": "Houston Astros", "source_url": "https://usdtoreros.com/news/2017/6/14/Six_Toreros_selected_in_the_MLB_Draft_Wednesday.aspx"},
@@ -65,7 +66,6 @@
     {"college_player_id": "cb-santa-clara-john-cresto", "name": "John Cresto", "draft_year": 2018, "draft_round": "28", "draft_pick": 846, "draft_team": "Colorado Rockies", "source_url": "https://statsapi.mlb.com/api/v1/draft/2018"},
     {"college_player_id": "cb-loyola-marymount-billy-wilson", "name": "Billy Wilson", "draft_year": 2018, "draft_round": "28", "draft_pick": 853, "draft_team": "Cleveland Indians", "source_url": "https://statsapi.mlb.com/api/v1/draft/2018"},
     {"college_player_id": "cb-cincinnati-jt-perez", "name": "J.T. Perez", "draft_year": 2018, "draft_round": "29", "draft_pick": 874, "draft_team": "Minnesota Twins", "source_url": "https://statsapi.mlb.com/api/v1/draft/2018"},
-    {"college_player_id": "cb-arizona-state-lyle-lin", "name": "Lyle Lin", "draft_year": 2018, "draft_round": "29", "draft_pick": 882, "draft_team": "Houston Astros", "source_url": "https://statsapi.mlb.com/api/v1/draft/2018"},
     {"college_player_id": "cb-indiana-tim-herrin", "name": "Tim Herrin", "draft_year": 2018, "draft_round": "29", "draft_pick": 883, "draft_team": "Cleveland Guardians", "source_url": "https://statsapi.mlb.com/api/v1/draft/2018"},
     {"college_player_id": "cb-arizona-state-connor-higgins", "name": "Connor Higgins", "draft_year": 2018, "draft_round": "30", "draft_pick": 901, "draft_team": "Los Angeles Angels", "source_url": "https://statsapi.mlb.com/api/v1/draft/2018"},
     {"college_player_id": "cb-michigan-jonathan-engelmann", "name": "Jonathan Engelmann", "draft_year": 2018, "draft_round": "31", "draft_pick": 943, "draft_team": "Cleveland Indians", "source_url": "https://statsapi.mlb.com/api/v1/draft/2018"},
@@ -74,6 +74,7 @@
     {"college_player_id": "cb-byu-daniel-schneemann", "name": "Daniel Schneemann", "draft_year": 2018, "draft_round": "33", "draft_pick": 1003, "draft_team": "Cleveland Guardians", "source_url": "https://statsapi.mlb.com/api/v1/draft/2018"},
     {"college_player_id": "cb-uc-irvine-cole-kreuter", "name": "Cole Kreuter", "draft_year": 2018, "draft_round": "36", "draft_pick": 1083, "draft_team": "St. Louis Cardinals", "source_url": "https://statsapi.mlb.com/api/v1/draft/2018"},
     {"college_player_id": "cb-byu-david-clawson", "name": "David Clawson", "draft_year": 2018, "draft_round": "37", "draft_pick": 1111, "draft_team": "Los Angeles Angels", "source_url": "https://statsapi.mlb.com/api/v1/draft/2018"},
-    {"college_player_id": "cb-saint-mary-s-austin-piscotty", "name": "Austin Piscotty", "draft_year": 2018, "draft_round": "38", "draft_pick": 1133, "draft_team": "Oakland Athletics", "source_url": "https://statsapi.mlb.com/api/v1/draft/2018"}
+    {"college_player_id": "cb-saint-mary-s-austin-piscotty", "name": "Austin Piscotty", "draft_year": 2018, "draft_round": "38", "draft_pick": 1133, "draft_team": "Oakland Athletics", "source_url": "https://statsapi.mlb.com/api/v1/draft/2018"},
+    {"college_player_id": "cb-arizona-state-lyle-lin", "name": "Lyle Lin", "draft_year": 2019, "draft_round": "14", "draft_pick": 422, "draft_team": "Arizona Diamondbacks", "source_url": "https://thesundevils.com/news/2019/06/5/three-sun-devils-drafted-on-final-day-of-2019-mlb-draft"}
   ]
 }

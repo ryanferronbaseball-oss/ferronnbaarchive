@@ -75,6 +75,10 @@ check(len(draft_tags["picks"]) == len(draft_ids) == 71 and
       {"cb-san-diego-riley-adams", "cb-san-diego-sean-barry", "cb-byu-colton-shaver",
        "cb-arkansas-jax-biggers", "cb-cincinnati-manny-rodriguez",
        "cb-cincinnati-jt-perez", "cb-california-tyrus-greene"} <= draft_ids and
+      sum(p["draft_year"] == 2018 for p in draft_tags["picks"]) == 62 and
+      any(p["college_player_id"] == "cb-arizona-state-lyle-lin" and
+              (p["draft_year"], p["draft_round"], p["draft_pick"], p["draft_team"]) ==
+              (2019, "14", 422, "Arizona Diamondbacks") for p in draft_tags["picks"]) and
       all(any(r["player_id"] == pick["college_player_id"] and
                   r["player"].casefold() == pick["name"].casefold() for r in pilot_rows)
               or (pick["college_player_id"], pick["name"].casefold()) in corrected_names

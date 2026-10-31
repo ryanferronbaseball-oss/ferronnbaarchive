@@ -65,13 +65,21 @@ pilot_rows = json.loads((SITE / "data" / "player_stats.json").read_text())
 pilot_report = json.loads((SITE / "data" / "import_report.json").read_text())
 draft_tags = json.loads((SITE / "data" / "draft_profile_tags.json").read_text())
 draft_ids = {r["college_player_id"] for r in draft_tags["picks"]}
-check(len(draft_tags["picks"]) == len(draft_ids) == 10 and
+name_corrections = json.loads((SITE / "data" / "player_name_corrections.json").read_text())
+corrected_names = {
+    (fix["canonical_player_id"], fix["player"].casefold())
+    for game in [name_corrections, *name_corrections.get("games", [])]
+    for fix in game["corrections"]
+}
+check(len(draft_tags["picks"]) == len(draft_ids) == 71 and
       {"cb-san-diego-riley-adams", "cb-san-diego-sean-barry", "cb-byu-colton-shaver",
-       "cb-arkansas-jax-biggers", "cb-cincinnati-manny-rodriguez"} <= draft_ids and
+       "cb-arkansas-jax-biggers", "cb-cincinnati-manny-rodriguez",
+       "cb-cincinnati-jt-perez", "cb-california-tyrus-greene"} <= draft_ids and
       all(any(r["player_id"] == pick["college_player_id"] and
                   r["player"].casefold() == pick["name"].casefold() for r in pilot_rows)
+              or (pick["college_player_id"], pick["name"].casefold()) in corrected_names
           for pick in draft_tags["picks"]),
-      "Official 2017 and initial 2018 draft picks match exact witnessed college player IDs")
+      "Official 2017 and 2018 draft picks match verified witnessed college player profiles")
 check(len(attended) == 6 and len(committed) == 444, "All 444 attendance entries staged with 6 verified initial Regional gamebooks")
 check(len({g["source_worksheet_row"] for g in committed}) == 444,
       "Unique workbook source rows preserved for every attended contest")

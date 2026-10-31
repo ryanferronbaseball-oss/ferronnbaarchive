@@ -17,6 +17,71 @@ function nav(active){
  +'<a href="../index.html" class="back-link">All sports ↗</a></nav></header>';
 }
 async function json(name,fallback){const r=await fetch("./data/"+name,{cache:"no-store"});if(!r.ok)throw Error("Missing "+name+" ("+r.status+")");return r.json()}
+function applyAttendanceGameCorrections(sourceGames,sourceRows,manifest){
+ if(!manifest||!Array.isArray(manifest.games))throw Error("Missing verified attendance game corrections");
+ const games=sourceGames.slice(),removed=new Set(),added=[],gameRedirects=new Map();
+ const slug=s=>String(s).normalize("NFKD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
+ const battingKeys=["atBats","runs","hits","rbi","baseOnBalls","strikeOuts"];
+ const battingEventKeys=["doubles","triples","homeRuns","stolenBases","caughtStealing","hitByPitch","sacBunts","sacFlies"];
+ const pitchingKeys=["outs","hits","runs","earnedRuns","baseOnBalls","strikeOuts","battersFaced","numberOfPitches"];
+ const pitchingEventKeys=["hitBatsmen"];
+ const total=(rows,category,key)=>rows.reduce((n,r)=>n+(r[category]?.[key]||0),0);
+ for(const correction of manifest.games){
+  const oldId=correction.replaces_game_id,newId=correction.game?.id;
+  if(!oldId||!newId||removed.has(oldId)||games.some(g=>g.id===newId)||sourceRows.some(r=>r.game_id===newId))throw Error("Invalid attendance game replacement: "+oldId);
+  const index=games.findIndex(g=>g.id===oldId),old=games[index];
+  if(index<0||!old||!sourceRows.some(r=>r.game_id===oldId)||!correction.source_url)throw Error("Missing original attendance game: "+oldId);
+  if(!correction.game.date||!Array.isArray(correction.game.innings)||Object.keys(correction.batting||{}).length!==2||Object.keys(correction.pitching||{}).length!==2)throw Error("Incomplete corrected box score: "+newId);
+  const game={...old,...correction.game,source_url:correction.source_url,notes:old.notes+" Corrected from the original workbook entry using the official April 13 gamebook; the April 14 box score is not an attended-game result."};
+  const teams=[game.away,game.home],participants=new Map(),battingNames=new Set(),pitchingNames=new Set();
+  const makeRow=(team,player)=>({game_id:newId,player_id:"cb-"+slug(team)+"-"+slug(player),player,team,source_url:correction.source_url,source_type:"official_university_pdf_scorebook",verification:"official_boxscore_verified"});
+  const key=(team,player)=>team+"\u0000"+player;
+  for(const team of teams){
+   const lineup=correction.batting[team],pitchers=correction.pitching[team];
+   if(!Array.isArray(lineup)||!Array.isArray(pitchers)||!lineup.length||!pitchers.length)throw Error("Missing corrected team lineup: "+team);
+   const slotCounts=new Map();let previousSlot=0;
+   for(const [appearance,line] of lineup.entries()){
+    if(!Array.isArray(line)||line.length!==9)throw Error("Invalid corrected batter row: "+team);
+    const [slot,player,position,...numbers]=line;
+    if(!Number.isInteger(slot)||slot<1||slot>9||slot<previousSlot||!player||!position||numbers.some(n=>!Number.isInteger(n)||n<0)||battingNames.has(player))throw Error("Invalid corrected batting order: "+player);
+    previousSlot=slot;battingNames.add(player);
+    const extras=correction.batting_events?.[player]||{};
+    if(Object.keys(extras).some(k=>!battingEventKeys.includes(k))||Object.values(extras).some(n=>!Number.isInteger(n)||n<0))throw Error("Invalid corrected batting event: "+player);
+    const batting=Object.fromEntries(battingKeys.map((k,i)=>[k,numbers[i]]));
+    for(const k of battingEventKeys)batting[k]=extras[k]??0;
+    if(batting.doubles+batting.triples+batting.homeRuns>batting.hits)throw Error("Extra-base hits exceed hits: "+player);
+    const r={...makeRow(team,player),position,batting_slot:slot,batting_sub_index:slotCounts.get(slot)||0,batting_appearance_index:appearance,batting};
+    slotCounts.set(slot,(slotCounts.get(slot)||0)+1);participants.set(key(team,player),r);
+   }
+   if(slotCounts.size!==9)throw Error("Corrected batting order has fewer than nine slots: "+team);
+   for(const [appearance,line] of pitchers.entries()){
+    if(!Array.isArray(line)||line.length!==9)throw Error("Invalid corrected pitcher row: "+team);
+    const [player,...numbers]=line;
+    if(!player||numbers.some(n=>!Number.isInteger(n)||n<0)||pitchingNames.has(player))throw Error("Invalid corrected pitcher: "+player);
+    pitchingNames.add(player);
+    const extras=correction.pitching_events?.[player]||{};
+    if(Object.keys(extras).some(k=>!pitchingEventKeys.includes(k))||Object.values(extras).some(n=>!Number.isInteger(n)||n<0))throw Error("Invalid corrected pitching event: "+player);
+    const pitching=Object.fromEntries(pitchingKeys.map((k,i)=>[k,numbers[i]]));
+    for(const k of pitchingEventKeys)pitching[k]=extras[k]??0;
+    pitching.wins=Number(game.pitching_decisions?.win===player);
+    pitching.losses=Number(game.pitching_decisions?.loss===player);
+    pitching.saves=Number(game.pitching_decisions?.save===player);
+    const id=key(team,player),prior=participants.get(id)||makeRow(team,player);
+    participants.set(id,{...prior,position:prior.position||"p",pitching,pitching_appearance_index:appearance});
+   }
+   const expected=correction.expected?.[team];
+   const teamRows=[...participants.values()].filter(r=>r.team===team),batters=teamRows.filter(r=>r.batting),arms=teamRows.filter(r=>r.pitching);
+   const checks={batting_rows:batters.length,pitching_rows:arms.length,atBats:total(batters,"batting","atBats"),runs:total(batters,"batting","runs"),hits:total(batters,"batting","hits"),rbi:total(batters,"batting","rbi"),walks:total(batters,"batting","baseOnBalls"),strikeouts:total(batters,"batting","strikeOuts"),plateAppearances:batters.reduce((n,r)=>n+["atBats","baseOnBalls","hitByPitch","sacBunts","sacFlies"].reduce((v,k)=>v+r.batting[k],0),0),pitching_outs:total(arms,"pitching","outs"),battersFaced:total(arms,"pitching","battersFaced")};
+   if(!expected||Object.entries(checks).some(([k,v])=>expected[k]!==v))throw Error("Official corrected totals do not reconcile: "+team);
+   if(checks.runs!==Number(team===game.away?game.away_score:game.home_score))throw Error("Corrected batting score mismatch: "+team);
+  }
+  if(Object.keys(correction.batting_events||{}).some(name=>!battingNames.has(name))||Object.keys(correction.pitching_events||{}).some(name=>!pitchingNames.has(name)))throw Error("Unmatched corrected box-score event");
+  if(correction.expected[game.away].plateAppearances!==correction.expected[game.home].battersFaced||correction.expected[game.home].plateAppearances!==correction.expected[game.away].battersFaced)throw Error("Corrected PA does not match opponent BF");
+  if([game.away,game.home].some(team=>total([...participants.values()].filter(r=>r.team===team&&r.pitching),"pitching","runs")!==Number(team===game.away?game.home_score:game.away_score)))throw Error("Corrected pitching runs do not match opponent score");
+  games[index]=game;removed.add(oldId);gameRedirects.set(oldId,newId);added.push(...participants.values());
+ }
+ return {games,rows:[...sourceRows.filter(r=>!removed.has(r.game_id)),...added],gameRedirects};
+}
 function applyStatBackfills(sourceRows,manifest){
  if(!manifest||!Array.isArray(manifest.games))throw Error("Missing verified college game stat backfills");
  const patches=new Map(),seenGames=new Set();
@@ -61,8 +126,9 @@ function applyStatBackfills(sourceRows,manifest){
  });
 }
 async function load(){
- const [games,rawRows,report,crosswalk,identity,nameCorrections,statBackfills]=await Promise.all([json("games.json"),json("player_stats.json"),json("import_report.json"),json("mlb_crosswalk.json"),json("player_identity_crosswalk.json"),json("player_name_corrections.json"),json("source_stat_backfills.json")]);
- const sourceRows=applyStatBackfills(rawRows,statBackfills);
+ const [rawGames,rawRows,report,crosswalk,identity,nameCorrections,statBackfills,gameCorrections]=await Promise.all([json("games.json"),json("player_stats.json"),json("import_report.json"),json("mlb_crosswalk.json"),json("player_identity_crosswalk.json"),json("player_name_corrections.json"),json("source_stat_backfills.json"),json("attendance_game_corrections.json")]);
+ const {games,rows:correctedRows,gameRedirects}=applyAttendanceGameCorrections(rawGames,rawRows,gameCorrections);
+ const sourceRows=applyStatBackfills(correctedRows,statBackfills);
  if(!identity||!Array.isArray(identity.merges))throw Error("Missing verified player identity merge manifest");
  if(!nameCorrections||!Array.isArray(nameCorrections.corrections)||!nameCorrections.game_id||!nameCorrections.team)throw Error("Missing verified game-specific player name corrections");
  // Preserve official source rows: scoped corrections restore names and link
@@ -120,7 +186,7 @@ async function load(){
   p.rows.push(r);
  }
  const players=[...byPlayer.values()].map(p=>({...p,teams:[...p.teams],games:[...p.games]}));
- return {games:games.slice().sort((a,b)=>b.date.localeCompare(a.date)||a.id.localeCompare(b.id)),rows,players,gameMap,report,crosswalk,identity,redirects};
+ return {games:games.slice().sort((a,b)=>b.date.localeCompare(a.date)||a.id.localeCompare(b.id)),rows,players,gameMap,gameRedirects,report,crosswalk,identity,redirects};
 }
 function sum(rows,category,key){
  const values=rows.map(r=>stat(r[category]?.[key])).filter(v=>v!=null);
@@ -209,7 +275,8 @@ function renderGames(d){
  +'<label class="filter-label" for="cb-season-filter">Season</label><select id="cb-season-filter" aria-label="Season filter"><option value="">All seasons</option>'
  +unique(d.games.map(g=>g.season)).sort((a,b)=>b-a).map(y=>'<option>'+y+'</option>').join("")+'</select></div><div id="cb-game-list"></div>';
  const chosen=new URLSearchParams(location.search).get("id"),picker=$("cb-game-select");
- if(chosen&&d.gameMap.has(chosen))picker.value=chosen;
+ const selected=d.gameRedirects.get(chosen)||chosen;
+ if(selected&&d.gameMap.has(selected))picker.value=selected;
  function showGame(){
   const g=d.gameMap.get(picker.value);
   if(!g){$("cb-game-details").innerHTML=pending(d.games.length?"Select a game to open its official scoreboard and player box score.":"No college baseball games imported yet.");return}

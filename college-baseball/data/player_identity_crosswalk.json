@@ -4,8 +4,8 @@
   "source": "Original archive owner confirmed each multi-school person",
   "original_attendance_ids_preserved": 444,
   "original_player_game_rows_preserved": 13183,
-  "requested_person_merges": 98,
-  "activated_person_merges": 94,
+  "requested_person_merges": 99,
+  "activated_person_merges": 95,
   "pending_person_merges": 4,
   "merge_policy": "Only listed pair of exact normalized person names and school-specific original source player IDs; all other IDs remain separate",
   "merges": [
@@ -2170,6 +2170,29 @@
         }
       ],
       "source_rows": 3
+    },
+    {
+      "name": "Michael Graziano",
+      "canonical_id": "cb-mercer-michael-graziano",
+      "source_player_ids": [
+        "cb-mercer-michael-graziano",
+        "cb-georgia-tech-michael-graziano"
+      ],
+      "schools": [
+        "Mercer",
+        "Georgia Tech"
+      ],
+      "pairs": [
+        {
+          "team": "Mercer",
+          "source_player_id": "cb-mercer-michael-graziano"
+        },
+        {
+          "team": "Georgia Tech",
+          "source_player_id": "cb-georgia-tech-michael-graziano"
+        }
+      ],
+      "source_rows": 2
     }
   ]
 }

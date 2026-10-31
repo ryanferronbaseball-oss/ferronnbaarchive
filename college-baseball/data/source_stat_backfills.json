@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "description": "Game-specific supplemental statistics verified from official box scores. Only missing fields are populated; original source player records are retained.",
+  "games": [
+    {
+      "game_id": "cb-2024-02-24-virginia-iowa-att0237",
+      "source_url": "https://static.virginiasports.com/custompages/sports/m-basebl/stats/2023-2024/6iowa.htm",
+      "verification_note": "Official box score lists five hit-by-pitches, no sacrifices, and each pitcher's BF. Both teams' calculated plate appearances equal the opposing pitchers' combined BF (Iowa 46, Virginia 50).",
+      "expected_batting_rows": 23,
+      "expected_pitching_rows": 8,
+      "hit_by_pitch": {
+        "cb-iowa-sam-petersen": 1,
+        "cb-iowa-raider-tello": 1,
+        "cb-iowa-davis-cop": 1,
+        "cb-virginia-eric-becker": 1,
+        "cb-virginia-luke-hanson": 1
+      },
+      "sac_bunts": {},
+      "sac_flies": {},
+      "batters_faced": {
+        "cb-iowa-marcus-morgan": 17,
+        "cb-iowa-anthony-watts": 22,
+        "cb-iowa-zach-voelker": 4,
+        "cb-iowa-brant-hogue": 7,
+        "cb-virginia-jack-o-connor": 21,
+        "cb-virginia-jay-woolfolk": 19,
+        "cb-virginia-ryan-osinski": 2,
+        "cb-virginia-blake-barker": 4
+      }
+    }
+  ]
+}

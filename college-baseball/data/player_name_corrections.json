@@ -200,6 +200,19 @@
         {"source_player_id": "cb-uc-riverside-c-cannon", "source_player_name": "C Cannon", "player": "Connor Cannon", "canonical_player_id": "cb-uc-riverside-connor-cannon"},
         {"source_player_id": "cb-uc-riverside-d-miller", "source_player_name": "D Miller", "player": "Dean Miller", "canonical_player_id": "cb-uc-riverside-dean-miller"}
       ]
+    },
+    {
+      "game_id": "cb-2019-02-24-cal-state-fullerton-oklahoma-att0040",
+      "team": "Oklahoma",
+      "description": "Remove stray StatCrew pitching column headings embedded in Levi Prater's name. The official gamebook and university recap confirm his 4.1 IP, 9 K start; all original statistics remain unchanged.",
+      "verified_on": "2026-10-31",
+      "evidence_urls": [
+        "https://soonersports.com/sports/2019/8/7/2150228",
+        "https://soonersports.com/news/2019/2/24/211792400"
+      ],
+      "corrections": [
+        {"source_player_id": "cb-oklahoma-levi-hbp-ibb-ab-bf-fo-go-prater", "source_player_name": "Levi hbp ibb ab bf fo go Prater", "player": "Levi Prater", "canonical_player_id": "cb-oklahoma-levi-prater"}
+      ]
     }
   ]
 }

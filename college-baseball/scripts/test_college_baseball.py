@@ -71,7 +71,7 @@ corrected_names = {
     for game in [name_corrections, *name_corrections.get("games", [])]
     for fix in game["corrections"]
 }
-check(len(draft_tags["picks"]) == len(draft_ids) == 156 and
+check(len(draft_tags["picks"]) == len(draft_ids) == 174 and
       {"cb-san-diego-riley-adams", "cb-san-diego-sean-barry", "cb-byu-colton-shaver",
        "cb-arkansas-jax-biggers", "cb-cincinnati-manny-rodriguez",
        "cb-cincinnati-jt-perez", "cb-california-tyrus-greene",
@@ -79,9 +79,16 @@ check(len(draft_tags["picks"]) == len(draft_ids) == 156 and
        "cb-tcu-josh-watson", "cb-gonzaga-casey-legumina",
        "cb-tcu-jared-janczak", "cb-cincinnati-aj-bumpass",
        "cb-uc-riverside-connor-cannon", "cb-uc-riverside-dean-miller",
-       "cb-california-ripken-reyes"} <= draft_ids and
+       "cb-california-ripken-reyes",
+       "cb-arizona-state-spencer-torkelson", "cb-arkansas-heston-kjerstad",
+       "cb-oklahoma-levi-prater", "cb-michigan-jesse-franklin",
+       "cb-arkansas-bryce-bonnin", "cb-san-diego-state-casey-schmitt"} <= draft_ids and
       sum(p["draft_year"] == 2018 for p in draft_tags["picks"]) == 62 and
       sum(p["draft_year"] == 2019 for p in draft_tags["picks"]) == 86 and
+      sum(p["draft_year"] == 2020 for p in draft_tags["picks"]) == 18 and
+      any(p["college_player_id"] == "cb-oklahoma-levi-prater" and
+              (p["draft_round"], p["draft_pick"], p["draft_team"]) ==
+              ("3", 93, "St. Louis Cardinals") for p in draft_tags["picks"]) and
       any(p["college_player_id"] == "cb-tcu-jared-janczak" and
               (p["draft_round"], p["draft_pick"], p["draft_team"]) ==
               ("31", 940, "Cleveland Indians") for p in draft_tags["picks"]) and

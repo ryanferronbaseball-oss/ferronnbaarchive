@@ -321,19 +321,21 @@ function renderPlayer(d){
  const entries=unique(p.rows.map(x=>x.game_id)).map(game_id=>d.gameMap.get(game_id)).filter(Boolean).sort((a,b)=>b.date.localeCompare(a.date)||b.id.localeCompare(a.id));
  const logRows=p.rows.slice().sort((a,b)=>(d.gameMap.get(b.game_id)?.date||"").localeCompare(d.gameMap.get(a.game_id)?.date||"")||b.game_id.localeCompare(a.game_id));
  const initials=p.name.split(/\s+/).map(x=>x[0]).slice(0,2).join("").toUpperCase();
- const roleStats=(label,items)=>'<section class="cb-profile-role"><h2>'+esc(label)+'</h2><div class="metrics mlb-profile-stat-grid cb-profile-metrics">'
-  +items.map(([title,value])=>'<div class="metric mlb-profile-stat"><small>'+esc(title)+'</small><strong>'+esc(value==null?"—":value)+'</strong></div>').join("")
-  +'</div></section>';
+ const roleStats=(label,groups)=>'<section class="cb-profile-role"><h2>'+esc(label)+'</h2><div class="cb-profile-stat-rows">'
+  +groups.map(items=>'<div class="cb-profile-stat-row" style="--cb-columns:'+items.length+'">'
+   +items.map(([title,value])=>'<div class="metric mlb-profile-stat"><small>'+esc(title)+'</small><strong>'+esc(value==null?"—":value)+'</strong></div>').join("")
+   +'</div>').join("")+'</div></section>';
+ const percent=v=>v==null?"—":v.toFixed(1)+"%";
  const hitter=qualifiedHit?roleStats("Hitting in games you attended",[
-  ["Games",p.rows.filter(r=>r.batting!=null).length],["Batting Average",rate(b.average,3)],
-  ["Home Runs",fmt(b.homeRuns)],["RBI",fmt(b.rbi)],["OPS",rate(b.ops,3)],["Hits",fmt(b.hits)]
+  [["Games",b.games],["Plate Appearances",fmt(b.plateAppearances)],["At Bats",fmt(b.atBats)],["Runs",fmt(b.runs)],["Hits",fmt(b.hits)]],
+  [["Doubles",fmt(b.doubles)],["Triples",fmt(b.triples)],["Home Runs",fmt(b.homeRuns)],["RBI",fmt(b.rbi)],["Walks",fmt(b.walks)],["Strikeouts",fmt(b.strikeouts)]],
+  [["BA",rate(b.average,3)],["OBP",rate(b.obp,3)],["SLG",rate(b.slg,3)],["OPS",rate(b.ops,3)],["BB%",percent(b.walkPct)],["K%",percent(b.strikeoutPct)]]
  ]):"";
  const pitcher=qualifiedPitch?roleStats("Pitching in games you attended",[
-  ["Wins",fmt(pi.wins)],["Losses",fmt(pi.losses)],["Saves",fmt(pi.saves)],
-  ["Innings Pitched",pi.innings??"—"],["Walks",fmt(pi.walks)],["Strikeouts",fmt(pi.strikeouts)]
- ])+'<div class="mlb-profile-total-grid cb-profile-rate-grid">'
-  +[["ERA",rate(pi.era,2)],["WHIP",rate(pi.whip,2)],["Hits Allowed",fmt(pi.hits)],["Earned Runs",fmt(pi.earnedRuns)]]
-   .map(([title,value])=>'<div class="mlb-profile-total"><small>'+esc(title)+'</small><strong>'+esc(value)+'</strong></div>').join("")+'</div>':"";
+  [["Games",pi.games],["Games Started",pi.starts],["Innings",pi.innings],["Batters Faced",fmt(pi.battersFaced)]],
+  [["Hits Allowed",fmt(pi.hits)],["Earned Runs",fmt(pi.earnedRuns)],["Walks",fmt(pi.walks)],["Strikeouts",fmt(pi.strikeouts)]],
+  [["ERA",rate(pi.era,2)],["WHIP",rate(pi.whip,2)],["BB%",percent(pi.walkPct)],["K%",percent(pi.strikeoutPct)]]
+ ]):"";
  $("app").innerHTML='<div class="eyebrow">College Baseball · Player profile</div>'
  +'<section class="mlb-profile-hero mlb-profile-head cb-profile-hero">'
  +'<div class="mlb-profile-photo cb-profile-initials" aria-hidden="true">'+esc(initials)+'</div>'

@@ -389,6 +389,56 @@
         "cb-nc-state-ryder-garino": 14,
         "cb-nc-state-luke-hemric": 2
       }
+    },
+    {
+      "game_id": "cb-2026-05-31-auburn-milwaukee",
+      "source_url": "https://storage.googleapis.com/auburn-prod/2026/06/01/gABVgCShBRJVn2SbogYy1rBiMyIGmnmzypXIIRJb.pdf",
+      "verification_note": "Official May 31 Auburn Regional gamebook: Auburn 8, Milwaukee 1. Auburn 41 PA equals Milwaukee 41 BF; Milwaukee 30 PA equals Auburn 30 BF. Mason McCraine and Cade Belyeu each HBP once, Taylor Belza twice; Eric Guevara has two SF. No sacrifice bunts.",
+      "expected_batting_rows": 20,
+      "expected_pitching_rows": 6,
+      "hit_by_pitch": {
+        "cb-auburn-mason-mccraine": 1,
+        "cb-auburn-cade-belyeu": 1,
+        "cb-auburn-taylor-belza": 2
+      },
+      "sac_bunts": {},
+      "sac_flies": {
+        "cb-auburn-eric-guevara": 2
+      },
+      "batters_faced": {
+        "cb-auburn-ryan-hetzler": 14,
+        "cb-auburn-lj-cormier": 16,
+        "cb-milwaukee-camden-kuhnke": 12,
+        "cb-milwaukee-sotaro-ishida": 18,
+        "cb-milwaukee-lucas-watson": 4,
+        "cb-milwaukee-tristan-arnold": 7
+      }
+    },
+    {
+      "game_id": "cb-2018-02-18-cincinnati-san-diego-att0006",
+      "source_url": "https://storage.googleapis.com/gobearcats-com-prod/2025/06/29/EIKFzFi4XIx7rW5a9UvwMzpwiQSNIr5qQEvTHkBg.pdf",
+      "verification_note": "Official Cincinnati at San Diego Game 2 gamebook (dated February 17, 2018): San Diego 4, Cincinnati 3. Cincinnati 39 PA equals San Diego 39 BF; San Diego 33 PA equals Cincinnati 33 BF. Cincinnati had three HBP and two sacrifice flies, with no sacrifice bunts.",
+      "expected_batting_rows": 20,
+      "expected_pitching_rows": 7,
+      "hit_by_pitch": {
+        "cb-cincinnati-joey-thomas": 1,
+        "cb-cincinnati-manny-rodriguez": 1,
+        "cb-cincinnati-joey-wiemer": 1
+      },
+      "sac_bunts": {},
+      "sac_flies": {
+        "cb-cincinnati-aj-bumpass": 1,
+        "cb-cincinnati-manny-rodriguez": 1
+      },
+      "batters_faced": {
+        "cb-cincinnati-nathan-kroger": 22,
+        "cb-cincinnati-jalen-wade": 10,
+        "cb-cincinnati-tanner-schimmoeller": 1,
+        "cb-san-diego-nate-walker": 15,
+        "cb-san-diego-nicola-mislinski": 6,
+        "cb-san-diego-nigel-ward": 8,
+        "cb-san-diego-travis-kuhn": 10
+      }
     }
   ]
 }

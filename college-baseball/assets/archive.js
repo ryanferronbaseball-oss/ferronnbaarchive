@@ -131,15 +131,19 @@ async function load(){
  const {games,rows:correctedRows,gameRedirects}=applyAttendanceGameCorrections(rawGames,rawRows,gameCorrections);
  const sourceRows=applyStatBackfills(correctedRows,statBackfills);
  if(!identity||!Array.isArray(identity.merges))throw Error("Missing verified player identity merge manifest");
- if(!nameCorrections||!Array.isArray(nameCorrections.corrections)||!nameCorrections.game_id||!nameCorrections.team)throw Error("Missing verified game-specific player name corrections");
+ // Keep the original SDSU corrections and allow additional, strictly scoped games.
+ const nameCorrectionGames=[nameCorrections,...(nameCorrections?.games||[])];
+ if(nameCorrectionGames.some(g=>!g||!Array.isArray(g.corrections)||!g.game_id||!g.team))throw Error("Missing verified game-specific player name corrections");
  // Preserve official source rows: scoped corrections restore names and link
  // known person profiles without rewriting any original box-score statistics.
  const fixedNames=new Map();
- for(const fix of nameCorrections.corrections){
-  if(!fix.source_player_id||!fix.source_player_name||!fix.canonical_player_id||!fix.player)throw Error("Incomplete verified player name correction");
-  const key=[nameCorrections.game_id,nameCorrections.team,fix.source_player_id].join("\u0000");
-  if(fixedNames.has(key))throw Error("Duplicate player name correction: "+key);
-  fixedNames.set(key,fix);
+ for(const game of nameCorrectionGames){
+  for(const fix of game.corrections){
+   if(!fix.source_player_id||!fix.source_player_name||!fix.canonical_player_id||!fix.player)throw Error("Incomplete verified player name correction");
+   const key=[game.game_id,game.team,fix.source_player_id].join("\u0000");
+   if(fixedNames.has(key))throw Error("Duplicate player name correction: "+key);
+   fixedNames.set(key,fix);
+  }
  }
  // Apply source-scoped team+player ID aliases in browser memory, never to
  // the preserved original gamebook rows. Existing game team attribution stays intact.
@@ -156,7 +160,7 @@ async function load(){
    redirects.set(sourceId,m.canonical_id);
   }
  }
- for(const fix of nameCorrections.corrections){
+ for(const fix of nameCorrectionGames.flatMap(g=>g.corrections)){
   if(redirects.has(fix.source_player_id)&&redirects.get(fix.source_player_id)!==fix.canonical_player_id)throw Error("Conflicting name correction profile redirect");
   redirects.set(fix.source_player_id,fix.canonical_player_id);
  }
@@ -290,8 +294,8 @@ function renderGames(d){
   const decision=g.pitching_decisions;
   const person=name=>{
    if(!name)return '<span class="mlb-decision-unavailable">No save</span>';
-   const p=players.find(x=>x.pitching&&x.player===name);
-   return p?'<a class="mlb-decision-name" href="'+playerUrl(p)+'">'+esc(name)+'</a>'
+   const p=players.find(x=>x.pitching&&(x.player===name||x.original_game_player_name===name));
+   return p?'<a class="mlb-decision-name" href="'+playerUrl(p)+'">'+esc(p.player)+'</a>'
     :'<span class="mlb-decision-unavailable">'+esc(name)+'</span>';
   };
   const decisions=decision?'<section class="panel mlb-decisions-panel" id="cb-pitching-decisions">'

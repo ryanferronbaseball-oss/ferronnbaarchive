@@ -113,5 +113,33 @@
       "player": "Tre Brown",
       "canonical_player_id": "cb-san-diego-state-tre-brown"
     }
+  ],
+  "games": [
+    {
+      "game_id": "cb-2025-03-28-tennessee-south-carolina-att0326",
+      "team": "South Carolina",
+      "description": "Restore the 14 full South Carolina player names printed as surnames or initials in Tennessee's March 28, 2025 gamebook. Preserve every original box-score row and statistic. Stone is the pinch hitter Evan Stone; K. Jones is Kennedy Jones and C. Jones is pitcher Caleb Jones.",
+      "verified_on": "2026-10-31",
+      "evidence_urls": [
+        "https://utsports.com/sports/baseball/stats/2025/south-carolina/boxscore/29225",
+        "https://static.hailstate.com/custompages/pdf/bb/2025/20250404SouthCarolina.pdf"
+      ],
+      "corrections": [
+        {"source_player_id": "cb-south-carolina-hall", "source_player_name": "Hall", "player": "Nathan Hall", "canonical_player_id": "cb-south-carolina-nathan-hall"},
+        {"source_player_id": "cb-south-carolina-petry", "source_player_name": "Petry", "player": "Ethan Petry", "canonical_player_id": "cb-south-carolina-ethan-petry"},
+        {"source_player_id": "cb-south-carolina-woita", "source_player_name": "Woita", "player": "Jase Woita", "canonical_player_id": "cb-south-carolina-jase-woita"},
+        {"source_player_id": "cb-south-carolina-stone", "source_player_name": "Stone", "player": "Evan Stone", "canonical_player_id": "cb-south-carolina-evan-stone"},
+        {"source_player_id": "cb-south-carolina-k-jones", "source_player_name": "K. Jones", "player": "Kennedy Jones", "canonical_player_id": "cb-south-carolina-kennedy-jones"},
+        {"source_player_id": "cb-south-carolina-scobey", "source_player_name": "Scobey", "player": "KJ Scobey", "canonical_player_id": "cb-south-carolina-kj-scobey"},
+        {"source_player_id": "cb-south-carolina-hollins", "source_player_name": "Hollins", "player": "Beau Hollins", "canonical_player_id": "cb-south-carolina-beau-hollins"},
+        {"source_player_id": "cb-south-carolina-kaufer", "source_player_name": "Kaufer", "player": "Max Kaufer", "canonical_player_id": "cb-south-carolina-max-kaufer"},
+        {"source_player_id": "cb-south-carolina-bakes", "source_player_name": "Bakes", "player": "Ryan Bakes", "canonical_player_id": "cb-south-carolina-ryan-bakes"},
+        {"source_player_id": "cb-south-carolina-carrion", "source_player_name": "Carrion", "player": "Jordan Carrion", "canonical_player_id": "cb-south-carolina-jordan-carrion"},
+        {"source_player_id": "cb-south-carolina-kaczmar", "source_player_name": "Kaczmar", "player": "Henry Kaczmar", "canonical_player_id": "cb-south-carolina-henry-kaczmar"},
+        {"source_player_id": "cb-south-carolina-mccoy", "source_player_name": "McCoy", "player": "Jake McCoy", "canonical_player_id": "cb-south-carolina-jake-mccoy"},
+        {"source_player_id": "cb-south-carolina-pitzer", "source_player_name": "Pitzer", "player": "Tyler Pitzer", "canonical_player_id": "cb-south-carolina-tyler-pitzer"},
+        {"source_player_id": "cb-south-carolina-c-jones", "source_player_name": "C. Jones", "player": "Caleb Jones", "canonical_player_id": "cb-south-carolina-caleb-jones"}
+      ]
+    }
   ]
 }

@@ -24,6 +24,24 @@ audit=json.loads((DATA/"player_identity_reconciliation_audit.json").read_text())
 cross=json.loads((DATA/"player_identity_crosswalk.json").read_text())
 original=json.loads((DATA/"player_stats.json").read_text())
 games=json.loads((DATA/"games.json").read_text())
+name_corrections=json.loads((DATA/"player_name_corrections.json").read_text())
+sc_game="cb-2025-03-28-tennessee-south-carolina-att0326"
+sc_names=next((g for g in name_corrections.get("games",[]) if g.get("game_id")==sc_game),None)
+sc_source=[r for r in original if r["game_id"]==sc_game and r["team"]=="South Carolina"]
+check(sc_names is not None and sc_names["team"]=="South Carolina" and
+      len(sc_source)==len(sc_names["corrections"])==14,
+      "March 28 South Carolina needs exactly 14 source-scoped names")
+sc_by_id={r["player_id"]:r for r in sc_source}
+check(len(sc_by_id)==14 and
+      {f["source_player_id"] for f in sc_names["corrections"]}==set(sc_by_id) and
+      len({f["canonical_player_id"] for f in sc_names["corrections"]})==14 and
+      all(sc_by_id[f["source_player_id"]]["player"]==f["source_player_name"]
+          for f in sc_names["corrections"]),
+      "The March 28 full names must each match one original South Carolina row")
+sc_lookup={f["source_player_name"]:f["player"] for f in sc_names["corrections"]}
+check(sc_lookup["Stone"]=="Evan Stone" and sc_lookup["K. Jones"]=="Kennedy Jones" and
+      sc_lookup["C. Jones"]=="Caleb Jones" and sc_lookup["Pitzer"]=="Tyler Pitzer",
+      "South Carolina's identical surnames and pitcher/hitter identities were mixed up")
 check(len(games)==444 and len(original)==13183 and len(rules["rules"])==rules["expected_proposals"]==101,
       "Protected college attendance or original official player rows changed")
 check(audit["ready_merges"]==97 and audit["not_ready"]==4 and
@@ -145,6 +163,23 @@ try:
         check(page.locator(".cb-profile-hero h1").inner_text()=="Tyler Pitzer" and
               page.locator(".cb-player-game-log tbody tr").count()==5,
               "Abbreviated South Carolina Pitzer deep link resolves to all five attended games")
+        page.goto(base+"/game.html?id="+quote(sc_game),wait_until="domcontentloaded")
+        page.locator("#cb-box .mlb-team-box[data-side='home'][data-category='batting']").wait_for(timeout=35000)
+        bat_names={f["player"] for f in sc_names["corrections"] if sc_by_id[f["source_player_id"]].get("batting")}
+        arm_names={f["player"] for f in sc_names["corrections"] if sc_by_id[f["source_player_id"]].get("pitching")}
+        sc_bat=page.locator("#cb-box .mlb-team-box[data-side='home'] .cb-player-cell a").all_inner_texts()
+        check(set(sc_bat)==bat_names and len(sc_bat)==11,
+              "March 28 South Carolina batting box score has missing or abbreviated names")
+        page.locator("[data-cat='pitching']").click()
+        sc_pitch=page.locator("#cb-box .mlb-team-box[data-side='home'] .cb-player-cell a").all_inner_texts()
+        check(set(sc_pitch)==arm_names and len(sc_pitch)==3 and
+              page.locator(".mlb-decision-card[data-decision='loss'] a").inner_text()=="Jake McCoy",
+              "March 28 South Carolina pitchers and losing decision need full linked names")
+        page.goto(base+"/player.html?id=cb-south-carolina-stone",wait_until="domcontentloaded")
+        page.locator(".cb-profile-hero").wait_for(timeout=35000)
+        check(page.locator(".cb-profile-hero h1").inner_text()=="Evan Stone" and
+              page.locator(".cb-player-game-log tbody tr").count()>1,
+              "March 28 Evan Stone should share his existing multi-game profile")
         # Three still-deferred players remain at their old, single-school URLs.
         page.goto(base+"/player.html?id="+quote("cb-uc-san-diego-tate-soderstrom"),wait_until="domcontentloaded")
         page.locator(".cb-profile-hero").wait_for(timeout=35000)

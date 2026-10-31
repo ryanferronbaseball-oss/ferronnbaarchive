@@ -549,6 +549,116 @@
         "cb-san-diego-anthony-donatella": 8,
         "cb-san-diego-travis-kuhn": 6
       }
+    },
+    {
+      "game_id": "cb-2018-02-18-cincinnati-san-diego-att0005",
+      "source_url": "https://storage.googleapis.com/gobearcats-com-prod/2025/06/23/qre66UMRSF5t969mTcx51AEMiCvv3XATSOCaqyhH.pdf",
+      "verification_note": "Official Cincinnati at San Diego Game 1 gamebook (dated February 17, 2018): Cincinnati 7, San Diego 4. Cincinnati 46 PA equals San Diego 46 BF; San Diego 43 PA equals Cincinnati 43 BF. Eric Santiago reached on catcher interference, which counts as a PA but not an AB; three Cincinnati HBP, two SH, two SF, one USD SF.",
+      "expected_batting_rows": 25,
+      "expected_pitching_rows": 8,
+      "hit_by_pitch": {
+        "cb-cincinnati-connor-mcvey": 1,
+        "cb-cincinnati-jace-mercer": 1,
+        "cb-cincinnati-eric-santiago": 1
+      },
+      "sac_bunts": {
+        "cb-cincinnati-jace-mercer": 1,
+        "cb-cincinnati-treg-haberkorn": 1
+      },
+      "sac_flies": {
+        "cb-cincinnati-jace-mercer": 1,
+        "cb-cincinnati-manny-rodriguez": 1,
+        "cb-san-diego-shane-mcguire": 1
+      },
+      "catcher_interference": {
+        "cb-cincinnati-eric-santiago": 1
+      },
+      "batters_faced": {
+        "cb-cincinnati-cam-alldred": 23,
+        "cb-cincinnati-aj-kullman": 12,
+        "cb-cincinnati-jarod-yoakam": 5,
+        "cb-cincinnati-reese-robinson": 3,
+        "cb-san-diego-louie-crow": 18,
+        "cb-san-diego-noah-prewett": 1,
+        "cb-san-diego-anthony-donatella": 16,
+        "cb-san-diego-justin-friedman": 11
+      }
+    },
+    {
+      "game_id": "cb-2018-02-23-cal-poly-arkansas-att0007",
+      "source_url": "https://arkansasrazorbacks.com/stats/baseball/2018/cp-ark.htm",
+      "verification_note": "Official February 23 Cal Poly vs Arkansas gamebook: Cal Poly 4, Arkansas 3. Cal Poly 38 PA equals Arkansas 38 BF; Arkansas 38 PA equals Cal Poly 38 BF. Luke Bonfield reached on catcher interference; Nick Meyer had one sacrifice bunt. No HBP or sacrifice flies.",
+      "expected_batting_rows": 23,
+      "expected_pitching_rows": 8,
+      "hit_by_pitch": {},
+      "sac_bunts": {
+        "cb-cal-poly-nick-meyer": 1
+      },
+      "sac_flies": {},
+      "catcher_interference": {
+        "cb-arkansas-luke-bonfield": 1
+      },
+      "batters_faced": {
+        "cb-arkansas-blaine-knight": 23,
+        "cb-arkansas-jackson-rutledge": 4,
+        "cb-arkansas-bryce-bonnin": 1,
+        "cb-arkansas-jake-reindl": 10,
+        "cb-cal-poly-michael-clark": 23,
+        "cb-cal-poly-kyle-smith": 1,
+        "cb-cal-poly-taylor-dollard": 10,
+        "cb-cal-poly-andrew-alvarez": 4
+      }
+    },
+    {
+      "game_id": "cb-2018-05-09-arizona-state-san-diego-att0031",
+      "source_url": "https://thesundevils.com/boxscore/466",
+      "verification_note": "Official Arizona State May 9, 2018 box-score screenshots previously supplied by the user and transcribed in the source evidence audit: Arizona State 12, San Diego 7. Arizona State 48 PA equals San Diego 48 BF; San Diego 41 PA equals Arizona State 41 BF. Lyle Lin and Shane McGuire HBP; no sacrifices or catcher interference.",
+      "expected_batting_rows": 23,
+      "expected_pitching_rows": 7,
+      "hit_by_pitch": {
+        "cb-arizona-state-lyle-lin": 1,
+        "cb-san-diego-shane-mcguire": 1
+      },
+      "sac_bunts": {},
+      "sac_flies": {},
+      "catcher_interference": {},
+      "batters_faced": {
+        "cb-arizona-state-sam-romero": 29,
+        "cb-arizona-state-connor-higgins": 2,
+        "cb-arizona-state-dellan-raish": 10,
+        "cb-san-diego-nick-sprengel": 20,
+        "cb-san-diego-travis-kuhn": 11,
+        "cb-san-diego-louie-crow": 6,
+        "cb-san-diego-nate-walker": 11
+      }
+    },
+    {
+      "game_id": "cb-2019-02-24-cal-state-fullerton-oklahoma-att0040",
+      "source_url": "https://soonersports.com/sports/2019/8/7/2150228",
+      "verification_note": "Official February 24 Cal State Fullerton vs Oklahoma gamebook and play-by-play: Fullerton 8, Oklahoma 6. Fullerton 47 PA equals Oklahoma 47 BF; Oklahoma 40 PA equals Fullerton 40 BF. Pavletich and Lindsly each had one sacrifice bunt, with no HBP, SF, or catcher interference.",
+      "expected_batting_rows": 25,
+      "expected_pitching_rows": 12,
+      "hit_by_pitch": {},
+      "sac_bunts": {
+        "cb-cal-state-fullerton-j-pavletich": 1,
+        "cb-oklahoma-brady-lindsly": 1
+      },
+      "sac_flies": {},
+      "catcher_interference": {},
+      "batters_faced": {
+        "cb-cal-state-fullerton-m-hbp-ibb-ab-bf-fo-go-knorr": 23,
+        "cb-cal-state-fullerton-l-anderson": 5,
+        "cb-cal-state-fullerton-k-luckham": 9,
+        "cb-cal-state-fullerton-m-weisberg": 3,
+        "cb-oklahoma-levi-hbp-ibb-ab-bf-fo-go-prater": 22,
+        "cb-oklahoma-jaret-godman": 7,
+        "cb-oklahoma-jake-terry": 1,
+        "cb-oklahoma-aaron-brooks": 4,
+        "cb-oklahoma-ledgend-smith": 3,
+        "cb-oklahoma-ryan-madden": 3,
+        "cb-oklahoma-jason-ruffcorn": 2,
+        "cb-oklahoma-zack-matthews": 5
+      }
     }
   ]
 }

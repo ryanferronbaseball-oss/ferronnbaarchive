@@ -93,8 +93,9 @@ function applyStatBackfills(sourceRows,manifest){
   if(batting.length!==game.expected_batting_rows||pitching.length!==game.expected_pitching_rows)throw Error("Stat backfill row count mismatch: "+game.game_id);
   const batIds=new Set(batting.map(r=>r.player_id)),pitchIds=new Set(pitching.map(r=>r.player_id));
   if(batIds.size!==batting.length||pitchIds.size!==pitching.length)throw Error("Ambiguous stat backfill player ID");
-  const categories=[["hit_by_pitch",batIds],["sac_bunts",batIds],["sac_flies",batIds],["batters_faced",pitchIds]];
+  const categories=[["hit_by_pitch",batIds],["sac_bunts",batIds],["sac_flies",batIds],["catcher_interference",batIds],["batters_faced",pitchIds]];
   for(const [key,ids] of categories){
+   if(key==="catcher_interference"&&game[key]==null)continue;
    if(!game[key]||typeof game[key]!=="object")throw Error("Missing stat backfill category: "+key);
    for(const [id,n] of Object.entries(game[key]))if(!ids.has(id)||!Number.isInteger(n)||n<0)throw Error("Invalid stat backfill entry: "+id);
   }
@@ -102,10 +103,10 @@ function applyStatBackfills(sourceRows,manifest){
   const teamPA=new Map(),teamBF=new Map();
   for(const r of batting){
    const id=r.player_id,b=r.batting;
-   const values={hitByPitch:game.hit_by_pitch[id]??0,sacBunts:game.sac_bunts[id]??0,sacFlies:game.sac_flies[id]??0};
+   const values={hitByPitch:game.hit_by_pitch[id]??0,sacBunts:game.sac_bunts[id]??0,sacFlies:game.sac_flies[id]??0,catcherInterference:game.catcher_interference?.[id]??0};
    for(const [key,n] of Object.entries(values))if(b[key]!=null&&b[key]!==n)throw Error("Stat backfill disagrees with existing batting data: "+id);
    if(stat(b.atBats)==null||stat(b.baseOnBalls)==null)throw Error("Missing AB or BB in stat backfill: "+id);
-   const pa=stat(b.atBats)+stat(b.baseOnBalls)+values.hitByPitch+values.sacBunts+values.sacFlies;
+   const pa=stat(b.atBats)+stat(b.baseOnBalls)+values.hitByPitch+values.sacBunts+values.sacFlies+values.catcherInterference;
    teamPA.set(r.team,(teamPA.get(r.team)||0)+pa);
    const rowKey=[r.game_id,r.team,id].join("\u0000");
    patches.set(rowKey,{...(patches.get(rowKey)||{}),batting:values});
@@ -197,7 +198,7 @@ function bat(rows){
  const bb=sum(rows,"batting","baseOnBalls"),hbp=sum(rows,"batting","hitByPitch"),sf=sum(rows,"batting","sacFlies");
  const appearances=rows.filter(r=>r.batting!=null);
  const pa=appearances.length&&appearances.every(r=>["atBats","baseOnBalls","hitByPitch","sacFlies","sacBunts"].every(k=>stat(r.batting[k])!=null))
-  ?appearances.reduce((total,r)=>total+["atBats","baseOnBalls","hitByPitch","sacFlies","sacBunts"].reduce((n,k)=>n+Number(r.batting[k]),0),0):null;
+  ?appearances.reduce((total,r)=>total+["atBats","baseOnBalls","hitByPitch","sacFlies","sacBunts"].reduce((n,k)=>n+Number(r.batting[k]),0)+(stat(r.batting.catcherInterference)??0),0):null;
  const singles=h!=null&&d!=null&&t!=null&&hr!=null?h-d-t-hr:null;
  const tb=singles==null?null:singles+2*d+3*t+4*hr;
  const obDen=ab!=null&&bb!=null&&hbp!=null&&sf!=null?ab+bb+hbp+sf:null;

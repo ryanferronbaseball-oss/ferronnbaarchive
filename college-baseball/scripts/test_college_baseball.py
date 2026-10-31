@@ -524,6 +524,24 @@ with tempfile.TemporaryDirectory() as t:
                 check(page.locator(".cb-game-card").count() >= 6,
                       f"{width} actual 444-game attendance summary and six newest sourced games render")
                 page.screenshot(path=str(REVIEW / f"overview-{width}.png"), full_page=True)
+                visit(page, host, "game.html?id=cb-2024-04-13-virginia-tech-georgia-tech-att0268",
+                      "#cb-game-details .cb-game-summary")
+                check("0 – 19" in page.locator("#cb-game-details").inner_text() and
+                      "Apr 13, 2024" in page.locator("#cb-game-details").inner_text() and
+                      page.locator('a[href*="gt041324.pdf"]').count()==1,
+                      f"{width} corrected April 13 Georgia Tech 19–0 game links official gamebook")
+                check(page.locator('.mlb-team-box[data-side="away"] .mlb-lineup-row').count()==14 and
+                      page.locator('.mlb-team-box[data-side="home"] .mlb-lineup-row').count()==17,
+                      f"{width} corrected April 13 game has all 31 source-verified batters")
+                page.locator('[data-cat="pitching"]').click()
+                check(page.locator('.mlb-team-box[data-side="away"] .mlb-lineup-row').count()==8 and
+                      page.locator('.mlb-team-box[data-side="home"] .mlb-lineup-row').count()==1 and
+                      page.locator('[data-decision="win"] .mlb-decision-name').inner_text()=="Cam Jones",
+                      f"{width} corrected game has all nine source-verified pitching appearances")
+                visit(page, host, "game.html?id=cb-2024-04-14-virginia-tech-georgia-tech-att0268",
+                      "#cb-game-details .cb-game-summary")
+                check("0 – 19" in page.locator("#cb-game-details").inner_text(),
+                      f"{width} original game deep link resolves to the April 13 correction")
                 visit(page, host, "game.html?id=cb-2026-05-31-ucf-auburn", "#cb-game-details .cb-game-summary")
                 check("UCF @ Auburn" in page.locator("#cb-game-details").inner_text()
                       and "3 – 9" in page.locator("#cb-game-details").inner_text(),

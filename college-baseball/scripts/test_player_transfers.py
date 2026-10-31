@@ -27,16 +27,32 @@ games=json.loads((DATA/"games.json").read_text())
 check(len(games)==444 and len(original)==13183 and len(rules["rules"])==rules["expected_proposals"]==98,
       "Protected college attendance or original official player rows changed")
 check(audit["ready_merges"]==94 and audit["not_ready"]==4 and
-      cross["activated_person_merges"]==94 and cross["pending_person_merges"]==4,
-      "Exactly 94 identities supported by 98 owner-nominated school pairs")
+      cross["requested_person_merges"]==98 and
+      cross["activated_person_merges"]==95 and cross["pending_person_merges"]==3,
+      "95 of 98 owner-nominated identities linked after the verified April 13 game correction")
 check({x["name"] for x in audit["preview"] if x["status"]!="merge_ready"}==
       {"Tate Soderstrom","Ethan Lizama","Kyle Hvidsten","Michael Graziano"},
-      "Unexpected four school-side source exceptions")
-check(len(cross["merges"])==94 and len({m["canonical_id"] for m in cross["merges"]})==94,
+      "Original-row audit should still document the four former source exceptions")
+check(len(cross["merges"])==95 and len({m["canonical_id"] for m in cross["merges"]})==95,
       "Missing or duplicate canonical identities")
 source_by_key=defaultdict(list)
 for r in original:
     source_by_key[(r["team"],r["player_id"])].append(r)
+# The preserved raw import lacks Graziano's Georgia Tech appearance because
+# worksheet attendance #268 originally pointed to the wrong April 14 game.
+# The official April 13 correction now supplies that exact missing school side.
+corrections=json.loads((DATA/"attendance_game_corrections.json").read_text())["games"]
+game_correction=next(g for g in corrections if g["replaces_game_id"]==
+                     "cb-2024-04-14-virginia-tech-georgia-tech-att0268")
+graziano=[x for x in game_correction["batting"]["Georgia Tech"] if x[1]=="Michael Graziano"]
+check(len(graziano)==1 and game_correction["game"]["date"]=="2024-04-13" and
+      game_correction["game"]["home_score"]==19 and
+      game_correction["source_url"].endswith("gt041324.pdf"),
+      "Official corrected gamebook must establish Michael Graziano at Georgia Tech")
+corrected_graziano={"game_id":game_correction["game"]["id"],
+                   "team":"Georgia Tech", "player":"Michael Graziano",
+                   "player_id":"cb-georgia-tech-michael-graziano"}
+source_by_key[(corrected_graziano["team"],corrected_graziano["player_id"])].append(corrected_graziano)
 mapped={}
 used_ids=set()
 for m in cross["merges"]:
@@ -63,15 +79,16 @@ for withheld in ("Dylan Johnson","Tanner Smith"):
     check(set(m["schools"])==expected and
           all(school(pair["team"]) in {school(t) for t in expected} for pair in m["pairs"]),
           "Explicit name collision school exclusion breached")
-# Simulate the browser alias transform and require the entire 13,183 original lines
-# to remain present, with no duplicate canonical person-game IDs.
-unified=[(r["game_id"],mapped.get((r["team"],r["player_id"]),r["player_id"])) for r in original]
-check(len(set(unified))==len(original),"Two identities collided in the same attended game")
-before=len({r["player_id"] for r in original})
+# The identity test includes the one newly sourced Georgia Tech school-side row;
+# the 13,183 protected original records remain immutable.
+effective=original+[corrected_graziano]
+unified=[(r["game_id"],mapped.get((r["team"],r["player_id"]),r["player_id"])) for r in effective]
+check(len(set(unified))==len(effective),"Two identities collided in the same attended game")
+before=len({r["player_id"] for r in effective})
 after=len({p for _,p in unified})
 check(before-after==cross["activated_person_merges"],"Exactly one unique player identity should collapse per approved pair")
 print(json.dumps({"source_records_preserved":len(original),"verified_owner_proposals":cross["activated_person_merges"],
-      "left_pending":4,"before_unique_players":before,"after_unique_players":after,
+      "left_pending":cross["pending_person_merges"],"before_unique_players":before,"after_unique_players":after,
       "source_college_games":len(games)},indent=2))
 
 # Existing JS page has full crosswalk logic. Smoke-test its behavior in Chromium.
@@ -96,6 +113,7 @@ cases=[
     ("Tanner Smith",["Oregon State","Miami"],2),
     ("Dalton Bargo",["Tennessee","NC State"],8),
     ("Andrew Wiggins",["Indiana","NC State"],3),
+    ("Michael Graziano",["Georgia Tech","Mercer"],2),
 ]
 try:
     with sync_playwright() as pw:
@@ -114,7 +132,7 @@ try:
             check(page.locator(".cb-player-game-log tbody tr").count()==games_expected,
                   "Witnessed game logs do not combine source rows for "+who)
             print("PASS unified old-school deep link",who,display,games_expected)
-        # Four deferred players remain at their old, single-school URL.
+        # Three still-deferred players remain at their old, single-school URLs.
         page.goto(base+"/player.html?id="+quote("cb-uc-san-diego-tate-soderstrom"),wait_until="domcontentloaded")
         page.locator(".cb-profile-hero").wait_for(timeout=35000)
         check(page.locator(".mlb-profile-team-name").inner_text().casefold()=="uc san diego",

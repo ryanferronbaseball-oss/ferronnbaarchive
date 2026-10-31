@@ -11,7 +11,7 @@ const gameUrl=g=>"./game.html?id="+encodeURIComponent(g.id);
 const playerUrl=p=>"./player.html?id="+encodeURIComponent(p.player_id);
 const unique=a=>[...new Set(a.filter(x=>x!=null&&x!==""))];
 function nav(active){
- const links=[["index.html","Overview","home"],["game.html","Games","games"],["stats.html","Players","players"],["records.html","Records","records"]];
+ const links=[["index.html","Overview","home"],["game.html","Games","games"],["stats.html","Players","players"],["records.html","Records","records"],["mlb-alumni.html","To the MLB","mlb-alumni"]];
  return '<header class="archive-header"><a class="archive-logo" href="./index.html">COURTSIDE ARCHIVE<small>EVERY GAME HAS A STORY · COLLEGE BASEBALL</small></a>'
  +'<nav class="archive-nav" aria-label="College Baseball archive navigation">'+links.map(([href,label,name])=>'<a href="./'+href+'"'+(active===name||active==="player"&&name==="players"?' aria-current="page"':'')+'>'+label+'</a>').join("")
  +'<a href="../index.html" class="back-link">All sports ↗</a></nav></header>';
@@ -486,6 +486,7 @@ function renderRecords(d){
 function render(){
  const page=document.body.dataset.page||"home",app=$("app");
  $("navigation").innerHTML=nav(page);
+ if(page==="mlb-alumni")return;
  app.innerHTML=pending("Loading college baseball attendance records…");
  load().then(d=>{
   if(page==="games")renderGames(d);

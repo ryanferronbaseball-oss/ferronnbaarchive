@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F2">
+<meta name="description" content="Verified MLB alumni you watched play college baseball, with attended game logs, draft selections and MLB debuts.">
+<title>From College to MLB | Courtside Archive</title>
+<link rel="stylesheet" href="./assets/archive.css">
+<style>
+.alumni-lead{max-width:770px}.alumni-review{color:#445B4F;font-size:13px;font-weight:750;margin:12px 0 5px}
+.alumni-callout{color:#526657;font-size:12px;line-height:1.65;max-width:950px;margin:12px 0 24px;padding:12px 15px;border-left:3px solid #779680;background:#EFF3EB}
+.alumni-summary{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:30px 0}
+.alumni-summary .metric{border-radius:14px;padding:18px}.alumni-summary .metric strong{font-size:30px}
+.alumni-tabs{display:flex;gap:7px;flex-wrap:wrap;margin:20px 0}
+.alumni-tabs button{font-size:13px;font-weight:750;padding:11px 15px;border-radius:9px;border:1px solid #CCD8CB;background:#E9EEE7;color:var(--forest)}
+.alumni-tabs button[aria-selected=true]{background:var(--forest);color:#fff}
+.alumni-toolbar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:20px 0}
+.alumni-toolbar input,.alumni-toolbar select{font:inherit;padding:11px 13px;border:1px solid #CDD5CA;background:#fff;border-radius:9px;color:var(--ink);min-width:0}
+.alumni-toolbar input{flex:1;min-width:190px}.alumni-toolbar select{max-width:100%}
+.alumni-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-items:stretch}
+.alumni-player{border:1px solid #DEDCD2;background:#FFFEFB;border-radius:16px;padding:20px;min-width:0;overflow:hidden;display:flex;flex-direction:column}
+.alumni-head{min-width:0}.alumni-identity{display:grid;grid-template-columns:58px minmax(0,1fr);gap:13px;align-items:center;min-width:0}
+.alumni-identity>div{min-width:0}.alumni-portrait{position:relative;display:grid;place-items:center;width:58px;height:58px;overflow:hidden;border-radius:12px;background:#E5EAE2;border:1px solid #C5D3C2;color:var(--forest);font-size:16px;font-weight:900}
+.alumni-portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#E5EAE2}
+.alumni-name{display:block;font-size:21px;line-height:1.2;overflow-wrap:anywhere;letter-spacing:-.03em;font-weight:800;color:var(--forest)!important;text-decoration:none!important}
+.alumni-name:hover{text-decoration:underline!important}.alumni-school{color:#667268;font-size:13px;margin-top:5px;overflow-wrap:anywhere}
+.alumni-pill{display:inline-block;background:#E5EAE2;color:var(--forest);padding:6px 10px;font-size:11px;font-weight:750;border-radius:20px;margin-top:13px}
+.alumni-line{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:17px 0 14px;padding:13px;background:#F5F5EF;border-radius:10px}
+.alumni-line>div{min-width:0}.alumni-line strong{display:block;font-size:22px;font-variant-numeric:tabular-nums;line-height:1.25}
+.alumni-line small{display:block;font-size:11px;color:#667268;line-height:1.4;margin-top:4px}
+.alumni-info{font-size:13px;color:#46584A;line-height:1.6;margin:7px 0;overflow-wrap:anywhere}.alumni-info b{color:#252A2B}
+.alumni-dates{font-size:12px;color:#667268;line-height:1.7;margin-top:6px}.alumni-dates a{color:var(--forest);font-weight:700}
+.alumni-links{display:flex;gap:12px;flex-wrap:wrap;margin-top:auto;padding-top:17px;font-weight:700;font-size:13px}
+.alumni-links a{color:var(--forest)!important}.alumni-empty{grid-column:1/-1;color:#667268;padding:26px;border:1px dashed #BECDBF;background:#F2F4EE;border-radius:14px}
+.alumni-note{color:#667268;line-height:1.65;font-size:12px;max-width:980px;margin:25px 0}
+@media(max-width:980px){.alumni-cards{grid-template-columns:1fr}}
+@media(max-width:760px){.alumni-summary{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:430px){.alumni-summary{gap:8px}.alumni-summary .metric{padding:13px}.alumni-toolbar input{width:100%}.alumni-player{padding:16px}.alumni-name{font-size:20px}.alumni-line{gap:5px;padding:10px}.alumni-line strong{font-size:19px}}
+</style>
+<script defer src="./assets/archive.js?v=college-mlb-alumni-1"></script>
+<script defer src="./assets/mlb-alumni.js?v=college-mlb-alumni-1"></script>
+</head>
+<body data-page="mlb-alumni"><main>
+<div id="navigation"></div>
+<div id="app" role="main">
+<div class="eyebrow">College baseball · Career pathways</div>
+<h1>From college to the MLB.</h1>
+<p class="lead alumni-lead">Future big leaguers you watched play in college. Revisit the exact games, schools, dates, and box-score performances you witnessed—then see their MLB draft and debut milestones.</p>
+<p class="alumni-review">Last updated: <time id="lastVerified" datetime="2026-10-30">October 30, 2026</time></p>
+<p class="alumni-callout"><strong>Growing verified directory:</strong> This first edition includes the 64 MLB alumni you identified from your college baseball attendance history. Each has an official MLB debut and draft record (or verified undrafted signing). The larger college attendance archive has not yet been fully audited for additional MLB alumni, so these counts are verified-to-date rather than a final census.</p>
+<section class="alumni-summary" aria-label="College to MLB alumni counts">
+<div class="metric"><strong id="mlbCount">—</strong><small>Confirmed MLB alumni</small></div>
+<div class="metric"><strong id="draftCount">—</strong><small>Drafted, no verified MLB game</small></div>
+<div class="metric"><strong id="seenCount">—</strong><small>College games featuring these players</small></div>
+<div class="metric"><strong id="firstCount">—</strong><small>First-round MLB picks</small></div>
+</section>
+<div class="alumni-tabs" role="tablist" aria-label="MLB career classifications">
+<button type="button" role="tab" aria-selected="true" data-group="mlb">Played in MLB</button>
+<button type="button" role="tab" aria-selected="false" data-group="drafted_only">Drafted — no MLB appearance</button>
+</div>
+<div class="alumni-toolbar">
+<input id="search" type="search" aria-label="Search MLB alumni by player, school or drafting team" placeholder="Search player, college or MLB team…">
+<select id="sort" aria-label="Sort MLB alumni">
+<option value="draft">Highest MLB draft pick</option>
+<option value="games">Most college games seen</option>
+<option value="hits">Most hits witnessed</option>
+<option value="strikeouts">Most pitcher strikeouts witnessed</option>
+<option value="name">Name A–Z</option>
+</select>
+</div>
+<div class="alumni-cards" id="cards" aria-live="polite"><div class="alumni-empty">Loading verified MLB alumni and attended college game logs…</div></div>
+<p class="alumni-note">An MLB alumnus must have an official major-league debut, not merely a minor-league assignment or spring-training appearance. Draft information and debuts are sourced from MLB's official records. College stats and appearances include only games in your attendance archive; they are not MLB career totals. The draft team shown is the original selecting club, which may differ from the team a player later joined.</p>
+</div>
+<footer class="footer">Courtside Archive · College baseball attendance history and verified MLB pathways. College and professional statistics remain independent.</footer>
+</main></body></html>

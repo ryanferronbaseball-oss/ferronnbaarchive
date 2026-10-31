@@ -660,14 +660,15 @@ with tempfile.TemporaryDirectory() as t:
                 check(page.locator(".alumni-player").count()==1 and
                       "Aug 22, 2026" in page.locator(".alumni-player").inner_text() and
                       "23" in page.locator(".alumni-player").inner_text() and
-                      page.locator("#mlbCount").inner_text()=="71",
-                      f"{width} Kade Anderson remains in the 71-person College-to-MLB directory with two witnessed LSU games")
+                      page.locator("#mlbCount").inner_text()=="72",
+                      f"{width} Kade Anderson remains in the 72-person College-to-MLB directory with two witnessed LSU games")
                 for name, college_id, mlb_id, draft_year, pick in [
                     ("Josh Hendrickson", "cb-san-diego-josh-hendrickson", "681973", "2019", "1140"),
                     ("Cooper Hjerpe", "cb-oregon-state-cooper-hjerpe", "687309", "2022", "22"),
                     ("John Peck", "cb-pepperdine-john-peck", "807726", "2023", "200"),
                     ("Nick Frasso", "cb-loyola-marymount-nick-frasso", "693308", "2020", "106"),
                     ("Gabriel Hughes", "cb-gonzaga-gabriel-hughes", "687312", "2022", "10"),
+                    ("Cole Carrigg", "cb-san-diego-state-cole-carrigg", "694249", "2023", "65"),
                 ]:
                     visit(page, host, f"player.html?id={college_id}", ".cb-profile-hero")
                     check(page.locator(".cb-profile-hero h1").inner_text().casefold()==name.casefold() and
@@ -689,8 +690,15 @@ with tempfile.TemporaryDirectory() as t:
                 page.locator("#search").fill("Nick Frasso")
                 check(page.locator(".alumni-player").count()==1 and
                       "Aug 4, 2026" in page.locator(".alumni-player").inner_text() and
-                      page.locator("#mlbCount").inner_text()=="71",
-                      f"{width} Nick Frasso joins the 71-person College-to-MLB directory")
+                      page.locator("#mlbCount").inner_text()=="72",
+                      f"{width} Nick Frasso remains in the 72-person College-to-MLB directory")
+                page.locator("#search").fill("Cole Carrigg")
+                check(page.locator(".alumni-player").count()==1 and
+                      "Jun 9, 2026" in page.locator(".alumni-player").inner_text() and
+                      "Round CB-B" in page.locator(".alumni-player").inner_text() and
+                      "Pick #65" in page.locator(".alumni-player").inner_text() and
+                      page.locator("#mlbCount").inner_text()=="72",
+                      f"{width} Cole Carrigg joins the 72-person College-to-MLB directory with his official draft round and debut")
                 visit(page, host, "records.html", ".cb-record")
                 # Historical backfill legitimately changes the single-game
                 # record holders. Verify source-backed record categories and

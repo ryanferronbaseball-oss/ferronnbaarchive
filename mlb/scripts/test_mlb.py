@@ -405,7 +405,9 @@ try:
    check(page.locator("#sc-records-panel .sc-highlight").count()==3,
          f"{width} Statcast pitch and contact records coexist with traditional records")
    fits("MLB records with Statcast")
-   visit("index.html","document.getElementById('allGames').textContent==='267'")
+   visit("index.html", "Number(document.getElementById('allGames').textContent.replace(/,/g,'')) === "
+         "['nbaGames','collegeGames','nflGames','cfbGames','soccerGames','mlbGames','collegeBaseballGames']"
+         ".reduce((total,id)=>total+Number(document.getElementById(id).textContent.replace(/,/g,'')),0)")
    check(page.locator(".sport-card").count()==6,f"{width} sixth sports archive card")
    fits("main portal")
    page.close()

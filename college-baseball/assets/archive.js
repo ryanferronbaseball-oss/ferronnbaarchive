@@ -453,7 +453,7 @@ async function renderPlayer(d){
  for(const entry of draftRegistry.picks){
   if(!entry.college_player_id||!entry.name||!Number.isInteger(entry.draft_year)||
      !String(entry.draft_round||"").trim()||!Number.isInteger(entry.draft_pick)||!entry.draft_team||
-     draftIds.has(entry.college_player_id)||!d.players.some(x=>x.player_id===entry.college_player_id&&x.name.toLowerCase()===entry.name.toLowerCase()))
+     draftIds.has(entry.college_player_id)||d.players.some(x=>x.player_id===entry.college_player_id&&x.name.toLowerCase()!==entry.name.toLowerCase()))
    throw Error("Invalid or unmatched verified draft selection: "+entry.college_player_id);
   draftIds.add(entry.college_player_id);
  }

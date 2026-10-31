@@ -144,6 +144,55 @@
         "cb-south-carolina-parker-marlatt": 6,
         "cb-south-carolina-garrett-gainey": 8
       }
+    },
+    {
+      "game_id": "cb-2024-03-24-vanderbilt-south-carolina-att0262",
+      "source_url": "https://storage.googleapis.com/vucommodores-prod/2024/03/VU25-Box.pdf",
+      "verification_note": "Official March 24 PDF identifies Vanderbilt 2 at South Carolina 10. Vanderbilt has 34 PA matching South Carolina's 34 BF; South Carolina has 40 PA matching Vanderbilt's 40 BF. Three HBP and two SH; no SF.",
+      "expected_batting_rows": 18,
+      "expected_pitching_rows": 5,
+      "hit_by_pitch": {
+        "cb-vanderbilt-troy-laneve": 1,
+        "cb-south-carolina-talmadge-lecroy": 1,
+        "cb-south-carolina-gavin-casas": 1
+      },
+      "sac_bunts": {
+        "cb-south-carolina-talmadge-lecroy": 1,
+        "cb-south-carolina-blake-jackson": 1
+      },
+      "sac_flies": {},
+      "batters_faced": {
+        "cb-vanderbilt-devin-futrell": 18,
+        "cb-vanderbilt-ryan-ginther": 10,
+        "cb-vanderbilt-sam-hliboki": 12,
+        "cb-south-carolina-tyler-pitzer": 25,
+        "cb-south-carolina-matthew-becker": 9
+      }
+    },
+    {
+      "game_id": "cb-2024-05-22-virginia-georgia-tech-att0280",
+      "source_url": "https://static.virginiasports.com/custompages/sports/m-basebl/stats/2023-2024/55gt.htm",
+      "verification_note": "Official May 22 Virginia 13–0 Georgia Tech box score includes two HBP (Becker, Whalen) and one SH (Becker). Virginia 43 PA match Georgia Tech 43 BF; Georgia Tech 25 PA match Virginia 25 BF; no SF.",
+      "expected_batting_rows": 19,
+      "expected_pitching_rows": 8,
+      "hit_by_pitch": {
+        "cb-virginia-eric-becker": 1,
+        "cb-virginia-bobby-whalen": 1
+      },
+      "sac_bunts": {
+        "cb-virginia-eric-becker": 1
+      },
+      "sac_flies": {},
+      "batters_faced": {
+        "cb-virginia-evan-blanco": 22,
+        "cb-virginia-matt-augustin": 3,
+        "cb-georgia-tech-aeden-finateri": 9,
+        "cb-georgia-tech-ben-king": 10,
+        "cb-georgia-tech-logan-mcguire": 8,
+        "cb-georgia-tech-riley-stanford": 10,
+        "cb-georgia-tech-brett-thomas": 2,
+        "cb-georgia-tech-carson-ballard": 4
+      }
     }
   ]
 }

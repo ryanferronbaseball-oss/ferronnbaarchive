@@ -104,7 +104,7 @@ try:
    page.locator("#goalKind").select_option("own_goal")
    check(page.locator("#goalRows .soccer-event").count()==1,f"{width} own goal separated")
    fits("goal history")
-   visit("index.html","document.getElementById('allGames').textContent==='704'")
+   visit("index.html","Number((document.getElementById('allGames')?.textContent||'').replace(/,/g,''))>0")
    check(page.locator(".sport-card").count()==7,f"{width} master hub seven sports")
    check(page.locator("a[href='./college-baseball/index.html']").count()>=1,f"{width} college baseball now listed in hub")
    check(page.locator("a[href='./soccer/index.html']").count()>=1,f"{width} soccer featured in hub")

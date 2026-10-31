@@ -144,16 +144,61 @@
     {
       "game_id": "cb-2018-02-17-california-cincinnati-att0004",
       "team": "Cincinnati",
-      "description": "Link Cincinnati's surname-only Rodriguez to shortstop Manny Rodriguez, and Perez to left-handed pitcher J.T. Perez, using the official 2018 roster and adjacent full-name gamebooks. Preserve the original California gamebook records and statistics.",
+      "description": "Link Cincinnati's surname-only Rodriguez to Manny Rodriguez, Perez to J.T. Perez, and Bumpass to A.J. Bumpass, using the official 2018 roster and adjacent full-name gamebooks. Preserve the original California gamebook records and statistics.",
       "verified_on": "2026-10-31",
       "evidence_urls": [
         "https://calbears.com/sports/baseball/stats/2018/cincinnati/boxscore/19884",
         "https://gobearcats.com/news/2018/06/05/rodriguez-selected-in-tenth-round-of-mlb-draft-by-mets",
-        "https://gobearcats.com/sports/baseball/roster/season/2018/player/jt-perez"
+        "https://gobearcats.com/sports/baseball/roster/season/2018/player/jt-perez",
+        "https://gobearcats.com/sports/baseball/roster/season/2018"
       ],
       "corrections": [
         {"source_player_id": "cb-cincinnati-rodriguez", "source_player_name": "Rodriguez", "player": "Manny Rodriguez", "canonical_player_id": "cb-cincinnati-manny-rodriguez"},
-        {"source_player_id": "cb-cincinnati-perez", "source_player_name": "Perez", "player": "J.T. Perez", "canonical_player_id": "cb-cincinnati-jt-perez"}
+        {"source_player_id": "cb-cincinnati-perez", "source_player_name": "Perez", "player": "J.T. Perez", "canonical_player_id": "cb-cincinnati-jt-perez"},
+        {"source_player_id": "cb-cincinnati-bumpass", "source_player_name": "Bumpass", "player": "AJ Bumpass", "canonical_player_id": "cb-cincinnati-aj-bumpass"}
+      ]
+    },
+    {
+      "game_id": "cb-2018-02-17-california-san-diego-att0003",
+      "team": "San Diego",
+      "description": "Restore full pitcher names Gabriel Ponce and Justin Friedman from initial-only source labels, retaining original statistics and the established San Diego player profiles.",
+      "verified_on": "2026-10-31",
+      "evidence_urls": [
+        "https://calbears.com/sports/baseball/stats/2018/san-diego/boxscore/19870",
+        "https://usdtoreros.com/news/2018/2/17/Seventh_Inning_Special.aspx",
+        "https://usdtoreros.com/sports/baseball/roster/2018"
+      ],
+      "corrections": [
+        {"source_player_id": "cb-san-diego-g-ponce", "source_player_name": "G Ponce", "player": "Gabriel Ponce", "canonical_player_id": "cb-san-diego-gabriel-ponce"},
+        {"source_player_id": "cb-san-diego-j-friedman", "source_player_name": "J Friedman", "player": "Justin Friedman", "canonical_player_id": "cb-san-diego-justin-friedman"}
+      ]
+    },
+    {
+      "game_id": "cb-2018-02-25-arizona-san-diego-att0012",
+      "team": "San Diego",
+      "description": "Link initial-only pitcher G Ponce to Gabriel Ponce using the 2018 San Diego roster and source gamebook.",
+      "verified_on": "2026-10-31",
+      "evidence_urls": [
+        "https://arizonawildcats.com/sports/baseball/stats/2018/tony-gwynn-classic-vs-san-diego/boxscore/15291",
+        "https://usdtoreros.com/sports/baseball/roster/2018"
+      ],
+      "corrections": [
+        {"source_player_id": "cb-san-diego-g-ponce", "source_player_name": "G Ponce", "player": "Gabriel Ponce", "canonical_player_id": "cb-san-diego-gabriel-ponce"}
+      ]
+    },
+    {
+      "game_id": "cb-2019-03-05-san-diego-uc-riverside-att0046",
+      "team": "UC Riverside",
+      "description": "Link C Cannon and D Miller to 2019 UCR draft picks Connor Cannon and Dean Miller, preserving original box-score statistics and game history.",
+      "verified_on": "2026-10-31",
+      "evidence_urls": [
+        "https://usdtoreros.com/boxscore.aspx?id=9239&path=baseball",
+        "https://gohighlanders.com/news/2019/6/6/baseball-mlb-draft-connor-cannon-and-dean-miller-selected.aspx",
+        "https://gohighlanders.com/sports/baseball/roster/2019"
+      ],
+      "corrections": [
+        {"source_player_id": "cb-uc-riverside-c-cannon", "source_player_name": "C Cannon", "player": "Connor Cannon", "canonical_player_id": "cb-uc-riverside-connor-cannon"},
+        {"source_player_id": "cb-uc-riverside-d-miller", "source_player_name": "D Miller", "player": "Dean Miller", "canonical_player_id": "cb-uc-riverside-dean-miller"}
       ]
     }
   ]

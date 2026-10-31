@@ -42,8 +42,20 @@ sc_lookup={f["source_player_name"]:f["player"] for f in sc_names["corrections"]}
 check(sc_lookup["Stone"]=="Evan Stone" and sc_lookup["K. Jones"]=="Kennedy Jones" and
       sc_lookup["C. Jones"]=="Caleb Jones" and sc_lookup["Pitzer"]=="Tyler Pitzer",
       "South Carolina's identical surnames and pitcher/hitter identities were mixed up")
-check(len(games)==444 and len(original)==13183 and len(rules["rules"])==rules["expected_proposals"]==101,
+check(len(games)==444 and len(original)==13184 and len(rules["rules"])==rules["expected_proposals"]==101,
       "Protected college attendance or original official player rows changed")
+frasso_game="cb-2018-04-08-loyola-marymount-san-diego-att0024"
+frasso=next((r for r in original if r["game_id"]==frasso_game and
+             r["player_id"]=="cb-loyola-marymount-nick-frasso"),None)
+kawano=next((r for r in original if r["game_id"]==frasso_game and
+             r["player_id"]=="cb-loyola-marymount-ryan-kawano"),None)
+check(frasso is not None and frasso.get("pitching",{}).get("outs")==6 and
+      frasso["pitching"]["losses"]==1 and
+      frasso["pitching"].get("earnedRuns")==4 and
+      frasso.get("identity_source_url","").endswith("Toreros_Run_Away_with_Series_Win.aspx") and
+      kawano is not None and "batting" in kawano and "pitching" not in kawano and
+      next(g for g in games if g["id"]==frasso_game)["pitching_decisions"]["loss"]=="Nick Frasso",
+      "LMU's April 8 recap must identify Frasso as the starter and loser without crediting Ryan Kawano as a pitcher")
 check(audit["ready_merges"]==97 and audit["not_ready"]==4 and
       cross["requested_person_merges"]==101 and
       cross["activated_person_merges"]==98 and cross["pending_person_merges"]==3,

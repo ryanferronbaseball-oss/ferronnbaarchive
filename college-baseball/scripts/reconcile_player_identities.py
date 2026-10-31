@@ -88,7 +88,7 @@ def main():
     games=json.loads(GAMES.read_text(encoding="utf-8"))
     by_game={g["id"]:g for g in games}
     expected_count=proposals["expected_proposals"]
-    if len(games)!=444 or len(rows)!=13183 or len(by_game)!=444 or len(proposals["rules"])!=expected_count:
+    if len(games)!=444 or len(rows)!=13184 or len(by_game)!=444 or len(proposals["rules"])!=expected_count:
         raise ValueError("Attended game, player line, or proposed transfer manifest count changed; review before reconciliation")
     if len({(r["game_id"],r["player_id"]) for r in rows})!=len(rows):
         raise ValueError("Duplicate original official player-game record")

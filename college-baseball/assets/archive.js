@@ -18,8 +18,18 @@ function nav(active){
 }
 async function json(name,fallback){const r=await fetch("./data/"+name,{cache:"no-store"});if(!r.ok)throw Error("Missing "+name+" ("+r.status+")");return r.json()}
 async function load(){
- const [games,sourceRows,report,crosswalk,identity]=await Promise.all([json("games.json"),json("player_stats.json"),json("import_report.json"),json("mlb_crosswalk.json"),json("player_identity_crosswalk.json")]);
+ const [games,sourceRows,report,crosswalk,identity,nameCorrections]=await Promise.all([json("games.json"),json("player_stats.json"),json("import_report.json"),json("mlb_crosswalk.json"),json("player_identity_crosswalk.json"),json("player_name_corrections.json")]);
  if(!identity||!Array.isArray(identity.merges))throw Error("Missing verified player identity merge manifest");
+ if(!nameCorrections||!Array.isArray(nameCorrections.corrections)||!nameCorrections.game_id||!nameCorrections.team)throw Error("Missing verified game-specific player name corrections");
+ // Preserve official source rows: scoped corrections restore names and link
+ // known person profiles without rewriting any original box-score statistics.
+ const fixedNames=new Map();
+ for(const fix of nameCorrections.corrections){
+  if(!fix.source_player_id||!fix.source_player_name||!fix.canonical_player_id||!fix.player)throw Error("Incomplete verified player name correction");
+  const key=[nameCorrections.game_id,nameCorrections.team,fix.source_player_id].join("\u0000");
+  if(fixedNames.has(key))throw Error("Duplicate player name correction: "+key);
+  fixedNames.set(key,fix);
+ }
  // Apply source-scoped team+player ID aliases in browser memory, never to
  // the preserved original gamebook rows. Existing game team attribution stays intact.
  const scopedAliases=new Map(),redirects=new Map();
@@ -35,10 +45,22 @@ async function load(){
    redirects.set(sourceId,m.canonical_id);
   }
  }
- const rows=sourceRows.map(r=>{
+ for(const fix of nameCorrections.corrections){
+  if(redirects.has(fix.source_player_id)&&redirects.get(fix.source_player_id)!==fix.canonical_player_id)throw Error("Conflicting name correction profile redirect");
+  redirects.set(fix.source_player_id,fix.canonical_player_id);
+ }
+ const appliedFixes=new Set();
+ const rows=sourceRows.map(source=>{
+  const key=[source.game_id,source.team,source.player_id].join("\u0000");
+  const fix=fixedNames.get(key);
+  if(fix&&source.player!==fix.source_player_name)throw Error("Player name correction source mismatch: "+key);
+  if(fix)appliedFixes.add(key);
+  const r=fix?{...source,player:fix.player,player_id:fix.canonical_player_id,
+   original_game_player_id:source.player_id,original_game_player_name:source.player}:source;
   const unified=scopedAliases.get(r.team+"\u0000"+r.player_id);
   return unified?{...r,original_school_player_id:r.player_id,player_id:unified}:r;
  });
+ if(appliedFixes.size!==fixedNames.size)throw Error("Verified player name correction did not match source game rows");
  if(!Array.isArray(games)||!Array.isArray(rows)||!Array.isArray(crosswalk))throw Error("Unexpected college baseball data structure");
  const gameMap=new Map(games.map(g=>[g.id,g]));
  if(gameMap.size!==games.length)throw Error("Duplicate college baseball game IDs");

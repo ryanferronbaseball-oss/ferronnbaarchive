@@ -65,12 +65,13 @@ pilot_rows = json.loads((SITE / "data" / "player_stats.json").read_text())
 pilot_report = json.loads((SITE / "data" / "import_report.json").read_text())
 draft_tags = json.loads((SITE / "data" / "draft_profile_tags.json").read_text())
 draft_ids = {r["college_player_id"] for r in draft_tags["picks"]}
-check(len(draft_tags["picks"]) == len(draft_ids) == 8 and
-      {"cb-san-diego-riley-adams", "cb-san-diego-sean-barry", "cb-byu-colton-shaver"} <= draft_ids and
+check(len(draft_tags["picks"]) == len(draft_ids) == 10 and
+      {"cb-san-diego-riley-adams", "cb-san-diego-sean-barry", "cb-byu-colton-shaver",
+       "cb-arkansas-jax-biggers", "cb-cincinnati-manny-rodriguez"} <= draft_ids and
       all(any(r["player_id"] == pick["college_player_id"] and
                   r["player"].casefold() == pick["name"].casefold() for r in pilot_rows)
           for pick in draft_tags["picks"]),
-      "Eight official 2017 draft picks match exact witnessed college player IDs")
+      "Official 2017 and initial 2018 draft picks match exact witnessed college player IDs")
 check(len(attended) == 6 and len(committed) == 444, "All 444 attendance entries staged with 6 verified initial Regional gamebooks")
 check(len({g["source_worksheet_row"] for g in committed}) == 444,
       "Unique workbook source rows preserved for every attended contest")

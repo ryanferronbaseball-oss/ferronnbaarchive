@@ -446,11 +446,24 @@ async function renderPlayer(d){
   const id=d.redirects.get(requestedId)||requestedId;
   const p=d.players.find(x=>String(x.player_id)===id);
  if(!p){$("app").innerHTML='<div class="eyebrow">College Baseball · Player profile</div><h1>Player profile</h1>'+pending("No verified college baseball player profile is available for this ID. Players appear after official gamebook imports.");return}
- const alumniRegistry=await json("mlb_alumni_seed.json");
+ const [alumniRegistry,draftRegistry]=await Promise.all([json("mlb_alumni_seed.json"),json("draft_profile_tags.json")]);
  if(!Array.isArray(alumniRegistry.players))throw Error("Invalid verified MLB alumni registry");
+ if(!Array.isArray(draftRegistry.picks))throw Error("Missing verified college draft tags");
+ const draftIds=new Set();
+ for(const entry of draftRegistry.picks){
+  if(!entry.college_player_id||!entry.name||!Number.isInteger(entry.draft_year)||
+     !String(entry.draft_round||"").trim()||!Number.isInteger(entry.draft_pick)||!entry.draft_team||
+     draftIds.has(entry.college_player_id)||!d.players.some(x=>x.player_id===entry.college_player_id&&x.name.toLowerCase()===entry.name.toLowerCase()))
+   throw Error("Invalid or unmatched verified draft selection: "+entry.college_player_id);
+  draftIds.add(entry.college_player_id);
+ }
  const alumnus=alumniRegistry.players.find(x=>x.college_player_id===id&&Number.isInteger(x.mlb_player_id)&&x.mlb_debut);
- const draftTag=alumnus&&alumnus.draft_pick!=null
-  ?`${alumnus.draft_year} – Round ${alumnus.draft_round} – Pick ${alumnus.draft_pick} – ${alumnus.draft_team}`:"";
+ const newDraft=draftRegistry.picks.find(x=>x.college_player_id===id);
+ if(newDraft&&alumnus&&["draft_year","draft_round","draft_pick","draft_team"].some(k=>String(newDraft[k])!==String(alumnus[k])))
+  throw Error("Conflicting MLB draft history for "+p.name);
+ const draft=newDraft||alumnus;
+ const draftTag=draft&&draft.draft_pick!=null
+  ?`${draft.draft_year} – Round ${draft.draft_round} – Pick ${draft.draft_pick} – ${draft.draft_team}`:"";
  const b=bat(p.rows),pi=pitch(p.rows),qualifiedHit=p.rows.some(x=>x.batting!=null),qualifiedPitch=p.rows.some(x=>x.pitching!=null);
  const cross=d.crosswalk.find(x=>x.verified===true&&String(x.college_player_id)===id);
  const entries=unique(p.rows.map(x=>x.game_id)).map(game_id=>d.gameMap.get(game_id)).filter(Boolean).sort((a,b)=>b.date.localeCompare(a.date)||b.id.localeCompare(a.id));
@@ -476,7 +489,7 @@ async function renderPlayer(d){
  +'<div class="mlb-profile-photo cb-profile-initials" aria-hidden="true">'+esc(initials)+'</div>'
  +'<div class="mlb-profile-identity"><div class="mlb-profile-team-name">'+esc(p.teams.join(" / "))+'</div>'
  +'<h1>'+esc(p.name)+'</h1>'
- +(alumnus||cross?'<div class="mlb-profile-achievements">'
+ +(alumnus||draftTag||cross?'<div class="mlb-profile-achievements">'
   +(alumnus?'<a class="mlb-profile-badge cb-mlb-alumnus" href="https://www.mlb.com/player/'+encodeURIComponent(alumnus.mlb_player_id)+'" target="_blank" rel="noopener noreferrer" title="Verified MLB debut: '+esc(date(alumnus.mlb_debut))+'">★ MLB ALUMNUS ↗</a>':"")
   +(draftTag?'<span class="mlb-profile-badge cb-mlb-draft" title="MLB draft year, round, overall pick and drafting team">'+esc(draftTag)+'</span>':"")
   +(cross?'<a class="mlb-profile-badge cb-dual-level" href="../mlb/player.html?id='+encodeURIComponent(cross.mlb_player_id)+'" title="You attended this player’s college and MLB games">★ SEEN IN COLLEGE + MLB ↗</a>':"")+'</div>':"")

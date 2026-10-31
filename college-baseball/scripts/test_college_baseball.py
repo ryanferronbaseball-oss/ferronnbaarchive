@@ -63,6 +63,14 @@ attended = load_csv(SITE / "data" / "attendance.csv")
 committed = json.loads((SITE / "data" / "games.json").read_text())
 pilot_rows = json.loads((SITE / "data" / "player_stats.json").read_text())
 pilot_report = json.loads((SITE / "data" / "import_report.json").read_text())
+draft_tags = json.loads((SITE / "data" / "draft_profile_tags.json").read_text())
+draft_ids = {r["college_player_id"] for r in draft_tags["picks"]}
+check(len(draft_tags["picks"]) == len(draft_ids) == 8 and
+      {"cb-san-diego-riley-adams", "cb-san-diego-sean-barry", "cb-byu-colton-shaver"} <= draft_ids and
+      all(any(r["player_id"] == pick["college_player_id"] and
+                  r["player"].casefold() == pick["name"].casefold() for r in pilot_rows)
+          for pick in draft_tags["picks"]),
+      "Eight official 2017 draft picks match exact witnessed college player IDs")
 check(len(attended) == 6 and len(committed) == 444, "All 444 attendance entries staged with 6 verified initial Regional gamebooks")
 check(len({g["source_worksheet_row"] for g in committed}) == 444,
       "Unique workbook source rows preserved for every attended contest")
@@ -655,12 +663,30 @@ with tempfile.TemporaryDirectory() as t:
                       page.locator(".cb-player-game-log tbody tr").count()==2 and
                       page.locator(".cb-dual-level").count()==0,
                       f"{width} Kade Anderson MLB debut and draft are tagged without inventing attended MLB games")
+                for name, college_id, round_num, pick, team in [
+                    ("Roman Garcia", "cb-san-diego-roman-garcia", "19", "571", "Houston Astros"),
+                    ("Colton Waltner", "cb-san-diego-colton-waltner", "21", "616", "Minnesota Twins"),
+                    ("Sean Barry", "cb-san-diego-sean-barry", "21", "645", "Chicago Cubs"),
+                    ("Troy Conyers", "cb-san-diego-troy-conyers", "23", "680", "Atlanta Braves"),
+                    ("Hunter Mercado-Hood", "cb-san-diego-hunter-mercado-hood", "31", "940", "Los Angeles Dodgers"),
+                    ("Maverik Buffo", "cb-byu-maverik-buffo", "34", "1029", "Toronto Blue Jays"),
+                    ("Colton Shaver", "cb-byu-colton-shaver", "39", "1171", "Houston Astros"),
+                ]:
+                    visit(page, host, f"player.html?id={college_id}", ".cb-profile-hero")
+                    tag = page.locator(".cb-mlb-draft").inner_text()
+                    check(page.locator(".cb-profile-hero h1").inner_text().casefold()==name.casefold() and
+                          "2017" in tag and f"Round {round_num}" in tag and f"Pick {pick}" in tag and team in tag and
+                          page.locator(".cb-mlb-alumnus").count()==0 and
+                          page.locator(".cb-player-game-log tbody tr").count()>=1,
+                          f"{width} {name} has a 2017 draft badge without a false MLB alumni tag")
                 visit(page, host, "mlb-alumni.html", ".alumni-player")
                 page.locator("#search").fill("Kade Anderson")
                 check(page.locator(".alumni-player").count()==1 and
                       "Aug 22, 2026" in page.locator(".alumni-player").inner_text() and
                       "23" in page.locator(".alumni-player").inner_text() and
-                      page.locator("#mlbCount").inner_text()=="72",
+                      page.locator("#mlbCount").inner_text()=="72" and
+                      page.locator("[data-group='drafted_only']").count()==0 and
+                      page.locator("#draftCount").count()==0,
                       f"{width} Kade Anderson remains in the 72-person College-to-MLB directory with two witnessed LSU games")
                 for name, college_id, mlb_id, draft_year, pick in [
                     ("Josh Hendrickson", "cb-san-diego-josh-hendrickson", "681973", "2019", "1140"),

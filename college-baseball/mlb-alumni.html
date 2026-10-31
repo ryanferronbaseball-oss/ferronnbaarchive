@@ -9,11 +9,8 @@
 <style>
 .alumni-lead{max-width:770px}.alumni-review{color:#445B4F;font-size:13px;font-weight:750;margin:12px 0 5px}
 .alumni-callout{color:#526657;font-size:12px;line-height:1.65;max-width:950px;margin:12px 0 24px;padding:12px 15px;border-left:3px solid #779680;background:#EFF3EB}
-.alumni-summary{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:30px 0}
+.alumni-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:30px 0}
 .alumni-summary .metric{border-radius:14px;padding:18px}.alumni-summary .metric strong{font-size:30px}
-.alumni-tabs{display:flex;gap:7px;flex-wrap:wrap;margin:20px 0}
-.alumni-tabs button{font-size:13px;font-weight:750;padding:11px 15px;border-radius:9px;border:1px solid #CCD8CB;background:#E9EEE7;color:var(--forest)}
-.alumni-tabs button[aria-selected=true]{background:var(--forest);color:#fff}
 .alumni-toolbar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:20px 0}
 .alumni-toolbar input,.alumni-toolbar select{font:inherit;padding:11px 13px;border:1px solid #CDD5CA;background:#fff;border-radius:9px;color:var(--ink);min-width:0}
 .alumni-toolbar input{flex:1;min-width:190px}.alumni-toolbar select{max-width:100%}
@@ -50,14 +47,9 @@
 <p class="alumni-callout"><strong>Growing verified directory:</strong> Every player listed here was witnessed in college and has a confirmed MLB debut, with an official draft record or verified undrafted signing. The larger college attendance archive has not yet been fully audited, so the count above is verified-to-date rather than a final census. Players you also attended in MLB are tracked separately.</p>
 <section class="alumni-summary" aria-label="College to MLB alumni counts">
 <div class="metric"><strong id="mlbCount">—</strong><small>Confirmed MLB alumni</small></div>
-<div class="metric"><strong id="draftCount">—</strong><small>Drafted, no verified MLB game</small></div>
 <div class="metric"><strong id="seenCount">—</strong><small>College games featuring these players</small></div>
 <div class="metric"><strong id="firstCount">—</strong><small>First-round MLB picks</small></div>
 </section>
-<div class="alumni-tabs" role="tablist" aria-label="MLB career classifications">
-<button type="button" role="tab" aria-selected="true" data-group="mlb">Played in MLB</button>
-<button type="button" role="tab" aria-selected="false" data-group="drafted_only">Drafted — no MLB appearance</button>
-</div>
 <div class="alumni-toolbar">
 <input id="search" type="search" aria-label="Search MLB alumni by player, school or drafting team" placeholder="Search player, college or MLB team…">
 <select id="sort" aria-label="Sort MLB alumni">

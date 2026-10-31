@@ -9,7 +9,7 @@ const date=v=>v?new Date(String(v)+"T12:00:00").toLocaleDateString("en-US",{mont
 const ip=outs=>Math.floor(number(outs)/3)+"."+(number(outs)%3);
 const playerUrl=id=>"./player.html?id="+encodeURIComponent(id);
 const gameUrl=id=>"./game.html?id="+encodeURIComponent(id);
-let players=[],group="mlb";
+let players=[];
 
 function aggregate(archive,registry){
  if(!registry||!Array.isArray(registry.players))throw Error("Missing verified college-to-MLB roster");
@@ -45,15 +45,14 @@ function aggregate(archive,registry){
 
 function render(){
  const query=$("search").value.trim().toLowerCase(),sort=$("sort").value;
- const matches=players.filter(p=>(group==="mlb"?Boolean(p.mlb_debut):!p.mlb_debut)&&
-  [p.name,...p.teams,p.draft_team||"",String(p.draft_year||"")].join(" ").toLowerCase().includes(query));
+ const matches=players.filter(p=>[p.name,...p.teams,p.draft_team||"",String(p.draft_year||"")].join(" ").toLowerCase().includes(query));
  matches.sort((a,b)=>sort==="name"?a.name.localeCompare(b.name)
   :sort==="hits"?b.hits-a.hits||a.name.localeCompare(b.name)
   :sort==="strikeouts"?b.strikeouts-a.strikeouts||a.name.localeCompare(b.name)
   :sort==="games"?b.games.length-a.games.length||a.name.localeCompare(b.name)
   :(a.draft_pick??999)-(b.draft_pick??999)||a.name.localeCompare(b.name));
  if(!matches.length){
-  $("cards").innerHTML='<div class="alumni-empty">'+(query?"No players match this search.":group==="drafted_only"?`All ${fmt(players.length)} verified alumni in this directory have an MLB debut. Future drafted-only players will appear here.`:"No confirmed MLB alumni found.")+'</div>';
+  $("cards").innerHTML='<div class="alumni-empty">'+(query?"No players match this search.":"No confirmed MLB alumni found.")+'</div>';
   return;
  }
  $("cards").innerHTML=matches.map(p=>{
@@ -78,17 +77,14 @@ async function start(){
   const [archive,response]=await Promise.all([window.CollegeBaseballArchive.load(),fetch("./data/mlb_alumni_seed.json",{cache:"no-store"})]);
   if(!response.ok)throw Error("Missing college-to-MLB records");
   const registry=await response.json();players=aggregate(archive,registry);
-  const confirmed=players.filter(p=>p.mlb_debut),drafted=players.filter(p=>!p.mlb_debut);
-  $("mlbCount").textContent=fmt(confirmed.length);$("draftCount").textContent=fmt(drafted.length);
+  const confirmed=players.filter(p=>p.mlb_debut);
+  $("mlbCount").textContent=fmt(confirmed.length);
   $("seenCount").textContent=fmt(new Set(players.flatMap(p=>p.games.map(g=>g.id))).size);
   $("firstCount").textContent=fmt(players.filter(p=>p.draft_round==="1").length);
   $("lastVerified").textContent=date(registry.last_verified);$("lastVerified").dateTime=registry.last_verified;
   render();
  }catch(e){$("cards").innerHTML='<div class="alumni-empty">Unable to load the verified MLB directory: '+esc(e.message)+'</div>'}
 }
-document.querySelectorAll("[data-group]").forEach(button=>button.addEventListener("click",()=>{
- group=button.dataset.group;document.querySelectorAll("[data-group]").forEach(b=>b.setAttribute("aria-selected",String(b===button)));render();
-}));
 $("search").addEventListener("input",render);$("sort").addEventListener("change",render);
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",start,{once:true});else start();
 })();

@@ -1,10 +1,10 @@
 {
   "status": "PASS",
-  "source_manifests": 96,
+  "source_manifests": 98,
   "original_game_count": 444,
   "original_player_game_rows": 13183,
   "eligible_gamebooks": 437,
-  "ready_merges": 92,
+  "ready_merges": 94,
   "not_ready": 4,
   "pending_breakdown": {
     "one_or_both_schools_not_in_attended_game_player_rows": 4
@@ -3850,8 +3850,88 @@
       ],
       "status": "merge_ready",
       "note": null
+    },
+    {
+      "sequence": 97,
+      "name": "Dalton Bargo",
+      "approved_schools": [
+        "Tennessee",
+        "North Carolina State"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "tennessee",
+          "observed_teams": [
+            "Tennessee"
+          ],
+          "source_player_ids": [
+            "cb-tennessee-dalton-bargo"
+          ],
+          "source_player_rows": 6,
+          "games": 6,
+          "seasons": [
+            2025
+          ]
+        },
+        {
+          "normalized_school": "north carolina state",
+          "observed_teams": [
+            "NC State"
+          ],
+          "source_player_ids": [
+            "cb-nc-state-dalton-bargo"
+          ],
+          "source_player_rows": 2,
+          "games": 2,
+          "seasons": [
+            2026
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
+    },
+    {
+      "sequence": 98,
+      "name": "Andrew Wiggins",
+      "approved_schools": [
+        "Indiana",
+        "North Carolina State"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "indiana",
+          "observed_teams": [
+            "Indiana"
+          ],
+          "source_player_ids": [
+            "cb-indiana-andrew-wiggins"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2024
+          ]
+        },
+        {
+          "normalized_school": "north carolina state",
+          "observed_teams": [
+            "NC State"
+          ],
+          "source_player_ids": [
+            "cb-nc-state-andrew-wiggins"
+          ],
+          "source_player_rows": 2,
+          "games": 2,
+          "seasons": [
+            2026
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": null
     }
   ],
   "source_id_unique_count_before": 5544,
-  "source_id_unique_count_after_simulated": 5452
+  "source_id_unique_count_after_simulated": 5450
 }

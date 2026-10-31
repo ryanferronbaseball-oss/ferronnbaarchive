@@ -1,10 +1,10 @@
 {
   "status": "PASS",
-  "source_manifests": 100,
+  "source_manifests": 101,
   "original_game_count": 444,
   "original_player_game_rows": 13183,
   "eligible_gamebooks": 437,
-  "ready_merges": 96,
+  "ready_merges": 97,
   "not_ready": 4,
   "pending_breakdown": {
     "one_or_both_schools_not_in_attended_game_player_rows": 4
@@ -4018,8 +4018,48 @@
       ],
       "status": "merge_ready",
       "note": "Owner-confirmed transfer. Mississippi State's official roster lists South Carolina as the previous school; Tennessee's official March 28, 2025 box score uses only Pitzer for the South Carolina pitcher."
+    },
+    {
+      "sequence": 101,
+      "name": "Matt Scott",
+      "approved_schools": [
+        "Stanford",
+        "Georgia"
+      ],
+      "source_sides": [
+        {
+          "normalized_school": "stanford",
+          "observed_teams": [
+            "Stanford"
+          ],
+          "source_player_ids": [
+            "cb-stanford-matt-scott"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2025
+          ]
+        },
+        {
+          "normalized_school": "georgia",
+          "observed_teams": [
+            "Georgia"
+          ],
+          "source_player_ids": [
+            "cb-georgia-matt-scott"
+          ],
+          "source_player_rows": 1,
+          "games": 1,
+          "seasons": [
+            2026
+          ]
+        }
+      ],
+      "status": "merge_ready",
+      "note": "Owner-confirmed transfer. Georgia's 2026 official roster identifies Matt Scott as a former Stanford pitcher. The source gamebooks include one pitching appearance for each school."
     }
   ],
   "source_id_unique_count_before": 5544,
-  "source_id_unique_count_after_simulated": 5447
+  "source_id_unique_count_after_simulated": 5446
 }

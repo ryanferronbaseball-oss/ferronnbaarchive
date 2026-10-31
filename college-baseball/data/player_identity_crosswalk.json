@@ -4,8 +4,8 @@
   "source": "Original archive owner confirmed each multi-school person",
   "original_attendance_ids_preserved": 444,
   "original_player_game_rows_preserved": 13183,
-  "requested_person_merges": 100,
-  "activated_person_merges": 97,
+  "requested_person_merges": 101,
+  "activated_person_merges": 98,
   "pending_person_merges": 3,
   "merge_policy": "Only listed pair of exact normalized person names and school-specific original source player IDs; all other IDs remain separate",
   "merges": [
@@ -2245,6 +2245,29 @@
         }
       ],
       "source_rows": 5
+    },
+    {
+      "name": "Matt Scott",
+      "canonical_id": "cb-stanford-matt-scott",
+      "source_player_ids": [
+        "cb-stanford-matt-scott",
+        "cb-georgia-matt-scott"
+      ],
+      "schools": [
+        "Stanford",
+        "Georgia"
+      ],
+      "pairs": [
+        {
+          "team": "Stanford",
+          "source_player_id": "cb-stanford-matt-scott"
+        },
+        {
+          "team": "Georgia",
+          "source_player_id": "cb-georgia-matt-scott"
+        }
+      ],
+      "source_rows": 2
     }
   ]
 }

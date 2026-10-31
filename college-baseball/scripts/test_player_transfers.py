@@ -24,16 +24,16 @@ audit=json.loads((DATA/"player_identity_reconciliation_audit.json").read_text())
 cross=json.loads((DATA/"player_identity_crosswalk.json").read_text())
 original=json.loads((DATA/"player_stats.json").read_text())
 games=json.loads((DATA/"games.json").read_text())
-check(len(games)==444 and len(original)==13183 and len(rules["rules"])==rules["expected_proposals"]==100,
+check(len(games)==444 and len(original)==13183 and len(rules["rules"])==rules["expected_proposals"]==101,
       "Protected college attendance or original official player rows changed")
-check(audit["ready_merges"]==96 and audit["not_ready"]==4 and
-      cross["requested_person_merges"]==100 and
-      cross["activated_person_merges"]==97 and cross["pending_person_merges"]==3,
-      "97 of 100 owner-nominated identities linked, including the Tyler Pitzer school transfer and source-name alias")
+check(audit["ready_merges"]==97 and audit["not_ready"]==4 and
+      cross["requested_person_merges"]==101 and
+      cross["activated_person_merges"]==98 and cross["pending_person_merges"]==3,
+      "98 of 101 owner-nominated identities linked, including Matt Scott at Stanford and Georgia")
 check({x["name"] for x in audit["preview"] if x["status"]!="merge_ready"}==
       {"Tate Soderstrom","Ethan Lizama","Kyle Hvidsten","Michael Graziano"},
       "Original-row audit should still document the four former source exceptions")
-check(len(cross["merges"])==97 and len({m["canonical_id"] for m in cross["merges"]})==97,
+check(len(cross["merges"])==98 and len({m["canonical_id"] for m in cross["merges"]})==98,
       "Missing or duplicate canonical identities")
 source_by_key=defaultdict(list)
 for r in original:
@@ -121,6 +121,7 @@ cases=[
     ("Michael Graziano",["Georgia Tech","Mercer"],2),
     ("Michael O'Shaughnessy",["Davidson","Georgia"],3),
     ("Tyler Pitzer",["South Carolina","Mississippi State"],5),
+    ("Matt Scott",["Stanford","Georgia"],2),
 ]
 try:
     with sync_playwright() as pw:
@@ -155,8 +156,9 @@ try:
                             ("Dalton Bargo",["Tennessee","NC State"]),
                             ("Andrew Wiggins",["Indiana","NC State"]),
                             ("Michael O'Shaughnessy",["Davidson","Georgia"]),
-                            ("Tyler Pitzer",["South Carolina","Mississippi State"])]:
-            if who=="Tyler Pitzer":
+                            ("Tyler Pitzer",["South Carolina","Mississippi State"]),
+                            ("Matt Scott",["Stanford","Georgia"])]:
+            if who in ("Tyler Pitzer","Matt Scott"):
                 page.locator("#cb-role").select_option("pitch")
             page.locator("#cb-player-search").fill(who)
             page.wait_for_timeout(250)
@@ -168,4 +170,4 @@ try:
 finally:
     server.shutdown()
     thread.join(timeout=5)
-print("PASS 97 scoped transfer profiles, redirects, leaderboards, exclusion rules and original official boxscore data")
+print("PASS 98 scoped transfer profiles, redirects, leaderboards, exclusion rules and original official boxscore data")

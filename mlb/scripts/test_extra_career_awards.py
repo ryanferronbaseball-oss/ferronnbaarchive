@@ -40,6 +40,7 @@ assert any(e["number"] == "2" and e["year"] == 2017 for e in players["116539"]["
 assert any(e["number"] == "33" and e["year"] == 2021 for e in players["123833"]["retired_number"]), "Walker #33"
 assert any(e["year"] == 2020 and e["level"] == "Second Team" for e in players["477132"]["all_mlb"]), "Kershaw All-MLB"
 assert any(e["year"] == 2013 for e in players["120074"]["world_series_mvp"]), "David Ortiz WS MVP"
+assert any(e["year"] == 1993 and e["team"] == "California Angels" for e in players["121640"]["rookie_of_year"]), "Tim Salmon era-accurate club"
 
 pages = (ROOT / "assets/pages.js").read_text()
 html = (ROOT / "player.html").read_text()

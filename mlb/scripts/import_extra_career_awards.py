@@ -51,6 +51,10 @@ TEAM_NAMES = {
 
 
 def team_name(team_id, year):
+    if team_id == 108 and year < 1997:
+        return "California Angels"
+    if team_id == 108 and year < 2005:
+        return "Anaheim Angels"
     if team_id == 114 and year < 2022:
         return "Cleveland Indians"
     if team_id == 120 and year < 2005:

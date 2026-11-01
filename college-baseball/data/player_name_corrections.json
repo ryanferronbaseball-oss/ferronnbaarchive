@@ -213,6 +213,19 @@
       "corrections": [
         {"source_player_id": "cb-oklahoma-levi-hbp-ibb-ab-bf-fo-go-prater", "source_player_name": "Levi hbp ibb ab bf fo go Prater", "player": "Levi Prater", "canonical_player_id": "cb-oklahoma-levi-prater"}
       ]
+    },
+    {
+      "game_id": "cb-2020-02-21-nebraska-san-diego-att0075",
+      "team": "Nebraska",
+      "description": "Expand the source box score's initial-only S. Schwellenbach into Spencer Schwellenbach using Nebraska's official 2020 roster; preserve the original gamebook statistics and redirect the abbreviated player ID.",
+      "verified_on": "2026-11-01",
+      "evidence_urls": [
+        "https://usdtoreros.com/sports/baseball/stats/2020/nebraska/boxscore/9669",
+        "https://huskers.com/sports/baseball/roster/season/2020/player/spencer-schwellenbach"
+      ],
+      "corrections": [
+        {"source_player_id": "cb-nebraska-s-schwellenbach", "source_player_name": "S. Schwellenbach", "player": "Spencer Schwellenbach", "canonical_player_id": "cb-nebraska-spencer-schwellenbach"}
+      ]
     }
   ]
 }

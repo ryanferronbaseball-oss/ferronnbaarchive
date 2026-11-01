@@ -71,7 +71,7 @@ corrected_names = {
     for game in [name_corrections, *name_corrections.get("games", [])]
     for fix in game["corrections"]
 }
-check(len(draft_tags["picks"]) == len(draft_ids) == 624 and
+check(len(draft_tags["picks"]) == len(draft_ids) == 690 and
       {"cb-san-diego-riley-adams", "cb-san-diego-sean-barry", "cb-byu-colton-shaver",
        "cb-arkansas-jax-biggers", "cb-cincinnati-manny-rodriguez",
        "cb-cincinnati-jt-perez", "cb-california-tyrus-greene",
@@ -90,8 +90,20 @@ check(len(draft_tags["picks"]) == len(draft_ids) == 624 and
       sum(p["draft_year"] == 2022 for p in draft_tags["picks"]) == 68 and
       sum(p["draft_year"] == 2023 for p in draft_tags["picks"]) == 54 and
       sum(p["draft_year"] == 2024 for p in draft_tags["picks"]) == 156 and
-      sum(p["draft_year"] == 2025 for p in draft_tags["picks"]) == 128 and
-      len({(p["draft_year"], p["draft_pick"]) for p in draft_tags["picks"]}) == 624 and
+      sum(p["draft_year"] == 2025 for p in draft_tags["picks"]) == 194 and
+      len({(p["draft_year"], p["draft_pick"]) for p in draft_tags["picks"]}) == 690 and
+      {p["draft_pick"] for p in draft_tags["picks"]
+       if p["draft_year"] == 2025 and 292 <= p["draft_pick"] <= 524} == {
+           292, 293, 294, 298, 308, 310, 312, 313, 317, 319, 320, 323,
+           330, 333, 345, 348, 351, 359, 361, 362, 363, 367, 368, 374,
+           375, 376, 380, 381, 382, 383, 384, 388, 389, 394, 396, 399,
+           402, 404, 405, 420, 422, 434, 435, 437, 438, 441, 444, 445,
+           448, 450, 458, 465, 466, 471, 472, 473, 474, 477, 486, 494,
+           497, 500, 507, 516, 522, 524,
+       } and
+      {"cb-uc-san-diego-austin-smith", "cb-georgia-state-maximus-martin",
+       "cb-san-diego-justin-decriscio", "cb-pepperdine-jack-goodman",
+       "cb-georgia-state-davis-chastain"}.isdisjoint(draft_ids) and
       all(any(p["college_player_id"] == player_id and
                   (p["draft_year"], p["draft_round"], p["draft_pick"]) == (year, round_name, pick)
               for p in draft_tags["picks"])
@@ -121,6 +133,17 @@ check(len(draft_tags["picks"]) == len(draft_ids) == 624 and
               ("cb-uc-irvine-anthony-martinez", 2025, "8", 252),
               ("cb-texas-a-m-ryan-prager", 2025, "9", 282),
               ("cb-mississippi-state-hunter-hines", 2025, "10", 291),
+              ("cb-san-diego-austin-smith", 2025, "10", 292),
+              ("cb-kansas-state-maximus-martin", 2025, "10", 298),
+              ("cb-uc-irvine-max-martin", 2025, "10", 308),
+              ("cb-nc-state-justin-decriscio", 2025, "10", 310),
+              ("cb-texas-jalin-flores", 2025, "11", 330),
+              ("cb-mississippi-state-luke-dotson", 2025, "11", 333),
+              ("cb-texas-rylan-galvan", 2025, "13", 376),
+              ("cb-northeastern-jack-goodman", 2025, "13", 399),
+              ("cb-georgia-davis-chastain", 2025, "14", 435),
+              ("cb-texas-grayson-saunier", 2025, "17", 516),
+              ("cb-virginia-ryan-osinski", 2025, "17", 524),
           ]) and
       any(p["college_player_id"] == "cb-oregon-bennett-thompson" and
               (p["draft_round"], p["draft_pick"]) == ("13", 385)
@@ -940,6 +963,17 @@ with tempfile.TemporaryDirectory() as t:
                     ("Anthony Martinez", "cb-uc-irvine-anthony-martinez", "8", 252, 2),
                     ("Ryan Prager", "cb-texas-a-m-ryan-prager", "9", 282, 1),
                     ("Hunter Hines", "cb-mississippi-state-hunter-hines", "10", 291, 1),
+                    ("Austin Smith", "cb-san-diego-austin-smith", "10", 292, 45),
+                    ("Maximus Martin", "cb-kansas-state-maximus-martin", "10", 298, 1),
+                    ("Max Martin", "cb-uc-irvine-max-martin", "10", 308, 2),
+                    ("Justin DeCriscio", "cb-nc-state-justin-decriscio", "10", 310, 5),
+                    ("Jalin Flores", "cb-texas-jalin-flores", "11", 330, 1),
+                    ("Luke Dotson", "cb-mississippi-state-luke-dotson", "11", 333, 1),
+                    ("Rylan Galvan", "cb-texas-rylan-galvan", "13", 376, 1),
+                    ("Jack Goodman", "cb-northeastern-jack-goodman", "13", 399, 1),
+                    ("Davis Chastain", "cb-georgia-davis-chastain", "14", 435, 2),
+                    ("Grayson Saunier", "cb-texas-grayson-saunier", "17", 516, 1),
+                    ("Ryan Osinski", "cb-virginia-ryan-osinski", "17", 524, 4),
                 ]:
                     visit(page, host, f"player.html?id={college_id}", ".cb-profile-hero")
                     tag=page.locator(".cb-mlb-draft").inner_text()

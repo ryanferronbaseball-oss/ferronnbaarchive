@@ -435,14 +435,18 @@
     {
       "game_id": "cb-2025-05-22-tennessee-texas-att0358",
       "team": "Texas",
-      "description": "Restore Max Belyeu's full name from Tennessee's surname-only gamebook record, preserving his batting line.",
+      "description": "Expand Tennessee's surname-only Texas gamebook entries for Max Belyeu, Jalin Flores, Rylan Galvan, and Grayson Saunier, preserving all original batting and pitching lines.",
       "verified_on": "2026-11-01",
       "evidence_urls": [
         "https://utsports.com/sports/baseball/stats/2025/texas/boxscore/29524",
-        "https://texaslonghorns.com/news/2025/7/14/baseballs-belyeu-picked-62nd-overall-in-mlb-draft"
+        "https://texaslonghorns.com/news/2025/7/14/baseballs-belyeu-picked-62nd-overall-in-mlb-draft",
+        "https://texaslonghorns.com/news/2025/7/14/quartet-from-baseball-selected-on-second-day-of-mlb-draft"
       ],
       "corrections": [
-        {"source_player_id": "cb-texas-belyeu", "source_player_name": "Belyeu", "player": "Max Belyeu", "canonical_player_id": "cb-texas-max-belyeu"}
+        {"source_player_id": "cb-texas-belyeu", "source_player_name": "Belyeu", "player": "Max Belyeu", "canonical_player_id": "cb-texas-max-belyeu"},
+        {"source_player_id": "cb-texas-flores", "source_player_name": "Flores", "player": "Jalin Flores", "canonical_player_id": "cb-texas-jalin-flores"},
+        {"source_player_id": "cb-texas-galvan", "source_player_name": "Galvan", "player": "Rylan Galvan", "canonical_player_id": "cb-texas-rylan-galvan"},
+        {"source_player_id": "cb-texas-saunier", "source_player_name": "Saunier", "player": "Grayson Saunier", "canonical_player_id": "cb-texas-grayson-saunier"}
       ]
     },
     {
@@ -488,14 +492,16 @@
     {
       "game_id": "cb-2025-05-21-texas-a-m-mississippi-state-att0353",
       "team": "Mississippi State",
-      "description": "Expand the Mississippi State gamebook's surname-only Hines entry to Hunter Hines, the Nationals' 2025 tenth-round selection, without changing the witnessed batting line.",
+      "description": "Expand the Mississippi State gamebook's surname-only Hines and Dotson entries to Hunter Hines and Luke Dotson, preserving witnessed batting and pitching lines.",
       "verified_on": "2026-11-01",
       "evidence_urls": [
         "https://hailstate.com/sports/baseball/stats/2025/texas-am/boxscore/27187",
-        "https://hailstate.com/news/2025/7/14/baseball-seven-bulldogs-selected-in-mlb-draft"
+        "https://hailstate.com/news/2025/7/14/baseball-seven-bulldogs-selected-in-mlb-draft",
+        "https://www.mlb.com/press-release/d-backs-agree-to-terms-with-17-draft-picks"
       ],
       "corrections": [
-        {"source_player_id": "cb-mississippi-state-hines", "source_player_name": "Hines", "player": "Hunter Hines", "canonical_player_id": "cb-mississippi-state-hunter-hines"}
+        {"source_player_id": "cb-mississippi-state-hines", "source_player_name": "Hines", "player": "Hunter Hines", "canonical_player_id": "cb-mississippi-state-hunter-hines"},
+        {"source_player_id": "cb-mississippi-state-dotson", "source_player_name": "Dotson", "player": "Luke Dotson", "canonical_player_id": "cb-mississippi-state-luke-dotson"}
       ]
     }
   ]

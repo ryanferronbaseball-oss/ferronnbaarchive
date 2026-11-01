@@ -59,7 +59,7 @@ assert(page.includes("nba_legacy_honors.json?v=legacy-20261101"),"Profile fetche
 for(const id of ["finalsMvpBadge","dpoyBadge","allDefenseBadge","rookieBadge","sixthBadge","improvedBadge","nba75Badge","retiredBadge"])
   assert(page.includes(`id="${id}"`),`Missing badge ${id}`);
 
-const start=page.indexOf("function renderCareerHonors(awards){"),end=page.indexOf("\nif(id){",start);
+const start=page.indexOf("function renderCareerHonors("),end=page.indexOf("\nif(id){",start);
 assert(start>=0&&end>start);
 const elements=new Map(),makeElement=()=>({
   classList:{values:new Set(),add(x){this.values.add(x)},contains(x){return this.values.has(x)}},

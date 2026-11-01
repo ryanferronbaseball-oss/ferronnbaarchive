@@ -25,7 +25,7 @@ const page=fs.readFileSync(path.join(root,"nba/player.html"),"utf8");
 const inlineScript=page.match(/<script src="\.\.\/assets\/site\.js[^>]*><\/script><script>([\s\S]*?)<\/script>/)?.[1];
 assert(inlineScript,"NBA profile inline script found");
 new vm.Script(inlineScript,{filename:"nba/player.html"});
-const start=page.indexOf("function renderCareerHonors(awards){"),end=page.indexOf("\nif(id){",start);
+const start=page.indexOf("function renderCareerHonors("),end=page.indexOf("\nif(id){",start);
 assert(start>=0&&end>start,"Career honors renderer found");
 const elements=new Map(),makeElement=()=>({
   classList:{values:new Set(),add(x){this.values.add(x)},contains(x){return this.values.has(x)}},

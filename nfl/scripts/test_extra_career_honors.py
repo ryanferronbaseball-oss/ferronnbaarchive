@@ -20,6 +20,9 @@ rows = json.loads((ROOT / "nfl/data/player_stats.json").read_text())
 profiles = {str(row["athlete_id"]): row["player"] for row in rows if row.get("athlete_id") is not None}
 players = extra["players"]
 assert players and set(players).issubset(profiles)
+pro_bowl_players = {athlete_id for athlete_id, awards in base["players"].items() if awards.get("pro_bowl_count", 0)}
+yearly_pro_bowl_players = {athlete_id for athlete_id, awards in players.items() if "pro_bowl_years" in awards}
+assert yearly_pro_bowl_players == pro_bowl_players, (yearly_pro_bowl_players ^ pro_bowl_players)
 for athlete_id, awards in players.items():
     assert profiles[athlete_id] == awards["name"], (athlete_id, awards["name"])
     for award, entries in awards.items():
@@ -28,6 +31,7 @@ for athlete_id, awards in players.items():
         assert isinstance(entries, list) and entries, (athlete_id, award)
         if award == "pro_bowl_years":
             assert len(entries) == base["players"][athlete_id]["pro_bowl_count"]
+            assert entries == sorted(set(entries)) and all(1990 <= year <= 2025 for year in entries)
         elif award == "all_decade":
             assert all(e["decade"] in ("1990s", "2000s", "2010s") for e in entries)
         else:
@@ -43,7 +47,9 @@ for athlete_id, expected in {
     assert expected.issubset(players[athlete_id])
 assert [e["year"] for e in players["4697"]["super_bowl"]] == [2003, 2004]
 assert players["5528"]["retired_number"] == [{"year": 2026, "team": "Arizona Cardinals", "number": "11"}]
-print("PASS NFL honor data joins exact archive athlete IDs; verified category and year examples")
+assert players["668"]["ap_comeback"][0]["year"] == 1999
+assert players["2971282"]["pro_bowl_years"] == [2018, 2021, 2023]
+print(f"PASS NFL honor data joins exact archive athlete IDs; all {len(pro_bowl_players)} Pro Bowl players have year lists matching their career counts")
 
 page_source = (ROOT / "nfl/player.html").read_text()
 script = re.findall(r"<script>([\s\S]*?)</script>", page_source)[0]
@@ -97,6 +103,9 @@ try:
             inspect(page, "4697", "SUPER BOWL CHAMPION", "Super Bowl Champion", "2004 · Super Bowl XXXIX")
             inspect(page, "8479", "ALL-DECADE", "All-Decade", "2010s")
             inspect(page, "2612", "PRO BOWL", "Pro Bowl", "2006")
+            inspect(page, "5528", "PRO BOWL", "Pro Bowl", "2013")
+            inspect(page, "2971282", "PRO BOWL", "Pro Bowl", "2023")
+            inspect(page, "668", "COMEBACK", "Comeback Player", "1999 · San Francisco 49ers")
             page.goto(origin + "4036134", wait_until="domcontentloaded")
             page.wait_for_function("document.getElementById('playerName').textContent !== 'Player profile'")
             assert page.locator("#awardBadges .award-badge.visible").count() == 0

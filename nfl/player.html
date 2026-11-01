@@ -32,7 +32,7 @@ const hallOfFameIds=new Set(["1682","1755","10455","668","5528"]),awardRow=el("a
   const years=values=>values.map(year=>({year}));
   add("mvp","NFL MVP","🏆",years(mvp),"Associated Press regular-season Most Valuable Player awards.",el("mvpBadge"));
   add("all_pro","AP All-Pro","◆",allPro.map(year=>({year,detail:first.includes(year)?"First Team":"Second Team"})),"Associated Press First-Team or Second-Team All-Pro selections.",el("allProBadge"));
-  if(bowl>0)add("pro_bowl","Pro Bowl","★",(extra.pro_bowl_years?.length?years(extra.pro_bowl_years):Array.from({length:bowl},()=>({}))),"Pro Bowl selections, whether or not the player participated.",el("proBowlBadge"));
+  if(bowl>0)add("pro_bowl","Pro Bowl","★",(extra.pro_bowl_years?.length?years(extra.pro_bowl_years):Array.from({length:bowl},()=>({}))),"Pro Bowl selections by NFL season (the event often took place the following calendar year). Selection counts whether or not the player participated.",el("proBowlBadge"));
   const catalog=[
    ["super_bowl","Super Bowl Champion","🏆","Super Bowl championship seasons. The year refers to the NFL season, not the following February's game."],
    ["super_bowl_mvp","Super Bowl MVP","🏆","Super Bowl Most Valuable Player awards."],
@@ -79,7 +79,7 @@ const hallOfFameIds=new Set(["1682","1755","10455","668","5528"]),awardRow=el("a
  };
  if(id){
   const get=path=>fetch(path,{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("Awards HTTP "+r.status);return r.json()}).catch(err=>{console.warn("Career honors unavailable:",path,err);return {players:{}}});
-  Promise.all([get("./data/career_awards.json?v=nfl-honors-20261101"),get("./data/extra_career_honors.json?v=nfl-honors-20261101")]).then(([base,extra])=>renderHonors(base.players?.[normalizedId],extra.players?.[normalizedId]));
+  Promise.all([get("./data/career_awards.json?v=pro-bowl-years-20261101"),get("./data/extra_career_honors.json?v=pro-bowl-years-20261101")]).then(([base,extra])=>renderHonors(base.players?.[normalizedId],extra.players?.[normalizedId]));
  }
 
  const esc=A.esc;

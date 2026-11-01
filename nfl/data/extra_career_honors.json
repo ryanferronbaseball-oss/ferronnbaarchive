@@ -2,7 +2,7 @@
   "_meta": {
     "scope": "Verified career NFL championships, Associated Press annual awards, Walter Payton NFL Man of the Year, NFL All-Decade and NFL 100 teams, officially retired numbers, and franchise honors for the athletes in this archive.",
     "through": "2026-11-01",
-    "season_year_note": "Super Bowl years denote the NFL season (the game is generally played the following calendar year).",
+    "season_year_note": "Super Bowl and Pro Bowl selection years denote the NFL regular season, not the calendar year of the following February's event.",
     "empty_award_note": "Some award categories have no recipient among currently archived NFL athletes. Never infer an award from a nomination or a team-specific award.",
     "sources": [
       "https://www.nfl.com/100/all-time-team/roster.html",
@@ -20,15 +20,32 @@
       "https://www.giants.com/news/super-bowl-xlvi-champ-antrel-rolle-announces-retirement-18033064",
       "https://www.denverbroncos.com/news/mile-high-morning-former-te-vernon-davis-reflects-on-broncos-tenure-previews-release-of-memoir",
       "https://www.seahawks.com/news/remembering-2013-seahawks-unveil-10-part-documentary-series-around-super-bowl-xl",
-      "https://www.49ers.com/news/super-bowl-recollections-with-banta-cain-519661"
+      "https://www.49ers.com/news/super-bowl-recollections-with-banta-cain-519661",
+      "https://www.profootballhof.com/players/bryant-young",
+      "https://www.49ers.com/news/about-his-business-bryant-young-s-purpose-filled-career-lands-him-in-49ers-hall-",
+      "https://goaztecs.com/sports/hall-of-fame/roster/player/laroi-glover",
+      "https://www.azcardinals.com/legends/roster/kurt-warner",
+      "https://www.colts.com/team/history/hall-of-fame/edgerrin-james",
+      "https://www.therams.com/legends/torry-holt",
+      "https://static.www.nfl.com/image/upload/league/apps/league-site/media-guides/2023/ARI.pdf",
+      "https://larryfitzgerald.com/accomplishments/",
+      "https://www.sj39.com/nfl-career/",
+      "https://www.49ers.com/news/san-francisco-49ers-trade-vernon-davis-to-denver-broncos-16210048",
+      "https://www.giants.com/news/antrel-rolle-named-to-pro-bowl-12478729",
+      "https://www.jaguars.com/news/dl-calais-campbell-named-to-fourth-career-pro-bowl",
+      "https://www.colts.com/news/deforest-buckner-2024-pro-bowl-sacks-pressures-defensive-linemen-chris-jones",
+      "https://www.tennesseetitans.com/team/players-roster/jeffery-simmons/",
+      "https://ravenspr.com/player_bios/derrick_henry.pdf"
     ]
   },
   "players": {
     "668": {
       "name": "Bryant Young",
       "super_bowl": [{"year": 1994, "team": "San Francisco 49ers", "super_bowl": "XXIX"}],
+      "ap_comeback": [{"year": 1999, "team": "San Francisco 49ers"}],
       "all_decade": [{"decade": "1990s"}],
-      "franchise_honor": [{"year": 2020, "team": "San Francisco 49ers", "honor": "49ers Hall of Fame"}]
+      "franchise_honor": [{"year": 2020, "team": "San Francisco 49ers", "honor": "49ers Hall of Fame"}],
+      "pro_bowl_years": [1996, 1999, 2001, 2002]
     },
     "649": {
       "name": "Trent Dilfer",
@@ -36,7 +53,8 @@
     },
     "1038": {
       "name": "La'Roi Glover",
-      "all_decade": [{"decade": "2000s"}]
+      "all_decade": [{"decade": "2000s"}],
+      "pro_bowl_years": [2000, 2001, 2002, 2003, 2004, 2005]
     },
     "1621": {
       "name": "Leonard Little",
@@ -47,21 +65,28 @@
       "super_bowl": [{"year": 1999, "team": "St. Louis Rams", "super_bowl": "XXXIV"}],
       "super_bowl_mvp": [{"year": 1999, "team": "St. Louis Rams", "super_bowl": "XXXIV"}],
       "walter_payton": [{"year": 2008, "team": "Arizona Cardinals"}],
-      "franchise_honor": [{"year": 2014, "team": "Arizona Cardinals", "honor": "Ring of Honor"}]
+      "franchise_honor": [{"year": 2014, "team": "Arizona Cardinals", "honor": "Ring of Honor"}],
+      "pro_bowl_years": [1999, 2000, 2001, 2008]
     },
     "1755": {
       "name": "Edgerrin James",
       "ap_oroy": [{"year": 1999, "team": "Indianapolis Colts"}],
-      "all_decade": [{"decade": "2000s"}]
+      "all_decade": [{"decade": "2000s"}],
+      "pro_bowl_years": [1999, 2000, 2004, 2005]
     },
     "1757": {
       "name": "Torry Holt",
       "super_bowl": [{"year": 1999, "team": "St. Louis Rams", "super_bowl": "XXXIV"}],
-      "all_decade": [{"decade": "2000s"}]
+      "all_decade": [{"decade": "2000s"}],
+      "pro_bowl_years": [2000, 2001, 2003, 2004, 2005, 2006, 2007]
     },
     "1994": {
       "name": "Sean Morey",
       "super_bowl": [{"year": 2005, "team": "Pittsburgh Steelers", "super_bowl": "XL"}]
+    },
+    "2300": {
+      "name": "Neil Rackers",
+      "pro_bowl_years": [2005]
     },
     "2612": {
       "name": "Adrian Wilson",
@@ -86,7 +111,20 @@
       "all_decade": [{"decade": "2010s"}],
       "nfl_100": [{"year": 2019}],
       "retired_number": [{"year": 2026, "team": "Arizona Cardinals", "number": "11"}],
-      "franchise_honor": [{"year": 2026, "team": "Arizona Cardinals", "honor": "Ring of Honor"}]
+      "franchise_honor": [{"year": 2026, "team": "Arizona Cardinals", "honor": "Ring of Honor"}],
+      "pro_bowl_years": [2005, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2015, 2016, 2017]
+    },
+    "5549": {
+      "name": "Steven Jackson",
+      "pro_bowl_years": [2006, 2009, 2010]
+    },
+    "5589": {
+      "name": "Darnell Dockett",
+      "pro_bowl_years": [2007, 2009, 2010]
+    },
+    "5713": {
+      "name": "Andy Lee",
+      "pro_bowl_years": [2007, 2009, 2011]
     },
     "5749": {
       "name": "Donnie Jones",
@@ -94,7 +132,8 @@
     },
     "8423": {
       "name": "Antrel Rolle",
-      "super_bowl": [{"year": 2011, "team": "New York Giants", "super_bowl": "XLVI"}]
+      "super_bowl": [{"year": 2011, "team": "New York Giants", "super_bowl": "XLVI"}],
+      "pro_bowl_years": [2009, 2010, 2013]
     },
     "8479": {
       "name": "Frank Gore",
@@ -104,7 +143,8 @@
     },
     "9592": {
       "name": "Vernon Davis",
-      "super_bowl": [{"year": 2015, "team": "Denver Broncos", "super_bowl": "50"}]
+      "super_bowl": [{"year": 2015, "team": "Denver Broncos", "super_bowl": "50"}],
+      "pro_bowl_years": [2009, 2013]
     },
     "9686": {
       "name": "Michael Robinson",
@@ -117,18 +157,40 @@
       "franchise_honor": [{"year": 2021, "team": "San Francisco 49ers", "honor": "49ers Hall of Fame"}],
       "pro_bowl_years": [2007, 2008, 2009, 2010, 2011, 2012, 2013]
     },
+    "11250": {
+      "name": "Dominique Rodgers-Cromartie",
+      "pro_bowl_years": [2009, 2015]
+    },
     "11284": {
       "name": "Calais Campbell",
       "walter_payton": [{"year": 2019, "team": "Jacksonville Jaguars"}],
-      "all_decade": [{"decade": "2010s"}]
+      "all_decade": [{"decade": "2010s"}],
+      "pro_bowl_years": [2014, 2015, 2017, 2018, 2019, 2020]
+    },
+    "15795": {
+      "name": "DeAndre Hopkins",
+      "pro_bowl_years": [2015, 2017, 2018, 2019, 2020]
+    },
+    "2971282": {
+      "name": "DeForest Buckner",
+      "pro_bowl_years": [2018, 2021, 2023]
     },
     "3043078": {
       "name": "Derrick Henry",
-      "ap_opoy": [{"year": 2020, "team": "Tennessee Titans"}]
+      "ap_opoy": [{"year": 2020, "team": "Tennessee Titans"}],
+      "pro_bowl_years": [2019, 2020, 2022, 2023, 2024]
+    },
+    "3124005": {
+      "name": "Zaire Franklin",
+      "pro_bowl_years": [2024]
     },
     "3932886": {
       "name": "Sean Murphy-Bunting",
       "super_bowl": [{"year": 2020, "team": "Tampa Bay Buccaneers", "super_bowl": "LV"}]
+    },
+    "4035369": {
+      "name": "Jeffery Simmons",
+      "pro_bowl_years": [2021, 2022, 2024, 2025]
     },
     "4249087": {
       "name": "Matt Gay",

@@ -71,7 +71,7 @@ corrected_names = {
     for game in [name_corrections, *name_corrections.get("games", [])]
     for fix in game["corrections"]
 }
-check(len(draft_tags["picks"]) == len(draft_ids) == 449 and
+check(len(draft_tags["picks"]) == len(draft_ids) == 494 and
       {"cb-san-diego-riley-adams", "cb-san-diego-sean-barry", "cb-byu-colton-shaver",
        "cb-arkansas-jax-biggers", "cb-cincinnati-manny-rodriguez",
        "cb-cincinnati-jt-perez", "cb-california-tyrus-greene",
@@ -89,7 +89,30 @@ check(len(draft_tags["picks"]) == len(draft_ids) == 449 and
       sum(p["draft_year"] == 2021 for p in draft_tags["picks"]) == 44 and
       sum(p["draft_year"] == 2022 for p in draft_tags["picks"]) == 68 and
       sum(p["draft_year"] == 2023 for p in draft_tags["picks"]) == 54 and
-      sum(p["draft_year"] == 2024 for p in draft_tags["picks"]) == 109 and
+      sum(p["draft_year"] == 2024 for p in draft_tags["picks"]) == 154 and
+      any(p["college_player_id"] == "cb-oregon-bennett-thompson" and
+              (p["draft_round"], p["draft_pick"]) == ("13", 385)
+          for p in draft_tags["picks"]) and
+      any(p["college_player_id"] == "cb-san-diego-drake-frize" and
+              (p["draft_round"], p["draft_pick"]) == ("17", 524)
+          for p in draft_tags["picks"]) and
+      any(p["college_player_id"] == "cb-duke-fran-oschell-iii" and
+              (p["draft_round"], p["draft_pick"], p["draft_team"]) ==
+              ("12", 352, "Los Angeles Angels")
+          for p in draft_tags["picks"]) and
+      any(p["college_player_id"] == "cb-grand-canyon-daniel-avitia" and
+              (p["draft_round"], p["draft_pick"], p["draft_team"]) ==
+              ("12", 362, "Chicago Cubs")
+          for p in draft_tags["picks"]) and
+      any(p["college_player_id"] == "cb-cal-state-northridge-kevin-fitzer" and
+              (p["draft_round"], p["draft_pick"]) == ("16", 468)
+          for p in draft_tags["picks"]) and
+      any(p["college_player_id"] == "cb-uc-san-diego-izaak-martinez" and
+              (p["draft_round"], p["draft_pick"]) == ("18", 535)
+          for p in draft_tags["picks"]) and
+      any(p["college_player_id"] == "cb-marshall-owen-ayers" and
+              (p["draft_round"], p["draft_pick"]) == ("19", 572)
+          for p in draft_tags["picks"]) and
       any(p["college_player_id"] == "cb-grand-canyon-tyler-wilson" and
               (p["draft_round"], p["draft_pick"], p["draft_team"]) ==
               ("8", 241, "New York Yankees")
@@ -831,6 +854,13 @@ with tempfile.TemporaryDirectory() as t:
                           page.locator(".cb-player-game-log tbody tr").count()==4 and
                           "Pick 575" in page.locator(".cb-mlb-draft").inner_text(),
                           f"{width} Graysen Tarlow has one correct school label and all four witnessed games ({tarlow_id})")
+                for fitzer_id in ("cb-cal-state-northridge-kevin-fitzer", "cb-cal-state-northrdige-kevin-fitzer"):
+                    visit(page, host, f"player.html?id={fitzer_id}", ".cb-profile-hero")
+                    check(page.locator(".cb-profile-hero h1").inner_text()=="Kevin Fitzer" and
+                          page.locator(".mlb-profile-team-name").text_content().strip()=="Cal State Northridge" and
+                          page.locator(".cb-player-game-log tbody tr").count()==4 and
+                          "Pick 468" in page.locator(".cb-mlb-draft").inner_text(),
+                          f"{width} Kevin Fitzer shows one CSUN school and four games ({fitzer_id})")
                 for name, college_id, draft_round, pick, games in [
                     ("Brody Brecht", "cb-iowa-brody-brecht", "CB-A", 38, 1),
                     ("Cole Mathis", "cb-college-of-charleston-cole-mathis", "2", 54, 1),
@@ -849,6 +879,13 @@ with tempfile.TemporaryDirectory() as t:
                     ("Jack Crowder", "cb-illinois-jack-crowder", "9", 279, 1),
                     ("Carter Cunningham", "cb-east-carolina-carter-cunningham", "10", 307, 1),
                     ("Christian Little", "cb-vanderbilt-christian-little", "11", 333, 1),
+                    ("Fran Oschell III", "cb-duke-fran-oschell-iii", "12", 352, 1),
+                    ("Daniel Avitia", "cb-grand-canyon-daniel-avitia", "12", 362, 2),
+                    ("RJ Gordon", "cb-oregon-rj-gordon", "13", 383, 1),
+                    ("Bennett Thompson", "cb-oregon-bennett-thompson", "13", 385, 3),
+                    ("Drake Frize", "cb-san-diego-drake-frize", "17", 524, 20),
+                    ("Izaak Martinez", "cb-uc-san-diego-izaak-martinez", "18", 535, 1),
+                    ("Owen Ayers", "cb-marshall-owen-ayers", "19", 572, 1),
                 ]:
                     visit(page, host, f"player.html?id={college_id}", ".cb-profile-hero")
                     tag=page.locator(".cb-mlb-draft").inner_text()

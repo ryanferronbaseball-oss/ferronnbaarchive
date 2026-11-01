@@ -271,14 +271,16 @@
       "game_id": "cb-2023-02-21-cal-state-northrdige-san-diego-state-att0182",
       "team": "Cal State Northrdige",
       "team_display_name": "Cal State Northridge",
-      "description": "Unify the misspelled Northrdige team identifier with Graysen Tarlow's other Cal State Northridge appearances without altering the original game statistics.",
+      "description": "Unify the misspelled Northrdige team identifier with the correct Cal State Northridge profiles for Graysen Tarlow and Kevin Fitzer without altering original game statistics.",
       "verified_on": "2026-11-01",
       "evidence_urls": [
         "https://gomatadors.com/sports/baseball/stats/2023/san-diego-state/boxscore/15859",
-        "https://statsapi.mlb.com/api/v1/draft/2023"
+        "https://statsapi.mlb.com/api/v1/draft/2023",
+        "https://www.mlb.com/amp/press-release/colorado-rockies-conclude-2024-first-year-player-draft-with-10-selections-on-day-three.html"
       ],
       "corrections": [
-        {"source_player_id": "cb-cal-state-northrdige-graysen-tarlow", "source_player_name": "Graysen Tarlow", "player": "Graysen Tarlow", "canonical_player_id": "cb-cal-state-northridge-graysen-tarlow"}
+        {"source_player_id": "cb-cal-state-northrdige-graysen-tarlow", "source_player_name": "Graysen Tarlow", "player": "Graysen Tarlow", "canonical_player_id": "cb-cal-state-northridge-graysen-tarlow"},
+        {"source_player_id": "cb-cal-state-northrdige-kevin-fitzer", "source_player_name": "Kevin Fitzer", "player": "Kevin Fitzer", "canonical_player_id": "cb-cal-state-northridge-kevin-fitzer"}
       ]
     },
     {
@@ -402,6 +404,19 @@
       ],
       "corrections": [
         {"source_player_id": "cb-uc-irvine-dub-gleed", "source_player_name": "Dub. Gleed", "player": "Dub Gleed", "canonical_player_id": "cb-uc-irvine-dub-gleed"}
+      ]
+    },
+    {
+      "game_id": "cb-2024-02-19-marshall-college-of-charleston-att0231",
+      "team": "Marshall",
+      "description": "Restore Marshall catcher Owen Ayers' full name from the gamebook's O. Ayers abbreviation without changing his statistics.",
+      "verified_on": "2026-11-01",
+      "evidence_urls": [
+        "https://cofcsports.com/sports/baseball/stats/2024/marshall/boxscore/11657",
+        "https://herdzone.com/news/2024/7/16/baseball-owen-ayers-taken-by-chicago-cubs-in-19th-round-of-2024-mlb-draft"
+      ],
+      "corrections": [
+        {"source_player_id": "cb-marshall-o-ayers", "source_player_name": "O. Ayers", "player": "Owen Ayers", "canonical_player_id": "cb-marshall-owen-ayers"}
       ]
     }
   ]

@@ -1017,7 +1017,7 @@ with tempfile.TemporaryDirectory() as t:
                     ("Matthew Potok", "cb-coastal-carolina-matthew-potok", "18", 551, 1),
                     ("Jonathan Vastine", "cb-vanderbilt-jonathan-vastine", "19", 580, 6),
                     ("Luke Cantwell", "cb-pittsburgh-luke-cantwell", "20", 610, 3),
-                    ("Vahn Lackey", "cb-georgia-tech-vahn-lackey", "1", 3, 4),
+                    ("Vahn Lackey", "cb-georgia-tech-vahn-lackey", "1", 3, 3),
                     ("Drew Burress", "cb-georgia-tech-drew-burress", "1", 8, 5),
                     ("Chris Hacopian", "cb-texas-a-m-chris-hacopian", "1", 11, 1),
                     ("Carter Beck", "cb-indiana-state-carter-beck", "PPI", 26, 1),

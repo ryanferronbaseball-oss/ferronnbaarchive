@@ -211,7 +211,11 @@ try:
    page.screenshot(path=str(out/("milestones-"+str(width)+".png")),full_page=True)
    noOverflow("player profile")
    visit("index.html")
-   page.wait_for_function("document.getElementById('allGames').textContent==='267'")
+   page.wait_for_function("""() => {
+     const number=id=>Number(document.getElementById(id).textContent.replace(/,/g,""));
+     const sports=["nbaGames","collegeGames","nflGames","cfbGames","soccerGames","mlbGames","collegeBaseballGames"];
+     return number("allGames")===sports.reduce((sum,id)=>sum+number(id),0) && number("allGames")>=700;
+   }""")
    check(page.locator('a[href="./nfl/index.html"]').count()>=1,str(width)+" master portal links to NFL")
    noOverflow("master portal")
    check(not errors,str(width)+" no uncaught JavaScript errors")

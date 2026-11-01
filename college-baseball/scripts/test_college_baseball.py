@@ -174,7 +174,7 @@ check(len(draft_tags["picks"]) == len(draft_ids) == 913 and
               ("cb-texas-will-gasparino", 2026, "5", 161),
               ("cb-tennessee-bo-rhudy", 2026, "7", 219),
               ("cb-texas-thomas-burns", 2026, "8", 227),
-              ("cb-auburn-garrett-brewer", 2026, "11", 344),
+              ("cb-auburn-garrett-brewer", 2026, "12", 344),
               ("cb-vmi-grayson-fitzwater", 2026, "13", 375),
               ("cb-tennessee-evan-blanco", 2026, "13", 381),
               ("cb-cornell-mark-quatrani", 2026, "18", 545),

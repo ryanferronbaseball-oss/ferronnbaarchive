@@ -71,7 +71,7 @@ corrected_names = {
     for game in [name_corrections, *name_corrections.get("games", [])]
     for fix in game["corrections"]
 }
-check(len(draft_tags["picks"]) == len(draft_ids) == 369 and
+check(len(draft_tags["picks"]) == len(draft_ids) == 406 and
       {"cb-san-diego-riley-adams", "cb-san-diego-sean-barry", "cb-byu-colton-shaver",
        "cb-arkansas-jax-biggers", "cb-cincinnati-manny-rodriguez",
        "cb-cincinnati-jt-perez", "cb-california-tyrus-greene",
@@ -89,7 +89,21 @@ check(len(draft_tags["picks"]) == len(draft_ids) == 369 and
       sum(p["draft_year"] == 2021 for p in draft_tags["picks"]) == 44 and
       sum(p["draft_year"] == 2022 for p in draft_tags["picks"]) == 68 and
       sum(p["draft_year"] == 2023 for p in draft_tags["picks"]) == 54 and
-      sum(p["draft_year"] == 2024 for p in draft_tags["picks"]) == 29 and
+      sum(p["draft_year"] == 2024 for p in draft_tags["picks"]) == 66 and
+      any(p["college_player_id"] == "cb-virginia-casey-saucke" and
+              (p["draft_round"], p["draft_pick"], p["draft_team"]) ==
+              ("4", 107, "Chicago White Sox")
+          for p in draft_tags["picks"]) and
+      any(p["college_player_id"] == "cb-clemson-will-taylor" and
+              (p["draft_round"], p["draft_pick"], p["draft_team"]) ==
+              ("5", 145, "Pittsburgh Pirates")
+          for p in draft_tags["picks"]) and
+      any(p["college_player_id"] == "cb-coastal-carolina-sam-antonacci" and
+              (p["draft_round"], p["draft_pick"]) == ("5", 140)
+          for p in draft_tags["picks"]) and
+      any(p["college_player_id"] == "cb-baylor-mason-marriott" and
+              (p["draft_round"], p["draft_pick"]) == ("6", 194)
+          for p in draft_tags["picks"]) and
       any(p["college_player_id"] == "cb-virginia-griff-o-ferrall" and
               (p["draft_round"], p["draft_pick"]) == ("PPI", 32)
           for p in draft_tags["picks"]) and
@@ -797,6 +811,10 @@ with tempfile.TemporaryDirectory() as t:
                     ("Cole Mathis", "cb-college-of-charleston-cole-mathis", "2", 54, 1),
                     ("Joshua Kuroda-Grauer", "cb-rutgers-joshua-kuroda-grauer", "3", 75, 2),
                     ("Ryan Johnson", "cb-dallas-baptist-ryan-johnson", "2C", 74, 1),
+                    ("Casey Saucke", "cb-virginia-casey-saucke", "4", 107, 6),
+                    ("Sam Antonacci", "cb-coastal-carolina-sam-antonacci", "5", 140, 4),
+                    ("Will Taylor", "cb-clemson-will-taylor", "5", 145, 1),
+                    ("Mason Marriott", "cb-baylor-mason-marriott", "6", 194, 1),
                 ]:
                     visit(page, host, f"player.html?id={college_id}", ".cb-profile-hero")
                     tag=page.locator(".cb-mlb-draft").inner_text()

@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import csv
 import json
+import re
 import runpy
 import shutil
 import subprocess
@@ -76,7 +77,19 @@ corrected_names = {
     for game in [name_corrections, *name_corrections.get("games", [])]
     for fix in game["corrections"]
 }
-check(len(draft_tags["picks"]) == len(draft_ids) == 913 and
+attendance_corrections = json.loads((SITE / "data" / "attendance_game_corrections.json").read_text())
+def attended_slug(value):
+    return re.sub(r"[^a-z0-9]+", "-", value.casefold()).strip("-")
+
+corrected_attendance_names = {
+    (f"cb-{attended_slug(team)}-{attended_slug(player)}", player.casefold())
+    for game in attendance_corrections["games"]
+    for category in ("batting", "pitching")
+    for team, appearances in game[category].items()
+    for appearance in appearances
+    for player in [appearance[1] if category == "batting" else appearance[0]]
+}
+check(len(draft_tags["picks"]) == len(draft_ids) == 915 and
       draft_ids.isdisjoint(noncanonical_profile_ids) and
       {"cb-san-diego-riley-adams", "cb-san-diego-sean-barry", "cb-byu-colton-shaver",
        "cb-arkansas-jax-biggers", "cb-cincinnati-manny-rodriguez",
@@ -97,12 +110,12 @@ check(len(draft_tags["picks"]) == len(draft_ids) == 913 and
       sum(p["draft_year"] == 2023 for p in draft_tags["picks"]) == 54 and
       sum(p["draft_year"] == 2024 for p in draft_tags["picks"]) == 156 and
       sum(p["draft_year"] == 2025 for p in draft_tags["picks"]) == 209 and
-      sum(p["draft_year"] == 2026 for p in draft_tags["picks"]) == 208 and
+      sum(p["draft_year"] == 2026 for p in draft_tags["picks"]) == 210 and
       sum(p["draft_year"] == 2025 and p["draft_pick"] > 524
           for p in draft_tags["picks"]) == 15 and
-      {p["draft_pick"] for p in draft_tags["picks"]
-       if p["draft_year"] == 2026}.isdisjoint({255, 449}) and
-      len({(p["draft_year"], p["draft_pick"]) for p in draft_tags["picks"]}) == 913 and
+      {255, 449} <= {p["draft_pick"] for p in draft_tags["picks"]
+                     if p["draft_year"] == 2026} and
+      len({(p["draft_year"], p["draft_pick"]) for p in draft_tags["picks"]}) == 915 and
       {p["draft_pick"] for p in draft_tags["picks"]
        if p["draft_year"] == 2025 and 292 <= p["draft_pick"] <= 524} == {
            292, 293, 294, 298, 308, 310, 312, 313, 317, 319, 320, 323,
@@ -180,6 +193,8 @@ check(len(draft_tags["picks"]) == len(draft_ids) == 913 and
               ("cb-cornell-mark-quatrani", 2026, "18", 545),
               ("cb-middle-tennessee-state-david-horn-jr", 2026, "19", 563),
               ("cb-arkansas-parker-coil", 2026, "20", 603),
+              ("cb-virginia-tech-luke-craytor", 2026, "9", 255),
+              ("cb-virginia-tech-madden-clement", 2026, "15", 449),
           ]) and
       any(p["college_player_id"] == "cb-oregon-bennett-thompson" and
               (p["draft_round"], p["draft_pick"]) == ("13", 385)
@@ -344,8 +359,9 @@ check(len(draft_tags["picks"]) == len(draft_ids) == 913 and
       all(any(r["player_id"] == pick["college_player_id"] and
                   r["player"].casefold() == pick["name"].casefold() for r in pilot_rows)
               or (pick["college_player_id"], pick["name"].casefold()) in corrected_names
+              or (pick["college_player_id"], pick["name"].casefold()) in corrected_attendance_names
           for pick in draft_tags["picks"]),
-      "Official 2017–2025 draft picks match verified witnessed college player profiles")
+      "Official 2017–2026 draft picks match verified witnessed college player profiles")
 check(len(attended) == 6 and len(committed) == 444, "All 444 attendance entries staged with 6 verified initial Regional gamebooks")
 check(len({g["source_worksheet_row"] for g in committed}) == 444,
       "Unique workbook source rows preserved for every attended contest")
@@ -835,6 +851,24 @@ with tempfile.TemporaryDirectory() as t:
                       "#cb-game-details .cb-game-summary")
                 check("0 – 19" in page.locator("#cb-game-details").inner_text(),
                       f"{width} original game deep link resolves to the April 13 correction")
+                visit(page, host, "game.html?id=cb-2025-03-15-virginia-tech-nc-state-game2-att0322",
+                      "#cb-game-details .cb-game-summary")
+                check("20 – 8" in page.locator("#cb-game-details").inner_text() and
+                      page.locator('a[href*="boxscore/23687"]').count() == 1,
+                      f"{width} user-confirmed March 15 Game 2 shows Virginia Tech 20-8 and the official source")
+                check(page.locator('.mlb-team-box[data-side="away"] .mlb-lineup-row').count() == 10 and
+                      page.locator('.mlb-team-box[data-side="home"] .mlb-lineup-row').count() == 12,
+                      f"{width} corrected March 15 Game 2 shows all 22 actual batter appearances")
+                page.locator('[data-cat="pitching"]').click()
+                check(page.locator('.mlb-team-box[data-side="away"] .mlb-lineup-row').count() == 5 and
+                      page.locator('.mlb-team-box[data-side="home"] .mlb-lineup-row').count() == 7 and
+                      page.locator('[data-decision="win"] .mlb-decision-name').inner_text() == "Grant Manning" and
+                      page.locator('tr[data-player-id="cb-virginia-tech-luke-craytor"]').count() == 1,
+                      f"{width} corrected Game 2 includes the twelve official pitchers and Luke Craytor")
+                visit(page, host, "game.html?id=cb-2025-03-15-virginia-tech-nc-state-att0322",
+                      "#cb-game-details .cb-game-summary")
+                check("20 – 8" in page.locator("#cb-game-details").inner_text(),
+                      f"{width} former March 15 Game 1 deep link redirects to attended Game 2")
                 visit(page, host, "game.html?id=cb-2025-05-31-dallas-baptist-lsu-att0367",
                       "#cb-box .mlb-team-box[data-side='home']")
                 for player_id,values in {
@@ -1031,6 +1065,8 @@ with tempfile.TemporaryDirectory() as t:
                     ("Mark Quatrani", "cb-cornell-mark-quatrani", "18", 545, 5),
                     ("David Horn Jr.", "cb-middle-tennessee-state-david-horn-jr", "19", 563, 1),
                     ("Parker Coil", "cb-arkansas-parker-coil", "20", 603, 2),
+                    ("Luke Craytor", "cb-virginia-tech-luke-craytor", "9", 255, 1),
+                    ("Madden Clement", "cb-virginia-tech-madden-clement", "15", 449, 1),
                 ]:
                     visit(page, host, f"player.html?id={college_id}", ".cb-profile-hero")
                     tag=page.locator(".cb-mlb-draft").inner_text()

@@ -24,7 +24,7 @@ function applyAttendanceGameCorrections(sourceGames,sourceRows,manifest){
  const battingKeys=["atBats","runs","hits","rbi","baseOnBalls","strikeOuts"];
  const battingEventKeys=["doubles","triples","homeRuns","stolenBases","caughtStealing","hitByPitch","sacBunts","sacFlies"];
  const pitchingKeys=["outs","hits","runs","earnedRuns","baseOnBalls","strikeOuts","battersFaced","numberOfPitches"];
- const pitchingEventKeys=["hitBatsmen"];
+ const pitchingEventKeys=["hitBatsmen","wildPitches","balks"];
  const total=(rows,category,key)=>rows.reduce((n,r)=>n+(r[category]?.[key]||0),0);
  for(const correction of manifest.games){
   const oldId=correction.replaces_game_id,newId=correction.game?.id;
@@ -32,9 +32,9 @@ function applyAttendanceGameCorrections(sourceGames,sourceRows,manifest){
   const index=games.findIndex(g=>g.id===oldId),old=games[index];
   if(index<0||!old||!sourceRows.some(r=>r.game_id===oldId)||!correction.source_url)throw Error("Missing original attendance game: "+oldId);
   if(!correction.game.date||!Array.isArray(correction.game.innings)||Object.keys(correction.batting||{}).length!==2||Object.keys(correction.pitching||{}).length!==2)throw Error("Incomplete corrected box score: "+newId);
-  const game={...old,...correction.game,source_url:correction.source_url,notes:old.notes+" Corrected from the original workbook entry using the official April 13 gamebook; the April 14 box score is not an attended-game result."};
+  const game={...old,...correction.game,source_url:correction.source_url,source_type:correction.source_type||"official_university_pdf_scorebook",notes:old.notes+" "+correction.verification_note};
   const teams=[game.away,game.home],participants=new Map(),battingNames=new Set(),pitchingNames=new Set();
-  const makeRow=(team,player)=>({game_id:newId,player_id:"cb-"+slug(team)+"-"+slug(player),player,team,source_url:correction.source_url,source_type:"official_university_pdf_scorebook",verification:"official_boxscore_verified"});
+  const makeRow=(team,player)=>({game_id:newId,player_id:"cb-"+slug(team)+"-"+slug(player),player,team,source_url:correction.source_url,source_type:correction.source_type||"official_university_pdf_scorebook",verification:"official_boxscore_verified"});
   const key=(team,player)=>team+"\u0000"+player;
   for(const team of teams){
    const lineup=correction.batting[team],pitchers=correction.pitching[team];

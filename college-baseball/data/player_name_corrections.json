@@ -418,6 +418,58 @@
       "corrections": [
         {"source_player_id": "cb-marshall-o-ayers", "source_player_name": "O. Ayers", "player": "Owen Ayers", "canonical_player_id": "cb-marshall-owen-ayers"}
       ]
+    },
+    {
+      "game_id": "cb-2025-05-22-texas-a-m-auburn-att0357",
+      "team": "Texas A&M",
+      "description": "Restore Justin Lamkin's full name from the Auburn gamebook's surname-only Lamkin entry without altering his pitching statistics.",
+      "verified_on": "2026-11-01",
+      "evidence_urls": [
+        "https://storage.googleapis.com/auburn-prod/2025/05/23/SDbWI4p6H0cZg8tyo5LFycKPk6WAtPElf5AeOVSK.pdf",
+        "https://12thman.com/news/2025/07/13/lamkin-selected-71st-overall-by-the-kansas-city-royals"
+      ],
+      "corrections": [
+        {"source_player_id": "cb-texas-a-m-lamkin", "source_player_name": "Lamkin", "player": "Justin Lamkin", "canonical_player_id": "cb-texas-a-m-justin-lamkin"}
+      ]
+    },
+    {
+      "game_id": "cb-2025-05-22-tennessee-texas-att0358",
+      "team": "Texas",
+      "description": "Restore Max Belyeu's full name from Tennessee's surname-only gamebook record, preserving his batting line.",
+      "verified_on": "2026-11-01",
+      "evidence_urls": [
+        "https://utsports.com/sports/baseball/stats/2025/texas/boxscore/29524",
+        "https://texaslonghorns.com/news/2025/7/14/baseballs-belyeu-picked-62nd-overall-in-mlb-draft"
+      ],
+      "corrections": [
+        {"source_player_id": "cb-texas-belyeu", "source_player_name": "Belyeu", "player": "Max Belyeu", "canonical_player_id": "cb-texas-max-belyeu"}
+      ]
+    },
+    {
+      "game_id": "cb-2025-03-22-western-kentucky-kennesaw-state-att0325",
+      "team": "Western Kentucky",
+      "description": "Expand the R. Wideman abbreviation to verified Padres third-rounder Ryan Wideman without changing the witnessed game statistics.",
+      "verified_on": "2026-11-01",
+      "evidence_urls": [
+        "https://wkusports.com/sports/baseball/stats/2025/kennesaw-state/boxscore/12878",
+        "https://wkusports.com/news/2025/7/13/baseball-san-diego-padres-select-ryan-wideman-in-third-round-of-2025-mlb-draft"
+      ],
+      "corrections": [
+        {"source_player_id": "cb-western-kentucky-r-wideman", "source_player_name": "R. Wideman", "player": "Ryan Wideman", "canonical_player_id": "cb-western-kentucky-ryan-wideman"}
+      ]
+    },
+    {
+      "game_id": "cb-2025-05-24-tennessee-vanderbilt-att0362",
+      "team": "Vanderbilt",
+      "description": "Match the surname-only Bowker pitcher in the Tennessee-Vanderbilt gamebook to verified Phillies third-rounder Cody Bowker.",
+      "verified_on": "2026-11-01",
+      "evidence_urls": [
+        "https://utsports.com/sports/baseball/stats/2025/vanderbilt/boxscore/29526",
+        "https://vucommodores.com/news/2025/07/14/2025-mlb-draft-day-2"
+      ],
+      "corrections": [
+        {"source_player_id": "cb-vanderbilt-bowker", "source_player_name": "Bowker", "player": "Cody Bowker", "canonical_player_id": "cb-vanderbilt-cody-bowker"}
+      ]
     }
   ]
 }

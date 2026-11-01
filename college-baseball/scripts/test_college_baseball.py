@@ -71,7 +71,7 @@ corrected_names = {
     for game in [name_corrections, *name_corrections.get("games", [])]
     for fix in game["corrections"]
 }
-check(len(draft_tags["picks"]) == len(draft_ids) == 494 and
+check(len(draft_tags["picks"]) == len(draft_ids) == 560 and
       {"cb-san-diego-riley-adams", "cb-san-diego-sean-barry", "cb-byu-colton-shaver",
        "cb-arkansas-jax-biggers", "cb-cincinnati-manny-rodriguez",
        "cb-cincinnati-jt-perez", "cb-california-tyrus-greene",
@@ -89,7 +89,28 @@ check(len(draft_tags["picks"]) == len(draft_ids) == 494 and
       sum(p["draft_year"] == 2021 for p in draft_tags["picks"]) == 44 and
       sum(p["draft_year"] == 2022 for p in draft_tags["picks"]) == 68 and
       sum(p["draft_year"] == 2023 for p in draft_tags["picks"]) == 54 and
-      sum(p["draft_year"] == 2024 for p in draft_tags["picks"]) == 154 and
+      sum(p["draft_year"] == 2024 for p in draft_tags["picks"]) == 158 and
+      sum(p["draft_year"] == 2025 for p in draft_tags["picks"]) == 62 and
+      len({(p["draft_year"], p["draft_pick"]) for p in draft_tags["picks"]}) == 560 and
+      all(any(p["college_player_id"] == player_id and
+                  (p["draft_year"], p["draft_round"], p["draft_pick"]) == (year, round_name, pick)
+              for p in draft_tags["picks"])
+          for player_id, year, round_name, pick in [
+              ("cb-florida-colby-shelton", 2024, "20", 590),
+              ("cb-lsu-kade-anderson", 2025, "1", 3),
+              ("cb-louisville-patrick-forbes", 2025, "1C", 29),
+              ("cb-tennessee-marcus-phillips", 2025, "CB-A", 33),
+              ("cb-texas-a-m-justin-lamkin", 2025, "CB-B", 71),
+              ("cb-texas-max-belyeu", 2025, "CB-B", 74),
+              ("cb-virginia-henry-godbout", 2025, "2C", 75),
+              ("cb-tennessee-nate-snead", 2025, "SUP-3", 105),
+              ("cb-georgia-brian-curley", 2025, "3", 92),
+              ("cb-vcu-brian-curley", 2024, "16", 474),
+              ("cb-western-kentucky-ryan-wideman", 2025, "3", 99),
+              ("cb-vanderbilt-cody-bowker", 2025, "3", 100),
+              ("cb-oklahoma-state-nolan-schubart", 2025, "3", 101),
+              ("cb-oregon-mason-neville", 2025, "4", 114),
+          ]) and
       any(p["college_player_id"] == "cb-oregon-bennett-thompson" and
               (p["draft_round"], p["draft_pick"]) == ("13", 385)
           for p in draft_tags["picks"]) and
@@ -254,7 +275,7 @@ check(len(draft_tags["picks"]) == len(draft_ids) == 494 and
                   r["player"].casefold() == pick["name"].casefold() for r in pilot_rows)
               or (pick["college_player_id"], pick["name"].casefold()) in corrected_names
           for pick in draft_tags["picks"]),
-      "Official 2017–2023 draft picks match verified witnessed college player profiles")
+      "Official 2017–2025 draft picks match verified witnessed college player profiles")
 check(len(attended) == 6 and len(committed) == 444, "All 444 attendance entries staged with 6 verified initial Regional gamebooks")
 check(len({g["source_worksheet_row"] for g in committed}) == 444,
       "Unique workbook source rows preserved for every attended contest")
@@ -886,13 +907,24 @@ with tempfile.TemporaryDirectory() as t:
                     ("Drake Frize", "cb-san-diego-drake-frize", "17", 524, 20),
                     ("Izaak Martinez", "cb-uc-san-diego-izaak-martinez", "18", 535, 1),
                     ("Owen Ayers", "cb-marshall-owen-ayers", "19", 572, 1),
+                    ("Colby Shelton", "cb-florida-colby-shelton", "20", 590, 1),
+                    ("Kade Anderson", "cb-lsu-kade-anderson", "1", 3, 2),
+                    ("Justin Lamkin", "cb-texas-a-m-justin-lamkin", "CB-B", 71, 1),
+                    ("Max Belyeu", "cb-texas-max-belyeu", "CB-B", 74, 1),
+                    ("Henry Godbout", "cb-virginia-henry-godbout", "2C", 75, 7),
+                    ("Brian Curley", "cb-georgia-brian-curley", "3", 92, 2),
+                    ("Ryan Wideman", "cb-western-kentucky-ryan-wideman", "3", 99, 1),
+                    ("Cody Bowker", "cb-vanderbilt-cody-bowker", "3", 100, 1),
+                    ("Nolan Schubart", "cb-oklahoma-state-nolan-schubart", "3", 101, 1),
+                    ("Nate Snead", "cb-tennessee-nate-snead", "SUP-3", 105, 2),
+                    ("Mason Neville", "cb-oregon-mason-neville", "4", 114, 2),
                 ]:
                     visit(page, host, f"player.html?id={college_id}", ".cb-profile-hero")
                     tag=page.locator(".cb-mlb-draft").inner_text()
                     check(page.locator(".cb-profile-hero h1").inner_text().casefold()==name.casefold() and
                           f"Round {draft_round}" in tag and f"Pick {pick}" in tag and
                           page.locator(".cb-player-game-log tbody tr").count()==games,
-                          f"{width} {name} shows the verified 2024 draft pick and original game logs")
+                          f"{width} {name} shows the verified MLB draft pick and original game logs")
                     if name=="Dub Gleed":
                         check(page.locator(".mlb-profile-team-name").text_content().strip()=="UC Irvine",
                               f"{width} Dub Gleed has one canonical UC Irvine school label")

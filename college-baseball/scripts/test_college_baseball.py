@@ -71,7 +71,7 @@ corrected_names = {
     for game in [name_corrections, *name_corrections.get("games", [])]
     for fix in game["corrections"]
 }
-check(len(draft_tags["picks"]) == len(draft_ids) == 256 and
+check(len(draft_tags["picks"]) == len(draft_ids) == 286 and
       {"cb-san-diego-riley-adams", "cb-san-diego-sean-barry", "cb-byu-colton-shaver",
        "cb-arkansas-jax-biggers", "cb-cincinnati-manny-rodriguez",
        "cb-cincinnati-jt-perez", "cb-california-tyrus-greene",
@@ -87,7 +87,20 @@ check(len(draft_tags["picks"]) == len(draft_ids) == 256 and
       sum(p["draft_year"] == 2019 for p in draft_tags["picks"]) == 86 and
       sum(p["draft_year"] == 2020 for p in draft_tags["picks"]) == 18 and
       sum(p["draft_year"] == 2021 for p in draft_tags["picks"]) == 44 and
-      sum(p["draft_year"] == 2022 for p in draft_tags["picks"]) == 38 and
+      sum(p["draft_year"] == 2022 for p in draft_tags["picks"]) == 68 and
+      any(p["college_player_id"] == "cb-southern-california-tyresse-turner" and
+              (p["draft_round"], p["draft_pick"]) == ("13", 391)
+          for p in draft_tags["picks"]) and
+      any(p["college_player_id"] == "cb-oregon-state-jake-pfennigs" and
+              (p["draft_round"], p["draft_pick"]) == ("13", 394)
+          for p in draft_tags["picks"]) and
+      any(p["college_player_id"] == "cb-cal-state-fullerton-kyle-luckham" and
+              (p["draft_round"], p["draft_pick"], p["draft_team"]) ==
+              ("15", 441, "Washington Nationals")
+          for p in draft_tags["picks"]) and
+      any(p["college_player_id"] == "cb-cal-baptist-christian-culpepper" and
+              (p["draft_round"], p["draft_pick"]) == ("13", 384)
+          for p in draft_tags["picks"]) and
       any(p["college_player_id"] == "cb-oregon-state-justin-boyd" and
               (p["draft_round"], p["draft_pick"]) == ("CB-B", 73)
           for p in draft_tags["picks"]) and

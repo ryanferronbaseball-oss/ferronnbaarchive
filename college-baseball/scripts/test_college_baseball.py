@@ -76,7 +76,7 @@ corrected_names = {
     for game in [name_corrections, *name_corrections.get("games", [])]
     for fix in game["corrections"]
 }
-check(len(draft_tags["picks"]) == len(draft_ids) == 690 and
+check(len(draft_tags["picks"]) == len(draft_ids) == 913 and
       draft_ids.isdisjoint(noncanonical_profile_ids) and
       {"cb-san-diego-riley-adams", "cb-san-diego-sean-barry", "cb-byu-colton-shaver",
        "cb-arkansas-jax-biggers", "cb-cincinnati-manny-rodriguez",
@@ -96,8 +96,13 @@ check(len(draft_tags["picks"]) == len(draft_ids) == 690 and
       sum(p["draft_year"] == 2022 for p in draft_tags["picks"]) == 68 and
       sum(p["draft_year"] == 2023 for p in draft_tags["picks"]) == 54 and
       sum(p["draft_year"] == 2024 for p in draft_tags["picks"]) == 156 and
-      sum(p["draft_year"] == 2025 for p in draft_tags["picks"]) == 194 and
-      len({(p["draft_year"], p["draft_pick"]) for p in draft_tags["picks"]}) == 690 and
+      sum(p["draft_year"] == 2025 for p in draft_tags["picks"]) == 209 and
+      sum(p["draft_year"] == 2026 for p in draft_tags["picks"]) == 208 and
+      sum(p["draft_year"] == 2025 and p["draft_pick"] > 524
+          for p in draft_tags["picks"]) == 15 and
+      {p["draft_pick"] for p in draft_tags["picks"]
+       if p["draft_year"] == 2026}.isdisjoint({255, 449}) and
+      len({(p["draft_year"], p["draft_pick"]) for p in draft_tags["picks"]}) == 913 and
       {p["draft_pick"] for p in draft_tags["picks"]
        if p["draft_year"] == 2025 and 292 <= p["draft_pick"] <= 524} == {
            292, 293, 294, 298, 308, 310, 312, 313, 317, 319, 320, 323,
@@ -152,6 +157,29 @@ check(len(draft_tags["picks"]) == len(draft_ids) == 690 and
               ("cb-georgia-davis-chastain", 2025, "14", 435),
               ("cb-texas-grayson-saunier", 2025, "17", 516),
               ("cb-virginia-ryan-osinski", 2025, "17", 524),
+              ("cb-missouri-sam-horn", 2025, "17", 525),
+              ("cb-auburn-cade-fisher", 2025, "18", 538),
+              ("cb-coastal-carolina-matthew-potok", 2025, "18", 551),
+              ("cb-vanderbilt-jonathan-vastine", 2025, "19", 580),
+              ("cb-pittsburgh-luke-cantwell", 2025, "20", 610),
+              ("cb-georgia-tech-vahn-lackey", 2026, "1", 3),
+              ("cb-georgia-tech-drew-burress", 2026, "1", 8),
+              ("cb-texas-a-m-chris-hacopian", 2026, "1", 11),
+              ("cb-indiana-state-carter-beck", 2026, "PPI", 26),
+              ("cb-georgia-daniel-jackson", 2026, "CB-A", 37),
+              ("cb-san-diego-logan-reddemann", 2026, "2", 38),
+              ("cb-california-jarren-advincula", 2026, "2", 45),
+              ("cb-arkansas-cam-kozeal", 2026, "3", 87),
+              ("cb-ole-miss-wil-libbert", 2026, "5", 144),
+              ("cb-texas-will-gasparino", 2026, "5", 161),
+              ("cb-tennessee-bo-rhudy", 2026, "7", 219),
+              ("cb-texas-thomas-burns", 2026, "8", 227),
+              ("cb-auburn-garrett-brewer", 2026, "11", 344),
+              ("cb-vmi-grayson-fitzwater", 2026, "13", 375),
+              ("cb-tennessee-evan-blanco", 2026, "13", 381),
+              ("cb-cornell-mark-quatrani", 2026, "18", 545),
+              ("cb-middle-tennessee-state-david-horn-jr", 2026, "19", 563),
+              ("cb-arkansas-parker-coil", 2026, "20", 603),
           ]) and
       any(p["college_player_id"] == "cb-oregon-bennett-thompson" and
               (p["draft_round"], p["draft_pick"]) == ("13", 385)
@@ -984,6 +1012,25 @@ with tempfile.TemporaryDirectory() as t:
                     ("Davis Chastain", "cb-georgia-davis-chastain", "14", 435, 2),
                     ("Grayson Saunier", "cb-texas-grayson-saunier", "17", 516, 1),
                     ("Ryan Osinski", "cb-virginia-ryan-osinski", "17", 524, 4),
+                    ("Sam Horn", "cb-missouri-sam-horn", "17", 525, 1),
+                    ("Cade Fisher", "cb-auburn-cade-fisher", "18", 538, 1),
+                    ("Matthew Potok", "cb-coastal-carolina-matthew-potok", "18", 551, 1),
+                    ("Jonathan Vastine", "cb-vanderbilt-jonathan-vastine", "19", 580, 6),
+                    ("Luke Cantwell", "cb-pittsburgh-luke-cantwell", "20", 610, 3),
+                    ("Vahn Lackey", "cb-georgia-tech-vahn-lackey", "1", 3, 4),
+                    ("Drew Burress", "cb-georgia-tech-drew-burress", "1", 8, 5),
+                    ("Chris Hacopian", "cb-texas-a-m-chris-hacopian", "1", 11, 1),
+                    ("Carter Beck", "cb-indiana-state-carter-beck", "PPI", 26, 1),
+                    ("Jarren Advincula", "cb-california-jarren-advincula", "2", 45, 1),
+                    ("Cam Kozeal", "cb-arkansas-cam-kozeal", "3", 87, 1),
+                    ("Wil Libbert", "cb-ole-miss-wil-libbert", "5", 144, 1),
+                    ("Will Gasparino", "cb-texas-will-gasparino", "5", 161, 1),
+                    ("Bo Rhudy", "cb-tennessee-bo-rhudy", "7", 219, 5),
+                    ("Thomas Burns", "cb-texas-thomas-burns", "8", 227, 1),
+                    ("Grayson Fitzwater", "cb-vmi-grayson-fitzwater", "13", 375, 1),
+                    ("Mark Quatrani", "cb-cornell-mark-quatrani", "18", 545, 5),
+                    ("David Horn Jr.", "cb-middle-tennessee-state-david-horn-jr", "19", 563, 1),
+                    ("Parker Coil", "cb-arkansas-parker-coil", "20", 603, 2),
                 ]:
                     visit(page, host, f"player.html?id={college_id}", ".cb-profile-hero")
                     tag=page.locator(".cb-mlb-draft").inner_text()

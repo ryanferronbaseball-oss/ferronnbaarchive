@@ -470,6 +470,33 @@
       "corrections": [
         {"source_player_id": "cb-vanderbilt-bowker", "source_player_name": "Bowker", "player": "Cody Bowker", "canonical_player_id": "cb-vanderbilt-cody-bowker"}
       ]
+    },
+    {
+      "game_id": "cb-2025-05-20-kentucky-oklahoma-att0351",
+      "team": "Oklahoma",
+      "description": "Link Oklahoma's James Hitt gamebook appearance to his MLB Draft-listed name Jamie Hitt; Oklahoma and MLB both document the James/Jamie name variants for the same pitcher.",
+      "verified_on": "2026-11-01",
+      "evidence_urls": [
+        "https://www.secsports.com/scores/26959/live",
+        "https://soonersports.com/sports/baseball/roster/james-hitt/18782",
+        "https://www.milb.com/player/jamie-hitt-699546"
+      ],
+      "corrections": [
+        {"source_player_id": "cb-oklahoma-james-hitt", "source_player_name": "James Hitt", "player": "Jamie Hitt", "canonical_player_id": "cb-oklahoma-jamie-hitt"}
+      ]
+    },
+    {
+      "game_id": "cb-2025-05-21-texas-a-m-mississippi-state-att0353",
+      "team": "Mississippi State",
+      "description": "Expand the Mississippi State gamebook's surname-only Hines entry to Hunter Hines, the Nationals' 2025 tenth-round selection, without changing the witnessed batting line.",
+      "verified_on": "2026-11-01",
+      "evidence_urls": [
+        "https://hailstate.com/sports/baseball/stats/2025/texas-am/boxscore/27187",
+        "https://hailstate.com/news/2025/7/14/baseball-seven-bulldogs-selected-in-mlb-draft"
+      ],
+      "corrections": [
+        {"source_player_id": "cb-mississippi-state-hines", "source_player_name": "Hines", "player": "Hunter Hines", "canonical_player_id": "cb-mississippi-state-hunter-hines"}
+      ]
     }
   ]
 }

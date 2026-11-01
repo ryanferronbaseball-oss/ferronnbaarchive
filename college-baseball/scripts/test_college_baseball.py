@@ -71,7 +71,7 @@ corrected_names = {
     for game in [name_corrections, *name_corrections.get("games", [])]
     for fix in game["corrections"]
 }
-check(len(draft_tags["picks"]) == len(draft_ids) == 560 and
+check(len(draft_tags["picks"]) == len(draft_ids) == 624 and
       {"cb-san-diego-riley-adams", "cb-san-diego-sean-barry", "cb-byu-colton-shaver",
        "cb-arkansas-jax-biggers", "cb-cincinnati-manny-rodriguez",
        "cb-cincinnati-jt-perez", "cb-california-tyrus-greene",
@@ -89,14 +89,14 @@ check(len(draft_tags["picks"]) == len(draft_ids) == 560 and
       sum(p["draft_year"] == 2021 for p in draft_tags["picks"]) == 44 and
       sum(p["draft_year"] == 2022 for p in draft_tags["picks"]) == 68 and
       sum(p["draft_year"] == 2023 for p in draft_tags["picks"]) == 54 and
-      sum(p["draft_year"] == 2024 for p in draft_tags["picks"]) == 158 and
-      sum(p["draft_year"] == 2025 for p in draft_tags["picks"]) == 62 and
-      len({(p["draft_year"], p["draft_pick"]) for p in draft_tags["picks"]}) == 560 and
+      sum(p["draft_year"] == 2024 for p in draft_tags["picks"]) == 156 and
+      sum(p["draft_year"] == 2025 for p in draft_tags["picks"]) == 128 and
+      len({(p["draft_year"], p["draft_pick"]) for p in draft_tags["picks"]}) == 624 and
       all(any(p["college_player_id"] == player_id and
                   (p["draft_year"], p["draft_round"], p["draft_pick"]) == (year, round_name, pick)
               for p in draft_tags["picks"])
           for player_id, year, round_name, pick in [
-              ("cb-florida-colby-shelton", 2024, "20", 590),
+              ("cb-florida-colby-shelton", 2025, "6", 166),
               ("cb-lsu-kade-anderson", 2025, "1", 3),
               ("cb-louisville-patrick-forbes", 2025, "1C", 29),
               ("cb-tennessee-marcus-phillips", 2025, "CB-A", 33),
@@ -110,6 +110,17 @@ check(len(draft_tags["picks"]) == len(draft_ids) == 560 and
               ("cb-vanderbilt-cody-bowker", 2025, "3", 100),
               ("cb-oklahoma-state-nolan-schubart", 2025, "3", 101),
               ("cb-oregon-mason-neville", 2025, "4", 114),
+              ("cb-nc-state-dominic-fritton", 2025, "4", 117),
+              ("cb-east-carolina-dixon-williams", 2025, "4C", 136),
+              ("cb-princeton-sean-episcope", 2025, "5", 155),
+              ("cb-north-carolina-aidan-haugh", 2025, "6", 177),
+              ("cb-alabama-richie-bonomolo-jr", 2025, "7", 224),
+              ("cb-arizona-state-isaiah-jackson", 2025, "8", 229),
+              ("cb-old-dominion-dylan-brown", 2025, "8", 238),
+              ("cb-oklahoma-jamie-hitt", 2025, "8", 250),
+              ("cb-uc-irvine-anthony-martinez", 2025, "8", 252),
+              ("cb-texas-a-m-ryan-prager", 2025, "9", 282),
+              ("cb-mississippi-state-hunter-hines", 2025, "10", 291),
           ]) and
       any(p["college_player_id"] == "cb-oregon-bennett-thompson" and
               (p["draft_round"], p["draft_pick"]) == ("13", 385)
@@ -907,7 +918,7 @@ with tempfile.TemporaryDirectory() as t:
                     ("Drake Frize", "cb-san-diego-drake-frize", "17", 524, 20),
                     ("Izaak Martinez", "cb-uc-san-diego-izaak-martinez", "18", 535, 1),
                     ("Owen Ayers", "cb-marshall-owen-ayers", "19", 572, 1),
-                    ("Colby Shelton", "cb-florida-colby-shelton", "20", 590, 1),
+                    ("Colby Shelton", "cb-florida-colby-shelton", "6", 166, 1),
                     ("Kade Anderson", "cb-lsu-kade-anderson", "1", 3, 2),
                     ("Justin Lamkin", "cb-texas-a-m-justin-lamkin", "CB-B", 71, 1),
                     ("Max Belyeu", "cb-texas-max-belyeu", "CB-B", 74, 1),
@@ -918,6 +929,17 @@ with tempfile.TemporaryDirectory() as t:
                     ("Nolan Schubart", "cb-oklahoma-state-nolan-schubart", "3", 101, 1),
                     ("Nate Snead", "cb-tennessee-nate-snead", "SUP-3", 105, 2),
                     ("Mason Neville", "cb-oregon-mason-neville", "4", 114, 2),
+                    ("Dominic Fritton", "cb-nc-state-dominic-fritton", "4", 117, 3),
+                    ("Dixon Williams", "cb-east-carolina-dixon-williams", "4C", 136, 4),
+                    ("Sean Episcope", "cb-princeton-sean-episcope", "5", 155, 1),
+                    ("Aidan Haugh", "cb-north-carolina-aidan-haugh", "6", 177, 2),
+                    ("Richie Bonomolo Jr.", "cb-alabama-richie-bonomolo-jr", "7", 224, 2),
+                    ("Isaiah Jackson", "cb-arizona-state-isaiah-jackson", "8", 229, 1),
+                    ("Dylan Brown", "cb-old-dominion-dylan-brown", "8", 238, 2),
+                    ("Jamie Hitt", "cb-oklahoma-jamie-hitt", "8", 250, 1),
+                    ("Anthony Martinez", "cb-uc-irvine-anthony-martinez", "8", 252, 2),
+                    ("Ryan Prager", "cb-texas-a-m-ryan-prager", "9", 282, 1),
+                    ("Hunter Hines", "cb-mississippi-state-hunter-hines", "10", 291, 1),
                 ]:
                     visit(page, host, f"player.html?id={college_id}", ".cb-profile-hero")
                     tag=page.locator(".cb-mlb-draft").inner_text()

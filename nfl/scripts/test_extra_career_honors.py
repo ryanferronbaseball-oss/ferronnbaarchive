@@ -49,6 +49,7 @@ assert [e["year"] for e in players["4697"]["super_bowl"]] == [2003, 2004]
 assert players["5528"]["retired_number"] == [{"year": 2026, "team": "Arizona Cardinals", "number": "11"}]
 assert players["668"]["ap_comeback"][0]["year"] == 1999
 assert players["2971282"]["pro_bowl_years"] == [2018, 2021, 2023]
+assert players["2299"]["pro_bowl_years"] == [2003, 2006]
 print(f"PASS NFL honor data joins exact archive athlete IDs; all {len(pro_bowl_players)} Pro Bowl players have year lists matching their career counts")
 
 page_source = (ROOT / "nfl/player.html").read_text()
@@ -105,6 +106,7 @@ try:
             inspect(page, "2612", "PRO BOWL", "Pro Bowl", "2006")
             inspect(page, "5528", "PRO BOWL", "Pro Bowl", "2013")
             inspect(page, "2971282", "PRO BOWL", "Pro Bowl", "2023")
+            inspect(page, "2299", "PRO BOWL", "Pro Bowl", "2006")
             inspect(page, "668", "COMEBACK", "Comeback Player", "1999 · San Francisco 49ers")
             page.goto(origin + "4036134", wait_until="domcontentloaded")
             page.wait_for_function("document.getElementById('playerName').textContent !== 'Player profile'")

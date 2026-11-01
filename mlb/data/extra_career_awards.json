@@ -1,0 +1,3886 @@
+{
+  "_meta": {
+    "source": "Official MLB StatsAPI award recipients and team uniform retirements",
+    "source_url": "https://statsapi.mlb.com/api/v1/awards",
+    "career_scope": "Official honors earned at any career point, not limited to witnessed games",
+    "all_mlb_definition": "All-MLB First and Second Team honors, first awarded in 2019",
+    "retired_number_definition": "Official team-specific uniform number retirement ceremony; excludes informal numbers out of circulation",
+    "player_pool": 1633,
+    "honored_players": 174,
+    "award_recipients": {
+      "all_mlb": 73,
+      "hank_aaron": 29,
+      "lcs_mvp": 41,
+      "platinum_glove": 12,
+      "retired_number": 28,
+      "rookie_of_year": 42,
+      "world_series_mvp": 20
+    },
+    "sources": {
+      "ALROY": {
+        "recipient_records": 78,
+        "matched_records": 21
+      },
+      "NLROY": {
+        "recipient_records": 78,
+        "matched_records": 21
+      },
+      "MLBROY": {
+        "recipient_records": 2,
+        "matched_records": 0
+      },
+      "MLBAFIRST": {
+        "recipient_records": 111,
+        "matched_records": 70
+      },
+      "MLBSECOND": {
+        "recipient_records": 112,
+        "matched_records": 68
+      },
+      "WSMVP": {
+        "recipient_records": 74,
+        "matched_records": 21
+      },
+      "ALCSMVP": {
+        "recipient_records": 46,
+        "matched_records": 17
+      },
+      "NLCSMVP": {
+        "recipient_records": 52,
+        "matched_records": 24
+      },
+      "ALHAA": {
+        "recipient_records": 27,
+        "matched_records": 23
+      },
+      "NLHAA": {
+        "recipient_records": 27,
+        "matched_records": 23
+      },
+      "ALPG": {
+        "recipient_records": 15,
+        "matched_records": 8
+      },
+      "NLPG": {
+        "recipient_records": 15,
+        "matched_records": 15
+      },
+      "RETIREDUNI_108": {
+        "recipient_records": 6,
+        "matched_records": 0
+      },
+      "RETIREDUNI_109": {
+        "recipient_records": 3,
+        "matched_records": 1
+      },
+      "RETIREDUNI_110": {
+        "recipient_records": 7,
+        "matched_records": 0
+      },
+      "RETIREDUNI_111": {
+        "recipient_records": 11,
+        "matched_records": 1
+      },
+      "RETIREDUNI_112": {
+        "recipient_records": 7,
+        "matched_records": 0
+      },
+      "RETIREDUNI_113": {
+        "recipient_records": 12,
+        "matched_records": 0
+      },
+      "RETIREDUNI_114": {
+        "recipient_records": 9,
+        "matched_records": 1
+      },
+      "RETIREDUNI_115": {
+        "recipient_records": 3,
+        "matched_records": 2
+      },
+      "RETIREDUNI_116": {
+        "recipient_records": 11,
+        "matched_records": 0
+      },
+      "RETIREDUNI_117": {
+        "recipient_records": 11,
+        "matched_records": 0
+      },
+      "RETIREDUNI_118": {
+        "recipient_records": 4,
+        "matched_records": 0
+      },
+      "RETIREDUNI_119": {
+        "recipient_records": 12,
+        "matched_records": 0
+      },
+      "RETIREDUNI_120": {
+        "recipient_records": 6,
+        "matched_records": 1
+      },
+      "RETIREDUNI_121": {
+        "recipient_records": 12,
+        "matched_records": 3
+      },
+      "RETIREDUNI_133": {
+        "recipient_records": 7,
+        "matched_records": 1
+      },
+      "RETIREDUNI_134": {
+        "recipient_records": 10,
+        "matched_records": 0
+      },
+      "RETIREDUNI_135": {
+        "recipient_records": 6,
+        "matched_records": 1
+      },
+      "RETIREDUNI_136": {
+        "recipient_records": 5,
+        "matched_records": 2
+      },
+      "RETIREDUNI_137": {
+        "recipient_records": 15,
+        "matched_records": 1
+      },
+      "RETIREDUNI_138": {
+        "recipient_records": 15,
+        "matched_records": 0
+      },
+      "RETIREDUNI_139": {
+        "recipient_records": 4,
+        "matched_records": 1
+      },
+      "RETIREDUNI_140": {
+        "recipient_records": 6,
+        "matched_records": 2
+      },
+      "RETIREDUNI_141": {
+        "recipient_records": 2,
+        "matched_records": 1
+      },
+      "RETIREDUNI_142": {
+        "recipient_records": 10,
+        "matched_records": 0
+      },
+      "RETIREDUNI_143": {
+        "recipient_records": 13,
+        "matched_records": 1
+      },
+      "RETIREDUNI_144": {
+        "recipient_records": 12,
+        "matched_records": 4
+      },
+      "RETIREDUNI_145": {
+        "recipient_records": 13,
+        "matched_records": 1
+      },
+      "RETIREDUNI_146": {
+        "recipient_records": 1,
+        "matched_records": 0
+      },
+      "RETIREDUNI_147": {
+        "recipient_records": 25,
+        "matched_records": 5
+      },
+      "RETIREDUNI_158": {
+        "recipient_records": 6,
+        "matched_records": 0
+      }
+    },
+    "imported_utc": "2026-11-01T06:20:33.800976+00:00"
+  },
+  "players": {
+    "123833": {
+      "name": "Larry Walker",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [],
+      "lcs_mvp": [],
+      "retired_number": [
+        {
+          "year": 2021,
+          "team": "Colorado Rockies",
+          "number": "33",
+          "date": "2021-09-25"
+        }
+      ]
+    },
+    "115732": {
+      "name": "Todd Helton",
+      "platinum_glove": [],
+      "hank_aaron": [
+        {
+          "year": 2000,
+          "league": "NL",
+          "team": "Colorado Rockies"
+        }
+      ],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [],
+      "lcs_mvp": [],
+      "retired_number": [
+        {
+          "year": 2014,
+          "team": "Colorado Rockies",
+          "number": "17",
+          "date": "2014-08-17"
+        }
+      ]
+    },
+    "115749": {
+      "name": "Rickey Henderson",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [],
+      "lcs_mvp": [
+        {
+          "year": 1989,
+          "league": "AL",
+          "team": "Oakland Athletics"
+        }
+      ],
+      "retired_number": [
+        {
+          "year": 2009,
+          "team": "Oakland Athletics",
+          "number": "24",
+          "date": "2009-08-01"
+        }
+      ]
+    },
+    "134181": {
+      "name": "Adrian Beltré",
+      "platinum_glove": [
+        {
+          "year": 2011,
+          "league": "AL",
+          "team": "Texas Rangers"
+        },
+        {
+          "year": 2012,
+          "league": "AL",
+          "team": "Texas Rangers"
+        }
+      ],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [],
+      "lcs_mvp": [],
+      "retired_number": [
+        {
+          "year": 2019,
+          "team": "Texas Rangers",
+          "number": "29",
+          "date": "2019-06-08"
+        }
+      ]
+    },
+    "115135": {
+      "name": "Ken Griffey Jr.",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [],
+      "lcs_mvp": [],
+      "retired_number": [
+        {
+          "year": 2016,
+          "team": "Seattle Mariners",
+          "number": "24",
+          "date": "2016-08-06"
+        }
+      ]
+    },
+    "150456": {
+      "name": "Adam Kennedy",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [],
+      "lcs_mvp": [
+        {
+          "year": 2002,
+          "league": "AL",
+          "team": "Los Angeles Angels"
+        }
+      ],
+      "retired_number": []
+    },
+    "116999": {
+      "name": "Jeff Kent",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [],
+      "lcs_mvp": [],
+      "retired_number": [
+        {
+          "year": 2026,
+          "team": "San Francisco Giants",
+          "number": "12",
+          "date": "2026-08-29"
+        }
+      ]
+    },
+    "400085": {
+      "name": "Ichiro Suzuki",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [
+        {
+          "year": 2001,
+          "league": "AL",
+          "team": "Seattle Mariners"
+        }
+      ],
+      "all_mlb": [],
+      "lcs_mvp": [],
+      "retired_number": [
+        {
+          "year": 2025,
+          "team": "Seattle Mariners",
+          "number": "51",
+          "date": "2025-08-09"
+        }
+      ]
+    },
+    "121640": {
+      "name": "Tim Salmon",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [
+        {
+          "year": 1993,
+          "league": "AL",
+          "team": "Los Angeles Angels"
+        }
+      ],
+      "all_mlb": [],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "435062": {
+      "name": "Howie Kendrick",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [],
+      "lcs_mvp": [
+        {
+          "year": 2019,
+          "league": "NL",
+          "team": "Washington Nationals"
+        }
+      ],
+      "retired_number": []
+    },
+    "116706": {
+      "name": "Chipper Jones",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [],
+      "lcs_mvp": [],
+      "retired_number": [
+        {
+          "year": 2013,
+          "team": "Atlanta Braves",
+          "number": "10",
+          "date": "2013-06-28"
+        }
+      ]
+    },
+    "122477": {
+      "name": "John Smoltz",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [],
+      "lcs_mvp": [
+        {
+          "year": 1992,
+          "league": "NL",
+          "team": "Atlanta Braves"
+        }
+      ],
+      "retired_number": [
+        {
+          "year": 2012,
+          "team": "Atlanta Braves",
+          "number": "29",
+          "date": "2012-06-08"
+        }
+      ]
+    },
+    "121074": {
+      "name": "Edgar Renteria",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [
+        {
+          "year": 2010,
+          "team": "San Francisco Giants"
+        }
+      ],
+      "rookie_of_year": [],
+      "all_mlb": [],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "116662": {
+      "name": "Andruw Jones",
+      "platinum_glove": [],
+      "hank_aaron": [
+        {
+          "year": 2005,
+          "league": "NL",
+          "team": "Atlanta Braves"
+        }
+      ],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [],
+      "lcs_mvp": [],
+      "retired_number": [
+        {
+          "year": 2023,
+          "team": "Atlanta Braves",
+          "number": "25",
+          "date": "2023-09-09"
+        }
+      ]
+    },
+    "120691": {
+      "name": "Jorge Posada",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [],
+      "lcs_mvp": [],
+      "retired_number": [
+        {
+          "year": 2015,
+          "team": "New York Yankees",
+          "number": "20",
+          "date": "2015-08-22"
+        }
+      ]
+    },
+    "116539": {
+      "name": "Derek Jeter",
+      "platinum_glove": [],
+      "hank_aaron": [
+        {
+          "year": 2006,
+          "league": "AL",
+          "team": "New York Yankees"
+        },
+        {
+          "year": 2009,
+          "league": "AL",
+          "team": "New York Yankees"
+        }
+      ],
+      "world_series_mvp": [
+        {
+          "year": 2000,
+          "team": "New York Yankees"
+        }
+      ],
+      "rookie_of_year": [
+        {
+          "year": 1996,
+          "league": "AL",
+          "team": "New York Yankees"
+        }
+      ],
+      "all_mlb": [],
+      "lcs_mvp": [],
+      "retired_number": [
+        {
+          "year": 2017,
+          "team": "New York Yankees",
+          "number": "2",
+          "date": "2017-05-14"
+        }
+      ]
+    },
+    "124288": {
+      "name": "Bernie Williams",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [],
+      "lcs_mvp": [
+        {
+          "year": 1996,
+          "league": "AL",
+          "team": "New York Yankees"
+        }
+      ],
+      "retired_number": [
+        {
+          "year": 2015,
+          "team": "New York Yankees",
+          "number": "51",
+          "date": "2015-05-24"
+        }
+      ]
+    },
+    "121250": {
+      "name": "Mariano Rivera",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [
+        {
+          "year": 1999,
+          "team": "New York Yankees"
+        }
+      ],
+      "rookie_of_year": [],
+      "all_mlb": [],
+      "lcs_mvp": [
+        {
+          "year": 2003,
+          "league": "AL",
+          "team": "New York Yankees"
+        }
+      ],
+      "retired_number": [
+        {
+          "year": 2013,
+          "team": "New York Yankees",
+          "number": "42",
+          "date": "2013-09-22"
+        }
+      ]
+    },
+    "121347": {
+      "name": "Alex Rodriguez",
+      "platinum_glove": [],
+      "hank_aaron": [
+        {
+          "year": 2001,
+          "league": "AL",
+          "team": "Texas Rangers"
+        },
+        {
+          "year": 2002,
+          "league": "AL",
+          "team": "Texas Rangers"
+        },
+        {
+          "year": 2003,
+          "league": "AL",
+          "team": "Texas Rangers"
+        },
+        {
+          "year": 2007,
+          "league": "AL",
+          "team": "New York Yankees"
+        }
+      ],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "475582": {
+      "name": "Ryan Zimmerman",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [],
+      "lcs_mvp": [],
+      "retired_number": [
+        {
+          "year": 2022,
+          "team": "Washington Nationals",
+          "number": "11",
+          "date": "2022-06-18"
+        }
+      ]
+    },
+    "150182": {
+      "name": "Scott Williamson",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [
+        {
+          "year": 1999,
+          "league": "NL",
+          "team": "Cincinnati Reds"
+        }
+      ],
+      "all_mlb": [],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "120536": {
+      "name": "Mike Piazza",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [
+        {
+          "year": 1993,
+          "league": "NL",
+          "team": "Los Angeles Dodgers"
+        }
+      ],
+      "all_mlb": [],
+      "lcs_mvp": [],
+      "retired_number": [
+        {
+          "year": 2016,
+          "team": "New York Mets",
+          "number": "31",
+          "date": "2016-07-30"
+        }
+      ]
+    },
+    "120074": {
+      "name": "David Ortiz",
+      "platinum_glove": [],
+      "hank_aaron": [
+        {
+          "year": 2005,
+          "league": "AL",
+          "team": "Boston Red Sox"
+        },
+        {
+          "year": 2016,
+          "league": "AL",
+          "team": "Boston Red Sox"
+        }
+      ],
+      "world_series_mvp": [
+        {
+          "year": 2013,
+          "team": "Boston Red Sox"
+        }
+      ],
+      "rookie_of_year": [],
+      "all_mlb": [],
+      "lcs_mvp": [
+        {
+          "year": 2004,
+          "league": "AL",
+          "team": "Boston Red Sox"
+        }
+      ],
+      "retired_number": [
+        {
+          "year": 2017,
+          "team": "Boston Red Sox",
+          "number": "34",
+          "date": "2017-06-23"
+        }
+      ]
+    },
+    "136780": {
+      "name": "Mike Lowell",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [
+        {
+          "year": 2007,
+          "team": "Boston Red Sox"
+        }
+      ],
+      "rookie_of_year": [],
+      "all_mlb": [],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "120903": {
+      "name": "Manny Ramirez",
+      "platinum_glove": [],
+      "hank_aaron": [
+        {
+          "year": 1999,
+          "league": "AL",
+          "team": "Cleveland Indians"
+        },
+        {
+          "year": 2004,
+          "league": "AL",
+          "team": "Boston Red Sox"
+        }
+      ],
+      "world_series_mvp": [
+        {
+          "year": 2004,
+          "team": "Boston Red Sox"
+        }
+      ],
+      "rookie_of_year": [],
+      "all_mlb": [],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "456030": {
+      "name": "Dustin Pedroia",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [
+        {
+          "year": 2007,
+          "league": "AL",
+          "team": "Boston Red Sox"
+        }
+      ],
+      "all_mlb": [],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "425903": {
+      "name": "Kevin Youkilis",
+      "platinum_glove": [],
+      "hank_aaron": [
+        {
+          "year": 2008,
+          "league": "AL",
+          "team": "Boston Red Sox"
+        }
+      ],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "136880": {
+      "name": "Roy Halladay",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [],
+      "lcs_mvp": [],
+      "retired_number": [
+        {
+          "year": 2018,
+          "team": "Toronto Blue Jays",
+          "number": "32",
+          "date": "2018-03-29"
+        },
+        {
+          "year": 2021,
+          "team": "Philadelphia Phillies",
+          "number": "34",
+          "date": "2021-08-08"
+        }
+      ]
+    },
+    "136267": {
+      "name": "Troy Glaus",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [
+        {
+          "year": 2002,
+          "team": "Los Angeles Angels"
+        }
+      ],
+      "rookie_of_year": [],
+      "all_mlb": [],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "114935": {
+      "name": "Luis Gonzalez",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [],
+      "lcs_mvp": [],
+      "retired_number": [
+        {
+          "year": 2010,
+          "team": "Arizona Diamondbacks",
+          "number": "20",
+          "date": "2010-08-07"
+        }
+      ]
+    },
+    "461314": {
+      "name": "Matt Kemp",
+      "platinum_glove": [],
+      "hank_aaron": [
+        {
+          "year": 2011,
+          "league": "NL",
+          "team": "Los Angeles Dodgers"
+        }
+      ],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "279577": {
+      "name": "Rafael Furcal",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [
+        {
+          "year": 2000,
+          "league": "NL",
+          "team": "Atlanta Braves"
+        }
+      ],
+      "all_mlb": [],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "114596": {
+      "name": "Nomar Garciaparra",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [
+        {
+          "year": 1997,
+          "league": "AL",
+          "team": "Boston Red Sox"
+        }
+      ],
+      "all_mlb": [],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "114849": {
+      "name": "Tom Glavine",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [
+        {
+          "year": 1995,
+          "team": "Atlanta Braves"
+        }
+      ],
+      "rookie_of_year": [],
+      "all_mlb": [],
+      "lcs_mvp": [],
+      "retired_number": [
+        {
+          "year": 2010,
+          "team": "Atlanta Braves",
+          "number": "47",
+          "date": "2010-08-06"
+        }
+      ]
+    },
+    "431151": {
+      "name": "David Wright",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [],
+      "lcs_mvp": [],
+      "retired_number": [
+        {
+          "year": 2025,
+          "team": "New York Mets",
+          "number": "5",
+          "date": "2025-07-19"
+        }
+      ]
+    },
+    "136860": {
+      "name": "Carlos Beltrán",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [
+        {
+          "year": 1999,
+          "league": "AL",
+          "team": "Kansas City Royals"
+        }
+      ],
+      "all_mlb": [],
+      "lcs_mvp": [],
+      "retired_number": [
+        {
+          "year": 2026,
+          "team": "New York Mets",
+          "number": "15",
+          "date": "2026-09-19"
+        }
+      ]
+    },
+    "110184": {
+      "name": "Sandy Alomar Jr.",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [
+        {
+          "year": 1990,
+          "league": "AL",
+          "team": "Cleveland Indians"
+        }
+      ],
+      "all_mlb": [],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "113232": {
+      "name": "Carlos Delgado",
+      "platinum_glove": [],
+      "hank_aaron": [
+        {
+          "year": 2000,
+          "league": "AL",
+          "team": "Toronto Blue Jays"
+        }
+      ],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "124071": {
+      "name": "David Wells",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [],
+      "lcs_mvp": [
+        {
+          "year": 1998,
+          "league": "AL",
+          "team": "New York Yankees"
+        }
+      ],
+      "retired_number": []
+    },
+    "116034": {
+      "name": "Trevor Hoffman",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [],
+      "lcs_mvp": [],
+      "retired_number": [
+        {
+          "year": 2011,
+          "team": "San Diego Padres",
+          "number": "51",
+          "date": "2011-08-21"
+        }
+      ]
+    },
+    "285078": {
+      "name": "Josh Hamilton",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [],
+      "lcs_mvp": [
+        {
+          "year": 2010,
+          "league": "AL",
+          "team": "Texas Rangers"
+        }
+      ],
+      "retired_number": []
+    },
+    "133380": {
+      "name": "Aramis Ramirez",
+      "platinum_glove": [],
+      "hank_aaron": [
+        {
+          "year": 2008,
+          "league": "NL",
+          "team": "Chicago Cubs"
+        }
+      ],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "407812": {
+      "name": "Matt Holliday",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [],
+      "lcs_mvp": [
+        {
+          "year": 2007,
+          "league": "NL",
+          "team": "Colorado Rockies"
+        }
+      ],
+      "retired_number": []
+    },
+    "113679": {
+      "name": "Jermaine Dye",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [
+        {
+          "year": 2005,
+          "team": "Chicago White Sox"
+        }
+      ],
+      "rookie_of_year": [],
+      "all_mlb": [],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "123272": {
+      "name": "Jim Thome",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [],
+      "lcs_mvp": [],
+      "retired_number": [
+        {
+          "year": 2018,
+          "team": "Cleveland Indians",
+          "number": "25",
+          "date": "2018-08-18"
+        }
+      ]
+    },
+    "117244": {
+      "name": "Paul Konerko",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [],
+      "lcs_mvp": [
+        {
+          "year": 2005,
+          "league": "AL",
+          "team": "Chicago White Sox"
+        }
+      ],
+      "retired_number": [
+        {
+          "year": 2015,
+          "team": "Chicago White Sox",
+          "number": "14",
+          "date": "2015-05-23"
+        }
+      ]
+    },
+    "477132": {
+      "name": "Clayton Kershaw",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [
+        {
+          "year": 2020,
+          "level": "Second Team",
+          "team": "Los Angeles Dodgers"
+        }
+      ],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "407556": {
+      "name": "Angel Berroa",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [
+        {
+          "year": 2003,
+          "league": "AL",
+          "team": "Kansas City Royals"
+        }
+      ],
+      "all_mlb": [],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "112736": {
+      "name": "Craig Counsell",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [],
+      "lcs_mvp": [
+        {
+          "year": 2001,
+          "league": "NL",
+          "team": "Arizona Diamondbacks"
+        }
+      ],
+      "retired_number": []
+    },
+    "425902": {
+      "name": "Prince Fielder",
+      "platinum_glove": [],
+      "hank_aaron": [
+        {
+          "year": 2007,
+          "league": "NL",
+          "team": "Milwaukee Brewers"
+        }
+      ],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "460075": {
+      "name": "Ryan Braun",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [
+        {
+          "year": 2007,
+          "league": "NL",
+          "team": "Milwaukee Brewers"
+        }
+      ],
+      "all_mlb": [],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "424726": {
+      "name": "Jason Bay",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [
+        {
+          "year": 2004,
+          "league": "NL",
+          "team": "Pittsburgh Pirates"
+        }
+      ],
+      "all_mlb": [],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "425853": {
+      "name": "Bobby Crosby",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [
+        {
+          "year": 2004,
+          "league": "AL",
+          "team": "Oakland Athletics"
+        }
+      ],
+      "all_mlb": [],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "425686": {
+      "name": "Hideki Matsui",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [
+        {
+          "year": 2009,
+          "team": "New York Yankees"
+        }
+      ],
+      "rookie_of_year": [],
+      "all_mlb": [],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "458085": {
+      "name": "Chris Coghlan",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [
+        {
+          "year": 2009,
+          "league": "NL",
+          "team": "Florida Marlins"
+        }
+      ],
+      "all_mlb": [],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "425496": {
+      "name": "Cody Ross",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [],
+      "lcs_mvp": [
+        {
+          "year": 2010,
+          "league": "NL",
+          "team": "San Francisco Giants"
+        }
+      ],
+      "retired_number": []
+    },
+    "519317": {
+      "name": "Giancarlo Stanton",
+      "platinum_glove": [],
+      "hank_aaron": [
+        {
+          "year": 2014,
+          "league": "NL",
+          "team": "Miami Marlins"
+        },
+        {
+          "year": 2017,
+          "league": "NL",
+          "team": "Miami Marlins"
+        }
+      ],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [],
+      "lcs_mvp": [
+        {
+          "year": 2024,
+          "league": "AL",
+          "team": "New York Yankees"
+        }
+      ],
+      "retired_number": []
+    },
+    "434670": {
+      "name": "Hanley Ramirez",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [
+        {
+          "year": 2006,
+          "league": "NL",
+          "team": "Florida Marlins"
+        }
+      ],
+      "all_mlb": [],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "491703": {
+      "name": "Neftalí Feliz",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [
+        {
+          "year": 2010,
+          "league": "AL",
+          "team": "Texas Rangers"
+        }
+      ],
+      "all_mlb": [],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "443558": {
+      "name": "Nelson Cruz",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [
+        {
+          "year": 2019,
+          "level": "First Team",
+          "team": "Minnesota Twins"
+        },
+        {
+          "year": 2020,
+          "level": "Second Team",
+          "team": "Minnesota Twins"
+        }
+      ],
+      "lcs_mvp": [
+        {
+          "year": 2011,
+          "league": "AL",
+          "team": "Texas Rangers"
+        }
+      ],
+      "retired_number": []
+    },
+    "276545": {
+      "name": "Michael Young",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [],
+      "lcs_mvp": [],
+      "retired_number": [
+        {
+          "year": 2019,
+          "team": "Texas Rangers",
+          "number": "10",
+          "date": "2019-08-31"
+        }
+      ]
+    },
+    "340192": {
+      "name": "Marco Scutaro",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [],
+      "lcs_mvp": [
+        {
+          "year": 2012,
+          "league": "NL",
+          "team": "San Francisco Giants"
+        }
+      ],
+      "retired_number": []
+    },
+    "452657": {
+      "name": "Jon Lester",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [],
+      "lcs_mvp": [
+        {
+          "year": 2016,
+          "league": "NL",
+          "team": "Chicago Cubs"
+        }
+      ],
+      "retired_number": []
+    },
+    "434718": {
+      "name": "Huston Street",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [
+        {
+          "year": 2005,
+          "league": "AL",
+          "team": "Oakland Athletics"
+        }
+      ],
+      "all_mlb": [],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "456715": {
+      "name": "Lorenzo Cain",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [],
+      "lcs_mvp": [
+        {
+          "year": 2014,
+          "league": "AL",
+          "team": "Kansas City Royals"
+        }
+      ],
+      "retired_number": []
+    },
+    "444876": {
+      "name": "Alcides Escobar",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [],
+      "lcs_mvp": [
+        {
+          "year": 2015,
+          "league": "AL",
+          "team": "Kansas City Royals"
+        }
+      ],
+      "retired_number": []
+    },
+    "460086": {
+      "name": "Alex Gordon",
+      "platinum_glove": [
+        {
+          "year": 2014,
+          "league": "AL",
+          "team": "Kansas City Royals"
+        },
+        {
+          "year": 2020,
+          "league": "AL",
+          "team": "Kansas City Royals"
+        }
+      ],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "405395": {
+      "name": "Albert Pujols",
+      "platinum_glove": [],
+      "hank_aaron": [
+        {
+          "year": 2003,
+          "league": "NL",
+          "team": "St. Louis Cardinals"
+        },
+        {
+          "year": 2009,
+          "league": "NL",
+          "team": "St. Louis Cardinals"
+        }
+      ],
+      "world_series_mvp": [],
+      "rookie_of_year": [
+        {
+          "year": 2001,
+          "league": "NL",
+          "team": "St. Louis Cardinals"
+        }
+      ],
+      "all_mlb": [],
+      "lcs_mvp": [
+        {
+          "year": 2004,
+          "league": "NL",
+          "team": "St. Louis Cardinals"
+        }
+      ],
+      "retired_number": []
+    },
+    "502517": {
+      "name": "Daniel Murphy",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [],
+      "lcs_mvp": [
+        {
+          "year": 2015,
+          "league": "NL",
+          "team": "New York Mets"
+        }
+      ],
+      "retired_number": []
+    },
+    "457759": {
+      "name": "Justin Turner",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [],
+      "lcs_mvp": [
+        {
+          "year": 2017,
+          "league": "NL",
+          "team": "Los Angeles Dodgers"
+        }
+      ],
+      "retired_number": []
+    },
+    "519203": {
+      "name": "Anthony Rizzo",
+      "platinum_glove": [
+        {
+          "year": 2016,
+          "league": "NL",
+          "team": "Chicago Cubs"
+        }
+      ],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "135784": {
+      "name": "Placido Polanco",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [],
+      "lcs_mvp": [
+        {
+          "year": 2006,
+          "league": "AL",
+          "team": "Detroit Tigers"
+        }
+      ],
+      "retired_number": []
+    },
+    "542303": {
+      "name": "Marcell Ozuna",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [
+        {
+          "year": 2020,
+          "level": "First Team",
+          "team": "Atlanta Braves"
+        }
+      ],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "445276": {
+      "name": "Kenley Jansen",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [
+        {
+          "year": 2021,
+          "level": "Second Team",
+          "team": "Los Angeles Dodgers"
+        }
+      ],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "458015": {
+      "name": "Joey Votto",
+      "platinum_glove": [],
+      "hank_aaron": [
+        {
+          "year": 2010,
+          "league": "NL",
+          "team": "Cincinnati Reds"
+        }
+      ],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "547973": {
+      "name": "Aroldis Chapman",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [
+        {
+          "year": 2019,
+          "level": "Second Team",
+          "team": "New York Yankees"
+        },
+        {
+          "year": 2025,
+          "level": "First Team",
+          "team": "Boston Red Sox"
+        }
+      ],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "282332": {
+      "name": "CC Sabathia",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [],
+      "lcs_mvp": [
+        {
+          "year": 2009,
+          "league": "AL",
+          "team": "New York Yankees"
+        }
+      ],
+      "retired_number": [
+        {
+          "year": 2026,
+          "team": "New York Yankees",
+          "number": "52",
+          "date": "2026-09-25"
+        }
+      ]
+    },
+    "592518": {
+      "name": "Manny Machado",
+      "platinum_glove": [
+        {
+          "year": 2013,
+          "league": "AL",
+          "team": "Baltimore Orioles"
+        }
+      ],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [
+        {
+          "year": 2020,
+          "level": "First Team",
+          "team": "San Diego Padres"
+        },
+        {
+          "year": 2022,
+          "level": "First Team",
+          "team": "San Diego Padres"
+        },
+        {
+          "year": 2024,
+          "level": "Second Team",
+          "team": "San Diego Padres"
+        }
+      ],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "450314": {
+      "name": "Ben Zobrist",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [
+        {
+          "year": 2016,
+          "team": "Chicago Cubs"
+        }
+      ],
+      "rookie_of_year": [],
+      "all_mlb": [],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "571976": {
+      "name": "Wil Myers",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [
+        {
+          "year": 2013,
+          "league": "AL",
+          "team": "Tampa Bay Rays"
+        }
+      ],
+      "all_mlb": [],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "446334": {
+      "name": "Evan Longoria",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [
+        {
+          "year": 2008,
+          "league": "AL",
+          "team": "Tampa Bay Rays"
+        }
+      ],
+      "all_mlb": [],
+      "lcs_mvp": [],
+      "retired_number": [
+        {
+          "year": 2026,
+          "team": "Tampa Bay Rays",
+          "number": "#3",
+          "date": "2026-07-12"
+        }
+      ]
+    },
+    "518735": {
+      "name": "Yasmani Grandal",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [
+        {
+          "year": 2019,
+          "level": "Second Team",
+          "team": "Milwaukee Brewers"
+        }
+      ],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "592743": {
+      "name": "Andrelton Simmons",
+      "platinum_glove": [
+        {
+          "year": 2013,
+          "league": "NL",
+          "team": "Atlanta Braves"
+        }
+      ],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "518692": {
+      "name": "Freddie Freeman",
+      "platinum_glove": [],
+      "hank_aaron": [
+        {
+          "year": 2020,
+          "league": "NL",
+          "team": "Atlanta Braves"
+        }
+      ],
+      "world_series_mvp": [
+        {
+          "year": 2024,
+          "team": "Los Angeles Dodgers"
+        }
+      ],
+      "rookie_of_year": [],
+      "all_mlb": [
+        {
+          "year": 2019,
+          "level": "Second Team",
+          "team": "Atlanta Braves"
+        },
+        {
+          "year": 2020,
+          "level": "First Team",
+          "team": "Atlanta Braves"
+        },
+        {
+          "year": 2021,
+          "level": "Second Team",
+          "team": "Atlanta Braves"
+        },
+        {
+          "year": 2022,
+          "level": "Second Team",
+          "team": "Los Angeles Dodgers"
+        },
+        {
+          "year": 2023,
+          "level": "First Team",
+          "team": "Los Angeles Dodgers"
+        }
+      ],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "518886": {
+      "name": "Craig Kimbrel",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [
+        {
+          "year": 2011,
+          "league": "NL",
+          "team": "Atlanta Braves"
+        }
+      ],
+      "all_mlb": [],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "521692": {
+      "name": "Salvador Perez",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [
+        {
+          "year": 2015,
+          "team": "Kansas City Royals"
+        }
+      ],
+      "rookie_of_year": [],
+      "all_mlb": [
+        {
+          "year": 2020,
+          "level": "First Team",
+          "team": "Kansas City Royals"
+        },
+        {
+          "year": 2021,
+          "level": "First Team",
+          "team": "Kansas City Royals"
+        },
+        {
+          "year": 2024,
+          "level": "Second Team",
+          "team": "Kansas City Royals"
+        }
+      ],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "545361": {
+      "name": "Mike Trout",
+      "platinum_glove": [],
+      "hank_aaron": [
+        {
+          "year": 2014,
+          "league": "AL",
+          "team": "Los Angeles Angels"
+        },
+        {
+          "year": 2019,
+          "league": "AL",
+          "team": "Los Angeles Angels"
+        }
+      ],
+      "world_series_mvp": [],
+      "rookie_of_year": [
+        {
+          "year": 2012,
+          "league": "AL",
+          "team": "Los Angeles Angels"
+        }
+      ],
+      "all_mlb": [
+        {
+          "year": 2019,
+          "level": "First Team",
+          "team": "Los Angeles Angels"
+        },
+        {
+          "year": 2020,
+          "level": "First Team",
+          "team": "Los Angeles Angels"
+        },
+        {
+          "year": 2022,
+          "level": "First Team",
+          "team": "Los Angeles Angels"
+        }
+      ],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "501896": {
+      "name": "David Freese",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [
+        {
+          "year": 2011,
+          "team": "St. Louis Cardinals"
+        }
+      ],
+      "rookie_of_year": [],
+      "all_mlb": [],
+      "lcs_mvp": [
+        {
+          "year": 2011,
+          "league": "NL",
+          "team": "St. Louis Cardinals"
+        }
+      ],
+      "retired_number": []
+    },
+    "592663": {
+      "name": "J.T. Realmuto",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [
+        {
+          "year": 2019,
+          "level": "First Team",
+          "team": "Philadelphia Phillies"
+        },
+        {
+          "year": 2020,
+          "level": "Second Team",
+          "team": "Philadelphia Phillies"
+        },
+        {
+          "year": 2022,
+          "level": "First Team",
+          "team": "Philadelphia Phillies"
+        }
+      ],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "592885": {
+      "name": "Christian Yelich",
+      "platinum_glove": [],
+      "hank_aaron": [
+        {
+          "year": 2018,
+          "league": "NL",
+          "team": "Milwaukee Brewers"
+        },
+        {
+          "year": 2019,
+          "league": "NL",
+          "team": "Milwaukee Brewers"
+        }
+      ],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [
+        {
+          "year": 2019,
+          "level": "First Team",
+          "team": "Milwaukee Brewers"
+        }
+      ],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "543272": {
+      "name": "Brad Hand",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [
+        {
+          "year": 2020,
+          "level": "Second Team",
+          "team": "Cleveland Indians"
+        }
+      ],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "502671": {
+      "name": "Paul Goldschmidt",
+      "platinum_glove": [],
+      "hank_aaron": [
+        {
+          "year": 2013,
+          "league": "NL",
+          "team": "Arizona Diamondbacks"
+        },
+        {
+          "year": 2022,
+          "league": "NL",
+          "team": "St. Louis Cardinals"
+        }
+      ],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [
+        {
+          "year": 2022,
+          "level": "First Team",
+          "team": "St. Louis Cardinals"
+        }
+      ],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "592662": {
+      "name": "Robbie Ray",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [
+        {
+          "year": 2021,
+          "level": "First Team",
+          "team": "Toronto Blue Jays"
+        }
+      ],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "429667": {
+      "name": "Ryan Howard",
+      "platinum_glove": [],
+      "hank_aaron": [
+        {
+          "year": 2006,
+          "league": "NL",
+          "team": "Philadelphia Phillies"
+        }
+      ],
+      "world_series_mvp": [],
+      "rookie_of_year": [
+        {
+          "year": 2005,
+          "league": "NL",
+          "team": "Philadelphia Phillies"
+        }
+      ],
+      "all_mlb": [],
+      "lcs_mvp": [
+        {
+          "year": 2009,
+          "league": "NL",
+          "team": "Philadelphia Phillies"
+        }
+      ],
+      "retired_number": []
+    },
+    "425844": {
+      "name": "Zack Greinke",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [
+        {
+          "year": 2019,
+          "level": "Second Team",
+          "team": "Houston Astros"
+        }
+      ],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "457763": {
+      "name": "Buster Posey",
+      "platinum_glove": [],
+      "hank_aaron": [
+        {
+          "year": 2012,
+          "league": "NL",
+          "team": "San Francisco Giants"
+        }
+      ],
+      "world_series_mvp": [],
+      "rookie_of_year": [
+        {
+          "year": 2010,
+          "league": "NL",
+          "team": "San Francisco Giants"
+        }
+      ],
+      "all_mlb": [
+        {
+          "year": 2021,
+          "level": "Second Team",
+          "team": "San Francisco Giants"
+        }
+      ],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "592450": {
+      "name": "Aaron Judge",
+      "platinum_glove": [],
+      "hank_aaron": [
+        {
+          "year": 2022,
+          "league": "AL",
+          "team": "New York Yankees"
+        },
+        {
+          "year": 2024,
+          "league": "AL",
+          "team": "New York Yankees"
+        },
+        {
+          "year": 2025,
+          "league": "AL",
+          "team": "New York Yankees"
+        }
+      ],
+      "world_series_mvp": [],
+      "rookie_of_year": [
+        {
+          "year": 2017,
+          "league": "AL",
+          "team": "New York Yankees"
+        }
+      ],
+      "all_mlb": [
+        {
+          "year": 2021,
+          "level": "First Team",
+          "team": "New York Yankees"
+        },
+        {
+          "year": 2022,
+          "level": "First Team",
+          "team": "New York Yankees"
+        },
+        {
+          "year": 2023,
+          "level": "Second Team",
+          "team": "New York Yankees"
+        },
+        {
+          "year": 2024,
+          "level": "First Team",
+          "team": "New York Yankees"
+        },
+        {
+          "year": 2025,
+          "level": "First Team",
+          "team": "New York Yankees"
+        }
+      ],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "605141": {
+      "name": "Mookie Betts",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [
+        {
+          "year": 2019,
+          "level": "Second Team",
+          "team": "Boston Red Sox"
+        },
+        {
+          "year": 2020,
+          "level": "First Team",
+          "team": "Los Angeles Dodgers"
+        },
+        {
+          "year": 2022,
+          "level": "First Team",
+          "team": "Los Angeles Dodgers"
+        },
+        {
+          "year": 2023,
+          "level": "First Team",
+          "team": "Los Angeles Dodgers"
+        },
+        {
+          "year": 2024,
+          "level": "First Team",
+          "team": "Los Angeles Dodgers"
+        }
+      ],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "593428": {
+      "name": "Xander Bogaerts",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [
+        {
+          "year": 2019,
+          "level": "First Team",
+          "team": "Boston Red Sox"
+        }
+      ],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "598265": {
+      "name": "Jackie Bradley Jr.",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [],
+      "lcs_mvp": [
+        {
+          "year": 2018,
+          "league": "AL",
+          "team": "Boston Red Sox"
+        }
+      ],
+      "retired_number": []
+    },
+    "518626": {
+      "name": "Josh Donaldson",
+      "platinum_glove": [],
+      "hank_aaron": [
+        {
+          "year": 2015,
+          "league": "AL",
+          "team": "Toronto Blue Jays"
+        }
+      ],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "430832": {
+      "name": "José Bautista",
+      "platinum_glove": [],
+      "hank_aaron": [
+        {
+          "year": 2010,
+          "league": "AL",
+          "team": "Toronto Blue Jays"
+        },
+        {
+          "year": 2011,
+          "league": "AL",
+          "team": "Toronto Blue Jays"
+        }
+      ],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "519242": {
+      "name": "Chris Sale",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [
+        {
+          "year": 2024,
+          "level": "First Team",
+          "team": "Atlanta Braves"
+        }
+      ],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "456665": {
+      "name": "Steve Pearce",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [
+        {
+          "year": 2018,
+          "team": "Boston Red Sox"
+        }
+      ],
+      "rookie_of_year": [],
+      "all_mlb": [],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "621242": {
+      "name": "Edwin Díaz",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [
+        {
+          "year": 2022,
+          "level": "First Team",
+          "team": "New York Mets"
+        },
+        {
+          "year": 2025,
+          "level": "Second Team",
+          "team": "New York Mets"
+        }
+      ],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "547989": {
+      "name": "José Abreu",
+      "platinum_glove": [],
+      "hank_aaron": [
+        {
+          "year": 2020,
+          "league": "AL",
+          "team": "Chicago White Sox"
+        }
+      ],
+      "world_series_mvp": [],
+      "rookie_of_year": [
+        {
+          "year": 2014,
+          "league": "AL",
+          "team": "Chicago White Sox",
+          "notes": "Unanimous winner"
+        }
+      ],
+      "all_mlb": [
+        {
+          "year": 2020,
+          "level": "Second Team",
+          "team": "Chicago White Sox"
+        }
+      ],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "621035": {
+      "name": "Chris Taylor",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [],
+      "lcs_mvp": [
+        {
+          "year": 2017,
+          "league": "NL",
+          "team": "Los Angeles Dodgers"
+        }
+      ],
+      "retired_number": []
+    },
+    "608369": {
+      "name": "Corey Seager",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [
+        {
+          "year": 2020,
+          "team": "Los Angeles Dodgers"
+        },
+        {
+          "year": 2023,
+          "team": "Texas Rangers"
+        }
+      ],
+      "rookie_of_year": [
+        {
+          "year": 2016,
+          "league": "NL",
+          "team": "Los Angeles Dodgers"
+        }
+      ],
+      "all_mlb": [
+        {
+          "year": 2020,
+          "level": "Second Team",
+          "team": "Los Angeles Dodgers"
+        },
+        {
+          "year": 2023,
+          "level": "First Team",
+          "team": "Texas Rangers"
+        }
+      ],
+      "lcs_mvp": [
+        {
+          "year": 2020,
+          "league": "NL",
+          "team": "Los Angeles Dodgers"
+        }
+      ],
+      "retired_number": []
+    },
+    "641355": {
+      "name": "Cody Bellinger",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [
+        {
+          "year": 2017,
+          "league": "NL",
+          "team": "Los Angeles Dodgers"
+        }
+      ],
+      "all_mlb": [
+        {
+          "year": 2019,
+          "level": "First Team",
+          "team": "Los Angeles Dodgers"
+        },
+        {
+          "year": 2025,
+          "level": "Second Team",
+          "team": "New York Yankees"
+        }
+      ],
+      "lcs_mvp": [
+        {
+          "year": 2018,
+          "league": "NL",
+          "team": "Los Angeles Dodgers"
+        }
+      ],
+      "retired_number": []
+    },
+    "518934": {
+      "name": "DJ LeMahieu",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [
+        {
+          "year": 2019,
+          "level": "First Team",
+          "team": "New York Yankees"
+        },
+        {
+          "year": 2020,
+          "level": "First Team",
+          "team": "New York Yankees"
+        }
+      ],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "571448": {
+      "name": "Nolan Arenado",
+      "platinum_glove": [
+        {
+          "year": 2017,
+          "league": "NL",
+          "team": "Colorado Rockies"
+        },
+        {
+          "year": 2018,
+          "league": "NL",
+          "team": "Colorado Rockies"
+        },
+        {
+          "year": 2019,
+          "league": "NL",
+          "team": "Colorado Rockies"
+        },
+        {
+          "year": 2020,
+          "league": "NL",
+          "team": "Colorado Rockies"
+        },
+        {
+          "year": 2021,
+          "league": "NL",
+          "team": "St. Louis Cardinals"
+        },
+        {
+          "year": 2022,
+          "league": "NL",
+          "team": "St. Louis Cardinals"
+        }
+      ],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [
+        {
+          "year": 2022,
+          "level": "Second Team",
+          "team": "St. Louis Cardinals"
+        }
+      ],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "467055": {
+      "name": "Pablo Sandoval",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [
+        {
+          "year": 2012,
+          "team": "San Francisco Giants"
+        }
+      ],
+      "rookie_of_year": [],
+      "all_mlb": [],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "607625": {
+      "name": "Seth Lugo",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [
+        {
+          "year": 2024,
+          "level": "Second Team",
+          "team": "Kansas City Royals"
+        }
+      ],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "624424": {
+      "name": "Michael Conforto",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [
+        {
+          "year": 2020,
+          "level": "Second Team",
+          "team": "New York Mets"
+        }
+      ],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "554430": {
+      "name": "Zack Wheeler",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [
+        {
+          "year": 2021,
+          "level": "Second Team",
+          "team": "Philadelphia Phillies"
+        },
+        {
+          "year": 2024,
+          "level": "First Team",
+          "team": "Philadelphia Phillies"
+        },
+        {
+          "year": 2025,
+          "level": "Second Team",
+          "team": "Philadelphia Phillies"
+        }
+      ],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "489446": {
+      "name": "Kirby Yates",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [
+        {
+          "year": 2019,
+          "level": "First Team",
+          "team": "San Diego Padres"
+        },
+        {
+          "year": 2024,
+          "level": "Second Team",
+          "team": "Texas Rangers"
+        }
+      ],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "660271": {
+      "name": "Shohei Ohtani",
+      "platinum_glove": [],
+      "hank_aaron": [
+        {
+          "year": 2023,
+          "league": "AL",
+          "team": "Los Angeles Angels"
+        },
+        {
+          "year": 2024,
+          "league": "NL",
+          "team": "Los Angeles Dodgers"
+        },
+        {
+          "year": 2025,
+          "league": "NL",
+          "team": "Los Angeles Dodgers"
+        }
+      ],
+      "world_series_mvp": [],
+      "rookie_of_year": [
+        {
+          "year": 2018,
+          "league": "AL",
+          "team": "Los Angeles Angels"
+        }
+      ],
+      "all_mlb": [
+        {
+          "year": 2021,
+          "level": "First Team",
+          "team": "Los Angeles Angels"
+        },
+        {
+          "year": 2021,
+          "level": "Second Team",
+          "team": "Los Angeles Angels"
+        },
+        {
+          "year": 2022,
+          "level": "First Team",
+          "team": "Los Angeles Angels"
+        },
+        {
+          "year": 2022,
+          "level": "Second Team",
+          "team": "Los Angeles Angels"
+        },
+        {
+          "year": 2023,
+          "level": "First Team",
+          "team": "Los Angeles Angels"
+        },
+        {
+          "year": 2024,
+          "level": "First Team",
+          "team": "Los Angeles Dodgers"
+        },
+        {
+          "year": 2025,
+          "level": "First Team",
+          "team": "Los Angeles Dodgers"
+        }
+      ],
+      "lcs_mvp": [
+        {
+          "year": 2025,
+          "league": "NL",
+          "team": "Los Angeles Dodgers"
+        }
+      ],
+      "retired_number": []
+    },
+    "606466": {
+      "name": "Ketel Marte",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [
+        {
+          "year": 2024,
+          "level": "First Team",
+          "team": "Arizona Diamondbacks"
+        },
+        {
+          "year": 2025,
+          "level": "First Team",
+          "team": "Arizona Diamondbacks"
+        }
+      ],
+      "lcs_mvp": [
+        {
+          "year": 2023,
+          "league": "NL",
+          "team": "Arizona Diamondbacks"
+        }
+      ],
+      "retired_number": []
+    },
+    "665487": {
+      "name": "Fernando Tatis Jr.",
+      "platinum_glove": [
+        {
+          "year": 2023,
+          "league": "NL",
+          "team": "San Diego Padres"
+        },
+        {
+          "year": 2025,
+          "league": "NL",
+          "team": "San Diego Padres"
+        }
+      ],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [
+        {
+          "year": 2020,
+          "level": "First Team",
+          "team": "San Diego Padres"
+        },
+        {
+          "year": 2021,
+          "level": "First Team",
+          "team": "San Diego Padres"
+        }
+      ],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "628317": {
+      "name": "Kenta Maeda",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [
+        {
+          "year": 2020,
+          "level": "Second Team",
+          "team": "Minnesota Twins"
+        }
+      ],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "518516": {
+      "name": "Madison Bumgarner",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [
+        {
+          "year": 2014,
+          "team": "San Francisco Giants"
+        }
+      ],
+      "rookie_of_year": [],
+      "all_mlb": [],
+      "lcs_mvp": [
+        {
+          "year": 2014,
+          "league": "NL",
+          "team": "San Francisco Giants"
+        }
+      ],
+      "retired_number": []
+    },
+    "573262": {
+      "name": "Mike Yastrzemski",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [
+        {
+          "year": 2020,
+          "level": "Second Team",
+          "team": "San Francisco Giants"
+        }
+      ],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "659275": {
+      "name": "Dinelson Lamet",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [
+        {
+          "year": 2020,
+          "level": "Second Team",
+          "team": "San Diego Padres"
+        }
+      ],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "502110": {
+      "name": "J.D. Martinez",
+      "platinum_glove": [],
+      "hank_aaron": [
+        {
+          "year": 2018,
+          "league": "AL",
+          "team": "Boston Red Sox"
+        }
+      ],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "646240": {
+      "name": "Rafael Devers",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [
+        {
+          "year": 2021,
+          "level": "Second Team",
+          "team": "Boston Red Sox"
+        }
+      ],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "662253": {
+      "name": "Andrés Muñoz",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [
+        {
+          "year": 2025,
+          "level": "Second Team",
+          "team": "Seattle Mariners"
+        }
+      ],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "628452": {
+      "name": "Raisel Iglesias",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [
+        {
+          "year": 2021,
+          "level": "Second Team",
+          "team": "Los Angeles Angels"
+        }
+      ],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "596019": {
+      "name": "Francisco Lindor",
+      "platinum_glove": [
+        {
+          "year": 2016,
+          "league": "AL",
+          "team": "Cleveland Indians"
+        }
+      ],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [
+        {
+          "year": 2022,
+          "level": "Second Team",
+          "team": "New York Mets"
+        },
+        {
+          "year": 2023,
+          "level": "Second Team",
+          "team": "New York Mets"
+        },
+        {
+          "year": 2024,
+          "level": "Second Team",
+          "team": "New York Mets"
+        }
+      ],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "605483": {
+      "name": "Blake Snell",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [
+        {
+          "year": 2023,
+          "level": "First Team",
+          "team": "San Diego Padres"
+        }
+      ],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "506433": {
+      "name": "Yu Darvish",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [
+        {
+          "year": 2020,
+          "level": "First Team",
+          "team": "Chicago Cubs"
+        }
+      ],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "623352": {
+      "name": "Josh Hader",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [
+        {
+          "year": 2019,
+          "level": "First Team",
+          "team": "Milwaukee Brewers"
+        },
+        {
+          "year": 2021,
+          "level": "First Team",
+          "team": "Milwaukee Brewers"
+        },
+        {
+          "year": 2023,
+          "level": "First Team",
+          "team": "San Diego Padres"
+        }
+      ],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "665742": {
+      "name": "Juan Soto",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [
+        {
+          "year": 2019,
+          "level": "Second Team",
+          "team": "Washington Nationals"
+        },
+        {
+          "year": 2020,
+          "level": "First Team",
+          "team": "Washington Nationals"
+        },
+        {
+          "year": 2021,
+          "level": "First Team",
+          "team": "Washington Nationals"
+        },
+        {
+          "year": 2024,
+          "level": "First Team",
+          "team": "New York Yankees"
+        },
+        {
+          "year": 2025,
+          "level": "First Team",
+          "team": "New York Mets"
+        }
+      ],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "682998": {
+      "name": "Corbin Carroll",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [
+        {
+          "year": 2023,
+          "league": "NL",
+          "team": "Arizona Diamondbacks"
+        }
+      ],
+      "all_mlb": [
+        {
+          "year": 2023,
+          "level": "First Team",
+          "team": "Arizona Diamondbacks"
+        },
+        {
+          "year": 2025,
+          "level": "Second Team",
+          "team": "Arizona Diamondbacks"
+        }
+      ],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "669242": {
+      "name": "Tommy Edman",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [],
+      "lcs_mvp": [
+        {
+          "year": 2024,
+          "league": "NL",
+          "team": "Los Angeles Dodgers"
+        }
+      ],
+      "retired_number": []
+    },
+    "425877": {
+      "name": "Yadier Molina",
+      "platinum_glove": [
+        {
+          "year": 2011,
+          "league": "NL",
+          "team": "St. Louis Cardinals"
+        },
+        {
+          "year": 2012,
+          "league": "NL",
+          "team": "St. Louis Cardinals"
+        },
+        {
+          "year": 2014,
+          "league": "NL",
+          "team": "St. Louis Cardinals"
+        },
+        {
+          "year": 2015,
+          "league": "NL",
+          "team": "St. Louis Cardinals"
+        }
+      ],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "669257": {
+      "name": "Will Smith",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [
+        {
+          "year": 2022,
+          "level": "Second Team",
+          "team": "Los Angeles Dodgers"
+        },
+        {
+          "year": 2025,
+          "level": "Second Team",
+          "team": "Los Angeles Dodgers"
+        }
+      ],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "607208": {
+      "name": "Trea Turner",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [
+        {
+          "year": 2021,
+          "level": "Second Team",
+          "team": "Washington Nationals"
+        },
+        {
+          "year": 2022,
+          "level": "First Team",
+          "team": "Los Angeles Dodgers"
+        }
+      ],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "547180": {
+      "name": "Bryce Harper",
+      "platinum_glove": [],
+      "hank_aaron": [
+        {
+          "year": 2015,
+          "league": "NL",
+          "team": "Washington Nationals"
+        },
+        {
+          "year": 2021,
+          "league": "NL",
+          "team": "Philadelphia Phillies"
+        }
+      ],
+      "world_series_mvp": [],
+      "rookie_of_year": [
+        {
+          "year": 2012,
+          "league": "NL",
+          "team": "Washington Nationals"
+        }
+      ],
+      "all_mlb": [
+        {
+          "year": 2021,
+          "level": "First Team",
+          "team": "Philadelphia Phillies"
+        },
+        {
+          "year": 2024,
+          "level": "Second Team",
+          "team": "Philadelphia Phillies"
+        }
+      ],
+      "lcs_mvp": [
+        {
+          "year": 2022,
+          "league": "NL",
+          "team": "Philadelphia Phillies"
+        }
+      ],
+      "retired_number": []
+    },
+    "592206": {
+      "name": "Nick Castellanos",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [
+        {
+          "year": 2021,
+          "level": "Second Team",
+          "team": "Cincinnati Reds"
+        }
+      ],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "656941": {
+      "name": "Kyle Schwarber",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [
+        {
+          "year": 2022,
+          "level": "Second Team",
+          "team": "Philadelphia Phillies"
+        },
+        {
+          "year": 2025,
+          "level": "Second Team",
+          "team": "Philadelphia Phillies"
+        }
+      ],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "621566": {
+      "name": "Matt Olson",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [
+        {
+          "year": 2023,
+          "level": "Second Team",
+          "team": "Atlanta Braves"
+        }
+      ],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "660670": {
+      "name": "Ronald Acuña Jr.",
+      "platinum_glove": [],
+      "hank_aaron": [
+        {
+          "year": 2023,
+          "league": "NL",
+          "team": "Atlanta Braves"
+        }
+      ],
+      "world_series_mvp": [],
+      "rookie_of_year": [
+        {
+          "year": 2018,
+          "league": "NL",
+          "team": "Atlanta Braves"
+        }
+      ],
+      "all_mlb": [
+        {
+          "year": 2019,
+          "level": "Second Team",
+          "team": "Atlanta Braves"
+        },
+        {
+          "year": 2020,
+          "level": "Second Team",
+          "team": "Atlanta Braves"
+        },
+        {
+          "year": 2023,
+          "level": "First Team",
+          "team": "Atlanta Braves"
+        }
+      ],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "592696": {
+      "name": "Eddie Rosario",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [],
+      "lcs_mvp": [
+        {
+          "year": 2021,
+          "league": "NL",
+          "team": "Atlanta Braves"
+        }
+      ],
+      "retired_number": []
+    },
+    "645277": {
+      "name": "Ozzie Albies",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [
+        {
+          "year": 2021,
+          "level": "Second Team",
+          "team": "Atlanta Braves"
+        },
+        {
+          "year": 2023,
+          "level": "Second Team",
+          "team": "Atlanta Braves"
+        }
+      ],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "608331": {
+      "name": "Max Fried",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [
+        {
+          "year": 2020,
+          "level": "First Team",
+          "team": "Atlanta Braves"
+        },
+        {
+          "year": 2021,
+          "level": "Second Team",
+          "team": "Atlanta Braves"
+        },
+        {
+          "year": 2022,
+          "level": "Second Team",
+          "team": "Atlanta Braves"
+        },
+        {
+          "year": 2025,
+          "level": "First Team",
+          "team": "New York Yankees"
+        }
+      ],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "663586": {
+      "name": "Austin Riley",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [
+        {
+          "year": 2021,
+          "level": "First Team",
+          "team": "Atlanta Braves"
+        },
+        {
+          "year": 2023,
+          "level": "First Team",
+          "team": "Atlanta Braves"
+        }
+      ],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "663697": {
+      "name": "Jonathan India",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [
+        {
+          "year": 2021,
+          "league": "NL",
+          "team": "Cincinnati Reds"
+        }
+      ],
+      "all_mlb": [],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "605242": {
+      "name": "Michael Fulmer",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [
+        {
+          "year": 2016,
+          "league": "AL",
+          "team": "Detroit Tigers"
+        }
+      ],
+      "all_mlb": [],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "543685": {
+      "name": "Anthony Rendon",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [
+        {
+          "year": 2019,
+          "level": "First Team",
+          "team": "Washington Nationals"
+        }
+      ],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "663728": {
+      "name": "Cal Raleigh",
+      "platinum_glove": [
+        {
+          "year": 2024,
+          "league": "AL",
+          "team": "Seattle Mariners"
+        }
+      ],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [
+        {
+          "year": 2025,
+          "level": "First Team",
+          "team": "Seattle Mariners"
+        }
+      ],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "606192": {
+      "name": "Teoscar Hernández",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [
+        {
+          "year": 2021,
+          "level": "Second Team",
+          "team": "Toronto Blue Jays"
+        },
+        {
+          "year": 2024,
+          "level": "Second Team",
+          "team": "Los Angeles Dodgers"
+        }
+      ],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "677594": {
+      "name": "Julio Rodríguez",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [
+        {
+          "year": 2022,
+          "league": "AL",
+          "team": "Seattle Mariners"
+        }
+      ],
+      "all_mlb": [
+        {
+          "year": 2022,
+          "level": "Second Team",
+          "team": "Seattle Mariners"
+        },
+        {
+          "year": 2025,
+          "level": "First Team",
+          "team": "Seattle Mariners"
+        }
+      ],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "608379": {
+      "name": "Michael Wacha",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [],
+      "lcs_mvp": [
+        {
+          "year": 2013,
+          "league": "NL",
+          "team": "St. Louis Cardinals"
+        }
+      ],
+      "retired_number": []
+    },
+    "665926": {
+      "name": "Andrés Giménez",
+      "platinum_glove": [
+        {
+          "year": 2023,
+          "league": "AL"
+        }
+      ],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [
+        {
+          "year": 2022,
+          "level": "Second Team",
+          "team": "Cleveland Guardians"
+        }
+      ],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "608070": {
+      "name": "José Ramírez",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [
+        {
+          "year": 2020,
+          "level": "Second Team",
+          "team": "Cleveland Indians"
+        },
+        {
+          "year": 2023,
+          "level": "Second Team",
+          "team": "Cleveland Guardians"
+        },
+        {
+          "year": 2024,
+          "level": "First Team",
+          "team": "Cleveland Guardians"
+        },
+        {
+          "year": 2025,
+          "level": "First Team",
+          "team": "Cleveland Guardians"
+        }
+      ],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "668227": {
+      "name": "Randy Arozarena",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [
+        {
+          "year": 2021,
+          "league": "AL",
+          "team": "Tampa Bay Rays"
+        }
+      ],
+      "all_mlb": [],
+      "lcs_mvp": [
+        {
+          "year": 2020,
+          "league": "AL",
+          "team": "Tampa Bay Rays"
+        }
+      ],
+      "retired_number": []
+    },
+    "683002": {
+      "name": "Gunnar Henderson",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [
+        {
+          "year": 2023,
+          "league": "AL",
+          "team": "Baltimore Orioles"
+        }
+      ],
+      "all_mlb": [],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "668939": {
+      "name": "Adley Rutschman",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [
+        {
+          "year": 2023,
+          "level": "First Team",
+          "team": "Baltimore Orioles"
+        }
+      ],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "656427": {
+      "name": "Jack Flaherty",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [
+        {
+          "year": 2019,
+          "level": "Second Team",
+          "team": "St. Louis Cardinals"
+        }
+      ],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "624585": {
+      "name": "Jorge Soler",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [
+        {
+          "year": 2021,
+          "team": "Atlanta Braves"
+        }
+      ],
+      "rookie_of_year": [],
+      "all_mlb": [],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "592178": {
+      "name": "Kris Bryant",
+      "platinum_glove": [],
+      "hank_aaron": [
+        {
+          "year": 2016,
+          "league": "NL",
+          "team": "Chicago Cubs"
+        }
+      ],
+      "world_series_mvp": [],
+      "rookie_of_year": [
+        {
+          "year": 2015,
+          "league": "NL",
+          "team": "Chicago Cubs"
+        }
+      ],
+      "all_mlb": [],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "641343": {
+      "name": "Jake Bauers",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [],
+      "lcs_mvp": [
+        {
+          "year": 2026,
+          "league": "NL",
+          "team": "Milwaukee Brewers"
+        }
+      ],
+      "retired_number": []
+    },
+    "642547": {
+      "name": "Freddy Peralta",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [
+        {
+          "year": 2025,
+          "level": "Second Team",
+          "team": "Milwaukee Brewers"
+        }
+      ],
+      "lcs_mvp": [
+        {
+          "year": 2026,
+          "league": "AL",
+          "team": "Tampa Bay Rays"
+        }
+      ],
+      "retired_number": []
+    },
+    "661388": {
+      "name": "William Contreras",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [
+        {
+          "year": 2026,
+          "team": "Milwaukee Brewers"
+        }
+      ],
+      "rookie_of_year": [],
+      "all_mlb": [
+        {
+          "year": 2024,
+          "level": "First Team",
+          "team": "Milwaukee Brewers"
+        }
+      ],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "668930": {
+      "name": "Brice Turang",
+      "platinum_glove": [
+        {
+          "year": 2024,
+          "league": "NL",
+          "team": "Milwaukee Brewers"
+        }
+      ],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [
+        {
+          "year": 2025,
+          "level": "Second Team",
+          "team": "Milwaukee Brewers"
+        }
+      ],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "684007": {
+      "name": "Shota Imanaga",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [
+        {
+          "year": 2024,
+          "level": "Second Team",
+          "team": "Chicago Cubs"
+        }
+      ],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "691718": {
+      "name": "Pete Crow-Armstrong",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [
+        {
+          "year": 2025,
+          "level": "Second Team",
+          "team": "Chicago Cubs"
+        }
+      ],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "671739": {
+      "name": "Michael Harris II",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [
+        {
+          "year": 2022,
+          "league": "NL",
+          "team": "Atlanta Braves"
+        }
+      ],
+      "all_mlb": [],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "701538": {
+      "name": "Jackson Merrill",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [
+        {
+          "year": 2024,
+          "level": "Second Team",
+          "team": "San Diego Padres"
+        }
+      ],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "624413": {
+      "name": "Pete Alonso",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [
+        {
+          "year": 2019,
+          "league": "NL",
+          "team": "New York Mets"
+        }
+      ],
+      "all_mlb": [
+        {
+          "year": 2019,
+          "level": "First Team",
+          "team": "New York Mets"
+        }
+      ],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "686948": {
+      "name": "Drake Baldwin",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [
+        {
+          "year": 2025,
+          "league": "NL",
+          "team": "Atlanta Braves"
+        }
+      ],
+      "all_mlb": [],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "595879": {
+      "name": "Javier Báez",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [],
+      "lcs_mvp": [
+        {
+          "year": 2016,
+          "league": "NL",
+          "team": "Chicago Cubs"
+        }
+      ],
+      "retired_number": []
+    },
+    "669373": {
+      "name": "Tarik Skubal",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [
+        {
+          "year": 2024,
+          "level": "First Team",
+          "team": "Detroit Tigers"
+        },
+        {
+          "year": 2025,
+          "level": "First Team",
+          "team": "Detroit Tigers"
+        }
+      ],
+      "lcs_mvp": [],
+      "retired_number": []
+    },
+    "663656": {
+      "name": "Kyle Tucker",
+      "platinum_glove": [],
+      "hank_aaron": [],
+      "world_series_mvp": [],
+      "rookie_of_year": [],
+      "all_mlb": [
+        {
+          "year": 2021,
+          "level": "Second Team",
+          "team": "Houston Astros"
+        },
+        {
+          "year": 2022,
+          "level": "Second Team",
+          "team": "Houston Astros"
+        },
+        {
+          "year": 2023,
+          "level": "Second Team",
+          "team": "Houston Astros"
+        }
+      ],
+      "lcs_mvp": [],
+      "retired_number": []
+    }
+  }
+}

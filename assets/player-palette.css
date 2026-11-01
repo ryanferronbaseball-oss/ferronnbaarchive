@@ -1,0 +1,94 @@
+/* Shared Courtside Archive player-profile treatment across all sports.
+   Icons and labels distinguish honors; all categories use one color system. */
+:root {
+  --ca-player-tag-bg: #e7eee5;
+  --ca-player-tag-border: #bfd0bf;
+  --ca-player-green: #284d3c;
+  --ca-player-green-hover: #d8e6d7;
+  --ca-player-tab-bg: #f0f2eb;
+  --ca-player-tab-border: #d0d9cf;
+  --ca-player-tab-hover: #e3eae0;
+  --ca-player-detail-bg: #f6f8f3;
+  --ca-player-detail-ink: #33483b;
+}
+
+/* Header achievement badges: NBA, NFL, MLB, college basketball/baseball. */
+.hero .hof-badge,
+.hero .accolade-badge,
+.award-badges .hof-badge,
+.award-badges .award-badge,
+.achievement-row #nbaStatus,
+.achievement-row .career-badge,
+body[data-page="player"] .mlb-profile-badge,
+body[data-page="player"] .mlb-accolade,
+body[data-page="player"] .mlb-honor-year,
+body[data-page="player"] .soccer-micro,
+body[data-page="player"] .soccer-flag {
+  background: var(--ca-player-tag-bg) !important;
+  border: 1px solid var(--ca-player-tag-border) !important;
+  color: var(--ca-player-green) !important;
+  text-decoration: none !important;
+  transition: background-color .15s ease, border-color .15s ease;
+}
+
+.hero .hof-badge:hover,
+.hero .accolade-badge:hover,
+.award-badges .hof-badge:hover,
+.award-badges .award-badge:hover,
+.achievement-row #nbaStatus:hover,
+.achievement-row .career-badge:hover,
+body[data-page="player"] .mlb-profile-badge:hover,
+body[data-page="player"] .mlb-accolade:hover {
+  background: var(--ca-player-green-hover) !important;
+  border-color: #90ab94 !important;
+}
+.achievement-row #nbaStatus::before { color: var(--ca-player-green) !important; }
+
+/* Profile navigation and season/award tabs use a matching selected state. */
+main > .tabs .tab,
+.career-honors .honor-tab,
+.nfl-honor-tabs button,
+body[data-page="player"] .mlb-profile-tab,
+body[data-page="player"] .mlb-profile-log-tabs button,
+body[data-page="player"] .mlb-award-tab,
+body[data-page="player"] .soccer-tabs button {
+  background: var(--ca-player-tab-bg) !important;
+  border: 1px solid var(--ca-player-tab-border) !important;
+  color: var(--ca-player-green) !important;
+}
+main > .tabs .tab:hover,
+.career-honors .honor-tab:hover,
+.nfl-honor-tabs button:hover,
+body[data-page="player"] .mlb-profile-tab:hover,
+body[data-page="player"] .mlb-profile-log-tabs button:hover,
+body[data-page="player"] .mlb-award-tab:hover,
+body[data-page="player"] .soccer-tabs button:hover {
+  background: var(--ca-player-tab-hover) !important;
+  border-color: #9fb6a0 !important;
+}
+main > .tabs .tab.active,
+.career-honors .honor-tab[aria-selected="true"],
+.nfl-honor-tabs button[aria-selected="true"],
+body[data-page="player"] .mlb-profile-tab[aria-selected="true"],
+body[data-page="player"] .mlb-profile-log-tabs button[aria-selected="true"],
+body[data-page="player"] .mlb-award-tab[aria-selected="true"],
+body[data-page="player"] .soccer-tabs button[aria-selected="true"],
+body[data-page="player"] .soccer-tabs button[aria-pressed="true"] {
+  background: var(--ca-player-green) !important;
+  border-color: var(--ca-player-green) !important;
+  color: #fff !important;
+}
+
+/* The award-year detail surfaces should not revert to dark blue. */
+.career-honors .honor-content,
+.nfl-honor-panel,
+body[data-page="player"] .mlb-honor-detail {
+  background: var(--ca-player-detail-bg) !important;
+  border-color: var(--ca-player-tab-border) !important;
+  color: var(--ca-player-detail-ink) !important;
+}
+.career-honors .honor-content strong,
+.nfl-honor-panel strong,
+body[data-page="player"] .mlb-honor-detail strong {
+  color: var(--ca-player-green) !important;
+}

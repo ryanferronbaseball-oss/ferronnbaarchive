@@ -266,6 +266,19 @@
       "corrections": [
         {"source_player_id": "cb-saint-mary-s-christoper-campos", "source_player_name": "Christoper CAMPOS", "player": "Christopher Campos", "canonical_player_id": "cb-saint-mary-s-christopher-campos"}
       ]
+    },
+    {
+      "game_id": "cb-2023-02-21-cal-state-northrdige-san-diego-state-att0182",
+      "team": "Cal State Northrdige",
+      "description": "Unify the misspelled Northrdige team identifier with Graysen Tarlow's other Cal State Northridge appearances without altering the original game statistics.",
+      "verified_on": "2026-11-01",
+      "evidence_urls": [
+        "https://gomatadors.com/sports/baseball/stats/2023/san-diego-state/boxscore/15859",
+        "https://statsapi.mlb.com/api/v1/draft/2023"
+      ],
+      "corrections": [
+        {"source_player_id": "cb-cal-state-northrdige-graysen-tarlow", "source_player_name": "Graysen Tarlow", "player": "Graysen Tarlow", "canonical_player_id": "cb-cal-state-northridge-graysen-tarlow"}
+      ]
     }
   ]
 }

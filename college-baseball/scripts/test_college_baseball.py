@@ -71,7 +71,7 @@ corrected_names = {
     for game in [name_corrections, *name_corrections.get("games", [])]
     for fix in game["corrections"]
 }
-check(len(draft_tags["picks"]) == len(draft_ids) == 315 and
+check(len(draft_tags["picks"]) == len(draft_ids) == 340 and
       {"cb-san-diego-riley-adams", "cb-san-diego-sean-barry", "cb-byu-colton-shaver",
        "cb-arkansas-jax-biggers", "cb-cincinnati-manny-rodriguez",
        "cb-cincinnati-jt-perez", "cb-california-tyrus-greene",
@@ -88,7 +88,7 @@ check(len(draft_tags["picks"]) == len(draft_ids) == 315 and
       sum(p["draft_year"] == 2020 for p in draft_tags["picks"]) == 18 and
       sum(p["draft_year"] == 2021 for p in draft_tags["picks"]) == 44 and
       sum(p["draft_year"] == 2022 for p in draft_tags["picks"]) == 68 and
-      sum(p["draft_year"] == 2023 for p in draft_tags["picks"]) == 29 and
+      sum(p["draft_year"] == 2023 for p in draft_tags["picks"]) == 54 and
       any(p["college_player_id"] == "cb-san-diego-state-cole-carrigg" and
               (p["draft_round"], p["draft_pick"], p["draft_team"]) ==
               ("CB-B", 65, "Colorado Rockies")
@@ -102,6 +102,23 @@ check(len(draft_tags["picks"]) == len(draft_ids) == 315 and
       any(p["college_player_id"] == "cb-oregon-josh-mollerus" and
               (p["draft_round"], p["draft_pick"]) == ("10", 304)
           for p in draft_tags["picks"]) and
+      any(p["college_player_id"] == "cb-unlv-jack-sellinger" and
+              (p["draft_round"], p["draft_pick"]) == ("14", 413)
+          for p in draft_tags["picks"]) and
+      any(p["college_player_id"] == "cb-san-diego-state-kelena-sauer" and
+              (p["name"], p["draft_round"], p["draft_pick"]) == ("Kelena Sauer", "15", 454)
+          for p in draft_tags["picks"]) and
+      any(p["college_player_id"] == "cb-loyola-marymount-diego-barrera" and
+              (p["draft_round"], p["draft_pick"]) == ("20", 586)
+          for p in draft_tags["picks"]) and
+      any(p["college_player_id"] == "cb-cal-state-northridge-graysen-tarlow" and
+              (p["draft_round"], p["draft_pick"]) == ("19", 575)
+          for p in draft_tags["picks"]) and
+      any(game["game_id"] == "cb-2023-02-21-cal-state-northrdige-san-diego-state-att0182" and
+              any(fix["source_player_id"] == "cb-cal-state-northrdige-graysen-tarlow" and
+                  fix["canonical_player_id"] == "cb-cal-state-northridge-graysen-tarlow"
+                  for fix in game["corrections"])
+          for game in name_corrections.get("games", [])) and
       any(p["college_player_id"] == "cb-southern-california-tyresse-turner" and
               (p["draft_round"], p["draft_pick"]) == ("13", 391)
           for p in draft_tags["picks"]) and

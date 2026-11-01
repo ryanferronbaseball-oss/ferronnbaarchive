@@ -204,7 +204,11 @@ async function load(){
  // Optional owner-approved display name for abbreviated source lineups;
  // raw scorebook names, school attribution, and original IDs stay untouched.
  const displayNames=new Map(identity.merges.filter(m=>m.display_name).map(m=>[m.canonical_id,m.display_name]));
- const players=[...byPlayer.values()].map(p=>({...p,name:displayNames.get(p.player_id)||p.name,teams:[...p.teams],games:[...p.games]}));
+ // A gamebook's misspelled school is one school, not a second college stint.
+ // Normalize only the profile/leaderboard label, leaving sourced game rows intact.
+ const displayTeams=new Map(nameCorrectionGames.filter(g=>g.team_display_name).map(g=>[g.team,g.team_display_name]));
+ const players=[...byPlayer.values()].map(p=>({...p,name:displayNames.get(p.player_id)||p.name,
+  teams:[...new Set([...p.teams].map(team=>displayTeams.get(team)||team))],games:[...p.games]}));
  return {games:games.slice().sort((a,b)=>b.date.localeCompare(a.date)||a.id.localeCompare(b.id)),rows,players,gameMap,gameRedirects,report,crosswalk,identity,redirects};
 }
 function sum(rows,category,key){

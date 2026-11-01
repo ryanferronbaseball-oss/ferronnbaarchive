@@ -766,6 +766,13 @@ with tempfile.TemporaryDirectory() as t:
                       page.locator(".cb-player-game-log tbody tr").count()==2 and
                       page.locator(".cb-dual-level").count()==0,
                       f"{width} Kade Anderson MLB debut and draft are tagged without inventing attended MLB games")
+                for tarlow_id in ("cb-cal-state-northridge-graysen-tarlow", "cb-cal-state-northrdige-graysen-tarlow"):
+                    visit(page, host, f"player.html?id={tarlow_id}", ".cb-profile-hero")
+                    check(page.locator(".cb-profile-hero h1").inner_text()=="Graysen Tarlow" and
+                          page.locator(".mlb-profile-team-name").inner_text()=="Cal State Northridge" and
+                          page.locator(".cb-player-game-log tbody tr").count()==4 and
+                          "Pick 575" in page.locator(".cb-mlb-draft").inner_text(),
+                          f"{width} Graysen Tarlow has one correct school label and all four witnessed games ({tarlow_id})")
                 for name, college_id, round_num, pick, team in [
                     ("Roman Garcia", "cb-san-diego-roman-garcia", "19", "571", "Houston Astros"),
                     ("Colton Waltner", "cb-san-diego-colton-waltner", "21", "616", "Minnesota Twins"),

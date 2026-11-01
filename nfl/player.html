@@ -18,28 +18,69 @@ document.addEventListener("DOMContentLoaded",async()=>{
  const A=window.NFLArchive,el=id=>document.getElementById(id);
  el("navigation").innerHTML=A.nav("player");
  const id=new URLSearchParams(location.search).get("id");
-const hallOfFameIds=new Set(["1682","1755","10455","668"]),awardRow=el("awardBadges");
+const hallOfFameIds=new Set(["1682","1755","10455","668","5528"]),awardRow=el("awardBadges");
  const normalizedId=String(id||"").replace(/^espn:/,"");
  if(id&&hallOfFameIds.has(normalizedId)){el("hofBadge").classList.add("visible");awardRow.classList.add("visible")}
- const renderHonors=awards=>{
-  if(!awards)return;
+ const renderHonors=(awards={},extra={})=>{
   const mvp=awards.ap_mvp||[],first=awards.ap_first_team||[],second=awards.ap_second_team||[];
-  const allPro=[...new Set([...first,...second])].sort((a,b)=>a-b);
-  const bowl=Number(awards.pro_bowl_count||0);
-  const honors=[["mvp","NFL MVP",mvp.length,"🏆",mvp],["all_pro","AP All-Pro",allPro.length,"◆",allPro],["pro_bowl","Pro Bowl",bowl,"★",null]].filter(x=>x[2]>0);
+  const allPro=[...new Set([...first,...second])].sort((a,b)=>a-b),bowl=Number(awards.pro_bowl_count||0);
+  const honors=[];
+  const add=(key,title,mark,entries,description,badge=null,showCount=true)=>{
+   if(!entries.length)return;
+   honors.push({key,title,mark,entries,description,badge,showCount});
+  };
+  const years=values=>values.map(year=>({year}));
+  add("mvp","NFL MVP","🏆",years(mvp),"Associated Press regular-season Most Valuable Player awards.",el("mvpBadge"));
+  add("all_pro","AP All-Pro","◆",allPro.map(year=>({year,detail:first.includes(year)?"First Team":"Second Team"})),"Associated Press First-Team or Second-Team All-Pro selections.",el("allProBadge"));
+  if(bowl>0)add("pro_bowl","Pro Bowl","★",(extra.pro_bowl_years?.length?years(extra.pro_bowl_years):Array.from({length:bowl},()=>({}))),"Pro Bowl selections, whether or not the player participated.",el("proBowlBadge"));
+  const catalog=[
+   ["super_bowl","Super Bowl Champion","🏆","Super Bowl championship seasons. The year refers to the NFL season, not the following February's game."],
+   ["super_bowl_mvp","Super Bowl MVP","🏆","Super Bowl Most Valuable Player awards."],
+   ["ap_opoy","AP Offensive Player of the Year","★","Associated Press NFL Offensive Player of the Year awards."],
+   ["ap_dpoy","AP Defensive Player of the Year","★","Associated Press NFL Defensive Player of the Year awards."],
+   ["ap_oroy","AP Offensive Rookie of the Year","★","Associated Press NFL Offensive Rookie of the Year awards."],
+   ["ap_droy","AP Defensive Rookie of the Year","★","Associated Press NFL Defensive Rookie of the Year awards."],
+   ["ap_comeback","AP Comeback Player of the Year","★","Associated Press NFL Comeback Player of the Year awards."],
+   ["walter_payton","Walter Payton Man of the Year","♥","Walter Payton NFL Man of the Year awards."],
+   ["all_decade","NFL All-Decade Team","◆","Selections to the official NFL All-Decade Teams."],
+   ["nfl_100","NFL 100 All-Time Team","★","Selected for the NFL's 100th-season All-Time Team, announced in 2019."],
+   ["retired_number","Retired Number","#","An officially retired team jersey number, distinct from a Ring of Honor induction."],
+   ["franchise_honor","Franchise Honor","★","Official team-specific Ring of Honor or team Hall of Fame induction; not necessarily a retired number."]
+  ];
+  for(const [key,title,mark,description] of catalog)add(key,title,mark,extra[key]||[],description,null,key!=="nfl_100");
   if(!honors.length)return;
   awardRow.classList.add("visible");
-  const badgeByKey={mvp:el("mvpBadge"),all_pro:el("allProBadge"),pro_bowl:el("proBowlBadge")};
-  for(const [key,title,count,mark] of honors){const b=badgeByKey[key];b.textContent=mark+" "+title.toUpperCase()+" · "+count;b.classList.add("visible")}
-  const section=el("careerHonors");section.hidden=false;
-  const tabs=el("honorTabs"),panels=el("honorDetails");
-  tabs.innerHTML=honors.map(([key,title,count],i)=>'<button type="button" role="tab" data-honor="'+key+'" aria-selected="'+(i===0)+'">'+A.esc(title)+' ('+count+')</button>').join("");
-  panels.innerHTML=honors.map(([key,title,count,mark,years],i)=>'<div class="nfl-honor-panel" id="honor-'+key+'" role="tabpanel"'+(i?" hidden":"")+'><strong>'+A.esc(title)+'</strong><p>'+count+' career '+(key==="pro_bowl"?"Pro Bowl selections":key==="all_pro"?"Associated Press First-Team or Second-Team All-Pro selections":"Associated Press regular-season MVP awards")+'.</p>'+(years?.length?'<div class="nfl-honor-years">'+years.map(y=>'<span>'+A.esc(y)+(key==="all_pro"?(first.includes(y)?" · First Team":" · Second Team"):"")+'</span>').join("")+'</div>':"")+(key==="pro_bowl"?'<p class="note">Selection count includes chosen players who did not participate; Pro Bowl and All-Pro are different honors.</p>':"")+'</div>').join("");
+  const section=el("careerHonors"),tabs=el("honorTabs"),panels=el("honorDetails");section.hidden=false;
+  const detail=entry=>{
+   const parts=[];
+   if(entry.decade)parts.push(entry.decade);
+   else if(entry.year)parts.push(String(entry.year));
+   if(entry.super_bowl)parts.push("Super Bowl "+entry.super_bowl);
+   if(entry.team)parts.push(entry.team);
+   if(entry.honor)parts.push(entry.honor);
+   if(entry.number)parts.push("No. "+entry.number);
+   if(entry.detail)parts.push(entry.detail);
+   return parts.join(" · ");
+  };
+  tabs.innerHTML=honors.map(({key,title,entries},i)=>'<button type="button" role="tab" data-honor="'+key+'" aria-controls="honor-'+key+'" aria-selected="'+(i===0)+'">'+A.esc(title)+' ('+entries.length+')</button>').join("");
+  panels.innerHTML=honors.map(({key,title,description,entries},i)=>'<div class="nfl-honor-panel" id="honor-'+key+'" role="tabpanel"'+(i?" hidden":"")+'><strong>'+A.esc(title)+'</strong><p>'+A.esc(description)+'</p>'+(entries.some(e=>detail(e))?'<div class="nfl-honor-years">'+entries.filter(e=>detail(e)).map(e=>'<span>'+A.esc(detail(e))+'</span>').join("")+'</div>':"")+(key==="pro_bowl"&&!extra.pro_bowl_years?.length?'<p class="note">The verified selection count is shown; individual years are not yet verified for this player.</p>':"")+'</div>').join("");
   const activate=key=>{tabs.querySelectorAll("[data-honor]").forEach(b=>b.setAttribute("aria-selected",String(b.dataset.honor===key)));panels.querySelectorAll(".nfl-honor-panel").forEach(p=>p.hidden=p.id!=="honor-"+key)};
   tabs.querySelectorAll("[data-honor]").forEach(b=>b.addEventListener("click",()=>activate(b.dataset.honor)));
-  for(const [key] of honors){badgeByKey[key].style.cursor="pointer";badgeByKey[key].addEventListener("click",()=>{activate(key);section.scrollIntoView({behavior:"smooth",block:"start"})})}
+  for(const honor of honors){
+   const {key,title,mark,entries,showCount}=honor;
+   let badge=honor.badge;
+   if(!badge){badge=document.createElement("button");badge.type="button";badge.className="award-badge extra-nfl-badge";badge.style.background="#e6f0e9";badge.style.borderColor="#a2bba9";badge.style.setProperty("color","#244b35","important");badge.style.fontFamily="inherit";awardRow.append(badge)}
+   const shownTitle=key==="franchise_honor"&&entries.length===1?entries[0].honor:title;
+   const suffix=key==="retired_number"&&entries.length===1?" · #"+entries[0].number:"";
+   badge.textContent=mark+" "+shownTitle.toUpperCase()+(showCount?" · "+entries.length:"")+suffix;
+   badge.title="View "+title+" details and years";badge.classList.add("visible");badge.style.cursor="pointer";
+   badge.addEventListener("click",()=>{activate(key);section.scrollIntoView({behavior:"smooth",block:"start"})});
+  }
  };
- if(id)fetch("./data/career_awards.json?v=pro-bowl-20261016",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("Awards HTTP "+r.status);return r.json()}).then(data=>renderHonors(data.players?.[normalizedId])).catch(err=>console.warn("Career awards unavailable:",err));
+ if(id){
+  const get=path=>fetch(path,{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("Awards HTTP "+r.status);return r.json()}).catch(err=>{console.warn("Career honors unavailable:",path,err);return {players:{}}});
+  Promise.all([get("./data/career_awards.json?v=nfl-honors-20261101"),get("./data/extra_career_honors.json?v=nfl-honors-20261101")]).then(([base,extra])=>renderHonors(base.players?.[normalizedId],extra.players?.[normalizedId]));
+ }
 
  const esc=A.esc;
  try{

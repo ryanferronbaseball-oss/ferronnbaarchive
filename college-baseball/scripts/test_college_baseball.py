@@ -71,7 +71,7 @@ corrected_names = {
     for game in [name_corrections, *name_corrections.get("games", [])]
     for fix in game["corrections"]
 }
-check(len(draft_tags["picks"]) == len(draft_ids) == 340 and
+check(len(draft_tags["picks"]) == len(draft_ids) == 369 and
       {"cb-san-diego-riley-adams", "cb-san-diego-sean-barry", "cb-byu-colton-shaver",
        "cb-arkansas-jax-biggers", "cb-cincinnati-manny-rodriguez",
        "cb-cincinnati-jt-perez", "cb-california-tyrus-greene",
@@ -89,6 +89,25 @@ check(len(draft_tags["picks"]) == len(draft_ids) == 340 and
       sum(p["draft_year"] == 2021 for p in draft_tags["picks"]) == 44 and
       sum(p["draft_year"] == 2022 for p in draft_tags["picks"]) == 68 and
       sum(p["draft_year"] == 2023 for p in draft_tags["picks"]) == 54 and
+      sum(p["draft_year"] == 2024 for p in draft_tags["picks"]) == 29 and
+      any(p["college_player_id"] == "cb-virginia-griff-o-ferrall" and
+              (p["draft_round"], p["draft_pick"]) == ("PPI", 32)
+          for p in draft_tags["picks"]) and
+      any(p["college_player_id"] == "cb-iowa-brody-brecht" and
+              (p["draft_round"], p["draft_pick"]) == ("CB-A", 38)
+          for p in draft_tags["picks"]) and
+      any(p["college_player_id"] == "cb-california-caleb-lomavita" and
+              (p["draft_round"], p["draft_pick"]) == ("CB-A", 39)
+          for p in draft_tags["picks"]) and
+      any(p["college_player_id"] == "cb-dallas-baptist-ryan-johnson" and
+              (p["draft_round"], p["draft_pick"]) == ("2C", 74)
+          for p in draft_tags["picks"]) and
+      any(p["college_player_id"] == "cb-college-of-charleston-cole-mathis" and
+              (p["draft_round"], p["draft_pick"]) == ("2", 54)
+          for p in draft_tags["picks"]) and
+      any(p["college_player_id"] == "cb-rutgers-joshua-kuroda-grauer" and
+              (p["draft_round"], p["draft_pick"]) == ("3", 75)
+          for p in draft_tags["picks"]) and
       any(p["college_player_id"] == "cb-san-diego-state-cole-carrigg" and
               (p["draft_round"], p["draft_pick"], p["draft_team"]) ==
               ("CB-B", 65, "Colorado Rockies")
@@ -773,6 +792,18 @@ with tempfile.TemporaryDirectory() as t:
                           page.locator(".cb-player-game-log tbody tr").count()==4 and
                           "Pick 575" in page.locator(".cb-mlb-draft").inner_text(),
                           f"{width} Graysen Tarlow has one correct school label and all four witnessed games ({tarlow_id})")
+                for name, college_id, draft_round, pick, games in [
+                    ("Brody Brecht", "cb-iowa-brody-brecht", "CB-A", 38, 1),
+                    ("Cole Mathis", "cb-college-of-charleston-cole-mathis", "2", 54, 1),
+                    ("Joshua Kuroda-Grauer", "cb-rutgers-joshua-kuroda-grauer", "3", 75, 2),
+                    ("Ryan Johnson", "cb-dallas-baptist-ryan-johnson", "2C", 74, 1),
+                ]:
+                    visit(page, host, f"player.html?id={college_id}", ".cb-profile-hero")
+                    tag=page.locator(".cb-mlb-draft").inner_text()
+                    check(page.locator(".cb-profile-hero h1").inner_text().casefold()==name.casefold() and
+                          f"Round {draft_round}" in tag and f"Pick {pick}" in tag and
+                          page.locator(".cb-player-game-log tbody tr").count()==games,
+                          f"{width} {name} shows the verified 2024 draft pick and original game logs")
                 for name, college_id, round_num, pick, team in [
                     ("Roman Garcia", "cb-san-diego-roman-garcia", "19", "571", "Houston Astros"),
                     ("Colton Waltner", "cb-san-diego-colton-waltner", "21", "616", "Minnesota Twins"),

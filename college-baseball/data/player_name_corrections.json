@@ -280,6 +280,60 @@
       "corrections": [
         {"source_player_id": "cb-cal-state-northrdige-graysen-tarlow", "source_player_name": "Graysen Tarlow", "player": "Graysen Tarlow", "canonical_player_id": "cb-cal-state-northridge-graysen-tarlow"}
       ]
+    },
+    {
+      "game_id": "cb-2024-02-19-marshall-college-of-charleston-att0231",
+      "team": "College of Charleston",
+      "description": "Resolve the source game's abbreviated C. Mathis to the College of Charleston's verified 2024 Cubs draftee Cole Mathis, preserving the original stat line.",
+      "verified_on": "2026-11-01",
+      "evidence_urls": [
+        "https://cofcsports.com/sports/baseball/stats/2024/marshall/boxscore/11657",
+        "https://cofcsports.com/sports/baseball/roster/cole-mathis/6327"
+      ],
+      "corrections": [
+        {"source_player_id": "cb-college-of-charleston-c-mathis", "source_player_name": "C. Mathis", "player": "Cole Mathis", "canonical_player_id": "cb-college-of-charleston-cole-mathis"}
+      ]
+    },
+    {
+      "game_id": "cb-2024-02-23-iowa-auburn-att0235",
+      "team": "Iowa",
+      "description": "Resolve the Auburn gamebook's surname-only Iowa pitcher Brecht to confirmed Rockies draftee Brody Brecht while retaining his pitching statistics.",
+      "verified_on": "2026-11-01",
+      "evidence_urls": [
+        "https://storage.googleapis.com/auburn-prod/2024/05/16/Qwfk9D0ysZymh4NIW2QjKniQFWvF2vNh2c5nSnd5.pdf",
+        "https://hawkeyesports.com/news/2024/07/14/brecht-selected-by-colorado-in-cb-a-round-of-mlb-draft"
+      ],
+      "corrections": [
+        {"source_player_id": "cb-iowa-brecht", "source_player_name": "Brecht", "player": "Brody Brecht", "canonical_player_id": "cb-iowa-brody-brecht"}
+      ]
+    },
+    {
+      "game_id": "cb-2024-03-12-rutgers-north-carolina-att0255",
+      "team": "Rutgers",
+      "description": "Match Rutgers' Josh Kuroda-Grauer with MLB's full draft name Joshua Kuroda-Grauer without altering his box-score statistics.",
+      "verified_on": "2026-11-01",
+      "evidence_urls": [
+        "https://goheels.com/sports/baseball/stats/2024/rutgers/boxscore/25040",
+        "https://scarletknights.com/sports/baseball/roster/josh-kuroda-grauer/12950",
+        "https://statsapi.mlb.com/api/v1/draft/2024"
+      ],
+      "corrections": [
+        {"source_player_id": "cb-rutgers-josh-kuroda-grauer", "source_player_name": "Josh Kuroda-grauer", "player": "Joshua Kuroda-Grauer", "canonical_player_id": "cb-rutgers-joshua-kuroda-grauer"}
+      ]
+    },
+    {
+      "game_id": "cb-2024-03-13-rutgers-north-carolina-att0256",
+      "team": "Rutgers",
+      "description": "Match Rutgers' Josh Kuroda-Grauer with MLB's full draft name Joshua Kuroda-Grauer without altering his box-score statistics.",
+      "verified_on": "2026-11-01",
+      "evidence_urls": [
+        "https://goheels.com/sports/baseball/stats/2024/rutgers/boxscore/25041",
+        "https://scarletknights.com/sports/baseball/roster/josh-kuroda-grauer/12950",
+        "https://statsapi.mlb.com/api/v1/draft/2024"
+      ],
+      "corrections": [
+        {"source_player_id": "cb-rutgers-josh-kuroda-grauer", "source_player_name": "Josh Kuroda-grauer", "player": "Joshua Kuroda-Grauer", "canonical_player_id": "cb-rutgers-joshua-kuroda-grauer"}
+      ]
     }
   ]
 }

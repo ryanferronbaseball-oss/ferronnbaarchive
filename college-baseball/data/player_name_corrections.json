@@ -334,6 +334,75 @@
       "corrections": [
         {"source_player_id": "cb-rutgers-josh-kuroda-grauer", "source_player_name": "Josh Kuroda-grauer", "player": "Joshua Kuroda-Grauer", "canonical_player_id": "cb-rutgers-joshua-kuroda-grauer"}
       ]
+    },
+    {
+      "game_id": "cb-2024-05-05-california-southern-california-att0276",
+      "team": "Southern California",
+      "description": "Match USC's William Watson with MLB's draft listing Will Watson while keeping the original May 5 gamebook statistics intact.",
+      "verified_on": "2026-11-01",
+      "evidence_urls": [
+        "https://usctrojans.com/sports/baseball/stats/2024/california/boxscore/33804",
+        "https://usctrojans.com/sports/baseball/roster/william-watson/16306",
+        "https://statsapi.mlb.com/api/v1/draft/2024"
+      ],
+      "corrections": [
+        {"source_player_id": "cb-southern-california-william-watson", "source_player_name": "William Watson", "player": "Will Watson", "canonical_player_id": "cb-southern-california-will-watson"}
+      ]
+    },
+    {
+      "game_id": "cb-2024-03-08-binghamton-vmi-att0252",
+      "team": "VMI",
+      "description": "Restore VMI pitcher Will Riley's full name from the source box score's W. Riley abbreviation.",
+      "verified_on": "2026-11-01",
+      "evidence_urls": [
+        "https://binghamtonbearcats.com/sports/baseball/stats/2024/virginia-military-institute/boxscore/14316",
+        "https://vmikeydets.com/sports/baseball/roster/will-riley/7708"
+      ],
+      "corrections": [
+        {"source_player_id": "cb-vmi-w-riley", "source_player_name": "W. Riley", "player": "Will Riley", "canonical_player_id": "cb-vmi-will-riley"}
+      ]
+    },
+    {
+      "game_id": "cb-2024-03-01-purdue-east-carolina-att0243",
+      "team": "East Carolina",
+      "description": "Resolve three initials-only East Carolina lineup entries to the 2024 MLB draftees Jacob Jenkins-Cowart, Ryan McCrystal and Carter Cunningham; do not alter original box-score statistics.",
+      "verified_on": "2026-11-01",
+      "evidence_urls": [
+        "https://ecupirates.com/sports/baseball/stats/2024/purdue/boxscore/13162",
+        "https://ecupirates.com/news/2024/7/15/baseball-cunningham-selected-by-toronto-in-10th-round-of-2024-mlb-draft",
+        "https://statsapi.mlb.com/api/v1/draft/2024"
+      ],
+      "corrections": [
+        {"source_player_id": "cb-east-carolina-j-jenkins-cowart", "source_player_name": "J. Jenkins-cowart", "player": "Jacob Jenkins-Cowart", "canonical_player_id": "cb-east-carolina-jacob-jenkins-cowart"},
+        {"source_player_id": "cb-east-carolina-r-mccrystal", "source_player_name": "R. McCrystal", "player": "Ryan McCrystal", "canonical_player_id": "cb-east-carolina-ryan-mccrystal"},
+        {"source_player_id": "cb-east-carolina-c-cunningham", "source_player_name": "C. Cunningham", "player": "Carter Cunningham", "canonical_player_id": "cb-east-carolina-carter-cunningham"}
+      ]
+    },
+    {
+      "game_id": "cb-2024-03-02-florida-state-illinois-att0247",
+      "team": "Illinois",
+      "description": "Correct the source gamebook's stray period in Jack Crowder's name while preserving his original college player ID and pitching line.",
+      "verified_on": "2026-11-01",
+      "evidence_urls": [
+        "https://seminoles.com/sports/baseball/stats/2024/illinois/boxscore/13734",
+        "https://fightingillini.com/news/2024/7/16/baseball-crowder-janik-selected-in-2024-mlb-draft"
+      ],
+      "corrections": [
+        {"source_player_id": "cb-illinois-jack-crowder", "source_player_name": "Jack. Crowder", "player": "Jack Crowder", "canonical_player_id": "cb-illinois-jack-crowder"}
+      ]
+    },
+    {
+      "game_id": "cb-2023-02-25-unlv-uc-irvine-att0184",
+      "team": "UC irvine",
+      "team_display_name": "UC Irvine",
+      "description": "Normalize the gamebook's UC irvine school casing and Dub. Gleed punctuation for profile display without rewriting the gamebook.",
+      "verified_on": "2026-11-01",
+      "evidence_urls": [
+        "https://unlvrebels.com/sports/baseball/stats/2023/uc-irvine/boxscore/15890"
+      ],
+      "corrections": [
+        {"source_player_id": "cb-uc-irvine-dub-gleed", "source_player_name": "Dub. Gleed", "player": "Dub Gleed", "canonical_player_id": "cb-uc-irvine-dub-gleed"}
+      ]
     }
   ]
 }

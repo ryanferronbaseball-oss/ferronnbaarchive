@@ -71,7 +71,7 @@ corrected_names = {
     for game in [name_corrections, *name_corrections.get("games", [])]
     for fix in game["corrections"]
 }
-check(len(draft_tags["picks"]) == len(draft_ids) == 406 and
+check(len(draft_tags["picks"]) == len(draft_ids) == 449 and
       {"cb-san-diego-riley-adams", "cb-san-diego-sean-barry", "cb-byu-colton-shaver",
        "cb-arkansas-jax-biggers", "cb-cincinnati-manny-rodriguez",
        "cb-cincinnati-jt-perez", "cb-california-tyrus-greene",
@@ -89,7 +89,32 @@ check(len(draft_tags["picks"]) == len(draft_ids) == 406 and
       sum(p["draft_year"] == 2021 for p in draft_tags["picks"]) == 44 and
       sum(p["draft_year"] == 2022 for p in draft_tags["picks"]) == 68 and
       sum(p["draft_year"] == 2023 for p in draft_tags["picks"]) == 54 and
-      sum(p["draft_year"] == 2024 for p in draft_tags["picks"]) == 66 and
+      sum(p["draft_year"] == 2024 for p in draft_tags["picks"]) == 109 and
+      any(p["college_player_id"] == "cb-grand-canyon-tyler-wilson" and
+              (p["draft_round"], p["draft_pick"], p["draft_team"]) ==
+              ("8", 241, "New York Yankees")
+          for p in draft_tags["picks"]) and
+      any(p["college_player_id"] == "cb-southern-california-will-watson" and
+              (p["draft_round"], p["draft_pick"]) == ("7", 203)
+          for p in draft_tags["picks"]) and
+      any(p["college_player_id"] == "cb-vmi-will-riley" and
+              (p["draft_round"], p["draft_pick"]) == ("8", 243)
+          for p in draft_tags["picks"]) and
+      any(p["college_player_id"] == "cb-east-carolina-jacob-jenkins-cowart" and
+              (p["draft_round"], p["draft_pick"]) == ("8", 244)
+          for p in draft_tags["picks"]) and
+      any(p["college_player_id"] == "cb-east-carolina-ryan-mccrystal" and
+              (p["draft_round"], p["draft_pick"]) == ("9", 269)
+          for p in draft_tags["picks"]) and
+      any(p["college_player_id"] == "cb-east-carolina-carter-cunningham" and
+              (p["draft_round"], p["draft_pick"]) == ("10", 307)
+          for p in draft_tags["picks"]) and
+      any(p["college_player_id"] == "cb-illinois-jack-crowder" and
+              (p["draft_round"], p["draft_pick"]) == ("9", 279)
+          for p in draft_tags["picks"]) and
+      any(p["college_player_id"] == "cb-uc-irvine-dub-gleed" and
+              (p["draft_round"], p["draft_pick"]) == ("9", 274)
+          for p in draft_tags["picks"]) and
       any(p["college_player_id"] == "cb-virginia-casey-saucke" and
               (p["draft_round"], p["draft_pick"], p["draft_team"]) ==
               ("4", 107, "Chicago White Sox")
@@ -815,6 +840,15 @@ with tempfile.TemporaryDirectory() as t:
                     ("Sam Antonacci", "cb-coastal-carolina-sam-antonacci", "5", 140, 4),
                     ("Will Taylor", "cb-clemson-will-taylor", "5", 145, 1),
                     ("Mason Marriott", "cb-baylor-mason-marriott", "6", 194, 1),
+                    ("Will Watson", "cb-southern-california-will-watson", "7", 203, 1),
+                    ("Tyler Wilson", "cb-grand-canyon-tyler-wilson", "8", 241, 3),
+                    ("Will Riley", "cb-vmi-will-riley", "8", 243, 1),
+                    ("Jacob Jenkins-Cowart", "cb-east-carolina-jacob-jenkins-cowart", "8", 244, 1),
+                    ("Ryan McCrystal", "cb-east-carolina-ryan-mccrystal", "9", 269, 1),
+                    ("Dub Gleed", "cb-uc-irvine-dub-gleed", "9", 274, 6),
+                    ("Jack Crowder", "cb-illinois-jack-crowder", "9", 279, 1),
+                    ("Carter Cunningham", "cb-east-carolina-carter-cunningham", "10", 307, 1),
+                    ("Christian Little", "cb-vanderbilt-christian-little", "11", 333, 1),
                 ]:
                     visit(page, host, f"player.html?id={college_id}", ".cb-profile-hero")
                     tag=page.locator(".cb-mlb-draft").inner_text()
@@ -822,6 +856,9 @@ with tempfile.TemporaryDirectory() as t:
                           f"Round {draft_round}" in tag and f"Pick {pick}" in tag and
                           page.locator(".cb-player-game-log tbody tr").count()==games,
                           f"{width} {name} shows the verified 2024 draft pick and original game logs")
+                    if name=="Dub Gleed":
+                        check(page.locator(".mlb-profile-team-name").text_content().strip()=="UC Irvine",
+                              f"{width} Dub Gleed has one canonical UC Irvine school label")
                 for name, college_id, round_num, pick, team in [
                     ("Roman Garcia", "cb-san-diego-roman-garcia", "19", "571", "Houston Astros"),
                     ("Colton Waltner", "cb-san-diego-colton-waltner", "21", "616", "Minnesota Twins"),

@@ -226,6 +226,46 @@
       "corrections": [
         {"source_player_id": "cb-nebraska-s-schwellenbach", "source_player_name": "S. Schwellenbach", "player": "Spencer Schwellenbach", "canonical_player_id": "cb-nebraska-spencer-schwellenbach"}
       ]
+    },
+    {
+      "game_id": "cb-2022-03-25-saint-mary-s-san-diego-att0135",
+      "team": "Saint Mary's",
+      "description": "Correct Christoper Campos in the official gamebook to Christopher Campos, verified against the Saint Mary's 2022 roster and MLB Draft announcement; preserve original statistics.",
+      "verified_on": "2026-11-01",
+      "evidence_urls": [
+        "https://usdtoreros.com/sports/baseball/stats/2022/saint-mary-s/boxscore/12457",
+        "https://smcgaels.com/sports/baseball/roster/christopher-campos/2930",
+        "https://smcgaels.com/news/2022/7/18/baseball-base-campos-selected-in-7th-round-by-home-town-dodgers"
+      ],
+      "corrections": [
+        {"source_player_id": "cb-saint-mary-s-christoper-campos", "source_player_name": "Christoper CAMPOS", "player": "Christopher Campos", "canonical_player_id": "cb-saint-mary-s-christopher-campos"}
+      ]
+    },
+    {
+      "game_id": "cb-2022-03-26-saint-mary-s-san-diego-att0136",
+      "team": "Saint Mary's",
+      "description": "Restore Christopher Campos's full name from a misspelled source box score without altering original statistics.",
+      "verified_on": "2026-11-01",
+      "evidence_urls": [
+        "https://usdtoreros.com/sports/baseball/stats/2022/saint-mary-s/boxscore/12458",
+        "https://smcgaels.com/sports/baseball/roster/christopher-campos/2930"
+      ],
+      "corrections": [
+        {"source_player_id": "cb-saint-mary-s-christoper-campos", "source_player_name": "Christoper CAMPOS", "player": "Christopher Campos", "canonical_player_id": "cb-saint-mary-s-christopher-campos"}
+      ]
+    },
+    {
+      "game_id": "cb-2022-03-27-saint-mary-s-san-diego-att0137",
+      "team": "Saint Mary's",
+      "description": "Restore Christopher Campos's full name from a misspelled source box score without altering original statistics.",
+      "verified_on": "2026-11-01",
+      "evidence_urls": [
+        "https://usdtoreros.com/sports/baseball/stats/2022/saint-mary-s/boxscore/12459",
+        "https://smcgaels.com/sports/baseball/roster/christopher-campos/2930"
+      ],
+      "corrections": [
+        {"source_player_id": "cb-saint-mary-s-christoper-campos", "source_player_name": "Christoper CAMPOS", "player": "Christopher Campos", "canonical_player_id": "cb-saint-mary-s-christopher-campos"}
+      ]
     }
   ]
 }

@@ -71,7 +71,7 @@ corrected_names = {
     for game in [name_corrections, *name_corrections.get("games", [])]
     for fix in game["corrections"]
 }
-check(len(draft_tags["picks"]) == len(draft_ids) == 218 and
+check(len(draft_tags["picks"]) == len(draft_ids) == 256 and
       {"cb-san-diego-riley-adams", "cb-san-diego-sean-barry", "cb-byu-colton-shaver",
        "cb-arkansas-jax-biggers", "cb-cincinnati-manny-rodriguez",
        "cb-cincinnati-jt-perez", "cb-california-tyrus-greene",
@@ -87,6 +87,20 @@ check(len(draft_tags["picks"]) == len(draft_ids) == 218 and
       sum(p["draft_year"] == 2019 for p in draft_tags["picks"]) == 86 and
       sum(p["draft_year"] == 2020 for p in draft_tags["picks"]) == 18 and
       sum(p["draft_year"] == 2021 for p in draft_tags["picks"]) == 44 and
+      sum(p["draft_year"] == 2022 for p in draft_tags["picks"]) == 38 and
+      any(p["college_player_id"] == "cb-oregon-state-justin-boyd" and
+              (p["draft_round"], p["draft_pick"]) == ("CB-B", 73)
+          for p in draft_tags["picks"]) and
+      any(p["college_player_id"] == "cb-saint-mary-s-christopher-campos" and
+              (p["name"], p["draft_round"], p["draft_pick"]) ==
+              ("Christopher Campos", "7", 225)
+          for p in draft_tags["picks"]) and
+      any(p["college_player_id"] == "cb-gonzaga-will-kempner" and
+              (p["name"], p["draft_pick"]) == ("Will Kempner", 106)
+          for p in draft_tags["picks"]) and
+      any(p["college_player_id"] == "cb-san-diego-ian-churchill" and
+              (p["draft_round"], p["draft_pick"]) == ("10", 308)
+          for p in draft_tags["picks"]) and
       any(p["college_player_id"] == "cb-arizona-ryan-holgate" and
               (p["draft_round"], p["draft_pick"]) == ("CB-B", 70)
           for p in draft_tags["picks"]) and
@@ -115,7 +129,7 @@ check(len(draft_tags["picks"]) == len(draft_ids) == 218 and
                   r["player"].casefold() == pick["name"].casefold() for r in pilot_rows)
               or (pick["college_player_id"], pick["name"].casefold()) in corrected_names
           for pick in draft_tags["picks"]),
-      "Official 2017–2021 draft picks match verified witnessed college player profiles")
+      "Official 2017–2022 draft picks match verified witnessed college player profiles")
 check(len(attended) == 6 and len(committed) == 444, "All 444 attendance entries staged with 6 verified initial Regional gamebooks")
 check(len({g["source_worksheet_row"] for g in committed}) == 444,
       "Unique workbook source rows preserved for every attended contest")

@@ -1,0 +1,4191 @@
+{
+  "_meta": {
+    "source": "MLB StatsAPI official World Series schedules and champion-team season statistics",
+    "champions_source": "https://statsapi.mlb.com/api/v1/schedule?season=2026&gameTypes=W&sportId=1",
+    "players_source": "https://statsapi.mlb.com/api/v1/stats?stats=season&group=hitting,pitching&season=2026&teamId=158&sportIds=1&playerPool=all&limit=300",
+    "definition": "Played at least one MLB regular-season game for the World Series-winning club in the championship year (including players not on the World Series roster)",
+    "scope": "Full career titles, not limited to seasons or games attended",
+    "years": [
+      1980,
+      2026
+    ],
+    "no_world_series": [
+      1994
+    ],
+    "attended_players": 1633,
+    "champion_players_matched": 407
+  },
+  "players": {
+    "110236": {
+      "name": "Garret Anderson",
+      "championships": [
+        {
+          "year": 2002,
+          "team": "Anaheim Angels"
+        }
+      ]
+    },
+    "110840": {
+      "name": "Mark Bellhorn",
+      "championships": [
+        {
+          "year": 2004,
+          "team": "Boston Red Sox"
+        }
+      ]
+    },
+    "111554": {
+      "name": "Kevin Brown",
+      "championships": [
+        {
+          "year": 1997,
+          "team": "Florida Marlins"
+        }
+      ]
+    },
+    "111851": {
+      "name": "Orlando Cabrera",
+      "championships": [
+        {
+          "year": 2004,
+          "team": "Boston Red Sox"
+        }
+      ]
+    },
+    "112559": {
+      "name": "Jeff Conine",
+      "championships": [
+        {
+          "year": 1997,
+          "team": "Florida Marlins"
+        },
+        {
+          "year": 2003,
+          "team": "Florida Marlins"
+        }
+      ]
+    },
+    "112736": {
+      "name": "Craig Counsell",
+      "championships": [
+        {
+          "year": 1997,
+          "team": "Florida Marlins"
+        },
+        {
+          "year": 2001,
+          "team": "Arizona Diamondbacks"
+        }
+      ]
+    },
+    "113028": {
+      "name": "Johnny Damon",
+      "championships": [
+        {
+          "year": 2004,
+          "team": "Boston Red Sox"
+        },
+        {
+          "year": 2009,
+          "team": "New York Yankees"
+        }
+      ]
+    },
+    "113232": {
+      "name": "Carlos Delgado",
+      "championships": [
+        {
+          "year": 1993,
+          "team": "Toronto Blue Jays"
+        }
+      ]
+    },
+    "113679": {
+      "name": "Jermaine Dye",
+      "championships": [
+        {
+          "year": 2005,
+          "team": "Chicago White Sox"
+        }
+      ]
+    },
+    "113833": {
+      "name": "Alan Embree",
+      "championships": [
+        {
+          "year": 2004,
+          "team": "Boston Red Sox"
+        }
+      ]
+    },
+    "113889": {
+      "name": "Darin Erstad",
+      "championships": [
+        {
+          "year": 2002,
+          "team": "Anaheim Angels"
+        }
+      ]
+    },
+    "113946": {
+      "name": "Carl Everett",
+      "championships": [
+        {
+          "year": 2005,
+          "team": "Chicago White Sox"
+        }
+      ]
+    },
+    "113961": {
+      "name": "Scott Eyre",
+      "championships": [
+        {
+          "year": 2008,
+          "team": "Philadelphia Phillies"
+        }
+      ]
+    },
+    "114031": {
+      "name": "Sal Fasano",
+      "championships": [
+        {
+          "year": 2002,
+          "team": "Anaheim Angels"
+        }
+      ]
+    },
+    "114596": {
+      "name": "Nomar Garciaparra",
+      "championships": [
+        {
+          "year": 2004,
+          "team": "Boston Red Sox"
+        }
+      ]
+    },
+    "114849": {
+      "name": "Tom Glavine",
+      "championships": [
+        {
+          "year": 1995,
+          "team": "Atlanta Braves"
+        }
+      ]
+    },
+    "114935": {
+      "name": "Luis Gonzalez",
+      "championships": [
+        {
+          "year": 2001,
+          "team": "Arizona Diamondbacks"
+        }
+      ]
+    },
+    "115094": {
+      "name": "Shawn Green",
+      "championships": [
+        {
+          "year": 1993,
+          "team": "Toronto Blue Jays"
+        }
+      ]
+    },
+    "115391": {
+      "name": "Chris Hammond",
+      "championships": [
+        {
+          "year": 1990,
+          "team": "Cincinnati Reds"
+        }
+      ]
+    },
+    "115749": {
+      "name": "Rickey Henderson",
+      "championships": [
+        {
+          "year": 1989,
+          "team": "Oakland Athletics"
+        },
+        {
+          "year": 1993,
+          "team": "Toronto Blue Jays"
+        }
+      ]
+    },
+    "116539": {
+      "name": "Derek Jeter",
+      "championships": [
+        {
+          "year": 1996,
+          "team": "New York Yankees"
+        },
+        {
+          "year": 1998,
+          "team": "New York Yankees"
+        },
+        {
+          "year": 1999,
+          "team": "New York Yankees"
+        },
+        {
+          "year": 2000,
+          "team": "New York Yankees"
+        },
+        {
+          "year": 2009,
+          "team": "New York Yankees"
+        }
+      ]
+    },
+    "116569": {
+      "name": "Charles Johnson",
+      "championships": [
+        {
+          "year": 1997,
+          "team": "Florida Marlins"
+        }
+      ]
+    },
+    "116706": {
+      "name": "Chipper Jones",
+      "championships": [
+        {
+          "year": 1995,
+          "team": "Atlanta Braves"
+        }
+      ]
+    },
+    "116999": {
+      "name": "Jeff Kent",
+      "championships": [
+        {
+          "year": 1992,
+          "team": "Toronto Blue Jays"
+        }
+      ]
+    },
+    "117244": {
+      "name": "Paul Konerko",
+      "championships": [
+        {
+          "year": 2005,
+          "team": "Chicago White Sox"
+        }
+      ]
+    },
+    "117276": {
+      "name": "Mark Kotsay",
+      "championships": [
+        {
+          "year": 1997,
+          "team": "Florida Marlins"
+        }
+      ]
+    },
+    "117601": {
+      "name": "Derrek Lee",
+      "championships": [
+        {
+          "year": 2003,
+          "team": "Florida Marlins"
+        }
+      ]
+    },
+    "117955": {
+      "name": "Derek Lowe",
+      "championships": [
+        {
+          "year": 2004,
+          "team": "Boston Red Sox"
+        }
+      ]
+    },
+    "118967": {
+      "name": "Kent Mercker",
+      "championships": [
+        {
+          "year": 1995,
+          "team": "Atlanta Braves"
+        }
+      ]
+    },
+    "119182": {
+      "name": "Doug Mirabelli",
+      "championships": [
+        {
+          "year": 2004,
+          "team": "Boston Red Sox"
+        },
+        {
+          "year": 2007,
+          "team": "Boston Red Sox"
+        }
+      ]
+    },
+    "119624": {
+      "name": "Mike Myers",
+      "championships": [
+        {
+          "year": 2004,
+          "team": "Boston Red Sox"
+        }
+      ]
+    },
+    "120074": {
+      "name": "David Ortiz",
+      "championships": [
+        {
+          "year": 2004,
+          "team": "Boston Red Sox"
+        },
+        {
+          "year": 2007,
+          "team": "Boston Red Sox"
+        },
+        {
+          "year": 2013,
+          "team": "Boston Red Sox"
+        }
+      ]
+    },
+    "120691": {
+      "name": "Jorge Posada",
+      "championships": [
+        {
+          "year": 1996,
+          "team": "New York Yankees"
+        },
+        {
+          "year": 1998,
+          "team": "New York Yankees"
+        },
+        {
+          "year": 1999,
+          "team": "New York Yankees"
+        },
+        {
+          "year": 2000,
+          "team": "New York Yankees"
+        },
+        {
+          "year": 2009,
+          "team": "New York Yankees"
+        }
+      ]
+    },
+    "120903": {
+      "name": "Manny Ramirez",
+      "championships": [
+        {
+          "year": 2004,
+          "team": "Boston Red Sox"
+        },
+        {
+          "year": 2007,
+          "team": "Boston Red Sox"
+        }
+      ]
+    },
+    "121074": {
+      "name": "Edgar Renteria",
+      "championships": [
+        {
+          "year": 1997,
+          "team": "Florida Marlins"
+        },
+        {
+          "year": 2010,
+          "team": "San Francisco Giants"
+        }
+      ]
+    },
+    "121125": {
+      "name": "Arthur Rhodes",
+      "championships": [
+        {
+          "year": 2011,
+          "team": "St. Louis Cardinals"
+        }
+      ]
+    },
+    "121250": {
+      "name": "Mariano Rivera",
+      "championships": [
+        {
+          "year": 1996,
+          "team": "New York Yankees"
+        },
+        {
+          "year": 1998,
+          "team": "New York Yankees"
+        },
+        {
+          "year": 1999,
+          "team": "New York Yankees"
+        },
+        {
+          "year": 2000,
+          "team": "New York Yankees"
+        },
+        {
+          "year": 2009,
+          "team": "New York Yankees"
+        }
+      ]
+    },
+    "121347": {
+      "name": "Alex Rodriguez",
+      "championships": [
+        {
+          "year": 2009,
+          "team": "New York Yankees"
+        }
+      ]
+    },
+    "121640": {
+      "name": "Tim Salmon",
+      "championships": [
+        {
+          "year": 2002,
+          "team": "Anaheim Angels"
+        }
+      ]
+    },
+    "121834": {
+      "name": "Jason Schmidt",
+      "championships": [
+        {
+          "year": 1995,
+          "team": "Atlanta Braves"
+        }
+      ]
+    },
+    "121955": {
+      "name": "Rudy Seanez",
+      "championships": [
+        {
+          "year": 2008,
+          "team": "Philadelphia Phillies"
+        }
+      ]
+    },
+    "121986": {
+      "name": "Aaron Sele",
+      "championships": [
+        {
+          "year": 2002,
+          "team": "Anaheim Angels"
+        }
+      ]
+    },
+    "122477": {
+      "name": "John Smoltz",
+      "championships": [
+        {
+          "year": 1995,
+          "team": "Atlanta Braves"
+        }
+      ]
+    },
+    "122620": {
+      "name": "Russ Springer",
+      "championships": [
+        {
+          "year": 2001,
+          "team": "Arizona Diamondbacks"
+        }
+      ]
+    },
+    "122644": {
+      "name": "Matt Stairs",
+      "championships": [
+        {
+          "year": 2008,
+          "team": "Philadelphia Phillies"
+        }
+      ]
+    },
+    "122681": {
+      "name": "Mike Stanton",
+      "championships": [
+        {
+          "year": 1995,
+          "team": "Atlanta Braves"
+        },
+        {
+          "year": 1998,
+          "team": "New York Yankees"
+        },
+        {
+          "year": 1999,
+          "team": "New York Yankees"
+        },
+        {
+          "year": 2000,
+          "team": "New York Yankees"
+        }
+      ]
+    },
+    "123118": {
+      "name": "Julian Tavarez",
+      "championships": [
+        {
+          "year": 2007,
+          "team": "Boston Red Sox"
+        }
+      ]
+    },
+    "123387": {
+      "name": "Brett Tomko",
+      "championships": [
+        {
+          "year": 2009,
+          "team": "New York Yankees"
+        }
+      ]
+    },
+    "123801": {
+      "name": "Tim Wakefield",
+      "championships": [
+        {
+          "year": 2004,
+          "team": "Boston Red Sox"
+        },
+        {
+          "year": 2007,
+          "team": "Boston Red Sox"
+        }
+      ]
+    },
+    "124000": {
+      "name": "David Weathers",
+      "championships": [
+        {
+          "year": 1992,
+          "team": "Toronto Blue Jays"
+        },
+        {
+          "year": 1996,
+          "team": "New York Yankees"
+        }
+      ]
+    },
+    "124071": {
+      "name": "David Wells",
+      "championships": [
+        {
+          "year": 1992,
+          "team": "Toronto Blue Jays"
+        },
+        {
+          "year": 1998,
+          "team": "New York Yankees"
+        }
+      ]
+    },
+    "124288": {
+      "name": "Bernie Williams",
+      "championships": [
+        {
+          "year": 1996,
+          "team": "New York Yankees"
+        },
+        {
+          "year": 1998,
+          "team": "New York Yankees"
+        },
+        {
+          "year": 1999,
+          "team": "New York Yankees"
+        },
+        {
+          "year": 2000,
+          "team": "New York Yankees"
+        }
+      ]
+    },
+    "124523": {
+      "name": "Tony Womack",
+      "championships": [
+        {
+          "year": 2001,
+          "team": "Arizona Diamondbacks"
+        }
+      ]
+    },
+    "124748": {
+      "name": "Gregg Zaun",
+      "championships": [
+        {
+          "year": 1997,
+          "team": "Florida Marlins"
+        }
+      ]
+    },
+    "132220": {
+      "name": "Jarrod Washburn",
+      "championships": [
+        {
+          "year": 2002,
+          "team": "Anaheim Angels"
+        }
+      ]
+    },
+    "132241": {
+      "name": "Bryan Corey",
+      "championships": [
+        {
+          "year": 2007,
+          "team": "Boston Red Sox"
+        }
+      ]
+    },
+    "133225": {
+      "name": "Ryan Dempster",
+      "championships": [
+        {
+          "year": 2013,
+          "team": "Boston Red Sox"
+        }
+      ]
+    },
+    "133226": {
+      "name": "Mike Redmond",
+      "championships": [
+        {
+          "year": 2003,
+          "team": "Florida Marlins"
+        }
+      ]
+    },
+    "133321": {
+      "name": "Alex Cora",
+      "championships": [
+        {
+          "year": 2007,
+          "team": "Boston Red Sox"
+        }
+      ]
+    },
+    "133343": {
+      "name": "Preston Wilson",
+      "championships": [
+        {
+          "year": 2006,
+          "team": "St. Louis Cardinals"
+        }
+      ]
+    },
+    "134260": {
+      "name": "Bengie Molina",
+      "championships": [
+        {
+          "year": 2002,
+          "team": "Anaheim Angels"
+        },
+        {
+          "year": 2010,
+          "team": "San Francisco Giants"
+        }
+      ]
+    },
+    "135783": {
+      "name": "Ramon Castro",
+      "championships": [
+        {
+          "year": 2003,
+          "team": "Florida Marlins"
+        }
+      ]
+    },
+    "136267": {
+      "name": "Troy Glaus",
+      "championships": [
+        {
+          "year": 2002,
+          "team": "Anaheim Angels"
+        }
+      ]
+    },
+    "136660": {
+      "name": "Mark DeRosa",
+      "championships": [
+        {
+          "year": 2010,
+          "team": "San Francisco Giants"
+        }
+      ]
+    },
+    "136734": {
+      "name": "Octavio Dotel",
+      "championships": [
+        {
+          "year": 2011,
+          "team": "St. Louis Cardinals"
+        }
+      ]
+    },
+    "136770": {
+      "name": "J.D. Drew",
+      "championships": [
+        {
+          "year": 2007,
+          "team": "Boston Red Sox"
+        }
+      ]
+    },
+    "136780": {
+      "name": "Mike Lowell",
+      "championships": [
+        {
+          "year": 1998,
+          "team": "New York Yankees"
+        },
+        {
+          "year": 2003,
+          "team": "Florida Marlins"
+        },
+        {
+          "year": 2007,
+          "team": "Boston Red Sox"
+        }
+      ]
+    },
+    "136860": {
+      "name": "Carlos Beltrán",
+      "championships": [
+        {
+          "year": 2017,
+          "team": "Houston Astros"
+        }
+      ]
+    },
+    "137002": {
+      "name": "Gabe Kapler",
+      "championships": [
+        {
+          "year": 2004,
+          "team": "Boston Red Sox"
+        }
+      ]
+    },
+    "150009": {
+      "name": "Ramón Ortiz",
+      "championships": [
+        {
+          "year": 2002,
+          "team": "Anaheim Angels"
+        }
+      ]
+    },
+    "150011": {
+      "name": "Scott Schoeneweis",
+      "championships": [
+        {
+          "year": 2002,
+          "team": "Anaheim Angels"
+        }
+      ]
+    },
+    "150020": {
+      "name": "Jerry Hairston Jr.",
+      "championships": [
+        {
+          "year": 2009,
+          "team": "New York Yankees"
+        }
+      ]
+    },
+    "150029": {
+      "name": "Jayson Werth",
+      "championships": [
+        {
+          "year": 2008,
+          "team": "Philadelphia Phillies"
+        }
+      ]
+    },
+    "150040": {
+      "name": "José Molina",
+      "championships": [
+        {
+          "year": 2002,
+          "team": "Anaheim Angels"
+        },
+        {
+          "year": 2009,
+          "team": "New York Yankees"
+        }
+      ]
+    },
+    "150061": {
+      "name": "Julio Lugo",
+      "championships": [
+        {
+          "year": 2007,
+          "team": "Boston Red Sox"
+        }
+      ]
+    },
+    "150071": {
+      "name": "Ronnie Belliard",
+      "championships": [
+        {
+          "year": 2006,
+          "team": "St. Louis Cardinals"
+        }
+      ]
+    },
+    "150093": {
+      "name": "Alfonso Soriano",
+      "championships": [
+        {
+          "year": 1999,
+          "team": "New York Yankees"
+        },
+        {
+          "year": 2000,
+          "team": "New York Yankees"
+        }
+      ]
+    },
+    "150148": {
+      "name": "Rod Barajas",
+      "championships": [
+        {
+          "year": 2001,
+          "team": "Arizona Diamondbacks"
+        }
+      ]
+    },
+    "150182": {
+      "name": "Scott Williamson",
+      "championships": [
+        {
+          "year": 2004,
+          "team": "Boston Red Sox"
+        }
+      ]
+    },
+    "150229": {
+      "name": "A.J. Pierzynski",
+      "championships": [
+        {
+          "year": 2005,
+          "team": "Chicago White Sox"
+        }
+      ]
+    },
+    "150230": {
+      "name": "Mark Redman",
+      "championships": [
+        {
+          "year": 2003,
+          "team": "Florida Marlins"
+        }
+      ]
+    },
+    "150274": {
+      "name": "Joe Nathan",
+      "championships": [
+        {
+          "year": 2016,
+          "team": "Chicago Cubs"
+        }
+      ]
+    },
+    "150302": {
+      "name": "Jason Marquis",
+      "championships": [
+        {
+          "year": 2006,
+          "team": "St. Louis Cardinals"
+        }
+      ]
+    },
+    "150317": {
+      "name": "Joe Crede",
+      "championships": [
+        {
+          "year": 2005,
+          "team": "Chicago White Sox"
+        }
+      ]
+    },
+    "150348": {
+      "name": "John McDonald",
+      "championships": [
+        {
+          "year": 2013,
+          "team": "Boston Red Sox"
+        }
+      ]
+    },
+    "150353": {
+      "name": "Dave Roberts",
+      "championships": [
+        {
+          "year": 2004,
+          "team": "Boston Red Sox"
+        }
+      ]
+    },
+    "150367": {
+      "name": "Pablo Ozuna",
+      "championships": [
+        {
+          "year": 2005,
+          "team": "Chicago White Sox"
+        }
+      ]
+    },
+    "150378": {
+      "name": "Eric Gagne",
+      "championships": [
+        {
+          "year": 2007,
+          "team": "Boston Red Sox"
+        }
+      ]
+    },
+    "150398": {
+      "name": "Geoff Blum",
+      "championships": [
+        {
+          "year": 2005,
+          "team": "Chicago White Sox"
+        }
+      ]
+    },
+    "150407": {
+      "name": "Guillermo Mota",
+      "championships": [
+        {
+          "year": 2010,
+          "team": "San Francisco Giants"
+        },
+        {
+          "year": 2012,
+          "team": "San Francisco Giants"
+        }
+      ]
+    },
+    "150456": {
+      "name": "Adam Kennedy",
+      "championships": [
+        {
+          "year": 2002,
+          "team": "Anaheim Angels"
+        }
+      ]
+    },
+    "207267": {
+      "name": "Brad Penny",
+      "championships": [
+        {
+          "year": 2003,
+          "team": "Florida Marlins"
+        },
+        {
+          "year": 2012,
+          "team": "San Francisco Giants"
+        }
+      ]
+    },
+    "213711": {
+      "name": "Jeff Weaver",
+      "championships": [
+        {
+          "year": 2006,
+          "team": "St. Louis Cardinals"
+        }
+      ]
+    },
+    "216897": {
+      "name": "Kyle Snyder",
+      "championships": [
+        {
+          "year": 2007,
+          "team": "Boston Red Sox"
+        }
+      ]
+    },
+    "237800": {
+      "name": "Jeff DaVanon",
+      "championships": [
+        {
+          "year": 2002,
+          "team": "Anaheim Angels"
+        }
+      ]
+    },
+    "240694": {
+      "name": "J.C. Romero",
+      "championships": [
+        {
+          "year": 2007,
+          "team": "Boston Red Sox"
+        },
+        {
+          "year": 2008,
+          "team": "Philadelphia Phillies"
+        }
+      ]
+    },
+    "276377": {
+      "name": "Wily Mo Peña",
+      "championships": [
+        {
+          "year": 2007,
+          "team": "Boston Red Sox"
+        }
+      ]
+    },
+    "276912": {
+      "name": "Scot Shields",
+      "championships": [
+        {
+          "year": 2002,
+          "team": "Anaheim Angels"
+        }
+      ]
+    },
+    "279577": {
+      "name": "Rafael Furcal",
+      "championships": [
+        {
+          "year": 2011,
+          "team": "St. Louis Cardinals"
+        }
+      ]
+    },
+    "279782": {
+      "name": "Jon Garland",
+      "championships": [
+        {
+          "year": 2005,
+          "team": "Chicago White Sox"
+        }
+      ]
+    },
+    "282332": {
+      "name": "CC Sabathia",
+      "championships": [
+        {
+          "year": 2009,
+          "team": "New York Yankees"
+        }
+      ]
+    },
+    "285068": {
+      "name": "Cody Ransom",
+      "championships": [
+        {
+          "year": 2009,
+          "team": "New York Yankees"
+        }
+      ]
+    },
+    "294558": {
+      "name": "Xavier Nady",
+      "championships": [
+        {
+          "year": 2009,
+          "team": "New York Yankees"
+        },
+        {
+          "year": 2012,
+          "team": "San Francisco Giants"
+        }
+      ]
+    },
+    "325392": {
+      "name": "Scott Podsednik",
+      "championships": [
+        {
+          "year": 2005,
+          "team": "Chicago White Sox"
+        }
+      ]
+    },
+    "329092": {
+      "name": "Randy Choate",
+      "championships": [
+        {
+          "year": 2000,
+          "team": "New York Yankees"
+        }
+      ]
+    },
+    "334393": {
+      "name": "Juan Pierre",
+      "championships": [
+        {
+          "year": 2003,
+          "team": "Florida Marlins"
+        }
+      ]
+    },
+    "340192": {
+      "name": "Marco Scutaro",
+      "championships": [
+        {
+          "year": 2012,
+          "team": "San Francisco Giants"
+        },
+        {
+          "year": 2014,
+          "team": "San Francisco Giants"
+        }
+      ]
+    },
+    "346857": {
+      "name": "Nick Punto",
+      "championships": [
+        {
+          "year": 2011,
+          "team": "St. Louis Cardinals"
+        }
+      ]
+    },
+    "346874": {
+      "name": "Juan Uribe",
+      "championships": [
+        {
+          "year": 2005,
+          "team": "Chicago White Sox"
+        },
+        {
+          "year": 2010,
+          "team": "San Francisco Giants"
+        }
+      ]
+    },
+    "400083": {
+      "name": "Andres Torres",
+      "championships": [
+        {
+          "year": 2010,
+          "team": "San Francisco Giants"
+        }
+      ]
+    },
+    "400091": {
+      "name": "Jack Cust",
+      "championships": [
+        {
+          "year": 2001,
+          "team": "Arizona Diamondbacks"
+        }
+      ]
+    },
+    "400284": {
+      "name": "Chase Utley",
+      "championships": [
+        {
+          "year": 2008,
+          "team": "Philadelphia Phillies"
+        }
+      ]
+    },
+    "405395": {
+      "name": "Albert Pujols",
+      "championships": [
+        {
+          "year": 2006,
+          "team": "St. Louis Cardinals"
+        },
+        {
+          "year": 2011,
+          "team": "St. Louis Cardinals"
+        }
+      ]
+    },
+    "407483": {
+      "name": "Willie Harris",
+      "championships": [
+        {
+          "year": 2005,
+          "team": "Chicago White Sox"
+        }
+      ]
+    },
+    "407489": {
+      "name": "Lyle Overbay",
+      "championships": [
+        {
+          "year": 2001,
+          "team": "Arizona Diamondbacks"
+        }
+      ]
+    },
+    "407556": {
+      "name": "Angel Berroa",
+      "championships": [
+        {
+          "year": 2009,
+          "team": "New York Yankees"
+        }
+      ]
+    },
+    "407791": {
+      "name": "Brendan Donnelly",
+      "championships": [
+        {
+          "year": 2002,
+          "team": "Anaheim Angels"
+        },
+        {
+          "year": 2007,
+          "team": "Boston Red Sox"
+        }
+      ]
+    },
+    "407793": {
+      "name": "John Lackey",
+      "championships": [
+        {
+          "year": 2002,
+          "team": "Anaheim Angels"
+        },
+        {
+          "year": 2013,
+          "team": "Boston Red Sox"
+        },
+        {
+          "year": 2016,
+          "team": "Chicago Cubs"
+        }
+      ]
+    },
+    "407812": {
+      "name": "Matt Holliday",
+      "championships": [
+        {
+          "year": 2011,
+          "team": "St. Louis Cardinals"
+        }
+      ]
+    },
+    "407819": {
+      "name": "Matt Thornton",
+      "championships": [
+        {
+          "year": 2013,
+          "team": "Boston Red Sox"
+        }
+      ]
+    },
+    "407842": {
+      "name": "Jose Veras",
+      "championships": [
+        {
+          "year": 2009,
+          "team": "New York Yankees"
+        }
+      ]
+    },
+    "407845": {
+      "name": "Fernando Rodney",
+      "championships": [
+        {
+          "year": 2019,
+          "team": "Washington Nationals"
+        }
+      ]
+    },
+    "407893": {
+      "name": "Mark Teixeira",
+      "championships": [
+        {
+          "year": 2009,
+          "team": "New York Yankees"
+        }
+      ]
+    },
+    "407901": {
+      "name": "Jorge Sosa",
+      "championships": [
+        {
+          "year": 2006,
+          "team": "St. Louis Cardinals"
+        }
+      ]
+    },
+    "407908": {
+      "name": "Joel Peralta",
+      "championships": [
+        {
+          "year": 2016,
+          "team": "Chicago Cubs"
+        }
+      ]
+    },
+    "408042": {
+      "name": "Gerald Laird",
+      "championships": [
+        {
+          "year": 2011,
+          "team": "St. Louis Cardinals"
+        }
+      ]
+    },
+    "408061": {
+      "name": "Francisco Rodríguez",
+      "championships": [
+        {
+          "year": 2002,
+          "team": "Anaheim Angels"
+        }
+      ]
+    },
+    "408210": {
+      "name": "Chone Figgins",
+      "championships": [
+        {
+          "year": 2002,
+          "team": "Anaheim Angels"
+        }
+      ]
+    },
+    "408211": {
+      "name": "Kevin Cash",
+      "championships": [
+        {
+          "year": 2007,
+          "team": "Boston Red Sox"
+        },
+        {
+          "year": 2009,
+          "team": "New York Yankees"
+        }
+      ]
+    },
+    "408241": {
+      "name": "Jake Peavy",
+      "championships": [
+        {
+          "year": 2013,
+          "team": "Boston Red Sox"
+        },
+        {
+          "year": 2014,
+          "team": "San Francisco Giants"
+        }
+      ]
+    },
+    "408252": {
+      "name": "Brandon Phillips",
+      "championships": [
+        {
+          "year": 2018,
+          "team": "Boston Red Sox"
+        }
+      ]
+    },
+    "408299": {
+      "name": "Omar Infante",
+      "championships": [
+        {
+          "year": 2015,
+          "team": "Kansas City Royals"
+        }
+      ]
+    },
+    "424325": {
+      "name": "David Ross",
+      "championships": [
+        {
+          "year": 2013,
+          "team": "Boston Red Sox"
+        },
+        {
+          "year": 2016,
+          "team": "Chicago Cubs"
+        }
+      ]
+    },
+    "424668": {
+      "name": "Jon Adkins",
+      "championships": [
+        {
+          "year": 2005,
+          "team": "Chicago White Sox"
+        }
+      ]
+    },
+    "424825": {
+      "name": "Coco Crisp",
+      "championships": [
+        {
+          "year": 2007,
+          "team": "Boston Red Sox"
+        }
+      ]
+    },
+    "425226": {
+      "name": "Brian Tallet",
+      "championships": [
+        {
+          "year": 2011,
+          "team": "St. Louis Cardinals"
+        }
+      ]
+    },
+    "425426": {
+      "name": "Chien-Ming Wang",
+      "championships": [
+        {
+          "year": 2009,
+          "team": "New York Yankees"
+        }
+      ]
+    },
+    "425496": {
+      "name": "Cody Ross",
+      "championships": [
+        {
+          "year": 2010,
+          "team": "San Francisco Giants"
+        }
+      ]
+    },
+    "425567": {
+      "name": "Alex Rios",
+      "championships": [
+        {
+          "year": 2015,
+          "team": "Kansas City Royals"
+        }
+      ]
+    },
+    "425657": {
+      "name": "Javier López",
+      "championships": [
+        {
+          "year": 2007,
+          "team": "Boston Red Sox"
+        },
+        {
+          "year": 2010,
+          "team": "San Francisco Giants"
+        },
+        {
+          "year": 2012,
+          "team": "San Francisco Giants"
+        },
+        {
+          "year": 2014,
+          "team": "San Francisco Giants"
+        }
+      ]
+    },
+    "425686": {
+      "name": "Hideki Matsui",
+      "championships": [
+        {
+          "year": 2009,
+          "team": "New York Yankees"
+        }
+      ]
+    },
+    "425772": {
+      "name": "Jeff Mathis",
+      "championships": [
+        {
+          "year": 2021,
+          "team": "Atlanta Braves"
+        }
+      ]
+    },
+    "425785": {
+      "name": "Greg Dobbs",
+      "championships": [
+        {
+          "year": 2008,
+          "team": "Philadelphia Phillies"
+        }
+      ]
+    },
+    "425794": {
+      "name": "Adam Wainwright",
+      "championships": [
+        {
+          "year": 2006,
+          "team": "St. Louis Cardinals"
+        }
+      ]
+    },
+    "425852": {
+      "name": "Mike Rose",
+      "championships": [
+        {
+          "year": 2006,
+          "team": "St. Louis Cardinals"
+        }
+      ]
+    },
+    "425877": {
+      "name": "Yadier Molina",
+      "championships": [
+        {
+          "year": 2006,
+          "team": "St. Louis Cardinals"
+        },
+        {
+          "year": 2011,
+          "team": "St. Louis Cardinals"
+        }
+      ]
+    },
+    "425903": {
+      "name": "Kevin Youkilis",
+      "championships": [
+        {
+          "year": 2004,
+          "team": "Boston Red Sox"
+        },
+        {
+          "year": 2007,
+          "team": "Boston Red Sox"
+        }
+      ]
+    },
+    "429664": {
+      "name": "Robinson Canó",
+      "championships": [
+        {
+          "year": 2009,
+          "team": "New York Yankees"
+        }
+      ]
+    },
+    "429667": {
+      "name": "Ryan Howard",
+      "championships": [
+        {
+          "year": 2008,
+          "team": "Philadelphia Phillies"
+        }
+      ]
+    },
+    "430630": {
+      "name": "Jason Frasor",
+      "championships": [
+        {
+          "year": 2015,
+          "team": "Kansas City Royals"
+        }
+      ]
+    },
+    "430673": {
+      "name": "Ramon E Ramirez",
+      "championships": [
+        {
+          "year": 2010,
+          "team": "San Francisco Giants"
+        }
+      ]
+    },
+    "430897": {
+      "name": "Nick Swisher",
+      "championships": [
+        {
+          "year": 2009,
+          "team": "New York Yankees"
+        }
+      ]
+    },
+    "430917": {
+      "name": "Mike Fontenot",
+      "championships": [
+        {
+          "year": 2010,
+          "team": "San Francisco Giants"
+        }
+      ]
+    },
+    "431158": {
+      "name": "Jeff Bailey",
+      "championships": [
+        {
+          "year": 2007,
+          "team": "Boston Red Sox"
+        }
+      ]
+    },
+    "432934": {
+      "name": "Chris Young",
+      "championships": [
+        {
+          "year": 2015,
+          "team": "Kansas City Royals"
+        }
+      ]
+    },
+    "433589": {
+      "name": "Yusmeiro Petit",
+      "championships": [
+        {
+          "year": 2012,
+          "team": "San Francisco Giants"
+        },
+        {
+          "year": 2014,
+          "team": "San Francisco Giants"
+        }
+      ]
+    },
+    "434538": {
+      "name": "Francisco Liriano",
+      "championships": [
+        {
+          "year": 2017,
+          "team": "Houston Astros"
+        }
+      ]
+    },
+    "434563": {
+      "name": "Carlos Ruiz",
+      "championships": [
+        {
+          "year": 2008,
+          "team": "Philadelphia Phillies"
+        }
+      ]
+    },
+    "434604": {
+      "name": "Michael Morse",
+      "championships": [
+        {
+          "year": 2014,
+          "team": "San Francisco Giants"
+        }
+      ]
+    },
+    "434628": {
+      "name": "Jason Hammel",
+      "championships": [
+        {
+          "year": 2016,
+          "team": "Chicago Cubs"
+        }
+      ]
+    },
+    "434636": {
+      "name": "Ángel Pagán",
+      "championships": [
+        {
+          "year": 2012,
+          "team": "San Francisco Giants"
+        },
+        {
+          "year": 2014,
+          "team": "San Francisco Giants"
+        }
+      ]
+    },
+    "434668": {
+      "name": "Manny Delcarmen",
+      "championships": [
+        {
+          "year": 2007,
+          "team": "Boston Red Sox"
+        }
+      ]
+    },
+    "434670": {
+      "name": "Hanley Ramirez",
+      "championships": [
+        {
+          "year": 2018,
+          "team": "Boston Red Sox"
+        }
+      ]
+    },
+    "434671": {
+      "name": "Aníbal Sánchez",
+      "championships": [
+        {
+          "year": 2019,
+          "team": "Washington Nationals"
+        }
+      ]
+    },
+    "434778": {
+      "name": "Kendrys Morales",
+      "championships": [
+        {
+          "year": 2015,
+          "team": "Kansas City Royals"
+        }
+      ]
+    },
+    "435062": {
+      "name": "Howie Kendrick",
+      "championships": [
+        {
+          "year": 2019,
+          "team": "Washington Nationals"
+        }
+      ]
+    },
+    "435063": {
+      "name": "Mike Napoli",
+      "championships": [
+        {
+          "year": 2013,
+          "team": "Boston Red Sox"
+        }
+      ]
+    },
+    "435079": {
+      "name": "Ian Kinsler",
+      "championships": [
+        {
+          "year": 2018,
+          "team": "Boston Red Sox"
+        }
+      ]
+    },
+    "435263": {
+      "name": "Brian McCann",
+      "championships": [
+        {
+          "year": 2017,
+          "team": "Houston Astros"
+        }
+      ]
+    },
+    "435401": {
+      "name": "Skip Schumaker",
+      "championships": [
+        {
+          "year": 2006,
+          "team": "St. Louis Cardinals"
+        },
+        {
+          "year": 2011,
+          "team": "St. Louis Cardinals"
+        }
+      ]
+    },
+    "435559": {
+      "name": "Kurt Suzuki",
+      "championships": [
+        {
+          "year": 2019,
+          "team": "Washington Nationals"
+        }
+      ]
+    },
+    "444135": {
+      "name": "Ryan Theriot",
+      "championships": [
+        {
+          "year": 2011,
+          "team": "St. Louis Cardinals"
+        },
+        {
+          "year": 2012,
+          "team": "San Francisco Giants"
+        }
+      ]
+    },
+    "444520": {
+      "name": "Craig Breslow",
+      "championships": [
+        {
+          "year": 2013,
+          "team": "Boston Red Sox"
+        }
+      ]
+    },
+    "444876": {
+      "name": "Alcides Escobar",
+      "championships": [
+        {
+          "year": 2015,
+          "team": "Kansas City Royals"
+        }
+      ]
+    },
+    "445055": {
+      "name": "Jon Jay",
+      "championships": [
+        {
+          "year": 2011,
+          "team": "St. Louis Cardinals"
+        }
+      ]
+    },
+    "445197": {
+      "name": "Mike Dunn",
+      "championships": [
+        {
+          "year": 2009,
+          "team": "New York Yankees"
+        }
+      ]
+    },
+    "445276": {
+      "name": "Kenley Jansen",
+      "championships": [
+        {
+          "year": 2020,
+          "team": "Los Angeles Dodgers"
+        }
+      ]
+    },
+    "445926": {
+      "name": "Jesse Chavez",
+      "championships": [
+        {
+          "year": 2021,
+          "team": "Atlanta Braves"
+        }
+      ]
+    },
+    "450172": {
+      "name": "Edinson Volquez",
+      "championships": [
+        {
+          "year": 2015,
+          "team": "Kansas City Royals"
+        }
+      ]
+    },
+    "450306": {
+      "name": "Jason Vargas",
+      "championships": [
+        {
+          "year": 2015,
+          "team": "Kansas City Royals"
+        }
+      ]
+    },
+    "450314": {
+      "name": "Ben Zobrist",
+      "championships": [
+        {
+          "year": 2015,
+          "team": "Kansas City Royals"
+        },
+        {
+          "year": 2016,
+          "team": "Chicago Cubs"
+        }
+      ]
+    },
+    "451085": {
+      "name": "Brian Matusz",
+      "championships": [
+        {
+          "year": 2016,
+          "team": "Chicago Cubs"
+        }
+      ]
+    },
+    "451257": {
+      "name": "Kason Gabbard",
+      "championships": [
+        {
+          "year": 2007,
+          "team": "Boston Red Sox"
+        }
+      ]
+    },
+    "451584": {
+      "name": "Wade Davis",
+      "championships": [
+        {
+          "year": 2015,
+          "team": "Kansas City Royals"
+        }
+      ]
+    },
+    "451594": {
+      "name": "Dexter Fowler",
+      "championships": [
+        {
+          "year": 2016,
+          "team": "Chicago Cubs"
+        }
+      ]
+    },
+    "452220": {
+      "name": "Stephen Drew",
+      "championships": [
+        {
+          "year": 2013,
+          "team": "Boston Red Sox"
+        }
+      ]
+    },
+    "452254": {
+      "name": "Hunter Pence",
+      "championships": [
+        {
+          "year": 2012,
+          "team": "San Francisco Giants"
+        },
+        {
+          "year": 2014,
+          "team": "San Francisco Giants"
+        }
+      ]
+    },
+    "452657": {
+      "name": "Jon Lester",
+      "championships": [
+        {
+          "year": 2007,
+          "team": "Boston Red Sox"
+        },
+        {
+          "year": 2013,
+          "team": "Boston Red Sox"
+        },
+        {
+          "year": 2016,
+          "team": "Chicago Cubs"
+        }
+      ]
+    },
+    "452678": {
+      "name": "Asdrúbal Cabrera",
+      "championships": [
+        {
+          "year": 2019,
+          "team": "Washington Nationals"
+        }
+      ]
+    },
+    "453056": {
+      "name": "Jacoby Ellsbury",
+      "championships": [
+        {
+          "year": 2007,
+          "team": "Boston Red Sox"
+        },
+        {
+          "year": 2013,
+          "team": "Boston Red Sox"
+        }
+      ]
+    },
+    "453178": {
+      "name": "Ian Kennedy",
+      "championships": [
+        {
+          "year": 2009,
+          "team": "New York Yankees"
+        },
+        {
+          "year": 2023,
+          "team": "Texas Rangers"
+        }
+      ]
+    },
+    "453268": {
+      "name": "Daniel Bard",
+      "championships": [
+        {
+          "year": 2013,
+          "team": "Boston Red Sox"
+        }
+      ]
+    },
+    "453343": {
+      "name": "Mark Melancon",
+      "championships": [
+        {
+          "year": 2009,
+          "team": "New York Yankees"
+        }
+      ]
+    },
+    "453385": {
+      "name": "Clayton Richard",
+      "championships": [
+        {
+          "year": 2016,
+          "team": "Chicago Cubs"
+        }
+      ]
+    },
+    "453562": {
+      "name": "Jake Arrieta",
+      "championships": [
+        {
+          "year": 2016,
+          "team": "Chicago Cubs"
+        }
+      ]
+    },
+    "453923": {
+      "name": "Grégor Blanco",
+      "championships": [
+        {
+          "year": 2012,
+          "team": "San Francisco Giants"
+        },
+        {
+          "year": 2014,
+          "team": "San Francisco Giants"
+        }
+      ]
+    },
+    "454535": {
+      "name": "Clay Hensley",
+      "championships": [
+        {
+          "year": 2012,
+          "team": "San Francisco Giants"
+        }
+      ]
+    },
+    "455117": {
+      "name": "Martín Maldonado",
+      "championships": [
+        {
+          "year": 2022,
+          "team": "Houston Astros"
+        }
+      ]
+    },
+    "455119": {
+      "name": "Chris Martin",
+      "championships": [
+        {
+          "year": 2021,
+          "team": "Atlanta Braves"
+        }
+      ]
+    },
+    "455369": {
+      "name": "Ramiro Pena",
+      "championships": [
+        {
+          "year": 2009,
+          "team": "New York Yankees"
+        }
+      ]
+    },
+    "456030": {
+      "name": "Dustin Pedroia",
+      "championships": [
+        {
+          "year": 2007,
+          "team": "Boston Red Sox"
+        },
+        {
+          "year": 2013,
+          "team": "Boston Red Sox"
+        },
+        {
+          "year": 2018,
+          "team": "Boston Red Sox"
+        }
+      ]
+    },
+    "456034": {
+      "name": "David Price",
+      "championships": [
+        {
+          "year": 2018,
+          "team": "Boston Red Sox"
+        }
+      ]
+    },
+    "456488": {
+      "name": "Eduardo Núñez",
+      "championships": [
+        {
+          "year": 2018,
+          "team": "Boston Red Sox"
+        }
+      ]
+    },
+    "456665": {
+      "name": "Steve Pearce",
+      "championships": [
+        {
+          "year": 2018,
+          "team": "Boston Red Sox"
+        }
+      ]
+    },
+    "456715": {
+      "name": "Lorenzo Cain",
+      "championships": [
+        {
+          "year": 2015,
+          "team": "Kansas City Royals"
+        }
+      ]
+    },
+    "457454": {
+      "name": "Jarrod Saltalamacchia",
+      "championships": [
+        {
+          "year": 2013,
+          "team": "Boston Red Sox"
+        }
+      ]
+    },
+    "457727": {
+      "name": "Cameron Maybin",
+      "championships": [
+        {
+          "year": 2017,
+          "team": "Houston Astros"
+        }
+      ]
+    },
+    "457759": {
+      "name": "Justin Turner",
+      "championships": [
+        {
+          "year": 2020,
+          "team": "Los Angeles Dodgers"
+        }
+      ]
+    },
+    "457763": {
+      "name": "Buster Posey",
+      "championships": [
+        {
+          "year": 2010,
+          "team": "San Francisco Giants"
+        },
+        {
+          "year": 2012,
+          "team": "San Francisco Giants"
+        },
+        {
+          "year": 2014,
+          "team": "San Francisco Giants"
+        }
+      ]
+    },
+    "458085": {
+      "name": "Chris Coghlan",
+      "championships": [
+        {
+          "year": 2016,
+          "team": "Chicago Cubs"
+        }
+      ]
+    },
+    "458731": {
+      "name": "Brett Gardner",
+      "championships": [
+        {
+          "year": 2009,
+          "team": "New York Yankees"
+        }
+      ]
+    },
+    "459429": {
+      "name": "Jake McGee",
+      "championships": [
+        {
+          "year": 2020,
+          "team": "Los Angeles Dodgers"
+        }
+      ]
+    },
+    "460086": {
+      "name": "Alex Gordon",
+      "championships": [
+        {
+          "year": 2015,
+          "team": "Kansas City Royals"
+        }
+      ]
+    },
+    "461325": {
+      "name": "Tyler Clippard",
+      "championships": [
+        {
+          "year": 2017,
+          "team": "Houston Astros"
+        }
+      ]
+    },
+    "461815": {
+      "name": "David Murphy",
+      "championships": [
+        {
+          "year": 2007,
+          "team": "Boston Red Sox"
+        }
+      ]
+    },
+    "461833": {
+      "name": "Phil Hughes",
+      "championships": [
+        {
+          "year": 2009,
+          "team": "New York Yankees"
+        }
+      ]
+    },
+    "462564": {
+      "name": "Dan Uggla",
+      "championships": [
+        {
+          "year": 2014,
+          "team": "San Francisco Giants"
+        }
+      ]
+    },
+    "466320": {
+      "name": "Melky Cabrera",
+      "championships": [
+        {
+          "year": 2009,
+          "team": "New York Yankees"
+        },
+        {
+          "year": 2012,
+          "team": "San Francisco Giants"
+        }
+      ]
+    },
+    "467055": {
+      "name": "Pablo Sandoval",
+      "championships": [
+        {
+          "year": 2010,
+          "team": "San Francisco Giants"
+        },
+        {
+          "year": 2012,
+          "team": "San Francisco Giants"
+        },
+        {
+          "year": 2014,
+          "team": "San Francisco Giants"
+        },
+        {
+          "year": 2021,
+          "team": "Atlanta Braves"
+        }
+      ]
+    },
+    "467827": {
+      "name": "Gerardo Parra",
+      "championships": [
+        {
+          "year": 2019,
+          "team": "Washington Nationals"
+        }
+      ]
+    },
+    "471083": {
+      "name": "Miguel Montero",
+      "championships": [
+        {
+          "year": 2016,
+          "team": "Chicago Cubs"
+        }
+      ]
+    },
+    "472610": {
+      "name": "Luis García",
+      "championships": [
+        {
+          "year": 2025,
+          "team": "Los Angeles Dodgers"
+        }
+      ]
+    },
+    "473234": {
+      "name": "Tony Abreu",
+      "championships": [
+        {
+          "year": 2014,
+          "team": "San Francisco Giants"
+        }
+      ]
+    },
+    "474832": {
+      "name": "Brandon Belt",
+      "championships": [
+        {
+          "year": 2012,
+          "team": "San Francisco Giants"
+        },
+        {
+          "year": 2014,
+          "team": "San Francisco Giants"
+        }
+      ]
+    },
+    "475243": {
+      "name": "Travis Wood",
+      "championships": [
+        {
+          "year": 2016,
+          "team": "Chicago Cubs"
+        }
+      ]
+    },
+    "475582": {
+      "name": "Ryan Zimmerman",
+      "championships": [
+        {
+          "year": 2019,
+          "team": "Washington Nationals"
+        }
+      ]
+    },
+    "476589": {
+      "name": "Adam Warren",
+      "championships": [
+        {
+          "year": 2016,
+          "team": "Chicago Cubs"
+        }
+      ]
+    },
+    "477132": {
+      "name": "Clayton Kershaw",
+      "championships": [
+        {
+          "year": 2020,
+          "team": "Los Angeles Dodgers"
+        },
+        {
+          "year": 2024,
+          "team": "Los Angeles Dodgers"
+        },
+        {
+          "year": 2025,
+          "team": "Los Angeles Dodgers"
+        }
+      ]
+    },
+    "477569": {
+      "name": "Fernando Salas",
+      "championships": [
+        {
+          "year": 2011,
+          "team": "St. Louis Cardinals"
+        }
+      ]
+    },
+    "488810": {
+      "name": "Tony Cruz",
+      "championships": [
+        {
+          "year": 2011,
+          "team": "St. Louis Cardinals"
+        }
+      ]
+    },
+    "489446": {
+      "name": "Kirby Yates",
+      "championships": [
+        {
+          "year": 2025,
+          "team": "Los Angeles Dodgers"
+        }
+      ]
+    },
+    "493329": {
+      "name": "Yuli Gurriel",
+      "championships": [
+        {
+          "year": 2017,
+          "team": "Houston Astros"
+        },
+        {
+          "year": 2022,
+          "team": "Houston Astros"
+        }
+      ]
+    },
+    "500743": {
+      "name": "Miguel Rojas",
+      "championships": [
+        {
+          "year": 2024,
+          "team": "Los Angeles Dodgers"
+        },
+        {
+          "year": 2025,
+          "team": "Los Angeles Dodgers"
+        }
+      ]
+    },
+    "501659": {
+      "name": "Abraham Almonte",
+      "championships": [
+        {
+          "year": 2021,
+          "team": "Atlanta Braves"
+        }
+      ]
+    },
+    "501800": {
+      "name": "Allen Craig",
+      "championships": [
+        {
+          "year": 2011,
+          "team": "St. Louis Cardinals"
+        }
+      ]
+    },
+    "501896": {
+      "name": "David Freese",
+      "championships": [
+        {
+          "year": 2011,
+          "team": "St. Louis Cardinals"
+        }
+      ]
+    },
+    "501955": {
+      "name": "Joba Chamberlain",
+      "championships": [
+        {
+          "year": 2009,
+          "team": "New York Yankees"
+        },
+        {
+          "year": 2015,
+          "team": "Kansas City Royals"
+        }
+      ]
+    },
+    "502085": {
+      "name": "David Robertson",
+      "championships": [
+        {
+          "year": 2009,
+          "team": "New York Yankees"
+        }
+      ]
+    },
+    "502110": {
+      "name": "J.D. Martinez",
+      "championships": [
+        {
+          "year": 2018,
+          "team": "Boston Red Sox"
+        }
+      ]
+    },
+    "502239": {
+      "name": "Trevor Cahill",
+      "championships": [
+        {
+          "year": 2016,
+          "team": "Chicago Cubs"
+        }
+      ]
+    },
+    "502381": {
+      "name": "Luke Gregerson",
+      "championships": [
+        {
+          "year": 2017,
+          "team": "Houston Astros"
+        }
+      ]
+    },
+    "502481": {
+      "name": "Jarrod Dyson",
+      "championships": [
+        {
+          "year": 2015,
+          "team": "Kansas City Royals"
+        }
+      ]
+    },
+    "503556": {
+      "name": "Marwin Gonzalez",
+      "championships": [
+        {
+          "year": 2017,
+          "team": "Houston Astros"
+        }
+      ]
+    },
+    "506702": {
+      "name": "Sandy León",
+      "championships": [
+        {
+          "year": 2018,
+          "team": "Boston Red Sox"
+        },
+        {
+          "year": 2023,
+          "team": "Texas Rangers"
+        }
+      ]
+    },
+    "516949": {
+      "name": "Héctor Sánchez",
+      "championships": [
+        {
+          "year": 2012,
+          "team": "San Francisco Giants"
+        },
+        {
+          "year": 2014,
+          "team": "San Francisco Giants"
+        }
+      ]
+    },
+    "516969": {
+      "name": "Kelvin Herrera",
+      "championships": [
+        {
+          "year": 2015,
+          "team": "Kansas City Royals"
+        }
+      ]
+    },
+    "518489": {
+      "name": "Ryan Brasier",
+      "championships": [
+        {
+          "year": 2018,
+          "team": "Boston Red Sox"
+        },
+        {
+          "year": 2024,
+          "team": "Los Angeles Dodgers"
+        }
+      ]
+    },
+    "518516": {
+      "name": "Madison Bumgarner",
+      "championships": [
+        {
+          "year": 2010,
+          "team": "San Francisco Giants"
+        },
+        {
+          "year": 2012,
+          "team": "San Francisco Giants"
+        },
+        {
+          "year": 2014,
+          "team": "San Francisco Giants"
+        }
+      ]
+    },
+    "518595": {
+      "name": "Travis d'Arnaud",
+      "championships": [
+        {
+          "year": 2021,
+          "team": "Atlanta Braves"
+        }
+      ]
+    },
+    "518614": {
+      "name": "Daniel Descalso",
+      "championships": [
+        {
+          "year": 2011,
+          "team": "St. Louis Cardinals"
+        }
+      ]
+    },
+    "518692": {
+      "name": "Freddie Freeman",
+      "championships": [
+        {
+          "year": 2021,
+          "team": "Atlanta Braves"
+        },
+        {
+          "year": 2024,
+          "team": "Los Angeles Dodgers"
+        },
+        {
+          "year": 2025,
+          "team": "Los Angeles Dodgers"
+        }
+      ]
+    },
+    "518792": {
+      "name": "Jason Heyward",
+      "championships": [
+        {
+          "year": 2016,
+          "team": "Chicago Cubs"
+        },
+        {
+          "year": 2024,
+          "team": "Los Angeles Dodgers"
+        }
+      ]
+    },
+    "518813": {
+      "name": "Greg Holland",
+      "championships": [
+        {
+          "year": 2015,
+          "team": "Kansas City Royals"
+        }
+      ]
+    },
+    "518886": {
+      "name": "Craig Kimbrel",
+      "championships": [
+        {
+          "year": 2018,
+          "team": "Boston Red Sox"
+        }
+      ]
+    },
+    "518960": {
+      "name": "Jonathan Lucroy",
+      "championships": [
+        {
+          "year": 2021,
+          "team": "Atlanta Braves"
+        }
+      ]
+    },
+    "519048": {
+      "name": "Mitch Moreland",
+      "championships": [
+        {
+          "year": 2018,
+          "team": "Boston Red Sox"
+        }
+      ]
+    },
+    "519058": {
+      "name": "Mike Moustakas",
+      "championships": [
+        {
+          "year": 2015,
+          "team": "Kansas City Royals"
+        }
+      ]
+    },
+    "519141": {
+      "name": "Drew Pomeranz",
+      "championships": [
+        {
+          "year": 2018,
+          "team": "Boston Red Sox"
+        }
+      ]
+    },
+    "519203": {
+      "name": "Anthony Rizzo",
+      "championships": [
+        {
+          "year": 2016,
+          "team": "Chicago Cubs"
+        }
+      ]
+    },
+    "519240": {
+      "name": "Marc Rzepczynski",
+      "championships": [
+        {
+          "year": 2011,
+          "team": "St. Louis Cardinals"
+        }
+      ]
+    },
+    "519242": {
+      "name": "Chris Sale",
+      "championships": [
+        {
+          "year": 2018,
+          "team": "Boston Red Sox"
+        }
+      ]
+    },
+    "519293": {
+      "name": "Will Smith",
+      "championships": [
+        {
+          "year": 2021,
+          "team": "Atlanta Braves"
+        },
+        {
+          "year": 2022,
+          "team": "Houston Astros"
+        },
+        {
+          "year": 2023,
+          "team": "Texas Rangers"
+        }
+      ]
+    },
+    "519326": {
+      "name": "Hunter Strickland",
+      "championships": [
+        {
+          "year": 2014,
+          "team": "San Francisco Giants"
+        },
+        {
+          "year": 2019,
+          "team": "Washington Nationals"
+        }
+      ]
+    },
+    "519333": {
+      "name": "Matt Szczur",
+      "championships": [
+        {
+          "year": 2016,
+          "team": "Chicago Cubs"
+        }
+      ]
+    },
+    "519390": {
+      "name": "Stephen Vogt",
+      "championships": [
+        {
+          "year": 2021,
+          "team": "Atlanta Braves"
+        }
+      ]
+    },
+    "519393": {
+      "name": "Marcus Walden",
+      "championships": [
+        {
+          "year": 2018,
+          "team": "Boston Red Sox"
+        }
+      ]
+    },
+    "519443": {
+      "name": "Brandon Workman",
+      "championships": [
+        {
+          "year": 2013,
+          "team": "Boston Red Sox"
+        },
+        {
+          "year": 2018,
+          "team": "Boston Red Sox"
+        }
+      ]
+    },
+    "520980": {
+      "name": "Pedro Báez",
+      "championships": [
+        {
+          "year": 2020,
+          "team": "Los Angeles Dodgers"
+        },
+        {
+          "year": 2022,
+          "team": "Houston Astros"
+        }
+      ]
+    },
+    "521692": {
+      "name": "Salvador Perez",
+      "championships": [
+        {
+          "year": 2015,
+          "team": "Kansas City Royals"
+        }
+      ]
+    },
+    "523260": {
+      "name": "Joe Kelly",
+      "championships": [
+        {
+          "year": 2018,
+          "team": "Boston Red Sox"
+        },
+        {
+          "year": 2020,
+          "team": "Los Angeles Dodgers"
+        },
+        {
+          "year": 2024,
+          "team": "Los Angeles Dodgers"
+        }
+      ]
+    },
+    "527048": {
+      "name": "Martín Pérez",
+      "championships": [
+        {
+          "year": 2023,
+          "team": "Texas Rangers"
+        }
+      ]
+    },
+    "537953": {
+      "name": "Daniel Nava",
+      "championships": [
+        {
+          "year": 2013,
+          "team": "Boston Red Sox"
+        }
+      ]
+    },
+    "542303": {
+      "name": "Marcell Ozuna",
+      "championships": [
+        {
+          "year": 2021,
+          "team": "Atlanta Braves"
+        }
+      ]
+    },
+    "543063": {
+      "name": "Brandon Crawford",
+      "championships": [
+        {
+          "year": 2012,
+          "team": "San Francisco Giants"
+        },
+        {
+          "year": 2014,
+          "team": "San Francisco Giants"
+        }
+      ]
+    },
+    "543148": {
+      "name": "Tim Federowicz",
+      "championships": [
+        {
+          "year": 2016,
+          "team": "Chicago Cubs"
+        }
+      ]
+    },
+    "543216": {
+      "name": "Conor Gillaspie",
+      "championships": [
+        {
+          "year": 2012,
+          "team": "San Francisco Giants"
+        }
+      ]
+    },
+    "543228": {
+      "name": "Yan Gomes",
+      "championships": [
+        {
+          "year": 2019,
+          "team": "Washington Nationals"
+        }
+      ]
+    },
+    "543333": {
+      "name": "Eric Hosmer",
+      "championships": [
+        {
+          "year": 2015,
+          "team": "Kansas City Royals"
+        }
+      ]
+    },
+    "543339": {
+      "name": "Daniel Hudson",
+      "championships": [
+        {
+          "year": 2019,
+          "team": "Washington Nationals"
+        },
+        {
+          "year": 2024,
+          "team": "Los Angeles Dodgers"
+        }
+      ]
+    },
+    "543685": {
+      "name": "Anthony Rendon",
+      "championships": [
+        {
+          "year": 2019,
+          "team": "Washington Nationals"
+        }
+      ]
+    },
+    "543877": {
+      "name": "Christian Vázquez",
+      "championships": [
+        {
+          "year": 2018,
+          "team": "Boston Red Sox"
+        },
+        {
+          "year": 2022,
+          "team": "Houston Astros"
+        }
+      ]
+    },
+    "545358": {
+      "name": "Max Stassi",
+      "championships": [
+        {
+          "year": 2017,
+          "team": "Houston Astros"
+        }
+      ]
+    },
+    "547973": {
+      "name": "Aroldis Chapman",
+      "championships": [
+        {
+          "year": 2016,
+          "team": "Chicago Cubs"
+        },
+        {
+          "year": 2023,
+          "team": "Texas Rangers"
+        }
+      ]
+    },
+    "548389": {
+      "name": "Ross Stripling",
+      "championships": [
+        {
+          "year": 2020,
+          "team": "Los Angeles Dodgers"
+        }
+      ]
+    },
+    "570240": {
+      "name": "Félix Peña",
+      "championships": [
+        {
+          "year": 2016,
+          "team": "Chicago Cubs"
+        }
+      ]
+    },
+    "570632": {
+      "name": "José Ureña",
+      "championships": [
+        {
+          "year": 2025,
+          "team": "Los Angeles Dodgers"
+        }
+      ]
+    },
+    "571431": {
+      "name": "Matt Adams",
+      "championships": [
+        {
+          "year": 2019,
+          "team": "Washington Nationals"
+        }
+      ]
+    },
+    "571578": {
+      "name": "Patrick Corbin",
+      "championships": [
+        {
+          "year": 2019,
+          "team": "Washington Nationals"
+        }
+      ]
+    },
+    "571760": {
+      "name": "Andrew Heaney",
+      "championships": [
+        {
+          "year": 2023,
+          "team": "Texas Rangers"
+        },
+        {
+          "year": 2025,
+          "team": "Los Angeles Dodgers"
+        }
+      ]
+    },
+    "571771": {
+      "name": "Enrique Hernández",
+      "championships": [
+        {
+          "year": 2020,
+          "team": "Los Angeles Dodgers"
+        },
+        {
+          "year": 2024,
+          "team": "Los Angeles Dodgers"
+        },
+        {
+          "year": 2025,
+          "team": "Los Angeles Dodgers"
+        }
+      ]
+    },
+    "571788": {
+      "name": "Brock Holt",
+      "championships": [
+        {
+          "year": 2013,
+          "team": "Boston Red Sox"
+        },
+        {
+          "year": 2018,
+          "team": "Boston Red Sox"
+        }
+      ]
+    },
+    "571970": {
+      "name": "Max Muncy",
+      "championships": [
+        {
+          "year": 2020,
+          "team": "Los Angeles Dodgers"
+        },
+        {
+          "year": 2024,
+          "team": "Los Angeles Dodgers"
+        },
+        {
+          "year": 2025,
+          "team": "Los Angeles Dodgers"
+        }
+      ]
+    },
+    "572041": {
+      "name": "AJ Pollock",
+      "championships": [
+        {
+          "year": 2020,
+          "team": "Los Angeles Dodgers"
+        }
+      ]
+    },
+    "572096": {
+      "name": "Trevor Rosenthal",
+      "championships": [
+        {
+          "year": 2019,
+          "team": "Washington Nationals"
+        }
+      ]
+    },
+    "572191": {
+      "name": "Michael A. Taylor",
+      "championships": [
+        {
+          "year": 2019,
+          "team": "Washington Nationals"
+        }
+      ]
+    },
+    "572761": {
+      "name": "Matt Carpenter",
+      "championships": [
+        {
+          "year": 2011,
+          "team": "St. Louis Cardinals"
+        }
+      ]
+    },
+    "578428": {
+      "name": "Jose Iglesias",
+      "championships": [
+        {
+          "year": 2013,
+          "team": "Boston Red Sox"
+        }
+      ]
+    },
+    "582494": {
+      "name": "Robby Scott",
+      "championships": [
+        {
+          "year": 2018,
+          "team": "Boston Red Sox"
+        }
+      ]
+    },
+    "592178": {
+      "name": "Kris Bryant",
+      "championships": [
+        {
+          "year": 2016,
+          "team": "Chicago Cubs"
+        }
+      ]
+    },
+    "592351": {
+      "name": "Jon Gray",
+      "championships": [
+        {
+          "year": 2023,
+          "team": "Texas Rangers"
+        }
+      ]
+    },
+    "592390": {
+      "name": "Heath Hembree",
+      "championships": [
+        {
+          "year": 2018,
+          "team": "Boston Red Sox"
+        }
+      ]
+    },
+    "592626": {
+      "name": "Joc Pederson",
+      "championships": [
+        {
+          "year": 2020,
+          "team": "Los Angeles Dodgers"
+        },
+        {
+          "year": 2021,
+          "team": "Atlanta Braves"
+        }
+      ]
+    },
+    "592696": {
+      "name": "Eddie Rosario",
+      "championships": [
+        {
+          "year": 2021,
+          "team": "Atlanta Braves"
+        },
+        {
+          "year": 2025,
+          "team": "Los Angeles Dodgers"
+        }
+      ]
+    },
+    "592767": {
+      "name": "Drew Smyly",
+      "championships": [
+        {
+          "year": 2021,
+          "team": "Atlanta Braves"
+        }
+      ]
+    },
+    "592773": {
+      "name": "Ryne Stanek",
+      "championships": [
+        {
+          "year": 2022,
+          "team": "Houston Astros"
+        }
+      ]
+    },
+    "592779": {
+      "name": "Brock Stewart",
+      "championships": [
+        {
+          "year": 2025,
+          "team": "Los Angeles Dodgers"
+        }
+      ]
+    },
+    "592885": {
+      "name": "Christian Yelich",
+      "championships": [
+        {
+          "year": 2026,
+          "team": "Milwaukee Brewers"
+        }
+      ]
+    },
+    "593428": {
+      "name": "Xander Bogaerts",
+      "championships": [
+        {
+          "year": 2013,
+          "team": "Boston Red Sox"
+        },
+        {
+          "year": 2018,
+          "team": "Boston Red Sox"
+        }
+      ]
+    },
+    "593576": {
+      "name": "Héctor Neris",
+      "championships": [
+        {
+          "year": 2022,
+          "team": "Houston Astros"
+        }
+      ]
+    },
+    "593958": {
+      "name": "Eduardo Rodriguez",
+      "championships": [
+        {
+          "year": 2018,
+          "team": "Boston Red Sox"
+        }
+      ]
+    },
+    "594694": {
+      "name": "Wilmer Difo",
+      "championships": [
+        {
+          "year": 2019,
+          "team": "Washington Nationals"
+        }
+      ]
+    },
+    "594807": {
+      "name": "Adam Duvall",
+      "championships": [
+        {
+          "year": 2014,
+          "team": "San Francisco Giants"
+        },
+        {
+          "year": 2021,
+          "team": "Atlanta Braves"
+        }
+      ]
+    },
+    "594809": {
+      "name": "Adam Eaton",
+      "championships": [
+        {
+          "year": 2019,
+          "team": "Washington Nationals"
+        }
+      ]
+    },
+    "594828": {
+      "name": "Evan Gattis",
+      "championships": [
+        {
+          "year": 2017,
+          "team": "Houston Astros"
+        }
+      ]
+    },
+    "595879": {
+      "name": "Javier Báez",
+      "championships": [
+        {
+          "year": 2016,
+          "team": "Chicago Cubs"
+        }
+      ]
+    },
+    "595978": {
+      "name": "Austin Hedges",
+      "championships": [
+        {
+          "year": 2023,
+          "team": "Texas Rangers"
+        }
+      ]
+    },
+    "596142": {
+      "name": "Gary Sánchez",
+      "championships": [
+        {
+          "year": 2026,
+          "team": "Milwaukee Brewers"
+        }
+      ]
+    },
+    "598264": {
+      "name": "Matt Barnes",
+      "championships": [
+        {
+          "year": 2018,
+          "team": "Boston Red Sox"
+        }
+      ]
+    },
+    "598265": {
+      "name": "Jackie Bradley Jr.",
+      "championships": [
+        {
+          "year": 2013,
+          "team": "Boston Red Sox"
+        },
+        {
+          "year": 2018,
+          "team": "Boston Red Sox"
+        }
+      ]
+    },
+    "598271": {
+      "name": "Brian Johnson",
+      "championships": [
+        {
+          "year": 2018,
+          "team": "Boston Red Sox"
+        }
+      ]
+    },
+    "600303": {
+      "name": "Tommy La Stella",
+      "championships": [
+        {
+          "year": 2016,
+          "team": "Chicago Cubs"
+        }
+      ]
+    },
+    "600869": {
+      "name": "Jeimer Candelario",
+      "championships": [
+        {
+          "year": 2016,
+          "team": "Chicago Cubs"
+        }
+      ]
+    },
+    "605113": {
+      "name": "Nick Ahmed",
+      "championships": [
+        {
+          "year": 2024,
+          "team": "Los Angeles Dodgers"
+        }
+      ]
+    },
+    "605131": {
+      "name": "Austin Barnes",
+      "championships": [
+        {
+          "year": 2020,
+          "team": "Los Angeles Dodgers"
+        },
+        {
+          "year": 2024,
+          "team": "Los Angeles Dodgers"
+        },
+        {
+          "year": 2025,
+          "team": "Los Angeles Dodgers"
+        }
+      ]
+    },
+    "605141": {
+      "name": "Mookie Betts",
+      "championships": [
+        {
+          "year": 2018,
+          "team": "Boston Red Sox"
+        },
+        {
+          "year": 2020,
+          "team": "Los Angeles Dodgers"
+        },
+        {
+          "year": 2024,
+          "team": "Los Angeles Dodgers"
+        },
+        {
+          "year": 2025,
+          "team": "Los Angeles Dodgers"
+        }
+      ]
+    },
+    "605204": {
+      "name": "J.D. Davis",
+      "championships": [
+        {
+          "year": 2017,
+          "team": "Houston Astros"
+        }
+      ]
+    },
+    "605218": {
+      "name": "Carl Edwards Jr.",
+      "championships": [
+        {
+          "year": 2016,
+          "team": "Chicago Cubs"
+        },
+        {
+          "year": 2021,
+          "team": "Atlanta Braves"
+        }
+      ]
+    },
+    "605397": {
+      "name": "Joe Musgrove",
+      "championships": [
+        {
+          "year": 2017,
+          "team": "Houston Astros"
+        }
+      ]
+    },
+    "605412": {
+      "name": "Joe Panik",
+      "championships": [
+        {
+          "year": 2014,
+          "team": "San Francisco Giants"
+        }
+      ]
+    },
+    "605483": {
+      "name": "Blake Snell",
+      "championships": [
+        {
+          "year": 2025,
+          "team": "Los Angeles Dodgers"
+        }
+      ]
+    },
+    "606115": {
+      "name": "Orlando Arcia",
+      "championships": [
+        {
+          "year": 2021,
+          "team": "Atlanta Braves"
+        }
+      ]
+    },
+    "606160": {
+      "name": "Rafael Montero",
+      "championships": [
+        {
+          "year": 2022,
+          "team": "Houston Astros"
+        }
+      ]
+    },
+    "606192": {
+      "name": "Teoscar Hernández",
+      "championships": [
+        {
+          "year": 2017,
+          "team": "Houston Astros"
+        },
+        {
+          "year": 2024,
+          "team": "Los Angeles Dodgers"
+        },
+        {
+          "year": 2025,
+          "team": "Los Angeles Dodgers"
+        }
+      ]
+    },
+    "606965": {
+      "name": "Chris Devenski",
+      "championships": [
+        {
+          "year": 2017,
+          "team": "Houston Astros"
+        }
+      ]
+    },
+    "607208": {
+      "name": "Trea Turner",
+      "championships": [
+        {
+          "year": 2019,
+          "team": "Washington Nationals"
+        }
+      ]
+    },
+    "607345": {
+      "name": "Kevan Smith",
+      "championships": [
+        {
+          "year": 2021,
+          "team": "Atlanta Braves"
+        }
+      ]
+    },
+    "607752": {
+      "name": "Sam Travis",
+      "championships": [
+        {
+          "year": 2018,
+          "team": "Boston Red Sox"
+        }
+      ]
+    },
+    "608331": {
+      "name": "Max Fried",
+      "championships": [
+        {
+          "year": 2021,
+          "team": "Atlanta Braves"
+        }
+      ]
+    },
+    "608369": {
+      "name": "Corey Seager",
+      "championships": [
+        {
+          "year": 2020,
+          "team": "Los Angeles Dodgers"
+        },
+        {
+          "year": 2023,
+          "team": "Texas Rangers"
+        }
+      ]
+    },
+    "608671": {
+      "name": "Travis Jankowski",
+      "championships": [
+        {
+          "year": 2023,
+          "team": "Texas Rangers"
+        }
+      ]
+    },
+    "613534": {
+      "name": "Austin Adams",
+      "championships": [
+        {
+          "year": 2019,
+          "team": "Washington Nationals"
+        }
+      ]
+    },
+    "621020": {
+      "name": "Dansby Swanson",
+      "championships": [
+        {
+          "year": 2021,
+          "team": "Atlanta Braves"
+        }
+      ]
+    },
+    "621035": {
+      "name": "Chris Taylor",
+      "championships": [
+        {
+          "year": 2020,
+          "team": "Los Angeles Dodgers"
+        },
+        {
+          "year": 2024,
+          "team": "Los Angeles Dodgers"
+        },
+        {
+          "year": 2025,
+          "team": "Los Angeles Dodgers"
+        }
+      ]
+    },
+    "621345": {
+      "name": "A.J. Minter",
+      "championships": [
+        {
+          "year": 2021,
+          "team": "Atlanta Braves"
+        }
+      ]
+    },
+    "621458": {
+      "name": "Edwin Rios",
+      "championships": [
+        {
+          "year": 2020,
+          "team": "Los Angeles Dodgers"
+        }
+      ]
+    },
+    "622072": {
+      "name": "Alex Wood",
+      "championships": [
+        {
+          "year": 2020,
+          "team": "Los Angeles Dodgers"
+        }
+      ]
+    },
+    "622503": {
+      "name": "Nabil Crismatt",
+      "championships": [
+        {
+          "year": 2024,
+          "team": "Los Angeles Dodgers"
+        }
+      ]
+    },
+    "623465": {
+      "name": "Evan Phillips",
+      "championships": [
+        {
+          "year": 2024,
+          "team": "Los Angeles Dodgers"
+        },
+        {
+          "year": 2025,
+          "team": "Los Angeles Dodgers"
+        }
+      ]
+    },
+    "624407": {
+      "name": "Tzu-Wei Lin",
+      "championships": [
+        {
+          "year": 2018,
+          "team": "Boston Red Sox"
+        }
+      ]
+    },
+    "624424": {
+      "name": "Michael Conforto",
+      "championships": [
+        {
+          "year": 2025,
+          "team": "Los Angeles Dodgers"
+        }
+      ]
+    },
+    "624585": {
+      "name": "Jorge Soler",
+      "championships": [
+        {
+          "year": 2016,
+          "team": "Chicago Cubs"
+        },
+        {
+          "year": 2021,
+          "team": "Atlanta Braves"
+        }
+      ]
+    },
+    "628338": {
+      "name": "Guillermo Heredia",
+      "championships": [
+        {
+          "year": 2021,
+          "team": "Atlanta Braves"
+        }
+      ]
+    },
+    "641343": {
+      "name": "Jake Bauers",
+      "championships": [
+        {
+          "year": 2026,
+          "team": "Milwaukee Brewers"
+        }
+      ]
+    },
+    "641355": {
+      "name": "Cody Bellinger",
+      "championships": [
+        {
+          "year": 2020,
+          "team": "Los Angeles Dodgers"
+        }
+      ]
+    },
+    "641703": {
+      "name": "Brent Honeywell",
+      "championships": [
+        {
+          "year": 2024,
+          "team": "Los Angeles Dodgers"
+        }
+      ]
+    },
+    "642350": {
+      "name": "Jose Siri",
+      "championships": [
+        {
+          "year": 2022,
+          "team": "Houston Astros"
+        }
+      ]
+    },
+    "642708": {
+      "name": "Amed Rosario",
+      "championships": [
+        {
+          "year": 2024,
+          "team": "Los Angeles Dodgers"
+        }
+      ]
+    },
+    "643217": {
+      "name": "Andrew Benintendi",
+      "championships": [
+        {
+          "year": 2018,
+          "team": "Boston Red Sox"
+        }
+      ]
+    },
+    "643289": {
+      "name": "Mauricio Dubón",
+      "championships": [
+        {
+          "year": 2022,
+          "team": "Houston Astros"
+        }
+      ]
+    },
+    "643393": {
+      "name": "Tony Kemp",
+      "championships": [
+        {
+          "year": 2017,
+          "team": "Houston Astros"
+        }
+      ]
+    },
+    "645277": {
+      "name": "Ozzie Albies",
+      "championships": [
+        {
+          "year": 2021,
+          "team": "Atlanta Braves"
+        }
+      ]
+    },
+    "645302": {
+      "name": "Victor Robles",
+      "championships": [
+        {
+          "year": 2019,
+          "team": "Washington Nationals"
+        }
+      ]
+    },
+    "646240": {
+      "name": "Rafael Devers",
+      "championships": [
+        {
+          "year": 2018,
+          "team": "Boston Red Sox"
+        }
+      ]
+    },
+    "649557": {
+      "name": "Aledmys Díaz",
+      "championships": [
+        {
+          "year": 2022,
+          "team": "Houston Astros"
+        }
+      ]
+    },
+    "650859": {
+      "name": "Luis Rengifo",
+      "championships": [
+        {
+          "year": 2026,
+          "team": "Milwaukee Brewers"
+        }
+      ]
+    },
+    "656427": {
+      "name": "Jack Flaherty",
+      "championships": [
+        {
+          "year": 2024,
+          "team": "Los Angeles Dodgers"
+        }
+      ]
+    },
+    "656577": {
+      "name": "Alex Jackson",
+      "championships": [
+        {
+          "year": 2021,
+          "team": "Atlanta Braves"
+        }
+      ]
+    },
+    "656716": {
+      "name": "Zach McKinstry",
+      "championships": [
+        {
+          "year": 2020,
+          "team": "Los Angeles Dodgers"
+        }
+      ]
+    },
+    "656730": {
+      "name": "Trevor Megill",
+      "championships": [
+        {
+          "year": 2026,
+          "team": "Milwaukee Brewers"
+        }
+      ]
+    },
+    "656794": {
+      "name": "Sean Newcomb",
+      "championships": [
+        {
+          "year": 2021,
+          "team": "Atlanta Braves"
+        }
+      ]
+    },
+    "656848": {
+      "name": "Michael Petersen",
+      "championships": [
+        {
+          "year": 2024,
+          "team": "Los Angeles Dodgers"
+        }
+      ]
+    },
+    "656941": {
+      "name": "Kyle Schwarber",
+      "championships": [
+        {
+          "year": 2016,
+          "team": "Chicago Cubs"
+        }
+      ]
+    },
+    "656945": {
+      "name": "Tanner Scott",
+      "championships": [
+        {
+          "year": 2025,
+          "team": "Los Angeles Dodgers"
+        }
+      ]
+    },
+    "657053": {
+      "name": "Touki Toussaint",
+      "championships": [
+        {
+          "year": 2021,
+          "team": "Atlanta Braves"
+        }
+      ]
+    },
+    "657097": {
+      "name": "Jacob Webb",
+      "championships": [
+        {
+          "year": 2021,
+          "team": "Atlanta Braves"
+        }
+      ]
+    },
+    "657571": {
+      "name": "Caleb Ferguson",
+      "championships": [
+        {
+          "year": 2020,
+          "team": "Los Angeles Dodgers"
+        }
+      ]
+    },
+    "657649": {
+      "name": "Jared Koenig",
+      "championships": [
+        {
+          "year": 2026,
+          "team": "Milwaukee Brewers"
+        }
+      ]
+    },
+    "659275": {
+      "name": "Dinelson Lamet",
+      "championships": [
+        {
+          "year": 2024,
+          "team": "Los Angeles Dodgers"
+        }
+      ]
+    },
+    "660271": {
+      "name": "Shohei Ohtani",
+      "championships": [
+        {
+          "year": 2024,
+          "team": "Los Angeles Dodgers"
+        },
+        {
+          "year": 2025,
+          "team": "Los Angeles Dodgers"
+        }
+      ]
+    },
+    "660670": {
+      "name": "Ronald Acuña Jr.",
+      "championships": [
+        {
+          "year": 2021,
+          "team": "Atlanta Braves"
+        }
+      ]
+    },
+    "660688": {
+      "name": "Keibert Ruiz",
+      "championships": [
+        {
+          "year": 2020,
+          "team": "Los Angeles Dodgers"
+        }
+      ]
+    },
+    "661388": {
+      "name": "William Contreras",
+      "championships": [
+        {
+          "year": 2021,
+          "team": "Atlanta Braves"
+        },
+        {
+          "year": 2026,
+          "team": "Milwaukee Brewers"
+        }
+      ]
+    },
+    "663368": {
+      "name": "Blake Perkins",
+      "championships": [
+        {
+          "year": 2026,
+          "team": "Milwaukee Brewers"
+        }
+      ]
+    },
+    "663432": {
+      "name": "Tanner Rainey",
+      "championships": [
+        {
+          "year": 2019,
+          "team": "Washington Nationals"
+        }
+      ]
+    },
+    "663586": {
+      "name": "Austin Riley",
+      "championships": [
+        {
+          "year": 2021,
+          "team": "Atlanta Braves"
+        }
+      ]
+    },
+    "663656": {
+      "name": "Kyle Tucker",
+      "championships": [
+        {
+          "year": 2022,
+          "team": "Houston Astros"
+        }
+      ]
+    },
+    "663765": {
+      "name": "Jake Woodford",
+      "championships": [
+        {
+          "year": 2026,
+          "team": "Milwaukee Brewers"
+        }
+      ]
+    },
+    "663993": {
+      "name": "Nathaniel Lowe",
+      "championships": [
+        {
+          "year": 2023,
+          "team": "Texas Rangers"
+        }
+      ]
+    },
+    "664208": {
+      "name": "Phil Maton",
+      "championships": [
+        {
+          "year": 2022,
+          "team": "Houston Astros"
+        }
+      ]
+    },
+    "665506": {
+      "name": "Cristian Pache",
+      "championships": [
+        {
+          "year": 2021,
+          "team": "Atlanta Braves"
+        }
+      ]
+    },
+    "665742": {
+      "name": "Juan Soto",
+      "championships": [
+        {
+          "year": 2019,
+          "team": "Washington Nationals"
+        }
+      ]
+    },
+    "665923": {
+      "name": "Esteury Ruiz",
+      "championships": [
+        {
+          "year": 2025,
+          "team": "Los Angeles Dodgers"
+        }
+      ]
+    },
+    "668930": {
+      "name": "Brice Turang",
+      "championships": [
+        {
+          "year": 2026,
+          "team": "Milwaukee Brewers"
+        }
+      ]
+    },
+    "668941": {
+      "name": "JoJo Romero",
+      "championships": [
+        {
+          "year": 2026,
+          "team": "Milwaukee Brewers"
+        }
+      ]
+    },
+    "669242": {
+      "name": "Tommy Edman",
+      "championships": [
+        {
+          "year": 2024,
+          "team": "Los Angeles Dodgers"
+        },
+        {
+          "year": 2025,
+          "team": "Los Angeles Dodgers"
+        }
+      ]
+    },
+    "669257": {
+      "name": "Will Smith",
+      "championships": [
+        {
+          "year": 2020,
+          "team": "Los Angeles Dodgers"
+        },
+        {
+          "year": 2024,
+          "team": "Los Angeles Dodgers"
+        },
+        {
+          "year": 2025,
+          "team": "Los Angeles Dodgers"
+        }
+      ]
+    },
+    "669276": {
+      "name": "Dylan Lee",
+      "championships": [
+        {
+          "year": 2021,
+          "team": "Atlanta Braves"
+        }
+      ]
+    },
+    "669743": {
+      "name": "Alex Call",
+      "championships": [
+        {
+          "year": 2025,
+          "team": "Los Angeles Dodgers"
+        }
+      ]
+    },
+    "671083": {
+      "name": "Buddy Kennedy",
+      "championships": [
+        {
+          "year": 2025,
+          "team": "Los Angeles Dodgers"
+        }
+      ]
+    },
+    "678246": {
+      "name": "Miguel Vargas",
+      "championships": [
+        {
+          "year": 2024,
+          "team": "Los Angeles Dodgers"
+        }
+      ]
+    },
+    "681911": {
+      "name": "Alex Vesia",
+      "championships": [
+        {
+          "year": 2024,
+          "team": "Los Angeles Dodgers"
+        },
+        {
+          "year": 2025,
+          "team": "Los Angeles Dodgers"
+        }
+      ]
+    },
+    "682842": {
+      "name": "Abner Uribe",
+      "championships": [
+        {
+          "year": 2026,
+          "team": "Milwaukee Brewers"
+        }
+      ]
+    },
+    "683734": {
+      "name": "Andrew Vaughn",
+      "championships": [
+        {
+          "year": 2026,
+          "team": "Milwaukee Brewers"
+        }
+      ]
+    },
+    "686217": {
+      "name": "Sal Frelick",
+      "championships": [
+        {
+          "year": 2026,
+          "team": "Milwaukee Brewers"
+        }
+      ]
+    },
+    "687401": {
+      "name": "Joey Ortiz",
+      "championships": [
+        {
+          "year": 2026,
+          "team": "Milwaukee Brewers"
+        }
+      ]
+    },
+    "690976": {
+      "name": "Alex Freeland",
+      "championships": [
+        {
+          "year": 2025,
+          "team": "Los Angeles Dodgers"
+        }
+      ]
+    },
+    "694192": {
+      "name": "Jackson Chourio",
+      "championships": [
+        {
+          "year": 2026,
+          "team": "Milwaukee Brewers"
+        }
+      ]
+    }
+  }
+}

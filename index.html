@@ -7,6 +7,12 @@
 <meta name="description" content="Courtside Archive: one home for games attended in NBA, college basketball, NFL, college football, professional soccer, MLB and college baseball, with detailed historical box scores, players and insights.">
 <title>Courtside Archive — Your Sports History</title>
 <link rel="stylesheet" href="./assets/site.css?v=editorial-ivory-2">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
+<link rel="stylesheet" href="./assets/venue-map.css?v=1">
+<script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script defer src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+<script defer src="./assets/venue-map.js?v=3"></script>
 <style>
   *,*::before,*::after{box-sizing:border-box}
   html{scroll-behavior:smooth}
@@ -96,6 +102,40 @@
     <small>Games in the archives</small>
     <p>One collection, with league-specific data, leaderboards and history.</p>
   </aside>
+</section>
+<section class="venue-section" id="venues" aria-labelledby="venue-title">
+  <div class="venue-heading">
+    <div>
+      <div class="portal-kicker">Explore the places behind the games</div>
+      <h2 id="venue-title">Where I've Watched</h2>
+      <p>From iconic professional ballparks to campus fields and arenas, explore every venue where a game made it into the archive. Select a pin to see your first visit and every game you've attended there.</p>
+    </div>
+    <div class="venue-totals" aria-label="Map statistics">
+      <span><strong id="venueCount">129</strong>Venues</span>
+      <span><strong id="venueSportCount">7</strong>Sports</span>
+      <span><strong id="venueGameCount">705</strong>Mapped games</span>
+    </div>
+  </div>
+  <div class="venue-control-panel">
+    <label class="venue-search" for="venueSearch">
+      <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></svg>
+      <input id="venueSearch" type="search" placeholder="Search venues, cities, or sports" autocomplete="off">
+    </label>
+    <div class="venue-filters" id="venueFilters" role="group" aria-label="Filter map by sport"></div>
+  </div>
+  <div class="venue-map-shell">
+    <div id="venueMap" aria-label="Interactive map of attended stadiums and arenas"></div>
+    <div class="venue-map-loading" id="venueMapLoading">Loading your 129 attended venues…</div>
+  </div>
+  <div class="venue-map-status" aria-live="polite">
+    <span id="venueMapResult">129 attended venues</span>
+    <span id="venueMapEmpty" hidden>No venues match that search. Try a sport or another city.</span>
+    <a href="./venues/">Browse all venue profiles ↗</a>
+  </div>
+  <div class="venue-map-featured" aria-label="Most visited venues">
+    <strong>Most visited</strong>
+    <div class="venue-map-featured-buttons" id="venueFeatured"></div>
+  </div>
 </section>
 <section id="archives" aria-labelledby="choose-title">
   <div class="section-top"><div><div class="portal-kicker" style="margin:0">Choose your archive</div><h2 id="choose-title">Explore the archives</h2></div><p>Seven sports collections. One shared home.</p></div>

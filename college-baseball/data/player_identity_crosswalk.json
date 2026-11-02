@@ -4,8 +4,8 @@
   "source": "Original archive owner confirmed each multi-school person",
   "original_attendance_ids_preserved": 444,
   "original_player_game_rows_preserved": 13183,
-  "requested_person_merges": 136,
-  "activated_person_merges": 133,
+  "requested_person_merges": 141,
+  "activated_person_merges": 138,
   "pending_person_merges": 3,
   "merge_policy": "Only listed pair of exact normalized person names and school-specific original source player IDs; all other IDs remain separate",
   "owner_rejected_merge_candidates": [
@@ -20,6 +20,13 @@
       "name": "Colby Wallace",
       "schools": ["Cal State Fullerton", "East Carolina"],
       "source_player_ids": ["cb-cal-state-fullerton-colby-wallace", "cb-east-carolina-colby-wallace"],
+      "decision": "do_not_merge",
+      "confirmed_on": "2026-11-02"
+    },
+    {
+      "name": "Justin Hackett",
+      "schools": ["Bryant", "Iowa"],
+      "source_player_ids": ["cb-bryant-justin-hackett", "cb-iowa-justin-hackett"],
       "decision": "do_not_merge",
       "confirmed_on": "2026-11-02"
     }
@@ -2750,6 +2757,61 @@
         {"team": "Georgia Tech", "source_player_id": "cb-georgia-tech-caden-spivey"}
       ],
       "source_rows": 2
+    },
+    {
+      "name": "Carson Ohl",
+      "canonical_id": "cb-grand-canyon-carson-ohl",
+      "source_player_ids": ["cb-grand-canyon-carson-ohl", "cb-virginia-tech-carson-ohl"],
+      "schools": ["Grand Canyon", "Virginia Tech"],
+      "pairs": [
+        {"team": "Grand Canyon", "source_player_id": "cb-grand-canyon-carson-ohl"},
+        {"team": "Virginia Tech", "source_player_id": "cb-virginia-tech-carson-ohl"}
+      ],
+      "source_rows": 3
+    },
+    {
+      "name": "Kayden Campbell",
+      "canonical_id": "cb-louisville-kayden-campbell",
+      "source_player_ids": ["cb-louisville-kayden-campbell", "cb-georgia-tech-kayden-campbell"],
+      "schools": ["Louisville", "Georgia Tech"],
+      "pairs": [
+        {"team": "Louisville", "source_player_id": "cb-louisville-kayden-campbell"},
+        {"team": "Georgia Tech", "source_player_id": "cb-georgia-tech-kayden-campbell"}
+      ],
+      "source_rows": 2
+    },
+    {
+      "name": "Cael Frost",
+      "canonical_id": "cb-nebraska-cael-frost",
+      "source_player_ids": ["cb-nebraska-cael-frost", "cb-western-kentucky-cael-frost"],
+      "schools": ["Nebraska", "Western Kentucky"],
+      "pairs": [
+        {"team": "Nebraska", "source_player_id": "cb-nebraska-cael-frost"},
+        {"team": "Western Kentucky", "source_player_id": "cb-western-kentucky-cael-frost"}
+      ],
+      "source_rows": 2
+    },
+    {
+      "name": "Billy Barlow",
+      "canonical_id": "cb-clemson-billy-barlow",
+      "source_player_ids": ["cb-clemson-billy-barlow", "cb-florida-billy-barlow"],
+      "schools": ["Clemson", "Florida"],
+      "pairs": [
+        {"team": "Clemson", "source_player_id": "cb-clemson-billy-barlow"},
+        {"team": "Florida", "source_player_id": "cb-florida-billy-barlow"}
+      ],
+      "source_rows": 2
+    },
+    {
+      "name": "Josh Livingston",
+      "canonical_id": "cb-wichita-state-josh-livingston",
+      "source_player_ids": ["cb-wichita-state-josh-livingston", "cb-texas-josh-livingston"],
+      "schools": ["Wichita State", "Texas"],
+      "pairs": [
+        {"team": "Wichita State", "source_player_id": "cb-wichita-state-josh-livingston"},
+        {"team": "Texas", "source_player_id": "cb-texas-josh-livingston"}
+      ],
+      "source_rows": 3
     }
   ]
 }

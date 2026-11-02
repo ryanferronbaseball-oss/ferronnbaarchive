@@ -4,8 +4,8 @@
   "source": "Original archive owner confirmed each multi-school person",
   "original_attendance_ids_preserved": 444,
   "original_player_game_rows_preserved": 13183,
-  "requested_person_merges": 156,
-  "activated_person_merges": 153,
+  "requested_person_merges": 157,
+  "activated_person_merges": 154,
   "pending_person_merges": 3,
   "merge_policy": "Only listed pair of exact normalized person names and school-specific original source player IDs; all other IDs remain separate",
   "owner_rejected_merge_candidates": [
@@ -118,6 +118,41 @@
       "name": "Christian Williams",
       "schools": ["Michigan State", "Point Loma Nazarene"],
       "source_player_ids": ["cb-michigan-state-christian-williams", "cb-point-loma-nazarene-christian-williams"],
+      "decision": "do_not_merge",
+      "confirmed_on": "2026-11-02"
+    },
+    {
+      "name": "Will Taylor",
+      "schools": ["Clemson", "Marist"],
+      "source_player_ids": ["cb-clemson-will-taylor", "cb-marist-will-taylor"],
+      "decision": "do_not_merge",
+      "confirmed_on": "2026-11-02"
+    },
+    {
+      "name": "TJ Williams",
+      "schools": ["Eastern Michigan", "Notre Dame"],
+      "source_player_ids": ["cb-eastern-michigan-tj-williams", "cb-notre-dame-tj-williams"],
+      "decision": "do_not_merge",
+      "confirmed_on": "2026-11-02"
+    },
+    {
+      "name": "Ryan Scott",
+      "schools": ["Dallas Baptist", "Maine"],
+      "source_player_ids": ["cb-dallas-baptist-ryan-scott", "cb-maine-ryan-scott"],
+      "decision": "do_not_merge",
+      "confirmed_on": "2026-11-02"
+    },
+    {
+      "name": "Jack Smith",
+      "schools": ["Harvard", "Marshall"],
+      "source_player_ids": ["cb-harvard-jack-smith", "cb-marshall-jack-smith"],
+      "decision": "do_not_merge",
+      "confirmed_on": "2026-11-02"
+    },
+    {
+      "name": "Christian Smith",
+      "schools": ["High Point", "Quinnipiac"],
+      "source_player_ids": ["cb-high-point-christian-smith", "cb-quinnipiac-christian-smith"],
       "decision": "do_not_merge",
       "confirmed_on": "2026-11-02"
     }
@@ -3073,6 +3108,18 @@
       ],
       "source_rows": 2,
       "identity_source_url": "https://libertyflames.com/sports/baseball/roster/2025"
+    },
+    {
+      "name": "Steven Trone",
+      "canonical_id": "cb-old-dominion-steven-trone",
+      "source_player_ids": ["cb-old-dominion-steven-trone", "cb-the-citadel-steven-trone"],
+      "schools": ["Old Dominion", "The Citadel"],
+      "pairs": [
+        {"team": "Old Dominion", "source_player_id": "cb-old-dominion-steven-trone"},
+        {"team": "The Citadel", "source_player_id": "cb-the-citadel-steven-trone"}
+      ],
+      "source_rows": 2,
+      "identity_source_url": "https://citadelsports.com/sports/baseball/roster/steven-trone/10679"
     }
   ]
 }

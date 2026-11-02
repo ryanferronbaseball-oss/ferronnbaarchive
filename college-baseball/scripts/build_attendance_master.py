@@ -31,13 +31,33 @@ CONFIRMED_2021_BALLPARK_DATES={
 }
 
 
+CONFIRMED_2022_BALLPARK_DATES={
+    **{f"2022-03-{day:02d}": ("Brazell Field", "Phoenix", "AZ") for day in (11, 12, 13)},
+    **{f"2022-03-{day:02d}": ("Eddy D. Field Stadium", "Malibu", "CA") for day in (18, 19, 20)},
+    "2022-03-29": ("James W. Totman Stadium", "Riverside", "CA"),
+    **{f"2022-04-{day:02d}": ("Benedetti Diamond", "San Francisco", "CA") for day in (1, 2, 3)},
+    "2022-04-05": ("Triton Ballpark", "La Jolla", "CA"),
+    "2022-05-22": ("Triton Ballpark", "La Jolla", "CA"),
+    "2022-04-08": ("Joe Etzel Field", "Portland", "OR"),
+    "2022-04-09": ("Joe Etzel Field", "Portland", "OR"),
+    "2022-04-18": ("Tony Gwynn Stadium", "San Diego", "CA"),
+    "2022-04-26": ("Goodwin Field", "Fullerton", "CA"),
+    "2022-05-03": ("Anteater Ballpark", "Irvine", "CA"),
+    "2022-05-06": ("Klein Family Field", "Stockton", "CA"),
+    "2022-05-07": ("Klein Family Field", "Stockton", "CA"),
+    **{f"2022-05-{day:02d}": ("Banner Island Ballpark", "Stockton", "CA") for day in (25, 26, 27, 28)},
+    **{f"2022-06-{day:02d}": ("Goss Stadium", "Corvallis", "OR") for day in (3, 4, 5)},
+}
+
+
 def confirmed_ballpark(game):
     """User-confirmed locations through March 8, 2022; respect venue exceptions."""
     if game["season"]==2021:
         return CONFIRMED_2021_BALLPARK_DATES.get(
             game["date"], ("Fowler Park", "San Diego", "CA"))
     if game["season"]==2022:
-        return ("Fowler Park", "San Diego", "CA") if game["date"]<="2022-03-08" else None
+        return (("Fowler Park", "San Diego", "CA") if game["date"]<="2022-03-08"
+                else CONFIRMED_2022_BALLPARK_DATES.get(game["date"]))
     if game["season"] not in (2017, 2018, 2019, 2020):
         return None
     return CONFIRMED_BALLPARK_EXCEPTIONS.get(game["date"], {}).get(

@@ -19,8 +19,25 @@ CONFIRMED_BALLPARK_EXCEPTIONS={
 }
 
 
+CONFIRMED_2021_BALLPARK_DATES={
+    "2021-02-19": ("Tony Gwynn Stadium", "San Diego", "CA"),
+    "2021-02-20": ("Tony Gwynn Stadium", "San Diego", "CA"),
+    "2021-03-04": ("Triton Ballpark", "La Jolla", "CA"),
+    "2021-03-05": ("Triton Ballpark", "La Jolla", "CA"),
+    "2021-03-11": ("Triton Ballpark", "La Jolla", "CA"),
+    "2021-03-23": ("Dedeaux Field", "Los Angeles", "CA"),
+    "2021-04-02": ("Goodwin Field", "Fullerton", "CA"),
+    "2021-04-24": ("Triton Ballpark", "La Jolla", "CA"),
+}
+
+
 def confirmed_ballpark(game):
-    """User-confirmed 2017–2020 locations; preserve individual neutral-site exceptions."""
+    """User-confirmed locations through March 8, 2022; respect venue exceptions."""
+    if game["season"]==2021:
+        return CONFIRMED_2021_BALLPARK_DATES.get(
+            game["date"], ("Fowler Park", "San Diego", "CA"))
+    if game["season"]==2022:
+        return ("Fowler Park", "San Diego", "CA") if game["date"]<="2022-03-08" else None
     if game["season"] not in (2017, 2018, 2019, 2020):
         return None
     return CONFIRMED_BALLPARK_EXCEPTIONS.get(game["date"], {}).get(

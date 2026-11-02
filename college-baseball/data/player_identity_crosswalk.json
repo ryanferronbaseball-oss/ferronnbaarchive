@@ -4,8 +4,8 @@
   "source": "Original archive owner confirmed each multi-school person",
   "original_attendance_ids_preserved": 444,
   "original_player_game_rows_preserved": 13183,
-  "requested_person_merges": 101,
-  "activated_person_merges": 98,
+  "requested_person_merges": 102,
+  "activated_person_merges": 99,
   "pending_person_merges": 3,
   "merge_policy": "Only listed pair of exact normalized person names and school-specific original source player IDs; all other IDs remain separate",
   "merges": [
@@ -2268,6 +2268,29 @@
         }
       ],
       "source_rows": 2
+    },
+    {
+      "name": "Dalton Mashore",
+      "canonical_id": "cb-saint-mary-s-dalton-mashore",
+      "source_player_ids": [
+        "cb-saint-mary-s-dalton-mashore",
+        "cb-south-carolina-dalton-mashore"
+      ],
+      "schools": [
+        "Saint Mary's",
+        "South Carolina"
+      ],
+      "pairs": [
+        {
+          "team": "Saint Mary's",
+          "source_player_id": "cb-saint-mary-s-dalton-mashore"
+        },
+        {
+          "team": "South Carolina",
+          "source_player_id": "cb-south-carolina-dalton-mashore"
+        }
+      ],
+      "source_rows": 8
     }
   ]
 }

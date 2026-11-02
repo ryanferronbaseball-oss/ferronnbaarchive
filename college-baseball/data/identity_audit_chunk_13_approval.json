@@ -1,0 +1,23 @@
+{
+  "chunk": 13,
+  "confirmed_on": "2026-11-02",
+  "policy": "Apply only owner-approved exact source-scoped names and school-pair identities, preserving original game and statistical rows.",
+  "confirmed_name_corrections": [
+    {"source_id": "cb-illinois-quagliano", "name": "Coltin Quagliano", "game_id": "cb-2024-03-02-illinois-western-michigan-att0246"},
+    {"source_id": "cb-illinois-milton", "name": "Connor Milton", "game_id": "cb-2024-03-02-illinois-western-michigan-att0246"},
+    {"source_id": "cb-illinois-harding", "name": "Brody Harding", "game_id": "cb-2024-03-02-illinois-western-michigan-att0246"},
+    {"source_id": "cb-texas-mendoza", "name": "Ethan Mendoza", "game_id": "cb-2025-05-22-tennessee-texas-att0358"},
+    {"source_id": "cb-texas-rodriguez", "name": "Adrian Rodriguez", "game_id": "cb-2025-05-22-tennessee-texas-att0358"},
+    {"source_id": "cb-texas-borba", "name": "Casey Borba", "game_id": "cb-2025-05-22-tennessee-texas-att0358"}
+  ],
+  "confirmed_merges": [
+    {"name": "Steven Trone", "schools": ["Old Dominion", "The Citadel"], "evidence": "https://citadelsports.com/sports/baseball/roster/steven-trone/10679"}
+  ],
+  "rejected_merges": [
+    {"name": "Will Taylor", "schools": ["Clemson", "Marist"]},
+    {"name": "TJ Williams", "schools": ["Eastern Michigan", "Notre Dame"]},
+    {"name": "Ryan Scott", "schools": ["Dallas Baptist", "Maine"]},
+    {"name": "Jack Smith", "schools": ["Harvard", "Marshall"]},
+    {"name": "Christian Smith", "schools": ["High Point", "Quinnipiac"]}
+  ]
+}

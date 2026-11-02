@@ -4,8 +4,8 @@
   "source": "Original archive owner confirmed each multi-school person",
   "original_attendance_ids_preserved": 444,
   "original_player_game_rows_preserved": 13183,
-  "requested_person_merges": 147,
-  "activated_person_merges": 144,
+  "requested_person_merges": 151,
+  "activated_person_merges": 148,
   "pending_person_merges": 3,
   "merge_policy": "Only listed pair of exact normalized person names and school-specific original source player IDs; all other IDs remain separate",
   "owner_rejected_merge_candidates": [
@@ -27,6 +27,20 @@
       "name": "Justin Hackett",
       "schools": ["Bryant", "Iowa"],
       "source_player_ids": ["cb-bryant-justin-hackett", "cb-iowa-justin-hackett"],
+      "decision": "do_not_merge",
+      "confirmed_on": "2026-11-02"
+    },
+    {
+      "name": "Christian Rodriguez",
+      "schools": ["Cal State Fullerton", "Florida"],
+      "source_player_ids": ["cb-cal-state-fullerton-christian-rodriguez", "cb-florida-christian-rodriguez"],
+      "decision": "do_not_merge",
+      "confirmed_on": "2026-11-02"
+    },
+    {
+      "name": "Sam Beck",
+      "schools": ["San Francisco", "BYU"],
+      "source_player_ids": ["cb-san-francisco-sam-beck", "cb-byu-sam-beck"],
       "decision": "do_not_merge",
       "confirmed_on": "2026-11-02"
     }
@@ -2878,6 +2892,50 @@
         {"team": "San Diego", "source_player_id": "cb-san-diego-hayden-cody"}
       ],
       "source_rows": 4
+    },
+    {
+      "name": "Seth Mattox",
+      "canonical_id": "cb-cal-baptist-seth-mattox",
+      "source_player_ids": ["cb-cal-baptist-seth-mattox", "cb-oregon-seth-mattox"],
+      "schools": ["Cal Baptist", "Oregon"],
+      "pairs": [
+        {"team": "Cal Baptist", "source_player_id": "cb-cal-baptist-seth-mattox"},
+        {"team": "Oregon", "source_player_id": "cb-oregon-seth-mattox"}
+      ],
+      "source_rows": 3
+    },
+    {
+      "name": "Joe Soberon",
+      "canonical_id": "cb-uc-san-diego-joe-soberon",
+      "source_player_ids": ["cb-uc-san-diego-joe-soberon", "cb-san-francisco-joe-soberon"],
+      "schools": ["UC San Diego", "San Francisco"],
+      "pairs": [
+        {"team": "UC San Diego", "source_player_id": "cb-uc-san-diego-joe-soberon"},
+        {"team": "San Francisco", "source_player_id": "cb-san-francisco-joe-soberon"}
+      ],
+      "source_rows": 2
+    },
+    {
+      "name": "Evan Jones",
+      "canonical_id": "cb-western-kentucky-evan-jones",
+      "source_player_ids": ["cb-western-kentucky-evan-jones", "cb-ucf-evan-jones"],
+      "schools": ["Western Kentucky", "UCF"],
+      "pairs": [
+        {"team": "Western Kentucky", "source_player_id": "cb-western-kentucky-evan-jones"},
+        {"team": "UCF", "source_player_id": "cb-ucf-evan-jones"}
+      ],
+      "source_rows": 2
+    },
+    {
+      "name": "Ashton Crowther",
+      "canonical_id": "cb-south-carolina-ashton-crowther",
+      "source_player_ids": ["cb-south-carolina-ashton-crowther", "cb-alabama-ashton-crowther"],
+      "schools": ["South Carolina", "Alabama"],
+      "pairs": [
+        {"team": "South Carolina", "source_player_id": "cb-south-carolina-ashton-crowther"},
+        {"team": "Alabama", "source_player_id": "cb-alabama-ashton-crowther"}
+      ],
+      "source_rows": 2
     }
   ]
 }

@@ -1,0 +1,23 @@
+{
+  "chunk": 12,
+  "confirmed_on": "2026-11-02",
+  "policy": "Apply only owner-approved exact source-scoped name corrections and exact school-pair merges; preserve raw statistics and game logs.",
+  "confirmed_name_corrections": [
+    {"source_id": "cb-iowa-mitchell", "name": "Gable Mitchell", "game_id": "cb-2024-02-23-iowa-auburn-att0235"},
+    {"source_id": "cb-iowa-huckstorf", "name": "Kyle Huckstorf", "game_id": "cb-2024-02-23-iowa-auburn-att0235"},
+    {"source_id": "cb-iowa-whitlock", "name": "Jack Whitlock", "game_id": "cb-2024-02-23-iowa-auburn-att0235"},
+    {"source_id": "cb-iowa-voelker", "name": "Zach Voelker", "game_id": "cb-2024-02-23-iowa-auburn-att0235"},
+    {"source_id": "cb-illinois-hejza", "name": "Cal Hejza", "game_id": "cb-2024-03-02-illinois-western-michigan-att0246"},
+    {"source_id": "cb-illinois-janik", "name": "Camden Janik", "game_id": "cb-2024-03-02-illinois-western-michigan-att0246"}
+  ],
+  "confirmed_merges": [
+    {"name": "Cole Cabrera", "schools": ["Cal Poly", "Hawaii"], "evidence": "https://www.hawaii.edu/news/2025/05/21/uh-manoa-alum-cole-cabrera/"},
+    {"name": "David Watson", "schools": ["Utah", "Loyola Marymount"], "evidence": "https://lmulions.com/news/2022/8/30/baseball-announces-2023-recruiting-class.aspx"},
+    {"name": "Michael Robertson", "schools": ["Florida", "Liberty"], "evidence": "https://libertyflames.com/sports/baseball/roster/2025"}
+  ],
+  "rejected_merges": [
+    {"name": "Ryan Martinez", "schools": ["Pacific", "San Francisco"]},
+    {"name": "Will Turner", "schools": ["South Alabama", "UT Martin"]},
+    {"name": "Christian Williams", "schools": ["Michigan State", "Point Loma Nazarene"]}
+  ]
+}

@@ -4,8 +4,8 @@
   "source": "Original archive owner confirmed each multi-school person",
   "original_attendance_ids_preserved": 444,
   "original_player_game_rows_preserved": 13183,
-  "requested_person_merges": 153,
-  "activated_person_merges": 150,
+  "requested_person_merges": 156,
+  "activated_person_merges": 153,
   "pending_person_merges": 3,
   "merge_policy": "Only listed pair of exact normalized person names and school-specific original source player IDs; all other IDs remain separate",
   "owner_rejected_merge_candidates": [
@@ -97,6 +97,27 @@
       "name": "Cam Hill",
       "schools": ["Ohio", "South Alabama"],
       "source_player_ids": ["cb-ohio-cam-hill", "cb-south-alabama-cam-hill"],
+      "decision": "do_not_merge",
+      "confirmed_on": "2026-11-02"
+    },
+    {
+      "name": "Ryan Martinez",
+      "schools": ["Pacific", "San Francisco"],
+      "source_player_ids": ["cb-pacific-ryan-martinez", "cb-san-francisco-ryan-martinez"],
+      "decision": "do_not_merge",
+      "confirmed_on": "2026-11-02"
+    },
+    {
+      "name": "Will Turner",
+      "schools": ["South Alabama", "UT Martin"],
+      "source_player_ids": ["cb-south-alabama-will-turner", "cb-ut-martin-will-turner"],
+      "decision": "do_not_merge",
+      "confirmed_on": "2026-11-02"
+    },
+    {
+      "name": "Christian Williams",
+      "schools": ["Michigan State", "Point Loma Nazarene"],
+      "source_player_ids": ["cb-michigan-state-christian-williams", "cb-point-loma-nazarene-christian-williams"],
       "decision": "do_not_merge",
       "confirmed_on": "2026-11-02"
     }
@@ -3016,6 +3037,42 @@
       ],
       "source_rows": 3,
       "identity_source_url": "https://gobonnies.com/sports/baseball/roster/paul-vossen/6223"
+    },
+    {
+      "name": "Cole Cabrera",
+      "canonical_id": "cb-cal-poly-cole-cabrera",
+      "source_player_ids": ["cb-cal-poly-cole-cabrera", "cb-hawaii-cole-cabrera"],
+      "schools": ["Cal Poly", "Hawaii"],
+      "pairs": [
+        {"team": "Cal Poly", "source_player_id": "cb-cal-poly-cole-cabrera"},
+        {"team": "Hawaii", "source_player_id": "cb-hawaii-cole-cabrera"}
+      ],
+      "source_rows": 2,
+      "identity_source_url": "https://www.hawaii.edu/news/2025/05/21/uh-manoa-alum-cole-cabrera/"
+    },
+    {
+      "name": "David Watson",
+      "canonical_id": "cb-utah-david-watson",
+      "source_player_ids": ["cb-utah-david-watson", "cb-loyola-marymount-david-watson"],
+      "schools": ["Utah", "Loyola Marymount"],
+      "pairs": [
+        {"team": "Utah", "source_player_id": "cb-utah-david-watson"},
+        {"team": "Loyola Marymount", "source_player_id": "cb-loyola-marymount-david-watson"}
+      ],
+      "source_rows": 2,
+      "identity_source_url": "https://lmulions.com/news/2022/8/30/baseball-announces-2023-recruiting-class.aspx"
+    },
+    {
+      "name": "Michael Robertson",
+      "canonical_id": "cb-florida-michael-robertson",
+      "source_player_ids": ["cb-florida-michael-robertson", "cb-liberty-michael-robertson"],
+      "schools": ["Florida", "Liberty"],
+      "pairs": [
+        {"team": "Florida", "source_player_id": "cb-florida-michael-robertson"},
+        {"team": "Liberty", "source_player_id": "cb-liberty-michael-robertson"}
+      ],
+      "source_rows": 2,
+      "identity_source_url": "https://libertyflames.com/sports/baseball/roster/2025"
     }
   ]
 }

@@ -92,6 +92,8 @@ CONFIRMED_2024_BALLPARK_MATCHUPS={
         ("Worthington Field at Liberty Baseball Stadium", "Lynchburg", "VA"),
     ("2024-03-30", "South Alabama", "Old Dominion"):
         ("Bud Metheny Ballpark", "Norfolk", "VA"),
+    ("2024-04-21", "Connecticut", "Georgetown"):
+        ("Capital One Park", "Tysons", "VA"),
 }
 
 

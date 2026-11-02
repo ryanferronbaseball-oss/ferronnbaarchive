@@ -20,8 +20,8 @@ CONFIRMED_BALLPARK_EXCEPTIONS={
 
 
 def confirmed_ballpark(game):
-    """User-confirmed 2017–2019 locations; preserve individual neutral-site exceptions."""
-    if game["season"] not in (2017, 2018, 2019):
+    """User-confirmed 2017–2020 locations; preserve individual neutral-site exceptions."""
+    if game["season"] not in (2017, 2018, 2019, 2020):
         return None
     return CONFIRMED_BALLPARK_EXCEPTIONS.get(game["date"], {}).get(
         (game["away"], game["home"]), ("Fowler Park", "San Diego", "CA")

@@ -1,0 +1,23 @@
+{
+  "chunk": 11,
+  "confirmed_on": "2026-11-02",
+  "policy": "Only confirmed source-scoped name corrections and exact school-pair merges; original game and stat records are immutable.",
+  "confirmed_name_corrections": [
+    {"source_id": "cb-mississippi-state-frei", "canonical_id": "cb-mississippi-state-gehrig-frei", "name": "Gehrig Frei"},
+    {"source_id": "cb-mississippi-state-reese", "canonical_id": "cb-mississippi-state-ace-reese", "name": "Ace Reese"},
+    {"source_id": "cb-mississippi-state-sullivan", "canonical_id": "cb-mississippi-state-noah-sullivan", "name": "Noah Sullivan"},
+    {"source_id": "cb-mississippi-state-chance", "canonical_id": "cb-mississippi-state-bryce-chance", "name": "Bryce Chance"},
+    {"source_id": "cb-mississippi-state-stallman", "canonical_id": "cb-mississippi-state-reed-stallman", "name": "Reed Stallman"},
+    {"source_id": "cb-mississippi-state-davis", "canonical_id": "cb-mississippi-state-ben-davis", "name": "Ben Davis"}
+  ],
+  "confirmed_merges": [
+    {"name": "Jamal George", "schools": ["Texas A&M", "Missouri"], "evidence": "https://mutigers.com/sports/baseball/roster/player/jamal-george"},
+    {"name": "Paul Vossen", "schools": ["Iowa", "St. Bonaventure"], "evidence": "https://gobonnies.com/sports/baseball/roster/paul-vossen/6223"}
+  ],
+  "rejected_merges": [
+    {"name": "Cooper Williams", "schools": ["Kennesaw State", "LSU"]},
+    {"name": "Ryan Lynch", "schools": ["Coastal Carolina", "Notre Dame"]},
+    {"name": "Dylan Brown", "schools": ["Old Dominion", "San Francisco"]},
+    {"name": "Cam Hill", "schools": ["Ohio", "South Alabama"]}
+  ]
+}

@@ -1035,6 +1035,16 @@
       "corrections": [
         {"source_player_id": "cb-iowa-elliot-cad-lanoue", "source_player_name": "Elliot Cad.-Lanoue", "player": "Elliott Cadieux-Lanoue", "canonical_player_id": "cb-iowa-elliott-cadieux-lanoue"}
       ]
+    },
+    {
+      "game_id": "cb-2025-03-22-western-kentucky-kennesaw-state-att0325",
+      "team": "Western Kentucky",
+      "description": "Expand the WKU box-score abbreviation to Dylan O'Connell and link his verified 2026 Milwaukee transfer identity without changing any source game statistics.",
+      "verified_on": "2026-11-02",
+      "evidence_urls": ["https://wkusports.com/sports/baseball/roster/dylan-o-connell/5510", "https://mkepanthers.com/news/2026/3/10/baseball-panthers-travel-to-purdue-before-league-play-begins-at-northern-kentucky.aspx"],
+      "corrections": [
+        {"source_player_id": "cb-western-kentucky-d-o-connell", "source_player_name": "D O'connell", "player": "Dylan O'Connell", "canonical_player_id": "cb-milwaukee-dylan-o-connell"}
+      ]
     }
   ]
 }

@@ -554,14 +554,17 @@
     {
       "game_id": "cb-2025-05-22-texas-a-m-auburn-att0357",
       "team": "Texas A&M",
-      "description": "Restore Justin Lamkin's full name from the Auburn gamebook's surname-only Lamkin entry without altering his pitching statistics.",
-      "verified_on": "2026-11-01",
+      "description": "Restore Justin Lamkin's full name and three additional owner-confirmed Texas A&M first names from the Auburn gamebook without altering the original batting or pitching statistics.",
+      "verified_on": "2026-11-02",
       "evidence_urls": [
         "https://storage.googleapis.com/auburn-prod/2025/05/23/SDbWI4p6H0cZg8tyo5LFycKPk6WAtPElf5AeOVSK.pdf",
         "https://12thman.com/news/2025/07/13/lamkin-selected-71st-overall-by-the-kansas-city-royals"
       ],
       "corrections": [
-        {"source_player_id": "cb-texas-a-m-lamkin", "source_player_name": "Lamkin", "player": "Justin Lamkin", "canonical_player_id": "cb-texas-a-m-justin-lamkin"}
+        {"source_player_id": "cb-texas-a-m-lamkin", "source_player_name": "Lamkin", "player": "Justin Lamkin", "canonical_player_id": "cb-texas-a-m-justin-lamkin"},
+        {"source_player_id":"cb-texas-a-m-kent","source_player_name":"Kent","player":"Kaeden Kent","canonical_player_id":"cb-texas-a-m-kaeden-kent"},
+        {"source_player_id":"cb-texas-a-m-laviolette","source_player_name":"Laviolette","player":"Jace Laviolette","canonical_player_id":"cb-texas-a-m-jace-laviolette"},
+        {"source_player_id":"cb-texas-a-m-george","source_player_name":"George","player":"Jamal George","canonical_player_id":"cb-texas-a-m-jamal-george"}
       ]
     },
     {
@@ -931,7 +934,10 @@
         {"source_player_id":"cb-james-madison-schiavone","source_player_name":"Schiavone","player":"Jason Schiavone","canonical_player_id":"cb-james-madison-jason-schiavone"},
         {"source_player_id":"cb-james-madison-peifer","source_player_name":"Peifer","player":"Wyatt Peifer","canonical_player_id":"cb-james-madison-wyatt-peifer"},
         {"source_player_id":"cb-james-madison-calabrese","source_player_name":"Calabrese","player":"Coleman Calabrese","canonical_player_id":"cb-james-madison-coleman-calabrese"},
-        {"source_player_id":"cb-james-madison-dunaway","source_player_name":"Dunaway","player":"Mason Dunaway","canonical_player_id":"cb-james-madison-mason-dunaway"}
+        {"source_player_id":"cb-james-madison-dunaway","source_player_name":"Dunaway","player":"Mason Dunaway","canonical_player_id":"cb-james-madison-mason-dunaway"},
+        {"source_player_id":"cb-james-madison-langley","source_player_name":"Langley","player":"Kyle Langley","canonical_player_id":"cb-james-madison-kyle-langley"},
+        {"source_player_id":"cb-james-madison-logar","source_player_name":"Logar","player":"Jackson Logar","canonical_player_id":"cb-james-madison-jackson-logar"},
+        {"source_player_id":"cb-james-madison-vogatsky","source_player_name":"Vogatsky","player":"Joe Vogatsky","canonical_player_id":"cb-james-madison-joe-vogatsky"}
       ]
     }
   ]

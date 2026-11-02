@@ -14,7 +14,12 @@ function nav(active){
  const links=[["index.html","Overview","home"],["game.html","Games","games"],["stats.html","Players","players"],["records.html","Records","records"],["mlb-alumni.html","To the MLB","mlb-alumni"]];
  return '<header class="archive-header"><a class="archive-logo" href="./index.html">COURTSIDE ARCHIVE<small>EVERY GAME HAS A STORY · COLLEGE BASEBALL</small></a>'
  +'<nav class="archive-nav" aria-label="College Baseball archive navigation">'+links.map(([href,label,name])=>'<a href="./'+href+'"'+(active===name||active==="player"&&name==="players"?' aria-current="page"':'')+'>'+label+'</a>').join("")
- +'<a href="../index.html" class="back-link">All sports ↗</a></nav></header>';
+ +'<a href="../index.html" class="back-link">All sports ↗</a></nav></header>'
+ +'<form id="cb-quick-search" class="cb-quick-search" role="search" aria-label="Search college baseball archive">'
+ +'<label for="cb-quick-input">Search this archive</label><div class="cb-quick-field">'
+ +'<input id="cb-quick-input" type="search" autocomplete="off" placeholder="Find players, teams or games…" aria-controls="cb-quick-results" aria-expanded="false">'
+ +'<div id="cb-quick-results" class="cb-quick-results" role="region" aria-label="College baseball search matches" hidden></div>'
+ +'</div><button type="submit">Search</button></form>';
 }
 async function json(name,fallback){const r=await fetch("./data/"+name,{cache:"no-store"});if(!r.ok)throw Error("Missing "+name+" ("+r.status+")");return r.json()}
 function applyAttendanceGameCorrections(sourceGames,sourceRows,manifest){
@@ -211,6 +216,8 @@ async function load(){
   teams:[...new Set([...p.teams].map(team=>displayTeams.get(team)||team))],games:[...p.games]}));
  return {games:games.slice().sort((a,b)=>b.date.localeCompare(a.date)||a.id.localeCompare(b.id)),rows,players,gameMap,gameRedirects,report,crosswalk,identity,redirects};
 }
+let cachedArchivePromise;
+function cachedLoad(){return cachedArchivePromise||(cachedArchivePromise=load())}
 function sum(rows,category,key){
  const values=rows.map(r=>stat(r[category]?.[key])).filter(v=>v!=null);
  return values.length?values.reduce((a,b)=>a+b,0):null;
@@ -273,6 +280,39 @@ function counts(items){
  return [...m.entries()].sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0]));
 }
 function gameSearch(g,q){return [g.date,g.away,g.home,g.ballpark,g.city,g.state,g.postseason_round].some(x=>String(x||"").toLowerCase().includes(q))}
+function initQuickSearch(d){
+ const form=$("cb-quick-search"),input=$("cb-quick-input"),results=$("cb-quick-results");
+ if(!form||!input||!results)return;
+ const key=s=>String(s||"").normalize("NFKD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
+ const programs=unique(d.games.flatMap(g=>[g.away,g.home])).sort((a,b)=>a.localeCompare(b));
+ const players=d.players.map(p=>({...p,searchName:key(p.name),searchSchools:key(p.teams.join(" "))}));
+ const games=d.games.map(g=>({game:g,searchText:key([g.date,date(g.date),g.away,g.home,g.ballpark,g.city,g.state,g.postseason_round].join(" "))}));
+ let visible=[];
+ const hide=()=>{results.hidden=true;input.setAttribute("aria-expanded","false")};
+ function draw(){
+  const q=key(input.value.trim());
+  if(q.length<2){visible=[];hide();return}
+  const schoolMatches=programs.filter(name=>key(name).includes(q)).slice(0,3).map(name=>({kind:"Team",title:name,detail:"Browse attended games",href:"./game.html?q="+encodeURIComponent(name)}));
+  const playerMatches=players.filter(p=>p.searchName.includes(q)||p.searchSchools.includes(q))
+   .sort((a,b)=>Number(b.searchName===q)-Number(a.searchName===q)||Number(b.searchName.startsWith(q))-Number(a.searchName.startsWith(q))||a.name.localeCompare(b.name))
+   .slice(0,5).map(p=>({kind:"Player",title:p.name,detail:p.teams.join(" / "),href:playerUrl(p)}));
+  const gameMatches=games.filter(g=>g.searchText.includes(q)).slice(0,4).map(({game:g})=>({kind:"Game",title:date(g.date)+" · "+gameLabel(g),detail:g.ballpark||"Attended college game",href:gameUrl(g)}));
+  visible=[...schoolMatches,...playerMatches,...gameMatches];
+  results.innerHTML=visible.length?visible.map(item=>'<a class="cb-quick-result" href="'+esc(item.href)+'">'
+   +'<span><strong>'+esc(item.title)+'</strong><small>'+esc(item.detail)+'</small></span><em>'+esc(item.kind)+'</em></a>').join("")
+   :'<p class="cb-quick-empty">No matching players, teams or attended games.</p>';
+  results.hidden=false;input.setAttribute("aria-expanded","true");
+ }
+ input.addEventListener("input",draw);
+ input.addEventListener("focus",draw);
+ input.addEventListener("keydown",event=>{
+  if(event.key==="Escape")hide();
+  if(event.key==="ArrowDown"&&!results.hidden){const first=results.querySelector("a");if(first){event.preventDefault();first.focus()}}
+ });
+ form.addEventListener("submit",event=>{event.preventDefault();if(visible.length)window.location.href=visible[0].href;else input.focus()});
+ document.addEventListener("pointerdown",event=>{if(!form.contains(event.target))hide()});
+ if(input.value.trim())draw();
+}
 function renderHome(d){
  const seasons=unique(d.games.map(g=>g.season));const teams=counts(d.games.flatMap(g=>[g.home,g.away]));const parks=counts(d.games.map(g=>g.ballpark));
  $("app").innerHTML='<div class="cb-intro"><div class="eyebrow">College Baseball · Attendance history</div><h1>Your college baseball history.</h1><p class="lead">Every college game you attended—box scores, the players you witnessed, historic performances, ballparks, and the eventual road to professional baseball.</p></div>'
@@ -297,7 +337,8 @@ function renderGames(d){
  +'<input id="cb-game-search" type="search" aria-label="Search dates teams and parks" placeholder="Search teams, dates, venue or tournament…">'
  +'<label class="filter-label" for="cb-season-filter">Season</label><select id="cb-season-filter" aria-label="Season filter"><option value="">All seasons</option>'
  +unique(d.games.map(g=>g.season)).sort((a,b)=>b-a).map(y=>'<option>'+y+'</option>').join("")+'</select></div><div id="cb-game-list"></div>';
- const chosen=new URLSearchParams(location.search).get("id"),picker=$("cb-game-select");
+ const params=new URLSearchParams(location.search),chosen=params.get("id"),picker=$("cb-game-select");
+ if(params.get("q"))$("cb-game-search").value=params.get("q");
  const selected=d.gameRedirects.get(chosen)||chosen;
  if(selected&&d.gameMap.has(selected))picker.value=selected;
  function showGame(){
@@ -530,9 +571,11 @@ function renderRecords(d){
 function render(){
  const page=document.body.dataset.page||"home",app=$("app");
  $("navigation").innerHTML=nav(page);
+ const archive=cachedLoad();
+ archive.then(initQuickSearch).catch(()=>{const results=$("cb-quick-results");if(results){results.innerHTML='<p class="cb-quick-empty">Archive search is temporarily unavailable.</p>';results.hidden=false}});
  if(page==="mlb-alumni")return;
  app.innerHTML=pending("Loading college baseball attendance records…");
- load().then(async d=>{
+ archive.then(async d=>{
   if(page==="games")renderGames(d);
   else if(page==="players")renderPlayers(d);
   else if(page==="records")renderRecords(d);
@@ -542,5 +585,5 @@ function render(){
 }
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",render,{once:true});
 else render();
-window.CollegeBaseballArchive={load,bat,pitch};
+window.CollegeBaseballArchive={load:cachedLoad,bat,pitch};
 })();

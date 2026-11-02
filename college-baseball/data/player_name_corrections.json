@@ -1039,10 +1039,19 @@
     {
       "game_id": "cb-2025-03-22-western-kentucky-kennesaw-state-att0325",
       "team": "Western Kentucky",
-      "description": "Expand the WKU box-score abbreviation to Dylan O'Connell and link his verified 2026 Milwaukee transfer identity without changing any source game statistics.",
+      "description": "Expand the remaining eight abbreviated WKU batting-order names, link Dylan O'Connell to Milwaukee and existing WKU full-name profiles where available, without changing source-game statistics or substitutions. Ryan Wideman, Ethan Lizama, and Kyle Hvidsten are already corrected in the earlier game-specific entry.",
       "verified_on": "2026-11-02",
-      "evidence_urls": ["https://wkusports.com/sports/baseball/roster/dylan-o-connell/5510", "https://mkepanthers.com/news/2026/3/10/baseball-panthers-travel-to-purdue-before-league-play-begins-at-northern-kentucky.aspx"],
+      "evidence_urls": ["https://wkusports.com/sports/baseball/roster/dylan-o-connell/5510",
+        "https://wkusports.com/sports/baseball/roster/2025", "https://mkepanthers.com/news/2026/3/10/baseball-panthers-travel-to-purdue-before-league-play-begins-at-northern-kentucky.aspx"],
       "corrections": [
+        {"source_player_id": "cb-western-kentucky-c-vasquez", "source_player_name": "C. Vasquez", "player": "Carlos Vasquez", "canonical_player_id": "cb-western-kentucky-carlos-vasquez"},
+        {"source_player_id": "cb-western-kentucky-t-marsala", "source_player_name": "T. Marsala", "player": "Thomas Marsala", "canonical_player_id": "cb-western-kentucky-thomas-marsala"},
+        {"source_player_id": "cb-western-kentucky-j-siervo", "source_player_name": "J. Siervo", "player": "Joe Siervo", "canonical_player_id": "cb-western-kentucky-joe-siervo"},
+        {"source_player_id": "cb-western-kentucky-h-brown", "source_player_name": "H. Brown", "player": "Henry Brown", "canonical_player_id": "cb-western-kentucky-henry-brown"},
+        {"source_player_id": "cb-western-kentucky-d-barragan", "source_player_name": "D. Barragan", "player": "Drew Barragan", "canonical_player_id": "cb-western-kentucky-drew-barragan"},
+        {"source_player_id": "cb-western-kentucky-a-haller", "source_player_name": "A. Haller", "player": "Austin Haller", "canonical_player_id": "cb-western-kentucky-austin-haller"},
+        {"source_player_id": "cb-western-kentucky-r-howard", "source_player_name": "R. Howard", "player": "Reid Howard", "canonical_player_id": "cb-western-kentucky-reid-howard"},
+        {"source_player_id": "cb-western-kentucky-a-westbrook", "source_player_name": "A Westbrook", "player": "Anthony Westbrook", "canonical_player_id": "cb-western-kentucky-anthony-westbrook"},
         {"source_player_id": "cb-western-kentucky-d-o-connell", "source_player_name": "D O'connell", "player": "Dylan O'Connell", "canonical_player_id": "cb-milwaukee-dylan-o-connell"}
       ]
     }

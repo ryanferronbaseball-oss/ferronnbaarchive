@@ -84,6 +84,8 @@ CONFIRMED_2024_BALLPARK_MATCHUPS={
         ("Fluor Field", "Greenville", "SC"),
     ("2024-03-03", "Maine", "Winthrop"):
         ("Winthrop Ballpark", "Rock Hill", "SC"),
+    ("2024-03-08", "Binghamton", "VMI"):
+        ("Lamore Field at Gray-Minor Stadium", "Lexington", "VA"),
 }
 
 

@@ -4,8 +4,8 @@
   "source": "Original archive owner confirmed each multi-school person",
   "original_attendance_ids_preserved": 444,
   "original_player_game_rows_preserved": 13183,
-  "requested_person_merges": 161,
-  "activated_person_merges": 161,
+  "requested_person_merges": 162,
+  "activated_person_merges": 162,
   "pending_person_merges": 0,
   "merge_policy": "Only listed pair of exact normalized person names and school-specific original source player IDs; all other IDs remain separate",
   "owner_rejected_merge_candidates": [
@@ -3211,6 +3211,18 @@
       ],
       "source_rows": 2,
       "identity_source_url": "https://libertyflames.com/sports/baseball/roster"
+    },
+    {
+      "name": "Dylan O'Connell",
+      "canonical_id": "cb-milwaukee-dylan-o-connell",
+      "source_player_ids": ["cb-western-kentucky-d-o-connell", "cb-milwaukee-dylan-o-connell"],
+      "schools": ["Western Kentucky", "Milwaukee"],
+      "pairs": [
+        {"team": "Western Kentucky", "source_player_id": "cb-western-kentucky-d-o-connell"},
+        {"team": "Milwaukee", "source_player_id": "cb-milwaukee-dylan-o-connell"}
+      ],
+      "source_rows": 4,
+      "identity_source_url": "https://mkepanthers.com/news/2026/3/10/baseball-panthers-travel-to-purdue-before-league-play-begins-at-northern-kentucky.aspx"
     }
   ]
 }

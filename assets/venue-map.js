@@ -37,7 +37,7 @@
         icon:L.divIcon({className:'',html:`<span class="venue-sport-pin" style="--pin-color:${color}"></span>`,iconSize:[24,24],iconAnchor:[12,12]})
       });
       const photo=photos[v.id];
-      const photoHtml=photo?`<img class="venue-popup-photo" src="./venues/photos/${encodeURIComponent(photo.file)}" alt="${esc(photo.alt)}" loading="lazy">`:'';
+      const photoHtml=photo?`<img class="venue-popup-photo" src="./venues/photos/${encodeURIComponent(photo.file)}?v=2" alt="${esc(photo.alt)}" loading="lazy">`:'';
       marker.bindPopup(`<div class="venue-popup">${photoHtml}<small>${esc(v.sport)}</small><h3>${esc(v.name)}</h3><p>${esc(v.city)}</p><div class="venue-popup-facts"><span>Games attended<strong>${v.visits}</strong></span><span>First visit<strong style="font-size:12px">${formatDate(v.firstVisit)}</strong></span></div><a href="./venues/venue.html?id=${encodeURIComponent(v.id)}">View venue profile &rarr;</a></div>`,{maxWidth:290});
       markers.set(v.id,marker);
     });

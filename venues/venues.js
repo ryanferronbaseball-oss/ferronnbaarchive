@@ -45,7 +45,7 @@
     const first=v.games[0],years=new Set(v.games.map(g=>g.date.slice(0,4))).size;
     const photoLabel=v.sport.includes('Basketball')||v.sport==='NBA'?'Arena profile':v.sport.includes('Football')||v.sport==='NFL'?'Stadium profile':'Ballpark profile';
     const photo=photos[v.id];
-    const photoFile=photo?`./photos/${encodeURIComponent(photo.file)}`:'';
+    const photoFile=photo?`./photos/${encodeURIComponent(photo.file)}?v=2`:'';
     const photoMarkup=photo?`<figure class="vp-photo-figure"><a href="${esc(photoFile)}" target="_blank" rel="noopener noreferrer" aria-label="View full-size photograph of ${esc(v.name)}"><img src="${esc(photoFile)}" alt="${esc(photo.alt)}" loading="eager" decoding="async"></a><figcaption>Photo: ${esc(photo.credit)} <a href="${esc(photoFile)}" target="_blank" rel="noopener noreferrer">View full image ↗</a></figcaption></figure>`:`<div class="vp-photo-placeholder" aria-label="Stadium photography will be added later"><span>Courtside Archive</span><strong>${esc(photoLabel)}</strong></div>`;
     const sources=v.sources.map((url,i)=>`<li><a href="${esc(url)}" target="_blank" rel="noopener noreferrer">Venue reference ${i+1} ↗</a></li>`).join('');
     target.innerHTML=`

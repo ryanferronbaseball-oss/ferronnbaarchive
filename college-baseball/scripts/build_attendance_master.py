@@ -52,13 +52,31 @@ CONFIRMED_2022_BALLPARK_DATES={
 }
 
 
+CONFIRMED_2023_BALLPARK_DATES={
+    "2023-02-21": ("Tony Gwynn Stadium", "San Diego", "CA"),
+    "2023-04-18": ("Tony Gwynn Stadium", "San Diego", "CA"),
+    **{f"2023-03-{day:02d}": ("PK Park", "Eugene", "OR") for day in (2, 3, 4, 5)},
+    "2023-03-07": ("Goss Stadium", "Corvallis", "OR"),
+    "2023-03-28": ("Matador Field", "Northridge", "CA"),
+    "2023-04-04": ("Triton Ballpark", "La Jolla", "CA"),
+    "2023-05-07": ("Triton Ballpark", "La Jolla", "CA"),
+    **{f"2023-04-{day:02d}": ("Patterson Baseball Complex", "Spokane", "WA") for day in (6, 7, 8)},
+    **{f"2023-04-{day:02d}": ("Page Stadium", "Los Angeles", "CA") for day in (28, 29, 30)},
+    **{f"2023-05-{day:02d}": ("Louie Guisto Field", "Moraga", "CA") for day in (12, 13, 14)},
+    "2023-05-24": ("Las Vegas Ballpark", "Las Vegas", "NV"),
+}
+
+
 def confirmed_ballpark(game):
-    """User-confirmed locations for every 2017–2022 game; respect venue exceptions."""
+    """User-confirmed locations for every 2017–2023 game; respect venue exceptions."""
     if game["season"]==2021:
         return CONFIRMED_2021_BALLPARK_DATES.get(
             game["date"], ("Fowler Park", "San Diego", "CA"))
     if game["season"]==2022:
         return CONFIRMED_2022_BALLPARK_DATES.get(
+            game["date"], ("Fowler Park", "San Diego", "CA"))
+    if game["season"]==2023:
+        return CONFIRMED_2023_BALLPARK_DATES.get(
             game["date"], ("Fowler Park", "San Diego", "CA"))
     if game["season"] not in (2017, 2018, 2019, 2020):
         return None

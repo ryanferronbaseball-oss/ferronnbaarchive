@@ -86,6 +86,8 @@ CONFIRMED_2024_BALLPARK_MATCHUPS={
         ("Winthrop Ballpark", "Rock Hill", "SC"),
     ("2024-03-08", "Binghamton", "VMI"):
         ("Lamore Field at Gray-Minor Stadium", "Lexington", "VA"),
+    ("2024-03-26", "William and Mary", "VCU"):
+        ("The Diamond", "Richmond", "VA"),
 }
 
 

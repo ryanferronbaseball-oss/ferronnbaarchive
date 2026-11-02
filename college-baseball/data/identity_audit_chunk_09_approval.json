@@ -1,0 +1,23 @@
+{
+  "chunk": 9,
+  "confirmed_on": "2026-11-02",
+  "policy": "Apply confirmed name mappings and exact school-scoped merges only; preserve all source game and statistical rows.",
+  "confirmed_name_corrections": [
+    {"source_id": "cb-texas-a-m-wilson", "canonical_id": "cb-texas-a-m-jorian-wilson", "name": "Jorian Wilson"},
+    {"source_id": "cb-texas-a-m-freshcorn", "canonical_id": "cb-texas-a-m-clayton-freshcorn", "name": "Clayton Freshcorn"},
+    {"source_id": "cb-vanderbilt-rigdon", "canonical_id": "cb-vanderbilt-rustan-rigdon", "name": "Rustan Rigdon"},
+    {"source_id": "cb-vanderbilt-austin", "canonical_id": "cb-vanderbilt-rj-austin", "name": "RJ Austin"},
+    {"source_id": "cb-vanderbilt-nelson", "canonical_id": "cb-vanderbilt-riley-nelson", "name": "Riley Nelson"},
+    {"source_id": "cb-vanderbilt-johnston", "canonical_id": "cb-vanderbilt-brodie-johnston", "name": "Brodie Johnston"}
+  ],
+  "confirmed_merges": [
+    {"name": "Seth Mattox", "schools": ["Cal Baptist", "Oregon"]},
+    {"name": "Joe Soberon", "schools": ["UC San Diego", "San Francisco"]},
+    {"name": "Evan Jones", "schools": ["Western Kentucky", "UCF"]},
+    {"name": "Ashton Crowther", "schools": ["South Carolina", "Alabama"]}
+  ],
+  "rejected_merges": [
+    {"name": "Christian Rodriguez", "schools": ["Cal State Fullerton", "Florida"]},
+    {"name": "Sam Beck", "schools": ["San Francisco", "BYU"]}
+  ]
+}

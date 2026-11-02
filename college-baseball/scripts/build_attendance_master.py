@@ -75,6 +75,18 @@ CONFIRMED_2024_BALLPARK_DATES={
 }
 
 
+CONFIRMED_2024_BALLPARK_MATCHUPS={
+    ("2024-03-01", "Cal State Fullerton", "Southeastern Louisiana"):
+        ("Lewis Field at Clark-LeClair Stadium", "Greenville", "NC"),
+    ("2024-03-02", "Illinois", "Western Michigan"):
+        ("Fluor Field", "Greenville", "SC"),
+    ("2024-03-02", "Florida State", "Illinois"):
+        ("Fluor Field", "Greenville", "SC"),
+    ("2024-03-03", "Maine", "Winthrop"):
+        ("Winthrop Ballpark", "Rock Hill", "SC"),
+}
+
+
 def confirmed_ballpark(game):
     """User-confirmed historical locations; respect 2024 partial-year updates."""
     if game["season"]==2021:
@@ -84,7 +96,9 @@ def confirmed_ballpark(game):
         return CONFIRMED_2022_BALLPARK_DATES.get(
             game["date"], ("Fowler Park", "San Diego", "CA"))
     if game["season"]==2024:
-        return CONFIRMED_2024_BALLPARK_DATES.get(game["date"])
+        return (CONFIRMED_2024_BALLPARK_MATCHUPS.get(
+            (game["date"], game["away"], game["home"]))
+            or CONFIRMED_2024_BALLPARK_DATES.get(game["date"]))
     if game["season"]==2023:
         return CONFIRMED_2023_BALLPARK_DATES.get(
             game["date"], ("Fowler Park", "San Diego", "CA"))

@@ -4,10 +4,26 @@
   "source": "Original archive owner confirmed each multi-school person",
   "original_attendance_ids_preserved": 444,
   "original_player_game_rows_preserved": 13183,
-  "requested_person_merges": 114,
-  "activated_person_merges": 111,
+  "requested_person_merges": 118,
+  "activated_person_merges": 115,
   "pending_person_merges": 3,
   "merge_policy": "Only listed pair of exact normalized person names and school-specific original source player IDs; all other IDs remain separate",
+  "owner_rejected_merge_candidates": [
+    {
+      "name": "Caden Miller",
+      "schools": ["San Diego State", "Indiana State"],
+      "source_player_ids": ["cb-san-diego-state-caden-miller", "cb-indiana-state-caden-miller"],
+      "decision": "do_not_merge",
+      "confirmed_on": "2026-11-02"
+    },
+    {
+      "name": "Colby Wallace",
+      "schools": ["Cal State Fullerton", "East Carolina"],
+      "source_player_ids": ["cb-cal-state-fullerton-colby-wallace", "cb-east-carolina-colby-wallace"],
+      "decision": "do_not_merge",
+      "confirmed_on": "2026-11-02"
+    }
+  ],
   "merges": [
     {
       "name": "Justin DeCriscio",
@@ -2463,23 +2479,6 @@
       "source_rows": 4
     },
     {
-      "name": "Colby Wallace",
-      "canonical_id": "cb-east-carolina-colby-wallace",
-      "source_player_ids": [
-        "cb-cal-state-fullerton-colby-wallace",
-        "cb-east-carolina-colby-wallace"
-      ],
-      "schools": [
-        "Cal State Fullerton",
-        "East Carolina"
-      ],
-      "pairs": [
-        {"team": "Cal State Fullerton", "source_player_id": "cb-cal-state-fullerton-colby-wallace"},
-        {"team": "East Carolina", "source_player_id": "cb-east-carolina-colby-wallace"}
-      ],
-      "source_rows": 4
-    },
-    {
       "name": "Mark Hindy",
       "canonical_id": "cb-tennessee-mark-hindy",
       "source_player_ids": [
@@ -2498,6 +2497,61 @@
         {"team": "Tennessee", "source_player_id": "cb-tennessee-mark-hindy"}
       ],
       "source_rows": 4
+    },
+    {
+      "name": "Cade Fisher",
+      "canonical_id": "cb-florida-cade-fisher",
+      "source_player_ids": ["cb-florida-cade-fisher", "cb-auburn-cade-fisher"],
+      "schools": ["Florida", "Auburn"],
+      "pairs": [
+        {"team": "Florida", "source_player_id": "cb-florida-cade-fisher"},
+        {"team": "Auburn", "source_player_id": "cb-auburn-cade-fisher"}
+      ],
+      "source_rows": 2
+    },
+    {
+      "name": "Jake Marciano",
+      "canonical_id": "cb-auburn-jake-marciano",
+      "source_player_ids": ["cb-virginia-tech-jake-marciano", "cb-auburn-jake-marciano"],
+      "schools": ["Virginia Tech", "Auburn"],
+      "pairs": [
+        {"team": "Virginia Tech", "source_player_id": "cb-virginia-tech-jake-marciano"},
+        {"team": "Auburn", "source_player_id": "cb-auburn-jake-marciano"}
+      ],
+      "source_rows": 3
+    },
+    {
+      "name": "Chris Hacopian",
+      "canonical_id": "cb-maryland-chris-hacopian",
+      "source_player_ids": ["cb-maryland-chris-hacopian", "cb-texas-a-m-chris-hacopian"],
+      "schools": ["Maryland", "Texas A&M"],
+      "pairs": [
+        {"team": "Maryland", "source_player_id": "cb-maryland-chris-hacopian"},
+        {"team": "Texas A&M", "source_player_id": "cb-texas-a-m-chris-hacopian"}
+      ],
+      "source_rows": 2
+    },
+    {
+      "name": "Tomas Valincius",
+      "canonical_id": "cb-virginia-tomas-valincius",
+      "source_player_ids": ["cb-virginia-tomas-valincius", "cb-mississippi-state-tomas-valincius"],
+      "schools": ["Virginia", "Mississippi State"],
+      "pairs": [
+        {"team": "Virginia", "source_player_id": "cb-virginia-tomas-valincius"},
+        {"team": "Mississippi State", "source_player_id": "cb-mississippi-state-tomas-valincius"}
+      ],
+      "source_rows": 2
+    },
+    {
+      "name": "Brayden Simpson",
+      "canonical_id": "cb-lsu-brayden-simpson",
+      "source_player_ids": ["cb-high-point-brayden-simpson", "cb-lsu-brayden-simpson"],
+      "schools": ["High Point", "LSU"],
+      "pairs": [
+        {"team": "High Point", "source_player_id": "cb-high-point-brayden-simpson"},
+        {"team": "LSU", "source_player_id": "cb-lsu-brayden-simpson"}
+      ],
+      "source_rows": 3
     }
   ]
 }

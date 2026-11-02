@@ -102,6 +102,8 @@ CONFIRMED_2026_HOME_BALLPARKS={
     "Louisville": ("Jim Patterson Stadium", "Louisville", "KY"),
     "Kentucky": ("Kentucky Proud Park", "Lexington", "KY"),
     "Vanderbilt": ("Hawkins Field", "Nashville", "TN"),
+    "Austin Peay": ("Raymond C. Hand Park", "Clarksville", "TN"),
+    "Bellarmine": ("Knights Field", "Louisville", "KY"),
 }
 
 

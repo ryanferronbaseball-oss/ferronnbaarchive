@@ -4,8 +4,8 @@
   "source": "Original archive owner confirmed each multi-school person",
   "original_attendance_ids_preserved": 444,
   "original_player_game_rows_preserved": 13183,
-  "requested_person_merges": 102,
-  "activated_person_merges": 99,
+  "requested_person_merges": 108,
+  "activated_person_merges": 105,
   "pending_person_merges": 3,
   "merge_policy": "Only listed pair of exact normalized person names and school-specific original source player IDs; all other IDs remain separate",
   "merges": [
@@ -2291,6 +2291,108 @@
         }
       ],
       "source_rows": 8
+    },
+    {
+      "name": "Ian Churchill",
+      "canonical_id": "cb-san-diego-ian-churchill",
+      "source_player_ids": [
+        "cb-arizona-ian-churchill",
+        "cb-san-diego-ian-churchill"
+      ],
+      "schools": [
+        "Arizona",
+        "San Diego"
+      ],
+      "pairs": [
+        {"team": "Arizona", "source_player_id": "cb-arizona-ian-churchill"},
+        {"team": "San Diego", "source_player_id": "cb-san-diego-ian-churchill"}
+      ],
+      "source_rows": 18
+    },
+    {
+      "name": "Jordan Vujovich",
+      "canonical_id": "cb-san-francisco-jordan-vujovich",
+      "source_player_ids": [
+        "cb-oklahoma-jordan-vujovich",
+        "cb-san-francisco-jordan-vujovich"
+      ],
+      "schools": [
+        "Oklahoma",
+        "San Francisco"
+      ],
+      "pairs": [
+        {"team": "Oklahoma", "source_player_id": "cb-oklahoma-jordan-vujovich"},
+        {"team": "San Francisco", "source_player_id": "cb-san-francisco-jordan-vujovich"}
+      ],
+      "source_rows": 8
+    },
+    {
+      "name": "Josh Mollerus",
+      "canonical_id": "cb-san-francisco-josh-mollerus",
+      "source_player_ids": [
+        "cb-san-francisco-josh-mollerus",
+        "cb-oregon-josh-mollerus"
+      ],
+      "schools": [
+        "San Francisco",
+        "Oregon"
+      ],
+      "pairs": [
+        {"team": "San Francisco", "source_player_id": "cb-san-francisco-josh-mollerus"},
+        {"team": "Oregon", "source_player_id": "cb-oregon-josh-mollerus"}
+      ],
+      "source_rows": 7
+    },
+    {
+      "name": "Peter Michael",
+      "canonical_id": "cb-san-diego-peter-michael",
+      "source_player_ids": [
+        "cb-san-diego-peter-michael",
+        "cb-louisville-peter-michael"
+      ],
+      "schools": [
+        "San Diego",
+        "Louisville"
+      ],
+      "pairs": [
+        {"team": "San Diego", "source_player_id": "cb-san-diego-peter-michael"},
+        {"team": "Louisville", "source_player_id": "cb-louisville-peter-michael"}
+      ],
+      "source_rows": 11
+    },
+    {
+      "name": "Bo Rhudy",
+      "canonical_id": "cb-tennessee-bo-rhudy",
+      "source_player_ids": [
+        "cb-kennesaw-state-bo-rhudy",
+        "cb-tennessee-bo-rhudy"
+      ],
+      "schools": [
+        "Kennesaw State",
+        "Tennessee"
+      ],
+      "pairs": [
+        {"team": "Kennesaw State", "source_player_id": "cb-kennesaw-state-bo-rhudy"},
+        {"team": "Tennessee", "source_player_id": "cb-tennessee-bo-rhudy"}
+      ],
+      "source_rows": 6
+    },
+    {
+      "name": "Evan Blanco",
+      "canonical_id": "cb-tennessee-evan-blanco",
+      "source_player_ids": [
+        "cb-virginia-evan-blanco",
+        "cb-tennessee-evan-blanco"
+      ],
+      "schools": [
+        "Virginia",
+        "Tennessee"
+      ],
+      "pairs": [
+        {"team": "Virginia", "source_player_id": "cb-virginia-evan-blanco"},
+        {"team": "Tennessee", "source_player_id": "cb-tennessee-evan-blanco"}
+      ],
+      "source_rows": 6
     }
   ]
 }

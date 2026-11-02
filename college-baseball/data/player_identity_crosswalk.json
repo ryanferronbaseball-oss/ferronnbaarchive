@@ -4,8 +4,8 @@
   "source": "Original archive owner confirmed each multi-school person",
   "original_attendance_ids_preserved": 444,
   "original_player_game_rows_preserved": 13183,
-  "requested_person_merges": 157,
-  "activated_person_merges": 154,
+  "requested_person_merges": 161,
+  "activated_person_merges": 158,
   "pending_person_merges": 3,
   "merge_policy": "Only listed pair of exact normalized person names and school-specific original source player IDs; all other IDs remain separate",
   "owner_rejected_merge_candidates": [
@@ -153,6 +153,13 @@
       "name": "Christian Smith",
       "schools": ["High Point", "Quinnipiac"],
       "source_player_ids": ["cb-high-point-christian-smith", "cb-quinnipiac-christian-smith"],
+      "decision": "do_not_merge",
+      "confirmed_on": "2026-11-02"
+    },
+    {
+      "name": "Ryan Higgins",
+      "schools": ["Duke", "Fresno State"],
+      "source_player_ids": ["cb-duke-ryan-higgins", "cb-fresno-state-ryan-higgins"],
       "decision": "do_not_merge",
       "confirmed_on": "2026-11-02"
     }
@@ -3120,6 +3127,54 @@
       ],
       "source_rows": 2,
       "identity_source_url": "https://citadelsports.com/sports/baseball/roster/steven-trone/10679"
+    },
+    {
+      "name": "Wil Libbert",
+      "canonical_id": "cb-missouri-wil-libbert",
+      "source_player_ids": ["cb-missouri-wil-libbert", "cb-ole-miss-wil-libbert"],
+      "schools": ["Missouri", "Ole Miss"],
+      "pairs": [
+        {"team": "Missouri", "source_player_id": "cb-missouri-wil-libbert"},
+        {"team": "Ole Miss", "source_player_id": "cb-ole-miss-wil-libbert"}
+      ],
+      "source_rows": 2,
+      "identity_source_url": "https://olemisssports.com/sports/baseball/roster"
+    },
+    {
+      "name": "Marvcus Guarin",
+      "canonical_id": "cb-seattle-marvcus-guarin",
+      "source_player_ids": ["cb-seattle-marvcus-guarin", "cb-pacific-marvcus-guarin"],
+      "schools": ["Seattle", "Pacific"],
+      "pairs": [
+        {"team": "Seattle", "source_player_id": "cb-seattle-marvcus-guarin"},
+        {"team": "Pacific", "source_player_id": "cb-pacific-marvcus-guarin"}
+      ],
+      "source_rows": 2,
+      "identity_source_url": "https://pacifictigers.com/sports/baseball/roster/marvcus-guarin/4743"
+    },
+    {
+      "name": "David Horn Jr.",
+      "canonical_id": "cb-vanderbilt-david-horn-jr",
+      "source_player_ids": ["cb-vanderbilt-david-horn-jr", "cb-middle-tennessee-state-david-horn-jr"],
+      "schools": ["Vanderbilt", "Middle Tennessee State"],
+      "pairs": [
+        {"team": "Vanderbilt", "source_player_id": "cb-vanderbilt-david-horn-jr"},
+        {"team": "Middle Tennessee State", "source_player_id": "cb-middle-tennessee-state-david-horn-jr"}
+      ],
+      "source_rows": 2,
+      "identity_source_url": "https://goblueraiders.com/sports/baseball/roster/david-horn-jr/14420"
+    },
+    {
+      "name": "Andrew Bowers",
+      "canonical_id": "cb-coastal-carolina-andrew-bowers",
+      "source_player_ids": ["cb-coastal-carolina-andrew-bowers", "cb-the-citadel-andrew-bowers"],
+      "schools": ["Coastal Carolina", "The Citadel"],
+      "pairs": [
+        {"team": "Coastal Carolina", "source_player_id": "cb-coastal-carolina-andrew-bowers"},
+        {"team": "The Citadel", "source_player_id": "cb-the-citadel-andrew-bowers"}
+      ],
+      "source_rows": 2,
+      "identity_source_url": "https://citadelsports.com/sports/baseball/roster/andrew-bowers/10673"
     }
   ]
 }

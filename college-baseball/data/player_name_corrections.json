@@ -554,7 +554,7 @@
     {
       "game_id": "cb-2025-05-22-texas-a-m-auburn-att0357",
       "team": "Texas A&M",
-      "description": "Restore Justin Lamkin's full name and nine additional owner-confirmed Texas A&M first names from the Auburn gamebook without altering the original batting or pitching statistics.",
+      "description": "Restore Justin Lamkin's full name and eleven additional owner-confirmed Texas A&M first names from the Auburn gamebook without altering the original batting or pitching statistics.",
       "verified_on": "2026-11-02",
       "evidence_urls": [
         "https://storage.googleapis.com/auburn-prod/2025/05/23/SDbWI4p6H0cZg8tyo5LFycKPk6WAtPElf5AeOVSK.pdf",
@@ -570,7 +570,9 @@
         {"source_player_id":"cb-texas-a-m-schott","source_player_name":"Schott","player":"Hayden Schott","canonical_player_id":"cb-texas-a-m-hayden-schott"},
         {"source_player_id":"cb-texas-a-m-binderup","source_player_name":"Binderup","player":"Blake Binderup","canonical_player_id":"cb-texas-a-m-blake-binderup"},
         {"source_player_id":"cb-texas-a-m-royo","source_player_name":"Royo","player":"Ben Royo","canonical_player_id":"cb-texas-a-m-ben-royo"},
-        {"source_player_id":"cb-texas-a-m-farr","source_player_name":"Farr","player":"Sawyer Farr","canonical_player_id":"cb-texas-a-m-sawyer-farr"}
+        {"source_player_id":"cb-texas-a-m-farr","source_player_name":"Farr","player":"Sawyer Farr","canonical_player_id":"cb-texas-a-m-sawyer-farr"},
+        {"source_player_id":"cb-texas-a-m-wilson","source_player_name":"Wilson","player":"Jorian Wilson","canonical_player_id":"cb-texas-a-m-jorian-wilson"},
+        {"source_player_id":"cb-texas-a-m-freshcorn","source_player_name":"Freshcorn","player":"Clayton Freshcorn","canonical_player_id":"cb-texas-a-m-clayton-freshcorn"}
       ]
     },
     {
@@ -610,14 +612,18 @@
     {
       "game_id": "cb-2025-05-24-tennessee-vanderbilt-att0362",
       "team": "Vanderbilt",
-      "description": "Match the surname-only Bowker pitcher in the Tennessee-Vanderbilt gamebook to verified Phillies third-rounder Cody Bowker.",
-      "verified_on": "2026-11-01",
+      "description": "Match the surname-only Bowker pitcher to verified Phillies third-rounder Cody Bowker and link four additional owner-confirmed Vanderbilt surnames to existing full-name profiles, preserving the Tennessee-Vanderbilt gamebook statistics.",
+      "verified_on": "2026-11-02",
       "evidence_urls": [
         "https://utsports.com/sports/baseball/stats/2025/vanderbilt/boxscore/29526",
         "https://vucommodores.com/news/2025/07/14/2025-mlb-draft-day-2"
       ],
       "corrections": [
-        {"source_player_id": "cb-vanderbilt-bowker", "source_player_name": "Bowker", "player": "Cody Bowker", "canonical_player_id": "cb-vanderbilt-cody-bowker"}
+        {"source_player_id": "cb-vanderbilt-bowker", "source_player_name": "Bowker", "player": "Cody Bowker", "canonical_player_id": "cb-vanderbilt-cody-bowker"},
+        {"source_player_id":"cb-vanderbilt-rigdon","source_player_name":"Rigdon","player":"Rustan Rigdon","canonical_player_id":"cb-vanderbilt-rustan-rigdon"},
+        {"source_player_id":"cb-vanderbilt-austin","source_player_name":"Austin","player":"RJ Austin","canonical_player_id":"cb-vanderbilt-rj-austin"},
+        {"source_player_id":"cb-vanderbilt-nelson","source_player_name":"Nelson","player":"Riley Nelson","canonical_player_id":"cb-vanderbilt-riley-nelson"},
+        {"source_player_id":"cb-vanderbilt-johnston","source_player_name":"Johnston","player":"Brodie Johnston","canonical_player_id":"cb-vanderbilt-brodie-johnston"}
       ]
     },
     {

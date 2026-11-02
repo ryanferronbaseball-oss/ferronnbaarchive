@@ -237,7 +237,8 @@
         {"source_player_id": "cb-cal-state-fullerton-valenzuela", "source_player_name": "Valenzuela", "player": "Sahid Valenzuela", "canonical_player_id": "cb-cal-state-fullerton-sahid-valenzuela"},
         {"source_player_id": "cb-cal-state-fullerton-d-cope", "source_player_name": "D. Cope", "player": "Daniel Cope", "canonical_player_id": "cb-cal-state-fullerton-daniel-cope"},
         {"source_player_id": "cb-cal-state-fullerton-guangorena", "source_player_name": "Guangorena", "player": "Kameron Guangorena", "canonical_player_id": "cb-cal-state-fullerton-kameron-guangorena"},
-        {"source_player_id": "cb-cal-state-fullerton-m-berryhill", "source_player_name": "M Berryhill", "player": "Mitchell Berryhill", "canonical_player_id": "cb-cal-state-fullerton-mitchell-berryhill"}
+        {"source_player_id": "cb-cal-state-fullerton-m-berryhill", "source_player_name": "M Berryhill", "player": "Mitchell Berryhill", "canonical_player_id": "cb-cal-state-fullerton-mitchell-berryhill"},
+        {"source_player_id": "cb-cal-state-fullerton-pellegrino", "source_player_name": "Pellegrino", "player": "Jeff Pellegrino", "canonical_player_id": "cb-cal-state-fullerton-jeff-pellegrino"}
       ]
     },
     {
@@ -417,7 +418,8 @@
         {"source_player_id": "cb-iowa-mitchell", "source_player_name": "Mitchell", "player": "Gable Mitchell", "canonical_player_id": "cb-iowa-gable-mitchell"},
         {"source_player_id": "cb-iowa-huckstorf", "source_player_name": "Huckstorf", "player": "Kyle Huckstorf", "canonical_player_id": "cb-iowa-kyle-huckstorf"},
         {"source_player_id": "cb-iowa-whitlock", "source_player_name": "Whitlock", "player": "Jack Whitlock", "canonical_player_id": "cb-iowa-jack-whitlock"},
-        {"source_player_id": "cb-iowa-voelker", "source_player_name": "Voelker", "player": "Zach Voelker", "canonical_player_id": "cb-iowa-zach-voelker"}
+        {"source_player_id": "cb-iowa-voelker", "source_player_name": "Voelker", "player": "Zach Voelker", "canonical_player_id": "cb-iowa-zach-voelker"},
+        {"source_player_id": "cb-iowa-cad-lanoue", "source_player_name": "Cad.-Lanoue", "player": "Elliott Cadieux-Lanoue", "canonical_player_id": "cb-iowa-elliott-cadieux-lanoue"}
       ]
     },
     {
@@ -614,7 +616,9 @@
         {"source_player_id": "cb-texas-burns", "source_player_name": "Burns", "player": "Thomas Burns", "canonical_player_id": "cb-texas-thomas-burns"},
         {"source_player_id": "cb-texas-mendoza", "source_player_name": "Mendoza", "player": "Ethan Mendoza", "canonical_player_id": "cb-texas-ethan-mendoza"},
         {"source_player_id": "cb-texas-rodriguez", "source_player_name": "Rodriguez", "player": "Adrian Rodriguez", "canonical_player_id": "cb-texas-adrian-rodriguez"},
-        {"source_player_id": "cb-texas-borba", "source_player_name": "Borba", "player": "Casey Borba", "canonical_player_id": "cb-texas-casey-borba"}
+        {"source_player_id": "cb-texas-borba", "source_player_name": "Borba", "player": "Casey Borba", "canonical_player_id": "cb-texas-casey-borba"},
+        {"source_player_id": "cb-texas-walker", "source_player_name": "Walker", "player": "Ethan Walker", "canonical_player_id": "cb-texas-ethan-walker"},
+        {"source_player_id": "cb-texas-volantis", "source_player_name": "Volantis", "player": "Dylan Volantis", "canonical_player_id": "cb-texas-dylan-volantis"}
       ]
     },
     {
@@ -982,7 +986,38 @@
         {"source_player_id":"cb-james-madison-dunaway","source_player_name":"Dunaway","player":"Mason Dunaway","canonical_player_id":"cb-james-madison-mason-dunaway"},
         {"source_player_id":"cb-james-madison-langley","source_player_name":"Langley","player":"Kyle Langley","canonical_player_id":"cb-james-madison-kyle-langley"},
         {"source_player_id":"cb-james-madison-logar","source_player_name":"Logar","player":"Jackson Logar","canonical_player_id":"cb-james-madison-jackson-logar"},
-        {"source_player_id":"cb-james-madison-vogatsky","source_player_name":"Vogatsky","player":"Joe Vogatsky","canonical_player_id":"cb-james-madison-joe-vogatsky"}
+        {"source_player_id":"cb-james-madison-vogatsky","source_player_name":"Vogatsky","player":"Joe Vogatsky","canonical_player_id":"cb-james-madison-joe-vogatsky"},
+        {"source_player_id":"cb-james-madison-o-donnell","source_player_name":"O'Donnell","player":"Brendan O'Donnell","canonical_player_id":"cb-james-madison-brendan-o-donnell"}
+      ]
+    },
+    {
+      "game_id": "cb-2021-03-13-uc-riverside-san-diego-att0097",
+      "team": "UC Riverside",
+      "description": "Owner-confirmed full name for Anthony McFarland; preserve the March 13 source pitching and batting lines.",
+      "verified_on": "2026-11-02",
+      "evidence_urls": ["https://gohighlanders.com/sports/baseball/roster"],
+      "corrections": [
+        {"source_player_id": "cb-uc-riverside-mcfarland", "source_player_name": "McFarland", "player": "Anthony McFarland", "canonical_player_id": "cb-uc-riverside-anthony-mcfarland"}
+      ]
+    },
+    {
+      "game_id": "cb-2021-03-14-uc-riverside-san-diego-att0098",
+      "team": "UC Riverside",
+      "description": "Owner-confirmed full name for Anthony McFarland; preserve the March 14 source pitching and batting lines.",
+      "verified_on": "2026-11-02",
+      "evidence_urls": ["https://gohighlanders.com/sports/baseball/roster"],
+      "corrections": [
+        {"source_player_id": "cb-uc-riverside-mcfarland", "source_player_name": "McFarland", "player": "Anthony McFarland", "canonical_player_id": "cb-uc-riverside-anthony-mcfarland"}
+      ]
+    },
+    {
+      "game_id": "cb-2024-02-25-wichita-state-iowa-att0238",
+      "team": "Iowa",
+      "description": "Expand the historical Elliott Cadieux-Lanoue surname abbreviation, matching the owner-confirmed Iowa identity and retaining the game statistics.",
+      "verified_on": "2026-11-02",
+      "evidence_urls": ["https://iuhoosiers.com/documents/download/2025/4/24/Iowa.pdf"],
+      "corrections": [
+        {"source_player_id": "cb-iowa-elliot-cad-lanoue", "source_player_name": "Elliot Cad.-Lanoue", "player": "Elliott Cadieux-Lanoue", "canonical_player_id": "cb-iowa-elliott-cadieux-lanoue"}
       ]
     }
   ]

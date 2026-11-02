@@ -88,6 +88,10 @@ CONFIRMED_2024_BALLPARK_MATCHUPS={
         ("Lamore Field at Gray-Minor Stadium", "Lexington", "VA"),
     ("2024-03-26", "William and Mary", "VCU"):
         ("The Diamond", "Richmond", "VA"),
+    ("2024-03-29", "Sam Houston State", "Liberty"):
+        ("Worthington Field at Liberty Baseball Stadium", "Lynchburg", "VA"),
+    ("2024-03-30", "South Alabama", "Old Dominion"):
+        ("Bud Metheny Ballpark", "Norfolk", "VA"),
 }
 
 

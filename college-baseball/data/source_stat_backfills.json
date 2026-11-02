@@ -512,7 +512,7 @@
     {
       "game_id": "cb-2018-03-13-san-diego-state-san-diego-att0017",
       "source_url": "https://s3.us-east-2.amazonaws.com/sidearm.nextgen.sites/usdtoreros.com/documents/2018/5/10/14105__m_basebl_2017_18_misc_non_event__USDvsSDSUboxMar13.pdf",
-      "verification_note": "Official March 13 San Diego State at San Diego gamebook: SDSU 9, USD 3. SDSU 44 PA equals USD 44 BF; USD 40 PA equals SDSU 40 BF. Two HBP each, SDSU Calabuig SH, and SDSU Nevarez and Escobedo SF.",
+      "verification_note": "Official March 13 San Diego State at San Diego gamebook: SDSU 9, USD 3. SDSU 44 PA equals USD 44 BF; USD 40 PA equals SDSU 40 BF. Two HBP each, SDSU Calabuig SH, and SDSU Nevarez and Escobedo SF. Three doubles: SDSU Verdon and Nevarez, USD Schuyler; no triples or home runs.",
       "expected_batting_rows": 23,
       "expected_pitching_rows": 14,
       "hit_by_pitch": {
@@ -527,6 +527,15 @@
       "sac_flies": {
         "cb-san-diego-state-dean-nevarez": 1,
         "cb-san-diego-state-julian-escobedo": 1
+      },
+      "extra_base_hits": {
+        "doubles": {
+          "cb-san-diego-state-jordan-verdon": 1,
+          "cb-san-diego-state-dean-nevarez": 1,
+          "cb-san-diego-jay-schuyler": 1
+        },
+        "triples": {},
+        "home_runs": {}
       },
       "batters_faced": {
         "cb-san-diego-state-justin-goossen-brown": 13,

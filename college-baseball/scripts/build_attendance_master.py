@@ -8,6 +8,25 @@ ROOT=Path(__file__).resolve().parents[1]
 DATA=ROOT/"data"
 COLS=["date","away","home","ballpark","city","state","neutral_site","game_number","game_type","postseason_round","away_score","home_score","source_url","notes"]
 ALIASES={"North Carolina State":"NC State","Central Florida":"UCF"}
+CONFIRMED_BALLPARK_EXCEPTIONS={
+    "2018-02-23": {("Cal Poly", "Arkansas"): ("Tony Gwynn Stadium", "San Diego", "CA")},
+    "2019-02-19": {("UC Irvine", "San Diego State"): ("Tony Gwynn Stadium", "San Diego", "CA")},
+    "2019-02-26": {("San Diego", "San Diego State"): ("Tony Gwynn Stadium", "San Diego", "CA")},
+    "2019-03-05": {("San Diego", "UC Riverside"): ("Riverside Sports Complex", "Riverside", "CA")},
+    "2019-03-26": {("San Diego", "UC Irvine"): ("Anteater Ballpark", "Irvine", "CA")},
+    **{d: {("San Diego", "Santa Clara"): ("Stephen Schott Stadium", "Santa Clara", "CA")}
+       for d in ("2019-05-03", "2019-05-04", "2019-05-05")},
+}
+
+
+def confirmed_ballpark(game):
+    """User-confirmed 2017–2019 locations; preserve individual neutral-site exceptions."""
+    if game["season"] not in (2017, 2018, 2019):
+        return None
+    return CONFIRMED_BALLPARK_EXCEPTIONS.get(game["date"], {}).get(
+        (game["away"], game["home"]), ("Fowler Park", "San Diego", "CA")
+    )
+
 # Exclude NJCAA/junior-college games from box-score backfill; retain source attendance rows.
 JUNIOR_COLLEGE_TEAMS={"Walters State","Pellissippi State","USC Salkehatchie","Wabash Valley"}
 
@@ -49,6 +68,9 @@ def build(source,prior):
             assert (g["date"]==date or date_is_approved) and (
                 g["away"],g["home"]
             )==(away,home),"source/verified game identity conflict"
+            venue=confirmed_ballpark(g)
+            if venue:
+                g={**g,"ballpark":venue[0],"city":venue[1],"state":venue[2]}
             result.append(g)
             continue
         a,b=row["away_score"],row["home_score"]
@@ -74,6 +96,9 @@ def build(source,prior):
         if away in JUNIOR_COLLEGE_TEAMS or home in JUNIOR_COLLEGE_TEAMS:
             g["boxscore_backfill_excluded"]=True
             g["boxscore_backfill_exclusion_reason"]="junior_college"
+        venue=confirmed_ballpark(g)
+        if venue:
+            g.update(zip(("ballpark","city","state"),venue))
         result.append(g)
     assert len(result)==len({g["id"] for g in result})==444
     assert len({g["source_worksheet_row"] for g in result})==444

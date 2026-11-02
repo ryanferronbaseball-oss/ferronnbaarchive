@@ -7,9 +7,11 @@
   const mapElement=$('venueMap');if(!mapElement)return;
   const fallback=$('venueMapLoading');
 
-  fetch('./venues/data/venues.json').then(r=>{if(!r.ok)throw Error('venue directory unavailable');return r.json()}).then(data=>{
+  const venuesRequest=fetch('./venues/data/venues.json').then(r=>{if(!r.ok)throw Error('venue directory unavailable');return r.json()});
+  const photosRequest=fetch('./venues/data/photos.json').then(r=>r.ok?r.json():{photos:{}}).catch(()=>({photos:{}}));
+  Promise.all([venuesRequest,photosRequest]).then(([data,photoData])=>{
     if(!window.L)throw Error('map library unavailable');
-    const venues=data.venues;
+    const venues=data.venues,photos=photoData.photos||{};
     if(venues.length!==129)throw Error('venue inventory incomplete');
     $('venueCount').textContent=venues.length.toLocaleString();
     $('venueGameCount').textContent=data.mappedGames.toLocaleString();
@@ -34,7 +36,9 @@
         title:v.name,
         icon:L.divIcon({className:'',html:`<span class="venue-sport-pin" style="--pin-color:${color}"></span>`,iconSize:[24,24],iconAnchor:[12,12]})
       });
-      marker.bindPopup(`<div class="venue-popup"><small>${esc(v.sport)}</small><h3>${esc(v.name)}</h3><p>${esc(v.city)}</p><div class="venue-popup-facts"><span>Games attended<strong>${v.visits}</strong></span><span>First visit<strong style="font-size:12px">${formatDate(v.firstVisit)}</strong></span></div><a href="./venues/venue.html?id=${encodeURIComponent(v.id)}">View venue profile &rarr;</a></div>`,{maxWidth:290});
+      const photo=photos[v.id];
+      const photoHtml=photo?`<img class="venue-popup-photo" src="./venues/photos/${encodeURIComponent(photo.file)}" alt="${esc(photo.alt)}" loading="lazy">`:'';
+      marker.bindPopup(`<div class="venue-popup">${photoHtml}<small>${esc(v.sport)}</small><h3>${esc(v.name)}</h3><p>${esc(v.city)}</p><div class="venue-popup-facts"><span>Games attended<strong>${v.visits}</strong></span><span>First visit<strong style="font-size:12px">${formatDate(v.firstVisit)}</strong></span></div><a href="./venues/venue.html?id=${encodeURIComponent(v.id)}">View venue profile &rarr;</a></div>`,{maxWidth:290});
       markers.set(v.id,marker);
     });
     let selectedSport='All',search='';

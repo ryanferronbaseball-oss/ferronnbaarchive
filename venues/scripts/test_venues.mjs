@@ -6,6 +6,7 @@ const repo=path.resolve(import.meta.dirname,'../..');
 const file=path.join(repo,'venues/data/venues.json');
 const data=JSON.parse(fs.readFileSync(file,'utf8'));
 const venues=data.venues;
+const photos=JSON.parse(fs.readFileSync(path.join(repo,'venues/data/photos.json'),'utf8')).photos;
 assert.equal(data.venueCount,129);
 assert.equal(venues.length,129);
 assert.equal(data.mappedGames,705);
@@ -13,6 +14,15 @@ assert.equal(data.excludedUnassignedGames,7);
 assert.equal(new Set(venues.map(v=>v.id)).size,129);
 assert.equal(new Set(venues.map(v=>v.name)).size,129);
 assert.equal(new Set(venues.map(v=>v.sport)).size,7);
+assert.equal(Object.keys(photos).length,6);
+for(const [id,photo] of Object.entries(photos)){
+  assert.ok(venues.some(v=>v.id===id),`${id}: photo venue missing`);
+  assert.ok(photo.alt&&photo.credit,`${id}: photo metadata incomplete`);
+  assert.ok(/^[a-z0-9-]+\.jpeg$/.test(photo.file),`${id}: photo filename is not safe`);
+  const asset=path.join(repo,'venues/photos',photo.file);
+  assert.ok(fs.existsSync(asset),`${id}: photo asset missing`);
+  assert.ok(fs.statSync(asset).size>100_000,`${id}: photo asset unexpectedly small`);
+}
 const expected={'College Baseball':84,'College Basketball':18,'MLB':18,'College Football':3,'NBA':2,'NFL':2,'Soccer':2};
 for(const [sport,count] of Object.entries(expected))assert.equal(venues.filter(v=>v.sport===sport).length,count);
 let total=0;

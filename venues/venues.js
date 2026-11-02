@@ -8,10 +8,12 @@
   const profileHref=v=>`./venue.html?id=${encodeURIComponent(v.id)}`;
   const score=g=>g.awayScore==null||g.homeScore==null?'—':`${g.awayScore}–${g.homeScore}`;
   const page=document.body.dataset.venuePage;
-  fetch('./data/venues.json').then(r=>{if(!r.ok)throw Error('venue data unavailable');return r.json()}).then(data=>{
+  const venuesRequest=fetch('./data/venues.json').then(r=>{if(!r.ok)throw Error('venue data unavailable');return r.json()});
+  const photosRequest=fetch('./data/photos.json').then(r=>r.ok?r.json():{photos:{}}).catch(()=>({photos:{}}));
+  Promise.all([venuesRequest,photosRequest]).then(([data,photoData])=>{
     if(data.venues.length!==129)throw Error('venue inventory incomplete');
     if(page==='directory')renderDirectory(data.venues);
-    else if(page==='profile')renderProfile(data.venues);
+    else if(page==='profile')renderProfile(data.venues,photoData.photos||{});
   }).catch(err=>{
     const target=page==='directory'?$('venueDirectory'):$('venueProfile');
     if(target)target.innerHTML=`<div class="vp-empty">Venue information is temporarily unavailable. <a href="../">Return to Courtside Archive</a>.</div>`;
@@ -34,7 +36,7 @@
   }
   function dataGameTotal(venues){return venues.reduce((n,v)=>n+v.visits,0);}
 
-  function renderProfile(venues){
+  function renderProfile(venues,photos){
     const id=new URLSearchParams(window.location.search).get('id');
     const v=venues.find(x=>x.id===id),target=$('venueProfile');
     if(!v){target.innerHTML='<div class="vp-intro"><h1>Venue not found.</h1><p>Try the <a href="./">complete venue directory</a> or the <a href="../#venues">interactive map</a>.</p></div>';return;}
@@ -42,6 +44,9 @@
     $('venueCrumb').textContent=v.name;
     const first=v.games[0],years=new Set(v.games.map(g=>g.date.slice(0,4))).size;
     const photoLabel=v.sport.includes('Basketball')||v.sport==='NBA'?'Arena profile':v.sport.includes('Football')||v.sport==='NFL'?'Stadium profile':'Ballpark profile';
+    const photo=photos[v.id];
+    const photoFile=photo?`./photos/${encodeURIComponent(photo.file)}`:'';
+    const photoMarkup=photo?`<figure class="vp-photo-figure"><a href="${esc(photoFile)}" target="_blank" rel="noopener noreferrer" aria-label="View full-size photograph of ${esc(v.name)}"><img src="${esc(photoFile)}" alt="${esc(photo.alt)}" loading="eager" decoding="async"></a><figcaption>Photo: ${esc(photo.credit)} <a href="${esc(photoFile)}" target="_blank" rel="noopener noreferrer">View full image ↗</a></figcaption></figure>`:`<div class="vp-photo-placeholder" aria-label="Stadium photography will be added later"><span>Courtside Archive</span><strong>${esc(photoLabel)}</strong></div>`;
     const sources=v.sources.map((url,i)=>`<li><a href="${esc(url)}" target="_blank" rel="noopener noreferrer">Venue reference ${i+1} ↗</a></li>`).join('');
     target.innerHTML=`
       <section class="vp-profile-head">
@@ -55,7 +60,7 @@
             <a class="secondary" href="${esc(sportRoutes[v.sport]||'../')}">Explore ${esc(v.sport)} archive ↗</a>
           </div>
         </div>
-        <div class="vp-photo-placeholder" aria-label="Stadium photography will be added later"><span>Courtside Archive</span><strong>${esc(photoLabel)}</strong></div>
+        ${photoMarkup}
       </section>
       <section class="vp-stats" aria-label="Personal attendance overview">
         <div class="vp-stat"><span>Games attended</span><strong>${v.visits.toLocaleString()}</strong></div>

@@ -43,6 +43,14 @@ function aggregate(archive,registry){
  });
 }
 
+function compareDraftClass(a,b,newestFirst){
+ const aYear=a.draft_pick==null?0:Number(a.draft_year)||0;
+ const bYear=b.draft_pick==null?0:Number(b.draft_year)||0;
+ if(!aYear)return bYear?1:a.name.localeCompare(b.name);
+ if(!bYear)return -1;
+ return (newestFirst?bYear-aYear:aYear-bYear)||a.draft_pick-b.draft_pick||a.name.localeCompare(b.name);
+}
+
 function render(){
  const query=$("search").value.trim().toLowerCase(),sort=$("sort").value;
  const matches=players.filter(p=>[p.name,...p.teams,p.draft_team||"",String(p.draft_year||"")].join(" ").toLowerCase().includes(query));
@@ -50,6 +58,8 @@ function render(){
   :sort==="hits"?b.hits-a.hits||a.name.localeCompare(b.name)
   :sort==="strikeouts"?b.strikeouts-a.strikeouts||a.name.localeCompare(b.name)
   :sort==="games"?b.games.length-a.games.length||a.name.localeCompare(b.name)
+  :sort==="draft-newest"?compareDraftClass(a,b,true)
+  :sort==="draft-oldest"?compareDraftClass(a,b,false)
   :(a.draft_pick??999)-(b.draft_pick??999)||a.name.localeCompare(b.name));
  if(!matches.length){
   $("cards").innerHTML='<div class="alumni-empty">'+(query?"No players match this search.":"No confirmed MLB alumni found.")+'</div>';

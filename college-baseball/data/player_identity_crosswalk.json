@@ -4,8 +4,8 @@
   "source": "Original archive owner confirmed each multi-school person",
   "original_attendance_ids_preserved": 444,
   "original_player_game_rows_preserved": 13183,
-  "requested_person_merges": 141,
-  "activated_person_merges": 138,
+  "requested_person_merges": 147,
+  "activated_person_merges": 144,
   "pending_person_merges": 3,
   "merge_policy": "Only listed pair of exact normalized person names and school-specific original source player IDs; all other IDs remain separate",
   "owner_rejected_merge_candidates": [
@@ -2812,6 +2812,72 @@
         {"team": "Texas", "source_player_id": "cb-texas-josh-livingston"}
       ],
       "source_rows": 3
+    },
+    {
+      "name": "Jett Lovett",
+      "canonical_id": "cb-georgia-tech-jett-lovett",
+      "source_player_ids": ["cb-georgia-tech-jett-lovett", "cb-georgia-southern-jett-lovett"],
+      "schools": ["Georgia Tech", "Georgia Southern"],
+      "pairs": [
+        {"team": "Georgia Tech", "source_player_id": "cb-georgia-tech-jett-lovett"},
+        {"team": "Georgia Southern", "source_player_id": "cb-georgia-southern-jett-lovett"}
+      ],
+      "source_rows": 2
+    },
+    {
+      "name": "Brennan Hudson",
+      "canonical_id": "cb-georgia-state-brennan-hudson",
+      "source_player_ids": ["cb-georgia-state-brennan-hudson", "cb-georgia-brennan-hudson"],
+      "schools": ["Georgia State", "Georgia"],
+      "pairs": [
+        {"team": "Georgia State", "source_player_id": "cb-georgia-state-brennan-hudson"},
+        {"team": "Georgia", "source_player_id": "cb-georgia-brennan-hudson"}
+      ],
+      "source_rows": 3
+    },
+    {
+      "name": "Davis Chastain",
+      "canonical_id": "cb-georgia-state-davis-chastain",
+      "source_player_ids": ["cb-georgia-state-davis-chastain", "cb-georgia-davis-chastain"],
+      "schools": ["Georgia State", "Georgia"],
+      "pairs": [
+        {"team": "Georgia State", "source_player_id": "cb-georgia-state-davis-chastain"},
+        {"team": "Georgia", "source_player_id": "cb-georgia-davis-chastain"}
+      ],
+      "source_rows": 3
+    },
+    {
+      "name": "Ryan Calvert",
+      "canonical_id": "cb-unc-wilmington-ryan-calvert",
+      "source_player_ids": ["cb-unc-wilmington-ryan-calvert", "cb-duke-ryan-calvert"],
+      "schools": ["UNC Wilmington", "Duke"],
+      "pairs": [
+        {"team": "UNC Wilmington", "source_player_id": "cb-unc-wilmington-ryan-calvert"},
+        {"team": "Duke", "source_player_id": "cb-duke-ryan-calvert"}
+      ],
+      "source_rows": 2
+    },
+    {
+      "name": "Trevor Hinkel",
+      "canonical_id": "cb-pepperdine-trevor-hinkel",
+      "source_player_ids": ["cb-pepperdine-trevor-hinkel", "cb-coastal-carolina-trevor-hinkel"],
+      "schools": ["Pepperdine", "Coastal Carolina"],
+      "pairs": [
+        {"team": "Pepperdine", "source_player_id": "cb-pepperdine-trevor-hinkel"},
+        {"team": "Coastal Carolina", "source_player_id": "cb-coastal-carolina-trevor-hinkel"}
+      ],
+      "source_rows": 3
+    },
+    {
+      "name": "Hayden Cody",
+      "canonical_id": "cb-cal-state-northridge-hayden-cody",
+      "source_player_ids": ["cb-cal-state-northridge-hayden-cody", "cb-san-diego-hayden-cody"],
+      "schools": ["Cal State Northridge", "San Diego"],
+      "pairs": [
+        {"team": "Cal State Northridge", "source_player_id": "cb-cal-state-northridge-hayden-cody"},
+        {"team": "San Diego", "source_player_id": "cb-san-diego-hayden-cody"}
+      ],
+      "source_rows": 4
     }
   ]
 }

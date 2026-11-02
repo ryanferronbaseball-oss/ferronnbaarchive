@@ -1,0 +1,22 @@
+{
+  "chunk": 14,
+  "confirmed_on": "2026-11-02",
+  "policy": "Apply owner-confirmed source-scoped names and exact cross-school matches, preserving all original game and statistical records.",
+  "confirmed_name_corrections": [
+    {"source_id": "cb-texas-walker", "name": "Ethan Walker"},
+    {"source_id": "cb-texas-volantis", "name": "Dylan Volantis"},
+    {"source_id": "cb-cal-state-fullerton-pellegrino", "name": "Jeff Pellegrino"},
+    {"source_id": "cb-uc-riverside-mcfarland", "name": "Anthony McFarland"},
+    {"source_id": "cb-james-madison-o-donnell", "name": "Brendan O'Donnell"},
+    {"source_id": "cb-iowa-cad-lanoue", "name": "Elliott Cadieux-Lanoue", "owner_followup": "Full spelling supplied after initial HOLD; also normalize the existing Elliot Cad.-Lanoue source variant", "evidence": "https://iuhoosiers.com/documents/download/2025/4/24/Iowa.pdf"}
+  ],
+  "confirmed_merges": [
+    {"name": "Wil Libbert", "schools": ["Missouri", "Ole Miss"], "evidence": "https://olemisssports.com/sports/baseball/roster"},
+    {"name": "Marvcus Guarin", "schools": ["Seattle", "Pacific"], "evidence": "https://pacifictigers.com/sports/baseball/roster/marvcus-guarin/4743"},
+    {"name": "David Horn Jr.", "schools": ["Vanderbilt", "Middle Tennessee State"], "evidence": "https://goblueraiders.com/sports/baseball/roster/david-horn-jr/14420"},
+    {"name": "Andrew Bowers", "schools": ["Coastal Carolina", "The Citadel"], "evidence": "https://citadelsports.com/sports/baseball/roster/andrew-bowers/10673"}
+  ],
+  "rejected_merges": [
+    {"name": "Ryan Higgins", "schools": ["Duke", "Fresno State"]}
+  ]
+}

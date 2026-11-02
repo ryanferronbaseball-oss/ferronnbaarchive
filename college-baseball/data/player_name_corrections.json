@@ -400,14 +400,20 @@
     {
       "game_id": "cb-2024-02-23-iowa-auburn-att0235",
       "team": "Iowa",
-      "description": "Resolve the Auburn gamebook's surname-only Iowa pitcher Brecht to confirmed Rockies draftee Brody Brecht while retaining his pitching statistics.",
-      "verified_on": "2026-11-01",
+      "description": "Resolve Brody Brecht and six additional owner-confirmed surname-only Iowa entries in the February 23, 2024 Auburn gamebook, preserving all batting and pitching statistics.",
+      "verified_on": "2026-11-02",
       "evidence_urls": [
         "https://storage.googleapis.com/auburn-prod/2024/05/16/Qwfk9D0ysZymh4NIW2QjKniQFWvF2vNh2c5nSnd5.pdf",
         "https://hawkeyesports.com/news/2024/07/14/brecht-selected-by-colorado-in-cb-a-round-of-mlb-draft"
       ],
       "corrections": [
-        {"source_player_id": "cb-iowa-brecht", "source_player_name": "Brecht", "player": "Brody Brecht", "canonical_player_id": "cb-iowa-brody-brecht"}
+        {"source_player_id": "cb-iowa-brecht", "source_player_name": "Brecht", "player": "Brody Brecht", "canonical_player_id": "cb-iowa-brody-brecht"},
+        {"source_player_id": "cb-iowa-seegers", "source_player_name": "Seegers", "player": "Michael Seegers", "canonical_player_id": "cb-iowa-michael-seegers"},
+        {"source_player_id": "cb-iowa-petersen", "source_player_name": "Petersen", "player": "Sam Petersen", "canonical_player_id": "cb-iowa-sam-petersen"},
+        {"source_player_id": "cb-iowa-tello", "source_player_name": "Tello", "player": "Raider Tello", "canonical_player_id": "cb-iowa-raider-tello"},
+        {"source_player_id": "cb-iowa-cop", "source_player_name": "Cop", "player": "Davis Cop", "canonical_player_id": "cb-iowa-davis-cop"},
+        {"source_player_id": "cb-iowa-moore", "source_player_name": "Moore", "player": "Reese Moore", "canonical_player_id": "cb-iowa-reese-moore"},
+        {"source_player_id": "cb-iowa-wilmes", "source_player_name": "Wilmes", "player": "Ben Wilmes", "canonical_player_id": "cb-iowa-ben-wilmes"}
       ]
     },
     {

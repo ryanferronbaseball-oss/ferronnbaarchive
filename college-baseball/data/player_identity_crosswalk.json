@@ -5,8 +5,8 @@
   "original_attendance_ids_preserved": 444,
   "original_player_game_rows_preserved": 13183,
   "requested_person_merges": 161,
-  "activated_person_merges": 158,
-  "pending_person_merges": 3,
+  "activated_person_merges": 161,
+  "pending_person_merges": 0,
   "merge_policy": "Only listed pair of exact normalized person names and school-specific original source player IDs; all other IDs remain separate",
   "owner_rejected_merge_candidates": [
     {
@@ -3175,6 +3175,42 @@
       ],
       "source_rows": 2,
       "identity_source_url": "https://citadelsports.com/sports/baseball/roster/andrew-bowers/10673"
+    },
+    {
+      "name": "Tate Soderstrom",
+      "canonical_id": "cb-uc-san-diego-tate-soderstrom",
+      "source_player_ids": ["cb-arizona-t-soderstrom", "cb-uc-san-diego-tate-soderstrom"],
+      "schools": ["Arizona", "UC San Diego"],
+      "pairs": [
+        {"team": "Arizona", "source_player_id": "cb-arizona-t-soderstrom"},
+        {"team": "UC San Diego", "source_player_id": "cb-uc-san-diego-tate-soderstrom"}
+      ],
+      "source_rows": 7,
+      "identity_source_url": "https://ucsdtritons.com/sports/baseball/roster/tate-soderstrom/10975"
+    },
+    {
+      "name": "Ethan Lizama",
+      "canonical_id": "cb-south-carolina-ethan-lizama",
+      "source_player_ids": ["cb-western-kentucky-e-lizama", "cb-south-carolina-ethan-lizama"],
+      "schools": ["Western Kentucky", "South Carolina"],
+      "pairs": [
+        {"team": "Western Kentucky", "source_player_id": "cb-western-kentucky-e-lizama"},
+        {"team": "South Carolina", "source_player_id": "cb-south-carolina-ethan-lizama"}
+      ],
+      "source_rows": 2,
+      "identity_source_url": "https://wkusports.com/sports/baseball/roster/lizama-ethan/5461"
+    },
+    {
+      "name": "Kyle Hvidsten",
+      "canonical_id": "cb-liberty-kyle-hvidsten",
+      "source_player_ids": ["cb-western-kentucky-k-hvidsten", "cb-liberty-kyle-hvidsten"],
+      "schools": ["Western Kentucky", "Liberty"],
+      "pairs": [
+        {"team": "Western Kentucky", "source_player_id": "cb-western-kentucky-k-hvidsten"},
+        {"team": "Liberty", "source_player_id": "cb-liberty-kyle-hvidsten"}
+      ],
+      "source_rows": 2,
+      "identity_source_url": "https://libertyflames.com/sports/baseball/roster"
     }
   ]
 }

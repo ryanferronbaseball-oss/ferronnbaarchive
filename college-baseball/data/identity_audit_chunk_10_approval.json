@@ -1,0 +1,23 @@
+{
+  "chunk": 10,
+  "confirmed_on": "2026-11-02",
+  "policy": "Apply only owner-approved game-scoped names and exact school-scoped identities; do not mutate original player statistics or game records.",
+  "confirmed_name_corrections": [
+    {"source_id": "cb-vanderbilt-vastine", "canonical_id": "cb-vanderbilt-jonathan-vastine", "name": "Jonathan Vastine"},
+    {"source_id": "cb-vanderbilt-mancini", "canonical_id": "cb-vanderbilt-mike-mancini", "name": "Mike Mancini"},
+    {"source_id": "cb-vanderbilt-humphrey", "canonical_id": "cb-vanderbilt-jacob-humphrey", "name": "Jacob Humphrey"},
+    {"source_id": "cb-vanderbilt-holcomb", "canonical_id": "cb-vanderbilt-braden-holcomb", "name": "Braden Holcomb"},
+    {"source_id": "cb-vanderbilt-fennell", "canonical_id": "cb-vanderbilt-connor-fennell", "name": "Connor Fennell"},
+    {"source_id": "cb-vanderbilt-barczi", "canonical_id": "cb-vanderbilt-colin-barczi", "name": "Colin Barczi"}
+  ],
+  "confirmed_existing_merges": [
+    {"name": "Chris McHugh", "schools": ["NC State", "VCU"]},
+    {"name": "AJ Gracia", "schools": ["Duke", "Virginia"]}
+  ],
+  "rejected_merges": [
+    {"name": "Cade Brown", "schools": ["Georgia", "San Diego"]},
+    {"name": "Ryan Johnson", "schools": ["Dallas Baptist", "Pepperdine"]},
+    {"name": "Jacob Wilson", "schools": ["Cal Baptist", "Grand Canyon"]},
+    {"name": "Cole Johnson", "schools": ["Austin Peay", "Georgia"]}
+  ]
+}

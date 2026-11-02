@@ -10,6 +10,33 @@ const link=(s)=>{try{let u=new URL(s);return ["https:","http:"].includes(u.proto
 const gameUrl=g=>"./game.html?id="+encodeURIComponent(g.id);
 const playerUrl=p=>"./player.html?id="+encodeURIComponent(p.player_id);
 const unique=a=>[...new Set(a.filter(x=>x!=null&&x!==""))];
+// Several official gamebooks print surnames (or entire lineups) in capitals.
+// Correct only their presentation; player IDs, source names and stat lines stay intact.
+const caseSensitiveSurnames={MACCALLUM:"MacCallum",DEANNA:"DeAnna"};
+const preservedUpperNameParts=new Set(["II","III","IV","JR","AJ","BJ","CJ","DJ","JD","JJ","JP","JT","KJ","LJ","ND","PJ","RJ","TJ","TK","CC"]);
+const scorebookNeedsCase=name=>/[A-Z]{3,}/.test(String(name||""))&&String(name).split(/[^A-Za-z]+/).some(part=>
+ part.length>=3&&/^[A-Z]+$/.test(part)&&!preservedUpperNameParts.has(part) || /^Mc[A-Z]{3,}$/.test(part));
+function scorebookNameCase(name){
+ return String(name||"").replace(/[A-Za-z]+/g,word=>{
+  if(preservedUpperNameParts.has(word))return word;
+  if(caseSensitiveSurnames[word])return caseSensitiveSurnames[word];
+  if(/^Mc[A-Z]{2,}$/.test(word))return "Mc"+word[2]+word.slice(3).toLowerCase();
+  if(!/^[A-Z]{2,}$/.test(word))return word;
+  if(word.startsWith("MC")&&word.length>2)return "Mc"+word[2]+word.slice(3).toLowerCase();
+  return word[0]+word.slice(1).toLowerCase();
+ });
+}
+function preferredScorebookNameCases(rows){
+ const known=new Map();
+ const score=name=>(/[a-z][A-Z]/.test(name)?10:0)+(/['’][A-Z]/.test(name)?4:0)+(/\b(?:AJ|BJ|CJ|DJ|JD|JJ|JP|JT|KJ|LJ|PJ|RJ|TJ|TK)\b/.test(name)?2:0);
+ for(const row of rows){
+  const name=row.player;
+  if(typeof name!=="string"||scorebookNeedsCase(name))continue;
+  const key=name.toLowerCase(),old=known.get(key);
+  if(!old||score(name)>score(old))known.set(key,name);
+ }
+ return known;
+}
 function nav(active){
  const links=[["index.html","Overview","home"],["game.html","Games","games"],["stats.html","Players","players"],["records.html","Records","records"],["mlb-alumni.html","To the MLB","mlb-alumni"]];
  return '<header class="archive-header"><a class="archive-logo" href="./index.html">COURTSIDE ARCHIVE<small>EVERY GAME HAS A STORY · COLLEGE BASEBALL</small></a>'
@@ -180,6 +207,7 @@ async function load(){
   if(redirects.has(fix.source_player_id)&&redirects.get(fix.source_player_id)!==fix.canonical_player_id)throw Error("Conflicting name correction profile redirect");
   redirects.set(fix.source_player_id,fix.canonical_player_id);
  }
+ const knownNameCases=preferredScorebookNameCases(sourceRows);
  const appliedFixes=new Set();
  const rows=sourceRows.map(source=>{
   const key=[source.game_id,source.team,source.player_id].join("\u0000");
@@ -188,8 +216,10 @@ async function load(){
   if(fix)appliedFixes.add(key);
   const r=fix?{...source,player:fix.player,player_id:fix.canonical_player_id,
    original_game_player_id:source.player_id,original_game_player_name:source.player}:source;
-  const unified=scopedAliases.get(r.team+"\u0000"+r.player_id);
-  return unified?{...r,original_school_player_id:r.player_id,player_id:unified}:r;
+  const displayName=scorebookNeedsCase(r.player)?knownNameCases.get(r.player.toLowerCase())||scorebookNameCase(r.player):r.player;
+  const displayed=displayName===r.player?r:{...r,player:displayName};
+  const unified=scopedAliases.get(displayed.team+"\u0000"+displayed.player_id);
+  return unified?{...displayed,original_school_player_id:displayed.player_id,player_id:unified}:displayed;
  });
  if(appliedFixes.size!==fixedNames.size)throw Error("Verified player name correction did not match source game rows");
  if(!Array.isArray(games)||!Array.isArray(rows)||!Array.isArray(crosswalk))throw Error("Unexpected college baseball data structure");
@@ -350,9 +380,9 @@ function renderGames(d){
   const decision=g.pitching_decisions;
   const person=name=>{
    if(!name)return '<span class="mlb-decision-unavailable">No save</span>';
-   const p=players.find(x=>x.pitching&&(x.player===name||x.original_game_player_name===name));
+   const p=players.find(x=>x.pitching&&(x.player===name||x.original_game_player_name===name||x.player.toLowerCase()===String(name).toLowerCase()));
    return p?'<a class="mlb-decision-name" href="'+playerUrl(p)+'">'+esc(p.player)+'</a>'
-    :'<span class="mlb-decision-unavailable">'+esc(name)+'</span>';
+    :'<span class="mlb-decision-unavailable">'+esc(scorebookNameCase(name))+'</span>';
   };
   const decisions=decision?'<section class="panel mlb-decisions-panel" id="cb-pitching-decisions">'
    +'<div class="mlb-pregame-eyebrow">OFFICIAL COLLEGE GAME DECISIONS</div><h2>Win, Loss & Save</h2>'

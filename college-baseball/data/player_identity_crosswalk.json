@@ -4,8 +4,8 @@
   "source": "Original archive owner confirmed each multi-school person",
   "original_attendance_ids_preserved": 444,
   "original_player_game_rows_preserved": 13183,
-  "requested_person_merges": 108,
-  "activated_person_merges": 105,
+  "requested_person_merges": 114,
+  "activated_person_merges": 111,
   "pending_person_merges": 3,
   "merge_policy": "Only listed pair of exact normalized person names and school-specific original source player IDs; all other IDs remain separate",
   "merges": [
@@ -2393,6 +2393,111 @@
         {"team": "Tennessee", "source_player_id": "cb-tennessee-evan-blanco"}
       ],
       "source_rows": 6
+    },
+    {
+      "name": "Ashton Larson",
+      "canonical_id": "cb-lsu-ashton-larson",
+      "source_player_ids": [
+        "cb-lsu-ashton-larson",
+        "cb-texas-ashton-larson"
+      ],
+      "schools": [
+        "LSU",
+        "Texas"
+      ],
+      "pairs": [
+        {"team": "LSU", "source_player_id": "cb-lsu-ashton-larson"},
+        {"team": "Texas", "source_player_id": "cb-texas-ashton-larson"}
+      ],
+      "source_rows": 3
+    },
+    {
+      "name": "Jacob Faulkner",
+      "canonical_id": "cb-vanderbilt-jacob-faulkner",
+      "source_player_ids": [
+        "cb-princeton-jacob-faulkner",
+        "cb-vanderbilt-jacob-faulkner"
+      ],
+      "schools": [
+        "Princeton",
+        "Vanderbilt"
+      ],
+      "pairs": [
+        {"team": "Princeton", "source_player_id": "cb-princeton-jacob-faulkner"},
+        {"team": "Vanderbilt", "source_player_id": "cb-vanderbilt-jacob-faulkner"}
+      ],
+      "source_rows": 6
+    },
+    {
+      "name": "Deamez Ross",
+      "canonical_id": "cb-florida-state-deamez-ross",
+      "source_player_ids": [
+        "cb-florida-state-deamez-ross",
+        "cb-ucf-deamez-ross"
+      ],
+      "schools": [
+        "Florida State",
+        "UCF"
+      ],
+      "pairs": [
+        {"team": "Florida State", "source_player_id": "cb-florida-state-deamez-ross"},
+        {"team": "UCF", "source_player_id": "cb-ucf-deamez-ross"}
+      ],
+      "source_rows": 6
+    },
+    {
+      "name": "Tyler Cerny",
+      "canonical_id": "cb-indiana-tyler-cerny",
+      "source_player_ids": [
+        "cb-indiana-tyler-cerny",
+        "cb-kentucky-tyler-cerny"
+      ],
+      "schools": [
+        "Indiana",
+        "Kentucky"
+      ],
+      "pairs": [
+        {"team": "Indiana", "source_player_id": "cb-indiana-tyler-cerny"},
+        {"team": "Kentucky", "source_player_id": "cb-kentucky-tyler-cerny"}
+      ],
+      "source_rows": 4
+    },
+    {
+      "name": "Colby Wallace",
+      "canonical_id": "cb-east-carolina-colby-wallace",
+      "source_player_ids": [
+        "cb-cal-state-fullerton-colby-wallace",
+        "cb-east-carolina-colby-wallace"
+      ],
+      "schools": [
+        "Cal State Fullerton",
+        "East Carolina"
+      ],
+      "pairs": [
+        {"team": "Cal State Fullerton", "source_player_id": "cb-cal-state-fullerton-colby-wallace"},
+        {"team": "East Carolina", "source_player_id": "cb-east-carolina-colby-wallace"}
+      ],
+      "source_rows": 4
+    },
+    {
+      "name": "Mark Hindy",
+      "canonical_id": "cb-tennessee-mark-hindy",
+      "source_player_ids": [
+        "cb-william-and-mary-mark-hindy",
+        "cb-duke-mark-hindy",
+        "cb-tennessee-mark-hindy"
+      ],
+      "schools": [
+        "William and Mary",
+        "Duke",
+        "Tennessee"
+      ],
+      "pairs": [
+        {"team": "William and Mary", "source_player_id": "cb-william-and-mary-mark-hindy"},
+        {"team": "Duke", "source_player_id": "cb-duke-mark-hindy"},
+        {"team": "Tennessee", "source_player_id": "cb-tennessee-mark-hindy"}
+      ],
+      "source_rows": 4
     }
   ]
 }

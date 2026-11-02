@@ -4,8 +4,8 @@
   "source": "Original archive owner confirmed each multi-school person",
   "original_attendance_ids_preserved": 444,
   "original_player_game_rows_preserved": 13183,
-  "requested_person_merges": 118,
-  "activated_person_merges": 115,
+  "requested_person_merges": 124,
+  "activated_person_merges": 121,
   "pending_person_merges": 3,
   "merge_policy": "Only listed pair of exact normalized person names and school-specific original source player IDs; all other IDs remain separate",
   "owner_rejected_merge_candidates": [
@@ -2552,6 +2552,72 @@
         {"team": "LSU", "source_player_id": "cb-lsu-brayden-simpson"}
       ],
       "source_rows": 3
+    },
+    {
+      "name": "Temo Becerra",
+      "canonical_id": "cb-stanford-temo-becerra",
+      "source_player_ids": ["cb-stanford-temo-becerra", "cb-texas-temo-becerra"],
+      "schools": ["Stanford", "Texas"],
+      "pairs": [
+        {"team": "Stanford", "source_player_id": "cb-stanford-temo-becerra"},
+        {"team": "Texas", "source_player_id": "cb-texas-temo-becerra"}
+      ],
+      "source_rows": 3
+    },
+    {
+      "name": "Ryder Garino",
+      "canonical_id": "cb-south-carolina-ryder-garino",
+      "source_player_ids": ["cb-south-carolina-ryder-garino", "cb-nc-state-ryder-garino"],
+      "schools": ["South Carolina", "NC State"],
+      "pairs": [
+        {"team": "South Carolina", "source_player_id": "cb-south-carolina-ryder-garino"},
+        {"team": "NC State", "source_player_id": "cb-nc-state-ryder-garino"}
+      ],
+      "source_rows": 3
+    },
+    {
+      "name": "Joey Volchko",
+      "canonical_id": "cb-stanford-joey-volchko",
+      "source_player_ids": ["cb-stanford-joey-volchko", "cb-georgia-joey-volchko"],
+      "schools": ["Stanford", "Georgia"],
+      "pairs": [
+        {"team": "Stanford", "source_player_id": "cb-stanford-joey-volchko"},
+        {"team": "Georgia", "source_player_id": "cb-georgia-joey-volchko"}
+      ],
+      "source_rows": 2
+    },
+    {
+      "name": "Julien Peissel",
+      "canonical_id": "cb-unc-greensboro-julien-peissel",
+      "source_player_ids": ["cb-unc-greensboro-julien-peissel", "cb-nc-state-julien-peissel"],
+      "schools": ["UNC Greensboro", "NC State"],
+      "pairs": [
+        {"team": "UNC Greensboro", "source_player_id": "cb-unc-greensboro-julien-peissel"},
+        {"team": "NC State", "source_player_id": "cb-nc-state-julien-peissel"}
+      ],
+      "source_rows": 2
+    },
+    {
+      "name": "Ethan Darden",
+      "canonical_id": "cb-clemson-ethan-darden",
+      "source_player_ids": ["cb-clemson-ethan-darden", "cb-texas-a-m-ethan-darden"],
+      "schools": ["Clemson", "Texas A&M"],
+      "pairs": [
+        {"team": "Clemson", "source_player_id": "cb-clemson-ethan-darden"},
+        {"team": "Texas A&M", "source_player_id": "cb-texas-a-m-ethan-darden"}
+      ],
+      "source_rows": 3
+    },
+    {
+      "name": "Owen Sarna",
+      "canonical_id": "cb-winthrop-owen-sarna",
+      "source_player_ids": ["cb-winthrop-owen-sarna", "cb-alabama-owen-sarna"],
+      "schools": ["Winthrop", "Alabama"],
+      "pairs": [
+        {"team": "Winthrop", "source_player_id": "cb-winthrop-owen-sarna"},
+        {"team": "Alabama", "source_player_id": "cb-alabama-owen-sarna"}
+      ],
+      "source_rows": 2
     }
   ]
 }

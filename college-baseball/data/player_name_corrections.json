@@ -144,7 +144,7 @@
     {
       "game_id": "cb-2018-02-17-california-cincinnati-att0004",
       "team": "Cincinnati",
-      "description": "Link Cincinnati's surname-only Rodriguez to Manny Rodriguez, Perez to J.T. Perez, and Bumpass to A.J. Bumpass, using the official 2018 roster and adjacent full-name gamebooks. Preserve the original California gamebook records and statistics.",
+      "description": "Restore all 12 Cincinnati player names from California's surname-only February 17, 2018 gamebook, unifying the matching full-name appearances from the other Cincinnati games without changing source batting or pitching statistics.",
       "verified_on": "2026-10-31",
       "evidence_urls": [
         "https://calbears.com/sports/baseball/stats/2018/cincinnati/boxscore/19884",
@@ -155,7 +155,16 @@
       "corrections": [
         {"source_player_id": "cb-cincinnati-rodriguez", "source_player_name": "Rodriguez", "player": "Manny Rodriguez", "canonical_player_id": "cb-cincinnati-manny-rodriguez"},
         {"source_player_id": "cb-cincinnati-perez", "source_player_name": "Perez", "player": "J.T. Perez", "canonical_player_id": "cb-cincinnati-jt-perez"},
-        {"source_player_id": "cb-cincinnati-bumpass", "source_player_name": "Bumpass", "player": "AJ Bumpass", "canonical_player_id": "cb-cincinnati-aj-bumpass"}
+        {"source_player_id": "cb-cincinnati-bumpass", "source_player_name": "Bumpass", "player": "AJ Bumpass", "canonical_player_id": "cb-cincinnati-aj-bumpass"},
+        {"source_player_id": "cb-cincinnati-mottice", "source_player_name": "Mottice", "player": "Kyle Mottice", "canonical_player_id": "cb-cincinnati-kyle-mottice"},
+        {"source_player_id": "cb-cincinnati-thomas", "source_player_name": "Thomas", "player": "Joey Thomas", "canonical_player_id": "cb-cincinnati-joey-thomas"},
+        {"source_player_id": "cb-cincinnati-mcvey", "source_player_name": "McVey", "player": "Connor McVey", "canonical_player_id": "cb-cincinnati-connor-mcvey"},
+        {"source_player_id": "cb-cincinnati-mercer", "source_player_name": "Mercer", "player": "Jace Mercer", "canonical_player_id": "cb-cincinnati-jace-mercer"},
+        {"source_player_id": "cb-cincinnati-murphy", "source_player_name": "Murphy", "player": "Cole Murphy", "canonical_player_id": "cb-cincinnati-cole-murphy"},
+        {"source_player_id": "cb-cincinnati-haberkorn", "source_player_name": "Haberkorn", "player": "Treg Haberkorn", "canonical_player_id": "cb-cincinnati-treg-haberkorn"},
+        {"source_player_id": "cb-cincinnati-santiago", "source_player_name": "Santiago", "player": "Eric Santiago", "canonical_player_id": "cb-cincinnati-eric-santiago"},
+        {"source_player_id": "cb-cincinnati-lowe-ii", "source_player_name": "Lowe II", "player": "Doug Lowe II", "canonical_player_id": "cb-cincinnati-doug-lowe-ii"},
+        {"source_player_id": "cb-cincinnati-orndorff", "source_player_name": "Orndorff", "player": "David Orndorff", "canonical_player_id": "cb-cincinnati-david-orndorff"}
       ]
     },
     {

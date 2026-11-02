@@ -4,8 +4,8 @@
   "source": "Original archive owner confirmed each multi-school person",
   "original_attendance_ids_preserved": 444,
   "original_player_game_rows_preserved": 13183,
-  "requested_person_merges": 130,
-  "activated_person_merges": 127,
+  "requested_person_merges": 136,
+  "activated_person_merges": 133,
   "pending_person_merges": 3,
   "merge_policy": "Only listed pair of exact normalized person names and school-specific original source player IDs; all other IDs remain separate",
   "owner_rejected_merge_candidates": [
@@ -2682,6 +2682,72 @@
       "pairs": [
         {"team": "St. Louis", "source_player_id": "cb-st-louis-owen-kelly"},
         {"team": "Ole Miss", "source_player_id": "cb-ole-miss-owen-kelly"}
+      ],
+      "source_rows": 2
+    },
+    {
+      "name": "Aeden Finateri",
+      "canonical_id": "cb-georgia-tech-aeden-finateri",
+      "source_player_ids": ["cb-georgia-tech-aeden-finateri", "cb-alabama-aeden-finateri"],
+      "schools": ["Georgia Tech", "Alabama"],
+      "pairs": [
+        {"team": "Georgia Tech", "source_player_id": "cb-georgia-tech-aeden-finateri"},
+        {"team": "Alabama", "source_player_id": "cb-alabama-aeden-finateri"}
+      ],
+      "source_rows": 2
+    },
+    {
+      "name": "Garrett Brewer",
+      "canonical_id": "cb-michigan-state-garrett-brewer",
+      "source_player_ids": ["cb-michigan-state-garrett-brewer", "cb-auburn-garrett-brewer"],
+      "schools": ["Michigan State", "Auburn"],
+      "pairs": [
+        {"team": "Michigan State", "source_player_id": "cb-michigan-state-garrett-brewer"},
+        {"team": "Auburn", "source_player_id": "cb-auburn-garrett-brewer"}
+      ],
+      "source_rows": 2
+    },
+    {
+      "name": "Joey Spence",
+      "canonical_id": "cb-notre-dame-joey-spence",
+      "source_player_ids": ["cb-notre-dame-joey-spence", "cb-milwaukee-joey-spence"],
+      "schools": ["Notre Dame", "Milwaukee"],
+      "pairs": [
+        {"team": "Notre Dame", "source_player_id": "cb-notre-dame-joey-spence"},
+        {"team": "Milwaukee", "source_player_id": "cb-milwaukee-joey-spence"}
+      ],
+      "source_rows": 4
+    },
+    {
+      "name": "Ricky Reeth",
+      "canonical_id": "cb-notre-dame-ricky-reeth",
+      "source_player_ids": ["cb-notre-dame-ricky-reeth", "cb-florida-ricky-reeth"],
+      "schools": ["Notre Dame", "Florida"],
+      "pairs": [
+        {"team": "Notre Dame", "source_player_id": "cb-notre-dame-ricky-reeth"},
+        {"team": "Florida", "source_player_id": "cb-florida-ricky-reeth"}
+      ],
+      "source_rows": 3
+    },
+    {
+      "name": "Eli Thurmond",
+      "canonical_id": "cb-tampa-eli-thurmond",
+      "source_player_ids": ["cb-tampa-eli-thurmond", "cb-notre-dame-eli-thurmond"],
+      "schools": ["Tampa", "Notre Dame"],
+      "pairs": [
+        {"team": "Tampa", "source_player_id": "cb-tampa-eli-thurmond"},
+        {"team": "Notre Dame", "source_player_id": "cb-notre-dame-eli-thurmond"}
+      ],
+      "source_rows": 4
+    },
+    {
+      "name": "Caden Spivey",
+      "canonical_id": "cb-notre-dame-caden-spivey",
+      "source_player_ids": ["cb-notre-dame-caden-spivey", "cb-georgia-tech-caden-spivey"],
+      "schools": ["Notre Dame", "Georgia Tech"],
+      "pairs": [
+        {"team": "Notre Dame", "source_player_id": "cb-notre-dame-caden-spivey"},
+        {"team": "Georgia Tech", "source_player_id": "cb-georgia-tech-caden-spivey"}
       ],
       "source_rows": 2
     }

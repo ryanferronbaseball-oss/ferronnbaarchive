@@ -97,6 +97,14 @@ CONFIRMED_2024_BALLPARK_MATCHUPS={
 }
 
 
+CONFIRMED_2026_HOME_BALLPARKS={
+    "Tennessee": ("Lindsey Nelson Stadium", "Knoxville", "TN"),
+    "Louisville": ("Jim Patterson Stadium", "Louisville", "KY"),
+    "Kentucky": ("Kentucky Proud Park", "Lexington", "KY"),
+    "Vanderbilt": ("Hawkins Field", "Nashville", "TN"),
+}
+
+
 def confirmed_ballpark(game):
     """User-confirmed historical locations; respect 2024 partial-year updates."""
     if game["season"]==2021:
@@ -105,6 +113,12 @@ def confirmed_ballpark(game):
     if game["season"]==2022:
         return CONFIRMED_2022_BALLPARK_DATES.get(
             game["date"], ("Fowler Park", "San Diego", "CA"))
+    if game["season"]==2026:
+        if (game.get("game_type")=="conference_tournament"
+            or "SEC Tournament" in str(game.get("postseason_round") or "")
+            or game.get("neutral_site") is True):
+            return None
+        return CONFIRMED_2026_HOME_BALLPARKS.get(game["home"])
     if game["season"]==2024:
         return (CONFIRMED_2024_BALLPARK_MATCHUPS.get(
             (game["date"], game["away"], game["home"]))

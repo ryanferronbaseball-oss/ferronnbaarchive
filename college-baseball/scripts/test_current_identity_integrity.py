@@ -30,9 +30,9 @@ for game in [names, *names["games"]]:
         fixes[key] = fix
 
 merges = crosswalk["merges"]
-assert len(merges) == len({m["canonical_id"] for m in merges}) == 161
+assert len(merges) == len({m["canonical_id"] for m in merges}) == 162
 assert crosswalk["pending_person_merges"] == audit["pending_person_merges"] == 0
-assert crosswalk["activated_person_merges"] == audit["activated_person_merges"] == 161
+assert crosswalk["activated_person_merges"] == audit["activated_person_merges"] == 162
 rejected = {m["name"] for m in crosswalk["owner_rejected_merge_candidates"]}
 assert rejected.isdisjoint({m["name"] for m in merges})
 
@@ -89,6 +89,7 @@ for name, count, schools in (
     ("Tate Soderstrom", 7, {"Arizona", "UC San Diego"}),
     ("Ethan Lizama", 2, {"Western Kentucky", "South Carolina"}),
     ("Kyle Hvidsten", 2, {"Western Kentucky", "Liberty"}),
+    ("Dylan O\'Connell", 4, {"Western Kentucky", "Milwaukee"}),
 ):
     merge = next(m for m in merges if m["name"] == name)
     entries = profiles[merge["canonical_id"]]

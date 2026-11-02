@@ -4,8 +4,8 @@
   "source": "Original archive owner confirmed each multi-school person",
   "original_attendance_ids_preserved": 444,
   "original_player_game_rows_preserved": 13183,
-  "requested_person_merges": 151,
-  "activated_person_merges": 148,
+  "requested_person_merges": 153,
+  "activated_person_merges": 150,
   "pending_person_merges": 3,
   "merge_policy": "Only listed pair of exact normalized person names and school-specific original source player IDs; all other IDs remain separate",
   "owner_rejected_merge_candidates": [
@@ -69,6 +69,34 @@
       "name": "Cole Johnson",
       "schools": ["Austin Peay", "Georgia"],
       "source_player_ids": ["cb-austin-peay-cole-johnson", "cb-georgia-cole-johnson"],
+      "decision": "do_not_merge",
+      "confirmed_on": "2026-11-02"
+    },
+    {
+      "name": "Cooper Williams",
+      "schools": ["Kennesaw State", "LSU"],
+      "source_player_ids": ["cb-kennesaw-state-cooper-williams", "cb-lsu-cooper-williams"],
+      "decision": "do_not_merge",
+      "confirmed_on": "2026-11-02"
+    },
+    {
+      "name": "Ryan Lynch",
+      "schools": ["Coastal Carolina", "Notre Dame"],
+      "source_player_ids": ["cb-coastal-carolina-ryan-lynch", "cb-notre-dame-ryan-lynch"],
+      "decision": "do_not_merge",
+      "confirmed_on": "2026-11-02"
+    },
+    {
+      "name": "Dylan Brown",
+      "schools": ["Old Dominion", "San Francisco"],
+      "source_player_ids": ["cb-old-dominion-dylan-brown", "cb-san-francisco-dylan-brown"],
+      "decision": "do_not_merge",
+      "confirmed_on": "2026-11-02"
+    },
+    {
+      "name": "Cam Hill",
+      "schools": ["Ohio", "South Alabama"],
+      "source_player_ids": ["cb-ohio-cam-hill", "cb-south-alabama-cam-hill"],
       "decision": "do_not_merge",
       "confirmed_on": "2026-11-02"
     }
@@ -2964,6 +2992,30 @@
         {"team": "Alabama", "source_player_id": "cb-alabama-ashton-crowther"}
       ],
       "source_rows": 2
+    },
+    {
+      "name": "Jamal George",
+      "canonical_id": "cb-texas-a-m-jamal-george",
+      "source_player_ids": ["cb-texas-a-m-jamal-george", "cb-missouri-jamal-george"],
+      "schools": ["Texas A&M", "Missouri"],
+      "pairs": [
+        {"team": "Texas A&M", "source_player_id": "cb-texas-a-m-jamal-george"},
+        {"team": "Missouri", "source_player_id": "cb-missouri-jamal-george"}
+      ],
+      "source_rows": 3,
+      "identity_source_url": "https://mutigers.com/sports/baseball/roster/player/jamal-george"
+    },
+    {
+      "name": "Paul Vossen",
+      "canonical_id": "cb-iowa-paul-vossen",
+      "source_player_ids": ["cb-iowa-paul-vossen", "cb-st-bonaventure-paul-vossen"],
+      "schools": ["Iowa", "St. Bonaventure"],
+      "pairs": [
+        {"team": "Iowa", "source_player_id": "cb-iowa-paul-vossen"},
+        {"team": "St. Bonaventure", "source_player_id": "cb-st-bonaventure-paul-vossen"}
+      ],
+      "source_rows": 3,
+      "identity_source_url": "https://gobonnies.com/sports/baseball/roster/paul-vossen/6223"
     }
   ]
 }

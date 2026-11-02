@@ -67,14 +67,24 @@ CONFIRMED_2023_BALLPARK_DATES={
 }
 
 
+CONFIRMED_2024_BALLPARK_DATES={
+    "2024-02-19": ("Patriots Point", "Mount Pleasant", "SC"),
+    "2024-02-21": ("Founders Park", "Columbia", "SC"),
+    **{f"2024-02-{day:02d}": ("VyStar Ballpark", "Jacksonville", "FL")
+       for day in (23, 24, 25)},
+}
+
+
 def confirmed_ballpark(game):
-    """User-confirmed locations for every 2017–2023 game; respect venue exceptions."""
+    """User-confirmed historical locations; respect 2024 partial-year updates."""
     if game["season"]==2021:
         return CONFIRMED_2021_BALLPARK_DATES.get(
             game["date"], ("Fowler Park", "San Diego", "CA"))
     if game["season"]==2022:
         return CONFIRMED_2022_BALLPARK_DATES.get(
             game["date"], ("Fowler Park", "San Diego", "CA"))
+    if game["season"]==2024:
+        return CONFIRMED_2024_BALLPARK_DATES.get(game["date"])
     if game["season"]==2023:
         return CONFIRMED_2023_BALLPARK_DATES.get(
             game["date"], ("Fowler Park", "San Diego", "CA"))

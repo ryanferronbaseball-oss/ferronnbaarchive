@@ -8,6 +8,34 @@ ROOT=Path(__file__).resolve().parents[1]
 DATA=ROOT/"data"
 COLS=["date","away","home","ballpark","city","state","neutral_site","game_number","game_type","postseason_round","away_score","home_score","source_url","notes"]
 ALIASES={"North Carolina State":"NC State","Central Florida":"UCF"}
+BALLPARK_CANONICAL_NAMES={
+    "Anteater Ballpark": "Cicerone Field at Anteater Ballpark",
+    "Barcroft Park": "Tucker Field at Barcroft Park",
+    "Barton University baseball field": "Nixon Field",
+    "Bob Smith Stadium": "Bob \"Turtle\" Smith Stadium",
+    "Boshamer Stadium": "Bryson Field at Boshamer Stadium",
+    "Brazell Field": "Brazell Field at GCU Ballpark",
+    "Disharoon Park": "Davenport Field at Disharoon Park",
+    "Doak Field": "Doak Field at Dail Park",
+    "Fowler Park": "Fowler Park and Cunningham Field",
+    "Goss Stadium": "Goss Stadium at Coleman Field",
+    "Great Park": "Orange County Great Park",
+    "Hoover Met": "Hoover Metropolitan Stadium",
+    "Kelly Field": "S. Walter Kelly Sr. Memorial Field",
+    "Lewis Field at Clark-LeClair Stadium": "Clark-LeClair Stadium",
+    "Liberty Baseball Stadium": "Worthington Field at Liberty Baseball Stadium",
+    "Louie Guisto Field": "Louis Guisto Field at Br. Ronald Gallagher Stadium",
+    "Mac Nease Park": "Mac Nease Baseball Park at Russ Chandler Stadium",
+    "Page Stadium": "George C. Page Stadium",
+    "Patriots Point": "Baseball Stadium at Patriots Point",
+    "Reese Smith Jr Field": "Reese Smith Jr. Field",
+    "Russ Chandler Stadium": "Mac Nease Baseball Park at Russ Chandler Stadium",
+    "Skyhawk Field": "Skyhawk Baseball Field",
+    "Walter Kelly Field": "S. Walter Kelly Sr. Memorial Field",
+    "Williard Stadium": "Coy O. Williard Stadium",
+    "Winthrop Ballpark": "Founders Field",
+}
+
 CONFIRMED_BALLPARK_EXCEPTIONS={
     "2018-02-23": {("Cal Poly", "Arkansas"): ("Tony Gwynn Stadium", "San Diego", "CA")},
     "2019-02-19": {("UC Irvine", "San Diego State"): ("Tony Gwynn Stadium", "San Diego", "CA")},
@@ -207,6 +235,12 @@ def build(source,prior):
         if venue:
             g.update(zip(("ballpark","city","state"),venue))
         result.append(g)
+    # Normalize display names after venue resolution, including retained official gamebooks.
+    # Original source attendance names remain available for historical provenance.
+    for game in result:
+        old_name=game.get("ballpark")
+        if old_name in BALLPARK_CANONICAL_NAMES:
+            game["ballpark"]=BALLPARK_CANONICAL_NAMES[old_name]
     assert len(result)==len({g["id"] for g in result})==444
     assert len({g["source_worksheet_row"] for g in result})==444
     assert (result[265]["date"],result[265]["away"],result[265]["home"])==("2024-03-30","South Alabama","Old Dominion")

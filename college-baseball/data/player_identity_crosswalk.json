@@ -4,8 +4,8 @@
   "source": "Original archive owner confirmed each multi-school person",
   "original_attendance_ids_preserved": 444,
   "original_player_game_rows_preserved": 13183,
-  "requested_person_merges": 124,
-  "activated_person_merges": 121,
+  "requested_person_merges": 130,
+  "activated_person_merges": 127,
   "pending_person_merges": 3,
   "merge_policy": "Only listed pair of exact normalized person names and school-specific original source player IDs; all other IDs remain separate",
   "owner_rejected_merge_candidates": [
@@ -2616,6 +2616,72 @@
       "pairs": [
         {"team": "Winthrop", "source_player_id": "cb-winthrop-owen-sarna"},
         {"team": "Alabama", "source_player_id": "cb-alabama-owen-sarna"}
+      ],
+      "source_rows": 2
+    },
+    {
+      "name": "Brian Curley",
+      "canonical_id": "cb-vcu-brian-curley",
+      "source_player_ids": ["cb-vcu-brian-curley", "cb-georgia-brian-curley"],
+      "schools": ["VCU", "Georgia"],
+      "pairs": [
+        {"team": "VCU", "source_player_id": "cb-vcu-brian-curley"},
+        {"team": "Georgia", "source_player_id": "cb-georgia-brian-curley"}
+      ],
+      "source_rows": 3
+    },
+    {
+      "name": "Collin Reuter",
+      "canonical_id": "cb-byu-collin-reuter",
+      "source_player_ids": ["cb-byu-collin-reuter", "cb-ole-miss-collin-reuter"],
+      "schools": ["BYU", "Ole Miss"],
+      "pairs": [
+        {"team": "BYU", "source_player_id": "cb-byu-collin-reuter"},
+        {"team": "Ole Miss", "source_player_id": "cb-ole-miss-collin-reuter"}
+      ],
+      "source_rows": 3
+    },
+    {
+      "name": "Seth Dardar",
+      "canonical_id": "cb-kansas-state-seth-dardar",
+      "source_player_ids": ["cb-kansas-state-seth-dardar", "cb-lsu-seth-dardar"],
+      "schools": ["Kansas State", "LSU"],
+      "pairs": [
+        {"team": "Kansas State", "source_player_id": "cb-kansas-state-seth-dardar"},
+        {"team": "LSU", "source_player_id": "cb-lsu-seth-dardar"}
+      ],
+      "source_rows": 3
+    },
+    {
+      "name": "Tanner Duke",
+      "canonical_id": "cb-baylor-tanner-duke",
+      "source_player_ids": ["cb-baylor-tanner-duke", "cb-kansas-state-tanner-duke"],
+      "schools": ["Baylor", "Kansas State"],
+      "pairs": [
+        {"team": "Baylor", "source_player_id": "cb-baylor-tanner-duke"},
+        {"team": "Kansas State", "source_player_id": "cb-kansas-state-tanner-duke"}
+      ],
+      "source_rows": 2
+    },
+    {
+      "name": "Noah Rooney",
+      "canonical_id": "cb-minnesota-noah-rooney",
+      "source_player_ids": ["cb-minnesota-noah-rooney", "cb-notre-dame-noah-rooney"],
+      "schools": ["Minnesota", "Notre Dame"],
+      "pairs": [
+        {"team": "Minnesota", "source_player_id": "cb-minnesota-noah-rooney"},
+        {"team": "Notre Dame", "source_player_id": "cb-notre-dame-noah-rooney"}
+      ],
+      "source_rows": 3
+    },
+    {
+      "name": "Owen Kelly",
+      "canonical_id": "cb-st-louis-owen-kelly",
+      "source_player_ids": ["cb-st-louis-owen-kelly", "cb-ole-miss-owen-kelly"],
+      "schools": ["St. Louis", "Ole Miss"],
+      "pairs": [
+        {"team": "St. Louis", "source_player_id": "cb-st-louis-owen-kelly"},
+        {"team": "Ole Miss", "source_player_id": "cb-ole-miss-owen-kelly"}
       ],
       "source_rows": 2
     }

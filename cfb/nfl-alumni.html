@@ -53,15 +53,16 @@ main{max-width:1150px;margin:auto;padding:24px 20px 86px}.ca-hub-link{white-spac
 <div class="eyebrow">College football · Career pathways</div>
 <h1>From college to the NFL.</h1>
 <p class="lead">You saw them before the league did. Revisit future NFL players you watched in college, the exact matchups and performances you witnessed, and how their professional careers began.</p>
-<div class="notes-banner"><strong>Growing verified directory:</strong> These are individually checked NFL connections from your college football attendance log, not a claim that every eventual pro has been identified. NFL appearance status reflects verified records as of October 17, 2026. The college stats on this page cover only your personally attended games.</div>
+<div class="notes-banner"><strong>Growing verified directory:</strong> These are individually checked NFL connections from your college football attendance log, not a claim that every eventual pro has been identified. The three categories separate confirmed NFL game appearances, draft picks awaiting debuts, and undrafted roster/preseason opportunities. The college stats cover only your personally attended games.</div>
 <section class="summary" aria-label="NFL alumni counts">
  <div class="metric"><strong id="nflCount">—</strong><small>Verified NFL alumni</small></div>
- <div class="metric"><strong id="rosterCount">—</strong><small>NFL roster / preseason only</small></div>
+ <div class="metric"><strong id="draftedCount">—</strong><small>Drafted, no NFL game</small></div>
  <div class="metric"><strong id="seenCount">—</strong><small>College games featuring verified players</small></div>
  <div class="metric"><strong id="firstCount">—</strong><small>First-round NFL picks</small></div>
 </section>
 <div class="tabs" role="tablist" aria-label="NFL career classifications">
  <button type="button" role="tab" aria-selected="true" data-group="nfl">Played in the NFL</button>
+ <button type="button" role="tab" aria-selected="false" data-group="drafted_no_debut">Drafted · No NFL Game</button>
  <button type="button" role="tab" aria-selected="false" data-group="roster_only">NFL roster / preseason only</button>
 </div>
 <div class="toolbar">
@@ -75,7 +76,7 @@ main{max-width:1150px;margin:auto;padding:24px 20px 86px}.ca-hub-link{white-spac
 </div>
 <p class="player-state" id="showing" aria-live="polite"></p>
 <div class="cards" id="cards" aria-live="polite"><div class="state">Loading verified NFL records and attended college gamebooks…</div></div>
-<p class="note">NFL alumni status requires independently confirmed regular-season or postseason game participation—not only a practice-squad assignment or preseason action. NFL roster/preseason-only players are listed separately. The drafting team is the original club that made the selection; professional team affiliations can change. The college listed on a player's witnessed game may differ from the school represented at the NFL draft if that player transferred. Unavailable box-score statistics are never silently treated as verified zeroes. NFL records are reviewed snapshots and do not automatically update after each game.</p>
+<p class="note">NFL alumni status requires independently confirmed regular-season or postseason game participation—not only a practice-squad assignment or preseason action. Drafted players without such an appearance have their own category; the roster/preseason-only category is for undrafted players. The drafting team is the original club that made the selection. Unavailable college game statistics are never silently treated as verified zeroes. These are reviewed snapshots, not automatically updated NFL records.</p>
 </main>
 <script>
 document.addEventListener("DOMContentLoaded",()=>{
@@ -107,6 +108,7 @@ document.addEventListener("DOMContentLoaded",()=>{
    return [["Receptions",s("receiving","REC")],["Receiving yards",s("receiving","YDS")],["Receiving TD",s("receiving","TD")]];
  }
  function gameSummary(records,position){
+   if(records.length&&records.every(r=>r.category==="verified_starter"))return "Verified starter · individual stats unavailable";
    const arr=primaryStats(records,position);
    return arr.map(([name,n])=>showNumber(n)+" "+name.toLowerCase()).join(" · ");
  }
@@ -149,7 +151,8 @@ document.addEventListener("DOMContentLoaded",()=>{
      sort==="games"?b.seen.length-a.seen.length||a.name.localeCompare(b.name):
      sort==="year"?(a.first_nfl_season??9999)-(b.first_nfl_season??9999)||a.name.localeCompare(b.name):
      (a.draft_pick??9999)-(b.draft_pick??9999)||a.name.localeCompare(b.name));
-   el("showing").textContent="Showing "+matched.length+" of "+players.filter(p=>p.category===group).length+" verified "+(group==="nfl"?"NFL alumni.":"NFL roster / preseason-only players.");
+   const groupLabel=group==="nfl"?"NFL alumni.":group==="drafted_no_debut"?"drafted players without a verified NFL game appearance.":"undrafted NFL roster / preseason-only players.";
+   el("showing").textContent="Showing "+matched.length+" of "+players.filter(p=>p.category===group).length+" verified "+groupLabel;
    if(!matched.length){
      el("cards").innerHTML='<div class="state">'+(query?"No players match your search.":"No verified players are currently listed in this category.")+'</div>';return;
    }
@@ -157,7 +160,7 @@ document.addEventListener("DOMContentLoaded",()=>{
      const initials=p.name.split(/\s+/).map(w=>w[0]).slice(0,2).join("").toUpperCase();
      const draft=p.draft_year?(p.draft_year+" · Round "+p.draft_round+" · Pick #"+p.draft_pick+" · "+p.draft_team):"Undrafted";
      const schools=p.schools.join(" / ");
-     const nflText=p.category==="nfl"?("First verified NFL season: "+p.first_nfl_season):"NFL roster / preseason, no verified regular-season or playoff appearance";
+     const nflText=p.category==="nfl"?("First verified NFL season: "+p.first_nfl_season):p.category==="drafted_no_debut"?"Drafted into NFL; no verified regular-season or playoff appearance":"Undrafted NFL roster / preseason, no verified regular-season or playoff appearance";
      const gameRefs=p.seen.map(x=>{
        const g=x.game,opponent=g.away_abbr===x.rows[0].team?g.home:g.away;
        const numbers=gameSummary(x.rows,p.position);
@@ -168,7 +171,7 @@ document.addEventListener("DOMContentLoaded",()=>{
       +'<div class="player-head"><div class="identity"><div class="portrait" aria-hidden="true">'+escapeHtml(initials)+'</div><div>'
       +'<a class="player-name" href="./player.html?id='+encodeURIComponent(p.athlete_id)+'">'+escapeHtml(p.name)+'</a>'
       +'<div class="school">'+escapeHtml(schools)+' · '+escapeHtml(p.position)+'</div></div></div>'
-      +'<div class="card-meta"><span class="pill'+(p.category==="roster_only"?" secondary":"")+'">'+(p.category==="nfl"?"NFL alumnus":"NFL opportunity")+'</span>'
+      +'<div class="card-meta"><span class="pill'+(p.category!=="nfl"?" secondary":"")+'">'+(p.category==="nfl"?"NFL alumnus":p.category==="drafted_no_debut"?"Drafted · no NFL game":"Undrafted NFL opportunity")+'</span>'
       +(p.draft_pick&&p.draft_pick<=32?'<span class="pill bronze">First-round pick</span>':'')+'</div></div>'
       +'<div class="line">'+p.stats.map(([key,value])=>'<div><strong>'+escapeHtml(showNumber(value))+'</strong><small>'+escapeHtml(key)+' witnessed</small></div>').join("")+'</div>'
       +'<div class="info"><b>College games witnessed:</b> '+p.seen.length+' · '+escapeHtml(when(p.seen[0].game.date))+(p.seen.length>1?' – '+escapeHtml(when(p.seen[p.seen.length-1].game.date)):'')+'</div>'
@@ -189,9 +192,9 @@ document.addEventListener("DOMContentLoaded",()=>{
   fetch("./data/games.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("attended college games");return r.json()})
  ]).then(([cross,logs,games])=>{
    players=collegeAppearances(logs,games,cross);
-   const nfl=players.filter(x=>x.category==="nfl"),roster=players.filter(x=>x.category==="roster_only");
+   const nfl=players.filter(x=>x.category==="nfl"),drafted=players.filter(x=>x.category==="drafted_no_debut");
    el("nflCount").textContent=nfl.length;
-   el("rosterCount").textContent=roster.length;
+   el("draftedCount").textContent=drafted.length;
    el("seenCount").textContent=new Set(players.flatMap(x=>x.seen.map(y=>y.game.id))).size;
    el("firstCount").textContent=players.filter(x=>x.draft_pick&&x.draft_pick<=32).length;
    render();

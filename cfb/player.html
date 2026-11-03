@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded",async()=>{
   el("gameLogs").innerHTML=seen.map(g=>{
    const entries=personal.filter(x=>x.game_id===g.id);
    return '<section class="panel"><div class="section-heading"><h3>'+esc(A.date(g.date))+' · '+esc(g.away_abbr)+' at '+esc(g.home_abbr)+'</h3><a class="action-link secondary" href="./game.html?id='+encodeURIComponent(g.id)+'">Full game box score ↗</a></div>'+
-   entries.map(x=>'<h3 style="margin:20px 0 9px">'+esc(x.category.replace(/([A-Z])/g," $1").replace(/^./,v=>v.toUpperCase()))+'</h3>'+A.table([x],x.category)).join("")+
+   entries.map(x=>x.category==="verified_starter"?'<p class="note">Listed as a starter in the official gamebook; no individual statistical line was recorded for this player.</p>':'<h3 style="margin:20px 0 9px">'+esc(x.category.replace(/([A-Z])/g," $1").replace(/^./,v=>v.toUpperCase()))+'</h3>'+A.table([x],x.category)).join("")+
    '</section>';
   }).join("");
  }catch(e){el("playerName").textContent="Player profile unavailable";el("playerSummary").textContent=e.message}

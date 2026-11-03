@@ -2,12 +2,13 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>College Football Game Box Score | Courtside Archive</title>
 <meta name="description" content="Your attended College Football games with quarter scoring, scoring plays, full passing, rushing, receiving, defensive and special teams box scores.">
-<link rel="stylesheet" href="./assets/archive.css"><script src="./assets/archive.js?v=records-nav-20261016" defer></script></head>
+<link rel="stylesheet" href="./assets/archive.css"><link rel="stylesheet" href="../assets/game-pro-alumni.css"><script src="./assets/archive.js?v=records-nav-20261016" defer></script></head>
 <body><main><div id="navigation"></div>
 <div class="eyebrow">College Football · Games / Box Scores</div><h1>Game details.</h1>
 <p class="lead">Game-by-game box scores with full scoring chronology, from opening kickoff to the final score.</p>
 <div class="toolbar"><label class="filter-label" for="gameSelect">Your game</label><select id="gameSelect" aria-label="Select attended College Football game"></select></div>
 <section id="scoreboard" aria-label="Game score by quarter"><div class="empty">Loading game…</div></section>
+<section id="proAlumni" class="game-pro-alumni" aria-live="polite"><h2>Future NFL players in this game</h2><p class="pro-empty">Loading verified alumni…</p></section>
 <p class="note" id="sourceNote" aria-live="polite"></p>
 <section id="playerOfGame" class="panel pog" aria-label="College Football Player of the Game" aria-live="polite"><div class="empty">Loading Player of the Game…</div></section>
 <section id="pprLeaders" class="panel ppr-board" aria-label="Top Full-PPR offensive scores in this game">
@@ -30,7 +31,7 @@
 document.addEventListener("DOMContentLoaded",async()=>{
  const A=window.CFBArchive,el=id=>document.getElementById(id),params=new URLSearchParams(location.search);
  el("navigation").innerHTML=A.nav("game");
- let games=[],rows=[],score={},ppr=[],group="offense",selected=null;
+ let games=[],rows=[],score={},ppr=[],nflAlumni=[],group="offense",selected=null;
  const urlGame=params.get("id");
  function boxSection(category,title){
   const selectedRows=rows.filter(x=>x.game_id===selected.id&&x.category===category);
@@ -70,6 +71,10 @@ document.addEventListener("DOMContentLoaded",async()=>{
  function setGame(id){
   selected=games.find(g=>g.id===id)||games[0];if(!selected)return;
   el("gameSelect").value=selected.id;el("scoreboard").innerHTML=A.scoreboard(selected);
+  const alumniIds=new Set(nflAlumni.filter(p=>p.category==="nfl"&&p.first_nfl_season!=null).map(p=>p.athlete_id));
+  const seen=new Map(rows.filter(p=>p.game_id===selected.id&&alumniIds.has(p.athlete_id)).map(p=>[p.athlete_id,p.player]));
+  el("proAlumni").innerHTML='<h2>Future NFL players in this game · '+seen.size+'</h2><p class="pro-caption">Verified NFL game appearances · Click a name to open the college player profile.</p>'
+   +(seen.size?'<div class="game-pro-list">'+[...seen].sort((a,b)=>a[1].localeCompare(b[1])).map(([id,name])=>'<a href="./player.html?id='+encodeURIComponent(id)+'">'+A.esc(name)+' ↗</a>').join("")+'</div>':'<p class="pro-empty">No verified NFL alumni currently matched to this game’s recorded players.</p>');
   const partial=selected.verification==="partial_player_boxscore";
   el("sourceNote").innerHTML=(partial?'<strong>Partial historical box score.</strong> Only the individually verified game-recap statistics are listed; Full-PPR is unavailable for this game. ':'Official school gamebook with verified player statistics. ')
     +'<a href="'+A.esc(selected.boxscore_url)+'" target="_blank" rel="noopener">View original school source ↗</a>';
@@ -85,7 +90,7 @@ document.addEventListener("DOMContentLoaded",async()=>{
   renderTabs();
  }
  try{
-  const data=await A.load();games=data.games;rows=data.rows;score=data.scoring;ppr=data.ppr.performances;
+  const [data,alumni]=await Promise.all([A.load(),fetch("./data/nfl_crosswalk.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("NFL alumni registry unavailable");return r.json()})]);games=data.games;rows=data.rows;score=data.scoring;ppr=data.ppr.performances;nflAlumni=alumni;
   el("gameSelect").innerHTML=games.map(g=>'<option value="'+A.esc(g.id)+'">'+A.esc(A.date(g.date))+' · '+A.esc(g.away_abbr)+' at '+A.esc(g.home_abbr)+'</option>').join("");
   el("gameSelect").addEventListener("change",e=>setGame(e.target.value));
   el("statTabs").querySelectorAll("button").forEach(btn=>btn.addEventListener("click",()=>{group=btn.dataset.group;renderTabs()}));

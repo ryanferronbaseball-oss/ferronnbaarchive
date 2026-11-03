@@ -357,7 +357,9 @@ function renderHome(d){
  +'<div class="game-card cb-game-card"><h3>Players & leaderboards</h3><p class="cb-sub">Every player you watched, with witnessed-game career lines and hitter/pitcher summaries, including two-way players.</p><a href="./stats.html" class="cb-link">View players ↗</a></div>'
  +'<div class="game-card cb-game-card"><h3>Signature performances</h3><p class="cb-sub">Best single-game hitting and pitching performances, records, and tournament milestones; no fabricated data.</p><a href="./records.html" class="cb-link">View records ↗</a></div></div>';
 }
-function renderGames(d){
+async function renderGames(d){
+ const alumniRegistry=await json("mlb_alumni_seed.json");
+ const mlbIds=new Set((alumniRegistry.players||[]).filter(p=>p.mlb_debut).map(p=>p.college_player_id));
  $("app").innerHTML='<div class="eyebrow">College Baseball · Games & box scores</div><h1>Game details.</h1>'
  +'<p class="lead">Scores, inning lines and authentic batting and pitching box scores from college games you attended, where documented in official scorebooks.</p>'
  +'<div class="toolbar"><label class="filter-label" for="cb-game-select">Attended game</label><select id="cb-game-select">'
@@ -375,6 +377,10 @@ function renderGames(d){
   const g=d.gameMap.get(picker.value);
   if(!g){$("cb-game-details").innerHTML=pending(d.games.length?"Select a game to open its official scoreboard and player box score.":"No college baseball games imported yet.");return}
   const source=link(g.source_url),players=d.rows.filter(x=>x.game_id===g.id);
+  const pros=new Map(players.filter(p=>mlbIds.has(p.player_id)).map(p=>[p.player_id,p.player]));
+  const proSection='<section class="game-pro-alumni"><h2>Future MLB players in this game · '+pros.size+'</h2>'
+   +'<p class="pro-caption">Verified MLB debuts · Click a name to open the college player profile.</p>'
+   +(pros.size?'<div class="game-pro-list">'+[...pros].sort((a,b)=>a[1].localeCompare(b[1])).map(([id,name])=>'<a href="./player.html?id='+encodeURIComponent(id)+'">'+esc(scorebookNameCase(name))+' ↗</a>').join("")+'</div>':'<p class="pro-empty">No verified MLB alumni currently matched to this game’s recorded players.</p>')+'</section>';
   const actual=g.away_score!=null&&g.home_score!=null;
   const scoreContent=actual?g.away_score+" – "+g.home_score:"—";
   const decision=g.pitching_decisions;
@@ -407,6 +413,7 @@ function renderGames(d){
    +'<span class="mlb-pill '+(g.verification==="official_boxscore_verified"?"verified":"pending")+'">'+esc(sourceLabel(g))+'</span>'
    +(source?'<p class="mlb-note"><a href="'+esc(source)+'" target="_blank" rel="noopener noreferrer">Official college gamebook ↗</a></p>':"")
    +'</section>'
+   +proSection
    +(Array.isArray(g.innings)&&g.innings.length?renderInnings(g):"")
    +decisions+box;
   if(!players.length)return;
@@ -606,7 +613,7 @@ function render(){
  if(page==="mlb-alumni")return;
  app.innerHTML=pending("Loading college baseball attendance records…");
  archive.then(async d=>{
-  if(page==="games")renderGames(d);
+  if(page==="games")await renderGames(d);
   else if(page==="players")renderPlayers(d);
   else if(page==="records")renderRecords(d);
   else if(page==="player")await renderPlayer(d);

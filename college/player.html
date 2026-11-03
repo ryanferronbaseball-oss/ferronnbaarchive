@@ -52,7 +52,7 @@ if(id){fetch('./data/career_tags_high_priority.json?v=20261102',{cache:'no-store
  for(const item of tags.final_four_mop||[])addCareerTag('🏆 FINAL FOUR MOP · '+item.year,item.source,'title','Final Four Most Outstanding Player · '+item.year,20);
  for(const item of tags.conference_dpoy||[])addCareerTag(item.conference+' DPOY · '+item.season,item.source,'','Conference Defensive Player of the Year',60);
  for(const item of tags.all_conference||[])addCareerTag(item.conference+' ALL-CONFERENCE · '+['','1ST','2ND','3RD'][item.team]+' · '+item.season,item.source,'','All-Conference '+item.team+' team',70);
- for(const item of tags.conference_foy||[])addCareerTag(item.conference+' '+(item.award==='Rookie of the Year'?'ROY':'FOY')+' · '+item.season,item.source,'','Conference Freshman/Rookie of the Year',80);
+ for(const item of tags.conference_foy||[])addCareerTag(item.conference+' '+(item.award==='Rookie of the Year'?'ROY':item.award==='Newcomer of the Year'?'NOY':'FOY')+' · '+item.season,item.source,'','Conference Freshman/Rookie/Newcomer of the Year',80);
  }).catch(e=>console.warn('College high-priority tags unavailable:',e));}
 if(id){fetch('./data/career_awards.json?v=20261015-2',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('College awards HTTP '+r.status);return r.json()}).then(data=>{
  const honors=data.players?.[id];if(!honors)return;

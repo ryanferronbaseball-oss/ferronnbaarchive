@@ -14,6 +14,8 @@ main{max-width:1160px;margin:auto;padding:25px 20px 85px;font-family:Inter,ui-sa
 <footer>Individual statistics are from your attended games, not official career totals. Historical player portraits are requested from ESPN where available; otherwise a neutral placeholder is displayed. Records update automatically when the archive data is refreshed.</footer>
 <script src="../assets/site.js?v=design-1"></script><script>
 const $=id=>document.getElementById(id),fmt=(n,d=1)=>n==null||!Number.isFinite(n)?'—':Number(n).toFixed(d),pct=(n,d)=>d>0?100*n/d:null,esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\'':'&#39;'}[c]));
+const tagStyles=document.createElement('style');tagStyles.textContent='.career-badge.extra-tag{display:inline-flex;border:1px solid #afc7b4;background:#e8f2e8;color:#244b35!important;white-space:normal;text-decoration:none!important}.career-badge.extra-tag.draft{background:#e7effb;border-color:#a9bcdd;color:#254b7c!important}.career-badge.extra-tag.title{background:#fff1cf;border-color:#d4b779;color:#705019!important}.career-badge.extra-tag:hover{text-decoration:underline!important}';document.head.appendChild(tagStyles);
+function addCareerTag(label,source,kind,title){const host=$('achievementRow'),node=source?document.createElement('a'):document.createElement('span');node.className='career-badge extra-tag '+kind;node.textContent=label;node.title=title||label;if(source){node.href=source;node.target='_blank';node.rel='noopener noreferrer'}host.appendChild(node);host.classList.add('visible')}
 let teamNames={}; // Loaded from the college team ID mapping.
 const parseMinutes=v=>{const s=String(v??'');if(/^\d+:\d\d$/.test(s)){const [a,b]=s.split(':').map(Number);return a+b/60}return s&&Number.isFinite(Number(s))?Number(s):0};
 const valid=p=>p.minutes!=null&&p.minutes!==''&&p.minutes!=='--';const complete=(p,k)=>p[k]!=null;
@@ -43,7 +45,15 @@ function draw(data,allLogs){entries=data.filter(valid);if(!entries.length){$('na
 }
 document.querySelectorAll('[data-tab]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-tab]').forEach(t=>t.classList.toggle('active',t===b));for(const id of ['overview','advanced','games','milestones'])$(id+'Panel').classList.toggle('hidden',id!==b.dataset.tab)}));
 const id=new URLSearchParams(location.search).get('id');
-if(id){fetch('./data/nba_crosswalk.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('NBA status unavailable');return r.json()}).then(records=>{const entry=records.find(p=>p.player_id===id&&p.category==='nba');if(entry){const badge=$('nbaStatus');badge.classList.add('visible');$('achievementRow').classList.add('visible');badge.title='Verified NBA appearance · Explore college-to-NBA alumni';}}).catch(()=>{});}
+if(id){fetch('./data/nba_crosswalk.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('NBA status unavailable');return r.json()}).then(records=>{const entry=records.find(p=>p.player_id===id);if(entry?.category==='nba'){const badge=$('nbaStatus');badge.classList.add('visible');$('achievementRow').classList.add('visible');badge.title='Verified NBA appearance · Explore college-to-NBA alumni'}if(entry?.draft_year&&entry?.draft_pick){const round=Number(entry.draft_pick)<=30?1:2;addCareerTag(entry.draft_year+' · R'+round+' · Pick '+entry.draft_pick+' · '+entry.draft_team,null,'draft','NBA Draft selection; this does not by itself indicate an NBA appearance')}}).catch(()=>{});}
+if(id){fetch('./data/career_tags_high_priority.json?v=20261102',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('High-priority college tags unavailable');return r.json()}).then(data=>{
+ const tags=data.players?.[id];if(!tags)return;
+ for(const item of tags.ncaa_champion||[])addCareerTag('🏆 NCAA CHAMPION · '+item.year,item.source,'title','National championship roster · '+item.school+' · '+item.year);
+ for(const item of tags.final_four_mop||[])addCareerTag('🏆 FINAL FOUR MOP · '+item.year,item.source,'title','Final Four Most Outstanding Player · '+item.year);
+ for(const item of tags.conference_dpoy||[])addCareerTag(item.conference+' DPOY · '+item.season,item.source,'','Conference Defensive Player of the Year');
+ for(const item of tags.all_conference||[])addCareerTag(item.conference+' ALL-CONFERENCE · '+['','1ST','2ND','3RD'][item.team]+' · '+item.season,item.source,'','All-Conference '+item.team+' team');
+ for(const item of tags.conference_foy||[])addCareerTag(item.conference+' '+(item.award==='Rookie of the Year'?'ROY':'FOY')+' · '+item.season,item.source,'','Conference Freshman/Rookie of the Year');
+ }).catch(e=>console.warn('College high-priority tags unavailable:',e));}
 if(id){fetch('./data/career_awards.json?v=20261015-2',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('College awards HTTP '+r.status);return r.json()}).then(data=>{
  const honors=data.players?.[id];if(!honors)return;
  const national=honors.naismith_national_poy||[],poys=honors.conference_poy||[],aps=honors.ap_all_america||[];

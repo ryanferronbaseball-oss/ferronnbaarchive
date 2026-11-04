@@ -100,6 +100,22 @@
       "school": "Mississippi State",
       "college_player_id": "cb-virginia-tomas-valincius",
       "source_url": "https://www.baseballamerica.com/stories/2026-college-baseball-all-america-teams/"
+    },
+    {
+      "year": 2026,
+      "publication": "Baseball America",
+      "team": "First Team",
+      "name": "Jarren Advincula",
+      "position": "2B",
+      "school": "Georgia Tech",
+      "college_player_id": "cb-california-jarren-advincula",
+      "source_url": "https://www.baseballamerica.com/stories/2026-college-baseball-all-america-teams/",
+      "identity_evidence": {
+        "date": "2024-05-05",
+        "game_id": "cb-2024-05-05-california-southern-california-att0276",
+        "seen_school": "California",
+        "source_url": "https://calbears.com/sports/baseball/stats/2024/usc/boxscore/36156"
+      }
     }
   ],
   "pending_profile_verification": [
@@ -110,23 +126,29 @@
       "status": "confirmed yes; player ID requires verification"
     },
     {
-      "name": "Jarren Advincula",
-      "position": "2B",
-      "school": "Georgia Tech",
-      "status": "confirmed yes; player ID requires verification"
-    },
-    {
       "name": "Landon Hairston",
       "position": "OF",
       "school": "Arizona State",
-      "status": "confirmed yes; player ID requires verification"
+      "status": "attended game and player identity evidenced; canonical player ID verification pending",
+      "attended_game": {
+        "date": "2025-05-15",
+        "game_id": "cb-2025-05-15-arizona-state-oklahoma-state-att0347",
+        "seen_school": "Arizona State",
+        "source_url": "https://okstate.com/sports/baseball/stats/2025/arizona-state/boxscore/16712"
+      }
     },
     {
       "name": "Quinton Coats",
       "position": "1B",
       "school": "Cincinnati",
       "team": "Second Team",
-      "status": "confirmed yes; player ID requires verification"
+      "status": "attended game and player identity evidenced; canonical player ID verification pending",
+      "attended_game": {
+        "date": "2026-04-10",
+        "game_id": "cb-2026-04-10-baylor-cincinnati-att0410",
+        "seen_school": "Cincinnati",
+        "source_url": "https://baylorbears.com/sports/baseball/stats/2026/cincinnati/boxscore/29605"
+      }
     },
     {
       "name": "Brendan Lawson",
@@ -140,21 +162,39 @@
       "position": "3B",
       "school": "Georgia Tech",
       "team": "Second Team",
-      "status": "confirmed yes; player ID requires verification"
+      "status": "attended game and player identity evidenced; canonical player ID verification pending",
+      "attended_game": {
+        "date": "2025-05-10",
+        "game_id": "cb-2025-05-10-pittsburgh-wake-forest-att0345",
+        "seen_school": "Pittsburgh",
+        "source_url": "https://godeacs.com/sports/baseball/stats/2025/pitt/boxscore/14025"
+      }
     },
     {
       "name": "Aidan King",
       "position": "SP",
       "school": "Florida",
       "team": "Second Team",
-      "status": "confirmed yes; player ID requires verification"
+      "status": "attended game and player identity evidenced; canonical player ID verification pending",
+      "attended_game": {
+        "date": "2026-05-20",
+        "game_id": "cb-2026-05-20-vanderbilt-florida-att0430",
+        "seen_school": "Florida",
+        "source_url": "https://floridagators.com/sports/baseball/stats/2026/vanderbilt/boxscore/27672"
+      }
     },
     {
       "name": "Caden McDonald",
       "position": "TWP",
       "school": "Florida",
       "team": "Second Team",
-      "status": "confirmed yes; player ID requires verification"
+      "status": "attended game and player identity evidenced; canonical player ID verification pending",
+      "attended_game": {
+        "date": "2026-05-20",
+        "game_id": "cb-2026-05-20-vanderbilt-florida-att0430",
+        "seen_school": "Florida",
+        "source_url": "https://floridagators.com/sports/baseball/stats/2026/vanderbilt/boxscore/27672"
+      }
     }
   ],
   "not_in_archive": [

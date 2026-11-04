@@ -116,21 +116,32 @@
         "seen_school": "California",
         "source_url": "https://calbears.com/sports/baseball/stats/2024/usc/boxscore/36156"
       }
-    }
-  ],
-  "pending_profile_verification": [
+    },
     {
+      "year": 2026,
+      "publication": "Baseball America",
+      "team": "First Team",
       "name": "Tague Davis",
       "position": "1B",
       "school": "Louisville",
-      "status": "confirmed yes; player ID requires verification"
+      "college_player_id": "cb-louisville-tague-davis",
+      "source_url": "https://www.baseballamerica.com/stories/2026-college-baseball-all-america-teams/",
+      "identity_evidence": {
+        "date": "2026-05-14",
+        "game_id": "cb-2026-05-14-virginia-louisville-att0422",
+        "seen_school": "Louisville"
+      }
     },
     {
+      "year": 2026,
+      "publication": "Baseball America",
+      "team": "First Team",
       "name": "Landon Hairston",
       "position": "OF",
       "school": "Arizona State",
-      "status": "attended game and player identity evidenced; canonical player ID verification pending",
-      "attended_game": {
+      "college_player_id": "cb-arizona-state-landon-hairston",
+      "source_url": "https://www.baseballamerica.com/stories/2026-college-baseball-all-america-teams/",
+      "identity_evidence": {
         "date": "2025-05-15",
         "game_id": "cb-2025-05-15-arizona-state-oklahoma-state-att0347",
         "seen_school": "Arizona State",
@@ -138,12 +149,15 @@
       }
     },
     {
+      "year": 2026,
+      "publication": "Baseball America",
+      "team": "Second Team",
       "name": "Quinton Coats",
       "position": "1B",
       "school": "Cincinnati",
-      "team": "Second Team",
-      "status": "attended game and player identity evidenced; canonical player ID verification pending",
-      "attended_game": {
+      "college_player_id": "cb-cincinnati-quinton-coats",
+      "source_url": "https://www.baseballamerica.com/stories/2026-college-baseball-all-america-teams/",
+      "identity_evidence": {
         "date": "2026-04-10",
         "game_id": "cb-2026-04-10-baylor-cincinnati-att0410",
         "seen_school": "Cincinnati",
@@ -151,19 +165,31 @@
       }
     },
     {
+      "year": 2026,
+      "publication": "Baseball America",
+      "team": "Second Team",
       "name": "Brendan Lawson",
       "position": "SS",
       "school": "Florida",
-      "team": "Second Team",
-      "status": "confirmed yes; player ID requires verification"
+      "college_player_id": "cb-florida-brendan-lawson",
+      "source_url": "https://www.baseballamerica.com/stories/2026-college-baseball-all-america-teams/",
+      "identity_evidence": {
+        "date": "2026-05-20",
+        "game_id": "cb-2026-05-20-vanderbilt-florida-att0430",
+        "seen_school": "Florida",
+        "source_url": "https://floridagators.com/sports/baseball/stats/2026/vanderbilt/boxscore/27672"
+      }
     },
     {
+      "year": 2026,
+      "publication": "Baseball America",
+      "team": "Second Team",
       "name": "Ryan Zuckerman",
       "position": "3B",
       "school": "Georgia Tech",
-      "team": "Second Team",
-      "status": "attended game and player identity evidenced; canonical player ID verification pending",
-      "attended_game": {
+      "college_player_id": "cb-pittsburgh-ryan-zuckerman",
+      "source_url": "https://www.baseballamerica.com/stories/2026-college-baseball-all-america-teams/",
+      "identity_evidence": {
         "date": "2025-05-10",
         "game_id": "cb-2025-05-10-pittsburgh-wake-forest-att0345",
         "seen_school": "Pittsburgh",
@@ -171,12 +197,15 @@
       }
     },
     {
+      "year": 2026,
+      "publication": "Baseball America",
+      "team": "Second Team",
       "name": "Aidan King",
       "position": "SP",
       "school": "Florida",
-      "team": "Second Team",
-      "status": "attended game and player identity evidenced; canonical player ID verification pending",
-      "attended_game": {
+      "college_player_id": "cb-florida-aidan-king",
+      "source_url": "https://www.baseballamerica.com/stories/2026-college-baseball-all-america-teams/",
+      "identity_evidence": {
         "date": "2026-05-20",
         "game_id": "cb-2026-05-20-vanderbilt-florida-att0430",
         "seen_school": "Florida",
@@ -184,12 +213,15 @@
       }
     },
     {
+      "year": 2026,
+      "publication": "Baseball America",
+      "team": "Second Team",
       "name": "Caden McDonald",
       "position": "TWP",
       "school": "Florida",
-      "team": "Second Team",
-      "status": "attended game and player identity evidenced; canonical player ID verification pending",
-      "attended_game": {
+      "college_player_id": "cb-florida-caden-mcdonald",
+      "source_url": "https://www.baseballamerica.com/stories/2026-college-baseball-all-america-teams/",
+      "identity_evidence": {
         "date": "2026-05-20",
         "game_id": "cb-2026-05-20-vanderbilt-florida-att0430",
         "seen_school": "Florida",
@@ -197,6 +229,7 @@
       }
     }
   ],
+  "pending_profile_verification": [],
   "not_in_archive": [
     {
       "name": "Roch Cholowsky",

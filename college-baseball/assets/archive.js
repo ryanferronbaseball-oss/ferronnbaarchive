@@ -528,7 +528,8 @@ async function renderPlayer(d){
   const id=d.redirects.get(requestedId)||requestedId;
   const p=d.players.find(x=>String(x.player_id)===id);
  if(!p){$("app").innerHTML='<div class="eyebrow">College Baseball · Player profile</div><h1>Player profile</h1>'+pending("No verified college baseball player profile is available for this ID. Players appear after official gamebook imports.");return}
- const [alumniRegistry,draftRegistry,nationalAwardsRegistry,baseballAmericaRegistry]=await Promise.all([json("mlb_alumni_seed.json"),json("draft_profile_tags.json"),json("national_award_profile_tags.json"),json("baseball_america_all_american_tags.json")]);
+ const [alumniRegistry,draftRegistry,nationalAwardsRegistry,baseballAmericaRegistry,championshipRegistry]=await Promise.all([json("mlb_alumni_seed.json"),json("draft_profile_tags.json"),json("national_award_profile_tags.json"),json("baseball_america_all_american_tags.json"),json("college_world_series_recognitions.json")]);
+ const championships=(championshipRegistry.champions||[]).filter(c=>(c.verified_archive_player_ids||[]).includes(id));
  const nationalAwards=(nationalAwardsRegistry.awards||[]).filter(a=>a.college_player_id===id);
  const baseballAmericaHonors=(baseballAmericaRegistry.honors||[]).filter(a=>a.college_player_id===id);
  if(!Array.isArray(alumniRegistry.players))throw Error("Invalid verified MLB alumni registry");
@@ -573,10 +574,11 @@ async function renderPlayer(d){
  +'<div class="mlb-profile-photo cb-profile-initials" aria-hidden="true">'+esc(initials)+'</div>'
  +'<div class="mlb-profile-identity"><div class="mlb-profile-team-name">'+esc(p.teams.join(" / "))+'</div>'
  +'<h1>'+esc(p.name)+'</h1>'
- +(alumnus||draftTag||cross||nationalAwards.length||baseballAmericaHonors.length?'<div class="mlb-profile-achievements">'
+ +(alumnus||draftTag||cross||nationalAwards.length||baseballAmericaHonors.length||championships.length?'<div class="mlb-profile-achievements">'
   +(alumnus?'<a class="mlb-profile-badge cb-mlb-alumnus" href="https://www.mlb.com/player/'+encodeURIComponent(alumnus.mlb_player_id)+'" target="_blank" rel="noopener noreferrer" title="Verified MLB debut: '+esc(date(alumnus.mlb_debut))+'">★ MLB ALUMNUS ↗</a>':"")
   +(draftTag?'<span class="mlb-profile-badge cb-mlb-draft" title="MLB draft year, round, overall pick and drafting team">'+esc(draftTag)+'</span>':"")
   +(cross?'<a class="mlb-profile-badge cb-dual-level" href="../mlb/player.html?id='+encodeURIComponent(cross.mlb_player_id)+'" title="You attended this player’s college and MLB games">★ SEEN IN COLLEGE + MLB ↗</a>':"")
+  +championships.map(c=>'<span class="mlb-profile-badge cb-national-award" title="'+esc(c.school+' · '+c.year+' NCAA Division I national champions · Verified championship roster')+'">🏆 '+esc(c.year+' NATIONAL CHAMPION')+'</span>').join('')
   +nationalAwards.map(a=>'<span class="mlb-profile-badge cb-national-award" title="'+esc(a.school+' · '+a.year)+'">★ '+esc(a.year+' '+a.award)+'</span>').join('')
   +baseballAmericaHonors.map(a=>'<span class="mlb-profile-badge cb-national-award" title="'+esc(a.school+' · '+a.position)+'">★ '+esc(a.year+' Baseball America '+a.team+' All-American')+'</span>').join('')+'</div>':"")
  +'<p class="mlb-profile-seen">'+p.games.length+' game'+(p.games.length===1?"":"s")+' witnessed · College baseball</p>'

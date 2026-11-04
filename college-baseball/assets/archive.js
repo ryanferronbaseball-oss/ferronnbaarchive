@@ -528,7 +528,8 @@ async function renderPlayer(d){
   const id=d.redirects.get(requestedId)||requestedId;
   const p=d.players.find(x=>String(x.player_id)===id);
  if(!p){$("app").innerHTML='<div class="eyebrow">College Baseball · Player profile</div><h1>Player profile</h1>'+pending("No verified college baseball player profile is available for this ID. Players appear after official gamebook imports.");return}
- const [alumniRegistry,draftRegistry]=await Promise.all([json("mlb_alumni_seed.json"),json("draft_profile_tags.json")]);
+ const [alumniRegistry,draftRegistry,nationalAwardsRegistry]=await Promise.all([json("mlb_alumni_seed.json"),json("draft_profile_tags.json"),json("national_award_profile_tags.json")]);
+ const nationalAwards=(nationalAwardsRegistry.awards||[]).filter(a=>a.college_player_id===id);
  if(!Array.isArray(alumniRegistry.players))throw Error("Invalid verified MLB alumni registry");
  if(!Array.isArray(draftRegistry.picks))throw Error("Missing verified college draft tags");
  const draftIds=new Set();
@@ -571,10 +572,11 @@ async function renderPlayer(d){
  +'<div class="mlb-profile-photo cb-profile-initials" aria-hidden="true">'+esc(initials)+'</div>'
  +'<div class="mlb-profile-identity"><div class="mlb-profile-team-name">'+esc(p.teams.join(" / "))+'</div>'
  +'<h1>'+esc(p.name)+'</h1>'
- +(alumnus||draftTag||cross?'<div class="mlb-profile-achievements">'
+ +(alumnus||draftTag||cross||nationalAwards.length?'<div class="mlb-profile-achievements">'
   +(alumnus?'<a class="mlb-profile-badge cb-mlb-alumnus" href="https://www.mlb.com/player/'+encodeURIComponent(alumnus.mlb_player_id)+'" target="_blank" rel="noopener noreferrer" title="Verified MLB debut: '+esc(date(alumnus.mlb_debut))+'">★ MLB ALUMNUS ↗</a>':"")
   +(draftTag?'<span class="mlb-profile-badge cb-mlb-draft" title="MLB draft year, round, overall pick and drafting team">'+esc(draftTag)+'</span>':"")
-  +(cross?'<a class="mlb-profile-badge cb-dual-level" href="../mlb/player.html?id='+encodeURIComponent(cross.mlb_player_id)+'" title="You attended this player’s college and MLB games">★ SEEN IN COLLEGE + MLB ↗</a>':"")+'</div>':"")
+  +(cross?'<a class="mlb-profile-badge cb-dual-level" href="../mlb/player.html?id='+encodeURIComponent(cross.mlb_player_id)+'" title="You attended this player’s college and MLB games">★ SEEN IN COLLEGE + MLB ↗</a>':"")
+  +nationalAwards.map(a=>'<span class="mlb-profile-badge cb-national-award" title="'+esc(a.school+' · '+a.year)+'">★ '+esc(a.year+' '+a.award)+'</span>').join('')+'</div>':"")
  +'<p class="mlb-profile-seen">'+p.games.length+' game'+(p.games.length===1?"":"s")+' witnessed · College baseball</p>'
  +'</div></section>'
  +'<p class="mlb-note">Only college baseball appearances from games you attended appear here; professional seasons are never added to college totals.</p>'

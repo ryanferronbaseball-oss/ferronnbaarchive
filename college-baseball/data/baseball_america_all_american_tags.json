@@ -447,18 +447,25 @@
       "school": "Texas",
       "college_player_id": "cb-texas-dylan-volantis",
       "source_url": "https://www.baseballamerica.com/stories/2025-college-baseball-all-american-teams/"
-    }
-  ],
-  "pending_profile_verification": [
+    },
     {
       "year": 2025,
+      "publication": "Baseball America",
       "team": "First Team",
       "name": "Carson Tinney",
       "position": "C",
       "school": "Notre Dame",
-      "status": "confirmed yes; Texas 2026 draft ID found but Notre Dame 2025 game profile/canonical link not verified"
+      "college_player_id": "cb-texas-carson-tinney",
+      "source_url": "https://www.baseballamerica.com/stories/2025-college-baseball-all-american-teams/",
+      "identity_evidence": {
+        "date": "2026-05-22",
+        "game_id": "cb-2026-05-22-arkansas-texas-att0435",
+        "seen_school": "Texas",
+        "source_url": "https://texaslonghorns.com/sports/baseball/stats/2026/arkansas/boxscore/22672"
+      }
     }
   ],
+  "pending_profile_verification": [],
   "not_in_archive": [
     {
       "name": "Roch Cholowsky",

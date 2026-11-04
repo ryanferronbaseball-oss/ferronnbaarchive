@@ -543,18 +543,26 @@
       "school": "Florida State",
       "college_player_id": "cb-florida-state-jamie-arnold",
       "source_url": "https://www.baseballamerica.com/stories/2025-college-baseball-all-american-teams/"
-    }
-  ],
-  "pending_profile_verification": [
+    },
     {
       "year": 2025,
+      "publication": "Baseball America",
       "team": "Second Team",
       "name": "Bryce Calloway",
       "position": "TWP",
       "school": "New Orleans",
-      "status": "confirmed yes; no canonical profile ID verified in indexed registry"
+      "college_player_id": "cb-georgia-bryce-calloway",
+      "source_url": "https://www.baseballamerica.com/stories/2025-college-baseball-all-american-teams/",
+      "identity_evidence": {
+        "date": "2026-05-23",
+        "game_id": "cb-2026-05-23-florida-georgia-att0437",
+        "seen_school": "Georgia",
+        "source_url": "https://georgiadogs.com/sports/baseball/stats/2026/florida/boxscore/26517",
+        "transfer_verified_url": "https://georgiadogs.com/sports/baseball/roster/bryce-calloway/10328"
+      }
     }
   ],
+  "pending_profile_verification": [],
   "not_in_archive": [
     {
       "name": "Roch Cholowsky",

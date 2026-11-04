@@ -1066,35 +1066,41 @@
       "school": "San Diego State",
       "college_player_id": "cb-san-diego-state-tj-fondtain",
       "source_url": "https://www.baseballamerica.com/stories/2023-college-baseball-all-americans-first-second-third-teams/"
-    }
-  ],
-  "pending_profile_verification": [
-    {
-      "year": 2023,
-      "team": "Second Team",
-      "name": "Nico Zeglin",
-      "position": "SP",
-      "school": "Long Beach State",
-      "status": "confirmed attended appearance and Gonzaga-to-Long Beach State identity; verify actual imported canonical player ID before publishing badge",
-      "attended_game": {
-        "date": "2022-05-21",
-        "game_id": "cb-2022-05-21-gonzaga-san-diego-att0162",
-        "seen_school": "Gonzaga",
-        "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/gonzaga/boxscore/12487",
-        "pitching": "4.1 IP, 5 H, 2 ER, 2 K"
-      },
-      "transfer_evidence_url": "https://longbeachstate.com/sports/baseball/roster/nico--zeglin/6037",
-      "candidate_player_id": "cb-gonzaga-nico-zeglin"
     },
     {
       "year": 2023,
-      "team": "Third Team",
+      "publication": "Baseball America",
+      "source_url": "https://www.baseballamerica.com/stories/2023-college-baseball-all-americans-first-second-third-teams/",
+      "name": "Nico Zeglin",
+      "team": "Second Team",
+      "position": "SP",
+      "school": "Long Beach State",
+      "college_player_id": "cb-gonzaga-nico-zeglin",
+      "identity_evidence": {
+        "date": "2022-05-21",
+        "game_id": "cb-2022-05-21-gonzaga-san-diego-att0162",
+        "seen_school": "Gonzaga",
+        "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/gonzaga/boxscore/12487"
+      }
+    },
+    {
+      "year": 2023,
+      "publication": "Baseball America",
+      "source_url": "https://www.baseballamerica.com/stories/2023-college-baseball-all-americans-first-second-third-teams/",
       "name": "Lawson Harrill",
+      "team": "Third Team",
       "position": "OF",
       "school": "Campbell",
-      "status": "confirmed yes; Campbell 2024 attendance in archive but canonical ID not yet verified"
+      "college_player_id": "cb-campbell-lawson-harrill",
+      "identity_evidence": {
+        "date": "2024-03-09",
+        "game_id": "cb-2024-03-09-bucknell-campbell-att0253",
+        "seen_school": "Campbell",
+        "source_url": "https://gocamels.com/sports/baseball/stats/2024/bucknell/boxscore/207132"
+      }
     }
   ],
+  "pending_profile_verification": [],
   "not_in_archive": [
     {
       "name": "Roch Cholowsky",

@@ -4,40 +4,25 @@
   "scope": "Mountain West baseball All-Conference owner-approved attendance matches",
   "original_yes": 61,
   "original_no": 259,
-  "yes_with_player_ids_verified": 56,
-  "yes_still_awaiting_player_id": 5,
-  "unresolved": [
-    {
-      "year": 2020,
-      "name": "Zach Presno"
-    },
-    {
-      "year": 2020,
-      "name": "Eric Bigani"
-    },
-    {
-      "year": 2021,
-      "name": "E.J. Andrews"
-    },
-    {
-      "year": 2021,
-      "name": "Tre Brown"
-    },
-    {
-      "year": 2022,
-      "name": "Hank Zeisler"
-    }
-  ],
-  "newly_uploaded_tag_records_in_this_reconciliation": 54,
-  "verified_links_total_across_all_conferences": 182,
-  "verified_links_mountain_west_total": 65,
+  "yes_with_player_ids_verified": 61,
+  "yes_still_awaiting_player_id": 0,
+  "unresolved": [],
+  "newly_uploaded_tag_records_in_this_reconciliation": 59,
+  "verified_links_total_across_all_conferences": 187,
+  "verified_links_mountain_west_total": 70,
   "verified_links_file": "all_conference_verified_links_2026_11_05.json",
   "review_ledger": "mountain_west_61_yes_verified_reconciliation_2026_11_05.json",
   "preserve": "All owner NO decisions; no speculative identity linking",
   "caveats": [
-    "The 65 Mountain West records in supplemental verified-links file are not the same as 65 unique owner YES decisions; existing registry overlaps and additional cross-school awards are present.",
-    "The older 61-YES reconciliation file retains 19 initial hold labels; this later checkpoint supersedes those with 14 additional canonical IDs confirmed in the large master registry.",
-    "Five owner-YES selections remain on hold pending source-game player-ID confirmation.",
-    "2020 designations belong to a special untiered award team."
-  ]
+    "The 70 Mountain West records in supplemental verified-links file include additional cross-school award records and overlaps; they are not identical to the 61 owner YES selections.",
+    "2020 selections use a special untiered All-Mountain West team."
+  ],
+  "final_update_on": "2026-11-05",
+  "final_tag_commit": "210813db612b6a4e63cf022101a167d9a7450b42",
+  "final_status": "all 61 owner YES selections have player IDs and all are represented by existing or newly committed tag records",
+  "verified_aliases": {
+    "EJ Andrews, Jr.": "cb-fresno-state-ej-andrews-jr",
+    "Hank Zeisler (Henry Zeisler)": "cb-unlv-henry-zeisler",
+    "Tre Brown (T. BROWN)": "cb-san-diego-state-tre-brown"
+  }
 }

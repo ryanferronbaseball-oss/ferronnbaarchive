@@ -528,13 +528,16 @@ async function renderPlayer(d){
   const id=d.redirects.get(requestedId)||requestedId;
   const p=d.players.find(x=>String(x.player_id)===id);
  if(!p){$("app").innerHTML='<div class="eyebrow">College Baseball · Player profile</div><h1>Player profile</h1>'+pending("No verified college baseball player profile is available for this ID. Players appear after official gamebook imports.");return}
- const [alumniRegistry,draftRegistry,nationalAwardsRegistry,baseballAmericaRegistry,championshipRegistry,conferenceAwardsRegistry,allConferenceRegistry]=await Promise.all([json("mlb_alumni_seed.json"),json("draft_profile_tags.json"),json("national_award_profile_tags.json"),json("baseball_america_all_american_tags.json"),json("college_world_series_recognitions.json"),json("conference_award_profile_tags.json"),json("all_conference_profile_tags.json")]);
+ const [alumniRegistry,draftRegistry,nationalAwardsRegistry,baseballAmericaRegistry,championshipRegistry,conferenceAwardsRegistry,allConferenceRegistry,verifiedConferenceLinks]=await Promise.all([json("mlb_alumni_seed.json"),json("draft_profile_tags.json"),json("national_award_profile_tags.json"),json("baseball_america_all_american_tags.json"),json("college_world_series_recognitions.json"),json("conference_award_profile_tags.json"),json("all_conference_profile_tags.json"),json("all_conference_verified_links_2026_11_05.json")]);
  const championships=(championshipRegistry.champions||[]).filter(c=>(c.verified_archive_player_ids||[]).includes(id));
  const cwsAllTournament=(championshipRegistry.all_tournament_team||[]).filter(a=>a.college_player_id===id);
  const cwsMops=(championshipRegistry.most_outstanding_players||[]).filter(a=>a.college_player_id===id);
  const nationalAwards=(nationalAwardsRegistry.awards||[]).filter(a=>a.college_player_id===id);
  const conferenceAwards=(conferenceAwardsRegistry.awards||[]).filter(a=>a.college_player_id===id);
- const allConference=(allConferenceRegistry.selections||[]).filter(a=>a.college_player_id===id).sort((a,b)=>b.year-a.year||a.team.localeCompare(b.team));
+ const conferenceAwardKey=a=>[a.conference,a.year,a.team,a.name,a.school].join("|");
+ const uniqueConferenceAwards=new Map();
+ for(const award of [...(allConferenceRegistry.selections||[]),...(verifiedConferenceLinks.selections||[])])if(award.college_player_id===id)uniqueConferenceAwards.set(conferenceAwardKey(award),award);
+ const allConference=[...uniqueConferenceAwards.values()].sort((a,b)=>b.year-a.year||a.team.localeCompare(b.team));
  const baseballAmericaHonors=(baseballAmericaRegistry.honors||[]).filter(a=>a.college_player_id===id);
  if(!Array.isArray(alumniRegistry.players))throw Error("Invalid verified MLB alumni registry");
  if(!Array.isArray(draftRegistry.picks))throw Error("Missing verified college draft tags");

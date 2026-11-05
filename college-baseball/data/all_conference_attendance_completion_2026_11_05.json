@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-11-05",
+  "purpose": "Record completed attendee screening without conflating it with complete official award-list coverage or live profile tags.",
+  "conferences": [
+    {
+      "conference": "Pac-12",
+      "review_scope": "2015–2024, excluding 2020",
+      "attendance_review_status": "completed_by_owner",
+      "verified_yes_records": 49,
+      "yes_review_file": "all_conference_user_attendance_review_2026-11-04.json",
+      "published_recorded_commit": "83c15b66400ee1af1ecd16b4b8f4e632324bee19",
+      "note": "49 existing YES tags documented as published in user review file. Do not republish or duplicate these tags without comparing full live registry."
+    },
+    {
+      "conference": "Mountain West",
+      "review_scope": "2015–2026, excluding 2020",
+      "attendance_review_status": "completed_by_owner",
+      "reviewed_selections_reported": 320,
+      "yes_reported": 61,
+      "no_reported": 259,
+      "source_of_totals": "owner-reviewed conversation record; full individual decision ledger not located in repository",
+      "verified_linked_tag_records_current": 11,
+      "verified_link_file": "all_conference_verified_links_2026_11_05.json",
+      "note": "Do not infer that all 61 YES matches have published profile tags. Reconcile missing decisions against full original team rosters and box-score player IDs before additional uploads."
+    }
+  ],
+  "coverage_gap_file": "all_conference_coverage_gaps_2026-11-04.json",
+  "coverage_interpretation": "Existing 178 figure measures missing or unverified comprehensive season selection rosters; it must not be decremented solely on attendance-review completion.",
+  "restrictions": [
+    "No honorable mentions",
+    "Do not merge NO identities",
+    "Only apply verified team honors to witnessed player profiles"
+  ]
+}

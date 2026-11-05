@@ -2,8 +2,8 @@
   "created_on": "2026-11-04",
   "scope": "User voice/text postseason all-conference attendance YES decisions from 2015-2022 review. Excludes 2020.",
   "purpose": "Review ledger only; not live profile tags. Preserve confirmations for audit and subsequent safe merge after appearance and identity verification.",
-  "yes_count": 51,
-  "needs_review_count": 6,
+  "yes_count": 52,
+  "needs_review_count": 0,
   "yes": [
     {
       "conference": "Missouri Valley",
@@ -463,24 +463,37 @@
       "attendance_response": "YES",
       "verification_status": "pending_box_score_and_profile_identity_verification",
       "tag_applied": false
-    }
-  ],
-  "needs_review": [
+    },
     {
       "conference": "Missouri Valley",
       "year": 2018,
       "team": "First Team",
       "name": "John Privitera",
       "school": "Missouri State",
-      "status": "NEEDS_REVIEW"
-    },
+      "attendance_response": "YES",
+      "verification_status": "pending_box_score_and_profile_identity_verification",
+      "tag_applied": false
+    }
+  ],
+  "needs_review": [],
+  "notes": [
+    "Other players in reviewed batches were reported NO.",
+    "2015 and 2016 Pac-12 reviews yielded zero YES.",
+    "2015-2017 Missouri Valley First and Second Team reviews yielded zero YES.",
+    "2018 Missouri Valley NO totals and 2015 Pac-12 No results retained in conversation.",
+    "A YES is user-reported attended-player recognition, not verified attendance in the repository.",
+    "Do not apply live site tags until player identity, original honor and official game appearance are checked.",
+    "2026-11-04 follow-up: John Privitera confirmed YES; Dylan Coleman, Connor Sechler, Matt Brown, Hunter Steinmetz and Ty Buckner confirmed NO. No live tags applied."
+  ],
+  "no_from_needs_review": [
     {
       "conference": "Missouri Valley",
       "year": 2018,
       "team": "First Team",
       "name": "Dylan Coleman",
       "school": "Missouri State",
-      "status": "NEEDS_REVIEW"
+      "status": "NO",
+      "resolved_on": "2026-11-04"
     },
     {
       "conference": "Missouri Valley",
@@ -488,7 +501,8 @@
       "team": "First Team",
       "name": "Connor Sechler",
       "school": "Missouri State",
-      "status": "NEEDS_REVIEW"
+      "status": "NO",
+      "resolved_on": "2026-11-04"
     },
     {
       "conference": "Missouri Valley",
@@ -496,7 +510,8 @@
       "team": "Second Team",
       "name": "Matt Brown",
       "school": "Missouri State",
-      "status": "NEEDS_REVIEW"
+      "status": "NO",
+      "resolved_on": "2026-11-04"
     },
     {
       "conference": "Missouri Valley",
@@ -504,7 +519,8 @@
       "team": "Second Team",
       "name": "Hunter Steinmetz",
       "school": "Missouri State",
-      "status": "NEEDS_REVIEW"
+      "status": "NO",
+      "resolved_on": "2026-11-04"
     },
     {
       "conference": "Missouri Valley",
@@ -512,15 +528,9 @@
       "team": "Second Team",
       "name": "Ty Buckner",
       "school": "Missouri State",
-      "status": "NEEDS_REVIEW"
+      "status": "NO",
+      "resolved_on": "2026-11-04"
     }
   ],
-  "notes": [
-    "Other players in reviewed batches were reported NO.",
-    "2015 and 2016 Pac-12 reviews yielded zero YES.",
-    "2015-2017 Missouri Valley First and Second Team reviews yielded zero YES.",
-    "2018 Missouri Valley NO totals and 2015 Pac-12 No results retained in conversation.",
-    "A YES is user-reported attended-player recognition, not verified attendance in the repository.",
-    "Do not apply live site tags until player identity, original honor and official game appearance are checked."
-  ]
+  "no_from_needs_review_count": 5
 }

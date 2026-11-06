@@ -51,7 +51,7 @@ main>.stats>.stat small{display:block;font-size:12px;margin-top:7px}
 <div class="charts"><section class="panel"><h2>Most-watched teams</h2><div id="teams"></div></section><section class="panel"><h2>Attendance by year</h2><div id="years"></div></section></div>
 <section class="panel"><h2>My game history</h2><p class="sub">Based on your attendance sheet. Select a game to open its result and both team box scores.</p><div class="filters"><input id="search" type="search" placeholder="Search team, matchup, arena…" aria-label="Search attended games by team or arena"><select id="yearFilter" aria-label="Filter games by calendar year"><option value="">All years</option></select><select id="sort" aria-label="Sort attended games by date"><option value="asc">Oldest first</option><option value="desc">Newest first</option></select></div><div class="table-scroll"><table><thead><tr><th>Date</th><th>Away</th><th>Home</th><th>Arena (when verified)</th><th>Details</th></tr></thead><tbody id="games"></tbody></table></div><div class="foot" id="showing"></div></section>
 <section class="panel"><h2>Player leaderboards <span class="badge">LIVE DATA</span></h2><p>Historical player box scores are available for the attended games in the archive. Explore player totals, per-game averages, shooting efficiency and game logs.</p><p><a href="./stats.html" style="color:#8ad0ff;font-weight:800">Explore complete player statistics →</a></p></section>
-<div class="foot">Courtside Archive · College basketball attendance archive · 94 games.</div></main>
+<div class="foot">Courtside Archive · College basketball attendance archive · <span id="footerGameCount">Loading…</span> games.</div></main>
 <script>
 const $=id=>document.getElementById(id);
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -101,6 +101,7 @@ function render(){
  games.forEach(g=>[g.away,g.home].forEach(t=>teams.set(t,(teams.get(t)||0)+1)));
  $('attendanceRange').textContent=years[0]+' — '+years.at(-1)+' · College attendance';
  $('gameCount').textContent=games.length;
+ $('footerGameCount').textContent=games.length;
  $('yearCount').textContent=years.length;
  $('teamCount').textContent=teams.size;
  $('boxCoverage').textContent=new Set(players.map(p=>String(p.game_id))).size+'/'+games.length;
@@ -124,6 +125,6 @@ function render(){
 Promise.all([
  fetch('./data/games.csv?v=college-step3',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Games HTTP '+r.status);return r.text()}),
  fetch('./data/player_boxscores_espn.json?v=college-step3',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Players HTTP '+r.status);return r.json()})
-]).then(([csv,rows])=>{games=parseCSV(csv);players=rows;if(games.length!==94||players.length!==1825)throw Error('College data contract changed');render()})
+]).then(([csv,rows])=>{games=parseCSV(csv);players=rows;if(!games.length||!players.length)throw Error('College attendance data is empty');const ids=new Set(games.map(g=>String(g.id)));if(ids.size!==games.length||players.some(p=>!ids.has(String(p.game_id))))throw Error('College data game/player references are inconsistent');render()})
 .catch(e=>{$('showing').textContent='Unable to load college attendance: '+e.message;$('features').textContent='Record highlights unavailable.'});
 </script><script src="../assets/site.js?v=search-20261016-v3"></script></body></html>

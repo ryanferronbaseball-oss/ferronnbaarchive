@@ -1,14 +1,15 @@
 {
   "_meta": {
-    "description": "Reviewed career achievements of college basketball players appearing in Courtside Archive. Naismith Men's College Player of the Year, regular-season Conference Player of the Year, and Associated Press postseason All-American First/Second/Third Teams. Honors may be earned in seasons other than games attended.",
+    "description": "Reviewed career achievements of college basketball players appearing in Courtside Archive. Naismith Men's College Player of the Year, regular-season Conference Player of the Year, and Associated Press postseason All-American First/Second/Third Teams and Honorable Mention. Honors may be earned in seasons other than games attended.",
     "source_scope": "Initial positively verified set for players in archive; this is not a declaration that every nonlisted player has no awards.",
-    "last_reviewed": "2026-11-03",
+    "last_reviewed": "2026-11-06",
     "ap_all_america_source_2020s": "https://www.sports-reference.com/cbb/awards/men/ap-all-america-2020-2029.html",
     "ap_all_america_source_2010s": "https://www.sports-reference.com/cbb/awards/men/ap-all-america-2010-2019.html",
     "national_poy_standard": "Naismith Men's College Player of the Year, awarded by the Atlanta Tipoff Club; this is not an NCAA-administered award.",
     "national_poy_winners_source": "https://naismithtrophy.com/winners/",
     "national_poy_2025_source": "https://naismithtrophy.com/cooper-flagg-ryan-kalkbrenner-and-rick-pitino-earn-2025-naismith-honors/",
-    "national_poy_checked_through": 2026
+    "national_poy_checked_through": 2026,
+    "ap_honorable_mention_policy": "Include AP Honorable Mention only; conference honorable mentions remain excluded."
   },
   "players": {
     "espn:3146557": {
@@ -25,6 +26,11 @@
           "season": "2017-18",
           "team": 2,
           "source": "https://villanova.com/news/2018/3/28/Brunson_Bridges_Tabbed_Associated_Press_All_Americans.aspx"
+        },
+        {
+          "season": "2016-17",
+          "team": "HM",
+          "source": "https://uvmathletics.com/news/2017/3/29/mens-basketball-bell-haynes-named-ap-all-america-honorable-mention.aspx"
         }
       ]
     },
@@ -37,7 +43,18 @@
           "source": "https://www.sports-reference.com/cbb/awards/men/mwc-poy.html"
         }
       ],
-      "ap_all_america": []
+      "ap_all_america": [
+        {
+          "season": "2017-18",
+          "team": "HM",
+          "source": "https://theamerican.org/news/2018/3/27/mens-basketball-clark-shamet-earn-ap-honorable-mention-all-american-honors.aspx"
+        },
+        {
+          "season": "2018-19",
+          "team": "HM",
+          "source": "https://goracers.com/news/2019/4/2/mens-basketball-morant-named-associated-press-first-team-all-america"
+        }
+      ]
     },
     "espn:4066648": {
       "name": "Rui Hachimura",
@@ -70,7 +87,13 @@
           "source": "https://bigwest.org/sports/2022/6/6/mbb-big-west-mens-basketball-individual-awards.aspx"
         }
       ],
-      "ap_all_america": []
+      "ap_all_america": [
+        {
+          "season": "2018-19",
+          "team": "HM",
+          "source": "https://goracers.com/news/2019/4/2/mens-basketball-morant-named-associated-press-first-team-all-america"
+        }
+      ]
     },
     "espn:3912832": {
       "name": "Jordan Davis",
@@ -81,7 +104,13 @@
           "source": "https://bigskyconf.com/news/2019/3/11/mens-basketball-uncs-jordan-davis-tabbed-bigskymbb-mvp-all-conference-team-announced.aspx"
         }
       ],
-      "ap_all_america": []
+      "ap_all_america": [
+        {
+          "season": "2018-19",
+          "team": "HM",
+          "source": "https://goracers.com/news/2019/4/2/mens-basketball-morant-named-associated-press-first-team-all-america"
+        }
+      ]
     },
     "espn:4397667": {
       "name": "Filip Petrusev",
@@ -143,7 +172,13 @@
           "source": "https://www.sports-reference.com/cbb/awards/men/mwc-poy.html"
         }
       ],
-      "ap_all_america": []
+      "ap_all_america": [
+        {
+          "season": "2020-21",
+          "team": "HM",
+          "source": "https://www.whiznews.com/the-associated-press-mens-all-america-teams/"
+        }
+      ]
     },
     "espn:4431695": {
       "name": "Drew Timme",
@@ -186,7 +221,13 @@
           "source": "https://www.sports-reference.com/cbb/awards/men/mwc-poy.html"
         }
       ],
-      "ap_all_america": []
+      "ap_all_america": [
+        {
+          "season": "2021-22",
+          "team": "HM",
+          "source": "https://www.cbssports.com/college-basketball/news/2021-22-ap-all-america-teams-kentuckys-oscar-tshiebwe-receives-most-votes-big-ten-cleans-up/"
+        }
+      ]
     },
     "espn:4431941": {
       "name": "RayJ Dennis",
@@ -283,7 +324,13 @@
           "source": "https://www.sports-reference.com/cbb/awards/men/mwc-poy.html"
         }
       ],
-      "ap_all_america": []
+      "ap_all_america": [
+        {
+          "season": "2024-25",
+          "team": "HM",
+          "source": "https://www.nbcsports.com/mens-college-basketball/news/the-associated-press-2024-25-mens-college-basketball-all-america-teams"
+        }
+      ]
     },
     "espn:3906665": {
       "name": "Brandon Clarke",
@@ -315,6 +362,16 @@
           "season": "2022-23",
           "team": 3,
           "source": "https://www.ksl.com/article/sports/national/the-associated-press-2022-23-mens-all-america-team/50599873"
+        },
+        {
+          "season": "2021-22",
+          "team": "HM",
+          "source": "https://www.cbssports.com/college-basketball/news/2021-22-ap-all-america-teams-kentuckys-oscar-tshiebwe-receives-most-votes-big-ten-cleans-up/"
+        },
+        {
+          "season": "2023-24",
+          "team": "HM",
+          "source": "https://www.nbcsports.com/college-basketball/news/edey-knecht-lead-ap-all-america-teams"
         }
       ]
     },
@@ -339,6 +396,105 @@
         }
       ],
       "ap_all_america": []
+    },
+    "espn:66260": {
+      "name": "Johnathan Williams",
+      "conference_poy": [],
+      "ap_all_america": [
+        {
+          "season": "2017-18",
+          "team": "HM",
+          "source": "https://theamerican.org/news/2018/3/27/mens-basketball-clark-shamet-earn-ap-honorable-mention-all-american-honors.aspx"
+        }
+      ]
+    },
+    "espn:4280150": {
+      "name": "Joel Ayayi",
+      "conference_poy": [],
+      "ap_all_america": [
+        {
+          "season": "2020-21",
+          "team": "HM",
+          "source": "https://www.whiznews.com/the-associated-press-mens-all-america-teams/"
+        }
+      ]
+    },
+    "official:colorado-2018-19:mckinley-wright-iv": {
+      "name": "McKinley Wright IV",
+      "conference_poy": [],
+      "ap_all_america": [
+        {
+          "season": "2020-21",
+          "team": "HM",
+          "source": "https://www.whiznews.com/the-associated-press-mens-all-america-teams/"
+        }
+      ]
+    },
+    "espn:4397128": {
+      "name": "Tyger Campbell",
+      "conference_poy": [],
+      "ap_all_america": [
+        {
+          "season": "2022-23",
+          "team": "HM",
+          "source": "https://www.ksl.com/article/sports/national/the-associated-press-2022-23-mens-all-america-team/50599873"
+        }
+      ]
+    },
+    "espn:4683833": {
+      "name": "Wade Taylor IV",
+      "conference_poy": [],
+      "ap_all_america": [
+        {
+          "season": "2022-23",
+          "team": "HM",
+          "source": "https://www.ksl.com/article/sports/national/the-associated-press-2022-23-mens-all-america-team/50599873"
+        }
+      ]
+    },
+    "espn:4432117": {
+      "name": "Isaiah Stevens",
+      "conference_poy": [],
+      "ap_all_america": [
+        {
+          "season": "2023-24",
+          "team": "HM",
+          "source": "https://www.nbcsports.com/college-basketball/news/edey-knecht-lead-ap-all-america-teams"
+        }
+      ]
+    },
+    "espn:4590360": {
+      "name": "Chucky Hepburn",
+      "conference_poy": [],
+      "ap_all_america": [
+        {
+          "season": "2024-25",
+          "team": "HM",
+          "source": "https://www.nbcsports.com/mens-college-basketball/news/the-associated-press-2024-25-mens-college-basketball-all-america-teams"
+        }
+      ]
+    },
+    "espn:4898371": {
+      "name": "Maxime Raynaud",
+      "conference_poy": [],
+      "ap_all_america": [
+        {
+          "season": "2024-25",
+          "team": "HM",
+          "source": "https://www.nbcsports.com/mens-college-basketball/news/the-associated-press-2024-25-mens-college-basketball-all-america-teams"
+        }
+      ]
+    },
+    "official:vanderbilt:tyler-tanner": {
+      "name": "Tyler Tanner",
+      "conference_poy": [],
+      "ap_all_america": [
+        {
+          "season": "2025-26",
+          "team": "HM",
+          "source": "https://wtop.com/ncaa-basketball/2026/03/the-associated-press-2025-26-mens-college-basketball-all-america-teams/"
+        }
+      ]
     }
   }
 }

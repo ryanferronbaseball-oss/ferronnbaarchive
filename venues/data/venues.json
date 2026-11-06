@@ -1,7 +1,7 @@
 {
-  "updated": "2026-11-02",
-  "venueCount": 129,
-  "mappedGames": 705,
+  "updated": "2026-11-05",
+  "venueCount": 130,
+  "mappedGames": 706,
   "excludedUnassignedGames": 7,
   "venues": [
     {
@@ -9442,6 +9442,40 @@
           "awayScore": null,
           "homeScore": null,
           "url": "../mlb/game.html?id=15"
+        }
+      ]
+    },
+    {
+      "id": "venue-0130",
+      "name": "Memorial Gymnasium",
+      "sport": "College Basketball",
+      "city": "Nashville, Tennessee",
+      "address": "210 25th Avenue South, Nashville, TN 37240",
+      "visits": 1,
+      "firstVisit": "2026-11-05",
+      "lastVisit": "2026-11-05",
+      "lat": 36.144611,
+      "lon": -86.80742,
+      "coordinateConfidence": "High",
+      "opened": "1952",
+      "capacity": "14,316 (Vanderbilt University)",
+      "occupants": "Vanderbilt Commodores men's and women's basketball",
+      "history": "Dedicated December 6, 1952, in memory of Vanderbilt students who died in World War II. The arena is noted for its elevated playing court and unusual end-zone team benches. Designed by Edwin Keeble and later expanded and renovated.",
+      "sources": [
+        "https://vucommodores.com/news/2011/01/26/historical-and-magical-memorial-gym",
+        "https://news.vanderbilt.edu/2023/03/01/towering-figure/",
+        "https://nashvillesites.org/records/vanderbilt-memorial-gymnasium"
+      ],
+      "factNote": "Venue first witnessed at the November 5, 2026, Wake Forest at Vanderbilt game.",
+      "games": [
+        {
+          "id": "95",
+          "date": "2026-11-05",
+          "away": "Wake Forest",
+          "home": "Vanderbilt",
+          "awayScore": 51,
+          "homeScore": 74,
+          "url": "../college/game.html?id=95"
         }
       ]
     }

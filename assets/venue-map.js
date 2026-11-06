@@ -12,7 +12,7 @@
   Promise.all([venuesRequest,photosRequest]).then(([data,photoData])=>{
     if(!window.L)throw Error('map library unavailable');
     const venues=data.venues,photos=photoData.photos||{};
-    if(venues.length!==129)throw Error('venue inventory incomplete');
+    if(!venues.length||data.venueCount!==venues.length)throw Error('venue inventory incomplete');
     $('venueCount').textContent=venues.length.toLocaleString();
     $('venueGameCount').textContent=data.mappedGames.toLocaleString();
     $('venueSportCount').textContent=new Set(venues.map(v=>v.sport)).size;
@@ -80,7 +80,7 @@
     const target=new URLSearchParams(location.search).get('venue');
     if(target){const found=venues.find(v=>v.id===target);if(found)setTimeout(()=>showVenue(found),250);}
   }).catch(err=>{
-    if(fallback){fallback.hidden=false;fallback.innerHTML='<div>The interactive map could not load right now. <a href="./venues/">Browse all 129 venue profiles instead.</a></div>';}
+    if(fallback){fallback.hidden=false;fallback.innerHTML='<div>The interactive map could not load right now. <a href="./venues/">Browse all venue profiles instead.</a></div>';}
     console.warn('Venue map:',err.message);
   });
 })();

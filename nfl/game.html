@@ -8,6 +8,7 @@
 <p class="lead">Game-by-game box scores with full scoring chronology, from opening kickoff to the final score.</p>
 <div class="toolbar"><label class="filter-label" for="gameSelect">Your game</label><select id="gameSelect" aria-label="Select attended NFL game"></select></div>
 <section id="scoreboard" aria-label="Game score by quarter"><div class="empty">Loading game…</div></section>
+<section id="gamePhoto" aria-label="Game photograph" style="display:none;margin:18px 0 24px"></section>
 <section id="playerOfGame" class="panel pog" aria-label="NFL Player of the Game" aria-live="polite"><div class="empty">Loading Player of the Game…</div></section>
 <section id="pprLeaders" class="panel ppr-board" aria-label="Top Full-PPR offensive scores in this game">
  <div class="ppr-board-heading"><h2>Top fantasy performances</h2><a href="./milestones.html" class="action-link secondary">PPR milestones ↗</a></div>
@@ -69,6 +70,10 @@ document.addEventListener("DOMContentLoaded",async()=>{
  function setGame(id){
   selected=games.find(g=>g.id===id)||games[0];if(!selected)return;
   el("gameSelect").value=selected.id;el("scoreboard").innerHTML=A.scoreboard(selected);
+  const photos={"nfl-2007-11-25-sf-ari":"./assets/game-photos/2007-11-25-san-francisco-arizona.png"};
+  const photo=photos[selected.id],figure=el("gamePhoto");
+  figure.style.display=photo?"block":"none";
+  figure.innerHTML=photo?'<figure style="margin:0;max-width:900px"><img src="'+A.esc(photo)+'" alt="San Francisco 49ers versus Arizona Cardinals, November 25, 2007" style="display:block;width:100%;height:auto;border-radius:14px"><figcaption class="caption" style="margin-top:8px">November 25, 2007 · San Francisco 49ers at Arizona Cardinals</figcaption></figure>':"";
   const event=score[selected.id];
   el("scoringCount").textContent=(event?.plays.length||0)+" scoring plays";
   el("scoring").innerHTML=A.scoring(event?.plays||[],selected);

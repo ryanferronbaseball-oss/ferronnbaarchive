@@ -11,7 +11,7 @@
   const venuesRequest=fetch('./data/venues.json').then(r=>{if(!r.ok)throw Error('venue data unavailable');return r.json()});
   const photosRequest=fetch('./data/photos.json').then(r=>r.ok?r.json():{photos:{}}).catch(()=>({photos:{}}));
   Promise.all([venuesRequest,photosRequest]).then(([data,photoData])=>{
-    if(data.venues.length!==129)throw Error('venue inventory incomplete');
+    if(!Array.isArray(data.venues)||data.venues.length===0||data.venueCount!==data.venues.length)throw Error('venue inventory incomplete');
     if(page==='directory')renderDirectory(data.venues);
     else if(page==='profile')renderProfile(data.venues,photoData.photos||{});
   }).catch(err=>{
@@ -87,7 +87,7 @@
           ${sources?`<section class="vp-panel"><h2>Venue references</h2><ul class="vp-sources">${sources}</ul></section>`:''}
         </aside>
       </div>
-      <a class="vp-return" href="./">← Explore all 129 venues</a>`;
+      <a class="vp-return" href="./">← Explore all venues</a>`;
 
     const rows=$('venueGamesRows'),more=$('venueGamesMore');
     const games=v.games.slice().reverse();let visible=Math.min(15,games.length);

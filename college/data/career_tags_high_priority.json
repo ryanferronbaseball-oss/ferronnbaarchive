@@ -1,7 +1,7 @@
 {
   "_meta": {
     "description": "Positively verified high-priority college basketball achievements for witnessed players. Missing tags are unreviewed, not evidence an honor was not earned. NBA Draft status comes from nba_crosswalk.json.",
-    "last_reviewed": "2026-11-03",
+    "last_reviewed": "2026-11-06",
     "season_rule": "Honors follow the player's college career, not necessarily the date of the game attended. National championship honors require verified membership on the title-winning roster."
   },
   "players": {
@@ -3977,6 +3977,53 @@
           "conference": "Big Ten",
           "team": 3,
           "source": "https://s3.amazonaws.com/bigten.org/documents/2023/11/15/23_24_Men_s_Basketball_Media_Guide.pdf"
+        }
+      ]
+    },
+    "official:vanderbilt:tyler-tanner": {
+      "name": "Tyler Tanner",
+      "all_conference": [
+        {
+          "season": "2025-26",
+          "conference": "SEC",
+          "team": 1,
+          "source": "https://vucommodores.com/sports/mbball/roster/player/tyler-tanner"
+        }
+      ]
+    },
+    "official:wake-forest:kevair-kennedy": {
+      "name": "Kevair Kennedy",
+      "conference_poy": [
+        {
+          "season": "2025-26",
+          "conference": "MAAC",
+          "source": "https://godeacs.com/sports/mens-basketball/roster/kevair-kennedy/9465"
+        }
+      ],
+      "conference_foy": [
+        {
+          "season": "2025-26",
+          "conference": "MAAC",
+          "award": "Rookie of the Year",
+          "source": "https://godeacs.com/sports/mens-basketball/roster/kevair-kennedy/9465"
+        }
+      ],
+      "all_conference": [
+        {
+          "season": "2025-26",
+          "conference": "MAAC",
+          "team": 1,
+          "source": "https://godeacs.com/sports/mens-basketball/roster/kevair-kennedy/9465"
+        }
+      ]
+    },
+    "official:wake-forest:justin-abson": {
+      "name": "Justin Abson",
+      "conference_dpoy": [
+        {
+          "season": "2023-24",
+          "conference": "Sun Belt",
+          "source": "https://godeacs.com/sports/mens-basketball/roster/justin-abson/9815"
         }
       ]
     }

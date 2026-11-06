@@ -1,5 +1,7 @@
 # Courtside Archive
 
+> **Project continuity:** See [Courtside Archive Memory](COURTSIDE_ARCHIVE_MEMORY.md) for Ryan's approved rules, historical decisions, game-entry checklist, source-of-truth files, and a safe handoff to future conversations. Read it before major maintenance.
+
 A personal sports-attendance archive with a master home and distinct NBA and college basketball experiences.
 
 ## Sports gateway — development preview

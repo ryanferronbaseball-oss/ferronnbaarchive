@@ -70,10 +70,10 @@ document.addEventListener("DOMContentLoaded",async()=>{
  function setGame(id){
   selected=games.find(g=>g.id===id)||games[0];if(!selected)return;
   el("gameSelect").value=selected.id;el("scoreboard").innerHTML=A.scoreboard(selected);
-  const photos={"nfl-2007-11-25-sf-ari":"./assets/game-photos/2007-11-25-san-francisco-arizona.png"};
+  const photos={"nfl-2007-11-25-sf-ari":"./assets/game-photos/2007-11-25-san-francisco-arizona.png","nfl-2008-12-07-stl-ari":"./assets/game-photos/2008-12-07-st-louis-arizona.png","nfl-2023-12-03-ind-ten":"./assets/game-photos/2023-12-03-indianapolis-tennessee.png"};
   const photo=photos[selected.id],figure=el("gamePhoto");
   figure.style.display=photo?"block":"none";
-  figure.innerHTML=photo?'<figure style="margin:0;max-width:900px"><img src="'+A.esc(photo)+'" alt="San Francisco 49ers versus Arizona Cardinals, November 25, 2007" style="display:block;width:100%;height:auto;border-radius:14px"><figcaption class="caption" style="margin-top:8px">November 25, 2007 · San Francisco 49ers at Arizona Cardinals</figcaption></figure>':"";
+  figure.innerHTML=photo?'<figure style="margin:0;max-width:900px"><img src="'+A.esc(photo)+'" alt="Game photograph from the selected NFL matchup" style="display:block;width:100%;height:auto;border-radius:14px"><figcaption class="caption" style="margin-top:8px">'+A.esc(A.date(selected.date))+' · '+A.esc(selected.away)+' at '+A.esc(selected.home)+'</figcaption></figure>':"";
   const event=score[selected.id];
   el("scoringCount").textContent=(event?.plays.length||0)+" scoring plays";
   el("scoring").innerHTML=A.scoring(event?.plays||[],selected);

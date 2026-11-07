@@ -16,9 +16,11 @@ ids=set(byId)
 assert len(ids)>=156
 assert len(links)>=35
 assert len([x for x in links if x["mlb_seen"]])>=7
-assert len(college)==6
-assert len({r["college_player_id"] for r in college})==6
+assert len(college)>=6
+assert len({r["college_player_id"] for r in college})==len(college)
 assert all(r["verified"] is True and r["milb_id"] in ids for r in college)
+assert len({r["milb_id"] for r in college})==len(college)
+assert len(college)==19
 assert all(r["verified"] is True and r["mlb_debut"] for r in links)
 assert not ({r["milb_id"] for r in college}-{r for r in ids})
 positive={r["milb_id"]:r for r in links}
@@ -78,6 +80,6 @@ try:
   mobile.goto(origin+"/milb/player.html?id="+str(both_mlb["milb_id"]),wait_until="networkidle")
   assert mobile.locator(".milb-crossover-badge").count()>=2
   browser.close()
- print(f"PASS: {len(links)} MLB tags, {sum(x['mlb_seen'] for x in links)} MiLB+MLB links and 6 deferred college+MiLB links; separate stats")
+ print(f"PASS: {len(links)} MLB tags, {sum(x['mlb_seen'] for x in links)} MiLB+MLB links and {len(college)} verified college+MiLB links; separate stats")
 finally:
  server.shutdown();server.server_close()

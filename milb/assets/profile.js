@@ -74,7 +74,7 @@ function tabTable(rows,kind,gamesById){
  return '<div class="table-wrap"><table class="mlb-profile-game-table"><thead><tr><th>Date</th><th>Team</th><th>Match</th>'+keys.map(x=>'<th>'+x[0]+'</th>').join("")+'</tr></thead><tbody>'
  +relevant.map(r=>{const g=gamesById.get(String(r.game_id)),v=r[kind];return '<tr><td><a href="'+gameUrl(r.game_id)+'">'+dt(r.date)+'</a></td><td>'+esc(r.team||"—")+'</td><td>'+esc(g?g.away_team+" @ "+g.home_team:"—")+'</td>'+keys.map(([,key])=>'<td>'+esc(value(v[key]))+'</td>').join("")+'</tr>';}).join("")+'</tbody></table></div>';
 }
-function renderProfile(playerId,rows,games,links){
+function renderProfile(playerId,rows,games,links,collegeLinks){
  const entries=rows.filter(r=>String(r.player_id)===String(playerId));
  if(!entries.length){$("app").innerHTML='<div class="eyebrow">MiLB · Player profile</div><h1>Player not found.</h1><p><a href="./stats.html">← Player leaderboards</a></p>';return;}
  const name=entries.find(r=>r.name)?.name||"Unknown player";
@@ -89,11 +89,14 @@ function renderProfile(playerId,rows,games,links){
  const years=[...new Set(gamesSeen.map(g=>g.date.slice(0,4)))].sort();
  const span=years.length?(years[0]===years[years.length-1]?years[0]:years[0]+"–"+years[years.length-1]):"—";
  const initials=name.trim().split(/\s+/).map(s=>s.charAt(0)).slice(0,2).join("").toUpperCase();
- const linked=links.find(x=>String(x.milb_id)===String(playerId)&&x.verified===true);
- const linksHtml=linked?'<div class="mlb-profile-achievements">'
-   +(linked.mlb_id?(linked.mlb_seen===true?badge("SEEN IN MiLB + MLB","../mlb/player.html?id="+urlId(linked.mlb_id)):badge("REACHED MLB","./mlb-alumni.html")):"")
-   +(linked.college_id?badge("SEEN IN MiLB + COLLEGE","../college-baseball/player.html?id="+urlId(linked.college_id)):"")
-   +'</div>':"";
+ const linked=links.find(x=>String(x.milb_id)===String(playerId)&&x.verified===true&&x.mlb_debut);
+ const collegeLink=collegeLinks.find(x=>String(x.milb_id)===String(playerId)&&x.verified===true&&x.college_player_id);
+ const tags=[
+  ...(linked?[badge("★ REACHED MLB","https://www.mlb.com/player/"+urlId(linked.mlb_id))]:[]),
+  ...(linked&&linked.mlb_seen===true?[badge("★ SEEN IN MiLB + MLB","../mlb/player.html?id="+urlId(linked.mlb_id))]:[]),
+  ...(collegeLink?[badge("★ SEEN IN COLLEGE + MiLB","../college-baseball/player.html?id="+urlId(collegeLink.college_player_id))]:[])
+ ];
+ const linksHtml=tags.length?'<div class="mlb-profile-achievements" aria-label="Verified baseball pathways">'+tags.join("")+'</div>':"";
  const impacts=entries.map(impact).filter(Boolean).sort((a,b)=>b.score-a.score);
  const best=impacts[0];
  const bestB=impacts.filter(x=>x.battingScore!==null).sort((a,b)=>b.battingScore-a.battingScore)[0];
@@ -163,9 +166,9 @@ async function load(){
  try{
   const id=new URLSearchParams(location.search).get("id");
   if(!id){$("app").innerHTML='<div class="eyebrow">MiLB · Player profile</div><h1>Choose a player.</h1><p><a href="./stats.html">← Player leaderboards</a></p>';return;}
-  const [r,g,l]=await Promise.all(["player_stats","games","player_links"].map(name=>fetch("./data/"+name+".json",{cache:"no-store"}).then(async res=>{if(!res.ok)throw Error(name+" unavailable");return res.json();})));
-  if(!Array.isArray(r)||!Array.isArray(g)||!Array.isArray(l))throw Error("Unexpected MiLB data");
-  renderProfile(id,r,g,l);
+  const [r,g,l,c]=await Promise.all(["player_stats","games","player_links","college_links"].map(name=>fetch("./data/"+name+".json",{cache:"no-store"}).then(async res=>{if(!res.ok)throw Error(name+" unavailable");return res.json();})));
+  if(!Array.isArray(r)||!Array.isArray(g)||!Array.isArray(l)||!Array.isArray(c))throw Error("Unexpected MiLB data");
+  renderProfile(id,r,g,l,c);
  }catch(e){$("app").innerHTML='<div class="empty">Unable to load MiLB player profile: '+esc(e.message)+'</div>';}
 }
 document.addEventListener("DOMContentLoaded",load);

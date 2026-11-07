@@ -5,8 +5,18 @@ const {esc,fmt,date,playerUrl,gameUrl,table,bar,tiles,record,mlbRow}=A;
 el("navigation").innerHTML=A.nav(page);
 let d;try{d=await A.load()}catch(err){app.innerHTML='<div class="empty">Unable to load attendance data: '+esc(err.message)+'</div>';return}
 const {games,rows,players,scores,decisions}=d;
-const collegeCrossover=new Map();
+const collegeCrossover=new Map(),milbCrossover=new Map();
 if(page==="player"){
+ try{
+  const response=await fetch("../milb/data/player_links.json",{cache:"no-store"});
+  if(response.ok){
+   const links=await response.json();
+   if(Array.isArray(links))for(const link of links){
+    if(link.verified===true&&link.mlb_seen===true&&link.mlb_id!=null&&link.milb_id!=null)
+     milbCrossover.set(String(link.mlb_id),String(link.milb_id));
+   }
+  }
+ }catch(error){console.warn("MiLB attendance crossover unavailable",error)}
  try{
   const response=await fetch("../college-baseball/data/mlb_crosswalk.json",{cache:"no-store"});
   if(response.ok){
@@ -288,7 +298,11 @@ function profilePage(){
  const pitcher=!!ps&&(p.pitching.length>=p.batting.length||!bs.atBats);
  const nameInitials=p.name.split(/\s+/).map(x=>x[0]).slice(0,2).join("").toUpperCase();
  const collegeId=collegeCrossover.get(String(p.player_id));
- const crossoverBadge=collegeId?'<div class="mlb-profile-achievements"><a class="mlb-profile-badge college-crossover" href="../college-baseball/player.html?id='+encodeURIComponent(collegeId)+'" title="You attended this player’s college and MLB games">★ SEEN IN COLLEGE + MLB ↗</a></div>':"";
+ const milbId=milbCrossover.get(String(p.player_id));
+ const crossoverBadge=(collegeId||milbId)?'<div class="mlb-profile-achievements" aria-label="Attended baseball archive crossovers">'
+  +(collegeId?'<a class="mlb-profile-badge college-crossover" href="../college-baseball/player.html?id='+encodeURIComponent(collegeId)+'" title="You attended this player’s college and MLB games">★ SEEN IN COLLEGE + MLB ↗</a>':"")
+  +(milbId?'<a class="mlb-profile-badge college-crossover" href="../milb/player.html?id='+encodeURIComponent(milbId)+'" title="You attended this player’s Minor League and Major League Baseball games">★ SEEN IN MiLB + MLB ↗</a>':"")
+  +'</div>':"";
  const badges=crossoverBadge+(hasHonors?'<div class="mlb-profile-achievements" aria-label="Career accomplishments">'
   +(hof?'<a class="mlb-profile-badge hof" href="./hall-of-fame.html" title="National Baseball Hall of Fame, inducted '+hof.year+'">★ HALL OF FAME ↗</a>':"")
   +honors.filter(([key])=>career?.[key]?.length).map(([key,title,theme,mark])=>

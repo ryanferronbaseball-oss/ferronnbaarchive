@@ -1,0 +1,15 @@
+.milestone-section{margin:4px 0 52px}
+.milestone-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.milestone-card{display:flex;flex-direction:column;min-width:0;padding:21px 20px;border:1px solid #d8dce2;background:#fffefa;border-radius:17px;box-shadow:0 6px 20px #23384a0a;text-decoration:none!important;color:#263744!important;transition:transform .16s,border-color .16s,box-shadow .16s}
+.milestone-card:hover,.milestone-card:focus-visible{transform:translateY(-3px);border-color:#9e5065;box-shadow:0 8px 24px #59152b1b}
+.milestone-card-number{display:flex;align-items:baseline;gap:7px;font-size:11px;font-weight:850;letter-spacing:.12em;text-transform:uppercase;color:#814059}
+.milestone-card-number strong{font-size:35px;line-height:1.1;letter-spacing:-.06em;color:#681d37;font-variant-numeric:tabular-nums}
+.milestone-card-date{font-size:12px;color:#6d7780;margin:13px 0 8px;font-weight:700}
+.milestone-card-matchup{font-size:16px;font-weight:850;line-height:1.35;color:#263744;overflow-wrap:anywhere}
+.milestone-card-sport{font-size:11px;color:#6c6871;margin-top:auto;padding-top:15px;font-weight:750}
+.milestone-card-link{margin-top:8px;font-size:11px;color:#814059;font-weight:850}
+.milestone-loading{grid-column:1/-1;color:#687580;font-size:14px}
+.milestone-note{margin:14px 0 0;font-size:12px;line-height:1.6;color:#6e7880}
+@media(max-width:930px){.milestone-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:480px){.milestone-grid{grid-template-columns:1fr}.milestone-card{padding:18px}.milestone-section{margin-bottom:38px}}
+@media(prefers-reduced-motion:reduce){.milestone-card{transition:none}}

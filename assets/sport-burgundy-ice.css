@@ -232,3 +232,33 @@ header.ca-header,header.archive-header,.archive-header{
 .mlb-profile-hero.mlb-profile-head,.player-hero,.cb-profile-hero,.soccer-profile-head{
  box-shadow:0 9px 26px rgba(25,46,67,.06)!important
 }
+
+/* Final audit, pass 3: college-baseball notes, alumni cards and residual details. */
+.cb-note,.alumni-callout,.notes-banner{
+ background:#eaf6fc!important;border-left-color:#831738!important;color:#566879!important
+}
+.cb-note strong,.alumni-review,.alumni-name,.alumni-links a{color:#831738!important}
+.cb-toolbar label,.cb-card-meta,.cb-bar-label{color:#566879!important}
+.cb-chip:not(.pending),.cb-quick-result em{
+ background:#eaf6fc!important;border-color:#c5e3ef!important;color:#831738!important
+}
+.cb-game-card,.cb-game-summary,.cb-player-panel,.cb-record,.soccer-tile{
+ background:#fff!important;border-color:#d4e1e9!important
+}
+.cb-game-summary{background:linear-gradient(140deg,#fff,#edf7fc)!important}
+.cb-table th,.cb-boxscore-table th,.mlb-sticky th{
+ background:#eaf6fc!important;color:#34516a!important
+}
+.cb-table a,.cb-score,.cb-player-panel a,.cb-record strong,.cb-note strong,
+.mlb-hof-games a,.mlb-honor-detail strong,.mlb-honor-year{
+ color:#831738!important
+}
+.cb-boxscore-table .mlb-lineup-row.mlb-substitute td,
+.cb-boxscore-table .mlb-lineup-row.mlb-substitute td:nth-child(2){
+ background:#f6fbfd!important
+}
+.mlb-honor-detail,.mlb-hof-empty{
+ background:#f8fbfd!important;border-color:#c5e3ef!important;color:#192e43!important
+}
+.soccer-feature .soccer-avatar,.soccer-avatar{background:#eaf6fc!important;color:#831738!important}
+.soccer-profile-head h1,.soccer-final strong,.soccer-tile strong{color:#831738!important}

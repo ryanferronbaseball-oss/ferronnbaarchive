@@ -1,12 +1,12 @@
 {
   "source": "Official MLB StatsAPI schedule hydration with /api/v1.1/game feed fallback",
-  "verified_at": "2026-11-07T05:05:14.037030+00:00",
-  "games_checked": 118,
-  "games_with_verified_win": 118,
-  "games_with_verified_loss": 118,
-  "games_with_verified_save": 55,
+  "verified_at": "2026-11-07T18:27:43.306201+00:00",
+  "games_checked": 119,
+  "games_with_verified_win": 119,
+  "games_with_verified_loss": 119,
+  "games_with_verified_save": 56,
   "games_without_save": 63,
-  "player_game_pitching_rows": 902,
+  "player_game_pitching_rows": 910,
   "all_w_l_sv_internally_consistent": true,
   "miLB_data_only": true,
   "unverified_game_ids": [],
@@ -787,6 +787,13 @@
       "winner": 692020,
       "loser": 681116,
       "save": null
+    },
+    {
+      "game_id": "milb-2023-07-04-acl-royals-rangers",
+      "game_pk": 743312,
+      "winner": 697795,
+      "loser": 800539,
+      "save": 681896
     },
     {
       "game_id": "milb-2023-07-06-acl-royals-cubs",

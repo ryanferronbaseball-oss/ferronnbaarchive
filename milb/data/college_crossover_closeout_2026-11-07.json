@@ -1,0 +1,18 @@
+{
+  "date": "2026-11-07",
+  "scope": "All 119 locally imported MiLB attendance games compared against College Baseball player records and canonical transfer identities",
+  "previously_verified_links": 19,
+  "newly_verified_links": 3,
+  "total_verified_links": 22,
+  "method": "Normalized full-name candidate search followed by official MiLB/MLB identity and college affiliation checks; no same-name-only approval",
+  "new_verified": [
+    {"milb_id": 686977, "name": "Bradlee Beesley", "college_player_id": "cb-cal-poly-bradlee-beesley", "evidence_url": "https://www.milb.com/player/bradlee-beesley-686977"},
+    {"milb_id": 691726, "name": "Kevin Sim", "college_player_id": "cb-san-diego-kevin-sim", "evidence_url": "https://www.mlb.com/player/kevin-sim-691726"},
+    {"milb_id": 675440, "name": "Mike Peabody", "college_player_id": "cb-uc-irvine-mike-peabody", "evidence_url": "https://www.milb.com/player/mike-peabody-675440"}
+  ],
+  "rejected_same_name_match": [
+    {"milb_id": 523260, "name": "Joe Kelly", "wrong_college_player_id": "cb-st-john-s-joe-kelly", "reason": "MLBAM 523260 is pitcher Joe Kelly of UC Riverside, not the St. John's college attendee", "evidence_url": "https://www.mlb.com/player/joe-kelly-523260"}
+  ],
+  "publication_status": "local_changes_pending_github_upload",
+  "college_to_milb_badge_policy": "Use verified college_links.json only; both college and MiLB profile pages consume it"
+}

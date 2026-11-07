@@ -1,11 +1,11 @@
 {
   "source": "MLB StatsAPI (MiLB games only)",
-  "timestamp": "2026-11-07T05:05:14.037030+00:00",
-  "games_checked": 118,
-  "innings_verified": 118,
-  "scoring_plays_verified": 118,
-  "pitcher_order_verified": 118,
-  "pitching_decisions_verified": 118,
+  "timestamp": "2026-11-07T18:27:43.306201+00:00",
+  "games_checked": 119,
+  "innings_verified": 119,
+  "scoring_plays_verified": 119,
+  "pitcher_order_verified": 119,
+  "pitching_decisions_verified": 119,
   "games": [
     {
       "game_id": "milb-2014-05-24-storm-quakes",
@@ -1063,6 +1063,15 @@
     {
       "game_id": "milb-2023-08-27-rawhide-66ers",
       "pk": 724867,
+      "status": "verified",
+      "order_status": "verified",
+      "score_status": "verified",
+      "play_status": "verified",
+      "decision_status": "verified"
+    },
+    {
+      "game_id": "milb-2023-07-04-acl-royals-rangers",
+      "pk": 743312,
       "status": "verified",
       "order_status": "verified",
       "score_status": "verified",

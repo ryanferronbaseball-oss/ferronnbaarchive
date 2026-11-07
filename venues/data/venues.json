@@ -1,7 +1,7 @@
 {
   "updated": "2026-11-07",
   "venueCount": 140,
-  "mappedGames": 824,
+  "mappedGames": 825,
   "excludedUnassignedGames": 7,
   "venues": [
     {
@@ -9499,8 +9499,17 @@
         "https://www.surprisestadium.com/stadium-info/about",
         "https://www.surprisestadium.com/stadium-info/stadium-a-z"
       ],
-      "factNote": "First attended July 7, 2023, ACL Rangers at ACL Royals. The separately dated July 4 game on the July 7 live schedule is not counted.",
+      "factNote": "First attended July 4, 2023, ACL Royals at ACL Rangers (suspended and completed July 7). Also attended July 7, ACL Rangers at ACL Royals.",
       "games": [
+        {
+          "id": "milb-2023-07-04-acl-royals-rangers",
+          "date": "2023-07-04",
+          "away": "ACL Royals",
+          "home": "ACL Rangers",
+          "awayScore": 5,
+          "homeScore": 8,
+          "url": "../milb/game.html?id=milb-2023-07-04-acl-royals-rangers"
+        },
         {
           "id": "milb-2023-07-07-acl-rangers-royals",
           "date": "2023-07-07",
@@ -9511,8 +9520,8 @@
           "url": "../milb/game.html?id=milb-2023-07-07-acl-rangers-royals"
         }
       ],
-      "visits": 1,
-      "firstVisit": "2023-07-07",
+      "visits": 2,
+      "firstVisit": "2023-07-04",
       "lastVisit": "2023-07-07"
     },
     {

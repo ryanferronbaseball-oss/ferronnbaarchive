@@ -1,0 +1,24 @@
+/* Shared visual language for the seven sport landing pages.
+   Semantic distinctions (award, team, win/loss and position tags) are preserved. */
+:root{--forest:#831738;--cream:#f8fbfd;--ink:#192e43;--muted:#566879;--hair:#d4e1e9;--card:#fff;--soft:#eaf6fc;--ca-bg:#f8fbfd;--ca-surface:#fff;--ca-surface-2:#eaf6fc;--ca-blue:#831738;--ca-white:#192e43;--ca-muted:#566879;--ca-edge:#d4e1e9;--ca-green:#831738;--ca-green-hover:#67112d;--ca-sage:#d9f0fa;--ca-cream:#f8fbfd;--ca-paper:#fff}
+html,body{background:#f8fbfd!important;color:#192e43!important}
+body main{color:#192e43!important}
+.archive-header,.ca-header{border-color:#d4e1e9!important}
+.archive-logo,.archive-nav a,.ca-wordmark,.ca-nav a{color:#192e43!important}
+.archive-logo small,.ca-wordmark small{color:#566879!important}
+.archive-nav a:hover,.archive-nav a[aria-current="page"],.ca-nav a:hover,.ca-nav a.active{background:#d9f0fa!important;color:#831738!important}
+.eyebrow,.over,.archive-kicker,.metric strong,.game-card .game-score,.team-score,.play-label{color:#831738!important}
+.metric,.game-card,.panel,.scoreboard,.ca-feature,.insight-card,.card,.tile,.record{background:#fff!important;border-color:#d4e1e9!important}
+.metric small,.game-date,.caption,.lead{color:#566879!important}
+.action-link:not(.secondary),.sport-button,.tabbar button[aria-selected="true"],button.active,.tab.active,.view-tab.active{background:#831738!important;border-color:#831738!important;color:#fff!important}
+.action-link.secondary,.tabbar button:not([aria-selected="true"]){background:#eaf6fc!important;color:#831738!important;border-color:#c9e3ef!important}
+.toolbar select,.toolbar input,input,select{border-color:#c9dfea}
+.table-wrap,table{border-color:#d4e1e9!important}
+th,thead th{background:#eaf6fc!important;color:#34516a!important}
+tbody tr:nth-child(even) td{background:#f6fbfd}
+a:not(.action-link):not(.archive-logo):not(.ca-logo){color:#831738}
+.ca-mark{background:#d9f0fa!important;border-color:#aed8ec!important}
+.ca-mark svg{stroke:#831738!important}
+.ca-feature small{color:#831738!important}
+.ca-feature strong,.ca-feature .ca-name{color:#192e43!important}
+/* Scope generic buttons narrowly to avoid altering team/award status indicators. */

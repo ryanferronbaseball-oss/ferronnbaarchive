@@ -1,0 +1,55 @@
+/* Courtside Archive homepage: approved burgundy and ice-blue palette.
+   Scope deliberately limited to the portal; sport archive award colors stay intact. */
+:root{--home-burgundy:#831738;--home-burgundy-dark:#67112d;--home-ice:#d9f0fa;--home-ice-deep:#bde3f5;--home-navy:#192e43;--home-muted:#566879;--home-border:#d4e1e9;--home-white:#f8fbfd}
+html,body{background:var(--home-white)!important;color:var(--home-navy)!important}
+body main{color:var(--home-navy)!important}
+.skip{background:var(--home-burgundy)!important}
+.portal-header,.section-top,.venue-section,.portal-footer{border-color:var(--home-border)!important}
+.portal-brand,.portal-wordmark,h1,h2,h3,.future strong{color:var(--home-navy)!important}
+.portal-mark{background:var(--home-ice)!important;border-color:#b9dcec!important}
+.portal-mark svg{stroke:var(--home-burgundy)}
+.portal-wordmark small,.hero-copy,.section-top p,.sport-body p,.future p,.portal-footer{color:var(--home-muted)!important}
+.portal-nav a,.portal-footer a{color:var(--home-navy)!important}
+.portal-nav a:hover,.portal-nav a:focus-visible{background:var(--home-ice)!important;color:var(--home-burgundy)!important}
+.portal-kicker,.sport-label,.future small{color:var(--home-burgundy)!important}
+h1 em{color:var(--home-burgundy)!important}
+.hero-annotation{color:#42586d!important}
+.hero-annotation i{background:var(--home-burgundy)!important}
+.hero-number{background:radial-gradient(circle at 18% 15%,#e8f7fd,var(--home-ice) 64%,#cbeaf7)!important;border-color:#b9ddeb!important}
+.hero-number::before{border-color:#97cfe9!important}
+.hero-number strong{color:var(--home-burgundy)!important}
+.hero-number small{color:var(--home-navy)!important}
+.hero-number p{color:var(--home-muted)!important}
+.sport-card{background:#fff!important;border-color:var(--home-border)!important}
+.sport-graphic{background:linear-gradient(135deg,#eaf7fd,#cdeaf7)!important}
+.sport-card.nba .sport-graphic{background:linear-gradient(135deg,#e1f3fd,#b9dff2)!important}
+.sport-card.college .sport-graphic{background:linear-gradient(135deg,#f5ecf1,#dceffa)!important}
+.sport-card.college-baseball .sport-graphic{background:linear-gradient(135deg,#eaf7fd,#d2e8f5)!important}
+.sport-graphic .type{color:var(--home-burgundy)!important}
+.sport-graphic .serial{color:#596f83!important}
+.sport-metrics strong{color:var(--home-burgundy)!important}
+.sport-metrics small{color:var(--home-muted)!important}
+.sport-button{background:var(--home-burgundy)!important;color:#fff!important}
+.sport-button:hover,.sport-button:focus-visible{background:var(--home-burgundy-dark)!important}
+.future{background:#eef7fb!important;border-color:#bcd8e8!important}
+.future .planned{background:var(--home-ice)!important;color:var(--home-burgundy)!important}
+/* Venue finder, filters, map frame, featured venue chips and popups. */
+.venue-heading p,.venue-totals span,.venue-map-status,.venue-map-loading{color:var(--home-muted)!important}
+.venue-totals strong,.venue-map-featured strong{color:var(--home-burgundy)!important}
+.venue-search svg{stroke:#71879b!important}
+.venue-search input{background:#fff!important;border-color:var(--home-border)!important;color:var(--home-navy)!important}
+.venue-search input:focus-visible{border-color:var(--home-burgundy)!important;box-shadow:0 0 0 3px #b8dceb99!important}
+.venue-filter{background:#ecf7fc!important;color:var(--home-navy)!important;border-color:#c8e3ef!important}
+.venue-filter[aria-pressed="true"]{background:var(--home-burgundy)!important;border-color:var(--home-burgundy)!important;color:white!important}
+.venue-filter:hover:not([aria-pressed="true"]),.venue-filter:focus-visible{background:var(--home-ice)!important;color:var(--home-burgundy)!important}
+.venue-map-shell{background:var(--home-ice)!important;border-color:#badbe9!important}
+.venue-map-status a,.venue-map-loading a{color:var(--home-burgundy)!important}
+.venue-map-featured button{background:#eef8fc!important;color:var(--home-navy)!important;border-color:#cbe3ee!important}
+.venue-map-featured button:hover,.venue-map-featured button:focus-visible{background:var(--home-ice)!important}
+.venue-popup-photo{background:var(--home-ice)!important}
+.venue-popup small,.venue-popup-facts strong{color:var(--home-burgundy)!important}
+.venue-popup h3{color:var(--home-navy)!important}
+.venue-popup p,.venue-popup-facts span{color:var(--home-muted)!important}
+.venue-popup-facts span{background:#edf7fc!important}
+.venue-popup a{background:var(--home-burgundy)!important;color:white!important}
+.venue-pin-cluster{background:var(--home-burgundy)!important}

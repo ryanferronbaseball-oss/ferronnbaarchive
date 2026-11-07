@@ -43,3 +43,16 @@ a:not(.action-link):not(.archive-logo):not(.ca-logo){color:#831738}
 .track,.mlb-track,.cb-track,.soccer-bar .bartrack{background:#e4f2f9 !important}
 .fill,.mlb-fill,.cb-fill,.soccer-bar .barfill{background:linear-gradient(90deg,#831738,#b84266) !important}
 .mlb-bar strong,.cb-bar strong,.soccer-bar strong{color:#831738 !important}
+
+/* Final college basketball game-page sweep: masthead, game leaders and winner. */
+.ca-header .ca-logo.ca-logo-text,
+.ca-header .ca-logo.ca-logo-text:visited{color:#831738!important}
+.ca-header .ca-logo.ca-logo-text small{color:#566879!important}
+.ca-header .ca-hub-link,.ca-header .ca-hub-link:visited{color:#831738!important}
+.scoreboard .win,.scoreboard .team.win,.scoreboard .win a{color:#831738!important}
+.pog{background:linear-gradient(140deg,#fff,#edf7fc)!important;border-color:#c5e3ef!important}
+.pog .pog-player,.pog .pog-impact strong{color:#831738!important}
+.pog .pog-stat{background:#f3f9fd!important;border-color:#d4e1e9!important}
+.pog .pog-stat strong{color:#192e43!important}
+.pog .pog-stat span,.pog .pog-impact span,.pog .pog-method{color:#566879!important}
+.pog .pog-player a,.pog .pog-player a:visited{color:#831738!important}

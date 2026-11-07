@@ -1,0 +1,17 @@
+name: Research historical MiLB W L S source
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "milb/scripts/probe_pitching_decisions.py"
+      - ".github/workflows/milb-pitching-source-probe.yml"
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python milb/scripts/probe_pitching_decisions.py

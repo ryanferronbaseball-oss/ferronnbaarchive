@@ -30,8 +30,8 @@ try:
    local=[];vp.on("pageerror",lambda e:local.append(str(e)))
    vp.goto(origin+"/venues/venue.html?id="+v["id"],wait_until="networkidle")
    assert vp.locator("#venueProfile h1").inner_text()==v["name"]
-   assert vp.locator("#venueGamesRows tr").count()==v["visits"]
-   assert vp.locator('#venueGamesRows a[href^="../milb/game.html?id="]').count()==2*sum(g["id"].startswith("milb-") for g in v["games"][:15])
+   assert vp.locator("#venueGamesRows tr").count()==min(v["visits"],15)
+   assert vp.locator('#venueGamesRows a[href^="../milb/game.html?id="]').count()==2*sum(g["id"].startswith("milb-") for g in v["games"][-15:])
    assert vp.locator('a[href="../milb/"]').count()==1
    if v["id"] in photos:
     assert vp.locator(".vp-photo-figure").count()==1

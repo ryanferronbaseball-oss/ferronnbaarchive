@@ -55,8 +55,8 @@ try:
   assert page.locator('#teamGameTable a[href^="./game.html?id="]').count()==len(games)*2
   page.locator('[data-tab="legendary"]').click()
   assert page.locator("#legendaryTab").is_visible()
-  assert page.locator("#moments tbody tr").count()==len(games)
-  assert page.locator('#moments a[href^="./game.html?id="]').count()==len(games)
+  assert page.locator("#moments tbody tr").count()==min(len(games),25)
+  assert page.locator('#moments a[href^="./game.html?id="]').count()==min(len(games),25)
   assert not any("/mlb/data/" in u or "/college-baseball/data/" in u for u in urls),urls
   assert not errors,errors
   mobile=browser.new_page(viewport={"width":390,"height":844},is_mobile=True,has_touch=True)

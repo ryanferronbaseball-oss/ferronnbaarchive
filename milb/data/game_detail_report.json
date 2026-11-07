@@ -1,10 +1,10 @@
 {
   "source": "MLB StatsAPI (MiLB games only)",
-  "timestamp": "2026-11-07T04:01:41.537803+00:00",
-  "games_checked": 22,
-  "innings_verified": 22,
-  "scoring_plays_verified": 22,
-  "pitcher_order_verified": 22,
+  "timestamp": "2026-11-07T04:08:58.237927+00:00",
+  "games_checked": 34,
+  "innings_verified": 34,
+  "scoring_plays_verified": 34,
+  "pitcher_order_verified": 34,
   "pitching_decisions_verified": 0,
   "games": [
     {
@@ -220,6 +220,126 @@
     {
       "game_id": "milb-2021-06-06-storm-ports",
       "pk": 647893,
+      "status": "partial",
+      "order_status": "verified",
+      "score_status": "verified",
+      "play_status": "verified",
+      "decision_status": "unavailable",
+      "decision_error": "HTTP Error 404: Not Found"
+    },
+    {
+      "game_id": "milb-2021-06-08-quakes-storm",
+      "pk": 648307,
+      "status": "partial",
+      "order_status": "verified",
+      "score_status": "verified",
+      "play_status": "verified",
+      "decision_status": "unavailable",
+      "decision_error": "HTTP Error 404: Not Found"
+    },
+    {
+      "game_id": "milb-2021-06-09-quakes-storm",
+      "pk": 648276,
+      "status": "partial",
+      "order_status": "verified",
+      "score_status": "verified",
+      "play_status": "verified",
+      "decision_status": "unavailable",
+      "decision_error": "HTTP Error 404: Not Found"
+    },
+    {
+      "game_id": "milb-2021-06-10-quakes-storm",
+      "pk": 648160,
+      "status": "partial",
+      "order_status": "verified",
+      "score_status": "verified",
+      "play_status": "verified",
+      "decision_status": "unavailable",
+      "decision_error": "HTTP Error 404: Not Found"
+    },
+    {
+      "game_id": "milb-2021-06-11-quakes-storm",
+      "pk": 648278,
+      "status": "partial",
+      "order_status": "verified",
+      "score_status": "verified",
+      "play_status": "verified",
+      "decision_status": "unavailable",
+      "decision_error": "HTTP Error 404: Not Found"
+    },
+    {
+      "game_id": "milb-2021-06-12-quakes-storm",
+      "pk": 648277,
+      "status": "partial",
+      "order_status": "verified",
+      "score_status": "verified",
+      "play_status": "verified",
+      "decision_status": "unavailable",
+      "decision_error": "HTTP Error 404: Not Found"
+    },
+    {
+      "game_id": "milb-2021-06-13-quakes-storm",
+      "pk": 648182,
+      "status": "partial",
+      "order_status": "verified",
+      "score_status": "verified",
+      "play_status": "verified",
+      "decision_status": "unavailable",
+      "decision_error": "HTTP Error 404: Not Found"
+    },
+    {
+      "game_id": "milb-2021-06-15-storm-66ers",
+      "pk": 648236,
+      "status": "partial",
+      "order_status": "verified",
+      "score_status": "verified",
+      "play_status": "verified",
+      "decision_status": "unavailable",
+      "decision_error": "HTTP Error 404: Not Found"
+    },
+    {
+      "game_id": "milb-2021-06-16-storm-66ers",
+      "pk": 648191,
+      "status": "partial",
+      "order_status": "verified",
+      "score_status": "verified",
+      "play_status": "verified",
+      "decision_status": "unavailable",
+      "decision_error": "HTTP Error 404: Not Found"
+    },
+    {
+      "game_id": "milb-2021-06-17-storm-66ers",
+      "pk": 648216,
+      "status": "partial",
+      "order_status": "verified",
+      "score_status": "verified",
+      "play_status": "verified",
+      "decision_status": "unavailable",
+      "decision_error": "HTTP Error 404: Not Found"
+    },
+    {
+      "game_id": "milb-2021-06-18-storm-66ers",
+      "pk": 648234,
+      "status": "partial",
+      "order_status": "verified",
+      "score_status": "verified",
+      "play_status": "verified",
+      "decision_status": "unavailable",
+      "decision_error": "HTTP Error 404: Not Found"
+    },
+    {
+      "game_id": "milb-2021-06-19-storm-66ers",
+      "pk": 648194,
+      "status": "partial",
+      "order_status": "verified",
+      "score_status": "verified",
+      "play_status": "verified",
+      "decision_status": "unavailable",
+      "decision_error": "HTTP Error 404: Not Found"
+    },
+    {
+      "game_id": "milb-2021-06-20-storm-66ers",
+      "pk": 648243,
       "status": "partial",
       "order_status": "verified",
       "score_status": "verified",

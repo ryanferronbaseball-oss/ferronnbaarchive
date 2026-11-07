@@ -172,3 +172,63 @@ header.ca-header,header.archive-header,.archive-header{
 .notes-banner,.alumni-callout{
  background:#eaf6fc!important;border-left-color:#831738!important;color:#566879!important
 }
+
+/* Final audit, pass 2: residual green-tinted operational UI. */
+.archive-header .back-link,.ca-header .back-link,
+.nextprev a,.mlb-player-back a,.cb-quick-search label{
+ color:#831738!important
+}
+.empty,.sc-empty,.cb-quick-empty{
+ background:#f2f9fd!important;border-color:#c5e3ef!important;color:#566879!important
+}
+.cb-quick-search input,.cb-quick-field input,.cb-quick-results,
+.mlb-filters input,.mlb-filters select,.soccer-filters input,.soccer-filters select,
+.sc-filters input,.sc-filters select,.mlb-hof-toolbar input,.mlb-hof-toolbar select{
+ background:#fff!important;border-color:#c5e3ef!important;color:#192e43!important
+}
+.cb-quick-search button{background:#831738!important;color:#fff!important}
+.cb-quick-search button:hover{background:#67112d!important}
+.cb-quick-result:hover,.cb-quick-result:focus-visible{background:#eaf6fc!important}
+.cb-quick-result em{background:#eaf6fc!important;color:#831738!important}
+.mlb-record p,.mlb-bar,.cb-bar,.soccer-bar,.sc-metric .label{color:#566879!important}
+.mlb-nav-tabs button[aria-selected="true"],.cb-navtabs button[aria-selected="true"]{
+ color:#fff!important
+}
+.mlb-record,.soccer-tile,.sc-metric,.sc-highlight,.cb-record{
+ background:#fff!important;border-color:#d4e1e9!important
+}
+.soccer-final strong,.soccer-tile strong,.sc-metric strong,.sc-highlight strong,
+.cb-record strong,.cb-score,.mlb-feature strong{color:#831738!important}
+.mlb-pill:not(.verified){background:#eaf6fc!important;color:#831738!important}
+.sc-detail-button,.sc-switch button:not([aria-selected="true"]){
+ background:#eaf6fc!important;color:#831738!important;border-color:#c5e3ef!important
+}
+.sc-table td a,.sc-table td strong,.cb-player-panel a,.cb-player-panel h3{
+ color:#831738!important
+}
+/* Important performance/ranking tables on baseball, football and basketball pages. */
+.impact-board th,.impact-board thead th,.impact-board th:first-child{
+ background:#eaf6fc!important;color:#34516a!important
+}
+.impact-board tbody tr:nth-child(even),
+.impact-board tbody tr:nth-child(even) td,
+.impact-board tbody tr:nth-child(even) td:first-child{
+ background:#f8fbfd!important
+}
+.impact-board tbody tr:hover,.impact-board tbody tr:hover td,
+.impact-board tbody tr:hover td:first-child{
+ background:#e3f3fb!important
+}
+.impact-board .impact-player .player-link,.impact-board .impact-number strong,
+.pog-kicker,.pog-impact strong,.pog-player a,.pog-stat strong{
+ color:#831738!important
+}
+.mlb-profile-panel .mlb-profile-total,.mlb-profile-panel .mlb-profile-signature{
+ border-color:#c5e3ef!important
+}
+.mlb-profile-team-name,.mlb-profile-role-label{color:#831738!important}
+.mlb-profile-seen,.mlb-profile-role-note,.mlb-profile-signature small,
+.mlb-profile-signature span{color:#566879!important}
+.mlb-profile-hero.mlb-profile-head,.player-hero,.cb-profile-hero,.soccer-profile-head{
+ box-shadow:0 9px 26px rgba(25,46,67,.06)!important
+}

@@ -297,6 +297,8 @@ body[data-page="player"] main{width:100%;max-width:1160px;margin:0 auto;padding:
 .mlb-profile-badge.cb-mlb-alumnus{background:#E8F1FB;color:#17477D!important;border-color:#8AB0D6;font-size:12px;padding:6px 10px}
 .mlb-profile-badge.cb-mlb-draft{background:#EFF3EB;color:#315940;border-color:#B8CDB7;font-size:11px;padding:6px 10px;overflow-wrap:anywhere}
 .mlb-profile-badge.cb-dual-level{background:#FFF0D2;color:#745017!important;border-color:#D6B77D;font-size:11px;padding:6px 10px}
+body[data-page="player"] .mlb-profile-badge.cb-triple-level{background:#171717!important;color:#F4CC70!important;border:1px solid #D4AA4B!important;font-size:11px;padding:6px 10px;box-shadow:0 0 0 1px rgba(212,170,75,.18) inset}
+body[data-page="player"] .mlb-profile-badge.cb-triple-level:hover{background:#2B2416!important;color:#FFE3A0!important;border-color:#F0C566!important}
 .mlb-profile-badge.hof{background:#FFF2C7;color:#6A4E1D;border-color:#D9BC74}
 .mlb-profile-badge.mvp{background:#D9EFE0;color:#185139;border-color:#96C4A4}
 .mlb-profile-badge.cy{background:#E0EBFA;color:#31567A;border-color:#AFC7E2}

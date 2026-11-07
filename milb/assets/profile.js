@@ -18,7 +18,7 @@ const urlId=id=>encodeURIComponent(String(id));
 const statBoxes=items=>items.map(([key,val])=>'<div class="mlb-profile-stat"><small>'+esc(key)+'</small><strong>'+esc(value(val))+'</strong></div>').join("");
 const totals=(items,klass="")=>'<div class="mlb-profile-total-grid '+klass+'">'+items.map(([k,v])=>'<div class="mlb-profile-total"><small>'+esc(k)+'</small><strong>'+esc(value(v))+'</strong></div>').join("")+'</div>';
 const gameUrl=id=>'./game.html?id='+urlId(id);
-const badge=(text,href)=>'<a class="milb-crossover-badge" href="'+href+'">'+text+' ↗</a>';
+const badge=(text,href,kind="")=>'<a class="milb-crossover-badge'+(kind?' '+kind:'')+'" href="'+href+'">'+text+' ↗</a>';
 function battingStats(rows){
  const data=rows.map(r=>r.batting).filter(Boolean);
  const ab=count(data,"ab"), hits=count(data,"h"), bb=count(data,"bb"),
@@ -94,7 +94,7 @@ function renderProfile(playerId,rows,games,links,collegeLinks){
  const collegeLink=collegeLinks.find(x=>String(x.milb_id)===String(playerId)&&x.verified===true&&x.college_player_id);
  const tripleLevel=Boolean(linked&&linked.mlb_seen===true&&collegeLink);
  const tags=[
-  ...(tripleLevel?[badge("★ SEEN IN COLLEGE + MiLB + MLB","../college-baseball/player.html?id="+urlId(collegeLink.college_player_id))]:[]),
+  ...(tripleLevel?[badge("★ SEEN IN COLLEGE + MiLB + MLB","../college-baseball/player.html?id="+urlId(collegeLink.college_player_id),"milb-triple-level")]:[]),
   ...(linked?[badge("★ REACHED MLB","https://www.mlb.com/player/"+urlId(linked.mlb_id))]:[]),
   ...(linked&&linked.mlb_seen===true?[badge("★ SEEN IN MiLB + MLB","../mlb/player.html?id="+urlId(linked.mlb_id))]:[]),
   ...(collegeLink?[badge("★ SEEN IN COLLEGE + MiLB","../college-baseball/player.html?id="+urlId(collegeLink.college_player_id))]:[])

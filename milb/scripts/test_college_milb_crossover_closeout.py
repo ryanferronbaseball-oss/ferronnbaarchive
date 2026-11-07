@@ -48,4 +48,8 @@ for source in (mi_profile, college_profile):
     assert "SEEN IN COLLEGE + MiLB" in source
 assert "linked.mlb_seen===true&&collegeLink" in mi_profile
 assert "String(cross.mlb_player_id)===String(matchedMiLB.milb_id)" in college_profile
+assert '"milb-triple-level"' in mi_profile
+assert 'class="mlb-profile-badge cb-triple-level"' in college_profile
+assert "#171717" in (ROOT / "milb/assets/profile.css").read_text(encoding="utf8")
+assert "#F4CC70" in (ROOT / "college-baseball/assets/archive.css").read_text(encoding="utf8")
 print("PASS: 119 games, 22 reciprocal college/MiLB links, 2 three-level badges, no false Joe Kelly merge")

@@ -1,0 +1,799 @@
+{
+  "source": "Official MLB StatsAPI schedule hydration with /api/v1.1/game feed fallback",
+  "verified_at": "2026-11-07T04:30:30.989697+00:00",
+  "games_checked": 112,
+  "games_with_verified_win": 112,
+  "games_with_verified_loss": 112,
+  "games_with_verified_save": 50,
+  "games_without_save": 62,
+  "player_game_pitching_rows": 845,
+  "all_w_l_sv_internally_consistent": true,
+  "miLB_data_only": true,
+  "unverified_game_ids": [],
+  "games": [
+    {
+      "game_id": "milb-2014-05-24-storm-quakes",
+      "game_pk": 388116,
+      "winner": 607067,
+      "loser": 516421,
+      "save": 641627
+    },
+    {
+      "game_id": "milb-2015-08-02-ports-giants",
+      "game_pk": 420444,
+      "winner": 596255,
+      "loser": 593417,
+      "save": 643511
+    },
+    {
+      "game_id": "milb-2021-05-18-quakes-storm",
+      "game_pk": 648130,
+      "winner": 681147,
+      "loser": 676903,
+      "save": 669797
+    },
+    {
+      "game_id": "milb-2021-05-19-quakes-storm",
+      "game_pk": 648142,
+      "winner": 683425,
+      "loser": 684228,
+      "save": null
+    },
+    {
+      "game_id": "milb-2021-05-20-quakes-storm",
+      "game_pk": 648308,
+      "winner": 665983,
+      "loser": 681886,
+      "save": null
+    },
+    {
+      "game_id": "milb-2021-05-21-quakes-storm",
+      "game_pk": 648162,
+      "winner": 672666,
+      "loser": 681579,
+      "save": 684195
+    },
+    {
+      "game_id": "milb-2021-05-22-quakes-storm",
+      "game_pk": 648280,
+      "winner": 681147,
+      "loser": 678736,
+      "save": null
+    },
+    {
+      "game_id": "milb-2021-05-23-quakes-storm",
+      "game_pk": 648279,
+      "winner": 672353,
+      "loser": 681886,
+      "save": null
+    },
+    {
+      "game_id": "milb-2021-05-25-storm-giants",
+      "game_pk": 647969,
+      "winner": 673309,
+      "loser": 686575,
+      "save": null
+    },
+    {
+      "game_id": "milb-2021-05-26-storm-giants",
+      "game_pk": 647980,
+      "winner": 682503,
+      "loser": 672382,
+      "save": null
+    },
+    {
+      "game_id": "milb-2021-05-27-storm-giants",
+      "game_pk": 647979,
+      "winner": 678371,
+      "loser": 681579,
+      "save": null
+    },
+    {
+      "game_id": "milb-2021-05-28-storm-giants",
+      "game_pk": 647981,
+      "winner": 678738,
+      "loser": 678980,
+      "save": 663883
+    },
+    {
+      "game_id": "milb-2021-05-29-storm-giants",
+      "game_pk": 647978,
+      "winner": 670247,
+      "loser": 687723,
+      "save": 663627
+    },
+    {
+      "game_id": "milb-2021-05-30-storm-giants",
+      "game_pk": 647977,
+      "winner": 669192,
+      "loser": 676903,
+      "save": 663883
+    },
+    {
+      "game_id": "milb-2021-06-01-storm-ports",
+      "game_pk": 647904,
+      "winner": 687578,
+      "loser": 672385,
+      "save": 692652
+    },
+    {
+      "game_id": "milb-2021-06-02-storm-ports",
+      "game_pk": 647907,
+      "winner": 681979,
+      "loser": 672353,
+      "save": null
+    },
+    {
+      "game_id": "milb-2021-06-03-storm-ports",
+      "game_pk": 647906,
+      "winner": 664330,
+      "loser": 673325,
+      "save": null
+    },
+    {
+      "game_id": "milb-2021-06-04-storm-ports",
+      "game_pk": 647895,
+      "winner": 692020,
+      "loser": 687840,
+      "save": 672353
+    },
+    {
+      "game_id": "milb-2021-06-05-storm-ports",
+      "game_pk": 647894,
+      "winner": 676903,
+      "loser": 680420,
+      "save": null
+    },
+    {
+      "game_id": "milb-2021-06-06-storm-ports",
+      "game_pk": 647893,
+      "winner": 678736,
+      "loser": 686946,
+      "save": 672353
+    },
+    {
+      "game_id": "milb-2021-06-08-quakes-storm",
+      "game_pk": 648307,
+      "winner": 669797,
+      "loser": 681579,
+      "save": 672666
+    },
+    {
+      "game_id": "milb-2021-06-09-quakes-storm",
+      "game_pk": 648276,
+      "winner": 673325,
+      "loser": 677645,
+      "save": null
+    },
+    {
+      "game_id": "milb-2021-06-10-quakes-storm",
+      "game_pk": 648160,
+      "winner": 674221,
+      "loser": 692020,
+      "save": null
+    },
+    {
+      "game_id": "milb-2021-06-11-quakes-storm",
+      "game_pk": 648278,
+      "winner": 683425,
+      "loser": 676903,
+      "save": null
+    },
+    {
+      "game_id": "milb-2021-06-12-quakes-storm",
+      "game_pk": 648277,
+      "winner": 690425,
+      "loser": 680755,
+      "save": 678980
+    },
+    {
+      "game_id": "milb-2021-06-13-quakes-storm",
+      "game_pk": 648182,
+      "winner": 666817,
+      "loser": 681597,
+      "save": 673325
+    },
+    {
+      "game_id": "milb-2021-06-15-storm-66ers",
+      "game_pk": 648236,
+      "winner": 673325,
+      "loser": 680892,
+      "save": null
+    },
+    {
+      "game_id": "milb-2021-06-16-storm-66ers",
+      "game_pk": 648191,
+      "winner": 687723,
+      "loser": 683848,
+      "save": null
+    },
+    {
+      "game_id": "milb-2021-06-17-storm-66ers",
+      "game_pk": 648216,
+      "winner": 669081,
+      "loser": 676903,
+      "save": null
+    },
+    {
+      "game_id": "milb-2021-06-18-storm-66ers",
+      "game_pk": 648234,
+      "winner": 672385,
+      "loser": 676191,
+      "save": null
+    },
+    {
+      "game_id": "milb-2021-06-19-storm-66ers",
+      "game_pk": 648194,
+      "winner": 688896,
+      "loser": 678736,
+      "save": 675842
+    },
+    {
+      "game_id": "milb-2021-06-20-storm-66ers",
+      "game_pk": 648243,
+      "winner": 668660,
+      "loser": 678672,
+      "save": 668793
+    },
+    {
+      "game_id": "milb-2021-06-22-nuts-storm",
+      "game_pk": 648275,
+      "winner": 692020,
+      "loser": 675195,
+      "save": null
+    },
+    {
+      "game_id": "milb-2021-06-23-nuts-storm",
+      "game_pk": 648163,
+      "winner": 674555,
+      "loser": 676903,
+      "save": null
+    },
+    {
+      "game_id": "milb-2021-06-24-nuts-storm",
+      "game_pk": 648168,
+      "winner": 687638,
+      "loser": 677644,
+      "save": null
+    },
+    {
+      "game_id": "milb-2021-06-25-nuts-storm",
+      "game_pk": 648129,
+      "winner": 673309,
+      "loser": 665660,
+      "save": null
+    },
+    {
+      "game_id": "milb-2021-06-26-nuts-storm",
+      "game_pk": 648179,
+      "winner": 677316,
+      "loser": 678672,
+      "save": 676510
+    },
+    {
+      "game_id": "milb-2021-06-27-nuts-storm",
+      "game_pk": 648187,
+      "winner": 674555,
+      "loser": 692020,
+      "save": null
+    },
+    {
+      "game_id": "milb-2021-06-29-66ers-storm",
+      "game_pk": 648170,
+      "winner": 669081,
+      "loser": 672353,
+      "save": null
+    },
+    {
+      "game_id": "milb-2021-06-30-66ers-storm",
+      "game_pk": 648269,
+      "winner": 672385,
+      "loser": 676191,
+      "save": null
+    },
+    {
+      "game_id": "milb-2021-07-01-66ers-storm",
+      "game_pk": 648186,
+      "winner": 686799,
+      "loser": 681579,
+      "save": 675842
+    },
+    {
+      "game_id": "milb-2021-07-02-66ers-storm",
+      "game_pk": 648185,
+      "winner": 678672,
+      "loser": 678358,
+      "save": null
+    },
+    {
+      "game_id": "milb-2021-07-03-66ers-storm",
+      "game_pk": 648145,
+      "winner": 692020,
+      "loser": 668793,
+      "save": 690425
+    },
+    {
+      "game_id": "milb-2021-07-04-66ers-storm",
+      "game_pk": 648144,
+      "winner": 689441,
+      "loser": 656648,
+      "save": 669081
+    },
+    {
+      "game_id": "milb-2021-07-06-storm-quakes",
+      "game_pk": 648018,
+      "winner": 681886,
+      "loser": 684240,
+      "save": 669797
+    },
+    {
+      "game_id": "milb-2021-07-07-storm-quakes",
+      "game_pk": 648013,
+      "winner": 679922,
+      "loser": 681579,
+      "save": null
+    },
+    {
+      "game_id": "milb-2021-07-08-storm-quakes",
+      "game_pk": 648017,
+      "winner": 673448,
+      "loser": 684228,
+      "save": null
+    },
+    {
+      "game_id": "milb-2021-07-09-storm-quakes",
+      "game_pk": 648012,
+      "winner": 677645,
+      "loser": 687723,
+      "save": null
+    },
+    {
+      "game_id": "milb-2021-07-10-storm-quakes",
+      "game_pk": 648006,
+      "winner": 683425,
+      "loser": 676903,
+      "save": null
+    },
+    {
+      "game_id": "milb-2021-07-11-storm-quakes",
+      "game_pk": 648005,
+      "winner": 672755,
+      "loser": 673309,
+      "save": null
+    },
+    {
+      "game_id": "milb-2021-07-13-rawhide-storm",
+      "game_pk": 648184,
+      "winner": 681579,
+      "loser": 683008,
+      "save": null
+    },
+    {
+      "game_id": "milb-2021-07-14-rawhide-storm",
+      "game_pk": 648183,
+      "winner": 678672,
+      "loser": 678298,
+      "save": null
+    },
+    {
+      "game_id": "milb-2021-07-15-rawhide-storm",
+      "game_pk": 648164,
+      "winner": 687723,
+      "loser": 687166,
+      "save": null
+    },
+    {
+      "game_id": "milb-2021-07-16-rawhide-storm",
+      "game_pk": 648143,
+      "winner": 676322,
+      "loser": 656648,
+      "save": 676012
+    },
+    {
+      "game_id": "milb-2021-07-17-rawhide-storm",
+      "game_pk": 648141,
+      "winner": 663471,
+      "loser": 691005,
+      "save": null
+    },
+    {
+      "game_id": "milb-2021-07-18-rawhide-storm",
+      "game_pk": 648169,
+      "winner": 676012,
+      "loser": 676997,
+      "save": null
+    },
+    {
+      "game_id": "milb-2021-07-20-storm-66ers",
+      "game_pk": 648159,
+      "winner": 663471,
+      "loser": 676219,
+      "save": null
+    },
+    {
+      "game_id": "milb-2021-07-21-storm-66ers",
+      "game_pk": 648188,
+      "winner": 668660,
+      "loser": 687723,
+      "save": 675842
+    },
+    {
+      "game_id": "milb-2021-07-22-storm-66ers",
+      "game_pk": 648158,
+      "winner": 676219,
+      "loser": 687638,
+      "save": null
+    },
+    {
+      "game_id": "milb-2021-07-23-storm-66ers",
+      "game_pk": 648157,
+      "winner": 663453,
+      "loser": 694372,
+      "save": null
+    },
+    {
+      "game_id": "milb-2021-07-24-storm-66ers",
+      "game_pk": 648156,
+      "winner": 668660,
+      "loser": 672385,
+      "save": null
+    },
+    {
+      "game_id": "milb-2021-07-25-storm-66ers",
+      "game_pk": 648155,
+      "winner": 676191,
+      "loser": 676903,
+      "save": null
+    },
+    {
+      "game_id": "milb-2021-07-27-grizzlies-storm",
+      "game_pk": 648110,
+      "winner": 663453,
+      "loser": 665915,
+      "save": 690425
+    },
+    {
+      "game_id": "milb-2021-07-28-grizzlies-storm",
+      "game_pk": 648109,
+      "winner": 676333,
+      "loser": 687723,
+      "save": 681619
+    },
+    {
+      "game_id": "milb-2021-07-29-grizzlies-storm",
+      "game_pk": 648166,
+      "winner": 663971,
+      "loser": 684240,
+      "save": 681619
+    },
+    {
+      "game_id": "milb-2021-07-30-grizzlies-storm",
+      "game_pk": 648107,
+      "winner": 675848,
+      "loser": 676903,
+      "save": 668970
+    },
+    {
+      "game_id": "milb-2021-07-31-grizzlies-storm",
+      "game_pk": 648108,
+      "winner": 666768,
+      "loser": 672385,
+      "save": null
+    },
+    {
+      "game_id": "milb-2021-08-01-grizzlies-storm",
+      "game_pk": 648161,
+      "winner": 686938,
+      "loser": 665915,
+      "save": null
+    },
+    {
+      "game_id": "milb-2021-08-03-storm-quakes",
+      "game_pk": 647998,
+      "winner": 673448,
+      "loser": 676997,
+      "save": null
+    },
+    {
+      "game_id": "milb-2021-08-04-storm-quakes",
+      "game_pk": 647997,
+      "winner": 687638,
+      "loser": 683086,
+      "save": 673309
+    },
+    {
+      "game_id": "milb-2021-08-06-storm-quakes",
+      "game_pk": 647995,
+      "winner": 681886,
+      "loser": 663453,
+      "save": 669797
+    },
+    {
+      "game_id": "milb-2021-08-07-storm-quakes",
+      "game_pk": 647994,
+      "winner": 672385,
+      "loser": 694813,
+      "save": 687638
+    },
+    {
+      "game_id": "milb-2021-08-08-storm-quakes",
+      "game_pk": 647993,
+      "winner": 668878,
+      "loser": 683568,
+      "save": 684284
+    },
+    {
+      "game_id": "milb-2021-08-10-rawhide-storm",
+      "game_pk": 648095,
+      "winner": 687638,
+      "loser": 687102,
+      "save": null
+    },
+    {
+      "game_id": "milb-2021-08-11-rawhide-storm",
+      "game_pk": 648096,
+      "winner": 691081,
+      "loser": 678736,
+      "save": 687166
+    },
+    {
+      "game_id": "milb-2021-08-12-rawhide-storm",
+      "game_pk": 648089,
+      "winner": 682549,
+      "loser": 684228,
+      "save": 677678
+    },
+    {
+      "game_id": "milb-2021-08-13-rawhide-storm",
+      "game_pk": 648094,
+      "winner": 663453,
+      "loser": 677678,
+      "save": null
+    },
+    {
+      "game_id": "milb-2021-08-14-rawhide-storm",
+      "game_pk": 648093,
+      "winner": 677804,
+      "loser": 683568,
+      "save": 691081
+    },
+    {
+      "game_id": "milb-2021-08-15-rawhide-storm",
+      "game_pk": 648088,
+      "winner": 701240,
+      "loser": 687102,
+      "save": null
+    },
+    {
+      "game_id": "milb-2021-08-17-storm-66ers",
+      "game_pk": 648149,
+      "winner": 683848,
+      "loser": 692020,
+      "save": 695065
+    },
+    {
+      "game_id": "milb-2021-08-18-storm-66ers",
+      "game_pk": 648147,
+      "winner": 689690,
+      "loser": 668793,
+      "save": 687638
+    },
+    {
+      "game_id": "milb-2021-08-19-storm-66ers",
+      "game_pk": 648190,
+      "winner": 681116,
+      "loser": 678736,
+      "save": null
+    },
+    {
+      "game_id": "milb-2021-08-20-storm-66ers",
+      "game_pk": 648146,
+      "winner": 678358,
+      "loser": 683568,
+      "save": 675842
+    },
+    {
+      "game_id": "milb-2021-08-21-storm-66ers",
+      "game_pk": 648341,
+      "winner": 687638,
+      "loser": 680983,
+      "save": 689690
+    },
+    {
+      "game_id": "milb-2021-08-22-storm-66ers",
+      "game_pk": 648181,
+      "winner": 678736,
+      "loser": 675842,
+      "save": null
+    },
+    {
+      "game_id": "milb-2021-08-24-giants-storm",
+      "game_pk": 648087,
+      "winner": 685068,
+      "loser": 684228,
+      "save": 686972
+    },
+    {
+      "game_id": "milb-2021-08-25-giants-storm",
+      "game_pk": 648092,
+      "winner": 678495,
+      "loser": 681579,
+      "save": null
+    },
+    {
+      "game_id": "milb-2021-08-26-giants-storm",
+      "game_pk": 648098,
+      "winner": 669192,
+      "loser": 683568,
+      "save": null
+    },
+    {
+      "game_id": "milb-2021-08-27-giants-storm",
+      "game_pk": 648091,
+      "winner": 687723,
+      "loser": 678738,
+      "save": null
+    },
+    {
+      "game_id": "milb-2021-08-28-giants-storm",
+      "game_pk": 648086,
+      "winner": 692020,
+      "loser": 672860,
+      "save": 701000
+    },
+    {
+      "game_id": "milb-2021-08-29-giants-storm",
+      "game_pk": 648090,
+      "winner": 684228,
+      "loser": 685068,
+      "save": 687638
+    },
+    {
+      "game_id": "milb-2021-08-31-storm-quakes",
+      "game_pk": 647985,
+      "winner": 681579,
+      "loser": 679922,
+      "save": null
+    },
+    {
+      "game_id": "milb-2021-09-01-storm-quakes",
+      "game_pk": 647990,
+      "winner": 686218,
+      "loser": 686938,
+      "save": 673448
+    },
+    {
+      "game_id": "milb-2021-09-02-storm-quakes",
+      "game_pk": 647984,
+      "winner": 672662,
+      "loser": 687723,
+      "save": 669797
+    },
+    {
+      "game_id": "milb-2021-09-03-storm-quakes",
+      "game_pk": 647965,
+      "winner": 669952,
+      "loser": 692020,
+      "save": 669165
+    },
+    {
+      "game_id": "milb-2021-09-04-storm-quakes-g1",
+      "game_pk": 647964,
+      "winner": 680755,
+      "loser": 678215,
+      "save": null
+    },
+    {
+      "game_id": "milb-2021-09-04-storm-quakes-g2",
+      "game_pk": 647996,
+      "winner": 701000,
+      "loser": 690922,
+      "save": 676997
+    },
+    {
+      "game_id": "milb-2021-09-05-storm-quakes",
+      "game_pk": 647963,
+      "winner": 678914,
+      "loser": 681579,
+      "save": null
+    },
+    {
+      "game_id": "milb-2021-09-07-storm-rawhide",
+      "game_pk": 647793,
+      "winner": 678215,
+      "loser": 676322,
+      "save": null
+    },
+    {
+      "game_id": "milb-2021-09-08-storm-rawhide",
+      "game_pk": 647792,
+      "winner": 687638,
+      "loser": 695250,
+      "save": 663453
+    },
+    {
+      "game_id": "milb-2021-09-09-storm-rawhide",
+      "game_pk": 647791,
+      "winner": 666246,
+      "loser": 682255,
+      "save": null
+    },
+    {
+      "game_id": "milb-2021-09-10-storm-rawhide",
+      "game_pk": 647790,
+      "winner": 701240,
+      "loser": 691081,
+      "save": null
+    },
+    {
+      "game_id": "milb-2021-09-11-storm-rawhide",
+      "game_pk": 647789,
+      "winner": 681475,
+      "loser": 681579,
+      "save": 677804
+    },
+    {
+      "game_id": "milb-2021-09-12-storm-rawhide",
+      "game_pk": 647788,
+      "winner": 678298,
+      "loser": 686938,
+      "save": 666246
+    },
+    {
+      "game_id": "milb-2021-09-14-66ers-storm",
+      "game_pk": 648082,
+      "winner": 701240,
+      "loser": 687107,
+      "save": 687638
+    },
+    {
+      "game_id": "milb-2021-09-15-66ers-storm",
+      "game_pk": 648083,
+      "winner": 692020,
+      "loser": 683848,
+      "save": null
+    },
+    {
+      "game_id": "milb-2021-09-16-66ers-storm",
+      "game_pk": 648080,
+      "winner": 663453,
+      "loser": 680983,
+      "save": 689690
+    },
+    {
+      "game_id": "milb-2021-09-17-66ers-storm",
+      "game_pk": 648081,
+      "winner": 687649,
+      "loser": 681579,
+      "save": null
+    },
+    {
+      "game_id": "milb-2021-09-18-66ers-storm",
+      "game_pk": 648079,
+      "winner": 686938,
+      "loser": 687467,
+      "save": null
+    },
+    {
+      "game_id": "milb-2021-09-19-66ers-storm",
+      "game_pk": 648084,
+      "winner": 689690,
+      "loser": 687107,
+      "save": null
+    },
+    {
+      "game_id": "milb-2022-07-02-66ers-storm",
+      "game_pk": 669166,
+      "winner": 692020,
+      "loser": 681116,
+      "save": null
+    },
+    {
+      "game_id": "milb-2024-05-10-senators-fishercats",
+      "game_pk": 750871,
+      "winner": 680734,
+      "loser": 694382,
+      "save": 694887
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Browser and data acceptance checks for verified W/L/S on all 112 MiLB games."""
+"""Browser and data acceptance checks for verified W/L/S on all MiLB games."""
 import collections
 import functools
 import http.server
@@ -16,13 +16,14 @@ rows=json.loads((D/"player_stats.json").read_text())
 decisions=json.loads((D/"pitching_decisions.json").read_text())
 audit=json.loads((D/"pitching_decisions_audit.json").read_text())
 report=json.loads((D/"game_detail_report.json").read_text())
-assert len(games)==112
-assert len(decisions)==112
-assert audit["games_checked"]==112
-assert audit["games_with_verified_win"]==112
-assert audit["games_with_verified_loss"]==112
+total=len(games)
+assert total>=114
+assert len(decisions)==total
+assert audit["games_checked"]==total
+assert audit["games_with_verified_win"]==total
+assert audit["games_with_verified_loss"]==total
 assert audit["all_w_l_sv_internally_consistent"] is True
-assert report["pitching_decisions_verified"]==112
+assert report["pitching_decisions_verified"]==total
 assert all(x.get("decision_status")=="verified" for x in report["games"])
 byGame=collections.defaultdict(list)
 byPerson=collections.defaultdict(lambda:{"w":0,"l":0,"sv":0})
@@ -33,10 +34,10 @@ for r in rows:
   assert all(p.get(key) in (0,1) for key in ["w","l","sv"])
   assert sum(p[key] for key in ["w","l","sv"])<=1
   for key in ["w","l","sv"]:byPerson[r["player_id"]][key]+=p[key]
-assert sum(x["w"] for x in byPerson.values())==112
-assert sum(x["l"] for x in byPerson.values())==112
+assert sum(x["w"] for x in byPerson.values())==total
+assert sum(x["l"] for x in byPerson.values())==total
 assert sum(x["sv"] for x in byPerson.values())==audit["games_with_verified_save"]
-assert audit["games_with_verified_save"]+audit["games_without_save"]==112
+assert audit["games_with_verified_save"]+audit["games_without_save"]==total
 for g in games:
  d=decisions[str(g["source_game_id"])]
  assert d["status"]=="verified" and d["winner"] and d["loser"]
@@ -56,7 +57,7 @@ try:
   browser=p.chromium.launch(headless=True)
   # Across years, official status and names must appear on the game page.
   samples=[next(g for g in games if g["date"]==day)
-      for day in ("2014-05-24","2015-08-02","2021-06-08","2022-07-02","2024-05-10")]
+      for day in ("2014-05-24","2015-08-02","2021-06-08","2022-07-02","2023-09-10","2024-05-10")]
   for g in samples:
    page=browser.new_page(viewport={"width":1360,"height":900})
    jsErrors=[];network=[]
@@ -126,7 +127,7 @@ try:
   mobile.locator('[data-cat="pitching"]').click()
   assert "SV" in mobile.locator("#box thead").first.inner_text()
   browser.close()
- print("PASS: all 112 official W/L/S, player totals, game decision cards, pitching lines, profiles and leaderboards")
+ print(f"PASS: all {total} official W/L/S, player totals, game decision cards, pitching lines, profiles and leaderboards")
 finally:
  server.shutdown()
  server.server_close()

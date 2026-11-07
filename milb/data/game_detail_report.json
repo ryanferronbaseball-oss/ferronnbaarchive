@@ -1,11 +1,11 @@
 {
   "source": "MLB StatsAPI (MiLB games only)",
-  "timestamp": "2026-11-07T04:30:30.989697+00:00",
-  "games_checked": 112,
-  "innings_verified": 112,
-  "scoring_plays_verified": 112,
-  "pitcher_order_verified": 112,
-  "pitching_decisions_verified": 112,
+  "timestamp": "2026-11-07T04:39:14.958623+00:00",
+  "games_checked": 114,
+  "innings_verified": 114,
+  "scoring_plays_verified": 114,
+  "pitcher_order_verified": 114,
+  "pitching_decisions_verified": 114,
   "games": [
     {
       "game_id": "milb-2014-05-24-storm-quakes",
@@ -1009,6 +1009,24 @@
     {
       "game_id": "milb-2021-09-19-66ers-storm",
       "pk": 648084,
+      "status": "verified",
+      "order_status": "verified",
+      "score_status": "verified",
+      "play_status": "verified",
+      "decision_status": "verified"
+    },
+    {
+      "game_id": "milb-2023-09-10-rawhide-quakes",
+      "pk": 724665,
+      "status": "verified",
+      "order_status": "verified",
+      "score_status": "verified",
+      "play_status": "verified",
+      "decision_status": "verified"
+    },
+    {
+      "game_id": "milb-2023-09-10-storm-66ers",
+      "pk": 724862,
       "status": "verified",
       "order_status": "verified",
       "score_status": "verified",

@@ -1828,5 +1828,41 @@
     "source": "MLB StatsAPI official schedule_hydrate_decisions",
     "source_url": "https://statsapi.mlb.com/api/v1/schedule?gamePk=750871&hydrate=decisions",
     "verified_game_pk": 750871
+  },
+  "724665": {
+    "status": "verified",
+    "winner": {
+      "id": 523260,
+      "name": "Joe Kelly"
+    },
+    "loser": {
+      "id": 699230,
+      "name": "Lorenzo Encarnacion"
+    },
+    "save": {
+      "id": 802984,
+      "name": "Livan Reinoso"
+    },
+    "source": "MLB StatsAPI official schedule_hydrate_decisions",
+    "source_url": "https://statsapi.mlb.com/api/v1/schedule?gamePk=724665&hydrate=decisions",
+    "verified_game_pk": 724665
+  },
+  "724862": {
+    "status": "verified",
+    "winner": {
+      "id": 688519,
+      "name": "Sam Whiting"
+    },
+    "loser": {
+      "id": 700759,
+      "name": "Dalton Kendrick"
+    },
+    "save": {
+      "id": 692020,
+      "name": "Ruben Galindo"
+    },
+    "source": "MLB StatsAPI official schedule_hydrate_decisions",
+    "source_url": "https://statsapi.mlb.com/api/v1/schedule?gamePk=724862&hydrate=decisions",
+    "verified_game_pk": 724862
   }
 }

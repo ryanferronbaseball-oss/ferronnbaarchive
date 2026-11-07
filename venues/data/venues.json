@@ -1,7 +1,7 @@
 {
   "updated": "2026-11-07",
-  "venueCount": 136,
-  "mappedGames": 818,
+  "venueCount": 137,
+  "mappedGames": 820,
   "excludedUnassignedGames": 7,
   "venues": [
     {
@@ -6744,6 +6744,40 @@
       ]
     },
     {
+      "id": "venue-0137",
+      "name": "LoanMart Field",
+      "sport": "MiLB",
+      "city": "Rancho Cucamonga, CA",
+      "address": "8408 Rochester Avenue, Rancho Cucamonga, CA 91730",
+      "lat": 34.102765,
+      "lon": -117.54797,
+      "coordinateConfidence": "High",
+      "opened": "1993",
+      "capacity": "Approximately 6,000 (official Rancho Cucamonga Quakes ballpark guide)",
+      "occupants": "Rancho Cucamonga Quakes minor-league baseball",
+      "history": "Opened April 8, 1993 at the Epicenter in Rancho Cucamonga. The Quakes have played in this same ballpark since 1993. It became LoanMart Field for the 2013 season and carried that name at the September 10, 2023 game. Later naming rights changed; the physical stadium remains the same.",
+      "sources": [
+        "https://www.milb.com/rancho-cucamonga/ballpark",
+        "https://www.milb.com/rancho-cucamonga/ballpark/frontoffice",
+        "https://www.milb.com/news/gcs-43824950"
+      ],
+      "factNote": "First attended September 10, 2023, Visalia Rawhide at Rancho Cucamonga Quakes.",
+      "games": [
+        {
+          "id": "milb-2023-09-10-rawhide-quakes",
+          "date": "2023-09-10",
+          "away": "Visalia Rawhide",
+          "home": "Rancho Cucamonga Quakes",
+          "awayScore": 6,
+          "homeScore": 8,
+          "url": "../milb/game.html?id=milb-2023-09-10-rawhide-quakes"
+        }
+      ],
+      "visits": 1,
+      "firstVisit": "2023-09-10",
+      "lastVisit": "2023-09-10"
+    },
+    {
       "id": "venue-0073",
       "name": "Louis Guisto Field at Br. Ronald Gallagher Stadium",
       "sport": "College Baseball",
@@ -9052,11 +9086,20 @@
           "awayScore": 16,
           "homeScore": 6,
           "url": "../milb/game.html?id=milb-2021-08-22-storm-66ers"
+        },
+        {
+          "id": "milb-2023-09-10-storm-66ers",
+          "date": "2023-09-10",
+          "away": "Lake Elsinore Storm",
+          "home": "Inland Empire 66ers",
+          "awayScore": 6,
+          "homeScore": 5,
+          "url": "../milb/game.html?id=milb-2023-09-10-storm-66ers"
         }
       ],
-      "visits": 18,
+      "visits": 19,
       "firstVisit": "2021-06-15",
-      "lastVisit": "2021-08-22"
+      "lastVisit": "2023-09-10"
     },
     {
       "id": "venue-0103",

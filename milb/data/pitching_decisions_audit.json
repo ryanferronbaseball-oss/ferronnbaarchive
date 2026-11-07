@@ -1,12 +1,12 @@
 {
   "source": "Official MLB StatsAPI schedule hydration with /api/v1.1/game feed fallback",
-  "verified_at": "2026-11-07T04:30:30.989697+00:00",
-  "games_checked": 112,
-  "games_with_verified_win": 112,
-  "games_with_verified_loss": 112,
-  "games_with_verified_save": 50,
+  "verified_at": "2026-11-07T04:39:14.958623+00:00",
+  "games_checked": 114,
+  "games_with_verified_win": 114,
+  "games_with_verified_loss": 114,
+  "games_with_verified_save": 52,
   "games_without_save": 62,
-  "player_game_pitching_rows": 845,
+  "player_game_pitching_rows": 865,
   "all_w_l_sv_internally_consistent": true,
   "miLB_data_only": true,
   "unverified_game_ids": [],
@@ -787,6 +787,20 @@
       "winner": 692020,
       "loser": 681116,
       "save": null
+    },
+    {
+      "game_id": "milb-2023-09-10-rawhide-quakes",
+      "game_pk": 724665,
+      "winner": 523260,
+      "loser": 699230,
+      "save": 802984
+    },
+    {
+      "game_id": "milb-2023-09-10-storm-66ers",
+      "game_pk": 724862,
+      "winner": 688519,
+      "loser": 700759,
+      "save": 692020
     },
     {
       "game_id": "milb-2024-05-10-senators-fishercats",

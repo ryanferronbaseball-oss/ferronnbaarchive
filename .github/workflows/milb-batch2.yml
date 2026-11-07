@@ -1,0 +1,49 @@
+name: MiLB Batch 2 twelve-game complete import
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "milb/scripts/import_batch2.py"
+      - ".github/workflows/milb-batch2.yml"
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Verify and enrich exactly 12 official Storm games
+        run: python milb/scripts/import_batch2.py
+      - name: Verify venue directory and all linked attendance games
+        run: node venues/scripts/test_venues.mjs
+      - name: Validate separate MLB and MiLB stats, venue assignments and deferred college links
+        run: |
+          python -m py_compile milb/scripts/import_batch2.py
+          node --check milb/assets/profile.js
+          node --check milb/assets/games.js
+      - name: Upload 12-game source audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: milb-batch2-source-audit
+          path: |
+            milb/data/batch2_report.json
+            milb/data/mlb_status_audit.json
+            milb/data/game_detail_report.json
+          if-no-files-found: warn
+      - name: Publish verified games, people, lineups, MLB tags and venue map together
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add milb/data/games.json milb/data/player_stats.json milb/data/inning_scores.json milb/data/scoring_plays.json milb/data/pitching_decisions.json milb/data/game_detail_report.json milb/data/batch2_report.json milb/data/player_links.json milb/data/mlb_alumni_seed.json milb/data/mlb_status_audit.json venues/data/venues.json index.html venues/index.html
+          if git diff --cached --quiet; then
+            echo "No changes to publish"
+            exit 1
+          fi
+          git commit -m "Import 12 verified 2021 Storm games with box scores, MLB tags and venue profiles"
+          git pull --rebase origin main
+          git push origin HEAD:main

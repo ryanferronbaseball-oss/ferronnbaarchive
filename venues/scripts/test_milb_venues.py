@@ -42,7 +42,8 @@ try:
   mobile=browser.new_page(viewport={"width":390,"height":844},is_mobile=True,has_touch=True)
   mobile.goto(origin+"/venues/venue.html?id=venue-0133",wait_until="networkidle")
   assert mobile.locator("#venueProfile h1").inner_text()=="Lake Elsinore Diamond"
-  assert mobile.locator("#venueGamesRows tr").count()==7
+  diamond=next(v for v in venues if v["id"]=="venue-0133")
+  assert mobile.locator("#venueGamesRows tr").count()==min(diamond["visits"],15)
   game=browser.new_page()
   example=next(v for v in venues if v["id"]=="venue-0133")["games"][0]
   game.goto(origin+"/milb/game.html?id="+example["id"],wait_until="networkidle")

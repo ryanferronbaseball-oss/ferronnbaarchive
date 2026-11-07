@@ -1,0 +1,39 @@
+name: Complete Storm 2021 in 12-game verified MiLB batches
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "milb/scripts/import_remaining_2021.py"
+      - ".github/workflows/milb-2021-rest.yml"
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Confirm all 120 official season games and remaining attendance scope
+        run: python milb/scripts/import_remaining_2021.py --plan
+      - name: Import remaining 2021 season in sequential twelve-game commits
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          python milb/scripts/import_remaining_2021.py --all
+      - name: Verify all games and shared physical venues after final batch
+        run: node venues/scripts/test_venues.mjs
+      - name: Publish workflow audit artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: 2021-storm-full-season-progress
+          path: |
+            milb/data/season_2021_import_progress.json
+            milb/data/mlb_status_audit.json
+            milb/data/game_detail_report.json
+          if-no-files-found: warn

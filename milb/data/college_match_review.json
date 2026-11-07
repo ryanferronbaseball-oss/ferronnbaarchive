@@ -1,10 +1,166 @@
 {
   "source": "CollegeBaseballArchive.load() with identity merges & corrections",
   "college_profiles_checked": 5210,
-  "milb_ids_checked": 156,
-  "name_match_candidates": 6,
+  "milb_ids_checked": 431,
+  "name_match_candidates": 19,
   "links_auto_approved": 0,
+  "existing_verified_links": 6,
+  "new_name_candidates": 13,
   "candidates": [
+    {
+      "milb_id": 663453,
+      "milb_names": [
+        "Hazahel Quijada"
+      ],
+      "milb_teams": [
+        "Lake Elsinore Storm"
+      ],
+      "milb_games": 16,
+      "college_profiles": [
+        {
+          "college_player_id": "cb-uc-riverside-hazahel-quijada",
+          "name": "Hazahel Quijada",
+          "schools": [
+            "UC Riverside"
+          ],
+          "games": 1
+        }
+      ],
+      "status": "review",
+      "reason": "Exact normalized full name only: needs distinct-person validation"
+    },
+    {
+      "milb_id": 668970,
+      "milb_names": [
+        "Gavin Hollowell"
+      ],
+      "milb_teams": [
+        "Fresno Grizzlies"
+      ],
+      "milb_games": 2,
+      "college_profiles": [
+        {
+          "college_player_id": "cb-st-john-s-gavin-hollowell",
+          "name": "Gavin Hollowell",
+          "schools": [
+            "St. John's"
+          ],
+          "games": 1
+        }
+      ],
+      "status": "review",
+      "reason": "Exact normalized full name only: needs distinct-person validation"
+    },
+    {
+      "milb_id": 669477,
+      "milb_names": [
+        "Casey Schmitt"
+      ],
+      "milb_teams": [
+        "San Jose Giants"
+      ],
+      "milb_games": 4,
+      "college_profiles": [
+        {
+          "college_player_id": "cb-san-diego-state-casey-schmitt",
+          "name": "Casey Schmitt",
+          "schools": [
+            "San Diego State"
+          ],
+          "games": 4
+        }
+      ],
+      "status": "review",
+      "reason": "Exact normalized full name only: needs distinct-person validation"
+    },
+    {
+      "milb_id": 670076,
+      "milb_names": [
+        "Lyle Lin"
+      ],
+      "milb_teams": [
+        "Visalia Rawhide"
+      ],
+      "milb_games": 3,
+      "college_profiles": [
+        {
+          "college_player_id": "cb-arizona-state-lyle-lin",
+          "name": "Lyle Lin",
+          "schools": [
+            "Arizona State"
+          ],
+          "games": 1
+        }
+      ],
+      "status": "review",
+      "reason": "Exact normalized full name only: needs distinct-person validation"
+    },
+    {
+      "milb_id": 671495,
+      "milb_names": [
+        "Channy Ortiz"
+      ],
+      "milb_teams": [
+        "Visalia Rawhide"
+      ],
+      "milb_games": 8,
+      "college_profiles": [
+        {
+          "college_player_id": "cb-grand-canyon-channy-ortiz",
+          "name": "Channy Ortiz",
+          "schools": [
+            "Grand Canyon"
+          ],
+          "games": 2
+        }
+      ],
+      "status": "review",
+      "reason": "Exact normalized full name only: needs distinct-person validation"
+    },
+    {
+      "milb_id": 674047,
+      "milb_names": [
+        "Travis Kuhn"
+      ],
+      "milb_teams": [
+        "Modesto Nuts"
+      ],
+      "milb_games": 2,
+      "college_profiles": [
+        {
+          "college_player_id": "cb-san-diego-travis-kuhn",
+          "name": "Travis Kuhn",
+          "schools": [
+            "San Diego"
+          ],
+          "games": 29
+        }
+      ],
+      "status": "review",
+      "reason": "Exact normalized full name only: needs distinct-person validation"
+    },
+    {
+      "milb_id": 680420,
+      "milb_names": [
+        "Grant Judkins"
+      ],
+      "milb_teams": [
+        "Stockton Ports"
+      ],
+      "milb_games": 1,
+      "college_profiles": [
+        {
+          "college_player_id": "cb-iowa-grant-judkins",
+          "name": "Grant Judkins",
+          "schools": [
+            "Iowa"
+          ],
+          "games": 1
+        }
+      ],
+      "status": "review",
+      "reason": "Exact normalized full name only: needs distinct-person validation"
+    },
     {
       "milb_id": 680734,
       "milb_names": [
@@ -22,6 +178,29 @@
             "Cal State Fullerton"
           ],
           "games": 2
+        }
+      ],
+      "status": "previously_verified",
+      "reason": "Exact normalized full name only: needs distinct-person validation",
+      "existing_college_player_id": "cb-cal-state-fullerton-kyle-luckham"
+    },
+    {
+      "milb_id": 684541,
+      "milb_names": [
+        "Sahid Valenzuela"
+      ],
+      "milb_teams": [
+        "Stockton Ports"
+      ],
+      "milb_games": 3,
+      "college_profiles": [
+        {
+          "college_player_id": "cb-cal-state-fullerton-sahid-valenzuela",
+          "name": "Sahid Valenzuela",
+          "schools": [
+            "Cal State Fullerton"
+          ],
+          "games": 3
         }
       ],
       "status": "review",
@@ -47,8 +226,9 @@
           "games": 38
         }
       ],
-      "status": "review",
-      "reason": "Exact normalized full name only: needs distinct-person validation"
+      "status": "previously_verified",
+      "reason": "Exact normalized full name only: needs distinct-person validation",
+      "existing_college_player_id": "cb-california-ripken-reyes"
     },
     {
       "milb_id": 686781,
@@ -58,7 +238,7 @@
       "milb_teams": [
         "Rancho Cucamonga Quakes"
       ],
-      "milb_games": 6,
+      "milb_games": 12,
       "college_profiles": [
         {
           "college_player_id": "cb-uc-irvine-brandon-lewis",
@@ -69,8 +249,9 @@
           "games": 3
         }
       ],
-      "status": "review",
-      "reason": "Exact normalized full name only: needs distinct-person validation"
+      "status": "previously_verified",
+      "reason": "Exact normalized full name only: needs distinct-person validation",
+      "existing_college_player_id": "cb-uc-irvine-brandon-lewis"
     },
     {
       "milb_id": 686793,
@@ -89,6 +270,29 @@
             "Fresno State"
           ],
           "games": 1
+        }
+      ],
+      "status": "previously_verified",
+      "reason": "Exact normalized full name only: needs distinct-person validation",
+      "existing_college_player_id": "cb-fresno-state-jt-arruda"
+    },
+    {
+      "milb_id": 687013,
+      "milb_names": [
+        "Cooper Uhl"
+      ],
+      "milb_teams": [
+        "Stockton Ports"
+      ],
+      "milb_games": 2,
+      "college_profiles": [
+        {
+          "college_player_id": "cb-loyola-marymount-cooper-uhl",
+          "name": "Cooper Uhl",
+          "schools": [
+            "Loyola Marymount"
+          ],
+          "games": 3
         }
       ],
       "status": "review",
@@ -113,6 +317,95 @@
           "games": 4
         }
       ],
+      "status": "previously_verified",
+      "reason": "Exact normalized full name only: needs distinct-person validation",
+      "existing_college_player_id": "cb-oregon-josh-kasevich"
+    },
+    {
+      "milb_id": 689296,
+      "milb_names": [
+        "Anthony Nunez"
+      ],
+      "milb_teams": [
+        "Lake Elsinore Storm"
+      ],
+      "milb_games": 6,
+      "college_profiles": [
+        {
+          "college_player_id": "cb-tampa-anthony-nunez",
+          "name": "Anthony Nunez",
+          "schools": [
+            "Tampa"
+          ],
+          "games": 1
+        }
+      ],
+      "status": "review",
+      "reason": "Exact normalized full name only: needs distinct-person validation"
+    },
+    {
+      "milb_id": 689690,
+      "milb_names": [
+        "Alek Jacob"
+      ],
+      "milb_teams": [
+        "Lake Elsinore Storm"
+      ],
+      "milb_games": 12,
+      "college_profiles": [
+        {
+          "college_player_id": "cb-gonzaga-alek-jacob",
+          "name": "Alek Jacob",
+          "schools": [
+            "Gonzaga"
+          ],
+          "games": 1
+        }
+      ],
+      "status": "review",
+      "reason": "Exact normalized full name only: needs distinct-person validation"
+    },
+    {
+      "milb_id": 689880,
+      "milb_names": [
+        "Myles Emmerson"
+      ],
+      "milb_teams": [
+        "Inland Empire 66ers"
+      ],
+      "milb_games": 6,
+      "college_profiles": [
+        {
+          "college_player_id": "cb-cal-poly-myles-emmerson",
+          "name": "Myles Emmerson",
+          "schools": [
+            "Cal Poly"
+          ],
+          "games": 1
+        }
+      ],
+      "status": "review",
+      "reason": "Exact normalized full name only: needs distinct-person validation"
+    },
+    {
+      "milb_id": 701120,
+      "milb_names": [
+        "Carson Matthews"
+      ],
+      "milb_teams": [
+        "Inland Empire 66ers"
+      ],
+      "milb_games": 4,
+      "college_profiles": [
+        {
+          "college_player_id": "cb-byu-carson-matthews",
+          "name": "Carson Matthews",
+          "schools": [
+            "BYU"
+          ],
+          "games": 2
+        }
+      ],
       "status": "review",
       "reason": "Exact normalized full name only: needs distinct-person validation"
     },
@@ -135,8 +428,9 @@
           "games": 6
         }
       ],
-      "status": "review",
-      "reason": "Exact normalized full name only: needs distinct-person validation"
+      "status": "previously_verified",
+      "reason": "Exact normalized full name only: needs distinct-person validation",
+      "existing_college_player_id": "cb-pacific-wyatt-hoffman"
     }
   ]
 }

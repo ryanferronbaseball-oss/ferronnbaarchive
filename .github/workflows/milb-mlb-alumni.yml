@@ -1,0 +1,37 @@
+name: MiLB to MLB verified debut reconciliation
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "milb/scripts/import_mlb_alumni.py"
+      - ".github/workflows/milb-mlb-alumni.yml"
+jobs:
+  reconcile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check all witnessed MiLB MLBAM identities against official MLB debut
+        run: python milb/scripts/import_mlb_alumni.py
+      - name: Upload status audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: milb-to-mlb-reconciliation
+          path: milb/data/mlb_status_audit.json
+          if-no-files-found: warn
+      - name: Publish only MiLB crosswalk and directory seed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add milb/data/player_links.json milb/data/mlb_alumni_seed.json milb/data/mlb_status_audit.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Verify MiLB to MLB debuts for imported attendance players"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi

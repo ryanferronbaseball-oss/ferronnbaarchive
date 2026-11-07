@@ -91,7 +91,7 @@ function renderProfile(playerId,rows,games,links){
  const initials=name.trim().split(/\s+/).map(s=>s.charAt(0)).slice(0,2).join("").toUpperCase();
  const linked=links.find(x=>String(x.milb_id)===String(playerId)&&x.verified===true);
  const linksHtml=linked?'<div class="mlb-profile-achievements">'
-   +(linked.mlb_id?badge("SEEN IN MiLB + MLB","../mlb/player.html?id="+urlId(linked.mlb_id)):"")
+   +(linked.mlb_id?(linked.mlb_seen===true?badge("SEEN IN MiLB + MLB","../mlb/player.html?id="+urlId(linked.mlb_id)):badge("REACHED MLB","./mlb-alumni.html")):"")
    +(linked.college_id?badge("SEEN IN MiLB + COLLEGE","../college-baseball/player.html?id="+urlId(linked.college_id)):"")
    +'</div>':"";
  const impacts=entries.map(impact).filter(Boolean).sort((a,b)=>b.score-a.score);

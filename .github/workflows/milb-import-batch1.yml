@@ -1,0 +1,37 @@
+name: MiLB Batch 1 official box score import
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "milb/scripts/import_batch1.py"
+      - ".github/workflows/milb-import-batch1.yml"
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Resolve and validate ten attended MiLB games and both teams' boxscores
+        run: python milb/scripts/import_batch1.py
+      - name: Upload independent MiLB verification report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: milb-batch1-official-import-report
+          path: milb/data/import_report.json
+          if-no-files-found: warn
+      - name: Publish only MiLB game data and player statistics
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add milb/data/games.json milb/data/player_stats.json milb/data/import_report.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Import verified official MiLB Batch 1 box scores"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi

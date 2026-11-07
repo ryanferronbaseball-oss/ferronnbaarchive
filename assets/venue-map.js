@@ -4,6 +4,8 @@
   const formatDate=iso=>new Date(`${iso}T12:00:00Z`).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric',timeZone:'UTC'});
   const sportColors={'College Baseball':'#356447','MLB':'#1f6a82','College Basketball':'#9b6232','NBA':'#bf722e','NFL':'#7e5c88','College Football':'#8c5539','Soccer':'#617e47','MiLB':'#831738'};
   const sportsOrder=['College Baseball','MLB','MiLB','College Basketball','NBA','College Football','NFL','Soccer'];
+  const venueSports=v=>Array.isArray(v.sports)&&v.sports.length?v.sports:[v.sport];
+  const hasSport=(v,s)=>venueSports(v).includes(s);
   const mapElement=$('venueMap');if(!mapElement)return;
   const fallback=$('venueMapLoading');
 
@@ -15,7 +17,7 @@
     if(!venues.length||data.venueCount!==venues.length)throw Error('venue inventory incomplete');
     $('venueCount').textContent=venues.length.toLocaleString();
     $('venueGameCount').textContent=data.mappedGames.toLocaleString();
-    $('venueSportCount').textContent=new Set(venues.map(v=>v.sport)).size;
+    $('venueSportCount').textContent=new Set(venues.flatMap(venueSports)).size;
     const map=L.map(mapElement,{minZoom:3,worldCopyJump:false,scrollWheelZoom:false,zoomControl:true});
     L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png',{
       subdomains:'abc',maxZoom:19,
@@ -38,12 +40,12 @@
       });
       const photo=photos[v.id];
       const photoHtml=photo?`<img class="venue-popup-photo" src="./venues/photos/${encodeURIComponent(photo.file)}?v=2" alt="${esc(photo.alt)}" loading="lazy">`:'';
-      marker.bindPopup(`<div class="venue-popup">${photoHtml}<small>${esc(v.sport)}</small><h3>${esc(v.name)}</h3><p>${esc(v.city)}</p><div class="venue-popup-facts"><span>Games attended<strong>${v.visits}</strong></span><span>First visit<strong style="font-size:12px">${formatDate(v.firstVisit)}</strong></span></div><a href="./venues/venue.html?id=${encodeURIComponent(v.id)}">View venue profile &rarr;</a></div>`,{maxWidth:290});
+      marker.bindPopup(`<div class="venue-popup">${photoHtml}<small>${esc(venueSports(v).join(' + '))}</small><h3>${esc(v.name)}</h3><p>${esc(v.city)}</p><div class="venue-popup-facts"><span>Games attended<strong>${v.visits}</strong></span><span>First visit<strong style="font-size:12px">${formatDate(v.firstVisit)}</strong></span></div><a href="./venues/venue.html?id=${encodeURIComponent(v.id)}">View venue profile &rarr;</a></div>`,{maxWidth:290});
       markers.set(v.id,marker);
     });
     let selectedSport='All',search='';
     const buttons=$('venueFilters');
-    const filters=['All',...sportsOrder.filter(s=>venues.some(v=>v.sport===s))];
+    const filters=['All',...sportsOrder.filter(s=>venues.some(v=>hasSport(v,s)))];
     filters.forEach(s=>{
       const button=document.createElement('button');button.type='button';button.className='venue-filter';
       button.textContent=s==='All'?'All sports':s;button.setAttribute('aria-pressed',String(s==='All'));
@@ -61,7 +63,7 @@
       if(typeof layer.zoomToShowLayer==='function')layer.zoomToShowLayer(marker,()=>marker.openPopup());else marker.openPopup();
     }
     function refresh(zoom){
-      const matching=venues.filter(v=>(selectedSport==='All'||v.sport===selectedSport)&&(!search||`${v.name} ${v.city} ${v.sport}`.toLowerCase().includes(search)));
+      const matching=venues.filter(v=>(selectedSport==='All'||hasSport(v,selectedSport))&&(!search||`${v.name} ${v.city} ${venueSports(v).join(' ')}`.toLowerCase().includes(search)));
       layer.clearLayers();matching.forEach(v=>layer.addLayer(markers.get(v.id)));
       $('venueMapResult').textContent=`Showing ${matching.length} of ${venues.length} venues`;
       $('venueMapEmpty').hidden=matching.length>0;

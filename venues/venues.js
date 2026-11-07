@@ -5,6 +5,8 @@
   const fmtShort=iso=>new Date(`${iso}T12:00:00Z`).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric',timeZone:'UTC'});
   const sportRoutes={'NBA':'../nba/','College Basketball':'../college/','NFL':'../nfl/','College Football':'../cfb/','Soccer':'../soccer/','MiLB':'../milb/','MLB':'../mlb/','College Baseball':'../college-baseball/'};
   const sportOrder=['College Baseball','MLB','MiLB','College Basketball','NBA','College Football','NFL','Soccer'];
+  const venueSports=v=>Array.isArray(v.sports)&&v.sports.length?v.sports:[v.sport];
+  const hasSport=(v,s)=>venueSports(v).includes(s);
   const profileHref=v=>`./venue.html?id=${encodeURIComponent(v.id)}`;
   const score=g=>g.awayScore==null||g.homeScore==null?'—':`${g.awayScore}–${g.homeScore}`;
   const page=document.body.dataset.venuePage;
@@ -22,15 +24,15 @@
 
   function renderDirectory(venues){
     const list=$('venueDirectory'),query=$('venueDirectorySearch'),sport=$('venueDirectorySport');
-    for(const name of sportOrder.filter(s=>venues.some(v=>v.sport===s))){
+    for(const name of sportOrder.filter(s=>venues.some(v=>hasSport(v,s)))){
       const option=document.createElement('option');option.value=name;option.textContent=name;sport.append(option);
     }
     const sorted=venues.slice().sort((a,b)=>b.visits-a.visits||a.name.localeCompare(b.name));
     function update(){
       const q=query.value.trim().toLowerCase(),chosen=sport.value;
-      const found=sorted.filter(v=>(chosen==='All'||v.sport===chosen)&&(!q||`${v.name} ${v.city}`.toLowerCase().includes(q)));
+      const found=sorted.filter(v=>(chosen==='All'||hasSport(v,chosen))&&(!q||`${v.name} ${v.city}`.toLowerCase().includes(q)));
       $('venueDirectoryStatus').textContent=`Showing ${found.length} of ${venues.length} venues · ${dataGameTotal(venues).toLocaleString()} linked games`;
-      list.innerHTML=found.length?found.map(v=>`<a class="vp-venue" href="${profileHref(v)}"><small>${esc(v.sport)}</small><strong>${esc(v.name)}</strong><span>${esc(v.city)}</span><em>${v.visits} ${v.visits===1?'game':'games'} attended · First ${fmtShort(v.firstVisit)} →</em></a>`).join(''):'<div class="vp-empty">No venues match this search.</div>';
+      list.innerHTML=found.length?found.map(v=>`<a class="vp-venue" href="${profileHref(v)}"><small>${esc(venueSports(v).join(' + '))}</small><strong>${esc(v.name)}</strong><span>${esc(v.city)}</span><em>${v.visits} ${v.visits===1?'game':'games'} attended · First ${fmtShort(v.firstVisit)} →</em></a>`).join(''):'<div class="vp-empty">No venues match this search.</div>';
     }
     query.addEventListener('input',update);sport.addEventListener('change',update);update();
   }
@@ -42,7 +44,7 @@
     if(!v){target.innerHTML='<div class="vp-intro"><h1>Venue not found.</h1><p>Try the <a href="./">complete venue directory</a> or the <a href="../#venues">interactive map</a>.</p></div>';return;}
     document.title=`${v.name} | Courtside Archive`;
     $('venueCrumb').textContent=v.name;
-    const first=v.games[0],years=new Set(v.games.map(g=>g.date.slice(0,4))).size;
+    const first=v.games[0],activeSports=venueSports(v),years=new Set(v.games.map(g=>g.date.slice(0,4))).size;
     const photoLabel=v.sport.includes('Basketball')||v.sport==='NBA'?'Arena profile':v.sport.includes('Football')||v.sport==='NFL'?'Stadium profile':'Ballpark profile';
     const photo=photos[v.id];
     const photoFile=photo?`./photos/${encodeURIComponent(photo.file)}?v=2`:'';
@@ -51,13 +53,13 @@
     target.innerHTML=`
       <section class="vp-profile-head">
         <div>
-          <span class="vp-sport">${esc(v.sport)}</span>
+          <span class="vp-sport">${esc(activeSports.join(" + "))}</span>
           <h1>${esc(v.name)}</h1>
           <p class="vp-place">📍 ${esc(v.city)}</p>
           <p style="font-size:15px;color:#657467;line-height:1.7;max-width:620px">The first recorded Courtside Archive visit was ${fmtDate(v.firstVisit)}. Explore the venue's history, key facts, and all ${v.visits} attended ${v.visits===1?'game':'games'}.</p>
           <div class="vp-profile-actions">
             <a href="../?venue=${encodeURIComponent(v.id)}#venues">Locate on interactive map ↗</a>
-            <a class="secondary" href="${esc(sportRoutes[v.sport]||'../')}">Explore ${esc(v.sport)} archive ↗</a>
+            ${activeSports.map(s=>`<a class="secondary" href="${esc(sportRoutes[s]||'../')}">Explore ${esc(s)} archive ↗</a>`).join("")}
           </div>
         </div>
         ${photoMarkup}

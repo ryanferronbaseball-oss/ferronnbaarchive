@@ -27,7 +27,7 @@ EXPECTED_RESULTS=[
 ]
 STORM="Lake Elsinore Storm"
 OPPONENT=[("San Jose Giants","Excite Ballpark","San Jose, CA","venue-0132")]*6+[
-         ("Stockton Ports","Banner Island Ballpark","Stockton, CA","venue-0135")]*6
+         ("Stockton Ports","Banner Island Ballpark","Stockton, CA","venue-0005")]*6
 BATCH_NUMBER=2
 
 def read(path):
@@ -72,42 +72,23 @@ def updated_venues(allgames):
     data=read(VENUES)
     sites=data["venues"]
     sj=next(v for v in sites if v.get("id")=="venue-0132")
-    if sj.get("name")!="Excite Ballpark":raise ValueError("San Jose venue identity changed")
-    other=[v for v in sites if v.get("id")=="venue-0135"]
-    if other:
-        stock=other[0]
-        if stock["name"]!="Banner Island Ballpark":raise ValueError("Unexpected Stockton venue identity")
-    else:
-        if any(v.get("name")=="Banner Island Ballpark" for v in sites):
-            raise ValueError("Stockton ballpark is already present under another venue ID")
-        stock={
-          "id":"venue-0135",
-          "name":"Banner Island Ballpark",
-          "sport":"MiLB",
-          "city":"Stockton, CA",
-          "address":"404 West Fremont Street, Stockton, CA 95203",
-          "lat":37.9548556,"lon":-121.2979556,
-          "coordinateConfidence":"High",
-          "opened":"2005",
-          "capacity":"5,200 (4,200 fixed seats; Stockton Ports official ballpark guide)",
-          "occupants":"Stockton Ports minor-league baseball",
-          "history":"Opened April 28, 2005, as the Stockton Ports' downtown waterfront home. Also referred to as Stockton Ballpark. Banner Island Ballpark and Stockton Ballpark refer to the same venue, not two separate visits.",
-          "sources":["https://www.milb.com/stockton/ballpark/banner-island-ballpark",
-                     "https://www.milb.com/stockton/ballpark/contact-us",
-                     "https://www.mlb.com/news/featured/visit-banner-island-ballpark-home-of-the-stockton-ports/"],
-          "factNote":"First attended June 1, 2021, for the Storm–Ports series; games June 1–6, 2021.",
-          "games":[],"visits":0,
-        }
-        sites.append(stock)
-    ids={g["id"] for g in allgames}
+    stock=next(v for v in sites if v.get("id")=="venue-0005")
+    if sj.get("name")!="Excite Ballpark":
+        raise ValueError("San Jose venue identity changed")
+    if stock.get("name")!="Banner Island Ballpark" or stock.get("sport")!="College Baseball":
+        raise ValueError("Existing shared Stockton venue identity changed")
+    if sum(v["name"]=="Banner Island Ballpark" for v in sites)!=1:
+        raise ValueError("Duplicate Banner Island Ballpark physical venue")
+    # Preserve the original seven WCC college games, and reuse the SAME stadium
+    # for six earlier attended MiLB games. One profile per physical location.
+    stock["sports"]=["College Baseball","MiLB"]
+    stock["factNote"]="This is the same physical stadium for six 2021 Storm–Ports MiLB games and the 2022 WCC College Baseball Tournament. Both sports are linked in one venue profile."
     for v in (sj,stock):
         combined={x["id"]:x for x in v["games"]}
         for g in allgames:
             if g.get("venue_id")==v["id"]:
                 combined[g["id"]]=venue_game(g)
         v["games"]=sorted(combined.values(),key=lambda x:(x["date"],x["id"]))
-        if any(e["id"] not in ids for e in v["games"] if e["id"].startswith("milb-")):
-            raise ValueError("Orphan MiLB venue visit")
         v["visits"]=len(v["games"])
         v["firstVisit"]=v["games"][0]["date"]
         v["lastVisit"]=v["games"][-1]["date"]
@@ -116,7 +97,7 @@ def updated_venues(allgames):
     data["venueCount"]=len(data["venues"])
     data["mappedGames"]=sum(len(x["games"]) for x in data["venues"])
     data["updated"]=datetime.datetime.now(datetime.timezone.utc).date().isoformat()
-    if data["venueCount"]!=135 or data["mappedGames"]!=728:
+    if data["venueCount"]!=134 or data["mappedGames"]!=728:
         raise ValueError(f"Venue counters wrong: {data['venueCount']} venues, {data['mappedGames']} games")
     return data
 
@@ -238,7 +219,8 @@ def main():
         "college_matching_deferred":True,
         "venues":venueData["venueCount"],
         "mapped_venue_games":venueData["mappedGames"],
-        "new_ballparks":["Banner Island Ballpark"],
+        "new_ballparks":[],
+        "existing_shared_ballpark":"Banner Island Ballpark (college + MiLB)",
         "games":[{"date":g["date"],"id":g["id"],"official_pk":g["source_game_id"],
                    "away_score":g["away_score"],"home_score":g["home_score"],
                    "venue_id":g["venue_id"]} for g in newgames],

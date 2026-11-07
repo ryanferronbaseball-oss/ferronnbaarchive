@@ -4,7 +4,7 @@ import functools,http.server,json,pathlib,socketserver,threading
 from playwright.sync_api import sync_playwright
 root=pathlib.Path(__file__).resolve().parents[2]
 data=json.loads((root/"venues/data/venues.json").read_text())
-venues=[v for v in data["venues"] if v["sport"]=="MiLB"]
+venues=[v for v in data["venues"] if "MiLB" in (v.get("sports") or [v["sport"]])]
 assert len(venues)>=4
 class Reuse(socketserver.ThreadingTCPServer):allow_reuse_address=True
 server=Reuse(("127.0.0.1",0),functools.partial(http.server.SimpleHTTPRequestHandler,directory=str(root)))
@@ -30,7 +30,7 @@ try:
    vp.goto(origin+"/venues/venue.html?id="+v["id"],wait_until="networkidle")
    assert vp.locator("#venueProfile h1").inner_text()==v["name"]
    assert vp.locator("#venueGamesRows tr").count()==v["visits"]
-   assert vp.locator('#venueGamesRows a[href^="../milb/game.html?id="]').count()==2*v["visits"]
+   assert vp.locator('#venueGamesRows a[href^="../milb/game.html?id="]').count()==2*sum(g["id"].startswith("milb-") for g in v["games"][:15])
    assert vp.locator('a[href="../milb/"]').count()==1
    assert vp.locator(".vp-photo-placeholder").count()==1
    assert not local,local

@@ -16,7 +16,8 @@ assert.equal(new Set(venues.map(v=>v.id)).size,venues.length);
 assert.equal(new Set(venues.map(v=>v.name)).size,venues.length);
 assert.equal(new Set(venues.map(v=>v.sport)).size,8);
 const expected={'College Baseball':84,'College Basketball':19,'MLB':18,'College Football':3,'NBA':2,'NFL':2,'Soccer':2};
-assert.ok(venues.filter(v=>v.sport==='MiLB').length>=4);
+const venueSports=v=>Array.isArray(v.sports)&&v.sports.length?v.sports:[v.sport];
+assert.ok(venues.filter(v=>venueSports(v).includes('MiLB')).length>=4);
 for(const [sport,count] of Object.entries(expected))assert.equal(venues.filter(v=>v.sport===sport).length,count,sport);
 for(const [id,photo] of Object.entries(photos)){
  assert.ok(venues.some(v=>v.id===id),id+': photo venue missing');
@@ -43,14 +44,15 @@ for(const v of venues){
  total+=v.visits;
 }
 assert.equal(total,data.mappedGames);
-const milbVenues=venues.filter(v=>v.sport==='MiLB');
-const counts={'venue-0131':1,'venue-0132':1,'venue-0133':7,'venue-0134':1};
+const milbVenues=venues.filter(v=>venueSports(v).includes('MiLB'));
+const counts={'venue-0131':1,'venue-0132':1,'venue-0133':7,'venue-0134':1,'venue-0005':7};
 assert.ok(milbVenues.length>=4);
 assert.ok(games.length>=10);
 const seen=new Set();
 for(const v of milbVenues){
  assert.ok(v.visits>=(counts[v.id]??1));
  for(const vg of v.games){
+  if(!vg.id.startsWith('milb-'))continue; // Shared stadium also contains college game records.
   const game=games.find(g=>g.id===vg.id);
   assert.ok(game,'Orphan MiLB game '+vg.id);
   assert.equal(game.venue_id,v.id,vg.id);
@@ -65,7 +67,14 @@ for(const v of milbVenues){
  }
 }
 assert.equal(seen.size,games.length);
-assert.ok(milbVenues.every(v=>v.games.every(g=>g.id.startsWith('milb-'))));
+assert.ok(venues.some(v=>v.id==='venue-0005'&&v.name==='Banner Island Ballpark'));
+assert.equal(venues.filter(v=>v.name==='Banner Island Ballpark').length,1);
+if(games.length>10){
+ const venue=venues.find(v=>v.id==='venue-0005');
+ assert.ok(venueSports(venue).includes('MiLB'));
+ assert.ok(venue.games.some(g=>g.id.startsWith('cb-')));
+ assert.ok(venue.games.some(g=>g.id.startsWith('milb-')));
+}
 const richmond=venues.find(v=>v.name==='The Diamond');
 assert.ok(richmond&&richmond.city.startsWith('Richmond'));
 assert.notEqual(richmond.id,'venue-0133');

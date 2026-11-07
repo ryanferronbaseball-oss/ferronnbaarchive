@@ -1,7 +1,7 @@
 {
   "updated": "2026-11-07",
-  "venueCount": 137,
-  "mappedGames": 820,
+  "venueCount": 140,
+  "mappedGames": 824,
   "excludedUnassignedGames": 7,
   "venues": [
     {
@@ -7799,6 +7799,39 @@
       ]
     },
     {
+      "id": "venue-0140",
+      "name": "Peoria Stadium",
+      "sport": "MiLB",
+      "city": "Peoria, AZ",
+      "address": "16101 North 83rd Avenue, Peoria, AZ 85382",
+      "lat": 33.6319,
+      "lon": -112.2332,
+      "coordinateConfidence": "High",
+      "opened": "1994",
+      "capacity": "12,518 (main stadium at Peoria Sports Complex)",
+      "occupants": "San Diego Padres and Seattle Mariners spring training; ACL Padres and ACL Mariners programs",
+      "history": "Peoria Sports Complex opened in 1994 as the first shared two-team MLB spring-training complex. It includes the main Peoria Stadium and adjoining practice fields. The official July 8, 2023 ACL game venue is listed as Peoria Stadium; main-stadium seating capacity is not ACL attendance.",
+      "sources": [
+        "https://www.peoriasportscomplex.com/spring-training/find-info/about-sports-complex",
+        "https://www.peoriasportscomplex.com/spring-training/find-info/a-to-z-guide"
+      ],
+      "factNote": "First attended July 8, 2023, ACL Royals at ACL Padres.",
+      "games": [
+        {
+          "id": "milb-2023-07-08-acl-royals-padres",
+          "date": "2023-07-08",
+          "away": "ACL Royals",
+          "home": "ACL Padres",
+          "awayScore": 3,
+          "homeScore": 4,
+          "url": "../milb/game.html?id=milb-2023-07-08-acl-royals-padres"
+        }
+      ],
+      "visits": 1,
+      "firstVisit": "2023-07-08",
+      "lastVisit": "2023-07-08"
+    },
+    {
       "id": "venue-0092",
       "name": "Petco Park",
       "sport": "MLB",
@@ -9088,6 +9121,15 @@
           "url": "../milb/game.html?id=milb-2021-08-22-storm-66ers"
         },
         {
+          "id": "milb-2023-08-27-rawhide-66ers",
+          "date": "2023-08-27",
+          "away": "Visalia Rawhide",
+          "home": "Inland Empire 66ers",
+          "awayScore": 10,
+          "homeScore": 12,
+          "url": "../milb/game.html?id=milb-2023-08-27-rawhide-66ers"
+        },
+        {
           "id": "milb-2023-09-10-storm-66ers",
           "date": "2023-09-10",
           "away": "Lake Elsinore Storm",
@@ -9097,7 +9139,7 @@
           "url": "../milb/game.html?id=milb-2023-09-10-storm-66ers"
         }
       ],
-      "visits": 19,
+      "visits": 20,
       "firstVisit": "2021-06-15",
       "lastVisit": "2023-09-10"
     },
@@ -9166,6 +9208,39 @@
           "url": "../college-baseball/game.html?id=cb-2026-05-10-little-rock-ut-martin-att0421"
         }
       ]
+    },
+    {
+      "id": "venue-0138",
+      "name": "Sloan Park",
+      "sport": "MiLB",
+      "city": "Mesa, AZ",
+      "address": "2330 West Rio Salado Parkway, Mesa, AZ 85201",
+      "lat": 33.4310672,
+      "lon": -111.8815505,
+      "coordinateConfidence": "High",
+      "opened": "2014",
+      "capacity": "15,000 (main spring-training stadium)",
+      "occupants": "Chicago Cubs spring training; ACL Cubs development program",
+      "history": "Opened in 2014 as the Chicago Cubs' spring-training home, originally called Cubs Park. Sloan Park is part of a larger Mesa training campus with additional practice fields. The official July 6, 2023 ACL schedule identifies Sloan Park as the game venue; its stadium seating capacity should not be interpreted as ACL-game attendance.",
+      "sources": [
+        "https://www.mesaaz.gov/Activities-Culture/Parks-Recreation-and-Community-Facilities/Parks-Facilities/Sloan-Park",
+        "https://www.visitmesa.com/things-to-do/spring-training/chicago-cubs/"
+      ],
+      "factNote": "First attended July 6, 2023, ACL Royals at ACL Cubs.",
+      "games": [
+        {
+          "id": "milb-2023-07-06-acl-royals-cubs",
+          "date": "2023-07-06",
+          "away": "ACL Royals",
+          "home": "ACL Cubs",
+          "awayScore": 21,
+          "homeScore": 11,
+          "url": "../milb/game.html?id=milb-2023-07-06-acl-royals-cubs"
+        }
+      ],
+      "visits": 1,
+      "firstVisit": "2023-07-06",
+      "lastVisit": "2023-07-06"
     },
     {
       "id": "venue-0105",
@@ -9406,6 +9481,39 @@
           "url": "../college-baseball/game.html?id=cb-2019-05-05-san-diego-santa-clara-att0067"
         }
       ]
+    },
+    {
+      "id": "venue-0139",
+      "name": "Surprise Stadium",
+      "sport": "MiLB",
+      "city": "Surprise, AZ",
+      "address": "15850 North Bullard Avenue, Surprise, AZ 85374",
+      "lat": 33.62778,
+      "lon": -112.37778,
+      "coordinateConfidence": "High",
+      "opened": "2002",
+      "capacity": "10,714 (main spring-training stadium)",
+      "occupants": "Kansas City Royals and Texas Rangers spring training; ACL Royals and ACL Rangers programs",
+      "history": "Opened in 2002 as the shared Cactus League home of the Royals and Rangers. Its playing field is named Billy Parker Field. The adjacent Surprise Recreation Campus includes player-development fields; the official July 7, 2023 ACL schedule lists Surprise Stadium as the venue.",
+      "sources": [
+        "https://www.surprisestadium.com/stadium-info/about",
+        "https://www.surprisestadium.com/stadium-info/stadium-a-z"
+      ],
+      "factNote": "First attended July 7, 2023, ACL Rangers at ACL Royals. The separately dated July 4 game on the July 7 live schedule is not counted.",
+      "games": [
+        {
+          "id": "milb-2023-07-07-acl-rangers-royals",
+          "date": "2023-07-07",
+          "away": "ACL Rangers",
+          "home": "ACL Royals",
+          "awayScore": 8,
+          "homeScore": 6,
+          "url": "../milb/game.html?id=milb-2023-07-07-acl-rangers-royals"
+        }
+      ],
+      "visits": 1,
+      "firstVisit": "2023-07-07",
+      "lastVisit": "2023-07-07"
     },
     {
       "id": "venue-0109",

@@ -1,12 +1,12 @@
 {
   "source": "Official MLB StatsAPI schedule hydration with /api/v1.1/game feed fallback",
-  "verified_at": "2026-11-07T04:39:14.958623+00:00",
-  "games_checked": 114,
-  "games_with_verified_win": 114,
-  "games_with_verified_loss": 114,
-  "games_with_verified_save": 52,
-  "games_without_save": 62,
-  "player_game_pitching_rows": 865,
+  "verified_at": "2026-11-07T05:05:14.037030+00:00",
+  "games_checked": 118,
+  "games_with_verified_win": 118,
+  "games_with_verified_loss": 118,
+  "games_with_verified_save": 55,
+  "games_without_save": 63,
+  "player_game_pitching_rows": 902,
   "all_w_l_sv_internally_consistent": true,
   "miLB_data_only": true,
   "unverified_game_ids": [],
@@ -787,6 +787,34 @@
       "winner": 692020,
       "loser": 681116,
       "save": null
+    },
+    {
+      "game_id": "milb-2023-07-06-acl-royals-cubs",
+      "game_pk": 743303,
+      "winner": 804972,
+      "loser": 802963,
+      "save": null
+    },
+    {
+      "game_id": "milb-2023-07-07-acl-rangers-royals",
+      "game_pk": 743292,
+      "winner": 805012,
+      "loser": 678775,
+      "save": 701261
+    },
+    {
+      "game_id": "milb-2023-07-08-acl-royals-padres",
+      "game_pk": 743287,
+      "winner": 663910,
+      "loser": 805074,
+      "save": 700326
+    },
+    {
+      "game_id": "milb-2023-08-27-rawhide-66ers",
+      "game_pk": 724867,
+      "winner": 676502,
+      "loser": 699230,
+      "save": 677614
     },
     {
       "game_id": "milb-2023-09-10-rawhide-quakes",

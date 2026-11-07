@@ -1864,5 +1864,74 @@
     "source": "MLB StatsAPI official schedule_hydrate_decisions",
     "source_url": "https://statsapi.mlb.com/api/v1/schedule?gamePk=724862&hydrate=decisions",
     "verified_game_pk": 724862
+  },
+  "743303": {
+    "status": "verified",
+    "winner": {
+      "id": 804972,
+      "name": "Richy Valdez"
+    },
+    "loser": {
+      "id": 802963,
+      "name": "Mathew Peters"
+    },
+    "save": null,
+    "source": "MLB StatsAPI official schedule_hydrate_decisions",
+    "source_url": "https://statsapi.mlb.com/api/v1/schedule?gamePk=743303&hydrate=decisions",
+    "verified_game_pk": 743303
+  },
+  "743292": {
+    "status": "verified",
+    "winner": {
+      "id": 805012,
+      "name": "Nick Bautista III"
+    },
+    "loser": {
+      "id": 678775,
+      "name": "Luis Cepeda"
+    },
+    "save": {
+      "id": 701261,
+      "name": "Bryan Chi"
+    },
+    "source": "MLB StatsAPI official schedule_hydrate_decisions",
+    "source_url": "https://statsapi.mlb.com/api/v1/schedule?gamePk=743292&hydrate=decisions",
+    "verified_game_pk": 743292
+  },
+  "743287": {
+    "status": "verified",
+    "winner": {
+      "id": 663910,
+      "name": "Jordan Guerrero"
+    },
+    "loser": {
+      "id": 805074,
+      "name": "Yunior Marte"
+    },
+    "save": {
+      "id": 700326,
+      "name": "Jonney Rosario"
+    },
+    "source": "MLB StatsAPI official schedule_hydrate_decisions",
+    "source_url": "https://statsapi.mlb.com/api/v1/schedule?gamePk=743287&hydrate=decisions",
+    "verified_game_pk": 743287
+  },
+  "724867": {
+    "status": "verified",
+    "winner": {
+      "id": 676502,
+      "name": "Roman Phansalkar"
+    },
+    "loser": {
+      "id": 699230,
+      "name": "Lorenzo Encarnacion"
+    },
+    "save": {
+      "id": 677614,
+      "name": "Sadrac Franco"
+    },
+    "source": "MLB StatsAPI official schedule_hydrate_decisions",
+    "source_url": "https://statsapi.mlb.com/api/v1/schedule?gamePk=724867&hydrate=decisions",
+    "verified_game_pk": 724867
   }
 }

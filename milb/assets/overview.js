@@ -85,7 +85,7 @@ function render(games,rows){
  const latest=games.slice().sort((a,b)=>String(b.date).localeCompare(String(a.date))||String(a.id).localeCompare(String(b.id)));
  const metrics=[["Games attended",games.length],["Officially matched",official.length],["Players imported",uniquePlayers.size],["Seasons represented",seasons.size]];
  $("app").innerHTML='<div class="eyebrow">Minor League Baseball · Personal attendance</div>'
-  +'<h1>Your MiLB history.</h1><p class="lead">A personal archive of the minor-league games you witnessed, from Single-A to Triple-A. Explore official box scores, individual player game logs, personal leaderboards, and record-setting performances from those games.</p>'
+  +'<h1>Your MiLB history.</h1><p class="lead">A personal archive of the minor-league games you witnessed, from rookie-level complex leagues through Triple-A. Explore official box scores, individual player game logs, personal leaderboards, and record-setting performances from those games.</p>'
   +'<div class="metrics">'+metrics.map(([name,value])=>'<div class="metric"><strong>'+format(value)+'</strong><small>'+esc(name)+'</small></div>').join("")+'</div>'
   +'<div class="section-heading"><h2>Recently attended</h2><a class="action-link secondary" href="./game.html">All game box scores ↗</a></div>'
   +(latest.length?'<div class="game-grid">'+latest.slice(0,3).map(gameCard).join("")+'</div>':'<div class="empty">No verified MiLB games imported yet.</div>')

@@ -92,3 +92,16 @@ body[data-page="player"] .mlb-honor-detail {
 body[data-page="player"] .mlb-honor-detail strong {
   color: var(--ca-player-green) !important;
 }
+
+/* Photo-unavailable initials: consistent burgundy-on-ice treatment across sports. */
+.portrait-wrap .ca-fallback,
+.ca-fallback,
+.player-portrait .portrait-fallback,
+.mlb-portrait,
+.mlb-potg-portrait,
+.mlb-hof-portrait,
+.soccer-portrait {
+  background: linear-gradient(145deg, #e9f7fd, #cceaf7) !important;
+  color: #831738 !important;
+  border-color: #b7dce9 !important;
+}

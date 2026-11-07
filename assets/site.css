@@ -180,3 +180,14 @@ header.ca-header{
 @media(max-width:750px){
  .ca-header .ca-nav>a,.ca-header .ca-more>summary{font-size:12px;padding:8px}
 }
+
+/* Basketball navigation and chart overrides, including player/game pages. */
+.ca-header .ca-nav > a,
+.ca-header .ca-nav > a:visited,
+.ca-header .ca-more > summary{color:#831738!important}
+.ca-header .ca-nav > a[aria-current="page"],
+.ca-header .ca-nav > a.active,
+.ca-header .ca-nav > a:hover,
+.ca-header .ca-more > summary:hover{background:#d9f0fa!important;color:#831738!important}
+.track{background:#e4f2f9!important}
+.fill{background:linear-gradient(90deg,#831738,#b84266)!important}

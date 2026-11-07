@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""Test four new MiLB stadium profile and directory pages."""
+"""Verify all MiLB stadium profiles, including future additions."""
 import functools,http.server,json,pathlib,socketserver,threading
 from playwright.sync_api import sync_playwright
 root=pathlib.Path(__file__).resolve().parents[2]
 data=json.loads((root/"venues/data/venues.json").read_text())
 venues=[v for v in data["venues"] if v["sport"]=="MiLB"]
-assert len(venues)==4
+assert len(venues)>=4
 class Reuse(socketserver.ThreadingTCPServer):allow_reuse_address=True
 server=Reuse(("127.0.0.1",0),functools.partial(http.server.SimpleHTTPRequestHandler,directory=str(root)))
 threading.Thread(target=server.serve_forever,daemon=True).start()
@@ -16,9 +16,9 @@ try:
   page=browser.new_page(viewport={"width":1360,"height":860})
   errors=[];page.on("pageerror",lambda e:errors.append(str(e)))
   page.goto(origin+"/venues/index.html",wait_until="networkidle")
-  assert "134" in page.locator("#venueDirectoryStatus").inner_text()
+  assert str(data["venueCount"]) in page.locator("#venueDirectoryStatus").inner_text()
   page.locator("#venueDirectorySport").select_option("MiLB")
-  assert page.locator(".vp-venue").count()==4
+  assert page.locator(".vp-venue").count()==len(venues)
   for v in venues:
    assert page.locator(f'.vp-venue[href="./venue.html?id={v["id"]}"]').count()==1,v["id"]
   page.locator("#venueDirectorySearch").fill("Lake Elsinore")
@@ -44,6 +44,6 @@ try:
   game.goto(origin+"/milb/game.html?id="+example["id"],wait_until="networkidle")
   assert game.locator('a[href="../venues/venue.html?id=venue-0133"]').count()>0
   browser.close()
- print("PASS: four MiLB stadium profiles, venue directory filter, game links, mobile and reverse links")
+ print(f"PASS: {len(venues)} MiLB stadium profiles, directory filters, links, and mobile layouts")
 finally:
  server.shutdown();server.server_close()

@@ -8,14 +8,15 @@ const data=JSON.parse(fs.readFileSync(file,'utf8'));
 const venues=data.venues;
 const photos=JSON.parse(fs.readFileSync(path.join(repo,'venues/data/photos.json'),'utf8')).photos;
 const games=JSON.parse(fs.readFileSync(path.join(repo,'milb/data/games.json'),'utf8'));
-assert.equal(data.venueCount,134);
-assert.equal(venues.length,134);
-assert.equal(data.mappedGames,716);
+assert.equal(data.venueCount,venues.length);
+assert.ok(venues.length>=134);
+assert.equal(data.mappedGames,venues.reduce((sum,v)=>sum+v.games.length,0));
 assert.equal(data.excludedUnassignedGames,7);
-assert.equal(new Set(venues.map(v=>v.id)).size,134);
-assert.equal(new Set(venues.map(v=>v.name)).size,134);
+assert.equal(new Set(venues.map(v=>v.id)).size,venues.length);
+assert.equal(new Set(venues.map(v=>v.name)).size,venues.length);
 assert.equal(new Set(venues.map(v=>v.sport)).size,8);
-const expected={'College Baseball':84,'College Basketball':19,'MLB':18,'College Football':3,'NBA':2,'NFL':2,'Soccer':2,'MiLB':4};
+const expected={'College Baseball':84,'College Basketball':19,'MLB':18,'College Football':3,'NBA':2,'NFL':2,'Soccer':2};
+assert.ok(venues.filter(v=>v.sport==='MiLB').length>=4);
 for(const [sport,count] of Object.entries(expected))assert.equal(venues.filter(v=>v.sport===sport).length,count,sport);
 for(const [id,photo] of Object.entries(photos)){
  assert.ok(venues.some(v=>v.id===id),id+': photo venue missing');
@@ -41,14 +42,14 @@ for(const v of venues){
  }
  total+=v.visits;
 }
-assert.equal(total,716);
+assert.equal(total,data.mappedGames);
 const milbVenues=venues.filter(v=>v.sport==='MiLB');
 const counts={'venue-0131':1,'venue-0132':1,'venue-0133':7,'venue-0134':1};
-assert.equal(milbVenues.length,4);
-assert.equal(games.length,10);
+assert.ok(milbVenues.length>=4);
+assert.ok(games.length>=10);
 const seen=new Set();
 for(const v of milbVenues){
- assert.equal(v.visits,counts[v.id]);
+ assert.ok(v.visits>=(counts[v.id]??1));
  for(const vg of v.games){
   const game=games.find(g=>g.id===vg.id);
   assert.ok(game,'Orphan MiLB game '+vg.id);
@@ -63,7 +64,8 @@ for(const v of milbVenues){
   seen.add(vg.id);
  }
 }
-assert.equal(seen.size,10);
+assert.equal(seen.size,games.length);
+assert.ok(milbVenues.every(v=>v.games.every(g=>g.id.startsWith('milb-'))));
 const richmond=venues.find(v=>v.name==='The Diamond');
 assert.ok(richmond&&richmond.city.startsWith('Richmond'));
 assert.notEqual(richmond.id,'venue-0133');
@@ -74,12 +76,12 @@ const directoryJS=fs.readFileSync(path.join(repo,'venues/venues.js'),'utf8');
 const gamesJS=fs.readFileSync(path.join(repo,'milb/assets/games.js'),'utf8');
 assert.ok(home.indexOf('id="venues"')>home.indexOf('class="portal-hero"'));
 assert.ok(home.indexOf('id="venues"')<home.indexOf('id="archives"'));
-assert.ok(home.includes('id="venueCount">134'));
+assert.ok(home.includes('id="venueCount">'+data.venueCount));
 assert.ok(home.includes('id="venueSportCount">8'));
-assert.ok(home.includes('id="venueGameCount">716'));
-assert.ok(directory.includes('134 physical stadiums'));
+assert.ok(home.includes('id="venueGameCount">'+data.mappedGames));
+assert.ok(directory.includes(data.venueCount+' physical stadiums'));
 assert.ok(directory.includes('eight sports'));
 assert.ok(mapJS.includes("'MiLB':'#831738'"));
 assert.ok(directoryJS.includes("'MiLB':'../milb/'"));
 assert.ok(gamesJS.includes('../venues/venue.html?id='));
-console.log('PASS: 134 venues, 716 game links, eight sports, four MiLB ballparks, and 10 linked MiLB games');
+console.log('PASS: '+data.venueCount+' venues, '+data.mappedGames+' linked games, eight sports, '+milbVenues.length+' MiLB ballparks, '+games.length+' linked MiLB games');

@@ -1,0 +1,50 @@
+name: Import verified MiLB pitching decisions
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "milb/scripts/import_pitching_decisions.py"
+      - ".github/workflows/milb-pitching-decisions.yml"
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate MiLB game, profile and leaderboard JavaScript
+        run: |
+          node --check milb/assets/games.js
+          node --check milb/assets/profile.js
+          node --check milb/assets/players.js
+      - name: Verify all 112 official W L SV decisions and update pitching lines
+        run: python milb/scripts/import_pitching_decisions.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: milb-pitching-decisions-audit
+          path: milb/data/pitching_decisions_audit.json
+          if-no-files-found: warn
+      - run: python -m pip install playwright
+      - run: python -m playwright install --with-deps chromium
+      - name: Browser-test every decision view and pitcher totals
+        run: python milb/scripts/test_pitching_decisions.py
+      - name: Publish official pitching decisions in MiLB only
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add milb/data/player_stats.json milb/data/pitching_decisions.json milb/data/game_detail_report.json milb/data/pitching_decisions_audit.json
+          if git diff --cached --quiet; then
+            echo "No new decision data"
+            exit 1
+          fi
+          git commit -m "Verify W L SV in all 112 MiLB games and player pitching lines"
+          git pull --rebase origin main
+          git push origin HEAD:main

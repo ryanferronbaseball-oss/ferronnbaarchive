@@ -1,7 +1,7 @@
 {
-  "updated": "2026-11-05",
-  "venueCount": 130,
-  "mappedGames": 706,
+  "updated": "2026-11-06",
+  "venueCount": 134,
+  "mappedGames": 716,
   "excludedUnassignedGames": 7,
   "venues": [
     {
@@ -1679,6 +1679,40 @@
       ]
     },
     {
+      "id": "venue-0134",
+      "name": "Delta Dental Stadium",
+      "sport": "MiLB",
+      "city": "Manchester, NH",
+      "address": "1 Line Drive, Manchester, NH 03101",
+      "lat": 42.98083,
+      "lon": -71.46667,
+      "coordinateConfidence": "High",
+      "opened": "2005",
+      "capacity": "6,500 (MiLB ballpark guide; venue capacity listings vary)",
+      "occupants": "New Hampshire Fisher Cats Double-A baseball",
+      "history": "Opened April 7, 2005 as Fisher Cats Ballpark, and later known as Merchantsauto.com Stadium and Northeast Delta Dental Stadium. Called Delta Dental Stadium by your May 10, 2024 Senators–Fisher Cats game. The same ballpark has hosted New Hampshire's Double-A games since its opening.",
+      "sources": [
+        "https://www.milb.com/new-hampshire/ballpark/delta-dental-stadium",
+        "https://www.milb.com/new-hampshire/ballpark/a-to-z-guide",
+        "https://www.mlb.com/news/featured/visit-delta-dental-stadium-home-of-the-new-hampshire-fisher-cats"
+      ],
+      "factNote": "First witnessed May 10, 2024, Harrisburg Senators at New Hampshire Fisher Cats.",
+      "games": [
+        {
+          "id": "milb-2024-05-10-senators-fishercats",
+          "date": "2024-05-10",
+          "away": "Harrisburg Senators",
+          "home": "New Hampshire Fisher Cats",
+          "awayScore": 4,
+          "homeScore": 3,
+          "url": "../milb/game.html?id=milb-2024-05-10-senators-fishercats"
+        }
+      ],
+      "visits": 1,
+      "firstVisit": "2024-05-10",
+      "lastVisit": "2024-05-10"
+    },
+    {
       "id": "venue-0031",
       "name": "Doak Field at Dail Park",
       "sport": "College Baseball",
@@ -2196,6 +2230,40 @@
           "url": "../college-baseball/game.html?id=cb-2024-03-08-notre-dame-virginia-tech-att0251"
         }
       ]
+    },
+    {
+      "id": "venue-0132",
+      "name": "Excite Ballpark",
+      "sport": "MiLB",
+      "city": "San Jose, CA",
+      "address": "588 East Alma Avenue, San Jose, CA 95112",
+      "lat": 37.32062,
+      "lon": -121.86239,
+      "coordinateConfidence": "High",
+      "opened": "1942",
+      "capacity": "Approximately 4,200 (2026 MiLB ballpark guide; reported capacity varies by source)",
+      "occupants": "San Jose Giants minor-league baseball; San José State Spartans baseball",
+      "history": "Built in 1942 as San Jose Municipal Stadium under the Works Progress Administration. It carried the Municipal Stadium name when you attended on August 2, 2015, and was later renamed Excite Ballpark. Both names identify the same historic venue.",
+      "sources": [
+        "https://www.milb.com/san-jose/ballpark/about-excite-ballpark",
+        "https://www.mlb.com/milb/news/featured/visit-excite-ballpark-home-of-the-san-jose-giants?t=mlb-pipeline-coverage",
+        "https://sjsuspartans.com/facilities/excite-ballpark"
+      ],
+      "factNote": "Your August 2, 2015 visit took place when the park was called Municipal Stadium.",
+      "games": [
+        {
+          "id": "milb-2015-08-02-ports-giants",
+          "date": "2015-08-02",
+          "away": "Stockton Ports",
+          "home": "San Jose Giants",
+          "awayScore": 2,
+          "homeScore": 6,
+          "url": "../milb/game.html?id=milb-2015-08-02-ports-giants"
+        }
+      ],
+      "visits": 1,
+      "firstVisit": "2015-08-02",
+      "lastVisit": "2015-08-02"
     },
     {
       "id": "venue-0038",
@@ -5771,6 +5839,94 @@
       ]
     },
     {
+      "id": "venue-0133",
+      "name": "Lake Elsinore Diamond",
+      "sport": "MiLB",
+      "city": "Lake Elsinore, CA",
+      "address": "500 Diamond Drive, Lake Elsinore, CA 92530",
+      "lat": 33.65442,
+      "lon": -117.30267,
+      "coordinateConfidence": "High",
+      "opened": "1994",
+      "capacity": "4,835 (Lake Elsinore Storm official ballpark information)",
+      "occupants": "Lake Elsinore Storm minor-league baseball",
+      "history": "Opened in 1994 and also known as The Diamond, including during your 2021 and 2022 Lake Elsinore Storm home games. The playing surface is Pete Lehr Field. This is the California ballpark and is distinct from The Diamond in Richmond, Virginia.",
+      "sources": [
+        "https://www.milb.com/lake-elsinore/ballpark",
+        "https://www.milb.com/lake-elsinore/ballpark/directions",
+        "https://www.lake-elsinore.org/Facilities/Facility/Details/Lake-Elsinore-Diamond-Stadium-51"
+      ],
+      "factNote": "Seven attended games here are currently recorded: May 18–23, 2021, and July 2, 2022.",
+      "games": [
+        {
+          "id": "milb-2021-05-18-quakes-storm",
+          "date": "2021-05-18",
+          "away": "Rancho Cucamonga Quakes",
+          "home": "Lake Elsinore Storm",
+          "awayScore": 8,
+          "homeScore": 6,
+          "url": "../milb/game.html?id=milb-2021-05-18-quakes-storm"
+        },
+        {
+          "id": "milb-2021-05-19-quakes-storm",
+          "date": "2021-05-19",
+          "away": "Rancho Cucamonga Quakes",
+          "home": "Lake Elsinore Storm",
+          "awayScore": 8,
+          "homeScore": 2,
+          "url": "../milb/game.html?id=milb-2021-05-19-quakes-storm"
+        },
+        {
+          "id": "milb-2021-05-20-quakes-storm",
+          "date": "2021-05-20",
+          "away": "Rancho Cucamonga Quakes",
+          "home": "Lake Elsinore Storm",
+          "awayScore": 6,
+          "homeScore": 7,
+          "url": "../milb/game.html?id=milb-2021-05-20-quakes-storm"
+        },
+        {
+          "id": "milb-2021-05-21-quakes-storm",
+          "date": "2021-05-21",
+          "away": "Rancho Cucamonga Quakes",
+          "home": "Lake Elsinore Storm",
+          "awayScore": 2,
+          "homeScore": 0,
+          "url": "../milb/game.html?id=milb-2021-05-21-quakes-storm"
+        },
+        {
+          "id": "milb-2021-05-22-quakes-storm",
+          "date": "2021-05-22",
+          "away": "Rancho Cucamonga Quakes",
+          "home": "Lake Elsinore Storm",
+          "awayScore": 9,
+          "homeScore": 3,
+          "url": "../milb/game.html?id=milb-2021-05-22-quakes-storm"
+        },
+        {
+          "id": "milb-2021-05-23-quakes-storm",
+          "date": "2021-05-23",
+          "away": "Rancho Cucamonga Quakes",
+          "home": "Lake Elsinore Storm",
+          "awayScore": 8,
+          "homeScore": 16,
+          "url": "../milb/game.html?id=milb-2021-05-23-quakes-storm"
+        },
+        {
+          "id": "milb-2022-07-02-66ers-storm",
+          "date": "2022-07-02",
+          "away": "Inland Empire 66ers",
+          "home": "Lake Elsinore Storm",
+          "awayScore": 7,
+          "homeScore": 9,
+          "url": "../milb/game.html?id=milb-2022-07-02-66ers-storm"
+        }
+      ],
+      "visits": 7,
+      "firstVisit": "2021-05-18",
+      "lastVisit": "2022-07-02"
+    },
+    {
       "id": "venue-0068",
       "name": "Lamore Field at Gray-Minor Stadium",
       "sport": "College Baseball",
@@ -6212,6 +6368,40 @@
       ]
     },
     {
+      "id": "venue-0130",
+      "name": "Memorial Gymnasium",
+      "sport": "College Basketball",
+      "city": "Nashville, Tennessee",
+      "address": "210 25th Avenue South, Nashville, TN 37240",
+      "visits": 1,
+      "firstVisit": "2026-11-05",
+      "lastVisit": "2026-11-05",
+      "lat": 36.144611,
+      "lon": -86.80742,
+      "coordinateConfidence": "High",
+      "opened": "1952",
+      "capacity": "14,316 (Vanderbilt University)",
+      "occupants": "Vanderbilt Commodores men's and women's basketball",
+      "history": "Dedicated December 6, 1952, in memory of Vanderbilt students who died in World War II. The arena is noted for its elevated playing court and unusual end-zone team benches. Designed by Edwin Keeble and later expanded and renovated.",
+      "sources": [
+        "https://vucommodores.com/news/2011/01/26/historical-and-magical-memorial-gym",
+        "https://news.vanderbilt.edu/2023/03/01/towering-figure/",
+        "https://nashvillesites.org/records/vanderbilt-memorial-gymnasium"
+      ],
+      "factNote": "Venue first witnessed at the November 5, 2026, Wake Forest at Vanderbilt game.",
+      "games": [
+        {
+          "id": "95",
+          "date": "2026-11-05",
+          "away": "Wake Forest",
+          "home": "Vanderbilt",
+          "awayScore": 51,
+          "homeScore": 74,
+          "url": "../college/game.html?id=95"
+        }
+      ]
+    },
+    {
       "id": "venue-0077",
       "name": "Mercedes-Benz Stadium",
       "sport": "Soccer",
@@ -6243,6 +6433,39 @@
           "url": "../soccer/game.html?id=soc-2026-06-24-mar-hai"
         }
       ]
+    },
+    {
+      "id": "venue-0131",
+      "name": "Morongo Field at The Epicenter",
+      "sport": "MiLB",
+      "city": "Rancho Cucamonga, CA",
+      "address": "8408 Rochester Avenue, Rancho Cucamonga, CA 91730",
+      "lat": 34.102765,
+      "lon": -117.54797,
+      "coordinateConfidence": "High",
+      "opened": "1993",
+      "capacity": "Approximately 4,900 baseball spectators (MiLB ballpark guide)",
+      "occupants": "Rancho Cucamonga Quakes minor-league baseball",
+      "history": "Opened in April 1993 as The Epicenter. Known as LoanMart Field during the May 24, 2014 Storm–Quakes game (LoanMart Field naming rights, 2013–2025); now Morongo Field at The Epicenter. All names refer to the same physical ballpark.",
+      "sources": [
+        "https://www.milb.com/rancho-cucamonga/ballpark",
+        "https://www.mlb.com/milb/news/featured/visit-loanmart-field-home-of-the-rancho-cucamonga-quakes?t=mlb-pipeline-coverage"
+      ],
+      "factNote": "Your May 24, 2014 visit was during the LoanMart Field era.",
+      "games": [
+        {
+          "id": "milb-2014-05-24-storm-quakes",
+          "date": "2014-05-24",
+          "away": "Lake Elsinore Storm",
+          "home": "Rancho Cucamonga Quakes",
+          "awayScore": 6,
+          "homeScore": 3,
+          "url": "../milb/game.html?id=milb-2014-05-24-storm-quakes"
+        }
+      ],
+      "visits": 1,
+      "firstVisit": "2014-05-24",
+      "lastVisit": "2014-05-24"
     },
     {
       "id": "venue-0078",
@@ -9442,40 +9665,6 @@
           "awayScore": null,
           "homeScore": null,
           "url": "../mlb/game.html?id=15"
-        }
-      ]
-    },
-    {
-      "id": "venue-0130",
-      "name": "Memorial Gymnasium",
-      "sport": "College Basketball",
-      "city": "Nashville, Tennessee",
-      "address": "210 25th Avenue South, Nashville, TN 37240",
-      "visits": 1,
-      "firstVisit": "2026-11-05",
-      "lastVisit": "2026-11-05",
-      "lat": 36.144611,
-      "lon": -86.80742,
-      "coordinateConfidence": "High",
-      "opened": "1952",
-      "capacity": "14,316 (Vanderbilt University)",
-      "occupants": "Vanderbilt Commodores men's and women's basketball",
-      "history": "Dedicated December 6, 1952, in memory of Vanderbilt students who died in World War II. The arena is noted for its elevated playing court and unusual end-zone team benches. Designed by Edwin Keeble and later expanded and renovated.",
-      "sources": [
-        "https://vucommodores.com/news/2011/01/26/historical-and-magical-memorial-gym",
-        "https://news.vanderbilt.edu/2023/03/01/towering-figure/",
-        "https://nashvillesites.org/records/vanderbilt-memorial-gymnasium"
-      ],
-      "factNote": "Venue first witnessed at the November 5, 2026, Wake Forest at Vanderbilt game.",
-      "games": [
-        {
-          "id": "95",
-          "date": "2026-11-05",
-          "away": "Wake Forest",
-          "home": "Vanderbilt",
-          "awayScore": 51,
-          "homeScore": 74,
-          "url": "../college/game.html?id=95"
         }
       ]
     }

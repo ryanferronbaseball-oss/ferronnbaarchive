@@ -3,8 +3,8 @@
   const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const fmtDate=iso=>new Date(`${iso}T12:00:00Z`).toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric',timeZone:'UTC'});
   const fmtShort=iso=>new Date(`${iso}T12:00:00Z`).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric',timeZone:'UTC'});
-  const sportRoutes={'NBA':'../nba/','College Basketball':'../college/','NFL':'../nfl/','College Football':'../cfb/','Soccer':'../soccer/','MLB':'../mlb/','College Baseball':'../college-baseball/'};
-  const sportOrder=['College Baseball','MLB','College Basketball','NBA','College Football','NFL','Soccer'];
+  const sportRoutes={'NBA':'../nba/','College Basketball':'../college/','NFL':'../nfl/','College Football':'../cfb/','Soccer':'../soccer/','MiLB':'../milb/','MLB':'../mlb/','College Baseball':'../college-baseball/'};
+  const sportOrder=['College Baseball','MLB','MiLB','College Basketball','NBA','College Football','NFL','Soccer'];
   const profileHref=v=>`./venue.html?id=${encodeURIComponent(v.id)}`;
   const score=g=>g.awayScore==null||g.homeScore==null?'—':`${g.awayScore}–${g.homeScore}`;
   const page=document.body.dataset.venuePage;

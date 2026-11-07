@@ -20,7 +20,7 @@ function bars(entries){
  return entries.map(([name,n])=>'<div class="mlb-bar"><span>'+esc(name)+'</span><div class="mlb-track"><div class="mlb-fill" style="width:'+((n/max)*100).toFixed(2)+'%"></div></div><strong>'+format(n)+'</strong></div>').join("");
 }
 function gameCard(g){
- return '<article class="game-card"><div class="game-date">'+date(g.date)+' · '+esc(g.venue||"Ballpark pending")+'</div>'
+ return '<article class="game-card"><div class="game-date">'+date(g.date)+' · '+(g.venue_id?'<a href="../venues/venue.html?id='+encode(g.venue_id)+'">'+esc(g.venue||"Ballpark pending")+'</a>':esc(g.venue||"Ballpark pending"))+'</div>'
  +'<h3>'+esc(g.away_team)+' @ '+esc(g.home_team)+'</h3>'
  +'<div class="game-score">'+esc(scores(g))+'</div>'
  +'<div class="caption">'+(verified(g)?"Verified official game #"+esc(g.source_game_id):"Official box score pending")+' · '+esc(g.level||"Level pending")+'</div>'
@@ -50,7 +50,7 @@ function table(games){
  const rows=games.map(g=>'<tr>'
   +'<td><a href="'+gameUrl(g)+'">'+date(g.date)+'</a></td>'
   +'<td>'+esc(g.away_team)+' @ '+esc(g.home_team)+'</td>'
-  +'<td>'+esc(g.venue||"—")+'</td>'
+  +'<td>'+(g.venue_id?'<a href="../venues/venue.html?id='+encode(g.venue_id)+'">'+esc(g.venue||"—")+'</a>':esc(g.venue||"—"))+'</td>'
   +'<td>'+esc(scores(g))+'</td>'
   +'<td><span class="mlb-pill '+(verified(g)?"verified":"pending")+'">'+(verified(g)?"Matched":"Pending")+'</span></td>'
   +'<td><a href="'+gameUrl(g)+'">View →</a></td></tr>').join("");

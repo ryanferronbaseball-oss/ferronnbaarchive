@@ -132,7 +132,7 @@ function show(g,all,rows,innings,plays,decisions){
  $("gameSelect").value=g.id;
  const scoreboard='<div class="mlb-score"><div class="side">'+esc(g.away_team)+'</div>'
   +'<div class="final">'+esc(scores(g))+'</div><div class="side">'+esc(g.home_team)+'</div></div>'
-  +'<p class="mlb-note">'+dt(g.date)+' · '+esc(g.venue||"Ballpark pending")+' · '+esc(g.level||"MiLB")
+  +'<p class="mlb-note">'+dt(g.date)+' · '+(g.venue_id?'<a href="../venues/venue.html?id='+encode(g.venue_id)+'">'+esc(g.venue||"Ballpark pending")+' ↗</a>':esc(g.venue||"Ballpark pending"))+' · '+esc(g.level||"MiLB")
   +' · '+(official(g)?"MiLB game #"+esc(g.source_game_id):"Awaiting official game match")+'</p>';
  const perf=performancePanel(selected);
  $("scoreboard").innerHTML=scoreboard+decisionPanel(g,decisions)+perf.html+lineScore(g,innings);

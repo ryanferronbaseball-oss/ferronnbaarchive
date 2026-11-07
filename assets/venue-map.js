@@ -2,8 +2,8 @@
   const $=id=>document.getElementById(id);
   const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const formatDate=iso=>new Date(`${iso}T12:00:00Z`).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric',timeZone:'UTC'});
-  const sportColors={'College Baseball':'#356447','MLB':'#1f6a82','College Basketball':'#9b6232','NBA':'#bf722e','NFL':'#7e5c88','College Football':'#8c5539','Soccer':'#617e47'};
-  const sportsOrder=['College Baseball','MLB','College Basketball','NBA','College Football','NFL','Soccer'];
+  const sportColors={'College Baseball':'#356447','MLB':'#1f6a82','College Basketball':'#9b6232','NBA':'#bf722e','NFL':'#7e5c88','College Football':'#8c5539','Soccer':'#617e47','MiLB':'#831738'};
+  const sportsOrder=['College Baseball','MLB','MiLB','College Basketball','NBA','College Football','NFL','Soccer'];
   const mapElement=$('venueMap');if(!mapElement)return;
   const fallback=$('venueMapLoading');
 

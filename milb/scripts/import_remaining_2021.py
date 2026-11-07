@@ -114,7 +114,8 @@ def official_schedule():
 def slug(team):
  return {"Lake Elsinore Storm":"storm","Rancho Cucamonga Quakes":"quakes",
          "San Jose Giants":"giants","Stockton Ports":"ports",
-         "Inland Empire 66ers":"66ers","Visalia Rawhide":"rawhide"}[team]
+         "Inland Empire 66ers":"66ers","Visalia Rawhide":"rawhide",
+         "Modesto Nuts":"nuts","Fresno Grizzlies":"grizzlies"}[team]
 
 def make_id(game,season):
  day=game["_date"]

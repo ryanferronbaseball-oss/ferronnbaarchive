@@ -1,15 +1,15 @@
 /* Shared Courtside Archive player-profile treatment across all sports.
    Icons and labels distinguish honors; all categories use one color system. */
 :root {
-  --ca-player-tag-bg: #e7eee5;
-  --ca-player-tag-border: #bfd0bf;
-  --ca-player-green: #284d3c;
-  --ca-player-green-hover: #d8e6d7;
-  --ca-player-tab-bg: #f0f2eb;
-  --ca-player-tab-border: #d0d9cf;
-  --ca-player-tab-hover: #e3eae0;
-  --ca-player-detail-bg: #f6f8f3;
-  --ca-player-detail-ink: #33483b;
+  --ca-player-tag-bg: #eaf6fc;
+  --ca-player-tag-border: #c5e3ef;
+  --ca-player-green: #831738;
+  --ca-player-green-hover: #d9f0fa;
+  --ca-player-tab-bg: #eaf6fc;
+  --ca-player-tab-border: #c5e3ef;
+  --ca-player-tab-hover: #d9f0fa;
+  --ca-player-detail-bg: #f8fbfd;
+  --ca-player-detail-ink: #192e43;
 }
 
 /* Header achievement badges: NBA, NFL, MLB, college basketball/baseball. */
@@ -40,7 +40,7 @@ body[data-page="player"] .soccer-flag {
 body[data-page="player"] .mlb-profile-badge:hover,
 body[data-page="player"] .mlb-accolade:hover {
   background: var(--ca-player-green-hover) !important;
-  border-color: #90ab94 !important;
+  border-color: #aed8ec !important;
 }
 .achievement-row #nbaStatus::before { color: var(--ca-player-green) !important; }
 
@@ -64,7 +64,7 @@ body[data-page="player"] .mlb-profile-log-tabs button:hover,
 body[data-page="player"] .mlb-award-tab:hover,
 body[data-page="player"] .soccer-tabs button:hover {
   background: var(--ca-player-tab-hover) !important;
-  border-color: #9fb6a0 !important;
+  border-color: #aed8ec !important;
 }
 main > .tabs .tab.active,
 .career-honors .honor-tab[aria-selected="true"],

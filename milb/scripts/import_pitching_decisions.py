@@ -43,7 +43,29 @@ def official_decisions(game):
     via="schedule_hydrate_decisions"
     schedules=get(source)
     matches=[item for d in schedules.get("dates",[]) for item in d.get("games",[]) if item.get("gamePk")==pk]
-    if len(matches)!=1:raise ValueError(f"Expected one official game {pk} in schedule, got {len(matches)}")
+    if not matches:
+        raise ValueError(f"Official game {pk} missing from schedule")
+    if len(matches)>1:
+        # Suspended/resumed historical games can occur in more than one date
+        # section for the SAME gamePk. Prefer the entry with matching official
+        # attendance date, both team IDs and the imported final score.
+        matched=[]
+        for candidate in matches:
+            teams=candidate.get("teams") or {}
+            if all((teams.get(side) or {}).get("team",{}).get("id")==game["official_"+side+"_team_id"] and
+                   (teams.get(side) or {}).get("score")==game[side+"_score"] for side in ("away","home")):
+                matched.append(candidate)
+        if not matched:
+            raise ValueError(f"No duplicate schedule entry matched the final score for {pk}")
+        sameDay=[candidate for candidate in matched if candidate.get("officialDate")==game["date"]]
+        matches=sameDay or matched
+        if len(matches)>1:
+            def comparison(candidate):
+                return json.dumps({"teams":{side:{"id":candidate["teams"][side]["team"]["id"],"score":candidate["teams"][side].get("score")} for side in ("home","away")},
+                                   "decisions":candidate.get("decisions")},sort_keys=True)
+            if len({comparison(candidate) for candidate in matches})!=1:
+                raise ValueError(f"Conflicting official decisions in duplicated schedule game {pk}")
+            print("DUPLICATE_SCHEDULE_ROW_DEDUPLICATED",pk,len(matches),flush=True)
     item=matches[0]
     decisions=item.get("decisions")
     if not decisions or not decisions.get("winner") or not decisions.get("loser"):

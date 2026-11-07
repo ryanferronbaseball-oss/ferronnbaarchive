@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Audit actual college baseball profiles against the ten MiLB-game players.
+"""Audit corrected college baseball profiles against completed MiLB attendance.
 Creates review-only candidate file; it never silently merges names.
 """
 import collections
@@ -16,6 +16,10 @@ from playwright.sync_api import sync_playwright
 ROOT=pathlib.Path(__file__).resolve().parents[2]
 DATA=ROOT/"milb"/"data"
 rows=json.loads((DATA/"player_stats.json").read_text(encoding="utf8"))
+progress=json.loads((DATA/"season_2021_import_progress.json").read_text(encoding="utf8"))
+if not progress.get("full_2021_season_complete") or progress.get("2021_games_remaining")!=0:
+    raise RuntimeError("College↔MiLB identity audit must wait until all attended 2021 games are imported")
+previous_links=json.loads((DATA/"college_links.json").read_text(encoding="utf8"))
 def norm(v):
     v=unicodedata.normalize("NFKD",str(v or "").casefold())
     v="".join(c for c in v if not unicodedata.combining(c))
@@ -70,12 +74,18 @@ for id,obj in sorted(byMilb.items()):
         candidate["reason"]="Multiple distinct college profiles with same normalized name"
     if any(len(set(byMilbName[norm(name)]))>1 for name in obj["names"]):
         candidate["reason"]="Multiple different MiLB IDs have the same full name"
+    prior=next((link for link in previous_links if link["milb_id"]==id),None)
+    if prior and prior.get("verified"):
+        candidate["status"]="previously_verified"
+        candidate["existing_college_player_id"]=prior["college_player_id"]
     candidates.append(candidate)
 report={"source":"CollegeBaseballArchive.load() with identity merges & corrections",
         "college_profiles_checked":len(college),
         "milb_ids_checked":len(byMilb),
         "name_match_candidates":len(candidates),
         "links_auto_approved":0,
+        "existing_verified_links":len(previous_links),
+        "new_name_candidates":sum(c["status"]=="review" for c in candidates),
         "candidates":candidates}
 (DATA/"college_match_review.json").write_text(json.dumps(report,indent=2,ensure_ascii=False)+"\n",encoding="utf8")
 print("COLLEGE_MATCH_AUDIT",json.dumps({k:v for k,v in report.items() if k!="candidates"}),flush=True)

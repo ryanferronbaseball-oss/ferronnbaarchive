@@ -5,7 +5,7 @@ const esc=value=>String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;
 const date=value=>value?new Date(String(value)+"T12:00:00").toLocaleDateString("en-US",{month:"short",day:"numeric",year:"numeric"}):"Date pending";
 const format=n=>Number(n||0).toLocaleString("en-US");
 const encode=v=>encodeURIComponent(String(v));
-const gameUrl=g=>"./detail.html?id="+encode(g.id);
+const gameUrl=g=>"./game.html?id="+encode(g.id);
 const playerUrl=r=>"./player.html?id="+encode(r.player_id);
 const verified=g=>g.box_score_status==="verified"&&g.source_game_id!=null;
 const scores=g=>g.away_score!=null&&g.home_score!=null?g.away_score+" – "+g.home_score:"Score pending";

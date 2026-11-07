@@ -17,7 +17,7 @@ const fmt=v=>v===null?"—":Number(v).toLocaleString("en-US");
 const urlId=id=>encodeURIComponent(String(id));
 const statBoxes=items=>items.map(([key,val])=>'<div class="mlb-profile-stat"><small>'+esc(key)+'</small><strong>'+esc(value(val))+'</strong></div>').join("");
 const totals=(items,klass="")=>'<div class="mlb-profile-total-grid '+klass+'">'+items.map(([k,v])=>'<div class="mlb-profile-total"><small>'+esc(k)+'</small><strong>'+esc(value(v))+'</strong></div>').join("")+'</div>';
-const gameUrl=id=>'./detail.html?id='+urlId(id);
+const gameUrl=id=>'./game.html?id='+urlId(id);
 const badge=(text,href)=>'<a class="milb-crossover-badge" href="'+href+'">'+text+' ↗</a>';
 function battingStats(rows){
  const data=rows.map(r=>r.batting).filter(Boolean);

@@ -5,7 +5,7 @@ const {esc,fmt,date,playerUrl,gameUrl,table,bar,tiles,record,mlbRow}=A;
 el("navigation").innerHTML=A.nav(page);
 let d;try{d=await A.load()}catch(err){app.innerHTML='<div class="empty">Unable to load attendance data: '+esc(err.message)+'</div>';return}
 const {games,rows,players,scores,decisions}=d;
-const collegeCrossover=new Map(),milbCrossover=new Map();
+const collegeCrossover=new Map(),milbCrossover=new Map(),verifiedCollegeMiLB=new Set();
 if(page==="player"){
  try{
   const response=await fetch("../milb/data/player_links.json",{cache:"no-store"});
@@ -27,6 +27,16 @@ if(page==="player"){
    }
   }
  }catch(error){console.warn("College-to-MLB attendance links unavailable",error)}
+ try{
+  const response=await fetch("../milb/data/college_links.json",{cache:"no-store"});
+  if(response.ok){
+   const links=await response.json();
+   if(Array.isArray(links))for(const link of links){
+    if(link.verified===true&&link.college_player_id&&link.milb_id!=null)
+     verifiedCollegeMiLB.add(String(link.college_player_id)+"|"+String(link.milb_id));
+   }
+  }
+ }catch(error){console.warn("Verified college-to-MiLB identity links unavailable",error)}
 }
 let careerHonors=null;
 if(page==="hof"||page==="player"){
@@ -299,7 +309,9 @@ function profilePage(){
  const nameInitials=p.name.split(/\s+/).map(x=>x[0]).slice(0,2).join("").toUpperCase();
  const collegeId=collegeCrossover.get(String(p.player_id));
  const milbId=milbCrossover.get(String(p.player_id));
+ const tripleLevel=Boolean(collegeId&&milbId&&verifiedCollegeMiLB.has(String(collegeId)+"|"+String(milbId)));
  const crossoverBadge=(collegeId||milbId)?'<div class="mlb-profile-achievements" aria-label="Attended baseball archive crossovers">'
+  +(tripleLevel?'<a class="mlb-profile-badge mlb-triple-level" href="../college-baseball/player.html?id='+encodeURIComponent(collegeId)+'" title="You attended this player’s college, minor-league, and MLB games">★ SEEN IN COLLEGE + MiLB + MLB ↗</a>':"")
   +(collegeId?'<a class="mlb-profile-badge college-crossover" href="../college-baseball/player.html?id='+encodeURIComponent(collegeId)+'" title="You attended this player’s college and MLB games">★ SEEN IN COLLEGE + MLB ↗</a>':"")
   +(milbId?'<a class="mlb-profile-badge college-crossover" href="../milb/player.html?id='+encodeURIComponent(milbId)+'" title="You attended this player’s Minor League and Major League Baseball games">★ SEEN IN MiLB + MLB ↗</a>':"")
   +'</div>':"";

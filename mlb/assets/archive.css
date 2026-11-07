@@ -279,6 +279,8 @@ body[data-page="player"] main{width:100%;max-width:1160px;margin:0 auto;padding:
  border:1px solid transparent;border-radius:6px;font-size:10px;font-weight:850;letter-spacing:.04em;
  line-height:1.25;text-decoration:none!important;white-space:normal}
 .mlb-profile-badge.college-crossover{background:#FFF0D2;color:#745017!important;border-color:#D6B77D;font-size:11px;padding:6px 10px}
+body[data-page="player"] .mlb-profile-badge.mlb-triple-level{background:#171717!important;color:#F4CC70!important;border:1px solid #D4AA4B!important;font-size:11px;padding:6px 10px;box-shadow:0 0 0 1px rgba(212,170,75,.18) inset}
+body[data-page="player"] .mlb-profile-badge.mlb-triple-level:hover{background:#2B2416!important;color:#FFE3A0!important;border-color:#F0C566!important}
 .mlb-profile-badge.hof{background:#FFF2C7;color:#6A4E1D;border-color:#D9BC74}
 .mlb-profile-badge.ws{background:#FFF0C2;color:#684512;border-color:#CDA65B}
 .mlb-profile-badge.mvp{background:#D9EFE0;color:#185139;border-color:#96C4A4}

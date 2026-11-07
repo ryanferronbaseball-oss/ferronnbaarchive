@@ -13,9 +13,10 @@ document.addEventListener("DOMContentLoaded",async()=>{
   return data;
  };
  try{
-  const [mlb,collegeMiLB,miMLB,collegeMLB]=await Promise.all([
+  const [mlb,collegeMiLB,miMLB,collegeMLB,collegeFirst]=await Promise.all([
    A.load(),get("../milb/data/college_links.json"),get("../milb/data/player_links.json"),
-   get("../college-baseball/data/mlb_crosswalk.json")
+   get("../college-baseball/data/mlb_crosswalk.json"),
+   fetch("./data/three_level_first_college_games.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("First-attendance dates unavailable");return r.json()})
   ]);
   const professional=new Map(miMLB.filter(x=>x.verified===true&&x.mlb_seen===true&&x.mlb_debut&&x.milb_id!=null)
    .map(x=>[String(x.milb_id),x]));
@@ -32,13 +33,17 @@ document.addEventListener("DOMContentLoaded",async()=>{
    .sort((a,b)=>a.link.name.localeCompare(b.link.name));
   const cards=eligible.map(({link,pro,mlb:p})=>{
    const initials=String(link.name).split(/\s+/).map(n=>n[0]).slice(0,2).join("").toUpperCase();
+   const firstMLB=p.rows.map(r=>r.date).filter(Boolean).sort()[0];
+   const firstCollege=collegeFirst[link.college_player_id];
+   const firstDate=raw=>raw?A.date(raw):"Date pending verification";
    return '<article class="triple-player-card">'
     +'<div class="triple-player-head"><div class="triple-initials" aria-hidden="true">'+esc(initials)+'</div>'
     +'<div><span class="triple-achievement">★ SEEN IN COLLEGE + MiLB + MLB</span><h2>'+esc(link.name)+'</h2><p>'+esc((link.college_schools||[]).join(" / "))+'</p></div></div>'
     +'<div class="triple-journey" aria-label="Three-level journey"><span>COLLEGE</span><b>→</b><span>MiLB</span><b>→</b><span>MLB</span></div>'
-    +'<div class="triple-player-details"><div><small>College program(s)</small><strong>'+esc((link.college_schools||[]).join(" / ")||"Verified college attendee")+'</strong></div>'
-    +'<div><small>First MiLB game attended</small><strong>'+esc(pro.first_attended_milb||"See player profile")+'</strong></div>'
-    +'<div><small>MLB games attended</small><strong>'+A.fmt(p.game_count)+'</strong></div></div>'
+    +'<div class="triple-player-details"><div><small>First seen · College</small><strong>'+esc(firstDate(firstCollege))+'</strong></div>'
+    +'<div><small>First seen · MiLB</small><strong>'+esc(firstDate(pro.first_attended_milb))+'</strong></div>'
+    +'<div><small>First seen · MLB</small><strong>'+esc(firstDate(firstMLB))+'</strong></div></div>'
+    +'<p class="triple-player-meta">'+esc((link.college_schools||[]).join(" / ")||"Verified college attendee")+' · '+A.fmt(p.game_count)+' MLB game'+(p.game_count===1?'':'s')+' attended</p>'
     +'<div class="triple-player-links"><a href="../college-baseball/player.html?id='+encodeURIComponent(link.college_player_id)+'">College profile ↗</a>'
     +'<a href="../milb/player.html?id='+encodeURIComponent(link.milb_id)+'">MiLB profile ↗</a>'
     +'<a href="./player.html?id='+encodeURIComponent(pro.mlb_id)+'">MLB profile ↗</a></div></article>';

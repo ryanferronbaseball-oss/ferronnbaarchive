@@ -1,0 +1,32 @@
+name: Baseball player profile crossover tag QA
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "milb/data/college_links.json"
+      - "milb/assets/profile.js"
+      - "mlb/assets/pages.js"
+      - "college-baseball/assets/archive.js"
+      - "milb/scripts/test_baseball_crossover_tags.py"
+      - ".github/workflows/baseball-crossover-tags-qa.yml"
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 22
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Validate baseball player renderers
+        run: |
+          node --check milb/assets/profile.js
+          node --check mlb/assets/pages.js
+          node --check college-baseball/assets/archive.js
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install playwright
+      - run: python -m playwright install --with-deps chromium
+      - name: Check all three baseball profile types, tag logic and mobile
+        run: python milb/scripts/test_baseball_crossover_tags.py

@@ -6,6 +6,7 @@ root=pathlib.Path(__file__).resolve().parents[2]
 data=json.loads((root/"venues/data/venues.json").read_text())
 venues=[v for v in data["venues"] if "MiLB" in (v.get("sports") or [v["sport"]])]
 assert len(venues)>=4
+photos=json.loads((root/"venues/data/photos.json").read_text()).get("photos",{})
 class Reuse(socketserver.ThreadingTCPServer):allow_reuse_address=True
 server=Reuse(("127.0.0.1",0),functools.partial(http.server.SimpleHTTPRequestHandler,directory=str(root)))
 threading.Thread(target=server.serve_forever,daemon=True).start()
@@ -32,7 +33,10 @@ try:
    assert vp.locator("#venueGamesRows tr").count()==v["visits"]
    assert vp.locator('#venueGamesRows a[href^="../milb/game.html?id="]').count()==2*sum(g["id"].startswith("milb-") for g in v["games"][:15])
    assert vp.locator('a[href="../milb/"]').count()==1
-   assert vp.locator(".vp-photo-placeholder").count()==1
+   if v["id"] in photos:
+    assert vp.locator(".vp-photo-figure").count()==1
+   else:
+    assert vp.locator(".vp-photo-placeholder").count()==1
    assert not local,local
    vp.close()
   mobile=browser.new_page(viewport={"width":390,"height":844},is_mobile=True,has_touch=True)

@@ -42,7 +42,7 @@ try:
    page.locator('[data-profile-tab="games"]').click()
    assert page.locator("#profile-games").is_visible()
    assert page.locator("#logs table tbody tr").count()>=1
-   assert page.locator('#logs a[href^="./detail.html?id="]').count()>0
+   assert page.locator('#logs a[href^="./game.html?id="]').count()>0
    page.locator('[data-side="pitching"]').click()
    if entry.get("pitching"):
     assert page.locator("#logs table tbody tr").count()>=1

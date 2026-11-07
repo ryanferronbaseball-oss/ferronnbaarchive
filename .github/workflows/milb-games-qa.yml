@@ -1,0 +1,31 @@
+name: MiLB games MLB layout parity
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "milb/assets/games.js"
+      - "milb/assets/games.css"
+      - "milb/game.html"
+      - "milb/detail.html"
+      - "milb/scripts/test_milb_games.py"
+      - ".github/workflows/milb-games-qa.yml"
+jobs:
+  games:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Check MiLB games JavaScript syntax
+        run: |
+          node --check milb/assets/archive.js
+          node --check milb/assets/games.js
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install playwright
+      - run: python -m playwright install --with-deps chromium
+      - name: Browser-check Games, box scores, and backward-compatible game URLs
+        run: python milb/scripts/test_milb_games.py

@@ -42,7 +42,7 @@ try:
         assert page.locator("#gameHistorySection").count()==1
         assert page.locator("#history tbody tr").count()==len(games)
         assert "Showing "+str(len(games))+" of "+str(len(games)) in page.locator("#showing").inner_text()
-        assert page.locator('#history a[href^="./detail.html?id="]').count()==len(games)*2
+        assert page.locator('#history a[href^="./game.html?id="]').count()==len(games)*2
         page.locator("#search").fill("Quakes")
         assert page.locator("#history tbody tr").count()>0
         assert page.locator("#history tbody tr").count()<len(games)

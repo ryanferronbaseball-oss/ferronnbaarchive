@@ -56,3 +56,119 @@ a:not(.action-link):not(.archive-logo):not(.ca-logo){color:#831738}
 .pog .pog-stat strong{color:#192e43!important}
 .pog .pog-stat span,.pog .pog-impact span,.pog .pog-method{color:#566879!important}
 .pog .pog-player a,.pog .pog-player a:visited{color:#831738!important}
+
+/* Cross-sport parity sweep (2026-11-06). Standard UI only; retain meaningful
+   award, win/loss, team identity and achievement colors. */
+/* Neutral ice-blue mastheads replace legacy cream banners. */
+header.ca-header,header.archive-header,.archive-header{
+ background:#eaf6fc!important;
+ border-bottom-color:#c5e3ef!important;
+ color:#192e43!important;
+}
+.archive-header .archive-logo,.archive-header .archive-logo:visited,
+.ca-header .ca-logo.ca-logo-text,.ca-header .ca-logo.ca-logo-text:visited{
+ color:#831738!important;
+}
+.archive-header .archive-logo small,.ca-header .ca-logo-text small{color:#566879!important}
+/* Header navigation, including nested hub links. */
+.archive-header .archive-nav a,.archive-header .archive-nav a:visited,
+.ca-header .ca-nav a,.ca-header .ca-nav a:visited{color:#831738!important}
+.archive-header .archive-nav a[aria-current="page"],
+.archive-header .archive-nav a:hover,
+.ca-header .ca-nav a[aria-current="page"],.ca-header .ca-nav a:hover{
+ background:#d9f0fa!important;color:#831738!important
+}
+/* Common non-semantic tabs and page selectors. */
+.tabbar button:not([aria-selected="true"]),
+.mlb-nav-tabs button:not([aria-selected="true"]),
+.cb-navtabs button:not([aria-selected="true"]),
+.soccer-tabs button:not([aria-selected="true"]):not([aria-pressed="true"]),
+.sc-tabs button:not([aria-selected="true"]),.sc-switch button:not([aria-selected="true"]),
+.tabs button:not([aria-selected="true"]):not(.active){
+ background:#eaf6fc!important;border-color:#c5e3ef!important;color:#831738!important
+}
+.tabbar button[aria-selected="true"],.mlb-nav-tabs button[aria-selected="true"],
+.cb-navtabs button[aria-selected="true"],.soccer-tabs button[aria-selected="true"],
+.soccer-tabs button[aria-pressed="true"],.sc-tabs button[aria-selected="true"],
+.sc-switch button[aria-selected="true"],.tabs button[aria-selected="true"],
+.tabs button.active{background:#831738!important;border-color:#831738!important;color:#fff!important}
+/* Overview cards, leaderboards, record panels and game recap accents. */
+.mlb-record,.cb-record,.cb-player-panel,.soccer-chart,.mlb-player-card,
+.mlb-feature,.soccer-feature,.mlb-profile-panel,.cb-game-summary{
+ border-color:#d4e1e9!important
+}
+.mlb-record,.cb-record,.cb-player-panel,.soccer-chart,.cb-game-summary{
+ background:#fff!important
+}
+.mlb-record strong,.mlb-feature strong,.mlb-score .final,
+.cb-record strong,.cb-player-panel h3,.cb-score,
+.soccer-feature .data strong,.soccer-bar strong,.soccer-record strong,
+.feature .number,.impact-board .impact-number strong{
+ color:#831738!important
+}
+.cb-game-summary,.mlb-potg-panel,.pog,
+#playerOfGame,.cb-profile-hero{
+ background:linear-gradient(125deg,#fff,#edf7fc)!important;border-color:#c5e3ef!important
+}
+.pog .pog-player,.pog .pog-impact strong,.mlb-potg-player{color:#831738!important}
+.pog .pog-stat{background:#f3f9fd!important;border-color:#d4e1e9!important}
+.pog .pog-stat span,.pog .pog-impact span,.pog .pog-method{color:#566879!important}
+.mlb-track,.cb-track,.soccer-bar .bartrack,.track{background:#e4f2f9!important}
+.mlb-fill,.cb-fill,.soccer-bar .barfill,.fill{background:linear-gradient(90deg,#831738,#b84266)!important}
+.sc-metric-player,.sc-metric-player:hover,.sc-metric-player:focus-visible{color:#831738!important;text-decoration-color:#b84266!important}
+/* Standard player-profile hero and photo treatments, all seven sports. */
+.player-hero,.mlb-profile-hero.mlb-profile-head,.soccer-profile-head,
+.cb-profile-hero,body:has(#portrait) .hero{
+ background:linear-gradient(125deg,#e0f2fb,#f8fcff 77%)!important;
+ border:1px solid #b9dce9!important;border-radius:17px;
+ padding:22px;color:#192e43!important
+}
+.player-hero h1,.mlb-profile-identity h1,.soccer-profile-head h1,
+.cb-profile-hero h1,body:has(#portrait) .hero .name{
+ color:#831738!important
+}
+.player-portrait,.mlb-profile-photo,.mlb-portrait,.soccer-portrait,.soccer-avatar,
+.cb-profile-initials,.cb-profile-photo,.ca-portrait{
+ background:#e7f5fc!important;border-color:#b9dce9!important
+}
+.player-portrait .portrait-fallback,.mlb-profile-photo,.mlb-portrait,
+.cb-profile-initials,.soccer-portrait,.soccer-avatar{color:#831738!important}
+.mlb-profile-team-name,.mlb-profile-role-label,
+.cb-profile-role h2,.mlb-profile-panel h2,.mlb-profile-panel h3{
+ color:#831738!important
+}
+.mlb-profile-headline-stats .mlb-profile-stat,
+.mlb-profile-stat-grid .mlb-profile-stat{
+ background:#fff!important;border-color:#c5e3ef!important
+}
+.mlb-profile-stat strong,.mlb-profile-total strong{
+ color:#831738!important
+}
+.mlb-profile-stat small,.mlb-profile-total small{color:#566879!important}
+.mlb-profile-panel,.nfl-honors-panel,.nfl-honor-panel{
+ background:#fff!important;border-color:#c5e3ef!important;color:#192e43!important
+}
+.mlb-profile-signature{
+ background:linear-gradient(115deg,#eaf6fc,#f9fcff)!important;border-color:#c5e3ef!important
+}
+.mlb-profile-signature strong{color:#831738!important}
+.mlb-profile-signature small,.mlb-profile-signature span{color:#566879!important}
+.mlb-profile-total,.nfl-honor-years span{
+ background:#edf7fc!important;border-color:#c5e3ef!important
+}
+/* College-to-pro player directories beyond college basketball. */
+.cards .player,.alumni-player{background:#fff!important;border-color:#d4e1e9!important}
+.cards .player-name,.cards .links a,.cards .game-entry a,
+.alumni-player .alumni-name,.alumni-player .alumni-links a{color:#831738!important}
+.cards .portrait,.alumni-portrait,.alumni-portrait img{
+ background:#eaf6fc!important;border-color:#c5e3ef!important;color:#831738!important
+}
+.cards .line,.alumni-line,.state,.alumni-empty{
+ background:#f2f9fd!important;border-color:#c5e3ef!important
+}
+.cards .pill:not(.bronze):not(.secondary),.alumni-pill{
+ background:#eaf6fc!important;color:#831738!important
+}
+.notes-banner,.alumni-callout{
+ background:#eaf6fc!important;border-left-color:#831738!important;color:#566879!important
+}

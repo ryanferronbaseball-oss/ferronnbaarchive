@@ -1,7 +1,7 @@
 {
-  "updated": "2026-11-06",
+  "updated": "2026-11-07",
   "venueCount": 134,
-  "mappedGames": 716,
+  "mappedGames": 728,
   "excludedUnassignedGames": 7,
   "venues": [
     {
@@ -286,8 +286,8 @@
       "sport": "College Baseball",
       "city": "Stockton, CA",
       "address": "404 W. Fremont St., Stockton, CA 95203",
-      "visits": 7,
-      "firstVisit": "2022-05-25",
+      "visits": 13,
+      "firstVisit": "2021-06-01",
       "lastVisit": "2022-05-28",
       "lat": 37.9549923,
       "lon": -121.2975308,
@@ -300,8 +300,62 @@
         "https://www.milb.com/stockton/ballpark/banner-island-ballpark",
         "https://www.milb.com/stockton/ballpark/parking"
       ],
-      "factNote": "",
+      "factNote": "This is the same physical stadium for six 2021 Storm–Ports MiLB games and the 2022 WCC College Baseball Tournament. Both sports are linked in one venue profile.",
       "games": [
+        {
+          "id": "milb-2021-06-01-storm-ports",
+          "date": "2021-06-01",
+          "away": "Lake Elsinore Storm",
+          "home": "Stockton Ports",
+          "awayScore": 1,
+          "homeScore": 6,
+          "url": "../milb/game.html?id=milb-2021-06-01-storm-ports"
+        },
+        {
+          "id": "milb-2021-06-02-storm-ports",
+          "date": "2021-06-02",
+          "away": "Lake Elsinore Storm",
+          "home": "Stockton Ports",
+          "awayScore": 4,
+          "homeScore": 5,
+          "url": "../milb/game.html?id=milb-2021-06-02-storm-ports"
+        },
+        {
+          "id": "milb-2021-06-03-storm-ports",
+          "date": "2021-06-03",
+          "away": "Lake Elsinore Storm",
+          "home": "Stockton Ports",
+          "awayScore": 4,
+          "homeScore": 5,
+          "url": "../milb/game.html?id=milb-2021-06-03-storm-ports"
+        },
+        {
+          "id": "milb-2021-06-04-storm-ports",
+          "date": "2021-06-04",
+          "away": "Lake Elsinore Storm",
+          "home": "Stockton Ports",
+          "awayScore": 5,
+          "homeScore": 4,
+          "url": "../milb/game.html?id=milb-2021-06-04-storm-ports"
+        },
+        {
+          "id": "milb-2021-06-05-storm-ports",
+          "date": "2021-06-05",
+          "away": "Lake Elsinore Storm",
+          "home": "Stockton Ports",
+          "awayScore": 6,
+          "homeScore": 2,
+          "url": "../milb/game.html?id=milb-2021-06-05-storm-ports"
+        },
+        {
+          "id": "milb-2021-06-06-storm-ports",
+          "date": "2021-06-06",
+          "away": "Lake Elsinore Storm",
+          "home": "Stockton Ports",
+          "awayScore": 9,
+          "homeScore": 7,
+          "url": "../milb/game.html?id=milb-2021-06-06-storm-ports"
+        },
         {
           "id": "cb-2022-05-25-san-francisco-san-diego-att0165",
           "date": "2022-05-25",
@@ -365,6 +419,10 @@
           "homeScore": 12,
           "url": "../college-baseball/game.html?id=cb-2022-05-28-san-diego-gonzaga-att0171"
         }
+      ],
+      "sports": [
+        "College Baseball",
+        "MiLB"
       ]
     },
     {
@@ -2249,7 +2307,7 @@
         "https://www.mlb.com/milb/news/featured/visit-excite-ballpark-home-of-the-san-jose-giants?t=mlb-pipeline-coverage",
         "https://sjsuspartans.com/facilities/excite-ballpark"
       ],
-      "factNote": "Your August 2, 2015 visit took place when the park was called Municipal Stadium.",
+      "factNote": "Attended August 2, 2015, and six additional Storm games May 25–30, 2021.",
       "games": [
         {
           "id": "milb-2015-08-02-ports-giants",
@@ -2259,11 +2317,65 @@
           "awayScore": 2,
           "homeScore": 6,
           "url": "../milb/game.html?id=milb-2015-08-02-ports-giants"
+        },
+        {
+          "id": "milb-2021-05-25-storm-giants",
+          "date": "2021-05-25",
+          "away": "Lake Elsinore Storm",
+          "home": "San Jose Giants",
+          "awayScore": 8,
+          "homeScore": 7,
+          "url": "../milb/game.html?id=milb-2021-05-25-storm-giants"
+        },
+        {
+          "id": "milb-2021-05-26-storm-giants",
+          "date": "2021-05-26",
+          "away": "Lake Elsinore Storm",
+          "home": "San Jose Giants",
+          "awayScore": 9,
+          "homeScore": 3,
+          "url": "../milb/game.html?id=milb-2021-05-26-storm-giants"
+        },
+        {
+          "id": "milb-2021-05-27-storm-giants",
+          "date": "2021-05-27",
+          "away": "Lake Elsinore Storm",
+          "home": "San Jose Giants",
+          "awayScore": 2,
+          "homeScore": 8,
+          "url": "../milb/game.html?id=milb-2021-05-27-storm-giants"
+        },
+        {
+          "id": "milb-2021-05-28-storm-giants",
+          "date": "2021-05-28",
+          "away": "Lake Elsinore Storm",
+          "home": "San Jose Giants",
+          "awayScore": 0,
+          "homeScore": 1,
+          "url": "../milb/game.html?id=milb-2021-05-28-storm-giants"
+        },
+        {
+          "id": "milb-2021-05-29-storm-giants",
+          "date": "2021-05-29",
+          "away": "Lake Elsinore Storm",
+          "home": "San Jose Giants",
+          "awayScore": 1,
+          "homeScore": 3,
+          "url": "../milb/game.html?id=milb-2021-05-29-storm-giants"
+        },
+        {
+          "id": "milb-2021-05-30-storm-giants",
+          "date": "2021-05-30",
+          "away": "Lake Elsinore Storm",
+          "home": "San Jose Giants",
+          "awayScore": 1,
+          "homeScore": 2,
+          "url": "../milb/game.html?id=milb-2021-05-30-storm-giants"
         }
       ],
-      "visits": 1,
+      "visits": 7,
       "firstVisit": "2015-08-02",
-      "lastVisit": "2015-08-02"
+      "lastVisit": "2021-05-30"
     },
     {
       "id": "venue-0038",
@@ -4048,6 +4160,39 @@
       ]
     },
     {
+      "id": "venue-0052",
+      "name": "GSU Baseball Complex",
+      "sport": "College Baseball",
+      "city": "Atlanta, GA",
+      "address": "2819 Clifton Springs Rd., Decatur, GA 30034",
+      "visits": 1,
+      "firstVisit": "2024-04-14",
+      "lastVisit": "2024-04-14",
+      "lat": 33.68807,
+      "lon": -84.279591,
+      "coordinateConfidence": "Medium",
+      "opened": "1986",
+      "capacity": "1,092 (Georgia State Athletics historic ballpark page)",
+      "occupants": "Georgia State Panthers baseball (historic Panthersville/Decatur grounds)",
+      "history": "Georgia State's original Panthersville/Decatur home hosted its first game in February 1986. The ballpark includes a 2003 Bill and Susan Reeves fieldhouse and historic outfield wall material from Atlanta-Fulton County Stadium. A NEW GSU Baseball Park was developed separately in Atlanta's Summerhill area for a planned fall 2026 completion",
+      "sources": [
+        "https://georgiastatesports.com/sports/2011/5/26/205155092.aspx",
+        "https://operations.gsu.edu/transforming-our-campuses/baseball-park/"
+      ],
+      "factNote": "",
+      "games": [
+        {
+          "id": "cb-2024-04-15-southern-mississippi-georgia-state-att0269",
+          "date": "2024-04-14",
+          "away": "Southern Mississippi",
+          "home": "Georgia State",
+          "awayScore": 14,
+          "homeScore": 9,
+          "url": "../college-baseball/game.html?id=cb-2024-04-15-southern-mississippi-georgia-state-att0269"
+        }
+      ]
+    },
+    {
       "id": "venue-0047",
       "name": "George C. Page Stadium",
       "sport": "College Baseball",
@@ -4290,39 +4435,6 @@
           "awayScore": 6,
           "homeScore": 11,
           "url": "../college-baseball/game.html?id=cb-2024-03-02-siena-unc-asheville-att0244"
-        }
-      ]
-    },
-    {
-      "id": "venue-0052",
-      "name": "GSU Baseball Complex",
-      "sport": "College Baseball",
-      "city": "Atlanta, GA",
-      "address": "2819 Clifton Springs Rd., Decatur, GA 30034",
-      "visits": 1,
-      "firstVisit": "2024-04-14",
-      "lastVisit": "2024-04-14",
-      "lat": 33.68807,
-      "lon": -84.279591,
-      "coordinateConfidence": "Medium",
-      "opened": "1986",
-      "capacity": "1,092 (Georgia State Athletics historic ballpark page)",
-      "occupants": "Georgia State Panthers baseball (historic Panthersville/Decatur grounds)",
-      "history": "Georgia State's original Panthersville/Decatur home hosted its first game in February 1986. The ballpark includes a 2003 Bill and Susan Reeves fieldhouse and historic outfield wall material from Atlanta-Fulton County Stadium. A NEW GSU Baseball Park was developed separately in Atlanta's Summerhill area for a planned fall 2026 completion",
-      "sources": [
-        "https://georgiastatesports.com/sports/2011/5/26/205155092.aspx",
-        "https://operations.gsu.edu/transforming-our-campuses/baseball-park/"
-      ],
-      "factNote": "",
-      "games": [
-        {
-          "id": "cb-2024-04-15-southern-mississippi-georgia-state-att0269",
-          "date": "2024-04-14",
-          "away": "Southern Mississippi",
-          "home": "Georgia State",
-          "awayScore": 14,
-          "homeScore": 9,
-          "url": "../college-baseball/game.html?id=cb-2024-04-15-southern-mississippi-georgia-state-att0269"
         }
       ]
     },
@@ -6882,6 +6994,99 @@
       ]
     },
     {
+      "id": "venue-0094",
+      "name": "PK Park",
+      "sport": "College Baseball",
+      "city": "Eugene, OR",
+      "address": "2800 Martin Luther King Jr. Blvd., Eugene, OR 97401",
+      "visits": 4,
+      "firstVisit": "2023-03-02",
+      "lastVisit": "2023-03-05",
+      "lat": 44.0590259,
+      "lon": -123.0653727,
+      "coordinateConfidence": "High",
+      "opened": "2009",
+      "capacity": "4,000 total, including 3,000 fixed seats (Oregon Athletics)",
+      "occupants": "Oregon Ducks baseball",
+      "history": "Opened Feb. 27, 2009; park named for former Oregon athletics director Pat Kilkenny",
+      "sources": [
+        "https://goducks.com/sports/2011/6/21/205174862",
+        "https://www.openstreetmap.org/way/163758351"
+      ],
+      "factNote": "",
+      "games": [
+        {
+          "id": "cb-2023-03-02-san-diego-oregon-att0187",
+          "date": "2023-03-02",
+          "away": "San Diego",
+          "home": "Oregon",
+          "awayScore": 2,
+          "homeScore": 3,
+          "url": "../college-baseball/game.html?id=cb-2023-03-02-san-diego-oregon-att0187"
+        },
+        {
+          "id": "cb-2023-03-03-san-diego-oregon-att0188",
+          "date": "2023-03-03",
+          "away": "San Diego",
+          "home": "Oregon",
+          "awayScore": 3,
+          "homeScore": 4,
+          "url": "../college-baseball/game.html?id=cb-2023-03-03-san-diego-oregon-att0188"
+        },
+        {
+          "id": "cb-2023-03-04-san-diego-oregon-att0189",
+          "date": "2023-03-04",
+          "away": "San Diego",
+          "home": "Oregon",
+          "awayScore": 0,
+          "homeScore": 13,
+          "url": "../college-baseball/game.html?id=cb-2023-03-04-san-diego-oregon-att0189"
+        },
+        {
+          "id": "cb-2023-03-05-san-diego-oregon-att0190",
+          "date": "2023-03-05",
+          "away": "San Diego",
+          "home": "Oregon",
+          "awayScore": 1,
+          "homeScore": 5,
+          "url": "../college-baseball/game.html?id=cb-2023-03-05-san-diego-oregon-att0190"
+        }
+      ]
+    },
+    {
+      "id": "venue-0096",
+      "name": "PNC Park",
+      "sport": "MLB",
+      "city": "Pittsburgh, PA",
+      "address": "115 Federal St., Pittsburgh, PA 15212",
+      "visits": 1,
+      "firstVisit": "2024-04-25",
+      "lastVisit": "2024-04-25",
+      "lat": 40.4469258,
+      "lon": -80.0056063,
+      "coordinateConfidence": "High",
+      "opened": "2001",
+      "capacity": "38,362 (Pirates official ballpark-facts page); a March 2026 MLB guide instead lists 38,747",
+      "occupants": "Pittsburgh Pirates (MLB)",
+      "history": "Opened April 9, 2001 as the Pirates' North Shore ballpark. Replaced Three Rivers Stadium, a physically separate facility demolished in 2001; PNC Park has kept its name since opening",
+      "sources": [
+        "https://www.mlb.com/pirates/ballpark/facts",
+        "https://www.mlb.com/pirates/history/ballparks"
+      ],
+      "factNote": "These are competing MLB-operated figures, so use the club's dedicated facts-page number for one preferred capacity and retain the guide number as a documented alternative.",
+      "games": [
+        {
+          "id": "119",
+          "date": "2024-04-25",
+          "away": "Milwaukee Brewers",
+          "home": "Pittsburgh Pirates",
+          "awayScore": null,
+          "homeScore": null,
+          "url": "../mlb/game.html?id=119"
+        }
+      ]
+    },
+    {
       "id": "venue-0090",
       "name": "Patterson Baseball Complex",
       "sport": "College Baseball",
@@ -7689,66 +7894,6 @@
       ]
     },
     {
-      "id": "venue-0094",
-      "name": "PK Park",
-      "sport": "College Baseball",
-      "city": "Eugene, OR",
-      "address": "2800 Martin Luther King Jr. Blvd., Eugene, OR 97401",
-      "visits": 4,
-      "firstVisit": "2023-03-02",
-      "lastVisit": "2023-03-05",
-      "lat": 44.0590259,
-      "lon": -123.0653727,
-      "coordinateConfidence": "High",
-      "opened": "2009",
-      "capacity": "4,000 total, including 3,000 fixed seats (Oregon Athletics)",
-      "occupants": "Oregon Ducks baseball",
-      "history": "Opened Feb. 27, 2009; park named for former Oregon athletics director Pat Kilkenny",
-      "sources": [
-        "https://goducks.com/sports/2011/6/21/205174862",
-        "https://www.openstreetmap.org/way/163758351"
-      ],
-      "factNote": "",
-      "games": [
-        {
-          "id": "cb-2023-03-02-san-diego-oregon-att0187",
-          "date": "2023-03-02",
-          "away": "San Diego",
-          "home": "Oregon",
-          "awayScore": 2,
-          "homeScore": 3,
-          "url": "../college-baseball/game.html?id=cb-2023-03-02-san-diego-oregon-att0187"
-        },
-        {
-          "id": "cb-2023-03-03-san-diego-oregon-att0188",
-          "date": "2023-03-03",
-          "away": "San Diego",
-          "home": "Oregon",
-          "awayScore": 3,
-          "homeScore": 4,
-          "url": "../college-baseball/game.html?id=cb-2023-03-03-san-diego-oregon-att0188"
-        },
-        {
-          "id": "cb-2023-03-04-san-diego-oregon-att0189",
-          "date": "2023-03-04",
-          "away": "San Diego",
-          "home": "Oregon",
-          "awayScore": 0,
-          "homeScore": 13,
-          "url": "../college-baseball/game.html?id=cb-2023-03-04-san-diego-oregon-att0189"
-        },
-        {
-          "id": "cb-2023-03-05-san-diego-oregon-att0190",
-          "date": "2023-03-05",
-          "away": "San Diego",
-          "home": "Oregon",
-          "awayScore": 1,
-          "homeScore": 5,
-          "url": "../college-baseball/game.html?id=cb-2023-03-05-san-diego-oregon-att0190"
-        }
-      ]
-    },
-    {
       "id": "venue-0095",
       "name": "Plainsman Park",
       "sport": "College Baseball",
@@ -7832,39 +7977,6 @@
           "awayScore": 3,
           "homeScore": 9,
           "url": "../college-baseball/game.html?id=cb-2026-05-31-ucf-auburn"
-        }
-      ]
-    },
-    {
-      "id": "venue-0096",
-      "name": "PNC Park",
-      "sport": "MLB",
-      "city": "Pittsburgh, PA",
-      "address": "115 Federal St., Pittsburgh, PA 15212",
-      "visits": 1,
-      "firstVisit": "2024-04-25",
-      "lastVisit": "2024-04-25",
-      "lat": 40.4469258,
-      "lon": -80.0056063,
-      "coordinateConfidence": "High",
-      "opened": "2001",
-      "capacity": "38,362 (Pirates official ballpark-facts page); a March 2026 MLB guide instead lists 38,747",
-      "occupants": "Pittsburgh Pirates (MLB)",
-      "history": "Opened April 9, 2001 as the Pirates' North Shore ballpark. Replaced Three Rivers Stadium, a physically separate facility demolished in 2001; PNC Park has kept its name since opening",
-      "sources": [
-        "https://www.mlb.com/pirates/ballpark/facts",
-        "https://www.mlb.com/pirates/history/ballparks"
-      ],
-      "factNote": "These are competing MLB-operated figures, so use the club's dedicated facts-page number for one preferred capacity and retain the guide number as a documented alternative.",
-      "games": [
-        {
-          "id": "119",
-          "date": "2024-04-25",
-          "away": "Milwaukee Brewers",
-          "home": "Pittsburgh Pirates",
-          "awayScore": null,
-          "homeScore": null,
-          "url": "../mlb/game.html?id=119"
         }
       ]
     },
@@ -9258,39 +9370,6 @@
       ]
     },
     {
-      "id": "venue-0123",
-      "name": "University Field",
-      "sport": "College Baseball",
-      "city": "Hempstead, NY",
-      "address": "245 Hofstra Northern Blvd., Hempstead, NY 11549 (Hofstra Athletics directions)",
-      "visits": 1,
-      "firstVisit": "2025-04-18",
-      "lastVisit": "2025-04-18",
-      "lat": 40.720775935948595,
-      "lon": -73.59848396480689,
-      "coordinateConfidence": "High",
-      "opened": "Original date disputed; grandstand added 2010",
-      "capacity": "400 chairback seats in the Quinn Family Grandstand (2010); additional standing space unquantified",
-      "occupants": "Hofstra Pride baseball",
-      "history": "Hofstra's North Campus baseball field, known as University Field, was in use no later than 2003 based on official game reports. The Quinn Family Grandstand was added in 2010; infield turf and outfield sod were renewed in 2024",
-      "sources": [
-        "https://gohofstra.com/facilities/university-field/9",
-        "https://gohofstra.com/story.aspx?file_date=3-30-2003&filename=HOFSTRA_SHUT_OUT_BY_UNCW_16_0"
-      ],
-      "factNote": "Do not equate Hofstra's 1938 first baseball season, the 2000 opening of the separate Mack arena, or the 2010 grandstand construction with a reliably confirmed first University Field game. The existing field has documented improvements by 2003.",
-      "games": [
-        {
-          "id": "cb-2025-04-18-stony-brook-hofstra-att0334",
-          "date": "2025-04-18",
-          "away": "Stony Brook",
-          "home": "Hofstra",
-          "awayScore": 17,
-          "homeScore": 3,
-          "url": "../college-baseball/game.html?id=cb-2025-04-18-stony-brook-hofstra-att0334"
-        }
-      ]
-    },
-    {
       "id": "venue-0124",
       "name": "USA Baseball National Training Complex",
       "sport": "College Baseball",
@@ -9329,6 +9408,39 @@
           "awayScore": 6,
           "homeScore": 13,
           "url": "../college-baseball/game.html?id=cb-2024-06-03-point-loma-nazarene-angelo-state-att0294"
+        }
+      ]
+    },
+    {
+      "id": "venue-0123",
+      "name": "University Field",
+      "sport": "College Baseball",
+      "city": "Hempstead, NY",
+      "address": "245 Hofstra Northern Blvd., Hempstead, NY 11549 (Hofstra Athletics directions)",
+      "visits": 1,
+      "firstVisit": "2025-04-18",
+      "lastVisit": "2025-04-18",
+      "lat": 40.720775935948595,
+      "lon": -73.59848396480689,
+      "coordinateConfidence": "High",
+      "opened": "Original date disputed; grandstand added 2010",
+      "capacity": "400 chairback seats in the Quinn Family Grandstand (2010); additional standing space unquantified",
+      "occupants": "Hofstra Pride baseball",
+      "history": "Hofstra's North Campus baseball field, known as University Field, was in use no later than 2003 based on official game reports. The Quinn Family Grandstand was added in 2010; infield turf and outfield sod were renewed in 2024",
+      "sources": [
+        "https://gohofstra.com/facilities/university-field/9",
+        "https://gohofstra.com/story.aspx?file_date=3-30-2003&filename=HOFSTRA_SHUT_OUT_BY_UNCW_16_0"
+      ],
+      "factNote": "Do not equate Hofstra's 1938 first baseball season, the 2000 opening of the separate Mack arena, or the 2010 grandstand construction with a reliably confirmed first University Field game. The existing field has documented improvements by 2003.",
+      "games": [
+        {
+          "id": "cb-2025-04-18-stony-brook-hofstra-att0334",
+          "date": "2025-04-18",
+          "away": "Stony Brook",
+          "home": "Hofstra",
+          "awayScore": 17,
+          "homeScore": 3,
+          "url": "../college-baseball/game.html?id=cb-2025-04-18-stony-brook-hofstra-att0334"
         }
       ]
     },

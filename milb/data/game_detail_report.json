@@ -1,10 +1,10 @@
 {
   "source": "MLB StatsAPI (MiLB games only)",
-  "timestamp": "2026-11-07T03:18:30.630918+00:00",
-  "games_checked": 10,
-  "innings_verified": 10,
-  "scoring_plays_verified": 10,
-  "pitcher_order_verified": 10,
+  "timestamp": "2026-11-07T04:01:41.537803+00:00",
+  "games_checked": 22,
+  "innings_verified": 22,
+  "scoring_plays_verified": 22,
+  "pitcher_order_verified": 22,
   "pitching_decisions_verified": 0,
   "games": [
     {
@@ -100,6 +100,126 @@
     {
       "game_id": "milb-2024-05-10-senators-fishercats",
       "pk": 750871,
+      "status": "partial",
+      "order_status": "verified",
+      "score_status": "verified",
+      "play_status": "verified",
+      "decision_status": "unavailable",
+      "decision_error": "HTTP Error 404: Not Found"
+    },
+    {
+      "game_id": "milb-2021-05-25-storm-giants",
+      "pk": 647969,
+      "status": "partial",
+      "order_status": "verified",
+      "score_status": "verified",
+      "play_status": "verified",
+      "decision_status": "unavailable",
+      "decision_error": "HTTP Error 404: Not Found"
+    },
+    {
+      "game_id": "milb-2021-05-26-storm-giants",
+      "pk": 647980,
+      "status": "partial",
+      "order_status": "verified",
+      "score_status": "verified",
+      "play_status": "verified",
+      "decision_status": "unavailable",
+      "decision_error": "HTTP Error 404: Not Found"
+    },
+    {
+      "game_id": "milb-2021-05-27-storm-giants",
+      "pk": 647979,
+      "status": "partial",
+      "order_status": "verified",
+      "score_status": "verified",
+      "play_status": "verified",
+      "decision_status": "unavailable",
+      "decision_error": "HTTP Error 404: Not Found"
+    },
+    {
+      "game_id": "milb-2021-05-28-storm-giants",
+      "pk": 647981,
+      "status": "partial",
+      "order_status": "verified",
+      "score_status": "verified",
+      "play_status": "verified",
+      "decision_status": "unavailable",
+      "decision_error": "HTTP Error 404: Not Found"
+    },
+    {
+      "game_id": "milb-2021-05-29-storm-giants",
+      "pk": 647978,
+      "status": "partial",
+      "order_status": "verified",
+      "score_status": "verified",
+      "play_status": "verified",
+      "decision_status": "unavailable",
+      "decision_error": "HTTP Error 404: Not Found"
+    },
+    {
+      "game_id": "milb-2021-05-30-storm-giants",
+      "pk": 647977,
+      "status": "partial",
+      "order_status": "verified",
+      "score_status": "verified",
+      "play_status": "verified",
+      "decision_status": "unavailable",
+      "decision_error": "HTTP Error 404: Not Found"
+    },
+    {
+      "game_id": "milb-2021-06-01-storm-ports",
+      "pk": 647904,
+      "status": "partial",
+      "order_status": "verified",
+      "score_status": "verified",
+      "play_status": "verified",
+      "decision_status": "unavailable",
+      "decision_error": "HTTP Error 404: Not Found"
+    },
+    {
+      "game_id": "milb-2021-06-02-storm-ports",
+      "pk": 647907,
+      "status": "partial",
+      "order_status": "verified",
+      "score_status": "verified",
+      "play_status": "verified",
+      "decision_status": "unavailable",
+      "decision_error": "HTTP Error 404: Not Found"
+    },
+    {
+      "game_id": "milb-2021-06-03-storm-ports",
+      "pk": 647906,
+      "status": "partial",
+      "order_status": "verified",
+      "score_status": "verified",
+      "play_status": "verified",
+      "decision_status": "unavailable",
+      "decision_error": "HTTP Error 404: Not Found"
+    },
+    {
+      "game_id": "milb-2021-06-04-storm-ports",
+      "pk": 647895,
+      "status": "partial",
+      "order_status": "verified",
+      "score_status": "verified",
+      "play_status": "verified",
+      "decision_status": "unavailable",
+      "decision_error": "HTTP Error 404: Not Found"
+    },
+    {
+      "game_id": "milb-2021-06-05-storm-ports",
+      "pk": 647894,
+      "status": "partial",
+      "order_status": "verified",
+      "score_status": "verified",
+      "play_status": "verified",
+      "decision_status": "unavailable",
+      "decision_error": "HTTP Error 404: Not Found"
+    },
+    {
+      "game_id": "milb-2021-06-06-storm-ports",
+      "pk": 647893,
       "status": "partial",
       "order_status": "verified",
       "score_status": "verified",

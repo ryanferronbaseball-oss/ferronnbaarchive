@@ -1,0 +1,24 @@
+name: Official Storm 2021 season schedule audit
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "milb/scripts/audit_2021_schedule.py"
+      - ".github/workflows/milb-2021-schedule-audit.yml"
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Verify all 120 official games and 90 remaining attendance dates
+        run: python milb/scripts/audit_2021_schedule.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: complete-storm-2021-schedule-audit
+          path: milb/data/season_2021_audit.json
+          if-no-files-found: warn

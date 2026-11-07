@@ -1,7 +1,8 @@
-.game-pro-alumni{margin:18px 0 24px;padding:20px;border:1px solid #bfd4c5;border-radius:15px;background:#eff5ed;color:#244638}
-.game-pro-alumni h2{margin:0 0 7px;font-size:clamp(20px,2.5vw,26px);color:#244638}
-.game-pro-alumni .pro-caption{font-size:12px;line-height:1.5;color:#526a5b;margin:0 0 14px}
+/* Shared Future NBA / pro-alumni panel — burgundy and ice blue */
+.game-pro-alumni{margin:18px 0 24px;padding:20px;border:1px solid #c5e3ef;border-radius:15px;background:#eaf6fc;color:#192e43}
+.game-pro-alumni h2{margin:0 0 7px;font-size:clamp(20px,2.5vw,26px);color:#831738}
+.game-pro-alumni .pro-caption{font-size:12px;line-height:1.5;color:#566879!important;margin:0 0 14px}
 .game-pro-list{display:flex;gap:9px;flex-wrap:wrap}
-.game-pro-list a{display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid #bdd1c1;border-radius:9px;padding:9px 12px;color:#24583d!important;font-weight:750;font-size:14px;text-decoration:none!important}
-.game-pro-list a:hover{background:#dcece0;text-decoration:underline!important}
-.game-pro-alumni .pro-empty{font-size:13px;color:#56695a;margin:0}
+.game-pro-list a{display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid #b7d9e8;border-radius:9px;padding:9px 12px;color:#831738!important;font-weight:750;font-size:14px;text-decoration:none!important}
+.game-pro-list a:hover,.game-pro-list a:focus-visible{background:#d9f0fa;color:#66112c!important;text-decoration:underline!important}
+.game-pro-alumni .pro-empty{font-size:13px;color:#566879!important;margin:0}

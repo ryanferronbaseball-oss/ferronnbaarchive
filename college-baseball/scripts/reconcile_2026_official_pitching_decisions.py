@@ -20,7 +20,7 @@ IDS=[
  "cb-2026-02-14-nicholls-tennessee-att0376",
  "cb-2026-02-14-nicholls-tennessee-att0377",
  "cb-2026-02-15-michigan-state-louisville-att0378",
- "cb-2026-02-17-eastern-michigan-vanderbilt-att0379",
+ "cb-2026-02-18-eastern-michigan-vanderbilt-att0379",
  "cb-2026-02-20-marist-vanderbilt-att0380",
  "cb-2026-02-21-marist-vanderbilt-att0381",
  "cb-2026-02-22-marist-vanderbilt-att0382",

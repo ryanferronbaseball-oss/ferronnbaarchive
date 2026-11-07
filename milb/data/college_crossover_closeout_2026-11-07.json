@@ -22,6 +22,17 @@
     {"milb_id": 805075, "milb_name": "Erick Torres", "college_name": "Eric Torres", "decision": "no_merge", "reason": "Distinct MLBAM identities: Erick Torres 805075 and Kansas State pitcher Eric Torres 701539"},
     {"milb_id": 691016, "milb_name": "Tyler Soderstrom", "college_name": "Tate Soderstrom", "decision": "no_merge", "reason": "Different given names and player histories; surname resemblance is not identity evidence"}
   ],
+  "owner_confirmed_exclusions": {
+    "confirmed_at": "2026-11-07",
+    "decision": "NO — do not link profiles or add crossover tags",
+    "pairs": [
+      {"milb_id": 523260, "milb_name": "Joe Kelly", "college_player_id": "cb-st-john-s-joe-kelly"},
+      {"milb_id": 689435, "milb_name": "Gavin Jones", "college_player_id": "cb-oklahoma-gavyn-jones"},
+      {"milb_id": 805075, "milb_name": "Erick Torres", "college_player_id": "cb-kansas-state-eric-torres"},
+      {"milb_id": 691016, "milb_name": "Tyler Soderstrom", "college_player_id": "cb-uc-san-diego-tate-soderstrom"}
+    ],
+    "remaining_yes_or_unsure": 0
+  },
   "publication_status": "verified_crossover_both_directions_and_three_level_badges",
   "college_to_milb_badge_policy": "Use verified college_links.json only; both college and MiLB profile pages consume it"
 }

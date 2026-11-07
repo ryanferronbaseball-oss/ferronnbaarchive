@@ -55,4 +55,12 @@ assert "#171717" in (ROOT / "milb/assets/profile.css").read_text(encoding="utf8"
 assert "#F4CC70" in (ROOT / "college-baseball/assets/archive.css").read_text(encoding="utf8")
 assert "verifiedCollegeMiLB.has(String(collegeId)+\"|\"+String(milbId))" in mlb_profile
 assert "#F4CC70" in (ROOT / "mlb/assets/archive.css").read_text(encoding="utf8")
+club_page = (ROOT / "mlb/three-level.html").read_text(encoding="utf8")
+club_script = (ROOT / "mlb/assets/three-level.js").read_text(encoding="utf8")
+mlb_nav = (ROOT / "mlb/assets/archive.js").read_text(encoding="utf8")
+assert "three-level.js" in club_page and "three-level.html" in mlb_nav
+assert all(path in club_script for path in ("../milb/data/college_links.json", "../milb/data/player_links.json", "../college-baseball/data/mlb_crosswalk.json"))
+assert "collegePros.has" in club_script and "witnessedMLB.has" in club_script
+assert "../college-baseball/player.html?id=" in club_script
+assert "../milb/player.html?id=" in club_script
 print("PASS: 119 games, 22 reciprocal college/MiLB links, 2 three-level badges, no false Joe Kelly merge")

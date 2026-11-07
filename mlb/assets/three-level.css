@@ -1,0 +1,30 @@
+/* The Three-Level Club: black-and-gold treatment reserved for verified journeys. */
+body[data-page="three-level"] .triple-hero{margin:28px 0 33px;padding:clamp(24px,5vw,52px);border-radius:20px;background:radial-gradient(circle at 100% 0%,#48391C 0%,#171717 58%);border:1px solid #C49A45;color:#F7E7BD;box-shadow:0 12px 30px rgba(23,23,23,.11)}
+body[data-page="three-level"] .triple-eyebrow{font-size:11px;font-weight:900;letter-spacing:.2em;color:#EBC772}
+body[data-page="three-level"] .triple-hero h1{font-size:clamp(36px,6vw,68px);letter-spacing:-.055em;line-height:1.04;margin:14px 0 18px;color:#F7D17C}
+body[data-page="three-level"] .triple-hero p{max-width:720px;font-size:16px;line-height:1.7;color:#E8DECC}
+body[data-page="three-level"] .triple-hero strong{color:#FFE2A0}
+body[data-page="three-level"] .triple-hero-bottom{display:flex;align-items:center;gap:16px;margin-top:25px;padding-top:24px;border-top:1px solid rgba(244,204,112,.28);font-size:15px;font-weight:800;color:#F4CC70}
+body[data-page="three-level"] .triple-count{font-size:46px;line-height:1;font-weight:900;font-variant-numeric:tabular-nums}
+body[data-page="three-level"] .triple-hero-bottom small{display:block;margin-top:4px;color:#D9CBAE;font-size:12px;font-weight:500}
+body[data-page="three-level"] .triple-section-heading{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:10px;margin:14px 0 20px}
+body[data-page="three-level"] .triple-section-heading h2{font-size:25px;margin:0;color:#192E43}
+body[data-page="three-level"] .triple-section-heading p{font-size:13px;color:#566879;margin:0}
+body[data-page="three-level"] .triple-player-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:19px}
+body[data-page="three-level"] .triple-player-card{border:1px solid #D5BB7D;background:#FFFDF8;border-radius:16px;overflow:hidden;box-shadow:0 5px 18px rgba(40,32,19,.045)}
+body[data-page="three-level"] .triple-player-head{display:flex;align-items:center;gap:17px;padding:22px 22px 14px;min-width:0}
+body[data-page="three-level"] .triple-initials{display:grid;place-items:center;flex:0 0 70px;width:70px;height:80px;background:#171717;color:#F4CC70;border:1px solid #D4AA4B;border-radius:11px;font-size:24px;font-weight:900}
+body[data-page="three-level"] .triple-achievement{display:inline-block;font-size:9px;font-weight:900;letter-spacing:.06em;color:#9D7426}
+body[data-page="three-level"] .triple-player-head h2{font-size:clamp(21px,3vw,29px);line-height:1.1;margin:7px 0 5px;color:#182B3F;overflow-wrap:anywhere}
+body[data-page="three-level"] .triple-player-head p{font-size:13px;color:#566879;margin:0}
+body[data-page="three-level"] .triple-journey{display:flex;align-items:center;justify-content:center;gap:13px;margin:5px 22px 19px;padding:10px;border-radius:9px;background:#171717;color:#F4CC70;font-size:11px;letter-spacing:.07em;font-weight:900}
+body[data-page="three-level"] .triple-journey b{color:#BA9B60;font-size:15px}
+body[data-page="three-level"] .triple-player-details{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;padding:0 22px 20px}
+body[data-page="three-level"] .triple-player-details small{display:block;line-height:1.35;color:#66717C;font-size:10px;margin-bottom:6px}
+body[data-page="three-level"] .triple-player-details strong{display:block;line-height:1.35;font-size:13px;color:#263848;overflow-wrap:anywhere}
+body[data-page="three-level"] .triple-player-links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid #E7DAB8;background:#FBF5E6}
+body[data-page="three-level"] .triple-player-links a{padding:15px 5px;text-align:center;font-size:12px;font-weight:850;text-decoration:none;color:#664811}
+body[data-page="three-level"] .triple-player-links a+a{border-left:1px solid #E7DAB8}
+body[data-page="three-level"] .triple-player-links a:hover,body[data-page="three-level"] .triple-player-links a:focus-visible{background:#F2E4C3;text-decoration:underline}
+body[data-page="three-level"] .triple-method{margin:25px 0 45px;color:#566879;font-size:12px;line-height:1.7}
+@media(max-width:560px){body[data-page="three-level"] .triple-player-details{grid-template-columns:1fr 1fr}body[data-page="three-level"] .triple-player-head{align-items:flex-start}body[data-page="three-level"] .triple-initials{flex-basis:54px;width:54px;height:64px;font-size:20px}}

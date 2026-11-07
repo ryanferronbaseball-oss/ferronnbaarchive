@@ -17,7 +17,7 @@ const innings=outs=>outs==null?null:Math.floor(outs/3)+"."+(outs%3);
 const rate=(top,bottom,prec=3)=>bottom>0?Number((top/bottom).toFixed(prec)):null;
 const pLink=p=>'./player.html?id='+encodeURIComponent(p.id);
 const bKeys=[["Games","games"],["Plate appearances","plateAppearances"],["At-bats","atBats"],["Hits","hits"],["Home runs","homeRuns"],["RBI","rbi"],["Runs","runs"],["Doubles","doubles"],["Triples","triples"],["Walks","baseOnBalls"],["Strikeouts","strikeOuts"],["Stolen bases","stolenBases"],["Average","average"],["OBP","onBasePercentage"],["SLG","sluggingPercentage"],["OPS","ops"]];
-const pKeys=[["Games","games"],["Outs recorded","outs"],["Strikeouts","strikeOuts"],["Innings pitched","inningsPitched"],["ERA","era"],["WHIP","whip"],["K/9","k9"],["Earned runs","earnedRuns"],["Walks","baseOnBalls"],["Hits allowed","hits"]];
+const pKeys=[["Games","games"],["Wins","wins"],["Losses","losses"],["Saves","saves"],["Outs recorded","outs"],["Strikeouts","strikeOuts"],["Innings pitched","inningsPitched"],["ERA","era"],["WHIP","whip"],["K/9","k9"],["Earned runs","earnedRuns"],["Walks","baseOnBalls"],["Hits allowed","hits"]];
 const pretty=(v,key)=>{
  if(v===null||v===undefined||!Number.isFinite(Number(v)))return "—";
  if(key==="inningsPitched")return String(v);
@@ -64,6 +64,7 @@ function buildPlayers(rows){
     era:seenOuts&&any(pit,"er")?rate(er*27,outs,2):null,
     whip:seenOuts&&any(pit,"h")&&any(pit,"bb")?rate((allowed+bb)*3,outs,2):null,
     k9:seenOuts&&any(pit,"so")?rate(strikeouts*27,outs,2):null,
+    wins:sumIf(pit,"w"),losses:sumIf(pit,"l"),saves:sumIf(pit,"sv"),
     earnedRuns:sumIf(pit,"er"),baseOnBalls:sumIf(pit,"bb"),hits:sumIf(pit,"h")
    }
   };
@@ -104,7 +105,7 @@ async function main(){
   app.innerHTML='<div class="eyebrow">MiLB · Player statistics</div><h1>Players & leaderboards.</h1><p class="intro">Find the minor-league players you have watched, with statistics aggregated only from MiLB games you personally attended. MLB and college baseball totals are never combined here.</p>'+
    '<div class="metrics">'+[["Unique MiLB players",players.length],["Matched games",verified.length],["Batter records",batters.length],["Pitcher records",pitchers.length]].map(x=>'<div class="metric"><strong>'+displayNum(x[1])+'</strong><small>'+esc(x[0])+'</small></div>').join("")+'</div>'+
    '<div class="mlb-filters"><label for="category">Statistical group<select id="category"><option value="batting">Batting</option><option value="pitching">Pitching</option></select></label><label for="stat">Leaderboard statistic<select id="stat"></select></label><label for="query">Find a player<input id="query" type="search" placeholder="Search a player name"></label><label for="limit">Show<select id="limit"><option>25</option><option>50</option><option>100</option><option>1000</option></select></label></div>'+
-   '<section class="panel"><h2 id="boardHeading"></h2><p class="mlb-note">Aggregate counting statistics include only imported attended MiLB games. Rate statistics are recomputed from the underlying MiLB totals. Official pitching decisions are not yet imported.</p><div id="board"></div></section>';
+   '<section class="panel"><h2 id="boardHeading"></h2><p class="mlb-note">Aggregate counting statistics include only imported attended MiLB games. Rate statistics are recomputed from the underlying MiLB totals. W/L/S totals are official pitching decisions from only the MiLB games you attended; they exclude full-season or MLB statistics.</p><div id="board"></div></section>';
   const category=$("category"),stat=$("stat");
   const draw=()=>{
    const key=stat.value,cat=category.value;

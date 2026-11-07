@@ -39,9 +39,10 @@ function pitchingStats(rows){
  const validOuts=data.length>0&&data.every(r=>outOf(r.ip)!==null);
  const outs=validOuts?data.reduce((a,r)=>a+outOf(r.ip),0):null;
  const h=count(data,"h"),er=count(data,"er"),bb=count(data,"bb"),so=count(data,"so"),
-  hr=count(data,"hr"),bf=count(data,"bf"),hbp=count(data,"hbp");
+  hr=count(data,"hr"),bf=count(data,"bf"),hbp=count(data,"hbp"),
+  wins=count(data,"w"),losses=count(data,"l"),saves=count(data,"sv");
  return {data,games:new Set(rows.filter(r=>r.pitching).map(r=>String(r.game_id))).size,outs,
-  ip:ipOf(outs),h,er,bb,so,hr,bf,hbp,
+  ip:ipOf(outs),h,er,bb,so,hr,bf,hbp,wins,losses,saves,
   era:outs!==null&&er!==null?ratio(er*27,outs,2):null,
   whip:outs!==null&&h!==null&&bb!==null?ratio((h+bb)*3,outs,2):null,
   k9:outs!==null&&so!==null?ratio(so*27,outs,2):null};
@@ -68,7 +69,7 @@ function impact(row){
  return {score:Number((n(hitter)+n(pitcher)).toFixed(1)),battingScore:hitter,pitchingScore:pitcher,row,line:parts.join(" · ")};
 }
 function tabTable(rows,kind,gamesById){
- const keys=kind==="batting"?[["AB","ab"],["R","r"],["H","h"],["2B","doubles"],["3B","triples"],["HR","hr"],["RBI","rbi"],["BB","bb"],["SO","so"],["SB","sb"]]:[["IP","ip"],["H","h"],["ER","er"],["BB","bb"],["SO","so"],["HR","hr"],["BF","bf"]];
+ const keys=kind==="batting"?[["AB","ab"],["R","r"],["H","h"],["2B","doubles"],["3B","triples"],["HR","hr"],["RBI","rbi"],["BB","bb"],["SO","so"],["SB","sb"]]:[["IP","ip"],["H","h"],["ER","er"],["BB","bb"],["SO","so"],["HR","hr"],["W","w"],["L","l"],["SV","sv"],["BF","bf"]];
  const relevant=rows.filter(r=>r[kind]).slice().sort((a,b)=>String(b.date).localeCompare(String(a.date))||String(a.game_id).localeCompare(String(b.game_id)));
  if(!relevant.length)return '<div class="empty">No verified '+kind+' appearances in attended MiLB games.</div>';
  return '<div class="table-wrap"><table class="mlb-profile-game-table"><thead><tr><th>Date</th><th>Team</th><th>Match</th>'+keys.map(x=>'<th>'+x[0]+'</th>').join("")+'</tr></thead><tbody>'
@@ -102,12 +103,12 @@ function renderProfile(playerId,rows,games,links,collegeLinks){
  const bestB=impacts.filter(x=>x.battingScore!==null).sort((a,b)=>b.battingScore-a.battingScore)[0];
  const performance=best?'<div class="mlb-profile-signature"><small>BEST WITNESSED PERFORMANCE</small><strong>'+best.score.toFixed(1)+' Impact Score</strong><span>'+esc(best.line)+' · '+dt(best.row.date)+'</span><a href="'+gameUrl(best.row.game_id)+'">View game ↗</a></div>':"";
  const cardB=[["Games",gamesSeen.length],["Batting Average",decimal(batting.avg)],["Home Runs",batting.hr],["RBI",batting.rbi],["OPS",decimal(batting.ops)],["Best Performance",bestB?bestB.battingScore.toFixed(1):"—"]];
- const cardP=[["Games",pitching.games],["Innings",pitching.ip],["Strikeouts",pitching.so],["ERA",decimal(pitching.era,2)],["WHIP",decimal(pitching.whip,2)],["K/9",decimal(pitching.k9,2)]];
+ const cardP=[["Games",pitching.games],["W–L",pitching.wins===null||pitching.losses===null?"—":pitching.wins+"–"+pitching.losses],["Saves",pitching.saves],["Innings",pitching.ip],["Strikeouts",pitching.so],["ERA",decimal(pitching.era,2)]];
  const groups=role=>
   '<div class="mlb-profile-role-group" data-role="'+role+'"><div class="mlb-profile-role-label">'+role.toUpperCase()+'</div><div class="mlb-profile-stat-grid">'+statBoxes(role==="batting"?cardB:cardP)+'</div></div>';
  const headline=realTwoWay?'<div class="mlb-profile-two-way">'+groups("batting")+groups("pitching")+'</div>':statBoxes(rolePitcher?cardP:cardB);
  const battingItems=[["Games",batting.games],["Plate Appearances",batting.pa],["At-bats",batting.ab],["Hits",batting.hits],["Doubles",batting.doubles],["Triples",batting.triples],["Home Runs",batting.hr],["RBI",batting.rbi],["Runs",batting.r],["Walks",batting.bb],["Stolen Bases",batting.sb]];
- const pitchingItems=[["Games",pitching.games],["Innings",pitching.ip],["Hits",pitching.h],["Earned Runs",pitching.er],["Walks",pitching.bb],["Strikeouts",pitching.so],["Home Runs",pitching.hr],["Batters Faced",pitching.bf]];
+ const pitchingItems=[["Games",pitching.games],["Wins",pitching.wins],["Losses",pitching.losses],["Saves",pitching.saves],["Innings",pitching.ip],["Hits",pitching.h],["Earned Runs",pitching.er],["Walks",pitching.bb],["Strikeouts",pitching.so],["Home Runs",pitching.hr],["Batters Faced",pitching.bf]];
  const rateBat=[["Batting Average",decimal(batting.avg)],["On-Base Percentage",decimal(batting.obp)],["Slugging Percentage",decimal(batting.slg)],["OPS",decimal(batting.ops)],["Extra-Base Hits",batting.doubles===null||batting.triples===null||batting.hr===null?null:batting.doubles+batting.triples+batting.hr],["Isolated Power",batting.slg===null||batting.avg===null?null:decimal(batting.slg-batting.avg)],["Walk Rate",batting.bb===null||batting.pa===null||!batting.pa?null:(100*batting.bb/batting.pa).toFixed(1)+"%"],["Strikeout Rate",batting.so===null||!batting.pa?null:(100*batting.so/batting.pa).toFixed(1)+"%"]];
  const kbb=pitching.bb>0&&pitching.so!==null?ratio(pitching.so,pitching.bb,2):null;
  const kPct=pitching.bf>0&&pitching.so!==null?(100*pitching.so/pitching.bf).toFixed(1)+"%":null;
@@ -138,7 +139,7 @@ function renderProfile(playerId,rows,games,links,collegeLinks){
   +(rolePitcher&&hasP?'<h3>Pitching statistics from games you attended</h3>'+totals(pitchingItems,"mlb-profile-pitching-grid"):"")
   +(hasB?'<h3>Batting statistics from games you attended</h3>'+totals(battingItems):"")
   +(!rolePitcher&&hasP?'<h3>Pitching statistics from games you attended</h3>'+totals(pitchingItems,"mlb-profile-pitching-grid"):"")
-  +'<p class="mlb-note">All totals come exclusively from the MiLB games you attended. MLB and college baseball lines never contribute to these statistics. Pitching decisions and official career awards are not yet imported.</p></section>'
+  +'<p class="mlb-note">All totals come exclusively from the MiLB games you attended. MLB and college baseball lines never contribute to these statistics. Win, loss, and save totals are credited only from verified attended MiLB games, not from career or MLB statistics. Official career awards are not included.</p></section>'
   +'<section class="panel mlb-profile-panel" id="profile-advanced" role="tabpanel" hidden><h2>Advanced statistics</h2><p class="mlb-note">Rate statistics are recomputed from complete available MiLB box-score fields; a dash means data needed for the calculation is missing.</p>'
   +(hasB?'<h3>Batting efficiency</h3>'+totals(rateBat):"")
   +(hasP?'<h3>Pitching efficiency</h3>'+totals(ratePitch,"mlb-profile-pitching-advanced-grid")+'<p class="mlb-note">Estimated FIP uses a fixed 3.20 constant; actual FIP uses a league- and season-specific constant. Only the innings you witnessed are counted.</p>':"")+'</section>'

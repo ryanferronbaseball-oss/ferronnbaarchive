@@ -11,9 +11,9 @@ const playerUrl=r=>"./player.html?id="+encode(r.player_id);
 const gameUrl=g=>"./game.html?id="+encode(g.id);
 const fmt=(v,key)=>v===null||v===undefined||v===""?"—":String(v);
 const recordedOuts=ip=>{const m=/^(\d+)(?:\.([012]))?$/.exec(String(ip??""));return m?Number(m[1])*3+Number(m[2]||0):null};
-const labels={ab:"AB",pa:"PA",r:"R",h:"H",doubles:"2B",triples:"3B",hr:"HR",rbi:"RBI",bb:"BB",so:"SO",hbp:"HBP",sb:"SB",cs:"CS",ip:"IP",er:"ER",pitches:"Pitches",bf:"BF",putOuts:"PO",assists:"A",errors:"E"};
+const labels={ab:"AB",pa:"PA",r:"R",h:"H",doubles:"2B",triples:"3B",hr:"HR",rbi:"RBI",bb:"BB",so:"SO",hbp:"HBP",sb:"SB",cs:"CS",ip:"IP",er:"ER",w:"W",l:"L",sv:"SV",pitches:"Pitches",bf:"BF",putOuts:"PO",assists:"A",errors:"E"};
 const battingFields=["ab","r","h","doubles","triples","hr","rbi","bb","so"];
-const pitchingFields=["ip","h","er","bb","so","hr","pitches"];
+const pitchingFields=["ip","h","er","bb","so","hr","w","l","sv","pitches"];
 const fieldingFields=["putOuts","assists","errors"];
 const official=g=>g.source_game_id!=null&&g.box_score_status==="verified";
 const scores=g=>g.away_score!=null&&g.home_score!=null?g.away_score+" – "+g.home_score:"—";
@@ -59,7 +59,7 @@ function decisionPanel(g,decisions){
  };
  return '<section class="panel mlb-decisions-panel" id="pitchingDecisions"><div class="mlb-pregame-eyebrow">OFFICIAL MiLB GAME DECISIONS</div>'
  +'<h2>Win, Loss & Save</h2><div class="mlb-decision-grid">'+values.map(card).join("")+'</div>'
- +'<p class="mlb-note">Win, loss and save credits appear only when independently available in the official MiLB game record. They are not inferred from the final score or impact ranking.</p></section>';
+ +'<p class="mlb-note">Official winning, losing and save pitchers from MLB StatsAPI game decisions; a verified “No save” means no pitcher was credited with a save. These credits are not inferred from the score or performance ranking.</p></section>';
 }
 function performancePanel(rows){
  const x=potg(rows);
@@ -172,7 +172,7 @@ async function load(){
   const id=new URLSearchParams(location.search).get("id");
   let current=ordered.find(g=>String(g.id)===String(id))||ordered[0];
   app.innerHTML='<div class="eyebrow">MiLB · Games & box scores</div><h1>Game details.</h1>'
-   +'<p class="lead">Official MiLB game results, inning scoring, batting, pitching, fielding, and scoring-play history where recorded. All player statistics belong exclusively to your attended MiLB games.</p>'
+   +'<p class="lead">Official MiLB game results, verified winning and losing pitchers, saves, inning scoring, batting, pitching, fielding, and scoring-play history. All player statistics belong exclusively to your attended MiLB games.</p>'
    +'<div class="toolbar"><label class="filter-label" for="gameSelect">Attended game</label><select id="gameSelect">'
    +ordered.map(g=>'<option value="'+esc(g.id)+'">'+dt(g.date)+' · '+esc(g.away_team)+' @ '+esc(g.home_team)+' · '+esc(scores(g))+'</option>').join("")+'</select></div>'
    +'<section id="scoreboard"></section><div id="gameStats"></div>';

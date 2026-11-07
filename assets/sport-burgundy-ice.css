@@ -22,3 +22,24 @@ a:not(.action-link):not(.archive-logo):not(.ca-logo){color:#831738}
 .ca-feature small{color:#831738!important}
 .ca-feature strong,.ca-feature .ca-name{color:#192e43!important}
 /* Scope generic buttons narrowly to avoid altering team/award status indicators. */
+
+/* Sport navigation: override legacy green rules, including current and hover states. */
+.archive-header .archive-nav a,
+.ca-header .ca-nav > a,
+.ca-header .ca-nav > a:visited,
+.ca-header .ca-more > summary {
+  color:#831738 !important;
+}
+.archive-header .archive-nav a:hover,
+.archive-header .archive-nav a[aria-current="page"],
+.ca-header .ca-nav > a:hover,
+.ca-header .ca-nav > a.active,
+.ca-header .ca-nav > a[aria-current="page"],
+.ca-header .ca-more > summary:hover {
+  background:#d9f0fa !important;
+  color:#831738 !important;
+}
+/* Shared attendance charts: burgundy bars on pale-blue tracks. */
+.track,.mlb-track,.cb-track,.soccer-bar .bartrack{background:#e4f2f9 !important}
+.fill,.mlb-fill,.cb-fill,.soccer-bar .barfill{background:linear-gradient(90deg,#831738,#b84266) !important}
+.mlb-bar strong,.cb-bar strong,.soccer-bar strong{color:#831738 !important}

@@ -91,6 +91,14 @@ function leaderboard(players,category,key,limit,search){
  }).join("");
  return '<p class="mlb-note" aria-live="polite">Showing '+shown.length+' of '+valid.length+' qualifying '+(category==="batting"?"batters":"pitchers")+'.</p><div class="table-wrap"><table>'+header+'<tbody>'+body+'</tbody></table></div>'+(shown.length?"":'<div class="empty">No verified MiLB player statistics currently qualify for this selection.</div>');
 }
+function playerSearchResults(players,query){
+ if(!query)return '<p class="mlb-note">Search by player name or club to open any MiLB player profile, even if the player does not qualify for the current leaderboard.</p>';
+ const matches=players.filter(p=>p.name.toLowerCase().includes(query)||p.teams.join(" ").toLowerCase().includes(query))
+  .sort((a,b)=>a.name.localeCompare(b.name));
+ const shown=matches.slice(0,25);
+ return '<p class="mlb-note" role="status">'+matches.length+' matching player'+(matches.length===1?'':'s')+(matches.length>25?' · showing first 25':'')+'</p>'+
+  (matches.length?'<div class="milb-search-results">'+shown.map(p=>'<a href="'+pLink(p)+'"><strong>'+esc(p.name)+'</strong><span>'+esc(p.teams.join(', '))+' · '+displayNum(p.gamesSeen)+' attended game'+(p.gamesSeen===1?'':'s')+'</span></a>').join('')+'</div>':'<p class="empty">No matching MiLB player. Try another name or club.</p>');
+}
 async function main(){
  const app=$("app");
  try{
@@ -104,14 +112,17 @@ async function main(){
   const batters=players.filter(p=>p.bat.length>0),pitchers=players.filter(p=>p.pit.length>0);
   app.innerHTML='<div class="eyebrow">MiLB · Player statistics</div><h1>Players & leaderboards.</h1><p class="intro">Find the minor-league players you have watched, with statistics aggregated only from MiLB games you personally attended. MLB and college baseball totals are never combined here.</p>'+
    '<div class="metrics">'+[["Unique MiLB players",players.length],["Matched games",verified.length],["Batter records",batters.length],["Pitcher records",pitchers.length]].map(x=>'<div class="metric"><strong>'+displayNum(x[1])+'</strong><small>'+esc(x[0])+'</small></div>').join("")+'</div>'+
-   '<div class="mlb-filters"><label for="category">Statistical group<select id="category"><option value="batting">Batting</option><option value="pitching">Pitching</option></select></label><label for="stat">Leaderboard statistic<select id="stat"></select></label><label for="query">Find a player<input id="query" type="search" placeholder="Search a player name"></label><label for="limit">Show<select id="limit"><option>25</option><option>50</option><option>100</option><option>1000</option></select></label></div>'+
+   '<section class="milb-player-search" role="search" aria-label="Find a MiLB player"><label for="query">Search all MiLB players</label><input id="query" type="search" autocomplete="off" placeholder="Type a player name or club…" aria-controls="playerResults"><div id="playerResults" aria-live="polite"></div></section>'+
+   '<div class="mlb-filters"><label for="category">Statistical group<select id="category"><option value="batting">Batting</option><option value="pitching">Pitching</option></select></label><label for="stat">Leaderboard statistic<select id="stat"></select></label><label for="limit">Show<select id="limit"><option>25</option><option>50</option><option>100</option><option>1000</option></select></label></div>'+
    '<section class="panel"><h2 id="boardHeading"></h2><p class="mlb-note">Aggregate counting statistics include only imported attended MiLB games. Rate statistics are recomputed from the underlying MiLB totals. W/L/S totals are official pitching decisions from only the MiLB games you attended; they exclude full-season or MLB statistics.</p><div id="board"></div></section>';
   const category=$("category"),stat=$("stat");
   const draw=()=>{
    const key=stat.value,cat=category.value;
+   const query=$("query").value.trim().toLowerCase();
    const label=(cat==="batting"?bKeys:pKeys).find(x=>x[1]===key)?.[0]||key;
    $("boardHeading").textContent=label+" · "+(cat==="batting"?"Batting":"Pitching");
-   $("board").innerHTML=leaderboard(players,cat,key,Number($("limit").value),$("query").value.trim().toLowerCase());
+   $("board").innerHTML=leaderboard(players,cat,key,Number($("limit").value),query);
+   $("playerResults").innerHTML=playerSearchResults(players,query);
   };
   const change=()=>{
    stat.innerHTML=(category.value==="batting"?bKeys:pKeys).map(([label,key])=>'<option value="'+key+'">'+esc(label)+'</option>').join("");

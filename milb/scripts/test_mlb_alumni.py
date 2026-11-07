@@ -50,7 +50,7 @@ try:
   assert options==["draft","draft-newest","draft-oldest","games","hits","strikeouts","name"]
   page.locator("#sort").select_option("name")
   first_names=[x.inner_text() for x in page.locator(".alumni-name").all()]
-  assert first_names==sorted(first_names)
+  assert page.evaluate("() => {const n=[...document.querySelectorAll(\'.alumni-name\')].map(x=>x.textContent);return n.every((name,i)=>i===0||n[i-1].localeCompare(name)<=0)}")
   page.locator("#sort").select_option("hits")
   page.locator("#sort").select_option("strikeouts")
   page.locator("#sort").select_option("games")

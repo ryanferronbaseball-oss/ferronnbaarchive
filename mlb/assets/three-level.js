@@ -36,8 +36,9 @@ document.addEventListener("DOMContentLoaded",async()=>{
    const firstMLB=p.rows.map(r=>r.date).filter(Boolean).sort()[0];
    const firstCollege=collegeFirst[link.college_player_id];
    const firstDate=raw=>raw?A.date(raw):"Date pending verification";
+   const headshot='https://img.mlbstatic.com/mlb-photos/image/upload/w_213,q_85/v1/people/'+encodeURIComponent(pro.mlb_id)+'/headshot/67/current';
    return '<article class="triple-player-card">'
-    +'<div class="triple-player-head"><div class="triple-initials" aria-hidden="true">'+esc(initials)+'</div>'
+    +'<div class="triple-player-head"><div class="triple-initials" aria-hidden="true"><span>'+esc(initials)+'</span><img loading="lazy" src="'+headshot+'" alt="'+esc(link.name)+' MLB headshot" onerror="this.style.display=\'none\'"></div>'
     +'<div><span class="triple-achievement">★ SEEN IN COLLEGE + MiLB + MLB</span><h2>'+esc(link.name)+'</h2><p>'+esc((link.college_schools||[]).join(" / "))+'</p></div></div>'
     +'<div class="triple-journey" aria-label="Three-level journey"><span>COLLEGE</span><b>→</b><span>MiLB</span><b>→</b><span>MLB</span></div>'
     +'<div class="triple-player-details"><div><small>First seen · College</small><strong>'+esc(firstDate(firstCollege))+'</strong></div>'

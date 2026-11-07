@@ -1,0 +1,37 @@
+name: MiLB official game-details import
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "milb/scripts/enrich_game_details.py"
+      - ".github/workflows/milb-game-details-import.yml"
+jobs:
+  enrich:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Enrich only verified MiLB games with official inning and lineup data
+        run: python milb/scripts/enrich_game_details.py
+      - name: Upload verification audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: milb-official-game-details-audit
+          path: milb/data/game_detail_report.json
+          if-no-files-found: warn
+      - name: Publish verified MiLB details without modifying MLB archives
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add milb/data/player_stats.json milb/data/inning_scores.json milb/data/scoring_plays.json milb/data/pitching_decisions.json milb/data/game_detail_report.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Enrich verified MiLB game lineups, inning scores and scoring plays"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi

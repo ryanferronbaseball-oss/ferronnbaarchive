@@ -92,7 +92,9 @@ function renderProfile(playerId,rows,games,links,collegeLinks){
  const initials=name.trim().split(/\s+/).map(s=>s.charAt(0)).slice(0,2).join("").toUpperCase();
  const linked=links.find(x=>String(x.milb_id)===String(playerId)&&x.verified===true&&x.mlb_debut);
  const collegeLink=collegeLinks.find(x=>String(x.milb_id)===String(playerId)&&x.verified===true&&x.college_player_id);
+ const tripleLevel=Boolean(linked&&linked.mlb_seen===true&&collegeLink);
  const tags=[
+  ...(tripleLevel?[badge("★ SEEN IN COLLEGE + MiLB + MLB","../college-baseball/player.html?id="+urlId(collegeLink.college_player_id))]:[]),
   ...(linked?[badge("★ REACHED MLB","https://www.mlb.com/player/"+urlId(linked.mlb_id))]:[]),
   ...(linked&&linked.mlb_seen===true?[badge("★ SEEN IN MiLB + MLB","../mlb/player.html?id="+urlId(linked.mlb_id))]:[]),
   ...(collegeLink?[badge("★ SEEN IN COLLEGE + MiLB","../college-baseball/player.html?id="+urlId(collegeLink.college_player_id))]:[])

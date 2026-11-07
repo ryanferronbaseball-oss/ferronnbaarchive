@@ -562,6 +562,7 @@ async function renderPlayer(d){
   ?`${draft.draft_year} – Round ${draft.draft_round} – Pick ${draft.draft_pick} – ${draft.draft_team}`:"";
  const b=bat(p.rows),pi=pitch(p.rows),qualifiedHit=p.rows.some(x=>x.batting!=null),qualifiedPitch=p.rows.some(x=>x.pitching!=null);
  const cross=d.crosswalk.find(x=>x.verified===true&&String(x.college_player_id)===id);
+ const tripleLevel=Boolean(cross&&matchedMiLB&&String(cross.mlb_player_id)===String(matchedMiLB.milb_id));
  const entries=unique(p.rows.map(x=>x.game_id)).map(game_id=>d.gameMap.get(game_id)).filter(Boolean).sort((a,b)=>b.date.localeCompare(a.date)||b.id.localeCompare(a.id));
  const logRows=p.rows.slice().sort((a,b)=>(d.gameMap.get(b.game_id)?.date||"").localeCompare(d.gameMap.get(a.game_id)?.date||"")||b.game_id.localeCompare(a.game_id));
  const initials=p.name.split(/\s+/).map(x=>x[0]).slice(0,2).join("").toUpperCase();
@@ -589,6 +590,7 @@ async function renderPlayer(d){
   +(alumnus?'<a class="mlb-profile-badge cb-mlb-alumnus" href="https://www.mlb.com/player/'+encodeURIComponent(alumnus.mlb_player_id)+'" target="_blank" rel="noopener noreferrer" title="Verified MLB debut: '+esc(date(alumnus.mlb_debut))+'">★ MLB ALUMNUS ↗</a>':"")
   +(draftTag?'<span class="mlb-profile-badge cb-mlb-draft" title="MLB draft year, round, overall pick and drafting team">'+esc(draftTag)+'</span>':"")
   +(cross?'<a class="mlb-profile-badge cb-dual-level" href="../mlb/player.html?id='+encodeURIComponent(cross.mlb_player_id)+'" title="You attended this player’s college and MLB games">★ SEEN IN COLLEGE + MLB ↗</a>':"")
+  +(tripleLevel?'<a class="mlb-profile-badge cb-dual-level" href="../milb/player.html?id='+encodeURIComponent(matchedMiLB.milb_id)+'" title="You attended this player’s college, minor-league and MLB games">★ SEEN IN COLLEGE + MiLB + MLB ↗</a>':"")
   +(matchedMiLB?'<a class="mlb-profile-badge cb-dual-level" href="../milb/player.html?id='+encodeURIComponent(matchedMiLB.milb_id)+'" title="You attended this player’s college and minor-league baseball games">★ SEEN IN COLLEGE + MiLB ↗</a>':"")
   +championships.map(c=>'<span class="mlb-profile-badge cb-national-award" title="'+esc(c.school+' · '+c.year+' NCAA Division I national champions · Verified championship roster')+'">🏆 '+esc(c.year+' NATIONAL CHAMPION')+'</span>').join('')
   +cwsMops.map(a=>'<span class="mlb-profile-badge cb-national-award" title="'+esc(a.school+' · '+a.year+' College World Series Most Outstanding Player')+'">🏆 '+esc(a.year+' CWS MOST OUTSTANDING PLAYER')+'</span>').join('')

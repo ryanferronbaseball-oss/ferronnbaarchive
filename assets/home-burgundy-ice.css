@@ -29,7 +29,8 @@ h1 em{color:var(--home-burgundy)!important}
 .sport-graphic .serial{color:#596f83!important}
 .sport-metrics strong{color:var(--home-burgundy)!important}
 .sport-metrics small{color:var(--home-muted)!important}
-.sport-button{background:var(--home-burgundy)!important;color:#fff!important}
+/* Keep archive CTA labels legible even when global visited-link rules apply. */
+.sport-button,.sport-button:link,.sport-button:visited,.sport-button:hover,.sport-button:focus-visible,.sport-button span{background:var(--home-burgundy)!important;color:#fff!important}
 .sport-button:hover,.sport-button:focus-visible{background:var(--home-burgundy-dark)!important}
 .future{background:#eef7fb!important;border-color:#bcd8e8!important}
 .future .planned{background:var(--home-ice)!important;color:var(--home-burgundy)!important}

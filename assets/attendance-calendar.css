@@ -27,3 +27,20 @@
 .calendar-game-info{display:flex;align-items:flex-start;gap:10px}.calendar-game-sport{font-size:10px;color:#738073;text-transform:uppercase;font-weight:800;letter-spacing:.06em}.calendar-game-name{font-size:14px;color:#263c2d;font-weight:750;margin-top:2px}.calendar-game-meta{color:#6d7a71;font-size:12px;margin-top:3px}
 .calendar-game a{color:#284d3c;font-size:12px;font-weight:800;text-decoration:none;white-space:nowrap}.calendar-game a:hover{text-decoration:underline}
 @media(max-width:640px){.calendar-section{margin:45px 0}.calendar-shell{padding:12px;border-radius:15px}.calendar-toolbar{align-items:flex-start;gap:14px}.calendar-selectors{gap:6px}.calendar-selectors label{font-size:0}.calendar-selectors select{font-size:12px}.calendar-filters{margin:14px 0}.calendar-filter{font-size:10px;padding:7px}.calendar-weekdays,.calendar-grid{gap:3px}.calendar-day,.calendar-day-outside{min-height:52px;border-radius:6px}.calendar-day{padding:5px;gap:6px}.calendar-day[aria-pressed=true]{padding:4px}.calendar-day-number{font-size:11px}.calendar-dot{width:6px;height:6px}.calendar-day-dots{gap:3px}.calendar-game{align-items:flex-start}.calendar-game a{font-size:11px}}
+/* Match the portal's burgundy-red and ice-blue palette; preserve sport-dot colors. */
+.calendar-shell{background:#fff;border-color:var(--home-border,#d4e1e9);box-shadow:0 12px 38px rgba(25,46,67,.06)}
+.calendar-navigation button,.calendar-selectors select,.calendar-filter{background:#edf7fc;border-color:#c8e3ef;color:var(--home-navy,#192e43)}
+.calendar-navigation button:hover,.calendar-selectors select:hover,.calendar-filter:hover:not([aria-pressed=true]){background:var(--home-ice,#d9f0fa);border-color:#a9d1e5}
+.calendar-navigation button:focus-visible,.calendar-selectors select:focus-visible,.calendar-filter:focus-visible,.calendar-day:focus-visible{outline:3px solid #b8dceb;outline-offset:2px}
+.calendar-filter[aria-pressed=true]{background:var(--home-burgundy,#831738);border-color:var(--home-burgundy,#831738);color:white}
+.calendar-selectors label,.calendar-weekdays span,.calendar-bottom,.calendar-game-sport,.calendar-game-meta,.calendar-details p{color:var(--home-muted,#566879)}
+.calendar-day{background:#f4faff;border-color:#d9e9f2;color:var(--home-navy,#192e43)}
+.calendar-day-outside{background:#edf5fa}
+.calendar-day:hover{background:#e5f4fc;border-color:#a9d1e5}
+.calendar-day[aria-pressed=true]{background:#f9e9ef;border-color:var(--home-burgundy,#831738)}
+.calendar-day.is-today .calendar-day-number{background:var(--home-burgundy,#831738)}
+.calendar-day-number,.calendar-details h3,.calendar-game-name{color:var(--home-navy,#192e43)}
+.calendar-day.is-today .calendar-day-number{color:white}
+.calendar-details{border-top-color:var(--home-border,#d4e1e9)}
+.calendar-game{border-bottom-color:#e3edf3}
+.calendar-game a{color:var(--home-burgundy,#831738)}

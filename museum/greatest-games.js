@@ -30,6 +30,24 @@ const candidates=[
  ['2026-05-16','Arkansas','Kentucky','College Baseball']
 ].map(([date,away,home,sport,site])=>({date,away,home,sport,site}));
 const stories={
+ '2022-11-17':{
+  title:'Eric Williams Jr. scores a school-record 43 in an overtime thriller',
+  score:'Utah State 91 · San Diego 89 · Overtime',
+  venue:'Jenny Craig Pavilion · San Diego, California',
+  image:'./utah-state-san-diego-2022.webp',
+  photoAlt:'San Diego forward Eric Williams Jr., number 50, celebrating with his teammates during the Utah State game',
+  caption:'NOVEMBER 17, 2022 · UTAH STATE AT SAN DIEGO · ERIC WILLIAMS JR.',
+  game:'../college/game.html?id=59',
+  paragraphs:[
+   'November 17, 2022, produced one of the greatest individual basketball performances in Courtside Archive history, as San Diego’s Eric Williams Jr. scored a school-record 43 points in a thrilling 91–89 overtime loss to Utah State at Jenny Craig Pavilion.',
+   'Williams Jr. delivered an extraordinary offensive performance, shooting 13-for-20 from the field, 7-for-8 from three-point range, and 10-for-13 at the free-throw line. He also collected 13 rebounds, recording a remarkable 43-point double-double. His scoring total surpassed the previous San Diego single-game record of 40 points, established by Robert “Pinky” Smith in 1972.',
+   'The game itself was a back-and-forth battle featuring 15 lead changes and 10 ties. San Diego jumped to an early 9–0 advantage, but Utah State responded to keep the contest close throughout the evening. With the Toreros trailing in the closing seconds of regulation, Williams Jr. hit a spectacular fadeaway three-pointer from the corner with 2.8 seconds remaining, tying the game at 78 and forcing overtime.',
+   'Williams continued his historic night with another three-pointer in the extra period, securing the program scoring record. San Diego’s Marcellus Earlington converted a three-point play with 17 seconds remaining to tie the game at 89, but Utah State’s Steven Ashworth answered with the winning jumper with four seconds left. A final attempt by Sigu Sisoho Jawara missed, sealing a dramatic 91–89 Aggies victory.',
+   'Utah State received outstanding contributions from Daniel Akin, who finished with 21 points and 15 rebounds, along with Taylor Funk and Max Shulga, who each scored 20 points. Nevertheless, the night belonged to Williams Jr., whose historic scoring performance and unforgettable game-tying shot made this one of the defining college basketball experiences of the Archive.'
+  ],
+  columns:['PTS','REB','AST','More'],
+  players:[['Eric Williams Jr.','43','13','1','7-for-8 3PT · school record'],['Daniel Akin','21','15','0','7-for-11 FG'],['Taylor Funk','20','6','1','5 threes'],['Max Shulga','20','4','5','5-for-5 3PT'],['Sigu Sisoho Jawara','17','3','3','3 threes']]
+ },
  '2022-10-18':{
   title:'An October first and Schwarber’s 488-foot blast',
   score:'Philadelphia Phillies 2 · San Diego Padres 0 · NLCS Game 1',

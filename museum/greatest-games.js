@@ -372,7 +372,7 @@ const root=document.getElementById('greatestGamesList'),sportEl=document.getElem
 if(!root)return;
 const esc=v=>String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const formatDate=date=>new Date(date+'T12:00:00Z').toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric',timeZone:'UTC'});
-const candidatePhotos={'2018-09-28':'./padres-dbacks-2018.webp'};
+const candidatePhotos={'2018-09-28':'./padres-dbacks-2018.avif'};
 const expanded=new Set();
 const label=g=>g.site==='neutral'?`${g.away} vs. ${g.home}`:`${g.away} @ ${g.home}`;
 function content(g){const s=stories[g.date];if(!s)return `<div class="gg-pending">${candidatePhotos[g.date]?`<figure class="gg-photo"><img src="${esc(candidatePhotos[g.date])}" alt="San Diego Padres celebrating their September 2018 walk-off victory" loading="lazy"><figcaption>SEPTEMBER 28, 2018 · D-BACKS AT PADRES · POSTGAME CELEBRATION</figcaption></figure>`:''}<p>This game has been nominated for the permanent collection. The photograph is uploaded; the full story, selected performances and box-score link await review.</p></div>`;

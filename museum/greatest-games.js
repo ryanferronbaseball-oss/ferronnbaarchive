@@ -30,6 +30,23 @@ const candidates=[
  ['2026-05-16','Arkansas','Kentucky','College Baseball']
 ].map(([date,away,home,sport,site])=>({date,away,home,sport,site}));
 const stories={
+ '2025-05-23':{
+  title:'Two LSU aces combine for 16 strikeouts as LaViolette plays through injury',
+  score:'LSU 4 · Texas A&M 3',
+  venue:'Hoover Metropolitan Stadium · Hoover, Alabama · SEC Tournament quarterfinal',
+  image:'./lsu-texas-am-2025.webp',
+  photoAlt:'LSU left-hander Kade Anderson pitching during the SEC Tournament',
+  caption:'MAY 23, 2025 · TEXAS A&M VS. LSU · KADE ANDERSON',
+  game:'../college-baseball/game.html?id=cb-2025-05-23-texas-a-m-lsu-att0361',
+  paragraphs:[
+   'A rare opportunity to witness two of college baseball’s premier pitchers in the same game made LSU’s 4–3 victory over Texas A&M in the 2025 SEC Tournament quarterfinals an unforgettable entry in the Courtside Archive.',
+   'LSU turned to its two aces to cover all nine innings. Kade Anderson delivered a dominant six-inning start, striking out 12 Aggies while allowing four hits, one walk, and three earned runs. Anthony Eyanson, normally a member of LSU’s starting rotation, entered in the seventh and finished the game with three scoreless innings, four strikeouts, and his first save of the season. Together, the pair combined for 16 strikeouts across nine innings, showcasing two exceptional arms on the same night.',
+   'Yet perhaps the most remarkable individual story belonged to Texas A&M’s Jace LaViolette. Just one day after suffering a broken left hand against Auburn and undergoing surgery that evening, LaViolette returned to the lineup against two of the nation’s most formidable pitchers. He finished 1-for-3 with two RBI, including an RBI single and a sacrifice fly, accounting for two of Texas A&M’s three runs.',
+   'Ethan Frey’s two-run home run in the third inning ultimately provided LSU with the winning margin. The Tigers held on for a 4–3 victory, advancing to the SEC Tournament semifinals. For the Archive, the game represents a remarkable convergence of elite pitching talent and competitive determination, made even more memorable by LaViolette’s courageous performance.'
+  ],
+  columns:['IP / H','ER','BB / K','Decision / Batting'],
+  players:[['Kade Anderson','6.0 / 4','3','1 / 12','Win'],['Anthony Eyanson','3.0 / 2','0','1 / 4','Save'],['Jace LaViolette','—','—','—','1-for-3 · 2 RBI'],['Ethan Frey','—','—','—','2-for-3 · 2B · HR · 3 RBI']]
+ },
  '2007-03-18':{
   title:'Kobe’s historic streak meets Garnett’s Timberwolves',
   score:'Los Angeles Lakers 109 · Minnesota Timberwolves 102',

@@ -300,6 +300,12 @@ body[data-page="player"] .mlb-profile-badge.mlb-triple-level:hover{background:#2
  background:#EFF3EB;color:#335D42;font-weight:750;padding:11px 16px;font-size:13px;line-height:1.35}
 .mlb-profile-tab:hover,.mlb-profile-log-tabs button:hover{background:#DFEADD}
 .mlb-profile-tab[aria-selected="true"],.mlb-profile-log-tabs button[aria-selected="true"]{background:#284D3C;color:#fff;border-color:#284D3C}
+.mlb-profile-wbc .mlb-wbc-kicker{font-size:11px;text-transform:uppercase;letter-spacing:.14em;font-weight:850;color:#8b4157;margin-bottom:6px}
+.mlb-wbc-teams{display:grid;grid-template-columns:repeat(auto-fit,minmax(205px,1fr));gap:12px;margin:20px 0}
+.mlb-wbc-team{border:1px solid #d9dee7;border-radius:13px;padding:17px;background:#f8fbfd;display:flex;flex-direction:column;gap:8px}
+.mlb-wbc-season{font-size:11px;font-weight:850;color:#7c4360;letter-spacing:.1em}
+.mlb-wbc-team strong{font-size:19px;color:#203a53}
+.mlb-wbc-team a{font-size:12px;font-weight:750;color:#792941}
 .mlb-profile-panel{margin:20px 0;border-radius:14px;min-width:0}
 .mlb-profile-panel[hidden]{display:none!important}
 .mlb-profile-panel h2{font-size:23px;margin:0 0 16px}

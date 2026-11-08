@@ -6,7 +6,15 @@ el("navigation").innerHTML=A.nav(page);
 let d;try{d=await A.load()}catch(err){app.innerHTML='<div class="empty">Unable to load attendance data: '+esc(err.message)+'</div>';return}
 const {games,rows,players,scores,decisions}=d;
 const collegeCrossover=new Map(),milbCrossover=new Map(),verifiedCollegeMiLB=new Set();
+const wbcById=new Map();
 if(page==="player"){
+ try{
+  const response=await fetch("./data/wbc_roster_matches.json",{cache:"no-store"});
+  if(response.ok){
+   const registry=await response.json();
+   for(const record of registry.players||[])if(record.player_id!=null&&Array.isArray(record.teams))wbcById.set(String(record.player_id),record.teams);
+  }
+ }catch(error){console.warn("World Baseball Classic roster matches unavailable",error)}
  try{
   const response=await fetch("../milb/data/player_links.json",{cache:"no-store"});
   if(response.ok){
@@ -287,6 +295,8 @@ function profilePage(){
  const id=new URLSearchParams(location.search).get("id");
  const p=players.find(x=>String(x.player_id)===String(id));
  if(!p){app.innerHTML='<div class="eyebrow">MLB · Player profile</div><h1>Player not found.</h1><p><a href="./stats.html">← Player leaderboards</a></p>';return}
+ const wbcTeams=wbcById.get(String(p.player_id))||[];
+ const wbcSources={2023:"https://www.mlb.com/news/mlb-club-list-of-world-baseball-classic-players",2026:"https://www.mlb.com/amp/news/mlb-players-on-2026-world-baseball-classic-rosters.html"};
  const bs=batting(p.batting), ps=p.pitching.length?verifiedPitcherTotals(p):null;
  const officialPitcherRecord=pitcherDecisions(p.player_id);
  const hasOfficialTwoWayRole=p.rows.some(r=>String(r.position||"").toUpperCase()==="TWP");
@@ -428,7 +438,7 @@ function profilePage(){
   +'<p class="mlb-profile-seen">'+p.game_count+' attended '+(p.game_count===1?"game":"games")+' · '+esc(years)+'</p></div></section>'
   +'<div class="mlb-profile-headline-stats'+(twoWay?" is-two-way":"")+'">'+summaryTiles+'</div>'
   +'<div class="mlb-profile-tabs" id="profileTabs" role="tablist" aria-label="Player profile sections">'
-  +[["overview","Overview"],["advanced","Advanced"],["games","Game Log"],["milestones","Milestones"]].map(([key,title],i)=>
+  +[["overview","Overview"],["advanced","Advanced"],["games","Game Log"],["milestones","Milestones"],...(wbcTeams.length?[["wbc","World Baseball Classic"]]:[])].map(([key,title],i)=>
    '<button type="button" class="mlb-profile-tab" role="tab" data-profile-tab="'+key+'" aria-controls="profile-'+key+'" aria-selected="'+(i===0)+'">'+title+'</button>').join("")+'</div>'
   +'<section class="panel mlb-profile-panel" id="profile-overview" role="tabpanel">'
   +'<h2>Player overview</h2>'+overviewLine
@@ -449,7 +459,11 @@ function profilePage(){
   +'<section class="panel mlb-profile-panel" id="profile-milestones" role="tabpanel" hidden>'
   +'<h2>Milestones you witnessed</h2><div class="mlb-profile-total-grid">'+milestones.map(([title,value])=>
    '<div class="mlb-profile-total"><small>'+esc(title)+'</small><strong>'+value+'</strong></div>').join("")+'</div>'
-  +'<p class="mlb-note">These are single-game statistical milestones from your attendance archive, not full-career accomplishments. <a href="./records.html">Explore all MLB records ↗</a></p></section>';
+  +'<p class="mlb-note">These are single-game statistical milestones from your attendance archive, not full-career accomplishments. <a href="./records.html">Explore all MLB records ↗</a></p></section>'
+  +(wbcTeams.length?'<section class="panel mlb-profile-panel mlb-profile-wbc" id="profile-wbc" role="tabpanel" hidden>'
+   +'<div class="mlb-wbc-kicker">International baseball</div><h2>World Baseball Classic</h2><p class="mlb-note">National teams this player was listed with in the official World Baseball Classic roster announcements.</p>'
+   +'<div class="mlb-wbc-teams">'+wbcTeams.slice().sort((a,b)=>a.year-b.year).map(t=>'<div class="mlb-wbc-team"><span class="mlb-wbc-season">'+esc(t.year)+'</span><strong>'+esc(t.country)+'</strong><a href="'+esc(wbcSources[t.year]||"https://www.mlb.com/world-baseball-classic")+'" target="_blank" rel="noopener noreferrer">Official roster ↗</a></div>').join('')+'</div>'
+   +'<p class="mlb-note">Roster inclusion does not by itself confirm an appearance in a WBC game. The current roster audit covers 2023 and 2026; earlier tournaments have not yet been fully matched.</p></section>':"");
  function showMain(key){
   app.querySelectorAll("#profileTabs [data-profile-tab]").forEach(b=>b.setAttribute("aria-selected",String(b.dataset.profileTab===key)));
   app.querySelectorAll(".mlb-profile-panel").forEach(section=>section.hidden=section.id!=="profile-"+key);

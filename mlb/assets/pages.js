@@ -306,6 +306,30 @@ function statsPage(){
  const draw=()=>{let k=stat.value,label=(cat.value==="batting"?bKeys:pKeys).find(x=>x[1]===k)?.[0];el("boardHeading").textContent=label+" · "+(cat.value==="batting"?"Batting":"Pitching");el("board").innerHTML=leaderTable(cat.value,k,Number(el("limit").value),el("query").value.trim().toLowerCase())};
  cat.addEventListener("change",change);["stat","query","limit"].forEach(x=>el(x).addEventListener("input",draw));change();
 }
+// Country of birth is sourced from the MLB player record, not WBC eligibility.
+// Keep the flag separate from the actual name text for accessibility and search.
+const birthCountries=new Map(),countryRequests=new Set();
+const birthCountryFlags={USA:"US",DOM:"DO",VEN:"VE",CUB:"CU",PUR:"PR",CAN:"CA",MEX:"MX",JPN:"JP",KOR:"KR",COL:"CO",PAN:"PA",AUS:"AU",NCA:"NI",BRA:"BR",NED:"NL",DEU:"DE",GER:"DE",ITA:"IT",TPE:"TW",TWN:"TW",CHN:"CN",ARU:"AW",CUR:"CW",BAH:"BS",BHS:"BS",JAM:"JM",NZL:"NZ",GBR:"GB",UK:"GB",FRA:"FR",ESP:"ES",RSA:"ZA",ZAF:"ZA",HON:"HN",HND:"HN",CRC:"CR",GUA:"GT",GTM:"GT",SAL:"SV",SLV:"SV",PER:"PE",ARG:"AR",CHI:"CL",CHL:"CL",ISR:"IL",IND:"IN",PHI:"PH",PHL:"PH",BEL:"BE",AUT:"AT",SUI:"CH",CHE:"CH",SWE:"SE",FIN:"FI",CZE:"CZ",CZECH:"CZ",RUS:"RU",UKR:"UA",POL:"PL",LTU:"LT",HAI:"HT",HTI:"HT",VIR:"VI",GUM:"GU"};
+function countryFlagMarkup(country){
+ const raw=String(country||"").trim(),code=birthCountryFlags[raw.toUpperCase()]||(/^[A-Z]{2}$/i.test(raw)?raw.toUpperCase():null);
+ if(!code)return "";
+ const flag=[...code].map(c=>String.fromCodePoint(127397+c.charCodeAt(0))).join("");
+ return '<span class="mlb-player-country-flag" role="img" aria-label="Born in '+esc(raw)+'" title="Birth country: '+esc(raw)+'">'+flag+'</span>';
+}
+function loadBirthCountry(id){
+ if(birthCountries.has(id)||countryRequests.has(id))return;
+ countryRequests.add(id);
+ fetch("https://statsapi.mlb.com/api/v1/people/"+encodeURIComponent(id),{cache:"force-cache"})
+  .then(r=>{if(!r.ok)throw Error("MLB player biography HTTP "+r.status);return r.json()})
+  .then(data=>{
+   const country=data.people?.[0]?.birthCountry||"";
+   birthCountries.set(id,country);
+   const target=document.querySelector("[data-mlb-country-for='"+id+"']");
+   if(target)target.innerHTML=countryFlagMarkup(country);
+  })
+  .catch(err=>console.warn("MLB birth country unavailable for player",id,err))
+  .finally(()=>countryRequests.delete(id));
+}
 function profilePage(){
  const id=new URLSearchParams(location.search).get("id");
  const p=players.find(x=>String(x.player_id)===String(id));
@@ -449,7 +473,7 @@ function profilePage(){
   +'<div class="mlb-profile-photo"><img alt="" src="https://img.mlbstatic.com/mlb-photos/image/upload/w_213,q_85/v1/people/'+encodeURIComponent(p.player_id)+'/headshot/67/current"'
   +' onerror="this.style.display=\'none\';this.parentNode.textContent=\''+esc(nameInitials)+'\'"></div>'
   +'<div class="mlb-profile-identity"><div class="mlb-profile-team-name">'+esc(p.teams.join(" / "))+'</div>'
-  +'<h1>'+esc(p.name)+'</h1>'+badges
+  +'<div class="mlb-player-name-row"><h1>'+esc(p.name)+'</h1><span class="mlb-player-country-slot" data-mlb-country-for="'+esc(p.player_id)+'">'+countryFlagMarkup(birthCountries.get(String(p.player_id)))+'</span></div>'+badges
   +'<p class="mlb-profile-seen">'+p.game_count+' attended '+(p.game_count===1?"game":"games")+' · '+esc(years)+'</p></div></section>'
   +'<div class="mlb-profile-headline-stats'+(twoWay?" is-two-way":"")+'">'+summaryTiles+'</div>'
   +'<div class="mlb-profile-tabs" id="profileTabs" role="tablist" aria-label="Player profile sections">'
@@ -504,6 +528,7 @@ function profilePage(){
  app.insertAdjacentHTML("beforeend", '<div id="sc-profile-panel"></div>');
  window.MLBStatcast?.renderPlayer(p,el("sc-profile-panel"));
  document.title=p.name+" | MLB Courtside Archive";
+ loadBirthCountry(String(p.player_id));
 }
 
 function hofPage(){

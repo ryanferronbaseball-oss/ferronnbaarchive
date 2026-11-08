@@ -65,3 +65,9 @@
 .gg-game[open] .gg-card-action{margin-top:7px}
 @media(max-width:900px){.gg-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:560px){.gg-list{gap:11px}.gg-card-body{padding:12px}.gg-card-body strong{font-size:19px}.gg-sport-symbol{font-size:55px}.gg-card-image{aspect-ratio:1/1}.gg-game summary{min-height:290px}.gg-game[open] summary{grid-template-columns:110px minmax(0,1fr)}.gg-game[open] .gg-card-image{min-height:165px}.gg-game[open] .gg-card-body{padding:12px}.gg-game[open] .gg-card-body strong{font-size:20px}.gg-content{padding:16px}}
+
+/* Expanded exhibits have one hero image. Hide the square preview once opened. */
+.gg-game[open] summary{display:block;min-height:0}
+.gg-game[open] .gg-card-image{display:none}
+.gg-game[open] .gg-card-body{padding:20px 25px}
+@media(max-width:560px){.gg-game[open] .gg-card-body{padding:15px}}

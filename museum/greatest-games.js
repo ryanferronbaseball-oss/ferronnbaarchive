@@ -30,6 +30,22 @@ const candidates=[
  ['2026-05-16','Arkansas','Kentucky','College Baseball']
 ].map(([date,away,home,sport,site])=>({date,away,home,sport,site}));
 const stories={
+ '2018-02-03':{
+  title:'Landale’s 34 and 18: Saint Mary’s survives in San Diego',
+  score:'Saint Mary’s 65 · San Diego 62',
+  venue:'Jenny Craig Pavilion · San Diego, California',
+  image:'',
+  photoAlt:'Jock Landale defending San Diego forward Isaiah Pineiro',
+  caption:'FEBRUARY 3, 2018 · SAINT MARY’S AT SAN DIEGO · LANDALE 34 AND 18',
+  game:'../ncaab/index.html',
+  paragraphs:[
+   'On February 3, 2018, No. 13 Saint Mary’s arrived at the Jenny Craig Pavilion riding one of the longest winning streaks in the country. San Diego pushed the Gaels to the final moments in a memorable West Coast Conference matchup.',
+   'Saint Mary’s center Jock Landale delivered a remarkable performance: 34 points, 18 rebounds, and four assists while shooting 15-for-22 from the floor. His interior scoring and rebounding proved decisive in a game where every possession mattered.',
+   'San Diego forward Isaiah Pineiro answered with 24 points, keeping the Toreros within striking distance throughout the night. The matchup between Pineiro and Landale highlighted a tense, physical contest.',
+   'Saint Mary’s escaped with a 65–62 victory, extending its winning streak to 18 games. For Courtside Archive, the close finish and Landale’s dominant 34-point, 18-rebound double-double made this a standout night at the Jenny Craig Pavilion.'
+  ]
+ },
+
  '2013-08-09':{
   title:'Six Runs Down, One Unforgettable Comeback',
   score:'Los Angeles Dodgers 7 · Tampa Bay Rays 6',

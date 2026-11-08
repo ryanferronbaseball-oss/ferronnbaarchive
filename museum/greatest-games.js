@@ -30,6 +30,26 @@ const candidates=[
  ['2026-05-16','Arkansas','Kentucky','College Baseball']
 ].map(([date,away,home,sport,site])=>({date,away,home,sport,site}));
 const stories={
+ '2006-06-28':{
+  title:'A-Rod’s redemption: a 12th-inning walk-off in the Bronx',
+  score:'New York Yankees 4 · Atlanta Braves 3 · 12 innings',
+  venue:'Original Yankee Stadium · Bronx, New York',
+  image:'./braves-yankees-walkoff-2006.webp',
+  photoAlt:'New York Yankees starting pitcher Chien-Ming Wang preparing to deliver a pitch',
+  caption:'JUNE 28, 2006 · BRAVES AT YANKEES · A-ROD WALK-OFF',
+  game:'../mlb/game.html?id=41109',
+  paragraphs:[
+   'On June 28, 2006, two of baseball’s most recognizable franchises met at one of the sport’s most historic venues. The Atlanta Braves visited the New York Yankees at the original Yankee Stadium, bringing together an extraordinary collection of established stars, future Hall of Famers, and one of the most dramatic finishes in Courtside Archive history.',
+   'The afternoon began with an outstanding pitching matchup between Atlanta’s John Smoltz and New York’s Chien-Ming Wang. Smoltz, already a legendary postseason performer and future Hall of Famer, delivered seven strong innings while allowing just one run. Wang countered with eight innings of two-run baseball, keeping the Yankees within striking distance. Neither starter factored into the decision.',
+   'The star power extended well beyond the mound. New York’s lineup featured Derek Jeter, Alex Rodriguez, Jason Giambi, Johnny Damon, and Bernie Williams. Atlanta countered with Chipper Jones, Andruw Jones, Edgar Rentería, Brian McCann, and Jeff Francoeur. The game offered an opportunity to watch some of the defining players of the 2000s sharing the same field.',
+   'Atlanta held a 2–1 lead entering the eighth inning, but Jason Giambi launched a solo home run to tie the game. Both teams remained scoreless through the next three innings, sending the contest deep into extra innings.',
+   'In the top of the 12th, Marcus Giles broke the deadlock with a solo home run, putting Atlanta ahead 3–2. With the Braves just three outs from victory, the Yankees faced one final opportunity.',
+   'After Jason Giambi drew a one-out walk in the bottom of the 12th, Alex Rodriguez stepped to the plate against Jorge Sosa. Rodriguez had been enduring a difficult June, hearing boos from his own fans as his offensive struggles continued. On a 3–1 pitch, Rodriguez launched a two-run walk-off home run to left field, transforming a 3–2 deficit into a stunning 4–3 Yankees victory. The blast was his 16th home run of the season and the 100th of his Yankees career.',
+   'The dramatic finish sent the crowd of 54,186 into celebration, capping a nearly four-hour afternoon at one of baseball’s most storied ballparks. For Courtside Archive, the game combined a Smoltz–Wang pitching duel, an extraordinary collection of talent, the atmosphere of the original Yankee Stadium, and an unforgettable walk-off from one of baseball’s biggest stars.'
+  ],
+  columns:['H-AB / IP','H / HR','RBI / ER','More'],
+  players:[['Alex Rodriguez','2-5','HR','3 RBI','1 BB · walk-off HR'],['John Smoltz (P)','7.0 IP','—','1 ER','No decision'],['Chien-Ming Wang (P)','8.0 IP','7 H','2 ER','No decision'],['Jason Giambi','—','HR','1 RBI','12th-inning walk'],['Marcus Giles','—','HR','1 RBI','Go-ahead HR, 12th'],['Ron Villone (P)','—','—','—','Win'],['Jorge Sosa (P)','—','—','—','Loss']]
+ },
  '2003-07-24':{
   title:'The Beginning: an 11-inning walk-off starts the Archive',
   score:'Los Angeles Dodgers 1 · Colorado Rockies 0 · 11 innings',

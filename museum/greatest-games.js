@@ -30,6 +30,25 @@ const candidates=[
  ['2026-05-16','Arkansas','Kentucky','College Baseball']
 ].map(([date,away,home,sport,site])=>({date,away,home,sport,site}));
 const stories={
+ '2022-06-03':{
+  title:'Brycen Mautz leads San Diego to a stunning NCAA Regional upset',
+  score:'San Diego 3 · Vanderbilt 2 · NCAA Corvallis Regional',
+  venue:'Goss Stadium at Coleman Field · Corvallis, Oregon',
+  image:'./san-diego-vanderbilt-regional-2022.webp',
+  photoAlt:'San Diego baseball players celebrate together on the field at Goss Stadium following the Vanderbilt upset',
+  caption:'JUNE 3, 2022 · SAN DIEGO VS. VANDERBILT · CORVALLIS REGIONAL',
+  game:'../college-baseball/game.html?id=cb-2022-06-03-san-diego-vanderbilt-att0172',
+  paragraphs:[
+   'June 3, 2022, delivered one of the most significant victories in the University of San Diego’s recent baseball history, as the Toreros stunned perennial national powerhouse Vanderbilt with a 3–2 victory in the opening game of the NCAA Corvallis Regional at Goss Stadium.',
+   'At the center of the upset was sophomore left-hander Brycen Mautz, who produced one of the most memorable postseason pitching performances in the Courtside Archive. Facing an accomplished Vanderbilt lineup, Mautz worked seven outstanding innings, surrendering just four hits, one earned run, and one walk while striking out five. Remarkably, he needed only 75 pitches to navigate seven innings, earning his tenth victory of the season.',
+   'San Diego provided its starter with an early advantage. Caleb Ricketts drove in Cody Jefferis in the first inning before adding an RBI single in the third to give USD a 2–0 lead. Camden Vasquez extended the advantage to three runs with an RBI groundout in the fourth, putting the Toreros in position for a major postseason upset.',
+   'Vanderbilt refused to go away quietly. Dominic Keegan launched a solo home run in the seventh inning, and Calvin Hewett followed with another solo shot in the eighth to narrow the deficit to 3–2. With the pressure mounting, San Diego turned to Ian Churchill in the ninth. Despite allowing the tying run to reach scoring position, Churchill secured the final out and preserved the victory.',
+   'The win represented San Diego’s first NCAA Regional victory since 2013, when a Toreros team led by Kris Bryant defeated Cal Poly. Nearly a decade later, Mautz and the 2022 Toreros delivered another memorable postseason moment.',
+   'For the Courtside Archive, this game stands as a defining example of a tremendous pitching performance producing an unlikely postseason victory. Against one of college baseball’s most recognizable programs, San Diego demonstrated its ability to compete with the nation’s best, creating an unforgettable afternoon in Corvallis.'
+  ],
+  columns:['H-AB / IP','Extra / H','RBI / ER','More'],
+  players:[['Brycen Mautz (P)','7.0 IP','4 H','1 ER','1 BB · 5 K · Win'],['Caleb Ricketts','1-4','—','2 RBI','—'],['Dustin Allen','2-4','3B','0','1 run'],['Jack Costello','1-4','2B','0','1 run'],['Ian Churchill (P)','1.0 IP','0 H','0 ER','Save'],['Dominic Keegan','1-4','HR','1 RBI','—']]
+ },
  '2022-11-17':{
   title:'Eric Williams Jr. scores a school-record 43 in an overtime thriller',
   score:'Utah State 91 · San Diego 89 · Overtime',

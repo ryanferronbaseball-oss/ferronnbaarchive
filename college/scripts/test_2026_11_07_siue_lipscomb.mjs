@@ -11,6 +11,7 @@ const sources=csv('college/data/verified_venues.csv');
 const players=JSON.parse(read('college/data/player_boxscores_espn.json'));
 const names=JSON.parse(read('college/data/team_names.json'));
 const headshots=JSON.parse(read('college/data/player_headshots.json')).players;
+const awards=JSON.parse(read('college/data/career_tags_high_priority.json')).players;
 const venueData=JSON.parse(read('venues/data/venues.json'));
 
 const g=games.find(x=>x.id==='96');
@@ -38,6 +39,13 @@ const impact=p=>p.pts+p.reb+p.ast+p.stl+p.blk-p.tov-(p.fga-p.fgm)-(p.fta-p.ftm);
 const ranked=lines.slice().sort((a,b)=>impact(b)-impact(a)||b.pts-a.pts);
 assert.equal(ranked[0].player,'Devyn Martin');
 assert.equal(impact(ranked[0]),22);
+assert.equal(awards['espn:5174937'].all_conference[0].team,2);
+assert.equal(awards['espn:5174937'].all_conference[0].conference,'CAA');
+assert.equal(awards['espn:5174937'].all_conference[0].school,'Elon');
+assert.equal(awards['espn:5107530'].all_conference[0].team,3);
+assert.equal(awards['espn:5107530'].all_conference[0].conference,'ASUN');
+assert.equal(awards['espn:5175660'].all_freshman[0].conference,'Big South');
+assert.ok(read('college/player.html').includes('tags.all_freshman||[]'));
 
 for(const player of ['David Wilson','Brennan Miller','Belal Sohaib','Jayden Riley']){
  const found=lines.find(p=>p.player===player);

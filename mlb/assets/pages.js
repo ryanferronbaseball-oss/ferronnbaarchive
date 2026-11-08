@@ -296,21 +296,20 @@ function profilePage(){
  const p=players.find(x=>String(x.player_id)===String(id));
  if(!p){app.innerHTML='<div class="eyebrow">MLB · Player profile</div><h1>Player not found.</h1><p><a href="./stats.html">← Player leaderboards</a></p>';return}
  const wbcTeams=wbcById.get(String(p.player_id))||[];
- const wbcSources={2023:"https://www.mlb.com/news/mlb-club-list-of-world-baseball-classic-players",2026:"https://www.mlb.com/amp/news/mlb-players-on-2026-world-baseball-classic-rosters.html"};
  const bs=batting(p.batting), ps=p.pitching.length?verifiedPitcherTotals(p):null;
  const officialPitcherRecord=pitcherDecisions(p.player_id);
  const hasOfficialTwoWayRole=p.rows.some(r=>String(r.position||"").toUpperCase()==="TWP");
  const battingPosition=p.rows.some(r=>["DH","1B","2B","3B","SS","LF","CF","RF","OF","C"].includes(String(r.position||"").toUpperCase()));
  const genuineTwoWay=(p.batting.length>0&&(hasOfficialTwoWayRole||String(p.player_id)==="660271"||(battingPosition&&p.pitching.length>0)));
  const twoWay=genuineTwoWay;
- const career=awardsById[String(p.player_id)]||null,hof=career?.hall_of_fame||null;
+ const career={...(awardsById[String(p.player_id)]||{}),...(wbcTeams.length?{wbc:wbcTeams.map(t=>({...t,team:t.country}))}:{})},hof=career.hall_of_fame||null;
  const hasAllStarData=!!(careerHonors?._meta?.all_star_definition||Array.isArray(career?.all_star));
  const honors=[["world_series","World Series Champion","ws","🏆"],["world_series_mvp","World Series MVP","wsmvp","🏆"],
   ["lcs_mvp","LCS MVP","lcsmvp","★"],["mvp","MVP","mvp","🏆"],["cy_young","Cy Young","cy","◆"],
   ["rookie_of_year","Rookie of the Year","roy","★"],["all_mlb","All-MLB","allmlb","★"],
   ["hank_aaron","Hank Aaron Award","aaron","⚾"],["gold_glove","Gold Glove","gg","★"],
   ["platinum_glove","Platinum Glove","pg","◆"],["silver_slugger","Silver Slugger","ss","✦"],
-  ...(hasAllStarData?[["all_star","All-Star","as","☆"]]:[]),["retired_number","Retired Number","retired","★"]];
+  ...(hasAllStarData?[["all_star","All-Star","as","☆"]]:[]),["wbc","World Baseball Classic","wbc","🌐"],["retired_number","Retired Number","retired","★"]];
  const hasHonors=!!(hof||honors.some(([key])=>career?.[key]?.length));
  const played=games.filter(g=>p.games.has(g.game_pk)).sort((a,b)=>a.date.localeCompare(b.date));
  const startYear=played[0]?.date.slice(0,4)||"—",endYear=played[played.length-1]?.date.slice(0,4)||"—";
@@ -328,7 +327,7 @@ function profilePage(){
  const badges=crossoverBadge+(hasHonors?'<div class="mlb-profile-achievements" aria-label="Career accomplishments">'
   +(hof?'<a class="mlb-profile-badge hof" href="./hall-of-fame.html" title="National Baseball Hall of Fame, inducted '+hof.year+'">★ HALL OF FAME ↗</a>':"")
   +honors.filter(([key])=>career?.[key]?.length).map(([key,title,theme,mark])=>
-   '<a class="mlb-profile-badge '+theme+'" href="#careerHonors" data-honor-link="'+key+'" title="Click for verified career honor details">'+mark+' '+(key==="retired_number"&&career[key].length===1?"RETIRED #"+esc(career[key][0].number):esc(title.toUpperCase())+' · '+career[key].length)+'</a>').join("")
+   '<a class="mlb-profile-badge '+theme+'" href="#careerHonors" data-honor-link="'+key+'" title="Click for career honor details">'+mark+' '+(key==="retired_number"&&career[key].length===1?"RETIRED #"+esc(career[key][0].number):key==="wbc"?"WORLD BASEBALL CLASSIC · "+career[key].length:esc(title.toUpperCase())+' · '+career[key].length)+'</a>').join("")
   +'</div>':"");
  // Keep the legacy award tabs for backwards compatibility; show newly added
  // categories only on profiles where the player has actually earned them.
@@ -348,8 +347,9 @@ function profilePage(){
    const inducted=key==="hall_of_fame",entries=inducted?(hof?[{year:hof.year}]:[]):career?.[key]||[];
    return '<div class="mlb-honor-detail" role="tabpanel" id="honor-'+key+'"'+(key===chosen?"":" hidden")+'><strong>'+esc(title)+'</strong>'
     +(entries.length?(inducted?'<p>Inducted into the National Baseball Hall of Fame in '+hof.year+'. <a href="./hall-of-fame.html">See your Hall of Famers ↗</a></p>':
-   '<p>'+(key==="world_series"?entries.length+' World Series '+(entries.length===1?'title':'titles')+' with a championship-winning MLB club.':key==="retired_number"?entries.length+' officially retired uniform '+(entries.length===1?'number':'numbers')+'.':entries.length+' verified career '+esc(title)+' '+(["all_star","all_mlb"].includes(key)?(entries.length===1?" selection":" selections"):(entries.length===1?" award":" awards"))+'.')+'</p>'):'<p>No verified career '+esc(title)+' '+(key==="world_series"?'titles.':key==="retired_number"?'honors.':'awards.')+'</p>')
+   '<p>'+(key==="wbc"?'Official WBC roster listing'+(entries.length===1?'':'s')+'. A roster selection does not by itself confirm a tournament game appearance. Current matching covers 2023 and 2026.':key==="world_series"?entries.length+' World Series '+(entries.length===1?'title':'titles')+' with a championship-winning MLB club.':key==="retired_number"?entries.length+' officially retired uniform '+(entries.length===1?'number':'numbers')+'.':entries.length+' verified career '+esc(title)+' '+(["all_star","all_mlb"].includes(key)?(entries.length===1?" selection":" selections"):(entries.length===1?" award":" awards"))+'.')+'</p>'):'<p>No verified career '+esc(title)+' '+(key==="world_series"?'titles.':key==="retired_number"?'honors.':'awards.')+'</p>')
     +(entries.length?'<div class="mlb-honor-tags">'+entries.map(a=>'<span class="mlb-honor-year">'+(a.league?esc(a.league)+" ":"")+esc(a.year)+(a.level?" · "+esc(a.level):"")+(a.team?" · "+esc(a.team):"")+(a.number?" · #"+esc(a.number):"")+(a.notes?" · "+esc(a.notes):"")+'</span>').join("")+'</div>':"")
+    +(key==="wbc"?'<p class="mlb-note"><a href="https://www.mlb.com/news/mlb-club-list-of-world-baseball-classic-players" target="_blank" rel="noopener noreferrer">2023 official rosters ↗</a> · <a href="https://www.mlb.com/amp/news/mlb-players-on-2026-world-baseball-classic-rosters.html" target="_blank" rel="noopener noreferrer">2026 official rosters ↗</a></p>':"")
     +'</div>';
   }).join("")
   +'<p class="mlb-note"><a href="https://statsapi.mlb.com/api/v1/awards" target="_blank" rel="noopener">Source: MLB official award and retired-number records ↗</a> · <a href="https://www.mlb.com/postseason/history/world-series" target="_blank" rel="noopener">World Series champions ↗</a> · World Series counts include players who appeared for the winning club during the regular season, even if absent from its World Series roster. All-Star totals represent selections, not appearances. All-MLB honors began in 2019.</p></section>':"";
@@ -438,7 +438,7 @@ function profilePage(){
   +'<p class="mlb-profile-seen">'+p.game_count+' attended '+(p.game_count===1?"game":"games")+' · '+esc(years)+'</p></div></section>'
   +'<div class="mlb-profile-headline-stats'+(twoWay?" is-two-way":"")+'">'+summaryTiles+'</div>'
   +'<div class="mlb-profile-tabs" id="profileTabs" role="tablist" aria-label="Player profile sections">'
-  +[["overview","Overview"],["advanced","Advanced"],["games","Game Log"],["milestones","Milestones"],...(wbcTeams.length?[["wbc","World Baseball Classic"]]:[])].map(([key,title],i)=>
+  +[["overview","Overview"],["advanced","Advanced"],["games","Game Log"],["milestones","Milestones"]].map(([key,title],i)=>
    '<button type="button" class="mlb-profile-tab" role="tab" data-profile-tab="'+key+'" aria-controls="profile-'+key+'" aria-selected="'+(i===0)+'">'+title+'</button>').join("")+'</div>'
   +'<section class="panel mlb-profile-panel" id="profile-overview" role="tabpanel">'
   +'<h2>Player overview</h2>'+overviewLine
@@ -459,11 +459,7 @@ function profilePage(){
   +'<section class="panel mlb-profile-panel" id="profile-milestones" role="tabpanel" hidden>'
   +'<h2>Milestones you witnessed</h2><div class="mlb-profile-total-grid">'+milestones.map(([title,value])=>
    '<div class="mlb-profile-total"><small>'+esc(title)+'</small><strong>'+value+'</strong></div>').join("")+'</div>'
-  +'<p class="mlb-note">These are single-game statistical milestones from your attendance archive, not full-career accomplishments. <a href="./records.html">Explore all MLB records ↗</a></p></section>'
-  +(wbcTeams.length?'<section class="panel mlb-profile-panel mlb-profile-wbc" id="profile-wbc" role="tabpanel" hidden>'
-   +'<div class="mlb-wbc-kicker">International baseball</div><h2>World Baseball Classic</h2><p class="mlb-note">National teams this player was listed with in the official World Baseball Classic roster announcements.</p>'
-   +'<div class="mlb-wbc-teams">'+wbcTeams.slice().sort((a,b)=>a.year-b.year).map(t=>'<div class="mlb-wbc-team"><span class="mlb-wbc-season">'+esc(t.year)+'</span><strong>'+esc(t.country)+'</strong><a href="'+esc(wbcSources[t.year]||"https://www.mlb.com/world-baseball-classic")+'" target="_blank" rel="noopener noreferrer">Official roster ↗</a></div>').join('')+'</div>'
-   +'<p class="mlb-note">Roster inclusion does not by itself confirm an appearance in a WBC game. The current roster audit covers 2023 and 2026; earlier tournaments have not yet been fully matched.</p></section>':"");
+  +'<p class="mlb-note">These are single-game statistical milestones from your attendance archive, not full-career accomplishments. <a href="./records.html">Explore all MLB records ↗</a></p></section>';
  function showMain(key){
   app.querySelectorAll("#profileTabs [data-profile-tab]").forEach(b=>b.setAttribute("aria-selected",String(b.dataset.profileTab===key)));
   app.querySelectorAll(".mlb-profile-panel").forEach(section=>section.hidden=section.id!=="profile-"+key);

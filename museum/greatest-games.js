@@ -30,6 +30,26 @@ const candidates=[
  ['2026-05-16','Arkansas','Kentucky','College Baseball']
 ].map(([date,away,home,sport,site])=>({date,away,home,sport,site}));
 const stories={
+ '2013-08-09':{
+  title:'Six Runs Down, One Unforgettable Comeback',
+  score:'Los Angeles Dodgers 7 · Tampa Bay Rays 6',
+  venue:'Dodger Stadium · Los Angeles, California',
+  image:'',
+  photoAlt:'Yasiel Puig in a Dodgers uniform holding a bat',
+  caption:'AUGUST 9, 2013 · RAYS AT DODGERS · SIX-RUN COMEBACK',
+  game:'../mlb/index.html',
+  paragraphs:[
+   'August 9, 2013, was a memorable night at Dodger Stadium, with excellent seats for one of the most remarkable comebacks in Courtside Archive history.',
+   'The Dodgers were in the middle of an extraordinary second-half surge, energized by rookie sensation Yasiel Puig and a lineup featuring Adrian Gonzalez, Hanley Ramirez, and Andre Ethier. Tampa Bay brought a talented team led by Evan Longoria, Ben Zobrist, Wil Myers, and former Cy Young Award winner David Price.',
+   'For much of the evening, the Rays dominated. Price delivered seven strong innings, allowing just one unearned run. Tampa Bay built a 6–0 advantage, with former Dodger James Loney collecting three hits and two RBI.',
+   'Los Angeles scored once in the seventh before Puig’s RBI double and Juan Uribe’s run-scoring single cut the deficit to 6–3 in the eighth. In the ninth, Mark Ellis tripled home a run, Nick Punto doubled in another, and Adrian Gonzalez delivered a double to tie the game.',
+   'With the winning run at third, Jerry Hairston Jr. hit a ground ball back to Fernando Rodney, whose errant throw into center field allowed Gonzalez to score and complete an improbable 7–6 walk-off victory.',
+   'The comeback unfolded before 51,083 fans. For Courtside Archive, this was a special combination of excellent seats, the excitement of Puig’s rookie season, an outstanding collection of talent, and one of the most dramatic finishes witnessed at Dodger Stadium.'
+  ],
+  columns:['Player','Performance','Context','Highlight'],
+  players:[['Yasiel Puig','RBI double','Eighth inning','Rookie sensation'],['Adrian Gonzalez','Game-tying double','Ninth inning','Scored winning run'],['Mark Ellis','RBI triple','Ninth inning','Sparked rally'],['James Loney','3 hits · 2 RBI','Tampa Bay','Former Dodger']]
+ },
+
  '2012-04-06':{
   title:'A new era in Anaheim: Pujols’ debut and Weaver’s Opening Day masterpiece',
   score:'Los Angeles Angels 5 · Kansas City Royals 0',

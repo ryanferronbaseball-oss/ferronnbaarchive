@@ -10,3 +10,7 @@
 .plaque-story{padding:15px 0;border-top:1px solid #8faac08c}
 .plaque-story p{color:#e5edf4;line-height:1.85;font-size:14px;margin:13px 0}
 @media(max-width:690px){.plaque-feature{padding:22px}.plaque-layout{grid-template-columns:1fr;gap:22px}.plaque-photo-placeholder{height:220px;max-width:300px}.plaque-story{padding-top:20px}}
+.plaque-photo-placeholder img{height:100%;width:100%;object-fit:cover;object-position:center;display:block}
+.plaque-photo-credit{color:#bde3f5;font-size:10px;font-weight:800;letter-spacing:.12em;margin-top:9px}
+.member:has(a[href*="player=kobe-bryant"]) .member-portrait{background:#24465c url('./kobe-bryant-2008-cavaliers.webp') center 38%/cover no-repeat}
+.member:has(a[href*="player=kobe-bryant"]) .member-monogram{display:none}

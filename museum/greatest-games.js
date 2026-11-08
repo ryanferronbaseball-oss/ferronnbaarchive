@@ -30,6 +30,25 @@ const candidates=[
  ['2026-05-16','Arkansas','Kentucky','College Baseball']
 ].map(([date,away,home,sport,site])=>({date,away,home,sport,site}));
 const stories={
+ '2010-11-22':{
+  title:'A ball boy before Lob City: the night the Clippers shocked the Hornets',
+  score:'Los Angeles Clippers 99 · New Orleans Hornets 95',
+  venue:'STAPLES Center · Los Angeles, California · Pregame ball-boy experience',
+  image:'./hornets-clippers-ballboy-2010.webp',
+  photoAlt:'Chris Paul in his blue New Orleans Hornets uniform during the Hornets–Clippers matchup',
+  caption:'NOVEMBER 22, 2010 · HORNETS AT CLIPPERS · A BALL BOY BEFORE LOB CITY',
+  game:'../nba/game.html?id=19',
+  paragraphs:[
+   'Some games are remembered for a spectacular performance, a dramatic finish, or a championship moment. For Ryan Ferron, November 22, 2010, was memorable for something that happened before the game even began: he got to serve as a pregame ball boy for the Los Angeles Clippers.',
+   'That rare opportunity to be involved in the pregame environment at STAPLES Center gave him a different perspective on professional basketball. The personal experience, more than any particular play or box-score number, is what makes this night one of the most meaningful memories in the Courtside Archive.',
+   'Looking back, the matchup offered a remarkable glimpse of what was to come. Chris Paul arrived as the visiting superstar point guard of the New Orleans Hornets, more than a year before he would be traded to Los Angeles and team up with Blake Griffin to launch the Clippers’ high-flying Lob City era. On this night, Paul was still wearing New Orleans blue.',
+   'Griffin was only 15 games into his NBA career. Selected first overall in the 2009 draft, he had missed the entire 2009–10 season with a knee injury and was now beginning the rookie campaign that would make him one of the league’s most electrifying young stars. He finished with 24 points, 13 rebounds, and four assists.',
+   'The matchup was also a stunning contrast in team fortunes. New Orleans entered at 11–1 after opening the season with eight straight wins; the Clippers entered at just 1–13 and had lost nine consecutive games. Yet Los Angeles gave its pregame ball boy a night to remember: Eric Gordon scored 27 points, Griffin powered the interior, and the Clippers upset the Hornets 99–95. David West scored a game-high 30 points for New Orleans, while Paul contributed 14 points and six assists.',
+   'The most enduring memory remained the pregame experience itself. But the result added another layer: being a ball boy for a 1–13 team on the very night it beat an 11–1 opponent, with the future Lob City partnership unknowingly sharing the court as adversaries. It was a personal milestone and a fascinating snapshot of the Clippers just before their identity changed.'
+  ],
+  columns:['PTS','REB','AST','More'],
+  players:[['Eric Gordon','27','3','4','Clippers’ leading scorer'],['Blake Griffin','24','13','4','Rookie season · 2 BLK'],['David West','30','10','5','Game-high points'],['Chris Paul','14','4','6','2 STL · future Clipper'],['Al-Farouq Aminu','16','4','—','Clippers reserve'],['DeAndre Jordan','12','8','—','Future Lob City teammate']]
+ },
  '2008-12-06':{
   title:'Three quarters tied: a star-studded battle in Phoenix',
   score:'Phoenix Suns 106 · Utah Jazz 104',

@@ -276,7 +276,9 @@ body[data-page="player"] main{width:100%;max-width:1160px;margin:0 auto;padding:
 .mlb-player-name-row{display:flex;align-items:center;gap:14px;flex-wrap:wrap;min-width:0}
 .mlb-player-name-row h1{margin:10px 0}
 .mlb-player-country-slot:empty{display:none}
+.mlb-player-country-slot{display:inline-flex;align-items:center;gap:8px;flex-wrap:wrap}
 .mlb-player-country-flag{display:inline-flex;align-items:center;justify-content:center;font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif;font-size:39px;line-height:1;white-space:nowrap;flex:none;filter:drop-shadow(0 2px 2px rgba(0,0,0,.12))}
+.mlb-player-country-flag.is-wbc{border-bottom:3px solid #C8A34A;padding-bottom:2px}
 .mlb-profile-seen{margin:9px 0 0;color:#607265;font-size:13px;line-height:1.6}
 .mlb-profile-achievements{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}
 .mlb-profile-badge{display:inline-flex;align-items:center;justify-content:center;min-height:23px;padding:4px 8px;

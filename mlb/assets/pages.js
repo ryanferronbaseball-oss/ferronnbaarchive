@@ -329,12 +329,26 @@ const birthCountryNames={
  "RUSSIA":"RU","UKRAINE":"UA","POLAND":"PL","LITHUANIA":"LT",
  "HAITI":"HT","U.S. VIRGIN ISLANDS":"VI","US VIRGIN ISLANDS":"VI","VIRGIN ISLANDS":"VI","GUAM":"GU"
 };
-function countryFlagMarkup(country){
+function countryCode(country){
  const raw=String(country||"").trim(),key=raw.toUpperCase();
- const code=birthCountryFlags[key]||birthCountryNames[key]||(/^[A-Z]{2}$/i.test(raw)?key:null);
+ return birthCountryFlags[key]||birthCountryNames[key]||(/^[A-Z]{2}$/i.test(raw)?key:null);
+}
+function countryFlagMarkup(country,kind="birth"){
+ const raw=String(country||"").trim(),code=countryCode(raw);
  if(!code)return "";
  const flag=[...code].map(c=>String.fromCodePoint(127397+c.charCodeAt(0))).join("");
- return '<span class="mlb-player-country-flag" role="img" aria-label="Born in '+esc(raw)+'" title="Birth country: '+esc(raw)+'">'+flag+'</span>';
+ const wbc=kind==="wbc",description=wbc?"World Baseball Classic: ":"Birth country: ";
+ return '<span class="mlb-player-country-flag'+(wbc?' is-wbc':'')+'" role="img" aria-label="'+esc(description+raw)+'" title="'+esc(description+raw)+'">'+flag+'</span>';
+}
+function profileCountryFlags(id){
+ const birth=birthCountries.get(id),birthCode=countryCode(birth),teams=wbcById.get(id)||[];
+ const seen=new Set(birthCode?[birthCode]:[]);
+ const extra=teams.filter(team=>{
+  const code=countryCode(team.country);
+  if(!code||seen.has(code))return false;
+  seen.add(code);return true;
+ });
+ return countryFlagMarkup(birth)+extra.map(team=>countryFlagMarkup(team.country,"wbc")).join("");
 }
 function loadBirthCountry(id){
  if(birthCountries.has(id)||countryRequests.has(id))return;
@@ -345,7 +359,7 @@ function loadBirthCountry(id){
    const country=data.people?.[0]?.birthCountry||"";
    birthCountries.set(id,country);
    const target=document.querySelector("[data-mlb-country-for='"+id+"']");
-   if(target)target.innerHTML=countryFlagMarkup(country);
+   if(target)target.innerHTML=profileCountryFlags(id);
   })
   .catch(err=>console.warn("MLB birth country unavailable for player",id,err))
   .finally(()=>countryRequests.delete(id));
@@ -493,7 +507,7 @@ function profilePage(){
   +'<div class="mlb-profile-photo"><img alt="" src="https://img.mlbstatic.com/mlb-photos/image/upload/w_213,q_85/v1/people/'+encodeURIComponent(p.player_id)+'/headshot/67/current"'
   +' onerror="this.style.display=\'none\';this.parentNode.textContent=\''+esc(nameInitials)+'\'"></div>'
   +'<div class="mlb-profile-identity"><div class="mlb-profile-team-name">'+esc(p.teams.join(" / "))+'</div>'
-  +'<div class="mlb-player-name-row"><h1>'+esc(p.name)+'</h1><span class="mlb-player-country-slot" data-mlb-country-for="'+esc(p.player_id)+'">'+countryFlagMarkup(birthCountries.get(String(p.player_id)))+'</span></div>'+badges
+  +'<div class="mlb-player-name-row"><h1>'+esc(p.name)+'</h1><span class="mlb-player-country-slot" data-mlb-country-for="'+esc(p.player_id)+'">'+profileCountryFlags(String(p.player_id))+'</span></div>'+badges
   +'<p class="mlb-profile-seen">'+p.game_count+' attended '+(p.game_count===1?"game":"games")+' · '+esc(years)+'</p></div></section>'
   +'<div class="mlb-profile-headline-stats'+(twoWay?" is-two-way":"")+'">'+summaryTiles+'</div>'
   +'<div class="mlb-profile-tabs" id="profileTabs" role="tablist" aria-label="Player profile sections">'

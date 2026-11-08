@@ -1,5 +1,11 @@
 # Courtside Archive — College (men's basketball)
 
+## Adding a newly attended game (2026 workflow)
+
+Only import a game after Ryan explicitly confirms he attended. After ESPN marks the game final, download its summary response to a temporary file and use `scripts/import_confirmed_game.mjs` with `--attendance-confirmed`, a new stable attendance ID, the local game date, home/away school names, the ESPN arena name and a dated host-school venue source. The importer rejects duplicate IDs, incomplete lines, team-ID conflicts, nonfinal games, inconsistent player scoring, and team-minute mismatches; it excludes DNPs. Player `minutes` retain their source precision, while the college UI rounds to the nearest whole minute.
+
+Before publishing, also upsert the physical arena in `venues/data/venues.json` (with sourced address, history, capacity and a linked game) and synchronize the map counts in the homepage and venue directory. ESPN player IDs automatically resolve to headshots in the player profile; where ESPN has none, verified school roster photo URLs can be placed in `data/player_headshots.json`. Run the new-game regression and `node venues/scripts/test_venues.mjs`, then verify the live game, player, and venue pages. Do not invent awards or prior appearances; compare player IDs and identities with actual historical archive records.
+
 **Work-in-progress only.** This branch does not modify the live NBA website. The goal is a college module that can ultimately appear under one master archive with NBA and NCAAB tabs.
 
 ## Attendance input

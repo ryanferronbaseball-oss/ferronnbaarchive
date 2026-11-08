@@ -9,13 +9,13 @@ const venues=data.venues;
 const photos=JSON.parse(fs.readFileSync(path.join(repo,'venues/data/photos.json'),'utf8')).photos;
 const games=JSON.parse(fs.readFileSync(path.join(repo,'milb/data/games.json'),'utf8'));
 assert.equal(data.venueCount,venues.length);
-assert.ok(venues.length>=134);
+assert.ok(venues.length>=141);
 assert.equal(data.mappedGames,venues.reduce((sum,v)=>sum+v.games.length,0));
 assert.equal(data.excludedUnassignedGames,7);
 assert.equal(new Set(venues.map(v=>v.id)).size,venues.length);
 assert.equal(new Set(venues.map(v=>v.name)).size,venues.length);
 assert.equal(new Set(venues.map(v=>v.sport)).size,8);
-const expected={'College Baseball':84,'College Basketball':19,'MLB':18,'College Football':3,'NBA':2,'NFL':2,'Soccer':2};
+const expected={'College Baseball':84,'College Basketball':20,'MLB':18,'College Football':3,'NBA':2,'NFL':2,'Soccer':2};
 const venueSports=v=>Array.isArray(v.sports)&&v.sports.length?v.sports:[v.sport];
 assert.ok(venues.filter(v=>venueSports(v).includes('MiLB')).length>=4);
 for(const [sport,count] of Object.entries(expected))assert.equal(venues.filter(v=>v.sport===sport).length,count,sport);
@@ -68,6 +68,9 @@ for(const v of milbVenues){
 }
 assert.equal(seen.size,games.length);
 assert.ok(venues.some(v=>v.id==='venue-0005'&&v.name==='Banner Island Ballpark'));
+const allen=venues.find(v=>v.name==='Allen Arena');
+assert.ok(allen&&allen.sport==='College Basketball'&&allen.firstVisit==='2026-11-07');
+assert.ok(allen.games.some(g=>g.id==='96'&&g.awayScore===77&&g.homeScore===78));
 assert.equal(venues.filter(v=>v.name==='Banner Island Ballpark').length,1);
 if(games.length>10){
  const venue=venues.find(v=>v.id==='venue-0005');

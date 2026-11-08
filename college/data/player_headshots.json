@@ -1,10 +1,10 @@
 {
   "_meta": {
-    "description": "Provider athlete ID matches for 2026-11-05 Wake Forest at Vanderbilt game. Maps stable Courtside official profile IDs to ESPN basketball headshot IDs without changing historical identity or statistics.",
-    "source": "ESPN-derived SidelineWire player statistics and player profiles, verified by name and 2026-27 team",
-    "game_id": "95",
-    "espn_event_id": "401909726",
-    "last_reviewed": "2026-11-05",
+    "description": "Verified player photo associations. Official player identities map to ESPN IDs; where ESPN has no headshot, selected provider IDs map to official school roster photos. Athlete statistics and identities are not changed.",
+    "source": "ESPN player profiles and official school roster photographs",
+    "game_id": "95,96",
+    "espn_event_id": "401909726,401920703",
+    "last_reviewed": "2026-11-07",
     "image_pattern": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/{espn_athlete_id}.png",
     "note": "Availability of actual headshot varies by player. Show initials if image unavailable."
   },
@@ -80,6 +80,22 @@
     },
     "official:vanderbilt:chase-byington": {
       "espn_athlete_id": "5326946"
+    },
+    "espn:5462436": {
+      "image_url": "https://siuecougars.com/images/2026/10/30/Wilson_David.jpg",
+      "source_url": "https://siuecougars.com/sports/mens-basketball/roster/2026-27"
+    },
+    "espn:5462439": {
+      "image_url": "https://siuecougars.com/images/2026/10/30/Miller_Brennan.jpg",
+      "source_url": "https://siuecougars.com/sports/mens-basketball/roster/2026-27"
+    },
+    "espn:5462438": {
+      "image_url": "https://siuecougars.com/images/2026/10/30/Sohaib_Belal.jpg",
+      "source_url": "https://siuecougars.com/sports/mens-basketball/roster/2026-27"
+    },
+    "espn:5462440": {
+      "image_url": "https://siuecougars.com/images/2026/10/30/Riley_Jayden.jpg",
+      "source_url": "https://siuecougars.com/sports/mens-basketball/roster/2026-27"
     }
   }
 }

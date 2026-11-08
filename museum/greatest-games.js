@@ -30,6 +30,26 @@ const candidates=[
  ['2026-05-16','Arkansas','Kentucky','College Baseball']
 ].map(([date,away,home,sport,site])=>({date,away,home,sport,site}));
 const stories={
+ '2007-11-25':{
+  title:'Frank Gore’s masterpiece and an unbelievable overtime finish',
+  score:'San Francisco 49ers 37 · Arizona Cardinals 31 · Overtime',
+  venue:'University of Phoenix Stadium · Glendale, Arizona · First NFL game attended',
+  image:'./49ers-cardinals-gore-2007.webp',
+  photoAlt:'San Francisco 49ers running back Frank Gore carrying the football through Arizona Cardinals defenders',
+  caption:'NOVEMBER 25, 2007 · 49ERS AT CARDINALS · FRANK GORE',
+  game:'../nfl/game.html?id=nfl-2007-11-25-sf-ari',
+  paragraphs:[
+   'On November 25, 2007, Courtside Archive’s first NFL game delivered an extraordinary introduction to professional football. The San Francisco 49ers traveled to Arizona to face the Cardinals in a matchup featuring Frank Gore and future Hall of Famers Kurt Warner and Larry Fitzgerald. What followed was an offensive shootout, a spectacular individual performance, and an overtime ending that few could have predicted.',
+   'The afternoon belonged to Frank Gore, who carried 21 times for 116 rushing yards and two touchdowns while catching 11 passes for 98 more yards. His 214 yards from scrimmage and 44.4 PPR fantasy points made for one of the Archive’s greatest all-around performances. Gore’s versatility was a preview of the remarkable career that would eventually place him third on the NFL’s all-time rushing list.',
+   'Arizona countered with an explosive passing attack led by Kurt Warner, who completed 34 of 48 attempts for 484 yards and two touchdowns. His favorite target was Larry Fitzgerald, who caught nine passes for 156 yards and two scores, including a spectacular 48-yard touchdown to close the first half. Anquan Boldin added six catches for 76 yards.',
+   'The lead changed hands repeatedly. San Francisco trailed 21–17 at halftime, then surged back on a 57-yard touchdown pass from Trent Dilfer to Arnaz Battle. Arizona reclaimed a 28–24 lead in the fourth quarter before Gore broke loose for a 35-yard touchdown run with 1:15 left, seemingly delivering a 31–28 49ers victory.',
+   'The Cardinals still had an answer. Warner moved Arizona downfield for a Neil Rackers field goal at the end of regulation, tying the game 31–31. In overtime, Rackers initially made what appeared to be the winning kick, only for a delay-of-game penalty to erase it. His next attempt missed, handing San Francisco another chance.',
+   'After a 49ers punt pinned Arizona near its own goal line, defensive lineman Ronald Fields sacked Warner in the end zone and forced a fumble. Tully Banta-Cain recovered it for a game-ending defensive touchdown, completing a stunning 37–31 San Francisco victory and snapping the team’s eight-game losing streak.',
+   'For the Courtside Archive, this was an unforgettable first taste of the NFL: Gore’s 214-yard masterpiece, Warner’s 484-yard aerial display, two Fitzgerald touchdowns, and a walk-off defensive score in overtime. The first attended NFL game could hardly have packed in more drama.'
+  ],
+  columns:['Rush / Pass','Rec / Yds','TD','More'],
+  players:[['Frank Gore','21 att · 116 yds','11 rec · 98 yds','2 rush','214 scrimmage yds · 44.4 PPR pts'],['Kurt Warner','34/48 · 484 pass yds','—','2 pass','2 INT'],['Larry Fitzgerald','—','9 rec · 156 yds','2 rec','48-yard TD'],['Trent Dilfer','25/39 · 256 pass yds','—','2 pass','0 INT'],['Anquan Boldin','—','6 rec · 76 yds','0','—'],['Arnaz Battle','—','1 rec · 57 yds','1 rec','57-yard TD'],['Tully Banta-Cain','—','—','1 def','OT fumble recovery TD']]
+ },
  '2006-06-28':{
   title:'A-Rod’s redemption: a 12th-inning walk-off in the Bronx',
   score:'New York Yankees 4 · Atlanta Braves 3 · 12 innings',

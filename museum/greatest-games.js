@@ -24,12 +24,30 @@ const candidates=[
  ['2022-05-28','San Diego','Gonzaga','College Baseball','neutral'],
  ['2022-06-03','San Diego','Vanderbilt','College Baseball','neutral'],
  ['2024-02-23','Iowa','Auburn','College Baseball','neutral'],
- ['2025-05-18','Oregon','Iowa','College Baseball'],
+ ['2025-05-16','Oregon','Iowa','College Baseball'],
  ['2025-05-23','Texas A&M','LSU','College Baseball','neutral'],
  ['2026-04-05','LSU','Tennessee','College Baseball'],
  ['2026-05-16','Arkansas','Kentucky','College Baseball']
 ].map(([date,away,home,sport,site])=>({date,away,home,sport,site}));
 const stories={
+ '2025-05-16':{
+  title:'A record Iowa crowd witnesses Oregon’s four-run comeback',
+  score:'Oregon 9 · Iowa 6',
+  venue:'Duane Banks Field · Iowa City, Iowa · Record attendance: 3,339',
+  image:'./oregon-iowa-2025.webp',
+  photoAlt:'Oregon baseball players celebrating in front of the Iowa crowd at Duane Banks Field',
+  caption:'MAY 16, 2025 · OREGON AT IOWA · JACOB WALSH',
+  game:'../college-baseball/game.html?id=cb-2025-05-16-oregon-iowa-att0348',
+  paragraphs:[
+   'May 16, 2025, was a historic evening for Iowa baseball, as a record crowd of 3,339 fans packed Duane Banks Field to watch the Hawkeyes face No. 5 Oregon in a pivotal late-season Big Ten matchup. The home crowd had plenty to celebrate early, but the Ducks ultimately delivered a memorable comeback in a 9–6 victory.',
+   'After Oregon opened the scoring in the first inning, Iowa seized momentum with three runs in the third and another in the fourth. Back-to-back solo home runs by Caleb Wulf and Daniel Rogers in the fifth extended the Hawkeyes’ advantage to 6–2, putting Iowa in command in front of the largest crowd in the ballpark’s history.',
+   'Oregon’s offense, however, refused to go quietly. Jacob Walsh was the centerpiece of the comeback, finishing 3-for-5 with two doubles, a home run, two RBI, and three runs scored. His solo home run in the fifth traveled an estimated 445 feet, while Anson Aroz added a 430-foot home run in the sixth to begin closing the gap.',
+   'The decisive blow came in the seventh inning. Oregon erupted for four runs, with Walsh delivering an RBI double before Ryan Cooney’s two-run double gave the Ducks their first lead since the opening innings. Oregon added two insurance runs in the ninth, while its bullpen shut out Iowa over the final four innings.',
+   'Walsh’s three extra-base hits, Aroz’s home run, and the Ducks’ late offensive surge made this an exceptional game to witness. Combined with Iowa’s historic attendance and the atmosphere surrounding a pivotal conference series, the evening became a memorable chapter in the Courtside Archive.'
+  ],
+  columns:['H-AB','2B','HR','RBI'],
+  players:[['Jacob Walsh','3-5','2','1','2'],['Anson Aroz','2-3','0','1','1'],['Ryan Cooney','2-4','1','0','2'],['Caleb Wulf','2-4','0','1','2'],['Daniel Rogers','2-4','0','1','1']]
+ },
  '2025-05-23':{
   title:'Two LSU aces combine for 16 strikeouts as LaViolette plays through injury',
   score:'LSU 4 · Texas A&M 3',

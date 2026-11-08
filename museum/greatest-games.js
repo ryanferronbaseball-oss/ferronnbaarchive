@@ -30,6 +30,24 @@ const candidates=[
  ['2026-05-16','Arkansas','Kentucky','College Baseball']
 ].map(([date,away,home,sport,site])=>({date,away,home,sport,site}));
 const stories={
+ '2024-02-23':{
+  title:'A late-night showcase of triple-digit velocity and Auburn’s comeback',
+  score:'Auburn 7 · Iowa 5',
+  venue:'121 Financial Ballpark · Jacksonville, Florida · Jax College Baseball Classic',
+  image:'./iowa-auburn-2024.webp',
+  photoAlt:'Iowa baseball players huddle on the field beneath the lights during the late-night February 23, 2024 game',
+  caption:'FEBRUARY 23, 2024 · IOWA VS. AUBURN · FIRST PITCH 9:28 P.M.',
+  game:'../college-baseball/game.html?id=cb-2024-02-23-iowa-auburn-att0235',
+  paragraphs:[
+   'What was originally scheduled to begin at 6:00 p.m. turned into an unforgettable late-night college baseball experience on February 23, 2024. After a delay of nearly three and a half hours, No. 18 Iowa and No. 14 Auburn finally took the field at 9:28 p.m. in Jacksonville, Florida, for their opening matchup of the Jax College Baseball Classic.',
+   'The early innings belonged to Iowa and its electric right-handed starter, Brody Brecht. Featuring a fastball that reached triple-digit velocity, Brecht overwhelmed Auburn’s lineup with 11 strikeouts across six innings, allowing just two hits, two runs (one earned), and four walks. His combination of premium velocity and swing-and-miss stuff made the performance one of the Archive’s most memorable pitching showcases.',
+   'Iowa carried a 3–2 advantage into the seventh inning, but Auburn capitalized once Brecht departed. Mason Maners tied the game with a solo home run before Bobby Peirce delivered the decisive blow, a two-run homer that put the Tigers ahead 5–3. Christian Hall, who had already driven in a run against Brecht in the sixth, added a solo home run in the eighth as Auburn extended its lead to 7–3.',
+   'Hall finished 2-for-4 with a home run and two RBI, while Peirce’s two-run homer proved to be the game’s defining swing. Auburn’s bullpen also delivered, with John Armstrong and Cam Tilly combining for 4⅔ scoreless innings after the starter exited. Iowa threatened one final time with a two-run home run from Sam Petersen in the ninth, but Auburn held on for the 7–5 victory.',
+   'Between the unusually late first pitch, Brecht’s triple-digit fastball and 11-strikeout performance, and Auburn’s dramatic late-inning power surge, this game embodied the unpredictability that makes college baseball so memorable. An evening that began with hours of waiting ended with a showcase of elite talent and an exciting comeback under the Jacksonville lights.'
+  ],
+  columns:['H-AB / IP','HR / H','RBI / ER','BB / K'],
+  players:[['Brody Brecht (P)','6.0 IP','2 H','1 ER','4 BB · 11 K'],['Bobby Peirce','1-4','1','2','—'],['Christian Hall','2-4','1','2','—'],['Mason Maners','1-2','1','1','2 BB'],['Sam Petersen','1-4','1','2','—']]
+ },
  '2025-05-16':{
   title:'A record Iowa crowd witnesses Oregon’s four-run comeback',
   score:'Oregon 9 · Iowa 6',

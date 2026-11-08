@@ -78,6 +78,8 @@
 </style>
 <link rel="stylesheet" href="./assets/home-burgundy-ice.css?v=1">
 <link rel="stylesheet" href="./assets/milestones.css?v=1">
+<link rel="stylesheet" href="./assets/attendance-calendar.css?v=1">
+<script defer src="./assets/attendance-calendar.js?v=1"></script>
 </head>
 <body>
 <a class="skip" href="#archives">Skip to archive selection</a>
@@ -147,6 +149,20 @@
   <div class="venue-map-featured" aria-label="Most visited venues">
     <strong>Most visited</strong>
     <div class="venue-map-featured-buttons" id="venueFeatured"></div>
+  </div>
+</section>
+<section class="calendar-section" id="calendar" aria-labelledby="calendar-title">
+  <div class="section-top"><div><div class="portal-kicker" style="margin:0">Your history, day by day</div><h2 id="calendar-title">My Game Calendar</h2></div><p>Every game, on the day it happened. Select a date to revisit its story.</p></div>
+  <div class="calendar-shell">
+    <div class="calendar-toolbar">
+      <div class="calendar-navigation"><button type="button" id="calendarPrev" aria-label="Previous month">‹</button><button type="button" id="calendarNext" aria-label="Next month">›</button><button type="button" id="calendarToday">Today</button></div>
+      <div class="calendar-selectors"><label>Month <select id="calendarMonth" aria-label="Calendar month"></select></label><label>Year <select id="calendarYear" aria-label="Calendar year"></select></label></div>
+    </div>
+    <div class="calendar-filters" id="calendarFilters" role="group" aria-label="Filter calendar by sport"></div>
+    <div class="calendar-weekdays" aria-hidden="true"><span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span></div>
+    <div class="calendar-grid" id="calendarGrid" role="group" aria-label="Games by date"></div>
+    <div class="calendar-bottom"><span id="calendarCount" aria-live="polite">Loading games…</span><span>Colored dots represent attended games</span></div>
+    <div class="calendar-details" id="calendarDetails" aria-live="polite"><p>Select a marked date to see its games.</p></div>
   </div>
 </section>
 <section id="archives" aria-labelledby="choose-title">

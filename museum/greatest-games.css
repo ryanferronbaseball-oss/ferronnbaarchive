@@ -1,0 +1,42 @@
+.greatest-games{padding:60px 0 72px;border-bottom:1px solid var(--border);scroll-margin-top:24px}
+.gg-intro{max-width:750px;color:var(--muted);line-height:1.75;font-size:14px;margin:12px 0 22px}
+.gg-controls{display:grid;grid-template-columns:1fr 1fr 1.4fr;gap:12px;padding:18px;background:#eaf4fa;border:1px solid var(--border);border-radius:15px;margin:20px 0 12px}
+.gg-controls label{display:grid;gap:7px;font-size:11px;color:#526c7d;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+.gg-controls select,.gg-controls input{width:100%;border:1px solid #c6dce7;border-radius:9px;background:white;color:var(--navy);padding:11px 12px;font:600 13px Inter,ui-sans-serif,system-ui,sans-serif;min-width:0}
+.gg-count{font-size:12px;color:var(--muted);margin:0 0 17px;font-weight:650}
+.gg-list{display:grid;gap:11px}
+.gg-game{background:white;border:1px solid var(--border);border-radius:13px;overflow:hidden;box-shadow:0 6px 16px #17364b07}
+.gg-game[open]{border-color:#a9c9dc;box-shadow:0 14px 32px #17364b0e}
+.gg-game summary{list-style:none;cursor:pointer;padding:20px;display:grid;grid-template-columns:135px minmax(0,1fr) auto 20px;gap:15px;align-items:center}
+.gg-game summary::-webkit-details-marker{display:none}
+.gg-game summary:hover{background:#f3f9fc}
+.gg-date{color:var(--burgundy);font-size:12px;font-weight:850}
+.gg-summary-main strong{display:block;font-size:17px;line-height:1.3}
+.gg-summary-main small{display:block;color:var(--muted);font-size:12px;line-height:1.5;margin-top:4px}
+.gg-status{font-size:10px;letter-spacing:.04em;font-weight:850;border-radius:30px;background:#f0f3f6;color:#6b7d88;padding:7px 10px;white-space:nowrap}
+.gg-status.is-complete{background:#d8edf7;color:#1b5676}
+.gg-chevron{font-size:22px;transition:transform .2s;color:var(--burgundy)}
+.gg-game[open] .gg-chevron{transform:rotate(180deg)}
+.gg-content{border-top:1px solid var(--border);padding:24px}
+.gg-story-layout{display:grid;grid-template-columns:minmax(200px,.8fr) minmax(0,1.2fr);gap:28px}
+.gg-photo{margin:0;align-self:start;background:#e8f2f7;border-radius:12px;overflow:hidden;border:1px solid var(--border)}
+.gg-photo img{width:100%;height:auto;display:block}
+.gg-photo figcaption{padding:12px;font-size:10px;font-weight:850;letter-spacing:.09em;color:#547083}
+.gg-narrative h3{font:32px Georgia,serif;letter-spacing:-.03em;line-height:1.13;margin:9px 0 14px}
+.gg-narrative p{font-size:14px;color:#3e5668;line-height:1.8;margin:0 0 14px}
+.gg-narrative .gg-final{color:var(--navy);font-size:15px;font-weight:850;margin-bottom:2px}
+.gg-narrative .gg-venue{color:var(--muted);font-size:12px;margin-bottom:20px}
+.gg-performances{margin-top:25px;border-top:1px solid var(--border);padding-top:20px}
+.gg-performances h4{font:24px Georgia,serif;margin:0 0 13px}
+.gg-table-wrap{overflow:auto}
+.gg-performances table{width:100%;border-collapse:collapse;font-size:13px;font-variant-numeric:tabular-nums}
+.gg-performances th,.gg-performances td{text-align:left;padding:12px;border-bottom:1px solid #e3edf2}
+.gg-performances thead{background:#eaf4fa;color:#426074;font-size:11px}
+.gg-performances tbody th{font-weight:850}
+.gg-box-link{display:inline-block;margin-top:22px;padding:13px 16px;background:var(--burgundy);border-radius:9px;color:white;font-size:12px;font-weight:850;text-decoration:none}
+.gg-box-link:hover{background:#a42850}
+.gg-pending{background:#f3f9fc;padding:16px 18px;border-radius:9px;color:var(--muted);font-size:13px;line-height:1.7}
+.gg-pending p{margin:0}
+.gg-empty{padding:24px;background:white;border:1px solid var(--border);border-radius:10px;color:var(--muted)}
+@media(max-width:820px){.gg-story-layout{grid-template-columns:1fr}.gg-photo{max-width:530px}.gg-game summary{grid-template-columns:115px 1fr 20px}.gg-status{display:none}}
+@media(max-width:560px){.gg-controls{grid-template-columns:1fr}.gg-game summary{grid-template-columns:1fr 20px;gap:6px;padding:16px}.gg-date{grid-column:1}.gg-summary-main{grid-column:1}.gg-chevron{grid-column:2;grid-row:1/3;align-self:center}.gg-content{padding:16px}.gg-narrative h3{font-size:28px}}

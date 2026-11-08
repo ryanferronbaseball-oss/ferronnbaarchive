@@ -310,8 +310,28 @@ function statsPage(){
 // Keep the flag separate from the actual name text for accessibility and search.
 const birthCountries=new Map(),countryRequests=new Set();
 const birthCountryFlags={USA:"US",DOM:"DO",VEN:"VE",CUB:"CU",PUR:"PR",CAN:"CA",MEX:"MX",JPN:"JP",KOR:"KR",COL:"CO",PAN:"PA",AUS:"AU",NCA:"NI",BRA:"BR",NED:"NL",DEU:"DE",GER:"DE",ITA:"IT",TPE:"TW",TWN:"TW",CHN:"CN",ARU:"AW",CUR:"CW",BAH:"BS",BHS:"BS",JAM:"JM",NZL:"NZ",GBR:"GB",UK:"GB",FRA:"FR",ESP:"ES",RSA:"ZA",ZAF:"ZA",HON:"HN",HND:"HN",CRC:"CR",GUA:"GT",GTM:"GT",SAL:"SV",SLV:"SV",PER:"PE",ARG:"AR",CHI:"CL",CHL:"CL",ISR:"IL",IND:"IN",PHI:"PH",PHL:"PH",BEL:"BE",AUT:"AT",SUI:"CH",CHE:"CH",SWE:"SE",FIN:"FI",CZE:"CZ",CZECH:"CZ",RUS:"RU",UKR:"UA",POL:"PL",LTU:"LT",HAI:"HT",HTI:"HT",VIR:"VI",GUM:"GU"};
+// StatsAPI returns a mixture of abbreviations (USA, D.R.) and full country names.
+const birthCountryNames={
+ "UNITED STATES":"US","UNITED STATES OF AMERICA":"US","U.S.A.":"US","U.S.":"US",
+ "DOMINICAN REPUBLIC":"DO","D.R.":"DO","D.R":"DO","DOMINICAN REP.":"DO",
+ "VENEZUELA":"VE","CUBA":"CU","PUERTO RICO":"PR","CANADA":"CA","MEXICO":"MX",
+ "JAPAN":"JP","SOUTH KOREA":"KR","REPUBLIC OF KOREA":"KR","KOREA":"KR",
+ "COLOMBIA":"CO","PANAMA":"PA","AUSTRALIA":"AU","NICARAGUA":"NI",
+ "BRAZIL":"BR","NETHERLANDS":"NL","HOLLAND":"NL","GERMANY":"DE",
+ "ITALY":"IT","TAIWAN":"TW","CHINESE TAIPEI":"TW","CHINA":"CN",
+ "ARUBA":"AW","CURACAO":"CW","CURAÇAO":"CW","BAHAMAS":"BS",
+ "JAMAICA":"JM","NEW ZEALAND":"NZ","UNITED KINGDOM":"GB","ENGLAND":"GB",
+ "FRANCE":"FR","SPAIN":"ES","SOUTH AFRICA":"ZA","HONDURAS":"HN",
+ "COSTA RICA":"CR","GUATEMALA":"GT","EL SALVADOR":"SV","PERU":"PE",
+ "ARGENTINA":"AR","CHILE":"CL","ISRAEL":"IL","INDIA":"IN",
+ "PHILIPPINES":"PH","BELGIUM":"BE","AUSTRIA":"AT","SWITZERLAND":"CH",
+ "SWEDEN":"SE","FINLAND":"FI","CZECH REPUBLIC":"CZ","CZECHIA":"CZ",
+ "RUSSIA":"RU","UKRAINE":"UA","POLAND":"PL","LITHUANIA":"LT",
+ "HAITI":"HT","U.S. VIRGIN ISLANDS":"VI","US VIRGIN ISLANDS":"VI","VIRGIN ISLANDS":"VI","GUAM":"GU"
+};
 function countryFlagMarkup(country){
- const raw=String(country||"").trim(),code=birthCountryFlags[raw.toUpperCase()]||(/^[A-Z]{2}$/i.test(raw)?raw.toUpperCase():null);
+ const raw=String(country||"").trim(),key=raw.toUpperCase();
+ const code=birthCountryFlags[key]||birthCountryNames[key]||(/^[A-Z]{2}$/i.test(raw)?key:null);
  if(!code)return "";
  const flag=[...code].map(c=>String.fromCodePoint(127397+c.charCodeAt(0))).join("");
  return '<span class="mlb-player-country-flag" role="img" aria-label="Born in '+esc(raw)+'" title="Birth country: '+esc(raw)+'">'+flag+'</span>';

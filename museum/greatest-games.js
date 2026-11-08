@@ -30,6 +30,24 @@ const candidates=[
  ['2026-05-16','Arkansas','Kentucky','College Baseball']
 ].map(([date,away,home,sport,site])=>({date,away,home,sport,site}));
 const stories={
+ '2022-10-18':{
+  title:'An October first and Schwarber’s 488-foot blast',
+  score:'Philadelphia Phillies 2 · San Diego Padres 0 · NLCS Game 1',
+  venue:'Petco Park · San Diego, California · First MLB postseason game attended',
+  image:'./phillies-padres-nlcs-2022.webp',
+  photoAlt:'Kyle Schwarber follows through on a swing before a packed Petco Park crowd during the 2022 NLCS',
+  caption:'OCTOBER 18, 2022 · PHILLIES AT PADRES · NLCS GAME 1',
+  game:'../mlb/game.html?id=715731',
+  paragraphs:[
+   'October 18, 2022, marked a milestone in the Courtside Archive: the first Major League Baseball postseason game attended. With the San Diego Padres hosting the Philadelphia Phillies in Game 1 of the National League Championship Series, Petco Park provided the setting for an unforgettable evening featuring two outstanding starting pitchers and one of the most extraordinary home runs in postseason history.',
+   'The game developed into a remarkable pitching duel between Philadelphia’s Zack Wheeler and San Diego’s Yu Darvish. Wheeler was nearly unhittable, throwing seven shutout innings while allowing just one hit and one walk and striking out eight. Darvish was similarly effective, surrendering only three hits and two runs over seven innings while recording seven strikeouts. Neither offense found much success against the opposing starter.',
+   'Philadelphia’s first breakthrough came in the fourth inning when Bryce Harper launched a solo home run to left field, giving the Phillies a 1–0 advantage. Two innings later, Kyle Schwarber delivered the moment that would define the evening. Facing Darvish in the sixth, Schwarber crushed a towering solo home run into the upper deck in right field. The ball left his bat at 119.7 mph and traveled a Statcast-projected 488 feet, becoming the longest home run recorded at Petco Park during the Statcast era.',
+   'The two home runs accounted for all of Philadelphia’s scoring. Wheeler and the Phillies bullpen combined to limit San Diego to a single hit, securing a 2–0 victory and a 1–0 series advantage.',
+   'For the Courtside Archive, this game holds special significance beyond the final score. The first experience of October baseball at the major-league level featured an exceptional duel between two accomplished pitchers, a home run from Bryce Harper, and a historic display of power from Kyle Schwarber. It was a fitting introduction to the atmosphere and intensity of the MLB postseason.'
+  ],
+  columns:['H-AB / IP','HR / H','RBI / ER','BB / K'],
+  players:[['Zack Wheeler (P)','7.0 IP','1 H','0 ER','1 BB · 8 K'],['Yu Darvish (P)','7.0 IP','3 H','2 ER','1 BB · 7 K'],['Kyle Schwarber','2-3','1','1','1 BB'],['Bryce Harper','1-4','1','1','—']]
+ },
  '2024-02-23':{
   title:'A late-night showcase of triple-digit velocity and Auburn’s comeback',
   score:'Auburn 7 · Iowa 5',

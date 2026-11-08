@@ -68,24 +68,7 @@ const stories={
   players:[['Yasiel Puig','RBI double','Eighth inning','Rookie sensation'],['Adrian Gonzalez','Game-tying double','Ninth inning','Scored winning run'],['Mark Ellis','RBI triple','Ninth inning','Sparked rally'],['James Loney','3 hits · 2 RBI','Tampa Bay','Former Dodger']]
  },
 
- '2012-04-06':{
-  title:'A new era in Anaheim: Pujols’ debut and Weaver’s Opening Day masterpiece',
-  score:'Los Angeles Angels 5 · Kansas City Royals 0',
-  venue:'Angel Stadium · Anaheim, California · Opening Day',
-  image:'',
-  photoAlt:'Albert Pujols in his number 5 Los Angeles Angels uniform',
-  caption:'APRIL 6, 2012 · ROYALS AT ANGELS · PUJOLS DEBUT',
-  game:'../mlb/index.html',
-  paragraphs:[
-   'April 6, 2012, marked the beginning of a new era for the Los Angeles Angels. After signing Albert Pujols to a historic 10-year, $240 million contract, the Angels welcomed their new superstar to Angel Stadium for Opening Day against the Kansas City Royals.',
-   'A crowd of 44,106 witnessed Pujols’ first regular-season appearance in an Angels uniform after 11 legendary seasons with the St. Louis Cardinals. Although he went hitless in three at-bats and drew an intentional walk, the anticipation surrounding his arrival made this an unforgettable occasion.',
-   'The night belonged to Angels ace Jered Weaver. Making his third consecutive Opening Day start, Weaver dominated Kansas City across eight scoreless innings, allowing four hits without issuing a walk while striking out 10.',
-   'Royals starter Bruce Chen matched Weaver through six scoreless innings, and the game remained scoreless through seven. In the eighth, Peter Bourjos drove in the first run on an infield single, Torii Hunter added an RBI single, and Erick Aybar cleared the bases with a three-run triple.',
-   'Scott Downs finished the shutout with a perfect ninth inning, sealing the Angels’ 5–0 victory. For Courtside Archive, this was both the first chapter of Albert Pujols’ Angels career and a signature pitching performance from Jered Weaver: one superstar’s beginning, one ace’s masterpiece, one unforgettable Opening Day.'
-  ],
-  columns:['IP / AB','H','ER / RBI','More'],
-  players:[['Jered Weaver (P)','8.0 IP','4','0 ER','10 K · 0 BB'],['Albert Pujols','0-3','0','0 RBI','1 intentional walk · Angels debut'],['Erick Aybar','—','—','3 RBI','Three-run triple'],['Scott Downs (P)','1.0 IP','0','0 ER','Perfect ninth inning']]
- },
+
 
  '2010-11-22':{
   title:'A ball boy before Lob City: the night the Clippers shocked the Hornets',

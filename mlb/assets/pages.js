@@ -16,6 +16,19 @@ if(page==="player"){
   }
  }catch(error){console.warn("World Baseball Classic roster matches unavailable",error)}
  try{
+  const response=await fetch("./data/wbc_historical_matches.json",{cache:"no-store"});
+  if(response.ok){
+   const registry=await response.json();
+   for(const record of registry.players||[]){
+    if(record.player_id==null||!Array.isArray(record.teams))continue;
+    const id=String(record.player_id),current=wbcById.get(id)||[];
+    for(const team of record.teams)if(!current.some(t=>t.year===team.year&&t.country===team.country))current.push(team);
+    current.sort((a,b)=>a.year-b.year);
+    wbcById.set(id,current);
+   }
+  }
+ }catch(error){console.warn("Historical World Baseball Classic roster matches unavailable",error)}
+ try{
   const response=await fetch("../milb/data/player_links.json",{cache:"no-store"});
   if(response.ok){
    const links=await response.json();
@@ -347,9 +360,9 @@ function profilePage(){
    const inducted=key==="hall_of_fame",entries=inducted?(hof?[{year:hof.year}]:[]):career?.[key]||[];
    return '<div class="mlb-honor-detail" role="tabpanel" id="honor-'+key+'"'+(key===chosen?"":" hidden")+'><strong>'+esc(title)+'</strong>'
     +(entries.length?(inducted?'<p>Inducted into the National Baseball Hall of Fame in '+hof.year+'. <a href="./hall-of-fame.html">See your Hall of Famers ↗</a></p>':
-   '<p>'+(key==="wbc"?'Official WBC roster listing'+(entries.length===1?'':'s')+'. A roster selection does not by itself confirm a tournament game appearance. Current matching covers 2023 and 2026.':key==="world_series"?entries.length+' World Series '+(entries.length===1?'title':'titles')+' with a championship-winning MLB club.':key==="retired_number"?entries.length+' officially retired uniform '+(entries.length===1?'number':'numbers')+'.':entries.length+' verified career '+esc(title)+' '+(["all_star","all_mlb"].includes(key)?(entries.length===1?" selection":" selections"):(entries.length===1?" award":" awards"))+'.')+'</p>'):'<p>No verified career '+esc(title)+' '+(key==="world_series"?'titles.':key==="retired_number"?'honors.':'awards.')+'</p>')
+   '<p>'+(key==="wbc"?'Official WBC roster listing'+(entries.length===1?'':'s')+'. A roster selection does not by itself confirm a tournament game appearance. Historical matching continues for older non-USA rosters.':key==="world_series"?entries.length+' World Series '+(entries.length===1?'title':'titles')+' with a championship-winning MLB club.':key==="retired_number"?entries.length+' officially retired uniform '+(entries.length===1?'number':'numbers')+'.':entries.length+' verified career '+esc(title)+' '+(["all_star","all_mlb"].includes(key)?(entries.length===1?" selection":" selections"):(entries.length===1?" award":" awards"))+'.')+'</p>'):'<p>No verified career '+esc(title)+' '+(key==="world_series"?'titles.':key==="retired_number"?'honors.':'awards.')+'</p>')
     +(entries.length?'<div class="mlb-honor-tags">'+entries.map(a=>'<span class="mlb-honor-year">'+(a.league?esc(a.league)+" ":"")+esc(a.year)+(a.level?" · "+esc(a.level):"")+(a.team?" · "+esc(a.team):"")+(a.number?" · #"+esc(a.number):"")+(a.notes?" · "+esc(a.notes):"")+'</span>').join("")+'</div>':"")
-    +(key==="wbc"?'<p class="mlb-note"><a href="https://www.mlb.com/news/mlb-club-list-of-world-baseball-classic-players" target="_blank" rel="noopener noreferrer">2023 official rosters ↗</a> · <a href="https://www.mlb.com/amp/news/mlb-players-on-2026-world-baseball-classic-rosters.html" target="_blank" rel="noopener noreferrer">2026 official rosters ↗</a></p>':"")
+    +(key==="wbc"?'<p class="mlb-note"><a href="https://www.usabaseball.com/team/professional/history" target="_blank" rel="noopener noreferrer">2006–17 USA Baseball rosters ↗</a> · <a href="https://www.mlb.com/news/final-rosters-for-2013-world-baseball-classic-announced/c-41872084" target="_blank" rel="noopener noreferrer">2013 MLB roster announcement ↗</a> · <a href="https://www.mlb.com/news/2017-world-baseball-classic-rosters-unveiled-c215511336" target="_blank" rel="noopener noreferrer">2017 MLB roster summary ↗</a> · <a href="https://www.mlb.com/news/mlb-club-list-of-world-baseball-classic-players" target="_blank" rel="noopener noreferrer">2023 rosters ↗</a> · <a href="https://www.mlb.com/amp/news/mlb-players-on-2026-world-baseball-classic-rosters.html" target="_blank" rel="noopener noreferrer">2026 rosters ↗</a></p>':"")
     +'</div>';
   }).join("")
   +'<p class="mlb-note"><a href="https://statsapi.mlb.com/api/v1/awards" target="_blank" rel="noopener">Source: MLB official award and retired-number records ↗</a> · <a href="https://www.mlb.com/postseason/history/world-series" target="_blank" rel="noopener">World Series champions ↗</a> · World Series counts include players who appeared for the winning club during the regular season, even if absent from its World Series roster. All-Star totals represent selections, not appearances. All-MLB honors began in 2019.</p></section>':"";

@@ -43,7 +43,9 @@ const stories={
    'Saint Mary’s center Jock Landale delivered a remarkable performance: 34 points, 18 rebounds, and four assists while shooting 15-for-22 from the floor. His interior scoring and rebounding proved decisive in a game where every possession mattered.',
    'San Diego forward Isaiah Pineiro answered with 24 points, keeping the Toreros within striking distance throughout the night. The matchup between Pineiro and Landale highlighted a tense, physical contest.',
    'Saint Mary’s escaped with a 65–62 victory, extending its winning streak to 18 games. For Courtside Archive, the close finish and Landale’s dominant 34-point, 18-rebound double-double made this a standout night at the Jenny Craig Pavilion.'
-  ]
+  ],
+  columns:['Player','Performance','Context','Highlight'],
+  players:[['Jock Landale','34 points · 18 rebounds · 4 assists','15-for-22 FG','Saint Mary’s'],['Isaiah Pineiro','24 points','San Diego','Kept Toreros close']]
  },
 
  '2013-08-09':{

@@ -64,6 +64,24 @@ const stories={
   ],
   columns:['H-AB','2B','HR','RBI'],
   players:[['Zack Stewart','4-6','2','1','4'],['Jayce Tharnish','3-6','1','1','3']]
+ },
+ '2026-04-05':{
+  title:'Cade Arrambide hits four home runs in a 12-inning epic',
+  score:'LSU 16 · Tennessee 6 · 12 innings',
+  venue:'Lindsey Nelson Stadium · Knoxville, Tennessee',
+  image:'./lsu-tennessee-2026-arrambide.webp',
+  photoAlt:'Cade Arrambide, number 0, celebrating with LSU teammates',
+  caption:'APRIL 5, 2026 · LSU AT TENNESSEE · CADE ARRAMBIDE',
+  game:'../college-baseball/game.html?id=cb-2026-04-05-lsu-tennessee-att0407',
+  paragraphs:[
+   'April 5, 2026, produced one of the most extraordinary individual offensive performances in Courtside Archive history, as LSU defeated Tennessee 16–6 in a remarkable 12-inning contest at Lindsey Nelson Stadium in Knoxville.',
+   'Tennessee appeared to have the upper hand early, jumping to a 5–0 lead after three innings. LSU gradually battled back, scoring once in the fifth, three times in the seventh, and once in the ninth to force extra innings with the score tied at five.',
+   'Both teams exchanged runs in the 11th inning, sending the game into the 12th tied 6–6. What followed was an extraordinary offensive explosion. LSU erupted for 10 runs in the top of the 12th, turning a tightly contested extra-inning battle into a stunning 16–6 victory.',
+   'At the center of it all was LSU catcher Cade Arrambide, who delivered one of the greatest single-game hitting performances ever witnessed by the Archive. Arrambide went an incredible 5-for-6 with four home runs, seven RBI, and four runs scored. His extraordinary power display became the defining achievement of an already unforgettable afternoon.',
+   'Between the early Tennessee lead, LSU’s relentless comeback, an unprecedented offensive outburst in the 12th inning, and Arrambide’s historic four-home-run performance, this game represents the kind of exceptional sporting experience that the Courtside Archive Museum was created to preserve.'
+  ],
+  columns:['H-AB','HR','RBI','Runs'],
+  players:[['Cade Arrambide','5-6','4','7','4']]
  }
 };
 const root=document.getElementById('greatestGamesList'),sportEl=document.getElementById('greatestGamesSport'),sortEl=document.getElementById('greatestGamesSort'),searchEl=document.getElementById('greatestGamesSearch'),countEl=document.getElementById('greatestGamesCount');

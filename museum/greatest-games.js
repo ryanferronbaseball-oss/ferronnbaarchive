@@ -3,7 +3,7 @@
 const candidates=[
  ['2007-03-18','Minnesota Timberwolves','Los Angeles Lakers','NBA'],
  ['2008-01-27','Cleveland Cavaliers','Los Angeles Lakers','NBA'],
- ['2008-12-05','Utah Jazz','Phoenix Suns','NBA'],
+ ['2008-12-06','Utah Jazz','Phoenix Suns','NBA'],
  ['2010-11-22','New Orleans Hornets','Los Angeles Clippers','NBA'],
  ['2018-02-03',"Saint Mary's",'San Diego','College Basketball'],
  ['2019-02-20','Nevada','San Diego State','College Basketball'],
@@ -30,6 +30,25 @@ const candidates=[
  ['2026-05-16','Arkansas','Kentucky','College Baseball']
 ].map(([date,away,home,sport,site])=>({date,away,home,sport,site}));
 const stories={
+ '2008-12-06':{
+  title:'Three quarters tied: a star-studded battle in Phoenix',
+  score:'Phoenix Suns 106 · Utah Jazz 104',
+  venue:'US Airways Center · Phoenix, Arizona',
+  image:'./jazz-suns-shaquille-oneal-2008.webp',
+  photoAlt:'Phoenix Suns center Shaquille O’Neal holds the basketball while surveying the floor',
+  caption:'DECEMBER 6, 2008 · JAZZ AT SUNS · THREE QUARTERS TIED',
+  game:'../nba/game.html?id=15',
+  paragraphs:[
+   'On December 6, 2008, the Phoenix Suns welcomed the Utah Jazz to US Airways Center for a Western Conference showdown featuring an extraordinary collection of NBA talent. With Shaquille O’Neal, Steve Nash, Amar’e Stoudemire, Deron Williams, and Andrei Kirilenko sharing the court, the game offered an opportunity to witness several defining players of their era.',
+   'What made the evening particularly memorable was the remarkably even score. The teams finished the first quarter tied at 26, reached halftime tied at 50, and each scored 28 points in the third. After 36 minutes, the score was still deadlocked at 78–78. Only the final two points separated them.',
+   'Despite the star-studded matchup, Phoenix’s Leandro Barbosa led all scorers with 25 points. Amar’e Stoudemire delivered an exceptional performance with 22 points and 20 rebounds, dominating the glass and providing a crucial interior presence. Shaquille O’Neal added 15 points and 10 rebounds despite foul trouble throughout the second half, while veteran playmaker Steve Nash directed the Suns’ offense.',
+   'Utah countered with contributions across its lineup. C.J. Miles and Paul Millsap scored 20 points apiece, with Millsap also collecting 12 rebounds. Mehmet Okur had 12 points and 13 rebounds, while Deron Williams orchestrated the offense with 15 points and an outstanding 15 assists. Andrei Kirilenko supplied 17 points off the bench.',
+   'With the score close late in the fourth quarter, Boris Diaw converted a free throw with 1:55 remaining to put Phoenix ahead for good, 100–99. Stoudemire followed with a layup and Nash made two key free throws to stretch the lead to five with 20.7 seconds left. Utah refused to surrender: Kirilenko connected on a three-pointer with 15.5 seconds remaining, but the Suns survived the final possessions for a 106–104 victory.',
+   'For Courtside Archive, the game combined remarkable star power, a 20-rebound performance from Stoudemire, and a rare score progression that saw the teams tied after every one of the first three quarters. Three quarters tied. Two points separating the teams. An unforgettable collection of basketball talent.'
+  ],
+  columns:['PTS','REB','AST','More'],
+  players:[['Leandro Barbosa','25','—','—','Game-high scoring'],['Amar’e Stoudemire','22','20','—','20-rebound double-double'],['Shaquille O’Neal','15','10','—','Double-double'],['C.J. Miles','20','4','2','4 threes'],['Paul Millsap','20','12','1','Double-double'],['Deron Williams','15','1','15','15 assists'],['Andrei Kirilenko','17','2','1','Key late 3-pointer'],['Mehmet Okur','12','13','1','Double-double']]
+ },
  '2008-01-27':{
   title:'A battle of basketball royalty: LeBron vs. Kobe',
   score:'Cleveland Cavaliers 98 · Los Angeles Lakers 95',

@@ -30,6 +30,25 @@ const candidates=[
  ['2026-05-16','Arkansas','Kentucky','College Baseball']
 ].map(([date,away,home,sport,site])=>({date,away,home,sport,site}));
 const stories={
+ '2012-04-06':{
+  title:'A New Era in Anaheim: Pujols’ Debut and Weaver’s Masterpiece',
+  score:'Los Angeles Angels 5 · Kansas City Royals 0',
+  venue:'Angel Stadium · Anaheim, California · Opening Day',
+  image:'',
+  photoAlt:'Albert Pujols batting in his white number 5 Los Angeles Angels uniform',
+  caption:'APRIL 6, 2012 · ROYALS AT ANGELS · PUJOLS DEBUT',
+  game:'../mlb/index.html',
+  paragraphs:[
+   'Opening Day 2012 marked the beginning of a new era in Anaheim. After 11 legendary seasons with the St. Louis Cardinals, Albert Pujols made his regular-season debut for the Angels in front of 44,106 fans.',
+   'Although Pujols went hitless in his first three at-bats, the night belonged to Angels ace Jered Weaver. He dominated Kansas City over eight shutout innings, allowing four hits, striking out 10, and issuing no walks.',
+   'The game remained scoreless through seven innings before the Angels erupted for five runs in the eighth. Peter Bourjos and Torii Hunter delivered RBI singles, and Erick Aybar broke it open with a three-run triple.',
+   'Scott Downs finished the shutout, securing a 5–0 Opening Day victory.',
+   'For Courtside Archive, this game represents the excitement of Pujols’ highly anticipated Angels debut and a dominant performance from Weaver.'
+  ],
+  columns:['Player','Performance','Context','Highlight'],
+  players:[['Jered Weaver','8 IP · 0 R · 10 K · 0 BB','Opening Day start','Dominant pitching'],['Albert Pujols','Angels regular-season debut','First game with Los Angeles','New era'],['Erick Aybar','Three-run triple','Five-run eighth inning','Broke game open']]
+ },
+
  '2018-02-03':{
   title:'Landale’s 34 and 18: Saint Mary’s survives in San Diego',
   score:'Saint Mary’s 65 · San Diego 62',

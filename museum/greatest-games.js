@@ -30,6 +30,25 @@ const candidates=[
  ['2026-05-16','Arkansas','Kentucky','College Baseball']
 ].map(([date,away,home,sport,site])=>({date,away,home,sport,site}));
 const stories={
+ '2003-07-24':{
+  title:'The Beginning: an 11-inning walk-off starts the Archive',
+  score:'Los Angeles Dodgers 1 · Colorado Rockies 0 · 11 innings',
+  venue:'Dodger Stadium · Los Angeles, California · First game attended',
+  image:'./rockies-dodgers-first-game-2003.webp',
+  photoAlt:'Los Angeles Dodgers pitcher Kevin Brown holding a baseball in his throwing motion',
+  caption:'JULY 24, 2003 · ROCKIES AT DODGERS · THE BEGINNING',
+  game:'../mlb/game.html?id=15785',
+  paragraphs:[
+   'On July 24, 2003, the first game in what would eventually become Courtside Archive unfolded at Dodger Stadium. What started as an afternoon between the Colorado Rockies and Los Angeles Dodgers became an extraordinary pitching duel, featuring four future Baseball Hall of Famers and a dramatic walk-off finish.',
+   'Dodgers ace Kevin Brown was nearly untouchable, working eight scoreless innings while allowing just three hits, walking two, and striking out six. Colorado countered with Shawn Chacon, who matched Brown’s dominance with seven shutout innings of his own. Neither lineup could break through, and the game remained scoreless through nine innings.',
+   'Beyond the pitching, the field featured an incredible collection of baseball history. Four future Hall of Famers appeared: Rickey Henderson and Adrián Beltré for Los Angeles, alongside Larry Walker and Todd Helton for Colorado. It was a remarkable collection of talent to witness at the very beginning of the Archive.',
+   'The stalemate continued into extra innings before the Dodgers finally broke through in the bottom of the 11th. Alex Cora opened the inning with a single, and Jolbert Cabrera moved him into scoring position with a sacrifice bunt. With one out, Shawn Green delivered the walk-off RBI single up the middle, scoring Cora and giving Los Angeles a dramatic 1–0 victory.',
+   'In front of 33,144 fans, the Dodgers celebrated a hard-earned victory after 11 innings and more than three hours of baseball. For Courtside Archive, however, the significance extends far beyond the final score. This was the first chapter of a lifetime spent attending games, witnessing remarkable athletes, and collecting moments worth remembering.',
+   'Every Game Has a Story. This is where the first one began.'
+  ],
+  columns:['H-AB / IP','H','RBI / ER','More'],
+  players:[['Kevin Brown (P)','8.0 IP','3 H','0 ER','2 BB · 6 K'],['Shawn Chacon (P)','7.0 IP','—','0 ER','Scoreless start'],['Shawn Green','2 hits','—','1 RBI','Walk-off single'],['Alex Cora','2 hits','—','—','Winning run'],['Paul Shuey (P)','0.1 IP','—','—','Win'],['Javier López (P)','—','—','—','Loss']]
+ },
  '2022-06-03':{
   title:'Brycen Mautz leads San Diego to a stunning NCAA Regional upset',
   score:'San Diego 3 · Vanderbilt 2 · NCAA Corvallis Regional',

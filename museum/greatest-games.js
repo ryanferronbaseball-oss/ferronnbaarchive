@@ -30,6 +30,26 @@ const candidates=[
  ['2026-05-16','Arkansas','Kentucky','College Baseball']
 ].map(([date,away,home,sport,site])=>({date,away,home,sport,site}));
 const stories={
+ '2008-01-27':{
+  title:'A battle of basketball royalty: LeBron vs. Kobe',
+  score:'Cleveland Cavaliers 98 · Los Angeles Lakers 95',
+  venue:'STAPLES Center · Los Angeles, California',
+  image:'./cavaliers-lakers-lebron-kobe-2008.webp',
+  photoAlt:'LeBron James in a red Cavaliers uniform guarding Kobe Bryant in a white Lakers uniform at STAPLES Center',
+  caption:'JANUARY 27, 2008 · CAVALIERS AT LAKERS · LEBRON VS. KOBE',
+  game:'../nba/game.html?id=13',
+  paragraphs:[
+   'On January 27, 2008, two of the greatest basketball players of all time shared the floor at STAPLES Center in one of the most anticipated individual matchups of the NBA season. Kobe Bryant and the Los Angeles Lakers hosted LeBron James and the Cleveland Cavaliers in a game featuring two superstars at the height of their powers. The matchup delivered everything fans could have hoped for.',
+   'LeBron James finished with 41 points, nine rebounds, four assists, and two steals, shooting 16-for-32 from the field. At 23 years old, James was already among the NBA’s most dominant players, combining extraordinary athleticism with an increasingly complete offensive game.',
+   'On the other side, Kobe Bryant recorded 33 points, 12 rebounds, and six assists while shooting 10-for-21. Bryant, then 29, was in the middle of what would become his first and only NBA Most Valuable Player season. Together, the two superstars scored 74 points and showed why they were widely considered the premier players of their generation.',
+   'The game was tightly contested throughout, featuring 21 lead changes and nine ties. Cleveland carried a 49–40 lead into halftime, but Los Angeles won the third quarter 31–20 to take a 71–69 advantage entering the fourth. The supporting casts contributed too: Zydrunas Ilgauskas had 16 points and 11 rebounds, Larry Hughes added 16 points for Cleveland, and Lamar Odom supplied 14 points and nine rebounds for Los Angeles.',
+   'The Lakers stretched their lead to 84–75 with fewer than eight minutes to play. LeBron refused to let Cleveland fade, scoring 14 of his 41 points in the fourth quarter to lead the comeback. With 20.1 seconds remaining, he hit a critical 22-foot jumper over Bryant, putting the Cavaliers ahead. After Kobe missed a late shot near the basket, James made two free throws with nine seconds remaining and the Lakers failed to get another attempt away, sealing Cleveland’s 98–95 victory.',
+   'The afternoon included an unusual 12-minute delay in the first quarter when water began dripping near the court from the STAPLES Center ceiling. Yet the enduring memory was the extraordinary battle between two basketball icons. Before their careers became intertwined in debates about basketball greatness, Bryant and James went head-to-head and delivered a genuine classic.',
+   'For Courtside Archive, it was an unforgettable opportunity to witness basketball royalty firsthand: 74 combined points, 21 lead changes, a three-point finish, and two legends competing at the top of their games.'
+  ],
+  columns:['PTS','REB','AST','More'],
+  players:[['LeBron James','41','9','4','16-32 FG · 2 STL'],['Kobe Bryant','33','12','6','10-21 FG · double-double'],['Zydrunas Ilgauskas','16','11','3','Double-double'],['Larry Hughes','16','4','4','2 STL · 2 BLK'],['Lamar Odom','14','9','4','—'],['Daniel Gibson','10','2','1','—']]
+ },
  '2007-11-25':{
   title:'Frank Gore’s masterpiece and an unbelievable overtime finish',
   score:'San Francisco 49ers 37 · Arizona Cardinals 31 · Overtime',

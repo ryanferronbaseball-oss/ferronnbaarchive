@@ -30,6 +30,25 @@ const candidates=[
  ['2026-05-16','Arkansas','Kentucky','College Baseball']
 ].map(([date,away,home,sport,site])=>({date,away,home,sport,site}));
 const stories={
+ '2012-04-06':{
+  title:'A new era in Anaheim: Pujols’ debut and Weaver’s Opening Day masterpiece',
+  score:'Los Angeles Angels 5 · Kansas City Royals 0',
+  venue:'Angel Stadium · Anaheim, California · Opening Day',
+  image:'',
+  photoAlt:'Albert Pujols in his number 5 Los Angeles Angels uniform',
+  caption:'APRIL 6, 2012 · ROYALS AT ANGELS · PUJOLS DEBUT',
+  game:'../mlb/index.html',
+  paragraphs:[
+   'April 6, 2012, marked the beginning of a new era for the Los Angeles Angels. After signing Albert Pujols to a historic 10-year, $240 million contract, the Angels welcomed their new superstar to Angel Stadium for Opening Day against the Kansas City Royals.',
+   'A crowd of 44,106 witnessed Pujols’ first regular-season appearance in an Angels uniform after 11 legendary seasons with the St. Louis Cardinals. Although he went hitless in three at-bats and drew an intentional walk, the anticipation surrounding his arrival made this an unforgettable occasion.',
+   'The night belonged to Angels ace Jered Weaver. Making his third consecutive Opening Day start, Weaver dominated Kansas City across eight scoreless innings, allowing four hits without issuing a walk while striking out 10.',
+   'Royals starter Bruce Chen matched Weaver through six scoreless innings, and the game remained scoreless through seven. In the eighth, Peter Bourjos drove in the first run on an infield single, Torii Hunter added an RBI single, and Erick Aybar cleared the bases with a three-run triple.',
+   'Scott Downs finished the shutout with a perfect ninth inning, sealing the Angels’ 5–0 victory. For Courtside Archive, this was both the first chapter of Albert Pujols’ Angels career and a signature pitching performance from Jered Weaver: one superstar’s beginning, one ace’s masterpiece, one unforgettable Opening Day.'
+  ],
+  columns:['IP / AB','H','ER / RBI','More'],
+  players:[['Jered Weaver (P)','8.0 IP','4','0 ER','10 K · 0 BB'],['Albert Pujols','0-3','0','0 RBI','1 intentional walk · Angels debut'],['Erick Aybar','—','—','3 RBI','Three-run triple'],['Scott Downs (P)','1.0 IP','0','0 ER','Perfect ninth inning']]
+ },
+
  '2010-11-22':{
   title:'A ball boy before Lob City: the night the Clippers shocked the Hornets',
   score:'Los Angeles Clippers 99 · New Orleans Hornets 95',
@@ -316,12 +335,12 @@ const formatDate=date=>new Date(date+'T12:00:00Z').toLocaleDateString('en-US',{m
 const expanded=new Set();
 const label=g=>g.site==='neutral'?`${g.away} vs. ${g.home}`:`${g.away} @ ${g.home}`;
 function content(g){const s=stories[g.date];if(!s)return `<div class="gg-pending"><p>This game has been nominated for the permanent collection. Its story, selected performances, photograph and box-score link will be added after review.</p></div>`;
- return `<div class="gg-story-layout"><figure class="gg-photo"><img src="${esc(s.image)}" alt="${esc(s.photoAlt)}" loading="lazy"><figcaption>${esc(s.caption)}</figcaption></figure><div class="gg-narrative"><span class="eyebrow">THE GAME STORY</span><h3>${esc(s.title)}</h3><p class="gg-final">${esc(s.score)}</p><p class="gg-venue">${esc(s.venue)}</p>${s.paragraphs.map(p=>`<p>${esc(p)}</p>`).join('')}</div></div><div class="gg-performances"><h4>Featured performances</h4><div class="gg-table-wrap"><table><thead><tr><th>Player</th>${s.columns.map(v=>`<th>${esc(v)}</th>`).join('')}</tr></thead><tbody>${s.players.map(p=>`<tr><th scope="row">${esc(p[0])}</th>${p.slice(1).map(v=>`<td>${esc(v)}</td>`).join('')}</tr>`).join('')}</tbody></table></div><a class="gg-box-link" href="${esc(s.game)}">View Courtside Archive box score ↗</a></div>`;
+ return `<div class="gg-story-layout"><figure class="gg-photo">${s.image?`<img src="${esc(s.image)}" alt="${esc(s.photoAlt)}" loading="lazy">`:`<span class="gg-sport-symbol" aria-label="Photo awaiting upload">⚾</span>`}<figcaption>${esc(s.caption)}</figcaption></figure><div class="gg-narrative"><span class="eyebrow">THE GAME STORY</span><h3>${esc(s.title)}</h3><p class="gg-final">${esc(s.score)}</p><p class="gg-venue">${esc(s.venue)}</p>${s.paragraphs.map(p=>`<p>${esc(p)}</p>`).join('')}</div></div><div class="gg-performances"><h4>Featured performances</h4><div class="gg-table-wrap"><table><thead><tr><th>Player</th>${s.columns.map(v=>`<th>${esc(v)}</th>`).join('')}</tr></thead><tbody>${s.players.map(p=>`<tr><th scope="row">${esc(p[0])}</th>${p.slice(1).map(v=>`<td>${esc(v)}</td>`).join('')}</tr>`).join('')}</tbody></table></div><a class="gg-box-link" href="${esc(s.game)}">View Courtside Archive box score ↗</a></div>`;
 }
 function render(){root.querySelectorAll('details[open]').forEach(d=>expanded.add(d.dataset.date));
  const sport=sportEl.value,order=sortEl.value,q=searchEl.value.toLowerCase().trim();const matches=candidates.filter(g=>(sport==='all'||g.sport===sport)&&`${g.away} ${g.home} ${g.sport} ${g.date}`.toLowerCase().includes(q)).sort((a,b)=>order==='oldest'?a.date.localeCompare(b.date):b.date.localeCompare(a.date));
  const completed=Object.keys(stories).length;countEl.textContent=`${matches.length} of ${candidates.length} games · ${completed} completed ${completed===1?'story':'stories'}`;
- root.innerHTML=matches.length?matches.map(g=>{const s=stories[g.date],icon=g.sport==='NBA'||g.sport==='College Basketball'?'🏀':g.sport==='NFL'||g.sport==='College Football'?'🏈':'⚾';return `<details class="gg-game ${s?'gg-complete':''}" data-date="${g.date}" ${expanded.has(g.date)?'open':''}><summary><span class="gg-card-image">${s?`<img src="${esc(s.image)}" alt="" loading="lazy">`:`<span class="gg-sport-symbol" aria-hidden="true">${icon}</span>`}<span class="gg-card-year">${g.date.slice(0,4)}</span></span><span class="gg-card-body"><span class="gg-card-sport">${esc(g.sport)}</span><strong>${esc(label(g))}</strong><span class="gg-date">${formatDate(g.date)}</span><small>${s?esc(s.score):'Story pending'}</small><span class="gg-card-action">${s?'Explore game story':'View nomination'} <span aria-hidden="true">↗</span></span></span></summary><div class="gg-content">${content(g)}</div></details>`}).join(''):'<p class="gg-empty">No nominated games match these filters.</p>';
+ root.innerHTML=matches.length?matches.map(g=>{const s=stories[g.date],icon=g.sport==='NBA'||g.sport==='College Basketball'?'🏀':g.sport==='NFL'||g.sport==='College Football'?'🏈':'⚾';return `<details class="gg-game ${s?'gg-complete':''}" data-date="${g.date}" ${expanded.has(g.date)?'open':''}><summary><span class="gg-card-image">${s&&s.image?`<img src="${esc(s.image)}" alt="" loading="lazy">`:`<span class="gg-sport-symbol" aria-hidden="true">${icon}</span>`}<span class="gg-card-year">${g.date.slice(0,4)}</span></span><span class="gg-card-body"><span class="gg-card-sport">${esc(g.sport)}</span><strong>${esc(label(g))}</strong><span class="gg-date">${formatDate(g.date)}</span><small>${s?esc(s.score):'Story pending'}</small><span class="gg-card-action">${s?'Explore game story':'View nomination'} <span aria-hidden="true">↗</span></span></span></summary><div class="gg-content">${content(g)}</div></details>`}).join(''):'<p class="gg-empty">No nominated games match these filters.</p>';
  root.querySelectorAll('details').forEach(d=>d.addEventListener('toggle',()=>{if(d.open)expanded.add(d.dataset.date);else expanded.delete(d.dataset.date)}));
 }
 [sportEl,sortEl,searchEl].forEach(el=>el.addEventListener(el===searchEl?'input':'change',render));render();

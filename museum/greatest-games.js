@@ -548,6 +548,73 @@ const stories={
     ]
   ]
 }
+,
+ '2019-02-20':{
+  "title": "A Storm at Viejas: San Diego State Takes Down No. 6 Nevada",
+  "score": "San Diego State 65 · Nevada 57",
+  "venue": "Viejas Arena · San Diego, California · Attendance 12,414",
+  "image": "./nevada-sdsu-2019-photo.webp",
+  "photoAlt": "San Diego State defending a Nevada player during the February 2019 upset",
+  "caption": "FEBRUARY 20, 2019 · NO. 6 NEVADA AT SAN DIEGO STATE · COURT STORM",
+  "game": "../college/game.html?id=25",
+  "paragraphs": [
+    "On February 20, 2019, Viejas Arena hosted the kind of college basketball night that feels different before tipoff. Sixth-ranked Nevada arrived at 24–1 with a 10-game winning streak and a roster loaded with star power: twins Caleb and Cody Martin, veteran rebounder Jordan Caroline, and talented freshman Jordan Brown. San Diego State was unranked, but it had the crowd, the defensive identity, and recent success against the Wolf Pack on its side.",
+    "From the opening half, the Aztecs forced Nevada away from its usual offensive rhythm. Devin Watson and Jeremy Hemsley supplied 15 points apiece, while Jalen McDaniels contributed 10 and Matt Mitchell pulled down nine rebounds. San Diego State led 30–21 at the break and repeatedly kept Nevada at arm’s length in the second half. The Wolf Pack shot just 33.9 percent from the field and 28 percent from three-point range.",
+    "Caleb Martin scored 20 points, but the rest of Nevada’s celebrated core struggled to break through. Caroline, normally a powerful interior presence, finished with eight points on 3-for-12 shooting; Cody Martin scored only five on 1-for-7. Watson’s eight assists helped organize the Aztec attack, and San Diego State’s balanced defense proved more decisive than any single scoring outburst.",
+    "The Aztecs completed a 65–57 upset, snapping Nevada’s 10-game winning streak and handing the Wolf Pack only its second loss of the season. At the final horn, the crowd poured onto the Viejas Arena court — a vivid punctuation mark to what was then San Diego State’s highest-ranked victory in program history.",
+    "For Courtside Archive, the lasting memory is the combination of magnitude and atmosphere: seeing a nationally prominent Nevada team with future professionals on the floor, watching the underdog dictate the contest, and witnessing the eruption of Viejas Arena when the upset became real. This was a night when the environment became part of the game’s story."
+  ],
+  "columns": [
+    "PTS",
+    "REB",
+    "AST",
+    "Context"
+  ],
+  "players": [
+    [
+      "Devin Watson",
+      "15",
+      "5",
+      "8",
+      "SDSU floor general"
+    ],
+    [
+      "Jeremy Hemsley",
+      "15",
+      "6",
+      "1",
+      "Co-leading scorer"
+    ],
+    [
+      "Jalen McDaniels",
+      "10",
+      "6",
+      "1",
+      "Aztecs forward"
+    ],
+    [
+      "Caleb Martin",
+      "20",
+      "7",
+      "4",
+      "Nevada leading scorer"
+    ],
+    [
+      "Jordan Caroline",
+      "8",
+      "6",
+      "6",
+      "Held to 3-for-12 shooting"
+    ],
+    [
+      "Cody Martin",
+      "5",
+      "5",
+      "2",
+      "Held to 1-for-7 shooting"
+    ]
+  ]
+}
 };
 const root=document.getElementById('greatestGamesList'),sportEl=document.getElementById('greatestGamesSport'),sortEl=document.getElementById('greatestGamesSort'),searchEl=document.getElementById('greatestGamesSearch'),countEl=document.getElementById('greatestGamesCount');
 if(!root)return;

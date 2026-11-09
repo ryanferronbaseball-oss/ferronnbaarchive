@@ -481,6 +481,73 @@ const stories={
     ]
   ]
 }
+,
+ '2018-11-10':{
+  "title": "The Air Raid Meets the Ground Game: 1,345 Yards of Football History",
+  "score": "San Diego 56 · Davidson 52",
+  "venue": "Torero Stadium · San Diego, California · PFL championship clincher",
+  "image": "./davidson-usd-2018-photo.webp",
+  "photoAlt": "San Diego and Davidson football players during the November 10, 2018 shootout",
+  "caption": "NOVEMBER 10, 2018 · DAVIDSON AT SAN DIEGO · RECORD-SETTING SHOOTOUT",
+  "game": "../cfb/game.html?id=cfb-2018-11-10-davidson-usd",
+  "paragraphs": [
+    "November 10, 2018, brought two entirely different offensive philosophies into Torero Stadium — and neither could be stopped. San Diego leaned on the arm of Anthony Lawrence and the extraordinary receiving ability of Michael Bandy. Davidson answered with a rushing attack so explosive that it would set an FCS single-game record. The result was a 56–52 thriller that clinched another Pioneer Football League championship for USD.",
+    "Davidson’s rushing trio announced itself with three breathtaking first-quarter touchdown runs: Wesley Dugger raced 94 yards, William Wicks broke free for 90, and Keylan Brown added an 80-yard score. The Wildcats amassed 789 rushing yards, paced by Dugger’s 231, Wicks’s 197 and Brown’s 150; quarterback Tyler Phelps contributed another 153. Four Wildcats exceeded 150 yards on the ground, and Davidson twice built a 24-point first-half lead.",
+    "San Diego had the perfect counterpunch. Lawrence completed 24 passes for a school-record 556 yards and seven touchdowns, while Bandy caught 10 passes for 324 yards and four scores. Dalton Kincaid added two touchdown catches, and the Toreros cut a 38–14 second-quarter deficit to just 38–35 at halftime. The game was a showcase of overwhelming ground production on one side and devastating downfield precision on the other.",
+    "The defining sequence came late. After a fourth-down stop at the San Diego one-yard line, Lawrence found Bandy for a stunning 99-yard touchdown that gave USD a 49–45 fourth-quarter lead. Davidson responded, and Brown’s 12-yard scoring run put the Wildcats ahead 52–49 with 2:38 remaining. Lawrence answered in just 55 seconds, finding Bandy for 46 yards before connecting with him for the winning 20-yard touchdown with 1:43 left.",
+    "USD survived 56–52 and secured the PFL title and FCS playoff berth, even as Davidson departed with a national rushing record. For Courtside Archive, the numbers almost defy belief: 556 passing yards from Lawrence, 324 receiving yards from Bandy, 789 rushing yards for Davidson, and a championship decided by one final Lawrence-to-Bandy connection. A game that truly speaks for itself."
+  ],
+  "columns": [
+    "Signature",
+    "Yards",
+    "TD",
+    "Context"
+  ],
+  "players": [
+    [
+      "Anthony Lawrence",
+      "Passing",
+      "556",
+      "7",
+      "USD single-game passing record"
+    ],
+    [
+      "Michael Bandy",
+      "Receiving",
+      "324",
+      "4",
+      "10 catches · 99-yard TD"
+    ],
+    [
+      "Wesley Dugger",
+      "Rushing",
+      "231",
+      "1",
+      "94-yard touchdown run"
+    ],
+    [
+      "William Wicks",
+      "Rushing",
+      "197",
+      "3",
+      "90-yard touchdown run"
+    ],
+    [
+      "Tyler Phelps",
+      "Rushing",
+      "153",
+      "1",
+      "Davidson quarterback"
+    ],
+    [
+      "Keylan Brown",
+      "Rushing",
+      "150",
+      "2",
+      "80-yard touchdown run"
+    ]
+  ]
+}
 };
 const root=document.getElementById('greatestGamesList'),sportEl=document.getElementById('greatestGamesSport'),sortEl=document.getElementById('greatestGamesSort'),searchEl=document.getElementById('greatestGamesSearch'),countEl=document.getElementById('greatestGamesCount');
 if(!root)return;

@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "description": "Only source-supported head-coach and manager assignments for teams and dates in personally attended games. A rule applies only within its explicit date range; uncovered games stay unverified.",
+  "rules": [
+    {"sport":"NBA","team":"LA Lakers","from":"2005-10-01","to":"2011-06-30","coach":"Phil Jackson","source":"https://www.nba.com/lakers/history/owners-gm-coach"},
+    {"sport":"NBA","team":"Boston","from":"2004-10-01","to":"2013-06-30","coach":"Doc Rivers","source":"https://www.nba.com/gamenotes/bucks.pdf"},
+    {"sport":"College Basketball","team":"San Diego","from":"2018-04-01","to":"2022-03-31","coach":"Sam Scholl","source":"https://usdtoreros.com/sports/mens-basketball/coaches/2019-20"},
+    {"sport":"College Basketball","team":"San Diego State","from":"2017-04-01","to":"2026-06-30","coach":"Brian Dutcher","source":"https://goaztecs.com/sports/mens-basketball/roster/coaches/brian-dutcher/863"},
+    {"sport":"NFL","team":"San Francisco 49ers","from":"2007-01-01","to":"2007-12-31","coach":"Mike Nolan","source":"https://www.nfl.com/photos/ari-v-sf-09-10-07-09000d5d80233f25"},
+    {"sport":"NFL","team":"Arizona Cardinals","from":"2007-01-01","to":"2008-12-31","coach":"Ken Whisenhunt","source":"https://www.nfl.com/photos/ari-v-sf-09-10-07-09000d5d80233f25"},
+    {"sport":"College Football","team":"San Diego Toreros","from":"2017-01-01","to":"2019-12-31","coach":"Dale Lindsey","source":"https://usdtoreros.com/sports/football/roster/2018"},
+    {"sport":"MLB","team":"Los Angeles Dodgers","from":"2001-01-01","to":"2005-12-31","coach":"Jim Tracy","source":"https://www.mlb.com/dodgers/history/all-time-managers"},
+    {"sport":"MLB","team":"Colorado Rockies","from":"2003-01-01","to":"2008-12-31","coach":"Clint Hurdle","source":"https://www.mlb.com/rockies/history/timeline"},
+    {"sport":"College Baseball","team":"San Diego","from":"2017-01-01","to":"2021-06-30","coach":"Rich Hill","source":"https://usdtoreros.com/sports/baseball/roster/2018"},
+    {"sport":"College Baseball","team":"San Diego","from":"2022-01-01","to":"2026-12-31","coach":"Brock Ungricht","source":"https://usdtoreros.com/news/2021/7/3/baseball-brock-ungricht-elevated-to-head-coach.aspx"},
+    {"sport":"College Baseball","team":"Oregon","from":"2025-01-01","to":"2025-12-31","coach":"Mark Wasikowski","source":"https://goducks.com/sports/baseball/roster/2025"},
+    {"sport":"MiLB","team":"Lake Elsinore Storm","from":"2021-01-01","to":"2021-12-31","coach":"Mike McCoy","source":"https://www.mlb.com/amp/press-release/press-release-padres-announce-2021-minor-league-coaching-staffs.html"},
+    {"sport":"MiLB","team":"Lake Elsinore Storm","from":"2022-01-01","to":"2022-12-31","coach":"Eric Junge","source":"https://www.milb.com/lake-elsinore/news/announcement-2022-coaching-staff"},
+    {"sport":"MiLB","team":"Lake Elsinore Storm","from":"2023-01-01","to":"2023-12-31","coach":"Pete Zamora","source":"https://www.milb.com/news/announcement-2023-coaching-staff"},
+    {"sport":"MiLB","team":"Lake Elsinore Storm","from":"2024-01-01","to":"2024-12-31","coach":"Lukas Ray","source":"https://www.milb.com/news/padres-announce-2024-lake-elsinore-storm-coaching-staff"},
+    {"sport":"Soccer","team":"Morocco","from":"2026-03-01","to":"2026-07-31","coach":"Mohamed Ouahbi","source":"https://www.fifa.com/en/articles/mohamed-ouahbi-replaces-walid-regragui-morocco"},
+    {"sport":"Soccer","team":"Haiti","from":"2024-03-01","to":"2026-07-31","coach":"Sébastien Migné","source":"https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/haiti-team-profile-history"},
+    {"sport":"Soccer","team":"Nashville SC","from":"2024-07-03","to":"2026-12-31","coach":"B.J. Callaghan","source":"https://www.nashvillesc.com/news/nashville-sc-extends-contract-head-coach-bj-callaghan"}
+  ]
+}

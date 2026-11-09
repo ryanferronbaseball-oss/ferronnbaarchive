@@ -1,6 +1,9 @@
 /* Museum game-gallery nominations. Only approved stories are published as full exhibits. */
 (()=>{'use strict';
 const candidates=[
+ ['2006-02-26','Boston Celtics','Los Angeles Lakers','NBA'],
+ ['2021-02-20','San Diego','San Diego State','College Baseball'],
+ ['2026-06-24','Haiti','Morocco','Soccer','neutral'],
  ['2007-03-18','Minnesota Timberwolves','Los Angeles Lakers','NBA'],
  ['2008-01-27','Cleveland Cavaliers','Los Angeles Lakers','NBA'],
  ['2008-12-06','Utah Jazz','Phoenix Suns','NBA'],
@@ -888,6 +891,149 @@ const stories={
     ]
   ]
 }
+,
+ '2006-02-26':{
+  "title": "Forty vs. Thirty-Nine: Kobe and Pierce's One-Point Duel",
+  "score": "Boston Celtics 112 · Los Angeles Lakers 111",
+  "venue": "STAPLES Center · Los Angeles, California",
+  "image": null,
+  "photoAlt": "Photo awaiting upload",
+  "caption": "FEBRUARY 26, 2006 · CELTICS AT LAKERS · KOBE 40 · PIERCE 39",
+  "game": "../nba/game.html?id=1",
+  "paragraphs": [
+    "The Celtics–Lakers rivalry produced an exceptional individual showdown in Los Angeles. Kobe Bryant scored 40 for the Lakers, while Paul Pierce answered with 39 for Boston. With just one point separating the teams, almost every contribution from the two stars mattered.",
+    "Boston led 91–82 after three quarters, but the Lakers rallied. Lamar Odom converted a three-point play with 15.3 seconds left to tie the game at 111. Bryant then fouled Pierce with 3.2 seconds remaining. Pierce made his first free throw and missed the second, leaving Bryant a final chance; his jumper did not fall, and Boston escaped 112–111.",
+    "Bryant added eight rebounds and six assists to his 40 points, while Pierce supplied seven rebounds and four assists alongside his 39. It was a duel between future Hall of Famers, with a last-possession finish worthy of their reputations.",
+    "For the Archive, this early NBA memory combines classic rivals, two transcendent stars and the kind of final seconds that make a one-point regular-season game unforgettable."
+  ],
+  "columns": [
+    "PTS",
+    "REB",
+    "AST",
+    "FG"
+  ],
+  "players": [
+    [
+      "Kobe Bryant · LAL",
+      "40",
+      "8",
+      "6",
+      "11–23"
+    ],
+    [
+      "Paul Pierce · BOS",
+      "39",
+      "7",
+      "4",
+      "12–20"
+    ]
+  ]
+},
+ '2021-02-20':{
+  "title": "Thirty-Seven Runs, Ten Innings: A Crosstown Rivalry Goes Wild",
+  "score": "San Diego State 19 · San Diego 18 · 10 innings",
+  "venue": "Tony Gwynn Stadium · San Diego, California",
+  "image": null,
+  "photoAlt": "Photo awaiting upload",
+  "caption": "FEBRUARY 20, 2021 · SAN DIEGO AT SAN DIEGO STATE · 37 RUNS",
+  "game": "../college-baseball/game.html?id=cb-2021-02-20-san-diego-san-diego-state-att0085",
+  "paragraphs": [
+    "A crosstown college-baseball matchup became a five-hour avalanche of offense. San Diego and San Diego State combined for 37 runs in ten innings, trading huge rallies before the Aztecs survived 19–18 at Tony Gwynn Stadium.",
+    "SDSU's eight-run second inning established a 10–5 lead, but the Toreros answered with nine runs in the top of the third. Adam Lopez hit a grand slam during a five-RBI performance, and Thomas Luevano also homered. The score had already swung wildly before the game was half over.",
+    "San Diego eventually led 17–12, yet the Aztecs rallied to tie it 18–18 in the eighth, helped by Brian Leonhardt's two-run single. USD collected 17 hits, including three apiece from Luevano and Caleb Ricketts. SDSU's Jaden Fein contributed three hits and four RBIs.",
+    "The tenth-inning ending was extraordinary. San Diego's automatic runner was thrown out at home on an attempted squeeze. In the bottom half, Mike Jarvis scored the winning run on a wild pitch—the only pitch USD reliever Jack Dolak threw. A game of 37 runs ended on one pitch.",
+    "Multiple huge comebacks, a grand slam, familiar Torero names and an almost unbelievable walk-off make this a singular offensive spectacle in the Courtside Archive."
+  ],
+  "columns": [
+    "H",
+    "RBI",
+    "Highlight"
+  ],
+  "players": [
+    [
+      "Adam Lopez · USD",
+      "—",
+      "5",
+      "Grand slam"
+    ],
+    [
+      "Thomas Luevano · USD",
+      "3",
+      "—",
+      "Home run"
+    ],
+    [
+      "Caleb Ricketts · USD",
+      "3",
+      "—",
+      "Three-hit game"
+    ],
+    [
+      "Jaden Fein · SDSU",
+      "3",
+      "4",
+      "Aztecs offensive leader"
+    ]
+  ]
+},
+ '2026-06-24':{
+  "title": "Two Haiti Leads, Four Morocco Goals: A World Cup Night in Atlanta",
+  "score": "Morocco 4 · Haiti 2 · FIFA World Cup Group C",
+  "venue": "Mercedes-Benz Stadium · Atlanta, Georgia · Attendance: 68,239",
+  "image": null,
+  "photoAlt": "Photo awaiting upload",
+  "caption": "JUNE 24, 2026 · MOROCCO VS. HAITI · FIFA WORLD CUP",
+  "game": "../soccer/game.html?id=soc-2026-06-24-mar-hai",
+  "paragraphs": [
+    "The World Cup came to Atlanta with 68,239 spectators and a Group C match that swung dramatically before Morocco pulled clear. Haiti led twice, forcing the Atlas Lions to respond each time. Morocco's eventual 4–2 victory secured a place in the knockout round.",
+    "Haiti struck first in the tenth minute when Lenny Joseph's inventive backheel sequence led to an own goal by Morocco goalkeeper Yassine Bounou. Achraf Hakimi equalized in the 39th minute, but Wilson Isidor restored Haiti's lead just four minutes later. Ismael Saibari answered in first-half stoppage time: 2–2 at the break.",
+    "Morocco's substitutes made the difference. Soufiane Rahimi put the Atlas Lions ahead in the 78th minute, and Gessime Yassine added the fourth in the 89th. Haiti had provided a spirited challenge, including its first World Cup goal since 1974, but the final surge belonged to Morocco.",
+    "For the Archive this was a different kind of great game: a World Cup match on American soil, a huge crowd, two Haitian leads and six goals. It becomes the first soccer exhibit in the Greatest Games collection."
+  ],
+  "columns": [
+    "Team",
+    "Minute",
+    "Moment"
+  ],
+  "players": [
+    [
+      "Yassine Bounou · MAR",
+      "Morocco",
+      "10′",
+      "Own goal"
+    ],
+    [
+      "Achraf Hakimi · MAR",
+      "Morocco",
+      "39′",
+      "Equalizer"
+    ],
+    [
+      "Wilson Isidor · HAI",
+      "Haiti",
+      "43′",
+      "Go-ahead goal"
+    ],
+    [
+      "Ismael Saibari · MAR",
+      "Morocco",
+      "45+1′",
+      "Equalizer"
+    ],
+    [
+      "Soufiane Rahimi · MAR",
+      "Morocco",
+      "78′",
+      "Winning goal"
+    ],
+    [
+      "Gessime Yassine · MAR",
+      "Morocco",
+      "89′",
+      "Insurance goal"
+    ]
+  ]
+}
 };
 const root=document.getElementById('greatestGamesList'),sportEl=document.getElementById('greatestGamesSport'),sortEl=document.getElementById('greatestGamesSort'),searchEl=document.getElementById('greatestGamesSearch'),countEl=document.getElementById('greatestGamesCount');
 if(!root)return;
@@ -898,12 +1044,12 @@ const candidatePhotoDetails={'2018-09-28':{alt:'San Diego Padres players celebra
 const expanded=new Set();
 const label=g=>g.site==='neutral'?`${g.away} vs. ${g.home}`:`${g.away} @ ${g.home}`;
 function content(g){const s=stories[g.date];if(!s)return `<div class="gg-pending">${candidatePhotos[g.date]?`<figure class="gg-photo"><img src="${esc(candidatePhotos[g.date])}" alt="${esc(candidatePhotoDetails[g.date]?.alt||'Game photo')}" loading="lazy"><figcaption>${esc(candidatePhotoDetails[g.date]?.caption||'GAME PHOTO')}</figcaption></figure>`:''}<p>This game has been nominated for the permanent collection. The photograph is uploaded; the full story, selected performances and box-score link await review.</p></div>`;
- return `<div class="gg-story-layout"><figure class="gg-photo">${s.image?`<img src="${esc(s.image)}" alt="${esc(s.photoAlt)}" loading="lazy">`:`<span class="gg-sport-symbol" aria-label="Photo awaiting upload">⚾</span>`}<figcaption>${esc(s.caption)}</figcaption></figure><div class="gg-narrative"><span class="eyebrow">THE GAME STORY</span><h3>${esc(s.title)}</h3><p class="gg-final">${esc(s.score)}</p><p class="gg-venue">${esc(s.venue)}</p>${s.paragraphs.map(p=>`<p>${esc(p)}</p>`).join('')}</div></div><div class="gg-performances"><h4>Featured performances</h4><div class="gg-table-wrap"><table><thead><tr><th>Player</th>${s.columns.map(v=>`<th>${esc(v)}</th>`).join('')}</tr></thead><tbody>${s.players.map(p=>`<tr><th scope="row">${esc(p[0])}</th>${p.slice(1).map(v=>`<td>${esc(v)}</td>`).join('')}</tr>`).join('')}</tbody></table></div><a class="gg-box-link" href="${esc(s.game)}">View Courtside Archive box score ↗</a></div>`;
+ return `<div class="gg-story-layout"><figure class="gg-photo">${s.image?`<img src="${esc(s.image)}" alt="${esc(s.photoAlt)}" loading="lazy">`:`<span class="gg-sport-symbol" aria-label="Photo awaiting upload">${g.sport==='NBA'||g.sport==='College Basketball'?'🏀':g.sport==='Soccer'?'⚽':g.sport==='NFL'||g.sport==='College Football'?'🏈':'⚾'}</span>`}<figcaption>${esc(s.caption)}</figcaption></figure><div class="gg-narrative"><span class="eyebrow">THE GAME STORY</span><h3>${esc(s.title)}</h3><p class="gg-final">${esc(s.score)}</p><p class="gg-venue">${esc(s.venue)}</p>${s.paragraphs.map(p=>`<p>${esc(p)}</p>`).join('')}</div></div><div class="gg-performances"><h4>Featured performances</h4><div class="gg-table-wrap"><table><thead><tr><th>Player</th>${s.columns.map(v=>`<th>${esc(v)}</th>`).join('')}</tr></thead><tbody>${s.players.map(p=>`<tr><th scope="row">${esc(p[0])}</th>${p.slice(1).map(v=>`<td>${esc(v)}</td>`).join('')}</tr>`).join('')}</tbody></table></div><a class="gg-box-link" href="${esc(s.game)}">View Courtside Archive box score ↗</a></div>`;
 }
 function render(){root.querySelectorAll('details[open]').forEach(d=>expanded.add(d.dataset.date));
  const sport=sportEl.value,order=sortEl.value,q=searchEl.value.toLowerCase().trim();const matches=candidates.filter(g=>(sport==='all'||g.sport===sport)&&`${g.away} ${g.home} ${g.sport} ${g.date}`.toLowerCase().includes(q)).sort((a,b)=>order==='oldest'?a.date.localeCompare(b.date):b.date.localeCompare(a.date));
  const completed=Object.keys(stories).length;countEl.textContent=`${matches.length} of ${candidates.length} games · ${completed} completed ${completed===1?'story':'stories'}`;
- root.innerHTML=matches.length?matches.map(g=>{const s=stories[g.date],icon=g.sport==='NBA'||g.sport==='College Basketball'?'🏀':g.sport==='NFL'||g.sport==='College Football'?'🏈':'⚾';return `<details class="gg-game ${s?'gg-complete':''}" data-date="${g.date}" ${expanded.has(g.date)?'open':''}><summary><span class="gg-card-image">${(s?.image||candidatePhotos[g.date])?`<img src="${esc(s?.image||candidatePhotos[g.date])}" alt="" loading="lazy">`:`<span class="gg-sport-symbol" aria-hidden="true">${icon}</span>`}<span class="gg-card-year">${g.date.slice(0,4)}</span></span><span class="gg-card-body"><span class="gg-card-sport">${esc(g.sport)}</span><strong>${esc(label(g))}</strong><span class="gg-date">${formatDate(g.date)}</span><small>${s?esc(s.score):'Story pending'}</small><span class="gg-card-action">${s?'Explore game story':'View nomination'} <span aria-hidden="true">↗</span></span></span></summary><div class="gg-content">${content(g)}</div></details>`}).join(''):'<p class="gg-empty">No nominated games match these filters.</p>';
+ root.innerHTML=matches.length?matches.map(g=>{const s=stories[g.date],icon=g.sport==='NBA'||g.sport==='College Basketball'?'🏀':g.sport==='NFL'||g.sport==='College Football'?'🏈':g.sport==='Soccer'?'⚽':'⚾';return `<details class="gg-game ${s?'gg-complete':''}" data-date="${g.date}" ${expanded.has(g.date)?'open':''}><summary><span class="gg-card-image">${(s?.image||candidatePhotos[g.date])?`<img src="${esc(s?.image||candidatePhotos[g.date])}" alt="" loading="lazy">`:`<span class="gg-sport-symbol" aria-hidden="true">${icon}</span>`}<span class="gg-card-year">${g.date.slice(0,4)}</span></span><span class="gg-card-body"><span class="gg-card-sport">${esc(g.sport)}</span><strong>${esc(label(g))}</strong><span class="gg-date">${formatDate(g.date)}</span><small>${s?esc(s.score):'Story pending'}</small><span class="gg-card-action">${s?'Explore game story':'View nomination'} <span aria-hidden="true">↗</span></span></span></summary><div class="gg-content">${content(g)}</div></details>`}).join(''):'<p class="gg-empty">No nominated games match these filters.</p>';
  root.querySelectorAll('details').forEach(d=>d.addEventListener('toggle',()=>{if(d.open)expanded.add(d.dataset.date);else expanded.delete(d.dataset.date)}));
 }
 [sportEl,sortEl,searchEl].forEach(el=>el.addEventListener(el===searchEl?'input':'change',render));render();

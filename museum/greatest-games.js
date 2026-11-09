@@ -420,6 +420,67 @@ const stories={
     ]
   ]
 }
+,
+ '2018-09-28':{
+  "title": "Fifteen Innings in September: Two Tying Homers and a Galvis Walk-Off",
+  "score": "San Diego Padres 3 · Arizona Diamondbacks 2 · 15 innings",
+  "venue": "Petco Park · San Diego, California · Late-September expanded rosters",
+  "image": "./padres-dbacks-2018.avif",
+  "photoAlt": "San Diego Padres players celebrating their September 2018 walk-off victory",
+  "caption": "SEPTEMBER 28, 2018 · DIAMONDBACKS AT PADRES · 15-INNING WALK-OFF",
+  "game": "../mlb/index.html",
+  "paragraphs": [
+    "September 28, 2018, was the sort of late-season baseball night that became more interesting the longer it went. Neither Arizona nor San Diego was headed to October, but September’s expanded rosters offered a fascinating mix of established names, developing players and extra bench options. At Petco Park, they needed nearly every bit of that depth during a 15-inning marathon.",
+    "The game began as a pitchers’ duel. Rookie Eric Lauer gave San Diego 6⅓ innings without allowing an earned run, while Arizona left-hander Patrick Corbin worked five scoreless frames in what proved to be one of his final starts for the Diamondbacks. Arizona finally broke through in the seventh when Chris Owings scored on a passed ball, but José Pirela answered immediately with a solo home run to tie the game at one.",
+    "The score stayed level until the 12th, when Ketel Marte crossed on Nick Ahmed’s sacrifice fly after the Padres intentionally walked stars Paul Goldschmidt and David Peralta to load the bases. Down to their final out against Archie Bradley, San Diego turned to Hunter Renfroe — scratched from the starting lineup because he was ill. Renfroe came off the bench and crushed a pinch-hit, 422-foot homer on Bradley’s first pitch to make it 2–2.",
+    "An expanded September bench helped deliver the ending, too. Pinch-hitter Javy Guerra worked a leadoff walk against Matt Andriese in the bottom of the 15th. Freddy Galvis, batting for the seventh time, then ripped a double down the right-field line to bring Guerra home and end the game, 3–2. Eight Padres relievers combined to cover 8⅔ innings, including memorable appearances by Brad Wieck and Kirby Yates.",
+    "That is why this game belongs in Courtside Archive: a scoreless opening stretch, two separate tying homers, a pinch-hit rescue with two outs in extra innings, a 15th-inning walk-off and a wonderfully varied late-September cast. The outcome mattered less in the standings than the experience of watching the roster unfold for five extra innings."
+  ],
+  "columns": [
+    "Contribution",
+    "Moment",
+    "Inning",
+    "Context"
+  ],
+  "players": [
+    [
+      "Freddy Galvis",
+      "Walk-off RBI double",
+      "15th",
+      "Seventh plate appearance"
+    ],
+    [
+      "Hunter Renfroe",
+      "Pinch-hit solo HR",
+      "12th",
+      "Tied game with two outs"
+    ],
+    [
+      "José Pirela",
+      "Solo HR",
+      "7th",
+      "First Padres equalizer"
+    ],
+    [
+      "Javy Guerra",
+      "Pinch-hit walk, winning run",
+      "15th",
+      "September bench contribution"
+    ],
+    [
+      "Eric Lauer",
+      "6⅓ IP · 0 ER · 6 K",
+      "Start",
+      "Rookie-season finale"
+    ],
+    [
+      "Patrick Corbin",
+      "5 scoreless IP",
+      "Start",
+      "Arizona ace"
+    ]
+  ]
+}
 };
 const root=document.getElementById('greatestGamesList'),sportEl=document.getElementById('greatestGamesSport'),sortEl=document.getElementById('greatestGamesSort'),searchEl=document.getElementById('greatestGamesSearch'),countEl=document.getElementById('greatestGamesCount');
 if(!root)return;

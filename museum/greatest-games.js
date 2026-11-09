@@ -753,6 +753,73 @@ const stories={
     ]
   ]
 }
+,
+ '2022-03-05':{
+  "title": "Fifteen Strikeouts, Six Homers Allowed: Brycen Mautz’s Unbelievable Afternoon",
+  "score": "Dallas Baptist 8 · San Diego 6",
+  "venue": "Fowler Park · San Diego, California",
+  "image": "./dbu-usd-2022.webp",
+  "photoAlt": "San Diego pitcher Brycen Mautz number 35 delivering a pitch against Dallas Baptist",
+  "caption": "MARCH 5, 2022 · DALLAS BAPTIST AT SAN DIEGO · NINE HOME RUNS",
+  "game": "../college-baseball/game.html?id=cb-2022-03-05-dallas-baptist-san-diego-att0124",
+  "paragraphs": [
+    "March 5, 2022, at Fowler Park delivered one of the strangest pitching performances in Courtside Archive history. San Diego left-hander Brycen Mautz struck out 15 Dallas Baptist hitters — a dominant total on almost any afternoon — and yet the Patriots hit six home runs against him. The combination of overwhelming swing-and-miss stuff and repeated long balls made the 8–6 Dallas Baptist victory genuinely extraordinary.",
+    "The home-run parade started immediately with Miguel Santos’s two-run shot in the first. Jace Grady homered in the third, Nate Rombach in the fourth, Cole Moore in the fifth, George Specht in the sixth and Blayne Jones with a two-run blast in the seventh. All six DBU home runs came off Mautz, whose final line was 6⅓ innings, nine hits, eight runs, one walk and 15 strikeouts. Of the 19 outs he recorded, 15 came by strikeout.",
+    "San Diego refused to be left out of the power show. Kevin Sim went deep in the fourth to get the Toreros on the board, then Dustin Allen and Jack Costello each hit two-run homers in a four-run fifth. Suddenly a 5–1 game was tied at 5–5, with both lineups trading explosive swings and every fly ball seeming dangerous.",
+    "DBU reclaimed the lead on Specht’s solo shot in the sixth, then Jones’s two-run homer opened an 8–5 advantage in the seventh. Costello added a sacrifice fly for USD’s final run, finishing with three RBI, but the Patriots held on 8–6. The teams combined for nine home runs — six by Dallas Baptist and three by San Diego — and 17 of DBU’s outs came via strikeout against the Torero pitching staff.",
+    "For Courtside Archive, this was more than a slugfest. It was a statistical contradiction unfolding in real time: Mautz kept overpowering hitters, but nearly every major mistake left the yard. Fifteen strikeouts and six homers allowed in the same start made this one of the most distinctive games in the collection."
+  ],
+  "columns": [
+    "Performance",
+    "HR",
+    "RBI / K",
+    "Highlight"
+  ],
+  "players": [
+    [
+      "Brycen Mautz",
+      "6⅓ IP · 8 ER",
+      "6 allowed",
+      "15 K",
+      "104 pitches · 1 BB"
+    ],
+    [
+      "Blayne Jones",
+      "2-for-4",
+      "1",
+      "2 RBI",
+      "Seventh-inning two-run HR"
+    ],
+    [
+      "Miguel Santos",
+      "1-for-4",
+      "1",
+      "2 RBI",
+      "First-inning two-run HR"
+    ],
+    [
+      "Jack Costello",
+      "1-for-3",
+      "1",
+      "3 RBI",
+      "Game-tying HR + sacrifice fly"
+    ],
+    [
+      "Dustin Allen",
+      "2-for-3",
+      "1",
+      "2 RBI",
+      "Fifth-inning two-run HR"
+    ],
+    [
+      "Kevin Sim",
+      "1-for-4",
+      "1",
+      "1 RBI",
+      "Fourth-inning solo HR"
+    ]
+  ]
+}
 };
 const root=document.getElementById('greatestGamesList'),sportEl=document.getElementById('greatestGamesSport'),sortEl=document.getElementById('greatestGamesSort'),searchEl=document.getElementById('greatestGamesSearch'),countEl=document.getElementById('greatestGamesCount');
 if(!root)return;

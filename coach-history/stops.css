@@ -6,3 +6,7 @@
 .key-dot.seen{background:#831738}.key-dot.unseen{background:#74bfe4}
 .hall-badge{display:inline-flex;align-items:center;align-self:flex-start;width:fit-content;margin:6px 0 8px;padding:5px 9px;border-radius:6px;border:1px solid #b99c48;background:#241e17;color:#f1d27a!important;text-decoration:none;font-size:10px;font-weight:850;letter-spacing:.035em}
 .hall-badge:hover{background:#433421;color:#ffebad!important}
+.coach-portrait{width:166px;height:166px;flex:0 0 166px;border:4px solid #e5f5fb;background:#e5f5fb;border-radius:15px;overflow:hidden;margin-left:auto;box-shadow:0 9px 26px #152c4316}
+.coach-portrait img{width:100%;height:100%;object-fit:cover;object-position:center 24%;display:block}
+.coach-portrait[hidden]{display:none}
+@media(max-width:620px){.coach-portrait{margin:0;width:148px;height:148px;flex-basis:148px}}

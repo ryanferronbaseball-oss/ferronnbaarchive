@@ -34,7 +34,7 @@ const stories={
   title:'A New Era in Anaheim: Pujols’ Debut and Weaver’s Masterpiece',
   score:'Los Angeles Angels 5 · Kansas City Royals 0',
   venue:'Angel Stadium · Anaheim, California · Opening Day',
-  image:'',
+  image:'./pujols-angels-opening-day-2012.webp',
   photoAlt:'Albert Pujols batting in his white number 5 Los Angeles Angels uniform',
   caption:'APRIL 6, 2012 · ROYALS AT ANGELS · PUJOLS DEBUT',
   game:'../mlb/index.html',

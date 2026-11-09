@@ -71,8 +71,8 @@ const stories={
   title:'Six Runs Down, One Unforgettable Comeback',
   score:'Los Angeles Dodgers 7 · Tampa Bay Rays 6',
   venue:'Dodger Stadium · Los Angeles, California',
-  image:'',
-  photoAlt:'Yasiel Puig in a Dodgers uniform holding a bat',
+  image:'./dodgers-rays-2013.webp',
+  photoAlt:'Los Angeles Dodgers teammates celebrating during the August 9, 2013 comeback',
   caption:'AUGUST 9, 2013 · RAYS AT DODGERS · SIX-RUN COMEBACK',
   game:'../mlb/index.html',
   paragraphs:[

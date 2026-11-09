@@ -820,6 +820,74 @@ const stories={
     ]
   ]
 }
+,
+ '2022-05-28':{
+  "title": "Eleven Innings to a Championship: San Diego’s Unforgettable WCC Comeback",
+  "score": "San Diego 15 · Gonzaga 12 · 11 innings",
+  "venue": "Banner Island Ballpark · Stockton, California · WCC Tournament final",
+  "image": "./usd-gonzaga-wcc-2022.webp",
+  "photoAlt": "San Diego baseball players celebrating the 2022 WCC tournament championship with the trophy",
+  "caption": "MAY 28, 2022 · SAN DIEGO VS. GONZAGA · WCC CHAMPIONS",
+  "game": "../college-baseball/game.html?id=cb-2022-05-28-san-diego-gonzaga-att0171",
+  "paragraphs": [
+    "On May 28, 2022, San Diego stood one victory away from a West Coast Conference Tournament championship and its first NCAA Regional appearance since 2013. Standing in the way was top-seeded Gonzaga. What unfolded at Banner Island Ballpark in Stockton was an 11-inning, 27-run epic that pushed both teams to the edge before the Toreros emerged with the trophy.",
+    "The scoring began immediately. Caleb Ricketts doubled in a run in the first and RJ Teijeiro followed with an RBI single, but Gonzaga answered with five runs of its own. San Diego scored three in the second and trailed 7–6 after four. The Bulldogs stretched their lead to 10–6 through seven innings, leaving USD just six outs from elimination.",
+    "Then came the six-run eighth. Chase Meidroth doubled in a run, Kevin Sim singled home another, and Ricketts followed with an RBI hit. Jack Costello’s two-run single put the Toreros ahead, and an error helped extend the lead to 12–10. The championship seemed within reach, but Gonzaga refused to fold: a solo homer in the eighth and an RBI single in the ninth tied the game at 12–12.",
+    "After a scoreless 10th, Costello produced the defining swing of the season. His solo home run in the top of the 11th restored San Diego’s lead, 13–12. Cody Jefferis followed with his first homer of 2022, a two-run shot that added crucial insurance. Kyle Carr, who threw two scoreless extra innings without allowing a hit, closed the door on a 15–12 victory.",
+    "Ricketts finished 3-for-5 with two RBI, Sim drove in three, Costello had three RBI, and Meidroth scored four times. Their performances delivered USD’s second WCC Tournament title and first since the Kris Bryant-led team of 2013, securing the program’s ninth NCAA Regional bid. The championship trophy celebration in the exhibit photograph captures everything the final box score cannot: the relief, exhaustion and joy of a remarkable comeback.",
+    "For Courtside Archive, few games carry this combination of drama and significance. A four-run deficit, a six-run rally, a blown late lead, an extra-inning response, and a long-awaited conference title made May 28, 2022, a defining day in the collection."
+  ],
+  "columns": [
+    "H-AB",
+    "HR / 2B",
+    "RBI",
+    "Highlight"
+  ],
+  "players": [
+    [
+      "Jack Costello",
+      "2-6",
+      "HR",
+      "3",
+      "Go-ahead 11th-inning homer"
+    ],
+    [
+      "Cody Jefferis",
+      "1-6",
+      "HR",
+      "2",
+      "Two-run insurance homer"
+    ],
+    [
+      "Caleb Ricketts",
+      "3-5",
+      "2B",
+      "2",
+      "Led USD in hits"
+    ],
+    [
+      "Kevin Sim",
+      "2-5",
+      "2B",
+      "3",
+      "Key eighth-inning RBI"
+    ],
+    [
+      "Chase Meidroth",
+      "1-4",
+      "2B",
+      "1",
+      "Four runs scored"
+    ],
+    [
+      "Kyle Carr",
+      "2 IP",
+      "0 H",
+      "3 K",
+      "Winning pitcher in extras"
+    ]
+  ]
+}
 };
 const root=document.getElementById('greatestGamesList'),sportEl=document.getElementById('greatestGamesSport'),sortEl=document.getElementById('greatestGamesSort'),searchEl=document.getElementById('greatestGamesSearch'),countEl=document.getElementById('greatestGamesCount');
 if(!root)return;

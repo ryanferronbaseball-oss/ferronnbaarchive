@@ -615,6 +615,59 @@ const stories={
     ]
   ]
 }
+,
+ '2019-02-22':{
+  "title": "Six Hitless Innings, One Grand Slam: Hardman Breaks Murphy’s Gem",
+  "score": "Oklahoma 6 · San Diego 1",
+  "venue": "Fowler Park · San Diego, California · Tony Gwynn Legacy tournament",
+  "image": "./oklahoma-usd-2019.webp",
+  "photoAlt": "Oklahoma batter Tyler Hardman swinging during the February 22, 2019 game against San Diego",
+  "caption": "FEBRUARY 22, 2019 · OKLAHOMA AT SAN DIEGO · HARDMAN SIX RBI",
+  "game": "../college-baseball/game.html?id=cb-2019-02-22-oklahoma-san-diego-att0037",
+  "paragraphs": [
+    "For six innings on February 22, 2019, Chris Murphy seemed in complete control. In the Tony Gwynn Legacy tournament opener at Fowler Park, the San Diego left-hander held Oklahoma without a hit and struck out 12 Sooners overall. He retired 18 of the first 19 batters he faced — not quite a perfect game, because one reached base, but an extraordinary no-hit bid against an undefeated opponent.",
+    "On the other mound was Cade Cavalli, a future professional standout, giving Oklahoma a brilliant start of his own. San Diego managed a first-inning run when Max Jung-Goldberg came home on Cody Jefferis’s RBI groundout, but Cavalli allowed little else. He went seven innings, surrendered four hits and one run, walked one and struck out seven, keeping the Sooners within a single swing of the lead.",
+    "That swing arrived in the seventh. Brandon Zaragoza broke up Murphy’s no-hitter with an infield single; Justin Mitchell followed with another hit, and Conor McKenna was hit by a pitch to load the bases. Tyler Hardman drove a 2–2 pitch over the left-field wall for a grand slam. In one instant, a 1–0 San Diego lead became a 4–1 Oklahoma advantage, and Murphy’s magnificent outing had turned into a loss.",
+    "Hardman was not finished. In the ninth, he tripled to right-center to bring home two more runs, accounting for all six of Oklahoma’s RBI in the 6–1 victory. The Sooners finished with only four hits as a team; Hardman had two of them, and both were decisive extra-base blows. Murphy ended with 6⅓ innings, three hits allowed, four runs and 12 strikeouts, while Cavalli earned the win.",
+    "For Courtside Archive, the fascination is the extraordinary concentration of talent and momentum: two high-level arms locked in a 1–0 duel, a no-hit bid surviving six innings, and one hitter single-handedly overturning the result with a grand slam and a two-run triple. It was a showcase for Murphy, Cavalli and Hardman alike."
+  ],
+  "columns": [
+    "Performance",
+    "IP / H",
+    "K / RBI",
+    "Highlight"
+  ],
+  "players": [
+    [
+      "Tyler Hardman",
+      "2-for-4",
+      "Grand slam + triple",
+      "6 RBI",
+      "All Oklahoma runs driven in"
+    ],
+    [
+      "Chris Murphy",
+      "No-hit bid",
+      "6⅓ IP · 3 H",
+      "12 K",
+      "Hitless through six"
+    ],
+    [
+      "Cade Cavalli",
+      "Winning start",
+      "7 IP · 4 H",
+      "7 K",
+      "Allowed one run"
+    ],
+    [
+      "Cody Jefferis",
+      "RBI groundout",
+      "1 RBI",
+      "—",
+      "USD’s lone run"
+    ]
+  ]
+}
 };
 const root=document.getElementById('greatestGamesList'),sportEl=document.getElementById('greatestGamesSport'),sortEl=document.getElementById('greatestGamesSort'),searchEl=document.getElementById('greatestGamesSearch'),countEl=document.getElementById('greatestGamesCount');
 if(!root)return;

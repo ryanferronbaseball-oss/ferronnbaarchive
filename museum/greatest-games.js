@@ -367,6 +367,59 @@ const stories={
   columns:['H-AB','HR','RBI','Runs'],
   players:[['Cade Arrambide','5-6','4','7','4']]
  }
+,
+ '2018-02-17':{
+  "title": "Seven Runs in the Seventh: USD Survives Andrew Vaughn’s Five-Hit Showcase",
+  "score": "San Diego 11 · California 8",
+  "venue": "Fowler Park · San Diego, California",
+  "image": "./cal-usd-2018.webp",
+  "photoAlt": "California player number 20 rounding second base beside a San Diego infielder",
+  "caption": "FEBRUARY 17, 2018 · CALIFORNIA AT SAN DIEGO · SEVEN-RUN SEVENTH",
+  "game": "../college-baseball/game.html?id=cb-2018-02-17-california-san-diego-att0003",
+  "paragraphs": [
+    "On February 17, 2018, San Diego and California delivered a remarkable early-season contest at Fowler Park. A day after dropping its opener to the Golden Bears, the Toreros found themselves in another fight — this time against an opposing first baseman having a nearly perfect afternoon at the plate.",
+    "Cal’s Andrew Vaughn went 5-for-5 with two home runs, five RBI and two runs scored. His first homer, a two-run drive to right-center in the third inning off San Diego starter Chris Murphy, tied the game at 4–4. The matchup gained even more significance in hindsight: Murphy reached the major leagues, while Vaughn was selected third overall by the Chicago White Sox in the 2019 MLB Draft.",
+    "Murphy still struck out nine over five innings, but Cal carried a 6–4 lead into the bottom of the seventh. Then the game changed completely. Jay Schuyler drove in two with a double down the right-field line; Shane McGuire and Jeff Houghtby supplied run-scoring singles; and a hit batter, a bases-loaded walk and a fielder’s choice helped San Diego pile up seven runs in the inning.",
+    "California scored twice in the eighth, but Justin Friedman closed the door on an 11–8 San Diego victory. Six Toreros finished with two hits apiece, while Gabriel Ponce earned the win in relief. It was USD’s first victory of the season and a dramatic example of how one inning can outweigh even an extraordinary individual performance.",
+    "For Courtside Archive, this exhibit preserves both sides of an unforgettable game: Vaughn’s five-hit, two-homer statement against a future big leaguer and the Toreros’ seven-run rally that turned a loss into an exhilarating comeback."
+  ],
+  "columns": [
+    "H-AB",
+    "HR",
+    "RBI",
+    "Context"
+  ],
+  "players": [
+    [
+      "Andrew Vaughn",
+      "5-5",
+      "2",
+      "5",
+      "2019 MLB Draft · No. 3 overall"
+    ],
+    [
+      "Jay Schuyler",
+      "2 hits",
+      "—",
+      "2",
+      "Two-run double sparked seventh"
+    ],
+    [
+      "Chris Murphy",
+      "5 IP",
+      "—",
+      "9 K",
+      "Future MLB pitcher"
+    ],
+    [
+      "Gabriel Ponce",
+      "2 IP",
+      "—",
+      "3 K",
+      "Winning reliever"
+    ]
+  ]
+}
 };
 const root=document.getElementById('greatestGamesList'),sportEl=document.getElementById('greatestGamesSport'),sortEl=document.getElementById('greatestGamesSort'),searchEl=document.getElementById('greatestGamesSearch'),countEl=document.getElementById('greatestGamesCount');
 if(!root)return;

@@ -1,0 +1,6 @@
+.profile .tenure .stop-badge{display:inline-flex;align-items:center;gap:6px;border-radius:20px;padding:8px 12px;font-size:12px;font-weight:750;border:1px solid transparent}
+.profile .tenure .stop-badge.witnessed{background:#f6edf1;color:#792943;border-color:#e8cbd5}
+.profile .tenure .stop-badge.unseen{background:#e5f5fb;color:#155f86;border-color:#b9dff0}
+.stops-key{display:flex;align-items:center;gap:7px;color:#586f80;font-size:11px;font-weight:750;margin:0 0 12px}
+.key-dot{width:9px;height:9px;border-radius:50%;display:inline-block;margin-left:9px}
+.key-dot.seen{background:#831738}.key-dot.unseen{background:#74bfe4}

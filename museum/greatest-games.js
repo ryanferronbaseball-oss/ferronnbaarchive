@@ -53,7 +53,7 @@ const stories={
   title:'Landale’s 34 and 18: Saint Mary’s survives in San Diego',
   score:'Saint Mary’s 65 · San Diego 62',
   venue:'Jenny Craig Pavilion · San Diego, California',
-  image:'',
+  image:'./saint-marys-usd-2018-landale-pineiro.webp',
   photoAlt:'Jock Landale defending San Diego forward Isaiah Pineiro',
   caption:'FEBRUARY 3, 2018 · SAINT MARY’S AT SAN DIEGO · LANDALE 34 AND 18',
   game:'../ncaab/index.html',

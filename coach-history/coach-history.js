@@ -25,7 +25,7 @@ function readCSV(str){const rows=[];let row=[],value='',quoted=false;
  if(value||row.length){row.push(value);rows.push(row)}const [keys,...data]=rows;return data.map(a=>Object.fromEntries(keys.map((k,i)=>[k,a[i]??''])))}
 let coaches=[],allCoaches=[],coverage={},loaded=false;
 let nbaStops={},nbaHall={};
-const hallBadge=c=>{const h=nbaHall[c.name];return h?`<a class="hall-badge" href="${esc(h.url)}" target="_blank" rel="noopener noreferrer" title="Naismith Basketball Hall of Fame: inducted as ${esc(h.category.toLowerCase())} in ${h.year}">★ Hall of Fame · ${esc(h.category)} · ${h.year}</a>`:''};
+const hallBadge=c=>{const h=nbaHall[c.name];return h&&['Coach','Contributor'].includes(h.category)?`<a class="hall-badge" href="${esc(h.url)}" target="_blank" rel="noopener noreferrer" title="Naismith Basketball Hall of Fame: inducted as ${esc(h.category.toLowerCase())} in ${h.year}">★ Hall of Fame · ${esc(h.category)} · ${h.year}</a>`:''};
 const franchiseKey=s=>{const n=norm(s).replace(/^los angeles /,'la ').replace(/^new jersey /,'brooklyn ');
  if(n.startsWith('la lakers'))return 'la lakers';if(n.startsWith('la clippers'))return 'la clippers';
  const locations=['new orleans','oklahoma city','san antonio','golden state','new york','brooklyn','phoenix','chicago','boston','cleveland','sacramento','milwaukee','orlando','houston','utah','denver','atlanta','washington','miami','indiana','detroit','portland','philadelphia','seattle','charlotte','minnesota'];

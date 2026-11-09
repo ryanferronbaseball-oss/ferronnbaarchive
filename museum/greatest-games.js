@@ -372,7 +372,7 @@ const root=document.getElementById('greatestGamesList'),sportEl=document.getElem
 if(!root)return;
 const esc=v=>String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const formatDate=date=>new Date(date+'T12:00:00Z').toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric',timeZone:'UTC'});
-const candidatePhotos={'2018-09-28':'./padres-dbacks-2018.avif','2018-02-17':'./cal-usd-2018.webp'};
+const candidatePhotos={'2018-09-28':'./padres-dbacks-2018.avif','2018-02-17':'./cal-usd-2018.webp','2018-11-10':'./davidson-usd-2018-photo.webp','2019-02-20':'./nevada-sdsu-2019-photo.webp'};
 const candidatePhotoDetails={'2018-09-28':{alt:'San Diego Padres players celebrating their September 2018 walk-off victory',caption:'SEPTEMBER 28, 2018 · D-BACKS AT PADRES · POSTGAME CELEBRATION'},'2018-02-17':{alt:'California player number 20 rounding second base beside a San Diego infielder',caption:'FEBRUARY 17, 2018 · CALIFORNIA AT SAN DIEGO'}};
 const expanded=new Set();
 const label=g=>g.site==='neutral'?`${g.away} vs. ${g.home}`:`${g.away} @ ${g.home}`;

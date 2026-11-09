@@ -1039,12 +1039,44 @@ const root=document.getElementById('greatestGamesList'),sportEl=document.getElem
 if(!root)return;
 const esc=v=>String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const formatDate=date=>new Date(date+'T12:00:00Z').toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric',timeZone:'UTC'});
+const profileLinks=window.CourtsideGreatestGameLinks||{};
+const plain=v=>String(v).normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[’‘]/g,"'").toLowerCase();
+function linkPlayers(text,date){
+ const entries=profileLinks[date]||[];
+ if(!entries.length)return esc(text);
+ // Keep a map back to the original characters so accented names and curly quotes still link.
+ let folded='',positions=[];
+ for(let i=0;i<text.length;i++)for(const c of plain(text[i])){folded+=c;positions.push(i)}
+ const lastNames=entries.map(([name])=>name.trim().split(/\s+/).at(-1).replace(/[^\p{L}-]/gu,''));
+ const hits=[];
+ entries.forEach(([name,url],idx)=>{
+  const aliases=[name];
+  const last=lastNames[idx];
+  if(last.length>=5&&lastNames.filter(v=>plain(v)===plain(last)).length===1)aliases.push(last);
+  for(const alias of aliases){const needle=plain(alias);if(!needle)continue;let pos=0;
+   while((pos=folded.indexOf(needle,pos))!==-1){
+    const after=pos+needle.length;
+    const word=c=>c&&/[\p{L}\p{N}]/u.test(c);
+    if(!word(folded[pos-1])&&!word(folded[after])){
+     const from=positions[pos],to=positions[after-1]+1;
+     // Only capitalize single-surname mentions; avoid linking ordinary words.
+     if(alias===name||/[\p{Lu}]/u.test(text[from]))hits.push({from,to,url,length:to-from});
+    }
+    pos+=needle.length;
+   }
+  }
+ });
+ hits.sort((a,b)=>a.from-b.from||b.length-a.length);
+ let html='',end=0;
+ for(const hit of hits){if(hit.from<end)continue;html+=esc(text.slice(end,hit.from));html+='<a class="gg-player-link" href="'+esc(hit.url)+'" title="View player profile">'+esc(text.slice(hit.from,hit.to))+'</a>';end=hit.to}
+ return html+esc(text.slice(end));
+}
 const candidatePhotos={'2018-09-28':'./padres-dbacks-2018.avif','2018-02-17':'./cal-usd-2018.webp','2018-11-10':'./davidson-usd-2018-photo.webp','2019-02-20':'./nevada-sdsu-2019-photo.webp','2019-02-22':'./oklahoma-usd-2019.webp','2019-11-30':'./emu-uci-2019.webp','2020-02-28':'./monmouth-usd-2020.webp','2022-03-05':'./dbu-usd-2022.webp','2022-05-28':'./usd-gonzaga-wcc-2022.webp'};
 const candidatePhotoDetails={'2018-09-28':{alt:'San Diego Padres players celebrating their September 2018 walk-off victory',caption:'SEPTEMBER 28, 2018 · D-BACKS AT PADRES · POSTGAME CELEBRATION'},'2018-02-17':{alt:'California player number 20 rounding second base beside a San Diego infielder',caption:'FEBRUARY 17, 2018 · CALIFORNIA AT SAN DIEGO'},'2019-02-22':{alt:'Oklahoma batter number 5 swinging during the game against San Diego',caption:'FEBRUARY 22, 2019 · OKLAHOMA AT SAN DIEGO'},'2019-11-30':{alt:'UC Irvine number 40 taking a jump shot against Eastern Michigan',caption:'NOVEMBER 30, 2019 · EASTERN MICHIGAN AT UC IRVINE'},'2020-02-28':{alt:'San Diego pitcher number 32 delivering a pitch against Monmouth',caption:'FEBRUARY 28, 2020 · MONMOUTH AT SAN DIEGO'},'2022-03-05':{alt:'San Diego pitcher number 35 delivering a pitch against Dallas Baptist',caption:'MARCH 5, 2022 · DALLAS BAPTIST AT SAN DIEGO'},'2022-05-28':{alt:'San Diego players celebrating the 2022 West Coast Conference baseball championship with the trophy',caption:'MAY 28, 2022 · SAN DIEGO VS. GONZAGA · WCC CHAMPIONS'} };
 const expanded=new Set();
 const label=g=>g.site==='neutral'?`${g.away} vs. ${g.home}`:`${g.away} @ ${g.home}`;
 function content(g){const s=stories[g.date];if(!s)return `<div class="gg-pending">${candidatePhotos[g.date]?`<figure class="gg-photo"><img src="${esc(candidatePhotos[g.date])}" alt="${esc(candidatePhotoDetails[g.date]?.alt||'Game photo')}" loading="lazy"><figcaption>${esc(candidatePhotoDetails[g.date]?.caption||'GAME PHOTO')}</figcaption></figure>`:''}<p>This game has been nominated for the permanent collection. The photograph is uploaded; the full story, selected performances and box-score link await review.</p></div>`;
- return `<div class="gg-story-layout"><figure class="gg-photo">${s.image?`<img src="${esc(s.image)}" alt="${esc(s.photoAlt)}" loading="lazy">`:`<span class="gg-sport-symbol" aria-label="Photo awaiting upload">${g.sport==='NBA'||g.sport==='College Basketball'?'🏀':g.sport==='Soccer'?'⚽':g.sport==='NFL'||g.sport==='College Football'?'🏈':'⚾'}</span>`}<figcaption>${esc(s.caption)}</figcaption></figure><div class="gg-narrative"><span class="eyebrow">THE GAME STORY</span><h3>${esc(s.title)}</h3><p class="gg-final">${esc(s.score)}</p><p class="gg-venue">${esc(s.venue)}</p>${s.paragraphs.map(p=>`<p>${esc(p)}</p>`).join('')}</div></div><div class="gg-performances"><h4>Featured performances</h4><div class="gg-table-wrap"><table><thead><tr><th>Player</th>${s.columns.map(v=>`<th>${esc(v)}</th>`).join('')}</tr></thead><tbody>${s.players.map(p=>`<tr><th scope="row">${esc(p[0])}</th>${p.slice(1).map(v=>`<td>${esc(v)}</td>`).join('')}</tr>`).join('')}</tbody></table></div><a class="gg-box-link" href="${esc(s.game)}">View Courtside Archive box score ↗</a></div>`;
+ return `<div class="gg-story-layout"><figure class="gg-photo">${s.image?`<img src="${esc(s.image)}" alt="${esc(s.photoAlt)}" loading="lazy">`:`<span class="gg-sport-symbol" aria-label="Photo awaiting upload">${g.sport==='NBA'||g.sport==='College Basketball'?'🏀':g.sport==='Soccer'?'⚽':g.sport==='NFL'||g.sport==='College Football'?'🏈':'⚾'}</span>`}<figcaption>${esc(s.caption)}</figcaption></figure><div class="gg-narrative"><span class="eyebrow">THE GAME STORY</span><h3>${linkPlayers(s.title,g.date)}</h3><p class="gg-final">${esc(s.score)}</p><p class="gg-venue">${esc(s.venue)}</p>${s.paragraphs.map(p=>`<p>${linkPlayers(p,g.date)}</p>`).join('')}</div></div><div class="gg-performances"><h4>Featured performances</h4><div class="gg-table-wrap"><table><thead><tr><th>Player</th>${s.columns.map(v=>`<th>${esc(v)}</th>`).join('')}</tr></thead><tbody>${s.players.map(p=>`<tr><th scope="row">${linkPlayers(p[0],g.date)}</th>${p.slice(1).map(v=>`<td>${esc(v)}</td>`).join('')}</tr>`).join('')}</tbody></table></div><a class="gg-box-link" href="${esc(s.game)}">View Courtside Archive box score ↗</a></div>`;
 }
 function render(){root.querySelectorAll('details[open]').forEach(d=>expanded.add(d.dataset.date));
  const sport=sportEl.value,order=sortEl.value,q=searchEl.value.toLowerCase().trim();const matches=candidates.filter(g=>(sport==='all'||g.sport===sport)&&`${g.away} ${g.home} ${g.sport} ${g.date}`.toLowerCase().includes(q)).sort((a,b)=>order==='oldest'?a.date.localeCompare(b.date):b.date.localeCompare(a.date));

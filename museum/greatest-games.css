@@ -33,6 +33,8 @@
 .gg-performances th,.gg-performances td{text-align:left;padding:12px;border-bottom:1px solid #e3edf2}
 .gg-performances thead{background:#eaf4fa;color:#426074;font-size:11px}
 .gg-performances tbody th{font-weight:850}
+.gg-player-link{color:#176a95;text-decoration:underline;text-decoration-color:#9ac5db;text-underline-offset:3px;text-decoration-thickness:1px}
+.gg-player-link:hover,.gg-player-link:focus-visible{color:#a12f42;text-decoration-color:currentColor}
 .gg-box-link{display:inline-block;margin-top:22px;padding:13px 16px;background:var(--burgundy);border-radius:9px;color:white;font-size:12px;font-weight:850;text-decoration:none}
 .gg-box-link:hover{background:#a42850}
 .gg-pending{background:#f3f9fc;padding:16px 18px;border-radius:9px;color:var(--muted);font-size:13px;line-height:1.7}

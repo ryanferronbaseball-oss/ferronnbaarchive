@@ -24,23 +24,25 @@ function readCSV(str){const rows=[];let row=[],value='',quoted=false;
  else if(ch===','&&!quoted){row.push(value);value=''}else if((ch==='\n'||ch==='\r')&&!quoted){if(ch==='\r'&&str[i+1]==='\n')i++;row.push(value);if(row.some(Boolean))rows.push(row);row=[];value=''}else value+=ch}
  if(value||row.length){row.push(value);rows.push(row)}const [keys,...data]=rows;return data.map(a=>Object.fromEntries(keys.map((k,i)=>[k,a[i]??''])))}
 let coaches=[],allCoaches=[],coverage={},loaded=false;
-let nbaStops={},nbaHall={},nbaPortraits={};
-const portrait=c=>{const src=nbaPortraits[c.name];return src?`<div class="coach-portrait"><img src="${esc(src)}" alt="${esc(c.name)}" loading="lazy" decoding="async" onerror="this.closest('.coach-portrait').hidden=true"></div>`:''};
+let nbaStops={},nflStops={},nbaHall={},coachPortraits={};
+const portrait=c=>{const src=coachPortraits[c.name];return src?`<div class="coach-portrait"><img src="${esc(src)}" alt="${esc(c.name)}" loading="lazy" decoding="async" onerror="this.closest('.coach-portrait').hidden=true"></div>`:''};
 const hallBadge=c=>{const h=nbaHall[c.name];return h&&['Coach','Contributor'].includes(h.category)?`<a class="hall-badge" href="${esc(h.url)}" target="_blank" rel="noopener noreferrer" title="Naismith Basketball Hall of Fame: inducted as ${esc(h.category.toLowerCase())} in ${h.year}">★ Hall of Fame · ${esc(h.category)} · ${h.year}</a>`:''};
 const franchiseKey=s=>{const n=norm(s).replace(/^los angeles /,'la ').replace(/^new jersey /,'brooklyn ');
  if(n.startsWith('la lakers'))return 'la lakers';if(n.startsWith('la clippers'))return 'la clippers';
  const locations=['new orleans','oklahoma city','san antonio','golden state','new york','brooklyn','phoenix','chicago','boston','cleveland','sacramento','milwaukee','orlando','houston','utah','denver','atlanta','washington','miami','indiana','detroit','portland','philadelphia','seattle','charlotte','minnesota'];
  return locations.find(city=>n===city||n.startsWith(city+' '))||n};
-function headCoachingStops(c){const stops=nbaStops[c.name];if(!stops)return null;
+function headCoachingStops(c){const stops=(c.sports.includes('NBA')?nbaStops[c.name]:null)||(c.sports.includes('NFL')?nflStops[c.name]:null);if(!stops)return null;
  return stops.map(([team,years])=>{const dates=years.match(/\d{4}/g)||[];const start=Number(dates[0]||0),end=years.includes('present')?9999:Number(dates.at(-1)||start);
- const witnessed=c.rows.some(r=>r.sport==='NBA'&&franchiseKey(r.team)===franchiseKey(team)&&Number(r.date.slice(0,4))>=start&&Number(r.date.slice(0,4))<=end);
+ const witnessed=c.rows.some(r=>(r.sport==='NBA'||r.sport==='NFL')&&(r.sport==='NBA'?franchiseKey(r.team)===franchiseKey(team):norm(r.team)===norm(team))&&Number(r.date.slice(0,4))>=start&&Number(r.date.slice(0,4))<=end);
  return `<span class="stop-badge ${witnessed?'witnessed':'unseen'}" title="${witnessed?'Witnessed in Courtside Archive':'Not witnessed in Courtside Archive'}">${esc(team)} · ${esc(years)}</span>`}).join('');
 }
 const enriched=c=>{c.rows.sort((a,b)=>a.date.localeCompare(b.date)||a.sport.localeCompare(b.sport));c.games=c.rows.length;c.wins=c.rows.filter(r=>r.result==='W').length;c.losses=c.rows.filter(r=>r.result==='L').length;c.ties=c.rows.filter(r=>r.result==='T').length;c.decisions=c.wins+c.losses;c.pct=c.decisions?c.wins/c.decisions:0;c.sports=[...new Set(c.rows.map(r=>r.sport))];c.teams=[...new Set(c.rows.map(r=>r.team))];c.sources=new Set(c.rows.map(r=>r.source));return c};
 async function fetchData(){const ruleResponse=await fetch(assignmentPath,{cache:'no-store'});if(!ruleResponse.ok)throw Error('Coaching assignment index unavailable');const index=await ruleResponse.json();const rules=index.rules;
  try{const stopsResponse=await fetch('../coach-history/data/nba-head-coaching-stops.json',{cache:'no-store'});if(stopsResponse.ok)nbaStops=(await stopsResponse.json()).stops||{}}catch(e){console.warn('Head coaching stops unavailable:',e)}
  try{const hallResponse=await fetch('../coach-history/data/nba-hall-of-famers.json',{cache:'no-store'});if(hallResponse.ok)nbaHall=(await hallResponse.json()).inductees||{}}catch(e){console.warn('Hall of Fame index unavailable:',e)}
- try{const photosResponse=await fetch('../coach-history/data/nba-coach-portraits.json',{cache:'no-store'});if(photosResponse.ok)nbaPortraits=(await photosResponse.json()).portraits||{}}catch(e){console.warn('Coach portraits unavailable:',e)}
+ for(const filename of ['nba-head-coaching-stops.json','nfl-head-coaching-stops.json','nba-coach-portraits.json','nfl-coach-portraits.json']){
+  try{const response=await fetch('../coach-history/data/'+filename,{cache:'no-store'});if(!response.ok)continue;const json=await response.json();if(filename==='nfl-head-coaching-stops.json')nflStops=json.stops||{};else if(filename.endsWith('-coach-portraits.json'))Object.assign(coachPortraits,json.portraits||{})}catch(e){console.warn(filename+' unavailable:',e)}
+ }
  const results=await Promise.allSettled(feeds.map(async f=>{const r=await fetch(f.url,{cache:'no-store'});if(!r.ok)throw Error(f.sport+' games unavailable ('+r.status+')');const raw=f.format==='csv'?readCSV(await r.text()):await r.json();return raw.map(g=>({sport:f.sport,id:String(g[f.id]),date:g.date,away:g[f.away],home:g[f.home],awayScore:g.away_score,homeScore:g.home_score,url:f.urlPrefix+encodeURIComponent(g[f.id])})).filter(g=>g.date&&g.away&&g.home)}));
  const byCoach=new Map(),cov={},errors=[];let gameCount=0,verified=0,total=0;
  for(let i=0;i<feeds.length;i++){const sport=feeds[i].sport,result=results[i];if(result.status==='rejected'){errors.push(result.reason.message);cov[sport]={complete:0,total:0,error:true};continue}const games=result.value;gameCount+=games.length;cov[sport]={complete:0,total:games.length*2};total+=games.length*2;

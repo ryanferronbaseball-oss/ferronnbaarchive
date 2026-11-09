@@ -668,6 +668,52 @@ const stories={
     ]
   ]
 }
+,
+ '2019-11-30':{
+  "title": "Welp’s Masterpiece: Seven Threes and 31 Points at the Bren",
+  "score": "UC Irvine 77 · Eastern Michigan 56",
+  "venue": "Bren Events Center · Irvine, California · Scott Brooks jersey retirement",
+  "image": "./emu-uci-2019.webp",
+  "photoAlt": "UC Irvine forward Collin Welp number 40 rising for a jumper against Eastern Michigan",
+  "caption": "NOVEMBER 30, 2019 · EASTERN MICHIGAN AT UC IRVINE · COLLIN WELP 31",
+  "game": "../college/game.html?id=31",
+  "paragraphs": [
+    "November 30, 2019, was already scheduled to be a special night inside the Bren Events Center. UC Irvine was retiring the No. 12 jersey of former Anteater Scott Brooks, honoring one of the program’s most recognizable basketball figures. Yet the unforgettable performance on the court belonged to a young forward who would eventually earn his own place in the Courtside Archive Hall of Fame: Collin Welp.",
+    "Welp was almost impossibly efficient. Coming off the bench, he scored a career-high 31 points on 12-for-14 shooting, including seven makes in nine attempts from beyond the arc. He added six rebounds, four assists and two blocks, putting together the sort of complete, explosive scoring night that transforms an ordinary nonconference matchup into a personal classic.",
+    "Eastern Michigan entered undefeated at 6–0 and stayed within striking distance early. Irvine led 33–27 at halftime, and the Eagles cut the lead to a single point, 35–34, early in the second half. Welp helped push the Anteaters back in front, and UCI eventually exploded for a 16–0 run that made the score 67–44. The Anteaters finished with 14 three-pointers and a comfortable 77–56 victory.",
+    "While Welp stole the show, Eyassu Worku scored 11 points for UCI, and Eastern Michigan’s Boubacar Toure posted a 14-point, 12-rebound double-double. The home team held the Eagles to 30.5 percent shooting and handed them their first defeat. At halftime, Scott Brooks’s jersey retirement added a second layer of history to a night already overflowing with memorable basketball.",
+    "For Courtside Archive, this game stands out above all as Welp’s masterpiece — a 31-point display built on seven threes and near-perfect efficiency. It is the defining performance behind his Museum induction, preserved alongside the atmosphere of a jersey-retirement evening and a decisive UC Irvine victory."
+  ],
+  "columns": [
+    "PTS",
+    "REB",
+    "AST",
+    "Highlight"
+  ],
+  "players": [
+    [
+      "Collin Welp",
+      "31",
+      "6",
+      "4",
+      "12-14 FG · 7-9 3PT · 2 BLK"
+    ],
+    [
+      "Eyassu Worku",
+      "11",
+      "3",
+      "4",
+      "Three made threes"
+    ],
+    [
+      "Boubacar Toure",
+      "14",
+      "12",
+      "—",
+      "Eastern Michigan double-double"
+    ]
+  ]
+}
 };
 const root=document.getElementById('greatestGamesList'),sportEl=document.getElementById('greatestGamesSport'),sortEl=document.getElementById('greatestGamesSort'),searchEl=document.getElementById('greatestGamesSearch'),countEl=document.getElementById('greatestGamesCount');
 if(!root)return;

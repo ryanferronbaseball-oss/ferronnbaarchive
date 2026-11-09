@@ -896,8 +896,8 @@ const stories={
   "title": "Forty vs. Thirty-Nine: Kobe and Pierce's One-Point Duel",
   "score": "Boston Celtics 112 · Los Angeles Lakers 111",
   "venue": "STAPLES Center · Los Angeles, California",
-  "image": null,
-  "photoAlt": "Photo awaiting upload",
+  "image": "./kobe-celtics-lakers-2006.webp",
+  "photoAlt": "Kobe Bryant in a white Lakers number 8 uniform holding the basketball",
   "caption": "FEBRUARY 26, 2006 · CELTICS AT LAKERS · KOBE 40 · PIERCE 39",
   "game": "../nba/game.html?id=1",
   "paragraphs": [
@@ -933,8 +933,8 @@ const stories={
   "title": "Thirty-Seven Runs, Ten Innings: A Crosstown Rivalry Goes Wild",
   "score": "San Diego State 19 · San Diego 18 · 10 innings",
   "venue": "Tony Gwynn Stadium · San Diego, California",
-  "image": null,
-  "photoAlt": "Photo awaiting upload",
+  "image": "./usd-sdsu-2021.webp",
+  "photoAlt": "San Diego State number 22 swinging at a pitch at Tony Gwynn Stadium",
   "caption": "FEBRUARY 20, 2021 · SAN DIEGO AT SAN DIEGO STATE · 37 RUNS",
   "game": "../college-baseball/game.html?id=cb-2021-02-20-san-diego-san-diego-state-att0085",
   "paragraphs": [
@@ -980,8 +980,8 @@ const stories={
   "title": "Two Haiti Leads, Four Morocco Goals: A World Cup Night in Atlanta",
   "score": "Morocco 4 · Haiti 2 · FIFA World Cup Group C",
   "venue": "Mercedes-Benz Stadium · Atlanta, Georgia · Attendance: 68,239",
-  "image": null,
-  "photoAlt": "Photo awaiting upload",
+  "image": "./morocco-haiti-2026.webp",
+  "photoAlt": "Haiti number 18 Wilson Isidor celebrating a goal on the World Cup pitch",
   "caption": "JUNE 24, 2026 · MOROCCO VS. HAITI · FIFA WORLD CUP",
   "game": "../soccer/game.html?id=soc-2026-06-24-mar-hai",
   "paragraphs": [

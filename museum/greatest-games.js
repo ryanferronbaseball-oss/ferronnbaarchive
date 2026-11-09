@@ -714,6 +714,45 @@ const stories={
     ]
   ]
 }
+,
+ '2020-02-28':{
+  "title": "Nine Innings, No Hits: Jake Miller’s Night of Perfection",
+  "score": "San Diego 7 · Monmouth 0",
+  "venue": "Fowler Park · San Diego, California",
+  "image": "./monmouth-usd-2020.webp",
+  "photoAlt": "San Diego pitcher Jake Miller number 32 delivering a pitch from the mound",
+  "caption": "FEBRUARY 28, 2020 · MONMOUTH AT SAN DIEGO · JAKE MILLER NO-HITTER",
+  "game": "../college-baseball/game.html?id=cb-2020-02-28-monmouth-san-diego-att0080",
+  "paragraphs": [
+    "On February 28, 2020, Jake Miller gave Courtside Archive one of its rarest baseball experiences: witnessing a complete-game no-hitter in person. Under the lights at Fowler Park, the San Diego sophomore right-hander controlled Monmouth from the opening pitch, never surrendering a hit as the Toreros rolled to a 7–0 victory.",
+    "Miller was perfect through seven innings, retiring every Monmouth batter he faced. A leadoff walk in the eighth ended the perfect-game bid, and a second walk became the only other blemish on his line. He finished with 10 strikeouts, two walks and no hits, needing just 102 pitches — 71 of them strikes — to complete all nine innings.",
+    "A no-hitter is never purely a pitcher’s achievement, and the San Diego defense supplied its own defining moment. Center fielder Camden Vasquez made a spectacular catch that helped preserve the bid and later appeared at No. 2 on SportsCenter’s Top 10 plays. Every cleanly fielded ball brought Miller one out closer to history.",
+    "By the final out, Miller had recorded the seventh no-hitter in San Diego program history and its first since Josh Romanski blanked Harvard in March 2008. The 7–0 win opened a weekend sweep of Monmouth, but the result itself was secondary to the extraordinary pitching performance that made the night unforgettable.",
+    "For Courtside Archive, this exhibit is an enduring reminder of how quickly an ordinary February game can become history. Nine innings, 27 outs, no hits, and one unforgettable performance from Jake Miller."
+  ],
+  "columns": [
+    "IP",
+    "H",
+    "BB",
+    "K"
+  ],
+  "players": [
+    [
+      "Jake Miller",
+      "9.0",
+      "0",
+      "2",
+      "10"
+    ],
+    [
+      "Camden Vasquez",
+      "—",
+      "—",
+      "—",
+      "Spectacular no-hit-saving catch"
+    ]
+  ]
+}
 };
 const root=document.getElementById('greatestGamesList'),sportEl=document.getElementById('greatestGamesSport'),sortEl=document.getElementById('greatestGamesSort'),searchEl=document.getElementById('greatestGamesSearch'),countEl=document.getElementById('greatestGamesCount');
 if(!root)return;

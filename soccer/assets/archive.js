@@ -26,7 +26,7 @@ const isGoal=e=>goalTypes.has(e.type);
 const eventOrder=e=>{let [m,s]=String(e.minute).split("+");return Number(m)*100+Number(s||0)};
 const eventName={goal:"Goal",penalty_goal:"Penalty goal",own_goal:"Own goal",yellow:"Yellow card",red:"Red card",substitution:"Substitution"};
 function nav(active){
- const links=[["index.html","Overview","home"],["game.html","Games","games"],["stats.html","Leaderboards","stats"],["records.html","Records","records"],["goals.html","Goals","goals"]];
+ const links=[["index.html","Overview","home"],["game.html","Games","games"],["stats.html","Leaderboards","stats"],["records.html","Records","records"],["goals.html","Goals","goals"],["coaches.html","Coaches","coaches"]];
  return '<header class="archive-header"><a class="archive-logo" href="./index.html">COURTSIDE ARCHIVE<small>EVERY GAME HAS A STORY · PRO SOCCER</small></a>'
  +'<nav class="archive-nav" aria-label="Soccer archive navigation">'
  +links.map(([href,label,key])=>'<a href="./'+href+'"'+(active===key?' aria-current="page"':'')+'>'+label+'</a>').join("")

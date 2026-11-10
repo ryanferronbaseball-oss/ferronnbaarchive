@@ -33,6 +33,7 @@ const franchiseKey=s=>{const n=norm(s).replace(/^los angeles /,'la ').replace(/^
  return locations.find(city=>n===city||n.startsWith(city+' '))||n};
 const mlbFranchise=s=>{const n=norm(s);if(n.includes('angels'))return 'angels';if(n.includes('marlins'))return 'marlins';if(n.includes('indians')||n.includes('guardians'))return 'cleveland';if(n.includes('devil rays')||n.includes('tampa bay rays'))return 'rays';if(n.includes('athletics'))return 'athletics';if(n.includes('expos')||n.includes('nationals'))return 'nationals';if(n.includes('diamondbacks'))return 'diamondbacks';if(n.includes('brewers'))return 'brewers';return n};
 const collegeKey=s=>norm(s).replace(/\bstate\b/g,'st').replace(/\bsaint\b/g,'st').replace(/\buniversity\b/g,'').replace(/\bcalifornia\b/g,'cal').trim();
+const coachTeamName=s=>s==='Cal State Northrdige'?'Cal State Northridge':s;
 function headCoachingStops(c){const stops=(c.sports.includes('NBA')?nbaStops[c.name]:null)||(c.sports.includes('NFL')?nflStops[c.name]:null)||(c.sports.includes('MLB')?mlbStops[c.name]:null)||(c.sports.includes('College Basketball')?collegeStops[c.name]:null)||(c.sports.includes('College Football')?collegeFootballStops[c.name]:null)||(c.sports.includes('College Baseball')?collegeBaseballStops[c.name]:null)||(c.sports.includes('Soccer')?soccerStops[c.name]:null);if(!stops)return null;
  return stops.map(([team,years])=>{const dates=years.match(/\d{4}/g)||[];const start=Number(dates[0]||0),end=years.includes('present')?9999:Number(dates.at(-1)||start)+(c.sports.includes('College Basketball')&&dates.length===1?1:0);
  const witnessed=c.rows.some(r=>(r.sport==='NBA'||r.sport==='NFL'||r.sport==='MLB'||r.sport==='College Basketball'||r.sport==='College Football'||r.sport==='College Baseball'||r.sport==='Soccer')&&(r.sport==='NBA'?franchiseKey(r.team)===franchiseKey(team):r.sport==='MLB'?mlbFranchise(r.team)===mlbFranchise(team):r.sport==='College Basketball'||r.sport==='College Football'||r.sport==='College Baseball'?collegeKey(r.team).startsWith(collegeKey(team))||collegeKey(team).startsWith(collegeKey(r.team)):norm(r.team)===norm(team))&&Number(r.date.slice(0,4))>=start&&Number(r.date.slice(0,4))<=end);
@@ -64,7 +65,7 @@ async function fetchData(){const ruleResponse=await fetch(assignmentPath,{cache:
    const own=Number(g[side+'Score']),opp=Number(g[side==='home'?'awayScore':'homeScore']);
    const scored=g[side+'Score']!==''&&g[side+'Score']!=null&&g[side==='home'?'awayScore':'homeScore']!==''&&g[side==='home'?'awayScore':'homeScore']!=null&&Number.isFinite(own)&&Number.isFinite(opp);
    const resultText=!scored?'—':own>opp?'W':own<opp?'L':'T';
-   c.rows.push({sport,team,side,date:g.date,opponent:g[side==='home'?'away':'home'],score:scored?`${own}–${opp}`:'—',result:resultText,url:g.url,gameId:g.id,source:rule.source});c.sources.add(rule.source);
+   c.rows.push({sport,team:coachTeamName(team),side,date:g.date,opponent:coachTeamName(g[side==='home'?'away':'home']),score:scored?`${own}–${opp}`:'—',result:resultText,url:g.url,gameId:g.id,source:rule.source});c.sources.add(rule.source);
   }
  }
  allCoaches=[...byCoach.values()].map(enriched);coaches=scopedSport==='all'?allCoaches:allCoaches.filter(c=>c.sports.includes(scopedSport)).map(c=>enriched({...c,rows:c.rows.filter(r=>r.sport===scopedSport)}));coverage=cov;loaded=true;

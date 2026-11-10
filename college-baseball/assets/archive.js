@@ -38,7 +38,7 @@ function preferredScorebookNameCases(rows){
  return known;
 }
 function nav(active){
- const links=[["index.html","Overview","home"],["game.html","Games","games"],["stats.html","Players","players"],["coaches.html","Coaches","coaches"],["records.html","Records","records"],["mlb-alumni.html","To the MLB","mlb-alumni"]];
+ const links=[["index.html","Overview","home"],["game.html","Games","games"],["stats.html","Players","players"],["transfers.html","Transfers","transfers"],["coaches.html","Coaches","coaches"],["records.html","Records","records"],["mlb-alumni.html","To the MLB","mlb-alumni"]];
  return '<header class="archive-header"><a class="archive-logo" href="./index.html">COURTSIDE ARCHIVE<small>EVERY GAME HAS A STORY · COLLEGE BASEBALL</small></a>'
  +'<nav class="archive-nav" aria-label="College Baseball archive navigation">'+links.map(([href,label,name])=>'<a href="./'+href+'"'+(active===name||active==="player"&&name==="players"?' aria-current="page"':'')+'>'+label+'</a>').join("")
  +'<a href="../index.html" class="back-link">All sports ↗</a></nav></header>'

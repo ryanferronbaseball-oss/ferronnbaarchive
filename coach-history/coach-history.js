@@ -52,8 +52,11 @@ async function fetchData(){const ruleResponse=await fetch(assignmentPath,{cache:
  for(let i=0;i<feeds.length;i++){const sport=feeds[i].sport,result=results[i];if(result.status==='rejected'){errors.push(result.reason.message);cov[sport]={complete:0,total:0,error:true};continue}const games=result.value;gameCount+=games.length;cov[sport]={complete:0,total:games.length*2};total+=games.length*2;
   for(const g of games)for(const side of ['away','home']){
    const team=g[side],matching=rules.filter(r=>r.sport===sport&&norm(r.team)===norm(team)&&g.date>=r.from&&g.date<=r.to);
-   if(matching.length!==1)continue; // Conflicts and unresolved historical appointments are not counted.
-   const rule=matching[0];verified++;cov[sport].complete++;
+   // Identical coach assignments from overlapping sources describe one person,
+   // not a disputed appointment. Keep genuinely conflicting coaches unresolved.
+   const distinct=[...new Map(matching.map(r=>[norm(r.coach),r])).values()];
+   if(distinct.length!==1)continue;
+   const rule=distinct[0];verified++;cov[sport].complete++;
    const id=slug(rule.coach);if(!byCoach.has(id))byCoach.set(id,{id,name:rule.coach,rows:[],sources:new Set()});const c=byCoach.get(id);
    const own=Number(g[side+'Score']),opp=Number(g[side==='home'?'awayScore':'homeScore']);
    const scored=g[side+'Score']!==''&&g[side+'Score']!=null&&g[side==='home'?'awayScore':'homeScore']!==''&&g[side==='home'?'awayScore':'homeScore']!=null&&Number.isFinite(own)&&Number.isFinite(opp);

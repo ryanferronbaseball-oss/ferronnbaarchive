@@ -239,10 +239,18 @@ async function load(){
  // Optional owner-approved display name for abbreviated source lineups;
  // raw scorebook names, school attribution, and original IDs stay untouched.
  const displayNames=new Map(identity.merges.filter(m=>m.display_name).map(m=>[m.canonical_id,m.display_name]));
+ const formerNames=new Map();
+ for(const alias of identity.display_aliases||[]){
+  if(!alias.player_id||!alias.display_name||!Array.isArray(alias.former_names)||!alias.former_names.length||
+     !byPlayer.has(alias.player_id)||displayNames.has(alias.player_id))
+   throw Error("Invalid verified player display alias: "+alias.player_id);
+  displayNames.set(alias.player_id,alias.display_name);
+  formerNames.set(alias.player_id,alias.former_names);
+ }
  // A gamebook's misspelled school is one school, not a second college stint.
  // Normalize only the profile/leaderboard label, leaving sourced game rows intact.
  const displayTeams=new Map(nameCorrectionGames.filter(g=>g.team_display_name).map(g=>[g.team,g.team_display_name]));
- const players=[...byPlayer.values()].map(p=>({...p,name:displayNames.get(p.player_id)||p.name,
+ const players=[...byPlayer.values()].map(p=>({...p,name:displayNames.get(p.player_id)||p.name,former_names:formerNames.get(p.player_id)||[],
   teams:[...new Set([...p.teams].map(team=>displayTeams.get(team)||team))],games:[...p.games]}));
  return {games:games.slice().sort((a,b)=>b.date.localeCompare(a.date)||a.id.localeCompare(b.id)),rows,players,gameMap,gameRedirects,report,crosswalk,identity,redirects};
 }
@@ -315,7 +323,7 @@ function initQuickSearch(d){
  if(!form||!input||!results)return;
  const key=s=>String(s||"").normalize("NFKD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
  const programs=unique(d.games.flatMap(g=>[g.away,g.home])).sort((a,b)=>a.localeCompare(b));
- const players=d.players.map(p=>({...p,searchName:key(p.name),searchSchools:key(p.teams.join(" "))}));
+ const players=d.players.map(p=>({...p,searchName:key([p.name,...(p.former_names||[])].join(" ")),searchSchools:key(p.teams.join(" "))}));
  const games=d.games.map(g=>({game:g,searchText:key([g.date,date(g.date),g.away,g.home,g.ballpark,g.city,g.state,g.postseason_round].join(" "))}));
  let visible=[];
  const hide=()=>{results.hidden=true;input.setAttribute("aria-expanded","false")};
@@ -503,7 +511,7 @@ function renderPlayers(d){
  function draw(){
   const field=$("cb-sort").value,q=$("cb-player-search").value.trim().toLowerCase();
   const rows=d.players.map(p=>({...p,stats:role==="hit"?bat(p.rows):pitch(p.rows)}))
-  .filter(p=>p.name.toLowerCase().includes(q)||p.teams.join(" ").toLowerCase().includes(q))
+  .filter(p=>p.name.toLowerCase().includes(q)||(p.former_names||[]).some(n=>n.toLowerCase().includes(q))||p.teams.join(" ").toLowerCase().includes(q))
   .filter(p=>p.stats[field]!=null)
   .sort((a,b)=>(["era","whip"].includes(field)?a.stats[field]-b.stats[field]:b.stats[field]-a.stats[field])||a.name.localeCompare(b.name)).slice(0,200);
   $("cb-board-note").textContent="Statistics cover only games attended. A dash means the source data cannot establish that total; pitching BF, BB% and K% require verified batters-faced data. Click the sort menu to rank by any column.";
@@ -609,6 +617,7 @@ async function renderPlayer(d){
  +'<div class="mlb-profile-photo cb-profile-initials" aria-hidden="true">'+esc(initials)+'</div>'
  +'<div class="mlb-profile-identity"><div class="mlb-profile-team-name">'+esc(p.teams.join(" / "))+'</div>'
  +'<h1>'+esc(p.name)+'</h1>'
+ +(p.former_names?.length?'<p class="mlb-profile-seen">Formerly '+esc(p.former_names.join(', '))+'</p>':'')
  +(alumnus||draftTag||cross||matchedMiLB||nationalAwards.length||conferenceAwards.length||allConference.length||baseballAmericaHonors.length||championships.length||cwsAllTournament.length||cwsMops.length?'<div class="mlb-profile-achievements">'
   +(alumnus?'<a class="mlb-profile-badge cb-mlb-alumnus" href="https://www.mlb.com/player/'+encodeURIComponent(alumnus.mlb_player_id)+'" target="_blank" rel="noopener noreferrer" title="Verified MLB debut: '+esc(date(alumnus.mlb_debut))+'">★ MLB ALUMNUS ↗</a>':"")
   +(draftTag?'<span class="mlb-profile-badge cb-mlb-draft" title="MLB draft year, round, overall pick and drafting team">'+esc(draftTag)+'</span>':"")
@@ -653,7 +662,8 @@ async function renderCWS(d){
  const leaderTiles=t=>'<div class="cb-cws-leaders">'+categories.map(([key,label,format])=>{
   const leader=t.leaders[key],value=leader?format(leader.value):"—";
   const people=leader?.players||[];
-  return '<div class="cb-cws-leader"><small>'+label+'</small><strong>'+esc(value)+'</strong>'+(people.length?'<span>'+people.map(name=>'<a href="'+esc(playerLink(name,t.school,t.year,t.source_url))+'"'+(playerLink(name,t.school,t.year,t.source_url)===t.source_url?' target="_blank" rel="noopener noreferrer"':'')+'>'+esc(name)+'</a>').join(', ')+'</span>':'<span>Not verified</span>')+'</div>';
+  const source=t.leader_sources?.[key]||t.source_url;
+  return '<div class="cb-cws-leader"><small>'+label+'</small><strong>'+esc(value)+'</strong>'+(people.length?'<span>'+people.map(name=>'<a href="'+esc(playerLink(name,t.school,t.year,source))+'"'+(playerLink(name,t.school,t.year,source)===source?' target="_blank" rel="noopener noreferrer"':'')+'>'+esc(name)+'</a>').join(', ')+'</span>':'<span>Not verified</span>')+'</div>';
  }).join('')+'</div>';
  $("app").innerHTML='<div class="eyebrow">College Baseball · The Road to Omaha</div><h1>College World Series Teams</h1>'
   +'<p class="lead">Teams you watched in a season when they reached the final eight in Omaha. Regular-season and postseason games you attended both count; simply reaching a regional or super regional does not.</p>'

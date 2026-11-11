@@ -581,8 +581,8 @@ async function renderPlayer(d){
     +'<div class="cb-transfer-school">'+(logoId?'<img src="https://a.espncdn.com/i/teamlogos/ncaa/500/'+encodeURIComponent(logoId)+'.png" alt="'+esc(s.name)+' logo" loading="lazy">':'')
     +'<span><strong>'+esc(s.name)+'</strong><small>First seen '+esc(s.first.slice(0,4))+'</small></span></div>';
   }).join('')+'</div>'
-  +(witnessedSchools.some(s=>s.b.games)?'<h3>Hitting</h3>'+htmlTable(["School","Games","AVG","HR","RBI"],witnessedSchools.filter(s=>s.b.games).map(s=>'<tr><td>'+esc(s.name)+'</td><td>'+s.b.games+'</td><td>'+rate(s.b.average,3)+'</td><td>'+fmt(s.b.homeRuns)+'</td><td>'+fmt(s.b.rbi)+'</td></tr>')):'')
-  +(witnessedSchools.some(s=>s.pi.games)?'<h3>Pitching</h3>'+htmlTable(["School","Games","IP","ERA","K"],witnessedSchools.filter(s=>s.pi.games).map(s=>'<tr><td>'+esc(s.name)+'</td><td>'+s.pi.games+'</td><td>'+esc(s.pi.innings??'—')+'</td><td>'+rate(s.pi.era,2)+'</td><td>'+fmt(s.pi.strikeouts)+'</td></tr>')):'')
+  +(witnessedSchools.some(s=>s.b.games)?'<h3>Hitting</h3>'+htmlTable(["School","Games","PA","Runs","Hits","AVG","OPS","HR","RBI"],witnessedSchools.filter(s=>s.b.games).map(s=>'<tr><td>'+esc(s.name)+'</td><td>'+s.b.games+'</td><td>'+fmt(s.b.plateAppearances)+'</td><td>'+fmt(s.b.runs)+'</td><td>'+fmt(s.b.hits)+'</td><td>'+rate(s.b.average,3)+'</td><td>'+rate(s.b.ops,3)+'</td><td>'+fmt(s.b.homeRuns)+'</td><td>'+fmt(s.b.rbi)+'</td></tr>')):'')
+  +(witnessedSchools.some(s=>s.pi.games)?'<h3>Pitching</h3>'+htmlTable(["School","Games","W","L","SV","IP","ERA","BB","K"],witnessedSchools.filter(s=>s.pi.games).map(s=>'<tr><td>'+esc(s.name)+'</td><td>'+s.pi.games+'</td><td>'+fmt(s.pi.wins)+'</td><td>'+fmt(s.pi.losses)+'</td><td>'+fmt(s.pi.saves)+'</td><td>'+esc(s.pi.innings??'—')+'</td><td>'+rate(s.pi.era,2)+'</td><td>'+fmt(s.pi.walks)+'</td><td>'+fmt(s.pi.strikeouts)+'</td></tr>')):'')
   +'<p class="mlb-note"><a href="./transfers.html">Explore the college baseball Transfers page →</a></p></section>':'';
  const cross=d.crosswalk.find(x=>x.verified===true&&String(x.college_player_id)===id);
  const tripleLevel=Boolean(cross&&matchedMiLB&&String(cross.mlb_player_id)===String(matchedMiLB.milb_id));

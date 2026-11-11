@@ -38,7 +38,7 @@ function preferredScorebookNameCases(rows){
  return known;
 }
 function nav(active){
- const links=[["index.html","Overview","home"],["game.html","Games","games"],["stats.html","Players","players"],["transfers.html","Transfers","transfers"],["coaches.html","Coaches","coaches"],["records.html","Records","records"],["mlb-alumni.html","To the MLB","mlb-alumni"]];
+ const links=[["index.html","Overview","home"],["game.html","Games","games"],["stats.html","Players","players"],["transfers.html","Transfers","transfers"],["cws.html","College World Series","cws"],["coaches.html","Coaches","coaches"],["records.html","Records","records"],["mlb-alumni.html","To the MLB","mlb-alumni"]];
  return '<header class="archive-header"><a class="archive-logo" href="./index.html">COURTSIDE ARCHIVE<small>EVERY GAME HAS A STORY · COLLEGE BASEBALL</small></a>'
  +'<nav class="archive-nav" aria-label="College Baseball archive navigation">'+links.map(([href,label,name])=>'<a href="./'+href+'"'+(active===name||active==="player"&&name==="players"?' aria-current="page"':'')+'>'+label+'</a>').join("")
  +'<a href="../index.html" class="back-link">All sports ↗</a></nav></header>'
@@ -634,6 +634,43 @@ async function renderPlayer(d){
   +[stat(r.batting?.atBats),stat(r.batting?.runs),stat(r.batting?.hits),stat(r.batting?.homeRuns),stat(r.batting?.rbi),r.pitching?.outs!=null?Math.floor(r.pitching.outs/3)+"."+(r.pitching.outs%3):null,stat(r.pitching?.hits),stat(r.pitching?.runs),stat(r.pitching?.baseOnBalls),stat(r.pitching?.strikeOuts)].map(x=>'<td>'+esc(x==null?"—":x)+'</td>').join("")+'</tr>';
  }))+'</section>';
 }
+async function renderCWS(d){
+ const [field,teamLogos]=await Promise.all([json("cws_teams.json"),json("team_logo_ids.json")]);
+ const normSchool=name=>String(name||"").toLowerCase().replace(/[^a-z0-9]/g,"").replace(/^northcarolinastate$/,"ncstate");
+ const logos=new Map(Object.entries(teamLogos).map(([name,logo])=>[normSchool(name),logo]));
+ const coachId=name=>name.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
+ const playerLink=(name,school,year,source)=>{
+  const normName=s=>String(s||"").toLowerCase().replace(/[^a-z0-9]/g,"");
+  const person=d.players.find(p=>normName(p.name)===normName(name)&&p.rows.some(row=>normSchool(row.team)===normSchool(school)&&d.gameMap.get(row.game_id)?.season===year));
+  return person?'./player.html?id='+encodeURIComponent(person.player_id):source;
+ };
+ const rows=field.teams.map(t=>({...t,seen:d.games.filter(g=>g.season===t.year&&(normSchool(g.away)===normSchool(t.school)||normSchool(g.home)===normSchool(t.school))).sort((a,b)=>a.date.localeCompare(b.date))})).filter(t=>t.seen.length).sort((a,b)=>b.year-a.year||a.rank-b.rank||a.school.localeCompare(b.school));
+ const rankLabel=n=>({1:"National Champion",2:"National Runner-up",3:"Tied for 3rd",5:"Tied for 5th",7:"Tied for 7th"})[n]||"Omaha qualifier";
+ const categories=[["avg","Batting AVG",v=>v.toFixed(3).replace(/^0/,"")],["hr","Home Runs",String],["rbi","RBI",String],["wins","Wins",String],["era","ERA",v=>v.toFixed(2)],["strikeouts","Strikeouts",String]];
+ const leaderTiles=t=>'<div class="cb-cws-leaders">'+categories.map(([key,label,format])=>{
+  const leader=t.leaders[key],value=leader?format(leader.value):"—";
+  const people=leader?.players||[];
+  return '<div class="cb-cws-leader"><small>'+label+'</small><strong>'+esc(value)+'</strong>'+(people.length?'<span>'+people.map(name=>'<a href="'+esc(playerLink(name,t.school,t.year,t.source_url))+'"'+(playerLink(name,t.school,t.year,t.source_url)===t.source_url?' target="_blank" rel="noopener noreferrer"':'')+'>'+esc(name)+'</a>').join(', ')+'</span>':'<span>Not verified</span>')+'</div>';
+ }).join('')+'</div>';
+ $("app").innerHTML='<div class="eyebrow">College Baseball · The Road to Omaha</div><h1>College World Series Teams</h1>'
+  +'<p class="lead">Teams you watched in a season when they reached the final eight in Omaha. Regular-season and postseason games you attended both count; simply reaching a regional or super regional does not.</p>'
+  +'<div class="metrics"><div class="metric"><strong>'+rows.length+'</strong><small>Qualifying team-seasons</small></div><div class="metric"><strong>'+new Set(rows.map(t=>t.school)).size+'</strong><small>Different schools</small></div><div class="metric"><strong>'+rows.reduce((n,t)=>n+t.seen.length,0)+'</strong><small>Witnessed team-games</small></div></div>'
+  +'<div class="cb-cws-controls"><label>School <input id="cwsSearch" type="search" placeholder="Search school…"></label><label>Season <select id="cwsSeason"><option value="">All seasons</option>'+[...new Set(rows.map(t=>t.year))].sort((a,b)=>b-a).map(y=>'<option value="'+y+'">'+y+'</option>').join('')+'</select></label></div>'
+  +'<div class="cb-cws-grid" id="cwsResults"></div>'
+  +'<p class="mlb-note">Leaders are based on complete team-season statistics, not your attended games. Batting average requires at least 2.5 plate appearances per team game; ERA requires at least 1 inning pitched per team game. HR, RBI, wins and strikeouts have no minimum. Ties are listed together. <a href="https://thebaseballcube.com/content/cws/" target="_blank" rel="noopener noreferrer">College World Series history ↗</a></p>';
+ const render=()=>{
+  const search=$("cwsSearch").value.toLowerCase().trim(),year=$("cwsSeason").value;
+  const matches=rows.filter(t=>(!search||t.school.toLowerCase().includes(search))&&(!year||String(t.year)===year));
+  $("cwsResults").innerHTML=matches.map(t=>{
+   const logo=logos.get(normSchool(t.school));return '<article class="cb-cws-card"><div class="cb-cws-head">'+(logo?'<img src="https://a.espncdn.com/i/teamlogos/ncaa/500/'+encodeURIComponent(logo)+'.png" alt="'+esc(t.school)+' logo" loading="lazy">':'')+'<div><small>'+t.year+' season · Omaha</small><h2>'+esc(t.school)+'</h2></div></div>'
+    +'<div class="cb-cws-tags"><span>'+rankLabel(t.rank)+'</span><a href="./coaches.html?coach='+encodeURIComponent(coachId(t.coach))+'#profile">Coach: '+esc(t.coach)+' ↗</a></div>'
+    +leaderTiles(t)
+    +'<div class="cb-cws-games"><h3>'+t.seen.length+' game'+(t.seen.length===1?'':'s')+' witnessed that season</h3>'+t.seen.map(g=>'<a href="'+gameUrl(g)+'"><span>'+esc(date(g.date))+' · '+esc(gameLabel(g))+'</span><b>Box score ↗</b></a>').join('')+'</div>'
+    +'<a class="cb-cws-source" href="'+esc(t.source_url)+'" target="_blank" rel="noopener noreferrer">Full-season statistical source ↗</a></article>';
+  }).join('')||pending("No Omaha team-seasons match these filters.");
+ };
+ $("cwsSearch").addEventListener("input",render);$("cwsSeason").addEventListener("change",render);render();
+}
 function renderRecords(d){
  const defs=[["Hits","batting","hits"],["Home runs","batting","homeRuns"],["RBI","batting","rbi"],["Strikeouts","pitching","strikeOuts"],["Outs pitched","pitching","outs"],["Stolen bases","batting","stolenBases"]];
  $("app").innerHTML='<div class="eyebrow">College Baseball · Historical records</div><h1>Signature Performances</h1><p class="lead">Best single-game performances you witnessed, drawn strictly from imported and source-verified college box scores.</p>'
@@ -664,6 +701,7 @@ function render(){
   else if(page==="players")renderPlayers(d);
   else if(page==="records")renderRecords(d);
   else if(page==="player")await renderPlayer(d);
+  else if(page==="cws")await renderCWS(d);
   else renderHome(d);
  }).catch(e=>{app.innerHTML=pending("Unable to load college baseball data: "+e.message)});
 }

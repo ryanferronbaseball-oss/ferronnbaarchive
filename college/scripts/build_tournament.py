@@ -26,6 +26,28 @@ ALIASES = {
     'texas a m': 'texas am', 'texas a and m': 'texas am',
 }
 OFFICIAL_OVERRIDES = {
+    (2025, 'texas am'): {'url': 'https://12thman.com/documents/download/2025/3/21/TAMU_Stat_Pack.pdf', 'pts': ('Wade Taylor IV', 'espn:4683833', 15.7), 'reb': ('Andersson Garcia', 'espn:4702431', 6.2), 'ast': ('Wade Taylor IV', 'espn:4683833', 4.3)},
+    (2025, 'michigan'): {'url': 'https://mgoblue.com/sports/mens-basketball/stats/2024-25', 'pts': ('Vladislav Goldin', 'espn:4700818', 16.6), 'reb': ('Danny Wolf', 'espn:5107173', 9.7), 'ast': ('Tre Donaldson', 'espn:4837356', 4.1)},
+    (2025, 'louisville'): {'url': 'https://gocards.com/sports/mens-basketball/stats/2024-25', 'pts': ('Terrence Edwards Jr.', 'espn:4702766', 16.7), 'reb': ("J'Vonne Hadley", 'espn:4702784', 7.3), 'ast': ('Chucky Hepburn', 'espn:4590360', 5.8)},
+    (2025, 'duke'): {'url': 'https://goduke.com/sports/mens-basketball/stats/2024-25', 'pts': ('Cooper Flagg', 'espn:5041939', 19.2), 'reb': ('Cooper Flagg', 'espn:5041939', 7.5), 'ast': ('Cooper Flagg', 'espn:5041939', 4.2)},
+    (2025, 'auburn'): {'url': 'https://auburntigers.com/sports/mens-basketball/stats/season/2024-25', 'pts': ('Johni Broome', 'espn:4433569', 18.6), 'reb': ('Johni Broome', 'espn:4433569', 10.8), 'ast': ('Tahaad Pettiford', 'espn:4873089', 3.0)},
+    (2025, 'arkansas'): {'url': 'https://arkansasrazorbacks.com/stats/mbb/2024-25/teamcume.htm', 'pts': ('Adou Thiero', 'espn:5060631', 15.1), 'reb': ('Adou Thiero', 'espn:5060631', 5.8), 'ast': ('Boogie Fland', 'official:arkansas:boogie-fland', 5.1)},
+    (2024, 'san diego state'): {'url': 'https://goaztecs.com/mens-basketball-archives', 'pts': ('Jaedon LeDee', 'espn:4397237', 21.4), 'reb': ('Jaedon LeDee', 'espn:4397237', 8.4), 'ast': ('Darrion Trammell', 'espn:4702011', 3.2)},
+    (2024, 'north carolina state'): {'url': 'https://gopack.com/sports/mens-basketball/stats/2023-24', 'pts': ('DJ Horne', 'espn:4431993', 16.9), 'reb': ('Mohamed Diarra', 'espn:5105541', 7.8), 'ast': ("Michael O'Connell", 'espn:4683635', 3.2)},
+    (2024, 'north carolina'): {'url': 'https://goheels.com/sports/mens-basketball/stats/2023-24', 'pts': ('RJ Davis', 'espn:4433176', 21.2), 'reb': ('Armando Bacot', 'espn:4431674', 10.3), 'ast': ('Elliot Cadeau', 'espn:4869764', 4.1)},
+    (2024, 'mississippi state'): {'url': 'https://hailstate.com/sports/mens-basketball/stats/2023-24', 'pts': ('Josh Hubbard', 'espn:4895740', 17.1), 'reb': ('Tolu Smith', 'espn:4397882', 8.1), 'ast': ('Cameron Matthews', 'espn:4432394', 2.9)},
+    (2024, 'michigan state'): {'url': 'https://msuspartans.com/sports/mens-basketball/stats/2023-24', 'pts': ('Tyson Walker', 'espn:4432129', 18.4), 'reb': ('Malik Hall', 'espn:4592693', 5.7), 'ast': ('AJ Hoggard', 'espn:4432206', 5.2)},
+    (2023, 'utah state'): {'url': 'https://utahstateaggies.com/sports/mens-basketball/roster/steven-ashworth/9316', 'pts': ('Steven Ashworth', 'espn:4701991', 16.2), 'reb': ('Daniel Akin', 'official:utah-state:daniel-akin', 6.8), 'ast': ('Steven Ashworth', 'espn:4701991', 4.5)},
+    (2023, 'ucla'): {'url': 'https://uclabruins.com/sports/mens-basketball/stats/season/2022-23', 'pts': ('Jaime Jaquez Jr.', 'espn:4432848', 17.8), 'reb': ('Jaime Jaquez Jr.', 'espn:4432848', 8.2), 'ast': ('Tyger Campbell', 'espn:4397128', 5.0)},
+    (2023, 'san diego state'): {'url': 'https://goaztecs.com/sports/mens-basketball/roster/player/darrion-trammell', 'pts': ('Matt Bradley', 'espn:4397049', 12.6), 'reb': ('Nate Mensah', 'espn:4397371', 5.9), 'ast': ('Lamont Butler', 'espn:4433183', 3.2)},
+    (2022, 'san diego state'): {'url': 'https://goaztecs.com/sports/mens-basketball/stats/season/2021-22', 'pts': ('Matt Bradley', 'espn:4397049', 16.9), 'reb': ('Nate Mensah', 'espn:4397371', 6.9), 'ast': ('Trey Pulliam', 'espn:4593083', 3.4)},
+    (2022, 'gonzaga'): {'url': 'https://gozags.com/sports/mens-basketball/stats/2021-22', 'pts': ('Drew Timme', 'espn:4431695', 18.4), 'reb': ('Chet Holmgren', 'espn:4433255', 9.9), 'ast': ('Andrew Nembhard', 'espn:4395712', 5.8)},
+    (2022, 'colorado state'): {'url': 'https://csurams.com/sports/mens-basketball/stats/2021-22', 'pts': ('David Roddy', 'espn:4593041', 19.2), 'reb': ('David Roddy', 'espn:4593041', 7.6), 'ast': ('Isaiah Stevens', 'espn:4432117', 4.7)},
+    (2022, 'cal state fullerton'): {'url': 'https://fullertontitans.com/sports/mens-basketball/stats/2021-22', 'pts': ('E.J. Anosike', 'espn:4279647', 16.4), 'reb': ('E.J. Anosike', 'espn:4279647', 8.9), 'ast': ('Damari Milstead', 'espn:4280171', 3.2)},
+    (2019, 'nevada'): {'url': 'https://nevadawolfpack.com/sports/mens-basketball/stats/2018-19', 'pts': ('Caleb Martin', 'espn:3138160', 19.2), 'reb': ('Jordan Caroline', 'espn:3148992', 9.6), 'ast': ('Cody Martin', 'espn:3138161', 4.9)},
+    (2019, 'gonzaga'): {'url': 'https://gozags.com/sports/mens-basketball/stats/2018-19', 'pts': ('Rui Hachimura', 'espn:4066648', 19.7), 'reb': ('Brandon Clarke', 'espn:3906665', 8.6), 'ast': ('Josh Perkins', 'espn:3155941', 6.3)},
+    (2018, 'san diego state'): {'url': 'https://goaztecs.com/mens-basketball-archives', 'pts': ('Malik Pope', 'espn:3137714', 12.8), 'reb': ('Jalen McDaniels', 'espn:4066731', 7.5), 'ast': ('Trey Kell', 'espn:3137712', 4.1)},
+    (2018, 'gonzaga'): {'url': 'https://gozags.com/sports/mens-basketball/stats/2017-18', 'pts': ('Johnathan Williams', 'espn:66260', 13.4), 'reb': ('Johnathan Williams', 'espn:66260', 8.5), 'ast': ('Josh Perkins', 'espn:3155941', 5.3)},
     (2025, 'unc wilmington'): {
         'url': 'https://uncwsports.com/sports/mens-basketball/stats/2024-25',
         'pts': ('Donovan Newby', 'espn:4702932', 14.4),
@@ -151,26 +173,27 @@ def main():
                         'leaders': {}, '_witnessed_ids': witnessed_ids,
                         'games': sorted(seen, key=lambda x: (x['date'], int(x['id'])))})
     with ThreadPoolExecutor(max_workers=7) as pool:
-        futures = {pool.submit(season_leaders, r['season'], r['team_id'], r['_witnessed_ids']): r for r in records}
+        futures = {pool.submit(season_leaders, r['season'], r['team_id'], r['_witnessed_ids']): r for r in records if (r['season'], r['school']) not in OFFICIAL_OVERRIDES}
         for future in as_completed(futures):
             record = futures[future]
             record['leaders'] = future.result()
             record['leaders_verified'] = False
-            override = OFFICIAL_OVERRIDES.get((record['season'], record['school']))
-            if override:
-                record['leaders'] = {
-                    stat: {'name': name, 'id': player_id, 'average': value,
-                           'in_archive': player_id in record['_witnessed_ids'],
-                           'source_url': override['url']}
-                    for stat, (name, player_id, value) in ((k, v) for k, v in override.items() if k != 'url')
-                }
-                record['leaders_verified'] = True
+    for record in records:
+        override = OFFICIAL_OVERRIDES.get((record['season'], record['school']))
+        if override:
+            record['leaders'] = {
+                stat: {'name': name, 'id': player_id, 'average': value,
+                       'in_archive': player_id in record['_witnessed_ids'],
+                       'source_url': override['url']}
+                for stat, (name, player_id, value) in ((k, v) for k, v in override.items() if k != 'url')
+            }
+            record['leaders_verified'] = True
     for record in records:
         del record['_witnessed_ids']
     output = {'source': 'mattgennarelli/bracket-brain historical results (Wikipedia/Sports Reference derived)',
               'coverage': '2008–2026 seasons with source game results; 2020 had no tournament',
               'region_status': 'verified where provided by bracket data',
-              'leader_source': 'ESPN historical team roster season per-game averages', 'teams': records}
+              'leader_source': 'Audited final full-season school cumulative statistics and player season records', 'teams': records}
     destination = ROOT / 'data/ncaa_tournament.json'
     destination.write_text(json.dumps(output, indent=2) + '\n')
     print(f'{len(records)} qualifying team-seasons, {sum(len(r["games"]) for r in records)} attended team-games')

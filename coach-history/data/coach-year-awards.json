@@ -1,0 +1,505 @@
+{
+  "_meta": {
+    "updated": "2026-11-11",
+    "scope": "Career wins for existing MLB, NFL and NBA coach profiles, plus latest NBA recipients. Displayed only on witnessed coach profiles.",
+    "definitions": {
+      "MLB": "BBWAA AL/NL Manager of the Year; since 1983",
+      "NFL": "Associated Press NFL Coach of the Year; season year, not ceremony year",
+      "NBA": "NBA Coach of the Year (Red Auerbach Trophy); full NBA season label"
+    },
+    "sources": {
+      "MLB": [
+        "https://www.mlb.com/awards/manager-of-the-year",
+        "https://bbwaa.com/26-al-mgr/",
+        "https://bbwaa.com/26-nl-mgr/"
+      ],
+      "NBA": [
+        "https://www.nba.com/news/history-coach-of-the-year-winners"
+      ],
+      "NFL": [
+        "https://www.neworleanssaints.com/team/history/major-awards",
+        "https://www.nfl.com/news/titans-coach-mike-vrabel-named-2021-ap-nfl-coach-of-the-year",
+        "https://www.nfl.com/news/mike-vrabel-patriots-coach-of-the-year-2025"
+      ]
+    }
+  },
+  "awards": [
+    {
+      "sport": "NBA",
+      "name": "Phil Jackson",
+      "season": "1995-96",
+      "team": "Chicago Bulls"
+    },
+    {
+      "sport": "NBA",
+      "name": "Doc Rivers",
+      "season": "1999-00",
+      "team": "Orlando Magic"
+    },
+    {
+      "sport": "NBA",
+      "name": "Mike Dunleavy",
+      "season": "1998-99",
+      "team": "Portland Trail Blazers"
+    },
+    {
+      "sport": "NBA",
+      "name": "Mike Brown",
+      "season": "2008-09",
+      "team": "Cleveland Cavaliers"
+    },
+    {
+      "sport": "NBA",
+      "name": "Mike Brown",
+      "season": "2022-23",
+      "team": "Sacramento Kings"
+    },
+    {
+      "sport": "NBA",
+      "name": "Mike D'Antoni",
+      "season": "2004-05",
+      "team": "Phoenix Suns"
+    },
+    {
+      "sport": "NBA",
+      "name": "Mike D'Antoni",
+      "season": "2016-17",
+      "team": "Houston Rockets"
+    },
+    {
+      "sport": "NBA",
+      "name": "Byron Scott",
+      "season": "2007-08",
+      "team": "New Orleans Hornets"
+    },
+    {
+      "sport": "NBA",
+      "name": "Gregg Popovich",
+      "season": "2002-03",
+      "team": "San Antonio Spurs"
+    },
+    {
+      "sport": "NBA",
+      "name": "Gregg Popovich",
+      "season": "2011-12",
+      "team": "San Antonio Spurs"
+    },
+    {
+      "sport": "NBA",
+      "name": "Gregg Popovich",
+      "season": "2013-14",
+      "team": "San Antonio Spurs"
+    },
+    {
+      "sport": "NBA",
+      "name": "George Karl",
+      "season": "2012-13",
+      "team": "Denver Nuggets"
+    },
+    {
+      "sport": "NBA",
+      "name": "Monty Williams",
+      "season": "2021-22",
+      "team": "Phoenix Suns"
+    },
+    {
+      "sport": "NBA",
+      "name": "Scott Brooks",
+      "season": "2009-10",
+      "team": "Oklahoma City Thunder"
+    },
+    {
+      "sport": "NBA",
+      "name": "Joe Mazzulla",
+      "season": "2025-26",
+      "team": "Boston Celtics"
+    },
+    {
+      "sport": "NBA",
+      "name": "Kenny Atkinson",
+      "season": "2024-25",
+      "team": "Cleveland Cavaliers"
+    },
+    {
+      "sport": "NBA",
+      "name": "Mark Daigneault",
+      "season": "2023-24",
+      "team": "Oklahoma City Thunder"
+    },
+    {
+      "sport": "NFL",
+      "name": "Jim Haslett",
+      "season": "2000",
+      "team": "New Orleans Saints"
+    },
+    {
+      "sport": "NFL",
+      "name": "Mike Vrabel",
+      "season": "2021",
+      "team": "Tennessee Titans"
+    },
+    {
+      "sport": "NFL",
+      "name": "Mike Vrabel",
+      "season": "2025",
+      "team": "New England Patriots"
+    },
+    {
+      "sport": "MLB",
+      "name": "Will Venable",
+      "season": "2026",
+      "team": "Chicago White Sox",
+      "league": "AL"
+    },
+    {
+      "sport": "MLB",
+      "name": "Pat Murphy",
+      "season": "2024",
+      "team": "Milwaukee Brewers",
+      "league": "NL"
+    },
+    {
+      "sport": "MLB",
+      "name": "Pat Murphy",
+      "season": "2025",
+      "team": "Milwaukee Brewers",
+      "league": "NL"
+    },
+    {
+      "sport": "MLB",
+      "name": "Pat Murphy",
+      "season": "2026",
+      "team": "Milwaukee Brewers",
+      "league": "NL"
+    },
+    {
+      "sport": "MLB",
+      "name": "Jim Tracy",
+      "season": "2009",
+      "team": "Colorado Rockies",
+      "league": "NL"
+    },
+    {
+      "sport": "MLB",
+      "name": "Clint Hurdle",
+      "season": "2013",
+      "team": "Pittsburgh Pirates",
+      "league": "NL"
+    },
+    {
+      "sport": "MLB",
+      "name": "Mike Scioscia",
+      "season": "2002",
+      "team": "Anaheim Angels",
+      "league": "AL"
+    },
+    {
+      "sport": "MLB",
+      "name": "Mike Scioscia",
+      "season": "2009",
+      "team": "Los Angeles Angels of Anaheim",
+      "league": "AL"
+    },
+    {
+      "sport": "MLB",
+      "name": "Bruce Bochy",
+      "season": "1996",
+      "team": "San Diego Padres",
+      "league": "NL"
+    },
+    {
+      "sport": "MLB",
+      "name": "Bobby Cox",
+      "season": "1985",
+      "team": "Toronto Blue Jays",
+      "league": "AL"
+    },
+    {
+      "sport": "MLB",
+      "name": "Bobby Cox",
+      "season": "1991",
+      "team": "Atlanta Braves",
+      "league": "NL"
+    },
+    {
+      "sport": "MLB",
+      "name": "Bobby Cox",
+      "season": "2004",
+      "team": "Atlanta Braves",
+      "league": "NL"
+    },
+    {
+      "sport": "MLB",
+      "name": "Bobby Cox",
+      "season": "2005",
+      "team": "Atlanta Braves",
+      "league": "NL"
+    },
+    {
+      "sport": "MLB",
+      "name": "Joe Torre",
+      "season": "1996",
+      "team": "New York Yankees",
+      "league": "AL"
+    },
+    {
+      "sport": "MLB",
+      "name": "Joe Torre",
+      "season": "1998",
+      "team": "New York Yankees",
+      "league": "AL"
+    },
+    {
+      "sport": "MLB",
+      "name": "Frank Robinson",
+      "season": "1989",
+      "team": "Baltimore Orioles",
+      "league": "AL"
+    },
+    {
+      "sport": "MLB",
+      "name": "Terry Francona",
+      "season": "2013",
+      "team": "Cleveland",
+      "league": "AL"
+    },
+    {
+      "sport": "MLB",
+      "name": "Terry Francona",
+      "season": "2016",
+      "team": "Cleveland",
+      "league": "AL"
+    },
+    {
+      "sport": "MLB",
+      "name": "Terry Francona",
+      "season": "2022",
+      "team": "Cleveland",
+      "league": "AL"
+    },
+    {
+      "sport": "MLB",
+      "name": "Bob Melvin",
+      "season": "2007",
+      "team": "Arizona Diamondbacks",
+      "league": "NL"
+    },
+    {
+      "sport": "MLB",
+      "name": "Bob Melvin",
+      "season": "2012",
+      "team": "Oakland Athletics",
+      "league": "AL"
+    },
+    {
+      "sport": "MLB",
+      "name": "Bob Melvin",
+      "season": "2018",
+      "team": "Oakland Athletics",
+      "league": "AL"
+    },
+    {
+      "sport": "MLB",
+      "name": "Buddy Black",
+      "season": "2010",
+      "team": "San Diego Padres",
+      "league": "NL"
+    },
+    {
+      "sport": "MLB",
+      "name": "Lou Piniella",
+      "season": "1995",
+      "team": "Seattle Mariners",
+      "league": "AL"
+    },
+    {
+      "sport": "MLB",
+      "name": "Lou Piniella",
+      "season": "2001",
+      "team": "Seattle Mariners",
+      "league": "AL"
+    },
+    {
+      "sport": "MLB",
+      "name": "Lou Piniella",
+      "season": "2008",
+      "team": "Chicago Cubs",
+      "league": "NL"
+    },
+    {
+      "sport": "MLB",
+      "name": "Ozzie Guillen",
+      "season": "2005",
+      "team": "Chicago White Sox",
+      "league": "AL"
+    },
+    {
+      "sport": "MLB",
+      "name": "Ron Gardenhire",
+      "season": "2010",
+      "team": "Minnesota Twins",
+      "league": "AL"
+    },
+    {
+      "sport": "MLB",
+      "name": "Kirk Gibson",
+      "season": "2011",
+      "team": "Arizona Diamondbacks",
+      "league": "NL"
+    },
+    {
+      "sport": "MLB",
+      "name": "Don Mattingly",
+      "season": "2020",
+      "team": "Miami Marlins",
+      "league": "NL"
+    },
+    {
+      "sport": "MLB",
+      "name": "Dusty Baker",
+      "season": "1993",
+      "team": "San Francisco Giants",
+      "league": "NL"
+    },
+    {
+      "sport": "MLB",
+      "name": "Dusty Baker",
+      "season": "1997",
+      "team": "San Francisco Giants",
+      "league": "NL"
+    },
+    {
+      "sport": "MLB",
+      "name": "Dusty Baker",
+      "season": "2000",
+      "team": "San Francisco Giants",
+      "league": "NL"
+    },
+    {
+      "sport": "MLB",
+      "name": "Joe Girardi",
+      "season": "2006",
+      "team": "Florida Marlins",
+      "league": "NL"
+    },
+    {
+      "sport": "MLB",
+      "name": "Buck Showalter",
+      "season": "1994",
+      "team": "New York Yankees",
+      "league": "AL"
+    },
+    {
+      "sport": "MLB",
+      "name": "Buck Showalter",
+      "season": "2004",
+      "team": "Texas Rangers",
+      "league": "AL"
+    },
+    {
+      "sport": "MLB",
+      "name": "Buck Showalter",
+      "season": "2014",
+      "team": "Baltimore Orioles",
+      "league": "AL"
+    },
+    {
+      "sport": "MLB",
+      "name": "Buck Showalter",
+      "season": "2022",
+      "team": "New York Mets",
+      "league": "NL"
+    },
+    {
+      "sport": "MLB",
+      "name": "Joe Maddon",
+      "season": "2008",
+      "team": "Tampa Bay Rays",
+      "league": "AL"
+    },
+    {
+      "sport": "MLB",
+      "name": "Joe Maddon",
+      "season": "2011",
+      "team": "Tampa Bay Rays",
+      "league": "AL"
+    },
+    {
+      "sport": "MLB",
+      "name": "Joe Maddon",
+      "season": "2015",
+      "team": "Chicago Cubs",
+      "league": "NL"
+    },
+    {
+      "sport": "MLB",
+      "name": "Torey Lovullo",
+      "season": "2017",
+      "team": "Arizona Diamondbacks",
+      "league": "NL"
+    },
+    {
+      "sport": "MLB",
+      "name": "Dave Roberts",
+      "season": "2016",
+      "team": "Los Angeles Dodgers",
+      "league": "NL"
+    },
+    {
+      "sport": "MLB",
+      "name": "Gabe Kapler",
+      "season": "2021",
+      "team": "San Francisco Giants",
+      "league": "NL"
+    },
+    {
+      "sport": "MLB",
+      "name": "Jeff Banister",
+      "season": "2015",
+      "team": "Texas Rangers",
+      "league": "AL"
+    },
+    {
+      "sport": "MLB",
+      "name": "Brian Snitker",
+      "season": "2018",
+      "team": "Atlanta Braves",
+      "league": "NL"
+    },
+    {
+      "sport": "MLB",
+      "name": "Kevin Cash",
+      "season": "2020",
+      "team": "Tampa Bay Rays",
+      "league": "AL"
+    },
+    {
+      "sport": "MLB",
+      "name": "Kevin Cash",
+      "season": "2021",
+      "team": "Tampa Bay Rays",
+      "league": "AL"
+    },
+    {
+      "sport": "MLB",
+      "name": "Brandon Hyde",
+      "season": "2023",
+      "team": "Baltimore Orioles",
+      "league": "AL"
+    },
+    {
+      "sport": "MLB",
+      "name": "Skip Schumaker",
+      "season": "2023",
+      "team": "Miami Marlins",
+      "league": "NL"
+    },
+    {
+      "sport": "MLB",
+      "name": "Mike Shildt",
+      "season": "2019",
+      "team": "St. Louis Cardinals",
+      "league": "NL"
+    }
+  ]
+}

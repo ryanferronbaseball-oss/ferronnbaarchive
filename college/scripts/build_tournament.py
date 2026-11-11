@@ -25,6 +25,20 @@ ALIASES = {
     'college of charleston': 'charleston', 'charleston cofc': 'charleston',
     'texas a m': 'texas am', 'texas a and m': 'texas am',
 }
+OFFICIAL_OVERRIDES = {
+    (2025, 'unc wilmington'): {
+        'url': 'https://uncwsports.com/sports/mens-basketball/stats/2024-25',
+        'pts': ('Donovan Newby', 'espn:4702932', 14.4),
+        'reb': ('Sean Moore', 'espn:5106587', 6.5),
+        'ast': ('Donovan Newby', 'espn:4702932', 3.5),
+    },
+    (2025, 'north carolina'): {
+        'url': 'https://goheels.com/sports/mens-basketball/stats/2024-25',
+        'pts': ('RJ Davis', 'espn:4433176', 17.2),
+        'reb': ('Ven-Allen Lubin', 'espn:4684799', 5.5),
+        'ast': ('Elliot Cadeau', 'espn:4869764', 6.2),
+    },
+}
 
 def norm(value):
     value = re.sub(r'[^a-z0-9 ]+', ' ', value.lower().replace('&', ' and '))
@@ -141,6 +155,16 @@ def main():
         for future in as_completed(futures):
             record = futures[future]
             record['leaders'] = future.result()
+            record['leaders_verified'] = False
+            override = OFFICIAL_OVERRIDES.get((record['season'], record['school']))
+            if override:
+                record['leaders'] = {
+                    stat: {'name': name, 'id': player_id, 'average': value,
+                           'in_archive': player_id in record['_witnessed_ids'],
+                           'source_url': override['url']}
+                    for stat, (name, player_id, value) in ((k, v) for k, v in override.items() if k != 'url')
+                }
+                record['leaders_verified'] = True
     for record in records:
         del record['_witnessed_ids']
     output = {'source': 'mattgennarelli/bracket-brain historical results (Wikipedia/Sports Reference derived)',

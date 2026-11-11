@@ -19,6 +19,7 @@
 .boxscore-section-heading{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:28px 0 0}
 .boxscore-section-heading h2{font-size:clamp(23px,3vw,32px);line-height:1.15;letter-spacing:-.035em;margin:0}
 .game-photo{margin:18px 0 0;text-align:center}.game-photo a{display:inline-block;max-width:100%;line-height:0;border-radius:14px;overflow:hidden}.game-photo img{display:block;max-width:100%;max-height:760px;width:auto;height:auto;margin:auto;border-radius:14px;object-fit:contain}.game-photo a:focus-visible{outline:3px solid #86caff;outline-offset:4px}
+.game-recap{border-color:#496784;background:linear-gradient(145deg,#182b42,#121e31)}.game-recap h2{margin-bottom:10px}.game-recap p{font-size:15px;line-height:1.7;margin:10px 0 0}.game-recap .recap-kicker{color:#91cdec;font-size:11px;font-weight:800;letter-spacing:.13em;text-transform:uppercase}
 </style><link rel="stylesheet" href="../assets/site.css?v=20261106-crosssport-sweep3"><link rel="stylesheet" href="../assets/sport-burgundy-ice.css?v=20261106-crosssport-sweep4"><link rel="stylesheet" href="../assets/game-pro-alumni.css?v=20261106-crosssport-sweep3"></head><body><main><header class="ca-header"><a class="ca-logo ca-logo-text" href="./index.html" aria-label="College basketball archive home">COURTSIDE ARCHIVE<small>EVERY GAME HAS A STORY · COLLEGE BASKETBALL</small></a><nav class="ca-nav" aria-label="Main navigation"><a href="./index.html" data-nav="index">Overview</a><a href="./game.html" data-nav="game" aria-current="page">Games</a><a href="./stats.html" data-nav="stats">Players</a><a href="./records.html" data-nav="milestones">Records</a><a href="./insights.html" data-nav="insights">Insights</a><a href="./transfers.html" data-nav="transfers">Transfers</a><a href="./nba-alumni.html" data-nav="nba-alumni">To the NBA</a><a href="./coaches.html" data-nav="coaches">Coaches</a></nav><a class="ca-hub-link" href="../index.html" aria-label="Return to all sports archives">All archives ↗</a></header>
 <div class="eyebrow" style="margin-top:38px">My college basketball attendance · Game archive</div><h1>Game details.</h1><p>Revisit every college basketball game you attended: final scores and the most complete validated player box scores available in your archive, including university records added where ESPN's historical data was incomplete.</p>
 <div class="selector"><select id="gameSelect" aria-label="Choose attended college basketball game"><option>Loading games…</option></select></div>
@@ -79,6 +80,34 @@ function playerOfGame(players){
     +cell("FG",shots(p,"fgm","fga"))+cell("3PT",shots(p,"fg3m","fg3a"))+cell("FT",shots(p,"ftm","fta"))+cell("TO",m(p,"tov"))
     +'</div><p class="pog-method">Unofficial selection by box-score impact: PTS + REB + AST + STL + BLK − missed FG − missed FT − TO. This is not an official NCAA award or an advanced all-in-one metric.</p></section>';
 }
+function gameRecap(g,entries,awayScore,homeScore){
+  const winner=awayScore>homeScore?g.away:homeScore>awayScore?g.home:null;
+  const loser=winner==g.away?g.home:g.away;
+  const margin=Math.abs(awayScore-homeScore);
+  const total=awayScore+homeScore;
+  const ranked=entries.filter(p=>p.pts!=null&&Number.isFinite(Number(p.pts))).sort((a,b)=>Number(b.pts)-Number(a.pts)||Number(b.reb||0)-Number(a.reb||0));
+  const leader=ranked[0],runner=ranked.find(p=>p.team_id!==leader?.team_id);
+  const name=p=>NAMES[String(p.team_id)]||p.team||"his team";
+  const line=p=>{const parts=[Number(p.pts)+" points"];if(p.reb!=null&&Number(p.reb)>=8)parts.push(p.reb+" rebounds");if(p.ast!=null&&Number(p.ast)>=6)parts.push(p.ast+" assists");if(p.blk!=null&&Number(p.blk)>=4)parts.push(p.blk+" blocks");if(p.fg3m!=null&&Number(p.fg3m)>=5)parts.push(p.fg3m+" three-pointers");return parts.join(", ")};
+  const dramatic=margin<=5,standout=ranked.some(p=>Number(p.pts)>=30||Number(p.reb)>=15||Number(p.ast)>=12),notable=dramatic||standout||total>=165;
+  let opening=winner?winner+" defeated "+loser+" "+Math.max(awayScore,homeScore)+"–"+Math.min(awayScore,homeScore)+" at "+(g.arena||"the recorded venue")+".":g.away+" and "+g.home+" finished tied "+awayScore+"–"+homeScore+" in the preserved result.";
+  if(dramatic)opening+=" The "+margin+"-point margin made it one of the tighter results in the archive.";
+  else if(margin>=20)opening+=" The "+margin+"-point difference made it a decisive result.";
+  else opening+=" The final margin was "+margin+" points.";
+  const paragraphs=[opening];
+  if(leader){let performance=leader.player+" led the recorded scorers with "+line(leader)+" for "+name(leader)+".";
+    if(runner&&Number(runner.pts)>=10)performance+=" On the other side, "+runner.player+" scored "+runner.pts+" for "+name(runner)+".";
+    paragraphs.push(performance);
+  }else paragraphs.push("Individual scoring details have not yet been verified for this game.");
+  if(notable&&ranked.length){
+    const other=ranked.filter(p=>p!==leader&&(Number(p.pts)>=20||Number(p.reb)>=12||Number(p.ast)>=10)).slice(0,3);
+    const details=[];
+    if(other.length)details.push("Other notable lines included "+other.map(p=>p.player+" ("+line(p)+")").join("; ")+".");
+    if(total>=165)details.push("The teams combined for "+total+" points.");
+    if(details.length)paragraphs.push(details.join(" "));
+  }
+  return '<section class="panel game-recap"><div class="recap-kicker">Every game has a story</div><h2>Game recap</h2>'+paragraphs.map(p=>'<p>'+esc(p)+'</p>').join('')+'</section>';
+}
 function show(id){const idx=games.findIndex(g=>g.id===String(id));if(idx<0){$("game").innerHTML='<section class="panel empty">Game not found in attendance history.</section>';return}const g=games[idx];$("gameSelect").value=g.id;const entries=gameLogs(g),home=String(g.home_team_id),away=String(g.away_team_id);const ids=[...new Set(entries.map(x=>String(x.espn_event_id)))];
 if((ids.length&& (ids.length!==1||ids[0]!==String(g.espn_event_id)))||entries.some(p=>![home,away].includes(String(p.team_id)))){$("game").innerHTML='<section class="panel empty">The imported player records do not safely match this game; statistics are hidden to prevent displaying the wrong box score.</section>';return}
 const recordedScore=v=>v!==""&&v!=null&&Number.isFinite(Number(v))?Number(v):null;
@@ -95,7 +124,7 @@ const proSection='<section class="game-pro-alumni"><h2>Future NBA players in thi
 const statSections=entries.length?(playerOfGame(entries)+topImpactPerformances(entries)+'<div class="boxscore-section-heading"><h2>Player box score</h2></div>'+teamTable(entries,(NAMES[away]||g.away)+' · Away',away)+teamTable(entries,(NAMES[home]||g.home)+' · Home',home)):'<section class="panel empty">The final score and matchup are preserved, but no verified player box score is available for this game yet.</section>';
 const photo=gamePhotos[String(g.id)];const photoSection=photo&&/^\.\/assets\/game-photos\/[a-zA-Z0-9._-]+$/.test(photo)?'<div class="game-photo"><a href="'+esc(photo)+'" target="_blank" rel="noopener" aria-label="Enlarge photo from this game"><img src="'+esc(photo)+'" alt="Game action: '+esc(g.away)+' at '+esc(g.home)+'" loading="lazy"></a></div>':'';
 $("game").innerHTML='<section class="panel"><div class="eyebrow">'+esc(g.date)+(g.arena?' · '+esc(g.arena):' · Venue not yet verified')+(g.site_type==='neutral'?' · Neutral site':'')+'</div><div class="scoreboard"><div class="left"><div class="sub">AWAY</div><div class="team '+(winning==="away"?"win":"")+'">'+esc(NAMES[away])+'</div><div class="score">'+awayScore+'</div></div><div class="center vs"><div class="sub">FINAL</div></div><div class="right"><div class="sub">HOME</div><div class="team '+(winning==="home"?"win":"")+'">'+esc(NAMES[home])+'</div><div class="score">'+homeScore+'</div></div></div><div class="sub">'+entries.length+' player appearances · <a target="_blank" rel="noopener" href="https://www.espn.com/mens-college-basketball/boxscore/_/gameId/'+encodeURIComponent(sourceId)+'">View ESPN source ↗</a></div></section>'
-+photoSection+proSection+sourceNote+statSections;
++photoSection+proSection+gameRecap(g,entries,awayScore,homeScore)+statSections+sourceNote;
 $("pagination").innerHTML=(idx>0?'<a href="?id='+encodeURIComponent(games[idx-1].id)+'">← Previous game</a>':'<span></span>')+(idx<games.length-1?'<a href="?id='+encodeURIComponent(games[idx+1].id)+'">Next game →</a>':'<span></span>');document.title=NAMES[away]+' @ '+NAMES[home]+' · '+g.date+' | Courtside Archive';if(history.replaceState)history.replaceState(null,"","?id="+encodeURIComponent(g.id));
 }
 $("gameSelect").addEventListener("change",e=>show(e.target.value));

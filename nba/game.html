@@ -18,6 +18,8 @@
 @media(max-width:530px){.impact-board{min-width:650px}.impact-board th,.impact-board td{padding:12px 10px}.impact-board th:first-child,.impact-board td:first-child{min-width:175px}}
 .boxscore-section-heading{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:28px 0 0}
 .boxscore-section-heading h2{font-size:clamp(23px,3vw,32px);line-height:1.15;letter-spacing:-.035em;margin:0}
+.game-recap{border-color:#496784;background:linear-gradient(145deg,#182b42,#121e31)}.game-recap h2{margin-bottom:10px}.game-recap p{font-size:15px;line-height:1.7;margin:10px 0 0}.game-recap .recap-kicker{color:#91cdec;font-size:11px;font-weight:800;letter-spacing:.13em;text-transform:uppercase}
+
 </style><link rel="stylesheet" href="../assets/site.css?v=20261106-crosssport-sweep3"><link rel="stylesheet" href="../assets/sport-burgundy-ice.css?v=20261106-crosssport-sweep4"></head><body><main><header class="ca-header"><a class="ca-logo ca-logo-text" href="./index.html" aria-label="NBA archive home">COURTSIDE ARCHIVE<small>EVERY GAME HAS A STORY · NBA</small></a><nav class="ca-nav" aria-label="Main navigation"><a href="./index.html" data-nav="index">Overview</a><a href="./game.html" data-nav="game" aria-current="page">Games</a><a href="./stats.html" data-nav="stats">Players</a><a href="./hall-of-fame.html" data-nav="hof">★ Hall of Fame</a><a href="./records.html" data-nav="milestones">Records</a><a href="./insights.html" data-nav="insights">Insights</a><a href="./coaches.html" data-nav="coaches">Coaches</a></nav><a class="ca-hub-link" href="../index.html" aria-label="Return to all sports archives">All archives ↗</a></header>
 <div class="eyebrow" style="margin-top:38px">My NBA attendance · Game archive</div><h1>Game details.</h1><p>Revisit every NBA game you attended: final scores, top performances, and both teams' full player box scores.</p>
 <div class="selector"><select id="gameSelect" aria-label="Choose attended NBA game"><option>Loading games…</option></select></div>
@@ -30,7 +32,7 @@ const TEAMS={"Atlanta":"1","Boston":"2","New Orleans":"3","Chicago":"4","Clevela
 const NAMES={"1":"Atlanta Hawks","2":"Boston Celtics","3":"New Orleans Hornets","4":"Chicago Bulls","5":"Cleveland Cavaliers","7":"Denver Nuggets","9":"Golden State Warriors","10":"Houston Rockets","12":"LA Clippers","13":"LA Lakers","14":"Miami Heat","16":"Minnesota Timberwolves","18":"New York Knicks","21":"Phoenix Suns","23":"Sacramento Kings","24":"San Antonio Spurs","25":"Oklahoma City Thunder","26":"Utah Jazz","30":"Charlotte Bobcats"};
 const esc=v=>String(v??"").replace(/[&<>"']/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
 const m=(p,k)=>p[k]==null?"—":p[k];const shots=(p,k1,k2)=>m(p,k1)+"-"+m(p,k2);
-let games=[],logs=[];
+let games=[],logs=[],writtenRecaps={};
 function csvParse(text){const lines=text.trim().split(/\r?\n/);const headers=lines.shift().split(",");return lines.map(line=>{let values=line.split(",");return Object.fromEntries(headers.map((h,i)=>[h,values[i]??""]))})}
 function gameLogs(g){const home=TEAMS[g.home],away=TEAMS[g.away];return logs.filter(p=>p.date===g.date&&(String(p.team_id)===home||String(p.team_id)===away)).filter(p=>p.minutes&&p.minutes!=="--")}
 function score(players,teamId){return players.filter(p=>String(p.team_id)===teamId).reduce((sum,p)=>sum+p.pts,0)}
@@ -78,10 +80,23 @@ function playerOfGame(players){
     +cell("FG",shots(p,"fgm","fga"))+cell("3PT",shots(p,"fg3m","fg3a"))+cell("FT",shots(p,"ftm","fta"))+cell("TO",m(p,"tov"))
     +'</div><p class="pog-method">Unofficial selection by box-score impact: PTS + REB + AST + STL + BLK − missed FG − missed FT − TO. This is not an NBA award or an advanced all-in-one metric.</p></section>';
 }
+function gameRecap(g,entries,awayScore,homeScore){
+  const written=writtenRecaps[String(g.id)];
+  if(Array.isArray(written)&&written.length){
+    const playerIds=new Set(entries.map(p=>String(p.player_id)));
+    const linked=text=>String(text).split(/(\[\[[^\]]+\]\])/g).map(part=>{
+      const match=part.match(/^\[\[((?:espn:\d+)|(?:official:[a-z0-9-]+:[a-z0-9-]+))\|([^\]]+)\]\]$/);
+      return match&&playerIds.has(match[1])?'<a class="player-link" href="./player.html?id='+encodeURIComponent(match[1])+'">'+esc(match[2])+'</a>':esc(part);
+    }).join('');
+    return '<section class="panel game-recap"><div class="recap-kicker">Every game has a story</div><h2>Game recap</h2>'+written.map(p=>'<p>'+linked(p)+'</p>').join('')+'</section>';
+  }
+  return "";
+}
 function show(id){const idx=games.findIndex(g=>g.id===String(id));if(idx<0){$("game").innerHTML='<section class="panel empty">Game not found in attendance history.</section>';return}const g=games[idx];$("gameSelect").value=g.id;const entries=gameLogs(g),home=TEAMS[g.home],away=TEAMS[g.away];const ids=[...new Set(entries.map(x=>String(x.espn_event_id)))];
 if(entries.length<10||ids.length!==1){$("game").innerHTML='<section class="panel empty">The box score for this matchup could not be isolated safely. No player statistics have been displayed.</section>';return}
 const awayScore=score(entries,away),homeScore=score(entries,home);const winning=awayScore>homeScore?"away":homeScore>awayScore?"home":"tie";const sourceId=ids[0];
 $("game").innerHTML='<section class="panel"><div class="eyebrow">'+esc(g.date)+' · '+esc(g.arena)+'</div><div class="scoreboard"><div class="left"><div class="sub">AWAY</div><div class="team '+(winning==="away"?"win":"")+'">'+esc(NAMES[away])+'</div><div class="score">'+awayScore+'</div></div><div class="center vs"><div class="sub">FINAL</div></div><div class="right"><div class="sub">HOME</div><div class="team '+(winning==="home"?"win":"")+'">'+esc(NAMES[home])+'</div><div class="score">'+homeScore+'</div></div></div><div class="sub">'+entries.length+' player appearances · <a target="_blank" rel="noopener" href="https://www.espn.com/nba/boxscore/_/gameId/'+encodeURIComponent(sourceId)+'">View ESPN source ↗</a></div></section>'
++gameRecap(g,entries,awayScore,homeScore)
 +playerOfGame(entries)
 +topImpactPerformances(entries)
 +'<div class="boxscore-section-heading"><h2>Player box score</h2></div>'
@@ -89,5 +104,5 @@ $("game").innerHTML='<section class="panel"><div class="eyebrow">'+esc(g.date)+'
 $("pagination").innerHTML=(idx>0?'<a href="?id='+encodeURIComponent(games[idx-1].id)+'">← Previous game</a>':'<span></span>')+(idx<games.length-1?'<a href="?id='+encodeURIComponent(games[idx+1].id)+'">Next game →</a>':'<span></span>');document.title=NAMES[away]+' @ '+NAMES[home]+' · '+g.date+' | Courtside Archive';if(history.replaceState)history.replaceState(null,"","?id="+encodeURIComponent(g.id));
 }
 $("gameSelect").addEventListener("change",e=>show(e.target.value));
-Promise.all([fetch("../data/games.csv?v=31-import-verified",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("games.csv HTTP "+r.status);return r.text()}),fetch("../data/player_boxscores_espn.json?v=31-import-verified",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("boxscores HTTP "+r.status);return r.json()})]).then(([csv,boxscores])=>{games=csvParse(csv);logs=boxscores;$("gameSelect").innerHTML=games.slice().sort((a,b)=>a.date.localeCompare(b.date)||Number(a.id)-Number(b.id)).map(g=>'<option value="'+esc(g.id)+'">'+esc(g.date+' — '+g.away+' @ '+g.home)+'</option>').join("");show(new URLSearchParams(location.search).get("id")||"1")}).catch(e=>{$("game").innerHTML='<section class="panel empty">Unable to load archive data: '+esc(e.message)+'</section>'});
+Promise.all([fetch("../data/games.csv?v=31-import-verified",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("games.csv HTTP "+r.status);return r.text()}),fetch("../data/player_boxscores_espn.json?v=31-import-verified",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("boxscores HTTP "+r.status);return r.json()}),fetch("../data/game_recaps.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("game_recaps.json HTTP "+r.status);return r.json()})]).then(([csv,boxscores,recaps])=>{games=csvParse(csv);logs=boxscores;writtenRecaps=recaps;$("gameSelect").innerHTML=games.slice().sort((a,b)=>a.date.localeCompare(b.date)||Number(a.id)-Number(b.id)).map(g=>'<option value="'+esc(g.id)+'">'+esc(g.date+' — '+g.away+' @ '+g.home)+'</option>').join("");show(new URLSearchParams(location.search).get("id")||"1")}).catch(e=>{$("game").innerHTML='<section class="panel empty">Unable to load archive data: '+esc(e.message)+'</section>'});
 </script><script src="../assets/site.js?v=design-1"></script></body></html>

@@ -565,6 +565,25 @@ async function renderPlayer(d){
  const draftTag=draft&&draft.draft_pick!=null
   ?`${draft.draft_year} – Round ${draft.draft_round} – Pick ${draft.draft_pick} – ${draft.draft_team}`:"";
  const b=bat(p.rows),pi=pitch(p.rows),qualifiedHit=p.rows.some(x=>x.batting!=null),qualifiedPitch=p.rows.some(x=>x.pitching!=null);
+ const teamLogoIds=await json("team_logo_ids.json").catch(()=>({}));
+ const normTeam=s=>String(s||"").toLowerCase().replace(/[^a-z0-9]/g,"");
+ const logoIds=new Map(Object.entries(teamLogoIds).map(([name,teamId])=>[normTeam(name),teamId]));
+ const witnessedSchools=p.teams.length>1?[...new Set(p.rows.map(r=>r.team))].map(name=>{
+  const rows=p.rows.filter(r=>r.team===name),first=rows.reduce((earliest,r)=>{
+   const day=d.gameMap.get(r.game_id)?.date||"9999-99-99";return day<earliest?day:earliest;
+  },"9999-99-99");
+  return {name,first,rows,b:bat(rows),pi:pitch(rows)};
+ }).sort((a,b)=>a.first.localeCompare(b.first)||a.name.localeCompare(b.name)):[];
+ const transferSection=witnessedSchools.length>1?'<section class="panel cb-transfer-profile"><h2>Seen at Multiple Schools</h2>'
+  +'<p class="mlb-note">Only schools where you personally watched this player. Statistics include only those attended college games.</p>'
+  +'<div class="cb-transfer-path">'+witnessedSchools.map((s,i)=>{
+   const logoId=logoIds.get(normTeam(s.name));return (i?'<span class="cb-transfer-arrow" aria-hidden="true">→</span>':'')
+    +'<div class="cb-transfer-school">'+(logoId?'<img src="https://a.espncdn.com/i/teamlogos/ncaa/500/'+encodeURIComponent(logoId)+'.png" alt="'+esc(s.name)+' logo" loading="lazy">':'')
+    +'<span><strong>'+esc(s.name)+'</strong><small>First seen '+esc(s.first.slice(0,4))+'</small></span></div>';
+  }).join('')+'</div>'
+  +(witnessedSchools.some(s=>s.b.games)?'<h3>Hitting</h3>'+htmlTable(["School","Games","AVG","HR","RBI"],witnessedSchools.filter(s=>s.b.games).map(s=>'<tr><td>'+esc(s.name)+'</td><td>'+s.b.games+'</td><td>'+rate(s.b.average,3)+'</td><td>'+fmt(s.b.homeRuns)+'</td><td>'+fmt(s.b.rbi)+'</td></tr>')):'')
+  +(witnessedSchools.some(s=>s.pi.games)?'<h3>Pitching</h3>'+htmlTable(["School","Games","IP","ERA","K"],witnessedSchools.filter(s=>s.pi.games).map(s=>'<tr><td>'+esc(s.name)+'</td><td>'+s.pi.games+'</td><td>'+esc(s.pi.innings??'—')+'</td><td>'+rate(s.pi.era,2)+'</td><td>'+fmt(s.pi.strikeouts)+'</td></tr>')):'')
+  +'<p class="mlb-note"><a href="./transfers.html">Explore the college baseball Transfers page →</a></p></section>':'';
  const cross=d.crosswalk.find(x=>x.verified===true&&String(x.college_player_id)===id);
  const tripleLevel=Boolean(cross&&matchedMiLB&&String(cross.mlb_player_id)===String(matchedMiLB.milb_id));
  const entries=unique(p.rows.map(x=>x.game_id)).map(game_id=>d.gameMap.get(game_id)).filter(Boolean).sort((a,b)=>b.date.localeCompare(a.date)||b.id.localeCompare(a.id));
@@ -606,7 +625,7 @@ async function renderPlayer(d){
  +'<p class="mlb-profile-seen">'+p.games.length+' game'+(p.games.length===1?"":"s")+' witnessed · College baseball</p>'
  +'</div></section>'
  +'<p class="mlb-note">Only college baseball appearances from games you attended appear here; professional seasons are never added to college totals.</p>'
- +hitter+pitcher
+ +transferSection+hitter+pitcher
  +'<div class="section-heading"><h2>Last 3 games witnessed</h2></div><div class="game-grid cb-grid cb-profile-games">'+entries.slice(0,3).map(gameCard).join("")+'</div>'
  +'<section class="panel cb-player-game-log"><h2>Recorded college game logs</h2>'
  +htmlTable(["Date","Matchup","AB","R (hitting)","H","HR","RBI","IP","H (allowed)","R (pitching)","BB","K"],logRows.map(r=>{

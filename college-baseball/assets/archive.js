@@ -641,7 +641,10 @@ async function renderCWS(d){
  const coachId=name=>name.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
  const playerLink=(name,school,year,source)=>{
   const normName=s=>String(s||"").toLowerCase().replace(/[^a-z0-9]/g,"");
-  const person=d.players.find(p=>normName(p.name)===normName(name)&&p.rows.some(row=>normSchool(row.team)===normSchool(school)&&d.gameMap.get(row.game_id)?.season===year));
+  // A season leader may have been witnessed in another season. Link any verified
+  // archive profile for the same player and school, not only that CWS year.
+  const matches=d.players.filter(p=>normName(p.name)===normName(name)&&p.rows.some(row=>normSchool(row.team)===normSchool(school)));
+  const person=matches.find(p=>p.rows.some(row=>normSchool(row.team)===normSchool(school)&&d.gameMap.get(row.game_id)?.season===year))||matches[0];
   return person?'./player.html?id='+encodeURIComponent(person.player_id):source;
  };
  const rows=field.teams.map(t=>({...t,seen:d.games.filter(g=>g.season===t.year&&(normSchool(g.away)===normSchool(t.school)||normSchool(g.home)===normSchool(t.school))).sort((a,b)=>a.date.localeCompare(b.date))})).filter(t=>t.seen.length).sort((a,b)=>b.year-a.year||a.rank-b.rank||a.school.localeCompare(b.school));

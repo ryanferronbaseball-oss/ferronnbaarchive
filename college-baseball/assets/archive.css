@@ -507,6 +507,16 @@ body[data-page="player"] .mlb-profile-badge.cb-triple-level:hover{background:#2B
 .cb-profile-stat-row .metric small{font-size:11px;line-height:1.4;margin:0}
 .cb-profile-stat-row .metric strong{font-size:26px;line-height:1.2;letter-spacing:-.045em;margin-top:9px;color:#28312D}
 .cb-profile-games{margin:15px 0 26px}
+.cb-transfer-profile{margin:22px 0;padding:22px;border:1px solid #c5e3ef;border-radius:14px;background:#fff}
+.cb-transfer-profile h2{margin:0 0 9px;color:#831738}
+.cb-transfer-profile h3{margin:19px 0 10px;color:#831738;font-size:17px}
+.cb-transfer-profile .cb-table-wrap{overflow-x:auto}
+.cb-transfer-path{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin:18px 0}
+.cb-transfer-school{display:flex;align-items:center;gap:11px;background:#edf7fc;border:1px solid #c5e3ef;border-radius:12px;padding:11px 15px;min-height:73px}
+.cb-transfer-school img{width:48px;height:48px;object-fit:contain}
+.cb-transfer-school strong{display:block;color:#831738;font-size:15px}
+.cb-transfer-school small{display:block;color:#536b7c;font-size:12px;margin-top:3px}
+.cb-transfer-arrow{font-size:24px;font-weight:800;color:#831738}
 .cb-player-game-log{margin-top:21px}
 .cb-player-game-log h2{font-size:23px;margin:0 0 16px}
 .cb-record.mlb-record{border:1px solid #D5E0D1;background:#FFFEFB;padding:18px}

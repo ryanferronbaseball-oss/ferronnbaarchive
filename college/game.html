@@ -85,7 +85,7 @@ function gameRecap(g,entries,awayScore,homeScore){
   if(Array.isArray(written)&&written.length){
     const playerIds=new Set(entries.map(p=>String(p.player_id)));
     const linked=text=>String(text).split(/(\[\[[^\]]+\]\])/g).map(part=>{
-      const match=part.match(/^\[\[(espn:\d+)\|([^\]]+)\]\]$/);
+      const match=part.match(/^\[\[((?:espn:\d+)|(?:official:[a-z0-9-]+:[a-z0-9-]+))\|([^\]]+)\]\]$/);
       return match&&playerIds.has(match[1])?'<a class="player-link" href="./player.html?id='+encodeURIComponent(match[1])+'">'+esc(match[2])+'</a>':esc(part);
     }).join('');
     return '<section class="panel game-recap"><div class="recap-kicker">Every game has a story</div><h2>Game recap</h2>'+written.map(p=>'<p>'+linked(p)+'</p>').join('')+'</section>';

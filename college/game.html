@@ -32,7 +32,7 @@ const $=x=>document.getElementById(x);
 let TEAMS={},NAMES={}; // Populated from verified college game IDs and team mapping.
 const esc=v=>String(v??"").replace(/[&<>"']/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
 const m=(p,k)=>p[k]==null?"—":p[k];const displayMinutes=v=>v==null||v===""||v==="--"?"—":Number.isFinite(Number(v))?String(Math.round(Number(v))):/^\d+:\d\d$/.test(String(v))?String(Math.round(Number(String(v).split(":")[0])+Number(String(v).split(":")[1])/60)):"—";const shots=(p,k1,k2)=>m(p,k1)+"-"+m(p,k2);
-let games=[],logs=[],nbaAlumni=new Set(),gamePhotos={};
+let games=[],logs=[],nbaAlumni=new Set(),gamePhotos={},writtenRecaps={};
 function csvParse(text){const lines=text.trim().split(/\r?\n/);const headers=lines.shift().split(",");return lines.map(line=>{let values=line.split(",");return Object.fromEntries(headers.map((h,i)=>[h,values[i]??""]))})}
 function gameLogs(g){return logs.filter(p=>String(p.game_id)===String(g.id)&&String(p.espn_event_id)===String(g.espn_event_id))}
 function score(players,teamId){return players.filter(p=>String(p.team_id)===teamId).reduce((sum,p)=>sum+p.pts,0)}
@@ -81,6 +81,15 @@ function playerOfGame(players){
     +'</div><p class="pog-method">Unofficial selection by box-score impact: PTS + REB + AST + STL + BLK − missed FG − missed FT − TO. This is not an official NCAA award or an advanced all-in-one metric.</p></section>';
 }
 function gameRecap(g,entries,awayScore,homeScore){
+  const written=writtenRecaps[String(g.id)];
+  if(Array.isArray(written)&&written.length){
+    const playerIds=new Set(entries.map(p=>String(p.player_id)));
+    const linked=text=>String(text).split(/(\[\[[^\]]+\]\])/g).map(part=>{
+      const match=part.match(/^\[\[(espn:\d+)\|([^\]]+)\]\]$/);
+      return match&&playerIds.has(match[1])?'<a class="player-link" href="./player.html?id='+encodeURIComponent(match[1])+'">'+esc(match[2])+'</a>':esc(part);
+    }).join('');
+    return '<section class="panel game-recap"><div class="recap-kicker">Every game has a story</div><h2>Game recap</h2>'+written.map(p=>'<p>'+linked(p)+'</p>').join('')+'</section>';
+  }
   const winner=awayScore>homeScore?g.away:homeScore>awayScore?g.home:null;
   const loser=winner==g.away?g.home:g.away;
   const margin=Math.abs(awayScore-homeScore);
@@ -128,5 +137,5 @@ $("game").innerHTML='<section class="panel"><div class="eyebrow">'+esc(g.date)+(
 $("pagination").innerHTML=(idx>0?'<a href="?id='+encodeURIComponent(games[idx-1].id)+'">← Previous game</a>':'<span></span>')+(idx<games.length-1?'<a href="?id='+encodeURIComponent(games[idx+1].id)+'">Next game →</a>':'<span></span>');document.title=NAMES[away]+' @ '+NAMES[home]+' · '+g.date+' | Courtside Archive';if(history.replaceState)history.replaceState(null,"","?id="+encodeURIComponent(g.id));
 }
 $("gameSelect").addEventListener("change",e=>show(e.target.value));
-Promise.all([fetch("./data/games.csv?v=college-step3",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("games.csv HTTP "+r.status);return r.text()}),fetch("./data/player_boxscores_espn.json?v=college-step3",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("boxscores HTTP "+r.status);return r.json()}),fetch("./data/team_names.json?v=college-step3",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("school mapping HTTP "+r.status);return r.json()}),fetch("./data/nba_crosswalk.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("NBA alumni registry unavailable");return r.json()}),fetch("./data/game_photos.json",{cache:"no-store"}).then(r=>r.ok?r.json():{})]).then(([csv,boxscores,teamMap,alumni,photos])=>{games=csvParse(csv).sort((a,b)=>a.date.localeCompare(b.date)||Number(a.id)-Number(b.id));logs=boxscores;gamePhotos=photos;NAMES={...teamMap,...Object.fromEntries(games.flatMap(g=>[[String(g.away_team_id),g.away],[String(g.home_team_id),g.home]]))};nbaAlumni=new Set(alumni.filter(p=>p.category==="nba"&&p.nba_debut).map(p=>p.player_id));TEAMS=Object.fromEntries(games.flatMap(g=>[[g.away,g.away_team_id],[g.home,g.home_team_id]]));$("gameSelect").innerHTML=games.slice().sort((a,b)=>a.date.localeCompare(b.date)||Number(a.id)-Number(b.id)).map(g=>'<option value="'+esc(g.id)+'">'+esc(g.date+' — '+g.away+' @ '+g.home)+'</option>').join("");show(new URLSearchParams(location.search).get("id")||games[0].id)}).catch(e=>{$("game").innerHTML='<section class="panel empty">Unable to load archive data: '+esc(e.message)+'</section>'});
+Promise.all([fetch("./data/games.csv?v=college-step3",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("games.csv HTTP "+r.status);return r.text()}),fetch("./data/player_boxscores_espn.json?v=college-step3",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("boxscores HTTP "+r.status);return r.json()}),fetch("./data/team_names.json?v=college-step3",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("school mapping HTTP "+r.status);return r.json()}),fetch("./data/nba_crosswalk.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("NBA alumni registry unavailable");return r.json()}),fetch("./data/game_photos.json",{cache:"no-store"}).then(r=>r.ok?r.json():{}),fetch("./data/game_recaps.json",{cache:"no-store"}).then(r=>r.ok?r.json():{})]).then(([csv,boxscores,teamMap,alumni,photos,recaps])=>{games=csvParse(csv).sort((a,b)=>a.date.localeCompare(b.date)||Number(a.id)-Number(b.id));logs=boxscores;gamePhotos=photos;writtenRecaps=recaps;NAMES={...teamMap,...Object.fromEntries(games.flatMap(g=>[[String(g.away_team_id),g.away],[String(g.home_team_id),g.home]]))};nbaAlumni=new Set(alumni.filter(p=>p.category==="nba"&&p.nba_debut).map(p=>p.player_id));TEAMS=Object.fromEntries(games.flatMap(g=>[[g.away,g.away_team_id],[g.home,g.home_team_id]]));$("gameSelect").innerHTML=games.slice().sort((a,b)=>a.date.localeCompare(b.date)||Number(a.id)-Number(b.id)).map(g=>'<option value="'+esc(g.id)+'">'+esc(g.date+' — '+g.away+' @ '+g.home)+'</option>').join("");show(new URLSearchParams(location.search).get("id")||games[0].id)}).catch(e=>{$("game").innerHTML='<section class="panel empty">Unable to load archive data: '+esc(e.message)+'</section>'});
 </script><script src="../assets/site.js?v=design-1"></script></body></html>

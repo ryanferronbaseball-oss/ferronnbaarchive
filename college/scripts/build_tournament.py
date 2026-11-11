@@ -29,10 +29,21 @@ def norm(value):
     value = ' '.join(value.split()).replace('saint ', 'st ')
     return ALIASES.get(value, value)
 
+def slug(value):
+    return re.sub(r'[^a-z0-9]+', '-', value.lower()).strip('-')
+
 def main():
     bracket_file = Path(sys.argv[1])
     with (ROOT / 'data/games.csv').open(newline='') as f:
         games = list(csv.DictReader(f))
+    game_by_id = {g['id']: g for g in games}
+    player_logs = json.loads((ROOT / 'data/player_boxscores_espn.json').read_text())
+    logs_by_game_team = defaultdict(list)
+    for log in player_logs:
+        logs_by_game_team[(str(log['game_id']), str(log['team_id']))].append(log)
+    coach_rules = json.loads((ROOT.parent / 'coach-history/data/verified-assignments.json').read_text())['rules']
+    coach_rules += json.loads((ROOT.parent / 'coach-history/data/college-basketball-coach-assignments.json').read_text())['rules']
+    coach_rules = [r for r in coach_rules if r['sport'] == 'College Basketball']
     grouped = defaultdict(list)
     for game in games:
         season = int(game['date'][:4]) + (int(game['date'][5:7]) >= 7)
@@ -76,9 +87,32 @@ def main():
                   'National Finalist' if last == 2 else 'Final Four' if last == 4 else
                   'Elite Eight' if last == 8 else 'Sweet 16' if last == 16 else
                   'Round of 32' if last == 32 else 'First Round')
-        records.append({'season': year, 'school': school, 'name': next((g[side] for g in games for side in ('away','home') if norm(g[side]) == school), school.title()),
+        team_name = next((g[side] for g in games for side in ('away','home') if norm(g[side]) == school), school.title())
+        candidate_coaches = []
+        for seen_game in seen:
+            rule_matches = {r['coach'] for r in coach_rules if norm(r['team']) == school and r['from'] <= seen_game['date'] <= r['to']}
+            if len(rule_matches) == 1:
+                candidate_coaches.extend(rule_matches)
+        coach = max(set(candidate_coaches), key=candidate_coaches.count) if candidate_coaches else None
+        player_totals = {}
+        for seen_game in seen:
+            for log in logs_by_game_team[(str(seen_game['id']), str(seen_game['team_id']))]:
+                if log.get('minutes') in (None, '', '--'):
+                    continue
+                player_id = str(log['player_id'])
+                p = player_totals.setdefault(player_id, {'id': player_id, 'name': log['player'], 'games': 0, 'pts': 0, 'reb': 0, 'ast': 0})
+                p['games'] += 1
+                for stat in ('pts', 'reb', 'ast'):
+                    p[stat] += float(log.get(stat) or 0)
+        leaders = {}
+        for stat in ('pts', 'reb', 'ast'):
+            if player_totals:
+                p = max(player_totals.values(), key=lambda p: (p[stat] / p['games'], p['games'], p[stat]))
+                leaders[stat] = {'name': p['name'], 'id': p['id'], 'average': round(p[stat] / p['games'], 1)}
+        records.append({'season': year, 'school': school, 'name': team_name,
                         'team_id': seen[0]['team_id'], 'seed': bracket['seed'], 'region': bracket['region'],
-                        'result': result, 'games': sorted(seen, key=lambda x: (x['date'], int(x['id'])))})
+                        'result': result, 'coach': {'name': coach, 'id': slug(coach)} if coach else None,
+                        'leaders': leaders, 'games': sorted(seen, key=lambda x: (x['date'], int(x['id'])))})
     output = {'source': 'mattgennarelli/bracket-brain historical results (Wikipedia/Sports Reference derived)',
               'coverage': '2008–2026 seasons with source game results; 2020 had no tournament',
               'region_status': 'verified where provided by bracket data', 'teams': records}

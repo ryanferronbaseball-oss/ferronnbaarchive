@@ -7,7 +7,9 @@ import csv
 import json
 import re
 import sys
+import urllib.request
 from collections import defaultdict
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -32,11 +34,40 @@ def norm(value):
 def slug(value):
     return re.sub(r'[^a-z0-9]+', '-', value.lower()).strip('-')
 
+def season_leaders(year, team_id, witnessed_ids):
+    url = (f'https://site.web.api.espn.com/apis/common/v3/sports/basketball/'
+           f'mens-college-basketball/teams/{team_id}/roster?season={year}')
+    request = urllib.request.Request(url, headers={'User-Agent': 'CourtsideArchive/1.0'})
+    with urllib.request.urlopen(request, timeout=25) as response:
+        roster = json.load(response)
+    if int(roster.get('season', {}).get('year', 0)) != year:
+        raise ValueError(f'Wrong roster year: {year}, team {team_id}')
+    athletes = []
+    for group in roster.get('positionGroups', []):
+        for athlete in group.get('athletes', []):
+            # ESPN's historical roster feed can contain transferred players whose
+            # season averages belong to a different school (e.g. 2025 Jaylen Blakes).
+            if str(team_id) not in {str(t.get('id')) for t in athlete.get('teams', [])}:
+                continue
+            values = {s['name']: s.get('value') for c in athlete.get('statistics', {}).get('splits', {}).get('categories', []) for s in c.get('stats', [])}
+            if all(isinstance(values.get(key), (float, int)) for key in ('avgPoints', 'avgRebounds', 'avgAssists')):
+                athletes.append((athlete, values))
+    if not athletes:
+        raise ValueError(f'No season player averages: {year}, team {team_id}')
+    leaders = {}
+    for stat, key in [('pts', 'avgPoints'), ('reb', 'avgRebounds'), ('ast', 'avgAssists')]:
+        athlete, values = max(athletes, key=lambda a: float(a[1][key]))
+        player_id = 'espn:' + str(athlete['id'])
+        leaders[stat] = {'name': athlete['displayName'], 'id': player_id,
+                         'average': round(float(values[key]), 1),
+                         'in_archive': player_id in witnessed_ids,
+                         'source_url': url}
+    return leaders
+
 def main():
     bracket_file = Path(sys.argv[1])
     with (ROOT / 'data/games.csv').open(newline='') as f:
         games = list(csv.DictReader(f))
-    game_by_id = {g['id']: g for g in games}
     player_logs = json.loads((ROOT / 'data/player_boxscores_espn.json').read_text())
     logs_by_game_team = defaultdict(list)
     for log in player_logs:
@@ -94,28 +125,28 @@ def main():
             if len(rule_matches) == 1:
                 candidate_coaches.extend(rule_matches)
         coach = max(set(candidate_coaches), key=candidate_coaches.count) if candidate_coaches else None
-        player_totals = {}
+        witnessed_ids = set()
         for seen_game in seen:
             for log in logs_by_game_team[(str(seen_game['id']), str(seen_game['team_id']))]:
                 if log.get('minutes') in (None, '', '--'):
                     continue
-                player_id = str(log['player_id'])
-                p = player_totals.setdefault(player_id, {'id': player_id, 'name': log['player'], 'games': 0, 'pts': 0, 'reb': 0, 'ast': 0})
-                p['games'] += 1
-                for stat in ('pts', 'reb', 'ast'):
-                    p[stat] += float(log.get(stat) or 0)
-        leaders = {}
-        for stat in ('pts', 'reb', 'ast'):
-            if player_totals:
-                p = max(player_totals.values(), key=lambda p: (p[stat] / p['games'], p['games'], p[stat]))
-                leaders[stat] = {'name': p['name'], 'id': p['id'], 'average': round(p[stat] / p['games'], 1)}
+                witnessed_ids.add(str(log['player_id']))
         records.append({'season': year, 'school': school, 'name': team_name,
                         'team_id': seen[0]['team_id'], 'seed': bracket['seed'], 'region': bracket['region'],
                         'result': result, 'coach': {'name': coach, 'id': slug(coach)} if coach else None,
-                        'leaders': leaders, 'games': sorted(seen, key=lambda x: (x['date'], int(x['id'])))})
+                        'leaders': {}, '_witnessed_ids': witnessed_ids,
+                        'games': sorted(seen, key=lambda x: (x['date'], int(x['id'])))})
+    with ThreadPoolExecutor(max_workers=7) as pool:
+        futures = {pool.submit(season_leaders, r['season'], r['team_id'], r['_witnessed_ids']): r for r in records}
+        for future in as_completed(futures):
+            record = futures[future]
+            record['leaders'] = future.result()
+    for record in records:
+        del record['_witnessed_ids']
     output = {'source': 'mattgennarelli/bracket-brain historical results (Wikipedia/Sports Reference derived)',
               'coverage': '2008–2026 seasons with source game results; 2020 had no tournament',
-              'region_status': 'verified where provided by bracket data', 'teams': records}
+              'region_status': 'verified where provided by bracket data',
+              'leader_source': 'ESPN historical team roster season per-game averages', 'teams': records}
     destination = ROOT / 'data/ncaa_tournament.json'
     destination.write_text(json.dumps(output, indent=2) + '\n')
     print(f'{len(records)} qualifying team-seasons, {sum(len(r["games"]) for r in records)} attended team-games')

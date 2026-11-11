@@ -2,6 +2,7 @@
   "source": "mattgennarelli/bracket-brain historical results (Wikipedia/Sports Reference derived)",
   "coverage": "2008\u20132026 seasons with source game results; 2020 had no tournament",
   "region_status": "verified where provided by bracket data",
+  "leader_source": "ESPN historical team roster season per-game averages",
   "teams": [
     {
       "season": 2025,
@@ -19,17 +20,23 @@
         "pts": {
           "name": "Bo Montgomery",
           "id": "espn:4702509",
-          "average": 16.0
+          "average": 9.1,
+          "in_archive": true,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/350/roster?season=2025"
         },
         "reb": {
-          "name": "Harlan Obioha",
-          "id": "espn:4920142",
-          "average": 12.0
+          "name": "Sean Moore",
+          "id": "espn:5106587",
+          "average": 6.5,
+          "in_archive": true,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/350/roster?season=2025"
         },
         "ast": {
           "name": "Greedy Williams",
           "id": "espn:5108909",
-          "average": 6.0
+          "average": 2.6,
+          "in_archive": true,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/350/roster?season=2025"
         }
       },
       "games": [
@@ -57,17 +64,23 @@
         "pts": {
           "name": "Wade Taylor IV",
           "id": "espn:4683833",
-          "average": 25.0
+          "average": 15.7,
+          "in_archive": true,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/245/roster?season=2025"
         },
         "reb": {
-          "name": "Henry Coleman III",
-          "id": "espn:4432186",
-          "average": 8.0
+          "name": "Andersson Garcia",
+          "id": "espn:4702431",
+          "average": 6.2,
+          "in_archive": true,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/245/roster?season=2025"
         },
         "ast": {
-          "name": "Zhuric Phelps",
-          "id": "espn:4699725",
-          "average": 3.0
+          "name": "Wade Taylor IV",
+          "id": "espn:4683833",
+          "average": 4.3,
+          "in_archive": true,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/245/roster?season=2025"
         }
       },
       "games": [
@@ -95,17 +108,23 @@
         "pts": {
           "name": "RJ Davis",
           "id": "espn:4433176",
-          "average": 23.0
+          "average": 17.2,
+          "in_archive": true,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/153/roster?season=2025"
         },
         "reb": {
-          "name": "Ven-Allen Lubin",
-          "id": "espn:4684799",
-          "average": 13.0
-        },
-        "ast": {
           "name": "Jae'Lyn Withers",
           "id": "espn:4431740",
-          "average": 3.0
+          "average": 4.5,
+          "in_archive": true,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/153/roster?season=2025"
+        },
+        "ast": {
+          "name": "RJ Davis",
+          "id": "espn:4433176",
+          "average": 3.6,
+          "in_archive": true,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/153/roster?season=2025"
         }
       },
       "games": [
@@ -131,19 +150,25 @@
       },
       "leaders": {
         "pts": {
-          "name": "Roddy Gayle Jr.",
-          "id": "espn:5105836",
-          "average": 11.0
+          "name": "Danny Wolf",
+          "id": "espn:5107173",
+          "average": 13.2,
+          "in_archive": true,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/130/roster?season=2025"
         },
         "reb": {
-          "name": "Tre Donaldson",
-          "id": "espn:4837356",
-          "average": 9.0
+          "name": "Danny Wolf",
+          "id": "espn:5107173",
+          "average": 9.7,
+          "in_archive": true,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/130/roster?season=2025"
         },
         "ast": {
-          "name": "Tre Donaldson",
-          "id": "espn:4837356",
-          "average": 4.0
+          "name": "Danny Wolf",
+          "id": "espn:5107173",
+          "average": 3.6,
+          "in_archive": true,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/130/roster?season=2025"
         }
       },
       "games": [
@@ -171,17 +196,23 @@
         "pts": {
           "name": "Terrence Edwards Jr.",
           "id": "espn:4702766",
-          "average": 21.0
+          "average": 16.7,
+          "in_archive": true,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/97/roster?season=2025"
         },
         "reb": {
           "name": "J'Vonne Hadley",
           "id": "espn:4702784",
-          "average": 9.0
+          "average": 7.3,
+          "in_archive": true,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/97/roster?season=2025"
         },
         "ast": {
           "name": "Chucky Hepburn",
           "id": "espn:4590360",
-          "average": 6.0
+          "average": 5.8,
+          "in_archive": true,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/97/roster?season=2025"
         }
       },
       "games": [
@@ -207,19 +238,25 @@
       },
       "leaders": {
         "pts": {
-          "name": "Kon Knueppel",
-          "id": "espn:5061575",
-          "average": 25.0
+          "name": "Cooper Flagg",
+          "id": "espn:5041939",
+          "average": 19.2,
+          "in_archive": true,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/150/roster?season=2025"
         },
         "reb": {
-          "name": "Khaman Maluach",
-          "id": "espn:5203685",
-          "average": 7.5
+          "name": "Cooper Flagg",
+          "id": "espn:5041939",
+          "average": 7.5,
+          "in_archive": true,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/150/roster?season=2025"
         },
         "ast": {
-          "name": "Kon Knueppel",
-          "id": "espn:5061575",
-          "average": 5.0
+          "name": "Cooper Flagg",
+          "id": "espn:5041939",
+          "average": 4.2,
+          "in_archive": true,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/150/roster?season=2025"
         }
       },
       "games": [
@@ -253,17 +290,23 @@
         "pts": {
           "name": "Johni Broome",
           "id": "espn:4433569",
-          "average": 16.0
+          "average": 18.6,
+          "in_archive": true,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/2/roster?season=2025"
         },
         "reb": {
           "name": "Johni Broome",
           "id": "espn:4433569",
-          "average": 13.0
+          "average": 10.8,
+          "in_archive": true,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/2/roster?season=2025"
         },
         "ast": {
           "name": "Tahaad Pettiford",
           "id": "espn:4873089",
-          "average": 4.0
+          "average": 3.0,
+          "in_archive": true,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/2/roster?season=2025"
         }
       },
       "games": [
@@ -291,17 +334,23 @@
         "pts": {
           "name": "Adou Thiero",
           "id": "espn:5060631",
-          "average": 16.0
+          "average": 15.1,
+          "in_archive": true,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/8/roster?season=2025"
         },
         "reb": {
-          "name": "Zvonimir Ivisic",
-          "id": "espn:5174665",
-          "average": 8.0
+          "name": "Adou Thiero",
+          "id": "espn:5060631",
+          "average": 5.8,
+          "in_archive": true,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/8/roster?season=2025"
         },
         "ast": {
-          "name": "DJ Wagner",
-          "id": "espn:4683777",
-          "average": 5.0
+          "name": "Adou Thiero",
+          "id": "espn:5060631",
+          "average": 1.9,
+          "in_archive": true,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/8/roster?season=2025"
         }
       },
       "games": [
@@ -329,17 +378,23 @@
         "pts": {
           "name": "Jaedon LeDee",
           "id": "espn:4397237",
-          "average": 17.5
+          "average": 21.4,
+          "in_archive": true,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/21/roster?season=2024"
         },
         "reb": {
           "name": "Jaedon LeDee",
           "id": "espn:4397237",
-          "average": 5.5
+          "average": 8.4,
+          "in_archive": true,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/21/roster?season=2024"
         },
         "ast": {
-          "name": "Lamont Butler",
-          "id": "espn:4433183",
-          "average": 2.5
+          "name": "Darrion Trammell",
+          "id": "espn:4702011",
+          "average": 3.2,
+          "in_archive": true,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/21/roster?season=2024"
         }
       },
       "games": [
@@ -373,17 +428,23 @@
         "pts": {
           "name": "DJ Horne",
           "id": "espn:4431993",
-          "average": 24.0
+          "average": 16.9,
+          "in_archive": true,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/152/roster?season=2024"
         },
         "reb": {
-          "name": "Jayden Taylor",
-          "id": "espn:4589483",
-          "average": 7.0
+          "name": "Mohamed Diarra",
+          "id": "espn:5105541",
+          "average": 7.8,
+          "in_archive": true,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/152/roster?season=2024"
         },
         "ast": {
           "name": "Michael O'Connell",
           "id": "espn:4683635",
-          "average": 5.0
+          "average": 3.2,
+          "in_archive": true,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/152/roster?season=2024"
         }
       },
       "games": [
@@ -411,17 +472,23 @@
         "pts": {
           "name": "RJ Davis",
           "id": "espn:4433176",
-          "average": 36.0
+          "average": 21.2,
+          "in_archive": true,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/153/roster?season=2024"
         },
         "reb": {
-          "name": "Harrison Ingram",
-          "id": "espn:4433618",
-          "average": 14.0
+          "name": "Armando Bacot",
+          "id": "espn:4431674",
+          "average": 10.3,
+          "in_archive": true,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/153/roster?season=2024"
         },
         "ast": {
-          "name": "Elliot Cadeau",
-          "id": "espn:4869764",
-          "average": 3.0
+          "name": "RJ Davis",
+          "id": "espn:4433176",
+          "average": 3.5,
+          "in_archive": true,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/153/roster?season=2024"
         }
       },
       "games": [
@@ -449,17 +516,23 @@
         "pts": {
           "name": "Josh Hubbard",
           "id": "espn:4895740",
-          "average": 15.0
+          "average": 17.1,
+          "in_archive": true,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/344/roster?season=2024"
         },
         "reb": {
-          "name": "Cameron Matthews",
-          "id": "espn:4432394",
-          "average": 5.0
+          "name": "Tolu Smith",
+          "id": "espn:4397882",
+          "average": 8.1,
+          "in_archive": true,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/344/roster?season=2024"
         },
         "ast": {
-          "name": "Dashawn Davis",
-          "id": "espn:4898119",
-          "average": 3.0
+          "name": "Cameron Matthews",
+          "id": "espn:4432394",
+          "average": 2.9,
+          "in_archive": true,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/344/roster?season=2024"
         }
       },
       "games": [
@@ -487,17 +560,23 @@
         "pts": {
           "name": "Tyson Walker",
           "id": "espn:4432129",
-          "average": 19.0
+          "average": 18.4,
+          "in_archive": true,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/127/roster?season=2024"
         },
         "reb": {
-          "name": "Mady Sissoko",
-          "id": "espn:4433154",
-          "average": 9.0
+          "name": "Malik Hall",
+          "id": "espn:4592693",
+          "average": 5.7,
+          "in_archive": true,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/127/roster?season=2024"
         },
         "ast": {
-          "name": "AJ Hoggard",
-          "id": "espn:4432206",
-          "average": 8.0
+          "name": "Jeremy Fears Jr.",
+          "id": "espn:4711255",
+          "average": 3.3,
+          "in_archive": false,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/127/roster?season=2024"
         }
       },
       "games": [
@@ -525,17 +604,23 @@
         "pts": {
           "name": "Taylor Funk",
           "id": "espn:4278395",
-          "average": 21.0
+          "average": 13.4,
+          "in_archive": true,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/328/roster?season=2023"
         },
         "reb": {
-          "name": "Daniel Akin",
-          "id": "official:utah-state:daniel-akin",
-          "average": 12.5
+          "name": "Taylor Funk",
+          "id": "espn:4278395",
+          "average": 5.5,
+          "in_archive": true,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/328/roster?season=2023"
         },
         "ast": {
-          "name": "Steven Ashworth",
-          "id": "espn:4701991",
-          "average": 8.0
+          "name": "Taylor Funk",
+          "id": "espn:4278395",
+          "average": 1.7,
+          "in_archive": true,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/328/roster?season=2023"
         }
       },
       "games": [
@@ -567,19 +652,25 @@
       },
       "leaders": {
         "pts": {
-          "name": "Jaylen Clark",
-          "id": "espn:4432247",
-          "average": 24.0
+          "name": "Jaime Jaquez Jr.",
+          "id": "espn:4432848",
+          "average": 17.8,
+          "in_archive": true,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/26/roster?season=2023"
         },
         "reb": {
-          "name": "Tyger Campbell",
-          "id": "espn:4397128",
-          "average": 4.0
+          "name": "Jaime Jaquez Jr.",
+          "id": "espn:4432848",
+          "average": 8.2,
+          "in_archive": true,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/26/roster?season=2023"
         },
         "ast": {
-          "name": "Dylan Andrews",
-          "id": "espn:5105636",
-          "average": 6.0
+          "name": "Tyger Campbell",
+          "id": "espn:4397128",
+          "average": 5.0,
+          "in_archive": true,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/26/roster?season=2023"
         }
       },
       "games": [
@@ -607,17 +698,23 @@
         "pts": {
           "name": "Matt Bradley",
           "id": "espn:4397049",
-          "average": 11.3
+          "average": 12.6,
+          "in_archive": true,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/21/roster?season=2023"
         },
         "reb": {
           "name": "Nate Mensah",
           "id": "espn:4397371",
-          "average": 5.5
+          "average": 5.9,
+          "in_archive": true,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/21/roster?season=2023"
         },
         "ast": {
-          "name": "Lamont Butler",
-          "id": "espn:4433183",
-          "average": 4.2
+          "name": "Darrion Trammell",
+          "id": "espn:4702011",
+          "average": 2.9,
+          "in_archive": true,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/21/roster?season=2023"
         }
       },
       "games": [
@@ -675,17 +772,23 @@
         "pts": {
           "name": "Matt Bradley",
           "id": "espn:4397049",
-          "average": 18.8
+          "average": 16.9,
+          "in_archive": true,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/21/roster?season=2022"
         },
         "reb": {
           "name": "Nate Mensah",
           "id": "espn:4397371",
-          "average": 6.2
+          "average": 6.9,
+          "in_archive": true,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/21/roster?season=2022"
         },
         "ast": {
           "name": "Trey Pulliam",
           "id": "espn:4593083",
-          "average": 3.2
+          "average": 3.4,
+          "in_archive": true,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/21/roster?season=2022"
         }
       },
       "games": [
@@ -729,19 +832,25 @@
       },
       "leaders": {
         "pts": {
-          "name": "Chet Holmgren",
-          "id": "espn:4433255",
-          "average": 23.0
+          "name": "Drew Timme",
+          "id": "espn:4431695",
+          "average": 18.4,
+          "in_archive": true,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/2250/roster?season=2022"
         },
         "reb": {
           "name": "Chet Holmgren",
           "id": "espn:4433255",
-          "average": 12.0
+          "average": 9.9,
+          "in_archive": true,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/2250/roster?season=2022"
         },
         "ast": {
           "name": "Andrew Nembhard",
           "id": "espn:4395712",
-          "average": 7.0
+          "average": 5.8,
+          "in_archive": true,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/2250/roster?season=2022"
         }
       },
       "games": [
@@ -767,19 +876,25 @@
       },
       "leaders": {
         "pts": {
-          "name": "Isaiah Stevens",
-          "id": "espn:4432117",
-          "average": 19.0
+          "name": "David Roddy",
+          "id": "espn:4593041",
+          "average": 19.2,
+          "in_archive": true,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/36/roster?season=2022"
         },
         "reb": {
           "name": "David Roddy",
           "id": "espn:4593041",
-          "average": 4.0
+          "average": 7.5,
+          "in_archive": true,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/36/roster?season=2022"
         },
         "ast": {
-          "name": "Isaiah Rivera",
-          "id": "espn:4703224",
-          "average": 2.0
+          "name": "Isaiah Stevens",
+          "id": "espn:4432117",
+          "average": 4.7,
+          "in_archive": true,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/36/roster?season=2022"
         }
       },
       "games": [
@@ -807,17 +922,23 @@
         "pts": {
           "name": "E.J. Anosike",
           "id": "espn:4279647",
-          "average": 14.5
+          "average": 16.2,
+          "in_archive": true,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/2239/roster?season=2022"
         },
         "reb": {
           "name": "E.J. Anosike",
           "id": "espn:4279647",
-          "average": 7.5
+          "average": 8.3,
+          "in_archive": true,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/2239/roster?season=2022"
         },
         "ast": {
-          "name": "E.J. Anosike",
-          "id": "espn:4279647",
-          "average": 2.5
+          "name": "Damari Milstead",
+          "id": "espn:4280171",
+          "average": 2.8,
+          "in_archive": true,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/2239/roster?season=2022"
         }
       },
       "games": [
@@ -851,17 +972,23 @@
         "pts": {
           "name": "Caleb Martin",
           "id": "espn:3138160",
-          "average": 20.0
+          "average": 19.2,
+          "in_archive": true,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/2440/roster?season=2019"
         },
         "reb": {
-          "name": "Caleb Martin",
-          "id": "espn:3138160",
-          "average": 7.0
-        },
-        "ast": {
           "name": "Jordan Caroline",
           "id": "espn:3148992",
-          "average": 6.0
+          "average": 9.6,
+          "in_archive": true,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/2440/roster?season=2019"
+        },
+        "ast": {
+          "name": "Cody Martin",
+          "id": "espn:3138161",
+          "average": 4.9,
+          "in_archive": true,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/2440/roster?season=2019"
         }
       },
       "games": [
@@ -889,17 +1016,23 @@
         "pts": {
           "name": "Rui Hachimura",
           "id": "espn:4066648",
-          "average": 22.0
+          "average": 19.7,
+          "in_archive": true,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/2250/roster?season=2019"
         },
         "reb": {
-          "name": "Rui Hachimura",
-          "id": "espn:4066648",
-          "average": 10.0
+          "name": "Brandon Clarke",
+          "id": "espn:3906665",
+          "average": 8.6,
+          "in_archive": true,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/2250/roster?season=2019"
         },
         "ast": {
           "name": "Josh Perkins",
           "id": "espn:3155941",
-          "average": 9.0
+          "average": 6.3,
+          "in_archive": true,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/2250/roster?season=2019"
         }
       },
       "games": [
@@ -925,19 +1058,25 @@
       },
       "leaders": {
         "pts": {
-          "name": "Devin Watson",
-          "id": "espn:3136524",
-          "average": 26.0
+          "name": "Malik Pope",
+          "id": "espn:3137714",
+          "average": 12.8,
+          "in_archive": true,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/21/roster?season=2018"
         },
         "reb": {
-          "name": "Malik Pope",
-          "id": "espn:3137714",
-          "average": 9.0
+          "name": "Jalen McDaniels",
+          "id": "espn:4066731",
+          "average": 7.5,
+          "in_archive": true,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/21/roster?season=2018"
         },
         "ast": {
-          "name": "Malik Pope",
-          "id": "espn:3137714",
-          "average": 2.0
+          "name": "Trey Kell",
+          "id": "espn:3137712",
+          "average": 4.1,
+          "in_archive": false,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/21/roster?season=2018"
         }
       },
       "games": [
@@ -963,19 +1102,25 @@
       },
       "leaders": {
         "pts": {
-          "name": "Killian Tillie",
-          "id": "espn:4066651",
-          "average": 17.0
+          "name": "Johnathan Williams",
+          "id": "espn:66260",
+          "average": 13.4,
+          "in_archive": true,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/2250/roster?season=2018"
         },
         "reb": {
           "name": "Johnathan Williams",
           "id": "espn:66260",
-          "average": 9.0
+          "average": 8.5,
+          "in_archive": true,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/2250/roster?season=2018"
         },
         "ast": {
           "name": "Josh Perkins",
           "id": "espn:3155941",
-          "average": 4.0
+          "average": 5.3,
+          "in_archive": true,
+          "source_url": "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/teams/2250/roster?season=2018"
         }
       },
       "games": [

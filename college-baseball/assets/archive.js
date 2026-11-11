@@ -359,6 +359,7 @@ function renderHome(d){
 }
 async function renderGames(d){
  const alumniRegistry=await json("mlb_alumni_seed.json");
+ const gamePhotos=await json("game_photos.json").catch(()=>({}));
  const mlbIds=new Set((alumniRegistry.players||[]).filter(p=>p.mlb_debut).map(p=>p.college_player_id));
  $("app").innerHTML='<div class="eyebrow">College Baseball · Games & box scores</div><h1>Game details.</h1>'
  +'<p class="lead">Scores, inning lines and authentic batting and pitching box scores from college games you attended, where documented in official scorebooks.</p>'
@@ -402,6 +403,8 @@ async function renderGames(d){
    +'<button type="button" role="tab" aria-selected="false" data-cat="pitching">Pitching</button></div>'
    +'<section class="panel" id="cb-boxscore-panel"><h2 id="cb-stat-title">Batting box score</h2><div id="cb-box"></div></section>'
    :pending("Official college player box score not yet imported for this game. No batting or pitching lines have been fabricated.");
+  const photo=typeof gamePhotos[g.id]==="string"&&/^\.\/assets\/game-photos\/[a-zA-Z0-9._-]+$/.test(gamePhotos[g.id])
+   ?'<div class="cb-game-photo"><img src="'+esc(gamePhotos[g.id])+'" alt="'+esc(gameLabel(g)+' game photo')+'" loading="lazy"></div>':"";
   $("cb-game-details").innerHTML='<section class="cb-game-summary">'
    +'<div class="mlb-score" aria-label="'+esc(gameLabel(g)+", final score "+scoreContent)+'">'
    +'<div class="side">'+esc(g.away)+'</div><div class="final">'+esc(scoreContent)+'</div><div class="side">'+esc(g.home)+'</div></div>'
@@ -413,6 +416,7 @@ async function renderGames(d){
    +'<span class="mlb-pill '+(g.verification==="official_boxscore_verified"?"verified":"pending")+'">'+esc(sourceLabel(g))+'</span>'
    +(source?'<p class="mlb-note"><a href="'+esc(source)+'" target="_blank" rel="noopener noreferrer">Official college gamebook ↗</a></p>':"")
    +'</section>'
+   +photo
    +proSection
    +(Array.isArray(g.innings)&&g.innings.length?renderInnings(g):"")
    +decisions+box;

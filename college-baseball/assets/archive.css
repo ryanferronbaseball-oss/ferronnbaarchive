@@ -467,6 +467,8 @@ body[data-page="player"] .mlb-profile-badge.cb-triple-level:hover{background:#2B
 .cb-game-summary .mlb-score{margin:18px 0 14px}
 .cb-game-summary .mlb-note{margin:12px 0;line-height:1.65}
 .cb-game-summary .mlb-pill{margin:0 0 3px}
+.cb-game-photo{margin:18px 0;border-radius:16px;overflow:hidden;background:#101820;border:1px solid #DEE1D8}
+.cb-game-photo img{display:block;width:100%;max-height:620px;object-fit:contain;margin:auto}
 .cb-game-summary a{font-weight:800}
 .cb-boxscore{display:block}
 .cb-boxscore .mlb-team-box{margin:16px 0 22px}

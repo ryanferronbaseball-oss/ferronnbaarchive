@@ -35,7 +35,10 @@
         "Domestic League Golden Boot / Top Scorer",
         "Domestic League Golden Glove / Goalkeeper of the Season",
         "Domestic Players' Association Awards",
-        "European Domestic League Best Foreign Player"
+        "European Domestic League Best Foreign Player",
+        "Belgian Golden Shoe Young Player of the Year",
+        "Belgian Pro League Golden Bull",
+        "Belgian Pro League Talent of the Season"
       ],
       "international": [
         "FIFA World Cup Golden Ball",
@@ -59,7 +62,8 @@
         "CAF Interclub Player of the Year",
         "African Nations Championship Player of the Tournament",
         "African Nations Championship Golden Boot",
-        "African Nations Championship Team of the Tournament"
+        "African Nations Championship Team of the Tournament",
+        "CONCACAF Gold Cup Best XI"
       ]
     },
     "awards_without_witnessed_winners_should_not_display_as_badges": true,
@@ -297,6 +301,43 @@
       ],
       "international": []
     },
+    "bilal-el-khannouss": {
+      "name": "Bilal El Khannouss",
+      "global": [],
+      "uefa": [],
+      "domestic": [
+        {
+          "award": "Belgian Golden Shoe Young Player of the Year",
+          "year": 2022,
+          "competition": "Belgian Golden Shoe Awards",
+          "team": "KRC Genk",
+          "source_url": "https://www.krcgenk.be/en/news/4972/krc-genk-big-winner-at-the-golden-shoe-awards"
+        },
+        {
+          "award": "Belgian Golden Shoe Young Player of the Year",
+          "year": 2024,
+          "competition": "Belgian Golden Shoe Awards",
+          "team": "KRC Genk",
+          "source_url": "https://www.bruzz.be/actua/sport/bilal-el-khannouss-wint-tweede-trofee-voor-belofte-van-het-jaar-2025-02-05",
+          "award_announced": "2025-02-04"
+        },
+        {
+          "award": "Belgian Pro League Talent of the Season",
+          "season": "2023-24",
+          "competition": "Belgian Pro League",
+          "team": "KRC Genk",
+          "source_url": "https://www.proleague.be/nieuws/live-ontdek-hier-alle-winnaars-van-de-pro-league-awards"
+        },
+        {
+          "award": "Dominique D'Onofrio Best Debutant Award",
+          "season": "2022-23",
+          "competition": "Belgian Pro League",
+          "team": "KRC Genk",
+          "source_url": "https://www.krcgenk.be/en/news/5057/el-khannouss-is-voted-the-pro-league-debutant-of-the-year"
+        }
+      ],
+      "international": []
+    },
     "brahim-diaz": {
       "name": "Brahim Diaz",
       "global": [],
@@ -336,6 +377,37 @@
         }
       ],
       "international": []
+    },
+    "kevin-denkey": {
+      "name": "Kevin Denkey",
+      "global": [],
+      "uefa": [],
+      "domestic": [
+        {
+          "award": "Belgian Pro League Golden Bull (Top Scorer)",
+          "season": "2023-24",
+          "competition": "Belgian Pro League",
+          "team": "Cercle Brugge",
+          "source_url": "https://www.vi.nl/competities/pro-league/2023-2024/statistieken/topscorers",
+          "goals": 27
+        }
+      ],
+      "international": []
+    },
+    "miles-robinson": {
+      "name": "Miles Robinson",
+      "global": [],
+      "uefa": [],
+      "domestic": [],
+      "international": [
+        {
+          "award": "CONCACAF Gold Cup Best XI",
+          "year": 2021,
+          "competition": "CONCACAF Gold Cup",
+          "team": "United States",
+          "source_url": "https://www.mlssoccer.com/news/three-mls-players-make-2021-concacaf-gold-cup-best-xi"
+        }
+      ]
     },
     "noussair-mazraoui": {
       "name": "Noussair Mazraoui",

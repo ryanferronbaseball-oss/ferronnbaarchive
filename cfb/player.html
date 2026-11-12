@@ -2,9 +2,32 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>College Football Player Profile | Courtside Archive</title><meta name="description" content="A player's College Football game logs and statistics from the games you attended.">
 <link rel="stylesheet" href="../assets/player-palette.css?v=20261106-crosssport-sweep3">
-<link rel="stylesheet" href="./assets/archive.css?v=20261106-crosssport-sweep3"><script src="./assets/archive.js?v=records-nav-20261016" defer></script><style>.player-hero{display:flex;align-items:center;gap:22px;margin:24px 0}.player-portrait{width:132px;height:150px;flex:none;border-radius:16px;background:linear-gradient(145deg,#e5eee4,#cadbcc);border:1px solid #c7d7c5;overflow:hidden;display:grid;place-items:center}.player-portrait img{width:100%;height:100%;object-fit:contain;object-position:center bottom}.player-portrait .portrait-fallback{display:none;font-size:38px;font-weight:850;letter-spacing:-.06em;color:#345a45}.player-hero-copy{min-width:0}.player-hero-copy h1{margin:0 0 8px}@media(max-width:520px){.player-hero{gap:14px}.player-portrait{width:96px;height:112px}.player-portrait .portrait-fallback{font-size:29px}}.award-badges{display:none;flex-wrap:wrap;align-items:center;gap:8px;margin:5px 0 11px}.award-badges.visible{display:flex}.hof-badge,.award-badge{display:none;align-items:center;gap:6px;padding:6px 10px;border:1px solid #d5b66a;border-radius:8px;background:#fff1cb;color:#6b4915!important;text-decoration:none!important;font-size:12px;font-weight:850;letter-spacing:.045em;line-height:1.3;white-space:nowrap}.hof-badge.visible,.award-badge.visible{display:inline-flex}.hof-badge:hover{text-decoration:underline!important}.mvp-badge{background:#d9eee0;border-color:#8bb79c;color:#184932!important}.all-pro-badge{background:#e1e9f7;border-color:#a0b7d4;color:#28496e!important}@media(max-width:550px){.award-badges{gap:7px}.hof-badge,.award-badge{font-size:11px;padding:6px 8px}}</style><link rel="stylesheet" href="../assets/sport-burgundy-ice.css?v=20261106-crosssport-sweep4"></head>
+<link rel="stylesheet" href="./assets/archive.css?v=20261106-crosssport-sweep3"><script src="./assets/archive.js?v=records-nav-20261016" defer></script><style>.player-hero{display:flex;align-items:center;gap:22px;margin:24px 0}.player-portrait{width:132px;height:150px;flex:none;border-radius:16px;background:linear-gradient(145deg,#e5eee4,#cadbcc);border:1px solid #c7d7c5;overflow:hidden;display:grid;place-items:center}.player-portrait img{width:100%;height:100%;object-fit:contain;object-position:center bottom}.player-portrait .portrait-fallback{display:none;font-size:38px;font-weight:850;letter-spacing:-.06em;color:#345a45}.player-hero-copy{min-width:0}.player-hero-copy h1{margin:0 0 8px}@media(max-width:520px){.player-hero{gap:14px}.player-portrait{width:96px;height:112px}.player-portrait .portrait-fallback{font-size:29px}}.award-badges{display:none;flex-wrap:wrap;align-items:center;gap:8px;margin:5px 0 11px}.award-badges.visible{display:flex}.hof-badge,.award-badge{display:none;align-items:center;gap:6px;padding:6px 10px;border:1px solid #d5b66a;border-radius:8px;background:#fff1cb;color:#6b4915!important;text-decoration:none!important;font-size:12px;font-weight:850;letter-spacing:.045em;line-height:1.3;white-space:nowrap}.hof-badge.visible,.award-badge.visible{display:inline-flex}.hof-badge:hover{text-decoration:underline!important}.mvp-badge{background:#d9eee0;border-color:#8bb79c;color:#184932!important}.all-pro-badge{background:#e1e9f7;border-color:#a0b7d4;color:#28496e!important}@media(max-width:550px){.award-badges{gap:7px}.hof-badge,.award-badge{font-size:11px;padding:6px 8px}}
+/* Career honors distinguish individual awards, team success and the NFL pathway. */
+#awardBadges{display:flex;flex-wrap:wrap;gap:7px;margin:2px 0 15px}
+#awardBadges .award-badge{display:inline-flex;white-space:normal;font-size:11px;max-width:100%;overflow-wrap:anywhere}
+#awardBadges .award-badge:hover,#awardBadges .award-badge:focus-visible{text-decoration:underline!important;outline-offset:2px}
+#awardBadges .badge-national{background:#e3eafa;border-color:#9bb6da;color:#2a4871!important}
+#awardBadges .badge-major{background:#fff0ca;border-color:#d9b66b;color:#755018!important}
+#awardBadges .badge-conference{background:#e6eff8;border-color:#a9c5d9;color:#244c6e!important}
+#awardBadges .badge-title{background:#f4e5e5;border-color:#d3a3a6;color:#762e37!important}
+#awardBadges .badge-draft{background:#f4e8ce;border-color:#c6a06d;color:#67472a!important}
+#awardBadges .badge-nfl{background:#e8e9f7;border-color:#a4a8ca;color:#3b4073!important}
+.cfb-career-honors{scroll-margin-top:16px;margin:19px 0 24px;padding:22px}
+.cfb-career-honors h2{margin:0 0 10px}
+.cfb-honor-group{border-top:1px solid #d7dde0;padding:16px 0 4px}
+.cfb-honor-group h3{margin:0 0 8px;font-size:19px}
+.cfb-honor-group ul{padding-left:20px;margin:0}
+.cfb-honor-group li{padding:6px 0;line-height:1.55;font-size:13px;overflow-wrap:anywhere}
+.cfb-honor-group li a{margin-left:10px;font-size:12px;font-weight:750;white-space:nowrap}
+@media(max-width:520px){.cfb-career-honors{padding:15px}#awardBadges .award-badge{font-size:10px;padding:5px 7px}}
+</style><link rel="stylesheet" href="../assets/sport-burgundy-ice.css?v=20261106-crosssport-sweep4"></head>
 <body><main><div id="navigation"></div><div class="eyebrow">College Football · Player profile</div>
 <section class="player-hero"><div class="player-portrait"><img id="playerPortrait" alt="" style="display:none"><span id="portraitFallback" class="portrait-fallback" style="display:grid">CFB</span></div><div class="player-hero-copy"><h1><span id="playerName">Player profile</span></h1><p class="lead" id="playerSummary">Loading your personal player-game log…</p></div></section>
+<div class="award-badges" id="awardBadges" aria-label="Verified college football career award badges"></div>
+<section class="panel cfb-career-honors" id="careerHonors" hidden><h2>Career Awards &amp; Honors</h2>
+<p class="lead">Career achievements include seasons outside games you personally attended. Conference championships require a verified appearance during that team's title season. NFL debut, draft selection and roster membership remain distinct.</p>
+<div id="careerHonorGroups"></div></section>
 <div class="metrics" id="metrics"></div>
 <div class="section-heading"><h2>Games you attended</h2><a class="action-link secondary" href="./stats.html">All leaderboards ↗</a></div>
 <div class="game-grid" id="games"></div>
@@ -22,7 +45,12 @@ document.addEventListener("DOMContentLoaded",async()=>{
 
  const esc=A.esc;
  try{
-  const {games,rows,ppr}=await A.load();
+  const [data,careerHonors,nflMatches]=await Promise.all([
+   A.load(),
+   fetch("./data/career_honors.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("College football honors HTTP "+r.status);return r.json()}).catch(e=>{console.warn(e);return {players:{}}}),
+   fetch("./data/nfl_crosswalk.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("CFB NFL crosswalk HTTP "+r.status);return r.json()}).catch(e=>{console.warn(e);return []})
+  ]);
+  const {games,rows,ppr}=data;
   const personal=rows.filter(x=>String(x.athlete_id)===id);
   if(!id||!personal.length){el("playerName").textContent="Player not found";el("playerSummary").textContent="No game appearances match this player identifier.";return}
   const name=personal[0].player,teamNames=[...new Set(personal.map(x=>x.team))];
@@ -30,6 +58,62 @@ document.addEventListener("DOMContentLoaded",async()=>{
   el("playerName").textContent=name;document.title=name+" | College Football Courtside Archive";
   const portrait=el("playerPortrait"),fallback=el("portraitFallback");fallback.textContent=name.split(/\s+/).map(x=>x[0]).slice(0,2).join("").toUpperCase();portrait.onerror=()=>{portrait.style.display="none";fallback.style.display="grid"};if(/^\d+$/.test(id)){portrait.onload=()=>{portrait.style.display="block";fallback.style.display="none"};portrait.alt="Portrait of "+name;portrait.src="https://a.espncdn.com/i/headshots/cfb/players/full/"+encodeURIComponent(id)+".png"}
   el("playerSummary").textContent=teamNames.join(" / ")+" · "+seen.length+" attended College Football game"+(seen.length===1?"":"s")+" with a recorded box-score category.";
+
+  // Show only verified honors for players present in a witnessed gamebook.
+  const history=careerHonors.players?.[String(id)]?.honors||[];
+  const nfl=nflMatches.find(x=>String(x.athlete_id)===String(id));
+  const awardGroups=[
+   ["conference_major","Major Conference Awards","★", "badge-major"],
+   ["all_american","All-America Honors","✦", "badge-national"],
+   ["all_conference","All-Conference & All-Freshman Teams","◆", "badge-conference"],
+   ["team_titles","Conference Championships","🏆", "badge-title"]
+  ];
+  const tags=[],sections=[];
+  function badge(label,klass){
+   tags.push('<a class="award-badge visible '+klass+'" href="#careerHonors">'+esc(label)+'</a>');
+  }
+  function section(title,rows){
+   sections.push('<section class="cfb-honor-group"><h3>'+esc(title)+'</h3><ul>'+rows.join("")+'</ul></section>');
+  }
+  for(const [category,title,icon,klass] of awardGroups){
+   const items=history.filter(x=>x.category===category).sort((a,b)=>a.year-b.year||a.award.localeCompare(b.award));
+   if(!items.length)continue;
+   const byAward=new Map();
+   for(const a of items){const list=byAward.get(a.award)||[];list.push(a);byAward.set(a.award,list)}
+   for(const [award,values] of byAward)badge(icon+" "+award+(values.length>1?" × "+values.length:""),klass);
+   section(title,items.map(a=>'<li><strong>'+esc(String(a.year))+'</strong> · '+esc(a.award)
+    +(a.school?' · '+esc(a.school):"")
+    +'<a href="'+esc(a.source_url)+'" rel="noopener noreferrer" target="_blank">Source ↗</a></li>'));
+  }
+  if(nfl){
+   const pro=[];
+   if(nfl.draft_year&&nfl.draft_round&&nfl.draft_pick){
+    badge("🏈 NFL Draft · "+nfl.draft_year+" Rd "+nfl.draft_round,"badge-draft");
+    pro.push('<li><strong>'+esc(String(nfl.draft_year))+' NFL Draft</strong> · Round '+esc(String(nfl.draft_round))
+      +' · Overall '+esc(String(nfl.draft_pick))+' · '+esc(nfl.draft_team||"")
+      +'<a target="_blank" rel="noopener noreferrer" href="'+esc(nfl.draft_source_url||nfl.source_url)+'">Source ↗</a></li>');
+   }
+   if(nfl.category==="nfl"&&nfl.first_nfl_season){
+    badge("🏈 Reached NFL","badge-nfl");
+    pro.push('<li><strong>NFL regular-season appearance</strong> · First season '+esc(String(nfl.first_nfl_season))
+      +' · '+esc(nfl.nfl_team||"")
+      +'<a target="_blank" rel="noopener noreferrer" href="'+esc(nfl.source_url)+'">Source ↗</a></li>');
+   }else if(nfl.category==="roster_only"){
+    badge("🏈 NFL Roster","badge-nfl");
+    pro.push('<li><strong>On an NFL roster</strong> · '+esc(nfl.nfl_team||"")
+      +' · Regular-season appearance not verified'
+      +'<a target="_blank" rel="noopener noreferrer" href="'+esc(nfl.source_url)+'">Source ↗</a></li>');
+   }else if(nfl.category==="drafted_no_debut"){
+    pro.push('<li><strong>NFL debut</strong> · Not yet verified; draft selection does not imply an appearance</li>');
+   }
+   if(pro.length)section("NFL Draft & Professional Progression",pro);
+  }
+  if(sections.length){
+   el("awardBadges").innerHTML=tags.join("");
+   el("careerHonorGroups").innerHTML=sections.join("");
+   el("careerHonors").hidden=false;
+  }
+
   el("metrics").innerHTML='<div class="metric"><strong>'+seen.length+'</strong><small>Games you saw</small></div>'+
     '<div class="metric"><strong>'+teamNames.length+'</strong><small>College Football teams represented</small></div>'+
     '<div class="metric"><strong>'+new Set(personal.map(x=>x.category)).size+'</strong><small>Stat categories</small></div>'+

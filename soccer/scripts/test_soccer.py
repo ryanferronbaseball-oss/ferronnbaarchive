@@ -17,6 +17,17 @@ assigned=[name for group in nationalities.values() for name in group]
 check(set(assigned)==names and len(assigned)==len(names),f"All {len(names)} soccer players have one nationality tag")
 check("Ahmed Qasem" in nationalities["IQ"] and "Samuel Gidi" in nationalities["SK"],"National-team affiliation overrides birthplace for dual-national players")
 check(len(data)==3,"Only three launch matches are imported")
+honors=json.loads((ROOT/"soccer/data/career_honors.json").read_text())
+honored=honors["players"]
+slug=lambda s:re.sub(r"[^a-z0-9]+","-",__import__("unicodedata").normalize("NFKD",s).encode("ascii","ignore").decode().lower()).strip("-")
+check(len(honored)>=10,"Focused verified career-honor recipient registry")
+check(all(row["name"] in names and slug(row["name"])==key for key,row in honored.items()),"Every career honor belongs to a witnessed player identity")
+check(all(v.get("source_url","").startswith("https://") for row in honored.values() for key in ("world_cup","league_titles","mls_cup","supporters_shield","mls_awards") for v in row.get(key,[])),"Every career award has a source URL")
+check(all(not any(w in str(a.get("award","")).lower() for w in ("save of the year","goal of the year","all-star")) for row in honored.values() for a in row.get("mls_awards",[])),"Exclude fan-voted MLS honors")
+check(any(a["award"]=="MLS Most Valuable Player" for a in honored["hany-mukhtar"]["mls_awards"]),"Hany Mukhtar's 2022 MLS MVP")
+check(any(a["season"]=="2025-26" for a in honored["achraf-hakimi"]["league_titles"]),"2026 Ligue 1 title verified")
+check(not any(a.get("year")==2026 for row in honored.values() for a in row.get("mls_awards",[])),"2026 end-of-year awards not prematurely awarded")
+
 check({m["id"] for m in data}=={
  "soc-2026-10-14-nsh-skc","soc-2026-08-29-nsh-cin","soc-2026-06-24-mar-hai"
 },"No old USL matches mixed into launch scope")

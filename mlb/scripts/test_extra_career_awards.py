@@ -49,5 +49,17 @@ for key in categories:
 assert "data/extra_career_awards.json" in pages
 assert 'a.number?" · #"+esc(a.number)' in pages
 assert 'a.level?" · "+esc(a.level)' in pages
-assert "mlb-extra-honors-20261101" in html, "Profile JS needs a fresh cache key"
+assert "20261112-all-mlb-2026" in html, "Player profile JS cache key must include 2026 All-MLB update"
+supplement=json.loads((ROOT / "data/all_mlb_2026.json").read_text())
+official=supplement["players"]
+assert supplement["_meta"]["source_url"] == "https://www.mlb.com/news/2026-all-mlb-teams"
+assert len(official) == 32
+assert len({int(row["player_id"]) for row in official}) == 32
+assert sum(row["level"] == "First Team" for row in official) == 16
+assert sum(row["level"] == "Second Team" for row in official) == 16
+assert all(row["position"] in ("C","1B","2B","3B","SS","OF","DH","SP","RP") and row["team"] for row in official)
+assert "data/all_mlb_2026.json" in pages
+assert "witnessed.has(id)" in pages, "Do not tag players absent from witnessed MLB gamebooks"
+assert {int(row["player_id"]) for row in official if str(row["player_id"]) in attended}, "At least one MLB All-MLB player must be witnessed"
+
 print("PASS all 7 new honors matched to real attended MLB IDs; exact award/jersey years and clickable profile integration verified")

@@ -89,6 +89,26 @@ if(page==="player"){
    for(const key of keys)if(Array.isArray(record[key]))awardsById[playerId][key]=record[key];
   }
  }catch(error){console.warn("Additional career honors unavailable",error)}
+ // Supplement the StatsAPI snapshot with officially announced 2026 All-MLB awards.
+ // Match MLB person IDs against the witnessed player registry; never grant a
+ // profile tag to an athlete absent from the user's attended MLB box scores.
+ try{
+  const response=await fetch("./data/all_mlb_2026.json",{cache:"no-store"});
+  if(!response.ok)throw Error("2026 All-MLB recipients HTTP "+response.status);
+  const official=await response.json();
+  const witnessed=new Set(players.map(p=>String(p.player_id)));
+  for(const recipient of official.players||[]){
+   const id=String(recipient.player_id);
+   if(!witnessed.has(id)||!["First Team","Second Team"].includes(recipient.level))continue;
+   awardsById[id]??={name:recipient.name};
+   const honors=awardsById[id].all_mlb||[];
+   if(!honors.some(h=>Number(h.year)===2026&&h.level===recipient.level)){
+    honors.push({year:2026,level:recipient.level,team:recipient.team});
+    honors.sort((a,b)=>Number(a.year)-Number(b.year)||String(a.level).localeCompare(String(b.level)));
+    awardsById[id].all_mlb=honors;
+   }
+  }
+ }catch(error){console.warn("Official 2026 All-MLB selections unavailable",error)}
 }
 // Load the MLB official career All-Star selections without altering any existing award data.
 if(page==="player"&&!(careerHonors?._meta?.all_star_definition)){

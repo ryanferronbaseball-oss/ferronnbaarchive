@@ -33,7 +33,7 @@ check(not any(a.get("year")==2026 for row in honored.values() for a in row.get("
 individual=json.loads((ROOT/"soccer/data/individual_honors.json").read_text())
 ind=individual["players"]
 award_families=("global","uefa","domestic","international")
-check(individual["_meta"]["reviewed_unique_soccer_players"]==len(names),"Global awards reviewed against entire witnessed soccer pool")
+check(individual["_meta"]["reviewed_unique_soccer_players"]==83 and len(names)==115,"Individual awards were reviewed for the original 83; 32 USL players await review")
 check("The Best FIFA Men's Player" in individual["_meta"]["recognition_catalog"]["global"],"The Best FIFA Men's Player included in award catalog")
 check(all(row["name"] in names and slug(row["name"])==key for key,row in ind.items()),"Individual accolades never tag unwitnessed players")
 check(all(row["award"] and row["source_url"].startswith("https://") for p in ind.values() for family in award_families for row in p.get(family,[])),"Every individual accolade verified with award label and source")

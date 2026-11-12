@@ -40,6 +40,7 @@ check({a["year"] for a in ind["achraf-hakimi"]["global"] if a["award"]=="FIFPRO 
 check(any(a["award"]=="The Best FIFA Men's 11" for a in ind["achraf-hakimi"]["global"]),"The Best FIFA 2025 Men XI")
 check(any(a["award"]=="CAF African Player of the Year" for a in ind["achraf-hakimi"]["international"]),"Hakimi CAF Player of Year")
 check({a["year"] for a in ind["yassine-bounou"]["international"] if a["award"]=="CAF African Goalkeeper of the Year"}=={2023,2025},"Bounou two CAF Goalkeeper awards")
+check(any(a["award"]=="UEFA Europa League Team of the Season" and a["season"]=="2022-23" for a in ind["yassine-bounou"]["uefa"]),"Bounou 2022-23 UEFA Europa League season XI")
 check(any(a["award"]=="AFCON Golden Boot" and a["year"]==2025 for a in ind["brahim-diaz"]["international"]),"Brahim Diaz AFCON top scorer")
 check(any(a["award"]=="Eredivisie Player of the Year" for a in ind["ismael-saibari"]["domestic"]),"Saibari domestic player of year")
 check(any(a["award"]=="Belgian Pro League Talent of the Season" for a in ind["bilal-el-khannouss"]["domestic"]),"El Khannouss Belgian talent award")

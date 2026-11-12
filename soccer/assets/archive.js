@@ -8,9 +8,9 @@ const playerUrl=p=>"./player.html?id="+encodeURIComponent(slug(p));
 const gameUrl=m=>"./game.html?id="+encodeURIComponent(m.id);
 const nationalityCodes=new Map();
 const regionNames=new Intl.DisplayNames(["en"],{type:"region"});
-const countryName=code=>code==="GB-ENG"?"England":regionNames.of(code);
-const flagEmoji=code=>code==="GB-ENG"
- ? String.fromCodePoint(0x1F3F4)+[..."gbeng"].map(c=>String.fromCodePoint(0xE0061+c.charCodeAt(0)-97)).join("")+String.fromCodePoint(0xE007F)
+const countryName=code=>({"GB-ENG":"England","GB-SCT":"Scotland"}[code]||regionNames.of(code));
+const flagEmoji=code=>code==="GB-ENG"||code==="GB-SCT"
+ ? String.fromCodePoint(0x1F3F4)+[...(code==="GB-ENG"?"gbeng":"gbsct")].map(c=>String.fromCodePoint(0xE0061+c.charCodeAt(0)-97)).join("")+String.fromCodePoint(0xE007F)
  : [...code].map(c=>String.fromCodePoint(0x1F1E6+c.charCodeAt(0)-65)).join("");
 function nationalityFlag(name){
  const code=nationalityCodes.get(name);if(!code)return "";

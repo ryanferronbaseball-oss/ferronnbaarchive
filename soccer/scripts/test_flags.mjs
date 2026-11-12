@@ -20,7 +20,7 @@ for (const m of matches) {
       if (e[field]) names.add(e[field]);
 }
 const assigned = Object.values(countries).flat();
-assert.equal(names.size, 83);
+assert.equal(names.size, 115);
 assert.equal(assigned.length, names.size);
 assert.deepEqual(new Set(assigned), names);
 
@@ -59,6 +59,8 @@ async function render(page, search = "") {
   assert.match(archive.nationalityFlag("Ahmed Qasem"), /aria-label="Iraq"/);
   assert.match(archive.nationalityFlag("Samuel Gidi"), /aria-label="Slovakia"/);
   assert.match(archive.nationalityFlag("Sam Surridge"), /aria-label="England"/);
+  assert.match(archive.nationalityFlag("Jack Blake"), /aria-label="Scotland"/);
+  assert.match(archive.nationalityFlag("Augustine Williams"), /aria-label="Sierra Leone"/);
   vm.runInNewContext(pagesSource, ctx);
   await handlers[0]();
   const rendered = [...elements.values()].map(e => e.innerHTML).join("\n");
@@ -72,4 +74,4 @@ for (const page of ["home", "games", "stats", "player", "records", "goals"]) {
   if (page === "player") assert.match(result.elements.get("app").innerHTML, /Ahmed Qasem<span class="soccer-flag" role="img" aria-label="Iraq"/);
   console.log(`PASS ${page} renders nationality flags`);
 }
-console.log("PASS all 83 player nationalities covered");
+console.log("PASS all 115 player nationalities covered");

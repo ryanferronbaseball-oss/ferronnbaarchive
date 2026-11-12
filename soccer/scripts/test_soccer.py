@@ -16,7 +16,9 @@ names.update(name for m in data for e in m["events"] for key in ("player","out",
 assigned=[name for group in nationalities.values() for name in group]
 check(set(assigned)==names and len(assigned)==len(names),f"All {len(names)} soccer players have one nationality tag")
 check("Ahmed Qasem" in nationalities["IQ"] and "Samuel Gidi" in nationalities["SK"],"National-team affiliation overrides birthplace for dual-national players")
-check(len(data)==3,"Only three launch matches are imported")
+check(len(names)==115,"115 soccer players assigned one nationality flag")
+check("Jack Blake" in nationalities["GB-SCT"] and "Augustine Williams" in nationalities["SL"],"New Scotland and Sierra Leone nationality flags")
+check(len(data)==4,"Four verified soccer matches include the 2021 USL thriller")
 honors=json.loads((ROOT/"soccer/data/career_honors.json").read_text())
 honored=honors["players"]
 slug=lambda s:re.sub(r"[^a-z0-9]+","-",__import__("unicodedata").normalize("NFKD",s).encode("ascii","ignore").decode().lower()).strip("-")
@@ -52,8 +54,8 @@ check(all("Save of the Year" not in a["award"] and "Goal of the Year" not in a["
 
 
 check({m["id"] for m in data}=={
- "soc-2026-10-14-nsh-skc","soc-2026-08-29-nsh-cin","soc-2026-06-24-mar-hai"
-},"No old USL matches mixed into launch scope")
+ "soc-2021-10-24-sd-oak","soc-2026-10-14-nsh-skc","soc-2026-08-29-nsh-cin","soc-2026-06-24-mar-hai"
+},"Only reviewed match IDs imported")
 for m in data:
  check(len(m["home_starters"])==len(m["away_starters"])==11,m["id"]+" contains two eleven-player starting XIs")
  result={m["home_abbr"]:0,m["away_abbr"]:0}
@@ -61,8 +63,18 @@ for m in data:
   if e["type"] in ("goal","penalty_goal","own_goal"):result[e["team"]]+=1
  check(result[m["home_abbr"]]==m["home_score"] and result[m["away_abbr"]]==m["away_score"],m["id"]+" goal events reconcile to final score")
  check(m.get("source_url","").startswith("https://"),m["id"]+" links to a verified source")
-check(sum(m["home_score"]+m["away_score"] for m in data)==14,"14 goals across three attended matches")
-check(data[0]["competition"]=="FIFA World Cup","World Cup is included without forcing MLS assist rules")
+check(sum(m["home_score"]+m["away_score"] for m in data)==21,"21 goals across four attended matches")
+usl=next(m for m in data if m["id"]=="soc-2021-10-24-sd-oak")
+check((usl["home"],usl["away"],usl["home_score"],usl["away_score"])==("San Diego Loyal","Oakland Roots",3,4),"2021 correct home/away, score")
+check(usl["venue"]=="Torero Stadium" and usl["attendance"]==4982,"2021 Torero Stadium and 4,982 attendance")
+check(len(usl["home_starters"])==len(usl["away_starters"])==11 and len(usl["home_subs_used"])==len(usl["away_subs_used"])==5,"2021 verified starting XIs and 10 subs")
+check(sum(e["type"] in ("goal","own_goal","penalty_goal") for e in usl["events"])==7,"Seven 2021 goal events")
+check(any(e["type"]=="penalty_goal" and e["player"]=="Jeremy Bokila" and e["minute"]=="90+3" for e in usl["events"]),"Bokila 90+3 penalty")
+check(any(e["type"]=="own_goal" and e["player"]=="Callum Montgomery" and e["team"]=="OAK" for e in usl["events"]),"Montgomery OG credited to Oakland")
+check(any(e["type"]=="red" and e["player"]=="Tarek Morad" for e in usl["events"]),"Oakland red card")
+check(sum("assist" in e for e in usl["events"])==4,"Only four directly sourced assists")
+
+check(data[0]["competition"]=="USL Championship" and any(m["competition"]=="FIFA World Cup" for m in data),"USL and FIFA coexist with MLS assist rules")
 for file in ["archive.js","pages.js"]:
  src=(ROOT/"soccer/assets"/file).read_text()
  with tempfile.NamedTemporaryFile(suffix=".js",mode="w") as tmp:
@@ -89,8 +101,8 @@ try:
    def fits(section):
     check(page.evaluate("document.documentElement.scrollWidth<=innerWidth+3"),f"{width} {section} fits viewport")
    visit("soccer/index.html","document.querySelector('#history table tbody tr')!==null")
-   check(page.locator("#history table tbody tr").count()==3,f"{width} three witnessed matches in overview")
-   check(page.locator("#games .game-card").count()==3,f"{width} three recent-match cards")
+   check(page.locator("#history table tbody tr").count()==4,f"{width} four witnessed matches in overview")
+   check(page.locator("#games .game-card").count()==4,f"{width} four recent-match cards")
    check(page.locator("#leaders").count()==0 or page.locator(".soccer-feature").count()>=3,f"{width} three signature performers")
    check(page.locator(".soccer-charts .soccer-chart").count()==2,f"{width} watched teams and years charts")
    fits("overview")
@@ -103,6 +115,14 @@ try:
    page.locator("#gameSelect").select_option("soc-2026-10-14-nsh-skc")
    check("Sporting Kansas City" in page.locator("#app").inner_text(),f"{width} game selector updates page")
    fits("match report")
+   visit("soccer/game.html?id=soc-2021-10-24-sd-oak","document.querySelector('#gameSelect')!==null")
+   check("San Diego Loyal" in page.locator("#app").inner_text() and "Oakland Roots" in page.locator("#app").inner_text(),f"{width} 2021 USL match clubs")
+   check("3–4" in page.locator("#app").inner_text(),f"{width} 2021 3-4 score")
+   check("4,982" in page.locator("#app").inner_text(),f"{width} 2021 reported attendance")
+   check(page.locator(".soccer-lineup ol li").count()==22,f"{width} 2021 starting XI each")
+   check(page.locator(".soccer-lineup li .soccer-flag").count()==32,f"{width} all 32 USL match players show nationalities")
+   check("Jeremy Bokila" in page.locator("#app").inner_text(),f"{width} Bokila penalty appears")
+   fits("2021 USL match report")
    visit("soccer/stats.html","document.querySelector('#board tbody tr')!==null")
    page.locator("#category").select_option("goals")
    check("Hany Mukhtar" in page.locator("#board").inner_text(),f"{width} verified personal goals leaderboard")
@@ -176,10 +196,10 @@ try:
    check("Own goal" in page.locator("#moments").inner_text(),f"{width} own goal logged as iconic moment")
    fits("Records")
    visit("soccer/goals.html","document.querySelector('#goalRows .soccer-event')!==null")
-   check(page.locator("#goalRows .soccer-event").count()==14,f"{width} full verified 14-goal history")
-   check(page.locator("#goalRows .soccer-flag").count()>=14,f"{width} goals and assists show nationality flags")
+   check(page.locator("#goalRows .soccer-event").count()==21,f"{width} full verified 21-goal history")
+   check(page.locator("#goalRows .soccer-flag").count()>=21,f"{width} goals and assists show nationality flags")
    page.locator("#goalKind").select_option("own_goal")
-   check(page.locator("#goalRows .soccer-event").count()==1,f"{width} own goal separated")
+   check(page.locator("#goalRows .soccer-event").count()==2,f"{width} two own goals separated")
    fits("goal history")
    visit("index.html","Number((document.getElementById('allGames')?.textContent||'').replace(/,/g,''))>0")
    check(page.locator(".sport-card").count()==8,f"{width} master hub eight sports including MiLB")

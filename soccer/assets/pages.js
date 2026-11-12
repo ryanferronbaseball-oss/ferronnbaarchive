@@ -62,8 +62,8 @@ function overview(){
   ["Goals in one match","goals"],["Direct assists in one match","assists"],["Goal contributions in one match","contributions"]
  ];
  const per=matches.flatMap(m=>players.flatMap(p=>{const l=p.matchLog.find(x=>x.id===m.id);return l?[{m,p,goals:l.goals,assists:l.assists,contributions:l.goals+l.assists}]:[]}));
- app.innerHTML='<div class="eyebrow">Pro soccer · MLS & FIFA World Cup</div><h1>Your soccer history.</h1>'
- +'<p class="lead">Three matches across MLS and the FIFA World Cup. Explore the same personal game history, players, signature performances and records you know from basketball and football.</p>'
+ app.innerHTML='<div class="eyebrow">Pro soccer · USL, MLS & FIFA World Cup</div><h1>Your soccer history.</h1>'
+ +'<p class="lead">Verified matches across the USL Championship, MLS and FIFA World Cup. Explore the same personal game history, players, signature performances and records you know from basketball and football.</p>'
  +metricCards([["Matches",matches.length],["Goals witnessed",goalsTotal],["Players who appeared",players.filter(p=>p.appearances).length],["Competitions",new Set(matches.map(m=>m.competition)).size]])
  +'<div class="section-heading"><h2>Recent matches</h2><a class="action-link secondary" href="./game.html">Explore games ↗</a></div>'
  +'<section id="games" class="game-grid">'+latest.map(A.matchCard).join("")+'</section>'
@@ -73,7 +73,7 @@ function overview(){
  return '<article class="soccer-tile"><small>'+esc(title)+'</small>'+ (a?'<div class="soccer-feature"><div class="soccer-avatar">'+initial(a.p.name)+'</div><div class="data"><strong>'+a[k]+'</strong><div>'+pl(a.p)+'</div><small>'+dt(a.m.date)+'</small></div></div><a href="'+link(a.m)+'">View performance ↗</a>':"No qualifying player")+'</article>'}).join("")+'</div>'
  +'<div class="soccer-charts"><section class="soccer-chart"><h3>Most Watched Teams</h3>'+bar([...teams].sort((a,b)=>b[1]-a[1]))+'</section><section class="soccer-chart"><h3>Attendance by Year</h3>'+bar([...years].sort((a,b)=>a[0]-b[0]).map(([a,b])=>[String(a),b]))+'</section></div>'
  +'<section class="soccer-panel"><h2>My Game History</h2>'+selectors+'<div id="history"></div></section>'
- +warn('The three-match launch excludes San Diego Loyal vs. Oakland Roots (2021) and Arizona United vs. Sacramento (2016). MLS secondary assists are separated from direct assists.');
+ +warn('The October 2021 San Diego Loyal–Oakland Roots match is included. The Arizona United–Sacramento (2016) match awaits a verified gamebook. MLS secondary assists remain separate from direct assists.');
  history("history");
 }
 function matchStats(m){
@@ -116,7 +116,7 @@ function statsTable(list,key,isSingle=false){
 function leaderboards(){
  app.innerHTML='<div class="eyebrow">Pro soccer · Personal player statistics</div><h1>Player leaderboards.</h1>'
  +'<p class="lead">Rank players across only the matches you witnessed. Goals, direct assists, appearances, clean sheets and cards are grounded in verified match reports.</p>'
- +'<div class="soccer-panel"><div class="soccer-filters"><label>Category<select id="category">'+columns.map(([l,k])=>'<option value="'+k+'">'+l+'</option>').join("")+'</select></label><label>Match<select id="matchFilter"><option value="all">All three matches</option>'+matches.map(x=>'<option value="'+esc(x.id)+'">'+dt(x.date)+' · '+esc(x.home_abbr)+' vs '+esc(x.away_abbr)+'</option>').join("")+'</select></label></div><h2 id="boardHeading"></h2><div id="board"></div></div>'
+ +'<div class="soccer-panel"><div class="soccer-filters"><label>Category<select id="category">'+columns.map(([l,k])=>'<option value="'+k+'">'+l+'</option>').join("")+'</select></label><label>Match<select id="matchFilter"><option value="all">All attended matches</option>'+matches.map(x=>'<option value="'+esc(x.id)+'">'+dt(x.date)+' · '+esc(x.home_abbr)+' vs '+esc(x.away_abbr)+'</option>').join("")+'</select></label></div><h2 id="boardHeading"></h2><div id="board"></div></div>'
  +warn('These are personal attendance totals, not full career or season statistics. Advanced individual shooting, defensive and passing metrics are excluded until independently verified; an unavailable value is not a zero.');
  const draw=()=>{let key=el("category").value,match=el("matchFilter").value;
  let scope=players;
@@ -196,14 +196,14 @@ function recordTop(list,k,title){const sorted=list.slice().sort((a,b)=>b[k]-a[k]
 function records(){
  const performance=matches.flatMap(m=>players.flatMap(p=>{const l=p.matchLog.find(x=>x.id===m.id);if(!l)return[];return[{p,m,l,goals:l.goals,assists:l.assists,contributions:l.goals+l.assists,secondary_assists:l.secondary_assists,yellow:l.yellow,red:l.red,starts:Number(l.started),appearances:1}]}));
  const definitions=[["Goals","goals"],["Direct assists","assists"],["Goal contributions","contributions"],["MLS secondary assists","secondary_assists"],["Yellow cards","yellow"],["Red cards","red"]];
- app.innerHTML='<div class="eyebrow">Pro soccer · Your personal record book</div><h1>The best I\'ve witnessed.</h1><p class="lead">Single-match records, statistical milestones, team and match records, and legendary soccer moments from your three attended matches.</p>'
+ app.innerHTML='<div class="eyebrow">Pro soccer · Your personal record book</div><h1>The best I\'ve witnessed.</h1><p class="lead">Single-match records, statistical milestones, team and match records, and legendary soccer moments from your attended matches.</p>'
  +'<div class="soccer-tabs" id="mainTabs" role="tablist" aria-label="Soccer Records sections">'
  +[['records',"Record Book"],["milestones","Milestones"],["teams","Team & Game Records"],["legendary","Legendary Performances"]].map(([k,t],i)=>'<button role="tab" type="button" data-tab="'+k+'" aria-controls="'+k+'Tab" aria-selected="'+(i===0)+'">'+t+'</button>').join("")+'</div>'
  +'<section class="soccer-records-tab" id="recordsTab" role="tabpanel"><h2>Single-game record holders</h2><div class="soccer-grid" id="recordCards"></div><section class="soccer-panel"><h2>Top 10 single-game performances</h2><p class="soccer-info">Every player-match is ranked separately, including repeat appearances.</p><div class="soccer-filters"><label>Statistic<select id="recordStat">'+definitions.map(([l,k])=>'<option value="'+k+'">'+l+'</option>').join("")+'</select></label></div><div id="recordTop"></div></section></section>'
  +'<section class="soccer-records-tab" id="milestonesTab" role="tabpanel" hidden><section class="soccer-panel"><h2>Statistical milestones</h2><p class="soccer-info">Verified player-match achievements, or a player-frequency leaderboard showing repeat accomplishments.</p><div class="soccer-filters"><label>Milestone<select id="milestoneStat"><option value="goals:1">1+ goal</option><option value="goals:2">2+ goals</option><option value="assists:1">1+ direct assist</option><option value="assists:2">2+ direct assists</option><option value="contributions:2">2+ goal contributions</option><option value="yellow:1">Yellow card</option><option value="red:1">Red card</option></select></label><label>View<select id="milestoneMode"><option value="games">Individual performances</option><option value="players">Player frequency</option></select></label></div><div class="soccer-grid" id="milestoneCards"></div><div id="milestoneTable"></div></section></section>'
  +'<section class="soccer-records-tab" id="teamsTab" role="tabpanel" hidden><h2>Team & Game Records</h2><div class="soccer-grid" id="teamCards"></div><section class="soccer-panel"><h2>Every match</h2><div id="allMatches"></div></section></section>'
  +'<section class="soccer-records-tab" id="legendaryTab" role="tabpanel" hidden><section class="soccer-panel"><h2>Statistical Feats</h2><p class="soccer-info">Exceptional verifiable match events, without subjective performance ratings.</p><div id="feats"></div></section><section class="soccer-panel"><h2>Iconic Moments</h2><p class="soccer-info">Match-turning goals, late scoring plays, penalties and own goals, attributed only when sourced.</p><div id="moments"></div></section></section>'
- +warn('Three-match scope: Nashville SC vs. Cincinnati, Nashville SC vs. Sporting KC, Morocco vs. Haiti. Only verifiable performance categories appear. MLS secondary assists are tracked separately.');
+ +warn('Verified USL Championship, MLS and FIFA World Cup matches. Only verifiable performance categories appear. MLS secondary assists are tracked separately.');
  el("mainTabs").addEventListener("click",e=>{const btn=e.target.closest("[data-tab]");if(!btn)return;const name=btn.dataset.tab;el("mainTabs").querySelectorAll("button").forEach(b=>b.setAttribute("aria-selected",String(b===btn)));["records","milestones","teams","legendary"].forEach(k=>el(k+"Tab").hidden=k!==name);});
  const best=k=>performance.slice().sort((a,b)=>b[k]-a[k]||b.contributions-a.contributions||a.p.name.localeCompare(b.p.name))[0];
  el("recordCards").innerHTML=definitions.map(([title,k])=>{const top=best(k);return tile("Most "+title.toLowerCase(),top[k],A.playerName(top.p.name)+" · "+dt(top.m.date),link(top.m),true)}).join("");
@@ -252,7 +252,7 @@ function records(){
  if(location.hash==="#milestones")el('mainTabs').querySelector('[data-tab="milestones"]').click();
 }
 function goalsView(){
- app.innerHTML='<div class="eyebrow">Pro soccer · Every goal witnessed</div><h1>Goal history.</h1><p class="lead">Every goal from the three professional soccer matches you attended, including the own goal and late penalty.</p>'
+ app.innerHTML='<div class="eyebrow">Pro soccer · Every goal witnessed</div><h1>Goal history.</h1><p class="lead">Every goal from your professional soccer matches, including own goals and stoppage-time penalties.</p>'
  +metricCards([["Total goals",goals.length],["Matches",matches.length],["Individual goal scorers",new Set(goals.filter(x=>x.type!=="own_goal").map(x=>x.player)).size],["Penalties scored",goals.filter(x=>x.type==="penalty_goal").length]])
  +'<div class="soccer-panel"><div class="soccer-filters"><label>Show goals<select id="goalKind"><option value="all">All goals</option><option value="goal">Open-play / regular goals</option><option value="penalty_goal">Penalties</option><option value="own_goal">Own goals</option></select></label></div><div id="goalRows"></div></div>';
  const render=()=>{let k=el("goalKind").value;

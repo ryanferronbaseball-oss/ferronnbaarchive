@@ -11,9 +11,15 @@ let data;
 try{data=await A.load()}catch(err){app.innerHTML='<div class="soccer-panel">Unable to load soccer archive: '+esc(err.message)+'</div>';return;}
 const {matches,players,byId}=data;
 let careerHonors={players:{}};
+let individualHonors={players:{}};
 if(page==="player"){
  try{const r=await fetch("./data/career_honors.json",{cache:"no-store"});if(!r.ok)throw Error("Soccer career awards HTTP "+r.status);careerHonors=await r.json();}
  catch(error){console.warn("Soccer career awards unavailable",error)}
+ try{
+  const r=await fetch("./data/individual_honors.json",{cache:"no-store"});
+  if(!r.ok)throw Error("Soccer individual honors HTTP "+r.status);
+  individualHonors=await r.json();
+ }catch(error){console.warn("Soccer global and European individual honors unavailable",error)}
 }
 const goals=matches.flatMap(m=>A.scored(m).map(e=>({...e,m})));
 const latest=matches.slice().sort((a,b)=>b.date.localeCompare(a.date));
@@ -132,6 +138,7 @@ function profile(){
  document.title=p.name+" · Soccer | Courtside Archive";
  const log=p.matchLog.slice().sort((a,b)=>b.date.localeCompare(a.date));
  const record=careerHonors.players?.[p.id]||{};
+ const individual=individualHonors.players?.[p.id]||{};
  const witnessedWorldCups=matches.filter(m=>m.competition==="FIFA World Cup"&&log.some(l=>l.id===m.id)).map(m=>({
   year:Number(m.date.slice(0,4)),country:p.teams.find(t=>t===m.home||t===m.away)||"",source_url:m.source_official||m.source_url,witnessed:true
  }));
@@ -144,14 +151,30 @@ function profile(){
   ["supporters_shield","MLS Supporters' Shield Titles","◆ SUPPORTERS' SHIELD",record.supporters_shield||[]],
   ["mls_awards","MLS Individual Awards","★ MLS HONORS",record.mls_awards||[]]
  ].filter(g=>g[3].length);
- const honorLine=(key,a)=>key==="world_cup"?a.year+" · "+a.country+(a.witnessed?" · Attended match":""):
+ // Each distinct global, UEFA, league or international individual award
+ // receives its own badge. Never show empty category placeholders as winners.
+ for(const [family,marker] of [["global","🌍"],["uefa","◆"],["domestic","★"],["international","🏅"]]){
+  const grouped=new Map();
+  for(const entry of individual[family]||[]){
+   if(!entry.award||!entry.source_url)continue;
+   const items=grouped.get(entry.award)||[];
+   items.push(entry);
+   grouped.set(entry.award,items);
+  }
+  for(const [award,items] of grouped){
+   honorGroups.push(["individual:"+family+":"+award,award,marker+" "+award.toUpperCase(),items]);
+  }
+ }
+ const honorLine=(key,a)=>key.startsWith("individual:")?
+  [a.season||a.year,a.competition,a.team,a.goals!=null?a.goals+" goals":""].filter(Boolean).join(" · "):
+  key==="world_cup"?a.year+" · "+a.country+(a.witnessed?" · Attended match":""):
   key==="league_titles"?a.season+" · "+a.league+" · "+a.club:
   key==="mls_awards"?a.year+" · "+a.award+" · "+a.club:
   a.year+" · "+a.club;
  const awardBadges=honorGroups.length?'<div class="soccer-career-badges" aria-label="Verified career honors">'
   +honorGroups.map(([key,title,badge,list])=>'<a class="soccer-career-badge" href="#soccerCareerHonors" title="'+esc(title)+'">'+esc(badge)+(list.length>1?' × '+list.length:'')+'</a>').join("")+'</div>':"";
  const awardPanel=honorGroups.length?'<section id="soccerCareerHonors" class="soccer-panel soccer-career-honors"><h2>Career Awards &amp; Honors</h2>'
-  +'<p class="soccer-note">Verified career achievements, including seasons outside attended matches. World Cup tags require an actual tournament match appearance. MLS Cup and Supporters’ Shield are distinct titles.</p>'
+  +'<p class="soccer-note">Verified career achievements, including seasons outside attended matches. World Cup tags require an actual tournament match appearance. MLS Cup and Supporters’ Shield are distinct titles. Global awards include The Best FIFA Men’s Player where earned; novelty Goal/Save of the Year awards are omitted.</p>'
   +honorGroups.map(([key,title,badge,list])=>'<div class="soccer-honor-category"><h3>'+esc(title)+' <small>('+list.length+')</small></h3><ul>'
   +list.slice().sort((a,b)=>String(a.season||a.year).localeCompare(String(b.season||b.year))).map(a=>'<li>'+esc(honorLine(key,a))+(a.source_url?'<a href="'+esc(a.source_url)+'" target="_blank" rel="noopener noreferrer">Source ↗</a>':"")+'</li>').join("")+'</ul></div>').join("")+'</section>':"";
  const eventRows=log.map(l=>'<tr><td><a href="./game.html?id='+encodeURIComponent(l.id)+'">'+dt(l.date)+'</a></td><td>'+esc(l.team)+'</td><td>'+esc(l.opponent)+'</td><td>'+(l.started?"Starter":"Substitute")+'</td><td>'+l.goals+'</td><td>'+l.assists+'</td><td>'+l.secondary_assists+'</td><td>'+l.yellow+'</td></tr>');

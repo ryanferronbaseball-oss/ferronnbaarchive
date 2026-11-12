@@ -139,9 +139,14 @@ function profile(){
  const log=p.matchLog.slice().sort((a,b)=>b.date.localeCompare(a.date));
  const record=careerHonors.players?.[p.id]||{};
  const individual=individualHonors.players?.[p.id]||{};
- const witnessedWorldCups=matches.filter(m=>m.competition==="FIFA World Cup"&&log.some(l=>l.id===m.id)).map(m=>({
-  year:Number(m.date.slice(0,4)),country:p.teams.find(t=>t===m.home||t===m.away)||"",source_url:m.source_official||m.source_url,witnessed:true
- }));
+ const witnessedWorldCups=matches.filter(m=>m.competition==="FIFA World Cup"&&log.some(l=>l.id===m.id)).map(m=>{
+  // Match logs store team abbreviations (e.g. MAR / HAI), whereas World Cup
+  // award history should display the full country actually represented.
+  const appearance=log.find(l=>l.id===m.id);
+  const country=appearance?.team===m.home_abbr?m.home:
+                appearance?.team===m.away_abbr?m.away:"";
+  return {year:Number(m.date.slice(0,4)),country,source_url:m.source_official||m.source_url};
+ });
  const worldCups=[...(record.world_cup||[]),...witnessedWorldCups];
  const distinctWorldCups=[...new Map(worldCups.map(a=>[a.year+"|"+a.country,a])).values()].sort((a,b)=>a.year-b.year);
  const honorGroups=[
@@ -167,7 +172,7 @@ function profile(){
  }
  const honorLine=(key,a)=>key.startsWith("individual:")?
   [a.season||a.year,a.competition,a.team,a.goals!=null?a.goals+" goals":""].filter(Boolean).join(" · "):
-  key==="world_cup"?a.year+" · "+a.country+(a.witnessed?" · Attended match":""):
+  key==="world_cup"?a.year+" · "+a.country:
   key==="league_titles"?a.season+" · "+a.league+" · "+a.club:
   key==="mls_awards"?a.year+" · "+a.award+" · "+a.club:
   a.year+" · "+a.club;

@@ -35,7 +35,8 @@
       "all 36 participating skaters and both goalies",
       "G/A/PTS, plus-minus, PIM, TOI and SOG",
       "shots, power-play opportunities, hits, blocked shots, takeaways, giveaways, faceoffs",
-      "official game three stars"
+      "official game three stars",
+      "All 11 official penalties, infractions and times"
     ],
     "source_status": "Complete NHL official scoring summary, 36 skater game lines and two participating goalies. All individual G/A/PTS, plus-minus, PIM, TOI and shots verified against the NHL's original Event Summary; additional event and player tracking fields may remain optional.",
     "source_urls": [
@@ -1000,6 +1001,98 @@
       "Anže Kopitar",
       "Erik Ersberg",
       "Kevin Dallman"
-    ]
+    ],
+    "penalties": [
+      {
+        "period": 1,
+        "time": "15:36",
+        "team": "Los Angeles Kings",
+        "player": "Peter Harrold",
+        "infraction": "Interference",
+        "minutes": 2
+      },
+      {
+        "period": 2,
+        "time": "01:16",
+        "team": "Los Angeles Kings",
+        "player": "Tom Preissing",
+        "infraction": "Hooking",
+        "minutes": 2
+      },
+      {
+        "period": 2,
+        "time": "12:07",
+        "team": "Phoenix Coyotes",
+        "player": "Nick Boynton",
+        "infraction": "Hooking",
+        "minutes": 2
+      },
+      {
+        "period": 2,
+        "time": "15:00",
+        "team": "Los Angeles Kings",
+        "player": "Scott Thornton",
+        "infraction": "Hooking",
+        "minutes": 2
+      },
+      {
+        "period": 2,
+        "time": "18:41",
+        "team": "Phoenix Coyotes",
+        "player": "Peter Mueller",
+        "infraction": "Hooking",
+        "minutes": 2
+      },
+      {
+        "period": 2,
+        "time": "19:11",
+        "team": "Los Angeles Kings",
+        "player": "Rob Blake",
+        "infraction": "Slashing",
+        "minutes": 2
+      },
+      {
+        "period": 3,
+        "time": "02:41",
+        "team": "Phoenix Coyotes",
+        "player": "Zbyněk Michálek",
+        "infraction": "Elbowing",
+        "minutes": 2
+      },
+      {
+        "period": 3,
+        "time": "02:41",
+        "team": "Los Angeles Kings",
+        "player": "Michael Cammalleri",
+        "infraction": "High-sticking",
+        "minutes": 2
+      },
+      {
+        "period": 3,
+        "time": "10:28",
+        "team": "Phoenix Coyotes",
+        "player": "Daniel Carcillo",
+        "infraction": "Roughing",
+        "minutes": 2
+      },
+      {
+        "period": 3,
+        "time": "10:28",
+        "team": "Los Angeles Kings",
+        "player": "Raitis Ivanāns",
+        "infraction": "Roughing",
+        "minutes": 2
+      },
+      {
+        "period": 3,
+        "time": "16:35",
+        "team": "Phoenix Coyotes",
+        "player": "Enver Lisin",
+        "infraction": "Hooking",
+        "minutes": 2
+      }
+    ],
+    "start_local": "19:39 PDT",
+    "end_local": "21:59 PDT"
   }
 ]

@@ -99,23 +99,26 @@
  }
  function recordsPage(games){
   const g=games[0],skaters=g.players.filter(p=>p.skater),goalies=g.players.filter(p=>p.goalie);
-  const goals=numericMax(skaters,p=>p.skater.goals);
-  const assists=numericMax(skaters,p=>p.skater.assists);
-  const points=numericMax(skaters,p=>p.skater.points);
-  const shots=numericMax(skaters,p=>p.skater.shots_on_goal);
-  const saves=numericMax(goalies,p=>p.goalie.saves);
-  const shutout=numericMax(goalies,p=>p.goalie.shutouts);
-  const record=(category,player,value)=>[category,value===null||value===undefined?'Not yet verified':stat(value)+' · '+(player?.name||'Unverified')];
+  const top=(title,arr,key,format)=>{
+   const values=arr.map(p=>({p,value:key(p)})).filter(x=>typeof x.value==='number'&&Number.isFinite(x.value));
+   if(!values.length)return [title,'No verified entries'];
+   const max=Math.max(...values.map(x=>x.value));
+   const names=values.filter(x=>x.value===max).map(x=>x.p.name).sort((a,b)=>a.localeCompare(b));
+   return [title,(format?format(max):String(max))+' · '+names.join(', ')];
+  };
+  const toSeconds=x=>{if(!x)return NaN;const bits=x.split(':').map(Number);return bits[0]*60+bits[1]};
   const records=[
    ['Most goals, team',g.home_score+' · '+g.home],
-   record('Most goals, skater (verified)',goals,goals?.skater.goals),
-   record('Most assists, skater (verified)',assists,assists?.skater.assists),
-   record('Most points, skater (verified)',points,points?.skater.points),
-   record('Most shots, skater (verified)',shots,shots?.skater.shots_on_goal),
-   record('Most saves, goalie',saves,saves?.goalie.saves),
-   record('Most shutouts, goalie',shutout,shutout?.goalie.shutouts)
+   top('Most goals, skater',skaters,p=>p.skater.goals),
+   top('Most assists, skater',skaters,p=>p.skater.assists),
+   top('Most points, skater',skaters,p=>p.skater.points),
+   top('Most shots, skater',skaters,p=>p.skater.shots_on_goal),
+   top('Most skater ice time',skaters,p=>toSeconds(p.skater.minutes),v=>Math.floor(v/60)+':'+String(v%60).padStart(2,'0')),
+   top('Most saves, goalie',goalies,p=>p.goalie.saves),
+   top('Shutouts, goalie',goalies,p=>p.goalie.shutouts),
+   ['Game-winning goal',(g.scoring||[])[0]?.scorer||'—']
   ];
-  $('app').innerHTML=breadcrumb('RECORD BOOK')+'<h1>Your NHL records.</h1><p class="nhl-lead">Personal attendance records from the NHL games you saw. Skater leaderboards exclude missing player statistics, rather than treating them as zero.</p><section class="nhl-grid nhl-record-grid">'+records.map(([label,value])=>'<div class="nhl-record"><small>'+esc(label)+'</small><strong>'+esc(value)+'</strong><a href="'+linkGame(g)+'">View game ↗</a></div>').join('')+'</section>'+note;
+  $('app').innerHTML=breadcrumb('RECORD BOOK')+'<h1>Your NHL records.</h1><p class="nhl-lead">All-time records within your personally attended NHL games. Tied leaders appear together, and no league-wide career totals are mixed into this table.</p><section class="nhl-grid nhl-record-grid">'+records.map(([label,value])=>'<div class="nhl-record"><small>'+esc(label)+'</small><strong>'+esc(value)+'</strong><a href="'+linkGame(g)+'">View game ↗</a></div>').join('')+'</section>'+note;
  }
  function coachesPage(games,career){
   const g=games[0],catalog=career?.stops||{};

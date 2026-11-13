@@ -48,16 +48,18 @@ function assess(sport,date,items){
   best===null||Math.abs(y-season)<Math.abs(best.year-season)?{year:y,points:v.points,labels:v.labels}:best,null);
  const current=annual.get(season)?.points||0;
  const best=weighted[0];
- const score=Math.max(0,Math.min(100,Math.round(100*best.weighted/peak)));
+ // An isolated minor award is evidence of recognition, not proof of a peak season.
+ // An eight-point baseline requires more than one low-weight honor for a high score.
+ const score=Math.max(0,Math.min(100,Math.round(100*best.weighted/Math.max(8,peak))));
  const recent=(nearest.year-season);
  let tier,label;
- if(current>=5&&score>=70){tier='prime';label='Peak-era';}
- else if(current>=5){tier='prime';label='Prime-level season';}
- else if(score>=70){tier='prime';label='Near career peak';}
- else if(current>=2){tier='near';label='Established';}
- else if(recent>=2){tier='rising';label='Before peak';}
- else if(recent<=-2){tier='past';label='After peak';}
- else if(score>=20){tier='near';label='Near peak window';}
+ if(current>=6&&score>=70){tier='prime';label='Peak-era';}
+ else if(current>=6){tier='prime';label='Prime-level season';}
+ else if(score>=65&&best.raw>=5&&Math.abs(best.year-season)<=1){tier='prime';label='Near documented peak';}
+ else if(current>=2){tier='near';label='Award-winning season';}
+ else if(recent>=2){tier='rising';label='Before award peak';}
+ else if(recent<=-2){tier='past';label='After award peak';}
+ else if(score>=20){tier='near';label='Near award window';}
  else{tier='unknown';label='Limited evidence';}
  const referenceYear=best?.weighted>0?best.year:nearest.year;
  const source=best?.weighted>0?best:nearest;

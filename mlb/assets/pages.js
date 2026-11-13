@@ -4,7 +4,7 @@ const A=window.MLBArchive,app=document.getElementById("app"),el=id=>document.get
 const {esc,fmt,date,playerUrl,gameUrl,table,bar,tiles,record,mlbRow}=A;
 el("navigation").innerHTML=A.nav(page);
 let d;try{d=await A.load()}catch(err){app.innerHTML='<div class="empty">Unable to load attendance data: '+esc(err.message)+'</div>';return}
-const {games,rows,players,scores,decisions}=d;
+const {games,rows,players,scores,decisions,recaps}=d;
 const collegeCrossover=new Map(),milbCrossover=new Map(),verifiedCollegeMiLB=new Set();
 const wbcById=new Map();
 if(page==="player"){
@@ -235,6 +235,16 @@ function gamePage(){
     +'<div class="mlb-decision-role">'+label+'</div>'
     +decisionPerson(officialDecision?.[key],label)+'</div>').join("")
   +'</div><p class="mlb-note">Pitching decisions are the official win, loss and save credits, not selections from the impact ranking.</p></section>';
+ const writtenRecap=recaps?.[String(g.attendance_id)];
+ const recapPanel=Array.isArray(writtenRecap)&&writtenRecap.length?(()=>{
+  const playerIds=new Set(gameStats.map(row=>String(row.player_id)));
+  const linked=text=>String(text).split(/(\[\[[^\]]+\]\])/g).map(part=>{
+   const match=part.match(/^\[\[(\d+)\|([^\]]+)\]\]$/);
+   return match&&playerIds.has(match[1])?'<a href="'+playerUrl({player_id:match[1]})+'">'+esc(match[2])+'</a>':esc(part);
+  }).join("");
+  return '<section class="panel mlb-game-recap" id="gameRecap"><div class="mlb-recap-kicker">Every game has a story</div><h2>Game recap</h2>'
+   +writtenRecap.map(paragraph=>'<p>'+linked(paragraph)+'</p>').join("")+'</section>';
+ })():"";
  const standout=A.playerOfGame(gameStats);
  const playerCard=standout?(()=>{
   const r=standout.row,photoId=encodeURIComponent(r.player_id);
@@ -252,7 +262,7 @@ function gamePage(){
   +'<div class="mlb-pregame-eyebrow">SIGNATURE PERFORMANCE</div><h2>Player of the Game</h2>'
   +playerCard
   +'<p class="mlb-note">Custom, unofficial one-player impact rating. Hitting rewards total bases, runs, RBI, walks and steals; pitching rewards innings and strikeouts while penalizing runs, hits and walks. Both are compared on one scale, regardless of winning team.</p></section>';
- el("scoreboard").innerHTML=board+decisionsPanel+potgPanel+innings;
+ el("scoreboard").innerHTML=board+decisionsPanel+recapPanel+potgPanel+innings;
  el("scoreboard").insertAdjacentHTML("beforeend", '<div id="sc-game-panel"></div>');
  window.MLBStatcast?.renderGame(g,el("sc-game-panel"));
  const order=[["batting","Batting"],["pitching","Pitching"],["fielding","Fielding"]];

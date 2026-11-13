@@ -290,3 +290,94 @@ body[data-page="game"] .back-link{font-size:12px;font-weight:750;text-decoration
 .nhl-game-foot{font-size:12px;color:#566879;line-height:1.7;margin:26px 0}
 @media(max-width:860px){.nhl-game-pog-stats{grid-template-columns:repeat(3,minmax(0,1fr))}.nhl-game-stars{grid-template-columns:1fr}}
 @media(max-width:600px){body[data-page="game"] main{width:calc(100% - 26px)}.nhl-game-scoreboard,.nhl-game-panel{padding:16px}.nhl-game-scoreline{gap:8px}.nhl-game-team-name{font-size:13px}.nhl-game-final strong{font-size:32px}.nhl-game-final strong small{font-size:18px}.nhl-game-scores-table{margin-top:18px}.nhl-game-pog-stats{grid-template-columns:repeat(3,minmax(0,1fr))}.nhl-game-play{grid-template-columns:66px minmax(0,1fr);gap:8px}.nhl-game-play-score{grid-column:2;text-align:left}.nhl-game-panel table{min-width:560px}.nhl-game-team-box table{min-width:740px}.nhl-game-panel .nhl-table-wrap{overflow-x:auto}.nhl-game-toolbar select{min-width:0;width:100%}}
+
+
+/* NHL Players and player-profile parity with NBA, NFL and MLB.
+   Scope all new treatments to stats/player views to preserve Overview/Games. */
+body[data-page="stats"] main,body[data-page="player"] main{max-width:1160px;width:calc(100% - 36px);padding-bottom:80px}
+body[data-page="stats"] #app,body[data-page="player"] #app{padding-top:0}
+body[data-page="stats"] .archive-header,body[data-page="player"] .archive-header{display:flex;align-items:center;justify-content:space-between;gap:17px;flex-wrap:wrap;padding:23px 0;background:#eaf6fc;border-bottom:1px solid #c5e3ef}
+body[data-page="stats"] .archive-logo,body[data-page="player"] .archive-logo{font-size:17px;line-height:1.1;font-weight:900;letter-spacing:.035em;text-decoration:none;color:#831738}
+body[data-page="stats"] .archive-logo small,body[data-page="player"] .archive-logo small{display:block;font-size:9px;letter-spacing:.15em;margin-top:5px;color:#566879}
+body[data-page="stats"] .archive-nav,body[data-page="player"] .archive-nav{display:flex;align-items:center;flex-wrap:wrap;gap:5px}
+body[data-page="stats"] .archive-nav a,body[data-page="player"] .archive-nav a{color:#831738;text-decoration:none;font-size:13px;font-weight:750;padding:10px 13px;border-radius:7px}
+body[data-page="stats"] .archive-nav a:hover,body[data-page="player"] .archive-nav a:hover,body[data-page="stats"] .archive-nav a[aria-current="page"],body[data-page="player"] .archive-nav a[aria-current="page"]{background:#d9f0fa}
+body[data-page="stats"] .back-link,body[data-page="player"] .back-link{font-size:12px;font-weight:750;text-decoration:none;white-space:nowrap}
+.nhl-players-page,.nhl-player-page{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;color:#192e43}
+.nhl-players-page h1,.nhl-player-page h1{font:850 clamp(35px,5.6vw,62px)/1.1 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:-.052em;margin:0 0 13px;color:#192e43}
+.nhl-players-page h2,.nhl-player-page h2{font:800 clamp(23px,3vw,30px)/1.2 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:-.035em;color:#192e43;margin:0 0 16px}
+.nhl-players-eyebrow,.nhl-player-eyebrow{font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:850;color:#831738}
+.nhl-players-eyebrow{margin:44px 0 8px}
+.nhl-players-lead{color:#566879;font-size:15px;line-height:1.65;max-width:800px;margin:0 0 20px}
+.nhl-players-metrics,.nhl-player-metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:27px 0}
+.nhl-players-metric,.nhl-player-stat-tile{background:#fff;border:1px solid #d4e1e9;border-radius:12px;padding:17px;min-width:0}
+.nhl-players-metric strong,.nhl-player-stat-tile strong{display:block;color:#831738;font-size:29px;font-weight:850;line-height:1.14;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.nhl-players-metric small,.nhl-player-stat-tile small{display:block;margin-top:7px;font-size:12px;line-height:1.35;color:#566879}
+.nhl-players-tabs,.nhl-player-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0 14px}
+.nhl-players-view-tabs{margin-top:0;margin-bottom:18px}
+.nhl-players-tabs button,.nhl-player-tabs button{font:750 13px/1.35 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;padding:10px 15px;border-radius:8px;background:#eaf6fc;color:#831738;border:1px solid #c5e3ef;cursor:pointer}
+.nhl-players-tabs button:hover,.nhl-player-tabs button:hover{background:#d9f0fa}
+.nhl-players-tabs button[aria-selected="true"],.nhl-player-tabs button[aria-selected="true"]{background:#831738;color:#fff;border-color:#831738}
+.nhl-players-panel,.nhl-player-panel{background:#fff;border:1px solid #d4e1e9;border-radius:14px;padding:21px;margin:17px 0;min-width:0}
+.nhl-players-section-heading{display:flex;align-items:baseline;justify-content:space-between;gap:13px;flex-wrap:wrap}
+.nhl-players-section-heading h2{margin-bottom:6px}
+.nhl-players-caption,.nhl-players-hint,.nhl-player-hint{color:#566879;font-size:12px;line-height:1.7}
+.nhl-players-hint{margin:11px 0 19px}
+.nhl-players-toolbar{display:flex;align-items:center;gap:11px;flex-wrap:wrap;margin:0 0 17px}
+.nhl-players-toolbar label{font-size:12px;color:#566879;font-weight:750}
+.nhl-players-toolbar select,.nhl-players-toolbar input{font:inherit;color:#192e43;font-size:13px;max-width:100%;min-width:125px;background:#fff;border:1px solid #c8dce9;border-radius:9px;padding:10px 12px}
+.nhl-players-toolbar input{flex:1;min-width:190px}
+.nhl-players-table-wrap,.nhl-player-table-wrap{max-width:100%;overflow-x:auto;border:1px solid #d4e1e9;border-radius:11px}
+.nhl-players-table-wrap table,.nhl-player-table-wrap table{width:100%;min-width:760px;border-collapse:collapse;white-space:nowrap;font-size:13px;font-variant-numeric:tabular-nums}
+.nhl-players-table-wrap th,.nhl-player-table-wrap th{background:#eaf6fc;color:#34516a;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.07em}
+.nhl-players-table-wrap th,.nhl-player-table-wrap th,.nhl-players-table-wrap td,.nhl-player-table-wrap td{text-align:right;padding:12px 11px;border-bottom:1px solid #e6edf2}
+.nhl-players-table-wrap th:nth-child(-n+4),.nhl-players-table-wrap td:nth-child(-n+4){text-align:left}
+.nhl-players-table-wrap th:nth-child(2),.nhl-players-table-wrap td:nth-child(2){min-width:165px}
+.nhl-player-table-wrap th:nth-child(-n+3),.nhl-player-table-wrap td:nth-child(-n+3){text-align:left}
+.nhl-player-table-wrap th:nth-child(3),.nhl-player-table-wrap td:nth-child(3){min-width:220px}
+.nhl-players-table-wrap tr:nth-child(even) td,.nhl-player-table-wrap tr:nth-child(even) td{background:#f6fbfd}
+.nhl-players-table-wrap tbody tr:last-child td,.nhl-player-table-wrap tbody tr:last-child td{border-bottom:0}
+.nhl-players-table-wrap a,.nhl-player-table-wrap a{font-weight:800;color:#831738;text-decoration:none}
+.nhl-players-table-wrap a:hover,.nhl-player-table-wrap a:hover{text-decoration:underline}
+.nhl-players-table-wrap .nhl-players-rank{color:#566879}
+.nhl-players-table-wrap .nhl-players-ranked{background:#edf7fc;color:#831738;font-weight:900}
+.nhl-players-table-wrap tr:nth-child(even) td.nhl-players-ranked{background:#e7f3fa}
+.nhl-players-explore{margin-top:23px}
+.nhl-players-explore p{font-size:13px;color:#566879;line-height:1.7;max-width:850px}
+.nhl-players-action{display:inline-flex;background:#831738;color:#fff!important;border-radius:9px;padding:11px 16px;text-decoration:none;font-size:13px;font-weight:750}
+.nhl-players-action:hover{background:#64142d}
+.nhl-players-foot,.nhl-player-foot{font-size:12px;color:#566879;line-height:1.7;margin:26px 0}
+.nhl-player-back{font-size:13px;margin:28px 0 15px}
+.nhl-player-back a{font-weight:750;text-decoration:none;color:#831738}
+.nhl-player-hero{display:grid;grid-template-columns:150px minmax(0,1fr);align-items:center;gap:24px;background:#fff;border:1px solid #d4e1e9;border-radius:16px;padding:24px;margin-bottom:22px}
+.nhl-player-portrait{width:150px;height:150px;display:grid;place-items:center;border-radius:14px;border:1px solid #bdd8e5;background:linear-gradient(135deg,#e7f4fb,#d9e9f1);font-size:27px;font-weight:900;letter-spacing:.1em;color:#831738}
+.nhl-player-hero-copy h1{margin:5px 0 10px;font-size:clamp(33px,5vw,53px)}
+.nhl-player-hero-copy>p{font-size:13px;color:#566879;margin:7px 0 0}
+.nhl-player-hero-copy .nhl-profile-achievements{margin:13px 0}
+.nhl-player-metrics{grid-template-columns:repeat(4,minmax(0,1fr));margin:24px 0}
+.nhl-player-tabs{margin:21px 0 15px}
+.nhl-player-panel[hidden]{display:none}
+.nhl-player-overview-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:11px;margin:18px 0 4px}
+.nhl-player-overview-stats .nhl-player-stat-tile{background:#f8fbfd;padding:15px}
+.nhl-player-overview-stats .nhl-player-stat-tile strong{font-size:24px}
+.nhl-player-notes{background:#eaf6fc;border:1px solid #d0e5ef;border-radius:10px;padding:13px;font-size:13px;color:#566879;margin:15px 0 0}
+.nhl-player-milestone-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:18px 0}
+.nhl-player-milestone{padding:17px;border:1px solid #d4e1e9;background:#f7fbfd;border-radius:13px;display:flex;flex-direction:column;gap:5px}
+.nhl-player-milestone strong{font-size:30px;font-weight:850;color:#831738;line-height:1.1}
+.nhl-player-milestone span{font-size:14px;font-weight:850;color:#192e43}
+.nhl-player-milestone small{color:#566879;font-size:11px;line-height:1.5}
+.nhl-player-page>.nhl-career-honors{margin-top:25px}
+.nhl-player-empty{padding:60px 10px}
+@media(max-width:850px){
+ .nhl-players-metrics,.nhl-player-metrics,.nhl-player-overview-stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .nhl-player-milestone-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:610px){
+ body[data-page="stats"] main,body[data-page="player"] main{width:calc(100% - 26px)}
+ .nhl-players-panel,.nhl-player-panel{padding:16px}
+ .nhl-player-hero{grid-template-columns:1fr;gap:13px;padding:18px}
+ .nhl-player-portrait{width:82px;height:82px;font-size:18px}
+ .nhl-player-milestone-grid{grid-template-columns:1fr}
+ .nhl-players-toolbar input,.nhl-players-toolbar select{flex:1 1 100%;width:100%;min-width:0}
+ .nhl-player-overview-stats .nhl-player-stat-tile{padding:12px}
+}

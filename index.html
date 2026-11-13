@@ -29,6 +29,40 @@
   .portal-nav{display:flex;flex-wrap:wrap;gap:8px}
   .portal-nav a{padding:10px 15px;font-size:13px;font-weight:750;color:#284D3C!important;border-radius:8px;text-decoration:none!important}
   .portal-nav a:hover,.portal-nav a:focus-visible{background:#E5EAE2}
+
+  /* Group the individual sport archives without hiding cross-sport destinations. */
+  .portal-sports-dropdown{position:relative;flex:none}
+  .portal-sports-dropdown>summary{
+    display:flex;align-items:center;gap:9px;padding:10px 15px;
+    border-radius:8px;color:#284D3C;font-size:13px;font-weight:750;
+    cursor:pointer;user-select:none;list-style:none;white-space:nowrap
+  }
+  .portal-sports-dropdown>summary::-webkit-details-marker{display:none}
+  .portal-sports-dropdown>summary:hover,
+  .portal-sports-dropdown>summary:focus-visible,
+  .portal-sports-dropdown[open]>summary{background:#d9f0fa;color:#831738}
+  .portal-sports-dropdown>summary:focus-visible{outline:2px solid #831738;outline-offset:2px}
+  .portal-sports-chevron{font-size:18px;line-height:.75;transition:transform .15s ease}
+  .portal-sports-dropdown[open] .portal-sports-chevron{transform:rotate(180deg)}
+  .portal-sports-list{
+    position:absolute;top:calc(100% + 9px);right:0;z-index:50;
+    display:grid;gap:3px;width:min(268px,calc(100vw - 32px));max-height:min(70vh,450px);
+    overflow-y:auto;padding:9px;border:1px solid #c5dfeb;
+    border-radius:13px;background:#fff;box-shadow:0 13px 40px rgba(25,46,67,.18)
+  }
+  .portal-sports-list a{
+    display:block;padding:10px 13px;border-radius:7px;
+    color:#192e43!important;font-size:13px;font-weight:750;text-decoration:none!important
+  }
+  .portal-sports-list a:hover,.portal-sports-list a:focus-visible{
+    background:#eaf6fc!important;color:#831738!important
+  }
+  @media(max-width:760px){
+    .portal-nav{width:100%;justify-content:flex-start}
+    .portal-sports-list{right:auto;left:0}
+  }
+  @media(prefers-reduced-motion:reduce){.portal-sports-chevron{transition:none}}
+
   .portal-kicker{font-size:11px;letter-spacing:.23em;font-weight:850;text-transform:uppercase;color:#476951;margin-bottom:18px}
   .portal-hero{padding:76px 0 66px;display:grid;grid-template-columns:minmax(0,1.45fr) minmax(250px,.8fr);gap:48px;align-items:center}
   h1{font-size:clamp(44px,6vw,78px);line-height:1.03;letter-spacing:-.064em;max-width:700px;margin:0 0 22px;color:#252A2B}
@@ -90,17 +124,23 @@
     <span class="portal-mark" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="#284D3C" stroke-width="1.7"><rect x="3" y="3" width="34" height="34" rx="2"/><path d="M3 20h34M20 3v34M13 3v9h14V3M13 37v-9h14v9"/><circle cx="20" cy="20" r="6"/></svg></span>
     <span class="portal-wordmark">COURTSIDE ARCHIVE<small>EVERY GAME HAS A STORY</small></span>
   </a>
-  <nav class="portal-nav" aria-label="Choose a sports archive">
+  <nav class="portal-nav" aria-label="Courtside Archive navigation">
     <a href="./museum/index.html">Museum ↗</a>
     <a href="./champions/index.html">Champions ↗</a>
     <a href="./coach-history/index.html">Coach History ↗</a>
-    <a href="./nba/index.html">NBA ↗</a>
-    <a href="./college/index.html">College Basketball ↗</a>
-    <a href="./nfl/index.html">NFL ↗</a>
-    <a href="./cfb/index.html">College Football ↗</a>
-    <a href="./mlb/index.html">MLB ↗</a><a href="./milb/index.html">MiLB ↗</a>
-    <a href="./college-baseball/index.html">College Baseball ↗</a>
-    <a href="./soccer/index.html">Soccer ↗</a>
+    <details class="portal-sports-dropdown">
+      <summary>Sports <span class="portal-sports-chevron" aria-hidden="true">⌄</span></summary>
+      <div class="portal-sports-list" aria-label="Individual sports archives">
+        <a href="./nba/index.html">NBA</a>
+        <a href="./college/index.html">College Basketball</a>
+        <a href="./nfl/index.html">NFL</a>
+        <a href="./cfb/index.html">College Football</a>
+        <a href="./mlb/index.html">MLB</a>
+        <a href="./college-baseball/index.html">College Baseball</a>
+        <a href="./soccer/index.html">Soccer</a>
+        <a href="./milb/index.html">MiLB</a>
+      </div>
+    </details>
   </nav>
 </header>
 <section class="portal-hero" aria-labelledby="site-title">
@@ -263,5 +303,21 @@
 })();
 </script>
 <script defer src="./assets/milestones.js?v=1"></script>
+<script>
+/* Native details supplies keyboard and touch toggling; dismiss on outside clicks or Escape. */
+(()=>{
+  const menu=document.querySelector(".portal-sports-dropdown");
+  if(!menu)return;
+  document.addEventListener("click",event=>{
+    if(menu.open&&!menu.contains(event.target))menu.open=false;
+  });
+  document.addEventListener("keydown",event=>{
+    if(event.key==="Escape"&&menu.open){
+      menu.open=false;
+      menu.querySelector("summary").focus();
+    }
+  });
+})();
+</script>
 </body>
 </html>

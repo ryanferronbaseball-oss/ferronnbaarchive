@@ -5,7 +5,7 @@
  const fmt=d=>new Date(d+'T12:00:00Z').toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric',timeZone:'UTC'});
  const stat=(x,dash='—')=>x===null||x===undefined?dash:esc(x);
  const page=document.body.dataset.page||'overview';
- const navItems=[['index.html','Overview','overview'],['game.html','Games','game'],['stats.html','Players','stats'],['records.html','Records','records'],['coaches.html','Coaches','coaches']];
+ const navItems=[['index.html','Overview','overview'],['game.html','Games','game'],['stats.html','Players','stats'],['hall-of-fame.html','★ Hall of Fame','hof'],['records.html','Records','records'],['coaches.html','Coaches','coaches']];
  const nav=navItems.map(([href,name,key])=>'<a href="./'+href+'"'+(page===key?' aria-current="page"':'')+'>'+name+'</a>').join('')+'<a href="../index.html">All archives ↗</a>';
  $('navigation').innerHTML='<div class="nhl-topbar"><a href="./index.html" class="nhl-logo"><span class="nhl-mark">CA</span><span>COURTSIDE ARCHIVE<small>EVERY GAME HAS A STORY · NHL</small></span></a><nav aria-label="NHL navigation">'+nav+'</nav></div>';
  const sourceLinks=g=>(g.source_urls||[]).map((url,i)=>'<a href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">Source '+(i+1)+' ↗</a>').join(' · ');
@@ -150,6 +150,29 @@
   +careerHonorPanel(p)
   +note;
  }
+ function hofPage(games){
+  // Mirroring the major-league Hall of Fame pages: only the primary
+  // Hockey Hall of Fame is counted as an inductee; IIHF, US and national
+  // hockey halls remain separate career profile honors.
+  const attended=games.flatMap(g=>g.players.map(p=>({...p,game:g})));
+  const hof=attended.filter(p=>(p.awards||[]).some(a=>a.title==='Hockey Hall of Fame'));
+  const related=attended.filter(p=>!(p.awards||[]).some(a=>a.title==='Hockey Hall of Fame')
+    &&(p.awards||[]).some(a=>/Hall of Fame/i.test(a.title)));
+  const article=p=>{
+   const member=p.awards.find(a=>a.title==='Hockey Hall of Fame');
+   return '<article class="nhl-hof-card"><span class="nhl-kicker">HOCKEY HALL OF FAME · INDUCTED '+esc(member.years)+'</span>'
+    +'<h2><a href="'+linkPlayer(p)+'">'+esc(p.name)+'</a></h2><p>'+esc(p.team)+' · '+esc(p.position)+' · '+fmt(p.game.date)+'</p>'
+    +'<div class="nhl-profile-achievements">'+(p.awards||[]).filter(a=>['stanley','award','allstar','retired'].includes(categorizeAward(a)))
+      .map(a=>'<span class="nhl-hof-mini">'+esc(a.title)+' · '+esc(a.years)+'</span>').join('')+'</div>'
+    +'<div class="nhl-hof-links"><a href="'+linkPlayer(p)+'">Player profile ↗</a><a href="'+esc(member.source)+'" target="_blank" rel="noopener noreferrer">Hockey Hall of Fame record ↗</a></div></article>';
+  };
+  $('app').innerHTML=breadcrumb('HALL OF FAME')+'<section class="nhl-hero nhl-hof-hero"><div class="nhl-kicker">THE LEGENDS YOU SAW</div><h1>Hockey Hall <em>of Fame.</em></h1>'
+   +'<p>The NHL players in your attended-game archive who have been inducted into the Hockey Hall of Fame in Toronto. Just like the NBA, MLB and NFL halls, only induction into the sport’s primary Hall of Fame qualifies here.</p></section>'
+   +'<section class="nhl-grid nhl-counts">'+box(hof.length,'Hockey Hall of Famers witnessed')+box(games.length,'NHL games attended')+box(games[0].players.length,'Players witnessed')+'</section>'
+   +'<section class="nhl-panel"><h2>Inductees you witnessed</h2>'+(hof.length?'<div class="nhl-hof-grid">'+hof.map(article).join('')+'</div>':'<p>No inducted Hockey Hall of Fame players in the recorded games yet.</p>')+'</section>'
+   +(related.length?'<section class="nhl-panel"><h2>Other hockey Hall of Fame honors</h2><p class="nhl-note">International and national halls are linked from their player profiles, but do not inflate the primary Hockey Hall of Fame count.</p>'
+     +'<div class="nhl-honor-tags">'+related.map(p=>'<a class="nhl-honor" href="'+linkPlayer(p)+'">'+esc(p.name)+' · '+esc(p.awards.filter(a=>/Hall of Fame/i.test(a.title)).map(a=>a.title).join(', '))+' ↗</a>').join('')+'</div></section>':'')+note;
+ }
  function recordsPage(games){
   const g=games[0],skaters=g.players.filter(p=>p.skater),goalies=g.players.filter(p=>p.goalie);
   const top=(title,arr,key,format)=>{
@@ -194,6 +217,6 @@
  ]).then(([games,career])=>{
   if(!Array.isArray(games)||!games.length)throw Error('No NHL games in the archive');
   if(page==='overview')overview(games);else if(page==='game')gamePage(games);else if(page==='stats')statsPage(games);
-  else if(page==='player')playerPage(games);else if(page==='records')recordsPage(games);else if(page==='coaches')coachesPage(games,career);
+  else if(page==='player')playerPage(games);else if(page==='hof')hofPage(games);else if(page==='records')recordsPage(games);else if(page==='coaches')coachesPage(games,career);
  }).catch(err=>{$('app').innerHTML='<section class="nhl-panel">Unable to load NHL archive: '+esc(err.message)+'</section>';});
 })();

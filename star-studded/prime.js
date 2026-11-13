@@ -53,9 +53,10 @@ function assess(sport,date,items){
  const score=Math.max(0,Math.min(100,Math.round(100*best.weighted/Math.max(8,peak))));
  const recent=(nearest.year-season);
  let tier,label;
- if(current>=6&&score>=70){tier='prime';label='Peak-era';}
- else if(current>=6){tier='prime';label='Prime-level season';}
- else if(score>=65&&best.raw>=5&&Math.abs(best.year-season)<=1){tier='prime';label='Near documented peak';}
+ const activeThreshold=sport==='College Basketball'?4:5;
+ if(current>=activeThreshold&&score>=70){tier='prime';label='Peak-era';}
+ else if(current>=activeThreshold){tier='prime';label='Prime-level season';}
+ else if(best.raw>=5&&Math.abs(best.year-season)<=1){tier='prime';label='Near documented peak';}
  else if(current>=2){tier='near';label='Award-winning season';}
  else if(recent>=2){tier='rising';label='Before award peak';}
  else if(recent<=-2){tier='past';label='After award peak';}

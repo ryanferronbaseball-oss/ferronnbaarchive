@@ -187,12 +187,26 @@ tbody small{display:block;color:var(--muted);font-size:11px;font-weight:400;marg
 .mlb-pregame-eyebrow{font-size:11px;font-weight:850;letter-spacing:.14em;color:#627967;text-transform:uppercase;margin-bottom:5px}
 #pitchingDecisions,#gameRecap,#playerOfGame{margin:16px 0;padding:22px 24px}
 #pitchingDecisions h2,#gameRecap h2,#playerOfGame h2{margin:4px 0 18px;font-size:clamp(22px,3vw,30px)}
-.mlb-game-recap{background:linear-gradient(145deg,#5E1731,#421024);border-color:#8DB8D2;color:#F8FBFD}
-.mlb-game-recap h2{color:#FFF}
-.mlb-game-recap p{font-size:15px;line-height:1.72;margin:10px 0 0}
-.mlb-game-recap a{color:#C5E5F5;font-weight:800}
-.mlb-game-recap a:hover{color:#FFF}
-.mlb-recap-kicker{color:#B7DDEC;font-size:11px;font-weight:850;letter-spacing:.14em;text-transform:uppercase;margin-bottom:5px}
+/* Keep this dark recap readable even when the shared cross-sport .panel
+   stylesheet loads later and forces normal panels to a white background. */
+#gameRecap.panel.mlb-game-recap{
+  background:linear-gradient(145deg,#5E1731,#421024)!important;
+  border-color:#8DB8D2!important;
+  color:#F8FBFD!important;
+}
+#gameRecap.mlb-game-recap h2,
+#gameRecap.mlb-game-recap p{color:#F8FBFD!important}
+#gameRecap.mlb-game-recap p{font-size:15px;line-height:1.72;margin:10px 0 0}
+#gameRecap.mlb-game-recap a,
+#gameRecap.mlb-game-recap a:visited{
+  color:#D7F1FF!important;
+  font-weight:800;
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+#gameRecap.mlb-game-recap a:hover,
+#gameRecap.mlb-game-recap a:focus-visible{color:#FFF!important;text-decoration-thickness:2px}
+#gameRecap .mlb-recap-kicker{color:#B7DDEC!important;font-size:11px;font-weight:850;letter-spacing:.14em;text-transform:uppercase;margin-bottom:5px}
 .mlb-decision-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
 .mlb-decision-card{min-width:0;border:1px solid #DEE4DA;background:#F7F9F4;padding:18px 17px;border-radius:12px}
 .mlb-decision-type{font-size:10px;letter-spacing:.11em;font-weight:900;color:#335944}

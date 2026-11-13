@@ -35,13 +35,21 @@
       "period scoring",
       "attendance",
       "Erik Ersberg saves and shutout",
-      "Anze Kopitar goal and two assists"
+      "Anze Kopitar goal and two assists",
+      "team shots, penalty minutes, power-play goals and faceoff wins",
+      "Mikael Tellqvist goalie saves and goals allowed",
+      "Rob Blake third-period goal",
+      "Shane Doan, Martin Hanzal and Zbyněk Michálek 2008-03-27 lines"
     ],
-    "source_status": "Partial player box score verified; full event-by-event and skater-by-skater stats not yet imported",
+    "source_status": "Verified team totals, both goaltenders, and a growing selection of individual skater game lines. Complete NHL event-by-event and every skater's box score remain under review.",
     "source_urls": [
+      "https://www.hockey-reference.com/teams/LAK/2008_gamelog.html",
       "https://www.hockey-reference.com/boxscores/?day=27&month=3&year=2008",
       "https://www.latimes.com/archives/la-xpm-2008-mar-28-sp-kings28-story.html",
-      "https://media.d3.nhle.com/image/private/t_document/prd/bhnpiwbdxzoqnjh9ssl0.pdf"
+      "https://hockeygoalies.org/bio/tellqvist.html",
+      "https://www.statmuse.com/nhl/player/shane-doan-1658/game-log?seasonYear=2008",
+      "https://www.statmuse.com/nhl/player/martin-hanzal-2660/game-log?seasonYear=2008",
+      "https://www.statmuse.com/nhl/player/zbynek-michalek-4709/game-log?seasonYear=2008"
     ],
     "coach": {
       "away": "Wayne Gretzky",
@@ -86,8 +94,178 @@
           "30th goal of 2007–08 season",
           "One goal and two assists"
         ],
+        "verified": true,
+        "awards": [
+          {
+            "title": "Stanley Cup champion",
+            "years": "2012, 2014",
+            "source": "https://www.nhl.com/news/nhl-stanley-cup-champions-2010-2016-287974234"
+          },
+          {
+            "title": "Frank J. Selke Trophy",
+            "years": "2016, 2018",
+            "source": "https://www.nhl.com/news/topic/nhl-awards/nhl-frank-j-selke-trophy-winners-complete-list-287904026"
+          },
+          {
+            "title": "Lady Byng Memorial Trophy",
+            "years": "2016, 2023, 2025",
+            "source": "https://www.nhl.com/news/topic/nhl-awards/nhl-lady-byng-memorial-trophy-winners-complete-list-287910994"
+          },
+          {
+            "title": "Mark Messier Leadership Award",
+            "years": "2022",
+            "source": "https://www.nhl.com/news/anze-kopitar-wins-mark-messier-nhl-leadership-award-334424478"
+          }
+        ]
+      },
+      {
+        "id": "mikael-tellqvist",
+        "name": "Mikael Tellqvist",
+        "team": "Phoenix Coyotes",
+        "position": "G",
+        "games": 1,
+        "goalie": {
+          "shots_against": 33,
+          "saves": 29,
+          "goals_against": 4,
+          "save_pct": 0.8787878787878788,
+          "shutouts": 0,
+          "wins": 0,
+          "losses": 1,
+          "minutes": "60:00"
+        },
+        "notables": [
+          "Faced 33 Kings shots",
+          "29 saves in the loss"
+        ],
+        "verified": true
+      },
+      {
+        "id": "rob-blake",
+        "name": "Rob Blake",
+        "team": "Los Angeles Kings",
+        "position": "D",
+        "games": 1,
+        "skater": {
+          "goals": 1,
+          "assists": null,
+          "points": null
+        },
+        "notables": [
+          "Scored Los Angeles's fourth goal in the third period"
+        ],
+        "awards": [
+          {
+            "title": "Hockey Hall of Fame",
+            "years": "2014 (player)",
+            "source": "https://www.hhof.com/induction_archives/ind14Blake.shtml"
+          },
+          {
+            "title": "Stanley Cup champion",
+            "years": "2001 (Colorado Avalanche)",
+            "source": "https://www.hhof.com/induction_archives/ind14Blake.shtml"
+          },
+          {
+            "title": "James Norris Memorial Trophy",
+            "years": "1998",
+            "source": "https://www.hhof.com/induction_archives/ind14Blake.shtml"
+          }
+        ],
+        "verified": true
+      },
+      {
+        "id": "shane-doan",
+        "name": "Shane Doan",
+        "team": "Phoenix Coyotes",
+        "position": "RW",
+        "games": 1,
+        "skater": {
+          "goals": 0,
+          "assists": 0,
+          "points": 0,
+          "shots_on_goal": 3,
+          "minutes": "15:31"
+        },
+        "notables": [
+          "Three shots on goal"
+        ],
+        "awards": [
+          {
+            "title": "King Clancy Memorial Trophy",
+            "years": "2010",
+            "source": "https://www.nhl.com/player/shane-doan-8462038/bio"
+          },
+          {
+            "title": "Mark Messier Leadership Award",
+            "years": "2012",
+            "source": "https://www.nhl.com/player/shane-doan-8462038/bio"
+          }
+        ],
+        "verified": true
+      },
+      {
+        "id": "martin-hanzal",
+        "name": "Martin Hanzal",
+        "team": "Phoenix Coyotes",
+        "position": "C",
+        "games": 1,
+        "skater": {
+          "goals": 0,
+          "assists": 0,
+          "points": 0,
+          "shots_on_goal": 2,
+          "minutes": "17:14"
+        },
+        "notables": [
+          "Two shots on goal"
+        ],
+        "verified": true
+      },
+      {
+        "id": "zbynek-michalek",
+        "name": "Zbyněk Michálek",
+        "team": "Phoenix Coyotes",
+        "position": "D",
+        "games": 1,
+        "skater": {
+          "goals": 0,
+          "assists": 0,
+          "points": 0,
+          "shots_on_goal": 0,
+          "minutes": "21:05"
+        },
+        "notables": [
+          "21:05 time on ice"
+        ],
         "verified": true
       }
-    ]
+    ],
+    "team_stats": {
+      "away": {
+        "shots_on_goal": 38,
+        "penalty_minutes": 10,
+        "power_play_goals": 0,
+        "faceoff_wins": 35
+      },
+      "home": {
+        "shots_on_goal": 33,
+        "penalty_minutes": 12,
+        "power_play_goals": 1,
+        "faceoff_wins": 25
+      }
+    },
+    "goals_identified": [
+      {
+        "player": "Anže Kopitar",
+        "team": "Los Angeles Kings",
+        "period": 2
+      },
+      {
+        "player": "Rob Blake",
+        "team": "Los Angeles Kings",
+        "period": 3
+      }
+    ],
+    "full_boxscore_status": "partial — goal scorers, assists, ice times and shot counts not yet verified for every skater"
   }
 ]

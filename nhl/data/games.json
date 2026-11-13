@@ -1,0 +1,93 @@
+[
+  {
+    "id": "nhl-2008-03-27-phx-lak",
+    "date": "2008-03-27",
+    "season": "2007–08",
+    "sport": "NHL",
+    "competition": "NHL regular season",
+    "away": "Phoenix Coyotes",
+    "home": "Los Angeles Kings",
+    "away_abbr": "PHX",
+    "home_abbr": "LAK",
+    "away_score": 0,
+    "home_score": 4,
+    "periods": {
+      "away": [
+        0,
+        0,
+        0
+      ],
+      "home": [
+        0,
+        3,
+        1
+      ]
+    },
+    "venue": "STAPLES Center",
+    "city": "Los Angeles",
+    "state": "CA",
+    "attendance": 17331,
+    "verified_fields": [
+      "date",
+      "matchup",
+      "score",
+      "venue",
+      "period scoring",
+      "attendance",
+      "Erik Ersberg saves and shutout",
+      "Anze Kopitar goal and two assists"
+    ],
+    "source_status": "Partial player box score verified; full event-by-event and skater-by-skater stats not yet imported",
+    "source_urls": [
+      "https://www.hockey-reference.com/boxscores/?day=27&month=3&year=2008",
+      "https://www.latimes.com/archives/la-xpm-2008-mar-28-sp-kings28-story.html",
+      "https://media.d3.nhle.com/image/private/t_document/prd/bhnpiwbdxzoqnjh9ssl0.pdf"
+    ],
+    "coach": {
+      "away": "Wayne Gretzky",
+      "home": "Marc Crawford"
+    },
+    "recap": "The Kings scored three goals in a six-minute second-period burst before adding one in the third, blanking Phoenix 4–0 at STAPLES Center. Erik Ersberg stopped all 38 Coyotes shots for his second NHL shutout. Anže Kopitar broke a seven-game goal drought with his 30th goal of the season and contributed two assists. For Courtside Archive, this is the first NHL game logged and a shutout witnessed in person.",
+    "players": [
+      {
+        "id": "erik-ersberg",
+        "name": "Erik Ersberg",
+        "team": "Los Angeles Kings",
+        "position": "G",
+        "games": 1,
+        "goalie": {
+          "shots_against": 38,
+          "saves": 38,
+          "goals_against": 0,
+          "save_pct": 1,
+          "shutouts": 1,
+          "wins": 1,
+          "losses": 0,
+          "minutes": "60:00"
+        },
+        "notables": [
+          "38-save shutout",
+          "Second NHL shutout of the season"
+        ],
+        "verified": true
+      },
+      {
+        "id": "anze-kopitar",
+        "name": "Anže Kopitar",
+        "team": "Los Angeles Kings",
+        "position": "C",
+        "games": 1,
+        "skater": {
+          "goals": 1,
+          "assists": 2,
+          "points": 3
+        },
+        "notables": [
+          "30th goal of 2007–08 season",
+          "One goal and two assists"
+        ],
+        "verified": true
+      }
+    ]
+  }
+]

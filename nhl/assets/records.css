@@ -1,0 +1,60 @@
+/* NHL record book parity with the other pro-sport Records pages. */
+body[data-page="records"] main{width:min(1160px,calc(100% - 36px));padding-bottom:80px}
+body[data-page="records"] #app{padding-top:0}
+body[data-page="records"] .archive-header{display:flex;align-items:center;justify-content:space-between;gap:17px;flex-wrap:wrap;padding:23px 0;background:#eaf6fc;border-bottom:1px solid #c5e3ef}
+body[data-page="records"] .archive-logo{font-size:17px;line-height:1.1;font-weight:900;letter-spacing:.035em;text-decoration:none;color:#831738}
+body[data-page="records"] .archive-logo small{display:block;font-size:9px;letter-spacing:.15em;margin-top:5px;color:#566879}
+body[data-page="records"] .archive-nav{display:flex;align-items:center;flex-wrap:wrap;gap:5px}
+body[data-page="records"] .archive-nav a{color:#831738;text-decoration:none;font-size:13px;font-weight:750;padding:10px 13px;border-radius:7px}
+body[data-page="records"] .archive-nav a:hover,body[data-page="records"] .archive-nav a[aria-current="page"]{background:#d9f0fa}
+body[data-page="records"] .back-link{font-size:12px;font-weight:750;text-decoration:none;white-space:nowrap}
+.nhl-records-page{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;color:#192e43}
+.nhl-rec-hero{margin:42px 0 24px}
+.nhl-rec-eyebrow{font-size:11px;font-weight:850;letter-spacing:.14em;color:#831738}
+.nhl-rec-hero h1{font:850 clamp(35px,5.6vw,62px)/1.1 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:-.052em;color:#192e43;margin:9px 0 12px}
+.nhl-rec-hero p{max-width:810px;font-size:15px;line-height:1.65;color:#566879;margin:0 0 12px}
+.nhl-rec-coverage,.nhl-rec-caption{font-size:12px;color:#566879;line-height:1.6}
+.nhl-rec-tabs,.nhl-rec-subtabs{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0 18px}
+.nhl-rec-tabs button,.nhl-rec-subtabs button{font:750 13px/1.35 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;border:1px solid #c5e3ef;background:#eaf6fc;color:#831738;border-radius:8px;padding:11px 15px;cursor:pointer}
+.nhl-rec-tabs button:hover,.nhl-rec-subtabs button:hover{background:#d9f0fa}
+.nhl-rec-tabs button[aria-selected="true"],.nhl-rec-subtabs button[aria-pressed="true"]{background:#831738;color:white;border-color:#831738}
+.nhl-rec-subtabs button{padding:9px 13px}
+.nhl-rec-tabpanel[hidden]{display:none!important}
+.nhl-rec-heading{display:flex;align-items:baseline;gap:14px;justify-content:space-between;flex-wrap:wrap;margin:29px 0 8px}
+.nhl-rec-heading h2{font:800 clamp(23px,3vw,30px)/1.18 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:-.035em;margin:0;color:#192e43}
+.nhl-rec-heading span{color:#566879;font-size:12px}
+.nhl-rec-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:15px 0 23px}
+.nhl-rec-card{min-width:0;background:#fff;border:1px solid #d4e1e9;border-radius:13px;padding:19px;display:flex;flex-direction:column;gap:8px}
+.nhl-rec-card>span,.nhl-rec-moment>span{font-size:11px;font-weight:850;letter-spacing:.08em;color:#566879;text-transform:uppercase}
+.nhl-rec-card>strong{font-size:32px;line-height:1.12;font-weight:850;letter-spacing:-.03em;color:#831738;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.nhl-rec-owner{font-size:13px;line-height:1.5;font-weight:750;color:#192e43;overflow-wrap:anywhere}
+.nhl-rec-card small,.nhl-rec-moment small{font-size:12px;color:#566879}
+.nhl-rec-card a,.nhl-rec-moment a{font-size:12px;font-weight:800;color:#831738;text-decoration:none}
+.nhl-rec-card a:hover,.nhl-rec-moment a:hover{text-decoration:underline}
+.nhl-rec-panel{background:#fff;border:1px solid #d4e1e9;border-radius:14px;padding:23px;margin:19px 0;min-width:0}
+.nhl-rec-panel h2{font:800 23px/1.25 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:-.035em;color:#192e43;margin:0 0 8px}
+.nhl-rec-panel p{font-size:13px;color:#566879;line-height:1.65;margin:0 0 19px}
+.nhl-rec-filter{display:flex;flex-wrap:wrap;align-items:end;gap:16px;margin:14px 0 17px}
+.nhl-rec-filter label{display:flex;flex-direction:column;gap:7px;font-weight:750;font-size:12px;color:#566879}
+.nhl-rec-filter select{font:inherit;min-width:210px;max-width:100%;padding:11px 13px;border:1px solid #c5dce9;color:#192e43;background:#fff;border-radius:9px}
+.nhl-rec-scroll{overflow-x:auto;border:1px solid #d4e1e9;border-radius:11px;max-width:100%}
+.nhl-rec-scroll table{min-width:730px;width:100%;border-collapse:collapse;font-size:13px}
+.nhl-rec-scroll th{background:#eaf6fc;font-size:11px;color:#34516a;font-weight:850;text-transform:uppercase;letter-spacing:.07em}
+.nhl-rec-scroll th,.nhl-rec-scroll td{padding:12px 11px;text-align:left;white-space:nowrap;border-bottom:1px solid #e2ebf1}
+.nhl-rec-scroll tbody tr:nth-child(even){background:#f6fbfd}
+.nhl-rec-scroll tbody tr:last-child td{border-bottom:0}
+.nhl-rec-scroll td a{color:#831738;font-weight:800;text-decoration:none}
+.nhl-rec-scroll td a:hover{text-decoration:underline}
+.nhl-rec-highlight{color:#831738;font-weight:900}
+.nhl-rec-empty{text-align:center!important;color:#566879;padding:22px!important;white-space:normal!important}
+.nhl-rec-metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:19px 0}
+.nhl-rec-metric{border:1px solid #d4e1e9;background:#f8fbfd;border-radius:11px;padding:16px}
+.nhl-rec-metric strong{display:block;color:#831738;font-size:32px;font-weight:850;line-height:1.1}
+.nhl-rec-metric small{font-size:12px;display:block;color:#566879;margin-top:7px}
+.nhl-rec-pill{display:inline-flex;padding:6px 9px;border-radius:100px;border:1px solid #c5e3ef;background:#eaf6fc;color:#831738;font-weight:750;font-size:11px}
+.nhl-rec-moments{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.nhl-rec-moment{border:1px solid #d4e1e9;background:#f8fbfd;border-radius:12px;padding:17px;display:flex;flex-direction:column;gap:9px}
+.nhl-rec-moment strong{font-size:16px;color:#192e43;line-height:1.45}
+.nhl-rec-foot{color:#566879;font-size:12px;line-height:1.75;margin:26px 0}
+@media(max-width:830px){.nhl-rec-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:590px){body[data-page="records"] main{width:calc(100% - 26px)}.nhl-rec-grid,.nhl-rec-moments{grid-template-columns:1fr}.nhl-rec-panel{padding:16px}.nhl-rec-tabs button{padding:10px 12px}.nhl-rec-filter label,.nhl-rec-filter select{width:100%;min-width:0}.nhl-rec-metric{padding:13px}.nhl-rec-hero{margin-top:30px}}

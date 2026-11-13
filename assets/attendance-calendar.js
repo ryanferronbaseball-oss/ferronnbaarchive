@@ -1,4 +1,4 @@
-/* Historical attendance calendar — automatically indexes the eight archive datasets. */
+/* Historical attendance calendar — automatically indexes all nine archive datasets. */
 (()=>{'use strict';
  const root=document.getElementById('calendarGrid');if(!root)return;
  const months=['January','February','March','April','May','June','July','August','September','October','November','December'];
@@ -10,7 +10,8 @@
   {name:'Soccer',color:'#339b85',path:'./soccer/data/matches.json',url:'./soccer/game.html?id='},
   {name:'MLB',color:'#c89a35',path:'./mlb/data/attendance.json',url:'./mlb/game.html?id='},
   {name:'MiLB',color:'#3a92b7',path:'./milb/data/games.json',url:'./milb/game.html?id='},
-  {name:'College Baseball',color:'#658d4c',path:'./college-baseball/data/games.json',url:'./college-baseball/game.html?id='}
+  {name:'College Baseball',color:'#658d4c',path:'./college-baseball/data/games.json',url:'./college-baseball/game.html?id='},
+  {name:'NHL',color:'#6a689a',path:'./nhl/data/games.json',url:'./nhl/game.html?id='}
  ];
  const today=new Date();let year=today.getFullYear(),month=today.getMonth(),selected=null,filter='All',games=[],loaded=false;
  const byId=id=>document.getElementById(id),escape=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));

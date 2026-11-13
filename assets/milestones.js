@@ -1,7 +1,7 @@
 /* Chronological milestones across the same eight collections as the homepage total. */
 (()=>{'use strict';
  const target=document.getElementById('milestoneGrid');if(!target)return;
- const markers=[1,10,25,50,100,150,200,500];
+ const markers=[1,10,25,50,100,150,200,300,400,500,750];
  const escapeHTML=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
  const prettyDate=v=>new Date(v+'T12:00:00Z').toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric',timeZone:'UTC'});
  const json=async path=>{const r=await fetch(path);if(!r.ok)throw Error('Archive game list unavailable');return r.json()};

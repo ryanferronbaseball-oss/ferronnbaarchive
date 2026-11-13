@@ -50,8 +50,8 @@ footer{border-top:1px solid var(--border);padding:20px 0 40px;color:var(--muted)
 
 /* Verified hockey career achievement tags and coaching tenures. */
 .nhl-honors,.nhl-coach-stops{display:flex;flex-wrap:wrap;align-items:flex-start;gap:9px;margin:15px 0 20px}
-.nhl-honor{display:inline-flex;align-items:center;width:fit-content;border:1px solid #cfb77f;background:#fff7df;color:#644917!important;border-radius:8px;padding:7px 10px;font-weight:850;font-size:11px;line-height:1.45;text-decoration:none}
-a.nhl-honor:hover{background:#fff0c1;text-decoration:underline}
+.nhl-honor{display:inline-flex;align-items:center;width:fit-content;border:1px solid var(--ca-player-tag-border,#c5e3ef);background:var(--ca-player-tag-bg,#eaf6fc);color:var(--ca-player-green,#831738)!important;border-radius:8px;padding:7px 10px;font-weight:850;font-size:11px;line-height:1.45;text-decoration:none}
+a.nhl-honor:hover{background:var(--ca-player-green-hover,#d9f0fa);border-color:#aed8ec;text-decoration:underline}
 .nhl-coach-stop{display:inline-flex;align-items:center;padding:8px 11px;border-radius:20px;border:1px solid;font-size:12px;font-weight:800;line-height:1.45}
 .nhl-coach-stop.witnessed{background:#f6edf1;border-color:#e8cbd5;color:#792943}
 .nhl-coach-stop.unseen{background:#e5f5fb;border-color:#b9dff0;color:#155f86}
@@ -69,29 +69,22 @@ a.nhl-honor:hover{background:#fff0c1;text-decoration:underline}
 @media(max-width:660px){.nhl-stars{grid-template-columns:1fr}.nhl-table-wrap table{min-width:700px}}
 
 
+/* NHL badges follow shared Courtside player-palette.css: burgundy text and ice-blue fill.
+   Category meanings are conveyed by icon and label, not by rainbow colors.
+   Witnessed/unseen coaching-stop badges retain their separate red/blue status colors. */
 /* NHL career-accomplishment treatment consistent with NBA/NFL/MLB player profiles.
    Category badges sit directly under the player name; source-linked years
    appear in a dedicated Career Awards & Honors panel. */
 .nhl-profile-achievements{display:flex;flex-wrap:wrap;align-items:center;gap:7px;margin:13px 0 15px}
-.nhl-profile-badge{display:inline-flex;align-items:center;justify-content:center;min-height:27px;padding:6px 10px;border-radius:8px;border:1px solid #bdd2df;background:#e5f1f7;color:#24495f!important;text-decoration:none!important;font-size:11px;font-weight:850;letter-spacing:.035em;line-height:1.35;white-space:normal;max-width:100%}
-.nhl-profile-badge:hover{background:#d6eaf4;border-color:#91bbd0;text-decoration:underline!important}
-.nhl-profile-badge.hall{background:#fff1c9;border-color:#d8bc74;color:#6a4c1b!important}
-.nhl-profile-badge.otherhall{background:#f2edf6;border-color:#d6c4e1;color:#66517b!important}
-.nhl-profile-badge.stanley{background:#fff0d8;border-color:#dfbd84;color:#78501e!important}
-.nhl-profile-badge.award{background:#e7f2e8;border-color:#b2d0b5;color:#315e40!important}
-.nhl-profile-badge.allteam{background:#e7eafb;border-color:#c5cee5;color:#364c7d!important}
-.nhl-profile-badge.allstar{background:#f8eaf4;border-color:#e0bdd2;color:#783657!important}
-.nhl-profile-badge.retired{background:#ece6f5;border-color:#c9b8e0;color:#5c4178!important}
-.nhl-profile-badge.olympic{background:#f7ebd8;border-color:#d8c39e;color:#725329!important}
-.nhl-profile-badge.world{background:#e8f4f6;border-color:#bddce0;color:#33606b!important}
-.nhl-profile-badge.other{background:#f0f2f4;border-color:#c5cfd5;color:#526271!important}
+.nhl-profile-badge{display:inline-flex;align-items:center;justify-content:center;min-height:27px;padding:6px 10px;border-radius:8px;border:1px solid var(--ca-player-tag-border,#c5e3ef);background:var(--ca-player-tag-bg,#eaf6fc);color:var(--ca-player-green,#831738)!important;text-decoration:none!important;font-size:11px;font-weight:850;letter-spacing:.035em;line-height:1.35;white-space:normal;max-width:100%;transition:background-color .15s ease,border-color .15s ease}
+.nhl-profile-badge:hover{background:var(--ca-player-green-hover,#d9f0fa);border-color:#aed8ec;text-decoration:underline!important}
 .nhl-career-honors{scroll-margin-top:26px}
 .nhl-honor-group{margin-top:22px;padding-top:19px;border-top:1px solid #e2eaf0;scroll-margin-top:28px}
 .nhl-honor-group h3{margin:0 0 12px;font-size:20px;line-height:1.3}
 .nhl-honor-tags{display:flex;flex-wrap:wrap;gap:8px}
-.nhl-honor-tags .nhl-honor{display:inline-flex;gap:8px;flex-wrap:wrap;align-items:center;background:#f5f9fc;border:1px solid #d4e5ee;color:#29465b!important;font-size:12px;padding:9px 12px;border-radius:8px;font-weight:750;text-decoration:none;line-height:1.5}
-.nhl-honor-tags .nhl-honor:hover{background:#e9f5fc;text-decoration:underline}
-.nhl-honor-years{font-size:11px;font-weight:850;color:#7b3150;border-left:1px solid #cddde7;padding-left:8px}
+.nhl-honor-tags .nhl-honor{display:inline-flex;gap:8px;flex-wrap:wrap;align-items:center;background:var(--ca-player-tag-bg,#eaf6fc);border:1px solid var(--ca-player-tag-border,#c5e3ef);color:var(--ca-player-green,#831738)!important;font-size:12px;padding:9px 12px;border-radius:8px;font-weight:750;text-decoration:none;line-height:1.5}
+.nhl-honor-tags .nhl-honor:hover{background:var(--ca-player-green-hover,#d9f0fa);border-color:#aed8ec;text-decoration:underline}
+.nhl-honor-years{font-size:11px;font-weight:850;color:var(--ca-player-green,#831738);border-left:1px solid var(--ca-player-tag-border,#c5e3ef);padding-left:8px}
 .nhl-honor-group:target{background:#f1f8fb;border:1px solid #cbdfea;border-radius:12px;padding:18px;margin-left:-8px;margin-right:-8px}
 @media(max-width:610px){.nhl-profile-achievements{gap:6px}.nhl-profile-badge{font-size:10px;padding:6px 8px}.nhl-honor-tags{flex-direction:column;align-items:flex-start}.nhl-honor-years{border-left:0;padding-left:0}}
 
@@ -101,7 +94,7 @@ a.nhl-honor:hover{background:#fff0c1;text-decoration:underline}
 .nhl-hof-card h2{font-size:29px;margin:8px 0}.nhl-hof-card h2 a{color:#192e43;text-decoration:none}
 .nhl-hof-card h2 a:hover{color:#831738;text-decoration:underline}
 .nhl-hof-card p{font-size:12px;color:#566879}
-.nhl-hof-mini{display:inline-flex;padding:7px 9px;border-radius:8px;background:#fff2d5;border:1px solid #dfc696;color:#745126;font-weight:750;font-size:11px}
+.nhl-hof-mini{display:inline-flex;padding:7px 9px;border-radius:8px;background:var(--ca-player-tag-bg,#eaf6fc);border:1px solid var(--ca-player-tag-border,#c5e3ef);color:var(--ca-player-green,#831738);font-weight:750;font-size:11px}
 .nhl-hof-links{display:flex;flex-wrap:wrap;gap:16px}.nhl-hof-links a{font-size:12px;font-weight:850}
 .nhl-coach-achievements{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}
 @media(max-width:650px){.nhl-hof-grid{grid-template-columns:1fr}}

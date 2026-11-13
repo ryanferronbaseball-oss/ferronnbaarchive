@@ -213,6 +213,6 @@ init().catch(err=>{
  byId('year-shelf-grid').innerHTML='<p class="empty">The annual editions could not be loaded. '+esc(err.message)+' Please refresh to retry.</p>';
  byId('edition-title').textContent='Yearbook temporarily unavailable';
  byId('games-list').innerHTML='<p class="empty">The yearly game log was not loaded.</p>';
- byId('yearbook-data-note').textContent='The Yearbook requires the game logs from all eight sports to load successfully; incomplete counts are not shown.';
+ byId('yearbook-data-note').textContent='The Yearbook requires the game logs from all nine sports to load successfully; incomplete counts are not shown.';
 });
 })();

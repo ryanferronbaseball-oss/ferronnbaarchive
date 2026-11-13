@@ -142,7 +142,7 @@ async function college(){
     ...Prime.list(a.conference_poy,6,'Conference Player of the Year',x=>x.season||x.year),
     ...Prime.list(a.conference_dpoy,5,'Conference Defensive POY',x=>x.season||x.year),
     ...(a.all_conference||[]).map(x=>Prime.signal(x.season||x.year,x.team===1?4:2,'All-Conference '+(x.team===1?'First Team':'Team'))),
-    ...Prime.list(a.ncaa_champion,1,'NCAA champion',x=>x.year)
+    ...[] // Team titles are excluded: they do not prove an individual prime.
    ];
    return recognized(r.player,id,'../college/player.html?id='+encodeURIComponent(id),r.team,awards,evidence);
   });
@@ -313,7 +313,7 @@ function draw(){
    ?'<div><strong>'+g.primePlayers+'</strong><small>Prime-era players</small></div><div><strong>'+g.primeMeasured+'/'+g.count+'</strong><small>Dated evidence</small></div><div><strong>'+(g.primeMeasured?g.primeIndex.toFixed(1):'—')+'</strong><small>Prime Era Index</small></div>'
    :'<div><strong>'+g.count+'</strong><small>Recognized players</small></div><div><strong>'+g.legends+'</strong><small>Marquee players</small></div><div><strong>'+g.index+'</strong><small>Career Star Power Index</small></div>';
   const line=p=>'<li><a href="'+esc(p.link)+'">'+esc(p.name)+'</a><small>'
-   +(lens==='prime'?primeTierLabel(p)+'<span class="prime-context">'+esc(p.prime?.detail||'Undated career recognition')+'</span>':esc(p.tag))
+   +(lens==='prime'?primeTierLabel(p)+'<span class="prime-context">'+(p.prime?.assessed?esc(p.prime.score)+'/100 · ':'')+esc(p.prime?.detail||'Undated career recognition')+'</span>':esc(p.tag))
    +'</small></li>';
   return '<article class="star-card"><div class="card-top"><span class="rank">#'+String(i+1).padStart(2,'0')+'</span><span class="sport">'+esc(g.sport)+'</span></div>'
    +'<h3>'+esc(g.away)+' <span aria-label="versus">vs.</span> '+esc(g.home)+'</h3>'

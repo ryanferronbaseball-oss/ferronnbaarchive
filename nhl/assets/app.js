@@ -14,7 +14,8 @@
  const linkPlayer=p=>'./player.html?id='+encodeURIComponent(p.id);
  const playerAnchor=p=>'<a href="'+linkPlayer(p)+'">'+esc(p.name)+'</a>';
  const honorTypes=[
-  {key:'hall',name:'Hall of Fame',badge:'★ HALL OF FAME',mark:'★'},
+  {key:'hall',name:'Hockey Hall of Fame',badge:'★ HALL OF FAME',mark:'★'},
+  {key:'otherhall',name:'National & IIHF Hockey Halls',badge:'★ OTHER HOCKEY HALLS',mark:'★'},
   {key:'stanley',name:'Stanley Cup championships',badge:'🏆 STANLEY CUP',mark:'🏆'},
   {key:'award',name:'NHL individual awards',badge:'◆ NHL AWARDS',mark:'◆'},
   {key:'allteam',name:'NHL All-Star & All-Rookie Teams',badge:'◆ ALL-STAR TEAMS',mark:'◆'},
@@ -27,7 +28,8 @@
  const categorizeAward=a=>{
   if(a.category)return a.category;
   if(/Stanley Cup/i.test(a.title))return 'stanley';
-  if(/Hall of Fame/i.test(a.title))return 'hall';
+  if(a.title==='Hockey Hall of Fame')return 'hall';
+  if(/Hall of Fame/i.test(a.title))return 'otherhall';
   if(/retired/i.test(a.title))return 'retired';
   if(/All-Star Game/i.test(a.title))return 'allstar';
   if(/All-Star Team|All-Rookie Team/i.test(a.title))return 'allteam';

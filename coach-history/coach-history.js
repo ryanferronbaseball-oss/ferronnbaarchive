@@ -45,10 +45,46 @@ const franchiseKey=s=>{const n=norm(s).replace(/^los angeles /,'la ').replace(/^
 const mlbFranchise=s=>{const n=norm(s);if(n.includes('angels'))return 'angels';if(n.includes('marlins'))return 'marlins';if(n.includes('indians')||n.includes('guardians'))return 'cleveland';if(n.includes('devil rays')||n.includes('tampa bay rays'))return 'rays';if(n.includes('athletics'))return 'athletics';if(n.includes('expos')||n.includes('nationals'))return 'nationals';if(n.includes('diamondbacks'))return 'diamondbacks';if(n.includes('brewers'))return 'brewers';return n};
 const collegeKey=s=>norm(s).replace(/\bstate\b/g,'st').replace(/\bsaint\b/g,'st').replace(/\buniversity\b/g,'').replace(/\bcalifornia\b/g,'cal').trim();
 const coachTeamName=s=>s==='Cal State Northrdige'?'Cal State Northridge':s;
-function headCoachingStops(c){const stops=(c.sports.includes('NBA')?nbaStops[c.name]:null)||(c.sports.includes('NFL')?nflStops[c.name]:null)||(c.sports.includes('MLB')?mlbStops[c.name]:null)||(c.sports.includes('MiLB')?milbStops[c.name]:null)||(c.sports.includes('College Basketball')?collegeStops[c.name]:null)||(c.sports.includes('College Football')?collegeFootballStops[c.name]:null)||(c.sports.includes('College Baseball')?collegeBaseballStops[c.name]:null)||(c.sports.includes('Soccer')?soccerStops[c.name]:null);if(!stops)return null;
- return stops.map(([team,years])=>{const dates=years.match(/\d{4}/g)||[];const start=Number(dates[0]||0),end=years.includes('present')?9999:Number(dates.at(-1)||start)+(c.sports.includes('College Basketball')&&dates.length===1?1:0);
- const witnessed=c.rows.some(r=>(r.sport==='NBA'||r.sport==='NFL'||r.sport==='MLB'||r.sport==='MiLB'||r.sport==='College Basketball'||r.sport==='College Football'||r.sport==='College Baseball'||r.sport==='Soccer')&&(r.sport==='NBA'?franchiseKey(r.team)===franchiseKey(team):r.sport==='MLB'?mlbFranchise(r.team)===mlbFranchise(team):r.sport==='College Basketball'||r.sport==='College Football'||r.sport==='College Baseball'?collegeKey(r.team).startsWith(collegeKey(team))||collegeKey(team).startsWith(collegeKey(r.team)):norm(r.team)===norm(team))&&Number(r.date.slice(0,4))>=start&&Number(r.date.slice(0,4))<=end);
- return `<span class="stop-badge ${witnessed?'witnessed':'unseen'}" title="${witnessed?'Witnessed in Courtside Archive':'Not witnessed in Courtside Archive'}">${esc(team)} · ${esc(years)}</span>`}).join('');
+function headCoachingStops(c){
+ // A coach can lead teams in more than one sport (e.g. Musselman in the NBA
+ // and NCAA). The former first-truthy lookup hid every career stop after NBA.
+ // Also use the unfiltered attendance rows on sport-specific coach pages so
+ // colors reflect every level actually witnessed, not just the current tab.
+ const fullCoach=allCoaches.find(person=>person.id===c.id)||c;
+ const basketballCareer=c.sports.some(s=>s==='NBA'||s==='College Basketball');
+ const catalogs=[
+  ['NBA',nbaStops],['College Basketball',collegeStops],
+  ['NFL',nflStops],['College Football',collegeFootballStops],
+  ['MLB',mlbStops],['College Baseball',collegeBaseballStops],
+  ['MiLB',milbStops],['Soccer',soccerStops]
+ ];
+ const collections=catalogs.filter(([sport,source])=>
+  (c.sports.includes(sport)||(basketballCareer&&(sport==='NBA'||sport==='College Basketball')))
+  &&Array.isArray(source[c.name])&&source[c.name].length);
+ const multiLevel=collections.length>1;
+ const stops=[];
+ for(const [sport,source] of collections)for(const [team,years] of source[c.name]){
+  const dates=String(years).match(/\d{4}/g)||[];
+  const start=Number(dates[0]||0);
+  const end=String(years).toLowerCase().includes('present')?9999:
+   Number(dates.at(-1)||start)+(sport==='College Basketball'&&dates.length===1?1:0);
+  const witnessed=fullCoach.rows.some(r=>{
+   if(r.sport!==sport)return false;
+   const matches=sport==='NBA'?franchiseKey(r.team)===franchiseKey(team):
+    sport==='MLB'?mlbFranchise(r.team)===mlbFranchise(team):
+    ['College Basketball','College Football','College Baseball'].includes(sport)?
+      (collegeKey(r.team).startsWith(collegeKey(team))||collegeKey(team).startsWith(collegeKey(r.team))):
+      norm(r.team)===norm(team);
+   const year=Number(r.date.slice(0,4));
+   return matches&&year>=start&&year<=end;
+  });
+  const sportLabel=multiLevel?(sport==='College Basketball'?'NCAA':sport)+' · ':'';
+  stops.push({start,sport,team,html:`<span class="stop-badge ${witnessed?'witnessed':'unseen'}" title="${witnessed?'Witnessed in Courtside Archive':'Not witnessed in Courtside Archive'}">${esc(sportLabel+team)} · ${esc(years)}</span>`});
+ }
+ // Head coaching history follows career chronology, rather than source-file
+ // precedence. Repeated teams in distinct tenures remain distinct badges.
+ stops.sort((a,b)=>a.start-b.start||a.team.localeCompare(b.team));
+ return stops.length?stops.map(stop=>stop.html).join(''):null;
 }
 const enriched=c=>{c.rows.sort((a,b)=>a.date.localeCompare(b.date)||a.sport.localeCompare(b.sport));c.games=c.rows.length;c.wins=c.rows.filter(r=>r.result==='W').length;c.losses=c.rows.filter(r=>r.result==='L').length;c.ties=c.rows.filter(r=>r.result==='T').length;c.decisions=c.wins+c.losses;c.pct=c.decisions?c.wins/c.decisions:0;c.sports=[...new Set(c.rows.map(r=>r.sport))];c.teams=[...new Set(c.rows.map(r=>r.team))];c.sources=new Set(c.rows.map(r=>r.source));return c};
 async function fetchData(){

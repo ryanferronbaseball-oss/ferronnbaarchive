@@ -1,4 +1,4 @@
-/* Chronological milestones across the same eight collections as the homepage total. */
+/* Chronological milestones across all nine collections, including NHL. */
 (()=>{'use strict';
  const target=document.getElementById('milestoneGrid');if(!target)return;
  const markers=[1,10,25,50,100,150,200,300,400,500,750];
@@ -17,7 +17,8 @@
   ['Soccer','./soccer/data/matches.json',json,'./soccer/game.html?id='],
   ['MLB','./mlb/data/attendance.json',json,'./mlb/game.html?id='],
   ['MiLB','./milb/data/games.json',json,'./milb/game.html?id='],
-  ['College Baseball','./college-baseball/data/games.json',json,'./college-baseball/game.html?id=']
+  ['College Baseball','./college-baseball/data/games.json',json,'./college-baseball/game.html?id='],
+  ['NHL','./nhl/data/games.json',json,'./nhl/game.html?id=']
  ];
  Promise.all(sources.map(async ([sport,path,loader,prefix],sourceIndex)=>{
   const records=await loader(path);

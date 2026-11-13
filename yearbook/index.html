@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#192e43">
+<meta name="description" content="Courtside Archive Yearbook: explore each calendar year of games personally attended across eight sports, with annual stats, teams, stadiums and game histories.">
+<title>Courtside Yearbook | Courtside Archive</title>
+<link rel="stylesheet" href="./yearbook.css?v=20261113-1">
+<script defer src="./yearbook.js?v=20261113-1"></script>
+</head>
+<body>
+<a class="skip-link" href="#year-shelf">Skip to the yearbooks</a>
+<div class="site-wrap">
+<header class="site-header">
+  <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">CA</span><span>COURTSIDE ARCHIVE<small>EVERY GAME HAS A STORY</small></span></a>
+  <nav class="site-nav" aria-label="Site navigation">
+    <a href="../index.html">← Home</a>
+    <a href="./index.html" aria-current="page">Yearbook</a>
+    <a href="../museum/index.html">Museum</a>
+    <a href="../champions/index.html">Champions</a>
+    <a href="../coach-history/index.html">Coaches</a>
+  </nav>
+</header>
+<main>
+<section class="yearbook-hero" aria-labelledby="page-title">
+ <div class="hero-copy">
+  <div class="eyebrow">The personal attendance collection · Annual editions</div>
+  <h1 id="page-title">The Courtside<br><em>Yearbook.</em></h1>
+  <p>One calendar year at a time. Follow the teams, venues, seasons and moments that made each chapter of your sports history yours.</p>
+  <a class="hero-cta" href="#year-shelf">Open a year <span aria-hidden="true">↘</span></a>
+ </div>
+ <div class="hero-stamp"><span>THE COLLECTION</span><strong id="hero-years">—</strong><span>YEARS IN THE ARCHIVE</span><small id="hero-range">Loading the annual editions</small></div>
+</section>
+<section class="shelf-section" id="year-shelf" aria-labelledby="shelf-title">
+ <div class="section-heading"><div><div class="eyebrow muted-eyebrow">Choose your chapter</div><h2 id="shelf-title">The annual editions</h2></div><p>Each edition is built from the games you attended, not the entire season schedule.</p></div>
+ <div id="year-shelf-grid" class="year-shelf-grid" aria-label="Select a calendar year"><p class="loading">Loading annual attendance editions…</p></div>
+ <p class="data-footnote" id="yearbook-data-note">Data updates automatically from the eight sports collections.</p>
+</section>
+<section class="edition-section" id="year-detail" aria-labelledby="edition-title">
+ <div class="edition-header">
+  <div><div class="eyebrow muted-eyebrow">Your year in sports</div><h2 id="edition-title">Loading the yearbook…</h2></div>
+  <div class="edition-pager">
+   <button type="button" id="prev-year" aria-label="Previous year">← Previous</button>
+   <button type="button" id="next-year" aria-label="Next year">Next →</button>
+  </div>
+ </div>
+ <div class="metrics-grid" id="year-metrics" aria-label="Year at a glance"></div>
+ <div class="edition-columns">
+  <section class="year-panel" aria-labelledby="sports-title"><h3 id="sports-title">The sports you saw</h3><div id="sport-breakdown"></div></section>
+  <section class="year-panel" aria-labelledby="monthly-title"><h3 id="monthly-title">The calendar</h3><div id="month-bars"></div></section>
+ </div>
+ <div class="edition-columns">
+  <section class="year-panel" aria-labelledby="teams-title"><h3 id="teams-title">Most-watched teams</h3><div id="team-leaders"></div></section>
+  <section class="year-panel" aria-labelledby="venues-title"><h3 id="venues-title">Most-visited venues</h3><div id="venue-leaders"></div></section>
+ </div>
+ <section class="memories-panel" aria-labelledby="memories-title"><div class="section-heading compact"><div><div class="eyebrow muted-eyebrow">The stories</div><h3 id="memories-title">Moments from the year</h3></div><a href="../museum/index.html#greatest-games">Visit Greatest Games ↗</a></div><div id="year-memories" class="memories-grid"></div></section>
+ <section class="games-section" aria-labelledby="games-title">
+  <div class="section-heading compact"><div><div class="eyebrow muted-eyebrow">Every entry, in order</div><h3 id="games-title">The games you attended</h3></div><span class="games-count" id="games-count"></span></div>
+  <div class="game-controls">
+   <label>Sport<select id="filter-sport"><option value="all">All sports</option></select></label>
+   <label>Find a game<input id="filter-query" type="search" placeholder="Team, stadium, date…" autocomplete="off"></label>
+   <label>Order<select id="filter-order"><option value="oldest">Oldest first</option><option value="newest">Newest first</option></select></label>
+  </div>
+  <div id="games-list" class="games-list" aria-live="polite"><p class="loading">Loading game history…</p></div>
+ </section>
+</section>
+</main>
+<footer class="site-footer"><span>COURTSIDE ARCHIVE YEARBOOK <small>Every year has a story, too.</small></span><a href="../index.html">Return to overview ↑</a></footer>
+</div>
+</body>
+</html>

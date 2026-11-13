@@ -236,7 +236,7 @@ function draw(){
   +'<p class="meta">'+esc(fmt(g.date))+(g.venue?' · '+esc(g.venue):'')+'</p>'
   +'<div class="scoreline"><div><strong>'+g.count+'</strong><small>Recognized players</small></div><div><strong>'+g.legends+'</strong><small>HOF / top honorees</small></div><div><strong>'+g.index+'</strong><small>Star Power Index</small></div></div>'
   +'<ul class="star-list">'+g.stars.slice(0,7).map(p=>'<li><a href="'+esc(p.link)+'">'+esc(p.name)+'</a><small>'+esc(p.tag)+'</small></li>').join('')+'</ul>'
-  +(g.stars.length>7?'<p class="star-more">+'+(g.stars.length-7)+' more recognized '+(g.stars.length-7===1?'player':'players')+'</p>':'')
+  +(g.stars.length>7?'<details class="star-extra"><summary>Show '+(g.stars.length-7)+' more recognized '+(g.stars.length-7===1?'player':'players')+'</summary><ul class="star-list">'+g.stars.slice(7).map(p=>'<li><a href="'+esc(p.link)+'">'+esc(p.name)+'</a><small>'+esc(p.tag)+'</small></li>').join('')+'</ul></details>':'')
   +'<div class="card-footer"><span>'+esc(g.date)+' · '+esc(g.sport)+'</span><a href="'+esc(g.url)+'">Open game ↗</a></div></article>').join('')
   +(count>expanded?'<button class="load-more" id="moreStars" type="button">Show more games ('+(count-expanded)+' remaining)</button>':'')
   ||'<div class="empty">No qualifying games match these filters. Try a different sport or search term.</div>';

@@ -1,0 +1,95 @@
+:root{--burgundy:#831738;--burgundy-dark:#60112e;--navy:#192e43;--ice:#d9f0fa;--ink:#192e43;--muted:#566879;--border:#d4e1e9;--paper:#f8fbfd;--white:#fff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55}
+button,input,select{font:inherit}button{cursor:pointer}a{color:var(--burgundy)}a:hover{text-decoration-thickness:2px}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #3f93ba;outline-offset:3px}
+.site-wrap{width:min(1150px,calc(100% - 44px));margin:auto}
+.skip-link{position:absolute;left:-10000px;top:12px;background:var(--burgundy);color:white;padding:10px 15px;z-index:99}
+.skip-link:focus{left:12px}
+.site-header{display:flex;gap:18px;justify-content:space-between;align-items:center;padding:21px 0;border-bottom:1px solid var(--border);flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px;color:var(--navy);text-decoration:none;font-size:16px;font-weight:900;letter-spacing:.055em;line-height:1.07}
+.brand small{display:block;font-size:9px;letter-spacing:.17em;font-weight:800;color:var(--muted);margin-top:5px}
+.brand-mark{width:42px;height:42px;border-radius:12px;background:var(--ice);border:1px solid #b9dceb;color:var(--burgundy);display:grid;place-items:center;font:850 16px Georgia,serif;letter-spacing:0}
+.site-nav{display:flex;gap:5px;flex-wrap:wrap}.site-nav a{text-decoration:none;color:var(--navy);font-size:12px;font-weight:800;padding:9px 12px;border-radius:9px}
+.site-nav a:hover,.site-nav a[aria-current="page"]{background:var(--ice);color:var(--burgundy)}
+.yearbook-hero{background:linear-gradient(125deg,#142b43,#372238 74%,#53172f);color:#fff;border-radius:22px;margin:34px 0 50px;padding:clamp(29px,5vw,56px);display:grid;grid-template-columns:minmax(0,1fr) 195px;gap:35px;align-items:center;min-height:310px;overflow:hidden;position:relative}
+.yearbook-hero:before{content:"";position:absolute;right:-108px;top:-155px;height:360px;width:360px;border:1px solid #a6c9dd55;border-radius:50%;box-shadow:0 0 0 42px #bde3f509,0 0 0 95px #bde3f506;pointer-events:none}
+.hero-copy{position:relative;z-index:1}.eyebrow{text-transform:uppercase;letter-spacing:.175em;font-size:10px;font-weight:850;color:#bde3f5}.muted-eyebrow{color:var(--burgundy)}
+h1,h2,h3,h4,p{overflow-wrap:break-word}
+h1{font:normal clamp(41px,6vw,70px)/1.06 Georgia,serif;letter-spacing:-.052em;margin:15px 0 17px;color:#fff}
+h1 em{font-style:italic;color:#bde3f5}
+.yearbook-hero p{font-size:15px;line-height:1.75;color:#d9e6ef;max-width:645px;margin:0}
+.hero-cta{display:inline-flex;gap:15px;align-items:center;padding:12px 17px;background:#bde3f5;color:#40172a;text-decoration:none;border-radius:9px;font-size:12px;font-weight:850;margin-top:25px}
+.hero-cta:hover{background:#fff}
+.hero-stamp{height:175px;width:175px;border-radius:50%;border:1px solid #98bbd2;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;z-index:1;text-align:center}
+.hero-stamp span{font-size:9px;letter-spacing:.12em;font-weight:800;color:#d0e4ee}
+.hero-stamp strong{font:normal 66px/1 Georgia,serif;letter-spacing:-.05em;color:#fff}
+.hero-stamp small{font-size:10px;color:#b7d7e7;max-width:140px}
+.shelf-section{padding-bottom:45px;border-bottom:1px solid var(--border)}
+.section-heading{display:flex;align-items:end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin:0 0 22px}
+.section-heading h2,.edition-header h2{font:normal clamp(29px,4vw,39px)/1.12 Georgia,serif;letter-spacing:-.04em;margin:7px 0 0;color:var(--navy)}
+.section-heading p{font-size:13px;max-width:430px;color:var(--muted);line-height:1.6;margin:0}
+.year-shelf-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.year-tile{padding:16px 17px;border-radius:13px;border:1px solid var(--border);background:var(--white);display:flex;flex-direction:column;text-align:left;min-height:113px;gap:5px;color:var(--ink);box-shadow:0 2px 8px #192e4308}
+.year-tile strong{font:normal 33px/1.1 Georgia,serif;letter-spacing:-.045em;color:var(--navy)}
+.year-tile span{font-size:11px;color:var(--muted);font-weight:750}
+.year-tile small{font-size:10px;color:#6a8290}
+.year-tile:hover{border-color:#ad8192;background:#fff9fb}
+.year-tile[aria-pressed="true"]{background:var(--burgundy);border-color:var(--burgundy);box-shadow:0 8px 22px #83173826}
+.year-tile[aria-pressed="true"] strong,.year-tile[aria-pressed="true"] span,.year-tile[aria-pressed="true"] small{color:#fff}
+.data-footnote{font-size:11px;line-height:1.65;color:var(--muted);margin:16px 0 0}
+.edition-section{padding:45px 0 65px;scroll-margin-top:18px}
+.edition-header{display:flex;justify-content:space-between;align-items:end;gap:17px;flex-wrap:wrap;margin-bottom:22px}
+.edition-pager{display:flex;gap:7px}
+.edition-pager button{background:#eaf6fc;border:1px solid #c2deeb;color:var(--burgundy);border-radius:9px;padding:10px 13px;font-size:12px;font-weight:850}
+.edition-pager button:hover:not(:disabled){background:#d7edf9}
+.edition-pager button:disabled{opacity:.4;cursor:not-allowed}
+.metrics-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:18px}
+.metric{background:#fff;border:1px solid var(--border);border-radius:14px;padding:19px}
+.metric strong{display:block;color:var(--burgundy);font:normal clamp(29px,4vw,42px)/1.1 Georgia,serif;letter-spacing:-.045em;font-variant-numeric:tabular-nums}
+.metric span{display:block;color:var(--muted);margin-top:7px;font-size:11px;letter-spacing:.1em;font-weight:850;text-transform:uppercase}
+.edition-columns{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.year-panel{background:white;border:1px solid var(--border);border-radius:16px;padding:24px;min-width:0}
+.year-panel h3,.memories-panel h3,.games-section h3{font:normal clamp(23px,2.7vw,29px) Georgia,serif;letter-spacing:-.036em;margin:0 0 20px;color:var(--navy)}
+.bar-row{display:grid;grid-template-columns:minmax(95px,140px) minmax(0,1fr) 38px;gap:10px;align-items:center;margin:11px 0;font-size:12px;color:#435b70}
+.bar-row .bar-label{font-weight:750;overflow-wrap:anywhere}
+.bar-track{height:10px;border-radius:25px;background:#e8f0f5;overflow:hidden}
+.bar-fill{height:100%;background:var(--burgundy);border-radius:25px}
+.bar-row strong{text-align:right;color:var(--navy);font-size:12px;font-variant-numeric:tabular-nums}
+.leader-row{display:flex;align-items:start;justify-content:space-between;gap:14px;padding:12px 0;border-bottom:1px solid #e8eff3;font-size:13px}
+.leader-row:last-child{border-bottom:0}
+.leader-row span{font-weight:750;color:var(--ink)}
+.leader-row strong{white-space:nowrap;font-weight:850;color:var(--burgundy)}
+.mini-caption{font-size:11px;color:var(--muted);line-height:1.6;margin:12px 0 0}
+.memories-panel{margin:25px 0 38px}
+.section-heading.compact{margin-bottom:16px}
+.section-heading.compact h3{margin:7px 0 0}
+.section-heading.compact a{text-decoration:none;font-size:12px;font-weight:800}
+.memories-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+.memory-card{border-radius:14px;border:1px solid var(--border);background:#fff;padding:19px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.memory-card .memory-kind{font-size:10px;text-transform:uppercase;letter-spacing:.14em;font-weight:850;color:var(--burgundy)}
+.memory-card h4{font:normal 21px/1.22 Georgia,serif;letter-spacing:-.025em;margin:0;color:var(--navy)}
+.memory-card p{font-size:12px;line-height:1.6;color:var(--muted);margin:0}
+.memory-card a{font-weight:850;font-size:12px;text-decoration:none;margin-top:auto;padding-top:10px}
+.memory-card a:hover{text-decoration:underline}
+.games-section{padding-top:15px;border-top:1px solid var(--border)}
+.games-count{font-size:12px;color:var(--muted);font-weight:800}
+.game-controls{display:grid;grid-template-columns:minmax(130px,180px) minmax(200px,1fr) minmax(130px,160px);gap:12px;margin:17px 0 24px}
+.game-controls label{display:grid;gap:6px;color:#4f6576;font-weight:850;font-size:11px}
+.game-controls input,.game-controls select{padding:11px 12px;border:1px solid #c7dce8;border-radius:9px;background:#fff;color:var(--ink);font-size:13px;min-width:0;width:100%}
+.month-heading{font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.14em;color:var(--burgundy);border-bottom:1px solid #dce8ef;padding:8px 0 12px;margin:24px 0 9px}
+.game-item{display:grid;grid-template-columns:100px minmax(0,1fr) minmax(120px,210px) auto;gap:15px;align-items:center;border-bottom:1px solid #e4ecf1;padding:15px 7px}
+.game-item time{font-size:12px;font-weight:850;color:#3e566a}
+.game-item .game-sport{display:block;text-transform:uppercase;letter-spacing:.09em;color:#7d2846;font-size:9px;font-weight:850;margin-bottom:5px}
+.game-item .game-matchup{display:block;font-size:13px;font-weight:850;color:var(--navy);line-height:1.4}
+.game-item .game-result{font-size:12px;color:var(--muted);font-weight:650;margin-top:4px;display:block}
+.game-item .game-venue{font-size:12px;color:var(--muted);line-height:1.45}
+.game-item .game-link{color:var(--burgundy);font-size:12px;font-weight:850;text-decoration:none;white-space:nowrap}
+.game-item .game-link:hover{text-decoration:underline}
+.game-item .museum-flag{font-size:10px;color:#7c3d55;font-weight:850;margin-left:9px}
+.empty,.loading{padding:22px;background:#eaf6fc;border:1px solid #d1e5f0;border-radius:11px;font-size:13px;color:#425d70;line-height:1.6;margin:8px 0}
+.site-footer{border-top:1px solid var(--border);padding:24px 0 45px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:15px;font-size:12px;font-weight:850;color:var(--navy)}
+.site-footer small{display:block;color:var(--muted);font-weight:600;font-size:11px;margin-top:4px}.site-footer a{text-decoration:none}
+@media(max-width:1020px){.year-shelf-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.game-item{grid-template-columns:92px minmax(0,1fr) minmax(105px,175px) auto}}
+@media(max-width:760px){.yearbook-hero{grid-template-columns:1fr;gap:24px}.hero-stamp{width:128px;height:128px}.hero-stamp strong{font-size:43px}.hero-stamp span{font-size:8px}.year-shelf-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.edition-columns{grid-template-columns:1fr}.memories-grid{grid-template-columns:1fr 1fr}.game-item{grid-template-columns:86px 1fr auto}.game-item .game-venue{grid-column:2 / 3}.game-item .game-link{grid-column:3;grid-row:1 / 3}.game-controls{grid-template-columns:1fr 1fr}.game-controls label:nth-child(2){grid-column:1 / -1;grid-row:2}}
+@media(max-width:510px){.site-wrap{width:calc(100% - 28px)}.yearbook-hero{margin-top:21px;padding:27px 23px}.year-shelf-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.year-tile{min-height:99px;padding:14px}.metrics-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.year-panel{padding:19px}.memories-grid{grid-template-columns:1fr}.game-item{grid-template-columns:1fr auto;gap:5px 8px;padding:16px 2px}.game-item time{grid-column:1}.game-item .game-description{grid-column:1 / -1;grid-row:2}.game-item .game-venue{grid-column:1 / -1;grid-row:3}.game-item .game-link{grid-column:2;grid-row:1}.game-controls{grid-template-columns:1fr 1fr}.site-nav{gap:1px}.site-nav a{padding:8px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}

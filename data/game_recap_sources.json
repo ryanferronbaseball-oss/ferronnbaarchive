@@ -81,6 +81,29 @@
     ],
     "boxscore_path": "data/player_boxscores_espn.json"
   },
+  "5": {
+    "game_date": "2006-12-31",
+    "verified_on": "2026-11-13",
+    "sources": [
+      {
+        "url": "https://www.nba.com/game/nyk-vs-lac-0020600452",
+        "publisher": "NBA",
+        "supports": "Final score, period scoring, game context"
+      },
+      {
+        "url": "https://archive.timesleader.com/article/1100966/clippers-knock-off-knicks",
+        "publisher": "Associated Press via Times Leader archive",
+        "supports": "Contemporary game report, Brand career-high blocks and team form"
+      },
+      {
+        "url": "https://www.basketball-reference.com/boxscores/200612310LAC.html",
+        "publisher": "Basketball-Reference",
+        "supports": "Individual player statistics"
+      }
+    ],
+    "boxscore_path": "data/player_boxscores_espn.json",
+    "nba_game_id": "0020600452"
+  },
   "31": {
     "game_date": "2006-04-02",
     "verified_on": "2026-11-13",

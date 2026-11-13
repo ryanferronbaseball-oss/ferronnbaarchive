@@ -93,3 +93,14 @@ a.nhl-honor:hover{background:#fff0c1;text-decoration:underline}
 .nhl-honor-years{font-size:11px;font-weight:850;color:#7b3150;border-left:1px solid #cddde7;padding-left:8px}
 .nhl-honor-group:target{background:#f1f8fb;border:1px solid #cbdfea;border-radius:12px;padding:18px;margin-left:-8px;margin-right:-8px}
 @media(max-width:610px){.nhl-profile-achievements{gap:6px}.nhl-profile-badge{font-size:10px;padding:6px 8px}.nhl-honor-tags{flex-direction:column;align-items:flex-start}.nhl-honor-years{border-left:0;padding-left:0}}
+
+/* NHL Hall of Fame: same featured-legend layout as the other pro archives. */
+.nhl-hof-hero{min-height:250px}.nhl-hof-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}
+.nhl-hof-card{border:1px solid #d8e3ec;background:#fcfeff;border-radius:13px;padding:21px;min-width:0}
+.nhl-hof-card h2{font-size:29px;margin:8px 0}.nhl-hof-card h2 a{color:#192e43;text-decoration:none}
+.nhl-hof-card h2 a:hover{color:#831738;text-decoration:underline}
+.nhl-hof-card p{font-size:12px;color:#566879}
+.nhl-hof-mini{display:inline-flex;padding:7px 9px;border-radius:8px;background:#fff2d5;border:1px solid #dfc696;color:#745126;font-weight:750;font-size:11px}
+.nhl-hof-links{display:flex;flex-wrap:wrap;gap:16px}.nhl-hof-links a{font-size:12px;font-weight:850}
+.nhl-coach-achievements{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}
+@media(max-width:650px){.nhl-hof-grid{grid-template-columns:1fr}}

@@ -181,3 +181,112 @@ body[data-page="overview"] .back-link{font-size:12px;font-weight:750;text-decora
 @media(max-width:850px){.nhl-overview-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.nhl-overview-charts{grid-template-columns:1fr}}
 @media(max-width:720px){.nhl-overview-game-grid,.nhl-overview-feature-grid{grid-template-columns:1fr}.nhl-overview .nhl-overview-section-heading h2,.nhl-overview .nhl-overview-panel h2{font-size:25px}}
 @media(max-width:480px){body[data-page="overview"] main{width:calc(100% - 26px)}.nhl-overview-metrics{gap:8px}.nhl-overview-metric{padding:13px}.nhl-overview-metric strong{font-size:25px}.nhl-overview-bar-row{grid-template-columns:105px minmax(0,1fr) 24px;gap:8px}.nhl-overview-filters input,.nhl-overview-filters select{width:100%;min-width:0}.nhl-overview-panel,.nhl-overview-feature,.nhl-overview-game-card{padding:16px}}
+
+
+/* NHL Games design parity with NBA, NFL and MLB.
+   Keep selectors scoped to the game tab; other NHL tabs follow separately. */
+body[data-page="game"] main{max-width:1160px;width:calc(100% - 36px);margin:0 auto;padding-bottom:80px}
+body[data-page="game"] #app{padding-top:0}
+body[data-page="game"] .archive-header{display:flex;align-items:center;justify-content:space-between;gap:17px;flex-wrap:wrap;padding:23px 0;background:#eaf6fc;border-bottom:1px solid #c5e3ef}
+body[data-page="game"] .archive-logo{font-size:17px;line-height:1.1;font-weight:900;letter-spacing:.035em;text-decoration:none;color:#831738}
+body[data-page="game"] .archive-logo small{display:block;font-size:9px;letter-spacing:.15em;margin-top:5px;color:#566879}
+body[data-page="game"] .archive-nav{display:flex;flex-wrap:wrap;align-items:center;gap:5px}
+body[data-page="game"] .archive-nav a{color:#831738;text-decoration:none;font-size:13px;font-weight:750;padding:10px 13px;border-radius:7px}
+body[data-page="game"] .archive-nav a:hover,body[data-page="game"] .archive-nav a[aria-current="page"]{background:#d9f0fa}
+body[data-page="game"] .back-link{font-size:12px;font-weight:750;text-decoration:none;white-space:nowrap}
+.nhl-game-page{color:#192e43}
+.nhl-game-eyebrow{font-size:11px;font-weight:850;text-transform:uppercase;letter-spacing:.14em;color:#831738;margin:40px 0 8px}
+.nhl-game-page h1{font:850 clamp(35px,5.6vw,62px)/1.1 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:-.052em;margin:0 0 13px;color:#192e43}
+.nhl-game-page h2{font:800 clamp(23px,3vw,31px)/1.15 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:-.035em;color:#192e43;margin:0 0 17px}
+.nhl-game-page h3{font:800 18px/1.35 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:-.025em;color:#192e43;margin:0 0 16px}
+.nhl-game-lead{font-size:15px;line-height:1.65;color:#566879;max-width:790px;margin:0 0 23px}
+.nhl-game-toolbar{display:flex;align-items:center;gap:11px;flex-wrap:wrap;margin:18px 0}
+.nhl-game-toolbar label{font-size:12px;color:#566879;font-weight:750}
+.nhl-game-toolbar select{font:inherit;font-size:13px;max-width:100%;min-width:230px;padding:11px 12px;border-radius:9px;border:1px solid #c8dce9;background:white;color:#192e43}
+.nhl-game-scoreboard{border:1px solid #d4e1e9;background:#fff;border-radius:15px;padding:23px;margin:22px 0;overflow:hidden}
+.nhl-game-scoreline{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:18px}
+.nhl-game-team{min-width:0;text-align:left}
+.nhl-game-team.home{text-align:right}
+.nhl-game-team-abbr{display:block;font-size:12px;font-weight:900;letter-spacing:.12em;color:#831738}
+.nhl-game-team-name{font-size:18px;line-height:1.3;font-weight:800;color:#192e43;margin-top:5px;overflow-wrap:anywhere}
+.nhl-game-final{text-align:center}
+.nhl-game-final span{font-size:10px;text-transform:uppercase;letter-spacing:.14em;font-weight:900;color:#566879}
+.nhl-game-final strong{display:block;font-size:clamp(34px,5vw,49px);line-height:1.15;letter-spacing:-.055em;font-weight:850;color:#831738;white-space:nowrap;font-variant-numeric:tabular-nums;margin:5px 0}
+.nhl-game-final strong small{font-size:24px;font-weight:600;color:#8093a2}
+.nhl-game-scores-table{margin-top:22px}
+.nhl-game-scores-table .nhl-table-wrap{border:1px solid #d4e1e9;border-radius:10px;overflow-x:auto}
+.nhl-game-scores-table table{min-width:440px;width:100%;font-variant-numeric:tabular-nums}
+.nhl-game-scores-table th,.nhl-game-scores-table td{padding:11px;text-align:center}
+.nhl-game-scores-table th:first-child,.nhl-game-scores-table td:first-child{text-align:left;font-weight:800}
+.nhl-game-scores-table th:nth-last-child(2),.nhl-game-scores-table td:nth-last-child(2){background:#edf7fc;font-weight:850;color:#831738}
+.nhl-game-board-meta{text-align:center;font-size:12px;color:#566879;line-height:1.6;margin-top:16px}
+.nhl-game-photo{max-width:900px;margin:18px 0 24px}
+.nhl-game-photo img{display:block;max-width:100%;width:100%;height:auto;object-fit:contain;border-radius:14px}
+.nhl-game-photo figcaption{font-size:12px;color:#566879;margin-top:8px}
+.nhl-game-panel{background:#fff;border:1px solid #d4e1e9;border-radius:14px;padding:21px;margin:19px 0;min-width:0}
+.nhl-game-panel>h2:first-child{margin:0 0 18px}
+.nhl-game-panel .nhl-table-wrap{max-width:100%;overflow-x:auto;border:1px solid #d4e1e9;border-radius:10px}
+.nhl-game-panel table{min-width:650px;width:100%;font-size:13px;font-variant-numeric:tabular-nums}
+.nhl-game-panel th{background:#eaf6fc;color:#34516a;font-weight:800;font-size:11px;letter-spacing:.07em;text-transform:uppercase}
+.nhl-game-panel th,.nhl-game-panel td{padding:12px;text-align:right;border-bottom:1px solid #e7eef3}
+.nhl-game-panel th:first-child,.nhl-game-panel td:first-child{text-align:left}
+.nhl-game-panel td a{text-decoration:none;font-weight:750;color:#831738}
+.nhl-game-panel td a:hover{text-decoration:underline}
+.nhl-game-panel tr:last-child td{border-bottom:0}
+.nhl-game-panel tr:nth-child(even) td{background:#f6fbfd}
+.nhl-game-section{margin:26px 0}
+.nhl-game-section-heading{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin:28px 0 14px}
+.nhl-game-section-heading h2{margin:0}
+.nhl-game-caption{font-size:12px;line-height:1.65;color:#566879}
+.nhl-game-kicker{display:block;color:#831738;text-transform:uppercase;font-size:11px;letter-spacing:.14em;font-weight:850}
+.nhl-game-recap{background:linear-gradient(120deg,#fff,#edf7fc);border-color:#c5e3ef}
+.nhl-game-recap h2{margin:8px 0 14px}
+.nhl-game-recap p{font-size:14px;line-height:1.8;color:#324e62;margin:0;max-width:950px}
+.nhl-game-pog{background:linear-gradient(135deg,#fff,#f1f9fd);border-color:#bfdfe9}
+.nhl-game-pog h2{margin:9px 0 17px}
+.nhl-game-pog-head{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin:6px 0 20px}
+.nhl-game-pog-name{font-size:clamp(24px,4vw,34px);font-weight:850;letter-spacing:-.035em;line-height:1.17}
+.nhl-game-pog-name a{color:#831738;text-decoration:none}
+.nhl-game-pog-name a:hover{text-decoration:underline}
+.nhl-game-pog-head .nhl-game-caption{margin-top:6px}
+.nhl-game-pog-highlight{text-align:right;display:grid;gap:1px;flex-shrink:0}
+.nhl-game-pog-highlight strong{font-size:36px;line-height:1.1;color:#831738;font-weight:850;font-variant-numeric:tabular-nums}
+.nhl-game-pog-highlight span{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.11em;color:#566879}
+.nhl-game-pog-stats{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}
+.nhl-game-pog-stat{background:#fff;border:1px solid #d4e1e9;border-radius:10px;padding:11px 8px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:5px;min-width:0}
+.nhl-game-pog-stat span{font-size:10px;line-height:1.3;font-weight:850;letter-spacing:.06em;color:#566879}
+.nhl-game-pog-stat strong{font-size:20px;line-height:1.2;color:#831738;font-weight:850;overflow-wrap:anywhere;font-variant-numeric:tabular-nums}
+.nhl-game-pog>.nhl-game-caption{margin:16px 0 0}
+.nhl-game-leaders{margin-top:19px}
+.nhl-game-stat-section{margin-top:28px}
+.nhl-game-tabs{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin:17px 0 13px}
+.nhl-game-tabs button{font:750 13px/1.35 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;background:#eaf6fc;color:#831738;border:1px solid #c5e3ef;border-radius:8px;padding:10px 14px;cursor:pointer}
+.nhl-game-tabs button:hover{background:#d9f0fa}
+.nhl-game-tabs button[aria-selected="true"]{background:#831738;color:#fff;border-color:#831738}
+.nhl-game-team-box h3{margin:0 0 14px}
+.nhl-game-team-box+.nhl-game-team-box{margin-top:14px}
+.nhl-game-team-box table{min-width:800px}
+.nhl-game-play-list{padding:6px 21px}
+.nhl-game-play{display:grid;grid-template-columns:92px minmax(0,1fr) auto;gap:15px;align-items:start;padding:16px 0;border-bottom:1px solid #e5edf2}
+.nhl-game-play:last-child{border-bottom:0}
+.nhl-game-play-time{font-size:12px;color:#566879;font-weight:750;font-variant-numeric:tabular-nums}
+.nhl-game-play-time span{display:block;margin-top:4px}
+.nhl-game-play-label{font-size:14px;color:#192e43;font-weight:850;line-height:1.5}
+.nhl-game-play-label a{text-decoration:none;color:#831738}
+.nhl-game-play-label a:hover{text-decoration:underline}
+.nhl-game-strength{font-size:9px;letter-spacing:.07em;font-weight:900;vertical-align:2px;color:#50738b;background:#eaf6fc;border:1px solid #c9e3ef;border-radius:20px;padding:3px 6px;margin-left:4px}
+.nhl-game-strength.is-pp{color:#805716;border-color:#e2cda5;background:#fff2d4}
+.nhl-game-play-detail{font-size:12px;line-height:1.65;color:#566879;margin:4px 0 0}
+.nhl-game-play-detail a{color:#831738;font-weight:750;text-decoration:none}
+.nhl-game-play-score{font-weight:850;font-size:16px;color:#831738;font-variant-numeric:tabular-nums;white-space:nowrap}
+.nhl-game-stars{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.nhl-game-official-star{background:#eaf6fc;border:1px solid #c6dfea;border-radius:10px;padding:13px;display:flex;align-items:center;gap:12px;font-size:13px;font-weight:800}
+.nhl-game-official-star strong{display:grid;place-items:center;background:#831738;color:#fff;border-radius:50%;flex:0 0 29px;width:29px;height:29px;font-size:14px}
+.nhl-game-official-star a{font-weight:850;text-decoration:none;color:#831738}
+.nhl-game-bench>p,.nhl-game-sources>p{font-size:13px;line-height:1.7;color:#566879}
+.nhl-game-action{display:inline-flex;padding:11px 15px;background:#831738;color:#fff!important;text-decoration:none;border:1px solid #831738;border-radius:9px;font-weight:750;font-size:13px}
+.nhl-game-action.secondary{background:#eaf6fc;border-color:#c6dfea;color:#831738!important}
+.nhl-game-sources a{color:#831738}
+.nhl-game-foot{font-size:12px;color:#566879;line-height:1.7;margin:26px 0}
+@media(max-width:860px){.nhl-game-pog-stats{grid-template-columns:repeat(3,minmax(0,1fr))}.nhl-game-stars{grid-template-columns:1fr}}
+@media(max-width:600px){body[data-page="game"] main{width:calc(100% - 26px)}.nhl-game-scoreboard,.nhl-game-panel{padding:16px}.nhl-game-scoreline{gap:8px}.nhl-game-team-name{font-size:13px}.nhl-game-final strong{font-size:32px}.nhl-game-final strong small{font-size:18px}.nhl-game-scores-table{margin-top:18px}.nhl-game-pog-stats{grid-template-columns:repeat(3,minmax(0,1fr))}.nhl-game-play{grid-template-columns:66px minmax(0,1fr);gap:8px}.nhl-game-play-score{grid-column:2;text-align:left}.nhl-game-panel table{min-width:560px}.nhl-game-team-box table{min-width:740px}.nhl-game-panel .nhl-table-wrap{overflow-x:auto}.nhl-game-toolbar select{min-width:0;width:100%}}

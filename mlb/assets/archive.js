@@ -18,7 +18,7 @@ try{let res=await fetch(path,{cache:"no-store"});if(!res.ok)return fallback;retu
 async function load(){
 const attendance=await fetchJSON("./data/attendance.json",[]);
 if(!attendance.length)throw Error("Original MLB game log unavailable");
-const games=await fetchJSON("./data/games.json",attendance),rows=await fetchJSON("./data/player_stats.json",[]),scores=await fetchJSON("./data/scoring_plays.json",{}),decisions=await fetchJSON("./data/decisions.json",{});
+const games=await fetchJSON("./data/games.json",attendance),rows=await fetchJSON("./data/player_stats.json",[]),scores=await fetchJSON("./data/scoring_plays.json",{}),decisions=await fetchJSON("./data/decisions.json",{}),recaps=await fetchJSON("./data/game_recaps.json",{});
 const byGame=new Map(games.map(g=>[String(g.attendance_id),g]));
 const playerMap=new Map();
 for(const r of rows){
@@ -30,7 +30,7 @@ if(r.pitching&&num(r.pitching.outs)!=null&&r.pitching.outs!==null)p.pitching.pus
 if(r.fielding)p.fielding.push(r);
 }
 for(const p of playerMap.values()){p.game_count=p.games.size;p.teams=[...p.teams];p.team_ids=[...p.team_ids];}
-return {attendance,games,rows,scores,decisions,players:[...playerMap.values()],byGame,byPlayer:playerMap};
+return {attendance,games,rows,scores,decisions,recaps,players:[...playerMap.values()],byGame,byPlayer:playerMap};
 }
 const bFields=["plateAppearances","atBats","runs","hits","doubles","triples","homeRuns","rbi","baseOnBalls","strikeOuts","hitByPitch","stolenBases","caughtStealing","sacFlies","sacBunts","totalBases"];
 const pFields=["outs","hits","runs","earnedRuns","baseOnBalls","strikeOuts","homeRuns","numberOfPitches","battersFaced","wins","losses","saves"];

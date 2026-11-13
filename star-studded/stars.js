@@ -2,6 +2,7 @@
    Career honors are retrospective; only witnessed playing appearances are scored. */
 (()=>{'use strict';
 const $=id=>document.getElementById(id);
+const Prime=window.CourtsidePrime;
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\'':'&#39;'}[c]));
 const fmt=v=>new Date(String(v)+'T12:00:00Z').toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric',timeZone:'UTC'});
 const isPlayed=v=>v!==null&&v!==undefined&&v!==''&&v!=='--'&&v!=='DNP'&&Number.parseFloat(v)>0;
@@ -17,22 +18,25 @@ const slug=v=>String(v||'').normalize('NFKD').replace(/[\u0300-\u036f]/g,'').toL
 const nbaHof=new Set(['662','110','136','885','261','592','336','215','1015','272','1987','614','996','1975','2384','1722']);
 const nflHof=new Set(['1682','1755','10455','668']);
 const byGame=(rows,getId)=>{const map=new Map();for(const row of rows){const id=String(getId(row)||'');if(!id)continue;if(!map.has(id))map.set(id,[]);map.get(id).push(row);}return map;};
-function recognized(name,id,link,side,honors){
+function recognized(name,id,link,side,honors,evidence=[]){
  const tags=honors.filter(x=>x&&x.title);
  if(!tags.length)return null;
  const ordered=tags.sort((a,b)=>b.weight-a.weight);
- return {name,id:String(id),link,side,tag:ordered[0].title,prestige:Math.min(12,ordered.reduce((s,x)=>s+x.weight,0)),elite:ordered.some(x=>x.elite)};
+ return {name,id:String(id),link,side,tag:ordered[0].title,prestige:Math.min(12,ordered.reduce((s,x)=>s+x.weight,0)),elite:ordered.some(x=>x.elite),evidence:evidence.filter(Boolean)};
 }
 function makeGame(sport,g,players,url){
  const found=new Map();for(const p of players){if(p&&!found.has(p.id))found.set(p.id,p);}
- const stars=[...found.values()].sort((a,b)=>b.prestige-a.prestige||a.name.localeCompare(b.name));
+ const stars=[...found.values()].map(p=>({...p,prime:Prime.assess(sport,g.date,p.evidence)})).sort((a,b)=>b.prestige-a.prestige||a.name.localeCompare(b.name));
  if(stars.length<2)return null;
  const legends=stars.filter(p=>p.elite).length;
- return {sport,id:String(g.id),date:g.date,away:g.away,home:g.home,awayScore:g.away_score,homeScore:g.home_score,venue:g.venue||'',url,stars,count:stars.length,legends,index:stars.length*5+stars.reduce((s,p)=>s+p.prestige,0)};
+ const primePlayers=stars.filter(p=>p.prime.tier==='prime').length;
+ const primeMeasured=stars.filter(p=>p.prime.assessed).length;
+ const primeIndex=Math.round(stars.reduce((sum,p)=>sum+(p.prime.score||0),0))/10;
+ return {sport,id:String(g.id),date:g.date,away:g.away,home:g.home,awayScore:g.away_score,homeScore:g.home_score,venue:g.venue||'',url,stars,count:stars.length,legends,index:stars.length*5+stars.reduce((s,p)=>s+p.prestige,0),primePlayers,primeMeasured,primeIndex};
 }
 async function nba(){
- const [games,logs,career,legacy]=await Promise.all([
-  csv('../data/games.csv'),getJSON('../data/player_boxscores_espn.json'),getJSON('../data/nba_career_awards.json'),getJSON('../data/nba_legacy_honors.json')
+ const [games,logs,career,legacy,years]=await Promise.all([
+  csv('../data/games.csv'),getJSON('../data/player_boxscores_espn.json'),getJSON('../data/nba_career_awards.json'),getJSON('../data/nba_legacy_honors.json'),getJSON('../data/nba_award_years.json')
  ]);
  const groups=byGame(logs,r=>r.game_id);
  return games.map(g=>{
@@ -47,8 +51,16 @@ async function nba(){
    if(Number(a.all_star)>0)awards.push({title:Number(a.all_star)+'× NBA All-Star',weight:2});
    if(awardArray(b.finals_mvp))awards.push({title:'Finals MVP',weight:3,elite:true});
    if(awardArray(b.dpoy))awards.push({title:'Defensive POY',weight:2});
+   const n=years.players?.[id]||{},evidence=[
+    ...Prime.list(n.mvp,8,'NBA MVP',x=>x.season),
+    ...(n.all_nba||[]).map(x=>Prime.signal(x.season,x.selection==='First Team'?5:x.selection==='Second Team'?3:2,'All-NBA '+(x.selection||''))),
+    ...Prime.list(n.all_star,2,'NBA All-Star'),
+    ...Prime.list(b.finals_mvp,6,'Finals MVP',x=>x.season),
+    ...Prime.list(b.dpoy,5,'Defensive Player of the Year',x=>x.season),
+    ...Prime.list(b.all_defensive,1,'All-Defensive Team',x=>x.season)
+   ];
    const side=String(r.team_id||'');
-   return recognized(r.player,id,'../nba/player.html?id='+encodeURIComponent(r.player_id),side,awards);
+   return recognized(r.player,id,'../nba/player.html?id='+encodeURIComponent(r.player_id),side,awards,evidence);
   });
   return makeGame('NBA',{id:g.id,date:g.date,away:g.away,home:g.home,away_score:g.away_score,home_score:g.home_score,venue:g.arena},players,'../nba/game.html?id='+encodeURIComponent(g.id));
  }).filter(Boolean);
@@ -68,7 +80,18 @@ async function nfl(){
    if(awardArray(a.ap_first_team))awards.push({title:'First-Team All-Pro',weight:3});
    if(Number(a.pro_bowl_count)>0)awards.push({title:Number(a.pro_bowl_count)+'× Pro Bowl',weight:2});
    if(awardArray(b.all_decade))awards.push({title:'All-Decade',weight:2});
-   return recognized(r.player,id,'../nfl/player.html?id='+encodeURIComponent(id),r.team,awards);
+   const evidence=[
+    ...Prime.list(a.ap_mvp,8,'NFL MVP'),
+    ...Prime.list(a.ap_first_team,5,'First-Team All-Pro'),
+    ...Prime.list(a.ap_second_team,3,'Second-Team All-Pro'),
+    ...Prime.list(b.pro_bowl_years,2,'Pro Bowl'),
+    ...Prime.list(b.super_bowl_mvp,6,'Super Bowl MVP',x=>x.year),
+    ...Prime.list(b.ap_opoy,5,'Offensive Player of the Year',x=>x.year),
+    ...Prime.list(b.ap_dpoy,5,'Defensive Player of the Year',x=>x.year),
+    ...Prime.list(b.ap_oroy,2,'Offensive Rookie of the Year',x=>x.year),
+    ...Prime.list(b.ap_droy,2,'Defensive Rookie of the Year',x=>x.year)
+   ];
+   return recognized(r.player,id,'../nfl/player.html?id='+encodeURIComponent(id),r.team,awards,evidence);
   });
   return makeGame('NFL',{...g,venue:g.stadium},players,'../nfl/game.html?id='+encodeURIComponent(g.id));
  }).filter(Boolean);
@@ -87,7 +110,14 @@ async function mlb(){
    if(awardArray(a.all_star))awards.push({title:a.all_star.length+'× MLB All-Star',weight:2});
    if(awardArray(a.silver_slugger))awards.push({title:'Silver Slugger',weight:1});
    if(awardArray(a.gold_glove))awards.push({title:'Gold Glove',weight:1});
-   return recognized(r.name,id,'../mlb/player.html?id='+encodeURIComponent(id),r.team,awards);
+   const evidence=[
+    ...Prime.list(a.mvp,8,'MLB MVP',x=>x.year),
+    ...Prime.list(a.cy_young,8,'Cy Young',x=>x.year),
+    ...Prime.list(a.all_star,2,'MLB All-Star',x=>x.year),
+    ...Prime.list(a.silver_slugger,2,'Silver Slugger',x=>x.year),
+    ...Prime.list(a.gold_glove,1,'Gold Glove',x=>x.year)
+   ];
+   return recognized(r.name,id,'../mlb/player.html?id='+encodeURIComponent(id),r.team,awards,evidence);
   });
   return makeGame('MLB',{id:g.attendance_id,date:g.date,away:g.away,home:g.home,away_score:g.away_score,home_score:g.home_score,venue:g.ballpark},players,'../mlb/game.html?id='+encodeURIComponent(g.attendance_id));
  }).filter(Boolean);
@@ -107,7 +137,14 @@ async function college(){
    if(awardArray(a.all_conference))awards.push({title:'All-Conference',weight:1});
    if(pro?.draft_pick!=null){const pick=Number(pro.draft_pick);awards.push({title:'NBA Draft pick '+pick,weight:pick<=30?4:2,elite:pick<=14});}
    else if(pro?.nba_debut)awards.push({title:'Reached NBA',weight:2});
-   return recognized(r.player,id,'../college/player.html?id='+encodeURIComponent(id),r.team,awards);
+   const evidence=[
+    ...Prime.list(a.final_four_mop,8,'Final Four MOP',x=>x.year||x.season),
+    ...Prime.list(a.conference_poy,6,'Conference Player of the Year',x=>x.season||x.year),
+    ...Prime.list(a.conference_dpoy,5,'Conference Defensive POY',x=>x.season||x.year),
+    ...(a.all_conference||[]).map(x=>Prime.signal(x.season||x.year,x.team===1?4:2,'All-Conference '+(x.team===1?'First Team':'Team'))),
+    ...Prime.list(a.ncaa_champion,1,'NCAA champion',x=>x.year)
+   ];
+   return recognized(r.player,id,'../college/player.html?id='+encodeURIComponent(id),r.team,awards,evidence);
   });
   return makeGame('College Basketball',{id:g.id,date:g.date,away:g.away,home:g.home,away_score:g.away_score,home_score:g.home_score,venue:g.arena},players,'../college/game.html?id='+encodeURIComponent(g.id));
  }).filter(Boolean);
@@ -135,7 +172,14 @@ async function soccer(){
    if(awardArray(a.world_cup))awards.push({title:'World Cup player',weight:2});
    if(awardArray(a.league_titles))awards.push({title:'League champion',weight:1});
    if(awardArray(a.mls_awards))awards.push({title:'MLS award',weight:2});
-   return recognized(name,id,'../soccer/player.html?id='+encodeURIComponent(id),side,awards);
+   const evidence=[
+    ...(b.global||[]).map(x=>Prime.signal(x.year||x.season,/Ballon d.Or|Best FIFA Men.s Player/i.test(x.award||'')?8:6,x.award||'Global individual honor')),
+    ...(b.uefa||[]).map(x=>Prime.signal(x.year||x.season,5,x.award||'UEFA award')),
+    ...(b.domestic||[]).map(x=>Prime.signal(x.year||x.season,3,x.award||'Domestic award')),
+    ...(b.international||[]).map(x=>Prime.signal(x.year||x.season,4,x.award||'International award')),
+    ...(a.mls_awards||[]).map(x=>Prime.signal(x.year||x.season,4,x.award||'MLS award'))
+   ];
+   return recognized(name,id,'../soccer/player.html?id='+encodeURIComponent(id),side,awards,evidence);
   });
   return makeGame('Soccer',{...g,venue:g.venue},players,'../soccer/game.html?id='+encodeURIComponent(g.id));
  }).filter(Boolean);
@@ -151,7 +195,8 @@ async function collegeFootball(){
    if(a?.category==='nfl')awards.push({title:'Reached the NFL',weight:2});
    const pick=a?.draft_pick==null?null:Number(a.draft_pick);
    if(pick!==null&&Number.isFinite(pick))awards.push({title:'NFL Draft pick '+pick,weight:pick<=32?5:pick<=100?3:2,elite:pick<=32});
-   return recognized(r.player,id,'../cfb/player.html?id='+encodeURIComponent(id),r.team,awards);
+   // The current CFB crosswalk establishes later NFL progression, not dated college prime seasons.
+   return recognized(r.player,id,'../cfb/player.html?id='+encodeURIComponent(id),r.team,awards,[]);
   });
   return makeGame('College Football',{...g,venue:g.stadium},players,'../cfb/game.html?id='+encodeURIComponent(g.id));
  }).filter(Boolean);
@@ -176,7 +221,11 @@ async function collegeBaseball(){
    else if(aa.length)awards.push({title:'All-American',weight:3});
    const pick=d?.draft_pick==null?null:Number(d.draft_pick);
    if(pick!==null&&Number.isFinite(pick)&&pick<=300)awards.push({title:'MLB Draft pick '+pick,weight:pick<=30?5:pick<=100?3:1,elite:pick<=30});
-   return recognized(r.name,id,'../college-baseball/player.html?id='+encodeURIComponent(id),r.team,awards);
+   const evidence=[
+    ...n.map(x=>Prime.signal(x.year,7,x.award||'National award')),
+    ...aa.map(x=>Prime.signal(x.year,/First/i.test(x.team||'')?5:3,'Baseball America '+(x.team||'All-American')))
+   ];
+   return recognized(r.name,id,'../college-baseball/player.html?id='+encodeURIComponent(id),r.team,awards,evidence);
   });
   return makeGame('College Baseball',{...g,venue:g.ballpark},players,'../college-baseball/game.html?id='+encodeURIComponent(g.id));
  }).filter(Boolean);
@@ -195,7 +244,12 @@ async function milb(){
    if(a?.mlb_debut)awards.push({title:'Reached MLB',weight:2});
    const pick=a?.draft_pick==null?null:Number(a.draft_pick);
    if(pick!==null&&Number.isFinite(pick)&&pick<=100)awards.push({title:'MLB Draft pick '+pick,weight:pick<=30?4:2,elite:pick<=30});
-   return recognized(r.name,id,'../milb/player.html?id='+encodeURIComponent(id),r.team,awards);
+   const evidence=[
+    ...Prime.list(c.mvp,8,'MLB MVP',x=>x.year),
+    ...Prime.list(c.cy_young,8,'Cy Young',x=>x.year),
+    ...Prime.list(c.all_star,2,'MLB All-Star',x=>x.year)
+   ];
+   return recognized(r.name,id,'../milb/player.html?id='+encodeURIComponent(id),r.team,awards,evidence);
   });
   return makeGame('MiLB',{id:g.id,date:g.date,away:g.away_team,home:g.home_team,away_score:g.away_score,home_score:g.home_score,venue:g.venue},players,'../milb/game.html?id='+encodeURIComponent(g.id));
  }).filter(Boolean);
@@ -211,7 +265,13 @@ async function nhl(){
    if(honors.some(a=>a.category==='allteam'))awards.push({title:'NHL All-Star Team',weight:2});
    if(honors.some(a=>a.category==='allstar'||/All-Star Game/i.test(a.title)))awards.push({title:'NHL All-Star',weight:2});
    if(honors.some(a=>a.category==='stanley'||/Stanley Cup/i.test(a.title)))awards.push({title:'Stanley Cup champion',weight:1});
-   return recognized(p.name,p.id,'../nhl/player.html?id='+encodeURIComponent(p.id),p.team,awards);
+   const evidence=honors.flatMap(h=>{
+    if(h.category==='award')return String(h.years||'').match(/\b(?:19|20)\d{2}\b/g)?.map(y=>Prime.signal(y,/Hart|Art Ross|Vezina|Conn Smythe|Norris|Selke/i.test(h.title)?6:4,h.title))||[];
+    if(h.category==='allstar')return String(h.years||'').match(/\b(?:19|20)\d{2}\b/g)?.map(y=>Prime.signal(y,2,'NHL All-Star Game'))||[];
+    if(h.category==='allteam')return String(h.years||'').match(/\b(?:19|20)\d{2}\b/g)?.map(y=>Prime.signal(y,/First All-Star/i.test(h.title)?5:/Second All-Star/i.test(h.title)?3:1,h.title))||[];
+    return [];
+   });
+   return recognized(p.name,p.id,'../nhl/player.html?id='+encodeURIComponent(p.id),p.team,awards,evidence);
   });
   return makeGame('NHL',g,players,'../nhl/game.html?id='+encodeURIComponent(g.id));
  }).filter(Boolean);

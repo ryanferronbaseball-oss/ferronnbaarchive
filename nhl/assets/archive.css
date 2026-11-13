@@ -56,3 +56,14 @@ a.nhl-honor:hover{background:#fff0c1;text-decoration:underline}
 .nhl-coach-stop.witnessed{background:#f6edf1;border-color:#e8cbd5;color:#792943}
 .nhl-coach-stop.unseen{background:#e5f5fb;border-color:#b9dff0;color:#155f86}
 .nhl-panel h3{font:normal 22px/1.25 Georgia,serif;letter-spacing:-.02em;color:#192e43;margin:20px 0 5px}
+
+
+/* Full historical official box score and NHL media star presentation. */
+.nhl-table-wrap table{min-width:760px}
+.nhl-table-wrap table td:first-child,.nhl-table-wrap table th:first-child{white-space:nowrap}
+.nhl-table-wrap table td:nth-child(n+3){font-variant-numeric:tabular-nums}
+.nhl-stars{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.nhl-star-item{min-width:0;display:flex;align-items:center;gap:10px;padding:14px 15px;background:#eaf6fc;border:1px solid #c4e0ee;border-radius:10px;font-size:13px;font-weight:800;overflow-wrap:anywhere}
+.nhl-star-item strong{display:grid;place-items:center;background:#831738;border-radius:50%;color:#fff;width:28px;height:28px;flex:0 0 28px}
+.nhl-record strong{overflow-wrap:anywhere;line-height:1.35}
+@media(max-width:660px){.nhl-stars{grid-template-columns:1fr}.nhl-table-wrap table{min-width:700px}}

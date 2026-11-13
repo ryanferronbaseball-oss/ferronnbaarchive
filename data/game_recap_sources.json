@@ -281,6 +281,28 @@
     "boxscore_path": "data/player_boxscores_espn.json",
     "nba_game_id": "0020700643"
   },
+  "14": {
+    "game_date": "2008-11-29",
+    "verified_on": "2026-11-13",
+    "sources": [
+      {
+        "url": "https://www.basketball-reference.com/boxscores/pbp/200811290LAC.html",
+        "publisher": "Basketball Reference",
+        "supports": "Final possessions and quarter-by-quarter scoring"
+      },
+      {
+        "url": "https://www.basketball-reference.com/boxscores/200811290LAC.html",
+        "publisher": "Basketball Reference",
+        "supports": "Box score and final result"
+      },
+      {
+        "url": "https://basketball.realgm.com/nba/boxscore/2008-11-29/Miami-at-LA-Clippers/50870",
+        "publisher": "RealGM",
+        "supports": "Independent player totals and line score"
+      }
+    ],
+    "boxscore_path": "data/player_boxscores_espn.json"
+  },
   "31": {
     "game_date": "2006-04-02",
     "verified_on": "2026-11-13",

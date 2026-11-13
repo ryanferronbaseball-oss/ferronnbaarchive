@@ -7,7 +7,9 @@
  const page=document.body.dataset.page||'overview';
  const navItems=[['index.html','Overview','overview'],['game.html','Games','game'],['stats.html','Players','stats'],['hall-of-fame.html','★ Hall of Fame','hof'],['records.html','Records','records'],['coaches.html','Coaches','coaches']];
  const nav=navItems.map(([href,name,key])=>'<a href="./'+href+'"'+(page===key?' aria-current="page"':'')+'>'+name+'</a>').join('')+'<a href="../index.html">All archives ↗</a>';
- $('navigation').innerHTML='<div class="nhl-topbar"><a href="./index.html" class="nhl-logo"><span class="nhl-mark">CA</span><span>COURTSIDE ARCHIVE<small>EVERY GAME HAS A STORY · NHL</small></span></a><nav aria-label="NHL navigation">'+nav+'</nav></div>';
+ $('navigation').innerHTML=page==='overview'
+  ?'<header class="archive-header nhl-overview-header"><a href="./index.html" class="archive-logo">COURTSIDE ARCHIVE<small>EVERY GAME HAS A STORY · NHL</small></a><nav class="archive-nav" aria-label="NHL navigation">'+navItems.map(([href,name,key])=>'<a href="./'+href+'"'+(page===key?' aria-current="page"':'')+'>'+name+'</a>').join('')+'</nav><a class="back-link" href="../index.html">All archives ↗</a></header>'
+  :'<div class="nhl-topbar"><a href="./index.html" class="nhl-logo"><span class="nhl-mark">CA</span><span>COURTSIDE ARCHIVE<small>EVERY GAME HAS A STORY · NHL</small></span></a><nav aria-label="NHL navigation">'+nav+'</nav></div>';
  const sourceLinks=g=>(g.source_urls||[]).map((url,i)=>'<a href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">Source '+(i+1)+' ↗</a>').join(' · ');
  const box=(value,label)=>'<div class="nhl-stat"><strong>'+stat(value)+'</strong><small>'+esc(label)+'</small></div>';
  const linkGame=g=>'./game.html?id='+encodeURIComponent(g.id);
@@ -76,11 +78,94 @@
  const tileGame=g=>'<a class="nhl-match" href="'+linkGame(g)+'"><span class="nhl-match-date">'+fmt(g.date)+' · '+g.venue+'</span><strong>'+esc(g.away)+' '+g.away_score+' — '+g.home_score+' '+esc(g.home)+'</strong><span>Full attended-game exhibit ↗</span></a>';
  const note='<p class="nhl-note">All 36 participating skaters and both goaltenders have official game statistics from NHL Game 1160, March 27, 2008. Backup goaltenders who did not play are excluded from attended-player totals. Career awards are listed separately from witnessed-game performance.</p>';
  function overview(games){
-  const g=games[0];
-  $('app').innerHTML=breadcrumb('OVERVIEW')+'<section class="nhl-hero"><div class="nhl-kicker">A NEW CHAPTER OF COURTSIDE ARCHIVE</div><h1>Your NHL <em>history.</em></h1><p>One night on the ice begins the ninth sport in your personal attendance collection. From the goaltending to the scoring plays, this archive preserves what you actually witnessed.</p><a class="nhl-primary" href="'+linkGame(g)+'">Explore the first game ↗</a></section>'
-  +'<section class="nhl-grid nhl-counts">'+box(games.length,'Game attended')+box(2,'Teams witnessed')+box(1,'Arena visited')+box('2008','First NHL season')+'</section>'
-  +'<section class="nhl-panel"><div class="nhl-section-head"><div><span class="nhl-kicker">THE FIRST ENTRY</span><h2>Where hockey began.</h2></div></div>'+tileGame(g)+'</section>'
-  +'<section class="nhl-grid nhl-columns"><div class="nhl-panel"><span class="nhl-kicker">SIGNATURE PERFORMANCE</span><h2>The shutout</h2><p><strong>'+playerAnchor(g.players.find(p=>p.goalie&&p.team===g.home))+'</strong> stopped all 38 shots in Los Angeles’s 4–0 victory.</p><a href="./records.html">Explore NHL records ↗</a></div><div class="nhl-panel"><span class="nhl-kicker">PLAYER PROFILES</span><h2>The names behind the night</h2><p>Explore verified performances, separated into skater and goaltender statistics.</p><a href="./stats.html">Explore witnessed players ↗</a></div></section>'+note;
+  // Align NHL overview composition with the NBA/NFL/MLB landing pages:
+  // clean masthead, metrics, recent games, signature cards, charts, and game history.
+  const orderedGames=games.slice().sort((a,b)=>a.date.localeCompare(b.date)||a.id.localeCompare(b.id));
+  const newest=orderedGames.slice().reverse();
+  const gameCount=orderedGames.length;
+  const uniquePlayers=new Map();
+  const years=new Map(),teams=new Map();
+  orderedGames.forEach(g=>{
+    years.set(g.date.slice(0,4),(years.get(g.date.slice(0,4))||0)+1);
+    for(const t of [g.away,g.home])teams.set(t,(teams.get(t)||0)+1);
+    (g.players||[]).forEach(p=>uniquePlayers.set(p.id,p));
+  });
+  const players=[...uniquePlayers.values()];
+  const countScoring=orderedGames.reduce((n,g)=>n+(g.scoring||[]).length,0);
+  const gameCard=g=>'<article class="nhl-overview-game-card">'
+    +'<div class="nhl-overview-game-date">'+fmt(g.date)+' · '+esc(g.competition||'NHL regular season')+'</div>'
+    +'<h3>'+esc(g.away)+' at '+esc(g.home)+'</h3>'
+    +'<div class="nhl-overview-game-score">'+esc(g.away_abbr||g.away)+' '+g.away_score+' <span>—</span> '+esc(g.home_abbr||g.home)+' '+g.home_score+'</div>'
+    +'<div class="nhl-overview-caption">'+esc(g.venue)+' · '+esc(g.city)+', '+esc(g.state)+'</div>'
+    +'<a class="nhl-overview-action" href="'+linkGame(g)+'">Game box score ↗</a></article>';
+  const performances=orderedGames.flatMap(g=>(g.players||[]).map(p=>({...p,game:g})));
+  const best=(predicate,value)=>performances.filter(predicate).sort((a,b)=>value(b)-value(a)||a.game.date.localeCompare(b.game.date)||a.name.localeCompare(b.name))[0];
+  const bestPoints=best(p=>p.skater&&Number.isFinite(p.skater.points),p=>p.skater.points);
+  const bestSaves=best(p=>p.goalie&&Number.isFinite(p.goalie.saves),p=>p.goalie.saves);
+  const bestShots=best(p=>p.skater&&Number.isFinite(p.skater.shots_on_goal),p=>p.skater.shots_on_goal);
+  const feature=(label,p,value,unit,details)=>p?'<article class="nhl-overview-feature">'
+    +'<div class="nhl-overview-feature-label">'+esc(label)+'</div>'
+    +'<div class="nhl-overview-feature-number">'+stat(value)+' <small>'+esc(unit)+'</small></div>'
+    +'<h3>'+playerAnchor(p)+'</h3>'
+    +'<p>'+esc(p.team)+' · '+fmt(p.game.date)+'</p>'
+    +'<div class="nhl-overview-caption">'+esc(details)+'</div>'
+    +'<a class="nhl-overview-action secondary" href="'+linkGame(p.game)+'">View performance ↗</a></article>':'';
+  const bars=entries=>{
+    const max=Math.max(1,...entries.map(x=>x[1]));
+    return entries.map(([label,n])=>'<div class="nhl-overview-bar-row"><span>'+esc(label)+'</span>'
+      +'<div class="nhl-overview-bar-track"><div class="nhl-overview-bar-fill" style="width:'+(100*n/max).toFixed(2)+'%"></div></div>'
+      +'<strong>'+n+'</strong></div>').join('');
+  };
+  const metric=(value,title)=>'<div class="nhl-overview-metric"><strong>'+stat(value)+'</strong><small>'+esc(title)+'</small></div>';
+  const content='<div class="nhl-overview">'
+    +'<div class="nhl-overview-eyebrow">NATIONAL HOCKEY LEAGUE · PERSONAL ATTENDANCE</div>'
+    +'<h1>Your NHL history.</h1>'
+    +'<a class="nhl-overview-action secondary nhl-hof-action" href="./hall-of-fame.html">★ NHL Hall of Famers You’ve Seen ↗</a>'
+    +'<p class="nhl-overview-lead">Your NHL attendance history, preserved in one place. Explore the games, players, seasons, arenas and standout performances you witnessed.</p>'
+    +'<section class="nhl-overview-metrics" aria-label="NHL attendance metrics">'
+    +metric(gameCount,'Games attended')+metric(players.length,'Players with recorded stats')
+    +metric(countScoring,'Scoring plays witnessed')+metric(years.size,'Calendar years')+'</section>'
+    +'<section class="nhl-overview-section" aria-label="Most recent NHL games">'
+    +'<div class="nhl-overview-section-heading"><h2>Games attended</h2><a class="nhl-overview-action secondary" href="./game.html">All game box scores ↗</a></div>'
+    +'<div class="nhl-overview-game-grid">'+newest.slice(0,3).map(gameCard).join('')+'</div></section>'
+    +'<section class="nhl-overview-section" id="signaturePerformances">'
+    +'<div class="nhl-overview-section-heading"><h2>Signature Performances</h2><a class="nhl-overview-action secondary" href="./records.html">Explore Records ↗</a></div>'
+    +'<p class="nhl-overview-description">The top single-game scoring, goaltending and shooting performances across the NHL games you attended.</p>'
+    +'<div class="nhl-overview-feature-grid">'
+      +feature('Scoring record',bestPoints,bestPoints?.skater.points,'PTS',bestPoints?bestPoints.skater.goals+' G · '+bestPoints.skater.assists+' A':'')
+      +feature('Goaltending record',bestSaves,bestSaves?.goalie.saves,'SAVES',bestSaves&&bestSaves.goalie.shutouts?'Shutout · '+bestSaves.goalie.save_pct.toFixed(3)+' SV%':bestSaves?'Save percentage '+bestSaves.goalie.save_pct.toFixed(3):'')
+      +feature('Shots on goal record',bestShots,bestShots?.skater.shots_on_goal,'SOG',bestShots?'Goals '+bestShots.skater.goals+' · Assists '+bestShots.skater.assists:'')
+    +'</div></section>'
+    +'<div class="nhl-overview-charts" aria-label="NHL attendance charts">'
+    +'<section class="nhl-overview-panel"><h2>Most-watched teams</h2>'+bars([...teams.entries()].sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0])).slice(0,8))+'</section>'
+    +'<section class="nhl-overview-panel"><h2>Attendance by year</h2>'+bars([...years.entries()].sort((a,b)=>a[0].localeCompare(b[0])))+'</section>'
+    +'</div>'
+    +'<section class="nhl-overview-panel nhl-overview-history" id="gameHistorySection"><h2>My game history</h2>'
+    +'<p class="nhl-overview-description">Based on your attendance records. Select a game to open its full box score, scoring timeline and player performances.</p>'
+    +'<div class="nhl-overview-filters">'
+     +'<input type="search" id="nhl-overview-search" aria-label="Search attended NHL games" placeholder="Search team, matchup, arena…">'
+     +'<select id="nhl-overview-year" aria-label="Filter NHL games by year"><option value="">All years</option>'+[...years.keys()].sort().reverse().map(y=>'<option value="'+esc(y)+'">'+esc(y)+'</option>').join('')+'</select>'
+     +'<select id="nhl-overview-sort" aria-label="Sort attended NHL games"><option value="asc">Oldest first</option><option value="desc">Newest first</option></select>'
+    +'</div><div class="nhl-overview-table-scroll"><table><thead><tr><th>Date</th><th>Away</th><th>Home</th><th>Arena</th><th>Details</th></tr></thead><tbody id="nhl-overview-history-body"></tbody></table></div>'
+    +'<div class="nhl-overview-foot" id="nhl-overview-showing"></div></section>'
+    +'<section class="nhl-overview-panel nhl-overview-explore"><h2>Explore your NHL stats</h2>'
+    +'<p>Every attended-game box score includes all participating skaters, both goalies, goal times and assists, and the official scoring and penalty summaries. Explore individual totals and the records you witnessed.</p>'
+    +'<a class="nhl-overview-action" href="./stats.html">Open NHL player leaderboards ↗</a></section>'
+    +'<p class="nhl-overview-foot">Courtside Archive · NHL attendance statistics drawn from historical NHL game reports. Only games you attended are counted.</p>'
+   +'</div>';
+  $('app').innerHTML=content;
+  const drawHistory=()=>{
+    const query=$('nhl-overview-search').value.trim().toLowerCase();
+    const year=$('nhl-overview-year').value,sort=$('nhl-overview-sort').value;
+    const matches=orderedGames.filter(g=>(!year||g.date.startsWith(year))
+     &&[g.date,g.away,g.home,g.venue,g.city,g.state].join(' ').toLowerCase().includes(query)).sort((a,b)=>sort==='asc'?a.date.localeCompare(b.date)||a.id.localeCompare(b.id):b.date.localeCompare(a.date)||b.id.localeCompare(a.id));
+    $('nhl-overview-history-body').innerHTML=matches.map(g=>'<tr><td><a href="'+linkGame(g)+'">'+esc(g.date)+'</a></td>'
+     +'<td>'+esc(g.away)+'</td><td><strong>'+esc(g.home)+'</strong></td><td>'+esc(g.venue)+'</td>'
+     +'<td><a class="nhl-overview-table-link" href="'+linkGame(g)+'">View game →</a></td></tr>').join('')||'<tr><td colspan="5">No matching NHL games.</td></tr>';
+    $('nhl-overview-showing').textContent='Showing '+matches.length+' of '+gameCount+' '+(gameCount===1?'game':'games')+'.';
+  };
+  for(const id of ['nhl-overview-search','nhl-overview-year','nhl-overview-sort'])$(id).addEventListener('input',drawHistory);
+  drawHistory();
  }
  function gamePage(games){
   const id=new URLSearchParams(location.search).get('id'),g=games.find(x=>x.id===id)||games[0];

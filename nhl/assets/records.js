@@ -205,7 +205,7 @@ function render(games){
  for(const g of games){
   const winner=g.home_score>g.away_score?g.home:g.away_score>g.home_score?g.away:null;
   const loserGoals=Math.min(g.away_score,g.home_score);
-  if(winner&&loserGoals===0)moment(g,'Shutout victory',winner+' won '+g.home_score+'–'+g.away_score+' (home–away)'); 
+  if(winner&&loserGoals===0)moment(g,'Shutout victory',winner+' won '+Math.max(g.home_score,g.away_score)+'–0'); 
   if(g.periods){
    for(const r of [{name:g.away,values:g.periods.away},{name:g.home,values:g.periods.home}]){
     (r.values||[]).forEach((goals,i)=>{if(num(goals)>=3)moment(g,'3+ goal period',r.name+' scored '+goals+' goals in Period '+(i+1))});

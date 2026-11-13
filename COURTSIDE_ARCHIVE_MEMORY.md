@@ -18,6 +18,8 @@
 
 The archive chronicles games Ryan attended across MLB, NBA, NFL, NCAA men's basketball, college football, college baseball, and soccer. Core ideas include **“Every Game Has a Story,”** game-level box scores, player pages and game logs, Player of the Game, signature performances, relevant career honors, and cross-sport recognition. The site favors a unified **Games** experience and clickable internal player-to-game links.
 
+On 2026-11-13, chronological baseball recaps were launched with MLB first and college baseball after the MLB queue is complete. Recaps render immediately above Player of the Game; player mentions should use internal player-profile links when the player appeared in that game.
+
 Approved design direction: **Courtside Editorial**—ivory `#FAF8F2`, deep evergreen `#284D3C`, subtle borders, rounded cards, legible editorial spacing. Preserve functionality during redesigns; maintain consistent honor/tag colors across sports. The home venue map belongs **below the introduction and above the archives**.
 
 ## Adding an attended game: required checklist

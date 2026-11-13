@@ -467,7 +467,8 @@ function profilePage(){
  ];
  const pitchingCards=[
   ["Wins",officialPitcherRecord.wins],["Losses",officialPitcherRecord.losses],["Saves",officialPitcherRecord.saves],
-  ["Innings",ps?.inningsPitched??"0.0"],["Walks",ps?.baseOnBalls??0],["Strikeouts",ps?.strikeOuts??0]
+  ["Innings",ps?.inningsPitched??"0.0"],["Walks",ps?.baseOnBalls??0],["Strikeouts",ps?.strikeOuts??0],
+  ["ERA",ps?A.disp(ps.era,"era"):"—"]
  ];
  const statBoxes=items=>items.map(([label,value])=>'<div class="mlb-profile-stat"><small>'+esc(label)+'</small><strong>'+esc(value)+'</strong></div>').join("");
  const statRow=(role,items)=>'<div class="mlb-profile-role-group" data-role="'+role+'">'
@@ -539,7 +540,7 @@ function profilePage(){
   +'<div class="mlb-profile-identity"><div class="mlb-profile-team-name">'+esc(p.teams.join(" / "))+'</div>'
   +'<div class="mlb-player-name-row"><h1>'+esc(p.name)+'</h1><span class="mlb-player-country-slot" data-mlb-country-for="'+esc(p.player_id)+'">'+profileCountryFlags(String(p.player_id))+'</span></div>'+badges
   +'<p class="mlb-profile-seen">'+p.game_count+' attended '+(p.game_count===1?"game":"games")+' · '+esc(years)+'</p></div></section>'
-  +'<div class="mlb-profile-headline-stats'+(twoWay?" is-two-way":"")+'">'+summaryTiles+'</div>'
+  +'<div class="mlb-profile-headline-stats'+(twoWay?" is-two-way":pitcher?" is-pitcher":"")+'">'+summaryTiles+'</div>'
   +'<div class="mlb-profile-tabs" id="profileTabs" role="tablist" aria-label="Player profile sections">'
   +[["overview","Overview"],["advanced","Advanced"],["games","Game Log"],["milestones","Milestones"]].map(([key,title],i)=>
    '<button type="button" class="mlb-profile-tab" role="tab" data-profile-tab="'+key+'" aria-controls="profile-'+key+'" aria-selected="'+(i===0)+'">'+title+'</button>').join("")+'</div>'

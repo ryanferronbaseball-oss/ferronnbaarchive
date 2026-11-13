@@ -7,7 +7,7 @@
  const page=document.body.dataset.page||'overview';
  const navItems=[['index.html','Overview','overview'],['game.html','Games','game'],['stats.html','Players','stats'],['hall-of-fame.html','★ Hall of Fame','hof'],['records.html','Records','records'],['coaches.html','Coaches','coaches']];
  const nav=navItems.map(([href,name,key])=>'<a href="./'+href+'"'+((page===key||(page==='player'&&key==='stats'))?' aria-current="page"':'')+'>'+name+'</a>').join('')+'<a href="../index.html">All archives ↗</a>';
- $('navigation').innerHTML=(['overview','game','stats','player'].includes(page))
+ $('navigation').innerHTML=(['overview','game','stats','player','records'].includes(page))
   ?'<header class="archive-header nhl-overview-header"><a href="./index.html" class="archive-logo">COURTSIDE ARCHIVE<small>EVERY GAME HAS A STORY · NHL</small></a><nav class="archive-nav" aria-label="NHL navigation">'+navItems.map(([href,name,key])=>'<a href="./'+href+'"'+((page===key||(page==='player'&&key==='stats'))?' aria-current="page"':'')+'>'+name+'</a>').join('')+'</nav><a class="back-link" href="../index.html">All archives ↗</a></header>'
   :'<div class="nhl-topbar"><a href="./index.html" class="nhl-logo"><span class="nhl-mark">CA</span><span>COURTSIDE ARCHIVE<small>EVERY GAME HAS A STORY · NHL</small></span></a><nav aria-label="NHL navigation">'+nav+'</nav></div>';
  const sourceLinks=g=>(g.source_urls||[]).map((url,i)=>'<a href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">Source '+(i+1)+' ↗</a>').join(' · ');
@@ -587,27 +587,8 @@
      +'<div class="nhl-honor-tags">'+related.map(p=>'<a class="nhl-honor" href="'+linkPlayer(p)+'">'+esc(p.name)+' · '+esc(p.awards.filter(a=>/Hall of Fame/i.test(a.title)).map(a=>a.title).join(', '))+' ↗</a>').join('')+'</div></section>':'')+note;
  }
  function recordsPage(games){
-  const g=games[0],skaters=g.players.filter(p=>p.skater),goalies=g.players.filter(p=>p.goalie);
-  const top=(title,arr,key,format)=>{
-   const values=arr.map(p=>({p,value:key(p)})).filter(x=>typeof x.value==='number'&&Number.isFinite(x.value));
-   if(!values.length)return [title,'No verified entries'];
-   const max=Math.max(...values.map(x=>x.value));
-   const names=values.filter(x=>x.value===max).map(x=>x.p.name).sort((a,b)=>a.localeCompare(b));
-   return [title,(format?format(max):String(max))+' · '+names.join(', ')];
-  };
-  const toSeconds=x=>{if(!x)return NaN;const bits=x.split(':').map(Number);return bits[0]*60+bits[1]};
-  const records=[
-   ['Most goals, team',g.home_score+' · '+g.home],
-   top('Most goals, skater',skaters,p=>p.skater.goals),
-   top('Most assists, skater',skaters,p=>p.skater.assists),
-   top('Most points, skater',skaters,p=>p.skater.points),
-   top('Most shots, skater',skaters,p=>p.skater.shots_on_goal),
-   top('Most skater ice time',skaters,p=>toSeconds(p.skater.minutes),v=>Math.floor(v/60)+':'+String(v%60).padStart(2,'0')),
-   top('Most saves, goalie',goalies,p=>p.goalie.saves),
-   top('Shutouts, goalie',goalies,p=>p.goalie.shutouts),
-   ['Game-winning goal',(g.scoring||[])[0]?.scorer||'—']
-  ];
-  $('app').innerHTML=breadcrumb('RECORD BOOK')+'<h1>Your NHL records.</h1><p class="nhl-lead">All-time records within your personally attended NHL games. Tied leaders appear together, and no league-wide career totals are mixed into this table.</p><section class="nhl-grid nhl-record-grid">'+records.map(([label,value])=>'<div class="nhl-record"><small>'+esc(label)+'</small><strong>'+esc(value)+'</strong><a href="'+linkGame(g)+'">View game ↗</a></div>').join('')+'</section>'+note;
+  if(!window.NHLRecords?.render)throw new Error('NHL records module unavailable');
+  window.NHLRecords.render(games);
  }
  function coachesPage(games,career){
   const g=games[0],catalog=career?.stops||{};

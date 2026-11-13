@@ -43,11 +43,18 @@
  // Years count events / medals / championship seasons, not the number of
  // data objects. Equivalent to the MLB award-badge and NFL Pro Bowl counts.
  const honorCount=items=>items.reduce((n,a)=>n+(String(a.years||'').match(/\b(?:19|20)\d{2}\b/g)||[]).length,0);
+ const awardAnchor=a=>'nhl-award-'+String(a.title||'').normalize('NFKD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
  const careerBadges=p=>{
   if(!p.awards?.length)return '';
   return '<div class="nhl-profile-achievements" aria-label="Career accomplishments">'+honorTypes.map(t=>{
    const awards=p.awards.filter(a=>categorizeAward(a)===t.key);
    if(!awards.length)return '';
+   // Individual NHL trophies deserve individual profile badges, not an
+   // aggregated "NHL AWARDS" count. Other honors retain their existing groups.
+   if(t.key==='award')return awards.map(a=>{
+    const count=honorCount([a])||1;
+    return '<a class="nhl-profile-badge award" href="#'+awardAnchor(a)+'" title="Jump to '+esc(a.title)+' career details">◆ '+esc(a.title.toUpperCase())+(count>1?' · '+count:'')+'</a>';
+   }).join('');
    const count=honorCount(awards)||awards.length;
    return '<a class="nhl-profile-badge '+t.key+'" href="#nhl-honor-'+t.key+'" title="Jump to '+esc(t.name)+' career details">'+t.badge+(count>1?' · '+count:'')+'</a>';
   }).join('')+'</div>';
@@ -58,7 +65,7 @@
    const awards=p.awards.filter(a=>categorizeAward(a)===t.key);
    if(!awards.length)return '';
    return '<section class="nhl-honor-group" id="nhl-honor-'+t.key+'"><h3>'+t.mark+' '+esc(t.name)+'</h3><div class="nhl-honor-tags">'
-    +awards.map(a=>'<a class="nhl-honor '+t.key+'" href="'+esc(a.source)+'" target="_blank" rel="noopener noreferrer" title="Open source for this career honor">'
+    +awards.map(a=>'<a class="nhl-honor '+t.key+'"'+(t.key==='award'?' id="'+awardAnchor(a)+'"':'')+' href="'+esc(a.source)+'" target="_blank" rel="noopener noreferrer" title="Open source for this career honor">'
       +esc(a.title)+' <span class="nhl-honor-years">'+esc(a.years)+'</span> ↗</a>').join('')
     +'</div></section>';
   }).join('');

@@ -173,6 +173,28 @@
     "boxscore_path": "data/player_boxscores_espn.json",
     "nba_game_id": "0020601144"
   },
+  "9": {
+    "game_date": "2007-04-15",
+    "verified_on": "2026-11-13",
+    "sources": [
+      {
+        "url": "https://www.basketball-reference.com/boxscores/pbp/200704150LAC.html",
+        "publisher": "Basketball-Reference",
+        "supports": "Play-by-play and final possessions"
+      },
+      {
+        "url": "https://www.basketball-reference.com/boxscores/200704150LAC.html",
+        "publisher": "Basketball-Reference",
+        "supports": "Score and player box scores"
+      },
+      {
+        "url": "https://basketball.realgm.com/nba/boxscore/2007-04-15/Sacramento-at-LA-Clippers/54078",
+        "publisher": "RealGM",
+        "supports": "Quarter scoring and team totals"
+      }
+    ],
+    "boxscore_path": "data/player_boxscores_espn.json"
+  },
   "31": {
     "game_date": "2006-04-02",
     "verified_on": "2026-11-13",

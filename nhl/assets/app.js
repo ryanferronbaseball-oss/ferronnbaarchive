@@ -68,20 +68,46 @@
   +'<section class="nhl-panel"><h2>Signature performance</h2><p>'+esc(p.notables.join(' · '))+'</p>'+tileGame(g)+'</section>'+(p.awards?.length?'<section class="nhl-panel"><h2>Career honors</h2><p class="nhl-note">Lifetime NHL achievements, not awards earned specifically at this attended game.</p><div class="nhl-honors">'+honors(p)+'</div></section>':'')+note;
  }
  function recordsPage(games){
-  const g=games[0],goalie=g.players.find(p=>p.goalie),skater=g.players.find(p=>p.skater);
-  const records=[['Most goals, team',g.home_score+' · '+g.home],['Most goals, skater (verified)',skater.skater.goals+' · '+skater.name],['Most assists, skater (verified)',skater.skater.assists+' · '+skater.name],['Most points, skater (verified)',skater.skater.points+' · '+skater.name],['Most saves, goalie',goalie.goalie.saves+' · '+goalie.name],['Shutouts, goalie',goalie.goalie.shutouts+' · '+goalie.name]];
-  $('app').innerHTML=breadcrumb('RECORD BOOK')+'<h1>Your NHL records.</h1><p class="nhl-lead">Personal attendance records from the NHL games you saw. Current records reflect only verified player lines.</p><section class="nhl-grid nhl-record-grid">'+records.map(([label,value])=>'<div class="nhl-record"><small>'+esc(label)+'</small><strong>'+esc(value)+'</strong><a href="'+linkGame(g)+'">View game ↗</a></div>').join('')+'</section>'+note;
+  const g=games[0],skaters=g.players.filter(p=>p.skater),goalies=g.players.filter(p=>p.goalie);
+  const goals=numericMax(skaters,p=>p.skater.goals);
+  const assists=numericMax(skaters,p=>p.skater.assists);
+  const points=numericMax(skaters,p=>p.skater.points);
+  const shots=numericMax(skaters,p=>p.skater.shots_on_goal);
+  const saves=numericMax(goalies,p=>p.goalie.saves);
+  const shutout=numericMax(goalies,p=>p.goalie.shutouts);
+  const record=(category,player,value)=>[category,value===null||value===undefined?'Not yet verified':stat(value)+' · '+(player?.name||'Unverified')];
+  const records=[
+   ['Most goals, team',g.home_score+' · '+g.home],
+   record('Most goals, skater (verified)',goals,goals?.skater.goals),
+   record('Most assists, skater (verified)',assists,assists?.skater.assists),
+   record('Most points, skater (verified)',points,points?.skater.points),
+   record('Most shots, skater (verified)',shots,shots?.skater.shots_on_goal),
+   record('Most saves, goalie',saves,saves?.goalie.saves),
+   record('Most shutouts, goalie',shutout,shutout?.goalie.shutouts)
+  ];
+  $('app').innerHTML=breadcrumb('RECORD BOOK')+'<h1>Your NHL records.</h1><p class="nhl-lead">Personal attendance records from the NHL games you saw. Skater leaderboards exclude missing player statistics, rather than treating them as zero.</p><section class="nhl-grid nhl-record-grid">'+records.map(([label,value])=>'<div class="nhl-record"><small>'+esc(label)+'</small><strong>'+esc(value)+'</strong><a href="'+linkGame(g)+'">View game ↗</a></div>').join('')+'</section>'+note;
  }
- function coachesPage(games){
-  const g=games[0];
+ function coachesPage(games,career){
+  const g=games[0],catalog=career?.stops||{};
   const rows=[{name:g.coach.away,team:g.away,w:0,l:1},{name:g.coach.home,team:g.home,w:1,l:0}];
-  $('app').innerHTML=breadcrumb('COACH HISTORY')+'<h1>Behind the benches.</h1><p class="nhl-lead">The head coaches you witnessed in the NHL, with personal attended-game records. These are not career win-loss totals.</p>'
-  +'<div class="nhl-grid nhl-columns">'+rows.map(c=>'<article class="nhl-panel"><span class="nhl-kicker">'+esc(c.team)+'</span><h2>'+esc(c.name)+'</h2><div class="nhl-grid nhl-coach-stats">'+box(1,'Game coached')+box(c.w,'Wins')+box(c.l,'Losses')+'</div><a href="'+linkGame(g)+'">March 27, 2008 · View game ↗</a></article>').join('')+'</div>'
-  +'<p class="nhl-note">Coach histories are currently limited to verified head-coach assignments for this attended game; full career stops can be added after a separate audit.</p>';
+  const careerTags=c=>(catalog[c.name]||[]).map(([team,years])=>{
+    const witnessed=team===c.team;
+    return '<span class="nhl-coach-stop '+(witnessed?'witnessed':'unseen')+'" title="'+(witnessed?'Witnessed in Courtside Archive':'Not witnessed in Courtside Archive')+'">'+esc(team)+' · '+esc(years)+'</span>';
+  }).join('');
+  $('app').innerHTML=breadcrumb('COACH HISTORY')+'<h1>Behind the benches.</h1><p class="nhl-lead">Every recorded head-coaching stop for the coaches you witnessed, with your own attended-game record tracked separately from their full careers.</p>'
+  +'<div class="nhl-grid nhl-columns">'+rows.map(c=>'<article class="nhl-panel"><span class="nhl-kicker">'+esc(c.team)+'</span><h2>'+esc(c.name)+'</h2><div class="nhl-grid nhl-coach-stats">'+box(1,'Game coached')+box(c.w,'Wins')+box(c.l,'Losses')+'</div>'
+  +(c.name==='Marc Crawford'?'<p><span class="nhl-honor">Jack Adams Award · 1994–95</span></p>':'')
+  +'<h3>Head coaching stops</h3><p class="nhl-note">Burgundy: seen coaching · Ice blue: not seen coaching</p><div class="nhl-coach-stops">'+(careerTags(c)||'<span>Career history unavailable</span>')+'</div>'
+  +'<p><a href="'+headCoachLink(c.name)+'">Open full Coach History profile ↗</a></p><a href="'+linkGame(g)+'">March 27, 2008 · View game ↗</a></article>').join('')+'</div>'
+  +'<p class="nhl-note">Career stops include verified junior, AHL and Swiss league head-coaching jobs where applicable; assistant positions are not shown. Career honors are not necessarily from games attended.</p>';
  }
- fetch('./data/games.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('NHL game records unavailable');return r.json()}).then(games=>{
+
+ Promise.all([
+  fetch('./data/games.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('NHL game records unavailable');return r.json()}),
+  fetch('../coach-history/data/nhl-head-coaching-stops.json',{cache:'no-store'}).then(r=>r.ok?r.json():{stops:{}}).catch(()=>({stops:{}}))
+ ]).then(([games,career])=>{
   if(!Array.isArray(games)||!games.length)throw Error('No NHL games in the archive');
   if(page==='overview')overview(games);else if(page==='game')gamePage(games);else if(page==='stats')statsPage(games);
-  else if(page==='player')playerPage(games);else if(page==='records')recordsPage(games);else if(page==='coaches')coachesPage(games);
+  else if(page==='player')playerPage(games);else if(page==='records')recordsPage(games);else if(page==='coaches')coachesPage(games,career);
  }).catch(err=>{$('app').innerHTML='<section class="nhl-panel">Unable to load NHL archive: '+esc(err.message)+'</section>';});
 })();

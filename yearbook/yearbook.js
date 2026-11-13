@@ -1,4 +1,4 @@
-/* Courtside Archive Yearbook — annual game attendance across all eight sports.
+/* Courtside Archive Yearbook — annual game attendance across all nine sports.
    Counts use the same college-baseball attendance-only exclusion as homepage milestones.
    Great Games nominations are editorial; closest finishes are statistical, not personal ratings. */
 (()=>{'use strict';
@@ -29,7 +29,8 @@ const sources=[
  ['Soccer','../soccer/data/matches.json',json,'../soccer/game.html?id='],
  ['MLB','../mlb/data/games.json',json,'../mlb/game.html?id='],
  ['MiLB','../milb/data/games.json',json,'../milb/game.html?id='],
- ['College Baseball','../college-baseball/data/games.json',json,'../college-baseball/game.html?id=']
+ ['College Baseball','../college-baseball/data/games.json',json,'../college-baseball/game.html?id='],
+ ['NHL','../nhl/data/games.json',json,'../nhl/game.html?id=']
 ];
 /* Nominated matches in the Museum Greatest Games directory (not rankings). */
 const nominated=[
@@ -196,7 +197,7 @@ async function init(){
  byId('hero-years').textContent=years.length;
  byId('hero-range').textContent=from+'–'+to;
  byId('yearbook-data-note').textContent=numFmt(games.length)+' attended games currently indexed across '+plural(years.length,'calendar year')+
-  '. Entries use all eight sport logs; college baseball excludes attendance-only records, matching homepage milestones. Same-day games use archive/source order when start times are unavailable.';
+  '. Entries use all nine sport logs; college baseball excludes attendance-only records, matching homepage milestones. Same-day games use archive/source order when start times are unavailable.';
  const requested=new URLSearchParams(location.search).get('year');
  current=byYear.has(requested)?requested:years[0];
  tilesForYear();renderEdition();

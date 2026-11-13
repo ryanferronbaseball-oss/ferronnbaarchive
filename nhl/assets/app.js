@@ -14,7 +14,8 @@
  const linkPlayer=p=>'./player.html?id='+encodeURIComponent(p.id);
  const playerAnchor=p=>'<a href="'+linkPlayer(p)+'">'+esc(p.name)+'</a>';
  const honors=p=>(p.awards||[]).map(a=>'<a class="nhl-honor" href="'+esc(a.source)+'" target="_blank" rel="noopener noreferrer" title="Career achievement, not necessarily awarded during the attended game">'+esc(a.title)+' · '+esc(a.years)+'</a>').join('');
- const playerRow=p=>[playerAnchor(p),esc(p.team),stat(p.skater?.goals),stat(p.skater?.assists),stat(p.skater?.points),stat(p.skater?.plus_minus),stat(p.skater?.penalty_minutes),stat(p.skater?.shots_on_goal),stat(p.skater?.minutes)];
+ const signed=n=>n>0?'+'+n:String(n);
+ const playerRow=p=>[playerAnchor(p),esc(p.team),stat(p.skater?.goals),stat(p.skater?.assists),stat(p.skater?.points),signed(p.skater?.plus_minus??0),stat(p.skater?.penalty_minutes),stat(p.skater?.shots_on_goal),stat(p.skater?.minutes)];
  const coachSlug=name=>name.normalize('NFKD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
  const headCoachLink=name=>'../coach-history/index.html?coach='+encodeURIComponent(coachSlug(name))+'#profile';
  const numericMax=(items,get)=>items.filter(p=>Number.isFinite(get(p))).sort((a,b)=>get(b)-get(a)||a.name.localeCompare(b.name))[0];
@@ -46,6 +47,9 @@
    String(goal.period),esc(goal.time),scorerLink(goal.scorer),goal.assists.map(scorerLink).join(', ')||'Unassisted',
    goal.strength==='PP'?'Power play':'Even strength','0–'+(i+1)
   ]));
+  const penaltyTable=table(['Period','Time','Team','Player','Infraction','PIM'],(g.penalties||[]).map(x=>[
+   String(x.period),esc(x.time),esc(x.team),scorerLink(x.player),esc(x.infraction),stat(x.minutes)
+  ]));
   const teamCompare=table(['Team','SOG','Power play','PIM','Faceoffs','Hits','Blocks','Takeaways','Giveaways'],[
    [esc(g.away),stat(statAway.shots_on_goal),statAway.power_play_goals+'/'+statAway.power_play_chances,stat(statAway.penalty_minutes),
     stat(statAway.faceoff_wins),stat(statAway.hits),stat(statAway.blocked_shots),stat(statAway.takeaways),stat(statAway.giveaways)],
@@ -60,6 +64,7 @@
   +'<section class="nhl-panel"><h2>Scoring by period</h2>'+per+'</section>'
   +'<section class="nhl-panel"><h2>Official scoring summary</h2>'+scoringTable+'</section>'
   +'<section class="nhl-panel"><h2>Team comparison</h2>'+teamCompare+'</section>'
+  +'<section class="nhl-panel"><h2>Official penalty summary</h2>'+penaltyTable+'</section>'
   +'<section class="nhl-panel nhl-story"><span class="nhl-kicker">EVERY GAME HAS A STORY</span><h2>Three second-period goals. A 38-save shutout.</h2><p>'+esc(g.recap)+'</p></section>'
   +'<section class="nhl-panel"><h2>Player of the Game</h2><div class="nhl-feature"><strong>'+playerAnchor(homeGoalie)+'</strong><span>38 saves · 38 shots against · 1.000 save percentage · Shutout</span></div><p class="nhl-note">Courtside Archive selection: '+esc(homeGoalie.name)+'. The NHL’s official three stars are listed below and use a separate selection process.</p></section>'
   +'<section class="nhl-panel"><h2>Official NHL three stars</h2><div class="nhl-stars">'+stars+'</div></section>'

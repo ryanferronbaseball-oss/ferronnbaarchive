@@ -1,7 +1,7 @@
 {
   "updated": "2026-11-07",
   "venueCount": 141,
-  "mappedGames": 826,
+  "mappedGames": 827,
   "excludedUnassignedGames": 7,
   "venues": [
     {
@@ -1308,7 +1308,7 @@
       "sport": "NBA",
       "city": "Los Angeles, CA",
       "address": "1111 S. Figueroa St., Los Angeles, CA 90015",
-      "visits": 29,
+      "visits": 30,
       "firstVisit": "2006-02-26",
       "lastVisit": "2018-01-13",
       "lat": 34.0429979,
@@ -1440,6 +1440,15 @@
           "awayScore": 98,
           "homeScore": 95,
           "url": "../nba/game.html?id=13"
+        },
+        {
+          "id": "nhl-2008-03-27-phx-lak",
+          "date": "2008-03-27",
+          "away": "Phoenix Coyotes",
+          "home": "Los Angeles Kings",
+          "awayScore": 0,
+          "homeScore": 4,
+          "url": "../nhl/game.html?id=nhl-2008-03-27-phx-lak"
         },
         {
           "id": "14",
@@ -1585,6 +1594,10 @@
           "homeScore": 126,
           "url": "../nba/game.html?id=30"
         }
+      ],
+      "sports": [
+        "NBA",
+        "NHL"
       ]
     },
     {

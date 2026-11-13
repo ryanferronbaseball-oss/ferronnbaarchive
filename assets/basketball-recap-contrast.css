@@ -1,0 +1,43 @@
+/* NBA and NCAA basketball game recaps.
+   Shared palette and contrast behavior with the MLB "Every game has a story"
+   recap; selectors deliberately target only game-recap panels. */
+
+/* Shared global site.css / sport-burgundy-ice.css force .panel to light
+   backgrounds with !important, so restore the recap surface explicitly. */
+section.panel.game-recap{
+  background:linear-gradient(145deg,#5E1731,#421024)!important;
+  border-color:#8DB8D2!important;
+  color:#F8FBFD!important;
+}
+section.panel.game-recap h2,
+section.panel.game-recap p{
+  color:#F8FBFD!important;
+}
+section.panel.game-recap h2{
+  margin-bottom:10px;
+}
+section.panel.game-recap p{
+  font-size:15px;
+  line-height:1.72;
+  margin:10px 0 0;
+}
+section.panel.game-recap .recap-kicker{
+  color:#B7DDEC!important;
+  font-size:11px;
+  font-weight:850;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  margin-bottom:5px;
+}
+section.panel.game-recap a,
+section.panel.game-recap a:visited{
+  color:#D7F1FF!important;
+  font-weight:800;
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+section.panel.game-recap a:hover,
+section.panel.game-recap a:focus-visible{
+  color:#FFF!important;
+  text-decoration-thickness:2px;
+}

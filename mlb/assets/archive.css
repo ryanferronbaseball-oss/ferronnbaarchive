@@ -183,10 +183,16 @@ tbody small{display:block;color:var(--muted);font-size:11px;font-weight:400;marg
 .mlb-team-box .mlb-lineup-row.mlb-substitute td:nth-child(2){padding-left:26px;background:#F6F8F3}
 .mlb-team-box .mlb-lineup-row.mlb-substitute .mlb-order{color:#7C947C}
 
-/* Game recap: official W/L/S followed by one cross-discipline Player of the Game. */
+/* Game recap: official W/L/S, the story of the game, then one cross-discipline Player of the Game. */
 .mlb-pregame-eyebrow{font-size:11px;font-weight:850;letter-spacing:.14em;color:#627967;text-transform:uppercase;margin-bottom:5px}
-#pitchingDecisions,#playerOfGame{margin:16px 0;padding:22px 24px}
-#pitchingDecisions h2,#playerOfGame h2{margin:4px 0 18px;font-size:clamp(22px,3vw,30px)}
+#pitchingDecisions,#gameRecap,#playerOfGame{margin:16px 0;padding:22px 24px}
+#pitchingDecisions h2,#gameRecap h2,#playerOfGame h2{margin:4px 0 18px;font-size:clamp(22px,3vw,30px)}
+.mlb-game-recap{background:linear-gradient(145deg,#5E1731,#421024);border-color:#8DB8D2;color:#F8FBFD}
+.mlb-game-recap h2{color:#FFF}
+.mlb-game-recap p{font-size:15px;line-height:1.72;margin:10px 0 0}
+.mlb-game-recap a{color:#C5E5F5;font-weight:800}
+.mlb-game-recap a:hover{color:#FFF}
+.mlb-recap-kicker{color:#B7DDEC;font-size:11px;font-weight:850;letter-spacing:.14em;text-transform:uppercase;margin-bottom:5px}
 .mlb-decision-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
 .mlb-decision-card{min-width:0;border:1px solid #DEE4DA;background:#F7F9F4;padding:18px 17px;border-radius:12px}
 .mlb-decision-type{font-size:10px;letter-spacing:.11em;font-weight:900;color:#335944}
@@ -208,7 +214,7 @@ tbody small{display:block;color:var(--muted);font-size:11px;font-weight:400;marg
 .mlb-potg-impact span{font-size:11px;letter-spacing:.07em;text-transform:uppercase;font-weight:800;color:#637968}
 .mlb-potg-profile{display:block;font-size:12px;font-weight:800;margin-top:6px}
 .mlb-potg-panel .mlb-note,.mlb-decisions-panel .mlb-note{margin:16px 0 0}
-@media(max-width:650px){.mlb-decision-grid{grid-template-columns:1fr}.mlb-decision-card{padding:13px 15px}.mlb-decision-role{margin:2px 0 5px}.mlb-potg-body{gap:15px}.mlb-potg-portrait{width:88px;height:106px;flex-basis:88px}#pitchingDecisions,#playerOfGame{padding:18px}}
+@media(max-width:650px){.mlb-decision-grid{grid-template-columns:1fr}.mlb-decision-card{padding:13px 15px}.mlb-decision-role{margin:2px 0 5px}.mlb-potg-body{gap:15px}.mlb-potg-portrait{width:88px;height:106px;flex-basis:88px}#pitchingDecisions,#gameRecap,#playerOfGame{padding:18px}}
 
 
 /* MLB Hall of Fame page: NBA/NFL matching cream-and-forest legend cards. */

@@ -28,96 +28,370 @@
     "state": "CA",
     "attendance": 17331,
     "verified_fields": [
-      "date",
-      "matchup",
-      "score",
-      "venue",
-      "period scoring",
-      "attendance",
-      "Erik Ersberg saves and shutout",
-      "Anze Kopitar goal and two assists",
-      "team shots, penalty minutes, power-play goals and faceoff wins",
-      "Mikael Tellqvist goalie saves and goals allowed",
-      "Rob Blake third-period goal",
-      "Shane Doan, Martin Hanzal and Zbyněk Michálek 2008-03-27 lines"
+      "NHL game date and match",
+      "final and period score",
+      "venue and attendance",
+      "all four goal times, strengths and credited assists",
+      "all 36 participating skaters and both goalies",
+      "G/A/PTS, plus-minus, PIM, TOI and SOG",
+      "shots, power-play opportunities, hits, blocked shots, takeaways, giveaways, faceoffs",
+      "official game three stars"
     ],
-    "source_status": "Verified team totals, both goaltenders, and a growing selection of individual skater game lines. Complete NHL event-by-event and every skater's box score remain under review.",
+    "source_status": "Complete NHL official scoring summary, 36 skater game lines and two participating goalies. All individual G/A/PTS, plus-minus, PIM, TOI and shots verified against the NHL's original Event Summary; additional event and player tracking fields may remain optional.",
     "source_urls": [
-      "https://www.hockey-reference.com/teams/LAK/2008_gamelog.html",
-      "https://www.hockey-reference.com/boxscores/?day=27&month=3&year=2008",
-      "https://www.latimes.com/archives/la-xpm-2008-mar-28-sp-kings28-story.html",
-      "https://hockeygoalies.org/bio/tellqvist.html",
-      "https://www.statmuse.com/nhl/player/shane-doan-1658/game-log?seasonYear=2008",
-      "https://www.statmuse.com/nhl/player/martin-hanzal-2660/game-log?seasonYear=2008",
-      "https://www.statmuse.com/nhl/player/zbynek-michalek-4709/game-log?seasonYear=2008",
-      "https://www.gettyimages.co.uk/detail/news-photo/alexander-frolov-of-the-los-angeles-kings-congratulates-news-photo/80412624"
+      "https://www.nhl.com/scores/htmlreports/20072008/GS021160.HTM",
+      "https://www.nhl.com/scores/htmlreports/20072008/ES021160.HTM",
+      "https://www.hockey-reference.com/boxscores/200803270LAK.html",
+      "https://puckey.ca/matches/2007021160/",
+      "https://www.latimes.com/archives/la-xpm-2008-mar-28-sp-kings28-story.html"
     ],
     "coach": {
       "away": "Wayne Gretzky",
       "home": "Marc Crawford"
     },
-    "recap": "The Kings scored three goals in a six-minute second-period burst before adding one in the third, blanking Phoenix 4–0 at STAPLES Center. Erik Ersberg stopped all 38 Coyotes shots for his second NHL shutout. Anže Kopitar broke a seven-game goal drought with his 30th goal of the season and contributed two assists. For Courtside Archive, this is the first NHL game logged and a shutout witnessed in person.",
+    "recap": "Before 17,331 at STAPLES Center, Los Angeles broke a scoreless tie with three goals in just over six minutes of the second period. Kevin Dallman scored at 6:52, Anže Kopitar made it 2–0 at 9:14, and Dustin Brown converted a power play at 13:03. Rob Blake added the fourth at 11:54 of the third. Kopitar finished with a goal and two assists, while Erik Ersberg turned aside all 38 Phoenix shots for his second shutout of the season. Despite being outshot 38–33, the Kings earned a 4–0 victory in the first NHL game witnessed in Courtside Archive.",
     "players": [
       {
-        "id": "erik-ersberg",
-        "name": "Erik Ersberg",
-        "team": "Los Angeles Kings",
-        "position": "G",
+        "id": "keith-ballard",
+        "name": "Keith Ballard",
+        "team": "Phoenix Coyotes",
+        "position": "D",
         "games": 1,
-        "goalie": {
-          "shots_against": 38,
-          "saves": 38,
-          "goals_against": 0,
-          "save_pct": 1,
-          "shutouts": 1,
-          "wins": 1,
-          "losses": 0,
-          "minutes": "60:00"
+        "skater": {
+          "goals": 0,
+          "assists": 0,
+          "points": 0,
+          "plus_minus": 0,
+          "penalty_minutes": 0,
+          "minutes": "20:50",
+          "shots_on_goal": 1
+        },
+        "notables": [],
+        "verified": true
+      },
+      {
+        "id": "keith-yandle",
+        "name": "Keith Yandle",
+        "team": "Phoenix Coyotes",
+        "position": "D",
+        "games": 1,
+        "skater": {
+          "goals": 0,
+          "assists": 0,
+          "points": 0,
+          "plus_minus": -2,
+          "penalty_minutes": 0,
+          "minutes": "16:59",
+          "shots_on_goal": 3
+        },
+        "notables": [],
+        "verified": true
+      },
+      {
+        "id": "zbynek-michalek",
+        "name": "Zbyněk Michálek",
+        "team": "Phoenix Coyotes",
+        "position": "D",
+        "games": 1,
+        "skater": {
+          "goals": 0,
+          "assists": 0,
+          "points": 0,
+          "plus_minus": 0,
+          "penalty_minutes": 2,
+          "minutes": "21:05",
+          "shots_on_goal": 0
         },
         "notables": [
-          "38-save shutout",
-          "Second NHL shutout of the season"
+          "21:05 time on ice"
         ],
         "verified": true
       },
       {
-        "id": "anze-kopitar",
-        "name": "Anže Kopitar",
-        "team": "Los Angeles Kings",
+        "id": "martin-hanzal",
+        "name": "Martin Hanzal",
+        "team": "Phoenix Coyotes",
         "position": "C",
         "games": 1,
         "skater": {
-          "goals": 1,
-          "assists": 2,
-          "points": 3
+          "goals": 0,
+          "assists": 0,
+          "points": 0,
+          "plus_minus": -2,
+          "penalty_minutes": 0,
+          "minutes": "17:14",
+          "shots_on_goal": 2
         },
         "notables": [
-          "30th goal of 2007–08 season",
-          "One goal and two assists"
+          "Two shots on goal"
         ],
-        "verified": true,
+        "verified": true
+      },
+      {
+        "id": "craig-weller",
+        "name": "Craig Weller",
+        "team": "Phoenix Coyotes",
+        "position": "RW",
+        "games": 1,
+        "skater": {
+          "goals": 0,
+          "assists": 0,
+          "points": 0,
+          "plus_minus": 0,
+          "penalty_minutes": 0,
+          "minutes": "07:29",
+          "shots_on_goal": 1
+        },
+        "notables": [],
+        "verified": true
+      },
+      {
+        "id": "daniel-carcillo",
+        "name": "Daniel Carcillo",
+        "team": "Phoenix Coyotes",
+        "position": "LW",
+        "games": 1,
+        "skater": {
+          "goals": 0,
+          "assists": 0,
+          "points": 0,
+          "plus_minus": 0,
+          "penalty_minutes": 2,
+          "minutes": "17:37",
+          "shots_on_goal": 2
+        },
+        "notables": [],
+        "verified": true
+      },
+      {
+        "id": "radim-vrbata",
+        "name": "Radim Vrbata",
+        "team": "Phoenix Coyotes",
+        "position": "RW",
+        "games": 1,
+        "skater": {
+          "goals": 0,
+          "assists": 0,
+          "points": 0,
+          "plus_minus": -2,
+          "penalty_minutes": 0,
+          "minutes": "15:28",
+          "shots_on_goal": 4
+        },
+        "notables": [],
+        "verified": true
+      },
+      {
+        "id": "enver-lisin",
+        "name": "Enver Lisin",
+        "team": "Phoenix Coyotes",
+        "position": "RW",
+        "games": 1,
+        "skater": {
+          "goals": 0,
+          "assists": 0,
+          "points": 0,
+          "plus_minus": -1,
+          "penalty_minutes": 2,
+          "minutes": "18:02",
+          "shots_on_goal": 7
+        },
+        "notables": [],
+        "verified": true
+      },
+      {
+        "id": "shane-doan",
+        "name": "Shane Doan",
+        "team": "Phoenix Coyotes",
+        "position": "RW",
+        "games": 1,
+        "skater": {
+          "goals": 0,
+          "assists": 0,
+          "points": 0,
+          "plus_minus": -1,
+          "penalty_minutes": 0,
+          "minutes": "15:31",
+          "shots_on_goal": 3
+        },
+        "notables": [
+          "Three shots on goal"
+        ],
         "awards": [
           {
-            "title": "Stanley Cup champion",
-            "years": "2012, 2014",
-            "source": "https://www.nhl.com/news/nhl-stanley-cup-champions-2010-2016-287974234"
-          },
-          {
-            "title": "Frank J. Selke Trophy",
-            "years": "2016, 2018",
-            "source": "https://www.nhl.com/news/topic/nhl-awards/nhl-frank-j-selke-trophy-winners-complete-list-287904026"
-          },
-          {
-            "title": "Lady Byng Memorial Trophy",
-            "years": "2016, 2023, 2025",
-            "source": "https://www.nhl.com/news/topic/nhl-awards/nhl-lady-byng-memorial-trophy-winners-complete-list-287910994"
+            "title": "King Clancy Memorial Trophy",
+            "years": "2010",
+            "source": "https://www.nhl.com/player/shane-doan-8462038/bio"
           },
           {
             "title": "Mark Messier Leadership Award",
-            "years": "2022",
-            "source": "https://www.nhl.com/news/anze-kopitar-wins-mark-messier-nhl-leadership-award-334424478"
+            "years": "2012",
+            "source": "https://www.nhl.com/player/shane-doan-8462038/bio"
           }
-        ]
+        ],
+        "verified": true
+      },
+      {
+        "id": "mathias-tjarnqvist",
+        "name": "Mathias Tjärnqvist",
+        "team": "Phoenix Coyotes",
+        "position": "LW",
+        "games": 1,
+        "skater": {
+          "goals": 0,
+          "assists": 0,
+          "points": 0,
+          "plus_minus": 0,
+          "penalty_minutes": 0,
+          "minutes": "13:23",
+          "shots_on_goal": 2
+        },
+        "notables": [],
+        "verified": true
+      },
+      {
+        "id": "joel-perrault",
+        "name": "Joël Perrault",
+        "team": "Phoenix Coyotes",
+        "position": "C",
+        "games": 1,
+        "skater": {
+          "goals": 0,
+          "assists": 0,
+          "points": 0,
+          "plus_minus": -1,
+          "penalty_minutes": 0,
+          "minutes": "13:19",
+          "shots_on_goal": 1
+        },
+        "notables": [],
+        "verified": true
+      },
+      {
+        "id": "steven-reinprecht",
+        "name": "Steven Reinprecht",
+        "team": "Phoenix Coyotes",
+        "position": "C",
+        "games": 1,
+        "skater": {
+          "goals": 0,
+          "assists": 0,
+          "points": 0,
+          "plus_minus": 0,
+          "penalty_minutes": 0,
+          "minutes": "09:42",
+          "shots_on_goal": 0
+        },
+        "notables": [],
+        "verified": true
+      },
+      {
+        "id": "daniel-winnik",
+        "name": "Daniel Winnik",
+        "team": "Phoenix Coyotes",
+        "position": "C",
+        "games": 1,
+        "skater": {
+          "goals": 0,
+          "assists": 0,
+          "points": 0,
+          "plus_minus": -1,
+          "penalty_minutes": 0,
+          "minutes": "13:18",
+          "shots_on_goal": 2
+        },
+        "notables": [],
+        "verified": true
+      },
+      {
+        "id": "niko-kapanen",
+        "name": "Niko Kapanen",
+        "team": "Phoenix Coyotes",
+        "position": "C",
+        "games": 1,
+        "skater": {
+          "goals": 0,
+          "assists": 0,
+          "points": 0,
+          "plus_minus": 0,
+          "penalty_minutes": 0,
+          "minutes": "16:55",
+          "shots_on_goal": 1
+        },
+        "notables": [],
+        "verified": true
+      },
+      {
+        "id": "nick-boynton",
+        "name": "Nick Boynton",
+        "team": "Phoenix Coyotes",
+        "position": "D",
+        "games": 1,
+        "skater": {
+          "goals": 0,
+          "assists": 0,
+          "points": 0,
+          "plus_minus": -2,
+          "penalty_minutes": 2,
+          "minutes": "14:07",
+          "shots_on_goal": 0
+        },
+        "notables": [],
+        "verified": true
+      },
+      {
+        "id": "derek-morris",
+        "name": "Derek Morris",
+        "team": "Phoenix Coyotes",
+        "position": "D",
+        "games": 1,
+        "skater": {
+          "goals": 0,
+          "assists": 0,
+          "points": 0,
+          "plus_minus": 0,
+          "penalty_minutes": 0,
+          "minutes": "18:46",
+          "shots_on_goal": 2
+        },
+        "notables": [],
+        "verified": true
+      },
+      {
+        "id": "ed-jovanovski",
+        "name": "Ed Jovanovski",
+        "team": "Phoenix Coyotes",
+        "position": "D",
+        "games": 1,
+        "skater": {
+          "goals": 0,
+          "assists": 0,
+          "points": 0,
+          "plus_minus": -1,
+          "penalty_minutes": 0,
+          "minutes": "22:50",
+          "shots_on_goal": 3
+        },
+        "notables": [],
+        "verified": true
+      },
+      {
+        "id": "peter-mueller",
+        "name": "Peter Mueller",
+        "team": "Phoenix Coyotes",
+        "position": "C",
+        "games": 1,
+        "skater": {
+          "goals": 0,
+          "assists": 0,
+          "points": 0,
+          "plus_minus": -1,
+          "penalty_minutes": 2,
+          "minutes": "18:29",
+          "shots_on_goal": 4
+        },
+        "notables": [],
+        "verified": true
       },
       {
         "id": "mikael-tellqvist",
@@ -149,8 +423,12 @@
         "games": 1,
         "skater": {
           "goals": 1,
-          "assists": null,
-          "points": null
+          "assists": 0,
+          "points": 1,
+          "plus_minus": 1,
+          "penalty_minutes": 2,
+          "minutes": "22:19",
+          "shots_on_goal": 2
         },
         "notables": [
           "Scored Los Angeles's fourth goal in the third period"
@@ -175,68 +453,355 @@
         "verified": true
       },
       {
-        "id": "shane-doan",
-        "name": "Shane Doan",
-        "team": "Phoenix Coyotes",
-        "position": "RW",
-        "games": 1,
-        "skater": {
-          "goals": 0,
-          "assists": 0,
-          "points": 0,
-          "shots_on_goal": 3,
-          "minutes": "15:31"
-        },
-        "notables": [
-          "Three shots on goal"
-        ],
-        "awards": [
-          {
-            "title": "King Clancy Memorial Trophy",
-            "years": "2010",
-            "source": "https://www.nhl.com/player/shane-doan-8462038/bio"
-          },
-          {
-            "title": "Mark Messier Leadership Award",
-            "years": "2012",
-            "source": "https://www.nhl.com/player/shane-doan-8462038/bio"
-          }
-        ],
-        "verified": true
-      },
-      {
-        "id": "martin-hanzal",
-        "name": "Martin Hanzal",
-        "team": "Phoenix Coyotes",
-        "position": "C",
-        "games": 1,
-        "skater": {
-          "goals": 0,
-          "assists": 0,
-          "points": 0,
-          "shots_on_goal": 2,
-          "minutes": "17:14"
-        },
-        "notables": [
-          "Two shots on goal"
-        ],
-        "verified": true
-      },
-      {
-        "id": "zbynek-michalek",
-        "name": "Zbyněk Michálek",
-        "team": "Phoenix Coyotes",
+        "id": "peter-harrold",
+        "name": "Peter Harrold",
+        "team": "Los Angeles Kings",
         "position": "D",
         "games": 1,
         "skater": {
           "goals": 0,
           "assists": 0,
           "points": 0,
-          "shots_on_goal": 0,
-          "minutes": "21:05"
+          "plus_minus": 0,
+          "penalty_minutes": 2,
+          "minutes": "17:51",
+          "shots_on_goal": 0
+        },
+        "notables": [],
+        "verified": true
+      },
+      {
+        "id": "derek-armstrong",
+        "name": "Derek Armstrong",
+        "team": "Los Angeles Kings",
+        "position": "C",
+        "games": 1,
+        "skater": {
+          "goals": 0,
+          "assists": 0,
+          "points": 0,
+          "plus_minus": 0,
+          "penalty_minutes": 0,
+          "minutes": "15:14",
+          "shots_on_goal": 0
+        },
+        "notables": [],
+        "verified": true
+      },
+      {
+        "id": "matt-ellis",
+        "name": "Matt Ellis",
+        "team": "Los Angeles Kings",
+        "position": "LW",
+        "games": 1,
+        "skater": {
+          "goals": 0,
+          "assists": 0,
+          "points": 0,
+          "plus_minus": 1,
+          "penalty_minutes": 0,
+          "minutes": "09:45",
+          "shots_on_goal": 1
+        },
+        "notables": [],
+        "verified": true
+      },
+      {
+        "id": "anze-kopitar",
+        "name": "Anže Kopitar",
+        "team": "Los Angeles Kings",
+        "position": "C",
+        "games": 1,
+        "skater": {
+          "goals": 1,
+          "assists": 2,
+          "points": 3,
+          "plus_minus": 2,
+          "penalty_minutes": 0,
+          "minutes": "23:54",
+          "shots_on_goal": 3
         },
         "notables": [
-          "21:05 time on ice"
+          "30th goal of 2007–08 season",
+          "One goal and two assists"
+        ],
+        "awards": [
+          {
+            "title": "Stanley Cup champion",
+            "years": "2012, 2014",
+            "source": "https://www.nhl.com/news/nhl-stanley-cup-champions-2010-2016-287974234"
+          },
+          {
+            "title": "Frank J. Selke Trophy",
+            "years": "2016, 2018",
+            "source": "https://www.nhl.com/news/topic/nhl-awards/nhl-frank-j-selke-trophy-winners-complete-list-287904026"
+          },
+          {
+            "title": "Lady Byng Memorial Trophy",
+            "years": "2016, 2023, 2025",
+            "source": "https://www.nhl.com/news/topic/nhl-awards/nhl-lady-byng-memorial-trophy-winners-complete-list-287910994"
+          },
+          {
+            "title": "Mark Messier Leadership Award",
+            "years": "2022",
+            "source": "https://www.nhl.com/news/anze-kopitar-wins-mark-messier-nhl-leadership-award-334424478"
+          }
+        ],
+        "verified": true
+      },
+      {
+        "id": "patrick-o-sullivan",
+        "name": "Patrick O'Sullivan",
+        "team": "Los Angeles Kings",
+        "position": "C",
+        "games": 1,
+        "skater": {
+          "goals": 0,
+          "assists": 2,
+          "points": 2,
+          "plus_minus": 2,
+          "penalty_minutes": 0,
+          "minutes": "17:39",
+          "shots_on_goal": 1
+        },
+        "notables": [],
+        "verified": true
+      },
+      {
+        "id": "michael-cammalleri",
+        "name": "Michael Cammalleri",
+        "team": "Los Angeles Kings",
+        "position": "LW",
+        "games": 1,
+        "skater": {
+          "goals": 0,
+          "assists": 1,
+          "points": 1,
+          "plus_minus": 0,
+          "penalty_minutes": 2,
+          "minutes": "13:46",
+          "shots_on_goal": 2
+        },
+        "notables": [],
+        "verified": true
+      },
+      {
+        "id": "lubomir-visnovsky",
+        "name": "Ľubomír Višňovský",
+        "team": "Los Angeles Kings",
+        "position": "D",
+        "games": 1,
+        "skater": {
+          "goals": 0,
+          "assists": 0,
+          "points": 0,
+          "plus_minus": 0,
+          "penalty_minutes": 0,
+          "minutes": "23:54",
+          "shots_on_goal": 4
+        },
+        "notables": [],
+        "verified": true
+      },
+      {
+        "id": "brian-willsie",
+        "name": "Brian Willsie",
+        "team": "Los Angeles Kings",
+        "position": "RW",
+        "games": 1,
+        "skater": {
+          "goals": 0,
+          "assists": 1,
+          "points": 1,
+          "plus_minus": 2,
+          "penalty_minutes": 0,
+          "minutes": "07:20",
+          "shots_on_goal": 1
+        },
+        "notables": [],
+        "verified": true
+      },
+      {
+        "id": "dustin-brown",
+        "name": "Dustin Brown",
+        "team": "Los Angeles Kings",
+        "position": "LW",
+        "games": 1,
+        "skater": {
+          "goals": 1,
+          "assists": 0,
+          "points": 1,
+          "plus_minus": 0,
+          "penalty_minutes": 0,
+          "minutes": "18:38",
+          "shots_on_goal": 5
+        },
+        "notables": [],
+        "verified": true
+      },
+      {
+        "id": "alexander-frolov",
+        "name": "Alexander Frolov",
+        "team": "Los Angeles Kings",
+        "position": "LW",
+        "games": 1,
+        "skater": {
+          "goals": 0,
+          "assists": 1,
+          "points": 1,
+          "plus_minus": 1,
+          "penalty_minutes": 0,
+          "minutes": "18:05",
+          "shots_on_goal": 6
+        },
+        "notables": [],
+        "verified": true
+      },
+      {
+        "id": "jon-klemm",
+        "name": "Jon Klemm",
+        "team": "Los Angeles Kings",
+        "position": "D",
+        "games": 1,
+        "skater": {
+          "goals": 0,
+          "assists": 0,
+          "points": 0,
+          "plus_minus": 1,
+          "penalty_minutes": 0,
+          "minutes": "17:55",
+          "shots_on_goal": 0
+        },
+        "notables": [],
+        "verified": true
+      },
+      {
+        "id": "michal-handzus",
+        "name": "Michal Handzuš",
+        "team": "Los Angeles Kings",
+        "position": "C",
+        "games": 1,
+        "skater": {
+          "goals": 0,
+          "assists": 0,
+          "points": 0,
+          "plus_minus": 0,
+          "penalty_minutes": 0,
+          "minutes": "14:29",
+          "shots_on_goal": 0
+        },
+        "notables": [],
+        "verified": true
+      },
+      {
+        "id": "scott-thornton",
+        "name": "Scott Thornton",
+        "team": "Los Angeles Kings",
+        "position": "LW",
+        "games": 1,
+        "skater": {
+          "goals": 0,
+          "assists": 0,
+          "points": 0,
+          "plus_minus": 0,
+          "penalty_minutes": 2,
+          "minutes": "10:22",
+          "shots_on_goal": 3
+        },
+        "notables": [],
+        "verified": true
+      },
+      {
+        "id": "jeff-giuliano",
+        "name": "Jeff Giuliano",
+        "team": "Los Angeles Kings",
+        "position": "LW",
+        "games": 1,
+        "skater": {
+          "goals": 0,
+          "assists": 0,
+          "points": 0,
+          "plus_minus": 0,
+          "penalty_minutes": 0,
+          "minutes": "09:44",
+          "shots_on_goal": 1
+        },
+        "notables": [],
+        "verified": true
+      },
+      {
+        "id": "kevin-dallman",
+        "name": "Kevin Dallman",
+        "team": "Los Angeles Kings",
+        "position": "D",
+        "games": 1,
+        "skater": {
+          "goals": 1,
+          "assists": 0,
+          "points": 1,
+          "plus_minus": 2,
+          "penalty_minutes": 0,
+          "minutes": "18:11",
+          "shots_on_goal": 3
+        },
+        "notables": [],
+        "verified": true
+      },
+      {
+        "id": "raitis-ivanans",
+        "name": "Raitis Ivanāns",
+        "team": "Los Angeles Kings",
+        "position": "LW",
+        "games": 1,
+        "skater": {
+          "goals": 0,
+          "assists": 0,
+          "points": 0,
+          "plus_minus": 0,
+          "penalty_minutes": 2,
+          "minutes": "09:01",
+          "shots_on_goal": 1
+        },
+        "notables": [],
+        "verified": true
+      },
+      {
+        "id": "tom-preissing",
+        "name": "Tom Preissing",
+        "team": "Los Angeles Kings",
+        "position": "D",
+        "games": 1,
+        "skater": {
+          "goals": 0,
+          "assists": 0,
+          "points": 0,
+          "plus_minus": 2,
+          "penalty_minutes": 2,
+          "minutes": "20:05",
+          "shots_on_goal": 0
+        },
+        "notables": [],
+        "verified": true
+      },
+      {
+        "id": "erik-ersberg",
+        "name": "Erik Ersberg",
+        "team": "Los Angeles Kings",
+        "position": "G",
+        "games": 1,
+        "goalie": {
+          "shots_against": 38,
+          "saves": 38,
+          "goals_against": 0,
+          "save_pct": 1,
+          "shutouts": 1,
+          "wins": 1,
+          "losses": 0,
+          "minutes": "59:48"
+        },
+        "notables": [
+          "38-save shutout",
+          "Second NHL shutout of the season"
         ],
         "verified": true
       }
@@ -246,27 +811,138 @@
         "shots_on_goal": 38,
         "penalty_minutes": 10,
         "power_play_goals": 0,
-        "faceoff_wins": 35
+        "power_play_chances": 4,
+        "faceoff_wins": 35,
+        "faceoff_losses": 25,
+        "hits": 14,
+        "blocked_shots": 10,
+        "takeaways": 5,
+        "giveaways": 13,
+        "period_shots": [
+          11,
+          9,
+          18
+        ]
       },
       "home": {
         "shots_on_goal": 33,
         "penalty_minutes": 12,
         "power_play_goals": 1,
-        "faceoff_wins": 25
+        "power_play_chances": 3,
+        "faceoff_wins": 25,
+        "faceoff_losses": 35,
+        "hits": 18,
+        "blocked_shots": 13,
+        "takeaways": 5,
+        "giveaways": 14,
+        "period_shots": [
+          8,
+          15,
+          10
+        ]
       }
     },
     "goals_identified": [
       {
+        "player": "Kevin Dallman",
+        "team": "Los Angeles Kings",
+        "period": 2,
+        "time": "06:52",
+        "assists": [
+          "Anže Kopitar"
+        ],
+        "strength": "EV"
+      },
+      {
         "player": "Anže Kopitar",
         "team": "Los Angeles Kings",
-        "period": 2
+        "period": 2,
+        "time": "09:14",
+        "assists": [
+          "Brian Willsie",
+          "Patrick O'Sullivan"
+        ],
+        "strength": "EV"
+      },
+      {
+        "player": "Dustin Brown",
+        "team": "Los Angeles Kings",
+        "period": 2,
+        "time": "13:03",
+        "assists": [
+          "Michael Cammalleri",
+          "Anže Kopitar"
+        ],
+        "strength": "PP"
       },
       {
         "player": "Rob Blake",
         "team": "Los Angeles Kings",
-        "period": 3
+        "period": 3,
+        "time": "11:54",
+        "assists": [
+          "Alexander Frolov",
+          "Patrick O'Sullivan"
+        ],
+        "strength": "EV"
       }
     ],
-    "full_boxscore_status": "partial — goal scorers, assists, ice times and shot counts not yet verified for every skater"
+    "full_boxscore_status": "complete for official skater G/A/PTS, plus-minus, PIM, TOI, SOG and goalie saves/GA/TOI",
+    "game_id": 2007021160,
+    "official_report": {
+      "game_summary": "https://www.nhl.com/scores/htmlreports/20072008/GS021160.HTM",
+      "event_summary": "https://www.nhl.com/scores/htmlreports/20072008/ES021160.HTM",
+      "hockey_reference": "https://www.hockey-reference.com/boxscores/200803270LAK.html"
+    },
+    "scoring": [
+      {
+        "period": 2,
+        "time": "06:52",
+        "team": "Los Angeles Kings",
+        "scorer": "Kevin Dallman",
+        "assists": [
+          "Anže Kopitar"
+        ],
+        "strength": "EV"
+      },
+      {
+        "period": 2,
+        "time": "09:14",
+        "team": "Los Angeles Kings",
+        "scorer": "Anže Kopitar",
+        "assists": [
+          "Brian Willsie",
+          "Patrick O'Sullivan"
+        ],
+        "strength": "EV"
+      },
+      {
+        "period": 2,
+        "time": "13:03",
+        "team": "Los Angeles Kings",
+        "scorer": "Dustin Brown",
+        "assists": [
+          "Michael Cammalleri",
+          "Anže Kopitar"
+        ],
+        "strength": "PP"
+      },
+      {
+        "period": 3,
+        "time": "11:54",
+        "team": "Los Angeles Kings",
+        "scorer": "Rob Blake",
+        "assists": [
+          "Alexander Frolov",
+          "Patrick O'Sullivan"
+        ],
+        "strength": "EV"
+      }
+    ],
+    "official_three_stars": [
+      "Anže Kopitar",
+      "Erik Ersberg",
+      "Kevin Dallman"
+    ]
   }
 ]

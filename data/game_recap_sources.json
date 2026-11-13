@@ -23,6 +23,24 @@
     "nba_game_id": "0020500826",
     "espn_event_id": "260226013"
   },
+  "2": {
+    "game_date": "2006-04-16",
+    "verified_on": "2026-11-13",
+    "sources": [
+      {
+        "url": "https://www.basketball-reference.com/boxscores/200604160LAL.html",
+        "publisher": "Basketball-Reference",
+        "supports": "Final, quarter scores and player statistics"
+      },
+      {
+        "url": "https://basketball.realgm.com/nba/boxscore/2006-04-16/Phoenix-at-LA-Lakers/60633",
+        "publisher": "RealGM",
+        "supports": "Independent box score and quarter-by-quarter scoring"
+      }
+    ],
+    "boxscore_path": "data/player_boxscores_espn.json",
+    "nba_game_id": "0020501196"
+  },
   "31": {
     "game_date": "2006-04-02",
     "verified_on": "2026-11-13",

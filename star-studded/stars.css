@@ -58,3 +58,11 @@ main{width:min(1150px,calc(100% - 36px));margin:auto;padding-bottom:78px}
 @media(max-width:890px){.game-list{grid-template-columns:1fr}.summary{grid-template-columns:repeat(2,minmax(0,1fr))}.method-grid{grid-template-columns:1fr}}
 @media(max-width:540px){.site-header{padding:17px}.hero{margin-top:16px;padding:27px}.hero h1{font-size:44px}.filters label{width:100%}.filters input,.filters select{width:100%;min-width:0}.star-card{padding:18px}.star-card h3{font-size:20px}.star-list li{flex-direction:column;gap:1px}.star-list li small{text-align:left;max-width:100%}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+/* Prime-at-game comparison controls and season-specific evidence. */
+.filters label[hidden]{display:none!important}
+.star-list li small .prime-status{display:inline-block;border-radius:5px;font-size:10px;font-weight:850;line-height:1.2;letter-spacing:.02em;padding:4px 7px;background:#eaf6fc;border:1px solid #badce9;color:#831738;white-space:nowrap}
+.star-list li small .prime-status.past,.star-list li small .prime-status.rising{background:#f6f0f3;border-color:#e4cbd4;color:#79374e}
+.star-list li small .prime-status.unknown{background:#f0f3f5;border-color:#d8e1e8;color:#596c7a}
+.star-list li small .prime-status.near{background:#edf5fa;color:#355b77}
+.star-list li small .prime-context{display:block;margin-top:5px;font-size:11px;font-weight:500;color:#566879;line-height:1.4;white-space:normal}
+.star-card .scoreline strong{overflow-wrap:anywhere}

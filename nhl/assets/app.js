@@ -13,7 +13,55 @@
  const linkGame=g=>'./game.html?id='+encodeURIComponent(g.id);
  const linkPlayer=p=>'./player.html?id='+encodeURIComponent(p.id);
  const playerAnchor=p=>'<a href="'+linkPlayer(p)+'">'+esc(p.name)+'</a>';
- const honors=p=>(p.awards||[]).map(a=>'<a class="nhl-honor" href="'+esc(a.source)+'" target="_blank" rel="noopener noreferrer" title="Career achievement, not necessarily awarded during the attended game">'+esc(a.title)+' · '+esc(a.years)+'</a>').join('');
+ const honorTypes=[
+  {key:'hall',name:'Hall of Fame',badge:'★ HALL OF FAME',mark:'★'},
+  {key:'stanley',name:'Stanley Cup championships',badge:'🏆 STANLEY CUP',mark:'🏆'},
+  {key:'award',name:'NHL individual awards',badge:'◆ NHL AWARDS',mark:'◆'},
+  {key:'allteam',name:'NHL All-Star & All-Rookie Teams',badge:'◆ ALL-STAR TEAMS',mark:'◆'},
+  {key:'allstar',name:'NHL All-Star Game selections',badge:'☆ NHL ALL-STAR',mark:'☆'},
+  {key:'retired',name:'Retired numbers',badge:'★ RETIRED NUMBER',mark:'★'},
+  {key:'olympic',name:'Olympic medals',badge:'◈ OLYMPIC MEDALS',mark:'◈'},
+  {key:'world',name:'IIHF & international honors',badge:'◎ INTERNATIONAL',mark:'◎'},
+  {key:'other',name:'Other professional honors',badge:'✦ OTHER PRO',mark:'✦'}
+ ];
+ const categorizeAward=a=>{
+  if(a.category)return a.category;
+  if(/Stanley Cup/i.test(a.title))return 'stanley';
+  if(/Hall of Fame/i.test(a.title))return 'hall';
+  if(/retired/i.test(a.title))return 'retired';
+  if(/All-Star Game/i.test(a.title))return 'allstar';
+  if(/All-Star Team|All-Rookie Team/i.test(a.title))return 'allteam';
+  if(/Olympic/i.test(a.title))return 'olympic';
+  if(/IIHF|Triple Gold/i.test(a.title))return 'world';
+  if(/Trophy|Award/i.test(a.title))return 'award';
+  return 'other';
+ };
+ // Years count events / medals / championship seasons, not the number of
+ // data objects. Equivalent to the MLB award-badge and NFL Pro Bowl counts.
+ const honorCount=items=>items.reduce((n,a)=>n+(String(a.years||'').match(/\b(?:19|20)\d{2}\b/g)||[]).length,0);
+ const careerBadges=p=>{
+  if(!p.awards?.length)return '';
+  return '<div class="nhl-profile-achievements" aria-label="Career accomplishments">'+honorTypes.map(t=>{
+   const awards=p.awards.filter(a=>categorizeAward(a)===t.key);
+   if(!awards.length)return '';
+   const count=honorCount(awards)||awards.length;
+   return '<a class="nhl-profile-badge '+t.key+'" href="#nhl-honor-'+t.key+'" title="Jump to '+esc(t.name)+' career details">'+t.badge+(count>1?' · '+count:'')+'</a>';
+  }).join('')+'</div>';
+ };
+ const careerHonorPanel=p=>{
+  if(!p.awards?.length)return '';
+  const sections=honorTypes.map((t,i)=>{
+   const awards=p.awards.filter(a=>categorizeAward(a)===t.key);
+   if(!awards.length)return '';
+   return '<section class="nhl-honor-group" id="nhl-honor-'+t.key+'"><h3>'+t.mark+' '+esc(t.name)+'</h3><div class="nhl-honor-tags">'
+    +awards.map(a=>'<a class="nhl-honor '+t.key+'" href="'+esc(a.source)+'" target="_blank" rel="noopener noreferrer" title="Open source for this career honor">'
+      +esc(a.title)+' <span class="nhl-honor-years">'+esc(a.years)+'</span> ↗</a>').join('')
+    +'</div></section>';
+  }).join('');
+  return '<section class="nhl-panel nhl-career-honors" id="careerHonors"><h2>Career Awards &amp; Honors</h2>'
+   +'<p class="nhl-note">These are career honors across every season, not necessarily earned in the attended game. All-Star Game selections and end-of-season All-Star Teams are counted separately. Open a tag for its source.</p>'
+   +sections+'</section>';
+ };
  const signed=n=>n>0?'+'+n:String(n);
  const playerRow=p=>[playerAnchor(p),esc(p.team),stat(p.skater?.goals),stat(p.skater?.assists),stat(p.skater?.points),signed(p.skater?.plus_minus??0),stat(p.skater?.penalty_minutes),stat(p.skater?.shots_on_goal),stat(p.skater?.minutes)];
  const coachSlug=name=>name.normalize('NFKD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
@@ -96,10 +144,10 @@
   ];
   const achievements=p.notables?.length?'<section class="nhl-panel"><h2>Game notes</h2><p>'+esc(p.notables.join(' · '))+'</p></section>':'';
   $('app').innerHTML=breadcrumb('PLAYER PROFILE')+'<p><a href="./stats.html">← Player leaderboards</a></p>'
-  +'<section class="nhl-profile-hero"><span class="nhl-kicker">'+esc(p.team)+' · '+esc(p.position)+'</span><h1>'+esc(p.name)+'</h1><p>Performance in your attended NHL game.</p></section>'
+  +'<section class="nhl-profile-hero"><span class="nhl-kicker">'+esc(p.team)+' · '+esc(p.position)+'</span><h1>'+esc(p.name)+'</h1>'+careerBadges(p)+'<p>Performance in your attended NHL game.</p></section>'
   +'<div class="nhl-grid nhl-counts">'+statBoxes.join('')+'</div>'
   +achievements+'<section class="nhl-panel"><h2>Attended games</h2>'+tileGame(g)+'</section>'
-  +(p.awards?.length?'<section class="nhl-panel"><h2>Career honors</h2><p class="nhl-note">Lifetime NHL achievements, not awards earned specifically at this attended game.</p><div class="nhl-honors">'+honors(p)+'</div></section>':'')
+  +careerHonorPanel(p)
   +note;
  }
  function recordsPage(games){

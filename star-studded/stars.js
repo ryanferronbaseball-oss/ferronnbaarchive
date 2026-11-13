@@ -279,27 +279,52 @@ async function nhl(){
 let collection=[],loadErrors=[],expanded=24;
 const order=['NBA','College Basketball','NFL','College Football','MLB','MiLB','College Baseball','NHL','Soccer'];
 const rankList=items=>items.sort((a,b)=>b.index-a.index||b.count-a.count||a.date.localeCompare(b.date));
+const primeTierLabel=p=>{
+ const label=p.prime?.label||'Not rated';
+ return '<span class="prime-status '+esc(p.prime?.tier||'unknown')+'" title="'+esc(p.prime?.detail||'No dated recognition on record')+'">'+esc(label)+'</span>';
+};
 function draw(){
  const sport=$('sportFilter').value,sort=$('sortFilter').value,q=$('searchFilter').value.trim().toLocaleLowerCase();
+ const lens=$('lensFilter').value||'prime',filter=$('primeFilter').value||'all';
+ $('primeFilterWrap').hidden=lens!=='prime';
  let list=collection.filter(g=>(sport==='all'||g.sport===sport)
-  &&(!q||[g.sport,g.away,g.home,g.date,g.venue,...g.stars.map(x=>x.name)].join(' ').toLocaleLowerCase().includes(q)));
+  &&(!q||[g.sport,g.away,g.home,g.date,g.venue,...g.stars.map(x=>x.name)].join(' ').toLocaleLowerCase().includes(q))
+  &&(lens!=='prime'||filter==='all'
+     ||(filter==='one'&&g.primePlayers>=1)
+     ||(filter==='two'&&g.primePlayers>=2)
+     ||(filter==='three'&&g.primePlayers>=3)
+     ||(filter==='rated'&&g.primeMeasured>=2)));
  list.sort((a,b)=>sort==='stars'?b.count-a.count||b.index-a.index
   :sort==='legends'?b.legends-a.legends||b.index-a.index
+  :sort==='primeStars'?b.primePlayers-a.primePlayers||b.primeIndex-a.primeIndex
   :sort==='oldest'?a.date.localeCompare(b.date)||b.index-a.index
   :sort==='newest'?b.date.localeCompare(a.date)||b.index-a.index
+  :lens==='prime'?b.primeIndex-a.primeIndex||b.primePlayers-a.primePlayers||b.index-a.index
   :b.index-a.index||b.count-a.count||a.date.localeCompare(b.date));
  const count=list.length;
- $('resultsNote').textContent='Showing '+Math.min(expanded,count)+' of '+count+' qualifying matchups · '+collection.length+' verified games indexed'+(loadErrors.length?' · Coverage still incomplete for '+loadErrors.join(', '):'');
- $('gameList').innerHTML=list.slice(0,expanded).map((g,i)=>
-  '<article class="star-card"><div class="card-top"><span class="rank">#'+String(i+1).padStart(2,'0')+'</span><span class="sport">'+esc(g.sport)+'</span></div>'
-  +'<h3>'+esc(g.away)+' <span aria-label="versus">vs.</span> '+esc(g.home)+'</h3>'
-  +'<p class="meta">'+esc(fmt(g.date))+(g.venue?' · '+esc(g.venue):'')+'</p>'
-  +'<div class="scoreline"><div><strong>'+g.count+'</strong><small>Recognized players</small></div><div><strong>'+g.legends+'</strong><small>Marquee players</small></div><div><strong>'+g.index+'</strong><small>Star Power Index</small></div></div>'
-  +'<ul class="star-list">'+g.stars.slice(0,7).map(p=>'<li><a href="'+esc(p.link)+'">'+esc(p.name)+'</a><small>'+esc(p.tag)+'</small></li>').join('')+'</ul>'
-  +(g.stars.length>7?'<details class="star-extra"><summary>Show '+(g.stars.length-7)+' more recognized '+(g.stars.length-7===1?'player':'players')+'</summary><ul class="star-list">'+g.stars.slice(7).map(p=>'<li><a href="'+esc(p.link)+'">'+esc(p.name)+'</a><small>'+esc(p.tag)+'</small></li>').join('')+'</ul></details>':'')
-  +'<div class="card-footer"><span>'+esc(g.date)+' · '+esc(g.sport)+'</span><a href="'+esc(g.url)+'">Open game ↗</a></div></article>').join('')
-  +(count>expanded?'<button class="load-more" id="moreStars" type="button">Show more games ('+(count-expanded)+' remaining)</button>':'')
-  ||'<div class="empty">No qualifying games match these filters. Try a different sport or search term.</div>';
+ $('resultsNote').textContent='Showing '+Math.min(expanded,count)+' of '+count+' qualifying matchups · '+collection.length+' games indexed · '
+  +(lens==='prime'?'Prime-era evidence is available for '+collection.filter(g=>g.primeMeasured>0).length+' games':'Showing lifetime career honors')
+  +(loadErrors.length?' · Source coverage incomplete for '+loadErrors.join(', '):'');
+ $('gameList').innerHTML=list.slice(0,expanded).map((g,i)=>{
+  const stars=lens==='prime'
+   ?g.stars.slice().sort((a,b)=>(b.prime.score??-1)-(a.prime.score??-1)||b.prestige-a.prestige)
+   :g.stars;
+  const scoreline=lens==='prime'
+   ?'<div><strong>'+g.primePlayers+'</strong><small>Prime-era players</small></div><div><strong>'+g.primeMeasured+'/'+g.count+'</strong><small>Dated evidence</small></div><div><strong>'+(g.primeMeasured?g.primeIndex.toFixed(1):'—')+'</strong><small>Prime Era Index</small></div>'
+   :'<div><strong>'+g.count+'</strong><small>Recognized players</small></div><div><strong>'+g.legends+'</strong><small>Marquee players</small></div><div><strong>'+g.index+'</strong><small>Career Star Power Index</small></div>';
+  const line=p=>'<li><a href="'+esc(p.link)+'">'+esc(p.name)+'</a><small>'
+   +(lens==='prime'?primeTierLabel(p)+'<span class="prime-context">'+esc(p.prime?.detail||'Undated career recognition')+'</span>':esc(p.tag))
+   +'</small></li>';
+  return '<article class="star-card"><div class="card-top"><span class="rank">#'+String(i+1).padStart(2,'0')+'</span><span class="sport">'+esc(g.sport)+'</span></div>'
+   +'<h3>'+esc(g.away)+' <span aria-label="versus">vs.</span> '+esc(g.home)+'</h3>'
+   +'<p class="meta">'+esc(fmt(g.date))+(g.venue?' · '+esc(g.venue):'')+'</p>'
+   +'<div class="scoreline">'+scoreline+'</div>'
+   +'<ul class="star-list">'+stars.slice(0,7).map(line).join('')+'</ul>'
+   +(stars.length>7?'<details class="star-extra"><summary>Show '+(stars.length-7)+' more recognized '+(stars.length-7===1?'player':'players')+'</summary><ul class="star-list">'+stars.slice(7).map(line).join('')+'</ul></details>':'')
+   +'<div class="card-footer"><span>'+esc(g.date)+' · '+esc(g.sport)+'</span><a href="'+esc(g.url)+'">Open game ↗</a></div></article>';
+ }).join('')
+ +(count>expanded?'<button class="load-more" id="moreStars" type="button">Show more games ('+(count-expanded)+' remaining)</button>':'')
+ ||'<div class="empty">No qualifying games match these filters. Try a different sport, prime threshold, or search term.</div>';
  const more=$('moreStars');if(more)more.addEventListener('click',()=>{expanded+=24;draw()});
 }
 async function init(){
@@ -315,7 +340,7 @@ async function init(){
  $('starSports').textContent=options.length;
  $('starTop').textContent=collection.length?Math.max(...collection.map(g=>g.count)):'—';
  if(!collection.length){$('resultsNote').textContent='No verified games could be loaded. '+(loadErrors.length?'Source files unavailable: '+loadErrors.join(', '):'Check the archive’s award and box-score coverage.');}
- ['sportFilter','sortFilter','searchFilter'].forEach(id=>$(id).addEventListener(id==='searchFilter'?'input':'change',()=>{expanded=24;draw()}));
+ ['sportFilter','sortFilter','searchFilter','lensFilter','primeFilter'].forEach(id=>$(id).addEventListener(id==='searchFilter'?'input':'change',()=>{expanded=24;draw()}));
  draw();
 }
 init().catch(err=>{$('gameList').innerHTML='<div class="empty">Unable to assemble the archive collection right now. Please try again later.</div>';console.error(err)});

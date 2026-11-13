@@ -51,7 +51,9 @@ function headCoachingStops(c){
  // Also use the unfiltered attendance rows on sport-specific coach pages so
  // colors reflect every level actually witnessed, not just the current tab.
  const fullCoach=allCoaches.find(person=>person.id===c.id)||c;
- const basketballCareer=c.sports.some(s=>s==='NBA'||s==='College Basketball');
+ // Use the complete multi-sport coach record when displaying a sport-specific
+ // profile as well. This includes NBA / NCAA and MLB / college-baseball moves.
+ const representedSports=fullCoach.sports||c.sports;
  const catalogs=[
   ['NBA',nbaStops],['College Basketball',collegeStops],
   ['NFL',nflStops],['College Football',collegeFootballStops],
@@ -59,8 +61,7 @@ function headCoachingStops(c){
   ['MiLB',milbStops],['Soccer',soccerStops]
  ];
  const collections=catalogs.filter(([sport,source])=>
-  (c.sports.includes(sport)||(basketballCareer&&(sport==='NBA'||sport==='College Basketball')))
-  &&Array.isArray(source[c.name])&&source[c.name].length);
+  representedSports.includes(sport)&&Array.isArray(source[c.name])&&source[c.name].length);
  const multiLevel=collections.length>1;
  const stops=[];
  for(const [sport,source] of collections)for(const [team,years] of source[c.name]){

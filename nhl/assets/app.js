@@ -7,7 +7,7 @@
  const page=document.body.dataset.page||'overview';
  const navItems=[['index.html','Overview','overview'],['game.html','Games','game'],['stats.html','Players','stats'],['hall-of-fame.html','★ Hall of Fame','hof'],['records.html','Records','records'],['coaches.html','Coaches','coaches']];
  const nav=navItems.map(([href,name,key])=>'<a href="./'+href+'"'+(page===key?' aria-current="page"':'')+'>'+name+'</a>').join('')+'<a href="../index.html">All archives ↗</a>';
- $('navigation').innerHTML=page==='overview'
+ $('navigation').innerHTML=(page==='overview'||page==='game')
   ?'<header class="archive-header nhl-overview-header"><a href="./index.html" class="archive-logo">COURTSIDE ARCHIVE<small>EVERY GAME HAS A STORY · NHL</small></a><nav class="archive-nav" aria-label="NHL navigation">'+navItems.map(([href,name,key])=>'<a href="./'+href+'"'+(page===key?' aria-current="page"':'')+'>'+name+'</a>').join('')+'</nav><a class="back-link" href="../index.html">All archives ↗</a></header>'
   :'<div class="nhl-topbar"><a href="./index.html" class="nhl-logo"><span class="nhl-mark">CA</span><span>COURTSIDE ARCHIVE<small>EVERY GAME HAS A STORY · NHL</small></span></a><nav aria-label="NHL navigation">'+nav+'</nav></div>';
  const sourceLinks=g=>(g.source_urls||[]).map((url,i)=>'<a href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">Source '+(i+1)+' ↗</a>').join(' · ');
@@ -168,46 +168,142 @@
   drawHistory();
  }
  function gamePage(games){
-  const id=new URLSearchParams(location.search).get('id'),g=games.find(x=>x.id===id)||games[0];
-  const periods=g.periods,statAway=g.team_stats.away,statHome=g.team_stats.home;
-  const per=table(['Team','1st','2nd','3rd','Total','Shots by period'],
-    [[esc(g.away),...periods.away.map(String),String(g.away_score),statAway.period_shots.join(' / ')],
-     [esc(g.home),...periods.home.map(String),String(g.home_score),statHome.period_shots.join(' / ')]]);
-  const skaters=g.players.filter(p=>p.skater),goalies=g.players.filter(p=>p.goalie),
-   homeGoalie=goalies.find(p=>p.team===g.home);
-  const skaterTable=team=>table(['Player','Team','G','A','PTS','+/−','PIM','SOG','TOI'],
-   skaters.filter(p=>p.team===team).sort((a,b)=>(b.skater.points??0)-(a.skater.points??0)||a.name.localeCompare(b.name)).map(playerRow));
-  const scorerLink=name=>{const p=g.players.find(x=>x.name===name);return p?playerAnchor(p):esc(name)};
-  const scoringTable=table(['Per.','Time','Goal scorer','Assists','Strength','Score'],(g.scoring||[]).map((goal,i)=>[
-   String(goal.period),esc(goal.time),scorerLink(goal.scorer),goal.assists.map(scorerLink).join(', ')||'Unassisted',
-   goal.strength==='PP'?'Power play':'Even strength','0–'+(i+1)
-  ]));
-  const penaltyTable=table(['Period','Time','Team','Player','Infraction','PIM'],(g.penalties||[]).map(x=>[
-   String(x.period),esc(x.time),esc(x.team),scorerLink(x.player),esc(x.infraction),stat(x.minutes)
-  ]));
-  const teamCompare=table(['Team','SOG','Power play','PIM','Faceoffs','Hits','Blocks','Takeaways','Giveaways'],[
-   [esc(g.away),stat(statAway.shots_on_goal),statAway.power_play_goals+'/'+statAway.power_play_chances,stat(statAway.penalty_minutes),
-    stat(statAway.faceoff_wins),stat(statAway.hits),stat(statAway.blocked_shots),stat(statAway.takeaways),stat(statAway.giveaways)],
-   [esc(g.home),stat(statHome.shots_on_goal),statHome.power_play_goals+'/'+statHome.power_play_chances,stat(statHome.penalty_minutes),
-    stat(statHome.faceoff_wins),stat(statHome.hits),stat(statHome.blocked_shots),stat(statHome.takeaways),stat(statHome.giveaways)]
-  ]);
-  const goalieTable=table(['Goalie','Team','SA','SV','GA','SV%','TOI','W/L','SO'],
-   goalies.map(p=>[playerAnchor(p),esc(p.team),stat(p.goalie.shots_against),stat(p.goalie.saves),
-    stat(p.goalie.goals_against),p.goalie.save_pct.toFixed(3),esc(p.goalie.minutes),p.goalie.wins?'W':'L',stat(p.goalie.shutouts)]));
-  const stars=(g.official_three_stars||[]).map((name,i)=>'<div class="nhl-star-item"><strong>'+(i+1)+'.</strong>'+scorerLink(name)+'</div>').join('');
-  $('app').innerHTML=breadcrumb('GAMES & BOX SCORES')+'<h1>Game details.</h1><p class="nhl-lead">'+fmt(g.date)+' · '+esc(g.venue)+' · '+esc(g.city)+', '+esc(g.state)+' · '+Number(g.attendance).toLocaleString('en-US')+' attendance</p>'+scores(g)
-  +'<section class="nhl-panel"><h2>Scoring by period</h2>'+per+'</section>'
-  +'<section class="nhl-panel"><h2>Official scoring summary</h2>'+scoringTable+'</section>'
-  +'<section class="nhl-panel"><h2>Team comparison</h2>'+teamCompare+'</section>'
-  +'<section class="nhl-panel"><h2>Official penalty summary</h2>'+penaltyTable+'</section>'
-  +'<section class="nhl-panel nhl-story"><span class="nhl-kicker">EVERY GAME HAS A STORY</span><h2>Three second-period goals. A 38-save shutout.</h2><p>'+esc(g.recap)+'</p></section>'
-  +'<section class="nhl-panel"><h2>Player of the Game</h2><div class="nhl-feature"><strong>'+playerAnchor(homeGoalie)+'</strong><span>38 saves · 38 shots against · 1.000 save percentage · Shutout</span></div><p class="nhl-note">Courtside Archive selection: '+esc(homeGoalie.name)+'. The NHL’s official three stars are listed below and use a separate selection process.</p></section>'
-  +'<section class="nhl-panel"><h2>Official NHL three stars</h2><div class="nhl-stars">'+stars+'</div></section>'
-  +'<section class="nhl-panel"><h2>'+esc(g.away)+' · complete skater box score</h2>'+skaterTable(g.away)+'</section>'
-  +'<section class="nhl-panel"><h2>'+esc(g.home)+' · complete skater box score</h2>'+skaterTable(g.home)+'</section>'
-  +'<section class="nhl-panel"><h2>Goaltending</h2>'+goalieTable+'</section>'
-  +'<section class="nhl-panel"><h2>Head coaches</h2><p><strong><a href="'+headCoachLink(g.coach.away)+'">'+esc(g.coach.away)+'</a></strong> · Phoenix Coyotes &nbsp; | &nbsp; <strong><a href="'+headCoachLink(g.coach.home)+'">'+esc(g.coach.home)+'</a></strong> · Los Angeles Kings</p><a href="./coaches.html">View NHL coaching history ↗</a></section>'
-  +'<section class="nhl-panel"><h2>Historical sources & verification</h2><p>'+esc(g.source_status)+'</p><p>'+sourceLinks(g)+'</p></section>';
+  // Layout follows the other pro-sports Games pages. Existing NHL official
+  // scoring data is authoritative; the layout, not the records, is changed.
+  const requested=new URLSearchParams(location.search).get('id');
+  let selected=games.find(g=>g.id===requested)||games[0];
+  let activeBox='skaters';
+  const statCell=(label,value)=>'<div class="nhl-game-pog-stat"><span>'+esc(label)+'</span><strong>'+stat(value)+'</strong></div>';
+  const person=(g,name)=>{const p=(g.players||[]).find(x=>x.name===name);return p?playerAnchor(p):esc(name)};
+  const rowsFor=(g,team)=>g.players.filter(p=>p.team===team&&p.skater).sort((x,y)=>
+    (y.skater.points??0)-(x.skater.points??0)||(y.skater.shots_on_goal??0)-(x.skater.shots_on_goal??0)||x.name.localeCompare(y.name));
+  const headline=(title,meta)=>'<div class="nhl-game-section-heading"><h2>'+esc(title)+'</h2>'+(meta?'<span class="nhl-game-caption">'+esc(meta)+'</span>':'')+'</div>';
+  const gameHref=g=>'./game.html?id='+encodeURIComponent(g.id);
+  const metric=(label,figure)=>'<div class="nhl-game-team-stat"><small>'+esc(label)+'</small><strong>'+stat(figure)+'</strong></div>';
+  function renderBox(g){
+   const region=$('nhl-game-box');
+   if(activeBox==='skaters'){
+    region.innerHTML=[g.away,g.home].map(team=>'<section class="nhl-game-panel nhl-game-team-box"><h3>'+esc(team)+'</h3>'
+      +table(['Player','Pos','G','A','PTS','+/−','PIM','SOG','TOI'],rowsFor(g,team).map(p=>[
+        playerAnchor(p),esc(p.position||'—'),stat(p.skater.goals),stat(p.skater.assists),
+        stat(p.skater.points),signed(p.skater.plus_minus??0),stat(p.skater.penalty_minutes),
+        stat(p.skater.shots_on_goal),stat(p.skater.minutes)
+      ]))+'</section>').join('');
+   }else if(activeBox==='goalies'){
+    const goalieRows=g.players.filter(p=>p.goalie).sort((a,b)=>(a.team===g.away?-1:1)-(b.team===g.away?-1:1));
+    region.innerHTML='<section class="nhl-game-panel"><h3>Goaltending</h3>'
+      +table(['Goalie','Team','SA','SV','GA','SV%','TOI','W/L','SO'],goalieRows.map(p=>[
+        playerAnchor(p),esc(p.team),stat(p.goalie.shots_against),stat(p.goalie.saves),
+        stat(p.goalie.goals_against),p.goalie.save_pct.toFixed(3),
+        esc(p.goalie.minutes),p.goalie.wins?'W':p.goalie.losses?'L':'—',stat(p.goalie.shutouts)
+      ]))+'</section>';
+   }else{
+    const teamRows=[g.away,g.home].map((team,i)=>{
+      const t=i===0?g.team_stats.away:g.team_stats.home;
+      return [esc(team),stat(t.shots_on_goal),t.power_play_goals+'/'+t.power_play_chances,
+       stat(t.penalty_minutes),stat(t.faceoff_wins),stat(t.hits),stat(t.blocked_shots),
+       stat(t.takeaways),stat(t.giveaways)];
+    });
+    region.innerHTML='<section class="nhl-game-panel"><h3>Team comparison</h3>'
+      +table(['Team','SOG','Power play','PIM','Faceoffs','Hits','Blocks','Takeaways','Giveaways'],teamRows)
+      +'<p class="nhl-game-caption">Faceoffs reflect the number won by each team.</p></section>';
+   }
+   document.querySelectorAll('#nhl-game-stat-tabs [role="tab"]').forEach(btn=>{
+    const selected=btn.dataset.group===activeBox;
+    btn.setAttribute('aria-selected',String(selected));
+    btn.setAttribute('tabindex',selected?'0':'-1');
+   });
+  }
+  function renderGame(g){
+    selected=g;
+    const selector=$('nhl-game-select');
+    if(selector)selector.value=g.id;
+    const away=g.team_stats.away,home=g.team_stats.home;
+    const selectedGoalie=g.players.find(p=>p.goalie&&p.team===g.home)||g.players.find(p=>p.goalie);
+    const board='<section class="nhl-game-scoreboard" aria-label="Final NHL score and scoring by period">'
+     +'<div class="nhl-game-scoreline">'
+       +'<div class="nhl-game-team"><span class="nhl-game-team-abbr">'+esc(g.away_abbr)+'</span><div class="nhl-game-team-name">'+esc(g.away)+'</div></div>'
+       +'<div class="nhl-game-final"><span>FINAL</span><strong>'+g.away_score+' <small>—</small> '+g.home_score+'</strong></div>'
+       +'<div class="nhl-game-team home"><span class="nhl-game-team-abbr">'+esc(g.home_abbr)+'</span><div class="nhl-game-team-name">'+esc(g.home)+'</div></div>'
+     +'</div>'
+     +'<div class="nhl-game-scores-table">'+table(['Team','1st','2nd','3rd','Total','Shots'],
+        [[esc(g.away_abbr),...g.periods.away.map(String),String(g.away_score),stat(away.shots_on_goal)],
+         [esc(g.home_abbr),...g.periods.home.map(String),String(g.home_score),stat(home.shots_on_goal)]])+'</div>'
+     +'<div class="nhl-game-board-meta">'+fmt(g.date)+' · '+esc(g.venue)+' · '+esc(g.city)+', '+esc(g.state)
+       +(g.attendance?' · '+Number(g.attendance).toLocaleString('en-US')+' in attendance':'')+'</div></section>';
+    const photo=g.photo?.url||g.photo_url;
+    const gamePhoto=photo?'<figure class="nhl-game-photo"><img loading="lazy" src="'+esc(photo)+'" alt="Game photo from '+esc(g.away)+' at '+esc(g.home)+'"><figcaption>'+fmt(g.date)+' · '+esc(g.away)+' at '+esc(g.home)+'</figcaption></figure>':'';
+    const recap='<section class="nhl-game-panel nhl-game-recap" id="gameRecap"><span class="nhl-game-kicker">EVERY GAME HAS A STORY</span><h2>Game recap</h2><p>'+esc(g.recap)+'</p></section>';
+    const pog=selectedGoalie?'<section class="nhl-game-panel nhl-game-pog" id="playerOfGame" aria-label="Player of the Game">'
+     +'<div class="nhl-game-kicker">COURTSIDE ARCHIVE SELECTION · UNOFFICIAL</div><h2>Player of the Game</h2>'
+     +'<div class="nhl-game-pog-head"><div><div class="nhl-game-pog-name">'+playerAnchor(selectedGoalie)+'</div>'
+       +'<div class="nhl-game-caption">'+esc(selectedGoalie.team)+' · Goaltender</div></div>'
+       +'<div class="nhl-game-pog-highlight"><strong>'+stat(selectedGoalie.goalie.saves)+'</strong><span>Saves</span></div></div>'
+     +'<div class="nhl-game-pog-stats">'+statCell('SAVES',selectedGoalie.goalie.saves)
+       +statCell('SHOTS AGAINST',selectedGoalie.goalie.shots_against)
+       +statCell('GOALS AGAINST',selectedGoalie.goalie.goals_against)
+       +statCell('SAVE %',selectedGoalie.goalie.save_pct.toFixed(3))
+       +statCell('SHUTOUTS',selectedGoalie.goalie.shutouts)
+       +statCell('TOI',selectedGoalie.goalie.minutes)+'</div>'
+     +'<p class="nhl-game-caption">Selected by Courtside Archive for the '+selectedGoalie.goalie.saves+'-save shutout. This is not the NHL’s official first-star selection.</p></section>':'';
+    const skaters=g.players.filter(p=>p.skater);
+    const topPoints=skaters.slice().sort((a,b)=>b.skater.points-a.skater.points||a.name.localeCompare(b.name)).slice(0,5);
+    const topSaves=g.players.filter(p=>p.goalie).sort((a,b)=>b.goalie.saves-a.goalie.saves);
+    const leaderRows=topPoints.map(p=>[playerAnchor(p),esc(p.team),'<strong>'+stat(p.skater.points)+'</strong>',
+      stat(p.skater.goals),stat(p.skater.assists),stat(p.skater.shots_on_goal)]);
+    const leaderPanel='<section class="nhl-game-panel nhl-game-leaders"><h2>Top scoring performances</h2>'
+      +table(['Player','Team','PTS','G','A','SOG'],leaderRows)
+      +'<p class="nhl-game-caption">Ranked by points, then alphabetically; goaltending is tabulated separately below.</p></section>';
+    const statTabs='<section class="nhl-game-stat-section">'
+      +headline('Player box score','36 skaters · 2 participating goalies')
+      +'<div class="nhl-game-tabs" id="nhl-game-stat-tabs" role="tablist" aria-label="Box-score statistical group">'
+      +[['skaters','Skaters'],['goalies','Goaltenders'],['teams','Team stats']].map(([id,title])=>
+        '<button type="button" role="tab" data-group="'+id+'" aria-selected="'+String(id===activeBox)+'" tabindex="'+(id===activeBox?'0':'-1')+'">'+title+'</button>').join('')+'</div>'
+      +'<div id="nhl-game-box" role="tabpanel" aria-live="polite"></div></section>';
+    let road=0,host=0;
+    const scoring=(g.scoring||[]).map(goal=>{
+      if(goal.team===g.away)road++;else host++;
+      return '<article class="nhl-game-play"><div class="nhl-game-play-time">P'+stat(goal.period)+'<span>'+esc(goal.time)+'</span></div>'
+       +'<div><div class="nhl-game-play-label">'+person(g,goal.scorer)+' <span class="nhl-game-strength '+(goal.strength==='PP'?'is-pp':'')+'">'+(goal.strength==='PP'?'PPG':'EV')+'</span></div>'
+       +'<p class="nhl-game-play-detail">'+esc(goal.team)+' · Assists: '+(goal.assists?.length?goal.assists.map(name=>person(g,name)).join(', '):'Unassisted')+'</p></div>'
+       +'<strong class="nhl-game-play-score">'+road+'–'+host+'</strong></article>';
+    }).join('');
+    const penalties=table(['Period','Time','Team','Player','Infraction','PIM'],(g.penalties||[]).map(x=>[
+      stat(x.period),esc(x.time),esc(x.team),person(g,x.player),esc(x.infraction),stat(x.minutes)]));
+    const stars=(g.official_three_stars||[]).map((name,i)=>'<div class="nhl-game-official-star"><strong>'+(i+1)+'</strong>'
+      +'<span>'+person(g,name)+'</span></div>').join('');
+    const more='<section class="nhl-game-panel nhl-game-bench"><h2>Head coaches</h2>'
+      +'<p><a href="'+headCoachLink(g.coach.away)+'">'+esc(g.coach.away)+'</a> · '+esc(g.away)
+      +' &nbsp; | &nbsp; <a href="'+headCoachLink(g.coach.home)+'">'+esc(g.coach.home)+'</a> · '+esc(g.home)+'</p>'
+      +'<a class="nhl-game-action secondary" href="./coaches.html">NHL coach history ↗</a></section>'
+      +'<section class="nhl-game-panel nhl-game-sources"><h2>Historical sources &amp; verification</h2><p>'+esc(g.source_status)+'</p><p>'+sourceLinks(g)+'</p></section>';
+    $('nhl-game-content').innerHTML=board+gamePhoto+recap+pog+leaderPanel+statTabs
+      +'<section class="nhl-game-section">'+headline('Scoring plays',(g.scoring||[]).length+' goals')
+      +'<div class="nhl-game-panel nhl-game-play-list">'+(scoring||'<p>No scoring plays recorded.</p>')+'</div></section>'
+      +'<section class="nhl-game-section">'+headline('Penalties',(g.penalties||[]).length+' penalties')
+      +'<div class="nhl-game-panel">'+penalties+'</div></section>'
+      +'<section class="nhl-game-panel"><h2>Official NHL three stars</h2><div class="nhl-game-stars">'+stars+'</div></section>'
+      +more;
+    document.querySelectorAll('#nhl-game-stat-tabs [role="tab"]').forEach(btn=>btn.addEventListener('click',()=>{
+      activeBox=btn.dataset.group;renderBox(g);
+    }));
+    renderBox(g);
+  }
+  const ordered=games.slice().sort((a,b)=>b.date.localeCompare(a.date)||a.id.localeCompare(b.id));
+  $('app').innerHTML='<div class="nhl-game-page"><div class="nhl-game-eyebrow">NHL · GAMES / BOX SCORES</div>'
+    +'<h1>Game details.</h1><p class="nhl-game-lead">Game-by-game box scores with full scoring chronology, goaltending, skater statistics and the moments you witnessed.</p>'
+    +'<div class="nhl-game-toolbar"><label for="nhl-game-select">Your game</label>'
+    +'<select id="nhl-game-select" aria-label="Select attended NHL game">'
+    +ordered.map(g=>'<option value="'+esc(g.id)+'">'+fmt(g.date)+' · '+esc(g.away_abbr)+' at '+esc(g.home_abbr)+'</option>').join('')
+    +'</select></div><div id="nhl-game-content" aria-live="polite"></div>'
+    +'<p class="nhl-game-foot">Courtside Archive · NHL game box scores sourced from the official historical NHL game summary and event summary. Only personally attended games are included.</p></div>';
+  $('nhl-game-select').addEventListener('change',()=>{
+    const next=games.find(g=>g.id===$('nhl-game-select').value);if(!next)return;
+    activeBox='skaters';renderGame(next);
+    if(typeof history!=='undefined'&&history.replaceState)history.replaceState(null,'',gameHref(next));
+  });
+  renderGame(selected);
+  if(typeof document!=='undefined')document.title=selected.away_abbr+' at '+selected.home_abbr+' · '+selected.date+' | NHL Courtside Archive';
  }
  function statsPage(games){
   const players=games.flatMap(g=>g.players);

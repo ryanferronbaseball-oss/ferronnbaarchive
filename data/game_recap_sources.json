@@ -22,5 +22,33 @@
     "boxscore_path": "data/player_boxscores_espn.json",
     "nba_game_id": "0020500826",
     "espn_event_id": "260226013"
+  },
+  "31": {
+    "game_date": "2006-04-02",
+    "verified_on": "2026-11-13",
+    "sources": [
+      {
+        "url": "https://www.chron.com/sports/rockets/article/kobe-shakes-rockets-in-second-half-1575446.php",
+        "publisher": "Houston Chronicle (April 3, 2006)",
+        "supports": "Contemporary reporting on halftime lead and Bryant's decisive third quarter"
+      },
+      {
+        "url": "https://www.myplainview.com/news/article/Lakers-104-Rockets-88-8560476.php",
+        "publisher": "Associated Press",
+        "supports": "Halftime score, Bryant's 22 third-quarter points and 37–18 quarter"
+      },
+      {
+        "url": "https://www.nba.com/game/hou-vs-lal-0020501089",
+        "publisher": "NBA",
+        "supports": "Official final score and period-by-period scoring"
+      },
+      {
+        "url": "https://www.basketball-reference.com/boxscores/200604020LAL.html",
+        "publisher": "Basketball-Reference",
+        "supports": "Individual player statistics checked against archived ESPN box score"
+      }
+    ],
+    "boxscore_path": "data/player_boxscores_espn.json",
+    "nba_game_id": "0020501089"
   }
 }

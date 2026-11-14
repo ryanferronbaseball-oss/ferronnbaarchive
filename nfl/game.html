@@ -9,6 +9,7 @@
 <div class="toolbar"><label class="filter-label" for="gameSelect">Your game</label><select id="gameSelect" aria-label="Select attended NFL game"></select></div>
 <section id="scoreboard" aria-label="Game score by quarter"><div class="empty">Loading game…</div></section>
 <section id="gamePhoto" aria-label="Game photograph" style="display:none;margin:18px 0 24px"></section>
+<section id="curatedRecap" class="panel" aria-label="Every Game Has a Story" style="display:none;margin:18px 0 24px"></section>
 <section id="playerOfGame" class="panel pog" aria-label="NFL Player of the Game" aria-live="polite"><div class="empty">Loading Player of the Game…</div></section>
 <section id="pprLeaders" class="panel ppr-board" aria-label="Top Full-PPR offensive scores in this game">
  <div class="ppr-board-heading"><h2>Top fantasy performances</h2><a href="./milestones.html" class="action-link secondary">PPR milestones ↗</a></div>
@@ -30,7 +31,7 @@
 document.addEventListener("DOMContentLoaded",async()=>{
  const A=window.NFLArchive,el=id=>document.getElementById(id),params=new URLSearchParams(location.search);
  el("navigation").innerHTML=A.nav("game");
- let games=[],rows=[],score={},ppr=[],group="offense",selected=null;
+ let games=[],rows=[],score={},ppr=[],recaps={},group="offense",selected=null;
  const urlGame=params.get("id");
  function boxSection(category,title){
   const selectedRows=rows.filter(x=>x.game_id===selected.id&&x.category===category);
@@ -67,9 +68,21 @@ document.addEventListener("DOMContentLoaded",async()=>{
    +'<div class="pog-stats">'+fields.map(([label,value])=>cell(label,value)).join("")+'</div>'
    +'<p class="pog-method">Unofficial selection based on the highest traditional offensive Full-PPR fantasy score in this game (including receptions, yards, touchdowns and turnover deductions). K/DST and individual defensive scoring are excluded; this is not an official NFL award.</p>';
  }
+ function renderRecap(id){
+  const section=el("curatedRecap"),paragraphs=recaps[id];
+  if(!Array.isArray(paragraphs)||!paragraphs.length){section.style.display="none";section.innerHTML="";return}
+  const playerIds=new Set(rows.filter(x=>x.game_id===id&&x.athlete_id).map(x=>String(x.athlete_id)));
+  const linked=text=>String(text).split(/(\[\[espn:\d+\|[^\]]+\]\])/g).map(part=>{
+   const m=/^\[\[espn:(\d+)\|([^\]]+)\]\]$/.exec(part);
+   if(!m)return A.esc(part);
+   return playerIds.has(m[1])?'<a href="./player.html?id='+encodeURIComponent(m[1])+'">'+A.esc(m[2])+'</a>':A.esc(m[2]);
+  }).join("");
+  section.innerHTML='<h2>Every Game Has a Story</h2>'+paragraphs.map(p=>'<p>'+linked(p)+'</p>').join("");
+  section.style.display="block";
+ }
  function setGame(id){
   selected=games.find(g=>g.id===id)||games[0];if(!selected)return;
-  el("gameSelect").value=selected.id;el("scoreboard").innerHTML=A.scoreboard(selected);
+  el("gameSelect").value=selected.id;el("scoreboard").innerHTML=A.scoreboard(selected);renderRecap(selected.id);
   const photos={"nfl-2007-11-25-sf-ari":"./assets/game-photos/2007-11-25-san-francisco-arizona.png","nfl-2008-12-07-stl-ari":"./assets/game-photos/2008-12-07-st-louis-arizona.png","nfl-2023-12-03-ind-ten":"./assets/game-photos/2023-12-03-indianapolis-tennessee.png"};
   const photo=photos[selected.id],figure=el("gamePhoto");
   figure.style.display=photo?"block":"none";
@@ -87,6 +100,7 @@ document.addEventListener("DOMContentLoaded",async()=>{
  }
  try{
   const data=await A.load();games=data.games;rows=data.rows;score=data.scoring;ppr=data.ppr.performances;
+  try{const response=await fetch("./data/game_recaps.json",{cache:"no-store"});if(response.ok){const payload=await response.json();if(payload&&typeof payload==="object"&&!Array.isArray(payload))recaps=payload}}catch(e){console.warn("Curated NFL recaps unavailable",e)}
   el("gameSelect").innerHTML=games.map(g=>'<option value="'+A.esc(g.id)+'">'+A.esc(A.date(g.date))+' · '+A.esc(g.away_abbr)+' at '+A.esc(g.home_abbr)+'</option>').join("");
   el("gameSelect").addEventListener("change",e=>setGame(e.target.value));
   el("statTabs").querySelectorAll("button").forEach(btn=>btn.addEventListener("click",()=>{group=btn.dataset.group;renderTabs()}));

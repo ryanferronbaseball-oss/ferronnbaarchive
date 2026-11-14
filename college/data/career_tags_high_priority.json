@@ -1,7 +1,7 @@
 {
   "_meta": {
     "description": "Positively verified high-priority college basketball achievements for witnessed players. Missing tags are unreviewed, not evidence an honor was not earned. NBA Draft status comes from nba_crosswalk.json.",
-    "last_reviewed": "2026-11-07",
+    "last_reviewed": "2026-11-13",
     "season_rule": "Honors follow the player's college career, not necessarily the date of the game attended. National championship honors require verified membership on the title-winning roster."
   },
   "players": {
@@ -3166,6 +3166,14 @@
           "team": 1,
           "source": "https://mvc-sports.com/news/2026/3/4/arch-madness-2026-missouri-valley-all-conference-teams.aspx"
         }
+      ],
+      "conference_poy": [
+        {
+          "season": "2025-26",
+          "conference": "MVC",
+          "award": "Player of the Year",
+          "source": "https://utsports.com/news/2026/4/2/mens-basketball-vols-sign-mvc-player-of-the-year-tyler-lundblade"
+        }
       ]
     },
     "espn:5176309": {
@@ -4069,6 +4077,50 @@
           "conference": "Big South",
           "school": "High Point",
           "source": "https://highpointpanthers.com/sports/mens-basketball/roster/titas-sargiunas/10575"
+        }
+      ]
+    },
+    "espn:5060712": {
+      "name": "Terrence Hill Jr.",
+      "all_conference": [
+        {
+          "season": "2025-26",
+          "conference": "A-10",
+          "team": 1,
+          "source": "https://utsports.com/news/2026/4/20/mens-basketball-vols-sign-first-team-all-a-10-designee-terrence-hill-jr"
+        }
+      ]
+    },
+    "espn:4845373": {
+      "name": "Dai Dai Ames",
+      "all_conference": [
+        {
+          "season": "2025-26",
+          "conference": "ACC",
+          "team": 3,
+          "source": "https://theacc.com/news/2026/3/9/dukes-cameron-boozer-leads-acc-mens-basketball-2025-26-season-honors.aspx"
+        }
+      ]
+    },
+    "espn:5174609": {
+      "name": "Miles Rubin",
+      "all_freshman": [
+        {
+          "season": "2023-24",
+          "conference": "A-10",
+          "school": "Loyola Chicago",
+          "source": "https://atlantic10.com/news/2024/3/12/holmes-king-mooney-headline-2023-24-atlantic-10-mens-basketball-awards.aspx"
+        }
+      ]
+    },
+    "espn:5242126": {
+      "name": "Braedan Lue",
+      "all_freshman": [
+        {
+          "season": "2024-25",
+          "conference": "CUSA",
+          "school": "Kennesaw State",
+          "source": "https://ksuowls.com/news/2025/9/9/cottle-and-lue-named-blue-ribbon-all-cusa-owls-picked-second.aspx"
         }
       ]
     }

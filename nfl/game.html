@@ -2,14 +2,14 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>NFL Game Box Score | Courtside Archive</title>
 <meta name="description" content="Your attended NFL games with quarter scoring, scoring plays, full passing, rushing, receiving, defensive and special teams box scores.">
-<link rel="stylesheet" href="./assets/archive.css?v=20261106-crosssport-sweep3"><script src="./assets/archive.js?v=coaches-nav-20261109" defer></script><link rel="stylesheet" href="../assets/sport-burgundy-ice.css?v=20261106-crosssport-sweep4"></head>
+<link rel="stylesheet" href="./assets/archive.css?v=20261106-crosssport-sweep3"><script src="./assets/archive.js?v=coaches-nav-20261109" defer></script><link rel="stylesheet" href="../assets/sport-burgundy-ice.css?v=20261106-crosssport-sweep4"><link rel="stylesheet" href="../assets/basketball-recap-contrast.css?v=20261114-nfl-recap-parity1"></head>
 <body><main><div id="navigation"></div>
 <div class="eyebrow">NFL · Games / Box Scores</div><h1>Game details.</h1>
 <p class="lead">Game-by-game box scores with full scoring chronology, from opening kickoff to the final score.</p>
 <div class="toolbar"><label class="filter-label" for="gameSelect">Your game</label><select id="gameSelect" aria-label="Select attended NFL game"></select></div>
 <section id="scoreboard" aria-label="Game score by quarter"><div class="empty">Loading game…</div></section>
 <section id="gamePhoto" aria-label="Game photograph" style="display:none;margin:18px 0 24px"></section>
-<section id="curatedRecap" class="panel" aria-label="Every Game Has a Story" style="display:none;margin:18px 0 24px"></section>
+<section id="curatedRecap" class="panel game-recap" aria-label="Game recap" style="display:none;margin:18px 0 24px"></section>
 <section id="playerOfGame" class="panel pog" aria-label="NFL Player of the Game" aria-live="polite"><div class="empty">Loading Player of the Game…</div></section>
 <section id="pprLeaders" class="panel ppr-board" aria-label="Top Full-PPR offensive scores in this game">
  <div class="ppr-board-heading"><h2>Top fantasy performances</h2><a href="./milestones.html" class="action-link secondary">PPR milestones ↗</a></div>
@@ -75,9 +75,9 @@ document.addEventListener("DOMContentLoaded",async()=>{
   const linked=text=>String(text).split(/(\[\[espn:\d+\|[^\]]+\]\])/g).map(part=>{
    const m=/^\[\[espn:(\d+)\|([^\]]+)\]\]$/.exec(part);
    if(!m)return A.esc(part);
-   return playerIds.has(m[1])?'<a href="./player.html?id='+encodeURIComponent(m[1])+'">'+A.esc(m[2])+'</a>':A.esc(m[2]);
+   return playerIds.has(m[1])?'<a class="player-link" href="./player.html?id='+encodeURIComponent(m[1])+'">'+A.esc(m[2])+'</a>':A.esc(m[2]);
   }).join("");
-  section.innerHTML='<h2>Every Game Has a Story</h2>'+paragraphs.map(p=>'<p>'+linked(p)+'</p>').join("");
+  section.innerHTML='<div class="recap-kicker">Every game has a story</div><h2>Game recap</h2>'+paragraphs.map(p=>'<p>'+linked(p)+'</p>').join("");
   section.style.display="block";
  }
  function setGame(id){

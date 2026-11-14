@@ -18,7 +18,7 @@ try{let res=await fetch(path,{cache:"no-store"});if(!res.ok)return fallback;retu
 async function load(){
 const attendance=await fetchJSON("./data/attendance.json",[]);
 if(!attendance.length)throw Error("Original MLB game log unavailable");
-const games=await fetchJSON("./data/games.json",attendance),rows=await fetchJSON("./data/player_stats.json",[]),scores=await fetchJSON("./data/scoring_plays.json",{}),decisions=await fetchJSON("./data/decisions.json",{}),recaps=await fetchJSON("./data/game_recaps.json?v=mlb-game-recaps-20261114",{});
+const games=await fetchJSON("./data/games.json",attendance),rows=await fetchJSON("./data/player_stats.json",[]),scores=await fetchJSON("./data/scoring_plays.json",{}),decisions=await fetchJSON("./data/decisions.json",{}),recaps=await fetchJSON("./data/game_recaps.json?v=mlb-game-recaps-20261114-2",{});
 const byGame=new Map(games.map(g=>[String(g.attendance_id),g]));
 const playerMap=new Map();
 for(const r of rows){

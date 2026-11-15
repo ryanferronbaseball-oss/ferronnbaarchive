@@ -30,5 +30,14 @@
       "https://usdtoreros.com/sports/football/stats/2019/uc-davis/boxscore/9351"
     ],
     "verification": "Contemporary UC Davis report and official USD box score confirm score, lead changes, final goal-line fumble and key statistics. Linked player IDs matched cfb/data/player_stats.json; scoring sequence cross-checked with cfb/data/scoring_plays.json."
+  },
+  "cfb-2025-09-11-ncs-wfu": {
+    "sources": [
+      "https://gopack.com/news/2025/9/12/football-second-half-shutout-propels-wolfpack-to-34-24-victory-over-wake-forest",
+      "https://godeacs.com/news/2025/9/12/football-demon-deacons-fall-to-nc-state",
+      "https://gopack.com/sports/football/stats/2025/wake-forest-university/boxscore/23927",
+      "https://www.sports-reference.com/cfb/boxscores/2025-09-11-wake-forest.html"
+    ],
+    "verification": "Contemporary NC State and Wake Forest reports, official box score and archive scoring_plays.json confirm 34–24 result, scoring chronology, halftime deficit and second-half shutout. Individual statistics and all linked profile IDs verified against cfb/data/player_stats.json."
   }
 }

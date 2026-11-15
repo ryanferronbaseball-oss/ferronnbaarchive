@@ -10,6 +10,30 @@ const label=v=>String(v??"—");
 let data;
 try{data=await A.load()}catch(err){app.innerHTML='<div class="soccer-panel">Unable to load soccer archive: '+esc(err.message)+'</div>';return;}
 const {matches,players,byId}=data;
+let curatedRecaps={};
+if(page==="games"){
+ try{
+  const response=await fetch("./data/game_recaps.json",{cache:"no-store"});
+  if(response.ok){
+   const payload=await response.json();
+   if(payload&&typeof payload==="object"&&!Array.isArray(payload))curatedRecaps=payload;
+  }
+ }catch(error){console.warn("Soccer curated recaps unavailable",error)}
+}
+function curatedRecap(m){
+ const paragraphs=curatedRecaps[m.id];
+ if(!Array.isArray(paragraphs)||!paragraphs.length)return "";
+ const participantNames=new Set([...(m.home_starters||[]),...(m.away_starters||[]),...(m.home_subs_used||[]),...(m.away_subs_used||[])]);
+ const linked=paragraph=>String(paragraph).split(/(\[\[[^\]]+\]\])/g).map(part=>{
+  const match=/^\[\[([a-z0-9-]+)\|([^\]]+)\]\]$/.exec(part);
+  if(!match)return esc(part);
+  const name=match[2];
+  return participantNames.has(name)&&A.slug(name)===match[1]
+   ?'<a class="player-link" href="'+A.playerUrl(name)+'">'+esc(name)+'</a>'
+   :esc(name);
+ }).join("");
+ return '<section class="panel game-recap" aria-label="Game recap"><div class="recap-kicker">Every game has a story</div><h2>Game recap</h2>'+paragraphs.map(p=>'<p>'+linked(p)+'</p>').join("")+'</section>';
+}
 let careerHonors={players:{}};
 let individualHonors={players:{}};
 if(page==="player"){
@@ -95,6 +119,7 @@ function gameView(m){
  +'<div class="soccer-filters"><label>Select a match<select id="gameSelect">'+matches.map(x=>'<option value="'+esc(x.id)+'"'+(x.id===m.id?" selected":"")+'>'+dt(x.date)+' · '+esc(x.home_abbr)+' vs '+esc(x.away_abbr)+'</option>').join("")+'</select></label></div>'
  +'<div class="soccer-scoreline"><div class="soccer-side">'+esc(m.home)+'</div><div class="soccer-final"><strong>'+m.home_score+'–'+m.away_score+'</strong><small>FULL TIME</small></div><div class="soccer-side">'+esc(m.away)+'</div></div>'
  +'<p class="soccer-info">'+dt(m.date)+' · '+esc(m.competition)+' · '+esc(m.venue)+' · '+esc(m.city)+(m.attendance?' · '+A.fmt(m.attendance)+' announced attendance':'')+'</p>'
+ +curatedRecap(m)
  +metricCards([["Goals",m.home_score+m.away_score],["Scorers",new Set(A.scored(m).filter(e=>e.type!=="own_goal").map(e=>e.player)).size],["Events logged",m.events.length],["Players appeared",new Set([...m.home_starters,...m.away_starters,...(m.home_subs_used||[]),...(m.away_subs_used||[])]).size]])
  +'<section class="soccer-panel"><h2>Goals</h2>'+A.scored(m).map(e=>eventHtml(e,m,true)).join("")+'</section>'
  +'<section class="soccer-panel"><h2>Player box score & lineups</h2><div class="soccer-lineup">'+lineup(m,"home")+lineup(m,"away")+'</div></section>'

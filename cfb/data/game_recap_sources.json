@@ -23,5 +23,12 @@
       "https://www.foxsports.com/stories/college-football/records-fall-in-san-diegos-56-52-win-over-davidson"
     ],
     "verification": "Final score, 24-point deficit, comeback and late scoring sequence checked against both schools' contemporary reports; rushing record and PFL title context corroborated; player lines and all internal IDs matched to archived cfb/data/player_stats.json."
+  },
+  "cfb-2019-09-07-ucd-usd": {
+    "sources": [
+      "https://ucdavisaggies.com/news/2019/9/7/football-last-second-goal-line-stand-lifts-uc-davis-to-victory-at-san-diego.aspx",
+      "https://usdtoreros.com/sports/football/stats/2019/uc-davis/boxscore/9351"
+    ],
+    "verification": "Contemporary UC Davis report and official USD box score confirm score, lead changes, final goal-line fumble and key statistics. Linked player IDs matched cfb/data/player_stats.json; scoring sequence cross-checked with cfb/data/scoring_plays.json."
   }
 }

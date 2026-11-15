@@ -2,7 +2,7 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>College Football Game Box Score | Courtside Archive</title>
 <meta name="description" content="Your attended College Football games with quarter scoring, scoring plays, full passing, rushing, receiving, defensive and special teams box scores.">
-<link rel="stylesheet" href="./assets/archive.css?v=20261106-crosssport-sweep3"><link rel="stylesheet" href="../assets/game-pro-alumni.css?v=20261106-crosssport-sweep3"><script src="./assets/archive.js?v=records-nav-20261016" defer></script><link rel="stylesheet" href="../assets/sport-burgundy-ice.css?v=20261106-crosssport-sweep4"></head>
+<link rel="stylesheet" href="./assets/archive.css?v=20261106-crosssport-sweep3"><link rel="stylesheet" href="../assets/game-pro-alumni.css?v=20261106-crosssport-sweep3"><script src="./assets/archive.js?v=records-nav-20261016" defer></script><link rel="stylesheet" href="../assets/sport-burgundy-ice.css?v=20261106-crosssport-sweep4"><link rel="stylesheet" href="../assets/basketball-recap-contrast.css?v=20261114-cfb-recap-parity1"></head>
 <body><main><div id="navigation"></div>
 <div class="eyebrow">College Football · Games / Box Scores</div><h1>Game details.</h1>
 <p class="lead">Game-by-game box scores with full scoring chronology, from opening kickoff to the final score.</p>
@@ -10,6 +10,7 @@
 <section id="scoreboard" aria-label="Game score by quarter"><div class="empty">Loading game…</div></section>
 <section id="proAlumni" class="game-pro-alumni" aria-live="polite"><h2>Future NFL players in this game</h2><p class="pro-empty">Loading verified alumni…</p></section>
 <p class="note" id="sourceNote" aria-live="polite"></p>
+<section id="curatedRecap" class="panel game-recap" aria-label="Game recap" style="display:none"></section>
 <section id="playerOfGame" class="panel pog" aria-label="College Football Player of the Game" aria-live="polite"><div class="empty">Loading Player of the Game…</div></section>
 <section id="pprLeaders" class="panel ppr-board" aria-label="Top Full-PPR offensive scores in this game">
  <div class="ppr-board-heading"><h2>Top fantasy performances</h2><a href="./records.html#milestones" class="action-link secondary">PPR milestones ↗</a></div>
@@ -31,7 +32,7 @@
 document.addEventListener("DOMContentLoaded",async()=>{
  const A=window.CFBArchive,el=id=>document.getElementById(id),params=new URLSearchParams(location.search);
  el("navigation").innerHTML=A.nav("game");
- let games=[],rows=[],score={},ppr=[],nflAlumni=[],group="offense",selected=null;
+ let games=[],rows=[],score={},ppr=[],nflAlumni=[],recaps={},group="offense",selected=null;
  const urlGame=params.get("id");
  function boxSection(category,title){
   const selectedRows=rows.filter(x=>x.game_id===selected.id&&x.category===category);
@@ -68,9 +69,21 @@ document.addEventListener("DOMContentLoaded",async()=>{
    +'<div class="pog-stats">'+fields.map(([label,value])=>cell(label,value)).join("")+'</div>'
    +'<p class="pog-method">Unofficial selection based on the highest traditional offensive Full-PPR fantasy score in this game (including receptions, yards, touchdowns and turnover deductions). K/DST and individual defensive scoring are excluded; this is not an official College Football award.</p>';
  }
+ function renderRecap(id){
+  const section=el("curatedRecap"),paragraphs=recaps[id];
+  if(!Array.isArray(paragraphs)||!paragraphs.length){section.style.display="none";section.innerHTML="";return}
+  const playerIds=new Set(rows.filter(x=>x.game_id===id&&x.athlete_id).map(x=>String(x.athlete_id)));
+  const linked=text=>String(text).split(/(\[\[[^\]]+\]\])/g).map(part=>{
+   const m=/^\[\[([a-z0-9-]+)\|([^\]]+)\]\]$/.exec(part);
+   if(!m)return A.esc(part);
+   return playerIds.has(m[1])?'<a class="player-link" href="./player.html?id='+encodeURIComponent(m[1])+'">'+A.esc(m[2])+'</a>':A.esc(m[2]);
+  }).join("");
+  section.innerHTML='<div class="recap-kicker">Every game has a story</div><h2>Game recap</h2>'+paragraphs.map(p=>'<p>'+linked(p)+'</p>').join("");
+  section.style.display="block";
+ }
  function setGame(id){
   selected=games.find(g=>g.id===id)||games[0];if(!selected)return;
-  el("gameSelect").value=selected.id;el("scoreboard").innerHTML=A.scoreboard(selected);
+  el("gameSelect").value=selected.id;el("scoreboard").innerHTML=A.scoreboard(selected);renderRecap(selected.id);
   const alumniIds=new Set(nflAlumni.filter(p=>p.category==="nfl"&&p.first_nfl_season!=null).map(p=>p.athlete_id));
   const seen=new Map(rows.filter(p=>p.game_id===selected.id&&alumniIds.has(p.athlete_id)).map(p=>[p.athlete_id,p.player]));
   el("proAlumni").innerHTML='<h2>Future NFL players in this game · '+seen.size+'</h2><p class="pro-caption">Verified NFL game appearances · Click a name to open the college player profile.</p>'
@@ -91,6 +104,7 @@ document.addEventListener("DOMContentLoaded",async()=>{
  }
  try{
   const [data,alumni]=await Promise.all([A.load(),fetch("./data/nfl_crosswalk.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("NFL alumni registry unavailable");return r.json()})]);games=data.games;rows=data.rows;score=data.scoring;ppr=data.ppr.performances;nflAlumni=alumni;
+  try{const response=await fetch("./data/game_recaps.json",{cache:"no-store"});if(response.ok){const payload=await response.json();if(payload&&typeof payload==="object"&&!Array.isArray(payload))recaps=payload}}catch(e){console.warn("Curated CFB recaps unavailable",e)}
   el("gameSelect").innerHTML=games.map(g=>'<option value="'+A.esc(g.id)+'">'+A.esc(A.date(g.date))+' · '+A.esc(g.away_abbr)+' at '+A.esc(g.home_abbr)+'</option>').join("");
   el("gameSelect").addEventListener("change",e=>setGame(e.target.value));
   el("statTabs").querySelectorAll("button").forEach(btn=>btn.addEventListener("click",()=>{group=btn.dataset.group;renderTabs()}));

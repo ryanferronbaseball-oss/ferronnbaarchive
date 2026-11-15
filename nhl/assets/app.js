@@ -5,6 +5,7 @@
  const fmt=d=>new Date(d+'T12:00:00Z').toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric',timeZone:'UTC'});
  const stat=(x,dash='—')=>x===null||x===undefined?dash:esc(x);
  const page=document.body.dataset.page||'overview';
+ let curatedRecaps={};
  const navItems=[['index.html','Overview','overview'],['game.html','Games','game'],['stats.html','Players','stats'],['hall-of-fame.html','★ Hall of Fame','hof'],['records.html','Records','records'],['coaches.html','Coaches','coaches']];
  const nav=navItems.map(([href,name,key])=>'<a href="./'+href+'"'+((page===key||(page==='player'&&key==='stats'))?' aria-current="page"':'')+'>'+name+'</a>').join('')+'<a href="../index.html">All archives ↗</a>';
  $('navigation').innerHTML=(['overview','game','stats','player','records'].includes(page))
@@ -240,7 +241,16 @@
        +(g.attendance?' · '+Number(g.attendance).toLocaleString('en-US')+' in attendance':'')+'</div></section>';
     const photo=g.photo?.url||g.photo_url;
     const gamePhoto=photo?'<figure class="nhl-game-photo"><img loading="lazy" src="'+esc(photo)+'" alt="Game photo from '+esc(g.away)+' at '+esc(g.home)+'"><figcaption>'+fmt(g.date)+' · '+esc(g.away)+' at '+esc(g.home)+'</figcaption></figure>':'';
-    const recap='<section class="nhl-game-panel nhl-game-recap" id="gameRecap"><span class="nhl-game-kicker">EVERY GAME HAS A STORY</span><h2>Game recap</h2><p>'+esc(g.recap)+'</p></section>';
+    const written=curatedRecaps[g.id];
+    const playerIds=new Set(g.players.map(p=>String(p.id)));
+    const linked=paragraph=>String(paragraph).split(/(\[\[[^\]]+\]\])/g).map(part=>{
+      const match=/^\[\[([a-z0-9-]+)\|([^\]]+)\]\]$/.exec(part);
+      if(!match)return esc(part);
+      const player=g.players.find(p=>String(p.id)===match[1]&&p.name===match[2]);
+      return player&&playerIds.has(match[1])?'<a class="player-link" href="'+linkPlayer(player)+'">'+esc(player.name)+'</a>':esc(part);
+    }).join('');
+    const paragraphs=Array.isArray(written)&&written.length?written:[g.recap];
+    const recap='<section class="nhl-game-panel nhl-game-recap" id="gameRecap"><span class="nhl-game-kicker">EVERY GAME HAS A STORY</span><h2>Game recap</h2>'+paragraphs.map(p=>'<p>'+linked(p)+'</p>').join('')+'</section>';
     const pog=selectedGoalie?'<section class="nhl-game-panel nhl-game-pog" id="playerOfGame" aria-label="Player of the Game">'
      +'<div class="nhl-game-kicker">COURTSIDE ARCHIVE SELECTION · UNOFFICIAL</div><h2>Player of the Game</h2>'
      +'<div class="nhl-game-pog-head"><div><div class="nhl-game-pog-name">'+playerAnchor(selectedGoalie)+'</div>'
@@ -607,8 +617,10 @@
 
  Promise.all([
   fetch('./data/games.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('NHL game records unavailable');return r.json()}),
-  fetch('../coach-history/data/nhl-head-coaching-stops.json',{cache:'no-store'}).then(r=>r.ok?r.json():{stops:{}}).catch(()=>({stops:{}}))
- ]).then(([games,career])=>{
+  fetch('../coach-history/data/nhl-head-coaching-stops.json',{cache:'no-store'}).then(r=>r.ok?r.json():{stops:{}}).catch(()=>({stops:{}})),
+  page==='game'?fetch('./data/game_recaps.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('NHL curated recap registry HTTP '+r.status);return r.json()}).catch(e=>{console.warn('NHL curated recaps unavailable',e);return {}}):Promise.resolve({})
+ ]).then(([games,career,recaps])=>{
+  if(recaps&&typeof recaps==='object'&&!Array.isArray(recaps))curatedRecaps=recaps;
   if(!Array.isArray(games)||!games.length)throw Error('No NHL games in the archive');
   if(page==='overview')overview(games);else if(page==='game')gamePage(games);else if(page==='stats')statsPage(games);
   else if(page==='player')playerPage(games);else if(page==='hof')hofPage(games);else if(page==='records')recordsPage(games);else if(page==='coaches')coachesPage(games,career);

@@ -394,11 +394,54 @@ function loadBirthCountry(id){
   .catch(err=>console.warn("MLB birth country unavailable for player",id,err))
   .finally(()=>countryRequests.delete(id));
 }
+
+/* Like the 3+ MLB directory, group by distinct MLB franchise/team IDs; profile threshold is 2+. */
+function profileMultipleTeams(p){
+ const dates=new Map(games.filter(g=>g.game_pk!=null).map(g=>[String(g.game_pk),g.date]));
+ const byTeam=new Map();
+ for(const r of p.rows){
+  if(r.team_id==null||r.game_pk==null)continue;
+  const id=String(r.team_id),gameId=String(r.game_pk),when=dates.get(gameId)||r.date||"9999";
+  let t=byTeam.get(id);
+  if(!t){t={id,name:r.team||"Unknown team",first:when,games:new Set(),batting:new Map(),pitching:new Map()};byTeam.set(id,t)}
+  if(when<t.first){t.first=when;t.name=r.team||t.name}
+  t.games.add(gameId);
+  const b=r.batting||{};
+  if((A.num(b.plateAppearances)>0||A.num(b.atBats)>0)&&!t.batting.has(gameId))t.batting.set(gameId,r);
+  const a=r.pitching||{};
+  if((a.outs!=null||a.inningsPitched!=null)&&!t.pitching.has(gameId))t.pitching.set(gameId,r);
+ }
+ const teams=[...byTeam.values()].sort((a,b)=>a.first.localeCompare(b.first)||a.name.localeCompare(b.name));
+ if(teams.length<2)return {teams,markup:""};
+ const logo=t=>'<img src="https://www.mlbstatic.com/team-logos/'+encodeURIComponent(t.id)+'.svg" alt="'+esc(t.name)+' logo" loading="lazy" onerror="this.remove()">';
+ const cell=t=>'<span class="mlb-multi-team-cell">'+logo(t)+'<strong>'+esc(t.name)+'</strong></span>';
+ const statTable=type=>{
+  const pitch=type==="pitching",active=teams.filter(t=>t[type].size>0);
+  if(!active.length)return "";
+  const heads=pitch?["Team","Games","Innings","ERA","K"]:["Team","Games","AVG","HR","RBI"];
+  const body=active.map(t=>{
+   const s=A.addStats([...t[type].values()],type);
+   const vals=pitch?[t.pitching.size,s.inningsPitched,A.disp(s.era,"era"),s.strikeOuts]
+    :[t.batting.size,A.disp(s.average,"average"),s.homeRuns,s.rbi];
+   return '<tr><td>'+cell(t)+'</td>'+vals.map(v=>'<td>'+esc(v)+'</td>').join("")+'</tr>';
+  });
+  return '<div class="mlb-multi-table"><h3>'+(pitch?"Pitching":"Hitting")+'</h3>'+table(heads,body)+'</div>';
+ };
+ const path=teams.map((t,i)=>(i?'<span class="mlb-multi-arrow" aria-label="then">→</span>':"")
+   +'<div class="mlb-multi-team">'+logo(t)+'<div><strong>'+esc(t.name)+'</strong><small>First seen '+esc(t.first==="9999"?"unknown":t.first.slice(0,4))+'</small></div></div>').join("");
+ const markup='<section class="panel mlb-multiple-profile" id="multiTeamsProfile" aria-label="MLB team journey">'
+  +'<h2>Seen at Multiple Teams</h2>'
+  +'<p class="mlb-note">Major-league teams you personally witnessed this player represent, in first-seen order. Statistics include <strong>only games you attended</strong>, not full career totals. <a href="./multiple-teams.html">Explore the 3+ teams directory →</a></p>'
+  +'<div class="mlb-multi-path">'+path+'</div>'+statTable("batting")+statTable("pitching")+'</section>';
+ return {teams,markup};
+}
+
 function profilePage(){
  const id=new URLSearchParams(location.search).get("id");
  const p=players.find(x=>String(x.player_id)===String(id));
  if(!p){app.innerHTML='<div class="eyebrow">MLB · Player profile</div><h1>Player not found.</h1><p><a href="./stats.html">← Player leaderboards</a></p>';return}
  const wbcTeams=wbcById.get(String(p.player_id))||[];
+ const multiTeam=profileMultipleTeams(p);
  const bs=batting(p.batting), ps=p.pitching.length?verifiedPitcherTotals(p):null;
  const officialPitcherRecord=pitcherDecisions(p.player_id);
  const hasOfficialTwoWayRole=p.rows.some(r=>String(r.position||"").toUpperCase()==="TWP");
@@ -541,6 +584,7 @@ function profilePage(){
   +'<div class="mlb-player-name-row"><h1>'+esc(p.name)+'</h1><span class="mlb-player-country-slot" data-mlb-country-for="'+esc(p.player_id)+'">'+profileCountryFlags(String(p.player_id))+'</span></div>'+badges
   +'<p class="mlb-profile-seen">'+p.game_count+' attended '+(p.game_count===1?"game":"games")+' · '+esc(years)+'</p></div></section>'
   +'<div class="mlb-profile-headline-stats'+(twoWay?" is-two-way":pitcher?" is-pitcher":"")+'">'+summaryTiles+'</div>'
+  +multiTeam.markup
   +'<div class="mlb-profile-tabs" id="profileTabs" role="tablist" aria-label="Player profile sections">'
   +[["overview","Overview"],["advanced","Advanced"],["games","Game Log"],["milestones","Milestones"]].map(([key,title],i)=>
    '<button type="button" class="mlb-profile-tab" role="tab" data-profile-tab="'+key+'" aria-controls="profile-'+key+'" aria-selected="'+(i===0)+'">'+title+'</button>').join("")+'</div>'
@@ -557,7 +601,9 @@ function profilePage(){
   +(ps?'<h3>Pitching efficiency</h3>'+totals(pitchingRates,"mlb-profile-pitching-advanced-grid")
    +'<p class="mlb-note">Estimated FIP uses only attended-game pitching totals: (13 × HR + 3 × (BB + HBP) − 2 × K) ÷ IP + 3.20. Actual FIP uses a season-specific league constant and typically excludes intentional walks. A dash means required pitching data is unavailable; small game samples can be volatile.</p>':"")+'</section>'
   +'<section class="panel mlb-profile-panel" id="profile-games" role="tabpanel" hidden>'
-  +'<h2>Every game you witnessed</h2><div class="mlb-profile-log-tabs" role="tablist" aria-label="Game log stat group">'
+  +'<h2>Every game you witnessed</h2>'
+  +(multiTeam.teams.length>=2?'<label class="mlb-profile-team-filter">Team <select id="mlbTeamFilter" aria-label="Filter MLB game log by witnessed team"><option value="all">All teams</option>'+multiTeam.teams.map(t=>'<option value="'+esc(t.id)+'">'+esc(t.name)+'</option>').join("")+'</select></label>':"")
+  +'<div class="mlb-profile-log-tabs" role="tablist" aria-label="Game log stat group">'
   +'<button type="button" role="tab" data-side="batting" aria-selected="'+(!pitcher)+'">Batting</button>'
   +'<button type="button" role="tab" data-side="pitching" aria-selected="'+pitcher+'">Pitching</button></div><div id="logs"></div></section>'
   +'<section class="panel mlb-profile-panel" id="profile-milestones" role="tabpanel" hidden>'
@@ -571,7 +617,8 @@ function profilePage(){
  app.querySelectorAll("#profileTabs [data-profile-tab]").forEach(b=>b.addEventListener("click",()=>showMain(b.dataset.profileTab)));
  function logs(type){
   app.querySelectorAll("[data-side]").forEach(b=>b.setAttribute("aria-selected",String(b.dataset.side===type)));
-  const entries=p[type].slice().sort((a,b)=>b.date.localeCompare(a.date));
+  const teamId=el("mlbTeamFilter")?.value||"all";
+  const entries=p[type].filter(r=>teamId==="all"||String(r.team_id)===teamId).slice().sort((a,b)=>b.date.localeCompare(a.date));
   const keys=type==="batting"?["atBats","runs","hits","homeRuns","rbi","baseOnBalls","strikeOuts"]:["inningsPitched","hits","earnedRuns","baseOnBalls","strikeOuts"];
   el("logs").innerHTML=table(["Date","Team","Match",...keys.map(k=>A.abbr[k]||k)],
    entries.map(r=>{const game=games.find(g=>g.game_pk===r.game_pk);
@@ -580,6 +627,7 @@ function profilePage(){
    "No verified "+type+" game lines.");
  }
  app.querySelectorAll("[data-side]").forEach(b=>b.addEventListener("click",()=>logs(b.dataset.side)));
+ el("mlbTeamFilter")?.addEventListener("change",()=>logs(app.querySelector('[data-side][aria-selected="true"]')?.dataset.side||"batting"));
  logs(pitcher?"pitching":"batting");
  if(hasHonors){
   const showHonor=key=>{

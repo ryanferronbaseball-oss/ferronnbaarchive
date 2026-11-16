@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F2">
+<meta name="description" content="Explore every college witnessed in person across Courtside Archive college basketball, baseball and football, with combined school profiles, attended-game records and linked box scores.">
+<title>Colleges Across Sports | Courtside Archive</title>
+<link rel="stylesheet" href="./colleges.css?v=20261116-1">
+<script defer src="./colleges.js?v=20261116-1"></script>
+</head>
+<body>
+<a class="skip" href="#profile">Skip to college profile</a>
+<div class="wrap">
+<header class="top">
+<a href="../index.html" class="brand"><span class="brand-mark">CA</span><span>COURTSIDE ARCHIVE<small>EVERY GAME HAS A STORY</small></span></a>
+<nav aria-label="Archive navigation"><a href="../index.html">← Home</a><a href="./index.html" aria-current="page">Colleges</a><a href="../college/index.html">Basketball</a><a href="../college-baseball/index.html">Baseball</a><a href="../cfb/index.html">Football</a></nav>
+</header>
+<main>
+<section class="hero">
+<div><div class="eyebrow">One school · Three sports · Every attended game</div>
+<h1>One college.<br><em>Every sport.</em></h1>
+<p class="lead">See how the colleges you’ve witnessed performed across basketball, baseball and football. Select a school to compare its attended-game records, browse matchups and open the original game box scores.</p>
+</div>
+<aside class="hero-panel"><div class="eyebrow">The college collection</div><strong id="schoolCount">—</strong><small>Colleges represented</small><div class="mini-totals"><span><b id="multiCount">—</b><small>2+ sports</small></span><span><b id="allThreeCount">—</b><small>All 3 sports</small></span><span><b id="appearanceCount">—</b><small>Team appearances</small></span></div></aside>
+</section>
+<p class="note">Records reflect only games attended in person, not the schools’ full seasons. Each team appearance is counted once per attended game; a game contributes to both participating colleges. This page draws live from the three sport archives and includes their verified attendance corrections.</p>
+<div id="error" class="error" role="alert" hidden></div>
+<section id="profile" class="profile" aria-live="polite" aria-label="Selected college profile"><p class="detail-empty">Loading the combined college profiles…</p></section>
+<section class="directory" aria-labelledby="directoryTitle">
+<div class="directory-head"><div><div class="eyebrow">Browse the full collection</div><h2 id="directoryTitle">College directory</h2><p>Choose any school to see every sport in one profile.</p></div><p id="showing" role="status">Loading colleges…</p></div>
+<div class="controls">
+<input id="search" type="search" placeholder="Search colleges…" aria-label="Search colleges by name" disabled>
+<select id="filter" aria-label="Filter by number of sports" disabled><option value="all">All colleges</option><option value="multi">2 or more sports</option><option value="three">All 3 sports</option></select>
+<select id="order" aria-label="Sort colleges" disabled><option value="games">Most games attended</option><option value="sports">Most sports represented</option><option value="alpha">Name A–Z</option></select>
+</div><div id="directory" class="directory-grid"><div class="no-results">Loading school directory…</div></div>
+</section>
+</main>
+<footer>Courtside Archive · College profiles based on personally attended games · <a href="../index.html">Return to overview</a></footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,97 @@
+
+:root{--ink:#192e43;--muted:#52697c;--accent:#831738;--ice:#d9f0fa;--border:#c8dee9;--bg:#faf8f2;--card:#fffefa;--green:#246e56;--red:#a3314d}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+a{color:var(--accent)}
+a:hover{text-decoration-thickness:2px}
+button,input,select{font:inherit}
+button{cursor:pointer}
+.skip{position:absolute;left:-200vw;top:8px;background:var(--ink);padding:12px;color:white;z-index:10}
+.skip:focus{left:8px}
+.wrap{width:min(1180px,calc(100% - 44px));margin:auto}
+.top{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:22px 0;border-bottom:1px solid #dadfdf}
+.brand{text-decoration:none;color:var(--ink);font-size:16px;font-weight:900;letter-spacing:.06em;display:flex;gap:12px;align-items:center}
+.brand-mark{background:var(--accent);color:white;border-radius:11px;padding:10px;font-weight:900;font-size:15px}
+.brand small{display:block;font-size:9px;font-weight:750;letter-spacing:.14em;color:var(--muted);margin-top:5px}
+.top nav{display:flex;gap:14px;flex-wrap:wrap}
+.top nav a{text-decoration:none;font-size:12px;font-weight:800;padding:9px 13px;border-radius:9px}
+.top nav a:hover,.top nav a:focus-visible{background:var(--ice)}
+.eyebrow{font-size:11px;font-weight:850;letter-spacing:.16em;color:var(--accent);text-transform:uppercase}
+.hero{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(240px,.65fr);gap:32px;align-items:center;padding:60px 0 38px}
+h1,h2,h3,p{margin-top:0}
+h1{font-family:Georgia,serif;font-size:clamp(45px,6vw,76px);line-height:1.04;letter-spacing:-.045em;margin:14px 0 18px}
+h1 em{color:var(--accent);font-weight:400}
+.lead{font-size:15px;line-height:1.8;color:var(--muted);max-width:740px}
+.hero-panel{background:linear-gradient(140deg,#152c43,#2a4057);color:white;padding:27px;border-radius:21px;box-shadow:0 16px 32px #1b2c3715}
+.hero-panel .eyebrow{color:#a9dcf2}
+.hero-panel strong{display:block;font-family:Georgia,serif;font-size:49px;font-weight:400;line-height:1.1;margin:13px 0 3px}
+.hero-panel small{color:#cfdfeb}
+.mini-totals{display:flex;gap:18px;margin-top:22px;padding-top:17px;border-top:1px solid #ffffff2a}
+.mini-totals span{display:block}
+.mini-totals b{font-size:24px;display:block}
+.mini-totals small{font-size:10px}
+.note{font-size:12px;line-height:1.6;color:var(--muted);margin:0 0 22px}
+.error{padding:15px 18px;background:#fff4f2;border:1px solid #e8c0c0;color:#852c35;border-radius:12px;margin:15px 0}
+.profile{background:#fff;border:1px solid var(--border);border-radius:21px;padding:30px;margin:12px 0 38px;box-shadow:0 10px 26px #192e4308;scroll-margin-top:20px}
+.profile-header{display:flex;align-items:center;gap:19px;flex-wrap:wrap;margin-bottom:25px}
+.school-logo{position:relative;flex:none;display:grid;place-items:center;width:78px;height:78px;border-radius:17px;background:#ebf5fa;border:1px solid #d2e6ef;color:var(--accent);overflow:hidden}
+.school-logo img{position:absolute;inset:6px;width:calc(100% - 12px);height:calc(100% - 12px);object-fit:contain;background:#ebf5fa}
+.school-logo span{font-size:24px;font-weight:900;letter-spacing:-.04em}
+.profile h2{font-size:clamp(29px,4vw,43px);font-family:Georgia,serif;font-weight:400;letter-spacing:-.035em;margin:5px 0}
+.profile-intro{color:var(--muted);font-size:13px;margin:0}
+.profile-total{margin-left:auto;text-align:right}
+.profile-total strong{display:block;font-size:33px;color:var(--accent);font-weight:850}
+.profile-total small{color:var(--muted);font-size:11px;font-weight:750}
+.sport-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.sport-panel{padding:19px;background:linear-gradient(145deg,#f3f9fc,#fff);border:1px solid #cfdee7;border-radius:15px}
+.sport-panel h3{font-size:15px;margin:0 0 13px;letter-spacing:.01em}
+.sport-panel h3 span{display:inline-block;margin-right:5px}
+.sport-panel .record{display:flex;align-items:baseline;flex-wrap:wrap;gap:8px}
+.sport-panel .record strong{font-size:30px;font-weight:850;letter-spacing:-.04em}
+.sport-panel .record small{font-size:12px;color:var(--muted);font-weight:700}
+.sport-panel .record-details{margin-top:10px;display:flex;gap:11px;flex-wrap:wrap;color:var(--muted);font-size:11px}
+.sport-panel .record-details b{color:var(--ink)}
+.sport-panel.empty{opacity:.75;background:#f5f6f5;border-style:dashed}
+.profile-section{margin-top:28px}
+.profile-section h3{font-size:18px;margin-bottom:12px}
+.profile-section .section-caption{font-size:12px;color:var(--muted);margin-top:-5px}
+.game-table-wrap{border:1px solid #d9e5eb;border-radius:13px;overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:12px}
+th{text-align:left;text-transform:uppercase;letter-spacing:.1em;font-size:10px;color:#6a7d8a;background:#f0f7fa}
+td,th{padding:11px 13px;border-bottom:1px solid #e3e9eb}
+tr:last-child td{border-bottom:0}
+td a{font-weight:750;text-decoration:none}
+td a:hover{text-decoration:underline}
+tr:hover td{background:#f8fbfd}
+.result{font-size:10px;letter-spacing:.04em;font-weight:850;border-radius:5px;padding:4px 7px;display:inline-block}
+.result.w{background:#dff2e9;color:#176348}
+.result.l{background:#fae5e8;color:#982744}
+.result.t{background:#f4eedc;color:#7b6524}
+.result.u{background:#edf0f2;color:#64707a}
+.extra{margin:8px 0}
+.extra summary{font-size:12px;font-weight:800;color:var(--accent);cursor:pointer;padding:10px 0}
+.detail-empty{font-size:12px;color:var(--muted);background:#f6f8f8;padding:13px 15px;border-radius:10px}
+.directory{margin-bottom:75px}
+.directory-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:14px}
+.directory-head h2{font:normal 37px Georgia,serif;letter-spacing:-.035em;margin:6px 0}
+.directory-head p{font-size:13px;color:var(--muted);margin:0}
+.controls{display:grid;grid-template-columns:minmax(180px,1.5fr) minmax(140px,.6fr) minmax(140px,.65fr);gap:11px;margin-bottom:17px}
+.controls input,.controls select{background:white;border:1px solid #bfd5e0;padding:13px 14px;border-radius:10px;min-width:0;color:var(--ink);font-size:13px}
+.controls input:focus-visible,.controls select:focus-visible,button:focus-visible{outline:3px solid #7cb9d5;outline-offset:2px}
+.directory-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px}
+.school-card{width:100%;text-align:left;border:1px solid #d2e1e7;border-radius:14px;background:white;padding:14px 15px;display:flex;align-items:center;gap:12px;min-width:0;color:inherit}
+.school-card:hover{background:#eff8fc;border-color:#a5cadc;transform:translateY(-1px)}
+.school-card.selected{border:2px solid var(--accent);padding:13px 14px;background:#fdf7f8}
+.school-card .school-logo{width:47px;height:47px;border-radius:10px}
+.school-card .school-logo span{font-size:16px}
+.school-card .name{display:block;font-weight:850;font-size:13px;line-height:1.35}
+.school-card small{display:block;font-size:10px;color:var(--muted);margin-top:5px}
+.school-card .count{margin-left:auto;text-align:right;flex:none}
+.school-card .count strong{display:block;font-size:20px}
+.school-card .count small{margin-top:0}
+.no-results{grid-column:1/-1;padding:26px;border:1px dashed #a9c9d8;border-radius:12px;color:var(--muted);text-align:center}
+footer{border-top:1px solid #d8dfdf;margin-top:40px;padding:22px 0 38px;color:var(--muted);font-size:11px}
+@media(max-width:950px){.directory-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){.wrap{width:min(100% - 26px,1180px)}.hero{grid-template-columns:1fr;padding:35px 0 20px}.hero-panel{display:flex;gap:30px;flex-wrap:wrap;justify-content:space-between}.mini-totals{border:0;padding:0;margin:0}.profile{padding:18px}.sport-grid{grid-template-columns:1fr}.profile-total{margin-left:0;text-align:left}.controls{grid-template-columns:1fr}.directory-grid{grid-template-columns:1fr}.top{flex-direction:column;align-items:flex-start}.profile-header{gap:12px}h1{font-size:50px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.school-card:hover{transform:none}}

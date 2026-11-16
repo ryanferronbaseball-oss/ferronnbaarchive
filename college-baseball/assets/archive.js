@@ -170,7 +170,7 @@ function applyStatBackfills(sourceRows,manifest){
  });
 }
 async function load(){
- const [rawGames,rawRows,report,crosswalk,identity,nameCorrections,statBackfills,gameCorrections]=await Promise.all([json("games.json"),json("player_stats.json"),json("import_report.json"),json("mlb_crosswalk.json"),json("player_identity_crosswalk.json"),json("player_name_corrections.json"),json("source_stat_backfills.json"),json("attendance_game_corrections.json")]);
+ const [rawGames,rawRows,report,crosswalk,identity,nameCorrections,statBackfills,gameCorrections,recapRegistry]=await Promise.all([json("games.json"),json("player_stats.json"),json("import_report.json"),json("mlb_crosswalk.json"),json("player_identity_crosswalk.json"),json("player_name_corrections.json"),json("source_stat_backfills.json"),json("attendance_game_corrections.json"),json("game_recaps.json")]);
  const {games,rows:correctedRows,gameRedirects}=applyAttendanceGameCorrections(rawGames,rawRows,gameCorrections);
  const sourceRows=applyStatBackfills(correctedRows,statBackfills);
  if(!identity||!Array.isArray(identity.merges))throw Error("Missing verified player identity merge manifest");
@@ -252,7 +252,21 @@ async function load(){
  const displayTeams=new Map(nameCorrectionGames.filter(g=>g.team_display_name).map(g=>[g.team,g.team_display_name]));
  const players=[...byPlayer.values()].map(p=>({...p,name:displayNames.get(p.player_id)||p.name,former_names:formerNames.get(p.player_id)||[],
   teams:[...new Set([...p.teams].map(team=>displayTeams.get(team)||team))],games:[...p.games]}));
- return {games:games.slice().sort((a,b)=>b.date.localeCompare(a.date)||a.id.localeCompare(b.id)),rows,players,gameMap,gameRedirects,report,crosswalk,identity,redirects};
+ const playerIds=new Set(rows.map(r=>String(r.player_id||"")));
+ if(!recapRegistry||recapRegistry.version!==1||!recapRegistry.recaps||typeof recapRegistry.recaps!=="object"||Array.isArray(recapRegistry.recaps))throw Error("Malformed college baseball recap registry");
+ const recaps=new Map();
+ for(const [gameId,entry] of Object.entries(recapRegistry.recaps)){
+  if(!gameMap.has(gameId)||!entry||!Array.isArray(entry.paragraphs)||entry.paragraphs.length!==3||entry.paragraphs.some(p=>typeof p!=="string"||!p.trim()))throw Error("Malformed college baseball recap: "+gameId);
+  if(!entry.player_of_game||typeof entry.player_of_game!=="object"||!playerIds.has(String(entry.player_of_game.player_id||""))||!entry.player_of_game.name||!entry.player_of_game.team||!entry.player_of_game.line)throw Error("Malformed college baseball Player of Game: "+gameId);
+  for(const paragraph of entry.paragraphs){
+   const token=/\[\[([a-z0-9-]+)\|([^\]\|]+)\]\]/g;
+   let count=0,match;
+   while((match=token.exec(paragraph))){count++;if(!playerIds.has(match[1])||!match[2].trim())throw Error("Invalid recap player link: "+gameId)}
+   if(!count)throw Error("Recap has no linked players: "+gameId);
+  }
+  recaps.set(gameId,entry);
+ }
+ return {games:games.slice().sort((a,b)=>b.date.localeCompare(a.date)||a.id.localeCompare(b.id)),rows,players,gameMap,gameRedirects,report,crosswalk,identity,redirects,recaps};
 }
 let cachedArchivePromise;
 function cachedLoad(){return cachedArchivePromise||(cachedArchivePromise=load())}
@@ -293,6 +307,25 @@ function pitch(rows){
 const rate=(v,n)=>v==null?"—":Number(v).toFixed(n).replace(n===3?/^0(?=\.)/:/$^/,"");
 function metrics(items){return '<div class="metrics">'+items.map(([name,val])=>'<div class="metric"><strong>'+esc(val==null?"—":String(val))+'</strong><small>'+esc(name)+'</small></div>').join("")+'</div>'}
 function pending(message){return '<div class="cb-empty">'+esc(message)+'</div>'}
+function recapNarrative(text){
+ const token=/\[\[([a-z0-9-]+)\|([^\]\|]+)\]\]/g;
+ let out="",cursor=0,match;
+ while((match=token.exec(String(text??"")))){
+  out+=esc(String(text).slice(cursor,match.index));
+  out+='<a href="./player.html?id='+encodeURIComponent(match[1])+'">'+esc(match[2])+'</a>';
+  cursor=match.index+match[0].length;
+ }
+ return out+esc(String(text??"").slice(cursor));
+}
+function recapPanel(entry){
+ if(!entry)return "";
+ const p=entry.player_of_game;
+ return '<section class="panel cb-game-recap" id="cb-game-recap"><div class="mlb-pregame-eyebrow">EVERY GAME HAS A STORY</div><h2>Game recap</h2>'
+  +entry.paragraphs.map(paragraph=>'<p>'+recapNarrative(paragraph)+'</p>').join("")
+  +'</section><section class="panel cb-player-of-game" id="cb-player-of-game"><div class="mlb-pregame-eyebrow">SIGNATURE PERFORMANCE</div><h2>Player of the Game</h2>'
+  +'<p class="mlb-decision-role">'+esc(p.team)+'</p><h3><a href="./player.html?id='+encodeURIComponent(p.player_id)+'">'+esc(p.name)+'</a></h3>'
+  +'<p>'+esc(p.line)+'</p><p class="mlb-note">Curated from the official gamebook.</p></section>';
+}
 function score(g){return g.away_score==null||g.home_score==null?"Score pending":fmt(g.away_score)+" – "+fmt(g.home_score)}
 function gameLabel(g){return g.away+" @ "+g.home}
 function sourceLabel(g){return g.verification==="official_boxscore_verified"?"Official player box score verified":g.verification==="official_scoreboard_verified"?"Official score & innings verified · player stats pending":g.away_score!=null?"Score from attendance list · source check pending":"Attendance logged · box score pending"}
@@ -411,6 +444,7 @@ async function renderGames(d){
    +'<button type="button" role="tab" aria-selected="false" data-cat="pitching">Pitching</button></div>'
    +'<section class="panel" id="cb-boxscore-panel"><h2 id="cb-stat-title">Batting box score</h2><div id="cb-box"></div></section>'
    :pending("Official college player box score not yet imported for this game. No batting or pitching lines have been fabricated.");
+  const recap=recapPanel(d.recaps.get(g.id));
   const photo=typeof gamePhotos[g.id]==="string"&&/^\.\/assets\/game-photos\/[a-zA-Z0-9._-]+$/.test(gamePhotos[g.id])
    ?'<div class="cb-game-photo"><img src="'+esc(gamePhotos[g.id])+'" alt="'+esc(gameLabel(g)+' game photo')+'" loading="lazy"></div>':"";
   $("cb-game-details").innerHTML='<section class="cb-game-summary">'
@@ -426,6 +460,7 @@ async function renderGames(d){
    +'</section>'
    +photo
    +proSection
+   +recap
    +(Array.isArray(g.innings)&&g.innings.length?renderInnings(g):"")
    +decisions+box;
   if(!players.length)return;

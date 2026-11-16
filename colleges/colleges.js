@@ -99,8 +99,10 @@ const recordText = row => row.wins+'–'+row.losses+(row.ties?'–'+row.ties:'')
 const logoHTML=school=>{
  const name=school.name.split(/\s+/).slice(0,2).map(w=>w[0]).join('').toUpperCase();
  const id=school.logo||logos[school.name];
+ const source=/^\d+$/.test(String(id))?'https://a.espncdn.com/i/teamlogos/ncaa/500/'+encodeURIComponent(id)+'.png'
+  :typeof id==='string'&&/^https:\/\/(?:www\.ncaa\.com|www\.collegecod\.com|dxbhsrqyrr690\.cloudfront\.net)\//.test(id)?id:null;
  return '<div class="school-logo" aria-hidden="true"><span>'+esc(name)+'</span>'
-  +(/^\d+$/.test(String(id))?'<img src="https://a.espncdn.com/i/teamlogos/ncaa/500/'+encodeURIComponent(id)+'.png" alt="" loading="lazy" onerror="this.remove()">':'')
+  +(source?'<img src="'+esc(source)+'" alt="" loading="lazy" onerror="this.remove()">':'')
   +'</div>';
 };
 const gameRows=(list)=>list.map(g=>'<tr><td><a href="'+esc(g.url)+'">'+esc(dateFmt(g.date))+'</a></td><td>'+esc(g.location+' '+g.opponent)+'</td><td><b class="result '+esc(g.status)+'">'+(g.status==='u'?'—':g.status.toUpperCase())+'</b></td><td>'+(g.own===null?'Score unavailable':esc(g.own+'–'+g.other))+'</td><td>'+esc(g.venue||'—')+'</td></tr>').join('');
@@ -151,14 +153,15 @@ function select(id,scroll,updateUrl){
 }
 async function boot(){
  try{
- const [basketball,football,baseball,corrections,logoData]=await Promise.all([
+ const [basketball,football,baseball,corrections,logoData,additionalLogos]=await Promise.all([
   getCSV('../college/data/games.csv'),
   getJSON('../cfb/data/games.json'),
   getJSON('../college-baseball/data/games.json'),
   getJSON('../college-baseball/data/attendance_game_corrections.json'),
-  getJSON('../college-baseball/data/team_logo_ids.json')
+  getJSON('../college-baseball/data/team_logo_ids.json'),
+  getJSON('./logo_overrides.json')
  ]);
- logos=logoData;
+ logos={...logoData,...additionalLogos};
  const replaced=new Map((corrections.games||[]).filter(c=>c.replaces_game_id&&c.game).map(c=>[c.replaces_game_id,c.game]));
  const map=new Map();
  for(const g of basketball)addGame(map,'basketball',{...g,venue:g.arena});

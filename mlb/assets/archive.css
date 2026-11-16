@@ -409,3 +409,24 @@ body[data-page="player"] .mlb-profile-badge.mlb-triple-level:hover{background:#2
 /* Pitching Advanced: ERA / FIP / WHIP / K/BB, then K% / BB%. */
 .mlb-profile-total-grid.mlb-profile-pitching-advanced-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
 @media(max-width:700px){.mlb-profile-total-grid.mlb-profile-pitching-advanced-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* Player profiles: two-or-more witnessed MLB franchises (directory remains 3+). */
+.mlb-multiple-profile{background:linear-gradient(120deg,#FFFEFB,#F0F9FD);border-color:#C9DEEA;margin:18px 0 21px}
+.mlb-multiple-profile h2{color:#831738;font-size:23px;margin:0 0 10px}
+.mlb-multiple-profile .mlb-note{color:#536B7C;line-height:1.6;margin:0 0 15px}
+.mlb-multiple-profile a{color:#831738}
+.mlb-multi-path{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin:16px 0 20px}
+.mlb-multi-team{display:flex;align-items:center;gap:10px;min-width:165px;background:#F6FBFE;border:1px solid #C7DFEB;border-radius:12px;padding:11px 13px}
+.mlb-multi-team img{width:52px;height:52px;object-fit:contain;flex:none}
+.mlb-multi-team strong{display:block;font-size:13px;color:#831738}
+.mlb-multi-team small{display:block;color:#5D7482;font-size:11px;margin-top:3px}
+.mlb-multi-arrow{font-size:25px;font-weight:800;color:#831738}
+.mlb-multi-table{margin:15px 0}
+.mlb-multi-table h3{font-size:14px;color:#831738;margin:0 0 8px}
+.mlb-multi-table .mlb-sticky th{background:#EAF6FC;color:#28435A}
+.mlb-multi-team-cell{display:inline-flex;align-items:center;gap:9px;min-width:145px}
+.mlb-multi-team-cell img{width:31px;height:31px;object-fit:contain;flex:none}
+.mlb-multi-table td:not(:first-child){font-variant-numeric:tabular-nums}
+.mlb-profile-team-filter{display:flex;align-items:center;gap:9px;color:#335D42;font-weight:750;font-size:13px;margin:8px 0 16px}
+.mlb-profile-team-filter select{background:#fff;border:1px solid #C7DDEA;border-radius:8px;padding:9px 10px;color:#28435A;font:inherit;max-width:100%}
+@media(max-width:550px){.mlb-multi-team{min-width:135px;padding:9px}.mlb-multi-team img{width:41px;height:41px}.mlb-multi-arrow{font-size:19px}.mlb-multiple-profile{padding:16px}}

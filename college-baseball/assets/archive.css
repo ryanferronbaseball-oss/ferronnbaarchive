@@ -550,3 +550,31 @@ body[data-page="player"] .mlb-profile-badge.cb-triple-level:hover{background:#2B
 .cb-records-grid .cb-record small{font-size:11px}
 @media(max-width:800px){.cb-records-grid.mlb-records-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:530px){.cb-records-grid.mlb-records-grid{grid-template-columns:1fr}}
+
+
+/* Match the shared Courtside Archive game-recap treatment used by MLB and basketball. */
+#cb-game-recap.panel.cb-game-recap{
+  background:linear-gradient(145deg,#5E1731,#421024)!important;
+  border-color:#8DB8D2!important;
+  color:#F8FBFD!important;
+}
+#cb-game-recap.panel.cb-game-recap h2,
+#cb-game-recap.panel.cb-game-recap p{color:#F8FBFD!important}
+#cb-game-recap.panel.cb-game-recap p{font-size:15px;line-height:1.72;margin:10px 0 0}
+#cb-game-recap.panel.cb-game-recap a,
+#cb-game-recap.panel.cb-game-recap a:visited{
+  color:#D7F1FF!important;
+  font-weight:800;
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+#cb-game-recap.panel.cb-game-recap a:hover,
+#cb-game-recap.panel.cb-game-recap a:focus-visible{color:#FFF!important;text-decoration-thickness:2px}
+#cb-game-recap .mlb-pregame-eyebrow{
+  color:#B7DDEC!important;
+  font-size:11px;
+  font-weight:850;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  margin-bottom:5px;
+}

@@ -102,6 +102,7 @@ def build_players(summary,event_id,game):
                     "stl":int(stats["STL"]) if "STL" in stats else None,
                     "blk":int(stats["BLK"]) if "BLK" in stats else None,
                     "tov":int(stats["TO"]) if "TO" in stats else None,
+                    "pf":int(stats["PF"]) if "PF" in stats else None,
                     "source":"ESPN summary API"}
                 output.append(item)
     if len(output)<10: raise ValueError(f"Only {len(output)} appearing players")

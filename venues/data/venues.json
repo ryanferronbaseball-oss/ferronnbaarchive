@@ -1,7 +1,7 @@
 {
-  "updated": "2026-11-15",
-  "venueCount": 143,
-  "mappedGames": 829,
+  "updated": "2026-11-17",
+  "venueCount": 144,
+  "mappedGames": 830,
   "excludedUnassignedGames": 7,
   "venues": [
     {
@@ -10914,6 +10914,39 @@
           "awayScore": null,
           "homeScore": null,
           "url": "../mlb/game.html?id=15"
+        }
+      ]
+    },
+    {
+      "id": "venue-0144",
+      "name": "Rupp Arena at Central Bank Center",
+      "sport": "College Basketball",
+      "city": "Lexington, Kentucky",
+      "address": "430 West Vine Street, Lexington, KY 40507",
+      "visits": 1,
+      "firstVisit": "2026-11-16",
+      "lastVisit": "2026-11-16",
+      "lat": 38.0494,
+      "lon": -84.5028,
+      "coordinateConfidence": "Medium",
+      "opened": "1976",
+      "capacity": "20,500 (Kentucky Athletics, 2026–27)",
+      "occupants": "Kentucky Wildcats men's basketball",
+      "history": "Opened in 1976 as Rupp Arena; currently branded Rupp Arena at Central Bank Center, the same physical facility.",
+      "sources": [
+        "https://ukathletics.com/facilities/rupp-arena/",
+        "https://ukathletics.com/news/2026/11/16/kentucky-grambling-state-postgame-notes/"
+      ],
+      "factNote": "First attended game: Grambling at Kentucky on November 16, 2026, final 88–59; official attendance 19,155.",
+      "games": [
+        {
+          "id": "99",
+          "date": "2026-11-16",
+          "away": "Grambling",
+          "home": "Kentucky",
+          "awayScore": 59,
+          "homeScore": 88,
+          "url": "../college/game.html?id=99"
         }
       ]
     }

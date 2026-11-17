@@ -1,0 +1,40 @@
+name: NBA historical personal fouls from ESPN
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "scripts/backfill_nba_fouls.py"
+      - ".github/workflows/nba-fouls-backfill.yml"
+
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Verify historical player fouls against ESPN IDs and box scores
+        run: python scripts/backfill_nba_fouls.py
+      - name: Preserve verification report even if ESPN is unavailable
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nba-personal-foul-verification
+          path: data/nba_pf_backfill_report.json
+          if-no-files-found: ignore
+      - name: Commit only sourced PF values and audit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/player_boxscores_espn.json data/nba_pf_backfill_report.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Backfill validated NBA player personal fouls from ESPN"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi

@@ -5,21 +5,12 @@ Read-only audit of 437 games and 13,196 player-game records. Hitting and pitchin
 - **Games containing abbreviated source names:** 204
 - **Games needing review:** 21
 - **Flagged player-game source names:** 619
-- **Names needing review:** 22
-- **Names already resolved for display:** 376
+- **Names needing review:** 21
+- **Names already resolved for display:** 377
 - **Previously approved Batch 2 names, pending activation:** 21
 - **Two-letter first names, optional review only:** 200
 
 ## Games with unresolved incomplete lineup names
-
-### 2019-02-24 — Cal State Fullerton at Oklahoma (2 names)
-
-Game ID: cb-2019-02-24-cal-state-fullerton-oklahoma-att0040
-
-| Team | Source name | Issue | Role |
-|---|---|---|---|
-| Cal State Fullerton | A. Curtis | first initial only | hitting |
-| Cal State Fullerton | M. hbp ibb ab bf fo go Knorr | malformed scorebook text | pitching |
 
 ### 2018-02-17 — California at Cincinnati (1 names)
 
@@ -28,6 +19,14 @@ Game ID: cb-2018-02-17-california-cincinnati-att0004
 | Team | Source name | Issue | Role |
 |---|---|---|---|
 | Cincinnati | Bumpass | surname only | hitting |
+
+### 2019-02-24 — Cal State Fullerton at Oklahoma (1 names)
+
+Game ID: cb-2019-02-24-cal-state-fullerton-oklahoma-att0040
+
+| Team | Source name | Issue | Role |
+|---|---|---|---|
+| Cal State Fullerton | A. Curtis | first initial only | hitting |
 
 ### 2020-02-22 — Seattle at San Diego (1 names)
 
@@ -924,20 +923,6 @@ Game ID: cb-2026-05-23-florida-georgia-att0437
 
 ## Already resolved source abbreviations
 
-### 2019-02-24 — Cal State Fullerton at Oklahoma
-
-- Cal State Fullerton: B. Borgogno => Brett Borgogno (verified game correction)
-- Cal State Fullerton: D. Cope => Daniel Cope (verified game correction)
-- Cal State Fullerton: Guangorena => Kameron Guangorena (verified game correction)
-- Cal State Fullerton: H. LoForte => Hank LoForte (verified game correction)
-- Cal State Fullerton: I. Garcia => Isaiah Garcia (approved identity merge)
-- Cal State Fullerton: J. Brandow => Jason Brandow (approved identity merge)
-- Cal State Fullerton: J. Lyon => Jackson Lyon (approved identity merge)
-- Cal State Fullerton: M Berryhill => Mitchell Berryhill (verified game correction)
-- Cal State Fullerton: Pellegrino => Jeff Pellegrino (verified game correction)
-- Cal State Fullerton: Valenzuela => Sahid Valenzuela (verified game correction)
-- Oklahoma: Levi hbp ibb ab bf fo go Prater => Levi Prater (verified game correction)
-
 ### 2018-02-17 — California at Cincinnati
 
 - Cincinnati: Haberkorn => Treg Haberkorn (verified game correction)
@@ -951,6 +936,21 @@ Game ID: cb-2026-05-23-florida-georgia-att0437
 - Cincinnati: Rodriguez => Manny Rodriguez (verified game correction)
 - Cincinnati: Santiago => Eric Santiago (verified game correction)
 - Cincinnati: Thomas => Joey Thomas (verified game correction)
+
+### 2019-02-24 — Cal State Fullerton at Oklahoma
+
+- Cal State Fullerton: B. Borgogno => Brett Borgogno (verified game correction)
+- Cal State Fullerton: D. Cope => Daniel Cope (verified game correction)
+- Cal State Fullerton: Guangorena => Kameron Guangorena (verified game correction)
+- Cal State Fullerton: H. LoForte => Hank LoForte (verified game correction)
+- Cal State Fullerton: I. Garcia => Isaiah Garcia (approved identity merge)
+- Cal State Fullerton: J. Brandow => Jason Brandow (approved identity merge)
+- Cal State Fullerton: J. Lyon => Jackson Lyon (approved identity merge)
+- Cal State Fullerton: M Berryhill => Mitchell Berryhill (verified game correction)
+- Cal State Fullerton: M. hbp ibb ab bf fo go Knorr => Michael Knorr (verified game correction)
+- Cal State Fullerton: Pellegrino => Jeff Pellegrino (verified game correction)
+- Cal State Fullerton: Valenzuela => Sahid Valenzuela (verified game correction)
+- Oklahoma: Levi hbp ibb ab bf fo go Prater => Levi Prater (verified game correction)
 
 ### 2024-05-31 — Bryant at NC State
 

@@ -6,33 +6,165 @@
   "games_with_source_short_names": 204,
   "games_needing_review": 21,
   "source_name_issues": 619,
-  "unresolved_player_game_names": 22,
-  "already_resolved_display_names": 376,
+  "unresolved_player_game_names": 21,
+  "already_resolved_display_names": 377,
   "approved_pending_batch2_source_rows": 21,
   "optional_possible_short_first_names": 200,
   "issue_counts": {
+    "surname_only": 167,
     "first_initial_only": 247,
     "malformed_scorebook_text": 2,
-    "surname_only": 167,
     "name_order_or_suffix_error": 2,
     "possible_abbreviated_first_name": 201
   },
   "unresolved_issue_counts": {
-    "first_initial_only": 13,
-    "malformed_scorebook_text": 1,
     "surname_only": 6,
+    "first_initial_only": 13,
     "name_order_or_suffix_error": 2
   },
   "important": "Flags are NOT verified corrections. Original stats and games remain unmodified.",
   "games": [
+    {
+      "game_id": "cb-2018-02-17-california-cincinnati-att0004",
+      "date": "2018-02-17",
+      "away": "California",
+      "home": "Cincinnati",
+      "source_url": "https://calbears.com/sports/baseball/stats/2018/cincinnati/boxscore/19884",
+      "needs_review": 1,
+      "already_resolved": 11,
+      "approved_pending": 0,
+      "possible_short_first_names": 0,
+      "entries": [
+        {
+          "team": "Cincinnati",
+          "source_name": "Bumpass",
+          "source_player_id": "cb-cincinnati-bumpass",
+          "issue": "surname_only",
+          "role": "hitting",
+          "status": "needs_review",
+          "display_name": "AJ Bumpass",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Cincinnati",
+          "source_name": "Haberkorn",
+          "source_player_id": "cb-cincinnati-haberkorn",
+          "issue": "surname_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Treg Haberkorn",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Cincinnati",
+          "source_name": "Lowe II",
+          "source_player_id": "cb-cincinnati-lowe-ii",
+          "issue": "surname_only",
+          "role": "pitching",
+          "status": "resolved",
+          "display_name": "Doug Lowe II",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Cincinnati",
+          "source_name": "McVey",
+          "source_player_id": "cb-cincinnati-mcvey",
+          "issue": "surname_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Connor McVey",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Cincinnati",
+          "source_name": "Mercer",
+          "source_player_id": "cb-cincinnati-mercer",
+          "issue": "surname_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Jace Mercer",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Cincinnati",
+          "source_name": "Mottice",
+          "source_player_id": "cb-cincinnati-mottice",
+          "issue": "surname_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Kyle Mottice",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Cincinnati",
+          "source_name": "Murphy",
+          "source_player_id": "cb-cincinnati-murphy",
+          "issue": "surname_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Cole Murphy",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Cincinnati",
+          "source_name": "Orndorff",
+          "source_player_id": "cb-cincinnati-orndorff",
+          "issue": "surname_only",
+          "role": "pitching",
+          "status": "resolved",
+          "display_name": "David Orndorff",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Cincinnati",
+          "source_name": "Perez",
+          "source_player_id": "cb-cincinnati-perez",
+          "issue": "surname_only",
+          "role": "pitching",
+          "status": "resolved",
+          "display_name": "J.T. Perez",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Cincinnati",
+          "source_name": "Rodriguez",
+          "source_player_id": "cb-cincinnati-rodriguez",
+          "issue": "surname_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Manny Rodriguez",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Cincinnati",
+          "source_name": "Santiago",
+          "source_player_id": "cb-cincinnati-santiago",
+          "issue": "surname_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Eric Santiago",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Cincinnati",
+          "source_name": "Thomas",
+          "source_player_id": "cb-cincinnati-thomas",
+          "issue": "surname_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Joey Thomas",
+          "resolution": "verified game correction"
+        }
+      ]
+    },
     {
       "game_id": "cb-2019-02-24-cal-state-fullerton-oklahoma-att0040",
       "date": "2019-02-24",
       "away": "Cal State Fullerton",
       "home": "Oklahoma",
       "source_url": "https://soonersports.com/sports/2019/8/7/2150228",
-      "needs_review": 2,
-      "already_resolved": 11,
+      "needs_review": 1,
+      "already_resolved": 12,
       "approved_pending": 5,
       "possible_short_first_names": 0,
       "entries": [
@@ -43,18 +175,8 @@
           "issue": "first_initial_only",
           "role": "hitting",
           "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "Cal State Fullerton",
-          "source_name": "M. hbp ibb ab bf fo go Knorr",
-          "source_player_id": "cb-cal-state-fullerton-m-hbp-ibb-ab-bf-fo-go-knorr",
-          "issue": "malformed_scorebook_text",
-          "role": "pitching",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
+          "display_name": "AJ Curtis",
+          "resolution": "verified game correction"
         },
         {
           "team": "Cal State Fullerton",
@@ -188,6 +310,16 @@
         },
         {
           "team": "Cal State Fullerton",
+          "source_name": "M. hbp ibb ab bf fo go Knorr",
+          "source_player_id": "cb-cal-state-fullerton-m-hbp-ibb-ab-bf-fo-go-knorr",
+          "issue": "malformed_scorebook_text",
+          "role": "pitching",
+          "status": "resolved",
+          "display_name": "Michael Knorr",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Cal State Fullerton",
           "source_name": "Pellegrino",
           "source_player_id": "cb-cal-state-fullerton-pellegrino",
           "issue": "surname_only",
@@ -214,139 +346,6 @@
           "role": "pitching",
           "status": "resolved",
           "display_name": "Levi Prater",
-          "resolution": "verified game correction"
-        }
-      ]
-    },
-    {
-      "game_id": "cb-2018-02-17-california-cincinnati-att0004",
-      "date": "2018-02-17",
-      "away": "California",
-      "home": "Cincinnati",
-      "source_url": "https://calbears.com/sports/baseball/stats/2018/cincinnati/boxscore/19884",
-      "needs_review": 1,
-      "already_resolved": 11,
-      "approved_pending": 0,
-      "possible_short_first_names": 0,
-      "entries": [
-        {
-          "team": "Cincinnati",
-          "source_name": "Bumpass",
-          "source_player_id": "cb-cincinnati-bumpass",
-          "issue": "surname_only",
-          "role": "hitting",
-          "status": "needs_review",
-          "display_name": "AJ Bumpass",
-          "resolution": "verified game correction"
-        },
-        {
-          "team": "Cincinnati",
-          "source_name": "Haberkorn",
-          "source_player_id": "cb-cincinnati-haberkorn",
-          "issue": "surname_only",
-          "role": "hitting",
-          "status": "resolved",
-          "display_name": "Treg Haberkorn",
-          "resolution": "verified game correction"
-        },
-        {
-          "team": "Cincinnati",
-          "source_name": "Lowe II",
-          "source_player_id": "cb-cincinnati-lowe-ii",
-          "issue": "surname_only",
-          "role": "pitching",
-          "status": "resolved",
-          "display_name": "Doug Lowe II",
-          "resolution": "verified game correction"
-        },
-        {
-          "team": "Cincinnati",
-          "source_name": "McVey",
-          "source_player_id": "cb-cincinnati-mcvey",
-          "issue": "surname_only",
-          "role": "hitting",
-          "status": "resolved",
-          "display_name": "Connor McVey",
-          "resolution": "verified game correction"
-        },
-        {
-          "team": "Cincinnati",
-          "source_name": "Mercer",
-          "source_player_id": "cb-cincinnati-mercer",
-          "issue": "surname_only",
-          "role": "hitting",
-          "status": "resolved",
-          "display_name": "Jace Mercer",
-          "resolution": "verified game correction"
-        },
-        {
-          "team": "Cincinnati",
-          "source_name": "Mottice",
-          "source_player_id": "cb-cincinnati-mottice",
-          "issue": "surname_only",
-          "role": "hitting",
-          "status": "resolved",
-          "display_name": "Kyle Mottice",
-          "resolution": "verified game correction"
-        },
-        {
-          "team": "Cincinnati",
-          "source_name": "Murphy",
-          "source_player_id": "cb-cincinnati-murphy",
-          "issue": "surname_only",
-          "role": "hitting",
-          "status": "resolved",
-          "display_name": "Cole Murphy",
-          "resolution": "verified game correction"
-        },
-        {
-          "team": "Cincinnati",
-          "source_name": "Orndorff",
-          "source_player_id": "cb-cincinnati-orndorff",
-          "issue": "surname_only",
-          "role": "pitching",
-          "status": "resolved",
-          "display_name": "David Orndorff",
-          "resolution": "verified game correction"
-        },
-        {
-          "team": "Cincinnati",
-          "source_name": "Perez",
-          "source_player_id": "cb-cincinnati-perez",
-          "issue": "surname_only",
-          "role": "pitching",
-          "status": "resolved",
-          "display_name": "J.T. Perez",
-          "resolution": "verified game correction"
-        },
-        {
-          "team": "Cincinnati",
-          "source_name": "Rodriguez",
-          "source_player_id": "cb-cincinnati-rodriguez",
-          "issue": "surname_only",
-          "role": "hitting",
-          "status": "resolved",
-          "display_name": "Manny Rodriguez",
-          "resolution": "verified game correction"
-        },
-        {
-          "team": "Cincinnati",
-          "source_name": "Santiago",
-          "source_player_id": "cb-cincinnati-santiago",
-          "issue": "surname_only",
-          "role": "hitting",
-          "status": "resolved",
-          "display_name": "Eric Santiago",
-          "resolution": "verified game correction"
-        },
-        {
-          "team": "Cincinnati",
-          "source_name": "Thomas",
-          "source_player_id": "cb-cincinnati-thomas",
-          "issue": "surname_only",
-          "role": "hitting",
-          "status": "resolved",
-          "display_name": "Joey Thomas",
           "resolution": "verified game correction"
         }
       ]

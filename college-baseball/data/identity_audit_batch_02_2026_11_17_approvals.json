@@ -3,7 +3,7 @@
   "batch": 2,
   "approved_on": "2026-11-17",
   "scope": "college-baseball",
-  "status": "owner_approved_pending_source_row_collision_validation",
+  "status": "owner_authorized_pending_source_row_collision_validation",
   "policy": {
     "original_box_scores": "immutable",
     "original_player_stats": "immutable",
@@ -205,5 +205,11 @@
       "decision": "COMBINE",
       "application_status": "pending_verified_source_scoped_mapping"
     }
-  ]
+  ],
+  "owner_followup_approval": {
+    "approved_on": "2026-11-17",
+    "decision": "Apply all 24 approved COMBINE mappings after source-scoped collision and existing-crosswalk checks pass; preserve all explicit DO_NOT_MERGE entries and source scorebooks.",
+    "batch_3_gate": "Proceed to Batch 3 only after the 24 mappings are activated and validated.",
+    "source": "Owner explicit approval in follow-up conversation"
+  }
 }

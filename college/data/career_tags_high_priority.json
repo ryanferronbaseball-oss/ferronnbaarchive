@@ -1,8 +1,9 @@
 {
   "_meta": {
     "description": "Positively verified high-priority college basketball achievements for witnessed players. Missing tags are unreviewed, not evidence an honor was not earned. NBA Draft status comes from nba_crosswalk.json.",
-    "last_reviewed": "2026-11-13",
-    "season_rule": "Honors follow the player's college career, not necessarily the date of the game attended. National championship honors require verified membership on the title-winning roster."
+    "last_reviewed": "2026-11-18",
+    "season_rule": "Honors follow the player's college career, not necessarily the date of the game attended. National championship honors require verified membership on the title-winning roster.",
+    "last_review_note": "Verified game 99 Grambling at Kentucky participants' earned postseason career awards; tournament MOP distinguished from all-conference selection; previous-school awards retained."
   },
   "players": {
     "espn:4869764": {
@@ -4121,6 +4122,61 @@
           "conference": "CUSA",
           "school": "Kennesaw State",
           "source": "https://ksuowls.com/news/2025/9/9/cottle-and-lue-named-blue-ribbon-all-cusa-owls-picked-second.aspx"
+        }
+      ]
+    },
+    "espn:5101849": {
+      "name": "Malachi Moreno",
+      "all_freshman": [
+        {
+          "season": "2025-26",
+          "conference": "SEC",
+          "school": "Kentucky",
+          "source": "https://ukathletics.com/news/2026/03/09/otega-oweh-malachi-moreno-among-all-sec-awardees/"
+        }
+      ]
+    },
+    "espn:4848637": {
+      "name": "Milan Momcilovic",
+      "all_conference": [
+        {
+          "season": "2025-26",
+          "conference": "Big 12",
+          "team": 2,
+          "school": "Iowa State",
+          "source": "https://big12sports.com/news/2026/3/9/2026-phillips-66-all-big-12-mens-basketball-awards-unveiled.aspx"
+        }
+      ]
+    },
+    "espn:5314511": {
+      "name": "Alex Wilkins",
+      "all_conference": [
+        {
+          "season": "2025-26",
+          "conference": "SoCon",
+          "team": 2,
+          "school": "Furman",
+          "source": "https://furmanpaladins.com/news/2026/3/4/mens-basketball-wilkins-vander-wal-earn-southern-conference-postseason-honors.aspx?path=tix"
+        }
+      ],
+      "conference_tournament_mop": [
+        {
+          "season": "2025-26",
+          "conference": "SoCon",
+          "school": "Furman",
+          "source": "https://soconsports.com/mbb/article/59583/"
+        }
+      ]
+    },
+    "espn:4685664": {
+      "name": "Justin McBride",
+      "all_conference": [
+        {
+          "season": "2025-26",
+          "conference": "Sun Belt",
+          "team": 3,
+          "school": "James Madison",
+          "source": "https://jmusports.com/news/2026/3/2/mens-basketball-davis-mcbride-named-third-team-all-sun-belt"
         }
       ]
     }

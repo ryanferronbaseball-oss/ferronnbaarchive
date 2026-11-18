@@ -143,3 +143,5 @@ print(json.dumps({"status":"PASS","added_merges":7,"total_merges":len(cross["mer
  "player_rows_unchanged":len(raw),"profile_collision_count":0}))
 
 # Invoke approved Batch 3 validation workflow.
+
+# Rerun after reconciling older validation row-count assertions.

@@ -458,10 +458,12 @@
     {
       "game_id": "cb-2019-02-24-cal-state-fullerton-oklahoma-att0040",
       "team": "Cal State Fullerton",
-      "description": "Owner-confirmed six Fullerton abbreviated or surname-only player identities from the February 24, 2019 Oklahoma gamebook, linked to their existing full-name profiles without changing any box-score statistics.",
+      "description": "Official 2019 Cal State Fullerton roster verified historical player aliases and corrected malformed StatCrew heading in pitcher Michael Knorr name. Original box-score stats unchanged.",
       "verified_on": "2026-11-02",
       "evidence_urls": [
-        "https://soonersports.com/sports/2019/8/7/2150228"
+        "https://soonersports.com/sports/2019/8/7/2150228",
+        "https://fullertontitans.com/documents/sports/m-basebl/2018-19/files/Baseball_Roster_2019.pdf",
+        "https://s3.us-east-1.amazonaws.com/sidearm.sites/csufullerton.sidearmsports.com/documents/sports/m-basebl/2018-19/files/2019_CSF_Quick_Facts_.pdf"
       ],
       "corrections": [
         {
@@ -505,6 +507,18 @@
           "source_player_name": "Pellegrino",
           "player": "Jeff Pellegrino",
           "canonical_player_id": "cb-cal-state-fullerton-jeff-pellegrino"
+        },
+        {
+          "source_player_id": "cb-cal-state-fullerton-a-curtis",
+          "source_player_name": "A. Curtis",
+          "player": "AJ Curtis",
+          "canonical_player_id": "cb-cal-state-fullerton-aj-curtis"
+        },
+        {
+          "source_player_id": "cb-cal-state-fullerton-m-hbp-ibb-ab-bf-fo-go-knorr",
+          "source_player_name": "M. hbp ibb ab bf fo go Knorr",
+          "player": "Michael Knorr",
+          "canonical_player_id": "cb-cal-state-fullerton-michael-knorr"
         }
       ]
     },

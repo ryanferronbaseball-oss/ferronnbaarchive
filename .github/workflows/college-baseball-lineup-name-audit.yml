@@ -1,0 +1,27 @@
+name: Audit College Baseball Lineup Full Names
+on:
+  push:
+    paths:
+      - college-baseball/scripts/audit_incomplete_lineup_names.py
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Read-only audit of lineup first and last names
+        run: python college-baseball/scripts/audit_incomplete_lineup_names.py
+      - name: Commit audit reports only
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add college-baseball/data/lineup_full_name_audit_2026_11_17.json college-baseball/data/lineup_full_name_audit_2026_11_17.md
+          if ! git diff --cached --quiet; then
+            git commit -m "Report incomplete college baseball lineup names across all games"
+            git push
+          fi

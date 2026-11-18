@@ -3,11 +3,11 @@
 Read-only audit of 437 games and 13,196 player-game records. Hitting and pitching names. No changes to source box scores.
 
 - **Games containing abbreviated source names:** 204
-- **Games needing review:** 21
+- **Games needing review:** 20
 - **Flagged player-game source names:** 619
-- **Names needing review:** 21
-- **Names already resolved for display:** 377
-- **Previously approved Batch 2 names, pending activation:** 21
+- **Names needing review:** 20
+- **Names already resolved for display:** 383
+- **Previously approved Batch 2 names, pending activation:** 16
 - **Two-letter first names, optional review only:** 200
 
 ## Games with unresolved incomplete lineup names
@@ -20,13 +20,6 @@ Game ID: cb-2018-02-17-california-cincinnati-att0004
 |---|---|---|---|
 | Cincinnati | Bumpass | surname only | hitting |
 
-### 2019-02-24 — Cal State Fullerton at Oklahoma (1 names)
-
-Game ID: cb-2019-02-24-cal-state-fullerton-oklahoma-att0040
-
-| Team | Source name | Issue | Role |
-|---|---|---|---|
-| Cal State Fullerton | A. Curtis | first initial only | hitting |
 
 ### 2020-02-22 — Seattle at San Diego (1 names)
 
@@ -180,15 +173,15 @@ Game ID: cb-2026-05-23-florida-georgia-att0437
 |---|---|---|---|
 | Georgia | M. O'Shaughnessy | first initial only | hitting |
 
-## Previously approved Batch 2 names, pending source mapping
+## Previously approved Batch 2 names (Fullerton activated; other schools pending)
 
 ### 2019-02-24 — Cal State Fullerton at Oklahoma
 
-- Cal State Fullerton: J Hernandez => Jordan Hernandez (APPROVED, not activated)
-- Cal State Fullerton: J Pavletich => Jacob Pavletich (APPROVED, not activated)
-- Cal State Fullerton: K. Luckham => Kyle Luckham (APPROVED, not activated)
-- Cal State Fullerton: L. Anderson => Landon Anderson (APPROVED, not activated)
-- Cal State Fullerton: M. Weisberg => Michael Weisberg (APPROVED, not activated)
+- Cal State Fullerton: J Hernandez => Jordan Hernandez (ACTIVATED, 2026-11-18)
+- Cal State Fullerton: J Pavletich => Jake Pavletich (ACTIVATED, 2026-11-18)
+- Cal State Fullerton: K. Luckham => Kyle Luckham (ACTIVATED, 2026-11-18)
+- Cal State Fullerton: L. Anderson => Landon Anderson (ACTIVATED, 2026-11-18)
+- Cal State Fullerton: M. Weisberg => Michael Weisberg (ACTIVATED, 2026-11-18)
 
 ### 2019-03-05 — San Diego at UC Riverside
 
@@ -1405,3 +1398,13 @@ Game ID: cb-2026-05-23-florida-georgia-att0437
 - Texas A&M: Schott => Hayden Schott (verified game correction)
 - Texas A&M: Wilson => Jorian Wilson (verified game correction)
 
+
+## 2019 Fullerton roster identity activation — 2026-11-18
+
+- a-curtis → AJ Curtis: merged into canonical profile without source gamebook changes
+- j-hernandez → Jordan Hernandez: merged into canonical profile without source gamebook changes
+- j-pavletich → Jake Pavletich: merged into canonical profile without source gamebook changes
+- k-luckham → Kyle Luckham: merged into canonical profile without source gamebook changes
+- l-anderson → Landon Anderson: merged into canonical profile without source gamebook changes
+- m-weisberg → Michael Weisberg: merged into canonical profile without source gamebook changes
+- m-hbp-ibb-ab-bf-fo-go-knorr → Michael Knorr: merged into canonical profile without source gamebook changes

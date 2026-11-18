@@ -98,3 +98,5 @@ save("lineup_name_fix_marshall_charleston_2024_02_19.json",{
  "source_stats_rewritten":False,"same_game_collisions":0,"corrections":added
 })
 print(json.dumps({"status":"PASS","corrections":len(added),"raw_source_rows_unchanged":len(rows),"same_game_collisions":0,"already_resolved":2,"preapproved_pending":1}))
+
+# Trigger official roster verified source-scoped name correction check.

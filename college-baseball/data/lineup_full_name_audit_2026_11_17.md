@@ -3,44 +3,14 @@
 Read-only audit of 437 games and 13,196 player-game records. Hitting and pitching names. No changes to source box scores.
 
 - **Games containing abbreviated source names:** 204
-- **Games needing review:** 29
+- **Games needing review:** 28
 - **Flagged player-game source names:** 619
-- **Names needing review:** 101
-- **Names already resolved for display:** 297
+- **Names needing review:** 78
+- **Names already resolved for display:** 320
 - **Previously approved Batch 2 names, pending activation:** 21
 - **Two-letter first names, optional review only:** 200
 
 ## Games with unresolved incomplete lineup names
-
-### 2024-02-19 — Marshall at College of Charleston (23 names)
-
-Game ID: cb-2024-02-19-marshall-college-of-charleston-att0231
-
-| Team | Source name | Issue | Role |
-|---|---|---|---|
-| College of Charleston | A. Duval | first initial only | pitching |
-| College of Charleston | A. Neaves | first initial only | hitting |
-| College of Charleston | D. Johnson | first initial only | hitting |
-| College of Charleston | D. Pendergra | first initial only | hitting |
-| College of Charleston | H. Garner | first initial only | hitting |
-| College of Charleston | J. Bradford | first initial only | pitching |
-| College of Charleston | K. Madden | first initial only | hitting |
-| College of Charleston | L. Wood | first initial only | hitting |
-| College of Charleston | T. Harlan | first initial only | hitting |
-| College of Charleston | T. Sorrentin | first initial only | hitting |
-| College of Charleston | W. Baumhofer | first initial only | hitting |
-| Marshall | B. Blevins | first initial only | pitching |
-| Marshall | C. Heiner | first initial only | pitching |
-| Marshall | C. Kaiser | first initial only | hitting |
-| Marshall | C. Smith | first initial only | hitting |
-| Marshall | E. Leon | first initial only | pitching |
-| Marshall | E. Vogelsong | first initial only | hitting |
-| Marshall | G. Cabrera | first initial only | hitting |
-| Marshall | G. Ferraro | first initial only | hitting |
-| Marshall | J. Firestone | first initial only | hitting |
-| Marshall | K. Peralta | first initial only | hitting |
-| Marshall | N. Jodway | first initial only | pitching |
-| Marshall | T. Hondras | first initial only | hitting |
 
 ### 2019-03-05 — San Diego at UC Riverside (12 names)
 
@@ -318,10 +288,6 @@ Game ID: cb-2026-05-23-florida-georgia-att0437
 
 ## Previously approved Batch 2 names, pending source mapping
 
-### 2024-02-19 — Marshall at College of Charleston
-
-- Marshall: A. Havrilla => AJ Havrilla (APPROVED, not activated)
-
 ### 2019-03-05 — San Diego at UC Riverside
 
 - UC Riverside: C Pofek => Cole Pofek (APPROVED, not activated)
@@ -358,6 +324,10 @@ Game ID: cb-2026-05-23-florida-georgia-att0437
 - Cal State Fullerton: K. Luckham => Kyle Luckham (APPROVED, not activated)
 - Cal State Fullerton: L. Anderson => Landon Anderson (APPROVED, not activated)
 - Cal State Fullerton: M. Weisberg => Michael Weisberg (APPROVED, not activated)
+
+### 2024-02-19 — Marshall at College of Charleston
+
+- Marshall: A. Havrilla => AJ Havrilla (APPROVED, not activated)
 
 ### 2025-05-22 — Texas A&M at Auburn
 
@@ -1059,11 +1029,6 @@ Game ID: cb-2026-05-23-florida-georgia-att0437
 
 ## Already resolved source abbreviations
 
-### 2024-02-19 — Marshall at College of Charleston
-
-- College of Charleston: C. Mathis => Cole Mathis (verified game correction)
-- Marshall: O. Ayers => Owen Ayers (verified game correction)
-
 ### 2019-03-05 — San Diego at UC Riverside
 
 - UC Riverside: A Gerber => Ari Gerber (approved identity merge)
@@ -1348,6 +1313,34 @@ Game ID: cb-2026-05-23-florida-georgia-att0437
 - Saint Mary's: SANDERS => Ryan Sanders (verified game correction)
 - Saint Mary's: SCHMIDT => Coleman Schmidt (verified game correction)
 - Saint Mary's: TAUREK => Ryan Taurek (verified game correction)
+
+### 2024-02-19 — Marshall at College of Charleston
+
+- College of Charleston: A. Duval => Andrew Duval (verified game correction)
+- College of Charleston: A. Neaves => Avery Neaves (verified game correction)
+- College of Charleston: C. Mathis => Cole Mathis (verified game correction)
+- College of Charleston: D. Johnson => Dylan Johnson (verified game correction)
+- College of Charleston: D. Pendergra => Dariyan Pendergrass (verified game correction)
+- College of Charleston: H. Garner => Hogan Garner (verified game correction)
+- College of Charleston: J. Bradford => Jeb Bradford (verified game correction)
+- College of Charleston: K. Madden => Kevin Madden (verified game correction)
+- College of Charleston: L. Wood => Luke Wood (verified game correction)
+- College of Charleston: T. Harlan => Trotter Harlan (verified game correction)
+- College of Charleston: T. Sorrentin => Tyler Sorrentino (verified game correction)
+- College of Charleston: W. Baumhofer => Will Baumhofer (verified game correction)
+- Marshall: B. Blevins => Bryce Blevins (verified game correction)
+- Marshall: C. Heiner => Chad Heiner (verified game correction)
+- Marshall: C. Kaiser => Caden Kaiser (verified game correction)
+- Marshall: C. Smith => Calin Smith (verified game correction)
+- Marshall: E. Leon => Eddie Leon (verified game correction)
+- Marshall: E. Vogelsong => Elijah Vogelsong (verified game correction)
+- Marshall: G. Cabrera => Gabriel Cabrera (verified game correction)
+- Marshall: G. Ferraro => Gio Ferraro (verified game correction)
+- Marshall: J. Firestone => Jack Firestone (verified game correction)
+- Marshall: K. Peralta => Kebler Peralta (verified game correction)
+- Marshall: N. Jodway => Nick Jodway (verified game correction)
+- Marshall: O. Ayers => Owen Ayers (verified game correction)
+- Marshall: T. Hondras => Tre Hondras (verified game correction)
 
 ### 2024-02-23 — Iowa at Auburn
 

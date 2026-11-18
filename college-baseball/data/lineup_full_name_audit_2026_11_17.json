@@ -4,10 +4,10 @@
   "source_game_count": 437,
   "source_player_game_rows": 13196,
   "games_with_source_short_names": 204,
-  "games_needing_review": 29,
+  "games_needing_review": 28,
   "source_name_issues": 619,
-  "unresolved_player_game_names": 101,
-  "already_resolved_display_names": 297,
+  "unresolved_player_game_names": 78,
+  "already_resolved_display_names": 320,
   "approved_pending_batch2_source_rows": 21,
   "optional_possible_short_first_names": 200,
   "issue_counts": {
@@ -18,286 +18,13 @@
     "name_order_or_suffix_error": 2
   },
   "unresolved_issue_counts": {
-    "first_initial_only": 92,
+    "first_initial_only": 69,
     "malformed_scorebook_text": 1,
     "surname_only": 6,
     "name_order_or_suffix_error": 2
   },
   "important": "Flags are NOT verified corrections. Original stats and games remain unmodified.",
   "games": [
-    {
-      "game_id": "cb-2024-02-19-marshall-college-of-charleston-att0231",
-      "date": "2024-02-19",
-      "away": "Marshall",
-      "home": "College of Charleston",
-      "source_url": "https://cofcsports.com/sports/baseball/stats/2024/marshall/boxscore/11657",
-      "needs_review": 23,
-      "already_resolved": 2,
-      "approved_pending": 1,
-      "possible_short_first_names": 0,
-      "entries": [
-        {
-          "team": "College of Charleston",
-          "source_name": "A. Duval",
-          "source_player_id": "cb-college-of-charleston-a-duval",
-          "issue": "first_initial_only",
-          "role": "pitching",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "College of Charleston",
-          "source_name": "A. Neaves",
-          "source_player_id": "cb-college-of-charleston-a-neaves",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "College of Charleston",
-          "source_name": "D. Johnson",
-          "source_player_id": "cb-college-of-charleston-d-johnson",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "College of Charleston",
-          "source_name": "D. Pendergra",
-          "source_player_id": "cb-college-of-charleston-d-pendergra",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "College of Charleston",
-          "source_name": "H. Garner",
-          "source_player_id": "cb-college-of-charleston-h-garner",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "College of Charleston",
-          "source_name": "J. Bradford",
-          "source_player_id": "cb-college-of-charleston-j-bradford",
-          "issue": "first_initial_only",
-          "role": "pitching",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "College of Charleston",
-          "source_name": "K. Madden",
-          "source_player_id": "cb-college-of-charleston-k-madden",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "College of Charleston",
-          "source_name": "L. Wood",
-          "source_player_id": "cb-college-of-charleston-l-wood",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "College of Charleston",
-          "source_name": "T. Harlan",
-          "source_player_id": "cb-college-of-charleston-t-harlan",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "College of Charleston",
-          "source_name": "T. Sorrentin",
-          "source_player_id": "cb-college-of-charleston-t-sorrentin",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "College of Charleston",
-          "source_name": "W. Baumhofer",
-          "source_player_id": "cb-college-of-charleston-w-baumhofer",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "Marshall",
-          "source_name": "B. Blevins",
-          "source_player_id": "cb-marshall-b-blevins",
-          "issue": "first_initial_only",
-          "role": "pitching",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "Marshall",
-          "source_name": "C. Heiner",
-          "source_player_id": "cb-marshall-c-heiner",
-          "issue": "first_initial_only",
-          "role": "pitching",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "Marshall",
-          "source_name": "C. Kaiser",
-          "source_player_id": "cb-marshall-c-kaiser",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "Marshall",
-          "source_name": "C. Smith",
-          "source_player_id": "cb-marshall-c-smith",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "Marshall",
-          "source_name": "E. Leon",
-          "source_player_id": "cb-marshall-e-leon",
-          "issue": "first_initial_only",
-          "role": "pitching",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "Marshall",
-          "source_name": "E. Vogelsong",
-          "source_player_id": "cb-marshall-e-vogelsong",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "Marshall",
-          "source_name": "G. Cabrera",
-          "source_player_id": "cb-marshall-g-cabrera",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "Marshall",
-          "source_name": "G. Ferraro",
-          "source_player_id": "cb-marshall-g-ferraro",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "Marshall",
-          "source_name": "J. Firestone",
-          "source_player_id": "cb-marshall-j-firestone",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "Marshall",
-          "source_name": "K. Peralta",
-          "source_player_id": "cb-marshall-k-peralta",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "Marshall",
-          "source_name": "N. Jodway",
-          "source_player_id": "cb-marshall-n-jodway",
-          "issue": "first_initial_only",
-          "role": "pitching",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "Marshall",
-          "source_name": "T. Hondras",
-          "source_player_id": "cb-marshall-t-hondras",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "College of Charleston",
-          "source_name": "C. Mathis",
-          "source_player_id": "cb-college-of-charleston-c-mathis",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "resolved",
-          "display_name": "Cole Mathis",
-          "resolution": "verified game correction"
-        },
-        {
-          "team": "Marshall",
-          "source_name": "A. Havrilla",
-          "source_player_id": "cb-marshall-a-havrilla",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "approved_pending",
-          "display_name": "AJ Havrilla",
-          "resolution": "owner-approved Batch 2 pending application"
-        },
-        {
-          "team": "Marshall",
-          "source_name": "O. Ayers",
-          "source_player_id": "cb-marshall-o-ayers",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "resolved",
-          "display_name": "Owen Ayers",
-          "resolution": "verified game correction"
-        }
-      ]
-    },
     {
       "game_id": "cb-2019-03-05-san-diego-uc-riverside-att0046",
       "date": "2019-03-05",
@@ -5717,6 +5444,279 @@
           "status": "possible_short_first_name",
           "display_name": null,
           "resolution": null
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2024-02-19-marshall-college-of-charleston-att0231",
+      "date": "2024-02-19",
+      "away": "Marshall",
+      "home": "College of Charleston",
+      "source_url": "https://cofcsports.com/sports/baseball/stats/2024/marshall/boxscore/11657",
+      "needs_review": 0,
+      "already_resolved": 25,
+      "approved_pending": 1,
+      "possible_short_first_names": 0,
+      "entries": [
+        {
+          "team": "College of Charleston",
+          "source_name": "A. Duval",
+          "source_player_id": "cb-college-of-charleston-a-duval",
+          "issue": "first_initial_only",
+          "role": "pitching",
+          "status": "resolved",
+          "display_name": "Andrew Duval",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "College of Charleston",
+          "source_name": "A. Neaves",
+          "source_player_id": "cb-college-of-charleston-a-neaves",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Avery Neaves",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "College of Charleston",
+          "source_name": "C. Mathis",
+          "source_player_id": "cb-college-of-charleston-c-mathis",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Cole Mathis",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "College of Charleston",
+          "source_name": "D. Johnson",
+          "source_player_id": "cb-college-of-charleston-d-johnson",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Dylan Johnson",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "College of Charleston",
+          "source_name": "D. Pendergra",
+          "source_player_id": "cb-college-of-charleston-d-pendergra",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Dariyan Pendergrass",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "College of Charleston",
+          "source_name": "H. Garner",
+          "source_player_id": "cb-college-of-charleston-h-garner",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Hogan Garner",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "College of Charleston",
+          "source_name": "J. Bradford",
+          "source_player_id": "cb-college-of-charleston-j-bradford",
+          "issue": "first_initial_only",
+          "role": "pitching",
+          "status": "resolved",
+          "display_name": "Jeb Bradford",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "College of Charleston",
+          "source_name": "K. Madden",
+          "source_player_id": "cb-college-of-charleston-k-madden",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Kevin Madden",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "College of Charleston",
+          "source_name": "L. Wood",
+          "source_player_id": "cb-college-of-charleston-l-wood",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Luke Wood",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "College of Charleston",
+          "source_name": "T. Harlan",
+          "source_player_id": "cb-college-of-charleston-t-harlan",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Trotter Harlan",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "College of Charleston",
+          "source_name": "T. Sorrentin",
+          "source_player_id": "cb-college-of-charleston-t-sorrentin",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Tyler Sorrentino",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "College of Charleston",
+          "source_name": "W. Baumhofer",
+          "source_player_id": "cb-college-of-charleston-w-baumhofer",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Will Baumhofer",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Marshall",
+          "source_name": "A. Havrilla",
+          "source_player_id": "cb-marshall-a-havrilla",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "approved_pending",
+          "display_name": "AJ Havrilla",
+          "resolution": "owner-approved Batch 2 pending application"
+        },
+        {
+          "team": "Marshall",
+          "source_name": "B. Blevins",
+          "source_player_id": "cb-marshall-b-blevins",
+          "issue": "first_initial_only",
+          "role": "pitching",
+          "status": "resolved",
+          "display_name": "Bryce Blevins",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Marshall",
+          "source_name": "C. Heiner",
+          "source_player_id": "cb-marshall-c-heiner",
+          "issue": "first_initial_only",
+          "role": "pitching",
+          "status": "resolved",
+          "display_name": "Chad Heiner",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Marshall",
+          "source_name": "C. Kaiser",
+          "source_player_id": "cb-marshall-c-kaiser",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Caden Kaiser",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Marshall",
+          "source_name": "C. Smith",
+          "source_player_id": "cb-marshall-c-smith",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Calin Smith",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Marshall",
+          "source_name": "E. Leon",
+          "source_player_id": "cb-marshall-e-leon",
+          "issue": "first_initial_only",
+          "role": "pitching",
+          "status": "resolved",
+          "display_name": "Eddie Leon",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Marshall",
+          "source_name": "E. Vogelsong",
+          "source_player_id": "cb-marshall-e-vogelsong",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Elijah Vogelsong",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Marshall",
+          "source_name": "G. Cabrera",
+          "source_player_id": "cb-marshall-g-cabrera",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Gabriel Cabrera",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Marshall",
+          "source_name": "G. Ferraro",
+          "source_player_id": "cb-marshall-g-ferraro",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Gio Ferraro",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Marshall",
+          "source_name": "J. Firestone",
+          "source_player_id": "cb-marshall-j-firestone",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Jack Firestone",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Marshall",
+          "source_name": "K. Peralta",
+          "source_player_id": "cb-marshall-k-peralta",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Kebler Peralta",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Marshall",
+          "source_name": "N. Jodway",
+          "source_player_id": "cb-marshall-n-jodway",
+          "issue": "first_initial_only",
+          "role": "pitching",
+          "status": "resolved",
+          "display_name": "Nick Jodway",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Marshall",
+          "source_name": "O. Ayers",
+          "source_player_id": "cb-marshall-o-ayers",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Owen Ayers",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Marshall",
+          "source_name": "T. Hondras",
+          "source_player_id": "cb-marshall-t-hondras",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Tre Hondras",
+          "resolution": "verified game correction"
         }
       ]
     },

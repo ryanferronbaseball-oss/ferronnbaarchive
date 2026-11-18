@@ -41,9 +41,10 @@ main>.stats>.stat strong{font-size:29px;line-height:1.1;font-variant-numeric:tab
 main>.stats>.stat small{display:block;font-size:12px;margin-top:7px}
 @media(max-width:800px){main>.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:430px){main{width:calc(100% - 24px)}main>.stats{gap:8px}main>.stats>.stat{padding:12px}main>.stats>.stat strong{font-size:25px}}
-</style><link rel="stylesheet" href="../assets/sport-burgundy-ice.css?v=20261106-crosssport-sweep4"></head><body><main><header class="ca-header"><a class="ca-logo ca-logo-text" href="./index.html" aria-label="College basketball archive home">COURTSIDE ARCHIVE<small>EVERY GAME HAS A STORY · COLLEGE BASKETBALL</small></a><nav class="ca-nav" aria-label="Main navigation"><a href="./index.html" data-nav="index" aria-current="page">Overview</a><a href="./game.html" data-nav="game">Games</a><a href="./stats.html" data-nav="stats">Players</a><a href="./records.html" data-nav="milestones">Records</a><a href="./insights.html" data-nav="insights">Insights</a><a href="./transfers.html" data-nav="transfers">Transfers</a><a href="./tournament.html">NCAA Tournament</a><a href="./nba-alumni.html" data-nav="nba-alumni">To the NBA</a><a href="./coaches.html" data-nav="coaches">Coaches</a></nav><a class="ca-hub-link" href="../index.html" aria-label="Return to all sports archives">All archives ↗</a></header>
+</style><link rel="stylesheet" href="../assets/sport-burgundy-ice.css?v=20261106-crosssport-sweep4"><link rel="stylesheet" href="../assets/milestones.css?v=college-100-milestones"><style id="college-milestone-parity">.college-milestones{margin:28px 0 30px}.college-milestones .section-heading{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}.college-milestones .section-heading h2{font-size:clamp(23px,3vw,32px);line-height:1.15;letter-spacing:-.035em;margin:0;color:#252A2B}.college-milestones .section-heading p{font-size:13px;margin:0;color:#637468}.college-milestones .milestone-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.college-milestones .milestone-card{background:#FFFEFB;border-color:#DEE1D8}.college-milestones .milestone-card-number strong{color:#831738}.college-milestones .milestone-card-link{color:#831738}@media(max-width:800px){.college-milestones .milestone-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:520px){.college-milestones .milestone-grid{grid-template-columns:1fr}}</style></head><body><main><header class="ca-header"><a class="ca-logo ca-logo-text" href="./index.html" aria-label="College basketball archive home">COURTSIDE ARCHIVE<small>EVERY GAME HAS A STORY · COLLEGE BASKETBALL</small></a><nav class="ca-nav" aria-label="Main navigation"><a href="./index.html" data-nav="index" aria-current="page">Overview</a><a href="./game.html" data-nav="game">Games</a><a href="./stats.html" data-nav="stats">Players</a><a href="./records.html" data-nav="milestones">Records</a><a href="./insights.html" data-nav="insights">Insights</a><a href="./transfers.html" data-nav="transfers">Transfers</a><a href="./tournament.html">NCAA Tournament</a><a href="./nba-alumni.html" data-nav="nba-alumni">To the NBA</a><a href="./coaches.html" data-nav="coaches">Coaches</a></nav><a class="ca-hub-link" href="../index.html" aria-label="Return to all sports archives">All archives ↗</a></header>
 <div class="eyebrow" id="attendanceRange" >College basketball · Historical attendance</div><h1>Your college basketball history.</h1><p class="home-lead">Your college basketball attendance history, preserved in one place. Explore the matchups, players, seasons, and source-verified arenas you witnessed.</p>
 <div class="stats"><div class="stat"><strong id="gameCount">—</strong><small>Games attended</small></div><div class="stat"><strong id="yearCount">—</strong><small>Calendar years</small></div><div class="stat"><strong id="teamCount">—</strong><small>Teams encountered</small></div><div class="stat"><strong id="boxCoverage">—</strong><small>Full box scores imported</small></div></div>
+<section class="college-milestones" aria-labelledby="collegeMilestoneTitle"><div class="section-heading"><h2 id="collegeMilestoneTitle">Attendance milestones</h2><p>Landmark college basketball games, in the order you attended them.</p></div><div class="milestone-grid" id="collegeMilestoneGrid" aria-live="polite"><p class="milestone-loading">Finding landmark games…</p></div></section>
 <section class="recent-games-section" aria-label="Three most recent games attended"><div class="section-heading"><h2>Games attended</h2><a class="action-link secondary" href="./game.html">All game box scores ↗</a></div><div id="recentGames" class="game-grid"><div class="empty">Loading your most recent games…</div></div></section>
 <section class="signature-section" id="signaturePerformances"><div class="section-heading"><h2>Signature Performances</h2><a class="action-link secondary" href="./records.html">Explore Records ↗</a></div>
 <p class="signature-description">Your greatest witnessed single-game scoring, rebounding, and playmaking performances. Select one to open the game.</p>
@@ -95,6 +96,20 @@ function gameTable(){
  $('showing').textContent='Showing '+list.length+' of '+games.length+' games.';
 }
 ['search','yearFilter','sort'].forEach(id=>$(id).addEventListener('input',gameTable));
+function renderCollegeMilestones(list){
+ const ordered=list.slice().sort((a,b)=>a.date.localeCompare(b.date)||Number(a.id)-Number(b.id));
+ const milestones=[1,5,10,25,50,100,150,200,250,300,400,500].filter(n=>n<=ordered.length);
+ $('collegeMilestoneGrid').innerHTML=milestones.map(n=>{
+  const g=ordered[n-1];
+  const suffix=n%100>=11&&n%100<=13?'th':n%10===1?'st':n%10===2?'nd':n%10===3?'rd':'th';
+  return '<a class="milestone-card" href="./game.html?id='+encodeURIComponent(g.id)+'" aria-label="College basketball game '+n+', '+esc(g.away)+' at '+esc(g.home)+'">'+
+   '<div class="milestone-card-number"><strong>'+n+'</strong>'+suffix+' game</div>'+
+   '<div class="milestone-card-date">'+esc(recentDate(g.date))+'</div>'+
+   '<div class="milestone-card-matchup">'+esc(g.away)+' at '+esc(g.home)+'</div>'+
+   '<div class="milestone-card-sport">'+esc(g.arena||'College basketball')+'</div>'+
+   '<div class="milestone-card-link">View game box score →</div></a>';
+ }).join('')||'<p class="milestone-loading">No attended games recorded yet.</p>';
+}
 function render(){
  const years=[...new Set(games.map(g=>g.date.slice(0,4)))].sort();
  const teams=new Map();
@@ -110,6 +125,7 @@ function render(){
  $('yearFilter').innerHTML='<option value="">All years</option>'+years.slice().reverse().map(y=>'<option value="'+esc(y)+'">'+esc(y)+'</option>').join('');
  gameTable();
  renderRecentGames(games);
+ renderCollegeMilestones(games);
  const specs=[['Scoring record','pts','PTS'],['Rebounding record','reb','REB'],['Playmaking record','ast','AST']];
  const gameMap=new Map(games.map(g=>[String(g.id),g]));
  $('features').innerHTML=specs.map(([title,key,suffix])=>{

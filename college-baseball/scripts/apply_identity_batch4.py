@@ -110,3 +110,5 @@ save("player_identity_crosswalk.json",cross)
 save("player_identity_reconciliation_audit.json",audit)
 save("identity_audit_batch_04_decisions.json",decisions)
 print(json.dumps({"status":"PASS","merges_added":2,"total_merges":187,"separate_protections":len(cross["owner_rejected_merge_candidates"]),"blocked_conflicting_approval":1,"source_stats_preserved":True}))
+
+# Trigger authorized Batch 4 collision validation.

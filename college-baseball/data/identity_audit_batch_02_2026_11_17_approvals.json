@@ -1,0 +1,209 @@
+{
+  "version": 1,
+  "batch": 2,
+  "approved_on": "2026-11-17",
+  "scope": "college-baseball",
+  "status": "owner_approved_pending_source_row_collision_validation",
+  "policy": {
+    "original_box_scores": "immutable",
+    "original_player_stats": "immutable",
+    "same_game_collision": "must_check_before_activation",
+    "existing_crosswalk_conflicts": "must_check_before_activation",
+    "owner_rejected_merge_candidates": "preserve_all",
+    "matching": "source ID plus school and exact printed alias; never merge initial-only name globally"
+  },
+  "decisions": [
+    {
+      "sequence": 1,
+      "source_name": "A. Havrilla",
+      "canonical_name": "AJ Havrilla",
+      "school": "Marshall",
+      "decision": "COMBINE",
+      "application_status": "pending_verified_source_scoped_mapping"
+    },
+    {
+      "sequence": 2,
+      "source_name": "A. Selfridge",
+      "canonical_name": "Aidan Selfridge",
+      "school": "Pacific",
+      "decision": "COMBINE",
+      "application_status": "pending_verified_source_scoped_mapping"
+    },
+    {
+      "sequence": 3,
+      "source_name": "B. Nemivant",
+      "canonical_name": "Ben Nemivant",
+      "school": "Pacific",
+      "decision": "COMBINE",
+      "application_status": "pending_verified_source_scoped_mapping"
+    },
+    {
+      "sequence": 4,
+      "source_name": "C Chee-Aloy",
+      "canonical_name": "Cameron Chee-Aloy",
+      "school": "Illinois",
+      "decision": "COMBINE",
+      "application_status": "pending_verified_source_scoped_mapping"
+    },
+    {
+      "sequence": 5,
+      "source_name": "C Pofek",
+      "canonical_name": "Cole Pofek",
+      "school": "UC Riverside",
+      "decision": "COMBINE",
+      "application_status": "pending_verified_source_scoped_mapping"
+    },
+    {
+      "sequence": 6,
+      "source_name": "D Orick",
+      "canonical_name": "Dylan Orick",
+      "school": "UC Riverside",
+      "decision": "COMBINE",
+      "application_status": "pending_verified_source_scoped_mapping"
+    },
+    {
+      "sequence": 7,
+      "source_name": "D. Westcott",
+      "canonical_name": "Drake Westcott",
+      "school": "Illinois",
+      "decision": "COMBINE",
+      "application_status": "pending_verified_source_scoped_mapping"
+    },
+    {
+      "sequence": 8,
+      "source_name": "E. Birdsong",
+      "canonical_name": "Elijah Birdsong",
+      "school": "Pacific",
+      "decision": "COMBINE",
+      "application_status": "pending_verified_source_scoped_mapping"
+    },
+    {
+      "sequence": 9,
+      "source_name": "H. Hayes",
+      "canonical_name": "Hunter Hayes",
+      "school": "Pacific",
+      "decision": "COMBINE",
+      "application_status": "pending_verified_source_scoped_mapping"
+    },
+    {
+      "sequence": 10,
+      "source_name": "J Hernandez",
+      "canonical_name": "Jordan Hernandez",
+      "school": "Cal State Fullerton",
+      "decision": "COMBINE",
+      "application_status": "pending_verified_source_scoped_mapping"
+    },
+    {
+      "sequence": 11,
+      "source_name": "J Pavletich",
+      "canonical_name": "Jacob Pavletich",
+      "school": "Cal State Fullerton",
+      "decision": "COMBINE",
+      "application_status": "pending_verified_source_scoped_mapping"
+    },
+    {
+      "sequence": 12,
+      "source_name": "J Shanks",
+      "canonical_name": "Jacob Shanks",
+      "school": "UC Riverside",
+      "decision": "COMBINE",
+      "application_status": "pending_verified_source_scoped_mapping"
+    },
+    {
+      "sequence": 13,
+      "source_name": "J.T. Amaral",
+      "canonical_name": "JT Amaral",
+      "school": "San Francisco",
+      "decision": "COMBINE",
+      "application_status": "pending_verified_source_scoped_mapping"
+    },
+    {
+      "sequence": 14,
+      "source_name": "J.T. Gibson",
+      "canonical_name": "JT Gibson",
+      "school": "Kennesaw State",
+      "decision": "COMBINE",
+      "application_status": "pending_verified_source_scoped_mapping"
+    },
+    {
+      "sequence": 15,
+      "source_name": "J.T. Navyac",
+      "canonical_name": "JT Navyac",
+      "school": "Cal State Fullerton",
+      "decision": "COMBINE",
+      "application_status": "pending_verified_source_scoped_mapping"
+    },
+    {
+      "sequence": 16,
+      "source_name": "K. Luckham",
+      "canonical_name": "Kyle Luckham",
+      "school": "Cal State Fullerton",
+      "decision": "COMBINE",
+      "application_status": "pending_verified_source_scoped_mapping"
+    },
+    {
+      "sequence": 17,
+      "source_name": "L. Anderson",
+      "canonical_name": "Landon Anderson",
+      "school": "Cal State Fullerton",
+      "decision": "COMBINE",
+      "application_status": "pending_verified_source_scoped_mapping"
+    },
+    {
+      "sequence": 18,
+      "source_name": "M. Defelippi",
+      "canonical_name": "Michael Defelippi",
+      "school": "Pacific",
+      "decision": "COMBINE",
+      "application_status": "pending_verified_source_scoped_mapping"
+    },
+    {
+      "sequence": 19,
+      "source_name": "M. Weisberg",
+      "canonical_name": "Michael Weisberg",
+      "school": "Cal State Fullerton",
+      "decision": "COMBINE",
+      "application_status": "pending_verified_source_scoped_mapping"
+    },
+    {
+      "sequence": 20,
+      "source_name": "N Webb",
+      "canonical_name": "Nathan Webb",
+      "school": "UC Riverside",
+      "decision": "COMBINE",
+      "application_status": "pending_verified_source_scoped_mapping"
+    },
+    {
+      "sequence": 21,
+      "source_name": "T Bohall",
+      "canonical_name": "Travis Bohall",
+      "school": "UC Riverside",
+      "decision": "COMBINE",
+      "application_status": "pending_verified_source_scoped_mapping"
+    },
+    {
+      "sequence": 22,
+      "source_name": "W. Moss",
+      "canonical_name": "Weston Moss",
+      "school": "Texas A&M",
+      "decision": "COMBINE",
+      "application_status": "pending_verified_source_scoped_mapping"
+    },
+    {
+      "sequence": 23,
+      "source_name": "Y Taylor",
+      "canonical_name": "Yeager Taylor",
+      "school": "UC Riverside",
+      "decision": "COMBINE",
+      "application_status": "pending_verified_source_scoped_mapping"
+    },
+    {
+      "sequence": 24,
+      "source_name": "Z. Patterson",
+      "canonical_name": "Zach Patterson",
+      "school": "Pacific",
+      "decision": "COMBINE",
+      "application_status": "pending_verified_source_scoped_mapping"
+    }
+  ]
+}

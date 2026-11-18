@@ -1108,10 +1108,11 @@
     {
       "game_id": "cb-2024-03-02-illinois-western-michigan-att0246",
       "team": "Illinois",
-      "description": "Resolve five owner-confirmed surname-only Illinois names from the Western Michigan gamebook without changing their statistical lines.",
+      "description": "Roster-confirmed five Illinois surname-only and six additional first-initial names from 2024-03-02 Western Michigan box score; preserve original stats and profile separation.",
       "verified_on": "2026-11-02",
       "evidence_urls": [
-        "https://fightingillini.com/sports/baseball/roster/2024"
+        "https://fightingillini.com/sports/baseball/roster/2024",
+        "https://wmubroncos.com/sports/baseball/stats/2024/illinois/boxscore/15776"
       ],
       "corrections": [
         {
@@ -1143,6 +1144,42 @@
           "source_player_name": "Harding",
           "player": "Brody Harding",
           "canonical_player_id": "cb-illinois-brody-harding"
+        },
+        {
+          "source_player_id": "cb-illinois-a-bradd",
+          "source_player_name": "A. Bradd",
+          "player": "Asher Bradd",
+          "canonical_player_id": "cb-illinois-asher-bradd"
+        },
+        {
+          "source_player_id": "cb-illinois-c-jennings",
+          "source_player_name": "C. Jennings",
+          "player": "Collin Jennings",
+          "canonical_player_id": "cb-illinois-collin-jennings"
+        },
+        {
+          "source_player_id": "cb-illinois-j-rons",
+          "source_player_name": "J. Rons",
+          "player": "Jake Rons",
+          "canonical_player_id": "cb-illinois-jake-rons"
+        },
+        {
+          "source_player_id": "cb-illinois-l-tabeling",
+          "source_player_name": "L. Tabeling",
+          "player": "Logan Tabeling",
+          "canonical_player_id": "cb-illinois-logan-tabeling"
+        },
+        {
+          "source_player_id": "cb-illinois-s-reed",
+          "source_player_name": "S. Reed",
+          "player": "Sam Reed",
+          "canonical_player_id": "cb-illinois-sam-reed"
+        },
+        {
+          "source_player_id": "cb-illinois-w-lavin",
+          "source_player_name": "W. Lavin",
+          "player": "Will Lavin",
+          "canonical_player_id": "cb-illinois-will-lavin"
         }
       ]
     },

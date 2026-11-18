@@ -35,9 +35,9 @@ for id in (j,ja,jo,l,lr):
  assert evidence[id] and len(evidence[id])==len(byid[id]),id
  assert {r["game_id"] for r in evidence[id]}=={r["game_id"] for r in byid[id]}
 assert len(byid[ja])==1 and byid[ja][0]["game_id"]=="cb-2022-02-25-unlv-san-diego-att0120"
-assert byid[ja][0]["position"].lower()=="rf" and byid[ja][0]["pitching"] is None
-assert len(byid[jo])==2 and all(r["pitching"] and not r["batting"] for r in byid[jo])
-assert len(byid[j])==1 and byid[j][0]["batting"] and not byid[j][0]["pitching"]
+assert byid[ja][0]["position"].lower()=="rf" and byid[ja][0].get("pitching") is None
+assert len(byid[jo])==2 and all(r.get("pitching") and not r.get("batting") for r in byid[jo])
+assert len(byid[j])==1 and byid[j][0].get("batting") and not byid[j][0].get("pitching")
 assert len(byid[l])==1 and len(byid[lr])==1
 assert {r["team"] for r in byid[l]}=={"Liberty"} and {r["team"] for r in byid[lr]}=={"Lenoir-Rhyne"}
 def merge(name,canonical,ids,schools):

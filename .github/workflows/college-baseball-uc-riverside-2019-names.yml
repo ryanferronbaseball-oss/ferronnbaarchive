@@ -1,0 +1,29 @@
+name: Repair 2019 UC Riverside Lineup Names
+on:
+  push:
+    paths:
+      - college-baseball/scripts/repair_uc_riverside_2019_lineup_names.py
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify and apply 12 UC Riverside roster names
+        run: python college-baseball/scripts/repair_uc_riverside_2019_lineup_names.py
+      - name: Verify full identity integrity
+        run: python college-baseball/scripts/test_current_identity_integrity.py
+      - name: Commit verified game-specific name corrections
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add college-baseball/data/player_name_corrections.json college-baseball/data/lineup_name_fix_uc_riverside_2019_03_05.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Resolve twelve UC Riverside 2019 lineup first names from official roster"
+            git push
+          fi

@@ -4,10 +4,10 @@
   "source_game_count": 437,
   "source_player_game_rows": 13196,
   "games_with_source_short_names": 204,
-  "games_needing_review": 27,
+  "games_needing_review": 26,
   "source_name_issues": 619,
-  "unresolved_player_game_names": 66,
-  "already_resolved_display_names": 332,
+  "unresolved_player_game_names": 54,
+  "already_resolved_display_names": 344,
   "approved_pending_batch2_source_rows": 21,
   "optional_possible_short_first_names": 200,
   "issue_counts": {
@@ -18,156 +18,13 @@
     "name_order_or_suffix_error": 2
   },
   "unresolved_issue_counts": {
-    "first_initial_only": 57,
+    "first_initial_only": 45,
     "malformed_scorebook_text": 1,
     "surname_only": 6,
     "name_order_or_suffix_error": 2
   },
   "important": "Flags are NOT verified corrections. Original stats and games remain unmodified.",
   "games": [
-    {
-      "game_id": "cb-2025-05-10-george-mason-davidson-att0344",
-      "date": "2025-05-10",
-      "away": "George Mason",
-      "home": "Davidson",
-      "source_url": "https://davidsonwildcats.com/sports/baseball/stats/2025/george-mason/boxscore/9771",
-      "needs_review": 12,
-      "already_resolved": 0,
-      "approved_pending": 0,
-      "possible_short_first_names": 1,
-      "entries": [
-        {
-          "team": "Davidson",
-          "source_name": "A Katz",
-          "source_player_id": "cb-davidson-a-katz",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "Davidson",
-          "source_name": "A Rice",
-          "source_player_id": "cb-davidson-a-rice",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "Davidson",
-          "source_name": "A Torreso",
-          "source_player_id": "cb-davidson-a-torreso",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "Davidson",
-          "source_name": "C Canon",
-          "source_player_id": "cb-davidson-c-canon",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "Davidson",
-          "source_name": "C Collins",
-          "source_player_id": "cb-davidson-c-collins",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "Davidson",
-          "source_name": "C Schuchart",
-          "source_player_id": "cb-davidson-c-schuchart",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "Davidson",
-          "source_name": "E Putnam",
-          "source_player_id": "cb-davidson-e-putnam",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "Davidson",
-          "source_name": "J Cotrone",
-          "source_player_id": "cb-davidson-j-cotrone",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "Davidson",
-          "source_name": "J Daly",
-          "source_player_id": "cb-davidson-j-daly",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "Davidson",
-          "source_name": "L Reeves",
-          "source_player_id": "cb-davidson-l-reeves",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "Davidson",
-          "source_name": "M O'shaughnessy",
-          "source_player_id": "cb-davidson-m-o-shaughnessy",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "needs_review",
-          "display_name": "M. O'Shaughnessy",
-          "resolution": "approved identity merge"
-        },
-        {
-          "team": "Davidson",
-          "source_name": "N Jouras",
-          "source_player_id": "cb-davidson-n-jouras",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "Davidson",
-          "source_name": "Jd Woodall",
-          "source_player_id": "cb-davidson-jd-woodall",
-          "issue": "possible_abbreviated_first_name",
-          "role": "hitting",
-          "status": "possible_short_first_name",
-          "display_name": null,
-          "resolution": null
-        }
-      ]
-    },
     {
       "game_id": "cb-2024-03-08-binghamton-vmi-att0252",
       "date": "2024-03-08",
@@ -7452,6 +7309,149 @@
           "status": "possible_short_first_name",
           "display_name": null,
           "resolution": null
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2025-05-10-george-mason-davidson-att0344",
+      "date": "2025-05-10",
+      "away": "George Mason",
+      "home": "Davidson",
+      "source_url": "https://davidsonwildcats.com/sports/baseball/stats/2025/george-mason/boxscore/9771",
+      "needs_review": 0,
+      "already_resolved": 12,
+      "approved_pending": 0,
+      "possible_short_first_names": 1,
+      "entries": [
+        {
+          "team": "Davidson",
+          "source_name": "A Katz",
+          "source_player_id": "cb-davidson-a-katz",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Adam Katz",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Davidson",
+          "source_name": "A Rice",
+          "source_player_id": "cb-davidson-a-rice",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Aidan Rice",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Davidson",
+          "source_name": "A Torreso",
+          "source_player_id": "cb-davidson-a-torreso",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Anthony Torreso",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Davidson",
+          "source_name": "C Canon",
+          "source_player_id": "cb-davidson-c-canon",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Cider Canon",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Davidson",
+          "source_name": "C Collins",
+          "source_player_id": "cb-davidson-c-collins",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Cooper Collins",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Davidson",
+          "source_name": "C Schuchart",
+          "source_player_id": "cb-davidson-c-schuchart",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Chris Schuchart",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Davidson",
+          "source_name": "E Putnam",
+          "source_player_id": "cb-davidson-e-putnam",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Eli Putnam",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Davidson",
+          "source_name": "J Cotrone",
+          "source_player_id": "cb-davidson-j-cotrone",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Jack Cotrone",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Davidson",
+          "source_name": "J Daly",
+          "source_player_id": "cb-davidson-j-daly",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Jamie Daly",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Davidson",
+          "source_name": "Jd Woodall",
+          "source_player_id": "cb-davidson-jd-woodall",
+          "issue": "possible_abbreviated_first_name",
+          "role": "hitting",
+          "status": "possible_short_first_name",
+          "display_name": null,
+          "resolution": null
+        },
+        {
+          "team": "Davidson",
+          "source_name": "L Reeves",
+          "source_player_id": "cb-davidson-l-reeves",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Landon Reeves",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Davidson",
+          "source_name": "M O'shaughnessy",
+          "source_player_id": "cb-davidson-m-o-shaughnessy",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Michael O'Shaughnessy",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Davidson",
+          "source_name": "N Jouras",
+          "source_player_id": "cb-davidson-n-jouras",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Noah Jouras",
+          "resolution": "verified game correction"
         }
       ]
     },

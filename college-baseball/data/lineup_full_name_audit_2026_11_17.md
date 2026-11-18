@@ -3,33 +3,14 @@
 Read-only audit of 437 games and 13,196 player-game records. Hitting and pitching names. No changes to source box scores.
 
 - **Games containing abbreviated source names:** 204
-- **Games needing review:** 27
+- **Games needing review:** 26
 - **Flagged player-game source names:** 619
-- **Names needing review:** 66
-- **Names already resolved for display:** 332
+- **Names needing review:** 54
+- **Names already resolved for display:** 344
 - **Previously approved Batch 2 names, pending activation:** 21
 - **Two-letter first names, optional review only:** 200
 
 ## Games with unresolved incomplete lineup names
-
-### 2025-05-10 — George Mason at Davidson (12 names)
-
-Game ID: cb-2025-05-10-george-mason-davidson-att0344
-
-| Team | Source name | Issue | Role |
-|---|---|---|---|
-| Davidson | A Katz | first initial only | hitting |
-| Davidson | A Rice | first initial only | hitting |
-| Davidson | A Torreso | first initial only | hitting |
-| Davidson | C Canon | first initial only | hitting |
-| Davidson | C Collins | first initial only | hitting |
-| Davidson | C Schuchart | first initial only | hitting |
-| Davidson | E Putnam | first initial only | hitting |
-| Davidson | J Cotrone | first initial only | hitting |
-| Davidson | J Daly | first initial only | hitting |
-| Davidson | L Reeves | first initial only | hitting |
-| Davidson | M O'shaughnessy | first initial only | hitting |
-| Davidson | N Jouras | first initial only | hitting |
 
 ### 2024-03-08 — Binghamton at VMI (10 names)
 
@@ -315,10 +296,6 @@ Game ID: cb-2026-05-23-florida-georgia-att0437
 - Texas A&M: W. Moss => Weston Moss (APPROVED, not activated)
 
 ## Two-letter first names (optional verification; may already be full names)
-
-### 2025-05-10 — George Mason at Davidson
-
-- Davidson: Jd Woodall (hitting)
 
 ### 2022-05-08 — San Diego at Pacific
 
@@ -827,6 +804,10 @@ Game ID: cb-2026-05-23-florida-georgia-att0437
 ### 2025-05-09 — Richmond at VCU
 
 - Richmond: DJ Pacheco (hitting)
+
+### 2025-05-10 — George Mason at Davidson
+
+- Davidson: Jd Woodall (hitting)
 
 ### 2025-05-10 — Pittsburgh at Wake Forest
 
@@ -1408,6 +1389,21 @@ Game ID: cb-2026-05-23-florida-georgia-att0437
 - Western Kentucky: R. Howard => Reid Howard (verified game correction)
 - Western Kentucky: R. Wideman => Ryan Wideman (verified game correction)
 - Western Kentucky: T. Marsala => Thomas Marsala (verified game correction)
+
+### 2025-05-10 — George Mason at Davidson
+
+- Davidson: A Katz => Adam Katz (verified game correction)
+- Davidson: A Rice => Aidan Rice (verified game correction)
+- Davidson: A Torreso => Anthony Torreso (verified game correction)
+- Davidson: C Canon => Cider Canon (verified game correction)
+- Davidson: C Collins => Cooper Collins (verified game correction)
+- Davidson: C Schuchart => Chris Schuchart (verified game correction)
+- Davidson: E Putnam => Eli Putnam (verified game correction)
+- Davidson: J Cotrone => Jack Cotrone (verified game correction)
+- Davidson: J Daly => Jamie Daly (verified game correction)
+- Davidson: L Reeves => Landon Reeves (verified game correction)
+- Davidson: M O'shaughnessy => Michael O'Shaughnessy (verified game correction)
+- Davidson: N Jouras => Noah Jouras (verified game correction)
 
 ### 2025-05-21 — Texas A&M at Mississippi State
 

@@ -270,7 +270,7 @@ async function load(){
    }
    // Preserve the recap narrative, but show an unlinked name if a historical
    // player ID is no longer valid after an identity/name reconciliation.
-   const paragraphs=entry.paragraphs.map(paragraph=>paragraph.replace(/\\[\\[([a-z0-9-]+)\\|([^\\]\\|]+)\\]\\]/g,(token,id,label)=>{
+   const paragraphs=entry.paragraphs.map(paragraph=>paragraph.replace(/\[\[([a-z0-9-]+)\|([^\]\|]+)\]\]/g,(token,id,label)=>{
     const canonical=redirects.get(id)||id;
     if(!playerIds.has(canonical)){
      console.warn("Rendering unlinked recap player:",gameId,id);

@@ -3,7 +3,7 @@
   "batch": 5,
   "source": "college-baseball/data/identity_audit_batch_04_candidates.json",
   "purpose": "Owner review of previously unreviewed Batch 4 scan candidates",
-  "status": "pending_owner_review",
+  "status": "OWNER_CONFIRMED_ALL_20_SEPARATE",
   "rules": "No merges until owner approved, same-game collision validated, existing protected identities honored",
   "entries": [
     {
@@ -20,7 +20,8 @@
       "same_game_collision": false,
       "priority": 1,
       "status": "OWNER_REVIEW_ONLY",
-      "decision": "PENDING_OWNER_REVIEW"
+      "decision": "SEPARATE",
+      "owner_approved": true
     },
     {
       "batch5_number": 2,
@@ -36,7 +37,8 @@
       "same_game_collision": false,
       "priority": 1,
       "status": "OWNER_REVIEW_ONLY",
-      "decision": "PENDING_OWNER_REVIEW"
+      "decision": "SEPARATE",
+      "owner_approved": true
     },
     {
       "batch5_number": 3,
@@ -52,7 +54,8 @@
       "same_game_collision": false,
       "priority": 1,
       "status": "OWNER_REVIEW_ONLY",
-      "decision": "PENDING_OWNER_REVIEW"
+      "decision": "SEPARATE",
+      "owner_approved": true
     },
     {
       "batch5_number": 4,
@@ -68,7 +71,8 @@
       "same_game_collision": false,
       "priority": 1,
       "status": "OWNER_REVIEW_ONLY",
-      "decision": "PENDING_OWNER_REVIEW"
+      "decision": "SEPARATE",
+      "owner_approved": true
     },
     {
       "batch5_number": 5,
@@ -84,7 +88,8 @@
       "same_game_collision": false,
       "priority": 1,
       "status": "OWNER_REVIEW_ONLY",
-      "decision": "PENDING_OWNER_REVIEW"
+      "decision": "SEPARATE",
+      "owner_approved": true
     },
     {
       "batch5_number": 6,
@@ -100,7 +105,8 @@
       "same_game_collision": false,
       "priority": 1,
       "status": "OWNER_REVIEW_ONLY",
-      "decision": "PENDING_OWNER_REVIEW"
+      "decision": "SEPARATE",
+      "owner_approved": true
     },
     {
       "batch5_number": 7,
@@ -116,7 +122,8 @@
       "same_game_collision": false,
       "priority": 1,
       "status": "OWNER_REVIEW_ONLY",
-      "decision": "PENDING_OWNER_REVIEW"
+      "decision": "SEPARATE",
+      "owner_approved": true
     },
     {
       "batch5_number": 8,
@@ -132,7 +139,8 @@
       "same_game_collision": false,
       "priority": 1,
       "status": "OWNER_REVIEW_ONLY",
-      "decision": "PENDING_OWNER_REVIEW"
+      "decision": "SEPARATE",
+      "owner_approved": true
     },
     {
       "batch5_number": 9,
@@ -148,7 +156,8 @@
       "same_game_collision": false,
       "priority": 1,
       "status": "OWNER_REVIEW_ONLY",
-      "decision": "PENDING_OWNER_REVIEW"
+      "decision": "SEPARATE",
+      "owner_approved": true
     },
     {
       "batch5_number": 10,
@@ -164,7 +173,8 @@
       "same_game_collision": false,
       "priority": 1,
       "status": "OWNER_REVIEW_ONLY",
-      "decision": "PENDING_OWNER_REVIEW"
+      "decision": "SEPARATE",
+      "owner_approved": true
     },
     {
       "batch5_number": 11,
@@ -180,7 +190,8 @@
       "same_game_collision": false,
       "priority": 1,
       "status": "OWNER_REVIEW_ONLY",
-      "decision": "PENDING_OWNER_REVIEW"
+      "decision": "SEPARATE",
+      "owner_approved": true
     },
     {
       "batch5_number": 12,
@@ -196,7 +207,8 @@
       "same_game_collision": false,
       "priority": 1,
       "status": "OWNER_REVIEW_ONLY",
-      "decision": "PENDING_OWNER_REVIEW"
+      "decision": "SEPARATE",
+      "owner_approved": true
     },
     {
       "batch5_number": 13,
@@ -212,7 +224,8 @@
       "same_game_collision": false,
       "priority": 1,
       "status": "OWNER_REVIEW_ONLY",
-      "decision": "PENDING_OWNER_REVIEW"
+      "decision": "SEPARATE",
+      "owner_approved": true
     },
     {
       "batch5_number": 14,
@@ -228,7 +241,8 @@
       "same_game_collision": false,
       "priority": 1,
       "status": "OWNER_REVIEW_ONLY",
-      "decision": "PENDING_OWNER_REVIEW"
+      "decision": "SEPARATE",
+      "owner_approved": true
     },
     {
       "batch5_number": 15,
@@ -244,7 +258,8 @@
       "same_game_collision": false,
       "priority": 1,
       "status": "OWNER_REVIEW_ONLY",
-      "decision": "PENDING_OWNER_REVIEW"
+      "decision": "SEPARATE",
+      "owner_approved": true
     },
     {
       "batch5_number": 16,
@@ -260,7 +275,8 @@
       "same_game_collision": false,
       "priority": 1,
       "status": "OWNER_REVIEW_ONLY",
-      "decision": "PENDING_OWNER_REVIEW"
+      "decision": "SEPARATE",
+      "owner_approved": true
     },
     {
       "batch5_number": 17,
@@ -276,7 +292,8 @@
       "same_game_collision": false,
       "priority": 1,
       "status": "OWNER_REVIEW_ONLY",
-      "decision": "PENDING_OWNER_REVIEW"
+      "decision": "SEPARATE",
+      "owner_approved": true
     },
     {
       "batch5_number": 18,
@@ -292,7 +309,8 @@
       "same_game_collision": false,
       "priority": 1,
       "status": "OWNER_REVIEW_ONLY",
-      "decision": "PENDING_OWNER_REVIEW"
+      "decision": "SEPARATE",
+      "owner_approved": true
     },
     {
       "batch5_number": 19,
@@ -308,7 +326,8 @@
       "same_game_collision": false,
       "priority": 1,
       "status": "OWNER_REVIEW_ONLY",
-      "decision": "PENDING_OWNER_REVIEW"
+      "decision": "SEPARATE",
+      "owner_approved": true
     },
     {
       "batch5_number": 20,
@@ -324,7 +343,10 @@
       "same_game_collision": false,
       "priority": 1,
       "status": "OWNER_REVIEW_ONLY",
-      "decision": "PENDING_OWNER_REVIEW"
+      "decision": "SEPARATE",
+      "owner_approved": true
     }
-  ]
+  ],
+  "owner_instruction": "none (zero Batch 5 combinations); all twenty distinct pairs must remain separate",
+  "completed_on": "2026-11-17"
 }

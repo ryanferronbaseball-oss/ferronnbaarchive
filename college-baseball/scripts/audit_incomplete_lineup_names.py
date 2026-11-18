@@ -70,3 +70,5 @@ with (D/"lineup_full_name_audit_2026_11_17.md").open("w",encoding="utf8") as f:
   for e in done:f.write("- "+e["team"]+": "+e["source_name"]+" => "+e["display_name"]+" ("+str(e["resolution"])+")\n")
   f.write("\n")
 print(json.dumps({k:report[k] for k in ("games_with_source_short_names","games_needing_review","source_name_issues","unresolved_player_game_names","already_resolved_display_names","unresolved_issue_counts")}))
+
+# Run current source lineup coverage scan.

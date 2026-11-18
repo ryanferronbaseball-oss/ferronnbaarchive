@@ -61,3 +61,5 @@ save("player_identity_crosswalk.json",cross)
 save("player_identity_reconciliation_audit.json",audit)
 save("identity_audit_batch_03_decisions.json",batch)
 print(json.dumps({"result":"PASS","canonical_profile":t,"merged_attendance_games":4,"tucker_separate":True,"protected_rejected":len(cross["owner_rejected_merge_candidates"]),"total_merges":185,"source_files_unchanged":True}))
+
+# Trigger verified owner resolution workflow.

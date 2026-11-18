@@ -125,20 +125,90 @@
         "https://static.hailstate.com/custompages/pdf/bb/2025/20250404SouthCarolina.pdf"
       ],
       "corrections": [
-        {"source_player_id": "cb-south-carolina-hall", "source_player_name": "Hall", "player": "Nathan Hall", "canonical_player_id": "cb-south-carolina-nathan-hall"},
-        {"source_player_id": "cb-south-carolina-petry", "source_player_name": "Petry", "player": "Ethan Petry", "canonical_player_id": "cb-south-carolina-ethan-petry"},
-        {"source_player_id": "cb-south-carolina-woita", "source_player_name": "Woita", "player": "Jase Woita", "canonical_player_id": "cb-south-carolina-jase-woita"},
-        {"source_player_id": "cb-south-carolina-stone", "source_player_name": "Stone", "player": "Evan Stone", "canonical_player_id": "cb-south-carolina-evan-stone"},
-        {"source_player_id": "cb-south-carolina-k-jones", "source_player_name": "K. Jones", "player": "Kennedy Jones", "canonical_player_id": "cb-south-carolina-kennedy-jones"},
-        {"source_player_id": "cb-south-carolina-scobey", "source_player_name": "Scobey", "player": "KJ Scobey", "canonical_player_id": "cb-south-carolina-kj-scobey"},
-        {"source_player_id": "cb-south-carolina-hollins", "source_player_name": "Hollins", "player": "Beau Hollins", "canonical_player_id": "cb-south-carolina-beau-hollins"},
-        {"source_player_id": "cb-south-carolina-kaufer", "source_player_name": "Kaufer", "player": "Max Kaufer", "canonical_player_id": "cb-south-carolina-max-kaufer"},
-        {"source_player_id": "cb-south-carolina-bakes", "source_player_name": "Bakes", "player": "Ryan Bakes", "canonical_player_id": "cb-south-carolina-ryan-bakes"},
-        {"source_player_id": "cb-south-carolina-carrion", "source_player_name": "Carrion", "player": "Jordan Carrion", "canonical_player_id": "cb-south-carolina-jordan-carrion"},
-        {"source_player_id": "cb-south-carolina-kaczmar", "source_player_name": "Kaczmar", "player": "Henry Kaczmar", "canonical_player_id": "cb-south-carolina-henry-kaczmar"},
-        {"source_player_id": "cb-south-carolina-mccoy", "source_player_name": "McCoy", "player": "Jake McCoy", "canonical_player_id": "cb-south-carolina-jake-mccoy"},
-        {"source_player_id": "cb-south-carolina-pitzer", "source_player_name": "Pitzer", "player": "Tyler Pitzer", "canonical_player_id": "cb-south-carolina-tyler-pitzer"},
-        {"source_player_id": "cb-south-carolina-c-jones", "source_player_name": "C. Jones", "player": "Caleb Jones", "canonical_player_id": "cb-south-carolina-caleb-jones"}
+        {
+          "source_player_id": "cb-south-carolina-hall",
+          "source_player_name": "Hall",
+          "player": "Nathan Hall",
+          "canonical_player_id": "cb-south-carolina-nathan-hall"
+        },
+        {
+          "source_player_id": "cb-south-carolina-petry",
+          "source_player_name": "Petry",
+          "player": "Ethan Petry",
+          "canonical_player_id": "cb-south-carolina-ethan-petry"
+        },
+        {
+          "source_player_id": "cb-south-carolina-woita",
+          "source_player_name": "Woita",
+          "player": "Jase Woita",
+          "canonical_player_id": "cb-south-carolina-jase-woita"
+        },
+        {
+          "source_player_id": "cb-south-carolina-stone",
+          "source_player_name": "Stone",
+          "player": "Evan Stone",
+          "canonical_player_id": "cb-south-carolina-evan-stone"
+        },
+        {
+          "source_player_id": "cb-south-carolina-k-jones",
+          "source_player_name": "K. Jones",
+          "player": "Kennedy Jones",
+          "canonical_player_id": "cb-south-carolina-kennedy-jones"
+        },
+        {
+          "source_player_id": "cb-south-carolina-scobey",
+          "source_player_name": "Scobey",
+          "player": "KJ Scobey",
+          "canonical_player_id": "cb-south-carolina-kj-scobey"
+        },
+        {
+          "source_player_id": "cb-south-carolina-hollins",
+          "source_player_name": "Hollins",
+          "player": "Beau Hollins",
+          "canonical_player_id": "cb-south-carolina-beau-hollins"
+        },
+        {
+          "source_player_id": "cb-south-carolina-kaufer",
+          "source_player_name": "Kaufer",
+          "player": "Max Kaufer",
+          "canonical_player_id": "cb-south-carolina-max-kaufer"
+        },
+        {
+          "source_player_id": "cb-south-carolina-bakes",
+          "source_player_name": "Bakes",
+          "player": "Ryan Bakes",
+          "canonical_player_id": "cb-south-carolina-ryan-bakes"
+        },
+        {
+          "source_player_id": "cb-south-carolina-carrion",
+          "source_player_name": "Carrion",
+          "player": "Jordan Carrion",
+          "canonical_player_id": "cb-south-carolina-jordan-carrion"
+        },
+        {
+          "source_player_id": "cb-south-carolina-kaczmar",
+          "source_player_name": "Kaczmar",
+          "player": "Henry Kaczmar",
+          "canonical_player_id": "cb-south-carolina-henry-kaczmar"
+        },
+        {
+          "source_player_id": "cb-south-carolina-mccoy",
+          "source_player_name": "McCoy",
+          "player": "Jake McCoy",
+          "canonical_player_id": "cb-south-carolina-jake-mccoy"
+        },
+        {
+          "source_player_id": "cb-south-carolina-pitzer",
+          "source_player_name": "Pitzer",
+          "player": "Tyler Pitzer",
+          "canonical_player_id": "cb-south-carolina-tyler-pitzer"
+        },
+        {
+          "source_player_id": "cb-south-carolina-c-jones",
+          "source_player_name": "C. Jones",
+          "player": "Caleb Jones",
+          "canonical_player_id": "cb-south-carolina-caleb-jones"
+        }
       ]
     },
     {
@@ -153,18 +223,78 @@
         "https://gobearcats.com/sports/baseball/roster/season/2018"
       ],
       "corrections": [
-        {"source_player_id": "cb-cincinnati-rodriguez", "source_player_name": "Rodriguez", "player": "Manny Rodriguez", "canonical_player_id": "cb-cincinnati-manny-rodriguez"},
-        {"source_player_id": "cb-cincinnati-perez", "source_player_name": "Perez", "player": "J.T. Perez", "canonical_player_id": "cb-cincinnati-jt-perez"},
-        {"source_player_id": "cb-cincinnati-bumpass", "source_player_name": "Bumpass", "player": "AJ Bumpass", "canonical_player_id": "cb-cincinnati-aj-bumpass"},
-        {"source_player_id": "cb-cincinnati-mottice", "source_player_name": "Mottice", "player": "Kyle Mottice", "canonical_player_id": "cb-cincinnati-kyle-mottice"},
-        {"source_player_id": "cb-cincinnati-thomas", "source_player_name": "Thomas", "player": "Joey Thomas", "canonical_player_id": "cb-cincinnati-joey-thomas"},
-        {"source_player_id": "cb-cincinnati-mcvey", "source_player_name": "McVey", "player": "Connor McVey", "canonical_player_id": "cb-cincinnati-connor-mcvey"},
-        {"source_player_id": "cb-cincinnati-mercer", "source_player_name": "Mercer", "player": "Jace Mercer", "canonical_player_id": "cb-cincinnati-jace-mercer"},
-        {"source_player_id": "cb-cincinnati-murphy", "source_player_name": "Murphy", "player": "Cole Murphy", "canonical_player_id": "cb-cincinnati-cole-murphy"},
-        {"source_player_id": "cb-cincinnati-haberkorn", "source_player_name": "Haberkorn", "player": "Treg Haberkorn", "canonical_player_id": "cb-cincinnati-treg-haberkorn"},
-        {"source_player_id": "cb-cincinnati-santiago", "source_player_name": "Santiago", "player": "Eric Santiago", "canonical_player_id": "cb-cincinnati-eric-santiago"},
-        {"source_player_id": "cb-cincinnati-lowe-ii", "source_player_name": "Lowe II", "player": "Doug Lowe II", "canonical_player_id": "cb-cincinnati-doug-lowe-ii"},
-        {"source_player_id": "cb-cincinnati-orndorff", "source_player_name": "Orndorff", "player": "David Orndorff", "canonical_player_id": "cb-cincinnati-david-orndorff"}
+        {
+          "source_player_id": "cb-cincinnati-rodriguez",
+          "source_player_name": "Rodriguez",
+          "player": "Manny Rodriguez",
+          "canonical_player_id": "cb-cincinnati-manny-rodriguez"
+        },
+        {
+          "source_player_id": "cb-cincinnati-perez",
+          "source_player_name": "Perez",
+          "player": "J.T. Perez",
+          "canonical_player_id": "cb-cincinnati-jt-perez"
+        },
+        {
+          "source_player_id": "cb-cincinnati-bumpass",
+          "source_player_name": "Bumpass",
+          "player": "AJ Bumpass",
+          "canonical_player_id": "cb-cincinnati-aj-bumpass"
+        },
+        {
+          "source_player_id": "cb-cincinnati-mottice",
+          "source_player_name": "Mottice",
+          "player": "Kyle Mottice",
+          "canonical_player_id": "cb-cincinnati-kyle-mottice"
+        },
+        {
+          "source_player_id": "cb-cincinnati-thomas",
+          "source_player_name": "Thomas",
+          "player": "Joey Thomas",
+          "canonical_player_id": "cb-cincinnati-joey-thomas"
+        },
+        {
+          "source_player_id": "cb-cincinnati-mcvey",
+          "source_player_name": "McVey",
+          "player": "Connor McVey",
+          "canonical_player_id": "cb-cincinnati-connor-mcvey"
+        },
+        {
+          "source_player_id": "cb-cincinnati-mercer",
+          "source_player_name": "Mercer",
+          "player": "Jace Mercer",
+          "canonical_player_id": "cb-cincinnati-jace-mercer"
+        },
+        {
+          "source_player_id": "cb-cincinnati-murphy",
+          "source_player_name": "Murphy",
+          "player": "Cole Murphy",
+          "canonical_player_id": "cb-cincinnati-cole-murphy"
+        },
+        {
+          "source_player_id": "cb-cincinnati-haberkorn",
+          "source_player_name": "Haberkorn",
+          "player": "Treg Haberkorn",
+          "canonical_player_id": "cb-cincinnati-treg-haberkorn"
+        },
+        {
+          "source_player_id": "cb-cincinnati-santiago",
+          "source_player_name": "Santiago",
+          "player": "Eric Santiago",
+          "canonical_player_id": "cb-cincinnati-eric-santiago"
+        },
+        {
+          "source_player_id": "cb-cincinnati-lowe-ii",
+          "source_player_name": "Lowe II",
+          "player": "Doug Lowe II",
+          "canonical_player_id": "cb-cincinnati-doug-lowe-ii"
+        },
+        {
+          "source_player_id": "cb-cincinnati-orndorff",
+          "source_player_name": "Orndorff",
+          "player": "David Orndorff",
+          "canonical_player_id": "cb-cincinnati-david-orndorff"
+        }
       ]
     },
     {
@@ -178,8 +308,18 @@
         "https://usdtoreros.com/sports/baseball/roster/2018"
       ],
       "corrections": [
-        {"source_player_id": "cb-san-diego-g-ponce", "source_player_name": "G Ponce", "player": "Gabriel Ponce", "canonical_player_id": "cb-san-diego-gabriel-ponce"},
-        {"source_player_id": "cb-san-diego-j-friedman", "source_player_name": "J Friedman", "player": "Justin Friedman", "canonical_player_id": "cb-san-diego-justin-friedman"}
+        {
+          "source_player_id": "cb-san-diego-g-ponce",
+          "source_player_name": "G Ponce",
+          "player": "Gabriel Ponce",
+          "canonical_player_id": "cb-san-diego-gabriel-ponce"
+        },
+        {
+          "source_player_id": "cb-san-diego-j-friedman",
+          "source_player_name": "J Friedman",
+          "player": "Justin Friedman",
+          "canonical_player_id": "cb-san-diego-justin-friedman"
+        }
       ]
     },
     {
@@ -192,7 +332,12 @@
         "https://usdtoreros.com/sports/baseball/roster/2018"
       ],
       "corrections": [
-        {"source_player_id": "cb-san-diego-g-ponce", "source_player_name": "G Ponce", "player": "Gabriel Ponce", "canonical_player_id": "cb-san-diego-gabriel-ponce"}
+        {
+          "source_player_id": "cb-san-diego-g-ponce",
+          "source_player_name": "G Ponce",
+          "player": "Gabriel Ponce",
+          "canonical_player_id": "cb-san-diego-gabriel-ponce"
+        }
       ]
     },
     {
@@ -206,8 +351,18 @@
         "https://gohighlanders.com/sports/baseball/roster/2019"
       ],
       "corrections": [
-        {"source_player_id": "cb-uc-riverside-c-cannon", "source_player_name": "C Cannon", "player": "Connor Cannon", "canonical_player_id": "cb-uc-riverside-connor-cannon"},
-        {"source_player_id": "cb-uc-riverside-d-miller", "source_player_name": "D Miller", "player": "Dean Miller", "canonical_player_id": "cb-uc-riverside-dean-miller"}
+        {
+          "source_player_id": "cb-uc-riverside-c-cannon",
+          "source_player_name": "C Cannon",
+          "player": "Connor Cannon",
+          "canonical_player_id": "cb-uc-riverside-connor-cannon"
+        },
+        {
+          "source_player_id": "cb-uc-riverside-d-miller",
+          "source_player_name": "D Miller",
+          "player": "Dean Miller",
+          "canonical_player_id": "cb-uc-riverside-dean-miller"
+        }
       ]
     },
     {
@@ -220,7 +375,12 @@
         "https://soonersports.com/news/2019/2/24/211792400"
       ],
       "corrections": [
-        {"source_player_id": "cb-oklahoma-levi-hbp-ibb-ab-bf-fo-go-prater", "source_player_name": "Levi hbp ibb ab bf fo go Prater", "player": "Levi Prater", "canonical_player_id": "cb-oklahoma-levi-prater"}
+        {
+          "source_player_id": "cb-oklahoma-levi-hbp-ibb-ab-bf-fo-go-prater",
+          "source_player_name": "Levi hbp ibb ab bf fo go Prater",
+          "player": "Levi Prater",
+          "canonical_player_id": "cb-oklahoma-levi-prater"
+        }
       ]
     },
     {
@@ -232,13 +392,48 @@
         "https://soonersports.com/sports/2019/8/7/2150228"
       ],
       "corrections": [
-        {"source_player_id": "cb-cal-state-fullerton-h-loforte", "source_player_name": "H. LoForte", "player": "Hank LoForte", "canonical_player_id": "cb-cal-state-fullerton-hank-loforte"},
-        {"source_player_id": "cb-cal-state-fullerton-b-borgogno", "source_player_name": "B. Borgogno", "player": "Brett Borgogno", "canonical_player_id": "cb-cal-state-fullerton-brett-borgogno"},
-        {"source_player_id": "cb-cal-state-fullerton-valenzuela", "source_player_name": "Valenzuela", "player": "Sahid Valenzuela", "canonical_player_id": "cb-cal-state-fullerton-sahid-valenzuela"},
-        {"source_player_id": "cb-cal-state-fullerton-d-cope", "source_player_name": "D. Cope", "player": "Daniel Cope", "canonical_player_id": "cb-cal-state-fullerton-daniel-cope"},
-        {"source_player_id": "cb-cal-state-fullerton-guangorena", "source_player_name": "Guangorena", "player": "Kameron Guangorena", "canonical_player_id": "cb-cal-state-fullerton-kameron-guangorena"},
-        {"source_player_id": "cb-cal-state-fullerton-m-berryhill", "source_player_name": "M Berryhill", "player": "Mitchell Berryhill", "canonical_player_id": "cb-cal-state-fullerton-mitchell-berryhill"},
-        {"source_player_id": "cb-cal-state-fullerton-pellegrino", "source_player_name": "Pellegrino", "player": "Jeff Pellegrino", "canonical_player_id": "cb-cal-state-fullerton-jeff-pellegrino"}
+        {
+          "source_player_id": "cb-cal-state-fullerton-h-loforte",
+          "source_player_name": "H. LoForte",
+          "player": "Hank LoForte",
+          "canonical_player_id": "cb-cal-state-fullerton-hank-loforte"
+        },
+        {
+          "source_player_id": "cb-cal-state-fullerton-b-borgogno",
+          "source_player_name": "B. Borgogno",
+          "player": "Brett Borgogno",
+          "canonical_player_id": "cb-cal-state-fullerton-brett-borgogno"
+        },
+        {
+          "source_player_id": "cb-cal-state-fullerton-valenzuela",
+          "source_player_name": "Valenzuela",
+          "player": "Sahid Valenzuela",
+          "canonical_player_id": "cb-cal-state-fullerton-sahid-valenzuela"
+        },
+        {
+          "source_player_id": "cb-cal-state-fullerton-d-cope",
+          "source_player_name": "D. Cope",
+          "player": "Daniel Cope",
+          "canonical_player_id": "cb-cal-state-fullerton-daniel-cope"
+        },
+        {
+          "source_player_id": "cb-cal-state-fullerton-guangorena",
+          "source_player_name": "Guangorena",
+          "player": "Kameron Guangorena",
+          "canonical_player_id": "cb-cal-state-fullerton-kameron-guangorena"
+        },
+        {
+          "source_player_id": "cb-cal-state-fullerton-m-berryhill",
+          "source_player_name": "M Berryhill",
+          "player": "Mitchell Berryhill",
+          "canonical_player_id": "cb-cal-state-fullerton-mitchell-berryhill"
+        },
+        {
+          "source_player_id": "cb-cal-state-fullerton-pellegrino",
+          "source_player_name": "Pellegrino",
+          "player": "Jeff Pellegrino",
+          "canonical_player_id": "cb-cal-state-fullerton-jeff-pellegrino"
+        }
       ]
     },
     {
@@ -251,7 +446,12 @@
         "https://huskers.com/sports/baseball/roster/season/2020/player/spencer-schwellenbach"
       ],
       "corrections": [
-        {"source_player_id": "cb-nebraska-s-schwellenbach", "source_player_name": "S. Schwellenbach", "player": "Spencer Schwellenbach", "canonical_player_id": "cb-nebraska-spencer-schwellenbach"}
+        {
+          "source_player_id": "cb-nebraska-s-schwellenbach",
+          "source_player_name": "S. Schwellenbach",
+          "player": "Spencer Schwellenbach",
+          "canonical_player_id": "cb-nebraska-spencer-schwellenbach"
+        }
       ]
     },
     {
@@ -265,7 +465,12 @@
         "https://smcgaels.com/news/2022/7/18/baseball-base-campos-selected-in-7th-round-by-home-town-dodgers"
       ],
       "corrections": [
-        {"source_player_id": "cb-saint-mary-s-christoper-campos", "source_player_name": "Christoper CAMPOS", "player": "Christopher Campos", "canonical_player_id": "cb-saint-mary-s-christopher-campos"}
+        {
+          "source_player_id": "cb-saint-mary-s-christoper-campos",
+          "source_player_name": "Christoper CAMPOS",
+          "player": "Christopher Campos",
+          "canonical_player_id": "cb-saint-mary-s-christopher-campos"
+        }
       ]
     },
     {
@@ -278,7 +483,12 @@
         "https://smcgaels.com/sports/baseball/roster/christopher-campos/2930"
       ],
       "corrections": [
-        {"source_player_id": "cb-saint-mary-s-christoper-campos", "source_player_name": "Christoper CAMPOS", "player": "Christopher Campos", "canonical_player_id": "cb-saint-mary-s-christopher-campos"}
+        {
+          "source_player_id": "cb-saint-mary-s-christoper-campos",
+          "source_player_name": "Christoper CAMPOS",
+          "player": "Christopher Campos",
+          "canonical_player_id": "cb-saint-mary-s-christopher-campos"
+        }
       ]
     },
     {
@@ -291,7 +501,12 @@
         "https://smcgaels.com/sports/baseball/roster/christopher-campos/2930"
       ],
       "corrections": [
-        {"source_player_id": "cb-saint-mary-s-christoper-campos", "source_player_name": "Christoper CAMPOS", "player": "Christopher Campos", "canonical_player_id": "cb-saint-mary-s-christopher-campos"}
+        {
+          "source_player_id": "cb-saint-mary-s-christoper-campos",
+          "source_player_name": "Christoper CAMPOS",
+          "player": "Christopher Campos",
+          "canonical_player_id": "cb-saint-mary-s-christopher-campos"
+        }
       ]
     },
     {
@@ -303,11 +518,36 @@
         "https://usdtoreros.com/sports/baseball/stats/2022/pacific/boxscore/12481"
       ],
       "corrections": [
-        {"source_player_id": "cb-pacific-c-graves", "source_player_name": "C. Graves", "player": "Chase Graves", "canonical_player_id": "cb-pacific-chase-graves"},
-        {"source_player_id": "cb-pacific-j-arakawa", "source_player_name": "J. Arakawa", "player": "James Arakawa", "canonical_player_id": "cb-pacific-james-arakawa"},
-        {"source_player_id": "cb-pacific-t-gavello", "source_player_name": "T. Gavello", "player": "Thomas Gavello", "canonical_player_id": "cb-pacific-thomas-gavello"},
-        {"source_player_id": "cb-pacific-c-myers", "source_player_name": "C. Myers", "player": "Chaz Myers", "canonical_player_id": "cb-pacific-chaz-myers"},
-        {"source_player_id": "cb-pacific-j-weiss", "source_player_name": "J. Weiss", "player": "Jacob Weiss", "canonical_player_id": "cb-pacific-jacob-weiss"}
+        {
+          "source_player_id": "cb-pacific-c-graves",
+          "source_player_name": "C. Graves",
+          "player": "Chase Graves",
+          "canonical_player_id": "cb-pacific-chase-graves"
+        },
+        {
+          "source_player_id": "cb-pacific-j-arakawa",
+          "source_player_name": "J. Arakawa",
+          "player": "James Arakawa",
+          "canonical_player_id": "cb-pacific-james-arakawa"
+        },
+        {
+          "source_player_id": "cb-pacific-t-gavello",
+          "source_player_name": "T. Gavello",
+          "player": "Thomas Gavello",
+          "canonical_player_id": "cb-pacific-thomas-gavello"
+        },
+        {
+          "source_player_id": "cb-pacific-c-myers",
+          "source_player_name": "C. Myers",
+          "player": "Chaz Myers",
+          "canonical_player_id": "cb-pacific-chaz-myers"
+        },
+        {
+          "source_player_id": "cb-pacific-j-weiss",
+          "source_player_name": "J. Weiss",
+          "player": "Jacob Weiss",
+          "canonical_player_id": "cb-pacific-jacob-weiss"
+        }
       ]
     },
     {
@@ -319,12 +559,42 @@
         "https://usdtoreros.com/sports/baseball/stats/2022/pacific/boxscore/12482"
       ],
       "corrections": [
-        {"source_player_id": "cb-pacific-c-graves", "source_player_name": "C. Graves", "player": "Chase Graves", "canonical_player_id": "cb-pacific-chase-graves"},
-        {"source_player_id": "cb-pacific-j-arakawa", "source_player_name": "J. Arakawa", "player": "James Arakawa", "canonical_player_id": "cb-pacific-james-arakawa"},
-        {"source_player_id": "cb-pacific-t-gavello", "source_player_name": "T. Gavello", "player": "Thomas Gavello", "canonical_player_id": "cb-pacific-thomas-gavello"},
-        {"source_player_id": "cb-pacific-c-myers", "source_player_name": "C. Myers", "player": "Chaz Myers", "canonical_player_id": "cb-pacific-chaz-myers"},
-        {"source_player_id": "cb-pacific-j-weiss", "source_player_name": "J. Weiss", "player": "Jacob Weiss", "canonical_player_id": "cb-pacific-jacob-weiss"},
-        {"source_player_id": "cb-pacific-j-lea", "source_player_name": "J. Lea", "player": "Jeremy Lea", "canonical_player_id": "cb-pacific-jeremy-lea"}
+        {
+          "source_player_id": "cb-pacific-c-graves",
+          "source_player_name": "C. Graves",
+          "player": "Chase Graves",
+          "canonical_player_id": "cb-pacific-chase-graves"
+        },
+        {
+          "source_player_id": "cb-pacific-j-arakawa",
+          "source_player_name": "J. Arakawa",
+          "player": "James Arakawa",
+          "canonical_player_id": "cb-pacific-james-arakawa"
+        },
+        {
+          "source_player_id": "cb-pacific-t-gavello",
+          "source_player_name": "T. Gavello",
+          "player": "Thomas Gavello",
+          "canonical_player_id": "cb-pacific-thomas-gavello"
+        },
+        {
+          "source_player_id": "cb-pacific-c-myers",
+          "source_player_name": "C. Myers",
+          "player": "Chaz Myers",
+          "canonical_player_id": "cb-pacific-chaz-myers"
+        },
+        {
+          "source_player_id": "cb-pacific-j-weiss",
+          "source_player_name": "J. Weiss",
+          "player": "Jacob Weiss",
+          "canonical_player_id": "cb-pacific-jacob-weiss"
+        },
+        {
+          "source_player_id": "cb-pacific-j-lea",
+          "source_player_name": "J. Lea",
+          "player": "Jeremy Lea",
+          "canonical_player_id": "cb-pacific-jeremy-lea"
+        }
       ]
     },
     {
@@ -336,12 +606,42 @@
         "https://usdtoreros.com/sports/baseball/stats/2022/pacific/boxscore/12483"
       ],
       "corrections": [
-        {"source_player_id": "cb-pacific-c-graves", "source_player_name": "C. Graves", "player": "Chase Graves", "canonical_player_id": "cb-pacific-chase-graves"},
-        {"source_player_id": "cb-pacific-j-arakawa", "source_player_name": "J. Arakawa", "player": "James Arakawa", "canonical_player_id": "cb-pacific-james-arakawa"},
-        {"source_player_id": "cb-pacific-t-gavello", "source_player_name": "T. Gavello", "player": "Thomas Gavello", "canonical_player_id": "cb-pacific-thomas-gavello"},
-        {"source_player_id": "cb-pacific-c-myers", "source_player_name": "C. Myers", "player": "Chaz Myers", "canonical_player_id": "cb-pacific-chaz-myers"},
-        {"source_player_id": "cb-pacific-j-weiss", "source_player_name": "J. Weiss", "player": "Jacob Weiss", "canonical_player_id": "cb-pacific-jacob-weiss"},
-        {"source_player_id": "cb-pacific-j-lea", "source_player_name": "J. Lea", "player": "Jeremy Lea", "canonical_player_id": "cb-pacific-jeremy-lea"}
+        {
+          "source_player_id": "cb-pacific-c-graves",
+          "source_player_name": "C. Graves",
+          "player": "Chase Graves",
+          "canonical_player_id": "cb-pacific-chase-graves"
+        },
+        {
+          "source_player_id": "cb-pacific-j-arakawa",
+          "source_player_name": "J. Arakawa",
+          "player": "James Arakawa",
+          "canonical_player_id": "cb-pacific-james-arakawa"
+        },
+        {
+          "source_player_id": "cb-pacific-t-gavello",
+          "source_player_name": "T. Gavello",
+          "player": "Thomas Gavello",
+          "canonical_player_id": "cb-pacific-thomas-gavello"
+        },
+        {
+          "source_player_id": "cb-pacific-c-myers",
+          "source_player_name": "C. Myers",
+          "player": "Chaz Myers",
+          "canonical_player_id": "cb-pacific-chaz-myers"
+        },
+        {
+          "source_player_id": "cb-pacific-j-weiss",
+          "source_player_name": "J. Weiss",
+          "player": "Jacob Weiss",
+          "canonical_player_id": "cb-pacific-jacob-weiss"
+        },
+        {
+          "source_player_id": "cb-pacific-j-lea",
+          "source_player_name": "J. Lea",
+          "player": "Jeremy Lea",
+          "canonical_player_id": "cb-pacific-jeremy-lea"
+        }
       ]
     },
     {
@@ -354,19 +654,84 @@
         "https://smcgaels.com/sports/baseball/roster/2023"
       ],
       "corrections": [
-        {"source_player_id": "cb-saint-mary-s-napier", "source_player_name": "NAPIER", "player": "Gavin Napier", "canonical_player_id": "cb-saint-mary-s-gavin-napier"},
-        {"source_player_id": "cb-saint-mary-s-ralston", "source_player_name": "RALSTON", "player": "Bill Ralston", "canonical_player_id": "cb-saint-mary-s-bill-ralston"},
-        {"source_player_id": "cb-saint-mary-s-hirayama", "source_player_name": "HIRAYAMA", "player": "Hunter Hirayama", "canonical_player_id": "cb-saint-mary-s-hunter-hirayama"},
-        {"source_player_id": "cb-saint-mary-s-almanza", "source_player_name": "ALMANZA", "player": "Christian Almanza", "canonical_player_id": "cb-saint-mary-s-christian-almanza"},
-        {"source_player_id": "cb-saint-mary-s-chong", "source_player_name": "CHONG", "player": "Nathan Chong", "canonical_player_id": "cb-saint-mary-s-nathan-chong"},
-        {"source_player_id": "cb-saint-mary-s-schmidt", "source_player_name": "SCHMIDT", "player": "Coleman Schmidt", "canonical_player_id": "cb-saint-mary-s-coleman-schmidt"},
-        {"source_player_id": "cb-saint-mary-s-mcdonald", "source_player_name": "MCDONALD", "player": "Blake McDonald", "canonical_player_id": "cb-saint-mary-s-blake-mcdonald"},
-        {"source_player_id": "cb-saint-mary-s-mettam", "source_player_name": "METTAM", "player": "Jared Mettam", "canonical_player_id": "cb-saint-mary-s-jared-mettam"},
-        {"source_player_id": "cb-saint-mary-s-madrigal", "source_player_name": "MADRIGAL", "player": "Eddie Madrigal", "canonical_player_id": "cb-saint-mary-s-eddie-madrigal"},
-        {"source_player_id": "cb-saint-mary-s-mashore", "source_player_name": "MASHORE", "player": "Dalton Mashore", "canonical_player_id": "cb-saint-mary-s-dalton-mashore"},
-        {"source_player_id": "cb-saint-mary-s-mistone", "source_player_name": "MISTONE", "player": "Nick Mistone", "canonical_player_id": "cb-saint-mary-s-nick-mistone"},
-        {"source_player_id": "cb-saint-mary-s-sanders", "source_player_name": "SANDERS", "player": "Ryan Sanders", "canonical_player_id": "cb-saint-mary-s-ryan-sanders"},
-        {"source_player_id": "cb-saint-mary-s-taurek", "source_player_name": "TAUREK", "player": "Ryan Taurek", "canonical_player_id": "cb-saint-mary-s-ryan-taurek"}
+        {
+          "source_player_id": "cb-saint-mary-s-napier",
+          "source_player_name": "NAPIER",
+          "player": "Gavin Napier",
+          "canonical_player_id": "cb-saint-mary-s-gavin-napier"
+        },
+        {
+          "source_player_id": "cb-saint-mary-s-ralston",
+          "source_player_name": "RALSTON",
+          "player": "Bill Ralston",
+          "canonical_player_id": "cb-saint-mary-s-bill-ralston"
+        },
+        {
+          "source_player_id": "cb-saint-mary-s-hirayama",
+          "source_player_name": "HIRAYAMA",
+          "player": "Hunter Hirayama",
+          "canonical_player_id": "cb-saint-mary-s-hunter-hirayama"
+        },
+        {
+          "source_player_id": "cb-saint-mary-s-almanza",
+          "source_player_name": "ALMANZA",
+          "player": "Christian Almanza",
+          "canonical_player_id": "cb-saint-mary-s-christian-almanza"
+        },
+        {
+          "source_player_id": "cb-saint-mary-s-chong",
+          "source_player_name": "CHONG",
+          "player": "Nathan Chong",
+          "canonical_player_id": "cb-saint-mary-s-nathan-chong"
+        },
+        {
+          "source_player_id": "cb-saint-mary-s-schmidt",
+          "source_player_name": "SCHMIDT",
+          "player": "Coleman Schmidt",
+          "canonical_player_id": "cb-saint-mary-s-coleman-schmidt"
+        },
+        {
+          "source_player_id": "cb-saint-mary-s-mcdonald",
+          "source_player_name": "MCDONALD",
+          "player": "Blake McDonald",
+          "canonical_player_id": "cb-saint-mary-s-blake-mcdonald"
+        },
+        {
+          "source_player_id": "cb-saint-mary-s-mettam",
+          "source_player_name": "METTAM",
+          "player": "Jared Mettam",
+          "canonical_player_id": "cb-saint-mary-s-jared-mettam"
+        },
+        {
+          "source_player_id": "cb-saint-mary-s-madrigal",
+          "source_player_name": "MADRIGAL",
+          "player": "Eddie Madrigal",
+          "canonical_player_id": "cb-saint-mary-s-eddie-madrigal"
+        },
+        {
+          "source_player_id": "cb-saint-mary-s-mashore",
+          "source_player_name": "MASHORE",
+          "player": "Dalton Mashore",
+          "canonical_player_id": "cb-saint-mary-s-dalton-mashore"
+        },
+        {
+          "source_player_id": "cb-saint-mary-s-mistone",
+          "source_player_name": "MISTONE",
+          "player": "Nick Mistone",
+          "canonical_player_id": "cb-saint-mary-s-nick-mistone"
+        },
+        {
+          "source_player_id": "cb-saint-mary-s-sanders",
+          "source_player_name": "SANDERS",
+          "player": "Ryan Sanders",
+          "canonical_player_id": "cb-saint-mary-s-ryan-sanders"
+        },
+        {
+          "source_player_id": "cb-saint-mary-s-taurek",
+          "source_player_name": "TAUREK",
+          "player": "Ryan Taurek",
+          "canonical_player_id": "cb-saint-mary-s-ryan-taurek"
+        }
       ]
     },
     {
@@ -381,8 +746,18 @@
         "https://www.mlb.com/amp/press-release/colorado-rockies-conclude-2024-first-year-player-draft-with-10-selections-on-day-three.html"
       ],
       "corrections": [
-        {"source_player_id": "cb-cal-state-northrdige-graysen-tarlow", "source_player_name": "Graysen Tarlow", "player": "Graysen Tarlow", "canonical_player_id": "cb-cal-state-northridge-graysen-tarlow"},
-        {"source_player_id": "cb-cal-state-northrdige-kevin-fitzer", "source_player_name": "Kevin Fitzer", "player": "Kevin Fitzer", "canonical_player_id": "cb-cal-state-northridge-kevin-fitzer"}
+        {
+          "source_player_id": "cb-cal-state-northrdige-graysen-tarlow",
+          "source_player_name": "Graysen Tarlow",
+          "player": "Graysen Tarlow",
+          "canonical_player_id": "cb-cal-state-northridge-graysen-tarlow"
+        },
+        {
+          "source_player_id": "cb-cal-state-northrdige-kevin-fitzer",
+          "source_player_name": "Kevin Fitzer",
+          "player": "Kevin Fitzer",
+          "canonical_player_id": "cb-cal-state-northridge-kevin-fitzer"
+        }
       ]
     },
     {
@@ -395,7 +770,78 @@
         "https://cofcsports.com/sports/baseball/roster/cole-mathis/6327"
       ],
       "corrections": [
-        {"source_player_id": "cb-college-of-charleston-c-mathis", "source_player_name": "C. Mathis", "player": "Cole Mathis", "canonical_player_id": "cb-college-of-charleston-cole-mathis"}
+        {
+          "source_player_id": "cb-college-of-charleston-c-mathis",
+          "source_player_name": "C. Mathis",
+          "player": "Cole Mathis",
+          "canonical_player_id": "cb-college-of-charleston-cole-mathis"
+        },
+        {
+          "source_player_id": "cb-college-of-charleston-a-duval",
+          "source_player_name": "A. Duval",
+          "player": "Andrew Duval",
+          "canonical_player_id": "cb-college-of-charleston-andrew-duval"
+        },
+        {
+          "source_player_id": "cb-college-of-charleston-a-neaves",
+          "source_player_name": "A. Neaves",
+          "player": "Avery Neaves",
+          "canonical_player_id": "cb-college-of-charleston-avery-neaves"
+        },
+        {
+          "source_player_id": "cb-college-of-charleston-d-johnson",
+          "source_player_name": "D. Johnson",
+          "player": "Dylan Johnson",
+          "canonical_player_id": "cb-college-of-charleston-dylan-johnson"
+        },
+        {
+          "source_player_id": "cb-college-of-charleston-d-pendergra",
+          "source_player_name": "D. Pendergra",
+          "player": "Dariyan Pendergrass",
+          "canonical_player_id": "cb-college-of-charleston-dariyan-pendergrass"
+        },
+        {
+          "source_player_id": "cb-college-of-charleston-h-garner",
+          "source_player_name": "H. Garner",
+          "player": "Hogan Garner",
+          "canonical_player_id": "cb-college-of-charleston-hogan-garner"
+        },
+        {
+          "source_player_id": "cb-college-of-charleston-j-bradford",
+          "source_player_name": "J. Bradford",
+          "player": "Jeb Bradford",
+          "canonical_player_id": "cb-college-of-charleston-jeb-bradford"
+        },
+        {
+          "source_player_id": "cb-college-of-charleston-k-madden",
+          "source_player_name": "K. Madden",
+          "player": "Kevin Madden",
+          "canonical_player_id": "cb-college-of-charleston-kevin-madden"
+        },
+        {
+          "source_player_id": "cb-college-of-charleston-l-wood",
+          "source_player_name": "L. Wood",
+          "player": "Luke Wood",
+          "canonical_player_id": "cb-college-of-charleston-luke-wood"
+        },
+        {
+          "source_player_id": "cb-college-of-charleston-t-harlan",
+          "source_player_name": "T. Harlan",
+          "player": "Trotter Harlan",
+          "canonical_player_id": "cb-college-of-charleston-trotter-harlan"
+        },
+        {
+          "source_player_id": "cb-college-of-charleston-t-sorrentin",
+          "source_player_name": "T. Sorrentin",
+          "player": "Tyler Sorrentino",
+          "canonical_player_id": "cb-college-of-charleston-tyler-sorrentino"
+        },
+        {
+          "source_player_id": "cb-college-of-charleston-w-baumhofer",
+          "source_player_name": "W. Baumhofer",
+          "player": "Will Baumhofer",
+          "canonical_player_id": "cb-college-of-charleston-will-baumhofer"
+        }
       ]
     },
     {
@@ -408,19 +854,84 @@
         "https://hawkeyesports.com/news/2024/07/14/brecht-selected-by-colorado-in-cb-a-round-of-mlb-draft"
       ],
       "corrections": [
-        {"source_player_id": "cb-iowa-brecht", "source_player_name": "Brecht", "player": "Brody Brecht", "canonical_player_id": "cb-iowa-brody-brecht"},
-        {"source_player_id": "cb-iowa-seegers", "source_player_name": "Seegers", "player": "Michael Seegers", "canonical_player_id": "cb-iowa-michael-seegers"},
-        {"source_player_id": "cb-iowa-petersen", "source_player_name": "Petersen", "player": "Sam Petersen", "canonical_player_id": "cb-iowa-sam-petersen"},
-        {"source_player_id": "cb-iowa-tello", "source_player_name": "Tello", "player": "Raider Tello", "canonical_player_id": "cb-iowa-raider-tello"},
-        {"source_player_id": "cb-iowa-cop", "source_player_name": "Cop", "player": "Davis Cop", "canonical_player_id": "cb-iowa-davis-cop"},
-        {"source_player_id": "cb-iowa-moore", "source_player_name": "Moore", "player": "Reese Moore", "canonical_player_id": "cb-iowa-reese-moore"},
-        {"source_player_id": "cb-iowa-wilmes", "source_player_name": "Wilmes", "player": "Ben Wilmes", "canonical_player_id": "cb-iowa-ben-wilmes"},
-        {"source_player_id": "cb-iowa-mitchell", "source_player_name": "Mitchell", "player": "Gable Mitchell", "canonical_player_id": "cb-iowa-gable-mitchell"},
-        {"source_player_id": "cb-iowa-huckstorf", "source_player_name": "Huckstorf", "player": "Kyle Huckstorf", "canonical_player_id": "cb-iowa-kyle-huckstorf"},
-        {"source_player_id": "cb-iowa-whitlock", "source_player_name": "Whitlock", "player": "Jack Whitlock", "canonical_player_id": "cb-iowa-jack-whitlock"},
-        {"source_player_id": "cb-iowa-voelker", "source_player_name": "Voelker", "player": "Zach Voelker", "canonical_player_id": "cb-iowa-zach-voelker"},
-        {"source_player_id": "cb-iowa-cad-lanoue", "source_player_name": "Cad.-Lanoue", "player": "Elliott Cadieux-Lanoue", "canonical_player_id": "cb-iowa-elliott-cadieux-lanoue"},
-        {"source_player_id": "cb-iowa-guerin", "source_player_name": "Guerin", "player": "Blake Guerin", "canonical_player_id": "cb-iowa-blake-guerin"}
+        {
+          "source_player_id": "cb-iowa-brecht",
+          "source_player_name": "Brecht",
+          "player": "Brody Brecht",
+          "canonical_player_id": "cb-iowa-brody-brecht"
+        },
+        {
+          "source_player_id": "cb-iowa-seegers",
+          "source_player_name": "Seegers",
+          "player": "Michael Seegers",
+          "canonical_player_id": "cb-iowa-michael-seegers"
+        },
+        {
+          "source_player_id": "cb-iowa-petersen",
+          "source_player_name": "Petersen",
+          "player": "Sam Petersen",
+          "canonical_player_id": "cb-iowa-sam-petersen"
+        },
+        {
+          "source_player_id": "cb-iowa-tello",
+          "source_player_name": "Tello",
+          "player": "Raider Tello",
+          "canonical_player_id": "cb-iowa-raider-tello"
+        },
+        {
+          "source_player_id": "cb-iowa-cop",
+          "source_player_name": "Cop",
+          "player": "Davis Cop",
+          "canonical_player_id": "cb-iowa-davis-cop"
+        },
+        {
+          "source_player_id": "cb-iowa-moore",
+          "source_player_name": "Moore",
+          "player": "Reese Moore",
+          "canonical_player_id": "cb-iowa-reese-moore"
+        },
+        {
+          "source_player_id": "cb-iowa-wilmes",
+          "source_player_name": "Wilmes",
+          "player": "Ben Wilmes",
+          "canonical_player_id": "cb-iowa-ben-wilmes"
+        },
+        {
+          "source_player_id": "cb-iowa-mitchell",
+          "source_player_name": "Mitchell",
+          "player": "Gable Mitchell",
+          "canonical_player_id": "cb-iowa-gable-mitchell"
+        },
+        {
+          "source_player_id": "cb-iowa-huckstorf",
+          "source_player_name": "Huckstorf",
+          "player": "Kyle Huckstorf",
+          "canonical_player_id": "cb-iowa-kyle-huckstorf"
+        },
+        {
+          "source_player_id": "cb-iowa-whitlock",
+          "source_player_name": "Whitlock",
+          "player": "Jack Whitlock",
+          "canonical_player_id": "cb-iowa-jack-whitlock"
+        },
+        {
+          "source_player_id": "cb-iowa-voelker",
+          "source_player_name": "Voelker",
+          "player": "Zach Voelker",
+          "canonical_player_id": "cb-iowa-zach-voelker"
+        },
+        {
+          "source_player_id": "cb-iowa-cad-lanoue",
+          "source_player_name": "Cad.-Lanoue",
+          "player": "Elliott Cadieux-Lanoue",
+          "canonical_player_id": "cb-iowa-elliott-cadieux-lanoue"
+        },
+        {
+          "source_player_id": "cb-iowa-guerin",
+          "source_player_name": "Guerin",
+          "player": "Blake Guerin",
+          "canonical_player_id": "cb-iowa-blake-guerin"
+        }
       ]
     },
     {
@@ -428,13 +939,40 @@
       "team": "Illinois",
       "description": "Resolve five owner-confirmed surname-only Illinois names from the Western Michigan gamebook without changing their statistical lines.",
       "verified_on": "2026-11-02",
-      "evidence_urls": ["https://fightingillini.com/sports/baseball/roster/2024"],
+      "evidence_urls": [
+        "https://fightingillini.com/sports/baseball/roster/2024"
+      ],
       "corrections": [
-        {"source_player_id": "cb-illinois-hejza", "source_player_name": "Hejza", "player": "Cal Hejza", "canonical_player_id": "cb-illinois-cal-hejza"},
-        {"source_player_id": "cb-illinois-janik", "source_player_name": "Janik", "player": "Camden Janik", "canonical_player_id": "cb-illinois-camden-janik"},
-        {"source_player_id": "cb-illinois-quagliano", "source_player_name": "Quagliano", "player": "Coltin Quagliano", "canonical_player_id": "cb-illinois-coltin-quagliano"},
-        {"source_player_id": "cb-illinois-milton", "source_player_name": "Milton", "player": "Connor Milton", "canonical_player_id": "cb-illinois-connor-milton"},
-        {"source_player_id": "cb-illinois-harding", "source_player_name": "Harding", "player": "Brody Harding", "canonical_player_id": "cb-illinois-brody-harding"}
+        {
+          "source_player_id": "cb-illinois-hejza",
+          "source_player_name": "Hejza",
+          "player": "Cal Hejza",
+          "canonical_player_id": "cb-illinois-cal-hejza"
+        },
+        {
+          "source_player_id": "cb-illinois-janik",
+          "source_player_name": "Janik",
+          "player": "Camden Janik",
+          "canonical_player_id": "cb-illinois-camden-janik"
+        },
+        {
+          "source_player_id": "cb-illinois-quagliano",
+          "source_player_name": "Quagliano",
+          "player": "Coltin Quagliano",
+          "canonical_player_id": "cb-illinois-coltin-quagliano"
+        },
+        {
+          "source_player_id": "cb-illinois-milton",
+          "source_player_name": "Milton",
+          "player": "Connor Milton",
+          "canonical_player_id": "cb-illinois-connor-milton"
+        },
+        {
+          "source_player_id": "cb-illinois-harding",
+          "source_player_name": "Harding",
+          "player": "Brody Harding",
+          "canonical_player_id": "cb-illinois-brody-harding"
+        }
       ]
     },
     {
@@ -446,17 +984,72 @@
         "https://bryantbulldogs.com/sports/baseball/stats/2024/nc-state-university/boxscore/10641"
       ],
       "corrections": [
-        {"source_player_id": "cb-nc-state-pennington", "source_player_name": "Pennington", "player": "Garrett Pennington", "canonical_player_id": "cb-nc-state-garrett-pennington"},
-        {"source_player_id": "cb-nc-state-makarewicz", "source_player_name": "Makarewicz", "player": "Alec Makarewicz", "canonical_player_id": "cb-nc-state-alec-makarewicz"},
-        {"source_player_id": "cb-nc-state-cozart", "source_player_name": "Cozart", "player": "Jacob Cozart", "canonical_player_id": "cb-nc-state-jacob-cozart"},
-        {"source_player_id": "cb-nc-state-butterworth", "source_player_name": "Butterworth", "player": "Brandon Butterworth", "canonical_player_id": "cb-nc-state-brandon-butterworth"},
-        {"source_player_id": "cb-nc-state-sosa", "source_player_name": "Sosa", "player": "Alex Sosa", "canonical_player_id": "cb-nc-state-alex-sosa"},
-        {"source_player_id": "cb-nc-state-l-nixon", "source_player_name": "L. Nixon", "player": "Luke Nixon", "canonical_player_id": "cb-nc-state-luke-nixon"},
-        {"source_player_id": "cb-nc-state-heavner", "source_player_name": "Heavner", "player": "Matt Heavner", "canonical_player_id": "cb-nc-state-matt-heavner"},
-        {"source_player_id": "cb-nc-state-shaffner", "source_player_name": "Shaffner", "player": "Andrew Shaffner", "canonical_player_id": "cb-nc-state-andrew-shaffner"},
-        {"source_player_id": "cb-nc-state-soles", "source_player_name": "Soles", "player": "Noah Soles", "canonical_player_id": "cb-nc-state-noah-soles"},
-        {"source_player_id": "cb-nc-state-highfill", "source_player_name": "Highfill", "player": "Sam Highfill", "canonical_player_id": "cb-nc-state-sam-highfill"},
-        {"source_player_id": "cb-nc-state-dudan", "source_player_name": "Dudan", "player": "Jacob Dudan", "canonical_player_id": "cb-nc-state-jacob-dudan"}
+        {
+          "source_player_id": "cb-nc-state-pennington",
+          "source_player_name": "Pennington",
+          "player": "Garrett Pennington",
+          "canonical_player_id": "cb-nc-state-garrett-pennington"
+        },
+        {
+          "source_player_id": "cb-nc-state-makarewicz",
+          "source_player_name": "Makarewicz",
+          "player": "Alec Makarewicz",
+          "canonical_player_id": "cb-nc-state-alec-makarewicz"
+        },
+        {
+          "source_player_id": "cb-nc-state-cozart",
+          "source_player_name": "Cozart",
+          "player": "Jacob Cozart",
+          "canonical_player_id": "cb-nc-state-jacob-cozart"
+        },
+        {
+          "source_player_id": "cb-nc-state-butterworth",
+          "source_player_name": "Butterworth",
+          "player": "Brandon Butterworth",
+          "canonical_player_id": "cb-nc-state-brandon-butterworth"
+        },
+        {
+          "source_player_id": "cb-nc-state-sosa",
+          "source_player_name": "Sosa",
+          "player": "Alex Sosa",
+          "canonical_player_id": "cb-nc-state-alex-sosa"
+        },
+        {
+          "source_player_id": "cb-nc-state-l-nixon",
+          "source_player_name": "L. Nixon",
+          "player": "Luke Nixon",
+          "canonical_player_id": "cb-nc-state-luke-nixon"
+        },
+        {
+          "source_player_id": "cb-nc-state-heavner",
+          "source_player_name": "Heavner",
+          "player": "Matt Heavner",
+          "canonical_player_id": "cb-nc-state-matt-heavner"
+        },
+        {
+          "source_player_id": "cb-nc-state-shaffner",
+          "source_player_name": "Shaffner",
+          "player": "Andrew Shaffner",
+          "canonical_player_id": "cb-nc-state-andrew-shaffner"
+        },
+        {
+          "source_player_id": "cb-nc-state-soles",
+          "source_player_name": "Soles",
+          "player": "Noah Soles",
+          "canonical_player_id": "cb-nc-state-noah-soles"
+        },
+        {
+          "source_player_id": "cb-nc-state-highfill",
+          "source_player_name": "Highfill",
+          "player": "Sam Highfill",
+          "canonical_player_id": "cb-nc-state-sam-highfill"
+        },
+        {
+          "source_player_id": "cb-nc-state-dudan",
+          "source_player_name": "Dudan",
+          "player": "Jacob Dudan",
+          "canonical_player_id": "cb-nc-state-jacob-dudan"
+        }
       ]
     },
     {
@@ -470,7 +1063,12 @@
         "https://statsapi.mlb.com/api/v1/draft/2024"
       ],
       "corrections": [
-        {"source_player_id": "cb-rutgers-josh-kuroda-grauer", "source_player_name": "Josh Kuroda-grauer", "player": "Joshua Kuroda-Grauer", "canonical_player_id": "cb-rutgers-joshua-kuroda-grauer"}
+        {
+          "source_player_id": "cb-rutgers-josh-kuroda-grauer",
+          "source_player_name": "Josh Kuroda-grauer",
+          "player": "Joshua Kuroda-Grauer",
+          "canonical_player_id": "cb-rutgers-joshua-kuroda-grauer"
+        }
       ]
     },
     {
@@ -484,7 +1082,12 @@
         "https://statsapi.mlb.com/api/v1/draft/2024"
       ],
       "corrections": [
-        {"source_player_id": "cb-rutgers-josh-kuroda-grauer", "source_player_name": "Josh Kuroda-grauer", "player": "Joshua Kuroda-Grauer", "canonical_player_id": "cb-rutgers-joshua-kuroda-grauer"}
+        {
+          "source_player_id": "cb-rutgers-josh-kuroda-grauer",
+          "source_player_name": "Josh Kuroda-grauer",
+          "player": "Joshua Kuroda-Grauer",
+          "canonical_player_id": "cb-rutgers-joshua-kuroda-grauer"
+        }
       ]
     },
     {
@@ -498,7 +1101,12 @@
         "https://statsapi.mlb.com/api/v1/draft/2024"
       ],
       "corrections": [
-        {"source_player_id": "cb-southern-california-william-watson", "source_player_name": "William Watson", "player": "Will Watson", "canonical_player_id": "cb-southern-california-will-watson"}
+        {
+          "source_player_id": "cb-southern-california-william-watson",
+          "source_player_name": "William Watson",
+          "player": "Will Watson",
+          "canonical_player_id": "cb-southern-california-will-watson"
+        }
       ]
     },
     {
@@ -513,8 +1121,18 @@
         "https://vmikeydets.com/news/2026/7/12/baseball-fitzwater-selected-by-chicago-white-sox-in-2026-mlb-draft.aspx"
       ],
       "corrections": [
-        {"source_player_id": "cb-vmi-w-riley", "source_player_name": "W. Riley", "player": "Will Riley", "canonical_player_id": "cb-vmi-will-riley"},
-        {"source_player_id": "cb-vmi-g-fitzwater", "source_player_name": "G. Fitzwater", "player": "Grayson Fitzwater", "canonical_player_id": "cb-vmi-grayson-fitzwater"}
+        {
+          "source_player_id": "cb-vmi-w-riley",
+          "source_player_name": "W. Riley",
+          "player": "Will Riley",
+          "canonical_player_id": "cb-vmi-will-riley"
+        },
+        {
+          "source_player_id": "cb-vmi-g-fitzwater",
+          "source_player_name": "G. Fitzwater",
+          "player": "Grayson Fitzwater",
+          "canonical_player_id": "cb-vmi-grayson-fitzwater"
+        }
       ]
     },
     {
@@ -528,9 +1146,24 @@
         "https://statsapi.mlb.com/api/v1/draft/2024"
       ],
       "corrections": [
-        {"source_player_id": "cb-east-carolina-j-jenkins-cowart", "source_player_name": "J. Jenkins-cowart", "player": "Jacob Jenkins-Cowart", "canonical_player_id": "cb-east-carolina-jacob-jenkins-cowart"},
-        {"source_player_id": "cb-east-carolina-r-mccrystal", "source_player_name": "R. McCrystal", "player": "Ryan McCrystal", "canonical_player_id": "cb-east-carolina-ryan-mccrystal"},
-        {"source_player_id": "cb-east-carolina-c-cunningham", "source_player_name": "C. Cunningham", "player": "Carter Cunningham", "canonical_player_id": "cb-east-carolina-carter-cunningham"}
+        {
+          "source_player_id": "cb-east-carolina-j-jenkins-cowart",
+          "source_player_name": "J. Jenkins-cowart",
+          "player": "Jacob Jenkins-Cowart",
+          "canonical_player_id": "cb-east-carolina-jacob-jenkins-cowart"
+        },
+        {
+          "source_player_id": "cb-east-carolina-r-mccrystal",
+          "source_player_name": "R. McCrystal",
+          "player": "Ryan McCrystal",
+          "canonical_player_id": "cb-east-carolina-ryan-mccrystal"
+        },
+        {
+          "source_player_id": "cb-east-carolina-c-cunningham",
+          "source_player_name": "C. Cunningham",
+          "player": "Carter Cunningham",
+          "canonical_player_id": "cb-east-carolina-carter-cunningham"
+        }
       ]
     },
     {
@@ -543,7 +1176,12 @@
         "https://fightingillini.com/news/2024/7/16/baseball-crowder-janik-selected-in-2024-mlb-draft"
       ],
       "corrections": [
-        {"source_player_id": "cb-illinois-jack-crowder", "source_player_name": "Jack. Crowder", "player": "Jack Crowder", "canonical_player_id": "cb-illinois-jack-crowder"}
+        {
+          "source_player_id": "cb-illinois-jack-crowder",
+          "source_player_name": "Jack. Crowder",
+          "player": "Jack Crowder",
+          "canonical_player_id": "cb-illinois-jack-crowder"
+        }
       ]
     },
     {
@@ -556,7 +1194,12 @@
         "https://unlvrebels.com/sports/baseball/stats/2023/uc-irvine/boxscore/15890"
       ],
       "corrections": [
-        {"source_player_id": "cb-uc-irvine-dub-gleed", "source_player_name": "Dub. Gleed", "player": "Dub Gleed", "canonical_player_id": "cb-uc-irvine-dub-gleed"}
+        {
+          "source_player_id": "cb-uc-irvine-dub-gleed",
+          "source_player_name": "Dub. Gleed",
+          "player": "Dub Gleed",
+          "canonical_player_id": "cb-uc-irvine-dub-gleed"
+        }
       ]
     },
     {
@@ -569,7 +1212,84 @@
         "https://herdzone.com/news/2024/7/16/baseball-owen-ayers-taken-by-chicago-cubs-in-19th-round-of-2024-mlb-draft"
       ],
       "corrections": [
-        {"source_player_id": "cb-marshall-o-ayers", "source_player_name": "O. Ayers", "player": "Owen Ayers", "canonical_player_id": "cb-marshall-owen-ayers"}
+        {
+          "source_player_id": "cb-marshall-o-ayers",
+          "source_player_name": "O. Ayers",
+          "player": "Owen Ayers",
+          "canonical_player_id": "cb-marshall-owen-ayers"
+        },
+        {
+          "source_player_id": "cb-marshall-b-blevins",
+          "source_player_name": "B. Blevins",
+          "player": "Bryce Blevins",
+          "canonical_player_id": "cb-marshall-bryce-blevins"
+        },
+        {
+          "source_player_id": "cb-marshall-c-heiner",
+          "source_player_name": "C. Heiner",
+          "player": "Chad Heiner",
+          "canonical_player_id": "cb-marshall-chad-heiner"
+        },
+        {
+          "source_player_id": "cb-marshall-c-kaiser",
+          "source_player_name": "C. Kaiser",
+          "player": "Caden Kaiser",
+          "canonical_player_id": "cb-marshall-caden-kaiser"
+        },
+        {
+          "source_player_id": "cb-marshall-c-smith",
+          "source_player_name": "C. Smith",
+          "player": "Calin Smith",
+          "canonical_player_id": "cb-marshall-calin-smith"
+        },
+        {
+          "source_player_id": "cb-marshall-e-leon",
+          "source_player_name": "E. Leon",
+          "player": "Eddie Leon",
+          "canonical_player_id": "cb-marshall-eddie-leon"
+        },
+        {
+          "source_player_id": "cb-marshall-e-vogelsong",
+          "source_player_name": "E. Vogelsong",
+          "player": "Elijah Vogelsong",
+          "canonical_player_id": "cb-marshall-elijah-vogelsong"
+        },
+        {
+          "source_player_id": "cb-marshall-g-cabrera",
+          "source_player_name": "G. Cabrera",
+          "player": "Gabriel Cabrera",
+          "canonical_player_id": "cb-marshall-gabriel-cabrera"
+        },
+        {
+          "source_player_id": "cb-marshall-g-ferraro",
+          "source_player_name": "G. Ferraro",
+          "player": "Gio Ferraro",
+          "canonical_player_id": "cb-marshall-gio-ferraro"
+        },
+        {
+          "source_player_id": "cb-marshall-j-firestone",
+          "source_player_name": "J. Firestone",
+          "player": "Jack Firestone",
+          "canonical_player_id": "cb-marshall-jack-firestone"
+        },
+        {
+          "source_player_id": "cb-marshall-k-peralta",
+          "source_player_name": "K. Peralta",
+          "player": "Kebler Peralta",
+          "canonical_player_id": "cb-marshall-kebler-peralta"
+        },
+        {
+          "source_player_id": "cb-marshall-n-jodway",
+          "source_player_name": "N. Jodway",
+          "player": "Nick Jodway",
+          "canonical_player_id": "cb-marshall-nick-jodway"
+        },
+        {
+          "source_player_id": "cb-marshall-t-hondras",
+          "source_player_name": "T. Hondras",
+          "player": "Tre Hondras",
+          "canonical_player_id": "cb-marshall-tre-hondras"
+        }
       ]
     },
     {
@@ -582,19 +1302,84 @@
         "https://12thman.com/news/2025/07/13/lamkin-selected-71st-overall-by-the-kansas-city-royals"
       ],
       "corrections": [
-        {"source_player_id": "cb-texas-a-m-lamkin", "source_player_name": "Lamkin", "player": "Justin Lamkin", "canonical_player_id": "cb-texas-a-m-justin-lamkin"},
-        {"source_player_id":"cb-texas-a-m-kent","source_player_name":"Kent","player":"Kaeden Kent","canonical_player_id":"cb-texas-a-m-kaeden-kent"},
-        {"source_player_id":"cb-texas-a-m-laviolette","source_player_name":"Laviolette","player":"Jace Laviolette","canonical_player_id":"cb-texas-a-m-jace-laviolette"},
-        {"source_player_id":"cb-texas-a-m-george","source_player_name":"George","player":"Jamal George","canonical_player_id":"cb-texas-a-m-jamal-george"},
-        {"source_player_id":"cb-texas-a-m-henseler","source_player_name":"Henseler","player":"Wyatt Henseler","canonical_player_id":"cb-texas-a-m-wyatt-henseler"},
-        {"source_player_id":"cb-texas-a-m-kash","source_player_name":"Kash","player":"Gavin Kash","canonical_player_id":"cb-texas-a-m-gavin-kash"},
-        {"source_player_id":"cb-texas-a-m-schott","source_player_name":"Schott","player":"Hayden Schott","canonical_player_id":"cb-texas-a-m-hayden-schott"},
-        {"source_player_id":"cb-texas-a-m-binderup","source_player_name":"Binderup","player":"Blake Binderup","canonical_player_id":"cb-texas-a-m-blake-binderup"},
-        {"source_player_id":"cb-texas-a-m-royo","source_player_name":"Royo","player":"Ben Royo","canonical_player_id":"cb-texas-a-m-ben-royo"},
-        {"source_player_id":"cb-texas-a-m-farr","source_player_name":"Farr","player":"Sawyer Farr","canonical_player_id":"cb-texas-a-m-sawyer-farr"},
-        {"source_player_id":"cb-texas-a-m-wilson","source_player_name":"Wilson","player":"Jorian Wilson","canonical_player_id":"cb-texas-a-m-jorian-wilson"},
-        {"source_player_id":"cb-texas-a-m-freshcorn","source_player_name":"Freshcorn","player":"Clayton Freshcorn","canonical_player_id":"cb-texas-a-m-clayton-freshcorn"},
-        {"source_player_id":"cb-texas-a-m-kiel","source_player_name":"Kiel","player":"Terrence Kiel II","canonical_player_id":"cb-texas-a-m-terrence-kiel-ii"}
+        {
+          "source_player_id": "cb-texas-a-m-lamkin",
+          "source_player_name": "Lamkin",
+          "player": "Justin Lamkin",
+          "canonical_player_id": "cb-texas-a-m-justin-lamkin"
+        },
+        {
+          "source_player_id": "cb-texas-a-m-kent",
+          "source_player_name": "Kent",
+          "player": "Kaeden Kent",
+          "canonical_player_id": "cb-texas-a-m-kaeden-kent"
+        },
+        {
+          "source_player_id": "cb-texas-a-m-laviolette",
+          "source_player_name": "Laviolette",
+          "player": "Jace Laviolette",
+          "canonical_player_id": "cb-texas-a-m-jace-laviolette"
+        },
+        {
+          "source_player_id": "cb-texas-a-m-george",
+          "source_player_name": "George",
+          "player": "Jamal George",
+          "canonical_player_id": "cb-texas-a-m-jamal-george"
+        },
+        {
+          "source_player_id": "cb-texas-a-m-henseler",
+          "source_player_name": "Henseler",
+          "player": "Wyatt Henseler",
+          "canonical_player_id": "cb-texas-a-m-wyatt-henseler"
+        },
+        {
+          "source_player_id": "cb-texas-a-m-kash",
+          "source_player_name": "Kash",
+          "player": "Gavin Kash",
+          "canonical_player_id": "cb-texas-a-m-gavin-kash"
+        },
+        {
+          "source_player_id": "cb-texas-a-m-schott",
+          "source_player_name": "Schott",
+          "player": "Hayden Schott",
+          "canonical_player_id": "cb-texas-a-m-hayden-schott"
+        },
+        {
+          "source_player_id": "cb-texas-a-m-binderup",
+          "source_player_name": "Binderup",
+          "player": "Blake Binderup",
+          "canonical_player_id": "cb-texas-a-m-blake-binderup"
+        },
+        {
+          "source_player_id": "cb-texas-a-m-royo",
+          "source_player_name": "Royo",
+          "player": "Ben Royo",
+          "canonical_player_id": "cb-texas-a-m-ben-royo"
+        },
+        {
+          "source_player_id": "cb-texas-a-m-farr",
+          "source_player_name": "Farr",
+          "player": "Sawyer Farr",
+          "canonical_player_id": "cb-texas-a-m-sawyer-farr"
+        },
+        {
+          "source_player_id": "cb-texas-a-m-wilson",
+          "source_player_name": "Wilson",
+          "player": "Jorian Wilson",
+          "canonical_player_id": "cb-texas-a-m-jorian-wilson"
+        },
+        {
+          "source_player_id": "cb-texas-a-m-freshcorn",
+          "source_player_name": "Freshcorn",
+          "player": "Clayton Freshcorn",
+          "canonical_player_id": "cb-texas-a-m-clayton-freshcorn"
+        },
+        {
+          "source_player_id": "cb-texas-a-m-kiel",
+          "source_player_name": "Kiel",
+          "player": "Terrence Kiel II",
+          "canonical_player_id": "cb-texas-a-m-terrence-kiel-ii"
+        }
       ]
     },
     {
@@ -610,19 +1395,84 @@
         "https://texaslonghorns.com/news/2026/7/12/baseball-burns-picked-in-eighth-round-of-2026-mlb-draft"
       ],
       "corrections": [
-        {"source_player_id": "cb-texas-belyeu", "source_player_name": "Belyeu", "player": "Max Belyeu", "canonical_player_id": "cb-texas-max-belyeu"},
-        {"source_player_id": "cb-texas-flores", "source_player_name": "Flores", "player": "Jalin Flores", "canonical_player_id": "cb-texas-jalin-flores"},
-        {"source_player_id": "cb-texas-galvan", "source_player_name": "Galvan", "player": "Rylan Galvan", "canonical_player_id": "cb-texas-rylan-galvan"},
-        {"source_player_id": "cb-texas-saunier", "source_player_name": "Saunier", "player": "Grayson Saunier", "canonical_player_id": "cb-texas-grayson-saunier"},
-        {"source_player_id": "cb-texas-gasparino", "source_player_name": "Gasparino", "player": "Will Gasparino", "canonical_player_id": "cb-texas-will-gasparino"},
-        {"source_player_id": "cb-texas-burns", "source_player_name": "Burns", "player": "Thomas Burns", "canonical_player_id": "cb-texas-thomas-burns"},
-        {"source_player_id": "cb-texas-mendoza", "source_player_name": "Mendoza", "player": "Ethan Mendoza", "canonical_player_id": "cb-texas-ethan-mendoza"},
-        {"source_player_id": "cb-texas-rodriguez", "source_player_name": "Rodriguez", "player": "Adrian Rodriguez", "canonical_player_id": "cb-texas-adrian-rodriguez"},
-        {"source_player_id": "cb-texas-borba", "source_player_name": "Borba", "player": "Casey Borba", "canonical_player_id": "cb-texas-casey-borba"},
-        {"source_player_id": "cb-texas-walker", "source_player_name": "Walker", "player": "Ethan Walker", "canonical_player_id": "cb-texas-ethan-walker"},
-        {"source_player_id": "cb-texas-volantis", "source_player_name": "Volantis", "player": "Dylan Volantis", "canonical_player_id": "cb-texas-dylan-volantis"},
-        {"source_player_id": "cb-texas-grubbs", "source_player_name": "Grubbs", "player": "Max Grubbs", "canonical_player_id": "cb-texas-max-grubbs"},
-        {"source_player_id": "cb-texas-schuessler", "source_player_name": "Schuessler", "player": "Kimble Schuessler", "canonical_player_id": "cb-texas-kimble-schuessler"}
+        {
+          "source_player_id": "cb-texas-belyeu",
+          "source_player_name": "Belyeu",
+          "player": "Max Belyeu",
+          "canonical_player_id": "cb-texas-max-belyeu"
+        },
+        {
+          "source_player_id": "cb-texas-flores",
+          "source_player_name": "Flores",
+          "player": "Jalin Flores",
+          "canonical_player_id": "cb-texas-jalin-flores"
+        },
+        {
+          "source_player_id": "cb-texas-galvan",
+          "source_player_name": "Galvan",
+          "player": "Rylan Galvan",
+          "canonical_player_id": "cb-texas-rylan-galvan"
+        },
+        {
+          "source_player_id": "cb-texas-saunier",
+          "source_player_name": "Saunier",
+          "player": "Grayson Saunier",
+          "canonical_player_id": "cb-texas-grayson-saunier"
+        },
+        {
+          "source_player_id": "cb-texas-gasparino",
+          "source_player_name": "Gasparino",
+          "player": "Will Gasparino",
+          "canonical_player_id": "cb-texas-will-gasparino"
+        },
+        {
+          "source_player_id": "cb-texas-burns",
+          "source_player_name": "Burns",
+          "player": "Thomas Burns",
+          "canonical_player_id": "cb-texas-thomas-burns"
+        },
+        {
+          "source_player_id": "cb-texas-mendoza",
+          "source_player_name": "Mendoza",
+          "player": "Ethan Mendoza",
+          "canonical_player_id": "cb-texas-ethan-mendoza"
+        },
+        {
+          "source_player_id": "cb-texas-rodriguez",
+          "source_player_name": "Rodriguez",
+          "player": "Adrian Rodriguez",
+          "canonical_player_id": "cb-texas-adrian-rodriguez"
+        },
+        {
+          "source_player_id": "cb-texas-borba",
+          "source_player_name": "Borba",
+          "player": "Casey Borba",
+          "canonical_player_id": "cb-texas-casey-borba"
+        },
+        {
+          "source_player_id": "cb-texas-walker",
+          "source_player_name": "Walker",
+          "player": "Ethan Walker",
+          "canonical_player_id": "cb-texas-ethan-walker"
+        },
+        {
+          "source_player_id": "cb-texas-volantis",
+          "source_player_name": "Volantis",
+          "player": "Dylan Volantis",
+          "canonical_player_id": "cb-texas-dylan-volantis"
+        },
+        {
+          "source_player_id": "cb-texas-grubbs",
+          "source_player_name": "Grubbs",
+          "player": "Max Grubbs",
+          "canonical_player_id": "cb-texas-max-grubbs"
+        },
+        {
+          "source_player_id": "cb-texas-schuessler",
+          "source_player_name": "Schuessler",
+          "player": "Kimble Schuessler",
+          "canonical_player_id": "cb-texas-kimble-schuessler"
+        }
       ]
     },
     {
@@ -635,9 +1485,24 @@
         "https://wkusports.com/news/2025/7/13/baseball-san-diego-padres-select-ryan-wideman-in-third-round-of-2025-mlb-draft"
       ],
       "corrections": [
-        {"source_player_id": "cb-western-kentucky-r-wideman", "source_player_name": "R. Wideman", "player": "Ryan Wideman", "canonical_player_id": "cb-western-kentucky-ryan-wideman"},
-        {"source_player_id": "cb-western-kentucky-e-lizama", "source_player_name": "E. Lizama", "player": "Ethan Lizama", "canonical_player_id": "cb-south-carolina-ethan-lizama"},
-        {"source_player_id": "cb-western-kentucky-k-hvidsten", "source_player_name": "K. Hvidsten", "player": "Kyle Hvidsten", "canonical_player_id": "cb-liberty-kyle-hvidsten"}
+        {
+          "source_player_id": "cb-western-kentucky-r-wideman",
+          "source_player_name": "R. Wideman",
+          "player": "Ryan Wideman",
+          "canonical_player_id": "cb-western-kentucky-ryan-wideman"
+        },
+        {
+          "source_player_id": "cb-western-kentucky-e-lizama",
+          "source_player_name": "E. Lizama",
+          "player": "Ethan Lizama",
+          "canonical_player_id": "cb-south-carolina-ethan-lizama"
+        },
+        {
+          "source_player_id": "cb-western-kentucky-k-hvidsten",
+          "source_player_name": "K. Hvidsten",
+          "player": "Kyle Hvidsten",
+          "canonical_player_id": "cb-liberty-kyle-hvidsten"
+        }
       ]
     },
     {
@@ -650,17 +1515,72 @@
         "https://vucommodores.com/news/2025/07/14/2025-mlb-draft-day-2"
       ],
       "corrections": [
-        {"source_player_id": "cb-vanderbilt-bowker", "source_player_name": "Bowker", "player": "Cody Bowker", "canonical_player_id": "cb-vanderbilt-cody-bowker"},
-        {"source_player_id":"cb-vanderbilt-rigdon","source_player_name":"Rigdon","player":"Rustan Rigdon","canonical_player_id":"cb-vanderbilt-rustan-rigdon"},
-        {"source_player_id":"cb-vanderbilt-austin","source_player_name":"Austin","player":"RJ Austin","canonical_player_id":"cb-vanderbilt-rj-austin"},
-        {"source_player_id":"cb-vanderbilt-nelson","source_player_name":"Nelson","player":"Riley Nelson","canonical_player_id":"cb-vanderbilt-riley-nelson"},
-        {"source_player_id":"cb-vanderbilt-johnston","source_player_name":"Johnston","player":"Brodie Johnston","canonical_player_id":"cb-vanderbilt-brodie-johnston"},
-        {"source_player_id":"cb-vanderbilt-vastine","source_player_name":"Vastine","player":"Jonathan Vastine","canonical_player_id":"cb-vanderbilt-jonathan-vastine"},
-        {"source_player_id":"cb-vanderbilt-mancini","source_player_name":"Mancini","player":"Mike Mancini","canonical_player_id":"cb-vanderbilt-mike-mancini"},
-        {"source_player_id":"cb-vanderbilt-humphrey","source_player_name":"Humphrey","player":"Jacob Humphrey","canonical_player_id":"cb-vanderbilt-jacob-humphrey"},
-        {"source_player_id":"cb-vanderbilt-holcomb","source_player_name":"Holcomb","player":"Braden Holcomb","canonical_player_id":"cb-vanderbilt-braden-holcomb"},
-        {"source_player_id":"cb-vanderbilt-fennell","source_player_name":"Fennell","player":"Connor Fennell","canonical_player_id":"cb-vanderbilt-connor-fennell"},
-        {"source_player_id":"cb-vanderbilt-barczi","source_player_name":"Barczi","player":"Colin Barczi","canonical_player_id":"cb-vanderbilt-colin-barczi"}
+        {
+          "source_player_id": "cb-vanderbilt-bowker",
+          "source_player_name": "Bowker",
+          "player": "Cody Bowker",
+          "canonical_player_id": "cb-vanderbilt-cody-bowker"
+        },
+        {
+          "source_player_id": "cb-vanderbilt-rigdon",
+          "source_player_name": "Rigdon",
+          "player": "Rustan Rigdon",
+          "canonical_player_id": "cb-vanderbilt-rustan-rigdon"
+        },
+        {
+          "source_player_id": "cb-vanderbilt-austin",
+          "source_player_name": "Austin",
+          "player": "RJ Austin",
+          "canonical_player_id": "cb-vanderbilt-rj-austin"
+        },
+        {
+          "source_player_id": "cb-vanderbilt-nelson",
+          "source_player_name": "Nelson",
+          "player": "Riley Nelson",
+          "canonical_player_id": "cb-vanderbilt-riley-nelson"
+        },
+        {
+          "source_player_id": "cb-vanderbilt-johnston",
+          "source_player_name": "Johnston",
+          "player": "Brodie Johnston",
+          "canonical_player_id": "cb-vanderbilt-brodie-johnston"
+        },
+        {
+          "source_player_id": "cb-vanderbilt-vastine",
+          "source_player_name": "Vastine",
+          "player": "Jonathan Vastine",
+          "canonical_player_id": "cb-vanderbilt-jonathan-vastine"
+        },
+        {
+          "source_player_id": "cb-vanderbilt-mancini",
+          "source_player_name": "Mancini",
+          "player": "Mike Mancini",
+          "canonical_player_id": "cb-vanderbilt-mike-mancini"
+        },
+        {
+          "source_player_id": "cb-vanderbilt-humphrey",
+          "source_player_name": "Humphrey",
+          "player": "Jacob Humphrey",
+          "canonical_player_id": "cb-vanderbilt-jacob-humphrey"
+        },
+        {
+          "source_player_id": "cb-vanderbilt-holcomb",
+          "source_player_name": "Holcomb",
+          "player": "Braden Holcomb",
+          "canonical_player_id": "cb-vanderbilt-braden-holcomb"
+        },
+        {
+          "source_player_id": "cb-vanderbilt-fennell",
+          "source_player_name": "Fennell",
+          "player": "Connor Fennell",
+          "canonical_player_id": "cb-vanderbilt-connor-fennell"
+        },
+        {
+          "source_player_id": "cb-vanderbilt-barczi",
+          "source_player_name": "Barczi",
+          "player": "Colin Barczi",
+          "canonical_player_id": "cb-vanderbilt-colin-barczi"
+        }
       ]
     },
     {
@@ -674,7 +1594,12 @@
         "https://www.milb.com/player/jamie-hitt-699546"
       ],
       "corrections": [
-        {"source_player_id": "cb-oklahoma-james-hitt", "source_player_name": "James Hitt", "player": "Jamie Hitt", "canonical_player_id": "cb-oklahoma-jamie-hitt"}
+        {
+          "source_player_id": "cb-oklahoma-james-hitt",
+          "source_player_name": "James Hitt",
+          "player": "Jamie Hitt",
+          "canonical_player_id": "cb-oklahoma-jamie-hitt"
+        }
       ]
     },
     {
@@ -688,21 +1613,96 @@
         "https://www.mlb.com/press-release/d-backs-agree-to-terms-with-17-draft-picks"
       ],
       "corrections": [
-        {"source_player_id": "cb-mississippi-state-hines", "source_player_name": "Hines", "player": "Hunter Hines", "canonical_player_id": "cb-mississippi-state-hunter-hines"},
-        {"source_player_id": "cb-mississippi-state-dotson", "source_player_name": "Dotson", "player": "Luke Dotson", "canonical_player_id": "cb-mississippi-state-luke-dotson"},
-        {"source_player_id": "cb-mississippi-state-frei", "source_player_name": "Frei", "player": "Gehrig Frei", "canonical_player_id": "cb-mississippi-state-gehrig-frei"},
-        {"source_player_id": "cb-mississippi-state-reese", "source_player_name": "Reese", "player": "Ace Reese", "canonical_player_id": "cb-mississippi-state-ace-reese"},
-        {"source_player_id": "cb-mississippi-state-sullivan", "source_player_name": "Sullivan", "player": "Noah Sullivan", "canonical_player_id": "cb-mississippi-state-noah-sullivan"},
-        {"source_player_id": "cb-mississippi-state-chance", "source_player_name": "Chance", "player": "Bryce Chance", "canonical_player_id": "cb-mississippi-state-bryce-chance"},
-        {"source_player_id": "cb-mississippi-state-stallman", "source_player_name": "Stallman", "player": "Reed Stallman", "canonical_player_id": "cb-mississippi-state-reed-stallman"},
-        {"source_player_id": "cb-mississippi-state-davis", "source_player_name": "Davis", "player": "Ben Davis", "canonical_player_id": "cb-mississippi-state-ben-davis"},
-        {"source_player_id": "cb-mississippi-state-foster", "source_player_name": "Foster", "player": "Charlie Foster", "canonical_player_id": "cb-mississippi-state-charlie-foster"},
-        {"source_player_id": "cb-mississippi-state-highfill", "source_player_name": "Highfill", "player": "Ross Highfill", "canonical_player_id": "cb-mississippi-state-ross-highfill"},
-        {"source_player_id": "cb-mississippi-state-powell", "source_player_name": "Powell", "player": "Joe Powell", "canonical_player_id": "cb-mississippi-state-joe-powell"},
-        {"source_player_id": "cb-mississippi-state-reeves", "source_player_name": "Reeves", "player": "Sawyer Reeves", "canonical_player_id": "cb-mississippi-state-sawyer-reeves"},
-        {"source_player_id": "cb-mississippi-state-sanders", "source_player_name": "Sanders", "player": "Gatlin Sanders", "canonical_player_id": "cb-mississippi-state-gatlin-sanders"},
-        {"source_player_id": "cb-mississippi-state-spalitta", "source_player_name": "Spalitta", "player": "Steven Spalitta", "canonical_player_id": "cb-mississippi-state-steven-spalitta"},
-        {"source_player_id": "cb-mississippi-state-burns", "source_player_name": "Burns", "player": "Dane Burns", "canonical_player_id": "cb-mississippi-state-dane-burns"}
+        {
+          "source_player_id": "cb-mississippi-state-hines",
+          "source_player_name": "Hines",
+          "player": "Hunter Hines",
+          "canonical_player_id": "cb-mississippi-state-hunter-hines"
+        },
+        {
+          "source_player_id": "cb-mississippi-state-dotson",
+          "source_player_name": "Dotson",
+          "player": "Luke Dotson",
+          "canonical_player_id": "cb-mississippi-state-luke-dotson"
+        },
+        {
+          "source_player_id": "cb-mississippi-state-frei",
+          "source_player_name": "Frei",
+          "player": "Gehrig Frei",
+          "canonical_player_id": "cb-mississippi-state-gehrig-frei"
+        },
+        {
+          "source_player_id": "cb-mississippi-state-reese",
+          "source_player_name": "Reese",
+          "player": "Ace Reese",
+          "canonical_player_id": "cb-mississippi-state-ace-reese"
+        },
+        {
+          "source_player_id": "cb-mississippi-state-sullivan",
+          "source_player_name": "Sullivan",
+          "player": "Noah Sullivan",
+          "canonical_player_id": "cb-mississippi-state-noah-sullivan"
+        },
+        {
+          "source_player_id": "cb-mississippi-state-chance",
+          "source_player_name": "Chance",
+          "player": "Bryce Chance",
+          "canonical_player_id": "cb-mississippi-state-bryce-chance"
+        },
+        {
+          "source_player_id": "cb-mississippi-state-stallman",
+          "source_player_name": "Stallman",
+          "player": "Reed Stallman",
+          "canonical_player_id": "cb-mississippi-state-reed-stallman"
+        },
+        {
+          "source_player_id": "cb-mississippi-state-davis",
+          "source_player_name": "Davis",
+          "player": "Ben Davis",
+          "canonical_player_id": "cb-mississippi-state-ben-davis"
+        },
+        {
+          "source_player_id": "cb-mississippi-state-foster",
+          "source_player_name": "Foster",
+          "player": "Charlie Foster",
+          "canonical_player_id": "cb-mississippi-state-charlie-foster"
+        },
+        {
+          "source_player_id": "cb-mississippi-state-highfill",
+          "source_player_name": "Highfill",
+          "player": "Ross Highfill",
+          "canonical_player_id": "cb-mississippi-state-ross-highfill"
+        },
+        {
+          "source_player_id": "cb-mississippi-state-powell",
+          "source_player_name": "Powell",
+          "player": "Joe Powell",
+          "canonical_player_id": "cb-mississippi-state-joe-powell"
+        },
+        {
+          "source_player_id": "cb-mississippi-state-reeves",
+          "source_player_name": "Reeves",
+          "player": "Sawyer Reeves",
+          "canonical_player_id": "cb-mississippi-state-sawyer-reeves"
+        },
+        {
+          "source_player_id": "cb-mississippi-state-sanders",
+          "source_player_name": "Sanders",
+          "player": "Gatlin Sanders",
+          "canonical_player_id": "cb-mississippi-state-gatlin-sanders"
+        },
+        {
+          "source_player_id": "cb-mississippi-state-spalitta",
+          "source_player_name": "Spalitta",
+          "player": "Steven Spalitta",
+          "canonical_player_id": "cb-mississippi-state-steven-spalitta"
+        },
+        {
+          "source_player_id": "cb-mississippi-state-burns",
+          "source_player_name": "Burns",
+          "player": "Dane Burns",
+          "canonical_player_id": "cb-mississippi-state-dane-burns"
+        }
       ]
     },
     {
@@ -716,24 +1716,114 @@
         "https://static.virginiasports.com/custompages/sports/m-basebl/stats/2024-2025/SeasonStats.pdf"
       ],
       "corrections": [
-        {"source_player_id": "cb-virginia-becker", "source_player_name": "Becker", "player": "Eric Becker", "canonical_player_id": "cb-virginia-eric-becker"},
-        {"source_player_id": "cb-virginia-a-teel", "source_player_name": "A. Teel", "player": "Aidan Teel", "canonical_player_id": "cb-virginia-aidan-teel"},
-        {"source_player_id": "cb-virginia-h-ford", "source_player_name": "H. Ford", "player": "Henry Ford", "canonical_player_id": "cb-virginia-henry-ford"},
-        {"source_player_id": "cb-virginia-arroyo", "source_player_name": "Arroyo", "player": "Chris Arroyo", "canonical_player_id": "cb-virginia-chris-arroyo"},
-        {"source_player_id": "cb-virginia-godbout", "source_player_name": "Godbout", "player": "Henry Godbout", "canonical_player_id": "cb-virginia-henry-godbout"},
-        {"source_player_id": "cb-virginia-w-buchanan", "source_player_name": "W. Buchanan", "player": "Walker Buchanan", "canonical_player_id": "cb-virginia-walker-buchanan"},
-        {"source_player_id": "cb-virginia-ference", "source_player_name": "Ference", "player": "Jacob Ference", "canonical_player_id": "cb-virginia-jacob-ference"},
-        {"source_player_id": "cb-virginia-didawick", "source_player_name": "Didawick", "player": "Harrison Didawick", "canonical_player_id": "cb-virginia-harrison-didawick"},
-        {"source_player_id": "cb-virginia-james", "source_player_name": "James", "player": "Chone James", "canonical_player_id": "cb-virginia-chone-james"},
-        {"source_player_id": "cb-virginia-nunnallee", "source_player_name": "Nunnallee", "player": "James Nunnallee", "canonical_player_id": "cb-virginia-james-nunnallee"},
-        {"source_player_id": "cb-virginia-hanson", "source_player_name": "Hanson", "player": "Luke Hanson", "canonical_player_id": "cb-virginia-luke-hanson"},
-        {"source_player_id": "cb-virginia-hodges", "source_player_name": "Hodges", "player": "Bradley Hodges", "canonical_player_id": "cb-virginia-bradley-hodges"},
-        {"source_player_id": "cb-virginia-markus", "source_player_name": "Markus", "player": "Alex Markus", "canonical_player_id": "cb-virginia-alex-markus"},
-        {"source_player_id": "cb-virginia-arrington", "source_player_name": "Arrington", "player": "Wes Arrington", "canonical_player_id": "cb-virginia-wes-arrington"},
-        {"source_player_id": "cb-virginia-jaxel", "source_player_name": "Jaxel", "player": "Kevin Jaxel", "canonical_player_id": "cb-virginia-kevin-jaxel"},
-        {"source_player_id": "cb-virginia-osinski", "source_player_name": "Osinski", "player": "Ryan Osinski", "canonical_player_id": "cb-virginia-ryan-osinski"},
-        {"source_player_id": "cb-virginia-m-buchanan", "source_player_name": "M. Buchanan", "player": "Matthew Buchanan", "canonical_player_id": "cb-virginia-matthew-buchanan"},
-        {"source_player_id": "cb-virginia-koenen", "source_player_name": "Koenen", "player": "Drew Koenen", "canonical_player_id": "cb-virginia-drew-koenen"}
+        {
+          "source_player_id": "cb-virginia-becker",
+          "source_player_name": "Becker",
+          "player": "Eric Becker",
+          "canonical_player_id": "cb-virginia-eric-becker"
+        },
+        {
+          "source_player_id": "cb-virginia-a-teel",
+          "source_player_name": "A. Teel",
+          "player": "Aidan Teel",
+          "canonical_player_id": "cb-virginia-aidan-teel"
+        },
+        {
+          "source_player_id": "cb-virginia-h-ford",
+          "source_player_name": "H. Ford",
+          "player": "Henry Ford",
+          "canonical_player_id": "cb-virginia-henry-ford"
+        },
+        {
+          "source_player_id": "cb-virginia-arroyo",
+          "source_player_name": "Arroyo",
+          "player": "Chris Arroyo",
+          "canonical_player_id": "cb-virginia-chris-arroyo"
+        },
+        {
+          "source_player_id": "cb-virginia-godbout",
+          "source_player_name": "Godbout",
+          "player": "Henry Godbout",
+          "canonical_player_id": "cb-virginia-henry-godbout"
+        },
+        {
+          "source_player_id": "cb-virginia-w-buchanan",
+          "source_player_name": "W. Buchanan",
+          "player": "Walker Buchanan",
+          "canonical_player_id": "cb-virginia-walker-buchanan"
+        },
+        {
+          "source_player_id": "cb-virginia-ference",
+          "source_player_name": "Ference",
+          "player": "Jacob Ference",
+          "canonical_player_id": "cb-virginia-jacob-ference"
+        },
+        {
+          "source_player_id": "cb-virginia-didawick",
+          "source_player_name": "Didawick",
+          "player": "Harrison Didawick",
+          "canonical_player_id": "cb-virginia-harrison-didawick"
+        },
+        {
+          "source_player_id": "cb-virginia-james",
+          "source_player_name": "James",
+          "player": "Chone James",
+          "canonical_player_id": "cb-virginia-chone-james"
+        },
+        {
+          "source_player_id": "cb-virginia-nunnallee",
+          "source_player_name": "Nunnallee",
+          "player": "James Nunnallee",
+          "canonical_player_id": "cb-virginia-james-nunnallee"
+        },
+        {
+          "source_player_id": "cb-virginia-hanson",
+          "source_player_name": "Hanson",
+          "player": "Luke Hanson",
+          "canonical_player_id": "cb-virginia-luke-hanson"
+        },
+        {
+          "source_player_id": "cb-virginia-hodges",
+          "source_player_name": "Hodges",
+          "player": "Bradley Hodges",
+          "canonical_player_id": "cb-virginia-bradley-hodges"
+        },
+        {
+          "source_player_id": "cb-virginia-markus",
+          "source_player_name": "Markus",
+          "player": "Alex Markus",
+          "canonical_player_id": "cb-virginia-alex-markus"
+        },
+        {
+          "source_player_id": "cb-virginia-arrington",
+          "source_player_name": "Arrington",
+          "player": "Wes Arrington",
+          "canonical_player_id": "cb-virginia-wes-arrington"
+        },
+        {
+          "source_player_id": "cb-virginia-jaxel",
+          "source_player_name": "Jaxel",
+          "player": "Kevin Jaxel",
+          "canonical_player_id": "cb-virginia-kevin-jaxel"
+        },
+        {
+          "source_player_id": "cb-virginia-osinski",
+          "source_player_name": "Osinski",
+          "player": "Ryan Osinski",
+          "canonical_player_id": "cb-virginia-ryan-osinski"
+        },
+        {
+          "source_player_id": "cb-virginia-m-buchanan",
+          "source_player_name": "M. Buchanan",
+          "player": "Matthew Buchanan",
+          "canonical_player_id": "cb-virginia-matthew-buchanan"
+        },
+        {
+          "source_player_id": "cb-virginia-koenen",
+          "source_player_name": "Koenen",
+          "player": "Drew Koenen",
+          "canonical_player_id": "cb-virginia-drew-koenen"
+        }
       ]
     },
     {
@@ -741,17 +1831,65 @@
       "team": "San Diego",
       "description": "Expand verified 2018 San Diego first-initial gamebook names and reconcile related full-name and spelling variants with their existing profiles, keeping batting and pitching lines unchanged.",
       "verified_on": "2026-11-02",
-      "evidence_urls": ["https://calbears.com/sports/baseball/stats/2018/san-diego/boxscore/19869","https://usdtoreros.com/sports/baseball/roster/2018"],
+      "evidence_urls": [
+        "https://calbears.com/sports/baseball/stats/2018/san-diego/boxscore/19869",
+        "https://usdtoreros.com/sports/baseball/roster/2018"
+      ],
       "corrections": [
-        {"source_player_id":"cb-san-diego-b-bewley","source_player_name":"B Bewley","player":"Brhet Bewley","canonical_player_id":"cb-san-diego-brhet-bewley"},
-        {"source_player_id":"cb-san-diego-j-schuyler","source_player_name":"J Schuyler","player":"Jay Schuyler","canonical_player_id":"cb-san-diego-jay-schuyler"},
-        {"source_player_id":"cb-san-diego-t-herburger","source_player_name":"T Herburger","player":"Tyler Herburger","canonical_player_id":"cb-san-diego-tyler-herburger"},
-        {"source_player_id":"cb-san-diego-dan-gardner","source_player_name":"Dan Gardner","player":"Daniel Gardner","canonical_player_id":"cb-san-diego-daniel-gardner"},
-        {"source_player_id":"cb-san-diego-g-calvert","source_player_name":"G Calvert","player":"Garrett Calvert","canonical_player_id":"cb-san-diego-garrett-calvert"},
-        {"source_player_id":"cb-san-diego-k-collard","source_player_name":"K. Collard","player":"Kevin Collard","canonical_player_id":"cb-san-diego-kevin-collard"},
-        {"source_player_id":"cb-san-diego-j-houghtby","source_player_name":"J Houghtby","player":"Jeff Houghtby","canonical_player_id":"cb-san-diego-jeff-houghtby"},
-        {"source_player_id":"cb-san-diego-d-gutierrez","source_player_name":"D Gutierrez","player":"Dante Gutierrez","canonical_player_id":"cb-san-diego-dante-gutierrez"},
-        {"source_player_id":"cb-san-diego-a-donatella","source_player_name":"A Donatella","player":"Anthony Donatella","canonical_player_id":"cb-san-diego-anthony-donatella"}
+        {
+          "source_player_id": "cb-san-diego-b-bewley",
+          "source_player_name": "B Bewley",
+          "player": "Brhet Bewley",
+          "canonical_player_id": "cb-san-diego-brhet-bewley"
+        },
+        {
+          "source_player_id": "cb-san-diego-j-schuyler",
+          "source_player_name": "J Schuyler",
+          "player": "Jay Schuyler",
+          "canonical_player_id": "cb-san-diego-jay-schuyler"
+        },
+        {
+          "source_player_id": "cb-san-diego-t-herburger",
+          "source_player_name": "T Herburger",
+          "player": "Tyler Herburger",
+          "canonical_player_id": "cb-san-diego-tyler-herburger"
+        },
+        {
+          "source_player_id": "cb-san-diego-dan-gardner",
+          "source_player_name": "Dan Gardner",
+          "player": "Daniel Gardner",
+          "canonical_player_id": "cb-san-diego-daniel-gardner"
+        },
+        {
+          "source_player_id": "cb-san-diego-g-calvert",
+          "source_player_name": "G Calvert",
+          "player": "Garrett Calvert",
+          "canonical_player_id": "cb-san-diego-garrett-calvert"
+        },
+        {
+          "source_player_id": "cb-san-diego-k-collard",
+          "source_player_name": "K. Collard",
+          "player": "Kevin Collard",
+          "canonical_player_id": "cb-san-diego-kevin-collard"
+        },
+        {
+          "source_player_id": "cb-san-diego-j-houghtby",
+          "source_player_name": "J Houghtby",
+          "player": "Jeff Houghtby",
+          "canonical_player_id": "cb-san-diego-jeff-houghtby"
+        },
+        {
+          "source_player_id": "cb-san-diego-d-gutierrez",
+          "source_player_name": "D Gutierrez",
+          "player": "Dante Gutierrez",
+          "canonical_player_id": "cb-san-diego-dante-gutierrez"
+        },
+        {
+          "source_player_id": "cb-san-diego-a-donatella",
+          "source_player_name": "A Donatella",
+          "player": "Anthony Donatella",
+          "canonical_player_id": "cb-san-diego-anthony-donatella"
+        }
       ]
     },
     {
@@ -759,18 +1897,71 @@
       "team": "San Diego",
       "description": "Expand verified 2018 San Diego first-initial gamebook names and reconcile related full-name and spelling variants with their existing profiles, keeping batting and pitching lines unchanged.",
       "verified_on": "2026-11-02",
-      "evidence_urls": ["https://calbears.com/sports/baseball/stats/2018/san-diego/boxscore/19870","https://usdtoreros.com/sports/baseball/roster/2018"],
+      "evidence_urls": [
+        "https://calbears.com/sports/baseball/stats/2018/san-diego/boxscore/19870",
+        "https://usdtoreros.com/sports/baseball/roster/2018"
+      ],
       "corrections": [
-        {"source_player_id":"cb-san-diego-b-bewley","source_player_name":"B Bewley","player":"Brhet Bewley","canonical_player_id":"cb-san-diego-brhet-bewley"},
-        {"source_player_id":"cb-san-diego-j-schuyler","source_player_name":"J Schuyler","player":"Jay Schuyler","canonical_player_id":"cb-san-diego-jay-schuyler"},
-        {"source_player_id":"cb-san-diego-dan-gardner","source_player_name":"Dan Gardner","player":"Daniel Gardner","canonical_player_id":"cb-san-diego-daniel-gardner"},
-        {"source_player_id":"cb-san-diego-t-herburger","source_player_name":"T Herburger","player":"Tyler Herburger","canonical_player_id":"cb-san-diego-tyler-herburger"},
-        {"source_player_id":"cb-san-diego-n-prewett","source_player_name":"N Prewett","player":"Noah Prewett","canonical_player_id":"cb-san-diego-noah-prewett"},
-        {"source_player_id":"cb-san-diego-c-colarossi","source_player_name":"C Colarossi","player":"Chris Colarossi","canonical_player_id":"cb-san-diego-chris-colarossi"},
-        {"source_player_id":"cb-san-diego-k-collard","source_player_name":"K. Collard","player":"Kevin Collard","canonical_player_id":"cb-san-diego-kevin-collard"},
-        {"source_player_id":"cb-san-diego-s-mcguire","source_player_name":"S McGuire","player":"Shane McGuire","canonical_player_id":"cb-san-diego-shane-mcguire"},
-        {"source_player_id":"cb-san-diego-j-houghtby","source_player_name":"J Houghtby","player":"Jeff Houghtby","canonical_player_id":"cb-san-diego-jeff-houghtby"},
-        {"source_player_id":"cb-san-diego-c-murphy","source_player_name":"C Murphy","player":"Chris Murphy","canonical_player_id":"cb-san-diego-chris-murphy"}
+        {
+          "source_player_id": "cb-san-diego-b-bewley",
+          "source_player_name": "B Bewley",
+          "player": "Brhet Bewley",
+          "canonical_player_id": "cb-san-diego-brhet-bewley"
+        },
+        {
+          "source_player_id": "cb-san-diego-j-schuyler",
+          "source_player_name": "J Schuyler",
+          "player": "Jay Schuyler",
+          "canonical_player_id": "cb-san-diego-jay-schuyler"
+        },
+        {
+          "source_player_id": "cb-san-diego-dan-gardner",
+          "source_player_name": "Dan Gardner",
+          "player": "Daniel Gardner",
+          "canonical_player_id": "cb-san-diego-daniel-gardner"
+        },
+        {
+          "source_player_id": "cb-san-diego-t-herburger",
+          "source_player_name": "T Herburger",
+          "player": "Tyler Herburger",
+          "canonical_player_id": "cb-san-diego-tyler-herburger"
+        },
+        {
+          "source_player_id": "cb-san-diego-n-prewett",
+          "source_player_name": "N Prewett",
+          "player": "Noah Prewett",
+          "canonical_player_id": "cb-san-diego-noah-prewett"
+        },
+        {
+          "source_player_id": "cb-san-diego-c-colarossi",
+          "source_player_name": "C Colarossi",
+          "player": "Chris Colarossi",
+          "canonical_player_id": "cb-san-diego-chris-colarossi"
+        },
+        {
+          "source_player_id": "cb-san-diego-k-collard",
+          "source_player_name": "K. Collard",
+          "player": "Kevin Collard",
+          "canonical_player_id": "cb-san-diego-kevin-collard"
+        },
+        {
+          "source_player_id": "cb-san-diego-s-mcguire",
+          "source_player_name": "S McGuire",
+          "player": "Shane McGuire",
+          "canonical_player_id": "cb-san-diego-shane-mcguire"
+        },
+        {
+          "source_player_id": "cb-san-diego-j-houghtby",
+          "source_player_name": "J Houghtby",
+          "player": "Jeff Houghtby",
+          "canonical_player_id": "cb-san-diego-jeff-houghtby"
+        },
+        {
+          "source_player_id": "cb-san-diego-c-murphy",
+          "source_player_name": "C Murphy",
+          "player": "Chris Murphy",
+          "canonical_player_id": "cb-san-diego-chris-murphy"
+        }
       ]
     },
     {
@@ -778,9 +1969,17 @@
       "team": "San Diego",
       "description": "Expand verified 2018 San Diego first-initial gamebook names and reconcile related full-name and spelling variants with their existing profiles, keeping batting and pitching lines unchanged.",
       "verified_on": "2026-11-02",
-      "evidence_urls": ["https://storage.googleapis.com/gobearcats-com-prod/2025/06/23/qre66UMRSF5t969mTcx51AEMiCvv3XATSOCaqyhH.pdf","https://usdtoreros.com/sports/baseball/roster/2018"],
+      "evidence_urls": [
+        "https://storage.googleapis.com/gobearcats-com-prod/2025/06/23/qre66UMRSF5t969mTcx51AEMiCvv3XATSOCaqyhH.pdf",
+        "https://usdtoreros.com/sports/baseball/roster/2018"
+      ],
       "corrections": [
-        {"source_player_id":"cb-san-diego-trevor-rosenburg","source_player_name":"Trevor ROSENBURG","player":"Trevor Rosenberg","canonical_player_id":"cb-san-diego-trevor-rosenberg"}
+        {
+          "source_player_id": "cb-san-diego-trevor-rosenburg",
+          "source_player_name": "Trevor ROSENBURG",
+          "player": "Trevor Rosenberg",
+          "canonical_player_id": "cb-san-diego-trevor-rosenberg"
+        }
       ]
     },
     {
@@ -788,10 +1987,23 @@
       "team": "San Diego",
       "description": "Expand verified 2018 San Diego first-initial gamebook names and reconcile related full-name and spelling variants with their existing profiles, keeping batting and pitching lines unchanged.",
       "verified_on": "2026-11-02",
-      "evidence_urls": ["https://storage.googleapis.com/gobearcats-com-prod/2025/06/29/EIKFzFi4XIx7rW5a9UvwMzpwiQSNIr5qQEvTHkBg.pdf","https://usdtoreros.com/sports/baseball/roster/2018"],
+      "evidence_urls": [
+        "https://storage.googleapis.com/gobearcats-com-prod/2025/06/29/EIKFzFi4XIx7rW5a9UvwMzpwiQSNIr5qQEvTHkBg.pdf",
+        "https://usdtoreros.com/sports/baseball/roster/2018"
+      ],
       "corrections": [
-        {"source_player_id":"cb-san-diego-trevor-rosenburg","source_player_name":"Trevor ROSENBURG","player":"Trevor Rosenberg","canonical_player_id":"cb-san-diego-trevor-rosenberg"},
-        {"source_player_id":"cb-san-diego-nate-walker","source_player_name":"Nate WALKER","player":"Nathan Walker","canonical_player_id":"cb-san-diego-nathan-walker"}
+        {
+          "source_player_id": "cb-san-diego-trevor-rosenburg",
+          "source_player_name": "Trevor ROSENBURG",
+          "player": "Trevor Rosenberg",
+          "canonical_player_id": "cb-san-diego-trevor-rosenberg"
+        },
+        {
+          "source_player_id": "cb-san-diego-nate-walker",
+          "source_player_name": "Nate WALKER",
+          "player": "Nathan Walker",
+          "canonical_player_id": "cb-san-diego-nathan-walker"
+        }
       ]
     },
     {
@@ -799,18 +2011,71 @@
       "team": "San Diego",
       "description": "Expand verified 2018 San Diego first-initial gamebook names and reconcile related full-name and spelling variants with their existing profiles, keeping batting and pitching lines unchanged.",
       "verified_on": "2026-11-02",
-      "evidence_urls": ["https://gculopes.com/sports/baseball/stats/2018/san-diego/boxscore/10239","https://usdtoreros.com/sports/baseball/roster/2018"],
+      "evidence_urls": [
+        "https://gculopes.com/sports/baseball/stats/2018/san-diego/boxscore/10239",
+        "https://usdtoreros.com/sports/baseball/roster/2018"
+      ],
       "corrections": [
-        {"source_player_id":"cb-san-diego-j-schuyler","source_player_name":"J Schuyler","player":"Jay Schuyler","canonical_player_id":"cb-san-diego-jay-schuyler"},
-        {"source_player_id":"cb-san-diego-dan-gardner","source_player_name":"Dan Gardner","player":"Daniel Gardner","canonical_player_id":"cb-san-diego-daniel-gardner"},
-        {"source_player_id":"cb-san-diego-s-mcguire","source_player_name":"S McGuire","player":"Shane McGuire","canonical_player_id":"cb-san-diego-shane-mcguire"},
-        {"source_player_id":"cb-san-diego-b-bewley","source_player_name":"B Bewley","player":"Brhet Bewley","canonical_player_id":"cb-san-diego-brhet-bewley"},
-        {"source_player_id":"cb-san-diego-k-collard","source_player_name":"K. Collard","player":"Kevin Collard","canonical_player_id":"cb-san-diego-kevin-collard"},
-        {"source_player_id":"cb-san-diego-c-colarossi","source_player_name":"C Colarossi","player":"Chris Colarossi","canonical_player_id":"cb-san-diego-chris-colarossi"},
-        {"source_player_id":"cb-san-diego-j-houghtby","source_player_name":"J Houghtby","player":"Jeff Houghtby","canonical_player_id":"cb-san-diego-jeff-houghtby"},
-        {"source_player_id":"cb-san-diego-g-calvert","source_player_name":"G Calvert","player":"Garrett Calvert","canonical_player_id":"cb-san-diego-garrett-calvert"},
-        {"source_player_id":"cb-san-diego-t-rosenberg","source_player_name":"T Rosenberg","player":"Trevor Rosenberg","canonical_player_id":"cb-san-diego-trevor-rosenberg"},
-        {"source_player_id":"cb-san-diego-c-murphy","source_player_name":"C Murphy","player":"Chris Murphy","canonical_player_id":"cb-san-diego-chris-murphy"}
+        {
+          "source_player_id": "cb-san-diego-j-schuyler",
+          "source_player_name": "J Schuyler",
+          "player": "Jay Schuyler",
+          "canonical_player_id": "cb-san-diego-jay-schuyler"
+        },
+        {
+          "source_player_id": "cb-san-diego-dan-gardner",
+          "source_player_name": "Dan Gardner",
+          "player": "Daniel Gardner",
+          "canonical_player_id": "cb-san-diego-daniel-gardner"
+        },
+        {
+          "source_player_id": "cb-san-diego-s-mcguire",
+          "source_player_name": "S McGuire",
+          "player": "Shane McGuire",
+          "canonical_player_id": "cb-san-diego-shane-mcguire"
+        },
+        {
+          "source_player_id": "cb-san-diego-b-bewley",
+          "source_player_name": "B Bewley",
+          "player": "Brhet Bewley",
+          "canonical_player_id": "cb-san-diego-brhet-bewley"
+        },
+        {
+          "source_player_id": "cb-san-diego-k-collard",
+          "source_player_name": "K. Collard",
+          "player": "Kevin Collard",
+          "canonical_player_id": "cb-san-diego-kevin-collard"
+        },
+        {
+          "source_player_id": "cb-san-diego-c-colarossi",
+          "source_player_name": "C Colarossi",
+          "player": "Chris Colarossi",
+          "canonical_player_id": "cb-san-diego-chris-colarossi"
+        },
+        {
+          "source_player_id": "cb-san-diego-j-houghtby",
+          "source_player_name": "J Houghtby",
+          "player": "Jeff Houghtby",
+          "canonical_player_id": "cb-san-diego-jeff-houghtby"
+        },
+        {
+          "source_player_id": "cb-san-diego-g-calvert",
+          "source_player_name": "G Calvert",
+          "player": "Garrett Calvert",
+          "canonical_player_id": "cb-san-diego-garrett-calvert"
+        },
+        {
+          "source_player_id": "cb-san-diego-t-rosenberg",
+          "source_player_name": "T Rosenberg",
+          "player": "Trevor Rosenberg",
+          "canonical_player_id": "cb-san-diego-trevor-rosenberg"
+        },
+        {
+          "source_player_id": "cb-san-diego-c-murphy",
+          "source_player_name": "C Murphy",
+          "player": "Chris Murphy",
+          "canonical_player_id": "cb-san-diego-chris-murphy"
+        }
       ]
     },
     {
@@ -818,9 +2083,18 @@
       "team": "Arizona",
       "description": "Expand Arizona's T. Soderstrom to Tate Soderstrom and combine this 2018 appearance with his verified 2021 UC San Diego profile.",
       "verified_on": "2026-11-02",
-      "evidence_urls": ["https://arizonawildcats.com/sports/baseball/stats/2018/tony-gwynn-classic-vs-san-diego/boxscore/15291","https://arizonawildcats.com/sports/baseball/roster/2018","https://ucsdtritons.com/sports/baseball/roster/tate-soderstrom/10975"],
+      "evidence_urls": [
+        "https://arizonawildcats.com/sports/baseball/stats/2018/tony-gwynn-classic-vs-san-diego/boxscore/15291",
+        "https://arizonawildcats.com/sports/baseball/roster/2018",
+        "https://ucsdtritons.com/sports/baseball/roster/tate-soderstrom/10975"
+      ],
       "corrections": [
-        {"source_player_id":"cb-arizona-t-soderstrom","source_player_name":"T. Soderstrom","player":"Tate Soderstrom","canonical_player_id":"cb-uc-san-diego-tate-soderstrom"}
+        {
+          "source_player_id": "cb-arizona-t-soderstrom",
+          "source_player_name": "T. Soderstrom",
+          "player": "Tate Soderstrom",
+          "canonical_player_id": "cb-uc-san-diego-tate-soderstrom"
+        }
       ]
     },
     {
@@ -828,17 +2102,65 @@
       "team": "San Diego",
       "description": "Expand verified 2018 San Diego first-initial gamebook names and reconcile related full-name and spelling variants with their existing profiles, keeping batting and pitching lines unchanged.",
       "verified_on": "2026-11-02",
-      "evidence_urls": ["https://arizonawildcats.com/sports/baseball/stats/2018/tony-gwynn-classic-vs-san-diego/boxscore/15291","https://usdtoreros.com/sports/baseball/roster/2018"],
+      "evidence_urls": [
+        "https://arizonawildcats.com/sports/baseball/stats/2018/tony-gwynn-classic-vs-san-diego/boxscore/15291",
+        "https://usdtoreros.com/sports/baseball/roster/2018"
+      ],
       "corrections": [
-        {"source_player_id":"cb-san-diego-j-schuyler","source_player_name":"J Schuyler","player":"Jay Schuyler","canonical_player_id":"cb-san-diego-jay-schuyler"},
-        {"source_player_id":"cb-san-diego-b-bewley","source_player_name":"B Bewley","player":"Brhet Bewley","canonical_player_id":"cb-san-diego-brhet-bewley"},
-        {"source_player_id":"cb-san-diego-g-calvert","source_player_name":"G Calvert","player":"Garrett Calvert","canonical_player_id":"cb-san-diego-garrett-calvert"},
-        {"source_player_id":"cb-san-diego-d-gutierrez","source_player_name":"D Gutierrez","player":"Dante Gutierrez","canonical_player_id":"cb-san-diego-dante-gutierrez"},
-        {"source_player_id":"cb-san-diego-c-doyle","source_player_name":"C. Doyle","player":"Connor Doyle","canonical_player_id":"cb-san-diego-connor-doyle"},
-        {"source_player_id":"cb-san-diego-s-mcguire","source_player_name":"S McGuire","player":"Shane McGuire","canonical_player_id":"cb-san-diego-shane-mcguire"},
-        {"source_player_id":"cb-san-diego-dan-gardner","source_player_name":"Dan Gardner","player":"Daniel Gardner","canonical_player_id":"cb-san-diego-daniel-gardner"},
-        {"source_player_id":"cb-san-diego-t-rosenberg","source_player_name":"T Rosenberg","player":"Trevor Rosenberg","canonical_player_id":"cb-san-diego-trevor-rosenberg"},
-        {"source_player_id":"cb-san-diego-nate-walker","source_player_name":"Nate Walker","player":"Nathan Walker","canonical_player_id":"cb-san-diego-nathan-walker"}
+        {
+          "source_player_id": "cb-san-diego-j-schuyler",
+          "source_player_name": "J Schuyler",
+          "player": "Jay Schuyler",
+          "canonical_player_id": "cb-san-diego-jay-schuyler"
+        },
+        {
+          "source_player_id": "cb-san-diego-b-bewley",
+          "source_player_name": "B Bewley",
+          "player": "Brhet Bewley",
+          "canonical_player_id": "cb-san-diego-brhet-bewley"
+        },
+        {
+          "source_player_id": "cb-san-diego-g-calvert",
+          "source_player_name": "G Calvert",
+          "player": "Garrett Calvert",
+          "canonical_player_id": "cb-san-diego-garrett-calvert"
+        },
+        {
+          "source_player_id": "cb-san-diego-d-gutierrez",
+          "source_player_name": "D Gutierrez",
+          "player": "Dante Gutierrez",
+          "canonical_player_id": "cb-san-diego-dante-gutierrez"
+        },
+        {
+          "source_player_id": "cb-san-diego-c-doyle",
+          "source_player_name": "C. Doyle",
+          "player": "Connor Doyle",
+          "canonical_player_id": "cb-san-diego-connor-doyle"
+        },
+        {
+          "source_player_id": "cb-san-diego-s-mcguire",
+          "source_player_name": "S McGuire",
+          "player": "Shane McGuire",
+          "canonical_player_id": "cb-san-diego-shane-mcguire"
+        },
+        {
+          "source_player_id": "cb-san-diego-dan-gardner",
+          "source_player_name": "Dan Gardner",
+          "player": "Daniel Gardner",
+          "canonical_player_id": "cb-san-diego-daniel-gardner"
+        },
+        {
+          "source_player_id": "cb-san-diego-t-rosenberg",
+          "source_player_name": "T Rosenberg",
+          "player": "Trevor Rosenberg",
+          "canonical_player_id": "cb-san-diego-trevor-rosenberg"
+        },
+        {
+          "source_player_id": "cb-san-diego-nate-walker",
+          "source_player_name": "Nate Walker",
+          "player": "Nathan Walker",
+          "canonical_player_id": "cb-san-diego-nathan-walker"
+        }
       ]
     },
     {
@@ -846,9 +2168,17 @@
       "team": "San Diego",
       "description": "Expand verified 2018 San Diego first-initial gamebook names and reconcile related full-name and spelling variants with their existing profiles, keeping batting and pitching lines unchanged.",
       "verified_on": "2026-11-02",
-      "evidence_urls": ["https://iuhoosiers.com/sports/baseball/stats/2018/-13-san-diego/boxscore/13857","https://usdtoreros.com/sports/baseball/roster/2018"],
+      "evidence_urls": [
+        "https://iuhoosiers.com/sports/baseball/stats/2018/-13-san-diego/boxscore/13857",
+        "https://usdtoreros.com/sports/baseball/roster/2018"
+      ],
       "corrections": [
-        {"source_player_id":"cb-san-diego-nate-walker","source_player_name":"Nate Walker","player":"Nathan Walker","canonical_player_id":"cb-san-diego-nathan-walker"}
+        {
+          "source_player_id": "cb-san-diego-nate-walker",
+          "source_player_name": "Nate Walker",
+          "player": "Nathan Walker",
+          "canonical_player_id": "cb-san-diego-nathan-walker"
+        }
       ]
     },
     {
@@ -856,9 +2186,17 @@
       "team": "San Diego",
       "description": "Expand verified 2018 San Diego first-initial gamebook names and reconcile related full-name and spelling variants with their existing profiles, keeping batting and pitching lines unchanged.",
       "verified_on": "2026-11-02",
-      "evidence_urls": ["https://iuhoosiers.com/sports/baseball/stats/2018/-13-san-diego/boxscore/13860","https://usdtoreros.com/sports/baseball/roster/2018"],
+      "evidence_urls": [
+        "https://iuhoosiers.com/sports/baseball/stats/2018/-13-san-diego/boxscore/13860",
+        "https://usdtoreros.com/sports/baseball/roster/2018"
+      ],
       "corrections": [
-        {"source_player_id":"cb-san-diego-nate-walker","source_player_name":"Nate Walker","player":"Nathan Walker","canonical_player_id":"cb-san-diego-nathan-walker"}
+        {
+          "source_player_id": "cb-san-diego-nate-walker",
+          "source_player_name": "Nate Walker",
+          "player": "Nathan Walker",
+          "canonical_player_id": "cb-san-diego-nathan-walker"
+        }
       ]
     },
     {
@@ -866,10 +2204,23 @@
       "team": "San Diego",
       "description": "Expand verified 2018 San Diego first-initial gamebook names and reconcile related full-name and spelling variants with their existing profiles, keeping batting and pitching lines unchanged.",
       "verified_on": "2026-11-02",
-      "evidence_urls": ["https://usdtoreros.com/documents/2018/5/10/14105__m_basebl_2017_18_misc_non_event__USDvsSDSUboxMar13.pdf","https://usdtoreros.com/sports/baseball/roster/2018"],
+      "evidence_urls": [
+        "https://usdtoreros.com/documents/2018/5/10/14105__m_basebl_2017_18_misc_non_event__USDvsSDSUboxMar13.pdf",
+        "https://usdtoreros.com/sports/baseball/roster/2018"
+      ],
       "corrections": [
-        {"source_player_id":"cb-san-diego-nate-kuchta","source_player_name":"Nate Kuchta","player":"Nathan Kuchta","canonical_player_id":"cb-san-diego-nathan-kuchta"},
-        {"source_player_id":"cb-san-diego-nate-walker","source_player_name":"Nate Walker","player":"Nathan Walker","canonical_player_id":"cb-san-diego-nathan-walker"}
+        {
+          "source_player_id": "cb-san-diego-nate-kuchta",
+          "source_player_name": "Nate Kuchta",
+          "player": "Nathan Kuchta",
+          "canonical_player_id": "cb-san-diego-nathan-kuchta"
+        },
+        {
+          "source_player_id": "cb-san-diego-nate-walker",
+          "source_player_name": "Nate Walker",
+          "player": "Nathan Walker",
+          "canonical_player_id": "cb-san-diego-nathan-walker"
+        }
       ]
     },
     {
@@ -877,9 +2228,17 @@
       "team": "San Diego",
       "description": "Expand verified 2018 San Diego first-initial gamebook names and reconcile related full-name and spelling variants with their existing profiles, keeping batting and pitching lines unchanged.",
       "verified_on": "2026-11-02",
-      "evidence_urls": ["https://santaclarabroncos.com/sports/baseball/stats/2018/san-diego/boxscore/1058","https://usdtoreros.com/sports/baseball/roster/2018"],
+      "evidence_urls": [
+        "https://santaclarabroncos.com/sports/baseball/stats/2018/san-diego/boxscore/1058",
+        "https://usdtoreros.com/sports/baseball/roster/2018"
+      ],
       "corrections": [
-        {"source_player_id":"cb-san-diego-nate-walker","source_player_name":"Nate WALKER","player":"Nathan Walker","canonical_player_id":"cb-san-diego-nathan-walker"}
+        {
+          "source_player_id": "cb-san-diego-nate-walker",
+          "source_player_name": "Nate WALKER",
+          "player": "Nathan Walker",
+          "canonical_player_id": "cb-san-diego-nathan-walker"
+        }
       ]
     },
     {
@@ -887,9 +2246,17 @@
       "team": "San Diego",
       "description": "Expand verified 2018 San Diego first-initial gamebook names and reconcile related full-name and spelling variants with their existing profiles, keeping batting and pitching lines unchanged.",
       "verified_on": "2026-11-02",
-      "evidence_urls": ["https://ucirvinesports.com/sports/baseball/stats/2018/san-diego/boxscore/5047","https://usdtoreros.com/sports/baseball/roster/2018"],
+      "evidence_urls": [
+        "https://ucirvinesports.com/sports/baseball/stats/2018/san-diego/boxscore/5047",
+        "https://usdtoreros.com/sports/baseball/roster/2018"
+      ],
       "corrections": [
-        {"source_player_id":"cb-san-diego-nate-kuchta","source_player_name":"Nate Kuchta","player":"Nathan Kuchta","canonical_player_id":"cb-san-diego-nathan-kuchta"}
+        {
+          "source_player_id": "cb-san-diego-nate-kuchta",
+          "source_player_name": "Nate Kuchta",
+          "player": "Nathan Kuchta",
+          "canonical_player_id": "cb-san-diego-nathan-kuchta"
+        }
       ]
     },
     {
@@ -897,9 +2264,17 @@
       "team": "San Diego",
       "description": "Expand verified 2018 San Diego first-initial gamebook names and reconcile related full-name and spelling variants with their existing profiles, keeping batting and pitching lines unchanged.",
       "verified_on": "2026-11-02",
-      "evidence_urls": ["https://usdtoreros.com/documents/2018/5/10/14226__m_basebl_2017_18_misc_non_event__USDvsSMCboxApr14.pdf","https://usdtoreros.com/sports/baseball/roster/2018"],
+      "evidence_urls": [
+        "https://usdtoreros.com/documents/2018/5/10/14226__m_basebl_2017_18_misc_non_event__USDvsSMCboxApr14.pdf",
+        "https://usdtoreros.com/sports/baseball/roster/2018"
+      ],
       "corrections": [
-        {"source_player_id":"cb-san-diego-nate-kuchta","source_player_name":"Nate Kuchta","player":"Nathan Kuchta","canonical_player_id":"cb-san-diego-nathan-kuchta"}
+        {
+          "source_player_id": "cb-san-diego-nate-kuchta",
+          "source_player_name": "Nate Kuchta",
+          "player": "Nathan Kuchta",
+          "canonical_player_id": "cb-san-diego-nathan-kuchta"
+        }
       ]
     },
     {
@@ -907,9 +2282,17 @@
       "team": "San Diego",
       "description": "Expand verified 2018 San Diego first-initial gamebook names and reconcile related full-name and spelling variants with their existing profiles, keeping batting and pitching lines unchanged.",
       "verified_on": "2026-11-02",
-      "evidence_urls": ["https://fullertontitans.com/sports/baseball/stats/2018/san-diego/boxscore/1417","https://usdtoreros.com/sports/baseball/roster/2018"],
+      "evidence_urls": [
+        "https://fullertontitans.com/sports/baseball/stats/2018/san-diego/boxscore/1417",
+        "https://usdtoreros.com/sports/baseball/roster/2018"
+      ],
       "corrections": [
-        {"source_player_id":"cb-san-diego-nate-kuchta","source_player_name":"Nate KUCHTA","player":"Nathan Kuchta","canonical_player_id":"cb-san-diego-nathan-kuchta"}
+        {
+          "source_player_id": "cb-san-diego-nate-kuchta",
+          "source_player_name": "Nate KUCHTA",
+          "player": "Nathan Kuchta",
+          "canonical_player_id": "cb-san-diego-nathan-kuchta"
+        }
       ]
     },
     {
@@ -917,18 +2300,71 @@
       "team": "San Diego",
       "description": "Expand verified 2018 San Diego first-initial gamebook names and reconcile related full-name and spelling variants with their existing profiles, keeping batting and pitching lines unchanged.",
       "verified_on": "2026-11-02",
-      "evidence_urls": ["https://gozags.com/sports/baseball/stats/2018/san-diego/boxscore/1463","https://usdtoreros.com/sports/baseball/roster/2018"],
+      "evidence_urls": [
+        "https://gozags.com/sports/baseball/stats/2018/san-diego/boxscore/1463",
+        "https://usdtoreros.com/sports/baseball/roster/2018"
+      ],
       "corrections": [
-        {"source_player_id":"cb-san-diego-s-mcguire","source_player_name":"S McGuire","player":"Shane McGuire","canonical_player_id":"cb-san-diego-shane-mcguire"},
-        {"source_player_id":"cb-san-diego-j-schuyler","source_player_name":"J Schuyler","player":"Jay Schuyler","canonical_player_id":"cb-san-diego-jay-schuyler"},
-        {"source_player_id":"cb-san-diego-b-bewley","source_player_name":"B Bewley","player":"Brhet Bewley","canonical_player_id":"cb-san-diego-brhet-bewley"},
-        {"source_player_id":"cb-san-diego-dan-gardner","source_player_name":"Dan Gardner","player":"Daniel Gardner","canonical_player_id":"cb-san-diego-daniel-gardner"},
-        {"source_player_id":"cb-san-diego-j-houghtby","source_player_name":"J Houghtby","player":"Jeff Houghtby","canonical_player_id":"cb-san-diego-jeff-houghtby"},
-        {"source_player_id":"cb-san-diego-k-collard","source_player_name":"K. Collard","player":"Kevin Collard","canonical_player_id":"cb-san-diego-kevin-collard"},
-        {"source_player_id":"cb-san-diego-t-herburger","source_player_name":"T Herburger","player":"Tyler Herburger","canonical_player_id":"cb-san-diego-tyler-herburger"},
-        {"source_player_id":"cb-san-diego-c-doyle","source_player_name":"C. Doyle","player":"Connor Doyle","canonical_player_id":"cb-san-diego-connor-doyle"},
-        {"source_player_id":"cb-san-diego-n-sprengel","source_player_name":"N Sprengel","player":"Nick Sprengel","canonical_player_id":"cb-san-diego-nick-sprengel"},
-        {"source_player_id":"cb-san-diego-nate-walker","source_player_name":"Nate Walker","player":"Nathan Walker","canonical_player_id":"cb-san-diego-nathan-walker"}
+        {
+          "source_player_id": "cb-san-diego-s-mcguire",
+          "source_player_name": "S McGuire",
+          "player": "Shane McGuire",
+          "canonical_player_id": "cb-san-diego-shane-mcguire"
+        },
+        {
+          "source_player_id": "cb-san-diego-j-schuyler",
+          "source_player_name": "J Schuyler",
+          "player": "Jay Schuyler",
+          "canonical_player_id": "cb-san-diego-jay-schuyler"
+        },
+        {
+          "source_player_id": "cb-san-diego-b-bewley",
+          "source_player_name": "B Bewley",
+          "player": "Brhet Bewley",
+          "canonical_player_id": "cb-san-diego-brhet-bewley"
+        },
+        {
+          "source_player_id": "cb-san-diego-dan-gardner",
+          "source_player_name": "Dan Gardner",
+          "player": "Daniel Gardner",
+          "canonical_player_id": "cb-san-diego-daniel-gardner"
+        },
+        {
+          "source_player_id": "cb-san-diego-j-houghtby",
+          "source_player_name": "J Houghtby",
+          "player": "Jeff Houghtby",
+          "canonical_player_id": "cb-san-diego-jeff-houghtby"
+        },
+        {
+          "source_player_id": "cb-san-diego-k-collard",
+          "source_player_name": "K. Collard",
+          "player": "Kevin Collard",
+          "canonical_player_id": "cb-san-diego-kevin-collard"
+        },
+        {
+          "source_player_id": "cb-san-diego-t-herburger",
+          "source_player_name": "T Herburger",
+          "player": "Tyler Herburger",
+          "canonical_player_id": "cb-san-diego-tyler-herburger"
+        },
+        {
+          "source_player_id": "cb-san-diego-c-doyle",
+          "source_player_name": "C. Doyle",
+          "player": "Connor Doyle",
+          "canonical_player_id": "cb-san-diego-connor-doyle"
+        },
+        {
+          "source_player_id": "cb-san-diego-n-sprengel",
+          "source_player_name": "N Sprengel",
+          "player": "Nick Sprengel",
+          "canonical_player_id": "cb-san-diego-nick-sprengel"
+        },
+        {
+          "source_player_id": "cb-san-diego-nate-walker",
+          "source_player_name": "Nate Walker",
+          "player": "Nathan Walker",
+          "canonical_player_id": "cb-san-diego-nathan-walker"
+        }
       ]
     },
     {
@@ -936,20 +2372,83 @@
       "team": "San Diego",
       "description": "Expand verified 2018 San Diego first-initial gamebook names and reconcile related full-name and spelling variants with their existing profiles, keeping batting and pitching lines unchanged.",
       "verified_on": "2026-11-02",
-      "evidence_urls": ["https://gozags.com/sports/baseball/stats/2018/san-diego/boxscore/1464","https://usdtoreros.com/sports/baseball/roster/2018"],
+      "evidence_urls": [
+        "https://gozags.com/sports/baseball/stats/2018/san-diego/boxscore/1464",
+        "https://usdtoreros.com/sports/baseball/roster/2018"
+      ],
       "corrections": [
-        {"source_player_id":"cb-san-diego-s-mcguire","source_player_name":"S McGuire","player":"Shane McGuire","canonical_player_id":"cb-san-diego-shane-mcguire"},
-        {"source_player_id":"cb-san-diego-j-schuyler","source_player_name":"J Schuyler","player":"Jay Schuyler","canonical_player_id":"cb-san-diego-jay-schuyler"},
-        {"source_player_id":"cb-san-diego-b-bewley","source_player_name":"B Bewley","player":"Brhet Bewley","canonical_player_id":"cb-san-diego-brhet-bewley"},
-        {"source_player_id":"cb-san-diego-j-houghtby","source_player_name":"J Houghtby","player":"Jeff Houghtby","canonical_player_id":"cb-san-diego-jeff-houghtby"},
-        {"source_player_id":"cb-san-diego-k-collard","source_player_name":"K. Collard","player":"Kevin Collard","canonical_player_id":"cb-san-diego-kevin-collard"},
-        {"source_player_id":"cb-san-diego-dan-gardner","source_player_name":"Dan Gardner","player":"Daniel Gardner","canonical_player_id":"cb-san-diego-daniel-gardner"},
-        {"source_player_id":"cb-san-diego-c-doyle","source_player_name":"C. Doyle","player":"Connor Doyle","canonical_player_id":"cb-san-diego-connor-doyle"},
-        {"source_player_id":"cb-san-diego-t-omahen","source_player_name":"T Omahen","player":"Trevor Omahen","canonical_player_id":"cb-san-diego-trevor-omahen"},
-        {"source_player_id":"cb-san-diego-t-rosenberg","source_player_name":"T Rosenberg","player":"Trevor Rosenberg","canonical_player_id":"cb-san-diego-trevor-rosenberg"},
-        {"source_player_id":"cb-san-diego-d-gutierrez","source_player_name":"D Gutierrez","player":"Dante Gutierrez","canonical_player_id":"cb-san-diego-dante-gutierrez"},
-        {"source_player_id":"cb-san-diego-c-murphy","source_player_name":"C Murphy","player":"Chris Murphy","canonical_player_id":"cb-san-diego-chris-murphy"},
-        {"source_player_id":"cb-san-diego-a-donatella","source_player_name":"A Donatella","player":"Anthony Donatella","canonical_player_id":"cb-san-diego-anthony-donatella"}
+        {
+          "source_player_id": "cb-san-diego-s-mcguire",
+          "source_player_name": "S McGuire",
+          "player": "Shane McGuire",
+          "canonical_player_id": "cb-san-diego-shane-mcguire"
+        },
+        {
+          "source_player_id": "cb-san-diego-j-schuyler",
+          "source_player_name": "J Schuyler",
+          "player": "Jay Schuyler",
+          "canonical_player_id": "cb-san-diego-jay-schuyler"
+        },
+        {
+          "source_player_id": "cb-san-diego-b-bewley",
+          "source_player_name": "B Bewley",
+          "player": "Brhet Bewley",
+          "canonical_player_id": "cb-san-diego-brhet-bewley"
+        },
+        {
+          "source_player_id": "cb-san-diego-j-houghtby",
+          "source_player_name": "J Houghtby",
+          "player": "Jeff Houghtby",
+          "canonical_player_id": "cb-san-diego-jeff-houghtby"
+        },
+        {
+          "source_player_id": "cb-san-diego-k-collard",
+          "source_player_name": "K. Collard",
+          "player": "Kevin Collard",
+          "canonical_player_id": "cb-san-diego-kevin-collard"
+        },
+        {
+          "source_player_id": "cb-san-diego-dan-gardner",
+          "source_player_name": "Dan Gardner",
+          "player": "Daniel Gardner",
+          "canonical_player_id": "cb-san-diego-daniel-gardner"
+        },
+        {
+          "source_player_id": "cb-san-diego-c-doyle",
+          "source_player_name": "C. Doyle",
+          "player": "Connor Doyle",
+          "canonical_player_id": "cb-san-diego-connor-doyle"
+        },
+        {
+          "source_player_id": "cb-san-diego-t-omahen",
+          "source_player_name": "T Omahen",
+          "player": "Trevor Omahen",
+          "canonical_player_id": "cb-san-diego-trevor-omahen"
+        },
+        {
+          "source_player_id": "cb-san-diego-t-rosenberg",
+          "source_player_name": "T Rosenberg",
+          "player": "Trevor Rosenberg",
+          "canonical_player_id": "cb-san-diego-trevor-rosenberg"
+        },
+        {
+          "source_player_id": "cb-san-diego-d-gutierrez",
+          "source_player_name": "D Gutierrez",
+          "player": "Dante Gutierrez",
+          "canonical_player_id": "cb-san-diego-dante-gutierrez"
+        },
+        {
+          "source_player_id": "cb-san-diego-c-murphy",
+          "source_player_name": "C Murphy",
+          "player": "Chris Murphy",
+          "canonical_player_id": "cb-san-diego-chris-murphy"
+        },
+        {
+          "source_player_id": "cb-san-diego-a-donatella",
+          "source_player_name": "A Donatella",
+          "player": "Anthony Donatella",
+          "canonical_player_id": "cb-san-diego-anthony-donatella"
+        }
       ]
     },
     {
@@ -957,20 +2456,83 @@
       "team": "San Diego",
       "description": "Expand verified 2018 San Diego first-initial gamebook names and reconcile related full-name and spelling variants with their existing profiles, keeping batting and pitching lines unchanged.",
       "verified_on": "2026-11-02",
-      "evidence_urls": ["https://gozags.com/sports/baseball/stats/2018/san-diego/boxscore/1465","https://usdtoreros.com/sports/baseball/roster/2018"],
+      "evidence_urls": [
+        "https://gozags.com/sports/baseball/stats/2018/san-diego/boxscore/1465",
+        "https://usdtoreros.com/sports/baseball/roster/2018"
+      ],
       "corrections": [
-        {"source_player_id":"cb-san-diego-c-doyle","source_player_name":"C. Doyle","player":"Connor Doyle","canonical_player_id":"cb-san-diego-connor-doyle"},
-        {"source_player_id":"cb-san-diego-j-schuyler","source_player_name":"J Schuyler","player":"Jay Schuyler","canonical_player_id":"cb-san-diego-jay-schuyler"},
-        {"source_player_id":"cb-san-diego-b-bewley","source_player_name":"B Bewley","player":"Brhet Bewley","canonical_player_id":"cb-san-diego-brhet-bewley"},
-        {"source_player_id":"cb-san-diego-g-calvert","source_player_name":"G Calvert","player":"Garrett Calvert","canonical_player_id":"cb-san-diego-garrett-calvert"},
-        {"source_player_id":"cb-san-diego-s-mcguire","source_player_name":"S McGuire","player":"Shane McGuire","canonical_player_id":"cb-san-diego-shane-mcguire"},
-        {"source_player_id":"cb-san-diego-j-houghtby","source_player_name":"J Houghtby","player":"Jeff Houghtby","canonical_player_id":"cb-san-diego-jeff-houghtby"},
-        {"source_player_id":"cb-san-diego-t-rosenberg","source_player_name":"T Rosenberg","player":"Trevor Rosenberg","canonical_player_id":"cb-san-diego-trevor-rosenberg"},
-        {"source_player_id":"cb-san-diego-k-collard","source_player_name":"K. Collard","player":"Kevin Collard","canonical_player_id":"cb-san-diego-kevin-collard"},
-        {"source_player_id":"cb-san-diego-t-omahen","source_player_name":"T Omahen","player":"Trevor Omahen","canonical_player_id":"cb-san-diego-trevor-omahen"},
-        {"source_player_id":"cb-san-diego-dan-gardner","source_player_name":"Dan Gardner","player":"Daniel Gardner","canonical_player_id":"cb-san-diego-daniel-gardner"},
-        {"source_player_id":"cb-san-diego-nate-kuchta","source_player_name":"Nate Kuchta","player":"Nathan Kuchta","canonical_player_id":"cb-san-diego-nathan-kuchta"},
-        {"source_player_id":"cb-san-diego-a-donatella","source_player_name":"A Donatella","player":"Anthony Donatella","canonical_player_id":"cb-san-diego-anthony-donatella"}
+        {
+          "source_player_id": "cb-san-diego-c-doyle",
+          "source_player_name": "C. Doyle",
+          "player": "Connor Doyle",
+          "canonical_player_id": "cb-san-diego-connor-doyle"
+        },
+        {
+          "source_player_id": "cb-san-diego-j-schuyler",
+          "source_player_name": "J Schuyler",
+          "player": "Jay Schuyler",
+          "canonical_player_id": "cb-san-diego-jay-schuyler"
+        },
+        {
+          "source_player_id": "cb-san-diego-b-bewley",
+          "source_player_name": "B Bewley",
+          "player": "Brhet Bewley",
+          "canonical_player_id": "cb-san-diego-brhet-bewley"
+        },
+        {
+          "source_player_id": "cb-san-diego-g-calvert",
+          "source_player_name": "G Calvert",
+          "player": "Garrett Calvert",
+          "canonical_player_id": "cb-san-diego-garrett-calvert"
+        },
+        {
+          "source_player_id": "cb-san-diego-s-mcguire",
+          "source_player_name": "S McGuire",
+          "player": "Shane McGuire",
+          "canonical_player_id": "cb-san-diego-shane-mcguire"
+        },
+        {
+          "source_player_id": "cb-san-diego-j-houghtby",
+          "source_player_name": "J Houghtby",
+          "player": "Jeff Houghtby",
+          "canonical_player_id": "cb-san-diego-jeff-houghtby"
+        },
+        {
+          "source_player_id": "cb-san-diego-t-rosenberg",
+          "source_player_name": "T Rosenberg",
+          "player": "Trevor Rosenberg",
+          "canonical_player_id": "cb-san-diego-trevor-rosenberg"
+        },
+        {
+          "source_player_id": "cb-san-diego-k-collard",
+          "source_player_name": "K. Collard",
+          "player": "Kevin Collard",
+          "canonical_player_id": "cb-san-diego-kevin-collard"
+        },
+        {
+          "source_player_id": "cb-san-diego-t-omahen",
+          "source_player_name": "T Omahen",
+          "player": "Trevor Omahen",
+          "canonical_player_id": "cb-san-diego-trevor-omahen"
+        },
+        {
+          "source_player_id": "cb-san-diego-dan-gardner",
+          "source_player_name": "Dan Gardner",
+          "player": "Daniel Gardner",
+          "canonical_player_id": "cb-san-diego-daniel-gardner"
+        },
+        {
+          "source_player_id": "cb-san-diego-nate-kuchta",
+          "source_player_name": "Nate Kuchta",
+          "player": "Nathan Kuchta",
+          "canonical_player_id": "cb-san-diego-nathan-kuchta"
+        },
+        {
+          "source_player_id": "cb-san-diego-a-donatella",
+          "source_player_name": "A Donatella",
+          "player": "Anthony Donatella",
+          "canonical_player_id": "cb-san-diego-anthony-donatella"
+        }
       ]
     },
     {
@@ -978,9 +2540,17 @@
       "team": "San Diego",
       "description": "Expand verified 2018 San Diego first-initial gamebook names and reconcile related full-name and spelling variants with their existing profiles, keeping batting and pitching lines unchanged.",
       "verified_on": "2026-11-02",
-      "evidence_urls": ["https://thesundevils.com/boxscore/466","https://usdtoreros.com/sports/baseball/roster/2018"],
+      "evidence_urls": [
+        "https://thesundevils.com/boxscore/466",
+        "https://usdtoreros.com/sports/baseball/roster/2018"
+      ],
       "corrections": [
-        {"source_player_id":"cb-san-diego-nate-walker","source_player_name":"Nate Walker","player":"Nathan Walker","canonical_player_id":"cb-san-diego-nathan-walker"}
+        {
+          "source_player_id": "cb-san-diego-nate-walker",
+          "source_player_name": "Nate Walker",
+          "player": "Nathan Walker",
+          "canonical_player_id": "cb-san-diego-nathan-walker"
+        }
       ]
     },
     {
@@ -988,21 +2558,88 @@
       "team": "James Madison",
       "description": "Owner-confirmed June 1, 2024 James Madison first names in the NCAA Raleigh Regional Bryant gamebook. Reconnect surname-only player rows to the existing full-name James Madison profiles without changing box-score stats.",
       "verified_on": "2026-11-02",
-      "evidence_urls": ["https://bryantbulldogs.com/sports/baseball/stats/2024/james-madison-university/boxscore/10642"],
+      "evidence_urls": [
+        "https://bryantbulldogs.com/sports/baseball/stats/2024/james-madison-university/boxscore/10642"
+      ],
       "corrections": [
-        {"source_player_id":"cb-james-madison-dooley","source_player_name":"Dooley","player":"Ryan Dooley","canonical_player_id":"cb-james-madison-ryan-dooley"},
-        {"source_player_id":"cb-james-madison-trimble","source_player_name":"Trimble","player":"Fenwick Trimble","canonical_player_id":"cb-james-madison-fenwick-trimble"},
-        {"source_player_id":"cb-james-madison-mancini","source_player_name":"Mancini","player":"Mike Mancini","canonical_player_id":"cb-james-madison-mike-mancini"},
-        {"source_player_id":"cb-james-madison-schiavone","source_player_name":"Schiavone","player":"Jason Schiavone","canonical_player_id":"cb-james-madison-jason-schiavone"},
-        {"source_player_id":"cb-james-madison-peifer","source_player_name":"Peifer","player":"Wyatt Peifer","canonical_player_id":"cb-james-madison-wyatt-peifer"},
-        {"source_player_id":"cb-james-madison-calabrese","source_player_name":"Calabrese","player":"Coleman Calabrese","canonical_player_id":"cb-james-madison-coleman-calabrese"},
-        {"source_player_id":"cb-james-madison-dunaway","source_player_name":"Dunaway","player":"Mason Dunaway","canonical_player_id":"cb-james-madison-mason-dunaway"},
-        {"source_player_id":"cb-james-madison-langley","source_player_name":"Langley","player":"Kyle Langley","canonical_player_id":"cb-james-madison-kyle-langley"},
-        {"source_player_id":"cb-james-madison-logar","source_player_name":"Logar","player":"Jackson Logar","canonical_player_id":"cb-james-madison-jackson-logar"},
-        {"source_player_id":"cb-james-madison-vogatsky","source_player_name":"Vogatsky","player":"Joe Vogatsky","canonical_player_id":"cb-james-madison-joe-vogatsky"},
-        {"source_player_id":"cb-james-madison-o-donnell","source_player_name":"O'Donnell","player":"Brendan O'Donnell","canonical_player_id":"cb-james-madison-brendan-o-donnell"},
-        {"source_player_id":"cb-james-madison-entsminger","source_player_name":"Entsminger","player":"Hunter Entsminger","canonical_player_id":"cb-james-madison-hunter-entsminger"},
-        {"source_player_id":"cb-james-madison-culkin","source_player_name":"Culkin","player":"Sean Culkin","canonical_player_id":"cb-james-madison-sean-culkin"}
+        {
+          "source_player_id": "cb-james-madison-dooley",
+          "source_player_name": "Dooley",
+          "player": "Ryan Dooley",
+          "canonical_player_id": "cb-james-madison-ryan-dooley"
+        },
+        {
+          "source_player_id": "cb-james-madison-trimble",
+          "source_player_name": "Trimble",
+          "player": "Fenwick Trimble",
+          "canonical_player_id": "cb-james-madison-fenwick-trimble"
+        },
+        {
+          "source_player_id": "cb-james-madison-mancini",
+          "source_player_name": "Mancini",
+          "player": "Mike Mancini",
+          "canonical_player_id": "cb-james-madison-mike-mancini"
+        },
+        {
+          "source_player_id": "cb-james-madison-schiavone",
+          "source_player_name": "Schiavone",
+          "player": "Jason Schiavone",
+          "canonical_player_id": "cb-james-madison-jason-schiavone"
+        },
+        {
+          "source_player_id": "cb-james-madison-peifer",
+          "source_player_name": "Peifer",
+          "player": "Wyatt Peifer",
+          "canonical_player_id": "cb-james-madison-wyatt-peifer"
+        },
+        {
+          "source_player_id": "cb-james-madison-calabrese",
+          "source_player_name": "Calabrese",
+          "player": "Coleman Calabrese",
+          "canonical_player_id": "cb-james-madison-coleman-calabrese"
+        },
+        {
+          "source_player_id": "cb-james-madison-dunaway",
+          "source_player_name": "Dunaway",
+          "player": "Mason Dunaway",
+          "canonical_player_id": "cb-james-madison-mason-dunaway"
+        },
+        {
+          "source_player_id": "cb-james-madison-langley",
+          "source_player_name": "Langley",
+          "player": "Kyle Langley",
+          "canonical_player_id": "cb-james-madison-kyle-langley"
+        },
+        {
+          "source_player_id": "cb-james-madison-logar",
+          "source_player_name": "Logar",
+          "player": "Jackson Logar",
+          "canonical_player_id": "cb-james-madison-jackson-logar"
+        },
+        {
+          "source_player_id": "cb-james-madison-vogatsky",
+          "source_player_name": "Vogatsky",
+          "player": "Joe Vogatsky",
+          "canonical_player_id": "cb-james-madison-joe-vogatsky"
+        },
+        {
+          "source_player_id": "cb-james-madison-o-donnell",
+          "source_player_name": "O'Donnell",
+          "player": "Brendan O'Donnell",
+          "canonical_player_id": "cb-james-madison-brendan-o-donnell"
+        },
+        {
+          "source_player_id": "cb-james-madison-entsminger",
+          "source_player_name": "Entsminger",
+          "player": "Hunter Entsminger",
+          "canonical_player_id": "cb-james-madison-hunter-entsminger"
+        },
+        {
+          "source_player_id": "cb-james-madison-culkin",
+          "source_player_name": "Culkin",
+          "player": "Sean Culkin",
+          "canonical_player_id": "cb-james-madison-sean-culkin"
+        }
       ]
     },
     {
@@ -1010,10 +2647,22 @@
       "team": "UC Riverside",
       "description": "Owner-confirmed full name for Anthony McFarland; preserve the March 13 source pitching and batting lines.",
       "verified_on": "2026-11-02",
-      "evidence_urls": ["https://gohighlanders.com/sports/baseball/roster"],
+      "evidence_urls": [
+        "https://gohighlanders.com/sports/baseball/roster"
+      ],
       "corrections": [
-        {"source_player_id": "cb-uc-riverside-mcfarland", "source_player_name": "McFarland", "player": "Anthony McFarland", "canonical_player_id": "cb-uc-riverside-anthony-mcfarland"},
-        {"source_player_id": "cb-uc-riverside-28", "source_player_name": "28", "player": "Andrez Melendrez", "canonical_player_id": "cb-uc-riverside-andrez-melendrez"}
+        {
+          "source_player_id": "cb-uc-riverside-mcfarland",
+          "source_player_name": "McFarland",
+          "player": "Anthony McFarland",
+          "canonical_player_id": "cb-uc-riverside-anthony-mcfarland"
+        },
+        {
+          "source_player_id": "cb-uc-riverside-28",
+          "source_player_name": "28",
+          "player": "Andrez Melendrez",
+          "canonical_player_id": "cb-uc-riverside-andrez-melendrez"
+        }
       ]
     },
     {
@@ -1021,9 +2670,16 @@
       "team": "UC Riverside",
       "description": "Owner-confirmed full name for Anthony McFarland; preserve the March 14 source pitching and batting lines.",
       "verified_on": "2026-11-02",
-      "evidence_urls": ["https://gohighlanders.com/sports/baseball/roster"],
+      "evidence_urls": [
+        "https://gohighlanders.com/sports/baseball/roster"
+      ],
       "corrections": [
-        {"source_player_id": "cb-uc-riverside-mcfarland", "source_player_name": "McFarland", "player": "Anthony McFarland", "canonical_player_id": "cb-uc-riverside-anthony-mcfarland"}
+        {
+          "source_player_id": "cb-uc-riverside-mcfarland",
+          "source_player_name": "McFarland",
+          "player": "Anthony McFarland",
+          "canonical_player_id": "cb-uc-riverside-anthony-mcfarland"
+        }
       ]
     },
     {
@@ -1031,9 +2687,16 @@
       "team": "Iowa",
       "description": "Expand the historical Elliott Cadieux-Lanoue surname abbreviation, matching the owner-confirmed Iowa identity and retaining the game statistics.",
       "verified_on": "2026-11-02",
-      "evidence_urls": ["https://iuhoosiers.com/documents/download/2025/4/24/Iowa.pdf"],
+      "evidence_urls": [
+        "https://iuhoosiers.com/documents/download/2025/4/24/Iowa.pdf"
+      ],
       "corrections": [
-        {"source_player_id": "cb-iowa-elliot-cad-lanoue", "source_player_name": "Elliot Cad.-Lanoue", "player": "Elliott Cadieux-Lanoue", "canonical_player_id": "cb-iowa-elliott-cadieux-lanoue"}
+        {
+          "source_player_id": "cb-iowa-elliot-cad-lanoue",
+          "source_player_name": "Elliot Cad.-Lanoue",
+          "player": "Elliott Cadieux-Lanoue",
+          "canonical_player_id": "cb-iowa-elliott-cadieux-lanoue"
+        }
       ]
     },
     {
@@ -1041,18 +2704,66 @@
       "team": "Western Kentucky",
       "description": "Expand the remaining eight abbreviated WKU batting-order names, link Dylan O'Connell to Milwaukee and existing WKU full-name profiles where available, without changing source-game statistics or substitutions. Ryan Wideman, Ethan Lizama, and Kyle Hvidsten are already corrected in the earlier game-specific entry.",
       "verified_on": "2026-11-02",
-      "evidence_urls": ["https://wkusports.com/sports/baseball/roster/dylan-o-connell/5510",
-        "https://wkusports.com/sports/baseball/roster/2025", "https://mkepanthers.com/news/2026/3/10/baseball-panthers-travel-to-purdue-before-league-play-begins-at-northern-kentucky.aspx"],
+      "evidence_urls": [
+        "https://wkusports.com/sports/baseball/roster/dylan-o-connell/5510",
+        "https://wkusports.com/sports/baseball/roster/2025",
+        "https://mkepanthers.com/news/2026/3/10/baseball-panthers-travel-to-purdue-before-league-play-begins-at-northern-kentucky.aspx"
+      ],
       "corrections": [
-        {"source_player_id": "cb-western-kentucky-c-vasquez", "source_player_name": "C. Vasquez", "player": "Carlos Vasquez", "canonical_player_id": "cb-western-kentucky-carlos-vasquez"},
-        {"source_player_id": "cb-western-kentucky-t-marsala", "source_player_name": "T. Marsala", "player": "Thomas Marsala", "canonical_player_id": "cb-western-kentucky-thomas-marsala"},
-        {"source_player_id": "cb-western-kentucky-j-siervo", "source_player_name": "J. Siervo", "player": "Joe Siervo", "canonical_player_id": "cb-western-kentucky-joe-siervo"},
-        {"source_player_id": "cb-western-kentucky-h-brown", "source_player_name": "H. Brown", "player": "Henry Brown", "canonical_player_id": "cb-western-kentucky-henry-brown"},
-        {"source_player_id": "cb-western-kentucky-d-barragan", "source_player_name": "D. Barragan", "player": "Drew Barragan", "canonical_player_id": "cb-western-kentucky-drew-barragan"},
-        {"source_player_id": "cb-western-kentucky-a-haller", "source_player_name": "A. Haller", "player": "Austin Haller", "canonical_player_id": "cb-western-kentucky-austin-haller"},
-        {"source_player_id": "cb-western-kentucky-r-howard", "source_player_name": "R. Howard", "player": "Reid Howard", "canonical_player_id": "cb-western-kentucky-reid-howard"},
-        {"source_player_id": "cb-western-kentucky-a-westbrook", "source_player_name": "A Westbrook", "player": "Anthony Westbrook", "canonical_player_id": "cb-western-kentucky-anthony-westbrook"},
-        {"source_player_id": "cb-western-kentucky-d-o-connell", "source_player_name": "D O'connell", "player": "Dylan O'Connell", "canonical_player_id": "cb-milwaukee-dylan-o-connell"}
+        {
+          "source_player_id": "cb-western-kentucky-c-vasquez",
+          "source_player_name": "C. Vasquez",
+          "player": "Carlos Vasquez",
+          "canonical_player_id": "cb-western-kentucky-carlos-vasquez"
+        },
+        {
+          "source_player_id": "cb-western-kentucky-t-marsala",
+          "source_player_name": "T. Marsala",
+          "player": "Thomas Marsala",
+          "canonical_player_id": "cb-western-kentucky-thomas-marsala"
+        },
+        {
+          "source_player_id": "cb-western-kentucky-j-siervo",
+          "source_player_name": "J. Siervo",
+          "player": "Joe Siervo",
+          "canonical_player_id": "cb-western-kentucky-joe-siervo"
+        },
+        {
+          "source_player_id": "cb-western-kentucky-h-brown",
+          "source_player_name": "H. Brown",
+          "player": "Henry Brown",
+          "canonical_player_id": "cb-western-kentucky-henry-brown"
+        },
+        {
+          "source_player_id": "cb-western-kentucky-d-barragan",
+          "source_player_name": "D. Barragan",
+          "player": "Drew Barragan",
+          "canonical_player_id": "cb-western-kentucky-drew-barragan"
+        },
+        {
+          "source_player_id": "cb-western-kentucky-a-haller",
+          "source_player_name": "A. Haller",
+          "player": "Austin Haller",
+          "canonical_player_id": "cb-western-kentucky-austin-haller"
+        },
+        {
+          "source_player_id": "cb-western-kentucky-r-howard",
+          "source_player_name": "R. Howard",
+          "player": "Reid Howard",
+          "canonical_player_id": "cb-western-kentucky-reid-howard"
+        },
+        {
+          "source_player_id": "cb-western-kentucky-a-westbrook",
+          "source_player_name": "A Westbrook",
+          "player": "Anthony Westbrook",
+          "canonical_player_id": "cb-western-kentucky-anthony-westbrook"
+        },
+        {
+          "source_player_id": "cb-western-kentucky-d-o-connell",
+          "source_player_name": "D O'connell",
+          "player": "Dylan O'Connell",
+          "canonical_player_id": "cb-milwaukee-dylan-o-connell"
+        }
       ]
     }
   ]

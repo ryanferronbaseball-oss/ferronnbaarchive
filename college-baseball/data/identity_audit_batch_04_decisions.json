@@ -2,7 +2,7 @@
   "version": 1,
   "batch": 4,
   "reviewed_pairs": 20,
-  "status": "owner_decisions_recorded_pending_application",
+  "status": "PASS_2_APPROVED_AND_17_SEPARATE_1_SOURCE_CONFLICT_BLOCKED",
   "owner_instruction": "COMBINE just 1, 2, 15; all other entries SEPARATE",
   "safety_note": "UNLV 2022/2023 official roster confirms Jason Sharman (OF) and Josh Sharman (LHP) are separate brothers. Alias 'Ja Sharman' cannot merge into both; must resolve its source role/game.",
   "results": [
@@ -16,8 +16,8 @@
         "UNLV",
         "UNLV"
       ],
-      "decision": "COMBINE_REQUESTED_CONFLICT_BROTHERS",
-      "applied": false
+      "decision": "COMBINE_APPLIED",
+      "applied": true
     },
     {
       "number": 2,
@@ -29,8 +29,9 @@
         "UNLV",
         "UNLV"
       ],
-      "decision": "COMBINE_REQUESTED_CONFLICT_BROTHERS",
-      "applied": false
+      "decision": "BLOCKED_SOURCE_VERIFIED_DIFFERENT_BROTHERS",
+      "applied": false,
+      "reason": "Ja Sharman is a right fielder; Josh Sharman is a pitcher, and Jason and Josh are roster-listed brothers, not the same player."
     },
     {
       "number": 3,
@@ -198,8 +199,8 @@
         "Liberty",
         "Lenoir-Rhyne"
       ],
-      "decision": "COMBINE_APPROVED",
-      "applied": false
+      "decision": "COMBINE_APPLIED",
+      "applied": true
     },
     {
       "number": 16,
@@ -266,5 +267,8 @@
       "decision": "SEPARATE",
       "applied": false
     }
-  ]
+  ],
+  "applied_combinations": 2,
+  "source_verified_conflict": 1,
+  "protected_separate_decisions_added": 18
 }

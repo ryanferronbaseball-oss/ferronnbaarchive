@@ -5,8 +5,8 @@
     "status": "PASS",
     "source_row_count": 13196,
     "attendance_game_count": 437,
-    "requested_person_merges": 185,
-    "activated_person_merges": 185,
+    "requested_person_merges": 187,
+    "activated_person_merges": 187,
     "pending_person_merges": 0,
     "most_recent_name_cleanup": {
       "game_id": "cb-2025-03-22-western-kentucky-kennesaw-state-att0325",
@@ -51,15 +51,11 @@
     "preservation_checks": "Original player_stats.json, games.json and player batting/pitching rows unchanged; player profile identities linked using the scoped crosswalk only.",
     "legacy_preview_note": "The historical preview and ready_merges/not_ready counts below reflect the older 101-proposal audit. Consult current_state and player_identity_crosswalk.json for live identity status.",
     "latest_review_batch": {
-      "batch": 3,
-      "approved_combinations": 8,
-      "new_merge_entries": 8,
-      "protected_separate": "Tanner Smith (Oregon / Presbyterian)",
-      "unresolved": null,
-      "owner_approved": true,
-      "same_game_collisions": 0,
-      "original_box_scores_modified": false,
-      "resolved_t_juline": "Taylor Juline"
+      "batch": 4,
+      "approved_combinations_applied": 2,
+      "protected_separate_decisions_added": 18,
+      "blocked_source_conflict": "Ja Sharman (RF Jason) cannot be Josh Sharman (LHP)",
+      "source_game_rows_modified": 0
     }
   },
   "source_manifests": 101,

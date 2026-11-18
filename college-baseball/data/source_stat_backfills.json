@@ -667,7 +667,7 @@
     {
       "game_id": "cb-2019-02-24-cal-state-fullerton-oklahoma-att0040",
       "source_url": "https://soonersports.com/sports/2019/8/7/2150228",
-      "verification_note": "Official February 24 Cal State Fullerton vs Oklahoma gamebook and play-by-play: Fullerton 8, Oklahoma 6. Fullerton 47 PA equals Oklahoma 47 BF; Oklahoma 40 PA equals Fullerton 40 BF. Pavletich and Lindsly each had one sacrifice bunt, with no HBP, SF, or catcher interference.",
+      "verification_note": "Official February 24 Cal State Fullerton vs Oklahoma gamebook and play-by-play: Fullerton 8, Oklahoma 6. Fullerton 47 PA equals Oklahoma 47 BF; Oklahoma 40 PA equals Fullerton 40 BF. Pavletich and Lindsly each had one sacrifice bunt, with no HBP, SF, or catcher interference. Official scoring summary additionally confirms: 2B Daniel Cope, Isaiah Garcia, Mitchell Berryhill, Jordan Vujovich, Conor McKenna; 3B Hank LoForte; HR Tyler Hardman. Four CSF and three OU extra-base hits.",
       "expected_batting_rows": 25,
       "expected_pitching_rows": 12,
       "hit_by_pitch": {},
@@ -690,6 +690,34 @@
         "cb-oklahoma-ryan-madden": 3,
         "cb-oklahoma-jason-ruffcorn": 2,
         "cb-oklahoma-zack-matthews": 5
+      },
+      "extra_base_hits": {
+        "doubles": {
+          "cb-cal-state-fullerton-d-cope": 1,
+          "cb-cal-state-fullerton-i-garcia": 1,
+          "cb-cal-state-fullerton-m-berryhill": 1,
+          "cb-oklahoma-jordan-vujovich": 1,
+          "cb-oklahoma-conor-mckenna": 1
+        },
+        "triples": {
+          "cb-cal-state-fullerton-h-loforte": 1
+        },
+        "home_runs": {
+          "cb-oklahoma-tyler-hardman": 1
+        }
+      },
+      "extra_base_hit_verification": {
+        "source": "Official Oklahoma Feb. 24, 2019 box score, scoring summary and play-by-play",
+        "fullerton": {
+          "doubles": 3,
+          "triples": 1,
+          "home_runs": 0
+        },
+        "oklahoma": {
+          "doubles": 2,
+          "triples": 0,
+          "home_runs": 1
+        }
       }
     }
   ]

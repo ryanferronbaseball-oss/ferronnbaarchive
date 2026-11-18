@@ -1184,13 +1184,14 @@
     {
       "game_id": "cb-2024-03-08-binghamton-vmi-att0252",
       "team": "VMI",
-      "description": "Expand two VMI gamebook abbreviations, W. Riley and G. Fitzwater, to their sourced full player names without changing statistics.",
+      "description": "Expand 12 VMI lineup name abbreviations from March 8 2024 gamebook; 10 additional names verified against VMI 2024 official roster; preserve all original statistics.",
       "verified_on": "2026-11-01",
       "evidence_urls": [
         "https://binghamtonbearcats.com/sports/baseball/stats/2024/virginia-military-institute/boxscore/14316",
         "https://vmikeydets.com/sports/baseball/roster/will-riley/7708",
         "https://vmikeydets.com/news/2024/3/8/baseball-keydets-split-doubleheader-with-binghamton.aspx",
-        "https://vmikeydets.com/news/2026/7/12/baseball-fitzwater-selected-by-chicago-white-sox-in-2026-mlb-draft.aspx"
+        "https://vmikeydets.com/news/2026/7/12/baseball-fitzwater-selected-by-chicago-white-sox-in-2026-mlb-draft.aspx",
+        "https://vmikeydets.com/sports/baseball/roster/2024"
       ],
       "corrections": [
         {
@@ -1204,6 +1205,66 @@
           "source_player_name": "G. Fitzwater",
           "player": "Grayson Fitzwater",
           "canonical_player_id": "cb-vmi-grayson-fitzwater"
+        },
+        {
+          "source_player_id": "cb-vmi-b-cook",
+          "source_player_name": "B. Cook",
+          "player": "Brett Cook",
+          "canonical_player_id": "cb-vmi-brett-cook"
+        },
+        {
+          "source_player_id": "cb-vmi-c-garrett",
+          "source_player_name": "C. Garrett",
+          "player": "Cole Garrett",
+          "canonical_player_id": "cb-vmi-cole-garrett"
+        },
+        {
+          "source_player_id": "cb-vmi-c-jenkins",
+          "source_player_name": "C. Jenkins",
+          "player": "Cole Jenkins",
+          "canonical_player_id": "cb-vmi-cole-jenkins"
+        },
+        {
+          "source_player_id": "cb-vmi-j-starke",
+          "source_player_name": "J. Starke",
+          "player": "Justin Starke",
+          "canonical_player_id": "cb-vmi-justin-starke"
+        },
+        {
+          "source_player_id": "cb-vmi-k-jordan",
+          "source_player_name": "K. Jordan",
+          "player": "Kazuya Jordan",
+          "canonical_player_id": "cb-vmi-kazuya-jordan"
+        },
+        {
+          "source_player_id": "cb-vmi-m-alstine",
+          "source_player_name": "M. alstine",
+          "player": "Marcus Van Alstine",
+          "canonical_player_id": "cb-vmi-marcus-van-alstine"
+        },
+        {
+          "source_player_id": "cb-vmi-n-hawley",
+          "source_player_name": "N. Hawley",
+          "player": "Nathan Hawley",
+          "canonical_player_id": "cb-vmi-nathan-hawley"
+        },
+        {
+          "source_player_id": "cb-vmi-o-prince",
+          "source_player_name": "O. Prince",
+          "player": "Owen Prince",
+          "canonical_player_id": "cb-vmi-owen-prince"
+        },
+        {
+          "source_player_id": "cb-vmi-t-morgan",
+          "source_player_name": "T. Morgan",
+          "player": "Trey Morgan",
+          "canonical_player_id": "cb-vmi-trey-morgan"
+        },
+        {
+          "source_player_id": "cb-vmi-t-swaim",
+          "source_player_name": "T. Swaim",
+          "player": "Ty Swaim",
+          "canonical_player_id": "cb-vmi-ty-swaim"
         }
       ]
     },

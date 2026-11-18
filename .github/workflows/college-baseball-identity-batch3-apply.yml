@@ -1,0 +1,31 @@
+name: Apply approved College Baseball identity Batch 3
+on:
+  push:
+    paths:
+      - college-baseball/scripts/apply_identity_batch3.py
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  apply-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Apply approved identities with collision checks
+        run: python college-baseball/scripts/apply_identity_batch3.py
+      - name: Verify archive identity integrity
+        run: python college-baseball/scripts/test_current_identity_integrity.py
+      - name: Commit only identity registry audit and decisions
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add college-baseball/data/player_identity_crosswalk.json college-baseball/data/player_identity_reconciliation_audit.json college-baseball/data/identity_audit_batch_03_decisions.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Apply seven approved CSUN identity aliases; protect Tanner Smith and T Juline"
+            git push
+          fi

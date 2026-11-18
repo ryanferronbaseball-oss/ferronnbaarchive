@@ -65,3 +65,5 @@ with (D/"identity_audit_batch_04_review.md").open("w",encoding="utf8") as f:
  for i,r in enumerate(results[:40],1):
   f.write(f'| {i} | {r["source_name"]} | {r["candidate_name"]} | {r["school_a"]} / {r["school_b"]} | {"YES" if r["same_game_collision"] else "No"} | REVIEW |\n')
 print(json.dumps({"candidates":len(results),"sample":results[:4]}))
+
+# Trigger the installed Batch 4 reviewer.

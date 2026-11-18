@@ -48,7 +48,7 @@ for n in first_seven:
  assert len({r["game_id"] for r in src})==len(src),f"Same-game collision: {n}"
  additions.append({"name":n,"canonical_id":correct,"source_player_ids":[correct,typo],
   "schools":["Cal State Northridge","Cal State Northrdige"],
-  "pairs":[{"team":r["team"],"source_player_id":r["player_id"]} for r in src],
+  "pairs":[{"team":team,"source_player_id":pid} for team,pid in sorted({(r["team"],r["player_id"]) for r in src})],
   "source_rows":len(src),
   "approval_batch":3,
   "note":"One team typed Cal State Northrdige in the historical game source. Source rows unchanged."})

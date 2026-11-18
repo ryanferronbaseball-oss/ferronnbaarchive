@@ -1,0 +1,26 @@
+name: Batch 4 UNLV Player Identity Source Evidence
+on:
+  push:
+    paths:
+      - college-baseball/scripts/inspect_identity_batch4.py
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python college-baseball/scripts/inspect_identity_batch4.py
+      - name: Save source rows for owner review
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add college-baseball/data/identity_audit_batch_04_source_evidence.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Record Batch 4 UNLV and Keeter source game evidence"
+            git push
+          fi

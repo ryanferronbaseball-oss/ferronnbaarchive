@@ -4,10 +4,10 @@
   "source_game_count": 437,
   "source_player_game_rows": 13196,
   "games_with_source_short_names": 204,
-  "games_needing_review": 28,
+  "games_needing_review": 27,
   "source_name_issues": 619,
-  "unresolved_player_game_names": 78,
-  "already_resolved_display_names": 320,
+  "unresolved_player_game_names": 66,
+  "already_resolved_display_names": 332,
   "approved_pending_batch2_source_rows": 21,
   "optional_possible_short_first_names": 200,
   "issue_counts": {
@@ -18,256 +18,13 @@
     "name_order_or_suffix_error": 2
   },
   "unresolved_issue_counts": {
-    "first_initial_only": 69,
+    "first_initial_only": 57,
     "malformed_scorebook_text": 1,
     "surname_only": 6,
     "name_order_or_suffix_error": 2
   },
   "important": "Flags are NOT verified corrections. Original stats and games remain unmodified.",
   "games": [
-    {
-      "game_id": "cb-2019-03-05-san-diego-uc-riverside-att0046",
-      "date": "2019-03-05",
-      "away": "San Diego",
-      "home": "UC Riverside",
-      "source_url": "https://usdtoreros.com/boxscore.aspx?id=9239&path=baseball",
-      "needs_review": 12,
-      "already_resolved": 5,
-      "approved_pending": 6,
-      "possible_short_first_names": 0,
-      "entries": [
-        {
-          "team": "UC Riverside",
-          "source_name": "A Arnone",
-          "source_player_id": "cb-uc-riverside-a-arnone",
-          "issue": "first_initial_only",
-          "role": "hitting + pitching",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "UC Riverside",
-          "source_name": "A Garcia",
-          "source_player_id": "cb-uc-riverside-a-garcia",
-          "issue": "first_initial_only",
-          "role": "hitting + pitching",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "UC Riverside",
-          "source_name": "C Tucker",
-          "source_player_id": "cb-uc-riverside-c-tucker",
-          "issue": "first_initial_only",
-          "role": "pitching",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "UC Riverside",
-          "source_name": "D Mckesson",
-          "source_player_id": "cb-uc-riverside-d-mckesson",
-          "issue": "first_initial_only",
-          "role": "pitching",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "UC Riverside",
-          "source_name": "D Sanchez",
-          "source_player_id": "cb-uc-riverside-d-sanchez",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "UC Riverside",
-          "source_name": "H Naucler",
-          "source_player_id": "cb-uc-riverside-h-naucler",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "UC Riverside",
-          "source_name": "H Petrovick",
-          "source_player_id": "cb-uc-riverside-h-petrovick",
-          "issue": "first_initial_only",
-          "role": "pitching",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "UC Riverside",
-          "source_name": "J Mannens",
-          "source_player_id": "cb-uc-riverside-j-mannens",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "UC Riverside",
-          "source_name": "M Hardy",
-          "source_player_id": "cb-uc-riverside-m-hardy",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "UC Riverside",
-          "source_name": "N Kafer",
-          "source_player_id": "cb-uc-riverside-n-kafer",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "UC Riverside",
-          "source_name": "P Sanchez",
-          "source_player_id": "cb-uc-riverside-p-sanchez",
-          "issue": "first_initial_only",
-          "role": "pitching",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "UC Riverside",
-          "source_name": "T Bateson",
-          "source_player_id": "cb-uc-riverside-t-bateson",
-          "issue": "first_initial_only",
-          "role": "pitching",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "UC Riverside",
-          "source_name": "A Gerber",
-          "source_player_id": "cb-uc-riverside-a-gerber",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "resolved",
-          "display_name": "Ari Gerber",
-          "resolution": "approved identity merge"
-        },
-        {
-          "team": "UC Riverside",
-          "source_name": "A Granillo",
-          "source_player_id": "cb-uc-riverside-a-granillo",
-          "issue": "first_initial_only",
-          "role": "pitching",
-          "status": "resolved",
-          "display_name": "Andre Granillo",
-          "resolution": "approved identity merge"
-        },
-        {
-          "team": "UC Riverside",
-          "source_name": "C Cannon",
-          "source_player_id": "cb-uc-riverside-c-cannon",
-          "issue": "first_initial_only",
-          "role": "hitting + pitching",
-          "status": "resolved",
-          "display_name": "Connor Cannon",
-          "resolution": "verified game correction"
-        },
-        {
-          "team": "UC Riverside",
-          "source_name": "C Pofek",
-          "source_player_id": "cb-uc-riverside-c-pofek",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "approved_pending",
-          "display_name": "Cole Pofek",
-          "resolution": "owner-approved Batch 2 pending application"
-        },
-        {
-          "team": "UC Riverside",
-          "source_name": "D Miller",
-          "source_player_id": "cb-uc-riverside-d-miller",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "resolved",
-          "display_name": "Dean Miller",
-          "resolution": "verified game correction"
-        },
-        {
-          "team": "UC Riverside",
-          "source_name": "D Orick",
-          "source_player_id": "cb-uc-riverside-d-orick",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "approved_pending",
-          "display_name": "Dylan Orick",
-          "resolution": "owner-approved Batch 2 pending application"
-        },
-        {
-          "team": "UC Riverside",
-          "source_name": "J Shanks",
-          "source_player_id": "cb-uc-riverside-j-shanks",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "approved_pending",
-          "display_name": "Jacob Shanks",
-          "resolution": "owner-approved Batch 2 pending application"
-        },
-        {
-          "team": "UC Riverside",
-          "source_name": "N Webb",
-          "source_player_id": "cb-uc-riverside-n-webb",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "approved_pending",
-          "display_name": "Nathan Webb",
-          "resolution": "owner-approved Batch 2 pending application"
-        },
-        {
-          "team": "UC Riverside",
-          "source_name": "T Bohall",
-          "source_player_id": "cb-uc-riverside-t-bohall",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "approved_pending",
-          "display_name": "Travis Bohall",
-          "resolution": "owner-approved Batch 2 pending application"
-        },
-        {
-          "team": "UC Riverside",
-          "source_name": "T Juline",
-          "source_player_id": "cb-uc-riverside-t-juline",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "resolved",
-          "display_name": "Taylor Juline",
-          "resolution": "approved identity merge"
-        },
-        {
-          "team": "UC Riverside",
-          "source_name": "Y Taylor",
-          "source_player_id": "cb-uc-riverside-y-taylor",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "approved_pending",
-          "display_name": "Yeager Taylor",
-          "resolution": "owner-approved Batch 2 pending application"
-        }
-      ]
-    },
     {
       "game_id": "cb-2025-05-10-george-mason-davidson-att0344",
       "date": "2025-05-10",
@@ -3339,6 +3096,249 @@
           "status": "possible_short_first_name",
           "display_name": null,
           "resolution": null
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2019-03-05-san-diego-uc-riverside-att0046",
+      "date": "2019-03-05",
+      "away": "San Diego",
+      "home": "UC Riverside",
+      "source_url": "https://usdtoreros.com/boxscore.aspx?id=9239&path=baseball",
+      "needs_review": 0,
+      "already_resolved": 17,
+      "approved_pending": 6,
+      "possible_short_first_names": 0,
+      "entries": [
+        {
+          "team": "UC Riverside",
+          "source_name": "A Arnone",
+          "source_player_id": "cb-uc-riverside-a-arnone",
+          "issue": "first_initial_only",
+          "role": "hitting + pitching",
+          "status": "resolved",
+          "display_name": "Alec Arnone",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "UC Riverside",
+          "source_name": "A Garcia",
+          "source_player_id": "cb-uc-riverside-a-garcia",
+          "issue": "first_initial_only",
+          "role": "hitting + pitching",
+          "status": "resolved",
+          "display_name": "Adrian Garcia",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "UC Riverside",
+          "source_name": "A Gerber",
+          "source_player_id": "cb-uc-riverside-a-gerber",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Ari Gerber",
+          "resolution": "approved identity merge"
+        },
+        {
+          "team": "UC Riverside",
+          "source_name": "A Granillo",
+          "source_player_id": "cb-uc-riverside-a-granillo",
+          "issue": "first_initial_only",
+          "role": "pitching",
+          "status": "resolved",
+          "display_name": "Andre Granillo",
+          "resolution": "approved identity merge"
+        },
+        {
+          "team": "UC Riverside",
+          "source_name": "C Cannon",
+          "source_player_id": "cb-uc-riverside-c-cannon",
+          "issue": "first_initial_only",
+          "role": "hitting + pitching",
+          "status": "resolved",
+          "display_name": "Connor Cannon",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "UC Riverside",
+          "source_name": "C Pofek",
+          "source_player_id": "cb-uc-riverside-c-pofek",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "approved_pending",
+          "display_name": "Cole Pofek",
+          "resolution": "owner-approved Batch 2 pending application"
+        },
+        {
+          "team": "UC Riverside",
+          "source_name": "C Tucker",
+          "source_player_id": "cb-uc-riverside-c-tucker",
+          "issue": "first_initial_only",
+          "role": "pitching",
+          "status": "resolved",
+          "display_name": "Cole Tucker",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "UC Riverside",
+          "source_name": "D Mckesson",
+          "source_player_id": "cb-uc-riverside-d-mckesson",
+          "issue": "first_initial_only",
+          "role": "pitching",
+          "status": "resolved",
+          "display_name": "Devin Mckesson",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "UC Riverside",
+          "source_name": "D Miller",
+          "source_player_id": "cb-uc-riverside-d-miller",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Dean Miller",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "UC Riverside",
+          "source_name": "D Orick",
+          "source_player_id": "cb-uc-riverside-d-orick",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "approved_pending",
+          "display_name": "Dylan Orick",
+          "resolution": "owner-approved Batch 2 pending application"
+        },
+        {
+          "team": "UC Riverside",
+          "source_name": "D Sanchez",
+          "source_player_id": "cb-uc-riverside-d-sanchez",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Damien Sanchez",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "UC Riverside",
+          "source_name": "H Naucler",
+          "source_player_id": "cb-uc-riverside-h-naucler",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Houston Naucler",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "UC Riverside",
+          "source_name": "H Petrovick",
+          "source_player_id": "cb-uc-riverside-h-petrovick",
+          "issue": "first_initial_only",
+          "role": "pitching",
+          "status": "resolved",
+          "display_name": "Hayden Petrovick",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "UC Riverside",
+          "source_name": "J Mannens",
+          "source_player_id": "cb-uc-riverside-j-mannens",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Justin Mannens",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "UC Riverside",
+          "source_name": "J Shanks",
+          "source_player_id": "cb-uc-riverside-j-shanks",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "approved_pending",
+          "display_name": "Jacob Shanks",
+          "resolution": "owner-approved Batch 2 pending application"
+        },
+        {
+          "team": "UC Riverside",
+          "source_name": "M Hardy",
+          "source_player_id": "cb-uc-riverside-m-hardy",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Matt Hardy",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "UC Riverside",
+          "source_name": "N Kafer",
+          "source_player_id": "cb-uc-riverside-n-kafer",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Nick Kafer",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "UC Riverside",
+          "source_name": "N Webb",
+          "source_player_id": "cb-uc-riverside-n-webb",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "approved_pending",
+          "display_name": "Nathan Webb",
+          "resolution": "owner-approved Batch 2 pending application"
+        },
+        {
+          "team": "UC Riverside",
+          "source_name": "P Sanchez",
+          "source_player_id": "cb-uc-riverside-p-sanchez",
+          "issue": "first_initial_only",
+          "role": "pitching",
+          "status": "resolved",
+          "display_name": "Peter Sanchez",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "UC Riverside",
+          "source_name": "T Bateson",
+          "source_player_id": "cb-uc-riverside-t-bateson",
+          "issue": "first_initial_only",
+          "role": "pitching",
+          "status": "resolved",
+          "display_name": "Trevor Bateson",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "UC Riverside",
+          "source_name": "T Bohall",
+          "source_player_id": "cb-uc-riverside-t-bohall",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "approved_pending",
+          "display_name": "Travis Bohall",
+          "resolution": "owner-approved Batch 2 pending application"
+        },
+        {
+          "team": "UC Riverside",
+          "source_name": "T Juline",
+          "source_player_id": "cb-uc-riverside-t-juline",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Taylor Juline",
+          "resolution": "approved identity merge"
+        },
+        {
+          "team": "UC Riverside",
+          "source_name": "Y Taylor",
+          "source_player_id": "cb-uc-riverside-y-taylor",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "approved_pending",
+          "display_name": "Yeager Taylor",
+          "resolution": "owner-approved Batch 2 pending application"
         }
       ]
     },

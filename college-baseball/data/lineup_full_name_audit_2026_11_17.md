@@ -3,33 +3,14 @@
 Read-only audit of 437 games and 13,196 player-game records. Hitting and pitching names. No changes to source box scores.
 
 - **Games containing abbreviated source names:** 204
-- **Games needing review:** 28
+- **Games needing review:** 27
 - **Flagged player-game source names:** 619
-- **Names needing review:** 78
-- **Names already resolved for display:** 320
+- **Names needing review:** 66
+- **Names already resolved for display:** 332
 - **Previously approved Batch 2 names, pending activation:** 21
 - **Two-letter first names, optional review only:** 200
 
 ## Games with unresolved incomplete lineup names
-
-### 2019-03-05 — San Diego at UC Riverside (12 names)
-
-Game ID: cb-2019-03-05-san-diego-uc-riverside-att0046
-
-| Team | Source name | Issue | Role |
-|---|---|---|---|
-| UC Riverside | A Arnone | first initial only | hitting + pitching |
-| UC Riverside | A Garcia | first initial only | hitting + pitching |
-| UC Riverside | C Tucker | first initial only | pitching |
-| UC Riverside | D Mckesson | first initial only | pitching |
-| UC Riverside | D Sanchez | first initial only | hitting |
-| UC Riverside | H Naucler | first initial only | hitting |
-| UC Riverside | H Petrovick | first initial only | pitching |
-| UC Riverside | J Mannens | first initial only | hitting |
-| UC Riverside | M Hardy | first initial only | hitting |
-| UC Riverside | N Kafer | first initial only | hitting |
-| UC Riverside | P Sanchez | first initial only | pitching |
-| UC Riverside | T Bateson | first initial only | pitching |
 
 ### 2025-05-10 — George Mason at Davidson (12 names)
 
@@ -288,15 +269,6 @@ Game ID: cb-2026-05-23-florida-georgia-att0437
 
 ## Previously approved Batch 2 names, pending source mapping
 
-### 2019-03-05 — San Diego at UC Riverside
-
-- UC Riverside: C Pofek => Cole Pofek (APPROVED, not activated)
-- UC Riverside: D Orick => Dylan Orick (APPROVED, not activated)
-- UC Riverside: J Shanks => Jacob Shanks (APPROVED, not activated)
-- UC Riverside: N Webb => Nathan Webb (APPROVED, not activated)
-- UC Riverside: T Bohall => Travis Bohall (APPROVED, not activated)
-- UC Riverside: Y Taylor => Yeager Taylor (APPROVED, not activated)
-
 ### 2022-05-08 — San Diego at Pacific
 
 - Pacific: A. Selfridge => Aidan Selfridge (APPROVED, not activated)
@@ -324,6 +296,15 @@ Game ID: cb-2026-05-23-florida-georgia-att0437
 - Cal State Fullerton: K. Luckham => Kyle Luckham (APPROVED, not activated)
 - Cal State Fullerton: L. Anderson => Landon Anderson (APPROVED, not activated)
 - Cal State Fullerton: M. Weisberg => Michael Weisberg (APPROVED, not activated)
+
+### 2019-03-05 — San Diego at UC Riverside
+
+- UC Riverside: C Pofek => Cole Pofek (APPROVED, not activated)
+- UC Riverside: D Orick => Dylan Orick (APPROVED, not activated)
+- UC Riverside: J Shanks => Jacob Shanks (APPROVED, not activated)
+- UC Riverside: N Webb => Nathan Webb (APPROVED, not activated)
+- UC Riverside: T Bohall => Travis Bohall (APPROVED, not activated)
+- UC Riverside: Y Taylor => Yeager Taylor (APPROVED, not activated)
 
 ### 2024-02-19 — Marshall at College of Charleston
 
@@ -1029,14 +1010,6 @@ Game ID: cb-2026-05-23-florida-georgia-att0437
 
 ## Already resolved source abbreviations
 
-### 2019-03-05 — San Diego at UC Riverside
-
-- UC Riverside: A Gerber => Ari Gerber (approved identity merge)
-- UC Riverside: A Granillo => Andre Granillo (approved identity merge)
-- UC Riverside: C Cannon => Connor Cannon (verified game correction)
-- UC Riverside: D Miller => Dean Miller (verified game correction)
-- UC Riverside: T Juline => Taylor Juline (approved identity merge)
-
 ### 2024-03-08 — Binghamton at VMI
 
 - VMI: G. Fitzwater => Grayson Fitzwater (verified game correction)
@@ -1256,6 +1229,26 @@ Game ID: cb-2026-05-23-florida-georgia-att0437
 - San Diego: S McGuire => Shane McGuire (verified game correction)
 - San Diego: T Omahen => Trevor Omahen (verified game correction)
 - San Diego: T Rosenberg => Trevor Rosenberg (verified game correction)
+
+### 2019-03-05 — San Diego at UC Riverside
+
+- UC Riverside: A Arnone => Alec Arnone (verified game correction)
+- UC Riverside: A Garcia => Adrian Garcia (verified game correction)
+- UC Riverside: A Gerber => Ari Gerber (approved identity merge)
+- UC Riverside: A Granillo => Andre Granillo (approved identity merge)
+- UC Riverside: C Cannon => Connor Cannon (verified game correction)
+- UC Riverside: C Tucker => Cole Tucker (verified game correction)
+- UC Riverside: D Mckesson => Devin Mckesson (verified game correction)
+- UC Riverside: D Miller => Dean Miller (verified game correction)
+- UC Riverside: D Sanchez => Damien Sanchez (verified game correction)
+- UC Riverside: H Naucler => Houston Naucler (verified game correction)
+- UC Riverside: H Petrovick => Hayden Petrovick (verified game correction)
+- UC Riverside: J Mannens => Justin Mannens (verified game correction)
+- UC Riverside: M Hardy => Matt Hardy (verified game correction)
+- UC Riverside: N Kafer => Nick Kafer (verified game correction)
+- UC Riverside: P Sanchez => Peter Sanchez (verified game correction)
+- UC Riverside: T Bateson => Trevor Bateson (verified game correction)
+- UC Riverside: T Juline => Taylor Juline (approved identity merge)
 
 ### 2020-02-21 — Nebraska at San Diego
 

@@ -141,3 +141,5 @@ assert hashlib.sha256(gamespath.read_bytes()).hexdigest()==games_hash
 print(json.dumps({"status":"PASS","added_merges":7,"total_merges":len(cross["merges"]),
  "protected_separate":len(cross["owner_rejected_merge_candidates"]),"unresolved":"T Juline",
  "player_rows_unchanged":len(raw),"profile_collision_count":0}))
+
+# Invoke approved Batch 3 validation workflow.

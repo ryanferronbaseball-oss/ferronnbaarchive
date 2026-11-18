@@ -10,13 +10,13 @@
     "silver_slugger_definition": "AL/NL standard Silver Slugger awards only",
     "all_star_definition": "Official MLB All-Star selections deduplicated by year; not All-MLB Team or All-Star Game appearances",
     "player_pool": 1633,
-    "honored_players": 571,
+    "honored_players": 573,
     "inductees": 21,
     "award_recipients": {
       "mvp": 33,
       "cy_young": 16,
       "gold_glove": 164,
-      "silver_slugger": 191,
+      "silver_slugger": 201,
       "all_star": 513
     },
     "sources": {
@@ -77,6 +77,14 @@
       "winning_players_in_attendance_pool": 13,
       "other_league_winners_not_in_attendance_pool": 7,
       "method": "Supplemental verified award year; source StatAPI import snapshot retained"
+    },
+    "latest_silver_slugger_update": {
+      "award_year": 2026,
+      "verified_on": "2026-11-17",
+      "source_url": "https://www.mlb.com/news/2026-silver-slugger-award-winners",
+      "winning_players_in_attendance_pool": 13,
+      "other_league_winners_not_in_attendance_pool": 7,
+      "method": "Supplemental verified award year; historical StatsAPI import snapshot retained"
     }
   },
   "players": {
@@ -11340,6 +11348,10 @@
         {
           "year": 2023,
           "league": "NL"
+        },
+        {
+          "year": 2026,
+          "league": "NL"
         }
       ],
       "all_star": [
@@ -11426,6 +11438,10 @@
         {
           "year": 2025,
           "league": "NL"
+        },
+        {
+          "year": 2026,
+          "league": "AL"
         }
       ],
       "all_star": [
@@ -11573,6 +11589,20 @@
           "year": 2022
         }
       ]
+    },
+    "641343": {
+      "name": "Jake Bauers",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2026,
+          "league": "NL"
+        }
+      ],
+      "all_star": []
     },
     "641355": {
       "name": "Cody Bellinger",
@@ -12075,6 +12105,10 @@
       "silver_slugger": [
         {
           "year": 2022,
+          "league": "NL"
+        },
+        {
+          "year": 2026,
           "league": "NL"
         }
       ],
@@ -12785,7 +12819,12 @@
       "mvp": [],
       "cy_young": [],
       "gold_glove": [],
-      "silver_slugger": [],
+      "silver_slugger": [
+        {
+          "year": 2026,
+          "league": "AL"
+        }
+      ],
       "all_star": [
         {
           "year": 2023
@@ -13129,7 +13168,12 @@
           "league": "NL"
         }
       ],
-      "silver_slugger": [],
+      "silver_slugger": [
+        {
+          "year": 2026,
+          "league": "NL"
+        }
+      ],
       "all_star": []
     },
     "672695": {
@@ -13371,7 +13415,12 @@
       "mvp": [],
       "cy_young": [],
       "gold_glove": [],
-      "silver_slugger": [],
+      "silver_slugger": [
+        {
+          "year": 2026,
+          "league": "NL"
+        }
+      ],
       "all_star": [
         {
           "year": 2024
@@ -13517,7 +13566,12 @@
           "league": "NL"
         }
       ],
-      "silver_slugger": [],
+      "silver_slugger": [
+        {
+          "year": 2026,
+          "league": "NL"
+        }
+      ],
       "all_star": [
         {
           "year": 2025
@@ -13542,7 +13596,12 @@
           "league": "AL"
         }
       ],
-      "silver_slugger": [],
+      "silver_slugger": [
+        {
+          "year": 2026,
+          "league": "AL"
+        }
+      ],
       "all_star": [
         {
           "year": 2026
@@ -13573,7 +13632,12 @@
           "league": "NL"
         }
       ],
-      "silver_slugger": [],
+      "silver_slugger": [
+        {
+          "year": 2026,
+          "league": "NL"
+        }
+      ],
       "all_star": []
     },
     "695578": {
@@ -13582,7 +13646,12 @@
       "mvp": [],
       "cy_young": [],
       "gold_glove": [],
-      "silver_slugger": [],
+      "silver_slugger": [
+        {
+          "year": 2026,
+          "league": "NL"
+        }
+      ],
       "all_star": [
         {
           "year": 2025
@@ -13644,13 +13713,32 @@
         }
       ]
     },
+    "805367": {
+      "name": "Chase Meidroth",
+      "hall_of_fame": null,
+      "mvp": [],
+      "cy_young": [],
+      "gold_glove": [],
+      "silver_slugger": [
+        {
+          "year": 2026,
+          "league": "AL"
+        }
+      ],
+      "all_star": []
+    },
     "805808": {
       "name": "Kevin McGonigle",
       "hall_of_fame": null,
       "mvp": [],
       "cy_young": [],
       "gold_glove": [],
-      "silver_slugger": [],
+      "silver_slugger": [
+        {
+          "year": 2026,
+          "league": "AL"
+        }
+      ],
       "all_star": [
         {
           "year": 2026

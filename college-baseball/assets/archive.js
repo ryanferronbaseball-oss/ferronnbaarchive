@@ -607,16 +607,30 @@ async function renderPlayer(d){
  const baseballAmericaHonors=(baseballAmericaRegistry.honors||[]).filter(a=>a.college_player_id===id);
  if(!Array.isArray(alumniRegistry.players))throw Error("Invalid verified MLB alumni registry");
  if(!Array.isArray(draftRegistry.picks))throw Error("Missing verified college draft tags");
- const draftIds=new Set();
+ // Draft names may retain a verified full name while the source gamebook
+ // prints initials. An unrelated tag must not prevent ALL profiles loading.
+ // Validate each draft entry independently; preserve valid historical tags.
+ const draftIds=new Set(),validDraftPicks=[];
+ const draftPlayerIds=new Set(d.players.map(x=>x.player_id));
  for(const entry of draftRegistry.picks){
-  if(!entry.college_player_id||!entry.name||!Number.isInteger(entry.draft_year)||
-     !String(entry.draft_round||"").trim()||!Number.isInteger(entry.draft_pick)||!entry.draft_team||
-     draftIds.has(entry.college_player_id)||d.players.some(x=>x.player_id===entry.college_player_id&&x.name.toLowerCase()!==entry.name.toLowerCase()))
-   throw Error("Invalid or unmatched verified draft selection: "+entry.college_player_id);
+  const valid=!!entry.college_player_id&&!!entry.name&&Number.isInteger(entry.draft_year)&&
+   !!String(entry.draft_round||"").trim()&&Number.isInteger(entry.draft_pick)&&
+   !!entry.draft_team&&!draftIds.has(entry.college_player_id);
+  if(!valid){
+   console.warn("Skipping malformed or duplicate verified draft selection:",entry.college_player_id);
+   continue;
+  }
   draftIds.add(entry.college_player_id);
+  // Some draft selections have not appeared in an attended game. These may
+  // remain in the registry, but cannot be attached to a nonexistent profile.
+  if(!draftPlayerIds.has(entry.college_player_id))continue;
+  const matched=d.players.find(x=>x.player_id===entry.college_player_id);
+  if(matched.name.toLowerCase()!==entry.name.toLowerCase())
+   console.warn("Draft selection name differs from source gamebook display name:",entry.college_player_id,matched.name,entry.name);
+  validDraftPicks.push(entry);
  }
  const alumnus=alumniRegistry.players.find(x=>x.college_player_id===id&&Number.isInteger(x.mlb_player_id)&&x.mlb_debut);
- const newDraft=draftRegistry.picks.find(x=>x.college_player_id===id);
+ const newDraft=validDraftPicks.find(x=>x.college_player_id===id);
  if(newDraft&&alumnus&&["draft_year","draft_round","draft_pick","draft_team"].some(k=>String(newDraft[k])!==String(alumnus[k])))
   throw Error("Conflicting MLB draft history for "+p.name);
  const draft=newDraft||alumnus;

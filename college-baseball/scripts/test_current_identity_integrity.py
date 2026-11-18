@@ -33,8 +33,13 @@ merges = crosswalk["merges"]
 assert len(merges) == len({m["canonical_id"] for m in merges}) == 177
 assert crosswalk["pending_person_merges"] == audit["pending_person_merges"] == 0
 assert crosswalk["activated_person_merges"] == audit["activated_person_merges"] == 177
-rejected = {m["name"] for m in crosswalk["owner_rejected_merge_candidates"]}
-assert rejected.isdisjoint({m["name"] for m in merges})
+rejected_pairs = crosswalk["owner_rejected_merge_candidates"]
+canonical_by_source = {sid: m["canonical_id"] for m in merges for sid in m["source_player_ids"]}
+for rejected in rejected_pairs:
+    ids = rejected["source_player_ids"]
+    assert len(ids) == 2, rejected
+    assert (canonical_by_source.get(ids[0], ids[0]) !=
+            canonical_by_source.get(ids[1], ids[1])), rejected
 
 aliases, redirects = {}, {}
 for merge in merges:

@@ -207,6 +207,7 @@ async function load(){
   if(redirects.has(fix.source_player_id)&&redirects.get(fix.source_player_id)!==fix.canonical_player_id)throw Error("Conflicting name correction profile redirect");
   redirects.set(fix.source_player_id,fix.canonical_player_id);
  }
+ const mergedRowDisplayNames=new Map(identity.merges.filter(m=>m.display_name).map(m=>[m.canonical_id,m.display_name]));
  const knownNameCases=preferredScorebookNameCases(sourceRows);
  const appliedFixes=new Set();
  const rows=sourceRows.map(source=>{
@@ -219,7 +220,8 @@ async function load(){
   const displayName=scorebookNeedsCase(r.player)?knownNameCases.get(r.player.toLowerCase())||scorebookNameCase(r.player):r.player;
   const displayed=displayName===r.player?r:{...r,player:displayName};
   const unified=scopedAliases.get(displayed.team+"\u0000"+displayed.player_id);
-  return unified?{...displayed,original_school_player_id:displayed.player_id,player_id:unified}:displayed;
+  return unified?{...displayed,original_school_player_id:displayed.player_id,player_id:unified,
+   player:mergedRowDisplayNames.get(unified)||displayed.player}:displayed;
  });
  if(appliedFixes.size!==fixedNames.size)throw Error("Verified player name correction did not match source game rows");
  if(!Array.isArray(games)||!Array.isArray(rows)||!Array.isArray(crosswalk))throw Error("Unexpected college baseball data structure");

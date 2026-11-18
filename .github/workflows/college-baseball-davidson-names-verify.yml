@@ -1,0 +1,29 @@
+name: Verify Davidson 2025 Full Name Corrections
+on:
+  push:
+    paths:
+      - college-baseball/data/player_name_corrections.json
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify profile identity integrity against original 13196 rows
+        run: python college-baseball/scripts/test_current_identity_integrity.py
+      - name: Refresh lineup first-name audit
+        run: python college-baseball/scripts/audit_incomplete_lineup_names.py
+      - name: Save refreshed audit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add college-baseball/data/lineup_full_name_audit_2026_11_17.json college-baseball/data/lineup_full_name_audit_2026_11_17.md
+          if ! git diff --cached --quiet; then
+            git commit -m "Refresh name audit after Davidson 2025 verified corrections"
+            git push
+          fi

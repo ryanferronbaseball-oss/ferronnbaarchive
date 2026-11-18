@@ -80,3 +80,5 @@ save("lineup_name_fix_uc_riverside_2019_03_05.json",{
 "corrections":new
 })
 print(json.dumps({"status":"PASS","game":gid,"full_names_corrected":len(new),"source_rows_unchanged":len(rows),"same_game_collisions":0}))
+
+# Run full-name reconciliation after workflow installation.

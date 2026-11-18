@@ -1,0 +1,29 @@
+name: College Baseball Identity Batch 3 Candidate Review
+on:
+  push:
+    paths:
+      - 'college-baseball/scripts/build_identity_batch3.py'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Scan source player rows and produce review manifest
+        run: python college-baseball/scripts/build_identity_batch3.py
+      - name: Commit review candidates (never source stats)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add college-baseball/data/identity_audit_batch_03_candidates.json college-baseball/data/identity_audit_batch_03_review.md
+          if ! git diff --cached --quiet; then
+            git commit -m "Generate Batch 3 college baseball identity candidate review"
+            git push
+          fi

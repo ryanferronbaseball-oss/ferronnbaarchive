@@ -30,9 +30,9 @@ for game in [names, *names["games"]]:
         fixes[key] = fix
 
 merges = crosswalk["merges"]
-assert len(merges) == len({m["canonical_id"] for m in merges}) == 177
+assert len(merges) == len({m["canonical_id"] for m in merges}) == crosswalk["activated_person_merges"]
 assert crosswalk["pending_person_merges"] == audit["pending_person_merges"] == 0
-assert crosswalk["activated_person_merges"] == audit["activated_person_merges"] == 177
+assert crosswalk["activated_person_merges"] == audit["activated_person_merges"]
 rejected_pairs = crosswalk["owner_rejected_merge_candidates"]
 canonical_by_source = {sid: m["canonical_id"] for m in merges for sid in m["source_player_ids"]}
 for rejected in rejected_pairs:

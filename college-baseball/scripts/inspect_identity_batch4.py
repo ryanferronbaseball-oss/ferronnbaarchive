@@ -15,3 +15,5 @@ for pid in ids:
  "batting":r.get("batting"),"pitching":r.get("pitching")} for r in selected]
 (d/"identity_audit_batch_04_source_evidence.json").write_text(json.dumps(out,indent=2)+"\n")
 print(json.dumps({k:len(v) for k,v in out.items()}))
+
+# Trigger source-row evidence scan.

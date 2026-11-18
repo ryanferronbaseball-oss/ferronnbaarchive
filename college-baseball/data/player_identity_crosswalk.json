@@ -4,15 +4,17 @@
   "source": "Original archive owner confirmed each multi-school person",
   "original_attendance_ids_preserved": 444,
   "original_player_game_rows_preserved": 13183,
-  "requested_person_merges": 162,
-  "activated_person_merges": 162,
+  "requested_person_merges": 177,
+  "activated_person_merges": 177,
   "pending_person_merges": 0,
   "merge_policy": "Only listed pair of exact normalized person names and school-specific original source player IDs; all other IDs remain separate",
   "display_aliases": [
     {
       "player_id": "cb-nc-state-alec-makarewicz",
       "display_name": "Alec Briley",
-      "former_names": ["Alec Makarewicz"],
+      "former_names": [
+        "Alec Makarewicz"
+      ],
       "evidence_urls": [
         "https://gopack.com/sports/baseball/roster/makarewicz-alec/12549",
         "https://www.baseball-reference.com/register/player.fcgi?id=makare000ale"
@@ -22,157 +24,373 @@
   "owner_rejected_merge_candidates": [
     {
       "name": "Caden Miller",
-      "schools": ["San Diego State", "Indiana State"],
-      "source_player_ids": ["cb-san-diego-state-caden-miller", "cb-indiana-state-caden-miller"],
+      "schools": [
+        "San Diego State",
+        "Indiana State"
+      ],
+      "source_player_ids": [
+        "cb-san-diego-state-caden-miller",
+        "cb-indiana-state-caden-miller"
+      ],
       "decision": "do_not_merge",
       "confirmed_on": "2026-11-02"
     },
     {
       "name": "Colby Wallace",
-      "schools": ["Cal State Fullerton", "East Carolina"],
-      "source_player_ids": ["cb-cal-state-fullerton-colby-wallace", "cb-east-carolina-colby-wallace"],
+      "schools": [
+        "Cal State Fullerton",
+        "East Carolina"
+      ],
+      "source_player_ids": [
+        "cb-cal-state-fullerton-colby-wallace",
+        "cb-east-carolina-colby-wallace"
+      ],
       "decision": "do_not_merge",
       "confirmed_on": "2026-11-02"
     },
     {
       "name": "Justin Hackett",
-      "schools": ["Bryant", "Iowa"],
-      "source_player_ids": ["cb-bryant-justin-hackett", "cb-iowa-justin-hackett"],
+      "schools": [
+        "Bryant",
+        "Iowa"
+      ],
+      "source_player_ids": [
+        "cb-bryant-justin-hackett",
+        "cb-iowa-justin-hackett"
+      ],
       "decision": "do_not_merge",
       "confirmed_on": "2026-11-02"
     },
     {
       "name": "Christian Rodriguez",
-      "schools": ["Cal State Fullerton", "Florida"],
-      "source_player_ids": ["cb-cal-state-fullerton-christian-rodriguez", "cb-florida-christian-rodriguez"],
+      "schools": [
+        "Cal State Fullerton",
+        "Florida"
+      ],
+      "source_player_ids": [
+        "cb-cal-state-fullerton-christian-rodriguez",
+        "cb-florida-christian-rodriguez"
+      ],
       "decision": "do_not_merge",
       "confirmed_on": "2026-11-02"
     },
     {
       "name": "Sam Beck",
-      "schools": ["San Francisco", "BYU"],
-      "source_player_ids": ["cb-san-francisco-sam-beck", "cb-byu-sam-beck"],
+      "schools": [
+        "San Francisco",
+        "BYU"
+      ],
+      "source_player_ids": [
+        "cb-san-francisco-sam-beck",
+        "cb-byu-sam-beck"
+      ],
       "decision": "do_not_merge",
       "confirmed_on": "2026-11-02"
     },
     {
       "name": "Cade Brown",
-      "schools": ["Georgia", "San Diego"],
-      "source_player_ids": ["cb-georgia-cade-brown", "cb-san-diego-cade-brown"],
+      "schools": [
+        "Georgia",
+        "San Diego"
+      ],
+      "source_player_ids": [
+        "cb-georgia-cade-brown",
+        "cb-san-diego-cade-brown"
+      ],
       "decision": "do_not_merge",
       "confirmed_on": "2026-11-02"
     },
     {
       "name": "Ryan Johnson",
-      "schools": ["Dallas Baptist", "Pepperdine"],
-      "source_player_ids": ["cb-dallas-baptist-ryan-johnson", "cb-pepperdine-ryan-johnson"],
+      "schools": [
+        "Dallas Baptist",
+        "Pepperdine"
+      ],
+      "source_player_ids": [
+        "cb-dallas-baptist-ryan-johnson",
+        "cb-pepperdine-ryan-johnson"
+      ],
       "decision": "do_not_merge",
       "confirmed_on": "2026-11-02"
     },
     {
       "name": "Jacob Wilson",
-      "schools": ["Cal Baptist", "Grand Canyon"],
-      "source_player_ids": ["cb-cal-baptist-jacob-wilson", "cb-grand-canyon-jacob-wilson"],
+      "schools": [
+        "Cal Baptist",
+        "Grand Canyon"
+      ],
+      "source_player_ids": [
+        "cb-cal-baptist-jacob-wilson",
+        "cb-grand-canyon-jacob-wilson"
+      ],
       "decision": "do_not_merge",
       "confirmed_on": "2026-11-02"
     },
     {
       "name": "Cole Johnson",
-      "schools": ["Austin Peay", "Georgia"],
-      "source_player_ids": ["cb-austin-peay-cole-johnson", "cb-georgia-cole-johnson"],
+      "schools": [
+        "Austin Peay",
+        "Georgia"
+      ],
+      "source_player_ids": [
+        "cb-austin-peay-cole-johnson",
+        "cb-georgia-cole-johnson"
+      ],
       "decision": "do_not_merge",
       "confirmed_on": "2026-11-02"
     },
     {
       "name": "Cooper Williams",
-      "schools": ["Kennesaw State", "LSU"],
-      "source_player_ids": ["cb-kennesaw-state-cooper-williams", "cb-lsu-cooper-williams"],
+      "schools": [
+        "Kennesaw State",
+        "LSU"
+      ],
+      "source_player_ids": [
+        "cb-kennesaw-state-cooper-williams",
+        "cb-lsu-cooper-williams"
+      ],
       "decision": "do_not_merge",
       "confirmed_on": "2026-11-02"
     },
     {
       "name": "Ryan Lynch",
-      "schools": ["Coastal Carolina", "Notre Dame"],
-      "source_player_ids": ["cb-coastal-carolina-ryan-lynch", "cb-notre-dame-ryan-lynch"],
+      "schools": [
+        "Coastal Carolina",
+        "Notre Dame"
+      ],
+      "source_player_ids": [
+        "cb-coastal-carolina-ryan-lynch",
+        "cb-notre-dame-ryan-lynch"
+      ],
       "decision": "do_not_merge",
       "confirmed_on": "2026-11-02"
     },
     {
       "name": "Dylan Brown",
-      "schools": ["Old Dominion", "San Francisco"],
-      "source_player_ids": ["cb-old-dominion-dylan-brown", "cb-san-francisco-dylan-brown"],
+      "schools": [
+        "Old Dominion",
+        "San Francisco"
+      ],
+      "source_player_ids": [
+        "cb-old-dominion-dylan-brown",
+        "cb-san-francisco-dylan-brown"
+      ],
       "decision": "do_not_merge",
       "confirmed_on": "2026-11-02"
     },
     {
       "name": "Cam Hill",
-      "schools": ["Ohio", "South Alabama"],
-      "source_player_ids": ["cb-ohio-cam-hill", "cb-south-alabama-cam-hill"],
+      "schools": [
+        "Ohio",
+        "South Alabama"
+      ],
+      "source_player_ids": [
+        "cb-ohio-cam-hill",
+        "cb-south-alabama-cam-hill"
+      ],
       "decision": "do_not_merge",
       "confirmed_on": "2026-11-02"
     },
     {
       "name": "Ryan Martinez",
-      "schools": ["Pacific", "San Francisco"],
-      "source_player_ids": ["cb-pacific-ryan-martinez", "cb-san-francisco-ryan-martinez"],
+      "schools": [
+        "Pacific",
+        "San Francisco"
+      ],
+      "source_player_ids": [
+        "cb-pacific-ryan-martinez",
+        "cb-san-francisco-ryan-martinez"
+      ],
       "decision": "do_not_merge",
       "confirmed_on": "2026-11-02"
     },
     {
       "name": "Will Turner",
-      "schools": ["South Alabama", "UT Martin"],
-      "source_player_ids": ["cb-south-alabama-will-turner", "cb-ut-martin-will-turner"],
+      "schools": [
+        "South Alabama",
+        "UT Martin"
+      ],
+      "source_player_ids": [
+        "cb-south-alabama-will-turner",
+        "cb-ut-martin-will-turner"
+      ],
       "decision": "do_not_merge",
       "confirmed_on": "2026-11-02"
     },
     {
       "name": "Christian Williams",
-      "schools": ["Michigan State", "Point Loma Nazarene"],
-      "source_player_ids": ["cb-michigan-state-christian-williams", "cb-point-loma-nazarene-christian-williams"],
+      "schools": [
+        "Michigan State",
+        "Point Loma Nazarene"
+      ],
+      "source_player_ids": [
+        "cb-michigan-state-christian-williams",
+        "cb-point-loma-nazarene-christian-williams"
+      ],
       "decision": "do_not_merge",
       "confirmed_on": "2026-11-02"
     },
     {
       "name": "Will Taylor",
-      "schools": ["Clemson", "Marist"],
-      "source_player_ids": ["cb-clemson-will-taylor", "cb-marist-will-taylor"],
+      "schools": [
+        "Clemson",
+        "Marist"
+      ],
+      "source_player_ids": [
+        "cb-clemson-will-taylor",
+        "cb-marist-will-taylor"
+      ],
       "decision": "do_not_merge",
       "confirmed_on": "2026-11-02"
     },
     {
       "name": "TJ Williams",
-      "schools": ["Eastern Michigan", "Notre Dame"],
-      "source_player_ids": ["cb-eastern-michigan-tj-williams", "cb-notre-dame-tj-williams"],
+      "schools": [
+        "Eastern Michigan",
+        "Notre Dame"
+      ],
+      "source_player_ids": [
+        "cb-eastern-michigan-tj-williams",
+        "cb-notre-dame-tj-williams"
+      ],
       "decision": "do_not_merge",
       "confirmed_on": "2026-11-02"
     },
     {
       "name": "Ryan Scott",
-      "schools": ["Dallas Baptist", "Maine"],
-      "source_player_ids": ["cb-dallas-baptist-ryan-scott", "cb-maine-ryan-scott"],
+      "schools": [
+        "Dallas Baptist",
+        "Maine"
+      ],
+      "source_player_ids": [
+        "cb-dallas-baptist-ryan-scott",
+        "cb-maine-ryan-scott"
+      ],
       "decision": "do_not_merge",
       "confirmed_on": "2026-11-02"
     },
     {
       "name": "Jack Smith",
-      "schools": ["Harvard", "Marshall"],
-      "source_player_ids": ["cb-harvard-jack-smith", "cb-marshall-jack-smith"],
+      "schools": [
+        "Harvard",
+        "Marshall"
+      ],
+      "source_player_ids": [
+        "cb-harvard-jack-smith",
+        "cb-marshall-jack-smith"
+      ],
       "decision": "do_not_merge",
       "confirmed_on": "2026-11-02"
     },
     {
       "name": "Christian Smith",
-      "schools": ["High Point", "Quinnipiac"],
-      "source_player_ids": ["cb-high-point-christian-smith", "cb-quinnipiac-christian-smith"],
+      "schools": [
+        "High Point",
+        "Quinnipiac"
+      ],
+      "source_player_ids": [
+        "cb-high-point-christian-smith",
+        "cb-quinnipiac-christian-smith"
+      ],
       "decision": "do_not_merge",
       "confirmed_on": "2026-11-02"
     },
     {
       "name": "Ryan Higgins",
-      "schools": ["Duke", "Fresno State"],
-      "source_player_ids": ["cb-duke-ryan-higgins", "cb-fresno-state-ryan-higgins"],
+      "schools": [
+        "Duke",
+        "Fresno State"
+      ],
+      "source_player_ids": [
+        "cb-duke-ryan-higgins",
+        "cb-fresno-state-ryan-higgins"
+      ],
       "decision": "do_not_merge",
       "confirmed_on": "2026-11-02"
+    },
+    {
+      "name": "Matt Dallas",
+      "schools": [
+        "Oregon",
+        "Wake Forest"
+      ],
+      "source_player_ids": [
+        "cb-oregon-matt-dallas",
+        "cb-wake-forest-matthew-dallas"
+      ],
+      "decision": "do_not_merge",
+      "confirmed_on": "2026-11-17",
+      "note": "Owner explicitly kept these two profiles separate in batch 1; existing multi-school identities retained."
+    },
+    {
+      "name": "Max Martin / Maximus Martin",
+      "schools": [
+        "Georgia State / Kansas State",
+        "UC Irvine"
+      ],
+      "source_player_ids": [
+        "cb-georgia-state-maximus-martin",
+        "cb-uc-irvine-max-martin"
+      ],
+      "decision": "do_not_merge",
+      "confirmed_on": "2026-11-17",
+      "note": "Owner explicitly kept these two profiles separate in batch 1; existing multi-school identities retained."
+    },
+    {
+      "name": "Carter White",
+      "schools": [
+        "Cal State Fullerton",
+        "Eastern Michigan"
+      ],
+      "source_player_ids": [
+        "cb-cal-state-fullerton-carter-white",
+        "cb-eastern-michigan-carter-white"
+      ],
+      "decision": "do_not_merge",
+      "confirmed_on": "2026-11-17",
+      "note": "Owner explicitly kept these two profiles separate in batch 1; existing multi-school identities retained."
+    },
+    {
+      "name": "Gavin Miller",
+      "schools": [
+        "Auburn / Pittsburgh",
+        "George Washington"
+      ],
+      "source_player_ids": [
+        "cb-auburn-gavin-miller",
+        "cb-george-washington-gavin-miller"
+      ],
+      "decision": "do_not_merge",
+      "confirmed_on": "2026-11-17",
+      "note": "Owner explicitly kept these two profiles separate in batch 1; existing multi-school identities retained."
+    },
+    {
+      "name": "Sam Harris",
+      "schools": [
+        "Duke / Virginia",
+        "NC State"
+      ],
+      "source_player_ids": [
+        "cb-duke-sam-harris",
+        "cb-nc-state-sam-harris"
+      ],
+      "decision": "do_not_merge",
+      "confirmed_on": "2026-11-17",
+      "note": "Owner explicitly kept these two profiles separate in batch 1; existing multi-school identities retained."
+    },
+    {
+      "name": "Tanner Thomas",
+      "schools": [
+        "Gardner-Webb / Xavier",
+        "Louisville"
+      ],
+      "source_player_ids": [
+        "cb-gardner-webb-tanner-thomas",
+        "cb-louisville-tanner-thomas"
+      ],
+      "decision": "do_not_merge",
+      "confirmed_on": "2026-11-17",
+      "note": "Owner explicitly kept these two profiles separate in batch 1; existing multi-school identities retained."
     }
   ],
   "merges": [
@@ -940,7 +1158,8 @@
       "canonical_id": "cb-vanderbilt-camden-kozeal",
       "source_player_ids": [
         "cb-vanderbilt-camden-kozeal",
-        "cb-arkansas-camden-kozeal"
+        "cb-arkansas-camden-kozeal",
+        "cb-arkansas-cam-kozeal"
       ],
       "schools": [
         "Vanderbilt",
@@ -954,9 +1173,13 @@
         {
           "team": "Vanderbilt",
           "source_player_id": "cb-vanderbilt-camden-kozeal"
+        },
+        {
+          "team": "Arkansas",
+          "source_player_id": "cb-arkansas-cam-kozeal"
         }
       ],
-      "source_rows": 7
+      "source_rows": 8
     },
     {
       "name": "Camden Johnson",
@@ -1515,7 +1738,8 @@
       "canonical_id": "cb-illinois-vytas-valincius",
       "source_player_ids": [
         "cb-illinois-vytas-valincius",
-        "cb-mississippi-state-vytas-valincius"
+        "cb-mississippi-state-vytas-valincius",
+        "cb-illinois-v-valincius"
       ],
       "schools": [
         "Illinois",
@@ -1529,9 +1753,13 @@
         {
           "team": "Mississippi State",
           "source_player_id": "cb-mississippi-state-vytas-valincius"
+        },
+        {
+          "team": "Illinois",
+          "source_player_id": "cb-illinois-v-valincius"
         }
       ],
-      "source_rows": 3
+      "source_rows": 4
     },
     {
       "name": "Easton Richter",
@@ -2471,8 +2699,14 @@
         "San Diego"
       ],
       "pairs": [
-        {"team": "Arizona", "source_player_id": "cb-arizona-ian-churchill"},
-        {"team": "San Diego", "source_player_id": "cb-san-diego-ian-churchill"}
+        {
+          "team": "Arizona",
+          "source_player_id": "cb-arizona-ian-churchill"
+        },
+        {
+          "team": "San Diego",
+          "source_player_id": "cb-san-diego-ian-churchill"
+        }
       ],
       "source_rows": 18
     },
@@ -2488,8 +2722,14 @@
         "San Francisco"
       ],
       "pairs": [
-        {"team": "Oklahoma", "source_player_id": "cb-oklahoma-jordan-vujovich"},
-        {"team": "San Francisco", "source_player_id": "cb-san-francisco-jordan-vujovich"}
+        {
+          "team": "Oklahoma",
+          "source_player_id": "cb-oklahoma-jordan-vujovich"
+        },
+        {
+          "team": "San Francisco",
+          "source_player_id": "cb-san-francisco-jordan-vujovich"
+        }
       ],
       "source_rows": 8
     },
@@ -2505,8 +2745,14 @@
         "Oregon"
       ],
       "pairs": [
-        {"team": "San Francisco", "source_player_id": "cb-san-francisco-josh-mollerus"},
-        {"team": "Oregon", "source_player_id": "cb-oregon-josh-mollerus"}
+        {
+          "team": "San Francisco",
+          "source_player_id": "cb-san-francisco-josh-mollerus"
+        },
+        {
+          "team": "Oregon",
+          "source_player_id": "cb-oregon-josh-mollerus"
+        }
       ],
       "source_rows": 7
     },
@@ -2522,8 +2768,14 @@
         "Louisville"
       ],
       "pairs": [
-        {"team": "San Diego", "source_player_id": "cb-san-diego-peter-michael"},
-        {"team": "Louisville", "source_player_id": "cb-louisville-peter-michael"}
+        {
+          "team": "San Diego",
+          "source_player_id": "cb-san-diego-peter-michael"
+        },
+        {
+          "team": "Louisville",
+          "source_player_id": "cb-louisville-peter-michael"
+        }
       ],
       "source_rows": 11
     },
@@ -2539,8 +2791,14 @@
         "Tennessee"
       ],
       "pairs": [
-        {"team": "Kennesaw State", "source_player_id": "cb-kennesaw-state-bo-rhudy"},
-        {"team": "Tennessee", "source_player_id": "cb-tennessee-bo-rhudy"}
+        {
+          "team": "Kennesaw State",
+          "source_player_id": "cb-kennesaw-state-bo-rhudy"
+        },
+        {
+          "team": "Tennessee",
+          "source_player_id": "cb-tennessee-bo-rhudy"
+        }
       ],
       "source_rows": 6
     },
@@ -2556,8 +2814,14 @@
         "Tennessee"
       ],
       "pairs": [
-        {"team": "Virginia", "source_player_id": "cb-virginia-evan-blanco"},
-        {"team": "Tennessee", "source_player_id": "cb-tennessee-evan-blanco"}
+        {
+          "team": "Virginia",
+          "source_player_id": "cb-virginia-evan-blanco"
+        },
+        {
+          "team": "Tennessee",
+          "source_player_id": "cb-tennessee-evan-blanco"
+        }
       ],
       "source_rows": 6
     },
@@ -2573,8 +2837,14 @@
         "Texas"
       ],
       "pairs": [
-        {"team": "LSU", "source_player_id": "cb-lsu-ashton-larson"},
-        {"team": "Texas", "source_player_id": "cb-texas-ashton-larson"}
+        {
+          "team": "LSU",
+          "source_player_id": "cb-lsu-ashton-larson"
+        },
+        {
+          "team": "Texas",
+          "source_player_id": "cb-texas-ashton-larson"
+        }
       ],
       "source_rows": 3
     },
@@ -2590,8 +2860,14 @@
         "Vanderbilt"
       ],
       "pairs": [
-        {"team": "Princeton", "source_player_id": "cb-princeton-jacob-faulkner"},
-        {"team": "Vanderbilt", "source_player_id": "cb-vanderbilt-jacob-faulkner"}
+        {
+          "team": "Princeton",
+          "source_player_id": "cb-princeton-jacob-faulkner"
+        },
+        {
+          "team": "Vanderbilt",
+          "source_player_id": "cb-vanderbilt-jacob-faulkner"
+        }
       ],
       "source_rows": 6
     },
@@ -2607,8 +2883,14 @@
         "UCF"
       ],
       "pairs": [
-        {"team": "Florida State", "source_player_id": "cb-florida-state-deamez-ross"},
-        {"team": "UCF", "source_player_id": "cb-ucf-deamez-ross"}
+        {
+          "team": "Florida State",
+          "source_player_id": "cb-florida-state-deamez-ross"
+        },
+        {
+          "team": "UCF",
+          "source_player_id": "cb-ucf-deamez-ross"
+        }
       ],
       "source_rows": 6
     },
@@ -2624,8 +2906,14 @@
         "Kentucky"
       ],
       "pairs": [
-        {"team": "Indiana", "source_player_id": "cb-indiana-tyler-cerny"},
-        {"team": "Kentucky", "source_player_id": "cb-kentucky-tyler-cerny"}
+        {
+          "team": "Indiana",
+          "source_player_id": "cb-indiana-tyler-cerny"
+        },
+        {
+          "team": "Kentucky",
+          "source_player_id": "cb-kentucky-tyler-cerny"
+        }
       ],
       "source_rows": 4
     },
@@ -2643,438 +2931,920 @@
         "Tennessee"
       ],
       "pairs": [
-        {"team": "William and Mary", "source_player_id": "cb-william-and-mary-mark-hindy"},
-        {"team": "Duke", "source_player_id": "cb-duke-mark-hindy"},
-        {"team": "Tennessee", "source_player_id": "cb-tennessee-mark-hindy"}
+        {
+          "team": "William and Mary",
+          "source_player_id": "cb-william-and-mary-mark-hindy"
+        },
+        {
+          "team": "Duke",
+          "source_player_id": "cb-duke-mark-hindy"
+        },
+        {
+          "team": "Tennessee",
+          "source_player_id": "cb-tennessee-mark-hindy"
+        }
       ],
       "source_rows": 4
     },
     {
       "name": "Cade Fisher",
       "canonical_id": "cb-florida-cade-fisher",
-      "source_player_ids": ["cb-florida-cade-fisher", "cb-auburn-cade-fisher"],
-      "schools": ["Florida", "Auburn"],
+      "source_player_ids": [
+        "cb-florida-cade-fisher",
+        "cb-auburn-cade-fisher"
+      ],
+      "schools": [
+        "Florida",
+        "Auburn"
+      ],
       "pairs": [
-        {"team": "Florida", "source_player_id": "cb-florida-cade-fisher"},
-        {"team": "Auburn", "source_player_id": "cb-auburn-cade-fisher"}
+        {
+          "team": "Florida",
+          "source_player_id": "cb-florida-cade-fisher"
+        },
+        {
+          "team": "Auburn",
+          "source_player_id": "cb-auburn-cade-fisher"
+        }
       ],
       "source_rows": 2
     },
     {
       "name": "Jake Marciano",
       "canonical_id": "cb-auburn-jake-marciano",
-      "source_player_ids": ["cb-virginia-tech-jake-marciano", "cb-auburn-jake-marciano"],
-      "schools": ["Virginia Tech", "Auburn"],
+      "source_player_ids": [
+        "cb-virginia-tech-jake-marciano",
+        "cb-auburn-jake-marciano"
+      ],
+      "schools": [
+        "Virginia Tech",
+        "Auburn"
+      ],
       "pairs": [
-        {"team": "Virginia Tech", "source_player_id": "cb-virginia-tech-jake-marciano"},
-        {"team": "Auburn", "source_player_id": "cb-auburn-jake-marciano"}
+        {
+          "team": "Virginia Tech",
+          "source_player_id": "cb-virginia-tech-jake-marciano"
+        },
+        {
+          "team": "Auburn",
+          "source_player_id": "cb-auburn-jake-marciano"
+        }
       ],
       "source_rows": 3
     },
     {
       "name": "Chris Hacopian",
       "canonical_id": "cb-maryland-chris-hacopian",
-      "source_player_ids": ["cb-maryland-chris-hacopian", "cb-texas-a-m-chris-hacopian"],
-      "schools": ["Maryland", "Texas A&M"],
+      "source_player_ids": [
+        "cb-maryland-chris-hacopian",
+        "cb-texas-a-m-chris-hacopian"
+      ],
+      "schools": [
+        "Maryland",
+        "Texas A&M"
+      ],
       "pairs": [
-        {"team": "Maryland", "source_player_id": "cb-maryland-chris-hacopian"},
-        {"team": "Texas A&M", "source_player_id": "cb-texas-a-m-chris-hacopian"}
+        {
+          "team": "Maryland",
+          "source_player_id": "cb-maryland-chris-hacopian"
+        },
+        {
+          "team": "Texas A&M",
+          "source_player_id": "cb-texas-a-m-chris-hacopian"
+        }
       ],
       "source_rows": 2
     },
     {
       "name": "Tomas Valincius",
       "canonical_id": "cb-virginia-tomas-valincius",
-      "source_player_ids": ["cb-virginia-tomas-valincius", "cb-mississippi-state-tomas-valincius"],
-      "schools": ["Virginia", "Mississippi State"],
+      "source_player_ids": [
+        "cb-virginia-tomas-valincius",
+        "cb-mississippi-state-tomas-valincius"
+      ],
+      "schools": [
+        "Virginia",
+        "Mississippi State"
+      ],
       "pairs": [
-        {"team": "Virginia", "source_player_id": "cb-virginia-tomas-valincius"},
-        {"team": "Mississippi State", "source_player_id": "cb-mississippi-state-tomas-valincius"}
+        {
+          "team": "Virginia",
+          "source_player_id": "cb-virginia-tomas-valincius"
+        },
+        {
+          "team": "Mississippi State",
+          "source_player_id": "cb-mississippi-state-tomas-valincius"
+        }
       ],
       "source_rows": 2
     },
     {
       "name": "Brayden Simpson",
       "canonical_id": "cb-lsu-brayden-simpson",
-      "source_player_ids": ["cb-high-point-brayden-simpson", "cb-lsu-brayden-simpson"],
-      "schools": ["High Point", "LSU"],
+      "source_player_ids": [
+        "cb-high-point-brayden-simpson",
+        "cb-lsu-brayden-simpson"
+      ],
+      "schools": [
+        "High Point",
+        "LSU"
+      ],
       "pairs": [
-        {"team": "High Point", "source_player_id": "cb-high-point-brayden-simpson"},
-        {"team": "LSU", "source_player_id": "cb-lsu-brayden-simpson"}
+        {
+          "team": "High Point",
+          "source_player_id": "cb-high-point-brayden-simpson"
+        },
+        {
+          "team": "LSU",
+          "source_player_id": "cb-lsu-brayden-simpson"
+        }
       ],
       "source_rows": 3
     },
     {
       "name": "Temo Becerra",
       "canonical_id": "cb-stanford-temo-becerra",
-      "source_player_ids": ["cb-stanford-temo-becerra", "cb-texas-temo-becerra"],
-      "schools": ["Stanford", "Texas"],
+      "source_player_ids": [
+        "cb-stanford-temo-becerra",
+        "cb-texas-temo-becerra"
+      ],
+      "schools": [
+        "Stanford",
+        "Texas"
+      ],
       "pairs": [
-        {"team": "Stanford", "source_player_id": "cb-stanford-temo-becerra"},
-        {"team": "Texas", "source_player_id": "cb-texas-temo-becerra"}
+        {
+          "team": "Stanford",
+          "source_player_id": "cb-stanford-temo-becerra"
+        },
+        {
+          "team": "Texas",
+          "source_player_id": "cb-texas-temo-becerra"
+        }
       ],
       "source_rows": 3
     },
     {
       "name": "Ryder Garino",
       "canonical_id": "cb-south-carolina-ryder-garino",
-      "source_player_ids": ["cb-south-carolina-ryder-garino", "cb-nc-state-ryder-garino"],
-      "schools": ["South Carolina", "NC State"],
+      "source_player_ids": [
+        "cb-south-carolina-ryder-garino",
+        "cb-nc-state-ryder-garino"
+      ],
+      "schools": [
+        "South Carolina",
+        "NC State"
+      ],
       "pairs": [
-        {"team": "South Carolina", "source_player_id": "cb-south-carolina-ryder-garino"},
-        {"team": "NC State", "source_player_id": "cb-nc-state-ryder-garino"}
+        {
+          "team": "South Carolina",
+          "source_player_id": "cb-south-carolina-ryder-garino"
+        },
+        {
+          "team": "NC State",
+          "source_player_id": "cb-nc-state-ryder-garino"
+        }
       ],
       "source_rows": 3
     },
     {
       "name": "Joey Volchko",
       "canonical_id": "cb-stanford-joey-volchko",
-      "source_player_ids": ["cb-stanford-joey-volchko", "cb-georgia-joey-volchko"],
-      "schools": ["Stanford", "Georgia"],
+      "source_player_ids": [
+        "cb-stanford-joey-volchko",
+        "cb-georgia-joey-volchko"
+      ],
+      "schools": [
+        "Stanford",
+        "Georgia"
+      ],
       "pairs": [
-        {"team": "Stanford", "source_player_id": "cb-stanford-joey-volchko"},
-        {"team": "Georgia", "source_player_id": "cb-georgia-joey-volchko"}
+        {
+          "team": "Stanford",
+          "source_player_id": "cb-stanford-joey-volchko"
+        },
+        {
+          "team": "Georgia",
+          "source_player_id": "cb-georgia-joey-volchko"
+        }
       ],
       "source_rows": 2
     },
     {
       "name": "Julien Peissel",
       "canonical_id": "cb-unc-greensboro-julien-peissel",
-      "source_player_ids": ["cb-unc-greensboro-julien-peissel", "cb-nc-state-julien-peissel"],
-      "schools": ["UNC Greensboro", "NC State"],
+      "source_player_ids": [
+        "cb-unc-greensboro-julien-peissel",
+        "cb-nc-state-julien-peissel"
+      ],
+      "schools": [
+        "UNC Greensboro",
+        "NC State"
+      ],
       "pairs": [
-        {"team": "UNC Greensboro", "source_player_id": "cb-unc-greensboro-julien-peissel"},
-        {"team": "NC State", "source_player_id": "cb-nc-state-julien-peissel"}
+        {
+          "team": "UNC Greensboro",
+          "source_player_id": "cb-unc-greensboro-julien-peissel"
+        },
+        {
+          "team": "NC State",
+          "source_player_id": "cb-nc-state-julien-peissel"
+        }
       ],
       "source_rows": 2
     },
     {
       "name": "Ethan Darden",
       "canonical_id": "cb-clemson-ethan-darden",
-      "source_player_ids": ["cb-clemson-ethan-darden", "cb-texas-a-m-ethan-darden"],
-      "schools": ["Clemson", "Texas A&M"],
+      "source_player_ids": [
+        "cb-clemson-ethan-darden",
+        "cb-texas-a-m-ethan-darden"
+      ],
+      "schools": [
+        "Clemson",
+        "Texas A&M"
+      ],
       "pairs": [
-        {"team": "Clemson", "source_player_id": "cb-clemson-ethan-darden"},
-        {"team": "Texas A&M", "source_player_id": "cb-texas-a-m-ethan-darden"}
+        {
+          "team": "Clemson",
+          "source_player_id": "cb-clemson-ethan-darden"
+        },
+        {
+          "team": "Texas A&M",
+          "source_player_id": "cb-texas-a-m-ethan-darden"
+        }
       ],
       "source_rows": 3
     },
     {
       "name": "Owen Sarna",
       "canonical_id": "cb-winthrop-owen-sarna",
-      "source_player_ids": ["cb-winthrop-owen-sarna", "cb-alabama-owen-sarna"],
-      "schools": ["Winthrop", "Alabama"],
+      "source_player_ids": [
+        "cb-winthrop-owen-sarna",
+        "cb-alabama-owen-sarna"
+      ],
+      "schools": [
+        "Winthrop",
+        "Alabama"
+      ],
       "pairs": [
-        {"team": "Winthrop", "source_player_id": "cb-winthrop-owen-sarna"},
-        {"team": "Alabama", "source_player_id": "cb-alabama-owen-sarna"}
+        {
+          "team": "Winthrop",
+          "source_player_id": "cb-winthrop-owen-sarna"
+        },
+        {
+          "team": "Alabama",
+          "source_player_id": "cb-alabama-owen-sarna"
+        }
       ],
       "source_rows": 2
     },
     {
       "name": "Brian Curley",
       "canonical_id": "cb-vcu-brian-curley",
-      "source_player_ids": ["cb-vcu-brian-curley", "cb-georgia-brian-curley"],
-      "schools": ["VCU", "Georgia"],
+      "source_player_ids": [
+        "cb-vcu-brian-curley",
+        "cb-georgia-brian-curley"
+      ],
+      "schools": [
+        "VCU",
+        "Georgia"
+      ],
       "pairs": [
-        {"team": "VCU", "source_player_id": "cb-vcu-brian-curley"},
-        {"team": "Georgia", "source_player_id": "cb-georgia-brian-curley"}
+        {
+          "team": "VCU",
+          "source_player_id": "cb-vcu-brian-curley"
+        },
+        {
+          "team": "Georgia",
+          "source_player_id": "cb-georgia-brian-curley"
+        }
       ],
       "source_rows": 3
     },
     {
       "name": "Collin Reuter",
       "canonical_id": "cb-byu-collin-reuter",
-      "source_player_ids": ["cb-byu-collin-reuter", "cb-ole-miss-collin-reuter"],
-      "schools": ["BYU", "Ole Miss"],
+      "source_player_ids": [
+        "cb-byu-collin-reuter",
+        "cb-ole-miss-collin-reuter"
+      ],
+      "schools": [
+        "BYU",
+        "Ole Miss"
+      ],
       "pairs": [
-        {"team": "BYU", "source_player_id": "cb-byu-collin-reuter"},
-        {"team": "Ole Miss", "source_player_id": "cb-ole-miss-collin-reuter"}
+        {
+          "team": "BYU",
+          "source_player_id": "cb-byu-collin-reuter"
+        },
+        {
+          "team": "Ole Miss",
+          "source_player_id": "cb-ole-miss-collin-reuter"
+        }
       ],
       "source_rows": 3
     },
     {
       "name": "Seth Dardar",
       "canonical_id": "cb-kansas-state-seth-dardar",
-      "source_player_ids": ["cb-kansas-state-seth-dardar", "cb-lsu-seth-dardar"],
-      "schools": ["Kansas State", "LSU"],
+      "source_player_ids": [
+        "cb-kansas-state-seth-dardar",
+        "cb-lsu-seth-dardar"
+      ],
+      "schools": [
+        "Kansas State",
+        "LSU"
+      ],
       "pairs": [
-        {"team": "Kansas State", "source_player_id": "cb-kansas-state-seth-dardar"},
-        {"team": "LSU", "source_player_id": "cb-lsu-seth-dardar"}
+        {
+          "team": "Kansas State",
+          "source_player_id": "cb-kansas-state-seth-dardar"
+        },
+        {
+          "team": "LSU",
+          "source_player_id": "cb-lsu-seth-dardar"
+        }
       ],
       "source_rows": 3
     },
     {
       "name": "Tanner Duke",
       "canonical_id": "cb-baylor-tanner-duke",
-      "source_player_ids": ["cb-baylor-tanner-duke", "cb-kansas-state-tanner-duke"],
-      "schools": ["Baylor", "Kansas State"],
+      "source_player_ids": [
+        "cb-baylor-tanner-duke",
+        "cb-kansas-state-tanner-duke"
+      ],
+      "schools": [
+        "Baylor",
+        "Kansas State"
+      ],
       "pairs": [
-        {"team": "Baylor", "source_player_id": "cb-baylor-tanner-duke"},
-        {"team": "Kansas State", "source_player_id": "cb-kansas-state-tanner-duke"}
+        {
+          "team": "Baylor",
+          "source_player_id": "cb-baylor-tanner-duke"
+        },
+        {
+          "team": "Kansas State",
+          "source_player_id": "cb-kansas-state-tanner-duke"
+        }
       ],
       "source_rows": 2
     },
     {
       "name": "Noah Rooney",
       "canonical_id": "cb-minnesota-noah-rooney",
-      "source_player_ids": ["cb-minnesota-noah-rooney", "cb-notre-dame-noah-rooney"],
-      "schools": ["Minnesota", "Notre Dame"],
+      "source_player_ids": [
+        "cb-minnesota-noah-rooney",
+        "cb-notre-dame-noah-rooney"
+      ],
+      "schools": [
+        "Minnesota",
+        "Notre Dame"
+      ],
       "pairs": [
-        {"team": "Minnesota", "source_player_id": "cb-minnesota-noah-rooney"},
-        {"team": "Notre Dame", "source_player_id": "cb-notre-dame-noah-rooney"}
+        {
+          "team": "Minnesota",
+          "source_player_id": "cb-minnesota-noah-rooney"
+        },
+        {
+          "team": "Notre Dame",
+          "source_player_id": "cb-notre-dame-noah-rooney"
+        }
       ],
       "source_rows": 3
     },
     {
       "name": "Owen Kelly",
       "canonical_id": "cb-st-louis-owen-kelly",
-      "source_player_ids": ["cb-st-louis-owen-kelly", "cb-ole-miss-owen-kelly"],
-      "schools": ["St. Louis", "Ole Miss"],
+      "source_player_ids": [
+        "cb-st-louis-owen-kelly",
+        "cb-ole-miss-owen-kelly"
+      ],
+      "schools": [
+        "St. Louis",
+        "Ole Miss"
+      ],
       "pairs": [
-        {"team": "St. Louis", "source_player_id": "cb-st-louis-owen-kelly"},
-        {"team": "Ole Miss", "source_player_id": "cb-ole-miss-owen-kelly"}
+        {
+          "team": "St. Louis",
+          "source_player_id": "cb-st-louis-owen-kelly"
+        },
+        {
+          "team": "Ole Miss",
+          "source_player_id": "cb-ole-miss-owen-kelly"
+        }
       ],
       "source_rows": 2
     },
     {
       "name": "Aeden Finateri",
       "canonical_id": "cb-georgia-tech-aeden-finateri",
-      "source_player_ids": ["cb-georgia-tech-aeden-finateri", "cb-alabama-aeden-finateri"],
-      "schools": ["Georgia Tech", "Alabama"],
+      "source_player_ids": [
+        "cb-georgia-tech-aeden-finateri",
+        "cb-alabama-aeden-finateri"
+      ],
+      "schools": [
+        "Georgia Tech",
+        "Alabama"
+      ],
       "pairs": [
-        {"team": "Georgia Tech", "source_player_id": "cb-georgia-tech-aeden-finateri"},
-        {"team": "Alabama", "source_player_id": "cb-alabama-aeden-finateri"}
+        {
+          "team": "Georgia Tech",
+          "source_player_id": "cb-georgia-tech-aeden-finateri"
+        },
+        {
+          "team": "Alabama",
+          "source_player_id": "cb-alabama-aeden-finateri"
+        }
       ],
       "source_rows": 2
     },
     {
       "name": "Garrett Brewer",
       "canonical_id": "cb-michigan-state-garrett-brewer",
-      "source_player_ids": ["cb-michigan-state-garrett-brewer", "cb-auburn-garrett-brewer"],
-      "schools": ["Michigan State", "Auburn"],
+      "source_player_ids": [
+        "cb-michigan-state-garrett-brewer",
+        "cb-auburn-garrett-brewer"
+      ],
+      "schools": [
+        "Michigan State",
+        "Auburn"
+      ],
       "pairs": [
-        {"team": "Michigan State", "source_player_id": "cb-michigan-state-garrett-brewer"},
-        {"team": "Auburn", "source_player_id": "cb-auburn-garrett-brewer"}
+        {
+          "team": "Michigan State",
+          "source_player_id": "cb-michigan-state-garrett-brewer"
+        },
+        {
+          "team": "Auburn",
+          "source_player_id": "cb-auburn-garrett-brewer"
+        }
       ],
       "source_rows": 2
     },
     {
       "name": "Joey Spence",
       "canonical_id": "cb-notre-dame-joey-spence",
-      "source_player_ids": ["cb-notre-dame-joey-spence", "cb-milwaukee-joey-spence"],
-      "schools": ["Notre Dame", "Milwaukee"],
+      "source_player_ids": [
+        "cb-notre-dame-joey-spence",
+        "cb-milwaukee-joey-spence"
+      ],
+      "schools": [
+        "Notre Dame",
+        "Milwaukee"
+      ],
       "pairs": [
-        {"team": "Notre Dame", "source_player_id": "cb-notre-dame-joey-spence"},
-        {"team": "Milwaukee", "source_player_id": "cb-milwaukee-joey-spence"}
+        {
+          "team": "Notre Dame",
+          "source_player_id": "cb-notre-dame-joey-spence"
+        },
+        {
+          "team": "Milwaukee",
+          "source_player_id": "cb-milwaukee-joey-spence"
+        }
       ],
       "source_rows": 4
     },
     {
       "name": "Ricky Reeth",
       "canonical_id": "cb-notre-dame-ricky-reeth",
-      "source_player_ids": ["cb-notre-dame-ricky-reeth", "cb-florida-ricky-reeth"],
-      "schools": ["Notre Dame", "Florida"],
+      "source_player_ids": [
+        "cb-notre-dame-ricky-reeth",
+        "cb-florida-ricky-reeth"
+      ],
+      "schools": [
+        "Notre Dame",
+        "Florida"
+      ],
       "pairs": [
-        {"team": "Notre Dame", "source_player_id": "cb-notre-dame-ricky-reeth"},
-        {"team": "Florida", "source_player_id": "cb-florida-ricky-reeth"}
+        {
+          "team": "Notre Dame",
+          "source_player_id": "cb-notre-dame-ricky-reeth"
+        },
+        {
+          "team": "Florida",
+          "source_player_id": "cb-florida-ricky-reeth"
+        }
       ],
       "source_rows": 3
     },
     {
       "name": "Eli Thurmond",
       "canonical_id": "cb-tampa-eli-thurmond",
-      "source_player_ids": ["cb-tampa-eli-thurmond", "cb-notre-dame-eli-thurmond"],
-      "schools": ["Tampa", "Notre Dame"],
+      "source_player_ids": [
+        "cb-tampa-eli-thurmond",
+        "cb-notre-dame-eli-thurmond"
+      ],
+      "schools": [
+        "Tampa",
+        "Notre Dame"
+      ],
       "pairs": [
-        {"team": "Tampa", "source_player_id": "cb-tampa-eli-thurmond"},
-        {"team": "Notre Dame", "source_player_id": "cb-notre-dame-eli-thurmond"}
+        {
+          "team": "Tampa",
+          "source_player_id": "cb-tampa-eli-thurmond"
+        },
+        {
+          "team": "Notre Dame",
+          "source_player_id": "cb-notre-dame-eli-thurmond"
+        }
       ],
       "source_rows": 4
     },
     {
       "name": "Caden Spivey",
       "canonical_id": "cb-notre-dame-caden-spivey",
-      "source_player_ids": ["cb-notre-dame-caden-spivey", "cb-georgia-tech-caden-spivey"],
-      "schools": ["Notre Dame", "Georgia Tech"],
+      "source_player_ids": [
+        "cb-notre-dame-caden-spivey",
+        "cb-georgia-tech-caden-spivey"
+      ],
+      "schools": [
+        "Notre Dame",
+        "Georgia Tech"
+      ],
       "pairs": [
-        {"team": "Notre Dame", "source_player_id": "cb-notre-dame-caden-spivey"},
-        {"team": "Georgia Tech", "source_player_id": "cb-georgia-tech-caden-spivey"}
+        {
+          "team": "Notre Dame",
+          "source_player_id": "cb-notre-dame-caden-spivey"
+        },
+        {
+          "team": "Georgia Tech",
+          "source_player_id": "cb-georgia-tech-caden-spivey"
+        }
       ],
       "source_rows": 2
     },
     {
       "name": "Carson Ohl",
       "canonical_id": "cb-grand-canyon-carson-ohl",
-      "source_player_ids": ["cb-grand-canyon-carson-ohl", "cb-virginia-tech-carson-ohl"],
-      "schools": ["Grand Canyon", "Virginia Tech"],
+      "source_player_ids": [
+        "cb-grand-canyon-carson-ohl",
+        "cb-virginia-tech-carson-ohl"
+      ],
+      "schools": [
+        "Grand Canyon",
+        "Virginia Tech"
+      ],
       "pairs": [
-        {"team": "Grand Canyon", "source_player_id": "cb-grand-canyon-carson-ohl"},
-        {"team": "Virginia Tech", "source_player_id": "cb-virginia-tech-carson-ohl"}
+        {
+          "team": "Grand Canyon",
+          "source_player_id": "cb-grand-canyon-carson-ohl"
+        },
+        {
+          "team": "Virginia Tech",
+          "source_player_id": "cb-virginia-tech-carson-ohl"
+        }
       ],
       "source_rows": 3
     },
     {
       "name": "Kayden Campbell",
       "canonical_id": "cb-louisville-kayden-campbell",
-      "source_player_ids": ["cb-louisville-kayden-campbell", "cb-georgia-tech-kayden-campbell"],
-      "schools": ["Louisville", "Georgia Tech"],
+      "source_player_ids": [
+        "cb-louisville-kayden-campbell",
+        "cb-georgia-tech-kayden-campbell"
+      ],
+      "schools": [
+        "Louisville",
+        "Georgia Tech"
+      ],
       "pairs": [
-        {"team": "Louisville", "source_player_id": "cb-louisville-kayden-campbell"},
-        {"team": "Georgia Tech", "source_player_id": "cb-georgia-tech-kayden-campbell"}
+        {
+          "team": "Louisville",
+          "source_player_id": "cb-louisville-kayden-campbell"
+        },
+        {
+          "team": "Georgia Tech",
+          "source_player_id": "cb-georgia-tech-kayden-campbell"
+        }
       ],
       "source_rows": 2
     },
     {
       "name": "Cael Frost",
       "canonical_id": "cb-nebraska-cael-frost",
-      "source_player_ids": ["cb-nebraska-cael-frost", "cb-western-kentucky-cael-frost"],
-      "schools": ["Nebraska", "Western Kentucky"],
+      "source_player_ids": [
+        "cb-nebraska-cael-frost",
+        "cb-western-kentucky-cael-frost"
+      ],
+      "schools": [
+        "Nebraska",
+        "Western Kentucky"
+      ],
       "pairs": [
-        {"team": "Nebraska", "source_player_id": "cb-nebraska-cael-frost"},
-        {"team": "Western Kentucky", "source_player_id": "cb-western-kentucky-cael-frost"}
+        {
+          "team": "Nebraska",
+          "source_player_id": "cb-nebraska-cael-frost"
+        },
+        {
+          "team": "Western Kentucky",
+          "source_player_id": "cb-western-kentucky-cael-frost"
+        }
       ],
       "source_rows": 2
     },
     {
       "name": "Billy Barlow",
       "canonical_id": "cb-clemson-billy-barlow",
-      "source_player_ids": ["cb-clemson-billy-barlow", "cb-florida-billy-barlow"],
-      "schools": ["Clemson", "Florida"],
+      "source_player_ids": [
+        "cb-clemson-billy-barlow",
+        "cb-florida-billy-barlow"
+      ],
+      "schools": [
+        "Clemson",
+        "Florida"
+      ],
       "pairs": [
-        {"team": "Clemson", "source_player_id": "cb-clemson-billy-barlow"},
-        {"team": "Florida", "source_player_id": "cb-florida-billy-barlow"}
+        {
+          "team": "Clemson",
+          "source_player_id": "cb-clemson-billy-barlow"
+        },
+        {
+          "team": "Florida",
+          "source_player_id": "cb-florida-billy-barlow"
+        }
       ],
       "source_rows": 2
     },
     {
       "name": "Josh Livingston",
       "canonical_id": "cb-wichita-state-josh-livingston",
-      "source_player_ids": ["cb-wichita-state-josh-livingston", "cb-texas-josh-livingston"],
-      "schools": ["Wichita State", "Texas"],
+      "source_player_ids": [
+        "cb-wichita-state-josh-livingston",
+        "cb-texas-josh-livingston"
+      ],
+      "schools": [
+        "Wichita State",
+        "Texas"
+      ],
       "pairs": [
-        {"team": "Wichita State", "source_player_id": "cb-wichita-state-josh-livingston"},
-        {"team": "Texas", "source_player_id": "cb-texas-josh-livingston"}
+        {
+          "team": "Wichita State",
+          "source_player_id": "cb-wichita-state-josh-livingston"
+        },
+        {
+          "team": "Texas",
+          "source_player_id": "cb-texas-josh-livingston"
+        }
       ],
       "source_rows": 3
     },
     {
       "name": "Jett Lovett",
       "canonical_id": "cb-georgia-tech-jett-lovett",
-      "source_player_ids": ["cb-georgia-tech-jett-lovett", "cb-georgia-southern-jett-lovett"],
-      "schools": ["Georgia Tech", "Georgia Southern"],
+      "source_player_ids": [
+        "cb-georgia-tech-jett-lovett",
+        "cb-georgia-southern-jett-lovett"
+      ],
+      "schools": [
+        "Georgia Tech",
+        "Georgia Southern"
+      ],
       "pairs": [
-        {"team": "Georgia Tech", "source_player_id": "cb-georgia-tech-jett-lovett"},
-        {"team": "Georgia Southern", "source_player_id": "cb-georgia-southern-jett-lovett"}
+        {
+          "team": "Georgia Tech",
+          "source_player_id": "cb-georgia-tech-jett-lovett"
+        },
+        {
+          "team": "Georgia Southern",
+          "source_player_id": "cb-georgia-southern-jett-lovett"
+        }
       ],
       "source_rows": 2
     },
     {
       "name": "Brennan Hudson",
       "canonical_id": "cb-georgia-state-brennan-hudson",
-      "source_player_ids": ["cb-georgia-state-brennan-hudson", "cb-georgia-brennan-hudson"],
-      "schools": ["Georgia State", "Georgia"],
+      "source_player_ids": [
+        "cb-georgia-state-brennan-hudson",
+        "cb-georgia-brennan-hudson"
+      ],
+      "schools": [
+        "Georgia State",
+        "Georgia"
+      ],
       "pairs": [
-        {"team": "Georgia State", "source_player_id": "cb-georgia-state-brennan-hudson"},
-        {"team": "Georgia", "source_player_id": "cb-georgia-brennan-hudson"}
+        {
+          "team": "Georgia State",
+          "source_player_id": "cb-georgia-state-brennan-hudson"
+        },
+        {
+          "team": "Georgia",
+          "source_player_id": "cb-georgia-brennan-hudson"
+        }
       ],
       "source_rows": 3
     },
     {
       "name": "Davis Chastain",
       "canonical_id": "cb-georgia-state-davis-chastain",
-      "source_player_ids": ["cb-georgia-state-davis-chastain", "cb-georgia-davis-chastain"],
-      "schools": ["Georgia State", "Georgia"],
+      "source_player_ids": [
+        "cb-georgia-state-davis-chastain",
+        "cb-georgia-davis-chastain"
+      ],
+      "schools": [
+        "Georgia State",
+        "Georgia"
+      ],
       "pairs": [
-        {"team": "Georgia State", "source_player_id": "cb-georgia-state-davis-chastain"},
-        {"team": "Georgia", "source_player_id": "cb-georgia-davis-chastain"}
+        {
+          "team": "Georgia State",
+          "source_player_id": "cb-georgia-state-davis-chastain"
+        },
+        {
+          "team": "Georgia",
+          "source_player_id": "cb-georgia-davis-chastain"
+        }
       ],
       "source_rows": 3
     },
     {
       "name": "Ryan Calvert",
       "canonical_id": "cb-unc-wilmington-ryan-calvert",
-      "source_player_ids": ["cb-unc-wilmington-ryan-calvert", "cb-duke-ryan-calvert"],
-      "schools": ["UNC Wilmington", "Duke"],
+      "source_player_ids": [
+        "cb-unc-wilmington-ryan-calvert",
+        "cb-duke-ryan-calvert"
+      ],
+      "schools": [
+        "UNC Wilmington",
+        "Duke"
+      ],
       "pairs": [
-        {"team": "UNC Wilmington", "source_player_id": "cb-unc-wilmington-ryan-calvert"},
-        {"team": "Duke", "source_player_id": "cb-duke-ryan-calvert"}
+        {
+          "team": "UNC Wilmington",
+          "source_player_id": "cb-unc-wilmington-ryan-calvert"
+        },
+        {
+          "team": "Duke",
+          "source_player_id": "cb-duke-ryan-calvert"
+        }
       ],
       "source_rows": 2
     },
     {
       "name": "Trevor Hinkel",
       "canonical_id": "cb-pepperdine-trevor-hinkel",
-      "source_player_ids": ["cb-pepperdine-trevor-hinkel", "cb-coastal-carolina-trevor-hinkel"],
-      "schools": ["Pepperdine", "Coastal Carolina"],
+      "source_player_ids": [
+        "cb-pepperdine-trevor-hinkel",
+        "cb-coastal-carolina-trevor-hinkel"
+      ],
+      "schools": [
+        "Pepperdine",
+        "Coastal Carolina"
+      ],
       "pairs": [
-        {"team": "Pepperdine", "source_player_id": "cb-pepperdine-trevor-hinkel"},
-        {"team": "Coastal Carolina", "source_player_id": "cb-coastal-carolina-trevor-hinkel"}
+        {
+          "team": "Pepperdine",
+          "source_player_id": "cb-pepperdine-trevor-hinkel"
+        },
+        {
+          "team": "Coastal Carolina",
+          "source_player_id": "cb-coastal-carolina-trevor-hinkel"
+        }
       ],
       "source_rows": 3
     },
     {
       "name": "Hayden Cody",
       "canonical_id": "cb-cal-state-northridge-hayden-cody",
-      "source_player_ids": ["cb-cal-state-northridge-hayden-cody", "cb-san-diego-hayden-cody"],
-      "schools": ["Cal State Northridge", "San Diego"],
+      "source_player_ids": [
+        "cb-cal-state-northridge-hayden-cody",
+        "cb-san-diego-hayden-cody"
+      ],
+      "schools": [
+        "Cal State Northridge",
+        "San Diego"
+      ],
       "pairs": [
-        {"team": "Cal State Northridge", "source_player_id": "cb-cal-state-northridge-hayden-cody"},
-        {"team": "San Diego", "source_player_id": "cb-san-diego-hayden-cody"}
+        {
+          "team": "Cal State Northridge",
+          "source_player_id": "cb-cal-state-northridge-hayden-cody"
+        },
+        {
+          "team": "San Diego",
+          "source_player_id": "cb-san-diego-hayden-cody"
+        }
       ],
       "source_rows": 4
     },
     {
       "name": "Seth Mattox",
       "canonical_id": "cb-cal-baptist-seth-mattox",
-      "source_player_ids": ["cb-cal-baptist-seth-mattox", "cb-oregon-seth-mattox"],
-      "schools": ["Cal Baptist", "Oregon"],
+      "source_player_ids": [
+        "cb-cal-baptist-seth-mattox",
+        "cb-oregon-seth-mattox"
+      ],
+      "schools": [
+        "Cal Baptist",
+        "Oregon"
+      ],
       "pairs": [
-        {"team": "Cal Baptist", "source_player_id": "cb-cal-baptist-seth-mattox"},
-        {"team": "Oregon", "source_player_id": "cb-oregon-seth-mattox"}
+        {
+          "team": "Cal Baptist",
+          "source_player_id": "cb-cal-baptist-seth-mattox"
+        },
+        {
+          "team": "Oregon",
+          "source_player_id": "cb-oregon-seth-mattox"
+        }
       ],
       "source_rows": 3
     },
     {
       "name": "Joe Soberon",
       "canonical_id": "cb-uc-san-diego-joe-soberon",
-      "source_player_ids": ["cb-uc-san-diego-joe-soberon", "cb-san-francisco-joe-soberon"],
-      "schools": ["UC San Diego", "San Francisco"],
-      "pairs": [
-        {"team": "UC San Diego", "source_player_id": "cb-uc-san-diego-joe-soberon"},
-        {"team": "San Francisco", "source_player_id": "cb-san-francisco-joe-soberon"}
+      "source_player_ids": [
+        "cb-uc-san-diego-joe-soberon",
+        "cb-san-francisco-joe-soberon",
+        "cb-uc-san-diego-joey-soberon"
       ],
-      "source_rows": 2
+      "schools": [
+        "UC San Diego",
+        "San Francisco"
+      ],
+      "pairs": [
+        {
+          "team": "UC San Diego",
+          "source_player_id": "cb-uc-san-diego-joe-soberon"
+        },
+        {
+          "team": "San Francisco",
+          "source_player_id": "cb-san-francisco-joe-soberon"
+        },
+        {
+          "team": "UC San Diego",
+          "source_player_id": "cb-uc-san-diego-joey-soberon"
+        }
+      ],
+      "source_rows": 3
     },
     {
       "name": "Evan Jones",
       "canonical_id": "cb-western-kentucky-evan-jones",
-      "source_player_ids": ["cb-western-kentucky-evan-jones", "cb-ucf-evan-jones"],
-      "schools": ["Western Kentucky", "UCF"],
+      "source_player_ids": [
+        "cb-western-kentucky-evan-jones",
+        "cb-ucf-evan-jones"
+      ],
+      "schools": [
+        "Western Kentucky",
+        "UCF"
+      ],
       "pairs": [
-        {"team": "Western Kentucky", "source_player_id": "cb-western-kentucky-evan-jones"},
-        {"team": "UCF", "source_player_id": "cb-ucf-evan-jones"}
+        {
+          "team": "Western Kentucky",
+          "source_player_id": "cb-western-kentucky-evan-jones"
+        },
+        {
+          "team": "UCF",
+          "source_player_id": "cb-ucf-evan-jones"
+        }
       ],
       "source_rows": 2
     },
     {
       "name": "Ashton Crowther",
       "canonical_id": "cb-south-carolina-ashton-crowther",
-      "source_player_ids": ["cb-south-carolina-ashton-crowther", "cb-alabama-ashton-crowther"],
-      "schools": ["South Carolina", "Alabama"],
+      "source_player_ids": [
+        "cb-south-carolina-ashton-crowther",
+        "cb-alabama-ashton-crowther"
+      ],
+      "schools": [
+        "South Carolina",
+        "Alabama"
+      ],
       "pairs": [
-        {"team": "South Carolina", "source_player_id": "cb-south-carolina-ashton-crowther"},
-        {"team": "Alabama", "source_player_id": "cb-alabama-ashton-crowther"}
+        {
+          "team": "South Carolina",
+          "source_player_id": "cb-south-carolina-ashton-crowther"
+        },
+        {
+          "team": "Alabama",
+          "source_player_id": "cb-alabama-ashton-crowther"
+        }
       ],
       "source_rows": 2
     },
     {
       "name": "Jamal George",
       "canonical_id": "cb-texas-a-m-jamal-george",
-      "source_player_ids": ["cb-texas-a-m-jamal-george", "cb-missouri-jamal-george"],
-      "schools": ["Texas A&M", "Missouri"],
+      "source_player_ids": [
+        "cb-texas-a-m-jamal-george",
+        "cb-missouri-jamal-george"
+      ],
+      "schools": [
+        "Texas A&M",
+        "Missouri"
+      ],
       "pairs": [
-        {"team": "Texas A&M", "source_player_id": "cb-texas-a-m-jamal-george"},
-        {"team": "Missouri", "source_player_id": "cb-missouri-jamal-george"}
+        {
+          "team": "Texas A&M",
+          "source_player_id": "cb-texas-a-m-jamal-george"
+        },
+        {
+          "team": "Missouri",
+          "source_player_id": "cb-missouri-jamal-george"
+        }
       ],
       "source_rows": 3,
       "identity_source_url": "https://mutigers.com/sports/baseball/roster/player/jamal-george"
@@ -3082,11 +3852,23 @@
     {
       "name": "Paul Vossen",
       "canonical_id": "cb-iowa-paul-vossen",
-      "source_player_ids": ["cb-iowa-paul-vossen", "cb-st-bonaventure-paul-vossen"],
-      "schools": ["Iowa", "St. Bonaventure"],
+      "source_player_ids": [
+        "cb-iowa-paul-vossen",
+        "cb-st-bonaventure-paul-vossen"
+      ],
+      "schools": [
+        "Iowa",
+        "St. Bonaventure"
+      ],
       "pairs": [
-        {"team": "Iowa", "source_player_id": "cb-iowa-paul-vossen"},
-        {"team": "St. Bonaventure", "source_player_id": "cb-st-bonaventure-paul-vossen"}
+        {
+          "team": "Iowa",
+          "source_player_id": "cb-iowa-paul-vossen"
+        },
+        {
+          "team": "St. Bonaventure",
+          "source_player_id": "cb-st-bonaventure-paul-vossen"
+        }
       ],
       "source_rows": 3,
       "identity_source_url": "https://gobonnies.com/sports/baseball/roster/paul-vossen/6223"
@@ -3094,11 +3876,23 @@
     {
       "name": "Cole Cabrera",
       "canonical_id": "cb-cal-poly-cole-cabrera",
-      "source_player_ids": ["cb-cal-poly-cole-cabrera", "cb-hawaii-cole-cabrera"],
-      "schools": ["Cal Poly", "Hawaii"],
+      "source_player_ids": [
+        "cb-cal-poly-cole-cabrera",
+        "cb-hawaii-cole-cabrera"
+      ],
+      "schools": [
+        "Cal Poly",
+        "Hawaii"
+      ],
       "pairs": [
-        {"team": "Cal Poly", "source_player_id": "cb-cal-poly-cole-cabrera"},
-        {"team": "Hawaii", "source_player_id": "cb-hawaii-cole-cabrera"}
+        {
+          "team": "Cal Poly",
+          "source_player_id": "cb-cal-poly-cole-cabrera"
+        },
+        {
+          "team": "Hawaii",
+          "source_player_id": "cb-hawaii-cole-cabrera"
+        }
       ],
       "source_rows": 2,
       "identity_source_url": "https://www.hawaii.edu/news/2025/05/21/uh-manoa-alum-cole-cabrera/"
@@ -3106,11 +3900,23 @@
     {
       "name": "David Watson",
       "canonical_id": "cb-utah-david-watson",
-      "source_player_ids": ["cb-utah-david-watson", "cb-loyola-marymount-david-watson"],
-      "schools": ["Utah", "Loyola Marymount"],
+      "source_player_ids": [
+        "cb-utah-david-watson",
+        "cb-loyola-marymount-david-watson"
+      ],
+      "schools": [
+        "Utah",
+        "Loyola Marymount"
+      ],
       "pairs": [
-        {"team": "Utah", "source_player_id": "cb-utah-david-watson"},
-        {"team": "Loyola Marymount", "source_player_id": "cb-loyola-marymount-david-watson"}
+        {
+          "team": "Utah",
+          "source_player_id": "cb-utah-david-watson"
+        },
+        {
+          "team": "Loyola Marymount",
+          "source_player_id": "cb-loyola-marymount-david-watson"
+        }
       ],
       "source_rows": 2,
       "identity_source_url": "https://lmulions.com/news/2022/8/30/baseball-announces-2023-recruiting-class.aspx"
@@ -3118,11 +3924,23 @@
     {
       "name": "Michael Robertson",
       "canonical_id": "cb-florida-michael-robertson",
-      "source_player_ids": ["cb-florida-michael-robertson", "cb-liberty-michael-robertson"],
-      "schools": ["Florida", "Liberty"],
+      "source_player_ids": [
+        "cb-florida-michael-robertson",
+        "cb-liberty-michael-robertson"
+      ],
+      "schools": [
+        "Florida",
+        "Liberty"
+      ],
       "pairs": [
-        {"team": "Florida", "source_player_id": "cb-florida-michael-robertson"},
-        {"team": "Liberty", "source_player_id": "cb-liberty-michael-robertson"}
+        {
+          "team": "Florida",
+          "source_player_id": "cb-florida-michael-robertson"
+        },
+        {
+          "team": "Liberty",
+          "source_player_id": "cb-liberty-michael-robertson"
+        }
       ],
       "source_rows": 2,
       "identity_source_url": "https://libertyflames.com/sports/baseball/roster/2025"
@@ -3130,11 +3948,23 @@
     {
       "name": "Steven Trone",
       "canonical_id": "cb-old-dominion-steven-trone",
-      "source_player_ids": ["cb-old-dominion-steven-trone", "cb-the-citadel-steven-trone"],
-      "schools": ["Old Dominion", "The Citadel"],
+      "source_player_ids": [
+        "cb-old-dominion-steven-trone",
+        "cb-the-citadel-steven-trone"
+      ],
+      "schools": [
+        "Old Dominion",
+        "The Citadel"
+      ],
       "pairs": [
-        {"team": "Old Dominion", "source_player_id": "cb-old-dominion-steven-trone"},
-        {"team": "The Citadel", "source_player_id": "cb-the-citadel-steven-trone"}
+        {
+          "team": "Old Dominion",
+          "source_player_id": "cb-old-dominion-steven-trone"
+        },
+        {
+          "team": "The Citadel",
+          "source_player_id": "cb-the-citadel-steven-trone"
+        }
       ],
       "source_rows": 2,
       "identity_source_url": "https://citadelsports.com/sports/baseball/roster/steven-trone/10679"
@@ -3142,11 +3972,23 @@
     {
       "name": "Wil Libbert",
       "canonical_id": "cb-missouri-wil-libbert",
-      "source_player_ids": ["cb-missouri-wil-libbert", "cb-ole-miss-wil-libbert"],
-      "schools": ["Missouri", "Ole Miss"],
+      "source_player_ids": [
+        "cb-missouri-wil-libbert",
+        "cb-ole-miss-wil-libbert"
+      ],
+      "schools": [
+        "Missouri",
+        "Ole Miss"
+      ],
       "pairs": [
-        {"team": "Missouri", "source_player_id": "cb-missouri-wil-libbert"},
-        {"team": "Ole Miss", "source_player_id": "cb-ole-miss-wil-libbert"}
+        {
+          "team": "Missouri",
+          "source_player_id": "cb-missouri-wil-libbert"
+        },
+        {
+          "team": "Ole Miss",
+          "source_player_id": "cb-ole-miss-wil-libbert"
+        }
       ],
       "source_rows": 2,
       "identity_source_url": "https://olemisssports.com/sports/baseball/roster"
@@ -3154,23 +3996,52 @@
     {
       "name": "Marvcus Guarin",
       "canonical_id": "cb-seattle-marvcus-guarin",
-      "source_player_ids": ["cb-seattle-marvcus-guarin", "cb-pacific-marvcus-guarin"],
-      "schools": ["Seattle", "Pacific"],
-      "pairs": [
-        {"team": "Seattle", "source_player_id": "cb-seattle-marvcus-guarin"},
-        {"team": "Pacific", "source_player_id": "cb-pacific-marvcus-guarin"}
+      "source_player_ids": [
+        "cb-seattle-marvcus-guarin",
+        "cb-pacific-marvcus-guarin",
+        "cb-pacific-m-guarin"
       ],
-      "source_rows": 2,
+      "schools": [
+        "Seattle",
+        "Pacific"
+      ],
+      "pairs": [
+        {
+          "team": "Seattle",
+          "source_player_id": "cb-seattle-marvcus-guarin"
+        },
+        {
+          "team": "Pacific",
+          "source_player_id": "cb-pacific-marvcus-guarin"
+        },
+        {
+          "team": "Pacific",
+          "source_player_id": "cb-pacific-m-guarin"
+        }
+      ],
+      "source_rows": 3,
       "identity_source_url": "https://pacifictigers.com/sports/baseball/roster/marvcus-guarin/4743"
     },
     {
       "name": "David Horn Jr.",
       "canonical_id": "cb-vanderbilt-david-horn-jr",
-      "source_player_ids": ["cb-vanderbilt-david-horn-jr", "cb-middle-tennessee-state-david-horn-jr"],
-      "schools": ["Vanderbilt", "Middle Tennessee State"],
+      "source_player_ids": [
+        "cb-vanderbilt-david-horn-jr",
+        "cb-middle-tennessee-state-david-horn-jr"
+      ],
+      "schools": [
+        "Vanderbilt",
+        "Middle Tennessee State"
+      ],
       "pairs": [
-        {"team": "Vanderbilt", "source_player_id": "cb-vanderbilt-david-horn-jr"},
-        {"team": "Middle Tennessee State", "source_player_id": "cb-middle-tennessee-state-david-horn-jr"}
+        {
+          "team": "Vanderbilt",
+          "source_player_id": "cb-vanderbilt-david-horn-jr"
+        },
+        {
+          "team": "Middle Tennessee State",
+          "source_player_id": "cb-middle-tennessee-state-david-horn-jr"
+        }
       ],
       "source_rows": 2,
       "identity_source_url": "https://goblueraiders.com/sports/baseball/roster/david-horn-jr/14420"
@@ -3178,11 +4049,23 @@
     {
       "name": "Andrew Bowers",
       "canonical_id": "cb-coastal-carolina-andrew-bowers",
-      "source_player_ids": ["cb-coastal-carolina-andrew-bowers", "cb-the-citadel-andrew-bowers"],
-      "schools": ["Coastal Carolina", "The Citadel"],
+      "source_player_ids": [
+        "cb-coastal-carolina-andrew-bowers",
+        "cb-the-citadel-andrew-bowers"
+      ],
+      "schools": [
+        "Coastal Carolina",
+        "The Citadel"
+      ],
       "pairs": [
-        {"team": "Coastal Carolina", "source_player_id": "cb-coastal-carolina-andrew-bowers"},
-        {"team": "The Citadel", "source_player_id": "cb-the-citadel-andrew-bowers"}
+        {
+          "team": "Coastal Carolina",
+          "source_player_id": "cb-coastal-carolina-andrew-bowers"
+        },
+        {
+          "team": "The Citadel",
+          "source_player_id": "cb-the-citadel-andrew-bowers"
+        }
       ],
       "source_rows": 2,
       "identity_source_url": "https://citadelsports.com/sports/baseball/roster/andrew-bowers/10673"
@@ -3190,11 +4073,23 @@
     {
       "name": "Tate Soderstrom",
       "canonical_id": "cb-uc-san-diego-tate-soderstrom",
-      "source_player_ids": ["cb-arizona-t-soderstrom", "cb-uc-san-diego-tate-soderstrom"],
-      "schools": ["Arizona", "UC San Diego"],
+      "source_player_ids": [
+        "cb-arizona-t-soderstrom",
+        "cb-uc-san-diego-tate-soderstrom"
+      ],
+      "schools": [
+        "Arizona",
+        "UC San Diego"
+      ],
       "pairs": [
-        {"team": "Arizona", "source_player_id": "cb-arizona-t-soderstrom"},
-        {"team": "UC San Diego", "source_player_id": "cb-uc-san-diego-tate-soderstrom"}
+        {
+          "team": "Arizona",
+          "source_player_id": "cb-arizona-t-soderstrom"
+        },
+        {
+          "team": "UC San Diego",
+          "source_player_id": "cb-uc-san-diego-tate-soderstrom"
+        }
       ],
       "source_rows": 7,
       "identity_source_url": "https://ucsdtritons.com/sports/baseball/roster/tate-soderstrom/10975"
@@ -3202,11 +4097,23 @@
     {
       "name": "Ethan Lizama",
       "canonical_id": "cb-south-carolina-ethan-lizama",
-      "source_player_ids": ["cb-western-kentucky-e-lizama", "cb-south-carolina-ethan-lizama"],
-      "schools": ["Western Kentucky", "South Carolina"],
+      "source_player_ids": [
+        "cb-western-kentucky-e-lizama",
+        "cb-south-carolina-ethan-lizama"
+      ],
+      "schools": [
+        "Western Kentucky",
+        "South Carolina"
+      ],
       "pairs": [
-        {"team": "Western Kentucky", "source_player_id": "cb-western-kentucky-e-lizama"},
-        {"team": "South Carolina", "source_player_id": "cb-south-carolina-ethan-lizama"}
+        {
+          "team": "Western Kentucky",
+          "source_player_id": "cb-western-kentucky-e-lizama"
+        },
+        {
+          "team": "South Carolina",
+          "source_player_id": "cb-south-carolina-ethan-lizama"
+        }
       ],
       "source_rows": 2,
       "identity_source_url": "https://wkusports.com/sports/baseball/roster/lizama-ethan/5461"
@@ -3214,11 +4121,23 @@
     {
       "name": "Kyle Hvidsten",
       "canonical_id": "cb-liberty-kyle-hvidsten",
-      "source_player_ids": ["cb-western-kentucky-k-hvidsten", "cb-liberty-kyle-hvidsten"],
-      "schools": ["Western Kentucky", "Liberty"],
+      "source_player_ids": [
+        "cb-western-kentucky-k-hvidsten",
+        "cb-liberty-kyle-hvidsten"
+      ],
+      "schools": [
+        "Western Kentucky",
+        "Liberty"
+      ],
       "pairs": [
-        {"team": "Western Kentucky", "source_player_id": "cb-western-kentucky-k-hvidsten"},
-        {"team": "Liberty", "source_player_id": "cb-liberty-kyle-hvidsten"}
+        {
+          "team": "Western Kentucky",
+          "source_player_id": "cb-western-kentucky-k-hvidsten"
+        },
+        {
+          "team": "Liberty",
+          "source_player_id": "cb-liberty-kyle-hvidsten"
+        }
       ],
       "source_rows": 2,
       "identity_source_url": "https://libertyflames.com/sports/baseball/roster"
@@ -3226,14 +4145,358 @@
     {
       "name": "Dylan O'Connell",
       "canonical_id": "cb-milwaukee-dylan-o-connell",
-      "source_player_ids": ["cb-western-kentucky-d-o-connell", "cb-milwaukee-dylan-o-connell"],
-      "schools": ["Western Kentucky", "Milwaukee"],
+      "source_player_ids": [
+        "cb-western-kentucky-d-o-connell",
+        "cb-milwaukee-dylan-o-connell"
+      ],
+      "schools": [
+        "Western Kentucky",
+        "Milwaukee"
+      ],
       "pairs": [
-        {"team": "Western Kentucky", "source_player_id": "cb-western-kentucky-d-o-connell"},
-        {"team": "Milwaukee", "source_player_id": "cb-milwaukee-dylan-o-connell"}
+        {
+          "team": "Western Kentucky",
+          "source_player_id": "cb-western-kentucky-d-o-connell"
+        },
+        {
+          "team": "Milwaukee",
+          "source_player_id": "cb-milwaukee-dylan-o-connell"
+        }
       ],
       "source_rows": 4,
       "identity_source_url": "https://mkepanthers.com/news/2026/3/10/baseball-panthers-travel-to-purdue-before-league-play-begins-at-northern-kentucky.aspx"
+    },
+    {
+      "name": "Ari Gerber",
+      "canonical_id": "cb-uc-riverside-ari-gerber",
+      "source_player_ids": [
+        "cb-uc-riverside-ari-gerber",
+        "cb-uc-riverside-a-gerber"
+      ],
+      "schools": [
+        "UC Riverside"
+      ],
+      "pairs": [
+        {
+          "team": "UC Riverside",
+          "source_player_id": "cb-uc-riverside-a-gerber"
+        },
+        {
+          "team": "UC Riverside",
+          "source_player_id": "cb-uc-riverside-ari-gerber"
+        }
+      ],
+      "source_rows": 4
+    },
+    {
+      "name": "Andre Granillo",
+      "canonical_id": "cb-uc-riverside-andre-granillo",
+      "source_player_ids": [
+        "cb-uc-riverside-andre-granillo",
+        "cb-uc-riverside-a-granillo"
+      ],
+      "schools": [
+        "UC Riverside"
+      ],
+      "pairs": [
+        {
+          "team": "UC Riverside",
+          "source_player_id": "cb-uc-riverside-a-granillo"
+        },
+        {
+          "team": "UC Riverside",
+          "source_player_id": "cb-uc-riverside-andre-granillo"
+        }
+      ],
+      "source_rows": 3
+    },
+    {
+      "name": "Blake Fitzgerald",
+      "canonical_id": "cb-uc-san-diego-blake-fitzgerald",
+      "source_player_ids": [
+        "cb-uc-san-diego-blake-fitzgerald",
+        "cb-uc-san-diego-b-fitzgerald"
+      ],
+      "schools": [
+        "UC San Diego"
+      ],
+      "pairs": [
+        {
+          "team": "UC San Diego",
+          "source_player_id": "cb-uc-san-diego-b-fitzgerald"
+        },
+        {
+          "team": "UC San Diego",
+          "source_player_id": "cb-uc-san-diego-blake-fitzgerald"
+        }
+      ],
+      "source_rows": 6
+    },
+    {
+      "name": "Bear Harrison",
+      "canonical_id": "cb-texas-a-m-bear-harrison",
+      "source_player_ids": [
+        "cb-texas-a-m-bear-harrison",
+        "cb-texas-a-m-b-harrison"
+      ],
+      "schools": [
+        "Texas A&M"
+      ],
+      "pairs": [
+        {
+          "team": "Texas A&M",
+          "source_player_id": "cb-texas-a-m-b-harrison"
+        },
+        {
+          "team": "Texas A&M",
+          "source_player_id": "cb-texas-a-m-bear-harrison"
+        }
+      ],
+      "source_rows": 4
+    },
+    {
+      "name": "Colby Canales",
+      "canonical_id": "cb-pacific-colby-canales",
+      "source_player_ids": [
+        "cb-pacific-colby-canales",
+        "cb-pacific-c-canales"
+      ],
+      "schools": [
+        "Pacific"
+      ],
+      "pairs": [
+        {
+          "team": "Pacific",
+          "source_player_id": "cb-pacific-c-canales"
+        },
+        {
+          "team": "Pacific",
+          "source_player_id": "cb-pacific-colby-canales"
+        }
+      ],
+      "source_rows": 4
+    },
+    {
+      "name": "Caden Duke",
+      "canonical_id": "cb-pacific-caden-duke",
+      "source_player_ids": [
+        "cb-pacific-caden-duke",
+        "cb-pacific-c-duke"
+      ],
+      "schools": [
+        "Pacific"
+      ],
+      "pairs": [
+        {
+          "team": "Pacific",
+          "source_player_id": "cb-pacific-c-duke"
+        },
+        {
+          "team": "Pacific",
+          "source_player_id": "cb-pacific-caden-duke"
+        }
+      ],
+      "source_rows": 2
+    },
+    {
+      "name": "Isaiah Garcia",
+      "canonical_id": "cb-cal-state-fullerton-isaiah-garcia",
+      "source_player_ids": [
+        "cb-cal-state-fullerton-isaiah-garcia",
+        "cb-cal-state-fullerton-i-garcia"
+      ],
+      "schools": [
+        "Cal State Fullerton"
+      ],
+      "pairs": [
+        {
+          "team": "Cal State Fullerton",
+          "source_player_id": "cb-cal-state-fullerton-i-garcia"
+        },
+        {
+          "team": "Cal State Fullerton",
+          "source_player_id": "cb-cal-state-fullerton-isaiah-garcia"
+        }
+      ],
+      "source_rows": 6
+    },
+    {
+      "name": "Jason Brandow",
+      "canonical_id": "cb-cal-state-fullerton-jason-brandow",
+      "source_player_ids": [
+        "cb-cal-state-fullerton-jason-brandow",
+        "cb-cal-state-fullerton-j-brandow"
+      ],
+      "schools": [
+        "Cal State Fullerton"
+      ],
+      "pairs": [
+        {
+          "team": "Cal State Fullerton",
+          "source_player_id": "cb-cal-state-fullerton-j-brandow"
+        },
+        {
+          "team": "Cal State Fullerton",
+          "source_player_id": "cb-cal-state-fullerton-jason-brandow"
+        }
+      ],
+      "source_rows": 8
+    },
+    {
+      "name": "Jackson Lyon",
+      "canonical_id": "cb-cal-state-fullerton-jackson-lyon",
+      "source_player_ids": [
+        "cb-cal-state-fullerton-jackson-lyon",
+        "cb-cal-state-fullerton-j-lyon"
+      ],
+      "schools": [
+        "Cal State Fullerton"
+      ],
+      "pairs": [
+        {
+          "team": "Cal State Fullerton",
+          "source_player_id": "cb-cal-state-fullerton-j-lyon"
+        },
+        {
+          "team": "Cal State Fullerton",
+          "source_player_id": "cb-cal-state-fullerton-jackson-lyon"
+        }
+      ],
+      "source_rows": 5
+    },
+    {
+      "name": "Nick Swanson",
+      "canonical_id": "cb-pacific-nick-swanson",
+      "source_player_ids": [
+        "cb-pacific-nick-swanson",
+        "cb-pacific-n-swanson"
+      ],
+      "schools": [
+        "Pacific"
+      ],
+      "pairs": [
+        {
+          "team": "Pacific",
+          "source_player_id": "cb-pacific-n-swanson"
+        },
+        {
+          "team": "Pacific",
+          "source_player_id": "cb-pacific-nick-swanson"
+        }
+      ],
+      "source_rows": 3
+    },
+    {
+      "name": "Aiden Evans",
+      "canonical_id": "cb-unc-wilmington-aiden-evans",
+      "source_player_ids": [
+        "cb-unc-wilmington-aiden-evans",
+        "cb-unc-wilmington-aidan-evans"
+      ],
+      "schools": [
+        "UNC Wilmington"
+      ],
+      "pairs": [
+        {
+          "team": "UNC Wilmington",
+          "source_player_id": "cb-unc-wilmington-aidan-evans"
+        },
+        {
+          "team": "UNC Wilmington",
+          "source_player_id": "cb-unc-wilmington-aiden-evans"
+        }
+      ],
+      "source_rows": 6
+    },
+    {
+      "name": "Cameron Nelson",
+      "canonical_id": "cb-wake-forest-cameron-nelson",
+      "source_player_ids": [
+        "cb-wake-forest-cameron-nelson",
+        "cb-wake-forest-cam-nelson"
+      ],
+      "schools": [
+        "Wake Forest"
+      ],
+      "pairs": [
+        {
+          "team": "Wake Forest",
+          "source_player_id": "cb-wake-forest-cam-nelson"
+        },
+        {
+          "team": "Wake Forest",
+          "source_player_id": "cb-wake-forest-cameron-nelson"
+        }
+      ],
+      "source_rows": 2
+    },
+    {
+      "name": "Tracye Tammaro",
+      "canonical_id": "cb-portland-tracye-tammaro",
+      "source_player_ids": [
+        "cb-portland-tracye-tammaro",
+        "cb-portland-trace-tammaro"
+      ],
+      "schools": [
+        "Portland"
+      ],
+      "pairs": [
+        {
+          "team": "Portland",
+          "source_player_id": "cb-portland-trace-tammaro"
+        },
+        {
+          "team": "Portland",
+          "source_player_id": "cb-portland-tracye-tammaro"
+        }
+      ],
+      "source_rows": 8
+    },
+    {
+      "name": "Callum Early",
+      "canonical_id": "cb-texas-callum-early",
+      "source_player_ids": [
+        "cb-texas-callum-early",
+        "cb-liberty-cal-early"
+      ],
+      "schools": [
+        "Texas",
+        "Liberty"
+      ],
+      "pairs": [
+        {
+          "team": "Liberty",
+          "source_player_id": "cb-liberty-cal-early"
+        },
+        {
+          "team": "Texas",
+          "source_player_id": "cb-texas-callum-early"
+        }
+      ],
+      "source_rows": 2
+    },
+    {
+      "name": "Jackson Natili",
+      "canonical_id": "cb-rutgers-jackson-natili",
+      "source_player_ids": [
+        "cb-rutgers-jackson-natili",
+        "cb-cincinnati-jack-natili"
+      ],
+      "schools": [
+        "Rutgers",
+        "Cincinnati"
+      ],
+      "pairs": [
+        {
+          "team": "Cincinnati",
+          "source_player_id": "cb-cincinnati-jack-natili"
+        },
+        {
+          "team": "Rutgers",
+          "source_player_id": "cb-rutgers-jackson-natili"
+        }
+      ],
+      "source_rows": 3
     }
   ]
 }

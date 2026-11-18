@@ -93,3 +93,5 @@ print(json.dumps({k:report[k] for k in ("games_with_source_short_names","games_n
 # Run current source lineup coverage scan.
 
 # Refresh after official 2024 Marshall-Charleston roster corrections.
+
+# Refresh report after 2019 UC Riverside roster verification.

@@ -4,10 +4,10 @@
   "source_game_count": 437,
   "source_player_game_rows": 13196,
   "games_with_source_short_names": 204,
-  "games_needing_review": 26,
+  "games_needing_review": 25,
   "source_name_issues": 619,
-  "unresolved_player_game_names": 54,
-  "already_resolved_display_names": 344,
+  "unresolved_player_game_names": 44,
+  "already_resolved_display_names": 354,
   "approved_pending_batch2_source_rows": 21,
   "optional_possible_short_first_names": 200,
   "issue_counts": {
@@ -18,146 +18,13 @@
     "name_order_or_suffix_error": 2
   },
   "unresolved_issue_counts": {
-    "first_initial_only": 45,
+    "first_initial_only": 35,
     "malformed_scorebook_text": 1,
     "surname_only": 6,
     "name_order_or_suffix_error": 2
   },
   "important": "Flags are NOT verified corrections. Original stats and games remain unmodified.",
   "games": [
-    {
-      "game_id": "cb-2024-03-08-binghamton-vmi-att0252",
-      "date": "2024-03-08",
-      "away": "Binghamton",
-      "home": "VMI",
-      "source_url": "https://binghamtonbearcats.com/sports/baseball/stats/2024/virginia-military-institute/boxscore/14316",
-      "needs_review": 10,
-      "already_resolved": 2,
-      "approved_pending": 0,
-      "possible_short_first_names": 0,
-      "entries": [
-        {
-          "team": "VMI",
-          "source_name": "B. Cook",
-          "source_player_id": "cb-vmi-b-cook",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "VMI",
-          "source_name": "C. Garrett",
-          "source_player_id": "cb-vmi-c-garrett",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "VMI",
-          "source_name": "C. Jenkins",
-          "source_player_id": "cb-vmi-c-jenkins",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "VMI",
-          "source_name": "J. Starke",
-          "source_player_id": "cb-vmi-j-starke",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "VMI",
-          "source_name": "K. Jordan",
-          "source_player_id": "cb-vmi-k-jordan",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "VMI",
-          "source_name": "M. alstine",
-          "source_player_id": "cb-vmi-m-alstine",
-          "issue": "first_initial_only",
-          "role": "pitching",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "VMI",
-          "source_name": "N. Hawley",
-          "source_player_id": "cb-vmi-n-hawley",
-          "issue": "first_initial_only",
-          "role": "pitching",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "VMI",
-          "source_name": "O. Prince",
-          "source_player_id": "cb-vmi-o-prince",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "VMI",
-          "source_name": "T. Morgan",
-          "source_player_id": "cb-vmi-t-morgan",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "VMI",
-          "source_name": "T. Swaim",
-          "source_player_id": "cb-vmi-t-swaim",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "VMI",
-          "source_name": "G. Fitzwater",
-          "source_player_id": "cb-vmi-g-fitzwater",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "resolved",
-          "display_name": "Grayson Fitzwater",
-          "resolution": "verified game correction"
-        },
-        {
-          "team": "VMI",
-          "source_name": "W. Riley",
-          "source_player_id": "cb-vmi-w-riley",
-          "issue": "first_initial_only",
-          "role": "pitching",
-          "status": "resolved",
-          "display_name": "Will Riley",
-          "resolution": "verified game correction"
-        }
-      ]
-    },
     {
       "game_id": "cb-2022-05-08-san-diego-pacific-att0159",
       "date": "2022-05-08",
@@ -5828,6 +5695,139 @@
           "role": "hitting",
           "status": "resolved",
           "display_name": "Ryan McCrystal",
+          "resolution": "verified game correction"
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2024-03-08-binghamton-vmi-att0252",
+      "date": "2024-03-08",
+      "away": "Binghamton",
+      "home": "VMI",
+      "source_url": "https://binghamtonbearcats.com/sports/baseball/stats/2024/virginia-military-institute/boxscore/14316",
+      "needs_review": 0,
+      "already_resolved": 12,
+      "approved_pending": 0,
+      "possible_short_first_names": 0,
+      "entries": [
+        {
+          "team": "VMI",
+          "source_name": "B. Cook",
+          "source_player_id": "cb-vmi-b-cook",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Brett Cook",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "VMI",
+          "source_name": "C. Garrett",
+          "source_player_id": "cb-vmi-c-garrett",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Cole Garrett",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "VMI",
+          "source_name": "C. Jenkins",
+          "source_player_id": "cb-vmi-c-jenkins",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Cole Jenkins",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "VMI",
+          "source_name": "G. Fitzwater",
+          "source_player_id": "cb-vmi-g-fitzwater",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Grayson Fitzwater",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "VMI",
+          "source_name": "J. Starke",
+          "source_player_id": "cb-vmi-j-starke",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Justin Starke",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "VMI",
+          "source_name": "K. Jordan",
+          "source_player_id": "cb-vmi-k-jordan",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Kazuya Jordan",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "VMI",
+          "source_name": "M. alstine",
+          "source_player_id": "cb-vmi-m-alstine",
+          "issue": "first_initial_only",
+          "role": "pitching",
+          "status": "resolved",
+          "display_name": "Marcus Van Alstine",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "VMI",
+          "source_name": "N. Hawley",
+          "source_player_id": "cb-vmi-n-hawley",
+          "issue": "first_initial_only",
+          "role": "pitching",
+          "status": "resolved",
+          "display_name": "Nathan Hawley",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "VMI",
+          "source_name": "O. Prince",
+          "source_player_id": "cb-vmi-o-prince",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Owen Prince",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "VMI",
+          "source_name": "T. Morgan",
+          "source_player_id": "cb-vmi-t-morgan",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Trey Morgan",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "VMI",
+          "source_name": "T. Swaim",
+          "source_player_id": "cb-vmi-t-swaim",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Ty Swaim",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "VMI",
+          "source_name": "W. Riley",
+          "source_player_id": "cb-vmi-w-riley",
+          "issue": "first_initial_only",
+          "role": "pitching",
+          "status": "resolved",
+          "display_name": "Will Riley",
           "resolution": "verified game correction"
         }
       ]

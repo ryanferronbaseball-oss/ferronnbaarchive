@@ -3,31 +3,14 @@
 Read-only audit of 437 games and 13,196 player-game records. Hitting and pitching names. No changes to source box scores.
 
 - **Games containing abbreviated source names:** 204
-- **Games needing review:** 26
+- **Games needing review:** 25
 - **Flagged player-game source names:** 619
-- **Names needing review:** 54
-- **Names already resolved for display:** 344
+- **Names needing review:** 44
+- **Names already resolved for display:** 354
 - **Previously approved Batch 2 names, pending activation:** 21
 - **Two-letter first names, optional review only:** 200
 
 ## Games with unresolved incomplete lineup names
-
-### 2024-03-08 — Binghamton at VMI (10 names)
-
-Game ID: cb-2024-03-08-binghamton-vmi-att0252
-
-| Team | Source name | Issue | Role |
-|---|---|---|---|
-| VMI | B. Cook | first initial only | hitting |
-| VMI | C. Garrett | first initial only | hitting |
-| VMI | C. Jenkins | first initial only | hitting |
-| VMI | J. Starke | first initial only | hitting |
-| VMI | K. Jordan | first initial only | hitting |
-| VMI | M. alstine | first initial only | pitching |
-| VMI | N. Hawley | first initial only | pitching |
-| VMI | O. Prince | first initial only | hitting |
-| VMI | T. Morgan | first initial only | hitting |
-| VMI | T. Swaim | first initial only | hitting |
 
 ### 2022-05-08 — San Diego at Pacific (6 names)
 
@@ -991,11 +974,6 @@ Game ID: cb-2026-05-23-florida-georgia-att0437
 
 ## Already resolved source abbreviations
 
-### 2024-03-08 — Binghamton at VMI
-
-- VMI: G. Fitzwater => Grayson Fitzwater (verified game correction)
-- VMI: W. Riley => Will Riley (verified game correction)
-
 ### 2022-05-08 — San Diego at Pacific
 
 - Pacific: C. Canales => Colby Canales (approved identity merge)
@@ -1337,6 +1315,21 @@ Game ID: cb-2026-05-23-florida-georgia-att0437
 - East Carolina: C. Cunningham => Carter Cunningham (verified game correction)
 - East Carolina: J. Jenkins-cowart => Jacob Jenkins-Cowart (verified game correction)
 - East Carolina: R. McCrystal => Ryan McCrystal (verified game correction)
+
+### 2024-03-08 — Binghamton at VMI
+
+- VMI: B. Cook => Brett Cook (verified game correction)
+- VMI: C. Garrett => Cole Garrett (verified game correction)
+- VMI: C. Jenkins => Cole Jenkins (verified game correction)
+- VMI: G. Fitzwater => Grayson Fitzwater (verified game correction)
+- VMI: J. Starke => Justin Starke (verified game correction)
+- VMI: K. Jordan => Kazuya Jordan (verified game correction)
+- VMI: M. alstine => Marcus Van Alstine (verified game correction)
+- VMI: N. Hawley => Nathan Hawley (verified game correction)
+- VMI: O. Prince => Owen Prince (verified game correction)
+- VMI: T. Morgan => Trey Morgan (verified game correction)
+- VMI: T. Swaim => Ty Swaim (verified game correction)
+- VMI: W. Riley => Will Riley (verified game correction)
 
 ### 2024-06-01 — Bryant at James Madison
 

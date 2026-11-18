@@ -1,0 +1,270 @@
+{
+  "version": 1,
+  "batch": 4,
+  "reviewed_pairs": 20,
+  "status": "owner_decisions_recorded_pending_application",
+  "owner_instruction": "COMBINE just 1, 2, 15; all other entries SEPARATE",
+  "safety_note": "UNLV 2022/2023 official roster confirms Jason Sharman (OF) and Josh Sharman (LHP) are separate brothers. Alias 'Ja Sharman' cannot merge into both; must resolve its source role/game.",
+  "results": [
+    {
+      "number": 1,
+      "source_name": "Ja Sharman",
+      "candidate_name": "Jason Sharman",
+      "source_id": "cb-unlv-ja-sharman",
+      "candidate_id": "cb-unlv-jason-sharman",
+      "schools": [
+        "UNLV",
+        "UNLV"
+      ],
+      "decision": "COMBINE_REQUESTED_CONFLICT_BROTHERS",
+      "applied": false
+    },
+    {
+      "number": 2,
+      "source_name": "Ja Sharman",
+      "candidate_name": "Josh Sharman",
+      "source_id": "cb-unlv-ja-sharman",
+      "candidate_id": "cb-unlv-josh-sharman",
+      "schools": [
+        "UNLV",
+        "UNLV"
+      ],
+      "decision": "COMBINE_REQUESTED_CONFLICT_BROTHERS",
+      "applied": false
+    },
+    {
+      "number": 3,
+      "source_name": "Dawsen HALL",
+      "candidate_name": "Dawson Hall",
+      "source_id": "cb-byu-dawsen-hall",
+      "candidate_id": "cb-western-kentucky-dawson-hall",
+      "schools": [
+        "BYU",
+        "Western Kentucky"
+      ],
+      "decision": "SEPARATE",
+      "applied": false
+    },
+    {
+      "number": 4,
+      "source_name": "Jared Gates",
+      "candidate_name": "J.P. Gates",
+      "source_id": "cb-arkansas-jared-gates",
+      "candidate_id": "cb-tampa-j-p-gates",
+      "schools": [
+        "Arkansas",
+        "Tampa"
+      ],
+      "decision": "SEPARATE",
+      "applied": false
+    },
+    {
+      "number": 5,
+      "source_name": "Jacob ROGERS",
+      "candidate_name": "JD Rogers",
+      "source_id": "cb-byu-jacob-rogers",
+      "candidate_id": "cb-ucf-jd-rogers",
+      "schools": [
+        "BYU",
+        "UCF"
+      ],
+      "decision": "SEPARATE",
+      "applied": false
+    },
+    {
+      "number": 6,
+      "source_name": "Jake Bell",
+      "candidate_name": "Jack Bell",
+      "source_id": "cb-bellarmine-jake-bell",
+      "candidate_id": "cb-eastern-kentucky-jack-bell",
+      "schools": [
+        "Bellarmine",
+        "Eastern Kentucky"
+      ],
+      "decision": "SEPARATE",
+      "applied": false
+    },
+    {
+      "number": 7,
+      "source_name": "Andrew Alvarez",
+      "candidate_name": "Andreas Alvarez",
+      "source_id": "cb-cal-poly-andrew-alvarez",
+      "candidate_id": "cb-auburn-andreas-alvarez",
+      "schools": [
+        "Cal Poly",
+        "Auburn"
+      ],
+      "decision": "SEPARATE",
+      "applied": false
+    },
+    {
+      "number": 8,
+      "source_name": "Dillon Brown",
+      "candidate_name": "Dion Brown",
+      "source_id": "cb-cal-state-fullerton-dillon-brown",
+      "candidate_id": "cb-clemson-dion-brown",
+      "schools": [
+        "Cal State Fullerton",
+        "Clemson"
+      ],
+      "decision": "SEPARATE",
+      "applied": false
+    },
+    {
+      "number": 9,
+      "source_name": "Erik Cha",
+      "candidate_name": "Eric Cha",
+      "source_id": "cb-cal-state-fullerton-erik-cha",
+      "candidate_id": "cb-northeastern-eric-cha",
+      "schools": [
+        "Cal State Fullerton",
+        "Northeastern"
+      ],
+      "decision": "SEPARATE",
+      "applied": false
+    },
+    {
+      "number": 10,
+      "source_name": "Cy Cox",
+      "candidate_name": "Chance Cox",
+      "source_id": "cb-campbell-cy-cox",
+      "candidate_id": "cb-austin-peay-chance-cox",
+      "schools": [
+        "Campbell",
+        "Austin Peay"
+      ],
+      "decision": "SEPARATE",
+      "applied": false
+    },
+    {
+      "number": 11,
+      "source_name": "Jackson Thompson",
+      "candidate_name": "Jd Thompson",
+      "source_id": "cb-campbell-jackson-thompson",
+      "candidate_id": "cb-vanderbilt-jd-thompson",
+      "schools": [
+        "Campbell",
+        "Vanderbilt"
+      ],
+      "decision": "SEPARATE",
+      "applied": false
+    },
+    {
+      "number": 12,
+      "source_name": "Jackson Thompson",
+      "candidate_name": "Jt Thompson",
+      "source_id": "cb-campbell-jackson-thompson",
+      "candidate_id": "cb-rutgers-jt-thompson",
+      "schools": [
+        "Campbell",
+        "Rutgers"
+      ],
+      "decision": "SEPARATE",
+      "applied": false
+    },
+    {
+      "number": 13,
+      "source_name": "Jordan Williams",
+      "candidate_name": "JB Williams",
+      "source_id": "cb-florida-state-jordan-williams",
+      "candidate_id": "cb-central-arkansas-jb-williams",
+      "schools": [
+        "Florida State",
+        "Central Arkansas"
+      ],
+      "decision": "SEPARATE",
+      "applied": false
+    },
+    {
+      "number": 14,
+      "source_name": "C. Jennings",
+      "candidate_name": "Chancellor Jennings",
+      "source_id": "cb-illinois-c-jennings",
+      "candidate_id": "cb-winthrop-chancellor-jennings",
+      "schools": [
+        "Illinois",
+        "Winthrop"
+      ],
+      "decision": "SEPARATE",
+      "applied": false
+    },
+    {
+      "number": 15,
+      "source_name": "Nathan Keeter",
+      "candidate_name": "Nathaneal Keeter",
+      "source_id": "cb-liberty-nathan-keeter",
+      "candidate_id": "cb-lenoir-rhyne-nathaneal-keeter",
+      "schools": [
+        "Liberty",
+        "Lenoir-Rhyne"
+      ],
+      "decision": "COMBINE_APPROVED",
+      "applied": false
+    },
+    {
+      "number": 16,
+      "source_name": "Jack Brown",
+      "candidate_name": "Jake Brown",
+      "source_id": "cb-louisville-jack-brown",
+      "candidate_id": "cb-lsu-jake-brown",
+      "schools": [
+        "Louisville",
+        "LSU"
+      ],
+      "decision": "SEPARATE",
+      "applied": false
+    },
+    {
+      "number": 17,
+      "source_name": "JP Walsh",
+      "candidate_name": "Jacob Walsh",
+      "source_id": "cb-monmouth-jp-walsh",
+      "candidate_id": "cb-oregon-jacob-walsh",
+      "schools": [
+        "Monmouth",
+        "Oregon"
+      ],
+      "decision": "SEPARATE",
+      "applied": false
+    },
+    {
+      "number": 18,
+      "source_name": "J. Fortner",
+      "candidate_name": "Jack Fortner",
+      "source_id": "cb-pacific-j-fortner",
+      "candidate_id": "cb-middle-tennessee-state-jack-fortner",
+      "schools": [
+        "Pacific",
+        "Middle Tennessee State"
+      ],
+      "decision": "SEPARATE",
+      "applied": false
+    },
+    {
+      "number": 19,
+      "source_name": "T. Hill",
+      "candidate_name": "Trey Hill",
+      "source_id": "cb-pacific-t-hill",
+      "candidate_id": "cb-little-rock-trey-hill",
+      "schools": [
+        "Pacific",
+        "Little Rock"
+      ],
+      "decision": "SEPARATE",
+      "applied": false
+    },
+    {
+      "number": 20,
+      "source_name": "Kaden Lewis",
+      "candidate_name": "Kade Lewis",
+      "source_id": "cb-point-loma-nazarene-kaden-lewis",
+      "candidate_id": "cb-wake-forest-kade-lewis",
+      "schools": [
+        "Point Loma Nazarene",
+        "Wake Forest"
+      ],
+      "decision": "SEPARATE",
+      "applied": false
+    }
+  ]
+}

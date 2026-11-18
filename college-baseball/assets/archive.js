@@ -253,19 +253,34 @@ async function load(){
  const players=[...byPlayer.values()].map(p=>({...p,name:displayNames.get(p.player_id)||p.name,former_names:formerNames.get(p.player_id)||[],
   teams:[...new Set([...p.teams].map(team=>displayTeams.get(team)||team))],games:[...p.games]}));
  const playerIds=new Set(rows.map(r=>String(r.player_id||"")));
- if(!recapRegistry||recapRegistry.version!==1||!recapRegistry.recaps||typeof recapRegistry.recaps!=="object"||Array.isArray(recapRegistry.recaps))throw Error("Malformed college baseball recap registry");
+ // Recaps are optional editorial content, not a prerequisite for loading the archive.
+ // A stale player ID must never blank the overview, search or unrelated game pages.
  const recaps=new Map();
- for(const [gameId,entry] of Object.entries(recapRegistry.recaps)){
-  if(!gameMap.has(gameId)||!entry||!Array.isArray(entry.paragraphs)||entry.paragraphs.length!==3||entry.paragraphs.some(p=>typeof p!=="string"||!p.trim()))throw Error("Malformed college baseball recap: "+gameId);
-  if(!entry.player_of_game||typeof entry.player_of_game!=="object"||!playerIds.has(String(entry.player_of_game.player_id||""))||!entry.player_of_game.name||!entry.player_of_game.team||!entry.player_of_game.line)throw Error("Malformed college baseball Player of Game: "+gameId);
-  for(const paragraph of entry.paragraphs){
-   const token=/\[\[([a-z0-9-]+)\|([^\]\|]+)\]\]/g;
-   let count=0,match;
-   while((match=token.exec(paragraph))){count++;if(!playerIds.has(match[1])||!match[2].trim())throw Error("Invalid recap player link: "+gameId)}
-   if(!count)throw Error("Recap has no linked players: "+gameId);
+ if(recapRegistry?.version===1&&recapRegistry.recaps&&typeof recapRegistry.recaps==="object"&&!Array.isArray(recapRegistry.recaps)){
+  for(const [gameId,entry] of Object.entries(recapRegistry.recaps)){
+   if(!gameMap.has(gameId)||!entry||!Array.isArray(entry.paragraphs)||entry.paragraphs.length!==3||entry.paragraphs.some(p=>typeof p!=="string"||!p.trim())){
+    console.warn("Skipping malformed college baseball recap:",gameId);
+    continue;
+   }
+   const pog=entry.player_of_game;
+   const pogId=redirects.get(String(pog?.player_id||""))||String(pog?.player_id||"");
+   if(!pog||!playerIds.has(pogId)||!pog.name||!pog.team||!pog.line){
+    console.warn("Skipping recap with invalid Player of Game:",gameId);
+    continue;
+   }
+   // Preserve the recap narrative, but show an unlinked name if a historical
+   // player ID is no longer valid after an identity/name reconciliation.
+   const paragraphs=entry.paragraphs.map(paragraph=>paragraph.replace(/\\[\\[([a-z0-9-]+)\\|([^\\]\\|]+)\\]\\]/g,(token,id,label)=>{
+    const canonical=redirects.get(id)||id;
+    if(!playerIds.has(canonical)){
+     console.warn("Rendering unlinked recap player:",gameId,id);
+     return label;
+    }
+    return "[["+canonical+"|"+label+"]]";
+   }));
+   recaps.set(gameId,{...entry,paragraphs,player_of_game:{...pog,player_id:pogId}});
   }
-  recaps.set(gameId,entry);
- }
+ }else console.warn("College baseball recaps unavailable; core archive will still load");
  return {games:games.slice().sort((a,b)=>b.date.localeCompare(a.date)||a.id.localeCompare(b.id)),rows,players,gameMap,gameRedirects,report,crosswalk,identity,redirects,recaps};
 }
 let cachedArchivePromise;

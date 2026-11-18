@@ -7,6 +7,9 @@ D=Path(__file__).resolve().parents[1]/"data"
 load=lambda name:json.loads((D/name).read_text(encoding="utf8"))
 rows=load("player_stats.json");games=load("games.json")
 names=load("player_name_corrections.json");cross=load("player_identity_crosswalk.json")
+batch2=load("identity_audit_batch_02_2026_11_17_approvals.json")
+def normalized_name(s):return " ".join(re.sub(r"[^a-z0-9]+"," ",str(s).lower()).split())
+prior_approved={(d["school"].lower(),normalized_name(d["source_name"])):d for d in batch2["decisions"] if d["decision"]=="COMBINE"}
 assert len(games)==437 and len(rows)==13196
 game_by_id={g["id"]:g for g in games}
 fixes={}
@@ -36,21 +39,23 @@ for r in rows:
  fix=fixes.get(k)
  merge=aliases.get((r["team"],r["player_id"]))
  label=fix["player"] if fix else (merge["name"] if merge else None)
- status="resolved" if label and classify(label) is None else "needs_review"
- bygame[r["game_id"]].append({"team":r["team"],"source_name":r["player"],"source_player_id":r["player_id"],"issue":issue,"role":"hitting + pitching" if r.get("batting") and r.get("pitching") else "hitting" if r.get("batting") else "pitching","status":status,"display_name":label,"resolution":"verified game correction" if fix else "approved identity merge" if merge else None})
+ approved=prior_approved.get((r["team"].lower(),normalized_name(r["player"])))
+ status="resolved" if label and classify(label) is None else "approved_pending" if approved else "possible_short_first_name" if issue=="possible_abbreviated_first_name" else "needs_review"
+ if approved and status=="approved_pending":label=approved["canonical_name"]
+ bygame[r["game_id"]].append({"team":r["team"],"source_name":r["player"],"source_player_id":r["player_id"],"issue":issue,"role":"hitting + pitching" if r.get("batting") and r.get("pitching") else "hitting" if r.get("batting") else "pitching","status":status,"display_name":label,"resolution":"verified game correction" if fix else "approved identity merge" if merge else "owner-approved Batch 2 pending application" if approved else None})
 output=[]
 for gid,entries in bygame.items():
  g=game_by_id[gid]
- output.append({"game_id":gid,"date":g.get("date"),"away":g.get("away"),"home":g.get("home"),"source_url":g.get("source_url"),"needs_review":sum(e["status"]=="needs_review" for e in entries),"already_resolved":sum(e["status"]=="resolved" for e in entries),"entries":sorted(entries,key=lambda e:(e["status"]!="needs_review",e["team"],e["source_name"]))})
+ output.append({"game_id":gid,"date":g.get("date"),"away":g.get("away"),"home":g.get("home"),"source_url":g.get("source_url"),"needs_review":sum(e["status"]=="needs_review" for e in entries),"already_resolved":sum(e["status"]=="resolved" for e in entries),"approved_pending":sum(e["status"]=="approved_pending" for e in entries),"possible_short_first_names":sum(e["status"]=="possible_short_first_name" for e in entries),"entries":sorted(entries,key=lambda e:(e["status"]!="needs_review",e["team"],e["source_name"]))})
 output.sort(key=lambda g:(-g["needs_review"],g["date"] or "",g["game_id"]))
 allissues=Counter(e["issue"] for g in output for e in g["entries"])
 unresolved=Counter(e["issue"] for g in output for e in g["entries"] if e["status"]=="needs_review")
-report={"version":1,"method":"heuristic full-name audit of original gamebook source entries; both batting and pitching","source_game_count":len(games),"source_player_game_rows":len(rows),"games_with_source_short_names":len(output),"games_needing_review":sum(g["needs_review"]>0 for g in output),"source_name_issues":sum(allissues.values()),"unresolved_player_game_names":sum(unresolved.values()),"already_resolved_display_names":sum(g["already_resolved"] for g in output),"issue_counts":dict(allissues),"unresolved_issue_counts":dict(unresolved),"important":"Flags are NOT verified corrections. Original stats and games remain unmodified.","games":output}
+report={"version":1,"method":"heuristic full-name audit of original gamebook source entries; both batting and pitching","source_game_count":len(games),"source_player_game_rows":len(rows),"games_with_source_short_names":len(output),"games_needing_review":sum(g["needs_review"]>0 for g in output),"source_name_issues":sum(allissues.values()),"unresolved_player_game_names":sum(unresolved.values()),"already_resolved_display_names":sum(g["already_resolved"] for g in output),"approved_pending_batch2_source_rows":sum(g["approved_pending"] for g in output),"optional_possible_short_first_names":sum(g["possible_short_first_names"] for g in output),"issue_counts":dict(allissues),"unresolved_issue_counts":dict(unresolved),"important":"Flags are NOT verified corrections. Original stats and games remain unmodified.","games":output}
 (D/"lineup_full_name_audit_2026_11_17.json").write_text(json.dumps(report,indent=2,ensure_ascii=False)+"\n",encoding="utf8")
 with (D/"lineup_full_name_audit_2026_11_17.md").open("w",encoding="utf8") as f:
  f.write("# College Baseball: Incomplete lineup first-and-last names\n\n")
  f.write("Read-only audit of 437 games and 13,196 player-game records. Hitting and pitching names. No changes to source box scores.\n\n")
- for key,label in [("games_with_source_short_names","Games containing abbreviated source names"),("games_needing_review","Games needing review"),("source_name_issues","Flagged player-game source names"),("unresolved_player_game_names","Names needing review"),("already_resolved_display_names","Names already resolved for display")]:
+ for key,label in [("games_with_source_short_names","Games containing abbreviated source names"),("games_needing_review","Games needing review"),("source_name_issues","Flagged player-game source names"),("unresolved_player_game_names","Names needing review"),("already_resolved_display_names","Names already resolved for display"),("approved_pending_batch2_source_rows","Previously approved Batch 2 names, pending activation"),("optional_possible_short_first_names","Two-letter first names, optional review only")]:
   f.write("- **"+label+":** "+str(report[key])+"\n")
  f.write("\n## Games with unresolved incomplete lineup names\n\n")
  for g in output:
@@ -62,6 +67,20 @@ with (D/"lineup_full_name_audit_2026_11_17.md").open("w",encoding="utf8") as f:
    if e["status"]!="needs_review":continue
    f.write("| "+e["team"]+" | "+e["source_name"]+" | "+e["issue"].replace("_"," ")+" | "+e["role"]+" |\n")
   f.write("\n")
+ f.write("## Previously approved Batch 2 names, pending source mapping\n\n")
+ for g in output:
+  pending=[e for e in g["entries"] if e["status"]=="approved_pending"]
+  if not pending:continue
+  f.write("### "+str(g["date"])+" — "+str(g["away"])+" at "+str(g["home"])+"\n\n")
+  for e in pending:f.write("- "+e["team"]+": "+e["source_name"]+" => "+e["display_name"]+" (APPROVED, not activated)\n")
+  f.write("\n")
+ f.write("## Two-letter first names (optional verification; may already be full names)\n\n")
+ for g in output:
+  maybe=[e for e in g["entries"] if e["status"]=="possible_short_first_name"]
+  if not maybe:continue
+  f.write("### "+str(g["date"])+" — "+str(g["away"])+" at "+str(g["home"])+"\n\n")
+  for e in maybe:f.write("- "+e["team"]+": "+e["source_name"]+" ("+e["role"]+")\n")
+  f.write("\n")
  f.write("## Already resolved source abbreviations\n\n")
  for g in output:
   done=[e for e in g["entries"] if e["status"]=="resolved"]
@@ -69,6 +88,6 @@ with (D/"lineup_full_name_audit_2026_11_17.md").open("w",encoding="utf8") as f:
   f.write("### "+str(g["date"])+" — "+str(g["away"])+" at "+str(g["home"])+"\n\n")
   for e in done:f.write("- "+e["team"]+": "+e["source_name"]+" => "+e["display_name"]+" ("+str(e["resolution"])+")\n")
   f.write("\n")
-print(json.dumps({k:report[k] for k in ("games_with_source_short_names","games_needing_review","source_name_issues","unresolved_player_game_names","already_resolved_display_names","unresolved_issue_counts")}))
+print(json.dumps({k:report[k] for k in ("games_with_source_short_names","games_needing_review","source_name_issues","unresolved_player_game_names","already_resolved_display_names","approved_pending_batch2_source_rows","optional_possible_short_first_names","unresolved_issue_counts")}))
 
 # Run current source lineup coverage scan.

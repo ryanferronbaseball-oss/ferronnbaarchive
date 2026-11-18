@@ -3,27 +3,14 @@
 Read-only audit of 437 games and 13,196 player-game records. Hitting and pitching names. No changes to source box scores.
 
 - **Games containing abbreviated source names:** 204
-- **Games needing review:** 25
+- **Games needing review:** 22
 - **Flagged player-game source names:** 619
-- **Names needing review:** 44
-- **Names already resolved for display:** 354
+- **Names needing review:** 28
+- **Names already resolved for display:** 370
 - **Previously approved Batch 2 names, pending activation:** 21
 - **Two-letter first names, optional review only:** 200
 
 ## Games with unresolved incomplete lineup names
-
-### 2022-05-08 — San Diego at Pacific (6 names)
-
-Game ID: cb-2022-05-08-san-diego-pacific-att0159
-
-| Team | Source name | Issue | Role |
-|---|---|---|---|
-| Pacific | A. McKinney | first initial only | pitching |
-| Pacific | H. Schilpero | first initial only | pitching |
-| Pacific | J. McClenagh | first initial only | hitting |
-| Pacific | J. Silva | first initial only | hitting |
-| Pacific | J. Vaughan | first initial only | pitching |
-| Pacific | T. Hill | first initial only | hitting |
 
 ### 2024-03-02 — Illinois at Western Michigan (6 names)
 
@@ -37,30 +24,6 @@ Game ID: cb-2024-03-02-illinois-western-michigan-att0246
 | Illinois | L. Tabeling | first initial only | pitching |
 | Illinois | S. Reed | first initial only | pitching |
 | Illinois | W. Lavin | first initial only | pitching |
-
-### 2022-05-06 — San Diego at Pacific (5 names)
-
-Game ID: cb-2022-05-06-san-diego-pacific-att0157
-
-| Team | Source name | Issue | Role |
-|---|---|---|---|
-| Pacific | B. Motheral | first initial only | hitting |
-| Pacific | J. Fortner | first initial only | pitching |
-| Pacific | J. McClenagh | first initial only | hitting |
-| Pacific | J. Silva | first initial only | hitting |
-| Pacific | T. Hill | first initial only | hitting |
-
-### 2022-05-07 — San Diego at Pacific (5 names)
-
-Game ID: cb-2022-05-07-san-diego-pacific-att0158
-
-| Team | Source name | Issue | Role |
-|---|---|---|---|
-| Pacific | B. Motheral | first initial only | hitting |
-| Pacific | H. Schilpero | first initial only | pitching |
-| Pacific | J. McClenagh | first initial only | hitting |
-| Pacific | J. Silva | first initial only | hitting |
-| Pacific | J. Vaughan | first initial only | pitching |
 
 ### 2019-02-24 — Cal State Fullerton at Oklahoma (2 names)
 
@@ -233,25 +196,10 @@ Game ID: cb-2026-05-23-florida-georgia-att0437
 
 ## Previously approved Batch 2 names, pending source mapping
 
-### 2022-05-08 — San Diego at Pacific
-
-- Pacific: A. Selfridge => Aidan Selfridge (APPROVED, not activated)
-- Pacific: Z. Patterson => Zach Patterson (APPROVED, not activated)
-
 ### 2024-03-02 — Illinois at Western Michigan
 
 - Illinois: C Chee-Aloy => Cameron Chee-Aloy (APPROVED, not activated)
 - Illinois: D. Westcott => Drake Westcott (APPROVED, not activated)
-
-### 2022-05-06 — San Diego at Pacific
-
-- Pacific: B. Nemivant => Ben Nemivant (APPROVED, not activated)
-- Pacific: H. Hayes => Hunter Hayes (APPROVED, not activated)
-
-### 2022-05-07 — San Diego at Pacific
-
-- Pacific: E. Birdsong => Elijah Birdsong (APPROVED, not activated)
-- Pacific: M. Defelippi => Michael Defelippi (APPROVED, not activated)
 
 ### 2019-02-24 — Cal State Fullerton at Oklahoma
 
@@ -270,6 +218,21 @@ Game ID: cb-2026-05-23-florida-georgia-att0437
 - UC Riverside: T Bohall => Travis Bohall (APPROVED, not activated)
 - UC Riverside: Y Taylor => Yeager Taylor (APPROVED, not activated)
 
+### 2022-05-06 — San Diego at Pacific
+
+- Pacific: B. Nemivant => Ben Nemivant (APPROVED, not activated)
+- Pacific: H. Hayes => Hunter Hayes (APPROVED, not activated)
+
+### 2022-05-07 — San Diego at Pacific
+
+- Pacific: E. Birdsong => Elijah Birdsong (APPROVED, not activated)
+- Pacific: M. Defelippi => Michael Defelippi (APPROVED, not activated)
+
+### 2022-05-08 — San Diego at Pacific
+
+- Pacific: A. Selfridge => Aidan Selfridge (APPROVED, not activated)
+- Pacific: Z. Patterson => Zach Patterson (APPROVED, not activated)
+
 ### 2024-02-19 — Marshall at College of Charleston
 
 - Marshall: A. Havrilla => AJ Havrilla (APPROVED, not activated)
@@ -280,21 +243,9 @@ Game ID: cb-2026-05-23-florida-georgia-att0437
 
 ## Two-letter first names (optional verification; may already be full names)
 
-### 2022-05-08 — San Diego at Pacific
-
-- San Diego: RJ Teijeiro (hitting)
-
 ### 2024-03-02 — Illinois at Western Michigan
 
 - Western Michigan: CJ Richmond (hitting)
-
-### 2022-05-06 — San Diego at Pacific
-
-- San Diego: RJ Teijeiro (hitting)
-
-### 2022-05-07 — San Diego at Pacific
-
-- San Diego: RJ Teijeiro (hitting)
 
 ### 2022-02-20 — Oregon at San Diego
 
@@ -478,6 +429,18 @@ Game ID: cb-2026-05-23-florida-georgia-att0437
 - San Diego: RJ Teijeiro (hitting)
 
 ### 2022-05-01 — Santa Clara at San Diego
+
+- San Diego: RJ Teijeiro (hitting)
+
+### 2022-05-06 — San Diego at Pacific
+
+- San Diego: RJ Teijeiro (hitting)
+
+### 2022-05-07 — San Diego at Pacific
+
+- San Diego: RJ Teijeiro (hitting)
+
+### 2022-05-08 — San Diego at Pacific
 
 - San Diego: RJ Teijeiro (hitting)
 
@@ -974,16 +937,6 @@ Game ID: cb-2026-05-23-florida-georgia-att0437
 
 ## Already resolved source abbreviations
 
-### 2022-05-08 — San Diego at Pacific
-
-- Pacific: C. Canales => Colby Canales (approved identity merge)
-- Pacific: C. Graves => Chase Graves (verified game correction)
-- Pacific: C. Myers => Chaz Myers (verified game correction)
-- Pacific: J. Arakawa => James Arakawa (verified game correction)
-- Pacific: J. Lea => Jeremy Lea (verified game correction)
-- Pacific: J. Weiss => Jacob Weiss (verified game correction)
-- Pacific: T. Gavello => Thomas Gavello (verified game correction)
-
 ### 2024-03-02 — Illinois at Western Michigan
 
 - Illinois: Harding => Brody Harding (verified game correction)
@@ -992,28 +945,6 @@ Game ID: cb-2026-05-23-florida-georgia-att0437
 - Illinois: Milton => Connor Milton (verified game correction)
 - Illinois: Quagliano => Coltin Quagliano (verified game correction)
 - Illinois: V Valincius => Vytas Valincius (approved identity merge)
-
-### 2022-05-06 — San Diego at Pacific
-
-- Pacific: C. Canales => Colby Canales (approved identity merge)
-- Pacific: C. Graves => Chase Graves (verified game correction)
-- Pacific: C. Myers => Chaz Myers (verified game correction)
-- Pacific: J. Arakawa => James Arakawa (verified game correction)
-- Pacific: J. Weiss => Jacob Weiss (verified game correction)
-- Pacific: N. Swanson => Nick Swanson (approved identity merge)
-- Pacific: T. Gavello => Thomas Gavello (verified game correction)
-
-### 2022-05-07 — San Diego at Pacific
-
-- Pacific: C. Duke => Caden Duke (approved identity merge)
-- Pacific: C. Graves => Chase Graves (verified game correction)
-- Pacific: C. Myers => Chaz Myers (verified game correction)
-- Pacific: J. Arakawa => James Arakawa (verified game correction)
-- Pacific: J. Lea => Jeremy Lea (verified game correction)
-- Pacific: J. Weiss => Jacob Weiss (verified game correction)
-- Pacific: M. Guarin => Marvcus Guarin (approved identity merge)
-- Pacific: N. Swanson => Nick Swanson (approved identity merge)
-- Pacific: T. Gavello => Thomas Gavello (verified game correction)
 
 ### 2019-02-24 — Cal State Fullerton at Oklahoma
 
@@ -1249,6 +1180,54 @@ Game ID: cb-2026-05-23-florida-georgia-att0437
 ### 2022-04-05 — San Diego at UC San Diego
 
 - UC San Diego: B. FitzGerald => Blake Fitzgerald (approved identity merge)
+
+### 2022-05-06 — San Diego at Pacific
+
+- Pacific: B. Motheral => Brandon Motheral (verified game correction)
+- Pacific: C. Canales => Colby Canales (approved identity merge)
+- Pacific: C. Graves => Chase Graves (verified game correction)
+- Pacific: C. Myers => Chaz Myers (verified game correction)
+- Pacific: J. Arakawa => James Arakawa (verified game correction)
+- Pacific: J. Fortner => Jon Fortner (verified game correction)
+- Pacific: J. McClenagh => James McClenaghan (verified game correction)
+- Pacific: J. Silva => Jarron Silva (verified game correction)
+- Pacific: J. Weiss => Jacob Weiss (verified game correction)
+- Pacific: N. Swanson => Nick Swanson (approved identity merge)
+- Pacific: T. Gavello => Thomas Gavello (verified game correction)
+- Pacific: T. Hill => Telly Hill (verified game correction)
+
+### 2022-05-07 — San Diego at Pacific
+
+- Pacific: B. Motheral => Brandon Motheral (verified game correction)
+- Pacific: C. Duke => Caden Duke (approved identity merge)
+- Pacific: C. Graves => Chase Graves (verified game correction)
+- Pacific: C. Myers => Chaz Myers (verified game correction)
+- Pacific: H. Schilpero => Hunter Schilperoort (verified game correction)
+- Pacific: J. Arakawa => James Arakawa (verified game correction)
+- Pacific: J. Lea => Jeremy Lea (verified game correction)
+- Pacific: J. McClenagh => James McClenaghan (verified game correction)
+- Pacific: J. Silva => Jarron Silva (verified game correction)
+- Pacific: J. Vaughan => Jackson Vaughan (verified game correction)
+- Pacific: J. Weiss => Jacob Weiss (verified game correction)
+- Pacific: M. Guarin => Marvcus Guarin (approved identity merge)
+- Pacific: N. Swanson => Nick Swanson (approved identity merge)
+- Pacific: T. Gavello => Thomas Gavello (verified game correction)
+
+### 2022-05-08 — San Diego at Pacific
+
+- Pacific: A. McKinney => Austin McKinney (verified game correction)
+- Pacific: C. Canales => Colby Canales (approved identity merge)
+- Pacific: C. Graves => Chase Graves (verified game correction)
+- Pacific: C. Myers => Chaz Myers (verified game correction)
+- Pacific: H. Schilpero => Hunter Schilperoort (verified game correction)
+- Pacific: J. Arakawa => James Arakawa (verified game correction)
+- Pacific: J. Lea => Jeremy Lea (verified game correction)
+- Pacific: J. McClenagh => James McClenaghan (verified game correction)
+- Pacific: J. Silva => Jarron Silva (verified game correction)
+- Pacific: J. Vaughan => Jackson Vaughan (verified game correction)
+- Pacific: J. Weiss => Jacob Weiss (verified game correction)
+- Pacific: T. Gavello => Thomas Gavello (verified game correction)
+- Pacific: T. Hill => Telly Hill (verified game correction)
 
 ### 2023-05-12 — San Diego at Saint Mary's
 

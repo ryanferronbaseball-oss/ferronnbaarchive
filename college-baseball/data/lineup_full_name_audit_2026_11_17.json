@@ -4,200 +4,27 @@
   "source_game_count": 437,
   "source_player_game_rows": 13196,
   "games_with_source_short_names": 204,
-  "games_needing_review": 25,
+  "games_needing_review": 22,
   "source_name_issues": 619,
-  "unresolved_player_game_names": 44,
-  "already_resolved_display_names": 354,
+  "unresolved_player_game_names": 28,
+  "already_resolved_display_names": 370,
   "approved_pending_batch2_source_rows": 21,
   "optional_possible_short_first_names": 200,
   "issue_counts": {
     "first_initial_only": 247,
-    "possible_abbreviated_first_name": 201,
     "surname_only": 167,
+    "possible_abbreviated_first_name": 201,
     "malformed_scorebook_text": 2,
     "name_order_or_suffix_error": 2
   },
   "unresolved_issue_counts": {
-    "first_initial_only": 35,
+    "first_initial_only": 19,
     "malformed_scorebook_text": 1,
     "surname_only": 6,
     "name_order_or_suffix_error": 2
   },
   "important": "Flags are NOT verified corrections. Original stats and games remain unmodified.",
   "games": [
-    {
-      "game_id": "cb-2022-05-08-san-diego-pacific-att0159",
-      "date": "2022-05-08",
-      "away": "San Diego",
-      "home": "Pacific",
-      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/pacific/boxscore/12483",
-      "needs_review": 6,
-      "already_resolved": 7,
-      "approved_pending": 2,
-      "possible_short_first_names": 1,
-      "entries": [
-        {
-          "team": "Pacific",
-          "source_name": "A. McKinney",
-          "source_player_id": "cb-pacific-a-mckinney",
-          "issue": "first_initial_only",
-          "role": "pitching",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "Pacific",
-          "source_name": "H. Schilpero",
-          "source_player_id": "cb-pacific-h-schilpero",
-          "issue": "first_initial_only",
-          "role": "pitching",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "Pacific",
-          "source_name": "J. McClenagh",
-          "source_player_id": "cb-pacific-j-mcclenagh",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "Pacific",
-          "source_name": "J. Silva",
-          "source_player_id": "cb-pacific-j-silva",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "Pacific",
-          "source_name": "J. Vaughan",
-          "source_player_id": "cb-pacific-j-vaughan",
-          "issue": "first_initial_only",
-          "role": "pitching",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "Pacific",
-          "source_name": "T. Hill",
-          "source_player_id": "cb-pacific-t-hill",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "Pacific",
-          "source_name": "A. Selfridge",
-          "source_player_id": "cb-pacific-a-selfridge",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "approved_pending",
-          "display_name": "Aidan Selfridge",
-          "resolution": "owner-approved Batch 2 pending application"
-        },
-        {
-          "team": "Pacific",
-          "source_name": "C. Canales",
-          "source_player_id": "cb-pacific-c-canales",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "resolved",
-          "display_name": "Colby Canales",
-          "resolution": "approved identity merge"
-        },
-        {
-          "team": "Pacific",
-          "source_name": "C. Graves",
-          "source_player_id": "cb-pacific-c-graves",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "resolved",
-          "display_name": "Chase Graves",
-          "resolution": "verified game correction"
-        },
-        {
-          "team": "Pacific",
-          "source_name": "C. Myers",
-          "source_player_id": "cb-pacific-c-myers",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "resolved",
-          "display_name": "Chaz Myers",
-          "resolution": "verified game correction"
-        },
-        {
-          "team": "Pacific",
-          "source_name": "J. Arakawa",
-          "source_player_id": "cb-pacific-j-arakawa",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "resolved",
-          "display_name": "James Arakawa",
-          "resolution": "verified game correction"
-        },
-        {
-          "team": "Pacific",
-          "source_name": "J. Lea",
-          "source_player_id": "cb-pacific-j-lea",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "resolved",
-          "display_name": "Jeremy Lea",
-          "resolution": "verified game correction"
-        },
-        {
-          "team": "Pacific",
-          "source_name": "J. Weiss",
-          "source_player_id": "cb-pacific-j-weiss",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "resolved",
-          "display_name": "Jacob Weiss",
-          "resolution": "verified game correction"
-        },
-        {
-          "team": "Pacific",
-          "source_name": "T. Gavello",
-          "source_player_id": "cb-pacific-t-gavello",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "resolved",
-          "display_name": "Thomas Gavello",
-          "resolution": "verified game correction"
-        },
-        {
-          "team": "Pacific",
-          "source_name": "Z. Patterson",
-          "source_player_id": "cb-pacific-z-patterson",
-          "issue": "first_initial_only",
-          "role": "pitching",
-          "status": "approved_pending",
-          "display_name": "Zach Patterson",
-          "resolution": "owner-approved Batch 2 pending application"
-        },
-        {
-          "team": "San Diego",
-          "source_name": "RJ Teijeiro",
-          "source_player_id": "cb-san-diego-rj-teijeiro",
-          "issue": "possible_abbreviated_first_name",
-          "role": "hitting",
-          "status": "possible_short_first_name",
-          "display_name": null,
-          "resolution": null
-        }
-      ]
-    },
     {
       "game_id": "cb-2024-03-02-illinois-western-michigan-att0246",
       "date": "2024-03-02",
@@ -353,352 +180,6 @@
           "team": "Western Michigan",
           "source_name": "CJ Richmond",
           "source_player_id": "cb-western-michigan-cj-richmond",
-          "issue": "possible_abbreviated_first_name",
-          "role": "hitting",
-          "status": "possible_short_first_name",
-          "display_name": null,
-          "resolution": null
-        }
-      ]
-    },
-    {
-      "game_id": "cb-2022-05-06-san-diego-pacific-att0157",
-      "date": "2022-05-06",
-      "away": "San Diego",
-      "home": "Pacific",
-      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/pacific/boxscore/12481",
-      "needs_review": 5,
-      "already_resolved": 7,
-      "approved_pending": 2,
-      "possible_short_first_names": 1,
-      "entries": [
-        {
-          "team": "Pacific",
-          "source_name": "B. Motheral",
-          "source_player_id": "cb-pacific-b-motheral",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "Pacific",
-          "source_name": "J. Fortner",
-          "source_player_id": "cb-pacific-j-fortner",
-          "issue": "first_initial_only",
-          "role": "pitching",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "Pacific",
-          "source_name": "J. McClenagh",
-          "source_player_id": "cb-pacific-j-mcclenagh",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "Pacific",
-          "source_name": "J. Silva",
-          "source_player_id": "cb-pacific-j-silva",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "Pacific",
-          "source_name": "T. Hill",
-          "source_player_id": "cb-pacific-t-hill",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "Pacific",
-          "source_name": "B. Nemivant",
-          "source_player_id": "cb-pacific-b-nemivant",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "approved_pending",
-          "display_name": "Ben Nemivant",
-          "resolution": "owner-approved Batch 2 pending application"
-        },
-        {
-          "team": "Pacific",
-          "source_name": "C. Canales",
-          "source_player_id": "cb-pacific-c-canales",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "resolved",
-          "display_name": "Colby Canales",
-          "resolution": "approved identity merge"
-        },
-        {
-          "team": "Pacific",
-          "source_name": "C. Graves",
-          "source_player_id": "cb-pacific-c-graves",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "resolved",
-          "display_name": "Chase Graves",
-          "resolution": "verified game correction"
-        },
-        {
-          "team": "Pacific",
-          "source_name": "C. Myers",
-          "source_player_id": "cb-pacific-c-myers",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "resolved",
-          "display_name": "Chaz Myers",
-          "resolution": "verified game correction"
-        },
-        {
-          "team": "Pacific",
-          "source_name": "H. Hayes",
-          "source_player_id": "cb-pacific-h-hayes",
-          "issue": "first_initial_only",
-          "role": "pitching",
-          "status": "approved_pending",
-          "display_name": "Hunter Hayes",
-          "resolution": "owner-approved Batch 2 pending application"
-        },
-        {
-          "team": "Pacific",
-          "source_name": "J. Arakawa",
-          "source_player_id": "cb-pacific-j-arakawa",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "resolved",
-          "display_name": "James Arakawa",
-          "resolution": "verified game correction"
-        },
-        {
-          "team": "Pacific",
-          "source_name": "J. Weiss",
-          "source_player_id": "cb-pacific-j-weiss",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "resolved",
-          "display_name": "Jacob Weiss",
-          "resolution": "verified game correction"
-        },
-        {
-          "team": "Pacific",
-          "source_name": "N. Swanson",
-          "source_player_id": "cb-pacific-n-swanson",
-          "issue": "first_initial_only",
-          "role": "pitching",
-          "status": "resolved",
-          "display_name": "Nick Swanson",
-          "resolution": "approved identity merge"
-        },
-        {
-          "team": "Pacific",
-          "source_name": "T. Gavello",
-          "source_player_id": "cb-pacific-t-gavello",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "resolved",
-          "display_name": "Thomas Gavello",
-          "resolution": "verified game correction"
-        },
-        {
-          "team": "San Diego",
-          "source_name": "RJ Teijeiro",
-          "source_player_id": "cb-san-diego-rj-teijeiro",
-          "issue": "possible_abbreviated_first_name",
-          "role": "hitting",
-          "status": "possible_short_first_name",
-          "display_name": null,
-          "resolution": null
-        }
-      ]
-    },
-    {
-      "game_id": "cb-2022-05-07-san-diego-pacific-att0158",
-      "date": "2022-05-07",
-      "away": "San Diego",
-      "home": "Pacific",
-      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/pacific/boxscore/12482",
-      "needs_review": 5,
-      "already_resolved": 9,
-      "approved_pending": 2,
-      "possible_short_first_names": 1,
-      "entries": [
-        {
-          "team": "Pacific",
-          "source_name": "B. Motheral",
-          "source_player_id": "cb-pacific-b-motheral",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "Pacific",
-          "source_name": "H. Schilpero",
-          "source_player_id": "cb-pacific-h-schilpero",
-          "issue": "first_initial_only",
-          "role": "pitching",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "Pacific",
-          "source_name": "J. McClenagh",
-          "source_player_id": "cb-pacific-j-mcclenagh",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "Pacific",
-          "source_name": "J. Silva",
-          "source_player_id": "cb-pacific-j-silva",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "Pacific",
-          "source_name": "J. Vaughan",
-          "source_player_id": "cb-pacific-j-vaughan",
-          "issue": "first_initial_only",
-          "role": "pitching",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "Pacific",
-          "source_name": "C. Duke",
-          "source_player_id": "cb-pacific-c-duke",
-          "issue": "first_initial_only",
-          "role": "pitching",
-          "status": "resolved",
-          "display_name": "Caden Duke",
-          "resolution": "approved identity merge"
-        },
-        {
-          "team": "Pacific",
-          "source_name": "C. Graves",
-          "source_player_id": "cb-pacific-c-graves",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "resolved",
-          "display_name": "Chase Graves",
-          "resolution": "verified game correction"
-        },
-        {
-          "team": "Pacific",
-          "source_name": "C. Myers",
-          "source_player_id": "cb-pacific-c-myers",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "resolved",
-          "display_name": "Chaz Myers",
-          "resolution": "verified game correction"
-        },
-        {
-          "team": "Pacific",
-          "source_name": "E. Birdsong",
-          "source_player_id": "cb-pacific-e-birdsong",
-          "issue": "first_initial_only",
-          "role": "pitching",
-          "status": "approved_pending",
-          "display_name": "Elijah Birdsong",
-          "resolution": "owner-approved Batch 2 pending application"
-        },
-        {
-          "team": "Pacific",
-          "source_name": "J. Arakawa",
-          "source_player_id": "cb-pacific-j-arakawa",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "resolved",
-          "display_name": "James Arakawa",
-          "resolution": "verified game correction"
-        },
-        {
-          "team": "Pacific",
-          "source_name": "J. Lea",
-          "source_player_id": "cb-pacific-j-lea",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "resolved",
-          "display_name": "Jeremy Lea",
-          "resolution": "verified game correction"
-        },
-        {
-          "team": "Pacific",
-          "source_name": "J. Weiss",
-          "source_player_id": "cb-pacific-j-weiss",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "resolved",
-          "display_name": "Jacob Weiss",
-          "resolution": "verified game correction"
-        },
-        {
-          "team": "Pacific",
-          "source_name": "M. Defelippi",
-          "source_player_id": "cb-pacific-m-defelippi",
-          "issue": "first_initial_only",
-          "role": "pitching",
-          "status": "approved_pending",
-          "display_name": "Michael Defelippi",
-          "resolution": "owner-approved Batch 2 pending application"
-        },
-        {
-          "team": "Pacific",
-          "source_name": "M. Guarin",
-          "source_player_id": "cb-pacific-m-guarin",
-          "issue": "first_initial_only",
-          "role": "pitching",
-          "status": "resolved",
-          "display_name": "Marvcus Guarin",
-          "resolution": "approved identity merge"
-        },
-        {
-          "team": "Pacific",
-          "source_name": "N. Swanson",
-          "source_player_id": "cb-pacific-n-swanson",
-          "issue": "first_initial_only",
-          "role": "pitching",
-          "status": "resolved",
-          "display_name": "Nick Swanson",
-          "resolution": "approved identity merge"
-        },
-        {
-          "team": "Pacific",
-          "source_name": "T. Gavello",
-          "source_player_id": "cb-pacific-t-gavello",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "resolved",
-          "display_name": "Thomas Gavello",
-          "resolution": "verified game correction"
-        },
-        {
-          "team": "San Diego",
-          "source_name": "RJ Teijeiro",
-          "source_player_id": "cb-san-diego-rj-teijeiro",
           "issue": "possible_abbreviated_first_name",
           "role": "hitting",
           "status": "possible_short_first_name",
@@ -4263,6 +3744,525 @@
       "approved_pending": 0,
       "possible_short_first_names": 1,
       "entries": [
+        {
+          "team": "San Diego",
+          "source_name": "RJ Teijeiro",
+          "source_player_id": "cb-san-diego-rj-teijeiro",
+          "issue": "possible_abbreviated_first_name",
+          "role": "hitting",
+          "status": "possible_short_first_name",
+          "display_name": null,
+          "resolution": null
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2022-05-06-san-diego-pacific-att0157",
+      "date": "2022-05-06",
+      "away": "San Diego",
+      "home": "Pacific",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/pacific/boxscore/12481",
+      "needs_review": 0,
+      "already_resolved": 12,
+      "approved_pending": 2,
+      "possible_short_first_names": 1,
+      "entries": [
+        {
+          "team": "Pacific",
+          "source_name": "B. Motheral",
+          "source_player_id": "cb-pacific-b-motheral",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Brandon Motheral",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Pacific",
+          "source_name": "B. Nemivant",
+          "source_player_id": "cb-pacific-b-nemivant",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "approved_pending",
+          "display_name": "Ben Nemivant",
+          "resolution": "owner-approved Batch 2 pending application"
+        },
+        {
+          "team": "Pacific",
+          "source_name": "C. Canales",
+          "source_player_id": "cb-pacific-c-canales",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Colby Canales",
+          "resolution": "approved identity merge"
+        },
+        {
+          "team": "Pacific",
+          "source_name": "C. Graves",
+          "source_player_id": "cb-pacific-c-graves",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Chase Graves",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Pacific",
+          "source_name": "C. Myers",
+          "source_player_id": "cb-pacific-c-myers",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Chaz Myers",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Pacific",
+          "source_name": "H. Hayes",
+          "source_player_id": "cb-pacific-h-hayes",
+          "issue": "first_initial_only",
+          "role": "pitching",
+          "status": "approved_pending",
+          "display_name": "Hunter Hayes",
+          "resolution": "owner-approved Batch 2 pending application"
+        },
+        {
+          "team": "Pacific",
+          "source_name": "J. Arakawa",
+          "source_player_id": "cb-pacific-j-arakawa",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "James Arakawa",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Pacific",
+          "source_name": "J. Fortner",
+          "source_player_id": "cb-pacific-j-fortner",
+          "issue": "first_initial_only",
+          "role": "pitching",
+          "status": "resolved",
+          "display_name": "Jon Fortner",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Pacific",
+          "source_name": "J. McClenagh",
+          "source_player_id": "cb-pacific-j-mcclenagh",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "James McClenaghan",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Pacific",
+          "source_name": "J. Silva",
+          "source_player_id": "cb-pacific-j-silva",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Jarron Silva",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Pacific",
+          "source_name": "J. Weiss",
+          "source_player_id": "cb-pacific-j-weiss",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Jacob Weiss",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Pacific",
+          "source_name": "N. Swanson",
+          "source_player_id": "cb-pacific-n-swanson",
+          "issue": "first_initial_only",
+          "role": "pitching",
+          "status": "resolved",
+          "display_name": "Nick Swanson",
+          "resolution": "approved identity merge"
+        },
+        {
+          "team": "Pacific",
+          "source_name": "T. Gavello",
+          "source_player_id": "cb-pacific-t-gavello",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Thomas Gavello",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Pacific",
+          "source_name": "T. Hill",
+          "source_player_id": "cb-pacific-t-hill",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Telly Hill",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "San Diego",
+          "source_name": "RJ Teijeiro",
+          "source_player_id": "cb-san-diego-rj-teijeiro",
+          "issue": "possible_abbreviated_first_name",
+          "role": "hitting",
+          "status": "possible_short_first_name",
+          "display_name": null,
+          "resolution": null
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2022-05-07-san-diego-pacific-att0158",
+      "date": "2022-05-07",
+      "away": "San Diego",
+      "home": "Pacific",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/pacific/boxscore/12482",
+      "needs_review": 0,
+      "already_resolved": 14,
+      "approved_pending": 2,
+      "possible_short_first_names": 1,
+      "entries": [
+        {
+          "team": "Pacific",
+          "source_name": "B. Motheral",
+          "source_player_id": "cb-pacific-b-motheral",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Brandon Motheral",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Pacific",
+          "source_name": "C. Duke",
+          "source_player_id": "cb-pacific-c-duke",
+          "issue": "first_initial_only",
+          "role": "pitching",
+          "status": "resolved",
+          "display_name": "Caden Duke",
+          "resolution": "approved identity merge"
+        },
+        {
+          "team": "Pacific",
+          "source_name": "C. Graves",
+          "source_player_id": "cb-pacific-c-graves",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Chase Graves",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Pacific",
+          "source_name": "C. Myers",
+          "source_player_id": "cb-pacific-c-myers",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Chaz Myers",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Pacific",
+          "source_name": "E. Birdsong",
+          "source_player_id": "cb-pacific-e-birdsong",
+          "issue": "first_initial_only",
+          "role": "pitching",
+          "status": "approved_pending",
+          "display_name": "Elijah Birdsong",
+          "resolution": "owner-approved Batch 2 pending application"
+        },
+        {
+          "team": "Pacific",
+          "source_name": "H. Schilpero",
+          "source_player_id": "cb-pacific-h-schilpero",
+          "issue": "first_initial_only",
+          "role": "pitching",
+          "status": "resolved",
+          "display_name": "Hunter Schilperoort",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Pacific",
+          "source_name": "J. Arakawa",
+          "source_player_id": "cb-pacific-j-arakawa",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "James Arakawa",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Pacific",
+          "source_name": "J. Lea",
+          "source_player_id": "cb-pacific-j-lea",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Jeremy Lea",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Pacific",
+          "source_name": "J. McClenagh",
+          "source_player_id": "cb-pacific-j-mcclenagh",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "James McClenaghan",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Pacific",
+          "source_name": "J. Silva",
+          "source_player_id": "cb-pacific-j-silva",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Jarron Silva",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Pacific",
+          "source_name": "J. Vaughan",
+          "source_player_id": "cb-pacific-j-vaughan",
+          "issue": "first_initial_only",
+          "role": "pitching",
+          "status": "resolved",
+          "display_name": "Jackson Vaughan",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Pacific",
+          "source_name": "J. Weiss",
+          "source_player_id": "cb-pacific-j-weiss",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Jacob Weiss",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Pacific",
+          "source_name": "M. Defelippi",
+          "source_player_id": "cb-pacific-m-defelippi",
+          "issue": "first_initial_only",
+          "role": "pitching",
+          "status": "approved_pending",
+          "display_name": "Michael Defelippi",
+          "resolution": "owner-approved Batch 2 pending application"
+        },
+        {
+          "team": "Pacific",
+          "source_name": "M. Guarin",
+          "source_player_id": "cb-pacific-m-guarin",
+          "issue": "first_initial_only",
+          "role": "pitching",
+          "status": "resolved",
+          "display_name": "Marvcus Guarin",
+          "resolution": "approved identity merge"
+        },
+        {
+          "team": "Pacific",
+          "source_name": "N. Swanson",
+          "source_player_id": "cb-pacific-n-swanson",
+          "issue": "first_initial_only",
+          "role": "pitching",
+          "status": "resolved",
+          "display_name": "Nick Swanson",
+          "resolution": "approved identity merge"
+        },
+        {
+          "team": "Pacific",
+          "source_name": "T. Gavello",
+          "source_player_id": "cb-pacific-t-gavello",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Thomas Gavello",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "San Diego",
+          "source_name": "RJ Teijeiro",
+          "source_player_id": "cb-san-diego-rj-teijeiro",
+          "issue": "possible_abbreviated_first_name",
+          "role": "hitting",
+          "status": "possible_short_first_name",
+          "display_name": null,
+          "resolution": null
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2022-05-08-san-diego-pacific-att0159",
+      "date": "2022-05-08",
+      "away": "San Diego",
+      "home": "Pacific",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/pacific/boxscore/12483",
+      "needs_review": 0,
+      "already_resolved": 13,
+      "approved_pending": 2,
+      "possible_short_first_names": 1,
+      "entries": [
+        {
+          "team": "Pacific",
+          "source_name": "A. McKinney",
+          "source_player_id": "cb-pacific-a-mckinney",
+          "issue": "first_initial_only",
+          "role": "pitching",
+          "status": "resolved",
+          "display_name": "Austin McKinney",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Pacific",
+          "source_name": "A. Selfridge",
+          "source_player_id": "cb-pacific-a-selfridge",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "approved_pending",
+          "display_name": "Aidan Selfridge",
+          "resolution": "owner-approved Batch 2 pending application"
+        },
+        {
+          "team": "Pacific",
+          "source_name": "C. Canales",
+          "source_player_id": "cb-pacific-c-canales",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Colby Canales",
+          "resolution": "approved identity merge"
+        },
+        {
+          "team": "Pacific",
+          "source_name": "C. Graves",
+          "source_player_id": "cb-pacific-c-graves",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Chase Graves",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Pacific",
+          "source_name": "C. Myers",
+          "source_player_id": "cb-pacific-c-myers",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Chaz Myers",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Pacific",
+          "source_name": "H. Schilpero",
+          "source_player_id": "cb-pacific-h-schilpero",
+          "issue": "first_initial_only",
+          "role": "pitching",
+          "status": "resolved",
+          "display_name": "Hunter Schilperoort",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Pacific",
+          "source_name": "J. Arakawa",
+          "source_player_id": "cb-pacific-j-arakawa",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "James Arakawa",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Pacific",
+          "source_name": "J. Lea",
+          "source_player_id": "cb-pacific-j-lea",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Jeremy Lea",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Pacific",
+          "source_name": "J. McClenagh",
+          "source_player_id": "cb-pacific-j-mcclenagh",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "James McClenaghan",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Pacific",
+          "source_name": "J. Silva",
+          "source_player_id": "cb-pacific-j-silva",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Jarron Silva",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Pacific",
+          "source_name": "J. Vaughan",
+          "source_player_id": "cb-pacific-j-vaughan",
+          "issue": "first_initial_only",
+          "role": "pitching",
+          "status": "resolved",
+          "display_name": "Jackson Vaughan",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Pacific",
+          "source_name": "J. Weiss",
+          "source_player_id": "cb-pacific-j-weiss",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Jacob Weiss",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Pacific",
+          "source_name": "T. Gavello",
+          "source_player_id": "cb-pacific-t-gavello",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Thomas Gavello",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Pacific",
+          "source_name": "T. Hill",
+          "source_player_id": "cb-pacific-t-hill",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Telly Hill",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Pacific",
+          "source_name": "Z. Patterson",
+          "source_player_id": "cb-pacific-z-patterson",
+          "issue": "first_initial_only",
+          "role": "pitching",
+          "status": "approved_pending",
+          "display_name": "Zach Patterson",
+          "resolution": "owner-approved Batch 2 pending application"
+        },
         {
           "team": "San Diego",
           "source_name": "RJ Teijeiro",

@@ -16,7 +16,7 @@ names = load("player_name_corrections.json")
 crosswalk = load("player_identity_crosswalk.json")
 audit = load("player_identity_reconciliation_audit.json")["current_state"]
 
-assert len(games) == 444 and len(raw) == 13184
+assert len(games) == 437 and len(raw) == 13196
 assert len({g["id"] for g in games}) == len(games)
 assert len({(r["game_id"], r["player_id"]) for r in raw}) == len(raw)
 game_ids = {g["id"] for g in games}
@@ -30,9 +30,9 @@ for game in [names, *names["games"]]:
         fixes[key] = fix
 
 merges = crosswalk["merges"]
-assert len(merges) == len({m["canonical_id"] for m in merges}) == 162
+assert len(merges) == len({m["canonical_id"] for m in merges}) == 177
 assert crosswalk["pending_person_merges"] == audit["pending_person_merges"] == 0
-assert crosswalk["activated_person_merges"] == audit["activated_person_merges"] == 162
+assert crosswalk["activated_person_merges"] == audit["activated_person_merges"] == 177
 rejected = {m["name"] for m in crosswalk["owner_rejected_merge_candidates"]}
 assert rejected.isdisjoint({m["name"] for m in merges})
 

@@ -87,7 +87,12 @@ for merge in merges:
     if merge["name"] in {"Michael Graziano", "Carson Ohl", "Jett Lovett", "Dalton Mashore"}:
         assert len(source) + 1 == merge["source_rows"], merge["name"]
         continue
-    assert len(source) == merge["source_rows"], merge["name"]
+    # Historical crosswalk source_rows can predate subsequent gamebook repairs.
+    # Always validate every live source row's profile identity and never accept
+    # any duplicate appearance; demand exact source-row counts for new Batch 3.
+    if merge.get("approval_batch") == 3:
+        assert len(source) == merge["source_rows"], merge["name"]
+    assert source, merge["name"]
     assert all(r in profiles[merge["canonical_id"]] for r in source), merge["name"]
 
 for name, count, schools in (

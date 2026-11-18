@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "purpose": "Identity review candidates only; never apply automatically",
+  "source_rows_scanned": 13196,
+  "existing_merges_preserved": 177,
+  "existing_do_not_merge_preserved": 28,
+  "batch2_approved_pending": 24,
+  "candidates_found": 1,
+  "candidates": [
+    {
+      "school": "UC Riverside",
+      "source_name": "T Juline",
+      "source_id": "cb-uc-riverside-t-juline",
+      "source_games": [
+        "cb-2019-03-05-san-diego-uc-riverside-att0046"
+      ],
+      "candidates": [
+        {
+          "full_name": "Taylor Juline",
+          "source_id": "cb-uc-riverside-taylor-juline",
+          "games": 3,
+          "same_game_collision": false
+        },
+        {
+          "full_name": "Tucker Juline",
+          "source_id": "cb-uc-riverside-tucker-juline",
+          "games": 1,
+          "same_game_collision": false
+        }
+      ],
+      "status": "ambiguous_or_collision",
+      "source_rows": 1
+    }
+  ]
+}

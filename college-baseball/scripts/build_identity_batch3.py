@@ -75,3 +75,5 @@ with (D/"identity_audit_batch_03_review.md").open("w",encoding="utf8") as f:
   coll="YES" if any(x["same_game_collision"] for x in c["candidates"]) else "No"
   f.write(f'| {i} | {c["source_name"]} | {desc} | {c["school"]} | {coll} | REVIEW |\n')
 print(json.dumps({"source_rows":len(rows),"new_candidates":len(candidates),"clean_single_matches":sum(c["status"]=="needs_owner_review" for c in candidates),"review_md":"college-baseball/data/identity_audit_batch_03_review.md"}))
+
+# Refresh trigger: produce review candidates from source rows after workflow installation.

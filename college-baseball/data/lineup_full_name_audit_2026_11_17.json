@@ -4,190 +4,27 @@
   "source_game_count": 437,
   "source_player_game_rows": 13196,
   "games_with_source_short_names": 204,
-  "games_needing_review": 22,
+  "games_needing_review": 21,
   "source_name_issues": 619,
-  "unresolved_player_game_names": 28,
-  "already_resolved_display_names": 370,
+  "unresolved_player_game_names": 22,
+  "already_resolved_display_names": 376,
   "approved_pending_batch2_source_rows": 21,
   "optional_possible_short_first_names": 200,
   "issue_counts": {
     "first_initial_only": 247,
-    "surname_only": 167,
-    "possible_abbreviated_first_name": 201,
     "malformed_scorebook_text": 2,
-    "name_order_or_suffix_error": 2
+    "surname_only": 167,
+    "name_order_or_suffix_error": 2,
+    "possible_abbreviated_first_name": 201
   },
   "unresolved_issue_counts": {
-    "first_initial_only": 19,
+    "first_initial_only": 13,
     "malformed_scorebook_text": 1,
     "surname_only": 6,
     "name_order_or_suffix_error": 2
   },
   "important": "Flags are NOT verified corrections. Original stats and games remain unmodified.",
   "games": [
-    {
-      "game_id": "cb-2024-03-02-illinois-western-michigan-att0246",
-      "date": "2024-03-02",
-      "away": "Illinois",
-      "home": "Western Michigan",
-      "source_url": "https://wmubroncos.com/sports/baseball/stats/2024/illinois/boxscore/15776",
-      "needs_review": 6,
-      "already_resolved": 6,
-      "approved_pending": 2,
-      "possible_short_first_names": 1,
-      "entries": [
-        {
-          "team": "Illinois",
-          "source_name": "A. Bradd",
-          "source_player_id": "cb-illinois-a-bradd",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "Illinois",
-          "source_name": "C. Jennings",
-          "source_player_id": "cb-illinois-c-jennings",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "Illinois",
-          "source_name": "J. Rons",
-          "source_player_id": "cb-illinois-j-rons",
-          "issue": "first_initial_only",
-          "role": "pitching",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "Illinois",
-          "source_name": "L. Tabeling",
-          "source_player_id": "cb-illinois-l-tabeling",
-          "issue": "first_initial_only",
-          "role": "pitching",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "Illinois",
-          "source_name": "S. Reed",
-          "source_player_id": "cb-illinois-s-reed",
-          "issue": "first_initial_only",
-          "role": "pitching",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "Illinois",
-          "source_name": "W. Lavin",
-          "source_player_id": "cb-illinois-w-lavin",
-          "issue": "first_initial_only",
-          "role": "pitching",
-          "status": "needs_review",
-          "display_name": null,
-          "resolution": null
-        },
-        {
-          "team": "Illinois",
-          "source_name": "C Chee-Aloy",
-          "source_player_id": "cb-illinois-c-chee-aloy",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "approved_pending",
-          "display_name": "Cameron Chee-Aloy",
-          "resolution": "owner-approved Batch 2 pending application"
-        },
-        {
-          "team": "Illinois",
-          "source_name": "D. Westcott",
-          "source_player_id": "cb-illinois-d-westcott",
-          "issue": "first_initial_only",
-          "role": "hitting",
-          "status": "approved_pending",
-          "display_name": "Drake Westcott",
-          "resolution": "owner-approved Batch 2 pending application"
-        },
-        {
-          "team": "Illinois",
-          "source_name": "Harding",
-          "source_player_id": "cb-illinois-harding",
-          "issue": "surname_only",
-          "role": "hitting",
-          "status": "resolved",
-          "display_name": "Brody Harding",
-          "resolution": "verified game correction"
-        },
-        {
-          "team": "Illinois",
-          "source_name": "Hejza",
-          "source_player_id": "cb-illinois-hejza",
-          "issue": "surname_only",
-          "role": "hitting",
-          "status": "resolved",
-          "display_name": "Cal Hejza",
-          "resolution": "verified game correction"
-        },
-        {
-          "team": "Illinois",
-          "source_name": "Janik",
-          "source_player_id": "cb-illinois-janik",
-          "issue": "surname_only",
-          "role": "hitting",
-          "status": "resolved",
-          "display_name": "Camden Janik",
-          "resolution": "verified game correction"
-        },
-        {
-          "team": "Illinois",
-          "source_name": "Milton",
-          "source_player_id": "cb-illinois-milton",
-          "issue": "surname_only",
-          "role": "hitting",
-          "status": "resolved",
-          "display_name": "Connor Milton",
-          "resolution": "verified game correction"
-        },
-        {
-          "team": "Illinois",
-          "source_name": "Quagliano",
-          "source_player_id": "cb-illinois-quagliano",
-          "issue": "surname_only",
-          "role": "hitting",
-          "status": "resolved",
-          "display_name": "Coltin Quagliano",
-          "resolution": "verified game correction"
-        },
-        {
-          "team": "Illinois",
-          "source_name": "V Valincius",
-          "source_player_id": "cb-illinois-v-valincius",
-          "issue": "surname_only",
-          "role": "hitting",
-          "status": "resolved",
-          "display_name": "Vytas Valincius",
-          "resolution": "approved identity merge"
-        },
-        {
-          "team": "Western Michigan",
-          "source_name": "CJ Richmond",
-          "source_player_id": "cb-western-michigan-cj-richmond",
-          "issue": "possible_abbreviated_first_name",
-          "role": "hitting",
-          "status": "possible_short_first_name",
-          "display_name": null,
-          "resolution": null
-        }
-      ]
-    },
     {
       "game_id": "cb-2019-02-24-cal-state-fullerton-oklahoma-att0040",
       "date": "2019-02-24",
@@ -5696,6 +5533,169 @@
           "status": "resolved",
           "display_name": "Ryan McCrystal",
           "resolution": "verified game correction"
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2024-03-02-illinois-western-michigan-att0246",
+      "date": "2024-03-02",
+      "away": "Illinois",
+      "home": "Western Michigan",
+      "source_url": "https://wmubroncos.com/sports/baseball/stats/2024/illinois/boxscore/15776",
+      "needs_review": 0,
+      "already_resolved": 12,
+      "approved_pending": 2,
+      "possible_short_first_names": 1,
+      "entries": [
+        {
+          "team": "Illinois",
+          "source_name": "A. Bradd",
+          "source_player_id": "cb-illinois-a-bradd",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Asher Bradd",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Illinois",
+          "source_name": "C Chee-Aloy",
+          "source_player_id": "cb-illinois-c-chee-aloy",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "approved_pending",
+          "display_name": "Cameron Chee-Aloy",
+          "resolution": "owner-approved Batch 2 pending application"
+        },
+        {
+          "team": "Illinois",
+          "source_name": "C. Jennings",
+          "source_player_id": "cb-illinois-c-jennings",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Collin Jennings",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Illinois",
+          "source_name": "D. Westcott",
+          "source_player_id": "cb-illinois-d-westcott",
+          "issue": "first_initial_only",
+          "role": "hitting",
+          "status": "approved_pending",
+          "display_name": "Drake Westcott",
+          "resolution": "owner-approved Batch 2 pending application"
+        },
+        {
+          "team": "Illinois",
+          "source_name": "Harding",
+          "source_player_id": "cb-illinois-harding",
+          "issue": "surname_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Brody Harding",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Illinois",
+          "source_name": "Hejza",
+          "source_player_id": "cb-illinois-hejza",
+          "issue": "surname_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Cal Hejza",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Illinois",
+          "source_name": "J. Rons",
+          "source_player_id": "cb-illinois-j-rons",
+          "issue": "first_initial_only",
+          "role": "pitching",
+          "status": "resolved",
+          "display_name": "Jake Rons",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Illinois",
+          "source_name": "Janik",
+          "source_player_id": "cb-illinois-janik",
+          "issue": "surname_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Camden Janik",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Illinois",
+          "source_name": "L. Tabeling",
+          "source_player_id": "cb-illinois-l-tabeling",
+          "issue": "first_initial_only",
+          "role": "pitching",
+          "status": "resolved",
+          "display_name": "Logan Tabeling",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Illinois",
+          "source_name": "Milton",
+          "source_player_id": "cb-illinois-milton",
+          "issue": "surname_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Connor Milton",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Illinois",
+          "source_name": "Quagliano",
+          "source_player_id": "cb-illinois-quagliano",
+          "issue": "surname_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Coltin Quagliano",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Illinois",
+          "source_name": "S. Reed",
+          "source_player_id": "cb-illinois-s-reed",
+          "issue": "first_initial_only",
+          "role": "pitching",
+          "status": "resolved",
+          "display_name": "Sam Reed",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Illinois",
+          "source_name": "V Valincius",
+          "source_player_id": "cb-illinois-v-valincius",
+          "issue": "surname_only",
+          "role": "hitting",
+          "status": "resolved",
+          "display_name": "Vytas Valincius",
+          "resolution": "approved identity merge"
+        },
+        {
+          "team": "Illinois",
+          "source_name": "W. Lavin",
+          "source_player_id": "cb-illinois-w-lavin",
+          "issue": "first_initial_only",
+          "role": "pitching",
+          "status": "resolved",
+          "display_name": "Will Lavin",
+          "resolution": "verified game correction"
+        },
+        {
+          "team": "Western Michigan",
+          "source_name": "CJ Richmond",
+          "source_player_id": "cb-western-michigan-cj-richmond",
+          "issue": "possible_abbreviated_first_name",
+          "role": "hitting",
+          "status": "possible_short_first_name",
+          "display_name": null,
+          "resolution": null
         }
       ]
     },

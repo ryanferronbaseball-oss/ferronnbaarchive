@@ -3,27 +3,14 @@
 Read-only audit of 437 games and 13,196 player-game records. Hitting and pitching names. No changes to source box scores.
 
 - **Games containing abbreviated source names:** 204
-- **Games needing review:** 22
+- **Games needing review:** 21
 - **Flagged player-game source names:** 619
-- **Names needing review:** 28
-- **Names already resolved for display:** 370
+- **Names needing review:** 22
+- **Names already resolved for display:** 376
 - **Previously approved Batch 2 names, pending activation:** 21
 - **Two-letter first names, optional review only:** 200
 
 ## Games with unresolved incomplete lineup names
-
-### 2024-03-02 — Illinois at Western Michigan (6 names)
-
-Game ID: cb-2024-03-02-illinois-western-michigan-att0246
-
-| Team | Source name | Issue | Role |
-|---|---|---|---|
-| Illinois | A. Bradd | first initial only | hitting |
-| Illinois | C. Jennings | first initial only | hitting |
-| Illinois | J. Rons | first initial only | pitching |
-| Illinois | L. Tabeling | first initial only | pitching |
-| Illinois | S. Reed | first initial only | pitching |
-| Illinois | W. Lavin | first initial only | pitching |
 
 ### 2019-02-24 — Cal State Fullerton at Oklahoma (2 names)
 
@@ -196,11 +183,6 @@ Game ID: cb-2026-05-23-florida-georgia-att0437
 
 ## Previously approved Batch 2 names, pending source mapping
 
-### 2024-03-02 — Illinois at Western Michigan
-
-- Illinois: C Chee-Aloy => Cameron Chee-Aloy (APPROVED, not activated)
-- Illinois: D. Westcott => Drake Westcott (APPROVED, not activated)
-
 ### 2019-02-24 — Cal State Fullerton at Oklahoma
 
 - Cal State Fullerton: J Hernandez => Jordan Hernandez (APPROVED, not activated)
@@ -237,15 +219,16 @@ Game ID: cb-2026-05-23-florida-georgia-att0437
 
 - Marshall: A. Havrilla => AJ Havrilla (APPROVED, not activated)
 
+### 2024-03-02 — Illinois at Western Michigan
+
+- Illinois: C Chee-Aloy => Cameron Chee-Aloy (APPROVED, not activated)
+- Illinois: D. Westcott => Drake Westcott (APPROVED, not activated)
+
 ### 2025-05-22 — Texas A&M at Auburn
 
 - Texas A&M: W. Moss => Weston Moss (APPROVED, not activated)
 
 ## Two-letter first names (optional verification; may already be full names)
-
-### 2024-03-02 — Illinois at Western Michigan
-
-- Western Michigan: CJ Richmond (hitting)
 
 ### 2022-02-20 — Oregon at San Diego
 
@@ -583,6 +566,10 @@ Game ID: cb-2026-05-23-florida-georgia-att0437
 ### 2024-03-01 — Cal State Fullerton at Southeastern Louisiana
 
 - Southeastern Louisiana: TJ Salvaggio (hitting)
+
+### 2024-03-02 — Illinois at Western Michigan
+
+- Western Michigan: CJ Richmond (hitting)
 
 ### 2024-03-08 — Notre Dame at Virginia Tech
 
@@ -937,15 +924,6 @@ Game ID: cb-2026-05-23-florida-georgia-att0437
 
 ## Already resolved source abbreviations
 
-### 2024-03-02 — Illinois at Western Michigan
-
-- Illinois: Harding => Brody Harding (verified game correction)
-- Illinois: Hejza => Cal Hejza (verified game correction)
-- Illinois: Janik => Camden Janik (verified game correction)
-- Illinois: Milton => Connor Milton (verified game correction)
-- Illinois: Quagliano => Coltin Quagliano (verified game correction)
-- Illinois: V Valincius => Vytas Valincius (approved identity merge)
-
 ### 2019-02-24 — Cal State Fullerton at Oklahoma
 
 - Cal State Fullerton: B. Borgogno => Brett Borgogno (verified game correction)
@@ -1294,6 +1272,21 @@ Game ID: cb-2026-05-23-florida-georgia-att0437
 - East Carolina: C. Cunningham => Carter Cunningham (verified game correction)
 - East Carolina: J. Jenkins-cowart => Jacob Jenkins-Cowart (verified game correction)
 - East Carolina: R. McCrystal => Ryan McCrystal (verified game correction)
+
+### 2024-03-02 — Illinois at Western Michigan
+
+- Illinois: A. Bradd => Asher Bradd (verified game correction)
+- Illinois: C. Jennings => Collin Jennings (verified game correction)
+- Illinois: Harding => Brody Harding (verified game correction)
+- Illinois: Hejza => Cal Hejza (verified game correction)
+- Illinois: J. Rons => Jake Rons (verified game correction)
+- Illinois: Janik => Camden Janik (verified game correction)
+- Illinois: L. Tabeling => Logan Tabeling (verified game correction)
+- Illinois: Milton => Connor Milton (verified game correction)
+- Illinois: Quagliano => Coltin Quagliano (verified game correction)
+- Illinois: S. Reed => Sam Reed (verified game correction)
+- Illinois: V Valincius => Vytas Valincius (approved identity merge)
+- Illinois: W. Lavin => Will Lavin (verified game correction)
 
 ### 2024-03-08 — Binghamton at VMI
 

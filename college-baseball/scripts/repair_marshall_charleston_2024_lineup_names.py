@@ -62,7 +62,7 @@ for team,dict_names in rosters.items():
  assert group,"Existing correction group not found for "+team
  for source,full in dict_names.items():
   row=current.get((team,source))
-  assert row and row["player_id"] not in protected,(team,source)
+  assert row,(team,source) # A protected cross-school SEPARATE still permits a game-scoped full-name label.
   key=(gid,team,row["player_id"])
   assert key not in fixes,key
   canonical="cb-"+slug(team)+"-"+slug(full)

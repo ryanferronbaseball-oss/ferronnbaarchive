@@ -91,3 +91,5 @@ with (D/"lineup_full_name_audit_2026_11_17.md").open("w",encoding="utf8") as f:
 print(json.dumps({k:report[k] for k in ("games_with_source_short_names","games_needing_review","source_name_issues","unresolved_player_game_names","already_resolved_display_names","approved_pending_batch2_source_rows","optional_possible_short_first_names","unresolved_issue_counts")}))
 
 # Run current source lineup coverage scan.
+
+# Refresh after official 2024 Marshall-Charleston roster corrections.

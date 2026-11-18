@@ -1,0 +1,26 @@
+name: College Baseball Batch 4 Name Candidate Scan
+on:
+  push:
+    paths:
+      - college-baseball/scripts/build_identity_batch4.py
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python college-baseball/scripts/build_identity_batch4.py
+      - name: Save candidate names
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add college-baseball/data/identity_audit_batch_04_candidates.json college-baseball/data/identity_audit_batch_04_review.md
+          if ! git diff --cached --quiet; then
+            git commit -m "Publish source-derived Batch 4 identity candidates"
+            git push
+          fi

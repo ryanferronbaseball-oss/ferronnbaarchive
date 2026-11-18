@@ -13,7 +13,7 @@
     "honored_players": 573,
     "inductees": 21,
     "award_recipients": {
-      "mvp": 33,
+      "mvp": 34,
       "cy_young": 16,
       "gold_glove": 164,
       "silver_slugger": 201,
@@ -85,6 +85,15 @@
       "winning_players_in_attendance_pool": 13,
       "other_league_winners_not_in_attendance_pool": 7,
       "method": "Supplemental verified award year; historical StatsAPI import snapshot retained"
+    },
+    "latest_mvp_update": {
+      "award_year": 2026,
+      "verified_on": "2026-11-17",
+      "source_url": "https://www.mlb.com/news/2026-mlb-mvp-award-winners",
+      "updated_player_ids": [
+        691718
+      ],
+      "note": "PCA unanimous NL MVP; no award tag created for a player absent from witnessed MLB gamebooks."
     }
   },
   "players": {
@@ -13554,7 +13563,12 @@
     "691718": {
       "name": "Pete Crow-Armstrong",
       "hall_of_fame": null,
-      "mvp": [],
+      "mvp": [
+        {
+          "year": 2026,
+          "league": "NL"
+        }
+      ],
       "cy_young": [],
       "gold_glove": [
         {

@@ -3,7 +3,7 @@
   "batch": 2,
   "approved_on": "2026-11-17",
   "scope": "college-baseball",
-  "status": "owner_authorized_pending_source_row_collision_validation",
+  "status": "partially_activated_fullerton_other_schools_pending",
   "policy": {
     "original_box_scores": "immutable",
     "original_player_stats": "immutable",
@@ -91,15 +91,15 @@
       "canonical_name": "Jordan Hernandez",
       "school": "Cal State Fullerton",
       "decision": "COMBINE",
-      "application_status": "pending_verified_source_scoped_mapping"
+      "application_status": "activated_source_scoped_2026_11_18"
     },
     {
       "sequence": 11,
       "source_name": "J Pavletich",
-      "canonical_name": "Jacob Pavletich",
+      "canonical_name": "Jake Pavletich",
       "school": "Cal State Fullerton",
       "decision": "COMBINE",
-      "application_status": "pending_verified_source_scoped_mapping"
+      "application_status": "activated_source_scoped_2026_11_18"
     },
     {
       "sequence": 12,
@@ -131,7 +131,7 @@
       "canonical_name": "JT Navyac",
       "school": "Cal State Fullerton",
       "decision": "COMBINE",
-      "application_status": "pending_verified_source_scoped_mapping"
+      "application_status": "activated_source_scoped_2026_11_18"
     },
     {
       "sequence": 16,
@@ -139,7 +139,7 @@
       "canonical_name": "Kyle Luckham",
       "school": "Cal State Fullerton",
       "decision": "COMBINE",
-      "application_status": "pending_verified_source_scoped_mapping"
+      "application_status": "activated_source_scoped_2026_11_18"
     },
     {
       "sequence": 17,
@@ -147,7 +147,7 @@
       "canonical_name": "Landon Anderson",
       "school": "Cal State Fullerton",
       "decision": "COMBINE",
-      "application_status": "pending_verified_source_scoped_mapping"
+      "application_status": "activated_source_scoped_2026_11_18"
     },
     {
       "sequence": 18,
@@ -163,7 +163,7 @@
       "canonical_name": "Michael Weisberg",
       "school": "Cal State Fullerton",
       "decision": "COMBINE",
-      "application_status": "pending_verified_source_scoped_mapping"
+      "application_status": "activated_source_scoped_2026_11_18"
     },
     {
       "sequence": 20,
@@ -211,5 +211,15 @@
     "decision": "Apply all 24 approved COMBINE mappings after source-scoped collision and existing-crosswalk checks pass; preserve all explicit DO_NOT_MERGE entries and source scorebooks.",
     "batch_3_gate": "Proceed to Batch 3 only after the 24 mappings are activated and validated.",
     "source": "Owner explicit approval in follow-up conversation"
+  },
+  "fullerton_activation": {
+    "activated_on": "2026-11-18",
+    "canonical_pavletich": "Jake Pavletich",
+    "fullerton_approved_decisions": 6,
+    "additional_scoped_fixes": [
+      "AJ Curtis",
+      "Michael Knorr"
+    ],
+    "original_box_scores_modified": 0
   }
 }

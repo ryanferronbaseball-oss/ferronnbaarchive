@@ -4,8 +4,8 @@
   "source": "Original archive owner confirmed each multi-school person",
   "original_attendance_ids_preserved": 444,
   "original_player_game_rows_preserved": 13183,
-  "requested_person_merges": 177,
-  "activated_person_merges": 177,
+  "requested_person_merges": 184,
+  "activated_person_merges": 184,
   "pending_person_merges": 0,
   "merge_policy": "Only listed pair of exact normalized person names and school-specific original source player IDs; all other IDs remain separate",
   "display_aliases": [
@@ -391,6 +391,21 @@
       "decision": "do_not_merge",
       "confirmed_on": "2026-11-17",
       "note": "Owner explicitly kept these two profiles separate in batch 1; existing multi-school identities retained."
+    },
+    {
+      "name": "Tanner Smith",
+      "schools": [
+        "Oregon",
+        "Presbyterian"
+      ],
+      "source_player_ids": [
+        "cb-oregon-tanner-smith",
+        "cb-presbyterian-tanner-smith"
+      ],
+      "decision": "do_not_merge",
+      "confirmed_on": "2026-11-17",
+      "approval_batch": 3,
+      "note": "Owner explicitly decided SEPARATE; do not infer a transfer from an identical name."
     }
   ],
   "merges": [
@@ -4497,6 +4512,181 @@
         }
       ],
       "source_rows": 3
+    },
+    {
+      "name": "Andrew Sojka",
+      "canonical_id": "cb-cal-state-northridge-andrew-sojka",
+      "source_player_ids": [
+        "cb-cal-state-northridge-andrew-sojka",
+        "cb-cal-state-northrdige-andrew-sojka"
+      ],
+      "schools": [
+        "Cal State Northridge",
+        "Cal State Northrdige"
+      ],
+      "pairs": [
+        {
+          "team": "Cal State Northrdige",
+          "source_player_id": "cb-cal-state-northrdige-andrew-sojka"
+        },
+        {
+          "team": "Cal State Northridge",
+          "source_player_id": "cb-cal-state-northridge-andrew-sojka"
+        }
+      ],
+      "source_rows": 4,
+      "approval_batch": 3,
+      "note": "One team typed Cal State Northrdige in the historical game source. Source rows unchanged."
+    },
+    {
+      "name": "Emanuel Dean",
+      "canonical_id": "cb-cal-state-northridge-emanuel-dean",
+      "source_player_ids": [
+        "cb-cal-state-northridge-emanuel-dean",
+        "cb-cal-state-northrdige-emanuel-dean"
+      ],
+      "schools": [
+        "Cal State Northridge",
+        "Cal State Northrdige"
+      ],
+      "pairs": [
+        {
+          "team": "Cal State Northrdige",
+          "source_player_id": "cb-cal-state-northrdige-emanuel-dean"
+        },
+        {
+          "team": "Cal State Northridge",
+          "source_player_id": "cb-cal-state-northridge-emanuel-dean"
+        }
+      ],
+      "source_rows": 3,
+      "approval_batch": 3,
+      "note": "One team typed Cal State Northrdige in the historical game source. Source rows unchanged."
+    },
+    {
+      "name": "Isaac Ontiveros",
+      "canonical_id": "cb-cal-state-northridge-isaac-ontiveros",
+      "source_player_ids": [
+        "cb-cal-state-northridge-isaac-ontiveros",
+        "cb-cal-state-northrdige-isaac-ontiveros"
+      ],
+      "schools": [
+        "Cal State Northridge",
+        "Cal State Northrdige"
+      ],
+      "pairs": [
+        {
+          "team": "Cal State Northrdige",
+          "source_player_id": "cb-cal-state-northrdige-isaac-ontiveros"
+        },
+        {
+          "team": "Cal State Northridge",
+          "source_player_id": "cb-cal-state-northridge-isaac-ontiveros"
+        }
+      ],
+      "source_rows": 2,
+      "approval_batch": 3,
+      "note": "One team typed Cal State Northrdige in the historical game source. Source rows unchanged."
+    },
+    {
+      "name": "Jakob Simons",
+      "canonical_id": "cb-cal-state-northridge-jakob-simons",
+      "source_player_ids": [
+        "cb-cal-state-northridge-jakob-simons",
+        "cb-cal-state-northrdige-jakob-simons"
+      ],
+      "schools": [
+        "Cal State Northridge",
+        "Cal State Northrdige"
+      ],
+      "pairs": [
+        {
+          "team": "Cal State Northrdige",
+          "source_player_id": "cb-cal-state-northrdige-jakob-simons"
+        },
+        {
+          "team": "Cal State Northridge",
+          "source_player_id": "cb-cal-state-northridge-jakob-simons"
+        }
+      ],
+      "source_rows": 2,
+      "approval_batch": 3,
+      "note": "One team typed Cal State Northrdige in the historical game source. Source rows unchanged."
+    },
+    {
+      "name": "Joey Kramer",
+      "canonical_id": "cb-cal-state-northridge-joey-kramer",
+      "source_player_ids": [
+        "cb-cal-state-northridge-joey-kramer",
+        "cb-cal-state-northrdige-joey-kramer"
+      ],
+      "schools": [
+        "Cal State Northridge",
+        "Cal State Northrdige"
+      ],
+      "pairs": [
+        {
+          "team": "Cal State Northrdige",
+          "source_player_id": "cb-cal-state-northrdige-joey-kramer"
+        },
+        {
+          "team": "Cal State Northridge",
+          "source_player_id": "cb-cal-state-northridge-joey-kramer"
+        }
+      ],
+      "source_rows": 4,
+      "approval_batch": 3,
+      "note": "One team typed Cal State Northrdige in the historical game source. Source rows unchanged."
+    },
+    {
+      "name": "Kenji Pallares",
+      "canonical_id": "cb-cal-state-northridge-kenji-pallares",
+      "source_player_ids": [
+        "cb-cal-state-northridge-kenji-pallares",
+        "cb-cal-state-northrdige-kenji-pallares"
+      ],
+      "schools": [
+        "Cal State Northridge",
+        "Cal State Northrdige"
+      ],
+      "pairs": [
+        {
+          "team": "Cal State Northrdige",
+          "source_player_id": "cb-cal-state-northrdige-kenji-pallares"
+        },
+        {
+          "team": "Cal State Northridge",
+          "source_player_id": "cb-cal-state-northridge-kenji-pallares"
+        }
+      ],
+      "source_rows": 2,
+      "approval_batch": 3,
+      "note": "One team typed Cal State Northrdige in the historical game source. Source rows unchanged."
+    },
+    {
+      "name": "Shunsuke Sakaino",
+      "canonical_id": "cb-cal-state-northridge-shunsuke-sakaino",
+      "source_player_ids": [
+        "cb-cal-state-northridge-shunsuke-sakaino",
+        "cb-cal-state-northrdige-shunsuke-sakaino"
+      ],
+      "schools": [
+        "Cal State Northridge",
+        "Cal State Northrdige"
+      ],
+      "pairs": [
+        {
+          "team": "Cal State Northrdige",
+          "source_player_id": "cb-cal-state-northrdige-shunsuke-sakaino"
+        },
+        {
+          "team": "Cal State Northridge",
+          "source_player_id": "cb-cal-state-northridge-shunsuke-sakaino"
+        }
+      ],
+      "source_rows": 4,
+      "approval_batch": 3,
+      "note": "One team typed Cal State Northrdige in the historical game source. Source rows unchanged."
     }
   ]
 }

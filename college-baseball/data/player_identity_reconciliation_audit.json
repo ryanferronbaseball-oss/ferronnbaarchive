@@ -5,8 +5,8 @@
     "status": "PASS",
     "source_row_count": 13196,
     "attendance_game_count": 437,
-    "requested_person_merges": 177,
-    "activated_person_merges": 177,
+    "requested_person_merges": 184,
+    "activated_person_merges": 184,
     "pending_person_merges": 0,
     "most_recent_name_cleanup": {
       "game_id": "cb-2025-03-22-western-kentucky-kennesaw-state-att0325",
@@ -15,13 +15,12 @@
       "source_stat_rows_rewritten": 0
     },
     "most_recent_merge": {
-      "name": "Dylan O'Connell",
+      "name": "Shunsuke Sakaino",
       "schools": [
-        "Western Kentucky",
-        "Milwaukee"
+        "Cal State Northrdige",
+        "Cal State Northridge"
       ],
-      "combined_game_log_rows": 4,
-      "source_game": "cb-2025-03-22-western-kentucky-kennesaw-state-att0325"
+      "combined_game_log_rows": 4
     },
     "resolved_final_three": [
       {
@@ -52,12 +51,13 @@
     "preservation_checks": "Original player_stats.json, games.json and player batting/pitching rows unchanged; player profile identities linked using the scoped crosswalk only.",
     "legacy_preview_note": "The historical preview and ready_merges/not_ready counts below reflect the older 101-proposal audit. Consult current_state and player_identity_crosswalk.json for live identity status.",
     "latest_review_batch": {
-      "date": "2026-11-17",
-      "approved_combinations": 19,
-      "new_merge_entries": 15,
-      "extensions_of_existing_merges": 4,
-      "rejected_combinations": 6,
+      "batch": 3,
+      "approved_combinations": 7,
+      "new_merge_entries": 7,
+      "protected_separate": "Tanner Smith (Oregon / Presbyterian)",
+      "unresolved": "T Juline (UC Riverside: Taylor or Tucker)",
       "owner_approved": true,
+      "same_game_collisions": 0,
       "original_box_scores_modified": false
     }
   },

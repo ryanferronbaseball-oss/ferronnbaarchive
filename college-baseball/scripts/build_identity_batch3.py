@@ -62,7 +62,33 @@ for school,players in by_school.items():
   collisions=[m for m in matched if set(x["game_id"] for x in ls)&set(x["game_id"] for x in m[2])]
   result={"school":ls[0]["team"],"source_name":alias,"source_id":pid,"source_games":sorted(set(x["game_id"] for x in ls)),"candidates":[{"full_name":nm,"source_id":fid,"games":len(set(x["game_id"] for x in fls)),"same_game_collision":bool(set(x["game_id"] for x in ls)&set(x["game_id"] for x in fls))} for fid,nm,fls in matched],"status":"needs_owner_review" if len(matched)==1 and not collisions else "ambiguous_or_collision","source_rows":len(ls)}
   candidates.append(result)
+# Additional candidate class: matching full names across different schools.
+# This is deliberately a *review* queue, never evidence of a transfer.
+by_full_name=defaultdict(list)
+for school, players in by_school.items():
+ for pid,ls in players.items():
+  labels=sorted(set(x["player"] for x in ls))
+  if pid in reviewed_ids or len(labels)!=1:continue
+  label=labels[0]
+  if not longname(label) or (school,norm(label)) in approved_names:continue
+  by_full_name[norm(label)].append((school,pid,label,ls))
+for normalized, group in by_full_name.items():
+ schools={g[0] for g in group}
+ if len(schools)<2:continue
+ source_game_ids=[set(r["game_id"] for r in g[3]) for g in group]
+ collision=any(source_game_ids[i]&source_game_ids[j] for i in range(len(group)) for j in range(i+1,len(group)))
+ candidates.append({
+  "kind":"cross_school_same_full_name",
+  "school":" ↔ ".join(sorted({g[3][0]["team"] for g in group})),
+  "source_name":group[0][2],
+  "source_id":group[0][1],
+  "source_games":sorted(set().union(*source_game_ids)),
+  "candidates":[{"full_name":g[2],"school":g[3][0]["team"],"source_id":g[1],"games":len(set(r["game_id"] for r in g[3])),"same_game_collision":collision} for g in group],
+  "status":"needs_owner_review" if not collision and len(group)==2 else "ambiguous_or_collision",
+  "source_rows":sum(len(g[3]) for g in group)
+ })
 candidates.sort(key=lambda x:(x["status"]!="needs_owner_review",x["school"].lower(),x["source_name"].lower()))
+
 out={"version":1,"purpose":"Identity review candidates only; never apply automatically","source_rows_scanned":len(rows),"existing_merges_preserved":len(cross["merges"]),"existing_do_not_merge_preserved":len(cross["owner_rejected_merge_candidates"]),"batch2_approved_pending":len(batch2["decisions"]),"candidates_found":len(candidates),"candidates":candidates}
 (D/"identity_audit_batch_03_candidates.json").write_text(json.dumps(out,indent=2,ensure_ascii=False)+"\n",encoding="utf8")
 with (D/"identity_audit_batch_03_review.md").open("w",encoding="utf8") as f:

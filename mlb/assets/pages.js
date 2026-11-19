@@ -524,7 +524,24 @@ function profilePage(){
   +(ps? "":'<p class="mlb-profile-role-note">No pitching appearances in the games you attended. Pitching figures above reflect only those games.</p>')
   +'</div>':statBoxes(pitcher?pitchingCards:battingCards);
  const totals=(items,extraClass="")=>'<div class="mlb-profile-total-grid'+(extraClass?" "+extraClass:"")+'">'+items.map(([label,value])=>'<div class="mlb-profile-total"><small>'+esc(label)+'</small><strong>'+esc(value)+'</strong></div>').join("")+'</div>';
- const battingStats=[["Games",p.batting.length],["Plate Appearances",bs.plateAppearances],["At-bats",bs.atBats],["Hits",bs.hits],["Doubles",bs.doubles],["Triples",bs.triples],["Home Runs",bs.homeRuns],["RBI",bs.rbi],["Runs",bs.runs],["Walks",bs.baseOnBalls],["Stolen Bases",bs.stolenBases]];
+ // Use college baseball's existing 5/6/6 batting and 4/4/4 pitching row grouping.
+ const overviewCards=(items,groupSizes)=>{
+  let offset=0;
+  return '<div class="mlb-college-overview-stats">'+groupSizes.map(n=>{
+   const group=items.slice(offset,offset+n);offset+=n;
+   return '<div class="mlb-profile-total-grid mlb-college-overview-row" style="--overview-columns:'+n+'">'+group.map(([label,value])=>
+    '<div class="mlb-profile-total"><small>'+esc(label)+'</small><strong>'+esc(value)+'</strong></div>').join("")+'</div>';
+  }).join("")+'</div>';
+ };
+ // College-baseball parity: use the identical ordered 17-card batting overview.
+ const battingStats=[
+  ["G",p.batting.length],["PA",bs.plateAppearances],["AB",bs.atBats],["R",bs.runs],["H",bs.hits],
+  ["2B",bs.doubles],["3B",bs.triples],["HR",bs.homeRuns],["RBI",bs.rbi],["BB",bs.baseOnBalls],["K",bs.strikeOuts],
+  ["BA",A.disp(bs.average,"average")],["OBP",A.disp(bs.onBasePercentage,"onBasePercentage")],
+  ["SLG",A.disp(bs.sluggingPercentage,"sluggingPercentage")],["OPS",A.disp(bs.ops,"ops")],
+  ["BB%",bs.plateAppearances?((100*bs.baseOnBalls)/bs.plateAppearances).toFixed(1)+"%":"—"],
+  ["K%",bs.plateAppearances?((100*bs.strikeOuts)/bs.plateAppearances).toFixed(1)+"%":"—"]
+ ];
  // Games started comes from the official per-game box score when available;
  // older games can still identify the starter by first pitcher in team order.
  const pitcherGames=ps?[...new Set(p.pitching.map(r=>r.game_pk))].length:0;
@@ -534,10 +551,11 @@ function profilePage(){
  // Show a number only if every witnessed pitching line records that stat.
  const reliefCount=key=>ps&&p.pitching.length&&p.pitching.every(row=>row.pitching?.[key]!=null&&Number.isFinite(Number(row.pitching[key])))
   ?p.pitching.reduce((sum,row)=>sum+Number(row.pitching[key]),0):"—";
- const pitcherStats=ps?[
-  ["Games",pitcherGames],["Games Started",starts],["Wins",officialPitcherRecord.wins],["Losses",officialPitcherRecord.losses],
-  ["Innings",ps.inningsPitched],["Hits",ps.hits],["Earned Runs",ps.earnedRuns],["Walks",ps.baseOnBalls],
-  ["K’s",ps.strikeOuts],["Saves",officialPitcherRecord.saves],["Holds",reliefCount("holds")],["Blown Saves",reliefCount("blownSaves")]
+ // Keep MLB-only figures accessible without disturbing the college-style order.
+ const battingMLBExtras=p.batting.length?[["Stolen Bases",bs.stolenBases],["Caught Stealing",bs.caughtStealing]]:[];
+ const pitchingMLBExtras=ps?[
+  ["Wins",officialPitcherRecord.wins],["Losses",officialPitcherRecord.losses],
+  ["Saves",officialPitcherRecord.saves],["Holds",reliefCount("holds")],["Blown Saves",reliefCount("blownSaves")]
  ]:[];
  const rateItems=[["Batting Average",A.disp(bs.average,"average")],["On-Base Percentage",A.disp(bs.onBasePercentage,"onBasePercentage")],
   ["Slugging Percentage",A.disp(bs.sluggingPercentage,"sluggingPercentage")],["OPS",A.disp(bs.ops,"ops")],
@@ -561,6 +579,13 @@ function profilePage(){
  const totalBattersFaced=completeBatterFaced?p.pitching.reduce((sum,row)=>sum+Number(row.pitching.battersFaced),0):0;
  const kRate=totalBattersFaced>0?(100*ps.strikeOuts/totalBattersFaced).toFixed(1)+"%":"—";
  const bbRate=totalBattersFaced>0?(100*ps.baseOnBalls/totalBattersFaced).toFixed(1)+"%":"—";
+ // College-baseball parity: ordered G / GS / IP / BF / H / ER / BB / K / ERA / WHIP / BB% / K%.
+ // An incomplete official BF line stays unknown rather than being treated as zero.
+ const pitcherStats=ps?[
+  ["G",pitcherGames],["GS",starts],["IP",ps.inningsPitched],["BF",completeBatterFaced?totalBattersFaced:"—"],
+  ["H",ps.hits],["ER",ps.earnedRuns],["BB",ps.baseOnBalls],["K",ps.strikeOuts],
+  ["ERA",A.disp(ps.era,"era")],["WHIP",A.disp(ps.whip,"whip")],["BB%",bbRate],["K%",kRate]
+ ]:[];
  const pitchingRates=ps?[
   ["ERA",A.disp(ps.era,"era")],["FIP",estimatedFip==null?"—":estimatedFip.toFixed(2)],
   ["WHIP",A.disp(ps.whip,"whip")],["K/BB",ps.baseOnBalls?(ps.strikeOuts/ps.baseOnBalls).toFixed(2):"—"],
@@ -590,16 +615,19 @@ function profilePage(){
    '<button type="button" class="mlb-profile-tab" role="tab" data-profile-tab="'+key+'" aria-controls="profile-'+key+'" aria-selected="'+(i===0)+'">'+title+'</button>').join("")+'</div>'
   +'<section class="panel mlb-profile-panel" id="profile-overview" role="tabpanel">'
   +'<h2>Player overview</h2>'+overviewLine
-  +(pitcher&&ps?'<h3>Pitching statistics from games you attended</h3>'+totals(pitcherStats,"mlb-profile-pitching-grid"):"")
-  +'<h3>Batting statistics from games you attended</h3>'+totals(battingStats)
-  +(!pitcher&&ps?'<h3>Pitching statistics from games you attended</h3>'+totals(pitcherStats,"mlb-profile-pitching-grid"):"")
-  +(ps?'<p class="mlb-note">Pitching figures cover only games you attended. Holds and blown saves show — if an official game line is missing the stat.</p>':"")
+  +(pitcher&&ps?'<h3>Pitching statistics from games you attended</h3>'+overviewCards(pitcherStats,[4,4,4]):"")
+  +(p.batting.length?'<h3>Batting statistics from games you attended</h3>'+overviewCards(battingStats,[5,6,6]):"")
+  +(!pitcher&&ps?'<h3>Pitching statistics from games you attended</h3>'+overviewCards(pitcherStats,[4,4,4]):"")
+  +(ps?'<p class="mlb-note">Stats and rates use only games you attended; BF and pitching rates show — when official batters-faced data is incomplete.</p>':"")
   +awardPanel+'</section>'
   +'<section class="panel mlb-profile-panel" id="profile-advanced" role="tabpanel" hidden>'
   +'<h2>Advanced statistics</h2><p class="mlb-note">Rate statistics combine only your witnessed games. Calculated from official batting and pitching lines—not complete MLB career totals.</p>'
   +(p.batting.length?'<h3>Batting efficiency</h3>'+totals(rateItems):"")
   +(ps?'<h3>Pitching efficiency</h3>'+totals(pitchingRates,"mlb-profile-pitching-advanced-grid")
-   +'<p class="mlb-note">Estimated FIP uses only attended-game pitching totals: (13 × HR + 3 × (BB + HBP) − 2 × K) ÷ IP + 3.20. Actual FIP uses a season-specific league constant and typically excludes intentional walks. A dash means required pitching data is unavailable; small game samples can be volatile.</p>':"")+'</section>'
+   +'<p class="mlb-note">Estimated FIP uses only attended-game pitching totals: (13 × HR + 3 × (BB + HBP) − 2 × K) ÷ IP + 3.20. Actual FIP uses a season-specific league constant and typically excludes intentional walks. A dash means required pitching data is unavailable; small game samples can be volatile.</p>':"")
+  +(battingMLBExtras.length?'<h3>Additional MLB batting totals</h3>'+totals(battingMLBExtras):"")
+  +(pitchingMLBExtras.length?'<h3>Additional MLB pitching totals</h3>'+totals(pitchingMLBExtras)
+   +'<p class="mlb-note">Wins, losses and saves come from verified official decisions. Holds and blown saves display — if any witnessed pitching line lacks the required figure.</p>':"")+'</section>'
   +'<section class="panel mlb-profile-panel" id="profile-games" role="tabpanel" hidden>'
   +'<h2>Every game you witnessed</h2>'
   +(multiTeam.teams.length>=2?'<label class="mlb-profile-team-filter">Team <select id="mlbTeamFilter" aria-label="Filter MLB game log by witnessed team"><option value="all">All teams</option>'+multiTeam.teams.map(t=>'<option value="'+esc(t.id)+'">'+esc(t.name)+'</option>').join("")+'</select></label>':"")

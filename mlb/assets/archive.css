@@ -459,39 +459,39 @@ body[data-page="player"] #profile-overview .mlb-college-overview-row .mlb-profil
  }
 }
 
-/* MLB player hero stat strip mirrors College Basketball: 14 cards, 7 per row.
-   For true two-way players each labeled batting/pitching strip uses the same grid. */
+/* MLB headline stats: match College Baseball's seven-card single-row strip. */
 body[data-page="player"] .mlb-profile-headline-stats,
 body[data-page="player"] .mlb-profile-headline-stats.is-pitcher,
 body[data-page="player"] .mlb-profile-headline-stats .mlb-profile-stat-grid{
  grid-template-columns:repeat(7,minmax(0,1fr));
- gap:9px;
+ gap:10px;
 }
 body[data-page="player"] .mlb-profile-headline-stats .mlb-profile-stat{
- padding:14px 11px;
- background:#fff!important;
- border-color:#c5e3ef!important;
+ background:#fff!important;border:1px solid #c5e3ef!important;
+ border-radius:14px;padding:15px 12px;
 }
+body[data-page="player"] .mlb-profile-headline-stats .mlb-profile-stat small{color:#566879!important}
 body[data-page="player"] .mlb-profile-headline-stats .mlb-profile-stat strong{
- color:#831738!important;
- font-size:clamp(19px,2vw,26px);
- overflow-wrap:anywhere;
+ color:#831738!important;font-size:clamp(20px,2vw,27px);overflow-wrap:anywhere;
 }
-body[data-page="player"] .mlb-profile-headline-stats.is-two-way{grid-template-columns:minmax(0,1fr)}
-body[data-page="player"] .mlb-profile-headline-stats.is-two-way>.mlb-profile-two-way{min-width:0;width:100%}
+body[data-page="player"] .mlb-profile-headline-stats.is-two-way{
+ grid-template-columns:minmax(0,1fr);
+}
+body[data-page="player"] .mlb-profile-headline-stats.is-two-way>.mlb-profile-two-way{
+ min-width:0;width:100%;
+}
 body[data-page="player"] .mlb-profile-headline-stats .mlb-profile-role-label{color:#831738}
-@media(max-width:1050px){
+@media(max-width:950px){
  body[data-page="player"] .mlb-profile-headline-stats,
  body[data-page="player"] .mlb-profile-headline-stats.is-pitcher,
  body[data-page="player"] .mlb-profile-headline-stats .mlb-profile-stat-grid{
   grid-template-columns:repeat(4,minmax(0,1fr));
  }
 }
-@media(max-width:650px){
+@media(max-width:600px){
  body[data-page="player"] .mlb-profile-headline-stats,
  body[data-page="player"] .mlb-profile-headline-stats.is-pitcher,
  body[data-page="player"] .mlb-profile-headline-stats .mlb-profile-stat-grid{
   grid-template-columns:repeat(2,minmax(0,1fr));
  }
- body[data-page="player"] .mlb-profile-headline-stats .mlb-profile-stat{padding:12px}
 }

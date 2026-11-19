@@ -667,6 +667,22 @@ async function renderPlayer(d){
   +groups.map(items=>'<div class="cb-profile-stat-row" style="--cb-columns:'+items.length+'">'
    +items.map(([title,value])=>'<div class="metric mlb-profile-stat"><small>'+esc(title)+'</small><strong>'+esc(value==null?"—":value)+'</strong></div>').join("")
    +'</div>').join("")+'</div></section>';
+ const profileYears=[...new Set(entries.map(g=>g.date.slice(0,4)))].sort();
+ const yearLabel=profileYears.length?(profileYears[0]===profileYears.at(-1)?profileYears[0]:profileYears[0]+"–"+profileYears.at(-1)):"—";
+ const primarilyPitcher=qualifiedPitch&&(!qualifiedHit||p.rows.filter(r=>r.pitching).length>=p.rows.filter(r=>r.batting).length);
+ const headlineItems=primarilyPitcher
+  ?[["Games",pi.games],["GS",pi.starts],["IP",pi.innings],["K",fmt(pi.strikeouts)],["ERA",rate(pi.era,2)],["WHIP",rate(pi.whip,2)]]
+  :[["Games",b.games],["PA",fmt(b.plateAppearances)],["Hits",fmt(b.hits)],["HR",fmt(b.homeRuns)],["RBI",fmt(b.rbi)],["AVG",rate(b.average,3)],["OPS",rate(b.ops,3)]];
+ const headline='<div class="mlb-profile-headline-stats cb-profile-headline">'+headlineItems.map(([label,value])=>
+  '<div class="mlb-profile-stat"><small>'+esc(label)+'</small><strong>'+esc(value??"—")+'</strong></div>').join("")+'</div>';
+ const milestones=[
+  ["3+ hit games",p.rows.filter(r=>stat(r.batting?.hits)>=3).length],
+  ["Multi-HR games",p.rows.filter(r=>stat(r.batting?.homeRuns)>=2).length],
+  ["3+ RBI games",p.rows.filter(r=>stat(r.batting?.rbi)>=3).length],
+  ["10+ strikeout outings",p.rows.filter(r=>stat(r.pitching?.strikeOuts)>=10).length],
+  ["7+ inning outings",p.rows.filter(r=>stat(r.pitching?.outs)>=21).length],
+  ["Scoreless 5+ IP",p.rows.filter(r=>stat(r.pitching?.outs)>=15&&stat(r.pitching?.earnedRuns)===0).length]
+ ];
  const percent=v=>v==null?"—":v.toFixed(1)+"%";
  const hitter=qualifiedHit?roleStats("Hitting in games you attended",[
   [["Games",b.games],["Plate Appearances",fmt(b.plateAppearances)],["At Bats",fmt(b.atBats)],["Runs",fmt(b.runs)],["Hits",fmt(b.hits)]],
@@ -697,17 +713,51 @@ async function renderPlayer(d){
   +conferenceAwards.map(a=>'<span class="mlb-profile-badge cb-national-award" title="'+esc(a.school+' · '+a.year+' '+a.conference+' '+a.award)+'">★ '+esc(a.year+' '+a.conference+' '+a.award)+'</span>').join('')
   +allConference.map(a=>'<span class="mlb-profile-badge cb-national-award" title="'+esc(a.school+' · '+a.year+' '+a.conference+' '+a.team+' All-Conference')+'">★ '+esc(a.year+' All-'+a.conference+' '+a.team)+'</span>').join('')
   +baseballAmericaHonors.map(a=>'<span class="mlb-profile-badge cb-national-award" title="'+esc(a.school+' · '+a.position)+'">★ '+esc(a.year+' Baseball America '+a.team+' All-American')+'</span>').join('')+'</div>':"")
- +'<p class="mlb-profile-seen">'+p.games.length+' game'+(p.games.length===1?"":"s")+' witnessed · College baseball</p>'
+ +'<p class="mlb-profile-seen">'+p.games.length+' attended '+(p.games.length===1?"game":"games")+' · '+esc(yearLabel)+'</p>'
  +'</div></section>'
- +'<p class="mlb-note">Only college baseball appearances from games you attended appear here; professional seasons are never added to college totals.</p>'
- +transferSection+hitter+pitcher
- +'<div class="section-heading"><h2>Last 3 games witnessed</h2></div><div class="game-grid cb-grid cb-profile-games">'+entries.slice(0,3).map(gameCard).join("")+'</div>'
- +'<section class="panel cb-player-game-log"><h2>Recorded college game logs</h2>'
- +htmlTable(["Date","Matchup","AB","R (hitting)","H","HR","RBI","IP","H (allowed)","R (pitching)","BB","K"],logRows.map(r=>{
-  const g=d.gameMap.get(r.game_id);
-  return '<tr><td><a href="'+gameUrl(g)+'">'+esc(date(g.date))+'</a></td><td>'+esc(gameLabel(g))+'</td>'
-  +[stat(r.batting?.atBats),stat(r.batting?.runs),stat(r.batting?.hits),stat(r.batting?.homeRuns),stat(r.batting?.rbi),r.pitching?.outs!=null?Math.floor(r.pitching.outs/3)+"."+(r.pitching.outs%3):null,stat(r.pitching?.hits),stat(r.pitching?.runs),stat(r.pitching?.baseOnBalls),stat(r.pitching?.strikeOuts)].map(x=>'<td>'+esc(x==null?"—":x)+'</td>').join("")+'</tr>';
- }))+'</section>';
+ +headline
+ +'<div class="mlb-profile-tabs" id="profileTabs" role="tablist" aria-label="College baseball player profile sections">'
+ +[["overview","Overview"],["advanced","Advanced"],["games","Game Log"],["milestones","Milestones"]].map(([key,title],i)=>
+  '<button type="button" class="mlb-profile-tab" role="tab" data-profile-tab="'+key+'" aria-controls="profile-'+key+'" aria-selected="'+(i===0)+'">'+title+'</button>').join("")+'</div>'
+ +'<section class="panel mlb-profile-panel cb-profile-panel" id="profile-overview" role="tabpanel">'
+ +'<h2>Player overview</h2><p class="mlb-note">Only college baseball appearances from games you attended; professional seasons never enter college totals.</p>'
+ +transferSection
+ +(primarilyPitcher?pitcher+hitter:hitter+pitcher)
+ +'<div class="section-heading"><h2>Last 3 games witnessed</h2></div><div class="game-grid cb-grid cb-profile-games">'+entries.slice(0,3).map(gameCard).join("")+'</div></section>'
+ +'<section class="panel mlb-profile-panel cb-profile-panel" id="profile-advanced" role="tabpanel" hidden>'
+ +'<h2>Advanced statistics</h2><p class="mlb-note">Rates are calculated only from witnessed college baseball games.</p>'
+ +(qualifiedHit?roleStats("Hitting rates",[[["BA",rate(b.average,3)],["OBP",rate(b.obp,3)],["SLG",rate(b.slg,3)],["OPS",rate(b.ops,3)],["BB%",percent(b.walkPct)],["K%",percent(b.strikeoutPct)]]]):"")
+ +(qualifiedPitch?roleStats("Pitching rates",[[["ERA",rate(pi.era,2)],["WHIP",rate(pi.whip,2)],["BB%",percent(pi.walkPct)],["K%",percent(pi.strikeoutPct)]]]):"")
+ +'</section>'
+ +'<section class="panel mlb-profile-panel cb-profile-panel" id="profile-games" role="tabpanel" hidden>'
+ +'<h2>Every game you witnessed</h2>'
+ +'<div class="mlb-profile-log-tabs" role="tablist" aria-label="Game log stat group">'
+ +'<button type="button" role="tab" data-side="batting" aria-selected="'+(!primarilyPitcher)+'">Hitting</button>'
+ +'<button type="button" role="tab" data-side="pitching" aria-selected="'+primarilyPitcher+'">Pitching</button></div>'
+ +'<div id="collegePlayerLogs" class="cb-player-game-log"></div></section>'
+ +'<section class="panel mlb-profile-panel cb-profile-panel" id="profile-milestones" role="tabpanel" hidden>'
+ +'<h2>Milestones you witnessed</h2><div class="mlb-profile-total-grid">'
+ +milestones.map(([label,value])=>'<div class="mlb-profile-total"><small>'+esc(label)+'</small><strong>'+value+'</strong></div>').join("")+'</div>'
+ +'<p class="mlb-note">Single-game milestones from your college baseball attendance archive.</p></section>';
+ function showProfileTab(key){
+  $("app").querySelectorAll("#profileTabs [data-profile-tab]").forEach(button=>button.setAttribute("aria-selected",String(button.dataset.profileTab===key)));
+  $("app").querySelectorAll(".cb-profile-panel").forEach(section=>section.hidden=section.id!=="profile-"+key);
+ }
+ $("app").querySelectorAll("#profileTabs [data-profile-tab]").forEach(button=>button.addEventListener("click",()=>showProfileTab(button.dataset.profileTab)));
+ function showCollegeLogs(side){
+  $("app").querySelectorAll("[data-side]").forEach(button=>button.setAttribute("aria-selected",String(button.dataset.side===side)));
+  const keys=side==="batting"
+   ?[["AB","atBats"],["R","runs"],["H","hits"],["2B","doubles"],["3B","triples"],["HR","homeRuns"],["RBI","rbi"],["BB","baseOnBalls"],["K","strikeOuts"]]
+   :[["IP","outs"],["H","hits"],["R","runs"],["ER","earnedRuns"],["BB","baseOnBalls"],["K","strikeOuts"]];
+  const rows=logRows.filter(r=>r[side]);
+  $("collegePlayerLogs").innerHTML=htmlTable(["Date","Matchup",...keys.map(([label])=>label)],rows.map(r=>{
+   const game=d.gameMap.get(r.game_id);if(!game)return "";
+   return '<tr><td><a href="'+gameUrl(game)+'">'+esc(date(game.date))+'</a></td><td>'+esc(gameLabel(game))+'</td>'
+    +keys.map(([label,key])=>{const value=r[side]?.[key];const displayed=key==="outs"&&value!=null?Math.floor(Number(value)/3)+"."+(Number(value)%3):stat(value);return '<td>'+esc(displayed==null?"—":displayed)+'</td>'}).join("")+'</tr>';
+  }));
+ }
+ $("app").querySelectorAll("[data-side]").forEach(button=>button.addEventListener("click",()=>showCollegeLogs(button.dataset.side)));
+ showCollegeLogs(primarilyPitcher?"pitching":"batting");
 }
 async function renderCWS(d){
  const [field,teamLogos]=await Promise.all([json("cws_teams.json"),json("team_logo_ids.json")]);

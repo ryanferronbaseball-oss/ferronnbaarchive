@@ -578,3 +578,26 @@ body[data-page="player"] .mlb-profile-badge.cb-triple-level:hover{background:#2B
   text-transform:uppercase;
   margin-bottom:5px;
 }
+
+/* College player profile parity with MLB: same hero, scorecards, tabs and panels,
+   using the shared Courtside burgundy and ice-blue visual system. */
+body[data-page="player"] .cb-profile-headline{grid-template-columns:repeat(7,minmax(0,1fr));gap:10px}
+body[data-page="player"] .cb-profile-headline .mlb-profile-stat{background:#fff;border:1px solid #c5e3ef;border-radius:14px;padding:15px 12px}
+body[data-page="player"] .cb-profile-headline .mlb-profile-stat small{color:#566879}
+body[data-page="player"] .cb-profile-headline .mlb-profile-stat strong{color:#831738;font-size:clamp(20px,2vw,27px)}
+body[data-page="player"] .mlb-profile-tabs{margin:22px 0 15px}
+body[data-page="player"] .mlb-profile-tab,
+body[data-page="player"] .mlb-profile-log-tabs button{background:#eaf6fc;color:#831738;border:1px solid #c5e3ef}
+body[data-page="player"] .mlb-profile-tab[aria-selected="true"],
+body[data-page="player"] .mlb-profile-log-tabs button[aria-selected="true"]{background:#831738;color:#fff;border-color:#831738}
+body[data-page="player"] .cb-profile-panel{background:#fff;border:1px solid #c5e3ef;color:#192e43;border-radius:14px;padding:22px}
+body[data-page="player"] .cb-profile-panel[hidden]{display:none!important}
+body[data-page="player"] .cb-profile-panel>h2{color:#831738}
+body[data-page="player"] .cb-profile-panel .cb-profile-role{margin:20px 0}
+body[data-page="player"] .cb-profile-panel .cb-profile-role h2{font-size:17px;color:#831738}
+body[data-page="player"] .cb-profile-panel .mlb-profile-total{background:#edf7fc;border:1px solid #c5e3ef}
+body[data-page="player"] .cb-profile-panel .mlb-profile-total strong{color:#831738}
+body[data-page="player"] .cb-profile-panel .cb-transfer-profile{background:#f8fbfd;border:1px solid #c5e3ef}
+body[data-page="player"] .cb-profile-panel .cb-player-game-log{overflow-x:auto}
+@media(max-width:950px){body[data-page="player"] .cb-profile-headline{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:600px){body[data-page="player"] .cb-profile-headline{grid-template-columns:repeat(2,minmax(0,1fr))}body[data-page="player"] .cb-profile-panel{padding:15px}}

@@ -601,3 +601,20 @@ body[data-page="player"] .cb-profile-panel .cb-transfer-profile{background:#f8fb
 body[data-page="player"] .cb-profile-panel .cb-player-game-log{overflow-x:auto}
 @media(max-width:950px){body[data-page="player"] .cb-profile-headline{grid-template-columns:repeat(4,minmax(0,1fr))}}
 @media(max-width:600px){body[data-page="player"] .cb-profile-headline{grid-template-columns:repeat(2,minmax(0,1fr))}body[data-page="player"] .cb-profile-panel{padding:15px}}
+
+/* Overview stat cards: MLB's softly colored totals, with college batting/pitching
+   statistics left in their established 5/6/6 and 4/4/4 sequence. */
+body[data-page="player"] #profile-overview .cb-profile-stat-row .mlb-profile-total{
+  background:#edf7fc!important;
+  border:1px solid #c5e3ef!important;
+  border-radius:10px;
+  padding:14px;
+  min-width:0;
+}
+body[data-page="player"] #profile-overview .cb-profile-stat-row .mlb-profile-total small{
+  display:block;font-size:11px;line-height:1.5;color:#566879!important;
+}
+body[data-page="player"] #profile-overview .cb-profile-stat-row .mlb-profile-total strong{
+  display:block;margin-top:6px;font-size:23px;line-height:1.2;letter-spacing:-.03em;
+  color:#831738!important;font-variant-numeric:tabular-nums;overflow-wrap:anywhere;
+}

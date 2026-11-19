@@ -430,3 +430,31 @@ body[data-page="player"] .mlb-profile-badge.mlb-triple-level:hover{background:#2
 .mlb-profile-team-filter{display:flex;align-items:center;gap:9px;color:#335D42;font-weight:750;font-size:13px;margin:8px 0 16px}
 .mlb-profile-team-filter select{background:#fff;border:1px solid #C7DDEA;border-radius:8px;padding:9px 10px;color:#28435A;font:inherit;max-width:100%}
 @media(max-width:550px){.mlb-multi-team{min-width:135px;padding:9px}.mlb-multi-team img{width:41px;height:41px}.mlb-multi-arrow{font-size:19px}.mlb-multiple-profile{padding:16px}}
+
+/* MLB player Overview: college baseball's ordered hitting/pitching stat rows,
+   preserving MLB's existing ice-blue total cards and burgundy stat values. */
+body[data-page="player"] #profile-overview .mlb-college-overview-stats{
+ display:grid;gap:11px;margin:12px 0 23px;
+}
+body[data-page="player"] #profile-overview .mlb-college-overview-row{
+ display:grid;grid-template-columns:repeat(var(--overview-columns),minmax(0,1fr));gap:11px;
+}
+body[data-page="player"] #profile-overview .mlb-college-overview-row .mlb-profile-total{
+ min-width:0;padding:14px;background:#edf7fc!important;border:1px solid #c5e3ef!important;
+}
+body[data-page="player"] #profile-overview .mlb-college-overview-row .mlb-profile-total strong{
+ color:#831738!important;overflow-wrap:anywhere;
+}
+body[data-page="player"] #profile-overview .mlb-college-overview-row .mlb-profile-total small{
+ color:#566879!important;
+}
+@media(max-width:850px){
+ body[data-page="player"] #profile-overview .mlb-college-overview-row{
+  grid-template-columns:repeat(3,minmax(0,1fr));
+ }
+}
+@media(max-width:550px){
+ body[data-page="player"] #profile-overview .mlb-college-overview-row{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+ }
+}

@@ -575,31 +575,18 @@ function profilePage(){
   ["WHIP",A.disp(ps.whip,"whip")],["K/BB",ps.baseOnBalls?(ps.strikeOuts/ps.baseOnBalls).toFixed(2):"—"],
   ["K%",kRate],["BB%",bbRate]
  ]:[];
- // College-basketball headline parity: two rows of seven baseball-specific
- // career-witnessed cards, with the same mobile/tablet breakpoints.
- // All rates are derived only from official rows for games attended.
- const bestPitching=p.pitching.map(row=>A.playerImpact(row)).filter(x=>x&&Number.isFinite(x.pitchingScore))
-  .sort((a,b)=>b.pitchingScore-a.pitchingScore)[0];
- const bestBattingImpact=p.batting.map(row=>A.playerImpact(row)).filter(x=>x&&Number.isFinite(x.battingScore))
-  .sort((a,b)=>b.battingScore-a.battingScore)[0];
- const headlinePercentage=(value,denom)=>denom>0?(100*value/denom).toFixed(1)+"%":"—";
+ // Seven-card headline matches the College Baseball player profile.
+ // Only the MLB attendance data and baseball-specific values are displayed.
  const battingCards=[
-  ["Games",p.game_count],["PA",bs.plateAppearances],["AB",bs.atBats],["Runs",bs.runs],
-  ["Hits",bs.hits],["HR",bs.homeRuns],["RBI",bs.rbi],
-  ["AVG",A.disp(bs.average,"average")],["OBP",A.disp(bs.onBasePercentage,"onBasePercentage")],
-  ["SLG",A.disp(bs.sluggingPercentage,"sluggingPercentage")],["OPS",A.disp(bs.ops,"ops")],
-  ["BB%",headlinePercentage(bs.baseOnBalls,bs.plateAppearances)],
-  ["K%",headlinePercentage(bs.strikeOuts,bs.plateAppearances)],
-  ["Best Impact Score",bestBattingImpact?bestBattingImpact.battingScore.toFixed(1):"—"]
+  ["Games",p.game_count],["PA",bs.plateAppearances],["Hits",bs.hits],
+  ["HR",bs.homeRuns],["RBI",bs.rbi],
+  ["AVG",A.disp(bs.average,"average")],["OPS",A.disp(bs.ops,"ops")]
  ];
  const pitchingCards=[
   ["Games",pitcherGames],["GS",starts],["IP",ps?.inningsPitched??"—"],
-  ["BF",completeBatterFaced?totalBattersFaced:"—"],["H",ps?.hits??"—"],
-  ["ER",ps?.earnedRuns??"—"],["BB",ps?.baseOnBalls??"—"],
   ["K",ps?.strikeOuts??"—"],["ERA",ps?A.disp(ps.era,"era"):"—"],
-  ["WHIP",ps?A.disp(ps.whip,"whip"):"—"],["K%",kRate],["BB%",bbRate],
-  ["Best Ks",p.pitching.length?Math.max(...p.pitching.map(row=>Number(row.pitching?.strikeOuts)||0)):"—"],
-  ["Best Impact Score",bestPitching?bestPitching.pitchingScore.toFixed(1):"—"]
+  ["WHIP",ps?A.disp(ps.whip,"whip"):"—"],
+  ["W–L",officialPitcherRecord.wins+"–"+officialPitcherRecord.losses]
  ];
  const summaryTiles=twoWay?'<div class="mlb-profile-two-way" data-two-way="true">'
   +statRow("batting",battingCards)+statRow("pitching",pitchingCards)

@@ -665,7 +665,7 @@ async function renderPlayer(d){
  const initials=p.name.split(/\s+/).map(x=>x[0]).slice(0,2).join("").toUpperCase();
  const roleStats=(label,groups)=>'<section class="cb-profile-role"><h2>'+esc(label)+'</h2><div class="cb-profile-stat-rows">'
   +groups.map(items=>'<div class="cb-profile-stat-row" style="--cb-columns:'+items.length+'">'
-   +items.map(([title,value])=>'<div class="metric mlb-profile-stat"><small>'+esc(title)+'</small><strong>'+esc(value==null?"—":value)+'</strong></div>').join("")
+   +items.map(([title,value])=>'<div class="mlb-profile-total"><small>'+esc(title)+'</small><strong>'+esc(value==null?"—":value)+'</strong></div>').join("")
    +'</div>').join("")+'</div></section>';
  const profileYears=[...new Set(entries.map(g=>g.date.slice(0,4)))].sort();
  const yearLabel=profileYears.length?(profileYears[0]===profileYears.at(-1)?profileYears[0]:profileYears[0]+"–"+profileYears.at(-1)):"—";

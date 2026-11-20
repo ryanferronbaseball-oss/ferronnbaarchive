@@ -47,11 +47,13 @@
     "city": "San Jose, CA",
     "source_game_id": 576772,
     "source_url": "https://www.milb.com/gameday/quakes-vs-giants/2019/05/04/576772/final/box",
-    "box_score_status": "pending",
+    "box_score_status": "verified",
     "attendance_confirmed": true,
     "official_home_team_id": 476,
     "official_away_team_id": 526,
-    "venue_id": "venue-0132"
+    "venue_id": "venue-0132",
+    "box_score_source": "User-provided MiLB Gameday final box-score screenshot, May 4 2019",
+    "box_score_notes": "Batting and pitching tables verified; stats not present in screenshot (such as HBP, pitch counts and batters faced) remain null. The per-game supplement provides this box score until incorporated into the primary player_stats.json."
   },
   {
     "id": "milb-2021-05-18-quakes-storm",

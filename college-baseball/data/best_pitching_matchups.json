@@ -3,7 +3,8 @@
     "title": "College Baseball — Best Pitching Matchups",
     "status": "curation_in_progress",
     "selection_basis": "User-selected starting pitcher matchups; pregame reputation preferred over game-day results",
-    "published": false
+    "published": false,
+    "selection_count": 12
   },
   "matchups": [
     {
@@ -46,6 +47,88 @@
       "home_starter": "Josh Hendrickson",
       "source_url": "https://usdtoreros.com/boxscore.aspx?id=9236&path=baseball",
       "verified": true
+    },
+    {
+      "date": "2021-04-02",
+      "game_id": "cb-2021-04-02-san-diego-cal-state-fullerton-att0104",
+      "away": "San Diego",
+      "home": "Cal State Fullerton",
+      "away_starter": "Brycen Mautz",
+      "home_starter": "Tanner Bibee",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2021/cal-state-fullerton/boxscore/12125",
+      "verified": true
+    },
+    {
+      "date": "2022-05-20",
+      "game_id": "cb-2022-05-20-gonzaga-san-diego-att0161",
+      "away": "Gonzaga",
+      "home": "San Diego",
+      "away_starter": "Gabriel Hughes",
+      "home_starter": "Brycen Mautz",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/gonzaga/boxscore/12485",
+      "verified": true
+    },
+    {
+      "date": "2022-05-27",
+      "game_id": "cb-2022-05-27-gonzaga-san-diego-att0169",
+      "away": "Gonzaga",
+      "home": "San Diego",
+      "away_starter": "Gabriel Hughes",
+      "home_starter": "Brycen Mautz",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/gonzaga/boxscore/12658",
+      "verified": true
+    },
+    {
+      "date": "2022-06-03",
+      "game_id": "cb-2022-06-03-san-diego-vanderbilt-att0172",
+      "away": "San Diego",
+      "home": "Vanderbilt",
+      "away_starter": "Brycen Mautz",
+      "home_starter": "Carter Holton",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/vanderbilt/boxscore/12660",
+      "verified": true,
+      "correction": "User supplied Carter Hilton; official name Carter Holton."
+    },
+    {
+      "date": "2024-02-23",
+      "game_id": "cb-2024-02-23-iowa-auburn-att0235",
+      "away": "Iowa",
+      "home": "Auburn",
+      "away_starter": "Brody Brecht",
+      "home_starter": "Chase Allsup",
+      "source_url": "https://hawkeyesports.com/news/2024/02/24/hawkeyes-fall-to-auburn-7-5",
+      "verified": true
+    },
+    {
+      "date": "2024-03-02",
+      "game_id": "cb-2024-03-02-florida-state-michigan-state-att0245",
+      "away": "Florida State",
+      "home": "Michigan State",
+      "away_starter": "Jamie Arnold",
+      "home_starter": "Joseph Dzierwa",
+      "source_url": "https://seminoles.com/sports/baseball/stats/2024/michigan-state/boxscore/13735",
+      "verified": true
+    },
+    {
+      "date": "2024-05-22",
+      "game_id": "cb-2024-05-22-nc-state-virginia-tech-att0282",
+      "away": "NC State",
+      "home": "Virginia Tech",
+      "away_starter": "Ryan Marohn",
+      "home_starter": "Brett Renfrow",
+      "source_url": "https://gopack.com/sports/baseball/stats/2024/virginia-tech/boxscore/23276",
+      "verified": true
+    },
+    {
+      "date": "2025-04-11",
+      "game_id": "cb-2025-04-11-louisville-nc-state-att0331",
+      "away": "Louisville",
+      "home": "NC State",
+      "away_starter": "Patrick Forbes",
+      "home_starter": "Dominic Fritton",
+      "source_url": "https://gocards.com/sports/baseball/stats/2025/nc-state/boxscore/25392",
+      "verified": true,
+      "correction": "User supplied Dom Fritton; stored as Dominic Fritton."
     }
   ]
 }

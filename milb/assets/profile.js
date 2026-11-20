@@ -1,5 +1,15 @@
 /* MiLB player profiles, MLB visual parity. MiLB data is independently sourced. */
 (()=>{"use strict";
+async function mergeScreenshot2019(rows){
+ const response=await fetch("./data/player_stats_2019_05_04.json",{cache:"no-store"});
+ if(response.status===404)return;
+ if(!response.ok)throw Error("2019 MiLB supplement unavailable");
+ const extra=await response.json();
+ if(!Array.isArray(extra))throw Error("Invalid 2019 MiLB supplement");
+ const seen=new Set(rows.map(x=>String(x.game_id)+"|"+String(x.team)+"|"+String(x.name)));
+ for(const x of extra){const key=String(x.game_id)+"|"+String(x.team)+"|"+String(x.name);if(!seen.has(key)){rows.push(x);seen.add(key)}}
+}
+
 const $=id=>document.getElementById(id);
 const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const number=v=>v===null||v===undefined||v===""?null:Number.isFinite(Number(v))?Number(v):null;
@@ -171,6 +181,7 @@ async function load(){
   if(!id){$("app").innerHTML='<div class="eyebrow">MiLB · Player profile</div><h1>Choose a player.</h1><p><a href="./stats.html">← Player leaderboards</a></p>';return;}
   const [r,g,l,c]=await Promise.all(["player_stats","games","player_links","college_links"].map(name=>fetch("./data/"+name+".json",{cache:"no-store"}).then(async res=>{if(!res.ok)throw Error(name+" unavailable");return res.json();})));
   if(!Array.isArray(r)||!Array.isArray(g)||!Array.isArray(l)||!Array.isArray(c))throw Error("Unexpected MiLB data");
+  await mergeScreenshot2019(r);
   renderProfile(id,r,g,l,c);
  }catch(e){$("app").innerHTML='<div class="empty">Unable to load MiLB player profile: '+esc(e.message)+'</div>';}
 }

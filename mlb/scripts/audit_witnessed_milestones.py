@@ -41,6 +41,6 @@ def main():
     # Do not infer team debuts, first hits, HRs or career landmarks from partial attendance logs.
     output={"audit_scope":"MLB games attended","games_total":len(games),"matched_game_pks":len(attended),"player_ids_in_boxscores":len(ids),"debut_candidates":candidates,"limitations":["Debut date matches require individual boxscore verification when multiple games occur that day.","Team debuts require complete career team game logs.","First hits/home runs and numeric career milestones require historical career cumulative logs.","This output is not the published verified milestone list."]}
     dest=DATA/"witnessed_milestone_audit_candidates.json"
-    dest.write_text(json.dumps(output,indent=2)+"\\n")
+    dest.write_text(json.dumps(output,indent=2)+"\n")
     print(f"Checked {len(ids)} players, {len(attended)} matched games, {len(candidates)} MLB debut candidates. Output: {dest}")
 if __name__=="__main__":main()

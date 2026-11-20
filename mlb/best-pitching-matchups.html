@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#752d46"><meta name="description" content="Nine curated starting-pitcher matchups witnessed in person, evaluated by how compelling both pitchers were before first pitch.">
+<title>Best Pitching Matchups | Courtside Archive MLB</title>
+<link rel="stylesheet" href="./assets/archive.css?v=20261120-best-pitching">
+<link rel="stylesheet" href="../assets/sport-burgundy-ice.css?v=20261106-crosssport-sweep4">
+<script defer src="./assets/archive.js?v=20261120-best-pitching"></script>
+<style>
+:root{--duel-red:#752e49;--duel-ice:#dceefa;--duel-ink:#25364b;--duel-muted:#546a7e}
+.duel-hero{margin:36px 0 25px;padding:clamp(22px,4vw,40px);border:1px solid #c9d9e6;border-radius:20px;background:linear-gradient(125deg,#f8eaf0,#e6f4ff 78%);color:var(--duel-ink)}
+.duel-hero .eyebrow{margin:0 0 9px;color:var(--duel-red)}.duel-hero h1{color:var(--duel-red);font-size:clamp(34px,5vw,56px)}
+.duel-hero p{max-width:730px;line-height:1.7;margin:0;color:#40576c}
+.duel-legend{display:flex;gap:9px;flex-wrap:wrap;margin:20px 0 0}
+.duel-pill{display:inline-block;background:#fff;border:1px solid #c3d6e6;border-radius:100px;color:var(--duel-red);font-weight:800;font-size:12px;padding:7px 11px}
+.duel-tools{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:23px 0}
+.duel-tools strong{color:var(--duel-red);font-size:15px}
+.duel-tools select{padding:10px 15px;border:1px solid #b4ccdf;border-radius:9px;background:#fff;color:#24384b}
+.duel-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.duel-card{min-width:0;border-radius:16px;border:1px solid #c9d8e8;background:#fff;overflow:hidden;box-shadow:0 5px 20px rgba(41,66,96,.045)}
+.duel-top{padding:18px 20px;background:linear-gradient(120deg,#f9edf1,#ecf6fc)}
+.duel-date{font-weight:800;color:var(--duel-red);font-size:13px}
+.duel-match{font-size:13px;color:#4d6377;line-height:1.5;margin-top:5px}
+.duel-pitchers{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px;margin-top:17px}
+.duel-person{min-width:0}.duel-name{font-size:clamp(17px,2.2vw,24px);font-weight:850;line-height:1.15;color:#752e49;overflow-wrap:anywhere}
+.duel-name a{color:inherit;text-decoration:none}.duel-name a:hover{text-decoration:underline}
+.duel-team{font-size:12px;font-weight:700;color:#526b7d;margin-top:6px}
+.duel-vs{font-size:12px;font-weight:900;border-radius:50%;background:#d8eefa;color:#692940;padding:10px 8px}
+.duel-body{padding:19px 20px}
+.duel-context{font-size:12px;letter-spacing:.025em;text-transform:uppercase;font-weight:850;color:#77344e}
+.duel-body p{font-size:14px;line-height:1.67;color:#3d5164;margin:9px 0 18px;min-height:72px}
+.duel-links{display:flex;gap:14px;flex-wrap:wrap}.duel-links a{font-size:13px;font-weight:800;color:#72334c}
+.duel-note{margin-top:25px;padding:16px 20px;border-left:4px solid var(--duel-red);background:#edf5fc;border-radius:0 10px 10px 0;color:#3d5368;font-size:13px;line-height:1.65}
+@media(max-width:790px){.duel-grid{grid-template-columns:1fr}}@media(max-width:430px){.duel-top,.duel-body{padding:15px}.duel-vs{padding:7px 5px}.duel-name{font-size:18px}}
+</style></head>
+<body><main><div id="navigation"></div>
+<section class="duel-hero">
+<div class="eyebrow">COURTSIDE ARCHIVE · MLB · CURATED COLLECTION</div>
+<h1>Best Pitching Matchups.</h1>
+<p>Two starters. One game. A matchup worth seeing. These are the starting-pitcher pairings witnessed in person that stood out <strong>before the first pitch</strong> — based primarily on current-season stature, recent form, and established reputation, not on what happened in the game itself.</p>
+<div class="duel-legend"><span class="duel-pill">9 personally selected matchups</span><span class="duel-pill">2003–2024</span><span class="duel-pill">Reputation over game-day results</span></div>
+</section>
+<div class="duel-tools"><strong id="count">9 curated matchups</strong><label for="sort">Order <select id="sort"><option value="oldest">Oldest first</option><option value="newest">Newest first</option></select></label></div>
+<section class="duel-grid" id="duelGrid" aria-label="Selected MLB pitching matchups"></section>
+<p class="duel-note"><strong>Selection standard:</strong> This is a curated personal collection, not a statistical ranking of game-day performances. Decisions emphasize both starters' standing at the time, including their current season and, where appropriate, the previous season. Later accomplishments are not retroactively counted. Games are listed by date and are not ranked against one another.</p>
+<footer class="footer">Courtside Archive · MLB · Best Pitching Matchups</footer>
+</main><script>
+const matchups=[["2003-07-24",1,15785,"Colorado Rockies","Los Angeles Dodgers","Dodger Stadium","Kevin Brown","Shawn Chacón","Brown was an established elite starter enjoying an outstanding 2003 season. Chacón was a newly selected NL All-Star in his breakout year.","Established ace · Breakout All-Star"],["2006-06-28",6,41109,"Atlanta Braves","New York Yankees","Yankee Stadium","John Smoltz","Chien-Ming Wang","An established Cy Young winner and longtime ace against a rising Yankees starter who had developed into a prominent part of New York’s rotation.","Established ace · Rising contender"],["2007-06-10",9,69076,"Toronto Blue Jays","Los Angeles Dodgers","Dodger Stadium","Roy Halladay","Jason Schmidt","Halladay brought elite contemporary credentials; Schmidt entered with a recent history as one of the National League’s top starters, despite a difficult, injury-affected 2007.","Established aces · Recent reputation"],["2007-07-02",11,69356,"Atlanta Braves","Los Angeles Dodgers","Dodger Stadium","John Smoltz","Derek Lowe","Smoltz remained a frontline pitcher after returning to the rotation, while Lowe brought proven quality and an established record as a leading Dodgers starter.","Established frontline starters"],["2008-06-29",22,234989,"Seattle Mariners","San Diego Padres","Petco Park","Érik Bédard","Jake Peavy","Peavy entered as the reigning NL Cy Young winner. Bédard was coming off a 221-strikeout 2007 season and a top-five AL Cy Young finish.","Reigning Cy Young · Recent contender"],["2010-07-18",32,265183,"Texas Rangers","Boston Red Sox","Fenway Park","C. J. Wilson","Jon Lester","Lester was a 2010 All-Star and proven ace. Wilson was having an impressive first full season in a starting rotation.","Current-season form · Established ace"],["2022-10-18",101,715731,"Philadelphia Phillies","San Diego Padres","Petco Park","Zack Wheeler","Yu Darvish","Both starters were genuine frontline pitchers having excellent 2022 seasons. Wheeler also entered with a runner-up finish in 2021 NL Cy Young voting.","NLCS Game 1 · Two frontline starters"],["2023-08-22",116,716887,"Miami Marlins","San Diego Padres","Petco Park","Jesús Luzardo","Blake Snell","Snell was pitching at an elite level in the second half of 2023, while Luzardo brought a recent breakout and recognized swing-and-miss ability.","Dominant ace · Emerging strikeout arm"],["2024-05-13",120,747128,"Chicago Cubs","Atlanta Braves","Truist Park","Shota Imanaga","Reynaldo López","Both arrived as early-season ERA standouts. This matchup was compelling because of their exceptional 2024 form rather than longstanding ace reputations.","Two early-season ERA leaders"]];
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const normalize=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-zA-Z]/g,'').toLowerCase();
+let pitcherIds=new Map();
+async function init(){
+ document.getElementById('navigation').innerHTML=window.MLBArchive.nav('best-pitching');
+ // Use existing witnessed-player IDs; avoid fabricating player-profile URLs.
+ try{
+  const resp=await fetch('./data/player_stats.json',{cache:'no-store'});
+  if(resp.ok){const rows=await resp.json();for(const r of rows)if(r.player_id&&r.name&&r.pitching&&!pitcherIds.has(normalize(r.name)))pitcherIds.set(normalize(r.name),r.player_id);}
+ }catch(e){console.warn('Player profile lookup unavailable',e);}
+ render();
+ document.getElementById('sort').addEventListener('change',render);
+}
+function render(){
+ const newest=document.getElementById('sort').value==='newest';
+ const entries=[...matchups].sort((a,b)=>newest?b[0].localeCompare(a[0]):a[0].localeCompare(b[0]));
+ document.getElementById('duelGrid').innerHTML=entries.map(m=>{
+  const [dt,id,pk,away,home,park,starterAway,starterHome,description,label]=m;
+  const player=(name,team)=>{const pid=pitcherIds.get(normalize(name));const title=esc(name);return '<div class="duel-person"><div class="duel-name">'+(pid?'<a href="./player.html?id='+encodeURIComponent(pid)+'">'+title+'</a>':title)+'</div><div class="duel-team">'+esc(team)+'</div></div>';};
+  const date=new Date(dt+'T12:00:00').toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  return '<article class="duel-card"><div class="duel-top"><div class="duel-date">'+esc(date)+'</div><div class="duel-match">'+esc(away)+' at '+esc(home)+' · '+esc(park)+'</div><div class="duel-pitchers">'+player(starterAway,away)+'<span class="duel-vs">VS</span>'+player(starterHome,home)+'</div></div><div class="duel-body"><div class="duel-context">'+esc(label)+'</div><p>'+esc(description)+'</p><div class="duel-links"><a href="./game.html?id='+id+'">Courtside box score ↗</a><a href="https://www.mlb.com/gameday/'+pk+'" target="_blank" rel="noopener noreferrer">MLB game ↗</a></div></div></article>';
+ }).join('');
+}
+document.addEventListener('DOMContentLoaded',init);
+</script></body></html>

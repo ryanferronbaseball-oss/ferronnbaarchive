@@ -46,14 +46,18 @@ const body=divider("First five listed")+starters.map(statRow).join("")+divider("
 return '<section class="panel"><h2>'+esc(name)+'</h2><div class="scroll"><table><thead><tr><th>Player</th><th>MIN</th><th>PTS</th><th>REB</th><th>AST</th><th>STL</th><th>BLK</th><th>FG</th><th>3PT</th><th>FT</th><th>TO</th><th>PF</th></tr></thead><tbody>'+body+'<tr class="totals"><td>Player totals</td><td>—</td><td>'+totals("pts")+'</td><td>'+totals("reb")+'</td><td>'+totals("ast")+'</td><td>'+totals("stl")+'</td><td>'+totals("blk")+'</td><td>'+totals("fgm")+'-'+totals("fga")+'</td><td>'+totals("fg3m")+'-'+totals("fg3a")+'</td><td>'+totals("ftm")+'-'+totals("fta")+'</td><td>'+totals("tov")+'</td><td>'+(rows.every(p=>p.pf!=null)?totals("pf"):"—")+'</td></tr></tbody></table></div></section>'
 }
 function archiveImpact(p){
-  // Transparent, unofficial box-score composite. Higher is better.
-  const missedFG=Number(p.fga||0)-Number(p.fgm||0);
-  const missedFT=Number(p.fta||0)-Number(p.ftm||0);
-  return Number(p.pts||0)+Number(p.reb||0)+Number(p.ast||0)
-    +Number(p.stl||0)+Number(p.blk||0)-Number(p.tov||0)-missedFG-missedFT;
+  // Hollinger Game Score, using 0.5 total rebounds only where the split is unavailable.
+  const required=['pts','fgm','fga','fta','ftm','ast','stl','blk','pf','tov'];
+  const known=k=>p[k]!=null&&p[k]!==''&&Number.isFinite(Number(p[k]));
+  if(!required.every(known))return null;
+  const split=known('oreb')&&known('dreb');
+  if(!split&&!known('reb'))return null;
+  const rebounds=split?0.7*Number(p.oreb)+0.3*Number(p.dreb):0.5*Number(p.reb);
+  const score=Number(p.pts)+0.4*Number(p.fgm)+rebounds+Number(p.stl)+0.7*Number(p.ast)+0.7*Number(p.blk)-0.7*Number(p.fga)-0.4*(Number(p.fta)-Number(p.ftm))-0.4*Number(p.pf)-Number(p.tov);
+  return Math.round((score+Number.EPSILON)*10)/10;
 }
 function rankedByImpact(players){
-  return players.filter(p=>["pts","reb","ast","stl","blk","tov","fga","fgm","fta","ftm"].every(k=>p[k]!=null)).slice().sort((a,b)=>archiveImpact(b)-archiveImpact(a)||Number(b.pts||0)-Number(a.pts||0)||a.player.localeCompare(b.player));
+  return players.filter(p=>archiveImpact(p)!==null).slice().sort((a,b)=>archiveImpact(b)-archiveImpact(a)||Number(b.pts||0)-Number(a.pts||0)||a.player.localeCompare(b.player));
 }
 function topImpactPerformances(players){
   const top=rankedByImpact(players).slice(0,5);
@@ -78,7 +82,7 @@ function playerOfGame(players){
     +cell("MIN",displayMinutes(p.minutes))+cell("PTS",m(p,"pts"))+cell("REB",m(p,"reb"))+cell("AST",m(p,"ast"))
     +cell("STL",m(p,"stl"))+cell("BLK",m(p,"blk"))+cell("OREB",m(p,"oreb"))+cell("DREB",m(p,"dreb"))
     +cell("FG",shots(p,"fgm","fga"))+cell("3PT",shots(p,"fg3m","fg3a"))+cell("FT",shots(p,"ftm","fta"))+cell("TO",m(p,"tov"))
-    +'</div><p class="pog-method">Unofficial selection by box-score impact: PTS + REB + AST + STL + BLK − missed FG − missed FT − TO. This is not an official NCAA award or an advanced all-in-one metric.</p></section>';
+    +'</div><p class="pog-method">Courtside Archive selection using Hollinger Game Score: PTS + 0.4 FGM + 0.7 OREB + 0.3 DREB + STL + 0.7 AST + 0.7 BLK − 0.7 FGA − 0.4 missed FT − 0.4 PF − TO. When rebound splits are missing, 0.5 per total rebound is used. This is not an official NCAA award.</p></section>';
 }
 function gameRecap(g,entries,awayScore,homeScore){
   const written=writtenRecaps[String(g.id)];

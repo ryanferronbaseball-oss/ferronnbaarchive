@@ -49,7 +49,9 @@ document.addEventListener('DOMContentLoaded',async()=>{
   el('milestoneList').innerHTML=items.length?items.map(m=>{
    const game=attendance.find(g=>g.attendance_id===m.attendance_id)||attendance.find(g=>g.date===m.date&&[g.home,g.away].some(t=>String(t).toLowerCase().includes(String(m.opponent||'').toLowerCase())));
    const gameLink=game?'<a href="./game.html?id='+encodeURIComponent(game.attendance_id)+'">Attended game ↗</a>':'';
-   const playerId=m.player_id||m.events.find(e=>e.player_id)?.player_id;\n   const profileLink=playerId?'./player.html?id='+encodeURIComponent(playerId):'';\n   const tags=tagsFor(m).map(t=>'<span class="milestone-pill">'+esc(t)+'</span>').join(' ');
+   const playerId=m.player_id||m.events.find(e=>e.player_id)?.player_id;
+   const profileLink=playerId?'./player.html?id='+encodeURIComponent(playerId):'';
+   const tags=tagsFor(m).map(t=>'<span class="milestone-pill">'+esc(t)+'</span>').join(' ');
    const descriptions=[...new Set(m.events.map(e=>e.description).filter(Boolean))];
    const sourceLinks=[...new Set(m.events.map(e=>e.source_url).filter(Boolean))].map((url,i)=>'<a href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">Verification source'+(i?(' '+(i+1)):'')+' ↗</a>').join('');
    return '<article class="milestone-entry"><div class="milestone-tags">'+tags+'</div><h2>'+esc(m.player)+'</h2><div class="milestone-meta">'+esc(m.date)+' · '+esc(m.team)+' vs. '+esc(m.opponent)+'</div>'+descriptions.map(d=>'<p>'+esc(d)+'</p>').join('')+'<div class="milestone-links">'+(profileLink?'<a href="'+profileLink+'">Player profile ↗</a>':'')+gameLink+sourceLinks+'</div></article>';

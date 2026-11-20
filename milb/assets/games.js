@@ -1,6 +1,16 @@
 /* MiLB Games — MLB-style game picker, scoreboard, lineups and box scores.
    All data requests stay within milb/data, independently of MLB. */
 (()=>{"use strict";
+async function mergeScreenshot2019(rows){
+ const response=await fetch("./data/player_stats_2019_05_04.json",{cache:"no-store"});
+ if(response.status===404)return;
+ if(!response.ok)throw Error("2019 MiLB supplement unavailable");
+ const extra=await response.json();
+ if(!Array.isArray(extra))throw Error("Invalid 2019 MiLB supplement");
+ const seen=new Set(rows.map(x=>String(x.game_id)+"|"+String(x.team)+"|"+String(x.name)));
+ for(const x of extra){const key=String(x.game_id)+"|"+String(x.team)+"|"+String(x.name);if(!seen.has(key)){rows.push(x);seen.add(key)}}
+}
+
 const $=id=>document.getElementById(id);
 const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const num=v=>v==null||v===""?null:Number.isFinite(Number(v))?Number(v):null;
@@ -167,6 +177,7 @@ async function load(){
   const [games,rows,innings,plays,decisions]=await Promise.all([
    get("games"),get("player_stats"),get("inning_scores",true),get("scoring_plays",true),get("pitching_decisions",true)]);
   if(!Array.isArray(games)||!Array.isArray(rows))throw Error("Invalid MiLB game data");
+  await mergeScreenshot2019(rows);
   const ordered=games.slice().sort((a,b)=>String(b.date).localeCompare(String(a.date))||String(b.id).localeCompare(String(a.id)));
   if(!ordered.length){app.innerHTML='<div class="eyebrow">MiLB · Games & box scores</div><h1>Game details.</h1><div class="empty">No attended MiLB games have been imported yet.</div>';return;}
   const id=new URLSearchParams(location.search).get("id");

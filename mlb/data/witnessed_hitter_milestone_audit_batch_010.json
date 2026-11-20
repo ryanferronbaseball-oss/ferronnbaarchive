@@ -1,0 +1,43 @@
+{
+  "audit_scope": "MLB career hitting milestones witnessed",
+  "batch_number": 10,
+  "batch_size": 100,
+  "total_players": 1633,
+  "players_in_batch": 100,
+  "candidate_count": 2,
+  "candidates": [
+    {
+      "type": "hits",
+      "milestone": 1,
+      "player_id": "430632",
+      "date": "2005-09-10",
+      "game_pk": 24759,
+      "attendance_id": 4,
+      "team": "Los Angeles Dodgers",
+      "game_stat": 2,
+      "career_before_game": 0,
+      "career_after_game": 2,
+      "same_day_doubleheader": false,
+      "source_url": "https://statsapi.mlb.com/api/v1/people/430632/stats?stats=gameLog&group=hitting&season=2005",
+      "status": "candidate_needs_independent_verification"
+    },
+    {
+      "type": "hits",
+      "milestone": 1,
+      "player_id": "435044",
+      "date": "2008-06-26",
+      "game_pk": 234941,
+      "attendance_id": 19,
+      "team": "Minnesota Twins",
+      "game_stat": 1,
+      "career_before_game": 0,
+      "career_after_game": 1,
+      "same_day_doubleheader": false,
+      "source_url": "https://statsapi.mlb.com/api/v1/people/435044/stats?stats=gameLog&group=hitting&season=2008",
+      "status": "candidate_needs_independent_verification"
+    }
+  ],
+  "errors": [],
+  "complete": true,
+  "publication_status": "candidate_only"
+}

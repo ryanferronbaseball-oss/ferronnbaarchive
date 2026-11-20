@@ -1,0 +1,28 @@
+{
+  "audit_scope": "MLB career hitting milestones witnessed",
+  "batch_number": 5,
+  "batch_size": 100,
+  "total_players": 1633,
+  "players_in_batch": 100,
+  "candidate_count": 1,
+  "candidates": [
+    {
+      "type": "hits",
+      "milestone": 1500,
+      "player_id": "123723",
+      "date": "2008-06-28",
+      "game_pk": 234974,
+      "attendance_id": 21,
+      "team": "Seattle Mariners",
+      "game_stat": 1,
+      "career_before_game": 1499,
+      "career_after_game": 1500,
+      "same_day_doubleheader": false,
+      "source_url": "https://statsapi.mlb.com/api/v1/people/123723/stats?stats=gameLog&group=hitting&season=2008",
+      "status": "candidate_needs_independent_verification"
+    }
+  ],
+  "errors": [],
+  "complete": true,
+  "publication_status": "candidate_only"
+}

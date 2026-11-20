@@ -1,0 +1,58 @@
+{
+  "audit_scope": "MLB career hitting milestones witnessed",
+  "batch_number": 8,
+  "batch_size": 100,
+  "total_players": 1633,
+  "players_in_batch": 100,
+  "candidate_count": 3,
+  "candidates": [
+    {
+      "type": "hits",
+      "milestone": 1000,
+      "player_id": "112736",
+      "date": "2008-08-16",
+      "game_pk": 235601,
+      "attendance_id": 24,
+      "team": "Milwaukee Brewers",
+      "game_stat": 2,
+      "career_before_game": 999,
+      "career_after_game": 1001,
+      "same_day_doubleheader": false,
+      "source_url": "https://statsapi.mlb.com/api/v1/people/112736/stats?stats=gameLog&group=hitting&season=2008",
+      "status": "candidate_needs_independent_verification"
+    },
+    {
+      "type": "home_runs",
+      "milestone": 1,
+      "player_id": "678894",
+      "date": "2023-07-24",
+      "game_pk": 717276,
+      "attendance_id": 112,
+      "team": "Pittsburgh Pirates",
+      "game_stat": 1,
+      "career_before_game": 0,
+      "career_after_game": 1,
+      "same_day_doubleheader": false,
+      "source_url": "https://statsapi.mlb.com/api/v1/people/678894/stats?stats=gameLog&group=hitting&season=2023",
+      "status": "candidate_needs_independent_verification"
+    },
+    {
+      "type": "stolen_bases",
+      "milestone": 1,
+      "player_id": "675961",
+      "date": "2024-04-25",
+      "game_pk": 745512,
+      "attendance_id": 119,
+      "team": "Pittsburgh Pirates",
+      "game_stat": 1,
+      "career_before_game": 0,
+      "career_after_game": 1,
+      "same_day_doubleheader": false,
+      "source_url": "https://statsapi.mlb.com/api/v1/people/675961/stats?stats=gameLog&group=hitting&season=2024",
+      "status": "candidate_needs_independent_verification"
+    }
+  ],
+  "errors": [],
+  "complete": true,
+  "publication_status": "candidate_only"
+}

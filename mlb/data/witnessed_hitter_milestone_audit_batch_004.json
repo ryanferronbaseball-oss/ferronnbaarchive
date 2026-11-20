@@ -1,0 +1,28 @@
+{
+  "audit_scope": "MLB career hitting milestones witnessed",
+  "batch_number": 4,
+  "batch_size": 100,
+  "total_players": 1633,
+  "players_in_batch": 100,
+  "candidate_count": 1,
+  "candidates": [
+    {
+      "type": "home_runs",
+      "milestone": 1,
+      "player_id": "519222",
+      "date": "2013-08-04",
+      "game_pk": 348403,
+      "attendance_id": 47,
+      "team": "New York Yankees",
+      "game_stat": 1,
+      "career_before_game": 0,
+      "career_after_game": 1,
+      "same_day_doubleheader": false,
+      "source_url": "https://statsapi.mlb.com/api/v1/people/519222/stats?stats=gameLog&group=hitting&season=2013",
+      "status": "candidate_needs_independent_verification"
+    }
+  ],
+  "errors": [],
+  "complete": true,
+  "publication_status": "candidate_only"
+}

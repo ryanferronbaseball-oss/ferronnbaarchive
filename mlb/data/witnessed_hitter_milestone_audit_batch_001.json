@@ -8,6 +8,21 @@
   "candidates": [
     {
       "type": "hits",
+      "milestone": 1500,
+      "player_id": "114789",
+      "date": "2006-08-04",
+      "game_pk": 41572,
+      "attendance_id": 7,
+      "team": "San Diego Padres",
+      "game_stat": 2,
+      "career_before_game": 1499,
+      "career_after_game": 1501,
+      "same_day_doubleheader": false,
+      "source_url": "https://statsapi.mlb.com/api/v1/people/114789/stats?stats=gameLog&group=hitting&season=2006",
+      "status": "candidate_needs_independent_verification"
+    },
+    {
+      "type": "hits",
       "milestone": 1000,
       "player_id": "461314",
       "date": "2013-05-12",
@@ -22,114 +37,22 @@
       "status": "candidate_needs_independent_verification"
     },
     {
-      "type": "hits",
-      "milestone": 1500,
-      "player_id": "430947",
-      "date": "2017-09-22",
-      "game_pk": 492392,
-      "attendance_id": 73,
-      "team": "San Diego Padres",
-      "game_stat": 1,
-      "career_before_game": 1499,
-      "career_after_game": 1500,
-      "same_day_doubleheader": false,
-      "source_url": "https://statsapi.mlb.com/api/v1/people/430947/stats?stats=gameLog&group=hitting&season=2017",
-      "status": "candidate_needs_independent_verification"
-    },
-    {
       "type": "home_runs",
-      "milestone": 400,
-      "player_id": "592518",
-      "date": "2025-08-20",
-      "game_pk": 776656,
-      "attendance_id": 128,
-      "team": "San Diego Padres",
+      "milestone": 100,
+      "player_id": "475174",
+      "date": "2019-08-11",
+      "game_pk": 566333,
+      "attendance_id": 87,
+      "team": "Colorado Rockies",
       "game_stat": 1,
-      "career_before_game": 399,
-      "career_after_game": 400,
+      "career_before_game": 99,
+      "career_after_game": 100,
       "same_day_doubleheader": false,
-      "source_url": "https://statsapi.mlb.com/api/v1/people/592518/stats?stats=gameLog&group=hitting&season=2025",
+      "source_url": "https://statsapi.mlb.com/api/v1/people/475174/stats?stats=gameLog&group=hitting&season=2019",
       "status": "candidate_needs_independent_verification"
     }
   ],
-  "errors": [
-    {
-      "player_id": "665742",
-      "error": "2022 home_runs: game logs sum 27, yearByYear sum 54"
-    },
-    {
-      "player_id": "475174",
-      "error": "2019 home_runs: game logs sum 10, yearByYear sum 20"
-    },
-    {
-      "player_id": "506560",
-      "error": "2012 home_runs: game logs sum 5, yearByYear sum 10"
-    },
-    {
-      "player_id": "461416",
-      "error": "2015 home_runs: game logs sum 6, yearByYear sum 12"
-    },
-    {
-      "player_id": "595978",
-      "error": "2023 home_runs: game logs sum 1, yearByYear sum 2"
-    },
-    {
-      "player_id": "543333",
-      "error": "2022 home_runs: game logs sum 8, yearByYear sum 16"
-    },
-    {
-      "player_id": "595777",
-      "error": "2023 home_runs: game logs sum 9, yearByYear sum 18"
-    },
-    {
-      "player_id": "596142",
-      "error": "2023 home_runs: game logs sum 19, yearByYear sum 38"
-    },
-    {
-      "player_id": "500208",
-      "error": "2014 home_runs: game logs sum 10, yearByYear sum 20"
-    },
-    {
-      "player_id": "457727",
-      "error": "2017 home_runs: game logs sum 10, yearByYear sum 20"
-    },
-    {
-      "player_id": "605137",
-      "error": "2022 home_runs: game logs sum 17, yearByYear sum 34"
-    },
-    {
-      "player_id": "407812",
-      "error": "2009 home_runs: game logs sum 24, yearByYear sum 48"
-    },
-    {
-      "player_id": "578428",
-      "error": "2021 home_runs: game logs sum 9, yearByYear sum 18"
-    },
-    {
-      "player_id": "592273",
-      "error": "2022 home_runs: game logs sum 28, yearByYear sum 56"
-    },
-    {
-      "player_id": "232694",
-      "error": "2008 home_runs: game logs sum 21, yearByYear sum 42"
-    },
-    {
-      "player_id": "407487",
-      "error": "2011 home_runs: game logs sum 11, yearByYear sum 22"
-    },
-    {
-      "player_id": "430668",
-      "error": "2007 home_runs: game logs sum 11, yearByYear sum 22"
-    },
-    {
-      "player_id": "150093",
-      "error": "2013 home_runs: game logs sum 34, yearByYear sum 68"
-    },
-    {
-      "player_id": "111851",
-      "error": "2009 home_runs: game logs sum 9, yearByYear sum 18"
-    }
-  ],
-  "complete": false,
+  "errors": [],
+  "complete": true,
   "publication_status": "candidate_only"
 }

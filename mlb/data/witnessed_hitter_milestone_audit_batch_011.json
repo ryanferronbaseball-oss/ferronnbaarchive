@@ -1,0 +1,43 @@
+{
+  "audit_scope": "MLB career hitting milestones witnessed",
+  "batch_number": 11,
+  "batch_size": 100,
+  "total_players": 1633,
+  "players_in_batch": 100,
+  "candidate_count": 2,
+  "candidates": [
+    {
+      "type": "hits",
+      "milestone": 1,
+      "player_id": "453954",
+      "date": "2009-07-19",
+      "game_pk": 245566,
+      "attendance_id": 28,
+      "team": "Chicago Cubs",
+      "game_stat": 1,
+      "career_before_game": 0,
+      "career_after_game": 1,
+      "same_day_doubleheader": false,
+      "source_url": "https://statsapi.mlb.com/api/v1/people/453954/stats?stats=gameLog&group=hitting&season=2009",
+      "status": "candidate_needs_independent_verification"
+    },
+    {
+      "type": "stolen_bases",
+      "milestone": 1,
+      "player_id": "450315",
+      "date": "2011-07-28",
+      "game_pk": 288464,
+      "attendance_id": 33,
+      "team": "Arizona Diamondbacks",
+      "game_stat": 1,
+      "career_before_game": 0,
+      "career_after_game": 1,
+      "same_day_doubleheader": false,
+      "source_url": "https://statsapi.mlb.com/api/v1/people/450315/stats?stats=gameLog&group=hitting&season=2011",
+      "status": "candidate_needs_independent_verification"
+    }
+  ],
+  "errors": [],
+  "complete": true,
+  "publication_status": "candidate_only"
+}

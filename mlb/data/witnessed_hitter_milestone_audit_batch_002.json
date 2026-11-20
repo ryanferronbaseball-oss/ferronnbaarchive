@@ -1,0 +1,43 @@
+{
+  "audit_scope": "MLB career hitting milestones witnessed",
+  "batch_number": 2,
+  "batch_size": 100,
+  "total_players": 1633,
+  "players_in_batch": 100,
+  "candidate_count": 2,
+  "candidates": [
+    {
+      "type": "hits",
+      "milestone": 1,
+      "player_id": "456030",
+      "date": "2006-08-22",
+      "game_pk": 41817,
+      "attendance_id": 8,
+      "team": "Boston Red Sox",
+      "game_stat": 1,
+      "career_before_game": 0,
+      "career_after_game": 1,
+      "same_day_doubleheader": false,
+      "source_url": "https://statsapi.mlb.com/api/v1/people/456030/stats?stats=gameLog&group=hitting&season=2006",
+      "status": "candidate_needs_independent_verification"
+    },
+    {
+      "type": "hits",
+      "milestone": 1,
+      "player_id": "450308",
+      "date": "2007-06-16",
+      "game_pk": 69138,
+      "attendance_id": 10,
+      "team": "Los Angeles Angels",
+      "game_stat": 1,
+      "career_before_game": 0,
+      "career_after_game": 1,
+      "same_day_doubleheader": false,
+      "source_url": "https://statsapi.mlb.com/api/v1/people/450308/stats?stats=gameLog&group=hitting&season=2007",
+      "status": "candidate_needs_independent_verification"
+    }
+  ],
+  "errors": [],
+  "complete": true,
+  "publication_status": "candidate_only"
+}

@@ -27,10 +27,11 @@ def main():
     candidates=[]
     parser=argparse.ArgumentParser(description='Audit 100 MLB players per batch')
     parser.add_argument('--batch',type=int,default=1,help='1-based batch number')
+    parser.add_argument('--all-batches',action='store_true',help='Collect candidate batches sequentially until all players are scanned')
     args=parser.parse_args()
     if args.batch<1:parser.error('--batch must be >= 1')
     all_ids=sorted(player_games,key=lambda pid:(-len({str(g['game_pk']) for g,_ in player_games[pid]}),int(pid)))
-    ids=all_ids[(args.batch-1)*100:args.batch*100]
+    ids=all_ids if args.all_batches else all_ids[(args.batch-1)*100:args.batch*100]
     for start in range(0,len(ids),50):
         batch=ids[start:start+50]
         people=api("https://statsapi.mlb.com/api/v1/people?personIds="+",".join(batch)).get("people",[])
@@ -45,7 +46,15 @@ def main():
     # A player appearing for the first time in THIS archive is not necessarily a team debut.
     # Do not infer team debuts, first hits, HRs or career landmarks from partial attendance logs.
     output={"audit_scope":"MLB games attended","batch_number":args.batch,"batch_size":100,"total_players":len(all_ids),"games_total":len(games),"matched_game_pks":len(attended),"player_ids_in_boxscores":len(ids),"debut_candidates":candidates,"limitations":["Debut date matches require individual boxscore verification when multiple games occur that day.","Team debuts require complete career team game logs.","First hits/home runs and numeric career milestones require historical career cumulative logs.","This output is not the published verified milestone list."]}
-    dest=DATA/f"witnessed_milestone_audit_batch_{args.batch:03d}.json"
-    dest.write_text(json.dumps(output,indent=2)+"\n")
-    print(f"Checked {len(ids)} players, {len(attended)} matched games, {len(candidates)} MLB debut candidates. Output: {dest}")
+    if args.all_batches:
+        for offset in range(0,len(ids),100):
+            batch_number=offset//100+1
+            batch_ids=set(ids[offset:offset+100])
+            item=dict(output,batch_number=batch_number,player_ids_in_boxscores=len(batch_ids),debut_candidates=[c for c in candidates if c["player_id"] in batch_ids])
+            (DATA/f"witnessed_milestone_audit_batch_{batch_number:03d}.json").write_text(json.dumps(item,indent=2)+"\n")
+        print(f"Collected {len(candidates)} debut candidates across {(len(ids)+99)//100} batches; {len(ids)} players scanned.")
+    else:
+        dest=DATA/f"witnessed_milestone_audit_batch_{args.batch:03d}.json"
+        dest.write_text(json.dumps(output,indent=2)+"\n")
+        print(f"Checked {len(ids)} players, {len(attended)} matched games, {len(candidates)} MLB debut candidates. Output: {dest}")
 if __name__=="__main__":main()

@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "scope": "NBA regular-season games attended",
+  "display_rule": "One player card per attended game; combine all milestone tags for that player/game.",
+  "audit_status": "Partial audit; only previously approved or verified findings.",
+  "thresholds": {
+    "points": [
+      1,
+      1000,
+      "2500 then every 2500"
+    ],
+    "rebounds": [
+      1,
+      "every 1000"
+    ],
+    "assists": [
+      1,
+      "every 1000"
+    ]
+  },
+  "milestones": [
+    {
+      "player": "Kobe Bryant",
+      "date": "2006-04-02",
+      "attendance_id": 31,
+      "team": "LA Lakers",
+      "opponent": "Houston",
+      "type": "historic",
+      "title": "23rd 40-point game of 2005–06",
+      "description": "Scored 43 points, tying Elgin Baylor's Lakers single-season record of 23 games with 40 or more points.",
+      "id": "nba-witnessed-1",
+      "verified": true
+    },
+    {
+      "player": "Kobe Bryant",
+      "date": "2007-03-18",
+      "attendance_id": 7,
+      "team": "LA Lakers",
+      "opponent": "Minnesota",
+      "type": "historic",
+      "title": "Second straight 50-point game",
+      "description": "Scored 50 points, the second performance in a four-game streak of 50-point games.",
+      "id": "nba-witnessed-2",
+      "verified": true
+    },
+    {
+      "player": "Blake Griffin",
+      "date": "2010-11-22",
+      "attendance_id": 19,
+      "team": "LA Clippers",
+      "opponent": "New Orleans",
+      "type": "historic",
+      "title": "27-game rookie double-double streak",
+      "description": "Recorded 24 points and 13 rebounds in the second game of what became a 27-game consecutive double-double streak. Retrospective streak milestone; the record was established later.",
+      "id": "nba-witnessed-3",
+      "verified": true
+    },
+    {
+      "player": "John Jenkins",
+      "date": "2012-11-11",
+      "attendance_id": 23,
+      "team": "Atlanta",
+      "opponent": "LA Clippers",
+      "type": "nba_debut",
+      "title": "NBA debut",
+      "description": "Made his NBA debut against the Clippers, recording 6 points and 2 rebounds.",
+      "id": "nba-witnessed-4",
+      "verified": true
+    },
+    {
+      "player": "John Jenkins",
+      "date": "2012-11-11",
+      "attendance_id": 23,
+      "team": "Atlanta",
+      "opponent": "LA Clippers",
+      "type": "career_first",
+      "metric": "points",
+      "threshold": 1,
+      "title": "First career point",
+      "description": "Scored his first NBA points (6 in the game).",
+      "id": "nba-witnessed-5",
+      "verified": true
+    },
+    {
+      "player": "John Jenkins",
+      "date": "2012-11-11",
+      "attendance_id": 23,
+      "team": "Atlanta",
+      "opponent": "LA Clippers",
+      "type": "career_first",
+      "metric": "rebounds",
+      "threshold": 1,
+      "title": "First career rebound",
+      "description": "Grabbed his first NBA rebounds (2 in the game).",
+      "id": "nba-witnessed-6",
+      "verified": true
+    },
+    {
+      "player": "Mike Scott",
+      "date": "2012-11-11",
+      "attendance_id": 23,
+      "team": "Atlanta",
+      "opponent": "LA Clippers",
+      "type": "nba_debut",
+      "title": "NBA debut",
+      "description": "Made his NBA debut against the Clippers.",
+      "id": "nba-witnessed-7",
+      "verified": true
+    },
+    {
+      "player": "Mike Scott",
+      "date": "2012-11-11",
+      "attendance_id": 23,
+      "team": "Atlanta",
+      "opponent": "LA Clippers",
+      "type": "career_first",
+      "metric": "rebounds",
+      "threshold": 1,
+      "title": "First career rebound",
+      "description": "Grabbed his first NBA rebound (1 in the game).",
+      "id": "nba-witnessed-8",
+      "verified": true
+    }
+  ]
+}

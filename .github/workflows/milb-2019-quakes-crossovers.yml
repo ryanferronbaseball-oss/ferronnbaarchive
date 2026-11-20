@@ -1,0 +1,39 @@
+name: 2019 Quakes Giants attended MLB college crossover audit
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "milb/scripts/audit_quakes_giants_2019_crossovers.py"
+      - ".github/workflows/milb-2019-quakes-crossovers.yml"
+jobs:
+  verify-and-publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Verify official MLB debut and exact witnessed MLB IDs; inspect college identities
+        run: python -u milb/scripts/audit_quakes_giants_2019_crossovers.py
+      - name: Upload review artifact even when verification fails
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: quakes-giants-2019-crossover-audit
+          path: milb/data/quakes_giants_2019_crossover_audit.json
+          if-no-files-found: warn
+      - name: Publish verified tags and review only
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add milb/data/player_links.json milb/data/quakes_giants_2019_crossover_audit.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Finish 2019 Quakes-Giants MLB and college crossover identity audit"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi

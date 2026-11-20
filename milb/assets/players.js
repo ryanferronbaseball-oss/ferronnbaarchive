@@ -1,5 +1,15 @@
 /* MiLB Players & Leaderboards: separate attendance-only statistics, MLB layout parity. */
 (()=>{"use strict";
+async function mergeScreenshot2019(rows){
+ const response=await fetch("./data/player_stats_2019_05_04.json",{cache:"no-store"});
+ if(response.status===404)return;
+ if(!response.ok)throw Error("2019 MiLB supplement unavailable");
+ const extra=await response.json();
+ if(!Array.isArray(extra))throw Error("Invalid 2019 MiLB supplement");
+ const seen=new Set(rows.map(x=>String(x.game_id)+"|"+String(x.team)+"|"+String(x.name)));
+ for(const x of extra){const key=String(x.game_id)+"|"+String(x.team)+"|"+String(x.name);if(!seen.has(key)){rows.push(x);seen.add(key)}}
+}
+
 const $=id=>document.getElementById(id);
 const esc=value=>String(value??"").replace(/[&<>"']/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
 const displayNum=x=>Number(x||0).toLocaleString("en-US");
@@ -106,6 +116,7 @@ async function main(){
   if(!gRes.ok||!rRes.ok)throw Error("MiLB games or player statistics unavailable");
   const [games,rows]=await Promise.all([gRes.json(),rRes.json()]);
   if(!Array.isArray(games)||!Array.isArray(rows))throw Error("Invalid MiLB data shape");
+  await mergeScreenshot2019(rows);
   const players=buildPlayers(rows);
   const gameIds=new Set(rows.map(r=>String(r.game_id)));
   const verified=games.filter(g=>g.box_score_status==="verified"&&g.source_game_id!=null&&gameIds.has(String(g.id)));

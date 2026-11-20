@@ -1,0 +1,28 @@
+{
+  "audit_scope": "MLB career pitching milestones witnessed",
+  "batch_number": 10,
+  "batch_size": 100,
+  "total_players": 1633,
+  "players_in_batch": 100,
+  "candidate_count": 1,
+  "candidates": [
+    {
+      "type": "saves",
+      "milestone": 1,
+      "player_id": "430646",
+      "date": "2006-05-13",
+      "game_pk": 40485,
+      "attendance_id": 5,
+      "team": "Seattle Mariners",
+      "game_stat": 1,
+      "career_before_game": 0,
+      "career_after_game": 1,
+      "same_day_doubleheader": false,
+      "source_url": "https://statsapi.mlb.com/api/v1/people/430646/stats?stats=gameLog&group=pitching&season=2006",
+      "status": "candidate_needs_independent_verification"
+    }
+  ],
+  "errors": [],
+  "complete": true,
+  "publication_status": "candidate_only"
+}

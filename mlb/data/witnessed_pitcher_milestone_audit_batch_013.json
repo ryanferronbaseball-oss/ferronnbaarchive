@@ -1,0 +1,58 @@
+{
+  "audit_scope": "MLB career pitching milestones witnessed",
+  "batch_number": 13,
+  "batch_size": 100,
+  "total_players": 1633,
+  "players_in_batch": 100,
+  "candidate_count": 3,
+  "candidates": [
+    {
+      "type": "wins",
+      "milestone": 1,
+      "player_id": "605155",
+      "date": "2018-09-28",
+      "game_pk": 531793,
+      "attendance_id": 83,
+      "team": "San Diego Padres",
+      "game_stat": 1,
+      "career_before_game": 0,
+      "career_after_game": 1,
+      "same_day_doubleheader": false,
+      "source_url": "https://statsapi.mlb.com/api/v1/people/605155/stats?stats=gameLog&group=pitching&season=2018",
+      "status": "candidate_needs_independent_verification"
+    },
+    {
+      "type": "wins",
+      "milestone": 50,
+      "player_id": "605182",
+      "date": "2022-09-20",
+      "game_pk": 662204,
+      "attendance_id": 98,
+      "team": "San Diego Padres",
+      "game_stat": 1,
+      "career_before_game": 49,
+      "career_after_game": 50,
+      "same_day_doubleheader": false,
+      "source_url": "https://statsapi.mlb.com/api/v1/people/605182/stats?stats=gameLog&group=pitching&season=2022",
+      "status": "candidate_needs_independent_verification"
+    },
+    {
+      "type": "saves",
+      "milestone": 1,
+      "player_id": "593619",
+      "date": "2023-05-01",
+      "game_pk": 718345,
+      "attendance_id": 103,
+      "team": "San Diego Padres",
+      "game_stat": 1,
+      "career_before_game": 0,
+      "career_after_game": 1,
+      "same_day_doubleheader": false,
+      "source_url": "https://statsapi.mlb.com/api/v1/people/593619/stats?stats=gameLog&group=pitching&season=2023",
+      "status": "candidate_needs_independent_verification"
+    }
+  ],
+  "errors": [],
+  "complete": true,
+  "publication_status": "candidate_only"
+}

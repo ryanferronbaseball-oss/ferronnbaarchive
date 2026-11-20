@@ -1,0 +1,28 @@
+{
+  "audit_scope": "MLB career pitching milestones witnessed",
+  "batch_number": 6,
+  "batch_size": 100,
+  "total_players": 1633,
+  "players_in_batch": 100,
+  "candidate_count": 1,
+  "candidates": [
+    {
+      "type": "strikeouts",
+      "milestone": 1,
+      "player_id": "453268",
+      "date": "2009-05-13",
+      "game_pk": 244693,
+      "attendance_id": 26,
+      "team": "Boston Red Sox",
+      "game_stat": 1,
+      "career_before_game": 0,
+      "career_after_game": 1,
+      "same_day_doubleheader": false,
+      "source_url": "https://statsapi.mlb.com/api/v1/people/453268/stats?stats=gameLog&group=pitching&season=2009",
+      "status": "candidate_needs_independent_verification"
+    }
+  ],
+  "errors": [],
+  "complete": true,
+  "publication_status": "candidate_only"
+}

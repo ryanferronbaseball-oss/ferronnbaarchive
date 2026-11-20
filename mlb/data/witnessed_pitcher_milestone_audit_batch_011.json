@@ -1,0 +1,58 @@
+{
+  "audit_scope": "MLB career pitching milestones witnessed",
+  "batch_number": 11,
+  "batch_size": 100,
+  "total_players": 1633,
+  "players_in_batch": 100,
+  "candidate_count": 3,
+  "candidates": [
+    {
+      "type": "strikeouts",
+      "milestone": 1,
+      "player_id": "450320",
+      "date": "2007-08-16",
+      "game_pk": 69934,
+      "attendance_id": 15,
+      "team": "Chicago Cubs",
+      "game_stat": 1,
+      "career_before_game": 0,
+      "career_after_game": 1,
+      "same_day_doubleheader": false,
+      "source_url": "https://statsapi.mlb.com/api/v1/people/450320/stats?stats=gameLog&group=pitching&season=2007",
+      "status": "candidate_needs_independent_verification"
+    },
+    {
+      "type": "strikeouts",
+      "milestone": 1,
+      "player_id": "451132",
+      "date": "2012-08-04",
+      "game_pk": 319334,
+      "attendance_id": 40,
+      "team": "San Diego Padres",
+      "game_stat": 2,
+      "career_before_game": 0,
+      "career_after_game": 2,
+      "same_day_doubleheader": false,
+      "source_url": "https://statsapi.mlb.com/api/v1/people/451132/stats?stats=gameLog&group=pitching&season=2012",
+      "status": "candidate_needs_independent_verification"
+    },
+    {
+      "type": "strikeouts",
+      "milestone": 1500,
+      "player_id": "451596",
+      "date": "2017-07-23",
+      "game_pk": 491569,
+      "attendance_id": 69,
+      "team": "Seattle Mariners",
+      "game_stat": 5,
+      "career_before_game": 1497,
+      "career_after_game": 1502,
+      "same_day_doubleheader": false,
+      "source_url": "https://statsapi.mlb.com/api/v1/people/451596/stats?stats=gameLog&group=pitching&season=2017",
+      "status": "candidate_needs_independent_verification"
+    }
+  ],
+  "errors": [],
+  "complete": true,
+  "publication_status": "candidate_only"
+}

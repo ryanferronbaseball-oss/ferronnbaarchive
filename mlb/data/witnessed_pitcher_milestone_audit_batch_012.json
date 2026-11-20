@@ -1,0 +1,43 @@
+{
+  "audit_scope": "MLB career pitching milestones witnessed",
+  "batch_number": 12,
+  "batch_size": 100,
+  "total_players": 1633,
+  "players_in_batch": 100,
+  "candidate_count": 2,
+  "candidates": [
+    {
+      "type": "strikeouts",
+      "milestone": 1,
+      "player_id": "543271",
+      "date": "2011-08-01",
+      "game_pk": 288526,
+      "attendance_id": 37,
+      "team": "San Diego Padres",
+      "game_stat": 1,
+      "career_before_game": 0,
+      "career_after_game": 1,
+      "same_day_doubleheader": false,
+      "source_url": "https://statsapi.mlb.com/api/v1/people/543271/stats?stats=gameLog&group=pitching&season=2011",
+      "status": "candidate_needs_independent_verification"
+    },
+    {
+      "type": "wins",
+      "milestone": 1,
+      "player_id": "543518",
+      "date": "2023-07-08",
+      "game_pk": 717439,
+      "attendance_id": 111,
+      "team": "Arizona Diamondbacks",
+      "game_stat": 1,
+      "career_before_game": 0,
+      "career_after_game": 1,
+      "same_day_doubleheader": false,
+      "source_url": "https://statsapi.mlb.com/api/v1/people/543518/stats?stats=gameLog&group=pitching&season=2023",
+      "status": "candidate_needs_independent_verification"
+    }
+  ],
+  "errors": [],
+  "complete": true,
+  "publication_status": "candidate_only"
+}

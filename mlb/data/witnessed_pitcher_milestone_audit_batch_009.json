@@ -1,0 +1,28 @@
+{
+  "audit_scope": "MLB career pitching milestones witnessed",
+  "batch_number": 9,
+  "batch_size": 100,
+  "total_players": 1633,
+  "players_in_batch": 100,
+  "candidate_count": 1,
+  "candidates": [
+    {
+      "type": "strikeouts",
+      "milestone": 1000,
+      "player_id": "207267",
+      "date": "2008-04-26",
+      "game_pk": 234120,
+      "attendance_id": 16,
+      "team": "Los Angeles Dodgers",
+      "game_stat": 2,
+      "career_before_game": 998,
+      "career_after_game": 1000,
+      "same_day_doubleheader": false,
+      "source_url": "https://statsapi.mlb.com/api/v1/people/207267/stats?stats=gameLog&group=pitching&season=2008",
+      "status": "candidate_needs_independent_verification"
+    }
+  ],
+  "errors": [],
+  "complete": true,
+  "publication_status": "candidate_only"
+}

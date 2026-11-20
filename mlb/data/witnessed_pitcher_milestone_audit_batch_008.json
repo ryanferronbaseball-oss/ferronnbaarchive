@@ -1,0 +1,43 @@
+{
+  "audit_scope": "MLB career pitching milestones witnessed",
+  "batch_number": 8,
+  "batch_size": 100,
+  "total_players": 1633,
+  "players_in_batch": 100,
+  "candidate_count": 2,
+  "candidates": [
+    {
+      "type": "strikeouts",
+      "milestone": 1,
+      "player_id": "669308",
+      "date": "2024-07-14",
+      "game_pk": 745385,
+      "attendance_id": 121,
+      "team": "San Diego Padres",
+      "game_stat": 3,
+      "career_before_game": 0,
+      "career_after_game": 3,
+      "same_day_doubleheader": false,
+      "source_url": "https://statsapi.mlb.com/api/v1/people/669308/stats?stats=gameLog&group=pitching&season=2024",
+      "status": "candidate_needs_independent_verification"
+    },
+    {
+      "type": "strikeouts",
+      "milestone": 1,
+      "player_id": "663897",
+      "date": "2025-06-27",
+      "game_pk": 777342,
+      "attendance_id": 125,
+      "team": "Atlanta Braves",
+      "game_stat": 1,
+      "career_before_game": 0,
+      "career_after_game": 1,
+      "same_day_doubleheader": false,
+      "source_url": "https://statsapi.mlb.com/api/v1/people/663897/stats?stats=gameLog&group=pitching&season=2025",
+      "status": "candidate_needs_independent_verification"
+    }
+  ],
+  "errors": [],
+  "complete": true,
+  "publication_status": "candidate_only"
+}

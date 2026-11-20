@@ -1,0 +1,28 @@
+{
+  "audit_scope": "MLB career pitching milestones witnessed",
+  "batch_number": 7,
+  "batch_size": 100,
+  "total_players": 1633,
+  "players_in_batch": 100,
+  "candidate_count": 1,
+  "candidates": [
+    {
+      "type": "strikeouts",
+      "milestone": 1,
+      "player_id": "642098",
+      "date": "2017-07-02",
+      "game_pk": 491324,
+      "attendance_id": 67,
+      "team": "Toronto Blue Jays",
+      "game_stat": 1,
+      "career_before_game": 0,
+      "career_after_game": 1,
+      "same_day_doubleheader": false,
+      "source_url": "https://statsapi.mlb.com/api/v1/people/642098/stats?stats=gameLog&group=pitching&season=2017",
+      "status": "candidate_needs_independent_verification"
+    }
+  ],
+  "errors": [],
+  "complete": true,
+  "publication_status": "candidate_only"
+}

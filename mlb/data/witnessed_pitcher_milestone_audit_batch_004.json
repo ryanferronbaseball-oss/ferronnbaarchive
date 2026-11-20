@@ -1,0 +1,58 @@
+{
+  "audit_scope": "MLB career pitching milestones witnessed",
+  "batch_number": 4,
+  "batch_size": 100,
+  "total_players": 1633,
+  "players_in_batch": 100,
+  "candidate_count": 3,
+  "candidates": [
+    {
+      "type": "wins",
+      "milestone": 50,
+      "player_id": "453178",
+      "date": "2013-08-04",
+      "game_pk": 348403,
+      "attendance_id": 47,
+      "team": "San Diego Padres",
+      "game_stat": 1,
+      "career_before_game": 49,
+      "career_after_game": 50,
+      "same_day_doubleheader": false,
+      "source_url": "https://statsapi.mlb.com/api/v1/people/453178/stats?stats=gameLog&group=pitching&season=2013",
+      "status": "candidate_needs_independent_verification"
+    },
+    {
+      "type": "wins",
+      "milestone": 1,
+      "player_id": "545332",
+      "date": "2016-07-02",
+      "game_pk": 448085,
+      "attendance_id": 61,
+      "team": "Arizona Diamondbacks",
+      "game_stat": 1,
+      "career_before_game": 0,
+      "career_after_game": 1,
+      "same_day_doubleheader": false,
+      "source_url": "https://statsapi.mlb.com/api/v1/people/545332/stats?stats=gameLog&group=pitching&season=2016",
+      "status": "candidate_needs_independent_verification"
+    },
+    {
+      "type": "wins",
+      "milestone": 50,
+      "player_id": "453344",
+      "date": "2017-08-15",
+      "game_pk": 491875,
+      "attendance_id": 71,
+      "team": "Los Angeles Dodgers",
+      "game_stat": 1,
+      "career_before_game": 49,
+      "career_after_game": 50,
+      "same_day_doubleheader": false,
+      "source_url": "https://statsapi.mlb.com/api/v1/people/453344/stats?stats=gameLog&group=pitching&season=2017",
+      "status": "candidate_needs_independent_verification"
+    }
+  ],
+  "errors": [],
+  "complete": true,
+  "publication_status": "candidate_only"
+}

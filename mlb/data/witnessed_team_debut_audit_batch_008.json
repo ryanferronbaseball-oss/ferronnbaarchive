@@ -1,0 +1,55 @@
+{
+  "audit_scope": "MLB franchise/team debuts",
+  "batch_number": 8,
+  "batch_size": 100,
+  "total_players": 1633,
+  "players_in_batch": 100,
+  "candidate_count": 3,
+  "candidates": [
+    {
+      "type": "team_debut",
+      "player_id": "115832",
+      "date": "2007-07-19",
+      "team_id": 119,
+      "team": "Los Angeles Dodgers",
+      "attendance_id": 12,
+      "game_pk": 69558,
+      "same_day_game_pks": [
+        69558
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/people/115832/stats?stats=gameLog&season=2007",
+      "status": "candidate_needs_exact_first_game_verification"
+    },
+    {
+      "type": "team_debut",
+      "player_id": "675961",
+      "date": "2023-07-25",
+      "team_id": 134,
+      "team": "Pittsburgh Pirates",
+      "attendance_id": 113,
+      "game_pk": 717258,
+      "same_day_game_pks": [
+        717258
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/people/675961/stats?stats=gameLog&season=2023",
+      "status": "candidate_needs_exact_first_game_verification"
+    },
+    {
+      "type": "team_debut",
+      "player_id": "669308",
+      "date": "2024-07-14",
+      "team_id": 135,
+      "team": "San Diego Padres",
+      "attendance_id": 121,
+      "game_pk": 745385,
+      "same_day_game_pks": [
+        745385
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/people/669308/stats?stats=gameLog&season=2024",
+      "status": "candidate_needs_exact_first_game_verification"
+    }
+  ],
+  "errors": [],
+  "complete": true,
+  "publication_status": "candidate_only"
+}

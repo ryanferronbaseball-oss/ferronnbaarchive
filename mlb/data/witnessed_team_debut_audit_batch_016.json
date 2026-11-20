@@ -1,0 +1,27 @@
+{
+  "audit_scope": "MLB franchise/team debuts",
+  "batch_number": 16,
+  "batch_size": 100,
+  "total_players": 1633,
+  "players_in_batch": 100,
+  "candidate_count": 1,
+  "candidates": [
+    {
+      "type": "team_debut",
+      "player_id": "686527",
+      "date": "2023-07-08",
+      "team_id": 109,
+      "team": "Arizona Diamondbacks",
+      "attendance_id": 111,
+      "game_pk": 717439,
+      "same_day_game_pks": [
+        717439
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/people/686527/stats?stats=gameLog&season=2023",
+      "status": "candidate_needs_exact_first_game_verification"
+    }
+  ],
+  "errors": [],
+  "complete": true,
+  "publication_status": "candidate_only"
+}

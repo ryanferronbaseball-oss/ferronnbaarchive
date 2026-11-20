@@ -1,0 +1,55 @@
+{
+  "audit_scope": "MLB franchise/team debuts",
+  "batch_number": 11,
+  "batch_size": 100,
+  "total_players": 1633,
+  "players_in_batch": 100,
+  "candidate_count": 3,
+  "candidates": [
+    {
+      "type": "team_debut",
+      "player_id": "450320",
+      "date": "2007-08-16",
+      "team_id": 112,
+      "team": "Chicago Cubs",
+      "attendance_id": 15,
+      "game_pk": 69934,
+      "same_day_game_pks": [
+        69934
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/people/450320/stats?stats=gameLog&season=2007",
+      "status": "candidate_needs_exact_first_game_verification"
+    },
+    {
+      "type": "team_debut",
+      "player_id": "451132",
+      "date": "2012-08-04",
+      "team_id": 135,
+      "team": "San Diego Padres",
+      "attendance_id": 40,
+      "game_pk": 319334,
+      "same_day_game_pks": [
+        319334
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/people/451132/stats?stats=gameLog&season=2012",
+      "status": "candidate_needs_exact_first_game_verification"
+    },
+    {
+      "type": "team_debut",
+      "player_id": "449173",
+      "date": "2017-07-01",
+      "team_id": 141,
+      "team": "Toronto Blue Jays",
+      "attendance_id": 66,
+      "game_pk": 491309,
+      "same_day_game_pks": [
+        491309
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/people/449173/stats?stats=gameLog&season=2017",
+      "status": "candidate_needs_exact_first_game_verification"
+    }
+  ],
+  "errors": [],
+  "complete": true,
+  "publication_status": "candidate_only"
+}

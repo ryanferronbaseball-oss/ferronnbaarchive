@@ -1,0 +1,69 @@
+{
+  "audit_scope": "MLB franchise/team debuts",
+  "batch_number": 1,
+  "batch_size": 100,
+  "total_players": 1633,
+  "players_in_batch": 100,
+  "candidate_count": 4,
+  "candidates": [
+    {
+      "type": "team_debut",
+      "player_id": "232694",
+      "date": "2008-07-26",
+      "team_id": 119,
+      "team": "Los Angeles Dodgers",
+      "attendance_id": 23,
+      "game_pk": 235318,
+      "same_day_game_pks": [
+        235318
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/people/232694/stats?stats=gameLog&season=2008",
+      "status": "candidate_needs_exact_first_game_verification"
+    },
+    {
+      "type": "team_debut",
+      "player_id": "405395",
+      "date": "2012-04-06",
+      "team_id": 108,
+      "team": "Los Angeles Angels",
+      "attendance_id": 38,
+      "game_pk": 317743,
+      "same_day_game_pks": [
+        317743
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/people/405395/stats?stats=gameLog&season=2012",
+      "status": "candidate_needs_exact_first_game_verification"
+    },
+    {
+      "type": "team_debut",
+      "player_id": "455104",
+      "date": "2012-04-06",
+      "team_id": 108,
+      "team": "Los Angeles Angels",
+      "attendance_id": 38,
+      "game_pk": 317743,
+      "same_day_game_pks": [
+        317743
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/people/455104/stats?stats=gameLog&season=2012",
+      "status": "candidate_needs_exact_first_game_verification"
+    },
+    {
+      "type": "team_debut",
+      "player_id": "623352",
+      "date": "2022-08-02",
+      "team_id": 135,
+      "team": "San Diego Padres",
+      "attendance_id": 95,
+      "game_pk": 662220,
+      "same_day_game_pks": [
+        662220
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/people/623352/stats?stats=gameLog&season=2022",
+      "status": "candidate_needs_exact_first_game_verification"
+    }
+  ],
+  "errors": [],
+  "complete": true,
+  "publication_status": "candidate_only"
+}

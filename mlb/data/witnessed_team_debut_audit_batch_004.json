@@ -1,0 +1,55 @@
+{
+  "audit_scope": "MLB franchise/team debuts",
+  "batch_number": 4,
+  "batch_size": 100,
+  "total_players": 1633,
+  "players_in_batch": 100,
+  "candidate_count": 3,
+  "candidates": [
+    {
+      "type": "team_debut",
+      "player_id": "453178",
+      "date": "2013-08-04",
+      "team_id": 135,
+      "team": "San Diego Padres",
+      "attendance_id": 47,
+      "game_pk": 348403,
+      "same_day_game_pks": [
+        348403
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/people/453178/stats?stats=gameLog&season=2013",
+      "status": "candidate_needs_exact_first_game_verification"
+    },
+    {
+      "type": "team_debut",
+      "player_id": "466988",
+      "date": "2014-08-01",
+      "team_id": 144,
+      "team": "Atlanta Braves",
+      "attendance_id": 52,
+      "game_pk": 382167,
+      "same_day_game_pks": [
+        382167
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/people/466988/stats?stats=gameLog&season=2014",
+      "status": "candidate_needs_exact_first_game_verification"
+    },
+    {
+      "type": "team_debut",
+      "player_id": "663845",
+      "date": "2023-06-03",
+      "team_id": 135,
+      "team": "San Diego Padres",
+      "attendance_id": 104,
+      "game_pk": 717903,
+      "same_day_game_pks": [
+        717903
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/people/663845/stats?stats=gameLog&season=2023",
+      "status": "candidate_needs_exact_first_game_verification"
+    }
+  ],
+  "errors": [],
+  "complete": true,
+  "publication_status": "candidate_only"
+}

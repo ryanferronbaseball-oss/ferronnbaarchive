@@ -1,0 +1,55 @@
+{
+  "audit_scope": "MLB franchise/team debuts",
+  "batch_number": 3,
+  "batch_size": 100,
+  "total_players": 1633,
+  "players_in_batch": 100,
+  "candidate_count": 3,
+  "candidates": [
+    {
+      "type": "team_debut",
+      "player_id": "475479",
+      "date": "2017-07-22",
+      "team_id": 136,
+      "team": "Seattle Mariners",
+      "attendance_id": 68,
+      "game_pk": 491554,
+      "same_day_game_pks": [
+        491554
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/people/475479/stats?stats=gameLog&season=2017",
+      "status": "candidate_needs_exact_first_game_verification"
+    },
+    {
+      "type": "team_debut",
+      "player_id": "543766",
+      "date": "2023-07-02",
+      "team_id": 145,
+      "team": "Chicago White Sox",
+      "attendance_id": 110,
+      "game_pk": 717518,
+      "same_day_game_pks": [
+        717518
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/people/543766/stats?stats=gameLog&season=2023",
+      "status": "candidate_needs_exact_first_game_verification"
+    },
+    {
+      "type": "team_debut",
+      "player_id": "592325",
+      "date": "2023-08-15",
+      "team_id": 135,
+      "team": "San Diego Padres",
+      "attendance_id": 114,
+      "game_pk": 716980,
+      "same_day_game_pks": [
+        716980
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/people/592325/stats?stats=gameLog&season=2023",
+      "status": "candidate_needs_exact_first_game_verification"
+    }
+  ],
+  "errors": [],
+  "complete": true,
+  "publication_status": "candidate_only"
+}

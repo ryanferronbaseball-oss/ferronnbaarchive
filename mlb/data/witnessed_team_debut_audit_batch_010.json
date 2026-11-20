@@ -1,0 +1,27 @@
+{
+  "audit_scope": "MLB franchise/team debuts",
+  "batch_number": 10,
+  "batch_size": 100,
+  "total_players": 1633,
+  "players_in_batch": 100,
+  "candidate_count": 1,
+  "candidates": [
+    {
+      "type": "team_debut",
+      "player_id": "430642",
+      "date": "2008-04-26",
+      "team_id": 115,
+      "team": "Colorado Rockies",
+      "attendance_id": 16,
+      "game_pk": 234120,
+      "same_day_game_pks": [
+        234120
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/people/430642/stats?stats=gameLog&season=2008",
+      "status": "candidate_needs_exact_first_game_verification"
+    }
+  ],
+  "errors": [],
+  "complete": true,
+  "publication_status": "candidate_only"
+}

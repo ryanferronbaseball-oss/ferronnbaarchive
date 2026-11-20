@@ -1,0 +1,41 @@
+{
+  "audit_scope": "MLB franchise/team debuts",
+  "batch_number": 6,
+  "batch_size": 100,
+  "total_players": 1633,
+  "players_in_batch": 100,
+  "candidate_count": 2,
+  "candidates": [
+    {
+      "type": "team_debut",
+      "player_id": "453268",
+      "date": "2009-05-13",
+      "team_id": 111,
+      "team": "Boston Red Sox",
+      "attendance_id": 26,
+      "game_pk": 244693,
+      "same_day_game_pks": [
+        244693
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/people/453268/stats?stats=gameLog&season=2009",
+      "status": "candidate_needs_exact_first_game_verification"
+    },
+    {
+      "type": "team_debut",
+      "player_id": "460701",
+      "date": "2014-08-02",
+      "team_id": 144,
+      "team": "Atlanta Braves",
+      "attendance_id": 53,
+      "game_pk": 382182,
+      "same_day_game_pks": [
+        382182
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/people/460701/stats?stats=gameLog&season=2014",
+      "status": "candidate_needs_exact_first_game_verification"
+    }
+  ],
+  "errors": [],
+  "complete": true,
+  "publication_status": "candidate_only"
+}

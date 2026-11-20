@@ -34,8 +34,13 @@ def main():
     ids=all_ids if args.all_batches else all_ids[(args.batch-1)*100:args.batch*100]
     for start in range(0,len(ids),50):
         batch=ids[start:start+50]
-        people=api("https://statsapi.mlb.com/api/v1/people?personIds="+",".join(batch)).get("people",[])
+        response=api("https://statsapi.mlb.com/api/v1/people?personIds="+",".join(batch))
+        if "people" not in response:
+            raise RuntimeError(f"MLB StatsAPI unavailable for player batch starting {start}; refusing to save incomplete candidate results")
+        people=response["people"]
         byid={str(p["id"]):p for p in people}
+        if len(byid)<len(batch):
+            raise RuntimeError(f"MLB StatsAPI returned {len(byid)} of {len(batch)} requested players; refusing incomplete scan")
         for pid in batch:
             person=byid.get(pid,{})
             debut=person.get("mlbDebutDate")

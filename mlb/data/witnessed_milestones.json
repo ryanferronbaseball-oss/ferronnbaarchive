@@ -4,6 +4,22 @@
   "verification_policy": "Only confirmed career or team firsts and numerical career landmarks occurring in attended games; no season openers treated as debuts without verification.",
   "milestones": [
     {
+      "id": "mlb-2009-05-13-daniel-bard-debut",
+      "player": "Daniel Bard",
+      "player_id": 453268,
+      "team": "Boston Red Sox",
+      "date": "2009-05-13",
+      "type": "mlb_debut",
+      "title": "Major League debut",
+      "description": "Pitched 2.0 scoreless innings against the Angels, allowing one hit and one walk with one strikeout.",
+      "opponent": "Los Angeles Angels",
+      "attendance_id": 26,
+      "game_pk": 244693,
+      "attendance_match": "2009-05-13 Boston Red Sox at Los Angeles Angels",
+      "source_url": "https://www.mlb.com/player/daniel-bard-453268",
+      "verified": true
+    },
+    {
       "id": "mlb-2012-04-06-pujols-angels-debut",
       "player": "Albert Pujols",
       "team": "Los Angeles Angels",
@@ -14,6 +30,22 @@
       "opponent": "Kansas City Royals",
       "attendance_match": "2012-04-06 Kansas City Royals at Los Angeles Angels",
       "source_url": "https://www.mlb.com/angels/news/albert-pujols-debuted-with-angels-in-2012",
+      "verified": true
+    },
+    {
+      "id": "mlb-2023-07-08-dominic-canzone-debut",
+      "player": "Dominic Canzone",
+      "player_id": 686527,
+      "team": "Arizona Diamondbacks",
+      "date": "2023-07-08",
+      "type": "mlb_debut",
+      "title": "Major League debut",
+      "description": "Went 0-for-3 in his first MLB game against Pittsburgh at Chase Field.",
+      "opponent": "Pittsburgh Pirates",
+      "attendance_id": 111,
+      "game_pk": 717439,
+      "attendance_match": "2023-07-08 Pittsburgh Pirates at Arizona Diamondbacks",
+      "source_url": "https://www.mlb.com/player/dominic-canzone-686527",
       "verified": true
     }
   ]

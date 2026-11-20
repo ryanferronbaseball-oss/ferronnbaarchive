@@ -3,13 +3,14 @@ on:
   push:
     paths:
       - '.github/workflows/mlb-milestone-batch-1.yml'
+      - 'mlb/scripts/audit_witnessed_milestones.py'
   workflow_dispatch:
 permissions:
   contents: write
 jobs:
   audit:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5

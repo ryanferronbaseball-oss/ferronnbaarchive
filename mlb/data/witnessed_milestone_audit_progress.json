@@ -23,7 +23,7 @@
     16,
     17
   ],
-  "status": "mlb_debut_discovery_and_verification_complete",
+  "status": "team_debut_candidate_discovery_submitted",
   "note": "Candidate scan is not comprehensive verification. Team debuts, first hits/HRs, career totals and historic achievements require separate career-log checks.",
   "phases": {
     "candidate_discovery": "configured for all 100-player batches; currently debut-date candidates only",
@@ -37,6 +37,14 @@
       "completed": true,
       "verified_and_published": 11,
       "verification_complete": true
+    },
+    "team_debut_candidates": {
+      "status": "workflow_committed_execution_not_yet_verified",
+      "batch_size": 100,
+      "expected_players": 1633,
+      "expected_batches": 17,
+      "verification": "pending; candidates not published",
+      "workflow": ".github/workflows/mlb-team-debut-audit.yml"
     }
   },
   "next_category": "team_debut"

@@ -1,4 +1,4 @@
-name: MLB witnessed milestones audit batch 1
+name: MLB witnessed milestone candidate discovery
 on:
   push:
     paths:
@@ -15,19 +15,19 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Audit first 100 players
-        run: python mlb/scripts/audit_witnessed_milestones.py --batch 1
+      - name: Collect all candidate batches of 100
+        run: python mlb/scripts/audit_witnessed_milestones.py --all-batches
       - name: Upload audit candidate artifact
         uses: actions/upload-artifact@v4
         with:
-          name: mlb-milestone-batch-001
-          path: mlb/data/witnessed_milestone_audit_batch_001.json
+          name: mlb-milestone-candidates
+          path: mlb/data/witnessed_milestone_audit_batch_*.json
       - name: Commit audit candidate results
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add mlb/data/witnessed_milestone_audit_batch_001.json
+          git add mlb/data/witnessed_milestone_audit_batch_*.json
           if ! git diff --cached --quiet; then
-            git commit -m "Record MLB milestone audit batch 1 candidates"
+            git commit -m "Record MLB milestone candidates in 100-player batches"
             git push
           fi

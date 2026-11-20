@@ -96,7 +96,11 @@
       "sh": null
     },
     "pitching": null,
-    "fielding": null,
+    "fielding": {
+      "putOuts": null,
+      "assists": null,
+      "errors": 1
+    },
     "source": "User-provided MiLB Gameday May 4 2019 box-score screenshot",
     "source_url": "https://www.milb.com/gameday/quakes-vs-giants/2019/05/04/576772/final/box",
     "id_verification": "MLB player page"
@@ -229,7 +233,8 @@
       "sb": 0,
       "cs": null,
       "sf": 0,
-      "sh": null
+      "sh": null,
+      "gidp": 1
     },
     "pitching": null,
     "fielding": null,
@@ -504,7 +509,11 @@
       "sh": null
     },
     "pitching": null,
-    "fielding": null,
+    "fielding": {
+      "putOuts": null,
+      "assists": null,
+      "errors": 1
+    },
     "source": "User-provided MiLB Gameday May 4 2019 box-score screenshot",
     "source_url": "https://www.milb.com/gameday/quakes-vs-giants/2019/05/04/576772/final/box",
     "id_verification": "MLB player page"
@@ -636,7 +645,8 @@
       "hbp": null,
       "w": 0,
       "l": 0,
-      "sv": 0
+      "sv": 0,
+      "balk": 1
     },
     "fielding": null,
     "source": "User-provided MiLB Gameday May 4 2019 box-score screenshot",

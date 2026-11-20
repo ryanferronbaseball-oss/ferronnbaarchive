@@ -1,5 +1,15 @@
 /* MiLB Overview — MLB overview layout parity, MiLB-only datasets. */
 (()=>{"use strict";
+async function mergeScreenshot2019(rows){
+ const response=await fetch("./data/player_stats_2019_05_04.json",{cache:"no-store"});
+ if(response.status===404)return;
+ if(!response.ok)throw Error("2019 MiLB supplement unavailable");
+ const extra=await response.json();
+ if(!Array.isArray(extra))throw Error("Invalid 2019 MiLB supplement");
+ const seen=new Set(rows.map(x=>String(x.game_id)+"|"+String(x.team)+"|"+String(x.name)));
+ for(const x of extra){const key=String(x.game_id)+"|"+String(x.team)+"|"+String(x.name);if(!seen.has(key)){rows.push(x);seen.add(key)}}
+}
+
 const $=id=>document.getElementById(id);
 const esc=value=>String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const date=value=>value?new Date(String(value)+"T12:00:00").toLocaleDateString("en-US",{month:"short",day:"numeric",year:"numeric"}):"Date pending";
@@ -105,6 +115,7 @@ document.addEventListener("DOMContentLoaded",async()=>{
   const fetchJSON=async name=>{const response=await fetch("./data/"+name+".json",{cache:"no-store"});if(!response.ok)throw Error(name+" unavailable");return response.json();};
   const [games,rows]=await Promise.all(["games","player_stats"].map(fetchJSON));
   if(!Array.isArray(games)||!Array.isArray(rows))throw Error("Invalid MiLB attendance data");
+  await mergeScreenshot2019(rows);
   render(games,rows);
  }catch(error){$("app").innerHTML='<div class="empty">Unable to load MiLB overview: '+esc(error.message)+'</div>';}
 });

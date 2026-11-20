@@ -34,11 +34,22 @@ Promise.all([fetch('./data/player_boxscores_espn.json?v=step2-college',{cache:'n
 const safeDiv=(num,den)=>den>0?num/den:null;
 const pctValue=(num,den)=>den>0?100*num/den:null;
 const zeroOrNA=(a,k)=>a.games.every(p=>p[k]!=null)?a.games.reduce((sum,p)=>sum+Number(p[k]),0):null;
+const gameImpact=p=>{
+  // Hollinger Game Score; use 0.5 x total rebounds if OREB/DREB are missing.
+  const required=['pts','fgm','fga','fta','ftm','ast','stl','blk','pf','tov'];
+  const known=k=>p[k]!=null&&p[k]!==''&&Number.isFinite(Number(p[k]));
+  if(!required.every(known))return null;
+  const split=known('oreb')&&known('dreb');
+  if(!split&&!known('reb'))return null;
+  const rebounds=split?0.7*Number(p.oreb)+0.3*Number(p.dreb):0.5*Number(p.reb);
+  const score=Number(p.pts)+0.4*Number(p.fgm)+rebounds+Number(p.stl)+0.7*Number(p.ast)+0.7*Number(p.blk)-0.7*Number(p.fga)-0.4*(Number(p.fta)-Number(p.ftm))-0.4*Number(p.pf)-Number(p.tov);
+  return Math.round((score+Number.EPSILON)*10)/10;
+};
 function advancedRecord(a){
  const o=zeroOrNA(a,'oreb'),d=zeroOrNA(a,'dreb'),st=zeroOrNA(a,'stl'),bl=zeroOrNA(a,'blk'),to=zeroOrNA(a,'tov');
  const q=a.games.reduce((v,p)=>{if(!['pts','reb','ast','stl','blk'].every(k=>p[k]!=null))return v;const qualifying=['pts','reb','ast','stl','blk'].filter(k=>Number(p[k])>=10).length;if(qualifying>=2)v.dd++;if(qualifying>=3)v.td++;v.valid++;return v},{dd:0,td:0,valid:0});
- // Game Score unavailable pending personal foul imports. Archive Impact uses the published Game Details formula.
- const impacts=a.games.map(p=>[p.pts,p.reb,p.ast,p.stl,p.blk,p.tov,p.fga,p.fgm,p.fta,p.ftm].every(v=>v!=null)? Number(p.pts)+Number(p.reb)+Number(p.ast)+Number(p.stl)+Number(p.blk)-Number(p.tov)-(p.fga-p.fgm)-(p.fta-p.ftm):null);
+ // Archive Impact now uses Hollinger Game Score, including the personal-foul penalty.
+  const impacts=a.games.map(gameImpact);
  const impactKnown=impacts.filter(v=>v!=null);
  return {...a,mpg:safeDiv(a.minutes,a.gp),efgpct:pctValue(a.fgm+0.5*a.fg3m,a.fga),twopct:pctValue(a.fgm-a.fg3m,a.fga-a.fg3a),threepar:safeDiv(a.fg3a,a.fga),ftr:safeDiv(a.fta,a.fga),ptsfga:safeDiv(a.pts,a.fga),astto:to===null?null:safeDiv(a.ast,to),tov:to,tovpg:to===null?null:safeDiv(to,a.gp),oreb:o,dreb:d,orebpg:o===null?null:safeDiv(o,a.gp),drebpg:d===null?null:safeDiv(d,a.gp),stlpg:st===null?null:safeDiv(st,a.gp),blkpg:bl===null?null:safeDiv(bl,a.gp),stocks:st===null||bl===null?null:st+bl,stockspg:st===null||bl===null?null:safeDiv(st+bl,a.gp),r36:safeDiv(a.reb*36,a.minutes),p36:safeDiv(a.pts*36,a.minutes),a36:safeDiv(a.ast*36,a.minutes),s36:st===null?null:safeDiv(st*36,a.minutes),b36:bl===null?null:safeDiv(bl*36,a.minutes),to36:to===null?null:safeDiv(to*36,a.minutes),stocks36:st===null||bl===null?null:safeDiv((st+bl)*36,a.minutes),dd:q.valid===a.gp?q.dd:null,td:q.valid===a.gp?q.td:null,ddpct:q.valid===a.gp?pctValue(q.dd,a.gp):null,tdpct:q.valid===a.gp?pctValue(q.td,a.gp):null,impactAvg:impactKnown.length===a.gp?safeDiv(impactKnown.reduce((x,y)=>x+y,0),a.gp):null,impactBest:impactKnown.length===a.gp?Math.max(...impactKnown):null};
 }
@@ -47,7 +58,7 @@ const advDefinitions={
  scoring:[['gp','GP',0],['ppg','PPG',1],['fgpct','FG%',1,'pct'],['twopct','2P%',1,'pct'],['fg3pct','3P%',1,'pct'],['ftpct','FT%',1,'pct'],['efgpct','eFG%',1,'pct'],['tspct','TS%',1,'pct'],['threepar','3PAr',3],['ftr','FTr',3],['ptsfga','PTS/FGA',2]],
  playmaking:[['gp','GP',0],['apg','APG',1],['ast','AST',0],['tov','TO',0],['tovpg','TO/G',1],['astto','AST/TO',2],['a36','AST/36',1],['to36','TO/36',1]],
  defense:[['gp','GP',0],['rpg','RPG',1],['orebpg','OREB/G',1],['drebpg','DREB/G',1],['stlpg','STL/G',1],['blkpg','BLK/G',1],['stocks','Stocks',0],['stockspg','Stocks/G',1],['r36','REB/36',1]],
- impact:[['gp','GP',0],['dd','DD',0],['td','TD',0],['ddpct','DD%',1,'pct'],['tdpct','TD%',1,'pct'],['impactAvg','Archive Impact/G',1],['impactBest','Best Archive Impact',0]],
+ impact:[['gp','GP',0],['dd','DD',0],['td','TD',0],['ddpct','DD%',1,'pct'],['tdpct','TD%',1,'pct'],['impactAvg','Archive Impact/G',1],['impactBest','Best Archive Impact',1]],
  per36:[['gp','GP',0],['mpg','MPG',1],['p36','PTS/36',1],['r36','REB/36',1],['a36','AST/36',1],['s36','STL/36',1],['b36','BLK/36',1],['to36','TO/36',1],['stocks36','Stocks/36',1]]
 };
 let leaderboardMode='traditional',advSort='tspct',advDescending=true;

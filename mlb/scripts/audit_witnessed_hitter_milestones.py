@@ -36,13 +36,19 @@ def analyze(item):
     yearly = stats(pid, "yearByYear")
     # Aggregate per season across teams; ignore non-MLB splits and avoid double counting.
     totals = collections.defaultdict(lambda: collections.defaultdict(int))
+    grouped = collections.defaultdict(list)
     for split in yearly:
         season = split.get("season")
-        if not season or not str(season).isdigit():
-            continue
-        year = int(season)
-        for metric, (key, _) in METRICS.items():
-            totals[year][metric] += value(split, key)
+        if season and str(season).isdigit():
+            grouped[int(season)].append(split)
+    for year, entries in grouped.items():
+        # MLB returns a season total alongside team-level splits for traded players.
+        # Prefer the aggregate row; summing all rows doubles career totals.
+        aggregates = [entry for entry in entries if not (entry.get("team") or {}).get("id")]
+        selected = aggregates[:1] if aggregates else entries
+        for split in selected:
+            for metric, (key, _) in METRICS.items():
+                totals[year][metric] += value(split, key)
     candidates = []
     for year in years:
         logs = stats(pid, "gameLog", year)

@@ -1,6 +1,16 @@
 /* Courtside Archive MiLB Records — same four-section structure as MLB.
    Stats are independently sourced from attended MiLB games ONLY. */
 (()=>{"use strict";
+async function mergeScreenshot2019(rows){
+ const response=await fetch("./data/player_stats_2019_05_04.json",{cache:"no-store"});
+ if(response.status===404)return;
+ if(!response.ok)throw Error("2019 MiLB supplement unavailable");
+ const extra=await response.json();
+ if(!Array.isArray(extra))throw Error("Invalid 2019 MiLB supplement");
+ const seen=new Set(rows.map(x=>String(x.game_id)+"|"+String(x.team)+"|"+String(x.name)));
+ for(const x of extra){const key=String(x.game_id)+"|"+String(x.team)+"|"+String(x.name);if(!seen.has(key)){rows.push(x);seen.add(key)}}
+}
+
 const $=id=>document.getElementById(id);
 const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const date=s=>s?new Date(String(s)+"T12:00:00").toLocaleDateString("en-US",{month:"short",day:"numeric",year:"numeric"}):"—";
@@ -156,6 +166,7 @@ document.addEventListener("DOMContentLoaded",async()=>{
   const get=async(name)=>{const r=await fetch("./data/"+name+".json",{cache:"no-store"});if(!r.ok)throw Error(name+" unavailable");return r.json();};
   const [games,rows,innings]=await Promise.all(["games","player_stats","inning_scores"].map(get));
   if(!Array.isArray(games)||!Array.isArray(rows)||!innings||typeof innings!=="object")throw Error("Unexpected MiLB data shape");
+  await mergeScreenshot2019(rows);
   init(games,rows,innings);
  }catch(err){$("app").innerHTML='<div class="empty">Unable to load MiLB records: '+esc(err.message)+'</div>';}
 });

@@ -1,0 +1,41 @@
+name: MLB hitter milestone candidate discovery
+on:
+  push:
+    paths:
+      - '.github/workflows/mlb-hitter-milestone-audit.yml'
+      - 'mlb/scripts/audit_witnessed_hitter_milestones.py'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: mlb-hitter-milestone-audit
+  cancel-in-progress: false
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Scan 100 players per batch for hits, home runs, and steals
+        run: python -u mlb/scripts/audit_witnessed_hitter_milestones.py --batch-size 100
+      - name: Upload candidate files including partial results on failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mlb-hitter-milestone-candidates
+          path: mlb/data/witnessed_hitter_milestone_audit_batch_*.json
+          if-no-files-found: warn
+      - name: Commit candidate results
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- 'mlb/data/witnessed_hitter_milestone_audit_batch_*.json'
+          if ! git diff --cached --quiet; then
+            git commit -m "Record MLB hitter milestone candidates in 100-player batches"
+            git pull --rebase origin "${GITHUB_REF_NAME}"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi

@@ -3,12 +3,38 @@
   "scope": "MLB professional career milestones",
   "sort": "descending distinct attended game count; tie MLB player ID ascending",
   "advance_policy": "Phase 1: collect debut candidates for all players in sequential 100-player batches without manual confirmation. Phase 2: verify all milestone categories against career logs and attended game boxscores before publication.",
-  "current_batch": 1,
-  "completed_batches": [],
-  "status": "candidate_discovery_workflow_committed_execution_unverified",
+  "current_batch": null,
+  "completed_batches": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17
+  ],
+  "status": "phase_1_mlb_debut_candidates_complete_phase_2_verification_pending",
   "note": "Candidate scan is not comprehensive verification. Team debuts, first hits/HRs, career totals and historic achievements require separate career-log checks.",
   "phases": {
     "candidate_discovery": "configured for all 100-player batches; currently debut-date candidates only",
-    "verification": "not yet automated; team debuts, firsts, career landmarks and historic achievements require additional candidate generators and verification"
+    "verification": "not yet automated; team debuts, firsts, career landmarks and historic achievements require additional candidate generators and verification",
+    "mlb_debut_candidates": {
+      "players_scanned": 1633,
+      "batches": 17,
+      "candidates": 11,
+      "previously_published": 3,
+      "new_candidates_pending_verification": 8,
+      "completed": true
+    }
   }
 }

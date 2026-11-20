@@ -2,7 +2,7 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#FAF8F2"><title>Witnessed Milestones | Courtside Archive MLB</title><meta name="description" content="Verified professional career firsts and landmark MLB achievements witnessed in person.">
 <link rel="stylesheet" href="./assets/archive.css?v=20261106-crosssport-sweep3"><link rel="stylesheet" href="../assets/sport-burgundy-ice.css?v=20261106-crosssport-sweep4"><script defer src="./assets/archive.js"></script>
 <style>
-.milestone-intro{margin:22px 0 26px}.milestone-intro h1{margin:0 0 10px}.milestone-intro p{max-width:760px}.milestone-controls{display:flex;flex-wrap:wrap;gap:12px;margin:22px 0}.milestone-controls label{display:grid;gap:5px;font-weight:700;font-size:13px}.milestone-controls input,.milestone-controls select{padding:10px;border:1px solid #aebac8;border-radius:8px;min-width:170px;background:#fff;color:#243448}.milestone-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}@media(max-width:1050px){.milestone-list{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:650px){.milestone-list{grid-template-columns:1fr}}.milestone-entry{border:1px solid #c8d7e7;border-radius:13px;padding:20px;background:#f5f9fd}.milestone-entry h2{font-size:21px;margin:7px 0}.milestone-entry p{margin:7px 0}.milestone-meta{color:#4d647a;font-size:13px;font-weight:650}.milestone-links{display:flex;gap:18px;flex-wrap:wrap;margin-top:12px;font-weight:750}.milestone-pill{font-size:12px;font-weight:800;border-radius:99px;background:#e2ebf6;color:#75334a;padding:5px 10px}.milestone-pill-secondary{margin-left:7px;background:#e2ebf6;color:#75334a}.milestone-empty{padding:24px;border:1px dashed #a9b8c8;border-radius:12px}.milestone-count{font-weight:800}
+.milestone-intro{margin:22px 0 26px}.milestone-intro h1{margin:0 0 10px}.milestone-intro p{max-width:760px}.milestone-controls{display:flex;flex-wrap:wrap;gap:12px;margin:22px 0}.milestone-controls label{display:grid;gap:5px;font-weight:700;font-size:13px}.milestone-controls input,.milestone-controls select{padding:10px;border:1px solid #aebac8;border-radius:8px;min-width:170px;background:#fff;color:#243448}.milestone-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}@media(max-width:1050px){.milestone-list{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:650px){.milestone-list{grid-template-columns:1fr}}.milestone-entry{border:1px solid #c8d7e7;border-radius:13px;padding:20px;background:#f5f9fd}.milestone-entry h2{font-size:21px;margin:7px 0}.milestone-entry p{margin:7px 0}.milestone-meta{color:#4d647a;font-size:13px;font-weight:650}.milestone-links{display:flex;gap:18px;flex-wrap:wrap;margin-top:12px;font-weight:750}.milestone-tags{display:flex;flex-wrap:wrap;gap:7px}.milestone-pill{font-size:12px;font-weight:800;border-radius:99px;background:#e2ebf6;color:#75334a;padding:5px 10px}.milestone-pill-secondary{margin-left:7px;background:#e2ebf6;color:#75334a}.milestone-empty{padding:24px;border:1px dashed #a9b8c8;border-radius:12px}.milestone-count{font-weight:800}
 </style></head><body><main><div id="navigation"></div>
 <section class="milestone-intro"><div class="eyebrow">MLB · CAREER HISTORY</div><h1>Witnessed Milestones.</h1><p>Debuts, career firsts and landmark achievements that happened at MLB games you attended. Only verified professional milestones are included.</p></section>
 <div class="milestone-count" id="milestoneCount">Loading verified milestones…</div>
@@ -20,15 +20,40 @@ document.addEventListener('DOMContentLoaded',async()=>{
  const data=await response.json(),attendance=await attendanceResponse.json();
  const verified=(data.milestones||[]).filter(m=>m.verified===true&&attendance.some(g=>g.date===m.date&&((g.home||'').toLowerCase().includes((m.team||'').toLowerCase())||(g.away||'').toLowerCase().includes((m.team||'').toLowerCase())||[g.home,g.away].some(t=>String(t).toLowerCase().includes(String(m.opponent||'').toLowerCase())))));
  const types={team_debut:'Team debut',mlb_debut:'MLB debut',career_first:'Career first',career_landmark:'Career landmark',historic:'Historic achievement'};
+ // One card per player per attended game; retain every milestone as a separate searchable tag.
+ const grouped=new Map();
+ for(const m of verified){
+  const key=String(m.player_id||m.player)+'|'+String(m.game_pk||m.attendance_id||m.date);
+  if(!grouped.has(key))grouped.set(key,{...m,events:[]});
+  grouped.get(key).events.push(m);
+ }
+ const cards=[...grouped.values()];
+ function tagsFor(card){
+  const tags=[];
+  for(const m of card.events){
+   if(m.type==='mlb_debut'){
+    tags.push('MLB debut',m.team+' debut');
+   }else if(m.type==='team_debut'){
+    tags.push(m.team+' debut');
+   }else{
+    tags.push(m.title);
+   }
+  }
+  return [...new Set(tags)];
+ }
  function draw(){
- const q=el('milestoneSearch').value.trim().toLowerCase(),type=el('milestoneType').value,order=el('milestoneOrder').value;
- const items=verified.filter(m=>(!type||m.type===type||(type==='team_debut'&&m.type==='mlb_debut'))&&[m.player,m.title,m.team,m.opponent,m.description].join(' ').toLowerCase().includes(q)).sort((a,b)=>order==='oldest'?a.date.localeCompare(b.date):b.date.localeCompare(a.date));
- el('milestoneCount').textContent=items.length+' verified milestone'+(items.length===1?'':'s')+' shown';
- el('milestoneList').innerHTML=items.length?items.map(m=>{
- const game=attendance.find(g=>g.date===m.date&&[g.home,g.away].some(t=>String(t).toLowerCase().includes(String(m.opponent||'').toLowerCase())));
- const gameLink=game?'<a href="./game.html?id='+encodeURIComponent(game.attendance_id)+'">Attended game ↗</a>':'';
- return '<article class="milestone-entry"><span class="milestone-pill">'+esc(m.type==='team_debut'?m.team+' debut':types[m.type]||m.type)+'</span>'+(m.type==='mlb_debut'?'<span class="milestone-pill milestone-pill-secondary">'+esc(m.team)+' MLB debut</span>':'')+'<h2>'+esc(m.player)+' — '+esc(m.title)+'</h2><div class="milestone-meta">'+esc(m.date)+' · '+esc(m.team)+' vs. '+esc(m.opponent)+'</div><p>'+esc(m.description)+'</p><div class="milestone-links">'+gameLink+(m.source_url?'<a href="'+esc(m.source_url)+'" target="_blank" rel="noopener noreferrer">Verification source ↗</a>':'')+'</div></article>';
- }).join(''):'<div class="milestone-empty">No verified milestones match these filters.</div>';
+  const q=el('milestoneSearch').value.trim().toLowerCase(),type=el('milestoneType').value,order=el('milestoneOrder').value;
+  const items=cards.filter(m=>(!type||m.events.some(e=>e.type===type||(type==='team_debut'&&e.type==='mlb_debut')))&&[m.player,m.team,m.opponent,...m.events.flatMap(e=>[e.title,e.description]),...tagsFor(m)].join(' ').toLowerCase().includes(q)).sort((a,b)=>order==='oldest'?a.date.localeCompare(b.date):b.date.localeCompare(a.date));
+  const eventCount=items.reduce((n,m)=>n+m.events.length,0);
+  el('milestoneCount').textContent=items.length+' game '+(items.length===1?'entry':'entries')+' · '+eventCount+' verified milestones';
+  el('milestoneList').innerHTML=items.length?items.map(m=>{
+   const game=attendance.find(g=>g.attendance_id===m.attendance_id)||attendance.find(g=>g.date===m.date&&[g.home,g.away].some(t=>String(t).toLowerCase().includes(String(m.opponent||'').toLowerCase())));
+   const gameLink=game?'<a href="./game.html?id='+encodeURIComponent(game.attendance_id)+'">Attended game ↗</a>':'';
+   const tags=tagsFor(m).map(t=>'<span class="milestone-pill">'+esc(t)+'</span>').join(' ');
+   const descriptions=[...new Set(m.events.map(e=>e.description).filter(Boolean))];
+   const sourceLinks=[...new Set(m.events.map(e=>e.source_url).filter(Boolean))].map((url,i)=>'<a href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">Verification source'+(i?(' '+(i+1)):'')+' ↗</a>').join('');
+   return '<article class="milestone-entry"><div class="milestone-tags">'+tags+'</div><h2>'+esc(m.player)+'</h2><div class="milestone-meta">'+esc(m.date)+' · '+esc(m.team)+' vs. '+esc(m.opponent)+'</div>'+descriptions.map(d=>'<p>'+esc(d)+'</p>').join('')+'<div class="milestone-links">'+gameLink+sourceLinks+'</div></article>';
+  }).join(''):'<div class="milestone-empty">No verified milestones match these filters.</div>';
  }
  ['milestoneSearch','milestoneType','milestoneOrder'].forEach(id=>el(id).addEventListener('input',draw));draw();
  }catch(e){el('milestoneCount').textContent='Unable to load milestones';el('milestoneList').innerHTML='<div class="milestone-empty">'+esc(e.message)+'</div>';}

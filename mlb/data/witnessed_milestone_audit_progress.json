@@ -23,7 +23,7 @@
     16,
     17
   ],
-  "status": "phase_1_mlb_debut_candidates_complete_phase_2_verification_pending",
+  "status": "mlb_debut_discovery_and_verification_complete",
   "note": "Candidate scan is not comprehensive verification. Team debuts, first hits/HRs, career totals and historic achievements require separate career-log checks.",
   "phases": {
     "candidate_discovery": "configured for all 100-player batches; currently debut-date candidates only",
@@ -33,8 +33,11 @@
       "batches": 17,
       "candidates": 11,
       "previously_published": 3,
-      "new_candidates_pending_verification": 8,
-      "completed": true
+      "new_candidates_pending_verification": 0,
+      "completed": true,
+      "verified_and_published": 11,
+      "verification_complete": true
     }
-  }
+  },
+  "next_category": "team_debut"
 }

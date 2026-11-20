@@ -1,0 +1,40 @@
+name: MLB team debut candidate discovery
+on:
+  push:
+    paths:
+      - '.github/workflows/mlb-team-debut-audit.yml'
+      - 'mlb/scripts/audit_witnessed_team_debuts.py'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: mlb-team-debut-audit
+  cancel-in-progress: false
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Collect team debut candidates sequentially in batches of 100
+        run: python -u mlb/scripts/audit_witnessed_team_debuts.py --batch-size 100
+      - name: Upload candidate files (including partial results on failure)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mlb-team-debut-candidates
+          path: mlb/data/witnessed_team_debut_audit_batch_*.json
+          if-no-files-found: warn
+      - name: Commit candidate results
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add mlb/data/witnessed_team_debut_audit_batch_*.json || true
+          if ! git diff --cached --quiet; then
+            git commit -m "Record MLB team debut candidates in 100-player batches"
+            git push
+          fi

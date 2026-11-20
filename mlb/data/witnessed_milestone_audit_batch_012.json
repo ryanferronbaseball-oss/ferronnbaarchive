@@ -1,0 +1,29 @@
+{
+  "audit_scope": "MLB games attended",
+  "batch_number": 12,
+  "batch_size": 100,
+  "total_players": 1633,
+  "games_total": 131,
+  "matched_game_pks": 131,
+  "player_ids_in_boxscores": 100,
+  "debut_candidates": [
+    {
+      "type": "mlb_debut",
+      "player_id": "543271",
+      "player": "Erik Hamren",
+      "date": "2011-08-01",
+      "attendance_id": 37,
+      "game_pk": 288526,
+      "team": "San Diego Padres",
+      "evidence": "MLB StatsAPI person.mlbDebutDate equals attended game date",
+      "source_url": "https://statsapi.mlb.com/api/v1/people/543271",
+      "status": "candidate_needs_game_participation_check"
+    }
+  ],
+  "limitations": [
+    "Debut date matches require individual boxscore verification when multiple games occur that day.",
+    "Team debuts require complete career team game logs.",
+    "First hits/home runs and numeric career milestones require historical career cumulative logs.",
+    "This output is not the published verified milestone list."
+  ]
+}

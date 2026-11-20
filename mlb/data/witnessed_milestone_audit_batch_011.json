@@ -1,0 +1,41 @@
+{
+  "audit_scope": "MLB games attended",
+  "batch_number": 11,
+  "batch_size": 100,
+  "total_players": 1633,
+  "games_total": 131,
+  "matched_game_pks": 131,
+  "player_ids_in_boxscores": 100,
+  "debut_candidates": [
+    {
+      "type": "mlb_debut",
+      "player_id": "450320",
+      "player": "Carmen Pignatiello",
+      "date": "2007-08-16",
+      "attendance_id": 15,
+      "game_pk": 69934,
+      "team": "Chicago Cubs",
+      "evidence": "MLB StatsAPI person.mlbDebutDate equals attended game date",
+      "source_url": "https://statsapi.mlb.com/api/v1/people/450320",
+      "status": "candidate_needs_game_participation_check"
+    },
+    {
+      "type": "mlb_debut",
+      "player_id": "451132",
+      "player": "Cory Burns",
+      "date": "2012-08-04",
+      "attendance_id": 40,
+      "game_pk": 319334,
+      "team": "San Diego Padres",
+      "evidence": "MLB StatsAPI person.mlbDebutDate equals attended game date",
+      "source_url": "https://statsapi.mlb.com/api/v1/people/451132",
+      "status": "candidate_needs_game_participation_check"
+    }
+  ],
+  "limitations": [
+    "Debut date matches require individual boxscore verification when multiple games occur that day.",
+    "Team debuts require complete career team game logs.",
+    "First hits/home runs and numeric career milestones require historical career cumulative logs.",
+    "This output is not the published verified milestone list."
+  ]
+}

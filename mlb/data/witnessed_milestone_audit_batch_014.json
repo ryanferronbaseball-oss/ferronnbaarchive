@@ -1,0 +1,16 @@
+{
+  "audit_scope": "MLB games attended",
+  "batch_number": 14,
+  "batch_size": 100,
+  "total_players": 1633,
+  "games_total": 131,
+  "matched_game_pks": 131,
+  "player_ids_in_boxscores": 100,
+  "debut_candidates": [],
+  "limitations": [
+    "Debut date matches require individual boxscore verification when multiple games occur that day.",
+    "Team debuts require complete career team game logs.",
+    "First hits/home runs and numeric career milestones require historical career cumulative logs.",
+    "This output is not the published verified milestone list."
+  ]
+}

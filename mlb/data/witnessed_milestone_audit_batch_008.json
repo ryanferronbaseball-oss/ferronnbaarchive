@@ -1,0 +1,41 @@
+{
+  "audit_scope": "MLB games attended",
+  "batch_number": 8,
+  "batch_size": 100,
+  "total_players": 1633,
+  "games_total": 131,
+  "matched_game_pks": 131,
+  "player_ids_in_boxscores": 100,
+  "debut_candidates": [
+    {
+      "type": "mlb_debut",
+      "player_id": "669308",
+      "player": "Sean Reynolds",
+      "date": "2024-07-14",
+      "attendance_id": 121,
+      "game_pk": 745385,
+      "team": "San Diego Padres",
+      "evidence": "MLB StatsAPI person.mlbDebutDate equals attended game date",
+      "source_url": "https://statsapi.mlb.com/api/v1/people/669308",
+      "status": "candidate_needs_game_participation_check"
+    },
+    {
+      "type": "mlb_debut",
+      "player_id": "675961",
+      "player": "Alika Williams",
+      "date": "2023-07-25",
+      "attendance_id": 113,
+      "game_pk": 717258,
+      "team": "Pittsburgh Pirates",
+      "evidence": "MLB StatsAPI person.mlbDebutDate equals attended game date",
+      "source_url": "https://statsapi.mlb.com/api/v1/people/675961",
+      "status": "candidate_needs_game_participation_check"
+    }
+  ],
+  "limitations": [
+    "Debut date matches require individual boxscore verification when multiple games occur that day.",
+    "Team debuts require complete career team game logs.",
+    "First hits/home runs and numeric career milestones require historical career cumulative logs.",
+    "This output is not the published verified milestone list."
+  ]
+}

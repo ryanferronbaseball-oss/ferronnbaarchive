@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "scope": "MLB regular-season games attended; professional milestones only",
-  "verification_policy": "Only confirmed career or team firsts and numerical career landmarks occurring in attended games; no season openers treated as debuts without verification.",
+  "verification_policy": "Only confirmed career or team firsts and numerical career landmarks occurring in attended games; no season openers treated as debuts without verification. Priority rule: if an appearance is the player's MLB debut, publish only mlb_debut, never team_debut for that same appearance. Team debut requires a prior MLB appearance for another franchise.",
   "milestones": [
     {
       "id": "mlb-2006-08-22-dustin-pedroia-debut",
@@ -231,5 +231,9 @@
       "source_url": "https://www.mlb.com/news/brett-callahan-2-run-triple-first-pitch-mlb-debut",
       "verified": true
     }
+  ],
+  "milestone_priority": [
+    "mlb_debut",
+    "team_debut"
   ]
 }

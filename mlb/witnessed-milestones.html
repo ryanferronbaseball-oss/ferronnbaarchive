@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded',async()=>{
  el('milestoneList').innerHTML=items.length?items.map(m=>{
  const game=attendance.find(g=>g.date===m.date&&[g.home,g.away].some(t=>String(t).toLowerCase().includes(String(m.opponent||'').toLowerCase())));
  const gameLink=game?'<a href="./game.html?id='+encodeURIComponent(game.attendance_id)+'">Attended game ↗</a>':'';
- return '<article class="milestone-entry"><span class="milestone-pill">'+esc(types[m.type]||m.type)+'</span>'+(m.type==='mlb_debut'?'<span class="milestone-pill milestone-pill-secondary">'+esc(m.team)+' team debut</span>':'')+'<h2>'+esc(m.player)+' — '+esc(m.title)+'</h2><div class="milestone-meta">'+esc(m.date)+' · '+esc(m.team)+' vs. '+esc(m.opponent)+'</div><p>'+esc(m.description)+'</p><div class="milestone-links">'+gameLink+(m.source_url?'<a href="'+esc(m.source_url)+'" target="_blank" rel="noopener noreferrer">Verification source ↗</a>':'')+'</div></article>';
+ return '<article class="milestone-entry"><span class="milestone-pill">'+esc(m.type==='team_debut'?m.team+' debut':types[m.type]||m.type)+'</span>'+(m.type==='mlb_debut'?'<span class="milestone-pill milestone-pill-secondary">'+esc(m.team)+' MLB debut</span>':'')+'<h2>'+esc(m.player)+' — '+esc(m.title)+'</h2><div class="milestone-meta">'+esc(m.date)+' · '+esc(m.team)+' vs. '+esc(m.opponent)+'</div><p>'+esc(m.description)+'</p><div class="milestone-links">'+gameLink+(m.source_url?'<a href="'+esc(m.source_url)+'" target="_blank" rel="noopener noreferrer">Verification source ↗</a>':'')+'</div></article>';
  }).join(''):'<div class="milestone-empty">No verified milestones match these filters.</div>';
  }
  ['milestoneSearch','milestoneType','milestoneOrder'].forEach(id=>el(id).addEventListener('input',draw));draw();

@@ -1,7 +1,7 @@
 {
   "updated": "2026-11-17",
   "venueCount": 144,
-  "mappedGames": 830,
+  "mappedGames": 831,
   "excludedUnassignedGames": 7,
   "venues": [
     {
@@ -2354,7 +2354,7 @@
         "https://www.mlb.com/milb/news/featured/visit-excite-ballpark-home-of-the-san-jose-giants?t=mlb-pipeline-coverage",
         "https://sjsuspartans.com/facilities/excite-ballpark"
       ],
-      "factNote": "Attended August 2, 2015, and six additional Storm games May 25–30, 2021.",
+      "factNote": "First attended August 2, 2015; returned May 4, 2019 for Quakes at Giants, and attended six more Storm games May 25–30, 2021.",
       "games": [
         {
           "id": "milb-2015-08-02-ports-giants",
@@ -2364,6 +2364,15 @@
           "awayScore": 2,
           "homeScore": 6,
           "url": "../milb/game.html?id=milb-2015-08-02-ports-giants"
+        },
+        {
+          "id": "milb-2019-05-04-quakes-giants",
+          "date": "2019-05-04",
+          "away": "Rancho Cucamonga Quakes",
+          "home": "San Jose Giants",
+          "awayScore": 7,
+          "homeScore": 3,
+          "url": "../milb/game.html?id=milb-2019-05-04-quakes-giants"
         },
         {
           "id": "milb-2021-05-25-storm-giants",
@@ -2420,7 +2429,7 @@
           "url": "../milb/game.html?id=milb-2021-05-30-storm-giants"
         }
       ],
-      "visits": 7,
+      "visits": 8,
       "firstVisit": "2015-08-02",
       "lastVisit": "2021-05-30"
     },

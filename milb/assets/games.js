@@ -88,8 +88,9 @@ function performancePanel(rows){
 function lineScore(g,innings){
  const data=innings[String(g.source_game_id)]||[];
  if(!data.length)return '<section class="panel" id="innings"><h2>Line score by inning</h2><div class="empty">Official inning-by-inning scoring has not been imported for this game.</div></section>';
- const row=(side,team,total)=>'<tr><td>'+esc(team)+'</td>'+data.map(i=>'<td>'+fmt(i[side])+'</td>').join("")+'<td><strong>'+fmt(total)+'</strong></td></tr>';
- return '<section class="panel" id="innings"><h2>Line score by inning</h2><div class="table-wrap"><table class="mlb-innings"><thead><tr><th>Club</th>'+data.map(i=>'<th>'+esc(i.inning)+'</th>').join("")+'<th>R</th></tr></thead><tbody>'
+ const hasRhe=["away_hits","home_hits","away_errors","home_errors"].every(k=>num(g[k])!==null);
+ const row=(side,team,total)=>'<tr><td>'+esc(team)+'</td>'+data.map(i=>'<td>'+fmt(i[side])+'</td>').join("")+'<td><strong>'+fmt(total)+'</strong></td>'+(hasRhe?'<td>'+fmt(g[side+"_hits"])+'</td><td>'+fmt(g[side+"_errors"])+'</td>':"")+'</tr>';
+ return '<section class="panel" id="innings"><h2>Line score by inning</h2><div class="table-wrap"><table class="mlb-innings"><thead><tr><th>Club</th>'+data.map(i=>'<th>'+esc(i.inning)+'</th>').join("")+'<th>R</th>'+(hasRhe?'<th>H</th><th>E</th>':"")+'</tr></thead><tbody>'
  +row("away",g.away_team,g.away_score)+row("home",g.home_team,g.home_score)+'</tbody></table></div></section>';
 }
 function boxTables(g,rows,category){

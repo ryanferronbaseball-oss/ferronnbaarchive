@@ -105,7 +105,17 @@ const updated={
   'team_names.json':JSON.stringify({...names,[away.team.id]:args.away,[home.team.id]:args.home},null,2)+'\n'
 };
 for(const [file,content] of Object.entries(updated))fs.writeFileSync(path.join(data,file),content);
-const impact=p=>p.pts+p.reb+p.ast+p.stl+p.blk-p.tov-(p.fga-p.fgm)-(p.fta-p.ftm);
+const impact=p=>{
+  // Hollinger Game Score (0.5 x total rebounds when split is missing).
+  const required=['pts','fgm','fga','fta','ftm','ast','stl','blk','pf','tov'];
+  const known=k=>p[k]!=null&&p[k]!==''&&Number.isFinite(Number(p[k]));
+  if(!required.every(known))return null;
+  const split=known('oreb')&&known('dreb');
+  if(!split&&!known('reb'))return null;
+  const rebounds=split?0.7*Number(p.oreb)+0.3*Number(p.dreb):0.5*Number(p.reb);
+  const score=Number(p.pts)+0.4*Number(p.fgm)+rebounds+Number(p.stl)+0.7*Number(p.ast)+0.7*Number(p.blk)-0.7*Number(p.fga)-0.4*(Number(p.fta)-Number(p.ftm))-0.4*Number(p.pf)-Number(p.tov);
+  return Math.round((score+Number.EPSILON)*10)/10;
+};
 const leaders=stats.slice().sort((a,b)=>impact(b)-impact(a)||b.pts-a.pts);
 console.log(JSON.stringify({game_id:id,espn_event_id:event,score:`${args.away} ${away.score}, ${args.home} ${home.score}`,
   player_lines:stats.length,team_minutes:expectedMinutes,player_of_game:{name:leaders[0].player,impact:impact(leaders[0])},

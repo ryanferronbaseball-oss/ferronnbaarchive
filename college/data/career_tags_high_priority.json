@@ -3,7 +3,7 @@
     "description": "Positively verified high-priority college basketball achievements for witnessed players. Missing tags are unreviewed, not evidence an honor was not earned. NBA Draft status comes from nba_crosswalk.json.",
     "last_reviewed": "2026-11-20",
     "season_rule": "Honors follow the player's college career, not necessarily the date of the game attended. National championship honors require verified membership on the title-winning roster.",
-    "last_review_note": "Added Finn Sullivan's verified Vermont America East Player of the Year and first-team All-Conference honors."
+    "last_review_note": "Reviewed Townsend, Earlington and McKinney; added qualifying WCC honors."
   },
   "players": {
     "espn:4869764": {
@@ -681,6 +681,14 @@
           "conference": "WCC",
           "team": 2,
           "source": "https://wccsports.com/news/2024/2/18/athlete-awards-wcc-announces-2023-24-mens-basketball-all-conference-awards.aspx"
+        }
+      ],
+      "all_freshman": [
+        {
+          "season": "2021-22",
+          "conference": "WCC",
+          "school": "San Diego",
+          "source": "https://www.sports-reference.com/cbb/players/wayne-mckinneyiii-1.html"
         }
       ]
     },

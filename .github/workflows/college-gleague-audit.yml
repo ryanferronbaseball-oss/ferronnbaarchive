@@ -1,0 +1,24 @@
+name: College G League alumni audit
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/college-gleague-audit.yml'
+      - 'college/scripts/audit_gleague_alumni.py'
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install requests beautifulsoup4
+      - run: python -u college/scripts/audit_gleague_alumni.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: college-gleague-audit
+          path: college/reports/gleague-audit/

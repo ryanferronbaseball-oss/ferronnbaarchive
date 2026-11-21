@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#732c49"><meta name="description" content="A growing collection of 18 memorable college baseball starting pitching matchups witnessed in person.">
+<title>Best Pitching Matchups | Courtside Archive College Baseball</title>
+<link rel="stylesheet" href="./assets/archive.css?v=20261120-pitching">
+<link rel="stylesheet" href="../assets/sport-burgundy-ice.css?v=20261106-crosssport-sweep4">
+<style>
+:root{--duel-red:#752e49;--duel-ice:#e2f1fb;--duel-ink:#263a51}
+.duel-hero{margin:35px 0 25px;padding:clamp(22px,4vw,38px);border-radius:20px;border:1px solid #c7d9e9;background:linear-gradient(125deg,#f9ebf0,#e7f4ff 80%)}
+.duel-hero .eyebrow{margin:0 0 10px;color:var(--duel-red)}
+.duel-hero h1{color:var(--duel-red)}
+.duel-hero p{color:#41576b;line-height:1.7;max-width:770px;margin:0}
+.duel-tags{display:flex;flex-wrap:wrap;gap:9px;margin-top:20px}
+.duel-tag{font-size:12px;font-weight:800;padding:7px 12px;background:#fff;border:1px solid #cadce8;border-radius:90px;color:var(--duel-red)}
+.duel-toolbar{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin:26px 0 20px}
+.duel-toolbar strong{color:var(--duel-red)}
+.duel-toolbar select,.duel-toolbar input{border:1px solid #c1d3e2;background:#fff;color:#27394b;padding:10px 12px;border-radius:9px;max-width:100%}
+.duel-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.duel-card{border:1px solid #c6d8e7;background:#fff;border-radius:16px;overflow:hidden;min-width:0}
+.duel-head{padding:20px;background:linear-gradient(120deg,#faf0f3,#eef8fd)}
+.duel-date{color:var(--duel-red);font-size:13px;font-weight:850}
+.duel-game{font-size:13px;margin-top:6px;color:#4c667d;line-height:1.5}
+.duel-versus{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:9px;align-items:center;margin-top:18px}
+.duel-pitcher{min-width:0}.duel-pitcher a,.duel-pitcher strong{font-size:clamp(17px,2.2vw,22px);font-weight:850;color:var(--duel-red);text-decoration:none;overflow-wrap:anywhere;line-height:1.15;display:block}
+.duel-pitcher a:hover{text-decoration:underline}.duel-team{color:#547086;font-size:12px;font-weight:700;margin-top:6px}
+.duel-vs{font-size:12px;font-weight:900;background:#d3eafb;color:var(--duel-red);border-radius:50%;padding:9px 7px}
+.duel-body{padding:19px 20px}.duel-description{color:#40576b;line-height:1.6;font-size:14px;margin:0 0 16px}
+.duel-links{display:flex;gap:16px;flex-wrap:wrap}.duel-links a{font-size:13px;color:var(--duel-red);font-weight:800}
+.duel-note{border-left:4px solid var(--duel-red);background:#edf5fc;color:#41576b;padding:17px 20px;border-radius:0 10px 10px 0;font-size:13px;line-height:1.7;margin-top:25px}
+.duel-empty{grid-column:1/-1;padding:28px;text-align:center;border:1px dashed #bed2e5;border-radius:12px}
+@media(max-width:800px){.duel-grid{grid-template-columns:1fr}}@media(max-width:430px){.duel-head,.duel-body{padding:15px}.duel-pitcher a,.duel-pitcher strong{font-size:17px}}
+</style></head><body><main>
+<div id="navigation"></div>
+<section class="duel-hero">
+<div class="eyebrow">COURTSIDE ARCHIVE · COLLEGE BASEBALL · CURATED COLLECTION</div>
+<h1>Best Pitching Matchups.</h1>
+<p>Memorable starting-pitcher matchups witnessed in person. Selected for the talent, reputation, and anticipation surrounding both arms <strong>before first pitch</strong> — not simply how well they performed that day. This collection grows as new matchups are remembered and confirmed.</p>
+<div class="duel-tags"><span class="duel-tag" id="heroCount">18 selected matchups</span><span class="duel-tag">2018–2026</span><span class="duel-tag">Reputation over results</span></div>
+</section>
+<div class="duel-toolbar"><strong id="resultCount">Loading selected matchups…</strong><label>Find a pitcher or team <input id="search" type="search" placeholder="Search matchups…" aria-label="Search pitching matchups"></label><label>Order <select id="sort"><option value="oldest">Oldest first</option><option value="newest">Newest first</option></select></label></div>
+<section class="duel-grid" id="duelGrid" aria-live="polite"><div class="duel-empty">Loading matchups…</div></section>
+<div class="duel-note"><strong>Selection standard:</strong> This is a personal, evolving collection, not a numerical ranking. College pitching reputations are considered case by case, emphasizing the caliber of both starting pitchers at the time. Matchups are chronological by default, and repeat pairings on different dates are intentional.</div>
+<footer class="footer">Courtside Archive · College Baseball · Best Pitching Matchups</footer>
+</main>
+<script>
+const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const norm=v=>String(v||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]/gi,'').toLowerCase();
+let matchups=[],gameMap=new Map(),players=new Map();
+const navLinks=[['index.html','Overview'],['game.html','Games'],['stats.html','Players'],['transfers.html','Transfers'],['cws.html','College World Series'],['best-pitching-matchups.html','Pitching Matchups'],['coaches.html','Coaches'],['records.html','Records'],['mlb-alumni.html','To the MLB']];
+document.getElementById('navigation').innerHTML='<header class="archive-header"><a class="archive-logo" href="./index.html">COURTSIDE ARCHIVE<small>EVERY GAME HAS A STORY · COLLEGE BASEBALL</small></a><nav class="archive-nav" aria-label="College Baseball archive navigation">'+navLinks.map(([url,label])=>'<a href="./'+url+'"'+(url==='best-pitching-matchups.html'?' aria-current="page"':'')+'>'+label+'</a>').join('')+'<a href="../index.html" class="back-link">All sports ↗</a></nav></header>';
+async function json(path){const r=await fetch(path,{cache:'no-store'});if(!r.ok)throw new Error('Could not load '+path);return r.json()}
+function dateLabel(v){return new Date(v+'T12:00:00').toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'})}
+function pitcher(name,team,gameId){
+ const matches=players.get(gameId+'|'+team+'|'+norm(name))||[];
+ const ids=[...new Set(matches.filter(x=>x.pitching&&x.player_id).map(x=>x.player_id))];
+ const label=esc(name);
+ return '<div class="duel-pitcher">'+(ids.length===1?'<a href="./player.html?id='+encodeURIComponent(ids[0])+'">'+label+'</a>':'<strong>'+label+'</strong>')+'<div class="duel-team">'+esc(team)+'</div></div>';
+}
+function draw(){
+ const q=document.getElementById('search').value.trim().toLowerCase(),newest=document.getElementById('sort').value==='newest';
+ const found=matchups.filter(m=>[m.away,m.home,m.away_starter,m.home_starter,m.date].join(' ').toLowerCase().includes(q)).sort((a,b)=>newest?b.date.localeCompare(a.date):a.date.localeCompare(b.date));
+ document.getElementById('resultCount').textContent=found.length+' of '+matchups.length+' selected matchups';
+ document.getElementById('duelGrid').innerHTML=found.length?found.map(m=>{
+ const g=gameMap.get(m.game_id),ballpark=g?.ballpark||'',date=dateLabel(m.date);
+ const cardText='Two recognized starting pitchers selected from the game you attended. Their matchup is included for its pregame appeal, not its final pitching lines.';
+ return '<article class="duel-card"><div class="duel-head"><div class="duel-date">'+esc(date)+'</div><div class="duel-game">'+esc(m.away)+' vs. '+esc(m.home)+(ballpark?' · '+esc(ballpark):'')+'</div><div class="duel-versus">'+pitcher(m.away_starter,m.away,m.game_id)+'<span class="duel-vs">VS</span>'+pitcher(m.home_starter,m.home,m.game_id)+'</div></div><div class="duel-body"><p class="duel-description">'+cardText+'</p><div class="duel-links"><a href="./game.html?id='+encodeURIComponent(m.game_id)+'">Courtside box score ↗</a>'+(m.source_url&&/^https:\/\//.test(m.source_url)?'<a href="'+esc(m.source_url)+'" target="_blank" rel="noopener noreferrer">Official gamebook ↗</a>':'')+'</div></div></article>';
+ }).join(''):'<div class="duel-empty">No matching pitching matchups.</div>';
+}
+async function init(){
+ try{
+ const [saved,games,rows]=await Promise.all([json('./data/best_pitching_matchups.json'),json('./data/games.json'),json('./data/player_stats.json').catch(()=>[])]);
+ matchups=(saved.matchups||[]).filter(x=>x.verified===true);gameMap=new Map(games.map(g=>[g.id,g]));
+ for(const r of rows){if(!r.game_id||!r.team||!r.player)continue;const key=r.game_id+'|'+r.team+'|'+norm(r.player);if(!players.has(key))players.set(key,[]);players.get(key).push(r)}
+ document.getElementById('heroCount').textContent=matchups.length+' selected matchups';draw();
+ }catch(e){document.getElementById('resultCount').textContent='Matchups unavailable';document.getElementById('duelGrid').innerHTML='<div class="duel-empty">Unable to load the selected matchups. Please refresh the page.</div>';console.error(e)}
+}
+document.getElementById('search').addEventListener('input',draw);document.getElementById('sort').addEventListener('change',draw);init();
+</script></body></html>

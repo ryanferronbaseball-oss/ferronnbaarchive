@@ -1,9 +1,9 @@
 {
   "_meta": {
     "description": "Positively verified high-priority college basketball achievements for witnessed players. Missing tags are unreviewed, not evidence an honor was not earned. NBA Draft status comes from nba_crosswalk.json.",
-    "last_reviewed": "2026-11-18",
+    "last_reviewed": "2026-11-20",
     "season_rule": "Honors follow the player's college career, not necessarily the date of the game attended. National championship honors require verified membership on the title-winning roster.",
-    "last_review_note": "Verified game 99 Grambling at Kentucky participants' earned postseason career awards; tournament MOP distinguished from all-conference selection; previous-school awards retained."
+    "last_review_note": "Added Finn Sullivan's verified Vermont America East Player of the Year and first-team All-Conference honors."
   },
   "players": {
     "espn:4869764": {
@@ -4177,6 +4177,27 @@
           "team": 3,
           "school": "James Madison",
           "source": "https://jmusports.com/news/2026/3/2/mens-basketball-davis-mcbride-named-third-team-all-sun-belt"
+        }
+      ]
+    },
+    "espn:4397759": {
+      "name": "Finn Sullivan",
+      "conference_poy": [
+        {
+          "season": "2022-23",
+          "conference": "America East",
+          "award": "Player of the Year",
+          "school": "Vermont",
+          "source": "https://americaeast.com/news/2023/3/3/2022-23_MBBawards.aspx"
+        }
+      ],
+      "all_conference": [
+        {
+          "season": "2022-23",
+          "conference": "America East",
+          "team": 1,
+          "school": "Vermont",
+          "source": "https://americaeast.com/news/2023/3/3/2022-23_MBBawards.aspx"
         }
       ]
     }

@@ -426,10 +426,26 @@ async function renderGames(d){
  +'<div class="toolbar"><label class="filter-label" for="cb-game-select">Attended game</label><select id="cb-game-select">'
  +'<option value="">Select an attended game</option>'+d.games.map(g=>'<option value="'+esc(g.id)+'">'+esc(date(g.date)+" · "+gameLabel(g)+(g.away_score!=null?" · "+g.away_score+"–"+g.home_score:" · Pending"))+'</option>').join("")+'</select></div>'
  +'<section id="cb-game-details" aria-live="polite"></section>'
+ +'<section class="panel" id="cb-draft-leaderboard"><div class="section-heading"><h2>Most Future MLB Draftees in a Game</h2></div>'
+ +'<p class="mlb-note">Players who actually appeared in each attended game and have a verified MLB Draft selection. Ranked by unique drafted players; ties are sorted by date. Select any game to view its drafted players.</p>'
+ +'<div id="cb-draft-leaderboard-table"></div></section>'
  +'<div class="section-heading"><h2>All attended games</h2></div><div class="toolbar">'
  +'<input id="cb-game-search" type="search" aria-label="Search dates teams and parks" placeholder="Search teams, dates, venue or tournament…">'
  +'<label class="filter-label" for="cb-season-filter">Season</label><select id="cb-season-filter" aria-label="Season filter"><option value="">All seasons</option>'
  +unique(d.games.map(g=>g.season)).sort((a,b)=>b-a).map(y=>'<option>'+y+'</option>').join("")+'</select></div><div id="cb-game-list"></div>';
+ const draftCounts=new Map();
+ for(const r of d.rows){
+  if(!draftById.has(r.player_id)||!d.gameMap.has(r.game_id))continue;
+  if(!draftCounts.has(r.game_id))draftCounts.set(r.game_id,new Set());
+  draftCounts.get(r.game_id).add(r.player_id);
+ }
+ const topDraftGames=d.games.map(g=>({g,count:draftCounts.get(g.id)?.size||0}))
+  .filter(x=>x.count>0)
+  .sort((a,b)=>b.count-a.count||a.g.date.localeCompare(b.g.date)||a.g.id.localeCompare(b.g.id)).slice(0,20);
+ $("cb-draft-leaderboard-table").innerHTML=topDraftGames.length?
+  htmlTable(["Rank","Game","Future MLB draftees"],topDraftGames.map(({g,count},i)=>
+   '<tr><td>'+(i+1)+'</td><td><a href="'+gameUrl(g)+'">'+esc(date(g.date)+' · '+gameLabel(g))+'</a></td><td>'+count+'</td></tr>'))
+  :pending("No verified drafted players have been matched to an attended game yet.");
  const params=new URLSearchParams(location.search),chosen=params.get("id"),picker=$("cb-game-select");
  if(params.get("q"))$("cb-game-search").value=params.get("q");
  const selected=d.gameRedirects.get(chosen)||chosen;

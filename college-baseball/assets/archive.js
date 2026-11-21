@@ -418,6 +418,8 @@ function renderHome(d){
 async function renderGames(d){
  const alumniRegistry=await json("mlb_alumni_seed.json");
  const gamePhotos=await json("game_photos.json").catch(()=>({}));
+ const draftRegistry=await json("draft_profile_tags.json").catch(()=>({picks:[]}));
+ const draftById=new Map((Array.isArray(draftRegistry.picks)?draftRegistry.picks:[]).filter(p=>p.college_player_id&&Number.isInteger(p.draft_year)&&Number.isInteger(p.draft_pick)).map(p=>[p.college_player_id,p]));
  const mlbIds=new Set((alumniRegistry.players||[]).filter(p=>p.mlb_debut).map(p=>p.college_player_id));
  $("app").innerHTML='<div class="eyebrow">College Baseball · Games & box scores</div><h1>Game details.</h1>'
  +'<p class="lead">Scores, inning lines and authentic batting and pitching box scores from college games you attended, where documented in official scorebooks.</p>'
@@ -440,6 +442,16 @@ async function renderGames(d){
   const proSection='<section class="game-pro-alumni"><h2>Future MLB players in this game · '+pros.size+'</h2>'
    +'<p class="pro-caption">Verified MLB debuts · Click a name to open the college player profile.</p>'
    +(pros.size?'<div class="game-pro-list">'+[...pros].sort((a,b)=>a[1].localeCompare(b[1])).map(([id,name])=>'<a href="./player.html?id='+encodeURIComponent(id)+'">'+esc(scorebookNameCase(name))+' ↗</a>').join("")+'</div>':'<p class="pro-empty">No verified MLB alumni currently matched to this game’s recorded players.</p>')+'</section>';
+  const presentDrafts=new Map();
+  for(const p of players){
+   const pick=draftById.get(p.player_id);
+   if(pick&&!presentDrafts.has(p.player_id))presentDrafts.set(p.player_id,pick);
+  }
+  const drafted=[...presentDrafts.values()].sort((a,b)=>a.draft_year-b.draft_year||a.draft_pick-b.draft_pick||a.name.localeCompare(b.name));
+  const draftSection='<section class="game-pro-alumni" id="cb-game-future-draftees"><h2>Future MLB Draftees in this game · '+drafted.length+'</h2>'
+   +'<p class="pro-caption">Players who appeared in this game and were selected in a subsequent or earlier MLB Draft. Organized by draft year, then overall pick. Drafted does not necessarily mean reached MLB.</p>'
+   +(drafted.length?'<div class="game-pro-list">'+drafted.map(p=>'<a href="./player.html?id='+encodeURIComponent(p.college_player_id)+'">'+esc(p.name)+' · '+p.draft_year+' · #'+p.draft_pick+' overall ↗</a>').join("")+'</div>'
+    :'<p class="pro-empty">No verified MLB Draft selections currently matched to this game’s recorded players.</p>')+'</section>';
   const actual=g.away_score!=null&&g.home_score!=null;
   const scoreContent=actual?g.away_score+" – "+g.home_score:"—";
   const decision=g.pitching_decisions;
@@ -477,6 +489,7 @@ async function renderGames(d){
    +'</section>'
    +photo
    +proSection
+   +draftSection
    +recap
    +(Array.isArray(g.innings)&&g.innings.length?renderInnings(g):"")
    +decisions+box;

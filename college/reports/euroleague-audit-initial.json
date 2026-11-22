@@ -192,6 +192,21 @@
         "Zalgiris"
       ],
       "source_url": "https://basketnews.com/players/35293-matt-mitchell/statistics/regular-season.html"
+    },
+    {
+      "name": "Zac Seljaas",
+      "player_ids": [
+        "espn:3947128"
+      ],
+      "schools": [
+        "BYU"
+      ],
+      "first_verified_season": "2025-26",
+      "clubs": [
+        "ASVEL"
+      ],
+      "source_url": "https://elstatslab.com/careers/zachary-seljaas/",
+      "verified_games": 36
     }
   ],
   "awards": [
@@ -213,5 +228,37 @@
       "year": 2022,
       "source_url": "https://www.olympiacosbc.gr/en/team/roster/player/3149.html"
     }
-  ]
+  ],
+  "pre_college_appearances": [
+    {
+      "name": "Ousmane N'Diaye",
+      "player_ids": [
+        "espn:5454840"
+      ],
+      "schools": [
+        "Kentucky"
+      ],
+      "first_verified_season": "2024-25",
+      "clubs": [
+        "Baskonia"
+      ],
+      "source_url": "https://elstatslab.com/careers/ousmane-ndiaye/",
+      "verified_games": 12
+    }
+  ],
+  "current_season_scan": {
+    "season": "2026-27",
+    "source": "https://github.com/straledev/euroleague-fantasy-data/blob/main/data/2026-27/cleaned_players.csv",
+    "rows": 304,
+    "exact_name_matches": 9,
+    "confirmed_existing": 8,
+    "excluded": [
+      {
+        "name": "A.J. Lawson",
+        "reason": "EuroLeague player attended South Carolina, archived North Texas player is distinct",
+        "source_url": "https://basketball.realgm.com/player/AJ-Lawson/Summary/120553"
+      }
+    ],
+    "limitations": "Exact normalized name match only; aliases may be missed; historical seasons not comprehensively scanned."
+  }
 }

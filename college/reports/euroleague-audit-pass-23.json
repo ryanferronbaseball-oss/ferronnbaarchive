@@ -1,0 +1,51 @@
+{
+  "date": "2026-11-22",
+  "scope": "College archive senior EuroLeague historical cross-match setup and established-tag validation; pass 23",
+  "historical_scan": {
+    "workflow_url": "https://github.com/ryanferronbaseball-oss/ferronnbaarchive/actions/runs/45002910487",
+    "script_path": "college/scripts/audit_euroleague_history.py",
+    "workflow_path": ".github/workflows/college-euroleague-historical-audit.yml",
+    "requested_seasons": "E2013 through E2026 (14 seasons)",
+    "status_at_report": "workflow_in_progress",
+    "result": "No historical scan output verified at time of checkpoint; completion is not claimed.",
+    "policy": "Match actual >=1 EuroLeague game; exclude EuroCup and ANGT; no automatic edits to euroleague_crosswalk.json; identity review required."
+  },
+  "existing_tags_reconfirmed": [
+    {
+      "name": "Kaodirichi Akobundu-Ehiogu",
+      "player_id": "espn:4403467",
+      "season": "2026-27",
+      "games": 3,
+      "club": "Zalgiris Kaunas",
+      "source_url": "https://www.basketball-reference.com/international/teams/zalgiris/2027.html"
+    },
+    {
+      "name": "Nathan Mensah",
+      "player_id": "espn:4397371",
+      "season": "2024-25",
+      "games": 2,
+      "club": "Olympiacos",
+      "source_url": "https://www.olympiacosbc.gr/en/team/roster/player/10683.html"
+    },
+    {
+      "name": "Matt Mitchell",
+      "player_id": "espn:4278706",
+      "season": "2024-25",
+      "games": 29,
+      "club": "Zalgiris Kaunas",
+      "source_url": "https://www.basketball-reference.com/international/players/matt-mitchell-1.html"
+    },
+    {
+      "name": "Boubacar Toure",
+      "player_id": "espn:3130580",
+      "season": "2023-24",
+      "games": 21,
+      "club": "Valencia Basket",
+      "source_url": "https://elstatslab.com/careers/boubacar-toure/"
+    }
+  ],
+  "new_verified_tags": [],
+  "current_player_tags": 18,
+  "current_award_tags": 3,
+  "caveat": "The historical scan is running on GitHub Actions and may be incomplete or blocked; final completeness and new identity matches have not yet been inspected."
+}

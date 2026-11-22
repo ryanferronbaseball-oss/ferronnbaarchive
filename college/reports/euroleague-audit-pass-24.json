@@ -1,0 +1,410 @@
+{
+  "date": "2026-11-22",
+  "scope": "Historical senior EuroLeague E2013 through E2026 crossmatch, reconciliation of the 37 untagged name candidates",
+  "source_report": "college/reports/euroleague-historical-crossmatch.json",
+  "source_workflow": "https://github.com/ryanferronbaseball-oss/ferronnbaarchive/actions/runs/45003099167",
+  "seasons_scanned": 14,
+  "archive_player_ids": 1146,
+  "previously_tagged_players": 18,
+  "now_tagged_players": 19,
+  "confirmed_new": [
+    {
+      "archive_player_id": "espn:4701992",
+      "archive_name": "Max Shulga",
+      "euroleague_name": "Maksym Shulga",
+      "euroleague_code": "015102",
+      "season": "2026-27",
+      "club": "Real Madrid",
+      "games_played": 3,
+      "source_url": "https://www.basketball-reference.com/international/players/max-shulga-1.html",
+      "identity_source_url": "https://www.realmadrid.com/es-ES/noticias/baloncesto/primer-equipo/actualidad/asi-juega-max-shulga-14-08-2026"
+    }
+  ],
+  "name_candidate_outcome_counts": {
+    "excluded_distinct_person": 3,
+    "name_similarity_only_rejected": 33,
+    "confirmed_tag_added": 1
+  },
+  "name_candidates_reviewed": [
+    {
+      "archive_player_id": "espn:4067017",
+      "archive_name": "A.J. Lawson",
+      "league_candidate_name": "LAWSON, A.J.",
+      "league_code": "014734",
+      "first_candidate_season": "E2026",
+      "status": "excluded_distinct_person",
+      "reason": "EuroLeague A.J. Lawson is South Carolina alumnus; archived North Texas A.J. Lawson is another player.",
+      "source_url": "https://basketball.realgm.com/player/AJ-Lawson/Summary/120553"
+    },
+    {
+      "archive_player_id": "espn:4897670",
+      "archive_name": "Aboubacar Traore",
+      "league_candidate_name": "TRAORE, ALI",
+      "league_code": "BBE",
+      "first_candidate_season": "E2013",
+      "status": "name_similarity_only_rejected",
+      "reason": "Initial and surname collision: archive 'Aboubacar Traore' versus EuroLeague 'TRAORE, ALI'. Different given names; not verified same person.",
+      "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2013&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+    },
+    {
+      "archive_player_id": "official:vanderbilt:anthony-brown-jr",
+      "archive_name": "Anthony Brown Jr",
+      "league_candidate_name": "BROWN, ANTHONY",
+      "league_code": "009025",
+      "first_candidate_season": "E2026",
+      "status": "excluded_distinct_person",
+      "reason": "EuroLeague Anthony Brown is the 1992-born Stanford alumnus; archived Vanderbilt Anthony Brown Jr is 2026 freshman.",
+      "source_url": "https://www.be-basketball.com/player/anthony-brown-jr"
+    },
+    {
+      "archive_player_id": "espn:5176357",
+      "archive_name": "Corey Jones",
+      "league_candidate_name": "JONES, CHRIS",
+      "league_code": "010568",
+      "first_candidate_season": "E2020",
+      "status": "name_similarity_only_rejected",
+      "reason": "Initial and surname collision: archive 'Corey Jones' versus EuroLeague 'JONES, CHRIS'. Different given names; not verified same person.",
+      "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2020&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+    },
+    {
+      "archive_player_id": "espn:4431682",
+      "archive_name": "D.J. Jeffries",
+      "league_candidate_name": "JEFFRIES, DAQUAN",
+      "league_code": "014785",
+      "first_candidate_season": "E2026",
+      "status": "name_similarity_only_rejected",
+      "reason": "Initial and surname collision: archive 'D.J. Jeffries' versus EuroLeague 'JEFFRIES, DAQUAN'. Different given names; not verified same person.",
+      "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2026&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+    },
+    {
+      "archive_player_id": "espn:5105464",
+      "archive_name": "Dallin Hall",
+      "league_candidate_name": "HALL, DEVON",
+      "league_code": "011205",
+      "first_candidate_season": "E2021",
+      "status": "name_similarity_only_rejected",
+      "reason": "Initial and surname collision: archive 'Dallin Hall' versus EuroLeague 'HALL, DEVON'. Different given names; not verified same person.",
+      "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2021&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+    },
+    {
+      "archive_player_id": "espn:4937074",
+      "archive_name": "Darrion Williams",
+      "league_candidate_name": "WILLIAMS, DERRICK",
+      "league_code": "009006",
+      "first_candidate_season": "E2018",
+      "status": "name_similarity_only_rejected",
+      "reason": "Initial and surname collision: archive 'Darrion Williams' versus EuroLeague 'WILLIAMS, DERRICK'. Different given names; not verified same person.",
+      "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2018&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+    },
+    {
+      "archive_player_id": "espn:4702244",
+      "archive_name": "Davis Smith",
+      "league_candidate_name": "SMITH, DEVIN",
+      "league_code": "001274",
+      "first_candidate_season": "E2013",
+      "status": "name_similarity_only_rejected",
+      "reason": "Initial and surname collision: archive 'Davis Smith' versus EuroLeague 'SMITH, DEVIN'. Different given names; not verified same person.",
+      "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2013&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+    },
+    {
+      "archive_player_id": "espn:4897493",
+      "archive_name": "Denver Jones",
+      "league_candidate_name": "JONES, DAMIAN",
+      "league_code": "015103",
+      "first_candidate_season": "E2026",
+      "status": "name_similarity_only_rejected",
+      "reason": "Initial and surname collision: archive 'Denver Jones' versus EuroLeague 'JONES, DAMIAN'. Different given names; not verified same person.",
+      "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2026&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+    },
+    {
+      "archive_player_id": "espn:4397758",
+      "archive_name": "Devin Moss",
+      "league_candidate_name": "MOSS, DAVID",
+      "league_code": "002852",
+      "first_candidate_season": "E2013",
+      "status": "name_similarity_only_rejected",
+      "reason": "Initial and surname collision: archive 'Devin Moss' versus EuroLeague 'MOSS, DAVID'. Different given names; not verified same person.",
+      "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2013&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+    },
+    {
+      "archive_player_id": "espn:4593040",
+      "archive_name": "Dischon Thomas",
+      "league_candidate_name": "THOMAS, DESHAUN",
+      "league_code": "005094",
+      "first_candidate_season": "E2013",
+      "status": "name_similarity_only_rejected",
+      "reason": "Initial and surname collision: archive 'Dischon Thomas' versus EuroLeague 'THOMAS, DESHAUN'. Different given names; not verified same person.",
+      "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2013&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+    },
+    {
+      "archive_player_id": "espn:3920183",
+      "archive_name": "DJ Draper",
+      "league_candidate_name": "DRAPER, DONTAYE",
+      "league_code": "002946",
+      "first_candidate_season": "E2013",
+      "status": "name_similarity_only_rejected",
+      "reason": "Initial and surname collision: archive 'DJ Draper' versus EuroLeague 'DRAPER, DONTAYE'. Different given names; not verified same person.",
+      "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2013&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+    },
+    {
+      "archive_player_id": "espn:4403873",
+      "archive_name": "Elijah Jackson",
+      "league_candidate_name": "JACKSON, EDWIN",
+      "league_code": "000229",
+      "first_candidate_season": "E2014",
+      "status": "name_similarity_only_rejected",
+      "reason": "Initial and surname collision: archive 'Elijah Jackson' versus EuroLeague 'JACKSON, EDWIN'. Different given names; not verified same person.",
+      "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2014&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+    },
+    {
+      "archive_player_id": "espn:4278490",
+      "archive_name": "Eric Williams Jr.",
+      "league_candidate_name": "WILLIAMS, ELLIOT",
+      "league_code": "007013",
+      "first_candidate_season": "E2015",
+      "status": "name_similarity_only_rejected",
+      "reason": "Initial and surname collision: archive 'Eric Williams Jr.' versus EuroLeague 'WILLIAMS, ELLIOT'. Different given names; not verified same person.",
+      "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2015&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+    },
+    {
+      "archive_player_id": "espn:4397141",
+      "archive_name": "J'Raan Brooks",
+      "league_candidate_name": "BROOKS, JEFF",
+      "league_code": "004117",
+      "first_candidate_season": "E2014",
+      "status": "name_similarity_only_rejected",
+      "reason": "Initial and surname collision: archive 'J'Raan Brooks' versus EuroLeague 'BROOKS, JEFF'. Different given names; not verified same person.",
+      "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2014&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+    },
+    {
+      "archive_player_id": "espn:4898186",
+      "archive_name": "Jace Carter",
+      "league_candidate_name": "CARTER, JOSH",
+      "league_code": "001910",
+      "first_candidate_season": "E2013",
+      "status": "name_similarity_only_rejected",
+      "reason": "Initial and surname collision: archive 'Jace Carter' versus EuroLeague 'CARTER, JOSH'. Different given names; not verified same person.",
+      "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2013&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+    },
+    {
+      "archive_player_id": "espn:4280202",
+      "archive_name": "Jade' Smith",
+      "league_candidate_name": "SMITH, JAMAR",
+      "league_code": "005002",
+      "first_candidate_season": "E2013",
+      "status": "name_similarity_only_rejected",
+      "reason": "Initial and surname collision: archive 'Jade' Smith' versus EuroLeague 'SMITH, JAMAR'. Different given names; not verified same person.",
+      "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2013&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+    },
+    {
+      "archive_player_id": "espn:4909704",
+      "archive_name": "Jake Martin",
+      "league_candidate_name": "MARTIN, JARELL",
+      "league_code": "011967",
+      "first_candidate_season": "E2022",
+      "status": "name_similarity_only_rejected",
+      "reason": "Initial and surname collision: archive 'Jake Martin' versus EuroLeague 'MARTIN, JARELL'. Different given names; not verified same person.",
+      "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2022&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+    },
+    {
+      "archive_player_id": "espn:4702528",
+      "archive_name": "Jaxson Robinson",
+      "league_candidate_name": "ROBINSON, JUSTIN",
+      "league_code": "014008",
+      "first_candidate_season": "E2025",
+      "status": "name_similarity_only_rejected",
+      "reason": "Initial and surname collision: archive 'Jaxson Robinson' versus EuroLeague 'ROBINSON, JUSTIN'. Different given names; not verified same person.",
+      "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2025&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+    },
+    {
+      "archive_player_id": "espn:4589483",
+      "archive_name": "Jayden Taylor",
+      "league_candidate_name": "TAYLOR, JEFFERY",
+      "league_code": "006546",
+      "first_candidate_season": "E2015",
+      "status": "name_similarity_only_rejected",
+      "reason": "Initial and surname collision: archive 'Jayden Taylor' versus EuroLeague 'TAYLOR, JEFFERY'. Different given names; not verified same person.",
+      "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2015&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+    },
+    {
+      "archive_player_id": "espn:4432247",
+      "archive_name": "Jaylen Clark",
+      "league_candidate_name": "CLARK III, JIMMY",
+      "league_code": "013699",
+      "first_candidate_season": "E2024",
+      "status": "name_similarity_only_rejected",
+      "reason": "Initial and surname collision: archive 'Jaylen Clark' versus EuroLeague 'CLARK III, JIMMY'. Different given names; not verified same person.",
+      "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2024&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+    },
+    {
+      "archive_player_id": "espn:5105634",
+      "archive_name": "Jaylen Thompson",
+      "league_candidate_name": "THOMPSON, JASON",
+      "league_code": "007998",
+      "first_candidate_season": "E2017",
+      "status": "name_similarity_only_rejected",
+      "reason": "Initial and surname collision: archive 'Jaylen Thompson' versus EuroLeague 'THOMPSON, JASON'. Different given names; not verified same person.",
+      "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2017&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+    },
+    {
+      "archive_player_id": "espn:4592485",
+      "archive_name": "Jimmy Bell Jr.",
+      "league_candidate_name": "BELL, JAMES",
+      "league_code": "006497",
+      "first_candidate_season": "E2018",
+      "status": "name_similarity_only_rejected",
+      "reason": "Initial and surname collision: archive 'Jimmy Bell Jr.' versus EuroLeague 'BELL, JAMES'. Different given names; not verified same person.",
+      "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2018&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+    },
+    {
+      "archive_player_id": "espn:3130746",
+      "archive_name": "John Carroll",
+      "league_candidate_name": "CARROLL, JAYCEE",
+      "league_code": "001960",
+      "first_candidate_season": "E2013",
+      "status": "name_similarity_only_rejected",
+      "reason": "Initial and surname collision: archive 'John Carroll' versus EuroLeague 'CARROLL, JAYCEE'. Different given names; not verified same person.",
+      "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2013&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+    },
+    {
+      "archive_player_id": "espn:4398376",
+      "archive_name": "Jr. Clay",
+      "league_candidate_name": "REYNOLDS, JR",
+      "league_code": "001257",
+      "first_candidate_season": "E2015",
+      "status": "name_similarity_only_rejected",
+      "reason": "Initial and surname collision: archive 'Jr. Clay' versus EuroLeague 'REYNOLDS, JR'. Different given names; not verified same person.",
+      "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2015&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+    },
+    {
+      "archive_player_id": "espn:5241756",
+      "archive_name": "Kam Taylor",
+      "league_candidate_name": "TAYLOR, KAMERON",
+      "league_code": "011217",
+      "first_candidate_season": "E2021",
+      "status": "name_similarity_only_rejected",
+      "reason": "Initial and surname collision: archive 'Kam Taylor' versus EuroLeague 'TAYLOR, KAMERON'. Different given names; not verified same person.",
+      "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2021&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+    },
+    {
+      "archive_player_id": "espn:4683756",
+      "archive_name": "KeShawn Murphy",
+      "league_candidate_name": "MURPHY, KEVIN",
+      "league_code": "005201",
+      "first_candidate_season": "E2013",
+      "status": "name_similarity_only_rejected",
+      "reason": "Initial and surname collision: archive 'KeShawn Murphy' versus EuroLeague 'MURPHY, KEVIN'. Different given names; not verified same person.",
+      "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2013&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+    },
+    {
+      "archive_player_id": "espn:4066651",
+      "archive_name": "Killian Tillie",
+      "league_candidate_name": "TILLIE, KIM",
+      "league_code": "002744",
+      "first_candidate_season": "E2014",
+      "status": "name_similarity_only_rejected",
+      "reason": "Initial and surname collision: archive 'Killian Tillie' versus EuroLeague 'TILLIE, KIM'. Different given names; not verified same person.",
+      "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2014&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+    },
+    {
+      "archive_player_id": "espn:4279639",
+      "archive_name": "Koby Thomas",
+      "league_candidate_name": "THOMAS, KHYRI",
+      "league_code": "011313",
+      "first_candidate_season": "E2021",
+      "status": "name_similarity_only_rejected",
+      "reason": "Initial and surname collision: archive 'Koby Thomas' versus EuroLeague 'THOMAS, KHYRI'. Different given names; not verified same person.",
+      "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2021&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+    },
+    {
+      "archive_player_id": "espn:5105337",
+      "archive_name": "Maliq Brown",
+      "league_candidate_name": "BROWN, MARKEL",
+      "league_code": "007424",
+      "first_candidate_season": "E2018",
+      "status": "name_similarity_only_rejected",
+      "reason": "Initial and surname collision: archive 'Maliq Brown' versus EuroLeague 'BROWN, MARKEL'. Different given names; not verified same person.",
+      "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2018&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+    },
+    {
+      "archive_player_id": "espn:4703400",
+      "archive_name": "Marcus Williams",
+      "league_candidate_name": "WILLIAMS, MARCUS",
+      "league_code": "004212",
+      "first_candidate_season": "E2013",
+      "status": "excluded_distinct_person",
+      "reason": "EuroLeague veteran Marcus Williams (Lokomotiv/Crvena Zvezda) is NOT the archived San Francisco alumnus.",
+      "source_url": "https://www.shamsports.com/players/marcus-williams/1"
+    },
+    {
+      "archive_player_id": "espn:4701992",
+      "archive_name": "Max Shulga",
+      "league_candidate_name": "SHULGA, MAKSYM",
+      "league_code": "015102",
+      "first_candidate_season": "E2026",
+      "status": "confirmed_tag_added",
+      "reason": "Max and Maksym are the same player; Real Madrid confirms Utah State tenure, EuroLeague has 3 games in E2026.",
+      "source_url": "https://www.realmadrid.com/es-ES/noticias/baloncesto/primer-equipo/actualidad/asi-juega-max-shulga-14-08-2026"
+    },
+    {
+      "archive_player_id": "espn:4592972",
+      "archive_name": "Miles James",
+      "league_candidate_name": "JAMES, MIKE",
+      "league_code": "005985",
+      "first_candidate_season": "E2014",
+      "status": "name_similarity_only_rejected",
+      "reason": "Initial and surname collision: archive 'Miles James' versus EuroLeague 'JAMES, MIKE'. Different given names; not verified same person.",
+      "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2014&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+    },
+    {
+      "archive_player_id": "espn:4896994",
+      "archive_name": "Reyne Smith",
+      "league_candidate_name": "SMITH, RUSS",
+      "league_code": "007356",
+      "first_candidate_season": "E2016",
+      "status": "name_similarity_only_rejected",
+      "reason": "Initial and surname collision: archive 'Reyne Smith' versus EuroLeague 'SMITH, RUSS'. Different given names; not verified same person.",
+      "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2016&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+    },
+    {
+      "archive_player_id": "espn:5037870",
+      "archive_name": "Rodney Brown",
+      "league_candidate_name": "BROWN, RION",
+      "league_code": "009817",
+      "first_candidate_season": "E2019",
+      "status": "name_similarity_only_rejected",
+      "reason": "Initial and surname collision: archive 'Rodney Brown' versus EuroLeague 'BROWN, RION'. Different given names; not verified same person.",
+      "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2019&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+    },
+    {
+      "archive_player_id": "espn:4602025",
+      "archive_name": "Sion James",
+      "league_candidate_name": "JAMES, SHAWN",
+      "league_code": "001335",
+      "first_candidate_season": "E2013",
+      "status": "name_similarity_only_rejected",
+      "reason": "Initial and surname collision: archive 'Sion James' versus EuroLeague 'JAMES, SHAWN'. Different given names; not verified same person.",
+      "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2013&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+    },
+    {
+      "archive_player_id": "official:cal-poly:trevon-taylor",
+      "archive_name": "Trevon Taylor",
+      "league_candidate_name": "TAYLOR, TONY",
+      "league_code": "005850",
+      "first_candidate_season": "E2014",
+      "status": "name_similarity_only_rejected",
+      "reason": "Initial and surname collision: archive 'Trevon Taylor' versus EuroLeague 'TAYLOR, TONY'. Different given names; not verified same person.",
+      "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2014&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+    }
+  ],
+  "existing_tag_missing_naive_name_match": {
+    "archive_player_id": "espn:4278706",
+    "archive_name": "Matt Mitchell",
+    "league_name": "Matthew Mitchell",
+    "season": "2024-25",
+    "games": 29,
+    "source_url": "https://elstatslab.com/careers/matthew-mitchell/",
+    "reason": "Nickname mismatch, existing tag is correctly verified."
+  },
+  "caveats": "A historic season-player statistics crossmatch is substantially broader than previous targeted audits but it remains name-based; outcomes for distinct initials are name mismatch triage, not proof of exhaustive career history. No other new tags approved."
+}

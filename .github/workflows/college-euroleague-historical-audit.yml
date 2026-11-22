@@ -5,6 +5,9 @@ on:
     paths:
       - '.github/workflows/college-euroleague-historical-audit.yml'
       - 'college/scripts/audit_euroleague_history.py'
+concurrency:
+  group: college-euroleague-historical-audit
+  cancel-in-progress: true
 permissions:
   contents: write
 jobs:
@@ -40,7 +43,8 @@ jobs:
             git add college/reports/euroleague-historical-crossmatch.json college/reports/euroleague-historical-crossmatch.csv
             if ! git diff --cached --quiet; then
               git commit -m "Record EuroLeague historical candidate matching and season coverage"
-              git push
+              git pull --rebase origin main
+              git push origin HEAD:main
             fi
           fi
       - name: Report incomplete coverage as failure

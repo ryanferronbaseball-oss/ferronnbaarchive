@@ -1,0 +1,91 @@
+{
+  "date": "2026-11-22",
+  "scope": "College only, targeted EuroLeague audit pass 21",
+  "reviewed": [
+    {
+      "name": "D'Shawn Schwartz",
+      "player_ids": [
+        "official:colorado-2018-19:dshawn-schwartz"
+      ],
+      "witnessed_schools": [
+        "Colorado"
+      ],
+      "source_url": "https://basketball.realgm.com/player/DShawn-Schwartz/Summary/88873",
+      "finding": "Fenerbahce second team, BCL with Le Mans, FIBA Europe Cup with Rostock, Australian NBL.",
+      "status": "no_senior_euroleague_appearance_verified_in_reviewed_records"
+    },
+    {
+      "name": "Jalen Ray",
+      "player_ids": [
+        "espn:4279206"
+      ],
+      "witnessed_schools": [
+        "Hofstra"
+      ],
+      "source_url": "https://basketball.realgm.com/player/Jalen-Ray/Summary/121976",
+      "finding": "British, Kosovo and Turkish second-tier domestic competitions.",
+      "status": "no_senior_euroleague_appearance_verified_in_reviewed_records"
+    },
+    {
+      "name": "Bodie Hume",
+      "player_ids": [
+        "espn:4397311"
+      ],
+      "witnessed_schools": [
+        "Northern Colorado"
+      ],
+      "source_url": "https://basketball.realgm.com/player/Bodie-Hume/Summary/136928",
+      "finding": "BCL with Bonn, FIBA Europe Cup with Gottingen and Oradea, Swedish, German, Israeli and Romanian leagues; FIBA corroboration https://www.fiba.basketball/en/players/324782-bodie-hume.",
+      "status": "no_senior_euroleague_appearance_verified_in_reviewed_records"
+    },
+    {
+      "name": "Jan Zidek",
+      "player_ids": [
+        "espn:4593792"
+      ],
+      "witnessed_schools": [
+        "Pepperdine"
+      ],
+      "source_url": "https://basketball.realgm.com/player/Jan-Zidek/Summary/104443",
+      "finding": "Youth tournaments and Czech NBL before college, Spanish second and third tiers afterward.",
+      "status": "no_senior_euroleague_appearance_verified_in_reviewed_records"
+    },
+    {
+      "name": "Jaizec Lottie",
+      "player_ids": [
+        "espn:4280284"
+      ],
+      "witnessed_schools": [
+        "Little Rock"
+      ],
+      "source_url": "https://basketball.realgm.com/player/Jaizec-Lottie/International/105816/Career/By_Split",
+      "finding": "BCL with VEF Riga, EuroCup with Hamburg 2024-25, FIBA Europe Cup with Oradea, domestic leagues.",
+      "status": "no_senior_euroleague_appearance_verified_in_reviewed_records"
+    }
+  ],
+  "pending_rechecks": [
+    {
+      "name": "Mady Sissoko",
+      "player_id": "espn:4433154",
+      "status": "pending_verified_debut",
+      "sources": [
+        "https://www.rotowire.com/euro/player/mady-sissoko-1545",
+        "https://www.basketballatlas.com/news/euroleague-injury-report-november-20-absences-and-game-time-calls-for-round-13-29cfea4d034e?from=257"
+      ],
+      "finding": "DNP log through Nov 13; listed out Nov 20; no verified debut."
+    }
+  ],
+  "historical_scan": {
+    "status": "Blocked; no new season-wide matching completed.",
+    "attempts": [
+      "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2024&statisticMode=PerGame&limit=1000",
+      "https://github.com/shakedshoshan/euroleague-scraper/tree/master/results"
+    ],
+    "alternative": "https://basketball.realgm.com/international/league/1/Euroleague/stats/2025/Totals/All/Pro",
+    "limitations": "Season table found but no complete archive name join performed."
+  },
+  "new_tags": [],
+  "existing_player_tags": 18,
+  "existing_award_tags": 3,
+  "limitations": "Individual competition records are not an exhaustive historical audit."
+}

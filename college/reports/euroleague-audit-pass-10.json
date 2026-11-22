@@ -1,0 +1,134 @@
+{
+  "date": "2026-11-21",
+  "scope": "College archive only; targeted EuroLeague career audit pass 10; historical source recovery",
+  "unique_archive_player_ids": 1146,
+  "reviewed": [
+    {
+      "name": "Pavel Zakharov",
+      "player_ids": [
+        "espn:4431731"
+      ],
+      "witnessed_schools": [
+        "Gonzaga"
+      ],
+      "source_url": "https://cskabasket.com/en/team/player/6343/",
+      "finding": "Club career lists VTB United League, second team and preseason games, no verified EuroLeague.",
+      "status": "no_senior_euroleague_appearance_verified_in_reviewed_records"
+    },
+    {
+      "name": "Adama Bal",
+      "player_ids": [
+        "espn:4896365"
+      ],
+      "witnessed_schools": [
+        "Santa Clara"
+      ],
+      "source_url": "https://coupedefrance.ffbb.com/masculin/joueur/180217-adama-bal",
+      "finding": "French federation records ANGT youth tournament, not senior EuroLeague; NBA G League record also checked.",
+      "status": "no_senior_euroleague_appearance_verified_in_reviewed_records"
+    },
+    {
+      "name": "Szymon Zapala",
+      "player_ids": [
+        "espn:4701993"
+      ],
+      "witnessed_schools": [
+        "Utah State"
+      ],
+      "source_url": "https://www.shamsports.com/players/szymon-zapala",
+      "finding": "FIBA Europe Cup with Trefl Sopot and Polish domestic league.",
+      "status": "no_senior_euroleague_appearance_verified_in_reviewed_records"
+    },
+    {
+      "name": "Ante Brzovic",
+      "player_ids": [
+        "espn:5105761"
+      ],
+      "witnessed_schools": [
+        "College of Charleston"
+      ],
+      "source_url": "https://basketball.realgm.com/player/Ante-Brzovic/Summary/128533",
+      "finding": "Professional history reviewed; no qualifying appearance found.",
+      "status": "no_senior_euroleague_appearance_verified_in_reviewed_records"
+    },
+    {
+      "name": "Saba Gigiberia",
+      "player_ids": [
+        "espn:4433208"
+      ],
+      "witnessed_schools": [
+        "San Francisco"
+      ],
+      "source_url": "https://basketball.realgm.com/player/Saba-Gigiberia/Summary/120756",
+      "finding": "Youth national competitions and NCAA; Spanish club development before US high school is not evidence of senior EuroLeague.",
+      "status": "no_senior_euroleague_appearance_verified_in_reviewed_records"
+    },
+    {
+      "name": "Lazar Djokovic",
+      "player_ids": [
+        "espn:5175368"
+      ],
+      "witnessed_schools": [
+        "College of Charleston"
+      ],
+      "source_url": "https://basketball.realgm.com/player/Lazar-Djokovic/Summary/183090",
+      "finding": "NCAA and Serbian youth national competition; no verified senior EuroLeague.",
+      "status": "no_senior_euroleague_appearance_verified_in_reviewed_records"
+    },
+    {
+      "name": "Taavi Jurkatamm",
+      "player_ids": [
+        "espn:4280248"
+      ],
+      "witnessed_schools": [
+        "San Francisco"
+      ],
+      "source_url": "https://www.fiba.basketball/en/players/204534-taavi-jurkatamm",
+      "finding": "2023 FIBA Europe Cup with Kalev/Cramo; no senior EuroLeague verified.",
+      "status": "no_senior_euroleague_appearance_verified_in_reviewed_records"
+    },
+    {
+      "name": "Remu Raitanen",
+      "player_ids": [
+        "espn:4066749"
+      ],
+      "witnessed_schools": [
+        "San Francisco"
+      ],
+      "source_url": "https://www.fiba.basketball/en/players/203920-remu-raitanen",
+      "finding": "2025 FIBA Europe Cup with Prievidza; no senior EuroLeague verified.",
+      "status": "no_senior_euroleague_appearance_verified_in_reviewed_records"
+    },
+    {
+      "name": "Roberto Gallinat",
+      "player_ids": [
+        "espn:4285657"
+      ],
+      "witnessed_schools": [
+        "Pacific"
+      ],
+      "source_url": "https://basketball.realgm.com/player/Roberto-Gallinat/Summary/117646",
+      "finding": "EuroCup with Aris and BCL with Ramat Gan/Karsiyaka season, domestic leagues; no EuroLeague in listed career.",
+      "status": "no_senior_euroleague_appearance_verified_in_reviewed_records"
+    }
+  ],
+  "new_tags": [],
+  "existing_player_tags": 18,
+  "existing_award_tags": 3,
+  "historical_bulk_source": {
+    "url": "https://675hoops.com/downloads/",
+    "coverage": "2007-08 through 2026-27",
+    "download": "https://675hoops.com/downloads/euroleague-all-seasons.zip",
+    "status": "Bulk ZIP download failed in current session. Official season stats endpoint also inaccessible. No newly completed season-wide cross-match.",
+    "required_fields": [
+      "player",
+      "player_id",
+      "season",
+      "team",
+      "game_id",
+      "sec"
+    ],
+    "matching": "Normalize accent, punctuation and suffix variations; match actual appearances with positive seconds or other box score evidence; manually verify identities and aliases before tags."
+  },
+  "limitations": "These are targeted checks, not proof of absence; no additional complete historical season scan."
+}

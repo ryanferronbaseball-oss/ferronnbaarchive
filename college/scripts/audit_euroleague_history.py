@@ -27,6 +27,14 @@ API_HOSTS = [
 ]
 SUFFIX = re.compile(r"\b(jr|sr|ii|iii|iv|v)\b", re.IGNORECASE)
 NONALPHA = re.compile(r"[^a-z0-9 ]+")
+# Explicit identity-verified aliases. Key by the Courtside player ID, never by
+# surname alone; this prevents accidental merges of unrelated professionals.
+VERIFIED_ALIASES = {
+    "espn:4701992": ("Maksym Shulga",),    # Max Shulga, Real Madrid
+    "espn:4278706": ("Matthew Mitchell",), # Matt Mitchell, Zalgiris
+    "espn:4397371": ("Nathan Mensah",),   # Nate Mensah, Olympiacos
+    "espn:3947128": ("Zachary Seljaas",), # Zac Seljaas, ASVEL
+}
 
 
 def normalize(name: str) -> str:
@@ -173,6 +181,10 @@ def run(year_start: int, year_end: int, delay: float, output_path: Path):
     by_surname = defaultdict(list)
     for pid, p in players.items():
         by_name[identity_token(p["name"])].append(pid)
+        for alias in VERIFIED_ALIASES.get(pid, ()):
+            token = identity_token(alias)
+            if pid not in by_name[token]:
+                by_name[token].append(pid)
         by_surname[surname_initial(p["name"])].append(pid)
 
     session = requests.Session()

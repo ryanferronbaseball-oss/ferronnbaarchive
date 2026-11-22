@@ -1,0 +1,50 @@
+name: College EuroLeague historical audit
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/college-euroleague-historical-audit.yml'
+      - 'college/scripts/audit_euroleague_history.py'
+permissions:
+  contents: write
+jobs:
+  euroleague-history:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install HTTP dependency
+        run: python -m pip install requests
+      - name: Cross-match all senior EuroLeague seasons with archive players
+        id: audit
+        continue-on-error: true
+        run: python -u college/scripts/audit_euroleague_history.py --from-season 2013 --to-season 2026 --delay 7
+      - name: Save report artifact even on partial/blocked fetch
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: euroleague-historical-crossmatch
+          path: |
+            college/reports/euroleague-historical-crossmatch.json
+            college/reports/euroleague-historical-crossmatch.csv
+          if-no-files-found: warn
+      - name: Commit evidence and coverage checkpoint
+        if: always()
+        run: |
+          if [ -f college/reports/euroleague-historical-crossmatch.json ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add college/reports/euroleague-historical-crossmatch.json college/reports/euroleague-historical-crossmatch.csv
+            if ! git diff --cached --quiet; then
+              git commit -m "Record EuroLeague historical candidate matching and season coverage"
+              git push
+            fi
+          fi
+      - name: Report incomplete coverage as failure
+        if: steps.audit.outcome == 'failure'
+        run: |
+          echo "One or more seasons failed; see artifact/committed report. No player tags were changed." >&2
+          exit 1

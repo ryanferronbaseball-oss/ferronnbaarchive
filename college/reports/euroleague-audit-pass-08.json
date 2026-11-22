@@ -1,0 +1,123 @@
+{
+  "date": "2026-11-21",
+  "scope": "College EuroLeague audit pass 8; normalized suffix and punctuation match, targeted career review; no NBA archive writes",
+  "season_scan": {
+    "seasons": [
+      "2025-26",
+      "2026-27"
+    ],
+    "source": "https://github.com/straledev/euroleague-fantasy-data/tree/main/data",
+    "new_verified_matches": 0,
+    "excluded_name_collisions": [
+      {
+        "archive_name": "A.J. Lawson",
+        "archive_school": "North Texas",
+        "euroleague_id": "P014734",
+        "status": "previously excluded identity collision"
+      },
+      {
+        "archive_name": "Anthony Brown Jr",
+        "archive_school": "Vanderbilt",
+        "euroleague_id": "P009025",
+        "status": "distinct players",
+        "sources": [
+          "https://vucommodores.com/sports/mbball/roster",
+          "https://basketball.realgm.com/player/Anthony-Brown/Summary/6998"
+        ]
+      }
+    ]
+  },
+  "reconfirmed": [
+    {
+      "name": "Jock Landale",
+      "games": 25,
+      "season": "2019-20",
+      "source_url": "https://admin.euroleague.net/competition/players/showplayer?pcode=008820&seasoncode=U2018"
+    },
+    {
+      "name": "Martynas Arlauskas",
+      "games": 4,
+      "season": "2017-18",
+      "source_url": "https://basketnews.com/players/18727-martynas-arlauskas/statistics.html"
+    },
+    {
+      "name": "Ousmane N'Diaye",
+      "games": 12,
+      "season": "2024-25",
+      "source_url": "https://elstatslab.com/careers/ousmane-ndiaye/"
+    },
+    {
+      "name": "Zac Seljaas",
+      "games": 36,
+      "season": "2025-26",
+      "source_url": "https://elstatslab.com/careers/zachary-seljaas/"
+    },
+    {
+      "name": "Armando Bacot",
+      "games": 26,
+      "season": "2025-26",
+      "source_url": "https://www.basketball-reference.com/international/players/armando-bacot-1.html"
+    }
+  ],
+  "reviewed": [
+    {
+      "name": "Jazz Johnson",
+      "school": "Nevada",
+      "finding": "Italian domestic leagues",
+      "source_url": "https://basketball.realgm.com/player/Jazz-Johnson/Summary/84498",
+      "status": "no senior EuroLeague appearance verified in reviewed records"
+    },
+    {
+      "name": "Silas Melson",
+      "school": "Gonzaga",
+      "finding": "BCL and domestic leagues",
+      "source_url": "https://basketball.realgm.com/player/Silas-Melson/Summary/81298",
+      "status": "no senior EuroLeague appearance verified in reviewed records"
+    },
+    {
+      "name": "Jalen Harris",
+      "school": "Cal State Fullerton",
+      "finding": "British BBL; distinct from Nevada namesake",
+      "source_url": "https://basketball.realgm.com/player/Jalen-Harris/Summary/88117",
+      "status": "no senior EuroLeague appearance verified in reviewed records"
+    },
+    {
+      "name": "Jordan Caroline",
+      "school": "Nevada",
+      "finding": "EuroCup, BCL and domestic leagues",
+      "source_url": "https://basketball.realgm.com/player/Jordan-Caroline/Summary/80783",
+      "status": "no senior EuroLeague appearance verified in reviewed records"
+    },
+    {
+      "name": "Johnathan Williams",
+      "school": "Gonzaga",
+      "finding": "EuroCup and domestic leagues in reviewed records",
+      "source_url": "https://www.basketball-reference.com/international/players/johnathan-williams-1.html",
+      "status": "no senior EuroLeague appearance verified in reviewed records"
+    },
+    {
+      "name": "Berke Buyuktuncel",
+      "school": "Vanderbilt",
+      "finding": "BCL before college",
+      "source_url": "https://www.fiba.basketball/en/players/270693-berke-buyuktuncel",
+      "status": "no senior EuroLeague appearance verified in reviewed records"
+    }
+  ],
+  "award_reconfirmed": [
+    {
+      "name": "Elijah Bryant",
+      "award": "All-EuroLeague First Team",
+      "season": "2025-26",
+      "source_url": "https://basketball.realgm.com/international/league/1/Euroleague/awards/by_season/2026"
+    },
+    {
+      "name": "Filip Petrusev",
+      "award": "EuroLeague Champion",
+      "year": 2022,
+      "source_url": "https://www.olympiacosbc.gr/en/team/roster/player/3149.html"
+    }
+  ],
+  "current_player_tags": 18,
+  "current_award_tags": 3,
+  "limitations": "Not an exhaustive archive scan. Official season statistics API inaccessible in this session; historical full data still unprocessed. Live tags unchanged."
+}

@@ -1,0 +1,2330 @@
+{
+  "summary": {
+    "scope": "senior men's EuroLeague E; 2013-14 to 2026-27 by default; exclude EuroCup/U, youth ANGT, roster-only",
+    "archive_players": 1146,
+    "previous_tagged_players": 18,
+    "seasons_requested": 14,
+    "seasons_scanned": 14,
+    "complete_requested_coverage": true,
+    "existing_tagged_with_name_matches": 17,
+    "new_identity_review_candidates": 37,
+    "note": "No new tags automatically issued. Name-only matches are not proof of identity; game statistics with >=1 GP are evidence of competition, subject to identity review."
+  },
+  "seasons": [
+    {
+      "season": "E2013",
+      "status": "scanned",
+      "rows": 349,
+      "source": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional",
+      "error": null
+    },
+    {
+      "season": "E2014",
+      "status": "scanned",
+      "rows": 356,
+      "source": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional",
+      "error": null
+    },
+    {
+      "season": "E2015",
+      "status": "scanned",
+      "rows": 349,
+      "source": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional",
+      "error": null
+    },
+    {
+      "season": "E2016",
+      "status": "scanned",
+      "rows": 242,
+      "source": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional",
+      "error": null
+    },
+    {
+      "season": "E2017",
+      "status": "scanned",
+      "rows": 255,
+      "source": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional",
+      "error": null
+    },
+    {
+      "season": "E2018",
+      "status": "scanned",
+      "rows": 250,
+      "source": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional",
+      "error": null
+    },
+    {
+      "season": "E2019",
+      "status": "scanned",
+      "rows": 298,
+      "source": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional",
+      "error": null
+    },
+    {
+      "season": "E2020",
+      "status": "scanned",
+      "rows": 298,
+      "source": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional",
+      "error": null
+    },
+    {
+      "season": "E2021",
+      "status": "scanned",
+      "rows": 293,
+      "source": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional",
+      "error": null
+    },
+    {
+      "season": "E2022",
+      "status": "scanned",
+      "rows": 295,
+      "source": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional",
+      "error": null
+    },
+    {
+      "season": "E2023",
+      "status": "scanned",
+      "rows": 287,
+      "source": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional",
+      "error": null
+    },
+    {
+      "season": "E2024",
+      "status": "scanned",
+      "rows": 296,
+      "source": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional",
+      "error": null
+    },
+    {
+      "season": "E2025",
+      "status": "scanned",
+      "rows": 335,
+      "source": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional",
+      "error": null
+    },
+    {
+      "season": "E2026",
+      "status": "scanned",
+      "rows": 302,
+      "source": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional",
+      "error": null
+    }
+  ],
+  "candidates": [
+    {
+      "player_id": "espn:4067017",
+      "archive_name": "A.J. Lawson",
+      "schools": [
+        "North Texas"
+      ],
+      "already_tagged": false,
+      "status": "review_exact_name",
+      "evidence": [
+        {
+          "name": "LAWSON, A.J.",
+          "code": "014734",
+          "team": "Baskonia Vitoria-Gasteiz",
+          "games": 13.0,
+          "season": "E2026",
+          "match_kind": "exact_name",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2026&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        }
+      ]
+    },
+    {
+      "player_id": "espn:4897670",
+      "archive_name": "Aboubacar Traore",
+      "schools": [
+        "Louisville"
+      ],
+      "already_tagged": false,
+      "status": "review_name_similarity",
+      "evidence": [
+        {
+          "name": "TRAORE, ALI",
+          "code": "BBE",
+          "team": "Nanterre 92",
+          "games": 9.0,
+          "season": "E2013",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2013&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "TRAORE, ALI",
+          "code": "BBE",
+          "team": "Limoges Cercle Saint-Pierre",
+          "games": 9.0,
+          "season": "E2015",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2015&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "TRAORE, ARMEL",
+          "code": "010319",
+          "team": "AS Monaco",
+          "games": 1.0,
+          "season": "E2021",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2021&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "TRAORE, ARMEL",
+          "code": "010319",
+          "team": "LDLC ASVEL Villeurbanne",
+          "games": 36.0,
+          "season": "E2025",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2025&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        }
+      ]
+    },
+    {
+      "player_id": "official:vanderbilt:anthony-brown-jr",
+      "archive_name": "Anthony Brown Jr",
+      "schools": [
+        "Vanderbilt"
+      ],
+      "already_tagged": false,
+      "status": "review_exact_name",
+      "evidence": [
+        {
+          "name": "BROWN, ANTHONY",
+          "code": "009025",
+          "team": "Besiktas Istanbul",
+          "games": 13.0,
+          "season": "E2026",
+          "match_kind": "exact_name",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2026&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        }
+      ]
+    },
+    {
+      "player_id": "espn:4431674",
+      "archive_name": "Armando Bacot",
+      "schools": [
+        "North Carolina"
+      ],
+      "already_tagged": true,
+      "status": "existing_tag_match",
+      "evidence": [
+        {
+          "name": "BACOT JR., ARMANDO",
+          "code": "014015",
+          "team": "Fenerbahce Istanbul",
+          "games": 26.0,
+          "season": "E2025",
+          "match_kind": "exact_name",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2025&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "BACOT JR., ARMANDO",
+          "code": "014015",
+          "team": "Maccabi Rapyd Tel Aviv",
+          "games": 10.0,
+          "season": "E2026",
+          "match_kind": "exact_name",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2026&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        }
+      ]
+    },
+    {
+      "player_id": "espn:3130580",
+      "archive_name": "Boubacar Toure",
+      "schools": [
+        "Eastern Michigan"
+      ],
+      "already_tagged": true,
+      "status": "existing_tag_match",
+      "evidence": [
+        {
+          "name": "TOURE, BOUBACAR",
+          "code": "012739",
+          "team": "Valencia Basket",
+          "games": 21.0,
+          "season": "E2023",
+          "match_kind": "exact_name",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2023&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        }
+      ]
+    },
+    {
+      "player_id": "espn:5176357",
+      "archive_name": "Corey Jones",
+      "schools": [
+        "UNC Asheville"
+      ],
+      "already_tagged": false,
+      "status": "review_name_similarity",
+      "evidence": [
+        {
+          "name": "JONES, CHRIS",
+          "code": "010568",
+          "team": "Maccabi Rapyd Tel Aviv",
+          "games": 34.0,
+          "season": "E2020",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2020&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "JONES, CHRIS",
+          "code": "010568",
+          "team": "LDLC ASVEL Villeurbanne",
+          "games": 31.0,
+          "season": "E2021",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2021&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "JONES, CHRIS",
+          "code": "010568",
+          "team": "Valencia Basket",
+          "games": 28.0,
+          "season": "E2022",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2022&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "JONES, CHRIS",
+          "code": "010568",
+          "team": "Valencia Basket",
+          "games": 33.0,
+          "season": "E2023",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2023&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "JONES, CARLIK",
+          "code": "013369",
+          "team": "Partizan Mozzart Bet Belgrade",
+          "games": 34.0,
+          "season": "E2024",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2024&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "JONES, CARLIK",
+          "code": "013369",
+          "team": "Partizan Mozzart Bet Belgrade",
+          "games": 15.0,
+          "season": "E2025",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2025&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "JONES, CHRIS",
+          "code": "010568",
+          "team": "Hapoel Tel Aviv",
+          "games": 42.0,
+          "season": "E2025",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2025&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "JONES, CARLIK",
+          "code": "013369",
+          "team": "Partizan Mozzart Bet Belgrade",
+          "games": 13.0,
+          "season": "E2026",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2026&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "JONES, CHRIS",
+          "code": "010568",
+          "team": "Crvena Zvezda Meridianbet Belgrade",
+          "games": 13.0,
+          "season": "E2026",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2026&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        }
+      ]
+    },
+    {
+      "player_id": "espn:4431682",
+      "archive_name": "D.J. Jeffries",
+      "schools": [
+        "Mississippi State"
+      ],
+      "already_tagged": false,
+      "status": "review_name_similarity",
+      "evidence": [
+        {
+          "name": "JEFFRIES, DAQUAN",
+          "code": "014785",
+          "team": "Besiktas Istanbul",
+          "games": 4.0,
+          "season": "E2026",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2026&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        }
+      ]
+    },
+    {
+      "player_id": "espn:5105464",
+      "archive_name": "Dallin Hall",
+      "schools": [
+        "BYU"
+      ],
+      "already_tagged": false,
+      "status": "review_name_similarity",
+      "evidence": [
+        {
+          "name": "HALL, DEVON",
+          "code": "011205",
+          "team": "Armani Olimpia Milan",
+          "games": 36.0,
+          "season": "E2021",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2021&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "HALL, DONTA",
+          "code": "011196",
+          "team": "AS Monaco",
+          "games": 35.0,
+          "season": "E2021",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2021&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "HALL, DEVON",
+          "code": "011205",
+          "team": "Armani Olimpia Milan",
+          "games": 25.0,
+          "season": "E2022",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2022&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "HALL, DONTA",
+          "code": "011196",
+          "team": "AS Monaco",
+          "games": 41.0,
+          "season": "E2022",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2022&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "HALL, DEVON",
+          "code": "011205",
+          "team": "Armani Olimpia Milan",
+          "games": 32.0,
+          "season": "E2023",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2023&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "HALL, DONTA",
+          "code": "011196",
+          "team": "AS Monaco",
+          "games": 38.0,
+          "season": "E2023",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2023&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "HALL, DEVON",
+          "code": "011205",
+          "team": "Fenerbahce Istanbul",
+          "games": 32.0,
+          "season": "E2024",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2024&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "HALL, DONTA",
+          "code": "011196",
+          "team": "Baskonia Vitoria-Gasteiz",
+          "games": 34.0,
+          "season": "E2024",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2024&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "HALL, DEVON",
+          "code": "011205",
+          "team": "Fenerbahce Istanbul",
+          "games": 35.0,
+          "season": "E2025",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2025&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "HALL, DONTA",
+          "code": "011196",
+          "team": "Olympiacos Piraeus",
+          "games": 38.0,
+          "season": "E2025",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2025&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "HALL, DEVON",
+          "code": "011205",
+          "team": "Armani Olimpia Milan",
+          "games": 13.0,
+          "season": "E2026",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2026&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "HALL, DONTA",
+          "code": "011196",
+          "team": "Olympiacos Piraeus",
+          "games": 12.0,
+          "season": "E2026",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2026&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        }
+      ]
+    },
+    {
+      "player_id": "espn:4937074",
+      "archive_name": "Darrion Williams",
+      "schools": [
+        "Nevada",
+        "North Carolina State"
+      ],
+      "already_tagged": false,
+      "status": "review_name_similarity",
+      "evidence": [
+        {
+          "name": "WILLIAMS, DERRICK",
+          "code": "009006",
+          "team": "FC Bayern Munich",
+          "games": 29.0,
+          "season": "E2018",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2018&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "WILLIAMS, DEVIN",
+          "code": "009465",
+          "team": "KK Buducnost",
+          "games": 6.0,
+          "season": "E2018",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2018&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "WILLIAMS, DERRICK",
+          "code": "009006",
+          "team": "Fenerbahce Istanbul",
+          "games": 28.0,
+          "season": "E2019",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2019&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "WILLIAMS, DERRICK",
+          "code": "009006",
+          "team": "Valencia Basket",
+          "games": 34.0,
+          "season": "E2020",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2020&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "WILLIAMS, DERRICK",
+          "code": "009006",
+          "team": "Maccabi Rapyd Tel Aviv",
+          "games": 35.0,
+          "season": "E2021",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2021&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "WILLIAMS, DERRICK",
+          "code": "009006",
+          "team": "Panathinaikos AKTOR Athens",
+          "games": 34.0,
+          "season": "E2022",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2022&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        }
+      ]
+    },
+    {
+      "player_id": "espn:4702244",
+      "archive_name": "Davis Smith",
+      "schools": [
+        "Michigan State"
+      ],
+      "already_tagged": false,
+      "status": "review_name_similarity",
+      "evidence": [
+        {
+          "name": "SMITH, DEVIN",
+          "code": "001274",
+          "team": "Maccabi Rapyd Tel Aviv",
+          "games": 28.0,
+          "season": "E2013",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2013&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "SMITH, DEVIN",
+          "code": "001274",
+          "team": "Maccabi Rapyd Tel Aviv",
+          "games": 25.0,
+          "season": "E2014",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2014&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "SMITH, DEVIN",
+          "code": "001274",
+          "team": "Maccabi Rapyd Tel Aviv",
+          "games": 9.0,
+          "season": "E2015",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2015&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "SMITH, DEVIN",
+          "code": "001274",
+          "team": "Maccabi Rapyd Tel Aviv",
+          "games": 28.0,
+          "season": "E2016",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2016&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "SMITH JR, DENNIS",
+          "code": "013666",
+          "team": "Real Madrid",
+          "games": 2.0,
+          "season": "E2024",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2024&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        }
+      ]
+    },
+    {
+      "player_id": "espn:4897493",
+      "archive_name": "Denver Jones",
+      "schools": [
+        "Auburn"
+      ],
+      "already_tagged": false,
+      "status": "review_name_similarity",
+      "evidence": [
+        {
+          "name": "JONES, DAMIAN",
+          "code": "015103",
+          "team": "Real Madrid",
+          "games": 13.0,
+          "season": "E2026",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2026&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        }
+      ]
+    },
+    {
+      "player_id": "espn:4066628",
+      "archive_name": "Derrick Alston Jr.",
+      "schools": [
+        "Boise State"
+      ],
+      "already_tagged": true,
+      "status": "existing_tag_match",
+      "evidence": [
+        {
+          "name": "ALSTON JR. , DERRICK",
+          "code": "014005",
+          "team": "Virtus Bologna",
+          "games": 37.0,
+          "season": "E2025",
+          "match_kind": "exact_name",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2025&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "ALSTON JR. , DERRICK",
+          "code": "014005",
+          "team": "Virtus Bologna",
+          "games": 13.0,
+          "season": "E2026",
+          "match_kind": "exact_name",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2026&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        }
+      ]
+    },
+    {
+      "player_id": "espn:4397758",
+      "archive_name": "Devin Moss",
+      "schools": [
+        "San Diego"
+      ],
+      "already_tagged": false,
+      "status": "review_name_similarity",
+      "evidence": [
+        {
+          "name": "MOSS, DAVID",
+          "code": "002852",
+          "team": "Armani Olimpia Milan",
+          "games": 26.0,
+          "season": "E2013",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2013&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "MOSS, DAVID",
+          "code": "002852",
+          "team": "Armani Olimpia Milan",
+          "games": 23.0,
+          "season": "E2014",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2014&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        }
+      ]
+    },
+    {
+      "player_id": "espn:4593040",
+      "archive_name": "Dischon Thomas",
+      "schools": [
+        "Colorado State"
+      ],
+      "already_tagged": false,
+      "status": "review_name_similarity",
+      "evidence": [
+        {
+          "name": "THOMAS, DESHAUN",
+          "code": "005094",
+          "team": "Nanterre 92",
+          "games": 10.0,
+          "season": "E2013",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2013&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "THOMAS, DESHAUN",
+          "code": "005094",
+          "team": "FC Barcelona",
+          "games": 28.0,
+          "season": "E2014",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2014&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "THOMAS, DESHAUN",
+          "code": "005094",
+          "team": "Anadolu Efes Istanbul",
+          "games": 35.0,
+          "season": "E2016",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2016&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "THOMAS, DESHAUN",
+          "code": "005094",
+          "team": "Maccabi Rapyd Tel Aviv",
+          "games": 28.0,
+          "season": "E2017",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2017&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "THOMAS, DESHAUN",
+          "code": "005094",
+          "team": "Panathinaikos AKTOR Athens",
+          "games": 32.0,
+          "season": "E2018",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2018&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "THOMAS, DESHAUN",
+          "code": "005094",
+          "team": "Panathinaikos AKTOR Athens",
+          "games": 28.0,
+          "season": "E2019",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2019&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "THOMAS, DESHAUN",
+          "code": "005094",
+          "team": "FC Bayern Munich",
+          "games": 36.0,
+          "season": "E2021",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2021&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "THOMAS, DESHAUN",
+          "code": "005094",
+          "team": "Armani Olimpia Milan",
+          "games": 22.0,
+          "season": "E2022",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2022&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "THOMAS, DESHAUN",
+          "code": "005094",
+          "team": "LDLC ASVEL Villeurbanne",
+          "games": 10.0,
+          "season": "E2023",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2023&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        }
+      ]
+    },
+    {
+      "player_id": "espn:3920183",
+      "archive_name": "DJ Draper",
+      "schools": [
+        "North Texas"
+      ],
+      "already_tagged": false,
+      "status": "review_name_similarity",
+      "evidence": [
+        {
+          "name": "DRAPER, DONTAYE",
+          "code": "002946",
+          "team": "Real Madrid",
+          "games": 20.0,
+          "season": "E2013",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2013&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "DRAPER, DONTAYE",
+          "code": "002946",
+          "team": "Anadolu Efes Istanbul",
+          "games": 28.0,
+          "season": "E2014",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2014&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "DRAPER, DONTAYE",
+          "code": "002946",
+          "team": "Lokomotiv Kuban",
+          "games": 30.0,
+          "season": "E2015",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2015&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "DRAPER, DONTAYE",
+          "code": "002946",
+          "team": "Real Madrid",
+          "games": 29.0,
+          "season": "E2016",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2016&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        }
+      ]
+    },
+    {
+      "player_id": "espn:3129951",
+      "archive_name": "Elijah Bryant",
+      "schools": [
+        "BYU"
+      ],
+      "already_tagged": true,
+      "status": "existing_tag_match",
+      "evidence": [
+        {
+          "name": "BRYANT, ELIJAH",
+          "code": "009846",
+          "team": "Maccabi Rapyd Tel Aviv",
+          "games": 27.0,
+          "season": "E2019",
+          "match_kind": "exact_name",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2019&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "BRYANT, ELIJAH",
+          "code": "009846",
+          "team": "Maccabi Rapyd Tel Aviv",
+          "games": 34.0,
+          "season": "E2020",
+          "match_kind": "exact_name",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2020&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "BRYANT, ELIJAH",
+          "code": "009846",
+          "team": "Anadolu Efes Istanbul",
+          "games": 36.0,
+          "season": "E2021",
+          "match_kind": "exact_name",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2021&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "BRYANT, ELIJAH",
+          "code": "009846",
+          "team": "Anadolu Efes Istanbul",
+          "games": 34.0,
+          "season": "E2022",
+          "match_kind": "exact_name",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2022&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "BRYANT, ELIJAH",
+          "code": "009846",
+          "team": "Anadolu Efes Istanbul",
+          "games": 24.0,
+          "season": "E2023",
+          "match_kind": "exact_name",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2023&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "BRYANT, ELIJAH",
+          "code": "009846",
+          "team": "Anadolu Efes Istanbul",
+          "games": 38.0,
+          "season": "E2024",
+          "match_kind": "exact_name",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2024&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "BRYANT, ELIJAH",
+          "code": "009846",
+          "team": "Hapoel Tel Aviv",
+          "games": 38.0,
+          "season": "E2025",
+          "match_kind": "exact_name",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2025&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "BRYANT, ELIJAH",
+          "code": "009846",
+          "team": "Hapoel Tel Aviv",
+          "games": 13.0,
+          "season": "E2026",
+          "match_kind": "exact_name",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2026&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        }
+      ]
+    },
+    {
+      "player_id": "espn:4403873",
+      "archive_name": "Elijah Jackson",
+      "schools": [
+        "San Diego Christian"
+      ],
+      "already_tagged": false,
+      "status": "review_name_similarity",
+      "evidence": [
+        {
+          "name": "JACKSON, EDWIN",
+          "code": "000229",
+          "team": "FC Barcelona",
+          "games": 11.0,
+          "season": "E2014",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2014&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "JACKSON, EDWIN",
+          "code": "000229",
+          "team": "Unicaja Malaga",
+          "games": 24.0,
+          "season": "E2015",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2015&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "JACKSON, EDWIN",
+          "code": "000229",
+          "team": "FC Barcelona",
+          "games": 9.0,
+          "season": "E2017",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2017&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "JACKSON, EDWIN",
+          "code": "000229",
+          "team": "KK Buducnost",
+          "games": 30.0,
+          "season": "E2018",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2018&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "JACKSON, EDWIN",
+          "code": "000229",
+          "team": "LDLC ASVEL Villeurbanne",
+          "games": 17.0,
+          "season": "E2019",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2019&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "JACKSON, EDWIN",
+          "code": "000229",
+          "team": "LDLC ASVEL Villeurbanne",
+          "games": 31.0,
+          "season": "E2023",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2023&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "JACKSON, EDWIN",
+          "code": "000229",
+          "team": "LDLC ASVEL Villeurbanne",
+          "games": 22.0,
+          "season": "E2024",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2024&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "JACKSON, EDWIN",
+          "code": "000229",
+          "team": "LDLC ASVEL Villeurbanne",
+          "games": 21.0,
+          "season": "E2025",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2025&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "JACKSON, EDWIN",
+          "code": "000229",
+          "team": "LDLC ASVEL Villeurbanne",
+          "games": 4.0,
+          "season": "E2026",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2026&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        }
+      ]
+    },
+    {
+      "player_id": "espn:4278490",
+      "archive_name": "Eric Williams Jr.",
+      "schools": [
+        "San Diego"
+      ],
+      "already_tagged": false,
+      "status": "review_name_similarity",
+      "evidence": [
+        {
+          "name": "WILLIAMS, ELLIOT",
+          "code": "007013",
+          "team": "Panathinaikos AKTOR Athens",
+          "games": 10.0,
+          "season": "E2015",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2015&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        }
+      ]
+    },
+    {
+      "player_id": "espn:4397667",
+      "archive_name": "Filip Petrusev",
+      "schools": [
+        "Gonzaga"
+      ],
+      "already_tagged": true,
+      "status": "existing_tag_match",
+      "evidence": [
+        {
+          "name": "PETRUSEV, FILIP",
+          "code": "011194",
+          "team": "Anadolu Efes Istanbul",
+          "games": 22.0,
+          "season": "E2021",
+          "match_kind": "exact_name",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2021&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "PETRUSEV, FILIP",
+          "code": "011194",
+          "team": "Crvena Zvezda Meridianbet Belgrade",
+          "games": 34.0,
+          "season": "E2022",
+          "match_kind": "exact_name",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2022&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "PETRUSEV, FILIP",
+          "code": "011194",
+          "team": "Olympiacos Piraeus",
+          "games": 22.0,
+          "season": "E2023",
+          "match_kind": "exact_name",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2023&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "PETRUSEV, FILIP",
+          "code": "011194",
+          "team": "Olympiacos Piraeus;Crvena Zvezda Meridianbet Belgrade",
+          "games": 32.0,
+          "season": "E2024",
+          "match_kind": "exact_name",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2024&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "PETRUSEV, FILIP",
+          "code": "011194",
+          "team": "Dubai Basketball",
+          "games": 38.0,
+          "season": "E2025",
+          "match_kind": "exact_name",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2025&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "PETRUSEV, FILIP",
+          "code": "011194",
+          "team": "Dubai Basketball",
+          "games": 12.0,
+          "season": "E2026",
+          "match_kind": "exact_name",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2026&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        }
+      ]
+    },
+    {
+      "player_id": "espn:4397141",
+      "archive_name": "J'Raan Brooks",
+      "schools": [
+        "UC San Diego"
+      ],
+      "already_tagged": false,
+      "status": "review_name_similarity",
+      "evidence": [
+        {
+          "name": "BROOKS, JEFF",
+          "code": "004117",
+          "team": "Polisportiva Dinamo",
+          "games": 8.0,
+          "season": "E2014",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2014&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "BROOKS, JEFF",
+          "code": "004117",
+          "team": "Unicaja Malaga",
+          "games": 26.0,
+          "season": "E2017",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2017&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "BROOKS, JEFF",
+          "code": "004117",
+          "team": "Armani Olimpia Milan",
+          "games": 29.0,
+          "season": "E2018",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2018&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "BROOKS, JEFF",
+          "code": "004117",
+          "team": "Armani Olimpia Milan",
+          "games": 19.0,
+          "season": "E2019",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2019&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "BROOKS, JEFF",
+          "code": "004117",
+          "team": "Armani Olimpia Milan",
+          "games": 32.0,
+          "season": "E2020",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2020&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        }
+      ]
+    },
+    {
+      "player_id": "espn:4898186",
+      "archive_name": "Jace Carter",
+      "schools": [
+        "Texas A&M"
+      ],
+      "already_tagged": false,
+      "status": "review_name_similarity",
+      "evidence": [
+        {
+          "name": "CARTER, JOSH",
+          "code": "001910",
+          "team": "Montepaschi Siena",
+          "games": 10.0,
+          "season": "E2013",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2013&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "CARTER, JUSTIN",
+          "code": "006196",
+          "team": "Galatasaray Spor Kulubu",
+          "games": 14.0,
+          "season": "E2014",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2014&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "CARTER, JOSH",
+          "code": "001910",
+          "team": "Karsiyaka Spor Kulubu",
+          "games": 10.0,
+          "season": "E2015",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2015&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "CARTER, JUSTIN",
+          "code": "006196",
+          "team": "Karsiyaka Spor Kulubu",
+          "games": 8.0,
+          "season": "E2015",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2015&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        }
+      ]
+    },
+    {
+      "player_id": "espn:4280202",
+      "archive_name": "Jade' Smith",
+      "schools": [
+        "Pepperdine"
+      ],
+      "already_tagged": false,
+      "status": "review_name_similarity",
+      "evidence": [
+        {
+          "name": "SMITH, JAMAR",
+          "code": "005002",
+          "team": "Bamberger Basketball GmbH",
+          "games": 10.0,
+          "season": "E2013",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2013&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "SMITH, JAMAR",
+          "code": "005002",
+          "team": "Limoges Cercle Saint-Pierre",
+          "games": 10.0,
+          "season": "E2014",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2014&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "SMITH, JAMAR",
+          "code": "005002",
+          "team": "Unicaja Malaga",
+          "games": 15.0,
+          "season": "E2015",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2015&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "SMITH, JALEEN",
+          "code": "011192",
+          "team": "ALBA Berlin",
+          "games": 33.0,
+          "season": "E2021",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2021&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "SMITH, JALEEN",
+          "code": "011192",
+          "team": "ALBA Berlin",
+          "games": 31.0,
+          "season": "E2022",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2022&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "SMITH, JALEEN",
+          "code": "011192",
+          "team": "Virtus Bologna;Partizan Mozzart Bet Belgrade",
+          "games": 20.0,
+          "season": "E2023",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2023&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        }
+      ]
+    },
+    {
+      "player_id": "espn:4909704",
+      "archive_name": "Jake Martin",
+      "schools": [
+        "Cal Lutheran"
+      ],
+      "already_tagged": false,
+      "status": "review_name_similarity",
+      "evidence": [
+        {
+          "name": "MARTIN, JARELL",
+          "code": "011967",
+          "team": "Maccabi Rapyd Tel Aviv",
+          "games": 38.0,
+          "season": "E2022",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2022&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        }
+      ]
+    },
+    {
+      "player_id": "espn:4702528",
+      "archive_name": "Jaxson Robinson",
+      "schools": [
+        "BYU"
+      ],
+      "already_tagged": false,
+      "status": "review_name_similarity",
+      "evidence": [
+        {
+          "name": "ROBINSON, JUSTIN",
+          "code": "014008",
+          "team": "Paris Basketball",
+          "games": 36.0,
+          "season": "E2025",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2025&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "ROBINSON, JUSTIN",
+          "code": "014008",
+          "team": "FC Barcelona",
+          "games": 13.0,
+          "season": "E2026",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2026&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        }
+      ]
+    },
+    {
+      "player_id": "espn:4589483",
+      "archive_name": "Jayden Taylor",
+      "schools": [
+        "North Carolina State"
+      ],
+      "already_tagged": false,
+      "status": "review_name_similarity",
+      "evidence": [
+        {
+          "name": "TAYLOR, JEFFERY",
+          "code": "006546",
+          "team": "Real Madrid",
+          "games": 25.0,
+          "season": "E2015",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2015&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "TAYLOR, JEFFERY",
+          "code": "006546",
+          "team": "Real Madrid",
+          "games": 30.0,
+          "season": "E2016",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2016&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "TAYLOR, JEFFERY",
+          "code": "006546",
+          "team": "Real Madrid",
+          "games": 34.0,
+          "season": "E2017",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2017&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "TAYLOR, JEFFERY",
+          "code": "006546",
+          "team": "Real Madrid",
+          "games": 34.0,
+          "season": "E2018",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2018&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "TAYLOR, JEFFERY",
+          "code": "006546",
+          "team": "Real Madrid",
+          "games": 24.0,
+          "season": "E2019",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2019&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "TAYLOR, JORDAN",
+          "code": "005247",
+          "team": "LDLC ASVEL Villeurbanne",
+          "games": 26.0,
+          "season": "E2019",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2019&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "TAYLOR, JEFFERY",
+          "code": "006546",
+          "team": "Real Madrid",
+          "games": 32.0,
+          "season": "E2020",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2020&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "TAYLOR, JEFFERY",
+          "code": "006546",
+          "team": "Real Madrid",
+          "games": 23.0,
+          "season": "E2021",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2021&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        }
+      ]
+    },
+    {
+      "player_id": "espn:4432247",
+      "archive_name": "Jaylen Clark",
+      "schools": [
+        "UCLA"
+      ],
+      "already_tagged": false,
+      "status": "review_name_similarity",
+      "evidence": [
+        {
+          "name": "CLARK III, JIMMY",
+          "code": "013699",
+          "team": "Maccabi Rapyd Tel Aviv",
+          "games": 8.0,
+          "season": "E2024",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2024&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "CLARK III, JIMMY",
+          "code": "013699",
+          "team": "Maccabi Rapyd Tel Aviv",
+          "games": 37.0,
+          "season": "E2025",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2025&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "CLARK III, JIMMY",
+          "code": "013699",
+          "team": "Maccabi Rapyd Tel Aviv",
+          "games": 13.0,
+          "season": "E2026",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2026&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        }
+      ]
+    },
+    {
+      "player_id": "espn:5105634",
+      "archive_name": "Jaylen Thompson",
+      "schools": [
+        "Stanford"
+      ],
+      "already_tagged": false,
+      "status": "review_name_similarity",
+      "evidence": [
+        {
+          "name": "THOMPSON, JASON",
+          "code": "007998",
+          "team": "Fenerbahce Istanbul",
+          "games": 36.0,
+          "season": "E2017",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2017&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        }
+      ]
+    },
+    {
+      "player_id": "espn:4592485",
+      "archive_name": "Jimmy Bell Jr.",
+      "schools": [
+        "Mississippi State"
+      ],
+      "already_tagged": false,
+      "status": "review_name_similarity",
+      "evidence": [
+        {
+          "name": "BELL, JAMES",
+          "code": "006497",
+          "team": "KK Buducnost",
+          "games": 16.0,
+          "season": "E2018",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2018&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        }
+      ]
+    },
+    {
+      "player_id": "espn:3146557",
+      "archive_name": "Jock Landale",
+      "schools": [
+        "Saint Mary's"
+      ],
+      "already_tagged": true,
+      "status": "existing_tag_match",
+      "evidence": [
+        {
+          "name": "LANDALE, JOCK",
+          "code": "008820",
+          "team": "Zalgiris Kaunas",
+          "games": 25.0,
+          "season": "E2019",
+          "match_kind": "exact_name",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2019&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        }
+      ]
+    },
+    {
+      "player_id": "espn:4280150",
+      "archive_name": "Joel Ayayi",
+      "schools": [
+        "Gonzaga"
+      ],
+      "already_tagged": true,
+      "status": "existing_tag_match",
+      "evidence": [
+        {
+          "name": "AYAYI, JOEL",
+          "code": "006904",
+          "team": "Paris Basketball",
+          "games": 13.0,
+          "season": "E2025",
+          "match_kind": "exact_name",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2025&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "AYAYI, JOEL",
+          "code": "006904",
+          "team": "Paris Basketball",
+          "games": 9.0,
+          "season": "E2026",
+          "match_kind": "exact_name",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2026&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        }
+      ]
+    },
+    {
+      "player_id": "espn:3130746",
+      "archive_name": "John Carroll",
+      "schools": [
+        "Hartford"
+      ],
+      "already_tagged": false,
+      "status": "review_name_similarity",
+      "evidence": [
+        {
+          "name": "CARROLL, JAYCEE",
+          "code": "001960",
+          "team": "Real Madrid",
+          "games": 16.0,
+          "season": "E2013",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2013&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "CARROLL, JAYCEE",
+          "code": "001960",
+          "team": "Real Madrid",
+          "games": 30.0,
+          "season": "E2014",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2014&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "CARROLL, JAYCEE",
+          "code": "001960",
+          "team": "Real Madrid",
+          "games": 27.0,
+          "season": "E2015",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2015&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "CARROLL, JAYCEE",
+          "code": "001960",
+          "team": "Real Madrid",
+          "games": 36.0,
+          "season": "E2016",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2016&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "CARROLL, JAYCEE",
+          "code": "001960",
+          "team": "Real Madrid",
+          "games": 36.0,
+          "season": "E2017",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2017&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "CARROLL, JAYCEE",
+          "code": "001960",
+          "team": "Real Madrid",
+          "games": 31.0,
+          "season": "E2018",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2018&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "CARROLL, JAYCEE",
+          "code": "001960",
+          "team": "Real Madrid",
+          "games": 22.0,
+          "season": "E2019",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2019&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "CARROLL, JAYCEE",
+          "code": "001960",
+          "team": "Real Madrid",
+          "games": 31.0,
+          "season": "E2020",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2020&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        }
+      ]
+    },
+    {
+      "player_id": "espn:3912836",
+      "archive_name": "Jonah Radebaugh",
+      "schools": [
+        "Northern Colorado"
+      ],
+      "already_tagged": true,
+      "status": "existing_tag_match",
+      "evidence": [
+        {
+          "name": "RADEBAUGH, JONAH",
+          "code": "011972",
+          "team": "Valencia Basket",
+          "games": 34.0,
+          "season": "E2022",
+          "match_kind": "exact_name",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2022&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        }
+      ]
+    },
+    {
+      "player_id": "espn:4398376",
+      "archive_name": "Jr. Clay",
+      "schools": [
+        "Tennessee State"
+      ],
+      "already_tagged": false,
+      "status": "review_name_similarity",
+      "evidence": [
+        {
+          "name": "REYNOLDS, JR",
+          "code": "001257",
+          "team": "GSS Akcyjna",
+          "games": 6.0,
+          "season": "E2015",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2015&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        }
+      ]
+    },
+    {
+      "player_id": "espn:4066632",
+      "archive_name": "Justinian Jessup",
+      "schools": [
+        "Boise State"
+      ],
+      "already_tagged": true,
+      "status": "existing_tag_match",
+      "evidence": [
+        {
+          "name": "JESSUP, JUSTINIAN",
+          "code": "013290",
+          "team": "FC Bayern Munich",
+          "games": 37.0,
+          "season": "E2025",
+          "match_kind": "exact_name",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2025&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "JESSUP, JUSTINIAN",
+          "code": "013290",
+          "team": "FC Bayern Munich",
+          "games": 12.0,
+          "season": "E2026",
+          "match_kind": "exact_name",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2026&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        }
+      ]
+    },
+    {
+      "player_id": "espn:5241756",
+      "archive_name": "Kam Taylor",
+      "schools": [
+        "UNC Asheville"
+      ],
+      "already_tagged": false,
+      "status": "review_name_similarity",
+      "evidence": [
+        {
+          "name": "TAYLOR, KAMERON",
+          "code": "011217",
+          "team": "Maccabi Rapyd Tel Aviv",
+          "games": 19.0,
+          "season": "E2021",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2021&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "TAYLOR, KAMERON",
+          "code": "011217",
+          "team": "Valencia Basket",
+          "games": 40.0,
+          "season": "E2025",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2025&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "TAYLOR, KAMERON",
+          "code": "011217",
+          "team": "Valencia Basket",
+          "games": 13.0,
+          "season": "E2026",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2026&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        }
+      ]
+    },
+    {
+      "player_id": "espn:4403467",
+      "archive_name": "Kaodirichi Akobundu-Ehiogu",
+      "schools": [
+        "UT Arlington"
+      ],
+      "already_tagged": true,
+      "status": "existing_tag_match",
+      "evidence": [
+        {
+          "name": "AKOBUNDU-EHIOGU, KAODIRICHI",
+          "code": "013845",
+          "team": "Zalgiris Kaunas",
+          "games": 3.0,
+          "season": "E2026",
+          "match_kind": "exact_name",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2026&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        }
+      ]
+    },
+    {
+      "player_id": "espn:4683756",
+      "archive_name": "KeShawn Murphy",
+      "schools": [
+        "Mississippi State"
+      ],
+      "already_tagged": false,
+      "status": "review_name_similarity",
+      "evidence": [
+        {
+          "name": "MURPHY, KEVIN",
+          "code": "005201",
+          "team": "Strasbourg Illkirch-Graffenstaden Basket",
+          "games": 5.0,
+          "season": "E2013",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2013&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        }
+      ]
+    },
+    {
+      "player_id": "espn:4397693",
+      "archive_name": "Kessler Edwards",
+      "schools": [
+        "Pepperdine"
+      ],
+      "already_tagged": true,
+      "status": "existing_tag_match",
+      "evidence": [
+        {
+          "name": "EDWARDS, KESSLER",
+          "code": "014416",
+          "team": "Hapoel Tel Aviv",
+          "games": 13.0,
+          "season": "E2025",
+          "match_kind": "exact_name",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2025&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "EDWARDS, KESSLER",
+          "code": "014416",
+          "team": "Virtus Bologna",
+          "games": 13.0,
+          "season": "E2026",
+          "match_kind": "exact_name",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2026&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        }
+      ]
+    },
+    {
+      "player_id": "espn:4066651",
+      "archive_name": "Killian Tillie",
+      "schools": [
+        "Gonzaga"
+      ],
+      "already_tagged": false,
+      "status": "review_name_similarity",
+      "evidence": [
+        {
+          "name": "TILLIE, KIM",
+          "code": "002744",
+          "team": "Baskonia Vitoria-Gasteiz",
+          "games": 24.0,
+          "season": "E2014",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2014&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "TILLIE, KIM",
+          "code": "002744",
+          "team": "Baskonia Vitoria-Gasteiz",
+          "games": 29.0,
+          "season": "E2015",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2015&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "TILLIE, KIM",
+          "code": "002744",
+          "team": "Baskonia Vitoria-Gasteiz",
+          "games": 32.0,
+          "season": "E2016",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2016&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "TILLIE, KIM",
+          "code": "002744",
+          "team": "Olympiacos Piraeus",
+          "games": 10.0,
+          "season": "E2017",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2017&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "TILLIE, KIM",
+          "code": "002744",
+          "team": "Club Baloncesto Gran Canaria",
+          "games": 29.0,
+          "season": "E2018",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2018&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        }
+      ]
+    },
+    {
+      "player_id": "espn:4279639",
+      "archive_name": "Koby Thomas",
+      "schools": [
+        "Robert Morris"
+      ],
+      "already_tagged": false,
+      "status": "review_name_similarity",
+      "evidence": [
+        {
+          "name": "THOMAS, KHYRI",
+          "code": "011313",
+          "team": "Maccabi Rapyd Tel Aviv",
+          "games": 13.0,
+          "season": "E2021",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2021&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        }
+      ]
+    },
+    {
+      "player_id": "espn:5105337",
+      "archive_name": "Maliq Brown",
+      "schools": [
+        "Duke"
+      ],
+      "already_tagged": false,
+      "status": "review_name_similarity",
+      "evidence": [
+        {
+          "name": "BROWN, MARKEL",
+          "code": "007424",
+          "team": "Darussafaka Basketbol",
+          "games": 20.0,
+          "season": "E2018",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2018&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        }
+      ]
+    },
+    {
+      "player_id": "espn:4703400",
+      "archive_name": "Marcus Williams",
+      "schools": [
+        "San Francisco"
+      ],
+      "already_tagged": false,
+      "status": "review_exact_name",
+      "evidence": [
+        {
+          "name": "WILLIAMS, MARCUS",
+          "code": "004212",
+          "team": "Lokomotiv Kuban",
+          "games": 24.0,
+          "season": "E2013",
+          "match_kind": "exact_name",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2013&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "WILLIAMS, MARCUS",
+          "code": "004212",
+          "team": "Crvena Zvezda Meridianbet Belgrade",
+          "games": 24.0,
+          "season": "E2014",
+          "match_kind": "exact_name",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2014&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "WILLIAMS, MARCUS",
+          "code": "004212",
+          "team": "Crvena Zvezda Meridianbet Belgrade",
+          "games": 3.0,
+          "season": "E2015",
+          "match_kind": "exact_name",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2015&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        }
+      ]
+    },
+    {
+      "player_id": "espn:4431887",
+      "archive_name": "Martynas Arlauskas",
+      "schools": [
+        "Gonzaga"
+      ],
+      "already_tagged": true,
+      "status": "existing_tag_match",
+      "evidence": [
+        {
+          "name": "ARLAUSKAS, MARTYNAS",
+          "code": "007516",
+          "team": "Zalgiris Kaunas",
+          "games": 4.0,
+          "season": "E2017",
+          "match_kind": "exact_name",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2017&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        }
+      ]
+    },
+    {
+      "player_id": "espn:4701992",
+      "archive_name": "Max Shulga",
+      "schools": [
+        "Utah State"
+      ],
+      "already_tagged": false,
+      "status": "review_name_similarity",
+      "evidence": [
+        {
+          "name": "SHULGA, MAKSYM",
+          "code": "015102",
+          "team": "Real Madrid",
+          "games": 3.0,
+          "season": "E2026",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2026&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        }
+      ]
+    },
+    {
+      "player_id": "official:colorado-2018-19:mckinley-wright-iv",
+      "archive_name": "McKinley Wright IV",
+      "schools": [
+        "Colorado"
+      ],
+      "already_tagged": true,
+      "status": "existing_tag_match",
+      "evidence": [
+        {
+          "name": "WRIGHT, MOSES",
+          "code": "012878",
+          "team": "Olympiacos Piraeus",
+          "games": 17.0,
+          "season": "E2023",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2023&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "WRIGHT, MOSES",
+          "code": "012878",
+          "team": "Olympiacos Piraeus",
+          "games": 18.0,
+          "season": "E2024",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2024&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "WRIGHT IV, MCKINLEY",
+          "code": "012606",
+          "team": "Dubai Basketball",
+          "games": 38.0,
+          "season": "E2025",
+          "match_kind": "exact_name",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2025&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "WRIGHT, MOSES",
+          "code": "012878",
+          "team": "Zalgiris Kaunas",
+          "games": 42.0,
+          "season": "E2025",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2025&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "WRIGHT IV, MCKINLEY",
+          "code": "012606",
+          "team": "Dubai Basketball",
+          "games": 13.0,
+          "season": "E2026",
+          "match_kind": "exact_name",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2026&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "WRIGHT, MOSES",
+          "code": "012878",
+          "team": "Armani Olimpia Milan",
+          "games": 13.0,
+          "season": "E2026",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2026&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        }
+      ]
+    },
+    {
+      "player_id": "espn:4592972",
+      "archive_name": "Miles James",
+      "schools": [
+        "Cal State Northridge"
+      ],
+      "already_tagged": false,
+      "status": "review_name_similarity",
+      "evidence": [
+        {
+          "name": "JAMES, MIKE",
+          "code": "005985",
+          "team": "Baskonia Vitoria-Gasteiz",
+          "games": 16.0,
+          "season": "E2014",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2014&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "JAMES, MIKE",
+          "code": "005985",
+          "team": "Baskonia Vitoria-Gasteiz",
+          "games": 29.0,
+          "season": "E2015",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2015&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "JAMES, MIKE",
+          "code": "005985",
+          "team": "Panathinaikos AKTOR Athens",
+          "games": 25.0,
+          "season": "E2016",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2016&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "JAMES, MIKE",
+          "code": "005985",
+          "team": "Panathinaikos AKTOR Athens",
+          "games": 12.0,
+          "season": "E2017",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2017&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "JAMES, MIKE",
+          "code": "005985",
+          "team": "Armani Olimpia Milan",
+          "games": 30.0,
+          "season": "E2018",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2018&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "JAMES, MIKE",
+          "code": "005985",
+          "team": "CSKA Moscow",
+          "games": 28.0,
+          "season": "E2019",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2019&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "JAMES, MIKE",
+          "code": "005985",
+          "team": "CSKA Moscow",
+          "games": 27.0,
+          "season": "E2020",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2020&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "JAMES, MIKE",
+          "code": "005985",
+          "team": "AS Monaco",
+          "games": 38.0,
+          "season": "E2021",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2021&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "JAMES, MIKE",
+          "code": "005985",
+          "team": "AS Monaco",
+          "games": 38.0,
+          "season": "E2022",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2022&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "JAMES, MIKE",
+          "code": "005985",
+          "team": "AS Monaco",
+          "games": 39.0,
+          "season": "E2023",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2023&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "JAMES, MIKE",
+          "code": "005985",
+          "team": "AS Monaco",
+          "games": 41.0,
+          "season": "E2024",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2024&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "JAMES, MIKE",
+          "code": "005985",
+          "team": "AS Monaco",
+          "games": 39.0,
+          "season": "E2025",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2025&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "JAMES, MIKE",
+          "code": "005985",
+          "team": "Anadolu Efes Istanbul",
+          "games": 3.0,
+          "season": "E2026",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2026&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        }
+      ]
+    },
+    {
+      "player_id": "espn:4397371",
+      "archive_name": "Nate Mensah",
+      "schools": [
+        "San Diego State"
+      ],
+      "already_tagged": true,
+      "status": "existing_tag_match",
+      "evidence": [
+        {
+          "name": "MENSAH, NATHAN",
+          "code": "013514",
+          "team": "Olympiacos Piraeus",
+          "games": 2.0,
+          "season": "E2024",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2024&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        }
+      ]
+    },
+    {
+      "player_id": "espn:5454840",
+      "archive_name": "Ousmane N'Diaye",
+      "schools": [
+        "Kentucky"
+      ],
+      "already_tagged": true,
+      "status": "existing_tag_match",
+      "evidence": [
+        {
+          "name": "NDIAYE, OUSMANE",
+          "code": "012058",
+          "team": "Baskonia Vitoria-Gasteiz",
+          "games": 12.0,
+          "season": "E2024",
+          "match_kind": "exact_name",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2024&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        }
+      ]
+    },
+    {
+      "player_id": "espn:4896994",
+      "archive_name": "Reyne Smith",
+      "schools": [
+        "Louisville"
+      ],
+      "already_tagged": false,
+      "status": "review_name_similarity",
+      "evidence": [
+        {
+          "name": "SMITH, RUSS",
+          "code": "007356",
+          "team": "Galatasaray Spor Kulubu",
+          "games": 7.0,
+          "season": "E2016",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2016&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        }
+      ]
+    },
+    {
+      "player_id": "espn:5037870",
+      "archive_name": "Rodney Brown",
+      "schools": [
+        "California"
+      ],
+      "already_tagged": false,
+      "status": "review_name_similarity",
+      "evidence": [
+        {
+          "name": "BROWN, RION",
+          "code": "009817",
+          "team": "Panathinaikos AKTOR Athens",
+          "games": 8.0,
+          "season": "E2019",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2019&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        }
+      ]
+    },
+    {
+      "player_id": "espn:4602025",
+      "archive_name": "Sion James",
+      "schools": [
+        "Duke"
+      ],
+      "already_tagged": false,
+      "status": "review_name_similarity",
+      "evidence": [
+        {
+          "name": "JAMES, SHAWN",
+          "code": "001335",
+          "team": "Maccabi Rapyd Tel Aviv",
+          "games": 10.0,
+          "season": "E2013",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2013&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "JAMES, SHAWN",
+          "code": "001335",
+          "team": "Armani Olimpia Milan",
+          "games": 18.0,
+          "season": "E2014",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2014&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "JAMES, SHAWN",
+          "code": "001335",
+          "team": "Olympiacos Piraeus",
+          "games": 5.0,
+          "season": "E2015",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2015&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        }
+      ]
+    },
+    {
+      "player_id": "official:cal-poly:trevon-taylor",
+      "archive_name": "Trevon Taylor",
+      "schools": [
+        "Cal Poly"
+      ],
+      "already_tagged": false,
+      "status": "review_name_similarity",
+      "evidence": [
+        {
+          "name": "TAYLOR, TONY",
+          "code": "005850",
+          "team": "PGE Turow Zgorzelec",
+          "games": 10.0,
+          "season": "E2014",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2014&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        }
+      ]
+    },
+    {
+      "player_id": "espn:4077221",
+      "archive_name": "Yanni Wetzell",
+      "schools": [
+        "San Diego State"
+      ],
+      "already_tagged": true,
+      "status": "existing_tag_match",
+      "evidence": [
+        {
+          "name": "WETZELL, YANNI",
+          "code": "011934",
+          "team": "ALBA Berlin",
+          "games": 31.0,
+          "season": "E2022",
+          "match_kind": "exact_name",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2022&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "WETZELL, YANNI",
+          "code": "011934",
+          "team": "ALBA Berlin",
+          "games": 27.0,
+          "season": "E2023",
+          "match_kind": "exact_name",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2023&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        },
+        {
+          "name": "WETZELL, YANNI",
+          "code": "011934",
+          "team": "ALBA Berlin",
+          "games": 28.0,
+          "season": "E2024",
+          "match_kind": "exact_name",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2024&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        }
+      ]
+    },
+    {
+      "player_id": "espn:3947128",
+      "archive_name": "Zac Seljaas",
+      "schools": [
+        "BYU"
+      ],
+      "already_tagged": true,
+      "status": "existing_tag_match",
+      "evidence": [
+        {
+          "name": "SELJAAS, ZACHARY",
+          "code": "014088",
+          "team": "LDLC ASVEL Villeurbanne",
+          "games": 36.0,
+          "season": "E2025",
+          "match_kind": "initial_surname_candidate",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2025&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        }
+      ]
+    }
+  ]
+}

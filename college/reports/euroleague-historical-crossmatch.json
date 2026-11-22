@@ -2,12 +2,12 @@
   "summary": {
     "scope": "senior men's EuroLeague E; 2013-14 to 2026-27 by default; exclude EuroCup/U, youth ANGT, roster-only",
     "archive_players": 1146,
-    "previous_tagged_players": 18,
+    "previous_tagged_players": 19,
     "seasons_requested": 14,
     "seasons_scanned": 14,
     "complete_requested_coverage": true,
-    "existing_tagged_with_name_matches": 17,
-    "new_identity_review_candidates": 37,
+    "existing_tagged_with_name_matches": 19,
+    "new_identity_review_candidates": 36,
     "note": "No new tags automatically issued. Name-only matches are not proof of identity; game statistics with >=1 GP are evidence of competition, subject to identity review."
   },
   "seasons": [
@@ -1918,13 +1918,33 @@
       ]
     },
     {
+      "player_id": "espn:4278706",
+      "archive_name": "Matt Mitchell",
+      "schools": [
+        "San Diego State"
+      ],
+      "already_tagged": true,
+      "status": "existing_tag_match",
+      "evidence": [
+        {
+          "name": "MITCHELL, MATTHEW",
+          "code": "012622",
+          "team": "Zalgiris Kaunas",
+          "games": 29.0,
+          "season": "E2024",
+          "match_kind": "exact_name",
+          "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2024&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
+        }
+      ]
+    },
+    {
       "player_id": "espn:4701992",
       "archive_name": "Max Shulga",
       "schools": [
         "Utah State"
       ],
-      "already_tagged": false,
-      "status": "review_name_similarity",
+      "already_tagged": true,
+      "status": "existing_tag_match",
       "evidence": [
         {
           "name": "SHULGA, MAKSYM",
@@ -1932,7 +1952,7 @@
           "team": "Real Madrid",
           "games": 3.0,
           "season": "E2026",
-          "match_kind": "initial_surname_candidate",
+          "match_kind": "exact_name",
           "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2026&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
         }
       ]
@@ -2145,7 +2165,7 @@
           "team": "Olympiacos Piraeus",
           "games": 2.0,
           "season": "E2024",
-          "match_kind": "initial_surname_candidate",
+          "match_kind": "exact_name",
           "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2024&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
         }
       ]
@@ -2321,7 +2341,7 @@
           "team": "LDLC ASVEL Villeurbanne",
           "games": 36.0,
           "season": "E2025",
-          "match_kind": "initial_surname_candidate",
+          "match_kind": "exact_name",
           "source_url": "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2025&statisticMode=Accumulated&statistic=gamesPlayed&limit=1000"
         }
       ]

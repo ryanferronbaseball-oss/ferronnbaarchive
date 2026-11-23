@@ -1,0 +1,2719 @@
+{
+  "date": "2026-11-23",
+  "policy": "Include only players whose Banana Ball affiliation is a regular, ongoing PLAYING roster position (past or present) with actual game appearances. EXCLUDE one-off/return guest stars, drafted-only commitments, exhibition cameos, summer collegiate Bananas baseball without Banana Ball service, coaches and entertainment-only staff. Validate same-person identity against archived college, MiLB, MLB player IDs.",
+  "status": "MLB former players reclassified; NCAA/MiLB regular-player checks and alias identities pending",
+  "prior_incorrect_inclusion_count_mlb": 54,
+  "confirmed_mlb_full_time_players": [
+    {
+      "name": "Jackie Bradley Jr.",
+      "archive_mlb_player_id": 598265,
+      "full_time_team": "Indianapolis Clowns",
+      "first_regular_season": 2026,
+      "identity_evidence": "Former Boston Red Sox outfielder; archived MLB StatsAPI ID 598265",
+      "media_confirmation": [
+        "https://www.wtoc.com/2026/02/05/banana-ball-championship-league-include-mlb-veteran-broadway-star/",
+        "https://www.wjcl.com/article/two-time-all-star-ready-to-make-history/70195147",
+        "https://www.ctinsider.com/sports/article/banana-ball-yard-goats-jackie-bradley-jr-22360470.php"
+      ],
+      "played_game_source": "https://officiallybananas.com/players/jackie-bradley-jr/",
+      "classification": "verified_full_time_player"
+    }
+  ],
+  "mlb_excluded_guest_or_coach_matches": [
+    {
+      "name": "A.J. Pierzynski",
+      "archive_player_ids": [
+        150229
+      ],
+      "prior_source_url": "https://officiallybananas.com/players/a-j-pierzynski/",
+      "classification": "guest_appearance_no_evidence_of_full_time_player_contract",
+      "notes": null
+    },
+    {
+      "name": "Aaron Harang",
+      "archive_player_ids": [
+        421685
+      ],
+      "prior_source_url": "https://officiallybananas.com/players/aaron-harang/",
+      "classification": "guest_appearance_no_evidence_of_full_time_player_contract",
+      "notes": null
+    },
+    {
+      "name": "Adam Dunn",
+      "archive_player_ids": [
+        276055
+      ],
+      "prior_source_url": "https://officiallybananas.com/players/adam-dunn/",
+      "classification": "guest_appearance_no_evidence_of_full_time_player_contract",
+      "notes": null
+    },
+    {
+      "name": "Adam Jones",
+      "archive_player_ids": [
+        430945
+      ],
+      "prior_source_url": "https://officiallybananas.com/players/adam-jones/",
+      "classification": "guest_appearance_no_evidence_of_full_time_player_contract",
+      "notes": null
+    },
+    {
+      "name": "Adam Wainwright",
+      "archive_player_ids": [
+        425794
+      ],
+      "prior_source_url": "https://officiallybananas.com/players/adam-wainwright/",
+      "classification": "guest_appearance_no_evidence_of_full_time_player_contract",
+      "notes": null
+    },
+    {
+      "name": "Alex Gordon",
+      "archive_player_ids": [
+        460086
+      ],
+      "prior_source_url": "https://officiallybananas.com/players/alex-gordon/",
+      "classification": "guest_appearance_no_evidence_of_full_time_player_contract",
+      "notes": null
+    },
+    {
+      "name": "Anibal Sanchez",
+      "archive_player_ids": [
+        434671
+      ],
+      "prior_source_url": "https://officiallybananas.com/players/anibal-sanchez/",
+      "classification": "guest_appearance_no_evidence_of_full_time_player_contract",
+      "notes": null
+    },
+    {
+      "name": "Ben Zobrist",
+      "archive_player_ids": [
+        450314
+      ],
+      "prior_source_url": "https://officiallybananas.com/players/ben-zobrist/",
+      "classification": "guest_appearance_no_evidence_of_full_time_player_contract",
+      "notes": null
+    },
+    {
+      "name": "Brett Tomko",
+      "archive_player_ids": [
+        123387
+      ],
+      "prior_source_url": "https://officiallybananas.com/players/brett-tomko/",
+      "classification": "guest_appearance_no_evidence_of_full_time_player_contract",
+      "notes": null
+    },
+    {
+      "name": "Brock Holt",
+      "archive_player_ids": [
+        571788
+      ],
+      "prior_source_url": "https://officiallybananas.com/players/brock-holt/",
+      "classification": "guest_appearance_no_evidence_of_full_time_player_contract",
+      "notes": null
+    },
+    {
+      "name": "Corey Hart",
+      "archive_player_ids": [
+        430611
+      ],
+      "prior_source_url": "https://officiallybananas.com/players/corey-hart/",
+      "classification": "guest_appearance_no_evidence_of_full_time_player_contract",
+      "notes": null
+    },
+    {
+      "name": "David Freese",
+      "archive_player_ids": [
+        501896
+      ],
+      "prior_source_url": "https://officiallybananas.com/players/david-freese/",
+      "classification": "guest_appearance_no_evidence_of_full_time_player_contract",
+      "notes": null
+    },
+    {
+      "name": "David Ross",
+      "archive_player_ids": [
+        424325
+      ],
+      "prior_source_url": "https://officiallybananas.com/players/david-ross/",
+      "classification": "guest_appearance_no_evidence_of_full_time_player_contract",
+      "notes": null
+    },
+    {
+      "name": "Dee Strange-Gordon",
+      "archive_player_ids": [
+        543829
+      ],
+      "prior_source_url": "https://officiallybananas.com/players/dee-strange-gordon/",
+      "classification": "guest_appearance_no_evidence_of_full_time_player_contract",
+      "notes": null
+    },
+    {
+      "name": "Eric Byrnes",
+      "archive_player_ids": [
+        291565
+      ],
+      "prior_source_url": "https://officiallybananas.com/players/eric-byrnes/",
+      "classification": "guest_appearance_no_evidence_of_full_time_player_contract",
+      "notes": "Reported as a manager/coach of the Bananas, not a full-time Banana Ball playing-roster member"
+    },
+    {
+      "name": "Eric Gagne",
+      "archive_player_ids": [
+        150378
+      ],
+      "prior_source_url": "https://officiallybananas.com/players/eric-gagne/",
+      "classification": "guest_appearance_no_evidence_of_full_time_player_contract",
+      "notes": null
+    },
+    {
+      "name": "Eric Hosmer",
+      "archive_player_ids": [
+        543333
+      ],
+      "prior_source_url": "https://officiallybananas.com/players/eric-hosmer/",
+      "classification": "guest_appearance_no_evidence_of_full_time_player_contract",
+      "notes": null
+    },
+    {
+      "name": "Garrett Atkins",
+      "archive_player_ids": [
+        425548
+      ],
+      "prior_source_url": "https://officiallybananas.com/players/garrett-atkins/",
+      "classification": "guest_appearance_no_evidence_of_full_time_player_contract",
+      "notes": null
+    },
+    {
+      "name": "George Kottaras",
+      "archive_player_ids": [
+        435459
+      ],
+      "prior_source_url": "https://officiallybananas.com/players/george-kottaras/",
+      "classification": "guest_appearance_no_evidence_of_full_time_player_contract",
+      "notes": null
+    },
+    {
+      "name": "Heath Bell",
+      "archive_player_ids": [
+        425514
+      ],
+      "prior_source_url": "https://officiallybananas.com/players/heath-bell/",
+      "classification": "guest_appearance_no_evidence_of_full_time_player_contract",
+      "notes": null
+    },
+    {
+      "name": "Hunter Pence",
+      "archive_player_ids": [
+        452254
+      ],
+      "prior_source_url": "https://officiallybananas.com/players/hunter-pence/",
+      "classification": "guest_appearance_no_evidence_of_full_time_player_contract",
+      "notes": null
+    },
+    {
+      "name": "Jake Peavy",
+      "archive_player_ids": [
+        408241
+      ],
+      "prior_source_url": "https://officiallybananas.com/players/jake-peavy/",
+      "classification": "guest_appearance_no_evidence_of_full_time_player_contract",
+      "notes": null
+    },
+    {
+      "name": "James Paxton",
+      "archive_player_ids": [
+        572020
+      ],
+      "prior_source_url": "https://officiallybananas.com/players/james-paxton/",
+      "classification": "guest_appearance_no_evidence_of_full_time_player_contract",
+      "notes": null
+    },
+    {
+      "name": "Jeff Francoeur",
+      "archive_player_ids": [
+        425796
+      ],
+      "prior_source_url": "https://officiallybananas.com/players/jeff-francoeur/",
+      "classification": "guest_appearance_no_evidence_of_full_time_player_contract",
+      "notes": null
+    },
+    {
+      "name": "Jered Weaver",
+      "archive_player_ids": [
+        450308
+      ],
+      "prior_source_url": "https://officiallybananas.com/players/jered-weaver/",
+      "classification": "guest_appearance_no_evidence_of_full_time_player_contract",
+      "notes": null
+    },
+    {
+      "name": "Joba Chamberlain",
+      "archive_player_ids": [
+        501955
+      ],
+      "prior_source_url": "https://officiallybananas.com/players/joba-chamberlain/",
+      "classification": "guest_appearance_no_evidence_of_full_time_player_contract",
+      "notes": null
+    },
+    {
+      "name": "John Lackey",
+      "archive_player_ids": [
+        407793
+      ],
+      "prior_source_url": "https://officiallybananas.com/players/john-lackey/",
+      "classification": "guest_appearance_no_evidence_of_full_time_player_contract",
+      "notes": null
+    },
+    {
+      "name": "Johnny Damon",
+      "archive_player_ids": [
+        113028
+      ],
+      "prior_source_url": "https://officiallybananas.com/players/johnny-damon/",
+      "classification": "guest_appearance_no_evidence_of_full_time_player_contract",
+      "notes": null
+    },
+    {
+      "name": "Josh Hamilton",
+      "archive_player_ids": [
+        285078
+      ],
+      "prior_source_url": "https://officiallybananas.com/players/josh-hamilton/",
+      "classification": "guest_appearance_no_evidence_of_full_time_player_contract",
+      "notes": null
+    },
+    {
+      "name": "Juan Pierre",
+      "archive_player_ids": [
+        334393
+      ],
+      "prior_source_url": "https://officiallybananas.com/players/juan-pierre/",
+      "classification": "guest_appearance_no_evidence_of_full_time_player_contract",
+      "notes": null
+    },
+    {
+      "name": "Logan Forsythe",
+      "archive_player_ids": [
+        523253
+      ],
+      "prior_source_url": "https://officiallybananas.com/players/logan-forsythe/",
+      "classification": "guest_appearance_no_evidence_of_full_time_player_contract",
+      "notes": null
+    },
+    {
+      "name": "Matt Adams",
+      "archive_player_ids": [
+        571431
+      ],
+      "prior_source_url": "https://officiallybananas.com/players/matt-adams/",
+      "classification": "guest_appearance_no_evidence_of_full_time_player_contract",
+      "notes": null
+    },
+    {
+      "name": "Matt Barnes",
+      "archive_player_ids": [
+        598264
+      ],
+      "prior_source_url": "https://officiallybananas.com/players/matt-barnes/",
+      "classification": "guest_appearance_no_evidence_of_full_time_player_contract",
+      "notes": null
+    },
+    {
+      "name": "Matt Carpenter",
+      "archive_player_ids": [
+        572761
+      ],
+      "prior_source_url": "https://officiallybananas.com/players/matt-carpenter/",
+      "classification": "guest_appearance_no_evidence_of_full_time_player_contract",
+      "notes": null
+    },
+    {
+      "name": "Matt Wieters",
+      "archive_player_ids": [
+        446308
+      ],
+      "prior_source_url": "https://officiallybananas.com/players/matt-wieters/",
+      "classification": "guest_appearance_no_evidence_of_full_time_player_contract",
+      "notes": null
+    },
+    {
+      "name": "Michael Bourn",
+      "archive_player_ids": [
+        456422
+      ],
+      "prior_source_url": "https://officiallybananas.com/players/michael-bourn/",
+      "classification": "guest_appearance_no_evidence_of_full_time_player_contract",
+      "notes": null
+    },
+    {
+      "name": "Mike Fontenot",
+      "archive_player_ids": [
+        430917
+      ],
+      "prior_source_url": "https://officiallybananas.com/players/mike-fontenot/",
+      "classification": "guest_appearance_no_evidence_of_full_time_player_contract",
+      "notes": null
+    },
+    {
+      "name": "Mike Moustakas",
+      "archive_player_ids": [
+        519058
+      ],
+      "prior_source_url": "https://officiallybananas.com/players/mike-moustakas/",
+      "classification": "guest_appearance_no_evidence_of_full_time_player_contract",
+      "notes": null
+    },
+    {
+      "name": "Mitch Moreland",
+      "archive_player_ids": [
+        519048
+      ],
+      "prior_source_url": "https://officiallybananas.com/players/mitch-moreland/",
+      "classification": "guest_appearance_no_evidence_of_full_time_player_contract",
+      "notes": null
+    },
+    {
+      "name": "Nick Markakis",
+      "archive_player_ids": [
+        455976
+      ],
+      "prior_source_url": "https://officiallybananas.com/players/nick-markakis/",
+      "classification": "guest_appearance_no_evidence_of_full_time_player_contract",
+      "notes": null
+    },
+    {
+      "name": "Nick Swisher",
+      "archive_player_ids": [
+        430897
+      ],
+      "prior_source_url": "https://officiallybananas.com/players/nick-swisher/",
+      "classification": "guest_appearance_no_evidence_of_full_time_player_contract",
+      "notes": "Repeated celebrity guest appearances do not qualify"
+    },
+    {
+      "name": "Paul Konerko",
+      "archive_player_ids": [
+        117244
+      ],
+      "prior_source_url": "https://officiallybananas.com/players/paul-konerko/",
+      "classification": "guest_appearance_no_evidence_of_full_time_player_contract",
+      "notes": null
+    },
+    {
+      "name": "Prince Fielder",
+      "archive_player_ids": [
+        425902
+      ],
+      "prior_source_url": "https://officiallybananas.com/players/prince-fielder/",
+      "classification": "guest_appearance_no_evidence_of_full_time_player_contract",
+      "notes": null
+    },
+    {
+      "name": "Ryan Howard",
+      "archive_player_ids": [
+        429667
+      ],
+      "prior_source_url": "https://officiallybananas.com/players/ryan-howard/",
+      "classification": "coach_not_full_time_player",
+      "notes": null
+    },
+    {
+      "name": "Ryan Spilborghs",
+      "archive_player_ids": [
+        448676
+      ],
+      "prior_source_url": "https://officiallybananas.com/players/ryan-spilborghs/",
+      "classification": "guest_appearance_no_evidence_of_full_time_player_contract",
+      "notes": null
+    },
+    {
+      "name": "Ryan Theriot",
+      "archive_player_ids": [
+        444135
+      ],
+      "prior_source_url": "https://officiallybananas.com/players/ryan-theriot/",
+      "classification": "guest_appearance_no_evidence_of_full_time_player_contract",
+      "notes": null
+    },
+    {
+      "name": "Ryan Zimmerman",
+      "archive_player_ids": [
+        475582
+      ],
+      "prior_source_url": "https://officiallybananas.com/players/ryan-zimmerman/",
+      "classification": "guest_appearance_no_evidence_of_full_time_player_contract",
+      "notes": null
+    },
+    {
+      "name": "Sean Casey",
+      "archive_player_ids": [
+        112087
+      ],
+      "prior_source_url": "https://officiallybananas.com/players/sean-casey/",
+      "classification": "guest_appearance_no_evidence_of_full_time_player_contract",
+      "notes": null
+    },
+    {
+      "name": "Todd Frazier",
+      "archive_player_ids": [
+        453943
+      ],
+      "prior_source_url": "https://officiallybananas.com/players/todd-frazier/",
+      "classification": "guest_appearance_no_evidence_of_full_time_player_contract",
+      "notes": null
+    },
+    {
+      "name": "Trevor Hoffman",
+      "archive_player_ids": [
+        116034
+      ],
+      "prior_source_url": "https://officiallybananas.com/players/trevor-hoffman/",
+      "classification": "guest_appearance_no_evidence_of_full_time_player_contract",
+      "notes": null
+    },
+    {
+      "name": "Tristan Peters",
+      "archive_player_ids": [
+        671976
+      ],
+      "prior_source_url": "https://officiallybananas.com/players/tristan-peters/",
+      "classification": "guest_appearance_no_evidence_of_full_time_player_contract",
+      "notes": null
+    },
+    {
+      "name": "Troy Glaus",
+      "archive_player_ids": [
+        136267
+      ],
+      "prior_source_url": "https://officiallybananas.com/players/troy-glaus/",
+      "classification": "guest_appearance_no_evidence_of_full_time_player_contract",
+      "notes": null
+    },
+    {
+      "name": "Ubaldo Jimenez",
+      "archive_player_ids": [
+        434622
+      ],
+      "prior_source_url": "https://officiallybananas.com/players/ubaldo-jimenez/",
+      "classification": "guest_appearance_no_evidence_of_full_time_player_contract",
+      "notes": null
+    }
+  ],
+  "ncaa_possible_regular_players": [
+    {
+      "name": "Andy Archer",
+      "archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-hawaii-andy-archer",
+          "archive_name": "Andy Archer",
+          "teams": [
+            "Hawaii"
+          ],
+          "archive_aliases": [
+            "Andy Archer"
+          ],
+          "games_seen": 1
+        }
+      ],
+      "source_url": "https://officiallybananas.com/players/andy-archer/",
+      "roster_reference": [],
+      "max_recorded_stint_days": 594,
+      "status": "identity_and_playing_roster_verification_pending"
+    },
+    {
+      "name": "Ben Parker",
+      "archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-william-and-mary-ben-parker",
+          "archive_name": "Ben Parker",
+          "teams": [
+            "William and Mary"
+          ],
+          "archive_aliases": [
+            "Ben Parker"
+          ],
+          "games_seen": 1
+        }
+      ],
+      "source_url": "https://officiallybananas.com/players/ben-parker/",
+      "roster_reference": [
+        "https://bananaball.com/locobeachcoconuts/"
+      ],
+      "max_recorded_stint_days": 220,
+      "status": "identity_and_playing_roster_verification_pending"
+    },
+    {
+      "name": "Blake Morgan",
+      "archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-old-dominion-blake-morgan",
+          "archive_name": "Blake Morgan",
+          "teams": [
+            "Old Dominion"
+          ],
+          "archive_aliases": [
+            "Blake Morgan"
+          ],
+          "games_seen": 1
+        }
+      ],
+      "source_url": "https://officiallybananas.com/players/blake-morgan/",
+      "roster_reference": [
+        "https://bananaball.com/thefirefighters/"
+      ],
+      "max_recorded_stint_days": 195,
+      "status": "identity_and_playing_roster_verification_pending"
+    },
+    {
+      "name": "Brett Young",
+      "archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-george-washington-brett-young",
+          "archive_name": "Brett Young",
+          "teams": [
+            "George Washington"
+          ],
+          "archive_aliases": [
+            "Brett Young"
+          ],
+          "games_seen": 2
+        }
+      ],
+      "source_url": "https://officiallybananas.com/players/brett-young/",
+      "roster_reference": [],
+      "max_recorded_stint_days": 380,
+      "status": "identity_and_playing_roster_verification_pending"
+    },
+    {
+      "name": "Caden Green",
+      "archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-auburn-caden-green",
+          "archive_name": "Caden Green",
+          "teams": [
+            "Auburn"
+          ],
+          "archive_aliases": [
+            "Caden Green"
+          ],
+          "games_seen": 2
+        }
+      ],
+      "source_url": "https://officiallybananas.com/players/caden-green/",
+      "roster_reference": [
+        "https://bananaball.com/thefirefighters/"
+      ],
+      "max_recorded_stint_days": 491,
+      "status": "identity_and_playing_roster_verification_pending"
+    },
+    {
+      "name": "Cole Kitchen",
+      "archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-santa-clara-cole-kitchen",
+          "archive_name": "Cole KITCHEN",
+          "teams": [
+            "Santa Clara"
+          ],
+          "archive_aliases": [
+            "Cole KITCHEN"
+          ],
+          "games_seen": 1
+        }
+      ],
+      "source_url": "https://officiallybananas.com/players/cole-kitchen/",
+      "roster_reference": [],
+      "max_recorded_stint_days": 133,
+      "status": "identity_and_playing_roster_verification_pending"
+    },
+    {
+      "name": "Connor Higgins",
+      "archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-arizona-state-connor-higgins",
+          "archive_name": "Connor Higgins",
+          "teams": [
+            "Arizona State"
+          ],
+          "archive_aliases": [
+            "Connor Higgins"
+          ],
+          "games_seen": 1
+        }
+      ],
+      "source_url": "https://officiallybananas.com/players/connor-higgins/",
+      "roster_reference": [],
+      "max_recorded_stint_days": 246,
+      "status": "identity_and_playing_roster_verification_pending"
+    },
+    {
+      "name": "Dale Francis Jr.",
+      "archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-gardner-webb-dale-francis",
+          "archive_name": "Dale Francis",
+          "teams": [
+            "Gardner Webb"
+          ],
+          "archive_aliases": [
+            "Dale Francis"
+          ],
+          "games_seen": 1
+        }
+      ],
+      "source_url": "https://officiallybananas.com/players/dale-francis-jr/",
+      "roster_reference": [
+        "https://bananaball.com/indianapolisclowns/"
+      ],
+      "max_recorded_stint_days": 211,
+      "status": "identity_and_playing_roster_verification_pending"
+    },
+    {
+      "name": "Jayson Arendt",
+      "archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-unc-wilmington-jayson-arendt",
+          "archive_name": "Jayson Arendt",
+          "teams": [
+            "UNC Wilmington"
+          ],
+          "archive_aliases": [
+            "Jayson Arendt"
+          ],
+          "games_seen": 1
+        }
+      ],
+      "source_url": "https://officiallybananas.com/players/jayson-arendt/",
+      "roster_reference": [
+        "https://bananaball.com/the-texas-tailgaters/"
+      ],
+      "max_recorded_stint_days": 503,
+      "status": "identity_and_playing_roster_verification_pending"
+    },
+    {
+      "name": "JD Urso",
+      "archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-miami-jd-urso",
+          "archive_name": "Jd Urso",
+          "teams": [
+            "Miami"
+          ],
+          "archive_aliases": [
+            "JD Urso",
+            "Jd Urso"
+          ],
+          "games_seen": 2
+        }
+      ],
+      "source_url": "https://officiallybananas.com/players/jd-urso/",
+      "roster_reference": [
+        "https://bananaball.com/locobeachcoconuts/"
+      ],
+      "max_recorded_stint_days": 220,
+      "status": "identity_and_playing_roster_verification_pending"
+    },
+    {
+      "name": "John-Howard Bobo",
+      "archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-pacific-john-howard-bobo",
+          "archive_name": "John-Howard Bobo",
+          "teams": [
+            "Pacific"
+          ],
+          "archive_aliases": [
+            "John-Howard Bobo"
+          ],
+          "games_seen": 3
+        }
+      ],
+      "source_url": "https://officiallybananas.com/players/john-howard-bobo/",
+      "roster_reference": [
+        "https://bananaball.com/party-animals/"
+      ],
+      "max_recorded_stint_days": 210,
+      "status": "identity_and_playing_roster_verification_pending"
+    },
+    {
+      "name": "JT Sokolove",
+      "archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-michigan-state-jt-sokolove",
+          "archive_name": "JT Sokolove",
+          "teams": [
+            "Michigan State"
+          ],
+          "archive_aliases": [
+            "JT Sokolove",
+            "Jt Sokolove"
+          ],
+          "games_seen": 2
+        }
+      ],
+      "source_url": "https://officiallybananas.com/players/jt-sokolove/",
+      "roster_reference": [
+        "https://bananaball.com/savannah-bananas/"
+      ],
+      "max_recorded_stint_days": 217,
+      "status": "identity_and_playing_roster_verification_pending"
+    },
+    {
+      "name": "Juan Colato",
+      "archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-grand-canyon-juan-colato",
+          "archive_name": "Juan Colato",
+          "teams": [
+            "Grand Canyon"
+          ],
+          "archive_aliases": [
+            "Juan Colato"
+          ],
+          "games_seen": 4
+        }
+      ],
+      "source_url": "https://officiallybananas.com/players/juan-colato/",
+      "roster_reference": [],
+      "max_recorded_stint_days": 49,
+      "status": "identity_and_playing_roster_verification_pending"
+    },
+    {
+      "name": "Kyle Perry",
+      "archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-nebraska-kyle-perry",
+          "archive_name": "Kyle Perry",
+          "teams": [
+            "Nebraska"
+          ],
+          "archive_aliases": [
+            "Kyle Perry"
+          ],
+          "games_seen": 1
+        }
+      ],
+      "source_url": "https://officiallybananas.com/players/kyle-perry/",
+      "roster_reference": [
+        "https://bananaball.com/the-texas-tailgaters/"
+      ],
+      "max_recorded_stint_days": 236,
+      "status": "identity_and_playing_roster_verification_pending"
+    },
+    {
+      "name": "Logan Maxwell",
+      "archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-arkansas-logan-maxwell",
+          "archive_name": "Logan Maxwell",
+          "teams": [
+            "Arkansas"
+          ],
+          "archive_aliases": [
+            "Logan Maxwell"
+          ],
+          "games_seen": 1
+        }
+      ],
+      "source_url": "https://officiallybananas.com/players/logan-maxwell/",
+      "roster_reference": [],
+      "max_recorded_stint_days": 378,
+      "status": "identity_and_playing_roster_verification_pending"
+    },
+    {
+      "name": "Max Jung-Goldberg",
+      "archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-san-diego-max-jung-goldberg",
+          "archive_name": "Max Jung-Goldberg",
+          "teams": [
+            "San Diego"
+          ],
+          "archive_aliases": [
+            "Max Jung-Goldberg"
+          ],
+          "games_seen": 69
+        }
+      ],
+      "source_url": "https://officiallybananas.com/players/max-jung-goldberg/",
+      "roster_reference": [],
+      "max_recorded_stint_days": 224,
+      "status": "identity_and_playing_roster_verification_pending"
+    },
+    {
+      "name": "Reese Alexiades",
+      "archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-pepperdine-reese-alexiades",
+          "archive_name": "Reese ALEXIADES",
+          "teams": [
+            "Pepperdine"
+          ],
+          "archive_aliases": [
+            "REESE ALEXIADES",
+            "Reese ALEXIADES"
+          ],
+          "games_seen": 5
+        }
+      ],
+      "source_url": "https://officiallybananas.com/players/reese-alexiades/",
+      "roster_reference": [
+        "https://bananaball.com/savannah-bananas/"
+      ],
+      "max_recorded_stint_days": 975,
+      "status": "identity_and_playing_roster_verification_pending"
+    },
+    {
+      "name": "South Trimble",
+      "archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-george-mason-south-trimble",
+          "archive_name": "South Trimble",
+          "teams": [
+            "George Mason"
+          ],
+          "archive_aliases": [
+            "South Trimble"
+          ],
+          "games_seen": 3
+        }
+      ],
+      "source_url": "https://officiallybananas.com/players/south-trimble/",
+      "roster_reference": [
+        "https://bananaball.com/thefirefighters/"
+      ],
+      "max_recorded_stint_days": 849,
+      "status": "identity_and_playing_roster_verification_pending"
+    },
+    {
+      "name": "Tanner Thomas",
+      "archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-gardner-webb-tanner-thomas",
+          "archive_name": "Tanner Thomas",
+          "teams": [
+            "Gardner Webb"
+          ],
+          "archive_aliases": [
+            "Tanner Thomas"
+          ],
+          "games_seen": 1
+        },
+        {
+          "level": "NCAA",
+          "player_id": "cb-louisville-tanner-thomas",
+          "archive_name": "Tanner Thomas",
+          "teams": [
+            "Louisville"
+          ],
+          "archive_aliases": [
+            "Tanner Thomas"
+          ],
+          "games_seen": 2
+        },
+        {
+          "level": "NCAA",
+          "player_id": "cb-xavier-tanner-thomas",
+          "archive_name": "Tanner Thomas",
+          "teams": [
+            "Xavier"
+          ],
+          "archive_aliases": [
+            "Tanner Thomas"
+          ],
+          "games_seen": 1
+        }
+      ],
+      "source_url": "https://officiallybananas.com/players/tanner-thomas/",
+      "roster_reference": [
+        "https://bananaball.com/party-animals/"
+      ],
+      "max_recorded_stint_days": 1667,
+      "status": "identity_and_playing_roster_verification_pending"
+    },
+    {
+      "name": "Travis Moniot",
+      "archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-arizona-travis-moniot",
+          "archive_name": "Travis Moniot",
+          "teams": [
+            "Arizona"
+          ],
+          "archive_aliases": [
+            "Travis Moniot"
+          ],
+          "games_seen": 1
+        }
+      ],
+      "source_url": "https://officiallybananas.com/players/travis-moniot/",
+      "roster_reference": [
+        "https://bananaball.com/the-texas-tailgaters/"
+      ],
+      "max_recorded_stint_days": 504,
+      "status": "identity_and_playing_roster_verification_pending"
+    },
+    {
+      "name": "Tyler Rigot",
+      "archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-richmond-tyler-rigot",
+          "archive_name": "Tyler Rigot",
+          "teams": [
+            "Richmond"
+          ],
+          "archive_aliases": [
+            "Tyler Rigot"
+          ],
+          "games_seen": 1
+        }
+      ],
+      "source_url": "https://officiallybananas.com/players/tyler-rigot/",
+      "roster_reference": [],
+      "max_recorded_stint_days": 113,
+      "status": "identity_and_playing_roster_verification_pending"
+    }
+  ],
+  "milb_possible_regular_players": [
+    {
+      "name": "Jimmy Lewis",
+      "archive_records": [
+        {
+          "level": "MiLB",
+          "player_id": 683167,
+          "archive_name": "Jimmy Lewis",
+          "teams": [
+            "Rancho Cucamonga Quakes"
+          ],
+          "archive_aliases": [
+            "Jimmy Lewis"
+          ],
+          "games_seen": 10
+        }
+      ],
+      "source_url": "https://officiallybananas.com/players/jimmy-lewis/",
+      "roster_reference": [],
+      "max_recorded_stint_days": 490,
+      "status": "identity_and_playing_roster_verification_pending"
+    },
+    {
+      "name": "Jose Gonzalez Jr.",
+      "archive_records": [
+        {
+          "level": "MiLB",
+          "player_id": 683681,
+          "archive_name": "Jose Gonzalez",
+          "teams": [
+            "ACL Rangers"
+          ],
+          "archive_aliases": [
+            "Jose Gonzalez"
+          ],
+          "games_seen": 2
+        }
+      ],
+      "source_url": "https://officiallybananas.com/players/jose-gonzalez-jr/",
+      "roster_reference": [],
+      "max_recorded_stint_days": 224,
+      "status": "identity_and_playing_roster_verification_pending"
+    }
+  ],
+  "name_variant_candidates": [
+    {
+      "name": "Ashly Morris",
+      "source_url": "https://officiallybananas.com/players/ashly-morris/",
+      "possible_archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-alabama-austin-morris",
+          "archive_name": "Austin Morris",
+          "teams": [
+            "Alabama"
+          ],
+          "archive_aliases": [
+            "Austin Morris"
+          ],
+          "games_seen": 2
+        }
+      ],
+      "status": "name_only_do_not_tag"
+    },
+    {
+      "name": "Ben Anderson",
+      "source_url": "https://officiallybananas.com/players/ben-anderson/",
+      "possible_archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-byu-brennon-anderson",
+          "archive_name": "Brennon ANDERSON",
+          "teams": [
+            "BYU"
+          ],
+          "archive_aliases": [
+            "Brennon ANDERSON"
+          ],
+          "games_seen": 1
+        },
+        {
+          "level": "NCAA",
+          "player_id": "cb-louisville-brandon-anderson",
+          "archive_name": "Brandon Anderson",
+          "teams": [
+            "Louisville"
+          ],
+          "archive_aliases": [
+            "Brandon Anderson"
+          ],
+          "games_seen": 2
+        },
+        {
+          "level": "NCAA",
+          "player_id": "cb-bellarmine-bryce-anderson",
+          "archive_name": "Bryce Anderson",
+          "teams": [
+            "Bellarmine"
+          ],
+          "archive_aliases": [
+            "Bryce Anderson"
+          ],
+          "games_seen": 1
+        }
+      ],
+      "status": "name_only_do_not_tag"
+    },
+    {
+      "name": "Bill Knight",
+      "source_url": "https://officiallybananas.com/players/bill-knight/",
+      "possible_archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-arkansas-blaine-knight",
+          "archive_name": "Blaine Knight",
+          "teams": [
+            "Arkansas"
+          ],
+          "archive_aliases": [
+            "Blaine Knight"
+          ],
+          "games_seen": 1
+        },
+        {
+          "level": "NCAA",
+          "player_id": "cb-utah-briley-knight",
+          "archive_name": "Briley Knight",
+          "teams": [
+            "Utah"
+          ],
+          "archive_aliases": [
+            "Briley Knight"
+          ],
+          "games_seen": 1
+        },
+        {
+          "level": "NCAA",
+          "player_id": "cb-portland-briley-knight",
+          "archive_name": "Briley KNIGHT",
+          "teams": [
+            "Portland"
+          ],
+          "archive_aliases": [
+            "Briley KNIGHT"
+          ],
+          "games_seen": 5
+        }
+      ],
+      "status": "name_only_do_not_tag"
+    },
+    {
+      "name": "BJ Bailey",
+      "source_url": "https://officiallybananas.com/players/bj-bailey/",
+      "possible_archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-clemson-b-j-bailey",
+          "archive_name": "B.J. Bailey",
+          "teams": [
+            "Clemson"
+          ],
+          "archive_aliases": [
+            "B.J. Bailey"
+          ],
+          "games_seen": 1
+        }
+      ],
+      "status": "name_only_do_not_tag"
+    },
+    {
+      "name": "Bradford Webb",
+      "source_url": "https://officiallybananas.com/players/bradford-webb/",
+      "possible_archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-grand-canyon-bryan-webb",
+          "archive_name": "Bryan Webb",
+          "teams": [
+            "Grand Canyon"
+          ],
+          "archive_aliases": [
+            "Bryan Webb"
+          ],
+          "games_seen": 1
+        },
+        {
+          "level": "MLB",
+          "player_id": 425630,
+          "archive_name": "Brandon Webb",
+          "teams": [
+            "Arizona Diamondbacks"
+          ],
+          "archive_aliases": [
+            "Brandon Webb"
+          ],
+          "games_seen": 1
+        }
+      ],
+      "status": "name_only_do_not_tag"
+    },
+    {
+      "name": "Brandon Crosby",
+      "source_url": "https://officiallybananas.com/players/brandon-crosby/",
+      "possible_archive_records": [
+        {
+          "level": "MLB",
+          "player_id": 429420,
+          "archive_name": "Bubba Crosby",
+          "teams": [
+            "New York Yankees"
+          ],
+          "archive_aliases": [
+            "Bubba Crosby"
+          ],
+          "games_seen": 1
+        },
+        {
+          "level": "MLB",
+          "player_id": 425853,
+          "archive_name": "Bobby Crosby",
+          "teams": [
+            "Oakland Athletics"
+          ],
+          "archive_aliases": [
+            "Bobby Crosby"
+          ],
+          "games_seen": 1
+        }
+      ],
+      "status": "name_only_do_not_tag"
+    },
+    {
+      "name": "Brandon Roberts",
+      "source_url": "https://officiallybananas.com/players/brandon-roberts/",
+      "possible_archive_records": [
+        {
+          "level": "MLB",
+          "player_id": 406878,
+          "archive_name": "Brian Roberts",
+          "teams": [
+            "Baltimore Orioles"
+          ],
+          "archive_aliases": [
+            "Brian Roberts"
+          ],
+          "games_seen": 1
+        }
+      ],
+      "status": "name_only_do_not_tag"
+    },
+    {
+      "name": "Brett Allen",
+      "source_url": "https://officiallybananas.com/players/brett-allen/",
+      "possible_archive_records": [
+        {
+          "level": "MLB",
+          "player_id": 450315,
+          "archive_name": "Brandon Allen",
+          "teams": [
+            "Arizona Diamondbacks"
+          ],
+          "archive_aliases": [
+            "Brandon Allen"
+          ],
+          "games_seen": 1
+        }
+      ],
+      "status": "name_only_do_not_tag"
+    },
+    {
+      "name": "Cal Baker",
+      "source_url": "https://officiallybananas.com/players/cal-baker/",
+      "possible_archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-pittsburgh-chris-baker",
+          "archive_name": "Chris Baker",
+          "teams": [
+            "Pittsburgh"
+          ],
+          "archive_aliases": [
+            "Chris Baker"
+          ],
+          "games_seen": 1
+        }
+      ],
+      "status": "name_only_do_not_tag"
+    },
+    {
+      "name": "Calvin Butler",
+      "source_url": "https://officiallybananas.com/players/calvin-butler/",
+      "possible_archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-hawaii-connor-butler",
+          "archive_name": "Connor Butler",
+          "teams": [
+            "Hawaii"
+          ],
+          "archive_aliases": [
+            "Connor Butler"
+          ],
+          "games_seen": 1
+        }
+      ],
+      "status": "name_only_do_not_tag"
+    },
+    {
+      "name": "Casey Brown",
+      "source_url": "https://officiallybananas.com/players/casey-brown/",
+      "possible_archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-san-diego-cade-brown",
+          "archive_name": "Cade Brown",
+          "teams": [
+            "San Diego"
+          ],
+          "archive_aliases": [
+            "Cade Brown"
+          ],
+          "games_seen": 14
+        },
+        {
+          "level": "NCAA",
+          "player_id": "cb-georgia-cade-brown",
+          "archive_name": "Cade Brown",
+          "teams": [
+            "Georgia"
+          ],
+          "archive_aliases": [
+            "Cade Brown"
+          ],
+          "games_seen": 2
+        }
+      ],
+      "status": "name_only_do_not_tag"
+    },
+    {
+      "name": "Chris Clarke",
+      "source_url": "https://officiallybananas.com/players/chris-clarke/",
+      "possible_archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-oregon-collin-clarke",
+          "archive_name": "Collin Clarke",
+          "teams": [
+            "Oregon"
+          ],
+          "archive_aliases": [
+            "Collin Clarke"
+          ],
+          "games_seen": 1
+        }
+      ],
+      "status": "name_only_do_not_tag"
+    },
+    {
+      "name": "Christian Davis",
+      "source_url": "https://officiallybananas.com/players/christian-davis/",
+      "possible_archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-george-washington-cade-davis",
+          "archive_name": "Cade Davis",
+          "teams": [
+            "George Washington"
+          ],
+          "archive_aliases": [
+            "Cade Davis"
+          ],
+          "games_seen": 1
+        },
+        {
+          "level": "NCAA",
+          "player_id": "cb-tennessee-tech-carson-davis",
+          "archive_name": "Carson Davis",
+          "teams": [
+            "Tennessee Tech"
+          ],
+          "archive_aliases": [
+            "Carson Davis"
+          ],
+          "games_seen": 1
+        },
+        {
+          "level": "NCAA",
+          "player_id": "cb-belmont-charlie-davis",
+          "archive_name": "Charlie Davis",
+          "teams": [
+            "Belmont"
+          ],
+          "archive_aliases": [
+            "Charlie Davis"
+          ],
+          "games_seen": 2
+        },
+        {
+          "level": "MLB",
+          "player_id": 448801,
+          "archive_name": "Chris Davis",
+          "teams": [
+            "Baltimore Orioles",
+            "Texas Rangers"
+          ],
+          "archive_aliases": [
+            "Chris Davis"
+          ],
+          "games_seen": 2
+        }
+      ],
+      "status": "name_only_do_not_tag"
+    },
+    {
+      "name": "Christopher Vazquez",
+      "source_url": "https://officiallybananas.com/players/christopher-vazquez/",
+      "possible_archive_records": [
+        {
+          "level": "MLB",
+          "player_id": 543877,
+          "archive_name": "Christian Vázquez",
+          "teams": [
+            "Boston Red Sox"
+          ],
+          "archive_aliases": [
+            "Christian Vázquez"
+          ],
+          "games_seen": 5
+        }
+      ],
+      "status": "name_only_do_not_tag"
+    },
+    {
+      "name": "Conner Wolf",
+      "source_url": "https://officiallybananas.com/players/conner-wolf/",
+      "possible_archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-st-bonaventure-conor-wolf",
+          "archive_name": "Conor Wolf",
+          "teams": [
+            "St. Bonaventure"
+          ],
+          "archive_aliases": [
+            "Conor Wolf"
+          ],
+          "games_seen": 1
+        }
+      ],
+      "status": "name_only_do_not_tag"
+    },
+    {
+      "name": "Dakota Lee",
+      "source_url": "https://officiallybananas.com/players/dakota-lee/",
+      "possible_archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-uc-irvine-dailin-lee",
+          "archive_name": "Dailin Lee",
+          "teams": [
+            "UC Irvine"
+          ],
+          "archive_aliases": [
+            "Dailin Lee"
+          ],
+          "games_seen": 2
+        },
+        {
+          "level": "MLB",
+          "player_id": 117601,
+          "archive_name": "Derrek Lee",
+          "teams": [
+            "Chicago Cubs"
+          ],
+          "archive_aliases": [
+            "Derrek Lee"
+          ],
+          "games_seen": 2
+        },
+        {
+          "level": "MLB",
+          "player_id": 669276,
+          "archive_name": "Dylan Lee",
+          "teams": [
+            "Atlanta Braves"
+          ],
+          "archive_aliases": [
+            "Dylan Lee"
+          ],
+          "games_seen": 5
+        }
+      ],
+      "status": "name_only_do_not_tag"
+    },
+    {
+      "name": "Dallas Clark",
+      "source_url": "https://officiallybananas.com/players/dallas-clark/",
+      "possible_archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-west-virginia-derek-clark",
+          "archive_name": "Derek Clark",
+          "teams": [
+            "West Virginia"
+          ],
+          "archive_aliases": [
+            "Derek Clark"
+          ],
+          "games_seen": 1
+        }
+      ],
+      "status": "name_only_do_not_tag"
+    },
+    {
+      "name": "Dane Clark",
+      "source_url": "https://officiallybananas.com/players/dane-clark/",
+      "possible_archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-west-virginia-derek-clark",
+          "archive_name": "Derek Clark",
+          "teams": [
+            "West Virginia"
+          ],
+          "archive_aliases": [
+            "Derek Clark"
+          ],
+          "games_seen": 1
+        }
+      ],
+      "status": "name_only_do_not_tag"
+    },
+    {
+      "name": "Daniel Foster",
+      "source_url": "https://officiallybananas.com/players/daniel-foster/",
+      "possible_archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-san-francisco-darius-foster",
+          "archive_name": "Darius FOSTER",
+          "teams": [
+            "San Francisco"
+          ],
+          "archive_aliases": [
+            "Darius FOSTER"
+          ],
+          "games_seen": 7
+        }
+      ],
+      "status": "name_only_do_not_tag"
+    },
+    {
+      "name": "David Moore",
+      "source_url": "https://officiallybananas.com/players/david-moore/",
+      "possible_archive_records": [
+        {
+          "level": "MLB",
+          "player_id": 664238,
+          "archive_name": "Dylan Moore",
+          "teams": [
+            "Seattle Mariners"
+          ],
+          "archive_aliases": [
+            "Dylan Moore"
+          ],
+          "games_seen": 1
+        }
+      ],
+      "status": "name_only_do_not_tag"
+    },
+    {
+      "name": "De'Anthony Thomas",
+      "source_url": "https://officiallybananas.com/players/de-anthony-thomas/",
+      "possible_archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-hawaii-dylan-thomas",
+          "archive_name": "Dylan Thomas",
+          "teams": [
+            "Hawaii"
+          ],
+          "archive_aliases": [
+            "Dylan Thomas"
+          ],
+          "games_seen": 1
+        },
+        {
+          "level": "NCAA",
+          "player_id": "cb-saint-mary-s-david-thomas",
+          "archive_name": "David THOMAS",
+          "teams": [
+            "Saint Mary's"
+          ],
+          "archive_aliases": [
+            "David THOMAS"
+          ],
+          "games_seen": 1
+        },
+        {
+          "level": "NCAA",
+          "player_id": "cb-florida-dale-thomas",
+          "archive_name": "Dale Thomas",
+          "teams": [
+            "Florida"
+          ],
+          "archive_aliases": [
+            "Dale Thomas"
+          ],
+          "games_seen": 1
+        }
+      ],
+      "status": "name_only_do_not_tag"
+    },
+    {
+      "name": "Diego Barrett",
+      "source_url": "https://officiallybananas.com/players/diego-barrett/",
+      "possible_archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-southern-mississippi-drey-barrett",
+          "archive_name": "Drey Barrett",
+          "teams": [
+            "Southern Mississippi"
+          ],
+          "archive_aliases": [
+            "Drey Barrett"
+          ],
+          "games_seen": 1
+        }
+      ],
+      "status": "name_only_do_not_tag"
+    },
+    {
+      "name": "Drew Gillespie",
+      "source_url": "https://officiallybananas.com/players/drew-gillespie/",
+      "possible_archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-southern-mississippi-davis-gillespie",
+          "archive_name": "Davis Gillespie",
+          "teams": [
+            "Southern Mississippi"
+          ],
+          "archive_aliases": [
+            "Davis Gillespie"
+          ],
+          "games_seen": 1
+        }
+      ],
+      "status": "name_only_do_not_tag"
+    },
+    {
+      "name": "Elijah White",
+      "source_url": "https://officiallybananas.com/players/elijah-white/",
+      "possible_archive_records": [
+        {
+          "level": "MLB",
+          "player_id": 642201,
+          "archive_name": "Eli White",
+          "teams": [
+            "Atlanta Braves"
+          ],
+          "archive_aliases": [
+            "Eli White"
+          ],
+          "games_seen": 4
+        }
+      ],
+      "status": "name_only_do_not_tag"
+    },
+    {
+      "name": "Emmanuel Rosario",
+      "source_url": "https://officiallybananas.com/players/emmanuel-rosario/",
+      "possible_archive_records": [
+        {
+          "level": "MLB",
+          "player_id": 592696,
+          "archive_name": "Eddie Rosario",
+          "teams": [
+            "Atlanta Braves"
+          ],
+          "archive_aliases": [
+            "Eddie Rosario"
+          ],
+          "games_seen": 2
+        },
+        {
+          "level": "MLB",
+          "player_id": 666703,
+          "archive_name": "Eguy Rosario",
+          "teams": [
+            "San Diego Padres"
+          ],
+          "archive_aliases": [
+            "Eguy Rosario"
+          ],
+          "games_seen": 1
+        }
+      ],
+      "status": "name_only_do_not_tag"
+    },
+    {
+      "name": "Eric Jones Jr.",
+      "source_url": "https://officiallybananas.com/players/eric-jones-jr/",
+      "possible_archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-byu-easton-jones",
+          "archive_name": "Easton JONES",
+          "teams": [
+            "BYU"
+          ],
+          "archive_aliases": [
+            "Easton JONES",
+            "Easton Jones"
+          ],
+          "games_seen": 4
+        },
+        {
+          "level": "NCAA",
+          "player_id": "cb-south-carolina-eli-jones",
+          "archive_name": "Eli Jones",
+          "teams": [
+            "South Carolina"
+          ],
+          "archive_aliases": [
+            "Eli Jones"
+          ],
+          "games_seen": 2
+        },
+        {
+          "level": "NCAA",
+          "player_id": "cb-western-kentucky-evan-jones",
+          "archive_name": "Evan Jones",
+          "teams": [
+            "Western Kentucky"
+          ],
+          "archive_aliases": [
+            "Evan Jones"
+          ],
+          "games_seen": 1
+        },
+        {
+          "level": "NCAA",
+          "player_id": "cb-ucf-evan-jones",
+          "archive_name": "Evan Jones",
+          "teams": [
+            "UCF"
+          ],
+          "archive_aliases": [
+            "Evan Jones"
+          ],
+          "games_seen": 1
+        }
+      ],
+      "status": "name_only_do_not_tag"
+    },
+    {
+      "name": "Gabe Howell",
+      "source_url": "https://officiallybananas.com/players/gabe-howell/",
+      "possible_archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-eastern-kentucky-griffin-howell",
+          "archive_name": "Griffin Howell",
+          "teams": [
+            "Eastern Kentucky"
+          ],
+          "archive_aliases": [
+            "Griffin Howell"
+          ],
+          "games_seen": 1
+        }
+      ],
+      "status": "name_only_do_not_tag"
+    },
+    {
+      "name": "Gio Soto",
+      "source_url": "https://officiallybananas.com/players/gio-soto/",
+      "possible_archive_records": [
+        {
+          "level": "MLB",
+          "player_id": 642397,
+          "archive_name": "Gregory Soto",
+          "teams": [
+            "Philadelphia Phillies"
+          ],
+          "archive_aliases": [
+            "Gregory Soto"
+          ],
+          "games_seen": 1
+        }
+      ],
+      "status": "name_only_do_not_tag"
+    },
+    {
+      "name": "Ham Porter",
+      "source_url": "https://officiallybananas.com/players/ham-porter/",
+      "possible_archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-maryland-hollis-porter",
+          "archive_name": "Hollis Porter",
+          "teams": [
+            "Maryland"
+          ],
+          "archive_aliases": [
+            "Hollis Porter"
+          ],
+          "games_seen": 1
+        }
+      ],
+      "status": "name_only_do_not_tag"
+    },
+    {
+      "name": "Isaac Parra",
+      "source_url": "https://officiallybananas.com/players/isaac-parra/",
+      "possible_archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-san-diego-state-isaiah-parra",
+          "archive_name": "Isaiah Parra",
+          "teams": [
+            "San Diego State"
+          ],
+          "archive_aliases": [
+            "Isaiah Parra"
+          ],
+          "games_seen": 1
+        }
+      ],
+      "status": "name_only_do_not_tag"
+    },
+    {
+      "name": "Jack Wilson",
+      "source_url": "https://officiallybananas.com/players/jack-wilson/",
+      "possible_archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-grand-canyon-jacob-wilson",
+          "archive_name": "Jacob Wilson",
+          "teams": [
+            "Grand Canyon"
+          ],
+          "archive_aliases": [
+            "Jacob Wilson"
+          ],
+          "games_seen": 4
+        },
+        {
+          "level": "NCAA",
+          "player_id": "cb-cal-baptist-jacob-wilson",
+          "archive_name": "Jacob Wilson",
+          "teams": [
+            "Cal Baptist"
+          ],
+          "archive_aliases": [
+            "Jacob Wilson"
+          ],
+          "games_seen": 1
+        },
+        {
+          "level": "NCAA",
+          "player_id": "cb-texas-a-m-jorian-wilson",
+          "archive_name": "Jorian Wilson",
+          "teams": [
+            "Texas A&M"
+          ],
+          "archive_aliases": [
+            "Jorian Wilson"
+          ],
+          "games_seen": 1
+        }
+      ],
+      "status": "name_only_do_not_tag"
+    },
+    {
+      "name": "Jackson Olson",
+      "source_url": "https://officiallybananas.com/players/jackson-olson/",
+      "possible_archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-louisville-joe-olson",
+          "archive_name": "Joe Olson",
+          "teams": [
+            "Louisville"
+          ],
+          "archive_aliases": [
+            "Joe Olson"
+          ],
+          "games_seen": 1
+        }
+      ],
+      "status": "name_only_do_not_tag"
+    },
+    {
+      "name": "Jacob Brown",
+      "source_url": "https://officiallybananas.com/players/jacob-brown/",
+      "possible_archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-san-diego-state-justin-goossen-brown",
+          "archive_name": "Justin Goossen-Brown",
+          "teams": [
+            "San Diego State"
+          ],
+          "archive_aliases": [
+            "Justin Goossen-Brown"
+          ],
+          "games_seen": 1
+        },
+        {
+          "level": "NCAA",
+          "player_id": "cb-san-diego-state-justi-goossen-brown",
+          "archive_name": "Justi Goossen-brown",
+          "teams": [
+            "San Diego State"
+          ],
+          "archive_aliases": [
+            "Justi GOOSSEN-BROWN",
+            "Justi Goossen-brown"
+          ],
+          "games_seen": 2
+        },
+        {
+          "level": "NCAA",
+          "player_id": "cb-louisville-jack-brown",
+          "archive_name": "Jack Brown",
+          "teams": [
+            "Louisville"
+          ],
+          "archive_aliases": [
+            "Jack Brown"
+          ],
+          "games_seen": 4
+        },
+        {
+          "level": "NCAA",
+          "player_id": "cb-lsu-jake-brown",
+          "archive_name": "Jake Brown",
+          "teams": [
+            "LSU"
+          ],
+          "archive_aliases": [
+            "Jake Brown"
+          ],
+          "games_seen": 5
+        }
+      ],
+      "status": "name_only_do_not_tag"
+    },
+    {
+      "name": "Jansen Neff",
+      "source_url": "https://officiallybananas.com/players/jansen-neff/",
+      "possible_archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-virginia-tech-jeremy-neff",
+          "archive_name": "Jeremy Neff",
+          "teams": [
+            "Virginia Tech"
+          ],
+          "archive_aliases": [
+            "Jeremy Neff"
+          ],
+          "games_seen": 1
+        }
+      ],
+      "status": "name_only_do_not_tag"
+    },
+    {
+      "name": "Jared Mitchell",
+      "source_url": "https://officiallybananas.com/players/jared-mitchell/",
+      "possible_archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-oklahoma-justin-mitchell",
+          "archive_name": "Justin Mitchell",
+          "teams": [
+            "Oklahoma"
+          ],
+          "archive_aliases": [
+            "Justin Mitchell"
+          ],
+          "games_seen": 2
+        }
+      ],
+      "status": "name_only_do_not_tag"
+    },
+    {
+      "name": "Joe Gray Jr.",
+      "source_url": "https://officiallybananas.com/players/joe-gray-jr/",
+      "possible_archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-southern-illinois-jake-gray",
+          "archive_name": "Jake Gray",
+          "teams": [
+            "Southern Illinois"
+          ],
+          "archive_aliases": [
+            "Jake Gray"
+          ],
+          "games_seen": 1
+        },
+        {
+          "level": "MLB",
+          "player_id": 592351,
+          "archive_name": "Jon Gray",
+          "teams": [
+            "Colorado Rockies"
+          ],
+          "archive_aliases": [
+            "Jon Gray"
+          ],
+          "games_seen": 3
+        }
+      ],
+      "status": "name_only_do_not_tag"
+    },
+    {
+      "name": "Johnny Anderson",
+      "source_url": "https://officiallybananas.com/players/johnny-anderson/",
+      "possible_archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-michigan-state-jacob-anderson",
+          "archive_name": "Jacob Anderson",
+          "teams": [
+            "Michigan State"
+          ],
+          "archive_aliases": [
+            "Jacob Anderson"
+          ],
+          "games_seen": 2
+        },
+        {
+          "level": "NCAA",
+          "player_id": "cb-uab-jaden-anderson",
+          "archive_name": "Jaden Anderson",
+          "teams": [
+            "UAB"
+          ],
+          "archive_aliases": [
+            "Jaden Anderson"
+          ],
+          "games_seen": 1
+        },
+        {
+          "level": "MiLB",
+          "player_id": 605121,
+          "archive_name": "Justin Anderson",
+          "teams": [
+            "ACL Royals"
+          ],
+          "archive_aliases": [
+            "Justin Anderson"
+          ],
+          "games_seen": 2
+        },
+        {
+          "level": "MLB",
+          "player_id": 605121,
+          "archive_name": "Justin Anderson",
+          "teams": [
+            "Los Angeles Angels"
+          ],
+          "archive_aliases": [
+            "Justin Anderson"
+          ],
+          "games_seen": 2
+        }
+      ],
+      "status": "name_only_do_not_tag"
+    },
+    {
+      "name": "Jon Reid",
+      "source_url": "https://officiallybananas.com/players/jon-reid/",
+      "possible_archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-eastern-kentucky-jackson-reid",
+          "archive_name": "Jackson Reid",
+          "teams": [
+            "Eastern Kentucky"
+          ],
+          "archive_aliases": [
+            "Jackson Reid"
+          ],
+          "games_seen": 1
+        }
+      ],
+      "status": "name_only_do_not_tag"
+    },
+    {
+      "name": "Jonathan Hughes",
+      "source_url": "https://officiallybananas.com/players/jonathan-hughes/",
+      "possible_archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-oregon-jacob-hughes",
+          "archive_name": "Jacob Hughes",
+          "teams": [
+            "Oregon"
+          ],
+          "archive_aliases": [
+            "Jacob Hughes"
+          ],
+          "games_seen": 1
+        }
+      ],
+      "status": "name_only_do_not_tag"
+    },
+    {
+      "name": "Justin Jackson",
+      "source_url": "https://officiallybananas.com/players/justin-jackson/",
+      "possible_archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-san-diego-state-julian-jackson",
+          "archive_name": "Julian JACKSON",
+          "teams": [
+            "San Diego State"
+          ],
+          "archive_aliases": [
+            "Julian JACKSON"
+          ],
+          "games_seen": 3
+        },
+        {
+          "level": "NCAA",
+          "player_id": "cb-georgia-state-jojo-jackson",
+          "archive_name": "Jojo Jackson",
+          "teams": [
+            "Georgia State"
+          ],
+          "archive_aliases": [
+            "Jojo Jackson"
+          ],
+          "games_seen": 1
+        },
+        {
+          "level": "MiLB",
+          "player_id": 669236,
+          "archive_name": "Jeremiah Jackson",
+          "teams": [
+            "Inland Empire 66ers"
+          ],
+          "archive_aliases": [
+            "Jeremiah Jackson"
+          ],
+          "games_seen": 20
+        }
+      ],
+      "status": "name_only_do_not_tag"
+    },
+    {
+      "name": "Justin Quinn",
+      "source_url": "https://officiallybananas.com/players/justin-quinn/",
+      "possible_archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-georgia-jt-quinn",
+          "archive_name": "Jt Quinn",
+          "teams": [
+            "Georgia"
+          ],
+          "archive_aliases": [
+            "Jt Quinn"
+          ],
+          "games_seen": 2
+        }
+      ],
+      "status": "name_only_do_not_tag"
+    },
+    {
+      "name": "Keith Foulke",
+      "source_url": "https://officiallybananas.com/players/keith-foulke/",
+      "possible_archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-austin-peay-kade-foulke",
+          "archive_name": "Kade Foulke",
+          "teams": [
+            "Austin Peay"
+          ],
+          "archive_aliases": [
+            "Kade Foulke"
+          ],
+          "games_seen": 1
+        }
+      ],
+      "status": "name_only_do_not_tag"
+    },
+    {
+      "name": "Kobe Robinson",
+      "source_url": "https://officiallybananas.com/players/kobe-robinson/",
+      "possible_archive_records": [
+        {
+          "level": "MiLB",
+          "player_id": 677565,
+          "archive_name": "Kristian Robinson",
+          "teams": [
+            "Visalia Rawhide"
+          ],
+          "archive_aliases": [
+            "Kristian Robinson"
+          ],
+          "games_seen": 2
+        }
+      ],
+      "status": "name_only_do_not_tag"
+    },
+    {
+      "name": "Lance Harville-Thomas",
+      "source_url": "https://officiallybananas.com/players/lance-harville-thomas/",
+      "possible_archive_records": [
+        {
+          "level": "MiLB",
+          "player_id": 687723,
+          "archive_name": "Levi Thomas",
+          "teams": [
+            "Lake Elsinore Storm"
+          ],
+          "archive_aliases": [
+            "Levi Thomas"
+          ],
+          "games_seen": 38
+        },
+        {
+          "level": "MLB",
+          "player_id": 657041,
+          "archive_name": "Lane Thomas",
+          "teams": [
+            "Washington Nationals"
+          ],
+          "archive_aliases": [
+            "Lane Thomas"
+          ],
+          "games_seen": 2
+        }
+      ],
+      "status": "name_only_do_not_tag"
+    },
+    {
+      "name": "Lee Smith",
+      "source_url": "https://officiallybananas.com/players/lee-smith/",
+      "possible_archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-oklahoma-ledgend-smith",
+          "archive_name": "Ledgend Smith",
+          "teams": [
+            "Oklahoma"
+          ],
+          "archive_aliases": [
+            "Ledgend Smith"
+          ],
+          "games_seen": 2
+        }
+      ],
+      "status": "name_only_do_not_tag"
+    },
+    {
+      "name": "Malachi Mitchell",
+      "source_url": "https://officiallybananas.com/players/malachi-mitchell/",
+      "possible_archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-uc-san-diego-michael-mitchell",
+          "archive_name": "Michael Mitchell",
+          "teams": [
+            "UC San Diego"
+          ],
+          "archive_aliases": [
+            "Michael Mitchell"
+          ],
+          "games_seen": 3
+        }
+      ],
+      "status": "name_only_do_not_tag"
+    },
+    {
+      "name": "Marcos Castillo",
+      "source_url": "https://officiallybananas.com/players/marcos-castillo/",
+      "possible_archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-georgetown-marco-castillo",
+          "archive_name": "Marco Castillo",
+          "teams": [
+            "Georgetown"
+          ],
+          "archive_aliases": [
+            "Marco Castillo"
+          ],
+          "games_seen": 1
+        }
+      ],
+      "status": "name_only_do_not_tag"
+    },
+    {
+      "name": "Mark Smith",
+      "source_url": "https://officiallybananas.com/players/mark-smith/",
+      "possible_archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-uc-irvine-myles-smith",
+          "archive_name": "Myles Smith",
+          "teams": [
+            "UC Irvine",
+            "UC irvine"
+          ],
+          "archive_aliases": [
+            "Myles Smith"
+          ],
+          "games_seen": 3
+        },
+        {
+          "level": "NCAA",
+          "player_id": "cb-unc-greensboro-mitchell-smith",
+          "archive_name": "Mitchell Smith",
+          "teams": [
+            "UNC Greensboro"
+          ],
+          "archive_aliases": [
+            "Mitchell Smith"
+          ],
+          "games_seen": 1
+        },
+        {
+          "level": "NCAA",
+          "player_id": "cb-bryant-matt-smith",
+          "archive_name": "Matt Smith",
+          "teams": [
+            "Bryant"
+          ],
+          "archive_aliases": [
+            "Matt Smith"
+          ],
+          "games_seen": 2
+        }
+      ],
+      "status": "name_only_do_not_tag"
+    },
+    {
+      "name": "Mikey Scott",
+      "source_url": "https://officiallybananas.com/players/mikey-scott/",
+      "possible_archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-stanford-matt-scott",
+          "archive_name": "Matt Scott",
+          "teams": [
+            "Stanford"
+          ],
+          "archive_aliases": [
+            "Matt Scott"
+          ],
+          "games_seen": 1
+        },
+        {
+          "level": "NCAA",
+          "player_id": "cb-georgia-matt-scott",
+          "archive_name": "Matt Scott",
+          "teams": [
+            "Georgia"
+          ],
+          "archive_aliases": [
+            "Matt Scott"
+          ],
+          "games_seen": 1
+        }
+      ],
+      "status": "name_only_do_not_tag"
+    },
+    {
+      "name": "Miles Williams",
+      "source_url": "https://officiallybananas.com/players/miles-williams/",
+      "possible_archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-santa-clara-malcolm-williams",
+          "archive_name": "Malcolm WILLIAMS",
+          "teams": [
+            "Santa Clara"
+          ],
+          "archive_aliases": [
+            "Malcolm WILLIAMS",
+            "Malcolm Williams"
+          ],
+          "games_seen": 4
+        },
+        {
+          "level": "NCAA",
+          "player_id": "cb-florida-state-max-williams",
+          "archive_name": "Max Williams",
+          "teams": [
+            "Florida State"
+          ],
+          "archive_aliases": [
+            "Max Williams"
+          ],
+          "games_seen": 4
+        }
+      ],
+      "status": "name_only_do_not_tag"
+    },
+    {
+      "name": "Mo'ne Davis",
+      "source_url": "https://officiallybananas.com/players/mo-ne-davis/",
+      "possible_archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-florida-state-matty-davis",
+          "archive_name": "Matty Davis",
+          "teams": [
+            "Florida State"
+          ],
+          "archive_aliases": [
+            "Matty Davis"
+          ],
+          "games_seen": 1
+        }
+      ],
+      "status": "name_only_do_not_tag"
+    },
+    {
+      "name": "Patrick Brown",
+      "source_url": "https://officiallybananas.com/players/patrick-brown/",
+      "possible_archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-tcu-porter-brown",
+          "archive_name": "Porter Brown",
+          "teams": [
+            "TCU"
+          ],
+          "archive_aliases": [
+            "Porter Brown"
+          ],
+          "games_seen": 1
+        }
+      ],
+      "status": "name_only_do_not_tag"
+    },
+    {
+      "name": "Pearce Howard",
+      "source_url": "https://officiallybananas.com/players/pearce-howard/",
+      "possible_archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-campbell-payton-howard",
+          "archive_name": "Payton Howard",
+          "teams": [
+            "Campbell"
+          ],
+          "archive_aliases": [
+            "Payton Howard"
+          ],
+          "games_seen": 3
+        }
+      ],
+      "status": "name_only_do_not_tag"
+    },
+    {
+      "name": "Riley Green",
+      "source_url": "https://officiallybananas.com/players/riley-green/",
+      "possible_archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-california-rodney-green-jr",
+          "archive_name": "Rodney Green Jr.",
+          "teams": [
+            "California"
+          ],
+          "archive_aliases": [
+            "Rodney Green Jr."
+          ],
+          "games_seen": 1
+        }
+      ],
+      "status": "name_only_do_not_tag"
+    },
+    {
+      "name": "Riyan Rodriguez",
+      "source_url": "https://officiallybananas.com/players/riyan-rodriguez/",
+      "possible_archive_records": [
+        {
+          "level": "MiLB",
+          "player_id": 678495,
+          "archive_name": "Randy Rodríguez",
+          "teams": [
+            "San Jose Giants"
+          ],
+          "archive_aliases": [
+            "Randy Rodríguez"
+          ],
+          "games_seen": 6
+        }
+      ],
+      "status": "name_only_do_not_tag"
+    },
+    {
+      "name": "Ryan Smith",
+      "source_url": "https://officiallybananas.com/players/ryan-smith/",
+      "possible_archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-cal-baptist-rory-smith",
+          "archive_name": "Rory Smith",
+          "teams": [
+            "Cal Baptist"
+          ],
+          "archive_aliases": [
+            "Rory Smith"
+          ],
+          "games_seen": 2
+        }
+      ],
+      "status": "name_only_do_not_tag"
+    },
+    {
+      "name": "Stephen Ditomaso",
+      "source_url": "https://officiallybananas.com/players/stephen-ditomaso/",
+      "possible_archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-george-washington-steve-ditomaso",
+          "archive_name": "Steve Ditomaso",
+          "teams": [
+            "George Washington"
+          ],
+          "archive_aliases": [
+            "Steve Ditomaso"
+          ],
+          "games_seen": 2
+        }
+      ],
+      "status": "name_only_do_not_tag"
+    },
+    {
+      "name": "Taj Porter",
+      "source_url": "https://officiallybananas.com/players/taj-porter/",
+      "possible_archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-long-beach-state-tyler-porter",
+          "archive_name": "Tyler Porter",
+          "teams": [
+            "Long Beach State"
+          ],
+          "archive_aliases": [
+            "Tyler Porter"
+          ],
+          "games_seen": 1
+        }
+      ],
+      "status": "name_only_do_not_tag"
+    },
+    {
+      "name": "Tino Martinez",
+      "source_url": "https://officiallybananas.com/players/tino-martinez/",
+      "possible_archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-uc-irvine-tony-martinez",
+          "archive_name": "Tony Martinez",
+          "teams": [
+            "UC Irvine",
+            "UC irvine"
+          ],
+          "archive_aliases": [
+            "Tony Martinez"
+          ],
+          "games_seen": 2
+        },
+        {
+          "level": "NCAA",
+          "player_id": "cb-san-francisco-tyler-martinez",
+          "archive_name": "Tyler MARTINEZ",
+          "teams": [
+            "San Francisco"
+          ],
+          "archive_aliases": [
+            "Tyler MARTINEZ"
+          ],
+          "games_seen": 2
+        }
+      ],
+      "status": "name_only_do_not_tag"
+    },
+    {
+      "name": "Tre Jones",
+      "source_url": "https://officiallybananas.com/players/tre-jones/",
+      "possible_archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-fresno-state-tiegen-jones",
+          "archive_name": "Tiegen Jones",
+          "teams": [
+            "Fresno State"
+          ],
+          "archive_aliases": [
+            "Tiegen Jones"
+          ],
+          "games_seen": 1
+        }
+      ],
+      "status": "name_only_do_not_tag"
+    },
+    {
+      "name": "Troy Brown",
+      "source_url": "https://officiallybananas.com/players/troy-brown/",
+      "possible_archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-san-diego-state-t-brown",
+          "archive_name": "T. BROWN",
+          "teams": [
+            "San Diego State"
+          ],
+          "archive_aliases": [
+            "T. BROWN"
+          ],
+          "games_seen": 1
+        },
+        {
+          "level": "NCAA",
+          "player_id": "cb-the-citadel-trip-brown",
+          "archive_name": "Trip Brown",
+          "teams": [
+            "The Citadel"
+          ],
+          "archive_aliases": [
+            "Trip Brown"
+          ],
+          "games_seen": 1
+        }
+      ],
+      "status": "name_only_do_not_tag"
+    },
+    {
+      "name": "Turner Davis",
+      "source_url": "https://officiallybananas.com/players/turner-davis/",
+      "possible_archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-gonzaga-taylor-davis",
+          "archive_name": "Taylor Davis",
+          "teams": [
+            "Gonzaga"
+          ],
+          "archive_aliases": [
+            "Taylor Davis"
+          ],
+          "games_seen": 2
+        },
+        {
+          "level": "NCAA",
+          "player_id": "cb-louisville-tague-davis",
+          "archive_name": "Tague Davis",
+          "teams": [
+            "Louisville"
+          ],
+          "archive_aliases": [
+            "Tague Davis"
+          ],
+          "games_seen": 12
+        }
+      ],
+      "status": "name_only_do_not_tag"
+    },
+    {
+      "name": "Ty Jackson",
+      "source_url": "https://officiallybananas.com/players/ty-jackson/",
+      "possible_archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-san-diego-todd-jackson",
+          "archive_name": "Todd Jackson",
+          "teams": [
+            "San Diego"
+          ],
+          "archive_aliases": [
+            "Todd Jackson"
+          ],
+          "games_seen": 1
+        }
+      ],
+      "status": "name_only_do_not_tag"
+    },
+    {
+      "name": "Tyner Hughes",
+      "source_url": "https://officiallybananas.com/players/tyner-hughes/",
+      "possible_archive_records": [
+        {
+          "level": "NCAA",
+          "player_id": "cb-kansas-state-thomas-hughes",
+          "archive_name": "Thomas Hughes",
+          "teams": [
+            "Kansas State"
+          ],
+          "archive_aliases": [
+            "Thomas Hughes"
+          ],
+          "games_seen": 2
+        }
+      ],
+      "status": "name_only_do_not_tag"
+    }
+  ],
+  "summary": {
+    "verified_full_time_mlb_players": 1,
+    "excluded_mlb_name_matches": 53,
+    "ncaa_regular_playing_candidates_unique_banana_names": 21,
+    "ncaa_archive_ids_to_verify": 23,
+    "milb_regular_playing_candidates": 2,
+    "unreviewed_name_alias_candidates": 64,
+    "new_site_tags_published": 0,
+    "important_limitation": "A long range between first and last appearance is not proof of full-time status. For NCAA and MiLB, official roster or independent reporting plus confirmed archive identity is needed before final tagging."
+  }
+}

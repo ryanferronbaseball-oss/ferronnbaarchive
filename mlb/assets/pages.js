@@ -6,7 +6,17 @@ el("navigation").innerHTML=A.nav(page);
 let d;try{d=await A.load()}catch(err){app.innerHTML='<div class="empty">Unable to load attendance data: '+esc(err.message)+'</div>';return}
 const {games,rows,players,scores,decisions,recaps}=d;
 const collegeCrossover=new Map(),milbCrossover=new Map(),verifiedCollegeMiLB=new Set();
-const wbcById=new Map();
+const wbcById=new Map(),bananaBallById=new Map();
+if(page==="player"){
+ try{
+  const response=await fetch("../college-baseball/data/banana_ball_verified_tags.json",{cache:"no-store"});
+  if(response.ok){
+   const registry=await response.json();
+   for(const person of registry.players||[])if(person.level==="MLB"&&person.verified===true&&person.owner_approved===true)
+    bananaBallById.set(String(person.player_id),person);
+  }
+ }catch(error){console.warn("Verified Banana Ball tags unavailable",error)}
+}
 if(page==="player"){
  try{
   const response=await fetch("./data/wbc_roster_matches.json",{cache:"no-store"});
@@ -462,6 +472,7 @@ function profilePage(){
  const years=startYear===endYear?startYear:startYear+"–"+endYear;
  const pitcher=!!ps&&(p.pitching.length>=p.batting.length||!bs.atBats);
  const nameInitials=p.name.split(/\s+/).map(x=>x[0]).slice(0,2).join("").toUpperCase();
+ const bananaPlayer=bananaBallById.get(String(p.player_id));
  const collegeId=collegeCrossover.get(String(p.player_id));
  const milbId=milbCrossover.get(String(p.player_id));
  const tripleLevel=Boolean(collegeId&&milbId&&verifiedCollegeMiLB.has(String(collegeId)+"|"+String(milbId)));
@@ -470,7 +481,7 @@ function profilePage(){
   +(collegeId?'<a class="mlb-profile-badge college-crossover" href="../college-baseball/player.html?id='+encodeURIComponent(collegeId)+'" title="You attended this player’s college and MLB games">★ SEEN IN COLLEGE + MLB ↗</a>':"")
   +(milbId?'<a class="mlb-profile-badge college-crossover" href="../milb/player.html?id='+encodeURIComponent(milbId)+'" title="You attended this player’s Minor League and Major League Baseball games">★ SEEN IN MiLB + MLB ↗</a>':"")
   +'</div>':"";
- const badges=crossoverBadge+(hasHonors?'<div class="mlb-profile-achievements" aria-label="Career accomplishments">'
+ const badges=crossoverBadge+(bananaPlayer?'<div class="mlb-profile-achievements" aria-label="Verified regular Banana Ball participation"><a class="mlb-profile-badge banana-ball-badge" href="'+esc(bananaPlayer.evidence_url)+'" target="_blank" rel="noopener noreferrer" title="Verified regular Banana Ball playing career">★ BANANA BALL PLAYER ↗</a></div>':"")+(hasHonors?'<div class="mlb-profile-achievements" aria-label="Career accomplishments">'
   +(hof?'<a class="mlb-profile-badge hof" href="./hall-of-fame.html" title="National Baseball Hall of Fame, inducted '+hof.year+'">★ HALL OF FAME ↗</a>':"")
   +honors.filter(([key])=>career?.[key]?.length).map(([key,title,theme,mark])=>
    '<a class="mlb-profile-badge '+theme+'" href="#careerHonors" data-honor-link="'+key+'" title="Click for career honor details">'+mark+' '+(key==="retired_number"&&career[key].length===1?"RETIRED #"+esc(career[key][0].number):key==="wbc"?"WORLD BASEBALL CLASSIC · "+career[key].length:esc(title.toUpperCase())+' · '+career[key].length)+'</a>').join("")

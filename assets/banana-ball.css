@@ -1,0 +1,13 @@
+/* Verified regular Banana Ball crossover shared across college, MiLB, MLB profiles. */
+body[data-page="player"] .banana-ball-badge{
+ display:inline-flex;align-items:center;gap:4px;
+ background:#e4f3fb!important;color:#761831!important;
+ border:1px solid #9ccce2!important;border-radius:7px;
+ padding:6px 10px;font-size:11px;font-weight:850;
+ line-height:1.35;text-decoration:none!important;letter-spacing:.025em;
+}
+body[data-page="player"] .banana-ball-badge:hover,
+body[data-page="player"] .banana-ball-badge:focus-visible{
+ background:#cee7f5!important;border-color:#761831!important;
+ text-decoration:underline!important;
+}

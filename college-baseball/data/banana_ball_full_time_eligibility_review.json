@@ -832,7 +832,9 @@
       "source_url": "https://officiallybananas.com/players/logan-maxwell/",
       "roster_reference": [],
       "max_recorded_stint_days": 378,
-      "status": "identity_and_playing_roster_verification_pending"
+      "status": "owner_confirmed_no_identity_match_exclude",
+      "owner_decision_date": "2026-11-23",
+      "owner_decision": "NO MATCH: Arkansas Logan Maxwell is not the Banana Ball Logan Maxwell; never include as verified crossover."
     },
     {
       "name": "Max Jung-Goldberg",
@@ -2714,6 +2716,9 @@
     "milb_regular_playing_candidates": 2,
     "unreviewed_name_alias_candidates": 64,
     "new_site_tags_published": 0,
-    "important_limitation": "A long range between first and last appearance is not proof of full-time status. For NCAA and MiLB, official roster or independent reporting plus confirmed archive identity is needed before final tagging."
+    "important_limitation": "Preliminary candidate counts are historical name/stint screens, not approved tags. Logan Maxwell is explicitly rejected as a false identity match by the archive owner (2026-11-23); the 18 published exact-ID tags remain unchanged.",
+    "owner_confirmed_false_matches": {
+      "Logan Maxwell": "cb-arkansas-logan-maxwell"
+    }
   }
 }

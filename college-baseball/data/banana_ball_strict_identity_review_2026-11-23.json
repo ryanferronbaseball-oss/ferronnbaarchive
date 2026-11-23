@@ -10,9 +10,7 @@
       "MiLB": 1,
       "MLB": 1
     },
-    "pending": [
-      "Logan Maxwell"
-    ],
+    "pending": [],
     "excluded": [
       {
         "name": "Blake Morgan",
@@ -33,6 +31,10 @@
       {
         "name": "Jose Gonzalez Jr.",
         "reason": "Archive MiLB ID 683681 is Venezuelan right-handed pitcher Jose Manuel Gonzalez; Banana Ball Jose Gonzalez Jr is from Spring TX, an outfielder/first baseman with Yolo/Cleburne background."
+      },
+      {
+        "name": "Logan Maxwell",
+        "reason": "Owner confirmed the Arkansas college baseball player is NOT the same person as Banana Ball's Logan Maxwell (2026-11-23)."
       }
     ],
     "site_tags_written": 18,
@@ -430,9 +432,10 @@
       "first_recorded_banana_ball_game": "2021-03-13",
       "source_url": "https://officiallybananas.com/players/logan-maxwell/",
       "independent_verification_sources": [],
-      "decision": "manual_review",
-      "notes": "2021 first recorded Banana Ball history collides with the 2025 Arkansas player; no reliable source establishes the same person and regular full-time Banana Ball career.",
-      "owner_confirmed": false
+      "decision": "exclude_different_person_owner_confirmed",
+      "notes": "Archive owner explicitly confirmed NO MATCH: the Arkansas Logan Maxwell witnessed in college baseball is not the Banana Ball Logan Maxwell. Previous name/stint screening was a false positive. Do not tag or revisit without a new owner decision.",
+      "owner_confirmed": true,
+      "owner_decision_date": "2026-11-23"
     },
     {
       "name": "Max Jung-Goldberg",
@@ -702,5 +705,5 @@
       "source": "https://officiallybananas.com/players/livan-reinoso/"
     }
   ],
-  "limitations": "Owner approved 18 exact player-ID regular-player matches on 2026-11-23. Excluded identities, Logan Maxwell, unverified aliases and other unapproved candidates remain untagged. No game box scores were changed."
+  "limitations": "Owner approved 18 exact player-ID regular-player matches on 2026-11-23. Logan Maxwell, other confirmed false identities, and unverified aliases remain untagged. Logan Maxwell was explicitly rejected as a different person by the archive owner. No game box scores were changed."
 }

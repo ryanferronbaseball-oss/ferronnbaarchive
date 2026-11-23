@@ -41,8 +41,12 @@ def get_html(session,url):
         try:
             r=session.get(url,timeout=30)
             r.raise_for_status()
-            if len(r.text)<500:raise ValueError("truncated response")
-            return r.text
+            # Both source sites serve UTF-8. Requests may otherwise assume
+            # Latin-1 when charset is absent, turning en dashes into mojibake
+            # and corrupting multi-month "Recorded stint" date ranges.
+            html=r.content.decode("utf-8",errors="replace")
+            if len(html)<500:raise ValueError("truncated response")
+            return html
         except (requests.RequestException,ValueError) as e:
             last=str(e)
             time.sleep(2+attempt*2)

@@ -1,7 +1,7 @@
 {
-  "updated": "2026-11-17",
+  "updated": "2026-11-23",
   "venueCount": 144,
-  "mappedGames": 831,
+  "mappedGames": 833,
   "excludedUnassignedGames": 7,
   "venues": [
     {
@@ -7007,9 +7007,9 @@
       "sport": "College Basketball",
       "city": "Nashville, Tennessee",
       "address": "210 25th Avenue South, Nashville, TN 37240",
-      "visits": 1,
+      "visits": 2,
       "firstVisit": "2026-11-05",
-      "lastVisit": "2026-11-05",
+      "lastVisit": "2026-11-17",
       "lat": 36.144611,
       "lon": -86.80742,
       "coordinateConfidence": "High",
@@ -7032,6 +7032,15 @@
           "awayScore": 51,
           "homeScore": 74,
           "url": "../college/game.html?id=95"
+        },
+        {
+          "id": "100",
+          "date": "2026-11-17",
+          "away": "Eastern Illinois",
+          "home": "Vanderbilt",
+          "awayScore": 50,
+          "homeScore": 96,
+          "url": "../college/game.html?id=100"
         }
       ]
     },
@@ -9893,9 +9902,9 @@
       "sport": "College Football",
       "city": "San Diego, CA",
       "address": "5998 Alcalá Park, San Diego, CA 92110 (USD campus; stadium opposite Main Parking Structure)",
-      "visits": 4,
+      "visits": 5,
       "firstVisit": "2017-09-02",
-      "lastVisit": "2019-09-07",
+      "lastVisit": "2021-10-24",
       "lat": 32.7730619,
       "lon": -117.1836878,
       "coordinateConfidence": "High",
@@ -9944,7 +9953,20 @@
           "awayScore": 38,
           "homeScore": 35,
           "url": "../cfb/game.html?id=cfb-2019-09-07-ucd-usd"
+        },
+        {
+          "id": "soc-2021-10-24-sd-oak",
+          "date": "2021-10-24",
+          "away": "Oakland Roots",
+          "home": "San Diego Loyal",
+          "awayScore": 4,
+          "homeScore": 3,
+          "url": "../soccer/game.html?id=soc-2021-10-24-sd-oak"
         }
+      ],
+      "sports": [
+        "College Football",
+        "Soccer"
       ]
     },
     {

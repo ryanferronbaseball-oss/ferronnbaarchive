@@ -2,7 +2,7 @@
 """Replace the incorrectly matched 2017-09-02 opener with the attended nightcap.
 Run in a clean checkout; publish only after all downstream checks pass.
 """
-import collections, json, pathlib, concurrent.futures
+import collections, json, pathlib, concurrent.futures, unicodedata
 import import_official as imp
 import import_decisions as dec
 import audit_witnessed_hitter_milestones as hit
@@ -46,7 +46,11 @@ def main():
     scoring=read("scoring_plays.json");scoring.pop(str(OLD),None);scoring[str(NEW)]=plays
     decisions=read("decisions.json");decisions.pop(str(OLD),None);decisions[str(NEW)]=decision
     names={r["name"]:r["player_id"] for r in rows}
-    def link(name): return "[["+str(names[name])+"|"+name+"]]"
+    def normalized(name): return "".join(ch for ch in unicodedata.normalize("NFKD",name) if not unicodedata.combining(ch)).casefold()
+    canonical={normalized(name):name for name in names}
+    def link(name):
+        official=canonical[normalized(name)]
+        return "[["+str(names[official])+"|"+official+"]]"
     recap=read("game_recaps.json")
     recap[str(AID)]=[
         f"Los Angeles and San Diego traded runs in the first inning of the nightcap at Petco Park. {link('Justin Turner')} doubled home a run for the Dodgers before {link('Hector Sanchez')} tied it with a groundout. {link('Adrian Gonzalez')} put Los Angeles back ahead with a third-inning RBI single.",
@@ -58,6 +62,11 @@ def main():
     registry["milestones"]=[m for m in registry["milestones"] if not old(m)]
     assert names["Jordan Lyles"]==543475
     registry["milestones"].append({"id":"mlb-2017-09-02-543475-padres-debut","player":"Jordan Lyles","player_id":543475,"team":"San Diego Padres","date":DATE,"type":"team_debut","title":"San Diego Padres debut","description":"Made his first MLB appearance for San Diego in Game 2 of the doubleheader, starting and allowing two runs in 4 1/3 innings.","opponent":"Los Angeles Dodgers","attendance_id":AID,"game_pk":NEW,"source_url":"https://www.mlb.com/player/jordan-lyles-543475","verified":True})
+    assert any(r['player_id']==503566 and r.get('pitching',{}).get('strikeOuts',0)==2 for r in rows if r.get('pitching'))
+    for kind,title,description,metric,threshold in [('mlb_debut','Major League debut','Made his MLB debut in relief in the nightcap, recording four outs without allowing a run.',None,None),('career_first','First MLB strikeout','Recorded his first two MLB strikeouts during his debut.', 'strikeouts',1)]:
+        entry={'id':f'mlb-2017-09-02-503566-{kind}', 'player':'Fabio Castillo','player_id':503566,'team':'Los Angeles Dodgers','date':DATE,'type':kind,'title':title,'description':description,'opponent':'San Diego Padres','attendance_id':AID,'game_pk':NEW,'source_url':'https://www.mlb.com/video/castillo-escapes-a-jam-in-relief-c1804195083','verified':True}
+        if metric: entry.update(metric=metric,threshold=threshold)
+        registry['milestones'].append(entry)
     registry["milestones"].sort(key=lambda m:m["date"])
     # Targeted screening using complete MLB career logs; keep new candidates separate
     # until doubleheader order and independent evidence are reviewed.
@@ -95,6 +104,6 @@ def main():
     report["lineup_slot_rows"]=sum(r.get("batting_slot") is not None for r in allrows)
     report["attendance_correction_20170902"]={"attendance_id":AID,"game_pk":NEW,"previous_game_pk":OLD}
     write("import_report.json",report)
-    write("doubleheader_correction_20170902.json",{"attendance_id":AID,"old_game_pk":OLD,"new_game_pk":NEW,"old_player_rows":len(removed),"new_player_rows":len(rows),"old_only_players":sorted(set(r["name"] for r in removed)-set(names)),"new_only_players":sorted(set(names)-set(r["name"] for r in removed)),"removed_milestones":[m["title"]+" — "+m["player"] for m in removed_milestones],"added_verified_milestone":"Jordan Lyles — Padres debut","new_career_candidates":candidates,"audit_errors":errors,"source":"https://www.mlb.com/gameday/492125","review_source":"https://www.baseball-reference.com/boxes/SDN/SDN201709022.shtml"})
+    write("doubleheader_correction_20170902.json",{"attendance_id":AID,"old_game_pk":OLD,"new_game_pk":NEW,"old_player_rows":len(removed),"new_player_rows":len(rows),"old_only_players":sorted(set(r["name"] for r in removed)-set(names)),"new_only_players":sorted(set(names)-set(r["name"] for r in removed)),"removed_milestones":[m["title"]+" — "+m["player"] for m in removed_milestones],"added_verified_milestones":["Jordan Lyles — Padres debut","Fabio Castillo — MLB debut","Fabio Castillo — first MLB strikeout"],"new_career_candidates":candidates,"audit_errors":errors,"source":"https://www.mlb.com/gameday/492125","review_source":"https://www.baseball-reference.com/boxes/SDN/SDN201709022.shtml"})
     print("Core correction staged:",len(rows),"player rows;",len(plays),"scoring plays;",len(candidates),"career candidates;",len(errors),"audit errors")
 if __name__=="__main__":main()

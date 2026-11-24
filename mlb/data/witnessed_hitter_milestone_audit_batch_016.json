@@ -4,10 +4,25 @@
   "batch_size": 100,
   "total_players": 1633,
   "players_in_batch": 100,
-  "candidate_count": 1,
+  "candidate_count": 2,
   "candidates": [
     {
       "type": "home_runs",
+      "milestone": 1,
+      "player_id": "682653",
+      "date": "2025-07-27",
+      "game_pk": 776986,
+      "attendance_id": 127,
+      "team": "Colorado Rockies",
+      "game_stat": 1,
+      "career_before_game": 0,
+      "career_after_game": 1,
+      "same_day_doubleheader": false,
+      "source_url": "https://statsapi.mlb.com/api/v1/people/682653/stats?stats=gameLog&group=hitting&season=2025",
+      "status": "candidate_needs_independent_verification"
+    },
+    {
+      "type": "rbi",
       "milestone": 1,
       "player_id": "682653",
       "date": "2025-07-27",

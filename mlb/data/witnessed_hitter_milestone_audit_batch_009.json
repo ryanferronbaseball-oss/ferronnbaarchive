@@ -4,8 +4,39 @@
   "batch_size": 100,
   "total_players": 1633,
   "players_in_batch": 100,
-  "candidate_count": 0,
-  "candidates": [],
+  "candidate_count": 2,
+  "candidates": [
+    {
+      "type": "rbi",
+      "milestone": 1,
+      "player_id": "136880",
+      "date": "2007-06-10",
+      "game_pk": 69076,
+      "attendance_id": 9,
+      "team": "Toronto Blue Jays",
+      "game_stat": 1,
+      "career_before_game": 0,
+      "career_after_game": 1,
+      "same_day_doubleheader": false,
+      "source_url": "https://statsapi.mlb.com/api/v1/people/136880/stats?stats=gameLog&group=hitting&season=2007",
+      "status": "candidate_needs_independent_verification"
+    },
+    {
+      "type": "rbi",
+      "milestone": 250,
+      "player_id": "136660",
+      "date": "2007-08-16",
+      "game_pk": 69934,
+      "attendance_id": 15,
+      "team": "Chicago Cubs",
+      "game_stat": 4,
+      "career_before_game": 247,
+      "career_after_game": 251,
+      "same_day_doubleheader": false,
+      "source_url": "https://statsapi.mlb.com/api/v1/people/136660/stats?stats=gameLog&group=hitting&season=2007",
+      "status": "candidate_needs_independent_verification"
+    }
+  ],
   "errors": [],
   "complete": true,
   "publication_status": "candidate_only"

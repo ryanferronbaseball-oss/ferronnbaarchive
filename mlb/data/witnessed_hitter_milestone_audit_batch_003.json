@@ -4,7 +4,7 @@
   "batch_size": 100,
   "total_players": 1633,
   "players_in_batch": 100,
-  "candidate_count": 4,
+  "candidate_count": 5,
   "candidates": [
     {
       "type": "hits",
@@ -19,6 +19,21 @@
       "career_after_game": 500,
       "same_day_doubleheader": false,
       "source_url": "https://statsapi.mlb.com/api/v1/people/150479/stats?stats=gameLog&group=hitting&season=2006",
+      "status": "candidate_needs_independent_verification"
+    },
+    {
+      "type": "rbi",
+      "milestone": 100,
+      "player_id": "434633",
+      "date": "2012-08-03",
+      "game_pk": 319319,
+      "attendance_id": 39,
+      "team": "San Diego Padres",
+      "game_stat": 1,
+      "career_before_game": 99,
+      "career_after_game": 100,
+      "same_day_doubleheader": false,
+      "source_url": "https://statsapi.mlb.com/api/v1/people/434633/stats?stats=gameLog&group=hitting&season=2012",
       "status": "candidate_needs_independent_verification"
     },
     {

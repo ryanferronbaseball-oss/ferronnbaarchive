@@ -4,7 +4,7 @@
   "batch_size": 100,
   "total_players": 1633,
   "players_in_batch": 33,
-  "candidate_count": 3,
+  "candidate_count": 4,
   "candidates": [
     {
       "type": "home_runs",
@@ -32,6 +32,21 @@
       "game_stat": 1,
       "career_before_game": 0,
       "career_after_game": 1,
+      "same_day_doubleheader": false,
+      "source_url": "https://statsapi.mlb.com/api/v1/people/814430/stats?stats=gameLog&group=hitting&season=2026",
+      "status": "candidate_needs_independent_verification"
+    },
+    {
+      "type": "rbi",
+      "milestone": 1,
+      "player_id": "814430",
+      "date": "2026-08-16",
+      "game_pk": 824236,
+      "attendance_id": 129,
+      "team": "Detroit Tigers",
+      "game_stat": 2,
+      "career_before_game": 0,
+      "career_after_game": 2,
       "same_day_doubleheader": false,
       "source_url": "https://statsapi.mlb.com/api/v1/people/814430/stats?stats=gameLog&group=hitting&season=2026",
       "status": "candidate_needs_independent_verification"

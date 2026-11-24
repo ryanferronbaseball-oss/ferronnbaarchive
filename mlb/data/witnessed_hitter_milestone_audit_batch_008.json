@@ -4,8 +4,23 @@
   "batch_size": 100,
   "total_players": 1633,
   "players_in_batch": 100,
-  "candidate_count": 3,
+  "candidate_count": 4,
   "candidates": [
+    {
+      "type": "rbi",
+      "milestone": 1000,
+      "player_id": "121640",
+      "date": "2006-05-13",
+      "game_pk": 40485,
+      "attendance_id": 5,
+      "team": "Los Angeles Angels",
+      "game_stat": 2,
+      "career_before_game": 999,
+      "career_after_game": 1001,
+      "same_day_doubleheader": false,
+      "source_url": "https://statsapi.mlb.com/api/v1/people/121640/stats?stats=gameLog&group=hitting&season=2006",
+      "status": "candidate_needs_independent_verification"
+    },
     {
       "type": "hits",
       "milestone": 1000,

@@ -4,7 +4,7 @@
   "batch_size": 100,
   "total_players": 1633,
   "players_in_batch": 100,
-  "candidate_count": 1,
+  "candidate_count": 2,
   "candidates": [
     {
       "type": "home_runs",
@@ -19,6 +19,21 @@
       "career_after_game": 1,
       "same_day_doubleheader": false,
       "source_url": "https://statsapi.mlb.com/api/v1/people/519222/stats?stats=gameLog&group=hitting&season=2013",
+      "status": "candidate_needs_independent_verification"
+    },
+    {
+      "type": "rbi",
+      "milestone": 500,
+      "player_id": "607208",
+      "date": "2023-09-04",
+      "game_pk": 716720,
+      "attendance_id": 117,
+      "team": "Philadelphia Phillies",
+      "game_stat": 2,
+      "career_before_game": 499,
+      "career_after_game": 501,
+      "same_day_doubleheader": false,
+      "source_url": "https://statsapi.mlb.com/api/v1/people/607208/stats?stats=gameLog&group=hitting&season=2023",
       "status": "candidate_needs_independent_verification"
     }
   ],

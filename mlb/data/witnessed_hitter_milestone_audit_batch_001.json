@@ -4,7 +4,7 @@
   "batch_size": 100,
   "total_players": 1633,
   "players_in_batch": 100,
-  "candidate_count": 3,
+  "candidate_count": 4,
   "candidates": [
     {
       "type": "hits",
@@ -49,6 +49,21 @@
       "career_after_game": 100,
       "same_day_doubleheader": false,
       "source_url": "https://statsapi.mlb.com/api/v1/people/475174/stats?stats=gameLog&group=hitting&season=2019",
+      "status": "candidate_needs_independent_verification"
+    },
+    {
+      "type": "rbi",
+      "milestone": 100,
+      "player_id": "673490",
+      "date": "2023-05-01",
+      "game_pk": 718345,
+      "attendance_id": 103,
+      "team": "San Diego Padres",
+      "game_stat": 3,
+      "career_before_game": 99,
+      "career_after_game": 102,
+      "same_day_doubleheader": false,
+      "source_url": "https://statsapi.mlb.com/api/v1/people/673490/stats?stats=gameLog&group=hitting&season=2023",
       "status": "candidate_needs_independent_verification"
     }
   ],

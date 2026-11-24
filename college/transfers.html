@@ -8,7 +8,7 @@
 <div class="toolbar"><label>Search player or school<input id="search" type="search" placeholder="Player, Gonzaga, Wake Forest…" autocomplete="off"></label><label>Sort by<select id="sort"><option value="games">Most games witnessed</option><option value="schools">Most schools witnessed</option><option value="name">Player name (A–Z)</option></select></label></div>
 <section id="directory" class="directory" aria-live="polite"><p class="empty">Loading transfer connections…</p></section>
 <p class="footnote">Statistics show only the games you personally attended: Games, points per game (PPG), rebounds per game (RPG), and assists per game (APG). The order of schools follows the first attended appearance for that player. This directory expands automatically when a new attended game adds another school to a player's history.</p>
-<script src="../assets/historical-college-logos.js?v=20261123-quality1"></script><script>
+<script src="../assets/historical-college-logos.js?v=20261123-quality2"></script><script>
 (()=>{'use strict';const $=id=>document.getElementById(id),esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));const fmt=n=>Number(n).toFixed(1);let players=[];
 const logo=s=>window.CACollegeLogos.image(s.id,s.first,s.name);
 function render(){const term=$('search').value.trim().toLowerCase(),sort=$('sort').value;let list=players.filter(p=>(p.name+' '+p.schools.map(s=>s.name).join(' ')).toLowerCase().includes(term));list.sort((a,b)=>sort==='name'?a.name.localeCompare(b.name):sort==='schools'?b.schools.length-a.schools.length||b.games-a.games:b.games-a.games||a.name.localeCompare(b.name));

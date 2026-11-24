@@ -68,7 +68,7 @@ main>.tabs .tab.active{background:#831738!important;border-color:#831738!importa
 <section id="milestonesPanel" class="panel hidden"><h2>Milestones you witnessed</h2><div class="tiles" id="milestoneTiles"></div><p class="note" style="margin-top:18px"><a href="./records.html">Explore the complete Records & Milestones archive →</a></p></section>
 <section class="panel career-honors" id="careerHonors" hidden aria-label="NBA career awards"><h2>Career Awards &amp; Honors</h2><p class="note">Choose any achievement tag above—or a category below—to view its verified years. Career honors are separate from statistics in games you attended.</p><div class="honor-tabs" id="honorTabs" role="tablist"></div><div id="honorDetails"></div></section>
 <footer>Individual statistics are from your attended games, not official career totals. Historical player portraits are requested from ESPN where available; otherwise a neutral placeholder is displayed. Records update automatically when the archive data is refreshed.</footer>
-<script src="../assets/site.js?v=design-1"></script><script src="./team-journeys.js?v=20261116-nba-multiteams1"></script><script>
+<script src="../assets/site.js?v=design-1"></script><script src="../assets/historical-team-logos.js?v=20261123-era1"></script><script src="./team-journeys.js?v=20261123-era1"></script><script>
 const $=id=>document.getElementById(id),fmt=(n,d=1)=>n==null||!Number.isFinite(n)?'—':Number(n).toFixed(d),pct=(n,d)=>d>0?100*n/d:null,esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\'':'&#39;'}[c]));
 const teamNames={"1":"Atlanta Hawks","2":"Boston Celtics","3":"New Orleans Hornets","4":"Chicago Bulls","5":"Cleveland Cavaliers","7":"Denver Nuggets","9":"Golden State Warriors","10":"Houston Rockets","12":"LA Clippers","13":"LA Lakers","14":"Miami Heat","16":"Minnesota Timberwolves","18":"New York Knicks","21":"Phoenix Suns","23":"Sacramento Kings","24":"San Antonio Spurs","25":"Oklahoma City Thunder","26":"Utah Jazz","30":"Charlotte Bobcats"};
 const parseMinutes=v=>{const s=String(v??'');if(/^\d+:\d\d$/.test(s)){const [a,b]=s.split(':').map(Number);return a+b/60}return s&&Number.isFinite(Number(s))?Number(s):0};
@@ -103,7 +103,7 @@ function renderMultipleTeams(rows){
  $("multiTeamPath").innerHTML=lib.journey(teams);
  $("multiTeamRows").innerHTML=teams.map(t=>{
   const s=lib.stat(t);
-  return '<tr><td><span class="team-cell">'+lib.logo(t.id,t.name)+'<strong>'+esc(t.name)+'</strong></span></td>'
+  return '<tr><td><span class="team-cell">'+lib.logo(t.id,t.name,t.first)+'<strong>'+esc(t.name)+'</strong></span></td>'
    +[s.games,lib.fmt(s.mpg),lib.fmt(s.ppg),lib.fmt(s.rpg),lib.fmt(s.apg)].map(v=>'<td>'+esc(v)+'</td>').join("")+'</tr>';
  }).join("");
  $("teamFilter").innerHTML='<option value="all">All teams</option>'+teams.map(t=>'<option value="'+esc(t.id)+'">'+esc(t.name)+'</option>').join("");

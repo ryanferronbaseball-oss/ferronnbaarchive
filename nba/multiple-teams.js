@@ -1,7 +1,7 @@
 (()=>{"use strict";
 const lib=window.NBAMultiTeams,$=id=>document.getElementById(id),esc=lib.esc;
 let qualifying=[];
-function table(teams){return '<div class="multi-table-wrap"><table class="multi-table"><thead><tr><th>Team</th><th>Games</th><th>MPG</th><th>PPG</th><th>RPG</th><th>APG</th></tr></thead><tbody>'+teams.map(t=>{const s=lib.stat(t);return '<tr><td class="team-name">'+lib.logo(t.id,t.name)+esc(t.name)+'</td><td>'+s.games+'</td><td>'+lib.fmt(s.mpg)+'</td><td>'+lib.fmt(s.ppg)+'</td><td>'+lib.fmt(s.rpg)+'</td><td>'+lib.fmt(s.apg)+'</td></tr>'}).join("")+'</tbody></table></div>';}
+function table(teams){return '<div class="multi-table-wrap"><table class="multi-table"><thead><tr><th>Team</th><th>Games</th><th>MPG</th><th>PPG</th><th>RPG</th><th>APG</th></tr></thead><tbody>'+teams.map(t=>{const s=lib.stat(t);return '<tr><td class="team-name">'+lib.logo(t.id,t.name,t.first)+esc(t.name)+'</td><td>'+s.games+'</td><td>'+lib.fmt(s.mpg)+'</td><td>'+lib.fmt(s.ppg)+'</td><td>'+lib.fmt(s.rpg)+'</td><td>'+lib.fmt(s.apg)+'</td></tr>'}).join("")+'</tbody></table></div>';}
 function draw(){
  const q=$("search").value.trim().toLowerCase(),sort=$("sort").value;
  const list=qualifying.filter(p=>(p.name+" "+p.teams.map(t=>t.name).join(" ")).toLowerCase().includes(q));

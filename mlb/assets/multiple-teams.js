@@ -3,8 +3,8 @@ const $=id=>document.getElementById(id),esc=v=>String(v??'').replace(/[&<>"']/g,
 const num=v=>Number(v)||0, avg=(h,ab)=>ab?(h/ab).toFixed(3).replace(/^0/,''):'.000',era=(er,outs)=>outs?(er*27/outs).toFixed(2):'—',ip=outs=>Math.floor(outs/3)+'.'+(outs%3);
 const fetchData=path=>fetch('./data/'+path,{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Unable to load '+path);return r.json()});
 let players=[];
-const logo=id=>'https://www.mlbstatic.com/team-logos/'+encodeURIComponent(id)+'.svg';
-function badge(s){return '<span class="school"><img src="'+logo(s.id)+'" alt="'+esc(s.name)+' logo" loading="lazy" onerror="this.style.display=\'none\'"><span>'+esc(s.name)+'</span></span>'}
+const logo=s=>window.CAHistoricalLogos.image("mlb",s.id,s.first,s.name);
+function badge(s){return '<span class="school">'+logo(s)+'<span>'+esc(s.name)+'<br><small>First seen '+esc(s.first==="9999"?"unknown":s.first.slice(0,4))+'</small></span></span>'}
 function table(teams,type){const pitch=type==='p';if(!teams.some(s=>s[type].games.size))return '';
  const heads=pitch?['Team','Games','Innings','ERA','K']:['Team','Games','AVG','HR','RBI'];
  return '<div class="stat-caption">'+(pitch?'Pitching':'Hitting')+'</div><div style="overflow-x:auto"><table class="card-table"><thead><tr>'+heads.map(h=>'<th>'+h+'</th>').join('')+'</tr></thead><tbody>'+teams.filter(s=>s[type].games.size).map(s=>{const a=s[type];return '<tr><td>'+esc(s.name)+'</td><td>'+a.games.size+'</td>'+(pitch?'<td>'+ip(a.outs)+'</td><td>'+era(a.er,a.outs)+'</td><td>'+a.k+'</td>':'<td>'+avg(a.h,a.ab)+'</td><td>'+a.hr+'</td><td>'+a.rbi+'</td>')+'</tr>'}).join('')+'</tbody></table></div>'}
@@ -22,7 +22,7 @@ Promise.all([fetchData('player_stats.json'),fetchData('games.json')]).then(([row
   if(!p){p={id,name:r.name||'Unknown player',by:new Map()};byPlayer.set(id,p)}
   let s=p.by.get(teamId);
   if(!s){s={id:teamId,name:r.team||'Unknown team',first:'9999',all:new Set(),b:{games:new Set(),h:0,ab:0,hr:0,rbi:0},p:{games:new Set(),outs:0,er:0,k:0}};p.by.set(teamId,s)}
-  const date=dates.get(key)||'9999';if(date<s.first)s.first=date;s.all.add(key);
+  const date=dates.get(key)||'9999';if(date<s.first){s.first=date;s.name=r.team||s.name} s.name=window.CAHistoricalLogos.name("mlb",s.id,s.first,s.name);s.all.add(key);
   const b=r.batting||{};if(num(b.plateAppearances)>0||num(b.atBats)>0){if(!s.b.games.has(key)){s.b.games.add(key);s.b.h+=num(b.hits);s.b.ab+=num(b.atBats);s.b.hr+=num(b.homeRuns);s.b.rbi+=num(b.rbi)}}
   const a=r.pitching||{};if(a.outs!=null||a.inningsPitched!=null){if(!s.p.games.has(key)){s.p.games.add(key);s.p.outs+=num(a.outs);s.p.er+=num(a.earnedRuns);s.p.k+=num(a.strikeOuts)}}
  }

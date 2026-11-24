@@ -423,7 +423,8 @@ function profileMultipleTeams(p){
  }
  const teams=[...byTeam.values()].sort((a,b)=>a.first.localeCompare(b.first)||a.name.localeCompare(b.name));
  if(teams.length<2)return {teams,markup:""};
- const logo=t=>'<img src="https://www.mlbstatic.com/team-logos/'+encodeURIComponent(t.id)+'.svg" alt="'+esc(t.name)+' logo" loading="lazy" onerror="this.remove()">';
+ for(const t of teams)t.name=window.CAHistoricalLogos.name("mlb",t.id,t.first,t.name);
+ const logo=t=>window.CAHistoricalLogos.image("mlb",t.id,t.first,t.name);
  const cell=t=>'<span class="mlb-multi-team-cell">'+logo(t)+'<strong>'+esc(t.name)+'</strong></span>';
  const statTable=type=>{
   const pitch=type==="pitching",active=teams.filter(t=>t[type].size>0);

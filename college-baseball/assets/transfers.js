@@ -4,7 +4,7 @@ const num=x=>Number(x)||0,ave=(h,ab)=>ab?(h/ab).toFixed(3).replace(/^0/, ''):'.0
 const get=name=>fetch('./data/'+name,{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Unable to load '+name);return r.json()});
 let players=[],logos=new Map();
 const norm=s=>String(s||'').toLowerCase().replace(/[^a-z0-9]/g,'');
-function mark(s){const id=logos.get(norm(s.name));return id?'<img src="https://a.espncdn.com/i/teamlogos/ncaa/500/'+encodeURIComponent(id)+'.png" alt="'+esc(s.name)+' logo" loading="lazy" onerror="this.replaceWith(document.createTextNode(\''+esc(s.name.split(' ').map(w=>w[0]).join('').slice(0,3))+'\'))">':'<strong aria-hidden="true">'+esc(s.name.split(' ').map(w=>w[0]).join('').slice(0,3))+'</strong>'}
+function mark(s){const id=logos.get(norm(s.name));return id?window.CACollegeLogos.image(id,s.first,s.name):'<strong aria-hidden="true">'+esc(s.name.split(' ').map(w=>w[0]).join('').slice(0,3))+'</strong>'}
 function statTable(schools,side){let any=schools.some(s=>s[side].g.size);if(!any)return '';
  const pitch=side==='p',headers=pitch?['School','Games','Innings','ERA','K']:['School','Games','AVG','HR','RBI'];
  return '<div class="stat-caption">'+(pitch?'Pitching':'Hitting')+'</div><table class="card-table"><thead><tr>'+headers.map(x=>'<th>'+x+'</th>').join('')+'</tr></thead><tbody>'+schools.filter(s=>s[side].g.size).map(s=>{const a=s[side];return '<tr><td>'+esc(s.name)+'</td><td>'+a.g.size+'</td>'+(pitch?'<td>'+ip(a.outs)+'</td><td>'+era(a.er,a.outs)+'</td><td>'+a.k+'</td>':'<td>'+ave(a.h,a.ab)+'</td><td>'+a.hr+'</td><td>'+a.rbi+'</td>')+'</tr>'}).join('')+'</tbody></table>'}

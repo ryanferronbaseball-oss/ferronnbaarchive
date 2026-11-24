@@ -683,7 +683,7 @@ async function renderPlayer(d){
   +'<p class="mlb-note">Only schools where you personally watched this player. Statistics include only those attended college games.</p>'
   +'<div class="cb-transfer-path">'+witnessedSchools.map((s,i)=>{
    const logoId=logoIds.get(normTeam(s.name));return (i?'<span class="cb-transfer-arrow" aria-hidden="true">→</span>':'')
-    +'<div class="cb-transfer-school">'+(logoId?'<img src="https://a.espncdn.com/i/teamlogos/ncaa/500/'+encodeURIComponent(logoId)+'.png" alt="'+esc(s.name)+' logo" loading="lazy">':'')
+    +'<div class="cb-transfer-school">'+(logoId?window.CACollegeLogos.image(logoId,s.first,s.name):'')
     +'<span><strong>'+esc(s.name)+'</strong><small>First seen '+esc(s.first.slice(0,4))+'</small></span></div>';
   }).join('')+'</div>'
   +(witnessedSchools.some(s=>s.b.games)?'<h3>Hitting</h3>'+htmlTable(["School","Games","PA","Runs","Hits","HR","RBI","AVG","OPS"],witnessedSchools.filter(s=>s.b.games).map(s=>'<tr><td>'+esc(s.name)+'</td><td>'+s.b.games+'</td><td>'+fmt(s.b.plateAppearances)+'</td><td>'+fmt(s.b.runs)+'</td><td>'+fmt(s.b.hits)+'</td><td>'+fmt(s.b.homeRuns)+'</td><td>'+fmt(s.b.rbi)+'</td><td>'+rate(s.b.average,3)+'</td><td>'+rate(s.b.ops,3)+'</td></tr>')):'')

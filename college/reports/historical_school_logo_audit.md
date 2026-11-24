@@ -171,3 +171,7 @@ Scope: Multiple Schools directories and eventual matching profile logos. Use fir
 ## Next pass
 
 Read full player_stats.json in a repository checkout, reproduce directory merge logic including attendance corrections, derive exact first dates, check primary mark history and image availability for each represented school-season, then add a shared verified college logo registry to both directories and profiles. Keep statistics and identity grouping unchanged. Do not treat source logo history as verification of the actual CDN artwork.
+
+## Conservative first implementation
+
+Four selected marks have visually inspected transparent previews: Fresno State 2016–pre-refresh 2019; GCU arched mark 2015–June 2023; UC Riverside 2012–June 2020; LMU 2008–2018 (conservatively no ambiguous 2019 dates). All other school marks remain unchanged. The shared resolver uses the player's first witnessed date and keeps the existing ESPN image as a fallback. Source previews were visually inspected; original downloads were unavailable in the editing environment, so the registry references source-hosted artwork rather than claiming locally vendored assets. No stats, identity, or layout changes. Full baseball row inventory remains pending.

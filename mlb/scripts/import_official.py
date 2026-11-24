@@ -66,7 +66,12 @@ def match_games():
    away_id=team_id(e["away"]);home_id=team_id(e["home"])
    matches=[g for g in schedules[date] if g["teams"]["away"]["team"]["id"]==away_id and g["teams"]["home"]["team"]["id"]==home_id]
    matches.sort(key=lambda g:(integer(g.get("gameNumber")),g.get("gameDate",""),g["gamePk"]))
-   chosen=next((g for g in matches if g["gamePk"] not in used),None)
+   explicit_pk=e.get("game_pk")
+   if explicit_pk:
+    chosen=next((g for g in matches if g["gamePk"]==int(explicit_pk) and g["gamePk"] not in used),None)
+    if chosen is None:raise ValueError(f"Explicit attendance gamePk {explicit_pk} not found for attendance {e['attendance_id']}")
+   else:
+    chosen=next((g for g in matches if g["gamePk"] not in used),None)
    if chosen:used.add(chosen["gamePk"])
    assigned[e["attendance_id"]]=chosen
  return assigned

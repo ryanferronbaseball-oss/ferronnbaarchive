@@ -21,7 +21,8 @@ def main():
     names = read("statcast_player_names.json")
     events = payload["events"]
     attended = {int(x["game_pk"]): x for x in read("games.json") if x.get("game_pk")}
-    if meta["status"] != "PASS" or len(events) != 22844 or meta["games_source_verified"] != 77:
+    eligible = {pk for pk, g in attended.items() if int(g["date"][:4]) >= 2015}
+    if meta["status"] != "PASS" or len(events) != meta["imported_pitch_events"] or meta["games_source_verified"] != len(eligible) or {int(e["game_pk"]) for e in events} != eligible:
         raise ValueError("Required verified Statcast audit not present")
     if len({x["event_id"] for x in events}) != len(events):
         raise ValueError("Duplicated pitch events in source")
@@ -116,8 +117,8 @@ def main():
         "pits": sorted(pits, key=lambda x: x["name"]),
         "leaders": leaders,
     }
-    assert len(summary["games"]) == 77 and sum(g["count"] for g in summary["games"]) == len(events)
-    assert len({g["pk"] for g in summary["games"]}) == 77
+    assert len(summary["games"]) == len(eligible) and sum(g["count"] for g in summary["games"]) == len(events)
+    assert {g["pk"] for g in summary["games"]} == eligible
     assert all(len(summary["leaders"][k]) for k in ("hardest", "fastest", "longest"))
     path = DATA / "statcast_summary.json"
     path.write_text(json.dumps(summary, separators=(",", ":"), ensure_ascii=False, allow_nan=False) + "\n")

@@ -4236,98 +4236,6 @@
       "source": "mlb-statsapi-playbyplay"
     }
   ],
-  "490565": [
-    {
-      "inning": 1,
-      "half": "top",
-      "description": "Cody Bellinger grounds into a force out, first baseman Wil Myers to shortstop Yangervis Solarte. Logan Forsythe scores. Austin Barnes to 3rd. Enrique Hernandez out at 2nd. Cody Bellinger to 1st.",
-      "event": "Forceout",
-      "rbi": 1,
-      "at_bat_index": 3,
-      "source": "mlb-statsapi-playbyplay"
-    },
-    {
-      "inning": 3,
-      "half": "bottom",
-      "description": "Jose Pirela out on a sacrifice fly to left fielder O'Koyea Dickson. Manuel Margot scores.",
-      "event": "Sac Fly",
-      "rbi": 1,
-      "at_bat_index": 23,
-      "source": "mlb-statsapi-playbyplay"
-    },
-    {
-      "inning": 4,
-      "half": "top",
-      "description": "Cody Bellinger homers (35) on a fly ball to right center field.",
-      "event": "Home Run",
-      "rbi": 1,
-      "at_bat_index": 25,
-      "source": "mlb-statsapi-playbyplay"
-    },
-    {
-      "inning": 5,
-      "half": "top",
-      "description": "Austin Barnes singles on a line drive to right fielder Jabari Blash. Chris Taylor scores. Logan Forsythe to 2nd.",
-      "event": "Single",
-      "rbi": 1,
-      "at_bat_index": 37,
-      "source": "mlb-statsapi-playbyplay"
-    },
-    {
-      "inning": 6,
-      "half": "bottom",
-      "description": "Jabari Blash singles on a sharp line drive to center fielder Alex Verdugo. Wil Myers scores. Cory Spangenberg to 3rd.",
-      "event": "Single",
-      "rbi": 1,
-      "at_bat_index": 50,
-      "source": "mlb-statsapi-playbyplay"
-    },
-    {
-      "inning": 6,
-      "half": "bottom",
-      "description": "Hector Sanchez grounds out, shortstop Enrique Hernandez to first baseman Cody Bellinger. Cory Spangenberg scores. Jabari Blash to 2nd.",
-      "event": "Groundout",
-      "rbi": 1,
-      "at_bat_index": 52,
-      "source": "mlb-statsapi-playbyplay"
-    },
-    {
-      "inning": 7,
-      "half": "bottom",
-      "description": "Wil Myers triples (3) on a line drive to left fielder O'Koyea Dickson. Jose Pirela scores.",
-      "event": "Triple",
-      "rbi": 1,
-      "at_bat_index": 60,
-      "source": "mlb-statsapi-playbyplay"
-    },
-    {
-      "inning": 7,
-      "half": "bottom",
-      "description": "Cory Spangenberg singles on a sharp ground ball to right fielder Yasiel Puig. Wil Myers scores.",
-      "event": "Single",
-      "rbi": 1,
-      "at_bat_index": 61,
-      "source": "mlb-statsapi-playbyplay"
-    },
-    {
-      "inning": 9,
-      "half": "top",
-      "description": "Justin Turner homers (18) on a fly ball to left field. Rob Segedin scores.",
-      "event": "Home Run",
-      "rbi": 2,
-      "at_bat_index": 72,
-      "source": "mlb-statsapi-playbyplay"
-    },
-    {
-      "inning": 9,
-      "half": "bottom",
-      "description": "Yangervis Solarte homers (15) on a fly ball to right center field.",
-      "event": "Home Run",
-      "rbi": 1,
-      "at_bat_index": 76,
-      "source": "mlb-statsapi-playbyplay"
-    }
-  ],
   "492392": [
     {
       "inning": 5,
@@ -7719,6 +7627,80 @@
       "event": "Home Run",
       "rbi": 1,
       "at_bat_index": 63,
+      "source": "mlb-statsapi-playbyplay"
+    }
+  ],
+  "492125": [
+    {
+      "inning": 1,
+      "half": "top",
+      "description": "Justin Turner doubles (27) on a fly ball to center fielder Matt Szczur. Curtis Granderson scores.",
+      "event": "Double",
+      "rbi": 1,
+      "at_bat_index": 2,
+      "source": "mlb-statsapi-playbyplay"
+    },
+    {
+      "inning": 1,
+      "half": "bottom",
+      "description": "Héctor Sánchez grounds out to first baseman Adrián González. Erick Aybar scores. Cory Spangenberg to 2nd.",
+      "event": "Groundout",
+      "rbi": 1,
+      "at_bat_index": 8,
+      "source": "mlb-statsapi-playbyplay"
+    },
+    {
+      "inning": 3,
+      "half": "top",
+      "description": "Adrián González singles on a ground ball to center fielder Matt Szczur, deflected by shortstop Erick Aybar. Justin Turner scores. Yasmani Grandal to 3rd.",
+      "event": "Single",
+      "rbi": 1,
+      "at_bat_index": 21,
+      "source": "mlb-statsapi-playbyplay"
+    },
+    {
+      "inning": 3,
+      "half": "bottom",
+      "description": "Carlos Asuaje homers (4) on a fly ball to right center field.",
+      "event": "Home Run",
+      "rbi": 1,
+      "at_bat_index": 24,
+      "source": "mlb-statsapi-playbyplay"
+    },
+    {
+      "inning": 3,
+      "half": "bottom",
+      "description": "Héctor Sánchez singles on a ground ball to right fielder Curtis Granderson. Erick Aybar scores. Cory Spangenberg to 3rd.",
+      "event": "Single",
+      "rbi": 1,
+      "at_bat_index": 27,
+      "source": "mlb-statsapi-playbyplay"
+    },
+    {
+      "inning": 3,
+      "half": "bottom",
+      "description": "Matt Szczur doubles (9) on a ground ball to right fielder Curtis Granderson. Cory Spangenberg scores. Héctor Sánchez scores. Jabari Blash to 3rd.",
+      "event": "Double",
+      "rbi": 2,
+      "at_bat_index": 29,
+      "source": "mlb-statsapi-playbyplay"
+    },
+    {
+      "inning": 7,
+      "half": "bottom",
+      "description": "Yangervis Solarte singles on a ground ball to left fielder Andre Ethier. Héctor Sánchez scores. Matt Szczur to 3rd. Fielding error by left fielder Andre Ethier.",
+      "event": "Single",
+      "rbi": 1,
+      "at_bat_index": 64,
+      "source": "mlb-statsapi-playbyplay"
+    },
+    {
+      "inning": 7,
+      "half": "bottom",
+      "description": "José Pirela singles on a line drive to center fielder Enrique Hernández. Matt Szczur scores. Yangervis Solarte to 3rd. Luis Torrens to 2nd.",
+      "event": "Single",
+      "rbi": 1,
+      "at_bat_index": 66,
       "source": "mlb-statsapi-playbyplay"
     }
   ]

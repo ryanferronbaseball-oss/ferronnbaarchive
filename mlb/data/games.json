@@ -5445,11 +5445,11 @@
     "away": "Los Angeles Dodgers",
     "home": "San Diego Padres",
     "ballpark": "Petco Park",
-    "game_pk": 490565,
-    "away_score": 5,
-    "home_score": 6,
+    "game_pk": 492125,
+    "away_score": 2,
+    "home_score": 7,
     "status": "pending_verification",
-    "source_note": null,
+    "source_note": "Attended game 2 of split doubleheader; confirmed by archive owner.",
     "source_file": "My_MLB_Game_Log_V1_1_Pilot.xlsx",
     "original_status": "Pending match",
     "match_status": "matched",
@@ -5457,19 +5457,19 @@
     "mlb_home_team": "San Diego Padres",
     "mlb_away_team": "Los Angeles Dodgers",
     "venue_official": "Petco Park",
-    "game_date_utc": "2017-09-02T19:40:00Z",
-    "game_number": 1,
+    "game_date_utc": "2017-09-03T02:10:00Z",
+    "game_number": 2,
     "double_header": "S",
     "game_type": "R",
     "status_detail": "Final",
-    "source_url": "https://www.mlb.com/gameday/490565",
+    "source_url": "https://www.mlb.com/gameday/492125",
     "stat_status": "verified",
     "scoring_status": "verified",
     "innings": [
       {
         "inning": 1,
         "away": 1,
-        "home": 0
+        "home": 1
       },
       {
         "inning": 2,
@@ -5478,23 +5478,23 @@
       },
       {
         "inning": 3,
-        "away": 0,
-        "home": 1
+        "away": 1,
+        "home": 4
       },
       {
         "inning": 4,
-        "away": 1,
+        "away": 0,
         "home": 0
       },
       {
         "inning": 5,
-        "away": 1,
+        "away": 0,
         "home": 0
       },
       {
         "inning": 6,
         "away": 0,
-        "home": 2
+        "home": 0
       },
       {
         "inning": 7,
@@ -5508,8 +5508,8 @@
       },
       {
         "inning": 9,
-        "away": 2,
-        "home": 1
+        "away": 0,
+        "home": null
       }
     ],
     "attendance": null

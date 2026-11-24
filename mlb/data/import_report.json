@@ -2,11 +2,11 @@
   "source_count": 131,
   "attempted": 131,
   "matched": 131,
-  "player_rows": 3779,
+  "player_rows": 3782,
   "statuses": {
     "verified": 131
   },
-  "lineup_slot_rows": 3281,
+  "lineup_slot_rows": 3284,
   "lineup_team_games_with_nine_spots": 262,
   "doubleheaders": [
     {
@@ -22,5 +22,10 @@
   ],
   "unmatched": [],
   "timestamp": "2026-11-24T19:57:22.717625+00:00",
-  "source": "MLB StatsAPI"
+  "source": "MLB StatsAPI",
+  "attendance_correction_20170902": {
+    "attendance_id": 72,
+    "game_pk": 492125,
+    "previous_game_pk": 490565
+  }
 }

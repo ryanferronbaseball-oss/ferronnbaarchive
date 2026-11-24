@@ -4,7 +4,7 @@
   "batch_size": 100,
   "total_players": 1633,
   "players_in_batch": 100,
-  "candidate_count": 5,
+  "candidate_count": 4,
   "candidates": [
     {
       "type": "hits",
@@ -52,21 +52,6 @@
       "status": "candidate_needs_independent_verification"
     },
     {
-      "type": "hits",
-      "milestone": 1,
-      "player_id": "657077",
-      "date": "2017-09-02",
-      "game_pk": 490565,
-      "attendance_id": 72,
-      "team": "Los Angeles Dodgers",
-      "game_stat": 1,
-      "career_before_game": 0,
-      "career_after_game": 1,
-      "same_day_doubleheader": true,
-      "source_url": "https://statsapi.mlb.com/api/v1/people/657077/stats?stats=gameLog&group=hitting&season=2017",
-      "status": "candidate_needs_independent_verification"
-    },
-    {
       "type": "home_runs",
       "milestone": 1,
       "player_id": "682998",
@@ -84,5 +69,6 @@
   ],
   "errors": [],
   "complete": true,
-  "publication_status": "candidate_only"
+  "publication_status": "candidate_only",
+  "attendance_correction": "Attendance 72 replaced with game 492125; see doubleheader_correction_20170902.json for targeted re-audit."
 }

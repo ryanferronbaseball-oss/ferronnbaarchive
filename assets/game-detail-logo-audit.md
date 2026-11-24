@@ -31,3 +31,7 @@ Use the existing historical MLB resolver with the actual game date: ACL Royals â
 ## Johnny Ritchey tribute â€” April 17, 2023
 
 MLB game 718533 (Atlanta at San Diego): owner-approved Padres-only override. The Padres' official announcement (https://www.mlb.com/press-release/press-release-padres-to-wear-pacific-coast-league-uniforms-on-april-17) and Chris Creamer's article (https://news.sportslogos.net/2023/04/17/padres-honour-johnny-ritchey-with-1948-pcl-throwback-uniforms/baseball/) document the red block S on the navy 1948 PCL cap. A clean standalone original mark could not be located, so a locally hosted transparent vector interpretation of that cap letter is used, explicitly labeled as an archive recreation, not official artwork. Atlanta retains its usual 2023 logo; only the specified game ID, date and San Diego team match the override. Other Padres games and previous throwbacks remain unchanged.
+
+## Missing-image repair
+
+Reconfirmed all five source PNGs visually via direct image preview. Added local-first paths, ordered same-era external fallbacks and no-referrer loading. Local files are to be fetched and validated by the repository's special-logo-cache workflow; the commit introducing the workflow does not itself contain the downloaded image bytes. MLB and soccer entry points use new script cache versions. The actual public Pages deployment could not be accessed from the current environment. No live rendering success is claimed.

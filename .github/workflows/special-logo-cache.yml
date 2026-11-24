@@ -1,0 +1,46 @@
+name: Cache approved historical scorecard logos
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "assets/logos/special-logo-sources.json"
+      - "assets/logos/cache_special_logos.py"
+      - ".github/workflows/special-logo-cache.yml"
+permissions:
+  contents: write
+  pages: write
+concurrency:
+  group: special-logo-cache
+  cancel-in-progress: false
+jobs:
+  cache:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install pillow
+      - name: Download and validate exact historical marks
+        id: cache
+        continue-on-error: true
+        run: python assets/logos/cache_special_logos.py
+      - name: Commit verified image files only
+        run: |
+          git add assets/logos/loyal-2020.png assets/logos/mariners-1977.png assets/logos/padres-1969.png assets/logos/mets-1962.png assets/logos/padres-1986.png 2>/dev/null || true
+          for f in assets/logos/loyal-2020.png assets/logos/mariners-1977.png assets/logos/padres-1969.png assets/logos/mets-1962.png assets/logos/padres-1986.png; do
+            if [ -f "$f" ]; then git add "$f"; fi
+          done
+          if git diff --cached --quiet; then exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Cache validated historical scorecard images locally"
+          git pull --rebase origin main
+          git push origin HEAD:main
+          gh api --method POST "repos/$GITHUB_REPOSITORY/pages/builds" || echo "Pages build request unavailable; check deployment separately."
+        env:
+          GH_TOKEN: ${{ github.token }}
+      - name: Report failed downloads
+        if: steps.cache.outcome == 'failure'
+        run: exit 1

@@ -4,7 +4,7 @@ import argparse, collections, concurrent.futures, json, pathlib, time, urllib.pa
 
 DATA = pathlib.Path(__file__).resolve().parents[1] / "data"
 BASE = "https://statsapi.mlb.com/api/v1/people/"
-METRICS = {"home_runs": ("homeRuns", 100), "hits": ("hits", 500), "stolen_bases": ("stolenBases", 100)}
+METRICS = {"home_runs": ("homeRuns", 100), "hits": ("hits", 500), "stolen_bases": ("stolenBases", 100), "rbi": ("rbi", 250)}
 
 def fetch(url):
     for attempt in range(5):
@@ -73,7 +73,7 @@ def analyze(item):
                 season_log_totals[metric] += delta
                 if str(pk) not in attended:
                     continue
-                thresholds = [1] + list(range(step, running[metric] + 1, step))
+                thresholds = [1] + ([100] if metric == "rbi" else []) + list(range(step, running[metric] + 1, step))
                 for target in thresholds:
                     if before[metric] < target <= running[metric]:
                         game = attended[str(pk)]

@@ -1,0 +1,81 @@
+name: Correct September 2 2017 MLB doubleheader
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/mlb-correct-20170902.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: mlb-correct-20170902
+  cancel-in-progress: false
+jobs:
+  correct:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install --disable-pip-version-check pybaseball pandas requests
+      - name: Replace attendance 72 with official Game 2 box score, player rows and milestone records
+        run: python mlb/scripts/correct_20170902_doubleheader.py
+      - name: Rebuild source-verified Statcast data with corrected attendance
+        run: |
+          python mlb/scripts/statcast_pilot.py
+          python mlb/scripts/verify_statcast_pilot.py
+          python mlb/scripts/statcast_batch_02.py
+          python mlb/scripts/statcast_batch_02.py --offset 15 --count 15 --label 03
+          python mlb/scripts/statcast_batch_02.py --offset 30 --count 15 --label 04
+          python mlb/scripts/statcast_batch_02.py --offset 45 --count 15 --label 05
+          python mlb/scripts/statcast_batch_02.py --offset 60 --count 12 --label 06
+          python mlb/scripts/assemble_statcast_attendance.py
+          python mlb/scripts/export_statcast_player_names.py
+          python mlb/scripts/build_statcast_site.py
+      - name: Verify all live MLB game references before publishing
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          D=Path('mlb/data')
+          def read(n): return json.loads((D/n).read_text())
+          games=read('games.json')
+          assert len(games)==131
+          g=next(x for x in games if x['attendance_id']==72)
+          assert (g['game_pk'],g['away_score'],g['home_score'],g['game_number'])==(492125,2,7,2)
+          assert next(x for x in read('attendance.json') if x['attendance_id']==72)['game_pk']==492125
+          assert not any(x['game_pk']==490565 for x in read('player_stats.json'))
+          assert all(x['game_pk']==492125 for x in read('player_stats.json') if x['attendance_id']==72)
+          for n in ('scoring_plays.json','decisions.json'):
+              assert '490565' not in read(n) and '492125' in read(n)
+          m=read('witnessed_milestones.json')['milestones']
+          assert not any(x.get('game_pk')==490565 for x in m)
+          assert any(x.get('game_pk')==492125 and x['player']=='Jordan Lyles' for x in m)
+          s=read('statcast_summary.json')
+          assert {x['pk'] for x in s['games']}=={x['game_pk'] for x in games if int(x['date'][:4])>=2015}
+          assert s['meta']['imported_pitch_events']==sum(x['count'] for x in s['games'])
+          assert all(x['pk']!=490565 for rows in s['leaders'].values() for x in rows)
+          assert '7–2' in ' '.join(read('game_recaps.json')['72'])
+          print('All core and Statcast correction assertions passed')
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mlb-doubleheader-correction-report
+          path: mlb/data/doubleheader_correction_20170902.json
+          if-no-files-found: warn
+      - name: Publish corrected datasets in one commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add mlb/data/attendance.json mlb/data/games.json mlb/data/player_stats.json mlb/data/scoring_plays.json mlb/data/decisions.json mlb/data/game_recaps.json mlb/data/witnessed_milestones.json mlb/data/import_report.json
+          git add mlb/data/*audit_batch_*.json mlb/data/verified_hitter_milestone_candidates.json
+          git add -f mlb/data/doubleheader_correction_20170902.json mlb/data/statcast_summary.json
+          git diff --cached --check
+          if ! git diff --cached --quiet; then
+            git commit -m "Replace incorrect 2017 doubleheader opener with verified nightcap across MLB archive"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi

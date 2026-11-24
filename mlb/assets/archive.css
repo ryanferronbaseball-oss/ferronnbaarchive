@@ -495,3 +495,7 @@ body[data-page="player"] .mlb-profile-headline-stats .mlb-profile-role-label{col
   grid-template-columns:repeat(2,minmax(0,1fr));
  }
 }
+
+/* Personal attended game photography, matching college baseball. */
+.mlb-game-photo{margin:18px 0;border-radius:16px;overflow:hidden;background:#101820;border:1px solid #DEE1D8}
+.mlb-game-photo img{display:block;width:100%;height:auto;object-fit:contain;margin:auto}

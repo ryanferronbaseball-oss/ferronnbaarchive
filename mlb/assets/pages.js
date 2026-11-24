@@ -5,6 +5,15 @@ const {esc,fmt,date,playerUrl,gameUrl,table,bar,tiles,record,mlbRow}=A;
 el("navigation").innerHTML=A.nav(page);
 let d;try{d=await A.load()}catch(err){app.innerHTML='<div class="empty">Unable to load attendance data: '+esc(err.message)+'</div>';return}
 const {games,rows,players,scores,decisions,recaps}=d;
+let gamePhotos={};
+if(page==="games"){
+ try{const response=await fetch("./data/game_photos.json",{cache:"no-store"});if(response.ok)gamePhotos=await response.json();}
+ catch(error){console.warn("MLB game photos unavailable",error);}
+}
+function gamePhotoPanel(g){
+ const entry=gamePhotos[String(g.attendance_id)],paths=(Array.isArray(entry)?entry:[entry]).filter(path=>typeof path==="string"&&/^\.\/assets\/game-photos\/[a-zA-Z0-9._-]+\.(?:jpe?g|png|webp)$/i.test(path));
+ return paths.map(path=>'<div class="mlb-game-photo"><img src="'+esc(path)+'" alt="'+esc(g.away+' @ '+g.home+' · '+g.date+' game photo')+'" loading="lazy" decoding="async" onerror="this.parentElement.remove()"></div>').join("");
+}
 const collegeCrossover=new Map(),milbCrossover=new Map(),verifiedCollegeMiLB=new Set();
 const wbcById=new Map(),bananaBallById=new Map();
 if(page==="player"){
@@ -271,7 +280,7 @@ function gamePage(){
   +'<div class="mlb-pregame-eyebrow">SIGNATURE PERFORMANCE</div><h2>Player of the Game</h2>'
   +playerCard
   +'<p class="mlb-note">Custom, unofficial one-player impact rating. Hitting rewards total bases, runs, RBI, walks and steals; pitching rewards innings and strikeouts while penalizing runs, hits and walks. Both are compared on one scale, regardless of winning team.</p></section>';
- el("scoreboard").innerHTML=board+decisionsPanel+recapPanel+potgPanel+innings;
+ el("scoreboard").innerHTML=board+gamePhotoPanel(g)+decisionsPanel+recapPanel+potgPanel+innings;
  el("scoreboard").insertAdjacentHTML("beforeend", '<div id="sc-game-panel"></div>');
  window.MLBStatcast?.renderGame(g,el("sc-game-panel"));
  const order=[["batting","Batting"],["pitching","Pitching"],["fielding","Fielding"]];

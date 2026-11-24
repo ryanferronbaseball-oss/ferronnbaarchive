@@ -160,6 +160,30 @@
     <p>One collection, with league-specific data, leaderboards and history.</p>
   </aside>
 </section>
+<section class="milestone-section" id="on-deck" aria-labelledby="on-deck-title">
+  <div class="section-top"><div><div class="portal-kicker" style="margin:0">The next chapter</div><h2 id="on-deck-title">On Deck</h2></div><p>Upcoming games on the personal attendance schedule.</p></div>
+  <div class="milestone-grid" id="onDeckGrid" aria-live="polite"><p class="milestone-loading">Loading upcoming games…</p></div>
+</section>
+<script>
+(()=>{
+ const planned=[
+  {date:'2026-12-01',sport:'College Basketball',away:'Texas',home:'Louisville',neutral:false},
+  {date:'2026-12-06',sport:'NFL',away:'Washington Commanders',home:'Tennessee Titans',time:'12:00 PM CT',neutral:false},
+  {date:'2026-12-06',sport:'College Basketball',away:'Murray State',home:'Georgia Tech',time:'3:00 PM CT',neutral:true},
+  {date:'2026-12-06',sport:'College Basketball',away:'Tennessee',home:'NC State',time:'6:00 PM CT',neutral:true},
+  {date:'2026-12-21',sport:'College Basketball',away:'Santa Clara',home:'Boise State',neutral:true}
+ ];
+ const grid=document.getElementById('onDeckGrid');
+ const norm=s=>String(s||'').toLowerCase().replace(/north carolina state/g,'nc state').replace(/[^a-z0-9]/g,'');
+ const parse=line=>{let fields=[],field='',quoted=false;for(let i=0;i<line.length;i++){const c=line[i];if(c==='"'){if(quoted&&line[i+1]==='"'){field+='"';i++}else quoted=!quoted}else if(c===','&&!quoted){fields.push(field);field=''}else field+=c}fields.push(field);return fields};
+ const load=async(sport,path,isCSV)=>{const r=await fetch(path,{cache:'no-cache'});if(!r.ok)throw Error(path);let rows;if(isCSV){const lines=(await r.text()).trim().split(/\r?\n/);const headers=parse(lines.shift());rows=lines.map(line=>Object.fromEntries(parse(line).map((v,i)=>[headers[i],v])))}else rows=await r.json();return rows.map(g=>({...g,sport}))};
+ const today=new Intl.DateTimeFormat('en-CA',{timeZone:'America/Chicago',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
+ const render=records=>{grid.replaceChildren();const upcoming=planned.filter(p=>p.date>=today&&!records.some(g=>g.date===p.date&&g.sport===p.sport&&((norm(g.away)===norm(p.away)&&norm(g.home)===norm(p.home))||(p.neutral&&norm(g.away)===norm(p.home)&&norm(g.home)===norm(p.away))))).sort((a,b)=>a.date.localeCompare(b.date));
+ if(!upcoming.length){const p=document.createElement('p');p.className='milestone-loading';p.textContent='No upcoming games currently planned.';grid.append(p);return}
+ upcoming.forEach((g,i)=>{const card=document.createElement('article');card.className='milestone-card';const add=(cls,t)=>{const e=document.createElement('div');e.className=cls;e.textContent=t;card.append(e)};add('milestone-card-number',i===0?'NEXT UP':'ON DECK');add('milestone-card-date',new Date(g.date+'T12:00:00Z').toLocaleDateString('en-US',{weekday:'short',month:'long',day:'numeric',timeZone:'UTC'}));add('milestone-card-matchup',g.away+(g.neutral?' vs. ':' @ ')+g.home);add('milestone-card-sport',g.sport+(g.time?' · '+g.time:''));grid.append(card)})};
+ render([]);Promise.allSettled([load('College Basketball','./college/data/games.csv',true),load('NFL','./nfl/data/games.json',false)]).then(results=>render(results.flatMap(r=>r.status==='fulfilled'?r.value:[])));
+})();
+</script>
 <section class="milestone-section" id="milestones" aria-labelledby="milestone-title">
   <div class="section-top"><div><div class="portal-kicker" style="margin:0">The journey, game by game</div><h2 id="milestone-title">Attendance milestones</h2></div><p>Landmark games across all nine archives, in chronological order.</p></div>
   <div class="milestone-grid" id="milestoneGrid" aria-live="polite"><p class="milestone-loading">Finding your landmark games…</p></div>

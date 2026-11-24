@@ -28,6 +28,7 @@ const soccerIds={"nashvillesc":18986,"fccincinnati":18267,"sportingkansascity":1
 function era(m,name,year){const row=lookup(m,name)?.find(x=>year>=x[0]&&year<=x[1]);return row?source(row[2],name):null;}
 // Explicit game-ID overrides, not changes to the normal franchise era timelines.
 const throwbacks={
+ "718533":{date:"2023-04-17",year:1948,teams:{sandiegopadres:"../assets/logos/padres-pcl-1948-cap-recreation.svg"},credit:"Archive recreation of the PCL cap insignia",label:"1948 PCL · Johnny Ritchey tribute (cap mark recreation)"},
  "234959":{date:"2008-06-27",year:1978,teams:{
   seattlemariners:"https://content.sportslogos.net/logos/53/75/full/seattle_mariners_logo_primary_19779169.png",
   sandiegopadres:"https://content.sportslogos.net/logos/54/73/full/x5qgaefxmvbsmrkzw3k8qggwr.png"}},
@@ -43,7 +44,7 @@ function resolve(league,name,date,id,gameId){
  const y=Number(String(date).slice(0,4));if(!/^\d{4}-\d{2}-\d{2}$/.test(String(date)))return null;
  if(league==="mlb"){
   const event=throwbacks[String(gameId)],url=event?.date===date?lookup(event.teams,name):null;
-  if(url)return source(url,name+" · "+event.year+" Turn Back the Clock");
+  if(url)return source(url,name+" · "+(event.label||event.year+" Turn Back the Clock"),event.credit||"SportsLogos.Net");
   return window.CAHistoricalLogos?.resolve("mlb",lookup(mlb,name),date)||null;
  }
  if(league==="college"){

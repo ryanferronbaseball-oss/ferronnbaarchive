@@ -228,7 +228,7 @@
     if(selector)selector.value=g.id;
     const away=g.team_stats.away,home=g.team_stats.home;
     const selectedGoalie=g.players.find(p=>p.goalie&&p.team===g.home)||g.players.find(p=>p.goalie);
-    const board=window.CAGameScore.render({date:g.date,venue:g.venue,away:g.away,home:g.home,awayScore:g.away_score,homeScore:g.home_score,metaHtml:[g.city,g.state].filter(Boolean).map(esc).join(', ')+(g.attendance?' · '+Number(g.attendance).toLocaleString('en-US')+' in attendance':'')})+'<section class="nhl-game-scoreboard" aria-label="Score by period"><h3>Score by period</h3>'
+    const board=window.CAGameScore.render({date:g.date,venue:g.venue,away:g.away,home:g.home,awayLogo:window.CAGameLogos?.resolve('nhl',g.away,g.date),homeLogo:window.CAGameLogos?.resolve('nhl',g.home,g.date),awayScore:g.away_score,homeScore:g.home_score,metaHtml:[g.city,g.state].filter(Boolean).map(esc).join(', ')+(g.attendance?' · '+Number(g.attendance).toLocaleString('en-US')+' in attendance':'')})+'<section class="nhl-game-scoreboard" aria-label="Score by period"><h3>Score by period</h3>'
      +'<div class="nhl-game-scores-table">'+table(['Team','1st','2nd','3rd','Total','Shots'],
         [[esc(g.away_abbr),...g.periods.away.map(String),String(g.away_score),stat(away.shots_on_goal)],
          [esc(g.home_abbr),...g.periods.home.map(String),String(g.home_score),stat(home.shots_on_goal)]])+'</div>'

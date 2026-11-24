@@ -4,6 +4,7 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/mlb-correct-20170902.yml'
+      - 'mlb/scripts/correct_20170902_doubleheader.py'
   workflow_dispatch:
 permissions:
   contents: write
@@ -53,6 +54,7 @@ jobs:
           m=read('witnessed_milestones.json')['milestones']
           assert not any(x.get('game_pk')==490565 for x in m)
           assert any(x.get('game_pk')==492125 and x['player']=='Jordan Lyles' for x in m)
+          assert {x['type'] for x in m if x.get('game_pk')==492125 and x['player']=='Fabio Castillo'}=={'mlb_debut','career_first'}
           s=read('statcast_summary.json')
           assert {x['pk'] for x in s['games']}=={x['game_pk'] for x in games if int(x['date'][:4])>=2015}
           assert s['meta']['imported_pitch_events']==sum(x['count'] for x in s['games'])

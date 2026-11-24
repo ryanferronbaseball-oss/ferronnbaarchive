@@ -228,17 +228,11 @@
     if(selector)selector.value=g.id;
     const away=g.team_stats.away,home=g.team_stats.home;
     const selectedGoalie=g.players.find(p=>p.goalie&&p.team===g.home)||g.players.find(p=>p.goalie);
-    const board='<section class="nhl-game-scoreboard" aria-label="Final NHL score and scoring by period">'
-     +'<div class="nhl-game-scoreline">'
-       +'<div class="nhl-game-team"><span class="nhl-game-team-abbr">'+esc(g.away_abbr)+'</span><div class="nhl-game-team-name">'+esc(g.away)+'</div></div>'
-       +'<div class="nhl-game-final"><span>FINAL</span><strong>'+g.away_score+' <small>—</small> '+g.home_score+'</strong></div>'
-       +'<div class="nhl-game-team home"><span class="nhl-game-team-abbr">'+esc(g.home_abbr)+'</span><div class="nhl-game-team-name">'+esc(g.home)+'</div></div>'
-     +'</div>'
+    const board=window.CAGameScore.render({date:g.date,venue:g.venue,away:g.away,home:g.home,awayScore:g.away_score,homeScore:g.home_score,metaHtml:[g.city,g.state].filter(Boolean).map(esc).join(', ')+(g.attendance?' · '+Number(g.attendance).toLocaleString('en-US')+' in attendance':'')})+'<section class="nhl-game-scoreboard" aria-label="Score by period"><h3>Score by period</h3>'
      +'<div class="nhl-game-scores-table">'+table(['Team','1st','2nd','3rd','Total','Shots'],
         [[esc(g.away_abbr),...g.periods.away.map(String),String(g.away_score),stat(away.shots_on_goal)],
          [esc(g.home_abbr),...g.periods.home.map(String),String(g.home_score),stat(home.shots_on_goal)]])+'</div>'
-     +'<div class="nhl-game-board-meta">'+fmt(g.date)+' · '+esc(g.venue)+' · '+esc(g.city)+', '+esc(g.state)
-       +(g.attendance?' · '+Number(g.attendance).toLocaleString('en-US')+' in attendance':'')+'</div></section>';
++'</section>';
     const photo=g.photo?.url||g.photo_url;
     const gamePhoto=photo?'<figure class="nhl-game-photo"><img loading="lazy" src="'+esc(photo)+'" alt="Game photo from '+esc(g.away)+' at '+esc(g.home)+'"><figcaption>'+fmt(g.date)+' · '+esc(g.away)+' at '+esc(g.home)+'</figcaption></figure>':'';
     const written=curatedRecaps[g.id];

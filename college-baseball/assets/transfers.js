@@ -3,6 +3,7 @@ const $=id=>document.getElementById(id),esc=x=>String(x??'').replace(/[&<>"']/g,
 const num=x=>Number(x)||0,ave=(h,ab)=>ab?(h/ab).toFixed(3).replace(/^0/, ''):'.000',era=(er,outs)=>outs?(er*27/outs).toFixed(2):'—',ip=outs=>Math.floor(outs/3)+'.'+outs%3;
 const get=name=>fetch('./data/'+name,{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Unable to load '+name);return r.json()});
 let players=[],logos=new Map();
+const canonicalSchool=s=>s==="Cal State Northrdige"?"Cal State Northridge":s;
 const norm=s=>String(s||'').toLowerCase().replace(/[^a-z0-9]/g,'');
 function mark(s){const id=logos.get(norm(s.name));return id?window.CACollegeLogos.image(id,s.first,s.name):'<strong aria-hidden="true">'+esc(s.name.split(' ').map(w=>w[0]).join('').slice(0,3))+'</strong>'}
 function statTable(schools,side){let any=schools.some(s=>s[side].g.size);if(!any)return '';
@@ -15,7 +16,7 @@ Promise.all([get('player_stats.json'),get('player_identity_crosswalk.json'),get(
  logos=new Map(Object.entries(teams).map(([name,id])=>[norm(name),id]));
  const dates=new Map(games.map(g=>[g.id,g.date]));const owners=new Map();const links=new Map();
  for(const m of cross.merges||[]){if(!m.canonical_id||!m.pairs||m.pairs.length<2)continue;const p={id:m.canonical_id,name:m.display_name||m.name,by:new Map()};owners.set(m.canonical_id,p);for(const pair of m.pairs)links.set(pair.team+'|'+pair.source_player_id,m.canonical_id)}
- for(const r of rows){const id=links.get(r.team+'|'+r.player_id);if(!id)continue;const p=owners.get(id);if(!p.by.has(r.team))p.by.set(r.team,{name:r.team,first:'9999',all:new Set(),b:{g:new Set(),h:0,ab:0,hr:0,rbi:0},p:{g:new Set(),outs:0,er:0,k:0}});const s=p.by.get(r.team),date=dates.get(r.game_id)||'9999';if(date<s.first)s.first=date;s.all.add(r.game_id);
+ for(const r of rows){const id=links.get(r.team+'|'+r.player_id);if(!id)continue;const p=owners.get(id),school=canonicalSchool(r.team);if(!p.by.has(school))p.by.set(school,{name:school,first:'9999',all:new Set(),b:{g:new Set(),h:0,ab:0,hr:0,rbi:0},p:{g:new Set(),outs:0,er:0,k:0}});const s=p.by.get(school),date=dates.get(r.game_id)||'9999';if(date<s.first)s.first=date;s.all.add(r.game_id);
   if(r.batting){const b=r.batting;s.b.g.add(r.game_id);s.b.h+=num(b.hits);s.b.ab+=num(b.atBats);s.b.hr+=num(b.homeRuns);s.b.rbi+=num(b.rbi)}
   if(r.pitching){const a=r.pitching;s.p.g.add(r.game_id);s.p.outs+=num(a.outs);s.p.er+=num(a.earnedRuns);s.p.k+=num(a.strikeOuts)}
  }

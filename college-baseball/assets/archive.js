@@ -9,6 +9,8 @@ const stat=v=>v===null||v===undefined||v===""?null:Number.isFinite(Number(v))?Nu
 const link=(s)=>{try{let u=new URL(s);return ["https:","http:"].includes(u.protocol)?u.href:null}catch{return null}};
 const gameUrl=g=>"./game.html?id="+encodeURIComponent(g.id);
 const playerUrl=p=>"./player.html?id="+encodeURIComponent(p.player_id);
+// Preserve original source IDs and source-scoped validation; canonicalize school labels only after source matching.
+const canonicalSchool=s=>s==="Cal State Northrdige"?"Cal State Northridge":s;
 const unique=a=>[...new Set(a.filter(x=>x!=null&&x!==""))];
 // Several official gamebooks print surnames (or entire lineups) in capitals.
 // Correct only their presentation; player IDs, source names and stat lines stay intact.
@@ -171,7 +173,7 @@ function applyStatBackfills(sourceRows,manifest){
 }
 async function load(){
  const [rawGames,rawRows,report,crosswalk,identity,nameCorrections,statBackfills,gameCorrections,recapRegistry]=await Promise.all([json("games.json"),json("player_stats.json"),json("import_report.json"),json("mlb_crosswalk.json"),json("player_identity_crosswalk.json"),json("player_name_corrections.json"),json("source_stat_backfills.json"),json("attendance_game_corrections.json"),json("game_recaps.json")]);
- const {games,rows:correctedRows,gameRedirects}=applyAttendanceGameCorrections(rawGames,rawRows,gameCorrections);
+ const {games:sourceGames,rows:correctedRows,gameRedirects}=applyAttendanceGameCorrections(rawGames,rawRows,gameCorrections);
  const sourceRows=applyStatBackfills(correctedRows,statBackfills);
  if(!identity||!Array.isArray(identity.merges))throw Error("Missing verified player identity merge manifest");
  // Keep the original SDSU corrections and allow additional, strictly scoped games.
@@ -210,7 +212,7 @@ async function load(){
  const mergedRowDisplayNames=new Map(identity.merges.filter(m=>m.display_name).map(m=>[m.canonical_id,m.display_name]));
  const knownNameCases=preferredScorebookNameCases(sourceRows);
  const appliedFixes=new Set();
- const rows=sourceRows.map(source=>{
+ const matchedRows=sourceRows.map(source=>{
   const key=[source.game_id,source.team,source.player_id].join("\u0000");
   const fix=fixedNames.get(key);
   if(fix&&source.player!==fix.source_player_name)throw Error("Player name correction source mismatch: "+key);
@@ -224,6 +226,9 @@ async function load(){
    player:mergedRowDisplayNames.get(unified)||displayed.player}:displayed;
  });
  if(appliedFixes.size!==fixedNames.size)throw Error("Verified player name correction did not match source game rows");
+ // The February 21, 2023 source typo is not a separate program. Keep game IDs, source player IDs and statistics unchanged.
+ const rows=matchedRows.map(r=>canonicalSchool(r.team)===r.team?r:{...r,team:canonicalSchool(r.team)});
+ const games=sourceGames.map(g=>canonicalSchool(g.away)===g.away&&canonicalSchool(g.home)===g.home?g:{...g,away:canonicalSchool(g.away),home:canonicalSchool(g.home)});
  if(!Array.isArray(games)||!Array.isArray(rows)||!Array.isArray(crosswalk))throw Error("Unexpected college baseball data structure");
  const gameMap=new Map(games.map(g=>[g.id,g]));
  if(gameMap.size!==games.length)throw Error("Duplicate college baseball game IDs");

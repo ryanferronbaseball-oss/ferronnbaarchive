@@ -16,3 +16,9 @@
 .ca-game-scorecard a:hover{text-decoration:underline}
 @media(max-width:800px){.ca-game-scorecard .ca-game-score-grid{gap:8px}.ca-game-scorecard .ca-game-score-team{font-size:clamp(16px,3vw,24px)}}
 @media(max-width:530px){.ca-game-scorecard{padding:16px;border-radius:12px}.ca-game-scorecard .ca-game-score-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 12px;margin:14px 0}.ca-game-scorecard .ca-game-score-status{grid-column:1/-1;grid-row:1}.ca-game-scorecard .ca-game-score-kicker{letter-spacing:.11em}.ca-game-scorecard .ca-game-score-number{font-size:42px}}
+/* Option 1: score stays at the outside edge; logo sits inward toward the center. */
+.ca-game-scorecard .ca-game-score-line{display:flex;align-items:center;gap:16px;min-width:0}
+.ca-game-scorecard .ca-game-score-home .ca-game-score-line{flex-direction:row-reverse}
+.ca-game-scorecard .ca-game-score-logo{display:block;width:80px;height:80px;max-width:100%;flex:0 1 80px;min-width:0;object-fit:contain;object-position:center;background:transparent!important;border:0!important;padding:0!important;box-shadow:none!important}
+@media(max-width:800px){.ca-game-scorecard .ca-game-score-logo{width:64px;height:64px;flex-basis:64px}}
+@media(max-width:530px){.ca-game-scorecard .ca-game-score-line{gap:8px}.ca-game-scorecard .ca-game-score-logo{width:44px;height:44px;flex-basis:44px}}

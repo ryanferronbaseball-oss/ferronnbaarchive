@@ -21,3 +21,9 @@ Historical source previews were inspected where available; not all external imag
 ## ACL parent logos
 
 Use the existing historical MLB resolver with the actual game date: ACL Royals → Kansas City (118), ACL Rangers → Texas (140), ACL Cubs → Chicago Cubs (112), ACL Padres → San Diego (135). Applies to all four attended July 2023 ACL games. Keep ACL names, team IDs, level and statistics unchanged. Unmapped complex clubs remain logo-free. Both MiLB game entry points load the shared MLB historical resolver. External image loading remains unverified.
+
+## Owner-approved game-specific throwbacks and national crests
+
+- MLB game 234959 (2008-06-27, Mariners at Padres): 1978 primary marks, using Seattle 1977–80 and San Diego 1969–84. References: https://www.sportslogos.net/logos/view/7586821977/Seattle-Mariners-Logo/1977/Primary-Logo and https://www.sportslogos.net/logos/view/x5qgaefxmvbsmrkzw3k8qggwr/San-Diego-Padres-Logo/1969/Primary-Logo .
+- MLB game 319319 (2012-08-03, Mets at Padres): 1989 primary marks, New York 1981–92 and San Diego 1986–89. Event: https://news.sportslogos.net/2012/08/03/pics-padres-mets-turn-clock-back-to-1989/baseball/ . References: https://www.sportslogos.net/logos/view/34fklmt62f7bpq20uisaruz8d/New-York-Mets-Logo/1981/Primary-Logo and https://www.sportslogos.net/logos/view/16ijawjyoq2m75gmdxhgdbwjk/San-Diego-Padres-Logo/1986/Primary-Logo .
+- Haiti and Morocco: current national team federation crests sourced from https://www.footylogos.com/logos/haiti-national-team and https://www.footylogos.com/logos/morocco-national-team . These replace the earlier unresolved crest status. All other games retain ordinary rules. Direct source image previews retrieved for Seattle 1977, Mets 1981 and Padres 1986; Padres 1969 image request returned 403 in research tool, SVG crest previews unsupported. Deployed browser image loading remains unverified.

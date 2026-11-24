@@ -26,9 +26,26 @@ const soccer={
 };
 const soccerIds={"nashvillesc":18986,"fccincinnati":18267,"sportingkansascity":186,"oaklandroots":20687};
 function era(m,name,year){const row=lookup(m,name)?.find(x=>year>=x[0]&&year<=x[1]);return row?source(row[2],name):null;}
-function resolve(league,name,date,id){
+// Explicit game-ID overrides, not changes to the normal franchise era timelines.
+const throwbacks={
+ "234959":{date:"2008-06-27",year:1978,teams:{
+  seattlemariners:"https://content.sportslogos.net/logos/53/75/full/seattle_mariners_logo_primary_19779169.png",
+  sandiegopadres:"https://content.sportslogos.net/logos/54/73/full/x5qgaefxmvbsmrkzw3k8qggwr.png"}},
+ "319319":{date:"2012-08-03",year:1989,teams:{
+  newyorkmets:"https://content.sportslogos.net/logos/54/67/full/new_york_mets_logo_primary_1962sportslogosnet5793.png",
+  sandiegopadres:"https://content.sportslogos.net/logos/54/73/full/16ijawjyoq2m75gmdxhgdbwjk.png"}}
+};
+const nationalCrests={
+ haiti:"https://assets.footylogos.com/logos/haiti-national-team/haiti-national-team-logo-footylogos.svg",
+ morocco:"https://assets.footylogos.com/logos/morocco-national-team/morocco-national-team-logo-footylogos.svg"
+};
+function resolve(league,name,date,id,gameId){
  const y=Number(String(date).slice(0,4));if(!/^\d{4}-\d{2}-\d{2}$/.test(String(date)))return null;
- if(league==="mlb")return window.CAHistoricalLogos?.resolve("mlb",lookup(mlb,name),date)||null;
+ if(league==="mlb"){
+  const event=throwbacks[String(gameId)],url=event?.date===date?lookup(event.teams,name):null;
+  if(url)return source(url,name+" · "+event.year+" Turn Back the Clock");
+  return window.CAHistoricalLogos?.resolve("mlb",lookup(mlb,name),date)||null;
+ }
  if(league==="college"){
   const key=id||lookup(school,name);
   if(!key)return null;
@@ -37,7 +54,11 @@ function resolve(league,name,date,id){
  }
  if(league==="nfl")return era(nfl,name,y);
  if(league==="nhl")return era(nhl,name,y-(Number(date.slice(5,7))<7?1:0));
- if(league==="soccer")return era(soccer,name,y)||(y>=2020?espn("soccer",lookup(soccerIds,name),name):null);
+ if(league==="soccer"){
+  const crest=lookup(nationalCrests,name);
+  if(crest)return source(crest,name+" national team crest","FootyLogos.com");
+  return era(soccer,name,y)||(y>=2020?espn("soccer",lookup(soccerIds,name),name):null);
+ }
  if(league==="milb"){
   if(norm(name)==="lakeelsinorestorm"&&y>=2002&&y<=2023)return source("https://content.sportslogos.net/logos/41/2138/full/gatxy5ed07vg6nghave0.gif",name);
   // Owner-approved: complex league clubs use their MLB parent mark for the actual game date.

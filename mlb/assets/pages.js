@@ -222,7 +222,7 @@ function gamePage(){
  const confirmed=g.game_pk!=null;
  const gameStats=rows.filter(x=>x.game_pk===g.game_pk && g.game_pk!=null);
  let actual=confirmed&&A.yes(g.away_score)&&A.yes(g.home_score);
- const board=window.CAGameScore.render({date:g.date,venue:g.ballpark,away:g.away,home:g.home,awayLogo:window.CAGameLogos?.resolve('mlb',g.away,g.date),homeLogo:window.CAGameLogos?.resolve('mlb',g.home,g.date),awayScore:actual?g.away_score:null,homeScore:actual?g.home_score:null,metaHtml:(g.venue_official&&g.venue_official!==g.ballpark?'Official venue: '+esc(g.venue_official)+' · ':'')+(g.game_pk?'MLB game #'+esc(g.game_pk):'Awaiting official game match')+(g.source_url&&/^https?:\/\//i.test(g.source_url)?' · <a href="'+esc(g.source_url)+'" target="_blank" rel="noopener">View MLB source ↗</a>':'')});
+ const board=window.CAGameScore.render({date:g.date,venue:g.ballpark,away:g.away,home:g.home,awayLogo:window.CAGameLogos?.resolve('mlb',g.away,g.date,null,g.game_pk),homeLogo:window.CAGameLogos?.resolve('mlb',g.home,g.date,null,g.game_pk),awayScore:actual?g.away_score:null,homeScore:actual?g.home_score:null,metaHtml:(g.venue_official&&g.venue_official!==g.ballpark?'Official venue: '+esc(g.venue_official)+' · ':'')+(g.game_pk?'MLB game #'+esc(g.game_pk):'Awaiting official game match')+(g.source_url&&/^https?:\/\//i.test(g.source_url)?' · <a href="'+esc(g.source_url)+'" target="_blank" rel="noopener">View MLB source ↗</a>':'')});
  let innings="";
  if(g.innings?.length){
  const list=g.innings,th=list.map(i=>'<th>'+esc(i.inning)+'</th>').join("");

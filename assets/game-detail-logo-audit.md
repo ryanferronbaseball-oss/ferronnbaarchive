@@ -2,7 +2,7 @@
 
 All nine sport renderers use the NBA-approved shared scorecard layout: logos inside the scores, desktop 80 px, tablet 64 px, mobile 44 px. Missing assets hide without replacing the score. No game data, player identities, recaps or box scores edited.
 
-Historical primary marks reference Chris Creamer's SportsLogos.Net; teams own their trademarks. MLB/NBA reuse existing historical resolver. College uses previously approved historical marks and otherwise the existing school ID/standard-logo registry (not fully era-verified). MLB 131 archived games resolve both sides by name. NFL 3 games and NHL 1 game resolve all sides with dated marks. College football 6 games resolve both sides. College baseball adds nine missing school mappings from the archive's own verified basketball team-name registry. Soccer uses a dated San Diego Loyal crest plus standard ESPN club marks (Oakland Roots ID 20687 confirmed on ESPN). MiLB uses the old 2002–2023 Lake Elsinore Storm mark, with standard MiLB team-ID graphics elsewhere, pending further historical asset review. No logo is supplied for the four ACL club identities or Haiti/Morocco until crest files are verified. Current fallback graphics are not represented as historical proof.
+Historical primary marks reference Chris Creamer's SportsLogos.Net; teams own their trademarks. MLB/NBA reuse existing historical resolver. College uses previously approved historical marks and otherwise the existing school ID/standard-logo registry (not fully era-verified). MLB 131 archived games resolve both sides by name. NFL 3 games and NHL 1 game resolve all sides with dated marks. College football 6 games resolve both sides. College baseball adds nine missing school mappings from the archive's own verified basketball team-name registry. Soccer uses a dated San Diego Loyal crest plus standard ESPN club marks (Oakland Roots ID 20687 confirmed on ESPN). MiLB uses the old 2002–2023 Lake Elsinore Storm mark, with standard MiLB team-ID graphics elsewhere, pending further historical asset review. No logo is supplied for Haiti/Morocco until crest files are verified. ACL clubs now use the date-appropriate MLB parent logo, as approved by the archive owner. Current fallback graphics are not represented as historical proof.
 
 Historical sources:
 - https://www.sportslogos.net/logos/view/1029/St-Louis-Rams-Logo/2000/Primary-Logo
@@ -17,3 +17,7 @@ Historical sources:
 - https://africa.espn.com/football/match/_/gameId/401842106/monterey-bay-oakland-roots
 
 Historical source previews were inspected where available; not all external image bytes or deployed pages were checked. Follow-up: verify actual image loading and all historical college/MiLB/soccer eras, especially unresolved crests.
+
+## ACL parent logos
+
+Use the existing historical MLB resolver with the actual game date: ACL Royals → Kansas City (118), ACL Rangers → Texas (140), ACL Cubs → Chicago Cubs (112), ACL Padres → San Diego (135). Applies to all four attended July 2023 ACL games. Keep ACL names, team IDs, level and statistics unchanged. Unmapped complex clubs remain logo-free. Both MiLB game entry points load the shared MLB historical resolver. External image loading remains unverified.

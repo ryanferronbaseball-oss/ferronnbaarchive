@@ -40,6 +40,10 @@ function resolve(league,name,date,id){
  if(league==="soccer")return era(soccer,name,y)||(y>=2020?espn("soccer",lookup(soccerIds,name),name):null);
  if(league==="milb"){
   if(norm(name)==="lakeelsinorestorm"&&y>=2002&&y<=2023)return source("https://content.sportslogos.net/logos/41/2138/full/gatxy5ed07vg6nghave0.gif",name);
+  // Owner-approved: complex league clubs use their MLB parent mark for the actual game date.
+  const aclParents={aclroyals:118,aclrangers:140,aclcubs:112,aclpadres:135};
+  const parent=aclParents[norm(name)];
+  if(parent){const mark=window.CAHistoricalLogos?.resolve("mlb",parent,date);return mark?{...mark,name:name+" · "+mark.name+" parent logo"}:null;}
   if(!id||/^ACL /i.test(name))return null;
   return {src:"https://www.mlbstatic.com/team-logos/"+encodeURIComponent(id)+".svg",name,credit:"MiLB standard mark"};
  }

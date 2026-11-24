@@ -1,0 +1,18 @@
+/* Shared detail scorecard — scoped to avoid changing listings or box scores. */
+.ca-game-scorecard{box-sizing:border-box;background:#fff!important;border:1px solid #d4e1e9!important;border-radius:16px;padding:21px;margin:18px 0;color:#252a2b!important;min-width:0;box-shadow:none}
+.ca-game-scorecard .ca-game-score-kicker{font-size:12px;line-height:1.4;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#831738!important;overflow-wrap:anywhere}
+.ca-game-scorecard .ca-game-score-kicker a{color:inherit!important;text-decoration:none}
+.ca-game-scorecard .ca-game-score-grid{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:18px;align-items:center;margin:20px 0}
+.ca-game-scorecard .ca-game-score-side{min-width:0;align-self:start}
+.ca-game-scorecard .ca-game-score-away{text-align:left}
+.ca-game-scorecard .ca-game-score-home{text-align:right}
+.ca-game-scorecard .ca-game-score-label,.ca-game-scorecard .ca-game-score-status,.ca-game-scorecard .ca-game-score-meta{font-size:13px;line-height:1.5;color:#667268!important;font-weight:400;letter-spacing:normal}
+.ca-game-scorecard .ca-game-score-status{text-align:center;white-space:nowrap}
+.ca-game-scorecard .ca-game-score-team{font-size:clamp(18px,3vw,27px);font-weight:750;line-height:1.25;color:#252a2b!important;overflow-wrap:anywhere}
+.ca-game-scorecard .ca-game-score-team.ca-game-score-winner{color:#831738!important}
+.ca-game-scorecard .ca-game-score-number{font-size:clamp(37px,5vw,60px);line-height:1.23;font-weight:850;letter-spacing:-.03em;font-variant-numeric:tabular-nums;color:#252a2b!important}
+.ca-game-scorecard .ca-game-score-meta{overflow-wrap:anywhere}
+.ca-game-scorecard .ca-game-score-meta a{color:#284d3c!important;text-decoration:none}
+.ca-game-scorecard a:hover{text-decoration:underline}
+@media(max-width:800px){.ca-game-scorecard .ca-game-score-grid{gap:8px}.ca-game-scorecard .ca-game-score-team{font-size:clamp(16px,3vw,24px)}}
+@media(max-width:530px){.ca-game-scorecard{padding:16px;border-radius:12px}.ca-game-scorecard .ca-game-score-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 12px;margin:14px 0}.ca-game-scorecard .ca-game-score-status{grid-column:1/-1;grid-row:1}.ca-game-scorecard .ca-game-score-kicker{letter-spacing:.11em}.ca-game-scorecard .ca-game-score-number{font-size:42px}}

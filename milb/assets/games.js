@@ -141,10 +141,7 @@ function scoringPanel(g,plays){
 function show(g,all,rows,innings,plays,decisions){
  const selected=rows.filter(r=>String(r.game_id)===String(g.id));
  $("gameSelect").value=g.id;
- const scoreboard='<div class="mlb-score"><div class="side">'+esc(g.away_team)+'</div>'
-  +'<div class="final">'+esc(scores(g))+'</div><div class="side">'+esc(g.home_team)+'</div></div>'
-  +'<p class="mlb-note">'+dt(g.date)+' · '+(g.venue_id?'<a href="../venues/venue.html?id='+encode(g.venue_id)+'">'+esc(g.venue||"Ballpark pending")+' ↗</a>':esc(g.venue||"Ballpark pending"))+' · '+esc(g.level||"MiLB")
-  +' · '+(official(g)?"MiLB game #"+esc(g.source_game_id):"Awaiting official game match")+'</p>';
+ const scoreboard=window.CAGameScore.render({date:g.date,venue:g.venue||"Ballpark pending",context:g.level||"MiLB",away:g.away_team,home:g.home_team,awayScore:g.away_score,homeScore:g.home_score,metaHtml:(g.venue_id?'<a href="../venues/venue.html?id='+encode(g.venue_id)+'">Venue profile ↗</a> · ':'')+(official(g)?"MiLB game #"+esc(g.source_game_id):"Awaiting official game match")});
  const perf=performancePanel(selected);
  $("scoreboard").innerHTML=scoreboard+decisionPanel(g,decisions)+perf.html+lineScore(g,innings);
  if(perf.best){

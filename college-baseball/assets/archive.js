@@ -497,17 +497,7 @@ async function renderGames(d){
   const recap=recapPanel(d.recaps.get(g.id));
   const photo=typeof gamePhotos[g.id]==="string"&&/^\.\/assets\/game-photos\/[a-zA-Z0-9._-]+$/.test(gamePhotos[g.id])
    ?'<div class="cb-game-photo"><img src="'+esc(gamePhotos[g.id])+'" alt="'+esc(gameLabel(g)+' game photo')+'" loading="lazy"></div>':"";
-  $("cb-game-details").innerHTML='<section class="cb-game-summary">'
-   +'<div class="mlb-score" aria-label="'+esc(gameLabel(g)+", final score "+scoreContent)+'">'
-   +'<div class="side">'+esc(g.away)+'</div><div class="final">'+esc(scoreContent)+'</div><div class="side">'+esc(g.home)+'</div></div>'
-   +'<p class="mlb-note">'+esc(date(g.date))+' · '+esc(gameLabel(g))+' · '+esc(g.ballpark||"Ballpark pending")
-   +(g.city?" · "+esc(g.city):"")+(g.state?", "+esc(g.state):"")
-   +(g.regional_game_number?" · Regional Game "+esc(g.regional_game_number):"")
-   +(g.game_number?" · Doubleheader Game "+esc(g.game_number):"")
-   +(g.postseason_round?" · "+esc(g.postseason_round):"")+'</p>'
-   +'<span class="mlb-pill '+(g.verification==="official_boxscore_verified"?"verified":"pending")+'">'+esc(sourceLabel(g))+'</span>'
-   +(source?'<p class="mlb-note"><a href="'+esc(source)+'" target="_blank" rel="noopener noreferrer">Official college gamebook ↗</a></p>':"")
-   +'</section>'
+  $("cb-game-details").innerHTML=window.CAGameScore.render({date:g.date,venue:g.ballpark||"Ballpark pending",away:g.away,home:g.home,awayScore:actual?g.away_score:null,homeScore:actual?g.home_score:null,context:[g.regional_game_number?'Regional Game '+g.regional_game_number:'',g.game_number?'Doubleheader Game '+g.game_number:'',g.postseason_round].filter(Boolean).join(' · '),metaHtml:[g.city,g.state].filter(Boolean).map(esc).join(', ')+((g.city||g.state)?' · ':'')+esc(sourceLabel(g))+(source?' · <a href="'+esc(source)+'" target="_blank" rel="noopener noreferrer">Official college gamebook ↗</a>':'')})
    +photo
    +proSection
    +draftSection

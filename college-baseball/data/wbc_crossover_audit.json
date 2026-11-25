@@ -4,49 +4,6790 @@
   "archive_players": 5173,
   "years": {
     "2026": {
-      "status": "incomplete"
+      "games": 47,
+      "participants": 580,
+      "status": "complete",
+      "schedule_diagnostics": [
+        {
+          "query": {
+            "sportId": 51,
+            "startDate": "2026-03-01",
+            "endDate": "2026-03-31",
+            "leagueId": 160
+          },
+          "finals": 77,
+          "marked": 47,
+          "scoped": 47,
+          "types": [
+            "D",
+            "E",
+            "F",
+            "L",
+            "W"
+          ],
+          "series": [
+            "Exhibition Game",
+            "World Baseball Classic Exhibition",
+            "World Baseball Classic Finals",
+            "World Baseball Classic Pool Play",
+            "World Baseball Classic Quarterfinals",
+            "World Baseball Classic Semifinals"
+          ]
+        }
+      ]
     },
     "2023": {
-      "status": "incomplete"
+      "games": 47,
+      "participants": 588,
+      "status": "complete",
+      "schedule_diagnostics": [
+        {
+          "query": {
+            "sportId": 51,
+            "startDate": "2023-03-01",
+            "endDate": "2023-03-31",
+            "leagueId": 160
+          },
+          "finals": 67,
+          "marked": 47,
+          "scoped": 47,
+          "types": [
+            "D",
+            "E",
+            "F",
+            "L",
+            "W"
+          ],
+          "series": [
+            "Exhibition Game",
+            "World Baseball Classic Finals",
+            "World Baseball Classic Pool Play",
+            "World Baseball Classic Quarterfinals",
+            "World Baseball Classic Semifinals"
+          ]
+        }
+      ]
     },
     "2017": {
-      "status": "incomplete"
+      "games": 40,
+      "participants": 435,
+      "status": "complete",
+      "schedule_diagnostics": [
+        {
+          "query": {
+            "sportId": 51,
+            "startDate": "2017-03-01",
+            "endDate": "2017-03-31",
+            "leagueId": 160
+          },
+          "finals": 59,
+          "marked": 40,
+          "scoped": 40,
+          "types": [
+            "D",
+            "E",
+            "F",
+            "L",
+            "W"
+          ],
+          "series": [
+            "Exhibition Game",
+            "World Baseball Classic Finals",
+            "World Baseball Classic Pool Play",
+            "World Baseball Classic Quarterfinals",
+            "World Baseball Classic Semifinals"
+          ]
+        }
+      ]
     },
     "2013": {
-      "status": "incomplete"
+      "games": 39,
+      "participants": 433,
+      "status": "complete",
+      "schedule_diagnostics": [
+        {
+          "query": {
+            "sportId": 51,
+            "startDate": "2013-03-01",
+            "endDate": "2013-03-31",
+            "leagueId": 160
+          },
+          "finals": 59,
+          "marked": 39,
+          "scoped": 39,
+          "types": [
+            "D",
+            "E",
+            "F",
+            "L",
+            "W"
+          ],
+          "series": [
+            "Exhibition Game",
+            "World Baseball Classic Finals",
+            "World Baseball Classic Pool Play",
+            "World Baseball Classic Quarterfinals",
+            "World Baseball Classic Semifinals"
+          ]
+        }
+      ]
     },
     "2009": {
-      "status": "incomplete"
+      "games": 39,
+      "participants": 418,
+      "status": "complete",
+      "schedule_diagnostics": [
+        {
+          "query": {
+            "sportId": 51,
+            "startDate": "2009-03-01",
+            "endDate": "2009-03-31",
+            "leagueId": 160
+          },
+          "finals": 75,
+          "marked": 39,
+          "scoped": 39,
+          "types": [
+            "D",
+            "E",
+            "F",
+            "L",
+            "W"
+          ],
+          "series": [
+            "Exhibition Game",
+            "World Baseball Classic Exhibition",
+            "World Baseball Classic Finals",
+            "World Baseball Classic First Round",
+            "World Baseball Classic Quarterfinals",
+            "World Baseball Classic Semifinals"
+          ]
+        }
+      ]
     },
     "2006": {
-      "status": "incomplete"
+      "status": "incomplete",
+      "schedule_diagnostics": [
+        {
+          "query": {
+            "sportId": 51,
+            "startDate": "2006-03-01",
+            "endDate": "2006-03-31",
+            "leagueId": 160
+          },
+          "finals": 55,
+          "marked": 39,
+          "scoped": 39,
+          "types": [
+            "D",
+            "E",
+            "F",
+            "L",
+            "W"
+          ],
+          "series": [
+            "Exhibition Game",
+            "World Baseball Classic Finals",
+            "World Baseball Classic Pool Play",
+            "World Baseball Classic Quarterfinals",
+            "World Baseball Classic Semifinals"
+          ]
+        }
+      ]
     }
   },
-  "candidates": [],
+  "candidates": [
+    {
+      "college_player_id": "cb-mercer-alex-ramirez",
+      "names": [
+        "Alex Ramirez"
+      ],
+      "schools": [
+        "Mercer"
+      ],
+      "mlb_player_id": 493351,
+      "wbc_name": "Alexei Ramirez",
+      "year": 2026,
+      "country": "Cuba",
+      "games": 1,
+      "game_pks": [
+        788131
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788131/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-ut-martin-shawn-perez",
+      "names": [
+        "Shawn Perez"
+      ],
+      "schools": [
+        "UT Martin"
+      ],
+      "mlb_player_id": 521692,
+      "wbc_name": "Salvador Perez",
+      "year": 2026,
+      "country": "Venezuela",
+      "games": 5,
+      "game_pks": [
+        788094,
+        788097,
+        788101,
+        788107,
+        788110
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788094/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-uc-san-diego-emiliano-gonzalez",
+      "names": [
+        "Emiliano Gonzalez"
+      ],
+      "schools": [
+        "UC San Diego"
+      ],
+      "mlb_player_id": 570481,
+      "wbc_name": "Erik González",
+      "year": 2026,
+      "country": "Dominican Republic",
+      "games": 3,
+      "game_pks": [
+        788103,
+        788105,
+        788106
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788103/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-utah-tyler-thompson",
+      "names": [
+        "Tyler Thompson"
+      ],
+      "schools": [
+        "Utah"
+      ],
+      "mlb_player_id": 572204,
+      "wbc_name": "Trayce Thompson",
+      "year": 2026,
+      "country": "Great Britain",
+      "games": 4,
+      "game_pks": [
+        788123,
+        788124,
+        788127,
+        788129
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788123/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-miami-dorian-gonzalez-jr",
+      "names": [
+        "Dorian Gonzalez Jr."
+      ],
+      "schools": [
+        "Miami"
+      ],
+      "mlb_player_id": 605142,
+      "wbc_name": "Dante Bichette Jr.",
+      "year": 2026,
+      "country": "Brazil",
+      "games": 2,
+      "game_pks": [
+        788126,
+        788128
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788126/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-st-bonaventure-david-marshall-jr",
+      "names": [
+        "David Marshall Jr."
+      ],
+      "schools": [
+        "St. Bonaventure"
+      ],
+      "mlb_player_id": 605142,
+      "wbc_name": "Dante Bichette Jr.",
+      "year": 2026,
+      "country": "Brazil",
+      "games": 2,
+      "game_pks": [
+        788126,
+        788128
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788126/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-vanderbilt-david-horn-jr",
+      "names": [
+        "David Horn Jr."
+      ],
+      "schools": [
+        "Middle Tennessee State",
+        "Vanderbilt"
+      ],
+      "mlb_player_id": 605142,
+      "wbc_name": "Dante Bichette Jr.",
+      "year": 2026,
+      "country": "Brazil",
+      "games": 2,
+      "game_pks": [
+        788126,
+        788128
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788126/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-wake-forest-david-falco-jr",
+      "names": [
+        "David Falco Jr."
+      ],
+      "schools": [
+        "Wake Forest"
+      ],
+      "mlb_player_id": 605142,
+      "wbc_name": "Dante Bichette Jr.",
+      "year": 2026,
+      "country": "Brazil",
+      "games": 2,
+      "game_pks": [
+        788126,
+        788128
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788126/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-wichita-state-darnell-parker-jr",
+      "names": [
+        "Darnell Parker Jr."
+      ],
+      "schools": [
+        "Campbell",
+        "Wichita State"
+      ],
+      "mlb_player_id": 605142,
+      "wbc_name": "Dante Bichette Jr.",
+      "year": 2026,
+      "country": "Brazil",
+      "games": 2,
+      "game_pks": [
+        788126,
+        788128
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788126/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-milwaukee-christian-holmes",
+      "names": [
+        "Christian Holmes"
+      ],
+      "schools": [
+        "Milwaukee"
+      ],
+      "mlb_player_id": 605280,
+      "wbc_name": "Clay Holmes",
+      "year": 2026,
+      "country": "United States",
+      "games": 1,
+      "game_pks": [
+        788127
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788127/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-little-rock-jerdy-lopez",
+      "names": [
+        "Jerdy Lopez"
+      ],
+      "schools": [
+        "Little Rock"
+      ],
+      "mlb_player_id": 605347,
+      "wbc_name": "Jorge López",
+      "year": 2026,
+      "country": "Puerto Rico",
+      "games": 1,
+      "game_pks": [
+        788137
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788137/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-california-erik-martinez",
+      "names": [
+        "Erik Martinez"
+      ],
+      "schools": [
+        "California"
+      ],
+      "mlb_player_id": 627218,
+      "wbc_name": "Emerson Martinez",
+      "year": 2026,
+      "country": "Colombia",
+      "games": 2,
+      "game_pks": [
+        788135,
+        788138
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788135/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-maine-camden-macdonald",
+      "names": [
+        "Camden MacDonald"
+      ],
+      "schools": [
+        "Maine"
+      ],
+      "mlb_player_id": 628015,
+      "wbc_name": "Connor MacDonald",
+      "year": 2026,
+      "country": "Australia",
+      "games": 1,
+      "game_pks": [
+        788109
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788109/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-stanford-cort-macdonald",
+      "names": [
+        "Cort Macdonald"
+      ],
+      "schools": [
+        "Stanford"
+      ],
+      "mlb_player_id": 628015,
+      "wbc_name": "Connor MacDonald",
+      "year": 2026,
+      "country": "Australia",
+      "games": 1,
+      "game_pks": [
+        788109
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788109/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-cal-baptist-andrew-jurado",
+      "names": [
+        "Andrew Jurado"
+      ],
+      "schools": [
+        "Cal Baptist"
+      ],
+      "mlb_player_id": 642558,
+      "wbc_name": "Ariel Jurado",
+      "year": 2026,
+      "country": "Panama",
+      "games": 1,
+      "game_pks": [
+        788137
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788137/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-san-diego-state-cade-martinez",
+      "names": [
+        "Cade MARTINEZ",
+        "Cade Martinez"
+      ],
+      "schools": [
+        "San Diego State"
+      ],
+      "mlb_player_id": 642751,
+      "wbc_name": "Carlos Martínez",
+      "year": 2026,
+      "country": "Colombia",
+      "games": 3,
+      "game_pks": [
+        788133,
+        788135,
+        788136
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788133/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-san-francisco-tj-rogers",
+      "names": [
+        "TJ Rogers"
+      ],
+      "schools": [
+        "San Francisco"
+      ],
+      "mlb_player_id": 643511,
+      "wbc_name": "Tyler Rogers",
+      "year": 2026,
+      "country": "United States",
+      "games": 2,
+      "game_pks": [
+        788094,
+        788096
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788094/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-arizona-austin-wells",
+      "names": [
+        "Austin Wells"
+      ],
+      "schools": [
+        "Arizona"
+      ],
+      "mlb_player_id": 649144,
+      "wbc_name": "Alex Wells",
+      "year": 2026,
+      "country": "Australia",
+      "games": 2,
+      "game_pks": [
+        788112,
+        788120
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788112/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-hawaii-dallas-duarte",
+      "names": [
+        "Dallas Duarte"
+      ],
+      "schools": [
+        "Hawaii"
+      ],
+      "mlb_player_id": 650960,
+      "wbc_name": "Daniel Duarte",
+      "year": 2026,
+      "country": "Mexico",
+      "games": 2,
+      "game_pks": [
+        788121,
+        788122
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788121/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-florida-ashton-wilson",
+      "names": [
+        "Ashton Wilson"
+      ],
+      "schools": [
+        "Florida"
+      ],
+      "mlb_player_id": 656029,
+      "wbc_name": "Alexis Wilson",
+      "year": 2026,
+      "country": "Mexico",
+      "games": 1,
+      "game_pks": [
+        788125
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788125/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-alabama-richie-bonomolo-jr",
+      "names": [
+        "Richie Bonomolo Jr."
+      ],
+      "schools": [
+        "Alabama"
+      ],
+      "mlb_player_id": 660670,
+      "wbc_name": "Ronald Acuña Jr.",
+      "year": 2026,
+      "country": "Venezuela",
+      "games": 7,
+      "game_pks": [
+        788093,
+        788094,
+        788097,
+        788099,
+        788101,
+        788107,
+        788110
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788093/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-california-rodney-green-jr",
+      "names": [
+        "Rodney Green Jr."
+      ],
+      "schools": [
+        "California"
+      ],
+      "mlb_player_id": 660670,
+      "wbc_name": "Ronald Acuña Jr.",
+      "year": 2026,
+      "country": "Venezuela",
+      "games": 7,
+      "game_pks": [
+        788093,
+        788094,
+        788097,
+        788099,
+        788101,
+        788107,
+        788110
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788093/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-rutgers-rj-johnson-jr",
+      "names": [
+        "Rj Johnson Jr."
+      ],
+      "schools": [
+        "Rutgers"
+      ],
+      "mlb_player_id": 660670,
+      "wbc_name": "Ronald Acuña Jr.",
+      "year": 2026,
+      "country": "Venezuela",
+      "games": 7,
+      "game_pks": [
+        788093,
+        788094,
+        788097,
+        788099,
+        788101,
+        788107,
+        788110
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788093/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-lsu-jared-jones",
+      "names": [
+        "Jared Jones"
+      ],
+      "schools": [
+        "LSU"
+      ],
+      "mlb_player_id": 663330,
+      "wbc_name": "Jahmai Jones",
+      "year": 2026,
+      "country": "Korea",
+      "games": 5,
+      "game_pks": [
+        788095,
+        788112,
+        788113,
+        788115,
+        788118
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788095/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-oklahoma-state-jayson-jones",
+      "names": [
+        "Jayson Jones"
+      ],
+      "schools": [
+        "Oklahoma State"
+      ],
+      "mlb_player_id": 663330,
+      "wbc_name": "Jahmai Jones",
+      "year": 2026,
+      "country": "Korea",
+      "games": 5,
+      "game_pks": [
+        788095,
+        788112,
+        788113,
+        788115,
+        788118
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788095/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-rutgers-jd-jones",
+      "names": [
+        "Jd Jones"
+      ],
+      "schools": [
+        "Rutgers"
+      ],
+      "mlb_player_id": 663330,
+      "wbc_name": "Jahmai Jones",
+      "year": 2026,
+      "country": "Korea",
+      "games": 5,
+      "game_pks": [
+        788095,
+        788112,
+        788113,
+        788115,
+        788118
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788095/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-stanford-jj-moran",
+      "names": [
+        "JJ Moran"
+      ],
+      "schools": [
+        "Stanford"
+      ],
+      "mlb_player_id": 663558,
+      "wbc_name": "Jovani Morán",
+      "year": 2026,
+      "country": "Puerto Rico",
+      "games": 3,
+      "game_pks": [
+        788098,
+        788131,
+        788136
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788098/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-cal-baptist-joseph-romero",
+      "names": [
+        "Joseph Romero"
+      ],
+      "schools": [
+        "Cal Baptist"
+      ],
+      "mlb_player_id": 664584,
+      "wbc_name": "Jhon Romero",
+      "year": 2026,
+      "country": "Colombia",
+      "games": 2,
+      "game_pks": [
+        788133,
+        788138
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788133/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-cal-state-northridge-joshua-romero",
+      "names": [
+        "Joshua Romero"
+      ],
+      "schools": [
+        "Cal State Northridge"
+      ],
+      "mlb_player_id": 664584,
+      "wbc_name": "Jhon Romero",
+      "year": 2026,
+      "country": "Colombia",
+      "games": 2,
+      "game_pks": [
+        788133,
+        788138
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788133/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-virginia-freddy-beruvides-jr",
+      "names": [
+        "Freddy Beruvides Jr."
+      ],
+      "schools": [
+        "Virginia"
+      ],
+      "mlb_player_id": 665487,
+      "wbc_name": "Fernando Tatis Jr.",
+      "year": 2026,
+      "country": "Dominican Republic",
+      "games": 6,
+      "game_pks": [
+        788095,
+        788096,
+        788101,
+        788103,
+        788105,
+        788106
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788095/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-arkansas-justin-thomas-jr",
+      "names": [
+        "Justin Thomas Jr."
+      ],
+      "schools": [
+        "Arkansas"
+      ],
+      "mlb_player_id": 665862,
+      "wbc_name": "Jazz Chisholm Jr.",
+      "year": 2026,
+      "country": "Great Britain",
+      "games": 4,
+      "game_pks": [
+        788123,
+        788124,
+        788127,
+        788129
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788123/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-clemson-jason-fultz-jr",
+      "names": [
+        "Jason Fultz Jr."
+      ],
+      "schools": [
+        "Clemson"
+      ],
+      "mlb_player_id": 665862,
+      "wbc_name": "Jazz Chisholm Jr.",
+      "year": 2026,
+      "country": "Great Britain",
+      "games": 4,
+      "game_pks": [
+        788123,
+        788124,
+        788127,
+        788129
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788123/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-south-carolina-jarvis-evans-jr",
+      "names": [
+        "Jarvis Evans Jr."
+      ],
+      "schools": [
+        "South Carolina"
+      ],
+      "mlb_player_id": 665862,
+      "wbc_name": "Jazz Chisholm Jr.",
+      "year": 2026,
+      "country": "Great Britain",
+      "games": 4,
+      "game_pks": [
+        788123,
+        788124,
+        788127,
+        788129
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788123/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-arizona-austin-wells",
+      "names": [
+        "Austin Wells"
+      ],
+      "schools": [
+        "Arizona"
+      ],
+      "mlb_player_id": 669224,
+      "wbc_name": "Austin Wells",
+      "year": 2026,
+      "country": "Dominican Republic",
+      "games": 5,
+      "game_pks": [
+        788095,
+        788096,
+        788101,
+        788105,
+        788106
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788095/boxscore",
+      "status": "verified_existing_mlbam_link"
+    },
+    {
+      "college_player_id": "cb-coastal-carolina-will-smith",
+      "names": [
+        "Will Smith"
+      ],
+      "schools": [
+        "Coastal Carolina"
+      ],
+      "mlb_player_id": 669257,
+      "wbc_name": "Will Smith",
+      "year": 2026,
+      "country": "United States",
+      "games": 4,
+      "game_pks": [
+        788094,
+        788096,
+        788119,
+        788127
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788094/boxscore",
+      "status": "review_exact_name"
+    },
+    {
+      "college_player_id": "cb-arizona-state-lyle-lin",
+      "names": [
+        "Lyle Lin"
+      ],
+      "schools": [
+        "Arizona State"
+      ],
+      "mlb_player_id": 670076,
+      "wbc_name": "Lyle Lin",
+      "year": 2026,
+      "country": "Chinese Taipei",
+      "games": 4,
+      "game_pks": [
+        788113,
+        788114,
+        788117,
+        788120
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788113/boxscore",
+      "status": "verified_existing_mlbam_link"
+    },
+    {
+      "college_player_id": "cb-san-diego-roman-garcia",
+      "names": [
+        "Roman Garcia"
+      ],
+      "schools": [
+        "San Diego"
+      ],
+      "mlb_player_id": 670329,
+      "wbc_name": "Rico Garcia",
+      "year": 2026,
+      "country": "Puerto Rico",
+      "games": 2,
+      "game_pks": [
+        788132,
+        788136
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788132/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-cal-state-fullerton-jj-cruz",
+      "names": [
+        "JJ Cruz"
+      ],
+      "schools": [
+        "Cal State Fullerton"
+      ],
+      "mlb_player_id": 672911,
+      "wbc_name": "Jesus Cruz",
+      "year": 2026,
+      "country": "Mexico",
+      "games": 1,
+      "game_pks": [
+        788122
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788122/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-oregon-anthony-hall",
+      "names": [
+        "Anthony Hall"
+      ],
+      "schools": [
+        "Oregon"
+      ],
+      "mlb_player_id": 673064,
+      "wbc_name": "Alex Hall",
+      "year": 2026,
+      "country": "Australia",
+      "games": 4,
+      "game_pks": [
+        788109,
+        788112,
+        788116,
+        788120
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788109/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-uc-irvine-anthony-martinez",
+      "names": [
+        "Anthony Martinez"
+      ],
+      "schools": [
+        "UC Irvine"
+      ],
+      "mlb_player_id": 673508,
+      "wbc_name": "Ariel Martinez",
+      "year": 2026,
+      "country": "Cuba",
+      "games": 4,
+      "game_pks": [
+        788130,
+        788131,
+        788135,
+        788139
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788130/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-pacific-ryan-martinez",
+      "names": [
+        "Ryan Martinez"
+      ],
+      "schools": [
+        "Pacific"
+      ],
+      "mlb_player_id": 673510,
+      "wbc_name": "Raidel Martinez",
+      "year": 2026,
+      "country": "Cuba",
+      "games": 3,
+      "game_pks": [
+        788130,
+        788135,
+        788139
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788130/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-san-francisco-ryan-martinez",
+      "names": [
+        "Ryan MARTINEZ"
+      ],
+      "schools": [
+        "San Francisco"
+      ],
+      "mlb_player_id": 673510,
+      "wbc_name": "Raidel Martinez",
+      "year": 2026,
+      "country": "Cuba",
+      "games": 3,
+      "game_pks": [
+        788130,
+        788135,
+        788139
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788130/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-san-diego-roman-garcia",
+      "names": [
+        "Roman Garcia"
+      ],
+      "schools": [
+        "San Diego"
+      ],
+      "mlb_player_id": 676395,
+      "wbc_name": "Robert Garcia",
+      "year": 2026,
+      "country": "Mexico",
+      "games": 3,
+      "game_pks": [
+        788121,
+        788122,
+        788129
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788121/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-queens-joseph-rodriguez",
+      "names": [
+        "Joseph Rodriguez"
+      ],
+      "schools": [
+        "Queens"
+      ],
+      "mlb_player_id": 677594,
+      "wbc_name": "Julio Rodríguez",
+      "year": 2026,
+      "country": "Dominican Republic",
+      "games": 5,
+      "game_pks": [
+        788095,
+        788096,
+        788101,
+        788105,
+        788106
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788095/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-southeastern-louisiana-jackson-rodriguez",
+      "names": [
+        "Jackson Rodriguez"
+      ],
+      "schools": [
+        "Southeastern Louisiana"
+      ],
+      "mlb_player_id": 677594,
+      "wbc_name": "Julio Rodríguez",
+      "year": 2026,
+      "country": "Dominican Republic",
+      "games": 5,
+      "game_pks": [
+        788095,
+        788096,
+        788101,
+        788105,
+        788106
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788095/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-michigan-ako-thomas",
+      "names": [
+        "Ako Thomas"
+      ],
+      "schools": [
+        "Michigan"
+      ],
+      "mlb_player_id": 677950,
+      "wbc_name": "Alek Thomas",
+      "year": 2026,
+      "country": "Mexico",
+      "games": 4,
+      "game_pks": [
+        788121,
+        788122,
+        788125,
+        788129
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788121/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-oregon-state-brock-townsend",
+      "names": [
+        "Brock Townsend"
+      ],
+      "schools": [
+        "Oregon State"
+      ],
+      "mlb_player_id": 678620,
+      "wbc_name": "Blake Townsend",
+      "year": 2026,
+      "country": "Australia",
+      "games": 2,
+      "game_pks": [
+        788109,
+        788116
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788109/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-virginia-chris-arroyo",
+      "names": [
+        "Chris Arroyo"
+      ],
+      "schools": [
+        "Virginia"
+      ],
+      "mlb_player_id": 678863,
+      "wbc_name": "Carlos Arroyo",
+      "year": 2026,
+      "country": "Colombia",
+      "games": 1,
+      "game_pks": [
+        788138
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788138/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-michigan-state-jacob-anderson",
+      "names": [
+        "Jacob Anderson"
+      ],
+      "schools": [
+        "Michigan State"
+      ],
+      "mlb_player_id": 681252,
+      "wbc_name": "Jack Anderson",
+      "year": 2026,
+      "country": "Great Britain",
+      "games": 1,
+      "game_pks": [
+        788129
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788129/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-uab-jaden-anderson",
+      "names": [
+        "Jaden Anderson"
+      ],
+      "schools": [
+        "UAB"
+      ],
+      "mlb_player_id": 681252,
+      "wbc_name": "Jack Anderson",
+      "year": 2026,
+      "country": "Great Britain",
+      "games": 1,
+      "game_pks": [
+        788129
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788129/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-santa-clara-austin-reyes",
+      "names": [
+        "Austin REYES",
+        "Austin Reyes"
+      ],
+      "schools": [
+        "Santa Clara"
+      ],
+      "mlb_player_id": 681938,
+      "wbc_name": "Angel Reyes",
+      "year": 2026,
+      "country": "Puerto Rico",
+      "games": 2,
+      "game_pks": [
+        788132,
+        788136
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788132/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-san-diego-josh-hendrickson",
+      "names": [
+        "Josh Hendrickson"
+      ],
+      "schools": [
+        "San Diego"
+      ],
+      "mlb_player_id": 681973,
+      "wbc_name": "Josh Hendrickson",
+      "year": 2026,
+      "country": "Australia",
+      "games": 1,
+      "game_pks": [
+        788116
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788116/boxscore",
+      "status": "verified_existing_mlbam_link"
+    },
+    {
+      "college_player_id": "cb-indiana-nick-eaton",
+      "names": [
+        "Nick Eaton"
+      ],
+      "schools": [
+        "Indiana"
+      ],
+      "mlb_player_id": 681987,
+      "wbc_name": "Nate Eaton",
+      "year": 2026,
+      "country": "Great Britain",
+      "games": 4,
+      "game_pks": [
+        788123,
+        788124,
+        788127,
+        788129
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788123/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-san-diego-nigel-ward",
+      "names": [
+        "Nigel WARD",
+        "Nigel Ward"
+      ],
+      "schools": [
+        "San Diego"
+      ],
+      "mlb_player_id": 682187,
+      "wbc_name": "Nick Ward",
+      "year": 2026,
+      "country": "Great Britain",
+      "games": 2,
+      "game_pks": [
+        788124,
+        788127
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788124/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-loyola-marymount-michael-nunez",
+      "names": [
+        "Michael NUNEZ",
+        "Michael Nunez"
+      ],
+      "schools": [
+        "Loyola Marymount"
+      ],
+      "mlb_player_id": 682650,
+      "wbc_name": "Malcom Nuñez",
+      "year": 2026,
+      "country": "Cuba",
+      "games": 1,
+      "game_pks": [
+        788130
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788130/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-mercer-alex-ramirez",
+      "names": [
+        "Alex Ramirez"
+      ],
+      "schools": [
+        "Mercer"
+      ],
+      "mlb_player_id": 682663,
+      "wbc_name": "Agustín Ramírez",
+      "year": 2026,
+      "country": "Dominican Republic",
+      "games": 2,
+      "game_pks": [
+        788095,
+        788103
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788095/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-new-mexico-state-julio-ramos",
+      "names": [
+        "Julio Ramos"
+      ],
+      "schools": [
+        "New Mexico State"
+      ],
+      "mlb_player_id": 682947,
+      "wbc_name": "Jose Ramos",
+      "year": 2026,
+      "country": "Panama",
+      "games": 4,
+      "game_pks": [
+        788133,
+        788134,
+        788137,
+        788139
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788133/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-marist-aiden-vargas",
+      "names": [
+        "Aiden Vargas"
+      ],
+      "schools": [
+        "Marist"
+      ],
+      "mlb_player_id": 683061,
+      "wbc_name": "Alexander Vargas",
+      "year": 2026,
+      "country": "Cuba",
+      "games": 2,
+      "game_pks": [
+        788130,
+        788131
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788130/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-nicholls-austin-vargas",
+      "names": [
+        "Austin Vargas"
+      ],
+      "schools": [
+        "Nicholls"
+      ],
+      "mlb_player_id": 683061,
+      "wbc_name": "Alexander Vargas",
+      "year": 2026,
+      "country": "Cuba",
+      "games": 2,
+      "game_pks": [
+        788130,
+        788131
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788130/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-wichita-state-matt-wilkinson",
+      "names": [
+        "Matt Wilkinson"
+      ],
+      "schools": [
+        "Wichita State"
+      ],
+      "mlb_player_id": 683363,
+      "wbc_name": "Matt Wilkinson",
+      "year": 2026,
+      "country": "Canada",
+      "games": 2,
+      "game_pks": [
+        788100,
+        788134
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788100/boxscore",
+      "status": "review_exact_name"
+    },
+    {
+      "college_player_id": "cb-rutgers-pablo-santos",
+      "names": [
+        "Pablo Santos"
+      ],
+      "schools": [
+        "Rutgers"
+      ],
+      "mlb_player_id": 683726,
+      "wbc_name": "Pedro Santos",
+      "year": 2026,
+      "country": "Cuba",
+      "games": 2,
+      "game_pks": [
+        788131,
+        788135
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788131/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-oregon-state-travis-bazzana",
+      "names": [
+        "Travis Bazzana"
+      ],
+      "schools": [
+        "Oregon State"
+      ],
+      "mlb_player_id": 683953,
+      "wbc_name": "Travis Bazzana",
+      "year": 2026,
+      "country": "Australia",
+      "games": 4,
+      "game_pks": [
+        788109,
+        788112,
+        788116,
+        788120
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788109/boxscore",
+      "status": "verified_existing_mlbam_link"
+    },
+    {
+      "college_player_id": "cb-st-john-s-joe-lasorsa",
+      "names": [
+        "Joe LaSORSA"
+      ],
+      "schools": [
+        "St. John's"
+      ],
+      "mlb_player_id": 686747,
+      "wbc_name": "Joe La Sorsa",
+      "year": 2026,
+      "country": "Italy",
+      "games": 4,
+      "game_pks": [
+        788098,
+        788119,
+        788121,
+        788124
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788098/boxscore",
+      "status": "verified_existing_mlbam_link"
+    },
+    {
+      "college_player_id": "cb-auburn-joseph-gonzalez",
+      "names": [
+        "Joseph Gonzalez"
+      ],
+      "schools": [
+        "Auburn"
+      ],
+      "mlb_player_id": 686857,
+      "wbc_name": "James Gonzalez",
+      "year": 2026,
+      "country": "Panama",
+      "games": 1,
+      "game_pks": [
+        788134
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788134/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-dallas-baptist-ryan-johnson",
+      "names": [
+        "Ryan Johnson"
+      ],
+      "schools": [
+        "Dallas Baptist"
+      ],
+      "mlb_player_id": 689650,
+      "wbc_name": "Ryan Johnson",
+      "year": 2026,
+      "country": "Czechia",
+      "games": 4,
+      "game_pks": [
+        788111,
+        788115,
+        788116,
+        788117
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788111/boxscore",
+      "status": "review_exact_name"
+    },
+    {
+      "college_player_id": "cb-pepperdine-ryan-johnson",
+      "names": [
+        "RYAN JOHNSON"
+      ],
+      "schools": [
+        "Pepperdine"
+      ],
+      "mlb_player_id": 689650,
+      "wbc_name": "Ryan Johnson",
+      "year": 2026,
+      "country": "Czechia",
+      "games": 4,
+      "game_pks": [
+        788111,
+        788115,
+        788116,
+        788117
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788111/boxscore",
+      "status": "review_exact_name"
+    },
+    {
+      "college_player_id": "cb-gonzaga-alek-jacob",
+      "names": [
+        "Alek Jacob"
+      ],
+      "schools": [
+        "Gonzaga"
+      ],
+      "mlb_player_id": 689690,
+      "wbc_name": "Alek Jacob",
+      "year": 2026,
+      "country": "Italy",
+      "games": 3,
+      "game_pks": [
+        788098,
+        788119,
+        788126
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788098/boxscore",
+      "status": "verified_existing_mlbam_link"
+    },
+    {
+      "college_player_id": "cb-austin-peay-drew-delucia",
+      "names": [
+        "Drew DeLucia",
+        "Drew Delucia"
+      ],
+      "schools": [
+        "Austin Peay"
+      ],
+      "mlb_player_id": 690626,
+      "wbc_name": "Dylan DeLucia",
+      "year": 2026,
+      "country": "Italy",
+      "games": 2,
+      "game_pks": [
+        788098,
+        788124
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788098/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-vanderbilt-enrique-bradfield-jr",
+      "names": [
+        "Enrique Bradfield JR",
+        "Enrique Bradfield Jr"
+      ],
+      "schools": [
+        "Vanderbilt"
+      ],
+      "mlb_player_id": 690961,
+      "wbc_name": "Enrique Bradfield Jr.",
+      "year": 2026,
+      "country": "Panama",
+      "games": 3,
+      "game_pks": [
+        788133,
+        788134,
+        788139
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788133/boxscore",
+      "status": "review_exact_name"
+    },
+    {
+      "college_player_id": "cb-east-carolina-ian-white-jr",
+      "names": [
+        "Ian White Jr."
+      ],
+      "schools": [
+        "East Carolina"
+      ],
+      "mlb_player_id": 691588,
+      "wbc_name": "Ian Lewis Jr.",
+      "year": 2026,
+      "country": "Great Britain",
+      "games": 4,
+      "game_pks": [
+        788123,
+        788124,
+        788127,
+        788129
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788123/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-cal-state-fullerton-christian-rodriguez",
+      "names": [
+        "Christian Rodriguez"
+      ],
+      "schools": [
+        "Cal State Fullerton"
+      ],
+      "mlb_player_id": 692230,
+      "wbc_name": "Carlos Rodriguez",
+      "year": 2026,
+      "country": "Nicaragua",
+      "games": 1,
+      "game_pks": [
+        788104
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788104/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-florida-christian-rodriguez",
+      "names": [
+        "Christian Rodriguez"
+      ],
+      "schools": [
+        "Florida"
+      ],
+      "mlb_player_id": 692230,
+      "wbc_name": "Carlos Rodriguez",
+      "year": 2026,
+      "country": "Nicaragua",
+      "games": 1,
+      "game_pks": [
+        788104
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788104/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-san-diego-state-cole-carrigg",
+      "names": [
+        "Cole CARRIGG",
+        "Cole Carrigg"
+      ],
+      "schools": [
+        "San Diego State"
+      ],
+      "mlb_player_id": 694249,
+      "wbc_name": "Cole Carrigg",
+      "year": 2026,
+      "country": "Israel",
+      "games": 4,
+      "game_pks": [
+        788102,
+        788103,
+        788104,
+        788107
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788102/boxscore",
+      "status": "verified_existing_mlbam_link"
+    },
+    {
+      "college_player_id": "cb-san-diego-state-angelo-armenta",
+      "names": [
+        "Angelo ARMENTA",
+        "Angelo Armenta"
+      ],
+      "schools": [
+        "San Diego State"
+      ],
+      "mlb_player_id": 694401,
+      "wbc_name": "Alexander Armenta",
+      "year": 2026,
+      "country": "Mexico",
+      "games": 1,
+      "game_pks": [
+        788125
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788125/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-monmouth-mason-miller",
+      "names": [
+        "Mason Miller"
+      ],
+      "schools": [
+        "Monmouth"
+      ],
+      "mlb_player_id": 695243,
+      "wbc_name": "Mason Miller",
+      "year": 2026,
+      "country": "United States",
+      "games": 4,
+      "game_pks": [
+        788096,
+        788100,
+        788119,
+        788128
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788096/boxscore",
+      "status": "review_exact_name"
+    },
+    {
+      "college_player_id": "cb-florida-jac-caglianone",
+      "names": [
+        "Jac Caglianone"
+      ],
+      "schools": [
+        "Florida"
+      ],
+      "mlb_player_id": 695506,
+      "wbc_name": "Jac Caglianone",
+      "year": 2026,
+      "country": "Italy",
+      "games": 5,
+      "game_pks": [
+        788093,
+        788098,
+        788119,
+        788121,
+        788126
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788093/boxscore",
+      "status": "verified_existing_mlbam_link"
+    },
+    {
+      "college_player_id": "cb-virginia-henry-ford",
+      "names": [
+        "Henry Ford"
+      ],
+      "schools": [
+        "Tennessee",
+        "Virginia"
+      ],
+      "mlb_player_id": 695670,
+      "wbc_name": "Harry Ford",
+      "year": 2026,
+      "country": "Great Britain",
+      "games": 4,
+      "game_pks": [
+        788123,
+        788124,
+        788127,
+        788129
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788123/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-north-carolina-alberto-osuna",
+      "names": [
+        "Alberto Osuna"
+      ],
+      "schools": [
+        "North Carolina"
+      ],
+      "mlb_player_id": 696030,
+      "wbc_name": "Alejandro Osuna",
+      "year": 2026,
+      "country": "Mexico",
+      "games": 2,
+      "game_pks": [
+        788122,
+        788125
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788122/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-texas-a-m-ryan-prager",
+      "names": [
+        "Ryan Prager"
+      ],
+      "schools": [
+        "Texas A&M"
+      ],
+      "mlb_player_id": 696492,
+      "wbc_name": "Ryan Prager",
+      "year": 2026,
+      "country": "Israel",
+      "games": 1,
+      "game_pks": [
+        788103
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788103/boxscore",
+      "status": "review_exact_name"
+    },
+    {
+      "college_player_id": "cb-new-mexico-state-sammy-natera",
+      "names": [
+        "Sammy Natera"
+      ],
+      "schools": [
+        "New Mexico State"
+      ],
+      "mlb_player_id": 696519,
+      "wbc_name": "Samy Natera Jr.",
+      "year": 2026,
+      "country": "Mexico",
+      "games": 2,
+      "game_pks": [
+        788122,
+        788129
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788122/boxscore",
+      "status": "verified_existing_mlbam_link"
+    },
+    {
+      "college_player_id": "cb-tennessee-andrew-fischer",
+      "names": [
+        "Andrew Fischer"
+      ],
+      "schools": [
+        "Tennessee"
+      ],
+      "mlb_player_id": 702652,
+      "wbc_name": "Andrew Fischer",
+      "year": 2026,
+      "country": "Italy",
+      "games": 4,
+      "game_pks": [
+        788093,
+        788098,
+        788121,
+        788124
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788093/boxscore",
+      "status": "review_exact_name"
+    },
+    {
+      "college_player_id": "cb-duke-wallace-clark",
+      "names": [
+        "Wallace Clark"
+      ],
+      "schools": [
+        "Duke"
+      ],
+      "mlb_player_id": 800712,
+      "wbc_name": "Wallace Clark",
+      "year": 2026,
+      "country": "Great Britain",
+      "games": 2,
+      "game_pks": [
+        788123,
+        788127
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788123/boxscore",
+      "status": "review_exact_name"
+    },
+    {
+      "college_player_id": "cb-gonzaga-owen-wild",
+      "names": [
+        "OWEN WILD",
+        "Owen Wild"
+      ],
+      "schools": [
+        "Gonzaga"
+      ],
+      "mlb_player_id": 801643,
+      "wbc_name": "Owen Wild",
+      "year": 2026,
+      "country": "Great Britain",
+      "games": 1,
+      "game_pks": [
+        788124
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788124/boxscore",
+      "status": "review_exact_name"
+    },
+    {
+      "college_player_id": "cb-coastal-carolina-sam-antonacci",
+      "names": [
+        "Sam Antonacci"
+      ],
+      "schools": [
+        "Coastal Carolina"
+      ],
+      "mlb_player_id": 803011,
+      "wbc_name": "Sam Antonacci",
+      "year": 2026,
+      "country": "Italy",
+      "games": 6,
+      "game_pks": [
+        788093,
+        788098,
+        788119,
+        788121,
+        788124,
+        788126
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788093/boxscore",
+      "status": "verified_existing_mlbam_link"
+    },
+    {
+      "college_player_id": "cb-grand-canyon-coen-wynne",
+      "names": [
+        "Coen Wynne"
+      ],
+      "schools": [
+        "Grand Canyon"
+      ],
+      "mlb_player_id": 807650,
+      "wbc_name": "Coen Wynne",
+      "year": 2026,
+      "country": "Australia",
+      "games": 3,
+      "game_pks": [
+        788109,
+        788112,
+        788116
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788109/boxscore",
+      "status": "review_exact_name"
+    },
+    {
+      "college_player_id": "cb-notre-dame-jayce-lee",
+      "names": [
+        "Jayce Lee"
+      ],
+      "schools": [
+        "Notre Dame"
+      ],
+      "mlb_player_id": 808982,
+      "wbc_name": "Jung Hoo Lee",
+      "year": 2026,
+      "country": "Korea",
+      "games": 5,
+      "game_pks": [
+        788095,
+        788112,
+        788113,
+        788115,
+        788118
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788095/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-vcu-jacob-lee",
+      "names": [
+        "Jacob Lee"
+      ],
+      "schools": [
+        "VCU"
+      ],
+      "mlb_player_id": 808982,
+      "wbc_name": "Jung Hoo Lee",
+      "year": 2026,
+      "country": "Korea",
+      "games": 5,
+      "game_pks": [
+        788095,
+        788112,
+        788113,
+        788115,
+        788118
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788095/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-duke-charlie-beilenson",
+      "names": [
+        "Charlie Beilenson"
+      ],
+      "schools": [
+        "Duke"
+      ],
+      "mlb_player_id": 810897,
+      "wbc_name": "Charlie Beilenson",
+      "year": 2026,
+      "country": "Israel",
+      "games": 2,
+      "game_pks": [
+        788102,
+        788107
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788102/boxscore",
+      "status": "review_exact_name"
+    },
+    {
+      "college_player_id": "cb-princeton-justin-kim",
+      "names": [
+        "Justin Kim"
+      ],
+      "schools": [
+        "Princeton"
+      ],
+      "mlb_player_id": 823572,
+      "wbc_name": "Ju Won Kim",
+      "year": 2026,
+      "country": "Korea",
+      "games": 5,
+      "game_pks": [
+        788095,
+        788112,
+        788113,
+        788115,
+        788118
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788095/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-monmouth-james-kelly",
+      "names": [
+        "James Kelly"
+      ],
+      "schools": [
+        "Monmouth"
+      ],
+      "mlb_player_id": 823858,
+      "wbc_name": "Jaitoine Kelly",
+      "year": 2026,
+      "country": "Kingdom of the Netherlands",
+      "games": 1,
+      "game_pks": [
+        788108
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788108/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-princeton-jordan-kelly",
+      "names": [
+        "Jordan Kelly"
+      ],
+      "schools": [
+        "Princeton"
+      ],
+      "mlb_player_id": 823858,
+      "wbc_name": "Jaitoine Kelly",
+      "year": 2026,
+      "country": "Kingdom of the Netherlands",
+      "games": 1,
+      "game_pks": [
+        788108
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788108/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-st-john-s-joe-kelly",
+      "names": [
+        "Joe KELLY"
+      ],
+      "schools": [
+        "St. John's"
+      ],
+      "mlb_player_id": 823858,
+      "wbc_name": "Jaitoine Kelly",
+      "year": 2026,
+      "country": "Kingdom of the Netherlands",
+      "games": 1,
+      "game_pks": [
+        788108
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788108/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-unc-wilmington-matous-bubenik",
+      "names": [
+        "Matous Bubenik"
+      ],
+      "schools": [
+        "UNC Wilmington"
+      ],
+      "mlb_player_id": 828317,
+      "wbc_name": "Matous Bubenik",
+      "year": 2026,
+      "country": "Czechia",
+      "games": 3,
+      "game_pks": [
+        788111,
+        788115,
+        788117
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788111/boxscore",
+      "status": "review_exact_name"
+    },
+    {
+      "college_player_id": "cb-purdue-jordan-morales",
+      "names": [
+        "Jordan Morales"
+      ],
+      "schools": [
+        "Purdue"
+      ],
+      "mlb_player_id": 838329,
+      "wbc_name": "Justin Morales",
+      "year": 2026,
+      "country": "Kingdom of the Netherlands",
+      "games": 1,
+      "game_pks": [
+        788106
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/788106/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-cal-baptist-ryan-delgado",
+      "names": [
+        "Ryan Delgado"
+      ],
+      "schools": [
+        "Cal Baptist"
+      ],
+      "mlb_player_id": 517414,
+      "wbc_name": "Randall Delgado",
+      "year": 2023,
+      "country": "Panama",
+      "games": 2,
+      "game_pks": [
+        719538,
+        719543
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719538/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-portland-matt-kelly",
+      "names": [
+        "Matt KELLY"
+      ],
+      "schools": [
+        "Portland"
+      ],
+      "mlb_player_id": 518876,
+      "wbc_name": "Merrill Kelly",
+      "year": 2023,
+      "country": "United States",
+      "games": 2,
+      "game_pks": [
+        719497,
+        719515
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719497/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-queens-mason-kelly",
+      "names": [
+        "Mason Kelly"
+      ],
+      "schools": [
+        "Queens"
+      ],
+      "mlb_player_id": 518876,
+      "wbc_name": "Merrill Kelly",
+      "year": 2023,
+      "country": "United States",
+      "games": 2,
+      "game_pks": [
+        719497,
+        719515
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719497/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-ut-martin-shawn-perez",
+      "names": [
+        "Shawn Perez"
+      ],
+      "schools": [
+        "UT Martin"
+      ],
+      "mlb_player_id": 521692,
+      "wbc_name": "Salvador Perez",
+      "year": 2023,
+      "country": "Venezuela",
+      "games": 4,
+      "game_pks": [
+        719501,
+        719504,
+        719511,
+        719514
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719501/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-utah-tyler-thompson",
+      "names": [
+        "Tyler Thompson"
+      ],
+      "schools": [
+        "Utah"
+      ],
+      "mlb_player_id": 572204,
+      "wbc_name": "Trayce Thompson",
+      "year": 2023,
+      "country": "Great Britain",
+      "games": 4,
+      "game_pks": [
+        719517,
+        719519,
+        719521,
+        719524
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719517/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-alabama-austin-morris",
+      "names": [
+        "Austin Morris"
+      ],
+      "schools": [
+        "Alabama"
+      ],
+      "mlb_player_id": 592570,
+      "wbc_name": "Akeel Morris",
+      "year": 2023,
+      "country": "Great Britain",
+      "games": 1,
+      "game_pks": [
+        719517
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719517/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-san-diego-roman-garcia",
+      "names": [
+        "Roman Garcia"
+      ],
+      "schools": [
+        "San Diego"
+      ],
+      "mlb_player_id": 596825,
+      "wbc_name": "Robel García",
+      "year": 2023,
+      "country": "Italy",
+      "games": 2,
+      "game_pks": [
+        719535,
+        719540
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719535/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-barton-a-j-campbell",
+      "names": [
+        "A.J. Campbell"
+      ],
+      "schools": [
+        "Barton"
+      ],
+      "mlb_player_id": 599411,
+      "wbc_name": "Andrew Campbell",
+      "year": 2023,
+      "country": "Australia",
+      "games": 3,
+      "game_pks": [
+        719522,
+        719526,
+        719528
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719522/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-little-rock-jerdy-lopez",
+      "names": [
+        "Jerdy Lopez"
+      ],
+      "schools": [
+        "Little Rock"
+      ],
+      "mlb_player_id": 605347,
+      "wbc_name": "Jorge López",
+      "year": 2023,
+      "country": "Puerto Rico",
+      "games": 3,
+      "game_pks": [
+        719500,
+        719506,
+        719511
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719500/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-southern-california-tyresse-turner",
+      "names": [
+        "Tyresse Turner"
+      ],
+      "schools": [
+        "Southern California"
+      ],
+      "mlb_player_id": 607208,
+      "wbc_name": "Trea Turner",
+      "year": 2023,
+      "country": "United States",
+      "games": 6,
+      "game_pks": [
+        719497,
+        719498,
+        719501,
+        719515,
+        719520,
+        719524
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719497/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-miami-dorian-gonzalez-jr",
+      "names": [
+        "Dorian Gonzalez Jr."
+      ],
+      "schools": [
+        "Miami"
+      ],
+      "mlb_player_id": 621249,
+      "wbc_name": "Duane Underwood Jr.",
+      "year": 2023,
+      "country": "Puerto Rico",
+      "games": 3,
+      "game_pks": [
+        719506,
+        719510,
+        719512
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719506/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-st-bonaventure-david-marshall-jr",
+      "names": [
+        "David Marshall Jr."
+      ],
+      "schools": [
+        "St. Bonaventure"
+      ],
+      "mlb_player_id": 621249,
+      "wbc_name": "Duane Underwood Jr.",
+      "year": 2023,
+      "country": "Puerto Rico",
+      "games": 3,
+      "game_pks": [
+        719506,
+        719510,
+        719512
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719506/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-vanderbilt-david-horn-jr",
+      "names": [
+        "David Horn Jr."
+      ],
+      "schools": [
+        "Middle Tennessee State",
+        "Vanderbilt"
+      ],
+      "mlb_player_id": 621249,
+      "wbc_name": "Duane Underwood Jr.",
+      "year": 2023,
+      "country": "Puerto Rico",
+      "games": 3,
+      "game_pks": [
+        719506,
+        719510,
+        719512
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719506/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-wake-forest-david-falco-jr",
+      "names": [
+        "David Falco Jr."
+      ],
+      "schools": [
+        "Wake Forest"
+      ],
+      "mlb_player_id": 621249,
+      "wbc_name": "Duane Underwood Jr.",
+      "year": 2023,
+      "country": "Puerto Rico",
+      "games": 3,
+      "game_pks": [
+        719506,
+        719510,
+        719512
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719506/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-wichita-state-darnell-parker-jr",
+      "names": [
+        "Darnell Parker Jr."
+      ],
+      "schools": [
+        "Campbell",
+        "Wichita State"
+      ],
+      "mlb_player_id": 621249,
+      "wbc_name": "Duane Underwood Jr.",
+      "year": 2023,
+      "country": "Puerto Rico",
+      "games": 3,
+      "game_pks": [
+        719506,
+        719510,
+        719512
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719506/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-davidson-adam-katz",
+      "names": [
+        "Adam Katz"
+      ],
+      "schools": [
+        "Davidson"
+      ],
+      "mlb_player_id": 621355,
+      "wbc_name": "Alex Katz",
+      "year": 2023,
+      "country": "Israel",
+      "games": 1,
+      "game_pks": [
+        719507
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719507/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-the-citadel-tj-anderson",
+      "names": [
+        "Tj Anderson"
+      ],
+      "schools": [
+        "The Citadel"
+      ],
+      "mlb_player_id": 641313,
+      "wbc_name": "Tim Anderson",
+      "year": 2023,
+      "country": "United States",
+      "games": 6,
+      "game_pks": [
+        719497,
+        719498,
+        719501,
+        719515,
+        719518,
+        719520
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719497/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-arizona-donta-williams",
+      "names": [
+        "Donta Williams"
+      ],
+      "schools": [
+        "Arizona"
+      ],
+      "mlb_player_id": 642207,
+      "wbc_name": "Devin Williams",
+      "year": 2023,
+      "country": "United States",
+      "games": 4,
+      "game_pks": [
+        719497,
+        719501,
+        719515,
+        719518
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719497/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-east-carolina-dixon-williams",
+      "names": [
+        "Dixon Williams"
+      ],
+      "schools": [
+        "East Carolina"
+      ],
+      "mlb_player_id": 642207,
+      "wbc_name": "Devin Williams",
+      "year": 2023,
+      "country": "United States",
+      "games": 4,
+      "game_pks": [
+        719497,
+        719501,
+        719515,
+        719518
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719497/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-wichita-state-derek-williams",
+      "names": [
+        "Derek Williams"
+      ],
+      "schools": [
+        "Miami",
+        "Wichita State"
+      ],
+      "mlb_player_id": 642207,
+      "wbc_name": "Devin Williams",
+      "year": 2023,
+      "country": "United States",
+      "games": 4,
+      "game_pks": [
+        719497,
+        719501,
+        719515,
+        719518
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719497/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-kentucky-scott-campbell-jr",
+      "names": [
+        "Scott Campbell Jr."
+      ],
+      "schools": [
+        "Kentucky"
+      ],
+      "mlb_player_id": 642225,
+      "wbc_name": "Stephen Woods Jr.",
+      "year": 2023,
+      "country": "Italy",
+      "games": 1,
+      "game_pks": [
+        719540
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719540/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-marshall-gabriel-cabrera",
+      "names": [
+        "Gabriel Cabrera"
+      ],
+      "schools": [
+        "Marshall"
+      ],
+      "mlb_player_id": 650893,
+      "wbc_name": "Génesis Cabrera",
+      "year": 2023,
+      "country": "Dominican Republic",
+      "games": 1,
+      "game_pks": [
+        719507
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719507/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-florida-ashton-wilson",
+      "names": [
+        "Ashton Wilson"
+      ],
+      "schools": [
+        "Florida"
+      ],
+      "mlb_player_id": 656029,
+      "wbc_name": "Alexis Wilson",
+      "year": 2023,
+      "country": "Mexico",
+      "games": 2,
+      "game_pks": [
+        719521,
+        719523
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719521/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-texas-ethan-mendoza",
+      "names": [
+        "Ethan Mendoza"
+      ],
+      "schools": [
+        "Texas"
+      ],
+      "mlb_player_id": 656734,
+      "wbc_name": "Evan Mendoza",
+      "year": 2023,
+      "country": "Colombia",
+      "games": 1,
+      "game_pks": [
+        719516
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719516/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-alabama-richie-bonomolo-jr",
+      "names": [
+        "Richie Bonomolo Jr."
+      ],
+      "schools": [
+        "Alabama"
+      ],
+      "mlb_player_id": 660670,
+      "wbc_name": "Ronald Acuña Jr.",
+      "year": 2023,
+      "country": "Venezuela",
+      "games": 5,
+      "game_pks": [
+        719501,
+        719504,
+        719505,
+        719511,
+        719514
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719501/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-california-rodney-green-jr",
+      "names": [
+        "Rodney Green Jr."
+      ],
+      "schools": [
+        "California"
+      ],
+      "mlb_player_id": 660670,
+      "wbc_name": "Ronald Acuña Jr.",
+      "year": 2023,
+      "country": "Venezuela",
+      "games": 5,
+      "game_pks": [
+        719501,
+        719504,
+        719505,
+        719511,
+        719514
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719501/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-rutgers-rj-johnson-jr",
+      "names": [
+        "Rj Johnson Jr."
+      ],
+      "schools": [
+        "Rutgers"
+      ],
+      "mlb_player_id": 660670,
+      "wbc_name": "Ronald Acuña Jr.",
+      "year": 2023,
+      "country": "Venezuela",
+      "games": 5,
+      "game_pks": [
+        719501,
+        719504,
+        719505,
+        719511,
+        719514
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719501/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-uc-irvine-anthony-martinez",
+      "names": [
+        "Anthony Martinez"
+      ],
+      "schools": [
+        "UC Irvine"
+      ],
+      "mlb_player_id": 661309,
+      "wbc_name": "Adrián Martinez",
+      "year": 2023,
+      "country": "Mexico",
+      "games": 1,
+      "game_pks": [
+        719513
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719513/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-stanford-jj-moran",
+      "names": [
+        "JJ Moran"
+      ],
+      "schools": [
+        "Stanford"
+      ],
+      "mlb_player_id": 663558,
+      "wbc_name": "Jovani Morán",
+      "year": 2023,
+      "country": "Puerto Rico",
+      "games": 3,
+      "game_pks": [
+        719500,
+        719506,
+        719511
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719500/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-auburn-jake-marciano",
+      "names": [
+        "Jake Marciano"
+      ],
+      "schools": [
+        "Auburn",
+        "Virginia Tech"
+      ],
+      "mlb_player_id": 664006,
+      "wbc_name": "Joey Marciano",
+      "year": 2023,
+      "country": "Italy",
+      "games": 2,
+      "game_pks": [
+        719502,
+        719540
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719502/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-arkansas-dominic-fletcher",
+      "names": [
+        "Dominic Fletcher"
+      ],
+      "schools": [
+        "Arkansas"
+      ],
+      "mlb_player_id": 664058,
+      "wbc_name": "David Fletcher",
+      "year": 2023,
+      "country": "Italy",
+      "games": 5,
+      "game_pks": [
+        719502,
+        719535,
+        719536,
+        719540,
+        719541
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719502/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-cal-baptist-joseph-romero",
+      "names": [
+        "Joseph Romero"
+      ],
+      "schools": [
+        "Cal Baptist"
+      ],
+      "mlb_player_id": 664584,
+      "wbc_name": "Jhon Romero",
+      "year": 2023,
+      "country": "Colombia",
+      "games": 3,
+      "game_pks": [
+        719515,
+        719516,
+        719523
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719515/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-cal-state-northridge-joshua-romero",
+      "names": [
+        "Joshua Romero"
+      ],
+      "schools": [
+        "Cal State Northridge"
+      ],
+      "mlb_player_id": 664584,
+      "wbc_name": "Jhon Romero",
+      "year": 2023,
+      "country": "Colombia",
+      "games": 3,
+      "game_pks": [
+        719515,
+        719516,
+        719523
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719515/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-arkansas-dominic-fletcher",
+      "names": [
+        "Dominic Fletcher"
+      ],
+      "schools": [
+        "Arkansas"
+      ],
+      "mlb_player_id": 666150,
+      "wbc_name": "Dominic Fletcher",
+      "year": 2023,
+      "country": "Italy",
+      "games": 5,
+      "game_pks": [
+        719502,
+        719535,
+        719536,
+        719540,
+        719541
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719502/boxscore",
+      "status": "verified_existing_mlbam_link"
+    },
+    {
+      "college_player_id": "cb-cal-baptist-joseph-romero",
+      "names": [
+        "Joseph Romero"
+      ],
+      "schools": [
+        "Cal Baptist"
+      ],
+      "mlb_player_id": 668941,
+      "wbc_name": "JoJo Romero",
+      "year": 2023,
+      "country": "Mexico",
+      "games": 4,
+      "game_pks": [
+        719499,
+        719500,
+        719518,
+        719521
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719499/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-cal-state-northridge-joshua-romero",
+      "names": [
+        "Joshua Romero"
+      ],
+      "schools": [
+        "Cal State Northridge"
+      ],
+      "mlb_player_id": 668941,
+      "wbc_name": "JoJo Romero",
+      "year": 2023,
+      "country": "Mexico",
+      "games": 4,
+      "game_pks": [
+        719499,
+        719500,
+        719518,
+        719521
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719499/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-byu-chase-taylor",
+      "names": [
+        "Chase TAYLOR"
+      ],
+      "schools": [
+        "BYU"
+      ],
+      "mlb_player_id": 668954,
+      "wbc_name": "Curtis Taylor",
+      "year": 2023,
+      "country": "Canada",
+      "games": 2,
+      "game_pks": [
+        719516,
+        719517
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719516/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-coastal-carolina-will-smith",
+      "names": [
+        "Will Smith"
+      ],
+      "schools": [
+        "Coastal Carolina"
+      ],
+      "mlb_player_id": 669257,
+      "wbc_name": "Will Smith",
+      "year": 2023,
+      "country": "United States",
+      "games": 3,
+      "game_pks": [
+        719498,
+        719515,
+        719518
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719498/boxscore",
+      "status": "review_exact_name"
+    },
+    {
+      "college_player_id": "cb-vanderbilt-carter-young",
+      "names": [
+        "Carter Young"
+      ],
+      "schools": [
+        "Vanderbilt"
+      ],
+      "mlb_player_id": 669945,
+      "wbc_name": "Chavez Young",
+      "year": 2023,
+      "country": "Great Britain",
+      "games": 4,
+      "game_pks": [
+        719517,
+        719519,
+        719521,
+        719524
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719517/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-byu-carter-smith",
+      "names": [
+        "Carter SMITH"
+      ],
+      "schools": [
+        "BYU"
+      ],
+      "mlb_player_id": 671922,
+      "wbc_name": "Cade Smith",
+      "year": 2023,
+      "country": "Canada",
+      "games": 2,
+      "game_pks": [
+        719513,
+        719520
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719513/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-florida-state-cam-smith",
+      "names": [
+        "Cam Smith"
+      ],
+      "schools": [
+        "Florida State"
+      ],
+      "mlb_player_id": 671922,
+      "wbc_name": "Cade Smith",
+      "year": 2023,
+      "country": "Canada",
+      "games": 2,
+      "game_pks": [
+        719513,
+        719520
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719513/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-high-point-christian-smith",
+      "names": [
+        "Christian Smith"
+      ],
+      "schools": [
+        "High Point"
+      ],
+      "mlb_player_id": 671922,
+      "wbc_name": "Cade Smith",
+      "year": 2023,
+      "country": "Canada",
+      "games": 2,
+      "game_pks": [
+        719513,
+        719520
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719513/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-james-madison-casey-smith",
+      "names": [
+        "Casey Smith"
+      ],
+      "schools": [
+        "James Madison"
+      ],
+      "mlb_player_id": 671922,
+      "wbc_name": "Cade Smith",
+      "year": 2023,
+      "country": "Canada",
+      "games": 2,
+      "game_pks": [
+        719513,
+        719520
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719513/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-marshall-calin-smith",
+      "names": [
+        "Calin Smith"
+      ],
+      "schools": [
+        "Marshall"
+      ],
+      "mlb_player_id": 671922,
+      "wbc_name": "Cade Smith",
+      "year": 2023,
+      "country": "Canada",
+      "games": 2,
+      "game_pks": [
+        719513,
+        719520
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719513/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-quinnipiac-christian-smith",
+      "names": [
+        "Christian Smith"
+      ],
+      "schools": [
+        "Quinnipiac"
+      ],
+      "mlb_player_id": 671922,
+      "wbc_name": "Cade Smith",
+      "year": 2023,
+      "country": "Canada",
+      "games": 2,
+      "game_pks": [
+        719513,
+        719520
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719513/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-st-louis-cole-smith",
+      "names": [
+        "Cole Smith"
+      ],
+      "schools": [
+        "St. Louis"
+      ],
+      "mlb_player_id": 671922,
+      "wbc_name": "Cade Smith",
+      "year": 2023,
+      "country": "Canada",
+      "games": 2,
+      "game_pks": [
+        719513,
+        719520
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719513/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-cal-state-fullerton-dillon-brown",
+      "names": [
+        "Dillon Brown"
+      ],
+      "schools": [
+        "Cal State Fullerton"
+      ],
+      "mlb_player_id": 672018,
+      "wbc_name": "Dasan Brown",
+      "year": 2023,
+      "country": "Canada",
+      "games": 2,
+      "game_pks": [
+        719513,
+        719516
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719513/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-clemson-dion-brown",
+      "names": [
+        "Dion Brown"
+      ],
+      "schools": [
+        "Clemson"
+      ],
+      "mlb_player_id": 672018,
+      "wbc_name": "Dasan Brown",
+      "year": 2023,
+      "country": "Canada",
+      "games": 2,
+      "game_pks": [
+        719513,
+        719516
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719513/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-georgia-tech-dawson-brown",
+      "names": [
+        "Dawson Brown"
+      ],
+      "schools": [
+        "Georgia Tech"
+      ],
+      "mlb_player_id": 672018,
+      "wbc_name": "Dasan Brown",
+      "year": 2023,
+      "country": "Canada",
+      "games": 2,
+      "game_pks": [
+        719513,
+        719516
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719513/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-old-dominion-dylan-brown",
+      "names": [
+        "Dylan Brown"
+      ],
+      "schools": [
+        "Old Dominion"
+      ],
+      "mlb_player_id": 672018,
+      "wbc_name": "Dasan Brown",
+      "year": 2023,
+      "country": "Canada",
+      "games": 2,
+      "game_pks": [
+        719513,
+        719516
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719513/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-san-francisco-dylan-brown",
+      "names": [
+        "Dylan Brown"
+      ],
+      "schools": [
+        "San Francisco"
+      ],
+      "mlb_player_id": 672018,
+      "wbc_name": "Dasan Brown",
+      "year": 2023,
+      "country": "Canada",
+      "games": 2,
+      "game_pks": [
+        719513,
+        719516
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719513/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-tcu-dalton-brown",
+      "names": [
+        "Dalton Brown"
+      ],
+      "schools": [
+        "TCU"
+      ],
+      "mlb_player_id": 672018,
+      "wbc_name": "Dasan Brown",
+      "year": 2023,
+      "country": "Canada",
+      "games": 2,
+      "game_pks": [
+        719513,
+        719516
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719513/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-cal-state-fullerton-jj-cruz",
+      "names": [
+        "JJ Cruz"
+      ],
+      "schools": [
+        "Cal State Fullerton"
+      ],
+      "mlb_player_id": 672911,
+      "wbc_name": "Jesus Cruz",
+      "year": 2023,
+      "country": "Mexico",
+      "games": 3,
+      "game_pks": [
+        719499,
+        719521,
+        719523
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719499/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-oregon-anthony-hall",
+      "names": [
+        "Anthony Hall"
+      ],
+      "schools": [
+        "Oregon"
+      ],
+      "mlb_player_id": 673064,
+      "wbc_name": "Alex Hall",
+      "year": 2023,
+      "country": "Australia",
+      "games": 5,
+      "game_pks": [
+        719503,
+        719522,
+        719526,
+        719528,
+        719530
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719503/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-gardner-webb-tanner-thomas",
+      "names": [
+        "Tanner Thomas"
+      ],
+      "schools": [
+        "Gardner Webb",
+        "Xavier"
+      ],
+      "mlb_player_id": 673231,
+      "wbc_name": "Tahnaj Thomas",
+      "year": 2023,
+      "country": "Great Britain",
+      "games": 1,
+      "game_pks": [
+        719521
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719521/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-louisville-tanner-thomas",
+      "names": [
+        "Tanner Thomas"
+      ],
+      "schools": [
+        "Louisville"
+      ],
+      "mlb_player_id": 673231,
+      "wbc_name": "Tahnaj Thomas",
+      "year": 2023,
+      "country": "Great Britain",
+      "games": 1,
+      "game_pks": [
+        719521
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719521/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-uc-irvine-anthony-martinez",
+      "names": [
+        "Anthony Martinez"
+      ],
+      "schools": [
+        "UC Irvine"
+      ],
+      "mlb_player_id": 673508,
+      "wbc_name": "Ariel Martinez",
+      "year": 2023,
+      "country": "Cuba",
+      "games": 4,
+      "game_pks": [
+        719498,
+        719503,
+        719534,
+        719538
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719498/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-pacific-ryan-martinez",
+      "names": [
+        "Ryan Martinez"
+      ],
+      "schools": [
+        "Pacific"
+      ],
+      "mlb_player_id": 673510,
+      "wbc_name": "Raidel Martinez",
+      "year": 2023,
+      "country": "Cuba",
+      "games": 3,
+      "game_pks": [
+        719503,
+        719534,
+        719541
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719503/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-san-francisco-ryan-martinez",
+      "names": [
+        "Ryan MARTINEZ"
+      ],
+      "schools": [
+        "San Francisco"
+      ],
+      "mlb_player_id": 673510,
+      "wbc_name": "Raidel Martinez",
+      "year": 2023,
+      "country": "Cuba",
+      "games": 3,
+      "game_pks": [
+        719503,
+        719534,
+        719541
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719503/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-queens-joseph-rodriguez",
+      "names": [
+        "Joseph Rodriguez"
+      ],
+      "schools": [
+        "Queens"
+      ],
+      "mlb_player_id": 673648,
+      "wbc_name": "Jose Rodriguez",
+      "year": 2023,
+      "country": "Cuba",
+      "games": 2,
+      "game_pks": [
+        719498,
+        719541
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719498/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-southeastern-louisiana-jackson-rodriguez",
+      "names": [
+        "Jackson Rodriguez"
+      ],
+      "schools": [
+        "Southeastern Louisiana"
+      ],
+      "mlb_player_id": 673648,
+      "wbc_name": "Jose Rodriguez",
+      "year": 2023,
+      "country": "Cuba",
+      "games": 2,
+      "game_pks": [
+        719498,
+        719541
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719498/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-uc-riverside-matt-hardy",
+      "names": [
+        "Matt Hardy"
+      ],
+      "schools": [
+        "UC Riverside"
+      ],
+      "mlb_player_id": 677185,
+      "wbc_name": "Matt Hardy",
+      "year": 2023,
+      "country": "Panama",
+      "games": 2,
+      "game_pks": [
+        719538,
+        719543
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719538/boxscore",
+      "status": "review_exact_name"
+    },
+    {
+      "college_player_id": "cb-queens-joseph-rodriguez",
+      "names": [
+        "Joseph Rodriguez"
+      ],
+      "schools": [
+        "Queens"
+      ],
+      "mlb_player_id": 677594,
+      "wbc_name": "Julio Rodríguez",
+      "year": 2023,
+      "country": "Dominican Republic",
+      "games": 4,
+      "game_pks": [
+        719506,
+        719507,
+        719509,
+        719514
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719506/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-southeastern-louisiana-jackson-rodriguez",
+      "names": [
+        "Jackson Rodriguez"
+      ],
+      "schools": [
+        "Southeastern Louisiana"
+      ],
+      "mlb_player_id": 677594,
+      "wbc_name": "Julio Rodríguez",
+      "year": 2023,
+      "country": "Dominican Republic",
+      "games": 4,
+      "game_pks": [
+        719506,
+        719507,
+        719509,
+        719514
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719506/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-michigan-ako-thomas",
+      "names": [
+        "Ako Thomas"
+      ],
+      "schools": [
+        "Michigan"
+      ],
+      "mlb_player_id": 677950,
+      "wbc_name": "Alek Thomas",
+      "year": 2023,
+      "country": "Mexico",
+      "games": 6,
+      "game_pks": [
+        719499,
+        719500,
+        719513,
+        719518,
+        719521,
+        719523
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719499/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-oregon-state-brock-townsend",
+      "names": [
+        "Brock Townsend"
+      ],
+      "schools": [
+        "Oregon State"
+      ],
+      "mlb_player_id": 678620,
+      "wbc_name": "Blake Townsend",
+      "year": 2023,
+      "country": "Australia",
+      "games": 1,
+      "game_pks": [
+        719528
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719528/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-san-diego-nigel-ward",
+      "names": [
+        "Nigel WARD",
+        "Nigel Ward"
+      ],
+      "schools": [
+        "San Diego"
+      ],
+      "mlb_player_id": 682187,
+      "wbc_name": "Nick Ward",
+      "year": 2023,
+      "country": "Great Britain",
+      "games": 4,
+      "game_pks": [
+        719517,
+        719519,
+        719521,
+        719524
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719517/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-new-mexico-state-julio-ramos",
+      "names": [
+        "Julio Ramos"
+      ],
+      "schools": [
+        "New Mexico State"
+      ],
+      "mlb_player_id": 682947,
+      "wbc_name": "Jose Ramos",
+      "year": 2023,
+      "country": "Panama",
+      "games": 4,
+      "game_pks": [
+        719535,
+        719538,
+        719539,
+        719543
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719535/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-uc-irvine-jacob-king",
+      "names": [
+        "Jacob King"
+      ],
+      "schools": [
+        "UC Irvine"
+      ],
+      "mlb_player_id": 683165,
+      "wbc_name": "Joseph King",
+      "year": 2023,
+      "country": "Great Britain",
+      "games": 2,
+      "game_pks": [
+        719517,
+        719521
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719517/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-unc-greensboro-jeremy-wolf",
+      "names": [
+        "Jeremy Wolf"
+      ],
+      "schools": [
+        "UNC Greensboro"
+      ],
+      "mlb_player_id": 683181,
+      "wbc_name": "Josh Wolf",
+      "year": 2023,
+      "country": "Israel",
+      "games": 2,
+      "game_pks": [
+        719504,
+        719508
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719504/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-st-john-s-joe-lasorsa",
+      "names": [
+        "Joe LaSORSA"
+      ],
+      "schools": [
+        "St. John's"
+      ],
+      "mlb_player_id": 686747,
+      "wbc_name": "Joe La Sorsa",
+      "year": 2023,
+      "country": "Italy",
+      "games": 3,
+      "game_pks": [
+        719502,
+        719536,
+        719541
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719502/boxscore",
+      "status": "verified_existing_mlbam_link"
+    },
+    {
+      "college_player_id": "cb-auburn-joseph-gonzalez",
+      "names": [
+        "Joseph Gonzalez"
+      ],
+      "schools": [
+        "Auburn"
+      ],
+      "mlb_player_id": 686857,
+      "wbc_name": "James Gonzalez",
+      "year": 2023,
+      "country": "Panama",
+      "games": 1,
+      "game_pks": [
+        719538
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719538/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-cal-state-fullerton-christian-rodriguez",
+      "names": [
+        "Christian Rodriguez"
+      ],
+      "schools": [
+        "Cal State Fullerton"
+      ],
+      "mlb_player_id": 692230,
+      "wbc_name": "Carlos Rodriguez",
+      "year": 2023,
+      "country": "Nicaragua",
+      "games": 1,
+      "game_pks": [
+        719512
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719512/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-florida-christian-rodriguez",
+      "names": [
+        "Christian Rodriguez"
+      ],
+      "schools": [
+        "Florida"
+      ],
+      "mlb_player_id": 692230,
+      "wbc_name": "Carlos Rodriguez",
+      "year": 2023,
+      "country": "Nicaragua",
+      "games": 1,
+      "game_pks": [
+        719512
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719512/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-virginia-henry-ford",
+      "names": [
+        "Henry Ford"
+      ],
+      "schools": [
+        "Tennessee",
+        "Virginia"
+      ],
+      "mlb_player_id": 695670,
+      "wbc_name": "Harry Ford",
+      "year": 2023,
+      "country": "Great Britain",
+      "games": 4,
+      "game_pks": [
+        719517,
+        719519,
+        719521,
+        719524
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719517/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-uc-irvine-darius-garcia",
+      "names": [
+        "Darius Garcia"
+      ],
+      "schools": [
+        "UC Irvine"
+      ],
+      "mlb_player_id": 701249,
+      "wbc_name": "Dayan Garcia",
+      "year": 2023,
+      "country": "Cuba",
+      "games": 2,
+      "game_pks": [
+        719538,
+        719541
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719538/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-grand-canyon-coen-wynne",
+      "names": [
+        "Coen Wynne"
+      ],
+      "schools": [
+        "Grand Canyon"
+      ],
+      "mlb_player_id": 807650,
+      "wbc_name": "Coen Wynne",
+      "year": 2023,
+      "country": "Australia",
+      "games": 1,
+      "game_pks": [
+        719526
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719526/boxscore",
+      "status": "review_exact_name"
+    },
+    {
+      "college_player_id": "cb-stanford-rintaro-sasaki",
+      "names": [
+        "Rintaro Sasaki"
+      ],
+      "schools": [
+        "Stanford"
+      ],
+      "mlb_player_id": 808963,
+      "wbc_name": "Roki Sasaki",
+      "year": 2023,
+      "country": "Japan",
+      "games": 2,
+      "game_pks": [
+        719499,
+        719529
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719499/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-arkansas-evan-lee",
+      "names": [
+        "Evan Lee"
+      ],
+      "schools": [
+        "Arkansas"
+      ],
+      "mlb_player_id": 808980,
+      "wbc_name": "Eui Lee Lee",
+      "year": 2023,
+      "country": "Korea",
+      "games": 1,
+      "game_pks": [
+        719532
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719532/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-notre-dame-jayce-lee",
+      "names": [
+        "Jayce Lee"
+      ],
+      "schools": [
+        "Notre Dame"
+      ],
+      "mlb_player_id": 808981,
+      "wbc_name": "Ji Young Lee",
+      "year": 2023,
+      "country": "Korea",
+      "games": 3,
+      "game_pks": [
+        719525,
+        719527,
+        719530
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719525/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-vcu-jacob-lee",
+      "names": [
+        "Jacob Lee"
+      ],
+      "schools": [
+        "VCU"
+      ],
+      "mlb_player_id": 808981,
+      "wbc_name": "Ji Young Lee",
+      "year": 2023,
+      "country": "Korea",
+      "games": 3,
+      "game_pks": [
+        719525,
+        719527,
+        719530
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719525/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-notre-dame-jayce-lee",
+      "names": [
+        "Jayce Lee"
+      ],
+      "schools": [
+        "Notre Dame"
+      ],
+      "mlb_player_id": 808982,
+      "wbc_name": "Jung Hoo Lee",
+      "year": 2023,
+      "country": "Korea",
+      "games": 4,
+      "game_pks": [
+        719525,
+        719527,
+        719530,
+        719532
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719525/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-vcu-jacob-lee",
+      "names": [
+        "Jacob Lee"
+      ],
+      "schools": [
+        "VCU"
+      ],
+      "mlb_player_id": 808982,
+      "wbc_name": "Jung Hoo Lee",
+      "year": 2023,
+      "country": "Korea",
+      "games": 4,
+      "game_pks": [
+        719525,
+        719527,
+        719530,
+        719532
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719525/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-arizona-state-lyle-lin",
+      "names": [
+        "Lyle Lin"
+      ],
+      "schools": [
+        "Arizona State"
+      ],
+      "mlb_player_id": 809003,
+      "wbc_name": "Li Lin",
+      "year": 2023,
+      "country": "Chinese Taipei",
+      "games": 4,
+      "game_pks": [
+        719534,
+        719537,
+        719540,
+        719543
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/719534/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-san-diego-adrian-beltre-jr",
+      "names": [
+        "Adrian Beltre Jr."
+      ],
+      "schools": [
+        "San Diego"
+      ],
+      "mlb_player_id": 134181,
+      "wbc_name": "Adrian Beltré",
+      "year": 2017,
+      "country": "Dominican Republic",
+      "games": 4,
+      "game_pks": [
+        486911,
+        486914,
+        486932,
+        486937
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/486911/boxscore",
+      "status": "review_exact_name"
+    },
+    {
+      "college_player_id": "cb-cal-baptist-joseph-romero",
+      "names": [
+        "Joseph Romero"
+      ],
+      "schools": [
+        "Cal Baptist"
+      ],
+      "mlb_player_id": 240694,
+      "wbc_name": "J.C. Romero",
+      "year": 2017,
+      "country": "Puerto Rico",
+      "games": 2,
+      "game_pks": [
+        486936,
+        486941
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/486936/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-cal-state-northridge-joshua-romero",
+      "names": [
+        "Joshua Romero"
+      ],
+      "schools": [
+        "Cal State Northridge"
+      ],
+      "mlb_player_id": 240694,
+      "wbc_name": "J.C. Romero",
+      "year": 2017,
+      "country": "Puerto Rico",
+      "games": 2,
+      "game_pks": [
+        486936,
+        486941
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/486936/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-stanford-vincent-martinez",
+      "names": [
+        "Vincent Martinez"
+      ],
+      "schools": [
+        "Stanford"
+      ],
+      "mlb_player_id": 400121,
+      "wbc_name": "Victor Martinez",
+      "year": 2017,
+      "country": "Venezuela",
+      "games": 7,
+      "game_pks": [
+        486919,
+        486921,
+        486923,
+        486924,
+        486933,
+        486934,
+        486936
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/486919/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-coastal-carolina-freddy-rodriguez",
+      "names": [
+        "Freddy Rodriguez"
+      ],
+      "schools": [
+        "Coastal Carolina"
+      ],
+      "mlb_player_id": 408061,
+      "wbc_name": "Francisco Rodríguez",
+      "year": 2017,
+      "country": "Venezuela",
+      "games": 2,
+      "game_pks": [
+        486919,
+        486924
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/486919/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-san-diego-aidan-gonzalez",
+      "names": [
+        "Aidan GONZALEZ",
+        "Aidan Gonzalez",
+        "Aídan Gonzalez"
+      ],
+      "schools": [
+        "San Diego"
+      ],
+      "mlb_player_id": 408236,
+      "wbc_name": "Adrián González",
+      "year": 2017,
+      "country": "Mexico",
+      "games": 3,
+      "game_pks": [
+        486918,
+        486920,
+        486923
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/486918/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-san-diego-state-avery-jones",
+      "names": [
+        "Avery JONES"
+      ],
+      "schools": [
+        "San Diego State"
+      ],
+      "mlb_player_id": 430945,
+      "wbc_name": "Adam Jones",
+      "year": 2017,
+      "country": "United States",
+      "games": 8,
+      "game_pks": [
+        486912,
+        486914,
+        486916,
+        486933,
+        486935,
+        486937,
+        486940,
+        486941
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/486912/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-san-diego-state-jacob-flores",
+      "names": [
+        "Jacob Flores"
+      ],
+      "schools": [
+        "San Diego State"
+      ],
+      "mlb_player_id": 435520,
+      "wbc_name": "Jesus Flores",
+      "year": 2017,
+      "country": "Venezuela",
+      "games": 1,
+      "game_pks": [
+        486936
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/486936/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-texas-jalin-flores",
+      "names": [
+        "Jalin Flores"
+      ],
+      "schools": [
+        "Texas"
+      ],
+      "mlb_player_id": 435520,
+      "wbc_name": "Jesus Flores",
+      "year": 2017,
+      "country": "Venezuela",
+      "games": 1,
+      "game_pks": [
+        486936
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/486936/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-east-tennessee-state-cooper-torres",
+      "names": [
+        "Cooper Torres"
+      ],
+      "schools": [
+        "East Tennessee State"
+      ],
+      "mlb_player_id": 448614,
+      "wbc_name": "Carlos Torres",
+      "year": 2017,
+      "country": "Mexico",
+      "games": 2,
+      "game_pks": [
+        486918,
+        486923
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/486918/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-nicholls-andy-miller",
+      "names": [
+        "Andy Miller"
+      ],
+      "schools": [
+        "Nicholls"
+      ],
+      "mlb_player_id": 453192,
+      "wbc_name": "Andrew Miller",
+      "year": 2017,
+      "country": "United States",
+      "games": 4,
+      "game_pks": [
+        486914,
+        486933,
+        486935,
+        486940
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/486914/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-nicholls-matt-melancon",
+      "names": [
+        "Matt Melancon"
+      ],
+      "schools": [
+        "Nicholls"
+      ],
+      "mlb_player_id": 453343,
+      "wbc_name": "Mark Melancon",
+      "year": 2017,
+      "country": "United States",
+      "games": 1,
+      "game_pks": [
+        486940
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/486940/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-florida-state-max-williams",
+      "names": [
+        "Max Williams"
+      ],
+      "schools": [
+        "Florida State"
+      ],
+      "mlb_player_id": 456487,
+      "wbc_name": "Matt Williams",
+      "year": 2017,
+      "country": "Australia",
+      "games": 1,
+      "game_pks": [
+        486899
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/486899/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-santa-clara-malcolm-williams",
+      "names": [
+        "Malcolm WILLIAMS",
+        "Malcolm Williams"
+      ],
+      "schools": [
+        "Santa Clara"
+      ],
+      "mlb_player_id": 456487,
+      "wbc_name": "Matt Williams",
+      "year": 2017,
+      "country": "Australia",
+      "games": 1,
+      "game_pks": [
+        486899
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/486899/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-kennesaw-state-james-mcgee",
+      "names": [
+        "James McGee"
+      ],
+      "schools": [
+        "Kennesaw State"
+      ],
+      "mlb_player_id": 459429,
+      "wbc_name": "Jake McGee",
+      "year": 2017,
+      "country": "United States",
+      "games": 2,
+      "game_pks": [
+        486914,
+        486916
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/486914/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-uc-irvine-dailin-lee",
+      "names": [
+        "Dailin Lee"
+      ],
+      "schools": [
+        "UC Irvine"
+      ],
+      "mlb_player_id": 493193,
+      "wbc_name": "Dae-Ho Lee",
+      "year": 2017,
+      "country": "Korea",
+      "games": 3,
+      "game_pks": [
+        486904,
+        486906,
+        486909
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/486904/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-indiana-state-jeremy-martinez",
+      "names": [
+        "Jeremy Martinez"
+      ],
+      "schools": [
+        "Indiana State"
+      ],
+      "mlb_player_id": 493336,
+      "wbc_name": "Jonder Martinez",
+      "year": 2017,
+      "country": "Cuba",
+      "games": 2,
+      "game_pks": [
+        486897,
+        486929
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/486897/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-sam-houston-state-jace-martinez",
+      "names": [
+        "Jace Martinez"
+      ],
+      "schools": [
+        "Sam Houston State"
+      ],
+      "mlb_player_id": 493336,
+      "wbc_name": "Jonder Martinez",
+      "year": 2017,
+      "country": "Cuba",
+      "games": 2,
+      "game_pks": [
+        486897,
+        486929
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/486897/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-unc-wilmington-josh-martinez",
+      "names": [
+        "Josh Martinez"
+      ],
+      "schools": [
+        "UNC Wilmington"
+      ],
+      "mlb_player_id": 493336,
+      "wbc_name": "Jonder Martinez",
+      "year": 2017,
+      "country": "Cuba",
+      "games": 2,
+      "game_pks": [
+        486897,
+        486929
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/486897/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-cincinnati-manny-rodriguez",
+      "names": [
+        "Manny RODRIGUEZ",
+        "Manny Rodriguez"
+      ],
+      "schools": [
+        "Cincinnati"
+      ],
+      "mlb_player_id": 497575,
+      "wbc_name": "Manny Rodriguez",
+      "year": 2017,
+      "country": "Mexico",
+      "games": 2,
+      "game_pks": [
+        486920,
+        486923
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/486920/boxscore",
+      "status": "review_exact_name"
+    },
+    {
+      "college_player_id": "cb-vanderbilt-davis-diaz",
+      "names": [
+        "Davis Diaz"
+      ],
+      "schools": [
+        "Vanderbilt"
+      ],
+      "mlb_player_id": 500765,
+      "wbc_name": "Dayan Díaz",
+      "year": 2017,
+      "country": "Colombia",
+      "games": 2,
+      "game_pks": [
+        486913,
+        486915
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/486913/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-grand-canyon-jake-wong",
+      "names": [
+        "Jake Wong"
+      ],
+      "schools": [
+        "Grand Canyon"
+      ],
+      "mlb_player_id": 502292,
+      "wbc_name": "Joey Wong",
+      "year": 2017,
+      "country": "China",
+      "games": 3,
+      "game_pks": [
+        486898,
+        486900,
+        486902
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/486898/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-michigan-state-dayton-murphy",
+      "names": [
+        "Dayton Murphy"
+      ],
+      "schools": [
+        "Michigan State"
+      ],
+      "mlb_player_id": 502517,
+      "wbc_name": "Daniel Murphy",
+      "year": 2017,
+      "country": "United States",
+      "games": 2,
+      "game_pks": [
+        486912,
+        486935
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/486912/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-ut-martin-shawn-perez",
+      "names": [
+        "Shawn Perez"
+      ],
+      "schools": [
+        "UT Martin"
+      ],
+      "mlb_player_id": 521692,
+      "wbc_name": "Salvador Perez",
+      "year": 2017,
+      "country": "Venezuela",
+      "games": 2,
+      "game_pks": [
+        486919,
+        486921
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/486919/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-byu-carter-smith",
+      "names": [
+        "Carter SMITH"
+      ],
+      "schools": [
+        "BYU"
+      ],
+      "mlb_player_id": 543791,
+      "wbc_name": "Curt Smith",
+      "year": 2017,
+      "country": "Kingdom of the Netherlands",
+      "games": 4,
+      "game_pks": [
+        486906,
+        486907,
+        486926,
+        486939
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/486906/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-florida-state-cam-smith",
+      "names": [
+        "Cam Smith"
+      ],
+      "schools": [
+        "Florida State"
+      ],
+      "mlb_player_id": 543791,
+      "wbc_name": "Curt Smith",
+      "year": 2017,
+      "country": "Kingdom of the Netherlands",
+      "games": 4,
+      "game_pks": [
+        486906,
+        486907,
+        486926,
+        486939
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/486906/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-high-point-christian-smith",
+      "names": [
+        "Christian Smith"
+      ],
+      "schools": [
+        "High Point"
+      ],
+      "mlb_player_id": 543791,
+      "wbc_name": "Curt Smith",
+      "year": 2017,
+      "country": "Kingdom of the Netherlands",
+      "games": 4,
+      "game_pks": [
+        486906,
+        486907,
+        486926,
+        486939
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/486906/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-james-madison-casey-smith",
+      "names": [
+        "Casey Smith"
+      ],
+      "schools": [
+        "James Madison"
+      ],
+      "mlb_player_id": 543791,
+      "wbc_name": "Curt Smith",
+      "year": 2017,
+      "country": "Kingdom of the Netherlands",
+      "games": 4,
+      "game_pks": [
+        486906,
+        486907,
+        486926,
+        486939
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/486906/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-marshall-calin-smith",
+      "names": [
+        "Calin Smith"
+      ],
+      "schools": [
+        "Marshall"
+      ],
+      "mlb_player_id": 543791,
+      "wbc_name": "Curt Smith",
+      "year": 2017,
+      "country": "Kingdom of the Netherlands",
+      "games": 4,
+      "game_pks": [
+        486906,
+        486907,
+        486926,
+        486939
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/486906/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-quinnipiac-christian-smith",
+      "names": [
+        "Christian Smith"
+      ],
+      "schools": [
+        "Quinnipiac"
+      ],
+      "mlb_player_id": 543791,
+      "wbc_name": "Curt Smith",
+      "year": 2017,
+      "country": "Kingdom of the Netherlands",
+      "games": 4,
+      "game_pks": [
+        486906,
+        486907,
+        486926,
+        486939
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/486906/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-st-louis-cole-smith",
+      "names": [
+        "Cole Smith"
+      ],
+      "schools": [
+        "St. Louis"
+      ],
+      "mlb_player_id": 543791,
+      "wbc_name": "Curt Smith",
+      "year": 2017,
+      "country": "Kingdom of the Netherlands",
+      "games": 4,
+      "game_pks": [
+        486906,
+        486907,
+        486926,
+        486939
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/486906/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-alabama-austin-morris",
+      "names": [
+        "Austin Morris"
+      ],
+      "schools": [
+        "Alabama"
+      ],
+      "mlb_player_id": 571963,
+      "wbc_name": "A.J. Morris",
+      "year": 2017,
+      "country": "Italy",
+      "games": 3,
+      "game_pks": [
+        486918,
+        486919,
+        486924
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/486918/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-purdue-mike-bolton-jr",
+      "names": [
+        "Mike Bolton Jr."
+      ],
+      "schools": [
+        "Purdue"
+      ],
+      "mlb_player_id": 592692,
+      "wbc_name": "Mel Rojas Jr.",
+      "year": 2017,
+      "country": "Dominican Republic",
+      "games": 3,
+      "game_pks": [
+        486911,
+        486914,
+        486915
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/486911/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-san-diego-state-cade-martinez",
+      "names": [
+        "Cade MARTINEZ",
+        "Cade Martinez"
+      ],
+      "schools": [
+        "San Diego State"
+      ],
+      "mlb_player_id": 593372,
+      "wbc_name": "Carlos Martinez",
+      "year": 2017,
+      "country": "Dominican Republic",
+      "games": 2,
+      "game_pks": [
+        486911,
+        486932
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/486911/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-little-rock-jerdy-lopez",
+      "names": [
+        "Jerdy Lopez"
+      ],
+      "schools": [
+        "Little Rock"
+      ],
+      "mlb_player_id": 605347,
+      "wbc_name": "Jorge López",
+      "year": 2017,
+      "country": "Puerto Rico",
+      "games": 2,
+      "game_pks": [
+        486920,
+        486939
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/486920/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-duke-jimmy-romano",
+      "names": [
+        "Jimmy Romano"
+      ],
+      "schools": [
+        "Duke"
+      ],
+      "mlb_player_id": 605447,
+      "wbc_name": "Jordan Romano",
+      "year": 2017,
+      "country": "Italy",
+      "games": 2,
+      "game_pks": [
+        486918,
+        486922
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/486918/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-pittsburgh-chris-baker",
+      "names": [
+        "Chris Baker"
+      ],
+      "schools": [
+        "Pittsburgh"
+      ],
+      "mlb_player_id": 607452,
+      "wbc_name": "Corey Baker",
+      "year": 2017,
+      "country": "Israel",
+      "games": 2,
+      "game_pks": [
+        486905,
+        486927
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/486905/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-davidson-adam-katz",
+      "names": [
+        "Adam Katz"
+      ],
+      "schools": [
+        "Davidson"
+      ],
+      "mlb_player_id": 621355,
+      "wbc_name": "Alex Katz",
+      "year": 2017,
+      "country": "Israel",
+      "games": 4,
+      "game_pks": [
+        486904,
+        486908,
+        486927,
+        486930
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/486904/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-tennessee-tech-jorsixt-jimenez",
+      "names": [
+        "Jorsixt Jimenez"
+      ],
+      "schools": [
+        "Tennessee Tech"
+      ],
+      "mlb_player_id": 641729,
+      "wbc_name": "Joe Jiménez",
+      "year": 2017,
+      "country": "Puerto Rico",
+      "games": 4,
+      "game_pks": [
+        486921,
+        486932,
+        486939,
+        486941
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/486921/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-princeton-justin-kim",
+      "names": [
+        "Justin Kim"
+      ],
+      "schools": [
+        "Princeton"
+      ],
+      "mlb_player_id": 673491,
+      "wbc_name": "Jaeho Kim",
+      "year": 2017,
+      "country": "Korea",
+      "games": 2,
+      "game_pks": [
+        486904,
+        486909
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/486904/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-clemson-hudson-lee",
+      "names": [
+        "Hudson Lee"
+      ],
+      "schools": [
+        "Clemson"
+      ],
+      "mlb_player_id": 673495,
+      "wbc_name": "Hyun-seung Lee",
+      "year": 2017,
+      "country": "Korea",
+      "games": 2,
+      "game_pks": [
+        486904,
+        486909
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/486904/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-pacific-ryan-martinez",
+      "names": [
+        "Ryan Martinez"
+      ],
+      "schools": [
+        "Pacific"
+      ],
+      "mlb_player_id": 673510,
+      "wbc_name": "Raidel Martinez",
+      "year": 2017,
+      "country": "Cuba",
+      "games": 1,
+      "game_pks": [
+        486897
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/486897/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-san-francisco-ryan-martinez",
+      "names": [
+        "Ryan MARTINEZ"
+      ],
+      "schools": [
+        "San Francisco"
+      ],
+      "mlb_player_id": 673510,
+      "wbc_name": "Raidel Martinez",
+      "year": 2017,
+      "country": "Cuba",
+      "games": 1,
+      "game_pks": [
+        486897
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/486897/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-san-diego-state-avery-jones",
+      "names": [
+        "Avery JONES"
+      ],
+      "schools": [
+        "San Diego State"
+      ],
+      "mlb_player_id": 116662,
+      "wbc_name": "Andruw Jones",
+      "year": 2013,
+      "country": "Kingdom of the Netherlands",
+      "games": 8,
+      "game_pks": [
+        361259,
+        361261,
+        361262,
+        361277,
+        361279,
+        361280,
+        361281,
+        361289
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/361259/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-cal-baptist-joseph-romero",
+      "names": [
+        "Joseph Romero"
+      ],
+      "schools": [
+        "Cal Baptist"
+      ],
+      "mlb_player_id": 240694,
+      "wbc_name": "J.C. Romero",
+      "year": 2013,
+      "country": "Puerto Rico",
+      "games": 5,
+      "game_pks": [
+        361267,
+        361283,
+        361284,
+        361286,
+        361288
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/361267/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-cal-state-northridge-joshua-romero",
+      "names": [
+        "Joshua Romero"
+      ],
+      "schools": [
+        "Cal State Northridge"
+      ],
+      "mlb_player_id": 240694,
+      "wbc_name": "J.C. Romero",
+      "year": 2013,
+      "country": "Puerto Rico",
+      "games": 5,
+      "game_pks": [
+        361267,
+        361283,
+        361284,
+        361286,
+        361288
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/361267/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-georgia-tech-brett-thomas",
+      "names": [
+        "Brett Thomas"
+      ],
+      "schools": [
+        "Georgia Tech"
+      ],
+      "mlb_player_id": 346801,
+      "wbc_name": "Brad Thomas",
+      "year": 2013,
+      "country": "Australia",
+      "games": 1,
+      "game_pks": [
+        361260
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/361260/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-coastal-carolina-freddy-rodriguez",
+      "names": [
+        "Freddy Rodriguez"
+      ],
+      "schools": [
+        "Coastal Carolina"
+      ],
+      "mlb_player_id": 408061,
+      "wbc_name": "Francisco Rodríguez",
+      "year": 2013,
+      "country": "Venezuela",
+      "games": 2,
+      "game_pks": [
+        361267,
+        361268
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/361267/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-san-diego-aidan-gonzalez",
+      "names": [
+        "Aidan GONZALEZ",
+        "Aidan Gonzalez",
+        "Aídan Gonzalez"
+      ],
+      "schools": [
+        "San Diego"
+      ],
+      "mlb_player_id": 408236,
+      "wbc_name": "Adrián González",
+      "year": 2013,
+      "country": "Mexico",
+      "games": 3,
+      "game_pks": [
+        361270,
+        361272,
+        361273
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/361270/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-south-carolina-brendan-sweeney",
+      "names": [
+        "Brendan Sweeney"
+      ],
+      "schools": [
+        "South Carolina"
+      ],
+      "mlb_player_id": 425789,
+      "wbc_name": "Brian Sweeney",
+      "year": 2013,
+      "country": "Italy",
+      "games": 4,
+      "game_pks": [
+        361271,
+        361274,
+        361282,
+        361284
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/361271/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-san-diego-state-avery-jones",
+      "names": [
+        "Avery JONES"
+      ],
+      "schools": [
+        "San Diego State"
+      ],
+      "mlb_player_id": 430945,
+      "wbc_name": "Adam Jones",
+      "year": 2013,
+      "country": "United States",
+      "games": 6,
+      "game_pks": [
+        361272,
+        361274,
+        361275,
+        361283,
+        361285,
+        361286
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/361272/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-iowa-daniel-wright",
+      "names": [
+        "Daniel Wright"
+      ],
+      "schools": [
+        "Iowa"
+      ],
+      "mlb_player_id": 431151,
+      "wbc_name": "David Wright",
+      "year": 2013,
+      "country": "United States",
+      "games": 4,
+      "game_pks": [
+        361272,
+        361274,
+        361275,
+        361283
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/361272/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-uc-san-diego-emiliano-gonzalez",
+      "names": [
+        "Emiliano Gonzalez"
+      ],
+      "schools": [
+        "UC San Diego"
+      ],
+      "mlb_player_id": 434619,
+      "wbc_name": "Enrique Gonzalez",
+      "year": 2013,
+      "country": "Venezuela",
+      "games": 2,
+      "game_pks": [
+        361264,
+        361267
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/361264/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-pepperdine-raul-salazar",
+      "names": [
+        "Raul SALAZAR"
+      ],
+      "schools": [
+        "Pepperdine"
+      ],
+      "mlb_player_id": 445255,
+      "wbc_name": "Richard Salazar",
+      "year": 2013,
+      "country": "Spain",
+      "games": 1,
+      "game_pks": [
+        361265
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/361265/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-clemson-tristan-smith",
+      "names": [
+        "Tristan Smith"
+      ],
+      "schools": [
+        "Clemson"
+      ],
+      "mlb_player_id": 452738,
+      "wbc_name": "Tim Smith",
+      "year": 2013,
+      "country": "Canada",
+      "games": 3,
+      "game_pks": [
+        361271,
+        361273,
+        361275
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/361271/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-oregon-state-tanner-smith",
+      "names": [
+        "Tanner Smith"
+      ],
+      "schools": [
+        "Miami",
+        "Oregon State"
+      ],
+      "mlb_player_id": 452738,
+      "wbc_name": "Tim Smith",
+      "year": 2013,
+      "country": "Canada",
+      "games": 3,
+      "game_pks": [
+        361271,
+        361273,
+        361275
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/361271/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-oregon-tanner-smith",
+      "names": [
+        "Tanner Smith"
+      ],
+      "schools": [
+        "Oregon"
+      ],
+      "mlb_player_id": 452738,
+      "wbc_name": "Tim Smith",
+      "year": 2013,
+      "country": "Canada",
+      "games": 3,
+      "game_pks": [
+        361271,
+        361273,
+        361275
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/361271/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-presbyterian-tanner-smith",
+      "names": [
+        "Tanner Smith"
+      ],
+      "schools": [
+        "Presbyterian"
+      ],
+      "mlb_player_id": 452738,
+      "wbc_name": "Tim Smith",
+      "year": 2013,
+      "country": "Canada",
+      "games": 3,
+      "game_pks": [
+        361271,
+        361273,
+        361275
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/361271/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-uc-san-diego-emiliano-gonzalez",
+      "names": [
+        "Emiliano Gonzalez"
+      ],
+      "schools": [
+        "UC San Diego"
+      ],
+      "mlb_player_id": 452989,
+      "wbc_name": "Edgar Gonzalez",
+      "year": 2013,
+      "country": "Mexico",
+      "games": 3,
+      "game_pks": [
+        361270,
+        361272,
+        361273
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/361270/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-uc-san-diego-emiliano-gonzalez",
+      "names": [
+        "Emiliano Gonzalez"
+      ],
+      "schools": [
+        "UC San Diego"
+      ],
+      "mlb_player_id": 453583,
+      "wbc_name": "Eric Gonzalez",
+      "year": 2013,
+      "country": "Spain",
+      "games": 2,
+      "game_pks": [
+        361265,
+        361268
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/361265/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-florida-state-max-williams",
+      "names": [
+        "Max Williams"
+      ],
+      "schools": [
+        "Florida State"
+      ],
+      "mlb_player_id": 456487,
+      "wbc_name": "Matt Williams",
+      "year": 2013,
+      "country": "Australia",
+      "games": 1,
+      "game_pks": [
+        361260
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/361260/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-santa-clara-malcolm-williams",
+      "names": [
+        "Malcolm WILLIAMS",
+        "Malcolm Williams"
+      ],
+      "schools": [
+        "Santa Clara"
+      ],
+      "mlb_player_id": 456487,
+      "wbc_name": "Matt Williams",
+      "year": 2013,
+      "country": "Australia",
+      "games": 1,
+      "game_pks": [
+        361260
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/361260/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-grand-canyon-adrian-torres",
+      "names": [
+        "Adrian Torres"
+      ],
+      "schools": [
+        "Grand Canyon"
+      ],
+      "mlb_player_id": 456776,
+      "wbc_name": "Alex Torres",
+      "year": 2013,
+      "country": "Venezuela",
+      "games": 1,
+      "game_pks": [
+        361268
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/361268/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-long-beach-state-antonio-torres",
+      "names": [
+        "Antonio Torres"
+      ],
+      "schools": [
+        "Long Beach State"
+      ],
+      "mlb_player_id": 456776,
+      "wbc_name": "Alex Torres",
+      "year": 2013,
+      "country": "Venezuela",
+      "games": 1,
+      "game_pks": [
+        361268
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/361268/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-uc-irvine-cooper-robinson",
+      "names": [
+        "Cooper Robinson"
+      ],
+      "schools": [
+        "UC Irvine"
+      ],
+      "mlb_player_id": 460101,
+      "wbc_name": "Chris Robinson",
+      "year": 2013,
+      "country": "Canada",
+      "games": 3,
+      "game_pks": [
+        361271,
+        361273,
+        361275
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/361271/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-uc-san-diego-crew-robinson",
+      "names": [
+        "Crew Robinson"
+      ],
+      "schools": [
+        "BYU",
+        "UC San Diego"
+      ],
+      "mlb_player_id": 460101,
+      "wbc_name": "Chris Robinson",
+      "year": 2013,
+      "country": "Canada",
+      "games": 3,
+      "game_pks": [
+        361271,
+        361273,
+        361275
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/361271/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-san-diego-aidan-gonzalez",
+      "names": [
+        "Aidan GONZALEZ",
+        "Aidan Gonzalez",
+        "Aídan Gonzalez"
+      ],
+      "schools": [
+        "San Diego"
+      ],
+      "mlb_player_id": 462413,
+      "wbc_name": "Andy González",
+      "year": 2013,
+      "country": "Puerto Rico",
+      "games": 8,
+      "game_pks": [
+        361265,
+        361267,
+        361283,
+        361284,
+        361286,
+        361287,
+        361288,
+        361290
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/361265/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-cal-state-fullerton-jj-cruz",
+      "names": [
+        "JJ Cruz"
+      ],
+      "schools": [
+        "Cal State Fullerton"
+      ],
+      "mlb_player_id": 464391,
+      "wbc_name": "Jose Cruz",
+      "year": 2013,
+      "country": "Spain",
+      "games": 1,
+      "game_pks": [
+        361268
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/361268/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-purdue-thomas-green",
+      "names": [
+        "Thomas Green"
+      ],
+      "schools": [
+        "Purdue"
+      ],
+      "mlb_player_id": 488919,
+      "wbc_name": "Taylor Green",
+      "year": 2013,
+      "country": "Canada",
+      "games": 3,
+      "game_pks": [
+        361271,
+        361273,
+        361275
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/361271/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-uc-irvine-dailin-lee",
+      "names": [
+        "Dailin Lee"
+      ],
+      "schools": [
+        "UC Irvine"
+      ],
+      "mlb_player_id": 493193,
+      "wbc_name": "Dae-Ho Lee",
+      "year": 2013,
+      "country": "Korea",
+      "games": 3,
+      "game_pks": [
+        361259,
+        361260,
+        361263
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/361259/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-notre-dame-jayce-lee",
+      "names": [
+        "Jayce Lee"
+      ],
+      "schools": [
+        "Notre Dame"
+      ],
+      "mlb_player_id": 493195,
+      "wbc_name": "Jin Young Lee",
+      "year": 2013,
+      "country": "Korea",
+      "games": 2,
+      "game_pks": [
+        361259,
+        361260
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/361259/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-vcu-jacob-lee",
+      "names": [
+        "Jacob Lee"
+      ],
+      "schools": [
+        "VCU"
+      ],
+      "mlb_player_id": 493195,
+      "wbc_name": "Jin Young Lee",
+      "year": 2013,
+      "country": "Korea",
+      "games": 2,
+      "game_pks": [
+        361259,
+        361260
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/361259/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-ut-martin-shawn-perez",
+      "names": [
+        "Shawn Perez"
+      ],
+      "schools": [
+        "UT Martin"
+      ],
+      "mlb_player_id": 503941,
+      "wbc_name": "Sergio Perez",
+      "year": 2013,
+      "country": "Spain",
+      "games": 1,
+      "game_pks": [
+        361265
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/361265/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-ut-martin-shawn-perez",
+      "names": [
+        "Shawn Perez"
+      ],
+      "schools": [
+        "UT Martin"
+      ],
+      "mlb_player_id": 521692,
+      "wbc_name": "Salvador Perez",
+      "year": 2013,
+      "country": "Venezuela",
+      "games": 2,
+      "game_pks": [
+        361267,
+        361268
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/361267/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-byu-carter-smith",
+      "names": [
+        "Carter SMITH"
+      ],
+      "schools": [
+        "BYU"
+      ],
+      "mlb_player_id": 543791,
+      "wbc_name": "Curt Smith",
+      "year": 2013,
+      "country": "Kingdom of the Netherlands",
+      "games": 8,
+      "game_pks": [
+        361259,
+        361261,
+        361262,
+        361277,
+        361279,
+        361280,
+        361281,
+        361289
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/361259/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-florida-state-cam-smith",
+      "names": [
+        "Cam Smith"
+      ],
+      "schools": [
+        "Florida State"
+      ],
+      "mlb_player_id": 543791,
+      "wbc_name": "Curt Smith",
+      "year": 2013,
+      "country": "Kingdom of the Netherlands",
+      "games": 8,
+      "game_pks": [
+        361259,
+        361261,
+        361262,
+        361277,
+        361279,
+        361280,
+        361281,
+        361289
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/361259/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-high-point-christian-smith",
+      "names": [
+        "Christian Smith"
+      ],
+      "schools": [
+        "High Point"
+      ],
+      "mlb_player_id": 543791,
+      "wbc_name": "Curt Smith",
+      "year": 2013,
+      "country": "Kingdom of the Netherlands",
+      "games": 8,
+      "game_pks": [
+        361259,
+        361261,
+        361262,
+        361277,
+        361279,
+        361280,
+        361281,
+        361289
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/361259/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-james-madison-casey-smith",
+      "names": [
+        "Casey Smith"
+      ],
+      "schools": [
+        "James Madison"
+      ],
+      "mlb_player_id": 543791,
+      "wbc_name": "Curt Smith",
+      "year": 2013,
+      "country": "Kingdom of the Netherlands",
+      "games": 8,
+      "game_pks": [
+        361259,
+        361261,
+        361262,
+        361277,
+        361279,
+        361280,
+        361281,
+        361289
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/361259/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-marshall-calin-smith",
+      "names": [
+        "Calin Smith"
+      ],
+      "schools": [
+        "Marshall"
+      ],
+      "mlb_player_id": 543791,
+      "wbc_name": "Curt Smith",
+      "year": 2013,
+      "country": "Kingdom of the Netherlands",
+      "games": 8,
+      "game_pks": [
+        361259,
+        361261,
+        361262,
+        361277,
+        361279,
+        361280,
+        361281,
+        361289
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/361259/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-quinnipiac-christian-smith",
+      "names": [
+        "Christian Smith"
+      ],
+      "schools": [
+        "Quinnipiac"
+      ],
+      "mlb_player_id": 543791,
+      "wbc_name": "Curt Smith",
+      "year": 2013,
+      "country": "Kingdom of the Netherlands",
+      "games": 8,
+      "game_pks": [
+        361259,
+        361261,
+        361262,
+        361277,
+        361279,
+        361280,
+        361281,
+        361289
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/361259/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-st-louis-cole-smith",
+      "names": [
+        "Cole Smith"
+      ],
+      "schools": [
+        "St. Louis"
+      ],
+      "mlb_player_id": 543791,
+      "wbc_name": "Curt Smith",
+      "year": 2013,
+      "country": "Kingdom of the Netherlands",
+      "games": 8,
+      "game_pks": [
+        361259,
+        361261,
+        361262,
+        361277,
+        361279,
+        361280,
+        361281,
+        361289
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/361259/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-cal-state-fullerton-waldie-perez",
+      "names": [
+        "Waldie Perez"
+      ],
+      "schools": [
+        "Cal State Fullerton"
+      ],
+      "mlb_player_id": 547980,
+      "wbc_name": "Wilber Perez",
+      "year": 2013,
+      "country": "Cuba",
+      "games": 1,
+      "game_pks": [
+        361257
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/361257/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-san-diego-state-aidan-russell",
+      "names": [
+        "Aidan RUSSELL"
+      ],
+      "schools": [
+        "San Diego State"
+      ],
+      "mlb_player_id": 599696,
+      "wbc_name": "Andrew Russell",
+      "year": 2013,
+      "country": "Australia",
+      "games": 2,
+      "game_pks": [
+        361258,
+        361262
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/361258/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-tennessee-aj-russell",
+      "names": [
+        "Aj Russell"
+      ],
+      "schools": [
+        "Tennessee"
+      ],
+      "mlb_player_id": 599696,
+      "wbc_name": "Andrew Russell",
+      "year": 2013,
+      "country": "Australia",
+      "games": 2,
+      "game_pks": [
+        361258,
+        361262
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/361258/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-san-diego-state-jorge-fernandez",
+      "names": [
+        "Jorge Fernandez"
+      ],
+      "schools": [
+        "San Diego State"
+      ],
+      "mlb_player_id": 628336,
+      "wbc_name": "José Miguel Fernández",
+      "year": 2013,
+      "country": "Cuba",
+      "games": 6,
+      "game_pks": [
+        361253,
+        361255,
+        361257,
+        361277,
+        361278,
+        361280
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/361253/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-san-diego-state-alex-rodriguez",
+      "names": [
+        "Alex RODRIGUEZ"
+      ],
+      "schools": [
+        "San Diego State"
+      ],
+      "mlb_player_id": 628347,
+      "wbc_name": "Alexander Rodriguez",
+      "year": 2013,
+      "country": "Cuba",
+      "games": 1,
+      "game_pks": [
+        361255
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/361255/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-texas-adrian-rodriguez",
+      "names": [
+        "Adrian Rodriguez"
+      ],
+      "schools": [
+        "Texas"
+      ],
+      "mlb_player_id": 628347,
+      "wbc_name": "Alexander Rodriguez",
+      "year": 2013,
+      "country": "Cuba",
+      "games": 1,
+      "game_pks": [
+        361255
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/361255/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-harvard-jordan-kang",
+      "names": [
+        "Jordan Kang"
+      ],
+      "schools": [
+        "Harvard"
+      ],
+      "mlb_player_id": 628356,
+      "wbc_name": "Jung Ho Kang",
+      "year": 2013,
+      "country": "Korea",
+      "games": 3,
+      "game_pks": [
+        361259,
+        361260,
+        361263
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/361259/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-miami-renzo-gonzalez",
+      "names": [
+        "Renzo Gonzalez"
+      ],
+      "schools": [
+        "Miami"
+      ],
+      "mlb_player_id": 630269,
+      "wbc_name": "Raul Gonzalez",
+      "year": 2013,
+      "country": "Cuba",
+      "games": 5,
+      "game_pks": [
+        361253,
+        361255,
+        361257,
+        361277,
+        361280
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/361253/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-vanguard-anthony-castillo",
+      "names": [
+        "Anthony Castillo"
+      ],
+      "schools": [
+        "Vanguard"
+      ],
+      "mlb_player_id": 112107,
+      "wbc_name": "Alberto Castillo",
+      "year": 2009,
+      "country": "Dominican Republic",
+      "games": 1,
+      "game_pks": [
+        251347
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/251347/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-east-tennessee-state-cooper-jones",
+      "names": [
+        "Cooper Jones"
+      ],
+      "schools": [
+        "East Tennessee State"
+      ],
+      "mlb_player_id": 116706,
+      "wbc_name": "Chipper Jones",
+      "year": 2009,
+      "country": "United States",
+      "games": 3,
+      "game_pks": [
+        251341,
+        251343,
+        251360
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/251341/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-georgia-charlie-jones",
+      "names": [
+        "Charlie Jones"
+      ],
+      "schools": [
+        "Georgia",
+        "Kennesaw State"
+      ],
+      "mlb_player_id": 116706,
+      "wbc_name": "Chipper Jones",
+      "year": 2009,
+      "country": "United States",
+      "games": 3,
+      "game_pks": [
+        251341,
+        251343,
+        251360
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/251341/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-georgia-tech-cam-jones",
+      "names": [
+        "Cam Jones"
+      ],
+      "schools": [
+        "Georgia Tech"
+      ],
+      "mlb_player_id": 116706,
+      "wbc_name": "Chipper Jones",
+      "year": 2009,
+      "country": "United States",
+      "games": 3,
+      "game_pks": [
+        251341,
+        251343,
+        251360
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/251341/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-south-carolina-caleb-jones",
+      "names": [
+        "Caleb Jones"
+      ],
+      "schools": [
+        "South Carolina"
+      ],
+      "mlb_player_id": 116706,
+      "wbc_name": "Chipper Jones",
+      "year": 2009,
+      "country": "United States",
+      "games": 3,
+      "game_pks": [
+        251341,
+        251343,
+        251360
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/251341/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-arkansas-justin-thomas-jr",
+      "names": [
+        "Justin Thomas Jr."
+      ],
+      "schools": [
+        "Arkansas"
+      ],
+      "mlb_player_id": 150020,
+      "wbc_name": "Jerry Hairston Jr.",
+      "year": 2009,
+      "country": "Mexico",
+      "games": 4,
+      "game_pks": [
+        251336,
+        251337,
+        251339,
+        251353
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/251336/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-clemson-jason-fultz-jr",
+      "names": [
+        "Jason Fultz Jr."
+      ],
+      "schools": [
+        "Clemson"
+      ],
+      "mlb_player_id": 150020,
+      "wbc_name": "Jerry Hairston Jr.",
+      "year": 2009,
+      "country": "Mexico",
+      "games": 4,
+      "game_pks": [
+        251336,
+        251337,
+        251339,
+        251353
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/251336/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-south-carolina-jarvis-evans-jr",
+      "names": [
+        "Jarvis Evans Jr."
+      ],
+      "schools": [
+        "South Carolina"
+      ],
+      "mlb_player_id": 150020,
+      "wbc_name": "Jerry Hairston Jr.",
+      "year": 2009,
+      "country": "Mexico",
+      "games": 4,
+      "game_pks": [
+        251336,
+        251337,
+        251339,
+        251353
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/251336/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-cal-baptist-joseph-romero",
+      "names": [
+        "Joseph Romero"
+      ],
+      "schools": [
+        "Cal Baptist"
+      ],
+      "mlb_player_id": 240694,
+      "wbc_name": "J.C. Romero",
+      "year": 2009,
+      "country": "Puerto Rico",
+      "games": 3,
+      "game_pks": [
+        251350,
+        251362,
+        251363
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/251350/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-cal-state-northridge-joshua-romero",
+      "names": [
+        "Joshua Romero"
+      ],
+      "schools": [
+        "Cal State Northridge"
+      ],
+      "mlb_player_id": 240694,
+      "wbc_name": "J.C. Romero",
+      "year": 2009,
+      "country": "Puerto Rico",
+      "games": 3,
+      "game_pks": [
+        251350,
+        251362,
+        251363
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/251350/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-georgia-tech-brett-thomas",
+      "names": [
+        "Brett Thomas"
+      ],
+      "schools": [
+        "Georgia Tech"
+      ],
+      "mlb_player_id": 346801,
+      "wbc_name": "Brad Thomas",
+      "year": 2009,
+      "country": "Australia",
+      "games": 1,
+      "game_pks": [
+        251338
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/251338/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-coastal-carolina-freddy-rodriguez",
+      "names": [
+        "Freddy Rodriguez"
+      ],
+      "schools": [
+        "Coastal Carolina"
+      ],
+      "mlb_player_id": 408061,
+      "wbc_name": "Francisco Rodríguez",
+      "year": 2009,
+      "country": "Venezuela",
+      "games": 5,
+      "game_pks": [
+        251345,
+        251346,
+        251359,
+        251362,
+        251364
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/251345/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-san-diego-aidan-gonzalez",
+      "names": [
+        "Aidan GONZALEZ",
+        "Aidan Gonzalez",
+        "Aídan Gonzalez"
+      ],
+      "schools": [
+        "San Diego"
+      ],
+      "mlb_player_id": 408236,
+      "wbc_name": "Adrián González",
+      "year": 2009,
+      "country": "Mexico",
+      "games": 6,
+      "game_pks": [
+        251336,
+        251337,
+        251339,
+        251340,
+        251353,
+        251355
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/251336/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-little-rock-jerdy-lopez",
+      "names": [
+        "Jerdy Lopez"
+      ],
+      "schools": [
+        "Little Rock"
+      ],
+      "mlb_player_id": 425657,
+      "wbc_name": "Javier López",
+      "year": 2009,
+      "country": "Puerto Rico",
+      "games": 3,
+      "game_pks": [
+        251352,
+        251360,
+        251363
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/251352/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-western-kentucky-carlos-vasquez",
+      "names": [
+        "Carlos Vasquez"
+      ],
+      "schools": [
+        "Western Kentucky"
+      ],
+      "mlb_player_id": 430595,
+      "wbc_name": "Carlos Vasquez",
+      "year": 2009,
+      "country": "Venezuela",
+      "games": 6,
+      "game_pks": [
+        251343,
+        251346,
+        251359,
+        251362,
+        251364,
+        251365
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/251343/boxscore",
+      "status": "review_exact_name"
+    },
+    {
+      "college_player_id": "cb-utah-chandler-anderson",
+      "names": [
+        "Chandler Anderson"
+      ],
+      "schools": [
+        "Utah"
+      ],
+      "mlb_player_id": 430940,
+      "wbc_name": "Craig Anderson",
+      "year": 2009,
+      "country": "Australia",
+      "games": 1,
+      "game_pks": [
+        251336
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/251336/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-wichita-state-caleb-anderson",
+      "names": [
+        "Caleb Anderson"
+      ],
+      "schools": [
+        "Wichita State"
+      ],
+      "mlb_player_id": 430940,
+      "wbc_name": "Craig Anderson",
+      "year": 2009,
+      "country": "Australia",
+      "games": 1,
+      "game_pks": [
+        251336
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/251336/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-little-rock-jerdy-lopez",
+      "names": [
+        "Jerdy Lopez"
+      ],
+      "schools": [
+        "Little Rock"
+      ],
+      "mlb_player_id": 430946,
+      "wbc_name": "Jose Lopez",
+      "year": 2009,
+      "country": "Venezuela",
+      "games": 7,
+      "game_pks": [
+        251342,
+        251343,
+        251345,
+        251359,
+        251362,
+        251364,
+        251365
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/251342/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-iowa-daniel-wright",
+      "names": [
+        "Daniel Wright"
+      ],
+      "schools": [
+        "Iowa"
+      ],
+      "mlb_player_id": 431151,
+      "wbc_name": "David Wright",
+      "year": 2009,
+      "country": "United States",
+      "games": 8,
+      "game_pks": [
+        251341,
+        251343,
+        251346,
+        251360,
+        251361,
+        251363,
+        251364,
+        251366
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/251341/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-uc-san-diego-emiliano-gonzalez",
+      "names": [
+        "Emiliano Gonzalez"
+      ],
+      "schools": [
+        "UC San Diego"
+      ],
+      "mlb_player_id": 434619,
+      "wbc_name": "Enrique Gonzalez",
+      "year": 2009,
+      "country": "Venezuela",
+      "games": 3,
+      "game_pks": [
+        251345,
+        251362,
+        251365
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/251345/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-notre-dame-andrew-graham",
+      "names": [
+        "Andrew Graham"
+      ],
+      "schools": [
+        "Notre Dame"
+      ],
+      "mlb_player_id": 444363,
+      "wbc_name": "Andrew Graham",
+      "year": 2009,
+      "country": "Australia",
+      "games": 3,
+      "game_pks": [
+        251336,
+        251338,
+        251339
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/251336/boxscore",
+      "status": "review_exact_name"
+    },
+    {
+      "college_player_id": "cb-uc-san-diego-emiliano-gonzalez",
+      "names": [
+        "Emiliano Gonzalez"
+      ],
+      "schools": [
+        "UC San Diego"
+      ],
+      "mlb_player_id": 452989,
+      "wbc_name": "Edgar Gonzalez",
+      "year": 2009,
+      "country": "Mexico",
+      "games": 3,
+      "game_pks": [
+        251336,
+        251339,
+        251353
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/251336/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-san-diego-aidan-gonzalez",
+      "names": [
+        "Aidan GONZALEZ",
+        "Aidan Gonzalez",
+        "Aídan Gonzalez"
+      ],
+      "schools": [
+        "San Diego"
+      ],
+      "mlb_player_id": 462413,
+      "wbc_name": "Andy González",
+      "year": 2009,
+      "country": "Puerto Rico",
+      "games": 4,
+      "game_pks": [
+        251348,
+        251350,
+        251352,
+        251363
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/251348/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-cal-state-fullerton-christian-rodriguez",
+      "names": [
+        "Christian Rodriguez"
+      ],
+      "schools": [
+        "Cal State Fullerton"
+      ],
+      "mlb_player_id": 470484,
+      "wbc_name": "Concepcion Rodriguez",
+      "year": 2009,
+      "country": "Panama",
+      "games": 2,
+      "game_pks": [
+        251348,
+        251349
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/251348/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-florida-christian-rodriguez",
+      "names": [
+        "Christian Rodriguez"
+      ],
+      "schools": [
+        "Florida"
+      ],
+      "mlb_player_id": 470484,
+      "wbc_name": "Concepcion Rodriguez",
+      "year": 2009,
+      "country": "Panama",
+      "games": 2,
+      "game_pks": [
+        251348,
+        251349
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/251348/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-coastal-carolina-freddy-rodriguez",
+      "names": [
+        "Freddy Rodriguez"
+      ],
+      "schools": [
+        "Coastal Carolina"
+      ],
+      "mlb_player_id": 477557,
+      "wbc_name": "Francisco Rodriguez",
+      "year": 2009,
+      "country": "Mexico",
+      "games": 2,
+      "game_pks": [
+        251336,
+        251355
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/251336/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-notre-dame-jayce-lee",
+      "names": [
+        "Jayce Lee"
+      ],
+      "schools": [
+        "Notre Dame"
+      ],
+      "mlb_player_id": 493184,
+      "wbc_name": "Jong Wook Lee",
+      "year": 2009,
+      "country": "Korea",
+      "games": 9,
+      "game_pks": [
+        251330,
+        251332,
+        251333,
+        251334,
+        251353,
+        251356,
+        251358,
+        251365,
+        251367
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/251330/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-vcu-jacob-lee",
+      "names": [
+        "Jacob Lee"
+      ],
+      "schools": [
+        "VCU"
+      ],
+      "mlb_player_id": 493184,
+      "wbc_name": "Jong Wook Lee",
+      "year": 2009,
+      "country": "Korea",
+      "games": 9,
+      "game_pks": [
+        251330,
+        251332,
+        251333,
+        251334,
+        251353,
+        251356,
+        251358,
+        251365,
+        251367
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/251330/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-uc-irvine-dailin-lee",
+      "names": [
+        "Dailin Lee"
+      ],
+      "schools": [
+        "UC Irvine"
+      ],
+      "mlb_player_id": 493193,
+      "wbc_name": "Dae-Ho Lee",
+      "year": 2009,
+      "country": "Korea",
+      "games": 9,
+      "game_pks": [
+        251330,
+        251332,
+        251333,
+        251334,
+        251353,
+        251356,
+        251358,
+        251365,
+        251367
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/251330/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-notre-dame-jayce-lee",
+      "names": [
+        "Jayce Lee"
+      ],
+      "schools": [
+        "Notre Dame"
+      ],
+      "mlb_player_id": 493195,
+      "wbc_name": "Jin Young Lee",
+      "year": 2009,
+      "country": "Korea",
+      "games": 9,
+      "game_pks": [
+        251330,
+        251332,
+        251333,
+        251334,
+        251353,
+        251356,
+        251358,
+        251365,
+        251367
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/251330/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-vcu-jacob-lee",
+      "names": [
+        "Jacob Lee"
+      ],
+      "schools": [
+        "VCU"
+      ],
+      "mlb_player_id": 493195,
+      "wbc_name": "Jin Young Lee",
+      "year": 2009,
+      "country": "Korea",
+      "games": 9,
+      "game_pks": [
+        251330,
+        251332,
+        251333,
+        251334,
+        251353,
+        251356,
+        251358,
+        251365,
+        251367
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/251330/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-byu-luke-anderson",
+      "names": [
+        "Luke ANDERSON",
+        "Luke Anderson"
+      ],
+      "schools": [
+        "BYU"
+      ],
+      "mlb_player_id": 493306,
+      "wbc_name": "Leslie Anderson",
+      "year": 2009,
+      "country": "Cuba",
+      "games": 6,
+      "game_pks": [
+        251335,
+        251338,
+        251340,
+        251354,
+        251355,
+        251357
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/251335/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-cal-state-fullerton-landon-anderson",
+      "names": [
+        "L. Anderson",
+        "Landon Anderson"
+      ],
+      "schools": [
+        "Cal State Fullerton"
+      ],
+      "mlb_player_id": 493306,
+      "wbc_name": "Leslie Anderson",
+      "year": 2009,
+      "country": "Cuba",
+      "games": 6,
+      "game_pks": [
+        251335,
+        251338,
+        251340,
+        251354,
+        251355,
+        251357
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/251335/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-byu-carter-smith",
+      "names": [
+        "Carter SMITH"
+      ],
+      "schools": [
+        "BYU"
+      ],
+      "mlb_player_id": 543791,
+      "wbc_name": "Curt Smith",
+      "year": 2009,
+      "country": "Kingdom of the Netherlands",
+      "games": 4,
+      "game_pks": [
+        251351,
+        251352,
+        251359,
+        251361
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/251351/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-florida-state-cam-smith",
+      "names": [
+        "Cam Smith"
+      ],
+      "schools": [
+        "Florida State"
+      ],
+      "mlb_player_id": 543791,
+      "wbc_name": "Curt Smith",
+      "year": 2009,
+      "country": "Kingdom of the Netherlands",
+      "games": 4,
+      "game_pks": [
+        251351,
+        251352,
+        251359,
+        251361
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/251351/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-high-point-christian-smith",
+      "names": [
+        "Christian Smith"
+      ],
+      "schools": [
+        "High Point"
+      ],
+      "mlb_player_id": 543791,
+      "wbc_name": "Curt Smith",
+      "year": 2009,
+      "country": "Kingdom of the Netherlands",
+      "games": 4,
+      "game_pks": [
+        251351,
+        251352,
+        251359,
+        251361
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/251351/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-james-madison-casey-smith",
+      "names": [
+        "Casey Smith"
+      ],
+      "schools": [
+        "James Madison"
+      ],
+      "mlb_player_id": 543791,
+      "wbc_name": "Curt Smith",
+      "year": 2009,
+      "country": "Kingdom of the Netherlands",
+      "games": 4,
+      "game_pks": [
+        251351,
+        251352,
+        251359,
+        251361
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/251351/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-marshall-calin-smith",
+      "names": [
+        "Calin Smith"
+      ],
+      "schools": [
+        "Marshall"
+      ],
+      "mlb_player_id": 543791,
+      "wbc_name": "Curt Smith",
+      "year": 2009,
+      "country": "Kingdom of the Netherlands",
+      "games": 4,
+      "game_pks": [
+        251351,
+        251352,
+        251359,
+        251361
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/251351/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-quinnipiac-christian-smith",
+      "names": [
+        "Christian Smith"
+      ],
+      "schools": [
+        "Quinnipiac"
+      ],
+      "mlb_player_id": 543791,
+      "wbc_name": "Curt Smith",
+      "year": 2009,
+      "country": "Kingdom of the Netherlands",
+      "games": 4,
+      "game_pks": [
+        251351,
+        251352,
+        251359,
+        251361
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/251351/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-st-louis-cole-smith",
+      "names": [
+        "Cole Smith"
+      ],
+      "schools": [
+        "St. Louis"
+      ],
+      "mlb_player_id": 543791,
+      "wbc_name": "Curt Smith",
+      "year": 2009,
+      "country": "Kingdom of the Netherlands",
+      "games": 4,
+      "game_pks": [
+        251351,
+        251352,
+        251359,
+        251361
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/251351/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-arizona-ryan-holgate",
+      "names": [
+        "Ryan Holgate"
+      ],
+      "schools": [
+        "Arizona"
+      ],
+      "mlb_player_id": 547916,
+      "wbc_name": "Richard Holgate",
+      "year": 2009,
+      "country": "South Africa",
+      "games": 1,
+      "game_pks": [
+        251337
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/251337/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-notre-dame-jayce-lee",
+      "names": [
+        "Jayce Lee"
+      ],
+      "schools": [
+        "Notre Dame"
+      ],
+      "mlb_player_id": 547938,
+      "wbc_name": "Jae Woo Lee",
+      "year": 2009,
+      "country": "Korea",
+      "games": 2,
+      "game_pks": [
+        251332,
+        251358
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/251332/boxscore",
+      "status": "review_initial_surname"
+    },
+    {
+      "college_player_id": "cb-vcu-jacob-lee",
+      "names": [
+        "Jacob Lee"
+      ],
+      "schools": [
+        "VCU"
+      ],
+      "mlb_player_id": 547938,
+      "wbc_name": "Jae Woo Lee",
+      "year": 2009,
+      "country": "Korea",
+      "games": 2,
+      "game_pks": [
+        251332,
+        251358
+      ],
+      "source_url": "https://statsapi.mlb.com/api/v1/game/251332/boxscore",
+      "status": "review_initial_surname"
+    }
+  ],
   "errors": [
     {
-      "year": 2026,
-      "error": "2026: expected 47 completed tournament games, found 1; inspect source before claiming coverage"
-    },
-    {
-      "year": 2023,
-      "error": "2023: expected 47 completed tournament games, found 1; inspect source before claiming coverage"
-    },
-    {
-      "year": 2017,
-      "error": "2017: expected 40 completed tournament games, found 1; inspect source before claiming coverage"
-    },
-    {
-      "year": 2013,
-      "error": "2013: expected 39 completed tournament games, found 1; inspect source before claiming coverage"
-    },
-    {
-      "year": 2009,
-      "error": "2009: expected 39 completed tournament games, found 1; inspect source before claiming coverage"
-    },
-    {
       "year": 2006,
-      "error": "2006: expected 39 completed tournament games, found 1; inspect source before claiming coverage"
+      "error": "'fullName'"
     }
   ]
 }

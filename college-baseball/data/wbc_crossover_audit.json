@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "source": "Official MLB Stats API WBC schedule and final game box scores",
+  "archive_players": 5173,
+  "years": {
+    "2026": {
+      "status": "incomplete"
+    },
+    "2023": {
+      "status": "incomplete"
+    },
+    "2017": {
+      "status": "incomplete"
+    },
+    "2013": {
+      "status": "incomplete"
+    },
+    "2009": {
+      "status": "incomplete"
+    },
+    "2006": {
+      "status": "incomplete"
+    }
+  },
+  "candidates": [],
+  "errors": [
+    {
+      "year": 2026,
+      "error": "2026: expected 47 completed tournament games, found 1; inspect source before claiming coverage"
+    },
+    {
+      "year": 2023,
+      "error": "2023: expected 47 completed tournament games, found 1; inspect source before claiming coverage"
+    },
+    {
+      "year": 2017,
+      "error": "2017: expected 40 completed tournament games, found 1; inspect source before claiming coverage"
+    },
+    {
+      "year": 2013,
+      "error": "2013: expected 39 completed tournament games, found 1; inspect source before claiming coverage"
+    },
+    {
+      "year": 2009,
+      "error": "2009: expected 39 completed tournament games, found 1; inspect source before claiming coverage"
+    },
+    {
+      "year": 2006,
+      "error": "2006: expected 39 completed tournament games, found 1; inspect source before claiming coverage"
+    }
+  ]
+}

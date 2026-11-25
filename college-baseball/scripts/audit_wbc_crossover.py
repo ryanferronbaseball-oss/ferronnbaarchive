@@ -87,15 +87,41 @@ def game_players(g):
 report={"version":1,"source":"Official MLB Stats API WBC schedule and final game box scores","archive_players":len(players),"years":{},"candidates":[],"errors":[]}
 for year,expected in YEARS.items():
     try:
-        schedule=get("schedule",sportId=51,gameType="W",startDate=f"{year}-03-01",endDate=f"{year}-03-31")
-        games={g["gamePk"]:g for d in schedule["dates"] for g in d["games"] if g.get("status",{}).get("abstractGameState")=="Final"}
-        if len(games)!=expected: raise ValueError(f"{year}: expected {expected} completed tournament games, found {len(games)}; inspect source before claiming coverage")
+        # W denotes the championship round, not the entire WBC tournament.
+        # Discover the tournament league from its metadata and query all game types.
+        params={"sportId":51,"startDate":f"{year}-03-01","endDate":f"{year}-03-31"}
+        probes=[]
+        leagues=get("league",sportId=51,season=year).get("leagues",[])
+        wbc_leagues=[x["id"] for x in leagues if "world baseball classic" in x.get("name","").lower()]
+        for lid in dict.fromkeys(wbc_leagues+[160]):
+            for extra in ({},{"gameTypes":"R,F,D,L,W,P"}):
+                probes.append({**params,"leagueId":lid,**extra})
+        probes.extend([params,{**params,"gameTypes":"R,F,D,L,W,P"},{**params,"gameType":"R,F,D,L,W,P"}])
+        games={}
+        diagnostics=[]
+        # Schedule series descriptions identify WBC games without assuming that
+        # every international fixture is a tournament game.
+        for query in probes:
+            try:
+                schedule=get("schedule",**query)
+                finals={g["gamePk"]:g for d in schedule.get("dates",[]) for g in d["games"] if g.get("status",{}).get("abstractGameState")=="Final"}
+                marked={pk:g for pk,g in finals.items() if ("world baseball classic" in (g.get("seriesDescription") or "").lower() or "wbc" in (g.get("seriesDescription") or "").lower()) and "qualif" not in (g.get("seriesDescription") or "").lower() and "exhibition" not in (g.get("seriesDescription") or "").lower() and g.get("gameType") not in ("E","S")}
+                scoped={pk:g for pk,g in finals.items() if g.get("gameType") not in ("E","S") and "qualif" not in (g.get("seriesDescription") or "").lower() and "exhibition" not in (g.get("seriesDescription") or "").lower()}
+                diagnostics.append({"query":query,"finals":len(finals),"marked":len(marked),"scoped":len(scoped),"types":sorted(set(g.get("gameType","") for g in finals.values())),"series":sorted(set(g.get("seriesDescription") or "" for g in finals.values()))})
+                if len(marked)==expected:
+                    games=marked; break
+                if query.get("leagueId") in wbc_leagues and len(scoped)==expected:
+                    games=scoped; break
+            except Exception as exc:
+                diagnostics.append({"query":query,"error":str(exc)})
+        report["years"][str(year)]={"status":"probing","schedule_diagnostics":diagnostics}
+        if len(games)!=expected: raise ValueError(f"{year}: expected {expected} completed tournament games; schedule probes: {json.dumps(diagnostics)}")
         played=defaultdict(set); names={}
         with ThreadPoolExecutor(max_workers=4) as pool:
             for result in pool.map(game_players,games.values()):
                 for pid,name,country,pk in result:
                     played[(pid,country)].add(pk); names[pid]=name
-        report["years"][str(year)]={"games":len(games),"participants":len(played),"status":"complete"}
+        report["years"][str(year)]={"games":len(games),"participants":len(played),"status":"complete","schedule_diagnostics":diagnostics}
         for (mid,country),pks in sorted(played.items()):
             name=names[mid]; ids=known.get(mid,set())
             candidates=ids or exact.get(norm(name),set()) or near.get(loose(name),set())
@@ -106,7 +132,7 @@ for year,expected in YEARS.items():
         print(year,report["years"][str(year)],flush=True)
     except Exception as exc:
         report["errors"].append({"year":year,"error":str(exc)})
-        report["years"][str(year)]={"status":"incomplete"}
+        report["years"].setdefault(str(year),{})["status"]="incomplete"
         print(year,str(exc),flush=True)
     OUT.write_text(json.dumps(report,indent=2,ensure_ascii=False)+"\n",encoding="utf-8")
 if report["errors"]: raise SystemExit("Incomplete WBC coverage; review saved partial checkpoint")

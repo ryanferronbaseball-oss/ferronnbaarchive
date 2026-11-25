@@ -82,10 +82,28 @@ def game_players(g):
         if not ids: raise ValueError(f"No player appearances in {pk} {side}")
         for pid in ids:
             x=t["players"]["ID"+str(pid)]["person"]
-            records.append((pid,x["fullName"],country,pk))
+            name=x.get("fullName") or " ".join(filter(None,(x.get("firstName"),x.get("lastName"))))
+            if not name:
+                people=get(f"people/{pid}").get("people",[])
+                person=next((p for p in people if p.get("id")==pid),{})
+                name=person.get("fullName") or " ".join(filter(None,(person.get("firstName"),person.get("lastName"))))
+            if not name:
+                raise ValueError(f"No official name for player {pid} in game {pk}; box person={x!r}")
+            records.append((pid,name,country,pk))
     return records
 report={"version":1,"source":"Official MLB Stats API WBC schedule and final game box scores","archive_players":len(players),"years":{},"candidates":[],"errors":[]}
+# Preserve completed tournaments from the previous run if the archive identity
+# count is unchanged. Retry only incomplete tournaments.
+if OUT.exists():
+    previous=load(OUT)
+    if previous.get("archive_players")==len(players) and previous.get("source")==report["source"]:
+        complete={y:v for y,v in previous.get("years",{}).items() if v.get("status")=="complete" and v.get("games")==YEARS.get(int(y))}
+        report["years"].update(complete)
+        report["candidates"]=[x for x in previous.get("candidates",[]) if str(x["year"]) in complete]
 for year,expected in YEARS.items():
+    if report["years"].get(str(year),{}).get("status")=="complete":
+        print(year,"reusing completed checkpoint",flush=True)
+        continue
     try:
         # W denotes the championship round, not the entire WBC tournament.
         # Discover the tournament league from its metadata and query all game types.

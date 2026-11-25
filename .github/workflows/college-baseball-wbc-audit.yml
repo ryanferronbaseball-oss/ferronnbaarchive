@@ -1,0 +1,47 @@
+name: College baseball WBC crossover audit
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'college-baseball/scripts/audit_wbc_crossover.py'
+      - '.github/workflows/college-baseball-wbc-audit.yml'
+permissions:
+  contents: write
+concurrency:
+  group: college-baseball-wbc-audit
+  cancel-in-progress: true
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Audit six WBC tournaments against college player IDs
+        id: audit
+        continue-on-error: true
+        run: python -u college-baseball/scripts/audit_wbc_crossover.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: college-baseball-wbc-review
+          path: college-baseball/data/wbc_crossover_audit.json
+          if-no-files-found: warn
+      - name: Save review-only checkpoint
+        if: always()
+        run: |
+          if test -f college-baseball/data/wbc_crossover_audit.json; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add college-baseball/data/wbc_crossover_audit.json
+            if ! git diff --cached --quiet; then
+              git commit -m "Record college baseball WBC appearance audit candidates"
+              git pull --rebase origin main
+              git push origin HEAD:main
+            fi
+          fi
+      - name: Require complete evidence collection
+        if: steps.audit.outcome == 'failure'
+        run: exit 1

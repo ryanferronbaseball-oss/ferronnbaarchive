@@ -7,8 +7,8 @@
 <div class="eyebrow">College Football · Games / Box Scores</div><h1>Game details.</h1>
 <p class="lead">Game-by-game box scores with full scoring chronology, from opening kickoff to the final score.</p>
 <div class="toolbar"><label class="filter-label" for="gameSelect">Your game</label><select id="gameSelect" aria-label="Select attended College Football game"></select></div>
+<section id="scoreboard" aria-label="Game score and quarter totals"><div class="empty">Loading game…</div></section>
 <section id="gamePhoto" aria-label="Game photographs" hidden style="margin:18px 0 24px"></section>
-<section id="scoreboard" aria-label="Game score by quarter"><div class="empty">Loading game…</div></section>
 <section id="proAlumni" class="game-pro-alumni" aria-live="polite"><h2>Future NFL players in this game</h2><p class="pro-empty">Loading verified alumni…</p></section>
 <p class="note" id="sourceNote" aria-live="polite"></p>
 <section id="curatedRecap" class="panel game-recap" aria-label="Game recap" style="display:none"></section>
@@ -99,7 +99,12 @@ document.addEventListener("DOMContentLoaded",async()=>{
  }
  function setGame(id){
   selected=games.find(g=>g.id===id)||games[0];if(!selected)return;
-  el("gameSelect").value=selected.id;el("scoreboard").innerHTML=A.scoreboard(selected);renderRecap(selected.id);renderPhotos(selected);
+  el("gameSelect").value=selected.id;
+  const scoreboard=el("scoreboard"),photoSection=el("gamePhoto");
+  scoreboard.innerHTML=A.scoreboard(selected);
+  const quarters=scoreboard.querySelector('[aria-label="Score by quarter"]')||scoreboard.querySelector(".table-wrap");
+  if(quarters)quarters.before(photoSection);else scoreboard.after(photoSection);
+  renderRecap(selected.id);renderPhotos(selected);
   const alumniIds=new Set(nflAlumni.filter(p=>p.category==="nfl"&&p.first_nfl_season!=null).map(p=>p.athlete_id));
   const seen=new Map(rows.filter(p=>p.game_id===selected.id&&alumniIds.has(p.athlete_id)).map(p=>[p.athlete_id,p.player]));
   el("proAlumni").innerHTML='<h2>Future NFL players in this game · '+seen.size+'</h2><p class="pro-caption">Verified NFL game appearances · Click a name to open the college player profile.</p>'

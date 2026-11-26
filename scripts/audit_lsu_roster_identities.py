@@ -22,7 +22,7 @@ for y in years:
     soup,u=page;entries={}
     for a in soup.find_all('a',href=True):
         v=urljoin(u,a['href']);path=urlsplit(v).path
-        if host(v)!=h or not re.search(r'/sports/bsb/roster/season/\d{4}/player/[^/]+/?
+        if host(v)!=h or not re.search(r'/sports/bsb/roster/season/\d{4}/player/[^/]+/?$',path):continue
         name=' '.join(a.get_text(' ',strip=True).split())
         if len(name.split())<2 or len(name)>65 or not re.fullmatch(r"[\w .’'\-]+",name):continue
         slug=path.rstrip('/').split('/')[-1]

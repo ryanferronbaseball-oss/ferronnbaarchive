@@ -141,7 +141,11 @@ def main():
                     v=urljoin(u,a['href']);path=urlsplit(v).path
                     if host(v)!=h:continue
                     if h=='lsusports.net':
-                        if not re.search(r'/sports/bsb/roster/season/\d{4}/player/[^/]+/?
+                        if not re.search(r'/sports/bsb/roster/season/\d{4}/player/[^/]+/?$',path):continue
+                        part=path.rstrip('/').split('/')[-1]
+                    else:
+                        if not re.search(r'/roster/[^/]+/\d+/?$',path):continue
+                        part=path.rstrip('/').split('/')[-2]
                     if norm(part) in names or norm(a.get_text(' ',strip=True)) in names:links.append(v)
                 imgs=[] if h=='lsusports.net' else list(dict.fromkeys([*card_images(soup,u,h,names),*named_images(soup,u,h,names)]))
                 if not links and not imgs:continue

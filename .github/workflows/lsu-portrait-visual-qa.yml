@@ -1,0 +1,99 @@
+name: LSU portrait-only visual QA
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/lsu-portrait-visual-qa.yml']
+permissions:
+  contents: read
+jobs:
+  portraits:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install playwright pillow
+      - run: python -m playwright install --with-deps chromium
+      - name: Inspect actual LSU player portrait frames
+        run: |
+          python - <<'PY'
+          import json, pathlib, threading, functools, http.server
+          from urllib.parse import quote
+          from playwright.sync_api import sync_playwright
+          from PIL import Image, ImageDraw
+          root = pathlib.Path.cwd()
+          data = root/'college-baseball/data'
+          report = json.loads((data/'lsu_portrait_followup.json').read_text())
+          targets = {r['id']:r for r in report['added']+report['upgraded']}
+          registry = json.loads((data/'player_portraits.json').read_text())
+          assert len(targets)==report['targeted']==41
+          out = root/'lsu-visual-review'
+          out.mkdir(exist_ok=True)
+          class Quiet(http.server.SimpleHTTPRequestHandler):
+              def log_message(self,*args): pass
+          server = http.server.ThreadingHTTPServer(('127.0.0.1',0),functools.partial(Quiet,directory=str(root)))
+          threading.Thread(target=server.serve_forever,daemon=True).start()
+          origin = f'http://127.0.0.1:{server.server_port}'
+          results = []
+          with sync_playwright() as p:
+              browser = p.chromium.launch(headless=True)
+              for mode,w,h in [('desktop',1360,900),('mobile',390,844)]:
+                  page = browser.new_page(viewport={'width':w,'height':h},device_scale_factor=1)
+                  page.set_default_timeout(18000)
+                  for pid,r in targets.items():
+                      row = {'id':pid,'name':r['name'],'viewport':mode}
+                      try:
+                          page.goto(origin+'/college-baseball/player.html?id='+quote(pid),wait_until='domcontentloaded',timeout=30000)
+                          frame = page.locator('.cb-player-portrait')
+                          frame.wait_for(state='visible')
+                          img = frame.locator('img')
+                          page.wait_for_function("() => {const i=document.querySelector('.cb-player-portrait img'); return i && i.complete && i.naturalWidth>0 && i.parentElement.classList.contains('has-portrait')}",timeout=18000)
+                          metrics = img.evaluate("""i=>{const c=getComputedStyle(i),b=i.getBoundingClientRect(),f=i.parentElement.getBoundingClientRect();return {src:i.currentSrc,natural:[i.naturalWidth,i.naturalHeight],fit:c.objectFit,position:c.objectPosition,visible:c.visibility,lsu:i.classList.contains('cb-lsu-headshot'),image:[b.width,b.height],frame:[f.width,f.height]}}""")
+                          row.update(metrics)
+                          records = [registry[pid],*registry[pid].get('fallbacks',[])]
+                          assert any(a.get('url')==metrics['src'] for a in records),'Unregistered portrait source'
+                          assert metrics['visible']=='visible','Image hidden'
+                          assert metrics['natural'][0]>0 and metrics['natural'][1]>0
+                          assert all(abs(a-b)<=3 for a,b in zip(metrics['image'],metrics['frame'])),'Frame mismatch'
+                          if metrics['lsu']:
+                              assert metrics['fit']=='cover' and metrics['position']=='50% 0%','LSU crop rule not applied'
+                          else:
+                              assert metrics['fit']=='contain','Non-LSU fallback style changed'
+                          frame.screenshot(path=str(out/f'{mode}-{pid}.png'),timeout=10000)
+                          row['status']='pass'
+                      except Exception as e:
+                          row['status']='fail'
+                          row['error']=str(e)
+                          try: page.screenshot(path=str(out/f'{mode}-{pid}-error.png'),timeout=5000)
+                          except Exception: pass
+                      results.append(row)
+                      print(mode,r['name'],row['status'],row.get('natural'),row.get('fit'),row.get('error',''),flush=True)
+                  page.close()
+                  sheet = Image.new('RGB',(7*180,6*220),'#f5f5f5')
+                  draw = ImageDraw.Draw(sheet)
+                  for n,(pid,r) in enumerate(targets.items()):
+                      file = out/f'{mode}-{pid}.png'
+                      x,y=(n%7)*180,(n//7)*220
+                      if file.exists():
+                          im=Image.open(file).convert('RGB')
+                          im.thumbnail((165,185))
+                          sheet.paste(im,(x+(180-im.width)//2,y+5))
+                      else:
+                          draw.text((x+10,y+80),'FAILED',fill='red')
+                      draw.text((x+5,y+192),r['name'],fill='black')
+                  sheet.save(out/f'{mode}-contact-sheet.jpg',quality=94)
+              browser.close()
+          server.shutdown()
+          (out/'results.json').write_text(json.dumps(results,indent=2))
+          failures=[r for r in results if r['status']!='pass']
+          print(f'LSU portraits: {len(results)-len(failures)}/{len(results)} viewport checks passed',flush=True)
+          assert not failures, f'{len(failures)} LSU portrait checks failed; see attached report and screenshots'
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lsu-portrait-visual-review
+          path: lsu-visual-review/

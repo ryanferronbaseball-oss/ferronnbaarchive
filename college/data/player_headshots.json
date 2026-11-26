@@ -1,67 +1,93 @@
 {
   "_meta": {
     "description": "Verified player photo associations. Official player identities map to ESPN IDs; where ESPN has no headshot, selected provider IDs map to official school roster photos. Athlete statistics and identities are not changed.",
-    "source": "ESPN player profiles and official school roster photographs",
-    "game_id": "95,96",
     "espn_event_id": "401909726,401920703",
-    "last_reviewed": "2026-11-07",
+    "game_id": "95,96",
     "image_pattern": "https://a.espncdn.com/i/headshots/mens-college-basketball/players/full/{espn_athlete_id}.png",
-    "note": "Availability of actual headshot varies by player. Show initials if image unavailable."
+    "last_reviewed": "2026-11-07",
+    "note": "Availability of actual headshot varies by player. Show initials if image unavailable.",
+    "source": "ESPN player profiles and official school roster photographs"
   },
   "players": {
-    "official:wake-forest:gavin-placide": {
-      "espn_athlete_id": "5144551"
+    "espn:5462436": {
+      "image_url": "https://siuecougars.com/images/2026/10/30/Wilson_David.jpg",
+      "source_url": "https://siuecougars.com/sports/mens-basketball/roster/2026-27"
     },
-    "official:wake-forest:xander-pintelon": {
-      "espn_athlete_id": "5312061"
+    "espn:5462438": {
+      "image_url": "https://siuecougars.com/images/2026/10/30/Sohaib_Belal.jpg",
+      "source_url": "https://siuecougars.com/sports/mens-basketball/roster/2026-27"
     },
-    "official:wake-forest:justin-ray": {
-      "espn_athlete_id": "5242598"
+    "espn:5462439": {
+      "image_url": "https://siuecougars.com/images/2026/10/30/Miller_Brennan.jpg",
+      "source_url": "https://siuecougars.com/sports/mens-basketball/roster/2026-27"
     },
-    "official:wake-forest:isaac-carr": {
-      "espn_athlete_id": "5237435"
+    "espn:5462440": {
+      "image_url": "https://siuecougars.com/images/2026/10/30/Riley_Jayden.jpg",
+      "source_url": "https://siuecougars.com/sports/mens-basketball/roster/2026-27"
     },
-    "official:wake-forest:kevair-kennedy": {
-      "espn_athlete_id": "5314298"
+    "official:colorado-2018-19:dshawn-schwartz": {
+      "image_url": "https://images.sidearmdev.com/resize?url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Fcubuffs.com%2Fimages%2F2021%2F1%2F16%2FSchwartz.jpg&height=300&type=webp",
+      "provider": "official school",
+      "source_url": "https://cubuffs.com/sports/mens-basketball/roster/dshawn-schwartz/15021"
     },
-    "official:wake-forest:justin-abson": {
-      "espn_athlete_id": "5107252"
+    "official:colorado-2018-19:eli-parquet": {
+      "image_url": "https://images.sidearmdev.com/resize?url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Fcubuffs.com%2Fimages%2F2021%2F1%2F16%2FParquet.jpg&height=300&type=webp",
+      "provider": "official school",
+      "source_url": "https://cubuffs.com/sports/mens-basketball/roster/elijah-parquet/15381"
     },
-    "official:wake-forest:jamari-mcdowell": {
-      "espn_athlete_id": "5103571"
+    "official:colorado-2018-19:evan-battey": {
+      "image_url": "https://images.sidearmdev.com/resize?url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Fcubuffs.com%2Fimages%2F2022%2F3%2F2%2FEvan_Battey.jpg&height=300&type=webp",
+      "provider": "official school",
+      "source_url": "https://cubuffs.com/sports/mens-basketball/roster/evan-battey/15375"
     },
-    "official:wake-forest:gallagher-placide": {
-      "espn_athlete_id": "5144552"
+    "official:colorado-2018-19:mckinley-wright-iv": {
+      "image_url": "https://images.sidearmdev.com/resize?url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Fcubuffs.com%2Fimages%2F2021%2F3%2F4%2FWright_Carson_Becker.jpg&height=300&type=webp",
+      "provider": "official school",
+      "source_url": "https://cubuffs.com/sports/mens-basketball/roster/mckinley-wright-iv/15024"
     },
-    "official:wake-forest:antonio-dorn": {
-      "espn_athlete_id": "5311831"
+    "official:colorado-2018-19:tyler-bey": {
+      "image_url": "https://images.sidearmdev.com/resize?url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Fcubuffs.com%2Fimages%2F2019%2F11%2F23%2FTyler_Bey.jpg&height=300&type=webp",
+      "provider": "official school",
+      "source_url": "https://cubuffs.com/sports/mens-basketball/roster/tyler-bey/13063"
     },
-    "official:wake-forest:lukas-bojovic": {
-      "espn_athlete_id": "5458758"
+    "official:denver:james-sanders-iv": {
+      "image_url": "https://images.sidearmdev.com/crop?url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Fdenverpioneers.com%2Fimages%2F2022%2F10%2F21%2FSanders_300.jpg&width=603&height=803&type=webp",
+      "provider": "official school",
+      "source_url": "https://denverpioneers.com/sports/mens-basketball/roster/2022-23"
     },
-    "official:vanderbilt:berke-buyuktuncel": {
-      "espn_athlete_id": "5174982"
+    "official:denver:javonni-bickham": {
+      "image_url": "https://images.sidearmdev.com/crop?url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Fdenverpioneers.com%2Fimages%2F2022%2F10%2F21%2FBickham_300.jpg&width=603&height=803&type=webp",
+      "provider": "official school",
+      "source_url": "https://denverpioneers.com/sports/mens-basketball/roster/2022-23"
     },
-    "official:vanderbilt:sebastian-williams-adams": {
-      "espn_athlete_id": "5095154"
-    },
-    "official:vanderbilt:tyler-tanner": {
-      "espn_athlete_id": "5187600"
-    },
-    "official:vanderbilt:chandler-bing": {
-      "espn_athlete_id": "5311759"
+    "official:eastern-michigan:jalen-king": {
+      "image_url": "https://images.sidearmdev.com/crop?url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Femueagles.com%2Fimages%2F2019%2F9%2F17%2FJalen_King.jpg&width=603&height=803&type=webp",
+      "provider": "official school",
+      "source_url": "https://emueagles.com/sports/mens-basketball/roster/2019-20"
     },
     "official:vanderbilt:ace-glass-iii": {
       "espn_athlete_id": "5313054"
     },
-    "official:vanderbilt:t-o-barrett": {
-      "espn_athlete_id": "5144166"
+    "official:vanderbilt:anthony-brown-jr": {
+      "espn_athlete_id": "5195075"
     },
     "official:vanderbilt:bangot-dak": {
       "espn_athlete_id": "5175021"
     },
-    "official:vanderbilt:anthony-brown-jr": {
-      "espn_athlete_id": "5195075"
+    "official:vanderbilt:baylor-allen": {
+      "espn_athlete_id": "5326945"
+    },
+    "official:vanderbilt:berke-buyuktuncel": {
+      "espn_athlete_id": "5174982"
+    },
+    "official:vanderbilt:chandler-bing": {
+      "espn_athlete_id": "5311759"
+    },
+    "official:vanderbilt:chase-byington": {
+      "espn_athlete_id": "5326946"
+    },
+    "official:vanderbilt:ethan-mgbako": {
+      "espn_athlete_id": "5196966"
     },
     "official:vanderbilt:jackson-sheffield": {
       "espn_athlete_id": "5292612"
@@ -69,33 +95,47 @@
     "official:vanderbilt:jayden-leverett": {
       "espn_athlete_id": "5254169"
     },
-    "official:vanderbilt:ethan-mgbako": {
-      "espn_athlete_id": "5196966"
-    },
     "official:vanderbilt:mavrick-hawkins": {
       "espn_athlete_id": "5326287"
     },
-    "official:vanderbilt:baylor-allen": {
-      "espn_athlete_id": "5326945"
+    "official:vanderbilt:sebastian-williams-adams": {
+      "espn_athlete_id": "5095154"
     },
-    "official:vanderbilt:chase-byington": {
-      "espn_athlete_id": "5326946"
+    "official:vanderbilt:t-o-barrett": {
+      "espn_athlete_id": "5144166"
     },
-    "espn:5462436": {
-      "image_url": "https://siuecougars.com/images/2026/10/30/Wilson_David.jpg",
-      "source_url": "https://siuecougars.com/sports/mens-basketball/roster/2026-27"
+    "official:vanderbilt:tyler-tanner": {
+      "espn_athlete_id": "5187600"
     },
-    "espn:5462439": {
-      "image_url": "https://siuecougars.com/images/2026/10/30/Miller_Brennan.jpg",
-      "source_url": "https://siuecougars.com/sports/mens-basketball/roster/2026-27"
+    "official:wake-forest:antonio-dorn": {
+      "espn_athlete_id": "5311831"
     },
-    "espn:5462438": {
-      "image_url": "https://siuecougars.com/images/2026/10/30/Sohaib_Belal.jpg",
-      "source_url": "https://siuecougars.com/sports/mens-basketball/roster/2026-27"
+    "official:wake-forest:gallagher-placide": {
+      "espn_athlete_id": "5144552"
     },
-    "espn:5462440": {
-      "image_url": "https://siuecougars.com/images/2026/10/30/Riley_Jayden.jpg",
-      "source_url": "https://siuecougars.com/sports/mens-basketball/roster/2026-27"
+    "official:wake-forest:gavin-placide": {
+      "espn_athlete_id": "5144551"
+    },
+    "official:wake-forest:isaac-carr": {
+      "espn_athlete_id": "5237435"
+    },
+    "official:wake-forest:jamari-mcdowell": {
+      "espn_athlete_id": "5103571"
+    },
+    "official:wake-forest:justin-abson": {
+      "espn_athlete_id": "5107252"
+    },
+    "official:wake-forest:justin-ray": {
+      "espn_athlete_id": "5242598"
+    },
+    "official:wake-forest:kevair-kennedy": {
+      "espn_athlete_id": "5314298"
+    },
+    "official:wake-forest:lukas-bojovic": {
+      "espn_athlete_id": "5458758"
+    },
+    "official:wake-forest:xander-pintelon": {
+      "espn_athlete_id": "5312061"
     }
   }
 }

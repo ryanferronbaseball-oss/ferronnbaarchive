@@ -649,14 +649,9 @@
     "total_older": 774,
     "unresolved": []
   },
-  "soccer": {
-    "missing": [
-      "Achraf Hakimi",
+  "official_soccer_pass": {
+    "added": [
       "Ahmed Qasem",
-      "Akeem O'Connor-Ward",
-      "Andre Luiz",
-      "Augustine Williams",
-      "Austin Guerrero",
       "Ayoub El Kaabi",
       "Ayoub Jabbari",
       "Azzedine Ounahi",
@@ -665,50 +660,35 @@
       "Brian Schwake",
       "Bryan Ramirez",
       "Chadi Riad",
-      "Charlie Adams",
-      "Corey Hertzog",
       "Danley Jean-Jacques",
       "Dominique Simon",
       "Duckens Nazon",
       "Edvard Tagseth",
       "Elias Saad",
-      "Elijah Martin",
       "Emir Karic",
       "Ender Echenique",
       "Frantzdy Pierrot",
       "Gerardo Valenzuela",
       "Gessime Yassine",
-      "Grant Stoneman",
       "Ian James",
-      "Jack Blake",
       "Jacob Bartlett",
       "Jake Davis",
       "Jansen Miller",
       "Jean-Kevin Duverne",
       "Jean-Ricner Bellegarde",
       "Jeisson Palacios",
-      "Jeremy Bokila",
-      "Jesus Enriquez",
-      "Johnny Rodriguez",
       "Johny Placide",
-      "Joseph Nane",
       "Josué Casimir",
-      "Kai Greene",
       "Kenji Mboma Dem",
       "Kevin Denkey",
       "Kwaku Agyabeng",
       "Lenny Joseph",
       "Louicius Deedson",
       "Martin Experience",
-      "Matias Fissore",
       "Matthew Corcoran",
-      "Max Ornstil",
-      "Maxime Delcroix",
       "Maxwell Woledzi",
-      "Memo Diaz",
       "Neil El Aynaoui",
       "Patrick Yazbek",
-      "Paul Blanchette",
       "Pavel Bucha",
       "Redouane Halhal",
       "Ricardo Adé",
@@ -721,19 +701,173 @@
       "Shapi Suleymanov",
       "Sofyan Amrabat",
       "Soufiane Rahimi",
-      "Soya Takahashi",
       "Tah Brian Anunga",
-      "Tarek Morad",
       "Taylor Calheira",
-      "Tumi Moshobane",
-      "Wal Fall",
       "Warren Madrigal",
       "Wilson Isidor",
       "Wyatt Meyer",
       "Yassine Bounou"
     ],
+    "attempted": 80,
+    "unresolved": [
+      {
+        "attempts": [
+          {
+            "reason": "no valid named player image",
+            "url": "https://www.psg.fr/en/players/achraf-hakimi"
+          },
+          {
+            "reason": "no valid named player image",
+            "url": "https://www.bundesliga.com/en/player/achraf-hakimi"
+          },
+          {
+            "reason": "404 Client Error: Not Found for url: https://www.laliga.com/en-GB/player/achraf-hakimi",
+            "url": "https://www.laliga.com/en-GB/player/achraf-hakimi"
+          }
+        ],
+        "name": "Achraf Hakimi"
+      },
+      {
+        "attempts": [],
+        "name": "Akeem O'Connor-Ward"
+      },
+      {
+        "attempts": [
+          {
+            "reason": "attended club not found on player page",
+            "url": "https://www.mlssoccer.com/players/andre-luiz/"
+          },
+          {
+            "reason": "404 Client Error: Not Found for url: https://www.sportingkc.com/players/andre-luiz/",
+            "url": "https://www.sportingkc.com/players/andre-luiz/"
+          }
+        ],
+        "name": "Andre Luiz"
+      },
+      {
+        "attempts": [],
+        "name": "Augustine Williams"
+      },
+      {
+        "attempts": [],
+        "name": "Austin Guerrero"
+      },
+      {
+        "attempts": [],
+        "name": "Charlie Adams"
+      },
+      {
+        "attempts": [],
+        "name": "Corey Hertzog"
+      },
+      {
+        "attempts": [],
+        "name": "Elijah Martin"
+      },
+      {
+        "attempts": [],
+        "name": "Grant Stoneman"
+      },
+      {
+        "attempts": [],
+        "name": "Jack Blake"
+      },
+      {
+        "attempts": [],
+        "name": "Jeremy Bokila"
+      },
+      {
+        "attempts": [],
+        "name": "Jesus Enriquez"
+      },
+      {
+        "attempts": [],
+        "name": "Johnny Rodriguez"
+      },
+      {
+        "attempts": [],
+        "name": "Joseph Nane"
+      },
+      {
+        "attempts": [],
+        "name": "Kai Greene"
+      },
+      {
+        "attempts": [],
+        "name": "Matias Fissore"
+      },
+      {
+        "attempts": [],
+        "name": "Max Ornstil"
+      },
+      {
+        "attempts": [
+          {
+            "reason": "404 Client Error: Not Found for url: https://www.bundesliga.com/en/player/maxime-delcroix",
+            "url": "https://www.bundesliga.com/en/player/maxime-delcroix"
+          },
+          {
+            "reason": "404 Client Error: Not Found for url: https://www.laliga.com/en-GB/player/maxime-delcroix",
+            "url": "https://www.laliga.com/en-GB/player/maxime-delcroix"
+          }
+        ],
+        "name": "Maxime Delcroix"
+      },
+      {
+        "attempts": [],
+        "name": "Memo Diaz"
+      },
+      {
+        "attempts": [],
+        "name": "Paul Blanchette"
+      },
+      {
+        "attempts": [],
+        "name": "Soya Takahashi"
+      },
+      {
+        "attempts": [],
+        "name": "Tarek Morad"
+      },
+      {
+        "attempts": [],
+        "name": "Tumi Moshobane"
+      },
+      {
+        "attempts": [],
+        "name": "Wal Fall"
+      }
+    ]
+  },
+  "soccer": {
+    "missing": [
+      "Achraf Hakimi",
+      "Akeem O'Connor-Ward",
+      "Andre Luiz",
+      "Augustine Williams",
+      "Austin Guerrero",
+      "Charlie Adams",
+      "Corey Hertzog",
+      "Elijah Martin",
+      "Grant Stoneman",
+      "Jack Blake",
+      "Jeremy Bokila",
+      "Jesus Enriquez",
+      "Johnny Rodriguez",
+      "Joseph Nane",
+      "Kai Greene",
+      "Matias Fissore",
+      "Max Ornstil",
+      "Maxime Delcroix",
+      "Memo Diaz",
+      "Paul Blanchette",
+      "Soya Takahashi",
+      "Tarek Morad",
+      "Tumi Moshobane",
+      "Wal Fall"
+    ],
     "notes": [],
-    "registered": 35,
+    "registered": 91,
     "total": 115
   }
 }

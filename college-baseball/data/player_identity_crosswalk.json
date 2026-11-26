@@ -4,8 +4,8 @@
   "source": "Original archive owner confirmed each multi-school person",
   "original_attendance_ids_preserved": 444,
   "original_player_game_rows_preserved": 13183,
-  "requested_person_merges": 195,
-  "activated_person_merges": 195,
+  "requested_person_merges": 196,
+  "activated_person_merges": 196,
   "pending_person_merges": 0,
   "merge_policy": "Only listed pair of exact normalized person names and school-specific original source player IDs; all other IDs remain separate",
   "display_aliases": [
@@ -5744,6 +5744,33 @@
       "note": "Owner-approved Russell Grant / Russell Grant II name variant; official Santa Clara 2021 roster uses Russell Grant II.",
       "evidence_urls": [
         "https://santaclarabroncos.com/sports/baseball/roster/russell-grant-ii/1855"
+      ]
+    },
+    {
+      "name": "JT Navyac",
+      "display_name": "JT Navyac",
+      "canonical_id": "cb-cal-state-fullerton-jt-navyac",
+      "source_player_ids": [
+        "cb-cal-state-fullerton-j-t-navyac",
+        "cb-cal-state-fullerton-jt-navyac"
+      ],
+      "schools": [
+        "Cal State Fullerton"
+      ],
+      "pairs": [
+        {
+          "team": "Cal State Fullerton",
+          "source_player_id": "cb-cal-state-fullerton-j-t-navyac"
+        },
+        {
+          "team": "Cal State Fullerton",
+          "source_player_id": "cb-cal-state-fullerton-jt-navyac"
+        }
+      ],
+      "source_rows": 4,
+      "note": "Owner-approved JT Navyac / J.T. Navyac name variant; official Cal State Fullerton roster uses JT Navyac.",
+      "evidence_urls": [
+        "https://fullertontitans.com/sports/baseball/roster/jt-navyac/4155"
       ]
     }
   ]

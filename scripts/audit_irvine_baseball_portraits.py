@@ -18,6 +18,10 @@ def urls(img,page,school):
 def named_images(soup,page,school,names):
     for img in soup.find_all('img'):
         alt=norm(img.get('alt',''))
+        if school=='ucirvinesports.com' and 'headshot' in alt and any(n in alt for n in names):
+            yield from urls(img,page,school)
+            for k in ('src','data-src','data-lazy-src'):
+                yield from image_options(img.get(k),page,school)
         if any(alt in (n,'photoof'+n,'imageof'+n,n+'headshot','headshotof'+n,n+'portrait','portraitof'+n) for n in names):
             yield from urls(img,page,school)
 def image_options(value,page,school):
@@ -47,6 +51,15 @@ def bio_images(soup,page,school,names):
         stem=norm(path.rsplit('/',1)[-1].rsplit('.',1)[0])
         if any(n in stem or stem in n and len(stem)>=6 for n in names):
             yield from image_options(u,page,school)
+    if school=='ucirvinesports.com':
+        for a in soup.find_all('a',href=True):
+            label=norm(a.get_text(' ',strip=True)+' '+str(a.get('aria-label',''))+' '+str(a.get('title',''))+' '+unquote(a['href']))
+            if 'headshot' in label and any(n in label for n in names):
+                yield from image_options(a['href'],page,school)
+            for img in a.find_all('img'):
+                alt=norm(img.get('alt',''))
+                if 'headshot' in alt and any(n in alt for n in names):
+                    yield from image_options(a['href'],page,school)
     yield from named_images(soup,page,school,names)
 def photo_year(url,season):
     # Only an explicit upload date is used; otherwise use verified roster season.
@@ -70,6 +83,9 @@ def main():
     hosts=load('college-baseball/data/portrait_school_hosts.json')
     fp='college-baseball/data/player_portraits.json';reg=load(fp,{})
     report={'school':'UC Irvine','targeted':len(players),'added':[],'upgraded':[],'preserved':[],'missing':[],'notes':[],'unmapped_transfer_schools':[]}
+    explicit_aliases={'cb-uc-irvine-a-garcia-pacheco':['Abraham Garcia-Pacheco']}
+    for p in players:
+        p['former_names']=[*p.get('former_names',[]),*explicit_aliases.get(p['id'],[])]
     requests=defaultdict(set)
     for p in players:
         for school,years in p['schools'].items():
@@ -111,9 +127,11 @@ def main():
     report['roster_pages_verified']=sum(v is not None for v in pages.values())
     report['players_with_candidates']=sum(bool(v) for v in candidates.values())
     found={}
+    report['candidate_diagnostics']={}
     for p in players:
         cid=p['id'];names={norm(n) for n in [p['name'],*p.get('former_names',[])]}
         entries=sorted(candidates[cid],key=lambda x:(x[0],x[1],bool(x[2])),reverse=True)
+        report['candidate_diagnostics'][cid]={'candidate_count':len(entries),'attempts':[]}
         for y,py,u,source,school,h in entries:
             urls_to_try=[u] if u else []
             if not u:
@@ -122,7 +140,7 @@ def main():
                     if host(r.url)!=h:continue
                     soup=BeautifulSoup(r.text,'html.parser')
                     heading=' '.join(t.get_text(' ',strip=True) for t in soup.find_all(['h1','title','h2']))
-                    if not any(n in norm(heading) for n in names):continue
+                    if not any(n in norm(heading) for n in names) and not (h=='ucirvinesports.com' and any(n in norm(soup.get_text(' ',strip=True)) for n in names)):continue
                     urls_to_try=list(bio_images(soup,r.url,h,names))
                     source=r.url
                     season_match=re.search(r'\b(20\d{2}) Baseball Roster\b',heading,re.I)
@@ -130,6 +148,7 @@ def main():
                 except Exception:continue
             for url in dict.fromkeys(urls_to_try):
                 state,hash_value=probe(url)
+                report['candidate_diagnostics'][cid]['attempts'].append({'url':url,'state':state})
                 if state=='image' and hash_value:
                     found[cid]=({'url':url,'source':source,'provider':'college','school':school,'season':y,'photo_year':photo_year(url,y)},hash_value);break
             if cid in found:break
@@ -149,6 +168,7 @@ def main():
             new['fallbacks']=[fallback,*old.get('fallbacks',[])]
         reg[cid]=new
         report['upgraded' if old else 'added'].append({'id':cid,'name':p['name'],**new})
+    report['candidate_diagnostics']={p['id']:report['candidate_diagnostics'][p['id']] for p in report['missing']}
     report['registered']=len(reg)
     save(fp,reg);save('college-baseball/data/irvine_portrait_audit.json',report)
     print(json.dumps({k:len(v) if isinstance(v,list) else v for k,v in report.items()},indent=2))

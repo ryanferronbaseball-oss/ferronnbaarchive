@@ -1,0 +1,36 @@
+name: Player portrait backfill
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['scripts/audit_player_portraits.py', '.github/workflows/player-portrait-backfill.yml']
+permissions:
+  contents: write
+concurrency:
+  group: player-portrait-backfill
+  cancel-in-progress: false
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install requests pillow
+      - run: python scripts/audit_player_portraits.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: portrait-audit
+          path: reports/player_portrait_audit.json
+      - name: Publish verified image references and report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add soccer/data/player_portraits.json mlb/data/player_portrait_fallbacks.json reports/player_portrait_audit.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Backfill verified soccer and historical MLB player portrait references"
+          git pull --rebase origin main
+          git push origin HEAD:main

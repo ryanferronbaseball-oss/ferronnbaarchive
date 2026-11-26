@@ -5,6 +5,15 @@ const {esc,fmt,date,playerUrl,gameUrl,table,bar,tiles,record,mlbRow}=A;
 el("navigation").innerHTML=A.nav(page);
 let d;try{d=await A.load()}catch(err){app.innerHTML='<div class="empty">Unable to load attendance data: '+esc(err.message)+'</div>';return}
 const {games,rows,players,scores,decisions,recaps}=d;
+let portraitFallbacks={};
+if(["player","games","hof"].includes(page)){
+ try{const r=await fetch("./data/player_portrait_fallbacks.json",{cache:"no-store"});if(r.ok)portraitFallbacks=await r.json()}catch(e){console.warn("Portrait fallback registry unavailable",e)}
+}
+function mlbPortrait(id){
+ const url=portraitFallbacks[String(id)]?.url;
+ return typeof url==="string"&&/^https:\/\/a\.espncdn\.com\/i\/headshots\/mlb\/players\/full\/\d+\.png$/.test(url)
+ ? url : "https://img.mlbstatic.com/mlb-photos/image/upload/w_213,q_85/v1/people/"+encodeURIComponent(id)+"/headshot/67/current";
+}
 let gamePhotos={};
 if(page==="games"){
  try{const response=await fetch("./data/game_photos.json",{cache:"no-store"});if(response.ok)gamePhotos=await response.json();}
@@ -267,7 +276,7 @@ function gamePage(){
  const playerCard=standout?(()=>{
   const r=standout.row,photoId=encodeURIComponent(r.player_id);
   const fallback=esc(String(r.name||"").split(/\s+/).map(x=>x[0]).slice(0,2).join("").toUpperCase());
-  const image='<img alt="" src="https://img.mlbstatic.com/mlb-photos/image/upload/w_213,q_85/v1/people/'+photoId+'/headshot/67/current"'
+  const image='<img alt="" src="'+esc(mlbPortrait(r.player_id))+'"'
     +' onerror="this.style.display=\'none\';this.parentElement.textContent=\''+fallback+'\'">';
   return '<div class="mlb-potg-body"><div class="mlb-potg-portrait">'+image+'</div><div class="mlb-potg-info">'
     +'<div class="mlb-potg-category">'+esc(standout.role)+' · '+esc(r.team)+'</div>'
@@ -623,7 +632,7 @@ function profilePage(){
  const milestones=thresholds.map(([title,pred])=>[title,p.rows.filter(pred).length]);
  app.innerHTML='<p class="mlb-player-back"><a href="./stats.html">← Player leaderboards</a></p>'
   +'<section class="mlb-profile-hero mlb-profile-head">'
-  +'<div class="mlb-profile-photo"><img alt="" src="https://img.mlbstatic.com/mlb-photos/image/upload/w_213,q_85/v1/people/'+encodeURIComponent(p.player_id)+'/headshot/67/current"'
+  +'<div class="mlb-profile-photo"><img alt="" src="'+esc(mlbPortrait(p.player_id))+'"'
   +' onerror="this.style.display=\'none\';this.parentNode.textContent=\''+esc(nameInitials)+'\'"></div>'
   +'<div class="mlb-profile-identity"><div class="mlb-profile-team-name">'+esc(p.teams.join(" / "))+'</div>'
   +'<div class="mlb-player-name-row"><h1>'+esc(p.name)+'</h1><span class="mlb-player-country-slot" data-mlb-country-for="'+esc(p.player_id)+'">'+profileCountryFlags(String(p.player_id))+'</span></div>'+badges
@@ -717,7 +726,7 @@ function hofPage(){
   +'<a href="https://www.mlb.com/news/hall-of-fame-inductions-by-year" target="_blank" rel="noopener">Official induction history ↗</a></p>';
  const card=m=>{
   const p=m.p,record=m.induction;
-  const portrait='<div class="mlb-hof-portrait"><img loading="lazy" alt="" src="https://img.mlbstatic.com/mlb-photos/image/upload/w_213,q_85/v1/people/'+encodeURIComponent(p.player_id)+'/headshot/67/current" onerror="this.style.display=\'none\';this.parentNode.textContent=\''+esc(p.name.split(" ").map(s=>s[0]).slice(0,2).join(""))+'\'"></div>';
+  const portrait='<div class="mlb-hof-portrait"><img loading="lazy" alt="" src="'+esc(mlbPortrait(p.player_id))+'" onerror="this.style.display=\'none\';this.parentNode.textContent=\''+esc(p.name.split(" ").map(s=>s[0]).slice(0,2).join(""))+'\'"></div>';
   const lastStat=p.pitching.length>p.batting.length?
     ['Ks witnessed',m.pitchStats.strikeOuts]:['Hits witnessed',m.seasonStats.hits];
   return '<article class="mlb-hof-card" data-player-id="'+p.player_id+'">'

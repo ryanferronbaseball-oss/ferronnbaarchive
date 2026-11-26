@@ -5,6 +5,17 @@
     "soccer_added": 0,
     "soccer_identity_matches": 70
   },
+  "manual_soccer_pass": {
+    "added": [
+      "Andre Luiz",
+      "Achraf Hakimi"
+    ],
+    "identity_correction": {
+      "from": "Maxime Delcroix",
+      "source": "https://www.reuters.com/sports/soccer/morocco-make-four-changes-they-go-attack-v-haiti-2026-06-24/",
+      "to": "Hannes Delcroix"
+    }
+  },
   "mlb": {
     "current_verified": 543,
     "fallbacks": 104,
@@ -651,64 +662,9 @@
   },
   "official_soccer_pass": {
     "added": [
-      "Ahmed Qasem",
-      "Ayoub El Kaabi",
-      "Ayoub Jabbari",
-      "Azzedine Ounahi",
-      "Bilal El Khannouss",
-      "Brahim Diaz",
-      "Brian Schwake",
-      "Bryan Ramirez",
-      "Chadi Riad",
-      "Danley Jean-Jacques",
-      "Dominique Simon",
-      "Duckens Nazon",
-      "Edvard Tagseth",
-      "Elias Saad",
-      "Emir Karic",
-      "Ender Echenique",
-      "Frantzdy Pierrot",
-      "Gerardo Valenzuela",
-      "Gessime Yassine",
-      "Ian James",
-      "Jacob Bartlett",
-      "Jake Davis",
-      "Jansen Miller",
-      "Jean-Kevin Duverne",
-      "Jean-Ricner Bellegarde",
-      "Jeisson Palacios",
-      "Johny Placide",
-      "Josué Casimir",
-      "Kenji Mboma Dem",
-      "Kevin Denkey",
-      "Kwaku Agyabeng",
-      "Lenny Joseph",
-      "Louicius Deedson",
-      "Martin Experience",
-      "Matthew Corcoran",
-      "Maxwell Woledzi",
-      "Neil El Aynaoui",
-      "Patrick Yazbek",
-      "Pavel Bucha",
-      "Redouane Halhal",
-      "Ricardo Adé",
-      "Ruben Providence",
-      "Ruben Ramos Jr.",
-      "Sam Surridge",
-      "Samir El Mourabet",
-      "Samuel Gidi",
-      "Seymour Reid",
-      "Shapi Suleymanov",
-      "Sofyan Amrabat",
-      "Soufiane Rahimi",
-      "Tah Brian Anunga",
-      "Taylor Calheira",
-      "Warren Madrigal",
-      "Wilson Isidor",
-      "Wyatt Meyer",
-      "Yassine Bounou"
+      "Hannes Delcroix"
     ],
-    "attempted": 80,
+    "attempted": 22,
     "unresolved": [
       {
         "attempts": [],
@@ -771,10 +727,6 @@
         "name": "Max Ornstil"
       },
       {
-        "name": "Hannes Delcroix",
-        "attempts": []
-      },
-      {
         "attempts": [],
         "name": "Memo Diaz"
       },
@@ -817,7 +769,6 @@
       "Kai Greene",
       "Matias Fissore",
       "Max Ornstil",
-      "Hannes Delcroix",
       "Memo Diaz",
       "Paul Blanchette",
       "Soya Takahashi",
@@ -826,18 +777,7 @@
       "Wal Fall"
     ],
     "notes": [],
-    "registered": 93,
+    "registered": 94,
     "total": 115
-  },
-  "manual_soccer_pass": {
-    "added": [
-      "Andre Luiz",
-      "Achraf Hakimi"
-    ],
-    "identity_correction": {
-      "from": "Maxime Delcroix",
-      "to": "Hannes Delcroix",
-      "source": "https://www.reuters.com/sports/soccer/morocco-make-four-changes-they-go-attack-v-haiti-2026-06-24/"
-    }
   }
 }

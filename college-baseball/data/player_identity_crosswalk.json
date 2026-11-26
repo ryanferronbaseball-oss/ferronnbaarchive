@@ -4,8 +4,8 @@
   "source": "Original archive owner confirmed each multi-school person",
   "original_attendance_ids_preserved": 444,
   "original_player_game_rows_preserved": 13183,
-  "requested_person_merges": 194,
-  "activated_person_merges": 194,
+  "requested_person_merges": 195,
+  "activated_person_merges": 195,
   "pending_person_merges": 0,
   "merge_policy": "Only listed pair of exact normalized person names and school-specific original source player IDs; all other IDs remain separate",
   "display_aliases": [
@@ -5718,6 +5718,33 @@
       "source_game": "cb-2019-02-24-cal-state-fullerton-oklahoma-att0040",
       "note": "Owner-approved 2019 Fullerton roster names. Preserve raw gamebooks; scope aliases to Fullerton.",
       "display_name": "Michael Knorr"
+    },
+    {
+      "name": "Russell Grant II",
+      "display_name": "Russell Grant II",
+      "canonical_id": "cb-santa-clara-russell-grant-ii",
+      "source_player_ids": [
+        "cb-santa-clara-russell-grant",
+        "cb-santa-clara-russell-grant-ii"
+      ],
+      "schools": [
+        "Santa Clara"
+      ],
+      "pairs": [
+        {
+          "team": "Santa Clara",
+          "source_player_id": "cb-santa-clara-russell-grant"
+        },
+        {
+          "team": "Santa Clara",
+          "source_player_id": "cb-santa-clara-russell-grant-ii"
+        }
+      ],
+      "source_rows": 2,
+      "note": "Owner-approved Russell Grant / Russell Grant II name variant; official Santa Clara 2021 roster uses Russell Grant II.",
+      "evidence_urls": [
+        "https://santaclarabroncos.com/sports/baseball/roster/russell-grant-ii/1855"
+      ]
     }
   ]
 }

@@ -18,7 +18,7 @@
   },
   "mlb": {
     "current_verified": 543,
-    "fallbacks": 138,
+    "fallbacks": 154,
     "missing": [
       {
         "date": "2005-07-28",
@@ -26,69 +26,9 @@
         "name": "Antonio Perez"
       },
       {
-        "date": "2005-07-28",
-        "id": "113296",
-        "name": "Elmer Dessens"
-      },
-      {
-        "date": "2005-07-28",
-        "id": "121616",
-        "name": "Olmedo Saenz"
-      },
-      {
-        "date": "2005-07-28",
-        "id": "434885",
-        "name": "D.J. Houlton"
-      },
-      {
-        "date": "2005-08-15",
-        "id": "150011",
-        "name": "Scott Schoeneweis"
-      },
-      {
         "date": "2005-08-15",
         "id": "407860",
         "name": "Gustavo Chacín"
-      },
-      {
-        "date": "2005-08-15",
-        "id": "425859",
-        "name": "Russ Adams"
-      },
-      {
-        "date": "2005-08-15",
-        "id": "123839",
-        "name": "Pete Walker"
-      },
-      {
-        "date": "2005-08-15",
-        "id": "133221",
-        "name": "Justin Speier"
-      },
-      {
-        "date": "2005-08-15",
-        "id": "112131",
-        "name": "Frank Catalanotto"
-      },
-      {
-        "date": "2005-08-15",
-        "id": "136731",
-        "name": "Corey Koskie"
-      },
-      {
-        "date": "2005-08-15",
-        "id": "237800",
-        "name": "Jeff DaVanon"
-      },
-      {
-        "date": "2005-08-15",
-        "id": "276912",
-        "name": "Scot Shields"
-      },
-      {
-        "date": "2005-08-15",
-        "id": "134260",
-        "name": "Bengie Molina"
       },
       {
         "date": "2005-09-10",
@@ -119,11 +59,6 @@
         "date": "2005-09-10",
         "id": "116423",
         "name": "Damian Jackson"
-      },
-      {
-        "date": "2005-09-10",
-        "id": "112903",
-        "name": "José Cruz Jr."
       },
       {
         "date": "2005-09-10",
@@ -161,11 +96,6 @@
         "name": "Kenji Johjima"
       },
       {
-        "date": "2006-05-13",
-        "id": "121640",
-        "name": "Tim Salmon"
-      },
-      {
         "date": "2006-06-28",
         "id": "406301",
         "name": "Chad Paronto"
@@ -194,11 +124,6 @@
         "date": "2006-06-28",
         "id": "429420",
         "name": "Bubba Crosby"
-      },
-      {
-        "date": "2006-06-28",
-        "id": "425429",
-        "name": "Andy Phillips"
       },
       {
         "date": "2006-06-28",
@@ -264,11 +189,6 @@
         "date": "2006-08-04",
         "id": "424668",
         "name": "Jon Adkins"
-      },
-      {
-        "date": "2006-08-22",
-        "id": "216897",
-        "name": "Kyle Snyder"
       },
       {
         "date": "2006-08-22",
@@ -667,6 +587,109 @@
     "crosswalk_matches": 113,
     "notes": [],
     "remaining_to_90": 16
+  },
+  "mlb_targeted_pass": {
+    "added": [
+      {
+        "name": "José Cruz Jr.",
+        "provider": "official",
+        "source": "https://riceowls.com/sports/baseball/roster/coaches/jos-cruz-jr/2921",
+        "url": "https://images.sidearmdev.com/resize?url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Friceowls.com%2Fimages%2F2021%2F6%2F16%2F210615_Jose_Cruz_Jr_Press_Conf_webedit_1.jpg&height=300&type=webp"
+      },
+      {
+        "name": "Tim Salmon",
+        "provider": "official",
+        "source": "https://www.mlb.com/player/tim-salmon-121640",
+        "url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/121640/headshot/67/current"
+      },
+      {
+        "name": "Pete Walker",
+        "provider": "official",
+        "source": "https://www.mlb.com/bluejays/roster/coaches",
+        "url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:83:current.png/ar_1:1,c_pad,b_auto:border/r_max/w_180,q_auto:best/v1/people/123839/headshot/83/coach/current"
+      },
+      {
+        "name": "Kyle Snyder",
+        "provider": "official",
+        "source": "https://www.mlb.com/rays/roster/coaches",
+        "url": "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:83:current.png/ar_1:1,c_pad,b_auto:border/r_max/w_180,q_auto:best/v1/people/216897/headshot/83/coach/current"
+      },
+      {
+        "name": "Andy Phillips",
+        "provider": "official",
+        "source": "https://rolltide.com/sports/baseball/roster/coaches/andy-phillips/11",
+        "url": "https://images.sidearmdev.com/crop?url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Frolltide.com%2Fimages%2F2016%2F5%2F13%2Fphilips.jpeg&width=180&height=270&type=webp"
+      },
+      {
+        "name": "Elmer Dessens",
+        "provider": "historical",
+        "source": "https://www.baseball-reference.com/players/d/desseel01.shtml",
+        "url": "https://www.baseball-reference.com/req/202610290/images/headshots/9/9805c83f_sabr.jpg"
+      },
+      {
+        "name": "Olmedo Saenz",
+        "provider": "historical",
+        "source": "https://www.baseball-reference.com/players/s/saenzol01.shtml",
+        "url": "https://www.baseball-reference.com/req/202610290/images/headshots/3/3485a043_sabr.jpg"
+      },
+      {
+        "name": "D.J. Houlton",
+        "provider": "historical",
+        "source": "https://www.baseball-reference.com/players/h/houltdj01.shtml",
+        "url": "https://www.baseball-reference.com/req/202610290/images/headshots/2/2cef6270_sabr.jpg"
+      },
+      {
+        "name": "Scott Schoeneweis",
+        "provider": "historical",
+        "source": "https://www.baseball-reference.com/players/s/schoesc01.shtml",
+        "url": "https://www.baseball-reference.com/req/202610290/images/headshots/e/ebb6fd7d_sabr.jpg"
+      },
+      {
+        "name": "Russ Adams",
+        "provider": "historical",
+        "source": "https://www.baseball-reference.com/players/a/adamsru01.shtml",
+        "url": "https://www.baseball-reference.com/req/202610290/images/headshots/1/1ccec530_sabr.jpg"
+      },
+      {
+        "name": "Justin Speier",
+        "provider": "historical",
+        "source": "https://www.baseball-reference.com/players/s/speieju01.shtml",
+        "url": "https://www.baseball-reference.com/req/202610290/images/headshots/d/da629708_sabr.jpg"
+      },
+      {
+        "name": "Frank Catalanotto",
+        "provider": "historical",
+        "source": "https://www.baseball-reference.com/players/c/catalfr01.shtml",
+        "url": "https://www.baseball-reference.com/req/202610290/images/headshots/7/70258d11_sabr.jpg"
+      },
+      {
+        "name": "Corey Koskie",
+        "provider": "historical",
+        "source": "https://www.baseball-reference.com/players/k/koskico01.shtml",
+        "url": "https://www.baseball-reference.com/req/202610290/images/headshots/f/f9e15cb6_sabr.jpg"
+      },
+      {
+        "name": "Jeff DaVanon",
+        "provider": "historical",
+        "source": "https://www.baseball-reference.com/players/d/davanje02.shtml",
+        "url": "https://www.baseball-reference.com/req/202610290/images/headshots/8/88c933f6_sabr.jpg"
+      },
+      {
+        "name": "Scot Shields",
+        "provider": "historical",
+        "source": "https://www.baseball-reference.com/players/s/shielsc01.shtml",
+        "url": "https://www.baseball-reference.com/req/202610290/images/headshots/4/42f01654_sabr.jpg"
+      },
+      {
+        "name": "Bengie Molina",
+        "provider": "historical",
+        "source": "https://www.baseball-reference.com/players/m/molinbe01.shtml",
+        "url": "https://www.baseball-reference.com/req/202610290/images/headshots/4/47bc16ba_sabr.jpg"
+      }
+    ],
+    "attempted_pool": 93,
+    "notes": [],
+    "remaining_to_90": 0
   },
   "official_soccer_pass": {
     "added": [

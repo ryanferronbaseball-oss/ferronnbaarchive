@@ -296,6 +296,33 @@ function sum(rows,category,key){
  const values=rows.map(r=>stat(r[category]?.[key])).filter(v=>v!=null);
  return values.length?values.reduce((a,b)=>a+b,0):null;
 }
+// Transfer portraits prioritize the school with the most witnessed playing time.
+// Use the existing profile role rule for two-way players; never compare PA with IP.
+function portraitSchoolPreference(rows){
+ const groups=new Map();
+ for(const r of rows){if(!groups.has(r.team))groups.set(r.team,[]);groups.get(r.team).push(r)}
+ const arms=rows.filter(r=>r.pitching!=null).length,hits=rows.filter(r=>r.batting!=null).length;
+ const pitcher=arms>0&&arms>=hits;
+ const usage=[...groups].map(([school,rs])=>{
+  const appearances=rs.filter(r=>r[pitcher?"pitching":"batting"]!=null);
+  const total=appearances.length?(pitcher?(appearances.every(r=>stat(r.pitching.outs)!=null)?pitch(rs).outs:null):bat(rs).plateAppearances):0;
+  return {school,total,games:new Set(rs.map(r=>r.game_id)).size,appearances:appearances.length};
+ });
+ // If any relevant total is unknown, use appearances consistently instead of comparing incomplete stats.
+ const complete=usage.every(u=>u.total!=null);
+ usage.sort((a,b)=>(complete?b.total-a.total:b.appearances-a.appearances)||b.games-a.games||a.school.localeCompare(b.school));
+ return {metric:complete?(pitcher?"pitching_outs":"plate_appearances"):"role_appearances",schools:usage};
+}
+function orderedPlayerPortraits(record,rows){
+ const candidates=[record,...(record?.fallbacks||[])].filter(r=>r?.url);
+ if(!record||record.owner_preferred||new Set(rows.map(r=>r.team)).size<2)return candidates;
+ const preference=portraitSchoolPreference(rows);
+ const ranks=new Map(preference.schools.map((s,i)=>[s.school,i]));
+ return candidates.sort((a,b)=>{
+  const rank=r=>r.provider==="college"?(ranks.get(r.school)??ranks.size):ranks.size+1;
+  return rank(a)-rank(b)||(b.season||0)-(a.season||0)||(b.photo_year||0)-(a.photo_year||0);
+ });
+}
 function bat(rows){
  const ab=sum(rows,"batting","atBats"),h=sum(rows,"batting","hits"),d=sum(rows,"batting","doubles"),t=sum(rows,"batting","triples"),hr=sum(rows,"batting","homeRuns");
  const bb=sum(rows,"batting","baseOnBalls"),hbp=sum(rows,"batting","hitByPitch"),sf=sum(rows,"batting","sacFlies");
@@ -694,7 +721,7 @@ async function renderPlayer(d){
  const portraitRegistry=await json("player_portraits.json").catch(()=>({}));
  const portraitRecord=portraitRegistry[id];
  const safePortraitUrl=record=>{try{const u=new URL(record?.url),s=new URL(record?.source||record?.source_url||record?.url);const officialSchool=record?.provider==="college"&&s.protocol==="https:"&&u.hostname.replace(/^www\./,"")===s.hostname.replace(/^www\./,"");return u.protocol==="https:"&&(officialSchool||(record?.provider==="college"&&s.hostname.replace(/^www\./,"")==="goaztecs.com"&&u.hostname==="storage.googleapis.com"&&u.pathname.startsWith("/sdsu-prod/"))||/(^|\.)(mlbstatic\.com|mlb\.com|espncdn\.com|wikimedia\.org|baseball-reference\.com|sports-reference\.com|sr-logos\.com|sidearmsports\.com|sidearmdev\.com|sidearmnextgen\.com|gohofstra\.com|riceowls\.com|rolltide\.com|cloudfront\.net|amazonaws\.com)$/.test(u.hostname))?u.href:null}catch{return null}};
- const portraitCandidates=[portraitRecord,...(portraitRecord?.fallbacks||[])].map(safePortraitUrl).filter(Boolean);
+ const portraitCandidates=[...new Set(orderedPlayerPortraits(portraitRecord,p.rows).map(safePortraitUrl).filter(Boolean))];
  const portraitUrl=portraitCandidates[0];
  const portraitMarkup='<div class="mlb-profile-photo cb-profile-initials cb-player-portrait"><span class="cb-portrait-fallback" aria-hidden="true">'+esc(initials)+'</span>'+(portraitUrl?'<img alt="'+esc(p.name)+'" src="'+esc(portraitUrl)+'" data-fallback="'+esc(portraitCandidates[1]||"")+'" onload="this.parentElement.classList.add(\'has-portrait\')" onerror="this.parentElement.classList.remove(\'has-portrait\');if(this.dataset.fallback){this.src=this.dataset.fallback;this.dataset.fallback=\'\'}else this.remove()">':'')+'</div>';
  const roleStats=(label,groups)=>'<section class="cb-profile-role"><h2>'+esc(label)+'</h2><div class="cb-profile-stat-rows">'
@@ -872,5 +899,5 @@ function render(){
 }
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",render,{once:true});
 else render();
-window.CollegeBaseballArchive={load:cachedLoad,bat,pitch};
+window.CollegeBaseballArchive={portraitSchoolPreference, load:cachedLoad,bat,pitch};
 })();

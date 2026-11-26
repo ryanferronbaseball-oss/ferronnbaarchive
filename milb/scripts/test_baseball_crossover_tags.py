@@ -20,7 +20,8 @@ assert len(college)>=6
 assert len({r["college_player_id"] for r in college})==len(college)
 assert all(r["verified"] is True and r["milb_id"] in ids for r in college)
 assert len({r["milb_id"] for r in college})==len(college)
-assert len(college)==19
+# Preserve the verified baseline while allowing newly audited crossovers.
+assert len(college)>=22, f"Expected at least 22 verified college+MiLB links, found {len(college)}"
 assert all(r["verified"] is True and r["mlb_debut"] for r in links)
 assert not ({r["milb_id"] for r in college}-{r for r in ids})
 positive={r["milb_id"]:r for r in links}

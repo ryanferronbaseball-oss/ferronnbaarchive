@@ -8,7 +8,7 @@
 <p class="lead">Game-by-game box scores with full scoring chronology, from opening kickoff to the final score.</p>
 <div class="toolbar"><label class="filter-label" for="gameSelect">Your game</label><select id="gameSelect" aria-label="Select attended NFL game"></select></div>
 <section id="scoreboard" aria-label="Game score by quarter"><div class="empty">Loading game…</div></section>
-<section id="gamePhoto" aria-label="Game photograph" style="display:none;margin:18px 0 24px"></section>
+<section id="gamePhoto" aria-label="Game photograph" style="display:none;width:100%;max-width:none;margin:18px 0 24px"></section>
 <section id="curatedRecap" class="panel game-recap" aria-label="Game recap" style="display:none;margin:18px 0 24px"></section>
 <section id="playerOfGame" class="panel pog" aria-label="NFL Player of the Game" aria-live="polite"><div class="empty">Loading Player of the Game…</div></section>
 <section id="pprLeaders" class="panel ppr-board" aria-label="Top Full-PPR offensive scores in this game">
@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded",async()=>{
   const photos={"nfl-2007-11-25-sf-ari":"./assets/game-photos/200749ersCardinals.png","nfl-2008-12-07-stl-ari":"./assets/game-photos/2008RamsCardinals.png","nfl-2023-12-03-ind-ten":"./assets/game-photos/2023ColtsTitans.png"};
   const photo=photos[selected.id],figure=el("gamePhoto");
   figure.style.display=photo?"block":"none";
-  figure.innerHTML=photo?'<figure style="margin:0;max-width:900px"><img src="'+A.esc(photo)+'" alt="Game photograph from the selected NFL matchup" style="display:block;width:100%;height:auto;border-radius:14px"><figcaption class="caption" style="margin-top:8px">'+A.esc(A.date(selected.date))+' · '+A.esc(selected.away)+' at '+A.esc(selected.home)+'</figcaption></figure>':"";
+  figure.innerHTML=photo?'<figure style="margin:0;width:100%;max-width:none;overflow:hidden;border-radius:14px"><img src="'+A.esc(photo)+'" alt="Game photograph from the selected NFL matchup" style="display:block;width:100%;height:auto;border-radius:14px"><figcaption class="caption" style="margin-top:8px">'+A.esc(A.date(selected.date))+' · '+A.esc(selected.away)+' at '+A.esc(selected.home)+'</figcaption></figure>':"";
   const event=score[selected.id];
   el("scoringCount").textContent=(event?.plays.length||0)+" scoring plays";
   el("scoring").innerHTML=A.scoring(event?.plays||[],selected);

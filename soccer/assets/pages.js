@@ -15,12 +15,13 @@ if(page==="player"||page==="home"){
  try{const r=await fetch("./data/player_portraits.json",{cache:"no-store"});if(r.ok)portraits=await r.json()}catch(e){console.warn("Portrait registry unavailable",e)}
 }
 function photoCredit(record){
+ if(record?.provider==="official"&&/^https:\/\/[^\s"'<>]+$/.test(record.source||""))return '<small class="archive-photo-credit"><a href="'+esc(record.source)+'" target="_blank" rel="noopener noreferrer">Photo source ↗</a></small>';
  if(!record||record.provider!=="commons"||!/^https:\/\/commons\.wikimedia\.org\/wiki\/File:/.test(record.source||"")||!/^https:\/\/(creativecommons\.org|commons\.wikimedia\.org)\//.test(record.license_url||""))return "";
  return '<small class="archive-photo-credit">Photo: <a href="'+esc(record.source)+'" target="_blank" rel="noopener noreferrer">'+esc(record.author)+'</a> · <a href="'+esc(record.license_url)+'" target="_blank" rel="noopener noreferrer">'+esc(record.license)+'</a></small>';
 }
 function portrait(p){
  const url=portraits[p.id]?.url;
- return typeof url==="string"&&(/^https:\/\/a\.espncdn\.com\/i\/headshots\/soccer\/players\/full\/\d+\.png$/.test(url)||/^https:\/\/upload\.wikimedia\.org\/wikipedia\/commons\//.test(url))
+ return typeof url==="string"&&(/^https:\/\/a\.espncdn\.com\/i\/headshots\/soccer\/players\/full\/\d+\.png$/.test(url)||/^https:\/\/upload\.wikimedia\.org\/wikipedia\/commons\//.test(url)|| (portraits[p.id]?.provider==="official"&&/^https:\/\/[^\s"'<>]+$/.test(url)))
  ? '<img alt="'+esc(p.name)+'" data-provider="'+(portraits[p.id]?.provider==="commons"?"commons":"espn")+'" onload="this.classList.add(\'is-loaded\')" onerror="this.remove()" src="'+esc(url)+'"><span>'+initial(p.name)+'</span>'
  : initial(p.name);
 }

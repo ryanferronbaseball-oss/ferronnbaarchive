@@ -1,0 +1,28 @@
+name: Jacob Pavletich college baseball identity merge
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['scripts/merge_college_baseball_jacob_pavletich.py', '.github/workflows/college-baseball-jacob-pavletich.yml']
+permissions:
+  contents: write
+concurrency:
+  group: college-baseball-portraits
+  cancel-in-progress: false
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python scripts/merge_college_baseball_jacob_pavletich.py
+      - name: Commit scoped merge
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add college-baseball/data/player_portraits.json college-baseball/data/player_identity_crosswalk.json college-baseball/data/identity_jacob_pavletich_merge.json
+          git commit -m "Combine Jacob and Jake Pavletich in college baseball"
+          git pull --rebase origin main
+          git push origin HEAD:main

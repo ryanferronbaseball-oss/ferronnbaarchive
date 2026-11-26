@@ -3168,6 +3168,85 @@
           "canonical_player_id": "cb-uc-irvine-a-garcia-pacheco"
         }
       ]
+    },
+    {
+      "game_id": "cb-2022-04-12-san-diego-state-san-diego-att0146",
+      "team": "San Diego State",
+      "description": "Official SDSU roster spelling",
+      "verified_on": "2026-11-25",
+      "evidence_urls": [
+        "https://goaztecs.com/sports/baseball/roster/player/eldridge-armstrong-iii"
+      ],
+      "corrections": [
+        {
+          "source_player_id": "cb-san-diego-state-eldridge-armstrong",
+          "source_player_name": "Eldridge ARMSTRONG",
+          "player": "Eldridge Armstrong III",
+          "canonical_player_id": "cb-san-diego-state-eldridge-armstrong"
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2023-02-21-cal-state-northrdige-san-diego-state-att0182",
+      "team": "San Diego State",
+      "description": "Official SDSU roster spelling",
+      "verified_on": "2026-11-25",
+      "evidence_urls": [
+        "https://goaztecs.com/sports/baseball/roster/player/eldridge-armstrong-iii",
+        "https://goaztecs.com/sports/baseball/roster/season/2023/player/tj-fondtain",
+        "https://goaztecs.com/news/2023/02/22/aztecs-drop-home-opener-to-csun-7-5"
+      ],
+      "corrections": [
+        {
+          "source_player_id": "cb-san-diego-state-eldridge-armstrong",
+          "source_player_name": "Eldridge Armstrong",
+          "player": "Eldridge Armstrong III",
+          "canonical_player_id": "cb-san-diego-state-eldridge-armstrong"
+        },
+        {
+          "source_player_id": "cb-san-diego-state-tj-fondtain",
+          "source_player_name": "Tj Fondtain",
+          "player": "TJ Fondtain",
+          "canonical_player_id": "cb-san-diego-state-tj-fondtain"
+        },
+        {
+          "source_player_id": "cb-san-diego-state-tyson-de-wall",
+          "source_player_name": "Tyson de Wall",
+          "player": "Tyson De Wall",
+          "canonical_player_id": "cb-san-diego-state-tyson-de-wall"
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2023-04-18-san-diego-san-diego-state-att0207",
+      "team": "San Diego State",
+      "description": "Official SDSU roster spelling",
+      "verified_on": "2026-11-25",
+      "evidence_urls": [
+        "https://goaztecs.com/sports/baseball/roster/player/eldridge-armstrong-iii",
+        "https://goaztecs.com/sports/baseball/roster/season/2024/player/xavier-cardenas-iii",
+        "https://goaztecs.com/sports/baseball/roster/season/2023/player/tj-fondtain"
+      ],
+      "corrections": [
+        {
+          "source_player_id": "cb-san-diego-state-eldridge-armstrong",
+          "source_player_name": "Eldridge ARMSTRONG",
+          "player": "Eldridge Armstrong III",
+          "canonical_player_id": "cb-san-diego-state-eldridge-armstrong"
+        },
+        {
+          "source_player_id": "cb-san-diego-state-xavier-cardenas",
+          "source_player_name": "Xavier CARDENAS",
+          "player": "Xavier Cardenas III",
+          "canonical_player_id": "cb-san-diego-state-xavier-cardenas"
+        },
+        {
+          "source_player_id": "cb-san-diego-state-tj-fondtain",
+          "source_player_name": "TJ FONDTAIN",
+          "player": "TJ Fondtain",
+          "canonical_player_id": "cb-san-diego-state-tj-fondtain"
+        }
+      ]
     }
   ]
 }

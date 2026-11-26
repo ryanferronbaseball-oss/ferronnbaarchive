@@ -4,8 +4,8 @@
   "source": "Original archive owner confirmed each multi-school person",
   "original_attendance_ids_preserved": 444,
   "original_player_game_rows_preserved": 13183,
-  "requested_person_merges": 198,
-  "activated_person_merges": 198,
+  "requested_person_merges": 199,
+  "activated_person_merges": 199,
   "pending_person_merges": 0,
   "merge_policy": "Only listed pair of exact normalized person names and school-specific original source player IDs; all other IDs remain separate",
   "display_aliases": [
@@ -5829,6 +5829,33 @@
       "note": "Owner-approved Anthony Martinez / Tony Martinez name variant; official UC Irvine roster uses Anthony Martinez.",
       "evidence_urls": [
         "https://ucirvinesports.com/sports/baseball/roster/anthony-martinez/7209"
+      ]
+    },
+    {
+      "name": "Justin Goossen-Brown",
+      "display_name": "Justin Goossen-Brown",
+      "canonical_id": "cb-san-diego-state-justin-goossen-brown",
+      "source_player_ids": [
+        "cb-san-diego-state-justi-goossen-brown",
+        "cb-san-diego-state-justin-goossen-brown"
+      ],
+      "schools": [
+        "San Diego State"
+      ],
+      "pairs": [
+        {
+          "team": "San Diego State",
+          "source_player_id": "cb-san-diego-state-justi-goossen-brown"
+        },
+        {
+          "team": "San Diego State",
+          "source_player_id": "cb-san-diego-state-justin-goossen-brown"
+        }
+      ],
+      "source_rows": 3,
+      "note": "Owner-approved truncated first name correction; official 2019 SDSU roster.",
+      "evidence_urls": [
+        "https://goaztecs.com/sports/baseball/roster/season/2019/player/justin-goossen-brown"
       ]
     }
   ]

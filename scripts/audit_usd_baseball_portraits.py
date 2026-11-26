@@ -42,7 +42,13 @@ def bio_images(soup,page,school,names):
     # USD's portrait is an image anchor with width=300, distinct from gallery images.
     for a in soup.find_all('a',href=True):
         u=urljoin(page,a['href']);path=urlsplit(u).path
-        if '/images/' not in path or not re.search(r'\.(?:png|jpe?g|webp)
+        if '/images/' not in path or not re.search(r'\.(?:png|jpe?g|webp)$',path,re.I):continue
+        if parse_qs(urlsplit(u).query).get('width')!=['300']:continue
+        stem=norm(path.rsplit('/',1)[-1].rsplit('.',1)[0])
+        if any(n in stem or stem in n and len(stem)>=6 for n in names):
+            yield from image_options(u,page,school)
+    yield from named_images(soup,page,school,names)
+def photo_year(url,season):
     # Only an explicit upload date is used; otherwise use verified roster season.
     m=re.search(r'/((?:19|20)\d{2})/\d{1,2}/\d{1,2}/',unquote(url))
     return int(m.group(1)) if m else season

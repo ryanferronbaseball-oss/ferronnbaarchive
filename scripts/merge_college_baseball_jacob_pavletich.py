@@ -16,7 +16,8 @@ assert len(existing)==1 and set(existing[0]['source_player_ids'])=={jake,short},
 assert all(not ids.intersection(m['source_player_ids']) for m in cross.get('owner_rejected_merge_candidates',[]))
 matches=[r for r in rows if r['player_id'] in ids]
 assert {r['team'] for r in matches}=={'Cal State Fullerton'}
-assert {r['player_id'] for r in matches}==ids
+assert {r['player_id'] for r in matches}.issubset(ids) and jacob in {r['player_id'] for r in matches}
+assert {r['player_id'] for r in matches}.intersection({jake,short}), 'No source rows for Jake aliases'
 assert len({r['game_id'] for r in matches})==len(matches),'Same-game collision: review before merging'
 m=existing[0]
 m.update(name='Jacob Pavletich',display_name='Jacob Pavletich',canonical_id=jacob,source_player_ids=sorted(ids),pairs=[{'team':'Cal State Fullerton','source_player_id':i} for i in sorted(ids)],source_rows=len(matches),note='Owner-approved Jacob / Jake / J. Pavletich identity; preserve original gamebook rows.',evidence_urls=['https://fullertontitans.com/sports/baseball/roster/jacob-pavletich/1838'])

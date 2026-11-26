@@ -4,8 +4,8 @@
   "source": "Original archive owner confirmed each multi-school person",
   "original_attendance_ids_preserved": 444,
   "original_player_game_rows_preserved": 13183,
-  "requested_person_merges": 196,
-  "activated_person_merges": 196,
+  "requested_person_merges": 197,
+  "activated_person_merges": 197,
   "pending_person_merges": 0,
   "merge_policy": "Only listed pair of exact normalized person names and school-specific original source player IDs; all other IDs remain separate",
   "display_aliases": [
@@ -5771,6 +5771,33 @@
       "note": "Owner-approved JT Navyac / J.T. Navyac name variant; official Cal State Fullerton roster uses JT Navyac.",
       "evidence_urls": [
         "https://fullertontitans.com/sports/baseball/roster/jt-navyac/4155"
+      ]
+    },
+    {
+      "name": "Caden Connor",
+      "display_name": "Caden Connor",
+      "canonical_id": "cb-cal-state-fullerton-caden-connor",
+      "source_player_ids": [
+        "cb-cal-state-fullerton-caden-connor",
+        "cb-cal-state-fullerton-connor-caden"
+      ],
+      "schools": [
+        "Cal State Fullerton"
+      ],
+      "pairs": [
+        {
+          "team": "Cal State Fullerton",
+          "source_player_id": "cb-cal-state-fullerton-caden-connor"
+        },
+        {
+          "team": "Cal State Fullerton",
+          "source_player_id": "cb-cal-state-fullerton-connor-caden"
+        }
+      ],
+      "source_rows": 6,
+      "note": "Owner-approved Caden Connor / Connor Caden name variant; official Cal State Fullerton roster uses Caden Connor.",
+      "evidence_urls": [
+        "https://fullertontitans.com/sports/baseball/roster/2023"
       ]
     }
   ]

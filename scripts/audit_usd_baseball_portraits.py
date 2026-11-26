@@ -136,6 +136,8 @@ def main():
     for cid,(r,h) in found.items():hashes[h].add(cid)
     for p in players:
         cid=p['id'];old=reg.get(cid)
+        if old and old.get('owner_preferred') is True:
+            report['preserved'].append({'id':cid,'name':p['name']});continue
         if cid not in found or len(hashes[found[cid][1]])>1:
             report['preserved' if old else 'missing'].append({'id':cid,'name':p['name']});continue
         new=found[cid][0]

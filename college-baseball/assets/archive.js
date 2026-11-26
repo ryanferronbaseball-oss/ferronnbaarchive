@@ -10,7 +10,7 @@ const link=(s)=>{try{let u=new URL(s);return ["https:","http:"].includes(u.proto
 const gameUrl=g=>"./game.html?id="+encodeURIComponent(g.id);
 const playerUrl=p=>"./player.html?id="+encodeURIComponent(p.player_id);
 // Preserve original source IDs and source-scoped validation; canonicalize school labels only after source matching.
-const canonicalSchool=s=>s==="Cal State Northrdige"?"Cal State Northridge":s;
+const canonicalSchool=s=>s==="Cal State Northrdige"?"Cal State Northridge":s==="UC irvine"?"UC Irvine":s;
 const unique=a=>[...new Set(a.filter(x=>x!=null&&x!==""))];
 // Several official gamebooks print surnames (or entire lineups) in capitals.
 // Correct only their presentation; player IDs, source names and stat lines stay intact.

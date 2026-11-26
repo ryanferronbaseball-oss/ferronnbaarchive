@@ -9,9 +9,13 @@ let portraitFallbacks={};
 if(["player","games","hof"].includes(page)){
  try{const r=await fetch("./data/player_portrait_fallbacks.json",{cache:"no-store"});if(r.ok)portraitFallbacks=await r.json()}catch(e){console.warn("Portrait fallback registry unavailable",e)}
 }
+function photoCredit(record){
+ if(!record||record.provider!=="commons"||!/^https:\/\/commons\.wikimedia\.org\/wiki\/File:/.test(record.source||"")||!/^https:\/\/(creativecommons\.org|commons\.wikimedia\.org)\//.test(record.license_url||""))return "";
+ return '<small class="archive-photo-credit">Photo: <a href="'+esc(record.source)+'" target="_blank" rel="noopener noreferrer">'+esc(record.author)+'</a> · <a href="'+esc(record.license_url)+'" target="_blank" rel="noopener noreferrer">'+esc(record.license)+'</a></small>';
+}
 function mlbPortrait(id){
  const url=portraitFallbacks[String(id)]?.url;
- return typeof url==="string"&&/^https:\/\/a\.espncdn\.com\/i\/headshots\/mlb\/players\/full\/\d+\.png$/.test(url)
+ return typeof url==="string"&&(/^https:\/\/a\.espncdn\.com\/i\/headshots\/mlb\/players\/full\/\d+\.png$/.test(url)||/^https:\/\/upload\.wikimedia\.org\/wikipedia\/commons\//.test(url))
  ? url : "https://img.mlbstatic.com/mlb-photos/image/upload/w_213,q_85/v1/people/"+encodeURIComponent(id)+"/headshot/67/current";
 }
 let gamePhotos={};
@@ -280,7 +284,7 @@ function gamePage(){
     +' onerror="this.style.display=\'none\';this.parentElement.textContent=\''+fallback+'\'">';
   return '<div class="mlb-potg-body"><div class="mlb-potg-portrait">'+image+'</div><div class="mlb-potg-info">'
     +'<div class="mlb-potg-category">'+esc(standout.role)+' · '+esc(r.team)+'</div>'
-    +'<h3><a href="'+playerUrl(r)+'">'+esc(r.name)+'</a></h3>'
+    +'<h3><a href="'+playerUrl(r)+'">'+esc(r.name)+'</a></h3>'+photoCredit(portraitFallbacks[String(r.player_id)])
     +'<div class="mlb-potg-statline">'+esc(standout.line)+'</div>'
     +'<div class="mlb-potg-impact"><strong>'+standout.score.toFixed(1)+'</strong><span>Impact Score</span></div>'
     +'<a href="'+playerUrl(r)+'" class="mlb-potg-profile">View player profile ↗</a></div></div>';
@@ -635,7 +639,7 @@ function profilePage(){
   +'<div class="mlb-profile-photo"><img alt="" src="'+esc(mlbPortrait(p.player_id))+'"'
   +' onerror="this.style.display=\'none\';this.parentNode.textContent=\''+esc(nameInitials)+'\'"></div>'
   +'<div class="mlb-profile-identity"><div class="mlb-profile-team-name">'+esc(p.teams.join(" / "))+'</div>'
-  +'<div class="mlb-player-name-row"><h1>'+esc(p.name)+'</h1><span class="mlb-player-country-slot" data-mlb-country-for="'+esc(p.player_id)+'">'+profileCountryFlags(String(p.player_id))+'</span></div>'+badges
+  +'<div class="mlb-player-name-row"><h1>'+esc(p.name)+'</h1><span class="mlb-player-country-slot" data-mlb-country-for="'+esc(p.player_id)+'">'+profileCountryFlags(String(p.player_id))+'</span></div>'+badges+photoCredit(portraitFallbacks[String(p.player_id)])
   +'<p class="mlb-profile-seen">'+p.game_count+' attended '+(p.game_count===1?"game":"games")+' · '+esc(years)+'</p></div></section>'
   +'<div class="mlb-profile-headline-stats'+(twoWay?" is-two-way":pitcher?" is-pitcher":"")+'">'+summaryTiles+'</div>'
   +multiTeam.markup
@@ -732,7 +736,7 @@ function hofPage(){
   return '<article class="mlb-hof-card" data-player-id="'+p.player_id+'">'
    +'<div class="mlb-hof-head">'+portrait+'<div class="mlb-hof-title">'
    +'<span class="mlb-hof-badge">★ HALL OF FAME</span>'
-   +'<h2><a href="'+playerUrl(p)+'">'+esc(p.name)+'</a></h2>'
+   +'<h2><a href="'+playerUrl(p)+'">'+esc(p.name)+'</a></h2>'+photoCredit(portraitFallbacks[String(p.player_id)])
    +'<div class="mlb-hof-meta">Class of '+record.year+' · '+esc(p.teams.join(" / "))+'</div></div></div>'
    +'<div class="mlb-hof-figures">'
    +[['Games you attended',m.seen.length],['Hall of Fame class',record.year],lastStat]

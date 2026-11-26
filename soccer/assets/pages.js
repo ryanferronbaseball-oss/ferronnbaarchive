@@ -14,9 +14,13 @@ let portraits={};
 if(page==="player"||page==="home"){
  try{const r=await fetch("./data/player_portraits.json",{cache:"no-store"});if(r.ok)portraits=await r.json()}catch(e){console.warn("Portrait registry unavailable",e)}
 }
+function photoCredit(record){
+ if(!record||record.provider!=="commons"||!/^https:\/\/commons\.wikimedia\.org\/wiki\/File:/.test(record.source||"")||!/^https:\/\/(creativecommons\.org|commons\.wikimedia\.org)\//.test(record.license_url||""))return "";
+ return '<small class="archive-photo-credit">Photo: <a href="'+esc(record.source)+'" target="_blank" rel="noopener noreferrer">'+esc(record.author)+'</a> · <a href="'+esc(record.license_url)+'" target="_blank" rel="noopener noreferrer">'+esc(record.license)+'</a></small>';
+}
 function portrait(p){
  const url=portraits[p.id]?.url;
- return typeof url==="string"&&/^https:\/\/a\.espncdn\.com\/i\/headshots\/soccer\/players\/full\/\d+\.png$/.test(url)
+ return typeof url==="string"&&(/^https:\/\/a\.espncdn\.com\/i\/headshots\/soccer\/players\/full\/\d+\.png$/.test(url)||/^https:\/\/upload\.wikimedia\.org\/wikipedia\/commons\//.test(url))
  ? '<img alt="'+esc(p.name)+'" src="'+esc(url)+'" loading="lazy" onerror="this.remove()"><span>'+initial(p.name)+'</span>'
  : initial(p.name);
 }
@@ -104,7 +108,7 @@ function overview(){
  +'<div class="section-heading"><h2>Signature Performances</h2><a class="action-link secondary" href="./records.html">View all Records ↗</a></div>'
  +'<p class="soccer-info">Single-match performances from matches you attended, not full-season totals.</p><div class="soccer-grid">'
  +categories.map(([title,k])=>{const a=per.slice().sort((a,b)=>b[k]-a[k]||b.assists-a.assists||b.goals-a.goals||a.p.name.localeCompare(b.p.name))[0];
- return '<article class="soccer-tile"><small>'+esc(title)+'</small>'+ (a?'<div class="soccer-feature"><div class="soccer-avatar">'+portrait(a.p)+'</div><div class="data"><strong>'+a[k]+'</strong><div>'+pl(a.p)+'</div><small>'+dt(a.m.date)+'</small></div></div><a href="'+link(a.m)+'">View performance ↗</a>':"No qualifying player")+'</article>'}).join("")+'</div>'
+ return '<article class="soccer-tile"><small>'+esc(title)+'</small>'+ (a?'<div class="soccer-feature"><div class="soccer-avatar">'+portrait(a.p)+'</div><div class="data"><strong>'+a[k]+'</strong><div>'+pl(a.p)+'</div><small>'+dt(a.m.date)+'</small>'+photoCredit(portraits[a.p.id])+'</div></div><a href="'+link(a.m)+'">View performance ↗</a>':"No qualifying player")+'</article>'}).join("")+'</div>'
  +'<div class="soccer-charts"><section class="soccer-chart"><h3>Most Watched Teams</h3>'+bar([...teams].sort((a,b)=>b[1]-a[1]))+'</section><section class="soccer-chart"><h3>Attendance by Year</h3>'+bar([...years].sort((a,b)=>a[0]-b[0]).map(([a,b])=>[String(a),b]))+'</section></div>'
  +'<section class="soccer-panel"><h2>My Game History</h2>'+selectors+'<div id="history"></div></section>'
  +warn('The October 2021 San Diego Loyal–Oakland Roots match is included. The Arizona United–Sacramento (2016) match awaits a verified gamebook. MLS secondary assists remain separate from direct assists.');
@@ -217,7 +221,7 @@ function profile(){
   +honorGroups.map(([key,title,badge,list])=>'<div class="soccer-honor-category"><h3>'+esc(title)+' <small>('+list.length+')</small></h3><ul>'
   +list.slice().sort((a,b)=>String(a.season||a.year).localeCompare(String(b.season||b.year))).map(a=>'<li>'+esc(honorLine(key,a))+(a.source_url?'<a href="'+esc(a.source_url)+'" target="_blank" rel="noopener noreferrer">Source ↗</a>':"")+'</li>').join("")+'</ul></div>').join("")+'</section>':"";
  const eventRows=log.map(l=>'<tr><td><a href="./game.html?id='+encodeURIComponent(l.id)+'">'+dt(l.date)+'</a></td><td>'+esc(l.team)+'</td><td>'+esc(l.opponent)+'</td><td>'+(l.started?"Starter":"Substitute")+'</td><td>'+l.goals+'</td><td>'+l.assists+'</td><td>'+l.secondary_assists+'</td><td>'+l.yellow+'</td></tr>');
- app.innerHTML='<div class="eyebrow">Pro Soccer · Player profile</div><div class="soccer-profile-head"><div class="soccer-portrait">'+portrait(p)+'</div><div><h1 style="margin:0">'+A.playerName(p.name,false)+'</h1>'+awardBadges+'<p class="lead">'+esc(p.teams.join(" / "))+' · '+p.appearances+' attended match'+(p.appearances===1?"":"es")+'</p></div></div>'
+ app.innerHTML='<div class="eyebrow">Pro Soccer · Player profile</div><div class="soccer-profile-head"><div class="soccer-portrait">'+portrait(p)+'</div><div><h1 style="margin:0">'+A.playerName(p.name,false)+'</h1>'+awardBadges+photoCredit(portraits[p.id])+'<p class="lead">'+esc(p.teams.join(" / "))+' · '+p.appearances+' attended match'+(p.appearances===1?"":"es")+'</p></div></div>'
  +metricCards([["Appearances",p.appearances],["Goals",p.goals],["Direct assists",p.assists],["Goal contributions",p.contributions]])
  +awardPanel
  +'<div class="section-heading"><h2>Matches you attended</h2><a class="action-link secondary" href="./stats.html">All leaderboards ↗</a></div><div class="game-grid">'+log.map(l=>A.matchCard(one(l.id))).join("")+'</div>'

@@ -4,8 +4,8 @@
   "source": "Original archive owner confirmed each multi-school person",
   "original_attendance_ids_preserved": 444,
   "original_player_game_rows_preserved": 13183,
-  "requested_person_merges": 197,
-  "activated_person_merges": 197,
+  "requested_person_merges": 198,
+  "activated_person_merges": 198,
   "pending_person_merges": 0,
   "merge_policy": "Only listed pair of exact normalized person names and school-specific original source player IDs; all other IDs remain separate",
   "display_aliases": [
@@ -5798,6 +5798,37 @@
       "note": "Owner-approved Caden Connor / Connor Caden name variant; official Cal State Fullerton roster uses Caden Connor.",
       "evidence_urls": [
         "https://fullertontitans.com/sports/baseball/roster/2023"
+      ]
+    },
+    {
+      "name": "Anthony Martinez",
+      "display_name": "Anthony Martinez",
+      "canonical_id": "cb-uc-irvine-anthony-martinez",
+      "source_player_ids": [
+        "cb-uc-irvine-anthony-martinez",
+        "cb-uc-irvine-tony-martinez"
+      ],
+      "schools": [
+        "UC Irvine"
+      ],
+      "pairs": [
+        {
+          "team": "UC Irvine",
+          "source_player_id": "cb-uc-irvine-anthony-martinez"
+        },
+        {
+          "team": "UC Irvine",
+          "source_player_id": "cb-uc-irvine-tony-martinez"
+        },
+        {
+          "team": "UC irvine",
+          "source_player_id": "cb-uc-irvine-tony-martinez"
+        }
+      ],
+      "source_rows": 4,
+      "note": "Owner-approved Anthony Martinez / Tony Martinez name variant; official UC Irvine roster uses Anthony Martinez.",
+      "evidence_urls": [
+        "https://ucirvinesports.com/sports/baseball/roster/anthony-martinez/7209"
       ]
     }
   ]

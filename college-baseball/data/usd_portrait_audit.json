@@ -457,10 +457,6 @@
       "name": "Jackson Frankovich"
     },
     {
-      "id": "cb-cal-state-northridge-hayden-cody",
-      "name": "Hayden Cody"
-    },
-    {
       "id": "cb-san-diego-gabe-d-arcy",
       "name": "Gabe D'Arcy"
     },
@@ -533,12 +529,41 @@
       "name": "Fernando Palencia"
     }
   ],
-  "registered": 212,
+  "registered": 498,
   "roster_pages_verified": 47,
   "school": "San Diego",
   "targeted": 130,
   "unmapped_transfer_schools": [
     "St. John's"
   ],
-  "upgraded": []
+  "upgraded": [
+    {
+      "fallbacks": [
+        {
+          "photo_year": 2023,
+          "provider": "college",
+          "school": "Cal State Northridge",
+          "season": 2024,
+          "source": "https://gomatadors.com/sports/baseball/roster/hayden-cody/6173",
+          "url": "https://images.sidearmdev.com/crop?url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Fcsun.sidearmsports.com%2Fimages%2F2023%2F9%2F12%2FCody_Hayden_24.jpg&width=180&height=270&type=webp"
+        },
+        {
+          "photo_year": 2025,
+          "provider": "college",
+          "school": "San Diego",
+          "season": 2026,
+          "source": "https://usdtoreros.com/sports/baseball/roster/hayden-cody/12796",
+          "url": "https://usdtoreros.com/images/2025/10/2/hayden_cody_2.png?width=300"
+        }
+      ],
+      "id": "cb-cal-state-northridge-hayden-cody",
+      "name": "Hayden Cody",
+      "photo_year": 2025,
+      "provider": "college",
+      "school": "San Diego",
+      "season": 2026,
+      "source": "https://usdtoreros.com/sports/baseball/roster/hayden-cody/12796",
+      "url": "https://usdtoreros.com/images/2025/10/2/hayden_cody_2.png?width=300"
+    }
+  ]
 }

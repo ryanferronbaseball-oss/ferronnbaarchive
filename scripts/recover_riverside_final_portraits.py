@@ -62,6 +62,12 @@ for p in targets:
                 if 'headshot' in stem or any(x in stem for x in names):candidates.append(u)
             # Roster bios sometimes use a filename with surname only, or action photography.
             # Record these for manual review, do not publish unverified action images.
+            # The official bio's 180x270 roster crop is distinct from gallery resize images.
+            # For the seven surname-only headshots, require the exact roster crop and basename.
+            for item in observed:
+                u=item['url'];q=unquote(u)
+                if '/crop?' in u and 'width=180&height=270' in u and re.search(r'/'+re.escape(surname)+r'\.(?:png|jpe?g)(?:&|$)',q,re.I) and norm(item['alt'])==surname:
+                    candidates.insert(0,u)
             if not candidates:attempts.append({'source':r.url,'observed':observed[:20]})
             for url in dict.fromkeys(candidates):
                 state,h=probe(url);attempts.append({'url':url,'state':state})

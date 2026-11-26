@@ -691,6 +691,10 @@ async function renderPlayer(d){
  const entries=unique(p.rows.map(x=>x.game_id)).map(game_id=>d.gameMap.get(game_id)).filter(Boolean).sort((a,b)=>b.date.localeCompare(a.date)||b.id.localeCompare(a.id));
  const logRows=p.rows.slice().sort((a,b)=>(d.gameMap.get(b.game_id)?.date||"").localeCompare(d.gameMap.get(a.game_id)?.date||"")||b.game_id.localeCompare(a.game_id));
  const initials=p.name.split(/\s+/).map(x=>x[0]).slice(0,2).join("").toUpperCase();
+ const portraitRegistry=await json("player_portraits.json").catch(()=>({}));
+ const portraitRecord=portraitRegistry[id];
+ const portraitUrl=(()=>{try{const u=new URL(portraitRecord?.url);return u.protocol==="https:"&&/(^|\.)(mlbstatic\.com|mlb\.com|espncdn\.com|wikimedia\.org|baseball-reference\.com|sports-reference\.com|sr-logos\.com|sidearmsports\.com|sidearmdev\.com|sidearmnextgen\.com|gohofstra\.com|riceowls\.com|rolltide\.com|cloudfront\.net|amazonaws\.com)$/.test(u.hostname)?u.href:null}catch{return null}})();
+ const portraitMarkup='<div class="mlb-profile-photo cb-profile-initials cb-player-portrait"><span class="cb-portrait-fallback" aria-hidden="true">'+esc(initials)+'</span>'+(portraitUrl?'<img alt="'+esc(p.name)+'" src="'+esc(portraitUrl)+'" onload="this.parentElement.classList.add(\'has-portrait\')" onerror="this.parentElement.classList.remove(\'has-portrait\');this.remove()">':'')+'</div>';
  const roleStats=(label,groups)=>'<section class="cb-profile-role"><h2>'+esc(label)+'</h2><div class="cb-profile-stat-rows">'
   +groups.map(items=>'<div class="cb-profile-stat-row" style="--cb-columns:'+items.length+'">'
    +items.map(([title,value])=>'<div class="mlb-profile-total"><small>'+esc(title)+'</small><strong>'+esc(value==null?"—":value)+'</strong></div>').join("")
@@ -724,7 +728,7 @@ async function renderPlayer(d){
  ]):"";
  $("app").innerHTML='<div class="eyebrow">College Baseball · Player profile</div>'
  +'<section class="mlb-profile-hero mlb-profile-head cb-profile-hero">'
- +'<div class="mlb-profile-photo cb-profile-initials" aria-hidden="true">'+esc(initials)+'</div>'
+ +portraitMarkup
  +'<div class="mlb-profile-identity"><div class="mlb-profile-team-name">'+esc(p.teams.join(" / "))+'</div>'
  +'<h1>'+esc(p.name)+'</h1>'
  +(p.former_names?.length?'<p class="mlb-profile-seen">Formerly '+esc(p.former_names.join(', '))+'</p>':'')

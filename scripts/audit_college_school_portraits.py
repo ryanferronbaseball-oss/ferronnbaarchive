@@ -10,7 +10,7 @@ def norm(s):return re.sub(r'[^a-z0-9]','',unicodedata.normalize('NFKD',s).lower(
 def host(u):return (urlsplit(u).hostname or '').removeprefix('www.')
 def allowed(u,school):
     h=host(u)
-    return u.startswith('https://') and (h==school or any(h==d or h.endswith('.'+d) for d in ('sidearmsports.com','sidearmdev.com','sidearmnextgen.com','amazonaws.com','cloudfront.net')))
+    return u.startswith('https://') and (h==school or any(h==d or h.endswith('.'+d) for d in ('sidearmsports.com','sidearmdev.com','sidearmnextgen.com','amazonaws.com','cloudfront.net','und.com')))
 def candidates(soup,page,names,school):
     accepted={norm(n) for n in names}
     out=[]
@@ -33,6 +33,33 @@ def main():
             report['preserved'].append(pid);continue
         try:
             roster=t['roster'];school=t['host'];names=t['names']
+            cs=[]
+            if t.get('bio'):
+                bio_url=t['bio']
+                school=host(bio_url)
+                r=get(bio_url);r.raise_for_status()
+                if host(r.url)!=school:raise ValueError('bio redirected off school')
+                bio=BeautifulSoup(r.text,'html.parser')
+                headings=' '.join(x.get_text(' ',strip=True) for x in bio.find_all(['h1','title']))
+                if not any(norm(n) in norm(headings) for n in names):raise ValueError('bio name mismatch')
+                if t.get('direct_image') and allowed(t['direct_image'],school):
+                    cs.append((t['direct_image'],r.url))
+                cs.extend((u,r.url) for u in candidates(bio,r.url,names,school))
+                # Exact-name bio metadata or image path, not arbitrary gallery photos.
+                for tag in bio.find_all('img'):
+                    for k in ('src','data-src','data-lazy-src'):
+                        if not tag.get(k):continue
+                        u=urljoin(r.url,tag[k])
+                        if allowed(u,school) and any(norm(n) in norm(urlsplit(u).path) for n in names) and not re.search(r'logo|placeholder|\.svg',u,re.I):cs.append((u,r.url))
+                for tag in bio.find_all('meta',attrs={'property':'og:image'}):
+                    u=urljoin(r.url,tag.get('content',''))
+                    if allowed(u,school) and any(norm(n) in norm(urlsplit(u).path) for n in names):cs.append((u,r.url))
+                for u,source in dict.fromkeys(cs):
+                    state,h=probe(u)
+                    if state=='image' and h:
+                        found[pid]=(u,source,h);break
+                if pid in found:continue
+                school=t['host']
             if roster not in pages:
                 r=get(roster);r.raise_for_status()
                 if host(r.url)!=school:raise ValueError('roster redirected off school')

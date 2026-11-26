@@ -21,7 +21,7 @@ function photoCredit(record){
 function portrait(p){
  const url=portraits[p.id]?.url;
  return typeof url==="string"&&(/^https:\/\/a\.espncdn\.com\/i\/headshots\/soccer\/players\/full\/\d+\.png$/.test(url)||/^https:\/\/upload\.wikimedia\.org\/wikipedia\/commons\//.test(url))
- ? '<img alt="'+esc(p.name)+'" src="'+esc(url)+'" loading="lazy" onerror="this.remove()"><span>'+initial(p.name)+'</span>'
+ ? '<img alt="'+esc(p.name)+'" data-provider="'+(portraits[p.id]?.provider==="commons"?"commons":"espn")+'" onload="this.classList.add(\'is-loaded\')" onerror="this.remove()" src="'+esc(url)+'"><span>'+initial(p.name)+'</span>'
  : initial(p.name);
 }
 let curatedRecaps={};

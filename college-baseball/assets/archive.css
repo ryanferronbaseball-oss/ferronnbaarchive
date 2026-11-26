@@ -625,4 +625,7 @@ body[data-page="player"] #profile-overview .cb-profile-stat-row .mlb-profile-tot
 .cb-player-portrait{position:relative;overflow:hidden}
 .cb-player-portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center bottom;visibility:hidden}
 .cb-player-portrait.has-portrait img{visibility:visible}
+/* LSU supplies square official headshots: fill the taller portrait frame without letterboxing. */
+.cb-player-portrait img.cb-lsu-headshot{object-fit:cover;object-position:center top}
+
 .cb-player-portrait.has-portrait .cb-portrait-fallback{visibility:hidden}

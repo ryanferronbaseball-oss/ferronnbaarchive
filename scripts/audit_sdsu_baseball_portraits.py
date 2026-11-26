@@ -8,7 +8,7 @@ def norm(s):return re.sub('[^a-z0-9]','',unicodedata.normalize('NFKD',str(s)).en
 def host(u):return (urlsplit(u).hostname or '').removeprefix('www.')
 def allowed(u,school):
     h=host(u)
-    return u.startswith('https://') and (h==school or any(h==d or h.endswith('.'+d) for d in ('sidearmsports.com','sidearmdev.com','sidearmnextgen.com','amazonaws.com','cloudfront.net')))
+    return u.startswith('https://') and (h==school or (school=='goaztecs.com' and h=='storage.googleapis.com' and urlsplit(u).path.startswith('/sdsu-prod/')) or any(h==d or h.endswith('.'+d) for d in ('sidearmsports.com','sidearmdev.com','sidearmnextgen.com','amazonaws.com','cloudfront.net')))
 def urls(img,page,school):
     for k in ('data-src','src','data-lazy-src','data-original'):
         v=img.get(k)
@@ -34,6 +34,60 @@ def card_images(soup,page,school,names):
         for img in card.select('.sidearm-roster-player-image img, img.sidearm-roster-player-image, .sidearm-roster-player-image a, .sidearm-roster-player-image source'):
             for k in ('data-src','src','data-lazy-src','href'):
                 yield from image_options(img.get(k),page,school)
+def wmt_headshots(soup,names):
+    # Nuxt's devalue format stores references as indices in a shared array.
+    # Resolve photo fields only on records with a verified exact player name or slug.
+    tag=soup.find('script',id='__NUXT_DATA__')
+    if not tag or not tag.string:return
+    try:data=json.loads(tag.string)
+    except (ValueError,TypeError):return
+    if not isinstance(data,list):return
+    def deref(v):
+        return data[v] if type(v) is int and 0<=v<len(data) else None
+    def strings(v,depth=0,seen=None):
+        if depth>5:return
+        seen=set() if seen is None else seen
+        if type(v) is int:
+            if v in seen:return
+            seen=seen|{v};v=deref(v)
+        if isinstance(v,str):
+            yield v
+        elif isinstance(v,dict):
+            for k,x in v.items():
+                if k not in ('id','width','height','size','created_at','updated_at','user','owner','created_by','updated_by'):
+                    yield from strings(x,depth+1,seen)
+        elif isinstance(v,list):
+            for x in v:yield from strings(x,depth+1,seen)
+    def matches(obj):
+        for k in ('full_name','display_name','name','slug'):
+            v=deref(obj.get(k))
+            if isinstance(v,str) and norm(v) in names:return True
+        f=deref(obj.get('first_name'));l=deref(obj.get('last_name'))
+        return isinstance(f,str) and isinstance(l,str) and norm(f+' '+l) in names
+    def photos(obj):
+        # Never use featured_image or master_featured_image; those can be action photos.
+        for k in ('photo','headshot','head_shot','roster_photo','profile_photo','master_photo'):
+            if k not in obj:continue
+            for v in strings(obj[k]):
+                if v.startswith('https://storage.googleapis.com/sdsu-prod/') or v.startswith('https://goaztecs.com/imgproxy/'):
+                    if not re.search(r'placeholder|silhouette|default|logo|\.svg(?:\?|$)',v,re.I):yield v
+    # Prefer the current roster-specific player's own photo to the master biography.
+    direct=[]
+    for obj in data:
+        if not isinstance(obj,dict):continue
+        for k,v in obj.items():
+            if k.startswith('single-roster-') and '-player-' in k and norm(k.split('-player-',1)[1]) in names:
+                record=deref(v)
+                if isinstance(record,dict):
+                    direct.append(record)
+    for obj in direct:
+        yield from photos(obj)
+        for k in ('player','roster_player'):
+            p=deref(obj.get(k))
+            if isinstance(p,dict) and matches(p):yield from photos(p)
+    # Exact player record fallback only; no generic social or team images.
+    for obj in data:
+        if isinstance(obj,dict) and matches(obj):yield from photos(obj)
 def bio_images(soup,page,school,names):
     # Restrict unlabeled headshots to the designated player portrait container.
     for tag in soup.select('.sidearm-roster-player-image img, .sidearm-roster-player-image a, img.sidearm-roster-player-image, .sidearm-roster-player-headshot img, .sidearm-roster-player-headshot a, .sidearm-roster-player-header .sidearm-roster-player-image img'):
@@ -48,6 +102,7 @@ def bio_images(soup,page,school,names):
         if any(n in stem or stem in n and len(stem)>=6 for n in names):
             yield from image_options(u,page,school)
     if school=='goaztecs.com':
+        yield from wmt_headshots(soup,names)
         for img in soup.find_all('img'):
             for k in ('src','data-src','data-lazy-src'):
                 v=img.get(k,'')
@@ -123,9 +178,11 @@ def main():
     report['roster_pages_verified']=sum(v is not None for v in pages.values())
     report['players_with_candidates']=sum(bool(v) for v in candidates.values())
     found={}
+    report['candidate_diagnostics']={}
     for p in players:
         cid=p['id'];names={norm(n) for n in [p['name'],*p.get('former_names',[])]}
         entries=sorted(candidates[cid],key=lambda x:(x[0],x[1],bool(x[2])),reverse=True)
+        report['candidate_diagnostics'][cid]={'candidate_count':len(entries),'attempts':[]}
         for y,py,u,source,school,h in entries:
             urls_to_try=[u] if u else []
             if not u:
@@ -142,6 +199,7 @@ def main():
                 except Exception:continue
             for url in dict.fromkeys(urls_to_try):
                 state,hash_value=probe(url)
+                report['candidate_diagnostics'][cid]['attempts'].append({'url':url,'state':state})
                 if state=='image' and hash_value:
                     found[cid]=({'url':url,'source':source,'provider':'college','school':school,'season':y,'photo_year':photo_year(url,y)},hash_value);break
             if cid in found:break
@@ -161,6 +219,7 @@ def main():
             new['fallbacks']=[fallback,*old.get('fallbacks',[])]
         reg[cid]=new
         report['upgraded' if old else 'added'].append({'id':cid,'name':p['name'],**new})
+    report['candidate_diagnostics']={p['id']:report['candidate_diagnostics'][p['id']] for p in report['missing']}
     report['registered']=len(reg)
     save(fp,reg);save('college-baseball/data/sdsu_portrait_audit.json',report)
     print(json.dumps({k:len(v) if isinstance(v,list) else v for k,v in report.items()},indent=2))

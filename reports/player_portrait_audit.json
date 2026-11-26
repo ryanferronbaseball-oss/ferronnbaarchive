@@ -711,38 +711,8 @@
     "attempted": 80,
     "unresolved": [
       {
-        "attempts": [
-          {
-            "reason": "no valid named player image",
-            "url": "https://www.psg.fr/en/players/achraf-hakimi"
-          },
-          {
-            "reason": "no valid named player image",
-            "url": "https://www.bundesliga.com/en/player/achraf-hakimi"
-          },
-          {
-            "reason": "404 Client Error: Not Found for url: https://www.laliga.com/en-GB/player/achraf-hakimi",
-            "url": "https://www.laliga.com/en-GB/player/achraf-hakimi"
-          }
-        ],
-        "name": "Achraf Hakimi"
-      },
-      {
         "attempts": [],
         "name": "Akeem O'Connor-Ward"
-      },
-      {
-        "attempts": [
-          {
-            "reason": "attended club not found on player page",
-            "url": "https://www.mlssoccer.com/players/andre-luiz/"
-          },
-          {
-            "reason": "404 Client Error: Not Found for url: https://www.sportingkc.com/players/andre-luiz/",
-            "url": "https://www.sportingkc.com/players/andre-luiz/"
-          }
-        ],
-        "name": "Andre Luiz"
       },
       {
         "attempts": [],
@@ -801,17 +771,8 @@
         "name": "Max Ornstil"
       },
       {
-        "attempts": [
-          {
-            "reason": "404 Client Error: Not Found for url: https://www.bundesliga.com/en/player/maxime-delcroix",
-            "url": "https://www.bundesliga.com/en/player/maxime-delcroix"
-          },
-          {
-            "reason": "404 Client Error: Not Found for url: https://www.laliga.com/en-GB/player/maxime-delcroix",
-            "url": "https://www.laliga.com/en-GB/player/maxime-delcroix"
-          }
-        ],
-        "name": "Maxime Delcroix"
+        "name": "Hannes Delcroix",
+        "attempts": []
       },
       {
         "attempts": [],
@@ -841,9 +802,7 @@
   },
   "soccer": {
     "missing": [
-      "Achraf Hakimi",
       "Akeem O'Connor-Ward",
-      "Andre Luiz",
       "Augustine Williams",
       "Austin Guerrero",
       "Charlie Adams",
@@ -858,7 +817,7 @@
       "Kai Greene",
       "Matias Fissore",
       "Max Ornstil",
-      "Maxime Delcroix",
+      "Hannes Delcroix",
       "Memo Diaz",
       "Paul Blanchette",
       "Soya Takahashi",
@@ -867,7 +826,18 @@
       "Wal Fall"
     ],
     "notes": [],
-    "registered": 91,
+    "registered": 93,
     "total": 115
+  },
+  "manual_soccer_pass": {
+    "added": [
+      "Andre Luiz",
+      "Achraf Hakimi"
+    ],
+    "identity_correction": {
+      "from": "Maxime Delcroix",
+      "to": "Hannes Delcroix",
+      "source": "https://www.reuters.com/sports/soccer/morocco-make-four-changes-they-go-attack-v-haiti-2026-06-24/"
+    }
   }
 }

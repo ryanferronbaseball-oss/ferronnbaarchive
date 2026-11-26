@@ -1,0 +1,32 @@
+name: UC Irvine roster identity reconciliation
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['scripts/audit_baseball_roster_identities.py', 'scripts/export_baseball_identity_targets.cjs', '.github/workflows/irvine-roster-identity.yml']
+permissions:
+  contents: write
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: pip install requests pillow beautifulsoup4
+      - run: node --check scripts/export_baseball_identity_targets.cjs
+      - run: python -m py_compile scripts/audit_baseball_roster_identities.py
+      - run: python scripts/audit_baseball_roster_identities.py "UC Irvine"
+      - name: Commit verified corrections and review report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add college-baseball/data/player_name_corrections.json college-baseball/data/irvine_identity_portrait_review.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Review Irvine roster identities and apply unambiguous full names"
+          git pull --rebase origin main
+          git push origin HEAD:main

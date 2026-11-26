@@ -1,0 +1,6 @@
+// Use the actual browser archive loader and its verified identity corrections.
+const fs=require('node:fs'),vm=require('node:vm'),path=require('node:path');
+const root=process.cwd(),base=path.join(root,'college-baseball');
+const context={window:{},document:{readyState:'loading',addEventListener(){}},console:{warn(){},log(){},error(){}},URL,URLSearchParams,fetch:async url=>{const file=path.resolve(base,String(url).split('?')[0]);if(!file.startsWith(root+path.sep))throw Error('Outside repository');return {ok:fs.existsSync(file),status:fs.existsSync(file)?200:404,json:async()=>JSON.parse(fs.readFileSync(file,'utf8'))}}};
+vm.createContext(context);vm.runInContext(fs.readFileSync(path.join(base,'assets/archive.js'),'utf8'),context);
+context.window.CollegeBaseballArchive.load().then(d=>{const players=d.players.filter(p=>!process.argv[2]||p.teams.includes(process.argv[2])).map(p=>({id:p.player_id,name:p.name,games:p.games,rows:p.rows.map(r=>({game_id:r.game_id,team:r.team,player_id:r.player_id,player:r.player})),former_names:p.former_names||[],schools:Object.fromEntries(p.teams.map(s=>[s,[...new Set(p.rows.filter(r=>r.team===s).map(r=>Number(d.gameMap.get(r.game_id)?.season||d.gameMap.get(r.game_id)?.date?.slice(0,4))).filter(Boolean))].sort()]))}));process.stdout.write(JSON.stringify(players))}).catch(e=>{console.error(e);process.exit(1)});

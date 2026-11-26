@@ -4,8 +4,8 @@
   "source": "Original archive owner confirmed each multi-school person",
   "original_attendance_ids_preserved": 444,
   "original_player_game_rows_preserved": 13183,
-  "requested_person_merges": 199,
-  "activated_person_merges": 199,
+  "requested_person_merges": 205,
+  "activated_person_merges": 205,
   "pending_person_merges": 0,
   "merge_policy": "Only listed pair of exact normalized person names and school-specific original source player IDs; all other IDs remain separate",
   "display_aliases": [
@@ -5003,7 +5003,11 @@
           "source_player_id": "cb-uc-riverside-andre-granillo"
         }
       ],
-      "source_rows": 3
+      "source_rows": 3,
+      "display_name": "Andre Granillo",
+      "evidence_urls": [
+        "https://gohighlanders.com/sports/baseball/roster/andre-granillo/6184"
+      ]
     },
     {
       "name": "Blake Fitzgerald",
@@ -5493,7 +5497,11 @@
       ],
       "source_rows": 4,
       "approval_batch": 3,
-      "note": "Attendee confirmed 2019-03-05 T Juline is Taylor, not Tucker. Single-game initial-only alias; historical box score unchanged."
+      "note": "Attendee confirmed 2019-03-05 T Juline is Taylor, not Tucker. Single-game initial-only alias; historical box score unchanged.",
+      "display_name": "Taylor Juline",
+      "evidence_urls": [
+        "https://gohighlanders.com/sports/baseball/roster/taylor-juline/6636"
+      ]
     },
     {
       "name": "Jason Sharman",
@@ -5856,6 +5864,168 @@
       "note": "Owner-approved truncated first name correction; official 2019 SDSU roster.",
       "evidence_urls": [
         "https://goaztecs.com/sports/baseball/roster/season/2019/player/justin-goossen-brown"
+      ]
+    },
+    {
+      "name": "Jacob Shanks",
+      "display_name": "Jacob Shanks",
+      "canonical_id": "cb-uc-riverside-jacob-shanks",
+      "source_player_ids": [
+        "cb-uc-riverside-j-shanks",
+        "cb-uc-riverside-jacob-shanks"
+      ],
+      "schools": [
+        "UC Riverside"
+      ],
+      "pairs": [
+        {
+          "team": "UC Riverside",
+          "source_player_id": "cb-uc-riverside-j-shanks"
+        },
+        {
+          "team": "UC Riverside",
+          "source_player_id": "cb-uc-riverside-jacob-shanks"
+        }
+      ],
+      "source_rows": 4,
+      "note": "Owner-approved abbreviated UCR name; official same-season roster match.",
+      "evidence_urls": [
+        "https://gohighlanders.com/sports/baseball/roster/jacob-shanks/6962"
+      ]
+    },
+    {
+      "name": "Dylan Orick",
+      "display_name": "Dylan Orick",
+      "canonical_id": "cb-uc-riverside-dylan-orick",
+      "source_player_ids": [
+        "cb-uc-riverside-d-orick",
+        "cb-uc-riverside-dylan-orick"
+      ],
+      "schools": [
+        "UC Riverside"
+      ],
+      "pairs": [
+        {
+          "team": "UC Riverside",
+          "source_player_id": "cb-uc-riverside-d-orick"
+        },
+        {
+          "team": "UC Riverside",
+          "source_player_id": "cb-uc-riverside-dylan-orick"
+        }
+      ],
+      "source_rows": 5,
+      "note": "Owner-approved abbreviated UCR name; official same-season roster match.",
+      "evidence_urls": [
+        "https://gohighlanders.com/sports/baseball/roster/dylan-orick/6643"
+      ]
+    },
+    {
+      "name": "Cole Pofek",
+      "display_name": "Cole Pofek",
+      "canonical_id": "cb-uc-riverside-cole-pofek",
+      "source_player_ids": [
+        "cb-uc-riverside-c-pofek",
+        "cb-uc-riverside-cole-pofek"
+      ],
+      "schools": [
+        "UC Riverside"
+      ],
+      "pairs": [
+        {
+          "team": "UC Riverside",
+          "source_player_id": "cb-uc-riverside-c-pofek"
+        },
+        {
+          "team": "UC Riverside",
+          "source_player_id": "cb-uc-riverside-cole-pofek"
+        }
+      ],
+      "source_rows": 4,
+      "note": "Owner-approved abbreviated UCR name; official same-season roster match.",
+      "evidence_urls": [
+        "https://gohighlanders.com/sports/baseball/roster/cole-pofek/6646"
+      ]
+    },
+    {
+      "name": "Nathan Webb",
+      "display_name": "Nathan Webb",
+      "canonical_id": "cb-uc-riverside-nathan-webb",
+      "source_player_ids": [
+        "cb-uc-riverside-n-webb",
+        "cb-uc-riverside-nathan-webb"
+      ],
+      "schools": [
+        "UC Riverside"
+      ],
+      "pairs": [
+        {
+          "team": "UC Riverside",
+          "source_player_id": "cb-uc-riverside-n-webb"
+        },
+        {
+          "team": "UC Riverside",
+          "source_player_id": "cb-uc-riverside-nathan-webb"
+        }
+      ],
+      "source_rows": 6,
+      "note": "Owner-approved abbreviated UCR name; official same-season roster match.",
+      "evidence_urls": [
+        "https://gohighlanders.com/sports/baseball/roster/nathan-webb/6650"
+      ]
+    },
+    {
+      "name": "Yeager Taylor",
+      "display_name": "Yeager Taylor",
+      "canonical_id": "cb-uc-riverside-yeager-taylor",
+      "source_player_ids": [
+        "cb-uc-riverside-y-taylor",
+        "cb-uc-riverside-yeager-taylor"
+      ],
+      "schools": [
+        "UC Riverside"
+      ],
+      "pairs": [
+        {
+          "team": "UC Riverside",
+          "source_player_id": "cb-uc-riverside-y-taylor"
+        },
+        {
+          "team": "UC Riverside",
+          "source_player_id": "cb-uc-riverside-yeager-taylor"
+        }
+      ],
+      "source_rows": 2,
+      "note": "Owner-approved abbreviated UCR name; official same-season roster match.",
+      "evidence_urls": [
+        "https://gohighlanders.com/sports/baseball/roster/yeager-taylor/5753"
+      ]
+    },
+    {
+      "name": "Travis Bohall",
+      "display_name": "Travis Bohall",
+      "canonical_id": "cb-uc-riverside-travis-bohall",
+      "source_player_ids": [
+        "cb-uc-riverside-t-bohall",
+        "cb-uc-riverside-travis-bohall"
+      ],
+      "schools": [
+        "UC Riverside"
+      ],
+      "pairs": [
+        {
+          "team": "UC Riverside",
+          "source_player_id": "cb-uc-riverside-t-bohall"
+        },
+        {
+          "team": "UC Riverside",
+          "source_player_id": "cb-uc-riverside-travis-bohall"
+        }
+      ],
+      "source_rows": 4,
+      "note": "Owner-approved abbreviated UCR name; official same-season roster match.",
+      "evidence_urls": [
+        "https://gohighlanders.com/sports/baseball/roster/travis-bohall/6179"
       ]
     }
   ]

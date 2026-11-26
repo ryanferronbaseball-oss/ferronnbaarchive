@@ -45,8 +45,7 @@ try:
    return page
   # MLB debut is independent of whether user also attended a big-league game.
   page=tab("/milb/player.html?id="+str(mlb_alumni["milb_id"]))
-  assert page.locator(".milb-crossover-badge").count()==1
-  assert "REACHED MLB" in page.locator(".milb-crossover-badge").inner_text()
+  assert page.locator(".milb-crossover-badge").filter(has_text="REACHED MLB").count()==1
   assert "SEEN IN MiLB + MLB" not in page.locator("main").inner_text()
   page.close()
   page=tab("/milb/player.html?id="+str(both_mlb["milb_id"]))
@@ -60,12 +59,19 @@ try:
   assert "REACHED MLB" not in page.locator("main").inner_text()
   page.close()
   page=tab("/milb/player.html?id="+str(example_nondebuted))
-  assert page.locator(".milb-crossover-badge").count()==0
+  assert page.locator(".milb-crossover-badge:not(.banana-ball-badge)").count()==0
   page.close()
   for r in college:
    page=tab("/milb/player.html?id="+str(r["milb_id"]))
    match=page.locator('.milb-crossover-badge[href="../college-baseball/player.html?id='+r["college_player_id"]+'"]')
-   assert match.count()==1,(r,match.count())
+   expected_triple = bool(positive.get(r["milb_id"], {}).get("mlb_seen"))
+   dual = page.locator('.milb-crossover-badge:not(.milb-triple-level)[href="../college-baseball/player.html?id='+r["college_player_id"]+'"]')
+   triple = page.locator('.milb-crossover-badge.milb-triple-level[href="../college-baseball/player.html?id='+r["college_player_id"]+'"]')
+   assert dual.count()==1 and "SEEN IN COLLEGE + MiLB" in dual.inner_text(),r
+   assert triple.count()==int(expected_triple),(r,triple.count(),expected_triple)
+   assert match.count()==1+int(expected_triple),(r,match.count())
+   if expected_triple:
+    assert "SEEN IN COLLEGE + MiLB + MLB" in triple.inner_text(),r
    page.close()
   # Reciprocal verified crossovers on MLB and College Baseball player profiles.
   page=tab("/mlb/player.html?id="+str(both_mlb["mlb_id"]))
@@ -74,8 +80,17 @@ try:
   page.close()
   for r in college:
    page=tab("/college-baseball/player.html?id="+r["college_player_id"])
-   assert page.locator('.mlb-profile-badge[href="../milb/player.html?id='+str(r["milb_id"])+'"]').count()==1,r
-   assert "SEEN IN COLLEGE + MiLB" in page.locator("main").inner_text()
+   dual=page.locator('.mlb-profile-badge.cb-dual-level[href="../milb/player.html?id='+str(r["milb_id"])+'"]')
+   triple=page.locator('.mlb-profile-badge.cb-triple-level[href="../milb/player.html?id='+str(r["milb_id"])+'"]')
+   expected_triple=bool(positive.get(r["milb_id"], {}).get("mlb_seen"))
+   assert dual.count()==1 and "SEEN IN COLLEGE + MiLB" in dual.inner_text(),r
+   assert triple.count()==int(expected_triple),(r,triple.count(),expected_triple)
+   if expected_triple:
+    assert "SEEN IN COLLEGE + MiLB + MLB" in triple.inner_text(),r
+    mlb_page=tab("/mlb/player.html?id="+str(positive[r["milb_id"]]["mlb_id"]))
+    mlb_triple=mlb_page.locator('.mlb-profile-badge.mlb-triple-level[href="../college-baseball/player.html?id='+r["college_player_id"]+'"]')
+    assert mlb_triple.count()==1 and "SEEN IN COLLEGE + MiLB + MLB" in mlb_triple.inner_text(),r
+    mlb_page.close()
    page.close()
   mobile=browser.new_page(viewport={"width":390,"height":844},is_mobile=True,has_touch=True)
   mobile.goto(origin+"/milb/player.html?id="+str(both_mlb["milb_id"]),wait_until="networkidle")

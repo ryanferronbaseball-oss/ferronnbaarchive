@@ -105,3 +105,5 @@ h1 em{font-style:italic;color:#bde3f5}
 
 /* Witnessed annual statistical lines */
 .rushmore-annual{margin:10px 0 4px;display:grid;gap:7px}.rushmore-annual-heading{font-size:.66rem;text-transform:uppercase;letter-spacing:.04em;color:#813b49;font-weight:700}.rushmore-annual-group>small,.rushmore-annual-missing{font-size:.7rem;color:inherit;opacity:.75}.rushmore-annual-metrics{display:flex;flex-wrap:wrap;gap:4px;margin-top:3px}.rushmore-annual-metrics>div{flex:1 0 30px;display:flex;flex-direction:column;text-align:center;background:rgba(137,180,211,.16);border:1px solid rgba(137,180,211,.32);border-radius:5px;padding:5px 3px}.rushmore-annual-metrics strong{font-size:.93rem;line-height:1.2;font-variant-numeric:tabular-nums}.rushmore-annual-metrics span{font-size:.64rem;font-weight:650;line-height:1.2}.rushmore-stat:before{content:"Signature: ";font-weight:400;font-size:.72rem}
+
+.rushmore-highlight{margin-top:8px;font-size:.76rem;color:inherit}.rushmore-highlight summary{cursor:pointer;opacity:.75}.rushmore-highlight .rushmore-stat{display:block}.rushmore-annual-metrics strong{font-size:1.05rem}.rushmore-annual-metrics>div{padding:8px 3px}

@@ -4,8 +4,8 @@
   "source": "Original archive owner confirmed each multi-school person",
   "original_attendance_ids_preserved": 444,
   "original_player_game_rows_preserved": 13183,
-  "requested_person_merges": 205,
-  "activated_person_merges": 205,
+  "requested_person_merges": 206,
+  "activated_person_merges": 206,
   "pending_person_merges": 0,
   "merge_policy": "Only listed pair of exact normalized person names and school-specific original source player IDs; all other IDs remain separate",
   "display_aliases": [
@@ -2095,6 +2095,7 @@
       "name": "Kamau Neighbors",
       "canonical_id": "cb-cal-state-northridge-kamau-neighbors",
       "source_player_ids": [
+        "cb-cal-state-northrdige-kamau-neighbors",
         "cb-cal-state-northridge-kamau-neighbors",
         "cb-louisville-kamau-neighbors"
       ],
@@ -2104,6 +2105,10 @@
       ],
       "pairs": [
         {
+          "team": "Cal State Northrdige",
+          "source_player_id": "cb-cal-state-northrdige-kamau-neighbors"
+        },
+        {
           "team": "Cal State Northridge",
           "source_player_id": "cb-cal-state-northridge-kamau-neighbors"
         },
@@ -2112,7 +2117,14 @@
           "source_player_id": "cb-louisville-kamau-neighbors"
         }
       ],
-      "source_rows": 4
+      "source_rows": 5,
+      "display_name": "Kamau Neighbors",
+      "note": "CSUN school spelling variants refer to the same player; preserve existing Louisville transfer linkage.",
+      "evidence_urls": [
+        "https://gomatadors.com/sports/baseball/roster/2023",
+        "https://gomatadors.com/sports/baseball/roster/2022",
+        "https://gomatadors.com/sports/baseball/roster/2021"
+      ]
     },
     {
       "name": "Derek Williams",
@@ -6026,6 +6038,35 @@
       "note": "Owner-approved abbreviated UCR name; official same-season roster match.",
       "evidence_urls": [
         "https://gohighlanders.com/sports/baseball/roster/travis-bohall/6179"
+      ]
+    },
+    {
+      "canonical_id": "cb-cal-state-northridge-mason-le",
+      "name": "Mason Le",
+      "display_name": "Mason Le",
+      "source_player_ids": [
+        "cb-cal-state-northrdige-mason-le",
+        "cb-cal-state-northridge-mason-le"
+      ],
+      "schools": [
+        "Cal State Northridge"
+      ],
+      "pairs": [
+        {
+          "team": "Cal State Northrdige",
+          "source_player_id": "cb-cal-state-northrdige-mason-le"
+        },
+        {
+          "team": "Cal State Northridge",
+          "source_player_id": "cb-cal-state-northridge-mason-le"
+        }
+      ],
+      "source_rows": 3,
+      "note": "CSUN school spelling variants refer to the same player; preserve existing Louisville transfer linkage.",
+      "evidence_urls": [
+        "https://gomatadors.com/sports/baseball/roster/2023",
+        "https://gomatadors.com/sports/baseball/roster/2022",
+        "https://gomatadors.com/sports/baseball/roster/2021"
       ]
     }
   ]

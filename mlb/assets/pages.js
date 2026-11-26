@@ -10,12 +10,13 @@ if(["player","games","hof"].includes(page)){
  try{const r=await fetch("./data/player_portrait_fallbacks.json",{cache:"no-store"});if(r.ok)portraitFallbacks=await r.json()}catch(e){console.warn("Portrait fallback registry unavailable",e)}
 }
 function photoCredit(record){
+ if(record?.provider==="historical"&&/^https:\/\/[^\s"'<>]+$/.test(record.source||""))return '<small class="archive-photo-credit"><a href="'+esc(record.source)+'" target="_blank" rel="noopener noreferrer">Photo source ↗</a></small>';
  if(!record||record.provider!=="commons"||!/^https:\/\/commons\.wikimedia\.org\/wiki\/File:/.test(record.source||"")||!/^https:\/\/(creativecommons\.org|commons\.wikimedia\.org)\//.test(record.license_url||""))return "";
  return '<small class="archive-photo-credit">Photo: <a href="'+esc(record.source)+'" target="_blank" rel="noopener noreferrer">'+esc(record.author)+'</a> · <a href="'+esc(record.license_url)+'" target="_blank" rel="noopener noreferrer">'+esc(record.license)+'</a></small>';
 }
 function mlbPortrait(id){
  const url=portraitFallbacks[String(id)]?.url;
- return typeof url==="string"&&(/^https:\/\/a\.espncdn\.com\/i\/headshots\/mlb\/players\/full\/\d+\.png$/.test(url)||/^https:\/\/upload\.wikimedia\.org\/wikipedia\/commons\//.test(url))
+ return typeof url==="string"&&(/^https:\/\/a\.espncdn\.com\/i\/headshots\/mlb\/players\/full\/\d+\.png$/.test(url)||/^https:\/\/upload\.wikimedia\.org\/wikipedia\/commons\//.test(url)|| (portraitFallbacks[String(id)]?.provider==="historical"&&/^https:\/\/(?:[a-z0-9.-]+\.)?(?:mlb\.com|mlbstatic\.com|espncdn\.com|baseball-reference\.com|sports-reference\.com|sr-logos\.com)\/[^\s"'<>]+$/i.test(url)))
  ? url : "https://img.mlbstatic.com/mlb-photos/image/upload/w_213,q_85/v1/people/"+encodeURIComponent(id)+"/headshot/67/current";
 }
 let gamePhotos={};

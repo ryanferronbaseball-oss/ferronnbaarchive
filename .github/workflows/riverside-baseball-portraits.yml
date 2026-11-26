@@ -1,0 +1,46 @@
+name: UC Riverside newest collegiate portrait audit
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['scripts/audit_riverside_baseball_portraits.py', 'scripts/audit_riverside_roster_identities.py', '.github/workflows/riverside-baseball-portraits.yml']
+permissions:
+  contents: write
+concurrency:
+  group: college-baseball-portraits
+  cancel-in-progress: false
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: pip install requests pillow beautifulsoup4
+      - run: node --check college-baseball/assets/archive.js
+      - run: node --check scripts/export_baseball_identity_targets.cjs
+      - run: python -m py_compile scripts/audit_riverside_baseball_portraits.py
+      - run: python -m py_compile scripts/audit_riverside_roster_identities.py
+      - run: python scripts/audit_riverside_roster_identities.py 'UC Riverside'
+      - run: python scripts/audit_riverside_baseball_portraits.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: riverside-baseball-portrait-audit
+          path: |
+            college-baseball/data/riverside_portrait_audit.json
+            college-baseball/data/riverside_identity_portrait_review.json
+      - name: Publish verified portraits
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add college-baseball/data/player_portraits.json college-baseball/data/riverside_portrait_audit.json college-baseball/data/player_name_corrections.json college-baseball/data/riverside_identity_portrait_review.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Prefer newest verified college portraits for witnessed UC Riverside players"
+          git pull --rebase origin main
+          git push origin HEAD:main

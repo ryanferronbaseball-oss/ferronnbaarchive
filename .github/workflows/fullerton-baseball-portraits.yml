@@ -1,0 +1,42 @@
+name: Cal State Fullerton newest collegiate portrait audit
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['scripts/audit_fullerton_baseball_portraits.py', 'scripts/export_fullerton_baseball_portrait_targets.cjs', '.github/workflows/fullerton-baseball-portraits.yml']
+permissions:
+  contents: write
+concurrency:
+  group: college-baseball-portraits
+  cancel-in-progress: false
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: pip install requests pillow beautifulsoup4
+      - run: node --check college-baseball/assets/archive.js
+      - run: node --check scripts/export_fullerton_baseball_portrait_targets.cjs
+      - run: python -m py_compile scripts/audit_fullerton_baseball_portraits.py
+      - run: python scripts/audit_fullerton_baseball_portraits.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: fullerton-baseball-portrait-audit
+          path: college-baseball/data/fullerton_portrait_audit.json
+      - name: Publish verified portraits
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add college-baseball/data/player_portraits.json college-baseball/data/fullerton_portrait_audit.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Prefer newest verified college portraits for witnessed Cal State Fullerton players"
+          git pull --rebase origin main
+          git push origin HEAD:main

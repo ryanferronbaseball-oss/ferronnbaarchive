@@ -134,6 +134,7 @@ function renderEdition(){
   '<p class="mini-caption">Each game counts for both participating teams; team names remain sport-specific.</p>';
  byId('venue-leaders').innerHTML=leaderRows(venues,false)+
   '<p class="mini-caption">Venues use the names recorded in each game log.</p>';
+ window.CAYearbookRushmore?.render(current,list);
  renderMemories(list);
  const currentSport=byId('filter-sport').value;
  const sportOptions=[...new Set(list.map(g=>g.sport))].sort((a,b)=>sources.findIndex(x=>x[0]===a)-sources.findIndex(x=>x[0]===b));

@@ -1,6 +1,30 @@
 {
   "scope": "2019 college baseball only; exact official BF; missing fields only",
-  "pass": "USD totals-layout recovery",
+  "pass": "USD numeric-tail pilot recovery",
+  "pilot": {
+    "game_id": "cb-2019-02-15-wagner-san-diego-att0032",
+    "expected_bf": [
+      19,
+      8,
+      9,
+      14,
+      19,
+      7,
+      3,
+      5
+    ],
+    "status": "PASS",
+    "observed_bf": [
+      19,
+      8,
+      9,
+      14,
+      19,
+      7,
+      3,
+      5
+    ]
+  },
   "games": [
     {
       "game_id": "cb-2019-02-15-wagner-san-diego-att0032",
@@ -8,8 +32,53 @@
       "away": "Wagner",
       "home": "San Diego",
       "source_url": "https://usdtoreros.com/boxscore.aspx?id=8230&path=baseball",
-      "status": "unresolved",
-      "reason": "expected two explicit BF pitching tables, found 0"
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 8,
+      "added": 8,
+      "recovered_this_run": 8,
+      "values": [
+        {
+          "player_id": "cb-wagner-neil-abbatiello",
+          "team": "Wagner",
+          "BF": 19
+        },
+        {
+          "player_id": "cb-wagner-nick-lepre",
+          "team": "Wagner",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-wagner-mike-pirrotta",
+          "team": "Wagner",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-wagner-keaton-freire",
+          "team": "Wagner",
+          "BF": 14
+        },
+        {
+          "player_id": "cb-san-diego-chris-murphy",
+          "team": "San Diego",
+          "BF": 19
+        },
+        {
+          "player_id": "cb-san-diego-jake-miller",
+          "team": "San Diego",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-san-diego-cade-brown",
+          "team": "San Diego",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-san-diego-nicola-mislinski",
+          "team": "San Diego",
+          "BF": 5
+        }
+      ]
     },
     {
       "game_id": "cb-2019-02-16-wagner-san-diego-att0033",
@@ -17,8 +86,43 @@
       "away": "Wagner",
       "home": "San Diego",
       "source_url": "https://usdtoreros.com/boxscore.aspx?id=8231&path=baseball",
-      "status": "unresolved",
-      "reason": "expected two explicit BF pitching tables, found 0"
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 6,
+      "added": 6,
+      "recovered_this_run": 6,
+      "values": [
+        {
+          "player_id": "cb-wagner-eric-ligda",
+          "team": "Wagner",
+          "BF": 24
+        },
+        {
+          "player_id": "cb-wagner-john-lapointe",
+          "team": "Wagner",
+          "BF": 13
+        },
+        {
+          "player_id": "cb-wagner-justin-beyer",
+          "team": "Wagner",
+          "BF": 11
+        },
+        {
+          "player_id": "cb-san-diego-grady-miller",
+          "team": "San Diego",
+          "BF": 22
+        },
+        {
+          "player_id": "cb-san-diego-noah-owen",
+          "team": "San Diego",
+          "BF": 18
+        },
+        {
+          "player_id": "cb-san-diego-nigel-ward",
+          "team": "San Diego",
+          "BF": 3
+        }
+      ]
     },
     {
       "game_id": "cb-2019-02-16-wagner-san-diego-att0034",
@@ -27,7 +131,7 @@
       "home": "San Diego",
       "source_url": "https://usdtoreros.com/boxscore.aspx?id=8232&path=baseball",
       "status": "unresolved",
-      "reason": "expected two explicit BF pitching tables, found 0"
+      "reason": "expected two explicit BF pitching tables, found 0; pitching reconciliation: rows=4 sums=[8, 3, 3, 4, 7, 35] totals=[] skipped=[]; pitching reconciliation: rows=3 sums=[7, 1, 1, 3, 10, 36] totals=[] skipped=[]"
     },
     {
       "game_id": "cb-2019-02-19-uc-irvine-san-diego-state-att0035",
@@ -178,8 +282,43 @@
       "away": "Oklahoma",
       "home": "San Diego",
       "source_url": "https://usdtoreros.com/boxscore.aspx?id=8235&path=baseball",
-      "status": "unresolved",
-      "reason": "expected two explicit BF pitching tables, found 0"
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 6,
+      "added": 6,
+      "recovered_this_run": 6,
+      "values": [
+        {
+          "player_id": "cb-oklahoma-cade-cavalli",
+          "team": "Oklahoma",
+          "BF": 26
+        },
+        {
+          "player_id": "cb-oklahoma-ledgend-smith",
+          "team": "Oklahoma",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-oklahoma-jason-ruffcorn",
+          "team": "Oklahoma",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-san-diego-chris-murphy",
+          "team": "San Diego",
+          "BF": 24
+        },
+        {
+          "player_id": "cb-san-diego-nathan-walker",
+          "team": "San Diego",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-san-diego-jack-dolak",
+          "team": "San Diego",
+          "BF": 3
+        }
+      ]
     },
     {
       "game_id": "cb-2019-02-23-kansas-state-utah-att0038",
@@ -236,8 +375,63 @@
       "away": "Missouri State",
       "home": "San Diego",
       "source_url": "https://usdtoreros.com/boxscore.aspx?id=8262&path=baseball",
-      "status": "unresolved",
-      "reason": "expected two explicit BF pitching tables, found 0"
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 10,
+      "added": 10,
+      "recovered_this_run": 10,
+      "values": [
+        {
+          "player_id": "cb-missouri-state-hayden-juenger",
+          "team": "Missouri State",
+          "BF": 14
+        },
+        {
+          "player_id": "cb-missouri-state-ben-cruikshank",
+          "team": "Missouri State",
+          "BF": 15
+        },
+        {
+          "player_id": "cb-missouri-state-zach-gibbs",
+          "team": "Missouri State",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-missouri-state-jake-lochner",
+          "team": "Missouri State",
+          "BF": 11
+        },
+        {
+          "player_id": "cb-missouri-state-peyton-carson",
+          "team": "Missouri State",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-san-diego-josh-hendrickson",
+          "team": "San Diego",
+          "BF": 21
+        },
+        {
+          "player_id": "cb-san-diego-noah-owen",
+          "team": "San Diego",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-san-diego-anthony-donatella",
+          "team": "San Diego",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-san-diego-cade-brown",
+          "team": "San Diego",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-san-diego-nigel-ward",
+          "team": "San Diego",
+          "BF": 4
+        }
+      ]
     },
     {
       "game_id": "cb-2019-02-24-cal-state-fullerton-oklahoma-att0040",
@@ -253,8 +447,48 @@
       "away": "Utah",
       "home": "San Diego",
       "source_url": "https://usdtoreros.com/boxscore.aspx?id=9234&path=baseball",
-      "status": "unresolved",
-      "reason": "expected two explicit BF pitching tables, found 0"
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 7,
+      "added": 7,
+      "recovered_this_run": 7,
+      "values": [
+        {
+          "player_id": "cb-utah-josh-tedeschi",
+          "team": "Utah",
+          "BF": 23
+        },
+        {
+          "player_id": "cb-utah-jacob-rebar",
+          "team": "Utah",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-utah-zac-mccleve",
+          "team": "Utah",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-utah-dustyn-schramm",
+          "team": "Utah",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-san-diego-jake-miller",
+          "team": "San Diego",
+          "BF": 15
+        },
+        {
+          "player_id": "cb-san-diego-grady-miller",
+          "team": "San Diego",
+          "BF": 14
+        },
+        {
+          "player_id": "cb-san-diego-travis-kuhn",
+          "team": "San Diego",
+          "BF": 16
+        }
+      ]
     },
     {
       "game_id": "cb-2019-02-26-san-diego-san-diego-state-att0042",
@@ -262,8 +496,53 @@
       "away": "San Diego",
       "home": "San Diego State",
       "source_url": "https://usdtoreros.com/boxscore.aspx?id=9235&path=baseball",
-      "status": "unresolved",
-      "reason": "expected two explicit BF pitching tables, found 0"
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 8,
+      "added": 8,
+      "recovered_this_run": 8,
+      "values": [
+        {
+          "player_id": "cb-san-diego-louie-crow",
+          "team": "San Diego",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-san-diego-anthony-donatella",
+          "team": "San Diego",
+          "BF": 12
+        },
+        {
+          "player_id": "cb-san-diego-jack-dolak",
+          "team": "San Diego",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-san-diego-nathan-walker",
+          "team": "San Diego",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-san-diego-cade-brown",
+          "team": "San Diego",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-san-diego-state-aaron-eden",
+          "team": "San Diego State",
+          "BF": 24
+        },
+        {
+          "player_id": "cb-san-diego-state-casey-o-sullivan",
+          "team": "San Diego State",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-san-diego-state-adrian-mardueno",
+          "team": "San Diego State",
+          "BF": 6
+        }
+      ]
     },
     {
       "game_id": "cb-2019-03-01-st-john-s-san-diego-att0043",
@@ -271,8 +550,73 @@
       "away": "St. John's",
       "home": "San Diego",
       "source_url": "https://usdtoreros.com/boxscore.aspx?id=9236&path=baseball",
-      "status": "unresolved",
-      "reason": "expected two explicit BF pitching tables, found 0"
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 12,
+      "added": 12,
+      "recovered_this_run": 12,
+      "values": [
+        {
+          "player_id": "cb-st-john-s-joe-lasorsa",
+          "team": "St. John's",
+          "BF": 21
+        },
+        {
+          "player_id": "cb-st-john-s-ben-greenberg",
+          "team": "St. John's",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-st-john-s-turner-french",
+          "team": "St. John's",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-st-john-s-joe-kelly",
+          "team": "St. John's",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-st-john-s-chris-stefl",
+          "team": "St. John's",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-st-john-s-sam-lara",
+          "team": "St. John's",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-st-john-s-brian-hendry",
+          "team": "St. John's",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-st-john-s-chris-henry",
+          "team": "St. John's",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-san-diego-josh-hendrickson",
+          "team": "San Diego",
+          "BF": 12
+        },
+        {
+          "player_id": "cb-san-diego-noah-owen",
+          "team": "San Diego",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-san-diego-jack-dolak",
+          "team": "San Diego",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-san-diego-jake-miller",
+          "team": "San Diego",
+          "BF": 10
+        }
+      ]
     },
     {
       "game_id": "cb-2019-03-03-st-john-s-san-diego-att0044",
@@ -280,8 +624,38 @@
       "away": "St. John's",
       "home": "San Diego",
       "source_url": "https://usdtoreros.com/boxscore.aspx?id=9238&path=baseball",
-      "status": "unresolved",
-      "reason": "expected two explicit BF pitching tables, found 0"
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 5,
+      "added": 5,
+      "recovered_this_run": 5,
+      "values": [
+        {
+          "player_id": "cb-st-john-s-sean-mooney",
+          "team": "St. John's",
+          "BF": 27
+        },
+        {
+          "player_id": "cb-st-john-s-turner-french",
+          "team": "St. John's",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-st-john-s-gavin-hollowell",
+          "team": "St. John's",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-san-diego-chris-murphy",
+          "team": "San Diego",
+          "BF": 29
+        },
+        {
+          "player_id": "cb-san-diego-anthony-donatella",
+          "team": "San Diego",
+          "BF": 9
+        }
+      ]
     },
     {
       "game_id": "cb-2019-03-04-st-john-s-san-diego-att0045",
@@ -290,7 +664,7 @@
       "home": "San Diego",
       "source_url": "https://usdtoreros.com/boxscore.aspx?id=9237&path=baseball",
       "status": "unresolved",
-      "reason": "expected two explicit BF pitching tables, found 0"
+      "reason": "expected two explicit BF pitching tables, found 1; pitching reconciliation: rows=5 sums=[9, 7, 4, 3, 10, 39] totals=[[9, 7, 3, 3, 10, 39]] skipped=[]"
     },
     {
       "game_id": "cb-2019-03-05-san-diego-uc-riverside-att0046",
@@ -298,8 +672,88 @@
       "away": "San Diego",
       "home": "UC Riverside",
       "source_url": "https://usdtoreros.com/boxscore.aspx?id=9239&path=baseball",
-      "status": "unresolved",
-      "reason": "expected two explicit BF pitching tables, found 0"
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 15,
+      "added": 15,
+      "recovered_this_run": 15,
+      "values": [
+        {
+          "player_id": "cb-san-diego-josh-hendrickson",
+          "team": "San Diego",
+          "BF": 11
+        },
+        {
+          "player_id": "cb-san-diego-jake-reed",
+          "team": "San Diego",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-san-diego-cade-brown",
+          "team": "San Diego",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-san-diego-noah-owen",
+          "team": "San Diego",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-san-diego-nathan-walker",
+          "team": "San Diego",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-san-diego-jack-dolak",
+          "team": "San Diego",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-uc-riverside-c-cannon",
+          "team": "UC Riverside",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-uc-riverside-h-petrovick",
+          "team": "UC Riverside",
+          "BF": 11
+        },
+        {
+          "player_id": "cb-uc-riverside-a-granillo",
+          "team": "UC Riverside",
+          "BF": 11
+        },
+        {
+          "player_id": "cb-uc-riverside-t-bateson",
+          "team": "UC Riverside",
+          "BF": 15
+        },
+        {
+          "player_id": "cb-uc-riverside-c-tucker",
+          "team": "UC Riverside",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-uc-riverside-d-mckesson",
+          "team": "UC Riverside",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-uc-riverside-p-sanchez",
+          "team": "UC Riverside",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-uc-riverside-a-arnone",
+          "team": "UC Riverside",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-uc-riverside-a-garcia",
+          "team": "UC Riverside",
+          "BF": 3
+        }
+      ]
     },
     {
       "game_id": "cb-2019-03-12-tcu-san-diego-att0047",
@@ -307,8 +761,83 @@
       "away": "TCU",
       "home": "San Diego",
       "source_url": "https://usdtoreros.com/boxscore.aspx?id=9240&path=baseball",
-      "status": "unresolved",
-      "reason": "expected two explicit BF pitching tables, found 0"
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 14,
+      "added": 14,
+      "recovered_this_run": 14,
+      "values": [
+        {
+          "player_id": "cb-tcu-jared-janczak",
+          "team": "TCU",
+          "BF": 14
+        },
+        {
+          "player_id": "cb-tcu-haylen-green",
+          "team": "TCU",
+          "BF": 11
+        },
+        {
+          "player_id": "cb-tcu-cal-coughlin",
+          "team": "TCU",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-tcu-augie-mihlbauer",
+          "team": "TCU",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-tcu-dalton-brown",
+          "team": "TCU",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-tcu-spencer-arrighetti",
+          "team": "TCU",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-san-diego-cade-brown",
+          "team": "San Diego",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-san-diego-nicola-mislinski",
+          "team": "San Diego",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-san-diego-louie-crow",
+          "team": "San Diego",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-san-diego-noah-owen",
+          "team": "San Diego",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-san-diego-grady-miller",
+          "team": "San Diego",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-san-diego-nigel-ward",
+          "team": "San Diego",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-san-diego-nathan-walker",
+          "team": "San Diego",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-san-diego-jack-dolak",
+          "team": "San Diego",
+          "BF": 3
+        }
+      ]
     },
     {
       "game_id": "cb-2019-03-15-pepperdine-san-diego-att0048",
@@ -316,8 +845,33 @@
       "away": "Pepperdine",
       "home": "San Diego",
       "source_url": "https://usdtoreros.com/boxscore.aspx?id=9241&path=baseball",
-      "status": "unresolved",
-      "reason": "expected two explicit BF pitching tables, found 0"
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 4,
+      "added": 4,
+      "recovered_this_run": 4,
+      "values": [
+        {
+          "player_id": "cb-pepperdine-cooper-chandler",
+          "team": "Pepperdine",
+          "BF": 30
+        },
+        {
+          "player_id": "cb-pepperdine-raul-salazar",
+          "team": "Pepperdine",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-san-diego-chris-murphy",
+          "team": "San Diego",
+          "BF": 27
+        },
+        {
+          "player_id": "cb-san-diego-jake-miller",
+          "team": "San Diego",
+          "BF": 12
+        }
+      ]
     },
     {
       "game_id": "cb-2019-03-16-pepperdine-san-diego-att0049",
@@ -325,8 +879,53 @@
       "away": "Pepperdine",
       "home": "San Diego",
       "source_url": "https://usdtoreros.com/boxscore.aspx?id=9242&path=baseball",
-      "status": "unresolved",
-      "reason": "expected two explicit BF pitching tables, found 0"
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 8,
+      "added": 8,
+      "recovered_this_run": 8,
+      "values": [
+        {
+          "player_id": "cb-pepperdine-easton-lucas",
+          "team": "Pepperdine",
+          "BF": 25
+        },
+        {
+          "player_id": "cb-pepperdine-trevor-kniskern",
+          "team": "Pepperdine",
+          "BF": 16
+        },
+        {
+          "player_id": "cb-pepperdine-michael-mahony",
+          "team": "Pepperdine",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-san-diego-anthony-donatella",
+          "team": "San Diego",
+          "BF": 17
+        },
+        {
+          "player_id": "cb-san-diego-travis-kuhn",
+          "team": "San Diego",
+          "BF": 11
+        },
+        {
+          "player_id": "cb-san-diego-jack-dolak",
+          "team": "San Diego",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-san-diego-grady-miller",
+          "team": "San Diego",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-san-diego-nathan-walker",
+          "team": "San Diego",
+          "BF": 8
+        }
+      ]
     },
     {
       "game_id": "cb-2019-03-17-pepperdine-san-diego-att0050",
@@ -334,8 +933,53 @@
       "away": "Pepperdine",
       "home": "San Diego",
       "source_url": "https://usdtoreros.com/boxscore.aspx?id=9243&path=baseball",
-      "status": "unresolved",
-      "reason": "expected two explicit BF pitching tables, found 0"
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 8,
+      "added": 8,
+      "recovered_this_run": 8,
+      "values": [
+        {
+          "player_id": "cb-pepperdine-jonathan-pendergast",
+          "team": "Pepperdine",
+          "BF": 26
+        },
+        {
+          "player_id": "cb-pepperdine-christian-stoutland",
+          "team": "Pepperdine",
+          "BF": 11
+        },
+        {
+          "player_id": "cb-san-diego-josh-hendrickson",
+          "team": "San Diego",
+          "BF": 15
+        },
+        {
+          "player_id": "cb-san-diego-louie-crow",
+          "team": "San Diego",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-san-diego-jack-dolak",
+          "team": "San Diego",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-san-diego-cade-brown",
+          "team": "San Diego",
+          "BF": 16
+        },
+        {
+          "player_id": "cb-san-diego-travis-kuhn",
+          "team": "San Diego",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-san-diego-jake-miller",
+          "team": "San Diego",
+          "BF": 3
+        }
+      ]
     },
     {
       "game_id": "cb-2019-03-19-cal-state-fullerton-san-diego-att0051",
@@ -343,8 +987,53 @@
       "away": "Cal State Fullerton",
       "home": "San Diego",
       "source_url": "https://usdtoreros.com/boxscore.aspx?id=9244&path=baseball",
-      "status": "unresolved",
-      "reason": "expected two explicit BF pitching tables, found 0"
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 8,
+      "added": 8,
+      "recovered_this_run": 8,
+      "values": [
+        {
+          "player_id": "cb-cal-state-fullerton-joe-magrisi",
+          "team": "Cal State Fullerton",
+          "BF": 12
+        },
+        {
+          "player_id": "cb-cal-state-fullerton-timothy-josten",
+          "team": "Cal State Fullerton",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-cal-state-fullerton-dillon-brown",
+          "team": "Cal State Fullerton",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-cal-state-fullerton-gavin-velasquez",
+          "team": "Cal State Fullerton",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-cal-state-fullerton-michael-weisberg",
+          "team": "Cal State Fullerton",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-san-diego-noah-owen",
+          "team": "San Diego",
+          "BF": 17
+        },
+        {
+          "player_id": "cb-san-diego-louie-crow",
+          "team": "San Diego",
+          "BF": 14
+        },
+        {
+          "player_id": "cb-san-diego-nathan-walker",
+          "team": "San Diego",
+          "BF": 6
+        }
+      ]
     },
     {
       "game_id": "cb-2019-03-22-san-francisco-san-diego-att0052",
@@ -352,8 +1041,43 @@
       "away": "San Francisco",
       "home": "San Diego",
       "source_url": "https://usdtoreros.com/boxscore.aspx?id=9246&path=baseball",
-      "status": "unresolved",
-      "reason": "expected two explicit BF pitching tables, found 0"
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 6,
+      "added": 6,
+      "recovered_this_run": 6,
+      "values": [
+        {
+          "player_id": "cb-san-francisco-riley-ornido",
+          "team": "San Francisco",
+          "BF": 27
+        },
+        {
+          "player_id": "cb-san-francisco-grant-young",
+          "team": "San Francisco",
+          "BF": 14
+        },
+        {
+          "player_id": "cb-san-francisco-josh-mollerus",
+          "team": "San Francisco",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-san-diego-chris-murphy",
+          "team": "San Diego",
+          "BF": 24
+        },
+        {
+          "player_id": "cb-san-diego-travis-kuhn",
+          "team": "San Diego",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-san-diego-cade-brown",
+          "team": "San Diego",
+          "BF": 3
+        }
+      ]
     },
     {
       "game_id": "cb-2019-03-23-san-francisco-san-diego-att0053",
@@ -361,8 +1085,53 @@
       "away": "San Francisco",
       "home": "San Diego",
       "source_url": "https://usdtoreros.com/boxscore.aspx?id=9247&path=baseball",
-      "status": "unresolved",
-      "reason": "expected two explicit BF pitching tables, found 0"
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 8,
+      "added": 8,
+      "recovered_this_run": 8,
+      "values": [
+        {
+          "player_id": "cb-san-francisco-scott-parker",
+          "team": "San Francisco",
+          "BF": 23
+        },
+        {
+          "player_id": "cb-san-francisco-julian-washburn",
+          "team": "San Francisco",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-san-francisco-joey-steele",
+          "team": "San Francisco",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-san-diego-jake-miller",
+          "team": "San Diego",
+          "BF": 25
+        },
+        {
+          "player_id": "cb-san-diego-anthony-donatella",
+          "team": "San Diego",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-san-diego-nathan-walker",
+          "team": "San Diego",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-san-diego-grady-miller",
+          "team": "San Diego",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-san-diego-louie-crow",
+          "team": "San Diego",
+          "BF": 9
+        }
+      ]
     },
     {
       "game_id": "cb-2019-03-24-san-francisco-san-diego-att0054",
@@ -370,8 +1139,58 @@
       "away": "San Francisco",
       "home": "San Diego",
       "source_url": "https://usdtoreros.com/boxscore.aspx?id=9248&path=baseball",
-      "status": "unresolved",
-      "reason": "expected two explicit BF pitching tables, found 0"
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 9,
+      "added": 9,
+      "recovered_this_run": 9,
+      "values": [
+        {
+          "player_id": "cb-san-francisco-grant-nechak",
+          "team": "San Francisco",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-san-francisco-alex-pham",
+          "team": "San Francisco",
+          "BF": 28
+        },
+        {
+          "player_id": "cb-san-francisco-joey-steele",
+          "team": "San Francisco",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-san-francisco-kasey-koppelmaa",
+          "team": "San Francisco",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-san-francisco-grant-young",
+          "team": "San Francisco",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-san-diego-josh-hendrickson",
+          "team": "San Diego",
+          "BF": 13
+        },
+        {
+          "player_id": "cb-san-diego-noah-owen",
+          "team": "San Diego",
+          "BF": 12
+        },
+        {
+          "player_id": "cb-san-diego-grady-miller",
+          "team": "San Diego",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-san-diego-travis-kuhn",
+          "team": "San Diego",
+          "BF": 11
+        }
+      ]
     },
     {
       "game_id": "cb-2019-03-26-san-diego-uc-irvine-att0055",
@@ -379,8 +1198,83 @@
       "away": "San Diego",
       "home": "UC Irvine",
       "source_url": "https://usdtoreros.com/boxscore.aspx?id=9249&path=baseball",
-      "status": "unresolved",
-      "reason": "expected two explicit BF pitching tables, found 0"
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 14,
+      "added": 14,
+      "recovered_this_run": 14,
+      "values": [
+        {
+          "player_id": "cb-san-diego-jack-dolak",
+          "team": "San Diego",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-san-diego-nigel-ward",
+          "team": "San Diego",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-san-diego-nicola-mislinski",
+          "team": "San Diego",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-san-diego-anthony-donatella",
+          "team": "San Diego",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-san-diego-louie-crow",
+          "team": "San Diego",
+          "BF": 11
+        },
+        {
+          "player_id": "cb-san-diego-grady-miller",
+          "team": "San Diego",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-san-diego-cade-brown",
+          "team": "San Diego",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-san-diego-jeff-houghtby",
+          "team": "San Diego",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-uc-irvine-ryan-johnston",
+          "team": "UC Irvine",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-uc-irvine-dylan-riddle",
+          "team": "UC Irvine",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-uc-irvine-michael-frias",
+          "team": "UC Irvine",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-uc-irvine-john-vergara",
+          "team": "UC Irvine",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-uc-irvine-kaz-akamatsu",
+          "team": "UC Irvine",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-uc-irvine-darius-garcia",
+          "team": "UC Irvine",
+          "BF": 3
+        }
+      ]
     },
     {
       "game_id": "cb-2019-04-04-byu-san-diego-att0056",
@@ -388,8 +1282,48 @@
       "away": "BYU",
       "home": "San Diego",
       "source_url": "https://usdtoreros.com/boxscore.aspx?id=9255&path=baseball",
-      "status": "unresolved",
-      "reason": "expected two explicit BF pitching tables, found 0"
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 7,
+      "added": 7,
+      "recovered_this_run": 7,
+      "values": [
+        {
+          "player_id": "cb-byu-jordan-wood",
+          "team": "BYU",
+          "BF": 31
+        },
+        {
+          "player_id": "cb-byu-ben-weese",
+          "team": "BYU",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-byu-ayden-callahan",
+          "team": "BYU",
+          "BF": 11
+        },
+        {
+          "player_id": "cb-byu-austin-deming",
+          "team": "BYU",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-san-diego-chris-murphy",
+          "team": "San Diego",
+          "BF": 29
+        },
+        {
+          "player_id": "cb-san-diego-travis-kuhn",
+          "team": "San Diego",
+          "BF": 11
+        },
+        {
+          "player_id": "cb-san-diego-grady-miller",
+          "team": "San Diego",
+          "BF": 3
+        }
+      ]
     },
     {
       "game_id": "cb-2019-04-05-byu-san-diego-att0057",
@@ -397,8 +1331,53 @@
       "away": "BYU",
       "home": "San Diego",
       "source_url": "https://usdtoreros.com/boxscore.aspx?id=9254&path=baseball",
-      "status": "unresolved",
-      "reason": "expected two explicit BF pitching tables, found 0"
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 8,
+      "added": 8,
+      "recovered_this_run": 8,
+      "values": [
+        {
+          "player_id": "cb-byu-easton-walker",
+          "team": "BYU",
+          "BF": 23
+        },
+        {
+          "player_id": "cb-byu-reid-mclaughlin",
+          "team": "BYU",
+          "BF": 15
+        },
+        {
+          "player_id": "cb-byu-mitch-mcintyre",
+          "team": "BYU",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-byu-drew-zimmerman",
+          "team": "BYU",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-san-diego-jake-miller",
+          "team": "San Diego",
+          "BF": 25
+        },
+        {
+          "player_id": "cb-san-diego-anthony-donatella",
+          "team": "San Diego",
+          "BF": 12
+        },
+        {
+          "player_id": "cb-san-diego-nathan-walker",
+          "team": "San Diego",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-san-diego-grady-miller",
+          "team": "San Diego",
+          "BF": 2
+        }
+      ]
     },
     {
       "game_id": "cb-2019-04-06-byu-san-diego-att0058",
@@ -406,8 +1385,53 @@
       "away": "BYU",
       "home": "San Diego",
       "source_url": "https://usdtoreros.com/boxscore.aspx?id=9256&path=baseball",
-      "status": "unresolved",
-      "reason": "expected two explicit BF pitching tables, found 0"
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 8,
+      "added": 8,
+      "recovered_this_run": 8,
+      "values": [
+        {
+          "player_id": "cb-byu-justin-sterner",
+          "team": "BYU",
+          "BF": 25
+        },
+        {
+          "player_id": "cb-byu-blake-inouye",
+          "team": "BYU",
+          "BF": 13
+        },
+        {
+          "player_id": "cb-san-diego-jack-dolak",
+          "team": "San Diego",
+          "BF": 11
+        },
+        {
+          "player_id": "cb-san-diego-nathan-walker",
+          "team": "San Diego",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-san-diego-noah-owen",
+          "team": "San Diego",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-san-diego-cade-brown",
+          "team": "San Diego",
+          "BF": 11
+        },
+        {
+          "player_id": "cb-san-diego-nicola-mislinski",
+          "team": "San Diego",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-san-diego-nigel-ward",
+          "team": "San Diego",
+          "BF": 5
+        }
+      ]
     },
     {
       "game_id": "cb-2019-04-09-long-beach-state-san-diego-att0059",
@@ -415,8 +1439,78 @@
       "away": "Long Beach State",
       "home": "San Diego",
       "source_url": "https://usdtoreros.com/boxscore.aspx?id=9257&path=baseball",
-      "status": "unresolved",
-      "reason": "expected two explicit BF pitching tables, found 0"
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 13,
+      "added": 13,
+      "recovered_this_run": 13,
+      "values": [
+        {
+          "player_id": "cb-long-beach-state-alfredo-ruiz",
+          "team": "Long Beach State",
+          "BF": 19
+        },
+        {
+          "player_id": "cb-long-beach-state-jonathan-carlos",
+          "team": "Long Beach State",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-long-beach-state-tyler-gums",
+          "team": "Long Beach State",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-long-beach-state-raul-rizo",
+          "team": "Long Beach State",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-long-beach-state-john-sheaks",
+          "team": "Long Beach State",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-san-diego-louie-crow",
+          "team": "San Diego",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-san-diego-jack-dolak",
+          "team": "San Diego",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-san-diego-anthony-donatella",
+          "team": "San Diego",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-san-diego-noah-owen",
+          "team": "San Diego",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-san-diego-nigel-ward",
+          "team": "San Diego",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-san-diego-grady-miller",
+          "team": "San Diego",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-san-diego-nicola-mislinski",
+          "team": "San Diego",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-san-diego-travis-kuhn",
+          "team": "San Diego",
+          "BF": 5
+        }
+      ]
     },
     {
       "game_id": "cb-2019-04-18-portland-san-diego-att0060",
@@ -424,8 +1518,38 @@
       "away": "Portland",
       "home": "San Diego",
       "source_url": "https://usdtoreros.com/boxscore.aspx?id=9262&path=baseball",
-      "status": "unresolved",
-      "reason": "expected two explicit BF pitching tables, found 0"
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 5,
+      "added": 5,
+      "recovered_this_run": 5,
+      "values": [
+        {
+          "player_id": "cb-portland-cameron-richman",
+          "team": "Portland",
+          "BF": 18
+        },
+        {
+          "player_id": "cb-portland-nate-packard",
+          "team": "Portland",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-portland-christian-peters",
+          "team": "Portland",
+          "BF": 15
+        },
+        {
+          "player_id": "cb-san-diego-chris-murphy",
+          "team": "San Diego",
+          "BF": 24
+        },
+        {
+          "player_id": "cb-san-diego-travis-kuhn",
+          "team": "San Diego",
+          "BF": 16
+        }
+      ]
     },
     {
       "game_id": "cb-2019-04-19-portland-san-diego-att0061",
@@ -433,8 +1557,38 @@
       "away": "Portland",
       "home": "San Diego",
       "source_url": "https://usdtoreros.com/boxscore.aspx?id=9263&path=baseball",
-      "status": "unresolved",
-      "reason": "expected two explicit BF pitching tables, found 0"
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 5,
+      "added": 5,
+      "recovered_this_run": 5,
+      "values": [
+        {
+          "player_id": "cb-portland-eli-morse",
+          "team": "Portland",
+          "BF": 25
+        },
+        {
+          "player_id": "cb-portland-nate-packard",
+          "team": "Portland",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-portland-peter-allegro",
+          "team": "Portland",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-san-diego-grady-miller",
+          "team": "San Diego",
+          "BF": 28
+        },
+        {
+          "player_id": "cb-san-diego-louie-crow",
+          "team": "San Diego",
+          "BF": 8
+        }
+      ]
     },
     {
       "game_id": "cb-2019-04-20-portland-san-diego-att0062",
@@ -442,8 +1596,58 @@
       "away": "Portland",
       "home": "San Diego",
       "source_url": "https://usdtoreros.com/boxscore.aspx?id=9264&path=baseball",
-      "status": "unresolved",
-      "reason": "expected two explicit BF pitching tables, found 0"
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 9,
+      "added": 9,
+      "recovered_this_run": 9,
+      "values": [
+        {
+          "player_id": "cb-portland-chris-clements",
+          "team": "Portland",
+          "BF": 28
+        },
+        {
+          "player_id": "cb-portland-connor-knutson",
+          "team": "Portland",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-san-diego-anthony-donatella",
+          "team": "San Diego",
+          "BF": 14
+        },
+        {
+          "player_id": "cb-san-diego-jake-miller",
+          "team": "San Diego",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-san-diego-nigel-ward",
+          "team": "San Diego",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-san-diego-cade-brown",
+          "team": "San Diego",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-san-diego-nathan-walker",
+          "team": "San Diego",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-san-diego-jack-dolak",
+          "team": "San Diego",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-san-diego-nicola-mislinski",
+          "team": "San Diego",
+          "BF": 8
+        }
+      ]
     },
     {
       "game_id": "cb-2019-04-23-san-diego-state-san-diego-att0063",
@@ -451,8 +1655,68 @@
       "away": "San Diego State",
       "home": "San Diego",
       "source_url": "https://usdtoreros.com/boxscore.aspx?id=9265&path=baseball",
-      "status": "unresolved",
-      "reason": "expected two explicit BF pitching tables, found 0"
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 11,
+      "added": 11,
+      "recovered_this_run": 11,
+      "values": [
+        {
+          "player_id": "cb-san-diego-state-aaron-eden",
+          "team": "San Diego State",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-san-diego-state-brian-leonhardt",
+          "team": "San Diego State",
+          "BF": 12
+        },
+        {
+          "player_id": "cb-san-diego-state-adrian-mardueno",
+          "team": "San Diego State",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-san-diego-state-justi-goossen-brown",
+          "team": "San Diego State",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-san-diego-state-casey-schmitt",
+          "team": "San Diego State",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-san-diego-josh-hendrickson",
+          "team": "San Diego",
+          "BF": 11
+        },
+        {
+          "player_id": "cb-san-diego-louie-crow",
+          "team": "San Diego",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-san-diego-anthony-donatella",
+          "team": "San Diego",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-san-diego-jake-miller",
+          "team": "San Diego",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-san-diego-travis-kuhn",
+          "team": "San Diego",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-san-diego-nathan-walker",
+          "team": "San Diego",
+          "BF": 3
+        }
+      ]
     },
     {
       "game_id": "cb-2019-04-24-hawaii-san-diego-att0064",
@@ -460,8 +1724,93 @@
       "away": "Hawaii",
       "home": "San Diego",
       "source_url": "https://usdtoreros.com/boxscore.aspx?id=9266&path=baseball",
-      "status": "unresolved",
-      "reason": "expected two explicit BF pitching tables, found 0"
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 16,
+      "added": 16,
+      "recovered_this_run": 16,
+      "values": [
+        {
+          "player_id": "cb-hawaii-li-i-pontes",
+          "team": "Hawaii",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-hawaii-scott-bellina",
+          "team": "Hawaii",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-hawaii-cade-halemanu",
+          "team": "Hawaii",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-hawaii-carter-loewen",
+          "team": "Hawaii",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-hawaii-connor-butler",
+          "team": "Hawaii",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-hawaii-aaron-davenport",
+          "team": "Hawaii",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-hawaii-calvin-turchin",
+          "team": "Hawaii",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-hawaii-jeremy-wu-yelland",
+          "team": "Hawaii",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-hawaii-colin-ashworth",
+          "team": "Hawaii",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-hawaii-dylan-thomas",
+          "team": "Hawaii",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-san-diego-cade-brown",
+          "team": "San Diego",
+          "BF": 12
+        },
+        {
+          "player_id": "cb-san-diego-jake-reed",
+          "team": "San Diego",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-san-diego-nigel-ward",
+          "team": "San Diego",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-san-diego-nicola-mislinski",
+          "team": "San Diego",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-san-diego-jack-dolak",
+          "team": "San Diego",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-san-diego-nathan-walker",
+          "team": "San Diego",
+          "BF": 4
+        }
+      ]
     },
     {
       "game_id": "cb-2019-05-03-san-diego-santa-clara-att0065",
@@ -469,8 +1818,43 @@
       "away": "San Diego",
       "home": "Santa Clara",
       "source_url": "https://usdtoreros.com/boxscore.aspx?id=9271&path=baseball",
-      "status": "unresolved",
-      "reason": "expected two explicit BF pitching tables, found 0"
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 6,
+      "added": 6,
+      "recovered_this_run": 6,
+      "values": [
+        {
+          "player_id": "cb-san-diego-grady-miller",
+          "team": "San Diego",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-san-diego-anthony-donatella",
+          "team": "San Diego",
+          "BF": 31
+        },
+        {
+          "player_id": "cb-santa-clara-russell-grant-ii",
+          "team": "Santa Clara",
+          "BF": 16
+        },
+        {
+          "player_id": "cb-santa-clara-locke-bernhardt",
+          "team": "Santa Clara",
+          "BF": 13
+        },
+        {
+          "player_id": "cb-santa-clara-alex-reelfs",
+          "team": "Santa Clara",
+          "BF": 15
+        },
+        {
+          "player_id": "cb-santa-clara-alex-waldsmith",
+          "team": "Santa Clara",
+          "BF": 8
+        }
+      ]
     },
     {
       "game_id": "cb-2019-05-04-san-diego-santa-clara-att0066",
@@ -478,8 +1862,43 @@
       "away": "San Diego",
       "home": "Santa Clara",
       "source_url": "https://usdtoreros.com/boxscore.aspx?id=9272&path=baseball",
-      "status": "unresolved",
-      "reason": "expected two explicit BF pitching tables, found 0"
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 6,
+      "added": 6,
+      "recovered_this_run": 6,
+      "values": [
+        {
+          "player_id": "cb-san-diego-chris-murphy",
+          "team": "San Diego",
+          "BF": 20
+        },
+        {
+          "player_id": "cb-san-diego-travis-kuhn",
+          "team": "San Diego",
+          "BF": 17
+        },
+        {
+          "player_id": "cb-santa-clara-holden-bernhardt",
+          "team": "Santa Clara",
+          "BF": 21
+        },
+        {
+          "player_id": "cb-santa-clara-keegan-mccarville",
+          "team": "Santa Clara",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-santa-clara-ethan-heinrich",
+          "team": "Santa Clara",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-santa-clara-eric-lex",
+          "team": "Santa Clara",
+          "BF": 3
+        }
+      ]
     },
     {
       "game_id": "cb-2019-05-05-san-diego-santa-clara-att0067",
@@ -487,8 +1906,68 @@
       "away": "San Diego",
       "home": "Santa Clara",
       "source_url": "https://usdtoreros.com/boxscore.aspx?id=9273&path=baseball",
-      "status": "unresolved",
-      "reason": "expected two explicit BF pitching tables, found 0"
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 11,
+      "added": 11,
+      "recovered_this_run": 11,
+      "values": [
+        {
+          "player_id": "cb-san-diego-josh-hendrickson",
+          "team": "San Diego",
+          "BF": 18
+        },
+        {
+          "player_id": "cb-san-diego-grady-miller",
+          "team": "San Diego",
+          "BF": 14
+        },
+        {
+          "player_id": "cb-san-diego-jake-miller",
+          "team": "San Diego",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-san-diego-nathan-walker",
+          "team": "San Diego",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-santa-clara-brandon-buckley",
+          "team": "Santa Clara",
+          "BF": 11
+        },
+        {
+          "player_id": "cb-santa-clara-alex-tisminezky",
+          "team": "Santa Clara",
+          "BF": 14
+        },
+        {
+          "player_id": "cb-santa-clara-matthew-mcgarry",
+          "team": "Santa Clara",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-santa-clara-alex-reelfs",
+          "team": "Santa Clara",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-santa-clara-ethan-heinrich",
+          "team": "Santa Clara",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-santa-clara-locke-bernhardt",
+          "team": "Santa Clara",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-santa-clara-alex-waldsmith",
+          "team": "Santa Clara",
+          "BF": 3
+        }
+      ]
     },
     {
       "game_id": "cb-2019-05-07-uc-irvine-san-diego-att0068",
@@ -496,8 +1975,53 @@
       "away": "UC Irvine",
       "home": "San Diego",
       "source_url": "https://usdtoreros.com/boxscore.aspx?id=9274&path=baseball",
-      "status": "unresolved",
-      "reason": "expected two explicit BF pitching tables, found 0"
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 8,
+      "added": 8,
+      "recovered_this_run": 8,
+      "values": [
+        {
+          "player_id": "cb-uc-irvine-michael-frias",
+          "team": "UC Irvine",
+          "BF": 12
+        },
+        {
+          "player_id": "cb-uc-irvine-dylan-riddle",
+          "team": "UC Irvine",
+          "BF": 12
+        },
+        {
+          "player_id": "cb-uc-irvine-john-vergara",
+          "team": "UC Irvine",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-san-diego-louie-crow",
+          "team": "San Diego",
+          "BF": 13
+        },
+        {
+          "player_id": "cb-san-diego-jake-reed",
+          "team": "San Diego",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-san-diego-nicola-mislinski",
+          "team": "San Diego",
+          "BF": 11
+        },
+        {
+          "player_id": "cb-san-diego-cade-brown",
+          "team": "San Diego",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-san-diego-travis-kuhn",
+          "team": "San Diego",
+          "BF": 4
+        }
+      ]
     },
     {
       "game_id": "cb-2019-05-10-pacific-san-diego-att0069",
@@ -505,8 +2029,58 @@
       "away": "Pacific",
       "home": "San Diego",
       "source_url": "https://usdtoreros.com/boxscore.aspx?id=9275&path=baseball",
-      "status": "unresolved",
-      "reason": "expected two explicit BF pitching tables, found 0"
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 9,
+      "added": 9,
+      "recovered_this_run": 9,
+      "values": [
+        {
+          "player_id": "cb-pacific-ricky-reynoso",
+          "team": "Pacific",
+          "BF": 16
+        },
+        {
+          "player_id": "cb-pacific-henrik-reinertsen",
+          "team": "Pacific",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-pacific-elijah-birdsong",
+          "team": "Pacific",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-pacific-michael-defelippi",
+          "team": "Pacific",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-pacific-josh-winkler",
+          "team": "Pacific",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-pacific-joe-solomon",
+          "team": "Pacific",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-san-diego-chris-murphy",
+          "team": "San Diego",
+          "BF": 22
+        },
+        {
+          "player_id": "cb-san-diego-anthony-donatella",
+          "team": "San Diego",
+          "BF": 16
+        },
+        {
+          "player_id": "cb-san-diego-cade-brown",
+          "team": "San Diego",
+          "BF": 3
+        }
+      ]
     },
     {
       "game_id": "cb-2019-05-11-pacific-san-diego-att0070",
@@ -514,8 +2088,53 @@
       "away": "Pacific",
       "home": "San Diego",
       "source_url": "https://usdtoreros.com/boxscore.aspx?id=9276&path=baseball",
-      "status": "unresolved",
-      "reason": "expected two explicit BF pitching tables, found 0"
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 8,
+      "added": 8,
+      "recovered_this_run": 8,
+      "values": [
+        {
+          "player_id": "cb-pacific-hayden-pearce",
+          "team": "Pacific",
+          "BF": 20
+        },
+        {
+          "player_id": "cb-pacific-lucas-sweany",
+          "team": "Pacific",
+          "BF": 21
+        },
+        {
+          "player_id": "cb-san-diego-josh-hendrickson",
+          "team": "San Diego",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-san-diego-travis-kuhn",
+          "team": "San Diego",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-san-diego-grady-miller",
+          "team": "San Diego",
+          "BF": 12
+        },
+        {
+          "player_id": "cb-san-diego-nicola-mislinski",
+          "team": "San Diego",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-san-diego-louie-crow",
+          "team": "San Diego",
+          "BF": 14
+        },
+        {
+          "player_id": "cb-san-diego-nathan-walker",
+          "team": "San Diego",
+          "BF": 10
+        }
+      ]
     },
     {
       "game_id": "cb-2019-05-12-pacific-san-diego-att0071",
@@ -523,8 +2142,43 @@
       "away": "Pacific",
       "home": "San Diego",
       "source_url": "https://usdtoreros.com/boxscore.aspx?id=9277&path=baseball",
-      "status": "unresolved",
-      "reason": "expected two explicit BF pitching tables, found 0"
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 6,
+      "added": 6,
+      "recovered_this_run": 6,
+      "values": [
+        {
+          "player_id": "cb-pacific-ryan-shreve",
+          "team": "Pacific",
+          "BF": 31
+        },
+        {
+          "player_id": "cb-pacific-henrik-reinertsen",
+          "team": "Pacific",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-san-diego-anthony-donatella",
+          "team": "San Diego",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-san-diego-jake-miller",
+          "team": "San Diego",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-san-diego-grady-miller",
+          "team": "San Diego",
+          "BF": 13
+        },
+        {
+          "player_id": "cb-san-diego-travis-kuhn",
+          "team": "San Diego",
+          "BF": 13
+        }
+      ]
     },
     {
       "game_id": "cb-2019-05-14-cal-baptist-san-diego-att0072",
@@ -532,8 +2186,78 @@
       "away": "Cal Baptist",
       "home": "San Diego",
       "source_url": "https://usdtoreros.com/boxscore.aspx?id=9278&path=baseball",
-      "status": "unresolved",
-      "reason": "expected two explicit BF pitching tables, found 0"
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 13,
+      "added": 13,
+      "recovered_this_run": 13,
+      "values": [
+        {
+          "player_id": "cb-cal-baptist-travis-booth",
+          "team": "Cal Baptist",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-cal-baptist-mason-mcgarvey",
+          "team": "Cal Baptist",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-cal-baptist-bryan-pope",
+          "team": "Cal Baptist",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-cal-baptist-jorge-valerio",
+          "team": "Cal Baptist",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-cal-baptist-jacob-mccarvel",
+          "team": "Cal Baptist",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-cal-baptist-matt-mogollon",
+          "team": "Cal Baptist",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-cal-baptist-seth-kaneen",
+          "team": "Cal Baptist",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-san-diego-jake-miller",
+          "team": "San Diego",
+          "BF": 13
+        },
+        {
+          "player_id": "cb-san-diego-cade-brown",
+          "team": "San Diego",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-san-diego-jack-dolak",
+          "team": "San Diego",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-san-diego-nicola-mislinski",
+          "team": "San Diego",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-san-diego-louie-crow",
+          "team": "San Diego",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-san-diego-nathan-walker",
+          "team": "San Diego",
+          "BF": 6
+        }
+      ]
     }
   ]
 }

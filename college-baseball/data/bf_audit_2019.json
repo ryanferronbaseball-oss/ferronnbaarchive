@@ -1,0 +1,535 @@
+{
+  "scope": "2019 college baseball only; exact official BF; missing fields only",
+  "games": [
+    {
+      "game_id": "cb-2019-02-15-wagner-san-diego-att0032",
+      "date": "2019-02-15",
+      "away": "Wagner",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/boxscore.aspx?id=8230&path=baseball",
+      "status": "unresolved",
+      "reason": "source BF totals not reconciled"
+    },
+    {
+      "game_id": "cb-2019-02-16-wagner-san-diego-att0033",
+      "date": "2019-02-16",
+      "away": "Wagner",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/boxscore.aspx?id=8231&path=baseball",
+      "status": "unresolved",
+      "reason": "source BF totals not reconciled"
+    },
+    {
+      "game_id": "cb-2019-02-16-wagner-san-diego-att0034",
+      "date": "2019-02-16",
+      "away": "Wagner",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/boxscore.aspx?id=8232&path=baseball",
+      "status": "unresolved",
+      "reason": "source BF totals not reconciled"
+    },
+    {
+      "game_id": "cb-2019-02-19-uc-irvine-san-diego-state-att0035",
+      "date": "2019-02-19",
+      "away": "UC Irvine",
+      "home": "San Diego State",
+      "source_url": "https://ucirvinesports.com/sports/baseball/stats/2019/san-diego-state/boxscore/5415",
+      "status": "recovered",
+      "method": "official HTML BF column and source team totals",
+      "pitchers": 13,
+      "added": 13,
+      "values": [
+        {
+          "player_id": "cb-uc-irvine-alonzo-garcia",
+          "team": "UC Irvine",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-uc-irvine-john-vergara",
+          "team": "UC Irvine",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-uc-irvine-dylan-riddle",
+          "team": "UC Irvine",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-uc-irvine-ryan-johnston",
+          "team": "UC Irvine",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-uc-irvine-darius-garcia",
+          "team": "UC Irvine",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-uc-irvine-kaz-akamatsu",
+          "team": "UC Irvine",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-san-diego-state-justi-goossen-brown",
+          "team": "San Diego State",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-san-diego-state-troy-melton",
+          "team": "San Diego State",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-san-diego-state-christian-winston",
+          "team": "San Diego State",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-san-diego-state-casey-o-sullivan",
+          "team": "San Diego State",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-san-diego-state-aaron-eden",
+          "team": "San Diego State",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-san-diego-state-michael-paredes",
+          "team": "San Diego State",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-san-diego-state-casey-schmitt",
+          "team": "San Diego State",
+          "BF": 6
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2019-02-22-fresno-state-kansas-state-att0036",
+      "date": "2019-02-22",
+      "away": "Fresno State",
+      "home": "Kansas State",
+      "source_url": "https://www.kstatesports.com/sports/baseball/stats/2019/fresno-state/boxscore/6949",
+      "status": "recovered",
+      "method": "official HTML BF column and source team totals",
+      "pitchers": 10,
+      "added": 10,
+      "values": [
+        {
+          "player_id": "cb-fresno-state-ryan-jensen",
+          "team": "Fresno State",
+          "BF": 23
+        },
+        {
+          "player_id": "cb-fresno-state-tiegen-jones",
+          "team": "Fresno State",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-fresno-state-ryan-sullivan",
+          "team": "Fresno State",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-fresno-state-robbie-peters",
+          "team": "Fresno State",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-fresno-state-kyle-pruhsmeier",
+          "team": "Fresno State",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-kansas-state-tyler-eckberg",
+          "team": "Kansas State",
+          "BF": 17
+        },
+        {
+          "player_id": "cb-kansas-state-quinton-potter",
+          "team": "Kansas State",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-kansas-state-andrew-stratman",
+          "team": "Kansas State",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-kansas-state-justin-butz",
+          "team": "Kansas State",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-kansas-state-luke-bay",
+          "team": "Kansas State",
+          "BF": 10
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2019-02-22-oklahoma-san-diego-att0037",
+      "date": "2019-02-22",
+      "away": "Oklahoma",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/boxscore.aspx?id=8235&path=baseball",
+      "status": "unresolved",
+      "reason": "source BF totals not reconciled"
+    },
+    {
+      "game_id": "cb-2019-02-23-kansas-state-utah-att0038",
+      "date": "2019-02-23",
+      "away": "Kansas State",
+      "home": "Utah",
+      "source_url": "https://utahutes.com/sports/baseball/stats/2019/kansas-state/boxscore/15468",
+      "status": "recovered",
+      "method": "official HTML BF column and source team totals",
+      "pitchers": 7,
+      "added": 7,
+      "values": [
+        {
+          "player_id": "cb-kansas-state-jordan-wicks",
+          "team": "Kansas State",
+          "BF": 30
+        },
+        {
+          "player_id": "cb-kansas-state-eric-torres",
+          "team": "Kansas State",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-kansas-state-brett-lockwood",
+          "team": "Kansas State",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-kansas-state-mitch-zubradt",
+          "team": "Kansas State",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-utah-riley-pierce",
+          "team": "Utah",
+          "BF": 15
+        },
+        {
+          "player_id": "cb-utah-jack-liffrig",
+          "team": "Utah",
+          "BF": 18
+        },
+        {
+          "player_id": "cb-utah-david-watson",
+          "team": "Utah",
+          "BF": 7
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2019-02-23-missouri-state-san-diego-att0039",
+      "date": "2019-02-23",
+      "away": "Missouri State",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/boxscore.aspx?id=8262&path=baseball",
+      "status": "unresolved",
+      "reason": "source BF totals not reconciled"
+    },
+    {
+      "game_id": "cb-2019-02-24-cal-state-fullerton-oklahoma-att0040",
+      "date": "2019-02-24",
+      "away": "Cal State Fullerton",
+      "home": "Oklahoma",
+      "source_url": "https://soonersports.com/sports/2019/8/7/2150228",
+      "status": "existing_verified_backfill"
+    },
+    {
+      "game_id": "cb-2019-02-24-utah-san-diego-att0041",
+      "date": "2019-02-24",
+      "away": "Utah",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/boxscore.aspx?id=9234&path=baseball",
+      "status": "unresolved",
+      "reason": "source BF totals not reconciled"
+    },
+    {
+      "game_id": "cb-2019-02-26-san-diego-san-diego-state-att0042",
+      "date": "2019-02-26",
+      "away": "San Diego",
+      "home": "San Diego State",
+      "source_url": "https://usdtoreros.com/boxscore.aspx?id=9235&path=baseball",
+      "status": "unresolved",
+      "reason": "source BF totals not reconciled"
+    },
+    {
+      "game_id": "cb-2019-03-01-st-john-s-san-diego-att0043",
+      "date": "2019-03-01",
+      "away": "St. John's",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/boxscore.aspx?id=9236&path=baseball",
+      "status": "unresolved",
+      "reason": "source BF totals not reconciled"
+    },
+    {
+      "game_id": "cb-2019-03-03-st-john-s-san-diego-att0044",
+      "date": "2019-03-03",
+      "away": "St. John's",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/boxscore.aspx?id=9238&path=baseball",
+      "status": "unresolved",
+      "reason": "source BF totals not reconciled"
+    },
+    {
+      "game_id": "cb-2019-03-04-st-john-s-san-diego-att0045",
+      "date": "2019-03-04",
+      "away": "St. John's",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/boxscore.aspx?id=9237&path=baseball",
+      "status": "unresolved",
+      "reason": "source BF totals not reconciled"
+    },
+    {
+      "game_id": "cb-2019-03-05-san-diego-uc-riverside-att0046",
+      "date": "2019-03-05",
+      "away": "San Diego",
+      "home": "UC Riverside",
+      "source_url": "https://usdtoreros.com/boxscore.aspx?id=9239&path=baseball",
+      "status": "unresolved",
+      "reason": "source BF totals not reconciled"
+    },
+    {
+      "game_id": "cb-2019-03-12-tcu-san-diego-att0047",
+      "date": "2019-03-12",
+      "away": "TCU",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/boxscore.aspx?id=9240&path=baseball",
+      "status": "unresolved",
+      "reason": "source BF totals not reconciled"
+    },
+    {
+      "game_id": "cb-2019-03-15-pepperdine-san-diego-att0048",
+      "date": "2019-03-15",
+      "away": "Pepperdine",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/boxscore.aspx?id=9241&path=baseball",
+      "status": "unresolved",
+      "reason": "source BF totals not reconciled"
+    },
+    {
+      "game_id": "cb-2019-03-16-pepperdine-san-diego-att0049",
+      "date": "2019-03-16",
+      "away": "Pepperdine",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/boxscore.aspx?id=9242&path=baseball",
+      "status": "unresolved",
+      "reason": "source BF totals not reconciled"
+    },
+    {
+      "game_id": "cb-2019-03-17-pepperdine-san-diego-att0050",
+      "date": "2019-03-17",
+      "away": "Pepperdine",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/boxscore.aspx?id=9243&path=baseball",
+      "status": "unresolved",
+      "reason": "source BF totals not reconciled"
+    },
+    {
+      "game_id": "cb-2019-03-19-cal-state-fullerton-san-diego-att0051",
+      "date": "2019-03-19",
+      "away": "Cal State Fullerton",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/boxscore.aspx?id=9244&path=baseball",
+      "status": "unresolved",
+      "reason": "source BF totals not reconciled"
+    },
+    {
+      "game_id": "cb-2019-03-22-san-francisco-san-diego-att0052",
+      "date": "2019-03-22",
+      "away": "San Francisco",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/boxscore.aspx?id=9246&path=baseball",
+      "status": "unresolved",
+      "reason": "source BF totals not reconciled"
+    },
+    {
+      "game_id": "cb-2019-03-23-san-francisco-san-diego-att0053",
+      "date": "2019-03-23",
+      "away": "San Francisco",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/boxscore.aspx?id=9247&path=baseball",
+      "status": "unresolved",
+      "reason": "source BF totals not reconciled"
+    },
+    {
+      "game_id": "cb-2019-03-24-san-francisco-san-diego-att0054",
+      "date": "2019-03-24",
+      "away": "San Francisco",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/boxscore.aspx?id=9248&path=baseball",
+      "status": "unresolved",
+      "reason": "source BF totals not reconciled"
+    },
+    {
+      "game_id": "cb-2019-03-26-san-diego-uc-irvine-att0055",
+      "date": "2019-03-26",
+      "away": "San Diego",
+      "home": "UC Irvine",
+      "source_url": "https://usdtoreros.com/boxscore.aspx?id=9249&path=baseball",
+      "status": "unresolved",
+      "reason": "source BF totals not reconciled"
+    },
+    {
+      "game_id": "cb-2019-04-04-byu-san-diego-att0056",
+      "date": "2019-04-04",
+      "away": "BYU",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/boxscore.aspx?id=9255&path=baseball",
+      "status": "unresolved",
+      "reason": "source BF totals not reconciled"
+    },
+    {
+      "game_id": "cb-2019-04-05-byu-san-diego-att0057",
+      "date": "2019-04-05",
+      "away": "BYU",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/boxscore.aspx?id=9254&path=baseball",
+      "status": "unresolved",
+      "reason": "source BF totals not reconciled"
+    },
+    {
+      "game_id": "cb-2019-04-06-byu-san-diego-att0058",
+      "date": "2019-04-06",
+      "away": "BYU",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/boxscore.aspx?id=9256&path=baseball",
+      "status": "unresolved",
+      "reason": "source BF totals not reconciled"
+    },
+    {
+      "game_id": "cb-2019-04-09-long-beach-state-san-diego-att0059",
+      "date": "2019-04-09",
+      "away": "Long Beach State",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/boxscore.aspx?id=9257&path=baseball",
+      "status": "unresolved",
+      "reason": "source BF totals not reconciled"
+    },
+    {
+      "game_id": "cb-2019-04-18-portland-san-diego-att0060",
+      "date": "2019-04-18",
+      "away": "Portland",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/boxscore.aspx?id=9262&path=baseball",
+      "status": "unresolved",
+      "reason": "source BF totals not reconciled"
+    },
+    {
+      "game_id": "cb-2019-04-19-portland-san-diego-att0061",
+      "date": "2019-04-19",
+      "away": "Portland",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/boxscore.aspx?id=9263&path=baseball",
+      "status": "unresolved",
+      "reason": "source BF totals not reconciled"
+    },
+    {
+      "game_id": "cb-2019-04-20-portland-san-diego-att0062",
+      "date": "2019-04-20",
+      "away": "Portland",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/boxscore.aspx?id=9264&path=baseball",
+      "status": "unresolved",
+      "reason": "source BF totals not reconciled"
+    },
+    {
+      "game_id": "cb-2019-04-23-san-diego-state-san-diego-att0063",
+      "date": "2019-04-23",
+      "away": "San Diego State",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/boxscore.aspx?id=9265&path=baseball",
+      "status": "unresolved",
+      "reason": "source BF totals not reconciled"
+    },
+    {
+      "game_id": "cb-2019-04-24-hawaii-san-diego-att0064",
+      "date": "2019-04-24",
+      "away": "Hawaii",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/boxscore.aspx?id=9266&path=baseball",
+      "status": "unresolved",
+      "reason": "source BF totals not reconciled"
+    },
+    {
+      "game_id": "cb-2019-05-03-san-diego-santa-clara-att0065",
+      "date": "2019-05-03",
+      "away": "San Diego",
+      "home": "Santa Clara",
+      "source_url": "https://usdtoreros.com/boxscore.aspx?id=9271&path=baseball",
+      "status": "unresolved",
+      "reason": "source BF totals not reconciled"
+    },
+    {
+      "game_id": "cb-2019-05-04-san-diego-santa-clara-att0066",
+      "date": "2019-05-04",
+      "away": "San Diego",
+      "home": "Santa Clara",
+      "source_url": "https://usdtoreros.com/boxscore.aspx?id=9272&path=baseball",
+      "status": "unresolved",
+      "reason": "source BF totals not reconciled"
+    },
+    {
+      "game_id": "cb-2019-05-05-san-diego-santa-clara-att0067",
+      "date": "2019-05-05",
+      "away": "San Diego",
+      "home": "Santa Clara",
+      "source_url": "https://usdtoreros.com/boxscore.aspx?id=9273&path=baseball",
+      "status": "unresolved",
+      "reason": "source BF totals not reconciled"
+    },
+    {
+      "game_id": "cb-2019-05-07-uc-irvine-san-diego-att0068",
+      "date": "2019-05-07",
+      "away": "UC Irvine",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/boxscore.aspx?id=9274&path=baseball",
+      "status": "unresolved",
+      "reason": "source BF totals not reconciled"
+    },
+    {
+      "game_id": "cb-2019-05-10-pacific-san-diego-att0069",
+      "date": "2019-05-10",
+      "away": "Pacific",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/boxscore.aspx?id=9275&path=baseball",
+      "status": "unresolved",
+      "reason": "source BF totals not reconciled"
+    },
+    {
+      "game_id": "cb-2019-05-11-pacific-san-diego-att0070",
+      "date": "2019-05-11",
+      "away": "Pacific",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/boxscore.aspx?id=9276&path=baseball",
+      "status": "unresolved",
+      "reason": "source BF totals not reconciled"
+    },
+    {
+      "game_id": "cb-2019-05-12-pacific-san-diego-att0071",
+      "date": "2019-05-12",
+      "away": "Pacific",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/boxscore.aspx?id=9277&path=baseball",
+      "status": "unresolved",
+      "reason": "source BF totals not reconciled"
+    },
+    {
+      "game_id": "cb-2019-05-14-cal-baptist-san-diego-att0072",
+      "date": "2019-05-14",
+      "away": "Cal Baptist",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/boxscore.aspx?id=9278&path=baseball",
+      "status": "unresolved",
+      "reason": "source BF totals not reconciled"
+    }
+  ]
+}

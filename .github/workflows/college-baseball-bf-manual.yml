@@ -17,7 +17,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Apply verified March 11 2020 game and correct date
+      - name: Apply verified February 16 2024 Duke Indiana BF
         run: |
           python - <<'PY'
           import json
@@ -25,34 +25,25 @@ jobs:
           D=Path('college-baseball/data')
           stats=D/'player_stats.json'
           audit=D/'bf_audit_recovery.json'
-          gamesfile=D/'games.json'
-          initial=D/'bf_audit_2020_2021.json'
-          attendance=D/'attendance_master_444.csv'
           rows=json.loads(stats.read_text())
           report=json.loads(audit.read_text())
-          games=json.loads(gamesfile.read_text())
-          initial_report=json.loads(initial.read_text())
-          gid='cb-2020-03-10-cal-baptist-san-diego-att0083'
-          source='https://usdtoreros.com/sports/baseball/stats/2020/california-baptist/boxscore/9683'
-          old_date='2020-03-10'
-          date='2020-03-11'
+          gid='cb-2024-02-16-duke-indiana-att0225'
+          source='https://goduke.com/sports/baseball/stats/2024/indiana/boxscore/21657'
+          date_sources=['https://goduke.com/sports/baseball/schedule/2024','https://goduke.com/news/2024/2/16/baseball-santucci-tosses-gem-no-12-duke-rolls-to-opening-day-victory-over-indiana','https://iuhoosiers.com/sports/baseball/schedule/text/2024']
+          game=next(g for g in json.loads((D/'games.json').read_text()) if g['id']==gid)
+          assert (game['date'],game['away'],game['home'],game['away_score'],game['home_score'])==('2024-02-16','Duke','Indiana',6,3)
           seeds=[
-              ('cb-cal-baptist-chris-burica',(16,8,2,2,2,3,84,1),27),
-              ('cb-cal-baptist-christian-culpepper',(5,0,0,0,2,2,30,0),7),
-              ('cb-cal-baptist-jorge-valerio',(3,0,0,0,0,1,14,0),3),
-              ('cb-san-diego-jack-dolak',(18,0,0,0,3,10,103,0),20),
-              ('cb-san-diego-jake-reed',(5,2,0,0,1,1,24,0),8),
-              ('cb-san-diego-conner-thurman',(4,0,0,0,0,2,14,0),4),
+              ('cb-duke-jonathan-santucci',(15,4,0,0,2,7,86,0),20),
+              ('cb-duke-owen-proksch',(4,4,3,3,1,1,37,1),10),
+              ('cb-duke-charlie-beilenson',(8,1,0,0,0,5,38,0),9),
+              ('cb-indiana-brayden-risedorph',(14,2,1,1,1,4,78,0),18),
+              ('cb-indiana-ryan-kraft',(4,4,4,4,1,2,35,1),10),
+              ('cb-indiana-aydan-decker-petty',(3,1,0,0,1,0,22,0),5),
+              ('cb-indiana-evan-whiteaker',(6,3,1,1,0,1,24,0),8),
           ]
           arms=[r for r in rows if r['game_id']==gid and r.get('pitching') is not None]
           entry=next(r for r in report['games'] if r['game_id']==gid)
-          game=next(r for r in games if r['id']==gid)
-          prior=next(r for r in initial_report['games'] if r['game_id']==gid)
-          assert len(arms)==6
-          assert (game['away'],game['home'],game['away_score'],game['home_score'],game['source_url'])==('Cal Baptist','San Diego',0,2,source)
-          assert game['date'] in (old_date,date)
-          assert entry['date'] in (old_date,date)
-          assert prior['date'] in (old_date,date)
+          assert len(arms)==len(seeds)
           fields=('outs','hits','runs','earnedRuns','baseOnBalls','strikeOuts','numberOfPitches','hitBatsmen')
           values=[]; added=0
           for pid,sig,bf in seeds:
@@ -65,32 +56,25 @@ jobs:
                   p['battersFaced']=bf; added+=1
               values.append({'player_id':pid,'team':r['team'],'BF':bf})
               print(r['player'],bf,'K%',round(100*p['strikeOuts']/bf,1),'BB%',round(100*p['baseOnBalls']/bf,1))
-          assert sum(v['BF'] for v in values if v['team']=='Cal Baptist')==37==32+4+1
-          assert sum(v['BF'] for v in values if v['team']=='San Diego')==32==28+4
+          assert sum(v['BF'] for v in values if v['team']=='Duke')==39==35+3+1
+          assert sum(v['BF'] for v in values if v['team']=='Indiana')==41==36+3+1+1
           if entry['status']=='recovered':
-              assert entry['values']==values and added==0 and game['date']==date
+              assert entry['values']==values and added==0
               print('Already verified and saved')
               raise SystemExit(0)
-          assert entry['status']=='unresolved' and added==6
-          game['date']=date
-          prior['date']=date
+          assert entry['status']=='unresolved' and added==7
           entry.pop('reason',None)
-          entry.update(date=date,original_archive_date=old_date,status='recovered',method='Manual verification of official USD box score dated March 11, 2020; corrected date; exact pitcher BF and opponent plate appearances',manual_source_url=source,verification={'Cal Baptist':{'BF':37,'opponent_AB':32,'opponent_BB':4,'opponent_HBP':1},'San Diego':{'BF':32,'opponent_AB':28,'opponent_BB':4,'opponent_HBP':0}},pitchers=6,added=added,recovered_this_run=added,values=values)
-          csv=attendance.read_bytes()
-          old=b'cb-attended-0083,84,2020-03-10,Cal Baptist,San Diego,'
-          new=b'cb-attended-0083,84,2020-03-11,Cal Baptist,San Diego,'
-          assert csv.count(old)+csv.count(new)==1
-          attendance.write_bytes(csv.replace(old,new))
-          for path,data in [(stats,rows),(audit,report),(gamesfile,games),(initial,initial_report)]:
-              path.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n')
+          entry.update(status='recovered',method='Manual official Duke and Indiana box score BF; archived February 16 date confirmed by schedules and recap despite both Sidearm pages displaying February 15; exact pitching line and opposing PA reconciliation',manual_source_url=source,date_verification_source_urls=date_sources,verification={'Duke':{'BF':39,'opponent_AB':35,'opponent_BB':3,'opponent_HBP':1},'Indiana':{'BF':41,'opponent_AB':36,'opponent_BB':3,'opponent_HBP':1,'opponent_SF':1}},pitchers=7,added=added,recovered_this_run=added,values=values)
+          stats.write_text(json.dumps(rows,ensure_ascii=False,indent=2)+'\n')
+          audit.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
           print('Remaining unresolved:',sum(r['status']=='unresolved' for r in report['games']))
           PY
-      - name: Commit verified BF and date correction
+      - name: Commit verified game and audit
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add college-baseball/data/player_stats.json college-baseball/data/bf_audit_recovery.json college-baseball/data/games.json college-baseball/data/bf_audit_2020_2021.json college-baseball/data/attendance_master_444.csv
+          git add college-baseball/data/player_stats.json college-baseball/data/bf_audit_recovery.json
           if git diff --cached --quiet; then exit 0; fi
-          git commit -m "Recover six verified BF entries and correct CBU USD game date to March 11 2020"
+          git commit -m "Recover seven verified BF entries for February 16 2024 Duke Indiana"
           git pull --rebase origin main
           git push origin HEAD:main

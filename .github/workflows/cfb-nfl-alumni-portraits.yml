@@ -30,7 +30,7 @@ jobs:
           data=pathlib.Path('cfb/data');reg=json.loads((data/'player_portraits.json').read_text())
           report=data/'nfl_alumni_portrait_audit.json';audit=json.loads(report.read_text())
           cross=json.loads((data/'nfl_crosswalk.json').read_text())
-                    server=http.server.ThreadingHTTPServer(('127.0.0.1',0),http.server.SimpleHTTPRequestHandler)
+          server=http.server.ThreadingHTTPServer(('127.0.0.1',0),http.server.SimpleHTTPRequestHandler)
           threading.Thread(target=server.serve_forever,daemon=True).start()
           base=f'http://127.0.0.1:{server.server_port}/cfb'
           failures=[];checked=[]

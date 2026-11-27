@@ -41,7 +41,9 @@ jobs:
           rows=load('player_stats.json');reg=load('player_portraits.json');cross=load('player_identity_crosswalk.json')
           def norm(s):return re.sub(r'[^a-z0-9]','',str(s).lower())
           texas=[r for r in rows if r['player_id']==pid]
-          charleston=[r for r in rows if norm(r.get('team')) in ('charleston','collegeofcharleston') and norm(r.get('player'))=='dariyanpendergrass']
+          surname_rows=[r for r in rows if 'pendergrass' in norm(r.get('player_id')) or 'pendergrass' in norm(r.get('player'))]
+          print('Pendergrass source rows:',json.dumps([{'id':r.get('player_id'),'name':r.get('player'),'team':r.get('team'),'game':r.get('game_id')} for r in surname_rows]),flush=True)
+          charleston=[r for r in surname_rows if norm(r.get('team')) in ('charleston','collegeofcharleston','charlestonsc','charlestoncougars','collegeofcharlestoncougars','cofc') and (norm(r.get('player')) in ('dariyanpendergrass','dpendergrass','pendergrassd','pendergrass') or norm(r.get('player_id')).endswith(('dariyanpendergrass','dpendergrass','pendergrassd','pendergrass')))]
           assert texas and all(r['team']=='Texas' for r in texas)
           assert charleston,'No exact Dariyan Pendergrass Charleston rows'
           old_ids={r['player_id'] for r in charleston}

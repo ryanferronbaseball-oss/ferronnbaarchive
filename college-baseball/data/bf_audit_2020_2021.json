@@ -1,0 +1,2193 @@
+{
+  "scope": "2020–2021 college baseball only; exact official BF; missing fields only",
+  "pass": "validated USD numeric-tail parser",
+  "games": [
+    {
+      "game_id": "cb-2020-02-18-uc-irvine-san-diego-att0073",
+      "date": "2020-02-18",
+      "away": "UC Irvine",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2020/uc-irvine/boxscore/9667",
+      "status": "unresolved",
+      "reason": "expected two explicit BF pitching tables, found 0; pitching reconciliation: rows=4 sums=[11, 9, 9, 4, 8, 43] totals=[] skipped=[]; pitching reconciliation: rows=5 sums=[3, 1, 1, 5, 10, 36] totals=[] skipped=[]"
+    },
+    {
+      "game_id": "cb-2020-02-21-southern-illinois-arizona-att0074",
+      "date": "2020-02-21",
+      "away": "Southern Illinois",
+      "home": "Arizona",
+      "source_url": "https://arizonawildcats.com/sports/baseball/stats/2020/southern-illinois/boxscore/20377",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 6,
+      "added": 6,
+      "recovered_this_run": 6,
+      "values": [
+        {
+          "player_id": "cb-southern-illinois-mason-hiser",
+          "team": "Southern Illinois",
+          "BF": 20
+        },
+        {
+          "player_id": "cb-southern-illinois-kyle-back",
+          "team": "Southern Illinois",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-southern-illinois-matthew-steidl",
+          "team": "Southern Illinois",
+          "BF": 14
+        },
+        {
+          "player_id": "cb-arizona-garrett-irvin",
+          "team": "Arizona",
+          "BF": 21
+        },
+        {
+          "player_id": "cb-arizona-vince-vannelle",
+          "team": "Arizona",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-arizona-gil-luna",
+          "team": "Arizona",
+          "BF": 6
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2020-02-21-nebraska-san-diego-att0075",
+      "date": "2020-02-21",
+      "away": "Nebraska",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2020/nebraska/boxscore/9669",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 8,
+      "added": 8,
+      "recovered_this_run": 8,
+      "values": [
+        {
+          "player_id": "cb-nebraska-gareth-stroh",
+          "team": "Nebraska",
+          "BF": 20
+        },
+        {
+          "player_id": "cb-nebraska-max-schreiber",
+          "team": "Nebraska",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-nebraska-tyler-martin",
+          "team": "Nebraska",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-nebraska-shay-schanaman",
+          "team": "Nebraska",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-san-diego-jack-hyde",
+          "team": "San Diego",
+          "BF": 12
+        },
+        {
+          "player_id": "cb-san-diego-kohl-simas",
+          "team": "San Diego",
+          "BF": 18
+        },
+        {
+          "player_id": "cb-san-diego-jake-reed",
+          "team": "San Diego",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-san-diego-conner-thurman",
+          "team": "San Diego",
+          "BF": 11
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2020-02-22-arizona-iowa-att0076",
+      "date": "2020-02-22",
+      "away": "Arizona",
+      "home": "Iowa",
+      "source_url": "https://arizonawildcats.com/sports/baseball/stats/2020/iowa/boxscore/20378",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 9,
+      "added": 9,
+      "recovered_this_run": 9,
+      "values": [
+        {
+          "player_id": "cb-arizona-quinn-flanagan",
+          "team": "Arizona",
+          "BF": 23
+        },
+        {
+          "player_id": "cb-arizona-ian-churchill",
+          "team": "Arizona",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-arizona-preston-price",
+          "team": "Arizona",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-arizona-randy-abshier",
+          "team": "Arizona",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-arizona-dawson-netz",
+          "team": "Arizona",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-iowa-grant-judkins",
+          "team": "Iowa",
+          "BF": 21
+        },
+        {
+          "player_id": "cb-iowa-trenton-wallace",
+          "team": "Iowa",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-iowa-dylan-nedved",
+          "team": "Iowa",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-iowa-grant-leonard",
+          "team": "Iowa",
+          "BF": 3
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2020-02-22-seattle-san-diego-att0077",
+      "date": "2020-02-22",
+      "away": "Seattle",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2020/seattle/boxscore/9671",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 5,
+      "added": 5,
+      "recovered_this_run": 5,
+      "values": [
+        {
+          "player_id": "cb-seattle-ethan-christianson",
+          "team": "Seattle",
+          "BF": 22
+        },
+        {
+          "player_id": "cb-seattle-alex-jemal",
+          "team": "Seattle",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-seattle-marvcus-guarin",
+          "team": "Seattle",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-san-diego-carter-rustad",
+          "team": "San Diego",
+          "BF": 19
+        },
+        {
+          "player_id": "cb-san-diego-jake-miller",
+          "team": "San Diego",
+          "BF": 15
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2020-02-23-southern-illinois-seattle-att0078",
+      "date": "2020-02-23",
+      "away": "Southern Illinois",
+      "home": "Seattle",
+      "source_url": "https://siusalukis.com/sports/baseball/stats/2020/seattle/boxscore/9208",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 11,
+      "added": 11,
+      "recovered_this_run": 11,
+      "values": [
+        {
+          "player_id": "cb-southern-illinois-blake-begner",
+          "team": "Southern Illinois",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-southern-illinois-matthew-steidl",
+          "team": "Southern Illinois",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-southern-illinois-dylan-givens",
+          "team": "Southern Illinois",
+          "BF": 18
+        },
+        {
+          "player_id": "cb-southern-illinois-michael-fossali",
+          "team": "Southern Illinois",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-southern-illinois-kyle-dixon",
+          "team": "Southern Illinois",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-southern-illinois-kyle-back",
+          "team": "Southern Illinois",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-seattle-alex-mcbee",
+          "team": "Seattle",
+          "BF": 21
+        },
+        {
+          "player_id": "cb-seattle-tyler-yeh",
+          "team": "Seattle",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-seattle-desmond-parisotto",
+          "team": "Seattle",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-seattle-kohl-petersen",
+          "team": "Seattle",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-seattle-brandon-jenkins",
+          "team": "Seattle",
+          "BF": 4
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2020-02-23-iowa-san-diego-att0079",
+      "date": "2020-02-23",
+      "away": "Iowa",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2020/iowa/boxscore/9673",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 9,
+      "added": 9,
+      "recovered_this_run": 9,
+      "values": [
+        {
+          "player_id": "cb-iowa-duncan-davitt",
+          "team": "Iowa",
+          "BF": 18
+        },
+        {
+          "player_id": "cb-iowa-cam-baumann",
+          "team": "Iowa",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-iowa-drew-irvine",
+          "team": "Iowa",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-iowa-ben-probst",
+          "team": "Iowa",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-iowa-ben-beutel",
+          "team": "Iowa",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-san-diego-grady-miller",
+          "team": "San Diego",
+          "BF": 18
+        },
+        {
+          "player_id": "cb-san-diego-jack-dolak",
+          "team": "San Diego",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-san-diego-jake-reed",
+          "team": "San Diego",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-san-diego-conner-thurman",
+          "team": "San Diego",
+          "BF": 13
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2020-02-28-monmouth-san-diego-att0080",
+      "date": "2020-02-28",
+      "away": "Monmouth",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2020/monmouth/boxscore/9676",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 4,
+      "added": 4,
+      "recovered_this_run": 4,
+      "values": [
+        {
+          "player_id": "cb-monmouth-dan-klepchick",
+          "team": "Monmouth",
+          "BF": 17
+        },
+        {
+          "player_id": "cb-monmouth-stephen-aldrich",
+          "team": "Monmouth",
+          "BF": 13
+        },
+        {
+          "player_id": "cb-monmouth-cory-hiltz",
+          "team": "Monmouth",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-san-diego-jake-miller",
+          "team": "San Diego",
+          "BF": 29
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2020-02-29-monmouth-san-diego-att0081",
+      "date": "2020-02-29",
+      "away": "Monmouth",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2020/monmouth/boxscore/9677",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 6,
+      "added": 6,
+      "recovered_this_run": 6,
+      "values": [
+        {
+          "player_id": "cb-monmouth-rob-hensey",
+          "team": "Monmouth",
+          "BF": 30
+        },
+        {
+          "player_id": "cb-monmouth-ryan-steckline",
+          "team": "Monmouth",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-monmouth-mason-miller",
+          "team": "Monmouth",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-san-diego-grady-miller",
+          "team": "San Diego",
+          "BF": 19
+        },
+        {
+          "player_id": "cb-san-diego-kohl-simas",
+          "team": "San Diego",
+          "BF": 11
+        },
+        {
+          "player_id": "cb-san-diego-conner-thurman",
+          "team": "San Diego",
+          "BF": 8
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2020-03-01-monmouth-san-diego-att0082",
+      "date": "2020-03-01",
+      "away": "Monmouth",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2020/monmouth/boxscore/9678",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 11,
+      "added": 11,
+      "recovered_this_run": 11,
+      "values": [
+        {
+          "player_id": "cb-monmouth-trey-dombroski",
+          "team": "Monmouth",
+          "BF": 13
+        },
+        {
+          "player_id": "cb-monmouth-ryan-bearse",
+          "team": "Monmouth",
+          "BF": 15
+        },
+        {
+          "player_id": "cb-monmouth-dante-ciaramella",
+          "team": "Monmouth",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-monmouth-nick-houghton",
+          "team": "Monmouth",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-monmouth-james-kelly",
+          "team": "Monmouth",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-san-diego-carter-rustad",
+          "team": "San Diego",
+          "BF": 17
+        },
+        {
+          "player_id": "cb-san-diego-nicola-mislinski",
+          "team": "San Diego",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-san-diego-jack-dolak",
+          "team": "San Diego",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-san-diego-nathan-walker",
+          "team": "San Diego",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-san-diego-jake-reed",
+          "team": "San Diego",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-san-diego-conner-thurman",
+          "team": "San Diego",
+          "BF": 2
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2020-03-10-cal-baptist-san-diego-att0083",
+      "date": "2020-03-10",
+      "away": "Cal Baptist",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2020/california-baptist/boxscore/9683",
+      "status": "unresolved",
+      "reason": "date not confirmed"
+    },
+    {
+      "game_id": "cb-2021-02-19-san-diego-san-diego-state-att0084",
+      "date": "2021-02-19",
+      "away": "San Diego",
+      "home": "San Diego State",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2021/san-diego-state/boxscore/12045",
+      "status": "unresolved",
+      "reason": "expected two explicit BF pitching tables, found 0; pitching reconciliation: rows=7 sums=[19, 14, 14, 3, 6, 45] totals=[] skipped=[]; pitching reconciliation: rows=5 sums=[11, 7, 5, 2, 9, 44] totals=[] skipped=[]"
+    },
+    {
+      "game_id": "cb-2021-02-20-san-diego-san-diego-state-att0085",
+      "date": "2021-02-20",
+      "away": "San Diego",
+      "home": "San Diego State",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2021/san-diego-state/boxscore/12046",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 12,
+      "added": 12,
+      "recovered_this_run": 12,
+      "values": [
+        {
+          "player_id": "cb-san-diego-carter-rustad",
+          "team": "San Diego",
+          "BF": 15
+        },
+        {
+          "player_id": "cb-san-diego-conner-thurman",
+          "team": "San Diego",
+          "BF": 17
+        },
+        {
+          "player_id": "cb-san-diego-kieran-shaw",
+          "team": "San Diego",
+          "BF": 17
+        },
+        {
+          "player_id": "cb-san-diego-ryan-robinson",
+          "team": "San Diego",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-san-diego-eddy-pelc",
+          "team": "San Diego",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-san-diego-jack-dolak",
+          "team": "San Diego",
+          "BF": 0
+        },
+        {
+          "player_id": "cb-san-diego-state-simas",
+          "team": "San Diego State",
+          "BF": 13
+        },
+        {
+          "player_id": "cb-san-diego-state-j-flores",
+          "team": "San Diego State",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-san-diego-state-tibbett",
+          "team": "San Diego State",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-san-diego-state-n-hansen",
+          "team": "San Diego State",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-san-diego-state-eden",
+          "team": "San Diego State",
+          "BF": 15
+        },
+        {
+          "player_id": "cb-san-diego-state-t-brown",
+          "team": "San Diego State",
+          "BF": 8
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2021-02-21-san-diego-state-san-diego-att0086",
+      "date": "2021-02-21",
+      "away": "San Diego State",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2021/san-diego-state/boxscore/12047",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 11,
+      "added": 11,
+      "recovered_this_run": 11,
+      "values": [
+        {
+          "player_id": "cb-san-diego-state-michael-paredes",
+          "team": "San Diego State",
+          "BF": 19
+        },
+        {
+          "player_id": "cb-san-diego-state-brian-leonhardt",
+          "team": "San Diego State",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-san-diego-state-avery-jones",
+          "team": "San Diego State",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-san-diego-state-kyle-petri",
+          "team": "San Diego State",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-san-diego-state-bradley-collins",
+          "team": "San Diego State",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-san-diego-state-casey-o-sullivan",
+          "team": "San Diego State",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-san-diego-state-kelena-sauer",
+          "team": "San Diego State",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-san-diego-grady-miller",
+          "team": "San Diego",
+          "BF": 20
+        },
+        {
+          "player_id": "cb-san-diego-lucas-braun",
+          "team": "San Diego",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-san-diego-jack-dolak",
+          "team": "San Diego",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-san-diego-ivran-romero",
+          "team": "San Diego",
+          "BF": 10
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2021-02-26-cal-state-fullerton-san-diego-att0087",
+      "date": "2021-02-26",
+      "away": "Cal State Fullerton",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2021/cal-state-fullerton/boxscore/12049",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 6,
+      "added": 6,
+      "recovered_this_run": 6,
+      "values": [
+        {
+          "player_id": "cb-cal-state-fullerton-tanner-bibee",
+          "team": "Cal State Fullerton",
+          "BF": 26
+        },
+        {
+          "player_id": "cb-cal-state-fullerton-samuel-gomez",
+          "team": "Cal State Fullerton",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-cal-state-fullerton-matthew-sanchez",
+          "team": "Cal State Fullerton",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-san-diego-jake-miller",
+          "team": "San Diego",
+          "BF": 21
+        },
+        {
+          "player_id": "cb-san-diego-conner-thurman",
+          "team": "San Diego",
+          "BF": 11
+        },
+        {
+          "player_id": "cb-san-diego-kieran-shaw",
+          "team": "San Diego",
+          "BF": 4
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2021-02-27-cal-state-fullerton-san-diego-att0088",
+      "date": "2021-02-27",
+      "away": "Cal State Fullerton",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2021/cal-state-fullerton/boxscore/12050",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 8,
+      "added": 8,
+      "recovered_this_run": 8,
+      "values": [
+        {
+          "player_id": "cb-cal-state-fullerton-peyton-jones",
+          "team": "Cal State Fullerton",
+          "BF": 20
+        },
+        {
+          "player_id": "cb-cal-state-fullerton-michael-knorr",
+          "team": "Cal State Fullerton",
+          "BF": 18
+        },
+        {
+          "player_id": "cb-cal-state-fullerton-landon-anderson",
+          "team": "Cal State Fullerton",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-cal-state-fullerton-ryan-hare",
+          "team": "Cal State Fullerton",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-san-diego-carter-rustad",
+          "team": "San Diego",
+          "BF": 19
+        },
+        {
+          "player_id": "cb-san-diego-brycen-mautz",
+          "team": "San Diego",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-san-diego-lucas-braun",
+          "team": "San Diego",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-san-diego-eddy-pelc",
+          "team": "San Diego",
+          "BF": 6
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2021-02-28-cal-state-fullerton-san-diego-att0089",
+      "date": "2021-02-28",
+      "away": "Cal State Fullerton",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2021/cal-state-fullerton/boxscore/12051",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 10,
+      "added": 10,
+      "recovered_this_run": 10,
+      "values": [
+        {
+          "player_id": "cb-cal-state-fullerton-kyle-luckham",
+          "team": "Cal State Fullerton",
+          "BF": 27
+        },
+        {
+          "player_id": "cb-cal-state-fullerton-landon-anderson",
+          "team": "Cal State Fullerton",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-cal-state-fullerton-christian-rodriguez",
+          "team": "Cal State Fullerton",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-cal-state-fullerton-ryan-hare",
+          "team": "Cal State Fullerton",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-san-diego-grady-miller",
+          "team": "San Diego",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-san-diego-jack-dolak",
+          "team": "San Diego",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-san-diego-ivran-romero",
+          "team": "San Diego",
+          "BF": 12
+        },
+        {
+          "player_id": "cb-san-diego-kieran-shaw",
+          "team": "San Diego",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-san-diego-jake-reed",
+          "team": "San Diego",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-san-diego-brycen-mautz",
+          "team": "San Diego",
+          "BF": 3
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2021-03-04-san-diego-uc-san-diego-att0090",
+      "date": "2021-03-04",
+      "away": "San Diego",
+      "home": "UC San Diego",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2021/uc-san-diego/boxscore/12052",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 8,
+      "added": 8,
+      "recovered_this_run": 8,
+      "values": [
+        {
+          "player_id": "cb-san-diego-jake-miller",
+          "team": "San Diego",
+          "BF": 20
+        },
+        {
+          "player_id": "cb-san-diego-eddy-pelc",
+          "team": "San Diego",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-san-diego-conner-thurman",
+          "team": "San Diego",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-san-diego-kieran-shaw",
+          "team": "San Diego",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-san-diego-lucas-braun",
+          "team": "San Diego",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-uc-san-diego-cameron-leonard",
+          "team": "UC San Diego",
+          "BF": 22
+        },
+        {
+          "player_id": "cb-uc-san-diego-izaak-martinez",
+          "team": "UC San Diego",
+          "BF": 15
+        },
+        {
+          "player_id": "cb-uc-san-diego-zach-tresemer",
+          "team": "UC San Diego",
+          "BF": 11
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2021-03-05-san-diego-uc-san-diego-att0091",
+      "date": "2021-03-05",
+      "away": "San Diego",
+      "home": "UC San Diego",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2021/uc-san-diego/boxscore/12053",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 8,
+      "added": 8,
+      "recovered_this_run": 8,
+      "values": [
+        {
+          "player_id": "cb-san-diego-carter-rustad",
+          "team": "San Diego",
+          "BF": 19
+        },
+        {
+          "player_id": "cb-san-diego-brycen-mautz",
+          "team": "San Diego",
+          "BF": 15
+        },
+        {
+          "player_id": "cb-san-diego-ivran-romero",
+          "team": "San Diego",
+          "BF": 14
+        },
+        {
+          "player_id": "cb-uc-san-diego-chris-gilmartin",
+          "team": "UC San Diego",
+          "BF": 21
+        },
+        {
+          "player_id": "cb-uc-san-diego-desmond-cabanilla",
+          "team": "UC San Diego",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-uc-san-diego-ryan-rissas",
+          "team": "UC San Diego",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-uc-san-diego-nic-gregson",
+          "team": "UC San Diego",
+          "BF": 13
+        },
+        {
+          "player_id": "cb-uc-san-diego-gredan-velasquez",
+          "team": "UC San Diego",
+          "BF": 5
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2021-03-06-uc-san-diego-san-diego-att0092",
+      "date": "2021-03-06",
+      "away": "UC San Diego",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2021/uc-san-diego/boxscore/12054",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 7,
+      "added": 7,
+      "recovered_this_run": 7,
+      "values": [
+        {
+          "player_id": "cb-uc-san-diego-brandon-weed",
+          "team": "UC San Diego",
+          "BF": 30
+        },
+        {
+          "player_id": "cb-uc-san-diego-mark-quinby",
+          "team": "UC San Diego",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-uc-san-diego-gredan-velasquez",
+          "team": "UC San Diego",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-uc-san-diego-cole-dale",
+          "team": "UC San Diego",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-san-diego-jack-hyde",
+          "team": "San Diego",
+          "BF": 19
+        },
+        {
+          "player_id": "cb-san-diego-conner-thurman",
+          "team": "San Diego",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-san-diego-eddy-pelc",
+          "team": "San Diego",
+          "BF": 7
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2021-03-07-uc-san-diego-san-diego-att0093",
+      "date": "2021-03-07",
+      "away": "UC San Diego",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2021/uc-san-diego/boxscore/12055",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 9,
+      "added": 9,
+      "recovered_this_run": 9,
+      "values": [
+        {
+          "player_id": "cb-uc-san-diego-aren-alvarez",
+          "team": "UC San Diego",
+          "BF": 15
+        },
+        {
+          "player_id": "cb-uc-san-diego-luke-mattson",
+          "team": "UC San Diego",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-uc-san-diego-noah-conlon",
+          "team": "UC San Diego",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-uc-san-diego-michael-mitchell",
+          "team": "UC San Diego",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-san-diego-lucas-braun",
+          "team": "San Diego",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-san-diego-grady-miller",
+          "team": "San Diego",
+          "BF": 17
+        },
+        {
+          "player_id": "cb-san-diego-jake-reed",
+          "team": "San Diego",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-san-diego-cole-colleran",
+          "team": "San Diego",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-san-diego-kieran-shaw",
+          "team": "San Diego",
+          "BF": 11
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2021-03-11-santa-clara-uc-san-diego-att0094",
+      "date": "2021-03-11",
+      "away": "Santa Clara",
+      "home": "UC San Diego",
+      "source_url": "https://ucsdtritons.com/sports/baseball/stats/2021/santa-clara/boxscore/8205",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 5,
+      "added": 5,
+      "recovered_this_run": 5,
+      "values": [
+        {
+          "player_id": "cb-santa-clara-russell-grant",
+          "team": "Santa Clara",
+          "BF": 20
+        },
+        {
+          "player_id": "cb-santa-clara-locke-bernhardt",
+          "team": "Santa Clara",
+          "BF": 11
+        },
+        {
+          "player_id": "cb-santa-clara-travis-howard",
+          "team": "Santa Clara",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-uc-san-diego-nic-gregson",
+          "team": "UC San Diego",
+          "BF": 17
+        },
+        {
+          "player_id": "cb-uc-san-diego-noah-conlon",
+          "team": "UC San Diego",
+          "BF": 26
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2021-03-12-uc-riverside-san-diego-att0095",
+      "date": "2021-03-12",
+      "away": "UC Riverside",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2021/uc-riverside/boxscore/12056",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 7,
+      "added": 7,
+      "recovered_this_run": 7,
+      "values": [
+        {
+          "player_id": "cb-uc-riverside-zach-jacobs",
+          "team": "UC Riverside",
+          "BF": 27
+        },
+        {
+          "player_id": "cb-uc-riverside-connor-martin",
+          "team": "UC Riverside",
+          "BF": 18
+        },
+        {
+          "player_id": "cb-uc-riverside-kevin-west",
+          "team": "UC Riverside",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-san-diego-jake-miller",
+          "team": "San Diego",
+          "BF": 24
+        },
+        {
+          "player_id": "cb-san-diego-eddy-pelc",
+          "team": "San Diego",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-san-diego-ryan-robinson",
+          "team": "San Diego",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-san-diego-james-sashin",
+          "team": "San Diego",
+          "BF": 3
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2021-03-13-uc-riverside-san-diego-att0096",
+      "date": "2021-03-13",
+      "away": "UC Riverside",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2021/uc-riverside/boxscore/12057",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 4,
+      "added": 4,
+      "recovered_this_run": 4,
+      "values": [
+        {
+          "player_id": "cb-uc-riverside-abbott-haffar",
+          "team": "UC Riverside",
+          "BF": 26
+        },
+        {
+          "player_id": "cb-uc-riverside-shamus-lyons",
+          "team": "UC Riverside",
+          "BF": 11
+        },
+        {
+          "player_id": "cb-san-diego-conner-thurman",
+          "team": "San Diego",
+          "BF": 25
+        },
+        {
+          "player_id": "cb-san-diego-kieran-shaw",
+          "team": "San Diego",
+          "BF": 6
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2021-03-13-uc-riverside-san-diego-att0097",
+      "date": "2021-03-13",
+      "away": "UC Riverside",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2021/uc-riverside/boxscore/12117",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 6,
+      "added": 6,
+      "recovered_this_run": 6,
+      "values": [
+        {
+          "player_id": "cb-uc-riverside-jake-lachemann",
+          "team": "UC Riverside",
+          "BF": 24
+        },
+        {
+          "player_id": "cb-uc-riverside-nathan-webb",
+          "team": "UC Riverside",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-uc-riverside-riley-ohl",
+          "team": "UC Riverside",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-uc-riverside-andre-granillo",
+          "team": "UC Riverside",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-san-diego-brycen-mautz",
+          "team": "San Diego",
+          "BF": 16
+        },
+        {
+          "player_id": "cb-san-diego-ivran-romero",
+          "team": "San Diego",
+          "BF": 15
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2021-03-14-uc-riverside-san-diego-att0098",
+      "date": "2021-03-14",
+      "away": "UC Riverside",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2021/uc-riverside/boxscore/12058",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 11,
+      "added": 11,
+      "recovered_this_run": 11,
+      "values": [
+        {
+          "player_id": "cb-uc-riverside-tucker-juline",
+          "team": "UC Riverside",
+          "BF": 20
+        },
+        {
+          "player_id": "cb-uc-riverside-shamus-lyons",
+          "team": "UC Riverside",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-uc-riverside-riley-ohl",
+          "team": "UC Riverside",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-uc-riverside-andre-granillo",
+          "team": "UC Riverside",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-uc-riverside-eric-marrujo",
+          "team": "UC Riverside",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-san-diego-jack-hyde",
+          "team": "San Diego",
+          "BF": 11
+        },
+        {
+          "player_id": "cb-san-diego-grady-miller",
+          "team": "San Diego",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-san-diego-lucas-braun",
+          "team": "San Diego",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-san-diego-carter-rustad",
+          "team": "San Diego",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-san-diego-ryan-robinson",
+          "team": "San Diego",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-san-diego-kieran-shaw",
+          "team": "San Diego",
+          "BF": 2
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2021-03-23-san-diego-southern-california-att0099",
+      "date": "2021-03-23",
+      "away": "San Diego",
+      "home": "Southern California",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2021/usc/boxscore/12062",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 9,
+      "added": 9,
+      "recovered_this_run": 9,
+      "values": [
+        {
+          "player_id": "cb-san-diego-cole-colleran",
+          "team": "San Diego",
+          "BF": 13
+        },
+        {
+          "player_id": "cb-san-diego-grady-miller",
+          "team": "San Diego",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-san-diego-lucas-braun",
+          "team": "San Diego",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-san-diego-eddy-pelc",
+          "team": "San Diego",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-san-diego-carter-rustad",
+          "team": "San Diego",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-southern-california-brian-gursky",
+          "team": "Southern California",
+          "BF": 20
+        },
+        {
+          "player_id": "cb-southern-california-quentin-longrie",
+          "team": "Southern California",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-southern-california-kyle-wisch",
+          "team": "Southern California",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-southern-california-charlie-hurley",
+          "team": "Southern California",
+          "BF": 11
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2021-03-26-pacific-san-diego-att0100",
+      "date": "2021-03-26",
+      "away": "Pacific",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2021/pacific/boxscore/12063",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 8,
+      "added": 8,
+      "recovered_this_run": 8,
+      "values": [
+        {
+          "player_id": "cb-pacific-hayden-pearce",
+          "team": "Pacific",
+          "BF": 21
+        },
+        {
+          "player_id": "cb-pacific-dylan-pottgieser",
+          "team": "Pacific",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-pacific-grant-stevens",
+          "team": "Pacific",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-pacific-landon-curtis",
+          "team": "Pacific",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-san-diego-jake-miller",
+          "team": "San Diego",
+          "BF": 21
+        },
+        {
+          "player_id": "cb-san-diego-ryan-robinson",
+          "team": "San Diego",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-san-diego-ivran-romero",
+          "team": "San Diego",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-san-diego-kieran-shaw",
+          "team": "San Diego",
+          "BF": 7
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2021-03-27-pacific-san-diego-att0101",
+      "date": "2021-03-27",
+      "away": "Pacific",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2021/pacific/boxscore/12064",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 9,
+      "added": 9,
+      "recovered_this_run": 9,
+      "values": [
+        {
+          "player_id": "cb-pacific-hunter-hayes",
+          "team": "Pacific",
+          "BF": 12
+        },
+        {
+          "player_id": "cb-pacific-hunter-schilperoort",
+          "team": "Pacific",
+          "BF": 12
+        },
+        {
+          "player_id": "cb-pacific-joe-solomon",
+          "team": "Pacific",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-pacific-michael-defelippi",
+          "team": "Pacific",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-pacific-landon-curtis",
+          "team": "Pacific",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-pacific-zach-patterson",
+          "team": "Pacific",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-san-diego-conner-thurman",
+          "team": "San Diego",
+          "BF": 23
+        },
+        {
+          "player_id": "cb-san-diego-jack-hyde",
+          "team": "San Diego",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-san-diego-grady-miller",
+          "team": "San Diego",
+          "BF": 9
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2021-03-28-pacific-san-diego-att0102",
+      "date": "2021-03-28",
+      "away": "Pacific",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2021/pacific/boxscore/12065",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 8,
+      "added": 8,
+      "recovered_this_run": 8,
+      "values": [
+        {
+          "player_id": "cb-pacific-henrik-reinersten",
+          "team": "Pacific",
+          "BF": 21
+        },
+        {
+          "player_id": "cb-pacific-grant-stevens",
+          "team": "Pacific",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-pacific-nick-swanson",
+          "team": "Pacific",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-san-diego-brycen-mautz",
+          "team": "San Diego",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-san-diego-carter-rustad",
+          "team": "San Diego",
+          "BF": 11
+        },
+        {
+          "player_id": "cb-san-diego-ryan-robinson",
+          "team": "San Diego",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-san-diego-ivran-romero",
+          "team": "San Diego",
+          "BF": 13
+        },
+        {
+          "player_id": "cb-san-diego-kieran-shaw",
+          "team": "San Diego",
+          "BF": 2
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2021-03-30-vanguard-san-diego-att0103",
+      "date": "2021-03-30",
+      "away": "Vanguard",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2021/vanguard-university-calif-/boxscore/12066",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 14,
+      "added": 14,
+      "recovered_this_run": 14,
+      "values": [
+        {
+          "player_id": "cb-vanguard-tyler-armenta",
+          "team": "Vanguard",
+          "BF": 12
+        },
+        {
+          "player_id": "cb-vanguard-michael-kashou",
+          "team": "Vanguard",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-vanguard-anthony-castillo",
+          "team": "Vanguard",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-vanguard-jackson-webber",
+          "team": "Vanguard",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-vanguard-charlie-pierce",
+          "team": "Vanguard",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-vanguard-garrett-molnar",
+          "team": "Vanguard",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-vanguard-jared-greer",
+          "team": "Vanguard",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-san-diego-jack-dolak",
+          "team": "San Diego",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-san-diego-grady-miller",
+          "team": "San Diego",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-san-diego-lucas-braun",
+          "team": "San Diego",
+          "BF": 12
+        },
+        {
+          "player_id": "cb-san-diego-eddy-pelc",
+          "team": "San Diego",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-san-diego-cole-colleran",
+          "team": "San Diego",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-san-diego-jake-reed",
+          "team": "San Diego",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-san-diego-james-sashin",
+          "team": "San Diego",
+          "BF": 4
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2021-04-02-san-diego-cal-state-fullerton-att0104",
+      "date": "2021-04-02",
+      "away": "San Diego",
+      "home": "Cal State Fullerton",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2021/cal-state-fullerton/boxscore/12125",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 7,
+      "added": 7,
+      "recovered_this_run": 7,
+      "values": [
+        {
+          "player_id": "cb-san-diego-brycen-mautz",
+          "team": "San Diego",
+          "BF": 13
+        },
+        {
+          "player_id": "cb-san-diego-carter-rustad",
+          "team": "San Diego",
+          "BF": 14
+        },
+        {
+          "player_id": "cb-san-diego-ryan-robinson",
+          "team": "San Diego",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-san-diego-ivran-romero",
+          "team": "San Diego",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-cal-state-fullerton-tanner-bibee",
+          "team": "Cal State Fullerton",
+          "BF": 27
+        },
+        {
+          "player_id": "cb-cal-state-fullerton-michael-weisberg",
+          "team": "Cal State Fullerton",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-cal-state-fullerton-cameron-repetti",
+          "team": "Cal State Fullerton",
+          "BF": 4
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2021-04-03-cal-state-fullerton-san-diego-att0105",
+      "date": "2021-04-03",
+      "away": "Cal State Fullerton",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2021/cal-state-fullerton/boxscore/12126",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 5,
+      "added": 5,
+      "recovered_this_run": 5,
+      "values": [
+        {
+          "player_id": "cb-cal-state-fullerton-kyle-luckham",
+          "team": "Cal State Fullerton",
+          "BF": 26
+        },
+        {
+          "player_id": "cb-cal-state-fullerton-michael-knorr",
+          "team": "Cal State Fullerton",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-cal-state-fullerton-timothy-josten",
+          "team": "Cal State Fullerton",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-san-diego-conner-thurman",
+          "team": "San Diego",
+          "BF": 25
+        },
+        {
+          "player_id": "cb-san-diego-kieran-shaw",
+          "team": "San Diego",
+          "BF": 9
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2021-04-16-san-francisco-san-diego-att0106",
+      "date": "2021-04-16",
+      "away": "San Francisco",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2021/san-francisco/boxscore/12076",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 7,
+      "added": 7,
+      "recovered_this_run": 7,
+      "values": [
+        {
+          "player_id": "cb-san-francisco-landen-bourassa",
+          "team": "San Francisco",
+          "BF": 31
+        },
+        {
+          "player_id": "cb-san-francisco-owen-stevenson",
+          "team": "San Francisco",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-san-diego-carter-rustad",
+          "team": "San Diego",
+          "BF": 12
+        },
+        {
+          "player_id": "cb-san-diego-cole-colleran",
+          "team": "San Diego",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-san-diego-jack-dolak",
+          "team": "San Diego",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-san-diego-eddy-pelc",
+          "team": "San Diego",
+          "BF": 11
+        },
+        {
+          "player_id": "cb-san-diego-james-sashin",
+          "team": "San Diego",
+          "BF": 7
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2021-04-17-san-francisco-san-diego-att0107",
+      "date": "2021-04-17",
+      "away": "San Francisco",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2021/san-francisco/boxscore/12077",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 8,
+      "added": 8,
+      "recovered_this_run": 8,
+      "values": [
+        {
+          "player_id": "cb-san-francisco-josh-mollerus",
+          "team": "San Francisco",
+          "BF": 14
+        },
+        {
+          "player_id": "cb-san-francisco-eric-reyzelman",
+          "team": "San Francisco",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-san-francisco-bo-jelinek",
+          "team": "San Francisco",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-san-francisco-max-jones",
+          "team": "San Francisco",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-san-francisco-jesse-barron",
+          "team": "San Francisco",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-san-diego-jake-miller",
+          "team": "San Diego",
+          "BF": 23
+        },
+        {
+          "player_id": "cb-san-diego-ivran-romero",
+          "team": "San Diego",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-san-diego-kieran-shaw",
+          "team": "San Diego",
+          "BF": 7
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2021-04-18-san-francisco-san-diego-att0108",
+      "date": "2021-04-18",
+      "away": "San Francisco",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2021/san-francisco/boxscore/12078",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 6,
+      "added": 6,
+      "recovered_this_run": 6,
+      "values": [
+        {
+          "player_id": "cb-san-francisco-grant-nechak",
+          "team": "San Francisco",
+          "BF": 17
+        },
+        {
+          "player_id": "cb-san-francisco-alex-pham",
+          "team": "San Francisco",
+          "BF": 19
+        },
+        {
+          "player_id": "cb-san-francisco-julian-washburn",
+          "team": "San Francisco",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-san-diego-conner-thurman",
+          "team": "San Diego",
+          "BF": 21
+        },
+        {
+          "player_id": "cb-san-diego-ryan-robinson",
+          "team": "San Diego",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-san-diego-jack-hyde",
+          "team": "San Diego",
+          "BF": 9
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2021-04-24-cal-state-bakersfield-uc-san-diego-att0109",
+      "date": "2021-04-24",
+      "away": "Cal State Bakersfield",
+      "home": "UC San Diego",
+      "source_url": "https://ucsdtritons.com/sports/baseball/stats/2021/csu-bakersfield/boxscore/8289",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 5,
+      "added": 5,
+      "recovered_this_run": 5,
+      "values": [
+        {
+          "player_id": "cb-cal-state-bakersfield-aaron-charles",
+          "team": "Cal State Bakersfield",
+          "BF": 22
+        },
+        {
+          "player_id": "cb-cal-state-bakersfield-kellen-o-connor",
+          "team": "Cal State Bakersfield",
+          "BF": 16
+        },
+        {
+          "player_id": "cb-uc-san-diego-noah-conlon",
+          "team": "UC San Diego",
+          "BF": 23
+        },
+        {
+          "player_id": "cb-uc-san-diego-chris-gilmartin",
+          "team": "UC San Diego",
+          "BF": 11
+        },
+        {
+          "player_id": "cb-uc-san-diego-michael-mitchell",
+          "team": "UC San Diego",
+          "BF": 3
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2021-04-30-pepperdine-san-diego-att0110",
+      "date": "2021-04-30",
+      "away": "Pepperdine",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2021/pepperdine/boxscore/12128",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 7,
+      "added": 7,
+      "recovered_this_run": 7,
+      "values": [
+        {
+          "player_id": "cb-pepperdine-trevor-hinkel",
+          "team": "Pepperdine",
+          "BF": 26
+        },
+        {
+          "player_id": "cb-pepperdine-dane-morrow",
+          "team": "Pepperdine",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-pepperdine-shane-telfer",
+          "team": "Pepperdine",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-san-diego-jake-miller",
+          "team": "San Diego",
+          "BF": 24
+        },
+        {
+          "player_id": "cb-san-diego-ivran-romero",
+          "team": "San Diego",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-san-diego-jack-hyde",
+          "team": "San Diego",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-san-diego-ryan-robinson",
+          "team": "San Diego",
+          "BF": 6
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2021-05-01-pepperdine-san-diego-att0111",
+      "date": "2021-05-01",
+      "away": "Pepperdine",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2021/pepperdine/boxscore/12129",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 6,
+      "added": 6,
+      "recovered_this_run": 6,
+      "values": [
+        {
+          "player_id": "cb-pepperdine-cooper-chandler",
+          "team": "Pepperdine",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-pepperdine-jack-baird",
+          "team": "Pepperdine",
+          "BF": 16
+        },
+        {
+          "player_id": "cb-pepperdine-gunner-groen",
+          "team": "Pepperdine",
+          "BF": 13
+        },
+        {
+          "player_id": "cb-san-diego-conner-thurman",
+          "team": "San Diego",
+          "BF": 21
+        },
+        {
+          "player_id": "cb-san-diego-carter-rustad",
+          "team": "San Diego",
+          "BF": 15
+        },
+        {
+          "player_id": "cb-san-diego-kieran-shaw",
+          "team": "San Diego",
+          "BF": 6
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2021-05-02-pepperdine-san-diego-att0112",
+      "date": "2021-05-02",
+      "away": "Pepperdine",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2021/pepperdine/boxscore/12130",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 11,
+      "added": 11,
+      "recovered_this_run": 11,
+      "values": [
+        {
+          "player_id": "cb-pepperdine-nathan-diamond",
+          "team": "Pepperdine",
+          "BF": 21
+        },
+        {
+          "player_id": "cb-pepperdine-brandon-llewellyn",
+          "team": "Pepperdine",
+          "BF": 15
+        },
+        {
+          "player_id": "cb-pepperdine-dylan-schwartz",
+          "team": "Pepperdine",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-pepperdine-tyler-murrah",
+          "team": "Pepperdine",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-pepperdine-trevor-kniskern",
+          "team": "Pepperdine",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-pepperdine-dane-morrow",
+          "team": "Pepperdine",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-san-diego-ivran-romero",
+          "team": "San Diego",
+          "BF": 12
+        },
+        {
+          "player_id": "cb-san-diego-jack-hyde",
+          "team": "San Diego",
+          "BF": 12
+        },
+        {
+          "player_id": "cb-san-diego-ryan-robinson",
+          "team": "San Diego",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-san-diego-grady-miller",
+          "team": "San Diego",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-san-diego-lucas-braun",
+          "team": "San Diego",
+          "BF": 10
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2021-05-06-byu-san-diego-att0113",
+      "date": "2021-05-06",
+      "away": "BYU",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2021/byu/boxscore/12085",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 7,
+      "added": 7,
+      "recovered_this_run": 7,
+      "values": [
+        {
+          "player_id": "cb-byu-easton-walker",
+          "team": "BYU",
+          "BF": 17
+        },
+        {
+          "player_id": "cb-byu-cooper-mckeehan",
+          "team": "BYU",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-byu-carter-smith",
+          "team": "BYU",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-byu-reid-mclaughlin",
+          "team": "BYU",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-san-diego-jake-miller",
+          "team": "San Diego",
+          "BF": 26
+        },
+        {
+          "player_id": "cb-san-diego-kieran-shaw",
+          "team": "San Diego",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-san-diego-ryan-robinson",
+          "team": "San Diego",
+          "BF": 8
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2021-05-07-byu-san-diego-att0114",
+      "date": "2021-05-07",
+      "away": "BYU",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2021/byu/boxscore/12086",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 12,
+      "added": 12,
+      "recovered_this_run": 12,
+      "values": [
+        {
+          "player_id": "cb-byu-jack-sterner",
+          "team": "BYU",
+          "BF": 23
+        },
+        {
+          "player_id": "cb-byu-boston-mabeus",
+          "team": "BYU",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-byu-drew-zimmerman",
+          "team": "BYU",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-byu-cooper-mckeehan",
+          "team": "BYU",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-byu-reid-mclaughlin",
+          "team": "BYU",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-byu-carter-smith",
+          "team": "BYU",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-san-diego-conner-thurman",
+          "team": "San Diego",
+          "BF": 12
+        },
+        {
+          "player_id": "cb-san-diego-ivran-romero",
+          "team": "San Diego",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-san-diego-lucas-braun",
+          "team": "San Diego",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-san-diego-grady-miller",
+          "team": "San Diego",
+          "BF": 11
+        },
+        {
+          "player_id": "cb-san-diego-brycen-mautz",
+          "team": "San Diego",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-san-diego-jack-dolak",
+          "team": "San Diego",
+          "BF": 12
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2021-05-08-byu-san-diego-att0115",
+      "date": "2021-05-08",
+      "away": "BYU",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2021/byu/boxscore/12087",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 10,
+      "added": 10,
+      "recovered_this_run": 10,
+      "values": [
+        {
+          "player_id": "cb-byu-bryce-robison",
+          "team": "BYU",
+          "BF": 26
+        },
+        {
+          "player_id": "cb-byu-tyson-heaton",
+          "team": "BYU",
+          "BF": 15
+        },
+        {
+          "player_id": "cb-byu-easton-walker",
+          "team": "BYU",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-byu-ayden-callahan",
+          "team": "BYU",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-byu-drew-zimmerman",
+          "team": "BYU",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-san-diego-carter-rustad",
+          "team": "San Diego",
+          "BF": 21
+        },
+        {
+          "player_id": "cb-san-diego-ryan-robinson",
+          "team": "San Diego",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-san-diego-ivran-romero",
+          "team": "San Diego",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-san-diego-kieran-shaw",
+          "team": "San Diego",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-san-diego-brycen-mautz",
+          "team": "San Diego",
+          "BF": 8
+        }
+      ]
+    }
+  ]
+}

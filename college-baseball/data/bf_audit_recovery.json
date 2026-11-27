@@ -4206,8 +4206,53 @@
       "home": "Vanderbilt",
       "source_url": "https://storage.googleapis.com/vucommodores-prod/2026/05/VU57-vs-Kentucky-SECT-Box.pdf",
       "original_reason": "date not confirmed",
-      "status": "unresolved",
-      "reason": "PDF gamebook deferred to PDF recovery pass"
+      "status": "recovered",
+      "method": "Manual official Kentucky SEC Tournament PDF, page 1; date, score, full pitcher names and exact pitching signatures matched; explicit BF reconciled against opposing batting totals",
+      "manual_source_url": "https://storage.googleapis.com/ukathletics-com/2026/05/19d2297c-0519_sect.pdf",
+      "verification": {
+        "Kentucky": {
+          "BF": 41,
+          "opponent_AB": 35,
+          "opponent_BB": 5,
+          "opponent_HBP": 1
+        },
+        "Vanderbilt": {
+          "BF": 36,
+          "opponent_AB": 33,
+          "opponent_BB": 2,
+          "opponent_HBP": 1
+        }
+      },
+      "pitchers": 5,
+      "added": 5,
+      "recovered_this_run": 5,
+      "values": [
+        {
+          "player_id": "cb-kentucky-jaxon-jelkin",
+          "team": "Kentucky",
+          "BF": 26
+        },
+        {
+          "player_id": "cb-kentucky-jack-sams",
+          "team": "Kentucky",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-kentucky-nile-adcock",
+          "team": "Kentucky",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-vanderbilt-connor-fennell",
+          "team": "Vanderbilt",
+          "BF": 21
+        },
+        {
+          "player_id": "cb-vanderbilt-alex-kranzler",
+          "team": "Vanderbilt",
+          "BF": 15
+        }
+      ]
     },
     {
       "game_id": "cb-2026-05-20-missouri-mississippi-state-att0429",

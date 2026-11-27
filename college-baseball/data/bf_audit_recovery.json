@@ -3838,8 +3838,59 @@
       "home": "Bellarmine",
       "source_url": "https://athletics.bellarmine.edu/sports/baseball/stats/2026/university-of-central-arkansas/boxscore/8801",
       "original_reason": "unable to uniquely match both full pitching tables to archived names and IP/H/R/ER/BB/K",
-      "status": "unresolved",
-      "reason": "unable to uniquely match both full pitching tables to archived names and IP/H/R/ER/BB/K"
+      "status": "recovered",
+      "method": "Manual official Bellarmine and Central Arkansas HTML; exact pitcher names and signatures; explicit BF reconciled against opposing batting totals",
+      "manual_source_url": "https://athletics.bellarmine.edu/sports/baseball/stats/2026/university-of-central-arkansas/boxscore/8801",
+      "corroborating_source_url": "https://ucasports.com/sports/baseball/stats/2026/bellarmine-university/boxscore/12146",
+      "verification": {
+        "Central Arkansas": {
+          "BF": 35,
+          "opponent_AB": 31,
+          "opponent_BB": 3,
+          "opponent_HBP": 1
+        },
+        "Bellarmine": {
+          "BF": 39,
+          "opponent_AB": 36,
+          "opponent_BB": 2,
+          "opponent_SH": 1
+        }
+      },
+      "pitchers": 6,
+      "added": 6,
+      "recovered_this_run": 6,
+      "values": [
+        {
+          "player_id": "cb-central-arkansas-jacob-pannell",
+          "team": "Central Arkansas",
+          "BF": 22
+        },
+        {
+          "player_id": "cb-central-arkansas-hunter-alexander",
+          "team": "Central Arkansas",
+          "BF": 13
+        },
+        {
+          "player_id": "cb-bellarmine-chase-chamberlain",
+          "team": "Bellarmine",
+          "BF": 15
+        },
+        {
+          "player_id": "cb-bellarmine-aaron-ragat",
+          "team": "Bellarmine",
+          "BF": 12
+        },
+        {
+          "player_id": "cb-bellarmine-karl-ralamb",
+          "team": "Bellarmine",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-bellarmine-cade-rusch",
+          "team": "Bellarmine",
+          "BF": 7
+        }
+      ]
     },
     {
       "game_id": "cb-2026-05-03-tennessee-kentucky-att0419",

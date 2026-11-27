@@ -1,0 +1,68 @@
+name: Vanderbilt portrait extraction pilot
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/vanderbilt-portrait-pilot.yml']
+permissions:
+  contents: read
+jobs:
+  pilot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install requests beautifulsoup4 pillow
+      - name: Inspect five exact official player bios
+        env:
+          PYTHONPATH: scripts
+        run: |
+          python - <<'PY'
+          import json,re,html
+          from urllib.parse import urljoin,urlsplit
+          from bs4 import BeautifulSoup
+          from audit_player_portraits import get,probe
+          from recover_lsu_final_portraits import norm
+          targets=[('Enrique Bradfield Jr','2021-22','enrique-bradfield-jr'),('Spencer Jones','2021-22','spencer-jones'),('Davis Diaz','2023-24','davis-diaz'),('Brodie Johnston','2025-26','brodie-johnston'),('Logan Johnstone','2025-26','logan-johnstone')]
+          results=[]
+          for name,season,slug in targets:
+              url=f'https://vucommodores.com/sports/baseball/roster/season/{season}/player/{slug}'
+              r=get(url);r.raise_for_status()
+              soup=BeautifulSoup(r.text,'html.parser')
+              print('BIO',name,r.url,flush=True)
+              candidates=[]
+              for im in soup.find_all('img'):
+                  if norm(im.get('alt',''))!=norm(name):continue
+                  parents=[{'tag':p.name,'class':p.get('class',[])} for p in list(im.parents)[:5]]
+                  print('IMAGE',json.dumps(dict(im.attrs)), 'PARENTS',json.dumps(parents),flush=True)
+                  context=' '.join(str(p) for p in parents).lower()
+                  for key,value in im.attrs.items():
+                      if not isinstance(value,str):continue
+                      for raw in re.findall(r'(?:https?://|//|/wp-content/)[^\s,<>"]+',html.unescape(value)):
+                          u=urljoin(r.url,raw)
+                          if not re.search(r'\.(?:png|jpe?g|webp)(?:[?#]|$)',u,re.I):continue
+                          if re.search(r'logo|placeholder|default|silhouette',u,re.I):continue
+                          if not ('headshot' in context or 'portrait' in context or norm(name) in norm(urlsplit(u).path) or 'headshot' in u.lower()):continue
+                          candidates.append(u)
+                  for par in list(im.parents)[:2]:
+                      for source in par.find_all('source'):
+                          print('SOURCE',json.dumps(dict(source.attrs)),flush=True)
+                  for tag in im.find_next_siblings('noscript'):
+                      print('NOSCRIPT',str(tag)[:1500],flush=True)
+              checked=[]
+              for u in dict.fromkeys(candidates):
+                  state,digest=probe(u)
+                  checked.append({'url':u,'state':state,'digest':digest})
+                  print('PROBE',name,state,u,flush=True)
+              results.append({'name':name,'season':season,'source':r.url,'candidates':checked})
+          with open('vanderbilt-pilot.json','w') as f:json.dump(results,f,indent=2)
+          print('PILOT',sum(any(x['state']=='image' for x in r['candidates']) for r in results),'of',len(results),flush=True)
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: vanderbilt-pilot
+          path: vanderbilt-pilot.json

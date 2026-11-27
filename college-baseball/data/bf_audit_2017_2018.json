@@ -1,0 +1,911 @@
+{
+  "scope": "2017–2018 college baseball only; exact official BF; missing fields only",
+  "games": [
+    {
+      "game_id": "cb-2017-04-20-byu-san-diego-att0001",
+      "date": "2017-04-20",
+      "away": "BYU",
+      "home": "San Diego",
+      "source_url": "https://usandiego_ftp.sidearmsports.com/custompages/sports/m-basebl/stats/2016-201736.html",
+      "status": "existing_verified_backfill"
+    },
+    {
+      "game_id": "cb-2018-02-16-california-san-diego-att0002",
+      "date": "2018-02-16",
+      "away": "California",
+      "home": "San Diego",
+      "source_url": "https://calbears.com/sports/baseball/stats/2018/san-diego/boxscore/19869",
+      "status": "recovered",
+      "method": "manually verified official BF column",
+      "pitchers": 6,
+      "added": 6,
+      "values": [
+        {
+          "player_id": "cb-california-jared-horn",
+          "team": "California",
+          "BF": 21
+        },
+        {
+          "player_id": "cb-california-aaron-shortridge",
+          "team": "California",
+          "BF": 16
+        },
+        {
+          "player_id": "cb-san-diego-paul-richan",
+          "team": "San Diego",
+          "BF": 26
+        },
+        {
+          "player_id": "cb-san-diego-a-donatella",
+          "team": "San Diego",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-san-diego-louie-crow",
+          "team": "San Diego",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-san-diego-nigel-ward",
+          "team": "San Diego",
+          "BF": 9
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2018-02-17-california-san-diego-att0003",
+      "date": "2018-02-17",
+      "away": "California",
+      "home": "San Diego",
+      "source_url": "https://calbears.com/sports/baseball/stats/2018/san-diego/boxscore/19870",
+      "status": "recovered",
+      "method": "manually verified official BF column",
+      "pitchers": 7,
+      "added": 7,
+      "values": [
+        {
+          "player_id": "cb-california-joey-matulovich",
+          "team": "California",
+          "BF": 27
+        },
+        {
+          "player_id": "cb-california-arman-sabouri",
+          "team": "California",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-california-erik-martinez",
+          "team": "California",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-california-andrew-buckley",
+          "team": "California",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-san-diego-c-murphy",
+          "team": "San Diego",
+          "BF": 25
+        },
+        {
+          "player_id": "cb-san-diego-g-ponce",
+          "team": "San Diego",
+          "BF": 11
+        },
+        {
+          "player_id": "cb-san-diego-j-friedman",
+          "team": "San Diego",
+          "BF": 8
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2018-02-17-california-cincinnati-att0004",
+      "date": "2018-02-17",
+      "away": "California",
+      "home": "Cincinnati",
+      "source_url": "https://calbears.com/sports/baseball/stats/2018/cincinnati/boxscore/19884",
+      "status": "recovered",
+      "method": "manually verified official BF column",
+      "pitchers": 6,
+      "added": 6,
+      "values": [
+        {
+          "player_id": "cb-california-matt-ladrech",
+          "team": "California",
+          "BF": 18
+        },
+        {
+          "player_id": "cb-california-rogelio-reyes",
+          "team": "California",
+          "BF": 11
+        },
+        {
+          "player_id": "cb-california-tanner-dodson",
+          "team": "California",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-cincinnati-perez",
+          "team": "Cincinnati",
+          "BF": 20
+        },
+        {
+          "player_id": "cb-cincinnati-lowe-ii",
+          "team": "Cincinnati",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-cincinnati-orndorff",
+          "team": "Cincinnati",
+          "BF": 10
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2018-02-18-cincinnati-san-diego-att0005",
+      "date": "2018-02-18",
+      "away": "Cincinnati",
+      "home": "San Diego",
+      "source_url": "https://storage.googleapis.com/gobearcats-com-prod/2025/06/23/qre66UMRSF5t969mTcx51AEMiCvv3XATSOCaqyhH.pdf",
+      "status": "existing_verified_backfill"
+    },
+    {
+      "game_id": "cb-2018-02-18-cincinnati-san-diego-att0006",
+      "date": "2018-02-18",
+      "away": "Cincinnati",
+      "home": "San Diego",
+      "source_url": "https://storage.googleapis.com/gobearcats-com-prod/2025/06/29/EIKFzFi4XIx7rW5a9UvwMzpwiQSNIr5qQEvTHkBg.pdf",
+      "status": "existing_verified_backfill"
+    },
+    {
+      "game_id": "cb-2018-02-23-cal-poly-arkansas-att0007",
+      "date": "2018-02-23",
+      "away": "Cal Poly",
+      "home": "Arkansas",
+      "source_url": "https://arkansasrazorbacks.com/stats/baseball/2018/cp-ark.htm",
+      "status": "existing_verified_backfill"
+    },
+    {
+      "game_id": "cb-2018-02-23-michigan-san-diego-att0008",
+      "date": "2018-02-23",
+      "away": "Michigan",
+      "home": "San Diego",
+      "source_url": "https://mgoblue.com/sports/baseball/stats/2018/san-diego/boxscore/12458",
+      "status": "recovered",
+      "method": "manually verified official BF column",
+      "pitchers": 5,
+      "added": 5,
+      "values": [
+        {
+          "player_id": "cb-michigan-alec-rennard",
+          "team": "Michigan",
+          "BF": 23
+        },
+        {
+          "player_id": "cb-michigan-jack-weisenburger",
+          "team": "Michigan",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-michigan-jeff-criswell",
+          "team": "Michigan",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-san-diego-paul-richan",
+          "team": "San Diego",
+          "BF": 28
+        },
+        {
+          "player_id": "cb-san-diego-justin-friedman",
+          "team": "San Diego",
+          "BF": 3
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2018-02-24-cal-poly-grand-canyon-att0009",
+      "date": "2018-02-24",
+      "away": "Cal Poly",
+      "home": "Grand Canyon",
+      "source_url": "https://gopoly.com/sports/baseball/stats/2018/grand-canyon/boxscore/618",
+      "status": "recovered",
+      "method": "official HTML BF column and source team totals",
+      "pitchers": 7,
+      "added": 7,
+      "values": [
+        {
+          "player_id": "cb-cal-poly-trent-shelton",
+          "team": "Cal Poly",
+          "BF": 25
+        },
+        {
+          "player_id": "cb-cal-poly-connor-redmond",
+          "team": "Cal Poly",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-cal-poly-kyle-smith",
+          "team": "Cal Poly",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-cal-poly-austin-dondanville",
+          "team": "Cal Poly",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-grand-canyon-mike-lundin",
+          "team": "Grand Canyon",
+          "BF": 22
+        },
+        {
+          "player_id": "cb-grand-canyon-nick-ohanian",
+          "team": "Grand Canyon",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-grand-canyon-ethan-evanko",
+          "team": "Grand Canyon",
+          "BF": 4
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2018-02-24-grand-canyon-san-diego-att0010",
+      "date": "2018-02-24",
+      "away": "Grand Canyon",
+      "home": "San Diego",
+      "source_url": "https://gculopes.com/sports/baseball/stats/2018/san-diego/boxscore/10239",
+      "status": "recovered",
+      "method": "official HTML BF column and source team totals",
+      "pitchers": 7,
+      "added": 7,
+      "values": [
+        {
+          "player_id": "cb-grand-canyon-jake-wong",
+          "team": "Grand Canyon",
+          "BF": 20
+        },
+        {
+          "player_id": "cb-grand-canyon-josh-andrews",
+          "team": "Grand Canyon",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-grand-canyon-jeramy-smith",
+          "team": "Grand Canyon",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-grand-canyon-coen-wynne",
+          "team": "Grand Canyon",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-san-diego-c-murphy",
+          "team": "San Diego",
+          "BF": 21
+        },
+        {
+          "player_id": "cb-san-diego-louie-crow",
+          "team": "San Diego",
+          "BF": 11
+        },
+        {
+          "player_id": "cb-san-diego-travis-kuhn",
+          "team": "San Diego",
+          "BF": 6
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2018-02-25-arkansas-san-diego-att0011",
+      "date": "2018-02-25",
+      "away": "Arkansas",
+      "home": "San Diego",
+      "source_url": "https://arkansasrazorbacks.com/stats/baseball/2018/usdbs8.htm",
+      "status": "existing_verified_backfill"
+    },
+    {
+      "game_id": "cb-2018-02-25-arizona-san-diego-att0012",
+      "date": "2018-02-25",
+      "away": "Arizona",
+      "home": "San Diego",
+      "source_url": "https://arizonawildcats.com/sports/baseball/stats/2018/tony-gwynn-classic-vs-san-diego/boxscore/15291",
+      "status": "recovered",
+      "method": "official HTML BF column and source team totals",
+      "pitchers": 9,
+      "added": 9,
+      "values": [
+        {
+          "player_id": "cb-arizona-avery-weems",
+          "team": "Arizona",
+          "BF": 24
+        },
+        {
+          "player_id": "cb-arizona-jonathan-guardado",
+          "team": "Arizona",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-arizona-jason-seever",
+          "team": "Arizona",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-arizona-robby-medel",
+          "team": "Arizona",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-san-diego-g-ponce",
+          "team": "San Diego",
+          "BF": 18
+        },
+        {
+          "player_id": "cb-san-diego-nigel-ward",
+          "team": "San Diego",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-san-diego-nate-walker",
+          "team": "San Diego",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-san-diego-travis-kuhn",
+          "team": "San Diego",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-san-diego-louie-crow",
+          "team": "San Diego",
+          "BF": 3
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2018-03-02-indiana-san-diego-att0013",
+      "date": "2018-03-02",
+      "away": "Indiana",
+      "home": "San Diego",
+      "source_url": "https://iuhoosiers.com/sports/baseball/stats/2018/-13-san-diego/boxscore/13857",
+      "status": "recovered",
+      "method": "official HTML BF column and source team totals",
+      "pitchers": 6,
+      "added": 6,
+      "values": [
+        {
+          "player_id": "cb-indiana-jonathan-stiever",
+          "team": "Indiana",
+          "BF": 24
+        },
+        {
+          "player_id": "cb-indiana-kade-kryzsko",
+          "team": "Indiana",
+          "BF": 12
+        },
+        {
+          "player_id": "cb-san-diego-paul-richan",
+          "team": "San Diego",
+          "BF": 25
+        },
+        {
+          "player_id": "cb-san-diego-nigel-ward",
+          "team": "San Diego",
+          "BF": 13
+        },
+        {
+          "player_id": "cb-san-diego-nate-walker",
+          "team": "San Diego",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-san-diego-nicola-mislinski",
+          "team": "San Diego",
+          "BF": 3
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2018-03-03-indiana-san-diego-att0014",
+      "date": "2018-03-03",
+      "away": "Indiana",
+      "home": "San Diego",
+      "source_url": "https://iuhoosiers.com/sports/baseball/stats/2018/-13-san-diego/boxscore/13858",
+      "status": "recovered",
+      "method": "official HTML BF column and source team totals",
+      "pitchers": 6,
+      "added": 6,
+      "values": [
+        {
+          "player_id": "cb-indiana-pauly-milto",
+          "team": "Indiana",
+          "BF": 28
+        },
+        {
+          "player_id": "cb-indiana-andrew-saalfrank",
+          "team": "Indiana",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-indiana-connor-manous",
+          "team": "Indiana",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-san-diego-chris-murphy",
+          "team": "San Diego",
+          "BF": 25
+        },
+        {
+          "player_id": "cb-san-diego-travis-kuhn",
+          "team": "San Diego",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-san-diego-louie-crow",
+          "team": "San Diego",
+          "BF": 6
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2018-03-03-indiana-san-diego-att0015",
+      "date": "2018-03-03",
+      "away": "Indiana",
+      "home": "San Diego",
+      "source_url": "https://iuhoosiers.com/sports/baseball/stats/2018/-13-san-diego/boxscore/13859",
+      "status": "recovered",
+      "method": "official HTML BF column and source team totals",
+      "pitchers": 9,
+      "added": 9,
+      "values": [
+        {
+          "player_id": "cb-indiana-tommy-sommer",
+          "team": "Indiana",
+          "BF": 17
+        },
+        {
+          "player_id": "cb-indiana-brian-hobbie",
+          "team": "Indiana",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-indiana-austin-long",
+          "team": "Indiana",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-indiana-b-j-sabol",
+          "team": "Indiana",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-indiana-cal-krueger",
+          "team": "Indiana",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-san-diego-nick-sprengel",
+          "team": "San Diego",
+          "BF": 18
+        },
+        {
+          "player_id": "cb-san-diego-justin-friedman",
+          "team": "San Diego",
+          "BF": 11
+        },
+        {
+          "player_id": "cb-san-diego-gabriel-ponce",
+          "team": "San Diego",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-san-diego-anthony-donatella",
+          "team": "San Diego",
+          "BF": 1
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2018-03-04-indiana-san-diego-att0016",
+      "date": "2018-03-04",
+      "away": "Indiana",
+      "home": "San Diego",
+      "source_url": "https://iuhoosiers.com/sports/baseball/stats/2018/-13-san-diego/boxscore/13860",
+      "status": "recovered",
+      "method": "official HTML BF column and source team totals",
+      "pitchers": 12,
+      "added": 12,
+      "values": [
+        {
+          "player_id": "cb-indiana-cameron-beauchamp",
+          "team": "Indiana",
+          "BF": 18
+        },
+        {
+          "player_id": "cb-indiana-nick-eaton",
+          "team": "Indiana",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-indiana-cal-krueger",
+          "team": "Indiana",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-indiana-tim-herrin",
+          "team": "Indiana",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-indiana-matt-lloyd",
+          "team": "Indiana",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-san-diego-nate-walker",
+          "team": "San Diego",
+          "BF": 13
+        },
+        {
+          "player_id": "cb-san-diego-anthony-donatella",
+          "team": "San Diego",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-san-diego-gabriel-ponce",
+          "team": "San Diego",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-san-diego-justin-friedman",
+          "team": "San Diego",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-san-diego-louie-crow",
+          "team": "San Diego",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-san-diego-nigel-ward",
+          "team": "San Diego",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-san-diego-travis-kuhn",
+          "team": "San Diego",
+          "BF": 4
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2018-03-13-san-diego-state-san-diego-att0017",
+      "date": "2018-03-13",
+      "away": "San Diego State",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/documents/2018/5/10/14105__m_basebl_2017_18_misc_non_event__USDvsSDSUboxMar13.pdf",
+      "status": "existing_verified_backfill"
+    },
+    {
+      "game_id": "cb-2018-03-16-santa-clara-san-diego-att0018",
+      "date": "2018-03-16",
+      "away": "Santa Clara",
+      "home": "San Diego",
+      "source_url": "https://santaclarabroncos.com/sports/baseball/stats/2018/san-diego/boxscore/1056",
+      "status": "unresolved",
+      "reason": "source BF totals not reconciled"
+    },
+    {
+      "game_id": "cb-2018-03-17-santa-clara-san-diego-att0019",
+      "date": "2018-03-17",
+      "away": "Santa Clara",
+      "home": "San Diego",
+      "source_url": "https://santaclarabroncos.com/sports/baseball/stats/2018/san-diego/boxscore/1057",
+      "status": "unresolved",
+      "reason": "source BF totals not reconciled"
+    },
+    {
+      "game_id": "cb-2018-03-18-santa-clara-san-diego-att0020",
+      "date": "2018-03-18",
+      "away": "Santa Clara",
+      "home": "San Diego",
+      "source_url": "https://santaclarabroncos.com/sports/baseball/stats/2018/san-diego/boxscore/1058",
+      "status": "unresolved",
+      "reason": "source BF totals not reconciled"
+    },
+    {
+      "game_id": "cb-2018-04-03-uc-irvine-san-diego-att0021",
+      "date": "2018-04-03",
+      "away": "UC Irvine",
+      "home": "San Diego",
+      "source_url": "https://ucirvinesports.com/sports/baseball/stats/2018/san-diego/boxscore/5047",
+      "status": "recovered",
+      "method": "official HTML BF column and source team totals",
+      "pitchers": 12,
+      "added": 12,
+      "values": [
+        {
+          "player_id": "cb-uc-irvine-nick-anderson",
+          "team": "UC Irvine",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-uc-irvine-sean-sparling",
+          "team": "UC Irvine",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-uc-irvine-alonzo-garcia",
+          "team": "UC Irvine",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-uc-irvine-jordan-bocko",
+          "team": "UC Irvine",
+          "BF": 12
+        },
+        {
+          "player_id": "cb-uc-irvine-evan-mcmillin",
+          "team": "UC Irvine",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-uc-irvine-cole-spear",
+          "team": "UC Irvine",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-san-diego-louie-crow",
+          "team": "San Diego",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-san-diego-nate-kuchta",
+          "team": "San Diego",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-san-diego-doug-nimura",
+          "team": "San Diego",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-san-diego-justin-friedman",
+          "team": "San Diego",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-san-diego-travis-kuhn",
+          "team": "San Diego",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-san-diego-anthony-donatella",
+          "team": "San Diego",
+          "BF": 6
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2018-04-06-loyola-marymount-san-diego-att0022",
+      "date": "2018-04-06",
+      "away": "Loyola Marymount",
+      "home": "San Diego",
+      "source_url": "https://lmulions.com/sports/baseball/stats/2018/san-diego/boxscore/1916",
+      "status": "unresolved",
+      "reason": "source BF totals not reconciled"
+    },
+    {
+      "game_id": "cb-2018-04-07-loyola-marymount-san-diego-att0023",
+      "date": "2018-04-07",
+      "away": "Loyola Marymount",
+      "home": "San Diego",
+      "source_url": "https://lmulions.com/sports/baseball/stats/2018/san-diego/boxscore/1917",
+      "status": "unresolved",
+      "reason": "source BF totals not reconciled"
+    },
+    {
+      "game_id": "cb-2018-04-08-loyola-marymount-san-diego-att0024",
+      "date": "2018-04-08",
+      "away": "Loyola Marymount",
+      "home": "San Diego",
+      "source_url": "https://lmulions.com/sports/baseball/stats/2018/san-diego/boxscore/1918",
+      "status": "unresolved",
+      "reason": "source BF totals not reconciled"
+    },
+    {
+      "game_id": "cb-2018-04-14-saint-mary-s-san-diego-att0025",
+      "date": "2018-04-14",
+      "away": "Saint Mary's",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/documents/2018/5/10/14226__m_basebl_2017_18_misc_non_event__USDvsSMCboxApr14.pdf",
+      "status": "existing_verified_backfill"
+    },
+    {
+      "game_id": "cb-2018-04-17-cal-state-fullerton-san-diego-att0026",
+      "date": "2018-04-17",
+      "away": "Cal State Fullerton",
+      "home": "San Diego",
+      "source_url": "https://fullertontitans.com/sports/baseball/stats/2018/san-diego/boxscore/1417",
+      "status": "unresolved",
+      "reason": "source BF totals not reconciled"
+    },
+    {
+      "game_id": "cb-2018-05-04-gonzaga-san-diego-att0027",
+      "date": "2018-05-04",
+      "away": "Gonzaga",
+      "home": "San Diego",
+      "source_url": "https://gozags.com/sports/baseball/stats/2018/san-diego/boxscore/1463",
+      "status": "recovered",
+      "method": "official HTML BF column and source team totals",
+      "pitchers": 6,
+      "added": 6,
+      "values": [
+        {
+          "player_id": "cb-gonzaga-daniel-bies",
+          "team": "Gonzaga",
+          "BF": 34
+        },
+        {
+          "player_id": "cb-gonzaga-taylor-davis",
+          "team": "Gonzaga",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-san-diego-paul-richan",
+          "team": "San Diego",
+          "BF": 33
+        },
+        {
+          "player_id": "cb-san-diego-n-sprengel",
+          "team": "San Diego",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-san-diego-louie-crow",
+          "team": "San Diego",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-san-diego-nate-walker",
+          "team": "San Diego",
+          "BF": 7
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2018-05-05-gonzaga-san-diego-att0028",
+      "date": "2018-05-05",
+      "away": "Gonzaga",
+      "home": "San Diego",
+      "source_url": "https://gozags.com/sports/baseball/stats/2018/san-diego/boxscore/1464",
+      "status": "unresolved",
+      "reason": "HTTPSConnectionPool(host='gozags.com', port=443): Read timed out. (read timeout=18)"
+    },
+    {
+      "game_id": "cb-2018-05-06-gonzaga-san-diego-att0029",
+      "date": "2018-05-06",
+      "away": "Gonzaga",
+      "home": "San Diego",
+      "source_url": "https://gozags.com/sports/baseball/stats/2018/san-diego/boxscore/1465",
+      "status": "recovered",
+      "method": "official HTML BF column and source team totals",
+      "pitchers": 9,
+      "added": 9,
+      "values": [
+        {
+          "player_id": "cb-gonzaga-mac-lardner",
+          "team": "Gonzaga",
+          "BF": 24
+        },
+        {
+          "player_id": "cb-gonzaga-trent-schulte",
+          "team": "Gonzaga",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-gonzaga-calvin-lebrun",
+          "team": "Gonzaga",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-gonzaga-casey-legumina",
+          "team": "Gonzaga",
+          "BF": 11
+        },
+        {
+          "player_id": "cb-gonzaga-taylor-davis",
+          "team": "Gonzaga",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-san-diego-nate-kuchta",
+          "team": "San Diego",
+          "BF": 24
+        },
+        {
+          "player_id": "cb-san-diego-a-donatella",
+          "team": "San Diego",
+          "BF": 14
+        },
+        {
+          "player_id": "cb-san-diego-nigel-ward",
+          "team": "San Diego",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-san-diego-travis-kuhn",
+          "team": "San Diego",
+          "BF": 9
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2018-05-08-uc-riverside-san-diego-att0030",
+      "date": "2018-05-08",
+      "away": "UC Riverside",
+      "home": "San Diego",
+      "source_url": "https://gohighlanders.com/sports/baseball/stats/2018/san-diego/boxscore/11756",
+      "status": "recovered",
+      "method": "official HTML BF column and source team totals",
+      "pitchers": 8,
+      "added": 8,
+      "values": [
+        {
+          "player_id": "cb-uc-riverside-johnny-breidenthal",
+          "team": "UC Riverside",
+          "BF": 24
+        },
+        {
+          "player_id": "cb-uc-riverside-jared-noonan",
+          "team": "UC Riverside",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-uc-riverside-max-compton",
+          "team": "UC Riverside",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-uc-riverside-hazahel-quijada",
+          "team": "UC Riverside",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-san-diego-louie-crow",
+          "team": "San Diego",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-san-diego-doug-nimura",
+          "team": "San Diego",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-san-diego-nigel-ward",
+          "team": "San Diego",
+          "BF": 17
+        },
+        {
+          "player_id": "cb-san-diego-justin-friedman",
+          "team": "San Diego",
+          "BF": 11
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2018-05-09-arizona-state-san-diego-att0031",
+      "date": "2018-05-09",
+      "away": "Arizona State",
+      "home": "San Diego",
+      "source_url": "https://thesundevils.com/boxscore/466",
+      "status": "existing_verified_backfill"
+    }
+  ]
+}

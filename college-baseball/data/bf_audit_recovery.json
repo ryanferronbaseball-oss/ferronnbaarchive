@@ -489,8 +489,81 @@
       "home": "San Diego",
       "source_url": "https://lmulions.com/sports/baseball/stats/2018/san-diego/boxscore/1918",
       "original_reason": "source BF totals not reconciled",
-      "status": "unresolved",
-      "reason": "unable to uniquely match both full pitching tables to archived names and IP/H/R/ER/BB/K"
+      "status": "recovered",
+      "method": "Manual official contemporary PDF and HTML play-by-play; corrected two misassigned pitcher identities; exact BF and opponent plate appearance totals",
+      "manual_source_url": "https://s3.us-east-2.amazonaws.com/sidearm.nextgen.sites/lmulions.com/documents/2018/6/5/8944__m_basebl_2017_18_release__release_20180413aaa.pdf#page=24",
+      "verification": {
+        "Loyola Marymount": {
+          "BF": 50,
+          "opponent_AB": 38,
+          "opponent_BB": 5,
+          "opponent_HBP": 5,
+          "opponent_SH": 2
+        },
+        "San Diego": {
+          "BF": 40,
+          "opponent_AB": 34,
+          "opponent_BB": 5,
+          "opponent_HBP": 1
+        }
+      },
+      "identity_corrections": [
+        {
+          "old_player_id": "cb-loyola-marymount-kyle-dozier",
+          "new_player_id": "cb-loyola-marymount-matt-voelker",
+          "player": "Matt Voelker"
+        },
+        {
+          "old_player_id": "cb-loyola-marymount-brendan-kawaja",
+          "new_player_id": "cb-loyola-marymount-cj-fernandezees",
+          "player": "CJ Fernandezees"
+        }
+      ],
+      "pitchers": 8,
+      "added": 8,
+      "recovered_this_run": 8,
+      "values": [
+        {
+          "player_id": "cb-loyola-marymount-nick-frasso",
+          "team": "Loyola Marymount",
+          "BF": 13
+        },
+        {
+          "player_id": "cb-loyola-marymount-matt-voelker",
+          "team": "Loyola Marymount",
+          "BF": 16
+        },
+        {
+          "player_id": "cb-loyola-marymount-braydon-salzman",
+          "team": "Loyola Marymount",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-loyola-marymount-josh-robins",
+          "team": "Loyola Marymount",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-loyola-marymount-sean-paquet",
+          "team": "Loyola Marymount",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-loyola-marymount-cj-fernandezees",
+          "team": "Loyola Marymount",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-san-diego-nick-sprengel",
+          "team": "San Diego",
+          "BF": 22
+        },
+        {
+          "player_id": "cb-san-diego-travis-kuhn",
+          "team": "San Diego",
+          "BF": 18
+        }
+      ]
     },
     {
       "game_id": "cb-2018-04-17-cal-state-fullerton-san-diego-att0026",

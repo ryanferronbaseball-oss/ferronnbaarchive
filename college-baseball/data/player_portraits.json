@@ -865,6 +865,14 @@
     "source": "https://www.mlb.com/player/815873",
     "url": "https://img.mlbstatic.com/mlb-photos/image/upload/w_213,q_85/v1/people/815873/headshot/67/current"
   },
+  "cb-byu-collin-reuter": {
+    "photo_year": 2026,
+    "provider": "college",
+    "school": "Ole Miss",
+    "season": 2026,
+    "source": "https://olemisssports.com/sports/baseball/roster/2026",
+    "url": "https://images.sidearmdev.com/crop?url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Folemisssports.com%2Fimages%2F2026%2F2%2F6%2FCollin_Reuter.jpg&width=603&height=803&type=webp"
+  },
   "cb-byu-daniel-schneemann": {
     "mlb_player_id": "682177",
     "provider": "mlb",
@@ -1830,6 +1838,14 @@
     "provider": "mlb",
     "source": "https://www.mlb.com/player/686894",
     "url": "https://img.mlbstatic.com/mlb-photos/image/upload/w_213,q_85/v1/people/686894/headshot/67/current"
+  },
+  "cb-clemson-tristan-bissetta": {
+    "photo_year": 2026,
+    "provider": "college",
+    "school": "Ole Miss",
+    "season": 2026,
+    "source": "https://olemisssports.com/sports/baseball/roster/2026",
+    "url": "https://images.sidearmdev.com/crop?url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Folemisssports.com%2Fimages%2F2026%2F2%2F6%2FTristan_Bissetta.jpg&width=603&height=803&type=webp"
   },
   "cb-coastal-carolina-sam-antonacci": {
     "mlb_player_id": "803011",
@@ -3077,6 +3093,14 @@
     "source": "https://www.mlb.com/player/673858",
     "url": "https://img.mlbstatic.com/mlb-photos/image/upload/w_213,q_85/v1/people/673858/headshot/67/current"
   },
+  "cb-illinois-ryan-moerman": {
+    "photo_year": 2025,
+    "provider": "college",
+    "school": "Ole Miss",
+    "season": 2025,
+    "source": "https://olemisssports.com/sports/baseball/roster/2025",
+    "url": "https://images.sidearmdev.com/crop?url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Folemisssports.com%2Fimages%2F2025%2F1%2F30%2FMoerman__Ryan_2025_CHS.jpg&width=603&height=803&type=webp"
+  },
   "cb-indiana-andrew-saalfrank": {
     "mlb_player_id": "685314",
     "provider": "mlb",
@@ -3626,12 +3650,22 @@
     "url": "https://images.sidearmdev.com/crop?url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Fgocards.com%2Fimages%2F2026%2F2%2F9%2Fgriffin_crain_hs_26.jpg&width=603&height=803&type=webp"
   },
   "cb-louisville-isaac-humphrey": {
-    "photo_year": 2024,
+    "fallbacks": [
+      {
+        "photo_year": 2024,
+        "provider": "college",
+        "school": "Louisville",
+        "season": 2024,
+        "source": "https://gocards.com/sports/baseball/roster/2024",
+        "url": "https://images.sidearmdev.com/crop?url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Fgocards.com%2Fimages%2F2024%2F2%2F12%2Fisaac_humphrey_hs24.jpg&width=603&height=803&type=webp"
+      }
+    ],
+    "photo_year": 2025,
     "provider": "college",
-    "school": "Louisville",
-    "season": 2024,
-    "source": "https://gocards.com/sports/baseball/roster/2024",
-    "url": "https://images.sidearmdev.com/crop?url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Fgocards.com%2Fimages%2F2024%2F2%2F12%2Fisaac_humphrey_hs24.jpg&width=603&height=803&type=webp"
+    "school": "Ole Miss",
+    "season": 2025,
+    "source": "https://olemisssports.com/sports/baseball/roster/2025",
+    "url": "https://images.sidearmdev.com/crop?url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Folemisssports.com%2Fimages%2F2025%2F1%2F30%2FHumphrey__Isaac_2025_CHS.jpg&width=603&height=803&type=webp"
   },
   "cb-louisville-jack-brown": {
     "photo_year": 2025,
@@ -4324,6 +4358,14 @@
     "provider": "mlb",
     "source": "https://www.mlb.com/player/696522",
     "url": "https://img.mlbstatic.com/mlb-photos/image/upload/w_213,q_85/v1/people/696522/headshot/67/current"
+  },
+  "cb-missouri-wil-libbert": {
+    "photo_year": 2026,
+    "provider": "college",
+    "school": "Ole Miss",
+    "season": 2026,
+    "source": "https://olemisssports.com/sports/baseball/roster/2026",
+    "url": "https://images.sidearmdev.com/crop?url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Folemisssports.com%2Fimages%2F2026%2F2%2F6%2FWil_Libbert.jpg&width=603&height=803&type=webp"
   },
   "cb-nc-state-alec-makarewicz": {
     "photo_year": 2023,
@@ -5030,6 +5072,206 @@
     "provider": "mlb",
     "source": "https://www.mlb.com/player/676917",
     "url": "https://img.mlbstatic.com/mlb-photos/image/upload/w_213,q_85/v1/people/676917/headshot/67/current"
+  },
+  "cb-ole-miss-austin-fawley": {
+    "photo_year": 2026,
+    "provider": "college",
+    "school": "Ole Miss",
+    "season": 2026,
+    "source": "https://olemisssports.com/sports/baseball/roster/2026",
+    "url": "https://images.sidearmdev.com/crop?url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Folemisssports.com%2Fimages%2F2026%2F2%2F6%2FAustin_Fawley.jpg&width=603&height=803&type=webp"
+  },
+  "cb-ole-miss-brayden-randle": {
+    "photo_year": 2026,
+    "provider": "college",
+    "school": "Ole Miss",
+    "season": 2026,
+    "source": "https://olemisssports.com/sports/baseball/roster/2026",
+    "url": "https://images.sidearmdev.com/crop?url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Folemisssports.com%2Fimages%2F2026%2F2%2F6%2FBrayden_Randle.jpg&width=603&height=803&type=webp"
+  },
+  "cb-ole-miss-cade-townsend": {
+    "photo_year": 2026,
+    "provider": "college",
+    "school": "Ole Miss",
+    "season": 2026,
+    "source": "https://olemisssports.com/sports/baseball/roster/2026",
+    "url": "https://images.sidearmdev.com/crop?url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Folemisssports.com%2Fimages%2F2026%2F2%2F6%2FCade_Townsend.jpg&width=603&height=803&type=webp"
+  },
+  "cb-ole-miss-campbell-smithwick": {
+    "photo_year": 2025,
+    "provider": "college",
+    "school": "Ole Miss",
+    "season": 2025,
+    "source": "https://olemisssports.com/sports/baseball/roster/2025",
+    "url": "https://images.sidearmdev.com/crop?url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Folemisssports.com%2Fimages%2F2025%2F1%2F30%2FSmithwick__Campbell_2025_CHS.jpg&width=603&height=803&type=webp"
+  },
+  "cb-ole-miss-connor-spencer": {
+    "photo_year": 2025,
+    "provider": "college",
+    "school": "Ole Miss",
+    "season": 2025,
+    "source": "https://olemisssports.com/sports/baseball/roster/2025",
+    "url": "https://images.sidearmdev.com/crop?url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Folemisssports.com%2Fimages%2F2025%2F1%2F30%2FSpencer__Connor_2025_CHS.jpg&width=603&height=803&type=webp"
+  },
+  "cb-ole-miss-daniel-pacella": {
+    "photo_year": 2026,
+    "provider": "college",
+    "school": "Ole Miss",
+    "season": 2026,
+    "source": "https://olemisssports.com/sports/baseball/roster/2026",
+    "url": "https://images.sidearmdev.com/crop?url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Folemisssports.com%2Fimages%2F2026%2F2%2F6%2FDaniel_Pacella.jpg&width=603&height=803&type=webp"
+  },
+  "cb-ole-miss-dom-decker": {
+    "photo_year": 2026,
+    "provider": "college",
+    "school": "Ole Miss",
+    "season": 2026,
+    "source": "https://olemisssports.com/sports/baseball/roster/2026",
+    "url": "https://images.sidearmdev.com/crop?url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Folemisssports.com%2Fimages%2F2026%2F2%2F6%2FDom_Decker.jpg&width=603&height=803&type=webp"
+  },
+  "cb-ole-miss-gunnar-dennis": {
+    "photo_year": 2025,
+    "provider": "college",
+    "school": "Ole Miss",
+    "season": 2025,
+    "source": "https://olemisssports.com/sports/baseball/roster/2025",
+    "url": "https://images.sidearmdev.com/crop?url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Folemisssports.com%2Fimages%2F2025%2F1%2F30%2FDennis__Gunnar_2025_CHS.jpg&width=603&height=803&type=webp"
+  },
+  "cb-ole-miss-hayden-federico": {
+    "photo_year": 2026,
+    "provider": "college",
+    "school": "Ole Miss",
+    "season": 2026,
+    "source": "https://olemisssports.com/sports/baseball/roster/2026",
+    "url": "https://images.sidearmdev.com/crop?url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Folemisssports.com%2Fimages%2F2026%2F2%2F6%2FHayden_Federico.jpg&width=603&height=803&type=webp"
+  },
+  "cb-ole-miss-hudson-calhoun": {
+    "photo_year": 2026,
+    "provider": "college",
+    "school": "Ole Miss",
+    "season": 2026,
+    "source": "https://olemisssports.com/sports/baseball/roster/2026",
+    "url": "https://images.sidearmdev.com/crop?url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Folemisssports.com%2Fimages%2F2026%2F2%2F6%2FHudson_Calhoun.jpg&width=603&height=803&type=webp"
+  },
+  "cb-ole-miss-hunter-elliott": {
+    "photo_year": 2026,
+    "provider": "college",
+    "school": "Ole Miss",
+    "season": 2026,
+    "source": "https://olemisssports.com/sports/baseball/roster/2026",
+    "url": "https://images.sidearmdev.com/crop?url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Folemisssports.com%2Fimages%2F2026%2F2%2F6%2FHunter_Elliott.jpg&width=603&height=803&type=webp"
+  },
+  "cb-ole-miss-jp-robertson": {
+    "photo_year": 2026,
+    "provider": "college",
+    "school": "Ole Miss",
+    "season": 2026,
+    "source": "https://olemisssports.com/sports/baseball/roster/2026",
+    "url": "https://images.sidearmdev.com/crop?url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Folemisssports.com%2Fimages%2F2026%2F2%2F6%2FJP_Robertson.jpg&width=603&height=803&type=webp"
+  },
+  "cb-ole-miss-judd-utermark": {
+    "photo_year": 2026,
+    "provider": "college",
+    "school": "Ole Miss",
+    "season": 2026,
+    "source": "https://olemisssports.com/sports/baseball/roster/2026",
+    "url": "https://images.sidearmdev.com/crop?url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Folemisssports.com%2Fimages%2F2026%2F2%2F6%2FJudd_Utermark.jpg&width=603&height=803&type=webp"
+  },
+  "cb-ole-miss-landon-koenig": {
+    "photo_year": 2026,
+    "provider": "college",
+    "school": "Ole Miss",
+    "season": 2026,
+    "source": "https://olemisssports.com/sports/baseball/roster/2026",
+    "url": "https://images.sidearmdev.com/crop?url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Folemisssports.com%2Fimages%2F2026%2F2%2F6%2FLandon_Koenig.jpg&width=603&height=803&type=webp"
+  },
+  "cb-ole-miss-landon-waters": {
+    "photo_year": 2026,
+    "provider": "college",
+    "school": "Ole Miss",
+    "season": 2026,
+    "source": "https://olemisssports.com/sports/baseball/roster/2026",
+    "url": "https://images.sidearmdev.com/crop?url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Folemisssports.com%2Fimages%2F2026%2F2%2F6%2FLandon_Waters.jpg&width=603&height=803&type=webp"
+  },
+  "cb-ole-miss-luke-cheng": {
+    "photo_year": 2025,
+    "provider": "college",
+    "school": "Ole Miss",
+    "season": 2025,
+    "source": "https://olemisssports.com/sports/baseball/roster/2025",
+    "url": "https://images.sidearmdev.com/crop?url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Folemisssports.com%2Fimages%2F2025%2F1%2F30%2FCheng__Luke_2025.jpg&width=603&height=803&type=webp"
+  },
+  "cb-ole-miss-luke-hill": {
+    "photo_year": 2025,
+    "provider": "college",
+    "school": "Ole Miss",
+    "season": 2025,
+    "source": "https://olemisssports.com/sports/baseball/roster/2025",
+    "url": "https://images.sidearmdev.com/crop?url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Folemisssports.com%2Fimages%2F2025%2F1%2F30%2FHill__Luke_2025_CHS.jpg&width=603&height=803&type=webp"
+  },
+  "cb-ole-miss-mason-morris": {
+    "photo_year": 2025,
+    "provider": "college",
+    "school": "Ole Miss",
+    "season": 2025,
+    "source": "https://olemisssports.com/sports/baseball/roster/2025",
+    "url": "https://images.sidearmdev.com/crop?url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Folemisssports.com%2Fimages%2F2025%2F1%2F30%2FMorris__Mason_2025.jpg&width=603&height=803&type=webp"
+  },
+  "cb-ole-miss-mitchell-sanford": {
+    "photo_year": 2025,
+    "provider": "college",
+    "school": "Ole Miss",
+    "season": 2025,
+    "source": "https://olemisssports.com/sports/baseball/roster/2025",
+    "url": "https://images.sidearmdev.com/crop?url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Folemisssports.com%2Fimages%2F2025%2F1%2F30%2FSanford__Mitchell_2025_CHS.jpg&width=603&height=803&type=webp"
+  },
+  "cb-ole-miss-owen-paino": {
+    "photo_year": 2026,
+    "provider": "college",
+    "school": "Ole Miss",
+    "season": 2026,
+    "source": "https://olemisssports.com/sports/baseball/roster/2026",
+    "url": "https://images.sidearmdev.com/crop?url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Folemisssports.com%2Fimages%2F2026%2F2%2F6%2FOwen_Paino.jpg&width=603&height=803&type=webp"
+  },
+  "cb-ole-miss-riley-maddox": {
+    "photo_year": 2025,
+    "provider": "college",
+    "school": "Ole Miss",
+    "season": 2025,
+    "source": "https://olemisssports.com/sports/baseball/roster/2025",
+    "url": "https://images.sidearmdev.com/crop?url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Folemisssports.com%2Fimages%2F2025%2F1%2F30%2FMaddox__Riley_2025_CHS.jpg&width=603&height=803&type=webp"
+  },
+  "cb-ole-miss-taylor-rabe": {
+    "photo_year": 2026,
+    "provider": "college",
+    "school": "Ole Miss",
+    "season": 2026,
+    "source": "https://olemisssports.com/sports/baseball/roster/2026",
+    "url": "https://images.sidearmdev.com/crop?url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Folemisssports.com%2Fimages%2F2026%2F2%2F6%2FTaylor_Rabe.jpg&width=603&height=803&type=webp"
+  },
+  "cb-ole-miss-walker-hooks": {
+    "photo_year": 2026,
+    "provider": "college",
+    "school": "Ole Miss",
+    "season": 2026,
+    "source": "https://olemisssports.com/sports/baseball/roster/2026",
+    "url": "https://images.sidearmdev.com/crop?url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Folemisssports.com%2Fimages%2F2026%2F2%2F6%2FWalker_Hooks.jpg&width=603&height=803&type=webp"
+  },
+  "cb-ole-miss-will-furniss": {
+    "photo_year": 2026,
+    "provider": "college",
+    "school": "Ole Miss",
+    "season": 2026,
+    "source": "https://olemisssports.com/sports/baseball/roster/2026",
+    "url": "https://images.sidearmdev.com/crop?url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Folemisssports.com%2Fimages%2F2026%2F2%2F6%2FWill_Furniss.jpg&width=603&height=803&type=webp"
+  },
+  "cb-ole-miss-will-mccausland": {
+    "photo_year": 2025,
+    "provider": "college",
+    "school": "Ole Miss",
+    "season": 2025,
+    "source": "https://olemisssports.com/sports/baseball/roster/2025",
+    "url": "https://images.sidearmdev.com/crop?url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Folemisssports.com%2Fimages%2F2025%2F1%2F30%2FMcCausland__Will_2025.jpg&width=603&height=803&type=webp"
   },
   "cb-oregon-rikuu-nishida": {
     "mlb_player_id": "807747",
@@ -6815,6 +7057,14 @@
     "season": 2021,
     "source": "https://usdtoreros.com/sports/baseball/roster/2021",
     "url": "https://usdtoreros.com/images/2021/2/16/PeterAbinanti_cropped.png?width=80&quality=90"
+  },
+  "cb-st-louis-owen-kelly": {
+    "photo_year": 2026,
+    "provider": "college",
+    "school": "Ole Miss",
+    "season": 2026,
+    "source": "https://olemisssports.com/sports/baseball/roster/2026",
+    "url": "https://images.sidearmdev.com/crop?url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Folemisssports.com%2Fimages%2F2026%2F2%2F6%2FOwen_Kelly.jpg&width=603&height=803&type=webp"
   },
   "cb-stanford-braden-montgomery": {
     "mlb_player_id": "695731",

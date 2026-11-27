@@ -1,4 +1,4 @@
-name: NHL player portrait audit
+name: NHL player portrait recovery
 on:
   workflow_dispatch:
   push:
@@ -12,7 +12,7 @@ concurrency:
 jobs:
   audit:
     runs-on: ubuntu-24.04
-    timeout-minutes: 20
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -26,7 +26,7 @@ jobs:
           python - <<'PY'
           import json,pathlib,http.server,threading
           from playwright.sync_api import sync_playwright
-          data=pathlib.Path('nhl/data');reg=data/'player_portraits.json';report=data/'player_portrait_audit.json'
+          data=pathlib.Path('nhl/data');reg=data/'player_portraits.json';report=data/'player_portrait_recovery.json'
           records=json.loads(reg.read_text());audit=json.loads(report.read_text())
           server=http.server.ThreadingHTTPServer(('127.0.0.1',0),http.server.SimpleHTTPRequestHandler)
           threading.Thread(target=server.serve_forever,daemon=True).start()
@@ -70,12 +70,12 @@ jobs:
           name: nhl-portrait-review
           path: |
             nhl-portrait-review/
-            nhl/data/player_portrait_audit.json
+            nhl/data/player_portrait_recovery.json
       - name: Publish verified portraits
         run: |
           git config user.name "Courtside Archive"
           git config user.email "actions@users.noreply.github.com"
-          git add nhl/data/player_portraits.json nhl/data/player_portrait_audit.json
+          git add nhl/data/player_portraits.json nhl/data/player_portrait_recovery.json
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "Register verified NHL player portraits"
           git pull --rebase origin main

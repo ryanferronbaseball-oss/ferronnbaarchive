@@ -2927,8 +2927,81 @@
       "home": "UNC Wilmington",
       "source_url": "https://gobobcats.com/sports/baseball/stats/2025/uncw/boxscore/22618",
       "original_reason": "unable to uniquely match both full pitching tables to archived names and IP/H/R/ER/BB/K",
-      "status": "unresolved",
-      "reason": "unable to uniquely match both full pitching tables to archived names and IP/H/R/ER/BB/K"
+      "status": "recovered",
+      "method": "Manual official UNCW and Quinnipiac box score BF; match team, full pitching signature and verified names including truncated display names; reconcile opponent plate appearances",
+      "manual_source_url": "https://uncwsports.com/sports/baseball/stats/2025/quinnipiac/boxscore/10920",
+      "verification": {
+        "Quinnipiac": {
+          "BF": 49,
+          "opponent_AB": 33,
+          "opponent_BB": 12,
+          "opponent_HBP": 2,
+          "opponent_SH": 2
+        },
+        "UNC Wilmington": {
+          "BF": 51,
+          "opponent_AB": 39,
+          "opponent_BB": 9,
+          "opponent_HBP": 1,
+          "opponent_SH": 1,
+          "opponent_SF": 1
+        }
+      },
+      "pitchers": 10,
+      "added": 10,
+      "recovered_this_run": 10,
+      "values": [
+        {
+          "player_id": "cb-quinnipiac-matt-alduino",
+          "team": "Quinnipiac",
+          "BF": 19
+        },
+        {
+          "player_id": "cb-quinnipiac-samuel-wrigh",
+          "team": "Quinnipiac",
+          "BF": 20
+        },
+        {
+          "player_id": "cb-quinnipiac-jc-franconere",
+          "team": "Quinnipiac",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-quinnipiac-johnny-knox",
+          "team": "Quinnipiac",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-unc-wilmington-cam-bagwell",
+          "team": "UNC Wilmington",
+          "BF": 23
+        },
+        {
+          "player_id": "cb-unc-wilmington-ty-lawson",
+          "team": "UNC Wilmington",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-unc-wilmington-baker-cox",
+          "team": "UNC Wilmington",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-unc-wilmington-bryan-arendt",
+          "team": "UNC Wilmington",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-unc-wilmington-jack-gibson",
+          "team": "UNC Wilmington",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-unc-wilmington-porter-braddy",
+          "team": "UNC Wilmington",
+          "BF": 2
+        }
+      ]
     },
     {
       "game_id": "cb-2025-02-17-washington-st-joe-s-att0303",

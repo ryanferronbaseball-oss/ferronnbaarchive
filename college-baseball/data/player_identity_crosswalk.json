@@ -4,8 +4,8 @@
   "source": "Original archive owner confirmed each multi-school person",
   "original_attendance_ids_preserved": 444,
   "original_player_game_rows_preserved": 13183,
-  "requested_person_merges": 206,
-  "activated_person_merges": 206,
+  "requested_person_merges": 207,
+  "activated_person_merges": 207,
   "pending_person_merges": 0,
   "merge_policy": "Only listed pair of exact normalized person names and school-specific original source player IDs; all other IDs remain separate",
   "display_aliases": [
@@ -18,6 +18,16 @@
       "evidence_urls": [
         "https://gopack.com/sports/baseball/roster/makarewicz-alec/12549",
         "https://www.baseball-reference.com/register/player.fcgi?id=makare000ale"
+      ]
+    },
+    {
+      "player_id": "cb-wake-forest-joshua-gunther",
+      "display_name": "Josh Gunther",
+      "former_names": [
+        "Joshua Gunther"
+      ],
+      "evidence_urls": [
+        "https://godeacs.com/sports/baseball/roster/josh-gunther/8474"
       ]
     }
   ],
@@ -6067,6 +6077,34 @@
         "https://gomatadors.com/sports/baseball/roster/2023",
         "https://gomatadors.com/sports/baseball/roster/2022",
         "https://gomatadors.com/sports/baseball/roster/2021"
+      ]
+    },
+    {
+      "name": "Tate Ballestero",
+      "display_name": "Tate Ballestero",
+      "canonical_id": "cb-wake-forest-tate-ballestero",
+      "source_player_ids": [
+        "cb-wake-forest-tate-ballestero",
+        "cb-wake-forest-tate-ballestero-jr"
+      ],
+      "schools": [
+        "Wake Forest"
+      ],
+      "pairs": [
+        {
+          "team": "Wake Forest",
+          "source_player_id": "cb-wake-forest-tate-ballestero"
+        },
+        {
+          "team": "Wake Forest",
+          "source_player_id": "cb-wake-forest-tate-ballestero-jr"
+        }
+      ],
+      "source_rows": 2,
+      "note": "Owner-approved suffix variant; official Wake Forest roster and distinct attended games.",
+      "evidence_urls": [
+        "https://godeacs.com/sports/baseball/roster/tate-ballestero/8085",
+        "https://godeacs.com/sports/baseball/stats/2024/north-carolina/boxscore/13808"
       ]
     }
   ]

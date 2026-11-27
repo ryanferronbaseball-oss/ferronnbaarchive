@@ -1,0 +1,176 @@
+name: Florida State and Scannell final headshot corrections
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/fsu-wake-headshot-final.yml']
+permissions:
+  contents: write
+concurrency:
+  group: college-baseball-portraits
+  cancel-in-progress: false
+jobs:
+  portraits:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: pip install requests pillow beautifulsoup4 playwright
+      - run: python -m playwright install --with-deps chromium
+      - name: Validate exact official headshot sources and replace action photographs
+        env:
+          PYTHONPATH: scripts
+        run: |
+          python - <<'PY'
+          import json,re,collections
+          from urllib.parse import urlsplit,parse_qs,unquote,urljoin
+          from bs4 import BeautifulSoup
+          from audit_player_portraits import load,save,get,probe
+          from recover_lsu_final_portraits import norm,host,photo_year
+          D='college-baseball/data/'
+          reg=load(D+'player_portraits.json',{})
+          prev=load(D+'florida_state_headshot_correction.json',{})
+          orig=load(D+'florida_state_portrait_audit.json',{})
+          wake=load(D+'wake_forest_portrait_audit.json',{})
+          originals={x['id']:x for x in orig['added']+orig['upgraded']+wake['added']+wake['upgraded']}
+          candidates=list(prev['upgraded'])+list(prev['added'])
+          for m in prev['missing']:
+              p=originals[m['id']]
+              matches=[]
+              for attempt in m['diagnostics']['attempts']:
+                  for im in attempt.get('images',[]):
+                      u=im.get('src') or im.get('data-src') or ''
+                      q=parse_qs(urlsplit(u).query);raw=unquote(q.get('url',[u])[0])
+                      stem=norm(raw.rsplit('/',1)[-1].rsplit('.',1)[0])
+                      words=m['name'].split()
+                      label=norm(im.get('alt') or '')
+                      expected=norm(' '.join(words[1:]+words[:1]))
+                      if 'headshots' in label and (norm(m['name']) in label or m['name']=='Jaxson West' and 'jaxonwest' in label) and stem.startswith(expected) and q.get('width')==['180'] and q.get('height')==['270']:
+                          matches.append((attempt['source'],u))
+              unique=set(matches)
+              assert len(unique)==1,(m['name'],unique)
+              source,u=unique.pop()
+              candidates.append({'id':m['id'],'name':m['name'],'url':u,'source':source,'provider':'college','school':'Florida State','season':p['season'],'photo_year':photo_year(u,p['season'])})
+          candidates.append({'id':'cb-wake-forest-matt-scannell','name':'Matt Scannell','url':'https://images.sidearmdev.com/crop?height=270&type=webp&url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Fwakeforestsports.com%2Fimages%2F2025%2F1%2F28%2FMatt_Scannel_Headshot.JPG&width=180','source':'https://godeacs.com/sports/baseball/roster/scannell-matt/8504','provider':'college','school':'Wake Forest','season':2025,'photo_year':2025})
+          assert len(candidates)==28,len(candidates)
+          report={'targets':prev['targets']+[{'id':candidates[-1]['id'],'name':'Matt Scannell'}],'added':[],'upgraded':[],'preserved':prev['preserved'],'missing':[]}
+          hashes=set()
+          for c in candidates:
+              pid=c['id'];old=reg[pid];u=c['url'];source=c['source']
+              assert not old.get('owner_preferred') and old['url']==originals[pid]['url'],('Registry changed; review',pid)
+              q=parse_qs(urlsplit(u).query);raw=q['url'][0]
+              assert host(u)=='images.sidearmdev.com' and q.get('width')==['180'] and q.get('height')==['270']
+              # Reopen the exact official bio. Verify the portrait asset rather than a gallery label.
+              r=get(source);r.raise_for_status();assert host(r.url)==('seminoles.com' if c['school']=='Florida State' else 'godeacs.com')
+              soup=BeautifulSoup(r.text,'html.parser')
+              matches=[]
+              for im in soup.find_all('img'):
+                  for k in ('src','data-src','data-lazy-src','url'):
+                      v=im.get(k)
+                      if not isinstance(v,str):continue
+                      v=urljoin(r.url,v);q2=parse_qs(urlsplit(v).query)
+                      if q2.get('url')==[raw] and q2.get('width')==['180'] and q2.get('height')==['270']:matches.append(im.get('alt',''))
+              assert matches,('Exact portrait asset not present on official bio',pid)
+              state,digest=probe(u)
+              assert state=='image' and digest and digest not in hashes,(pid,state)
+              hashes.add(digest)
+              record={k:v for k,v in c.items() if k not in ('id','name','fallbacks')}
+              fallback=[x for x in old.get('fallbacks',[]) if x.get('url')!=old['url'] and '/resize?' not in x.get('url','')]
+              if fallback:record['fallbacks']=fallback
+              reg[pid]=record
+              report['upgraded'].append({'id':pid,'name':c['name'],**record,'source_labels':matches})
+              print('VERIFIED HEADSHOT',c['name'],u,flush=True)
+          assert len(report['targets'])==30
+          save(D+'player_portraits.json',reg)
+          save(D+'fsu_wake_headshot_final.json',report)
+          PY
+      - name: Verify all 30 corrected and preserved portraits
+        run: |
+          python - <<'PY'
+          import json,pathlib,threading,functools,http.server
+          from urllib.parse import quote
+          from playwright.sync_api import sync_playwright
+          from PIL import Image,ImageDraw
+          root=pathlib.Path.cwd()
+          report=json.loads((root/'college-baseball/data/fsu_wake_headshot_final.json').read_text())
+          out=root/'fsu-wake-headshot-review';out.mkdir(exist_ok=True)
+          server=http.server.ThreadingHTTPServer(('127.0.0.1',0),functools.partial(http.server.SimpleHTTPRequestHandler,directory=str(root)))
+          threading.Thread(target=server.serve_forever,daemon=True).start()
+          results=[]
+          registry=json.loads((root/'college-baseball/data/player_portraits.json').read_text())
+          with sync_playwright() as p:
+              browser=p.chromium.launch()
+              for mode,w,h in [('desktop',1360,900),('mobile',390,844)]:
+                  page=browser.new_page(viewport={'width':w,'height':h},device_scale_factor=1)
+                  for t in report['targets']:
+                      pid=t['id'];row={'id':pid,'name':t['name'],'viewport':mode}
+                      if pid not in registry:
+                          row['status']='missing';results.append(row);print(mode,t['name'],'missing; skipped browser timeout',flush=True);continue
+                      try:
+                          page.goto(f'http://127.0.0.1:{server.server_port}/college-baseball/player.html?id='+quote(pid),wait_until='domcontentloaded',timeout=30000)
+                          frame=page.locator('.cb-player-portrait')
+                          frame.wait_for(state='visible',timeout=15000)
+                          page.wait_for_function("() => {const i=document.querySelector('.cb-player-portrait img');return i&&i.complete&&i.naturalWidth>0&&i.parentElement.classList.contains('has-portrait')}",timeout=12000)
+                          row.update(frame.locator('img').evaluate("i=>({url:i.currentSrc,natural:[i.naturalWidth,i.naturalHeight],fit:getComputedStyle(i).objectFit,position:getComputedStyle(i).objectPosition})"))
+                          selected=registry[pid]['url']
+                          if pid in {x['id'] for x in report['added']+report['upgraded']} and row['url']!=selected:raise ValueError('New portrait did not render; fallback used')
+                          frame.screenshot(path=str(out/f'{mode}-{pid}.png'),timeout=10000)
+                          row['status']='pass'
+                      except Exception as e:row['status']='fail';row['error']=str(e)
+                      results.append(row)
+                      print(mode,t['name'],row['status'],row.get('natural'),flush=True)
+                  page.close()
+                  cols=7;sheet=Image.new('RGB',(cols*180,((len(report['targets'])+cols-1)//cols)*220),'#f5f5f5')
+                  draw=ImageDraw.Draw(sheet)
+                  for n,t in enumerate(report['targets']):
+                      f=out/f"{mode}-{t['id']}.png";x,y=n%cols*180,n//cols*220
+                      if f.exists():
+                          im=Image.open(f).convert('RGB');im.thumbnail((165,185));sheet.paste(im,(x+(180-im.width)//2,y+5))
+                      else:draw.text((x+8,y+80),'MISSING / FAILED',fill='red')
+                      draw.text((x+4,y+192),t['name'],fill='black')
+                  sheet.save(out/f'{mode}-contact-sheet.jpg')
+              browser.close()
+          server.shutdown()
+          (out/'results.json').write_text(json.dumps(results,indent=2))
+          failed={r['id'] for r in results if r['status']!='pass'}
+          print(f'Verified {len(results)-sum(r["status"]!="pass" for r in results)}/{len(results)} viewport checks; {len(failed)} player profiles need follow-up')
+          # Do not publish any newly selected portrait that failed real rendering.
+          regpath=root/'college-baseball/data/player_portraits.json'
+          registry=json.loads(regpath.read_text())
+          for x in report['added']+report['upgraded']:
+              if x['id'] not in failed:continue
+              previous=registry[x['id']].get('fallbacks',[])
+              if previous:
+                  registry[x['id']]=previous[0]
+                  if len(previous)>1:registry[x['id']]['fallbacks']=previous[1:]
+              else:registry.pop(x['id'],None)
+          for key in ('added','upgraded'):
+              report[key]=[x for x in report[key] if x['id'] not in failed]
+          assert not failed, ('Rendering failed; refusing publication',sorted(failed))
+          report['render_failures']=sorted(failed)
+          report['registered_portraits']=sum(t['id'] in registry for t in report['targets'])
+          regpath.write_text(json.dumps(registry,ensure_ascii=False,indent=2,sort_keys=True)+'\n')
+          (root/'college-baseball/data/fsu_wake_headshot_final.json').write_text(json.dumps(report,ensure_ascii=False,indent=2,sort_keys=True)+'\n')
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: fsu-wake-headshot-review
+          path: |
+            fsu-wake-headshot-review/
+            college-baseball/data/fsu_wake_headshot_final.json
+      - name: Publish verified headshot replacements
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add college-baseball/data/player_portraits.json college-baseball/data/fsu_wake_headshot_final.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Replace FSU action photos and Scannell action photo with verified headshots"
+          git pull --rebase origin main
+          git push origin HEAD:main

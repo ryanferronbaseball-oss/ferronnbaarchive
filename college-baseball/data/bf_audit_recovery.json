@@ -3768,8 +3768,68 @@
       "home": "Bellarmine",
       "source_url": "https://athletics.bellarmine.edu/sports/baseball/stats/2026/university-of-central-arkansas/boxscore/8799",
       "original_reason": "unable to uniquely match both full pitching tables to archived names and IP/H/R/ER/BB/K",
-      "status": "unresolved",
-      "reason": "unable to uniquely match both full pitching tables to archived names and IP/H/R/ER/BB/K"
+      "status": "recovered",
+      "method": "Manual official Bellarmine HTML; match full archived pitcher names and exact pitching signatures; explicit BF reconciled against team pitching totals and opposing batting totals",
+      "manual_source_url": "https://athletics.bellarmine.edu/sports/baseball/stats/2026/university-of-central-arkansas/boxscore/8799",
+      "verification": {
+        "Central Arkansas": {
+          "BF": 33,
+          "opponent_AB": 31,
+          "opponent_BB": 2
+        },
+        "Bellarmine": {
+          "BF": 49,
+          "opponent_AB": 37,
+          "opponent_BB": 8,
+          "opponent_HBP": 3,
+          "opponent_SF": 1
+        }
+      },
+      "pitchers": 8,
+      "added": 8,
+      "recovered_this_run": 8,
+      "values": [
+        {
+          "player_id": "cb-central-arkansas-denver-hamilton",
+          "team": "Central Arkansas",
+          "BF": 29
+        },
+        {
+          "player_id": "cb-central-arkansas-jb-williams",
+          "team": "Central Arkansas",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-bellarmine-raygan-new",
+          "team": "Bellarmine",
+          "BF": 13
+        },
+        {
+          "player_id": "cb-bellarmine-nikau-heeney",
+          "team": "Bellarmine",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-bellarmine-drew-jennings",
+          "team": "Bellarmine",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-bellarmine-jaxson-howard",
+          "team": "Bellarmine",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-bellarmine-brandon-newland",
+          "team": "Bellarmine",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-bellarmine-owen-payne",
+          "team": "Bellarmine",
+          "BF": 7
+        }
+      ]
     },
     {
       "game_id": "cb-2026-04-26-central-arkansas-bellarmine-att0417",

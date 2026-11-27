@@ -85,6 +85,25 @@ function performancePanel(rows){
   +body+'<p class="mlb-note">Custom, unofficial one-player impact score, calculated exclusively from players in this MiLB game. This does not represent an official league award.</p></section>',
   best:x};
 }
+function recapPanel(g,registry){
+ const recap=registry?.recaps?.[String(g.id)];
+ if(!recap)return "";
+ const linkify=raw=>{
+  const text=String(raw??"");let html="",last=0,match;
+  const token=/\[\[([^|\]]+)\|([^\]]+)\]\]/g;
+  while((match=token.exec(text))){
+   html+=esc(text.slice(last,match.index));
+   html+='<a href="./player.html?id='+encode(match[1])+'">'+esc(match[2])+'</a>';
+   last=match.index+match[0].length;
+  }
+  return html+esc(text.slice(last));
+ };
+ const paragraphs=Array.isArray(recap.paragraphs)?recap.paragraphs:[];
+ if(paragraphs.length!==3)return "";
+ return '<section class="panel mlb-game-recap" id="gameRecap"><div class="mlb-pregame-eyebrow">COURTSIDE RECAP</div><h2>Recap</h2>'
+  +paragraphs.map(paragraph=>'<p>'+linkify(paragraph)+'</p>').join("")
+  +'</section>';
+}
 function lineScore(g,innings){
  const data=innings[String(g.source_game_id)]||[];
  if(!data.length)return '<section class="panel" id="innings"><h2>Line score by inning</h2><div class="empty">Official inning-by-inning scoring has not been imported for this game.</div></section>';
@@ -138,12 +157,12 @@ function scoringPanel(g,plays){
     :'<div class="empty">Full scoring-play chronology is not available for this game yet. See the official box score and inning line.</div>')
   +'</div></section>';
 }
-function show(g,all,rows,innings,plays,decisions){
+function show(g,all,rows,innings,plays,decisions,recaps){
  const selected=rows.filter(r=>String(r.game_id)===String(g.id));
  $("gameSelect").value=g.id;
  const scoreboard=window.CAGameScore.render({date:g.date,venue:g.venue||"Ballpark pending",context:g.level||"MiLB",away:g.away_team,home:g.home_team,awayLogo:window.CAGameLogos?.resolve('milb',g.away_team,g.date,g.official_away_team_id),homeLogo:window.CAGameLogos?.resolve('milb',g.home_team,g.date,g.official_home_team_id),awayScore:g.away_score,homeScore:g.home_score,metaHtml:(g.venue_id?'<a href="../venues/venue.html?id='+encode(g.venue_id)+'">Venue profile ↗</a> · ':'')+(official(g)?"MiLB game #"+esc(g.source_game_id):"Awaiting official game match")});
  const perf=performancePanel(selected);
- $("scoreboard").innerHTML=scoreboard+decisionPanel(g,decisions)+perf.html+lineScore(g,innings);
+ $("scoreboard").innerHTML=scoreboard+decisionPanel(g,decisions)+recapPanel(g,recaps)+perf.html+lineScore(g,innings);
  if(perf.best){
   const best=perf.best.row,pic=$("potgPortrait"),img=new Image();
   img.alt="";img.loading="lazy";
@@ -172,8 +191,8 @@ async function load(){
    if(!r.ok){if(optional&&r.status===404)return {};throw Error(name+" data unavailable");}
    return r.json();
   };
-  const [games,rows,innings,plays,decisions]=await Promise.all([
-   get("games"),get("player_stats"),get("inning_scores",true),get("scoring_plays",true),get("pitching_decisions",true)]);
+  const [games,rows,innings,plays,decisions,recaps]=await Promise.all([
+   get("games"),get("player_stats"),get("inning_scores",true),get("scoring_plays",true),get("pitching_decisions",true),get("game_recaps",true)]);
   if(!Array.isArray(games)||!Array.isArray(rows))throw Error("Invalid MiLB game data");
   await mergeScreenshot2019(rows);
   const ordered=games.slice().sort((a,b)=>String(b.date).localeCompare(String(a.date))||String(b.id).localeCompare(String(a.id)));
@@ -185,7 +204,7 @@ async function load(){
    +'<div class="toolbar"><label class="filter-label" for="gameSelect">Attended game</label><select id="gameSelect">'
    +ordered.map(g=>'<option value="'+esc(g.id)+'">'+dt(g.date)+' · '+esc(g.away_team)+' @ '+esc(g.home_team)+' · '+esc(scores(g))+'</option>').join("")+'</select></div>'
    +'<section id="scoreboard"></section><div id="gameStats"></div>';
-  const run=g=>show(g,ordered,rows,innings,plays,decisions);
+  const run=g=>show(g,ordered,rows,innings,plays,decisions,recaps);
   $("gameSelect").addEventListener("change",()=>{
    const g=ordered.find(x=>String(x.id)===$("gameSelect").value);if(!g)return;
    history.replaceState(null,"",gameUrl(g));current=g;run(g);

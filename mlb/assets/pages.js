@@ -19,6 +19,14 @@ function mlbPortrait(id){
  return typeof url==="string"&&(/^https:\/\/a\.espncdn\.com\/i\/headshots\/mlb\/players\/full\/\d+\.png$/.test(url)||/^https:\/\/upload\.wikimedia\.org\/wikipedia\/commons\//.test(url)|| (["historical","official"].includes(portraitFallbacks[String(id)]?.provider)&&/^https:\/\/(?:[a-z0-9.-]+\.)?(?:mlb\.com|mlbstatic\.com|espncdn\.com|baseball-reference\.com|sports-reference\.com|sr-logos\.com|sidearmsports\.com|sidearmdev\.com|sidearmnextgen\.com|gohofstra\.com|riceowls\.com|rolltide\.com|cloudfront\.net|amazonaws\.com)\/[^\s"'<>]+$/i.test(url)))
  ? url : "https://img.mlbstatic.com/mlb-photos/image/upload/w_213,q_85/v1/people/"+encodeURIComponent(id)+"/headshot/67/current";
 }
+
+function decisionPortrait(name,href,urls){
+ const initials=String(name||"").trim().split(/\s+/).filter(Boolean).slice(0,2).map(s=>s[0]).join("").toUpperCase();
+ const candidates=[...new Set(urls.filter(Boolean))];
+ const photo='<span class="decision-portrait"><span aria-hidden="true">'+esc(initials)+'</span>'+(candidates.length?'<img alt="" loading="lazy" decoding="async" src="'+esc(candidates[0])+'" data-remaining="'+esc(JSON.stringify(candidates.slice(1)))+'" onload="this.classList.add(\'is-loaded\')" onerror="this.classList.remove(\'is-loaded\');const rest=JSON.parse(this.dataset.remaining);if(rest.length){this.dataset.remaining=JSON.stringify(rest.slice(1));this.src=rest[0]}else this.remove()">':'')+'</span>';
+ return '<a class="decision-portrait-link" aria-label="View '+esc(name)+' player profile" href="'+esc(href)+'">'+photo+'</a>';
+}
+
 let gamePhotos={};
 if(page==="games"){
  try{const response=await fetch("./data/game_photos.json",{cache:"no-store"});if(response.ok)gamePhotos=await response.json();}
@@ -257,7 +265,8 @@ function gamePage(){
  const decisionPerson=(person,role)=>{
   if(!decisionVerified)return '<span class="mlb-decision-unavailable">Not verified</span>';
   if(!person)return '<span class="mlb-decision-unavailable">'+(role==="Save"?"No save":"Unavailable")+'</span>';
-  return '<a class="mlb-decision-name" href="./player.html?id='+encodeURIComponent(person.id)+'">'+esc(person.name||"Player #"+person.id)+'</a>';
+  const name=person.name||"Player #"+person.id,href="./player.html?id="+encodeURIComponent(person.id);
+   return '<div class="decision-person">'+decisionPortrait(name,href,[mlbPortrait(person.id)])+'<div class="decision-person-info"><a class="mlb-decision-name" href="'+esc(href)+'">'+esc(name)+'</a>'+photoCredit(portraitFallbacks[String(person.id)])+'</div></div>';
  };
  const decisionsPanel='<section class="panel mlb-decisions-panel" id="pitchingDecisions">'
   +'<div class="mlb-pregame-eyebrow">OFFICIAL MLB GAME DECISIONS</div><h2>Win, Loss & Save</h2>'

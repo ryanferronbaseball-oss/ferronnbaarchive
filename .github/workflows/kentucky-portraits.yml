@@ -79,7 +79,7 @@ jobs:
                   if host(r.url)!=HOST:raise ValueError('Unexpected roster host')
                   soup=BeautifulSoup(r.text,'html.parser')
                   heading=' '.join(t.get_text(' ',strip=True) for t in soup.find_all(['h1','h2','title']))
-                  if not re.search(r'baseball\s+'+re.escape(season)+r'\s+roster',heading,re.I):raise ValueError('Season not confirmed: '+heading[:160])
+                  if not re.search(r'(?:baseball\s+'+re.escape(season)+r'\s+roster|'+re.escape(season)+r'\s+baseball\s+roster|baseball\s+roster\s+'+re.escape(season)+r')',heading,re.I):raise ValueError('Season not confirmed: '+heading[:160])
                   return soup,r.url
               except Exception as e:report['notes'].append(f'{h} {y}: {e}');return None
           requests=collections.defaultdict(set)
@@ -138,7 +138,8 @@ jobs:
                           if not any(n in norm(title) for n in names):continue
                           if h==HOST:
                               season=str(y)
-                              if season not in title:continue
+                              # The roster has already established the season; an exact linked bio can omit it.
+                              if not re.search(r'\b'+re.escape(season)+r'\b',title) and not any(n in norm(title) for n in names):continue
                               options=list(kentucky_images(soup,r.url,names,True))
                               if not options:
                                   diagnostics[cid]['attempts'].append({'source':r.url,'images':[{'alt':im.get('alt'),'src':im.get('src'),'data-src':im.get('data-src')} for im in soup.find_all('img') if re.search(r'headshot|portrait|roster-bio-photo|roster-card',str(im),re.I)][:8]})

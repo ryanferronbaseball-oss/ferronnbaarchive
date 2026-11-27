@@ -6,7 +6,7 @@ if(!selectors[sport])return;
 const read=async path=>{try{const r=await fetch(path,{cache:"no-store"});return r.ok?await r.json():{}}catch{return {}}};
 const espnId=id=>/^espn:(\d+)$/.exec(id)?.[1]||null;
 const espn=(league,id)=>id?"https://a.espncdn.com/i/headshots/"+league+"/players/full/"+id+".png":null;
-let headshots={},baseballPortraits={},baseballRows=new Map();
+let headshots={},baseballPortraits={},baseballRows=new Map(),nhlPortraits={};
 function collegeCandidates(id){
  const mapped=headshots[id]||{},mappedId=mapped.espn_athlete_id;
  const photoId=espnId(id)||(typeof mappedId==="string"&&/^\d+$/.test(mappedId)?mappedId:null);
@@ -19,9 +19,7 @@ function candidates(id){
  if(sport==="nba")return [espn("nba",espnId(id))].filter(Boolean);
  if(sport==="nfl"||sport==="cfb")return [espn(sport,/^\d+$/.test(id)?id:null)].filter(Boolean);
  if(sport==="college-baseball")return window.CollegeBaseballArchive?.playerPortraitCandidates?.(baseballPortraits[id],baseballRows.get(id)||[])||[];
- // The archive uses a slug for this historical goalie, not a provider ID.
- // Erik Ersberg's NHL ID is 8473975 (https://www.wikidata.org/wiki/Q646205).
- if(sport==="nhl"&&id==="erik-ersberg")return ["https://assets.nhle.com/mugs/nhl/latest/8473975.png","https://assets.nhle.com/mugs/nhl/20092010/LAK/8473975.png"];
+ if(sport==="nhl")return [nhlPortraits[id]?.url].filter(Boolean);
  return [];
 }
 function decorate(){
@@ -52,6 +50,7 @@ function decorate(){
  }
 }
 async function init(){
+ if(sport==="nhl")nhlPortraits=await read("./data/player_portraits.json");
  if(sport==="college")headshots=(await read("./data/player_headshots.json")).players||{};
  if(sport==="college-baseball"){
   // The archive script is deferred on some pages.

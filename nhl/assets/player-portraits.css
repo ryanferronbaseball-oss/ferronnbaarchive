@@ -1,0 +1,4 @@
+.nhl-player-hero .nhl-player-portrait{width:145px;height:166px;flex:0 0 145px;position:relative;overflow:hidden;letter-spacing:0}
+.nhl-player-portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 0%;opacity:0}
+.nhl-player-portrait.has-portrait img{opacity:1}
+@media(max-width:540px){.nhl-player-hero .nhl-player-portrait{width:94px;height:110px;flex-basis:94px}}

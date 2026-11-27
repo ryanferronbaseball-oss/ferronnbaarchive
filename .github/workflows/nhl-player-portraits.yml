@@ -1,0 +1,82 @@
+name: NHL player portrait audit
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/nhl-player-portraits.yml','scripts/audit_nhl_portraits.py']
+permissions:
+  contents: write
+concurrency:
+  group: nhl-player-portraits
+  cancel-in-progress: false
+jobs:
+  audit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install requests pillow playwright
+      - run: python -m playwright install chromium
+      - run: python scripts/audit_nhl_portraits.py
+      - name: Verify NHL profile and Player of the Game portrait rendering
+        run: |
+          python - <<'PY'
+          import json,pathlib,http.server,threading
+          from playwright.sync_api import sync_playwright
+          data=pathlib.Path('nhl/data');reg=data/'player_portraits.json';report=data/'player_portrait_audit.json'
+          records=json.loads(reg.read_text());audit=json.loads(report.read_text())
+          server=http.server.ThreadingHTTPServer(('127.0.0.1',0),http.server.SimpleHTTPRequestHandler)
+          threading.Thread(target=server.serve_forever,daemon=True).start()
+          base=f'http://127.0.0.1:{server.server_port}/nhl'
+          out=pathlib.Path('nhl-portrait-review');out.mkdir(exist_ok=True)
+          failures=[]
+          with sync_playwright() as p:
+              browser=p.chromium.launch()
+              for cid in audit['added']:
+                  for mode,width in [('desktop',1360),('mobile',390)]:
+                      page=browser.new_page(viewport={'width':width,'height':900})
+                      try:
+                          page.goto(base+'/player.html?id='+cid,wait_until='domcontentloaded',timeout=45000)
+                          pic=page.locator('.nhl-player-portrait.has-portrait img')
+                          pic.wait_for(timeout=15000)
+                          assert pic.evaluate('(el)=>el.naturalWidth>1 && el.getBoundingClientRect().width>70')
+                          page.locator('.nhl-player-hero').screenshot(path=str(out/(cid+'-'+mode+'.png')))
+                      except Exception as e:failures.append({'id':cid,'mode':mode,'error':str(e)[:300]})
+                      finally:page.close()
+              for mode,width in [('desktop',1360),('mobile',390)]:
+                  page=browser.new_page(viewport={'width':width,'height':900})
+                  page.goto(base+'/game.html?id=nhl-2008-03-27-phx-lak',wait_until='domcontentloaded',timeout=45000)
+                  portrait=page.locator('#playerOfGame .ca-potg-portrait')
+                  portrait.wait_for(timeout=20000)
+                  if 'erik-ersberg' in records:portrait.locator('img').wait_for(timeout=10000)
+                  page.locator('#playerOfGame').screenshot(path=str(out/('potg-'+mode+'.png')))
+                  page.close()
+              browser.close()
+          failed={f['id'] for f in failures}
+          for cid in failed:records.pop(cid,None)
+          audit['added']=[cid for cid in audit['added'] if cid not in failed]
+          audit['render_failures']=failures
+          audit['registered']-=len(failed)
+          reg.write_text(json.dumps(records,indent=2,sort_keys=True)+'\n')
+          report.write_text(json.dumps(audit,indent=2,sort_keys=True)+'\n')
+          server.shutdown()
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: nhl-portrait-review
+          path: |
+            nhl-portrait-review/
+            nhl/data/player_portrait_audit.json
+      - name: Publish verified portraits
+        run: |
+          git config user.name "Courtside Archive"
+          git config user.email "actions@users.noreply.github.com"
+          git add nhl/data/player_portraits.json nhl/data/player_portrait_audit.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Register verified NHL player portraits"
+          git pull --rebase origin main
+          git push origin main

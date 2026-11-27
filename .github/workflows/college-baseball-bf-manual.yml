@@ -17,7 +17,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Apply verified game-specific BF
+      - name: Apply verified March 11 2020 game and correct date
         run: |
           python - <<'PY'
           import json
@@ -25,61 +25,72 @@ jobs:
           D=Path('college-baseball/data')
           stats=D/'player_stats.json'
           audit=D/'bf_audit_recovery.json'
+          gamesfile=D/'games.json'
+          initial=D/'bf_audit_2020_2021.json'
+          attendance=D/'attendance_master_444.csv'
           rows=json.loads(stats.read_text())
           report=json.loads(audit.read_text())
-          gid='cb-2018-04-08-loyola-marymount-san-diego-att0024'
-          source='https://s3.us-east-2.amazonaws.com/sidearm.nextgen.sites/lmulions.com/documents/2018/6/5/8944__m_basebl_2017_18_release__release_20180413aaa.pdf#page=24'
-          # Contemporary PDF page 24, confirmed with official HTML pitching lines and play-by-play.
+          games=json.loads(gamesfile.read_text())
+          initial_report=json.loads(initial.read_text())
+          gid='cb-2020-03-10-cal-baptist-san-diego-att0083'
+          source='https://usdtoreros.com/sports/baseball/stats/2020/california-baptist/boxscore/9683'
+          old_date='2020-03-10'
+          date='2020-03-11'
           seeds=[
-              ('cb-loyola-marymount-nick-frasso',None,None,(6,4,4,4,3,1,54),13),
-              ('cb-loyola-marymount-kyle-dozier','cb-loyola-marymount-matt-voelker','Matt Voelker',(7,6,7,4,0,2,46),16),
-              ('cb-loyola-marymount-braydon-salzman',None,None,(0,1,3,3,1,0,13),3),
-              ('cb-loyola-marymount-josh-robins',None,None,(3,3,4,4,1,2,35),10),
-              ('cb-loyola-marymount-sean-paquet',None,None,(5,0,0,0,0,4,23),5),
-              ('cb-loyola-marymount-brendan-kawaja','cb-loyola-marymount-cj-fernandezees','CJ Fernandezees',(3,0,0,0,0,0,6),3),
-              ('cb-san-diego-nick-sprengel',None,None,(14,6,5,5,3,5,80),22),
-              ('cb-san-diego-travis-kuhn',None,None,(13,2,1,1,2,6,65),18),
+              ('cb-cal-baptist-chris-burica',(16,8,2,2,2,3,84,1),27),
+              ('cb-cal-baptist-christian-culpepper',(5,0,0,0,2,2,30,0),7),
+              ('cb-cal-baptist-jorge-valerio',(3,0,0,0,0,1,14,0),3),
+              ('cb-san-diego-jack-dolak',(18,0,0,0,3,10,103,0),20),
+              ('cb-san-diego-jake-reed',(5,2,0,0,1,1,24,0),8),
+              ('cb-san-diego-conner-thurman',(4,0,0,0,0,2,14,0),4),
           ]
           arms=[r for r in rows if r['game_id']==gid and r.get('pitching') is not None]
           entry=next(r for r in report['games'] if r['game_id']==gid)
-          assert len(arms)==len(seeds)
-          fields=('outs','hits','runs','earnedRuns','baseOnBalls','strikeOuts','numberOfPitches')
-          values=[]; corrections=[]; added=0
-          for old,new,name,sig,bf in seeds:
-              candidates=[r for r in arms if r['player_id'] in {old,new}]
-              assert len(candidates)==1,(old,candidates)
-              r=candidates[0]; p=r['pitching']
-              assert tuple(p[k] for k in fields)==sig,(old,p)
-              assert p.get('battersFaced') in (None,bf),(old,p)
-              if new:
-                  corrections.append({'old_player_id':old,'new_player_id':new,'player':name})
-                  if r['player_id']==old:
-                      r['player_id']=new; r['player']=name
-                      r['identity_source_url']=source
-                      r['identity_note']='Contemporary LMU game notes PDF and official play-by-play identify this pitcher; current historical Sidearm player link misassigns the identical pitching line.'
+          game=next(r for r in games if r['id']==gid)
+          prior=next(r for r in initial_report['games'] if r['game_id']==gid)
+          assert len(arms)==6
+          assert (game['away'],game['home'],game['away_score'],game['home_score'],game['source_url'])==('Cal Baptist','San Diego',0,2,source)
+          assert game['date'] in (old_date,date)
+          assert entry['date'] in (old_date,date)
+          assert prior['date'] in (old_date,date)
+          fields=('outs','hits','runs','earnedRuns','baseOnBalls','strikeOuts','numberOfPitches','hitBatsmen')
+          values=[]; added=0
+          for pid,sig,bf in seeds:
+              matches=[r for r in arms if r['player_id']==pid]
+              assert len(matches)==1,pid
+              r=matches[0]; p=r['pitching']
+              assert tuple(p[k] for k in fields)==sig,(pid,p)
+              assert p.get('battersFaced') in (None,bf)
               if p.get('battersFaced') is None:
                   p['battersFaced']=bf; added+=1
-              values.append({'player_id':r['player_id'],'team':r['team'],'BF':bf})
+              values.append({'player_id':pid,'team':r['team'],'BF':bf})
               print(r['player'],bf,'K%',round(100*p['strikeOuts']/bf,1),'BB%',round(100*p['baseOnBalls']/bf,1))
-          assert sum(v['BF'] for v in values if v['team']=='Loyola Marymount')==50==38+5+5+2
-          assert sum(v['BF'] for v in values if v['team']=='San Diego')==40==34+5+1
+          assert sum(v['BF'] for v in values if v['team']=='Cal Baptist')==37==32+4+1
+          assert sum(v['BF'] for v in values if v['team']=='San Diego')==32==28+4
           if entry['status']=='recovered':
-              assert entry['values']==values and added==0
+              assert entry['values']==values and added==0 and game['date']==date
               print('Already verified and saved')
               raise SystemExit(0)
-          assert entry['status']=='unresolved' and added==8
+          assert entry['status']=='unresolved' and added==6
+          game['date']=date
+          prior['date']=date
           entry.pop('reason',None)
-          entry.update(status='recovered',method='Manual official contemporary PDF and HTML play-by-play; corrected two misassigned pitcher identities; exact BF and opponent plate appearance totals',manual_source_url=source,verification={'Loyola Marymount':{'BF':50,'opponent_AB':38,'opponent_BB':5,'opponent_HBP':5,'opponent_SH':2},'San Diego':{'BF':40,'opponent_AB':34,'opponent_BB':5,'opponent_HBP':1}},identity_corrections=corrections,pitchers=8,added=added,recovered_this_run=added,values=values)
-          stats.write_text(json.dumps(rows,ensure_ascii=False,indent=2)+'\n')
-          audit.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
+          entry.update(date=date,original_archive_date=old_date,status='recovered',method='Manual verification of official USD box score dated March 11, 2020; corrected date; exact pitcher BF and opponent plate appearances',manual_source_url=source,verification={'Cal Baptist':{'BF':37,'opponent_AB':32,'opponent_BB':4,'opponent_HBP':1},'San Diego':{'BF':32,'opponent_AB':28,'opponent_BB':4,'opponent_HBP':0}},pitchers=6,added=added,recovered_this_run=added,values=values)
+          csv=attendance.read_bytes()
+          old=b'cb-attended-0083,84,2020-03-10,Cal Baptist,San Diego,'
+          new=b'cb-attended-0083,84,2020-03-11,Cal Baptist,San Diego,'
+          assert csv.count(old)+csv.count(new)==1
+          attendance.write_bytes(csv.replace(old,new))
+          for path,data in [(stats,rows),(audit,report),(gamesfile,games),(initial,initial_report)]:
+              path.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n')
           print('Remaining unresolved:',sum(r['status']=='unresolved' for r in report['games']))
           PY
-      - name: Commit game and audit together
+      - name: Commit verified BF and date correction
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add college-baseball/data/player_stats.json college-baseball/data/bf_audit_recovery.json
+          git add college-baseball/data/player_stats.json college-baseball/data/bf_audit_recovery.json college-baseball/data/games.json college-baseball/data/bf_audit_2020_2021.json college-baseball/data/attendance_master_444.csv
           if git diff --cached --quiet; then exit 0; fi
-          git commit -m "Recover eight verified BF entries for 2018 LMU at USD"
+          git commit -m "Recover six verified BF entries and correct CBU USD game date to March 11 2020"
           git pull --rebase origin main
           git push origin HEAD:main

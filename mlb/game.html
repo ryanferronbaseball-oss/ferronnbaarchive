@@ -3,7 +3,17 @@
 <title>MLB Games & Box Scores | Courtside Archive</title>
 <link rel="stylesheet" href="./assets/archive.css?v=20261124-gamephotos1">
 <script defer src="./assets/archive-recaps-20261116-48.js"></script>
-<script defer src="./assets/pages.js?v=mlb-targeted-portraits-20261125"></script>
-<link rel="stylesheet" href="./assets/statcast.css?v=20261106-crosssport-sweep3"><script defer src="./assets/statcast-ui.js?v=statcast-integration-20261017"></script><link rel="stylesheet" href="../assets/sport-burgundy-ice.css?v=20261106-crosssport-sweep4"><link rel="stylesheet" href="../assets/game-detail-scorecard.css?v=20261123-logo1"><script src="../assets/game-detail-scorecard.js?v=20261124-localmirror2"></script><script src="../assets/historical-team-logos.js?v=20261123-era1"></script><script src="../assets/game-detail-logos.js?v=20261124-localmirror2"></script></head><body data-page="games"><main><div id="navigation"></div><div id="app"><div class="empty">Loading your MLB attendance history…</div></div>
+<script defer src="./assets/pages.js?v=20261127-decision-portraits"></script>
+<link rel="stylesheet" href="./assets/statcast.css?v=20261106-crosssport-sweep3"><script defer src="./assets/statcast-ui.js?v=statcast-integration-20261017"></script><link rel="stylesheet" href="../assets/sport-burgundy-ice.css?v=20261106-crosssport-sweep4"><link rel="stylesheet" href="../assets/game-detail-scorecard.css?v=20261123-logo1"><script src="../assets/game-detail-scorecard.js?v=20261124-localmirror2"></script><script src="../assets/historical-team-logos.js?v=20261123-era1"></script><script src="../assets/game-detail-logos.js?v=20261124-localmirror2"></script><style>
+.mlb-decisions-panel .decision-person{display:flex;align-items:center;gap:12px;min-width:0}
+.mlb-decisions-panel .decision-portrait-link{display:block;flex:0 0 auto;text-decoration:none;color:inherit}
+.mlb-decisions-panel .decision-portrait{position:relative;display:grid;place-items:center;width:clamp(48px,6vw,76px);height:clamp(60px,7.5vw,94px);overflow:hidden;border-radius:9px;border:1px solid #c4d7e6;background:linear-gradient(145deg,#e4f1fa,#f8eaf0);color:#752e49;font-size:20px;font-weight:850}
+.mlb-decisions-panel .decision-portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center bottom;opacity:0}
+.mlb-decisions-panel .decision-portrait img.is-loaded{opacity:1;background:#e8f2fa}
+.mlb-decisions-panel .decision-portrait-link:hover .decision-portrait{border-color:#752e49}
+.mlb-decisions-panel .decision-person-info{min-width:0;flex:1}
+.mlb-decisions-panel .decision-person-info .archive-photo-credit{display:block;font-size:10px;line-height:1.4;margin-top:4px;overflow-wrap:anywhere}
+@media(max-width:650px){.mlb-decisions-panel .decision-portrait{width:66px;height:82px}}
+</style></head><body data-page="games"><main><div id="navigation"></div><div id="app"><div class="empty">Loading your MLB attendance history…</div></div>
 <footer class="footer">Courtside Archive · Independent personal MLB attendance records. Official results, player box scores and scoring plays provided by MLB's StatsAPI.</footer>
 </main></body></html>

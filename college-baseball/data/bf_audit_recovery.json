@@ -3712,8 +3712,54 @@
       "home": "Belmont",
       "source_url": "https://etsubucs.com/sports/baseball/stats/2026/belmont/boxscore/12559",
       "original_reason": "unable to uniquely match both full pitching tables to archived names and IP/H/R/ER/BB/K",
-      "status": "unresolved",
-      "reason": "unable to uniquely match both full pitching tables to archived names and IP/H/R/ER/BB/K"
+      "status": "recovered",
+      "method": "Manual official Belmont HTML game 1; exact pitching signatures and names matched; explicit BF reconciled against opponent batting in Belmont source; existing batting statistics preserved",
+      "manual_source_url": "https://belmontbruins.com/sports/baseball/stats/2026/east-tennessee-state/boxscore/7031",
+      "verification": {
+        "East Tennessee State": {
+          "BF": 32,
+          "opponent_AB": 27,
+          "opponent_BB": 3,
+          "opponent_HBP": 1,
+          "opponent_SF": 1
+        },
+        "Belmont": {
+          "BF": 33,
+          "opponent_AB": 30,
+          "opponent_BB": 1,
+          "opponent_SF": 2
+        }
+      },
+      "pitchers": 5,
+      "added": 5,
+      "recovered_this_run": 5,
+      "values": [
+        {
+          "player_id": "cb-east-tennessee-state-michael-harpster",
+          "team": "East Tennessee State",
+          "BF": 24
+        },
+        {
+          "player_id": "cb-east-tennessee-state-derek-mccarley",
+          "team": "East Tennessee State",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-east-tennessee-state-tyler-kropis",
+          "team": "East Tennessee State",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-belmont-ridge-harvey",
+          "team": "Belmont",
+          "BF": 26
+        },
+        {
+          "player_id": "cb-belmont-aubrey-moraitakis",
+          "team": "Belmont",
+          "BF": 7
+        }
+      ]
     },
     {
       "game_id": "cb-2026-04-24-central-arkansas-bellarmine-att0414",

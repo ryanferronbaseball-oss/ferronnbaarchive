@@ -1,0 +1,126 @@
+name: Texas Tommy Farmer IV portrait recovery
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/texas-farmer-portrait.yml']
+permissions:
+  contents: write
+concurrency:
+  group: college-baseball-portraits
+  cancel-in-progress: false
+jobs:
+  correct:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: pip install requests pillow beautifulsoup4 playwright
+      - run: python -m playwright install chromium
+      - name: Recover exact official Tommy Farmer IV portrait
+        env:
+          PYTHONPATH: scripts
+        run: |
+          python - <<'PY'
+          import json,re
+          from pathlib import Path
+          from urllib.parse import urljoin,urlsplit,parse_qs,urlencode,unquote
+          from bs4 import BeautifulSoup
+          from audit_player_portraits import get,probe
+          D=Path('college-baseball/data')
+          def load(n):return json.loads((D/n).read_text())
+          def save(n,d):(D/n).write_text(json.dumps(d,indent=2,ensure_ascii=False,sort_keys=True)+'\n')
+          pid='cb-texas-farmer-iv'
+          source='https://texaslonghorns.com/sports/baseball/roster/tommy-farmer-iv/13928'
+          reg=load('player_portraits.json');cross=load('player_identity_crosswalk.json')
+          assert any(x['player_id']==pid and x['display_name']=='Tommy Farmer IV' for x in cross['display_aliases'])
+          r=get(source);r.raise_for_status();assert urlsplit(r.url).hostname=='texaslonghorns.com'
+          soup=BeautifulSoup(r.text,'html.parser')
+          heading=' '.join(t.get_text(' ',strip=True) for t in soup.find_all(['h1','h2','title']))
+          assert '2025' in heading and 'Farmer' in heading
+          options=[]
+          for im in soup.find_all('img'):
+              for k in ('src','data-src','data-lazy-src','data-original'):
+                  raw=im.get(k)
+                  if not raw:continue
+                  u=urljoin(r.url,raw);q=parse_qs(urlsplit(u).query)
+                  if urlsplit(u).hostname!='images.sidearmdev.com' or '/crop' not in urlsplit(u).path:continue
+                  base=unquote(q.get('url',[''])[0])
+                  if urlsplit(base).hostname!='dxbhsrqyrr690.cloudfront.net':continue
+                  if not urlsplit(base).path.endswith('/texassports_com/images/2025/1/18/Farmer_Tommy-Cropped-2025.jpg'):continue
+                  if (q.get('width'),q.get('height')) not in ((['180'],['270']),(['603'],['803'])):continue
+                  options.append('https://images.sidearmdev.com/crop?'+urlencode({'url':base,'width':603,'height':803,'type':'webp'}))
+          assert len(set(options))==1,'Exact official portrait not found on biography'
+          u=options[0]
+          assert probe(u)[0]=='image','Portrait failed image validation'
+          if pid in reg:assert reg[pid]['url']==u,'Existing portrait differs; preserve it'
+          reg[pid]={'url':u,'source':source,'provider':'college','school':'Texas','season':2025,'photo_year':2025}
+          save('player_portraits.json',reg)
+          save('texas_farmer_portrait_recovery.json',{'id':pid,'display_name':'Tommy Farmer IV','portrait':reg[pid]})
+          PY
+      - name: Verify Texas coverage and canonical name
+        run: |
+          node scripts/export_baseball_portrait_preferences.cjs 'Texas' > /tmp/duke.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          D=Path('college-baseball/data')
+          p=json.load(open('/tmp/duke.json'));reg=json.loads((D/'player_portraits.json').read_text())
+          a=[x for x in p if x['id']=='cb-texas-farmer-iv']
+          assert len(a)==1 and a[0]['name']=='Tommy Farmer IV',a
+          assert len(p)==30 and all(x['id'] in reg for x in p)
+          report=json.loads((D/'texas_farmer_portrait_recovery.json').read_text());report['coverage']={'players':30,'portraits':30}
+          (D/'texas_farmer_portrait_recovery.json').write_text(json.dumps(report,indent=2)+'\n')
+          PY
+      - name: Verify Tommy Farmer IV profile on desktop and mobile
+        run: |
+          python - <<'PY'
+          import json,threading,http.server,functools
+          from pathlib import Path
+          from playwright.sync_api import sync_playwright
+          from urllib.parse import quote
+          root=Path.cwd();D=root/'college-baseball/data'
+          reg=json.loads((D/'player_portraits.json').read_text())
+          report=json.loads((D/'texas_farmer_portrait_recovery.json').read_text())
+          server=http.server.ThreadingHTTPServer(('127.0.0.1',0),functools.partial(http.server.SimpleHTTPRequestHandler,directory=str(root)))
+          threading.Thread(target=server.serve_forever,daemon=True).start()
+          results=[]
+          with sync_playwright() as p:
+              browser=p.chromium.launch()
+              for mode,w,h in [('desktop',1360,900),('mobile',390,844)]:
+                  page=browser.new_page(viewport={'width':w,'height':h})
+                  for pid in [report['id']]:
+                      page.goto(f'http://127.0.0.1:{server.server_port}/college-baseball/player.html?id='+quote(pid),wait_until='domcontentloaded',timeout=30000)
+                      frame=page.locator('.cb-player-portrait')
+                      frame.wait_for(state='visible',timeout=15000)
+                      page.wait_for_function("() => {const i=document.querySelector('.cb-player-portrait img');return i&&i.complete&&i.naturalWidth>0&&i.parentElement.classList.contains('has-portrait')}",timeout=15000)
+                      actual=frame.locator('img').evaluate('i=>i.currentSrc')
+                      assert actual==reg[pid]['url'],(pid,actual)
+                      results.append({'id':pid,'viewport':mode,'status':'pass'})
+                      print(pid,mode,'pass',flush=True)
+                  page.close()
+              browser.close()
+          server.shutdown()
+          report['render_checks']=results
+          (D/'texas_farmer_portrait_recovery.json').write_text(json.dumps(report,indent=2)+'\n')
+          PY
+      - name: Publish verified corrections (retry)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add college-baseball/data/player_portraits.json college-baseball/data/texas_farmer_portrait_recovery.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Register official Tommy Farmer IV headshot and verify Texas coverage"
+          for attempt in 1 2 3; do
+            git pull --rebase origin main || exit 1
+            if git push origin HEAD:main; then exit 0; fi
+            sleep 3
+          done
+          exit 1

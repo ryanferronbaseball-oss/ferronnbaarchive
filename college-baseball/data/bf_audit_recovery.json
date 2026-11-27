@@ -3559,8 +3559,78 @@
       "home": "Tennessee Tech",
       "source_url": "https://storage.googleapis.com/fightingirish-com/2026/03/3126_ND.pdf",
       "original_reason": "date not confirmed",
-      "status": "unresolved",
-      "reason": "PDF gamebook deferred to PDF recovery pass"
+      "status": "recovered",
+      "method": "Manual official PDF gamebook; date and score confirmed; exact pitcher names and pitching signatures matched; BF reconciled against opponent batting",
+      "manual_source_url": "https://storage.googleapis.com/fightingirish-com/2026/03/3126_ND.pdf",
+      "verification": {
+        "Notre Dame": {
+          "BF": 28,
+          "opponent_AB": 25,
+          "opponent_BB": 3
+        },
+        "Tennessee Tech": {
+          "BF": 42,
+          "opponent_AB": 36,
+          "opponent_BB": 4,
+          "opponent_SH": 1,
+          "opponent_SF": 1
+        }
+      },
+      "pitchers": 10,
+      "added": 10,
+      "recovered_this_run": 10,
+      "values": [
+        {
+          "player_id": "cb-notre-dame-ty-uber",
+          "team": "Notre Dame",
+          "BF": 18
+        },
+        {
+          "player_id": "cb-notre-dame-kellan-klosterman",
+          "team": "Notre Dame",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-notre-dame-eli-thurmond",
+          "team": "Notre Dame",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-notre-dame-dylan-singleton",
+          "team": "Notre Dame",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-tennessee-tech-logan-moller",
+          "team": "Tennessee Tech",
+          "BF": 13
+        },
+        {
+          "player_id": "cb-tennessee-tech-carter-casabella",
+          "team": "Tennessee Tech",
+          "BF": 13
+        },
+        {
+          "player_id": "cb-tennessee-tech-eli-huddleston",
+          "team": "Tennessee Tech",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-tennessee-tech-reece-mcduffie",
+          "team": "Tennessee Tech",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-tennessee-tech-micah-summar",
+          "team": "Tennessee Tech",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-tennessee-tech-carson-davis",
+          "team": "Tennessee Tech",
+          "BF": 1
+        }
+      ]
     },
     {
       "game_id": "cb-2026-04-04-missouri-kentucky-att0405",

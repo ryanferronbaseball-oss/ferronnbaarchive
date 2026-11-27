@@ -38,7 +38,7 @@ jobs:
           SCHOOL='Clemson'
           HOST='clemsontigers.com'
           REG='college-baseball/data/player_portraits.json'
-          REPORT='college-baseball/data/clemson_portrait_audit.json'
+          REPORT='college-baseball/data/clemson_portrait_recovery.json'
           players=json.loads(subprocess.check_output(['node','scripts/export_baseball_portrait_preferences.cjs',SCHOOL],text=True))
           assert players,'No witnessed Clemson players'
           registry=load(REG,{})
@@ -75,19 +75,17 @@ jobs:
               for _,u in sorted(set(options)):yield u
           def page_for(h,y):
               if h!=HOST:return roster(y,h,report['notes'])
-              errors=[]
-              for segment in ('baseball',):
-                  for season in (str(y),f'{y-1}-{str(y)[-2:]}'):
-                      u=f'https://{HOST}/sports/{segment}/roster/season/{season}'
-                      try:
-                          r=get(u);r.raise_for_status()
-                          if host(r.url)!=HOST:raise ValueError('Unexpected roster host')
-                          soup=BeautifulSoup(r.text,'html.parser')
-                          heading=' '.join(t.get_text(' ',strip=True) for t in soup.find_all(['h1','h2','title']))
-                          if not re.search(r'\b'+re.escape(season)+r'\s+baseball\s+roster\b',heading,re.I):raise ValueError('Season not confirmed: '+heading[:120])
-                          return soup,r.url
-                      except Exception as e:errors.append(f'{u}: {e}')
-              report['notes'].append(f'{h} {y}: '+'; '.join(errors));return None
+              season=f'{y-1}-{str(y)[-2:]}'
+              u=f'https://{HOST}/sports/baseball/roster/season/{y-1}'
+              try:
+                  r=get(u);r.raise_for_status()
+                  if host(r.url)!=HOST:raise ValueError('Unexpected roster host')
+                  soup=BeautifulSoup(r.text,'html.parser')
+                  heading=' '.join(t.get_text(' ',strip=True) for t in soup.find_all(['h1','h2','title']))
+                  if not re.search(r'\b(?:Baseball\s+'+re.escape(season)+r'\s+Roster|'+re.escape(season)+r'\s+Baseball\s+Roster)\b',heading,re.I):raise ValueError('Season not confirmed: '+heading[:180])
+                  report.setdefault('roster_image_diagnostics',{})[str(y)]=[dict(im.attrs) for im in soup.find_all('img') if im.get('alt') and re.search(r'player|roster|headshot|portrait|/fit/600/800/',str(im),re.I)][:8]
+                  return soup,r.url
+              except Exception as e:report['notes'].append(f'{u}: {e}');return None
           requests=collections.defaultdict(set)
           for p in players:
               for school,years in p['schools'].items():
@@ -142,7 +140,7 @@ jobs:
                           soup=BeautifulSoup(r.text,'html.parser')
                           title=' '.join(t.get_text(' ',strip=True) for t in soup.find_all(['h1','h2','title']))
                           if h==HOST:
-                              seasons=(str(y),f'{y-1}-{str(y)[-2:]}')
+                              seasons=(str(y-1),f'{y-1}-{str(y)[-2:]}')
                               path=urlsplit(r.url).path.rstrip('/')
                               slug=norm(path.split('/')[-1])
                               # Candidate links originate on the season-verified roster; exact official slug and visible name must agree.
@@ -192,7 +190,7 @@ jobs:
           from playwright.sync_api import sync_playwright
           from PIL import Image,ImageDraw
           root=pathlib.Path.cwd()
-          report=json.loads((root/'college-baseball/data/clemson_portrait_audit.json').read_text())
+          report=json.loads((root/'college-baseball/data/clemson_portrait_recovery.json').read_text())
           out=root/'clemson-visual-review';out.mkdir(exist_ok=True)
           server=http.server.ThreadingHTTPServer(('127.0.0.1',0),functools.partial(http.server.SimpleHTTPRequestHandler,directory=str(root)))
           threading.Thread(target=server.serve_forever,daemon=True).start()
@@ -250,7 +248,7 @@ jobs:
           report['render_failures']=sorted(failed)
           report['registered_portraits']=sum(t['id'] in registry for t in report['targets'])
           regpath.write_text(json.dumps(registry,ensure_ascii=False,indent=2,sort_keys=True)+'\n')
-          (root/'college-baseball/data/clemson_portrait_audit.json').write_text(json.dumps(report,ensure_ascii=False,indent=2,sort_keys=True)+'\n')
+          (root/'college-baseball/data/clemson_portrait_recovery.json').write_text(json.dumps(report,ensure_ascii=False,indent=2,sort_keys=True)+'\n')
           PY
       - uses: actions/upload-artifact@v4
         if: always()
@@ -258,12 +256,12 @@ jobs:
           name: clemson-portrait-review
           path: |
             clemson-visual-review/
-            college-baseball/data/clemson_portrait_audit.json
+            college-baseball/data/clemson_portrait_recovery.json
       - name: Publish verified Clemson portrait changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add college-baseball/data/player_portraits.json college-baseball/data/clemson_portrait_audit.json
+          git add college-baseball/data/player_portraits.json college-baseball/data/clemson_portrait_recovery.json
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "Add verified Clemson witnessed-player portraits"
           for attempt in 1 2 3; do

@@ -16,9 +16,9 @@ main{max-width:1150px;margin:auto;padding:24px 20px 86px}.ca-hub-link{white-spac
 .cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-items:stretch}
 .player{border:1px solid #DEDCD2;background:#FFFEFB;border-radius:16px;padding:20px;min-width:0;overflow:hidden;display:flex;flex-direction:column;gap:0}
 .player-head{display:block;min-width:0}
-.identity{display:grid;grid-template-columns:58px minmax(0,1fr);gap:13px;align-items:center;min-width:0}
-.identity>div{min-width:0}
-.portrait{width:58px;height:58px;object-fit:contain;border-radius:12px;background:#E5EAE2;border:1px solid #C5D3C2}
+.identity{display:grid;grid-template-columns:120px minmax(0,1fr);gap:13px;align-items:center;min-width:0}
+.identity>div{min-width:0}.portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center bottom}.portrait img[hidden]{display:none}.portrait .initials{display:grid;place-items:center;width:100%;height:100%}@media(max-width:430px){.identity{grid-template-columns:88px minmax(0,1fr)}.portrait{width:88px!important;height:64px!important}}
+.portrait{width:120px;height:88px;position:relative;overflow:hidden;object-fit:contain;border-radius:12px;background:#E5EAE2;border:1px solid #C5D3C2}
 .player-name{display:block;font-size:21px;line-height:1.2;overflow-wrap:anywhere;letter-spacing:-.03em;font-weight:800;color:#284D3C!important;text-decoration:none!important}
 .player-name:hover{text-decoration:underline!important}
 .school{color:#667268;font-size:13px;margin-top:5px;overflow-wrap:anywhere}
@@ -87,8 +87,22 @@ document.addEventListener("DOMContentLoaded",()=>{
  const when=v=>A.date(v);
  const teams={USD:"San Diego",WFU:"Wake Forest",NCS:"NC State",WNMU:"Western New Mexico",BUTLER:"Butler",DAV:"Davidson",UCD:"UC Davis"};
  const asNum=v=>v===null||v===undefined||String(v).trim()===""||String(v).trim()==="—"||String(v).trim()==="-"?null:Number.isFinite(Number(v))?Number(v):null;
- const showNumber=n=>n==null?"—":Math.round(n).toLocaleString("en-US");
- let players=[],group="nfl";
+ const showNumber=n=>n==null?"—":n.toLocaleString("en-US",{maximumFractionDigits:2});
+ let players=[],group="nfl",nflPortraits={},collegePortraits={};
+ const validPortrait=u=>typeof u==="string"&&/^https:\/\/a\.espncdn\.com\/i\/headshots\/(?:nfl|college-football)\/players\/full\/\d+\.png$/.test(u);
+ function portraitHTML(p,initials){
+   const urls=[nflPortraits[p.athlete_id]?.url,collegePortraits[p.athlete_id]?.url].filter(validPortrait);
+   const src=urls[0];
+   return '<div class="portrait"><span class="initials" aria-hidden="true">'+escapeHtml(initials)+'</span>'+(src?'<img hidden loading="lazy" decoding="async" src="'+escapeHtml(src)+'" alt="'+escapeHtml(p.name)+' headshot" data-fallback="'+escapeHtml(urls[1]||'')+'">':'')+'</div>';
+ }
+ function bindPortraits(){
+   el("cards").querySelectorAll(".portrait img").forEach(img=>{
+     const reveal=()=>{if(img.naturalWidth>1){img.hidden=false;img.previousElementSibling.hidden=true;img.previousElementSibling.style.display="none"}};
+     const fail=()=>{const fallback=img.dataset.fallback;img.dataset.fallback="";if(fallback&&fallback!==img.src){img.src=fallback}else{img.hidden=true;img.previousElementSibling.hidden=false;img.previousElementSibling.style.display="grid"}};
+     img.addEventListener("load",reveal);img.addEventListener("error",fail);
+     if(img.complete){if(img.naturalWidth>1)reveal();else fail()}
+   })
+ }
  function statsFor(records,category,label){
    const groupRows=records.filter(r=>r.category===category);
    let sum=0,usable=0;
@@ -104,6 +118,8 @@ document.addEventListener("DOMContentLoaded",()=>{
    const s=(cat,key)=>statsFor(records,cat,key);
    if(position==="QB")return [["Passing yards",s("passing","YDS")],["Passing TD",s("passing","TD")],["Rushing yards",s("rushing","YDS")]];
    if(position==="RB")return [["Rushing yards",s("rushing","YDS")],["Rushing TD",s("rushing","TD")],["Receptions",s("receiving","REC")]];
+   if(position==="P")return [["Punts",s("punting","NO")],["Punt yards",s("punting","YDS")],["Inside 20",s("punting","In 20")]];
+   if(["LB","DE","DT","DL","EDGE"].includes(position))return [["Total tackles",s("defensive","TOT")],["Tackles for loss",s("defensive","TFL")],["Sacks",s("defensive","SACK")??s("defensive","SACKS")]];
    if(position==="CB"||position==="DB")return [["Total tackles",s("defensive","TOT")],["Passes defended",s("defensive","PD")],["Interceptions",s("interceptions","INT")]];
    return [["Receptions",s("receiving","REC")],["Receiving yards",s("receiving","YDS")],["Receiving TD",s("receiving","TD")]];
  }
@@ -112,7 +128,7 @@ document.addEventListener("DOMContentLoaded",()=>{
    const arr=primaryStats(records,position);
    return arr.map(([name,n])=>showNumber(n)+" "+name.toLowerCase()).join(" · ");
  }
- function bestKey(position){return position==="QB"?"passing":position==="RB"?"rushing":position==="CB"?"defensive":"receiving"}
+ function bestKey(position){return position==="QB"?"passing":position==="RB"?"rushing":["CB","DB","LB","DE","DT","DL","EDGE"].includes(position)?"defensive":position==="P"?"punting":"receiving"}
  function bestValue(records,position){
    const kind=bestKey(position),label=kind==="defensive"?"TOT":"YDS";
    return statsFor(records,kind,label)??-1;
@@ -168,7 +184,7 @@ document.addEventListener("DOMContentLoaded",()=>{
      }).join(" · ");
      const best=p.best,stats=best?gameSummary(best.rows,p.position):"—";
      return '<article class="player" data-player-id="'+escapeHtml(p.athlete_id)+'" data-category="'+escapeHtml(p.category)+'">'
-      +'<div class="player-head"><div class="identity"><div class="portrait" aria-hidden="true">'+escapeHtml(initials)+'</div><div>'
+      +'<div class="player-head"><div class="identity">'+portraitHTML(p,initials)+'<div>'
       +'<a class="player-name" href="./player.html?id='+encodeURIComponent(p.athlete_id)+'">'+escapeHtml(p.name)+'</a>'
       +'<div class="school">'+escapeHtml(schools)+' · '+escapeHtml(p.position)+'</div></div></div>'
       +'<div class="card-meta"><span class="pill'+(p.category!=="nfl"?" secondary":"")+'">'+(p.category==="nfl"?"NFL alumnus":p.category==="drafted_no_debut"?"Drafted · no NFL game":"Undrafted NFL opportunity")+'</span>'
@@ -185,12 +201,16 @@ document.addEventListener("DOMContentLoaded",()=>{
       +(p.draft_source_url?'<a href="'+escapeHtml(p.draft_source_url)+'" target="_blank" rel="noopener noreferrer">Draft source ↗</a>':'')+'</div>'
       +'</article>';
    }).join("");
+   bindPortraits();
  }
  Promise.all([
   fetch("./data/nfl_crosswalk.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("NFL verified directory");return r.json()}),
   fetch("./data/player_stats.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("college box scores");return r.json()}),
-  fetch("./data/games.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("attended college games");return r.json()})
- ]).then(([cross,logs,games])=>{
+  fetch("./data/games.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("attended college games");return r.json()}),
+  fetch("./data/nfl_alumni_portraits.json",{cache:"no-store"}).then(r=>r.ok?r.json():{}).catch(()=>({})),
+  fetch("./data/player_portraits.json",{cache:"no-store"}).then(r=>r.ok?r.json():{}).catch(()=>({}))
+ ]).then(([cross,logs,games,nflPhotos,collegePhotos])=>{
+   nflPortraits=nflPhotos;collegePortraits=collegePhotos;
    players=collegeAppearances(logs,games,cross);
    const nfl=players.filter(x=>x.category==="nfl"),drafted=players.filter(x=>x.category==="drafted_no_debut");
    el("nflCount").textContent=nfl.length;

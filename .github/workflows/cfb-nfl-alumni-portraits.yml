@@ -1,0 +1,73 @@
+name: CFB NFL alumni portrait audit
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['scripts/audit_cfb_nfl_alumni_portraits.py','.github/workflows/cfb-nfl-alumni-portraits.yml']
+permissions:
+  contents: write
+concurrency:
+  group: cfb-portrait-audit
+  cancel-in-progress: false
+jobs:
+  audit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install requests pillow playwright
+      - run: python -m playwright install chromium
+      - run: python -m py_compile scripts/audit_cfb_nfl_alumni_portraits.py
+      - run: python scripts/audit_cfb_nfl_alumni_portraits.py
+      - name: Verify directory and profile display on desktop and mobile
+        run: |
+          python - <<'PY'
+          import json,pathlib,http.server,threading
+          from playwright.sync_api import sync_playwright
+          data=pathlib.Path('cfb/data');reg=json.loads((data/'nfl_alumni_portraits.json').read_text())
+          report=data/'nfl_alumni_portrait_audit.json';audit=json.loads(report.read_text())
+          cross=json.loads((data/'nfl_crosswalk.json').read_text())
+          college=json.loads((data/'player_portraits.json').read_text())
+          server=http.server.ThreadingHTTPServer(('127.0.0.1',0),http.server.SimpleHTTPRequestHandler)
+          threading.Thread(target=server.serve_forever,daemon=True).start()
+          base=f'http://127.0.0.1:{server.server_port}/cfb'
+          failures=[];checked=[]
+          with sync_playwright() as p:
+              browser=p.chromium.launch()
+              for width in (1360,390):
+                  page=browser.new_page(viewport={'width':width,'height':900})
+                  page.goto(base+'/nfl-alumni.html',wait_until='domcontentloaded')
+                  for group in ('nfl','drafted_no_debut','roster_only'):
+                      page.locator(f'[data-group="{group}"]').click()
+                      for row in cross:
+                          if row['category']!=group:continue
+                          cid=row['athlete_id']
+                          try:
+                              card=page.locator(f'[data-player-id="{cid}"]')
+                              card.wait_for(state='visible',timeout=10000)
+                              if cid in reg or cid in college:
+                                  img=card.locator('.portrait img')
+                                  img.scroll_into_view_if_needed()
+                                  img.wait_for(state='visible',timeout=15000)
+                                  assert img.evaluate('(el)=>el.naturalWidth>1')
+                              checked.append({'id':cid,'width':width})
+                          except Exception as e:failures.append({'id':cid,'width':width,'error':str(e)[:300]})
+                  page.close()
+              browser.close()
+          audit['render_checks']=checked;audit['render_failures']=failures
+          report.write_text(json.dumps(audit,indent=2,sort_keys=True)+'\n')
+          server.shutdown()
+          if failures:raise SystemExit(str(failures))
+          PY
+      - name: Publish verified portraits
+        run: |
+          git config user.name "Courtside Archive"
+          git config user.email "actions@users.noreply.github.com"
+          git add cfb/data/nfl_alumni_portraits.json cfb/data/nfl_alumni_portrait_audit.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Register verified NFL alumni portraits"
+          git pull --rebase origin main
+          git push origin main

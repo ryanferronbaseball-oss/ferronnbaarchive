@@ -256,5 +256,29 @@ jobs:
           git add college-baseball/data/player_portraits.json college-baseball/data/auburn_portrait_audit.json
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "Add verified Auburn witnessed-player portraits"
-          git pull --rebase origin main
+          # Merge only the tested Auburn entries onto current main, preserving concurrent changes.
+          git fetch origin main
+          if ! git rebase origin/main; then
+            git rebase --abort
+            git show HEAD:college-baseball/data/auburn_portrait_audit.json > /tmp/auburn-verified-report.json
+            git reset --hard origin/main
+            python - <<'PY'
+          import json,pathlib
+          report=json.loads(pathlib.Path('/tmp/auburn-verified-report.json').read_text())
+          path=pathlib.Path('college-baseball/data/player_portraits.json')
+          registry=json.loads(path.read_text())
+          for entry in report['added']+report['upgraded']:
+              key=entry['id']
+              record={k:v for k,v in entry.items() if k not in ('id','name')}
+              existing=registry.get(key)
+              if existing and existing.get('owner_preferred'):raise RuntimeError('Concurrent owner-preferred portrait: '+key)
+              if existing and existing['url']!=record['url'] and existing not in record.get('fallbacks',[]):raise RuntimeError('Concurrent portrait change requires review: '+key)
+              registry[key]=record
+          report['registered_portraits']=sum(t['id'] in registry for t in report['targets'])
+          path.write_text(json.dumps(registry,ensure_ascii=False,indent=2,sort_keys=True)+'\n')
+          pathlib.Path('college-baseball/data/auburn_portrait_audit.json').write_text(json.dumps(report,ensure_ascii=False,indent=2,sort_keys=True)+'\n')
+          PY
+            git add college-baseball/data/player_portraits.json college-baseball/data/auburn_portrait_audit.json
+            if ! git diff --cached --quiet; then git commit -m "Publish verified Auburn portraits on current main"; fi
+          fi
           git push origin HEAD:main

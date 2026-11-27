@@ -17,57 +17,63 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Apply verified February 16 2024 Duke Indiana BF
+      - name: Apply verified February 15 2025 Quinnipiac UNCW BF
         run: |
           python - <<'PY'
-          import json
+          import json,re
           from pathlib import Path
           D=Path('college-baseball/data')
           stats=D/'player_stats.json'
           audit=D/'bf_audit_recovery.json'
           rows=json.loads(stats.read_text())
           report=json.loads(audit.read_text())
-          gid='cb-2024-02-16-duke-indiana-att0225'
-          source='https://goduke.com/sports/baseball/stats/2024/indiana/boxscore/21657'
-          date_sources=['https://goduke.com/sports/baseball/schedule/2024','https://goduke.com/news/2024/2/16/baseball-santucci-tosses-gem-no-12-duke-rolls-to-opening-day-victory-over-indiana','https://iuhoosiers.com/sports/baseball/schedule/text/2024']
+          gid='cb-2025-02-15-quinnipiac-unc-wilmington-att0301'
+          source='https://uncwsports.com/sports/baseball/stats/2025/quinnipiac/boxscore/10920'
           game=next(g for g in json.loads((D/'games.json').read_text()) if g['id']==gid)
-          assert (game['date'],game['away'],game['home'],game['away_score'],game['home_score'])==('2024-02-16','Duke','Indiana',6,3)
+          assert (game['date'],game['away'],game['home'],game['away_score'],game['home_score'])==('2025-02-15','Quinnipiac','UNC Wilmington',10,6)
           seeds=[
-              ('cb-duke-jonathan-santucci',(15,4,0,0,2,7,86,0),20),
-              ('cb-duke-owen-proksch',(4,4,3,3,1,1,37,1),10),
-              ('cb-duke-charlie-beilenson',(8,1,0,0,0,5,38,0),9),
-              ('cb-indiana-brayden-risedorph',(14,2,1,1,1,4,78,0),18),
-              ('cb-indiana-ryan-kraft',(4,4,4,4,1,2,35,1),10),
-              ('cb-indiana-aydan-decker-petty',(3,1,0,0,1,0,22,0),5),
-              ('cb-indiana-evan-whiteaker',(6,3,1,1,0,1,24,0),8),
+              ('Quinnipiac','Matt Alduino',(12,3,3,3,4,1,63,1),19),
+              ('Quinnipiac','Samuel Wright',(14,3,2,2,3,4,72,0),20),
+              ('Quinnipiac','J.C. Franconere',(2,0,1,1,4,1,35,1),7),
+              ('Quinnipiac','Johnny Knox',(2,0,0,0,1,0,13,0),3),
+              ('UNC Wilmington','Cam Bagwell',(16,4,3,1,2,7,80,0),23),
+              ('UNC Wilmington','Ty Lawson',(3,0,0,0,0,1,16,1),4),
+              ('UNC Wilmington','Baker Cox',(6,0,1,1,1,2,30,0),7),
+              ('UNC Wilmington','Bryan Arendt',(2,3,1,1,1,2,22,0),6),
+              ('UNC Wilmington','Jack Gibson',(2,3,5,5,4,1,49,0),9),
+              ('UNC Wilmington','Porter Braddy',(1,0,0,0,1,0,8,0),2),
           ]
           arms=[r for r in rows if r['game_id']==gid and r.get('pitching') is not None]
           entry=next(r for r in report['games'] if r['game_id']==gid)
-          assert len(arms)==len(seeds)
+          assert len(arms)==len(seeds),[(r['player'],r['pitching']) for r in arms]
           fields=('outs','hits','runs','earnedRuns','baseOnBalls','strikeOuts','numberOfPitches','hitBatsmen')
-          values=[]; added=0
-          for pid,sig,bf in seeds:
-              matches=[r for r in arms if r['player_id']==pid]
-              assert len(matches)==1,pid
+          norm=lambda s:re.sub(r'[^a-z0-9]','',s.lower())
+          values=[]; added=0; used=set()
+          for team,name,sig,bf in seeds:
+              matches=[r for r in arms if r['team']==team and tuple(r['pitching'].get(k) for k in fields)==sig]
+              assert len(matches)==1,(name,[(r['player'],r['pitching']) for r in arms if r['team']==team])
               r=matches[0]; p=r['pitching']
-              assert tuple(p[k] for k in fields)==sig,(pid,p)
+              a,b=norm(r['player']),norm(name)
+              assert a==b or (min(len(a),len(b))>=10 and (a.startswith(b) or b.startswith(a))),(name,r['player'])
+              assert r['player_id'] not in used
+              used.add(r['player_id'])
               assert p.get('battersFaced') in (None,bf)
               if p.get('battersFaced') is None:
                   p['battersFaced']=bf; added+=1
-              values.append({'player_id':pid,'team':r['team'],'BF':bf})
+              values.append({'player_id':r['player_id'],'team':team,'BF':bf})
               print(r['player'],bf,'K%',round(100*p['strikeOuts']/bf,1),'BB%',round(100*p['baseOnBalls']/bf,1))
-          assert sum(v['BF'] for v in values if v['team']=='Duke')==39==35+3+1
-          assert sum(v['BF'] for v in values if v['team']=='Indiana')==41==36+3+1+1
+          assert sum(v['BF'] for v in values if v['team']=='Quinnipiac')==49==33+12+2+2
+          assert sum(v['BF'] for v in values if v['team']=='UNC Wilmington')==51==39+9+1+1+1
           if entry['status']=='recovered':
               assert entry['values']==values and added==0
               print('Already verified and saved')
               raise SystemExit(0)
-          assert entry['status']=='unresolved' and added==7
+          assert entry['status']=='unresolved'
           entry.pop('reason',None)
-          entry.update(status='recovered',method='Manual official Duke and Indiana box score BF; archived February 16 date confirmed by schedules and recap despite both Sidearm pages displaying February 15; exact pitching line and opposing PA reconciliation',manual_source_url=source,date_verification_source_urls=date_sources,verification={'Duke':{'BF':39,'opponent_AB':35,'opponent_BB':3,'opponent_HBP':1},'Indiana':{'BF':41,'opponent_AB':36,'opponent_BB':3,'opponent_HBP':1,'opponent_SF':1}},pitchers=7,added=added,recovered_this_run=added,values=values)
+          entry.update(status='recovered',method='Manual official UNCW and Quinnipiac box score BF; match team, full pitching signature and verified names including truncated display names; reconcile opponent plate appearances',manual_source_url=source,verification={'Quinnipiac':{'BF':49,'opponent_AB':33,'opponent_BB':12,'opponent_HBP':2,'opponent_SH':2},'UNC Wilmington':{'BF':51,'opponent_AB':39,'opponent_BB':9,'opponent_HBP':1,'opponent_SH':1,'opponent_SF':1}},pitchers=10,added=added,recovered_this_run=added,values=values)
           stats.write_text(json.dumps(rows,ensure_ascii=False,indent=2)+'\n')
           audit.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
-          print('Remaining unresolved:',sum(r['status']=='unresolved' for r in report['games']))
+          print('Added:',added,'Remaining unresolved:',sum(r['status']=='unresolved' for r in report['games']))
           PY
       - name: Commit verified game and audit
         run: |
@@ -75,6 +81,6 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add college-baseball/data/player_stats.json college-baseball/data/bf_audit_recovery.json
           if git diff --cached --quiet; then exit 0; fi
-          git commit -m "Recover seven verified BF entries for February 16 2024 Duke Indiana"
+          git commit -m "Recover verified BF for February 15 2025 Quinnipiac UNCW"
           git pull --rebase origin main
           git push origin HEAD:main

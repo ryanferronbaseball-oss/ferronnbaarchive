@@ -31,150 +31,64 @@ jobs:
         run: |
           python - <<'PY'
           import json,re,subprocess,collections
-          from urllib.parse import urljoin,urlsplit,unquote
+          from urllib.parse import urlsplit,parse_qs,urlencode
           from bs4 import BeautifulSoup
           from audit_player_portraits import load,save,get,probe
-          from recover_lsu_final_portraits import norm,host,roster,card_images,named_images,bio_images,lsu_roster_images,photo_year
+          from recover_lsu_final_portraits import norm,host,photo_year
           SCHOOL='Pittsburgh'
           HOST='pittsburghpanthers.com'
           REG='college-baseball/data/player_portraits.json'
-          REPORT='college-baseball/data/pittsburgh_portrait_audit.json'
+          REPORT='college-baseball/data/pittsburgh_portrait_recovery.json'
+          targets={
+           'cb-pittsburgh-c-j-funk':('https://pittsburghpanthers.com/sports/baseball/roster/cj-funk/13057',2024,'CJ Funk Headhsot'),
+           'cb-pittsburgh-matthew-fernandez':('https://pittsburghpanthers.com/sports/baseball/roster/matthew-fernandez/13055',2024,'Matt Fernandez Headshot'),
+           'cb-pittsburgh-david-pedanou':('https://pittsburghpanthers.com/sports/baseball/roster/david-pedanou/13964',2025,'Pedanou Headshot')}
           players=json.loads(subprocess.check_output(['node','scripts/export_baseball_portrait_preferences.cjs',SCHOOL],text=True))
-          assert players,'No witnessed Pittsburgh players'
+          players=[p for p in players if p['id'] in targets]
+          assert len(players)==3,'Target identity mismatch'
           registry=load(REG,{})
-          hosts=load('college-baseball/data/portrait_school_hosts.json')
-          hosts[SCHOOL]=HOST
-          report={'school':SCHOOL,'targeted':len(players),'targets':[{k:p[k] for k in ('id','name','schools','preference')} for p in players],'added':[],'upgraded':[],'preserved':[],'missing':[],'notes':[],'rosters':[],'name_discrepancies':[]}
-          def verified_url(u,school):
-              h=host(u)
-              return u.startswith('https://') and (h==school or any(h==d or h.endswith('.'+d) for d in ('sidearmsports.com','sidearmdev.com','sidearmnextgen.com','cloudfront.net','amazonaws.com')) or (school=='lsusports.net' and (h.endswith('.lsusports.net') or h=='storage.googleapis.com' and re.match(r'/lsu(?:sports)?[-a-z0-9]*/',urlsplit(u).path,re.I))) )
-          def pittsburgh_images(soup,page,names,confirmed_bio=False):
-              from urllib.parse import parse_qs,urlencode
-              matches=[]
-              for im in soup.find_all('img'):
-                  alt=str(im.get('alt','')).strip()
-                  context=' '.join(' '.join(t.get('class',[])) for t in [im,*list(im.parents)[:4]] if getattr(t,'attrs',None) is not None).lower()
-                  if re.search(r'gallery|carousel|related|news|article|action',context):continue
-                  designated=bool(re.search(r'(?:sidearm-roster-player-(?:image|headshot)|roster-(?:player|card|bio)[-_ ](?:image|photo|headshot))',context))
-                  raws=[im.get(k) for k in ('url','data-src','src','data-lazy-src','data-original','data-url')]
-                  for k in ('srcset','data-srcset'):
-                      raws.extend(v.strip().split()[0] for v in str(im.get(k,'')).split(',') if v.strip())
-                  for raw in raws:
-                      if not isinstance(raw,str):continue
-                      u=urljoin(page,raw)
-                      if not verified_url(u,HOST) or '/resize' in urlsplit(u).path:continue
-                      q=parse_qs(urlsplit(u).query)
-                      base=unquote(q.get('url',[u])[0])
-                      if not verified_url(base,HOST):continue
-                      p=unquote(urlsplit(base).path)
-                      if re.search(r'placeholder|silhouette|default|logo|banner|sponsor|social|\.svg|action|gallery',p,re.I):continue
-                      stem=p.rsplit('/',1)[-1].rsplit('.',1)[0]
-                      parts=[v for v in re.split(r'[^a-zA-Z]+',stem) if v]
-                      # Accept exact contiguous name tokens in either name order, including surname-first filenames.
-                      filematch=any(norm(''.join(parts[i:j])) in names or any(norm(''.join(parts[k:j]+parts[i:k])) in names for k in range(i+1,j)) for i in range(len(parts)) for j in range(i+1,min(len(parts),i+5)+1))
-                      altmatch=any(norm(alt) in (n,n+'headshot','headshotof'+n,n+'portrait','photoof'+n) for n in names)
-                      explicit=bool(re.search(r'head.?shot|portrait|(?:^|[_ .-])hs(?:[_ .-]|\d|$)',stem+' '+alt,re.I))
-                      crop='/crop' in urlsplit(u).path and (q.get('width'),q.get('height')) in ((['180'],['270']),(['603'],['803']))
-                      if not ((filematch or altmatch) and (explicit or crop or designated) or confirmed_bio and designated and (explicit or crop) and (not alt or altmatch or filematch)):continue
-                      if '/crop' in urlsplit(u).path or designated or explicit:
-                          u='https://images.sidearmdev.com/crop?'+urlencode({'url':base,'width':603,'height':803,'type':'webp'})
-                      matches.append((0 if explicit and filematch else 1 if crop and (filematch or altmatch) else 2,u))
-              for _,u in sorted(set(matches)):yield u
-          def page_for(h,y):
-              return roster(y,h,report['notes'])
-          requests=collections.defaultdict(set)
-          for p in players:
-              for school,years in p['schools'].items():
-                  if school==SCHOOL and school in hosts and years:
-                      for y in range(min(years),min(2027,max(years)+4)+1):requests[hosts[school]].add(y)
-          pages={}
-          for h,ys in requests.items():
-              for y in sorted(ys):
-                  pages[h,y]=page_for(h,y)
-                  if pages[h,y]:report['rosters'].append({'host':h,'season':y,'url':pages[h,y][1]})
+          report={'school':SCHOOL,'targeted':len(players),'targets':[{k:p[k] for k in ('id','name','schools','preference')} for p in players],'added':[],'upgraded':[],'preserved':[],'missing':[],'notes':[]}
           found={}
-          diagnostics={}
           for p in players:
-              cid=p['id'];names={norm(n) for n in [p['name'],*p.get('former_names',[])] if len(norm(n))>4}
-              ranks={s['school']:i for i,s in enumerate(p['preference']['schools'])}
-              candidates=[]
-              for school,years in p['schools'].items():
-                  h=hosts.get(school)
-                  if school!=SCHOOL or not h or not years:continue
-                  matched=[]
-                  for y in range(min(years),min(2027,max(years)+4)+1):
-                      page=pages.get((h,y))
-                      if not page:continue
-                      soup,u=page;links=[]
-                      for a in soup.find_all('a',href=True):
-                          v=urljoin(u,a['href']);path=urlsplit(v).path.rstrip('/')
-                          if host(v)!=h:continue
-                          if h=='lsusports.net':
-                              if not re.search(r'/roster/(?:season/[^/]+/)?player/[^/]+$',path):continue
-                              slug=path.split('/')[-1]
-                          else:
-                              if not re.search(r'/roster/[^/]+/\d+$',path):continue
-                              slug=path.split('/')[-2]
-                          if norm(slug) in names or norm(a.get_text(' ',strip=True)) in names:
-                              links.append(v)
-                      if h==HOST:imgs=list(pittsburgh_images(soup,u,names))
-                      elif h=='lsusports.net':imgs=list(lsu_roster_images(soup,u,h,names))
-                      else:imgs=[*card_images(soup,u,h,names),*named_images(soup,u,h,names)]
-                      if not links and not imgs:continue
-                      if y not in years and (not matched or y-matched[-1]>2):continue
-                      matched.append(y)
-                      candidates.extend((school,y,u,v,h) for v in dict.fromkeys(imgs))
-                      candidates.extend((school,y,v,None,h) for v in dict.fromkeys(links))
-              candidates.sort(key=lambda c:(ranks.get(c[0],999),-c[1],c[3] is None))
-              diagnostics[cid]={'candidates':len(candidates),'attempts':[]}
-              for school,y,source,url,h in candidates:
-                  if url:options=[url]
-                  else:
-                      try:
-                          r=get(source);r.raise_for_status()
-                          if host(r.url)!=h:continue
-                          soup=BeautifulSoup(r.text,'html.parser')
-                          title=' '.join(t.get_text(' ',strip=True) for t in soup.find_all(['h1','h2','title']))
-                          if not any(n in norm(title) for n in names):continue
-                          if h==HOST and not any(norm(t.get_text(' ',strip=True)) in names for t in soup.find_all(['h1','h2','h3'])) and norm(urlsplit(r.url).path.rstrip('/').split('/')[-2]) not in names:continue
-                          if h==HOST:
-                              options=list(pittsburgh_images(soup,r.url,names,True))
-                              actual=re.search(r'\b(20\d{2})\s+Baseball\s+Roster',title,re.I)
-                              if actual:y=int(actual.group(1))
-                              if y<min(p['schools'][school]) or y>2027:continue
-                              if not options:
-                                  diagnostics[cid]['attempts'].append({'source':r.url,'images':[{'alt':im.get('alt'),'src':im.get('src'),'data-src':im.get('data-src')} for im in soup.find_all('img') if re.search(r'headshot|portrait|\bhs\s*\d{2,4}\b|width=180|width=603',str(im),re.I)][:12]})
-                          else:options=list(bio_images(soup,r.url,h,names))
-                          source=r.url
-                      except Exception as e:
-                          diagnostics[cid]['attempts'].append({'source':source,'error':str(e)});continue
-                  for u in dict.fromkeys(options):
-                      if not verified_url(u,h):continue
+              cid=p['id'];source,y,alt=targets[cid]
+              if cid in registry:continue
+              try:
+                  r=get(source);r.raise_for_status()
+                  if host(r.url)!=HOST or urlsplit(r.url).path.rstrip('/')!=urlsplit(source).path.rstrip('/'):raise ValueError('Unexpected biography redirect')
+                  soup=BeautifulSoup(r.text,'html.parser')
+                  heading=' '.join(t.get_text(' ',strip=True) for t in soup.find_all(['h1','h2','title']))
+                  if norm(p['name']) not in norm(heading) or not re.search(r'\b'+str(y)+r'\s+Baseball\s+Roster',heading,re.I):raise ValueError('Identity or season not confirmed: '+heading[:300])
+                  matches=[]
+                  for im in soup.find_all('img'):
+                      if norm(im.get('alt',''))!=norm(alt):continue
+                      for key in ('src','data-src','data-lazy-src'):
+                          u=im.get(key,'')
+                          q=parse_qs(urlsplit(u).query)
+                          if host(u)!='images.sidearmdev.com' or urlsplit(u).path!='/crop' or q.get('width')!=['180'] or q.get('height')!=['270']:continue
+                          base=q.get('url',[''])[0]
+                          if not base.startswith('https://') or not host(base).endswith('.cloudfront.net') or '/pittsburghpanthers.com/images/' not in urlsplit(base).path:continue
+                          matches.append((u,base))
+                  if len(set(matches))!=1:raise ValueError('No unique verified headshot crop')
+                  original,base=matches[0]
+                  enlarged='https://images.sidearmdev.com/crop?'+urlencode({'url':base,'width':603,'height':803,'type':'webp'})
+                  for u in (enlarged,original):
                       state,digest=probe(u)
                       if state=='image' and digest:
-                          found[cid]=({'url':u,'source':source,'provider':'college','school':school,'season':y,'photo_year':photo_year(u,y)},digest)
+                          found[cid]=({'url':u,'source':source,'provider':'college','school':SCHOOL,'season':y,'photo_year':photo_year(base,y)},digest)
                           break
-                  if cid in found:break
+                  if cid not in found:raise ValueError('Portrait did not resolve')
+              except Exception as e:report['notes'].append({'id':cid,'error':str(e)})
           hashes=collections.Counter(d for _,d in found.values())
           for p in players:
-              cid=p['id'];old=registry.get(cid);entry={'id':cid,'name':p['name']}
-              ranks={s['school']:i for i,s in enumerate(p['preference']['schools'])}
-              def priority(r):return (-ranks.get(r.get('school'),999),r.get('season',0),r.get('photo_year',0))
-              if old and old.get('owner_preferred'):
-                  report['preserved'].append({**entry,'reason':'Owner preferred'});continue
+              cid=p['id'];entry={'id':cid,'name':p['name']}
+              if cid in registry:report['preserved'].append(entry);continue
               if cid not in found or hashes[found[cid][1]]!=1:
-                  report['preserved' if old else 'missing'].append({**entry,'reason':'No unique verified portrait','diagnostics':diagnostics[cid]});continue
-              new=found[cid][0]
-              if old and old.get('provider')=='college' and priority(old)>=priority(new) and probe(old['url'])[0]=='image':
-                  report['preserved'].append({**entry,'reason':'Existing preferred portrait'});continue
-              if old:new['fallbacks']=[{k:v for k,v in old.items() if k!='fallbacks'},*old.get('fallbacks',[])]
-              registry[cid]=new
-              report['upgraded' if old else 'added'].append({**entry,**new})
+                  report['missing'].append(entry);continue
+              registry[cid]=found[cid][0]
+              report['added'].append({**entry,**registry[cid]})
           report['registered_portraits']=sum(p['id'] in registry for p in players)
           save(REG,registry);save(REPORT,report)
-          print(json.dumps({k:len(v) if isinstance(v,list) else v for k,v in report.items()},indent=2))
-          for x in report['added']+report['upgraded']:print('HEADSHOT',x['name'],x['url'])
-          for x in report['missing']:print('MISSING',x['name'],json.dumps(x.get('diagnostics',{}))[:3500])
+          print(json.dumps(report,indent=2))
           PY
       - name: Verify Pittsburgh portrait rendering only
         run: |
@@ -184,7 +98,7 @@ jobs:
           from playwright.sync_api import sync_playwright
           from PIL import Image,ImageDraw
           root=pathlib.Path.cwd()
-          report=json.loads((root/'college-baseball/data/pittsburgh_portrait_audit.json').read_text())
+          report=json.loads((root/'college-baseball/data/pittsburgh_portrait_recovery.json').read_text())
           out=root/'pittsburgh-visual-review';out.mkdir(exist_ok=True)
           server=http.server.ThreadingHTTPServer(('127.0.0.1',0),functools.partial(http.server.SimpleHTTPRequestHandler,directory=str(root)))
           threading.Thread(target=server.serve_forever,daemon=True).start()
@@ -242,7 +156,7 @@ jobs:
           report['render_failures']=sorted(failed)
           report['registered_portraits']=sum(t['id'] in registry for t in report['targets'])
           regpath.write_text(json.dumps(registry,ensure_ascii=False,indent=2,sort_keys=True)+'\n')
-          (root/'college-baseball/data/pittsburgh_portrait_audit.json').write_text(json.dumps(report,ensure_ascii=False,indent=2,sort_keys=True)+'\n')
+          (root/'college-baseball/data/pittsburgh_portrait_recovery.json').write_text(json.dumps(report,ensure_ascii=False,indent=2,sort_keys=True)+'\n')
           PY
       - uses: actions/upload-artifact@v4
         if: always()
@@ -250,12 +164,12 @@ jobs:
           name: pittsburgh-portrait-review
           path: |
             pittsburgh-visual-review/
-            college-baseball/data/pittsburgh_portrait_audit.json
+            college-baseball/data/pittsburgh_portrait_recovery.json
       - name: Publish verified Pittsburgh portrait changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add college-baseball/data/player_portraits.json college-baseball/data/pittsburgh_portrait_audit.json
+          git add college-baseball/data/player_portraits.json college-baseball/data/pittsburgh_portrait_recovery.json
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "Add verified Pittsburgh witnessed-player portraits"
           for attempt in 1 2 3; do

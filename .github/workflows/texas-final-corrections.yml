@@ -45,12 +45,14 @@ jobs:
               cross['merges'].append({'name':'Jayden Duplantier','display_name':'Jayden Duplantier','canonical_id':canonical,'source_player_ids':sorted(ids),'schools':['Texas'],'pairs':[{'team':'Texas','source_player_id':i} for i in sorted(ids)],'source_rows':len(matches),'note':'Owner confirmed Duplantier J is Jayden Duplantier.'})
               for field in ('requested_person_merges','activated_person_merges'):cross[field]+=1
           else:assert len(existing)==1 and set(existing[0]['source_player_ids'])==ids and existing[0]['canonical_id']==canonical
-          for pid,name,former,source in [('cb-texas-farmer-iv','Tommy Farmer IV','Farmer IV','https://texaslonghorns.com/sports/baseball/roster/tommy-farmer-iv/13928'),('cb-texas-callum-early','Callum Early','Cal Early','https://texaslonghorns.com/sports/baseball/roster/callum-early/15080')]:
-              found=[a for a in cross['display_aliases'] if a['player_id']==pid]
-              if not found:cross['display_aliases'].append({'player_id':pid,'display_name':name,'former_names':[former],'evidence_urls':[source]})
-              else:assert found[0]['display_name']==name
-              for m in cross['merges']:
-                  if m['canonical_id']==pid:m['display_name']=name
+          pid='cb-texas-farmer-iv'
+          found=[a for a in cross['display_aliases'] if a['player_id']==pid]
+          if not found:cross['display_aliases'].append({'player_id':pid,'display_name':'Tommy Farmer IV','former_names':['Farmer IV'],'evidence_urls':['https://texaslonghorns.com/sports/baseball/roster/2025']})
+          else:assert found[0]['display_name']=='Tommy Farmer IV'
+          early=[m for m in cross['merges'] if m['canonical_id']=='cb-texas-callum-early']
+          assert len(early)==1 and set(early[0]['source_player_ids'])=={'cb-texas-callum-early','cb-liberty-cal-early'}
+          early[0]['display_name']='Callum Early'
+          cross['display_aliases']=[a for a in cross['display_aliases'] if a['player_id']!='cb-texas-callum-early']
           assert before==hashlib.sha256(raw.read_bytes()).hexdigest()
           p.write_text(json.dumps(cross,ensure_ascii=False,indent=2)+'\n')
           PY
@@ -74,6 +76,7 @@ jobs:
           wanted={'cb-texas-farmer-iv','cb-texas-callum-early','cb-texas-anthony-pack-jr','cb-texas-jayden-duplantier'}
           players=[p for p in players if p['id'] in wanted]
           assert len(players)==4
+          assert {p['id']:p['name'] for p in players}=={'cb-texas-farmer-iv':'Tommy Farmer IV','cb-texas-callum-early':'Callum Early','cb-texas-anthony-pack-jr':'Anthony Pack Jr.','cb-texas-jayden-duplantier':'Jayden Duplantier'}
           registry=load(REG,{})
           hosts=load('college-baseball/data/portrait_school_hosts.json')
           hosts[SCHOOL]=HOST
@@ -158,7 +161,7 @@ jobs:
                       matched.append(y)
                       candidates.extend((school,y,u,v,h) for v in dict.fromkeys(imgs))
                       candidates.extend((school,y,v,None,h) for v in dict.fromkeys(links))
-              direct={'cb-texas-farmer-iv':(2025,'https://texaslonghorns.com/sports/baseball/roster/tommy-farmer-iv/13928'),'cb-texas-callum-early':(2026,'https://texaslonghorns.com/sports/baseball/roster/callum-early/15080'),'cb-texas-anthony-pack-jr':(2026,'https://texaslonghorns.com/sports/baseball/roster/anthony-pack-jr/17200')}
+              direct={'cb-texas-anthony-pack-jr':(2026,'https://texaslonghorns.com/sports/baseball/roster/anthony-pack-jr/17200')}
               if cid in direct:
                   y,source=direct[cid];candidates.append((SCHOOL,y,source,None,HOST))
               if cid=='cb-texas-anthony-pack-jr':names.add('anthonypack')

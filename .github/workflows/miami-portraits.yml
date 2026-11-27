@@ -1,0 +1,253 @@
+name: Miami witnessed-player portrait audit
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/miami-portraits.yml']
+permissions:
+  contents: write
+concurrency:
+  group: college-baseball-portraits
+  cancel-in-progress: false
+jobs:
+  portraits:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 65
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: pip install requests pillow beautifulsoup4 playwright
+      - run: python -m playwright install chromium
+      - name: Match witnessed Miami players to official roster portraits
+        env:
+          PYTHONPATH: scripts
+        run: |
+          python - <<'PY'
+          import json,re,subprocess,collections
+          from playwright.sync_api import sync_playwright
+          from urllib.parse import urljoin,urlsplit
+          from bs4 import BeautifulSoup
+          from audit_player_portraits import load,save,get,probe
+          from recover_lsu_final_portraits import norm,host,photo_year
+          SCHOOL='Miami'
+          HOST='miamihurricanes.com'
+          REG='college-baseball/data/player_portraits.json'
+          REPORT='college-baseball/data/miami_portrait_audit.json'
+          players=json.loads(subprocess.check_output(['node','scripts/export_baseball_portrait_preferences.cjs',SCHOOL],text=True))
+          assert players,'No witnessed Miami players found'
+          registry=load(REG,{})
+          report={'school':SCHOOL,'targeted':len(players),'previously_registered':sum(p['id'] in registry for p in players),'targets':[{k:p[k] for k in ('id','name','schools','preference')} for p in players],'added':[],'upgraded':[],'preserved':[],'missing':[],'notes':[],'rosters':[],'name_discrepancies':[]}
+          def academic(y):return f'{y-1}-{str(y)[-2:]}'
+          def verified_url(u):
+              h=host(u)
+              return u.startswith('https://') and (h==HOST or h.endswith('.'+HOST) or (h=='storage.googleapis.com' and re.match(r'/[^/]*miami[^/]*/',urlsplit(u).path,re.I)) or any(h==d or h.endswith('.'+d) for d in ('cloudfront.net','wmt.digital')))
+          def heading(soup):return ' '.join(t.get_text(' ',strip=True) for t in soup.find_all(['h1','h2','title']))
+          def season_ok(soup,y):return academic(y) in heading(soup)
+          def fetch_page(u):
+              r=get(u);r.raise_for_status()
+              if host(r.url)!=HOST:raise ValueError('Unexpected host')
+              return BeautifulSoup(r.text,'html.parser'),r.url
+          def hydrated(page,u,selector):
+              page.goto(u,wait_until='domcontentloaded',timeout=45000)
+              page.wait_for_selector(selector,state='attached',timeout=15000)
+              page.wait_for_timeout(700)
+              for node in page.locator(selector).all()[:12]:
+                  try:
+                      node.scroll_into_view_if_needed(timeout=2500)
+                      node.evaluate("(el)=>{if(el.currentSrc)el.setAttribute('data-current-src',el.currentSrc)}")
+                  except Exception:pass
+              return BeautifulSoup(page.content(),'html.parser')
+          def exact_heading(soup,names):
+              for t in soup.find_all('h1'):
+                  label=re.sub(r'^\s*#\s*\d+\s*|\s*Season\s+\d{4}-\d{2}\s*$','',t.get_text(' ',strip=True),flags=re.I)
+                  if norm(label) in names:return True
+              return False
+          def photos(soup,u,names):
+              for im in soup.find_all('img'):
+                  alt=norm(im.get('alt',''))
+                  context=' '.join(' '.join(x.get('class',[])) for x in [im,*list(im.parents)[:2]] if getattr(x,'attrs',None) is not None)
+                  explicit=any(alt in (n,n+'headshot','headshot'+n,'headshotof'+n,n+'portrait','portraitof'+n) for n in names)
+                  designated=bool(re.search(r'roster-bio-main-info__image|headshot|portrait|player-headshot',context,re.I))
+                  if not explicit and not designated:continue
+                  if re.search(r'hero|action|gallery|featured|related|article|news',context,re.I):continue
+                  for k in ('data-src','data-lazy-src','data-original','data-current-src','src'):
+                      raw=im.get(k)
+                      if not isinstance(raw,str):continue
+                      v=urljoin(u,raw)
+                      if not verified_url(v) or re.search(r'placeholder|silhouette|default|logo|banner|sponsor|social|\.gif(?:\?|$)|\.svg(?:\?|$)',v,re.I):continue
+                      if explicit and ('headshot' in alt or designated) or designated and (not alt or explicit):
+                          yield v
+          years=sorted({y for p in players for y in range(min(p['schools'][SCHOOL]),min(2027,max(p['schools'][SCHOOL])+4)+1) if p['schools'].get(SCHOOL)})
+          pages={}
+          found={}
+          diagnostics={}
+          with sync_playwright() as pw:
+              browser=pw.chromium.launch()
+              page=browser.new_page(viewport={'width':1440,'height':900})
+              for y in years:
+                  u=f'https://{HOST}/sports/baseball/roster/season/{academic(y)}'
+                  try:
+                      soup,u=fetch_page(u)
+                      if not season_ok(soup,y) or not re.search(r'Baseball\s+'+re.escape(academic(y))+r'\s+Roster',heading(soup),re.I):raise ValueError('Roster season not confirmed: '+heading(soup)[:180])
+                      if not soup.select('a[href*="/roster/"][href*="/player/"]'):
+                          soup=hydrated(page,u,'a[href*="/roster/"][href*="/player/"]')
+                      pages[y]=(soup,u)
+                      report['rosters'].append({'season':y,'url':u})
+                  except Exception as e:report['notes'].append(f'{u}: {e}')
+              for p in players:
+                  cid=p['id']
+                  names={norm(n) for n in [p['name'],*p.get('former_names',[])] if len(norm(n))>4}
+                  seen=p['schools'][SCHOOL];matched=[];candidates=[]
+                  for y in years:
+                      if y<min(seen) or y>max(seen)+4 or y not in pages:continue
+                      soup,u=pages[y]
+                      links=[]
+                      for a in soup.find_all('a',href=True):
+                          v=urljoin(u,a['href']);path=urlsplit(v).path.rstrip('/')
+                          if host(v)!=HOST or not re.search(r'/sports/baseball/roster/(?:season/[^/]+/)?player/[^/]+$|^/roster/[^/]+$',path):continue
+                          if norm(a.get_text(' ',strip=True)) in names or norm(path.split('/')[-1]) in names:
+                              # Prefer the season-qualified official biography.
+                              if '/sports/baseball/roster/player/' in path:
+                                  v=f'https://{HOST}/sports/baseball/roster/season/{academic(y)}/player/{path.split("/")[-1]}'
+                              links.append(v)
+                      if not links:continue
+                      if y not in seen and (not matched or y-matched[-1]>2):continue
+                      matched.append(y)
+                      candidates.extend((y,v) for v in dict.fromkeys(links))
+                  diagnostics[cid]={'candidates':len(candidates),'attempts':[]}
+                  for y,source in sorted(candidates,reverse=True):
+                      try:
+                          soup,u=fetch_page(source)
+                          if not season_ok(soup,y) or not exact_heading(soup,names):
+                              diagnostics[cid]['attempts'].append({'source':u,'error':'Exact identity or season not confirmed','heading':heading(soup)[:300]});continue
+                          options=list(dict.fromkeys(photos(soup,u,names)))
+                          if not options:
+                              try:
+                                  soup=hydrated(page,u,'img.roster-bio-main-info__image, img[alt*="Headshot" i], img[alt*="portrait" i]')
+                                  options=list(dict.fromkeys(photos(soup,u,names)))
+                              except Exception as e:diagnostics[cid]['attempts'].append({'source':u,'hydration_error':str(e)})
+                          for v in options:
+                              state,digest=probe(v)
+                              if state=='image' and digest:
+                                  found[cid]=({'url':v,'source':u,'provider':'college','school':SCHOOL,'season':y,'photo_year':photo_year(v,y)},digest)
+                                  break
+                          if cid in found:break
+                          diagnostics[cid]['attempts'].append({'source':u,'options':options[:8],'images':[dict(im.attrs) for im in soup.find_all('img') if re.search(r'headshot|portrait|roster-bio',str(im),re.I)][:12]})
+                      except Exception as e:diagnostics[cid]['attempts'].append({'source':source,'error':str(e)})
+                  print(p['name'],'found' if cid in found else 'not found',flush=True)
+              browser.close()
+          hashes=collections.Counter(d for _,d in found.values())
+          for p in players:
+              cid=p['id'];old=registry.get(cid);entry={'id':cid,'name':p['name']}
+              ranks={s['school']:i for i,s in enumerate(p['preference']['schools'])}
+              def priority(r):return (-ranks.get(r.get('school'),999),r.get('season',0),r.get('photo_year',0))
+              if old and old.get('owner_preferred'):
+                  report['preserved'].append({**entry,'reason':'Owner preferred'});continue
+              if cid not in found or hashes[found[cid][1]]!=1:
+                  report['preserved' if old else 'missing'].append({**entry,'reason':'No unique verified portrait','diagnostics':diagnostics[cid]});continue
+              new=found[cid][0]
+              if old and old.get('provider')=='college' and priority(old)>=priority(new) and probe(old['url'])[0]=='image':
+                  report['preserved'].append({**entry,'reason':'Existing preferred portrait'});continue
+              if old:new['fallbacks']=[{k:v for k,v in old.items() if k!='fallbacks'},*old.get('fallbacks',[])]
+              registry[cid]=new
+              report['upgraded' if old else 'added'].append({**entry,**new})
+          report['registered_portraits']=sum(p['id'] in registry for p in players)
+          save(REG,registry);save(REPORT,report)
+          print(json.dumps({k:len(v) if isinstance(v,list) else v for k,v in report.items()},indent=2))
+          for x in report['missing']:print('MISSING',x['name'])
+          PY
+      - name: Verify Miami portrait rendering only
+        run: |
+          python - <<'PY'
+          import json,pathlib,threading,functools,http.server
+          from urllib.parse import quote
+          from playwright.sync_api import sync_playwright
+          from PIL import Image,ImageDraw
+          root=pathlib.Path.cwd()
+          report=json.loads((root/'college-baseball/data/miami_portrait_audit.json').read_text())
+          out=root/'miami-visual-review';out.mkdir(exist_ok=True)
+          server=http.server.ThreadingHTTPServer(('127.0.0.1',0),functools.partial(http.server.SimpleHTTPRequestHandler,directory=str(root)))
+          threading.Thread(target=server.serve_forever,daemon=True).start()
+          results=[]
+          registry=json.loads((root/'college-baseball/data/player_portraits.json').read_text())
+          with sync_playwright() as p:
+              browser=p.chromium.launch()
+              for mode,w,h in [('desktop',1360,900),('mobile',390,844)]:
+                  page=browser.new_page(viewport={'width':w,'height':h},device_scale_factor=1)
+                  for t in report['targets']:
+                      pid=t['id'];row={'id':pid,'name':t['name'],'viewport':mode}
+                      if pid not in registry:
+                          row['status']='missing';results.append(row);print(mode,t['name'],'missing; skipped browser timeout',flush=True);continue
+                      try:
+                          page.goto(f'http://127.0.0.1:{server.server_port}/college-baseball/player.html?id='+quote(pid),wait_until='domcontentloaded',timeout=30000)
+                          frame=page.locator('.cb-player-portrait')
+                          frame.wait_for(state='visible',timeout=15000)
+                          page.wait_for_function("() => {const i=document.querySelector('.cb-player-portrait img');return i&&i.complete&&i.naturalWidth>0&&i.parentElement.classList.contains('has-portrait')}",timeout=12000)
+                          row.update(frame.locator('img').evaluate("i=>({url:i.currentSrc,natural:[i.naturalWidth,i.naturalHeight],fit:getComputedStyle(i).objectFit,position:getComputedStyle(i).objectPosition})"))
+                          selected=registry[pid]['url']
+                          if pid in {x['id'] for x in report['added']+report['upgraded']} and row['url']!=selected:raise ValueError('New portrait did not render; fallback used')
+                          frame.screenshot(path=str(out/f'{mode}-{pid}.png'),timeout=10000)
+                          if row['fit']!='cover' or row['position']!='50% 0%':raise ValueError('Unexpected portrait framing')
+                          row['status']='pass'
+                      except Exception as e:row['status']='fail';row['error']=str(e)
+                      results.append(row)
+                      print(mode,t['name'],row['status'],row.get('natural'),flush=True)
+                  page.close()
+                  cols=7;sheet=Image.new('RGB',(cols*180,((len(report['targets'])+cols-1)//cols)*220),'#f5f5f5')
+                  draw=ImageDraw.Draw(sheet)
+                  for n,t in enumerate(report['targets']):
+                      f=out/f"{mode}-{t['id']}.png";x,y=n%cols*180,n//cols*220
+                      if f.exists():
+                          im=Image.open(f).convert('RGB');im.thumbnail((165,185));sheet.paste(im,(x+(180-im.width)//2,y+5))
+                      else:draw.text((x+8,y+80),'MISSING / FAILED',fill='red')
+                      draw.text((x+4,y+192),t['name'],fill='black')
+                  sheet.save(out/f'{mode}-contact-sheet.jpg')
+              browser.close()
+          server.shutdown()
+          (out/'results.json').write_text(json.dumps(results,indent=2))
+          failed={r['id'] for r in results if r['status']!='pass'}
+          print(f'Verified {len(results)-sum(r["status"]!="pass" for r in results)}/{len(results)} viewport checks; {len(failed)} player profiles need follow-up')
+          # Do not publish any newly selected portrait that failed real rendering.
+          regpath=root/'college-baseball/data/player_portraits.json'
+          registry=json.loads(regpath.read_text())
+          for x in report['added']+report['upgraded']:
+              if x['id'] not in failed:continue
+              previous=registry[x['id']].get('fallbacks',[])
+              if previous:
+                  registry[x['id']]=previous[0]
+                  if len(previous)>1:registry[x['id']]['fallbacks']=previous[1:]
+              else:registry.pop(x['id'],None)
+          for key in ('added','upgraded'):
+              report[key]=[x for x in report[key] if x['id'] not in failed]
+          report['render_failures']=sorted(failed)
+          report['registered_portraits']=sum(t['id'] in registry for t in report['targets'])
+          regpath.write_text(json.dumps(registry,ensure_ascii=False,indent=2,sort_keys=True)+'\n')
+          (root/'college-baseball/data/miami_portrait_audit.json').write_text(json.dumps(report,ensure_ascii=False,indent=2,sort_keys=True)+'\n')
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: miami-portrait-review
+          path: |
+            miami-visual-review/
+            college-baseball/data/miami_portrait_audit.json
+      - name: Publish verified Miami portrait changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add college-baseball/data/player_portraits.json college-baseball/data/miami_portrait_audit.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Add verified Miami witnessed-player portraits"
+          for attempt in 1 2 3; do
+            git pull --rebase origin main || exit 1
+            if git push origin HEAD:main; then exit 0; fi
+            sleep 3
+          done
+          exit 1

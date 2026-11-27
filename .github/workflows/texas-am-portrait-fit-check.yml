@@ -1,0 +1,66 @@
+name: Texas A&M portrait framing verification
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/texas-am-portrait-fit-check.yml']
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install playwright
+      - run: python -m playwright install --with-deps chromium
+      - name: Verify all Texas A&M profiles at both viewport sizes
+        run: |
+          python - <<'PY'
+          import json,threading,functools,http.server
+          from pathlib import Path
+          from playwright.sync_api import sync_playwright
+          from urllib.parse import quote
+          root=Path.cwd()
+          data=root/'college-baseball/data'
+          report=json.loads((data/'texas_am_portrait_audit.json').read_text())
+          registry=json.loads((data/'player_portraits.json').read_text())
+          targets=[x['id'] for x in report['added']+report['upgraded']]
+          assert len(targets)==28 and len(set(targets))==28
+          assert all(registry[x]['url'].startswith('https://12thman.com/') for x in targets)
+          server=http.server.ThreadingHTTPServer(('127.0.0.1',0),functools.partial(http.server.SimpleHTTPRequestHandler,directory=str(root)))
+          threading.Thread(target=server.serve_forever,daemon=True).start()
+          out=root/'texas-am-framing-review';out.mkdir(exist_ok=True)
+          checks=0
+          with sync_playwright() as p:
+              browser=p.chromium.launch()
+              for mode,w,h in [('desktop',1360,900),('mobile',390,844)]:
+                  page=browser.new_page(viewport={'width':w,'height':h})
+                  for pid in targets+['cb-nc-state-eli-serrano-iii']:
+                      page.goto(f'http://127.0.0.1:{server.server_port}/college-baseball/player.html?id='+quote(pid),wait_until='domcontentloaded',timeout=30000)
+                      page.wait_for_function("() => {const i=document.querySelector('.cb-player-portrait img');return i&&i.complete&&i.naturalWidth>0&&i.parentElement.classList.contains('has-portrait')}",timeout=15000)
+                      img=page.locator('.cb-player-portrait img')
+                      state=img.evaluate("i=>({url:i.currentSrc,width:i.naturalWidth,height:i.naturalHeight,fit:getComputedStyle(i).objectFit,position:getComputedStyle(i).objectPosition})")
+                      assert state['url']==registry[pid]['url'],(pid,state)
+                      if pid in targets:
+                          assert state['fit']=='cover' and state['position']=='50% 0%',(pid,state)
+                          checks+=1
+                      else:assert state['fit']=='contain',(pid,state)
+                      if pid in ['cb-texas-a-m-weston-moss','cb-texas-a-m-jace-laviolette','cb-clemson-ethan-darden','cb-nc-state-eli-serrano-iii']:
+                          page.locator('.cb-player-portrait').screenshot(path=str(out/f'{mode}-{pid}.png'))
+                      print(mode,pid,state,flush=True)
+                  page.close()
+              browser.close()
+          server.shutdown()
+          assert checks==56
+          print('Verified all 56 Texas A&M framing checks and two unaffected NC State control checks.')
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: texas-am-framing-review
+          path: texas-am-framing-review/

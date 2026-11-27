@@ -323,6 +323,8 @@ function orderedPlayerPortraits(record,rows){
   return rank(a)-rank(b)||(b.season||0)-(a.season||0)||(b.photo_year||0)-(a.photo_year||0);
  });
 }
+const safePortraitUrl=record=>{try{const u=new URL(record?.url),s=new URL(record?.source||record?.source_url||record?.url);const officialSchool=record?.provider==="college"&&s.protocol==="https:"&&(u.hostname.replace(/^www\./,"")===s.hostname.replace(/^www\./,"")||(s.hostname.replace(/^www\./,"")==="lsusports.net"&&u.hostname.endsWith(".lsusports.net")));return u.protocol==="https:"&&(officialSchool||(record?.provider==="college"&&s.hostname.replace(/^www\./,"")==="goaztecs.com"&&u.hostname==="storage.googleapis.com"&&u.pathname.startsWith("/sdsu-prod/"))||(record?.provider==="college"&&s.hostname.replace(/^www\./,"")==="lsusports.net"&&u.hostname==="storage.googleapis.com"&&/^\/lsu(?:sports)?[-a-z0-9]*\//i.test(u.pathname))||/(^|\.)(mlbstatic\.com|mlb\.com|espncdn\.com|wikimedia\.org|baseball-reference\.com|sports-reference\.com|sr-logos\.com|sidearmsports\.com|sidearmdev\.com|sidearmnextgen\.com|gohofstra\.com|riceowls\.com|rolltide\.com|cloudfront\.net|amazonaws\.com)$/.test(u.hostname))?u.href:null}catch{return null}};
+function playerPortraitCandidates(record,rows){return [...new Set(orderedPlayerPortraits(record,rows).map(safePortraitUrl).filter(Boolean))]}
 function bat(rows){
  const ab=sum(rows,"batting","atBats"),h=sum(rows,"batting","hits"),d=sum(rows,"batting","doubles"),t=sum(rows,"batting","triples"),hr=sum(rows,"batting","homeRuns");
  const bb=sum(rows,"batting","baseOnBalls"),hbp=sum(rows,"batting","hitByPitch"),sf=sum(rows,"batting","sacFlies");
@@ -720,8 +722,7 @@ async function renderPlayer(d){
  const initials=p.name.split(/\s+/).map(x=>x[0]).slice(0,2).join("").toUpperCase();
  const portraitRegistry=await json("player_portraits.json").catch(()=>({}));
  const portraitRecord=portraitRegistry[id];
- const safePortraitUrl=record=>{try{const u=new URL(record?.url),s=new URL(record?.source||record?.source_url||record?.url);const officialSchool=record?.provider==="college"&&s.protocol==="https:"&&(u.hostname.replace(/^www\./,"")===s.hostname.replace(/^www\./,"")||(s.hostname.replace(/^www\./,"")==="lsusports.net"&&u.hostname.endsWith(".lsusports.net")));return u.protocol==="https:"&&(officialSchool||(record?.provider==="college"&&s.hostname.replace(/^www\./,"")==="goaztecs.com"&&u.hostname==="storage.googleapis.com"&&u.pathname.startsWith("/sdsu-prod/"))||(record?.provider==="college"&&s.hostname.replace(/^www\./,"")==="lsusports.net"&&u.hostname==="storage.googleapis.com"&&/^\/lsu(?:sports)?[-a-z0-9]*\//i.test(u.pathname))||/(^|\.)(mlbstatic\.com|mlb\.com|espncdn\.com|wikimedia\.org|baseball-reference\.com|sports-reference\.com|sr-logos\.com|sidearmsports\.com|sidearmdev\.com|sidearmnextgen\.com|gohofstra\.com|riceowls\.com|rolltide\.com|cloudfront\.net|amazonaws\.com)$/.test(u.hostname))?u.href:null}catch{return null}};
- const portraitCandidates=[...new Set(orderedPlayerPortraits(portraitRecord,p.rows).map(safePortraitUrl).filter(Boolean))];
+ const portraitCandidates=playerPortraitCandidates(portraitRecord,p.rows);
  const portraitUrl=portraitCandidates[0];
  const isLsuPortrait=url=>{try{const u=new URL(url);return u.hostname==="lsusports.net"||u.hostname.endsWith(".lsusports.net")||(u.hostname==="storage.googleapis.com"&&/^\/lsu(?:sports)?[-a-z0-9]*\//i.test(u.pathname))}catch{return false}};
  const portraitMarkup='<div class="mlb-profile-photo cb-profile-initials cb-player-portrait"><span class="cb-portrait-fallback" aria-hidden="true">'+esc(initials)+'</span>'+(portraitUrl?'<img class="'+(isLsuPortrait(portraitUrl)?'cb-lsu-headshot':'')+'" alt="'+esc(p.name)+'" src="'+esc(portraitUrl)+'" data-fallback="'+esc(portraitCandidates[1]||"")+'" onload="this.parentElement.classList.add(\'has-portrait\')" onerror="this.parentElement.classList.remove(\'has-portrait\');if(this.dataset.fallback){this.classList.toggle(\'cb-lsu-headshot\',/^https:\\/\\/(?:[^/]+\\.)?lsusports\\.net\\//i.test(this.dataset.fallback)||/^https:\\/\\/storage\\.googleapis\\.com\\/lsu(?:sports)?[-a-z0-9]*\\//i.test(this.dataset.fallback));this.src=this.dataset.fallback;this.dataset.fallback=\'\'}else this.remove()">':'')+'</div>';
@@ -902,5 +903,5 @@ function render(){
 }
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",render,{once:true});
 else render();
-window.CollegeBaseballArchive={portraitSchoolPreference, load:cachedLoad,bat,pitch};
+window.CollegeBaseballArchive={portraitSchoolPreference,playerPortraitCandidates,load:cachedLoad,bat,pitch};
 })();

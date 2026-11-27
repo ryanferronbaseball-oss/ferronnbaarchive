@@ -1,0 +1,13 @@
+/* A single compact player portrait, separate from the team-logo journey. */
+#directory .card-top,#directory .multi-card-top{gap:12px;flex-wrap:wrap}
+#directory .player-name{display:flex;align-items:center;gap:12px;min-width:0;flex:1 1 180px;line-height:1.15}
+#directory .journey-player-label{min-width:0;overflow-wrap:anywhere}
+#directory .journey-portrait{width:64px;height:76px;flex:0 0 64px;display:grid;place-items:center;position:relative;overflow:hidden;border:1px solid #c2dce9;border-radius:10px;background:linear-gradient(145deg,#e9f7fd,#d5ebf6);color:#831738}
+#directory .journey-initials{font-size:20px;font-weight:800;letter-spacing:-.02em}
+#directory .journey-headshot{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center bottom;opacity:0}
+#directory .journey-portrait.has-portrait .journey-headshot{opacity:1}
+#directory .journey-portrait.has-portrait .journey-initials{visibility:hidden}
+#directory .journey-photo-credit{display:block;margin-top:5px;font-size:10px;color:#526d80}
+#directory .journey-photo-credit a{font-size:inherit}
+body[data-journey-sport="college-baseball"] #directory .journey-headshot{object-fit:cover;object-position:50% 0%}
+@media(max-width:540px){#directory .player-name{font-size:20px;gap:10px;flex-basis:160px}#directory .journey-portrait{width:52px;height:62px;flex-basis:52px}#directory .card-top,#directory .multi-card-top{gap:8px}#directory .badge,#directory .multi-badge{white-space:normal}}

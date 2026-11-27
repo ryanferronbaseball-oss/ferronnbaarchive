@@ -1,0 +1,73 @@
+name: Transfer and multi-team portrait QA
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['assets/journey-portraits.js','assets/journey-portraits.css','college/transfers.html','college-baseball/transfers.html','nba/multiple-teams.html','mlb/multiple-teams.html','.github/workflows/journey-portrait-qa.yml']
+permissions:
+  contents: read
+jobs:
+  browser:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install playwright
+      - run: python -m playwright install chromium
+      - run: node --check assets/journey-portraits.js && node --check college-baseball/assets/archive.js
+      - name: Verify all four directories, responsive cards, sorting and fallback
+        run: |
+          python - <<'PY'
+          import http.server,threading,pathlib
+          from playwright.sync_api import sync_playwright
+          server=http.server.ThreadingHTTPServer(('127.0.0.1',0),http.server.SimpleHTTPRequestHandler)
+          threading.Thread(target=server.serve_forever,daemon=True).start()
+          base=f'http://127.0.0.1:{server.server_port}'
+          paths=['college/transfers.html','college-baseball/transfers.html','nba/multiple-teams.html','mlb/multiple-teams.html']
+          out=pathlib.Path('journey-portrait-review');out.mkdir(exist_ok=True)
+          with sync_playwright() as p:
+              browser=p.chromium.launch()
+              for path in paths:
+                  for mode,width in [('desktop',1360),('mobile',390)]:
+                      page=browser.new_page(viewport={'width':width,'height':900})
+                      page.goto(base+'/'+path,wait_until='domcontentloaded',timeout=60000)
+                      page.wait_for_selector('#directory a.player-name[data-journey-portrait]',timeout=60000)
+                      cards=page.locator('#directory article')
+                      assert cards.count()>0
+                      assert page.locator('#directory .journey-portrait').count()==cards.count(),path
+                      card=cards.first
+                      card.scroll_into_view_if_needed()
+                      assert card.locator('a.player-name[href*="player.html?id="]').count()==1
+                      assert card.locator('table').count()>=1
+                      assert card.locator('.path,.multi-path').count()==1
+                      assert card.locator('.journey-portrait').evaluate('(el)=>el.getBoundingClientRect().width>40')
+                      assert page.evaluate('document.documentElement.scrollWidth<=innerWidth+2'),path+' page overflow '+mode
+                      page.wait_for_timeout(1500)
+                      card.screenshot(path=str(out/(path.split('/')[0]+'-'+mode+'.png')))
+                      page.locator('#sort').select_option('name')
+                      page.wait_for_selector('#directory a.player-name[data-journey-portrait]')
+                      assert page.locator('#directory .journey-portrait').count()==cards.count()
+                      name=cards.first.locator('.journey-player-label').inner_text()
+                      page.locator('#search').fill(name)
+                      page.wait_for_selector('#directory a.player-name[data-journey-portrait]')
+                      assert cards.count()>=1 and page.locator('#directory .journey-portrait').count()==cards.count()
+                      # Simulate the failure of every candidate for a card; initials must remain visible.
+                      img=cards.first.locator('.journey-headshot')
+                      for _ in range(12):
+                          if not img.count():break
+                          img.dispatch_event('error')
+                      if img.count()==0:
+                          assert cards.first.locator('.journey-initials').is_visible()
+                      print(path,mode,'PASS',flush=True)
+                      page.close()
+              browser.close()
+          server.shutdown()
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: journey-portrait-review
+          path: journey-portrait-review/

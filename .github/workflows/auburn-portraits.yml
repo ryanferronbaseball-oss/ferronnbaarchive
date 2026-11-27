@@ -45,7 +45,7 @@ jobs:
           report={'school':SCHOOL,'targeted':len(players),'targets':[{k:p[k] for k in ('id','name','schools','preference')} for p in players],'added':[],'upgraded':[],'preserved':[],'missing':[],'notes':[],'rosters':[],'name_discrepancies':[]}
           def verified_url(u,school):
               h=host(u)
-              return u.startswith('https://') and (h==school or any(h==d or h.endswith('.'+d) for d in ('sidearmsports.com','sidearmdev.com','sidearmnextgen.com','cloudfront.net','amazonaws.com')) or (school=='lsusports.net' and (h.endswith('.lsusports.net') or h=='storage.googleapis.com' and re.match(r'/lsu(?:sports)?[-a-z0-9]*/',urlsplit(u).path,re.I))) )
+              return u.startswith('https://') and (h==school or h.endswith('.'+school) or any(h==d or h.endswith('.'+d) for d in ('sidearmsports.com','sidearmdev.com','sidearmnextgen.com','cloudfront.net','amazonaws.com')) or (school=='lsusports.net' and (h.endswith('.lsusports.net') or h=='storage.googleapis.com' and re.match(r'/lsu(?:sports)?[-a-z0-9]*/',urlsplit(u).path,re.I))) )
           def auburn_images(soup,page,names,confirmed_bio=False):
               for im in soup.find_all('img'):
                   alt=norm(im.get('alt',''))
@@ -116,7 +116,7 @@ jobs:
                               slug=path.split('/')[-2]
                           if norm(slug) in names or norm(a.get_text(' ',strip=True)) in names:
                               if h==HOST:
-                                  season=f'{y-1}-{str(y)[-2:]}'
+                                  season=str(y)
                                   v=f'https://{HOST}/sports/baseball/roster/season/{season}/player/{slug}'
                               links.append(v)
                       if h==HOST:imgs=list(auburn_images(soup,u,names))
@@ -139,8 +139,8 @@ jobs:
                           title=' '.join(t.get_text(' ',strip=True) for t in soup.find_all(['h1','h2','title']))
                           if not any(n in norm(title) for n in names):continue
                           if h==HOST:
-                              season=f'{y-1}-{str(y)[-2:]}'
-                              if season not in title:continue
+                              season=str(y)
+                              if not re.search(r'\b'+re.escape(season)+r'\b',title):continue
                               options=list(auburn_images(soup,r.url,names,True))
                               if not options:
                                   diagnostics[cid]['attempts'].append({'source':r.url,'images':[{'alt':im.get('alt'),'src':im.get('src'),'data-src':im.get('data-src')} for im in soup.find_all('img') if 'headshot' in str(im).lower()][:4]})

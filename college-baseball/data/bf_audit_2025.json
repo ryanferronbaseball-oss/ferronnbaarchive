@@ -1,0 +1,3553 @@
+{
+  "scope": "2025 college baseball only; exact official BF; missing fields only",
+  "pass": "validated USD numeric-tail parser",
+  "games": [
+    {
+      "game_id": "cb-2025-02-04-lenoir-rhyne-barton-att0296",
+      "date": "2025-02-04",
+      "away": "Lenoir-Rhyne",
+      "home": "Barton",
+      "source_url": "https://bartonbulldogs.com/sports/baseball/stats/2025/lenoir-rhyne/boxscore/6025",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 12,
+      "added": 12,
+      "recovered_this_run": 12,
+      "values": [
+        {
+          "player_id": "cb-lenoir-rhyne-preston-drebes",
+          "team": "Lenoir-Rhyne",
+          "BF": 14
+        },
+        {
+          "player_id": "cb-lenoir-rhyne-caleb-cockerham",
+          "team": "Lenoir-Rhyne",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-lenoir-rhyne-kobie-cushing",
+          "team": "Lenoir-Rhyne",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-lenoir-rhyne-spencer-floyd",
+          "team": "Lenoir-Rhyne",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-lenoir-rhyne-carmine-poppiti",
+          "team": "Lenoir-Rhyne",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-lenoir-rhyne-michael-ribis",
+          "team": "Lenoir-Rhyne",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-lenoir-rhyne-peyton-schofield",
+          "team": "Lenoir-Rhyne",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-lenoir-rhyne-caydon-laird",
+          "team": "Lenoir-Rhyne",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-barton-a-j-campbell",
+          "team": "Barton",
+          "BF": 23
+        },
+        {
+          "player_id": "cb-barton-nick-napolitano",
+          "team": "Barton",
+          "BF": 11
+        },
+        {
+          "player_id": "cb-barton-matthew-rivers",
+          "team": "Barton",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-barton-jacob-cabaniss",
+          "team": "Barton",
+          "BF": 5
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2025-02-14-quinnipiac-georgia-att0297",
+      "date": "2025-02-14",
+      "away": "Quinnipiac",
+      "home": "Georgia",
+      "source_url": "https://georgiadogs.com/sports/baseball/stats/2025/quinnipiac/boxscore/25439",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 6,
+      "added": 6,
+      "recovered_this_run": 6,
+      "values": [
+        {
+          "player_id": "cb-quinnipiac-josh-lajoie",
+          "team": "Quinnipiac",
+          "BF": 15
+        },
+        {
+          "player_id": "cb-quinnipiac-jack-gannon",
+          "team": "Quinnipiac",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-quinnipiac-jack-kabel",
+          "team": "Quinnipiac",
+          "BF": 12
+        },
+        {
+          "player_id": "cb-quinnipiac-griffin-seibel",
+          "team": "Quinnipiac",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-georgia-zach-harris",
+          "team": "Georgia",
+          "BF": 16
+        },
+        {
+          "player_id": "cb-georgia-paul-farley",
+          "team": "Georgia",
+          "BF": 17
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2025-02-14-quinnipiac-unc-wilmington-att0298",
+      "date": "2025-02-14",
+      "away": "Quinnipiac",
+      "home": "UNC Wilmington",
+      "source_url": "https://gobobcats.com/sports/baseball/stats/2025/uncw/boxscore/22616",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 6,
+      "added": 6,
+      "recovered_this_run": 6,
+      "values": [
+        {
+          "player_id": "cb-quinnipiac-nick-balcom",
+          "team": "Quinnipiac",
+          "BF": 24
+        },
+        {
+          "player_id": "cb-quinnipiac-ryan-o-conne",
+          "team": "Quinnipiac",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-quinnipiac-j-c-francon",
+          "team": "Quinnipiac",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-quinnipiac-christian-ni",
+          "team": "Quinnipiac",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-unc-wilmington-zane-taylor",
+          "team": "UNC Wilmington",
+          "BF": 26
+        },
+        {
+          "player_id": "cb-unc-wilmington-ty-lawson",
+          "team": "UNC Wilmington",
+          "BF": 1
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2025-02-15-georgia-quinnipiac-att0299",
+      "date": "2025-02-15",
+      "away": "Georgia",
+      "home": "Quinnipiac",
+      "source_url": "https://gobobcats.com/sports/baseball/stats/2025/georgia/boxscore/22617",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 9,
+      "added": 9,
+      "recovered_this_run": 9,
+      "values": [
+        {
+          "player_id": "cb-georgia-charlie-goldstein",
+          "team": "Georgia",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-georgia-leighton-finley",
+          "team": "Georgia",
+          "BF": 19
+        },
+        {
+          "player_id": "cb-georgia-jordan-stephens",
+          "team": "Georgia",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-georgia-davis-chastain",
+          "team": "Georgia",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-georgia-dj-radtke",
+          "team": "Georgia",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-quinnipiac-mike-poncini",
+          "team": "Quinnipiac",
+          "BF": 15
+        },
+        {
+          "player_id": "cb-quinnipiac-andrew-rubay",
+          "team": "Quinnipiac",
+          "BF": 17
+        },
+        {
+          "player_id": "cb-quinnipiac-jack-gannon",
+          "team": "Quinnipiac",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-quinnipiac-ryan-hutchin",
+          "team": "Quinnipiac",
+          "BF": 5
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2025-02-15-georgia-unc-wilmington-att0300",
+      "date": "2025-02-15",
+      "away": "Georgia",
+      "home": "UNC Wilmington",
+      "source_url": "https://georgiadogs.com/sports/baseball/stats/2025/uncw/boxscore/25440",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 8,
+      "added": 8,
+      "recovered_this_run": 8,
+      "values": [
+        {
+          "player_id": "cb-georgia-brian-zeldin",
+          "team": "Georgia",
+          "BF": 16
+        },
+        {
+          "player_id": "cb-georgia-alton-davis-ii",
+          "team": "Georgia",
+          "BF": 13
+        },
+        {
+          "player_id": "cb-georgia-brian-curley",
+          "team": "Georgia",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-unc-wilmington-trace-baker",
+          "team": "UNC Wilmington",
+          "BF": 19
+        },
+        {
+          "player_id": "cb-unc-wilmington-aubrey-smith",
+          "team": "UNC Wilmington",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-unc-wilmington-cooper-allen",
+          "team": "UNC Wilmington",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-unc-wilmington-mason-murdock",
+          "team": "UNC Wilmington",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-unc-wilmington-cyle-phelan",
+          "team": "UNC Wilmington",
+          "BF": 2
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2025-02-15-quinnipiac-unc-wilmington-att0301",
+      "date": "2025-02-15",
+      "away": "Quinnipiac",
+      "home": "UNC Wilmington",
+      "source_url": "https://gobobcats.com/sports/baseball/stats/2025/uncw/boxscore/22618",
+      "status": "unresolved",
+      "reason": "unable to uniquely match both full pitching tables to archived names and IP/H/R/ER/BB/K"
+    },
+    {
+      "game_id": "cb-2025-02-16-georgia-unc-wilmington-att0302",
+      "date": "2025-02-16",
+      "away": "Georgia",
+      "home": "UNC Wilmington",
+      "source_url": "https://georgiadogs.com/sports/baseball/stats/2025/uncw/boxscore/25441",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 8,
+      "added": 8,
+      "recovered_this_run": 8,
+      "values": [
+        {
+          "player_id": "cb-georgia-zach-brown",
+          "team": "Georgia",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-georgia-eric-hammond",
+          "team": "Georgia",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-georgia-matthew-hoskins",
+          "team": "Georgia",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-georgia-jt-quinn",
+          "team": "Georgia",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-georgia-tyler-mcloughlin",
+          "team": "Georgia",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-unc-wilmington-connor-marshburn",
+          "team": "UNC Wilmington",
+          "BF": 22
+        },
+        {
+          "player_id": "cb-unc-wilmington-cyle-phelan",
+          "team": "UNC Wilmington",
+          "BF": 11
+        },
+        {
+          "player_id": "cb-unc-wilmington-bromley-thornton",
+          "team": "UNC Wilmington",
+          "BF": 3
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2025-02-17-washington-st-joe-s-att0303",
+      "date": "2025-02-17",
+      "away": "Washington",
+      "home": "St. Joe's",
+      "source_url": "https://sjuhawks.com/sports/baseball/stats/2025/washington/boxscore/13133",
+      "status": "unresolved",
+      "reason": "expected two explicit BF pitching tables, found 0; pitching reconciliation: rows=6 sums=[11, 9, 9, 4, 8, 43] totals=[] skipped=[]; pitching reconciliation: rows=6 sums=[10, 12, 9, 11, 10, 50] totals=[] skipped=[]"
+    },
+    {
+      "game_id": "cb-2025-02-17-kansas-state-coastal-carolina-att0304",
+      "date": "2025-02-17",
+      "away": "Kansas State",
+      "home": "Coastal Carolina",
+      "source_url": "https://www.kstatesports.com/sports/baseball/stats/2025/coastal-carolina/boxscore/18791",
+      "status": "unresolved",
+      "reason": "date not confirmed"
+    },
+    {
+      "game_id": "cb-2025-02-18-georgia-kennesaw-state-att0305",
+      "date": "2025-02-18",
+      "away": "Georgia",
+      "home": "Kennesaw State",
+      "source_url": "https://georgiadogs.com/sports/baseball/stats/2025/kennesaw-state/boxscore/25442",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 16,
+      "added": 16,
+      "recovered_this_run": 16,
+      "values": [
+        {
+          "player_id": "cb-georgia-kolten-smith",
+          "team": "Georgia",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-georgia-collin-caldwell",
+          "team": "Georgia",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-georgia-justin-byrd",
+          "team": "Georgia",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-georgia-dj-radtke",
+          "team": "Georgia",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-georgia-jordan-stephens",
+          "team": "Georgia",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-georgia-davis-chastain",
+          "team": "Georgia",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-georgia-tyler-mcloughlin",
+          "team": "Georgia",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-georgia-brian-curley",
+          "team": "Georgia",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-kennesaw-state-daniel-powell",
+          "team": "Kennesaw State",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-kennesaw-state-smith-pinson",
+          "team": "Kennesaw State",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-kennesaw-state-j-t-gibson",
+          "team": "Kennesaw State",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-kennesaw-state-ryan-renfroe",
+          "team": "Kennesaw State",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-kennesaw-state-bo-rhudy",
+          "team": "Kennesaw State",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-kennesaw-state-nate-helman",
+          "team": "Kennesaw State",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-kennesaw-state-halton-hardy",
+          "team": "Kennesaw State",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-kennesaw-state-harry-cain",
+          "team": "Kennesaw State",
+          "BF": 2
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2025-02-19-north-alabama-auburn-att0306",
+      "date": "2025-02-19",
+      "away": "North Alabama",
+      "home": "Auburn",
+      "source_url": "https://roarlions.com/sports/baseball/stats/2025/auburn/boxscore/4901",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 8,
+      "added": 8,
+      "recovered_this_run": 8,
+      "values": [
+        {
+          "player_id": "cb-north-alabama-reese-young",
+          "team": "North Alabama",
+          "BF": 17
+        },
+        {
+          "player_id": "cb-north-alabama-landon-scruggs",
+          "team": "North Alabama",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-north-alabama-john-allen-stogner",
+          "team": "North Alabama",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-north-alabama-justus-agosto",
+          "team": "North Alabama",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-north-alabama-josh-bowerman",
+          "team": "North Alabama",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-auburn-andreas-alvarez",
+          "team": "Auburn",
+          "BF": 19
+        },
+        {
+          "player_id": "cb-auburn-griffin-graves",
+          "team": "Auburn",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-auburn-parker-carlson",
+          "team": "Auburn",
+          "BF": 9
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2025-02-23-northwestern-state-troy-att0307",
+      "date": "2025-02-23",
+      "away": "Northwestern State",
+      "home": "Troy",
+      "source_url": "https://troytrojans.com/sports/baseball/stats/2025/northwestern-state/boxscore/10370",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 10,
+      "added": 10,
+      "recovered_this_run": 10,
+      "values": [
+        {
+          "player_id": "cb-northwestern-state-trent-hillen",
+          "team": "Northwestern State",
+          "BF": 21
+        },
+        {
+          "player_id": "cb-northwestern-state-brandon-carter",
+          "team": "Northwestern State",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-northwestern-state-jacob-leblanc",
+          "team": "Northwestern State",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-northwestern-state-adam-alexis",
+          "team": "Northwestern State",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-northwestern-state-connor-wilson",
+          "team": "Northwestern State",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-northwestern-state-kaden-mccoy",
+          "team": "Northwestern State",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-troy-drew-nelson",
+          "team": "Troy",
+          "BF": 24
+        },
+        {
+          "player_id": "cb-troy-kelly-crumpton",
+          "team": "Troy",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-troy-george-welch",
+          "team": "Troy",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-troy-brock-tapper",
+          "team": "Troy",
+          "BF": 3
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2025-02-28-ut-martin-middle-tennessee-state-att0308",
+      "date": "2025-02-28",
+      "away": "UT Martin",
+      "home": "Middle Tennessee State",
+      "source_url": "https://goblueraiders.com/sports/baseball/stats/2025/ut-martin/boxscore/15080",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 10,
+      "added": 10,
+      "recovered_this_run": 10,
+      "values": [
+        {
+          "player_id": "cb-ut-martin-brandon-king",
+          "team": "UT Martin",
+          "BF": 19
+        },
+        {
+          "player_id": "cb-ut-martin-jeb-bartle",
+          "team": "UT Martin",
+          "BF": 19
+        },
+        {
+          "player_id": "cb-ut-martin-kaleb-baskin",
+          "team": "UT Martin",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-ut-martin-jp-nunn",
+          "team": "UT Martin",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-middle-tennessee-state-trace-phillips",
+          "team": "Middle Tennessee State",
+          "BF": 25
+        },
+        {
+          "player_id": "cb-middle-tennessee-state-ollie-akens",
+          "team": "Middle Tennessee State",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-middle-tennessee-state-will-jenkins",
+          "team": "Middle Tennessee State",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-middle-tennessee-state-ethan-imbimbo",
+          "team": "Middle Tennessee State",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-middle-tennessee-state-bryant-beranek",
+          "team": "Middle Tennessee State",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-middle-tennessee-state-landen-burch",
+          "team": "Middle Tennessee State",
+          "BF": 2
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2025-02-28-old-dominion-st-bonaventure-att0309",
+      "date": "2025-02-28",
+      "away": "Old Dominion",
+      "home": "St. Bonaventure",
+      "source_url": "https://gobonnies.com/sports/baseball/stats/2025/old-dominion/boxscore/7305",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 8,
+      "added": 8,
+      "recovered_this_run": 8,
+      "values": [
+        {
+          "player_id": "cb-old-dominion-ben-moore",
+          "team": "Old Dominion",
+          "BF": 15
+        },
+        {
+          "player_id": "cb-old-dominion-nick-sulpizio",
+          "team": "Old Dominion",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-old-dominion-kellen-davis",
+          "team": "Old Dominion",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-old-dominion-bailey-matela",
+          "team": "Old Dominion",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-old-dominion-tyler-stott",
+          "team": "Old Dominion",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-st-bonaventure-james-capellupo",
+          "team": "St. Bonaventure",
+          "BF": 25
+        },
+        {
+          "player_id": "cb-st-bonaventure-alex-barger",
+          "team": "St. Bonaventure",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-st-bonaventure-luke-roggenburk",
+          "team": "St. Bonaventure",
+          "BF": 16
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2025-03-01-ut-martin-old-dominion-att0310",
+      "date": "2025-03-01",
+      "away": "UT Martin",
+      "home": "Old Dominion",
+      "source_url": "https://utmsports.com/sports/baseball/stats/2025/old-dominion/boxscore/12303",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 6,
+      "added": 6,
+      "recovered_this_run": 6,
+      "values": [
+        {
+          "player_id": "cb-ut-martin-drake-bayles",
+          "team": "UT Martin",
+          "BF": 29
+        },
+        {
+          "player_id": "cb-ut-martin-mason-shropshire",
+          "team": "UT Martin",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-old-dominion-dylan-brown",
+          "team": "Old Dominion",
+          "BF": 23
+        },
+        {
+          "player_id": "cb-old-dominion-marco-levari",
+          "team": "Old Dominion",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-old-dominion-alex-hunt",
+          "team": "Old Dominion",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-old-dominion-frankie-wright",
+          "team": "Old Dominion",
+          "BF": 4
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2025-03-01-st-bonaventure-middle-tennessee-state-att0311",
+      "date": "2025-03-01",
+      "away": "St. Bonaventure",
+      "home": "Middle Tennessee State",
+      "source_url": "https://goblueraiders.com/sports/baseball/stats/2025/st-bonaventure/boxscore/15081",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 7,
+      "added": 7,
+      "recovered_this_run": 7,
+      "values": [
+        {
+          "player_id": "cb-st-bonaventure-michael-salina",
+          "team": "St. Bonaventure",
+          "BF": 20
+        },
+        {
+          "player_id": "cb-st-bonaventure-conor-wolf",
+          "team": "St. Bonaventure",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-middle-tennessee-state-chandler-alderman",
+          "team": "Middle Tennessee State",
+          "BF": 21
+        },
+        {
+          "player_id": "cb-middle-tennessee-state-jonny-stevens",
+          "team": "Middle Tennessee State",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-middle-tennessee-state-jack-fortner",
+          "team": "Middle Tennessee State",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-middle-tennessee-state-garrett-sims",
+          "team": "Middle Tennessee State",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-middle-tennessee-state-ethan-imbimbo",
+          "team": "Middle Tennessee State",
+          "BF": 4
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2025-03-02-old-dominion-middle-tennessee-state-att0312",
+      "date": "2025-03-02",
+      "away": "Old Dominion",
+      "home": "Middle Tennessee State",
+      "source_url": "https://goblueraiders.com/sports/baseball/stats/2025/old-dominion/boxscore/15082",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 6,
+      "added": 6,
+      "recovered_this_run": 6,
+      "values": [
+        {
+          "player_id": "cb-old-dominion-blake-morgan",
+          "team": "Old Dominion",
+          "BF": 29
+        },
+        {
+          "player_id": "cb-old-dominion-kellen-davis",
+          "team": "Old Dominion",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-old-dominion-bailey-matela",
+          "team": "Old Dominion",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-middle-tennessee-state-drew-horn",
+          "team": "Middle Tennessee State",
+          "BF": 22
+        },
+        {
+          "player_id": "cb-middle-tennessee-state-ollie-akens",
+          "team": "Middle Tennessee State",
+          "BF": 15
+        },
+        {
+          "player_id": "cb-middle-tennessee-state-landen-burch",
+          "team": "Middle Tennessee State",
+          "BF": 3
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2025-03-02-st-bonaventure-ut-martin-att0313",
+      "date": "2025-03-02",
+      "away": "St. Bonaventure",
+      "home": "UT Martin",
+      "source_url": "https://utmsports.com/sports/baseball/stats/2025/st-bonaventure/boxscore/12304",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 11,
+      "added": 11,
+      "recovered_this_run": 11,
+      "values": [
+        {
+          "player_id": "cb-st-bonaventure-chance-moore",
+          "team": "St. Bonaventure",
+          "BF": 13
+        },
+        {
+          "player_id": "cb-st-bonaventure-kade-walker",
+          "team": "St. Bonaventure",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-st-bonaventure-gabe-watts",
+          "team": "St. Bonaventure",
+          "BF": 15
+        },
+        {
+          "player_id": "cb-st-bonaventure-luke-roggenburk",
+          "team": "St. Bonaventure",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-ut-martin-jacob-sitton",
+          "team": "UT Martin",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-ut-martin-quincy-thornton",
+          "team": "UT Martin",
+          "BF": 20
+        },
+        {
+          "player_id": "cb-ut-martin-zach-wager",
+          "team": "UT Martin",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-ut-martin-austin-gast",
+          "team": "UT Martin",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-ut-martin-quin-long",
+          "team": "UT Martin",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-ut-martin-shawn-perez",
+          "team": "UT Martin",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-ut-martin-brock-arender",
+          "team": "UT Martin",
+          "BF": 6
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2025-03-04-gardner-webb-east-carolina-att0314",
+      "date": "2025-03-04",
+      "away": "Gardner Webb",
+      "home": "East Carolina",
+      "source_url": "https://gwusports.com/sports/baseball/stats/2025/east-carolina/boxscore/8420",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 15,
+      "added": 15,
+      "recovered_this_run": 15,
+      "values": [
+        {
+          "player_id": "cb-gardner-webb-will-franklin",
+          "team": "Gardner Webb",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-gardner-webb-kevin-pauly",
+          "team": "Gardner Webb",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-gardner-webb-john-pfeffer",
+          "team": "Gardner Webb",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-gardner-webb-jace-presley",
+          "team": "Gardner Webb",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-gardner-webb-michael-ciminiello",
+          "team": "Gardner Webb",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-gardner-webb-nick-vieira",
+          "team": "Gardner Webb",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-gardner-webb-jack-iannibelli",
+          "team": "Gardner Webb",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-gardner-webb-dominic-guzman",
+          "team": "Gardner Webb",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-gardner-webb-mason-manriquez",
+          "team": "Gardner Webb",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-gardner-webb-devin-pressley",
+          "team": "Gardner Webb",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-east-carolina-bradley-zayac",
+          "team": "East Carolina",
+          "BF": 11
+        },
+        {
+          "player_id": "cb-east-carolina-jaden-winter",
+          "team": "East Carolina",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-east-carolina-jackson-dilorenzo",
+          "team": "East Carolina",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-east-carolina-ian-white-jr",
+          "team": "East Carolina",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-east-carolina-jake-hunter",
+          "team": "East Carolina",
+          "BF": 22
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2025-03-07-cornell-michigan-state-att0315",
+      "date": "2025-03-07",
+      "away": "Cornell",
+      "home": "Michigan State",
+      "source_url": "https://cornellbigred.com/sports/baseball/stats/2025/michigan-state-university/boxscore/60616",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 8,
+      "added": 8,
+      "recovered_this_run": 8,
+      "values": [
+        {
+          "player_id": "cb-cornell-carson-mayfield",
+          "team": "Cornell",
+          "BF": 22
+        },
+        {
+          "player_id": "cb-cornell-nathaniel-jennewein",
+          "team": "Cornell",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-cornell-william-jaun",
+          "team": "Cornell",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-cornell-ryan-porter",
+          "team": "Cornell",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-michigan-state-nolan-higgins",
+          "team": "Michigan State",
+          "BF": 25
+        },
+        {
+          "player_id": "cb-michigan-state-zach-maxey",
+          "team": "Michigan State",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-michigan-state-dominic-pianto",
+          "team": "Michigan State",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-michigan-state-tyler-horvath",
+          "team": "Michigan State",
+          "BF": 3
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2025-03-07-uab-michigan-state-att0316",
+      "date": "2025-03-07",
+      "away": "UAB",
+      "home": "Michigan State",
+      "source_url": "https://msuspartans.com/sports/baseball/stats/2025/uab/boxscore/19682",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 7,
+      "added": 7,
+      "recovered_this_run": 7,
+      "values": [
+        {
+          "player_id": "cb-uab-cole-cheatham",
+          "team": "UAB",
+          "BF": 19
+        },
+        {
+          "player_id": "cb-uab-tyler-haines",
+          "team": "UAB",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-uab-brock-hill",
+          "team": "UAB",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-uab-cj-ellis",
+          "team": "UAB",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-michigan-state-joseph-dzierwa",
+          "team": "Michigan State",
+          "BF": 27
+        },
+        {
+          "player_id": "cb-michigan-state-tate-farquhar",
+          "team": "Michigan State",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-michigan-state-george-viebrock-iii",
+          "team": "Michigan State",
+          "BF": 6
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2025-03-08-stonehill-high-point-att0317",
+      "date": "2025-03-08",
+      "away": "Stonehill",
+      "home": "High Point",
+      "source_url": "https://highpointpanthers.com/sports/baseball/stats/2025/stonehill/boxscore/15752",
+      "status": "unresolved",
+      "reason": "expected two explicit BF pitching tables, found 0; pitching reconciliation: rows=6 sums=[15, 21, 19, 6, 2, 47] totals=[] skipped=[]; pitching reconciliation: rows=4 sums=[12, 9, 6, 4, 4, 49] totals=[] skipped=[]"
+    },
+    {
+      "game_id": "cb-2025-03-09-stanford-north-carolina-att0318",
+      "date": "2025-03-09",
+      "away": "Stanford",
+      "home": "North Carolina",
+      "source_url": "https://goheels.com/sports/baseball/stats/2025/stanford/boxscore/25906",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 7,
+      "added": 7,
+      "recovered_this_run": 7,
+      "values": [
+        {
+          "player_id": "cb-stanford-joey-volchko",
+          "team": "Stanford",
+          "BF": 20
+        },
+        {
+          "player_id": "cb-stanford-aidan-keenan",
+          "team": "Stanford",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-stanford-toran-o-harran",
+          "team": "Stanford",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-north-carolina-aidan-haugh",
+          "team": "North Carolina",
+          "BF": 18
+        },
+        {
+          "player_id": "cb-north-carolina-walker-mcduffie",
+          "team": "North Carolina",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-north-carolina-matthew-matthijs",
+          "team": "North Carolina",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-north-carolina-camron-seagraves",
+          "team": "North Carolina",
+          "BF": 4
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2025-03-12-george-mason-duke-att0319",
+      "date": "2025-03-12",
+      "away": "George Mason",
+      "home": "Duke",
+      "source_url": "https://goduke.com/sports/baseball/stats/2025/george-mason/boxscore/23987",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 15,
+      "added": 15,
+      "recovered_this_run": 15,
+      "values": [
+        {
+          "player_id": "cb-george-mason-connor-o-hara",
+          "team": "George Mason",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-george-mason-jake-drumm",
+          "team": "George Mason",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-george-mason-britt-yount",
+          "team": "George Mason",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-george-mason-michael-madigan",
+          "team": "George Mason",
+          "BF": 11
+        },
+        {
+          "player_id": "cb-george-mason-shaun-okeeffe",
+          "team": "George Mason",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-george-mason-gardner-meeks",
+          "team": "George Mason",
+          "BF": 12
+        },
+        {
+          "player_id": "cb-duke-gavin-brown",
+          "team": "Duke",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-duke-ryan-calvert",
+          "team": "Duke",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-duke-edward-hart",
+          "team": "Duke",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-duke-mark-hindy",
+          "team": "Duke",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-duke-james-tallon",
+          "team": "Duke",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-duke-roman-digiacomo",
+          "team": "Duke",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-duke-owen-proksch",
+          "team": "Duke",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-duke-max-stammel",
+          "team": "Duke",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-duke-reid-easterly",
+          "team": "Duke",
+          "BF": 4
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2025-03-14-princeton-liberty-att0320",
+      "date": "2025-03-14",
+      "away": "Princeton",
+      "home": "Liberty",
+      "source_url": "https://libertyflames.com/sports/baseball/stats/2025/princeton/boxscore/14637",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 6,
+      "added": 6,
+      "recovered_this_run": 6,
+      "values": [
+        {
+          "player_id": "cb-princeton-sean-episcope",
+          "team": "Princeton",
+          "BF": 17
+        },
+        {
+          "player_id": "cb-princeton-justin-kim",
+          "team": "Princeton",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-princeton-jacob-faulkner",
+          "team": "Princeton",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-liberty-dylan-mathiesen",
+          "team": "Liberty",
+          "BF": 18
+        },
+        {
+          "player_id": "cb-liberty-jack-frankel",
+          "team": "Liberty",
+          "BF": 15
+        },
+        {
+          "player_id": "cb-liberty-tyler-august",
+          "team": "Liberty",
+          "BF": 4
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2025-03-14-miami-wake-forest-att0321",
+      "date": "2025-03-14",
+      "away": "Miami",
+      "home": "Wake Forest",
+      "source_url": "https://godeacs.com/sports/baseball/stats/2025/miami/boxscore/13957",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 4,
+      "added": 4,
+      "recovered_this_run": 4,
+      "values": [
+        {
+          "player_id": "cb-miami-nick-robert",
+          "team": "Miami",
+          "BF": 26
+        },
+        {
+          "player_id": "cb-miami-jake-dorn",
+          "team": "Miami",
+          "BF": 12
+        },
+        {
+          "player_id": "cb-wake-forest-logan-lunceford",
+          "team": "Wake Forest",
+          "BF": 24
+        },
+        {
+          "player_id": "cb-wake-forest-zach-johnston",
+          "team": "Wake Forest",
+          "BF": 8
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2025-03-15-virginia-tech-nc-state-att0322",
+      "date": "2025-03-15",
+      "away": "Virginia Tech",
+      "home": "NC State",
+      "source_url": "https://gopack.com/sports/baseball/stats/2025/virginia-tech/boxscore/23688",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 6,
+      "added": 6,
+      "recovered_this_run": 6,
+      "values": [
+        {
+          "player_id": "cb-virginia-tech-jake-marciano",
+          "team": "Virginia Tech",
+          "BF": 25
+        },
+        {
+          "player_id": "cb-virginia-tech-andrew-sentlinger",
+          "team": "Virginia Tech",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-virginia-tech-jacob-exum",
+          "team": "Virginia Tech",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-virginia-tech-josh-berzonski",
+          "team": "Virginia Tech",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-nc-state-heath-andrews",
+          "team": "NC State",
+          "BF": 20
+        },
+        {
+          "player_id": "cb-nc-state-andrew-shaffner",
+          "team": "NC State",
+          "BF": 14
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2025-03-16-harvard-northeastern-att0323",
+      "date": "2025-03-16",
+      "away": "Harvard",
+      "home": "Northeastern",
+      "source_url": "https://gocrimson.com/sports/baseball/stats/2025/northeastern-university/boxscore/31531",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 6,
+      "added": 6,
+      "recovered_this_run": 6,
+      "values": [
+        {
+          "player_id": "cb-harvard-brian-dowling",
+          "team": "Harvard",
+          "BF": 20
+        },
+        {
+          "player_id": "cb-harvard-cole-cleary",
+          "team": "Harvard",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-harvard-jack-smith",
+          "team": "Harvard",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-northeastern-jordan-gottesman",
+          "team": "Northeastern",
+          "BF": 21
+        },
+        {
+          "player_id": "cb-northeastern-cooper-mcgrath",
+          "team": "Northeastern",
+          "BF": 12
+        },
+        {
+          "player_id": "cb-northeastern-max-gitlin",
+          "team": "Northeastern",
+          "BF": 7
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2025-03-19-richmond-virginia-att0324",
+      "date": "2025-03-19",
+      "away": "Richmond",
+      "home": "Virginia",
+      "source_url": "https://richmondspiders.com/sports/baseball/stats/2025/virginia/boxscore/11480",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 14,
+      "added": 14,
+      "recovered_this_run": 14,
+      "values": [
+        {
+          "player_id": "cb-richmond-gerry-peacock",
+          "team": "Richmond",
+          "BF": 15
+        },
+        {
+          "player_id": "cb-richmond-brian-reinke",
+          "team": "Richmond",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-richmond-chayse-gruber",
+          "team": "Richmond",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-richmond-tyler-rigot",
+          "team": "Richmond",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-richmond-glenn-smith",
+          "team": "Richmond",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-richmond-kellan-heney",
+          "team": "Richmond",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-richmond-angel-santiago-cruz",
+          "team": "Richmond",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-virginia-hodges",
+          "team": "Virginia",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-virginia-markus",
+          "team": "Virginia",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-virginia-arrington",
+          "team": "Virginia",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-virginia-jaxel",
+          "team": "Virginia",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-virginia-osinski",
+          "team": "Virginia",
+          "BF": 12
+        },
+        {
+          "player_id": "cb-virginia-m-buchanan",
+          "team": "Virginia",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-virginia-koenen",
+          "team": "Virginia",
+          "BF": 2
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2025-03-22-western-kentucky-kennesaw-state-att0325",
+      "date": "2025-03-22",
+      "away": "Western Kentucky",
+      "home": "Kennesaw State",
+      "source_url": "https://wkusports.com/sports/baseball/stats/2025/kennesaw-state/boxscore/12878",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 5,
+      "added": 5,
+      "recovered_this_run": 5,
+      "values": [
+        {
+          "player_id": "cb-western-kentucky-drew-whalen",
+          "team": "Western Kentucky",
+          "BF": 25
+        },
+        {
+          "player_id": "cb-western-kentucky-treyson-peters",
+          "team": "Western Kentucky",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-western-kentucky-evan-jones",
+          "team": "Western Kentucky",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-kennesaw-state-harry-cain",
+          "team": "Kennesaw State",
+          "BF": 21
+        },
+        {
+          "player_id": "cb-kennesaw-state-daniel-powell",
+          "team": "Kennesaw State",
+          "BF": 14
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2025-03-28-tennessee-south-carolina-att0326",
+      "date": "2025-03-28",
+      "away": "Tennessee",
+      "home": "South Carolina",
+      "source_url": "https://utsports.com/sports/baseball/stats/2025/south-carolina/boxscore/29225",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 6,
+      "added": 6,
+      "recovered_this_run": 6,
+      "values": [
+        {
+          "player_id": "cb-tennessee-liam-doyle",
+          "team": "Tennessee",
+          "BF": 27
+        },
+        {
+          "player_id": "cb-tennessee-tanner-franklin",
+          "team": "Tennessee",
+          "BF": 11
+        },
+        {
+          "player_id": "cb-tennessee-dylan-loy",
+          "team": "Tennessee",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-south-carolina-mccoy",
+          "team": "South Carolina",
+          "BF": 23
+        },
+        {
+          "player_id": "cb-south-carolina-pitzer",
+          "team": "South Carolina",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-south-carolina-c-jones",
+          "team": "South Carolina",
+          "BF": 13
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2025-03-29-tennessee-south-carolina-att0327",
+      "date": "2025-03-29",
+      "away": "Tennessee",
+      "home": "South Carolina",
+      "source_url": "https://utsports.com/sports/baseball/stats/2025/south-carolina/boxscore/29234",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 5,
+      "added": 5,
+      "recovered_this_run": 5,
+      "values": [
+        {
+          "player_id": "cb-tennessee-marcus-phillips",
+          "team": "Tennessee",
+          "BF": 20
+        },
+        {
+          "player_id": "cb-tennessee-brandon-arvidson",
+          "team": "Tennessee",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-tennessee-nate-snead",
+          "team": "Tennessee",
+          "BF": 14
+        },
+        {
+          "player_id": "cb-south-carolina-jarvis-evans-jr",
+          "team": "South Carolina",
+          "BF": 24
+        },
+        {
+          "player_id": "cb-south-carolina-brandon-stone",
+          "team": "South Carolina",
+          "BF": 13
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2025-03-30-tennessee-south-carolina-att0328",
+      "date": "2025-03-30",
+      "away": "Tennessee",
+      "home": "South Carolina",
+      "source_url": "https://utsports.com/sports/baseball/stats/2025/south-carolina/boxscore/29235",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 8,
+      "added": 8,
+      "recovered_this_run": 8,
+      "values": [
+        {
+          "player_id": "cb-tennessee-tegan-kuhns",
+          "team": "Tennessee",
+          "BF": 19
+        },
+        {
+          "player_id": "cb-tennessee-brayden-krenzel",
+          "team": "Tennessee",
+          "BF": 21
+        },
+        {
+          "player_id": "cb-south-carolina-matthew-becker",
+          "team": "South Carolina",
+          "BF": 16
+        },
+        {
+          "player_id": "cb-south-carolina-parker-marlatt",
+          "team": "South Carolina",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-south-carolina-ashton-crowther",
+          "team": "South Carolina",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-south-carolina-ryder-garino",
+          "team": "South Carolina",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-south-carolina-caleb-jones",
+          "team": "South Carolina",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-south-carolina-brendan-sweeney",
+          "team": "South Carolina",
+          "BF": 10
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2025-04-06-northeastern-campbell-att0329",
+      "date": "2025-04-06",
+      "away": "Northeastern",
+      "home": "Campbell",
+      "source_url": "https://gocamels.com/sports/baseball/stats/2025/northeastern/boxscore/207692",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 11,
+      "added": 11,
+      "recovered_this_run": 11,
+      "values": [
+        {
+          "player_id": "cb-northeastern-jack-bowery",
+          "team": "Northeastern",
+          "BF": 18
+        },
+        {
+          "player_id": "cb-northeastern-jordan-gottesman",
+          "team": "Northeastern",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-northeastern-jack-beauchesne",
+          "team": "Northeastern",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-northeastern-carson-walsh",
+          "team": "Northeastern",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-northeastern-james-morice",
+          "team": "Northeastern",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-northeastern-ryan-griffin",
+          "team": "Northeastern",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-campbell-david-rossow",
+          "team": "Campbell",
+          "BF": 14
+        },
+        {
+          "player_id": "cb-campbell-jett-music",
+          "team": "Campbell",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-campbell-lleyton-grubich",
+          "team": "Campbell",
+          "BF": 16
+        },
+        {
+          "player_id": "cb-campbell-zach-sabers",
+          "team": "Campbell",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-campbell-bryce-schares",
+          "team": "Campbell",
+          "BF": 4
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2025-04-06-virginia-nc-state-att0330",
+      "date": "2025-04-06",
+      "away": "Virginia",
+      "home": "NC State",
+      "source_url": "https://gopack.com/sports/baseball/stats/2025/virginia/boxscore/23700",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 9,
+      "added": 9,
+      "recovered_this_run": 9,
+      "values": [
+        {
+          "player_id": "cb-virginia-tomas-valincius",
+          "team": "Virginia",
+          "BF": 25
+        },
+        {
+          "player_id": "cb-virginia-ryan-osinski",
+          "team": "Virginia",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-virginia-matthew-buchanan",
+          "team": "Virginia",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-virginia-wes-arrington",
+          "team": "Virginia",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-virginia-matt-lanzendorfer",
+          "team": "Virginia",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-nc-state-ryan-marohn",
+          "team": "NC State",
+          "BF": 24
+        },
+        {
+          "player_id": "cb-nc-state-anderson-nance",
+          "team": "NC State",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-nc-state-tristan-potts",
+          "team": "NC State",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-nc-state-jacob-dudan",
+          "team": "NC State",
+          "BF": 4
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2025-04-11-louisville-nc-state-att0331",
+      "date": "2025-04-11",
+      "away": "Louisville",
+      "home": "NC State",
+      "source_url": "https://gocards.com/sports/baseball/stats/2025/nc-state/boxscore/25392",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 10,
+      "added": 10,
+      "recovered_this_run": 10,
+      "values": [
+        {
+          "player_id": "cb-louisville-patrick-forbes",
+          "team": "Louisville",
+          "BF": 18
+        },
+        {
+          "player_id": "cb-louisville-justin-west",
+          "team": "Louisville",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-louisville-jack-brown",
+          "team": "Louisville",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-louisville-casen-murphy",
+          "team": "Louisville",
+          "BF": 11
+        },
+        {
+          "player_id": "cb-louisville-jake-schweitzer",
+          "team": "Louisville",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-louisville-ty-starke",
+          "team": "Louisville",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-nc-state-dominic-fritton",
+          "team": "NC State",
+          "BF": 17
+        },
+        {
+          "player_id": "cb-nc-state-matt-willadsen",
+          "team": "NC State",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-nc-state-camden-wimbish",
+          "team": "NC State",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-nc-state-jacob-dudan",
+          "team": "NC State",
+          "BF": 13
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2025-04-12-louisville-nc-state-att0332",
+      "date": "2025-04-12",
+      "away": "Louisville",
+      "home": "NC State",
+      "source_url": "https://gopack.com/sports/baseball/stats/2025/louisville/boxscore/23703",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 8,
+      "added": 8,
+      "recovered_this_run": 8,
+      "values": [
+        {
+          "player_id": "cb-louisville-ethan-eberle",
+          "team": "Louisville",
+          "BF": 17
+        },
+        {
+          "player_id": "cb-louisville-brennyn-cutts",
+          "team": "Louisville",
+          "BF": 13
+        },
+        {
+          "player_id": "cb-louisville-jared-lessman",
+          "team": "Louisville",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-nc-state-heath-andrews",
+          "team": "NC State",
+          "BF": 18
+        },
+        {
+          "player_id": "cb-nc-state-cooper-consiglio",
+          "team": "NC State",
+          "BF": 15
+        },
+        {
+          "player_id": "cb-nc-state-jaxon-lucas",
+          "team": "NC State",
+          "BF": 16
+        },
+        {
+          "player_id": "cb-nc-state-jacob-dienes",
+          "team": "NC State",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-nc-state-tristan-potts",
+          "team": "NC State",
+          "BF": 4
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2025-04-13-stanford-clemson-att0333",
+      "date": "2025-04-13",
+      "away": "Stanford",
+      "home": "Clemson",
+      "source_url": "https://theacc.com/boxscore.aspx?id=JcLFfL9RUu0H5ystoOMbjQ7A58QMysWHEEqi7hufVoQXO5nVxbctjHh%2F6ifARsoKUNz2Cn1GpJx0eQgL%2FI8uNugW6%2F65ooJ9xE6%2BliOEFRl1EIOMAkcBvIU2aC8AuTauCGGaSEdWKLMwB6pxJuRC4Pn4585Q5%2FHCZpKhX7fcTTzm9NS3UeCAntLP6CUZGwLJ&path=baseball",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 8,
+      "added": 8,
+      "recovered_this_run": 8,
+      "values": [
+        {
+          "player_id": "cb-stanford-matt-scott",
+          "team": "Stanford",
+          "BF": 28
+        },
+        {
+          "player_id": "cb-stanford-ryan-speshyock",
+          "team": "Stanford",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-stanford-toran-o-harran",
+          "team": "Stanford",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-stanford-aidan-keenan",
+          "team": "Stanford",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-clemson-b-j-bailey",
+          "team": "Clemson",
+          "BF": 23
+        },
+        {
+          "player_id": "cb-clemson-hudson-lee",
+          "team": "Clemson",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-clemson-chance-fitzgerald",
+          "team": "Clemson",
+          "BF": 15
+        },
+        {
+          "player_id": "cb-clemson-jacob-mcgovern",
+          "team": "Clemson",
+          "BF": 1
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2025-04-18-stony-brook-hofstra-att0334",
+      "date": "2025-04-18",
+      "away": "Stony Brook",
+      "home": "Hofstra",
+      "source_url": "https://stonybrookathletics.com/sports/baseball/stats/2025/hofstra/boxscore/11907",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 4,
+      "added": 4,
+      "recovered_this_run": 4,
+      "values": [
+        {
+          "player_id": "cb-stony-brook-eddie-smink",
+          "team": "Stony Brook",
+          "BF": 29
+        },
+        {
+          "player_id": "cb-hofstra-sean-hamilton",
+          "team": "Hofstra",
+          "BF": 13
+        },
+        {
+          "player_id": "cb-hofstra-christian-rasmussen",
+          "team": "Hofstra",
+          "BF": 16
+        },
+        {
+          "player_id": "cb-hofstra-michael-heyman",
+          "team": "Hofstra",
+          "BF": 18
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2025-04-19-minnesota-rutgers-att0335",
+      "date": "2025-04-19",
+      "away": "Minnesota",
+      "home": "Rutgers",
+      "source_url": "https://gophersports.com/sports/baseball/stats/2025/rutgers/boxscore/21668",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 6,
+      "added": 6,
+      "recovered_this_run": 6,
+      "values": [
+        {
+          "player_id": "cb-minnesota-kyle-remington",
+          "team": "Minnesota",
+          "BF": 22
+        },
+        {
+          "player_id": "cb-minnesota-noah-rooney",
+          "team": "Minnesota",
+          "BF": 13
+        },
+        {
+          "player_id": "cb-minnesota-eli-sundquist",
+          "team": "Minnesota",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-rutgers-quinn-berglin",
+          "team": "Rutgers",
+          "BF": 18
+        },
+        {
+          "player_id": "cb-rutgers-luke-fithian",
+          "team": "Rutgers",
+          "BF": 14
+        },
+        {
+          "player_id": "cb-rutgers-preston-prince",
+          "team": "Rutgers",
+          "BF": 10
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2025-04-25-nebraska-maryland-att0336",
+      "date": "2025-04-25",
+      "away": "Nebraska",
+      "home": "Maryland",
+      "source_url": "https://umterps.com/sports/baseball/stats/2025/nebraska/boxscore/18441",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 6,
+      "added": 6,
+      "recovered_this_run": 6,
+      "values": [
+        {
+          "player_id": "cb-nebraska-will-walsh",
+          "team": "Nebraska",
+          "BF": 17
+        },
+        {
+          "player_id": "cb-nebraska-tucker-timmerman",
+          "team": "Nebraska",
+          "BF": 20
+        },
+        {
+          "player_id": "cb-nebraska-pryce-bender",
+          "team": "Nebraska",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-nebraska-blake-encarnacion",
+          "team": "Nebraska",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-maryland-kyle-mccoy",
+          "team": "Maryland",
+          "BF": 28
+        },
+        {
+          "player_id": "cb-maryland-logan-hastings",
+          "team": "Maryland",
+          "BF": 13
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2025-04-26-tulane-east-carolina-att0337",
+      "date": "2025-04-26",
+      "away": "Tulane",
+      "home": "East Carolina",
+      "source_url": "https://tulanegreenwave.com/sports/baseball/stats/2025/east-carolina/boxscore/22920",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 6,
+      "added": 6,
+      "recovered_this_run": 6,
+      "values": [
+        {
+          "player_id": "cb-tulane-trey-cehajic",
+          "team": "Tulane",
+          "BF": 13
+        },
+        {
+          "player_id": "cb-tulane-tayler-montiel",
+          "team": "Tulane",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-tulane-blaise-wilcenski",
+          "team": "Tulane",
+          "BF": 15
+        },
+        {
+          "player_id": "cb-tulane-michael-devenney",
+          "team": "Tulane",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-east-carolina-ethan-young",
+          "team": "East Carolina",
+          "BF": 12
+        },
+        {
+          "player_id": "cb-east-carolina-ethan-norby",
+          "team": "East Carolina",
+          "BF": 21
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2025-04-27-tulane-east-carolina-att0338",
+      "date": "2025-04-27",
+      "away": "Tulane",
+      "home": "East Carolina",
+      "source_url": "https://ecupirates.com/sports/baseball/stats/2025/tulane/boxscore/13754",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 7,
+      "added": 7,
+      "recovered_this_run": 7,
+      "values": [
+        {
+          "player_id": "cb-tulane-michael-lombardi",
+          "team": "Tulane",
+          "BF": 19
+        },
+        {
+          "player_id": "cb-tulane-carter-benbrook",
+          "team": "Tulane",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-tulane-will-clements",
+          "team": "Tulane",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-tulane-tayler-montiel",
+          "team": "Tulane",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-east-carolina-sean-jenkins",
+          "team": "East Carolina",
+          "BF": 16
+        },
+        {
+          "player_id": "cb-east-carolina-jake-hunter",
+          "team": "East Carolina",
+          "BF": 17
+        },
+        {
+          "player_id": "cb-east-carolina-jackson-dilorenzo",
+          "team": "East Carolina",
+          "BF": 3
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2025-05-02-san-francisco-san-diego-att0339",
+      "date": "2025-05-02",
+      "away": "San Francisco",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2025/san-francisco/boxscore/14807",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 7,
+      "added": 7,
+      "recovered_this_run": 7,
+      "values": [
+        {
+          "player_id": "cb-san-francisco-gabriel-barrett",
+          "team": "San Francisco",
+          "BF": 26
+        },
+        {
+          "player_id": "cb-san-francisco-dylan-brown",
+          "team": "San Francisco",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-san-francisco-cal-amborn",
+          "team": "San Francisco",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-san-diego-cal-scolari",
+          "team": "San Diego",
+          "BF": 24
+        },
+        {
+          "player_id": "cb-san-diego-hayden-cody",
+          "team": "San Diego",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-san-diego-jamie-robertson",
+          "team": "San Diego",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-san-diego-jack-giordano",
+          "team": "San Diego",
+          "BF": 3
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2025-05-03-san-francisco-san-diego-att0340",
+      "date": "2025-05-03",
+      "away": "San Francisco",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2025/san-francisco/boxscore/14808",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 7,
+      "added": 7,
+      "recovered_this_run": 7,
+      "values": [
+        {
+          "player_id": "cb-san-francisco-lance-santerre",
+          "team": "San Francisco",
+          "BF": 17
+        },
+        {
+          "player_id": "cb-san-francisco-joe-soberon",
+          "team": "San Francisco",
+          "BF": 12
+        },
+        {
+          "player_id": "cb-san-francisco-hunter-holzemer",
+          "team": "San Francisco",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-san-diego-porter-rovin",
+          "team": "San Diego",
+          "BF": 16
+        },
+        {
+          "player_id": "cb-san-diego-tristan-lamaison",
+          "team": "San Diego",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-san-diego-fernando-palencia",
+          "team": "San Diego",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-san-diego-austin-smith",
+          "team": "San Diego",
+          "BF": 8
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2025-05-06-georgia-southern-georgia-tech-att0341",
+      "date": "2025-05-06",
+      "away": "Georgia Southern",
+      "home": "Georgia Tech",
+      "source_url": "https://gseagles.com/sports/baseball/stats/2025/georgia-tech/boxscore/16717",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 10,
+      "added": 10,
+      "recovered_this_run": 10,
+      "values": [
+        {
+          "player_id": "cb-georgia-southern-evan-vandenbosch",
+          "team": "Georgia Southern",
+          "BF": 13
+        },
+        {
+          "player_id": "cb-georgia-southern-davis-smith",
+          "team": "Georgia Southern",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-georgia-southern-thomas-burke",
+          "team": "Georgia Southern",
+          "BF": 11
+        },
+        {
+          "player_id": "cb-georgia-southern-joey-white",
+          "team": "Georgia Southern",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-georgia-tech-carson-ballard",
+          "team": "Georgia Tech",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-georgia-tech-kayden-campbell",
+          "team": "Georgia Tech",
+          "BF": 12
+        },
+        {
+          "player_id": "cb-georgia-tech-jake-lankie",
+          "team": "Georgia Tech",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-georgia-tech-brett-barfield",
+          "team": "Georgia Tech",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-georgia-tech-caden-spivey",
+          "team": "Georgia Tech",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-georgia-tech-mason-patel",
+          "team": "Georgia Tech",
+          "BF": 4
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2025-05-08-nc-state-north-carolina-att0342",
+      "date": "2025-05-08",
+      "away": "NC State",
+      "home": "North Carolina",
+      "source_url": "https://goheels.com/sports/baseball/stats/2025/nc-state/boxscore/25939",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 4,
+      "added": 4,
+      "recovered_this_run": 4,
+      "values": [
+        {
+          "player_id": "cb-nc-state-ryan-marohn",
+          "team": "NC State",
+          "BF": 29
+        },
+        {
+          "player_id": "cb-nc-state-jaxon-lucas",
+          "team": "NC State",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-north-carolina-jake-knapp",
+          "team": "North Carolina",
+          "BF": 28
+        },
+        {
+          "player_id": "cb-north-carolina-walker-mcduffie",
+          "team": "North Carolina",
+          "BF": 3
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2025-05-09-richmond-vcu-att0343",
+      "date": "2025-05-09",
+      "away": "Richmond",
+      "home": "VCU",
+      "source_url": "https://vcuathletics.com/sports/baseball/stats/2025/richmond/boxscore/6759",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 5,
+      "added": 5,
+      "recovered_this_run": 5,
+      "values": [
+        {
+          "player_id": "cb-richmond-jackson-hinchliffe",
+          "team": "Richmond",
+          "BF": 17
+        },
+        {
+          "player_id": "cb-richmond-chayse-gruber",
+          "team": "Richmond",
+          "BF": 11
+        },
+        {
+          "player_id": "cb-richmond-ryan-bilka",
+          "team": "Richmond",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-vcu-owen-tappy",
+          "team": "VCU",
+          "BF": 36
+        },
+        {
+          "player_id": "cb-vcu-cade-dressler",
+          "team": "VCU",
+          "BF": 10
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2025-05-10-george-mason-davidson-att0344",
+      "date": "2025-05-10",
+      "away": "George Mason",
+      "home": "Davidson",
+      "source_url": "https://davidsonwildcats.com/sports/baseball/stats/2025/george-mason/boxscore/9771",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 4,
+      "added": 4,
+      "recovered_this_run": 4,
+      "values": [
+        {
+          "player_id": "cb-george-mason-connor-o-hara",
+          "team": "George Mason",
+          "BF": 24
+        },
+        {
+          "player_id": "cb-george-mason-daniel-elliott",
+          "team": "George Mason",
+          "BF": 11
+        },
+        {
+          "player_id": "cb-davidson-isaac-fix",
+          "team": "Davidson",
+          "BF": 25
+        },
+        {
+          "player_id": "cb-davidson-matt-weber",
+          "team": "Davidson",
+          "BF": 16
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2025-05-10-pittsburgh-wake-forest-att0345",
+      "date": "2025-05-10",
+      "away": "Pittsburgh",
+      "home": "Wake Forest",
+      "source_url": "https://godeacs.com/sports/baseball/stats/2025/pitt/boxscore/14025",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 10,
+      "added": 10,
+      "recovered_this_run": 10,
+      "values": [
+        {
+          "player_id": "cb-pittsburgh-kyle-demi",
+          "team": "Pittsburgh",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-pittsburgh-matt-porter",
+          "team": "Pittsburgh",
+          "BF": 15
+        },
+        {
+          "player_id": "cb-pittsburgh-daniel-mcauliff",
+          "team": "Pittsburgh",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-pittsburgh-ethan-firoved",
+          "team": "Pittsburgh",
+          "BF": 19
+        },
+        {
+          "player_id": "cb-wake-forest-matthew-dallas",
+          "team": "Wake Forest",
+          "BF": 16
+        },
+        {
+          "player_id": "cb-wake-forest-luke-schmolke",
+          "team": "Wake Forest",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-wake-forest-griffin-green",
+          "team": "Wake Forest",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-wake-forest-haiden-leffew",
+          "team": "Wake Forest",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-wake-forest-rhys-bowie",
+          "team": "Wake Forest",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-wake-forest-joe-ariola",
+          "team": "Wake Forest",
+          "BF": 2
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2025-05-11-louisiana-southern-mississippi-att0346",
+      "date": "2025-05-11",
+      "away": "Louisiana",
+      "home": "Southern Mississippi",
+      "source_url": "https://southernmiss.com/sports/baseball/stats/2025/louisiana/boxscore/11590",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 8,
+      "added": 8,
+      "recovered_this_run": 8,
+      "values": [
+        {
+          "player_id": "cb-louisiana-jr-tollett",
+          "team": "Louisiana",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-louisiana-dylan-theut",
+          "team": "Louisiana",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-louisiana-riley-marcotte",
+          "team": "Louisiana",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-louisiana-tate-hess",
+          "team": "Louisiana",
+          "BF": 11
+        },
+        {
+          "player_id": "cb-southern-mississippi-grayden-harris",
+          "team": "Southern Mississippi",
+          "BF": 13
+        },
+        {
+          "player_id": "cb-southern-mississippi-kros-sivley",
+          "team": "Southern Mississippi",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-southern-mississippi-josh-och",
+          "team": "Southern Mississippi",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-southern-mississippi-landen-payne",
+          "team": "Southern Mississippi",
+          "BF": 12
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2025-05-15-arizona-state-oklahoma-state-att0347",
+      "date": "2025-05-15",
+      "away": "Arizona State",
+      "home": "Oklahoma State",
+      "source_url": "https://okstate.com/sports/baseball/stats/2025/arizona-state/boxscore/16712",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 7,
+      "added": 7,
+      "recovered_this_run": 7,
+      "values": [
+        {
+          "player_id": "cb-arizona-state-ben-jacobs",
+          "team": "Arizona State",
+          "BF": 24
+        },
+        {
+          "player_id": "cb-arizona-state-wyatt-halvorson",
+          "team": "Arizona State",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-arizona-state-sean-fitzpatrick",
+          "team": "Arizona State",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-arizona-state-eli-buxton",
+          "team": "Arizona State",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-oklahoma-state-harrison-bodendorf",
+          "team": "Oklahoma State",
+          "BF": 26
+        },
+        {
+          "player_id": "cb-oklahoma-state-ryan-ure",
+          "team": "Oklahoma State",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-oklahoma-state-gabe-davis",
+          "team": "Oklahoma State",
+          "BF": 7
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2025-05-16-oregon-iowa-att0348",
+      "date": "2025-05-16",
+      "away": "Oregon",
+      "home": "Iowa",
+      "source_url": "https://goducks.com/sports/baseball/stats/2025/iowa/boxscore/23664",
+      "status": "unresolved",
+      "reason": "date not confirmed"
+    },
+    {
+      "game_id": "cb-2025-05-17-oregon-iowa-att0349",
+      "date": "2025-05-17",
+      "away": "Oregon",
+      "home": "Iowa",
+      "source_url": "https://goducks.com/sports/baseball/stats/2025/iowa/boxscore/23665",
+      "status": "unresolved",
+      "reason": "date not confirmed"
+    },
+    {
+      "game_id": "cb-2025-05-20-missouri-alabama-att0350",
+      "date": "2025-05-20",
+      "away": "Missouri",
+      "home": "Alabama",
+      "source_url": "https://rolltide.com/sports/baseball/stats/2025/missouri/boxscore/19864",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 6,
+      "added": 6,
+      "recovered_this_run": 6,
+      "values": [
+        {
+          "player_id": "cb-missouri-sam-horn",
+          "team": "Missouri",
+          "BF": 15
+        },
+        {
+          "player_id": "cb-missouri-wil-libbert",
+          "team": "Missouri",
+          "BF": 22
+        },
+        {
+          "player_id": "cb-alabama-tyler-fay",
+          "team": "Alabama",
+          "BF": 24
+        },
+        {
+          "player_id": "cb-alabama-matthew-heiberger",
+          "team": "Alabama",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-alabama-braylon-myers",
+          "team": "Alabama",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-alabama-carson-ozmer",
+          "team": "Alabama",
+          "BF": 6
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2025-05-20-kentucky-oklahoma-att0351",
+      "date": "2025-05-20",
+      "away": "Kentucky",
+      "home": "Oklahoma",
+      "source_url": "https://soonersports.com/sports/baseball/stats/2025/kentucky/boxscore/15220",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 8,
+      "added": 8,
+      "recovered_this_run": 8,
+      "values": [
+        {
+          "player_id": "cb-kentucky-scott-rouse",
+          "team": "Kentucky",
+          "BF": 13
+        },
+        {
+          "player_id": "cb-kentucky-evan-byers",
+          "team": "Kentucky",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-kentucky-jackson-nove",
+          "team": "Kentucky",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-kentucky-hayden-smith",
+          "team": "Kentucky",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-kentucky-tommy-skelding",
+          "team": "Kentucky",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-oklahoma-jaden-barfield",
+          "team": "Oklahoma",
+          "BF": 18
+        },
+        {
+          "player_id": "cb-oklahoma-james-hitt",
+          "team": "Oklahoma",
+          "BF": 13
+        },
+        {
+          "player_id": "cb-oklahoma-dylan-crooks",
+          "team": "Oklahoma",
+          "BF": 3
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2025-05-20-south-carolina-florida-att0352",
+      "date": "2025-05-20",
+      "away": "South Carolina",
+      "home": "Florida",
+      "source_url": "https://d2b5htfb6s9xp9.cloudfront.net/sports/baseball/stats/2025/south-carolina/boxscore/27367",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 11,
+      "added": 11,
+      "recovered_this_run": 11,
+      "values": [
+        {
+          "player_id": "cb-south-carolina-brandon-stone",
+          "team": "South Carolina",
+          "BF": 17
+        },
+        {
+          "player_id": "cb-south-carolina-ryder-garino",
+          "team": "South Carolina",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-south-carolina-matthew-becker",
+          "team": "South Carolina",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-south-carolina-zach-russell",
+          "team": "South Carolina",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-south-carolina-caleb-jones",
+          "team": "South Carolina",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-south-carolina-cooper-parks",
+          "team": "South Carolina",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-south-carolina-parker-marlatt",
+          "team": "South Carolina",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-south-carolina-brendan-sweeney",
+          "team": "South Carolina",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-florida-billy-barlow",
+          "team": "Florida",
+          "BF": 17
+        },
+        {
+          "player_id": "cb-florida-blaine-rowland",
+          "team": "Florida",
+          "BF": 17
+        },
+        {
+          "player_id": "cb-florida-christian-rodriguez",
+          "team": "Florida",
+          "BF": 6
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2025-05-21-texas-a-m-mississippi-state-att0353",
+      "date": "2025-05-21",
+      "away": "Texas A&M",
+      "home": "Mississippi State",
+      "source_url": "https://hailstate.com/sports/baseball/stats/2025/texas-am/boxscore/27187",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 9,
+      "added": 9,
+      "recovered_this_run": 9,
+      "values": [
+        {
+          "player_id": "cb-texas-a-m-ryan-prager",
+          "team": "Texas A&M",
+          "BF": 23
+        },
+        {
+          "player_id": "cb-texas-a-m-clayton-freshcorn",
+          "team": "Texas A&M",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-texas-a-m-brad-rudis",
+          "team": "Texas A&M",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-texas-a-m-gavin-lyons",
+          "team": "Texas A&M",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-mississippi-state-ryan-mcpherson",
+          "team": "Mississippi State",
+          "BF": 14
+        },
+        {
+          "player_id": "cb-mississippi-state-davis",
+          "team": "Mississippi State",
+          "BF": 13
+        },
+        {
+          "player_id": "cb-mississippi-state-burns",
+          "team": "Mississippi State",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-mississippi-state-dotson",
+          "team": "Mississippi State",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-mississippi-state-foster",
+          "team": "Mississippi State",
+          "BF": 3
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2025-05-21-alabama-tennessee-att0354",
+      "date": "2025-05-21",
+      "away": "Alabama",
+      "home": "Tennessee",
+      "source_url": "https://rolltide.com/boxscore.aspx?id=19947",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 13,
+      "added": 13,
+      "recovered_this_run": 13,
+      "values": [
+        {
+          "player_id": "cb-alabama-aeden-finateri",
+          "team": "Alabama",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-alabama-matthew-heiberger",
+          "team": "Alabama",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-alabama-braylon-myers",
+          "team": "Alabama",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-alabama-zane-adams",
+          "team": "Alabama",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-alabama-hagan-banks",
+          "team": "Alabama",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-alabama-jt-blackwood",
+          "team": "Alabama",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-alabama-austin-morris",
+          "team": "Alabama",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-alabama-beau-bryans",
+          "team": "Alabama",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-alabama-coulson-buchanan",
+          "team": "Alabama",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-tennessee-marcus-phillips",
+          "team": "Tennessee",
+          "BF": 17
+        },
+        {
+          "player_id": "cb-tennessee-brandon-arvidson",
+          "team": "Tennessee",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-tennessee-aj-russell",
+          "team": "Tennessee",
+          "BF": 17
+        },
+        {
+          "player_id": "cb-tennessee-brayden-krenzel",
+          "team": "Tennessee",
+          "BF": 6
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2025-05-21-oklahoma-georgia-att0355",
+      "date": "2025-05-21",
+      "away": "Oklahoma",
+      "home": "Georgia",
+      "source_url": "https://soonersports.com/sports/baseball/stats/2025/georgia/boxscore/15224",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 8,
+      "added": 8,
+      "recovered_this_run": 8,
+      "values": [
+        {
+          "player_id": "cb-oklahoma-kyson-witherspoon",
+          "team": "Oklahoma",
+          "BF": 27
+        },
+        {
+          "player_id": "cb-oklahoma-jason-bodin",
+          "team": "Oklahoma",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-oklahoma-dylan-crooks",
+          "team": "Oklahoma",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-georgia-jt-quinn",
+          "team": "Georgia",
+          "BF": 16
+        },
+        {
+          "player_id": "cb-georgia-matthew-hoskins",
+          "team": "Georgia",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-georgia-dj-radtke",
+          "team": "Georgia",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-georgia-brian-zeldin",
+          "team": "Georgia",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-georgia-zach-harris",
+          "team": "Georgia",
+          "BF": 4
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2025-05-21-florida-ole-miss-att0356",
+      "date": "2025-05-21",
+      "away": "Florida",
+      "home": "Ole Miss",
+      "source_url": "https://olemisssports.com/sports/baseball/stats/2025/florida/boxscore/14223",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 6,
+      "added": 6,
+      "recovered_this_run": 6,
+      "values": [
+        {
+          "player_id": "cb-florida-liam-peterson",
+          "team": "Florida",
+          "BF": 18
+        },
+        {
+          "player_id": "cb-florida-luke-mcneillie",
+          "team": "Florida",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-florida-jake-clemente",
+          "team": "Florida",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-ole-miss-hunter-elliott",
+          "team": "Ole Miss",
+          "BF": 22
+        },
+        {
+          "player_id": "cb-ole-miss-mason-morris",
+          "team": "Ole Miss",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-ole-miss-connor-spencer",
+          "team": "Ole Miss",
+          "BF": 3
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2025-05-22-texas-a-m-auburn-att0357",
+      "date": "2025-05-22",
+      "away": "Texas A&M",
+      "home": "Auburn",
+      "source_url": "https://storage.googleapis.com/auburn-prod/2025/05/23/SDbWI4p6H0cZg8tyo5LFycKPk6WAtPElf5AeOVSK.pdf",
+      "status": "existing_verified_backfill"
+    },
+    {
+      "game_id": "cb-2025-05-22-tennessee-texas-att0358",
+      "date": "2025-05-22",
+      "away": "Tennessee",
+      "home": "Texas",
+      "source_url": "https://utsports.com/sports/baseball/stats/2025/texas/boxscore/29524",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 9,
+      "added": 9,
+      "recovered_this_run": 9,
+      "values": [
+        {
+          "player_id": "cb-tennessee-liam-doyle",
+          "team": "Tennessee",
+          "BF": 19
+        },
+        {
+          "player_id": "cb-tennessee-brandon-arvidson",
+          "team": "Tennessee",
+          "BF": 21
+        },
+        {
+          "player_id": "cb-tennessee-dylan-loy",
+          "team": "Tennessee",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-tennessee-nate-snead",
+          "team": "Tennessee",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-texas-walker",
+          "team": "Texas",
+          "BF": 15
+        },
+        {
+          "player_id": "cb-texas-saunier",
+          "team": "Texas",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-texas-burns",
+          "team": "Texas",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-texas-grubbs",
+          "team": "Texas",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-texas-volantis",
+          "team": "Texas",
+          "BF": 9
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2025-05-22-oklahoma-vanderbilt-att0359",
+      "date": "2025-05-22",
+      "away": "Oklahoma",
+      "home": "Vanderbilt",
+      "source_url": "https://soonersports.com/sports/baseball/stats/2025/vanderbilt/boxscore/15226",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 9,
+      "added": 9,
+      "recovered_this_run": 9,
+      "values": [
+        {
+          "player_id": "cb-oklahoma-cade-crossland",
+          "team": "Oklahoma",
+          "BF": 19
+        },
+        {
+          "player_id": "cb-oklahoma-gavyn-jones",
+          "team": "Oklahoma",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-oklahoma-jason-bodin",
+          "team": "Oklahoma",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-oklahoma-reid-hensley",
+          "team": "Oklahoma",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-oklahoma-dylan-tate",
+          "team": "Oklahoma",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-vanderbilt-jd-thompson",
+          "team": "Vanderbilt",
+          "BF": 22
+        },
+        {
+          "player_id": "cb-vanderbilt-luke-guth",
+          "team": "Vanderbilt",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-vanderbilt-levi-huesman",
+          "team": "Vanderbilt",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-vanderbilt-sawyer-hawks",
+          "team": "Vanderbilt",
+          "BF": 5
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2025-05-23-ole-miss-arkansas-att0360",
+      "date": "2025-05-23",
+      "away": "Ole Miss",
+      "home": "Arkansas",
+      "source_url": "https://olemisssports.com/sports/baseball/stats/2025/arkansas/boxscore/14450",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 8,
+      "added": 8,
+      "recovered_this_run": 8,
+      "values": [
+        {
+          "player_id": "cb-ole-miss-riley-maddox",
+          "team": "Ole Miss",
+          "BF": 22
+        },
+        {
+          "player_id": "cb-ole-miss-will-mccausland",
+          "team": "Ole Miss",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-ole-miss-mason-morris",
+          "team": "Ole Miss",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-ole-miss-connor-spencer",
+          "team": "Ole Miss",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-arkansas-zach-root",
+          "team": "Arkansas",
+          "BF": 21
+        },
+        {
+          "player_id": "cb-arkansas-gabe-gaeckle",
+          "team": "Arkansas",
+          "BF": 11
+        },
+        {
+          "player_id": "cb-arkansas-cole-gibler",
+          "team": "Arkansas",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-arkansas-christian-foutch",
+          "team": "Arkansas",
+          "BF": 1
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2025-05-23-texas-a-m-lsu-att0361",
+      "date": "2025-05-23",
+      "away": "Texas A&M",
+      "home": "LSU",
+      "source_url": "https://static.lsusports.net/assets/docs/bb/25stats/game12.htm",
+      "status": "existing_verified_backfill"
+    },
+    {
+      "game_id": "cb-2025-05-24-tennessee-vanderbilt-att0362",
+      "date": "2025-05-24",
+      "away": "Tennessee",
+      "home": "Vanderbilt",
+      "source_url": "https://utsports.com/sports/baseball/stats/2025/vanderbilt/boxscore/29526",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 7,
+      "added": 7,
+      "recovered_this_run": 7,
+      "values": [
+        {
+          "player_id": "cb-tennessee-tegan-kuhns",
+          "team": "Tennessee",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-tennessee-dylan-loy",
+          "team": "Tennessee",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-tennessee-tanner-franklin",
+          "team": "Tennessee",
+          "BF": 12
+        },
+        {
+          "player_id": "cb-tennessee-brayden-krenzel",
+          "team": "Tennessee",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-tennessee-andrew-behnke",
+          "team": "Tennessee",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-vanderbilt-bowker",
+          "team": "Vanderbilt",
+          "BF": 17
+        },
+        {
+          "player_id": "cb-vanderbilt-fennell",
+          "team": "Vanderbilt",
+          "BF": 11
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2025-05-24-ole-miss-lsu-att0363",
+      "date": "2025-05-24",
+      "away": "Ole Miss",
+      "home": "LSU",
+      "source_url": "https://olemisssports.com/sports/baseball/stats/2025/lsu/boxscore/14452",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 7,
+      "added": 7,
+      "recovered_this_run": 7,
+      "values": [
+        {
+          "player_id": "cb-ole-miss-cade-townsend",
+          "team": "Ole Miss",
+          "BF": 18
+        },
+        {
+          "player_id": "cb-ole-miss-gunnar-dennis",
+          "team": "Ole Miss",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-ole-miss-will-mccausland",
+          "team": "Ole Miss",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-ole-miss-connor-spencer",
+          "team": "Ole Miss",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-lsu-jaden-noot",
+          "team": "LSU",
+          "BF": 17
+        },
+        {
+          "player_id": "cb-lsu-chase-shores",
+          "team": "LSU",
+          "BF": 11
+        },
+        {
+          "player_id": "cb-lsu-jacob-mayers",
+          "team": "LSU",
+          "BF": 7
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2025-05-25-ole-miss-vanderbilt-att0364",
+      "date": "2025-05-25",
+      "away": "Ole Miss",
+      "home": "Vanderbilt",
+      "source_url": "https://olemisssports.com/sports/baseball/stats/2025/vanderbilt/boxscore/14454",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 8,
+      "added": 8,
+      "recovered_this_run": 8,
+      "values": [
+        {
+          "player_id": "cb-ole-miss-walker-hooks",
+          "team": "Ole Miss",
+          "BF": 16
+        },
+        {
+          "player_id": "cb-ole-miss-taylor-rabe",
+          "team": "Ole Miss",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-ole-miss-hudson-calhoun",
+          "team": "Ole Miss",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-vanderbilt-austin-nye",
+          "team": "Vanderbilt",
+          "BF": 18
+        },
+        {
+          "player_id": "cb-vanderbilt-miller-green",
+          "team": "Vanderbilt",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-vanderbilt-luke-guth",
+          "team": "Vanderbilt",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-vanderbilt-levi-huesman",
+          "team": "Vanderbilt",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-vanderbilt-sawyer-hawks",
+          "team": "Vanderbilt",
+          "BF": 9
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2025-05-30-east-tennessee-state-louisville-att0365",
+      "date": "2025-05-30",
+      "away": "East Tennessee State",
+      "home": "Louisville",
+      "source_url": "https://etsubucs.com/sports/baseball/stats/2025/no-2-louisville/boxscore/12312",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 5,
+      "added": 5,
+      "recovered_this_run": 5,
+      "values": [
+        {
+          "player_id": "cb-east-tennessee-state-carter-fink",
+          "team": "East Tennessee State",
+          "BF": 20
+        },
+        {
+          "player_id": "cb-east-tennessee-state-derek-mccarley",
+          "team": "East Tennessee State",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-east-tennessee-state-colin-eaton",
+          "team": "East Tennessee State",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-louisville-patrick-forbes",
+          "team": "Louisville",
+          "BF": 25
+        },
+        {
+          "player_id": "cb-louisville-brennyn-cutts",
+          "team": "Louisville",
+          "BF": 11
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2025-05-31-little-rock-rhode-island-att0366",
+      "date": "2025-05-31",
+      "away": "Little Rock",
+      "home": "Rhode Island",
+      "source_url": "https://gorhody.com/sports/baseball/stats/2025/little-rock/boxscore/11499",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 12,
+      "added": 12,
+      "recovered_this_run": 12,
+      "values": [
+        {
+          "player_id": "cb-little-rock-jack-cline",
+          "team": "Little Rock",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-little-rock-hunter-royal",
+          "team": "Little Rock",
+          "BF": 11
+        },
+        {
+          "player_id": "cb-little-rock-blake-van-cleve",
+          "team": "Little Rock",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-little-rock-brody-bunting",
+          "team": "Little Rock",
+          "BF": 21
+        },
+        {
+          "player_id": "cb-rhode-island-jeremy-urena",
+          "team": "Rhode Island",
+          "BF": 19
+        },
+        {
+          "player_id": "cb-rhode-island-brandon-hsu",
+          "team": "Rhode Island",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-rhode-island-josh-kopetski",
+          "team": "Rhode Island",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-rhode-island-joe-sabbath",
+          "team": "Rhode Island",
+          "BF": 19
+        },
+        {
+          "player_id": "cb-rhode-island-parker-aikens",
+          "team": "Rhode Island",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-rhode-island-connor-johnston",
+          "team": "Rhode Island",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-rhode-island-nate-fletcher",
+          "team": "Rhode Island",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-rhode-island-manny-santos",
+          "team": "Rhode Island",
+          "BF": 1
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2025-05-31-dallas-baptist-lsu-att0367",
+      "date": "2025-05-31",
+      "away": "Dallas Baptist",
+      "home": "LSU",
+      "source_url": "https://static.lsusports.net/assets/docs/bb/25stats/LSU531.pdf",
+      "status": "existing_verified_backfill"
+    },
+    {
+      "game_id": "cb-2025-06-01-dallas-baptist-little-rock-att0368",
+      "date": "2025-06-01",
+      "away": "Dallas Baptist",
+      "home": "Little Rock",
+      "source_url": "https://conferenceusa.com/boxscore.aspx?id=7ltyipP022aUJKmSgYVs3wXi7up73ghniwD5ElWyd07J7BNseBaMQePf0fY%2F3yUPe0xn2NSP1KhYlEEwJJTI2vF49MSWN8eSAvBSlXqqqqAbfa5QCOvqItY0uiBAAe4E2k24HvsE2lWpCSmQcjz6t%2FTintI8icxHV5uyu9YfeYM%3D&path=baseball",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 7,
+      "added": 7,
+      "recovered_this_run": 7,
+      "values": [
+        {
+          "player_id": "cb-dallas-baptist-rian-schwede",
+          "team": "Dallas Baptist",
+          "BF": 18
+        },
+        {
+          "player_id": "cb-dallas-baptist-athan-kroll",
+          "team": "Dallas Baptist",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-dallas-baptist-mason-peters",
+          "team": "Dallas Baptist",
+          "BF": 16
+        },
+        {
+          "player_id": "cb-little-rock-gage-haley",
+          "team": "Little Rock",
+          "BF": 17
+        },
+        {
+          "player_id": "cb-little-rock-hunter-royal",
+          "team": "Little Rock",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-little-rock-zach-busick",
+          "team": "Little Rock",
+          "BF": 19
+        },
+        {
+          "player_id": "cb-little-rock-blake-van-cleve",
+          "team": "Little Rock",
+          "BF": 2
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2025-06-01-lsu-little-rock-att0369",
+      "date": "2025-06-01",
+      "away": "LSU",
+      "home": "Little Rock",
+      "source_url": "https://static.lsusports.net/assets/docs/bb/25stats/LSU601.pdf",
+      "status": "existing_verified_backfill"
+    }
+  ]
+}

@@ -4,8 +4,8 @@
   "source": "Original archive owner confirmed each multi-school person",
   "original_attendance_ids_preserved": 444,
   "original_player_game_rows_preserved": 13183,
-  "requested_person_merges": 208,
-  "activated_person_merges": 208,
+  "requested_person_merges": 209,
+  "activated_person_merges": 209,
   "pending_person_merges": 0,
   "merge_policy": "Only listed pair of exact normalized person names and school-specific original source player IDs; all other IDs remain separate",
   "display_aliases": [
@@ -6142,6 +6142,33 @@
       "note": "Owner-approved abbreviated surname and suffix variant; distinct attended games. Christian Serrano is separate.",
       "evidence_urls": [
         "https://gopack.com/sports/baseball/roster/2024"
+      ]
+    },
+    {
+      "name": "Weston Moss",
+      "display_name": "Weston Moss",
+      "canonical_id": "cb-texas-a-m-weston-moss",
+      "source_player_ids": [
+        "cb-texas-a-m-w-moss",
+        "cb-texas-a-m-weston-moss"
+      ],
+      "schools": [
+        "Texas A&M"
+      ],
+      "pairs": [
+        {
+          "team": "Texas A&M",
+          "source_player_id": "cb-texas-a-m-w-moss"
+        },
+        {
+          "team": "Texas A&M",
+          "source_player_id": "cb-texas-a-m-weston-moss"
+        }
+      ],
+      "source_rows": 2,
+      "note": "Owner confirmed W. Moss is Weston Moss; distinct attended games.",
+      "evidence_urls": [
+        "https://12thman.com/sports/baseball/roster/season/2026/player/weston-moss"
       ]
     }
   ]

@@ -1,0 +1,51 @@
+name: College baseball corrected transfer tracker QA
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/college-baseball-transfer-correction-qa.yml']
+permissions:
+  contents: read
+jobs:
+  corrected-transfers:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify actual archive and transfer page use corrected doubleheader
+        run: |
+          node - <<'JS'
+          const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
+          const nodes=new Map();
+          const document={readyState:'loading',addEventListener(){},getElementById(id){if(!nodes.has(id))nodes.set(id,{value:'',textContent:'',innerHTML:'',addEventListener(){}});return nodes.get(id)}};
+          const ctx={window:{CACollegeLogos:{image(){return ''}}},document,URL,URLSearchParams,console,fetch:async url=>({ok:true,json:async()=>JSON.parse(fs.readFileSync('college-baseball/'+String(url).replace(/^\.\//,''),'utf8'))})};
+          vm.createContext(ctx);
+          vm.runInContext(fs.readFileSync('college-baseball/assets/archive.js','utf8'),ctx);
+          (async()=>{
+            const d=await ctx.window.CollegeBaseballArchive.load();
+            const marciano=d.players.find(p=>p.name==='Jake Marciano');
+            const cherry=d.players.find(p=>p.name==='Jackson Cherry');
+            assert(marciano&&cherry);
+            assert.deepEqual(Array.from(marciano.teams),['Auburn']);
+            assert(cherry.teams.includes('Virginia Tech')&&cherry.teams.includes('Mercer'));
+            const old='cb-2025-03-15-virginia-tech-nc-state-att0322';
+            const corrected='cb-2025-03-15-virginia-tech-nc-state-game2-att0322';
+            assert(!d.gameMap.has(old));
+            assert(!d.rows.some(r=>r.game_id===old));
+            const g=d.gameMap.get(corrected);assert(g&&g.away_score===20&&g.home_score===8);
+            const r=cherry.rows.find(r=>r.game_id===corrected);
+            assert(r&&r.batting.atBats===3&&r.batting.hits===1&&r.batting.runs===2&&r.batting.baseOnBalls===2&&r.batting.homeRuns===0&&r.batting.rbi===0);
+            console.log('Marciano',marciano.teams,marciano.games);
+            console.log('Cherry',cherry.teams,cherry.rows.map(r=>({game:r.game_id,team:r.team,batting:r.batting})));
+            vm.runInContext(fs.readFileSync('college-baseball/assets/transfers.js','utf8'),ctx);
+            for(let i=0;i<100&&!nodes.get('playerCount')?.textContent;i++)await new Promise(r=>setTimeout(r,20));
+            const html=nodes.get('directory').innerHTML;
+            assert(!html.includes('Jake Marciano'));
+            assert(html.includes('Jackson Cherry'));
+            const card=html.split('<article class="player-card">').find(s=>s.includes('Jackson Cherry'));
+            assert(card.includes('Virginia Tech')&&card.includes('Mercer')&&card.includes('<td>.333</td><td>0</td><td>0</td>'));
+            console.log('Transfer tracker corrected player card verified; player count:',nodes.get('playerCount').textContent);
+          })().catch(e=>{console.error(e);process.exit(1)});
+          JS

@@ -4351,8 +4351,55 @@
       "home": "Auburn",
       "source_url": "https://static.lsusports.net/assets/docs/bb/26stats/26boxscores.pdf#page=132",
       "original_reason": "date not confirmed",
-      "status": "unresolved",
-      "reason": "PDF gamebook deferred to PDF recovery pass"
+      "status": "recovered",
+      "method": "Manual official LSU season PDF page 132; date, score and exact pitcher signatures matched; explicit BF reconciled against opposing batting totals",
+      "manual_source_url": "https://static.lsusports.net/assets/docs/bb/26stats/26boxscores.pdf#page=132",
+      "corroborating_source_url": "https://auburntigers.com/boxscore/30660",
+      "verification": {
+        "LSU": {
+          "BF": 32,
+          "opponent_AB": 30,
+          "opponent_BB": 1,
+          "opponent_HBP": 1
+        },
+        "Auburn": {
+          "BF": 33,
+          "opponent_AB": 28,
+          "opponent_BB": 3,
+          "opponent_SH": 1,
+          "opponent_SF": 1
+        }
+      },
+      "pitchers": 5,
+      "added": 5,
+      "recovered_this_run": 5,
+      "values": [
+        {
+          "player_id": "cb-lsu-casan-evans",
+          "team": "LSU",
+          "BF": 19
+        },
+        {
+          "player_id": "cb-lsu-ethan-plog",
+          "team": "LSU",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-lsu-zac-cowan",
+          "team": "LSU",
+          "BF": 12
+        },
+        {
+          "player_id": "cb-auburn-jake-marciano",
+          "team": "Auburn",
+          "BF": 22
+        },
+        {
+          "player_id": "cb-auburn-jackson-sanders",
+          "team": "Auburn",
+          "BF": 11
+        }
+      ]
     },
     {
       "game_id": "cb-2026-05-22-auburn-texas-a-m-att0436",

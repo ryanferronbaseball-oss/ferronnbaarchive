@@ -566,10 +566,14 @@ function renderInnings(g){
  +list.map((x,i)=>'<th>'+esc(x.inning??i+1)+'</th>').join("")+'<th>R</th></tr></thead>'
  +'<tbody>'+line("away",g.away,g.away_score)+line("home",g.home,g.home_score)+'</tbody></table></div></section>';
 }
+function pitchLineRate(p,key){
+ const bf=stat(p?.battersFaced),n=stat(p?.[key]);
+ return bf>0&&n!=null&&n>=0&&n<=bf?(100*n/bf).toFixed(1)+"%":"—";
+}
 function renderBox(g,rows,category){
  const batting=category==="batting",fields=batting
  ?[["atBats","AB"],["runs","R"],["hits","H"],["doubles","2B"],["triples","3B"],["homeRuns","HR"],["rbi","RBI"],["baseOnBalls","BB"],["strikeOuts","SO"]]
- :[["outs","IP"],["hits","H"],["earnedRuns","ER"],["baseOnBalls","BB"],["strikeOuts","SO"],["numberOfPitches","Pitches"]];
+ :[["outs","IP"],["hits","H"],["earnedRuns","ER"],["baseOnBalls","BB"],["strikeOuts","SO"],["battersFaced","BF"],["strikeoutPct","K%"],["walkPct","BB%"],["numberOfPitches","Pitches"]];
  return '<div class="cb-boxscore">'+[["away",g.away],["home",g.home]].map(([side,team])=>{
   const members=rows.filter(r=>r.team===team&&r[category]!=null).slice().sort((a,b)=>batting
    ?(a.batting_slot??999)-(b.batting_slot??999)||(a.batting_sub_index??999)-(b.batting_sub_index??999)||(a.batting_appearance_index??999)-(b.batting_appearance_index??999)
@@ -581,6 +585,7 @@ function renderBox(g,rows,category){
     :r.pitching_appearance_index==null?"—":String(r.pitching_appearance_index+1);
    const position=r.position||"",subtitle=batting?position+(sub?" · entered batting slot "+spot:""):"";
    const cells=fields.map(([key])=>{
+    if(!batting&&(key==="strikeoutPct"||key==="walkPct"))return '<td>'+esc(pitchLineRate(r.pitching,key==="strikeoutPct"?"strikeOuts":"baseOnBalls"))+'</td>';
     const value=stat(r[category]?.[key]);
     const output=key==="outs"&&value!=null?Math.floor(value/3)+"."+(value%3):value==null?"—":fmt(value);
     return '<td>'+esc(output)+'</td>';
@@ -593,7 +598,7 @@ function renderBox(g,rows,category){
     +cells+'</tr>';
   }).join("");
   const note=batting?"Official batting order · ↳ denotes a replacement in that lineup spot"
-   :"Official pitching appearance order · #1 starting pitcher, followed by relievers";
+   :"Official pitching appearance order · #1 starting pitcher, followed by relievers · BF = batters faced; rates require verified BF";
   return '<section class="mlb-team-box" data-side="'+side+'" data-category="'+category+'">'
    +'<div class="mlb-team-heading"><h3>'+esc(team)+'</h3><span>'+side.toUpperCase()+'</span></div>'
    +'<p class="mlb-team-caption">'+note+'</p>'
@@ -813,12 +818,12 @@ async function renderPlayer(d){
   $("app").querySelectorAll("[data-side]").forEach(button=>button.setAttribute("aria-selected",String(button.dataset.side===side)));
   const keys=side==="batting"
    ?[["AB","atBats"],["R","runs"],["H","hits"],["2B","doubles"],["3B","triples"],["HR","homeRuns"],["RBI","rbi"],["BB","baseOnBalls"],["K","strikeOuts"]]
-   :[["IP","outs"],["H","hits"],["R","runs"],["ER","earnedRuns"],["BB","baseOnBalls"],["K","strikeOuts"]];
+   :[["IP","outs"],["H","hits"],["R","runs"],["ER","earnedRuns"],["BB","baseOnBalls"],["K","strikeOuts"],["BF","battersFaced"],["K%","strikeoutPct"],["BB%","walkPct"]];
   const rows=logRows.filter(r=>r[side]);
   $("collegePlayerLogs").innerHTML=htmlTable(["Date","Matchup",...keys.map(([label])=>label)],rows.map(r=>{
    const game=d.gameMap.get(r.game_id);if(!game)return "";
    return '<tr><td><a href="'+gameUrl(game)+'">'+esc(date(game.date))+'</a></td><td>'+esc(gameLabel(game))+'</td>'
-    +keys.map(([label,key])=>{const value=r[side]?.[key];const displayed=key==="outs"&&value!=null?Math.floor(Number(value)/3)+"."+(Number(value)%3):stat(value);return '<td>'+esc(displayed==null?"—":displayed)+'</td>'}).join("")+'</tr>';
+    +keys.map(([label,key])=>{if(side==="pitching"&&(key==="strikeoutPct"||key==="walkPct"))return '<td>'+esc(pitchLineRate(r.pitching,key==="strikeoutPct"?"strikeOuts":"baseOnBalls"))+'</td>';const value=r[side]?.[key];const displayed=key==="outs"&&value!=null?Math.floor(Number(value)/3)+"."+(Number(value)%3):stat(value);return '<td>'+esc(displayed==null?"—":displayed)+'</td>'}).join("")+'</tr>';
   }));
  }
  $("app").querySelectorAll("[data-side]").forEach(button=>button.addEventListener("click",()=>showCollegeLogs(button.dataset.side)));

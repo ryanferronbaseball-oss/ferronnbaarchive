@@ -20,6 +20,7 @@ jobs:
           python-version: '3.12'
       - run: pip install requests pillow playwright
       - run: python -m playwright install chromium
+      - run: python -m py_compile scripts/audit_cfb_espn_portraits.py
       - run: python scripts/audit_cfb_espn_portraits.py
       - name: Sample desktop and mobile profile rendering for each school
         run: |

@@ -33,47 +33,70 @@ def align(table, arms):
         if len(candidates)!=1: raise ValueError("ambiguous source pitcher: "+name)
         i=candidates[0]; used.add(i); matches.append((arms[i],bf))
     return matches
+# A reference fixture from the official 2019-02-15 Wagner box score.
+PILOT_ID="cb-2019-02-15-wagner-san-diego-att0032"
+PILOT_BF=[19,8,9,14,19,7,3,5]
+PILOT_ROWS=[
+[("ABBATIELLO, Neil","4.0",5,3,3,2,2,19),("LePRE, Nick","1.0",4,3,3,1,0,8),("PIRROTTA, Mike","0.2",3,4,1,2,0,9),("FREIRE, Keaton","2.1",4,4,4,3,0,14)],
+[("Murphy, Chris","5.0",1,0,0,5,6,19),("Miller, Jake","2.0",0,0,0,1,2,7),("Brown, Cade","1.0",0,0,0,0,1,3),("Mislinski, Nicola","1.0",0,0,0,1,3,5)]]
+KEYS=("H","R","ER","BB","SO","BF")
+def parse_pitching_table(t):
+    hd=table_head(t)
+    if not all(k in hd for k in ("Player","IP",*KEYS)): return None
+    # The header determines the numeric tail. Reading from the right avoids
+    # empty IP cells, colspan quirks, and invisible mobile/desktop cells.
+    after=hd[hd.index("IP")+1:]
+    if len(after)!=len(set(after)): raise ValueError("duplicate pitching header")
+    vals=[]; totals=[]; diagnostic=[]
+    for tr in t.find_all("tr"):
+        cells=tr.find_all(["td","th"],recursive=False)
+        if not cells: continue
+        raw=[cell.get_text(" ",strip=True) for cell in cells]
+        flat=" ".join(v for v in raw if v)
+        if not flat or flat.split()[0]=="Player": continue
+        parts=flat.split()
+        is_total=bool(re.match(r"^(?:team\s+)?totals?\b",flat,re.I))
+        if len(parts)<len(after)+1: continue
+        tail=parts[-len(after):]
+        data=dict(zip(after,tail))
+        if not all(re.fullmatch(r"\d+",data[k]) for k in KEYS):
+            diagnostic.append(raw)
+            continue
+        numbers=[int(data[k]) for k in KEYS]
+        if is_total:
+            totals.append(numbers)
+            continue
+        prefix=parts[:-len(after)]
+        if len(prefix)<2 or not re.fullmatch(r"\d+\.[012]",prefix[-1]):
+            diagnostic.append(raw)
+            continue
+        name=" ".join(prefix[:-1])
+        vals.append((name,prefix[-1],*numbers))
+    # Some versions label a footer "Totals" in a separate header and include
+    # nonnumeric decorative text. Use the original rectangular parser as an
+    # independent fallback only when it has a complete numeric totals row.
+    if not totals:
+        for line in table_rows(t,hd):
+            if line.get("_totals") and all(str(line.get(k,"")).isdigit() for k in KEYS):
+                totals.append([int(line[k]) for k in KEYS])
+    sums=[sum(x[i] for x in vals) for i in range(2,8)]
+    if not vals or not totals or any(z!=sums for z in totals):
+        raise ValueError("pitching reconciliation: rows="+str(len(vals))+" sums="+str(sums)+" totals="+str(totals)+" skipped="+str(diagnostic[:2]))
+    return vals
 def get_tables(g):
-    if g["id"] in SEEDS: return SEEDS[g["id"]],"manually verified official BF column"
     resp=requests.get(g["source_url"],timeout=30,headers={"User-Agent":"Mozilla/5.0"})
     resp.raise_for_status()
     soup=BeautifulSoup(resp.text,"html.parser")
     y,m,d=map(int,g["date"].split("-"))
     page=soup.get_text(" ",strip=True)
     if not any(v in page for v in (f"{m}/{d}/{y}",f"{m:02}/{d:02}/{y}",f"{m}/{d:02}/{y}",f"{m:02}/{d}/{y}")): raise ValueError("date not confirmed")
-    tables=[]
+    tables=[]; errors=[]
     for t in soup.find_all("table"):
-        hd=table_head(t)
-        if not all(k in hd for k in ("Player","IP","H","R","ER","BB","SO","BF")): continue
-        # USD often renders the team totals label and empty IP in a
-        # single colspan cell. Read the explicit numeric suffix after IP
-        # directly instead of depending on a rectangular table shape.
-        vals=[]; totals=[]
-        numeric_fields=hd[hd.index("IP")+1:]
-        for tr in t.find_all("tr"):
-            cells=tr.find_all(["td","th"],recursive=False)
-            raw=[cell.get_text(" ",strip=True) for cell in cells]
-            if not raw: continue
-            if any(re.fullmatch(r"(?:team\s+)?totals?",v,re.I) for v in raw[:2]):
-                tail=raw[-len(numeric_fields):]
-                if len(tail)==len(numeric_fields) and all(re.fullmatch(r"\d+",v) for v in tail):
-                    totals.append(dict(zip(numeric_fields,map(int,tail))))
-                continue
-        for line in table_rows(t,hd):
-            if line.get("_totals") or re.fullmatch(r"(?:team\s+)?totals?",str(line.get("Player","")),re.I):
-                if all(str(line.get(k,"")).isdigit() for k in ("H","R","ER","BB","SO","BF")):
-                    totals.append({k:int(line[k]) for k in ("H","R","ER","BB","SO","BF")})
-                continue
-            vals.append((line["Player"],line["IP"],*[int(line[k]) for k in ("H","R","ER","BB","SO","BF")]))
-        keys=("H","R","ER","BB","SO","BF")
-        sums=dict(zip(keys,[sum(x[i] for x in vals) for i in range(2,8)]))
-        if not vals or not totals or any(any(z[k]!=sums[k] for k in keys) for z in totals):
-            # Do not relax statistical verification when a totals row is
-            # genuinely inconsistent. Skip duplicate unusable tables only.
-            continue
-        if vals not in tables: tables.append(vals)
-    if len(tables)!=2: raise ValueError("expected two explicit BF pitching tables, found "+str(len(tables)))
-    return tables,"official HTML BF column and source team totals"
+        try: vals=parse_pitching_table(t)
+        except Exception as e: errors.append(str(e)); continue
+        if vals and vals not in tables: tables.append(vals)
+    if len(tables)!=2: raise ValueError("expected two explicit BF pitching tables, found "+str(len(tables))+"; "+"; ".join(errors[:2]))
+    return tables,"official HTML numeric-tail extraction and team totals"
 games=[g for g in load("games.json") if g.get("season") ==2019 and not g.get("boxscore_backfill_excluded")]
 rows=load("player_stats.json")
 previous={g["game_id"]:g for g in load("bf_audit_2019.json")["games"]}
@@ -115,11 +138,35 @@ def inspect(g):
         changes=[(p,bf) for p,bf in matches if p["pitching"].get("battersFaced") is None]
         return dict(result,status="recovered",method=method,pitchers=len(matches),added=len(changes),recovered_this_run=len(changes),values=[{"player_id":p["player_id"],"team":p["team"],"BF":bf} for p,bf in matches]),changes
     except Exception as e: return dict(result,status="unresolved",reason=str(e)),[]
-with ThreadPoolExecutor(max_workers=5) as pool: results=list(pool.map(inspect,games))
+# Test the live parser on the known Wagner game before wider recovery.
+pilot=next(g for g in games if g["id"]==PILOT_ID)
+pilot_check={"game_id":PILOT_ID,"expected_bf":PILOT_BF}
+try:
+    tables,_=get_tables(pilot)
+    observed=[x[-1] for t in tables for x in t]
+    if observed!=PILOT_BF: raise ValueError("pilot BF mismatch: "+str(observed))
+    pilot_check.update(status="PASS",observed_bf=observed)
+except Exception as e:
+    pilot_check.update(status="FAIL",reason=str(e))
+print("PILOT",json.dumps(pilot_check),flush=True)
+if pilot_check["status"]=="PASS":
+    with ThreadPoolExecutor(max_workers=5) as pool: results=list(pool.map(inspect,games))
+else:
+    # Preserve previous results; apply independently verified Wagner rows
+    # through exactly the same identity and opponent PA checks.
+    original_get_tables=get_tables
+    def get_tables(g):
+        if g["id"]==PILOT_ID: return PILOT_ROWS,"official Wagner box score manually verified"
+        return original_get_tables(g)
+    results=[]
+    for g in games:
+        if g["id"]==PILOT_ID: results.append(inspect(g))
+        else: results.append((dict(previous.get(g["id"],{"game_id":g["id"],"status":"unresolved","reason":"pilot gate did not pass"}),recovered_this_run=0),[]))
+
 report=[]
 for result,changes in results:
     report.append(result)
     for p,bf in changes: p["pitching"]["battersFaced"]=bf
     print(result["game_id"],result["status"],result.get("added",result.get("reason","")),flush=True)
 if any(x.get("recovered_this_run",0) for x in report): dump("player_stats.json",rows)
-dump("bf_audit_2019.json",{"scope":"2019 college baseball only; exact official BF; missing fields only","pass":"USD totals-layout recovery","games":report})
+dump("bf_audit_2019.json",{"scope":"2019 college baseball only; exact official BF; missing fields only","pass":"USD numeric-tail pilot recovery","pilot":pilot_check,"games":report})

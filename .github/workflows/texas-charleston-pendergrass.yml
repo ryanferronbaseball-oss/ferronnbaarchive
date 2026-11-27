@@ -49,11 +49,19 @@ jobs:
           assert charleston,'No exact Dariyan Pendergrass Charleston rows'
           old_ids={r['player_id'] for r in charleston}
           assert len(old_ids)==1 and pid not in old_ids,(old_ids,charleston)
-          ids={pid,*old_ids}
+          old='cb-college-of-charleston-d-pendergra'
+          corrected='cb-college-of-charleston-dariyan-pendergrass'
+          assert old_ids=={old}
+          corrections=load('player_name_corrections.json')
+          fixes=[fix for g in [corrections,*corrections.get('games',[])] if g.get('game_id')==game and g.get('team')=='College of Charleston' for fix in g['corrections'] if fix['source_player_id']==old]
+          assert len(fixes)==1 and fixes[0]['source_player_name']=='D. Pendergra' and fixes[0]['player']=='Dariyan Pendergrass'
+          assert fixes[0]['canonical_player_id'] in (corrected,pid)
+          fixes[0]['canonical_player_id']=pid
+          ids={pid,old,corrected}
           matches=[r for r in rows if r['player_id'] in ids]
           assert len(matches)==len(texas)+len(charleston)
           assert len({r['game_id'] for r in matches})==len(matches),'Same-game collision'
-          pairs=sorted({(r['team'],r['player_id']) for r in matches})
+          pairs=sorted({(r['team'],r['player_id']) for r in matches}|{('College of Charleston',corrected),('College of Charleston',pid)})
           schools=sorted({team for team,_ in pairs})
           assert reg[pid]['provider']=='college' and reg[pid]['school']=='Texas'
           assert probe(reg[pid]['url'])[0]=='image'
@@ -64,7 +72,7 @@ jobs:
           else:assert len(existing)==1 and set(existing[0]['source_player_ids'])==ids and existing[0]['canonical_id']==pid
           assert before==hashlib.sha256(raw.read_bytes()).hexdigest()
           report={'id':pid,'display_name':'Dariyan Pendergrass','source_ids':sorted(ids),'schools':schools,'games':sorted({r['game_id'] for r in matches}),'source_rows':len(matches),'portrait':reg[pid]}
-          save('player_identity_crosswalk.json',cross);save('texas_charleston_pendergrass_correction.json',report)
+          save('player_identity_crosswalk.json',cross);save('player_name_corrections.json',corrections);save('texas_charleston_pendergrass_correction.json',report)
           PY
       - name: Verify merged player and Texas coverage
         run: |
@@ -78,6 +86,7 @@ jobs:
           a=[x for x in p if x['id']==report['id']]
           assert len(a)==1 and a[0]['name']=='Dariyan Pendergrass',a
           assert set(a[0]['schools'])==set(report['schools']),a
+          assert not any(x['id'] in report['source_ids'] and x['id']!=report['id'] for x in p)
           assert all(x['id'] in reg for x in p)
           report['coverage']={'players':len(p),'portraits':sum(x['id'] in reg for x in p)}
           (D/'texas_charleston_pendergrass_correction.json').write_text(json.dumps(report,indent=2)+'\n')
@@ -118,7 +127,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add college-baseball/data/player_identity_crosswalk.json college-baseball/data/texas_charleston_pendergrass_correction.json
+          git add college-baseball/data/player_identity_crosswalk.json college-baseball/data/player_name_corrections.json college-baseball/data/texas_charleston_pendergrass_correction.json
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "Merge Dariyan Pendergrass Texas and Charleston identities; preserve existing portrait"
           for attempt in 1 2 3; do

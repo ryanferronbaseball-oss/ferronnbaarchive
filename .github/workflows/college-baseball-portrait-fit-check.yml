@@ -1,0 +1,87 @@
+name: Universal college baseball portrait framing verification
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'college-baseball/assets/archive.css'
+      - '.github/workflows/college-baseball-portrait-fit-check.yml'
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install playwright
+      - run: python -m playwright install chromium
+      - name: Verify universal CSS and representative profiles on desktop and mobile
+        run: |
+          python - <<'PY'
+          import json,threading,functools,http.server
+          from pathlib import Path
+          from playwright.sync_api import sync_playwright
+          from urllib.parse import quote
+          root=Path.cwd()
+          registry=json.loads((root/'college-baseball/data/player_portraits.json').read_text())
+          groups={}
+          for pid,entry in registry.items():
+              if entry.get('url'):
+                  groups.setdefault(entry.get('school') or entry.get('provider') or 'unknown',[]).append(pid)
+          targets={school:ids[0] for school,ids in sorted(groups.items())}
+          out=root/'college-baseball-framing-review';out.mkdir(exist_ok=True)
+          server=http.server.ThreadingHTTPServer(('127.0.0.1',0),functools.partial(http.server.SimpleHTTPRequestHandler,directory=str(root)))
+          threading.Thread(target=server.serve_forever,daemon=True).start()
+          base=f'http://127.0.0.1:{server.server_port}/college-baseball/'
+          report={'registered_portraits':sum(len(ids) for ids in groups.values()),'source_groups':len(groups),'checks':[],'image_load_followups':[]}
+          with sync_playwright() as p:
+              browser=p.chromium.launch()
+              for mode,w,h in [('desktop',1360,900),('mobile',390,844)]:
+                  page=browser.new_page(viewport={'width':w,'height':h})
+                  page.goto(base+'player.html?id='+quote('cb-texas-a-m-weston-moss'),wait_until='domcontentloaded')
+                  page.wait_for_selector('.cb-player-portrait',timeout=30000)
+                  # Test future URLs and untouched game-photo styles without fetching external images.
+                  synthetic=page.evaluate("""() => {
+                    const p=document.createElement('div'); p.className='cb-player-portrait has-portrait';
+                    const img=document.createElement('img');p.appendChild(img);document.body.appendChild(p);
+                    const g=document.createElement('div');g.className='cb-game-photo';const gi=document.createElement('img');g.appendChild(gi);document.body.appendChild(g);
+                    const result={fit:getComputedStyle(img).objectFit,position:getComputedStyle(img).objectPosition,gameFit:getComputedStyle(gi).objectFit};
+                    p.remove();g.remove();return result;
+                  }""")
+                  assert synthetic=={'fit':'cover','position':'50% 0%','gameFit':'contain'},synthetic
+                  for school,pid in targets.items():
+                      page.goto(base+'player.html?id='+quote(pid),wait_until='domcontentloaded',timeout=30000)
+                      frame=page.locator('.cb-player-portrait')
+                      frame.wait_for(state='visible',timeout=30000)
+                      img=frame.locator('img')
+                      if not img.count():
+                          report['image_load_followups'].append({'school':school,'id':pid,'viewport':mode,'reason':'No image element (possible retired alias or unavailable portrait)'})
+                          continue
+                      state=img.evaluate("i=>({fit:getComputedStyle(i).objectFit,position:getComputedStyle(i).objectPosition})")
+                      assert state=={'fit':'cover','position':'50% 0%'},(pid,state)
+                      report['checks'].append({'school':school,'id':pid,'viewport':mode,**state})
+                      try:
+                          page.wait_for_function("() => {const i=document.querySelector('.cb-player-portrait img');return i&&i.complete&&i.naturalWidth>0&&i.parentElement.classList.contains('has-portrait')}",timeout=8000)
+                          if school in ('LSU','Arkansas','Texas A&M','Texas','Florida','San Diego','NC State','mlb'):
+                              frame.screenshot(path=str(out/f'{mode}-{pid}.png'))
+                      except Exception as e:
+                          report['image_load_followups'].append({'school':school,'id':pid,'viewport':mode,'reason':str(e)[:200]})
+                      print(mode,school,pid,state,flush=True)
+                  page.close()
+              browser.close()
+          server.shutdown()
+          (out/'report.json').write_text(json.dumps(report,indent=2)+'\n')
+          print(json.dumps({'registered_portraits':report['registered_portraits'],'source_groups':len(groups),'passed_framing_checks':len(report['checks']),'image_load_followups':report['image_load_followups']},indent=2))
+          assert len(report['checks'])>=2*(len(groups)-3),'Too many missing representative profile elements'
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: college-baseball-framing-review
+          path: college-baseball-framing-review/

@@ -1,0 +1,77 @@
+name: Player of the Game portrait QA
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['assets/potg-portraits.js','assets/potg-portraits.css','nba/game.html','college/game.html','nfl/game.html','cfb/game.html','college-baseball/game.html','nhl/game.html','.github/workflows/potg-portrait-qa.yml']
+permissions:
+  contents: read
+jobs:
+  browser:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install playwright
+      - run: python -m playwright install chromium
+      - run: node --check assets/potg-portraits.js
+      - name: Check award cards on desktop and mobile
+        run: |
+          python - <<'PY'
+          import http.server,threading,pathlib
+          from playwright.sync_api import sync_playwright
+          server=http.server.ThreadingHTTPServer(('127.0.0.1',0),http.server.SimpleHTTPRequestHandler)
+          threading.Thread(target=server.serve_forever,daemon=True).start()
+          base=f'http://127.0.0.1:{server.server_port}'
+          out=pathlib.Path('potg-portrait-review');out.mkdir(exist_ok=True)
+          sports=['nba','college','nfl','cfb','college-baseball','nhl']
+          with sync_playwright() as p:
+              browser=p.chromium.launch()
+              for sport in sports:
+                  for mode,width in [('desktop',1360),('mobile',390)]:
+                      page=browser.new_page(viewport={'width':width,'height':900})
+                      page.goto(base+'/'+sport+'/game.html',wait_until='domcontentloaded',timeout=60000)
+                      # Some directories open on the latest game without a curated recap.
+                      try:
+                          page.wait_for_selector('.ca-potg-portrait',timeout=20000)
+                      except Exception:
+                          selects=page.locator('select')
+                          for select in selects.all():
+                              options=select.locator('option')
+                              if options.count()<2:continue
+                              vals=[o.get_attribute('value') for o in options.all()]
+                              vals=[v for v in vals if v and v!='all']
+                              for val in vals[:8]:
+                                  try:
+                                      select.select_option(val,timeout=2000)
+                                      page.wait_for_selector('.ca-potg-portrait',timeout=3000)
+                                      break
+                                  except Exception:pass
+                              if page.locator('.ca-potg-portrait').count():break
+                      portrait=page.locator('.ca-potg-portrait').first
+                      portrait.wait_for(timeout=20000)
+                      assert page.locator('.ca-potg-portrait').count()==1,sport
+                      assert portrait.get_attribute('href').find('player.html?id=')>=0
+                      assert portrait.evaluate('(el)=>el.getBoundingClientRect().width>=80')
+                      portrait.scroll_into_view_if_needed()
+                      page.wait_for_timeout(1200)
+                      panel=portrait.locator('xpath=ancestor::section[1]')
+                      panel.screenshot(path=str(out/(sport+'-'+mode+'.png')))
+                      image=portrait.locator('img')
+                      print(sport,mode,'photo loaded' if portrait.evaluate('(e)=>e.classList.contains("has-portrait")') else 'initials fallback',flush=True)
+                      for _ in range(10):
+                          if not image.count():break
+                          image.dispatch_event('error')
+                      assert portrait.locator('.ca-potg-initials').is_visible()
+                      page.close()
+              browser.close()
+          server.shutdown()
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: potg-portrait-review
+          path: potg-portrait-review/

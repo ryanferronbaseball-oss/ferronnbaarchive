@@ -4,8 +4,8 @@
   "source": "Original archive owner confirmed each multi-school person",
   "original_attendance_ids_preserved": 444,
   "original_player_game_rows_preserved": 13183,
-  "requested_person_merges": 209,
-  "activated_person_merges": 209,
+  "requested_person_merges": 210,
+  "activated_person_merges": 210,
   "pending_person_merges": 0,
   "merge_policy": "Only listed pair of exact normalized person names and school-specific original source player IDs; all other IDs remain separate",
   "display_aliases": [
@@ -38,6 +38,16 @@
       ],
       "evidence_urls": [
         "https://goduke.com/sports/baseball/roster/gabriel-nard/21064"
+      ]
+    },
+    {
+      "player_id": "cb-texas-farmer-iv",
+      "display_name": "Tommy Farmer IV",
+      "former_names": [
+        "Farmer IV"
+      ],
+      "evidence_urls": [
+        "https://texaslonghorns.com/sports/baseball/roster/2025"
       ]
     }
   ],
@@ -5307,7 +5317,8 @@
           "source_player_id": "cb-texas-callum-early"
         }
       ],
-      "source_rows": 2
+      "source_rows": 2,
+      "display_name": "Callum Early"
     },
     {
       "name": "Jackson Natili",
@@ -6170,6 +6181,30 @@
       "evidence_urls": [
         "https://12thman.com/sports/baseball/roster/season/2026/player/weston-moss"
       ]
+    },
+    {
+      "name": "Jayden Duplantier",
+      "display_name": "Jayden Duplantier",
+      "canonical_id": "cb-texas-jayden-duplantier",
+      "source_player_ids": [
+        "cb-texas-duplantier-j",
+        "cb-texas-jayden-duplantier"
+      ],
+      "schools": [
+        "Texas"
+      ],
+      "pairs": [
+        {
+          "team": "Texas",
+          "source_player_id": "cb-texas-duplantier-j"
+        },
+        {
+          "team": "Texas",
+          "source_player_id": "cb-texas-jayden-duplantier"
+        }
+      ],
+      "source_rows": 2,
+      "note": "Owner confirmed Duplantier J is Jayden Duplantier."
     }
   ]
 }

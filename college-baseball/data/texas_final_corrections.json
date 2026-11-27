@@ -1,0 +1,171 @@
+{
+  "added": [
+    {
+      "id": "cb-texas-callum-early",
+      "name": "Callum Early",
+      "photo_year": 2025,
+      "provider": "college",
+      "school": "Texas",
+      "season": 2026,
+      "source": "https://texaslonghorns.com/sports/baseball/roster/2026",
+      "url": "https://images.sidearmdev.com/crop?url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Ftexassports_com%2Fimages%2F2025%2F12%2F8%2FEarly_Callum_Cropped-2026_9Gcpb.jpg&width=603&height=803&type=webp"
+    },
+    {
+      "id": "cb-texas-anthony-pack-jr",
+      "name": "Anthony Pack Jr.",
+      "photo_year": 2025,
+      "provider": "college",
+      "school": "Texas",
+      "season": 2027,
+      "source": "https://texaslonghorns.com/sports/baseball/roster/anthony-pack-jr/17200",
+      "url": "https://images.sidearmdev.com/crop?url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Ftexassports_com%2Fimages%2F2025%2F12%2F8%2FPack_Anthony_Cropped-2026_DgU66.jpg&width=603&height=803&type=webp"
+    }
+  ],
+  "missing": [
+    {
+      "diagnostics": {
+        "attempts": [
+          {
+            "images": [
+              {
+                "alt": "Monday, Jan., 6, 2025. (Stephen Spillman)",
+                "data-src": null,
+                "src": "https://images.sidearmdev.com/crop?url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Ftexassports_com%2Fimages%2F2025%2F1%2F18%2FFarmer_Tommy-Cropped-2025.jpg&width=180&height=270&type=webp"
+              }
+            ],
+            "source": "https://texaslonghorns.com/sports/baseball/roster/tommy-farmer-iv/13928"
+          }
+        ],
+        "candidates": 1
+      },
+      "id": "cb-texas-farmer-iv",
+      "name": "Tommy Farmer IV",
+      "reason": "No unique verified portrait"
+    }
+  ],
+  "name_discrepancies": [],
+  "notes": [],
+  "preserved": [
+    {
+      "id": "cb-texas-jayden-duplantier",
+      "name": "Jayden Duplantier",
+      "reason": "Existing preferred portrait"
+    }
+  ],
+  "registered_portraits": 3,
+  "render_failures": [
+    "cb-texas-farmer-iv"
+  ],
+  "rosters": [
+    {
+      "host": "texaslonghorns.com",
+      "season": 2025,
+      "url": "https://texaslonghorns.com/sports/baseball/roster/2025"
+    },
+    {
+      "host": "texaslonghorns.com",
+      "season": 2026,
+      "url": "https://texaslonghorns.com/sports/baseball/roster/2026"
+    },
+    {
+      "host": "texaslonghorns.com",
+      "season": 2027,
+      "url": "https://texaslonghorns.com/sports/baseball/roster/2027"
+    }
+  ],
+  "school": "Texas",
+  "targeted": 4,
+  "targets": [
+    {
+      "id": "cb-texas-callum-early",
+      "name": "Callum Early",
+      "preference": {
+        "metric": "plate_appearances",
+        "schools": [
+          {
+            "appearances": 1,
+            "games": 1,
+            "school": "Liberty",
+            "total": 4
+          },
+          {
+            "appearances": 1,
+            "games": 1,
+            "school": "Texas",
+            "total": 0
+          }
+        ]
+      },
+      "schools": {
+        "Liberty": [
+          2025
+        ],
+        "Texas": [
+          2026
+        ]
+      }
+    },
+    {
+      "id": "cb-texas-farmer-iv",
+      "name": "Tommy Farmer IV",
+      "preference": {
+        "metric": "plate_appearances",
+        "schools": [
+          {
+            "appearances": 1,
+            "games": 1,
+            "school": "Texas",
+            "total": 5
+          }
+        ]
+      },
+      "schools": {
+        "Texas": [
+          2025
+        ]
+      }
+    },
+    {
+      "id": "cb-texas-jayden-duplantier",
+      "name": "Jayden Duplantier",
+      "preference": {
+        "metric": "plate_appearances",
+        "schools": [
+          {
+            "appearances": 2,
+            "games": 2,
+            "school": "Texas",
+            "total": 1
+          }
+        ]
+      },
+      "schools": {
+        "Texas": [
+          2025,
+          2026
+        ]
+      }
+    },
+    {
+      "id": "cb-texas-anthony-pack-jr",
+      "name": "Anthony Pack Jr.",
+      "preference": {
+        "metric": "plate_appearances",
+        "schools": [
+          {
+            "appearances": 1,
+            "games": 1,
+            "school": "Texas",
+            "total": 4
+          }
+        ]
+      },
+      "schools": {
+        "Texas": [
+          2026
+        ]
+      }
+    }
+  ],
+  "upgraded": []
+}

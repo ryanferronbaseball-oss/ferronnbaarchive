@@ -1,4 +1,4 @@
-name: Louisville witnessed-player portrait audit
+name: Louisville missing headshot recovery
 on:
   workflow_dispatch:
   push:
@@ -36,10 +36,14 @@ jobs:
           SCHOOL='Louisville'
           HOST='gocards.com'
           REG='college-baseball/data/player_portraits.json'
-          REPORT='college-baseball/data/louisville_portrait_audit.json'
+          REPORT='college-baseball/data/louisville_portrait_recovery.json'
           players=json.loads(subprocess.check_output(['node','scripts/export_baseball_portrait_preferences.cjs',SCHOOL],text=True))
           assert players,'No witnessed Louisville players'
           registry=load(REG,{})
+          previous=load('college-baseball/data/louisville_portrait_audit.json',{})
+          missing_ids={x['id'] for x in previous.get('missing',[])}
+          players=[p for p in players if p['id'] in missing_ids]
+          assert players,'No outstanding Louisville targets'
           hosts=load('college-baseball/data/portrait_school_hosts.json')
           hosts[SCHOOL]=HOST
           report={'school':SCHOOL,'targeted':len(players),'targets':[{k:p[k] for k in ('id','name','schools','preference')} for p in players],'added':[],'upgraded':[],'preserved':[],'missing':[],'notes':[],'rosters':[],'name_discrepancies':[]}
@@ -72,7 +76,10 @@ jobs:
                       label=exact or caption or surname
                       crop='/crop' in urlsplit(u).path and (q.get('width'),q.get('height')) in ((['180'],['270']),(['603'],['803']))
                       explicit=bool(re.search(r'head.?shot|portrait',alt+' '+underlying,re.I))
-                      if label and (crop or explicit):yield u
+                      # Louisville labels its official portraits with HS24 / HS 26 instead of headshot.
+                      short_label=bool(re.search(r'\bhs\s*\d{2,4}\b',alt,re.I)) and any(n in norm(alt) for n in names)
+                      short_file=bool(re.search(r'(?:^|[_. -])hs[_. -]*\d{2,4}(?:[_. -]|$)',underlying.rsplit('/',1)[-1],re.I)) and any(n in stem for n in names)
+                      if label and (crop or explicit) or (short_label or short_file) and crop:yield u
               if not confirmed_bio:
                   for u in card_images(soup,page,HOST,names):
                       if '/resize' in urlsplit(u).path:continue
@@ -141,7 +148,7 @@ jobs:
                               if actual:y=int(actual.group(1))
                               if y<min(p['schools'][school]) or y>2027:continue
                               if not options:
-                                  diagnostics[cid]['attempts'].append({'source':r.url,'images':[{'alt':im.get('alt'),'src':im.get('src'),'data-src':im.get('data-src')} for im in soup.find_all('img') if 'headshot' in str(im).lower()][:4]})
+                                  diagnostics[cid]['attempts'].append({'source':r.url,'images':[{'alt':im.get('alt'),'src':im.get('src'),'data-src':im.get('data-src')} for im in soup.find_all('img') if re.search(r'headshot|portrait|\bhs\s*\d{2,4}\b|width=180|width=603',str(im),re.I)][:12]})
                           else:options=list(bio_images(soup,r.url,h,names))
                           source=r.url
                       except Exception as e:
@@ -182,7 +189,7 @@ jobs:
           from playwright.sync_api import sync_playwright
           from PIL import Image,ImageDraw
           root=pathlib.Path.cwd()
-          report=json.loads((root/'college-baseball/data/louisville_portrait_audit.json').read_text())
+          report=json.loads((root/'college-baseball/data/louisville_portrait_recovery.json').read_text())
           out=root/'louisville-visual-review';out.mkdir(exist_ok=True)
           server=http.server.ThreadingHTTPServer(('127.0.0.1',0),functools.partial(http.server.SimpleHTTPRequestHandler,directory=str(root)))
           threading.Thread(target=server.serve_forever,daemon=True).start()
@@ -239,7 +246,7 @@ jobs:
           report['render_failures']=sorted(failed)
           report['registered_portraits']=sum(t['id'] in registry for t in report['targets'])
           regpath.write_text(json.dumps(registry,ensure_ascii=False,indent=2,sort_keys=True)+'\n')
-          (root/'college-baseball/data/louisville_portrait_audit.json').write_text(json.dumps(report,ensure_ascii=False,indent=2,sort_keys=True)+'\n')
+          (root/'college-baseball/data/louisville_portrait_recovery.json').write_text(json.dumps(report,ensure_ascii=False,indent=2,sort_keys=True)+'\n')
           PY
       - uses: actions/upload-artifact@v4
         if: always()
@@ -247,12 +254,12 @@ jobs:
           name: louisville-portrait-review
           path: |
             louisville-visual-review/
-            college-baseball/data/louisville_portrait_audit.json
+            college-baseball/data/louisville_portrait_recovery.json
       - name: Publish verified Louisville portrait changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add college-baseball/data/player_portraits.json college-baseball/data/louisville_portrait_audit.json
+          git add college-baseball/data/player_portraits.json college-baseball/data/louisville_portrait_recovery.json
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "Add verified Louisville witnessed-player portraits"
           git pull --rebase origin main

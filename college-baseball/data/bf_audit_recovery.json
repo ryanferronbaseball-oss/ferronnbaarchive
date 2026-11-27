@@ -2570,13 +2570,84 @@
     },
     {
       "game_id": "cb-2024-04-14-virginia-tech-georgia-tech-att0268",
-      "date": "2024-04-14",
+      "date": "2024-04-13",
       "away": "Virginia Tech",
       "home": "Georgia Tech",
-      "source_url": "https://storage.googleapis.com/ramblinwreck-com-prod/2024/04/gt041424.pdf",
+      "source_url": "https://storage.googleapis.com/ramblinwreck-com-prod/2024/04/gt041324.pdf",
       "original_reason": "date not confirmed",
-      "status": "unresolved",
-      "reason": "PDF gamebook deferred to PDF recovery pass"
+      "status": "recovered",
+      "original_archive_date": "2024-04-14",
+      "effective_game_id": "cb-2024-04-13-virginia-tech-georgia-tech-att0268",
+      "original_source_url": "https://storage.googleapis.com/ramblinwreck-com-prod/2024/04/gt041424.pdf",
+      "method": "Manual audit of existing official attendance game correction overlay; original April 14 game not attended; all nine exact BF already present in effective April 13 box score; no raw source rows changed",
+      "manual_source_url": "https://storage.googleapis.com/ramblinwreck-com-prod/2024/04/gt041324.pdf",
+      "verification": {
+        "Virginia Tech": {
+          "BF": 49,
+          "opponent_AB": 26,
+          "opponent_BB": 19,
+          "opponent_HBP": 2,
+          "opponent_SH": 1,
+          "opponent_SF": 1
+        },
+        "Georgia Tech": {
+          "BF": 23,
+          "opponent_AB": 23,
+          "opponent_BB": 0,
+          "opponent_HBP": 0
+        }
+      },
+      "pitchers": 9,
+      "added": 0,
+      "recovered_this_run": 0,
+      "previously_verified_overlay_entries": 9,
+      "values": [
+        {
+          "player_id": "cb-virginia-tech-wyatt-parliament",
+          "team": "Virginia Tech",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-virginia-tech-david-shoemaker",
+          "team": "Virginia Tech",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-virginia-tech-grant-manning",
+          "team": "Virginia Tech",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-virginia-tech-preston-crowl",
+          "team": "Virginia Tech",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-virginia-tech-carson-ohl",
+          "team": "Virginia Tech",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-virginia-tech-andrew-sentlinger",
+          "team": "Virginia Tech",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-virginia-tech-madden-clement",
+          "team": "Virginia Tech",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-virginia-tech-ryan-buckler",
+          "team": "Virginia Tech",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-georgia-tech-cam-jones",
+          "team": "Georgia Tech",
+          "BF": 23
+        }
+      ]
     },
     {
       "game_id": "cb-2024-04-21-connecticut-georgetown-att0270",

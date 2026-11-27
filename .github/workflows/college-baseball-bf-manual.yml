@@ -17,7 +17,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Apply verified March 1 2026 Notre Dame Tennessee Tech BF
+      - name: Apply verified April 4 2026 Missouri Kentucky BF
         run: |
           python - <<'PY'
           import json,re
@@ -27,21 +27,19 @@ jobs:
           audit=D/'bf_audit_recovery.json'
           rows=json.loads(stats.read_text())
           report=json.loads(audit.read_text())
-          gid='cb-2026-03-01-notre-dame-tennessee-tech-att0383'
-          source='https://storage.googleapis.com/fightingirish-com/2026/03/3126_ND.pdf'
+          gid='cb-2026-04-04-missouri-kentucky-att0405'
+          source='https://storage.googleapis.com/ukathletics-com/2026/04/e955fadd-0404_miz-box-g2.pdf'
           game=next(g for g in json.loads((D/'games.json').read_text()) if g['id']==gid)
-          assert (game['date'],game['away'],game['home'],game['away_score'],game['home_score'])==('2026-03-01','Notre Dame','Tennessee Tech',11,0)
+          assert (game['date'],game['away'],game['home'],game['away_score'],game['home_score'])==('2026-04-04','Missouri','Kentucky',2,9)
           seeds=[
-              ('Notre Dame','Ty Uber',(15,2,0,0,2,2,74),18),
-              ('Notre Dame','Kellan Klosterman',(2,0,0,0,1,1,19),3),
-              ('Notre Dame','Eli Thurmond',(4,0,0,0,0,0,11),4),
-              ('Notre Dame','Dylan Singleton',(3,0,0,0,0,1,11),3),
-              ('Tennessee Tech','Logan Moller',(12,1,0,0,1,5,50),13),
-              ('Tennessee Tech','Carter Casabella',(7,7,2,2,0,1,45),13),
-              ('Tennessee Tech','Eli Huddleston',(0,0,1,1,1,0,9),1),
-              ('Tennessee Tech','Reece McDuffie',(4,5,5,5,1,0,32),10),
-              ('Tennessee Tech','Micah Summar',(0,3,3,3,1,0,16),4),
-              ('Tennessee Tech','Carson Davis',(1,0,0,0,0,0,7),1),
+              ('Missouri','Brady Kehlenbrink',(10,6,8,7,5,0,88),22),
+              ('Missouri','Luke Sullivan',(12,2,1,0,1,2,55),15),
+              ('Missouri','Isaiah Salas',(2,1,0,0,0,2,16),3),
+              ('Kentucky','Nate Harris',(15,5,2,2,1,3,85),21),
+              ('Kentucky','Ryan Mullan',(3,0,0,0,0,1,7),2),
+              ('Kentucky','Ira Austin IV',(3,1,0,0,0,0,12),4),
+              ('Kentucky','Leighton Harris',(3,1,0,0,0,0,5),3),
+              ('Kentucky','Tristan Hunter',(3,0,0,0,0,2,12),3),
           ]
           arms=[r for r in rows if r['game_id']==gid and r.get('pitching') is not None]
           entry=next(r for r in report['games'] if r['game_id']==gid)
@@ -62,15 +60,15 @@ jobs:
                   p['battersFaced']=bf; added+=1
               values.append({'player_id':r['player_id'],'team':team,'BF':bf})
               print(r['player'],bf,'K%',round(100*p['strikeOuts']/bf,1),'BB%',round(100*p['baseOnBalls']/bf,1))
-          assert sum(v['BF'] for v in values if v['team']=='Notre Dame')==28==25+3
-          assert sum(v['BF'] for v in values if v['team']=='Tennessee Tech')==42==36+4+1+1
+          assert sum(v['BF'] for v in values if v['team']=='Missouri')==40==31+6+3
+          assert sum(v['BF'] for v in values if v['team']=='Kentucky')==33==32+1
           if entry['status']=='recovered':
               assert entry['values']==values and added==0
               print('Already verified and saved')
               raise SystemExit(0)
           assert entry['status']=='unresolved'
           entry.pop('reason',None)
-          entry.update(status='recovered',method='Manual official PDF gamebook; date and score confirmed; exact pitcher names and pitching signatures matched; BF reconciled against opponent batting',manual_source_url=source,verification={'Notre Dame':{'BF':28,'opponent_AB':25,'opponent_BB':3},'Tennessee Tech':{'BF':42,'opponent_AB':36,'opponent_BB':4,'opponent_SH':1,'opponent_SF':1}},pitchers=10,added=added,recovered_this_run=added,values=values)
+          entry.update(status='recovered',method='Manual official Kentucky PDF; printed year typo confirmed by both official April 4 2026 recaps; exact pitching signatures and names matched; opposing PA reconciled',manual_source_url=source,date_verification_source_urls=['https://ukathletics.com/news/2026/04/04/junior-day-scott-campbell-jr-shows-out-in-saturday-matinee-win/','https://mutigers.com/news/2026/04/4/baseball-drops-game-two-at-no-24-kentucky-to-set-up-sunday-rubber-match'],verification={'Missouri':{'BF':40,'opponent_AB':31,'opponent_BB':6,'opponent_HBP':3},'Kentucky':{'BF':33,'opponent_AB':32,'opponent_BB':1}},pitchers=8,added=added,recovered_this_run=added,values=values)
           stats.write_text(json.dumps(rows,ensure_ascii=False,indent=2)+'\n')
           audit.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
           print('Added:',added,'Remaining unresolved:',sum(r['status']=='unresolved' for r in report['games']))
@@ -81,6 +79,6 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add college-baseball/data/player_stats.json college-baseball/data/bf_audit_recovery.json
           if git diff --cached --quiet; then exit 0; fi
-          git commit -m "Recover verified BF for March 1 2026 Notre Dame Tennessee Tech"
+          git commit -m "Recover verified BF for April 4 2026 Missouri Kentucky"
           git pull --rebase origin main
           git push origin HEAD:main

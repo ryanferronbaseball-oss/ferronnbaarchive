@@ -4476,8 +4476,58 @@
       "home": "Auburn",
       "source_url": "https://arkansasrazorbacks.com/stats/baseball/2026/ark58.htm",
       "original_reason": "date not confirmed",
-      "status": "unresolved",
-      "reason": "expected two explicit BF pitching tables, found 0; "
+      "status": "recovered",
+      "method": "Manual official Arkansas HTML; full pitcher names and exact pitching signatures matched; explicit BF reconciled against opposing batting totals",
+      "manual_source_url": "https://arkansasrazorbacks.com/stats/baseball/2026/ark58.htm",
+      "corroborating_source_url": "https://auburntigers.com/boxscore/31138",
+      "verification": {
+        "Arkansas": {
+          "BF": 34,
+          "opponent_AB": 32,
+          "opponent_BB": 1,
+          "opponent_SH": 1
+        },
+        "Auburn": {
+          "BF": 34,
+          "opponent_AB": 32,
+          "opponent_BB": 2
+        }
+      },
+      "pitchers": 6,
+      "added": 6,
+      "recovered_this_run": 6,
+      "values": [
+        {
+          "player_id": "cb-arkansas-cooper-dossett",
+          "team": "Arkansas",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-arkansas-james-decremer",
+          "team": "Arkansas",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-arkansas-colin-fisher",
+          "team": "Arkansas",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-arkansas-ethan-mcelvain",
+          "team": "Arkansas",
+          "BF": 14
+        },
+        {
+          "player_id": "cb-auburn-alex-petrovic",
+          "team": "Auburn",
+          "BF": 16
+        },
+        {
+          "player_id": "cb-auburn-ryan-hetzler",
+          "team": "Auburn",
+          "BF": 18
+        }
+      ]
     }
   ]
 }

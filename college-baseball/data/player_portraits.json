@@ -1658,12 +1658,22 @@
     "url": "https://images.sidearmdev.com/crop?url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Fgoduke.com%2Fimages%2F2024%2F11%2F14%2FStammel-Max_HS25.png&width=603&height=803&type=webp"
   },
   "cb-duke-noah-murray": {
-    "photo_year": 2024,
+    "fallbacks": [
+      {
+        "photo_year": 2024,
+        "provider": "college",
+        "school": "Duke",
+        "season": 2025,
+        "source": "https://goduke.com/sports/baseball/roster/2025?view=2",
+        "url": "https://images.sidearmdev.com/crop?url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Fgoduke.com%2Fimages%2F2024%2F11%2F14%2FMurray-Noah_HS25.png&width=603&height=803&type=webp"
+      }
+    ],
+    "photo_year": 2026,
     "provider": "college",
-    "school": "Duke",
-    "season": 2025,
-    "source": "https://goduke.com/sports/baseball/roster/2025?view=2",
-    "url": "https://images.sidearmdev.com/crop?url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Fgoduke.com%2Fimages%2F2024%2F11%2F14%2FMurray-Noah_HS25.png&width=603&height=803&type=webp"
+    "school": "Virginia",
+    "season": 2026,
+    "source": "https://virginiasports.com/sports/baseball/roster/season/2025-26/player/noah-murray",
+    "url": "https://virginiasports.com/imgproxy/rlXexp74Wrnu2mwFP97c13OqCljq_VARRfLSUf2mprU/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3Zpcmdpbmlhc3BvcnRzLWNvbS1wcm9kLzIwMjYvMDIvMDQvQTFlVWh1ZzMyNmtTMUpwdUM1eEI3RTY2NW5GZWtBeDhpRWNWUldZMC5wbmc.png"
   },
   "cb-duke-owen-proksch": {
     "photo_year": 2024,
@@ -8524,6 +8534,166 @@
     "source": "https://gopack.com/sports/baseball/roster/2026",
     "url": "https://images.sidearmdev.com/crop?url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Fgopack.com%2Fimages%2F2025%2F8%2F21%2FChris_McHugh.png&width=603&height=803&type=webp"
   },
+  "cb-virginia-aidan-teel": {
+    "photo_year": 2025,
+    "provider": "college",
+    "school": "Virginia",
+    "season": 2025,
+    "source": "https://virginiasports.com/sports/baseball/roster/season/2024-25/player/aidan-teel",
+    "url": "https://virginiasports.com/imgproxy/esNzfDFZcW1mXECVo6oikbSYY_IfPuSfZrYVqfiT7T4/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3Zpcmdpbmlhc3BvcnRzLWNvbS1wcm9kLzIwMjUvMDIvQWlkYW4tVGVlbC03XzIwMjUwMTMxX0JTQl9IZWFkc2hvdF9KSF8wMjE5X0Nyb3BwZWQuanBn.jpg"
+  },
+  "cb-virginia-alex-markus": {
+    "photo_year": 2025,
+    "provider": "college",
+    "school": "Virginia",
+    "season": 2025,
+    "source": "https://virginiasports.com/sports/baseball/roster/season/2024-25/player/alex-markus",
+    "url": "https://virginiasports.com/imgproxy/SbQXcC7STGiq2FzKnwEyC-v96nkyniNW14n96BZNO-E/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3Zpcmdpbmlhc3BvcnRzLWNvbS1wcm9kLzIwMjUvMDIvQWxleC1NYXJrdXMtMzZfMjAyNTAxMzFfQlNCX0hlYWRzaG90X0pIXzAyMTMucG5n.png"
+  },
+  "cb-virginia-angelo-tonas": {
+    "photo_year": 2024,
+    "provider": "college",
+    "school": "Virginia",
+    "season": 2024,
+    "source": "https://virginiasports.com/sports/baseball/roster/season/2023-24/player/angelo-tonas",
+    "url": "https://virginiasports.com/imgproxy/6vcrqgP4HWItQJeQRZYnMFzjFSD7uMgp6li1cJTsDRg/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3Zpcmdpbmlhc3BvcnRzLWNvbS1wcm9kLzIwMjMvMTAvMTAwZTBjNjYtdG9uYXNfYW5nZWxvXzI0bS1lMTY5NjU5Njk2OTUzOC5qcGc.jpg"
+  },
+  "cb-virginia-anthony-stephan": {
+    "photo_year": 2024,
+    "provider": "college",
+    "school": "Virginia",
+    "season": 2024,
+    "source": "https://virginiasports.com/sports/baseball/roster/season/2023-24/player/anthony-stephan",
+    "url": "https://virginiasports.com/imgproxy/M2TuGGB5Qx71_5QFIeaEORc8rRIt6byUA6TQOBIJY1g/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3Zpcmdpbmlhc3BvcnRzLWNvbS1wcm9kLzIwMjMvMTAvZmYxZmVjMTAtc3RlcGhhbl9hbnRob255XzI0bS1lMTY5NjU5NzMyNDUzOC5qcGc.jpg"
+  },
+  "cb-virginia-antonio-perrotta": {
+    "photo_year": 2026,
+    "provider": "college",
+    "school": "Virginia",
+    "season": 2026,
+    "source": "https://virginiasports.com/sports/baseball/roster/season/2025-26/player/antonio-perrotta",
+    "url": "https://virginiasports.com/imgproxy/IPF5oSHkHrXI-v6VTdv4iO3tatTkBDKtwkqqukHgo4M/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3Zpcmdpbmlhc3BvcnRzLWNvbS1wcm9kLzIwMjYvMDIvMDQvcnZ6NlNxMEM4MmRJYWxvS3hxcXgwZEF0SDlqZENGYmVqMktTenllUC5wbmc.png"
+  },
+  "cb-virginia-blake-barker": {
+    "photo_year": 2025,
+    "provider": "college",
+    "school": "Virginia",
+    "season": 2025,
+    "source": "https://virginiasports.com/sports/baseball/roster/season/2024-25/player/blake-barker",
+    "url": "https://virginiasports.com/imgproxy/9BjPSBhRIBcz4sMB0htK13fFpr7flVbhjDTMGM0pFLA/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3Zpcmdpbmlhc3BvcnRzLWNvbS1wcm9kLzIwMjUvMDIvQmxha2UtQmFya2VyLTI5XzIwMjUwMTMxX0JTQl9IZWFkc2hvdF9KSF8wMTIyLnBuZw.png"
+  },
+  "cb-virginia-bobby-whalen": {
+    "photo_year": 2024,
+    "provider": "college",
+    "school": "Virginia",
+    "season": 2024,
+    "source": "https://virginiasports.com/sports/baseball/roster/season/2023-24/player/bobby-whalen",
+    "url": "https://virginiasports.com/imgproxy/kLGPrBUkIWRGFvXw6DKHgDohpWC7oWbGFw5GzStP9c4/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3Zpcmdpbmlhc3BvcnRzLWNvbS1wcm9kLzIwMjMvMTAvYzM2ODRlZjAtd2hhbGVuX2JvYmJ5XzI0bS1lMTY5Njg5ODE1NzIxNC5qcGc.jpg"
+  },
+  "cb-virginia-bradley-hodges": {
+    "photo_year": 2025,
+    "provider": "college",
+    "school": "Virginia",
+    "season": 2025,
+    "source": "https://virginiasports.com/sports/baseball/roster/season/2024-25/player/bradley-hodges",
+    "url": "https://virginiasports.com/imgproxy/IuhpI1NEZiRnWBl0U1uNJBUgvBwr57TCPnHsXRBayNI/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3Zpcmdpbmlhc3BvcnRzLWNvbS1wcm9kLzIwMjUvMDIvQnJhZGxleS1Ib2RnZXMtMTBfMjAyNTAxMzFfQlNCX0hlYWRzaG90X0pIXzAxMTkucG5n.png"
+  },
+  "cb-virginia-bryson-moore": {
+    "photo_year": 2025,
+    "provider": "college",
+    "school": "Virginia",
+    "season": 2025,
+    "source": "https://virginiasports.com/sports/baseball/roster/season/2024-25/player/bryson-moore",
+    "url": "https://virginiasports.com/imgproxy/TUScEcK2yHAMv4SXEV99Fo0EJC74LlWfCFhUrJMxbbc/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3Zpcmdpbmlhc3BvcnRzLWNvbS1wcm9kLzIwMjUvMDIvQnJ5c29uLU1vb3JlLTE2XzIwMjUwMTMxX0JTQl9IZWFkc2hvdF9KSF8wMDQ2LnBuZw.png"
+  },
+  "cb-virginia-casey-saucke": {
+    "photo_year": 2024,
+    "provider": "college",
+    "school": "Virginia",
+    "season": 2024,
+    "source": "https://virginiasports.com/sports/baseball/roster/season/2023-24/player/casey-saucke",
+    "url": "https://virginiasports.com/imgproxy/27mEtvHYOYcBmJJv9OeqFHPzlUNXoTFcrjnKnIHjO3E/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3Zpcmdpbmlhc3BvcnRzLWNvbS1wcm9kLzIwMjMvMTAvNjM0MzM4ODUtc2F1Y2tlX2Nhc2V5XzI0bS1lMTY5NjU5NzM2NTUzNy5qcGc.jpg"
+  },
+  "cb-virginia-charlie-oschell": {
+    "photo_year": 2026,
+    "provider": "college",
+    "school": "Virginia",
+    "season": 2026,
+    "source": "https://virginiasports.com/sports/baseball/roster/season/2025-26/player/charlie-oschell",
+    "url": "https://virginiasports.com/imgproxy/45kICWAmZzkJP8E2V2ziBktFTrAol7Md7LndCldW8uE/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3Zpcmdpbmlhc3BvcnRzLWNvbS1wcm9kLzIwMjYvMDIvMDQveGl0bEdZRnFsSEc3cmtvS0IwNGZRQVFGMm9sVFBnR1VZOHpFM3lkRS5wbmc.png"
+  },
+  "cb-virginia-chone-james": {
+    "photo_year": 2025,
+    "provider": "college",
+    "school": "Virginia",
+    "season": 2025,
+    "source": "https://virginiasports.com/sports/baseball/roster/season/2024-25/player/chone-james",
+    "url": "https://virginiasports.com/imgproxy/wQLqFelbM4DL-hdCTN25UVWGjRYmeiIyhIly0Q4SFMM/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3Zpcmdpbmlhc3BvcnRzLWNvbS1wcm9kLzIwMjUvMDIvQ2hvbmUtSmFtZXMtMTdfMjAyNTAxMzFfQlNCX0hlYWRzaG90X0pIXzAwMzkucG5n.png"
+  },
+  "cb-virginia-chris-arroyo": {
+    "photo_year": 2025,
+    "provider": "college",
+    "school": "Virginia",
+    "season": 2025,
+    "source": "https://virginiasports.com/sports/baseball/roster/season/2024-25/player/chris-arroyo",
+    "url": "https://virginiasports.com/imgproxy/WhMYdcj78H4Q2955nKvD9d1Tz-ZjbsjrWxEIBBQYBUM/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3Zpcmdpbmlhc3BvcnRzLWNvbS1wcm9kLzIwMjUvMDIvQ2hyaXMtQXJyb3lvLTIzXzIwMjUwMTMxX0JTQl9IZWFkc2hvdF9KSF8wMjcwLnBuZw.png"
+  },
+  "cb-virginia-dean-kampschror": {
+    "photo_year": 2026,
+    "provider": "college",
+    "school": "Virginia",
+    "season": 2026,
+    "source": "https://virginiasports.com/sports/baseball/roster/season/2025-26/player/dean-kampschror",
+    "url": "https://virginiasports.com/imgproxy/B5RKIoV6wkpKbuae-RjOFznXbqWuNNWH3wVVgv6AbmM/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3Zpcmdpbmlhc3BvcnRzLWNvbS1wcm9kLzIwMjYvMDIvMDQvTGFXZ3Zvd2o5em90MElRWklrTGluamZJS1kxbDdjdzNzQWFqYkNYQi5wbmc.png"
+  },
+  "cb-virginia-drew-koenen": {
+    "photo_year": 2026,
+    "provider": "college",
+    "school": "Virginia",
+    "season": 2026,
+    "source": "https://virginiasports.com/sports/baseball/roster/season/2025-26/player/drew-koenen",
+    "url": "https://virginiasports.com/imgproxy/obPQtA8sOpwcrrkDRg9uDpS3CCXBkMm4VsWcCTGTJNM/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3Zpcmdpbmlhc3BvcnRzLWNvbS1wcm9kLzIwMjYvMDIvMDQvcnNHS1MxUU13aWFTdGxXNlJOaTJKMnpYVjlzaDVDcnFNMDA4TDNINS5wbmc.png"
+  },
+  "cb-virginia-eric-becker": {
+    "photo_year": 2026,
+    "provider": "college",
+    "school": "Virginia",
+    "season": 2026,
+    "source": "https://virginiasports.com/sports/baseball/roster/season/2025-26/player/eric-becker",
+    "url": "https://virginiasports.com/imgproxy/ZUtjzOOccpuI4yYp0Go_nUSUXBLeIBFUDTQ4iRiVlj8/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3Zpcmdpbmlhc3BvcnRzLWNvbS1wcm9kLzIwMjYvMDIvMDQvcGdYSU5UeTBPT1IzRmlwNG1aeEczUWp6eUNDWlhEeEQ3QkhzdzFvTS5wbmc.png"
+  },
+  "cb-virginia-ethan-anderson": {
+    "photo_year": 2024,
+    "provider": "college",
+    "school": "Virginia",
+    "season": 2024,
+    "source": "https://virginiasports.com/sports/baseball/roster/season/2023-24/player/ethan-anderson",
+    "url": "https://virginiasports.com/imgproxy/z2VtkOH720vysDOq5JF8TTU1tWtNoNpylwdUquvh8pw/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3Zpcmdpbmlhc3BvcnRzLWNvbS1wcm9kLzIwMjMvMTAvMmQ3NGRiZGYtYW5kZXJzb25fZXRoYW5fMjRtLWUxNjk2NTk3NDgzMzA5LmpwZw.jpg"
+  },
+  "cb-virginia-freddy-beruvides-jr": {
+    "photo_year": 2024,
+    "provider": "college",
+    "school": "Virginia",
+    "season": 2024,
+    "source": "https://virginiasports.com/sports/baseball/roster/season/2023-24/player/freddy-beruvides-jr",
+    "url": "https://virginiasports.com/imgproxy/Hwhfo2VloG__FtGsfXi2x-csIYR8r5KgAhxyOu008MY/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3Zpcmdpbmlhc3BvcnRzLWNvbS1wcm9kLzIwMjMvMTAvYTQ5ZWI3MjEtYmVydXZpZGVzX2ZyZWRkeV8yNG0tZTE2OTY4OTgyMzQxNjUuanBn.jpg"
+  },
+  "cb-virginia-griff-o-ferrall": {
+    "photo_year": 2024,
+    "provider": "college",
+    "school": "Virginia",
+    "season": 2024,
+    "source": "https://virginiasports.com/sports/baseball/roster/season/2023-24/player/griff-oferrall",
+    "url": "https://virginiasports.com/imgproxy/vqaTJmWbELqA4ND1029rt7jpCUkNMVgTVnRb47qzZzg/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3Zpcmdpbmlhc3BvcnRzLWNvbS1wcm9kLzIwMjMvMTAvZWY2MGQ4YzYtb2ZlcnJhbGxfZ3JpZmZfMjRtLWUxNjk2NTk3NDQ4NDY5LmpwZw.jpg"
+  },
+  "cb-virginia-harrison-didawick": {
+    "photo_year": 2026,
+    "provider": "college",
+    "school": "Virginia",
+    "season": 2026,
+    "source": "https://virginiasports.com/sports/baseball/roster/season/2025-26/player/harrison-didawick",
+    "url": "https://virginiasports.com/imgproxy/qrUIHQQ3PQ-tsR8OXKJ-rJuZ5iG8FatlS8dgZX2rxF4/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3Zpcmdpbmlhc3BvcnRzLWNvbS1wcm9kLzIwMjYvMDIvMDQvVkVET202UEhCT0NMNTBteXV2NTZpOHlnR243M25QQm1oVEZIREY0ZC5wbmc.png"
+  },
   "cb-virginia-henry-ford": {
     "photo_year": 2025,
     "provider": "college",
@@ -8531,6 +8701,190 @@
     "season": 2026,
     "source": "https://utsports.com/sports/baseball/roster/2026",
     "url": "https://images.sidearmdev.com/crop?url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Futsports.com%2Fimages%2F2025%2F10%2F8%2FFord_Henry.jpg&width=603&height=803&type=webp"
+  },
+  "cb-virginia-henry-godbout": {
+    "photo_year": 2025,
+    "provider": "college",
+    "school": "Virginia",
+    "season": 2025,
+    "source": "https://virginiasports.com/sports/baseball/roster/season/2024-25/player/henry-godbout",
+    "url": "https://virginiasports.com/imgproxy/8bTND_UQtYpo7xJosOMjOG9uD_BO-IBcxA7BEd208yw/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3Zpcmdpbmlhc3BvcnRzLWNvbS1wcm9kLzIwMjUvMDIvSGVucnktR29kYm91dC0yXzIwMjUwMTMxX0JTQl9IZWFkc2hvdF9KSF8wMDQ5LnBuZw.png"
+  },
+  "cb-virginia-henry-zatkowski": {
+    "photo_year": 2026,
+    "provider": "college",
+    "school": "Virginia",
+    "season": 2026,
+    "source": "https://virginiasports.com/sports/baseball/roster/season/2025-26/player/henry-zatkowski",
+    "url": "https://virginiasports.com/imgproxy/gySqXTeY23YK-if1HkuSJ5qNE-yJ_PZ8Q0RXmz2cBL8/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3Zpcmdpbmlhc3BvcnRzLWNvbS1wcm9kLzIwMjYvMDIvMDQvSjZMc1BDWjRtMngwZmo4dmV1anlLbUU1bzJSQU1vUjk3UGJyUkljdi5wbmc.png"
+  },
+  "cb-virginia-jack-o-connor": {
+    "photo_year": 2025,
+    "provider": "college",
+    "school": "Virginia",
+    "season": 2025,
+    "source": "https://virginiasports.com/sports/baseball/roster/season/2024-25/player/jack-oconnor",
+    "url": "https://virginiasports.com/imgproxy/f9GUoNnb127OOWepVVKnOAegM7KLYBR_Xys7bz3vhrA/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3Zpcmdpbmlhc3BvcnRzLWNvbS1wcm9kLzIwMjUvMDIvSmFjay1PQ29ubm9yLTE0XzIwMjUwMTMxX0JTQl9IZWFkc2hvdF9KSF8wMjI2LnBuZw.png"
+  },
+  "cb-virginia-jacob-ference": {
+    "photo_year": 2025,
+    "provider": "college",
+    "school": "Virginia",
+    "season": 2025,
+    "source": "https://virginiasports.com/sports/baseball/roster/season/2024-25/player/jacob-ference",
+    "url": "https://virginiasports.com/imgproxy/NwbZvwxj3S2f5k3JFk5sGIpiFshloayEc6eu0nyYHbw/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3Zpcmdpbmlhc3BvcnRzLWNvbS1wcm9kLzIwMjUvMDIvSmFjb2ItRmVyZW5jZS0yOF8yMDI1MDEzMV9CU0JfSGVhZHNob3RfSkhfMDE4OC5wbmc.png"
+  },
+  "cb-virginia-jake-weatherspoon": {
+    "photo_year": 2026,
+    "provider": "college",
+    "school": "Virginia",
+    "season": 2026,
+    "source": "https://virginiasports.com/sports/baseball/roster/season/2025-26/player/jake-weatherspoon",
+    "url": "https://virginiasports.com/imgproxy/yd-EdA41tGjKr54SarofP8CpNRFVw2xTYPHqA7NnEJI/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3Zpcmdpbmlhc3BvcnRzLWNvbS1wcm9kLzIwMjYvMDIvMDQvQlAyRTRMaEI3RTZQUXdPWUQ0ZHpJY1lOUWJ2YUlPY1dlQXdMc1BKci5wbmc.png"
+  },
+  "cb-virginia-james-nunnallee": {
+    "photo_year": 2025,
+    "provider": "college",
+    "school": "Virginia",
+    "season": 2025,
+    "source": "https://virginiasports.com/sports/baseball/roster/season/2024-25/player/james-nunnallee",
+    "url": "https://virginiasports.com/imgproxy/WAWU9eEX8l-o9kOVqnkUTWVHL961EAKwto9RKc-Vi2Q/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3Zpcmdpbmlhc3BvcnRzLWNvbS1wcm9kLzIwMjUvMDIvSmFtZXMtTnVubmFsbGVlLTNfMjAyNTAxMzFfQlNCX0hlYWRzaG90X0pIXzAwMjEucG5n.png"
+  },
+  "cb-virginia-jay-woolfolk": {
+    "photo_year": 2025,
+    "provider": "college",
+    "school": "Virginia",
+    "season": 2025,
+    "source": "https://virginiasports.com/sports/baseball/roster/season/2024-25/player/jay-woolfolk-baseball",
+    "url": "https://virginiasports.com/imgproxy/vPlwEcDstw2A5focUnRXW2ZxeAklB2UoLZwZFld5-As/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3Zpcmdpbmlhc3BvcnRzLWNvbS1wcm9kLzIwMjUvMDIvSmF5LVdvb2xmb2xrLTRfMjAyNTAxMzFfQlNCX0hlYWRzaG90X0pIXzAwNzAucG5n.png"
+  },
+  "cb-virginia-joe-savino": {
+    "photo_year": 2024,
+    "provider": "college",
+    "school": "Virginia",
+    "season": 2024,
+    "source": "https://virginiasports.com/sports/baseball/roster/season/2023-24/player/joe-savino",
+    "url": "https://virginiasports.com/imgproxy/tKCvK98hEZycfdt_gFwMQ40i-gmtNslF8-Rhfu21C6E/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3Zpcmdpbmlhc3BvcnRzLWNvbS1wcm9kLzIwMjMvMTAvNjlkZTdlYWItc2F2aW5vX2pvZV8yNG0tZTE2OTY4OTgxMTczMTUuanBn.jpg"
+  },
+  "cb-virginia-joe-tiroly": {
+    "photo_year": 2026,
+    "provider": "college",
+    "school": "Virginia",
+    "season": 2026,
+    "source": "https://virginiasports.com/sports/baseball/roster/season/2025-26/player/joe-tiroly",
+    "url": "https://virginiasports.com/imgproxy/cPhKIAPBIi8M-mIVwimTcCS_k8dl-OJsJvWluhz6yUU/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3Zpcmdpbmlhc3BvcnRzLWNvbS1wcm9kLzIwMjYvMDIvMDQvWGZYSlNEUVRkTk9zTnFhb0tYR2ZJMW5EMjNVSENqc2J1ekFnaXlhUS5wbmc.png"
+  },
+  "cb-virginia-kevin-jaxel": {
+    "photo_year": 2026,
+    "provider": "college",
+    "school": "Virginia",
+    "season": 2026,
+    "source": "https://virginiasports.com/sports/baseball/roster/season/2025-26/player/kevin-jaxel",
+    "url": "https://virginiasports.com/imgproxy/s5u5486PleqKCMNj57pTNd6YDWXg_9UDVa1WuYRwR6I/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3Zpcmdpbmlhc3BvcnRzLWNvbS1wcm9kLzIwMjYvMDIvMDQveHJ3M1hOR2NpRHphMU9CR3lIS2REZXpwUWtTSFpqZ3dycEhWejB2VS5wbmc.png"
+  },
+  "cb-virginia-lucas-hartman": {
+    "photo_year": 2026,
+    "provider": "college",
+    "school": "Virginia",
+    "season": 2026,
+    "source": "https://virginiasports.com/sports/baseball/roster/season/2025-26/player/lucas-hartman",
+    "url": "https://virginiasports.com/imgproxy/DkCCndx2s3OP-IUj7dnUZLwE7lsu8WPEO6ZShKBeJd8/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3Zpcmdpbmlhc3BvcnRzLWNvbS1wcm9kLzIwMjYvMDIvMDQvTXpaYkVkaFhyQnBjSm1BYUpDcHFIQ3BhY2FXaU90cFE0WTBUeU9oUy5wbmc.png"
+  },
+  "cb-virginia-luke-hanson": {
+    "photo_year": 2025,
+    "provider": "college",
+    "school": "Virginia",
+    "season": 2025,
+    "source": "https://virginiasports.com/sports/baseball/roster/season/2024-25/player/luke-hanson",
+    "url": "https://virginiasports.com/imgproxy/6Bufw6ljtaooXigMvLb7xCUX3HQp7PD5A3XeI-oqxCk/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3Zpcmdpbmlhc3BvcnRzLWNvbS1wcm9kLzIwMjUvMDIvTHVrZS1IYW5zb24tNV8yMDI1MDEzMV9CU0JfSGVhZHNob3RfSkhfMDAwNi5wbmc.png"
+  },
+  "cb-virginia-matt-augustin": {
+    "photo_year": 2026,
+    "provider": "college",
+    "school": "Virginia",
+    "season": 2026,
+    "source": "https://virginiasports.com/sports/baseball/roster/season/2025-26/player/matt-augustin",
+    "url": "https://virginiasports.com/imgproxy/Rl6rKoIV7zIqUwy3-NWxl22M-G-78qUsPlw0NXCPGNw/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3Zpcmdpbmlhc3BvcnRzLWNvbS1wcm9kLzIwMjYvMDIvMDQvZHlZMFg3ZTZHSmNPWmRudjNERDZlOXk4U0dOYWtKbFVMYUVtSVhrbS5wbmc.png"
+  },
+  "cb-virginia-matt-lanzendorfer": {
+    "photo_year": 2025,
+    "provider": "college",
+    "school": "Virginia",
+    "season": 2025,
+    "source": "https://virginiasports.com/sports/baseball/roster/season/2024-25/player/matt-lanzendorfer",
+    "url": "https://virginiasports.com/imgproxy/h5fRyVSybis-0_sTEuwWh7zEnD_3f4XCADZxap0NHWM/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3Zpcmdpbmlhc3BvcnRzLWNvbS1wcm9kLzIwMjUvMDIvTWF0dC1MYW56ZW5kb3JmZXItMzNfMjAyNTAxMzFfQlNCX0hlYWRzaG90X0pIXzAxNzEucG5n.png"
+  },
+  "cb-virginia-matthew-buchanan": {
+    "photo_year": 2025,
+    "provider": "college",
+    "school": "Virginia",
+    "season": 2025,
+    "source": "https://virginiasports.com/sports/baseball/roster/season/2024-25/player/matthew-buchanan",
+    "url": "https://virginiasports.com/imgproxy/o_05TLHA4ddNk2X1TqNQ-mhTc19HIQgBDyLKbj6BmN0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3Zpcmdpbmlhc3BvcnRzLWNvbS1wcm9kLzIwMjUvMDIvTWF0dGhldy1CdWNoYW5hbi0yNV8yMDI1MDEzMV9CU0JfSGVhZHNob3RfSkhfMDE2NC5wbmc.png"
+  },
+  "cb-virginia-owen-coady": {
+    "photo_year": 2024,
+    "provider": "college",
+    "school": "Virginia",
+    "season": 2024,
+    "source": "https://virginiasports.com/sports/baseball/roster/season/2023-24/player/owen-coady",
+    "url": "https://virginiasports.com/imgproxy/tVHaK0mj0V8En-LXROYzV2BNdEsoEzeB6QriBQhGUH8/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3Zpcmdpbmlhc3BvcnRzLWNvbS1wcm9kLzIwMjMvMTAvNjdmMDgzN2ItY29hZHlfb3dlbi1lMTY5Njg5ODAyNjMzNS5qcGc.jpg"
+  },
+  "cb-virginia-ryan-osinski": {
+    "photo_year": 2025,
+    "provider": "college",
+    "school": "Virginia",
+    "season": 2025,
+    "source": "https://virginiasports.com/sports/baseball/roster/season/2024-25/player/ryan-osinski",
+    "url": "https://virginiasports.com/imgproxy/74gIuDW7XmEMC2xKu474Xl1lpRBCCUW8_ozUf42-UIA/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3Zpcmdpbmlhc3BvcnRzLWNvbS1wcm9kLzIwMjUvMDIvUnlhbi1Pc2luc2tpLTEzXzIwMjUwMTMxX0JTQl9IZWFkc2hvdF9KSF8wMTM4LnBuZw.png"
+  },
+  "cb-virginia-tomas-valincius": {
+    "photo_year": 2025,
+    "provider": "college",
+    "school": "Virginia",
+    "season": 2025,
+    "source": "https://virginiasports.com/sports/baseball/roster/season/2024-25/player/tomas-valincius",
+    "url": "https://virginiasports.com/imgproxy/bNgFrHkvdroR5-OcvYgi1sGkb8KgvqK98UUTeL3dA8A/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3Zpcmdpbmlhc3BvcnRzLWNvbS1wcm9kLzIwMjUvMDIvVG9tYXMtVmFsaW5jaXVzLTFfMjAyNTAxMzFfQlNCX0hlYWRzaG90X0pIXzAwMzEucG5n.png"
+  },
+  "cb-virginia-tristan-head": {
+    "photo_year": 2024,
+    "provider": "college",
+    "school": "Virginia",
+    "season": 2024,
+    "source": "https://virginiasports.com/sports/baseball/roster/season/2023-24/player/tristan-head",
+    "url": "https://virginiasports.com/imgproxy/WAjfwcgQ0k1RGktPVrEQp9T4G7DQM_feiG2DOHGEPTc/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3Zpcmdpbmlhc3BvcnRzLWNvbS1wcm9kLzIwMjMvMTAvOTRlMjQ4ZDQtaGVhZF90cmlzdGFuXzI0bS1lMTY5Njg5Nzc5Mjk2Ni5qcGc.jpg"
+  },
+  "cb-virginia-tyler-kapa": {
+    "photo_year": 2026,
+    "provider": "college",
+    "school": "Virginia",
+    "season": 2026,
+    "source": "https://virginiasports.com/sports/baseball/roster/season/2025-26/player/tyler-kapa",
+    "url": "https://virginiasports.com/imgproxy/5BiRz3KQlR_24S4S0yZEbHjGRD9GS8p19bYc9XMixY0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3Zpcmdpbmlhc3BvcnRzLWNvbS1wcm9kLzIwMjYvMDIvMDQvaEpLTjBrUWh4dzZtaEJJek0zb0hsSTdTYUpxUkRDcVg4ZlM5MGo4aS5wbmc.png"
+  },
+  "cb-virginia-walker-buchanan": {
+    "photo_year": 2025,
+    "provider": "college",
+    "school": "Virginia",
+    "season": 2025,
+    "source": "https://virginiasports.com/sports/baseball/roster/season/2024-25/player/walker-buchanan",
+    "url": "https://virginiasports.com/imgproxy/eLoromQwpJR4E9Kz27GNrnCUkMK6E-EkayxiRY0Ing4/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3Zpcmdpbmlhc3BvcnRzLWNvbS1wcm9kLzIwMjUvMDIvV2Fsa2VyLUJ1Y2hhbmFuLTMyXzIwMjUwMTMxX0JTQl9IZWFkc2hvdF9KSF8wMjU3X0Nyb3BwZWQucG5n.png"
+  },
+  "cb-virginia-wes-arrington": {
+    "photo_year": 2025,
+    "provider": "college",
+    "school": "Virginia",
+    "season": 2025,
+    "source": "https://virginiasports.com/sports/baseball/roster/season/2024-25/player/wes-arrington",
+    "url": "https://virginiasports.com/imgproxy/J_u5blxXA_2GjfErJui96u76bgZNPSIWmqW4XyABP0g/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3Zpcmdpbmlhc3BvcnRzLWNvbS1wcm9kLzIwMjUvMDIvV2VzLUFycmluZ3Rvbi00NV8yMDI1MDEzMV9CU0JfSGVhZHNob3RfSkhfMDIwN19IZWFkc2hvdC5wbmc.png"
+  },
+  "cb-virginia-zach-jackson": {
+    "photo_year": 2026,
+    "provider": "college",
+    "school": "Virginia",
+    "season": 2026,
+    "source": "https://virginiasports.com/sports/baseball/roster/season/2025-26/player/zach-jackson",
+    "url": "https://virginiasports.com/imgproxy/aqAhFS4Of3cLVj46MEnH4BHebpfrUmADL6nrioRn-3s/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3Zpcmdpbmlhc3BvcnRzLWNvbS1wcm9kLzIwMjYvMDIvMDQvN3JGZmRUcXlSamg3c25LSXFEVnlIV2FCTk9kOXlQUlVGdmhIdXpHRi5wbmc.png"
   },
   "cb-wake-forest-adam-tellier": {
     "photo_year": 2024,

@@ -1061,13 +1061,64 @@
     },
     {
       "game_id": "cb-2020-03-10-cal-baptist-san-diego-att0083",
-      "date": "2020-03-10",
+      "date": "2020-03-11",
       "away": "Cal Baptist",
       "home": "San Diego",
       "source_url": "https://usdtoreros.com/sports/baseball/stats/2020/california-baptist/boxscore/9683",
       "original_reason": "date not confirmed",
-      "status": "unresolved",
-      "reason": "date not confirmed; alternate official source required"
+      "status": "recovered",
+      "original_archive_date": "2020-03-10",
+      "method": "Manual verification of official USD box score dated March 11, 2020; corrected date; exact pitcher BF and opponent plate appearances",
+      "manual_source_url": "https://usdtoreros.com/sports/baseball/stats/2020/california-baptist/boxscore/9683",
+      "verification": {
+        "Cal Baptist": {
+          "BF": 37,
+          "opponent_AB": 32,
+          "opponent_BB": 4,
+          "opponent_HBP": 1
+        },
+        "San Diego": {
+          "BF": 32,
+          "opponent_AB": 28,
+          "opponent_BB": 4,
+          "opponent_HBP": 0
+        }
+      },
+      "pitchers": 6,
+      "added": 6,
+      "recovered_this_run": 6,
+      "values": [
+        {
+          "player_id": "cb-cal-baptist-chris-burica",
+          "team": "Cal Baptist",
+          "BF": 27
+        },
+        {
+          "player_id": "cb-cal-baptist-christian-culpepper",
+          "team": "Cal Baptist",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-cal-baptist-jorge-valerio",
+          "team": "Cal Baptist",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-san-diego-jack-dolak",
+          "team": "San Diego",
+          "BF": 20
+        },
+        {
+          "player_id": "cb-san-diego-jake-reed",
+          "team": "San Diego",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-san-diego-conner-thurman",
+          "team": "San Diego",
+          "BF": 4
+        }
+      ]
     },
     {
       "game_id": "cb-2021-02-19-san-diego-san-diego-state-att0084",

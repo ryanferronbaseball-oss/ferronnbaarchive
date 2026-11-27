@@ -1,0 +1,80 @@
+name: Four-school CFB ESPN portrait audit
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['scripts/audit_cfb_espn_portraits.py','.github/workflows/cfb-espn-portraits.yml']
+permissions:
+  contents: write
+concurrency:
+  group: cfb-portrait-audit
+  cancel-in-progress: false
+jobs:
+  audit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install requests pillow playwright
+      - run: python -m playwright install chromium
+      - run: python scripts/audit_cfb_espn_portraits.py
+      - name: Sample desktop and mobile profile rendering for each school
+        run: |
+          python - <<'PY'
+          import json,pathlib,http.server,threading
+          from playwright.sync_api import sync_playwright
+          data=pathlib.Path('cfb/data');reg=json.loads((data/'player_portraits.json').read_text());report=data/'espn_portrait_audit.json';audit=json.loads(report.read_text())
+          server=http.server.ThreadingHTTPServer(('127.0.0.1',0),http.server.SimpleHTTPRequestHandler)
+          threading.Thread(target=server.serve_forever,daemon=True).start()
+          base=f'http://127.0.0.1:{server.server_port}/cfb'
+          out=pathlib.Path('cfb-portrait-review');out.mkdir(exist_ok=True)
+          failures=[];sampled=[]
+          with sync_playwright() as p:
+              browser=p.chromium.launch()
+              for school in ('NCS','WFU','DEL','WKU'):
+                  ids=[i for i in audit['added'] if reg[i]['school']==school][:3]
+                  for cid in ids:
+                      for mode,width in [('desktop',1360),('mobile',390)]:
+                          page=browser.new_page(viewport={'width':width,'height':900})
+                          try:
+                              page.goto(base+'/player.html?id='+cid,wait_until='domcontentloaded',timeout=45000)
+                              img=page.locator('#playerPortrait')
+                              img.wait_for(state='visible',timeout=15000)
+                              assert img.evaluate('(el)=>el.naturalWidth>1&&el.src.endsWith(".png")')
+                              page.locator('.player-hero').screenshot(path=str(out/(cid+'-'+mode+'.png')))
+                              sampled.append({'id':cid,'mode':mode})
+                          except Exception as e:failures.append({'id':cid,'mode':mode,'error':str(e)[:300]})
+                          finally:page.close()
+              browser.close()
+          audit['render_sample']=sampled;audit['render_failures']=failures
+          failed={f['id'] for f in failures}
+          for cid in failed:
+              r=reg.pop(cid,None)
+              if r:
+                  audit['missing'].append({'id':cid,'name':r['name'],'school':r['school'],'reason':'Sample rendering failure'})
+                  for s,n in {'NCS':'NC State','WFU':'Wake Forest','DEL':'Delaware','WKU':'Western Kentucky'}.items():
+                      if r['school']==s:audit['schools'][n]['registered']-=1;audit['schools'][n]['missing']+=1
+          audit['added']=[i for i in audit['added'] if i not in failed];audit['registered']-=len(failed)
+          (data/'player_portraits.json').write_text(json.dumps(reg,indent=2,sort_keys=True)+'\n')
+          report.write_text(json.dumps(audit,indent=2,sort_keys=True)+'\n')
+          server.shutdown()
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cfb-portrait-review
+          path: |
+            cfb-portrait-review/
+            cfb/data/espn_portrait_audit.json
+      - name: Publish verified ESPN portraits
+        run: |
+          git config user.name "Courtside Archive"
+          git config user.email "actions@users.noreply.github.com"
+          git add cfb/data/player_portraits.json cfb/data/espn_portrait_audit.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Register four-school verified ESPN college football headshots"
+          git pull --rebase origin main
+          git push origin main

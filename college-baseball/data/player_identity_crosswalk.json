@@ -4,8 +4,8 @@
   "source": "Original archive owner confirmed each multi-school person",
   "original_attendance_ids_preserved": 444,
   "original_player_game_rows_preserved": 13183,
-  "requested_person_merges": 207,
-  "activated_person_merges": 207,
+  "requested_person_merges": 208,
+  "activated_person_merges": 208,
   "pending_person_merges": 0,
   "merge_policy": "Only listed pair of exact normalized person names and school-specific original source player IDs; all other IDs remain separate",
   "display_aliases": [
@@ -6105,6 +6105,33 @@
       "evidence_urls": [
         "https://godeacs.com/sports/baseball/roster/tate-ballestero/8085",
         "https://godeacs.com/sports/baseball/stats/2024/north-carolina/boxscore/13808"
+      ]
+    },
+    {
+      "name": "Eli Serrano III",
+      "display_name": "Eli Serrano III",
+      "canonical_id": "cb-nc-state-eli-serrano-iii",
+      "source_player_ids": [
+        "cb-nc-state-eli-serrano-iii",
+        "cb-nc-state-serrano-iii"
+      ],
+      "schools": [
+        "NC State"
+      ],
+      "pairs": [
+        {
+          "team": "NC State",
+          "source_player_id": "cb-nc-state-eli-serrano-iii"
+        },
+        {
+          "team": "NC State",
+          "source_player_id": "cb-nc-state-serrano-iii"
+        }
+      ],
+      "source_rows": 6,
+      "note": "Owner-approved abbreviated surname and suffix variant; distinct attended games. Christian Serrano is separate.",
+      "evidence_urls": [
+        "https://gopack.com/sports/baseball/roster/2024"
       ]
     }
   ]

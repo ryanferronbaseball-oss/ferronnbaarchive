@@ -449,7 +449,17 @@ function renderHome(d){
  +'<div class="game-card cb-game-card"><h3>Players & leaderboards</h3><p class="cb-sub">Every player you watched, with witnessed-game career lines and hitter/pitcher summaries, including two-way players.</p><a href="./stats.html" class="cb-link">View players ↗</a></div>'
  +'<div class="game-card cb-game-card"><h3>Signature performances</h3><p class="cb-sub">Best single-game hitting and pitching performances, records, and tournament milestones; no fabricated data.</p><a href="./records.html" class="cb-link">View records ↗</a></div></div>';
 }
+
+function decisionPortrait(name,href,urls){
+ const initials=String(name||"").trim().split(/\s+/).filter(Boolean).slice(0,2).map(s=>s[0]).join("").toUpperCase();
+ const candidates=[...new Set(urls.filter(Boolean))];
+ const photo='<span class="decision-portrait"><span aria-hidden="true">'+esc(initials)+'</span>'+(candidates.length?'<img alt="" loading="lazy" decoding="async" src="'+esc(candidates[0])+'" data-remaining="'+esc(JSON.stringify(candidates.slice(1)))+'" onload="this.classList.add(\'is-loaded\')" onerror="this.classList.remove(\'is-loaded\');const rest=JSON.parse(this.dataset.remaining);if(rest.length){this.dataset.remaining=JSON.stringify(rest.slice(1));this.src=rest[0]}else this.remove()">':'')+'</span>';
+ return '<a class="decision-portrait-link" aria-label="View '+esc(name)+' player profile" href="'+esc(href)+'">'+photo+'</a>';
+}
+
 async function renderGames(d){
+ const decisionPortraitRegistry=await json("player_portraits.json").catch(()=>({}));
+ const decisionProfiles=new Map(d.players.map(p=>[p.player_id,p]));
  const alumniRegistry=await json("mlb_alumni_seed.json");
  const gamePhotos=await json("game_photos.json").catch(()=>({}));
  const draftRegistry=await json("draft_profile_tags.json").catch(()=>({picks:[]}));
@@ -508,8 +518,10 @@ async function renderGames(d){
   const person=name=>{
    if(!name)return '<span class="mlb-decision-unavailable">No save</span>';
    const p=players.find(x=>x.pitching&&(x.player===name||x.original_game_player_name===name||x.player.toLowerCase()===String(name).toLowerCase()));
-   return p?'<a class="mlb-decision-name" href="'+playerUrl(p)+'">'+esc(p.player)+'</a>'
-    :'<span class="mlb-decision-unavailable">'+esc(scorebookNameCase(name))+'</span>';
+   if(!p)return '<span class="mlb-decision-unavailable">'+esc(scorebookNameCase(name))+'</span>';
+    const profile=decisionProfiles.get(p.player_id),href=playerUrl(p);
+    const urls=playerPortraitCandidates(decisionPortraitRegistry[p.player_id],profile?.rows||[p]);
+    return '<div class="decision-person">'+decisionPortrait(p.player,href,urls)+'<div class="decision-person-info"><a class="mlb-decision-name" href="'+esc(href)+'">'+esc(p.player)+'</a></div></div>';
   };
   const decisions=decision?'<section class="panel mlb-decisions-panel" id="cb-pitching-decisions">'
    +'<div class="mlb-pregame-eyebrow">OFFICIAL COLLEGE GAME DECISIONS</div><h2>Win, Loss & Save</h2>'

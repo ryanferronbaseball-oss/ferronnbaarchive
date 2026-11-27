@@ -39,11 +39,11 @@ jobs:
           SCHOOL='Stanford'
           HOST='gostanford.com'
           REG='college-baseball/data/player_portraits.json'
-          REPORT='college-baseball/data/stanford_portrait_recovery.json'
+          REPORT='college-baseball/data/stanford_portrait_final.json'
           players=json.loads(subprocess.check_output(['node','scripts/export_baseball_portrait_preferences.cjs',SCHOOL],text=True))
           assert players,'No witnessed Stanford players found'
           registry=load(REG,{})
-          prior=load('college-baseball/data/stanford_portrait_audit.json',{})
+          prior=load('college-baseball/data/stanford_portrait_recovery.json',{})
           wanted={x['id'] for x in prior.get('missing',[])}|set(prior.get('render_failures',[]))
           players=[p for p in players if p['id'] in wanted and p['id'] not in registry]
           assert players,'No outstanding Stanford profiles'
@@ -78,16 +78,21 @@ jobs:
           def photos(soup,u,names):
               # The official bio photo is a lazy image with a real signed URL in its url attribute.
               # The src attribute is initially a placeholder GIF. Do not use related player cards or hero photos.
-              for im in soup.select('img.roster-bio-photo__image, img.roster-bio-main-info__image, img.roster-card__image, img.roster-card-item__image'):
-                  alt=norm(im.get('alt',''))
-                  if not any(alt in (n,n+'headshot','headshotof'+n,n+'portrait','portraitof'+n) for n in names):continue
+              for im in soup.select('img.roster-bio-photo__image, img.roster-bio-main-info__image'):
+                  label=str(im.get('alt','')).strip()
+                  alt=norm(label)
+                  m=re.fullmatch(r'(.+?)\s+(20\d{2})\s+(?:Baseball\s+)?Headshot',label,re.I)
+                  season=int(urlsplit(u).path.split('/season/')[1].split('/')[0])
+                  # A newer biography may reuse its own previous-season official headshot.
+                  dated=bool(m and norm(m.group(1)) in names and season-1<=int(m.group(2))<=season)
+                  if not dated and not any(alt in (n,n+'headshot','headshotof'+n,n+'portrait','portraitof'+n) for n in names):continue
                   for k in ('url','data-current-src','data-src','data-lazy-src','data-original','src'):
                       raw=im.get(k)
                       if not isinstance(raw,str):continue
                       v=urljoin(u,raw)
                       if not verified_url(v) or re.search(r'placeholder|silhouette|default|logo|banner|sponsor|social|\.gif(?:\?|$)|\.svg(?:\?|$)',v,re.I):continue
                       if host(v)==HOST and '/imgproxy/' not in v and not re.search(r'\.(?:jpe?g|png|webp)(?:\?|$)',v,re.I):continue
-                      yield v
+                      yield v,(int(m.group(2)) if dated else None)
           years=sorted({y for p in players for y in range(min(p['schools'][SCHOOL]),min(2027,max(p['schools'][SCHOOL])+4)+1) if p['schools'].get(SCHOOL)})
           pages={}
           found={}
@@ -137,10 +142,10 @@ jobs:
                                   soup=hydrated(page,u,'img.roster-bio-photo__image, img.roster-bio-main-info__image, img.roster-card__image, img.roster-card-item__image')
                                   options=list(dict.fromkeys(photos(soup,u,names)))
                               except Exception as e:diagnostics[cid]['attempts'].append({'source':u,'hydration_error':str(e)})
-                          for v in options:
+                          for v,dated_year in options:
                               state,digest=probe(v)
                               if state=='image' and digest:
-                                  found[cid]=({'url':v,'source':u,'provider':'college','school':SCHOOL,'season':y,'photo_year':photo_year(v,y)},digest)
+                                  found[cid]=({'url':v,'source':u,'provider':'college','school':SCHOOL,'season':y,'photo_year':dated_year or photo_year(v,y)},digest)
                                   break
                           if cid in found:break
                           diagnostics[cid]['attempts'].append({'source':u,'options':options[:8],'images':[dict(im.attrs) for im in soup.find_all('img') if re.search(r'headshot|portrait|roster-bio',str(im),re.I)][:12]})
@@ -175,7 +180,7 @@ jobs:
           from playwright.sync_api import sync_playwright
           from PIL import Image,ImageDraw
           root=pathlib.Path.cwd()
-          report=json.loads((root/'college-baseball/data/stanford_portrait_recovery.json').read_text())
+          report=json.loads((root/'college-baseball/data/stanford_portrait_final.json').read_text())
           out=root/'stanford-visual-review';out.mkdir(exist_ok=True)
           server=http.server.ThreadingHTTPServer(('127.0.0.1',0),functools.partial(http.server.SimpleHTTPRequestHandler,directory=str(root)))
           threading.Thread(target=server.serve_forever,daemon=True).start()
@@ -233,7 +238,7 @@ jobs:
           report['render_failures']=sorted(failed)
           report['registered_portraits']=sum(t['id'] in registry for t in report['targets'])
           regpath.write_text(json.dumps(registry,ensure_ascii=False,indent=2,sort_keys=True)+'\n')
-          (root/'college-baseball/data/stanford_portrait_recovery.json').write_text(json.dumps(report,ensure_ascii=False,indent=2,sort_keys=True)+'\n')
+          (root/'college-baseball/data/stanford_portrait_final.json').write_text(json.dumps(report,ensure_ascii=False,indent=2,sort_keys=True)+'\n')
           PY
       - uses: actions/upload-artifact@v4
         if: always()
@@ -241,12 +246,12 @@ jobs:
           name: stanford-portrait-review
           path: |
             stanford-visual-review/
-            college-baseball/data/stanford_portrait_recovery.json
+            college-baseball/data/stanford_portrait_final.json
       - name: Publish verified Stanford portrait changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add college-baseball/data/player_portraits.json college-baseball/data/stanford_portrait_recovery.json
+          git add college-baseball/data/player_portraits.json college-baseball/data/stanford_portrait_final.json
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "Add verified Stanford witnessed-player portraits"
           for attempt in 1 2 3; do

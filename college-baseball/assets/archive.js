@@ -884,6 +884,8 @@ function renderRecords(d){
 }
 function render(){
  const page=document.body.dataset.page||"home",app=$("app");
+ // Standalone pages may import the canonical data loader without using its renderer.
+ if(!$("navigation")||!app)return;
  $("navigation").innerHTML=nav(page);
  const archive=cachedLoad();
  archive.then(initQuickSearch).catch(()=>{const results=$("cb-quick-results");if(results){results.innerHTML='<p class="cb-quick-empty">Archive search is temporarily unavailable.</p>';results.hidden=false}});

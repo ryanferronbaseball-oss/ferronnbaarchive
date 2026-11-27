@@ -1,0 +1,85 @@
+name: College Baseball manual BF recovery
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/college-baseball-bf-manual.yml']
+permissions:
+  contents: write
+concurrency:
+  group: college-baseball-bf-manual
+  cancel-in-progress: false
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Apply verified game-specific BF
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          D=Path('college-baseball/data')
+          stats=D/'player_stats.json'
+          audit=D/'bf_audit_recovery.json'
+          rows=json.loads(stats.read_text())
+          report=json.loads(audit.read_text())
+          gid='cb-2018-04-08-loyola-marymount-san-diego-att0024'
+          source='https://s3.us-east-2.amazonaws.com/sidearm.nextgen.sites/lmulions.com/documents/2018/6/5/8944__m_basebl_2017_18_release__release_20180413aaa.pdf#page=24'
+          # Contemporary PDF page 24, confirmed with official HTML pitching lines and play-by-play.
+          seeds=[
+              ('cb-loyola-marymount-nick-frasso',None,None,(6,4,4,4,3,1,54),13),
+              ('cb-loyola-marymount-kyle-dozier','cb-loyola-marymount-matt-voelker','Matt Voelker',(7,6,7,4,0,2,46),16),
+              ('cb-loyola-marymount-braydon-salzman',None,None,(0,1,3,3,1,0,13),3),
+              ('cb-loyola-marymount-josh-robins',None,None,(3,3,4,4,1,2,35),10),
+              ('cb-loyola-marymount-sean-paquet',None,None,(5,0,0,0,0,4,23),5),
+              ('cb-loyola-marymount-brendan-kawaja','cb-loyola-marymount-cj-fernandezees','CJ Fernandezees',(3,0,0,0,0,0,6),3),
+              ('cb-san-diego-nick-sprengel',None,None,(14,6,5,5,3,5,80),22),
+              ('cb-san-diego-travis-kuhn',None,None,(13,2,1,1,2,6,65),18),
+          ]
+          arms=[r for r in rows if r['game_id']==gid and r.get('pitching') is not None]
+          entry=next(r for r in report['games'] if r['game_id']==gid)
+          assert len(arms)==len(seeds)
+          fields=('outs','hits','runs','earnedRuns','baseOnBalls','strikeOuts','numberOfPitches')
+          values=[]; corrections=[]; added=0
+          for old,new,name,sig,bf in seeds:
+              candidates=[r for r in arms if r['player_id'] in {old,new}]
+              assert len(candidates)==1,(old,candidates)
+              r=candidates[0]; p=r['pitching']
+              assert tuple(p[k] for k in fields)==sig,(old,p)
+              assert p.get('battersFaced') in (None,bf),(old,p)
+              if new:
+                  corrections.append({'old_player_id':old,'new_player_id':new,'player':name})
+                  if r['player_id']==old:
+                      r['player_id']=new; r['player']=name
+                      r['identity_source_url']=source
+                      r['identity_note']='Contemporary LMU game notes PDF and official play-by-play identify this pitcher; current historical Sidearm player link misassigns the identical pitching line.'
+              if p.get('battersFaced') is None:
+                  p['battersFaced']=bf; added+=1
+              values.append({'player_id':r['player_id'],'team':r['team'],'BF':bf})
+              print(r['player'],bf,'K%',round(100*p['strikeOuts']/bf,1),'BB%',round(100*p['baseOnBalls']/bf,1))
+          assert sum(v['BF'] for v in values if v['team']=='Loyola Marymount')==50==38+5+5+2
+          assert sum(v['BF'] for v in values if v['team']=='San Diego')==40==34+5+1
+          if entry['status']=='recovered':
+              assert entry['values']==values and added==0
+              print('Already verified and saved')
+              raise SystemExit(0)
+          assert entry['status']=='unresolved' and added==8
+          entry.pop('reason',None)
+          entry.update(status='recovered',method='Manual official contemporary PDF and HTML play-by-play; corrected two misassigned pitcher identities; exact BF and opponent plate appearance totals',manual_source_url=source,verification={'Loyola Marymount':{'BF':50,'opponent_AB':38,'opponent_BB':5,'opponent_HBP':5,'opponent_SH':2},'San Diego':{'BF':40,'opponent_AB':34,'opponent_BB':5,'opponent_HBP':1}},identity_corrections=corrections,pitchers=8,added=added,recovered_this_run=added,values=values)
+          stats.write_text(json.dumps(rows,ensure_ascii=False,indent=2)+'\n')
+          audit.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
+          print('Remaining unresolved:',sum(r['status']=='unresolved' for r in report['games']))
+          PY
+      - name: Commit game and audit together
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add college-baseball/data/player_stats.json college-baseball/data/bf_audit_recovery.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Recover eight verified BF entries for 2018 LMU at USD"
+          git pull --rebase origin main
+          git push origin HEAD:main

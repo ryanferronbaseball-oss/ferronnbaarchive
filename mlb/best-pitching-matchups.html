@@ -31,6 +31,16 @@
 .duel-links{display:flex;gap:14px;flex-wrap:wrap}.duel-links a{font-size:13px;font-weight:800;color:#72334c}
 .duel-note{margin-top:25px;padding:16px 20px;border-left:4px solid var(--duel-red);background:#edf5fc;border-radius:0 10px 10px 0;color:#3d5368;font-size:13px;line-height:1.65}
 @media(max-width:790px){.duel-grid{grid-template-columns:1fr}}@media(max-width:430px){.duel-top,.duel-body{padding:15px}.duel-vs{padding:7px 5px}.duel-name{font-size:18px}}
+
+.duel-person,.duel-pitcher{text-align:center;align-self:start}
+.duel-pitchers,.duel-versus{align-items:center}
+.duel-portrait{position:relative;display:flex;align-items:center;justify-content:center;width:clamp(76px,12vw,112px);height:clamp(92px,14vw,132px);margin:0 auto 10px;border:1px solid #c3d7e6;border-radius:12px;background:linear-gradient(145deg,#e6f2fb,#f7e9ee);overflow:hidden;color:var(--duel-red);font-weight:850;font-size:24px}
+.duel-portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center bottom;opacity:0}
+.duel-portrait img.is-loaded{opacity:1;background:#e9f3fa}
+.duel-portrait-link{display:block;color:inherit;text-decoration:none}
+.duel-portrait-link:hover .duel-portrait{border-color:var(--duel-red)}
+.duel-person .archive-photo-credit{display:block;font-size:10px;line-height:1.3;margin-top:5px;color:#526b7d}
+.duel-person .archive-photo-credit a{color:inherit;font-size:inherit}
 </style></head>
 <body><main><div id="navigation"></div>
 <section class="duel-hero">
@@ -47,12 +57,31 @@
 const matchups=[["2003-07-24",1,15785,"Colorado Rockies","Los Angeles Dodgers","Dodger Stadium","Kevin Brown","Shawn Chacón","Brown was an established elite starter enjoying an outstanding 2003 season. Chacón was a newly selected NL All-Star in his breakout year.","Established ace · Breakout All-Star"],["2006-06-28",6,41109,"Atlanta Braves","New York Yankees","Yankee Stadium","John Smoltz","Chien-Ming Wang","An established Cy Young winner and longtime ace against a rising Yankees starter who had developed into a prominent part of New York’s rotation.","Established ace · Rising contender"],["2007-06-10",9,69076,"Toronto Blue Jays","Los Angeles Dodgers","Dodger Stadium","Roy Halladay","Jason Schmidt","Halladay brought elite contemporary credentials; Schmidt entered with a recent history as one of the National League’s top starters, despite a difficult, injury-affected 2007.","Established aces · Recent reputation"],["2007-07-02",11,69356,"Atlanta Braves","Los Angeles Dodgers","Dodger Stadium","John Smoltz","Derek Lowe","Smoltz remained a frontline pitcher after returning to the rotation, while Lowe brought proven quality and an established record as a leading Dodgers starter.","Established frontline starters"],["2008-06-29",22,234989,"Seattle Mariners","San Diego Padres","Petco Park","Érik Bédard","Jake Peavy","Peavy entered as the reigning NL Cy Young winner. Bédard was coming off a 221-strikeout 2007 season and a top-five AL Cy Young finish.","Reigning Cy Young · Recent contender"],["2010-07-18",32,265183,"Texas Rangers","Boston Red Sox","Fenway Park","C. J. Wilson","Jon Lester","Lester was a 2010 All-Star and proven ace. Wilson was having an impressive first full season in a starting rotation.","Current-season form · Established ace"],["2022-10-18",101,715731,"Philadelphia Phillies","San Diego Padres","Petco Park","Zack Wheeler","Yu Darvish","Both starters were genuine frontline pitchers having excellent 2022 seasons. Wheeler also entered with a runner-up finish in 2021 NL Cy Young voting.","NLCS Game 1 · Two frontline starters"],["2023-08-22",116,716887,"Miami Marlins","San Diego Padres","Petco Park","Jesús Luzardo","Blake Snell","Snell was pitching at an elite level in the second half of 2023, while Luzardo brought a recent breakout and recognized swing-and-miss ability.","Dominant ace · Emerging strikeout arm"],["2024-05-13",120,747128,"Chicago Cubs","Atlanta Braves","Truist Park","Shota Imanaga","Reynaldo López","Both arrived as early-season ERA standouts. This matchup was compelling because of their exceptional 2024 form rather than longstanding ace reputations.","Two early-season ERA leaders"]];
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const normalize=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-zA-Z]/g,'').toLowerCase();
-let pitcherIds=new Map();
+let pitcherIds=new Map(),portraitFallbacks={};
+function photoCredit(record){
+ if(["historical","official"].includes(record?.provider)&&/^https:\/\/[^\s"'<>]+$/.test(record.source||""))return '<small class="archive-photo-credit"><a href="'+esc(record.source)+'" target="_blank" rel="noopener noreferrer">Photo source ↗</a></small>';
+ if(!record||record.provider!=="commons"||!/^https:\/\/commons\.wikimedia\.org\/wiki\/File:/.test(record.source||"")||!/^https:\/\/(creativecommons\.org|commons\.wikimedia\.org)\//.test(record.license_url||""))return "";
+ return '<small class="archive-photo-credit">Photo: <a href="'+esc(record.source)+'" target="_blank" rel="noopener noreferrer">'+esc(record.author)+'</a> · <a href="'+esc(record.license_url)+'" target="_blank" rel="noopener noreferrer">'+esc(record.license)+'</a></small>';
+}
+function mlbPortrait(id){
+ const url=portraitFallbacks[String(id)]?.url;
+ return typeof url==="string"&&(/^https:\/\/a\.espncdn\.com\/i\/headshots\/mlb\/players\/full\/\d+\.png$/.test(url)||/^https:\/\/upload\.wikimedia\.org\/wikipedia\/commons\//.test(url)|| (["historical","official"].includes(portraitFallbacks[String(id)]?.provider)&&/^https:\/\/(?:[a-z0-9.-]+\.)?(?:mlb\.com|mlbstatic\.com|espncdn\.com|baseball-reference\.com|sports-reference\.com|sr-logos\.com|sidearmsports\.com|sidearmdev\.com|sidearmnextgen\.com|gohofstra\.com|riceowls\.com|rolltide\.com|cloudfront\.net|amazonaws\.com)\/[^\s"'<>]+$/i.test(url)))
+ ? url : "https://img.mlbstatic.com/mlb-photos/image/upload/w_213,q_85/v1/people/"+encodeURIComponent(id)+"/headshot/67/current";
+}
+
+function portraitMarkup(name,pid,urls){
+ const initials=esc(String(name).trim().split(/\s+/).slice(0,2).map(n=>n[0]).join('').toUpperCase());
+ const srcs=[...new Set(urls.filter(Boolean))];
+ const photo='<span class="duel-portrait"><span aria-hidden="true">'+initials+'</span>'+(srcs.length?'<img alt="'+esc(name)+'" loading="lazy" decoding="async" src="'+esc(srcs[0])+'" data-remaining="'+esc(JSON.stringify(srcs.slice(1)))+'" onload="this.classList.add(\'is-loaded\')" onerror="this.classList.remove(\'is-loaded\');const rest=JSON.parse(this.dataset.remaining);if(rest.length){this.dataset.remaining=JSON.stringify(rest.slice(1));this.src=rest[0]}else this.remove()">':'')+'</span>';
+ return pid?'<a class="duel-portrait-link" aria-label="View '+esc(name)+' player profile" href="./player.html?id='+encodeURIComponent(pid)+'">'+photo+'</a>':photo;
+}
+
 async function init(){
  document.getElementById('navigation').innerHTML=window.MLBArchive.nav('best-pitching');
  // Use existing witnessed-player IDs; avoid fabricating player-profile URLs.
  try{
-  const resp=await fetch('./data/player_stats.json',{cache:'no-store'});
+  const [resp,portraits]=await Promise.all([fetch('./data/player_stats.json',{cache:'no-store'}),fetch('./data/player_portrait_fallbacks.json',{cache:'no-store'}).then(r=>r.ok?r.json():{}).catch(()=>({}))]);
+  portraitFallbacks=portraits;
   if(resp.ok){const rows=await resp.json();for(const r of rows)if(r.player_id&&r.name&&r.pitching&&!pitcherIds.has(normalize(r.name)))pitcherIds.set(normalize(r.name),r.player_id);}
  }catch(e){console.warn('Player profile lookup unavailable',e);}
  render();
@@ -63,7 +92,7 @@ function render(){
  const entries=[...matchups].sort((a,b)=>newest?b[0].localeCompare(a[0]):a[0].localeCompare(b[0]));
  document.getElementById('duelGrid').innerHTML=entries.map(m=>{
   const [dt,id,pk,away,home,park,starterAway,starterHome,description,label]=m;
-  const player=(name,team)=>{const pid=pitcherIds.get(normalize(name));const title=esc(name);return '<div class="duel-person"><div class="duel-name">'+(pid?'<a href="./player.html?id='+encodeURIComponent(pid)+'">'+title+'</a>':title)+'</div><div class="duel-team">'+esc(team)+'</div></div>';};
+  const player=(name,team)=>{const pid=pitcherIds.get(normalize(name));const title=esc(name);return '<div class="duel-person">'+portraitMarkup(name,pid,pid?[mlbPortrait(pid)]:[])+'<div class="duel-name">'+(pid?'<a href="./player.html?id='+encodeURIComponent(pid)+'">'+title+'</a>':title)+'</div><div class="duel-team">'+esc(team)+'</div>'+(pid?photoCredit(portraitFallbacks[String(pid)]):'')+'</div>';};
   const date=new Date(dt+'T12:00:00').toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
   return '<article class="duel-card"><div class="duel-top"><div class="duel-date">'+esc(date)+'</div><div class="duel-match">'+esc(away)+' at '+esc(home)+' · '+esc(park)+'</div><div class="duel-pitchers">'+player(starterAway,away)+'<span class="duel-vs">VS</span>'+player(starterHome,home)+'</div></div><div class="duel-body"><div class="duel-context">'+esc(label)+'</div><p>'+esc(description)+'</p><div class="duel-links"><a href="./game.html?id='+id+'">Courtside box score ↗</a><a href="https://www.mlb.com/gameday/'+pk+'" target="_blank" rel="noopener noreferrer">MLB game ↗</a></div></div></article>';
  }).join('');

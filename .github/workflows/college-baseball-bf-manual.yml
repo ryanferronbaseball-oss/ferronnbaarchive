@@ -17,7 +17,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Apply verified May 19 2026 Kentucky Vanderbilt BF
+      - name: Apply verified May 20 2026 LSU Auburn BF
         run: |
           python - <<'PY'
           import json,re
@@ -27,16 +27,16 @@ jobs:
           audit=D/'bf_audit_recovery.json'
           rows=json.loads(stats.read_text())
           report=json.loads(audit.read_text())
-          gid='cb-2026-05-19-kentucky-vanderbilt-att0426'
-          source='https://storage.googleapis.com/ukathletics-com/2026/05/19d2297c-0519_sect.pdf'
+          gid='cb-2026-05-20-lsu-auburn-att0432'
+          source='https://static.lsusports.net/assets/docs/bb/26stats/26boxscores.pdf#page=132'
           game=next(g for g in json.loads((D/'games.json').read_text()) if g['id']==gid)
-          assert (game['date'],game['away'],game['home'],game['away_score'],game['home_score'])==('2026-05-19','Kentucky','Vanderbilt',5,8)
+          assert (game['date'],game['away'],game['home'],game['away_score'],game['home_score'])==('2026-05-20','LSU','Auburn',1,3)
           seeds=[
-              ('Kentucky','Jaxon Jelkin',(17,7,5,4,3,4,99),26),
-              ('Kentucky','Jack Sams',(5,3,2,2,1,2,46),10),
-              ('Kentucky','Nile Adcock',(2,2,1,1,1,2,18),5),
-              ('Vanderbilt','Connor Fennell',(14,7,4,4,1,5,90),21),
-              ('Vanderbilt','Alex Kranzler',(13,1,1,1,1,5,55),15),
+              ('LSU','Casan Evans',(14,4,2,1,1,8,87),19),
+              ('LSU','Ethan Plog',(1,0,0,0,0,0,4),1),
+              ('LSU','Zac Cowan',(9,3,1,1,0,4,42),12),
+              ('Auburn','Jake Marciano',(18,4,1,1,1,4,86),22),
+              ('Auburn','Jackson Sanders',(9,0,0,0,2,2,50),11),
           ]
           arms=[r for r in rows if r['game_id']==gid and r.get('pitching') is not None]
           entry=next(r for r in report['games'] if r['game_id']==gid)
@@ -57,15 +57,15 @@ jobs:
                   p['battersFaced']=bf; added+=1
               values.append({'player_id':r['player_id'],'team':team,'BF':bf})
               print(r['player'],bf,'K%',round(100*p['strikeOuts']/bf,1),'BB%',round(100*p['baseOnBalls']/bf,1))
-          assert sum(v['BF'] for v in values if v['team']=='Kentucky')==41==35+5+1
-          assert sum(v['BF'] for v in values if v['team']=='Vanderbilt')==36==33+2+1
+          assert sum(v['BF'] for v in values if v['team']=='LSU')==32==30+1+1
+          assert sum(v['BF'] for v in values if v['team']=='Auburn')==33==28+3+1+1
           if entry['status']=='recovered':
               assert entry['values']==values and added==0
               print('Already verified and saved')
               raise SystemExit(0)
           assert entry['status']=='unresolved'
           entry.pop('reason',None)
-          entry.update(status='recovered',method='Manual official Kentucky SEC Tournament PDF, page 1; date, score, full pitcher names and exact pitching signatures matched; explicit BF reconciled against opposing batting totals',manual_source_url=source,verification={'Kentucky':{'BF':41,'opponent_AB':35,'opponent_BB':5,'opponent_HBP':1},'Vanderbilt':{'BF':36,'opponent_AB':33,'opponent_BB':2,'opponent_HBP':1}},pitchers=5,added=added,recovered_this_run=added,values=values)
+          entry.update(status='recovered',method='Manual official LSU season PDF page 132; date, score and exact pitcher signatures matched; explicit BF reconciled against opposing batting totals',manual_source_url=source,corroborating_source_url='https://auburntigers.com/boxscore/30660',verification={'LSU':{'BF':32,'opponent_AB':30,'opponent_BB':1,'opponent_HBP':1},'Auburn':{'BF':33,'opponent_AB':28,'opponent_BB':3,'opponent_SH':1,'opponent_SF':1}},pitchers=5,added=added,recovered_this_run=added,values=values)
           stats.write_text(json.dumps(rows,ensure_ascii=False,indent=2)+'\n')
           audit.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
           print('Added:',added,'Remaining unresolved:',sum(r['status']=='unresolved' for r in report['games']))
@@ -76,6 +76,6 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add college-baseball/data/player_stats.json college-baseball/data/bf_audit_recovery.json
           if git diff --cached --quiet; then exit 0; fi
-          git commit -m "Recover verified BF for May 19 2026 Kentucky Vanderbilt"
+          git commit -m "Recover verified BF for May 20 2026 LSU Auburn"
           git pull --rebase origin main
           git push origin HEAD:main

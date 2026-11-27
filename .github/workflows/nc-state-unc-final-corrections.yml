@@ -1,0 +1,131 @@
+name: NC State and UNC final portrait and identity corrections
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/nc-state-unc-final-corrections.yml']
+permissions:
+  contents: write
+concurrency:
+  group: college-baseball-portraits
+  cancel-in-progress: false
+jobs:
+  correct:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: pip install requests pillow beautifulsoup4 playwright
+      - run: python -m playwright install --with-deps chromium
+      - name: Merge Serrano and verify two approved official headshots
+        env:
+          PYTHONPATH: scripts
+        run: |
+          python - <<'PY'
+          import json,hashlib
+          from pathlib import Path
+          from urllib.parse import urljoin,urlsplit,parse_qs
+          from bs4 import BeautifulSoup
+          from audit_player_portraits import get,probe
+          D=Path('college-baseball/data')
+          def load(n):return json.loads((D/n).read_text())
+          def save(n,d):(D/n).write_text(json.dumps(d,indent=2,ensure_ascii=False)+'\n')
+          source=[D/'player_stats.json',D/'games.json']
+          before=[hashlib.sha256(p.read_bytes()).hexdigest() for p in source]
+          rows=load('player_stats.json');cross=load('player_identity_crosswalk.json');reg=load('player_portraits.json')
+          a='cb-nc-state-eli-serrano-iii';b='cb-nc-state-serrano-iii';ids={a,b}
+          matches=[r for r in rows if r['player_id'] in ids]
+          assert {r['player_id'] for r in matches}==ids and {r['team'] for r in matches}=={'NC State'}
+          assert len({r['game_id'] for r in matches})==len(matches),'Same-game collision: review before merge'
+          assert a in reg and b not in reg
+          existing=[m for m in cross['merges'] if ids.intersection(m['source_player_ids'])]
+          if not existing:
+              cross['merges'].append({'name':'Eli Serrano III','display_name':'Eli Serrano III','canonical_id':a,'source_player_ids':sorted(ids),'schools':['NC State'],'pairs':[{'team':'NC State','source_player_id':i} for i in sorted(ids)],'source_rows':len(matches),'note':'Owner-approved abbreviated surname and suffix variant; distinct attended games. Christian Serrano is separate.','evidence_urls':['https://gopack.com/sports/baseball/roster/2024']})
+              for field in ('requested_person_merges','activated_person_merges'):
+                  if isinstance(cross.get(field),int):cross[field]+=1
+          else:assert len(existing)==1 and set(existing[0]['source_player_ids'])==ids and existing[0]['canonical_id']==a
+          report={'serrano':{'canonical_id':a,'source_ids':sorted(ids),'games':sorted({r['game_id'] for r in matches}),'source_rows':len(matches),'portrait':reg[a]},'added':[]}
+          for audit,pid,school,season,year,hostname in [('nc_state_portrait_audit.json','cb-nc-state-p-j-labriola','NC State',2024,2023,'gopack.com'),('north_carolina_portrait_audit.json','cb-liberty-kane-kepley','North Carolina',2025,2024,'goheels.com')]:
+              data=load(audit);m=next(x for x in data['missing'] if x['id']==pid)
+              attempt=m['diagnostics']['attempts'][0];source_url=attempt['source']
+              im=attempt['images'][0];u=im['src'];q=parse_qs(urlsplit(u).query)
+              assert urlsplit(u).hostname=='images.sidearmdev.com' and q.get('width')==['180'] and q.get('height')==['270'] and 'headshot' in im['alt'].lower()
+              r=get(source_url);r.raise_for_status();assert urlsplit(r.url).hostname==hostname
+              soup=BeautifulSoup(r.text,'html.parser')
+              assert any(parse_qs(urlsplit(urljoin(r.url,str(tag.get(k) or ''))).query).get('url')==q['url'] and 'headshot' in str(tag.get('alt','')).lower() for tag in soup.find_all('img') for k in ('src','data-src','data-lazy-src','url')),('Official portrait not found',pid)
+              status,digest=probe(u);assert status=='image' and digest,(pid,status)
+              assert pid not in reg or reg[pid]['url']==u,('Existing portrait changed; review',pid)
+              reg[pid]={'url':u,'source':source_url,'provider':'college','school':school,'season':season,'photo_year':year}
+              report['added'].append({'id':pid,'name':m['name'],**reg[pid],'source_label':im['alt']})
+          assert before==[hashlib.sha256(p.read_bytes()).hexdigest() for p in source]
+          save('player_identity_crosswalk.json',cross);save('player_portraits.json',reg);save('nc_state_unc_final_corrections.json',report)
+          print(json.dumps(report,indent=2))
+          PY
+      - name: Check corrected profiles and coverage
+        run: |
+          node scripts/export_baseball_portrait_preferences.cjs 'NC State' > /tmp/ncsu.json
+          node scripts/export_baseball_portrait_preferences.cjs 'North Carolina' > /tmp/unc.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          D=Path('college-baseball/data')
+          reg=json.loads((D/'player_portraits.json').read_text())
+          report=json.loads((D/'nc_state_unc_final_corrections.json').read_text())
+          for school,path,expected in [('NC State','/tmp/ncsu.json',58),('North Carolina','/tmp/unc.json',36)]:
+              p=json.load(open(path));missing=[x['name'] for x in p if x['id'] not in reg]
+              print(school,len(p),len(p)-len(missing),'missing',missing)
+              assert len(p)==expected and not missing,(school,len(p),missing)
+              if school=='NC State':
+                  matches=[x for x in p if x['name']=='Eli Serrano III']
+                  assert len(matches)==1 and matches[0]['preference']['schools'][0]['games']==6,matches
+                  assert not any(x['id']=='cb-nc-state-serrano-iii' for x in p)
+                  assert any(x['name']=='Christian Serrano' for x in p)
+              report[school]={'players':len(p),'portraits':len(p)-len(missing)}
+          (D/'nc_state_unc_final_corrections.json').write_text(json.dumps(report,indent=2)+'\n')
+          PY
+      - name: Verify new headshots and merged profile on desktop and mobile
+        run: |
+          python - <<'PY'
+          import json,threading,http.server,functools
+          from pathlib import Path
+          from playwright.sync_api import sync_playwright
+          from urllib.parse import quote
+          root=Path.cwd();D=root/'college-baseball/data'
+          reg=json.loads((D/'player_portraits.json').read_text())
+          report=json.loads((D/'nc_state_unc_final_corrections.json').read_text())
+          server=http.server.ThreadingHTTPServer(('127.0.0.1',0),functools.partial(http.server.SimpleHTTPRequestHandler,directory=str(root)))
+          threading.Thread(target=server.serve_forever,daemon=True).start()
+          results=[]
+          with sync_playwright() as p:
+              browser=p.chromium.launch()
+              for mode,w,h in [('desktop',1360,900),('mobile',390,844)]:
+                  page=browser.new_page(viewport={'width':w,'height':h})
+                  for pid in [report['serrano']['canonical_id']]+[x['id'] for x in report['added']]:
+                      page.goto(f'http://127.0.0.1:{server.server_port}/college-baseball/player.html?id='+quote(pid),wait_until='domcontentloaded',timeout=30000)
+                      frame=page.locator('.cb-player-portrait')
+                      frame.wait_for(state='visible',timeout=15000)
+                      page.wait_for_function("() => {const i=document.querySelector('.cb-player-portrait img');return i&&i.complete&&i.naturalWidth>0&&i.parentElement.classList.contains('has-portrait')}",timeout=15000)
+                      actual=frame.locator('img').evaluate('i=>i.currentSrc')
+                      assert actual==reg[pid]['url'],(pid,actual)
+                      results.append({'id':pid,'viewport':mode,'status':'pass'})
+                      print(pid,mode,'pass',flush=True)
+                  page.close()
+              browser.close()
+          server.shutdown()
+          report['render_checks']=results
+          (D/'nc_state_unc_final_corrections.json').write_text(json.dumps(report,indent=2)+'\n')
+          PY
+      - name: Publish verified corrections
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add college-baseball/data/player_identity_crosswalk.json college-baseball/data/player_portraits.json college-baseball/data/nc_state_unc_final_corrections.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Merge Eli Serrano III and add Labriola and Kepley official headshots"
+          git pull --rebase origin main
+          git push origin HEAD:main

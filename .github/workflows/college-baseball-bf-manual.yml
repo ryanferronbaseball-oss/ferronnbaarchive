@@ -17,7 +17,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Apply verified May 22 2026 Auburn Texas A&M BF
+      - name: Apply verified May 23 2026 Arkansas Auburn BF
         run: |
           python - <<'PY'
           import json,re
@@ -27,18 +27,17 @@ jobs:
           audit=D/'bf_audit_recovery.json'
           rows=json.loads(stats.read_text())
           report=json.loads(audit.read_text())
-          gid='cb-2026-05-22-auburn-texas-a-m-att0436'
-          source='https://storage.googleapis.com/auburn-prod/2026/05/23/B1yXyMnFNLlPuQs4IZQC4WYlQNbHmcsWGsihLulK.pdf'
+          gid='cb-2026-05-23-arkansas-auburn-att0438'
+          source='https://arkansasrazorbacks.com/stats/baseball/2026/ark58.htm'
           game=next(g for g in json.loads((D/'games.json').read_text()) if g['id']==gid)
-          assert (game['date'],game['away'],game['home'],game['away_score'],game['home_score'])==('2026-05-22','Auburn','Texas A&M',7,0)
+          assert (game['date'],game['away'],game['home'],game['away_score'],game['home_score'])==('2026-05-23','Arkansas','Auburn',2,1)
           seeds=[
-              ('Auburn','Andreas Alvarez',(15,1,0,0,4,9,98),19),
-              ('Auburn','LJ Cormier',(12,1,0,0,1,4,62),15),
-              ('Texas A&M','Ethan Darden',(3,5,4,4,1,2,33),9),
-              ('Texas A&M','Gavin Lyons',(12,2,1,1,0,5,54),15),
-              ('Texas A&M','Shane Sdao',(6,4,2,2,1,3,52),11),
-              ('Texas A&M','Weston Moss',(3,0,0,0,0,1,19),3),
-              ('Texas A&M','Clayton Freshcorn',(3,0,0,0,0,0,14),3),
+              ('Arkansas','Cooper Dossett',(6,1,1,1,0,2,27),7),
+              ('Arkansas','James DeCremer',(3,1,0,0,1,1,14),5),
+              ('Arkansas','Colin Fisher',(5,3,0,0,0,2,28),8),
+              ('Arkansas','Ethan McElvain',(13,2,0,0,0,6,48),14),
+              ('Auburn','Alex Petrovic',(12,2,0,0,2,7,71),16),
+              ('Auburn','Ryan Hetzler',(15,3,2,2,0,8,70),18),
           ]
           arms=[r for r in rows if r['game_id']==gid and r.get('pitching') is not None]
           entry=next(r for r in report['games'] if r['game_id']==gid)
@@ -59,15 +58,15 @@ jobs:
                   p['battersFaced']=bf; added+=1
               values.append({'player_id':r['player_id'],'team':team,'BF':bf})
               print(r['player'],bf,'K%',round(100*p['strikeOuts']/bf,1),'BB%',round(100*p['baseOnBalls']/bf,1))
-          assert sum(v['BF'] for v in values if v['team']=='Auburn')==34==28+5+1
-          assert sum(v['BF'] for v in values if v['team']=='Texas A&M')==41==37+2+1+1
+          assert sum(v['BF'] for v in values if v['team']=='Arkansas')==34==32+1+1
+          assert sum(v['BF'] for v in values if v['team']=='Auburn')==34==32+2
           if entry['status']=='recovered':
               assert entry['values']==values and added==0
               print('Already verified and saved')
               raise SystemExit(0)
           assert entry['status']=='unresolved'
           entry.pop('reason',None)
-          entry.update(status='recovered',method='Manual official Auburn PDF page 1; exact pitcher signatures and names confirmed with official Texas A&M roster; explicit BF reconciled against opposing batting totals',manual_source_url=source,corroborating_source_url='https://auburntigers.com/boxscore/31134',roster_source_url='https://12thman.com/sports/baseball/roster/season/2026',verification={'Auburn':{'BF':34,'opponent_AB':28,'opponent_BB':5,'opponent_HBP':1},'Texas A&M':{'BF':41,'opponent_AB':37,'opponent_BB':2,'opponent_HBP':1,'opponent_SH':1}},pitchers=7,added=added,recovered_this_run=added,values=values)
+          entry.update(status='recovered',method='Manual official Arkansas HTML; full pitcher names and exact pitching signatures matched; explicit BF reconciled against opposing batting totals',manual_source_url=source,corroborating_source_url='https://auburntigers.com/boxscore/31138',verification={'Arkansas':{'BF':34,'opponent_AB':32,'opponent_BB':1,'opponent_SH':1},'Auburn':{'BF':34,'opponent_AB':32,'opponent_BB':2}},pitchers=6,added=added,recovered_this_run=added,values=values)
           stats.write_text(json.dumps(rows,ensure_ascii=False,indent=2)+'\n')
           audit.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
           print('Added:',added,'Remaining unresolved:',sum(r['status']=='unresolved' for r in report['games']))
@@ -78,6 +77,6 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add college-baseball/data/player_stats.json college-baseball/data/bf_audit_recovery.json
           if git diff --cached --quiet; then exit 0; fi
-          git commit -m "Recover verified BF for May 22 2026 Auburn Texas A&M"
+          git commit -m "Recover verified BF for May 23 2026 Arkansas Auburn"
           git pull --rebase origin main
           git push origin HEAD:main

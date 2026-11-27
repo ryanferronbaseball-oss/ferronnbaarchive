@@ -4,8 +4,8 @@
   "source": "Original archive owner confirmed each multi-school person",
   "original_attendance_ids_preserved": 444,
   "original_player_game_rows_preserved": 13183,
-  "requested_person_merges": 210,
-  "activated_person_merges": 210,
+  "requested_person_merges": 211,
+  "activated_person_merges": 211,
   "pending_person_merges": 0,
   "merge_policy": "Only listed pair of exact normalized person names and school-specific original source player IDs; all other IDs remain separate",
   "display_aliases": [
@@ -6205,6 +6205,43 @@
       ],
       "source_rows": 2,
       "note": "Owner confirmed Duplantier J is Jayden Duplantier."
+    },
+    {
+      "name": "Dariyan Pendergrass",
+      "display_name": "Dariyan Pendergrass",
+      "canonical_id": "cb-texas-dariyan-pendergrass",
+      "source_player_ids": [
+        "cb-college-of-charleston-d-pendergra",
+        "cb-college-of-charleston-dariyan-pendergrass",
+        "cb-texas-dariyan-pendergrass"
+      ],
+      "schools": [
+        "College of Charleston",
+        "Texas"
+      ],
+      "pairs": [
+        {
+          "team": "College of Charleston",
+          "source_player_id": "cb-college-of-charleston-d-pendergra"
+        },
+        {
+          "team": "College of Charleston",
+          "source_player_id": "cb-college-of-charleston-dariyan-pendergrass"
+        },
+        {
+          "team": "College of Charleston",
+          "source_player_id": "cb-texas-dariyan-pendergrass"
+        },
+        {
+          "team": "Texas",
+          "source_player_id": "cb-texas-dariyan-pendergrass"
+        }
+      ],
+      "source_rows": 2,
+      "note": "Owner confirmed Texas and Charleston identity. Official 2024 Charleston box score lists D. Pendergra and spells out Dariyan Pendergrass in baserunning.",
+      "evidence_urls": [
+        "https://cofcsports.com/sports/baseball/stats/2024/marshall/boxscore/11657"
+      ]
     }
   ]
 }

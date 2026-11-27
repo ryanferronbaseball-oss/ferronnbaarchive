@@ -88,10 +88,10 @@ document.addEventListener("DOMContentLoaded",()=>{
  const teams={USD:"San Diego",WFU:"Wake Forest",NCS:"NC State",WNMU:"Western New Mexico",BUTLER:"Butler",DAV:"Davidson",UCD:"UC Davis"};
  const asNum=v=>v===null||v===undefined||String(v).trim()===""||String(v).trim()==="—"||String(v).trim()==="-"?null:Number.isFinite(Number(v))?Number(v):null;
  const showNumber=n=>n==null?"—":n.toLocaleString("en-US",{maximumFractionDigits:2});
- let players=[],group="nfl",nflPortraits={},collegePortraits={};
- const validPortrait=u=>typeof u==="string"&&/^https:\/\/a\.espncdn\.com\/i\/headshots\/(?:nfl|college-football)\/players\/full\/\d+\.png$/.test(u);
+ let players=[],group="nfl",collegePortraits={};
+ const validPortrait=u=>typeof u==="string"&&/^https:\/\/a\.espncdn\.com\/i\/headshots\/college-football\/players\/full\/\d+\.png$/.test(u);
  function portraitHTML(p,initials){
-   const urls=[nflPortraits[p.athlete_id]?.url,collegePortraits[p.athlete_id]?.url].filter(validPortrait);
+   const urls=[collegePortraits[p.athlete_id]?.url].filter(validPortrait);
    const src=urls[0];
    return '<div class="portrait"><span class="initials" aria-hidden="true">'+escapeHtml(initials)+'</span>'+(src?'<img class="is-loading" loading="eager" decoding="async" src="'+escapeHtml(src)+'" alt="'+escapeHtml(p.name)+' headshot" data-fallback="'+escapeHtml(urls[1]||'')+'">':'')+'</div>';
  }
@@ -207,10 +207,9 @@ document.addEventListener("DOMContentLoaded",()=>{
   fetch("./data/nfl_crosswalk.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("NFL verified directory");return r.json()}),
   fetch("./data/player_stats.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("college box scores");return r.json()}),
   fetch("./data/games.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("attended college games");return r.json()}),
-  fetch("./data/nfl_alumni_portraits.json",{cache:"no-store"}).then(r=>r.ok?r.json():{}).catch(()=>({})),
   fetch("./data/player_portraits.json",{cache:"no-store"}).then(r=>r.ok?r.json():{}).catch(()=>({}))
- ]).then(([cross,logs,games,nflPhotos,collegePhotos])=>{
-   nflPortraits=nflPhotos;collegePortraits=collegePhotos;
+ ]).then(([cross,logs,games,collegePhotos])=>{
+   collegePortraits=collegePhotos;
    players=collegeAppearances(logs,games,cross);
    const nfl=players.filter(x=>x.category==="nfl"),drafted=players.filter(x=>x.category==="drafted_no_debut");
    el("nflCount").textContent=nfl.length;

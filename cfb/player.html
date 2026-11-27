@@ -58,12 +58,11 @@ document.addEventListener("DOMContentLoaded",async()=>{
 
  const esc=A.esc;
  try{
-  const [data,careerHonors,nflMatches,portraitRegistry,nflPortraitRegistry]=await Promise.all([
+  const [data,careerHonors,nflMatches,portraitRegistry]=await Promise.all([
    A.load(),
    fetch("./data/career_honors.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("College football honors HTTP "+r.status);return r.json()}).catch(e=>{console.warn(e);return {players:{}}}),
    fetch("./data/nfl_crosswalk.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("CFB NFL crosswalk HTTP "+r.status);return r.json()}).catch(e=>{console.warn(e);return []}),
-   fetch("./data/player_portraits.json",{cache:"no-store"}).then(r=>r.ok?r.json():{}).catch(()=>({})),
-   fetch("./data/nfl_alumni_portraits.json",{cache:"no-store"}).then(r=>r.ok?r.json():{}).catch(()=>({}))
+   fetch("./data/player_portraits.json",{cache:"no-store"}).then(r=>r.ok?r.json():{}).catch(()=>({}))
   ]);
   const {games,rows,ppr}=data;
   const personal=rows.filter(x=>String(x.athlete_id)===id);
@@ -73,7 +72,7 @@ document.addEventListener("DOMContentLoaded",async()=>{
   el("playerName").textContent=name;document.title=name+" | College Football Courtside Archive";
   const portrait=el("playerPortrait"),fallback=el("portraitFallback");
   fallback.textContent=name.split(/\s+/).map(x=>x[0]).slice(0,2).join("").toUpperCase();
-  const registered=portraitRegistry[id]?.url||nflPortraitRegistry[id]?.url;
+  const registered=portraitRegistry[id]?.url;
   const src=typeof registered==="string"&&/^https:\/\/a\.espncdn\.com\/i\/headshots\/(?:college-football|cfb|nfl)\/players\/full\/\d+\.png$/.test(registered)?registered:/^\d+$/.test(id)?"https://a.espncdn.com/i/headshots/college-football/players/full/"+encodeURIComponent(id)+".png":null;
   portrait.onerror=()=>{portrait.style.display="none";fallback.style.display="grid"};
   if(src){portrait.onload=()=>{if(portrait.naturalWidth<=1)return;portrait.style.display="block";fallback.style.display="none"};portrait.alt="Portrait of "+name;portrait.src=src}

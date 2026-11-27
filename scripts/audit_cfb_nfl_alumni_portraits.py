@@ -1,9 +1,9 @@
-"""Verify NFL alumni portrait identities and use college images only as fallback."""
+"""Recover missing college portraits for NFL alumni; preserve existing college portraits."""
 from audit_player_portraits import load,save,api,espn_image,probe,probe_many
 from collections import defaultdict
 import re,unicodedata,csv,io
 from audit_player_portraits import get
-REG='cfb/data/nfl_alumni_portraits.json'
+REG='cfb/data/player_portraits.json'
 cross=load('cfb/data/nfl_crosswalk.json',[])
 rows=load('cfb/data/player_stats.json',[])
 college=load('cfb/data/player_portraits.json',{})
@@ -42,29 +42,32 @@ for row in load('nfl/data/player_stats.json',[]):
 candidates={};notes=[]
 for r in cross:
     cid=r['athlete_id'];name=people.get(cid,'')
-    if not name:continue
+    if not name or cid in college:continue
     valid=[]
     for aid in ids[cid]:
         if not aid.isdigit():continue
-        source='https://site.web.api.espn.com/apis/common/v3/sports/football/nfl/athletes/'+aid
+        source='https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/'+aid
         try:
             d=api(source);a=d.get('athlete',d)
             if str(a.get('id',''))==aid and norm(name) in {norm(a.get(k,'')) for k in ('displayName','fullName','shortName')}:
                 valid.append((aid,source))
         except Exception as e:notes.append({'id':cid,'espn_id':aid,'error':str(e)})
     if len(set(a for a,_ in valid))==1:
-        aid,source=valid[0];candidates[cid]=(aid,source,espn_image('nfl',aid))
+        aid,source=valid[0];candidates[cid]=(aid,source,espn_image('college-football',aid))
     elif len(valid)>1:notes.append({'id':cid,'reason':'Multiple ESPN identities'})
-sentinels={probe(espn_image('nfl',i))[1] for i in ('0','999999999')}
-results=probe_many(list({v[2] for v in candidates.values()}))
+sentinels={probe(espn_image('college-football',i))[1] for i in ('0','999999999')}
+results=probe_many(list({v[2] for v in candidates.values()}|{r['url'] for r in college.values() if r.get('url')}))
 owners=defaultdict(set)
+for cid,r in college.items():
+    status,h=results.get(r.get('url'),('missing',None))
+    if status=='image':owners[h].add(cid)
 for cid,(_,_,u) in candidates.items():
     status,h=results[u]
     if status=='image':owners[h].add(cid)
 for cid,(aid,source,u) in candidates.items():
     status,h=results[u]
-    if status=='image' and h not in sentinels and owners[h]=={cid}:reg[cid]={'url':u,'espn_id':aid,'name':people[cid],'source':source,'provider':'espn-nfl'}
+    if status=='image' and h not in sentinels and owners[h]=={cid}:reg[cid]={'url':u,'espn_id':aid,'name':people[cid],'source':source,'photo_source':source,'school':next(r['team'] for r in rows if r['athlete_id']==cid),'provider':'espn'}
 missing=[{'id':r['athlete_id'],'name':people.get(r['athlete_id']),'college_fallback':r['athlete_id'] in college} for r in cross if r['athlete_id'] not in reg]
 save(REG,reg)
 save('cfb/data/nfl_alumni_portrait_audit.json',{'targeted':len(cross),'registered':len(set(reg)&{r['athlete_id'] for r in cross}),'missing':missing,'notes':notes})
-print('NFL portraits:',len(reg),'missing:',missing)
+print('College portraits for NFL alumni:',len(set(reg)&{r['athlete_id'] for r in cross}),'missing:',missing)

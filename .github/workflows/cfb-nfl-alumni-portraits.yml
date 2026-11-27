@@ -1,4 +1,4 @@
-name: CFB NFL alumni portrait audit
+name: CFB alumni college headshot audit
 on:
   workflow_dispatch:
   push:
@@ -27,11 +27,10 @@ jobs:
           python - <<'PY'
           import json,pathlib,http.server,threading
           from playwright.sync_api import sync_playwright
-          data=pathlib.Path('cfb/data');reg=json.loads((data/'nfl_alumni_portraits.json').read_text())
+          data=pathlib.Path('cfb/data');reg=json.loads((data/'player_portraits.json').read_text())
           report=data/'nfl_alumni_portrait_audit.json';audit=json.loads(report.read_text())
           cross=json.loads((data/'nfl_crosswalk.json').read_text())
-          college=json.loads((data/'player_portraits.json').read_text())
-          server=http.server.ThreadingHTTPServer(('127.0.0.1',0),http.server.SimpleHTTPRequestHandler)
+                    server=http.server.ThreadingHTTPServer(('127.0.0.1',0),http.server.SimpleHTTPRequestHandler)
           threading.Thread(target=server.serve_forever,daemon=True).start()
           base=f'http://127.0.0.1:{server.server_port}/cfb'
           failures=[];checked=[]
@@ -48,12 +47,13 @@ jobs:
                           try:
                               card=page.locator(f'[data-player-id="{cid}"]')
                               card.wait_for(state='visible',timeout=10000)
-                              if cid in reg or cid in college:
+                              if cid in reg:
                                   img=card.locator('.portrait img')
                                   card.scroll_into_view_if_needed(timeout=5000)
                                   img.wait_for(state='attached',timeout=5000)
                                   page.wait_for_function('(id)=>{const img=document.querySelector(\'[data-player-id="\'+id+\'"] .portrait img\');return img&&img.complete&&img.naturalWidth>1&&!img.hidden&&!img.classList.contains("is-loading")&&getComputedStyle(img).opacity==="1"}',arg=cid,timeout=12000)
                                   assert img.is_visible()
+                                  assert "/headshots/college-football/" in img.get_attribute("src")
                               checked.append({'id':cid,'width':width})
                           except Exception as e:failures.append({'id':cid,'width':width,'error':str(e)[:300]})
                   page.close()
@@ -67,8 +67,8 @@ jobs:
         run: |
           git config user.name "Courtside Archive"
           git config user.email "actions@users.noreply.github.com"
-          git add cfb/data/nfl_alumni_portraits.json cfb/data/nfl_alumni_portrait_audit.json
+          git add cfb/data/player_portraits.json cfb/data/nfl_alumni_portrait_audit.json
           if git diff --cached --quiet; then exit 0; fi
-          git commit -m "Register verified NFL alumni portraits"
+          git commit -m "Register verified college headshots for NFL alumni"
           git pull --rebase origin main
           git push origin main

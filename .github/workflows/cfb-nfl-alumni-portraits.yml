@@ -50,9 +50,10 @@ jobs:
                               card.wait_for(state='visible',timeout=10000)
                               if cid in reg or cid in college:
                                   img=card.locator('.portrait img')
-                                  img.scroll_into_view_if_needed()
-                                  img.wait_for(state='visible',timeout=15000)
-                                  assert img.evaluate('(el)=>el.naturalWidth>1')
+                                  card.scroll_into_view_if_needed(timeout=5000)
+                                  img.wait_for(state='attached',timeout=5000)
+                                  page.wait_for_function('(id)=>{const img=document.querySelector(\'[data-player-id="\'+id+\'"] .portrait img\');return img&&img.complete&&img.naturalWidth>1&&!img.hidden&&!img.classList.contains("is-loading")&&getComputedStyle(img).opacity==="1"}',arg=cid,timeout=12000)
+                                  assert img.is_visible()
                               checked.append({'id':cid,'width':width})
                           except Exception as e:failures.append({'id':cid,'width':width,'error':str(e)[:300]})
                   page.close()

@@ -17,7 +17,7 @@ main{max-width:1150px;margin:auto;padding:24px 20px 86px}.ca-hub-link{white-spac
 .player{border:1px solid #DEDCD2;background:#FFFEFB;border-radius:16px;padding:20px;min-width:0;overflow:hidden;display:flex;flex-direction:column;gap:0}
 .player-head{display:block;min-width:0}
 .identity{display:grid;grid-template-columns:120px minmax(0,1fr);gap:13px;align-items:center;min-width:0}
-.identity>div{min-width:0}.portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center bottom}.portrait img[hidden]{display:none}.portrait .initials{display:grid;place-items:center;width:100%;height:100%}@media(max-width:430px){.identity{grid-template-columns:88px minmax(0,1fr)}.portrait{width:88px!important;height:64px!important}}
+.identity>div{min-width:0}.portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center bottom}.portrait img[hidden]{display:none}.portrait img.is-loading{opacity:0}.portrait img:not(.is-loading){opacity:1}.portrait .initials{display:grid;place-items:center;width:100%;height:100%}@media(max-width:430px){.identity{grid-template-columns:88px minmax(0,1fr)}.portrait{width:88px!important;height:64px!important}}
 .portrait{width:120px;height:88px;position:relative;overflow:hidden;object-fit:contain;border-radius:12px;background:#E5EAE2;border:1px solid #C5D3C2}
 .player-name{display:block;font-size:21px;line-height:1.2;overflow-wrap:anywhere;letter-spacing:-.03em;font-weight:800;color:#284D3C!important;text-decoration:none!important}
 .player-name:hover{text-decoration:underline!important}
@@ -93,11 +93,11 @@ document.addEventListener("DOMContentLoaded",()=>{
  function portraitHTML(p,initials){
    const urls=[nflPortraits[p.athlete_id]?.url,collegePortraits[p.athlete_id]?.url].filter(validPortrait);
    const src=urls[0];
-   return '<div class="portrait"><span class="initials" aria-hidden="true">'+escapeHtml(initials)+'</span>'+(src?'<img hidden loading="lazy" decoding="async" src="'+escapeHtml(src)+'" alt="'+escapeHtml(p.name)+' headshot" data-fallback="'+escapeHtml(urls[1]||'')+'">':'')+'</div>';
+   return '<div class="portrait"><span class="initials" aria-hidden="true">'+escapeHtml(initials)+'</span>'+(src?'<img class="is-loading" loading="eager" decoding="async" src="'+escapeHtml(src)+'" alt="'+escapeHtml(p.name)+' headshot" data-fallback="'+escapeHtml(urls[1]||'')+'">':'')+'</div>';
  }
  function bindPortraits(){
    el("cards").querySelectorAll(".portrait img").forEach(img=>{
-     const reveal=()=>{if(img.naturalWidth>1){img.hidden=false;img.previousElementSibling.hidden=true;img.previousElementSibling.style.display="none"}};
+     const reveal=()=>{if(img.naturalWidth>1){img.hidden=false;img.classList.remove("is-loading");img.previousElementSibling.hidden=true;img.previousElementSibling.style.display="none"}};
      const fail=()=>{const fallback=img.dataset.fallback;img.dataset.fallback="";if(fallback&&fallback!==img.src){img.src=fallback}else{img.hidden=true;img.previousElementSibling.hidden=false;img.previousElementSibling.style.display="grid"}};
      img.addEventListener("load",reveal);img.addEventListener("error",fail);
      if(img.complete){if(img.naturalWidth>1)reveal();else fail()}

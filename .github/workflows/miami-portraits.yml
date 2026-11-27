@@ -39,10 +39,14 @@ jobs:
           SCHOOL='Miami'
           HOST='miamihurricanes.com'
           REG='college-baseball/data/player_portraits.json'
-          REPORT='college-baseball/data/miami_portrait_audit.json'
+          REPORT='college-baseball/data/miami_portrait_recovery.json'
           players=json.loads(subprocess.check_output(['node','scripts/export_baseball_portrait_preferences.cjs',SCHOOL],text=True))
           assert players,'No witnessed Miami players found'
           registry=load(REG,{})
+          prior=load('college-baseball/data/miami_portrait_audit.json',{})
+          wanted={x['id'] for x in prior.get('missing',[])}|set(prior.get('render_failures',[]))
+          players=[p for p in players if p['id'] in wanted]
+          assert players,'No outstanding Miami profiles'
           report={'school':SCHOOL,'targeted':len(players),'previously_registered':sum(p['id'] in registry for p in players),'targets':[{k:p[k] for k in ('id','name','schools','preference')} for p in players],'added':[],'upgraded':[],'preserved':[],'missing':[],'notes':[],'rosters':[],'name_discrepancies':[]}
           def academic(y):return f'{y-1}-{str(y)[-2:]}'
           def verified_url(u):
@@ -70,20 +74,18 @@ jobs:
                   if norm(label) in names:return True
               return False
           def photos(soup,u,names):
-              for im in soup.find_all('img'):
+              # The official bio photo is a lazy image with a real signed URL in its url attribute.
+              # The src attribute is initially a placeholder GIF. Do not use related player cards or hero photos.
+              for im in soup.select('img.roster-bio-photo__image'):
                   alt=norm(im.get('alt',''))
-                  context=' '.join(' '.join(x.get('class',[])) for x in [im,*list(im.parents)[:2]] if getattr(x,'attrs',None) is not None)
-                  explicit=any(alt in (n,n+'headshot','headshot'+n,'headshotof'+n,n+'portrait','portraitof'+n) for n in names)
-                  designated=bool(re.search(r'roster-bio-main-info__image|headshot|portrait|player-headshot',context,re.I))
-                  if not explicit and not designated:continue
-                  if re.search(r'hero|action|gallery|featured|related|article|news',context,re.I):continue
-                  for k in ('data-src','data-lazy-src','data-original','data-current-src','src'):
+                  if alt not in names:continue
+                  for k in ('url','data-current-src','data-src','data-lazy-src','data-original','src'):
                       raw=im.get(k)
                       if not isinstance(raw,str):continue
                       v=urljoin(u,raw)
                       if not verified_url(v) or re.search(r'placeholder|silhouette|default|logo|banner|sponsor|social|\.gif(?:\?|$)|\.svg(?:\?|$)',v,re.I):continue
-                      if explicit and ('headshot' in alt or designated) or designated and (not alt or explicit):
-                          yield v
+                      if host(v)==HOST and '/imgproxy/' not in v:continue
+                      yield v
           years=sorted({y for p in players for y in range(min(p['schools'][SCHOOL]),min(2027,max(p['schools'][SCHOOL])+4)+1) if p['schools'].get(SCHOOL)})
           pages={}
           found={}
@@ -130,7 +132,7 @@ jobs:
                           options=list(dict.fromkeys(photos(soup,u,names)))
                           if not options:
                               try:
-                                  soup=hydrated(page,u,'img.roster-bio-main-info__image, img[alt*="Headshot" i], img[alt*="portrait" i]')
+                                  soup=hydrated(page,u,'img.roster-bio-photo__image')
                                   options=list(dict.fromkeys(photos(soup,u,names)))
                               except Exception as e:diagnostics[cid]['attempts'].append({'source':u,'hydration_error':str(e)})
                           for v in options:
@@ -171,7 +173,7 @@ jobs:
           from playwright.sync_api import sync_playwright
           from PIL import Image,ImageDraw
           root=pathlib.Path.cwd()
-          report=json.loads((root/'college-baseball/data/miami_portrait_audit.json').read_text())
+          report=json.loads((root/'college-baseball/data/miami_portrait_recovery.json').read_text())
           out=root/'miami-visual-review';out.mkdir(exist_ok=True)
           server=http.server.ThreadingHTTPServer(('127.0.0.1',0),functools.partial(http.server.SimpleHTTPRequestHandler,directory=str(root)))
           threading.Thread(target=server.serve_forever,daemon=True).start()
@@ -229,7 +231,7 @@ jobs:
           report['render_failures']=sorted(failed)
           report['registered_portraits']=sum(t['id'] in registry for t in report['targets'])
           regpath.write_text(json.dumps(registry,ensure_ascii=False,indent=2,sort_keys=True)+'\n')
-          (root/'college-baseball/data/miami_portrait_audit.json').write_text(json.dumps(report,ensure_ascii=False,indent=2,sort_keys=True)+'\n')
+          (root/'college-baseball/data/miami_portrait_recovery.json').write_text(json.dumps(report,ensure_ascii=False,indent=2,sort_keys=True)+'\n')
           PY
       - uses: actions/upload-artifact@v4
         if: always()
@@ -237,12 +239,12 @@ jobs:
           name: miami-portrait-review
           path: |
             miami-visual-review/
-            college-baseball/data/miami_portrait_audit.json
+            college-baseball/data/miami_portrait_recovery.json
       - name: Publish verified Miami portrait changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add college-baseball/data/player_portraits.json college-baseball/data/miami_portrait_audit.json
+          git add college-baseball/data/player_portraits.json college-baseball/data/miami_portrait_recovery.json
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "Add verified Miami witnessed-player portraits"
           for attempt in 1 2 3; do

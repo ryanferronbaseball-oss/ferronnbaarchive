@@ -629,5 +629,7 @@ body[data-page="player"] #profile-overview .cb-profile-stat-row .mlb-profile-tot
 .cb-player-portrait img.cb-lsu-headshot{object-fit:cover;object-position:center top}
 /* Arkansas's official player bios use square headshots; fill the portrait frame as for LSU. */
 .cb-player-portrait img[src^="https://arkansasrazorbacks.com/"],.cb-player-portrait img[src^="https://www.arkansasrazorbacks.com/"]{object-fit:cover;object-position:center top}
+/* Fill the player profile frame for official Texas A&M portraits, including transfers. */
+.cb-player-portrait img[src^="https://12thman.com/"],.cb-player-portrait img[src^="https://www.12thman.com/"]{object-fit:cover;object-position:center top}
 
 .cb-player-portrait.has-portrait .cb-portrait-fallback{visibility:hidden}

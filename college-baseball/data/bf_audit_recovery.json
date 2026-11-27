@@ -2166,8 +2166,69 @@
       "home": "Indiana",
       "source_url": "https://iuhoosiers.com/sports/baseball/stats/2024/duke/boxscore/26942",
       "original_reason": "date not confirmed",
-      "status": "unresolved",
-      "reason": "date not confirmed; alternate official source required"
+      "status": "recovered",
+      "method": "Manual official Duke and Indiana box score BF; archived February 16 date confirmed by schedules and recap despite both Sidearm pages displaying February 15; exact pitching line and opposing PA reconciliation",
+      "manual_source_url": "https://goduke.com/sports/baseball/stats/2024/indiana/boxscore/21657",
+      "date_verification_source_urls": [
+        "https://goduke.com/sports/baseball/schedule/2024",
+        "https://goduke.com/news/2024/2/16/baseball-santucci-tosses-gem-no-12-duke-rolls-to-opening-day-victory-over-indiana",
+        "https://iuhoosiers.com/sports/baseball/schedule/text/2024"
+      ],
+      "verification": {
+        "Duke": {
+          "BF": 39,
+          "opponent_AB": 35,
+          "opponent_BB": 3,
+          "opponent_HBP": 1
+        },
+        "Indiana": {
+          "BF": 41,
+          "opponent_AB": 36,
+          "opponent_BB": 3,
+          "opponent_HBP": 1,
+          "opponent_SF": 1
+        }
+      },
+      "pitchers": 7,
+      "added": 7,
+      "recovered_this_run": 7,
+      "values": [
+        {
+          "player_id": "cb-duke-jonathan-santucci",
+          "team": "Duke",
+          "BF": 20
+        },
+        {
+          "player_id": "cb-duke-owen-proksch",
+          "team": "Duke",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-duke-charlie-beilenson",
+          "team": "Duke",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-indiana-brayden-risedorph",
+          "team": "Indiana",
+          "BF": 18
+        },
+        {
+          "player_id": "cb-indiana-ryan-kraft",
+          "team": "Indiana",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-indiana-aydan-decker-petty",
+          "team": "Indiana",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-indiana-evan-whiteaker",
+          "team": "Indiana",
+          "BF": 8
+        }
+      ]
     },
     {
       "game_id": "cb-2024-02-20-presbyterian-clemson-att0232",

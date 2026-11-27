@@ -45,24 +45,51 @@ def get_tables(g):
     for t in soup.find_all("table"):
         hd=table_head(t)
         if not all(k in hd for k in ("Player","IP","H","R","ER","BB","SO","BF")): continue
-        lines=table_rows(t,hd)
+        # USD often renders the team totals label and empty IP in a
+        # single colspan cell. Read the explicit numeric suffix after IP
+        # directly instead of depending on a rectangular table shape.
         vals=[]; totals=[]
-        for line in lines:
-            if line.get("_totals"): totals.append(int(line["BF"])); continue
+        numeric_fields=hd[hd.index("IP")+1:]
+        for tr in t.find_all("tr"):
+            cells=tr.find_all(["td","th"],recursive=False)
+            raw=[cell.get_text(" ",strip=True) for cell in cells]
+            if not raw: continue
+            if any(re.fullmatch(r"(?:team\s+)?totals?",v,re.I) for v in raw[:2]):
+                tail=raw[-len(numeric_fields):]
+                if len(tail)==len(numeric_fields) and all(re.fullmatch(r"\d+",v) for v in tail):
+                    totals.append(dict(zip(numeric_fields,map(int,tail))))
+                continue
+        for line in table_rows(t,hd):
+            if line.get("_totals") or re.fullmatch(r"(?:team\s+)?totals?",str(line.get("Player","")),re.I):
+                if all(str(line.get(k,"")).isdigit() for k in ("H","R","ER","BB","SO","BF")):
+                    totals.append({k:int(line[k]) for k in ("H","R","ER","BB","SO","BF")})
+                continue
             vals.append((line["Player"],line["IP"],*[int(line[k]) for k in ("H","R","ER","BB","SO","BF")]))
-        if not vals or len(totals)!=1 or sum(x[-1] for x in vals)!=totals[0]: raise ValueError("source BF totals not reconciled")
+        keys=("H","R","ER","BB","SO","BF")
+        sums=dict(zip(keys,[sum(x[i] for x in vals) for i in range(2,8)]))
+        if not vals or not totals or any(any(z[k]!=sums[k] for k in keys) for z in totals):
+            # Do not relax statistical verification when a totals row is
+            # genuinely inconsistent. Skip duplicate unusable tables only.
+            continue
         if vals not in tables: tables.append(vals)
     if len(tables)!=2: raise ValueError("expected two explicit BF pitching tables, found "+str(len(tables)))
     return tables,"official HTML BF column and source team totals"
 games=[g for g in load("games.json") if g.get("season") ==2019 and not g.get("boxscore_backfill_excluded")]
 rows=load("player_stats.json")
+previous={g["game_id"]:g for g in load("bf_audit_2019.json")["games"]}
 existing={g["game_id"] for g in load("source_stat_backfills.json")["games"]}
 def inspect(g):
     gid=g["id"]; result={"game_id":gid,"date":g["date"],"away":g["away"],"home":g["home"],"source_url":g.get("source_url")}
     arms=[r for r in rows if r["game_id"]==gid and r.get("pitching") is not None]
     if gid in existing: return dict(result,status="existing_verified_backfill"),[]
     if not arms: return dict(result,status="unresolved",reason="no pitching rows"),[]
-    if all(p["pitching"].get("battersFaced") is not None for p in arms): return dict(result,status="already_complete",pitchers=len(arms)),[]
+    if all(p["pitching"].get("battersFaced") is not None for p in arms):
+        prior=previous.get(gid,{})
+        if prior.get("status")=="recovered":
+            verified={(p["player_id"],p["team"]):p["pitching"]["battersFaced"] for p in arms}
+            if all(verified.get((v["player_id"],v["team"]))==v["BF"] for v in prior.get("values",[])) and len(prior.get("values",[]))==len(arms):
+                return dict(prior,recovered_this_run=0),[]
+        return dict(result,status="already_complete",pitchers=len(arms)),[]
     try:
         tables,method=get_tables(g)
         teams=[g["away"],g["home"]]; solutions=[]
@@ -86,7 +113,7 @@ def inspect(g):
             known=sum(b.get(k) or 0 for b in batting for k in fields)
             if bf<known or (all(b.get(k) is not None for b in batting for k in fields) and bf!=known): raise ValueError("opponent PA conflicts with BF")
         changes=[(p,bf) for p,bf in matches if p["pitching"].get("battersFaced") is None]
-        return dict(result,status="recovered",method=method,pitchers=len(matches),added=len(changes),values=[{"player_id":p["player_id"],"team":p["team"],"BF":bf} for p,bf in matches]),changes
+        return dict(result,status="recovered",method=method,pitchers=len(matches),added=len(changes),recovered_this_run=len(changes),values=[{"player_id":p["player_id"],"team":p["team"],"BF":bf} for p,bf in matches]),changes
     except Exception as e: return dict(result,status="unresolved",reason=str(e)),[]
 with ThreadPoolExecutor(max_workers=5) as pool: results=list(pool.map(inspect,games))
 report=[]
@@ -94,5 +121,5 @@ for result,changes in results:
     report.append(result)
     for p,bf in changes: p["pitching"]["battersFaced"]=bf
     print(result["game_id"],result["status"],result.get("added",result.get("reason","")),flush=True)
-if any(x["status"]=="recovered" and x["added"] for x in report): dump("player_stats.json",rows)
-dump("bf_audit_2019.json",{"scope":"2019 college baseball only; exact official BF; missing fields only","games":report})
+if any(x.get("recovered_this_run",0) for x in report): dump("player_stats.json",rows)
+dump("bf_audit_2019.json",{"scope":"2019 college baseball only; exact official BF; missing fields only","pass":"USD totals-layout recovery","games":report})

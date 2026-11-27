@@ -1,0 +1,3131 @@
+{
+  "scope": "2024 college baseball only; exact official BF; missing fields only",
+  "pass": "validated USD numeric-tail parser",
+  "games": [
+    {
+      "game_id": "cb-2024-02-16-duke-indiana-att0225",
+      "date": "2024-02-16",
+      "away": "Duke",
+      "home": "Indiana",
+      "source_url": "https://iuhoosiers.com/sports/baseball/stats/2024/duke/boxscore/26942",
+      "status": "unresolved",
+      "reason": "date not confirmed"
+    },
+    {
+      "game_id": "cb-2024-02-16-george-mason-coastal-carolina-att0226",
+      "date": "2024-02-16",
+      "away": "George Mason",
+      "home": "Coastal Carolina",
+      "source_url": "https://gomason.com/sports/baseball/stats/2024/coastal-carolina-university/boxscore/12671",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 9,
+      "added": 9,
+      "recovered_this_run": 9,
+      "values": [
+        {
+          "player_id": "cb-george-mason-chad-gartland",
+          "team": "George Mason",
+          "BF": 21
+        },
+        {
+          "player_id": "cb-george-mason-avery-mabe",
+          "team": "George Mason",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-george-mason-brant-ertel",
+          "team": "George Mason",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-george-mason-tyler-herkey",
+          "team": "George Mason",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-george-mason-jake-roberti",
+          "team": "George Mason",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-george-mason-shaun-okeeffe",
+          "team": "George Mason",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-george-mason-ty-uchman",
+          "team": "George Mason",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-coastal-carolina-riley-eikhoff",
+          "team": "Coastal Carolina",
+          "BF": 19
+        },
+        {
+          "player_id": "cb-coastal-carolina-hayden-johnson",
+          "team": "Coastal Carolina",
+          "BF": 11
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2024-02-17-george-mason-duke-att0227",
+      "date": "2024-02-17",
+      "away": "George Mason",
+      "home": "Duke",
+      "source_url": "https://gomason.com/sports/baseball/stats/2024/duke-university/boxscore/12672",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 8,
+      "added": 8,
+      "recovered_this_run": 8,
+      "values": [
+        {
+          "player_id": "cb-george-mason-konner-eaton",
+          "team": "George Mason",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-george-mason-owen-stewart",
+          "team": "George Mason",
+          "BF": 28
+        },
+        {
+          "player_id": "cb-george-mason-britt-yount",
+          "team": "George Mason",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-george-mason-luke-goodyear",
+          "team": "George Mason",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-duke-andrew-healy",
+          "team": "Duke",
+          "BF": 15
+        },
+        {
+          "player_id": "cb-duke-kyle-johnson",
+          "team": "Duke",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-duke-gabriel-nard",
+          "team": "Duke",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-duke-ryan-higgins",
+          "team": "Duke",
+          "BF": 4
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2024-02-17-indiana-coastal-carolina-att0228",
+      "date": "2024-02-17",
+      "away": "Indiana",
+      "home": "Coastal Carolina",
+      "source_url": "https://iuhoosiers.com/sports/baseball/stats/2024/coastal-carolina/boxscore/26943",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 6,
+      "added": 6,
+      "recovered_this_run": 6,
+      "values": [
+        {
+          "player_id": "cb-indiana-connor-foley",
+          "team": "Indiana",
+          "BF": 17
+        },
+        {
+          "player_id": "cb-indiana-ty-bothwell",
+          "team": "Indiana",
+          "BF": 23
+        },
+        {
+          "player_id": "cb-coastal-carolina-alexander-meckley",
+          "team": "Coastal Carolina",
+          "BF": 20
+        },
+        {
+          "player_id": "cb-coastal-carolina-bryce-shaffer",
+          "team": "Coastal Carolina",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-coastal-carolina-cameron-flukey",
+          "team": "Coastal Carolina",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-coastal-carolina-elias-holbert",
+          "team": "Coastal Carolina",
+          "BF": 7
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2024-02-18-indiana-george-mason-att0229",
+      "date": "2024-02-18",
+      "away": "Indiana",
+      "home": "George Mason",
+      "source_url": "https://gomason.com/sports/baseball/stats/2024/indiana-university/boxscore/12673",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 10,
+      "added": 10,
+      "recovered_this_run": 10,
+      "values": [
+        {
+          "player_id": "cb-indiana-ethan-phillips",
+          "team": "Indiana",
+          "BF": 18
+        },
+        {
+          "player_id": "cb-indiana-seti-manase",
+          "team": "Indiana",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-indiana-julian-tonghini",
+          "team": "Indiana",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-george-mason-nick-martins",
+          "team": "George Mason",
+          "BF": 19
+        },
+        {
+          "player_id": "cb-george-mason-kyle-menaker",
+          "team": "George Mason",
+          "BF": 12
+        },
+        {
+          "player_id": "cb-george-mason-logan-rumberg",
+          "team": "George Mason",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-george-mason-luke-goodyear",
+          "team": "George Mason",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-george-mason-ryan-edmonds",
+          "team": "George Mason",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-george-mason-ty-uchman",
+          "team": "George Mason",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-george-mason-britt-yount",
+          "team": "George Mason",
+          "BF": 1
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2024-02-18-duke-coastal-carolina-att0230",
+      "date": "2024-02-18",
+      "away": "Duke",
+      "home": "Coastal Carolina",
+      "source_url": "https://goduke.com/sports/baseball/stats/2024/coastal-carolina/boxscore/21659",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 11,
+      "added": 11,
+      "recovered_this_run": 11,
+      "values": [
+        {
+          "player_id": "cb-duke-aidan-weaver",
+          "team": "Duke",
+          "BF": 12
+        },
+        {
+          "player_id": "cb-duke-james-tallon",
+          "team": "Duke",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-duke-owen-proksch",
+          "team": "Duke",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-duke-jimmy-romano",
+          "team": "Duke",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-duke-fran-oschell-iii",
+          "team": "Duke",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-duke-charlie-beilenson",
+          "team": "Duke",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-coastal-carolina-ryan-lynch",
+          "team": "Coastal Carolina",
+          "BF": 14
+        },
+        {
+          "player_id": "cb-coastal-carolina-oliver-ellison",
+          "team": "Coastal Carolina",
+          "BF": 13
+        },
+        {
+          "player_id": "cb-coastal-carolina-will-smith",
+          "team": "Coastal Carolina",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-coastal-carolina-henry-weycker",
+          "team": "Coastal Carolina",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-coastal-carolina-trevor-hinkel",
+          "team": "Coastal Carolina",
+          "BF": 5
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2024-02-19-marshall-college-of-charleston-att0231",
+      "date": "2024-02-19",
+      "away": "Marshall",
+      "home": "College of Charleston",
+      "source_url": "https://cofcsports.com/sports/baseball/stats/2024/marshall/boxscore/11657",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 8,
+      "added": 8,
+      "recovered_this_run": 8,
+      "values": [
+        {
+          "player_id": "cb-marshall-c-heiner",
+          "team": "Marshall",
+          "BF": 17
+        },
+        {
+          "player_id": "cb-marshall-e-leon",
+          "team": "Marshall",
+          "BF": 18
+        },
+        {
+          "player_id": "cb-marshall-b-blevins",
+          "team": "Marshall",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-marshall-n-jodway",
+          "team": "Marshall",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-college-of-charleston-a-duval",
+          "team": "College of Charleston",
+          "BF": 18
+        },
+        {
+          "player_id": "cb-college-of-charleston-j-bradford",
+          "team": "College of Charleston",
+          "BF": 11
+        },
+        {
+          "player_id": "cb-college-of-charleston-emmett-bice",
+          "team": "College of Charleston",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-college-of-charleston-davis-aiken",
+          "team": "College of Charleston",
+          "BF": 3
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2024-02-20-presbyterian-clemson-att0232",
+      "date": "2024-02-20",
+      "away": "Presbyterian",
+      "home": "Clemson",
+      "source_url": "https://gobluehose.com/sports/baseball/stats/2024/clemson/boxscore/13189",
+      "status": "unresolved",
+      "reason": "expected two explicit BF pitching tables, found 0; pitching reconciliation: rows=5 sums=[10, 8, 8, 7, 7, 42] totals=[] skipped=[]; pitching reconciliation: rows=4 sums=[3, 2, 2, 4, 8, 36] totals=[] skipped=[]"
+    },
+    {
+      "game_id": "cb-2024-02-21-queens-south-carolina-att0233",
+      "date": "2024-02-21",
+      "away": "Queens",
+      "home": "South Carolina",
+      "source_url": "https://queensathletics.com/sports/baseball/stats/2024/university-of-south-carolina/boxscore/11663",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 14,
+      "added": 14,
+      "recovered_this_run": 14,
+      "values": [
+        {
+          "player_id": "cb-queens-joey-ruller",
+          "team": "Queens",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-queens-jack-renaud",
+          "team": "Queens",
+          "BF": 11
+        },
+        {
+          "player_id": "cb-queens-joseph-rodriguez",
+          "team": "Queens",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-queens-logan-schmitt",
+          "team": "Queens",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-queens-isaac-kopalchick",
+          "team": "Queens",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-queens-carson-magill",
+          "team": "Queens",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-queens-jack-brooker",
+          "team": "Queens",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-south-carolina-matthew-becker",
+          "team": "South Carolina",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-south-carolina-tyler-pitzer",
+          "team": "South Carolina",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-south-carolina-connor-mccreery",
+          "team": "South Carolina",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-south-carolina-parker-marlatt",
+          "team": "South Carolina",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-south-carolina-sam-simpson",
+          "team": "South Carolina",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-south-carolina-chris-veach",
+          "team": "South Carolina",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-south-carolina-drake-quinn",
+          "team": "South Carolina",
+          "BF": 7
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2024-02-23-wichita-state-virginia-att0234",
+      "date": "2024-02-23",
+      "away": "Wichita State",
+      "home": "Virginia",
+      "source_url": "https://goshockers.com/sports/baseball/stats/2024/virginia/boxscore/17898",
+      "status": "unresolved",
+      "reason": "expected two explicit BF pitching tables, found 0; pitching reconciliation: rows=5 sums=[13, 5, 3, 4, 9, 49] totals=[] skipped=[]; pitching reconciliation: rows=5 sums=[10, 4, 4, 2, 14, 44] totals=[] skipped=[]"
+    },
+    {
+      "game_id": "cb-2024-02-23-iowa-auburn-att0235",
+      "date": "2024-02-23",
+      "away": "Iowa",
+      "home": "Auburn",
+      "source_url": "https://storage.googleapis.com/auburn-prod/2024/05/16/Qwfk9D0ysZymh4NIW2QjKniQFWvF2vNh2c5nSnd5.pdf",
+      "status": "existing_verified_backfill"
+    },
+    {
+      "game_id": "cb-2024-02-24-auburn-wichita-state-att0236",
+      "date": "2024-02-24",
+      "away": "Auburn",
+      "home": "Wichita State",
+      "source_url": "https://goshockers.com/sports/baseball/stats/2024/auburn/boxscore/17899",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 12,
+      "added": 12,
+      "recovered_this_run": 12,
+      "values": [
+        {
+          "player_id": "cb-auburn-joseph-gonzalez",
+          "team": "Auburn",
+          "BF": 18
+        },
+        {
+          "player_id": "cb-auburn-konner-keplinger",
+          "team": "Auburn",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-auburn-zach-crotchfelt",
+          "team": "Auburn",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-auburn-hayden-murphy",
+          "team": "Auburn",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-wichita-state-tommy-lapour",
+          "team": "Wichita State",
+          "BF": 12
+        },
+        {
+          "player_id": "cb-wichita-state-matt-wilkinson",
+          "team": "Wichita State",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-wichita-state-drew-iverson",
+          "team": "Wichita State",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-wichita-state-ronald-zayas",
+          "team": "Wichita State",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-wichita-state-lane-bledsoe",
+          "team": "Wichita State",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-wichita-state-mason-munz",
+          "team": "Wichita State",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-wichita-state-gavin-oswald",
+          "team": "Wichita State",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-wichita-state-peyton-walters",
+          "team": "Wichita State",
+          "BF": 5
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2024-02-24-virginia-iowa-att0237",
+      "date": "2024-02-24",
+      "away": "Virginia",
+      "home": "Iowa",
+      "source_url": "https://static.virginiasports.com/custompages/sports/m-basebl/stats/2023-2024/6iowa.htm",
+      "status": "existing_verified_backfill"
+    },
+    {
+      "game_id": "cb-2024-02-25-wichita-state-iowa-att0238",
+      "date": "2024-02-25",
+      "away": "Wichita State",
+      "home": "Iowa",
+      "source_url": "https://goshockers.com/sports/baseball/stats/2024/iowa/boxscore/17900",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 12,
+      "added": 12,
+      "recovered_this_run": 12,
+      "values": [
+        {
+          "player_id": "cb-wichita-state-daniel-zang",
+          "team": "Wichita State",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-wichita-state-caleb-anderson",
+          "team": "Wichita State",
+          "BF": 12
+        },
+        {
+          "player_id": "cb-wichita-state-tyler-dobbs",
+          "team": "Wichita State",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-wichita-state-jack-mount",
+          "team": "Wichita State",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-wichita-state-ryan-geraghty",
+          "team": "Wichita State",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-wichita-state-brady-hamilton",
+          "team": "Wichita State",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-iowa-cade-obermueller",
+          "team": "Iowa",
+          "BF": 21
+        },
+        {
+          "player_id": "cb-iowa-reece-beuter",
+          "team": "Iowa",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-iowa-jack-whitlock",
+          "team": "Iowa",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-iowa-ben-detaeye",
+          "team": "Iowa",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-iowa-elliot-cad-lanoue",
+          "team": "Iowa",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-iowa-sam-hart",
+          "team": "Iowa",
+          "BF": 5
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2024-02-25-virginia-auburn-att0239",
+      "date": "2024-02-25",
+      "away": "Virginia",
+      "home": "Auburn",
+      "source_url": "https://static.virginiasports.com/custompages/sports/m-basebl/stats/2023-2024/7auburn.htm",
+      "status": "existing_verified_backfill"
+    },
+    {
+      "game_id": "cb-2024-02-27-vcu-north-carolina-att0240",
+      "date": "2024-02-27",
+      "away": "VCU",
+      "home": "North Carolina",
+      "source_url": "https://vcuathletics.com/sports/baseball/stats/2024/north-carolina/boxscore/6328",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 7,
+      "added": 7,
+      "recovered_this_run": 7,
+      "values": [
+        {
+          "player_id": "cb-vcu-zach-peters",
+          "team": "VCU",
+          "BF": 12
+        },
+        {
+          "player_id": "cb-vcu-brian-curley",
+          "team": "VCU",
+          "BF": 17
+        },
+        {
+          "player_id": "cb-vcu-nick-cosentino",
+          "team": "VCU",
+          "BF": 13
+        },
+        {
+          "player_id": "cb-north-carolina-jason-decaro",
+          "team": "North Carolina",
+          "BF": 22
+        },
+        {
+          "player_id": "cb-north-carolina-cameron-padgett",
+          "team": "North Carolina",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-north-carolina-francesco-capocci",
+          "team": "North Carolina",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-north-carolina-connor-bovair",
+          "team": "North Carolina",
+          "BF": 3
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2024-02-28-queens-nc-state-att0241",
+      "date": "2024-02-28",
+      "away": "Queens",
+      "home": "NC State",
+      "source_url": "https://queensathletics.com/sports/baseball/stats/2024/nc-state-university/boxscore/11668",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 11,
+      "added": 11,
+      "recovered_this_run": 11,
+      "values": [
+        {
+          "player_id": "cb-queens-andrew-white",
+          "team": "Queens",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-queens-jack-renaud",
+          "team": "Queens",
+          "BF": 20
+        },
+        {
+          "player_id": "cb-queens-jack-brooker",
+          "team": "Queens",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-queens-tanner-cullen",
+          "team": "Queens",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-queens-isaac-kopalchick",
+          "team": "Queens",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-nc-state-cooper-consiglio",
+          "team": "NC State",
+          "BF": 15
+        },
+        {
+          "player_id": "cb-nc-state-chance-mako",
+          "team": "NC State",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-nc-state-win-scott",
+          "team": "NC State",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-nc-state-jacob-halford",
+          "team": "NC State",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-nc-state-camden-wimbish",
+          "team": "NC State",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-nc-state-derrick-smith",
+          "team": "NC State",
+          "BF": 4
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2024-03-01-cal-state-fullerton-southeastern-louisiana-att0242",
+      "date": "2024-03-01",
+      "away": "Cal State Fullerton",
+      "home": "Southeastern Louisiana",
+      "source_url": "https://fullertontitans.com/sports/baseball/stats/2024/southeastern-louisiana/boxscore/6690",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 5,
+      "added": 5,
+      "recovered_this_run": 5,
+      "values": [
+        {
+          "player_id": "cb-cal-state-fullerton-christian-rodriguez",
+          "team": "Cal State Fullerton",
+          "BF": 24
+        },
+        {
+          "player_id": "cb-cal-state-fullerton-andrew-morones",
+          "team": "Cal State Fullerton",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-cal-state-fullerton-derek-turner",
+          "team": "Cal State Fullerton",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-southeastern-louisiana-brennan-stuprich",
+          "team": "Southeastern Louisiana",
+          "BF": 25
+        },
+        {
+          "player_id": "cb-southeastern-louisiana-jackson-rodriguez",
+          "team": "Southeastern Louisiana",
+          "BF": 7
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2024-03-01-purdue-east-carolina-att0243",
+      "date": "2024-03-01",
+      "away": "Purdue",
+      "home": "East Carolina",
+      "source_url": "https://ecupirates.com/sports/baseball/stats/2024/purdue/boxscore/13162",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 4,
+      "added": 4,
+      "recovered_this_run": 4,
+      "values": [
+        {
+          "player_id": "cb-purdue-jordan-morales",
+          "team": "Purdue",
+          "BF": 27
+        },
+        {
+          "player_id": "cb-purdue-davis-pratt",
+          "team": "Purdue",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-east-carolina-trey-yesavage",
+          "team": "East Carolina",
+          "BF": 29
+        },
+        {
+          "player_id": "cb-east-carolina-jackson-dilorenzo",
+          "team": "East Carolina",
+          "BF": 4
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2024-03-02-siena-unc-asheville-att0244",
+      "date": "2024-03-02",
+      "away": "Siena",
+      "home": "UNC Asheville",
+      "source_url": "https://uncabulldogs.com/sports/baseball/stats/2024/siena/boxscore/9841",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 7,
+      "added": 7,
+      "recovered_this_run": 7,
+      "values": [
+        {
+          "player_id": "cb-siena-billy-rozakis",
+          "team": "Siena",
+          "BF": 23
+        },
+        {
+          "player_id": "cb-siena-tyler-kidwell",
+          "team": "Siena",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-siena-ramsey-collins",
+          "team": "Siena",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-siena-sebastian-bentz",
+          "team": "Siena",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-siena-nolan-puglisi",
+          "team": "Siena",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-unc-asheville-cole-schiff",
+          "team": "UNC Asheville",
+          "BF": 21
+        },
+        {
+          "player_id": "cb-unc-asheville-justin-needles",
+          "team": "UNC Asheville",
+          "BF": 21
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2024-03-02-florida-state-michigan-state-att0245",
+      "date": "2024-03-02",
+      "away": "Florida State",
+      "home": "Michigan State",
+      "source_url": "https://seminoles.com/sports/baseball/stats/2024/michigan-state/boxscore/13735",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 7,
+      "added": 7,
+      "recovered_this_run": 7,
+      "values": [
+        {
+          "player_id": "cb-florida-state-jamie-arnold",
+          "team": "Florida State",
+          "BF": 25
+        },
+        {
+          "player_id": "cb-florida-state-noah-short",
+          "team": "Florida State",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-florida-state-john-abraham",
+          "team": "Florida State",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-michigan-state-joseph-dzierwa",
+          "team": "Michigan State",
+          "BF": 25
+        },
+        {
+          "player_id": "cb-michigan-state-gavin-moczydlowsky",
+          "team": "Michigan State",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-michigan-state-nick-ferazzi",
+          "team": "Michigan State",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-michigan-state-garrett-brewer",
+          "team": "Michigan State",
+          "BF": 8
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2024-03-02-illinois-western-michigan-att0246",
+      "date": "2024-03-02",
+      "away": "Illinois",
+      "home": "Western Michigan",
+      "source_url": "https://wmubroncos.com/sports/baseball/stats/2024/illinois/boxscore/15776",
+      "status": "unresolved",
+      "reason": "expected two explicit BF pitching tables, found 0; pitching reconciliation: rows=4 sums=[9, 6, 5, 7, 13, 44] totals=[] skipped=[]; pitching reconciliation: rows=3 sums=[11, 8, 8, 9, 10, 50] totals=[] skipped=[]"
+    },
+    {
+      "game_id": "cb-2024-03-02-florida-state-illinois-att0247",
+      "date": "2024-03-02",
+      "away": "Florida State",
+      "home": "Illinois",
+      "source_url": "https://seminoles.com/sports/baseball/stats/2024/illinois/boxscore/13734",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 8,
+      "added": 8,
+      "recovered_this_run": 8,
+      "values": [
+        {
+          "player_id": "cb-florida-state-cam-leiter",
+          "team": "Florida State",
+          "BF": 24
+        },
+        {
+          "player_id": "cb-florida-state-carson-dorsey",
+          "team": "Florida State",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-florida-state-ben-barrett",
+          "team": "Florida State",
+          "BF": 15
+        },
+        {
+          "player_id": "cb-illinois-jack-crowder",
+          "team": "Illinois",
+          "BF": 22
+        },
+        {
+          "player_id": "cb-illinois-ben-plumley",
+          "team": "Illinois",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-illinois-korey-bunselmeyer",
+          "team": "Illinois",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-illinois-joseph-glassey",
+          "team": "Illinois",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-illinois-evan-clark",
+          "team": "Illinois",
+          "BF": 7
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2024-03-03-maine-winthrop-att0248",
+      "date": "2024-03-03",
+      "away": "Maine",
+      "home": "Winthrop",
+      "source_url": "https://winthropeagles.com/sports/baseball/stats/2024/maine/boxscore/22893",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 8,
+      "added": 8,
+      "recovered_this_run": 8,
+      "values": [
+        {
+          "player_id": "cb-maine-noah-lewis",
+          "team": "Maine",
+          "BF": 22
+        },
+        {
+          "player_id": "cb-maine-blaine-cockburn",
+          "team": "Maine",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-maine-owen-wheeler",
+          "team": "Maine",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-maine-ryan-scott",
+          "team": "Maine",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-maine-marshall-smaracko",
+          "team": "Maine",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-winthrop-owen-sarna",
+          "team": "Winthrop",
+          "BF": 19
+        },
+        {
+          "player_id": "cb-winthrop-brady-houston",
+          "team": "Winthrop",
+          "BF": 14
+        },
+        {
+          "player_id": "cb-winthrop-joey-hylinski",
+          "team": "Winthrop",
+          "BF": 5
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2024-03-06-virginia-george-washington-att0249",
+      "date": "2024-03-06",
+      "away": "Virginia",
+      "home": "George Washington",
+      "source_url": "https://static.virginiasports.com/custompages/sports/m-basebl/stats/2023-2024/13gw.htm",
+      "status": "existing_verified_backfill"
+    },
+    {
+      "game_id": "cb-2024-03-07-byu-west-virginia-att0250",
+      "date": "2024-03-07",
+      "away": "BYU",
+      "home": "West Virginia",
+      "source_url": "https://wvusports.com/sports/baseball/stats/2024/byu/boxscore/20168",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 7,
+      "added": 7,
+      "recovered_this_run": 7,
+      "values": [
+        {
+          "player_id": "cb-byu-ben-hansen",
+          "team": "BYU",
+          "BF": 23
+        },
+        {
+          "player_id": "cb-byu-mason-olson",
+          "team": "BYU",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-byu-payton-gubler",
+          "team": "BYU",
+          "BF": 13
+        },
+        {
+          "player_id": "cb-byu-jake-porter",
+          "team": "BYU",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-byu-max-stanley",
+          "team": "BYU",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-west-virginia-aidan-major",
+          "team": "West Virginia",
+          "BF": 34
+        },
+        {
+          "player_id": "cb-west-virginia-bryce-amos",
+          "team": "West Virginia",
+          "BF": 4
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2024-03-08-notre-dame-virginia-tech-att0251",
+      "date": "2024-03-08",
+      "away": "Notre Dame",
+      "home": "Virginia Tech",
+      "source_url": "https://theacc.com/boxscore.aspx?id=JcLFfL9RUu0H5ystoOMbjQ7A58QMysWHEEqi7hufVoQXO5nVxbctjHh%2F6ifARsoKUNz2Cn1GpJx0eQgL%2FI8uNugW6%2F65ooJ9xE6%2BliOEFRks1pqns5E%2BSdhOF6cTmGJTatGL0tWP3RUaQJSzuX6XO7iNsKjtsD5Dds7TBMqMg4sEGg9iuR4sUWMKzgK6cFVK&path=baseball",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 7,
+      "added": 7,
+      "recovered_this_run": 7,
+      "values": [
+        {
+          "player_id": "cb-notre-dame-ricky-reeth",
+          "team": "Notre Dame",
+          "BF": 17
+        },
+        {
+          "player_id": "cb-notre-dame-jack-radel",
+          "team": "Notre Dame",
+          "BF": 13
+        },
+        {
+          "player_id": "cb-notre-dame-ryan-lynch",
+          "team": "Notre Dame",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-notre-dame-caden-spivey",
+          "team": "Notre Dame",
+          "BF": 11
+        },
+        {
+          "player_id": "cb-notre-dame-dj-helwig",
+          "team": "Notre Dame",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-virginia-tech-brett-renfrow",
+          "team": "Virginia Tech",
+          "BF": 28
+        },
+        {
+          "player_id": "cb-virginia-tech-jacob-exum",
+          "team": "Virginia Tech",
+          "BF": 3
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2024-03-08-binghamton-vmi-att0252",
+      "date": "2024-03-08",
+      "away": "Binghamton",
+      "home": "VMI",
+      "source_url": "https://binghamtonbearcats.com/sports/baseball/stats/2024/virginia-military-institute/boxscore/14316",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 6,
+      "added": 6,
+      "recovered_this_run": 6,
+      "values": [
+        {
+          "player_id": "cb-binghamton-ryan-bates",
+          "team": "Binghamton",
+          "BF": 22
+        },
+        {
+          "player_id": "cb-binghamton-john-lumpinski",
+          "team": "Binghamton",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-binghamton-spencer-howell",
+          "team": "Binghamton",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-vmi-w-riley",
+          "team": "VMI",
+          "BF": 26
+        },
+        {
+          "player_id": "cb-vmi-n-hawley",
+          "team": "VMI",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-vmi-m-alstine",
+          "team": "VMI",
+          "BF": 2
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2024-03-09-bucknell-campbell-att0253",
+      "date": "2024-03-09",
+      "away": "Bucknell",
+      "home": "Campbell",
+      "source_url": "https://bucknellbison.com/sports/baseball/stats/2024/campbell/boxscore/19094",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 6,
+      "added": 6,
+      "recovered_this_run": 6,
+      "values": [
+        {
+          "player_id": "cb-bucknell-jack-o-malley",
+          "team": "Bucknell",
+          "BF": 22
+        },
+        {
+          "player_id": "cb-bucknell-mikey-myro",
+          "team": "Bucknell",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-bucknell-jonathan-adelmann",
+          "team": "Bucknell",
+          "BF": 16
+        },
+        {
+          "player_id": "cb-campbell-cooper-clark",
+          "team": "Campbell",
+          "BF": 18
+        },
+        {
+          "player_id": "cb-campbell-drew-siegner",
+          "team": "Campbell",
+          "BF": 14
+        },
+        {
+          "player_id": "cb-campbell-packy-bradley",
+          "team": "Campbell",
+          "BF": 11
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2024-03-10-bucknell-campbell-att0254",
+      "date": "2024-03-10",
+      "away": "Bucknell",
+      "home": "Campbell",
+      "source_url": "https://bucknellbison.com/sports/baseball/stats/2024/campbell/boxscore/19095",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 9,
+      "added": 9,
+      "recovered_this_run": 9,
+      "values": [
+        {
+          "player_id": "cb-bucknell-jake-schultz",
+          "team": "Bucknell",
+          "BF": 14
+        },
+        {
+          "player_id": "cb-bucknell-brady-swenson",
+          "team": "Bucknell",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-bucknell-graeme-carroll",
+          "team": "Bucknell",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-bucknell-dante-pavone",
+          "team": "Bucknell",
+          "BF": 15
+        },
+        {
+          "player_id": "cb-bucknell-nikhil-patel",
+          "team": "Bucknell",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-bucknell-ethan-firestein",
+          "team": "Bucknell",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-campbell-cy-cox",
+          "team": "Campbell",
+          "BF": 14
+        },
+        {
+          "player_id": "cb-campbell-ethan-snyder",
+          "team": "Campbell",
+          "BF": 13
+        },
+        {
+          "player_id": "cb-campbell-nate-brittain",
+          "team": "Campbell",
+          "BF": 12
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2024-03-12-rutgers-north-carolina-att0255",
+      "date": "2024-03-12",
+      "away": "Rutgers",
+      "home": "North Carolina",
+      "source_url": "https://goheels.com/sports/baseball/stats/2024/rutgers/boxscore/25040",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 11,
+      "added": 11,
+      "recovered_this_run": 11,
+      "values": [
+        {
+          "player_id": "cb-rutgers-jordan-falco",
+          "team": "Rutgers",
+          "BF": 17
+        },
+        {
+          "player_id": "cb-rutgers-sonny-fauci",
+          "team": "Rutgers",
+          "BF": 12
+        },
+        {
+          "player_id": "cb-rutgers-joe-mazza",
+          "team": "Rutgers",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-rutgers-jake-marshall",
+          "team": "Rutgers",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-rutgers-sam-portnoy",
+          "team": "Rutgers",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-north-carolina-boston-flannery",
+          "team": "North Carolina",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-north-carolina-cameron-padgett",
+          "team": "North Carolina",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-north-carolina-aidan-haugh",
+          "team": "North Carolina",
+          "BF": 14
+        },
+        {
+          "player_id": "cb-north-carolina-ben-peterson",
+          "team": "North Carolina",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-north-carolina-matthew-matthijs",
+          "team": "North Carolina",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-north-carolina-ryan-fischer",
+          "team": "North Carolina",
+          "BF": 6
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2024-03-13-rutgers-north-carolina-att0256",
+      "date": "2024-03-13",
+      "away": "Rutgers",
+      "home": "North Carolina",
+      "source_url": "https://goheels.com/sports/baseball/stats/2024/rutgers/boxscore/25041",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 11,
+      "added": 11,
+      "recovered_this_run": 11,
+      "values": [
+        {
+          "player_id": "cb-rutgers-christian-coppola",
+          "team": "Rutgers",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-rutgers-donovan-zsak",
+          "team": "Rutgers",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-rutgers-ben-gorski",
+          "team": "Rutgers",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-rutgers-joey-dechiaro",
+          "team": "Rutgers",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-rutgers-gavin-stellpflug",
+          "team": "Rutgers",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-rutgers-ethan-bowen",
+          "team": "Rutgers",
+          "BF": 11
+        },
+        {
+          "player_id": "cb-north-carolina-olin-johnson",
+          "team": "North Carolina",
+          "BF": 18
+        },
+        {
+          "player_id": "cb-north-carolina-kyle-percival",
+          "team": "North Carolina",
+          "BF": 11
+        },
+        {
+          "player_id": "cb-north-carolina-francesco-capocci",
+          "team": "North Carolina",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-north-carolina-connor-bovair",
+          "team": "North Carolina",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-north-carolina-matt-poston",
+          "team": "North Carolina",
+          "BF": 5
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2024-03-17-nc-state-georgia-tech-att0257",
+      "date": "2024-03-17",
+      "away": "NC State",
+      "home": "Georgia Tech",
+      "source_url": "https://gopack.com/sports/baseball/stats/2024/georgia-tech/boxscore/23042",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 10,
+      "added": 10,
+      "recovered_this_run": 10,
+      "values": [
+        {
+          "player_id": "cb-nc-state-dominic-fritton",
+          "team": "NC State",
+          "BF": 17
+        },
+        {
+          "player_id": "cb-nc-state-jaxon-lucas",
+          "team": "NC State",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-nc-state-p-j-labriola",
+          "team": "NC State",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-nc-state-garrett-payne",
+          "team": "NC State",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-nc-state-derrick-smith",
+          "team": "NC State",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-georgia-tech-logan-mcguire",
+          "team": "Georgia Tech",
+          "BF": 20
+        },
+        {
+          "player_id": "cb-georgia-tech-brett-barfield",
+          "team": "Georgia Tech",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-georgia-tech-riley-stanford",
+          "team": "Georgia Tech",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-georgia-tech-caden-gaudette",
+          "team": "Georgia Tech",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-georgia-tech-ben-king",
+          "team": "Georgia Tech",
+          "BF": 1
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2024-03-21-louisville-wake-forest-att0258",
+      "date": "2024-03-21",
+      "away": "Louisville",
+      "home": "Wake Forest",
+      "source_url": "https://godeacs.com/sports/baseball/stats/2024/louisville/boxscore/13570",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 7,
+      "added": 7,
+      "recovered_this_run": 7,
+      "values": [
+        {
+          "player_id": "cb-louisville-sebastian-gongora",
+          "team": "Louisville",
+          "BF": 21
+        },
+        {
+          "player_id": "cb-louisville-kaleb-corbett",
+          "team": "Louisville",
+          "BF": 15
+        },
+        {
+          "player_id": "cb-louisville-kayden-campbell",
+          "team": "Louisville",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-louisville-jake-karaba",
+          "team": "Louisville",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-wake-forest-josh-hartle",
+          "team": "Wake Forest",
+          "BF": 28
+        },
+        {
+          "player_id": "cb-wake-forest-joshua-gunther",
+          "team": "Wake Forest",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-wake-forest-david-falco-jr",
+          "team": "Wake Forest",
+          "BF": 4
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2024-03-22-mercer-unc-greensboro-att0259",
+      "date": "2024-03-22",
+      "away": "Mercer",
+      "home": "UNC Greensboro",
+      "source_url": "https://uncgspartans.com/sports/baseball/stats/2024/mercer/boxscore/8778",
+      "status": "unresolved",
+      "reason": "expected two explicit BF pitching tables, found 0; pitching reconciliation: rows=1 sums=[6, 2, 2, 1, 5, 33] totals=[] skipped=[]; pitching reconciliation: rows=3 sums=[9, 5, 4, 3, 11, 42] totals=[] skipped=[]"
+    },
+    {
+      "game_id": "cb-2024-03-23-vanderbilt-south-carolina-att0260",
+      "date": "2024-03-23",
+      "away": "Vanderbilt",
+      "home": "South Carolina",
+      "source_url": "https://storage.googleapis.com/vucommodores-prod/2024/03/VU23-Box.pdf",
+      "status": "existing_verified_backfill"
+    },
+    {
+      "game_id": "cb-2024-03-23-vanderbilt-south-carolina-att0261",
+      "date": "2024-03-23",
+      "away": "Vanderbilt",
+      "home": "South Carolina",
+      "source_url": "https://storage.googleapis.com/vucommodores-prod/2024/03/VU24-Box.pdf",
+      "status": "existing_verified_backfill"
+    },
+    {
+      "game_id": "cb-2024-03-24-vanderbilt-south-carolina-att0262",
+      "date": "2024-03-24",
+      "away": "Vanderbilt",
+      "home": "South Carolina",
+      "source_url": "https://storage.googleapis.com/vucommodores-prod/2024/03/VU25-Box.pdf",
+      "status": "existing_verified_backfill"
+    },
+    {
+      "game_id": "cb-2024-03-26-william-and-mary-vcu-att0263",
+      "date": "2024-03-26",
+      "away": "William and Mary",
+      "home": "VCU",
+      "source_url": "https://vcuathletics.com/sports/baseball/stats/2024/william-mary/boxscore/6346",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 8,
+      "added": 8,
+      "recovered_this_run": 8,
+      "values": [
+        {
+          "player_id": "cb-william-and-mary-nate-knowles",
+          "team": "William and Mary",
+          "BF": 13
+        },
+        {
+          "player_id": "cb-william-and-mary-travis-garnett",
+          "team": "William and Mary",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-william-and-mary-mark-hindy",
+          "team": "William and Mary",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-william-and-mary-carter-lovasz",
+          "team": "William and Mary",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-vcu-everett-vaughan",
+          "team": "VCU",
+          "BF": 13
+        },
+        {
+          "player_id": "cb-vcu-campbell-ellis",
+          "team": "VCU",
+          "BF": 11
+        },
+        {
+          "player_id": "cb-vcu-maison-martinez",
+          "team": "VCU",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-vcu-cam-nuckols",
+          "team": "VCU",
+          "BF": 7
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2024-03-28-presbyterian-gardner-webb-att0264",
+      "date": "2024-03-28",
+      "away": "Presbyterian",
+      "home": "Gardner Webb",
+      "source_url": "https://gwusports.com/sports/baseball/stats/2024/presbyterian/boxscore/7896",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 8,
+      "added": 8,
+      "recovered_this_run": 8,
+      "values": [
+        {
+          "player_id": "cb-presbyterian-daniel-eagen",
+          "team": "Presbyterian",
+          "BF": 18
+        },
+        {
+          "player_id": "cb-presbyterian-robbie-boykin",
+          "team": "Presbyterian",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-presbyterian-sean-hollister",
+          "team": "Presbyterian",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-gardner-webb-bryan-pazos",
+          "team": "Gardner Webb",
+          "BF": 16
+        },
+        {
+          "player_id": "cb-gardner-webb-josh-gentile",
+          "team": "Gardner Webb",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-gardner-webb-cj-czerwinski",
+          "team": "Gardner Webb",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-gardner-webb-creighton-hansen",
+          "team": "Gardner Webb",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-gardner-webb-gavin-schmitt",
+          "team": "Gardner Webb",
+          "BF": 7
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2024-03-29-sam-houston-state-liberty-att0265",
+      "date": "2024-03-29",
+      "away": "Sam Houston State",
+      "home": "Liberty",
+      "source_url": "https://gobearkats.com/sports/baseball/stats/2024/liberty/boxscore/14402",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 5,
+      "added": 5,
+      "recovered_this_run": 5,
+      "values": [
+        {
+          "player_id": "cb-sam-houston-state-gavi-coldiron",
+          "team": "Sam Houston State",
+          "BF": 16
+        },
+        {
+          "player_id": "cb-sam-houston-state-miles-hellums",
+          "team": "Sam Houston State",
+          "BF": 21
+        },
+        {
+          "player_id": "cb-liberty-cole-hertzler",
+          "team": "Liberty",
+          "BF": 29
+        },
+        {
+          "player_id": "cb-liberty-cale-bolton",
+          "team": "Liberty",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-liberty-talor-grubbs",
+          "team": "Liberty",
+          "BF": 6
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2024-03-30-south-alabama-old-dominion-att0266",
+      "date": "2024-03-30",
+      "away": "South Alabama",
+      "home": "Old Dominion",
+      "source_url": "https://usajaguars.com/sports/baseball/stats/2024/old-dominion/boxscore/10412",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 11,
+      "added": 11,
+      "recovered_this_run": 11,
+      "values": [
+        {
+          "player_id": "cb-south-alabama-cam-hill",
+          "team": "South Alabama",
+          "BF": 18
+        },
+        {
+          "player_id": "cb-south-alabama-gant-starling",
+          "team": "South Alabama",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-south-alabama-mitchell-heer",
+          "team": "South Alabama",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-south-alabama-seth-carter",
+          "team": "South Alabama",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-south-alabama-grant-wood",
+          "team": "South Alabama",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-old-dominion-dylan-brown",
+          "team": "Old Dominion",
+          "BF": 14
+        },
+        {
+          "player_id": "cb-old-dominion-kellen-davis",
+          "team": "Old Dominion",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-old-dominion-ben-moore",
+          "team": "Old Dominion",
+          "BF": 13
+        },
+        {
+          "player_id": "cb-old-dominion-bailey-matela",
+          "team": "Old Dominion",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-old-dominion-lincoln-ransom",
+          "team": "Old Dominion",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-old-dominion-steven-trone",
+          "team": "Old Dominion",
+          "BF": 7
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2024-04-02-coastal-carolina-unc-wilmington-att0267",
+      "date": "2024-04-02",
+      "away": "Coastal Carolina",
+      "home": "UNC Wilmington",
+      "source_url": "https://uncwsports.com/sports/baseball/stats/2024/coastal-carolina/boxscore/10224",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 10,
+      "added": 10,
+      "recovered_this_run": 10,
+      "values": [
+        {
+          "player_id": "cb-coastal-carolina-oliver-ellison",
+          "team": "Coastal Carolina",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-coastal-carolina-dominick-carbone",
+          "team": "Coastal Carolina",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-coastal-carolina-andrew-bowers",
+          "team": "Coastal Carolina",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-coastal-carolina-bryce-shaffer",
+          "team": "Coastal Carolina",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-coastal-carolina-josh-o-neill",
+          "team": "Coastal Carolina",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-coastal-carolina-henry-weycker",
+          "team": "Coastal Carolina",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-unc-wilmington-ryan-calvert",
+          "team": "UNC Wilmington",
+          "BF": 18
+        },
+        {
+          "player_id": "cb-unc-wilmington-case-stroup",
+          "team": "UNC Wilmington",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-unc-wilmington-connor-kane",
+          "team": "UNC Wilmington",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-unc-wilmington-luke-craig",
+          "team": "UNC Wilmington",
+          "BF": 10
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2024-04-14-virginia-tech-georgia-tech-att0268",
+      "date": "2024-04-14",
+      "away": "Virginia Tech",
+      "home": "Georgia Tech",
+      "source_url": "https://storage.googleapis.com/ramblinwreck-com-prod/2024/04/gt041424.pdf",
+      "status": "unresolved",
+      "reason": "date not confirmed"
+    },
+    {
+      "game_id": "cb-2024-04-15-southern-mississippi-georgia-state-att0269",
+      "date": "2024-04-14",
+      "away": "Southern Mississippi",
+      "home": "Georgia State",
+      "source_url": "https://southernmiss.com/sports/baseball/stats/2024/georgia-state/boxscore/11075",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 7,
+      "added": 7,
+      "recovered_this_run": 7,
+      "values": [
+        {
+          "player_id": "cb-southern-mississippi-will-armistead",
+          "team": "Southern Mississippi",
+          "BF": 19
+        },
+        {
+          "player_id": "cb-southern-mississippi-kros-sivley",
+          "team": "Southern Mississippi",
+          "BF": 26
+        },
+        {
+          "player_id": "cb-southern-mississippi-chandler-best",
+          "team": "Southern Mississippi",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-georgia-state-rob-evans",
+          "team": "Georgia State",
+          "BF": 24
+        },
+        {
+          "player_id": "cb-georgia-state-davis-chastain",
+          "team": "Georgia State",
+          "BF": 11
+        },
+        {
+          "player_id": "cb-georgia-state-aidan-mcevoy",
+          "team": "Georgia State",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-georgia-state-tyler-roche",
+          "team": "Georgia State",
+          "BF": 4
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2024-04-21-connecticut-georgetown-att0270",
+      "date": "2024-04-21",
+      "away": "Connecticut",
+      "home": "Georgetown",
+      "source_url": "https://guhoyas.com/sports/baseball/stats/2024/university-of-connecticut/boxscore/20469",
+      "status": "unresolved",
+      "reason": "expected two explicit BF pitching tables, found 0; pitching reconciliation: rows=5 sums=[15, 6, 6, 2, 9, 44] totals=[] skipped=[]; pitching reconciliation: rows=5 sums=[9, 7, 7, 5, 5, 46] totals=[] skipped=[]"
+    },
+    {
+      "game_id": "cb-2024-04-26-baylor-west-virginia-att0271",
+      "date": "2024-04-26",
+      "away": "Baylor",
+      "home": "West Virginia",
+      "source_url": "https://wvusports.com/sports/baseball/stats/2024/baylor/boxscore/20196",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 8,
+      "added": 8,
+      "recovered_this_run": 8,
+      "values": [
+        {
+          "player_id": "cb-baylor-mason-marriott",
+          "team": "Baylor",
+          "BF": 14
+        },
+        {
+          "player_id": "cb-baylor-mason-green",
+          "team": "Baylor",
+          "BF": 19
+        },
+        {
+          "player_id": "cb-baylor-grant-golomb",
+          "team": "Baylor",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-baylor-tanner-duke",
+          "team": "Baylor",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-west-virginia-hayden-cooper",
+          "team": "West Virginia",
+          "BF": 16
+        },
+        {
+          "player_id": "cb-west-virginia-tyler-switalski",
+          "team": "West Virginia",
+          "BF": 16
+        },
+        {
+          "player_id": "cb-west-virginia-robby-porco",
+          "team": "West Virginia",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-west-virginia-joseph-fredericks",
+          "team": "West Virginia",
+          "BF": 3
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2024-04-27-baylor-west-virginia-att0272",
+      "date": "2024-04-27",
+      "away": "Baylor",
+      "home": "West Virginia",
+      "source_url": "https://wvusports.com/sports/baseball/stats/2024/baylor/boxscore/20197",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 6,
+      "added": 6,
+      "recovered_this_run": 6,
+      "values": [
+        {
+          "player_id": "cb-baylor-collin-mckinney",
+          "team": "Baylor",
+          "BF": 21
+        },
+        {
+          "player_id": "cb-baylor-patrick-hail",
+          "team": "Baylor",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-baylor-rj-ruais",
+          "team": "Baylor",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-west-virginia-derek-clark",
+          "team": "West Virginia",
+          "BF": 33
+        },
+        {
+          "player_id": "cb-west-virginia-carson-estridge",
+          "team": "West Virginia",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-west-virginia-maxx-yehl",
+          "team": "West Virginia",
+          "BF": 1
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2024-04-28-st-louis-george-washington-att0273",
+      "date": "2024-04-28",
+      "away": "St. Louis",
+      "home": "George Washington",
+      "source_url": "https://gwsports.com/sports/baseball/stats/2024/saint-louis/boxscore/14475",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 8,
+      "added": 8,
+      "recovered_this_run": 8,
+      "values": [
+        {
+          "player_id": "cb-st-louis-dawson-smith",
+          "team": "St. Louis",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-st-louis-owen-kelly",
+          "team": "St. Louis",
+          "BF": 18
+        },
+        {
+          "player_id": "cb-st-louis-evan-gray",
+          "team": "St. Louis",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-george-washington-jarrett-korson",
+          "team": "George Washington",
+          "BF": 13
+        },
+        {
+          "player_id": "cb-george-washington-andrew-cutler",
+          "team": "George Washington",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-george-washington-reese-crochet",
+          "team": "George Washington",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-george-washington-tyler-blankenship",
+          "team": "George Washington",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-george-washington-benny-wilson",
+          "team": "George Washington",
+          "BF": 6
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2024-05-01-campbell-liberty-att0274",
+      "date": "2024-05-01",
+      "away": "Campbell",
+      "home": "Liberty",
+      "source_url": "https://libertyflames.com/sports/baseball/stats/2024/campbell/boxscore/13445",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 13,
+      "added": 13,
+      "recovered_this_run": 13,
+      "values": [
+        {
+          "player_id": "cb-campbell-david-rossow",
+          "team": "Campbell",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-campbell-simon-bargo",
+          "team": "Campbell",
+          "BF": 16
+        },
+        {
+          "player_id": "cb-campbell-will-palmer",
+          "team": "Campbell",
+          "BF": 12
+        },
+        {
+          "player_id": "cb-campbell-ethan-snyder",
+          "team": "Campbell",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-campbell-kamau-freeman",
+          "team": "Campbell",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-campbell-drew-siegner",
+          "team": "Campbell",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-liberty-bryce-dolby",
+          "team": "Liberty",
+          "BF": 18
+        },
+        {
+          "player_id": "cb-liberty-josh-swink",
+          "team": "Liberty",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-liberty-cale-bolton",
+          "team": "Liberty",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-liberty-trey-cooper",
+          "team": "Liberty",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-liberty-garrett-mclaughlin",
+          "team": "Liberty",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-liberty-graham-edwards",
+          "team": "Liberty",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-liberty-brandon-dahlman",
+          "team": "Liberty",
+          "BF": 10
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2024-05-04-santa-clara-san-diego-att0275",
+      "date": "2024-05-04",
+      "away": "Santa Clara",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2024/santa-clara/boxscore/14356",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 3,
+      "added": 3,
+      "recovered_this_run": 3,
+      "values": [
+        {
+          "player_id": "cb-santa-clara-brandon-gomez",
+          "team": "Santa Clara",
+          "BF": 31
+        },
+        {
+          "player_id": "cb-san-diego-logan-reddemann",
+          "team": "San Diego",
+          "BF": 31
+        },
+        {
+          "player_id": "cb-san-diego-conner-thurman",
+          "team": "San Diego",
+          "BF": 4
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2024-05-05-california-southern-california-att0276",
+      "date": "2024-05-05",
+      "away": "California",
+      "home": "Southern California",
+      "source_url": "https://usctrojans.com/sports/baseball/stats/2024/california/boxscore/33804",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 6,
+      "added": 6,
+      "recovered_this_run": 6,
+      "values": [
+        {
+          "player_id": "cb-california-trey-newmann",
+          "team": "California",
+          "BF": 21
+        },
+        {
+          "player_id": "cb-california-austin-turkington",
+          "team": "California",
+          "BF": 12
+        },
+        {
+          "player_id": "cb-california-tyler-stasiowski",
+          "team": "California",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-southern-california-william-watson",
+          "team": "Southern California",
+          "BF": 22
+        },
+        {
+          "player_id": "cb-southern-california-xavier-martinez",
+          "team": "Southern California",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-southern-california-josh-blum",
+          "team": "Southern California",
+          "BF": 9
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2024-05-21-miami-louisville-att0277",
+      "date": "2024-05-21",
+      "away": "Miami",
+      "home": "Louisville",
+      "source_url": "https://gocards.com/sports/baseball/stats/2024/miami/boxscore/25055",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 6,
+      "added": 6,
+      "recovered_this_run": 6,
+      "values": [
+        {
+          "player_id": "cb-miami-rafe-schlesinger",
+          "team": "Miami",
+          "BF": 25
+        },
+        {
+          "player_id": "cb-miami-myles-caba",
+          "team": "Miami",
+          "BF": 15
+        },
+        {
+          "player_id": "cb-louisville-evan-webster",
+          "team": "Louisville",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-louisville-patrick-forbes",
+          "team": "Louisville",
+          "BF": 20
+        },
+        {
+          "player_id": "cb-louisville-tucker-biven",
+          "team": "Louisville",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-louisville-kaleb-corbett",
+          "team": "Louisville",
+          "BF": 8
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2024-05-21-georgia-tech-florida-state-att0278",
+      "date": "2024-05-21",
+      "away": "Georgia Tech",
+      "home": "Florida State",
+      "source_url": "https://seminoles.com/sports/baseball/stats/2024/georgia-tech/boxscore/13782",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 11,
+      "added": 11,
+      "recovered_this_run": 11,
+      "values": [
+        {
+          "player_id": "cb-georgia-tech-tate-mckee",
+          "team": "Georgia Tech",
+          "BF": 16
+        },
+        {
+          "player_id": "cb-georgia-tech-camron-hill",
+          "team": "Georgia Tech",
+          "BF": 12
+        },
+        {
+          "player_id": "cb-georgia-tech-dawson-brown",
+          "team": "Georgia Tech",
+          "BF": 12
+        },
+        {
+          "player_id": "cb-florida-state-conner-whittaker",
+          "team": "Florida State",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-florida-state-john-abraham",
+          "team": "Florida State",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-florida-state-joe-charles",
+          "team": "Florida State",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-florida-state-brennen-oxford",
+          "team": "Florida State",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-florida-state-noah-short",
+          "team": "Florida State",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-florida-state-connor-hults",
+          "team": "Florida State",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-florida-state-andrew-armstrong",
+          "team": "Florida State",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-florida-state-jamie-arnold",
+          "team": "Florida State",
+          "BF": 3
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2024-05-21-virginia-tech-duke-att0279",
+      "date": "2024-05-21",
+      "away": "Virginia Tech",
+      "home": "Duke",
+      "source_url": "https://goduke.com/sports/baseball/stats/2024/virginia-tech/boxscore/23386",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 13,
+      "added": 13,
+      "recovered_this_run": 13,
+      "values": [
+        {
+          "player_id": "cb-virginia-tech-wyatt-parliament",
+          "team": "Virginia Tech",
+          "BF": 11
+        },
+        {
+          "player_id": "cb-virginia-tech-matthew-siverling",
+          "team": "Virginia Tech",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-virginia-tech-jordan-little",
+          "team": "Virginia Tech",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-virginia-tech-jacob-stretch",
+          "team": "Virginia Tech",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-virginia-tech-jacob-exum",
+          "team": "Virginia Tech",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-virginia-tech-david-shoemaker",
+          "team": "Virginia Tech",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-virginia-tech-brady-kirtner",
+          "team": "Virginia Tech",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-duke-ryan-higgins",
+          "team": "Duke",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-duke-james-tallon",
+          "team": "Duke",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-duke-david-boisvert",
+          "team": "Duke",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-duke-tim-noone",
+          "team": "Duke",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-duke-gabriel-nard",
+          "team": "Duke",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-duke-charlie-beilenson",
+          "team": "Duke",
+          "BF": 11
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2024-05-22-virginia-georgia-tech-att0280",
+      "date": "2024-05-22",
+      "away": "Virginia",
+      "home": "Georgia Tech",
+      "source_url": "https://static.virginiasports.com/custompages/sports/m-basebl/stats/2023-2024/55gt.htm",
+      "status": "existing_verified_backfill"
+    },
+    {
+      "game_id": "cb-2024-05-22-pittsburgh-wake-forest-att0281",
+      "date": "2024-05-22",
+      "away": "Pittsburgh",
+      "home": "Wake Forest",
+      "source_url": "https://godeacs.com/sports/baseball/stats/2024/pitt/boxscore/13807",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 12,
+      "added": 12,
+      "recovered_this_run": 12,
+      "values": [
+        {
+          "player_id": "cb-pittsburgh-aidan-coleman",
+          "team": "Pittsburgh",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-pittsburgh-ethan-firoved",
+          "team": "Pittsburgh",
+          "BF": 15
+        },
+        {
+          "player_id": "cb-pittsburgh-matthew-fernandez",
+          "team": "Pittsburgh",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-pittsburgh-matt-porter",
+          "team": "Pittsburgh",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-pittsburgh-gavin-chillot",
+          "team": "Pittsburgh",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-wake-forest-david-falco-jr",
+          "team": "Wake Forest",
+          "BF": 12
+        },
+        {
+          "player_id": "cb-wake-forest-zach-johnston",
+          "team": "Wake Forest",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-wake-forest-blake-morningstar",
+          "team": "Wake Forest",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-wake-forest-will-ray",
+          "team": "Wake Forest",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-wake-forest-joe-ariola",
+          "team": "Wake Forest",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-wake-forest-michael-massey",
+          "team": "Wake Forest",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-wake-forest-cole-roland",
+          "team": "Wake Forest",
+          "BF": 3
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2024-05-22-nc-state-virginia-tech-att0282",
+      "date": "2024-05-22",
+      "away": "NC State",
+      "home": "Virginia Tech",
+      "source_url": "https://gopack.com/sports/baseball/stats/2024/virginia-tech/boxscore/23276",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 10,
+      "added": 10,
+      "recovered_this_run": 10,
+      "values": [
+        {
+          "player_id": "cb-nc-state-ryan-marohn",
+          "team": "NC State",
+          "BF": 17
+        },
+        {
+          "player_id": "cb-nc-state-jaxon-lucas",
+          "team": "NC State",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-nc-state-p-j-labriola",
+          "team": "NC State",
+          "BF": 14
+        },
+        {
+          "player_id": "cb-nc-state-hollis-fanning",
+          "team": "NC State",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-virginia-tech-brett-renfrow",
+          "team": "Virginia Tech",
+          "BF": 15
+        },
+        {
+          "player_id": "cb-virginia-tech-grant-manning",
+          "team": "Virginia Tech",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-virginia-tech-andrew-sentlinger",
+          "team": "Virginia Tech",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-virginia-tech-carson-ohl",
+          "team": "Virginia Tech",
+          "BF": 11
+        },
+        {
+          "player_id": "cb-virginia-tech-preston-crowl",
+          "team": "Virginia Tech",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-virginia-tech-matthew-siverling",
+          "team": "Virginia Tech",
+          "BF": 3
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2024-05-23-clemson-miami-att0283",
+      "date": "2024-05-23",
+      "away": "Clemson",
+      "home": "Miami",
+      "source_url": "https://data.clemsontigers.com/Stats/Baseball/2024/cu245231.htm",
+      "status": "existing_verified_backfill"
+    },
+    {
+      "game_id": "cb-2024-05-23-north-carolina-pittsburgh-att0284",
+      "date": "2024-05-23",
+      "away": "North Carolina",
+      "home": "Pittsburgh",
+      "source_url": "https://goheels.com/sports/baseball/stats/2024/pitt/boxscore/25078",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 11,
+      "added": 11,
+      "recovered_this_run": 11,
+      "values": [
+        {
+          "player_id": "cb-north-carolina-jason-decaro",
+          "team": "North Carolina",
+          "BF": 27
+        },
+        {
+          "player_id": "cb-north-carolina-kyle-percival",
+          "team": "North Carolina",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-north-carolina-connor-bovair",
+          "team": "North Carolina",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-pittsburgh-ryan-andrade",
+          "team": "Pittsburgh",
+          "BF": 12
+        },
+        {
+          "player_id": "cb-pittsburgh-jack-sokol",
+          "team": "Pittsburgh",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-pittsburgh-ryan-partridge",
+          "team": "Pittsburgh",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-pittsburgh-kyle-mosley",
+          "team": "Pittsburgh",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-pittsburgh-erubiel-candelario",
+          "team": "Pittsburgh",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-pittsburgh-ben-kovel",
+          "team": "Pittsburgh",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-pittsburgh-phil-fox",
+          "team": "Pittsburgh",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-pittsburgh-kyle-demi",
+          "team": "Pittsburgh",
+          "BF": 7
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2024-05-23-duke-nc-state-att0285",
+      "date": "2024-05-23",
+      "away": "Duke",
+      "home": "NC State",
+      "source_url": "https://gopack.com/sports/baseball/stats/2024/duke/boxscore/23422",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 7,
+      "added": 7,
+      "recovered_this_run": 7,
+      "values": [
+        {
+          "player_id": "cb-duke-andrew-healy",
+          "team": "Duke",
+          "BF": 15
+        },
+        {
+          "player_id": "cb-duke-james-tallon",
+          "team": "Duke",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-duke-tim-noone",
+          "team": "Duke",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-nc-state-sam-highfill",
+          "team": "NC State",
+          "BF": 21
+        },
+        {
+          "player_id": "cb-nc-state-jacob-dudan",
+          "team": "NC State",
+          "BF": 11
+        },
+        {
+          "player_id": "cb-nc-state-cooper-consiglio",
+          "team": "NC State",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-nc-state-derrick-smith",
+          "team": "NC State",
+          "BF": 4
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2024-05-23-florida-state-virginia-att0286",
+      "date": "2024-05-24",
+      "away": "Florida State",
+      "home": "Virginia",
+      "source_url": "https://seminoles.com/sports/baseball/stats/2024/virginia/boxscore/15137",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 10,
+      "added": 10,
+      "recovered_this_run": 10,
+      "values": [
+        {
+          "player_id": "cb-florida-state-jamie-arnold",
+          "team": "Florida State",
+          "BF": 23
+        },
+        {
+          "player_id": "cb-florida-state-carson-dorsey",
+          "team": "Florida State",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-florida-state-brennen-oxford",
+          "team": "Florida State",
+          "BF": 11
+        },
+        {
+          "player_id": "cb-virginia-joe-savino",
+          "team": "Virginia",
+          "BF": 20
+        },
+        {
+          "player_id": "cb-virginia-blake-barker",
+          "team": "Virginia",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-virginia-chase-hungate",
+          "team": "Virginia",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-virginia-angelo-tonas",
+          "team": "Virginia",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-virginia-aidan-teel",
+          "team": "Virginia",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-virginia-ryan-osinski",
+          "team": "Virginia",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-virginia-jay-woolfolk",
+          "team": "Virginia",
+          "BF": 10
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2024-05-24-louisville-clemson-att0287",
+      "date": "2024-05-24",
+      "away": "Louisville",
+      "home": "Clemson",
+      "source_url": "https://gocards.com/sports/baseball/stats/2024/clemson/boxscore/25056",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 8,
+      "added": 8,
+      "recovered_this_run": 8,
+      "values": [
+        {
+          "player_id": "cb-louisville-sebastian-gongora",
+          "team": "Louisville",
+          "BF": 24
+        },
+        {
+          "player_id": "cb-louisville-evan-webster",
+          "team": "Louisville",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-louisville-tucker-biven",
+          "team": "Louisville",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-clemson-rocco-reid",
+          "team": "Clemson",
+          "BF": 11
+        },
+        {
+          "player_id": "cb-clemson-billy-barlow",
+          "team": "Clemson",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-clemson-jacob-mcgovern",
+          "team": "Clemson",
+          "BF": 13
+        },
+        {
+          "player_id": "cb-clemson-drew-titsworth",
+          "team": "Clemson",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-clemson-austin-gordon",
+          "team": "Clemson",
+          "BF": 3
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2024-05-31-james-madison-south-carolina-att0288",
+      "date": "2024-05-31",
+      "away": "James Madison",
+      "home": "South Carolina",
+      "source_url": "https://jmusports.com/sports/baseball/stats/2024/south-carolina/boxscore/19912",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 7,
+      "added": 7,
+      "recovered_this_run": 7,
+      "values": [
+        {
+          "player_id": "cb-james-madison-todd-mozoki",
+          "team": "James Madison",
+          "BF": 11
+        },
+        {
+          "player_id": "cb-james-madison-jackson-logar",
+          "team": "James Madison",
+          "BF": 11
+        },
+        {
+          "player_id": "cb-james-madison-donovan-burke",
+          "team": "James Madison",
+          "BF": 14
+        },
+        {
+          "player_id": "cb-james-madison-joe-vogatsky",
+          "team": "James Madison",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-south-carolina-eli-jones",
+          "team": "South Carolina",
+          "BF": 18
+        },
+        {
+          "player_id": "cb-south-carolina-ty-good",
+          "team": "South Carolina",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-south-carolina-chris-veach",
+          "team": "South Carolina",
+          "BF": 19
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2024-05-31-bryant-nc-state-att0289",
+      "date": "2024-05-31",
+      "away": "Bryant",
+      "home": "NC State",
+      "source_url": "https://bryantbulldogs.com/sports/baseball/stats/2024/nc-state-university/boxscore/10641",
+      "status": "unresolved",
+      "reason": "expected two explicit BF pitching tables, found 0; pitching reconciliation: rows=4 sums=[11, 9, 8, 7, 5, 43] totals=[] skipped=[]; pitching reconciliation: rows=2 sums=[4, 2, 2, 2, 10, 33] totals=[] skipped=[]"
+    },
+    {
+      "game_id": "cb-2024-06-01-bryant-james-madison-att0290",
+      "date": "2024-06-01",
+      "away": "Bryant",
+      "home": "James Madison",
+      "source_url": "https://bryantbulldogs.com/sports/baseball/stats/2024/james-madison-university/boxscore/10642",
+      "status": "unresolved",
+      "reason": "expected two explicit BF pitching tables, found 0; pitching reconciliation: rows=6 sums=[9, 8, 7, 6, 6, 36] totals=[] skipped=[]; pitching reconciliation: rows=4 sums=[8, 1, 0, 1, 9, 36] totals=[] skipped=[]"
+    },
+    {
+      "game_id": "cb-2024-06-01-south-carolina-nc-state-att0291",
+      "date": "2024-06-01",
+      "away": "South Carolina",
+      "home": "NC State",
+      "source_url": "https://gopack.com/sports/baseball/stats/2024/south-carolina/boxscore/23424",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 6,
+      "added": 6,
+      "recovered_this_run": 6,
+      "values": [
+        {
+          "player_id": "cb-south-carolina-garrett-gainey",
+          "team": "South Carolina",
+          "BF": 27
+        },
+        {
+          "player_id": "cb-south-carolina-connor-mccreery",
+          "team": "South Carolina",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-south-carolina-matthew-becker",
+          "team": "South Carolina",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-nc-state-dominic-fritton",
+          "team": "NC State",
+          "BF": 20
+        },
+        {
+          "player_id": "cb-nc-state-cooper-consiglio",
+          "team": "NC State",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-nc-state-derrick-smith",
+          "team": "NC State",
+          "BF": 6
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2024-06-02-south-carolina-james-madison-att0292",
+      "date": "2024-06-02",
+      "away": "South Carolina",
+      "home": "James Madison",
+      "source_url": "https://jmusports.com/sports/baseball/stats/2024/south-carolina/boxscore/19973",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 5,
+      "added": 5,
+      "recovered_this_run": 5,
+      "values": [
+        {
+          "player_id": "cb-south-carolina-dylan-eskew",
+          "team": "South Carolina",
+          "BF": 23
+        },
+        {
+          "player_id": "cb-south-carolina-tyler-pitzer",
+          "team": "South Carolina",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-south-carolina-parker-marlatt",
+          "team": "South Carolina",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-james-madison-casey-smith",
+          "team": "James Madison",
+          "BF": 11
+        },
+        {
+          "player_id": "cb-james-madison-donovan-burke",
+          "team": "James Madison",
+          "BF": 25
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2024-06-02-indianapolis-tampa-att0293",
+      "date": "2024-06-02",
+      "away": "Indianapolis",
+      "home": "Tampa",
+      "source_url": "https://athletics.uindy.edu/sports/baseball/stats/2024/tampa/boxscore/12937",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 7,
+      "added": 7,
+      "recovered_this_run": 7,
+      "values": [
+        {
+          "player_id": "cb-indianapolis-diego-cardenas",
+          "team": "Indianapolis",
+          "BF": 28
+        },
+        {
+          "player_id": "cb-indianapolis-logan-peterson",
+          "team": "Indianapolis",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-indianapolis-payton-plym",
+          "team": "Indianapolis",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-indianapolis-austin-bestul",
+          "team": "Indianapolis",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-tampa-alex-canney",
+          "team": "Tampa",
+          "BF": 27
+        },
+        {
+          "player_id": "cb-tampa-j-p-gates",
+          "team": "Tampa",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-tampa-eli-thurmond",
+          "team": "Tampa",
+          "BF": 3
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2024-06-03-point-loma-nazarene-angelo-state-att0294",
+      "date": "2024-06-03",
+      "away": "Point Loma Nazarene",
+      "home": "Angelo State",
+      "source_url": "https://angelosports.com/sports/baseball/stats/2024/-4-point-loma/boxscore/5819",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 11,
+      "added": 11,
+      "recovered_this_run": 11,
+      "values": [
+        {
+          "player_id": "cb-point-loma-nazarene-austyn-coleman",
+          "team": "Point Loma Nazarene",
+          "BF": 18
+        },
+        {
+          "player_id": "cb-point-loma-nazarene-christian-williams",
+          "team": "Point Loma Nazarene",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-point-loma-nazarene-kaden-lewis",
+          "team": "Point Loma Nazarene",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-point-loma-nazarene-hunter-otjen",
+          "team": "Point Loma Nazarene",
+          "BF": 11
+        },
+        {
+          "player_id": "cb-point-loma-nazarene-max-montplaisir",
+          "team": "Point Loma Nazarene",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-point-loma-nazarene-michael-sarhatt",
+          "team": "Point Loma Nazarene",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-angelo-state-alizaeh-gutierrez",
+          "team": "Angelo State",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-angelo-state-austin-teel",
+          "team": "Angelo State",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-angelo-state-colby-casey",
+          "team": "Angelo State",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-angelo-state-mason-bryant",
+          "team": "Angelo State",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-angelo-state-johnny-stacy",
+          "team": "Angelo State",
+          "BF": 10
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2024-06-08-florida-clemson-att0295",
+      "date": "2024-06-08",
+      "away": "Florida",
+      "home": "Clemson",
+      "source_url": "https://floridagators.com/sports/baseball/stats/2024/clemson/boxscore/26527",
+      "status": "recovered",
+      "method": "official HTML numeric-tail extraction and team totals",
+      "pitchers": 8,
+      "added": 8,
+      "recovered_this_run": 8,
+      "values": [
+        {
+          "player_id": "cb-florida-liam-peterson",
+          "team": "Florida",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-florida-fisher-jameson",
+          "team": "Florida",
+          "BF": 17
+        },
+        {
+          "player_id": "cb-florida-cade-fisher",
+          "team": "Florida",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-florida-brandon-neely",
+          "team": "Florida",
+          "BF": 13
+        },
+        {
+          "player_id": "cb-clemson-tristan-smith",
+          "team": "Clemson",
+          "BF": 20
+        },
+        {
+          "player_id": "cb-clemson-lucas-mahlstedt",
+          "team": "Clemson",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-clemson-reed-garris",
+          "team": "Clemson",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-clemson-jacob-mcgovern",
+          "team": "Clemson",
+          "BF": 17
+        }
+      ]
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-name: Four-school CFB ESPN portrait audit
+name: Four-school CFB ESPN portrait recovery
 on:
   workflow_dispatch:
   push:
@@ -26,7 +26,7 @@ jobs:
           python - <<'PY'
           import json,pathlib,http.server,threading
           from playwright.sync_api import sync_playwright
-          data=pathlib.Path('cfb/data');reg=json.loads((data/'player_portraits.json').read_text());report=data/'espn_portrait_audit.json';audit=json.loads(report.read_text())
+          data=pathlib.Path('cfb/data');reg=json.loads((data/'player_portraits.json').read_text());report=data/'espn_portrait_recovery.json';audit=json.loads(report.read_text())
           server=http.server.ThreadingHTTPServer(('127.0.0.1',0),http.server.SimpleHTTPRequestHandler)
           threading.Thread(target=server.serve_forever,daemon=True).start()
           base=f'http://127.0.0.1:{server.server_port}/cfb'
@@ -68,13 +68,13 @@ jobs:
           name: cfb-portrait-review
           path: |
             cfb-portrait-review/
-            cfb/data/espn_portrait_audit.json
+            cfb/data/espn_portrait_recovery.json
       - name: Publish verified ESPN portraits
         run: |
           git config user.name "Courtside Archive"
           git config user.email "actions@users.noreply.github.com"
-          git add cfb/data/player_portraits.json cfb/data/espn_portrait_audit.json
+          git add cfb/data/player_portraits.json cfb/data/espn_portrait_recovery.json
           if git diff --cached --quiet; then exit 0; fi
-          git commit -m "Register four-school verified ESPN college football headshots"
+          git commit -m "Recover verified ESPN college football headshots"
           git pull --rebase origin main
           git push origin main

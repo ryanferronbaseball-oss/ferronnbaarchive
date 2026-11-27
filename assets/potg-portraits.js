@@ -17,7 +17,7 @@ function collegeCandidates(id){
 function candidates(id){
  if(sport==="college")return collegeCandidates(id);
  if(sport==="nba")return [espn("nba",espnId(id))].filter(Boolean);
- if(sport==="cfb"){const u=cfbPortraits[id]?.url;return [typeof u==="string"&&/^https:\/\/a\.espncdn\.com\/i\/headshots\/(?:cfb|nfl)\/players\/full\/\d+\.png$/.test(u)?u:null,espn("cfb",/^\d+$/.test(id)?id:null)].filter(Boolean)}
+ if(sport==="cfb"){const u=cfbPortraits[id]?.url;return [typeof u==="string"&&/^https:\/\/a\.espncdn\.com\/i\/headshots\/(?:college-football|cfb|nfl)\/players\/full\/\d+\.png$/.test(u)?u:null,espn("college-football",/^\d+$/.test(id)?id:null)].filter(Boolean)}
  if(sport==="nfl")return [espn("nfl",/^\d+$/.test(id)?id:null)].filter(Boolean);
  if(sport==="college-baseball")return window.CollegeBaseballArchive?.playerPortraitCandidates?.(baseballPortraits[id],baseballRows.get(id)||[])||[];
  if(sport==="nhl")return [nhlPortraits[id]?.url].filter(Boolean);

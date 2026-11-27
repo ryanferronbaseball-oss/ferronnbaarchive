@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded",async()=>{
   const portrait=el("playerPortrait"),fallback=el("portraitFallback");
   fallback.textContent=name.split(/\s+/).map(x=>x[0]).slice(0,2).join("").toUpperCase();
   const registered=portraitRegistry[id]?.url;
-  const src=typeof registered==="string"&&/^https:\/\/a\.espncdn\.com\/i\/headshots\/(?:cfb|nfl)\/players\/full\/\d+\.png$/.test(registered)?registered:/^\d+$/.test(id)?"https://a.espncdn.com/i/headshots/cfb/players/full/"+encodeURIComponent(id)+".png":null;
+  const src=typeof registered==="string"&&/^https:\/\/a\.espncdn\.com\/i\/headshots\/(?:college-football|cfb|nfl)\/players\/full\/\d+\.png$/.test(registered)?registered:/^\d+$/.test(id)?"https://a.espncdn.com/i/headshots/college-football/players/full/"+encodeURIComponent(id)+".png":null;
   portrait.onerror=()=>{portrait.style.display="none";fallback.style.display="grid"};
   if(src){portrait.onload=()=>{if(portrait.naturalWidth<=1)return;portrait.style.display="block";fallback.style.display="none"};portrait.alt="Portrait of "+name;portrait.src=src}
   el("playerSummary").textContent=teamNames.join(" / ")+" · "+seen.length+" attended College Football game"+(seen.length===1?"":"s")+" with a recorded box-score category.";

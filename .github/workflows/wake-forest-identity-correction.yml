@@ -1,0 +1,108 @@
+name: Wake Forest Ballestero and Gunther corrections
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/wake-forest-identity-correction.yml']
+permissions:
+  contents: write
+concurrency:
+  group: college-baseball-portraits
+  cancel-in-progress: false
+jobs:
+  correct:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: pip install requests pillow beautifulsoup4
+      - name: Merge Ballestero, rename Gunther and recover official headshot
+        env:
+          PYTHONPATH: scripts
+        run: |
+          python - <<'PY'
+          import json,hashlib,re
+          from pathlib import Path
+          from urllib.parse import urljoin,urlsplit,parse_qs,unquote
+          from bs4 import BeautifulSoup
+          from audit_player_portraits import get,probe
+          from recover_lsu_final_portraits import norm,host,roster,card_images,photo_year
+          D=Path('college-baseball/data')
+          def load(n):return json.loads((D/n).read_text())
+          def save(n,d):(D/n).write_text(json.dumps(d,indent=2,ensure_ascii=False)+'\n')
+          source=[D/'player_stats.json',D/'games.json']
+          before=[hashlib.sha256(p.read_bytes()).hexdigest() for p in source]
+          rows=load('player_stats.json');cross=load('player_identity_crosswalk.json');reg=load('player_portraits.json')
+          a='cb-wake-forest-tate-ballestero';b=a+'-jr';g='cb-wake-forest-joshua-gunther'
+          ids={a,b}
+          matches=[r for r in rows if r['player_id'] in ids]
+          assert {r['player_id'] for r in matches}==ids and {r['team'] for r in matches}=={'Wake Forest'}
+          assert len({r['game_id'] for r in matches})==len(matches),'Same-game collision; do not merge blindly'
+          existing=[m for m in cross['merges'] if ids.intersection(m['source_player_ids'])]
+          if not existing:
+              cross['merges'].append({'name':'Tate Ballestero','display_name':'Tate Ballestero','canonical_id':a,'source_player_ids':sorted(ids),'schools':['Wake Forest'],'pairs':[{'team':'Wake Forest','source_player_id':i} for i in sorted(ids)],'source_rows':len(matches),'note':'Owner-approved suffix variant; official Wake Forest roster and distinct attended games.','evidence_urls':['https://godeacs.com/sports/baseball/roster/tate-ballestero/8085','https://godeacs.com/sports/baseball/stats/2024/north-carolina/boxscore/13808']})
+              for field in ('requested_person_merges','activated_person_merges'):
+                  if isinstance(cross.get(field),int):cross[field]+=1
+          else:assert len(existing)==1 and set(existing[0]['source_player_ids'])==ids and existing[0]['canonical_id']==a
+          assert any(r['player_id']==g and r['team']=='Wake Forest' for r in rows)
+          aliases=cross.setdefault('display_aliases',[])
+          if not any(x['player_id']==g for x in aliases):
+              aliases.append({'player_id':g,'display_name':'Josh Gunther','former_names':['Joshua Gunther'],'evidence_urls':['https://godeacs.com/sports/baseball/roster/josh-gunther/8474']})
+          assert a in reg
+          report={'ballestero':{'canonical_id':a,'source_ids':sorted(ids),'games':sorted({r['game_id'] for r in matches}),'source_rows':len(matches)},'gunther':{'id':g,'display_name':'Josh Gunther','portrait_status':'not found'},'scannell':'unchanged'}
+          if b in reg:
+              assert not reg[b].get('owner_preferred')
+              reg.pop(b)
+          # Roster-only or exact bio headshot, never action gallery. Prefer newest verified roster.
+          names={'joshgunther','joshuagunther'}
+          for y in (2027,2026,2025,2024):
+              page=roster(y,'godeacs.com',[])
+              if not page:continue
+              soup,u=page
+              options=list(card_images(soup,u,'godeacs.com',names))
+              for im in soup.find_all('img'):
+                  alt=norm(im.get('alt',''))
+                  if not (alt in names or any(n in alt and 'headshot' in alt for n in names)):continue
+                  options.extend(urljoin(u,im[k]) for k in ('src','data-src','data-lazy-src') if im.get(k))
+              for url in dict.fromkeys(options):
+                  underlying=unquote(parse_qs(urlsplit(url).query).get('url',[url])[0])
+                  if '/resize' in urlsplit(url).path or 'headshot' not in underlying.lower():continue
+                  if 'wakeforestsports.com/images/' not in underlying.lower():continue
+                  if not any(n in norm(underlying.rsplit('/',1)[-1]) for n in names) and 'gunther' not in underlying.lower():continue
+                  status,digest=probe(url)
+                  if status=='image' and digest:
+                      reg[g]={'url':url,'source':u,'provider':'college','school':'Wake Forest','season':y,'photo_year':photo_year(url,y)}
+                      report['gunther'].update(portrait_status='verified headshot',portrait=reg[g])
+                      break
+              if g in reg:break
+          assert before==[hashlib.sha256(p.read_bytes()).hexdigest() for p in source]
+          save('player_identity_crosswalk.json',cross);save('player_portraits.json',reg)
+          save('wake_forest_identity_correction.json',report)
+          print(json.dumps(report,indent=2))
+          PY
+      - name: Verify canonical archive profiles
+        run: |
+          node scripts/export_baseball_portrait_preferences.cjs 'Wake Forest' > /tmp/wake.json
+          python - <<'PY'
+          import json
+          p=json.load(open('/tmp/wake.json'))
+          b=[x for x in p if 'ballestero' in x['name'].lower()]
+          g=[x for x in p if 'gunther' in x['name'].lower()]
+          assert len(b)==1 and b[0]['name']=='Tate Ballestero' and b[0]['preference']['schools'][0]['games']==2,b
+          assert len(g)==1 and g[0]['name']=='Josh Gunther',g
+          print('Verified',len(p),'Wake Forest players;',b,g)
+          PY
+      - name: Commit verified corrections
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add college-baseball/data/player_identity_crosswalk.json college-baseball/data/player_portraits.json college-baseball/data/wake_forest_identity_correction.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Merge Tate Ballestero and display Josh Gunther with verified roster headshot"
+          git pull --rebase origin main
+          git push origin HEAD:main

@@ -1,0 +1,3542 @@
+{
+  "scope": "Previously unresolved college baseball games only; exact official BF; missing fields only",
+  "pass": "HTML recovery: absent footer and team earned-run differences",
+  "games": [
+    {
+      "game_id": "cb-2018-03-16-santa-clara-san-diego-att0018",
+      "date": "2018-03-16",
+      "away": "Santa Clara",
+      "home": "San Diego",
+      "source_url": "https://santaclarabroncos.com/sports/baseball/stats/2018/san-diego/boxscore/1056",
+      "original_reason": "source BF totals not reconciled",
+      "status": "recovered",
+      "method": "explicit official HTML BF; cross-checked source footer or opponent batting",
+      "verification": {
+        "Santa Clara": {
+          "totals": [
+            [
+              6,
+              2,
+              2,
+              4,
+              10,
+              37
+            ]
+          ],
+          "sums": [
+            6,
+            2,
+            2,
+            4,
+            10,
+            37
+          ],
+          "source_ab": 31,
+          "source_hbp": 1,
+          "verification": "explicit source BF; team footer",
+          "team_er_difference": false
+        },
+        "San Diego": {
+          "totals": [
+            [
+              14,
+              13,
+              13,
+              2,
+              10,
+              47
+            ]
+          ],
+          "sums": [
+            14,
+            13,
+            13,
+            2,
+            10,
+            47
+          ],
+          "source_ab": 40,
+          "source_hbp": 5,
+          "verification": "explicit source BF; team footer",
+          "team_er_difference": false
+        }
+      },
+      "pitchers": 6,
+      "added": 6,
+      "recovered_this_run": 6,
+      "values": [
+        {
+          "player_id": "cb-santa-clara-steven-wilson",
+          "team": "Santa Clara",
+          "BF": 18
+        },
+        {
+          "player_id": "cb-santa-clara-penn-murfee",
+          "team": "Santa Clara",
+          "BF": 19
+        },
+        {
+          "player_id": "cb-san-diego-paul-richan",
+          "team": "San Diego",
+          "BF": 31
+        },
+        {
+          "player_id": "cb-san-diego-travis-kuhn",
+          "team": "San Diego",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-san-diego-nigel-ward",
+          "team": "San Diego",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-san-diego-louie-crow",
+          "team": "San Diego",
+          "BF": 7
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2018-03-17-santa-clara-san-diego-att0019",
+      "date": "2018-03-17",
+      "away": "Santa Clara",
+      "home": "San Diego",
+      "source_url": "https://santaclarabroncos.com/sports/baseball/stats/2018/san-diego/boxscore/1057",
+      "original_reason": "source BF totals not reconciled",
+      "status": "recovered",
+      "method": "explicit official HTML BF; cross-checked source footer or opponent batting",
+      "verification": {
+        "Santa Clara": {
+          "totals": [
+            [
+              10,
+              8,
+              8,
+              5,
+              5,
+              37
+            ]
+          ],
+          "sums": [
+            10,
+            8,
+            8,
+            5,
+            5,
+            37
+          ],
+          "source_ab": 30,
+          "source_hbp": 0,
+          "verification": "explicit source BF; team footer",
+          "team_er_difference": false
+        },
+        "San Diego": {
+          "totals": [
+            [
+              3,
+              2,
+              2,
+              3,
+              16,
+              31
+            ]
+          ],
+          "sums": [
+            3,
+            2,
+            2,
+            3,
+            16,
+            31
+          ],
+          "source_ab": 27,
+          "source_hbp": 1,
+          "verification": "explicit source BF; team footer",
+          "team_er_difference": false
+        }
+      },
+      "pitchers": 7,
+      "added": 7,
+      "recovered_this_run": 7,
+      "values": [
+        {
+          "player_id": "cb-santa-clara-alex-waldsmith",
+          "team": "Santa Clara",
+          "BF": 12
+        },
+        {
+          "player_id": "cb-santa-clara-michael-praszker",
+          "team": "Santa Clara",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-santa-clara-freddie-erlandson",
+          "team": "Santa Clara",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-santa-clara-alex-barden",
+          "team": "Santa Clara",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-santa-clara-cade-negley",
+          "team": "Santa Clara",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-san-diego-chris-murphy",
+          "team": "San Diego",
+          "BF": 27
+        },
+        {
+          "player_id": "cb-san-diego-anthony-donatella",
+          "team": "San Diego",
+          "BF": 4
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2018-03-18-santa-clara-san-diego-att0020",
+      "date": "2018-03-18",
+      "away": "Santa Clara",
+      "home": "San Diego",
+      "source_url": "https://santaclarabroncos.com/sports/baseball/stats/2018/san-diego/boxscore/1058",
+      "original_reason": "source BF totals not reconciled",
+      "status": "recovered",
+      "method": "explicit official HTML BF; cross-checked source footer or opponent batting",
+      "verification": {
+        "Santa Clara": {
+          "totals": [
+            [
+              10,
+              7,
+              7,
+              10,
+              3,
+              45
+            ]
+          ],
+          "sums": [
+            10,
+            7,
+            7,
+            10,
+            3,
+            45
+          ],
+          "source_ab": 31,
+          "source_hbp": 2,
+          "verification": "explicit source BF; team footer",
+          "team_er_difference": false
+        },
+        "San Diego": {
+          "totals": [
+            [
+              15,
+              16,
+              16,
+              11,
+              7,
+              53
+            ]
+          ],
+          "sums": [
+            15,
+            16,
+            16,
+            11,
+            7,
+            53
+          ],
+          "source_ab": 40,
+          "source_hbp": 2,
+          "verification": "explicit source BF; team footer",
+          "team_er_difference": false
+        }
+      },
+      "pitchers": 7,
+      "added": 7,
+      "recovered_this_run": 7,
+      "values": [
+        {
+          "player_id": "cb-santa-clara-travis-howard",
+          "team": "Santa Clara",
+          "BF": 24
+        },
+        {
+          "player_id": "cb-santa-clara-eric-lex",
+          "team": "Santa Clara",
+          "BF": 16
+        },
+        {
+          "player_id": "cb-santa-clara-michael-praszker",
+          "team": "Santa Clara",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-san-diego-nick-sprengel",
+          "team": "San Diego",
+          "BF": 15
+        },
+        {
+          "player_id": "cb-san-diego-gabriel-ponce",
+          "team": "San Diego",
+          "BF": 17
+        },
+        {
+          "player_id": "cb-san-diego-nate-walker",
+          "team": "San Diego",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-san-diego-travis-kuhn",
+          "team": "San Diego",
+          "BF": 15
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2018-04-06-loyola-marymount-san-diego-att0022",
+      "date": "2018-04-06",
+      "away": "Loyola Marymount",
+      "home": "San Diego",
+      "source_url": "https://lmulions.com/sports/baseball/stats/2018/san-diego/boxscore/1916",
+      "original_reason": "source BF totals not reconciled",
+      "status": "recovered",
+      "method": "explicit official HTML BF; cross-checked source footer or opponent batting",
+      "verification": {
+        "Loyola Marymount": {
+          "totals": [
+            [
+              7,
+              3,
+              3,
+              2,
+              7,
+              35
+            ]
+          ],
+          "sums": [
+            7,
+            3,
+            3,
+            2,
+            7,
+            35
+          ],
+          "source_ab": 32,
+          "source_hbp": 1,
+          "verification": "explicit source BF; team footer",
+          "team_er_difference": false
+        },
+        "San Diego": {
+          "totals": [
+            [
+              7,
+              4,
+              4,
+              3,
+              9,
+              37
+            ]
+          ],
+          "sums": [
+            7,
+            4,
+            4,
+            3,
+            9,
+            37
+          ],
+          "source_ab": 31,
+          "source_hbp": 0,
+          "verification": "explicit source BF; team footer",
+          "team_er_difference": false
+        }
+      },
+      "pitchers": 4,
+      "added": 4,
+      "recovered_this_run": 4,
+      "values": [
+        {
+          "player_id": "cb-loyola-marymount-codie-paiva",
+          "team": "Loyola Marymount",
+          "BF": 29
+        },
+        {
+          "player_id": "cb-loyola-marymount-tyler-cohen",
+          "team": "Loyola Marymount",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-san-diego-paul-richan",
+          "team": "San Diego",
+          "BF": 29
+        },
+        {
+          "player_id": "cb-san-diego-anthony-donatella",
+          "team": "San Diego",
+          "BF": 8
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2018-04-07-loyola-marymount-san-diego-att0023",
+      "date": "2018-04-07",
+      "away": "Loyola Marymount",
+      "home": "San Diego",
+      "source_url": "https://lmulions.com/sports/baseball/stats/2018/san-diego/boxscore/1917",
+      "original_reason": "source BF totals not reconciled",
+      "status": "recovered",
+      "method": "explicit official HTML BF; cross-checked source footer or opponent batting",
+      "verification": {
+        "Loyola Marymount": {
+          "totals": [
+            [
+              18,
+              11,
+              11,
+              4,
+              3,
+              44
+            ]
+          ],
+          "sums": [
+            18,
+            11,
+            11,
+            4,
+            3,
+            44
+          ],
+          "source_ab": 40,
+          "source_hbp": 0,
+          "verification": "explicit source BF; team footer",
+          "team_er_difference": false
+        },
+        "San Diego": {
+          "totals": [
+            [
+              8,
+              4,
+              4,
+              4,
+              11,
+              39
+            ]
+          ],
+          "sums": [
+            8,
+            4,
+            4,
+            4,
+            11,
+            39
+          ],
+          "source_ab": 34,
+          "source_hbp": 1,
+          "verification": "explicit source BF; team footer",
+          "team_er_difference": false
+        }
+      },
+      "pitchers": 7,
+      "added": 7,
+      "recovered_this_run": 7,
+      "values": [
+        {
+          "player_id": "cb-loyola-marymount-josh-agnew",
+          "team": "Loyola Marymount",
+          "BF": 20
+        },
+        {
+          "player_id": "cb-loyola-marymount-brendan-kawaja",
+          "team": "Loyola Marymount",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-loyola-marymount-spencer-erdman",
+          "team": "Loyola Marymount",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-loyola-marymount-joe-murray",
+          "team": "Loyola Marymount",
+          "BF": 11
+        },
+        {
+          "player_id": "cb-loyola-marymount-mark-finkelnburg",
+          "team": "Loyola Marymount",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-san-diego-chris-murphy",
+          "team": "San Diego",
+          "BF": 25
+        },
+        {
+          "player_id": "cb-san-diego-gabriel-ponce",
+          "team": "San Diego",
+          "BF": 14
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2018-04-08-loyola-marymount-san-diego-att0024",
+      "date": "2018-04-08",
+      "away": "Loyola Marymount",
+      "home": "San Diego",
+      "source_url": "https://lmulions.com/sports/baseball/stats/2018/san-diego/boxscore/1918",
+      "original_reason": "source BF totals not reconciled",
+      "status": "unresolved",
+      "reason": "unable to uniquely match both full pitching tables to archived names and IP/H/R/ER/BB/K"
+    },
+    {
+      "game_id": "cb-2018-04-17-cal-state-fullerton-san-diego-att0026",
+      "date": "2018-04-17",
+      "away": "Cal State Fullerton",
+      "home": "San Diego",
+      "source_url": "https://fullertontitans.com/sports/baseball/stats/2018/san-diego/boxscore/1417",
+      "original_reason": "source BF totals not reconciled",
+      "status": "recovered",
+      "method": "explicit official HTML BF; cross-checked source footer or opponent batting",
+      "verification": {
+        "Cal State Fullerton": {
+          "totals": [
+            [
+              8,
+              10,
+              9,
+              7,
+              8,
+              42
+            ]
+          ],
+          "sums": [
+            8,
+            10,
+            9,
+            7,
+            8,
+            42
+          ],
+          "source_ab": 34,
+          "source_hbp": 1,
+          "verification": "explicit source BF; team footer",
+          "team_er_difference": false
+        },
+        "San Diego": {
+          "totals": [
+            [
+              7,
+              4,
+              4,
+              3,
+              8,
+              36
+            ]
+          ],
+          "sums": [
+            7,
+            4,
+            4,
+            3,
+            8,
+            36
+          ],
+          "source_ab": 33,
+          "source_hbp": 0,
+          "verification": "explicit source BF; team footer",
+          "team_er_difference": false
+        }
+      },
+      "pitchers": 11,
+      "added": 11,
+      "recovered_this_run": 11,
+      "values": [
+        {
+          "player_id": "cb-cal-state-fullerton-timothy-josten",
+          "team": "Cal State Fullerton",
+          "BF": 11
+        },
+        {
+          "player_id": "cb-cal-state-fullerton-dillon-brown",
+          "team": "Cal State Fullerton",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-cal-state-fullerton-tanner-bibee",
+          "team": "Cal State Fullerton",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-cal-state-fullerton-landon-anderson",
+          "team": "Cal State Fullerton",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-cal-state-fullerton-jimmy-endersby",
+          "team": "Cal State Fullerton",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-cal-state-fullerton-blake-workman",
+          "team": "Cal State Fullerton",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-cal-state-fullerton-erik-cha",
+          "team": "Cal State Fullerton",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-cal-state-fullerton-brett-conine",
+          "team": "Cal State Fullerton",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-san-diego-nate-kuchta",
+          "team": "San Diego",
+          "BF": 17
+        },
+        {
+          "player_id": "cb-san-diego-anthony-donatella",
+          "team": "San Diego",
+          "BF": 13
+        },
+        {
+          "player_id": "cb-san-diego-travis-kuhn",
+          "team": "San Diego",
+          "BF": 6
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2018-05-05-gonzaga-san-diego-att0028",
+      "date": "2018-05-05",
+      "away": "Gonzaga",
+      "home": "San Diego",
+      "source_url": "https://gozags.com/sports/baseball/stats/2018/san-diego/boxscore/1464",
+      "original_reason": "HTTPSConnectionPool(host='gozags.com', port=443): Read timed out. (read timeout=18)",
+      "status": "recovered",
+      "method": "explicit official HTML BF; cross-checked source footer or opponent batting",
+      "verification": {
+        "Gonzaga": {
+          "totals": [
+            [
+              10,
+              3,
+              3,
+              0,
+              8,
+              37
+            ]
+          ],
+          "sums": [
+            10,
+            3,
+            3,
+            0,
+            8,
+            37
+          ],
+          "source_ab": 36,
+          "source_hbp": 1,
+          "verification": "explicit source BF; team footer",
+          "team_er_difference": false
+        },
+        "San Diego": {
+          "totals": [
+            [
+              5,
+              5,
+              0,
+              3,
+              7,
+              39
+            ]
+          ],
+          "sums": [
+            5,
+            5,
+            0,
+            3,
+            7,
+            39
+          ],
+          "source_ab": 35,
+          "source_hbp": 1,
+          "verification": "explicit source BF; team footer",
+          "team_er_difference": false
+        }
+      },
+      "pitchers": 7,
+      "added": 7,
+      "recovered_this_run": 7,
+      "values": [
+        {
+          "player_id": "cb-gonzaga-alek-jacob",
+          "team": "Gonzaga",
+          "BF": 24
+        },
+        {
+          "player_id": "cb-gonzaga-trent-schulte",
+          "team": "Gonzaga",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-gonzaga-calvin-lebrun",
+          "team": "Gonzaga",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-gonzaga-casey-legumina",
+          "team": "Gonzaga",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-san-diego-c-murphy",
+          "team": "San Diego",
+          "BF": 30
+        },
+        {
+          "player_id": "cb-san-diego-nigel-ward",
+          "team": "San Diego",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-san-diego-a-donatella",
+          "team": "San Diego",
+          "BF": 8
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2019-02-16-wagner-san-diego-att0034",
+      "date": "2019-02-16",
+      "away": "Wagner",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/boxscore.aspx?id=8232&path=baseball",
+      "original_reason": "expected two explicit BF pitching tables, found 0; pitching reconciliation: rows=4 sums=[8, 3, 3, 4, 7, 35] totals=[] skipped=[]; pitching reconciliation: rows=3 sums=[7, 1, 1, 3, 10, 36] totals=[] skipped=[]",
+      "status": "recovered",
+      "method": "explicit official HTML BF; cross-checked source footer or opponent batting",
+      "verification": {
+        "Wagner": {
+          "totals": [],
+          "sums": [
+            8,
+            3,
+            3,
+            4,
+            7,
+            35
+          ],
+          "source_ab": 29,
+          "source_hbp": 1,
+          "verification": "explicit source BF; no footer; independent opponent batting totals required",
+          "team_er_difference": false
+        },
+        "San Diego": {
+          "totals": [],
+          "sums": [
+            7,
+            1,
+            1,
+            3,
+            10,
+            36
+          ],
+          "source_ab": 33,
+          "source_hbp": 0,
+          "verification": "explicit source BF; no footer; independent opponent batting totals required",
+          "team_er_difference": false
+        }
+      },
+      "pitchers": 7,
+      "added": 7,
+      "recovered_this_run": 7,
+      "values": [
+        {
+          "player_id": "cb-wagner-nick-zuppe",
+          "team": "Wagner",
+          "BF": 20
+        },
+        {
+          "player_id": "cb-wagner-ryan-lauk",
+          "team": "Wagner",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-wagner-kevin-wiseman",
+          "team": "Wagner",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-wagner-mccae-allen",
+          "team": "Wagner",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-san-diego-josh-hendrickson",
+          "team": "San Diego",
+          "BF": 22
+        },
+        {
+          "player_id": "cb-san-diego-nathan-walker",
+          "team": "San Diego",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-san-diego-travis-kuhn",
+          "team": "San Diego",
+          "BF": 4
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2019-03-04-st-john-s-san-diego-att0045",
+      "date": "2019-03-04",
+      "away": "St. John's",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/boxscore.aspx?id=9237&path=baseball",
+      "original_reason": "expected two explicit BF pitching tables, found 1; pitching reconciliation: rows=5 sums=[9, 7, 4, 3, 10, 39] totals=[[9, 7, 3, 3, 10, 39]] skipped=[]",
+      "status": "recovered",
+      "method": "explicit official HTML BF; cross-checked source footer or opponent batting",
+      "verification": {
+        "St. John's": {
+          "totals": [
+            [
+              7,
+              5,
+              5,
+              5,
+              4,
+              39
+            ]
+          ],
+          "sums": [
+            7,
+            5,
+            5,
+            5,
+            4,
+            39
+          ],
+          "source_ab": 32,
+          "source_hbp": 2,
+          "verification": "explicit source BF; team footer",
+          "team_er_difference": false
+        },
+        "San Diego": {
+          "totals": [
+            [
+              9,
+              7,
+              3,
+              3,
+              10,
+              39
+            ]
+          ],
+          "sums": [
+            9,
+            7,
+            4,
+            3,
+            10,
+            39
+          ],
+          "source_ab": 36,
+          "source_hbp": 0,
+          "verification": "explicit source BF; team footer",
+          "team_er_difference": true
+        }
+      },
+      "pitchers": 7,
+      "added": 7,
+      "recovered_this_run": 7,
+      "values": [
+        {
+          "player_id": "cb-st-john-s-jeff-belge",
+          "team": "St. John's",
+          "BF": 20
+        },
+        {
+          "player_id": "cb-st-john-s-joe-kelly",
+          "team": "St. John's",
+          "BF": 19
+        },
+        {
+          "player_id": "cb-san-diego-louie-crow",
+          "team": "San Diego",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-san-diego-grady-miller",
+          "team": "San Diego",
+          "BF": 13
+        },
+        {
+          "player_id": "cb-san-diego-nicola-mislinski",
+          "team": "San Diego",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-san-diego-nigel-ward",
+          "team": "San Diego",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-san-diego-travis-kuhn",
+          "team": "San Diego",
+          "BF": 7
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2020-02-18-uc-irvine-san-diego-att0073",
+      "date": "2020-02-18",
+      "away": "UC Irvine",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2020/uc-irvine/boxscore/9667",
+      "original_reason": "expected two explicit BF pitching tables, found 0; pitching reconciliation: rows=4 sums=[11, 9, 9, 4, 8, 43] totals=[] skipped=[]; pitching reconciliation: rows=5 sums=[3, 1, 1, 5, 10, 36] totals=[] skipped=[]",
+      "status": "recovered",
+      "method": "explicit official HTML BF; cross-checked source footer or opponent batting",
+      "verification": {
+        "UC Irvine": {
+          "totals": [],
+          "sums": [
+            11,
+            9,
+            9,
+            4,
+            8,
+            43
+          ],
+          "source_ab": 34,
+          "source_hbp": 4,
+          "verification": "explicit source BF; no footer; independent opponent batting totals required",
+          "team_er_difference": false
+        },
+        "San Diego": {
+          "totals": [],
+          "sums": [
+            3,
+            1,
+            1,
+            5,
+            10,
+            36
+          ],
+          "source_ab": 30,
+          "source_hbp": 1,
+          "verification": "explicit source BF; no footer; independent opponent batting totals required",
+          "team_er_difference": false
+        }
+      },
+      "pitchers": 9,
+      "added": 9,
+      "recovered_this_run": 9,
+      "values": [
+        {
+          "player_id": "cb-uc-irvine-nick-pinto",
+          "team": "UC Irvine",
+          "BF": 21
+        },
+        {
+          "player_id": "cb-uc-irvine-michael-frias",
+          "team": "UC Irvine",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-uc-irvine-troy-wentworth",
+          "team": "UC Irvine",
+          "BF": 13
+        },
+        {
+          "player_id": "cb-uc-irvine-brett-garcia",
+          "team": "UC Irvine",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-san-diego-grady-miller",
+          "team": "San Diego",
+          "BF": 22
+        },
+        {
+          "player_id": "cb-san-diego-nathan-walker",
+          "team": "San Diego",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-san-diego-jack-dolak",
+          "team": "San Diego",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-san-diego-conner-thurman",
+          "team": "San Diego",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-san-diego-brycen-mautz",
+          "team": "San Diego",
+          "BF": 3
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2020-03-10-cal-baptist-san-diego-att0083",
+      "date": "2020-03-10",
+      "away": "Cal Baptist",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2020/california-baptist/boxscore/9683",
+      "original_reason": "date not confirmed",
+      "status": "unresolved",
+      "reason": "date not confirmed; alternate official source required"
+    },
+    {
+      "game_id": "cb-2021-02-19-san-diego-san-diego-state-att0084",
+      "date": "2021-02-19",
+      "away": "San Diego",
+      "home": "San Diego State",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2021/san-diego-state/boxscore/12045",
+      "original_reason": "expected two explicit BF pitching tables, found 0; pitching reconciliation: rows=7 sums=[19, 14, 14, 3, 6, 45] totals=[] skipped=[]; pitching reconciliation: rows=5 sums=[11, 7, 5, 2, 9, 44] totals=[] skipped=[]",
+      "status": "recovered",
+      "method": "explicit official HTML BF; cross-checked source footer or opponent batting",
+      "verification": {
+        "San Diego": {
+          "totals": [],
+          "sums": [
+            19,
+            14,
+            14,
+            3,
+            6,
+            45
+          ],
+          "source_ab": 38,
+          "source_hbp": 2,
+          "verification": "explicit source BF; no footer; independent opponent batting totals required",
+          "team_er_difference": false
+        },
+        "San Diego State": {
+          "totals": [],
+          "sums": [
+            11,
+            7,
+            5,
+            2,
+            9,
+            44
+          ],
+          "source_ab": 36,
+          "source_hbp": 6,
+          "verification": "explicit source BF; no footer; independent opponent batting totals required",
+          "team_er_difference": false
+        }
+      },
+      "pitchers": 12,
+      "added": 12,
+      "recovered_this_run": 12,
+      "values": [
+        {
+          "player_id": "cb-san-diego-jake-miller",
+          "team": "San Diego",
+          "BF": 17
+        },
+        {
+          "player_id": "cb-san-diego-lucas-braun",
+          "team": "San Diego",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-san-diego-eddy-pelc",
+          "team": "San Diego",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-san-diego-ryan-robinson",
+          "team": "San Diego",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-san-diego-james-sashin",
+          "team": "San Diego",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-san-diego-ivran-romero",
+          "team": "San Diego",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-san-diego-jake-reed",
+          "team": "San Diego",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-san-diego-state-troy-melton",
+          "team": "San Diego State",
+          "BF": 22
+        },
+        {
+          "player_id": "cb-san-diego-state-christian-winston",
+          "team": "San Diego State",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-san-diego-state-bradley-collins",
+          "team": "San Diego State",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-san-diego-state-kyle-petri",
+          "team": "San Diego State",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-san-diego-state-kelena-sauer",
+          "team": "San Diego State",
+          "BF": 2
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2022-02-18-oregon-san-diego-att0116",
+      "date": "2022-02-18",
+      "away": "Oregon",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/oregon/boxscore/12438",
+      "original_reason": "expected two explicit BF pitching tables, found 0; pitching reconciliation: rows=5 sums=[9, 11, 9, 5, 11, 43] totals=[] skipped=[]; pitching reconciliation: rows=4 sums=[7, 1, 0, 5, 7, 37] totals=[] skipped=[]",
+      "status": "recovered",
+      "method": "explicit official HTML BF; cross-checked source footer or opponent batting",
+      "verification": {
+        "Oregon": {
+          "totals": [],
+          "sums": [
+            9,
+            11,
+            9,
+            5,
+            11,
+            43
+          ],
+          "source_ab": 35,
+          "source_hbp": 3,
+          "verification": "explicit source BF; no footer; independent opponent batting totals required",
+          "team_er_difference": false
+        },
+        "San Diego": {
+          "totals": [],
+          "sums": [
+            7,
+            1,
+            0,
+            5,
+            7,
+            37
+          ],
+          "source_ab": 31,
+          "source_hbp": 1,
+          "verification": "explicit source BF; no footer; independent opponent batting totals required",
+          "team_er_difference": false
+        }
+      },
+      "pitchers": 9,
+      "added": 9,
+      "recovered_this_run": 9,
+      "values": [
+        {
+          "player_id": "cb-oregon-adam-maier",
+          "team": "Oregon",
+          "BF": 22
+        },
+        {
+          "player_id": "cb-oregon-scott-ellis",
+          "team": "Oregon",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-oregon-dylan-sabia",
+          "team": "Oregon",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-oregon-matt-dallas",
+          "team": "Oregon",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-oregon-logan-mercado",
+          "team": "Oregon",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-san-diego-garrett-rennie",
+          "team": "San Diego",
+          "BF": 27
+        },
+        {
+          "player_id": "cb-san-diego-ivran-romero",
+          "team": "San Diego",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-san-diego-drake-frize",
+          "team": "San Diego",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-san-diego-james-sashin",
+          "team": "San Diego",
+          "BF": 1
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2022-03-25-saint-mary-s-san-diego-att0135",
+      "date": "2022-03-25",
+      "away": "Saint Mary's",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/saint-mary-s/boxscore/12457",
+      "original_reason": "expected two explicit BF pitching tables, found 1; pitching reconciliation: rows=4 sums=[10, 4, 3, 3, 7, 42] totals=[] skipped=[]",
+      "status": "recovered",
+      "method": "explicit official HTML BF; cross-checked source footer or opponent batting",
+      "verification": {
+        "Saint Mary's": {
+          "totals": [],
+          "sums": [
+            10,
+            4,
+            3,
+            3,
+            7,
+            42
+          ],
+          "source_ab": 36,
+          "source_hbp": 3,
+          "verification": "explicit source BF; no footer; independent opponent batting totals required",
+          "team_er_difference": false
+        },
+        "San Diego": {
+          "totals": [
+            [
+              6,
+              2,
+              1,
+              2,
+              13,
+              36
+            ]
+          ],
+          "sums": [
+            6,
+            2,
+            1,
+            2,
+            13,
+            36
+          ],
+          "source_ab": 33,
+          "source_hbp": 1,
+          "verification": "explicit source BF; team footer",
+          "team_er_difference": false
+        }
+      },
+      "pitchers": 7,
+      "added": 7,
+      "recovered_this_run": 7,
+      "values": [
+        {
+          "player_id": "cb-saint-mary-s-ryan-wiltse",
+          "team": "Saint Mary's",
+          "BF": 27
+        },
+        {
+          "player_id": "cb-saint-mary-s-jack-snook",
+          "team": "Saint Mary's",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-saint-mary-s-nathan-schneider",
+          "team": "Saint Mary's",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-saint-mary-s-jackson-hulett",
+          "team": "Saint Mary's",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-san-diego-garrett-rennie",
+          "team": "San Diego",
+          "BF": 27
+        },
+        {
+          "player_id": "cb-san-diego-ryan-robinson",
+          "team": "San Diego",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-san-diego-ian-churchill",
+          "team": "San Diego",
+          "BF": 4
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2022-03-27-saint-mary-s-san-diego-att0137",
+      "date": "2022-03-27",
+      "away": "Saint Mary's",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/saint-mary-s/boxscore/12459",
+      "original_reason": "expected two explicit BF pitching tables, found 1; pitching reconciliation: rows=5 sums=[12, 11, 4, 4, 2, 40] totals=[[12, 11, 3, 4, 2, 40]] skipped=[]",
+      "status": "recovered",
+      "method": "explicit official HTML BF; cross-checked source footer or opponent batting",
+      "verification": {
+        "Saint Mary's": {
+          "totals": [
+            [
+              12,
+              11,
+              3,
+              4,
+              2,
+              40
+            ]
+          ],
+          "sums": [
+            12,
+            11,
+            4,
+            4,
+            2,
+            40
+          ],
+          "source_ab": 32,
+          "source_hbp": 1,
+          "verification": "explicit source BF; team footer",
+          "team_er_difference": true
+        },
+        "San Diego": {
+          "totals": [
+            [
+              10,
+              6,
+              3,
+              3,
+              5,
+              46
+            ]
+          ],
+          "sums": [
+            10,
+            6,
+            3,
+            3,
+            5,
+            46
+          ],
+          "source_ab": 39,
+          "source_hbp": 4,
+          "verification": "explicit source BF; team footer",
+          "team_er_difference": false
+        }
+      },
+      "pitchers": 10,
+      "added": 10,
+      "recovered_this_run": 10,
+      "values": [
+        {
+          "player_id": "cb-saint-mary-s-conner-roberts",
+          "team": "Saint Mary's",
+          "BF": 17
+        },
+        {
+          "player_id": "cb-saint-mary-s-ryan-sanders",
+          "team": "Saint Mary's",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-saint-mary-s-connor-linchey",
+          "team": "Saint Mary's",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-saint-mary-s-jack-snook",
+          "team": "Saint Mary's",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-saint-mary-s-preston-howey",
+          "team": "Saint Mary's",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-san-diego-jack-hyde",
+          "team": "San Diego",
+          "BF": 13
+        },
+        {
+          "player_id": "cb-san-diego-ryan-robinson",
+          "team": "San Diego",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-san-diego-ian-churchill",
+          "team": "San Diego",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-san-diego-james-sashin",
+          "team": "San Diego",
+          "BF": 14
+        },
+        {
+          "player_id": "cb-san-diego-cole-colleran",
+          "team": "San Diego",
+          "BF": 5
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2022-04-09-san-diego-portland-att0144",
+      "date": "2022-04-09",
+      "away": "San Diego",
+      "home": "Portland",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/portland/boxscore/12466",
+      "original_reason": "expected two explicit BF pitching tables, found 1; pitching reconciliation: rows=4 sums=[12, 8, 6, 2, 6, 42] totals=[[12, 8, 5, 2, 6, 42]] skipped=[]",
+      "status": "recovered",
+      "method": "explicit official HTML BF; cross-checked source footer or opponent batting",
+      "verification": {
+        "San Diego": {
+          "totals": [
+            [
+              10,
+              6,
+              6,
+              3,
+              13,
+              39
+            ]
+          ],
+          "sums": [
+            10,
+            6,
+            6,
+            3,
+            13,
+            39
+          ],
+          "source_ab": 35,
+          "source_hbp": 1,
+          "verification": "explicit source BF; team footer",
+          "team_er_difference": false
+        },
+        "Portland": {
+          "totals": [
+            [
+              12,
+              8,
+              5,
+              2,
+              6,
+              42
+            ]
+          ],
+          "sums": [
+            12,
+            8,
+            6,
+            2,
+            6,
+            42
+          ],
+          "source_ab": 38,
+          "source_hbp": 1,
+          "verification": "explicit source BF; team footer",
+          "team_er_difference": true
+        }
+      },
+      "pitchers": 7,
+      "added": 7,
+      "recovered_this_run": 7,
+      "values": [
+        {
+          "player_id": "cb-san-diego-brycen-mautz",
+          "team": "San Diego",
+          "BF": 27
+        },
+        {
+          "player_id": "cb-san-diego-ryan-robinson",
+          "team": "San Diego",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-san-diego-ian-churchill",
+          "team": "San Diego",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-portland-caleb-franzen",
+          "team": "Portland",
+          "BF": 26
+        },
+        {
+          "player_id": "cb-portland-nick-nygard",
+          "team": "Portland",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-portland-brock-gillis",
+          "team": "Portland",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-portland-joey-gartrell",
+          "team": "Portland",
+          "BF": 4
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2022-04-14-loyola-marymount-san-diego-att0147",
+      "date": "2022-04-14",
+      "away": "Loyola Marymount",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/loyola-marymount/boxscore/12469",
+      "original_reason": "expected two explicit BF pitching tables, found 1; pitching reconciliation: rows=6 sums=[13, 8, 7, 2, 9, 57] totals=[[13, 8, 6, 2, 9, 57]] skipped=[]",
+      "status": "recovered",
+      "method": "explicit official HTML BF; cross-checked source footer or opponent batting",
+      "verification": {
+        "Loyola Marymount": {
+          "totals": [
+            [
+              14,
+              9,
+              7,
+              9,
+              11,
+              63
+            ]
+          ],
+          "sums": [
+            14,
+            9,
+            7,
+            9,
+            11,
+            63
+          ],
+          "source_ab": 52,
+          "source_hbp": 1,
+          "verification": "explicit source BF; team footer",
+          "team_er_difference": false
+        },
+        "San Diego": {
+          "totals": [
+            [
+              13,
+              8,
+              6,
+              2,
+              9,
+              57
+            ]
+          ],
+          "sums": [
+            13,
+            8,
+            7,
+            2,
+            9,
+            57
+          ],
+          "source_ab": 53,
+          "source_hbp": 1,
+          "verification": "explicit source BF; team footer",
+          "team_er_difference": true
+        }
+      },
+      "pitchers": 11,
+      "added": 11,
+      "recovered_this_run": 11,
+      "values": [
+        {
+          "player_id": "cb-loyola-marymount-matt-mcclure",
+          "team": "Loyola Marymount",
+          "BF": 21
+        },
+        {
+          "player_id": "cb-loyola-marymount-alex-burge",
+          "team": "Loyola Marymount",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-loyola-marymount-michael-nunez",
+          "team": "Loyola Marymount",
+          "BF": 11
+        },
+        {
+          "player_id": "cb-loyola-marymount-owen-hackman",
+          "team": "Loyola Marymount",
+          "BF": 18
+        },
+        {
+          "player_id": "cb-loyola-marymount-mason-kokodynski",
+          "team": "Loyola Marymount",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-san-diego-kyle-carr",
+          "team": "San Diego",
+          "BF": 12
+        },
+        {
+          "player_id": "cb-san-diego-james-sashin",
+          "team": "San Diego",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-san-diego-gabe-maya",
+          "team": "San Diego",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-san-diego-ryan-robinson",
+          "team": "San Diego",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-san-diego-ian-churchill",
+          "team": "San Diego",
+          "BF": 21
+        },
+        {
+          "player_id": "cb-san-diego-ivran-romero",
+          "team": "San Diego",
+          "BF": 3
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2022-05-25-san-francisco-san-diego-att0165",
+      "date": "2022-05-25",
+      "away": "San Francisco",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/san-francisco/boxscore/12656",
+      "original_reason": "expected two explicit BF pitching tables, found 0; pitching reconciliation: rows=5 sums=[11, 10, 8, 5, 7, 44] totals=[] skipped=[]; pitching reconciliation: rows=5 sums=[5, 5, 5, 5, 12, 37] totals=[] skipped=[]",
+      "status": "recovered",
+      "method": "explicit official HTML BF; cross-checked source footer or opponent batting",
+      "verification": {
+        "San Francisco": {
+          "totals": [],
+          "sums": [
+            11,
+            10,
+            8,
+            5,
+            7,
+            44
+          ],
+          "source_ab": 32,
+          "source_hbp": 4,
+          "verification": "explicit source BF; no footer; independent opponent batting totals required",
+          "team_er_difference": false
+        },
+        "San Diego": {
+          "totals": [],
+          "sums": [
+            5,
+            5,
+            5,
+            5,
+            12,
+            37
+          ],
+          "source_ab": 29,
+          "source_hbp": 1,
+          "verification": "explicit source BF; no footer; independent opponent batting totals required",
+          "team_er_difference": false
+        }
+      },
+      "pitchers": 10,
+      "added": 10,
+      "recovered_this_run": 10,
+      "values": [
+        {
+          "player_id": "cb-san-francisco-adam-shew",
+          "team": "San Francisco",
+          "BF": 13
+        },
+        {
+          "player_id": "cb-san-francisco-jesse-barron",
+          "team": "San Francisco",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-san-francisco-lance-santerre",
+          "team": "San Francisco",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-san-francisco-josh-mollerus",
+          "team": "San Francisco",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-san-francisco-owen-stevenson",
+          "team": "San Francisco",
+          "BF": 11
+        },
+        {
+          "player_id": "cb-san-diego-garrett-rennie",
+          "team": "San Diego",
+          "BF": 13
+        },
+        {
+          "player_id": "cb-san-diego-ian-churchill",
+          "team": "San Diego",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-san-diego-ivran-romero",
+          "team": "San Diego",
+          "BF": 11
+        },
+        {
+          "player_id": "cb-san-diego-brycen-mautz",
+          "team": "San Diego",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-san-diego-kyle-carr",
+          "team": "San Diego",
+          "BF": 3
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2022-05-26-san-diego-portland-att0167",
+      "date": "2022-05-26",
+      "away": "San Diego",
+      "home": "Portland",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2022/portland/boxscore/12657",
+      "original_reason": "expected two explicit BF pitching tables, found 1; pitching reconciliation: rows=4 sums=[19, 22, 19, 9, 10, 60] totals=[[19, 22, 18, 9, 10, 60]] skipped=[]",
+      "status": "recovered",
+      "method": "explicit official HTML BF; cross-checked source footer or opponent batting",
+      "verification": {
+        "San Diego": {
+          "totals": [
+            [
+              14,
+              8,
+              8,
+              6,
+              9,
+              47
+            ]
+          ],
+          "sums": [
+            14,
+            8,
+            8,
+            6,
+            9,
+            47
+          ],
+          "source_ab": 40,
+          "source_hbp": 1,
+          "verification": "explicit source BF; team footer",
+          "team_er_difference": false
+        },
+        "Portland": {
+          "totals": [
+            [
+              19,
+              22,
+              18,
+              9,
+              10,
+              60
+            ]
+          ],
+          "sums": [
+            19,
+            22,
+            19,
+            9,
+            10,
+            60
+          ],
+          "source_ab": 42,
+          "source_hbp": 5,
+          "verification": "explicit source BF; team footer",
+          "team_er_difference": true
+        }
+      },
+      "pitchers": 10,
+      "added": 10,
+      "recovered_this_run": 10,
+      "values": [
+        {
+          "player_id": "cb-san-diego-ryan-kysar",
+          "team": "San Diego",
+          "BF": 25
+        },
+        {
+          "player_id": "cb-san-diego-james-sashin",
+          "team": "San Diego",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-san-diego-cole-colleran",
+          "team": "San Diego",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-san-diego-ryan-robinson",
+          "team": "San Diego",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-san-diego-gabe-maya",
+          "team": "San Diego",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-san-diego-morgan-lunceford",
+          "team": "San Diego",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-portland-brett-gillis",
+          "team": "Portland",
+          "BF": 19
+        },
+        {
+          "player_id": "cb-portland-ryan-rembisz",
+          "team": "Portland",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-portland-kj-ruffo",
+          "team": "Portland",
+          "BF": 20
+        },
+        {
+          "player_id": "cb-portland-liam-hatakenaka",
+          "team": "Portland",
+          "BF": 14
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2022-06-04-vanderbilt-new-mexico-state-att0174",
+      "date": "2022-06-04",
+      "away": "Vanderbilt",
+      "home": "New Mexico State",
+      "source_url": "https://nmstatesports.com/sports/baseball/stats/2022/vanderbilt/boxscore/14804",
+      "original_reason": "expected two explicit BF pitching tables, found 1; pitching reconciliation: rows=7 sums=[18, 21, 17, 6, 3, 53] totals=[[18, 21, 16, 6, 3, 53]] skipped=[]",
+      "status": "recovered",
+      "method": "explicit official HTML BF; cross-checked source footer or opponent batting",
+      "verification": {
+        "Vanderbilt": {
+          "totals": [
+            [
+              7,
+              1,
+              1,
+              2,
+              14,
+              36
+            ]
+          ],
+          "sums": [
+            7,
+            1,
+            1,
+            2,
+            14,
+            36
+          ],
+          "source_ab": 34,
+          "source_hbp": 0,
+          "verification": "explicit source BF; team footer",
+          "team_er_difference": false
+        },
+        "New Mexico State": {
+          "totals": [
+            [
+              18,
+              21,
+              16,
+              6,
+              3,
+              53
+            ]
+          ],
+          "sums": [
+            18,
+            21,
+            17,
+            6,
+            3,
+            53
+          ],
+          "source_ab": 43,
+          "source_hbp": 1,
+          "verification": "explicit source BF; team footer",
+          "team_er_difference": true
+        }
+      },
+      "pitchers": 9,
+      "added": 9,
+      "recovered_this_run": 9,
+      "values": [
+        {
+          "player_id": "cb-vanderbilt-chris-mcelvain",
+          "team": "Vanderbilt",
+          "BF": 28
+        },
+        {
+          "player_id": "cb-vanderbilt-brett-hansen",
+          "team": "Vanderbilt",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-new-mexico-state-pablo-cortes",
+          "team": "New Mexico State",
+          "BF": 14
+        },
+        {
+          "player_id": "cb-new-mexico-state-sammy-natera",
+          "team": "New Mexico State",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-new-mexico-state-lyle-hibbitts",
+          "team": "New Mexico State",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-new-mexico-state-brendon-rodriguez",
+          "team": "New Mexico State",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-new-mexico-state-frank-dickson-iv",
+          "team": "New Mexico State",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-new-mexico-state-noah-estrella",
+          "team": "New Mexico State",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-new-mexico-state-hayden-johns",
+          "team": "New Mexico State",
+          "BF": 4
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2023-02-17-nebraska-san-diego-att0178",
+      "date": "2023-02-17",
+      "away": "Nebraska",
+      "home": "San Diego",
+      "source_url": "https://usdtoreros.com/sports/baseball/stats/2023/nebraska/boxscore/13891",
+      "original_reason": "expected two explicit BF pitching tables, found 0; pitching reconciliation: rows=4 sums=[10, 7, 7, 4, 8, 37] totals=[] skipped=[]; pitching reconciliation: rows=5 sums=[5, 3, 2, 7, 9, 41] totals=[] skipped=[]",
+      "status": "recovered",
+      "method": "explicit official HTML BF; cross-checked source footer or opponent batting",
+      "verification": {
+        "Nebraska": {
+          "totals": [],
+          "sums": [
+            10,
+            7,
+            7,
+            4,
+            8,
+            37
+          ],
+          "source_ab": 31,
+          "source_hbp": 1,
+          "verification": "explicit source BF; no footer; independent opponent batting totals required",
+          "team_er_difference": false
+        },
+        "San Diego": {
+          "totals": [],
+          "sums": [
+            5,
+            3,
+            2,
+            7,
+            9,
+            41
+          ],
+          "source_ab": 32,
+          "source_hbp": 2,
+          "verification": "explicit source BF; no footer; independent opponent batting totals required",
+          "team_er_difference": false
+        }
+      },
+      "pitchers": 9,
+      "added": 9,
+      "recovered_this_run": 9,
+      "values": [
+        {
+          "player_id": "cb-nebraska-emmett-olson",
+          "team": "Nebraska",
+          "BF": 22
+        },
+        {
+          "player_id": "cb-nebraska-michael-garza",
+          "team": "Nebraska",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-nebraska-corbin-hawkins",
+          "team": "Nebraska",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-nebraska-will-rizzo",
+          "team": "Nebraska",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-san-diego-james-sashin",
+          "team": "San Diego",
+          "BF": 15
+        },
+        {
+          "player_id": "cb-san-diego-jack-hyde",
+          "team": "San Diego",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-san-diego-mikiah-negrete",
+          "team": "San Diego",
+          "BF": 11
+        },
+        {
+          "player_id": "cb-san-diego-drake-frize",
+          "team": "San Diego",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-san-diego-ryan-robinson",
+          "team": "San Diego",
+          "BF": 5
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2024-02-16-duke-indiana-att0225",
+      "date": "2024-02-16",
+      "away": "Duke",
+      "home": "Indiana",
+      "source_url": "https://iuhoosiers.com/sports/baseball/stats/2024/duke/boxscore/26942",
+      "original_reason": "date not confirmed",
+      "status": "unresolved",
+      "reason": "date not confirmed; alternate official source required"
+    },
+    {
+      "game_id": "cb-2024-02-20-presbyterian-clemson-att0232",
+      "date": "2024-02-20",
+      "away": "Presbyterian",
+      "home": "Clemson",
+      "source_url": "https://gobluehose.com/sports/baseball/stats/2024/clemson/boxscore/13189",
+      "original_reason": "expected two explicit BF pitching tables, found 0; pitching reconciliation: rows=5 sums=[10, 8, 8, 7, 7, 42] totals=[] skipped=[]; pitching reconciliation: rows=4 sums=[3, 2, 2, 4, 8, 36] totals=[] skipped=[]",
+      "status": "recovered",
+      "method": "explicit official HTML BF; cross-checked source footer or opponent batting",
+      "verification": {
+        "Presbyterian": {
+          "totals": [],
+          "sums": [
+            10,
+            8,
+            8,
+            7,
+            7,
+            42
+          ],
+          "source_ab": 34,
+          "source_hbp": 1,
+          "verification": "explicit source BF; no footer; independent opponent batting totals required",
+          "team_er_difference": false
+        },
+        "Clemson": {
+          "totals": [],
+          "sums": [
+            3,
+            2,
+            2,
+            4,
+            8,
+            36
+          ],
+          "source_ab": 30,
+          "source_hbp": 1,
+          "verification": "explicit source BF; no footer; independent opponent batting totals required",
+          "team_er_difference": false
+        }
+      },
+      "pitchers": 9,
+      "added": 9,
+      "recovered_this_run": 9,
+      "values": [
+        {
+          "player_id": "cb-presbyterian-sean-hollister",
+          "team": "Presbyterian",
+          "BF": 12
+        },
+        {
+          "player_id": "cb-presbyterian-kyle-mueller",
+          "team": "Presbyterian",
+          "BF": 12
+        },
+        {
+          "player_id": "cb-presbyterian-jeffrey-hays",
+          "team": "Presbyterian",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-presbyterian-caden-barnett",
+          "team": "Presbyterian",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-presbyterian-tanner-smith",
+          "team": "Presbyterian",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-clemson-austin-gordon",
+          "team": "Clemson",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-clemson-joe-allen",
+          "team": "Clemson",
+          "BF": 17
+        },
+        {
+          "player_id": "cb-clemson-ethan-darden",
+          "team": "Clemson",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-clemson-ty-olenchuk",
+          "team": "Clemson",
+          "BF": 4
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2024-02-23-wichita-state-virginia-att0234",
+      "date": "2024-02-23",
+      "away": "Wichita State",
+      "home": "Virginia",
+      "source_url": "https://goshockers.com/sports/baseball/stats/2024/virginia/boxscore/17898",
+      "original_reason": "expected two explicit BF pitching tables, found 0; pitching reconciliation: rows=5 sums=[13, 5, 3, 4, 9, 49] totals=[] skipped=[]; pitching reconciliation: rows=5 sums=[10, 4, 4, 2, 14, 44] totals=[] skipped=[]",
+      "status": "recovered",
+      "method": "explicit official HTML BF; cross-checked source footer or opponent batting",
+      "verification": {
+        "Wichita State": {
+          "totals": [],
+          "sums": [
+            13,
+            5,
+            3,
+            4,
+            9,
+            49
+          ],
+          "source_ab": 41,
+          "source_hbp": 3,
+          "verification": "explicit source BF; no footer; independent opponent batting totals required",
+          "team_er_difference": false
+        },
+        "Virginia": {
+          "totals": [],
+          "sums": [
+            10,
+            4,
+            4,
+            2,
+            14,
+            44
+          ],
+          "source_ab": 39,
+          "source_hbp": 2,
+          "verification": "explicit source BF; no footer; independent opponent batting totals required",
+          "team_er_difference": false
+        }
+      },
+      "pitchers": 10,
+      "added": 10,
+      "recovered_this_run": 10,
+      "values": [
+        {
+          "player_id": "cb-wichita-state-caden-favors",
+          "team": "Wichita State",
+          "BF": 31
+        },
+        {
+          "player_id": "cb-wichita-state-caleb-anderson",
+          "team": "Wichita State",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-wichita-state-tyler-dobbs",
+          "team": "Wichita State",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-wichita-state-nate-adler",
+          "team": "Wichita State",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-wichita-state-hunter-holmes",
+          "team": "Wichita State",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-virginia-evan-blanco",
+          "team": "Virginia",
+          "BF": 19
+        },
+        {
+          "player_id": "cb-virginia-chase-hungate",
+          "team": "Virginia",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-virginia-bryson-moore",
+          "team": "Virginia",
+          "BF": 11
+        },
+        {
+          "player_id": "cb-virginia-blake-barker",
+          "team": "Virginia",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-virginia-aidan-teel",
+          "team": "Virginia",
+          "BF": 9
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2024-03-02-illinois-western-michigan-att0246",
+      "date": "2024-03-02",
+      "away": "Illinois",
+      "home": "Western Michigan",
+      "source_url": "https://wmubroncos.com/sports/baseball/stats/2024/illinois/boxscore/15776",
+      "original_reason": "expected two explicit BF pitching tables, found 0; pitching reconciliation: rows=4 sums=[9, 6, 5, 7, 13, 44] totals=[] skipped=[]; pitching reconciliation: rows=3 sums=[11, 8, 8, 9, 10, 50] totals=[] skipped=[]",
+      "status": "recovered",
+      "method": "explicit official HTML BF; cross-checked source footer or opponent batting",
+      "verification": {
+        "Illinois": {
+          "totals": [],
+          "sums": [
+            9,
+            6,
+            5,
+            7,
+            13,
+            44
+          ],
+          "source_ab": 37,
+          "source_hbp": 0,
+          "verification": "explicit source BF; no footer; independent opponent batting totals required",
+          "team_er_difference": false
+        },
+        "Western Michigan": {
+          "totals": [],
+          "sums": [
+            11,
+            8,
+            8,
+            9,
+            10,
+            50
+          ],
+          "source_ab": 39,
+          "source_hbp": 2,
+          "verification": "explicit source BF; no footer; independent opponent batting totals required",
+          "team_er_difference": false
+        }
+      },
+      "pitchers": 7,
+      "added": 7,
+      "recovered_this_run": 7,
+      "values": [
+        {
+          "player_id": "cb-illinois-l-tabeling",
+          "team": "Illinois",
+          "BF": 19
+        },
+        {
+          "player_id": "cb-illinois-s-reed",
+          "team": "Illinois",
+          "BF": 13
+        },
+        {
+          "player_id": "cb-illinois-w-lavin",
+          "team": "Illinois",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-illinois-j-rons",
+          "team": "Illinois",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-western-michigan-matt-hoover",
+          "team": "Western Michigan",
+          "BF": 18
+        },
+        {
+          "player_id": "cb-western-michigan-nolan-vlcek",
+          "team": "Western Michigan",
+          "BF": 20
+        },
+        {
+          "player_id": "cb-western-michigan-hayden-berg",
+          "team": "Western Michigan",
+          "BF": 12
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2024-03-22-mercer-unc-greensboro-att0259",
+      "date": "2024-03-22",
+      "away": "Mercer",
+      "home": "UNC Greensboro",
+      "source_url": "https://uncgspartans.com/sports/baseball/stats/2024/mercer/boxscore/8778",
+      "original_reason": "expected two explicit BF pitching tables, found 0; pitching reconciliation: rows=1 sums=[6, 2, 2, 1, 5, 33] totals=[] skipped=[]; pitching reconciliation: rows=3 sums=[9, 5, 4, 3, 11, 42] totals=[] skipped=[]",
+      "status": "recovered",
+      "method": "explicit official HTML BF; cross-checked source footer or opponent batting",
+      "verification": {
+        "Mercer": {
+          "totals": [],
+          "sums": [
+            6,
+            2,
+            2,
+            1,
+            5,
+            33
+          ],
+          "source_ab": 31,
+          "source_hbp": 0,
+          "verification": "explicit source BF; no footer; independent opponent batting totals required",
+          "team_er_difference": false
+        },
+        "UNC Greensboro": {
+          "totals": [],
+          "sums": [
+            9,
+            5,
+            4,
+            3,
+            11,
+            42
+          ],
+          "source_ab": 35,
+          "source_hbp": 1,
+          "verification": "explicit source BF; no footer; independent opponent batting totals required",
+          "team_er_difference": false
+        }
+      },
+      "pitchers": 4,
+      "added": 4,
+      "recovered_this_run": 4,
+      "values": [
+        {
+          "player_id": "cb-mercer-colton-cosper",
+          "team": "Mercer",
+          "BF": 33
+        },
+        {
+          "player_id": "cb-unc-greensboro-julien-peissel",
+          "team": "UNC Greensboro",
+          "BF": 28
+        },
+        {
+          "player_id": "cb-unc-greensboro-noah-chapman",
+          "team": "UNC Greensboro",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-unc-greensboro-grant-aycock",
+          "team": "UNC Greensboro",
+          "BF": 5
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2024-04-14-virginia-tech-georgia-tech-att0268",
+      "date": "2024-04-14",
+      "away": "Virginia Tech",
+      "home": "Georgia Tech",
+      "source_url": "https://storage.googleapis.com/ramblinwreck-com-prod/2024/04/gt041424.pdf",
+      "original_reason": "date not confirmed",
+      "status": "unresolved",
+      "reason": "PDF gamebook deferred to PDF recovery pass"
+    },
+    {
+      "game_id": "cb-2024-04-21-connecticut-georgetown-att0270",
+      "date": "2024-04-21",
+      "away": "Connecticut",
+      "home": "Georgetown",
+      "source_url": "https://guhoyas.com/sports/baseball/stats/2024/university-of-connecticut/boxscore/20469",
+      "original_reason": "expected two explicit BF pitching tables, found 0; pitching reconciliation: rows=5 sums=[15, 6, 6, 2, 9, 44] totals=[] skipped=[]; pitching reconciliation: rows=5 sums=[9, 7, 7, 5, 5, 46] totals=[] skipped=[]",
+      "status": "recovered",
+      "method": "explicit official HTML BF; cross-checked source footer or opponent batting",
+      "verification": {
+        "Connecticut": {
+          "totals": [],
+          "sums": [
+            15,
+            6,
+            6,
+            2,
+            9,
+            44
+          ],
+          "source_ab": 40,
+          "source_hbp": 1,
+          "verification": "explicit source BF; no footer; independent opponent batting totals required",
+          "team_er_difference": false
+        },
+        "Georgetown": {
+          "totals": [],
+          "sums": [
+            9,
+            7,
+            7,
+            5,
+            5,
+            46
+          ],
+          "source_ab": 34,
+          "source_hbp": 4,
+          "verification": "explicit source BF; no footer; independent opponent batting totals required",
+          "team_er_difference": false
+        }
+      },
+      "pitchers": 10,
+      "added": 10,
+      "recovered_this_run": 10,
+      "values": [
+        {
+          "player_id": "cb-connecticut-stephen-quigley",
+          "team": "Connecticut",
+          "BF": 23
+        },
+        {
+          "player_id": "cb-connecticut-kieran-finnegan",
+          "team": "Connecticut",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-connecticut-jack-sullivan",
+          "team": "Connecticut",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-connecticut-braden-quinn",
+          "team": "Connecticut",
+          "BF": 13
+        },
+        {
+          "player_id": "cb-connecticut-brady-afthim",
+          "team": "Connecticut",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-georgetown-everett-catlett",
+          "team": "Georgetown",
+          "BF": 21
+        },
+        {
+          "player_id": "cb-georgetown-cody-jensen",
+          "team": "Georgetown",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-georgetown-andrew-citron",
+          "team": "Georgetown",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-georgetown-marcello-mastroianni",
+          "team": "Georgetown",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-georgetown-nick-davis",
+          "team": "Georgetown",
+          "BF": 6
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2024-05-31-bryant-nc-state-att0289",
+      "date": "2024-05-31",
+      "away": "Bryant",
+      "home": "NC State",
+      "source_url": "https://bryantbulldogs.com/sports/baseball/stats/2024/nc-state-university/boxscore/10641",
+      "original_reason": "expected two explicit BF pitching tables, found 0; pitching reconciliation: rows=4 sums=[11, 9, 8, 7, 5, 43] totals=[] skipped=[]; pitching reconciliation: rows=2 sums=[4, 2, 2, 2, 10, 33] totals=[] skipped=[]",
+      "status": "recovered",
+      "method": "explicit official HTML BF; cross-checked source footer or opponent batting",
+      "verification": {
+        "Bryant": {
+          "totals": [],
+          "sums": [
+            11,
+            9,
+            8,
+            7,
+            5,
+            43
+          ],
+          "source_ab": 33,
+          "source_hbp": 1,
+          "verification": "explicit source BF; no footer; independent opponent batting totals required",
+          "team_er_difference": false
+        },
+        "NC State": {
+          "totals": [],
+          "sums": [
+            4,
+            2,
+            2,
+            2,
+            10,
+            33
+          ],
+          "source_ab": 31,
+          "source_hbp": 0,
+          "verification": "explicit source BF; no footer; independent opponent batting totals required",
+          "team_er_difference": false
+        }
+      },
+      "pitchers": 6,
+      "added": 6,
+      "recovered_this_run": 6,
+      "values": [
+        {
+          "player_id": "cb-bryant-austin-wainer",
+          "team": "Bryant",
+          "BF": 29
+        },
+        {
+          "player_id": "cb-bryant-zach-nichols",
+          "team": "Bryant",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-bryant-jack-pletter",
+          "team": "Bryant",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-bryant-bradley-lewis",
+          "team": "Bryant",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-nc-state-highfill",
+          "team": "NC State",
+          "BF": 23
+        },
+        {
+          "player_id": "cb-nc-state-dudan",
+          "team": "NC State",
+          "BF": 10
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2024-06-01-bryant-james-madison-att0290",
+      "date": "2024-06-01",
+      "away": "Bryant",
+      "home": "James Madison",
+      "source_url": "https://bryantbulldogs.com/sports/baseball/stats/2024/james-madison-university/boxscore/10642",
+      "original_reason": "expected two explicit BF pitching tables, found 0; pitching reconciliation: rows=6 sums=[9, 8, 7, 6, 6, 36] totals=[] skipped=[]; pitching reconciliation: rows=4 sums=[8, 1, 0, 1, 9, 36] totals=[] skipped=[]",
+      "status": "recovered",
+      "method": "explicit official HTML BF; cross-checked source footer or opponent batting",
+      "verification": {
+        "Bryant": {
+          "totals": [],
+          "sums": [
+            9,
+            8,
+            7,
+            6,
+            6,
+            36
+          ],
+          "source_ab": 27,
+          "source_hbp": 1,
+          "verification": "explicit source BF; no footer; independent opponent batting totals required",
+          "team_er_difference": false
+        },
+        "James Madison": {
+          "totals": [],
+          "sums": [
+            8,
+            1,
+            0,
+            1,
+            9,
+            36
+          ],
+          "source_ab": 35,
+          "source_hbp": 0,
+          "verification": "explicit source BF; no footer; independent opponent batting totals required",
+          "team_er_difference": false
+        }
+      },
+      "pitchers": 10,
+      "added": 10,
+      "recovered_this_run": 10,
+      "values": [
+        {
+          "player_id": "cb-bryant-liam-levangie",
+          "team": "Bryant",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-bryant-mark-scamardella",
+          "team": "Bryant",
+          "BF": 14
+        },
+        {
+          "player_id": "cb-bryant-landon-white",
+          "team": "Bryant",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-bryant-ryan-bradley",
+          "team": "Bryant",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-bryant-zach-nichols",
+          "team": "Bryant",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-bryant-sean-zaslaw",
+          "team": "Bryant",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-james-madison-entsminger",
+          "team": "James Madison",
+          "BF": 21
+        },
+        {
+          "player_id": "cb-james-madison-logar",
+          "team": "James Madison",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-james-madison-vogatsky",
+          "team": "James Madison",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-james-madison-culkin",
+          "team": "James Madison",
+          "BF": 6
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2025-02-15-quinnipiac-unc-wilmington-att0301",
+      "date": "2025-02-15",
+      "away": "Quinnipiac",
+      "home": "UNC Wilmington",
+      "source_url": "https://gobobcats.com/sports/baseball/stats/2025/uncw/boxscore/22618",
+      "original_reason": "unable to uniquely match both full pitching tables to archived names and IP/H/R/ER/BB/K",
+      "status": "unresolved",
+      "reason": "unable to uniquely match both full pitching tables to archived names and IP/H/R/ER/BB/K"
+    },
+    {
+      "game_id": "cb-2025-02-17-washington-st-joe-s-att0303",
+      "date": "2025-02-17",
+      "away": "Washington",
+      "home": "St. Joe's",
+      "source_url": "https://sjuhawks.com/sports/baseball/stats/2025/washington/boxscore/13133",
+      "original_reason": "expected two explicit BF pitching tables, found 0; pitching reconciliation: rows=6 sums=[11, 9, 9, 4, 8, 43] totals=[] skipped=[]; pitching reconciliation: rows=6 sums=[10, 12, 9, 11, 10, 50] totals=[] skipped=[]",
+      "status": "recovered",
+      "method": "explicit official HTML BF; cross-checked source footer or opponent batting",
+      "verification": {
+        "Washington": {
+          "totals": [],
+          "sums": [
+            11,
+            9,
+            9,
+            4,
+            8,
+            43
+          ],
+          "source_ab": 37,
+          "source_hbp": 2,
+          "verification": "explicit source BF; no footer; independent opponent batting totals required",
+          "team_er_difference": false
+        },
+        "St. Joe's": {
+          "totals": [],
+          "sums": [
+            10,
+            12,
+            9,
+            11,
+            10,
+            50
+          ],
+          "source_ab": 37,
+          "source_hbp": 1,
+          "verification": "explicit source BF; no footer; independent opponent batting totals required",
+          "team_er_difference": false
+        }
+      },
+      "pitchers": 12,
+      "added": 12,
+      "recovered_this_run": 12,
+      "values": [
+        {
+          "player_id": "cb-washington-bradley-gilbert",
+          "team": "Washington",
+          "BF": 13
+        },
+        {
+          "player_id": "cb-washington-isaac-yeager",
+          "team": "Washington",
+          "BF": 13
+        },
+        {
+          "player_id": "cb-washington-peysen-sweeney",
+          "team": "Washington",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-washington-micah-bujacich",
+          "team": "Washington",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-washington-tommy-curran",
+          "team": "Washington",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-washington-josh-emanuels",
+          "team": "Washington",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-st-joe-s-nathan-stein",
+          "team": "St. Joe's",
+          "BF": 20
+        },
+        {
+          "player_id": "cb-st-joe-s-luke-parise",
+          "team": "St. Joe's",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-st-joe-s-matt-fitzgibbon",
+          "team": "St. Joe's",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-st-joe-s-sam-greer",
+          "team": "St. Joe's",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-st-joe-s-micah-wells",
+          "team": "St. Joe's",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-st-joe-s-drew-desanto",
+          "team": "St. Joe's",
+          "BF": 3
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2025-02-17-kansas-state-coastal-carolina-att0304",
+      "date": "2025-02-17",
+      "away": "Kansas State",
+      "home": "Coastal Carolina",
+      "source_url": "https://www.kstatesports.com/sports/baseball/stats/2025/coastal-carolina/boxscore/18791",
+      "original_reason": "date not confirmed",
+      "status": "recovered",
+      "method": "explicit official HTML BF; cross-checked source footer or opponent batting",
+      "verification": {
+        "Kansas State": {
+          "totals": [
+            [
+              14,
+              9,
+              8,
+              4,
+              11,
+              42
+            ]
+          ],
+          "sums": [
+            14,
+            9,
+            8,
+            4,
+            11,
+            42
+          ],
+          "source_ab": 35,
+          "source_hbp": 1,
+          "verification": "explicit source BF; team footer",
+          "team_er_difference": false
+        },
+        "Coastal Carolina": {
+          "totals": [
+            [
+              6,
+              2,
+              1,
+              7,
+              10,
+              40
+            ]
+          ],
+          "sums": [
+            6,
+            2,
+            1,
+            7,
+            10,
+            40
+          ],
+          "source_ab": 31,
+          "source_hbp": 2,
+          "verification": "explicit source BF; team footer",
+          "team_er_difference": false
+        }
+      },
+      "pitchers": 10,
+      "added": 10,
+      "recovered_this_run": 10,
+      "values": [
+        {
+          "player_id": "cb-kansas-state-lincoln-sheffield",
+          "team": "Kansas State",
+          "BF": 25
+        },
+        {
+          "player_id": "cb-kansas-state-tanner-duke",
+          "team": "Kansas State",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-kansas-state-jj-slack",
+          "team": "Kansas State",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-kansas-state-ben-rosin",
+          "team": "Kansas State",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-kansas-state-micah-henson",
+          "team": "Kansas State",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-coastal-carolina-jacob-morrison",
+          "team": "Coastal Carolina",
+          "BF": 16
+        },
+        {
+          "player_id": "cb-coastal-carolina-luke-jones",
+          "team": "Coastal Carolina",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-coastal-carolina-dominick-carbone",
+          "team": "Coastal Carolina",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-coastal-carolina-ryan-lynch",
+          "team": "Coastal Carolina",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-coastal-carolina-matthew-potok",
+          "team": "Coastal Carolina",
+          "BF": 9
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2025-03-08-stonehill-high-point-att0317",
+      "date": "2025-03-08",
+      "away": "Stonehill",
+      "home": "High Point",
+      "source_url": "https://highpointpanthers.com/sports/baseball/stats/2025/stonehill/boxscore/15752",
+      "original_reason": "expected two explicit BF pitching tables, found 0; pitching reconciliation: rows=6 sums=[15, 21, 19, 6, 2, 47] totals=[] skipped=[]; pitching reconciliation: rows=4 sums=[12, 9, 6, 4, 4, 49] totals=[] skipped=[]",
+      "status": "recovered",
+      "method": "explicit official HTML BF; cross-checked source footer or opponent batting",
+      "verification": {
+        "Stonehill": {
+          "totals": [],
+          "sums": [
+            15,
+            21,
+            19,
+            6,
+            2,
+            47
+          ],
+          "source_ab": 35,
+          "source_hbp": 4,
+          "verification": "explicit source BF; no footer; independent opponent batting totals required",
+          "team_er_difference": false
+        },
+        "High Point": {
+          "totals": [],
+          "sums": [
+            12,
+            9,
+            6,
+            4,
+            4,
+            49
+          ],
+          "source_ab": 41,
+          "source_hbp": 4,
+          "verification": "explicit source BF; no footer; independent opponent batting totals required",
+          "team_er_difference": false
+        }
+      },
+      "pitchers": 10,
+      "added": 10,
+      "recovered_this_run": 10,
+      "values": [
+        {
+          "player_id": "cb-stonehill-jake-lanzer",
+          "team": "Stonehill",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-stonehill-josh-florence",
+          "team": "Stonehill",
+          "BF": 13
+        },
+        {
+          "player_id": "cb-stonehill-justin-tullish",
+          "team": "Stonehill",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-stonehill-max-brulport",
+          "team": "Stonehill",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-stonehill-tanyon-weber",
+          "team": "Stonehill",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-stonehill-francisco-melendez",
+          "team": "Stonehill",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-high-point-dylan-story",
+          "team": "High Point",
+          "BF": 27
+        },
+        {
+          "player_id": "cb-high-point-mac-kimel",
+          "team": "High Point",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-high-point-bryan-garrett",
+          "team": "High Point",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-high-point-brent-herrmann",
+          "team": "High Point",
+          "BF": 10
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2025-05-16-oregon-iowa-att0348",
+      "date": "2025-05-16",
+      "away": "Oregon",
+      "home": "Iowa",
+      "source_url": "https://goducks.com/sports/baseball/stats/2025/iowa/boxscore/23664",
+      "original_reason": "date not confirmed",
+      "status": "recovered",
+      "method": "explicit official HTML BF; cross-checked source footer or opponent batting",
+      "verification": {
+        "Oregon": {
+          "totals": [
+            [
+              12,
+              6,
+              6,
+              2,
+              6,
+              42
+            ]
+          ],
+          "sums": [
+            12,
+            6,
+            6,
+            2,
+            6,
+            42
+          ],
+          "source_ab": 37,
+          "source_hbp": 2,
+          "verification": "explicit source BF; team footer",
+          "team_er_difference": false
+        },
+        "Iowa": {
+          "totals": [
+            [
+              13,
+              9,
+              7,
+              4,
+              6,
+              46
+            ]
+          ],
+          "sums": [
+            13,
+            9,
+            7,
+            4,
+            6,
+            46
+          ],
+          "source_ab": 39,
+          "source_hbp": 2,
+          "verification": "explicit source BF; team footer",
+          "team_er_difference": false
+        }
+      },
+      "pitchers": 9,
+      "added": 9,
+      "recovered_this_run": 9,
+      "values": [
+        {
+          "player_id": "cb-oregon-collin-clarke",
+          "team": "Oregon",
+          "BF": 23
+        },
+        {
+          "player_id": "cb-oregon-ian-umlandt",
+          "team": "Oregon",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-oregon-cole-stokes",
+          "team": "Oregon",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-oregon-santiago-garcia",
+          "team": "Oregon",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-oregon-seth-mattox",
+          "team": "Oregon",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-iowa-aaron-savary",
+          "team": "Iowa",
+          "BF": 26
+        },
+        {
+          "player_id": "cb-iowa-brant-hogue",
+          "team": "Iowa",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-iowa-justin-hackett",
+          "team": "Iowa",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-iowa-chas-wheatley",
+          "team": "Iowa",
+          "BF": 7
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2025-05-17-oregon-iowa-att0349",
+      "date": "2025-05-17",
+      "away": "Oregon",
+      "home": "Iowa",
+      "source_url": "https://goducks.com/sports/baseball/stats/2025/iowa/boxscore/23665",
+      "original_reason": "date not confirmed",
+      "status": "recovered",
+      "method": "explicit official HTML BF; cross-checked source footer or opponent batting",
+      "verification": {
+        "Oregon": {
+          "totals": [
+            [
+              6,
+              4,
+              4,
+              6,
+              8,
+              40
+            ]
+          ],
+          "sums": [
+            6,
+            4,
+            4,
+            6,
+            8,
+            40
+          ],
+          "source_ab": 32,
+          "source_hbp": 2,
+          "verification": "explicit source BF; team footer",
+          "team_er_difference": false
+        },
+        "Iowa": {
+          "totals": [
+            [
+              13,
+              13,
+              13,
+              9,
+              7,
+              49
+            ]
+          ],
+          "sums": [
+            13,
+            13,
+            13,
+            9,
+            7,
+            49
+          ],
+          "source_ab": 38,
+          "source_hbp": 0,
+          "verification": "explicit source BF; team footer",
+          "team_er_difference": false
+        }
+      },
+      "pitchers": 11,
+      "added": 11,
+      "recovered_this_run": 11,
+      "values": [
+        {
+          "player_id": "cb-oregon-jason-reitz",
+          "team": "Oregon",
+          "BF": 24
+        },
+        {
+          "player_id": "cb-oregon-r-featherston",
+          "team": "Oregon",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-oregon-toby-twist",
+          "team": "Oregon",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-oregon-cole-stokes",
+          "team": "Oregon",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-oregon-santiago-garcia",
+          "team": "Oregon",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-iowa-reece-beuter",
+          "team": "Iowa",
+          "BF": 11
+        },
+        {
+          "player_id": "cb-iowa-ben-detaeye",
+          "team": "Iowa",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-iowa-daniel-wright",
+          "team": "Iowa",
+          "BF": 5
+        },
+        {
+          "player_id": "cb-iowa-anthony-watts",
+          "team": "Iowa",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-iowa-tyler-guerin",
+          "team": "Iowa",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-iowa-jack-whitlock",
+          "team": "Iowa",
+          "BF": 4
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2026-03-01-notre-dame-tennessee-tech-att0383",
+      "date": "2026-03-01",
+      "away": "Notre Dame",
+      "home": "Tennessee Tech",
+      "source_url": "https://storage.googleapis.com/fightingirish-com/2026/03/3126_ND.pdf",
+      "original_reason": "date not confirmed",
+      "status": "unresolved",
+      "reason": "PDF gamebook deferred to PDF recovery pass"
+    },
+    {
+      "game_id": "cb-2026-04-04-missouri-kentucky-att0405",
+      "date": "2026-04-04",
+      "away": "Missouri",
+      "home": "Kentucky",
+      "source_url": "https://mutigers.com/sports/baseball/stats/2026/kentucky/boxscore/33738",
+      "original_reason": "404 Client Error: Not Found for url: https://mutigers.com/sports/baseball/stats/2026/kentucky/boxscore/33738",
+      "status": "unresolved",
+      "reason": "404 Client Error: Not Found for url: https://mutigers.com/sports/baseball/stats/2026/kentucky/boxscore/33738"
+    },
+    {
+      "game_id": "cb-2026-04-11-east-tennessee-state-belmont-att0411",
+      "date": "2026-04-11",
+      "away": "East Tennessee State",
+      "home": "Belmont",
+      "source_url": "https://etsubucs.com/sports/baseball/stats/2026/belmont/boxscore/12559",
+      "original_reason": "unable to uniquely match both full pitching tables to archived names and IP/H/R/ER/BB/K",
+      "status": "unresolved",
+      "reason": "unable to uniquely match both full pitching tables to archived names and IP/H/R/ER/BB/K"
+    },
+    {
+      "game_id": "cb-2026-04-24-central-arkansas-bellarmine-att0414",
+      "date": "2026-04-24",
+      "away": "Central Arkansas",
+      "home": "Bellarmine",
+      "source_url": "https://athletics.bellarmine.edu/sports/baseball/stats/2026/university-of-central-arkansas/boxscore/8799",
+      "original_reason": "unable to uniquely match both full pitching tables to archived names and IP/H/R/ER/BB/K",
+      "status": "unresolved",
+      "reason": "unable to uniquely match both full pitching tables to archived names and IP/H/R/ER/BB/K"
+    },
+    {
+      "game_id": "cb-2026-04-26-central-arkansas-bellarmine-att0417",
+      "date": "2026-04-26",
+      "away": "Central Arkansas",
+      "home": "Bellarmine",
+      "source_url": "https://athletics.bellarmine.edu/sports/baseball/stats/2026/university-of-central-arkansas/boxscore/8801",
+      "original_reason": "unable to uniquely match both full pitching tables to archived names and IP/H/R/ER/BB/K",
+      "status": "unresolved",
+      "reason": "unable to uniquely match both full pitching tables to archived names and IP/H/R/ER/BB/K"
+    },
+    {
+      "game_id": "cb-2026-05-03-tennessee-kentucky-att0419",
+      "date": "2026-05-03",
+      "away": "Tennessee",
+      "home": "Kentucky",
+      "source_url": "https://utsports.com/sports/baseball/stats/2026/kentucky/boxscore/29752",
+      "original_reason": "unable to uniquely match both full pitching tables to archived names and IP/H/R/ER/BB/K",
+      "status": "unresolved",
+      "reason": "unable to uniquely match both full pitching tables to archived names and IP/H/R/ER/BB/K"
+    },
+    {
+      "game_id": "cb-2026-05-10-little-rock-ut-martin-att0421",
+      "date": "2026-05-10",
+      "away": "Little Rock",
+      "home": "UT Martin",
+      "source_url": "https://utmsports.com/sports/baseball/stats/2026/little-rock/boxscore/13609",
+      "original_reason": "expected two explicit BF pitching tables, found 1; pitching reconciliation: rows=4 sums=[23, 16, 9, 1, 4, 54] totals=[[23, 16, 7, 1, 4, 54]] skipped=[]",
+      "status": "recovered",
+      "method": "explicit official HTML BF; cross-checked source footer or opponent batting",
+      "verification": {
+        "Little Rock": {
+          "totals": [
+            [
+              13,
+              14,
+              12,
+              3,
+              5,
+              48
+            ]
+          ],
+          "sums": [
+            13,
+            14,
+            12,
+            3,
+            5,
+            48
+          ],
+          "source_ab": 42,
+          "source_hbp": 2,
+          "verification": "explicit source BF; team footer",
+          "team_er_difference": false
+        },
+        "UT Martin": {
+          "totals": [
+            [
+              23,
+              16,
+              7,
+              1,
+              4,
+              54
+            ]
+          ],
+          "sums": [
+            23,
+            16,
+            9,
+            1,
+            4,
+            54
+          ],
+          "source_ab": 52,
+          "source_hbp": 1,
+          "verification": "explicit source BF; team footer",
+          "team_er_difference": true
+        }
+      },
+      "pitchers": 10,
+      "added": 10,
+      "recovered_this_run": 10,
+      "values": [
+        {
+          "player_id": "cb-little-rock-nic-bronzini",
+          "team": "Little Rock",
+          "BF": 16
+        },
+        {
+          "player_id": "cb-little-rock-josh-beezley",
+          "team": "Little Rock",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-little-rock-isaac-evaniew",
+          "team": "Little Rock",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-little-rock-luke-schimmels",
+          "team": "Little Rock",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-little-rock-blake-van-cleeve",
+          "team": "Little Rock",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-little-rock-tag-andrews",
+          "team": "Little Rock",
+          "BF": 16
+        },
+        {
+          "player_id": "cb-ut-martin-maxwell-schumacher",
+          "team": "UT Martin",
+          "BF": 21
+        },
+        {
+          "player_id": "cb-ut-martin-will-turner",
+          "team": "UT Martin",
+          "BF": 17
+        },
+        {
+          "player_id": "cb-ut-martin-gabe-bryant",
+          "team": "UT Martin",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-ut-martin-mason-little",
+          "team": "UT Martin",
+          "BF": 6
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2026-05-16-arkansas-kentucky-att0424",
+      "date": "2026-05-16",
+      "away": "Arkansas",
+      "home": "Kentucky",
+      "source_url": "https://arkansasrazorbacks.com/stats/baseball/2026/ARK55.pdf",
+      "original_reason": "date not confirmed",
+      "status": "unresolved",
+      "reason": "PDF gamebook deferred to PDF recovery pass"
+    },
+    {
+      "game_id": "cb-2026-05-19-kentucky-vanderbilt-att0426",
+      "date": "2026-05-19",
+      "away": "Kentucky",
+      "home": "Vanderbilt",
+      "source_url": "https://storage.googleapis.com/vucommodores-prod/2026/05/VU57-vs-Kentucky-SECT-Box.pdf",
+      "original_reason": "date not confirmed",
+      "status": "unresolved",
+      "reason": "PDF gamebook deferred to PDF recovery pass"
+    },
+    {
+      "game_id": "cb-2026-05-20-missouri-mississippi-state-att0429",
+      "date": "2026-05-20",
+      "away": "Missouri",
+      "home": "Mississippi State",
+      "source_url": "https://hailstate.com/sports/baseball/stats/2026/missouri/boxscore/27457",
+      "original_reason": "expected two explicit BF pitching tables, found 1; pitching reconciliation: rows=3 sums=[8, 12, 8, 4, 10, 33] totals=[[8, 12, 4, 4, 10, 33]] skipped=[]",
+      "status": "recovered",
+      "method": "explicit official HTML BF; cross-checked source footer or opponent batting",
+      "verification": {
+        "Missouri": {
+          "totals": [
+            [
+              8,
+              12,
+              4,
+              4,
+              10,
+              33
+            ]
+          ],
+          "sums": [
+            8,
+            12,
+            8,
+            4,
+            10,
+            33
+          ],
+          "source_ab": 28,
+          "source_hbp": 1,
+          "verification": "explicit source BF; team footer",
+          "team_er_difference": true
+        },
+        "Mississippi State": {
+          "totals": [
+            [
+              5,
+              2,
+              1,
+              1,
+              8,
+              25
+            ]
+          ],
+          "sums": [
+            5,
+            2,
+            1,
+            1,
+            8,
+            25
+          ],
+          "source_ab": 23,
+          "source_hbp": 0,
+          "verification": "explicit source BF; team footer",
+          "team_er_difference": false
+        }
+      },
+      "pitchers": 5,
+      "added": 5,
+      "recovered_this_run": 5,
+      "values": [
+        {
+          "player_id": "cb-missouri-brady-kehlenbrink",
+          "team": "Missouri",
+          "BF": 20
+        },
+        {
+          "player_id": "cb-missouri-sam-rosand",
+          "team": "Missouri",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-missouri-isaiah-salas",
+          "team": "Missouri",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-mississippi-state-tomas-valincius",
+          "team": "Mississippi State",
+          "BF": 22
+        },
+        {
+          "player_id": "cb-mississippi-state-ben-davis",
+          "team": "Mississippi State",
+          "BF": 3
+        }
+      ]
+    },
+    {
+      "game_id": "cb-2026-05-20-lsu-auburn-att0432",
+      "date": "2026-05-20",
+      "away": "LSU",
+      "home": "Auburn",
+      "source_url": "https://static.lsusports.net/assets/docs/bb/26stats/26boxscores.pdf#page=132",
+      "original_reason": "date not confirmed",
+      "status": "unresolved",
+      "reason": "PDF gamebook deferred to PDF recovery pass"
+    },
+    {
+      "game_id": "cb-2026-05-22-auburn-texas-a-m-att0436",
+      "date": "2026-05-22",
+      "away": "Auburn",
+      "home": "Texas A&M",
+      "source_url": "https://storage.googleapis.com/auburn-prod/2026/05/23/B1yXyMnFNLlPuQs4IZQC4WYlQNbHmcsWGsihLulK.pdf",
+      "original_reason": "date not confirmed",
+      "status": "unresolved",
+      "reason": "PDF gamebook deferred to PDF recovery pass"
+    },
+    {
+      "game_id": "cb-2026-05-23-arkansas-auburn-att0438",
+      "date": "2026-05-23",
+      "away": "Arkansas",
+      "home": "Auburn",
+      "source_url": "https://arkansasrazorbacks.com/stats/baseball/2026/ark58.htm",
+      "original_reason": "date not confirmed",
+      "status": "unresolved",
+      "reason": "expected two explicit BF pitching tables, found 0; "
+    }
+  ]
+}

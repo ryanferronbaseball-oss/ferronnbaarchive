@@ -623,13 +623,9 @@ body[data-page="player"] #profile-overview .cb-profile-stat-row .mlb-profile-tot
 
 /* Verified player portraits retain the profile's existing footprint. */
 .cb-player-portrait{position:relative;overflow:hidden}
-.cb-player-portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center bottom;visibility:hidden}
+/* All college baseball profile portraits fill the frame and prioritize the face, regardless of source or school. */
+.cb-player-portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;visibility:hidden}
 .cb-player-portrait.has-portrait img{visibility:visible}
 /* LSU supplies square official headshots: fill the taller portrait frame without letterboxing. */
-.cb-player-portrait img.cb-lsu-headshot{object-fit:cover;object-position:center top}
-/* Arkansas's official player bios use square headshots; fill the portrait frame as for LSU. */
-.cb-player-portrait img[src^="https://arkansasrazorbacks.com/"],.cb-player-portrait img[src^="https://www.arkansasrazorbacks.com/"]{object-fit:cover;object-position:center top}
-/* Fill the player profile frame for official Texas A&M portraits, including transfers. */
-.cb-player-portrait img[src^="https://12thman.com/"],.cb-player-portrait img[src^="https://www.12thman.com/"]{object-fit:cover;object-position:center top}
 
 .cb-player-portrait.has-portrait .cb-portrait-fallback{visibility:hidden}

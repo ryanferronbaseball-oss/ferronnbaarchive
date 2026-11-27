@@ -4408,8 +4408,66 @@
       "home": "Texas A&M",
       "source_url": "https://storage.googleapis.com/auburn-prod/2026/05/23/B1yXyMnFNLlPuQs4IZQC4WYlQNbHmcsWGsihLulK.pdf",
       "original_reason": "date not confirmed",
-      "status": "unresolved",
-      "reason": "PDF gamebook deferred to PDF recovery pass"
+      "status": "recovered",
+      "method": "Manual official Auburn PDF page 1; exact pitcher signatures and names confirmed with official Texas A&M roster; explicit BF reconciled against opposing batting totals",
+      "manual_source_url": "https://storage.googleapis.com/auburn-prod/2026/05/23/B1yXyMnFNLlPuQs4IZQC4WYlQNbHmcsWGsihLulK.pdf",
+      "corroborating_source_url": "https://auburntigers.com/boxscore/31134",
+      "roster_source_url": "https://12thman.com/sports/baseball/roster/season/2026",
+      "verification": {
+        "Auburn": {
+          "BF": 34,
+          "opponent_AB": 28,
+          "opponent_BB": 5,
+          "opponent_HBP": 1
+        },
+        "Texas A&M": {
+          "BF": 41,
+          "opponent_AB": 37,
+          "opponent_BB": 2,
+          "opponent_HBP": 1,
+          "opponent_SH": 1
+        }
+      },
+      "pitchers": 7,
+      "added": 7,
+      "recovered_this_run": 7,
+      "values": [
+        {
+          "player_id": "cb-auburn-andreas-alvarez",
+          "team": "Auburn",
+          "BF": 19
+        },
+        {
+          "player_id": "cb-auburn-lj-cormier",
+          "team": "Auburn",
+          "BF": 15
+        },
+        {
+          "player_id": "cb-texas-a-m-ethan-darden",
+          "team": "Texas A&M",
+          "BF": 9
+        },
+        {
+          "player_id": "cb-texas-a-m-gavin-lyons",
+          "team": "Texas A&M",
+          "BF": 15
+        },
+        {
+          "player_id": "cb-texas-a-m-shane-sdao",
+          "team": "Texas A&M",
+          "BF": 11
+        },
+        {
+          "player_id": "cb-texas-a-m-weston-moss",
+          "team": "Texas A&M",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-texas-a-m-clayton-freshcorn",
+          "team": "Texas A&M",
+          "BF": 3
+        }
+      ]
     },
     {
       "game_id": "cb-2026-05-23-arkansas-auburn-att0438",

@@ -11,7 +11,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   portraits:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 35
     steps:
       - uses: actions/checkout@v4
@@ -24,7 +24,7 @@ jobs:
         with:
           node-version: '22'
       - run: pip install requests pillow beautifulsoup4 playwright
-      - run: python -m playwright install --with-deps chromium
+      - run: python -m playwright install chromium
       - name: Match witnessed Texas players to official roster portraits
         env:
           PYTHONPATH: scripts

@@ -3639,8 +3639,71 @@
       "home": "Kentucky",
       "source_url": "https://mutigers.com/sports/baseball/stats/2026/kentucky/boxscore/33738",
       "original_reason": "404 Client Error: Not Found for url: https://mutigers.com/sports/baseball/stats/2026/kentucky/boxscore/33738",
-      "status": "unresolved",
-      "reason": "404 Client Error: Not Found for url: https://mutigers.com/sports/baseball/stats/2026/kentucky/boxscore/33738"
+      "status": "recovered",
+      "method": "Manual official Kentucky PDF; printed year typo confirmed by both official April 4 2026 recaps; exact pitching signatures and names matched; opposing PA reconciled",
+      "manual_source_url": "https://storage.googleapis.com/ukathletics-com/2026/04/e955fadd-0404_miz-box-g2.pdf",
+      "date_verification_source_urls": [
+        "https://ukathletics.com/news/2026/04/04/junior-day-scott-campbell-jr-shows-out-in-saturday-matinee-win/",
+        "https://mutigers.com/news/2026/04/4/baseball-drops-game-two-at-no-24-kentucky-to-set-up-sunday-rubber-match"
+      ],
+      "verification": {
+        "Missouri": {
+          "BF": 40,
+          "opponent_AB": 31,
+          "opponent_BB": 6,
+          "opponent_HBP": 3
+        },
+        "Kentucky": {
+          "BF": 33,
+          "opponent_AB": 32,
+          "opponent_BB": 1
+        }
+      },
+      "pitchers": 8,
+      "added": 8,
+      "recovered_this_run": 8,
+      "values": [
+        {
+          "player_id": "cb-missouri-brady-kehlenbrink",
+          "team": "Missouri",
+          "BF": 22
+        },
+        {
+          "player_id": "cb-missouri-luke-sullivan",
+          "team": "Missouri",
+          "BF": 15
+        },
+        {
+          "player_id": "cb-missouri-isaiah-salas",
+          "team": "Missouri",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-kentucky-nate-harris",
+          "team": "Kentucky",
+          "BF": 21
+        },
+        {
+          "player_id": "cb-kentucky-ryan-mullan",
+          "team": "Kentucky",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-kentucky-ira-austin-iv",
+          "team": "Kentucky",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-kentucky-leighton-harris",
+          "team": "Kentucky",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-kentucky-tristan-hunter",
+          "team": "Kentucky",
+          "BF": 3
+        }
+      ]
     },
     {
       "game_id": "cb-2026-04-11-east-tennessee-state-belmont-att0411",

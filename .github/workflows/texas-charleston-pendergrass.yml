@@ -1,0 +1,126 @@
+name: Texas–Charleston Dariyan Pendergrass identity merge
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/texas-charleston-pendergrass.yml']
+permissions:
+  contents: write
+concurrency:
+  group: college-baseball-portraits
+  cancel-in-progress: false
+jobs:
+  correct:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: pip install requests pillow beautifulsoup4 playwright
+      - run: python -m playwright install chromium
+      - name: Merge owner-confirmed Dariyan Pendergrass identities and verify existing headshot
+        env:
+          PYTHONPATH: scripts
+        run: |
+          python - <<'PY'
+          import json,hashlib,re
+          from pathlib import Path
+          from audit_player_portraits import probe
+          D=Path('college-baseball/data')
+          def load(n):return json.loads((D/n).read_text())
+          def save(n,d):(D/n).write_text(json.dumps(d,indent=2,ensure_ascii=False)+'\n')
+          pid='cb-texas-dariyan-pendergrass'
+          raw=D/'player_stats.json'
+          before=hashlib.sha256(raw.read_bytes()).hexdigest()
+          rows=load('player_stats.json');reg=load('player_portraits.json');cross=load('player_identity_crosswalk.json')
+          def norm(s):return re.sub(r'[^a-z0-9]','',str(s).lower())
+          texas=[r for r in rows if r['player_id']==pid]
+          charleston=[r for r in rows if norm(r.get('team')) in ('charleston','collegeofcharleston') and norm(r.get('player'))=='dariyanpendergrass']
+          assert texas and all(r['team']=='Texas' for r in texas)
+          assert charleston,'No exact Dariyan Pendergrass Charleston rows'
+          old_ids={r['player_id'] for r in charleston}
+          assert len(old_ids)==1 and pid not in old_ids,(old_ids,charleston)
+          ids={pid,*old_ids}
+          matches=[r for r in rows if r['player_id'] in ids]
+          assert len(matches)==len(texas)+len(charleston)
+          assert len({r['game_id'] for r in matches})==len(matches),'Same-game collision'
+          pairs=sorted({(r['team'],r['player_id']) for r in matches})
+          schools=sorted({team for team,_ in pairs})
+          assert reg[pid]['provider']=='college' and reg[pid]['school']=='Texas'
+          assert probe(reg[pid]['url'])[0]=='image'
+          existing=[m for m in cross['merges'] if ids.intersection(m['source_player_ids'])]
+          if not existing:
+              cross['merges'].append({'name':'Dariyan Pendergrass','display_name':'Dariyan Pendergrass','canonical_id':pid,'source_player_ids':sorted(ids),'schools':schools,'pairs':[{'team':team,'source_player_id':i} for team,i in pairs],'source_rows':len(matches),'note':'Owner confirmed Texas and Charleston are the same player; original game logs retained.'})
+              for field in ('requested_person_merges','activated_person_merges'):cross[field]+=1
+          else:assert len(existing)==1 and set(existing[0]['source_player_ids'])==ids and existing[0]['canonical_id']==pid
+          assert before==hashlib.sha256(raw.read_bytes()).hexdigest()
+          report={'id':pid,'display_name':'Dariyan Pendergrass','source_ids':sorted(ids),'schools':schools,'games':sorted({r['game_id'] for r in matches}),'source_rows':len(matches),'portrait':reg[pid]}
+          save('player_identity_crosswalk.json',cross);save('texas_charleston_pendergrass_correction.json',report)
+          PY
+      - name: Verify merged player and Texas coverage
+        run: |
+          node scripts/export_baseball_portrait_preferences.cjs Texas > /tmp/texas.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          D=Path('college-baseball/data')
+          p=json.load(open('/tmp/texas.json'));reg=json.loads((D/'player_portraits.json').read_text())
+          report=json.loads((D/'texas_charleston_pendergrass_correction.json').read_text())
+          a=[x for x in p if x['id']==report['id']]
+          assert len(a)==1 and a[0]['name']=='Dariyan Pendergrass',a
+          assert set(a[0]['schools'])==set(report['schools']),a
+          assert all(x['id'] in reg for x in p)
+          report['coverage']={'players':len(p),'portraits':sum(x['id'] in reg for x in p)}
+          (D/'texas_charleston_pendergrass_correction.json').write_text(json.dumps(report,indent=2)+'\n')
+          PY
+      - name: Verify Dariyan Pendergrass profile on desktop and mobile
+        run: |
+          python - <<'PY'
+          import json,threading,http.server,functools
+          from pathlib import Path
+          from playwright.sync_api import sync_playwright
+          from urllib.parse import quote
+          root=Path.cwd();D=root/'college-baseball/data'
+          reg=json.loads((D/'player_portraits.json').read_text())
+          report=json.loads((D/'texas_charleston_pendergrass_correction.json').read_text())
+          server=http.server.ThreadingHTTPServer(('127.0.0.1',0),functools.partial(http.server.SimpleHTTPRequestHandler,directory=str(root)))
+          threading.Thread(target=server.serve_forever,daemon=True).start()
+          results=[]
+          with sync_playwright() as p:
+              browser=p.chromium.launch()
+              for mode,w,h in [('desktop',1360,900),('mobile',390,844)]:
+                  page=browser.new_page(viewport={'width':w,'height':h})
+                  for pid in [report['id']]:
+                      page.goto(f'http://127.0.0.1:{server.server_port}/college-baseball/player.html?id='+quote(pid),wait_until='domcontentloaded',timeout=30000)
+                      frame=page.locator('.cb-player-portrait')
+                      frame.wait_for(state='visible',timeout=15000)
+                      page.wait_for_function("() => {const i=document.querySelector('.cb-player-portrait img');return i&&i.complete&&i.naturalWidth>0&&i.parentElement.classList.contains('has-portrait')}",timeout=15000)
+                      actual=frame.locator('img').evaluate('i=>i.currentSrc')
+                      assert actual==reg[pid]['url'],(pid,actual)
+                      results.append({'id':pid,'viewport':mode,'status':'pass'})
+                      print(pid,mode,'pass',flush=True)
+                  page.close()
+              browser.close()
+          server.shutdown()
+          report['render_checks']=results
+          (D/'texas_charleston_pendergrass_correction.json').write_text(json.dumps(report,indent=2)+'\n')
+          PY
+      - name: Publish verified corrections (retry)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add college-baseball/data/player_identity_crosswalk.json college-baseball/data/texas_charleston_pendergrass_correction.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Merge Dariyan Pendergrass Texas and Charleston identities; preserve existing portrait"
+          for attempt in 1 2 3; do
+            git pull --rebase origin main || exit 1
+            if git push origin HEAD:main; then exit 0; fi
+            sleep 3
+          done
+          exit 1

@@ -4,8 +4,8 @@
   "source": "Original archive owner confirmed each multi-school person",
   "original_attendance_ids_preserved": 444,
   "original_player_game_rows_preserved": 13183,
-  "requested_person_merges": 211,
-  "activated_person_merges": 211,
+  "requested_person_merges": 212,
+  "activated_person_merges": 212,
   "pending_person_merges": 0,
   "merge_policy": "Only listed pair of exact normalized person names and school-specific original source player IDs; all other IDs remain separate",
   "display_aliases": [
@@ -6241,6 +6241,35 @@
       "note": "Owner confirmed Texas and Charleston identity. Official 2024 Charleston box score lists D. Pendergra and spells out Dariyan Pendergrass in baserunning.",
       "evidence_urls": [
         "https://cofcsports.com/sports/baseball/stats/2024/marshall/boxscore/11657"
+      ]
+    },
+    {
+      "name": "Dorian Gonzalez Jr.",
+      "display_name": "Dorian Gonzalez Jr.",
+      "canonical_id": "cb-miami-dorian-gonzalez-jr",
+      "source_player_ids": [
+        "cb-miami-dorian-gonzalez-jr",
+        "cb-miami-jr-dorian-gonzalez"
+      ],
+      "schools": [
+        "Miami"
+      ],
+      "pairs": [
+        {
+          "team": "Miami",
+          "source_player_id": "cb-miami-dorian-gonzalez-jr"
+        },
+        {
+          "team": "Miami",
+          "source_player_id": "cb-miami-jr-dorian-gonzalez"
+        }
+      ],
+      "source_rows": 3,
+      "note": "Owner approved merge of suffix-reordered duplicate Jr. Dorian Gonzalez; official 2024 Louisville and 2025 Wake Forest box scores and Miami 2024-25 biography confirm the same player. Preserve all three distinct game appearances and the existing canonical portrait.",
+      "evidence_urls": [
+        "https://gocards.com/sports/baseball/stats/2024/miami/boxscore/25055",
+        "https://godeacs.com/sports/baseball/stats/2025/miami/boxscore/13957",
+        "https://miamihurricanes.com/sports/baseball/roster/season/2024-25/player/dorian-gonzalez"
       ]
     }
   ]

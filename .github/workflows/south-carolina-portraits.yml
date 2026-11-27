@@ -38,8 +38,8 @@ jobs:
           SCHOOL='South Carolina'
           HOST='gamecocksonline.com'
           REG='college-baseball/data/player_portraits.json'
-          REPORT='college-baseball/data/south_carolina_portrait_final_recovery.json'
-          PRIOR='college-baseball/data/south_carolina_portrait_recovery.json'
+          REPORT='college-baseball/data/south_carolina_portrait_proxy_recovery.json'
+          PRIOR='college-baseball/data/south_carolina_portrait_final_recovery.json'
           players=json.loads(subprocess.check_output(['node','scripts/export_baseball_portrait_preferences.cjs',SCHOOL],text=True))
           assert players,'No witnessed South Carolina players'
           prior=load(PRIOR,{})
@@ -89,6 +89,28 @@ jobs:
                           options.append((0 if exact and explicit else 1 if exact else 2,u))
               for _,u in sorted(set(options)):yield u
           def south_carolina_images(soup,page,names,confirmed_bio=False):
+              import base64
+              # Official roster card: exact player alt/title and signed 600x800
+              # portrait proxy pointing to the university's own media bucket.
+              # Decode only to verify provenance; publish the signed school URL.
+              for im in soup.find_all('img'):
+                  alt=norm(im.get('alt',''))
+                  title=norm(im.get('title',''))
+                  if alt not in names or (title and title not in names):continue
+                  for key in ('data-src','src','data-lazy-src'):
+                      raw=im.get(key)
+                      if not isinstance(raw,str):continue
+                      u=urljoin(page,raw)
+                      if host(u)!=HOST:continue
+                      m=re.fullmatch(r'/imgproxy/[^/]+/fit/600/800/ce/0/([A-Za-z0-9_-]+)\.(?:png|jpe?g|webp)',urlsplit(u).path,re.I)
+                      if not m:continue
+                      token=m.group(1)
+                      try:original=base64.urlsafe_b64decode(token+'='*((-len(token))%4)).decode()
+                      except Exception:continue
+                      if host(original)!='storage.googleapis.com' or not urlsplit(original).path.startswith('/gamecocksonline-com/'):continue
+                      filename=unquote(urlsplit(original).path).rsplit('/',1)[-1]
+                      if re.search(r'logo|default|placeholder|silhouette|action|gallery|sponsor',filename,re.I):continue
+                      yield u
               if confirmed_bio:
                   yield from images_in(soup,page,names,True)
                   return
@@ -233,7 +255,7 @@ jobs:
           from playwright.sync_api import sync_playwright
           from PIL import Image,ImageDraw
           root=pathlib.Path.cwd()
-          report=json.loads((root/'college-baseball/data/south_carolina_portrait_final_recovery.json').read_text())
+          report=json.loads((root/'college-baseball/data/south_carolina_portrait_proxy_recovery.json').read_text())
           out=root/'south-carolina-visual-review';out.mkdir(exist_ok=True)
           server=http.server.ThreadingHTTPServer(('127.0.0.1',0),functools.partial(http.server.SimpleHTTPRequestHandler,directory=str(root)))
           threading.Thread(target=server.serve_forever,daemon=True).start()
@@ -291,7 +313,7 @@ jobs:
           report['render_failures']=sorted(failed)
           report['registered_portraits']=sum(t['id'] in registry for t in report['targets'])
           regpath.write_text(json.dumps(registry,ensure_ascii=False,indent=2,sort_keys=True)+'\n')
-          (root/'college-baseball/data/south_carolina_portrait_final_recovery.json').write_text(json.dumps(report,ensure_ascii=False,indent=2,sort_keys=True)+'\n')
+          (root/'college-baseball/data/south_carolina_portrait_proxy_recovery.json').write_text(json.dumps(report,ensure_ascii=False,indent=2,sort_keys=True)+'\n')
           PY
       - uses: actions/upload-artifact@v4
         if: always()
@@ -299,12 +321,12 @@ jobs:
           name: south-carolina-final-portrait-review
           path: |
             south-carolina-visual-review/
-            college-baseball/data/south_carolina_portrait_final_recovery.json
+            college-baseball/data/south_carolina_portrait_proxy_recovery.json
       - name: Publish verified South Carolina portrait changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add college-baseball/data/player_portraits.json college-baseball/data/south_carolina_portrait_final_recovery.json
+          git add college-baseball/data/player_portraits.json college-baseball/data/south_carolina_portrait_proxy_recovery.json
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "Add verified South Carolina witnessed-player portraits"
           for attempt in 1 2 3; do

@@ -41,7 +41,7 @@ jobs:
           assert players,'No witnessed Vanderbilt players'
           registry=load(REG,{})
           hosts=load('college-baseball/data/portrait_school_hosts.json')
-          report={'school':SCHOOL,'targeted':len(players),'targets':[{k:p[k] for k in ('id','name','schools','preference')} for p in players],'added':[],'upgraded':[],'preserved':[],'missing':[],'notes':[],'rosters':[]}
+          report={'school':SCHOOL,'targeted':len(players),'targets':[{k:p[k] for k in ('id','name','schools','preference')} for p in players],'added':[],'upgraded':[],'preserved':[],'missing':[],'notes':[],'rosters':[],'name_discrepancies':[]}
           def verified_url(u,school):
               h=host(u)
               return u.startswith('https://') and (h==school or any(h==d or h.endswith('.'+d) for d in ('sidearmsports.com','sidearmdev.com','sidearmnextgen.com','cloudfront.net','amazonaws.com')) or (school=='lsusports.net' and (h.endswith('.lsusports.net') or h=='storage.googleapis.com' and re.match(r'/lsu(?:sports)?[-a-z0-9]*/',urlsplit(u).path,re.I))) )
@@ -49,7 +49,7 @@ jobs:
               for im in soup.find_all('img'):
                   alt=norm(im.get('alt',''))
                   context=' '.join(' '.join(t.get('class',[])) for t in [im,*list(im.parents)[:3]] if getattr(t,'attrs',None) is not None).lower()
-                  for key in ('data-src','src','data-lazy-src','data-original','data-url'):
+                  for key in ('url','data-src','src','data-lazy-src','data-original','data-url'):
                       raw=im.get(key)
                       if not raw:continue
                       u=urljoin(page,raw)
@@ -59,12 +59,19 @@ jobs:
                       named=any(n in stem for n in names)
                       headshot='headshot' in alt or 'headshot' in context or 'portrait' in context or 'headshot' in stem
                       # A generic Vanderbilt Baseball Headshot is safe only in an exact-name, season-verified player bio.
-                      if exact_alt or (named and headshot) or (confirmed_bio and headshot and not re.search(r'gallery|article|related|news',context)):
+                      if confirmed_bio and 'roster-bio-photo__image' in im.get('class',[]) and exact_alt:
+                          original=im.get('original_name','')
+                          if original and not any(n in norm(original) for n in names):
+                              # Explicitly flag mismatched filenames, including hashed names, for later review.
+                              discrepancy={'name':im.get('alt'),'filename':original,'source':page,'url':u}
+                              if discrepancy not in report['name_discrepancies']:report['name_discrepancies'].append(discrepancy)
+                          yield u
+                      elif not confirmed_bio and (exact_alt or (named and headshot)):
                           yield u
           def page_for(h,y):
               if h!=HOST:return roster(y,h,report['notes'])
               season=f'{y-1}-{str(y)[-2:]}'
-              u=f'https://{HOST}/sports/baseball/roster/season/{season}/?view=list'
+              u=f'https://{HOST}/sports/baseball/roster/season/{season}/?view=list' if y!=2027 else f'https://{HOST}/sports/baseball/roster?view=list'
               try:
                   r=get(u);r.raise_for_status()
                   if host(r.url)!=HOST:raise ValueError('Unexpected roster host')
@@ -180,18 +187,23 @@ jobs:
           server=http.server.ThreadingHTTPServer(('127.0.0.1',0),functools.partial(http.server.SimpleHTTPRequestHandler,directory=str(root)))
           threading.Thread(target=server.serve_forever,daemon=True).start()
           results=[]
+          registry=json.loads((root/'college-baseball/data/player_portraits.json').read_text())
           with sync_playwright() as p:
               browser=p.chromium.launch()
               for mode,w,h in [('desktop',1360,900),('mobile',390,844)]:
                   page=browser.new_page(viewport={'width':w,'height':h},device_scale_factor=1)
                   for t in report['targets']:
                       pid=t['id'];row={'id':pid,'name':t['name'],'viewport':mode}
+                      if pid not in registry:
+                          row['status']='missing';results.append(row);print(mode,t['name'],'missing; skipped browser timeout',flush=True);continue
                       try:
                           page.goto(f'http://127.0.0.1:{server.server_port}/college-baseball/player.html?id='+quote(pid),wait_until='domcontentloaded',timeout=30000)
                           frame=page.locator('.cb-player-portrait')
                           frame.wait_for(state='visible',timeout=15000)
                           page.wait_for_function("() => {const i=document.querySelector('.cb-player-portrait img');return i&&i.complete&&i.naturalWidth>0&&i.parentElement.classList.contains('has-portrait')}",timeout=12000)
                           row.update(frame.locator('img').evaluate("i=>({url:i.currentSrc,natural:[i.naturalWidth,i.naturalHeight],fit:getComputedStyle(i).objectFit,position:getComputedStyle(i).objectPosition})"))
+                          selected=registry[pid]['url']
+                          if pid in {x['id'] for x in report['added']+report['upgraded']} and row['url']!=selected:raise ValueError('New portrait did not render; fallback used')
                           frame.screenshot(path=str(out/f'{mode}-{pid}.png'),timeout=10000)
                           row['status']='pass'
                       except Exception as e:row['status']='fail';row['error']=str(e)

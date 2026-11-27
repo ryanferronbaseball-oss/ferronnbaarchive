@@ -1,0 +1,133 @@
+name: Duke Gabe Nard name and headshot correction
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/duke-gabe-nard.yml']
+permissions:
+  contents: write
+concurrency:
+  group: college-baseball-portraits
+  cancel-in-progress: false
+jobs:
+  correct:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: pip install requests pillow beautifulsoup4 playwright
+      - run: python -m playwright install --with-deps chromium
+      - name: Verify official Gabe Nard headshot and update display name
+        env:
+          PYTHONPATH: scripts
+        run: |
+          python - <<'PY'
+          import json,hashlib,re
+          from pathlib import Path
+          from urllib.parse import urljoin,urlsplit,parse_qs,unquote
+          from bs4 import BeautifulSoup
+          from audit_player_portraits import get,probe
+          from recover_lsu_final_portraits import norm,photo_year
+          D=Path('college-baseball/data')
+          def load(n):return json.loads((D/n).read_text())
+          def save(n,d):(D/n).write_text(json.dumps(d,indent=2,ensure_ascii=False)+'\n')
+          pid='cb-duke-gabriel-nard'
+          before=hashlib.sha256((D/'player_stats.json').read_bytes()).hexdigest()
+          rows=load('player_stats.json');reg=load('player_portraits.json');cross=load('player_identity_crosswalk.json')
+          matches=[r for r in rows if r['player_id']==pid]
+          assert matches and any(r['team']=='Duke' for r in matches)
+          source='https://goduke.com/sports/baseball/roster/gabriel-nard/21064'
+          names={'gabenard','gabrielnard','nardgabe','nardgabriel'}
+          options=[]
+          for page in ['https://goduke.com/sports/baseball/roster/2025?view=2',source]:
+              r=get(page);r.raise_for_status();assert urlsplit(r.url).hostname=='goduke.com'
+              soup=BeautifulSoup(r.text,'html.parser')
+              if page==source:
+                  assert any(norm(t.get_text(' ',strip=True))=='gabenard' for t in soup.find_all(['h1','h2','h3']))
+              for im in soup.find_all('img'):
+                  alt=norm(im.get('alt',''))
+                  for key in ('src','data-src','data-lazy-src'):
+                      raw=im.get(key)
+                      if not isinstance(raw,str):continue
+                      u=urljoin(r.url,raw);q=parse_qs(urlsplit(u).query)
+                      if urlsplit(u).hostname!='images.sidearmdev.com' or '/crop' not in urlsplit(u).path:continue
+                      if (q.get('width'),q.get('height')) not in ((['603'],['803']),(['180'],['270'])):continue
+                      base=norm(unquote(q.get('url',[''])[0]).rsplit('/',1)[-1])
+                      if not any(n in base or n in alt for n in names):continue
+                      if not ('nard' in base and ('gabe' in base or 'gabriel' in base) or alt in names):continue
+                      options.append((u,r.url,im.get('alt','')))
+          for u,page,label in dict.fromkeys(options):
+              state,digest=probe(u)
+              if state!='image' or not digest:continue
+              assert pid not in reg or reg[pid]['url']==u
+              reg[pid]={'url':u,'source':page,'provider':'college','school':'Duke','season':2025,'photo_year':photo_year(u,2025)}
+              break
+          assert pid in reg,('No official headshot',options)
+          aliases=cross.setdefault('display_aliases',[])
+          old=[x for x in aliases if x['player_id']==pid]
+          if not old:aliases.append({'player_id':pid,'display_name':'Gabe Nard','former_names':['Gabriel Nard'],'evidence_urls':[source]})
+          else:assert old[0]['display_name']=='Gabe Nard'
+          assert before==hashlib.sha256((D/'player_stats.json').read_bytes()).hexdigest()
+          report={'id':pid,'display_name':'Gabe Nard','source_rows':len(matches),'portrait':reg[pid],'added':[{'id':pid,'name':'Gabe Nard',**reg[pid]}]}
+          save('player_identity_crosswalk.json',cross);save('player_portraits.json',reg);save('duke_gabe_nard_correction.json',report)
+          PY
+      - name: Verify Duke coverage and canonical name
+        run: |
+          node scripts/export_baseball_portrait_preferences.cjs Duke > /tmp/duke.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          D=Path('college-baseball/data')
+          p=json.load(open('/tmp/duke.json'));reg=json.loads((D/'player_portraits.json').read_text())
+          a=[x for x in p if x['id']=='cb-duke-gabriel-nard']
+          assert len(a)==1 and a[0]['name']=='Gabe Nard',a
+          assert len(p)==39 and all(x['id'] in reg for x in p)
+          report=json.loads((D/'duke_gabe_nard_correction.json').read_text());report['coverage']={'players':39,'portraits':39}
+          (D/'duke_gabe_nard_correction.json').write_text(json.dumps(report,indent=2)+'\n')
+          PY
+      - name: Verify Gabe Nard profile on desktop and mobile
+        run: |
+          python - <<'PY'
+          import json,threading,http.server,functools
+          from pathlib import Path
+          from playwright.sync_api import sync_playwright
+          from urllib.parse import quote
+          root=Path.cwd();D=root/'college-baseball/data'
+          reg=json.loads((D/'player_portraits.json').read_text())
+          report=json.loads((D/'duke_gabe_nard_correction.json').read_text())
+          server=http.server.ThreadingHTTPServer(('127.0.0.1',0),functools.partial(http.server.SimpleHTTPRequestHandler,directory=str(root)))
+          threading.Thread(target=server.serve_forever,daemon=True).start()
+          results=[]
+          with sync_playwright() as p:
+              browser=p.chromium.launch()
+              for mode,w,h in [('desktop',1360,900),('mobile',390,844)]:
+                  page=browser.new_page(viewport={'width':w,'height':h})
+                  for pid in [report['id']]:
+                      page.goto(f'http://127.0.0.1:{server.server_port}/college-baseball/player.html?id='+quote(pid),wait_until='domcontentloaded',timeout=30000)
+                      frame=page.locator('.cb-player-portrait')
+                      frame.wait_for(state='visible',timeout=15000)
+                      page.wait_for_function("() => {const i=document.querySelector('.cb-player-portrait img');return i&&i.complete&&i.naturalWidth>0&&i.parentElement.classList.contains('has-portrait')}",timeout=15000)
+                      actual=frame.locator('img').evaluate('i=>i.currentSrc')
+                      assert actual==reg[pid]['url'],(pid,actual)
+                      results.append({'id':pid,'viewport':mode,'status':'pass'})
+                      print(pid,mode,'pass',flush=True)
+                  page.close()
+              browser.close()
+          server.shutdown()
+          report['render_checks']=results
+          (D/'duke_gabe_nard_correction.json').write_text(json.dumps(report,indent=2)+'\n')
+          PY
+      - name: Publish verified corrections
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add college-baseball/data/player_identity_crosswalk.json college-baseball/data/player_portraits.json college-baseball/data/duke_gabe_nard_correction.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Display Gabe Nard and add verified Duke headshot"
+          git pull --rebase origin main
+          git push origin HEAD:main

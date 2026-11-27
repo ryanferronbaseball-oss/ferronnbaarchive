@@ -29,6 +29,16 @@
 .duel-note{border-left:4px solid var(--duel-red);background:#edf5fc;color:#41576b;padding:17px 20px;border-radius:0 10px 10px 0;font-size:13px;line-height:1.7;margin-top:25px}
 .duel-empty{grid-column:1/-1;padding:28px;text-align:center;border:1px dashed #bed2e5;border-radius:12px}
 @media(max-width:800px){.duel-grid{grid-template-columns:1fr}}@media(max-width:430px){.duel-head,.duel-body{padding:15px}.duel-pitcher a,.duel-pitcher strong{font-size:17px}}
+
+.duel-person,.duel-pitcher{text-align:center;align-self:start}
+.duel-pitchers,.duel-versus{align-items:center}
+.duel-portrait{position:relative;display:flex;align-items:center;justify-content:center;width:clamp(76px,12vw,112px);height:clamp(92px,14vw,132px);margin:0 auto 10px;border:1px solid #c3d7e6;border-radius:12px;background:linear-gradient(145deg,#e6f2fb,#f7e9ee);overflow:hidden;color:var(--duel-red);font-weight:850;font-size:24px}
+.duel-portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center bottom;opacity:0}
+.duel-portrait img.is-loaded{opacity:1;background:#e9f3fa}
+.duel-portrait-link{display:block;color:inherit;text-decoration:none}
+.duel-portrait-link:hover .duel-portrait{border-color:var(--duel-red)}
+.duel-person .archive-photo-credit{display:block;font-size:10px;line-height:1.3;margin-top:5px;color:#526b7d}
+.duel-person .archive-photo-credit a{color:inherit;font-size:inherit}
 </style></head><body><main>
 <div id="navigation"></div>
 <section class="duel-hero">
@@ -42,10 +52,19 @@
 <div class="duel-note"><strong>Selection standard:</strong> This is a personal, evolving collection, not a numerical ranking. College pitching reputations are considered case by case, emphasizing the caliber of both starting pitchers at the time. Matchups are chronological by default, and repeat pairings on different dates are intentional.</div>
 <footer class="footer">Courtside Archive · College Baseball · Best Pitching Matchups</footer>
 </main>
+<script defer src="./assets/archive.js?v=20261126-lsu-portrait-fit"></script>
 <script>
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const norm=v=>String(v||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]/gi,'').toLowerCase();
-let matchups=[],gameMap=new Map(),players=new Map();
+let matchups=[],gameMap=new Map(),players=new Map(),portraitRegistry={},playerRows=new Map();
+
+function portraitMarkup(name,pid,urls){
+ const initials=esc(String(name).trim().split(/\s+/).slice(0,2).map(n=>n[0]).join('').toUpperCase());
+ const srcs=[...new Set(urls.filter(Boolean))];
+ const photo='<span class="duel-portrait"><span aria-hidden="true">'+initials+'</span>'+(srcs.length?'<img alt="'+esc(name)+'" loading="lazy" decoding="async" src="'+esc(srcs[0])+'" data-remaining="'+esc(JSON.stringify(srcs.slice(1)))+'" onload="this.classList.add(\'is-loaded\')" onerror="this.classList.remove(\'is-loaded\');const rest=JSON.parse(this.dataset.remaining);if(rest.length){this.dataset.remaining=JSON.stringify(rest.slice(1));this.src=rest[0]}else this.remove()">':'')+'</span>';
+ return pid?'<a class="duel-portrait-link" aria-label="View '+esc(name)+' player profile" href="./player.html?id='+encodeURIComponent(pid)+'">'+photo+'</a>':photo;
+}
+
 const navLinks=[['index.html','Overview'],['game.html','Games'],['stats.html','Players'],['transfers.html','Transfers'],['cws.html','College World Series'],['best-pitching-matchups.html','Pitching Matchups'],['coaches.html','Coaches'],['records.html','Records'],['mlb-alumni.html','To the MLB']];
 document.getElementById('navigation').innerHTML='<header class="archive-header"><a class="archive-logo" href="./index.html">COURTSIDE ARCHIVE<small>EVERY GAME HAS A STORY · COLLEGE BASEBALL</small></a><nav class="archive-nav" aria-label="College Baseball archive navigation">'+navLinks.map(([url,label])=>'<a href="./'+url+'"'+(url==='best-pitching-matchups.html'?' aria-current="page"':'')+'>'+label+'</a>').join('')+'<a href="../index.html" class="back-link">All sports ↗</a></nav></header>';
 async function json(path){const r=await fetch(path,{cache:'no-store'});if(!r.ok)throw new Error('Could not load '+path);return r.json()}
@@ -53,8 +72,9 @@ function dateLabel(v){return new Date(v+'T12:00:00').toLocaleDateString('en-US',
 function pitcher(name,team,gameId){
  const matches=players.get(gameId+'|'+team+'|'+norm(name))||[];
  const ids=[...new Set(matches.filter(x=>x.pitching&&x.player_id).map(x=>x.player_id))];
- const label=esc(name);
- return '<div class="duel-pitcher">'+(ids.length===1?'<a href="./player.html?id='+encodeURIComponent(ids[0])+'">'+label+'</a>':'<strong>'+label+'</strong>')+'<div class="duel-team">'+esc(team)+'</div></div>';
+ const label=esc(name),pid=ids.length===1?ids[0]:null;
+ const urls=pid?window.CollegeBaseballArchive.playerPortraitCandidates(portraitRegistry[pid],playerRows.get(pid)||[]):[];
+ return '<div class="duel-pitcher">'+portraitMarkup(name,pid,urls)+(ids.length===1?'<a href="./player.html?id='+encodeURIComponent(ids[0])+'">'+label+'</a>':'<strong>'+label+'</strong>')+'<div class="duel-team">'+esc(team)+'</div></div>';
 }
 function draw(){
  const q=document.getElementById('search').value.trim().toLowerCase(),newest=document.getElementById('sort').value==='newest';
@@ -68,11 +88,13 @@ function draw(){
 }
 async function init(){
  try{
- const [saved,games,rows]=await Promise.all([json('./data/best_pitching_matchups.json'),json('./data/games.json'),json('./data/player_stats.json').catch(()=>[])]);
+ const [saved,data,portraits]=await Promise.all([json('./data/best_pitching_matchups.json'),window.CollegeBaseballArchive.load().catch(async()=>({games:await json('./data/games.json'),rows:await json('./data/player_stats.json').catch(()=>[])})),json('./data/player_portraits.json').catch(()=>({}))]);
+ const {games,rows}=data;portraitRegistry=portraits;
+ for(const r of rows){if(!r.player_id)continue;if(!playerRows.has(r.player_id))playerRows.set(r.player_id,[]);playerRows.get(r.player_id).push(r)}
  matchups=(saved.matchups||[]).filter(x=>x.verified===true);gameMap=new Map(games.map(g=>[g.id,g]));
  for(const r of rows){if(!r.game_id||!r.team||!r.player)continue;const key=r.game_id+'|'+r.team+'|'+norm(r.player);if(!players.has(key))players.set(key,[]);players.get(key).push(r)}
  document.getElementById('heroCount').textContent=matchups.length+' selected matchups';draw();
  }catch(e){document.getElementById('resultCount').textContent='Matchups unavailable';document.getElementById('duelGrid').innerHTML='<div class="duel-empty">Unable to load the selected matchups. Please refresh the page.</div>';console.error(e)}
 }
-document.getElementById('search').addEventListener('input',draw);document.getElementById('sort').addEventListener('change',draw);init();
+document.getElementById('search').addEventListener('input',draw);document.getElementById('sort').addEventListener('change',draw);document.addEventListener('DOMContentLoaded',init);
 </script></body></html>

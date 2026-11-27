@@ -3899,8 +3899,90 @@
       "home": "Kentucky",
       "source_url": "https://utsports.com/sports/baseball/stats/2026/kentucky/boxscore/29752",
       "original_reason": "unable to uniquely match both full pitching tables to archived names and IP/H/R/ER/BB/K",
-      "status": "unresolved",
-      "reason": "unable to uniquely match both full pitching tables to archived names and IP/H/R/ER/BB/K"
+      "status": "recovered",
+      "method": "Manual official Tennessee HTML; match team, verified names and exact pitching signatures; explicit BF reconciled against opposing batting totals",
+      "manual_source_url": "https://utsports.com/sports/baseball/stats/2026/kentucky/boxscore/29752",
+      "verification": {
+        "Tennessee": {
+          "BF": 44,
+          "opponent_AB": 40,
+          "opponent_BB": 3,
+          "opponent_HBP": 1
+        },
+        "Kentucky": {
+          "BF": 45,
+          "opponent_AB": 37,
+          "opponent_BB": 2,
+          "opponent_HBP": 3,
+          "opponent_SH": 2,
+          "opponent_SF": 1
+        }
+      },
+      "pitchers": 12,
+      "added": 12,
+      "recovered_this_run": 12,
+      "values": [
+        {
+          "player_id": "cb-tennessee-landon-mack",
+          "team": "Tennessee",
+          "BF": 24
+        },
+        {
+          "player_id": "cb-tennessee-cam-appenzeller",
+          "team": "Tennessee",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-tennessee-bo-rhudy",
+          "team": "Tennessee",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-tennessee-brandon-arvidson",
+          "team": "Tennessee",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-kentucky-connor-mattison",
+          "team": "Kentucky",
+          "BF": 16
+        },
+        {
+          "player_id": "cb-kentucky-ryan-mullan",
+          "team": "Kentucky",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-kentucky-ira-austin-iv",
+          "team": "Kentucky",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-kentucky-leighton-harris",
+          "team": "Kentucky",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-kentucky-nile-adcock",
+          "team": "Kentucky",
+          "BF": 14
+        },
+        {
+          "player_id": "cb-kentucky-toby-peterson",
+          "team": "Kentucky",
+          "BF": 1
+        },
+        {
+          "player_id": "cb-kentucky-jack-bennett",
+          "team": "Kentucky",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-kentucky-jackson-soucie",
+          "team": "Kentucky",
+          "BF": 2
+        }
+      ]
     },
     {
       "game_id": "cb-2026-05-10-little-rock-ut-martin-att0421",

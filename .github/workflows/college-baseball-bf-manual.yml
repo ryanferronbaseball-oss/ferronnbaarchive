@@ -17,7 +17,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Apply verified April 11 2026 ETSU Belmont game 1 BF
+      - name: Apply verified April 24 2026 Central Arkansas Bellarmine BF
         run: |
           python - <<'PY'
           import json,re
@@ -27,17 +27,19 @@ jobs:
           audit=D/'bf_audit_recovery.json'
           rows=json.loads(stats.read_text())
           report=json.loads(audit.read_text())
-          gid='cb-2026-04-11-east-tennessee-state-belmont-att0411'
-          source='https://belmontbruins.com/sports/baseball/stats/2026/east-tennessee-state/boxscore/7031'
+          gid='cb-2026-04-24-central-arkansas-bellarmine-att0414'
+          source='https://athletics.bellarmine.edu/sports/baseball/stats/2026/university-of-central-arkansas/boxscore/8799'
           game=next(g for g in json.loads((D/'games.json').read_text()) if g['id']==gid)
-          assert (game['date'],game['away'],game['home'],game['away_score'],game['home_score'])==('2026-04-11','East Tennessee State','Belmont',8,4)
-          assert game['game_number']==1
+          assert (game['date'],game['away'],game['home'],game['away_score'],game['home_score'])==('2026-04-24','Central Arkansas','Bellarmine',13,2)
           seeds=[
-              ('East Tennessee State','Michael Harpster',(17,4,0,0,2,10,89),24),
-              ('East Tennessee State','Derek McCarley',(2,3,4,4,1,2,16),6),
-              ('East Tennessee State','Tyler Kropis',(2,0,0,0,0,0,7),2),
-              ('Belmont','Ridge Harvey',(18,8,6,4,0,5,81),26),
-              ('Belmont','Aubrey Moraitakis',(3,3,2,1,1,1,32),7),
+              ('Central Arkansas','Denver Hamilton',(21,7,2,2,1,5,108),29),
+              ('Central Arkansas','JB Williams',(3,0,0,0,1,1,17),4),
+              ('Bellarmine','Raygan New',(6,5,5,0,1,1,44),13),
+              ('Bellarmine','Nikau Heeney',(4,2,5,5,3,0,27),10),
+              ('Bellarmine','Drew Jennings',(5,2,1,1,1,1,23),9),
+              ('Bellarmine','Jaxson Howard',(3,2,0,0,0,0,13),4),
+              ('Bellarmine','Brandon Newland',(3,0,0,0,3,0,23),6),
+              ('Bellarmine','Owen Payne',(3,3,2,2,0,1,22),7),
           ]
           arms=[r for r in rows if r['game_id']==gid and r.get('pitching') is not None]
           entry=next(r for r in report['games'] if r['game_id']==gid)
@@ -58,15 +60,15 @@ jobs:
                   p['battersFaced']=bf; added+=1
               values.append({'player_id':r['player_id'],'team':team,'BF':bf})
               print(r['player'],bf,'K%',round(100*p['strikeOuts']/bf,1),'BB%',round(100*p['baseOnBalls']/bf,1))
-          assert sum(v['BF'] for v in values if v['team']=='East Tennessee State')==32==27+3+1+1
-          assert sum(v['BF'] for v in values if v['team']=='Belmont')==33==30+1+2
+          assert sum(v['BF'] for v in values if v['team']=='Central Arkansas')==33==31+2
+          assert sum(v['BF'] for v in values if v['team']=='Bellarmine')==49==37+8+3+1
           if entry['status']=='recovered':
               assert entry['values']==values and added==0
               print('Already verified and saved')
               raise SystemExit(0)
           assert entry['status']=='unresolved'
           entry.pop('reason',None)
-          entry.update(status='recovered',method='Manual official Belmont HTML game 1; exact pitching signatures and names matched; explicit BF reconciled against opponent batting in Belmont source; existing batting statistics preserved',manual_source_url=source,verification={'East Tennessee State':{'BF':32,'opponent_AB':27,'opponent_BB':3,'opponent_HBP':1,'opponent_SF':1},'Belmont':{'BF':33,'opponent_AB':30,'opponent_BB':1,'opponent_SF':2}},pitchers=5,added=added,recovered_this_run=added,values=values)
+          entry.update(status='recovered',method='Manual official Bellarmine HTML; match full archived pitcher names and exact pitching signatures; explicit BF reconciled against team pitching totals and opposing batting totals',manual_source_url=source,verification={'Central Arkansas':{'BF':33,'opponent_AB':31,'opponent_BB':2},'Bellarmine':{'BF':49,'opponent_AB':37,'opponent_BB':8,'opponent_HBP':3,'opponent_SF':1}},pitchers=8,added=added,recovered_this_run=added,values=values)
           stats.write_text(json.dumps(rows,ensure_ascii=False,indent=2)+'\n')
           audit.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
           print('Added:',added,'Remaining unresolved:',sum(r['status']=='unresolved' for r in report['games']))
@@ -77,6 +79,6 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add college-baseball/data/player_stats.json college-baseball/data/bf_audit_recovery.json
           if git diff --cached --quiet; then exit 0; fi
-          git commit -m "Recover verified BF for April 11 2026 ETSU Belmont game 1"
+          git commit -m "Recover verified BF for April 24 2026 Central Arkansas Bellarmine"
           git pull --rebase origin main
           git push origin HEAD:main

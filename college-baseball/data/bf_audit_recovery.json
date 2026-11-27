@@ -4106,8 +4106,98 @@
       "home": "Kentucky",
       "source_url": "https://arkansasrazorbacks.com/stats/baseball/2026/ARK55.pdf",
       "original_reason": "date not confirmed",
-      "status": "unresolved",
-      "reason": "PDF gamebook deferred to PDF recovery pass"
+      "status": "recovered",
+      "method": "Manual official Arkansas PDF, page 1; explicit BF and exact pitching signatures; Kentucky abbreviated names matched to official roster; opposing batting totals reconciled",
+      "manual_source_url": "https://arkansasrazorbacks.com/stats/baseball/2026/ARK55.pdf",
+      "verification": {
+        "Arkansas": {
+          "BF": 48,
+          "opponent_AB": 44,
+          "opponent_BB": 3,
+          "opponent_HBP": 1
+        },
+        "Kentucky": {
+          "BF": 53,
+          "opponent_AB": 41,
+          "opponent_BB": 7,
+          "opponent_HBP": 5
+        }
+      },
+      "pitchers": 14,
+      "added": 14,
+      "recovered_this_run": 14,
+      "values": [
+        {
+          "player_id": "cb-arkansas-tate-mcguire",
+          "team": "Arkansas",
+          "BF": 10
+        },
+        {
+          "player_id": "cb-arkansas-cole-gibler",
+          "team": "Arkansas",
+          "BF": 15
+        },
+        {
+          "player_id": "cb-arkansas-steele-eaves",
+          "team": "Arkansas",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-arkansas-parker-coil",
+          "team": "Arkansas",
+          "BF": 8
+        },
+        {
+          "player_id": "cb-arkansas-james-decremer",
+          "team": "Arkansas",
+          "BF": 12
+        },
+        {
+          "player_id": "cb-kentucky-connor-mattison",
+          "team": "Kentucky",
+          "BF": 6
+        },
+        {
+          "player_id": "cb-kentucky-toby-peterson",
+          "team": "Kentucky",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-kentucky-ira-austin-iv",
+          "team": "Kentucky",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-kentucky-ryan-mullan",
+          "team": "Kentucky",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-kentucky-will-coleman",
+          "team": "Kentucky",
+          "BF": 7
+        },
+        {
+          "player_id": "cb-kentucky-chase-alderman",
+          "team": "Kentucky",
+          "BF": 4
+        },
+        {
+          "player_id": "cb-kentucky-bryson-treichel",
+          "team": "Kentucky",
+          "BF": 3
+        },
+        {
+          "player_id": "cb-kentucky-tristan-hunter",
+          "team": "Kentucky",
+          "BF": 2
+        },
+        {
+          "player_id": "cb-kentucky-jack-bennett",
+          "team": "Kentucky",
+          "BF": 18
+        }
+      ]
     },
     {
       "game_id": "cb-2026-05-19-kentucky-vanderbilt-att0426",

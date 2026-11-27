@@ -41,9 +41,10 @@ jobs:
           rows=load('player_stats.json');reg=load('player_portraits.json');cross=load('player_identity_crosswalk.json')
           def norm(s):return re.sub(r'[^a-z0-9]','',str(s).lower())
           texas=[r for r in rows if r['player_id']==pid]
-          surname_rows=[r for r in rows if 'pendergrass' in norm(r.get('player_id')) or 'pendergrass' in norm(r.get('player'))]
+          game='cb-2024-02-19-marshall-college-of-charleston-att0231'
+          surname_rows=[r for r in rows if 'pendergra' in norm(r.get('player_id')) or 'pendergra' in norm(r.get('player'))]
           print('Pendergrass source rows:',json.dumps([{'id':r.get('player_id'),'name':r.get('player'),'team':r.get('team'),'game':r.get('game_id')} for r in surname_rows]),flush=True)
-          charleston=[r for r in surname_rows if norm(r.get('team')) in ('charleston','collegeofcharleston','charlestonsc','charlestoncougars','collegeofcharlestoncougars','cofc') and (norm(r.get('player')) in ('dariyanpendergrass','dpendergrass','pendergrassd','pendergrass') or norm(r.get('player_id')).endswith(('dariyanpendergrass','dpendergrass','pendergrassd','pendergrass')))]
+          charleston=[r for r in surname_rows if r['game_id']==game and norm(r.get('team')) in ('collegeofcharleston','colofcharleston','charleston') and norm(r.get('player')) in ('dpendergra','dpendergrass','dariyanpendergrass','dariyanpendergra','pendergra','pendergrass')]
           assert texas and all(r['team']=='Texas' for r in texas)
           assert charleston,'No exact Dariyan Pendergrass Charleston rows'
           old_ids={r['player_id'] for r in charleston}
@@ -58,7 +59,7 @@ jobs:
           assert probe(reg[pid]['url'])[0]=='image'
           existing=[m for m in cross['merges'] if ids.intersection(m['source_player_ids'])]
           if not existing:
-              cross['merges'].append({'name':'Dariyan Pendergrass','display_name':'Dariyan Pendergrass','canonical_id':pid,'source_player_ids':sorted(ids),'schools':schools,'pairs':[{'team':team,'source_player_id':i} for team,i in pairs],'source_rows':len(matches),'note':'Owner confirmed Texas and Charleston are the same player; original game logs retained.'})
+              cross['merges'].append({'name':'Dariyan Pendergrass','display_name':'Dariyan Pendergrass','canonical_id':pid,'source_player_ids':sorted(ids),'schools':schools,'pairs':[{'team':team,'source_player_id':i} for team,i in pairs],'source_rows':len(matches),'note':'Owner confirmed Texas and Charleston identity. Official 2024 Charleston box score lists D. Pendergra and spells out Dariyan Pendergrass in baserunning.','evidence_urls':['https://cofcsports.com/sports/baseball/stats/2024/marshall/boxscore/11657']})
               for field in ('requested_person_merges','activated_person_merges'):cross[field]+=1
           else:assert len(existing)==1 and set(existing[0]['source_player_ids'])==ids and existing[0]['canonical_id']==pid
           assert before==hashlib.sha256(raw.read_bytes()).hexdigest()

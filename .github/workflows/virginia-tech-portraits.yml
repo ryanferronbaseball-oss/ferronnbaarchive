@@ -39,10 +39,14 @@ jobs:
           SCHOOL='Virginia Tech'
           HOST='hokiesports.com'
           REG='college-baseball/data/player_portraits.json'
-          REPORT='college-baseball/data/virginia_tech_portrait_audit.json'
+          REPORT='college-baseball/data/virginia_tech_portrait_recovery.json'
           players=json.loads(subprocess.check_output(['node','scripts/export_baseball_portrait_preferences.cjs',SCHOOL],text=True))
           assert players,'No witnessed Virginia Tech players found'
           registry=load(REG,{})
+          prior=load('college-baseball/data/virginia_tech_portrait_audit.json',{})
+          wanted={x['id'] for x in prior.get('missing',[])}|set(prior.get('render_failures',[]))
+          players=[p for p in players if p['id'] in wanted and p['id'] not in registry]
+          assert players,'No outstanding Virginia Tech profiles'
           report={'school':SCHOOL,'targeted':len(players),'previously_registered':sum(p['id'] in registry for p in players),'targets':[{k:p[k] for k in ('id','name','schools','preference')} for p in players],'added':[],'upgraded':[],'preserved':[],'missing':[],'notes':[],'rosters':[],'name_discrepancies':[]}
           def academic(y):return str(y)
           def verified_url(u):
@@ -57,10 +61,12 @@ jobs:
           def hydrated(page,u,selector):
               page.goto(u,wait_until='domcontentloaded',timeout=45000)
               page.wait_for_selector(selector,state='attached',timeout=15000)
-              page.wait_for_timeout(700)
+              page.wait_for_timeout(1200)
               for node in page.locator(selector).all()[:12]:
                   try:
                       node.scroll_into_view_if_needed(timeout=2500)
+                      try:page.wait_for_function('(el)=>el.complete&&el.naturalWidth>1',arg=node.element_handle(),timeout=7000)
+                      except Exception:pass
                       node.evaluate("(el)=>{if(el.currentSrc)el.setAttribute('data-current-src',el.currentSrc)}")
                   except Exception:pass
               return BeautifulSoup(page.content(),'html.parser')
@@ -81,14 +87,16 @@ jobs:
                   season=int(urlsplit(u).path.split('/season/')[1].split('/')[0])
                   # A newer biography may reuse its own previous-season official headshot.
                   dated=bool(m and norm(m.group(1)) in names and season-1<=int(m.group(2))<=season)
-                  if not dated and not any(alt in (n,n+'headshot','headshotof'+n,n+'portrait','portraitof'+n) for n in names):continue
+                  legacy=re.fullmatch(r'([^_]+)_([^_]+)_(?:24|4)BS_HEAD_46',label,re.I)
+                  legacy_ok=bool(season==2024 and legacy and (norm(legacy.group(2)+legacy.group(1)) in names or norm(legacy.group(2)+legacy.group(1)+'Jr') in names))
+                  if not dated and not legacy_ok and not any(alt in (n,n+'headshot','headshotof'+n,n+'portrait','portraitof'+n) for n in names):continue
                   for k in ('url','data-current-src','data-src','data-lazy-src','data-original','src'):
                       raw=im.get(k)
                       if not isinstance(raw,str):continue
                       v=urljoin(u,raw)
                       if not verified_url(v) or re.search(r'placeholder|silhouette|default|logo|banner|sponsor|social|\.gif(?:\?|$)|\.svg(?:\?|$)',v,re.I):continue
                       if host(v)==HOST and '/imgproxy/' not in v and not re.search(r'\.(?:jpe?g|png|webp)(?:\?|$)',v,re.I):continue
-                      yield v,(int(m.group(2)) if dated else None)
+                      yield v,(int(m.group(2)) if dated else 2024 if legacy_ok else None)
           years=sorted({y for p in players for y in range(min(p['schools'][SCHOOL]),min(2027,max(p['schools'][SCHOOL])+4)+1) if p['schools'].get(SCHOOL)})
           pages={}
           found={}
@@ -127,6 +135,9 @@ jobs:
                       if y not in seen and (not matched or y-matched[-1]>2):continue
                       matched.append(y)
                       candidates.extend((y,v) for v in dict.fromkeys(links))
+                  # Check season-qualified biography directly for the sole missing roster link.
+                  if cid=='cb-virginia-tech-garrett-michel':
+                      candidates.extend((y,f'https://{HOST}/sports/baseball/roster/season/{y}/player/garrett-michel') for y in (2025,2024,2023))
                   diagnostics[cid]={'candidates':len(candidates),'attempts':[]}
                   for y,source in sorted(candidates,reverse=True):
                       try:
@@ -177,7 +188,7 @@ jobs:
           from playwright.sync_api import sync_playwright
           from PIL import Image,ImageDraw
           root=pathlib.Path.cwd()
-          report=json.loads((root/'college-baseball/data/virginia_tech_portrait_audit.json').read_text())
+          report=json.loads((root/'college-baseball/data/virginia_tech_portrait_recovery.json').read_text())
           out=root/'virginia-tech-visual-review';out.mkdir(exist_ok=True)
           server=http.server.ThreadingHTTPServer(('127.0.0.1',0),functools.partial(http.server.SimpleHTTPRequestHandler,directory=str(root)))
           threading.Thread(target=server.serve_forever,daemon=True).start()
@@ -235,7 +246,7 @@ jobs:
           report['render_failures']=sorted(failed)
           report['registered_portraits']=sum(t['id'] in registry for t in report['targets'])
           regpath.write_text(json.dumps(registry,ensure_ascii=False,indent=2,sort_keys=True)+'\n')
-          (root/'college-baseball/data/virginia_tech_portrait_audit.json').write_text(json.dumps(report,ensure_ascii=False,indent=2,sort_keys=True)+'\n')
+          (root/'college-baseball/data/virginia_tech_portrait_recovery.json').write_text(json.dumps(report,ensure_ascii=False,indent=2,sort_keys=True)+'\n')
           PY
       - uses: actions/upload-artifact@v4
         if: always()
@@ -243,12 +254,12 @@ jobs:
           name: virginia-tech-portrait-review
           path: |
             virginia-tech-visual-review/
-            college-baseball/data/virginia_tech_portrait_audit.json
+            college-baseball/data/virginia_tech_portrait_recovery.json
       - name: Publish verified Virginia Tech portrait changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add college-baseball/data/player_portraits.json college-baseball/data/virginia_tech_portrait_audit.json
+          git add college-baseball/data/player_portraits.json college-baseball/data/virginia_tech_portrait_recovery.json
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "Add verified Virginia Tech witnessed-player portraits"
           for attempt in 1 2 3; do

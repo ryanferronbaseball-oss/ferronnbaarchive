@@ -158,7 +158,7 @@
     <div class="hero-annotation"><span><i></i> Built around games actually attended</span><span><i></i> Independent stats for each sport</span></div>
   </div>
   <aside class="hero-number" aria-label="Total games logged across your sports archives">
-    <strong id="allGames">828</strong>
+    <strong id="allGames">849</strong>
     <small>Games in the archives</small>
     <p>One collection, with league-specific data, leaderboards and history.</p>
   </aside>
@@ -345,7 +345,7 @@
    const r=await fetch(url,{cache:"no-store"});if(!r.ok)throw Error("archive index unavailable");
    return r.text().then(t=>Math.max(0,t.trim().split(/\r?\n/).length-1));
   };
-  const [nba,college,nfl,cfb,cfbRows,soccerMatches,mlbGames,mlbReport,collegeBaseballReport,milbGames,nhlGames]=await Promise.all([count("./data/games.csv"),count("./college/data/games.csv"),fetch("./nfl/data/games.json",{cache:"no-store"}).then(r=>r.json()).then(g=>g.length),fetch("./cfb/data/games.json",{cache:"no-store"}).then(r=>r.json()).then(g=>g.length),fetch("./cfb/data/player_stats.json",{cache:"no-store"}).then(r=>r.json()).then(g=>g.length),fetch("./soccer/data/matches.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("Soccer index unavailable");return r.json()}),fetch("./mlb/data/attendance.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("MLB attendance unavailable");return r.json()}),fetch("./mlb/data/import_report.json",{cache:"no-store"}).then(r=>r.ok?r.json():null),fetch("./college-baseball/data/import_report.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("College baseball report unavailable");return r.json()}),fetch("./milb/data/games.json",{cache:"no-store"}).then(r=>r.ok?r.json():[]),fetch("./nhl/data/games.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("NHL games unavailable");return r.json()})]);
+  const [nba,college,nfl,cfb,cfbRows,soccerMatches,mlbGames,mlbReport,collegeBaseballReport,milbGames,nhlGames,ncaawGames,collegeSoccerGames,volleyballGames]=await Promise.all([count("./data/games.csv"),count("./college/data/games.csv"),fetch("./nfl/data/games.json",{cache:"no-store"}).then(r=>r.json()).then(g=>g.length),fetch("./cfb/data/games.json",{cache:"no-store"}).then(r=>r.json()).then(g=>g.length),fetch("./cfb/data/player_stats.json",{cache:"no-store"}).then(r=>r.json()).then(g=>g.length),fetch("./soccer/data/matches.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("Soccer index unavailable");return r.json()}),fetch("./mlb/data/attendance.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("MLB attendance unavailable");return r.json()}),fetch("./mlb/data/import_report.json",{cache:"no-store"}).then(r=>r.ok?r.json():null),fetch("./college-baseball/data/import_report.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("College baseball report unavailable");return r.json()}),fetch("./milb/data/games.json",{cache:"no-store"}).then(r=>r.ok?r.json():[]),fetch("./nhl/data/games.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("NHL games unavailable");return r.json()}),count("./college-women/data/games.csv"),fetch("./college-soccer/data/matches.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("College soccer index unavailable");return r.json()}).then(g=>g.length),fetch("./college-volleyball/data/matches.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("Volleyball index unavailable");return r.json()}).then(g=>g.length)]);
   document.getElementById("milbGames").textContent=milbGames.length.toLocaleString();
   document.getElementById("nhlGames").textContent=nhlGames.length.toLocaleString();
   document.getElementById("nhlSaves").textContent=nhlGames.reduce((n,g)=>n+(g.players||[]).reduce((sum,p)=>sum+(p.goalie?.saves||0),0),0).toLocaleString();
@@ -361,7 +361,7 @@
   const verifiedCollegeBaseball=collegeBaseballReport.official_player_boxscores_imported||437;
   document.getElementById("collegeBaseballGames").textContent=verifiedCollegeBaseball.toLocaleString();
   document.getElementById("collegeBaseballStats").textContent=(collegeBaseballReport.player_stat_rows||13183).toLocaleString();
-  document.getElementById("allGames").textContent=(nba+college+nfl+cfb+soccerMatches.length+mlbGames.length+milbGames.length+verifiedCollegeBaseball+nhlGames.length).toLocaleString();
+  document.getElementById("allGames").textContent=(nba+college+nfl+cfb+soccerMatches.length+mlbGames.length+milbGames.length+verifiedCollegeBaseball+nhlGames.length+ncaawGames+collegeSoccerGames+volleyballGames).toLocaleString();
  }catch(err){ /* Keep documented fallback counts when serving offline. */ }
 })();
 </script>

@@ -73,9 +73,9 @@ jobs:
                       # Accept exact contiguous name tokens in either name order, including surname-first filenames.
                       filematch=any(norm(''.join(parts[i:j])) in names or any(norm(''.join(parts[k:j]+parts[i:k])) in names for k in range(i+1,j)) for i in range(len(parts)) for j in range(i+1,min(len(parts),i+5)+1))
                       alt_variants={norm(alt)}
-                  if ',' in alt:
-                      last,first=map(str.strip,alt.split(',',1));alt_variants.add(norm(first+' '+last))
-                  altmatch=any(v in (n,n+'headshot','headshotof'+n,n+'portrait','photoof'+n) for n in names for v in alt_variants)
+                      if ',' in alt:
+                          last,first=map(str.strip,alt.split(',',1));alt_variants.add(norm(first+' '+last))
+                      altmatch=any(v in (n,n+'headshot','headshotof'+n,n+'portrait','photoof'+n) for n in names for v in alt_variants)
                       explicit=bool(re.search(r'head.?shot|portrait|(?:^|[_ .-])hs(?:[_ .-]|\d|$)',stem+' '+alt,re.I))
                       crop='/crop' in urlsplit(u).path and (q.get('width'),q.get('height')) in ((['180'],['270']),(['603'],['803']))
                       if not ((filematch or altmatch) and (explicit or crop or designated) or confirmed_bio and designated and (explicit or crop) and (not alt or altmatch or filematch)):continue

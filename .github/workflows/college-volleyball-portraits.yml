@@ -7,6 +7,7 @@ on:
       - 'college-volleyball/data/school_portrait_targets.json'
       - 'scripts/audit_college_volleyball_portraits.py'
       - 'scripts/recover_volleyball_guide_portraits.py'
+      - 'scripts/recover_volleyball_wmt_portraits.py'
       - 'college-volleyball/data/portrait_pdf_sources.json'
       - '.github/workflows/college-volleyball-portraits.yml'
 permissions:
@@ -24,7 +25,7 @@ jobs:
         with:
           python-version: '3.11'
       - run: pip install requests pillow beautifulsoup4 pymupdf
-      - run: python -m py_compile scripts/audit_college_volleyball_portraits.py
+      - run: python -m py_compile scripts/audit_college_volleyball_portraits.py scripts/recover_volleyball_wmt_portraits.py
       - run: python scripts/audit_college_volleyball_portraits.py
       - name: Publish verified portraits
         run: |

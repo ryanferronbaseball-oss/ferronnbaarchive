@@ -4,6 +4,7 @@ from collections import defaultdict
 import json, re
 from bs4 import BeautifulSoup
 from recover_volleyball_guide_portraits import recover
+from recover_volleyball_wmt_portraits import wmt_images, recover_nebraska_grid
 from audit_player_portraits import load, save
 from audit_ncaaw_school_portraits import get, host, named_images, bio_links, bio_images, valid_bio, verify
 
@@ -20,6 +21,8 @@ def main():
         if re.search(r'person[-_]?default|dummy-data|placeholder|silhouette|no[-_]?image',entry.get('url',''),re.I):del reg[pid]
     pages={};errors={}
     pdf_added,pdf_errors=recover(reg,targets)
+    more,more_errors=recover_nebraska_grid(reg,targets)
+    pdf_added.extend(more);pdf_errors.update(more_errors)
     for url in sorted({u for t in targets.values() for u in t['rosters']}):
         try:pages[url]=fetch_page(url)
         except Exception as e:errors[url]=str(e)
@@ -37,13 +40,13 @@ def main():
                 if valid_bio(bs,names):
                     got=attempt(t.get('direct_candidates',[]),bp)
                     if got:return got,None
-                    got=attempt(bio_images(bs,bp,names,school),bp)
+                    got=attempt(bio_images(bs,bp,names,school)+wmt_images(bs,bp,names,school),bp)
                     if got:return got,None
             except Exception:pass
         for roster in t['rosters']:
             if roster not in pages:continue
             soup,page=pages[roster]
-            got=attempt(named_images(soup,page,names,school),page)
+            got=attempt(named_images(soup,page,names,school)+wmt_images(soup,page,names,school),page)
             if got:return got,None
             for bio in bio_links(soup,page,names,school):
                 if bio in links_seen:continue
@@ -51,7 +54,7 @@ def main():
                 try:
                     bs,bp=fetch_page(bio)
                     if not valid_bio(bs,names):continue
-                    got=attempt(bio_images(bs,bp,names,school),bp)
+                    got=attempt(bio_images(bs,bp,names,school)+wmt_images(bs,bp,names,school),bp)
                     if got:return got,None
                 except Exception:continue
         return None,f'No verified named portrait; {len(links_seen)} bios, {len(tested)} image candidates'

@@ -94,14 +94,27 @@ function renderSite(){
  $("sc-sort").addEventListener("change",drawPlayers);$("sc-player-search").addEventListener("input",drawPlayers);options();drawPlayers();
  }).catch(err=>{document.getElementById("sc-status").innerHTML=empty(err.message+" Your existing MLB statistics are unaffected.")});
 }
-function renderGame(g,target){
+function gameLeaderCards(d,g,opts={}){
+ return '<div class="sc-game-leaders">'+gameEventLeaders(d,g).map(([title,value,person,note])=>{
+  const heading='<small class="sc-game-leader-label">'+esc(title)+'</small>';
+  if(!person)return '<article class="sc-game-leader">'+heading+'<div class="sc-game-leader-body"><div class="sc-game-leader-copy"><strong>'+esc(value)+'</strong><span class="sc-metric-note">'+esc(note||"Player unavailable")+'</span></div></div></article>';
+  const name=person.name||"Player #"+person.id,href=playerLink(person);
+  const initials=name.trim().split(/\s+/).filter(Boolean).slice(0,2).map(w=>w[0]).join("").toUpperCase();
+  const defaultPortrait="https://img.mlbstatic.com/mlb-photos/image/upload/w_213,q_85/v1/people/"+encodeURIComponent(person.id)+"/headshot/67/current";
+  const url=opts.portrait?.(person.id)||defaultPortrait;
+  const portrait='<a class="sc-game-leader-portrait" href="'+esc(href)+'" aria-label="View '+esc(name)+' player profile"><span aria-hidden="true">'+esc(initials)+'</span><img src="'+esc(url)+'" alt="" loading="lazy" decoding="async" onload="if(this.naturalWidth>5&amp;&amp;this.naturalHeight>5)this.classList.add(\'is-loaded\');else this.remove()" onerror="this.remove()"></a>';
+  const team=opts.team?.(person.id),credit=opts.credit?.(person.id)||"";
+  return '<article class="sc-game-leader">'+heading+'<div class="sc-game-leader-body">'+portrait+'<div class="sc-game-leader-copy"><strong>'+esc(value)+'</strong><a class="sc-game-leader-name" href="'+esc(href)+'">'+esc(name)+'</a>'+(team?'<small class="sc-game-leader-team">'+esc(team)+'</small>':'')+credit+'</div></div></article>';
+ }).join("")+'</div>';
+}
+function renderGame(g,target,opts={}){
  if(!target)return;
- if(Number(g.date?.slice(0,4))<2015){target.innerHTML='<section class="panel sc-panel-inline"><h2>Statcast</h2><p class="mlb-note">This game predates Statcast (2015). Traditional box scores remain available above and below.</p></section>';return}
+ if(Number(g.date?.slice(0,4))<2015){target.innerHTML='<section class="panel sc-panel-inline"><h2>Statcast</h2><p class="mlb-note">This game predates Statcast (2015). Traditional box scores remain available above.</p></section>';return}
  target.innerHTML='<section class="panel sc-panel-inline"><h2>Statcast game summary</h2><p class="mlb-note">Loading verified measurements…</p></section>';
  getData().then(d=>{
   const s=d.games.find(x=>x.pk===Number(g.game_pk));
   if(!s){target.innerHTML=empty("No verified Statcast record available for this game.");return}
-  target.innerHTML='<section class="panel sc-panel-inline"><h2>Statcast game summary</h2>'+tiles([["Tracked pitches",s.count],["Batted balls with EV",s.evCount],...gameEventLeaders(d,s)])+'<p class="mlb-note">Click each credited batter or pitcher to see their profile. Measurements are cross-checked against Baseball Savant; the batting and pitching box scores remain official MLB StatsAPI data.</p><a href="./statcast.html" class="action-link secondary">Explore Statcast rankings ↗</a></section>';
+  target.innerHTML='<section class="panel sc-panel-inline"><h2>Statcast game summary</h2>'+gameLeaderCards(d,s,opts)+'<p class="mlb-note">Click each credited batter or pitcher to see their profile. Measurements are cross-checked against Baseball Savant; the batting and pitching box scores remain official MLB StatsAPI data.</p><a href="./statcast.html" class="action-link secondary">Explore Statcast rankings ↗</a></section>';
  }).catch(err=>target.innerHTML=empty("Statcast temporarily unavailable; official box score remains intact."));
 }
 function renderPlayer(p,target){

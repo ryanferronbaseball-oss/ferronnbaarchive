@@ -40,3 +40,21 @@
 .sc-panel-inline a.action-link{margin-top:10px}
 #sc-game-detail .sc-metrics{margin:13px 0 19px}
 @media(max-width:750px){.sc-highlights{grid-template-columns:1fr}.sc-tabs button{font-size:12px;padding:9px 10px}.sc-metric{padding:13px}.sc-filters input{flex-basis:100%}}
+
+/* Game-only Statcast event leaders: three linked portrait cards. */
+.sc-game-leaders{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:16px 0}
+.sc-game-leader{min-width:0;padding:14px;background:#fffefb;border:1px solid #c5e3ef;border-radius:12px;color:#252a2b}
+.sc-game-leader-label{display:block;color:#566879!important;font-size:12px;font-weight:750;line-height:1.4;margin-bottom:10px}
+.sc-game-leader-body{display:flex;align-items:center;gap:12px;min-width:0}
+.sc-game-leader-portrait{position:relative;display:grid;place-items:center;width:68px;height:85px;flex:0 0 68px;overflow:hidden;background:linear-gradient(145deg,#e9f7fd,#cde8f6);border:1px solid #bad7e5;border-radius:10px;color:#831738!important;font-size:21px;font-weight:850;text-decoration:none!important}
+.sc-game-leader-portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;opacity:0;border:0!important;border-radius:0!important;padding:0!important;background:#e8f2fa!important}
+.sc-game-leader-portrait img.is-loaded{opacity:1}
+.sc-game-leader-portrait:hover{border-color:#831738}
+.sc-game-leader-copy{display:flex;flex-direction:column;gap:5px;min-width:0;overflow-wrap:anywhere}
+.sc-game-leader-copy strong{font-size:clamp(20px,2.3vw,29px);line-height:1.15;font-weight:850;color:#831738!important;font-variant-numeric:tabular-nums}
+.sc-game-leader-name{font-size:14px;line-height:1.35;font-weight:800;color:#831738!important;text-decoration:none}
+.sc-game-leader-name:hover{text-decoration:underline}
+.sc-game-leader-team{font-size:11px;line-height:1.4;color:#566879!important}
+.sc-game-leader-copy .archive-photo-credit{font-size:9px;line-height:1.35}
+@media(max-width:850px){.sc-game-leader-body{flex-direction:column;align-items:flex-start}.sc-game-leader-portrait{flex-basis:85px}}
+@media(max-width:560px){.sc-game-leaders{grid-template-columns:1fr}.sc-game-leader-body{flex-direction:row;align-items:center}.sc-game-leader-portrait{flex-basis:68px}}

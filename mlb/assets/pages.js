@@ -305,7 +305,7 @@ function gamePage(){
   +'<p class="mlb-note">Custom, unofficial one-player impact rating. Hitting rewards total bases, runs, RBI, walks and steals; pitching rewards innings and strikeouts while penalizing runs, hits and walks. Both are compared on one scale, regardless of winning team.</p></section>';
  el("scoreboard").innerHTML=board+innings+gamePhotoPanel(g)+decisionsPanel+potgPanel;
  el("gameExtras").innerHTML='<div id="sc-game-panel"></div>'+window.CABaseballHomeRuns.render(gameStats,{hr:r=>r.batting?.homeRuns,name:r=>r.name,href:playerUrl,portraits:r=>[mlbPortrait(r.player_id)],credit:r=>photoCredit(portraitFallbacks[String(r.player_id)])})+recapPanel;
- window.MLBStatcast?.renderGame(g,el("sc-game-panel"));
+ window.MLBStatcast?.renderGame(g,el("sc-game-panel"),{portrait:mlbPortrait,credit:id=>photoCredit(portraitFallbacks[String(id)]),team:id=>gameStats.find(r=>String(r.player_id)===String(id))?.team});
  const order=[["batting","Batting"],["pitching","Pitching"],["fielding","Fielding"]];
  el("gameStats").innerHTML='<div class="mlb-nav-tabs" role="tablist">'+order.map(([c,title],i)=>'<button type="button" role="tab" aria-selected="'+(i===0)+'" data-cat="'+c+'">'+title+'</button>').join("")+'</div><section class="panel"><h2 id="statTitle">Batting box score</h2><div id="box"></div></section><section class="panel"><h2>Scoring plays</h2><div id="scoring"></div></section>'
  +'<p class="mlb-note">Official data: '+(confirmed?'<a target="_blank" rel="noopener" href="'+esc(g.source_url||"https://www.mlb.com/gameday/"+g.game_pk)+'">MLB game record ↗</a>':'Unmatched attendance entry. No player statistics are invented.')+'</p>';

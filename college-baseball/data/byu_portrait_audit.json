@@ -1,450 +1,743 @@
 {
-  "added": [],
-  "missing": [
+  "added": [
     {
-      "diagnostics": {
-        "attempts": [
-          {
-            "images": [
-              {
-                "alt": "Crew Robinson",
-                "data-src": null,
-                "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-              }
-            ],
-            "source": "https://byucougars.com/sports/baseball/roster/season/2024/player/crew-robinson"
-          },
-          {
-            "candidate_urls": [
-              "https://ucsdtritons.com/sports/baseball/roster/crew-robinson/12391",
-              "https://ucsdtritons.com/images/2023/2/6/Robinson_Crew.jpg?width=80&quality=90",
-              "https://ucsdtritons.com/sports/baseball/roster/crew-robinson/12391",
-              "https://ucsdtritons.com/images/2023/2/6/Robinson_Crew.jpg?width=80&quality=90"
-            ],
-            "error": "No verified roster-card headshot",
-            "source": "https://ucsdtritons.com/sports/baseball/roster/2023"
-          }
-        ],
-        "candidates": 1
-      },
       "id": "cb-uc-san-diego-crew-robinson",
       "name": "Crew Robinson",
-      "reason": "No unique verified portrait"
+      "photo_year": 2023,
+      "provider": "college",
+      "school": "UC San Diego",
+      "season": 2023,
+      "source": "https://ucsdtritons.com/sports/baseball/roster/2023",
+      "url": "https://ucsdtritons.com/images/2023/2/6/Robinson_Crew.jpg"
     },
     {
-      "diagnostics": {
-        "attempts": [
-          {
-            "images": [],
-            "source": "https://byucougars.com/sports/baseball/roster/season/2025/player/max-stanley"
-          },
-          {
-            "images": [
-              {
-                "alt": "Max Stanley",
-                "data-src": null,
-                "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-              }
-            ],
-            "source": "https://byucougars.com/sports/baseball/roster/season/2024/player/max-stanley"
-          },
-          {
-            "candidate_urls": [
-              "https://gouvu.com/sports/baseball/roster/max-stanley/11283",
-              "https://gouvu.com/images/2025/12/27/_29_Max_Stanley.png?width=80&quality=90",
-              "https://gouvu.com/sports/baseball/roster/max-stanley/11283",
-              "https://gouvu.com/images/2025/12/27/_29_Max_Stanley.png?width=80&quality=90"
-            ],
-            "error": "No verified roster-card headshot",
-            "source": "https://gouvu.com/sports/baseball/roster/2026"
-          }
-        ],
-        "candidates": 2
-      },
       "id": "cb-byu-max-stanley",
       "name": "Max Stanley",
-      "reason": "No unique verified portrait"
+      "photo_year": 2025,
+      "provider": "college",
+      "school": "Utah Valley",
+      "season": 2026,
+      "source": "https://gouvu.com/sports/baseball/roster/2026",
+      "url": "https://gouvu.com/images/2025/12/27/_29_Max_Stanley.png"
     }
   ],
+  "missing": [],
   "name_discrepancies": [],
   "notes": [],
   "preserved": [
     {
+      "diagnostics": {
+        "attempts": [],
+        "candidates": 0,
+        "note": "Already verified; preserve existing portrait"
+      },
       "id": "cb-byu-brennon-anderson",
       "name": "Brennon Anderson",
-      "reason": "Existing preferred portrait"
-    },
-    {
-      "id": "cb-byu-tanner-chauncey",
-      "name": "Tanner Chauncey",
-      "reason": "Existing preferred portrait"
-    },
-    {
-      "id": "cb-byu-daniel-schneemann",
-      "name": "Daniel Schneemann",
-      "reason": "Existing preferred portrait"
-    },
-    {
-      "id": "cb-byu-keaton-kringlen",
-      "name": "Keaton Kringlen",
-      "reason": "Existing preferred portrait"
-    },
-    {
-      "id": "cb-byu-bronson-larsen",
-      "name": "Bronson Larsen",
-      "reason": "Existing preferred portrait"
-    },
-    {
-      "id": "cb-byu-colton-shaver",
-      "name": "Colton Shaver",
-      "reason": "Existing preferred portrait"
-    },
-    {
-      "id": "cb-byu-kyle-dean",
-      "name": "Kyle Dean",
-      "reason": "Existing preferred portrait"
-    },
-    {
-      "id": "cb-byu-casey-jacobsen",
-      "name": "Casey Jacobsen",
-      "reason": "Existing preferred portrait"
-    },
-    {
-      "id": "cb-byu-noah-hill",
-      "name": "Noah Hill",
-      "reason": "Existing preferred portrait"
-    },
-    {
-      "id": "cb-byu-nate-favero",
-      "name": "Nate Favero",
-      "reason": "Existing preferred portrait"
-    },
-    {
-      "id": "cb-byu-brian-hsu",
-      "name": "Brian Hsu",
-      "reason": "Existing preferred portrait"
-    },
-    {
-      "id": "cb-byu-david-clawson",
-      "name": "David Clawson",
-      "reason": "Existing preferred portrait"
-    },
-    {
-      "id": "cb-byu-brock-hale",
-      "name": "Brock Hale",
-      "reason": "Existing preferred portrait"
-    },
-    {
-      "id": "cb-byu-cam-richins",
-      "name": "Cam Richins",
-      "reason": "Existing preferred portrait"
-    },
-    {
-      "id": "cb-byu-maverik-buffo",
-      "name": "Maverik Buffo",
-      "reason": "Existing preferred portrait"
-    },
-    {
-      "id": "cb-byu-kendall-motes",
-      "name": "Kendall Motes",
-      "reason": "Existing preferred portrait"
-    },
-    {
-      "id": "cb-byu-rhett-parkinson",
-      "name": "Rhett Parkinson",
-      "reason": "Existing preferred portrait"
-    },
-    {
-      "id": "cb-byu-carson-matthews",
-      "name": "Carson Matthews",
-      "reason": "Existing preferred portrait"
-    },
-    {
-      "id": "cb-byu-jackson-cluff",
-      "name": "Jackson Cluff",
-      "reason": "Existing preferred portrait"
-    },
-    {
-      "id": "cb-byu-abraham-valdez",
-      "name": "Abraham Valdez",
-      "reason": "Existing preferred portrait"
-    },
-    {
-      "id": "cb-byu-dj-mcnew",
-      "name": "DJ McNew",
-      "reason": "Existing preferred portrait"
-    },
-    {
-      "id": "cb-byu-mitch-mcintyre",
-      "name": "Mitch McIntyre",
-      "reason": "Existing preferred portrait"
-    },
-    {
-      "id": "cb-byu-hobbs-nyberg",
-      "name": "Hobbs Nyberg",
-      "reason": "Existing preferred portrait"
-    },
-    {
-      "id": "cb-byu-ryan-sepede",
-      "name": "Ryan Sepede",
-      "reason": "Existing preferred portrait"
-    },
-    {
-      "id": "cb-byu-austin-deming",
-      "name": "Austin Deming",
-      "reason": "Existing preferred portrait"
-    },
-    {
-      "id": "cb-byu-jordan-wood",
-      "name": "Jordan Wood",
-      "reason": "Existing preferred portrait"
-    },
-    {
-      "id": "cb-byu-ben-weese",
-      "name": "Ben Weese",
-      "reason": "Existing preferred portrait"
-    },
-    {
-      "id": "cb-byu-ayden-callahan",
-      "name": "Ayden Callahan",
-      "reason": "Existing preferred portrait"
-    },
-    {
-      "id": "cb-byu-bryan-call",
-      "name": "Bryan Call",
-      "reason": "Existing preferred portrait"
-    },
-    {
-      "id": "cb-byu-jaren-hall",
-      "name": "Jaren Hall",
-      "reason": "Existing preferred portrait"
-    },
-    {
-      "id": "cb-byu-easton-walker",
-      "name": "Easton Walker",
-      "reason": "Existing preferred portrait"
-    },
-    {
-      "id": "cb-byu-reid-mclaughlin",
-      "name": "Reid McLaughlin",
-      "reason": "Existing preferred portrait"
-    },
-    {
-      "id": "cb-byu-drew-zimmerman",
-      "name": "Drew Zimmerman",
-      "reason": "Existing preferred portrait"
-    },
-    {
-      "id": "cb-byu-zack-peterson",
-      "name": "Zack Peterson",
-      "reason": "Existing preferred portrait"
-    },
-    {
-      "id": "cb-byu-justin-sterner",
-      "name": "Justin Sterner",
-      "reason": "Existing preferred portrait"
-    },
-    {
-      "id": "cb-byu-blake-inouye",
-      "name": "Blake Inouye",
-      "reason": "Existing preferred portrait"
-    },
-    {
-      "id": "cb-byu-peyton-cole",
-      "name": "Peyton Cole",
-      "reason": "Existing preferred portrait"
-    },
-    {
-      "id": "cb-byu-andrew-pintar",
-      "name": "Andrew Pintar",
-      "reason": "Existing preferred portrait"
-    },
-    {
-      "id": "cb-byu-cole-gambill",
-      "name": "Cole Gambill",
-      "reason": "Existing preferred portrait"
-    },
-    {
-      "id": "cb-byu-jacob-wilk",
-      "name": "Jacob Wilk",
-      "reason": "Existing preferred portrait"
-    },
-    {
-      "id": "cb-byu-cooper-vest",
-      "name": "Cooper Vest",
-      "reason": "Existing preferred portrait"
-    },
-    {
-      "id": "cb-byu-joshua-cowden",
-      "name": "Joshua Cowden",
-      "reason": "Existing preferred portrait"
-    },
-    {
-      "id": "cb-byu-danny-gelalich",
-      "name": "Danny Gelalich",
-      "reason": "Existing preferred portrait"
-    },
-    {
-      "id": "cb-byu-freddy-achecar",
-      "name": "Freddy Achecar",
-      "reason": "Existing preferred portrait"
-    },
-    {
-      "id": "cb-byu-chase-taylor",
-      "name": "Chase Taylor",
-      "reason": "Existing preferred portrait"
-    },
-    {
-      "id": "cb-byu-brock-watkins",
-      "name": "Brock Watkins",
-      "reason": "Existing preferred portrait"
-    },
-    {
-      "id": "cb-byu-cooper-mckeehan",
-      "name": "Cooper McKeehan",
-      "reason": "Existing preferred portrait"
-    },
-    {
-      "id": "cb-byu-carter-smith",
-      "name": "Carter Smith",
-      "reason": "Existing preferred portrait"
-    },
-    {
-      "id": "cb-byu-hayden-leatham",
-      "name": "Hayden Leatham",
-      "reason": "Existing preferred portrait"
-    },
-    {
-      "id": "cb-byu-jack-sterner",
-      "name": "Jack Sterner",
-      "reason": "Existing preferred portrait"
-    },
-    {
-      "id": "cb-byu-boston-mabeus",
-      "name": "Boston Mabeus",
-      "reason": "Existing preferred portrait"
-    },
-    {
-      "id": "cb-byu-jacob-rogers",
-      "name": "Jacob Rogers",
-      "reason": "Existing preferred portrait"
-    },
-    {
-      "id": "cb-byu-bryce-robison",
-      "name": "Bryce Robison",
-      "reason": "Existing preferred portrait"
-    },
-    {
-      "id": "cb-byu-tyson-heaton",
-      "name": "Tyson Heaton",
-      "reason": "Existing preferred portrait"
-    },
-    {
-      "id": "cb-byu-ozzie-pratt",
-      "name": "Ozzie Pratt",
-      "reason": "Existing preferred portrait"
-    },
-    {
-      "id": "cb-byu-luke-anderson",
-      "name": "Luke Anderson",
-      "reason": "Existing preferred portrait"
-    },
-    {
-      "id": "cb-byu-easton-jones",
-      "name": "Easton Jones",
-      "reason": "Existing preferred portrait"
-    },
-    {
-      "id": "cb-byu-parker-goff",
-      "name": "Parker Goff",
-      "reason": "Existing preferred portrait"
-    },
-    {
-      "id": "cb-byu-mason-olson",
-      "name": "Mason Olson",
-      "reason": "Existing preferred portrait"
-    },
-    {
-      "id": "cb-byu-chad-call",
-      "name": "Chad Call",
-      "reason": "Existing preferred portrait"
-    },
-    {
-      "id": "cb-byu-sam-beck",
-      "name": "Sam Beck",
-      "reason": "Existing preferred portrait"
-    },
-    {
-      "id": "cb-byu-jake-porter",
-      "name": "Jake Porter",
-      "reason": "Existing preferred portrait"
-    },
-    {
-      "id": "cb-byu-dawsen-hall",
-      "name": "Dawsen Hall",
-      "reason": "Existing preferred portrait"
-    },
-    {
-      "id": "cb-byu-alex-sardina",
-      "name": "Alex Sardina",
-      "reason": "Existing preferred portrait"
-    },
-    {
-      "id": "cb-byu-cutter-clawson",
-      "name": "Cutter Clawson",
-      "reason": "Existing preferred portrait"
-    },
-    {
-      "id": "cb-byu-ben-hansen",
-      "name": "Ben Hansen",
-      "reason": "Existing preferred portrait"
-    },
-    {
-      "id": "cb-byu-bryker-hurdsman",
-      "name": "Bryker Hurdsman",
-      "reason": "Existing preferred portrait"
-    },
-    {
-      "id": "cb-byu-collin-reuter",
-      "name": "Collin Reuter",
-      "reason": "Existing preferred portrait"
+      "reason": "No unique verified portrait"
     },
     {
       "diagnostics": {
-        "attempts": [
-          {
-            "images": [
-              {
-                "alt": "Kuhio Aloy",
-                "data-src": null,
-                "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-              }
-            ],
-            "source": "https://byucougars.com/sports/baseball/roster/season/2024/player/kuhio-aloy"
-          }
-        ],
-        "candidates": 1
+        "attempts": [],
+        "candidates": 0,
+        "note": "Already verified; preserve existing portrait"
+      },
+      "id": "cb-byu-tanner-chauncey",
+      "name": "Tanner Chauncey",
+      "reason": "No unique verified portrait"
+    },
+    {
+      "diagnostics": {
+        "attempts": [],
+        "candidates": 0,
+        "note": "Already verified; preserve existing portrait"
+      },
+      "id": "cb-byu-daniel-schneemann",
+      "name": "Daniel Schneemann",
+      "reason": "No unique verified portrait"
+    },
+    {
+      "diagnostics": {
+        "attempts": [],
+        "candidates": 0,
+        "note": "Already verified; preserve existing portrait"
+      },
+      "id": "cb-byu-keaton-kringlen",
+      "name": "Keaton Kringlen",
+      "reason": "No unique verified portrait"
+    },
+    {
+      "diagnostics": {
+        "attempts": [],
+        "candidates": 0,
+        "note": "Already verified; preserve existing portrait"
+      },
+      "id": "cb-byu-bronson-larsen",
+      "name": "Bronson Larsen",
+      "reason": "No unique verified portrait"
+    },
+    {
+      "diagnostics": {
+        "attempts": [],
+        "candidates": 0,
+        "note": "Already verified; preserve existing portrait"
+      },
+      "id": "cb-byu-colton-shaver",
+      "name": "Colton Shaver",
+      "reason": "No unique verified portrait"
+    },
+    {
+      "diagnostics": {
+        "attempts": [],
+        "candidates": 0,
+        "note": "Already verified; preserve existing portrait"
+      },
+      "id": "cb-byu-kyle-dean",
+      "name": "Kyle Dean",
+      "reason": "No unique verified portrait"
+    },
+    {
+      "diagnostics": {
+        "attempts": [],
+        "candidates": 0,
+        "note": "Already verified; preserve existing portrait"
+      },
+      "id": "cb-byu-casey-jacobsen",
+      "name": "Casey Jacobsen",
+      "reason": "No unique verified portrait"
+    },
+    {
+      "diagnostics": {
+        "attempts": [],
+        "candidates": 0,
+        "note": "Already verified; preserve existing portrait"
+      },
+      "id": "cb-byu-noah-hill",
+      "name": "Noah Hill",
+      "reason": "No unique verified portrait"
+    },
+    {
+      "diagnostics": {
+        "attempts": [],
+        "candidates": 0,
+        "note": "Already verified; preserve existing portrait"
+      },
+      "id": "cb-byu-nate-favero",
+      "name": "Nate Favero",
+      "reason": "No unique verified portrait"
+    },
+    {
+      "diagnostics": {
+        "attempts": [],
+        "candidates": 0,
+        "note": "Already verified; preserve existing portrait"
+      },
+      "id": "cb-byu-brian-hsu",
+      "name": "Brian Hsu",
+      "reason": "No unique verified portrait"
+    },
+    {
+      "diagnostics": {
+        "attempts": [],
+        "candidates": 0,
+        "note": "Already verified; preserve existing portrait"
+      },
+      "id": "cb-byu-david-clawson",
+      "name": "David Clawson",
+      "reason": "No unique verified portrait"
+    },
+    {
+      "diagnostics": {
+        "attempts": [],
+        "candidates": 0,
+        "note": "Already verified; preserve existing portrait"
+      },
+      "id": "cb-byu-brock-hale",
+      "name": "Brock Hale",
+      "reason": "No unique verified portrait"
+    },
+    {
+      "diagnostics": {
+        "attempts": [],
+        "candidates": 0,
+        "note": "Already verified; preserve existing portrait"
+      },
+      "id": "cb-byu-cam-richins",
+      "name": "Cam Richins",
+      "reason": "No unique verified portrait"
+    },
+    {
+      "diagnostics": {
+        "attempts": [],
+        "candidates": 0,
+        "note": "Already verified; preserve existing portrait"
+      },
+      "id": "cb-byu-maverik-buffo",
+      "name": "Maverik Buffo",
+      "reason": "No unique verified portrait"
+    },
+    {
+      "diagnostics": {
+        "attempts": [],
+        "candidates": 0,
+        "note": "Already verified; preserve existing portrait"
+      },
+      "id": "cb-byu-kendall-motes",
+      "name": "Kendall Motes",
+      "reason": "No unique verified portrait"
+    },
+    {
+      "diagnostics": {
+        "attempts": [],
+        "candidates": 0,
+        "note": "Already verified; preserve existing portrait"
+      },
+      "id": "cb-byu-rhett-parkinson",
+      "name": "Rhett Parkinson",
+      "reason": "No unique verified portrait"
+    },
+    {
+      "diagnostics": {
+        "attempts": [],
+        "candidates": 0,
+        "note": "Already verified; preserve existing portrait"
+      },
+      "id": "cb-byu-carson-matthews",
+      "name": "Carson Matthews",
+      "reason": "No unique verified portrait"
+    },
+    {
+      "diagnostics": {
+        "attempts": [],
+        "candidates": 0,
+        "note": "Already verified; preserve existing portrait"
+      },
+      "id": "cb-byu-jackson-cluff",
+      "name": "Jackson Cluff",
+      "reason": "No unique verified portrait"
+    },
+    {
+      "diagnostics": {
+        "attempts": [],
+        "candidates": 0,
+        "note": "Already verified; preserve existing portrait"
+      },
+      "id": "cb-byu-abraham-valdez",
+      "name": "Abraham Valdez",
+      "reason": "No unique verified portrait"
+    },
+    {
+      "diagnostics": {
+        "attempts": [],
+        "candidates": 0,
+        "note": "Already verified; preserve existing portrait"
+      },
+      "id": "cb-byu-dj-mcnew",
+      "name": "DJ McNew",
+      "reason": "No unique verified portrait"
+    },
+    {
+      "diagnostics": {
+        "attempts": [],
+        "candidates": 0,
+        "note": "Already verified; preserve existing portrait"
+      },
+      "id": "cb-byu-mitch-mcintyre",
+      "name": "Mitch McIntyre",
+      "reason": "No unique verified portrait"
+    },
+    {
+      "diagnostics": {
+        "attempts": [],
+        "candidates": 0,
+        "note": "Already verified; preserve existing portrait"
+      },
+      "id": "cb-byu-hobbs-nyberg",
+      "name": "Hobbs Nyberg",
+      "reason": "No unique verified portrait"
+    },
+    {
+      "diagnostics": {
+        "attempts": [],
+        "candidates": 0,
+        "note": "Already verified; preserve existing portrait"
+      },
+      "id": "cb-byu-ryan-sepede",
+      "name": "Ryan Sepede",
+      "reason": "No unique verified portrait"
+    },
+    {
+      "diagnostics": {
+        "attempts": [],
+        "candidates": 0,
+        "note": "Already verified; preserve existing portrait"
+      },
+      "id": "cb-byu-austin-deming",
+      "name": "Austin Deming",
+      "reason": "No unique verified portrait"
+    },
+    {
+      "diagnostics": {
+        "attempts": [],
+        "candidates": 0,
+        "note": "Already verified; preserve existing portrait"
+      },
+      "id": "cb-byu-jordan-wood",
+      "name": "Jordan Wood",
+      "reason": "No unique verified portrait"
+    },
+    {
+      "diagnostics": {
+        "attempts": [],
+        "candidates": 0,
+        "note": "Already verified; preserve existing portrait"
+      },
+      "id": "cb-byu-ben-weese",
+      "name": "Ben Weese",
+      "reason": "No unique verified portrait"
+    },
+    {
+      "diagnostics": {
+        "attempts": [],
+        "candidates": 0,
+        "note": "Already verified; preserve existing portrait"
+      },
+      "id": "cb-byu-ayden-callahan",
+      "name": "Ayden Callahan",
+      "reason": "No unique verified portrait"
+    },
+    {
+      "diagnostics": {
+        "attempts": [],
+        "candidates": 0,
+        "note": "Already verified; preserve existing portrait"
+      },
+      "id": "cb-byu-bryan-call",
+      "name": "Bryan Call",
+      "reason": "No unique verified portrait"
+    },
+    {
+      "diagnostics": {
+        "attempts": [],
+        "candidates": 0,
+        "note": "Already verified; preserve existing portrait"
+      },
+      "id": "cb-byu-jaren-hall",
+      "name": "Jaren Hall",
+      "reason": "No unique verified portrait"
+    },
+    {
+      "diagnostics": {
+        "attempts": [],
+        "candidates": 0,
+        "note": "Already verified; preserve existing portrait"
+      },
+      "id": "cb-byu-easton-walker",
+      "name": "Easton Walker",
+      "reason": "No unique verified portrait"
+    },
+    {
+      "diagnostics": {
+        "attempts": [],
+        "candidates": 0,
+        "note": "Already verified; preserve existing portrait"
+      },
+      "id": "cb-byu-reid-mclaughlin",
+      "name": "Reid McLaughlin",
+      "reason": "No unique verified portrait"
+    },
+    {
+      "diagnostics": {
+        "attempts": [],
+        "candidates": 0,
+        "note": "Already verified; preserve existing portrait"
+      },
+      "id": "cb-byu-drew-zimmerman",
+      "name": "Drew Zimmerman",
+      "reason": "No unique verified portrait"
+    },
+    {
+      "diagnostics": {
+        "attempts": [],
+        "candidates": 0,
+        "note": "Already verified; preserve existing portrait"
+      },
+      "id": "cb-byu-zack-peterson",
+      "name": "Zack Peterson",
+      "reason": "No unique verified portrait"
+    },
+    {
+      "diagnostics": {
+        "attempts": [],
+        "candidates": 0,
+        "note": "Already verified; preserve existing portrait"
+      },
+      "id": "cb-byu-justin-sterner",
+      "name": "Justin Sterner",
+      "reason": "No unique verified portrait"
+    },
+    {
+      "diagnostics": {
+        "attempts": [],
+        "candidates": 0,
+        "note": "Already verified; preserve existing portrait"
+      },
+      "id": "cb-byu-blake-inouye",
+      "name": "Blake Inouye",
+      "reason": "No unique verified portrait"
+    },
+    {
+      "diagnostics": {
+        "attempts": [],
+        "candidates": 0,
+        "note": "Already verified; preserve existing portrait"
+      },
+      "id": "cb-byu-peyton-cole",
+      "name": "Peyton Cole",
+      "reason": "No unique verified portrait"
+    },
+    {
+      "diagnostics": {
+        "attempts": [],
+        "candidates": 0,
+        "note": "Already verified; preserve existing portrait"
+      },
+      "id": "cb-byu-andrew-pintar",
+      "name": "Andrew Pintar",
+      "reason": "No unique verified portrait"
+    },
+    {
+      "diagnostics": {
+        "attempts": [],
+        "candidates": 0,
+        "note": "Already verified; preserve existing portrait"
+      },
+      "id": "cb-byu-cole-gambill",
+      "name": "Cole Gambill",
+      "reason": "No unique verified portrait"
+    },
+    {
+      "diagnostics": {
+        "attempts": [],
+        "candidates": 0,
+        "note": "Already verified; preserve existing portrait"
+      },
+      "id": "cb-byu-jacob-wilk",
+      "name": "Jacob Wilk",
+      "reason": "No unique verified portrait"
+    },
+    {
+      "diagnostics": {
+        "attempts": [],
+        "candidates": 0,
+        "note": "Already verified; preserve existing portrait"
+      },
+      "id": "cb-byu-cooper-vest",
+      "name": "Cooper Vest",
+      "reason": "No unique verified portrait"
+    },
+    {
+      "diagnostics": {
+        "attempts": [],
+        "candidates": 0,
+        "note": "Already verified; preserve existing portrait"
+      },
+      "id": "cb-byu-joshua-cowden",
+      "name": "Joshua Cowden",
+      "reason": "No unique verified portrait"
+    },
+    {
+      "diagnostics": {
+        "attempts": [],
+        "candidates": 0,
+        "note": "Already verified; preserve existing portrait"
+      },
+      "id": "cb-byu-danny-gelalich",
+      "name": "Danny Gelalich",
+      "reason": "No unique verified portrait"
+    },
+    {
+      "diagnostics": {
+        "attempts": [],
+        "candidates": 0,
+        "note": "Already verified; preserve existing portrait"
+      },
+      "id": "cb-byu-freddy-achecar",
+      "name": "Freddy Achecar",
+      "reason": "No unique verified portrait"
+    },
+    {
+      "diagnostics": {
+        "attempts": [],
+        "candidates": 0,
+        "note": "Already verified; preserve existing portrait"
+      },
+      "id": "cb-byu-chase-taylor",
+      "name": "Chase Taylor",
+      "reason": "No unique verified portrait"
+    },
+    {
+      "diagnostics": {
+        "attempts": [],
+        "candidates": 0,
+        "note": "Already verified; preserve existing portrait"
+      },
+      "id": "cb-byu-brock-watkins",
+      "name": "Brock Watkins",
+      "reason": "No unique verified portrait"
+    },
+    {
+      "diagnostics": {
+        "attempts": [],
+        "candidates": 0,
+        "note": "Already verified; preserve existing portrait"
+      },
+      "id": "cb-byu-cooper-mckeehan",
+      "name": "Cooper McKeehan",
+      "reason": "No unique verified portrait"
+    },
+    {
+      "diagnostics": {
+        "attempts": [],
+        "candidates": 0,
+        "note": "Already verified; preserve existing portrait"
+      },
+      "id": "cb-byu-carter-smith",
+      "name": "Carter Smith",
+      "reason": "No unique verified portrait"
+    },
+    {
+      "diagnostics": {
+        "attempts": [],
+        "candidates": 0,
+        "note": "Already verified; preserve existing portrait"
+      },
+      "id": "cb-byu-hayden-leatham",
+      "name": "Hayden Leatham",
+      "reason": "No unique verified portrait"
+    },
+    {
+      "diagnostics": {
+        "attempts": [],
+        "candidates": 0,
+        "note": "Already verified; preserve existing portrait"
+      },
+      "id": "cb-byu-jack-sterner",
+      "name": "Jack Sterner",
+      "reason": "No unique verified portrait"
+    },
+    {
+      "diagnostics": {
+        "attempts": [],
+        "candidates": 0,
+        "note": "Already verified; preserve existing portrait"
+      },
+      "id": "cb-byu-boston-mabeus",
+      "name": "Boston Mabeus",
+      "reason": "No unique verified portrait"
+    },
+    {
+      "diagnostics": {
+        "attempts": [],
+        "candidates": 0,
+        "note": "Already verified; preserve existing portrait"
+      },
+      "id": "cb-byu-jacob-rogers",
+      "name": "Jacob Rogers",
+      "reason": "No unique verified portrait"
+    },
+    {
+      "diagnostics": {
+        "attempts": [],
+        "candidates": 0,
+        "note": "Already verified; preserve existing portrait"
+      },
+      "id": "cb-byu-bryce-robison",
+      "name": "Bryce Robison",
+      "reason": "No unique verified portrait"
+    },
+    {
+      "diagnostics": {
+        "attempts": [],
+        "candidates": 0,
+        "note": "Already verified; preserve existing portrait"
+      },
+      "id": "cb-byu-tyson-heaton",
+      "name": "Tyson Heaton",
+      "reason": "No unique verified portrait"
+    },
+    {
+      "diagnostics": {
+        "attempts": [],
+        "candidates": 0,
+        "note": "Already verified; preserve existing portrait"
+      },
+      "id": "cb-byu-ozzie-pratt",
+      "name": "Ozzie Pratt",
+      "reason": "No unique verified portrait"
+    },
+    {
+      "diagnostics": {
+        "attempts": [],
+        "candidates": 0,
+        "note": "Already verified; preserve existing portrait"
+      },
+      "id": "cb-byu-luke-anderson",
+      "name": "Luke Anderson",
+      "reason": "No unique verified portrait"
+    },
+    {
+      "diagnostics": {
+        "attempts": [],
+        "candidates": 0,
+        "note": "Already verified; preserve existing portrait"
+      },
+      "id": "cb-byu-easton-jones",
+      "name": "Easton Jones",
+      "reason": "No unique verified portrait"
+    },
+    {
+      "diagnostics": {
+        "attempts": [],
+        "candidates": 0,
+        "note": "Already verified; preserve existing portrait"
+      },
+      "id": "cb-byu-parker-goff",
+      "name": "Parker Goff",
+      "reason": "No unique verified portrait"
+    },
+    {
+      "diagnostics": {
+        "attempts": [],
+        "candidates": 0,
+        "note": "Already verified; preserve existing portrait"
+      },
+      "id": "cb-byu-mason-olson",
+      "name": "Mason Olson",
+      "reason": "No unique verified portrait"
+    },
+    {
+      "diagnostics": {
+        "attempts": [],
+        "candidates": 0,
+        "note": "Already verified; preserve existing portrait"
+      },
+      "id": "cb-byu-chad-call",
+      "name": "Chad Call",
+      "reason": "No unique verified portrait"
+    },
+    {
+      "diagnostics": {
+        "attempts": [],
+        "candidates": 0,
+        "note": "Already verified; preserve existing portrait"
+      },
+      "id": "cb-byu-sam-beck",
+      "name": "Sam Beck",
+      "reason": "No unique verified portrait"
+    },
+    {
+      "diagnostics": {
+        "attempts": [],
+        "candidates": 0,
+        "note": "Already verified; preserve existing portrait"
+      },
+      "id": "cb-byu-jake-porter",
+      "name": "Jake Porter",
+      "reason": "No unique verified portrait"
+    },
+    {
+      "diagnostics": {
+        "attempts": [],
+        "candidates": 0,
+        "note": "Already verified; preserve existing portrait"
+      },
+      "id": "cb-byu-dawsen-hall",
+      "name": "Dawsen Hall",
+      "reason": "No unique verified portrait"
+    },
+    {
+      "diagnostics": {
+        "attempts": [],
+        "candidates": 0,
+        "note": "Already verified; preserve existing portrait"
+      },
+      "id": "cb-byu-alex-sardina",
+      "name": "Alex Sardina",
+      "reason": "No unique verified portrait"
+    },
+    {
+      "diagnostics": {
+        "attempts": [],
+        "candidates": 0,
+        "note": "Already verified; preserve existing portrait"
+      },
+      "id": "cb-byu-cutter-clawson",
+      "name": "Cutter Clawson",
+      "reason": "No unique verified portrait"
+    },
+    {
+      "diagnostics": {
+        "attempts": [],
+        "candidates": 0,
+        "note": "Already verified; preserve existing portrait"
+      },
+      "id": "cb-byu-ben-hansen",
+      "name": "Ben Hansen",
+      "reason": "No unique verified portrait"
+    },
+    {
+      "diagnostics": {
+        "attempts": [],
+        "candidates": 0,
+        "note": "Already verified; preserve existing portrait"
+      },
+      "id": "cb-byu-bryker-hurdsman",
+      "name": "Bryker Hurdsman",
+      "reason": "No unique verified portrait"
+    },
+    {
+      "diagnostics": {
+        "attempts": [],
+        "candidates": 0,
+        "note": "Already verified; preserve existing portrait"
+      },
+      "id": "cb-byu-collin-reuter",
+      "name": "Collin Reuter",
+      "reason": "No unique verified portrait"
+    },
+    {
+      "diagnostics": {
+        "attempts": [],
+        "candidates": 0,
+        "note": "Already verified; preserve existing portrait"
       },
       "id": "cb-byu-kuhio-aloy",
       "name": "Kuhio Aloy",
       "reason": "No unique verified portrait"
     },
     {
+      "diagnostics": {
+        "attempts": [],
+        "candidates": 0,
+        "note": "Already verified; preserve existing portrait"
+      },
       "id": "cb-byu-keoni-painter",
       "name": "Keoni Painter",
-      "reason": "Existing preferred portrait"
+      "reason": "No unique verified portrait"
     },
     {
+      "diagnostics": {
+        "attempts": [],
+        "candidates": 0,
+        "note": "Already verified; preserve existing portrait"
+      },
       "id": "cb-byu-payton-gubler",
       "name": "Payton Gubler",
-      "reason": "Existing preferred portrait"
+      "reason": "No unique verified portrait"
     }
   ],
-  "registered_portraits": 71,
-  "render_failures": [
-    "cb-byu-max-stanley",
-    "cb-uc-san-diego-crew-robinson"
-  ],
+  "registered_portraits": 73,
+  "render_failures": [],
   "rosters": [
     {
       "host": "byucougars.com",

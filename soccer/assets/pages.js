@@ -10,8 +10,43 @@ const label=v=>String(v??"—");
 let data;
 try{data=await A.load()}catch(err){app.innerHTML='<div class="soccer-panel">Unable to load soccer archive: '+esc(err.message)+'</div>';return;}
 const {matches,players,byId}=data;
+function soccerImpact(m){
+ const rows=new Map(),key=(team,name)=>team+"\u0000"+name;
+ const sides=[["home",m.home_abbr,m.away_score,m.home_score],["away",m.away_abbr,m.home_score,m.away_score]];
+ for(const [side,team] of sides)for(const name of new Set([...(m[side+"_starters"]||[]),...(m[side+"_subs_used"]||[])]))rows.set(key(team,name),{name,team,score:0,goals:0,assists:0,secondary:0,parts:{}});
+ const add=(team,name,label,points,n=1)=>{const p=rows.get(key(team,name));if(!p||!Number.isFinite(n)||n<=0)return;const part=p.parts[label]||(p.parts[label]={label,count:0,points:0});part.count+=n;part.points+=points*n;p.score+=points*n;};
+ const events=(m.events||[]).slice().sort((a,b)=>{const order=e=>{const [min,extra]=String(e.minute).split("+");return Number(min)*100+Number(extra||0)};return order(a)-order(b)});
+ const goalEvents=events.filter(e=>["goal","penalty_goal","own_goal"].includes(e.type));
+ const score={[m.home_abbr]:0,[m.away_abbr]:0};
+ const final={[m.home_abbr]:m.home_score,[m.away_abbr]:m.away_score};
+ const other=t=>t===m.home_abbr?m.away_abbr:m.home_abbr;
+ const reconciled=sides.every(([,t])=>goalEvents.filter(e=>(e.own_goal_for||e.team)===t).length===final[t]);
+ for(const e of events){
+  if(["goal","penalty_goal","own_goal"].includes(e.type)){
+   const team=e.own_goal_for||e.team;if(!(team in score))continue;const opp=other(team);
+   const equalizer=score[team]<score[opp]&&score[team]+1===score[opp];score[team]++;
+   const winner=final[team]>final[opp]&&score[team]===final[opp]+1;
+   if(e.type==="own_goal"){add(opp,e.player,"Own goal",-3);continue;}
+   const p=rows.get(key(team,e.player));if(p)p.goals++;
+   add(team,e.player,e.type==="penalty_goal"?"Penalty goal":"Non-penalty goal",e.type==="penalty_goal"?3:5);
+   if(reconciled&&winner)add(team,e.player,"Winning goal",2);
+   if(reconciled&&equalizer)add(team,e.player,"Equalizing goal",1);
+   if(e.assist&&e.assist!==e.player){const a=rows.get(key(team,e.assist));if(a)a.assists++;add(team,e.assist,"Direct assist",3);}
+   if(e.secondary_assist&&e.secondary_assist!==e.assist&&e.secondary_assist!==e.player){const a=rows.get(key(team,e.secondary_assist));if(a)a.secondary++;add(team,e.secondary_assist,"Secondary assist",1.5);}
+  }else if(e.type==="yellow")add(e.team,e.player,"Yellow card",-.5);
+  else if(e.type==="red")add(e.team,e.player,"Red card",-4);
+  else if(e.type==="save")add(e.team,e.player,"Save",.5);
+  else if(e.type==="penalty_save"){add(e.team,e.player,"Save",.5);add(e.team,e.player,"Penalty save",4);}
+ }
+ for(const [side,team,against] of sides){const keeper=m[side+"_starters"]?.[0];if(keeper&&against===0&&!events.some(e=>e.team===team&&((e.type==="substitution"&&e.out===keeper)||(e.type==="red"&&e.player===keeper))))add(team,keeper,"Goalkeeper clean sheet",3);}
+ const ranked=[...rows.values()].sort((a,b)=>b.score-a.score||b.goals-a.goals||b.assists-a.assists||b.secondary-a.secondary||a.name.localeCompare(b.name));
+ const best=ranked[0];const winners=best&&best.score>0?ranked.filter(p=>p.score===best.score&&p.goals===best.goals&&p.assists===best.assists&&p.secondary===best.secondary):[];
+ return {winners,ranked,reconciled};
+}
+const impactByMatch=new Map(matches.map(m=>[m.id,soccerImpact(m)]));
+const wonMatches=p=>matches.filter(m=>impactByMatch.get(m.id)?.winners.some(w=>A.slug(w.name)===p.id));
 let portraits={};
-if(page==="player"||page==="home"){
+if(page==="player"||page==="home"||page==="games"){
  try{const r=await fetch("./data/player_portraits.json",{cache:"no-store"});if(r.ok)portraits=await r.json()}catch(e){console.warn("Portrait registry unavailable",e)}
 }
 function photoCredit(record){
@@ -128,12 +163,24 @@ function lineup(m,side){
  return '<section><h3>'+esc(team)+'</h3><b>Starting XI</b><ol>'+starters.map(n=>'<li>'+A.playerName(n)+'</li>').join("")+'</ol>'
  +'<b>Substitutes used</b><ul>'+subs.map(n=>'<li>'+A.playerName(n)+'</li>').join("")+'</ul></section>';
 }
+function playerOfMatch(m){
+ const result=impactByMatch.get(m.id),winners=result?.winners||[];
+ if(!winners.length)return '<section class="soccer-panel soccer-potm"><h2>Player of the Match</h2><p class="soccer-note">No positive verified impact score; selection requires review.</p></section>';
+ const title=winners.length>1?"Joint Players of the Match":"Player of the Match";
+ const cards=winners.map(w=>{
+  const p=players.find(p=>p.id===A.slug(w.name)),team=w.team===m.home_abbr?m.home:m.away;
+  const parts=Object.values(w.parts).map(x=>esc(x.count+" × "+x.label)+" ("+(x.points>0?"+":"")+A.fmt(x.points)+")").join(" · ");
+  return '<div class="soccer-potm-card"><a class="soccer-potm-photo" href="'+A.playerUrl(w.name)+'" aria-label="'+esc(w.name)+' player profile"><div class="soccer-portrait">'+portrait(p||{id:A.slug(w.name),name:w.name})+'</div></a><div class="soccer-potm-copy"><h3>'+A.playerName(w.name)+'</h3><p>'+esc(team)+'</p><p><b>'+A.fmt(w.score)+' Soccer Impact Score</b></p><p class="soccer-note">'+parts+'</p>'+photoCredit(portraits[A.slug(w.name)])+'</div></div>';
+ }).join("");
+ return '<section class="soccer-panel soccer-potm" aria-label="Player of the Match"><h2>'+title+'</h2>'+cards+'<p class="soccer-note">Courtside Archive selection from verified match events, not an official award. Individual saves and defensive statistics are omitted when unavailable. Ties: goals, direct assists, then secondary assists; exact ties share the award.'+(!result.reconciled?' Scoring bonuses withheld because the event totals do not reconcile.':'')+'</p></section>';
+}
 function gameView(m){
  const statline=(m.home_score+m.away_score)+' total goals · '+m.competition;
  return '<div class="eyebrow">Soccer · Games / Match Reports</div><h1>Match details.</h1><p class="lead">Match reports with starting lineups, scoring plays, verified player events and team statistics.</p>'
  +'<div class="soccer-filters"><label>Select a match<select id="gameSelect">'+matches.map(x=>'<option value="'+esc(x.id)+'"'+(x.id===m.id?" selected":"")+'>'+dt(x.date)+' · '+esc(x.home_abbr)+' vs '+esc(x.away_abbr)+'</option>').join("")+'</select></label></div>'
  +window.CAGameScore.render({date:m.date,venue:m.venue,context:m.competition,away:m.away,home:m.home,awayLogo:window.CAGameLogos?.resolve('soccer',m.away,m.date),homeLogo:window.CAGameLogos?.resolve('soccer',m.home,m.date),awayScore:m.away_score,homeScore:m.home_score,status:"FULL TIME",metaHtml:esc(m.city)+(m.attendance?' · '+A.fmt(m.attendance)+' announced attendance':'')+(m.source_url?' · <a href="'+esc(m.source_url)+'" target="_blank" rel="noopener">Original match report ↗</a>':'')})
  +curatedRecap(m)
+ +playerOfMatch(m)
  +metricCards([["Goals",m.home_score+m.away_score],["Scorers",new Set(A.scored(m).filter(e=>e.type!=="own_goal").map(e=>e.player)).size],["Events logged",m.events.length],["Players appeared",new Set([...m.home_starters,...m.away_starters,...(m.home_subs_used||[]),...(m.away_subs_used||[])]).size]])
  +'<section class="soccer-panel"><h2>Goals</h2>'+A.scored(m).map(e=>eventHtml(e,m,true)).join("")+'</section>'
  +'<section class="soccer-panel"><h2>Player box score & lineups</h2><div class="soccer-lineup">'+lineup(m,"home")+lineup(m,"away")+'</div></section>'
@@ -176,6 +223,7 @@ function profile(){
  const p=players.find(p=>p.id===id);if(!p){app.innerHTML='<h1>Player not found.</h1><p><a href="./stats.html">Browse player leaderboards ↗</a></p>';return;}
  document.title=p.name+" · Soccer | Courtside Archive";
  const log=p.matchLog.slice().sort((a,b)=>b.date.localeCompare(a.date));
+ const potmMatches=wonMatches(p);
  const record=careerHonors.players?.[p.id]||{};
  const individual=individualHonors.players?.[p.id]||{};
  const witnessedWorldCups=matches.filter(m=>m.competition==="FIFA World Cup"&&log.some(l=>l.id===m.id)).map(m=>{
@@ -223,7 +271,8 @@ function profile(){
   +list.slice().sort((a,b)=>String(a.season||a.year).localeCompare(String(b.season||b.year))).map(a=>'<li>'+esc(honorLine(key,a))+(a.source_url?'<a href="'+esc(a.source_url)+'" target="_blank" rel="noopener noreferrer">Source ↗</a>':"")+'</li>').join("")+'</ul></div>').join("")+'</section>':"";
  const eventRows=log.map(l=>'<tr><td><a href="./game.html?id='+encodeURIComponent(l.id)+'">'+dt(l.date)+'</a></td><td>'+esc(l.team)+'</td><td>'+esc(l.opponent)+'</td><td>'+(l.started?"Starter":"Substitute")+'</td><td>'+l.goals+'</td><td>'+l.assists+'</td><td>'+l.secondary_assists+'</td><td>'+l.yellow+'</td></tr>');
  app.innerHTML='<div class="eyebrow">Pro Soccer · Player profile</div><div class="soccer-profile-head"><div class="soccer-portrait">'+portrait(p)+'</div><div><h1 style="margin:0">'+A.playerName(p.name,false)+'</h1>'+awardBadges+photoCredit(portraits[p.id])+'<p class="lead">'+esc(p.teams.join(" / "))+' · '+p.appearances+' attended match'+(p.appearances===1?"":"es")+'</p></div></div>'
- +metricCards([["Appearances",p.appearances],["Goals",p.goals],["Direct assists",p.assists],["Goal contributions",p.contributions]])
+ +metricCards([["Appearances",p.appearances],["Goals",p.goals],["Direct assists",p.assists],["Goal contributions",p.contributions],["Player of the Match",potmMatches.length]])
+ + (potmMatches.length?'<section class="soccer-panel"><h2>Player of the Match awards</h2><div class="game-grid">'+potmMatches.map(A.matchCard).join("")+'</div><p class="soccer-note">Courtside Archive selections by verified Soccer Impact Score.</p></section>':"")
  +awardPanel
  +'<div class="section-heading"><h2>Matches you attended</h2><a class="action-link secondary" href="./stats.html">All leaderboards ↗</a></div><div class="game-grid">'+log.map(l=>A.matchCard(one(l.id))).join("")+'</div>'
  +'<section class="soccer-panel"><h2>Player statistics</h2><div class="soccer-grid">'+[["Starts",p.starts],["MLS secondary assists",p.secondary_assists],["Yellow cards",p.yellow],["Red cards",p.red],["Penalties scored",p.penalties],["Clean sheets (starting GK)",p.clean_sheets]].map(([k,v])=>'<div class="soccer-tile"><small>'+esc(k)+'</small><strong>'+v+'</strong></div>').join("")+'</div></section>'

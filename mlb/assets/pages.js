@@ -246,7 +246,7 @@ function gamePage(){
  app.innerHTML='<div class="eyebrow">MLB · Games & box scores</div><h1>Game details.</h1>'
  +'<p class="lead">Official MLB game results, inning scoring, batting, pitching, fielding, and scoring-play history where recorded.</p>'
  +'<div class="toolbar"><label class="filter-label" for="gameSelect">Attended game</label><select id="gameSelect">'+sorted.map(g=>'<option value="'+g.attendance_id+'">'+date(g.date)+' · '+esc(g.away)+' @ '+esc(g.home)+(g.game_pk!=null?" · "+g.away_score+"–"+g.home_score:" · Pending")+'</option>').join("")+'</select></div>'
- +'<section id="scoreboard"></section><div id="gameStats"></div>';
+ +'<section id="scoreboard"></section><div id="gameStats"></div><div id="gameExtras"></div>';
  const select=el("gameSelect");
  function render(g){
  selected=g;select.value=g.attendance_id;
@@ -303,8 +303,8 @@ function gamePage(){
   +'<div class="mlb-pregame-eyebrow">SIGNATURE PERFORMANCE</div><h2>Player of the Game</h2>'
   +playerCard
   +'<p class="mlb-note">Custom, unofficial one-player impact rating. Hitting rewards total bases, runs, RBI, walks and steals; pitching rewards innings and strikeouts while penalizing runs, hits and walks. Both are compared on one scale, regardless of winning team.</p></section>';
- el("scoreboard").innerHTML=board+gamePhotoPanel(g)+decisionsPanel+recapPanel+potgPanel+window.CABaseballHomeRuns.render(gameStats,{hr:r=>r.batting?.homeRuns,name:r=>r.name,href:playerUrl,portraits:r=>[mlbPortrait(r.player_id)],credit:r=>photoCredit(portraitFallbacks[String(r.player_id)])})+innings;
- el("scoreboard").insertAdjacentHTML("beforeend", '<div id="sc-game-panel"></div>');
+ el("scoreboard").innerHTML=board+gamePhotoPanel(g)+decisionsPanel+potgPanel+innings;
+ el("gameExtras").innerHTML='<div id="sc-game-panel"></div>'+window.CABaseballHomeRuns.render(gameStats,{hr:r=>r.batting?.homeRuns,name:r=>r.name,href:playerUrl,portraits:r=>[mlbPortrait(r.player_id)],credit:r=>photoCredit(portraitFallbacks[String(r.player_id)])})+recapPanel;
  window.MLBStatcast?.renderGame(g,el("sc-game-panel"));
  const order=[["batting","Batting"],["pitching","Pitching"],["fielding","Fielding"]];
  el("gameStats").innerHTML='<div class="mlb-nav-tabs" role="tablist">'+order.map(([c,title],i)=>'<button type="button" role="tab" aria-selected="'+(i===0)+'" data-cat="'+c+'">'+title+'</button>').join("")+'</div><section class="panel"><h2 id="statTitle">Batting box score</h2><div id="box"></div></section><section class="panel"><h2>Scoring plays</h2><div id="scoring"></div></section>'

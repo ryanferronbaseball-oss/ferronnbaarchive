@@ -162,7 +162,8 @@ function show(g,all,rows,innings,plays,decisions,recaps){
  $("gameSelect").value=g.id;
  const scoreboard=window.CAGameScore.render({date:g.date,venue:g.venue||"Ballpark pending",context:g.level||"MiLB",away:g.away_team,home:g.home_team,awayLogo:window.CAGameLogos?.resolve('milb',g.away_team,g.date,g.official_away_team_id),homeLogo:window.CAGameLogos?.resolve('milb',g.home_team,g.date,g.official_home_team_id),awayScore:g.away_score,homeScore:g.home_score,metaHtml:(g.venue_id?'<a href="../venues/venue.html?id='+encode(g.venue_id)+'">Venue profile ↗</a> · ':'')+(official(g)?"MiLB game #"+esc(g.source_game_id):"Awaiting official game match")});
  const perf=performancePanel(selected);
- $("scoreboard").innerHTML=scoreboard+decisionPanel(g,decisions)+recapPanel(g,recaps)+perf.html+window.CABaseballHomeRuns.render(selected,{hr:r=>r.batting?.hr,name:r=>r.name,href:playerUrl,portraits:r=>/^\d+$/.test(String(r.player_id))?["https://img.mlbstatic.com/mlb-photos/image/upload/w_213,q_85/v1/people/"+encode(r.player_id)+"/headshot/67/current"]:[]})+lineScore(g,innings);
+ $("scoreboard").innerHTML=scoreboard+decisionPanel(g,decisions)+perf.html+lineScore(g,innings);
+ $("gameExtras").innerHTML=window.CABaseballHomeRuns.render(selected,{hr:r=>r.batting?.hr,name:r=>r.name,href:playerUrl,portraits:r=>/^\d+$/.test(String(r.player_id))?["https://img.mlbstatic.com/mlb-photos/image/upload/w_213,q_85/v1/people/"+encode(r.player_id)+"/headshot/67/current"]:[]})+recapPanel(g,recaps);
  if(perf.best){
   const best=perf.best.row,pic=$("potgPortrait"),img=new Image();
   img.alt="";img.loading="lazy";
@@ -203,7 +204,7 @@ async function load(){
    +'<p class="lead">Official MiLB game results, verified winning and losing pitchers, saves, inning scoring, batting, pitching, fielding, and scoring-play history. All player statistics belong exclusively to your attended MiLB games.</p>'
    +'<div class="toolbar"><label class="filter-label" for="gameSelect">Attended game</label><select id="gameSelect">'
    +ordered.map(g=>'<option value="'+esc(g.id)+'">'+dt(g.date)+' · '+esc(g.away_team)+' @ '+esc(g.home_team)+' · '+esc(scores(g))+'</option>').join("")+'</select></div>'
-   +'<section id="scoreboard"></section><div id="gameStats"></div>';
+   +'<section id="scoreboard"></section><div id="gameStats"></div><div id="gameExtras"></div>';
   const run=g=>show(g,ordered,rows,innings,plays,decisions,recaps);
   $("gameSelect").addEventListener("change",()=>{
    const g=ordered.find(x=>String(x.id)===$("gameSelect").value);if(!g)return;

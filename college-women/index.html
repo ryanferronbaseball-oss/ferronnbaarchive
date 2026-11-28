@@ -74,7 +74,7 @@ const chart=(target,entries)=>{
  const max=Math.max(1,...entries.map(x=>x[1]));
  $(target).innerHTML=entries.map(([name,n])=>'<div class="barrow"><span>'+esc(name)+'</span><div class="track"><div class="fill" style="width:'+(n/max*100).toFixed(2)+'%"></div></div><strong>'+n+'</strong></div>').join('');
 };
-let games=[],players=[];
+let games=[],players=[],headshots={};
 const recentEsc=value=>String(value??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
 const recentDate=value=>{const [year,month,day]=String(value).split('-').map(Number);return year&&month&&day?new Date(year,month-1,day).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'}):String(value??'')};
 function renderRecentGames(list){
@@ -134,13 +134,15 @@ function render(){
   const g=gameMap.get(String(best.game_id));
   const name=esc(best.player),initials=esc(best.player.split(' ').map(x=>x[0]).slice(0,2).join(''));
   const athleteId=/^espn:(\d+)$/.exec(best.player_id);
-  const img=athleteId?'<img style="width:100%;height:100%;object-fit:cover;object-position:center top" src="https://a.espncdn.com/i/headshots/womens-college-basketball/players/full/'+athleteId[1]+'.png" alt="" onerror="this.style.display=\'none\';this.parentElement.textContent=\''+initials+'\'">':initials;
+  const mapped=headshots[best.player_id];const photo=mapped?.provider==="official school"&&/^https:\/\//.test(mapped.image_url)?mapped.image_url:athleteId?'https://a.espncdn.com/i/headshots/womens-college-basketball/players/full/'+athleteId[1]+'.png':null;
+  const img=photo?'<img style="width:100%;height:100%;object-fit:cover;object-position:center top" src="'+esc(photo)+'" alt="" onerror="this.style.display=\'none\';this.parentElement.textContent=\''+initials+'\'">':initials;
   return '<article class="ca-feature"><small>'+esc(title)+'</small><div style="display:flex;gap:12px;align-items:center;margin-top:8px"><div class="ca-fallback" style="width:65px;height:74px;flex:none;border-radius:9px;overflow:hidden">'+img+'</div><div><strong>'+best[key]+' '+suffix+'</strong><div class="ca-name">'+name+'</div><p>'+esc(best.date)+'</p></div></div><a href="'+(g?'./game.html?id='+encodeURIComponent(g.id):'./player.html?id='+encodeURIComponent(best.player_id))+'">View performance →</a></article>';
  }).join('');
 }
 Promise.all([
  fetch('./data/games.csv?v=college-step3',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Games HTTP '+r.status);return r.text()}),
  fetch('./data/player_boxscores_espn.json?v=college-step3',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Players HTTP '+r.status);return r.json()})
-]).then(([csv,rows])=>{games=parseCSV(csv);players=rows;if(!games.length||!players.length)throw Error('College attendance data is empty');const ids=new Set(games.map(g=>String(g.id)));if(ids.size!==games.length||players.some(p=>!ids.has(String(p.game_id))))throw Error('College data game/player references are inconsistent');render()})
+,fetch('./data/player_headshots.json',{cache:'no-store'}).then(r=>r.ok?r.json():{players:{}}).catch(()=>({players:{}}))
+]).then(([csv,rows,registry])=>{headshots=registry.players||{};games=parseCSV(csv);players=rows;if(!games.length||!players.length)throw Error('College attendance data is empty');const ids=new Set(games.map(g=>String(g.id)));if(ids.size!==games.length||players.some(p=>!ids.has(String(p.game_id))))throw Error('College data game/player references are inconsistent');render()})
 .catch(e=>{$('showing').textContent='Unable to load college attendance: '+e.message;$('features').textContent='Record highlights unavailable.'});
 </script><script src="./assets/navigation.js"></script></body></html>

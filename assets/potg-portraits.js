@@ -1,7 +1,7 @@
 /* Reuse established profile photo identities in the existing Player of the Game sections. */
 (()=>{"use strict";
 const sport=document.currentScript?.dataset.sport;
-const selectors={nba:".pog .pog-head",college:".pog .pog-head",nfl:"#playerOfGame .pog-head",cfb:"#playerOfGame .pog-head","college-baseball":"#cb-player-of-game",nhl:"#playerOfGame .nhl-game-pog-head"};
+const selectors={nba:".pog .pog-head",college:".pog .pog-head","college-women":".pog .pog-head",nfl:"#playerOfGame .pog-head",cfb:"#playerOfGame .pog-head","college-baseball":"#cb-player-of-game",nhl:"#playerOfGame .nhl-game-pog-head"};
 if(!selectors[sport])return;
 const read=async path=>{try{const r=await fetch(path,{cache:"no-store"});return r.ok?await r.json():{}}catch{return {}}};
 const espnId=id=>/^espn:(\d+)$/.exec(id)?.[1]||null;
@@ -10,12 +10,12 @@ let headshots={},baseballPortraits={},baseballRows=new Map(),nhlPortraits={},cfb
 function collegeCandidates(id){
  const mapped=headshots[id]||{},mappedId=mapped.espn_athlete_id;
  const photoId=espnId(id)||(typeof mappedId==="string"&&/^\d+$/.test(mappedId)?mappedId:null);
- const schoolPhoto=(()=>{try{const u=new URL(mapped.image_url),s=new URL(mapped.source_url);const schools=["cubuffs.com","gohofstra.com","emueagles.com","santaclarabroncos.com","usdtoreros.com","fullertontitans.com","gopoly.com","utahstateaggies.com","denverpioneers.com","siuecougars.com","fightingirish.com"];const host=h=>h.replace(/^www\./,'');if(u.protocol!=='https:'||s.protocol!=='https:'||!schools.includes(host(s.hostname)))return null;const h=host(u.hostname);return (schools.includes(h)||/(^|\.)(sidearmsports\.com|sidearmdev\.com|sidearmnextgen\.com|und\.com|cloudfront\.net|amazonaws\.com)$/.test(h))?u.href:null}catch{return null}})()
- return [schoolPhoto,espn("mens-college-basketball",photoId)].filter(Boolean);
+ const schoolPhoto=(()=>{try{const u=new URL(mapped.image_url),s=new URL(mapped.source_url);const schools=["cubuffs.com","gohofstra.com","emueagles.com","santaclarabroncos.com","usdtoreros.com","fullertontitans.com","gopoly.com","utahstateaggies.com","denverpioneers.com","siuecougars.com","fightingirish.com","pacifictigers.com","goutsa.com","hawaiiathletics.com","goairforcefalcons.com","lipscombsports.com"];const host=h=>h.replace(/^www\./,'');if(u.protocol!=='https:'||s.protocol!=='https:'||!schools.includes(host(s.hostname)))return null;const h=host(u.hostname);return (schools.includes(h)||/(^|\.)(sidearmsports\.com|sidearmdev\.com|sidearmnextgen\.com|und\.com|cloudfront\.net|amazonaws\.com)$/.test(h))?u.href:null}catch{return null}})()
+ return [schoolPhoto,espn(sport==="college-women"?"womens-college-basketball":"mens-college-basketball",photoId)].filter(Boolean);
 }
 
 function candidates(id){
- if(sport==="college")return collegeCandidates(id);
+ if(sport==="college"||sport==="college-women")return collegeCandidates(id);
  if(sport==="nba")return [espn("nba",espnId(id))].filter(Boolean);
  if(sport==="cfb"){const u=cfbPortraits[id]?.url;return [typeof u==="string"&&/^https:\/\/a\.espncdn\.com\/i\/headshots\/(?:college-football|cfb|nfl)\/players\/full\/\d+\.png$/.test(u)?u:null,espn("college-football",/^\d+$/.test(id)?id:null)].filter(Boolean)}
  if(sport==="nfl")return [espn("nfl",/^\d+$/.test(id)?id:null)].filter(Boolean);
@@ -53,7 +53,7 @@ function decorate(){
 async function init(){
  if(sport==="cfb")cfbPortraits=await read("./data/player_portraits.json");
  if(sport==="nhl")nhlPortraits=await read("./data/player_portraits.json");
- if(sport==="college")headshots=(await read("./data/player_headshots.json")).players||{};
+ if(sport==="college"||sport==="college-women")headshots=(await read("./data/player_headshots.json")).players||{};
  if(sport==="college-baseball"){
   // The archive script is deferred on some pages.
   if(document.readyState==="loading")await new Promise(resolve=>document.addEventListener("DOMContentLoaded",resolve,{once:true}));

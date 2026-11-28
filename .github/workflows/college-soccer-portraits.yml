@@ -6,6 +6,7 @@ on:
     paths:
       - 'college-soccer/data/school_portrait_targets.json'
       - 'scripts/audit_college_soccer_portraits.py'
+      - 'scripts/recover_ucla_soccer_portraits.py'
       - '.github/workflows/college-soccer-portraits.yml'
 permissions:
   contents: write
@@ -21,7 +22,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - run: pip install requests pillow beautifulsoup4
+      - run: pip install requests pillow beautifulsoup4 pymupdf
       - run: python -m py_compile scripts/audit_college_soccer_portraits.py
       - run: python scripts/audit_college_soccer_portraits.py
       - name: Publish verified portraits
@@ -29,6 +30,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add college-soccer/data/player_portraits.json college-soccer/reports/school_portrait_audit.json
+          if [ -d college-soccer/assets/portraits ]; then git add college-soccer/assets/portraits; fi
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "Recover verified college soccer portraits"
           git pull --rebase origin main

@@ -1,7 +1,8 @@
 """Recover official college soccer portraits, preserving existing records."""
 import concurrent.futures as cf
 from collections import defaultdict
-import json
+import json, re
+from recover_ucla_soccer_portraits import recover as recover_ucla
 from bs4 import BeautifulSoup
 from audit_player_portraits import load, save
 from audit_ncaaw_school_portraits import get, host, named_images, bio_links, bio_images, valid_bio, verify
@@ -15,7 +16,12 @@ def main():
     targets=load('college-soccer/data/school_portrait_targets.json',{})
     reg=load('college-soccer/data/player_portraits.json',{})
     inventory=load('college-soccer/data/portrait_inventory.json',{})
+    for pid,entry in list(reg.items()):
+        if re.search(r'person[-_]?default|dummy-data|placeholder|silhouette|no[-_]?image',entry.get('url',''),re.I):del reg[pid]
     pages={};errors={}
+    pdf_added=[]
+    try:pdf_added=recover_ucla(reg,targets)
+    except Exception as ex:errors['UCLA media roster']=str(ex)
     for url in sorted({u for t in targets.values() for u in t['rosters']}):
         try:pages[url]=fetch_page(url)
         except Exception as e:errors[url]=str(e)
@@ -23,7 +29,7 @@ def main():
         school=t['host'];names=t['names'];tested=set();links_seen=set()
         def attempt(urls,source):
             for u in urls:
-                if u in tested:continue
+                if u in tested or re.search(r'person[-_]?default|dummy-data|placeholder|silhouette|no[-_]?image',u,re.I):continue
                 tested.add(u)
                 got=verify(u,school)
                 if got:return got[0],source,got[1]
@@ -42,7 +48,7 @@ def main():
                     if got:return got,None
                 except Exception:continue
         return None,f'No verified named portrait; {len(links_seen)} bios, {len(tested)} image candidates'
-    report={'targeted':len(targets),'inventory_total':len(inventory),'added':[],'preserved':[],'missing':[],'roster_errors':errors}
+    report={'targeted':len(targets),'inventory_total':len(inventory),'added':pdf_added,'preserved':[],'missing':[],'roster_errors':errors}
     found={}
     with cf.ThreadPoolExecutor(max_workers=6) as pool:
         jobs={}

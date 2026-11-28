@@ -57,7 +57,7 @@ function photoCredit(record){
 }
 function portrait(p){
  const url=portraits[p.id]?.url;
- return typeof url==="string"&&(/^https:\/\/a\.espncdn\.com\/i\/headshots\/soccer\/players\/full\/\d+\.png$/.test(url)||/^https:\/\/upload\.wikimedia\.org\/wikipedia\/commons\//.test(url)|| (portraits[p.id]?.provider==="official"&&/^https:\/\/[^\s"'<>]+$/.test(url)))
+ return typeof url==="string"&&((portraits[p.id]?.provider==="official"&&/^\.\/assets\/portraits\/ucla\/[a-z0-9-]+\.jpg$/.test(url))||/^https:\/\/a\.espncdn\.com\/i\/headshots\/soccer\/players\/full\/\d+\.png$/.test(url)||/^https:\/\/upload\.wikimedia\.org\/wikipedia\/commons\//.test(url)|| (portraits[p.id]?.provider==="official"&&/^https:\/\/[^\s"'<>]+$/.test(url)))
  ? '<img alt="'+esc(p.name)+'" data-provider="'+(portraits[p.id]?.provider==="commons"?"commons":"espn")+'" onload="this.classList.add(\'is-loaded\')" onerror="this.remove()" src="'+esc(url)+'"><span>'+initial(p.name)+'</span>'
  : initial(p.name);
 }

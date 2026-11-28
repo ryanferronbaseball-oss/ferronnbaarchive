@@ -14,7 +14,9 @@ document.addEventListener("DOMContentLoaded",async function app(){
  const team=(g,s)=>(g[s+"_rank"]?"#"+g[s+"_rank"]+" ":"")+g[s];
  const load=async f=>{const r=await fetch("./data/"+f);if(!r.ok)throw Error(f);return r.json()};
  try{
- const [games,rows]=await Promise.all([load("matches.json"),load("player_boxscores.json")]);
+ const [games,rows,portraits]=await Promise.all([load("matches.json"),load("player_boxscores.json"),load("player_portraits.json").catch(()=>({}))]);
+ const portrait=p=>{const initials=e(p.player.split(" ").map(s=>s[0]).slice(0,2).join(""));const r=portraits[p.id];return r?.provider==="official"&&/^https:\/\/[^\s"'<>]+$/.test(r.url||"")?'<img src="'+e(r.url)+'" alt="'+e(p.player)+'" onload="this.classList.add(\'is-loaded\')" onerror="this.remove()"><span>'+initials+'</span>':initials;};
+ const photoCredit=p=>{const r=portraits[p.id];return r?.provider==="official"&&/^https:\/\/[^\s"'<>]+$/.test(r.source||"")?'<small class="archive-photo-credit"><a href="'+e(r.source)+'" target="_blank" rel="noopener noreferrer">Photo source ↗</a></small>':"";};
  games.sort((a,b)=>a.date.localeCompare(b.date));
  const byGame=new Map(games.map(g=>[g.id,g])),groups=new Map();
  for(const r of rows){if(!groups.has(r.id))groups.set(r.id,[]);groups.get(r.id).push(r);}
@@ -49,8 +51,7 @@ document.addEventListener("DOMContentLoaded",async function app(){
  }
  if(mode==="player"){
  const p=players.find(x=>x.id===id);if(!p)throw Error("Player not found");
- const init=p.player.split(" ").map(s=>s[0]).slice(0,2).join("");
- out.innerHTML=a("./stats.html","← Player leaderboards")+'<div class="soccer-profile-head"><div class="vb-portrait">'+e(init)+"</div><div><h1>"+e(p.player)+'</h1><p class="lead">'+e(p.teams.join(" / "))+"</p></div></div>"+metric([["Matches",p.matches],["Sets",p.sp],["Kills/set",p.kps.toFixed(2)],["Hitting %",hit(p)],["Assists/set",p.astps.toFixed(2)],["Digs/set",p.digps.toFixed(2)],["Blocks/set",p.blocksps.toFixed(2)],["Aces/set",p.saps.toFixed(2)],["Points/set",p.ptsps.toFixed(2)]])+panel("Career totals",table(heads,[tr([e(p.player),...cells(p)])]));
+ out.innerHTML=a("./stats.html","← Player leaderboards")+'<div class="soccer-profile-head"><div class="soccer-portrait vb-portrait">'+portrait(p)+"</div><div><h1>"+e(p.player)+'</h1>'+photoCredit(p)+'<p class="lead">'+e(p.teams.join(" / "))+"</p></div></div>"+metric([["Matches",p.matches],["Sets",p.sp],["Kills/set",p.kps.toFixed(2)],["Hitting %",hit(p)],["Assists/set",p.astps.toFixed(2)],["Digs/set",p.digps.toFixed(2)],["Blocks/set",p.blocksps.toFixed(2)],["Aces/set",p.saps.toFixed(2)],["Points/set",p.ptsps.toFixed(2)]])+panel("Career totals",table(heads,[tr([e(p.player),...cells(p)])]));
  if(p.teams.length>1)out.innerHTML+=panel("Seen at multiple schools",table(["School","Matches","Sets","Kills","K/set","HIT%"],p.teams.map(t=>{const x=agg(p.logs.filter(r=>r.team===t));return tr([e(t),x.matches,x.sp,x.k,x.kps.toFixed(2),hit(x)]);})));
  out.innerHTML+=panel("Individual match log",table(["Date","Team","Opponent",...heads.slice(1)],p.logs.map(r=>{const g=byGame.get(r.game_id);return tr([a(gl(g),r.date),e(r.team),e(r.team===g.home?g.away:g.home),...cells(r)]);})));return;
  }

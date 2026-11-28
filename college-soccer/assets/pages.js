@@ -49,7 +49,7 @@ const wonMatches=p=>matches.filter(m=>impactByMatch.get(m.id)?.winners.some(w=>A
 let proCareers={};
 try{if(page==="player"||page==="pro"){const r=await fetch("./data/pro_crosswalk.json",{cache:"no-store"});if(r.ok)proCareers=(await r.json()).players||{}}}catch(e){console.warn("Pro career registry unavailable",e)}
 let portraits={};
-if(page==="player"||page==="home"||page==="games"){
+if(page==="player"||page==="home"||page==="games"||page==="pro"){
  try{const r=await fetch("./data/player_portraits.json",{cache:"no-store"});if(r.ok)portraits=await r.json()}catch(e){console.warn("Portrait registry unavailable",e)}
 }
 function photoCredit(record){

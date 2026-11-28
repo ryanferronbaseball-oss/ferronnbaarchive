@@ -303,7 +303,7 @@ function gamePage(){
   +'<div class="mlb-pregame-eyebrow">SIGNATURE PERFORMANCE</div><h2>Player of the Game</h2>'
   +playerCard
   +'<p class="mlb-note">Custom, unofficial one-player impact rating. Hitting rewards total bases, runs, RBI, walks and steals; pitching rewards innings and strikeouts while penalizing runs, hits and walks. Both are compared on one scale, regardless of winning team.</p></section>';
- el("scoreboard").innerHTML=board+gamePhotoPanel(g)+decisionsPanel+recapPanel+potgPanel+innings;
+ el("scoreboard").innerHTML=board+gamePhotoPanel(g)+decisionsPanel+recapPanel+potgPanel+window.CABaseballHomeRuns.render(gameStats,{hr:r=>r.batting?.homeRuns,name:r=>r.name,href:playerUrl,portraits:r=>[mlbPortrait(r.player_id)],credit:r=>photoCredit(portraitFallbacks[String(r.player_id)])})+innings;
  el("scoreboard").insertAdjacentHTML("beforeend", '<div id="sc-game-panel"></div>');
  window.MLBStatcast?.renderGame(g,el("sc-game-panel"));
  const order=[["batting","Batting"],["pitching","Pitching"],["fielding","Fielding"]];

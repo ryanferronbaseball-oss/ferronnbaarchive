@@ -543,6 +543,7 @@ async function renderGames(d){
    +proSection
    +draftSection
    +recap
+   +window.CABaseballHomeRuns.render(players,{hr:r=>r.batting?.homeRuns,name:r=>r.player,href:playerUrl,portraits:r=>playerPortraitCandidates(decisionPortraitRegistry[r.player_id],decisionProfiles.get(r.player_id)?.rows||[r])})
    +(Array.isArray(g.innings)&&g.innings.length?renderInnings(g):"")
    +decisions+box;
   if(!players.length)return;

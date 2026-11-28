@@ -459,16 +459,6 @@
       "id": "school:utsa:barbara-benson",
       "name": "Barbara Benson",
       "reason": "No verified named portrait; 1 linked bios, 0 image candidates"
-    },
-    {
-      "id": "school:pacific:loretta-kakala",
-      "name": "Loretta Kakala",
-      "reason": "No verified named portrait; 1 linked bios, 0 image candidates"
-    },
-    {
-      "id": "school:air-force:kamri-heath",
-      "name": "Kamri Heath",
-      "reason": "No verified named portrait; 1 linked bios, 5 image candidates"
     }
   ],
   "preserved": [],
@@ -583,5 +573,23 @@
     "targeted": 10,
     "verified_total": 3
   },
-  "verified_total": 73
+  "verified_total": 75,
+  "manual_recovery": [
+    {
+      "id": "school:air-force:kamri-heath",
+      "name": "Kamri Heath",
+      "source_url": "https://goairforcefalcons.com/sports/womens-basketball/roster/kamri-heath/11796",
+      "image_url": "https://images.sidearmdev.com/crop?height=270&type=webp&url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Fgoairforcefalcons.com%2Fimages%2F2022%2F9%2F13%2FHeath_Kamari.jpg&width=180",
+      "school": "Air Force",
+      "season": "2022-23"
+    },
+    {
+      "id": "school:pacific:loretta-kakala",
+      "name": "Loretta Kakala",
+      "source_url": "https://gocards.com/sports/womens-basketball/roster/loretta-kakala/7105",
+      "image_url": "https://images.sidearmdev.com/crop?height=270&type=webp&url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Fgocards.com%2Fimages%2F2017%2F10%2F23%2F32Kakala_275x200.jpg&width=180",
+      "school": "Louisville",
+      "season": "2017-18"
+    }
+  ]
 }

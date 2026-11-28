@@ -9,7 +9,7 @@
 .alumni-player{border:1px solid #c5e3ef;background:#fff;border-radius:16px;padding:20px;min-width:0;overflow:hidden;display:flex;flex-direction:column}
 .alumni-head{min-width:0}.alumni-identity{display:grid;grid-template-columns:58px minmax(0,1fr);gap:13px;align-items:center;min-width:0}
 .alumni-identity>div{min-width:0}.alumni-portrait{position:relative;display:grid;place-items:center;width:58px;height:58px;overflow:hidden;border-radius:12px;background:#d9f0fa;border:1px solid #c5e3ef;color:var(--burg);font-size:16px;font-weight:900}
-.alumni-portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#d9f0fa}
+.alumni-portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;background:#d9f0fa}
 .alumni-name{display:block;font-size:21px;line-height:1.2;overflow-wrap:anywhere;letter-spacing:-.03em;font-weight:800;color:var(--burg)!important;text-decoration:none!important}
 .alumni-name:hover{text-decoration:underline!important}.alumni-school{color:#566879;font-size:13px;margin-top:5px;overflow-wrap:anywhere}
 .alumni-pill{display:inline-block;background:#d9f0fa;color:var(--burg);padding:6px 10px;font-size:11px;font-weight:750;border-radius:20px;margin-top:13px}

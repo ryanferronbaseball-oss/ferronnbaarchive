@@ -539,10 +539,10 @@ async function renderGames(d){
   const photo=typeof gamePhotos[g.id]==="string"&&/^\.\/assets\/game-photos\/[a-zA-Z0-9._-]+$/.test(gamePhotos[g.id])
    ?'<div class="cb-game-photo"><img src="'+esc(gamePhotos[g.id])+'" alt="'+esc(gameLabel(g)+' game photo')+'" loading="lazy"></div>':"";
   $("cb-game-details").innerHTML=window.CAGameScore.render({date:g.date,venue:g.ballpark||"Ballpark pending",away:g.away,home:g.home,awayLogo:window.CAGameLogos?.resolve('college',g.away,g.date),homeLogo:window.CAGameLogos?.resolve('college',g.home,g.date),awayScore:actual?g.away_score:null,homeScore:actual?g.home_score:null,context:[g.regional_game_number?'Regional Game '+g.regional_game_number:'',g.game_number?'Doubleheader Game '+g.game_number:'',g.postseason_round].filter(Boolean).join(' · '),metaHtml:[g.city,g.state].filter(Boolean).map(esc).join(', ')+((g.city||g.state)?' · ':'')+esc(sourceLabel(g))+(source?' · <a href="'+esc(source)+'" target="_blank" rel="noopener noreferrer">Official college gamebook ↗</a>':'')})
+   +(Array.isArray(g.innings)&&g.innings.length?renderInnings(g):"")
    +photo
    +decisions
    +potg
-   +(Array.isArray(g.innings)&&g.innings.length?renderInnings(g):"")
    +box
    +proSection
    +draftSection

@@ -162,7 +162,7 @@ function show(g,all,rows,innings,plays,decisions,recaps){
  $("gameSelect").value=g.id;
  const scoreboard=window.CAGameScore.render({date:g.date,venue:g.venue||"Ballpark pending",context:g.level||"MiLB",away:g.away_team,home:g.home_team,awayLogo:window.CAGameLogos?.resolve('milb',g.away_team,g.date,g.official_away_team_id),homeLogo:window.CAGameLogos?.resolve('milb',g.home_team,g.date,g.official_home_team_id),awayScore:g.away_score,homeScore:g.home_score,metaHtml:(g.venue_id?'<a href="../venues/venue.html?id='+encode(g.venue_id)+'">Venue profile ↗</a> · ':'')+(official(g)?"MiLB game #"+esc(g.source_game_id):"Awaiting official game match")});
  const perf=performancePanel(selected);
- $("scoreboard").innerHTML=scoreboard+decisionPanel(g,decisions)+perf.html+lineScore(g,innings);
+ $("scoreboard").innerHTML=scoreboard+lineScore(g,innings)+decisionPanel(g,decisions)+perf.html;
  $("gameExtras").innerHTML=window.CABaseballHomeRuns.render(selected,{hr:r=>r.batting?.hr,name:r=>r.name,href:playerUrl,portraits:r=>/^\d+$/.test(String(r.player_id))?["https://img.mlbstatic.com/mlb-photos/image/upload/w_213,q_85/v1/people/"+encode(r.player_id)+"/headshot/67/current"]:[]})+recapPanel(g,recaps);
  if(perf.best){
   const best=perf.best.row,pic=$("potgPortrait"),img=new Image();

@@ -80,11 +80,21 @@ def main():
             response=requests.get(url,timeout=60,headers={'User-Agent':'Mozilla/5.0'})
             response.raise_for_status()
             doc=fitz.open(stream=response.content,filetype='pdf')
-            page=doc[3]
-            text=norm(page.get_text())
-            if 'roster' not in text or 'utsa' not in text:raise ValueError('Page 4 is not a UTSA roster')
-            aligned=select_images(page,all_names)
-            report['sources'].append({'url':url,'season':year,'page':4,'aligned':list(aligned)})
+            matches=[]
+            diagnostics=[]
+            for page in doc:
+                text=norm(page.get_text())
+                count=sum(norm(n) in text for n in all_names)
+                if count<10:continue
+                try:
+                    aligned=select_images(page,all_names)
+                    if all(n in aligned for n in wanted):matches.append((page.number,aligned))
+                except Exception as exc:diagnostics.append({'page':page.number+1,'names':count,'error':str(exc)})
+            if len(matches)!=1:raise ValueError('Expected one fully aligned portrait roster, found '+str(len(matches))+'; '+str(diagnostics))
+            page_index,aligned=matches[0]
+            page=doc[page_index]
+            page_number=page_index+1
+            report['sources'].append({'url':url,'season':year,'page':page_number,'aligned':list(aligned)})
             seen=set()
             for n in wanted:
                 pid=next((p for p,t in targets.items() if p.startswith('school:utsa:') and norm(t['names'][0])==norm(n)),None)
@@ -101,8 +111,8 @@ def main():
                 im.thumbnail((450,550))
                 file=pid.rsplit(':',1)[-1]+'.jpg'
                 im.save(root/file,quality=92,optimize=True)
-                reg[pid]={'image_url':'./assets/portraits/utsa/'+file,'source_url':url,'provider':'official school','source_page':4,'source_season':year,'source_type':'official media roster PDF'}
-                report['added'].append({'id':pid,'name':n,'source_url':url,'page':4,'season':year,'bbox':list(rect)})
+                reg[pid]={'image_url':'./assets/portraits/utsa/'+file,'source_url':url,'provider':'official school','source_page':page_number,'source_season':year,'source_type':'official media roster PDF'}
+                report['added'].append({'id':pid,'name':n,'source_url':url,'page':page_number,'season':year,'bbox':list(rect)})
         except Exception as ex:
             report['sources'].append({'url':url,'season':year,'error':str(ex)})
             for n in wanted:

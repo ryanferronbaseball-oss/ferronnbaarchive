@@ -76,6 +76,8 @@ jobs:
                       if ',' in alt:
                           last,first=map(str.strip,alt.split(',',1));alt_variants.add(norm(first+' '+last))
                       altmatch=any(v in (n,n+'headshot','headshotof'+n,n+'portrait','photoof'+n) for n in names for v in alt_variants)
+                      if confirmed_bio and 'johnyouens' in names and urlsplit(page).path.rstrip('/')=='/sports/baseball/roster/john-youens/15483' and norm(alt)=='45youensjohns2026' and stem=='_45_Youens_Johns_2026':
+                          altmatch=True
                       explicit=bool(re.search(r'head.?shot|portrait|(?:^|[_ .-])hs(?:[_ .-]|\d|$)',stem+' '+alt,re.I))
                       crop='/crop' in urlsplit(u).path and (q.get('width'),q.get('height')) in ((['180'],['270']),(['603'],['803']))
                       if not ((filematch or altmatch) and (explicit or crop or designated) or confirmed_bio and designated and (explicit or crop) and (not alt or altmatch or filematch)):continue

@@ -125,7 +125,7 @@ jobs:
                       if host(r.url) not in (HOST,'byucougars.com'):continue
                       soup=BeautifulSoup(r.text,'html.parser')
                       title=' '.join(t.get_text(' ',strip=True) for t in soup.find_all(['h1','h2','title']))
-                      if not re.search(r'\b'+str(y)+r'\s+Baseball\s+Roster\b',title,re.I):raise ValueError('Season not verified: '+title[:180])
+                      if not re.search(r'\b(?:'+str(y)+r'\s+Baseball\s+Roster|Baseball\s+'+str(y)+r'\s+Roster|Baseball\s+'+str(y)+r'\s+-\s+BYU Athletics)\b',title,re.I):raise ValueError('Season not verified: '+title[:180])
                       return soup,r.url
                   except Exception as e:report['notes'].append(f'{u}: {e}')
               return None
@@ -183,7 +183,7 @@ jobs:
                           soup=BeautifulSoup(r.text,'html.parser')
                           title=' '.join(t.get_text(' ',strip=True) for t in soup.find_all(['h1','h2','title']))
                           if not any(n in norm(title) for n in names):continue
-                          if h==HOST and (norm(urlsplit(r.url).path.rstrip('/').split('/')[-1]) not in names or not re.search(r'\b'+str(y)+r'\s+Baseball\s+Roster\b',title,re.I)):continue
+                          if h==HOST and (norm(urlsplit(r.url).path.rstrip('/').split('/')[-1]) not in names or not re.search(r'\b(?:'+str(y)+r'\s+Baseball\s+Roster|Baseball\s+'+str(y)+r'\s+Roster|Baseball\s+'+str(y)+r'\s+-\s+BYU Athletics)\b',title,re.I)):continue
                           if h==HOST:
                               options=list(byu_images(soup,r.url,names,True))
                               actual=re.search(r'\b(20\d{2})\s+Baseball\s+Roster',title,re.I)

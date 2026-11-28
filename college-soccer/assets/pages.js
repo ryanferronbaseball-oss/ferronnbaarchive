@@ -46,6 +46,8 @@ function soccerImpact(m){
 }
 const impactByMatch=new Map(matches.map(m=>[m.id,soccerImpact(m)]));
 const wonMatches=p=>matches.filter(m=>impactByMatch.get(m.id)?.winners.some(w=>A.slug(w.name)===p.id));
+let proCareers={};
+try{if(page==="player"||page==="pro"){const r=await fetch("./data/pro_crosswalk.json",{cache:"no-store"});if(r.ok)proCareers=(await r.json()).players||{}}}catch(e){console.warn("Pro career registry unavailable",e)}
 let portraits={};
 if(page==="player"||page==="home"||page==="games"){
  try{const r=await fetch("./data/player_portraits.json",{cache:"no-store"});if(r.ok)portraits=await r.json()}catch(e){console.warn("Portrait registry unavailable",e)}
@@ -265,6 +267,7 @@ function profile(){
   key==="league_titles"?a.season+" · "+a.league+" · "+a.club:
   key==="mls_awards"?a.year+" · "+a.award+" · "+a.club:
   a.year+" · "+a.club;
+ const pro=proCareers[p.id];const proBadges=pro?'<div class="soccer-career-badges" aria-label="Verified professional career">'+pro.leagues.map(l=>'<a class="soccer-career-badge" href="./pro-alumni.html#'+encodeURIComponent(p.id)+'">'+esc(l.toUpperCase())+'</a>').join("")+'</div>':"";
  const awardBadges=honorGroups.length?'<div class="soccer-career-badges" aria-label="Verified career honors">'
   +honorGroups.map(([key,title,badge,list])=>'<a class="soccer-career-badge" href="#soccerCareerHonors" title="'+esc(title)+'">'+esc(badge)+(list.length>1?' × '+list.length:'')+'</a>').join("")+'</div>':"";
  const awardPanel=honorGroups.length?'<section id="soccerCareerHonors" class="soccer-panel soccer-career-honors"><h2>Career Awards &amp; Honors</h2>'
@@ -272,7 +275,7 @@ function profile(){
   +honorGroups.map(([key,title,badge,list])=>'<div class="soccer-honor-category"><h3>'+esc(title)+' <small>('+list.length+')</small></h3><ul>'
   +list.slice().sort((a,b)=>String(a.season||a.year).localeCompare(String(b.season||b.year))).map(a=>'<li>'+esc(honorLine(key,a))+(a.source_url?'<a href="'+esc(a.source_url)+'" target="_blank" rel="noopener noreferrer">Source ↗</a>':"")+'</li>').join("")+'</ul></div>').join("")+'</section>':"";
  const eventRows=log.map(l=>'<tr><td><a href="./game.html?id='+encodeURIComponent(l.id)+'">'+dt(l.date)+'</a></td><td>'+esc(l.team)+'</td><td>'+esc(l.opponent)+'</td><td>'+(l.started?"Starter":"Substitute")+'</td><td>'+l.goals+'</td><td>'+l.assists+'</td><td>'+l.secondary_assists+'</td><td>'+l.yellow+'</td></tr>');
- app.innerHTML='<div class="eyebrow">Men’s College Soccer · Player profile</div><div class="soccer-profile-head"><div class="soccer-portrait">'+portrait(p)+'</div><div><h1 style="margin:0">'+A.playerName(p.name,false)+'</h1>'+awardBadges+photoCredit(portraits[p.id])+'<p class="lead">'+esc(p.teams.join(" / "))+' · '+p.appearances+' attended match'+(p.appearances===1?"":"es")+'</p></div></div>'
+ app.innerHTML='<div class="eyebrow">Men’s College Soccer · Player profile</div><div class="soccer-profile-head"><div class="soccer-portrait">'+portrait(p)+'</div><div><h1 style="margin:0">'+A.playerName(p.name,false)+'</h1>'+proBadges+awardBadges+photoCredit(portraits[p.id])+'<p class="lead">'+esc(p.teams.join(" / "))+' · '+p.appearances+' attended match'+(p.appearances===1?"":"es")+'</p></div></div>'
  +metricCards([["Appearances",p.appearances],["Goals",p.goals],["Assists",p.assists],["Goal contributions",p.contributions],["Player of the Match",potmMatches.length]])
  + (potmMatches.length?'<section class="soccer-panel"><h2>Player of the Match awards</h2><div class="game-grid">'+potmMatches.map(A.matchCard).join("")+'</div><p class="soccer-note">Courtside Archive selections by verified Soccer Impact Score.</p></section>':"")
  +awardPanel
@@ -349,7 +352,16 @@ function goalsView(){
  el("goalRows").innerHTML=goals.filter(e=>k==="all"||e.type===k).sort((a,b)=>b.m.date.localeCompare(a.m.date)||A.eventOrder(a)-A.eventOrder(b)).map(e=>'<div class="soccer-event"><span class="time">'+esc(e.minute)+"'"+'</span><div><b>'+A.scorerLabel(e)+'</b><div class="details">'+esc(e.team)+' · '+dt(e.m.date)+' · '+esc(e.m.home)+' vs '+esc(e.m.away)+'</div>'+(e.assist?'<div class="details">Assist: '+A.playerName(e.assist)+'</div>':"")+'</div><a href="'+link(e.m)+'">Match ↗</a></div>').join("")||warn("No goals with this type.")};
  el("goalKind").addEventListener("change",render);render();
 }
-if(page==="home")overview();
+function proView(){
+ const labels={1:"Top Flight",2:"Second Division",3:"Third Division and Below"};
+ const list=players.filter(p=>proCareers[p.id]).map(p=>({p,r:proCareers[p.id]})).sort((a,b)=>a.r.tier-b.r.tier||a.p.name.localeCompare(b.p.name));
+ app.innerHTML='<div class="eyebrow">Men’s College Soccer · Professional careers</div><h1>From College to the Pros.</h1><p class="lead">Players you watched in college who made verified competitive appearances in senior professional leagues.</p>'+metricCards([["Confirmed pros",list.length],["Top flight",list.filter(x=>x.r.tier===1).length],["Second division",list.filter(x=>x.r.tier===2).length],["Third division &amp; below",list.filter(x=>x.r.tier===3).length]])+'<div class="soccer-panel soccer-filters"><label>Search<input id="proSearch" type="search" placeholder="Player, school, club or league"></label><label>Highest verified level<select id="proTier"><option value="all">All levels</option><option value="1">Top flight</option><option value="2">Second division</option><option value="3">Third division and below</option></select></label></div><div id="proCards"></div><p class="soccer-note">Initial confirmed careers; the complete audit remains in progress. MLS NEXT Pro, developmental leagues, pre-professional soccer and contracts without competitive appearances do not qualify. Historical USL appearances count when the league was eligible. Club lists and appearance evidence may be partial.</p>';
+ function render(){const q=el("proSearch").value.toLowerCase(),tier=el("proTier").value;const shown=list.filter(({p,r})=>(tier==="all"||String(r.tier)===tier)&&[p.name,...r.schools,...r.clubs,...r.leagues].join(" ").toLowerCase().includes(q));el("proCards").innerHTML=[1,2,3].map(t=>{const v=shown.filter(x=>x.r.tier===t);return v.length?'<h2>'+labels[t]+' · '+v.length+'</h2><div class="game-grid">'+v.map(({p,r})=>'<article class="soccer-panel" id="'+esc(p.id)+'"><div class="soccer-feature"><div class="soccer-avatar">'+portrait(p)+'</div><div><h3><a href="./player.html?id='+encodeURIComponent(p.id)+'">'+esc(p.name)+'</a></h3><p>'+esc(r.schools.join(" / "))+'</p><div class="soccer-career-badges">'+r.leagues.map(l=>'<span class="soccer-career-badge">'+esc(l)+'</span>').join("")+'</div></div></div><p><b>'+esc(r.clubs.join(" → "))+'</b></p><p class="soccer-note">'+p.appearances+' college appearances witnessed · '+p.goals+' G · '+p.assists+' A</p><p>'+esc(r.evidence)+'</p><a href="'+esc(r.source_url)+'" target="_blank" rel="noopener">Career evidence ↗</a>'+(r.secondary_source_url?' · <a href="'+esc(r.secondary_source_url)+'" target="_blank" rel="noopener">Additional source ↗</a>':'')+'</article>').join("")+'</div>':""}).join("")||warn("No confirmed players match.");}
+ el("proSearch").addEventListener("input",render);el("proTier").addEventListener("change",render);render();if(location.hash)document.getElementById(decodeURIComponent(location.hash.slice(1)))?.scrollIntoView();
+}
+
+if(page==="pro")proView();
+else if(page==="home")overview();
 else if(page==="games")gamesView();
 else if(page==="stats")leaderboards();
 else if(page==="player")profile();

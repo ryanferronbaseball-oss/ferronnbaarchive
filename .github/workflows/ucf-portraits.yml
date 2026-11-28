@@ -202,7 +202,9 @@ jobs:
                           soup=BeautifulSoup(r.text,'html.parser')
                           title=' '.join(t.get_text(' ',strip=True) for t in soup.find_all(['h1','h2','title']))
                           if not any(n in norm(title) for n in names):continue
-                          if h==HOST and (norm(urlsplit(r.url).path.rstrip('/').split('/')[-1]) not in names and not any(norm(re.sub(r'^\s*#\s*\d+\s*|\s*Season\s+\d{4}\s* or not re.search(r'\b(?:'+str(y)+r'\s+Baseball\s+Roster|Baseball\s+'+str(y)+r'\s+Roster|Baseball\s+'+str(y)+r'\s+-\s+(?:UCF|University of Central Florida))\b',title,re.I)):continue,'',t.get_text(' ',strip=True),flags=re.I)) in names for t in soup.find_all('h1')) or not re.search(r'\b(?:'+str(y)+r'\s+Baseball\s+Roster|Baseball\s+'+str(y)+r'\s+Roster|Baseball\s+'+str(y)+r'\s+-\s+(?:UCF|University of Central Florida))\b',title,re.I)):continue
+                          identity_ok=norm(urlsplit(r.url).path.rstrip('/').split('/')[-1]) in names or any(norm(re.sub(r'^\s*#\s*\d+\s*|\s*Season\s+\d{4}\s*$','',t.get_text(' ',strip=True),flags=re.I)) in names for t in soup.find_all('h1'))
+                          season_ok=bool(re.search(r'\b(?:'+str(y)+r'\s+Baseball\s+Roster|Baseball\s+'+str(y)+r'\s+Roster|Baseball\s+'+str(y)+r'\s+-\s+(?:UCF|University of Central Florida))\b',title,re.I))
+                          if h==HOST and not (identity_ok and season_ok):continue
                           if h==HOST:
                               options=list(ucf_images(soup,r.url,names,True))
                               if not options:

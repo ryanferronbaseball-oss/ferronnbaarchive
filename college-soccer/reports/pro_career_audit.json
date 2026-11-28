@@ -1,218 +1,649 @@
 {
   "inventory_total": 155,
   "confirmed_players": 21,
-  "screened_players": 0,
+  "screened_players": 155,
   "fully_audited_players": 0,
+  "source": "American Soccer Analysis (CC BY-SA 4.0), https://app.americansocceranalysis.com/api/v1/__docs__/",
+  "leagues": {
+    "mls": {
+      "player_records": 3641,
+      "matched_archive_players": 11,
+      "stat_errors": [],
+      "status": "screened"
+    },
+    "uslc": {
+      "player_records": 3817,
+      "matched_archive_players": 20,
+      "stat_errors": [],
+      "status": "screened"
+    },
+    "usl1": {
+      "player_records": 1602,
+      "matched_archive_players": 18,
+      "stat_errors": [],
+      "status": "screened"
+    }
+  },
   "players": {
     "thomas-olsen": {
       "name": "Thomas Olsen",
       "schools": [
         "San Diego"
       ],
-      "status": "qualifying_appearance_confirmed_career_incomplete"
+      "status": "qualifying_appearance_confirmed_career_incomplete",
+      "domestic_candidates": [
+        {
+          "league": "USL Championship",
+          "player_id": "9Yqd6pJjMv",
+          "player_name": "Thomas Olsen",
+          "birth_date": "1995-02-14",
+          "positive_minute_rows": [
+            {
+              "player_id": "9Yqd6pJjMv",
+              "team_id": "Pk5LzyGQOW",
+              "season_name": "2018",
+              "minutes_played": 390
+            },
+            {
+              "player_id": "9Yqd6pJjMv",
+              "team_id": "Pk5LzyGQOW",
+              "season_name": "2019",
+              "minutes_played": 3049
+            },
+            {
+              "player_id": "9Yqd6pJjMv",
+              "team_id": "Pk5LzyGQOW",
+              "season_name": "2020",
+              "minutes_played": 554
+            }
+          ],
+          "source_url": "https://app.americansocceranalysis.com/api/v1/uslc/players/xgoals?player_id=9Yqd6pJjMv",
+          "status": "identity_and_appearance_review_required"
+        },
+        {
+          "league": "USL League One",
+          "player_id": "9Yqd6pJjMv",
+          "player_name": "Thomas Olsen",
+          "birth_date": "1995-02-14",
+          "positive_minute_rows": [
+            {
+              "player_id": "9Yqd6pJjMv",
+              "team_id": "gOMnJxBMwN",
+              "season_name": "2022",
+              "minutes_played": 1220
+            }
+          ],
+          "source_url": "https://app.americansocceranalysis.com/api/v1/usl1/players/xgoals?player_id=9Yqd6pJjMv",
+          "status": "identity_and_appearance_review_required"
+        }
+      ]
     },
     "patric-krall": {
       "name": "Patric Krall",
       "schools": [
         "San Diego"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "henry-lander": {
       "name": "Henry Lander",
       "schools": [
         "San Diego"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "aaron-frey": {
       "name": "Aaron Frey",
       "schools": [
         "San Diego"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "patrick-mcgrath": {
       "name": "Patrick McGrath",
       "schools": [
         "San Diego"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "miguel-berry": {
       "name": "Miguel Berry",
       "schools": [
         "San Diego"
       ],
-      "status": "qualifying_appearance_confirmed_career_incomplete"
+      "status": "qualifying_appearance_confirmed_career_incomplete",
+      "domestic_candidates": [
+        {
+          "league": "MLS",
+          "player_id": "kRQaoNZj5K",
+          "player_name": "Miguel Berry",
+          "birth_date": "1997-09-16",
+          "positive_minute_rows": [
+            {
+              "player_id": "kRQaoNZj5K",
+              "team_id": "EKXMeX3Q64",
+              "season_name": "2022",
+              "minutes_played": 778
+            },
+            {
+              "player_id": "kRQaoNZj5K",
+              "team_id": "KAqBN0Vqbg",
+              "season_name": "2023",
+              "minutes_played": 1218
+            },
+            {
+              "player_id": "kRQaoNZj5K",
+              "team_id": "kaDQ0wRqEv",
+              "season_name": "2024",
+              "minutes_played": 1014
+            },
+            {
+              "player_id": "kRQaoNZj5K",
+              "team_id": "kaDQ0wRqEv",
+              "season_name": "2025",
+              "minutes_played": 764
+            },
+            {
+              "player_id": "kRQaoNZj5K",
+              "team_id": "mvzqoLZQap",
+              "season_name": "2021",
+              "minutes_played": 931
+            },
+            {
+              "player_id": "kRQaoNZj5K",
+              "team_id": "mvzqoLZQap",
+              "season_name": "2022",
+              "minutes_played": 1044
+            }
+          ],
+          "source_url": "https://app.americansocceranalysis.com/api/v1/mls/players/xgoals?player_id=kRQaoNZj5K",
+          "status": "identity_and_appearance_review_required"
+        },
+        {
+          "league": "USL Championship",
+          "player_id": "kRQaoNZj5K",
+          "player_name": "Miguel Berry",
+          "birth_date": "1997-09-16",
+          "positive_minute_rows": [
+            {
+              "player_id": "kRQaoNZj5K",
+              "team_id": "0OlMlzRqLz",
+              "season_name": "2026",
+              "minutes_played": 2910
+            },
+            {
+              "player_id": "kRQaoNZj5K",
+              "team_id": "0Oq6JvPq6D",
+              "season_name": "2020",
+              "minutes_played": 517
+            },
+            {
+              "player_id": "kRQaoNZj5K",
+              "team_id": "0Oq6JvPq6D",
+              "season_name": "2021",
+              "minutes_played": 463
+            }
+          ],
+          "source_url": "https://app.americansocceranalysis.com/api/v1/uslc/players/xgoals?player_id=kRQaoNZj5K",
+          "status": "identity_and_appearance_review_required"
+        }
+      ]
     },
     "freddy-polzer": {
       "name": "Freddy Polzer",
       "schools": [
         "San Diego"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "cian-kennedy": {
       "name": "Cian Kennedy",
       "schools": [
         "San Diego"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "ross-meldrum": {
       "name": "Ross Meldrum",
       "schools": [
         "San Diego"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "aidan-marmion": {
       "name": "Aidan Marmion",
       "schools": [
         "San Diego"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "jimmy-ryan": {
       "name": "Jimmy Ryan",
       "schools": [
         "San Diego"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "djordje-babic": {
       "name": "Djordje Babic",
       "schools": [
         "San Diego"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "reuben-dass": {
       "name": "Reuben Dass",
       "schools": [
         "San Diego"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "allen-luhrs": {
       "name": "Allen Luhrs",
       "schools": [
         "San Diego"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "george-west": {
       "name": "George West",
       "schools": [
         "San Diego"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "leon-mueller-wiesen": {
       "name": "Leon Mueller-Wiesen",
       "schools": [
         "San Diego"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "kevin-silva": {
       "name": "Kevin Silva",
       "schools": [
         "UCLA"
       ],
-      "status": "qualifying_appearance_confirmed_career_incomplete"
+      "status": "qualifying_appearance_confirmed_career_incomplete",
+      "domestic_candidates": [
+        {
+          "league": "MLS",
+          "player_id": "p6qbOb4BQ0",
+          "player_name": "Kevin Silva",
+          "birth_date": "1998-01-05",
+          "positive_minute_rows": [],
+          "source_url": "https://app.americansocceranalysis.com/api/v1/mls/players/xgoals?player_id=p6qbOb4BQ0",
+          "status": "identity_and_appearance_review_required"
+        },
+        {
+          "league": "USL Championship",
+          "player_id": "p6qbOb4BQ0",
+          "player_name": "Kevin Silva",
+          "birth_date": "1998-01-05",
+          "positive_minute_rows": [
+            {
+              "player_id": "p6qbOb4BQ0",
+              "team_id": "gpMOoo1Mzy",
+              "season_name": "2022",
+              "minutes_played": 1081
+            }
+          ],
+          "source_url": "https://app.americansocceranalysis.com/api/v1/uslc/players/xgoals?player_id=p6qbOb4BQ0",
+          "status": "identity_and_appearance_review_required"
+        },
+        {
+          "league": "USL League One",
+          "player_id": "p6qbOb4BQ0",
+          "player_name": "Kevin Silva",
+          "birth_date": "1998-01-05",
+          "positive_minute_rows": [
+            {
+              "player_id": "p6qbOb4BQ0",
+              "team_id": "4JMAkpDqKg",
+              "season_name": "2019",
+              "minutes_played": 787
+            },
+            {
+              "player_id": "p6qbOb4BQ0",
+              "team_id": "4JMAkpDqKg",
+              "season_name": "2021",
+              "minutes_played": 390
+            }
+          ],
+          "source_url": "https://app.americansocceranalysis.com/api/v1/usl1/players/xgoals?player_id=p6qbOb4BQ0",
+          "status": "identity_and_appearance_review_required"
+        }
+      ]
     },
     "erik-holt": {
       "name": "Erik Holt",
       "schools": [
         "UCLA"
       ],
-      "status": "qualifying_appearance_confirmed_career_incomplete"
+      "status": "qualifying_appearance_confirmed_career_incomplete",
+      "domestic_candidates": [
+        {
+          "league": "MLS",
+          "player_id": "gOMnR0BmMw",
+          "player_name": "Erik Holt",
+          "birth_date": "1996-09-06",
+          "positive_minute_rows": [
+            {
+              "player_id": "gOMnR0BmMw",
+              "team_id": "a2lqR4JMr0",
+              "season_name": "2019",
+              "minutes_played": 403
+            },
+            {
+              "player_id": "gOMnR0BmMw",
+              "team_id": "a2lqR4JMr0",
+              "season_name": "2020",
+              "minutes_played": 418
+            },
+            {
+              "player_id": "gOMnR0BmMw",
+              "team_id": "a2lqR4JMr0",
+              "season_name": "2021",
+              "minutes_played": 1492
+            },
+            {
+              "player_id": "gOMnR0BmMw",
+              "team_id": "a2lqR4JMr0",
+              "season_name": "2022",
+              "minutes_played": 620
+            },
+            {
+              "player_id": "gOMnR0BmMw",
+              "team_id": "a2lqR4JMr0",
+              "season_name": "2023",
+              "minutes_played": 65
+            }
+          ],
+          "source_url": "https://app.americansocceranalysis.com/api/v1/mls/players/xgoals?player_id=gOMnR0BmMw",
+          "status": "identity_and_appearance_review_required"
+        },
+        {
+          "league": "USL Championship",
+          "player_id": "gOMnR0BmMw",
+          "player_name": "Erik Holt",
+          "birth_date": "1996-09-06",
+          "positive_minute_rows": [
+            {
+              "player_id": "gOMnR0BmMw",
+              "team_id": "BLMv6m3Mxe",
+              "season_name": "2019",
+              "minutes_played": 2034
+            },
+            {
+              "player_id": "gOMnR0BmMw",
+              "team_id": "BLMv6m3Mxe",
+              "season_name": "2020",
+              "minutes_played": 100
+            },
+            {
+              "player_id": "gOMnR0BmMw",
+              "team_id": "BLMv6m3Mxe",
+              "season_name": "2021",
+              "minutes_played": 200
+            }
+          ],
+          "source_url": "https://app.americansocceranalysis.com/api/v1/uslc/players/xgoals?player_id=gOMnR0BmMw",
+          "status": "identity_and_appearance_review_required"
+        }
+      ]
     },
     "brandon-terwege": {
       "name": "Brandon Terwege",
       "schools": [
         "UCLA"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "andrew-paoli": {
       "name": "Andrew Paoli",
       "schools": [
         "UCLA"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": [
+        {
+          "league": "USL League One",
+          "player_id": "kRQa2zn1MK",
+          "player_name": "Andrew Paoli",
+          "birth_date": "1999-01-06",
+          "positive_minute_rows": [
+            {
+              "player_id": "kRQa2zn1MK",
+              "team_id": "p6qb32XQ0G",
+              "season_name": "2023",
+              "minutes_played": 1158
+            }
+          ],
+          "source_url": "https://app.americansocceranalysis.com/api/v1/usl1/players/xgoals?player_id=kRQa2zn1MK",
+          "status": "identity_and_appearance_review_required"
+        }
+      ]
     },
     "milan-iloski": {
       "name": "Milan Iloski",
       "schools": [
         "UCLA"
       ],
-      "status": "qualifying_appearance_confirmed_career_incomplete"
+      "status": "qualifying_appearance_confirmed_career_incomplete",
+      "domestic_candidates": [
+        {
+          "league": "MLS",
+          "player_id": "vzqo7o4kqa",
+          "player_name": "Milan Iloski",
+          "birth_date": "1999-07-29",
+          "positive_minute_rows": [
+            {
+              "player_id": "vzqo7o4kqa",
+              "team_id": "9z5k7Yg5A3",
+              "season_name": "2025",
+              "minutes_played": 938
+            },
+            {
+              "player_id": "vzqo7o4kqa",
+              "team_id": "9z5k7Yg5A3",
+              "season_name": "2026",
+              "minutes_played": 2902
+            },
+            {
+              "player_id": "vzqo7o4kqa",
+              "team_id": "a2lqR4JMr0",
+              "season_name": "2020",
+              "minutes_played": 3
+            },
+            {
+              "player_id": "vzqo7o4kqa",
+              "team_id": "a2lqR4JMr0",
+              "season_name": "2021",
+              "minutes_played": 3
+            },
+            {
+              "player_id": "vzqo7o4kqa",
+              "team_id": "zeQZBOzQKw",
+              "season_name": "2025",
+              "minutes_played": 585
+            }
+          ],
+          "source_url": "https://app.americansocceranalysis.com/api/v1/mls/players/xgoals?player_id=vzqo7o4kqa",
+          "status": "identity_and_appearance_review_required"
+        },
+        {
+          "league": "USL Championship",
+          "player_id": "vzqo7o4kqa",
+          "player_name": "Milan Iloski",
+          "birth_date": "1999-07-29",
+          "positive_minute_rows": [
+            {
+              "player_id": "vzqo7o4kqa",
+              "team_id": "BLMv6m3Mxe",
+              "season_name": "2020",
+              "minutes_played": 100
+            },
+            {
+              "player_id": "vzqo7o4kqa",
+              "team_id": "BLMv6m3Mxe",
+              "season_name": "2021",
+              "minutes_played": 1700
+            },
+            {
+              "player_id": "vzqo7o4kqa",
+              "team_id": "kRQaeY8QKZ",
+              "season_name": "2022",
+              "minutes_played": 2818
+            },
+            {
+              "player_id": "vzqo7o4kqa",
+              "team_id": "kRQaeY8QKZ",
+              "season_name": "2023",
+              "minutes_played": 3301
+            }
+          ],
+          "source_url": "https://app.americansocceranalysis.com/api/v1/uslc/players/xgoals?player_id=vzqo7o4kqa",
+          "status": "identity_and_appearance_review_required"
+        }
+      ]
     },
     "santiago-herrera": {
       "name": "Santiago Herrera",
       "schools": [
         "UCLA"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "eric-iloski": {
       "name": "Eric Iloski",
       "schools": [
         "UCLA"
       ],
-      "status": "qualifying_appearance_confirmed_career_incomplete"
+      "status": "qualifying_appearance_confirmed_career_incomplete",
+      "domestic_candidates": [
+        {
+          "league": "USL Championship",
+          "player_id": "gOMnlrrxqw",
+          "player_name": "Eric Iloski",
+          "birth_date": "1998-01-21",
+          "positive_minute_rows": [
+            {
+              "player_id": "gOMnlrrxqw",
+              "team_id": "Pk5LzyGQOW",
+              "season_name": "2021",
+              "minutes_played": 900
+            }
+          ],
+          "source_url": "https://app.americansocceranalysis.com/api/v1/uslc/players/xgoals?player_id=gOMnlrrxqw",
+          "status": "identity_and_appearance_review_required"
+        }
+      ]
     },
     "christian-chavez": {
       "name": "Christian Chavez",
       "schools": [
         "UCLA"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "blayne-martinez": {
       "name": "Blayne Martinez",
       "schools": [
         "UCLA"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "joab-santoyo": {
       "name": "Joab Santoyo",
       "schools": [
         "UCLA"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "matthew-powell": {
       "name": "Matthew Powell",
       "schools": [
         "UCLA"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": [
+        {
+          "league": "USL League One",
+          "player_id": "0x5g4Prq7O",
+          "player_name": "Matthew Powell",
+          "birth_date": "1996-12-11",
+          "positive_minute_rows": [
+            {
+              "player_id": "0x5g4Prq7O",
+              "team_id": "N6MmGYWqEG",
+              "season_name": "2020",
+              "minutes_played": 45
+            }
+          ],
+          "source_url": "https://app.americansocceranalysis.com/api/v1/usl1/players/xgoals?player_id=0x5g4Prq7O",
+          "status": "identity_and_appearance_review_required"
+        }
+      ]
     },
     "eirik-baekkelund": {
       "name": "Eirik Baekkelund",
       "schools": [
         "UCLA"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "alex-knox": {
       "name": "Alex Knox",
       "schools": [
         "UCLA"
       ],
-      "status": "qualifying_appearance_confirmed_career_incomplete"
+      "status": "qualifying_appearance_confirmed_career_incomplete",
+      "domestic_candidates": [
+        {
+          "league": "USL League One",
+          "player_id": "N6MmWAmwqE",
+          "player_name": "Alex Knox",
+          "birth_date": "1997-06-21",
+          "positive_minute_rows": [
+            {
+              "player_id": "N6MmWAmwqE",
+              "team_id": "4wM4Z04qjB",
+              "season_name": "2021",
+              "minutes_played": 755
+            }
+          ],
+          "source_url": "https://app.americansocceranalysis.com/api/v1/usl1/players/xgoals?player_id=N6MmWAmwqE",
+          "status": "identity_and_appearance_review_required"
+        }
+      ]
     },
     "roman-martin": {
       "name": "Roman Martin",
       "schools": [
         "UCLA"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "robert-knights": {
       "name": "Robert Knights",
@@ -220,876 +651,1689 @@
         "UCLA",
         "Cal Poly"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "malcolm-jones": {
       "name": "Malcolm Jones",
       "schools": [
         "UCLA"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "connor-hountalas": {
       "name": "Connor Hountalas",
       "schools": [
         "San Diego"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "gustav-brandt": {
       "name": "Gustav Brandt",
       "schools": [
         "San Diego"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "chase-van-wey": {
       "name": "Chase Van Wey",
       "schools": [
         "San Diego"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "paul-ramlow": {
       "name": "Paul Ramlow",
       "schools": [
         "San Diego"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "ulber-perez": {
       "name": "Ulber Perez",
       "schools": [
         "San Diego"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "cameron-kaemerle": {
       "name": "Cameron Kaemerle",
       "schools": [
         "San Diego"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "alex-churness": {
       "name": "Alex Churness",
       "schools": [
         "San Diego"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "enrique-adame": {
       "name": "Enrique Adame",
       "schools": [
         "UNLV"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "adam-musovski": {
       "name": "Adam Musovski",
       "schools": [
         "UNLV"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "marco-gonzalez": {
       "name": "Marco Gonzalez",
       "schools": [
         "UNLV"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": [
+        {
+          "league": "USL League One",
+          "player_id": "jYQJZ07ZQG",
+          "player_name": "Marco Gonzalez",
+          "birth_date": "2007-03-02",
+          "positive_minute_rows": [
+            {
+              "player_id": "jYQJZ07ZQG",
+              "team_id": "vzqoxEZQap",
+              "season_name": "2026",
+              "minutes_played": 203
+            }
+          ],
+          "source_url": "https://app.americansocceranalysis.com/api/v1/usl1/players/xgoals?player_id=jYQJZ07ZQG",
+          "status": "identity_and_appearance_review_required"
+        }
+      ]
     },
     "nico-clasen": {
       "name": "Nico Clasen",
       "schools": [
         "UNLV"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "jesus-partida": {
       "name": "Jesus Partida",
       "schools": [
         "UNLV"
       ],
-      "status": "qualifying_appearance_confirmed_career_incomplete"
+      "status": "qualifying_appearance_confirmed_career_incomplete",
+      "domestic_candidates": [
+        {
+          "league": "USL League One",
+          "player_id": "KAqBkyxvQb",
+          "player_name": "Jesus Partida",
+          "birth_date": "1998-11-30",
+          "positive_minute_rows": [
+            {
+              "player_id": "KAqBkyxvQb",
+              "team_id": "vzqow0Bqap",
+              "season_name": "2022",
+              "minutes_played": 761
+            },
+            {
+              "player_id": "KAqBkyxvQb",
+              "team_id": "vzqow0Bqap",
+              "season_name": "2023",
+              "minutes_played": 1488
+            }
+          ],
+          "source_url": "https://app.americansocceranalysis.com/api/v1/usl1/players/xgoals?player_id=KAqBkyxvQb",
+          "status": "identity_and_appearance_review_required"
+        }
+      ]
     },
     "timo-mehlich": {
       "name": "Timo Mehlich",
       "schools": [
         "UNLV"
       ],
-      "status": "qualifying_appearance_confirmed_career_incomplete"
+      "status": "qualifying_appearance_confirmed_career_incomplete",
+      "domestic_candidates": [
+        {
+          "league": "USL Championship",
+          "player_id": "Oa5wnE7gM1",
+          "player_name": "Timo Mehlich",
+          "birth_date": "1997-08-12",
+          "positive_minute_rows": [
+            {
+              "player_id": "Oa5wnE7gM1",
+              "team_id": "ljqEJ7OQx0",
+              "season_name": "2020",
+              "minutes_played": 233
+            }
+          ],
+          "source_url": "https://app.americansocceranalysis.com/api/v1/uslc/players/xgoals?player_id=Oa5wnE7gM1",
+          "status": "identity_and_appearance_review_required"
+        }
+      ]
     },
     "jason-eng": {
       "name": "Jason Eng",
       "schools": [
         "UNLV"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "bay-kurtz": {
       "name": "Bay Kurtz",
       "schools": [
         "UNLV"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "daniel-moran": {
       "name": "Daniel Moran",
       "schools": [
         "UNLV"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "jordan-chavez": {
       "name": "Jordan Chavez",
       "schools": [
         "UNLV"
       ],
-      "status": "qualifying_appearance_confirmed_career_incomplete"
+      "status": "qualifying_appearance_confirmed_career_incomplete",
+      "domestic_candidates": []
     },
     "tyler-allen": {
       "name": "Tyler Allen",
       "schools": [
         "UNLV"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": [
+        {
+          "league": "USL League One",
+          "player_id": "odMX7lXAQY",
+          "player_name": "Tyler Allen",
+          "birth_date": "1998-10-12",
+          "positive_minute_rows": [
+            {
+              "player_id": "odMX7lXAQY",
+              "team_id": "4wM4Z04qjB",
+              "season_name": "2022",
+              "minutes_played": 1802
+            },
+            {
+              "player_id": "odMX7lXAQY",
+              "team_id": "e7Mz0LJqr0",
+              "season_name": "2021",
+              "minutes_played": 1582
+            }
+          ],
+          "source_url": "https://app.americansocceranalysis.com/api/v1/usl1/players/xgoals?player_id=odMX7lXAQY",
+          "status": "identity_and_appearance_review_required"
+        }
+      ]
     },
     "connor-ryan": {
       "name": "Connor Ryan",
       "schools": [
         "UNLV"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "ivan-lopez": {
       "name": "Ivan Lopez",
       "schools": [
         "UNLV"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "austin-manthey": {
       "name": "Austin Manthey",
       "schools": [
         "UNLV"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "john-lynam": {
       "name": "John Lynam",
       "schools": [
         "UNLV"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "angel-deloso-flocco": {
       "name": "Angel Deloso-Flocco",
       "schools": [
         "UNLV"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "james-drye": {
       "name": "James Drye",
       "schools": [
         "UNLV"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "matt-wiher": {
       "name": "Matt Wiher",
       "schools": [
         "San Diego"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "amit-hefer": {
       "name": "Amit Hefer",
       "schools": [
         "San Diego"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "jacob-planell": {
       "name": "Jacob Planell",
       "schools": [
         "San Diego"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "benji-sorman": {
       "name": "Benji Sorman",
       "schools": [
         "San Diego"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "praise-maduekwe": {
       "name": "Praise Maduekwe",
       "schools": [
         "San Diego"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "till-stockmann": {
       "name": "Till Stockmann",
       "schools": [
         "San Diego"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "carlos-arce-hurtado": {
       "name": "Carlos Arce-Hurtado",
       "schools": [
         "Cal Poly"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "jackson-brady": {
       "name": "Jackson Brady",
       "schools": [
         "Cal Poly"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": [
+        {
+          "league": "USL Championship",
+          "player_id": "eV5DkYGAMK",
+          "player_name": "Jackson Brady",
+          "birth_date": null,
+          "positive_minute_rows": [
+            {
+              "player_id": "eV5DkYGAMK",
+              "team_id": "NWMWgNDMlz",
+              "season_name": "2022",
+              "minutes_played": 31
+            }
+          ],
+          "source_url": "https://app.americansocceranalysis.com/api/v1/uslc/players/xgoals?player_id=eV5DkYGAMK",
+          "status": "identity_and_appearance_review_required"
+        },
+        {
+          "league": "USL League One",
+          "player_id": "eV5DkYGAMK",
+          "player_name": "Jackson Brady",
+          "birth_date": null,
+          "positive_minute_rows": [
+            {
+              "player_id": "eV5DkYGAMK",
+              "team_id": "p6qb32XQ0G",
+              "season_name": "2023",
+              "minutes_played": 292
+            }
+          ],
+          "source_url": "https://app.americansocceranalysis.com/api/v1/usl1/players/xgoals?player_id=eV5DkYGAMK",
+          "status": "identity_and_appearance_review_required"
+        }
+      ]
     },
     "freeman-dwamena": {
       "name": "Freeman Dwamena",
       "schools": [
         "Cal Poly"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": [
+        {
+          "league": "USL Championship",
+          "player_id": "9z5kOmGg5A",
+          "player_name": "Freeman Dwamena",
+          "birth_date": "1998-05-27",
+          "positive_minute_rows": [],
+          "source_url": "https://app.americansocceranalysis.com/api/v1/uslc/players/xgoals?player_id=9z5kOmGg5A",
+          "status": "identity_and_appearance_review_required"
+        }
+      ]
     },
     "josh-graham": {
       "name": "Josh Graham",
       "schools": [
         "Cal Poly"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "eddie-melgoza": {
       "name": "Eddie Melgoza",
       "schools": [
         "Cal Poly"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "colin-hyatt": {
       "name": "Colin Hyatt",
       "schools": [
         "Cal Poly"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "daniel-klemm": {
       "name": "Daniel Klemm",
       "schools": [
         "Cal Poly"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "andrew-robertson": {
       "name": "Andrew Robertson",
       "schools": [
         "Cal Poly"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "creed-mckinnon": {
       "name": "Creed McKinnon",
       "schools": [
         "Cal Poly"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "spencer-held": {
       "name": "Spencer Held",
       "schools": [
         "Cal Poly"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "reagan-rice": {
       "name": "Reagan Rice",
       "schools": [
         "Cal Poly"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "andrew-forth": {
       "name": "Andrew Forth",
       "schools": [
         "Cal Poly"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": [
+        {
+          "league": "USL League One",
+          "player_id": "9vQ2ZaZYQK",
+          "player_name": "Andrew Forth",
+          "birth_date": "1998-10-09",
+          "positive_minute_rows": [
+            {
+              "player_id": "9vQ2ZaZYQK",
+              "team_id": "vzqow0Bqap",
+              "season_name": "2023",
+              "minutes_played": 537
+            }
+          ],
+          "source_url": "https://app.americansocceranalysis.com/api/v1/usl1/players/xgoals?player_id=9vQ2ZaZYQK",
+          "status": "identity_and_appearance_review_required"
+        }
+      ]
     },
     "joemack-leonardo": {
       "name": "Joemack Leonardo",
       "schools": [
         "Cal Poly"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "sebastian-herran": {
       "name": "Sebastian Herran",
       "schools": [
         "Cal Poly"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "kenneth-higgins": {
       "name": "Kenneth Higgins",
       "schools": [
         "Cal Poly"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "angel-de-leon": {
       "name": "Angel de Leon",
       "schools": [
         "Cal Poly"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "emmanuel-perez": {
       "name": "Emmanuel Perez",
       "schools": [
         "Cal Poly"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "jacob-lindberg": {
       "name": "Jacob Lindberg",
       "schools": [
         "Cal Poly"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "matthew-bautista": {
       "name": "Matthew Bautista",
       "schools": [
         "Cal Poly"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "noah-boettiger": {
       "name": "Noah Boettiger",
       "schools": [
         "Cal Poly"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "wallis-lapsley": {
       "name": "Wallis Lapsley",
       "schools": [
         "UC Davis"
       ],
-      "status": "qualifying_appearance_confirmed_career_incomplete"
+      "status": "qualifying_appearance_confirmed_career_incomplete",
+      "domestic_candidates": [
+        {
+          "league": "MLS",
+          "player_id": "315Vk6vbq9",
+          "player_name": "Wallis Lapsley",
+          "birth_date": "1997-04-14",
+          "positive_minute_rows": [],
+          "source_url": "https://app.americansocceranalysis.com/api/v1/mls/players/xgoals?player_id=315Vk6vbq9",
+          "status": "identity_and_appearance_review_required"
+        },
+        {
+          "league": "USL Championship",
+          "player_id": "315Vk6vbq9",
+          "player_name": "Wallis Lapsley",
+          "birth_date": "1997-04-14",
+          "positive_minute_rows": [
+            {
+              "player_id": "315Vk6vbq9",
+              "team_id": "9Yqdwg85vJ",
+              "season_name": "2020",
+              "minutes_played": 1025
+            }
+          ],
+          "source_url": "https://app.americansocceranalysis.com/api/v1/uslc/players/xgoals?player_id=315Vk6vbq9",
+          "status": "identity_and_appearance_review_required"
+        },
+        {
+          "league": "USL League One",
+          "player_id": "315Vk6vbq9",
+          "player_name": "Wallis Lapsley",
+          "birth_date": "1997-04-14",
+          "positive_minute_rows": [
+            {
+              "player_id": "315Vk6vbq9",
+              "team_id": "4wM4Z04qjB",
+              "season_name": "2021",
+              "minutes_played": 2863
+            },
+            {
+              "player_id": "315Vk6vbq9",
+              "team_id": "e7Mz0LJqr0",
+              "season_name": "2025",
+              "minutes_played": 1159
+            },
+            {
+              "player_id": "315Vk6vbq9",
+              "team_id": "gOMnd3eqwN",
+              "season_name": "2024",
+              "minutes_played": 719
+            }
+          ],
+          "source_url": "https://app.americansocceranalysis.com/api/v1/usl1/players/xgoals?player_id=315Vk6vbq9",
+          "status": "identity_and_appearance_review_required"
+        }
+      ]
     },
     "adam-mickelson": {
       "name": "Adam Mickelson",
       "schools": [
         "UC Davis"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "sean-cooper": {
       "name": "Sean Cooper",
       "schools": [
         "UC Davis"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "max-glasser": {
       "name": "Max Glasser",
       "schools": [
         "UC Davis"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": [
+        {
+          "league": "USL Championship",
+          "player_id": "Vj58ajzLq8",
+          "player_name": "Max Glasser",
+          "birth_date": "2000-08-16",
+          "positive_minute_rows": [
+            {
+              "player_id": "Vj58ajzLq8",
+              "team_id": "4JMAZ1D5Kg",
+              "season_name": "2023",
+              "minutes_played": 334
+            },
+            {
+              "player_id": "Vj58ajzLq8",
+              "team_id": "4JMAZ1D5Kg",
+              "season_name": "2024",
+              "minutes_played": 281
+            }
+          ],
+          "source_url": "https://app.americansocceranalysis.com/api/v1/uslc/players/xgoals?player_id=Vj58ajzLq8",
+          "status": "identity_and_appearance_review_required"
+        },
+        {
+          "league": "USL League One",
+          "player_id": "Vj58ajzLq8",
+          "player_name": "Max Glasser",
+          "birth_date": "2000-08-16",
+          "positive_minute_rows": [
+            {
+              "player_id": "Vj58ajzLq8",
+              "team_id": "2lqRn0Aqr0",
+              "season_name": "2025",
+              "minutes_played": 2763
+            },
+            {
+              "player_id": "Vj58ajzLq8",
+              "team_id": "2lqRn0Aqr0",
+              "season_name": "2026",
+              "minutes_played": 597
+            }
+          ],
+          "source_url": "https://app.americansocceranalysis.com/api/v1/usl1/players/xgoals?player_id=Vj58ajzLq8",
+          "status": "identity_and_appearance_review_required"
+        }
+      ]
     },
     "robert-mejia": {
       "name": "Robert Mejia",
       "schools": [
         "UC Davis"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "maximilian-arfsten": {
       "name": "Maximilian Arfsten",
       "schools": [
         "UC Davis"
       ],
-      "status": "qualifying_appearance_confirmed_career_incomplete"
+      "status": "qualifying_appearance_confirmed_career_incomplete",
+      "domestic_candidates": [
+        {
+          "league": "MLS",
+          "player_id": "2lqR7wZaQr",
+          "player_name": "Max Arfsten",
+          "birth_date": "2001-04-19",
+          "positive_minute_rows": [
+            {
+              "player_id": "2lqR7wZaQr",
+              "team_id": "mvzqoLZQap",
+              "season_name": "2023",
+              "minutes_played": 348
+            },
+            {
+              "player_id": "2lqR7wZaQr",
+              "team_id": "mvzqoLZQap",
+              "season_name": "2024",
+              "minutes_played": 2308
+            },
+            {
+              "player_id": "2lqR7wZaQr",
+              "team_id": "mvzqoLZQap",
+              "season_name": "2025",
+              "minutes_played": 3136
+            },
+            {
+              "player_id": "2lqR7wZaQr",
+              "team_id": "mvzqoLZQap",
+              "season_name": "2026",
+              "minutes_played": 1642
+            }
+          ],
+          "source_url": "https://app.americansocceranalysis.com/api/v1/mls/players/xgoals?player_id=2lqR7wZaQr",
+          "status": "identity_and_appearance_review_required"
+        }
+      ]
     },
     "andy-velasquez": {
       "name": "Andy Velasquez",
       "schools": [
         "UC Davis"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "marte-formico": {
       "name": "Marte Formico",
       "schools": [
         "UC Davis"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "nabi-kibunguchy": {
       "name": "Nabi Kibunguchy",
       "schools": [
         "UC Davis"
       ],
-      "status": "qualifying_appearance_confirmed_career_incomplete"
+      "status": "qualifying_appearance_confirmed_career_incomplete",
+      "domestic_candidates": [
+        {
+          "league": "MLS",
+          "player_id": "xW5pw0RGMg",
+          "player_name": "Nabilai Kibunguchy",
+          "birth_date": "1998-01-05",
+          "positive_minute_rows": [
+            {
+              "player_id": "xW5pw0RGMg",
+              "team_id": "kRQand1MKZ",
+              "season_name": "2022",
+              "minutes_played": 199
+            }
+          ],
+          "source_url": "https://app.americansocceranalysis.com/api/v1/mls/players/xgoals?player_id=xW5pw0RGMg",
+          "status": "identity_and_appearance_review_required"
+        },
+        {
+          "league": "USL Championship",
+          "player_id": "xW5pw0RGMg",
+          "player_name": "Nabilai Kibunguchy",
+          "birth_date": "1998-01-05",
+          "positive_minute_rows": [
+            {
+              "player_id": "xW5pw0RGMg",
+              "team_id": "0Oq6332Q6D",
+              "season_name": "2021",
+              "minutes_played": 1276
+            },
+            {
+              "player_id": "xW5pw0RGMg",
+              "team_id": "2lqRjjnqr0",
+              "season_name": "2026",
+              "minutes_played": 1084
+            }
+          ],
+          "source_url": "https://app.americansocceranalysis.com/api/v1/uslc/players/xgoals?player_id=xW5pw0RGMg",
+          "status": "identity_and_appearance_review_required"
+        }
+      ]
     },
     "jake-haupt": {
       "name": "Jake Haupt",
       "schools": [
         "UC Davis"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "connor-tipton": {
       "name": "Connor Tipton",
       "schools": [
         "UC Davis"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "grant-fidler": {
       "name": "Grant Fidler",
       "schools": [
         "UC Davis"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "wumi-aladetimi": {
       "name": "Wumi Aladetimi",
       "schools": [
         "UC Davis"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "luke-hazel": {
       "name": "Luke Hazel",
       "schools": [
         "UC Davis"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "sean-bilter": {
       "name": "Sean Bilter",
       "schools": [
         "UC Davis"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "dylan-wood": {
       "name": "Dylan Wood",
       "schools": [
         "UC Davis"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "kaleb-schirmacher": {
       "name": "Kaleb Schirmacher",
       "schools": [
         "UC Davis"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "hector-grajeda": {
       "name": "Hector Grajeda",
       "schools": [
         "Sacramento State"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "antonio-andres": {
       "name": "Antonio Andres",
       "schools": [
         "Sacramento State"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "luis-urias": {
       "name": "Luis Urias",
       "schools": [
         "Sacramento State"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "benji-kikanovic": {
       "name": "Benji Kikanovic",
       "schools": [
         "Sacramento State"
       ],
-      "status": "qualifying_appearance_confirmed_career_incomplete"
+      "status": "qualifying_appearance_confirmed_career_incomplete",
+      "domestic_candidates": [
+        {
+          "league": "MLS",
+          "player_id": "wvq9eZdYqW",
+          "player_name": "Benji Kikanović",
+          "birth_date": "2000-01-06",
+          "positive_minute_rows": [
+            {
+              "player_id": "wvq9eZdYqW",
+              "team_id": "0KPqjA456v",
+              "season_name": "2021",
+              "minutes_played": 890
+            },
+            {
+              "player_id": "wvq9eZdYqW",
+              "team_id": "0KPqjA456v",
+              "season_name": "2022",
+              "minutes_played": 1501
+            },
+            {
+              "player_id": "wvq9eZdYqW",
+              "team_id": "0KPqjA456v",
+              "season_name": "2023",
+              "minutes_played": 837
+            },
+            {
+              "player_id": "wvq9eZdYqW",
+              "team_id": "0KPqjA456v",
+              "season_name": "2024",
+              "minutes_played": 1391
+            },
+            {
+              "player_id": "wvq9eZdYqW",
+              "team_id": "0KPqjA456v",
+              "season_name": "2025",
+              "minutes_played": 464
+            },
+            {
+              "player_id": "wvq9eZdYqW",
+              "team_id": "0KPqjA456v",
+              "season_name": "2026",
+              "minutes_played": 2116
+            }
+          ],
+          "source_url": "https://app.americansocceranalysis.com/api/v1/mls/players/xgoals?player_id=wvq9eZdYqW",
+          "status": "identity_and_appearance_review_required"
+        },
+        {
+          "league": "USL Championship",
+          "player_id": "wvq9eZdYqW",
+          "player_name": "Benji Kikanović",
+          "birth_date": "2000-01-06",
+          "positive_minute_rows": [
+            {
+              "player_id": "wvq9eZdYqW",
+              "team_id": "XVqK23a501",
+              "season_name": "2020",
+              "minutes_played": 545
+            }
+          ],
+          "source_url": "https://app.americansocceranalysis.com/api/v1/uslc/players/xgoals?player_id=wvq9eZdYqW",
+          "status": "identity_and_appearance_review_required"
+        }
+      ]
     },
     "oscar-govea": {
       "name": "Oscar Govea",
       "schools": [
         "Sacramento State"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "rj-moorhouse": {
       "name": "RJ Moorhouse",
       "schools": [
         "Sacramento State"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "matt-carnefix": {
       "name": "Matt Carnefix",
       "schools": [
         "Sacramento State"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "alejandro-alcantara": {
       "name": "Alejandro Alcantara",
       "schools": [
         "Sacramento State"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "francisco-magana": {
       "name": "Francisco Magana",
       "schools": [
         "Sacramento State"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "genaro-alfaro": {
       "name": "Genaro Alfaro",
       "schools": [
         "Sacramento State"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "tyler-moss": {
       "name": "Tyler Moss",
       "schools": [
         "Sacramento State"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": [
+        {
+          "league": "USL League One",
+          "player_id": "4wM4ELLB5j",
+          "player_name": "Tyler Moss",
+          "birth_date": "1998-12-27",
+          "positive_minute_rows": [
+            {
+              "player_id": "4wM4ELLB5j",
+              "team_id": "4wM4Z04qjB",
+              "season_name": "2022",
+              "minutes_played": 1071
+            }
+          ],
+          "source_url": "https://app.americansocceranalysis.com/api/v1/usl1/players/xgoals?player_id=4wM4ELLB5j",
+          "status": "identity_and_appearance_review_required"
+        }
+      ]
     },
     "jaime-robles": {
       "name": "Jaime Robles",
       "schools": [
         "Sacramento State"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "titus-washington": {
       "name": "Titus Washington",
       "schools": [
         "Sacramento State"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": [
+        {
+          "league": "USL League One",
+          "player_id": "Xj5YjwNaqb",
+          "player_name": "Titus Washington",
+          "birth_date": "2000-08-09",
+          "positive_minute_rows": [
+            {
+              "player_id": "Xj5YjwNaqb",
+              "team_id": "jYQJw0PMGR",
+              "season_name": "2025",
+              "minutes_played": 2005
+            },
+            {
+              "player_id": "Xj5YjwNaqb",
+              "team_id": "jYQJw0PMGR",
+              "season_name": "2026",
+              "minutes_played": 440
+            }
+          ],
+          "source_url": "https://app.americansocceranalysis.com/api/v1/usl1/players/xgoals?player_id=Xj5YjwNaqb",
+          "status": "identity_and_appearance_review_required"
+        }
+      ]
     },
     "arath-chavez": {
       "name": "Arath Chavez",
       "schools": [
         "Sacramento State"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "jet-trask": {
       "name": "Jet Trask",
       "schools": [
         "Sacramento State"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "pedro-andrade": {
       "name": "Pedro Andrade",
       "schools": [
         "San Diego"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "taylor-perales": {
       "name": "Taylor Perales",
       "schools": [
         "San Diego"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "ruben-stuiver": {
       "name": "Ruben Stuiver",
       "schools": [
         "San Francisco"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "nathan-simeon": {
       "name": "Nathan Simeon",
       "schools": [
         "San Francisco"
       ],
-      "status": "qualifying_appearance_confirmed_career_incomplete"
+      "status": "qualifying_appearance_confirmed_career_incomplete",
+      "domestic_candidates": [
+        {
+          "league": "USL League One",
+          "player_id": "kRQaoGYo5K",
+          "player_name": "Nathan Simeon",
+          "birth_date": "2000-02-14",
+          "positive_minute_rows": [
+            {
+              "player_id": "kRQaoGYo5K",
+              "team_id": "kRQaW3L5KZ",
+              "season_name": "2019",
+              "minutes_played": 1484
+            }
+          ],
+          "source_url": "https://app.americansocceranalysis.com/api/v1/usl1/players/xgoals?player_id=kRQaoGYo5K",
+          "status": "identity_and_appearance_review_required"
+        }
+      ]
     },
     "zyan-andrade": {
       "name": "Zyan Andrade",
       "schools": [
         "San Francisco"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "cameron-martin": {
       "name": "Cameron Martin",
       "schools": [
         "San Francisco"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": [
+        {
+          "league": "USL Championship",
+          "player_id": "p6qbOzeaQ0",
+          "player_name": "Cameron Martin",
+          "birth_date": "2000-05-03",
+          "positive_minute_rows": [
+            {
+              "player_id": "p6qbOzeaQ0",
+              "team_id": "KXMe8Z2Q64",
+              "season_name": "2017",
+              "minutes_played": 67
+            },
+            {
+              "player_id": "p6qbOzeaQ0",
+              "team_id": "KXMe8Z2Q64",
+              "season_name": "2018",
+              "minutes_played": 381
+            }
+          ],
+          "source_url": "https://app.americansocceranalysis.com/api/v1/uslc/players/xgoals?player_id=p6qbOzeaQ0",
+          "status": "identity_and_appearance_review_required"
+        }
+      ]
     },
     "sandro-bradara": {
       "name": "Sandro Bradara",
       "schools": [
         "San Francisco"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "ashish-chattha": {
       "name": "Ashish Chattha",
       "schools": [
         "San Francisco"
       ],
-      "status": "qualifying_appearance_confirmed_career_incomplete"
+      "status": "qualifying_appearance_confirmed_career_incomplete",
+      "domestic_candidates": [
+        {
+          "league": "USL Championship",
+          "player_id": "7vQ7Baa8qD",
+          "player_name": "Ashish Chattha",
+          "birth_date": "2000-01-06",
+          "positive_minute_rows": [
+            {
+              "player_id": "7vQ7Baa8qD",
+              "team_id": "Pk5LzyGQOW",
+              "season_name": "2025",
+              "minutes_played": 75
+            },
+            {
+              "player_id": "7vQ7Baa8qD",
+              "team_id": "kRQaeY8QKZ",
+              "season_name": "2023",
+              "minutes_played": 1220
+            },
+            {
+              "player_id": "7vQ7Baa8qD",
+              "team_id": "kRQaeY8QKZ",
+              "season_name": "2024",
+              "minutes_played": 2456
+            }
+          ],
+          "source_url": "https://app.americansocceranalysis.com/api/v1/uslc/players/xgoals?player_id=7vQ7Baa8qD",
+          "status": "identity_and_appearance_review_required"
+        }
+      ]
     },
     "shayan-charalaghi": {
       "name": "Shayan Charalaghi",
       "schools": [
         "San Francisco"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "eden-ben-hemo": {
       "name": "Eden Ben Hemo",
       "schools": [
         "San Francisco"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "jaidon-reynolds": {
       "name": "Jaidon Reynolds",
       "schools": [
         "San Francisco"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "jake-serpa": {
       "name": "Jake Serpa",
       "schools": [
         "San Francisco"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "david-polson": {
       "name": "David Polson",
       "schools": [
         "San Francisco"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "taiki-kajitani": {
       "name": "Taiki Kajitani",
       "schools": [
         "San Francisco"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "jorge-ruiz": {
       "name": "Jorge Ruiz",
       "schools": [
         "San Francisco"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "sam-higgins": {
       "name": "Sam Higgins",
       "schools": [
         "San Francisco"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "haakon-aase": {
       "name": "Haakon Aase",
       "schools": [
         "San Francisco"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "jamal-bernardez": {
       "name": "Jamal Bernardez",
       "schools": [
         "San Francisco"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "easton-harryman": {
       "name": "Easton Harryman",
       "schools": [
         "San Francisco"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "connor-mcauslan": {
       "name": "Connor McAuslan",
       "schools": [
         "San Francisco"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "jonah-van-der-werf": {
       "name": "Jonah Van Der Werf",
       "schools": [
         "San Francisco"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "alejandro-munoz": {
       "name": "Alejandro Munoz",
       "schools": [
         "San Francisco"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "nico-campuzano": {
       "name": "Nico Campuzano",
       "schools": [
         "Portland"
       ],
-      "status": "qualifying_appearance_confirmed_career_incomplete"
+      "status": "qualifying_appearance_confirmed_career_incomplete",
+      "domestic_candidates": [
+        {
+          "league": "MLS",
+          "player_id": "2lqR7VG4Qr",
+          "player_name": "Nico Campuzano",
+          "birth_date": "1998-01-29",
+          "positive_minute_rows": [],
+          "source_url": "https://app.americansocceranalysis.com/api/v1/mls/players/xgoals?player_id=2lqR7VG4Qr",
+          "status": "identity_and_appearance_review_required"
+        },
+        {
+          "league": "USL Championship",
+          "player_id": "2lqR7VG4Qr",
+          "player_name": "Nico Campuzano",
+          "birth_date": "1998-01-29",
+          "positive_minute_rows": [
+            {
+              "player_id": "2lqR7VG4Qr",
+              "team_id": "4JMAZ1D5Kg",
+              "season_name": "2025",
+              "minutes_played": 2749
+            },
+            {
+              "player_id": "2lqR7VG4Qr",
+              "team_id": "gpMOoo1Mzy",
+              "season_name": "2026",
+              "minutes_played": 2999
+            }
+          ],
+          "source_url": "https://app.americansocceranalysis.com/api/v1/uslc/players/xgoals?player_id=2lqR7VG4Qr",
+          "status": "identity_and_appearance_review_required"
+        },
+        {
+          "league": "USL League One",
+          "player_id": "2lqR7VG4Qr",
+          "player_name": "Nico Campuzano",
+          "birth_date": "1998-01-29",
+          "positive_minute_rows": [
+            {
+              "player_id": "2lqR7VG4Qr",
+              "team_id": "wvq9J83QWn",
+              "season_name": "2024",
+              "minutes_played": 24
+            }
+          ],
+          "source_url": "https://app.americansocceranalysis.com/api/v1/usl1/players/xgoals?player_id=2lqR7VG4Qr",
+          "status": "identity_and_appearance_review_required"
+        }
+      ]
     },
     "jabari-newton": {
       "name": "Jabari Newton",
       "schools": [
         "Portland"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "francesco-tiozzo": {
       "name": "Francesco Tiozzo",
       "schools": [
         "Portland"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "jake-arteaga": {
       "name": "Jake Arteaga",
       "schools": [
         "Portland"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": [
+        {
+          "league": "USL Championship",
+          "player_id": "4wM4agVA5j",
+          "player_name": "Jake Arteaga",
+          "birth_date": "2000-02-02",
+          "positive_minute_rows": [
+            {
+              "player_id": "4wM4agVA5j",
+              "team_id": "4wM4E4d5jB",
+              "season_name": "2017",
+              "minutes_played": 572
+            }
+          ],
+          "source_url": "https://app.americansocceranalysis.com/api/v1/uslc/players/xgoals?player_id=4wM4agVA5j",
+          "status": "identity_and_appearance_review_required"
+        }
+      ]
     },
     "rey-ortiz": {
       "name": "Rey Ortiz",
       "schools": [
         "Portland"
       ],
-      "status": "qualifying_appearance_confirmed_career_incomplete"
+      "status": "qualifying_appearance_confirmed_career_incomplete",
+      "domestic_candidates": [
+        {
+          "league": "MLS",
+          "player_id": "BLMvzJ0lMx",
+          "player_name": "Rey Ortiz",
+          "birth_date": "1997-01-06",
+          "positive_minute_rows": [],
+          "source_url": "https://app.americansocceranalysis.com/api/v1/mls/players/xgoals?player_id=BLMvzJ0lMx",
+          "status": "identity_and_appearance_review_required"
+        },
+        {
+          "league": "USL Championship",
+          "player_id": "BLMvzJ0lMx",
+          "player_name": "Rey Ortiz",
+          "birth_date": "1997-01-06",
+          "positive_minute_rows": [
+            {
+              "player_id": "BLMvzJ0lMx",
+              "team_id": "odMX7pAQYL",
+              "season_name": "2020",
+              "minutes_played": 1044
+            }
+          ],
+          "source_url": "https://app.americansocceranalysis.com/api/v1/uslc/players/xgoals?player_id=BLMvzJ0lMx",
+          "status": "identity_and_appearance_review_required"
+        },
+        {
+          "league": "USL League One",
+          "player_id": "BLMvzJ0lMx",
+          "player_name": "Rey Ortiz",
+          "birth_date": "1997-01-06",
+          "positive_minute_rows": [
+            {
+              "player_id": "BLMvzJ0lMx",
+              "team_id": "p6qb32XQ0G",
+              "season_name": "2021",
+              "minutes_played": 963
+            },
+            {
+              "player_id": "BLMvzJ0lMx",
+              "team_id": "p6qb32XQ0G",
+              "season_name": "2022",
+              "minutes_played": 1480
+            }
+          ],
+          "source_url": "https://app.americansocceranalysis.com/api/v1/usl1/players/xgoals?player_id=BLMvzJ0lMx",
+          "status": "identity_and_appearance_review_required"
+        }
+      ]
     },
     "brian-o-hara": {
       "name": "Brian O'Hara",
       "schools": [
         "Portland"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "gio-magana-rivera": {
       "name": "Gio Magana-Rivera",
       "schools": [
         "Portland"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "jacobo-reyes": {
       "name": "Jacobo Reyes",
       "schools": [
         "Portland"
       ],
-      "status": "qualifying_appearance_confirmed_career_incomplete"
+      "status": "qualifying_appearance_confirmed_career_incomplete",
+      "domestic_candidates": [
+        {
+          "league": "USL Championship",
+          "player_id": "BLMvk1Kl5x",
+          "player_name": "Jacobo Reyes",
+          "birth_date": "2000-08-11",
+          "positive_minute_rows": [
+            {
+              "player_id": "BLMvk1Kl5x",
+              "team_id": "0Oq62Dgq6D",
+              "season_name": "2023",
+              "minutes_played": 504
+            },
+            {
+              "player_id": "BLMvk1Kl5x",
+              "team_id": "0Oq62Dgq6D",
+              "season_name": "2024",
+              "minutes_played": 1653
+            }
+          ],
+          "source_url": "https://app.americansocceranalysis.com/api/v1/uslc/players/xgoals?player_id=BLMvk1Kl5x",
+          "status": "identity_and_appearance_review_required"
+        }
+      ]
     },
     "esteban-calvo": {
       "name": "Esteban Calvo",
       "schools": [
         "Portland"
       ],
-      "status": "qualifying_appearance_confirmed_career_incomplete"
+      "status": "qualifying_appearance_confirmed_career_incomplete",
+      "domestic_candidates": [
+        {
+          "league": "USL League One",
+          "player_id": "odMX7XloQY",
+          "player_name": "Esteban Calvo",
+          "birth_date": "1997-05-24",
+          "positive_minute_rows": [
+            {
+              "player_id": "odMX7XloQY",
+              "team_id": "4wM4Z04qjB",
+              "season_name": "2020",
+              "minutes_played": 1223
+            },
+            {
+              "player_id": "odMX7XloQY",
+              "team_id": "9jYQJ7ZMGR",
+              "season_name": "2021",
+              "minutes_played": 2204
+            }
+          ],
+          "source_url": "https://app.americansocceranalysis.com/api/v1/usl1/players/xgoals?player_id=odMX7XloQY",
+          "status": "identity_and_appearance_review_required"
+        }
+      ]
     },
     "delentz-pierre": {
       "name": "Delentz Pierre",
       "schools": [
         "Portland"
       ],
-      "status": "qualifying_appearance_confirmed_career_incomplete"
+      "status": "qualifying_appearance_confirmed_career_incomplete",
+      "domestic_candidates": [
+        {
+          "league": "MLS",
+          "player_id": "EGMPZvd0qa",
+          "player_name": "Delentz Pierre",
+          "birth_date": "2000-11-16",
+          "positive_minute_rows": [],
+          "source_url": "https://app.americansocceranalysis.com/api/v1/mls/players/xgoals?player_id=EGMPZvd0qa",
+          "status": "identity_and_appearance_review_required"
+        },
+        {
+          "league": "USL Championship",
+          "player_id": "EGMPZvd0qa",
+          "player_name": "Delentz Pierre",
+          "birth_date": "2000-11-16",
+          "positive_minute_rows": [
+            {
+              "player_id": "EGMPZvd0qa",
+              "team_id": "9YqdojR5vJ",
+              "season_name": "2023",
+              "minutes_played": 121
+            },
+            {
+              "player_id": "EGMPZvd0qa",
+              "team_id": "9YqdojR5vJ",
+              "season_name": "2024",
+              "minutes_played": 1777
+            },
+            {
+              "player_id": "EGMPZvd0qa",
+              "team_id": "e7MzZbKMr0",
+              "season_name": "2025",
+              "minutes_played": 2203
+            },
+            {
+              "player_id": "EGMPZvd0qa",
+              "team_id": "e7MzZbKMr0",
+              "season_name": "2026",
+              "minutes_played": 1666
+            }
+          ],
+          "source_url": "https://app.americansocceranalysis.com/api/v1/uslc/players/xgoals?player_id=EGMPZvd0qa",
+          "status": "identity_and_appearance_review_required"
+        }
+      ]
     },
     "luke-hendel": {
       "name": "Luke Hendel",
       "schools": [
         "Portland"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "kevin-ogudugu": {
       "name": "Kevin Ogudugu",
       "schools": [
         "Portland"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "noah-beck": {
       "name": "Noah Beck",
       "schools": [
         "Portland"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "alejandro-pereira": {
       "name": "Alejandro Pereira",
       "schools": [
         "Portland"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "caua-soares": {
       "name": "Caua Soares",
       "schools": [
         "Portland"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "jason-manning": {
       "name": "Jason Manning",
       "schools": [
         "Portland"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "r-j-stretch": {
       "name": "R.J. Stretch",
       "schools": [
         "Portland"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "greg-tracey": {
       "name": "Greg Tracey",
       "schools": [
         "Portland"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     },
     "ben-ortiz": {
       "name": "Ben Ortiz",
       "schools": [
         "Portland"
       ],
-      "status": "pending_review"
+      "status": "pending_review",
+      "domestic_candidates": []
     }
   },
-  "notes": "Initial positive verification only. No negative conclusions. Domestic screen and international career review outstanding."
+  "notes": "ASA domestic coverage may omit historical seasons and zero-minute records. A match is a candidate, not proof of identity; no match is not proof of no career. International, historical and cup-only cases require independent review. Registry unchanged by this workflow."
 }

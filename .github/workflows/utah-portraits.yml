@@ -48,7 +48,7 @@ jobs:
           def verified_url(u,school):
               h=host(u)
               return u.startswith('https://') and (h==school or any(h==d or h.endswith('.'+d) for d in ('sidearmsports.com','sidearmdev.com','sidearmnextgen.com','cloudfront.net','amazonaws.com')) or (school=='lsusports.net' and (h.endswith('.lsusports.net') or h=='storage.googleapis.com' and re.match(r'/lsu(?:sports)?[-a-z0-9]*/',urlsplit(u).path,re.I))) )
-          def utah_images(soup,page,names,confirmed_bio=False):
+          def utah_images(soup,page,names,confirmed_bio=False,school_host=HOST):
               from urllib.parse import parse_qs,urlencode
               matches=[]
               for im in soup.find_all('img'):
@@ -62,10 +62,10 @@ jobs:
                   for raw in raws:
                       if not isinstance(raw,str):continue
                       u=urljoin(page,raw)
-                      if not verified_url(u,HOST) or '/resize' in urlsplit(u).path:continue
+                      if not verified_url(u,school_host) or '/resize' in urlsplit(u).path:continue
                       q=parse_qs(urlsplit(u).query)
                       base=unquote(q.get('url',[u])[0])
-                      if not verified_url(base,HOST):continue
+                      if not verified_url(base,school_host):continue
                       p=unquote(urlsplit(base).path)
                       if re.search(r'placeholder|silhouette|default|logo|banner|sponsor|social|\.svg|action|gallery',p,re.I):continue
                       stem=p.rsplit('/',1)[-1].rsplit('.',1)[0]
@@ -99,7 +99,7 @@ jobs:
           diagnostics={}
           for p in players:
               cid=p['id'];names={norm(n) for n in [p['name'],*p.get('former_names',[])] if len(norm(n))>4}
-              recovery_aliases={"cb-utah-chris-rowan":["Christopher Rowan Jr","Chris Rowan Jr","Christopher Rowan","Jr Rowan"],"cb-utah-jack-liffrig":["John Liffrig"]}
+              recovery_aliases={"cb-utah-jack-liffrig":["John Liffrig"]}
               if cid not in recovery_aliases:
                   diagnostics[cid]={'candidates':0,'attempts':[],'note':'Already verified; preserve existing portrait'};continue
               names.update(norm(n) for n in recovery_aliases[cid])
@@ -162,6 +162,27 @@ jobs:
                           found[cid]=({'url':u,'source':source,'provider':'college','school':school,'season':y,'photo_year':photo_year(u,y)},digest)
                           break
                   if cid in found:break
+          # Verified transfer: Minnesota's 2022 biography explicitly records his 2019 Utah season.
+          cid='cb-utah-jack-liffrig'
+          if cid not in found:
+              source='https://gophersports.com/sports/baseball/roster/jack-liffrig/19885'
+              h='gophersports.com'
+              names={norm('Jack Liffrig'),norm('John Liffrig')}
+              try:
+                  r=get(source);r.raise_for_status()
+                  soup=BeautifulSoup(r.text,'html.parser')
+                  title=' '.join(t.get_text(' ',strip=True) for t in soup.find_all(['h1','h2','title']))
+                  body=soup.get_text(' ',strip=True)
+                  assert host(r.url)==h and norm('Jack Liffrig') in norm(title) and '2022' in title and re.search(r'2019.{0,100}Utah',body,re.I),'Minnesota bio identity or season not verified'
+                  options=[*utah_images(soup,r.url,names,True,h),*bio_images(soup,r.url,h,names)]
+                  diagnostics[cid]['attempts'].append({'source':r.url,'candidates':len(options)})
+                  for u in dict.fromkeys(options):
+                      if not verified_url(u,h):continue
+                      state,digest=probe(u)
+                      if state=='image' and digest:
+                          found[cid]=({'url':u,'source':r.url,'provider':'college','school':'Minnesota','season':2022,'photo_year':photo_year(u,2022)},digest)
+                          break
+              except Exception as e:diagnostics[cid]['attempts'].append({'source':source,'error':str(e)})
           hashes=collections.Counter(d for _,d in found.values())
           for p in players:
               cid=p['id'];old=registry.get(cid);entry={'id':cid,'name':p['name']}
@@ -203,7 +224,7 @@ jobs:
                   page=browser.new_page(viewport={'width':w,'height':h},device_scale_factor=1)
                   for t in report['targets']:
                       pid=t['id'];row={'id':pid,'name':t['name'],'viewport':mode}
-                      if pid not in ["cb-utah-chris-rowan","cb-utah-jack-liffrig"]:continue
+                      if pid!="cb-utah-jack-liffrig":continue
                       if pid not in registry:
                           row['status']='missing';results.append(row);print(mode,t['name'],'missing; skipped browser timeout',flush=True);continue
                       try:

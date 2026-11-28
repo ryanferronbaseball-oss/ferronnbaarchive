@@ -10,17 +10,17 @@ def norm(s):return re.sub(r'[^a-z0-9]','',unicodedata.normalize('NFKD',s).lower(
 def host(u):return (urlsplit(u).hostname or '').removeprefix('www.')
 def allowed(u,school):
     h=host(u)
-    return u.startswith('https://') and (h==school or any(h==d or h.endswith('.'+d) for d in ('sidearmsports.com','sidearmdev.com','sidearmnextgen.com','amazonaws.com','cloudfront.net','und.com')))
+    return u.startswith('https://') and (h==school or any(h==d or h.endswith('.'+d) for d in ('sidearmsports.com','sidearmdev.com','sidearmnextgen.com','amazonaws.com','cloudfront.net','und.com','storage.googleapis.com','wmt.digital','wmtcdn.com','imgix.net')))
 def candidates(soup,page,names,school):
     accepted={norm(n) for n in names}
     out=[]
     for img in soup.find_all('img'):
         alt=norm(img.get('alt',''))
-        if not any(alt in (n,'photoof'+n,'imageof'+n,n+'headshot','headshotof'+n,n+'portrait','portraitof'+n) for n in accepted):continue
-        for k in ('data-src','src','data-lazy-src','data-original'):
+        if not any(alt in (n,'photoof'+n,'imageof'+n,n+'headshot','headshotof'+n,n+'portrait','portraitof'+n,n+'photo',n+'image') for n in accepted):continue
+        for k in ('data-src','src','data-lazy-src','data-original','data-image','data-srcset','srcset'):
             v=img.get(k)
             if not v:continue
-            u=urljoin(page,v)
+            u=urljoin(page,v.split(',')[0].strip().split(' ')[0])
             if allowed(u,school) and not re.search(r'placeholder|silhouette|default|logo|\.svg(?:\?|$)|blank',u,re.I):out.append(u)
     return list(dict.fromkeys(out))
 def main():
@@ -40,7 +40,7 @@ def main():
                 r=get(bio_url);r.raise_for_status()
                 if host(r.url)!=school:raise ValueError('bio redirected off school')
                 bio=BeautifulSoup(r.text,'html.parser')
-                headings=' '.join(x.get_text(' ',strip=True) for x in bio.find_all(['h1','title']))
+                headings=' '.join(x.get_text(' ',strip=True) for x in bio.find_all(['h1','h2','title']))
                 if not any(norm(n) in norm(headings) for n in names):raise ValueError('bio name mismatch')
                 if t.get('direct_image') and allowed(t['direct_image'],school):
                     cs.append((t['direct_image'],r.url))
@@ -69,7 +69,55 @@ def main():
             links=[]
             for a in soup.find_all('a',href=True):
                 u=urljoin(page,a['href']);path=urlsplit(u).path
-                if host(u)!=school or not re.search(r'/roster/[^/]+/\d+/?$',path):continue
+                if host(u)!=school or not re.search(r'/roster/(?:[^/]+/\d+|player/[^/]+|season/[^/]+/player/[^/]+)/?,path):continue
+                parts=path.rstrip('/').split('/')
+                part=parts[-2] if parts[-1].isdigit() else parts[-1]
+                if norm(part) in {norm(n) for n in names} or part in slugs:links.append(u)
+            for link in dict.fromkeys(links):
+                try:
+                    r=get(link);r.raise_for_status()
+                    if host(r.url)!=school:continue
+                    bio=BeautifulSoup(r.text,'html.parser')
+                    headings=' '.join(x.get_text(' ',strip=True) for x in bio.find_all(['h1','title']))
+                    if not any(norm(n) in norm(headings) for n in names):continue
+                    cs.extend((u,r.url) for u in candidates(bio,r.url,names,school))
+                    # Verified name-matched bio: accept named headshot image URLs, not generic action galleries.
+                    from urllib.parse import unquote
+                    for img in bio.find_all('img'):
+                        for attr in ('data-src','src','data-lazy-src','data-original'):
+                            value=img.get(attr)
+                            if not value:continue
+                            u=urljoin(r.url,value)
+                            decoded=unquote(u)
+                            if not allowed(u,school) or re.search(r'placeholder|logo|default|silhouette|\.svg',decoded,re.I):continue
+                            # Accept full-name matches only when image is marked as portrait/headshot,
+                            # or the source image basename consists of the verified player's name.
+                            filename=unquote(urlsplit(decoded).path.rsplit('/',1)[-1]).rsplit('.',1)[0]
+                            filename_norm=norm(filename)
+                            alt=norm(img.get('alt',''))
+                            if any(filename_norm in (norm(n),norm(' '.join(n.split()[::-1])),norm(n)+'headshot','headshot'+norm(n)) or (norm(n) in norm(decoded) and re.search(r'headshot|portrait',decoded+' '+alt,re.I)) for n in names):
+                                cs.append((u,r.url))
+                    for meta in bio.find_all('meta',attrs={'property':'og:image'}):
+                        u=urljoin(r.url,meta.get('content',''))
+                        if allowed(u,school) and any(norm(n) in norm(unquote(u)) for n in names) and re.search(r'headshot|portrait',unquote(u),re.I):cs.append((u,r.url))
+                except Exception:continue
+            for u,source in dict.fromkeys(cs):
+                state,h=probe(u)
+                if state=='image' and h:
+                    found[pid]=(u,source,h);break
+            if pid not in found:report['missing'].append({'id':pid,'name':names[0],'reason':'No verified named portrait found'})
+        except Exception as e:report['missing'].append({'id':pid,'name':t['names'][0],'reason':str(e)})
+    hashes=defaultdict(list)
+    for pid,(_,_,h) in found.items():hashes[h].append(pid)
+    for pid,(u,source,h) in found.items():
+        if len(hashes[h])>1:
+            report['missing'].append({'id':pid,'name':targets[pid]['names'][0],'reason':'Duplicate image hash'});continue
+        reg[pid]={'image_url':u,'source_url':source,'provider':'official school'}
+        report['added'].append({'id':pid,'name':targets[pid]['names'][0],'image_url':u,'source_url':source})
+    save(fp,data);save('college-women/reports/school_portrait_audit.json',report)
+    print(json.dumps(report,indent=2))
+if __name__=='__main__':main()
+,path):continue
                 part=path.rstrip('/').split('/')[-2]
                 if norm(part) in {norm(n) for n in names} or part in slugs:links.append(u)
             for link in dict.fromkeys(links):

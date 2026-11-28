@@ -1,7 +1,7 @@
 {
-  "updated": "2026-11-23",
+  "updated": "2026-11-27",
   "venueCount": 144,
-  "mappedGames": 833,
+  "mappedGames": 849,
   "excludedUnassignedGames": 7,
   "venues": [
     {
@@ -103,7 +103,7 @@
       "sport": "College Basketball",
       "city": "Nashville, Tennessee",
       "address": "3901 Granny White Pike, Nashville, TN 37204",
-      "visits": 1,
+      "visits": 2,
       "firstVisit": "2026-11-07",
       "lastVisit": "2026-11-07",
       "lat": 36.1038333,
@@ -128,7 +128,21 @@
           "awayScore": 77,
           "homeScore": 78,
           "url": "../college/game.html?id=96"
+        },
+        {
+          "id": "college-women-2026-11-07",
+          "date": "2026-11-07",
+          "away": "Carolina University",
+          "home": "Lipscomb",
+          "awayScore": 49,
+          "homeScore": 90,
+          "url": "../college-women/game.html?id=college-women-2026-11-07",
+          "sport": "Women's College Basketball"
         }
+      ],
+      "sports": [
+        "College Basketball",
+        "Women's College Basketball"
       ]
     },
     {
@@ -5013,8 +5027,8 @@
       "sport": "College Basketball",
       "city": "San Diego, CA",
       "address": "5998 Alcalá Park, San Diego, CA 92110",
-      "visits": 55,
-      "firstVisit": "2017-11-15",
+      "visits": 63,
+      "firstVisit": "2017-09-02",
       "lastVisit": "2025-11-18",
       "lat": 32.7744602,
       "lon": -117.183717,
@@ -5029,6 +5043,26 @@
       ],
       "factNote": "",
       "games": [
+        {
+          "id": "college-volleyball-2017-09-02",
+          "date": "2017-09-02",
+          "away": "Texas",
+          "home": "San Diego",
+          "awayScore": 3,
+          "homeScore": 1,
+          "url": "../college-volleyball/game.html?id=college-volleyball-2017-09-02",
+          "sport": "Women's College Volleyball"
+        },
+        {
+          "id": "college-volleyball-2017-09-12",
+          "date": "2017-09-12",
+          "away": "San Diego State",
+          "home": "San Diego",
+          "awayScore": 0,
+          "homeScore": 3,
+          "url": "../college-volleyball/game.html?id=college-volleyball-2017-09-12",
+          "sport": "Women's College Volleyball"
+        },
         {
           "id": "2",
           "date": "2017-11-15",
@@ -5082,6 +5116,16 @@
           "awayScore": 86,
           "homeScore": 83,
           "url": "../college/game.html?id=7"
+        },
+        {
+          "id": "college-women-2017-12-16",
+          "date": "2017-12-16",
+          "away": "UTSA",
+          "home": "San Diego",
+          "awayScore": 69,
+          "homeScore": 78,
+          "url": "../college-women/game.html?id=college-women-2017-12-16",
+          "sport": "Women's College Basketball"
         },
         {
           "id": "8",
@@ -5246,6 +5290,16 @@
           "url": "../college/game.html?id=26"
         },
         {
+          "id": "college-volleyball-2019-09-07",
+          "date": "2019-09-07",
+          "away": "Nebraska",
+          "home": "San Diego",
+          "awayScore": 3,
+          "homeScore": 2,
+          "url": "../college-volleyball/game.html?id=college-volleyball-2019-09-07",
+          "sport": "Women's College Volleyball"
+        },
+        {
           "id": "27",
           "date": "2019-11-05",
           "away": "UC Irvine",
@@ -5262,6 +5316,16 @@
           "awayScore": 66,
           "homeScore": 72,
           "url": "../college/game.html?id=28"
+        },
+        {
+          "id": "college-volleyball-2019-11-15",
+          "date": "2019-11-15",
+          "away": "BYU",
+          "home": "San Diego",
+          "awayScore": 2,
+          "homeScore": 3,
+          "url": "../college-volleyball/game.html?id=college-volleyball-2019-11-15",
+          "sport": "Women's College Volleyball"
         },
         {
           "id": "29",
@@ -5345,6 +5409,16 @@
           "url": "../college/game.html?id=40"
         },
         {
+          "id": "college-women-2020-02-13",
+          "date": "2020-02-13",
+          "away": "Pacific",
+          "home": "San Diego",
+          "awayScore": 61,
+          "homeScore": 66,
+          "url": "../college-women/game.html?id=college-women-2020-02-13",
+          "sport": "Women's College Basketball"
+        },
+        {
           "id": "41",
           "date": "2020-02-29",
           "away": "Pacific",
@@ -5363,6 +5437,16 @@
           "url": "../college/game.html?id=42"
         },
         {
+          "id": "college-women-2021-11-09",
+          "date": "2021-11-09",
+          "away": "Hawaii",
+          "home": "San Diego",
+          "awayScore": 53,
+          "homeScore": 86,
+          "url": "../college-women/game.html?id=college-women-2021-11-09",
+          "sport": "Women's College Basketball"
+        },
+        {
           "id": "43",
           "date": "2021-11-17",
           "away": "UC Riverside",
@@ -5370,6 +5454,16 @@
           "awayScore": 62,
           "homeScore": 74,
           "url": "../college/game.html?id=43"
+        },
+        {
+          "id": "college-women-2021-11-17",
+          "date": "2021-11-17",
+          "away": "Air Force",
+          "home": "San Diego",
+          "awayScore": 46,
+          "homeScore": 52,
+          "url": "../college-women/game.html?id=college-women-2021-11-17",
+          "sport": "Women's College Basketball"
         },
         {
           "id": "45",
@@ -5524,6 +5618,11 @@
           "homeScore": 78,
           "url": "../college/game.html?id=92"
         }
+      ],
+      "sports": [
+        "College Basketball",
+        "Women's College Basketball",
+        "Women's College Volleyball"
       ]
     },
     {
@@ -9902,7 +10001,7 @@
       "sport": "College Football",
       "city": "San Diego, CA",
       "address": "5998 Alcalá Park, San Diego, CA 92110 (USD campus; stadium opposite Main Parking Structure)",
-      "visits": 5,
+      "visits": 12,
       "firstVisit": "2017-09-02",
       "lastVisit": "2021-10-24",
       "lat": 32.7730619,
@@ -9937,6 +10036,26 @@
           "url": "../cfb/game.html?id=cfb-2017-09-23-butler-usd"
         },
         {
+          "id": "college-soccer-2017-10-22",
+          "date": "2017-10-22",
+          "away": "UCLA",
+          "home": "San Diego",
+          "awayScore": 1,
+          "homeScore": 3,
+          "url": "../college-soccer/game.html?id=college-soccer-2017-10-22",
+          "sport": "Men's College Soccer"
+        },
+        {
+          "id": "college-soccer-2018-09-16",
+          "date": "2018-09-16",
+          "away": "UNLV",
+          "home": "San Diego",
+          "awayScore": 0,
+          "homeScore": 1,
+          "url": "../college-soccer/game.html?id=college-soccer-2018-09-16",
+          "sport": "Men's College Soccer"
+        },
+        {
           "id": "cfb-2018-11-10-davidson-usd",
           "date": "2018-11-10",
           "away": "Davidson Wildcats",
@@ -9946,6 +10065,16 @@
           "url": "../cfb/game.html?id=cfb-2018-11-10-davidson-usd"
         },
         {
+          "id": "college-soccer-2019-09-02",
+          "date": "2019-09-02",
+          "away": "Cal Poly",
+          "home": "San Diego",
+          "awayScore": 0,
+          "homeScore": 3,
+          "url": "../college-soccer/game.html?id=college-soccer-2019-09-02",
+          "sport": "Men's College Soccer"
+        },
+        {
           "id": "cfb-2019-09-07-ucd-usd",
           "date": "2019-09-07",
           "away": "UC Davis Aggies",
@@ -9953,6 +10082,46 @@
           "awayScore": 38,
           "homeScore": 35,
           "url": "../cfb/game.html?id=cfb-2019-09-07-ucd-usd"
+        },
+        {
+          "id": "college-soccer-2019-09-13",
+          "date": "2019-09-13",
+          "away": "UC Davis",
+          "home": "San Diego",
+          "awayScore": 0,
+          "homeScore": 1,
+          "url": "../college-soccer/game.html?id=college-soccer-2019-09-13",
+          "sport": "Men's College Soccer"
+        },
+        {
+          "id": "college-soccer-2019-09-15",
+          "date": "2019-09-15",
+          "away": "Sacramento State",
+          "home": "San Diego",
+          "awayScore": 2,
+          "homeScore": 1,
+          "url": "../college-soccer/game.html?id=college-soccer-2019-09-15",
+          "sport": "Men's College Soccer"
+        },
+        {
+          "id": "college-soccer-2019-10-12",
+          "date": "2019-10-12",
+          "away": "San Francisco",
+          "home": "San Diego",
+          "awayScore": 0,
+          "homeScore": 4,
+          "url": "../college-soccer/game.html?id=college-soccer-2019-10-12",
+          "sport": "Men's College Soccer"
+        },
+        {
+          "id": "college-soccer-2019-11-09",
+          "date": "2019-11-09",
+          "away": "Portland",
+          "home": "San Diego",
+          "awayScore": 2,
+          "homeScore": 4,
+          "url": "../college-soccer/game.html?id=college-soccer-2019-11-09",
+          "sport": "Men's College Soccer"
         },
         {
           "id": "soc-2021-10-24-sd-oak",
@@ -9966,7 +10135,8 @@
       ],
       "sports": [
         "College Football",
-        "Soccer"
+        "Soccer",
+        "Men's College Soccer"
       ]
     },
     {

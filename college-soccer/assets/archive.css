@@ -177,3 +177,13 @@ tbody small{display:block;color:var(--muted);font-size:11px;font-weight:400;marg
 .soccer-feature .soccer-avatar{width:100px;height:73px}
 .archive-photo-credit{display:block;font-size:10px;line-height:1.4;overflow-wrap:anywhere}
 @media(max-width:520px){.soccer-profile-head{gap:14px}.soccer-portrait{width:116px;height:84px;font-size:29px}.soccer-feature .soccer-avatar{width:88px;height:64px}}
+
+/* LSU baseball portrait parity: taller headshot frame, full-bleed face-first crop.
+   Scope profile and overview features; leave match card sizing intact. */
+.soccer-profile-head .soccer-portrait{width:145px;height:180px;flex:0 0 145px}
+.soccer-profile-head .soccer-portrait img,.soccer-feature .soccer-avatar img{width:100%;height:100%;object-fit:cover;object-position:center top}
+.soccer-feature .soccer-avatar{width:80px;height:100px;flex:0 0 80px}
+@media(max-width:520px){
+ .soccer-profile-head .soccer-portrait{width:125px;height:150px;flex:0 0 125px}
+ .soccer-feature .soccer-avatar{width:64px;height:80px;flex:0 0 64px}
+}

@@ -21,7 +21,7 @@
 .game-recap{border-color:#496784;background:linear-gradient(145deg,#182b42,#121e31)}.game-recap h2{margin-bottom:10px}.game-recap p{font-size:15px;line-height:1.7;margin:10px 0 0}.game-recap .recap-kicker{color:#91cdec;font-size:11px;font-weight:800;letter-spacing:.13em;text-transform:uppercase}
 
 .nba-game-photo{margin:18px 0;overflow:hidden;border-radius:12px;background:transparent}.nba-game-photo img{display:block;width:100%;max-height:520px;object-fit:contain}
-</style><link rel="stylesheet" href="../assets/site.css?v=20261106-crosssport-sweep3"><link rel="stylesheet" href="../assets/sport-burgundy-ice.css?v=20261106-crosssport-sweep4"><link rel="stylesheet" href="../assets/basketball-recap-contrast.css?v=20261113-mlb-parity1"><link rel="stylesheet" href="../assets/game-detail-scorecard.css?v=20261123-logo1"><script src="../assets/historical-team-logos.js?v=20261123-era1"></script><script src="../assets/game-detail-scorecard.js?v=20261123-logo1"></script><link rel="stylesheet" href="../assets/potg-portraits.css?v=20261127-1"></head><body><main><header class="ca-header"><a class="ca-logo ca-logo-text" href="./index.html" aria-label="NBA archive home">COURTSIDE ARCHIVE<small>EVERY GAME HAS A STORY · NBA</small></a><nav class="ca-nav" aria-label="Main navigation"><a href="./index.html" data-nav="index">Overview</a><a href="./game.html" data-nav="game" aria-current="page">Games</a><a href="./stats.html" data-nav="stats">Players</a><a href="./multiple-teams.html" data-nav="multiple-teams">Multiple Teams</a><a href="./hall-of-fame.html" data-nav="hof">★ Hall of Fame</a><a href="./records.html" data-nav="milestones">Records</a><a href="./insights.html" data-nav="insights">Insights</a><a href="./coaches.html" data-nav="coaches">Coaches</a></nav><a class="ca-hub-link" href="../index.html" aria-label="Return to all sports archives">All archives ↗</a></header>
+</style><link rel="stylesheet" href="../assets/site.css?v=20261106-crosssport-sweep3"><link rel="stylesheet" href="../assets/sport-burgundy-ice.css?v=20261106-crosssport-sweep4"><link rel="stylesheet" href="../assets/basketball-recap-contrast.css?v=20261113-mlb-parity1"><link rel="stylesheet" href="../assets/game-detail-scorecard.css?v=20261123-logo1"><script src="../assets/historical-team-logos.js?v=20261123-era1"></script><script src="../assets/game-detail-scorecard.js?v=20261123-logo1"></script><link rel="stylesheet" href="../assets/potg-portraits.css?v=20261127-1"><link rel="stylesheet" href="../assets/basketball-standouts.css?v=20261127-1"><script src="../assets/basketball-standouts.js?v=20261127-1"></script></head><body><main><header class="ca-header"><a class="ca-logo ca-logo-text" href="./index.html" aria-label="NBA archive home">COURTSIDE ARCHIVE<small>EVERY GAME HAS A STORY · NBA</small></a><nav class="ca-nav" aria-label="Main navigation"><a href="./index.html" data-nav="index">Overview</a><a href="./game.html" data-nav="game" aria-current="page">Games</a><a href="./stats.html" data-nav="stats">Players</a><a href="./multiple-teams.html" data-nav="multiple-teams">Multiple Teams</a><a href="./hall-of-fame.html" data-nav="hof">★ Hall of Fame</a><a href="./records.html" data-nav="milestones">Records</a><a href="./insights.html" data-nav="insights">Insights</a><a href="./coaches.html" data-nav="coaches">Coaches</a></nav><a class="ca-hub-link" href="../index.html" aria-label="Return to all sports archives">All archives ↗</a></header>
 <div class="eyebrow" style="margin-top:38px">My NBA attendance · Game archive</div><h1>Game details.</h1><p>Revisit every NBA game you attended: final scores, top performances, and both teams' full player box scores.</p>
 <div class="selector"><select id="gameSelect" aria-label="Choose attended NBA game"><option>Loading games…</option></select></div>
 <div id="game" aria-live="polite"><section class="panel"><p>Loading game information and player box scores…</p></section></div>
@@ -60,17 +60,7 @@ function archiveImpact(p){
 function rankedByImpact(players){
   return players.filter(p=>archiveImpact(p)!==null).slice().sort((a,b)=>archiveImpact(b)-archiveImpact(a)||Number(b.pts||0)-Number(a.pts||0)||a.player.localeCompare(b.player));
 }
-function topImpactPerformances(players){
-  const top=rankedByImpact(players).slice(0,5);
-  const heading='<section class="panel"><h2>Top 5 impact performances</h2>';
-  if(!top.length)return heading+'<p class="muted">No complete player box-score impact data is available for this game.</p></section>';
-  const stats=["pts","reb","ast","stl","blk"];
-  return heading+'<div class="scroll impact-scroll"><table class="impact-board"><thead><tr><th>Player</th><th>Impact score</th><th>PTS</th><th>REB</th><th>AST</th><th>STL</th><th>BLK</th></tr></thead><tbody>'
-    +top.map(p=>'<tr><td class="impact-player"><a class="player-link" href="./player.html?id='+encodeURIComponent(p.player_id)+'">'+esc(p.player)+'</a><small>'+esc(NAMES[String(p.team_id)]||"Team unavailable")+'</small></td>'
-      +'<td class="impact-number"><strong>'+esc(archiveImpact(p))+'</strong></td>'
-      +stats.map(k=>'<td>'+esc(m(p,k))+'</td>').join("")+'</tr>').join("")
-    +'</tbody></table></div></section>';
-}
+function standoutPerformers(players){return window.CABasketballStandouts.render(players,NAMES,archiveImpact);}
 function playerOfGame(players){
   const ranked=rankedByImpact(players);
   const p=ranked[0];if(!p)return "";
@@ -109,11 +99,11 @@ $("game").innerHTML=window.CAGameScore.render({headingHtml:esc(g.date)+' · '+es
 +gamePhotoPanel(g)
  +gameRecap(g,entries,awayScore,homeScore)
 +playerOfGame(entries)
-+topImpactPerformances(entries)
++standoutPerformers(entries)
 +'<div class="boxscore-section-heading"><h2>Player box score</h2></div>'
 +teamTable(entries,NAMES[away]+' · Away',away)+teamTable(entries,NAMES[home]+' · Home',home);
 $("pagination").innerHTML=(idx>0?'<a href="?id='+encodeURIComponent(games[idx-1].id)+'">← Previous game</a>':'<span></span>')+(idx<games.length-1?'<a href="?id='+encodeURIComponent(games[idx+1].id)+'">Next game →</a>':'<span></span>');document.title=NAMES[away]+' @ '+NAMES[home]+' · '+g.date+' | Courtside Archive';if(history.replaceState)history.replaceState(null,"","?id="+encodeURIComponent(g.id));
 }
 $("gameSelect").addEventListener("change",e=>show(e.target.value));
 Promise.all([fetch("../data/games.csv?v=31-import-verified",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("games.csv HTTP "+r.status);return r.text()}),fetch("../data/player_boxscores_espn.json?v=31-import-verified",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("boxscores HTTP "+r.status);return r.json()}),fetch("../data/game_recaps.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("game_recaps.json HTTP "+r.status);return r.json()}),fetch("./data/game_photos.json",{cache:"no-store"}).then(r=>r.ok?r.json():{}).catch(()=>({}))]).then(([csv,boxscores,recaps,photos])=>{games=csvParse(csv);logs=boxscores;writtenRecaps=recaps;gamePhotos=photos||{};$("gameSelect").innerHTML=games.slice().sort((a,b)=>a.date.localeCompare(b.date)||Number(a.id)-Number(b.id)).map(g=>'<option value="'+esc(g.id)+'">'+esc(g.date+' — '+g.away+' @ '+g.home)+'</option>').join("");show(new URLSearchParams(location.search).get("id")||"1")}).catch(e=>{$("game").innerHTML='<section class="panel empty">Unable to load archive data: '+esc(e.message)+'</section>'});
-</script><script src="../assets/site.js?v=design-1"></script><script src="../assets/potg-portraits.js?v=20261127-1" data-sport="nba"></script></body></html>
+</script><script src="../assets/site.js?v=design-1"></script><script src="../assets/potg-portraits.js?v=20261127-standouts" data-sport="nba"></script></body></html>

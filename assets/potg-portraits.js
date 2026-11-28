@@ -23,7 +23,24 @@ function candidates(id){
  if(sport==="nhl")return [nhlPortraits[id]?.url].filter(Boolean);
  return [];
 }
+function attachImage(portrait,id){
+  const urls=[...new Set(candidates(id).filter(Boolean))];if(!urls.length)return;
+  const img=document.createElement("img");img.alt="";img.className="ca-potg-headshot";img.loading="lazy";img.decoding="async";
+  let index=0;const next=()=>{portrait.classList.remove("has-portrait");if(index>=urls.length){img.remove();return}img.src=urls[index++]};
+  img.addEventListener("error",next);
+  img.addEventListener("load",()=>{if(img.naturalWidth<=1||img.naturalHeight<=1){next();return}portrait.classList.add("has-portrait")});
+  portrait.append(img);next();
+}
+function decorateStandouts(){
+ if(!["nba","college","college-women"].includes(sport))return;
+ for(const portrait of document.querySelectorAll(".ca-standout-portrait[data-standout-id]")){
+  if(portrait.dataset.portraitReady==="1")continue;
+  portrait.dataset.portraitReady="1";
+  attachImage(portrait,portrait.dataset.standoutId);
+ }
+}
 function decorate(){
+ decorateStandouts();
  for(const section of document.querySelectorAll(selectors[sport])){
   if(section.querySelector(".ca-potg-portrait"))continue;
   const link=section.querySelector('a[href*="player.html?id="]');if(!link)continue;
@@ -42,12 +59,7 @@ function decorate(){
    const header=document.createElement("div");header.className="ca-potg-identity";
    copy.before(header);header.append(portrait,copy);copy.classList.add("ca-potg-copy");
   }
-  const urls=[...new Set(candidates(id).filter(Boolean))];if(!urls.length)continue;
-  const img=document.createElement("img");img.alt="";img.className="ca-potg-headshot";img.loading="lazy";img.decoding="async";
-  let index=0;const next=()=>{portrait.classList.remove("has-portrait");if(index>=urls.length){img.remove();return}img.src=urls[index++]};
-  img.addEventListener("error",next);
-  img.addEventListener("load",()=>{if(img.naturalWidth<=1||img.naturalHeight<=1){next();return}portrait.classList.add("has-portrait")});
-  portrait.append(img);next();
+  attachImage(portrait,id);
  }
 }
 async function init(){

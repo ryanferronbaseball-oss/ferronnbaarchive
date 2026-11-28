@@ -127,7 +127,7 @@ document.addEventListener("DOMContentLoaded",async()=>{
    if(!p)return '<article class="ca-feature"><small>'+A.esc(title)+'</small><p>No verified performance is available.</p></article>';
    const fullName=String(p.player),initials=fullName.split(/\s+/).map(v=>v[0]).slice(0,2).join("").toUpperCase();
    const photoId=String(p.athlete_id??"");
-   const photo=/^\d+$/.test(photoId)?'<img style="width:100%;height:100%;object-fit:cover" src="https://a.espncdn.com/i/headshots/nfl/players/full/'+photoId+'.png" alt="" onerror="this.style.display=\'none\';this.parentElement.textContent=\''+A.esc(initials)+'\'">':A.esc(initials);
+   const photo=/^\d+$/.test(photoId)?'<img style="width:100%;height:100%;object-fit:cover;object-position:center top" src="https://a.espncdn.com/i/headshots/nfl/players/full/'+photoId+'.png" alt="" onerror="this.style.display=\'none\';this.parentElement.textContent=\''+A.esc(initials)+'\'">':A.esc(initials);
    const game=gameById.get(String(p.game_id));
    return '<article class="ca-feature"><small>'+A.esc(title)+'</small><div style="display:flex;gap:12px;align-items:center;margin-top:8px"><div class="ca-fallback" style="width:65px;height:74px;flex:none;border-radius:9px;overflow:hidden">'+photo+'</div><div><strong>'+A.esc(p.record)+' '+A.esc(stat)+'</strong><div class="ca-name">'+A.esc(fullName)+'</div><p>'+A.esc(p.date)+'</p></div></div><a href="'+(game?'./game.html?id='+encodeURIComponent(game.id):'./player.html?id='+encodeURIComponent(p.athlete_id))+'">View performance →</a></article>';
   }).join("");

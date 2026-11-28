@@ -170,10 +170,10 @@ tbody small{display:block;color:var(--muted);font-size:11px;font-weight:400;marg
 .soccer-profile-head>div:last-child{min-width:0}
 .soccer-portrait{width:182px;height:132px;flex:none;border-radius:16px;border:1px solid #b9dce9;font-size:38px;letter-spacing:-.06em}
 .soccer-portrait,.soccer-avatar{position:relative;overflow:hidden}
-.soccer-portrait img,.soccer-avatar img{position:absolute;inset:0;width:100%;height:100%;min-width:0;min-height:0;max-width:100%;max-height:100%;object-fit:contain;object-position:center bottom;display:none;background:transparent}
+.soccer-portrait img,.soccer-avatar img{position:absolute;inset:0;width:100%;height:100%;min-width:0;min-height:0;max-width:100%;max-height:100%;object-fit:cover;object-position:center top;display:none;background:transparent}
 .soccer-portrait img.is-loaded,.soccer-avatar img.is-loaded{display:block}
 .soccer-portrait img.is-loaded+span,.soccer-avatar img.is-loaded+span{display:none}
-.soccer-portrait img[data-provider="commons"],.soccer-avatar img[data-provider="commons"]{object-position:center center}
+.soccer-portrait img[data-provider="commons"],.soccer-avatar img[data-provider="commons"]{object-position:center top}
 .soccer-feature .soccer-avatar{width:100px;height:73px}
 .archive-photo-credit{display:block;font-size:10px;line-height:1.4;overflow-wrap:anywhere}
 @media(max-width:520px){.soccer-profile-head{gap:14px}.soccer-portrait{width:116px;height:84px;font-size:29px}.soccer-feature .soccer-avatar{width:88px;height:64px}}

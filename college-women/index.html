@@ -134,7 +134,7 @@ function render(){
   const g=gameMap.get(String(best.game_id));
   const name=esc(best.player),initials=esc(best.player.split(' ').map(x=>x[0]).slice(0,2).join(''));
   const athleteId=/^espn:(\d+)$/.exec(best.player_id);
-  const mapped=headshots[best.player_id];const photo=mapped?.provider==="official school"&&/^https:\/\//.test(mapped.image_url)?mapped.image_url:athleteId?'https://a.espncdn.com/i/headshots/womens-college-basketball/players/full/'+athleteId[1]+'.png':null;
+  const mapped=headshots[best.player_id];const photo=mapped?.provider==="official school"&&(/^https:\/\//.test(mapped.image_url)||/^\.\/assets\/portraits\/utsa\/[a-z0-9-]+\.jpg$/.test(mapped.image_url))?mapped.image_url:athleteId?'https://a.espncdn.com/i/headshots/womens-college-basketball/players/full/'+athleteId[1]+'.png':null;
   const img=photo?'<img style="width:100%;height:100%;object-fit:cover;object-position:center top" src="'+esc(photo)+'" alt="" onerror="this.style.display=\'none\';this.parentElement.textContent=\''+initials+'\'">':initials;
   return '<article class="ca-feature"><small>'+esc(title)+'</small><div style="display:flex;gap:12px;align-items:center;margin-top:8px"><div class="ca-fallback" style="width:65px;height:74px;flex:none;border-radius:9px;overflow:hidden">'+img+'</div><div><strong>'+best[key]+' '+suffix+'</strong><div class="ca-name">'+name+'</div><p>'+esc(best.date)+'</p></div></div><a href="'+(g?'./game.html?id='+encodeURIComponent(g.id):'./player.html?id='+encodeURIComponent(best.player_id))+'">View performance →</a></article>';
  }).join('');

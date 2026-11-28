@@ -1,0 +1,39 @@
+name: UTSA women's basketball media roster portraits
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['scripts/recover_utsa_wbb_portraits.py', '.github/workflows/utsa-wbb-portraits.yml']
+permissions:
+  contents: write
+concurrency:
+  group: ncaaw-school-portraits
+  cancel-in-progress: false
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install requests pillow pymupdf
+      - run: python -m py_compile scripts/recover_utsa_wbb_portraits.py
+      - run: python scripts/recover_utsa_wbb_portraits.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: utsa-portrait-recovery
+          path: |
+            college-women/reports/utsa_portrait_recovery.json
+            college-women/assets/portraits/utsa/
+      - name: Publish verified portraits
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add college-women/data/player_headshots.json college-women/reports/ college-women/assets/portraits/utsa/
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Recover UTSA women's portraits from official media rosters"
+          git pull --rebase origin main
+          git push origin HEAD:main

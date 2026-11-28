@@ -1,0 +1,65 @@
+{
+  "matches": 4,
+  "sets": 17,
+  "appearances": 89,
+  "unique_names": 64,
+  "audit": [
+    {
+      "game_id": "college-volleyball-2017-09-02",
+      "team": "Texas",
+      "rows": 9,
+      "discrepancies": []
+    },
+    {
+      "game_id": "college-volleyball-2017-09-02",
+      "team": "San Diego",
+      "rows": 13,
+      "discrepancies": []
+    },
+    {
+      "game_id": "college-volleyball-2017-09-12",
+      "team": "San Diego State",
+      "rows": 11,
+      "discrepancies": []
+    },
+    {
+      "game_id": "college-volleyball-2017-09-12",
+      "team": "San Diego",
+      "rows": 10,
+      "discrepancies": []
+    },
+    {
+      "game_id": "college-volleyball-2019-09-07",
+      "team": "Nebraska",
+      "rows": 12,
+      "discrepancies": []
+    },
+    {
+      "game_id": "college-volleyball-2019-09-07",
+      "team": "San Diego",
+      "rows": 11,
+      "discrepancies": [
+        {
+          "stat": "ast",
+          "player_sum": 62,
+          "official_total": 61
+        }
+      ]
+    },
+    {
+      "game_id": "college-volleyball-2019-11-15",
+      "team": "BYU",
+      "rows": 13,
+      "discrepancies": []
+    },
+    {
+      "game_id": "college-volleyball-2019-11-15",
+      "team": "San Diego",
+      "rows": 10,
+      "discrepancies": []
+    }
+  ],
+  "notes": [
+    "Official team totals retained separately from player sums. Source discrepancies flagged, not silently adjusted. SDSU attendance 1252 in box score, 1262 in recap. Set errors not consistently available; excluded from shared schema. Lexi Sun seen at Texas and Nebraska; name-based IDs provisional."
+  ]
+}

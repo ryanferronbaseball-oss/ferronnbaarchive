@@ -3,6 +3,7 @@ import concurrent.futures as cf
 from collections import defaultdict
 import json, re
 from bs4 import BeautifulSoup
+from recover_volleyball_guide_portraits import recover
 from audit_player_portraits import load, save
 from audit_ncaaw_school_portraits import get, host, named_images, bio_links, bio_images, valid_bio, verify
 
@@ -18,6 +19,7 @@ def main():
     for pid,entry in list(reg.items()):
         if re.search(r'person[-_]?default|dummy-data|placeholder|silhouette|no[-_]?image',entry.get('url',''),re.I):del reg[pid]
     pages={};errors={}
+    pdf_added,pdf_errors=recover(reg,targets)
     for url in sorted({u for t in targets.values() for u in t['rosters']}):
         try:pages[url]=fetch_page(url)
         except Exception as e:errors[url]=str(e)
@@ -53,7 +55,7 @@ def main():
                     if got:return got,None
                 except Exception:continue
         return None,f'No verified named portrait; {len(links_seen)} bios, {len(tested)} image candidates'
-    report={'targeted':len(targets),'inventory_total':len(inventory),'added':[],'preserved':[],'missing':[],'roster_errors':errors}
+    report={'targeted':len(targets),'inventory_total':len(inventory),'added':pdf_added,'pdf_errors':pdf_errors,'preserved':[],'missing':[],'roster_errors':errors}
     found={}
     with cf.ThreadPoolExecutor(max_workers=6) as pool:
         jobs={}

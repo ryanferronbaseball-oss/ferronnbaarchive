@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded",async function app(){
  const load=async f=>{const r=await fetch("./data/"+f);if(!r.ok)throw Error(f);return r.json()};
  try{
  const [games,rows,portraits]=await Promise.all([load("matches.json"),load("player_boxscores.json"),load("player_portraits.json").catch(()=>({}))]);
- const portrait=p=>{const initials=e(p.player.split(" ").map(s=>s[0]).slice(0,2).join(""));const r=portraits[p.id];return r?.provider==="official"&&/^https:\/\/[^\s"'<>]+$/.test(r.url||"")?'<img src="'+e(r.url)+'" alt="'+e(p.player)+'" onload="this.classList.add(\'is-loaded\')" onerror="this.remove()"><span>'+initials+'</span>':initials;};
+ const portrait=p=>{const initials=e(p.player.split(" ").map(s=>s[0]).slice(0,2).join(""));const r=portraits[p.id];return r?.provider==="official"&&(/^[.]\/assets\/portraits\/(texas|sdsu|nebraska|byu)\/[a-z0-9-]+\.jpg$/.test(r.url||"")||/^https:\/\/[^\s"'<>]+$/.test(r.url||""))?'<img src="'+e(r.url)+'" alt="'+e(p.player)+'" onload="this.classList.add(\'is-loaded\')" onerror="this.remove()"><span>'+initials+'</span>':initials;};
  const photoCredit=p=>{const r=portraits[p.id];return r?.provider==="official"&&/^https:\/\/[^\s"'<>]+$/.test(r.source||"")?'<small class="archive-photo-credit"><a href="'+e(r.source)+'" target="_blank" rel="noopener noreferrer">Photo source ↗</a></small>':"";};
  games.sort((a,b)=>a.date.localeCompare(b.date));
  const byGame=new Map(games.map(g=>[g.id,g])),groups=new Map();

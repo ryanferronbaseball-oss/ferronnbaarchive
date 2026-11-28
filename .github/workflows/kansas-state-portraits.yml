@@ -41,6 +41,9 @@ jobs:
           REPORT='college-baseball/data/kansas_state_portrait_audit.json'
           players=json.loads(subprocess.check_output(['node','scripts/export_baseball_portrait_preferences.cjs',SCHOOL],text=True))
           assert players,'No witnessed Kansas State players'
+          for p in players:
+              if p['id']=='cb-kansas-state-quinton-potter':
+                  p['schools'][SCHOOL]=sorted(set(p['schools'][SCHOOL]+[2018])) # Official 2018 roster; portrait search only
           registry=load(REG,{})
           hosts=load('college-baseball/data/portrait_school_hosts.json')
           hosts[SCHOOL]=HOST
@@ -99,6 +102,8 @@ jobs:
           diagnostics={}
           for p in players:
               cid=p['id'];names={norm(n) for n in [p['name'],*p.get('former_names',[])] if len(norm(n))>4}
+              if cid!='cb-kansas-state-quinton-potter':
+                  diagnostics[cid]={'candidates':0,'attempts':[],'note':'Already verified; preserve existing portrait'};continue
               ranks={s['school']:i for i,s in enumerate(p['preference']['schools'])}
               candidates=[]
               for school,years in p['schools'].items():
@@ -199,6 +204,7 @@ jobs:
                   page=browser.new_page(viewport={'width':w,'height':h},device_scale_factor=1)
                   for t in report['targets']:
                       pid=t['id'];row={'id':pid,'name':t['name'],'viewport':mode}
+                      if pid!='cb-kansas-state-quinton-potter':continue
                       if pid not in registry:
                           row['status']='missing';results.append(row);print(mode,t['name'],'missing; skipped browser timeout',flush=True);continue
                       try:

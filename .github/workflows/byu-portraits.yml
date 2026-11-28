@@ -202,6 +202,59 @@ jobs:
                           found[cid]=({'url':u,'source':source,'provider':'college','school':school,'season':y,'photo_year':photo_year(u,y)},digest)
                           break
                   if cid in found:break
+          # Targeted recovery of the two biographies with placeholder images.
+          from playwright.sync_api import sync_playwright
+          from urllib.parse import parse_qs,urlencode
+          fallbacks={
+              'cb-uc-san-diego-crew-robinson':('UC San Diego',2023,'https://ucsdtritons.com/sports/baseball/roster/2023','ucsdtritons.com'),
+              'cb-byu-max-stanley':('Utah Valley',2026,'https://gouvu.com/sports/baseball/roster/2026','gouvu.com')
+          }
+          with sync_playwright() as pw:
+              browser=pw.chromium.launch()
+              page=browser.new_page(viewport={'width':1440,'height':900})
+              for p in players:
+                  cid=p['id']
+                  if cid not in fallbacks or cid in found:continue
+                  names={norm(p['name'])}
+                  for attempt in diagnostics[cid]['attempts'][:4]:
+                      source=attempt.get('source','')
+                      if host(source)!=HOST:continue
+                      try:
+                          page.goto(source,wait_until='domcontentloaded',timeout=40000)
+                          for im in page.locator('img[alt]').all():
+                              if norm(im.get_attribute('alt') or '') not in names:continue
+                              try:
+                                  im.scroll_into_view_if_needed(timeout=3000)
+                                  im.evaluate("(el)=>{if(el.currentSrc)el.setAttribute('data-src',el.currentSrc)}")
+                              except Exception:pass
+                          page.wait_for_timeout(800)
+                          soup=BeautifulSoup(page.content(),'html.parser')
+                          for u in dict.fromkeys(byu_images(soup,source,names,True)):
+                              state,digest=probe(u)
+                              if state=='image' and digest:
+                                  y=int(re.search(r'/season/(\d{4})/',source).group(1))
+                                  found[cid]=({'url':u,'source':source,'provider':'college','school':SCHOOL,'season':y,'photo_year':photo_year(u,y)},digest);break
+                          if cid in found:break
+                      except Exception as e:diagnostics[cid]['attempts'].append({'source':source,'hydration_error':str(e)})
+                  if cid in found:continue
+                  school,y,source,h=fallbacks[cid]
+                  try:
+                      r=get(source);r.raise_for_status()
+                      if host(r.url)!=h:raise ValueError('Unexpected fallback host')
+                      soup=BeautifulSoup(r.text,'html.parser')
+                      heading=' '.join(t.get_text(' ',strip=True) for t in soup.find_all(['h1','h2','title']))
+                      if not re.search(r'\b'+str(y)+r'\s+Baseball\s+Roster',heading,re.I):raise ValueError('Fallback season not verified')
+                      for u in dict.fromkeys(card_images(soup,r.url,h,names)):
+                          q=parse_qs(urlsplit(u).query)
+                          raw=unquote(q.get('url',[u])[0])
+                          if not (re.search(r'head.?shot|portrait',raw,re.I) or '/crop' in urlsplit(u).path and q.get('width') in (['180'],['603'])):continue
+                          if re.search(r'placeholder|silhouette|default|logo|action|gallery',raw,re.I):continue
+                          state,digest=probe(u)
+                          if state=='image' and digest:
+                              found[cid]=({'url':u,'source':r.url,'provider':'college','school':school,'season':y,'photo_year':photo_year(u,y)},digest);break
+                      if cid not in found:diagnostics[cid]['attempts'].append({'source':r.url,'error':'No verified roster-card headshot','candidate_urls':list(card_images(soup,r.url,h,names))[:10]})
+                  except Exception as e:diagnostics[cid]['attempts'].append({'source':source,'error':str(e)})
+              browser.close()
           hashes=collections.Counter(d for _,d in found.values())
           for p in players:
               cid=p['id'];old=registry.get(cid);entry={'id':cid,'name':p['name']}

@@ -119,5 +119,78 @@
   ],
   "roster_errors": {},
   "targeted": 82,
+  "utsa_pdf_recovery": {
+    "added": [],
+    "missing": [
+      {
+        "id": "school:utsa:tasharian-robinson",
+        "name": "Tasharian Robinson",
+        "reason": "Expected one fully aligned portrait roster, found 2; [{'page': 2, 'names': 12, 'error': 'Roster image-label alignment not uniquely verified: []'}, {'page': 3, 'names': 12, 'error': 'Roster image-label alignment not uniquely verified: []'}, {'page': 5, 'names': 12, 'error': 'Roster image-label alignment not uniquely verified: []'}, {'page': 24, 'names': 12, 'error': 'Roster image-label alignment not uniquely verified: []'}]"
+      },
+      {
+        "id": "school:utsa:timea-toth",
+        "name": "Timea Toth",
+        "reason": "Expected one fully aligned portrait roster, found 2; [{'page': 2, 'names': 12, 'error': 'Roster image-label alignment not uniquely verified: []'}, {'page': 3, 'names': 12, 'error': 'Roster image-label alignment not uniquely verified: []'}, {'page': 5, 'names': 12, 'error': 'Roster image-label alignment not uniquely verified: []'}, {'page': 24, 'names': 12, 'error': 'Roster image-label alignment not uniquely verified: []'}]"
+      },
+      {
+        "id": "school:utsa:kourtney-kekec",
+        "name": "Kourtney Kekec",
+        "reason": "Expected one fully aligned portrait roster, found 2; [{'page': 2, 'names': 12, 'error': 'Roster image-label alignment not uniquely verified: []'}, {'page': 3, 'names': 12, 'error': 'Roster image-label alignment not uniquely verified: []'}, {'page': 5, 'names': 12, 'error': 'Roster image-label alignment not uniquely verified: []'}, {'page': 24, 'names': 12, 'error': 'Roster image-label alignment not uniquely verified: []'}]"
+      },
+      {
+        "id": "school:utsa:marie-benson",
+        "name": "Marie Benson",
+        "reason": "Expected one fully aligned portrait roster, found 2; [{'page': 2, 'names': 12, 'error': 'Roster image-label alignment not uniquely verified: []'}, {'page': 3, 'names': 12, 'error': 'Roster image-label alignment not uniquely verified: []'}, {'page': 5, 'names': 12, 'error': 'Roster image-label alignment not uniquely verified: []'}, {'page': 24, 'names': 12, 'error': 'Roster image-label alignment not uniquely verified: []'}]"
+      },
+      {
+        "id": "school:utsa:tija-hawkins",
+        "name": "Tija Hawkins",
+        "reason": "Expected one fully aligned portrait roster, found 2; [{'page': 2, 'names': 12, 'error': 'Roster image-label alignment not uniquely verified: []'}, {'page': 3, 'names': 12, 'error': 'Roster image-label alignment not uniquely verified: []'}, {'page': 5, 'names': 12, 'error': 'Roster image-label alignment not uniquely verified: []'}, {'page': 24, 'names': 12, 'error': 'Roster image-label alignment not uniquely verified: []'}]"
+      },
+      {
+        "id": "school:utsa:barbara-benson",
+        "name": "Barbara Benson",
+        "reason": "Expected one fully aligned portrait roster, found 2; [{'page': 2, 'names': 12, 'error': 'Roster image-label alignment not uniquely verified: []'}, {'page': 3, 'names': 12, 'error': 'Roster image-label alignment not uniquely verified: []'}, {'page': 5, 'names': 12, 'error': 'Roster image-label alignment not uniquely verified: []'}, {'page': 24, 'names': 12, 'error': 'Roster image-label alignment not uniquely verified: []'}]"
+      },
+      {
+        "id": "school:utsa:karrington-donald",
+        "name": "Karrington Donald",
+        "reason": "Expected one fully aligned portrait roster, found 2; [{'page': 2, 'names': 12, 'error': 'Roster image-label alignment not uniquely verified: []'}, {'page': 3, 'names': 12, 'error': 'Roster image-label alignment not uniquely verified: []'}, {'page': 5, 'names': 12, 'error': 'Roster image-label alignment not uniquely verified: []'}, {'page': 24, 'names': 12, 'error': 'Roster image-label alignment not uniquely verified: []'}]"
+      }
+    ],
+    "preserved": [
+      "school:utsa:crystal-chidomere",
+      "school:utsa:carlie-heineman",
+      "school:utsa:billie-marlow"
+    ],
+    "sources": [
+      {
+        "error": "Expected one fully aligned portrait roster, found 2; [{'page': 2, 'names': 12, 'error': 'Roster image-label alignment not uniquely verified: []'}, {'page': 3, 'names': 12, 'error': 'Roster image-label alignment not uniquely verified: []'}, {'page': 5, 'names': 12, 'error': 'Roster image-label alignment not uniquely verified: []'}, {'page': 24, 'names': 12, 'error': 'Roster image-label alignment not uniquely verified: []'}]",
+        "season": "2018-19",
+        "url": "https://storage.googleapis.com/goutsa-prod/2023/08/02/AG9FtVcu553tbFxgMBUkwK017FEXRgtBS8ui7Wey.pdf"
+      },
+      {
+        "aligned": [
+          "Kasia Kiedjrowska",
+          "Alexus Dukes",
+          "Crystal Chidomere",
+          "Deja Cousin",
+          "Timea Toth",
+          "Kourtney Kekec",
+          "Marie Benson",
+          "Tija Hawkins",
+          "Tesha Smith",
+          "Carlie Heineman",
+          "Loryn Goodwin",
+          "Billie Marlow"
+        ],
+        "page": 4,
+        "season": "2016-17",
+        "url": "https://tulanegreenwave.com/documents/download/2016/11/24/UTSA_Notes.pdf"
+      }
+    ],
+    "targeted": 10,
+    "verified_total": 3
+  },
   "verified_total": 75
 }

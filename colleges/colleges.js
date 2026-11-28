@@ -27,9 +27,12 @@ const finite = value => value !== null && value !== undefined && text(value) !==
 const dateFmt = value => { const d=new Date(text(value)+'T12:00:00Z');return Number.isFinite(d.getTime()) ? d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric',timeZone:'UTC'}) : text(value); };
 const format = n => Number(n||0).toLocaleString('en-US');
 const sportInfo = [
- {key:'basketball',title:'Basketball',icon:'🏀',href:'../college/index.html'},
+ {key:'basketball',title:'Men’s Basketball',icon:'🏀',href:'../college/index.html'},
  {key:'baseball',title:'Baseball',icon:'⚾',href:'../college-baseball/index.html'},
- {key:'football',title:'Football',icon:'🏈',href:'../cfb/index.html'}
+ {key:'football',title:'Football',icon:'🏈',href:'../cfb/index.html'},
+ {key:'womens-basketball',title:'Women’s Basketball',icon:'🏀',href:'../college-women/index.html',unit:'Points'},
+ {key:'mens-soccer',title:'Men’s Soccer',icon:'⚽',href:'../college-soccer/index.html',unit:'Goals'},
+ {key:'womens-volleyball',title:'Women’s Volleyball',icon:'🏐',href:'../college-volleyball/index.html',unit:'Sets'}
 ];
 const blank = () => ({games:[],wins:0,losses:0,ties:0,unscored:0,for:0,against:0});
 let schools=[], logos={}, chosen='', search='', filter='all', order='games';
@@ -59,7 +62,7 @@ const getCSV = async path => {
 };
 const getSchool=(names,map)=>{
  const name=canonical(names),id=slug(name);
- if(!map.has(id))map.set(id,{id,name,logo:null,sports:{basketball:blank(),baseball:blank(),football:blank()},first:null,last:null});
+ if(!map.has(id))map.set(id,{id,name,logo:null,sports:Object.fromEntries(sportInfo.map(s=>[s.key,blank()])),first:null,last:null});
  return map.get(id);
 };
 function addGame(map, sport, g){
@@ -79,14 +82,14 @@ function addGame(map, sport, g){
   sportRecord.games.push({
    id:g.id,date:g.date,opponent:opp,location:isNeutral?'vs':side==='away'?'at':'vs',
    own,other,status,venue,
-   url:({basketball:'../college/game.html?id=',baseball:'../college-baseball/game.html?id=',football:'../cfb/game.html?id='})[sport]+encodeURIComponent(g.id)
+   url:sportInfo.find(s=>s.key===sport).href.replace('index.html','game.html?id=')+encodeURIComponent(g.id)
   });
   if(known){sportRecord.for+=own;sportRecord.against+=other;
    if(status==='w')sportRecord.wins++;else if(status==='l')sportRecord.losses++;else sportRecord.ties++;
   }else sportRecord.unscored++;
   if(!school.first||g.date<school.first)school.first=g.date;
   if(!school.last||g.date>school.last)school.last=g.date;
-  if(sport==='basketball'){
+  if(sport==='basketball'||sport==='womens-basketball'){
    const id=side==='away'?g.away_team_id:g.home_team_id;
    if(/^\d+$/.test(String(id)))school.logo=String(id);
   }
@@ -112,7 +115,7 @@ function profile(school){
  const records=sportInfo.map(s=>{
   const row=school.sports[s.key],known=row.games.length-row.unscored;
   return '<article class="sport-panel'+(row.games.length?'':' empty')+'"><h3><span aria-hidden="true">'+s.icon+'</span>'+s.title+'</h3>'
-  +(row.games?'<div class="record"><strong>'+recordText(row)+'</strong><small>'+format(row.games.length)+' game'+(row.games.length===1?'':'s')+'</small></div><div class="record-details"><span>Win rate <b>'+(known?(100*row.wins/known).toFixed(1)+'%':'—')+'</b></span><span>Scored <b>'+format(row.for)+'</b></span><span>Allowed <b>'+format(row.against)+'</b></span></div>'
+  +(row.games?'<div class="record"><strong>'+recordText(row)+'</strong><small>'+format(row.games.length)+' game'+(row.games.length===1?'':'s')+'</small></div><div class="record-details"><span>Win rate <b>'+(known?(100*row.wins/known).toFixed(1)+'%':'—')+'</b></span><span>'+esc(s.unit?s.unit+' for':'Scored')+' <b>'+format(row.for)+'</b></span><span>'+esc(s.unit?s.unit+' against':'Allowed')+' <b>'+format(row.against)+'</b></span></div>'
    :'<div class="record"><strong>—</strong><small>No attended games yet</small></div>')
   +'</article>';
  }).join('');
@@ -126,14 +129,15 @@ function profile(school){
   +'<a class="sport-link" href="'+esc(s.href)+'" style="display:inline-block;margin-top:9px;font-size:11px;font-weight:800">Explore '+s.title+' archive ↗</a></section>';
  }).join('');
  const period=school.first?(school.first.slice(0,4)===school.last.slice(0,4)?school.first.slice(0,4):school.first.slice(0,4)+'–'+school.last.slice(0,4)):'—';
- $('profile').innerHTML='<div class="profile-header">'+logoHTML(school)+'<div><div class="eyebrow">Combined college profile · '+activeSports(school)+' of 3 sports</div><h2>'+esc(school.name)+'</h2><p class="profile-intro">Attended history: '+esc(period)+' · Basketball, baseball and football</p></div><div class="profile-total"><strong>'+format(total)+'</strong><small>Attended games · '+recordText(sum)+(sum.unscored?' · '+sum.unscored+' unscored':'')+'</small></div></div><div class="sport-grid">'+records+'</div>'+sections;
+ $('profile').innerHTML='<div class="profile-header">'+logoHTML(school)+'<div><div class="eyebrow">Combined college profile · '+activeSports(school)+' of '+sportInfo.length+' sports</div><h2>'+esc(school.name)+'</h2><p class="profile-intro">Attended history: '+esc(period)+' · All six college sports</p></div><div class="profile-total"><strong>'+format(total)+'</strong><small>Attended games · '+recordText(sum)+(sum.unscored?' · '+sum.unscored+' unscored':'')+'</small></div></div><div class="sport-grid">'+records+'</div>'+sections;
  $('profile').setAttribute('aria-label',school.name+' combined college profile');
 }
 function drawDirectory(){
  const q=search.trim().toLowerCase();
  let shown=schools.filter(s=>s.name.toLowerCase().includes(q));
  if(filter==='multi')shown=shown.filter(s=>activeSports(s)>=2);
- if(filter==='three')shown=shown.filter(s=>activeSports(s)===3);
+ if(/^\d+$/.test(filter))shown=shown.filter(s=>activeSports(s)>=Number(filter));
+ if(filter.startsWith('sport:'))shown=shown.filter(s=>s.sports[filter.slice(6)]?.games.length);
  shown.sort(order==='alpha'?(a,b)=>a.name.localeCompare(b.name):order==='sports'?(a,b)=>activeSports(b)-activeSports(a)||totalGames(b)-totalGames(a)||a.name.localeCompare(b.name):(a,b)=>totalGames(b)-totalGames(a)||a.name.localeCompare(b.name));
  $('showing').textContent='Showing '+format(shown.length)+' of '+format(schools.length)+' colleges';
  $('directory').innerHTML=shown.length?shown.map(s=>'<button type="button" class="school-card'+(s.id===chosen?' selected':'')+'" data-school="'+esc(s.id)+'" aria-pressed="'+(s.id===chosen?'true':'false')+'">'+logoHTML(s)+'<span style="min-width:0"><span class="name">'+esc(s.name)+'</span><small>'+activeSports(s)+' sport'+(activeSports(s)===1?'':'s')+' · '+recordText(sums(s))+'</small></span><span class="count"><strong>'+format(totalGames(s))+'</strong><small>games</small></span></button>').join(''):'<div class="no-results">No colleges match those filters.</div>';
@@ -153,13 +157,16 @@ function select(id,scroll,updateUrl){
 }
 async function boot(){
  try{
- const [basketball,football,baseball,corrections,logoData,additionalLogos]=await Promise.all([
+ const [basketball,football,baseball,corrections,logoData,additionalLogos,womensBasketball,mensSoccer,womensVolleyball]=await Promise.all([
   getCSV('../college/data/games.csv'),
   getJSON('../cfb/data/games.json'),
   getJSON('../college-baseball/data/games.json'),
   getJSON('../college-baseball/data/attendance_game_corrections.json'),
   getJSON('../college-baseball/data/team_logo_ids.json'),
-  getJSON('./logo_overrides.json')
+  getJSON('./logo_overrides.json'),
+  getCSV('../college-women/data/games.csv'),
+  getJSON('../college-soccer/data/matches.json'),
+  getJSON('../college-volleyball/data/matches.json')
  ]);
  logos={...logoData,...additionalLogos};
  const replaced=new Map((corrections.games||[]).filter(c=>c.replaces_game_id&&c.game).map(c=>[c.replaces_game_id,c.game]));
@@ -171,12 +178,15 @@ async function boot(){
   const g=patch?{...raw,...patch}:raw;
   addGame(map,'baseball',{...g,venue:g.ballpark});
  }
+ for(const g of womensBasketball)addGame(map,'womens-basketball',{...g,venue:g.arena});
+ for(const g of mensSoccer)addGame(map,'mens-soccer',g);
+ for(const g of womensVolleyball)addGame(map,'womens-volleyball',g);
  schools=[...map.values()].sort((a,b)=>a.name.localeCompare(b.name));
  const total=schools.reduce((n,s)=>n+totalGames(s),0);
  $('schoolCount').textContent=format(schools.length);
  $('appearanceCount').textContent=format(total);
  $('multiCount').textContent=format(schools.filter(s=>activeSports(s)>=2).length);
- $('allThreeCount').textContent=format(schools.filter(s=>activeSports(s)===3).length);
+ $('allSixCount').textContent=format(schools.filter(s=>activeSports(s)===sportInfo.length).length);
  $('search').disabled=false;$('filter').disabled=false;$('order').disabled=false;
  $('search').addEventListener('input',event=>{search=event.target.value;drawDirectory();});
  $('filter').addEventListener('change',event=>{filter=event.target.value;drawDirectory();});

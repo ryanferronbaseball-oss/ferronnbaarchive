@@ -1,0 +1,12 @@
+/* Courtside Archive player profile portraits: LSU baseball full-frame standard.
+ * Preserve frame sizing, image proportions, source selection, fallbacks and logos. */
+.portrait-wrap img.ca-portrait,
+.mlb-profile-photo img,
+.cb-player-portrait img,
+.player-hero .player-portrait img,
+.nhl-player-portrait img,
+.soccer-profile-head .soccer-portrait img,
+.soccer-profile-head .soccer-portrait img[data-provider="commons"] {
+  object-fit: cover;
+  object-position: center top;
+}

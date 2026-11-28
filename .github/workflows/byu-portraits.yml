@@ -143,6 +143,8 @@ jobs:
           diagnostics={}
           for p in players:
               cid=p['id'];names={norm(n) for n in [p['name'],*p.get('former_names',[])] if len(norm(n))>4}
+              if cid not in ('cb-uc-san-diego-crew-robinson','cb-byu-max-stanley'):
+                  diagnostics[cid]={'candidates':0,'attempts':[],'note':'Already verified; preserve existing portrait'};continue
               ranks={s['school']:i for i,s in enumerate(p['preference']['schools'])}
               candidates=[]
               for school,years in p['schools'].items():
@@ -247,7 +249,10 @@ jobs:
                       for u in dict.fromkeys(card_images(soup,r.url,h,names)):
                           q=parse_qs(urlsplit(u).query)
                           raw=unquote(q.get('url',[u])[0])
-                          if not (re.search(r'head.?shot|portrait',raw,re.I) or '/crop' in urlsplit(u).path and q.get('width') in (['180'],['603'])):continue
+                          exact_card_paths={'cb-uc-san-diego-crew-robinson':'/images/2023/2/6/Robinson_Crew.jpg','cb-byu-max-stanley':'/images/2025/12/27/_29_Max_Stanley.png'}
+                          exact_card=(host(raw)==h and urlsplit(raw).path==exact_card_paths.get(cid))
+                          if not (exact_card or re.search(r'head.?shot|portrait',raw,re.I) or '/crop' in urlsplit(u).path and q.get('width') in (['180'],['603'])):continue
+                          if exact_card:u=urlsplit(raw)._replace(query='',fragment='').geturl()
                           if re.search(r'placeholder|silhouette|default|logo|action|gallery',raw,re.I):continue
                           state,digest=probe(u)
                           if state=='image' and digest:
@@ -296,6 +301,7 @@ jobs:
                   page=browser.new_page(viewport={'width':w,'height':h},device_scale_factor=1)
                   for t in report['targets']:
                       pid=t['id'];row={'id':pid,'name':t['name'],'viewport':mode}
+                      if pid not in {'cb-uc-san-diego-crew-robinson','cb-byu-max-stanley'}:continue
                       if pid not in registry:
                           row['status']='missing';results.append(row);print(mode,t['name'],'missing; skipped browser timeout',flush=True);continue
                       try:

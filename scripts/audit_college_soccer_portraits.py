@@ -33,6 +33,15 @@ def main():
                 tested.add(u)
                 got=verify(u,school)
                 if got:return got[0],source,got[1]
+        if t.get('bio'):
+            try:
+                bs,bp=fetch_page(t['bio'])
+                if valid_bio(bs,names):
+                    got=attempt(t.get('direct_candidates',[]),bp)
+                    if got:return got,None
+                    got=attempt(bio_images(bs,bp,names,school),bp)
+                    if got:return got,None
+            except Exception:pass
         for roster in t['rosters']:
             if roster not in pages:continue
             soup,page=pages[roster]

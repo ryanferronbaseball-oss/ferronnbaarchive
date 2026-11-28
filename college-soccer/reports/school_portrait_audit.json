@@ -217,14 +217,9 @@
       "url": "https://images.sidearmdev.com/crop?url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Funlvrebels.com%2Fimages%2F2018%2F5%2F17%2F12814491.jpeg&width=603&height=803&type=webp"
     }
   ],
-  "archive_verified_total": 148,
+  "archive_verified_total": 153,
   "inventory_total": 155,
   "missing": [
-    {
-      "id": "bay-kurtz",
-      "name": "Bay Kurtz",
-      "reason": "No verified named portrait; 1 bios, 1 image candidates"
-    },
     {
       "id": "john-lynam",
       "name": "John Lynam",
@@ -234,26 +229,6 @@
       "id": "jason-manning",
       "name": "Jason Manning",
       "reason": "No verified named portrait; 0 bios, 0 image candidates"
-    },
-    {
-      "id": "angel-deloso-flocco",
-      "name": "Angel Deloso-Flocco",
-      "reason": "No verified named portrait; 1 bios, 0 image candidates"
-    },
-    {
-      "id": "jorge-ruiz",
-      "name": "Jorge Ruiz",
-      "reason": "No verified named portrait; 1 bios, 0 image candidates"
-    },
-    {
-      "id": "shayan-charalaghi",
-      "name": "Shayan Charalaghi",
-      "reason": "No verified named portrait; 1 bios, 1 image candidates"
-    },
-    {
-      "id": "ashish-chattha",
-      "name": "Ashish Chattha",
-      "reason": "No verified named portrait; 1 bios, 2 image candidates"
     }
   ],
   "preserved": [
@@ -397,5 +372,57 @@
   ],
   "roster_errors": {},
   "targeted": 155,
-  "verified_total": 148
+  "verified_total": 153,
+  "manual_recovery": [
+    {
+      "id": "angel-deloso-flocco",
+      "name": "Angel Deloso-Flocco",
+      "url": "https://images.sidearmdev.com/crop?height=270&type=webp&url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Funlvrebels.com%2Fimages%2F2018%2F8%2F28%2F_22_Angelo_Deloso_Flocco_2017_18_hs.jpg&width=180",
+      "source": "https://unlvrebels.com/sports/mens-soccer/roster/angelo-delosoflocco/8899",
+      "provider": "official",
+      "school": "UNLV",
+      "portrait_school": "UNLV",
+      "verification": "Official individually labeled bio headshot visually inspected"
+    },
+    {
+      "id": "ashish-chattha",
+      "name": "Ashish Chattha",
+      "url": "https://images.sidearmdev.com/crop?height=270&type=webp&url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Fucirvine.sidearmsports.com%2Fimages%2F2022%2F8%2F16%2F17chattha22uci.jpg&width=180",
+      "source": "https://ucirvinesports.com/sports/mens-soccer/roster/ashish-chattha/5988",
+      "provider": "official",
+      "school": "San Francisco",
+      "portrait_school": "UC Irvine",
+      "verification": "Official individually labeled bio headshot visually inspected"
+    },
+    {
+      "id": "shayan-charalaghi",
+      "name": "Shayan Charalaghi",
+      "url": "https://images.sidearmdev.com/crop?height=270&type=webp&url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Fusfca.sidearmsports.com%2Fimages%2F2021%2F10%2F11%2FMSOCCharalaghi.jpg&width=180",
+      "source": "https://usfdons.com/sports/mens-soccer/roster/shayan-charalaghi/4756",
+      "provider": "official",
+      "school": "San Francisco",
+      "portrait_school": "San Francisco",
+      "verification": "Official individually labeled bio headshot visually inspected"
+    },
+    {
+      "id": "bay-kurtz",
+      "name": "Bay Kurtz",
+      "url": "https://images.sidearmdev.com/crop?height=270&type=webp&url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Flibertyuni.sidearmsports.com%2Fimages%2Fplayers%2FKurtz%2C+Bay+%282015%29.jpg&width=180",
+      "source": "https://libertyflames.com/sports/mens-soccer/roster/bay-kurtz/4058",
+      "provider": "official",
+      "school": "UNLV",
+      "portrait_school": "Liberty",
+      "verification": "Official individually labeled bio headshot visually inspected"
+    },
+    {
+      "id": "jorge-ruiz",
+      "name": "Jorge Ruiz",
+      "url": "https://images.sidearmdev.com/crop?height=270&type=webp&url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Fusfca.sidearmsports.com%2Fimages%2F2019%2F8%2F18%2FJorge_Ruiz.jpg&width=180",
+      "source": "https://usfdons.com/sports/mens-soccer/roster/jorge-ruiz/4204",
+      "provider": "official",
+      "school": "San Francisco",
+      "portrait_school": "San Francisco",
+      "verification": "Official individually labeled bio headshot visually inspected"
+    }
+  ]
 }

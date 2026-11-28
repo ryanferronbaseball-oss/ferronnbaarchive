@@ -1,0 +1,1 @@
+document.querySelectorAll('.ca-nav a[data-nav]').forEach(a=>{const page=location.pathname.split('/').pop()||'index.html';const key=page==='player.html'?'stats':page==='records.html'?'milestones':page.replace('.html','');if(a.dataset.nav===key)a.classList.add('active')});

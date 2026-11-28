@@ -1,0 +1,156 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>College Game Details | Courtside Archive</title>
+<style>
+:root{color-scheme:dark;font-family:Inter,ui-sans-serif,system-ui,-apple-system,sans-serif;background:#0a1020;color:#eef3ff}*{box-sizing:border-box}body{margin:0}main{max-width:1200px;margin:auto;padding:28px 18px 90px}a{color:#86caff;text-decoration:none}a:hover{text-decoration:underline}header{display:flex;align-items:center;justify-content:space-between;gap:16px;border-bottom:1px solid #2b3951;padding-bottom:20px;flex-wrap:wrap}.brand{font-size:20px;font-weight:850}.brand span{color:#73bfff}nav{display:flex;gap:18px;flex-wrap:wrap}.eyebrow{color:#73bfff;letter-spacing:.16em;font-weight:800;font-size:12px;text-transform:uppercase}h1{font-size:clamp(31px,5vw,55px);letter-spacing:-.04em;margin:16px 0 5px}h2{font-size:22px;margin:0 0 15px}h3{font-size:18px;margin:0 0 12px}p{color:#aebed7;line-height:1.55}.panel,.card{background:#141d30;border:1px solid #2a3851;border-radius:16px;padding:21px;margin-top:18px}.selector{display:flex;gap:12px;flex-wrap:wrap;margin:25px 0 6px}select{background:#0c1627;color:#eef3ff;border:1px solid #3a4e6b;border-radius:10px;padding:12px 14px;font:inherit;max-width:100%;flex:1;min-width:220px}.scoreboard{display:grid;grid-template-columns:1fr auto 1fr;gap:18px;align-items:center;margin:20px 0}.scoreboard .team{font-size:clamp(18px,3vw,27px);font-weight:750}.score{font-size:clamp(37px,5vw,60px);font-weight:850;font-variant-numeric:tabular-nums;letter-spacing:-.03em}.center{text-align:center}.right{text-align:right}.win{color:#831738}.sub{font-size:13px;color:#a6b7d2}.highlights{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.highlight{background:#101b30;border:1px solid #263951;border-radius:12px;padding:16px}.highlight small{color:#8ba3c5;text-transform:uppercase;letter-spacing:.08em;font-size:11px}.highlight strong{display:block;font-size:26px;margin:8px 0 5px}.highlight span{font-weight:650}.highlight div{font-size:12px;color:#a9bdd6;margin-top:5px}.scroll{overflow:auto}table{border-collapse:collapse;width:100%;min-width:850px;font-variant-numeric:tabular-nums}th{color:#99adc8;font-size:11px;letter-spacing:.08em;text-transform:uppercase;text-align:right;white-space:nowrap}td{font-size:13px;text-align:right;white-space:nowrap}th,td{padding:12px 9px;border-bottom:1px solid #29364c}th:first-child,td:first-child{text-align:left}tbody tr:hover{background:#1e2a42}.name{font-weight:700}.player-link{color:#9ed8ff;text-decoration:none}.player-link:hover{text-decoration:underline;color:#d2ecff}.totals td{font-weight:800;background:#0f1a2b}.lineup-divider td{background:#263a57;color:#a9d8ff;font-size:11px;text-transform:uppercase;letter-spacing:.13em;font-weight:800;text-align:left;border-top:2px solid #5579a3;border-bottom:1px solid #5579a3;padding:9px 12px}.empty{padding:25px;color:#ffcc91}.muted{color:#a5b5ce}.footer{margin:24px 0;color:#8298ba;font-size:12px}.nextprev{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:20px 0}.nextprev a{border:1px solid #334562;border-radius:9px;padding:10px 14px}@media(max-width:800px){.highlights{grid-template-columns:repeat(2,minmax(0,1fr))}.scoreboard{gap:6px}.scoreboard .team{font-size:16px}}@media(max-width:530px){.highlights{grid-template-columns:1fr 1fr}.scoreboard{grid-template-columns:1fr 1fr}.scoreboard .vs{grid-column:1/-1;grid-row:1}.scoreboard .right{text-align:right}.scoreboard .left{text-align:left}}
+.pog{border-color:#456a93;background:linear-gradient(135deg,#182c47,#111d31)}.pog-head{display:flex;align-items:center;justify-content:space-between;gap:18px;margin:14px 0 21px}.pog-player{font-size:clamp(24px,4vw,35px);font-weight:850;letter-spacing:-.03em}.pog-impact{display:flex;flex-direction:column;align-items:end;min-width:95px}.pog-impact strong{font-size:32px;color:#a9ddff}.pog-impact span{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#aebed7}.pog-stats{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}.pog-stat{background:#0d192d;border:1px solid #2d4666;border-radius:10px;padding:12px 8px;display:flex;flex-direction:column;gap:6px;align-items:center}.pog-stat span{font-size:11px;letter-spacing:.08em;color:#93aecb;font-weight:700}.pog-stat strong{font-size:18px;font-variant-numeric:tabular-nums}.pog-method{font-size:12px;color:#9fb1cd;margin:17px 0 0}@media(max-width:800px){.pog-stats{grid-template-columns:repeat(4,minmax(0,1fr))}}@media(max-width:520px){.pog-stats{grid-template-columns:repeat(3,minmax(0,1fr))}.pog-stat{padding:11px 5px}}.impact-scroll{margin-top:12px;border:1px solid #c5e3ef;border-radius:11px;overflow-x:auto;max-width:100%}
+.impact-board{min-width:680px;width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+.impact-board th{background:#eaf6fc;color:#831738;text-transform:uppercase;font-size:11px;letter-spacing:.055em;font-weight:800}
+.impact-board th,.impact-board td{padding:13px 12px;border-bottom:1px solid #d4e1e9;text-align:right}
+.impact-board th:first-child,.impact-board td:first-child{text-align:left;position:sticky;left:0;min-width:205px;z-index:1;background:#FFFEFB}
+.impact-board th:first-child{z-index:2;background:#eaf6fc}
+.impact-board tbody tr:nth-child(even){background:#f8fbfd}
+.impact-board tbody tr:nth-child(even) td:first-child{background:#f8fbfd}
+.impact-board tbody tr:hover{background:#e3f3fb}
+.impact-board tbody tr:hover td:first-child{background:#e3f3fb}
+.impact-board tbody tr:last-child td{border-bottom:0}
+.impact-board .impact-player .player-link{font-weight:800;color:#831738}
+.impact-board .impact-player small{display:block;font-size:11px;font-weight:500;color:#566879;margin-top:4px}
+.impact-board .impact-number strong{color:#831738;font-size:19px;font-weight:850}
+@media(max-width:530px){.impact-board{min-width:650px}.impact-board th,.impact-board td{padding:12px 10px}.impact-board th:first-child,.impact-board td:first-child{min-width:175px}}
+.boxscore-section-heading{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:28px 0 0}
+.boxscore-section-heading h2{font-size:clamp(23px,3vw,32px);line-height:1.15;letter-spacing:-.035em;margin:0}
+.game-photo{margin:18px 0 0;text-align:center}.game-photo a{display:inline-block;max-width:100%;line-height:0;border-radius:14px;overflow:hidden}.game-photo img{display:block;max-width:100%;max-height:760px;width:auto;height:auto;margin:auto;border-radius:14px;object-fit:contain}.game-photo a:focus-visible{outline:3px solid #86caff;outline-offset:4px}
+.game-recap{border-color:#496784;background:linear-gradient(145deg,#182b42,#121e31)}.game-recap h2{margin-bottom:10px}.game-recap p{font-size:15px;line-height:1.7;margin:10px 0 0}.game-recap .recap-kicker{color:#91cdec;font-size:11px;font-weight:800;letter-spacing:.13em;text-transform:uppercase}
+</style><link rel="stylesheet" href="../assets/site.css?v=20261106-crosssport-sweep3"><link rel="stylesheet" href="../assets/sport-burgundy-ice.css?v=20261106-crosssport-sweep4"><link rel="stylesheet" href="../assets/game-pro-alumni.css?v=20261106-crosssport-sweep3"><link rel="stylesheet" href="../assets/basketball-recap-contrast.css?v=20261113-mlb-parity1"><link rel="stylesheet" href="../assets/game-detail-scorecard.css?v=20261123-logo1"><script src="../assets/game-detail-scorecard.js?v=20261123-logo1"></script><script src="../assets/historical-college-logos.js?v=20261123-quality2"></script><script src="../assets/game-detail-logos.js?v=20261124-global2"></script><link rel="stylesheet" href="../assets/potg-portraits.css?v=20261127-1"></head><body><main><header class="ca-header"><a class="ca-logo ca-logo-text" href="./index.html" aria-label="Women’s women’s college basketball archive home">COURTSIDE ARCHIVE<small>EVERY GAME HAS A STORY · WOMEN’S COLLEGE BASKETBALL</small></a><nav class="ca-nav" aria-label="Main navigation"><a href="./index.html" data-nav="index">Overview</a><a href="./game.html" data-nav="game" aria-current="page">Games</a><a href="./stats.html" data-nav="stats">Players</a><a href="./records.html" data-nav="milestones">Records</a><a href="./insights.html" data-nav="insights">Insights</a></nav><a class="ca-hub-link" href="../index.html" aria-label="Return to all sports archives">All archives ↗</a></header>
+<div class="eyebrow" style="margin-top:38px">My women’s college basketball attendance · Game archive</div><h1>Game details.</h1><p>Revisit every women’s college basketball game you attended: final scores and the most complete validated player box scores available in your archive, including university records added where ESPN's historical data was incomplete.</p>
+<div class="selector"><select id="gameSelect" aria-label="Choose attended women’s college basketball game"><option>Loading games…</option></select></div>
+<div id="game" aria-live="polite"><section class="panel"><p>Loading game information and player box scores…</p></section></div>
+<div class="nextprev" id="pagination"></div>
+<div class="footer">Final scores come from verified game records. Player box scores use official university statistics; missing player data is never invented. Starting lineups follow the imported source records. Team rebounds can include rebounds not credited to individual players; therefore team rebound totals are not represented as official here. Game venues follow the attendance records. Listed home/away designations can include neutral-site tournament games. Arena names reflect their game-era naming rights.</div></main>
+<script>
+/* Game pro-alumni styles loaded in document head with cache-busting version. */
+const $=x=>document.getElementById(x);
+let TEAMS={},NAMES={}; // Populated from verified college game IDs and team mapping.
+const esc=v=>String(v??"").replace(/[&<>"']/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
+const m=(p,k)=>p[k]==null?"—":p[k];const displayMinutes=v=>v==null||v===""||v==="--"?"—":Number.isFinite(Number(v))?String(Math.round(Number(v))):/^\d+:\d\d$/.test(String(v))?String(Math.round(Number(String(v).split(":")[0])+Number(String(v).split(":")[1])/60)):"—";const shots=(p,k1,k2)=>m(p,k1)+"-"+m(p,k2);
+let games=[],logs=[],nbaAlumni=new Set(),gamePhotos={},writtenRecaps={};
+function csvParse(text){const lines=text.trim().split(/\r?\n/);const headers=lines.shift().split(",");return lines.map(line=>{let values=line.split(",");return Object.fromEntries(headers.map((h,i)=>[h,values[i]??""]))})}
+function gameLogs(g){return logs.filter(p=>String(p.game_id)===String(g.id)&&String(p.game_id)===String(g.id))}
+function score(players,teamId){return players.filter(p=>String(p.team_id)===teamId).reduce((sum,p)=>sum+p.pts,0)}
+function teamTable(players,name,id){
+const rows=players.filter(p=>String(p.team_id)===id);
+const starters=rows.filter(p=>p.starter),bench=rows.filter(p=>!p.starter);
+const totals=k=>rows.length&&rows.every(p=>p[k]!=null)?rows.reduce((s,p)=>s+Number(p[k]),0):"—";
+const statRow=p=>'<tr><td class="name"><a class="player-link" href="./player.html?id='+encodeURIComponent(p.player_id)+'">'+esc(p.player)+'</a></td><td>'+esc(displayMinutes(p.minutes))+'</td><td>'+m(p,"pts")+'</td><td>'+m(p,"reb")+'</td><td>'+m(p,"ast")+'</td><td>'+m(p,"stl")+'</td><td>'+m(p,"blk")+'</td><td>'+shots(p,"fgm","fga")+'</td><td>'+shots(p,"fg3m","fg3a")+'</td><td>'+shots(p,"ftm","fta")+'</td><td>'+m(p,"tov")+'</td><td>'+m(p,"pf")+'</td></tr>';
+const divider=title=>'<tr class="lineup-divider"><td colspan="12">'+title+'</td></tr>';
+const body=divider("Starters")+starters.map(statRow).join("")+divider("Bench")+bench.map(statRow).join("");
+return '<section class="panel"><h2>'+esc(name)+'</h2><div class="scroll"><table><thead><tr><th>Player</th><th>MIN</th><th>PTS</th><th>REB</th><th>AST</th><th>STL</th><th>BLK</th><th>FG</th><th>3PT</th><th>FT</th><th>TO</th><th>PF</th></tr></thead><tbody>'+body+'<tr class="totals"><td>Player totals</td><td>—</td><td>'+totals("pts")+'</td><td>'+totals("reb")+'</td><td>'+totals("ast")+'</td><td>'+totals("stl")+'</td><td>'+totals("blk")+'</td><td>'+totals("fgm")+'-'+totals("fga")+'</td><td>'+totals("fg3m")+'-'+totals("fg3a")+'</td><td>'+totals("ftm")+'-'+totals("fta")+'</td><td>'+totals("tov")+'</td><td>'+(rows.every(p=>p.pf!=null)?totals("pf"):"—")+'</td></tr></tbody></table></div></section>'
+}
+function archiveImpact(p){
+  // Hollinger Game Score, using 0.5 total rebounds only where the split is unavailable.
+  const required=['pts','fgm','fga','fta','ftm','ast','stl','blk','pf','tov'];
+  const known=k=>p[k]!=null&&p[k]!==''&&Number.isFinite(Number(p[k]));
+  if(!required.every(known))return null;
+  const split=known('oreb')&&known('dreb');
+  if(!split&&!known('reb'))return null;
+  const rebounds=split?0.7*Number(p.oreb)+0.3*Number(p.dreb):0.5*Number(p.reb);
+  const score=Number(p.pts)+0.4*Number(p.fgm)+rebounds+Number(p.stl)+0.7*Number(p.ast)+0.7*Number(p.blk)-0.7*Number(p.fga)-0.4*(Number(p.fta)-Number(p.ftm))-0.4*Number(p.pf)-Number(p.tov);
+  return Math.round((score+Number.EPSILON)*10)/10;
+}
+function rankedByImpact(players){
+  return players.filter(p=>archiveImpact(p)!==null).slice().sort((a,b)=>archiveImpact(b)-archiveImpact(a)||Number(b.pts||0)-Number(a.pts||0)||a.player.localeCompare(b.player));
+}
+function topImpactPerformances(players){
+  const top=rankedByImpact(players).slice(0,5);
+  const heading='<section class="panel"><h2>Top 5 impact performances</h2>';
+  if(!top.length)return heading+'<p class="muted">No complete player box-score impact data is available for this game.</p></section>';
+  const stats=["pts","reb","ast","stl","blk"];
+  return heading+'<div class="scroll impact-scroll"><table class="impact-board"><thead><tr><th>Player</th><th>Impact score</th><th>PTS</th><th>REB</th><th>AST</th><th>STL</th><th>BLK</th></tr></thead><tbody>'
+    +top.map(p=>'<tr><td class="impact-player"><a class="player-link" href="./player.html?id='+encodeURIComponent(p.player_id)+'">'+esc(p.player)+'</a><small>'+esc(NAMES[String(p.team_id)]||"Team unavailable")+'</small></td>'
+      +'<td class="impact-number"><strong>'+esc(archiveImpact(p))+'</strong></td>'
+      +stats.map(k=>'<td>'+esc(m(p,k))+'</td>').join("")+'</tr>').join("")
+    +'</tbody></table></div></section>';
+}
+function playerOfGame(players){
+  const ranked=rankedByImpact(players);
+  const p=ranked[0];if(!p)return "";
+  const cell=(label,value)=>'<div class="pog-stat"><span>'+label+'</span><strong>'+esc(value)+'</strong></div>';
+  return '<section class="panel pog"><div class="eyebrow">Courtside Archive selection · Unofficial</div>'
+    +'<h2>Player of the Game</h2>'
+    +'<div class="pog-head"><div><div class="pog-player"><a class="player-link" href="./player.html?id='+encodeURIComponent(p.player_id)+'">'+esc(p.player)+'</a></div><div class="sub">'+esc(NAMES[String(p.team_id)]||"")+'</div></div>'
+    +'<div class="pog-impact"><strong>'+archiveImpact(p)+'</strong><span>Impact score</span></div></div>'
+    +'<div class="pog-stats">'
+    +cell("MIN",displayMinutes(p.minutes))+cell("PTS",m(p,"pts"))+cell("REB",m(p,"reb"))+cell("AST",m(p,"ast"))
+    +cell("STL",m(p,"stl"))+cell("BLK",m(p,"blk"))+cell("OREB",m(p,"oreb"))+cell("DREB",m(p,"dreb"))
+    +cell("FG",shots(p,"fgm","fga"))+cell("3PT",shots(p,"fg3m","fg3a"))+cell("FT",shots(p,"ftm","fta"))+cell("TO",m(p,"tov"))
+    +'</div><p class="pog-method">Courtside Archive selection using Hollinger Game Score: PTS + 0.4 FGM + 0.7 OREB + 0.3 DREB + STL + 0.7 AST + 0.7 BLK − 0.7 FGA − 0.4 missed FT − 0.4 PF − TO. When rebound splits are missing, 0.5 per total rebound is used. This is not an official NCAA award.</p></section>';
+}
+function gameRecap(g,entries,awayScore,homeScore){
+  const written=writtenRecaps[String(g.id)];
+  if(Array.isArray(written)&&written.length){
+    const playerIds=new Set(entries.map(p=>String(p.player_id)));
+    const linked=text=>String(text).split(/(\[\[[^\]]+\]\])/g).map(part=>{
+      const match=part.match(/^\[\[((?:espn:\d+)|(?:(?:official|school):[a-z0-9-]+:[a-z0-9-]+))\|([^\]]+)\]\]$/);
+      return match&&playerIds.has(match[1])?'<a class="player-link" href="./player.html?id='+encodeURIComponent(match[1])+'">'+esc(match[2])+'</a>':esc(part);
+    }).join('');
+    return '<section class="panel game-recap"><div class="recap-kicker">Every game has a story</div><h2>Game recap</h2>'+written.map(p=>'<p>'+linked(p)+'</p>').join('')+'</section>';
+  }
+  const winner=awayScore>homeScore?g.away:homeScore>awayScore?g.home:null;
+  const loser=winner==g.away?g.home:g.away;
+  const margin=Math.abs(awayScore-homeScore);
+  const total=awayScore+homeScore;
+  const ranked=entries.filter(p=>p.pts!=null&&Number.isFinite(Number(p.pts))).sort((a,b)=>Number(b.pts)-Number(a.pts)||Number(b.reb||0)-Number(a.reb||0));
+  const leader=ranked[0],runner=ranked.find(p=>p.team_id!==leader?.team_id);
+  const name=p=>NAMES[String(p.team_id)]||p.team||"her team";
+  const line=p=>{const parts=[Number(p.pts)+" points"];if(p.reb!=null&&Number(p.reb)>=8)parts.push(p.reb+" rebounds");if(p.ast!=null&&Number(p.ast)>=6)parts.push(p.ast+" assists");if(p.blk!=null&&Number(p.blk)>=4)parts.push(p.blk+" blocks");if(p.fg3m!=null&&Number(p.fg3m)>=5)parts.push(p.fg3m+" three-pointers");return parts.join(", ")};
+  const dramatic=margin<=5,standout=ranked.some(p=>Number(p.pts)>=30||Number(p.reb)>=15||Number(p.ast)>=12),notable=dramatic||standout||total>=165;
+  let opening=winner?winner+" defeated "+loser+" "+Math.max(awayScore,homeScore)+"–"+Math.min(awayScore,homeScore)+" at "+(g.arena||"the recorded venue")+".":g.away+" and "+g.home+" finished tied "+awayScore+"–"+homeScore+" in the preserved result.";
+  if(dramatic)opening+=" The "+margin+"-point margin made it one of the tighter results in the archive.";
+  else if(margin>=20)opening+=" The "+margin+"-point difference made it a decisive result.";
+  else opening+=" The final margin was "+margin+" points.";
+  const paragraphs=[opening];
+  if(leader){let performance=leader.player+" led the recorded scorers with "+line(leader)+" for "+name(leader)+".";
+    if(runner&&Number(runner.pts)>=10)performance+=" On the other side, "+runner.player+" scored "+runner.pts+" for "+name(runner)+".";
+    paragraphs.push(performance);
+  }else paragraphs.push("Individual scoring details have not yet been verified for this game.");
+  if(notable&&ranked.length){
+    const other=ranked.filter(p=>p!==leader&&(Number(p.pts)>=20||Number(p.reb)>=12||Number(p.ast)>=10)).slice(0,3);
+    const details=[];
+    if(other.length)details.push("Other notable lines included "+other.map(p=>p.player+" ("+line(p)+")").join("; ")+".");
+    if(total>=165)details.push("The teams combined for "+total+" points.");
+    if(details.length)paragraphs.push(details.join(" "));
+  }
+  return '<section class="panel game-recap"><div class="recap-kicker">Every game has a story</div><h2>Game recap</h2>'+paragraphs.map(p=>'<p>'+esc(p)+'</p>').join('')+'</section>';
+}
+const venuesByGame = new Map();
+function arenaLabel(game) {
+  const venue = venuesByGame.get(String(game.id));
+  if (venue) return '<a href="../venues/venue.html?id='+encodeURIComponent(venue.id)+'">'+esc(venue.name)+'</a>';
+  return esc(game.arena || 'Venue not yet verified');
+}
+const quarterData={"college-women-2017-12-16":[[23,15,14,17],[35,16,12,15]],"college-women-2020-02-13":[[12,18,20,11],[23,11,10,22]],"college-women-2021-11-09":[[9,9,14,21],[19,25,15,27]],"college-women-2021-11-17":[[5,12,13,16],[18,10,16,8]],"college-women-2026-11-07":[[11,10,13,15],[17,22,30,21]]};
+function quarterSection(g){const q=quarterData[g.id];if(!q||!q[0]||!q[1])return "";return '<section class="panel"><h2>Quarter-by-quarter scoring</h2><div class="scroll"><table style="min-width:0"><thead><tr><th>Team</th>'+q[0].map((_,i)=>'<th>'+(i<4?'Q'+(i+1):'OT '+(i-3))+'</th>').join('')+'<th>Final</th></tr></thead><tbody>'+[g.away,g.home].map((n,j)=>'<tr><td>'+esc(n)+'</td>'+q[j].map(v=>'<td>'+esc(v)+'</td>').join('')+'<td><strong>'+esc(j?g.home_score:g.away_score)+'</strong></td></tr>').join('')+'</tbody></table></div></section>';}
+function show(id){const idx=games.findIndex(g=>g.id===String(id));if(idx<0){$("game").innerHTML='<section class="panel empty">Game not found in attendance history.</section>';return}const g=games[idx];$("gameSelect").value=g.id;const entries=gameLogs(g),home=String(g.home_team_id),away=String(g.away_team_id);const ids=[...new Set(entries.map(x=>String(x.game_id)))];
+if((ids.length&& (ids.length!==1||ids[0]!==String(g.id)))||entries.some(p=>![home,away].includes(String(p.team_id)))){$("game").innerHTML='<section class="panel empty">The imported player records do not safely match this game; statistics are hidden to prevent displaying the wrong box score.</section>';return}
+const recordedScore=v=>v!==""&&v!=null&&Number.isFinite(Number(v))?Number(v):null;
+const officialAway=recordedScore(g.away_score),officialHome=recordedScore(g.home_score);
+const awayScore=officialAway??score(entries,away),homeScore=officialHome??score(entries,home);
+const winning=awayScore>homeScore?"away":homeScore>awayScore?"home":"tie",sourceId=String(g.id);
+const missingStats=entries.some(p=>["pts","reb","ast","stl","blk","tov","fgm","fga","ftm","fta"].some(k=>p[k]==null));
+const partial=entries.length<10||missingStats||(officialAway!==null&&score(entries,away)!==officialAway)||(officialHome!==null&&score(entries,home)!==officialHome);
+const sourceNote='<section class="panel"><p class="note">Archive statistics are transcribed from official school box scores. Historical source pages may omit details preserved here. Unavailable individual statistics are shown as —, never estimated.'+(partial?' <strong>Some individual player statistics remain unavailable for this game.</strong>':'')+'</p></section>';
+const statSections=entries.length?(playerOfGame(entries)+topImpactPerformances(entries)+'<div class="boxscore-section-heading"><h2>Player box score</h2></div>'+teamTable(entries,(NAMES[away]||g.away)+' · Away',away)+teamTable(entries,(NAMES[home]||g.home)+' · Home',home)):'<section class="panel empty">The final score and matchup are preserved, but no verified player box score is available for this game yet.</section>';
+const photo=gamePhotos[String(g.id)];const photoSection=photo&&/^\.\/assets\/game-photos\/[a-zA-Z0-9._-]+$/.test(photo)?'<div class="game-photo"><a href="'+esc(photo)+'" target="_blank" rel="noopener" aria-label="Enlarge photo from this game"><img src="'+esc(photo)+'" alt="Game action: '+esc(g.away)+' at '+esc(g.home)+'" loading="lazy"></a></div>':'';
+$("game").innerHTML=window.CAGameScore.render({headingHtml:esc(g.date)+' · '+arenaLabel(g)+(g.site_type==='neutral'?' · Neutral site':''),away:NAMES[away]||g.away,home:NAMES[home]||g.home,awayScore,homeScore,awayLogo:window.CAGameLogos.resolve('college',NAMES[away]||g.away,g.date,away),homeLogo:window.CAGameLogos.resolve('college',NAMES[home]||g.home,g.date,home),metaHtml:entries.length+' player appearances · '+(entries[0]?.source_url?'<a target="_blank" rel="noopener" href="'+esc(entries[0].source_url)+'">Official box score ↗</a>':'Official school records')})
++quarterSection(g)+photoSection+gameRecap(g,entries,awayScore,homeScore)+statSections+sourceNote;
+$("pagination").innerHTML=(idx>0?'<a href="?id='+encodeURIComponent(games[idx-1].id)+'">← Previous game</a>':'<span></span>')+(idx<games.length-1?'<a href="?id='+encodeURIComponent(games[idx+1].id)+'">Next game →</a>':'<span></span>');document.title=NAMES[away]+' @ '+NAMES[home]+' · '+g.date+' | Courtside Archive';if(history.replaceState)history.replaceState(null,"","?id="+encodeURIComponent(g.id));
+}
+$("gameSelect").addEventListener("change",e=>show(e.target.value));
+const venueDirectory = fetch('../venues/data/venues.json').then(r=>r.ok?r.json():null).then(data=>{
+  for (const venue of data?.venues || []) {
+    for (const game of venue.games) {
+      if (game.url === '../college-women/game.html?id='+game.id) venuesByGame.set(String(game.id),venue);
+    }
+  }
+}).catch(()=>{});
+Promise.all([fetch("./data/games.csv?v=college-step3",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("games.csv HTTP "+r.status);return r.text()}),fetch("./data/player_boxscores_espn.json?v=college-step3",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("boxscores HTTP "+r.status);return r.json()}),fetch("./data/team_names.json?v=college-step3",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("school mapping HTTP "+r.status);return r.json()}),fetch("./data/wnba_crosswalk.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("NBA alumni registry unavailable");return r.json()}),fetch("./data/game_photos.json",{cache:"no-store"}).then(r=>r.ok?r.json():{}),fetch("./data/game_recaps.json",{cache:"no-store"}).then(r=>r.ok?r.json():{}),venueDirectory]).then(([csv,boxscores,teamMap,alumni,photos,recaps])=>{games=csvParse(csv).sort((a,b)=>a.date.localeCompare(b.date)||Number(a.id)-Number(b.id));logs=boxscores;gamePhotos=photos;writtenRecaps=recaps;NAMES={...teamMap,...Object.fromEntries(games.flatMap(g=>[[String(g.away_team_id),g.away],[String(g.home_team_id),g.home]]))};nbaAlumni=new Set();TEAMS=Object.fromEntries(games.flatMap(g=>[[g.away,g.away_team_id],[g.home,g.home_team_id]]));$("gameSelect").innerHTML=games.slice().sort((a,b)=>a.date.localeCompare(b.date)||Number(a.id)-Number(b.id)).map(g=>'<option value="'+esc(g.id)+'">'+esc(g.date+' — '+g.away+' @ '+g.home)+'</option>').join("");show(new URLSearchParams(location.search).get("id")||games[0].id)}).catch(e=>{$("game").innerHTML='<section class="panel empty">Unable to load archive data: '+esc(e.message)+'</section>'});
+</script><script src="./assets/navigation.js"></script></body></html>

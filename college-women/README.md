@@ -1,0 +1,3 @@
+# Women's college basketball
+
+First public-facing implementation uses the six existing men's college basketball templates with separate official-source data. Game joins use internal game IDs, not fictional ESPN IDs. Source links point to the recorded official box score. Empty award, portrait, WNBA and photo registries represent pending audits, not confirmed absence. Recaps currently use the shared statistical fallback. Global attendance totals, venue map, player search, yearbook, calendar, coaching history, awards and portrait recovery remain pending; no men's data is copied. Browser-level QA is required before claiming full parity.

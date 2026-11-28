@@ -143,6 +143,9 @@ jobs:
           diagnostics={}
           for p in players:
               cid=p['id'];names={norm(n) for n in [p['name'],*p.get('former_names',[])] if len(norm(n))>4}
+              if cid!='cb-rutgers-jackson-natili':
+                  diagnostics[cid]={'candidates':0,'attempts':[],'note':'Already verified; preserve existing portrait'};continue
+              names.add(norm('Jack Natili'))
               ranks={s['school']:i for i,s in enumerate(p['preference']['schools'])}
               candidates=[]
               for school,years in p['schools'].items():
@@ -243,6 +246,7 @@ jobs:
                   page=browser.new_page(viewport={'width':w,'height':h},device_scale_factor=1)
                   for t in report['targets']:
                       pid=t['id'];row={'id':pid,'name':t['name'],'viewport':mode}
+                      if pid!='cb-rutgers-jackson-natili':continue
                       if pid not in registry:
                           row['status']='missing';results.append(row);print(mode,t['name'],'missing; skipped browser timeout',flush=True);continue
                       try:

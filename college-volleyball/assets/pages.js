@@ -62,8 +62,18 @@ document.addEventListener("DOMContentLoaded",async function app(){
  }
  if(mode==="player"){
  const p=players.find(x=>x.id===id);if(!p)throw Error("Player not found");
- out.innerHTML=a("./stats.html","← Player leaderboards")+'<div class="soccer-profile-head"><div class="soccer-portrait vb-portrait">'+portrait(p)+"</div><div><h1>"+e(p.player)+'</h1>'+photoCredit(p)+'<p class="lead">'+e(p.teams.join(" / "))+"</p></div></div>"+metric([["Matches",p.matches],["Sets",p.sp],["Kills/set",p.kps.toFixed(2)],["Hitting %",hit(p)],["Assists/set",p.astps.toFixed(2)],["Digs/set",p.digps.toFixed(2)],["Blocks/set",p.blocksps.toFixed(2)],["Aces/set",p.saps.toFixed(2)],["Points/set",p.ptsps.toFixed(2)]])+panel("Career totals",table(heads,[tr([e(p.player),...cells(p)])]));
- if(p.teams.length>1)out.innerHTML+=panel("Seen at multiple schools",table(["School","Matches","Sets","Kills","K/set","HIT%"],p.teams.map(t=>{const x=agg(p.logs.filter(r=>r.team===t));return tr([e(t),x.matches,x.sp,x.k,x.kps.toFixed(2),hit(x)]);})));
+ out.innerHTML=a("./stats.html","← Player leaderboards")+'<div class="soccer-profile-head"><div class="soccer-portrait vb-portrait">'+portrait(p)+"</div><div><h1>"+e(p.player)+'</h1>'+photoCredit(p)+'<p class="lead">'+e(p.teams.join(" / "))+"</p></div></div>"+metric([["Matches",p.matches],["Sets",p.sp],["Kills/set",p.kps.toFixed(2)],["Hitting %",hit(p)],["Assists/set",p.astps.toFixed(2)],["Digs/set",p.digps.toFixed(2)],["Blocks/set",p.blocksps.toFixed(2)],["Aces/set",p.saps.toFixed(2)],["Points/set",p.ptsps.toFixed(2)]]);
+ if(p.teams.length>1){
+ const grouped=new Map();
+ for(const r of p.logs.slice().sort((a,b)=>a.date.localeCompare(b.date))){if(!grouped.has(r.team))grouped.set(r.team,[]);grouped.get(r.team).push(r);}
+ const schoolIds={"Texas":"251","San Diego":"301","Nebraska":"158","BYU":"252","San Diego State":"21"};
+ const schools=[...grouped].map(([name,logs])=>({name,logs,stats:agg(logs),id:schoolIds[name]}));
+ const mark=s=>s.id?(window.CACollegeLogos?.image(s.id,s.logs[0].date,s.name)||'<img src="https://a.espncdn.com/i/teamlogos/ncaa/500/'+e(s.id)+'.png" alt="" onerror="this.remove()">'):"";
+ const path='<div class="transfer-path">'+schools.map((s,i)=>(i?'<span class="transfer-arrow" aria-label="then">→</span>':'')+'<div class="transfer-school">'+mark(s)+'<div><strong>'+e(s.name)+'</strong><small>First seen '+e(s.logs[0].date.slice(0,4))+'</small></div></div>').join("")+'</div>';
+ const statsTable='<div class="table-wrap"><table class="soccer-stat-table transfer-table"><thead><tr>'+["School","Matches seen","Sets","K/set","HIT%","AST/set","DIG/set","BLK/set","SA/set","PTS/set"].map(h=>'<th scope="col">'+e(h)+'</th>').join("")+'</tr></thead><tbody>'+schools.map(s=>tr(['<span class="school-cell">'+mark(s)+'<strong>'+e(s.name)+'</strong></span>',s.stats.matches,s.stats.sp,s.stats.kps.toFixed(2),hit(s.stats),s.stats.astps.toFixed(2),s.stats.digps.toFixed(2),s.stats.blocksps.toFixed(2),s.stats.saps.toFixed(2),s.stats.ptsps.toFixed(2)])).join("")+'</tbody></table></div>';
+ out.innerHTML+='<section class="soccer-panel transfer-panel"><h2>Seen at Multiple Schools</h2><p class="note">Schools where you witnessed this player, in chronological order. Statistics below include <strong>only matches you attended</strong>, not complete NCAA career totals.</p>'+path+statsTable+'</section>';
+ }
+ out.innerHTML+=panel("Career totals",table(heads,[tr([e(p.player),...cells(p)])]));
  out.innerHTML+=panel("Individual match log",table(["Date","Team","Opponent",...heads.slice(1)],p.logs.map(r=>{const g=byGame.get(r.game_id);return tr([a(gl(g),r.date),e(r.team),e(r.team===g.home?g.away:g.home),...cells(r)]);})));return;
  }
  out.innerHTML=hero("The best I’ve witnessed.","Single-match records by category.")+defs.map(([l,k])=>panel(l,table(["Player","Team","Date",l,"Match"],rank(rows,k).filter(p=>p[k]>0).slice(0,10).map(p=>tr([a(pl(p),p.player),e(p.team),e(p.date),p[k],a(gl(byGame.get(p.game_id)),"Box score ↗")]))))).join("");

@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="./assets/venue-map.css?v=2">
 <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script defer src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
-<script defer src="./assets/venue-map.js?v=20261113-nhl9"></script>
+<script defer src="./assets/venue-map.js?v=20261127-12sports"></script>
 <style>
   *,*::before,*::after{box-sizing:border-box}
   html{scroll-behavior:smooth}
@@ -188,7 +188,7 @@
 })();
 </script>
 <section class="milestone-section" id="milestones" aria-labelledby="milestone-title">
-  <div class="section-top"><div><div class="portal-kicker" style="margin:0">The journey, game by game</div><h2 id="milestone-title">Attendance milestones</h2></div><p>Landmark games across all nine archives, in chronological order.</p></div>
+  <div class="section-top"><div><div class="portal-kicker" style="margin:0">The journey, game by game</div><h2 id="milestone-title">Attendance milestones</h2></div><p>Landmark games across all twelve archives, in chronological order.</p></div>
   <div class="milestone-grid" id="milestoneGrid" aria-live="polite"><p class="milestone-loading">Finding your landmark games…</p></div>
   <p class="milestone-note" id="milestoneNote">Milestones count each attended game once, across sports. College Baseball follows the archive’s four-year-college-only rule.</p>
 </section>
@@ -200,9 +200,9 @@
       <p>From iconic professional ballparks to campus fields and arenas, explore every venue where a game made it into the archive. Select a pin to see your first visit and every game you've attended there.</p>
     </div>
     <div class="venue-totals" aria-label="Map statistics">
-      <span><strong id="venueCount">142</strong>Venues</span>
-      <span><strong id="venueSportCount">9</strong>Sports</span>
-      <span><strong id="venueGameCount">828</strong>Mapped games</span>
+      <span><strong id="venueCount">144</strong>Venues</span>
+      <span><strong id="venueSportCount">12</strong>Sports</span>
+      <span><strong id="venueGameCount">849</strong>Mapped games</span>
     </div>
   </div>
   <div class="venue-control-panel">
@@ -217,7 +217,7 @@
     <div class="venue-map-loading" id="venueMapLoading">Loading your attended venues…</div>
   </div>
   <div class="venue-map-status" aria-live="polite">
-    <span id="venueMapResult">140 attended venues</span>
+    <span id="venueMapResult">144 attended venues</span>
     <span id="venueMapEmpty" hidden>No venues match that search. Try a sport or another city.</span>
     <a href="./venues/">Browse all venue profiles ↗</a>
   </div>
@@ -365,7 +365,7 @@
  }catch(err){ /* Keep documented fallback counts when serving offline. */ }
 })();
 </script>
-<script defer src="./assets/milestones.js?v=20261113-nhl9"></script>
+<script defer src="./assets/milestones.js?v=20261127-12sports"></script>
 <script>
 /* Native details supplies keyboard and touch toggling; dismiss on outside clicks or Escape. */
 (()=>{

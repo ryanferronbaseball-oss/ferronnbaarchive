@@ -1,4 +1,4 @@
-/* Chronological milestones across all nine collections, including NHL. */
+/* Chronological milestones across all twelve collections. */
 (()=>{'use strict';
  const target=document.getElementById('milestoneGrid');if(!target)return;
  const markers=[1,10,25,50,100,150,200,300,400,500,750];
@@ -18,7 +18,10 @@
   ['MLB','./mlb/data/attendance.json',json,'./mlb/game.html?id='],
   ['MiLB','./milb/data/games.json',json,'./milb/game.html?id='],
   ['College Baseball','./college-baseball/data/games.json',json,'./college-baseball/game.html?id='],
-  ['NHL','./nhl/data/games.json',json,'./nhl/game.html?id=']
+  ['NHL','./nhl/data/games.json',json,'./nhl/game.html?id='],
+  ["Women's College Basketball",'./college-women/data/games.csv',csv,'./college-women/game.html?id='],
+  ["Men's College Soccer",'./college-soccer/data/matches.json',json,'./college-soccer/game.html?id='],
+  ["Women's College Volleyball",'./college-volleyball/data/matches.json',json,'./college-volleyball/game.html?id=']
  ];
  Promise.all(sources.map(async ([sport,path,loader,prefix],sourceIndex)=>{
   const records=await loader(path);

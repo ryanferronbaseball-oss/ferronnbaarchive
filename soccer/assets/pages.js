@@ -140,7 +140,7 @@ function overview(){
  +'<p class="lead">Verified matches across the USL Championship, MLS and FIFA World Cup. Explore the same personal game history, players, signature performances and records you know from basketball and football.</p>'
  +metricCards([["Matches",matches.length],["Goals witnessed",goalsTotal],["Players who appeared",players.filter(p=>p.appearances).length],["Competitions",new Set(matches.map(m=>m.competition)).size]])
  +'<div class="section-heading"><h2>Recent matches</h2><a class="action-link secondary" href="./game.html">Explore games ↗</a></div>'
- +'<section id="games" class="game-grid">'+latest.map(A.matchCard).join("")+'</section>'
+ +'<section id="games" class="game-grid">'+latest.slice(0,3).map(A.matchCard).join("")+'</section>'
  +'<div class="section-heading"><h2>Signature Performances</h2><a class="action-link secondary" href="./records.html">View all Records ↗</a></div>'
  +'<p class="soccer-info">Single-match performances from matches you attended, not full-season totals.</p><div class="soccer-grid">'
  +categories.map(([title,k])=>{const a=per.slice().sort((a,b)=>b[k]-a[k]||b.assists-a.assists||b.goals-a.goals||a.p.name.localeCompare(b.p.name))[0];

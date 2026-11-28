@@ -124,7 +124,10 @@ jobs:
               for im in soup.find_all('img'):
                   alt=norm(im.get('alt',''))
                   context=' '.join(' '.join(t.get('class',[])) for t in [im,*list(im.parents)[:4]] if getattr(t,'attrs',None) is not None).lower()
-                  if re.search(r'gallery|carousel|related|news|article|action|hero|featured',context):continue
+                  # The bio headshot may sit inside a container marked has-hero; the hero itself is separate.
+                  exact_bio_photo=confirmed_bio and 'roster-bio-photo__image' in im.get('class',[]) and alt in names
+                  if re.search(r'gallery|carousel|related|news|article|action|featured',context):continue
+                  if 'hero' in context and not exact_bio_photo:continue
                   designated=bool(re.search(r'roster.*(?:photo|image|headshot)|(?:player|bio)[-_ ](?:photo|image|headshot)',context))
                   exact=any(alt in (n,n+'headshot','headshotof'+n,n+'portrait','photoof'+n) for n in names)
                   if not exact and not (confirmed_bio and designated and not alt):continue
@@ -162,6 +165,10 @@ jobs:
           diagnostics={}
           for p in players:
               cid=p['id'];names={norm(n) for n in [p['name'],*p.get('former_names',[])] if len(norm(n))>4}
+              if cid not in ["cb-western-kentucky-evan-jones","cb-ucf-john-smith-iii","cb-ucf-zak-skinner","cb-ucf-jd-rogers","cb-ucf-stephen-chucka","cb-ucf-jordan-lodise","cb-ucf-kaniel-rosado","cb-ucf-max-murray","cb-ucf-anthony-lariz","cb-ucf-mateo-gray","cb-ucf-kevin-schoneboom","cb-ucf-zachary-malvasio","cb-ucf-roman-kimball","cb-ucf-matt-sauser"]:
+                  diagnostics[cid]={'candidates':0,'attempts':[],'note':'Already verified; preserve existing portrait'};continue
+              if cid=='cb-ucf-john-smith-iii':names.add(norm('John Smith'))
+              if cid=='cb-ucf-stephen-chucka':names.add(norm('Stephen Chuka'))
               ranks={s['school']:i for i,s in enumerate(p['preference']['schools'])}
               candidates=[]
               for school,years in p['schools'].items():
@@ -270,6 +277,7 @@ jobs:
                   page=browser.new_page(viewport={'width':w,'height':h},device_scale_factor=1)
                   for t in report['targets']:
                       pid=t['id'];row={'id':pid,'name':t['name'],'viewport':mode}
+                      if pid not in ["cb-western-kentucky-evan-jones","cb-ucf-john-smith-iii","cb-ucf-zak-skinner","cb-ucf-jd-rogers","cb-ucf-stephen-chucka","cb-ucf-jordan-lodise","cb-ucf-kaniel-rosado","cb-ucf-max-murray","cb-ucf-anthony-lariz","cb-ucf-mateo-gray","cb-ucf-kevin-schoneboom","cb-ucf-zachary-malvasio","cb-ucf-roman-kimball","cb-ucf-matt-sauser"]:continue
                       if pid not in registry:
                           row['status']='missing';results.append(row);print(mode,t['name'],'missing; skipped browser timeout',flush=True);continue
                       try:

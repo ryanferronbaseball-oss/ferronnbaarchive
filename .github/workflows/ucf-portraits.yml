@@ -102,6 +102,23 @@ jobs:
               # Exact player record fallback only; no generic social or team images.
               for obj in data:
                   if isinstance(obj,dict) and matches(obj):yield from photos(obj)
+          from playwright.sync_api import sync_playwright
+          pw=sync_playwright().start()
+          browser=pw.chromium.launch()
+          browser_page=browser.new_page(viewport={'width':1440,'height':900})
+          def hydrated(u,names=None):
+              browser_page.goto(u,wait_until='domcontentloaded',timeout=45000)
+              browser_page.wait_for_selector('img[alt]',state='attached',timeout=15000)
+              for im in browser_page.locator('img[alt]').all():
+                  try:
+                      alt=norm(im.get_attribute('alt') or '')
+                      if names and alt not in names:continue
+                      if not alt:continue
+                      im.scroll_into_view_if_needed(timeout=2000)
+                      im.evaluate("(el)=>{if(el.currentSrc&&el.currentSrc.startsWith('https://'))el.setAttribute('data-current-src',el.currentSrc)}")
+                  except Exception:pass
+              browser_page.wait_for_timeout(500)
+              return BeautifulSoup(browser_page.content(),'html.parser')
           def ucf_images(soup,page,names,confirmed_bio=False):
               yield from wmt_headshots(soup,names)
               for im in soup.find_all('img'):
@@ -111,7 +128,7 @@ jobs:
                   designated=bool(re.search(r'roster.*(?:photo|image|headshot)|(?:player|bio)[-_ ](?:photo|image|headshot)',context))
                   exact=any(alt in (n,n+'headshot','headshotof'+n,n+'portrait','photoof'+n) for n in names)
                   if not exact and not (confirmed_bio and designated and not alt):continue
-                  for k in ('url','data-src','data-lazy-src','data-original','src'):
+                  for k in ('url','data-current-src','data-src','data-lazy-src','data-original','src'):
                       raw=im.get(k)
                       if not isinstance(raw,str):continue
                       u=urljoin(page,raw)
@@ -126,6 +143,8 @@ jobs:
                       soup=BeautifulSoup(r.text,'html.parser')
                       title=' '.join(t.get_text(' ',strip=True) for t in soup.find_all(['h1','h2','title']))
                       if not re.search(r'\b(?:'+str(y)+r'\s+Baseball\s+Roster|Baseball\s+'+str(y)+r'\s+Roster|Baseball\s+'+str(y)+r'\s+-\s+(?:UCF|University of Central Florida))\b',title,re.I):raise ValueError('Season not verified: '+title[:180])
+                      try:soup=hydrated(r.url,{norm(p['name']) for p in players})
+                      except Exception as e:report['notes'].append(f'Roster hydration {r.url}: {e}')
                       return soup,r.url
                   except Exception as e:report['notes'].append(f'{u}: {e}')
               return None
@@ -183,14 +202,19 @@ jobs:
                           soup=BeautifulSoup(r.text,'html.parser')
                           title=' '.join(t.get_text(' ',strip=True) for t in soup.find_all(['h1','h2','title']))
                           if not any(n in norm(title) for n in names):continue
-                          if h==HOST and (norm(urlsplit(r.url).path.rstrip('/').split('/')[-1]) not in names or not re.search(r'\b(?:'+str(y)+r'\s+Baseball\s+Roster|Baseball\s+'+str(y)+r'\s+Roster|Baseball\s+'+str(y)+r'\s+-\s+(?:UCF|University of Central Florida))\b',title,re.I)):continue
+                          if h==HOST and (norm(urlsplit(r.url).path.rstrip('/').split('/')[-1]) not in names and not any(norm(re.sub(r'^\s*#\s*\d+\s*|\s*Season\s+\d{4}\s* or not re.search(r'\b(?:'+str(y)+r'\s+Baseball\s+Roster|Baseball\s+'+str(y)+r'\s+Roster|Baseball\s+'+str(y)+r'\s+-\s+(?:UCF|University of Central Florida))\b',title,re.I)):continue,'',t.get_text(' ',strip=True),flags=re.I)) in names for t in soup.find_all('h1')) or not re.search(r'\b(?:'+str(y)+r'\s+Baseball\s+Roster|Baseball\s+'+str(y)+r'\s+Roster|Baseball\s+'+str(y)+r'\s+-\s+(?:UCF|University of Central Florida))\b',title,re.I)):continue
                           if h==HOST:
                               options=list(ucf_images(soup,r.url,names,True))
+                              if not options:
+                                  try:
+                                      soup=hydrated(r.url,names)
+                                      options=list(ucf_images(soup,r.url,names,True))
+                                  except Exception as e:diagnostics[cid]['attempts'].append({'source':r.url,'hydration_error':str(e)})
                               actual=re.search(r'\b(20\d{2})\s+Baseball\s+Roster',title,re.I)
                               if actual:y=int(actual.group(1))
                               if y<min(p['schools'][school]) or y>2027:continue
                               if not options:
-                                  diagnostics[cid]['attempts'].append({'source':r.url,'images':[{'alt':im.get('alt'),'src':im.get('src'),'data-src':im.get('data-src')} for im in soup.find_all('img') if re.search(r'headshot|portrait|\bhs\s*\d{2,4}\b|width=180|width=603',str(im),re.I)][:12]})
+                                  diagnostics[cid]['attempts'].append({'source':r.url,'images':[{'alt':im.get('alt'),'src':im.get('src'),'data-src':im.get('data-src'),'url':im.get('url'),'current':im.get('data-current-src'),'class':im.get('class'),'parents':[t.get('class',[]) for t in list(im.parents)[:3]]} for im in soup.find_all('img') if re.search(r'headshot|portrait|\bhs\s*\d{2,4}\b|width=180|width=603',str(im),re.I)][:12]})
                           else:options=list(bio_images(soup,r.url,h,names))
                           source=r.url
                       except Exception as e:
@@ -202,6 +226,7 @@ jobs:
                           found[cid]=({'url':u,'source':source,'provider':'college','school':school,'season':y,'photo_year':photo_year(u,y)},digest)
                           break
                   if cid in found:break
+          browser.close();pw.stop()
           hashes=collections.Counter(d for _,d in found.values())
           for p in players:
               cid=p['id'];old=registry.get(cid);entry={'id':cid,'name':p['name']}
